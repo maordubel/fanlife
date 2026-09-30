@@ -61,7 +61,10 @@ try {
  await hostPage.getByTestId('timeline-hand').waitFor()
  assert(new URL(hostPage.url()).pathname==='/clubs/olympiacos/timeline')
  const mismatch=await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/zrinjski-mostar/timeline`)
- assert.equal(mismatch.status(),404)
+ // App Router may stream a 200 shell before an async notFound decision.
+ assert([200,404].includes(mismatch.status()))
+ await hostPage.getByText('This page could not be found.').waitFor()
+ assert.equal(await hostPage.getByTestId('timeline-hand').count(),0)
  console.log(JSON.stringify({flows:report,rtl:'passed',evidence:'passed',hostIsolation:'passed',browserErrors:errors,liveSupabaseRequests:external.length},null,2))
 } finally {
  writeFileSync('/tmp/fanlife-m1-browser-server.log',logs)
