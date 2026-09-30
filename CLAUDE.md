@@ -1,3 +1,5 @@
+> FAN LIFE precedence: `docs/fanlife/26-canonical-bible-2026-09-30.md` governs multi-club architecture. Inherited Worker notes remain golden-reference rules for unmigrated Hapoel features. See the M1 contract and migration report in that directory.
+
 # The Worker — working notes for Claude
 
 Hebrew, RTL, single-club (Hapoel Tel Aviv) football history game.

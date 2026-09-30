@@ -1,3 +1,6 @@
+import {headers} from 'next/headers'
+import {redirect} from 'next/navigation'
+import {clubFromHost,DEFAULT_CLUB} from '@/lib/master/registry'
 import type { Metadata } from 'next'
 
 import { ThreadBoard } from '@/components/archive/ThreadBoard'
@@ -27,6 +30,8 @@ export default function TimelinePage({
 }: {
   searchParams: { seed?: string; r?: string }
 }) {
+  const tenant=clubFromHost(headers().get('host'))
+  if(tenant&&tenant!==DEFAULT_CLUB)redirect(`/clubs/${tenant}/timeline`)
   const round = roundFrom(searchParams)
   const refs = dealThreadRun(round.seed, round.cursor)
   const levels = refs

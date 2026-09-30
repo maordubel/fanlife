@@ -1,0 +1,3239 @@
+{
+  "scope": "Direct imports only; not a transitive independence proof.",
+  "records": [
+    {
+      "file": "app/archive/page.tsx",
+      "line": 11,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/away-days/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/blind-cow/page.tsx",
+      "line": 11,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/c/[code]/page.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/credits/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/derby/HateWall.tsx",
+      "line": 39,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/derby/WallDamage.tsx",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/derby/file/BlackFile.tsx",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/derby/file/page.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/derby/page.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/error.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/goal/GoalRun.tsx",
+      "line": 59,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/goal/GoalRun.tsx",
+      "line": 64,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/goal/page.tsx",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/ground/page.tsx",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/hapoel/PlayerFinder.tsx",
+      "line": 18,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/hapoel/page.tsx",
+      "line": 15,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/KitDesignerV5.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/KitWing.tsx",
+      "line": 21,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/admin/AdminAudit.tsx",
+      "line": 11,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/admin/AdminConsole.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/admin/AdminGate.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/admin/AdminLots.tsx",
+      "line": 28,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/admin/AdminReports.tsx",
+      "line": 14,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/admin/AdminShops.tsx",
+      "line": 20,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/archive/ArchiveWing.tsx",
+      "line": 14,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/archive/page.tsx",
+      "line": 17,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/auction/AuctionBoard.tsx",
+      "line": 14,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/auction/[id]/LotRoom.tsx",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/auction/[id]/page.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/auction/page.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/auction/submit/[itemId]/SubmitLot.tsx",
+      "line": 24,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/auction/submit/[itemId]/page.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/build/KitGameRun.tsx",
+      "line": 34,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/build/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/ClosetBoard.tsx",
+      "line": 25,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/ClosetMetrics.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/ClosetScreen.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/ItemEditor.tsx",
+      "line": 22,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/PrivacyPanel.tsx",
+      "line": 7,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/PrivacyPanel.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/[handle]/PublicCloset.tsx",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/[handle]/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/closet/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/market/c/[id]/ThreadScreen.tsx",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/market/c/[id]/page.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/market/item/[id]/ListingScreen.tsx",
+      "line": 15,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/market/item/[id]/page.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/market/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/kits/page.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/layout.tsx",
+      "line": 7,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/layout.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/life/LifeStage.tsx",
+      "line": 71,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/life/page.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/life/stage/useFreeTime.ts",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/life/stage/useLifeLedger.ts",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/lineup/BandPitch.tsx",
+      "line": 15,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/lineup/LineupBoard.tsx",
+      "line": 14,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/lineup/LockerRack.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/lineup/TeamSheet.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/lineup/TunnelGate.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/lineup/page.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/manifest.ts",
+      "line": 3,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/manifest.ts",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/memory/MemoryBoard.tsx",
+      "line": 27,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/memory/page.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/not-found.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/polls/BallotSheet.tsx",
+      "line": 39,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/polls/TerraceWing.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/polls/board/CountBoard.tsx",
+      "line": 28,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/polls/board/page.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/polls/page.tsx",
+      "line": 14,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/qa/collector/Harness.tsx",
+      "line": 21,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/qa/life-pitch/Preview.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/qa/life-pitch/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/qa/market/page.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/qa/stats/StatsBoard.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/qa/stats/page.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/robots.ts",
+      "line": 3,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/royal-rumble/LivedRumbleDoor.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/royal-rumble/RoyalRumbleLiveRun.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/royal-rumble/lived/LivedRumble.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/royal-rumble/lived/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/sitemap.ts",
+      "line": 3,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/stand/[code]/page.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/stand/page.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/AccountPlate.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/CardEditor.tsx",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/CardTabs.tsx",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/IssueBeat.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/KeptPanel.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/KeptPanel.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/MemberBook.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/OathPanel.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/SignUpPlate.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/Standing.tsx",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/StoryPanel.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/WorkerCard.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/actions.ts",
+      "line": 4,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/cardView.ts",
+      "line": 16,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/file/FileArea.tsx",
+      "line": 11,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/file/page.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/tik/page.tsx",
+      "line": 11,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/timeline/ThreadCoach.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/timeline/TimelineBoard.tsx",
+      "line": 21,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/timeline/order/page.tsx",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/timeline/page.tsx",
+      "line": 14,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/trivia/MatchReport.tsx",
+      "line": 22,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/trivia/QuickPick.tsx",
+      "line": 17,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/trivia/RunHud.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/trivia/StageBreak.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/trivia/TriviaRun.tsx",
+      "line": 25,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/trivia/[topic]/page.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/trivia/page.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/ussishkin/CardWall.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/ussishkin/Reconstruction.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/ussishkin/page.tsx",
+      "line": 18,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/xi/XIBuilder.tsx",
+      "line": 49,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "app/xi/page.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ads/AdSlot.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/archive/ArchiveApp.tsx",
+      "line": 18,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/archive/ArchiveBox.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/archive/ArchiveDrawer.tsx",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/archive/ArchiveSheets.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/archive/EntityCard.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/archive/GateRouter.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/archive/ThreadBoard.tsx",
+      "line": 27,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/archive/ThreadTabs.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/auction/Countdown.tsx",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/auction/LotPoster.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/auction/LotView.tsx",
+      "line": 26,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/auction/PaymentNote.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/auction/PhaseStamp.tsx",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/auction/ReasonDialog.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/auction/ReserveLine.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/auction/ShirtPicture.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/AwayDaysExperience.tsx",
+      "line": 23,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/AwayDaysFilters.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/AwayDaysMap.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/BeenToggle.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/MyJourney.tsx",
+      "line": 8,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/MyJourney.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/VenuePhoto.tsx",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/VenueSheet.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/away-days/VisitCard.tsx",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ballot/BallotSlip.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ballot/DebateStand.tsx",
+      "line": 15,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ballot/Manifesto.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ballot/QuestionStage.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ballot/SupporterId.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ballot/VoteReaction.tsx",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/blind-cow/BlindCowGame.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/blind-cow/ClueStack.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/blind-cow/CowMark.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/blind-cow/GuessDrawer.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/blind-cow/LiveRoom.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/blind-cow/ResultPanel.tsx",
+      "line": 16,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/blind-cow/share.ts",
+      "line": 3,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/club/PlayerCensus.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/ClosetDoor.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/CollectorTag.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/DonationCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/HaveWantBar.tsx",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/ItemFacts.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/MerchantOffers.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/NotificationList.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/RealShirtAsk.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/ShirtThumb.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/SignInPrompt.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/collector/UserPhoto.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/gates/ArenaEntrance.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/gates/AwayDaysStrip.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/gates/GateLogo.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/gates/GatePlate.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/hate/EnemyPlate.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/home/DailyCard.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/home/NowLayer.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/home/StandHooks.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/AchievementCard.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/AlbumSheet.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/AnchorCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/BookSheet.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/CastCard.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/ChapterCard.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/CityMap.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/CodaCard.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/CoinCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/ControlDeck.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/CraftCallback.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/DebugPanel.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/DialogueBox.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/DirectorCard.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/DocSheet.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/EndingCard.tsx",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/FilmCut.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/FilmSkipButton.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/FreeTimeChip.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/FreeTimePlanner.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/Gauges.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/HelpSheet.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/HistoricalCutscene.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/HoopsCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/LifeHud.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/LifeLine.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/LifeMap.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/LifeMenu.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/LifeShow.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/MapReveal.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/MatchReport.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/MechanicSheet.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/MemoryStamp.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/MerchLinks.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/NoteBoardSheet.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/OpeningDocumentary.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/OpeningFilm.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/PacketCard.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/Panorama.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/PenaltyCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/PitchCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/PitchScoreboard.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/RedBoxSheet.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/RetryCard.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/RitualSheet.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/RouteCard.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/SeasonTicket.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/ShareSheet.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/ShirtCard.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/ShopCard.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/StageFinale.tsx",
+      "line": 15,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/StayedWithMe.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/Teach.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/TimeAdvanceTransition.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/TotoCard.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/TunnelPlate.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/TunnelWalk.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/mechanics/LifeCraft.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/mechanics/LifePapers.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/mechanics/LifePoll.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/mechanics/shared.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/BagOverview.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/CurrentCarry.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/IdentityHero.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/InnerState.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/LifeBagSheet.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/LifeIdentitySheet.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/LifePathMap.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/LifeSheetShell.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/LifeStoryTimeline.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/MemoryDrawer.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/MoneyAndSubscriptions.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/PhysicalObject.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/RelationshipMap.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/life/profile/WardrobeRail.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/links/CrossLinks.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/links/ShareCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/ConnectPanel.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/CopyTicket.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/DealRail.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/DealSuccess.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/ListingView.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/MarketBoard.tsx",
+      "line": 17,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/MarketSignIn.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/MatchesPanel.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/OfferSlip.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/PhotoGallery.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/SafetySheet.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/ShirtBits.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/market/ThreadView.tsx",
+      "line": 25,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/mechanics/craft/CraftToolbar.tsx",
+      "line": 17,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/mechanics/craft/CreativeWorkbench.tsx",
+      "line": 25,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/memory/ArchiveCard.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/memory/FusionPlate.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/memory/SouvenirShelf.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/play/HUD.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/play/StageCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/play/answers/ChoiceList.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/play/answers/OrderPicker.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/play/answers/PairMatcher.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/play/answers/TrueFalse.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/play/answers/YearScale.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/press/GoalPitch.tsx",
+      "line": 26,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/profile/AreaSwitch.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/profile/LifePassport.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/profile/MeArea.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/profile/MemoryList.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/profile/MemoryMap.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/profile/PublicIdentity.tsx",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/replay/ReplayBuilder.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/replay/ReplayVerdict.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/result/UniversalExit.tsx",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/roster/PickRail.tsx",
+      "line": 11,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/roster/RosterFilters.tsx",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/roster/RosterSheet.tsx",
+      "line": 16,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/seo/StructuredData.tsx",
+      "line": 1,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/seo/StructuredData.tsx",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/share/ChallengeLanding.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/share/CompareCard.tsx",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/share/ShareRow.tsx",
+      "line": 14,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/share/StandPost.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/stage/SlideSheet.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/stage/StageHeader.tsx",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/stand/StandHome.tsx",
+      "line": 9,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/stand/StandHome.tsx",
+      "line": 11,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/stand/StandIndex.tsx",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/stand/WeekCard.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/AnswerRow.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/BuiltByDubel.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/HelpChip.tsx",
+      "line": 11,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/Intro.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/Logo.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/ReportLink.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/Screen.tsx",
+      "line": 13,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/Screen.tsx",
+      "line": 15,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/SourceNote.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/ui/TabBar.tsx",
+      "line": 7,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "components/voice/SongLine.tsx",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/archive/graph.ts",
+      "line": 4,
+      "specifier": "@/content/manual/press-columns.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/archive/graph.ts",
+      "line": 24,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/archive/graph.ts",
+      "line": 26,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/archive/wing.ts",
+      "line": 8,
+      "specifier": "@/content/manual/press-columns.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/archive/wing.ts",
+      "line": 37,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/away-days/media.ts",
+      "line": 1,
+      "specifier": "@/content/manual/away-media.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/away-days/media.ts",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/challenges/compare.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/challenges/create.ts",
+      "line": 1,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/challenges/invite.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/club/context.ts",
+      "line": 9,
+      "specifier": "@/content/clubs/hapoel-tel-aviv/club.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/club/wing.ts",
+      "line": 3,
+      "specifier": "@/content/manual/competitions.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/club/wing.ts",
+      "line": 4,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/clubs/adapters/hapoel-timeline.ts",
+      "line": 8,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "adapter-exception"
+    },
+    {
+      "file": "lib/clubs/adapters/hapoel.ts",
+      "line": 3,
+      "specifier": "@/content/clubs/hapoel-tel-aviv/club.json",
+      "category": "legacy-data",
+      "status": "adapter-exception"
+    },
+    {
+      "file": "lib/collector/auction.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/collector/cards.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/collector/labels.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/collector/market.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/collector/notify.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/daily/copy.ts",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/daily/resolve.ts",
+      "line": 8,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/daily/resolve.ts",
+      "line": 13,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/daily/types.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 3,
+      "specifier": "@/content/manual/clubs.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 4,
+      "specifier": "@/content/manual/fan-culture.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 5,
+      "specifier": "@/content/manual/calls.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 6,
+      "specifier": "@/content/manual/kit-designs.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 7,
+      "specifier": "@/content/manual/enemies.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 8,
+      "specifier": "@/content/manual/grievances.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 9,
+      "specifier": "@/content/manual/shirt-numbers.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 10,
+      "specifier": "@/content/manual/songs.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 11,
+      "specifier": "@/content/manual/sponsor-years.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 12,
+      "specifier": "@/content/manual/fact-conflicts.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 13,
+      "specifier": "@/content/manual/competitions.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 14,
+      "specifier": "@/content/manual/crest-versions.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 15,
+      "specifier": "@/content/manual/election-candidates.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 16,
+      "specifier": "@/content/manual/elections.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 17,
+      "specifier": "@/content/manual/euro-ties.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 18,
+      "specifier": "@/content/manual/goals.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 19,
+      "specifier": "@/content/manual/ussishkin.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 20,
+      "specifier": "@/content/manual/match-events.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 21,
+      "specifier": "@/content/manual/kit-supply.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 22,
+      "specifier": "@/content/manual/manufacturers.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 23,
+      "specifier": "@/content/manual/matches.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 24,
+      "specifier": "@/content/manual/basketball-matches.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 25,
+      "specifier": "@/content/manual/moments.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 26,
+      "specifier": "@/content/manual/people.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 27,
+      "specifier": "@/content/manual/players-roster.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 28,
+      "specifier": "@/content/manual/association-roles.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 29,
+      "specifier": "@/content/manual/association-events.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 30,
+      "specifier": "@/content/manual/membership-milestones.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 31,
+      "specifier": "@/content/manual/sponsor-deals.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 32,
+      "specifier": "@/content/manual/sponsors.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 33,
+      "specifier": "@/content/manual/trophies.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/archive.ts",
+      "line": 34,
+      "specifier": "@/content/manual/venues.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/blackfile.ts",
+      "line": 6,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/craft/score.ts",
+      "line": 26,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/crestRun.ts",
+      "line": 3,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/goal.ts",
+      "line": 3,
+      "specifier": "@/content/manual/goals.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/goal.ts",
+      "line": 4,
+      "specifier": "@/content/manual/squads.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/goal.ts",
+      "line": 6,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/hate.ts",
+      "line": 5,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/kitBuild.ts",
+      "line": 3,
+      "specifier": "@/content/manual/manufacturers.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/kitBuild.ts",
+      "line": 4,
+      "specifier": "@/content/manual/sponsors.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/kitBuild.ts",
+      "line": 5,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/kitBuild.ts",
+      "line": 13,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/kitChallenge.ts",
+      "line": 3,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/kitRun.ts",
+      "line": 3,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/kits.ts",
+      "line": 3,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/lineup.ts",
+      "line": 3,
+      "specifier": "@/content/manual/lineups.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/lineup.ts",
+      "line": 4,
+      "specifier": "@/content/manual/squads.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/lineup.ts",
+      "line": 11,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/member.ts",
+      "line": 19,
+      "specifier": "@/content/manual/venues.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/memory.ts",
+      "line": 4,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/europe.ts",
+      "line": 5,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/generated.ts",
+      "line": 14,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/history.ts",
+      "line": 6,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/kits.ts",
+      "line": 6,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/matches.ts",
+      "line": 9,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/numbers.ts",
+      "line": 8,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/people.ts",
+      "line": 5,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/players.ts",
+      "line": 3,
+      "specifier": "@/content/manual/player-facts-vikipoel.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/questions/templates/players.ts",
+      "line": 9,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/replay/mismatch.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/roster-search.ts",
+      "line": 40,
+      "specifier": "@/content/manual/player-name-parts.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/royal-rumble.ts",
+      "line": 9,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/thread.ts",
+      "line": 3,
+      "specifier": "@/content/manual/red-thread-levels.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/game/trivia.ts",
+      "line": 5,
+      "specifier": "./archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/gates.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/help.ts",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/archive.ts",
+      "line": 5,
+      "specifier": "@/content/manual/kit-photos.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/assembly.ts",
+      "line": 1,
+      "specifier": "@/content/manual/kit-assembly.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/kit-master-build.ts",
+      "line": 15,
+      "specifier": "../../content/manual/kit-assembly.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/kit-master-build.ts",
+      "line": 16,
+      "specifier": "../../content/manual/crest-versions.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/kit-master-build.ts",
+      "line": 17,
+      "specifier": "../../content/manual/kit-designs.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/kit-master-build.ts",
+      "line": 18,
+      "specifier": "../../content/manual/kit-photos.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/kit-master-build.ts",
+      "line": 19,
+      "specifier": "../../content/manual/sponsor-deals.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/kit-master-build.ts",
+      "line": 20,
+      "specifier": "../../content/manual/sponsors.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/kit-master-build.ts",
+      "line": 21,
+      "specifier": "../../content/manual/kit-supply.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/kit-master-build.ts",
+      "line": 22,
+      "specifier": "../../content/manual/sponsor-years.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/playerKit.ts",
+      "line": 3,
+      "specifier": "@/content/manual/squads.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/playerKit.ts",
+      "line": 4,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/kit/seasons.ts",
+      "line": 3,
+      "specifier": "../../content/manual/crest-versions.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/life/anchor-server.ts",
+      "line": 3,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/life/runtime/scenes/PrologueScene.ts",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/links/actions.ts",
+      "line": 12,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/master/seed.ts",
+      "line": 1,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/og/cards.tsx",
+      "line": 5,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/og/cards.tsx",
+      "line": 6,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/og/challenge.tsx",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/og/challenge.tsx",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/og/challenge.tsx",
+      "line": 5,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/og/goal-art.ts",
+      "line": 3,
+      "specifier": "@/content/manual/goals.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/og/meta.ts",
+      "line": 3,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/polls/ballot.ts",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/polls/board.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/polls/debates-server.ts",
+      "line": 3,
+      "specifier": "@/content/manual/trophies.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/polls/debates-server.ts",
+      "line": 7,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/polls/debates.ts",
+      "line": 1,
+      "specifier": "@/content/manual/terrace-debates.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/polls/debates.ts",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/polls/reasons.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/polls/supporter.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/profile/card.ts",
+      "line": 9,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/profile/memories.ts",
+      "line": 18,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/profile/memoryMap.ts",
+      "line": 21,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/profile/standing.ts",
+      "line": 10,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/results/context.ts",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/results/types.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/seo.ts",
+      "line": 3,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/seo.ts",
+      "line": 4,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/share/artefacts.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/share/copy.ts",
+      "line": 1,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/share/copy.ts",
+      "line": 2,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/share/story.ts",
+      "line": 1,
+      "specifier": "@/lib/brand",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/share/story.ts",
+      "line": 2,
+      "specifier": "@/lib/club/context",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/stand/contract.ts",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/stand/server.ts",
+      "line": 8,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/stand/story.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/stand/week.ts",
+      "line": 3,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/ussishkin/hall.ts",
+      "line": 3,
+      "specifier": "@/content/manual/ussishkin.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/ussishkin/hall.ts",
+      "line": 4,
+      "specifier": "@/lib/game/archive",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/voice/messages.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/voice/select.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/voice/songs.ts",
+      "line": 1,
+      "specifier": "@/content/manual/songs.json",
+      "category": "legacy-data",
+      "status": "remaining-migration"
+    },
+    {
+      "file": "lib/voice/types.ts",
+      "line": 1,
+      "specifier": "@/lib/i18n",
+      "category": "legacy-identity-or-copy",
+      "status": "remaining-migration"
+    }
+  ]
+}

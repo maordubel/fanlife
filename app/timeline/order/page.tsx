@@ -1,3 +1,6 @@
+import {headers} from 'next/headers'
+import {redirect} from 'next/navigation'
+import {clubFromHost,DEFAULT_CLUB} from '@/lib/master/registry'
 import type { Metadata } from 'next'
 
 import { ThreadTabs } from '@/components/archive/ThreadTabs'
@@ -25,6 +28,8 @@ export default function TimelineOrderPage({
 }: {
   searchParams: { seed?: string; r?: string }
 }) {
+  const tenant=clubFromHost(headers().get('host'))
+  if(tenant&&tenant!==DEFAULT_CLUB)redirect(`/clubs/${tenant}/timeline`)
   const round = roundFrom(searchParams)
   const available = timelineAvailable()
   const deal = available ? dealTimelineRun(round.seed, round.cursor) : null
@@ -37,7 +42,7 @@ export default function TimelineOrderPage({
       {deal ? (
         <>
           <ThreadCoach />
-          <TimelineBoard anchor={deal.anchor} queue={deal.queue} seed={round.seed} cursor={round.cursor} />
+          <TimelineBoard key={`${round.seed}:${round.cursor}`} anchor={deal.anchor} queue={deal.queue} seed={round.seed} cursor={round.cursor} />
           <ReportLink />
         </>
       ) : (

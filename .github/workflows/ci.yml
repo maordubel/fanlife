@@ -76,3 +76,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Install browser for shared-club smoke test
+        run: npx playwright install --with-deps chromium
+
+      - name: Shared Timeline browser flow — three clubs and RTL
+        run: node scripts/master/core-browser-smoke.mjs

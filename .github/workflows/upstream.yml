@@ -1,7 +1,5 @@
 name: The Worker updates
 on:
-  schedule:
-    - cron: '17 */6 * * *'
   workflow_dispatch:
 permissions:
   contents: read
@@ -68,18 +66,9 @@ jobs:
           title: Integrate verified The Worker updates
           commit-message: Integrate verified The Worker updates
           body-path: /tmp/fan-life-update/report.md
-          draft: ${{ needs.candidate.outputs.manual == 'true' }}
+          draft: true
       - name: Run checks on the proposed branch
         if: steps.pr.outputs.pull-request-number != ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run ci.yml --ref automation/the-worker-update
-      - name: Enable automatic merge only with required checks
-        if: steps.pr.outputs.pull-request-number != '' && needs.candidate.outputs.manual != 'true' && vars.FAN_LIFE_AUTO_MERGE == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_URL: ${{ steps.pr.outputs.pull-request-url }}
-        run: |
-          branch=$(gh api "repos/$GITHUB_REPOSITORY" --jq .default_branch)
-          gh api "repos/$GITHUB_REPOSITORY/branches/$branch/protection/required_status_checks" --jq '.strict == true and ((.contexts + [.checks[]?.context]) | any(. == "doctor"))' | grep -qx true
-          gh pr merge "$PR_URL" --auto --squash
