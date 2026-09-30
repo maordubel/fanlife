@@ -1,7 +1,7 @@
 # ADR-fanlife-0005: Database: one Supabase project with club_id, club resolved on the server
 
 ## Status
-Proposed
+Accepted (owner, 30.9.2026: one project)
 
 > **עדכון 30.9:** בפריסה אחת, `club_id` נגזר מהכתובת (host) בצד השרת. פרויקט Supabase אחד נשאר ההמלצה.
 
