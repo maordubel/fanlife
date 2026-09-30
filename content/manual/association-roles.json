@@ -1,0 +1,91 @@
+{
+  "note": "Roles as contemporary reporting records them. The ordering of the 2008 election results and the audit-committee names could not be sourced and are absent.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Verified research pass, 31 Aug 2026",
+    "url": null
+  },
+  "records": [
+    {
+      "associationSlug": "הפועל-אוסישקין",
+      "personSlug": "מאור-הראל",
+      "personNameHe": "מאור הראל",
+      "roleHe": "מייסד",
+      "fromDate": "2007-01-01",
+      "confidence": 2,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "sourceTitle": "ynet, 14.10.2012 — \"הראשון שרשם את הקבוצה\""
+    },
+    {
+      "associationSlug": "הפועל-אוסישקין",
+      "personSlug": "מאור-הראל",
+      "personNameHe": "מאור הראל",
+      "roleHe": "חבר הנהלה",
+      "fromDate": "2007-01-01",
+      "toDate": "2012-10-17",
+      "endReasonHe": "התפטרות",
+      "replacedByNameHe": "ארז זייצ'יק",
+      "confidence": 2,
+      "sourceUrl": "https://www.ynet.co.il/articles/1,7340,L-4293753,00.html",
+      "sourceTitle": "ynet, 17.10.2012"
+    },
+    {
+      "associationSlug": "הפועל-אוסישקין",
+      "personSlug": "נועה-סקלי",
+      "personNameHe": "נועה סקלי",
+      "roleHe": "יו\"ר ראשונה",
+      "confidence": 1,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "sourceTitle": "ynet"
+    },
+    {
+      "associationSlug": "הפועל-אוסישקין",
+      "personSlug": "יונתן-לרנר",
+      "personNameHe": "יונתן לרנר",
+      "roleHe": "חבר הנהלה",
+      "confidence": 1,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "sourceTitle": "ynet"
+    },
+    {
+      "associationSlug": "הפועל-אוסישקין",
+      "personSlug": "רמי-כהן",
+      "personNameHe": "רמי כהן",
+      "roleHe": "חבר הנהלה",
+      "confidence": 1,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "sourceTitle": "ynet"
+    },
+    {
+      "associationSlug": "הפועל-אוסישקין",
+      "personSlug": "גבי-כץ",
+      "personNameHe": "גבי כץ",
+      "roleHe": "חבר הנהלה",
+      "confidence": 1,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "sourceTitle": "ynet"
+    },
+    {
+      "associationSlug": "הפועל-אוסישקין",
+      "personSlug": "אורי-שלף",
+      "personNameHe": "אורי שלף",
+      "roleHe": "מייסד, עורך דין העמותה ומאמן",
+      "fromDate": "2007-01-01",
+      "confidence": 2,
+      "sourceUrl": "https://sports.walla.co.il/item/2843036",
+      "sourceTitle": "Walla, 2.4.2015"
+    },
+    {
+      "associationSlug": "הפועל-אוסישקין",
+      "personSlug": "ארז-זייציק",
+      "personNameHe": "ארז זייצ'יק",
+      "roleHe": "חבר הנהלה",
+      "fromDate": "2013-02-02",
+      "votes": null,
+      "confidence": 1,
+      "sourceUrl": "https://www.ynet.co.il/article/4340044",
+      "sourceTitle": "ynet, 2.2.2013"
+    }
+  ]
+}

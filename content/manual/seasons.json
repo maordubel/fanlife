@@ -1,0 +1,14 @@
+{
+  "note": "Calendar scaffold. A season label is arithmetic, not a claim that the club competed that season. A source that names a bare year (pre-state cups) is rendered YYYY/YY by the canonicaliser — a labelling convention, documented, not a claim about the calendar.",
+  "confidence": 0,
+  "source": {
+    "kind": "manual",
+    "title": "Season calendar scaffold",
+    "url": null
+  },
+  "records": [],
+  "generate": {
+    "from": "1923/24",
+    "to": "2026/27"
+  }
+}

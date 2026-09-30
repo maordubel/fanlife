@@ -1,0 +1,80 @@
+{
+ "note": "The fan-ownership story as documented. Dates are marked confirmed only where a source gives the day. UPDATED 20.9.2026: the 25 June 2007 registration date, listed here since 31.8.2026 as unsourced, is now carried by the basketball club’s own official site (\"הסיפור שלנו\") in those words, and ONE’s 2012 retrospective independently places the registration in June 2007 and names Maor Harel. Two sources agree on the month; the club’s own site gives the day. The fifth game of 14 November 2007, the 2008 election vote counts, the separate 413/10/18 association vote and the 2015 founders’ ceremony are still unsourced and absent.",
+ "confidence": 2,
+ "source": {
+  "kind": "other",
+  "title": "Verified research pass, 31 Aug 2026",
+  "url": null
+ },
+ "records": [
+  {
+   "associationSlug": "הפועל-אוסישקין",
+   "kind": "founding",
+   "happenedOn": "2007-06-25",
+   "dateConfirmed": true,
+   "titleHe": "הקמת הפועל אוסישקין ורישומה לליגה ב'",
+   "bodyHe": "העמותה הוקמה ב-2007 בידי קבוצת אוהדים, אחרי הריסת היכל אוסישקין. מאור הראל היה הראשון לרשום את הקבוצה במשרד הליגה עם הקמת העמותה. האתר הרשמי של מועדון הכדורסל נוקב ביום: \"הקבוצה החדשה נרשמה למחוז דן של ליגה ב׳ ב-25 ביוני 2007, ועלתה לליגה א׳ כבר בעונתה\".",
+   "confidence": 2,
+   "sourceUrl": "https://basket.co.il/teams/9/data?id=1142",
+   "sourceTitle": "האתר הרשמי של מועדון הכדורסל · \"הסיפור שלנו\" (נקרא 20.9.2026) + ONE, 2012 (חודש) + ynet, 14.10.2012"
+  },
+  {
+   "associationSlug": "הפועל-אוסישקין",
+   "kind": "promotion",
+   "happenedOn": null,
+   "dateConfirmed": false,
+   "titleHe": "עונה ראשונה: 22 ניצחונות ללא הפסד ועלייה לליגה א'",
+   "bodyHe": "בעונת 2007/08 סיימה הקבוצה את ליגה ב' עם 22 ניצחונות ואפס הפסדים, זכתה בגביע איגוד הליגות ועלתה לליגה א'. המאמן היה אורי שלף, ממייסדי העמותה ועורך דינה.",
+   "confidence": 2,
+   "sourceUrl": "https://www.one.co.il/Article/136776.html",
+   "sourceTitle": "ONE + Walla"
+  },
+  {
+   "associationSlug": "הפועל-אוסישקין",
+   "kind": "promotion",
+   "happenedOn": null,
+   "dateConfirmed": false,
+   "titleHe": "עונה שנייה ללא הפסד ועלייה לליגה ארצית",
+   "bodyHe": "עונה שנייה ברציפות ללא הפסד בליגה — 44 ניצחונות ואפס הפסדים בשתי העונות הראשונות יחד — זכייה נוספת בגביע איגוד הליגות ועלייה לליגה ארצית.",
+   "confidence": 2,
+   "sourceUrl": "https://sports.walla.co.il/item/2843036",
+   "sourceTitle": "Walla, 2.4.2015 + ONE"
+  },
+  {
+   "associationSlug": "הפועל-אוסישקין",
+   "kind": "vote",
+   "happenedOn": "2010-07-23",
+   "dateConfirmed": true,
+   "titleHe": "ההצבעה על שם הקבוצה",
+   "bodyHe": "מתוך 439 חברי עמותה שהצביעו: 315 בעד \"הפועל תל אביב\" ו-124 בעד \"הפועל אוסישקין תל אביב\". השם שונה באותו ערב. העמותה עצמה נותרה רשומה בשם הפועל אוסישקין תל אביב.",
+   "votesFor": 315,
+   "votesAgainst": 124,
+   "turnout": 439,
+   "confidence": 2,
+   "sourceUrl": "https://sports.walla.co.il/item/1713821",
+   "sourceTitle": "Walla, 23.7.2010"
+  },
+  {
+   "associationSlug": "הפועל-אוסישקין",
+   "kind": "resignation",
+   "happenedOn": "2012-10-17",
+   "dateConfirmed": true,
+   "titleHe": "מאור הראל מתפטר מההנהלה",
+   "bodyHe": "אחרי כחמש וחצי שנים בהנהלה — מאז הקמת העמותה — הודיע מאור הראל על התפטרותו.",
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/1,7340,L-4293753,00.html",
+   "sourceTitle": "ynet, 17.10.2012"
+  },
+  {
+   "associationSlug": "הפועל-אוסישקין",
+   "kind": "election",
+   "happenedOn": "2013-02-02",
+   "dateConfirmed": true,
+   "titleHe": "ארז זייצ'יק נבחר למקום שהתפנה",
+   "bodyHe": "ארז זייצ'יק, שחקן לשעבר ומנהל השיווק של המועדון, נבחר ביותר מ-80% מהקולות למקום שהתפנה בהנהלה.",
+   "confidence": 1,
+   "sourceUrl": "https://www.ynet.co.il/article/4340044",
+   "sourceTitle": "ynet, 2.2.2013"
+  }
+ ]
+}

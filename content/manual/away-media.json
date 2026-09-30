@@ -1,0 +1,42 @@
+{
+ "note": "AWAY DAYS media ledger (spec §29, 25.9.2026): one row per photograph of a ground, never a URL inside a component. Every row names its source page (or the owner's upload), the author as credited, the licence, and the year it was TAKEN — the page prints 'צילום מ-<year>' beside it, so a modern photo is never passed off as the ground on the night Hapoel played there. Files are written only by scripts/away-days/ingest-media.mjs (1600×900 + 900×1200 WebP, yellow counted on the decode, per file). Only Wikimedia Commons files under CC BY / CC BY-SA / CC0 / PD, fetched from their file page, may be added as free-licence rows.",
+ "confidence": 2,
+ "source": "Wikimedia Commons file pages (per row) · the owner's own uploads (per row)",
+ "records": [
+  {
+   "id": "bloomfield-1980s",
+   "venueId": "bloomfield",
+   "kind": "stadium",
+   "assetUrl": "/away/bloomfield-1980s-wide.webp",
+   "assetUrlTall": "/away/bloomfield-1980s-tall.webp",
+   "sourceUrl": null,
+   "sourceTitle": "public/life/art/bloom80Goal.webp — אחד משלושת צילומי בלומפילד שנמסרו לפרויקט ב-23.9.2026",
+   "credit": "צלם לא ידוע · נמסר לפרויקט",
+   "license": "owner-upload",
+   "licenseUrl": null,
+   "capturedYear": 1980,
+   "capturedApprox": "decade",
+   "deYellowed": true,
+   "files": [
+    {
+     "path": "public/away/bloomfield-1980s-wide.webp",
+     "width": 1600,
+     "height": 900,
+     "bytes": 152110,
+     "sha256": "36a304c2da4e90496e388f5caae95a1b1a35871a375d7d6b69c920f109ad0d0e",
+     "sourceYellowPx": 0,
+     "yellowPx": 0
+    },
+    {
+     "path": "public/away/bloomfield-1980s-tall.webp",
+     "width": 900,
+     "height": 1200,
+     "bytes": 106894,
+     "sha256": "2b205ed8bf3ebe169b342b76b4dda23d705089618fe96441fff67e31f0962ead",
+     "sourceYellowPx": 0,
+     "yellowPx": 0
+    }
+   ]
+  }
+ ]
+}

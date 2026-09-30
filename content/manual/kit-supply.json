@@ -1,0 +1,155 @@
+{
+  "note": "Supply spells, from Football Kit Archive season entries. Seasons FKA does not cover (1981/82, 2003/04) are gaps, not claims. Nike appears in three separate spells — that is the fact the kit game is built on. Pre-1980 kits carry no branded maker in FKA; 'self-produced' is an inference and is deliberately absent.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Football Kit Archive — Hapoel Tel Aviv kit history",
+    "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits/"
+  },
+  "records": [
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "umbro",
+      "fromLabel": "1980/81",
+      "toLabel": "1980/81",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "adidas",
+      "fromLabel": "1982/83",
+      "toLabel": "1988/89",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "diadora",
+      "fromLabel": "1989/90",
+      "toLabel": "1991/92",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "puma",
+      "fromLabel": "1992/93",
+      "toLabel": "1992/93",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "diadora",
+      "fromLabel": "1993/94",
+      "toLabel": "1996/97",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "nike",
+      "fromLabel": "1997/98",
+      "toLabel": "1999/00",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "diadora",
+      "fromLabel": "2000/01",
+      "toLabel": "2002/03",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "kappa",
+      "fromLabel": "2004/05",
+      "toLabel": "2005/06",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "umbro",
+      "fromLabel": "2006/07",
+      "toLabel": "2010/11",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "kappa",
+      "fromLabel": "2011/12",
+      "toLabel": "2013/14",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "umbro",
+      "fromLabel": "2014/15",
+      "toLabel": "2014/15",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "puma",
+      "fromLabel": "2015/16",
+      "toLabel": "2015/16",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "nike",
+      "fromLabel": "2016/17",
+      "toLabel": "2016/17",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "macron",
+      "fromLabel": "2017/18",
+      "toLabel": "2021/22",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "adidas",
+      "fromLabel": "2022/23",
+      "toLabel": "2023/24",
+      "isCurrent": false,
+      "sport": "football",
+      "confidence": 2
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "manufacturerSlug": "nike",
+      "fromLabel": "2024/25",
+      "toLabel": null,
+      "isCurrent": true,
+      "sport": "football",
+      "confidence": 2
+    }
+  ]
+}

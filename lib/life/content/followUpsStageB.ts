@@ -1,0 +1,426 @@
+import type { FollowUp } from './followUps'
+
+/**
+ * 1993–2000 — a teenager, a soldier, a young man, and the same people on the same street.
+ *
+ * The handoffs of these years are logistics a neighbourhood shares: the bus from the corner
+ * at half past six, the minibus of Gate 5, the radio on Rafi's counter. Everybody on the
+ * street can know those. What stays private is the money in a pocket and what was said at
+ * a kitchen table — nobody here names either.
+ */
+
+const HALF_SIX = 18 * 60 + 30
+
+/** the five voices at Rafi's table in 1999, as the content spells them */
+const SEED_VOICE = { melamed: 'מלמד', michel: 'מישל', dudu: 'דודו', omer: 'עומר' } as const
+
+export const FOLLOW_UPS_STAGE_B: FollowUp[] = [
+  // ------------------------------------------------------ 1993 · the cup ----
+  {
+    id: '93-amit-money',
+    chapter: '1993-cup',
+    on: ['amit-1993'],
+    cls: 'HANDOFF',
+    step: 'money',
+    lines: [{ who: 'עמית', text: 'כסף לאוטובוס? אל תסתכל עליי. רפי תמיד צריך ידיים מאחורה.' }],
+  },
+  {
+    id: '93-amit-route',
+    chapter: '1993-cup',
+    on: ['amit-1993'],
+    cls: 'HANDOFF',
+    step: 'route',
+    lines: [{ who: 'עמית', text: 'אפי עם האוטובוס של מישל, אופיר עם הדרך שלו. תחליט, ואז תגיד לי עם מי — שאדע את מי לחפש.' }],
+  },
+  {
+    id: '93-efi-money',
+    chapter: '1993-cup',
+    on: ['efi-1993'],
+    cls: 'CHECK-IN',
+    step: 'money',
+    lines: [{ who: 'אפי', text: 'יש לך כסף לכרטיס, או שאתה בא להסתכל על האוטובוס? שש וחצי זה עוד מעט.' }],
+  },
+  {
+    id: '93-rafi-money',
+    chapter: '1993-cup',
+    on: ['rafi-1993'],
+    cls: 'HANDOFF',
+    step: 'money',
+    lines: [{ who: 'רפי מהקיוסק', text: 'זה מה שהיה לי לתת. אם חסר — יש לך אמא, ויש לך פה לשאול אותה.' }],
+  },
+  {
+    id: '93-efi-corner',
+    chapter: '1993-cup',
+    on: ['efi-1993'],
+    cls: 'HANDOFF',
+    step: 'corner',
+    when: { flag: 'route:efi' },
+    lines: [{ who: 'אפי', text: 'הפינה של אוסישקין. שש וחצי. אמרתי כבר שאני מחכה? אז לא אמרתי.' }],
+  },
+  {
+    id: '93-efi-clock',
+    chapter: '1993-cup',
+    on: ['efi-1993'],
+    cls: 'DEADLINE',
+    step: 'corner',
+    when: { all: [{ flag: 'route:efi' }, { afterMinute: HALF_SIX - 40 }, { beforeMinute: HALF_SIX }] },
+    lines: [{ who: 'אפי', text: 'מה אתה עושה פה? עוד מעט שש וחצי. מישל לא מחזיק את הנהג בשבילך.' }],
+  },
+  {
+    id: '93-efi-ofir',
+    chapter: '1993-cup',
+    on: ['efi-1993'],
+    cls: 'HANDOFF',
+    step: 'corner',
+    when: { flag: 'route:ofir' },
+    lines: [{ who: 'אפי', text: 'לך עם אופיר, בסדר. רק תגיד לו — השער הצדדי נסגר בשמונה.' }],
+  },
+  {
+    id: '93-ofir-corner',
+    chapter: '1993-cup',
+    on: ['ofir-1993'],
+    cls: 'HANDOFF',
+    step: 'corner',
+    when: { flag: 'route:ofir' },
+    lines: [{ who: 'אופיר', text: 'אמרתי לך — אוטובוס, כמו כולם. מהפינה של אוסישקין, לפני שש וחצי.' }],
+  },
+  {
+    id: '93-rachel-money',
+    chapter: '1993-cup',
+    on: ['rachel-1993'],
+    cls: 'CHECK-IN',
+    step: 'money',
+    lines: [{ who: 'רחל', text: 'חסר לך? אז תרוויח אותו. רפי צעק אתמול על הארגזים שלו חצי שעה.' }],
+  },
+  {
+    id: '93-rachel-route',
+    chapter: '1993-cup',
+    on: ['rachel-1993'],
+    cls: 'CHECK-IN',
+    step: 'route',
+    lines: [{ who: 'רחל', text: 'עם מי אתה נוסע בסוף? אני רוצה שם, לא "חברים".' }],
+  },
+  {
+    id: '93-rachel-corner',
+    chapter: '1993-cup',
+    on: ['rachel-1993'],
+    cls: 'DEADLINE',
+    step: 'corner',
+    lines: [{ who: 'רחל', text: 'אמרת שש וחצי. אתה עוד בבית. אני לא אומרת כלום, אני רק רואה שעון.' }],
+  },
+  {
+    id: '93-rafi-go',
+    chapter: '1993-cup',
+    on: ['rafi-1993'],
+    cls: 'HANDOFF',
+    step: ['route', 'corner'],
+    lines: [{ who: 'רפי מהקיוסק', text: 'יש לך כסף, יש לך ערב. מה אתה עוד עושה בקיוסק שלי?' }],
+  },
+  {
+    id: '93-michel-money',
+    chapter: '1993-cup',
+    on: ['michel-1993'],
+    cls: 'HANDOFF',
+    step: 'money',
+    lines: [{ who: 'מישל', text: 'שש וחצי מהפינה. אבל קודם כסף — הנהג לא מקבל הבטחות, וגם הקופה לא.' }],
+  },
+  {
+    id: '93-michel-corner',
+    chapter: '1993-cup',
+    on: ['michel-1993'],
+    cls: 'HANDOFF',
+    step: 'corner',
+    lines: [{ who: 'מישל', text: 'שש וחצי. הדלת של האוטובוס פתוחה — כשהנהג צופר, עולים.' }],
+  },
+
+  // --------------------------------------------------- 1993 · Galil series ----
+  {
+    id: 'gl-efi-g1',
+    chapter: '1993-galil',
+    on: ['efi-galil'],
+    cls: 'HANDOFF',
+    step: 'g1',
+    lines: [{ who: 'אפי', text: 'משחק ראשון, אצלנו. פנימה — מה אתה עומד על המדרכה.' }],
+  },
+  {
+    id: 'gl-efi-g3',
+    chapter: '1993-galil',
+    on: ['efi-galil'],
+    cls: 'HANDOFF',
+    step: 'g3',
+    lines: [{ who: 'אפי', text: 'הערב, באולם. אל תגיד לי שאתה לא בא. אין לי כוח לזה הערב.' }],
+  },
+  {
+    id: 'gl-efi-g4',
+    chapter: '1993-galil',
+    on: ['efi-galil'],
+    cls: 'DEADLINE',
+    step: 'g4',
+    when: { beforeMinute: 16 * 60 },
+    lines: [{ who: 'אפי', text: 'ארבע. לא ארבע ועשרה. מישל עומד עם הרשימה בפינה ולא מחכה לאף אחד.' }],
+  },
+  {
+    id: 'gl-efi-g4-late',
+    chapter: '1993-galil',
+    on: ['efi-galil'],
+    cls: 'HANDOFF',
+    step: 'g4',
+    lines: [{ who: 'אפי', text: 'צפונה יש יותר מדרך אחת. תשאל ברחוב — מישהו תמיד נוסע.' }],
+  },
+
+  // ------------------------------------------------------ 1995 · Sinai ----
+  {
+    id: '95-rafi-radio',
+    chapter: '1995-sinai',
+    on: ['rafi-sinai'],
+    cls: 'HANDOFF',
+    step: 'radio',
+    lines: [{ who: 'רפי מהקיוסק', text: 'הרדיו על הדלפק. שבע. תעמוד בצד ותקשיב, ואל תשען לי על המקרר.' }],
+  },
+  {
+    id: '95-rafi-argue',
+    chapter: '1995-sinai',
+    on: ['rafi-sinai'],
+    cls: 'HANDOFF',
+    step: 'argue',
+    lines: [{ who: 'רפי מהקיוסק', text: 'אתה רוצה להגיד משהו? תגיד לחבר\'ה. אני רק מוכר גרעינים.' }],
+  },
+  {
+    id: '95-rafi-facts',
+    chapter: '1995-sinai',
+    on: ['rafi-sinai'],
+    cls: 'HANDOFF',
+    step: 'facts',
+    lines: [{ who: 'רפי מהקיוסק', text: 'עובדות? בעיתון. ומה שלא בעיתון — אצל פרדי, בחליפה.' }],
+  },
+  {
+    id: '95-rafi-poster',
+    chapter: '1995-sinai',
+    on: ['rafi-sinai'],
+    cls: 'HANDOFF',
+    step: 'poster',
+    lines: [{ who: 'רפי מהקיוסק', text: 'ראית מה תלו לי על הקיר בחוץ? אף אחד לא שאל אותי. לך תסתכל.' }],
+  },
+  {
+    id: '95-ofir-radio',
+    chapter: '1995-sinai',
+    on: ['ofir-sinai'],
+    cls: 'HANDOFF',
+    step: 'radio',
+    lines: [{ who: 'אופיר', text: 'שבע, הרדיו של רפי. תשב, קח גרעינים. הערב יהיה ארוך.' }],
+  },
+  {
+    id: '95-ofir-argue',
+    chapter: '1995-sinai',
+    on: ['ofir-sinai'],
+    cls: 'CHECK-IN',
+    step: 'argue',
+    lines: [{ who: 'אופיר', text: 'נו? מה אתה חושב? כולם פה כבר אמרו. רק אתה שותק.' }],
+  },
+  {
+    id: '95-ofir-poster',
+    chapter: '1995-sinai',
+    on: ['ofir-sinai'],
+    cls: 'HANDOFF',
+    step: 'poster',
+    lines: [{ who: 'אופיר', text: 'ראית מה תלו על הקיר? לך תסתכל. ואז תגיד לי שזה לא נכון.' }],
+  },
+  {
+    id: '95-amit-facts',
+    chapter: '1995-sinai',
+    on: ['amit-sinai'],
+    cls: 'HANDOFF',
+    step: 'facts',
+    lines: [{ who: 'עמית', text: 'העיתון על הדלפק. תקרא. אחר כך תשאל את פרדי מה לא כתוב בו.' }],
+  },
+
+  // ------------------------------------------------------- 1996 · the army ----
+  {
+    id: '96-kobi-pack',
+    chapter: '1996-army',
+    on: ['kobi-army'],
+    cls: 'HANDOFF',
+    step: 'pack',
+    lines: [{ who: 'קובי', text: 'תארוז. אמא שמה הכול על השולחן — את השאר אתה בוחר. ולך להגיד לה שלום כמו בן אדם.' }],
+  },
+  {
+    id: '96-rachel-pack',
+    chapter: '1996-army',
+    on: ['rachel-army'],
+    cls: 'HANDOFF',
+    step: 'pack',
+    lines: [{ who: 'רחל', text: 'התיק ליד החדר שלך. תכניס מה שאתה רוצה, ותסגור אותו בעצמך.' }],
+  },
+  {
+    id: '96-rachel-pack-again',
+    chapter: '1996-army',
+    on: ['rachel-army'],
+    cls: 'RECOVERY',
+    step: 'pack',
+    lines: [
+      { who: 'רחל', text: 'פוגי. התיק. אני לא סוגרת אותו בשבילך.' },
+      { who: null, text: 'היא אומרת את זה מהמטבח, ולא מסתובבת. אם היא מסתובבת, היא תסגור אותו.' },
+    ],
+  },
+  {
+    id: '96-ofir-pack',
+    chapter: '1996-army',
+    on: ['ofir-army'],
+    cls: 'CLOSED',
+    lines: [{ who: 'אופיר', text: 'מחר, אה. תחזור עם סיפורים. ואל תחזור עם תספורת של אבא שלך.' }],
+  },
+  {
+    id: '96-barry-gate',
+    chapter: '1996-army',
+    on: ['barry-gate7'],
+    cls: 'HANDOFF',
+    step: 'gate',
+    lines: [{ who: 'בארי', text: 'תעמוד איפה שתעמוד. רק תעמוד — אל תסתובב בין השערים כל הערב.' }],
+  },
+
+  // ------------------------------------------------------ 1998 · shoelaces ----
+  {
+    id: '98-ofir-dad',
+    chapter: '1998-laces',
+    on: ['ofir-laces'],
+    cls: 'CHECK-IN',
+    step: ['dad', 'ground'],
+    when: { notFlag: 'l1:after' },
+    lines: [{ who: 'אופיר', text: 'דיברת עם אבא שלך? הוא הולך עם הרדיו מהבוקר. בלומפילד לפני חמש — אנחנו הולכים.' }],
+  },
+  {
+    id: '98-rachel-dad',
+    chapter: '1998-laces',
+    on: ['rachel-laces'],
+    cls: 'HANDOFF',
+    step: ['dad', 'ground'],
+    when: { notFlag: 'l1:after' },
+    lines: [{ who: 'רחל', text: 'הוא בסלון. אל תשאל אותו כלום. תגיד לו משהו — זה לא אותו דבר.' }],
+  },
+  {
+    id: '98-soko-ground',
+    chapter: '1998-laces',
+    on: ['soko-laces'],
+    cls: 'HANDOFF',
+    step: ['dad', 'ground'],
+    when: { notFlag: 'l1:after' },
+    lines: [{ who: 'סוקו', text: 'בלומפילד לפני חמש. אני ליד מי שיש לו טרנזיסטור. אתה יודע איפה למצוא אותי.' }],
+  },
+  /** after it: nothing to hand off, and nobody tries (owner, 25.9.2026 — the aftermath stays quiet) */
+  {
+    id: '98-ofir-quiet',
+    chapter: '1998-laces',
+    on: ['ofir-laces'],
+    cls: 'CLOSED',
+    when: { flag: 'l1:after' },
+    lines: [{ who: null, text: 'אופיר לא עונה. הוא מגלגל את הצעיף על היד, ומגלגל שוב.' }],
+  },
+  {
+    id: '98-rachel-quiet',
+    chapter: '1998-laces',
+    on: ['rachel-laces'],
+    cls: 'CLOSED',
+    when: { flag: 'l1:after' },
+    lines: [{ who: null, text: 'אמא לא שואלת. הצלחת עוד מולך.' }],
+  },
+  {
+    id: '98-soko-quiet',
+    chapter: '1998-laces',
+    on: ['soko-laces'],
+    cls: 'CLOSED',
+    when: { flag: 'l1:after' },
+    lines: [{ who: 'סוקו', text: 'רשימה ראשונה. אני עוד כותב.' }],
+  },
+
+  // -------------------------------------------------- 1999 · the seed list ----
+  {
+    id: '99-asaf-hall',
+    chapter: '1999-basket',
+    on: ['seed-voice-asaf'],
+    cls: 'HANDOFF',
+    step: 'hall',
+    lines: [{ who: 'אסף', text: 'קודם האולם. שחור צריך ידיים שם, לא פה. תשאל אותו למה — ותחזור עם תשובה.' }],
+  },
+  {
+    id: '99-michel-hall',
+    chapter: '1999-basket',
+    on: ['seed-voice-michel'],
+    cls: 'HANDOFF',
+    step: 'hall',
+    lines: [{ who: 'מישל', text: 'האולם, פוגי. אחר כך נדבר על מיניבוסים.' }],
+  },
+  {
+    id: '99-asaf-list',
+    chapter: '1999-basket',
+    on: ['seed-voice-asaf'],
+    cls: 'RECOVERY',
+    step: 'kiosk',
+    when: { flag: 'seed:page' },
+    lines: [{ who: 'אסף', text: 'תסתכל על הדף. מי עוד לא כתוב? לך אליו. וכשכולם שם — על הארגז, ולסגור.' }],
+  },
+  {
+    id: '99-asaf-list-first',
+    chapter: '1999-basket',
+    on: ['seed-voice-asaf'],
+    cls: 'HANDOFF',
+    step: 'kiosk',
+    when: { flag: 'seed:page' },
+    lines: [{ who: 'אסף', text: 'כבר כתבת אותי. יש פה עוד ארבעה ששותקים — תשאל אותם.' }],
+  },
+
+  ...(['melamed', 'michel', 'dudu', 'omer'] as const).map(
+    (voice): FollowUp => ({
+      id: `99-${voice}-list`,
+      chapter: '1999-basket',
+      on: [`seed-voice-${voice}`],
+      cls: 'HANDOFF',
+      step: 'kiosk',
+      when: { flag: 'seed:page' },
+      lines: [{ who: SEED_VOICE[voice], text: 'כבר כתבת אותי. מי עוד חסר לך בדף? ואז — על הארגז, ולסגור.' }],
+    }),
+  ),
+
+  // -------------------------------------------------- 1999 · Ramat Gan cup ----
+  {
+    id: '99c-liron-route',
+    chapter: '1999-cup',
+    on: ['liron-cup99'],
+    cls: 'HANDOFF',
+    step: 'route',
+    lines: [{ who: 'לירון', text: 'הפעם אין לי מקום בשבילך. יש אוטובוסים, יש את אבא שלך, יש את המיניבוס של מישל.' }],
+  },
+  {
+    id: '99c-michel-route',
+    chapter: '1999-cup',
+    on: ['michel-cup99'],
+    cls: 'HANDOFF',
+    step: 'route',
+    lines: [{ who: 'מישל', text: 'אצלי מלא בשלנו. שער 7 נוסע באוטובוס של בארי — תשאל את אבא שלך.' }],
+  },
+
+  // ------------------------------------------------------- 2000 · the title ----
+  {
+    id: '00-michel-route',
+    chapter: '2000-title',
+    on: ['michel-title'],
+    cls: 'HANDOFF',
+    step: 'route',
+    lines: [{ who: 'מישל', text: 'המיניבוס מלא. יש אוטובוס, יש רגליים. שכונת התקווה לא בורחת.' }],
+  },
+  {
+    id: '00-efi-route',
+    chapter: '2000-title',
+    on: ['efi-title'],
+    cls: 'HANDOFF',
+    step: 'route',
+    lines: [{ who: 'אפי', text: 'מישל עם המיניבוס, אבא שלך עם הרגליים. אתה לא צריך אותי בשביל להגיע.' }],
+  },
+  {
+    id: '00-kobi-final',
+    chapter: '2000-double',
+    on: ['kobi-double'],
+    cls: 'HANDOFF',
+    step: 'final',
+    lines: [{ who: 'קובי', text: 'רביעי. רמת גן. אתה יודע את הדרך — אתה נוסע לשם מגיל שש.' }],
+  },
+]

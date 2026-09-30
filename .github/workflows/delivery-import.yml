@@ -1,0 +1,33 @@
+name: Import verified FAN LIFE release
+on:
+  push:
+    branches: ['delivery/fanlife-2026-09-30']
+    paths: ['.delivery/**', '.github/workflows/delivery-import.yml']
+permissions:
+  contents: write
+jobs:
+  import:
+    if: github.repository == 'maordubel/fanlife'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch pinned original assets and source
+        env:
+          UPSTREAM_SHA: 0adf5464d00122a1dc310367f46e99e8dd9d74f2
+        run: |
+          git init "$RUNNER_TEMP/the-worker"
+          git -C "$RUNNER_TEMP/the-worker" fetch --no-tags --depth=1 https://github.com/maordubel/The-Worker.git "$UPSTREAM_SHA"
+          mkdir -p "$RUNNER_TEMP/upstream-files"
+          git -C "$RUNNER_TEMP/the-worker" archive "$UPSTREAM_SHA" | tar -x -C "$RUNNER_TEMP/upstream-files"
+      - name: Assemble and verify every release file
+        env:
+          FAN_LIFE_UPSTREAM_DIR: ${{ runner.temp }}/upstream-files
+        run: python3 .delivery/import.py
+      - name: Upload complete verified source to delivery branch
+        run: |
+          git config user.name 'FAN LIFE Delivery'
+          git config user.email 'delivery@users.noreply.github.com'
+          git add --all
+          git commit -m 'Import complete verified FAN LIFE source and assets'
+          git push origin HEAD:refs/heads/delivery/fanlife-2026-09-30

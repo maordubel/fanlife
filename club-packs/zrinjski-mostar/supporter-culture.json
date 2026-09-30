@@ -1,0 +1,56 @@
+{
+  "basketballMeaningful": false,
+  "basketballDecision": "DISABLED — no basketball route in this evaluation build.",
+  "coreSections": [
+    {
+      "name": "Central / lower west for first 1994 home match",
+      "activeFrom": 1994,
+      "activeTo": 1994,
+      "sourceIds": [
+        "src-fans"
+      ]
+    },
+    {
+      "name": "Standing Tribune / east",
+      "activeFrom": 1994,
+      "activeTo": 2023,
+      "sourceIds": [
+        "src-fans",
+        "src-stadium"
+      ]
+    }
+  ],
+  "organisedSupport": {
+    "ideaBegins": 1993,
+    "unregisteredFollowingFrom": 1994,
+    "formalFoundation": 1998,
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  "fanAward": {
+    "name": "Filip Šunjić – Pipa Trophy",
+    "namedFrom": 2004,
+    "earlierName": "Zrinjevac",
+    "startedFrom": "2000/01 season",
+    "sourceIds": [
+      "src-fans",
+      "src-pipa"
+    ]
+  },
+  "communityBuilderReplacement": {
+    "replacesGenericRoute": "basketball-founder",
+    "localRoute": "supporter-community-builder",
+    "realAnchor": "Volim te bola supporter futsal tournament",
+    "since": 2008,
+    "purpose": "supporter gathering + humanitarian fundraising",
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  "rules": [
+    "No criminal or violent task is used as progression.",
+    "No ethnic/political hostility is scored.",
+    "Supporter-leader tasks focus on safe documented work: logistics, banners, fundraising, archive, transport, community."
+  ]
+}

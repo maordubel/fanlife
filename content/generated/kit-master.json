@@ -1,0 +1,5966 @@
+{
+ "schemaVersion": 1,
+ "counts": {
+  "kits": 35,
+  "playable": 24,
+  "exactPhoto": 12,
+  "candidateOnly": 20,
+  "noPhoto": 3,
+  "conflicts": 4,
+  "photoComplete": 28
+ },
+ "kits": [
+  {
+   "id": "kit-2025-26-away",
+   "legacyKey": "2025/26|away",
+   "seasonLabel": "2025/26",
+   "variant": "away",
+   "decade": 2020,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "NIKE",
+      "markId": "strike",
+      "supplySpell": "nike 2024/25–"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "IBI",
+      "slug": "איביאיי"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2025-26-away.webp",
+     "src": "/kits/fka-2025-26-away.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2025-away.webp",
+      "src": "/kits/vp-2025-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2025
+     },
+     {
+      "file": "vp-2025-away-b.webp",
+      "src": "/kits/vp-2025-away-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2025
+     },
+     {
+      "file": "vp-2025-away-match-worn.webp",
+      "src": "/kits/vp-2025-away-match-worn.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2025
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של NIKE חלקה, צווארון עגול באדום וספונסר IBI."
+  },
+  {
+   "id": "kit-2025-26-home",
+   "legacyKey": "2025/26|home",
+   "seasonLabel": "2025/26",
+   "variant": "home",
+   "decade": 2020,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "NIKE",
+      "markId": "strike",
+      "supplySpell": "nike 2024/25–"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "IBI",
+      "slug": "איביאיי"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2025-26-home.webp",
+     "src": "/kits/fka-2025-26-home.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2025-home.webp",
+      "src": "/kits/vp-2025-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2025
+     },
+     {
+      "file": "vp-2025-home-b.webp",
+      "src": "/kits/vp-2025-home-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2025
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של NIKE חלקה, צווארון עגול בשמנת וספונסר IBI."
+  },
+  {
+   "id": "kit-2022-23-away",
+   "legacyKey": "2022/23|away",
+   "seasonLabel": "2022/23",
+   "variant": "away",
+   "decade": 2020,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "ink"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "ink"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": "era-boundary: מאה שנה (2022–2023) — אין לו איור בארכיון"
+    },
+    "maker": {
+     "value": {
+      "name": "adidas",
+      "markId": "adio",
+      "supplySpell": "adidas 2022/23–2023/24"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "הכשרה",
+      "slug": "הכשרה"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2022-23-away.webp",
+     "src": "/kits/fka-2022-23-away.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2022-away.webp",
+      "src": "/kits/vp-2022-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2022
+     },
+     {
+      "file": "vp-2022-away-2.webp",
+      "src": "/kits/vp-2022-away-2.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2022
+     },
+     {
+      "file": "vp-2023-away.webp",
+      "src": "/kits/vp-2023-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2023
+     },
+     {
+      "file": "vp-2023-away-2.webp",
+      "src": "/kits/vp-2023-away-2.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2023
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שחורה של adidas חלקה, צווארון עגול וספונסר הכשרה."
+  },
+  {
+   "id": "kit-2022-23-home",
+   "legacyKey": "2022/23|home",
+   "seasonLabel": "2022/23",
+   "variant": "home",
+   "decade": 2020,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": "era-boundary: מאה שנה (2022–2023) — אין לו איור בארכיון"
+    },
+    "maker": {
+     "value": {
+      "name": "adidas",
+      "markId": "adio",
+      "supplySpell": "adidas 2022/23–2023/24"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "הכשרה",
+      "slug": "הכשרה"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2022-23-home.webp",
+     "src": "/kits/fka-2022-23-home.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2022-home.webp",
+      "src": "/kits/vp-2022-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2022
+     },
+     {
+      "file": "vp-2023-home.webp",
+      "src": "/kits/vp-2023-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2023
+     },
+     {
+      "file": "vp-2023-home-trom.webp",
+      "src": "/kits/vp-2023-home-trom.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2023
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של adidas חלקה, צווארון עגול בשמנת וספונסר הכשרה."
+  },
+  {
+   "id": "kit-2020-21-away",
+   "legacyKey": "2020/21|away",
+   "seasonLabel": "2020/21",
+   "variant": "away",
+   "decade": 2020,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "concrete",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "shoulder-panel",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "MACRON",
+      "markId": "micron",
+      "supplySpell": "macron 2017/18–2021/22"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "הכשרה",
+      "slug": "הכשרה"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2020-21-away.webp",
+     "src": "/kits/fka-2020-21-away.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2020-away.webp",
+      "src": "/kits/vp-2020-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2020
+     },
+     {
+      "file": "vp-2021-away.webp",
+      "src": "/kits/vp-2021-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2021
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": false,
+     "missing": [
+      "pattern:shoulder-panel"
+     ]
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של MACRON עם כתפיים באפור בטון, צווארון עגול באדום וספונסר הכשרה."
+  },
+  {
+   "id": "kit-2020-21-home",
+   "legacyKey": "2020/21|home",
+   "seasonLabel": "2020/21",
+   "variant": "home",
+   "decade": 2020,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "paper",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "shoulder-panel",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "MACRON",
+      "markId": "micron",
+      "supplySpell": "macron 2017/18–2021/22"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "הכשרה",
+      "slug": "הכשרה"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2020-21-home.webp",
+     "src": "/kits/fka-2020-21-home.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": false,
+     "missing": [
+      "pattern:shoulder-panel"
+     ]
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של MACRON עם כתפיים בלבן, צווארון עגול בשמנת וספונסר הכשרה."
+  },
+  {
+   "id": "kit-2019-20-home",
+   "legacyKey": "2019/20|home",
+   "seasonLabel": "2019/20",
+   "variant": "home",
+   "decade": 2010,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "MACRON",
+      "markId": "micron",
+      "supplySpell": "macron 2017/18–2021/22"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "ARKIA",
+      "slug": "ארקיע"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [
+      {
+       "name": "הכשרה",
+       "slug": "הכשרה"
+      }
+     ],
+     "conflict": "kit row says ARKIA; sponsor-deals also covers this season with הכשרה 2019/20–2023/24 (נכנסה כבר בפלייאוף העליון של 2019/20, לפני ההודעה הרשמית ביוני 2020)"
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2019-home.webp",
+      "src": "/kits/vp-2019-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2019
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של MACRON חלקה, צווארון עגול וספונסר ARKIA."
+  },
+  {
+   "id": "kit-2018-19-away",
+   "legacyKey": "2018/19|away",
+   "seasonLabel": "2018/19",
+   "variant": "away",
+   "decade": 2010,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "hoop-tonal",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "ink"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "ink"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "MACRON",
+      "markId": "micron",
+      "supplySpell": "macron 2017/18–2021/22"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "ARKIA",
+      "slug": "ארקיע"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2018-19-away.webp",
+     "src": "/kits/fka-2018-19-away.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2018-away.webp",
+      "src": "/kits/vp-2018-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2018
+     },
+     {
+      "file": "vp-2019-away.webp",
+      "src": "/kits/vp-2019-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2019
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שחורה של MACRON עם חישוקים טונליים, צווארון עגול וספונסר ARKIA."
+  },
+  {
+   "id": "kit-2018-19-home",
+   "legacyKey": "2018/19|home",
+   "seasonLabel": "2018/19",
+   "variant": "home",
+   "decade": 2010,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "deep",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "hoop-tonal",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "MACRON",
+      "markId": "micron",
+      "supplySpell": "macron 2017/18–2021/22"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "ARKIA",
+      "slug": "ארקיע"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2018-19-home.webp",
+     "src": "/kits/fka-2018-19-home.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2018-home.webp",
+      "src": "/kits/vp-2018-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2018
+     },
+     {
+      "file": "vp-2018-home-b.webp",
+      "src": "/kits/vp-2018-home-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2018
+     },
+     {
+      "file": "vp-2019-home.webp",
+      "src": "/kits/vp-2019-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2019
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של MACRON עם חישוקים טונליים, צווארון עגול וספונסר ARKIA."
+  },
+  {
+   "id": "kit-2018-19-third",
+   "legacyKey": "2018/19|third",
+   "seasonLabel": "2018/19",
+   "variant": "third",
+   "decade": 2010,
+   "bodyTemplateId": "modern-athletic",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "stripe-wide",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "MACRON",
+      "markId": "micron",
+      "supplySpell": "macron 2017/18–2021/22"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "ARKIA",
+      "slug": "ארקיע"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2018-19-third.webp",
+     "src": "/kits/fka-2018-19-third.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "modern-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של MACRON עם פסים אנכיים רחבים באדום, צווארון עגול באדום וספונסר ARKIA."
+  },
+  {
+   "id": "kit-2016-17-home",
+   "legacyKey": "2016/17|home",
+   "seasonLabel": "2016/17",
+   "variant": "home",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "v-neck",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "NIKE",
+      "markId": "strike",
+      "supplySpell": "nike 2016/17–2016/17"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "FUJICOM",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2016-17-home.webp",
+     "src": "/kits/fka-2016-17-home.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2016-home.webp",
+      "src": "/kits/vp-2016-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2016
+     },
+     {
+      "file": "vp-2016-home-2.webp",
+      "src": "/kits/vp-2016-home-2.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2016
+     },
+     {
+      "file": "vp-2017-home.webp",
+      "src": "/kits/vp-2017-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2017
+     },
+     {
+      "file": "vp-2017-home-b.webp",
+      "src": "/kits/vp-2017-home-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2017
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2016",
+      "mainSponsorHe": "Fujitsu"
+     },
+     {
+      "yearRaw": "2017",
+      "mainSponsorHe": "נייקי"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של NIKE חלקה, צווארון וי בשמנת וספונסר FUJICOM."
+  },
+  {
+   "id": "kit-2016-17-third",
+   "legacyKey": "2016/17|third",
+   "seasonLabel": "2016/17",
+   "variant": "third",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "stripe-wide",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "NIKE",
+      "markId": "strike",
+      "supplySpell": "nike 2016/17–2016/17"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "FUJICOM",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2016",
+      "mainSponsorHe": "Fujitsu"
+     },
+     {
+      "yearRaw": "2017",
+      "mainSponsorHe": "נייקי"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של NIKE עם פסים אנכיים רחבים בשמנת, צווארון עגול בשמנת וספונסר FUJICOM."
+  },
+  {
+   "id": "kit-2015-16-home",
+   "legacyKey": "2015/16|home",
+   "seasonLabel": "2015/16",
+   "variant": "home",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "v-neck",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "raglan",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [
+      {
+       "key": "circle-1927",
+       "yearOnBadge": 1927
+      }
+     ],
+     "conflict": "era-boundary: circle-1923 (2015–2022) and circle-1927 (2008–2015) both cover this season"
+    },
+    "maker": {
+     "value": {
+      "name": "PUMA",
+      "markId": "blackdog",
+      "supplySpell": "puma 2015/16–2015/16"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "FUJITSU",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2016-home.webp",
+      "src": "/kits/vp-2016-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2016
+     },
+     {
+      "file": "vp-2016-home-2.webp",
+      "src": "/kits/vp-2016-home-2.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2016
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2015",
+      "mainSponsorHe": "Fujicom"
+     },
+     {
+      "yearRaw": "2016",
+      "mainSponsorHe": "Fujitsu"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של PUMA חלקה, צווארון וי בשמנת, שרוולי רגלן בשמנת וספונסר FUJITSU."
+  },
+  {
+   "id": "kit-2014-15-away",
+   "legacyKey": "2014/15|away",
+   "seasonLabel": "2014/15",
+   "variant": "away",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "ink"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1927",
+      "yearOnBadge": 1927
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "umbro",
+      "markId": "rombus",
+      "supplySpell": "umbro 2014/15–2014/15"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "FUJICOM",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2014-away.webp",
+      "src": "/kits/vp-2014-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2014
+     },
+     {
+      "file": "vp-2015-away.webp",
+      "src": "/kits/vp-2015-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2015
+     },
+     {
+      "file": "vp-2015-away-2.webp",
+      "src": "/kits/vp-2015-away-2.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2015
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2014",
+      "mainSponsorHe": "Fujicom"
+     },
+     {
+      "yearRaw": "2015",
+      "mainSponsorHe": "Fujicom"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שחורה של umbro חלקה, צווארון עגול בשמנת וספונסר FUJICOM."
+  },
+  {
+   "id": "kit-2014-15-home",
+   "legacyKey": "2014/15|home",
+   "seasonLabel": "2014/15",
+   "variant": "home",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "sash",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1927",
+      "yearOnBadge": 1927
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "umbro",
+      "markId": "rombus",
+      "supplySpell": "umbro 2014/15–2014/15"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "FUJICOM",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2014-15-home.webp",
+     "src": "/kits/fka-2014-15-home.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2014-home.webp",
+      "src": "/kits/vp-2014-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2014
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2014",
+      "mainSponsorHe": "Fujicom"
+     },
+     {
+      "yearRaw": "2015",
+      "mainSponsorHe": "Fujicom"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של umbro עם אלכסון רחב (סאש) בשמנת, צווארון עגול בשמנת וספונסר FUJICOM."
+  },
+  {
+   "id": "kit-2012-13-away",
+   "legacyKey": "2012/13|away",
+   "seasonLabel": "2012/13",
+   "variant": "away",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1927",
+      "yearOnBadge": 1927
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "KAPPA",
+      "markId": "twin",
+      "supplySpell": "kappa 2011/12–2013/14"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": null,
+     "source": null,
+     "confidence": 0,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2012-away-europe.webp",
+      "src": "/kits/vp-2012-away-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2012
+     },
+     {
+      "file": "vp-2012-away-europe-b.webp",
+      "src": "/kits/vp-2012-away-europe-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2012
+     },
+     {
+      "file": "vp-2013-away-europe.webp",
+      "src": "/kits/vp-2013-away-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2013
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2012",
+      "mainSponsorHe": "בוני התיכון"
+     },
+     {
+      "yearRaw": "2013",
+      "mainSponsorHe": "בוני התיכון"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "sponsor-unknown"
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של KAPPA חלקה, צווארון עגול."
+  },
+  {
+   "id": "kit-2012-13-home",
+   "legacyKey": "2012/13|home",
+   "seasonLabel": "2012/13",
+   "variant": "home",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "hoop-tonal",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1927",
+      "yearOnBadge": 1927
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "KAPPA",
+      "markId": "twin",
+      "supplySpell": "kappa 2011/12–2013/14"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": null,
+     "source": null,
+     "confidence": 0,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2012-home.webp",
+      "src": "/kits/vp-2012-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2012
+     },
+     {
+      "file": "vp-2013-home-europe-2.webp",
+      "src": "/kits/vp-2013-home-europe-2.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2013
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2012",
+      "mainSponsorHe": "בוני התיכון"
+     },
+     {
+      "yearRaw": "2013",
+      "mainSponsorHe": "בוני התיכון"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "sponsor-unknown"
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של KAPPA עם חישוקים טונליים, צווארון עגול בשמנת."
+  },
+  {
+   "id": "kit-2011-12-away",
+   "legacyKey": "2011/12|away",
+   "seasonLabel": "2011/12",
+   "variant": "away",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1927",
+      "yearOnBadge": 1927
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "KAPPA",
+      "markId": "twin",
+      "supplySpell": "kappa 2011/12–2013/14"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "במחיר",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2011-away-europe.webp",
+      "src": "/kits/vp-2011-away-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2011
+     },
+     {
+      "file": "vp-2012-away-europe.webp",
+      "src": "/kits/vp-2012-away-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2012
+     },
+     {
+      "file": "vp-2012-away-europe-b.webp",
+      "src": "/kits/vp-2012-away-europe-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2012
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2011",
+      "mainSponsorHe": "אקזיט גרופ"
+     },
+     {
+      "yearRaw": "2012",
+      "mainSponsorHe": "בוני התיכון"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של KAPPA חלקה, צווארון עגול באדום וספונסר במחיר."
+  },
+  {
+   "id": "kit-2011-12-home",
+   "legacyKey": "2011/12|home",
+   "seasonLabel": "2011/12",
+   "variant": "home",
+   "decade": 2010,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "shoulder-panel",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "raglan",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1927",
+      "yearOnBadge": 1927
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "KAPPA",
+      "markId": "twin",
+      "supplySpell": "kappa 2011/12–2013/14"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "במחיר",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2011-home.webp",
+      "src": "/kits/vp-2011-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2011
+     },
+     {
+      "file": "vp-2011-home-europe.webp",
+      "src": "/kits/vp-2011-home-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2011
+     },
+     {
+      "file": "vp-2012-home.webp",
+      "src": "/kits/vp-2012-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2012
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2011",
+      "mainSponsorHe": "אקזיט גרופ"
+     },
+     {
+      "yearRaw": "2012",
+      "mainSponsorHe": "בוני התיכון"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": false,
+     "missing": [
+      "pattern:shoulder-panel"
+     ]
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של KAPPA עם כתפיים בשמנת, צווארון עגול בשמנת, שרוולי רגלן בשמנת וספונסר במחיר."
+  },
+  {
+   "id": "kit-2009-10-home",
+   "legacyKey": "2009/10|home",
+   "seasonLabel": "2009/10",
+   "variant": "home",
+   "decade": 2000,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "side-panel",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "cuff",
+      "ink": "red"
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1923",
+      "yearOnBadge": 1923
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [
+      {
+       "key": "circle-1927",
+       "yearOnBadge": 1927
+      }
+     ],
+     "conflict": "kit-assembly says circle-1923; crest-versions says circle-1927 for this season"
+    },
+    "maker": {
+     "value": {
+      "name": "umbro",
+      "markId": "rombus",
+      "supplySpell": "umbro 2006/07–2010/11"
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "SUBARU",
+      "slug": "סובארו"
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2010-home.webp",
+      "src": "/kits/vp-2010-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2010
+     },
+     {
+      "file": "vp-2010-home-europe.webp",
+      "src": "/kits/vp-2010-home-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2010
+     }
+    ],
+    "assemblyMaster": "/kits/assembly/2009-10/home-master-a.svg",
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2009",
+      "mainSponsorHe": "סובארו"
+     },
+     {
+      "yearRaw": "2010",
+      "mainSponsorHe": "סובארו"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-assembly",
+   "sourceTitle": "מסירת חולצות 2009/10 של צוות The Worker, 20.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של umbro עם פאנלים צדדיים בשמנת, צווארון עגול בשמנת, חפתים באדום וספונסר SUBARU."
+  },
+  {
+   "id": "kit-2008-09-away",
+   "legacyKey": "2008/09|away",
+   "seasonLabel": "2008/09",
+   "variant": "away",
+   "decade": 2000,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "ink"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1927",
+      "yearOnBadge": 1927
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": "era-boundary: עדכון צורה (2007–2008) — אין לו איור בארכיון"
+    },
+    "maker": {
+     "value": {
+      "name": "umbro",
+      "markId": "rombus",
+      "supplySpell": "umbro 2006/07–2010/11"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "UMBRO",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2008-away.webp",
+      "src": "/kits/vp-2008-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2008
+     },
+     {
+      "file": "vp-2009-away.webp",
+      "src": "/kits/vp-2009-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2009
+     },
+     {
+      "file": "vp-2009-away-europe.webp",
+      "src": "/kits/vp-2009-away-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2009
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2008",
+      "mainSponsorHe": "אפריקה ישראל"
+     },
+     {
+      "yearRaw": "2009",
+      "mainSponsorHe": "סובארו"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של umbro חלקה, צווארון עגול בשחור וספונסר UMBRO."
+  },
+  {
+   "id": "kit-2008-09-home",
+   "legacyKey": "2008/09|home",
+   "seasonLabel": "2008/09",
+   "variant": "home",
+   "decade": 2000,
+   "bodyTemplateId": "2010s-fitted",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "circle-1927",
+      "yearOnBadge": 1927
+     },
+     "source": "crest-versions",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": "era-boundary: עדכון צורה (2007–2008) — אין לו איור בארכיון"
+    },
+    "maker": {
+     "value": {
+      "name": "umbro",
+      "markId": "rombus",
+      "supplySpell": "umbro 2006/07–2010/11"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "UMBRO",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2008-home.webp",
+      "src": "/kits/vp-2008-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2008
+     },
+     {
+      "file": "vp-2008-home-2.webp",
+      "src": "/kits/vp-2008-home-2.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2008
+     },
+     {
+      "file": "vp-2008-home-europe.webp",
+      "src": "/kits/vp-2008-home-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2008
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2008",
+      "mainSponsorHe": "אפריקה ישראל"
+     },
+     {
+      "yearRaw": "2009",
+      "mainSponsorHe": "סובארו"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "2010s-fitted",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "unresolved-period-variant"
+   },
+   "review": {
+    "conflictType": "period-variant",
+    "resolved": false,
+    "noteHe": "ויקיפועל מתעדת שינוי אמצע עונה: אמברו, ומסיבוב 8 סובארו. רשומת \"עונה + בית\" אחת לא יכולה לייצג את שתיהן.",
+    "sources": [
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8"
+    ],
+    "reviewedOn": "2026-09-29"
+   },
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של umbro חלקה, צווארון עגול בשמנת וספונסר UMBRO."
+  },
+  {
+   "id": "kit-2006-07-away",
+   "legacyKey": "2006/07|away",
+   "seasonLabel": "2006/07",
+   "variant": "away",
+   "decade": 2000,
+   "bodyTemplateId": "early-2000s-athletic",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "shoulder-panel",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "keter-ball",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "umbro",
+      "markId": "rombus",
+      "supplySpell": "umbro 2006/07–2010/11"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "SUBARU",
+      "slug": "סובארו"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2006-away.webp",
+      "src": "/kits/vp-2006-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2006
+     },
+     {
+      "file": "vp-2007-away-europe.webp",
+      "src": "/kits/vp-2007-away-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2007
+     },
+     {
+      "file": "vp-2007-away-europe-b.webp",
+      "src": "/kits/vp-2007-away-europe-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2007
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2006",
+      "mainSponsorHe": "סובארו"
+     },
+     {
+      "yearRaw": "2007",
+      "mainSponsorHe": "סובארו"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "early-2000s-athletic",
+     "available": true,
+     "complete": false,
+     "missing": [
+      "pattern:shoulder-panel"
+     ]
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של umbro עם כתפיים באדום, צווארון עגול באדום וספונסר SUBARU."
+  },
+  {
+   "id": "kit-2006-07-home",
+   "legacyKey": "2006/07|home",
+   "seasonLabel": "2006/07",
+   "variant": "home",
+   "decade": 2000,
+   "bodyTemplateId": "early-2000s-athletic",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "shoulder-panel",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "cuff",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "keter-ball",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "umbro",
+      "markId": "rombus",
+      "supplySpell": "umbro 2006/07–2010/11"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "SUBARU",
+      "slug": "סובארו"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": {
+     "file": "fka-2006-07-home.webp",
+     "src": "/kits/fka-2006-07-home.webp",
+     "source": "fka",
+     "sourceTitle": "footballkitarchive.com — Hapoel Tel Aviv Kit History",
+     "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+     "creditHe": null,
+     "yearRaw": null
+    },
+    "candidatePhotos": [
+     {
+      "file": "vp-2006-home.webp",
+      "src": "/kits/vp-2006-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2006
+     },
+     {
+      "file": "vp-2007-home-europe.webp",
+      "src": "/kits/vp-2007-home-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2007
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2006",
+      "mainSponsorHe": "סובארו"
+     },
+     {
+      "yearRaw": "2007",
+      "mainSponsorHe": "סובארו"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "early-2000s-athletic",
+     "available": true,
+     "complete": false,
+     "missing": [
+      "pattern:shoulder-panel"
+     ]
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של umbro עם כתפיים בשמנת, צווארון עגול בשמנת, חפתים בשמנת וספונסר SUBARU."
+  },
+  {
+   "id": "kit-2005-06-home",
+   "legacyKey": "2005/06|home",
+   "seasonLabel": "2005/06",
+   "variant": "home",
+   "decade": 2000,
+   "bodyTemplateId": "early-2000s-athletic",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "keter-ball",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "KAPPA",
+      "markId": "twin",
+      "supplySpell": "kappa 2004/05–2005/06"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "SUBARU",
+      "slug": "סובארו"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2006-home.webp",
+      "src": "/kits/vp-2006-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2006
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2005",
+      "mainSponsorHe": "שלמה Sixt"
+     },
+     {
+      "yearRaw": "2006",
+      "mainSponsorHe": "סובארו"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "early-2000s-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "unresolved-period-variant"
+   },
+   "review": {
+    "conflictType": "period-variant",
+    "resolved": false,
+    "noteHe": "הרשומה: SUBARU לעונה שלמה. ויקיפועל: 2005 שלמה סיקסט, 2006 סובארו — עונה נמתחת על שתי שנות לוח. דרושה עדות לפי משחק/שלב.",
+    "sources": [
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-2005-06-home-kit-24612/"
+    ],
+    "reviewedOn": "2026-09-29"
+   },
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של KAPPA חלקה, צווארון עגול בשמנת וספונסר SUBARU."
+  },
+  {
+   "id": "kit-2002-03-away",
+   "legacyKey": "2002/03|away",
+   "seasonLabel": "2002/03",
+   "variant": "away",
+   "decade": 2000,
+   "bodyTemplateId": "early-2000s-athletic",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "shoulder-panel",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "keter-ball",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "diadora",
+      "markId": "dia",
+      "supplySpell": "diadora 2000/01–2002/03"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "KETER",
+      "slug": "כתר"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2002-away.webp",
+      "src": "/kits/vp-2002-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2002
+     },
+     {
+      "file": "vp-2002-away-europe.webp",
+      "src": "/kits/vp-2002-away-europe.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2002
+     },
+     {
+      "file": "vp-2003-away.webp",
+      "src": "/kits/vp-2003-away.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2003
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2002",
+      "mainSponsorHe": "כתר"
+     },
+     {
+      "yearRaw": "2003",
+      "mainSponsorHe": "כתר"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "early-2000s-athletic",
+     "available": true,
+     "complete": false,
+     "missing": [
+      "pattern:shoulder-panel"
+     ]
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של diadora עם כתפיים באדום, צווארון עגול באדום וספונסר KETER."
+  },
+  {
+   "id": "kit-2002-03-home",
+   "legacyKey": "2002/03|home",
+   "seasonLabel": "2002/03",
+   "variant": "home",
+   "decade": 2000,
+   "bodyTemplateId": "early-2000s-athletic",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "chest-band",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "keter-ball",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "diadora",
+      "markId": "dia",
+      "supplySpell": "diadora 2000/01–2002/03"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "KETER",
+      "slug": "כתר"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-2002-home.webp",
+      "src": "/kits/vp-2002-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2002
+     },
+     {
+      "file": "vp-2003-home.webp",
+      "src": "/kits/vp-2003-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2003
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "2002",
+      "mainSponsorHe": "כתר"
+     },
+     {
+      "yearRaw": "2003",
+      "mainSponsorHe": "כתר"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "early-2000s-athletic",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "unresolved-source-dispute"
+   },
+   "review": {
+    "conflictType": "source-dispute",
+    "resolved": false,
+    "noteHe": "הרשומה: פס חזה לבן. תמונות 2002/03 מראות גוף אדום עם כתפיים, צדדים ושרוולים לבנים — לא פס חזה. הספונסר כתר סביר.",
+    "sources": [
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-2002-03-home-kit-24614/"
+    ],
+    "reviewedOn": "2026-09-29"
+   },
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של diadora עם פס רחב בשמנת על החזה, צווארון עגול בשמנת וספונסר KETER."
+  },
+  {
+   "id": "kit-1999-00-home",
+   "legacyKey": "1999/00|home",
+   "seasonLabel": "1999/00",
+   "variant": "home",
+   "decade": 1990,
+   "bodyTemplateId": "retro-90s-boxy",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "twin-stripe",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "v-neck",
+      "ink": "ink"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "cuff",
+      "ink": "ink"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "keter-color",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "NIKE",
+      "markId": "strike",
+      "supplySpell": "nike 1997/98–1999/00"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "CAL",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-1999-home.webp",
+      "src": "/kits/vp-1999-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1999
+     },
+     {
+      "file": "vp-1999-home-b.webp",
+      "src": "/kits/vp-1999-home-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1999
+     },
+     {
+      "file": "vp-1999-home-fan.webp",
+      "src": "/kits/vp-1999-home-fan.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1999
+     },
+     {
+      "file": "vp-2000-home.webp",
+      "src": "/kits/vp-2000-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 2000
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "1999",
+      "mainSponsorHe": "כתר"
+     },
+     {
+      "yearRaw": "2000",
+      "mainSponsorHe": "כתר"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "retro-90s-boxy",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "unresolved-source-dispute"
+   },
+   "review": {
+    "conflictType": "source-dispute",
+    "resolved": false,
+    "noteHe": "הרשומה: CAL. ויקיפועל מתעדת כתר כספונסר ראשי 1998–2000 (אופיס דיפו משני), ותמונות מראות כתר. הפסים השחורים נתמכים ויזואלית.",
+    "sources": [
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-1999-00-home-kit-24618/"
+    ],
+    "reviewedOn": "2026-09-29"
+   },
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של NIKE עם שני פסים אנכיים בשחור בחזית, צווארון וי בשחור, חפתים בשחור וספונסר CAL."
+  },
+  {
+   "id": "kit-1997-98-home",
+   "legacyKey": "1997/98|home",
+   "seasonLabel": "1997/98",
+   "variant": "home",
+   "decade": 1990,
+   "bodyTemplateId": "retro-90s-boxy",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "ink",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "stripe-wide",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "polo",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "keter-color",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [
+      {
+       "key": "ball-waves",
+       "yearOnBadge": null
+      }
+     ],
+     "conflict": "era-boundary: keter-color (1997–2000) and ball-waves (1992–1997) both cover this season"
+    },
+    "maker": {
+     "value": {
+      "name": "NIKE",
+      "markId": "strike",
+      "supplySpell": "nike 1997/98–1999/00"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "KING",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-1997-home.webp",
+      "src": "/kits/vp-1997-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1997
+     },
+     {
+      "file": "vp-1998-home.webp",
+      "src": "/kits/vp-1998-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1998
+     },
+     {
+      "file": "vp-1998-home-b.webp",
+      "src": "/kits/vp-1998-home-b.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1998
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": [
+     {
+      "yearRaw": "1997",
+      "mainSponsorHe": "שיכון עובדים"
+     },
+     {
+      "yearRaw": "1998",
+      "mainSponsorHe": "כתר"
+     }
+    ]
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "retro-90s-boxy",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "unresolved-unknown"
+   },
+   "review": {
+    "conflictType": "unknown",
+    "resolved": false,
+    "noteHe": "חשד חוסם: הרשומה מתארת פסים אדום־שחור, נייקי, KING. הפניות חיצוניות ותמונות מראות חולצה אדומה בעיקר עם כתפיים/שרוולים לבנים וכתר בחזית. ייתכן חולצה/עונה/פרשנות שגויה.",
+    "sources": [
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-1997-98-home-kit-24621/"
+    ],
+    "reviewedOn": "2026-09-29"
+   },
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של NIKE עם פסים אנכיים רחבים בשחור, צווארון פולו וספונסר KING."
+  },
+  {
+   "id": "kit-1993-94-home",
+   "legacyKey": "1993/94|home",
+   "seasonLabel": "1993/94",
+   "variant": "home",
+   "decade": 1990,
+   "bodyTemplateId": "retro-90s-boxy",
+   "fields": {
+    "base": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "quarters",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "polo",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "ball-waves",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "diadora",
+      "markId": "dia",
+      "supplySpell": "diadora 1993/94–1996/97"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "מ.שקוביץ",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-1993-home.webp",
+      "src": "/kits/vp-1993-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1993
+     },
+     {
+      "file": "vp-1994-home.webp",
+      "src": "/kits/vp-1994-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1994
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "retro-90s-boxy",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה שמנת של diadora ברבעים באדום, צווארון פולו וספונסר מ.שקוביץ."
+  },
+  {
+   "id": "kit-1992-93-home",
+   "legacyKey": "1992/93|home",
+   "seasonLabel": "1992/93",
+   "variant": "home",
+   "decade": 1990,
+   "bodyTemplateId": "retro-90s-boxy",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "sash",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "polo",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "ball-waves",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "PUMA",
+      "markId": "blackdog",
+      "supplySpell": "puma 1992/93–1992/93"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "SUZUKI",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-1992-home.webp",
+      "src": "/kits/vp-1992-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1992
+     },
+     {
+      "file": "vp-1992-home-2.webp",
+      "src": "/kits/vp-1992-home-2.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1992
+     },
+     {
+      "file": "vp-1993-home.webp",
+      "src": "/kits/vp-1993-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1993
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "retro-90s-boxy",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "unresolved-source-dispute"
+   },
+   "review": {
+    "conflictType": "source-dispute",
+    "resolved": false,
+    "noteHe": "SUZUKI מופיע בארכיון החולצות (Football Kit Archive), אך ויקיפועל מתארת אותו כספונסר משני/גב ולא בהכרח חזית. חסר מיקום הספונסר.",
+    "sources": [
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/"
+    ],
+    "reviewedOn": "2026-09-29"
+   },
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "Football Kit Archive — 1992/93 home kit",
+   "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/",
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של PUMA עם אלכסון רחב (סאש) בשמנת, צווארון פולו בשמנת וספונסר SUZUKI."
+  },
+  {
+   "id": "kit-1988-89-home",
+   "legacyKey": "1988/89|home",
+   "seasonLabel": "1988/89",
+   "variant": "home",
+   "decade": 1980,
+   "bodyTemplateId": "retro-80s-long",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "pinstripe",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "worker-hapoel",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "adidas",
+      "markId": "classic",
+      "supplySpell": "adidas 1982/83–1988/89"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "VISA",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-1988-home.webp",
+      "src": "/kits/vp-1988-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1988
+     }
+    ],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "retro-80s-long",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "unresolved-source-dispute"
+   },
+   "review": {
+    "conflictType": "source-dispute",
+    "resolved": false,
+    "noteHe": "הרשומה: VISA. ויקיפועל מתעדת Club Hotels ב-1988/89. סתירה ישירה — כנראה הזזת ספונסר בין עונות.",
+    "sources": [
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8"
+    ],
+    "reviewedOn": "2026-09-29"
+   },
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של adidas עם פסי שיער בשמנת, צווארון עגול בשמנת וספונסר VISA."
+  },
+  {
+   "id": "kit-1985-86-home",
+   "legacyKey": "1985/86|home",
+   "seasonLabel": "1985/86",
+   "variant": "home",
+   "decade": 1980,
+   "bodyTemplateId": "retro-80s-long",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "polo",
+      "ink": "cream"
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "shoulder-stripe",
+      "ink": "red"
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "worker-hapoel",
+      "yearOnBadge": null
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "adidas",
+      "markId": "classic",
+      "supplySpell": "adidas 1982/83–1988/89"
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "VISA",
+      "slug": null
+     },
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-assembly",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [
+     {
+      "file": "vp-1986-home.webp",
+      "src": "/kits/vp-1986-home.webp",
+      "source": "vikipoel",
+      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "creditHe": "התצלומים באדיבות ישי צבי",
+      "yearRaw": 1986
+     }
+    ],
+    "assemblyMaster": "/kits/assembly/1985-86/home-master.svg",
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "retro-80s-long",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "granted"
+    }
+   },
+   "gate4": {
+    "playable": true,
+    "reason": null
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-assembly",
+   "sourceTitle": "מסירת חולצת 1985/86 של צוות The Worker, 20.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של adidas חלקה, צווארון פולו בשמנת, פסי כתף באדום וספונסר VISA."
+  },
+  {
+   "id": "kit-1984-85-home",
+   "legacyKey": "1984/85|home",
+   "seasonLabel": "1984/85",
+   "variant": "home",
+   "decade": 1980,
+   "bodyTemplateId": "retro-80s-long",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "diagonal",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "v-neck",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "plain",
+      "ink": "red"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "worker-hapoel",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": {
+      "name": "adidas",
+      "markId": "classic",
+      "supplySpell": "adidas 1982/83–1988/89"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "גלאב הוטל טבריה",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "retro-80s-long",
+     "available": true,
+     "complete": true,
+     "missing": []
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "granted",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "unresolved-source-dispute"
+   },
+   "review": {
+    "conflictType": "source-dispute",
+    "resolved": false,
+    "noteHe": "הרשומה: גלאב הוטל טבריה. ויקיפועל (היסטוריית ספונסרים) מציבה באמצע שנות ה-80 את ויזה, ואת Club Hotels מאוחר יותר. דרושה תמונת חולצה מדויקת לפני שהשאלה נשאלת.",
+    "sources": [
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8"
+    ],
+    "reviewedOn": "2026-09-29"
+   },
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "maker",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה של adidas עם אלכסונים דקים בשמנת, צווארון וי בשמנת וספונסר גלאב הוטל טבריה."
+  },
+  {
+   "id": "kit-1978-79-home",
+   "legacyKey": "1978/79|home",
+   "seasonLabel": "1978/79",
+   "variant": "home",
+   "decade": 1970,
+   "bodyTemplateId": "retro-70s-boxy",
+   "fields": {
+    "base": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "secondary": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "pattern": {
+     "value": "solid",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "collar": {
+     "value": {
+      "id": "crew",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "sleeves": {
+     "value": {
+      "id": "raglan",
+      "ink": "cream"
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "crest": {
+     "value": {
+      "key": "worker-hapoel",
+      "yearOnBadge": null
+     },
+     "source": "crest-versions",
+     "confidence": 2,
+     "alternates": [],
+     "conflict": null
+    },
+    "maker": {
+     "value": null,
+     "source": null,
+     "confidence": 0,
+     "alternates": [],
+     "conflict": null
+    },
+    "sponsor": {
+     "value": {
+      "name": "אתא",
+      "slug": null
+     },
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "shorts": {
+     "value": "cream",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    },
+    "socks": {
+     "value": "red",
+     "source": "kit-designs",
+     "confidence": 3,
+     "alternates": [],
+     "conflict": null
+    }
+   },
+   "evidence": {
+    "exactPhoto": null,
+    "candidatePhotos": [],
+    "assemblyMaster": null,
+    "sponsorYearRows": []
+   },
+   "render": {
+    "vector": true,
+    "photo": {
+     "template": "retro-70s-boxy",
+     "available": false,
+     "complete": false,
+     "missing": [
+      "template"
+     ]
+    },
+    "marks": {
+     "crest": "print",
+     "maker": "alt-set",
+     "sponsor": "lettered"
+    }
+   },
+   "gate4": {
+    "playable": false,
+    "reason": "maker-unknown"
+   },
+   "review": null,
+   "gate5": {
+    "dnaFields": [
+     "base",
+     "secondary",
+     "pattern",
+     "collar",
+     "sleeves",
+     "crest",
+     "sponsor",
+     "shorts",
+     "socks"
+    ]
+   },
+   "source": "kit-designs",
+   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
+   "sourceUrl": null,
+   "confidence": 3,
+   "noteHe": "חולצה אדומה חלקה, צווארון עגול בשמנת, שרוולי רגלן בשמנת וספונסר אתא."
+  }
+ ]
+}

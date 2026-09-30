@@ -1,0 +1,164 @@
+{
+ "promenade-dusk": {
+  "seconds": 5.0,
+  "bytes": 133028,
+  "era": "80s",
+  "whatHe": "הטיילת מול הים, בין מנחת לחוף",
+  "whereHe": "הנסיעה דרומה→צפונה: בלומפילד → אוסישקין",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 2e-06
+ },
+ "promenade-walk": {
+  "seconds": 5.0,
+  "bytes": 178120,
+  "era": "80s",
+  "whatHe": "אנשים על הטיילת, אור אחרון",
+  "whereHe": "מעבר בין הרחוב לתחנה",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 6e-06
+ },
+ "sea-wall": {
+  "seconds": 4.5,
+  "bytes": 194518,
+  "era": "80s",
+  "whatHe": "גבר הולך על שובר הגלים, גל נשבר",
+  "whereHe": "לפני ערב גדול: הליכה אל משהו",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 4e-06
+ },
+ "palms-evening": {
+  "seconds": 4.5,
+  "bytes": 232358,
+  "era": "80s",
+  "whatHe": "דקלים וכיסאות על הטיילת, ערב",
+  "whereHe": "סוף פרק שנגמר טוב",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 0.000145
+ },
+ "street-morning": {
+  "seconds": 4.5,
+  "bytes": 382202,
+  "era": "80s",
+  "whatHe": "רחוב בבוקר, תריסים ומרפסות",
+  "whereHe": "יציאה מהבית",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 1.9e-05
+ },
+ "market": {
+  "seconds": 4.5,
+  "bytes": 277678,
+  "era": "80s",
+  "whatHe": "דוכנים, ארגזים, אנשים קונים",
+  "whereHe": "הדרך לקיוסק, ולכל שליחות",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 0.000243
+ },
+ "alley-shade": {
+  "seconds": 4.0,
+  "bytes": 196033,
+  "era": "80s",
+  "whatHe": "סמטה צרה, כביסה, צל",
+  "whereHe": "הסמטה והמגרש",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 0.000159
+ },
+ "night-lights": {
+  "seconds": 4.5,
+  "bytes": 297288,
+  "era": "80s",
+  "whatHe": "ערב, אורות, אנשים ברחוב",
+  "whereHe": "ערב משחק — היציאה מהבית אל האור",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 0.00019
+ },
+ "plaza-evening": {
+  "seconds": 4.0,
+  "bytes": 295445,
+  "era": "80s",
+  "whatHe": "כיכר מוארת בערב, אנשים עוברים",
+  "whereHe": "מעבר בין שנים",
+  "source": "Meir Mendelssohn, Tel Aviv 1989",
+  "yellowLeft": 0.0
+ },
+ "sea-road-95": {
+  "seconds": 4.5,
+  "bytes": 240925,
+  "era": "90s",
+  "whatHe": "הכביש מול הים, מכוניות חונות",
+  "whereHe": "העיר, בדרך החוצה",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 0.0
+ },
+ "promenade-95": {
+  "seconds": 5.0,
+  "bytes": 328700,
+  "era": "90s",
+  "whatHe": "הטיילת והקו של העיר מאחור",
+  "whereHe": "הנסיעה דרומה→צפונה",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 0.0
+ },
+ "promenade-rail-95": {
+  "seconds": 4.5,
+  "bytes": 451888,
+  "era": "90s",
+  "whatHe": "מעקה הטיילת, הרחוב ממול",
+  "whereHe": "לתוך העיר",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 5e-06
+ },
+ "boardwalk-95": {
+  "seconds": 4.5,
+  "bytes": 437966,
+  "era": "90s",
+  "whatHe": "אנשים הולכים על הטיילת",
+  "whereHe": "הדרך חזרה",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 6e-06
+ },
+ "jaffa-95": {
+  "seconds": 5.0,
+  "bytes": 245101,
+  "era": "90s",
+  "whatHe": "החוף, ויפו באופק",
+  "whereHe": "סוף פרק",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 0.0
+ },
+ "breakwater-95": {
+  "seconds": 4.5,
+  "bytes": 314307,
+  "era": "90s",
+  "whatHe": "הים מעבר למעקה, שובר הגלים",
+  "whereHe": "לפני ערב גדול",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 0.0
+ },
+ "street-cars-95": {
+  "seconds": 4.5,
+  "bytes": 395506,
+  "era": "90s",
+  "whatHe": "רחוב מגורים, מכוניות חונות",
+  "whereHe": "יציאה מהבית",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 3e-06
+ },
+ "shops-95": {
+  "seconds": 4.0,
+  "bytes": 375641,
+  "era": "90s",
+  "whatHe": "חזית בניין ישן, חנות ברחוב",
+  "whereHe": "הדרך לקיוסק",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 0.0
+ },
+ "bus-street-95": {
+  "seconds": 4.5,
+  "bytes": 519926,
+  "era": "90s",
+  "whatHe": "רחוב עם עצים, אוטובוס, שלט",
+  "whereHe": "העיר, בדרך לתחנה",
+  "source": "תל אביב, 5.4.1995 — וידאו ביתי",
+  "yellowLeft": 0.000289
+ }
+}

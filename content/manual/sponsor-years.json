@@ -1,0 +1,325 @@
+{
+  "note": "The full sponsor and manufacturer chronology from the Vikipoel 'ספונסר' page, including secondary sponsors, Europe-only deals and part-season deals. Most rows are labelled with a bare year ('1998'), which is NOT a season label — it could mean 1997/98 or 1998/99, and the source does not say. Those rows carry seasonAmbiguous: true, are stored with the raw label, and are never joined to a season. They feed questions phrased by year; the season-keyed sponsor_deal table is unchanged and still owns anything asked by season.",
+  "confidence": 2,
+  "source": {
+    "kind": "wiki",
+    "title": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker",
+    "url": "https://wiki.red-fans.com/"
+  },
+  "records": [
+    {
+      "yearLabelRaw": "1996",
+      "mainSponsorHe": "מושקוביץ",
+      "additionalSponsorsHe": [],
+      "manufacturerHe": null,
+      "sport": "football",
+      "noteHe": "היצרן לא מתועד",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "1997",
+      "mainSponsorHe": "שיכון עובדים",
+      "additionalSponsorsHe": [],
+      "manufacturerHe": "דיאדורה",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "1998",
+      "mainSponsorHe": "כתר",
+      "additionalSponsorsHe": [
+        "אופיס דיפו"
+      ],
+      "manufacturerHe": "נייקי",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "1999",
+      "mainSponsorHe": "כתר",
+      "additionalSponsorsHe": [
+        "אופיס דיפו"
+      ],
+      "manufacturerHe": "נייקי",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2000",
+      "mainSponsorHe": "כתר",
+      "additionalSponsorsHe": [
+        "אופיס דיפו"
+      ],
+      "manufacturerHe": "נייקי",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2001",
+      "mainSponsorHe": "כתר",
+      "additionalSponsorsHe": [
+        "אופיס דיפו"
+      ],
+      "manufacturerHe": "דיאדורה",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2002",
+      "mainSponsorHe": "כתר",
+      "additionalSponsorsHe": [
+        "אופיס דיפו"
+      ],
+      "manufacturerHe": "דיאדורה",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2003",
+      "mainSponsorHe": "כתר",
+      "additionalSponsorsHe": [
+        "אופיס דיפו"
+      ],
+      "manufacturerHe": "דיאדורה",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2004",
+      "mainSponsorHe": "כתר",
+      "additionalSponsorsHe": [],
+      "manufacturerHe": "קאפה",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2005",
+      "mainSponsorHe": "שלמה Sixt",
+      "additionalSponsorsHe": [
+        "כתר"
+      ],
+      "manufacturerHe": "קאפה",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2006",
+      "mainSponsorHe": "סובארו",
+      "additionalSponsorsHe": [
+        "כתר"
+      ],
+      "manufacturerHe": "אמברו",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2007",
+      "mainSponsorHe": "סובארו",
+      "additionalSponsorsHe": [
+        "ישראכרט",
+        "כתר"
+      ],
+      "manufacturerHe": "אמברו",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2008",
+      "mainSponsorHe": "אפריקה ישראל",
+      "additionalSponsorsHe": [
+        "ישראכרט",
+        "יורופקאר"
+      ],
+      "manufacturerHe": "אמברו",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2009",
+      "mainSponsorHe": "סובארו",
+      "additionalSponsorsHe": [
+        "ישראכרט"
+      ],
+      "manufacturerHe": "אמברו",
+      "sport": "football",
+      "noteHe": "המקור מציין את יומברו גם כמותג על החולצה; סובארו על מספר 8",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2010",
+      "mainSponsorHe": "סובארו",
+      "additionalSponsorsHe": [
+        "Options"
+      ],
+      "manufacturerHe": "אמברו",
+      "sport": "football",
+      "noteHe": "Options בפלייאוף בלבד",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2011",
+      "mainSponsorHe": "אקזיט גרופ",
+      "additionalSponsorsHe": [
+        "בוני התיכון",
+        "כתר",
+        "אבולעפיה"
+      ],
+      "manufacturerHe": "אמברו",
+      "sport": "football",
+      "noteHe": "בוני התיכון בהמשך העונה; כתר באירופה ובגביע הטוטו",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2012",
+      "mainSponsorHe": "בוני התיכון",
+      "additionalSponsorsHe": [
+        "עלם",
+        "שלמה Sixt",
+        "אחוזת גן"
+      ],
+      "manufacturerHe": "קאפה",
+      "sport": "football",
+      "noteHe": "עלם באירופה ללא תמורה",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2013",
+      "mainSponsorHe": "בוני התיכון",
+      "additionalSponsorsHe": [
+        "עלם",
+        "שלמה Sixt"
+      ],
+      "manufacturerHe": "קאפה",
+      "sport": "football",
+      "noteHe": "עלם באירופה ללא תמורה; שלמה Sixt גם על המדים",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2014",
+      "mainSponsorHe": "Fujicom",
+      "additionalSponsorsHe": [
+        "לובינסקי",
+        "שמש אדומה",
+        "Fujitsu"
+      ],
+      "manufacturerHe": "קאפה",
+      "sport": "football",
+      "noteHe": "Fujitsu באירופה",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2015",
+      "mainSponsorHe": "Fujicom",
+      "additionalSponsorsHe": [],
+      "manufacturerHe": "אמברו",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2016",
+      "mainSponsorHe": "Fujitsu",
+      "additionalSponsorsHe": [],
+      "manufacturerHe": "פומה",
+      "sport": "football",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2017",
+      "mainSponsorHe": "נייקי",
+      "additionalSponsorsHe": [
+        "Fujicom",
+        "New Drive",
+        "BROWN",
+        "FRAME",
+        "River"
+      ],
+      "manufacturerHe": "נייקי",
+      "sport": "football",
+      "noteHe": "Fujicom עד מחזור 21; New Drive ממחזור 23",
+      "seasonAmbiguous": true,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "yearLabelRaw": "2017/18",
+      "mainSponsorHe": "מקרון",
+      "additionalSponsorsHe": [
+        "ארקיע",
+        "צרפתי צבי ובניו",
+        "River",
+        "כפר השעשועים"
+      ],
+      "manufacturerHe": "מקרון",
+      "sport": "football",
+      "noteHe": "ארקיע ממחזור 3",
+      "seasonAmbiguous": false,
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — עמוד \"ספונסר\", דרך מסמך המחקר של צוות The Worker"
+    }
+  ]
+}

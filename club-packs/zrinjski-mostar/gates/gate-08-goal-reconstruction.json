@@ -1,0 +1,47 @@
+{
+  "status": "OPEN_IN_LITE_MODE",
+  "moments": [
+    {
+      "id": "goal-2026-cup1",
+      "matchId": "cup-2026-first",
+      "minute": 38,
+      "scorer": "Nemanja Bilbija",
+      "knownSequence": [
+        "Mario Ćuže cross from left",
+        "Bilbija free 5–6 metres from goal",
+        "finish"
+      ],
+      "sourceIds": [
+        "src-2026-cup-1"
+      ],
+      "precision": "sequence/direction only; exact coordinates require video annotation"
+    },
+    {
+      "id": "goal-2000-europe-1",
+      "matchId": "europe-2000-home-frolunda",
+      "minute": 43,
+      "scorer": "Berislav Miloš",
+      "knownSequence": [
+        "goal"
+      ],
+      "sourceIds": [
+        "src-europe-2000"
+      ],
+      "precision": "scorer/minute only; not suitable for full spatial puzzle yet"
+    },
+    {
+      "id": "goal-2000-europe-2",
+      "matchId": "europe-2000-home-frolunda",
+      "minute": 96,
+      "scorer": "Leon Buhić",
+      "knownSequence": [
+        "extra-time goal"
+      ],
+      "sourceIds": [
+        "src-europe-2000"
+      ],
+      "precision": "scorer/minute only"
+    }
+  ],
+  "productionUnlock": "Annotate 10–20 rights-cleared videos touch-by-touch."
+}

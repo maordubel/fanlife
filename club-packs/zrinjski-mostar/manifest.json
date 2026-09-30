@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "identity": {
+    "id": "zrinjski-mostar",
+    "slug": "zrinjski-mostar",
+    "officialName": "Hrvatski športski klub Zrinjski Mostar",
+    "commonName": "Zrinjski Mostar",
+    "city": "Mostar",
+    "country": "Bosnia and Herzegovina",
+    "language": "Croatian / Bosnian local context; Master UI remains English",
+    "sports": [
+      "football"
+    ],
+    "founded": 1905,
+    "supporterSelfNames": [
+      "Plemići / Nobles",
+      "Ultras-Zrinjski (organised supporter group)"
+    ],
+    "rivals": [
+      {
+        "club": "FK Velež Mostar",
+        "kind": "city derby / historically sensitive"
+      },
+      {
+        "club": "FK Borac Banja Luka",
+        "kind": "modern sporting title rivalry"
+      },
+      {
+        "club": "FK Sarajevo",
+        "kind": "major domestic sporting rivalry"
+      },
+      {
+        "club": "NK Široki Brijeg",
+        "kind": "regional sporting rivalry"
+      }
+    ]
+  },
+  "brand": {
+    "primary": "#C92D39",
+    "secondary": "#FFFFFF",
+    "background": "#111111",
+    "foreground": "#FFFFFF",
+    "accent": "#8E1F2B",
+    "forbidden": []
+  },
+  "voice": {
+    "supporterSingular": "supporter",
+    "supporterPlural": "supporters",
+    "homeTerm": "Bijeli Brijeg",
+    "sectionTerm": "Standing Tribune / East (historical Ultras home until 2023)",
+    "matchdayComeOn": "Naprijed Zrinjski!",
+    "phrases": {
+      "thisIsMyClub": "This is Zrinjski.",
+      "remember": "Do you remember where you were?",
+      "share": "Send it to your people.",
+      "memory": "Some places stay in your body even when the stand changes."
+    },
+    "avoid": [
+      "invented ethnic/political insults",
+      "real-person private dialogue",
+      "tragedy as a scoring mechanic"
+    ]
+  }
+}

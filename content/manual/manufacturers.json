@@ -1,0 +1,46 @@
+{
+  "note": "Kit suppliers named in Football Kit Archive.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Verified research pass, 31 Aug 2026",
+    "url": null
+  },
+  "records": [
+    {
+      "slug": "umbro",
+      "nameHe": "אמברו",
+      "nameEn": "Umbro"
+    },
+    {
+      "slug": "adidas",
+      "nameHe": "אדידס",
+      "nameEn": "adidas"
+    },
+    {
+      "slug": "diadora",
+      "nameHe": "דיאדורה",
+      "nameEn": "Diadora"
+    },
+    {
+      "slug": "puma",
+      "nameHe": "פומה",
+      "nameEn": "Puma"
+    },
+    {
+      "slug": "nike",
+      "nameHe": "נייקי",
+      "nameEn": "Nike"
+    },
+    {
+      "slug": "kappa",
+      "nameHe": "קאפה",
+      "nameEn": "Kappa"
+    },
+    {
+      "slug": "macron",
+      "nameHe": "מקרון",
+      "nameEn": "Macron"
+    }
+  ]
+}

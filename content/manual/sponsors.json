@@ -1,0 +1,53 @@
+{
+  "note": "Shirt sponsors that a source actually shows on the shirt.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Verified research pass, 31 Aug 2026",
+    "url": null
+  },
+  "records": [
+    {
+      "slug": "כתר",
+      "nameHe": "כתר",
+      "nameEn": "Keter Group",
+      "industry": "פלסטיק"
+    },
+    {
+      "slug": "ניו-דרייב",
+      "nameHe": "ניו דרייב",
+      "nameEn": "New Drive",
+      "industry": "ליסינג"
+    },
+    {
+      "slug": "ארקיע",
+      "nameHe": "ארקיע",
+      "nameEn": "Arkia",
+      "industry": "תעופה"
+    },
+    {
+      "slug": "הכשרה",
+      "nameHe": "הכשרה חברה לביטוח",
+      "nameEn": "Hachshara Insurance",
+      "industry": "ביטוח"
+    },
+    {
+      "slug": "איביאיי",
+      "nameHe": "IBI בית השקעות",
+      "nameEn": "IBI Investment House",
+      "industry": "פיננסים"
+    },
+    {
+      "slug": "בוני-התיכון",
+      "nameHe": "בוני התיכון",
+      "nameEn": "Bonei HaTichon",
+      "industry": "בנייה"
+    },
+    {
+      "slug": "סובארו",
+      "nameHe": "סובארו",
+      "nameEn": "Subaru",
+      "industry": "רכב"
+    }
+  ]
+}

@@ -1,0 +1,6399 @@
+{
+  "note": "Append-only (rule 35, for people). An id is minted once and never changes; a slug fix or a reviewed merge (content/manual/player-aliases.json) moves `slug`/`slugAliases`/`nameAliases`, never `id`. Written only by `npm run canon:ids -- --write-ids`. Never hand-edit an `id`.",
+  "records": [
+    {
+      "id": "p_0026ef2cdc",
+      "slug": "ברונו-סוארס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Bruno Soares",
+        "ברונו סוארס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0088d3232b",
+      "slug": "בן-ציון-צין-צינוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "בן ציון צין",
+        "בן ציון צין (צינוביץ')"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_00a9dafdca",
+      "slug": "נועם-בונה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Noam Bonnet",
+        "נועם בונה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_023e197d01",
+      "slug": "טל-ארצל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tal Archel",
+        "טל ארצ'ל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_02b7dcce64",
+      "slug": "יוסי-קרמר",
+      "slugAliases": [],
+      "nameAliases": [
+        "יוסי קרמר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_02cffa1140",
+      "slug": "דניאל-גולדשטיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "דניאל גולדשטיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_02f7576b2d",
+      "slug": "שגיב-יחזקאל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sagiv Yehezkel",
+        "שגיב יחזקאל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0300bb4677",
+      "slug": "חאבייר-פאאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "חאבייר פאאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0323d43e35",
+      "slug": "קוסטל-לזר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Costel Lazăr",
+        "קוסטל לזר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0367f9bb14",
+      "slug": "וולטון-סילבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Welton",
+        "וולטון סילבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_037aeec5ad",
+      "slug": "ליאו-בנבנישתי",
+      "slugAliases": [
+        "ליאו-בנבינשתי"
+      ],
+      "nameAliases": [
+        "Leo Benbenisti",
+        "ליאו בנבינשתי",
+        "ליאו בנבנישתי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_04c3d1edb1",
+      "slug": "רמי-דואני",
+      "slugAliases": [],
+      "nameAliases": [
+        "Rami Duani",
+        "רמי דואני"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_04f0301892",
+      "slug": "אדבינאס-גירדבאיניס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Edvinas Girdvainis",
+        "אדבינאס גירדבאיניס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_04fe540318",
+      "slug": "נמניה-ניקוליץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Nemanja Nikolić",
+        "נמניה ניקוליץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0503993392",
+      "slug": "שלומי-ארבייטמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "שלומי ארבייטמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_05416445d6",
+      "slug": "צליל-חתוכה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tzlil Hatuka",
+        "צליל חתוכה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_05467a9bca",
+      "slug": "אופק-בלס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Afek Blas",
+        "אופק בלס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0567517457",
+      "slug": "אמידו-בלדה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Amido Baldé",
+        "אמידו בלדה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_05b8f8aaf9",
+      "slug": "יהב-גורפינקל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yahav Gurfinkel",
+        "יהב גורפינקל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_05c2ce4421",
+      "slug": "גיא-בדש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Guy Badash",
+        "גיא בדש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0619566adc",
+      "slug": "אנאס-מחאמיד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Anas Mahamid",
+        "אנאס מחאמיד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0694db8ed4",
+      "slug": "משה-אייזנברג",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה אייזנברג"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_07ab67e62d",
+      "slug": "עמית-מאיר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Amit Meir",
+        "עמית מאיר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_08fd3f491c",
+      "slug": "אור-בלוריאן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Or Blorian",
+        "אור בלוריאן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0b04f3bfc5",
+      "slug": "איתי-שכטר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Itay Shechter",
+        "איתי שכטר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0b4143e70d",
+      "slug": "אריאל-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ariel Cohen",
+        "אריאל כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0b894afa80",
+      "slug": "עומר-פרץ-קשר",
+      "slugAliases": [],
+      "nameAliases": [
+        "עומר פרץ (קשר)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0c48b44edb",
+      "slug": "מאיר-אריה",
+      "slugAliases": [],
+      "nameAliases": [
+        "מאיר אריה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0c5a194e79",
+      "slug": "שביט-מזל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shavit Mazal",
+        "שביט מזל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0cc446f0bd",
+      "slug": "הישאם-לאיוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Hisham Layous",
+        "הישאם לאיוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0d01a9c7bb",
+      "slug": "עמירן-שקלים",
+      "slugAliases": [],
+      "nameAliases": [
+        "Amiran Shkalim",
+        "עמירן שקלים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0dae4843e5",
+      "slug": "משה-דננבאום",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה דננבאום"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0e43957a83",
+      "slug": "יוסי-רוזן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yossi Rozen",
+        "יוסי רוזן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0e92b2ee28",
+      "slug": "דוד-ונטורה",
+      "slugAliases": [],
+      "nameAliases": [
+        "דוד ונטורה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0ee0329896",
+      "slug": "אברהם-צקול",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avraham Chekol",
+        "אברהם צ'קול"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_0ff3a1691e",
+      "slug": "דנוץ-מויססקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dănuț Moisescu",
+        "דנוץ מויססקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1033757525",
+      "slug": "קובי-סגל",
+      "slugAliases": [],
+      "nameAliases": [
+        "קובי סגל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_108a2b8a19",
+      "slug": "מור-בוסקילה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mor Buskila",
+        "מור בוסקילה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1108a4ea15",
+      "slug": "שבתאי-לוי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shabtai Levi",
+        "שבתאי לוי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1114e68a4b",
+      "slug": "גורג-בורבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "George Borba",
+        "ג'ורג' בורבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_11ded33d63",
+      "slug": "מרקו-ינקוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "מרקו ינקוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_13728ba87d",
+      "slug": "אפואלה-אדל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Apoula Edel",
+        "אפואלה אדל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_13d06f8b6e",
+      "slug": "אלמוג-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Almog Cohen",
+        "אלמוג כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1494e9d514",
+      "slug": "חסן-אבו-זייד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Hasan Abu Zaid",
+        "חסן אבו זייד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_14b94fb3a0",
+      "slug": "רוי-קורין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roy Korine",
+        "רוי קורין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_14e7aebf67",
+      "slug": "דניאל-דניאלי",
+      "slugAliases": [],
+      "nameAliases": [
+        "דניאל דניאלי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_161c5bc4dd",
+      "slug": "אברהם-נודלמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avraham Nudelmann",
+        "אברהם נודלמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1643580a61",
+      "slug": "גיא-חדידה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Guy Hadida",
+        "גיא חדידה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_164f143bb6",
+      "slug": "גיורא-אנטמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "גיורא אנטמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_17724fb748",
+      "slug": "יואב-גראפי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yoav Gerafi",
+        "יואב ג'ראפי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1a7750cb81",
+      "slug": "דור-אלו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dor Elo",
+        "דור אלו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1a961df98e",
+      "slug": "עידו-אקסברד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ido Exbard",
+        "עידו אקסברד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1b2ef8745b",
+      "slug": "בן-רייכרט",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ben Reichert",
+        "בן רייכרט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1c74821a55",
+      "slug": "שמעון-בן-יהונתן",
+      "slugAliases": [],
+      "nameAliases": [
+        "שמעון בן יהונתן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1d311413e7",
+      "slug": "שחר-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shahar Cohen",
+        "שחר כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1d8475b0ee",
+      "slug": "בוריס-קליימן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Boris Kleyman",
+        "בוריס קליימן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1ddc859543",
+      "slug": "שמעון-צימרמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "שמעון צימרמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1f31626a4d",
+      "slug": "עמרי-עטיה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omri Atia",
+        "עמרי עטיה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_1f6842f5ce",
+      "slug": "אביב-סלם",
+      "slugAliases": [],
+      "nameAliases": [
+        "Aviv Salem",
+        "אביב סלם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_20a519ca65",
+      "slug": "רז-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Raz Cohen",
+        "רז כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_20d52b9cb6",
+      "slug": "ראובן-עובד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Reuven Oved",
+        "ראובן עובד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2134917d13",
+      "slug": "גוני-נאור",
+      "slugAliases": [],
+      "nameAliases": [
+        "Goni Naor",
+        "גוני נאור"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_21d71c0068",
+      "slug": "טל-בנש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tal Benesh",
+        "טל בנש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_226aee2d97",
+      "slug": "בנימין-טרידובסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Benny Tridovski",
+        "בנימין טרידובסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_22f2ce2f73",
+      "slug": "עומר-דמארי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omer Damari",
+        "עומר דמארי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2412762cab",
+      "slug": "מיגל-אנחלס-הויוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Miguel Ángel Hoyos",
+        "מיגל אנחלס הויוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_25fbe5fc0d",
+      "slug": "גילי-לנדאו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gili Landau",
+        "גילי לנדאו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2646464da6",
+      "slug": "גובאני-ואלדיירו",
+      "slugAliases": [],
+      "nameAliases": [
+        "ג'ובאני ואלדיירו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_27a3259923",
+      "slug": "גד-עמוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gad Amos",
+        "גד עמוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_27a81aefb1",
+      "slug": "מאוויס-ציבוטה",
+      "slugAliases": [],
+      "nameAliases": [
+        "מאוויס צ'יבוטה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_27a9c4a320",
+      "slug": "דודו-ביטון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dudu Biton",
+        "דודו ביטון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_27b971c66a",
+      "slug": "רועי-זיקרי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roei Zikri",
+        "רועי זיקרי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2827c6b1f8",
+      "slug": "רוברט-טזצקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Robert Težacki",
+        "רוברט טזצקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_28d5380216",
+      "slug": "דן-עזריה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dan Azaria",
+        "דן עזריה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2905d1c713",
+      "slug": "ירין-פרץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yarin Perez",
+        "ירין פרץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_290edd1f8b",
+      "slug": "עומרי-לוי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omri Levi",
+        "עומרי לוי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_29ba0c2a95",
+      "slug": "אלי-קוקוס-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eli Cohen",
+        "אלי \"קוקוס\" כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_29e474dd4d",
+      "slug": "ירוסלב-באקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "ירוסלב באקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2aac9fea0a",
+      "slug": "עמית-למקין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Amit Lemkin",
+        "עמית למקין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2ab1d7c335",
+      "slug": "מקס-צליץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Maks Čelić",
+        "מקס צ'ליץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2ab3b7e966",
+      "slug": "דמיאן-גייזר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Damjan Gajser",
+        "דמיאן גייזר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2b1b471e31",
+      "slug": "רואי-חדד",
+      "slugAliases": [],
+      "nameAliases": [
+        "רואי חדד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2b71b8644e",
+      "slug": "תומר-חליבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tomer Haliva",
+        "תומר חליבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2b7f0497cc",
+      "slug": "אושר-דוידה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Osher Davida",
+        "אושר דוידה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2b8a505901",
+      "slug": "רועי-הרמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roy Herman",
+        "רועי הרמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2bdc7a0330",
+      "slug": "חסן-בדגייב",
+      "slugAliases": [],
+      "nameAliases": [
+        "חסן בדג'ייב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2cc60c0e20",
+      "slug": "סלים-טועמה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Salim Toama",
+        "סלים טועמה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2cd9d3a0a5",
+      "slug": "שבי-בן-ברוך",
+      "slugAliases": [],
+      "nameAliases": [
+        "שבי בן ברוך"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2dd2dc4300",
+      "slug": "אליאן-רוחנא",
+      "slugAliases": [],
+      "nameAliases": [
+        "Elian Rohana",
+        "אליאן רוחנא"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2ef10a5876",
+      "slug": "אבדגי",
+      "slugAliases": [],
+      "nameAliases": [
+        "אבדג'י"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2f36be94d9",
+      "slug": "אייל-אקשטיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "אייל אקשטיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2f733558ab",
+      "slug": "גיא-שרעבי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Guy Sharabi",
+        "גיא שרעבי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_2f99ba205b",
+      "slug": "קלאודיו-בומבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Claudiu Bumba",
+        "קלאודיו בומבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_30f1a8b59b",
+      "slug": "יעקב-חודורוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ya'akov Hodorov",
+        "יעקב חודורוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3203c6c1c7",
+      "slug": "יאניק-ללינדאל",
+      "slugAliases": [
+        "יאניק-לליינדל"
+      ],
+      "nameAliases": [
+        "יאניק לליינדל",
+        "יאניק ללינדאל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3245f05ce9",
+      "slug": "דוד-שטיינוורצל",
+      "slugAliases": [],
+      "nameAliases": [
+        "דוד שטיינוורצל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_32534644ac",
+      "slug": "אביב-וולנרמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Aviv Volnerman",
+        "אביב וולנרמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_327cb6b402",
+      "slug": "איסומעילה-לינגאנה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Issoumaïla Lingané",
+        "איסומעילה לינגאנה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3362416fff",
+      "slug": "עידן-סרור",
+      "slugAliases": [],
+      "nameAliases": [
+        "Idan Srur",
+        "עידן סרור"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_337bf515cf",
+      "slug": "עדן-בן-בסט",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eden Ben Basat",
+        "עדן בן בסט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_33d60339ef",
+      "slug": "רונן-פייגנבוים",
+      "slugAliases": [],
+      "nameAliases": [
+        "רונן פייגנבוים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_342848cf55",
+      "slug": "דגלאס-אווסו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Douglas Owusu",
+        "דגלאס אווסו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_342d66515c",
+      "slug": "דוד-בליס",
+      "slugAliases": [],
+      "nameAliases": [
+        "דוד בליס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3480051a3e",
+      "slug": "חיים-רביבו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Haim Revivo",
+        "חיים רביבו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_34eb87490c",
+      "slug": "אילן-בכר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ilan Bakhar",
+        "אילן בכר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3508fedb99",
+      "slug": "רונן-חרזי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ronen Harazi",
+        "רונן חרזי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_35384581c0",
+      "slug": "סרגיי-פוגודין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sergey Pogodin",
+        "סרגיי פוגודין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_35aeb9985d",
+      "slug": "לידור-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Lidor Cohen",
+        "לידור כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_364f504d65",
+      "slug": "חוסה-רודריגס",
+      "slugAliases": [],
+      "nameAliases": [
+        "חוסה רודריגס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_375eedf27f",
+      "slug": "ישראל-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Israel Cohen",
+        "ישראל כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3761a4caa2",
+      "slug": "נסים-חלפון",
+      "slugAliases": [],
+      "nameAliases": [
+        "נסים חלפון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3768acb435",
+      "slug": "שמעון-בנודיס",
+      "slugAliases": [],
+      "nameAliases": [
+        "שמעון בנודיס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_37bd946fc6",
+      "slug": "וינסנט-אניימה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Vincent Enyeama",
+        "וינסנט אניימה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_37e654948c",
+      "slug": "רוי-רונן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roy Ronen",
+        "רוי רונן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_393f104107",
+      "slug": "סמואל-יבואה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Samuel Yeboah",
+        "סמואל יבואה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_396c9aac9a",
+      "slug": "מרקוס-קוקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Marcus Coco",
+        "מרקוס קוקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3a14b04826",
+      "slug": "גבריאל-דוס-סנטוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gabriel Santos",
+        "גבריאל דוס סנטוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3a36968e08",
+      "slug": "יקיר-לוסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yakir Lusky",
+        "יקיר לוסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3a4ffa44ba",
+      "slug": "אבו-דוסו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Abou Dosso",
+        "אבו דוסו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3a70c47482",
+      "slug": "קאווה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Cauê",
+        "קאווה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3acb6dedd8",
+      "slug": "גל-הרשליקוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "G. Herslikovich",
+        "גל הרשליקוביץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3adcceeb66",
+      "slug": "הרמוני-איקינדה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Harmony Ikande",
+        "הרמוני איקינדה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3ade4c1df3",
+      "slug": "אלון-מזרחי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Alon Mizrahi",
+        "אלון מזרחי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3bc697d2f3",
+      "slug": "בן-ביטון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ben Bitton",
+        "בן ביטון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3c34db1727",
+      "slug": "יגאל-אנטבי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ygal Antebi",
+        "יגאל אנטבי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3c4381034b",
+      "slug": "רמי-אבו-לאבן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Rami Abu-Laban",
+        "רמי אבו לאבן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3cb87d334a",
+      "slug": "עידן-טל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Idan Tal",
+        "עידן טל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3d9813724a",
+      "slug": "איוון-יוליץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "איוון יוליץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3da3ce9ba1",
+      "slug": "לבאן-קוטליה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Levan Kutalia",
+        "לבאן קוטליה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3df591eeea",
+      "slug": "דודו-דהאן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dudu Dahan",
+        "דודו דהאן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3efab145df",
+      "slug": "שי-אבוטבול",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shay Abutbul",
+        "שי אבוטבול"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3f3135eb87",
+      "slug": "עומר-סניור",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omer Senior",
+        "עומר סניור"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3f6380cdd9",
+      "slug": "דיאן-רצוניצה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dean Računica",
+        "דיאן רצ'וניצה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3f6714c3d0",
+      "slug": "שגיא-זינגר",
+      "slugAliases": [],
+      "nameAliases": [
+        "שגיא זינגר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3f8eaff336",
+      "slug": "צבי-שריר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Zvi Sharir",
+        "צבי שריר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3fc7f6fcf1",
+      "slug": "אבי-אזולאי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avi Azoulay",
+        "אבי אזולאי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_3fd1797d69",
+      "slug": "ישראל-וייס",
+      "slugAliases": [],
+      "nameAliases": [
+        "ישראל וייס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_40024f2b46",
+      "slug": "דני-ילובסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "דני ילובסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_40a9f939f5",
+      "slug": "הרברט-מייטנר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Herbert Meitner",
+        "הרברט מייטנר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_41f205043e",
+      "slug": "רון-תלמי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ron Talmi",
+        "רון תלמי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_42019f6512",
+      "slug": "מרדכי-מאיר",
+      "slugAliases": [],
+      "nameAliases": [
+        "מרדכי מאיר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4252f24e61",
+      "slug": "גליל-בן-סנן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Galil Ben Sha'anan",
+        "גליל בן סנן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_428a295f22",
+      "slug": "דני-בורסוק",
+      "slugAliases": [],
+      "nameAliases": [
+        "דני בורסוק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_42e9990edc",
+      "slug": "טל-בן-חיים",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tal Ben Haim",
+        "טל בן חיים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_430514c3e2",
+      "slug": "ליעד-רמות",
+      "slugAliases": [],
+      "nameAliases": [
+        "Liad Ramot",
+        "ליעד רמות"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_430dc62af2",
+      "slug": "ארמנדו-קופר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Armando Cooper",
+        "ארמנדו קופר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_431474822c",
+      "slug": "אלכסנדר-בולייביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "אלכסנדר בולייביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_43ad8316b1",
+      "slug": "אריאל-הרוש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ariel Harush",
+        "אריאל הרוש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_43e1b795ff",
+      "slug": "רון-נחמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "רון נחמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_43ec160acb",
+      "slug": "יאיר-כהן-צדק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yair Cohen Zedek",
+        "יאיר כהן צדק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_43edb562c4",
+      "slug": "דני-אלקיים",
+      "slugAliases": [],
+      "nameAliases": [
+        "דני אלקיים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_44c339b22d",
+      "slug": "נלסון-מנסה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Nelson Mensah",
+        "נלסון מנסה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_44d2364f80",
+      "slug": "מרקו-סימיץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Marko Simić",
+        "מרקו סימיץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_459f44d285",
+      "slug": "דוד-קרמו",
+      "slugAliases": [],
+      "nameAliases": [
+        "דוד קרמו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_45cd55bc49",
+      "slug": "ליאונרדו-בוארב",
+      "slugAliases": [],
+      "nameAliases": [
+        "ליאונרדו בוארב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_464b46318c",
+      "slug": "פייסל-מוליץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Fejsal Mulić",
+        "פייסל מוליץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_46676d770e",
+      "slug": "דניס-אונישנקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Denis Onishenko",
+        "דניס אונישנקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_46690b8e39",
+      "slug": "אשר-בלוט",
+      "slugAliases": [],
+      "nameAliases": [
+        "אשר בלוט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_47c1ab38e1",
+      "slug": "ארתור-אטצזיאנוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Arthur Atzianov",
+        "ארתור אטצזיאנוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_47d5fc2bb5",
+      "slug": "לוקאס-וינטרה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Loukas Vyntra",
+        "לוקאס וינטרה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_48448da21d",
+      "slug": "אלי-שכטר",
+      "slugAliases": [],
+      "nameAliases": [
+        "אלי שכטר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4849c1a598",
+      "slug": "ראובן-אללוף",
+      "slugAliases": [],
+      "nameAliases": [
+        "ראובן אללוף"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_486d135fa4",
+      "slug": "רועי-דיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roy Dayan",
+        "רועי דיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_48a51a7e43",
+      "slug": "דן-איינבינדר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dan Einbinder",
+        "דן איינבינדר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_491c4a7088",
+      "slug": "משה-מורדכוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה מורדכוביץ׳"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4923c8325d",
+      "slug": "חזי-שירזי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Hezi Shirazi",
+        "חזי שירזי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_49de1e4f0f",
+      "slug": "אזקיאל-נדואסל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ezechiel N'Douassel",
+        "אזקיאל נדואסל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4a22893df4",
+      "slug": "אדוארדו-לובוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "אדוארדו לובוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4a4c618031",
+      "slug": "אביחי-ידין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avihay Yadin",
+        "אביחי ידין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4ab6990602",
+      "slug": "יוסי-בלאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "יוסי בלאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4ad6480435",
+      "slug": "אדי-אלקיים",
+      "slugAliases": [],
+      "nameAliases": [
+        "Edi Elkayam",
+        "אדי אלקיים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4b0e8b78a9",
+      "slug": "תומר-אליהו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tomer Eliyahu",
+        "תומר אליהו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4b46fbda65",
+      "slug": "גבי-לסרי",
+      "slugAliases": [],
+      "nameAliases": [
+        "גבי לסרי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4bf07007f9",
+      "slug": "יוחנן-סוקניק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yohanan Sukenik",
+        "יוחנן סוקניק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4c1070bb33",
+      "slug": "איברהים-ספורי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ibrahim Safuri",
+        "איברהים ספורי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4cba6b9c40",
+      "slug": "מיכאל-מיכאלוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "מיכאל מיכאלוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4d1b19672f",
+      "slug": "ליאור-בקשי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Lior Bakshi",
+        "ליאור בקשי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4d1f536de0",
+      "slug": "שרון-מימר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sharon Mimer",
+        "שרון מימר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4d28a411c1",
+      "slug": "שון-גולדברג",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shon Goldberg",
+        "שון גולדברג"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4d893fb570",
+      "slug": "זיו-מורגן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ziv Morgan",
+        "זיו מורגן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4da662284e",
+      "slug": "שלמה-שרף",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shlomo Sharf",
+        "שלמה שרף"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4dadf1fdd1",
+      "slug": "עזיז-קאיונדו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Azizi Kayondo",
+        "עזיז קאיונדו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4ddc70552e",
+      "slug": "משה-סקל",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה סקל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4e03e2ea2a",
+      "slug": "חמזה-בארי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Hamza Barry",
+        "חמזה בארי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4e99a60a9c",
+      "slug": "מור-נעמן-כדורגלן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mor Naaman",
+        "מור נעמן",
+        "מור נעמן (כדורגלן)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4eb3836a27",
+      "slug": "פליפה-רודריגס",
+      "slugAliases": [],
+      "nameAliases": [
+        "פליפה רודריגס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4edb67e49d",
+      "slug": "נחמן-קסטרו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Nahman Castro",
+        "נחמן קסטרו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4ede2d4c2f",
+      "slug": "גיל-ורמוט",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gil Vermouth",
+        "גיל ורמוט",
+        "גילי ורמוט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4f05bf7162",
+      "slug": "שולי-גילארדי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shuli Gilardi",
+        "שולי גילארדי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_4f688bfac9",
+      "slug": "אוהד-חזוט",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ohad Hazut",
+        "אוהד חזוט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5023309c8f",
+      "slug": "מריו-פצאלקה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mário Pečalka",
+        "מריו פצ'אלקה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_509dd22745",
+      "slug": "עמנואל-בואטנג-קשר",
+      "slugAliases": [],
+      "nameAliases": [
+        "עמנואל בואטנג (קשר)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_50c4f2bc0d",
+      "slug": "נוסא-איגייבור",
+      "slugAliases": [],
+      "nameAliases": [
+        "Nosa Igiebor",
+        "נוסא איגייבור"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5217fd02ac",
+      "slug": "עופר-גלברד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ofer Gelbard",
+        "עופר גלברד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_52409c5791",
+      "slug": "דולי-מנגה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dolly Menga",
+        "דולי מנגה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_52a1eb57ee",
+      "slug": "וויאם-עמאשה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Wiyam Amashe",
+        "וויאם עמאשה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5375c40146",
+      "slug": "עומרי-אלטמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omri Altman",
+        "עומרי אלטמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_537c550cb3",
+      "slug": "בוגדן-סרנבסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Bogdan Sarnavskiy",
+        "בוגדן סרנבסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_538da1a2a3",
+      "slug": "סיאנדה-קולו",
+      "slugAliases": [],
+      "nameAliases": [
+        "סיאנדה קולו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_54af9e800a",
+      "slug": "ניסים-אביטן",
+      "slugAliases": [],
+      "nameAliases": [
+        "ניסים אביטן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_54bee20274",
+      "slug": "דניאל-דה-רידר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Daniël de Ridder",
+        "דניאל דה רידר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_54d8d9fd90",
+      "slug": "נמרוד-דרייפוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "נמרוד דרייפוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_550e1e5dd9",
+      "slug": "ישראל-בריקר",
+      "slugAliases": [],
+      "nameAliases": [
+        "ישראל בריקר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5522d1a9b9",
+      "slug": "שגיא-פנחס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sagi Pinhas",
+        "שגיא פנחס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5685a14a25",
+      "slug": "יונתן-פרבר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yonatan Ferber",
+        "יונתן פרבר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_56a0e6382c",
+      "slug": "כפיר-אדרי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Kfir Edri",
+        "כפיר אדרי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_57574a63ef",
+      "slug": "מסאיי-דגו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mesay Dego",
+        "מסאיי דגו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_57827d0929",
+      "slug": "פיטר-קרמנס",
+      "slugAliases": [],
+      "nameAliases": [
+        "פיטר קרמנס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_57acf4edb3",
+      "slug": "לוסיו-מרינאו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Lucio Maranhão",
+        "לוסיו מרינאו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_57e9a2cf84",
+      "slug": "סבסטיאן-הרננדז",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sabastian Hernandez",
+        "סבסטיאן הרננדז"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_582a5ea57b",
+      "slug": "שחר-הירש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shahar Hirsh",
+        "שחר הירש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5858cf2f9c",
+      "slug": "ליאור-אסולין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Lior Asulin",
+        "ליאור אסולין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_585fbc12eb",
+      "slug": "איגור-שקווירין",
+      "slugAliases": [],
+      "nameAliases": [
+        "איגור שקווירין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_58ba967d26",
+      "slug": "אדי-גוטליב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Adi Gotlieb",
+        "אדי גוטליב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_58ce5ca2c6",
+      "slug": "ישראל-ראש",
+      "slugAliases": [],
+      "nameAliases": [
+        "ישראל ראש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_592b28af7b",
+      "slug": "רועי-לוי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roey Levi",
+        "רועי לוי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_59761a18d3",
+      "slug": "רחביה-רוזנבוים",
+      "slugAliases": [],
+      "nameAliases": [
+        "Rehavia Rozenboim",
+        "רחביה רוזנבוים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5984733f88",
+      "slug": "זלמן-פרידמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Zalman Friedmann",
+        "זלמן פרידמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5993128bae",
+      "slug": "אברהם-אבי-בנימין",
+      "slugAliases": [],
+      "nameAliases": [
+        "אברהם (אבי) בנימין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_59966b59ed",
+      "slug": "פאביו-רוסה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Fábio Rosa",
+        "פאביו רוסה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_59b1f192aa",
+      "slug": "יעקב-הלל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ya'acov Hillel",
+        "יעקב הלל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_59c77d01b5",
+      "slug": "קזימיש-מוסקאל",
+      "slugAliases": [],
+      "nameAliases": [
+        "קז'ימיש מוסקאל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5a936c84ba",
+      "slug": "זאב-סגל",
+      "slugAliases": [],
+      "nameAliases": [
+        "זאב סגל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5ab70161d5",
+      "slug": "פרנאן-מאיימבו",
+      "slugAliases": [],
+      "nameAliases": [
+        "פרנאן מאיימבו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5b424cbd82",
+      "slug": "מור-שושן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mor Shushan",
+        "מור שושן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5b4a0d9d83",
+      "slug": "שלמה-ספוזניקוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "שלמה ספוז'ניקוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5b56eac65e",
+      "slug": "ארז-מסיקה",
+      "slugAliases": [],
+      "nameAliases": [
+        "ארז מסיקה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5be41085a6",
+      "slug": "קלאודמיר-פריירה",
+      "slugAliases": [],
+      "nameAliases": [
+        "קלאודמיר פריירה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5c4fb419a1",
+      "slug": "בובאקר-טאמבדו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Bubacarr Tambedou",
+        "בובאקר טאמבדו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5c58512da5",
+      "slug": "איזואגבו-אבונימה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Abonime Izogbu",
+        "איזואגבו אבונימה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5c907d1f14",
+      "slug": "מאור-בוזגלו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Maor Buzaglo",
+        "מאור בוזגלו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5ca5b74aca",
+      "slug": "בסארט-עבדורחימי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Besart Abdurahimi",
+        "בסארט עבדורחימי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5cc8a71ec0",
+      "slug": "ציקי-קוטלר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Zvi Kotler",
+        "ציקי קוטלר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5d8cf4229d",
+      "slug": "מאט-פרנק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Matthew Frank",
+        "מאט פרנק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5da62520ae",
+      "slug": "איתי-אלקסלסי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Itay Elkaslasi",
+        "איתי אלקסלסי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5f3ad834a6",
+      "slug": "גדעון-טיש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gidon Tish",
+        "גדעון טיש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_5f8d21fbb0",
+      "slug": "אמרה-יעקבי",
+      "slugAliases": [],
+      "nameAliases": [
+        "אמרה יעקבי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_600ec36fbc",
+      "slug": "יניב-בן-ניסן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yaniv Ben-Nissan",
+        "יניב בן ניסן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6036557ed5",
+      "slug": "ברק-בדש",
+      "slugAliases": [],
+      "nameAliases": [
+        "ברק בדש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_60526f4be6",
+      "slug": "טל-חן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tal Hen",
+        "טל חן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_60ddf1c806",
+      "slug": "סאמי-אדם",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sami Adam",
+        "סאמי אדם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6140211903",
+      "slug": "רועי-דיין-יליד-1997",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roy Dayan",
+        "רועי דיין (יליד 1997)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_615688f377",
+      "slug": "אדוארדו-מראקש",
+      "slugAliases": [],
+      "nameAliases": [
+        "אדוארדו מראקש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6173d474e2",
+      "slug": "משה-אוחיון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Moshe Ohayon",
+        "משה אוחיון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_62010e374d",
+      "slug": "פליקס-אובוקה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Felix Ogbuke",
+        "פליקס אובוקה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_62023e15dc",
+      "slug": "גון-ציבויקה",
+      "slugAliases": [],
+      "nameAliases": [
+        "ג'ון צ'יבויקה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_625af500eb",
+      "slug": "אילונגו-אנגסניה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ilongo Ngasanya",
+        "אילונגו אנגסניה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_62d4cb4305",
+      "slug": "טום-אחי-מרדכי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tom Ahi Mordechai",
+        "טום אחי מרדכי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_63d75941bb",
+      "slug": "גוראן-אנטוניץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Goran Antonić",
+        "גוראן אנטוניץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_63f6ae5b05",
+      "slug": "שמואל-שיימן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Samuel Scheimann",
+        "שמואל שיימן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_644e79dcdb",
+      "slug": "אלון-אזוגי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Alon Azugi",
+        "אלון אזוגי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_64631ae185",
+      "slug": "אנריקה-גוקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Henrique Jocú",
+        "אנריקה ג'וקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_646ff9d086",
+      "slug": "קייס-גאנם",
+      "slugAliases": [],
+      "nameAliases": [
+        "Qays Ghanem",
+        "קייס גאנם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_64938b42c8",
+      "slug": "קלמי-סבן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Klemi Saban",
+        "קלמי סבן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_65644262b5",
+      "slug": "שלומי-אזולאי-קשר",
+      "slugAliases": [],
+      "nameAliases": [
+        "שלומי אזולאי (קשר)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_65bbab8fb7",
+      "slug": "שגיב-אליהו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sagiv Eliaho",
+        "שגיב אליהו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_65f9e00e24",
+      "slug": "אור-אוסטוינד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Or Ostvind",
+        "אור אוסטוינד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_667fcabc5d",
+      "slug": "מיחאי-פינטילי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mihai Pintilii",
+        "מיחאי פינטילי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_669e2b61b3",
+      "slug": "שון-בן-נשר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shon Ben Nesher",
+        "שון בן נשר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_66dbe0b7e5",
+      "slug": "דמיטרי-מיכאלנקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "דמיטרי מיכאלנקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6717bcbf87",
+      "slug": "בראיין-פאסי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Bryan Passi",
+        "בראיין פאסי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_676e785deb",
+      "slug": "מאור-פרץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "מאור פרץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6780090f07",
+      "slug": "בן-ציון-ריידר",
+      "slugAliases": [],
+      "nameAliases": [
+        "בן ציון ריידר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_67bc6e9b9c",
+      "slug": "גיל-יצחק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gil Itzhak",
+        "גיל יצחק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_67db828630",
+      "slug": "עמי-אדמוני",
+      "slugAliases": [],
+      "nameAliases": [
+        "עמי אדמוני"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6800d0750c",
+      "slug": "אלירן-דנין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eliran Danin",
+        "אלירן דנין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6827ecc242",
+      "slug": "מאיר-נחמיאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "מאיר נחמיאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_68bfa0d410",
+      "slug": "ניר-נחום",
+      "slugAliases": [],
+      "nameAliases": [
+        "ניר נחום"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6923a21427",
+      "slug": "בן-לוז",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ben Luz",
+        "בן לוז"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_69e9291fab",
+      "slug": "קובי-הדדי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Kobi Hadadi",
+        "קובי הדדי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6a760d726a",
+      "slug": "אברהם-פלמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avraham Palman",
+        "אברהם פלמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6af109a4a2",
+      "slug": "שלומי-אזולאי-חלוץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "שלומי אזולאי (חלוץ)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6b242a7f70",
+      "slug": "לויזוס-לויזו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Loizos Loizou",
+        "לויזוס לויזו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6ba556dedb",
+      "slug": "אלכס-באסוק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Alexander Basok",
+        "אלכס באסוק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6c2d1e76ab",
+      "slug": "טיאגו-קוסטה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tiago Costa",
+        "טיאגו קוסטה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6c61f19a2c",
+      "slug": "אישטוואן-פישונט",
+      "slugAliases": [
+        "אישטוון-פישונט"
+      ],
+      "nameAliases": [
+        "István Pisont",
+        "אישטוואן פישונט",
+        "אישטוון פישונט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6cfdc33356",
+      "slug": "עומר-פדידה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omer Fadida",
+        "עומר פדידה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6d4fae32df",
+      "slug": "טל-אוסובסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "טל אוסובסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6d9974711f",
+      "slug": "עומרי-קנדה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omri Kende",
+        "עומרי קנדה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6dbf159c8d",
+      "slug": "שבתאי-יחבס",
+      "slugAliases": [],
+      "nameAliases": [
+        "שבתאי יחבס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6eab4f587e",
+      "slug": "אליהו-נשלסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "אליהו נשלסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6f1fd9dc54",
+      "slug": "סרגיי-קלשנקו",
+      "slugAliases": [
+        "סרגיי-קלשצנקו"
+      ],
+      "nameAliases": [
+        "Sergei Kleschenko",
+        "Serghei Cleşcenco",
+        "Serghey Clescenko",
+        "סרגיי קלשנקו",
+        "סרגיי קלשצ'נקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6f2a6284c5",
+      "slug": "עידן-ורד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Idan Vered",
+        "עידן ורד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6fa23a3cdc",
+      "slug": "אבי-אדרי",
+      "slugAliases": [],
+      "nameAliases": [
+        "אבי אדרי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_6fe0288598",
+      "slug": "אדמונד-שמילוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "אדמונד שמילוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_70282adadb",
+      "slug": "הרוויה-איליץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Hrvoje Ilić",
+        "הרוויה איליץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_702c5aa0e1",
+      "slug": "דמיאן-לוקאשיק",
+      "slugAliases": [],
+      "nameAliases": [
+        "דמיאן לוקאשיק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_706a75168c",
+      "slug": "מאיר-אהרן-מליקה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Meir Melika",
+        "מאיר אהרן מליקה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_713b3bbb03",
+      "slug": "אלון-חלפון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Alon Halfon",
+        "אלון חלפון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_714585313e",
+      "slug": "אלון-תורגמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Alon Turgeman",
+        "אלון תורג'מן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_71c1c818bd",
+      "slug": "נמניה-ווציצביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "נמניה ווצ'יצ'ביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7204c0e5c4",
+      "slug": "שלמה-פוליאקוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "שלמה פוליאקוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_72181cf8a0",
+      "slug": "מאיר-ברנר",
+      "slugAliases": [],
+      "nameAliases": [
+        "מאיר ברנר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_726d9a47c2",
+      "slug": "ריף-מסיקה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Reef Messika",
+        "ריף מסיקה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_72dcaddbad",
+      "slug": "אלרואי-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Elroy Cohen",
+        "אלרואי כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_72e3940ed2",
+      "slug": "יעקב-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yaakov Cohen",
+        "Yuval Cohen",
+        "יעקב כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_73205926e8",
+      "slug": "גיא-אסולין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gai Assulin",
+        "גיא אסולין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_738faa4810",
+      "slug": "גיא-מיכאלי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Guy Michaeli",
+        "גיא מיכאלי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_73bd5cc79f",
+      "slug": "הרצל-פריצנר",
+      "slugAliases": [],
+      "nameAliases": [
+        "הרצל פריצנר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_743b26a06b",
+      "slug": "דניאל-דאפה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Daniel Dapaah",
+        "דניאל דאפה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_74471a92ea",
+      "slug": "יצחק-צציק",
+      "slugAliases": [],
+      "nameAliases": [
+        "יצחק צ'צ'יק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_745294a871",
+      "slug": "סתיו-טוריאל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Stav Turiel",
+        "סתיו טוריאל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_748dbd6255",
+      "slug": "אופק-עובדיה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ofek Ovadia",
+        "אופק עובדיה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7505a4e914",
+      "slug": "לירן-רוטמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Liran Rotman",
+        "לירן רוטמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_75353b374f",
+      "slug": "דניאל-צדיק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Daniel Tzadik",
+        "דניאל צדיק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_753c7293ca",
+      "slug": "אולוביו-אדפמי",
+      "slugAliases": [],
+      "nameAliases": [
+        "אולוביו אדפמי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7557db7af7",
+      "slug": "דמבה-קמארה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Demba Camara",
+        "דמבה קמארה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_75ef40e9c5",
+      "slug": "מוריס-זאנו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Maurice Jano",
+        "מוריס ז'אנו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_761c46b64a",
+      "slug": "אמנון-חרלפ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Amnon Harlap",
+        "אמנון חרל\"פ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7664d34669",
+      "slug": "שמעון-גרשון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shimon Gershon",
+        "שמעון גרשון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_768dfcae71",
+      "slug": "דסליי-טגניה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Deslay Tagania",
+        "דסליי טגניה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_76a80e539c",
+      "slug": "ניר-לקס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Nir Lax",
+        "ניר לקס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_77a438a6c5",
+      "slug": "שוקה-ברשדסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "שוקה ברשדסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_77fb9ae6d9",
+      "slug": "קובי-שאלו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Kobi Shalu",
+        "קובי שאלו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7806e6f4ec",
+      "slug": "מתן-אוחיון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Matan Ohayon",
+        "מתן אוחיון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7845e3c111",
+      "slug": "איליה-יבוריאן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ilya Yavruyan",
+        "איליה יבוריאן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_784d4324d6",
+      "slug": "דור-חוגי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dor Hugi",
+        "דור חוגי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_785510a74c",
+      "slug": "עוביידה-חטאב",
+      "slugAliases": [],
+      "nameAliases": [
+        "עוביידה חטאב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_78adb477be",
+      "slug": "מאיר-מליקה-חלוץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Meir Melika",
+        "מאיר מליקה",
+        "מאיר מליקה (חלוץ)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_790cb29ed0",
+      "slug": "עלי-כנאנה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ali Kna'ana",
+        "עלי כנאנה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_792a03746f",
+      "slug": "רותם-חטואל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Rotem Hatuel",
+        "רותם חטואל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_79868ef7ef",
+      "slug": "לירן-שטראובר",
+      "slugAliases": [],
+      "nameAliases": [
+        "לירן שטראובר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7a34e02f09",
+      "slug": "רוני-קלדרון",
+      "slugAliases": [],
+      "nameAliases": [
+        "רוני קלדרון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7a57f136a8",
+      "slug": "לוקאס-פלקאו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Falcão",
+        "לוקאס פלקאו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7a5c4255b1",
+      "slug": "שי-רביבו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shai Revivo",
+        "שי רביבו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7ad146979b",
+      "slug": "קאיו-אלבס",
+      "slugAliases": [],
+      "nameAliases": [
+        "קאיו אלבס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7ad8f1c98f",
+      "slug": "ניב-סרדל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Niv Sardal",
+        "ניב סרדל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7bc18adbdf",
+      "slug": "תומר-בן-יוסף",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tomer Ben Yousef",
+        "תומר בן יוסף"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7bca9ff65c",
+      "slug": "סער-בנבנישתי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Saar Benbenisti",
+        "סער בנבנישתי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7c9ce04140",
+      "slug": "אייל-בן-עמי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eyal Ben Ami",
+        "אייל בן עמי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7d46eb4f28",
+      "slug": "רובן-סולצאגה",
+      "slugAliases": [],
+      "nameAliases": [
+        "רובן סולצ'אגה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7d6b6d439f",
+      "slug": "סארי-פלאח",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sari Falah",
+        "סארי פלאח"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7dc4e5561b",
+      "slug": "דרור-ניר",
+      "slugAliases": [],
+      "nameAliases": [
+        "דרור ניר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7decd8d1ed",
+      "slug": "יניב-ירון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yaniv Yaron",
+        "יניב ירון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7dfce7c0d8",
+      "slug": "דוד-קלטינס",
+      "slugAliases": [],
+      "nameAliases": [
+        "דוד קלטינס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_7feb914636",
+      "slug": "מוחמד-טראורה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mohamed Kalil Traoré",
+        "מוחמד טראורה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_80250357d6",
+      "slug": "אמיר-ליברמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "אמיר ליברמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_804008bd39",
+      "slug": "פטר-אורלנדיץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Petar Orlandić",
+        "פטר אורלנדיץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8130eae3d9",
+      "slug": "עמית-מלכה",
+      "slugAliases": [],
+      "nameAliases": [
+        "עמית מלכה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8155ae390e",
+      "slug": "דני-בונדר",
+      "slugAliases": [],
+      "nameAliases": [
+        "דני בונדר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_81af211a4f",
+      "slug": "בני-גולדשטיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "בני גולדשטיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_81c054a50a",
+      "slug": "דני-עמוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dani Amos",
+        "דני עמוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_81dbfd0fa0",
+      "slug": "גבור-מרטון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gábor Márton",
+        "גבור מרטון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_81f5a2aba5",
+      "slug": "עופר-שטרית",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ofer Shitrit",
+        "עופר שטרית"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_82db47f9fa",
+      "slug": "נפתלי-שוואלב",
+      "slugAliases": [],
+      "nameAliases": [
+        "נפתלי שוואלב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_82ea128fd2",
+      "slug": "אנדריאן-קרייב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Andrian Kraev",
+        "אנדריאן קרייב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_82efab9dcc",
+      "slug": "בנגמין-פראנסיס",
+      "slugAliases": [],
+      "nameAliases": [
+        "בנג'מין פראנסיס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_83ccf18cd8",
+      "slug": "גיא-קואז",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gay Koaz",
+        "גיא קואז"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_84096bfe16",
+      "slug": "מרקו-שולר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Marko Šuler",
+        "מרקו שולר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8593416923",
+      "slug": "גד-מכנס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gad Machnes",
+        "גד מכנס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_87301b4e02",
+      "slug": "לירון-ליכטרמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "לירון ליכטרמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_87a6b909aa",
+      "slug": "אלין-טופוזאקוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Elin Topuzakov",
+        "אלין טופוזאקוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_882127bd75",
+      "slug": "פרנסיס-קיירמה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Francis Kyeremeh",
+        "פרנסיס קיירמה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_89b3d8531f",
+      "slug": "אופק-ביטון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ofek Biton",
+        "אופק ביטון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_89f9def6ee",
+      "slug": "עמנואל-איילה",
+      "slugAliases": [],
+      "nameAliases": [
+        "עמנואל איילה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8b208fc966",
+      "slug": "ניל-אברבנל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Neal Abarbanel",
+        "ניל אברבנל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8b559b0c02",
+      "slug": "לירון-דיאמנט",
+      "slugAliases": [],
+      "nameAliases": [
+        "לירון דיאמנט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8b7e2d4cee",
+      "slug": "שייע-פייגנבוים",
+      "slugAliases": [],
+      "nameAliases": [
+        "שייע פייגנבוים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8b855bbf4e",
+      "slug": "יצחק-ביבאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "יצחק ביבאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8bc3b9b678",
+      "slug": "עמנואל-בואטנג-חלוץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "עמנואל בואטנג (חלוץ)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8bf30b10a2",
+      "slug": "עופר-ורטה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ofer Verta",
+        "עופר ורטה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8cad7ef8b4",
+      "slug": "יואב-תומר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yoav Tomer",
+        "יואב תומר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8cca01eddc",
+      "slug": "רמי-ארמה",
+      "slugAliases": [],
+      "nameAliases": [
+        "רמי ארמה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8d87fc1ab4",
+      "slug": "אנגי-קואמה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ange Kouamé",
+        "אנג'י קואמה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8d8b311056",
+      "slug": "איהאב-גנאים",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ihab Ganayem",
+        "איהאב גנאים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8dbe63daf7",
+      "slug": "ארון-שוינפלד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Aaron Schoenfeld",
+        "ארון שוינפלד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8de0e0269d",
+      "slug": "סטפן-ספירובסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Stefan Spirovski",
+        "סטפן ספירובסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8ef6b8aaed",
+      "slug": "מיכאל-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "מיכאל כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_8fcc1fab5d",
+      "slug": "אלי-אוזן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eli Uzan",
+        "אלי אוזן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_90164138dd",
+      "slug": "אבי-רן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avi Ran",
+        "אבי רן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9064e7e906",
+      "slug": "זיו-כבדה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ziv Caveda",
+        "זיו כבדה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_90d21ac295",
+      "slug": "מוניה-גושן",
+      "slugAliases": [],
+      "nameAliases": [
+        "מוניה גושן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_919b824fd0",
+      "slug": "אברהם-בית-הלוי",
+      "slugAliases": [],
+      "nameAliases": [
+        "אברהם בית הלוי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9276e81822",
+      "slug": "סינטיהו-סלליך",
+      "slugAliases": [],
+      "nameAliases": [
+        "סינטיהו סלליך"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_928dbfbf37",
+      "slug": "רונאלדו-ואסקס",
+      "slugAliases": [],
+      "nameAliases": [
+        "רונאלדו ואסקס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_92e5eca2c1",
+      "slug": "ניר-רחמין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Nir Rahamin",
+        "ניר רחמין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_92eaa76de2",
+      "slug": "מוטי-אוחיון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Moti Ohaion",
+        "מוטי אוחיון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_92f0c7dbdc",
+      "slug": "מיקי-דהאן",
+      "slugAliases": [],
+      "nameAliases": [
+        "מיקי דהאן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_936c703295",
+      "slug": "אמציה-לבקוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "אמציה לבקוביץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9388f9c2ce",
+      "slug": "רמי-חליס",
+      "slugAliases": [],
+      "nameAliases": [
+        "רמי חליס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_938f62e392",
+      "slug": "רז-נחמיאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Raz Nahmias",
+        "רז נחמיאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_93eb3c2b8b",
+      "slug": "ישראל-זגורי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Israel Zaguri",
+        "ישראל זגורי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9499858769",
+      "slug": "ישראל-מאיה",
+      "slugAliases": [],
+      "nameAliases": [
+        "ישראל מאיה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_957c4196c2",
+      "slug": "אנטואן-קונטה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Antoine Conté",
+        "אנטואן קונטה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_967d4b240c",
+      "slug": "אחמד-מוסא",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ahmed Mussa",
+        "אחמד מוסא"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_96b192447f",
+      "slug": "ברונו-קוטיניו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Bruno Coutinho",
+        "ברונו קוטיניו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_96d00d5348",
+      "slug": "פליקס-חלפון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Felix Halfon",
+        "פליקס חלפון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_98a480c32b",
+      "slug": "וואליד-באדיר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Walid Badir",
+        "וואליד באדיר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_99f34632b9",
+      "slug": "אור-אינברום",
+      "slugAliases": [],
+      "nameAliases": [
+        "Or Inbrum",
+        "אור אינברום"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9a2ca355d7",
+      "slug": "בני-חדד",
+      "slugAliases": [],
+      "nameAliases": [
+        "בני חדד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9a2e350257",
+      "slug": "דוד-פרימו",
+      "slugAliases": [],
+      "nameAliases": [
+        "David Primo",
+        "דוד פרימו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9a33798d32",
+      "slug": "אור-ישראלוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Or Israelov",
+        "אור ישראלוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9a786d53af",
+      "slug": "יוסי-ביטון",
+      "slugAliases": [],
+      "nameAliases": [
+        "יוסי ביטון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9a7b6e96a1",
+      "slug": "שביט-אלימלך",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shavit Elimelech",
+        "שביט אלימלך"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9a92af7371",
+      "slug": "שלום-אביטן",
+      "slugAliases": [],
+      "nameAliases": [
+        "שלום אביטן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9be895d63b",
+      "slug": "יורגן-קולין",
+      "slugAliases": [],
+      "nameAliases": [
+        "יורגן קולין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9c29bc2867",
+      "slug": "אורי-קויאטק",
+      "slugAliases": [],
+      "nameAliases": [
+        "אורי קויאטק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9c49244041",
+      "slug": "ניר-חדד",
+      "slugAliases": [],
+      "nameAliases": [
+        "ניר חדד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9c70058156",
+      "slug": "רועי-גורדנה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roei Gordana",
+        "רועי גורדנה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9cd489e1b9",
+      "slug": "מתן-אריאל-לזמי",
+      "slugAliases": [],
+      "nameAliases": [
+        "מתן אריאל לזמי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9ce327b19f",
+      "slug": "יעקב-בוזגלו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yaacov Buzaglo",
+        "יעקב בוזגלו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9d383f8236",
+      "slug": "שון-מלכה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sean Malka",
+        "שון מלכה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9da3d676ab",
+      "slug": "אייל-אברמוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "אייל אברמוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9e410654e2",
+      "slug": "קרזימיר-קואב",
+      "slugAliases": [],
+      "nameAliases": [
+        "קרזימיר קואב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9eb4f3fb9e",
+      "slug": "עדי-טבצניק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Adi Tabachnik",
+        "עדי טבצ'ניק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9ee57e128a",
+      "slug": "ריפעת-טורק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Rifaat Turk",
+        "ריפעת טורק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9f3f7375b8",
+      "slug": "זאב-חיימוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "זאב חיימוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9fada5719b",
+      "slug": "ניקולה-פטקוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Nikola Petković",
+        "ניקולה פטקוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_9fe0ea8c68",
+      "slug": "יונתן-רודיונוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "יונתן רודיונוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a028ffaa5f",
+      "slug": "אולריש-מלקה",
+      "slugAliases": [],
+      "nameAliases": [
+        "אולריש מלקה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a048f217c2",
+      "slug": "ישי-ברוש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yishay Brosh",
+        "ישי ברוש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a1249ca06d",
+      "slug": "עומרי-שקל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omri Shekel",
+        "עומרי שקל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a2ae0e9fc9",
+      "slug": "ליביו-אנטל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Liviu Antal",
+        "ליביו אנטל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a312334289",
+      "slug": "ליאור-לוי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Lior Levi",
+        "ליאור לוי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a3814d6bd0",
+      "slug": "עידן-ברנס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Idan Baranes",
+        "עידן ברנס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a389316c8d",
+      "slug": "יואל-שוהם",
+      "slugAliases": [],
+      "nameAliases": [
+        "יואל שוהם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a403651950",
+      "slug": "משה-פוליאקוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה פוליאקוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a4051dabb2",
+      "slug": "איבזיטו-אוגבונה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ibezito Ogbonna",
+        "איבזיטו אוגבונה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a4798f768c",
+      "slug": "שחר-פיבן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shahar Piven",
+        "שחר פיבן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a5c53f27aa",
+      "slug": "אורי-קרגולה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ouri Karagola",
+        "אורי קרגולה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a605ffbd7f",
+      "slug": "יהושע-זילברשטיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "יהושע זילברשטיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a6f4efca3b",
+      "slug": "כפיר-אודי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Kfir Udi",
+        "כפיר אודי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a76bdf2f05",
+      "slug": "סיראז-נסאר",
+      "slugAliases": [],
+      "nameAliases": [
+        "סיראז' נסאר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a7bdc2d943",
+      "slug": "דוד-פיזנטי",
+      "slugAliases": [],
+      "nameAliases": [
+        "David Pizanti",
+        "דוד פיזנטי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a7e9317daf",
+      "slug": "מיכאל-לפרדון",
+      "slugAliases": [],
+      "nameAliases": [
+        "מיכאל לפרדון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a816bd7492",
+      "slug": "איאד-חוטבא",
+      "slugAliases": [],
+      "nameAliases": [
+        "איאד חוט'בא"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a82f4f89e9",
+      "slug": "יום-טוב-טליאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yom Tov Talias",
+        "יום טוב טליאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a8459249bd",
+      "slug": "דוד-הרשליקוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "David Hershlikovich",
+        "דוד הרשליקוביץ",
+        "דוד הרשליקוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a922020380",
+      "slug": "איאד-אבו-עביד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Iyad Abu Abaid",
+        "איאד אבו עביד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_a9f3874b86",
+      "slug": "אברהם-פרידריך",
+      "slugAliases": [],
+      "nameAliases": [
+        "אברהם פרידריך"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_aa6e61e8c8",
+      "slug": "ניר-מנחם",
+      "slugAliases": [],
+      "nameAliases": [
+        "ניר מנחם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_aa8d7d10ec",
+      "slug": "דור-חמו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dor Hemo",
+        "דור חמו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_aafc47b09f",
+      "slug": "סבסטיאן-סימרוטיץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "סבסטיאן סימרוטיץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ab1bd1dff4",
+      "slug": "עידן-סקורצרו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Idan Skurchero",
+        "עידן סקורצ'רו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ab21047b1e",
+      "slug": "מירקו-אורמוש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mirko Oremuš",
+        "מירקו אורמוש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ab31d6c079",
+      "slug": "דוד-רוצלה",
+      "slugAliases": [],
+      "nameAliases": [
+        "David Rochela",
+        "דוד רוצ'לה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_abe3ea1c69",
+      "slug": "אבי-כנפו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avi Knafo",
+        "אבי כנפו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_abff31f026",
+      "slug": "משה-פיימן",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה פיימן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ac094f2351",
+      "slug": "יובל-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yuval Cohen",
+        "יובל כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ac6faa18da",
+      "slug": "לוסיאנו-דה-ברונו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Luciano De Bruno",
+        "לוסיאנו דה ברונו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ad4a8b0671",
+      "slug": "יעקב-רחמינוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "יעקב רחמינוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ad6d8585b7",
+      "slug": "חיים-איצרין",
+      "slugAliases": [],
+      "nameAliases": [
+        "חיים איצרין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_addc6725b3",
+      "slug": "חן-עזרא",
+      "slugAliases": [],
+      "nameAliases": [
+        "Hen Ezra",
+        "חן עזרא"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ae3fcbad22",
+      "slug": "מילאן-מקאריץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Milan Makarić",
+        "מילאן מקאריץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ae7a31aab2",
+      "slug": "פנחס-יהודיוף",
+      "slugAliases": [],
+      "nameAliases": [
+        "פנחס יהודיוף"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_af212b67c4",
+      "slug": "אחמד-עאבד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ahmed Abed",
+        "אחמד עאבד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_af404e42dc",
+      "slug": "אליאור-ברנס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Elior Barnes",
+        "אליאור ברנס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_affbe60583",
+      "slug": "גל-מאיו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gal Mayo",
+        "גל מאיו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b015646311",
+      "slug": "חיים-חוזבקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "חיים חוזבקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b075f2d6fa",
+      "slug": "ציקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Chico",
+        "צ'יקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b07c88f9d8",
+      "slug": "ירון-בן-דב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yaron Ben-Dov",
+        "ירון בן דב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b09152b9d6",
+      "slug": "עומרי-אפק",
+      "slugAliases": [
+        "עמרי-אפק"
+      ],
+      "nameAliases": [
+        "Omri Afek",
+        "עומרי אפק",
+        "עמרי אפק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b0f1c9f234",
+      "slug": "דודי-אלון",
+      "slugAliases": [],
+      "nameAliases": [
+        "David Alon",
+        "דודי אלון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b10f839818",
+      "slug": "מהראן-לאלה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Maharan Al-Lala",
+        "מהראן לאלה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b118d52099",
+      "slug": "חיים-גלזר",
+      "slugAliases": [],
+      "nameAliases": [
+        "חיים גלזר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b150788697",
+      "slug": "דדי-בן-דיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dedi Ben Dayan",
+        "דדי בן דיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b1fbfd5d16",
+      "slug": "אבי-תקווה",
+      "slugAliases": [],
+      "nameAliases": [
+        "אבי תקווה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b232d1ebcf",
+      "slug": "יחזקאל-חזום",
+      "slugAliases": [],
+      "nameAliases": [
+        "יחזקאל חזום"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b241af69cf",
+      "slug": "פבלו-גונזאלס",
+      "slugAliases": [],
+      "nameAliases": [
+        "פבלו גונזאלס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b27141ca2d",
+      "slug": "מוחמד-אבו-אל-היגא",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mohammed El Hija",
+        "מוחמד אבו אל היג'א"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b272171d0e",
+      "slug": "אריה-בזרנו",
+      "slugAliases": [],
+      "nameAliases": [
+        "אריה בז'רנו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b2eff7ad62",
+      "slug": "יואב-הופמייסטר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yoav Hofmayster",
+        "יואב הופמייסטר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b34ba373df",
+      "slug": "וילי-ברגר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Willi Berger",
+        "וילי ברגר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b3c0e3564d",
+      "slug": "רן-יצחק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ran Itzchak",
+        "רן יצחק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b58800342d",
+      "slug": "עדן-הרשקוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eden Hershkovitz",
+        "עדן הרשקוביץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b5bbdd8ff5",
+      "slug": "דנילו-לופז",
+      "slugAliases": [],
+      "nameAliases": [
+        "Danilo",
+        "דנילו לופז"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b5d64bece3",
+      "slug": "שלום-תקוה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shalom Tikva",
+        "שלום תקוה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b6c6274a18",
+      "slug": "מיכאל-זנדברג",
+      "slugAliases": [],
+      "nameAliases": [
+        "Michael Zandberg",
+        "מיכאל זנדברג"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b6c7cb222f",
+      "slug": "בני-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "בני כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b6e735f352",
+      "slug": "מרווין-פירסמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Marvin Peersman",
+        "מרווין פירסמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b6f4564010",
+      "slug": "איתמר-ניצן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Itamar Nizan",
+        "איתמר ניצן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b7afb0d472",
+      "slug": "עידו-שרון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ido Sharon",
+        "עידו שרון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b809bb0aca",
+      "slug": "רומאן-רוקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Romain Rocchi",
+        "רומאן רוקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b8d59cbfbb",
+      "slug": "אמיליוס-זובאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Emilijus Zubas",
+        "אמיליוס זובאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b8f83cde06",
+      "slug": "רן-בנימין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ran Binyamin",
+        "רן בנימין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b9e059450d",
+      "slug": "קובי-זיתוני",
+      "slugAliases": [],
+      "nameAliases": [
+        "Cobi Zeituni",
+        "קובי זיתוני"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_b9f2d20d18",
+      "slug": "שמעון-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "שמעון כהן",
+        "שמעון כהן (כדורגלן)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ba737e5ee0",
+      "slug": "איתמר-שבירו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Itamar Shviro",
+        "איתמר שבירו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bb5c182554",
+      "slug": "גוזף-גנדה",
+      "slugAliases": [],
+      "nameAliases": [
+        "ג'וזף גנדה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bbb392f26c",
+      "slug": "דניאל-גרץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Daniel Gertz",
+        "דניאל גרץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bbcc337759",
+      "slug": "אבי-תורגמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avi Turgeman",
+        "אבי תורג'מן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bc19d9ebdb",
+      "slug": "עזרי-בבאייב",
+      "slugAliases": [],
+      "nameAliases": [
+        "עזרי בבאייב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bc4846f066",
+      "slug": "ירמיהו-לוף",
+      "slugAliases": [],
+      "nameAliases": [
+        "ירמיהו לוף"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bc4b85ce47",
+      "slug": "דוד-שוייצר",
+      "slugAliases": [
+        "דוד-שוויצר"
+      ],
+      "nameAliases": [
+        "David Schweitzer",
+        "דוד שוויצר",
+        "דוד שוייצר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_be18b9c788",
+      "slug": "רז-מאיר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Raz Meir",
+        "רז מאיר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_be26644441",
+      "slug": "יוסי-שבחון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yossi Shivhon",
+        "יוסי שבחון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_be9447a770",
+      "slug": "שי-אייזן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shay Ayzen",
+        "שי אייזן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bed68abbfc",
+      "slug": "איליי-טמם",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ilay Tamam",
+        "איליי טמם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bee0823458",
+      "slug": "דויד-קופרמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "David Cuperman",
+        "דויד קופרמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bee3f5aae1",
+      "slug": "עדי-סבג",
+      "slugAliases": [],
+      "nameAliases": [
+        "Adi Sabag",
+        "עדי סבג"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bf0c3bae38",
+      "slug": "דור-בנימיני",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dor Benyamini",
+        "דור בנימיני"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bf39cc3354",
+      "slug": "דוד-מיץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "דוד מיץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bf592a87a9",
+      "slug": "אבי-סופר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Avi Soffer",
+        "אבי סופר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bf8edf725c",
+      "slug": "רונן-הילל",
+      "slugAliases": [],
+      "nameAliases": [
+        "רונן הילל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_bf8f9eb385",
+      "slug": "וולינגטון-דה-אוליברה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Wellington",
+        "וולינגטון דה אוליברה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c01a354bb8",
+      "slug": "דודו-סמפאיו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Dudu Sampaio",
+        "דודו סמפאיו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c039cd0425",
+      "slug": "יזן-נסאר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yazen Nassar",
+        "יזן נסאר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c05b29f459",
+      "slug": "סטפן-מרינוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Stefan Marinović",
+        "סטפן מרינוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c2448c7be1",
+      "slug": "אומיט-גונזלס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Umut Güzelses",
+        "אומיט גונזלס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c272fbc8a3",
+      "slug": "לריאה-קינגסטון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Laryea Kingston",
+        "לריאה קינגסטון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c324982118",
+      "slug": "יעקב-אקהויז",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yaakov Ekhoiz",
+        "יעקב אקהויז"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c37eaf41cd",
+      "slug": "ערן-זהבי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eran Zahavi",
+        "ערן זהבי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c410368a8a",
+      "slug": "שובל-גוזלן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shoval Gozlan",
+        "שובל גוזלן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c45a88c8d6",
+      "slug": "חיים-נוריאלי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Haim Nurieli",
+        "חיים נוריאלי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c4798ab261",
+      "slug": "סאבו-פאביצביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Savo Pavičević",
+        "סאבו פאביצ'ביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c4881178a0",
+      "slug": "לוטם-זינו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Lotem Zino",
+        "לוטם זינו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c4a7f257d3",
+      "slug": "אייל-משומר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eyal Meshumar",
+        "אייל משומר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c4d8dee06b",
+      "slug": "בויאן-ורוצינה",
+      "slugAliases": [],
+      "nameAliases": [
+        "בויאן ורוצ'ינה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c4df01b0fe",
+      "slug": "רם-שטראוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ram Strauss",
+        "רם שטראוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c4fc293564",
+      "slug": "אסף-צור",
+      "slugAliases": [],
+      "nameAliases": [
+        "Assaf Tzur",
+        "אסף צור"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c4fdaa9ac3",
+      "slug": "יעקב-רודיק",
+      "slugAliases": [],
+      "nameAliases": [
+        "יעקב רודיק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c50d07541e",
+      "slug": "יוסף-אובה",
+      "slugAliases": [],
+      "nameAliases": [
+        "יוסף אובה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c527fa95be",
+      "slug": "גיא-צרפתי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gay Sarfati",
+        "גיא צרפתי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c57645355d",
+      "slug": "משה-מרקוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה מרקוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c59b3f9c06",
+      "slug": "ברוך-דגו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Barukh Dego",
+        "ברוך דגו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c5d2cb22a6",
+      "slug": "שמחה-חינקיס",
+      "slugAliases": [],
+      "nameAliases": [
+        "שמחה חינקיס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c625fcd30f",
+      "slug": "עלי-אלעוברה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ali El Ubra",
+        "עלי אלעוברה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c702495c00",
+      "slug": "מנואל-ניירה",
+      "slugAliases": [],
+      "nameAliases": [
+        "מנואל ניירה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c7711745f0",
+      "slug": "ניב-זריהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Niv Zrihan",
+        "ניב זריהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c8b2f83cda",
+      "slug": "בן-אלגרבלי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ben Algrabli",
+        "בן אלגרבלי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_c992a64b6f",
+      "slug": "גאל-אטוק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gaël Etock",
+        "גאל אטוק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cb0adec91f",
+      "slug": "גיורגי-דרסיליה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Georgi Daraselia",
+        "גיורגי דרסיליה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cb2d91b068",
+      "slug": "חוטפריט-רומראטו",
+      "slugAliases": [],
+      "nameAliases": [
+        "חוטפריט רומראטו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cb4ad0bc1d",
+      "slug": "רונן-גבאי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ronen Gabay",
+        "רונן גבאי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cbce546561",
+      "slug": "שמואל-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "שמואל כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cbd86a87d0",
+      "slug": "אוגנין-לאקיץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ognjen Lakić",
+        "אוגנין לאקיץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cc459a96c2",
+      "slug": "אלון-חזן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Alon Hazan",
+        "אלון חזן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cc6bb93ec0",
+      "slug": "יצחק-מנחם",
+      "slugAliases": [],
+      "nameAliases": [
+        "יצחק מנחם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cd51742c62",
+      "slug": "אריה-אריאל",
+      "slugAliases": [],
+      "nameAliases": [
+        "אריה אריאל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cd5e023a2e",
+      "slug": "אילן-שוקרון",
+      "slugAliases": [],
+      "nameAliases": [
+        "אילן שוקרון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cd9d148325",
+      "slug": "יובל-פילוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "יובל פילוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cde776a906",
+      "slug": "פבריציו-קארבליו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Fabrício Carvalho",
+        "פבריציו קארבליו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ce50c6869c",
+      "slug": "אלי-יאני",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eli Yani",
+        "אלי יאני"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cf93d1a7ea",
+      "slug": "גבריאל-סגל",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gabriel Segal",
+        "גבריאל סגל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_cfc3496154",
+      "slug": "נריוס-ואלסקיס",
+      "slugAliases": [],
+      "nameAliases": [
+        "נריוס ואלסקיס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d027706b2f",
+      "slug": "ביוואן-פרנסמן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Bevan Fransman",
+        "ביוואן פרנסמן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d0fb92ec93",
+      "slug": "בראיין-גרזיציץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Bryan Gerzičić",
+        "בראיין גרזיצ'יץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d10dcaf2ff",
+      "slug": "כפיר-אייזנשטיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Kfir Izenstein",
+        "כפיר אייזנשטיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d1c100a162",
+      "slug": "דב-רמלר",
+      "slugAliases": [],
+      "nameAliases": [
+        "דב רמלר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d20e3a28f6",
+      "slug": "בן-שהר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ben Sahar",
+        "בן סהר",
+        "בן שהר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d2278dcde8",
+      "slug": "צחי-זנטי",
+      "slugAliases": [],
+      "nameAliases": [
+        "צחי זנטי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d23d4955a5",
+      "slug": "ארנסטס-שטקוס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ernestas Šetkus",
+        "ארנסטס שטקוס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d2cf8ead07",
+      "slug": "משה-מוסטרל",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה מוסטרל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d33d2b7eec",
+      "slug": "רפי-שמואל",
+      "slugAliases": [],
+      "nameAliases": [
+        "רפי שמואל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d37cc554be",
+      "slug": "דימיטאר-טלקיסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "דימיטאר טלקיסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d41234a2fe",
+      "slug": "אריק-דגמבה-דגמבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "אריק דג'מבה דג'מבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d41b1a477b",
+      "slug": "יהודה-עמר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yehuda Amar",
+        "יהודה עמר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d46a97aa9d",
+      "slug": "שמעון-ברנס",
+      "slugAliases": [],
+      "nameAliases": [
+        "שמעון ברנס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d49e466873",
+      "slug": "יוסי-אבוקסיס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yossi Abukasis",
+        "Yossi Abuksis",
+        "יוסי אבוקסיס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d4ded150b3",
+      "slug": "פדרו-גלבאן",
+      "slugAliases": [],
+      "nameAliases": [
+        "פדרו גלבאן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d5858e71c4",
+      "slug": "תמיר-לינהרט",
+      "slugAliases": [],
+      "nameAliases": [
+        "תמיר לינהרט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d5b6d6ee0a",
+      "slug": "משה-סיני",
+      "slugAliases": [],
+      "nameAliases": [
+        "Moshe Sinai",
+        "משה סיני"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d65c4fce2b",
+      "slug": "אהוד-כחילה",
+      "slugAliases": [],
+      "nameAliases": [
+        "אהוד כחילה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d68542956a",
+      "slug": "אנז-פרדי-פלומה",
+      "slugAliases": [],
+      "nameAliases": [
+        "אנז'-פרדי פלומה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d7006dfdc2",
+      "slug": "רומן-וסילוק",
+      "slugAliases": [],
+      "nameAliases": [
+        "רומן וסילוק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d73bf6d73e",
+      "slug": "מוטי-ברשצקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Moti Barshazky",
+        "מוטי ברשצקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d7910679ca",
+      "slug": "אליניב-ברדה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Elyaniv Barda",
+        "אליניב ברדה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d7da5a15cf",
+      "slug": "דורון-ליידנר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Doron Leidner",
+        "דורון ליידנר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d831dd512b",
+      "slug": "יעקב-שוורץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yaakov Schwartz",
+        "יעקב שוורץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d854744ec2",
+      "slug": "אריק-ינקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Arik Yanko",
+        "אריק ינקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d8b9afcb38",
+      "slug": "יהודה-חוטה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yehuda Huta",
+        "יהודה חוטה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d8f1b0bc43",
+      "slug": "אלן-אוזבולט",
+      "slugAliases": [],
+      "nameAliases": [
+        "Alen Ožbolt",
+        "אלן אוז'בולט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d911596da4",
+      "slug": "משה-מלמד",
+      "slugAliases": [],
+      "nameAliases": [
+        "Moshe Melamed",
+        "משה מלמד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_d95ec75524",
+      "slug": "שי-אליאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shay Elias",
+        "שי אליאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_dac90d2ddf",
+      "slug": "דני-גרופר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Denny Gropper",
+        "דני גרופר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_dc2215b3ad",
+      "slug": "עומאר-בראון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Omar Browne",
+        "עומאר בראון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_dcf4113be8",
+      "slug": "גל-שיש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gal Shish",
+        "גל שיש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_dd86df8ba8",
+      "slug": "אוראל-דגני",
+      "slugAliases": [],
+      "nameAliases": [
+        "Orel Dgani",
+        "אוראל דגני"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_de8f21975e",
+      "slug": "מזואה-אנסומבו",
+      "slugAliases": [],
+      "nameAliases": [
+        "מזואה אנסומבו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_deda8456d5",
+      "slug": "אל-ים-קנצפולסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "El Yam Kanzapolsky",
+        "אל-ים קנצפולסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_df55a90930",
+      "slug": "יונה-פוקס",
+      "slugAliases": [],
+      "nameAliases": [
+        "יונה פוקס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_df6dbfe5c5",
+      "slug": "מחמוד-עבאס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mahmood Abbas",
+        "מחמוד עבאס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_dfc51cdd9b",
+      "slug": "מריוס-ניביידומסקי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mariusz Niewiadomski",
+        "מריוס ניביידומסקי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_dff7d98add",
+      "slug": "דאגלס-דה-סילבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Douglas Silva",
+        "Douglas da Silva",
+        "דאגלס דה סילבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e0891c08ce",
+      "slug": "פארלי-רוסה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Farley Rosa",
+        "פארלי רוסה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e095627750",
+      "slug": "אייל-אחואן",
+      "slugAliases": [],
+      "nameAliases": [
+        "אייל אחואן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e0b4d82d31",
+      "slug": "אורי-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Uri Cohen",
+        "אורי כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e13a867a8b",
+      "slug": "חנן-אלקיים",
+      "slugAliases": [],
+      "nameAliases": [
+        "חנן אלקיים"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e16ed5ac79",
+      "slug": "עבדי-פרחאת",
+      "slugAliases": [],
+      "nameAliases": [
+        "Abdi Farhat",
+        "עבדי פרחאת"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e1efc9cae0",
+      "slug": "אסי-טובי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Asi Tubi",
+        "אסי טובי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e23d4d32d3",
+      "slug": "צבי-ארליך",
+      "slugAliases": [],
+      "nameAliases": [
+        "צבי ארליך"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e28931ccae",
+      "slug": "פאביו-גוניור-פריירה",
+      "slugAliases": [],
+      "nameAliases": [
+        "פאביו ג'וניור פריירה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e31b9d937b",
+      "slug": "רווה-אסייג",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ravve Assayeg",
+        "רווה אסייג"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e38277ecd6",
+      "slug": "רז-טוויזר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Raz Twizer",
+        "רז טוויזר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e3b0689fca",
+      "slug": "וויליאם-אוואסו",
+      "slugAliases": [],
+      "nameAliases": [
+        "William Owusu",
+        "וויליאם אוואסו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e3ef93349f",
+      "slug": "אסיה-דרקסן",
+      "slugAliases": [],
+      "nameAliases": [
+        "אסיה דרקסן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e42fa23730",
+      "slug": "שגיא-גניס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Sagi Genis",
+        "שגיא גניס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e50849c7c4",
+      "slug": "משה-רסקין",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה רסקין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e6123e6fee",
+      "slug": "לי-און-מזרחי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Li On Mizrahi",
+        "לי און מזרחי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e61afd4200",
+      "slug": "קונסטנטין-מרקו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ioan Marcu",
+        "קונסטנטין מרקו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e636f3dfe3",
+      "slug": "חנן-ממן",
+      "slugAliases": [],
+      "nameAliases": [
+        "חנן ממן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e741c9e786",
+      "slug": "אופיר-טקיאר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ofir Takiyar",
+        "אופיר טקיאר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e7ffc8109d",
+      "slug": "אביב-אלחדד",
+      "slugAliases": [],
+      "nameAliases": [
+        "אביב אלחדד"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e8190181b0",
+      "slug": "עדן-שרם",
+      "slugAliases": [],
+      "nameAliases": [
+        "Eden Shrem",
+        "עדן שרם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e86f606666",
+      "slug": "יגאל-בקר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yigal Becker",
+        "יגאל בקר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e8a5d5b837",
+      "slug": "אלון-אופיר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Alon Ofir",
+        "אלון אופיר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e948dc8f34",
+      "slug": "דוד-אמסלם",
+      "slugAliases": [],
+      "nameAliases": [
+        "David Amsalem",
+        "דוד אמסלם"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_e991d83079",
+      "slug": "אמיר-עגייב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Amir Agayev",
+        "אמיר עגייב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ea3357e961",
+      "slug": "עידן-כהן",
+      "slugAliases": [],
+      "nameAliases": [
+        "Idan Cohen",
+        "עידן כהן"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ea4269fdfe",
+      "slug": "מייקל-אולהה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Michael Olaha",
+        "מייקל אולהה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ea964cf2b6",
+      "slug": "שאנדה-סילבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Xande Silva",
+        "שאנדה סילבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ea9c78eb0a",
+      "slug": "ברנקו-איליץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Branko Ilič",
+        "ברנקו איליץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_eabb2bc45d",
+      "slug": "יוסי-זאנה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yossi Zana",
+        "יוסי זאנה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_eb6083c0af",
+      "slug": "מילאן-אוסטרץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Milan Osterc",
+        "מילאן אוסטרץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_eb6dd2ac08",
+      "slug": "אריה-אלטר",
+      "slugAliases": [],
+      "nameAliases": [
+        "אריה אלטר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ec8052f6ab",
+      "slug": "משה-פיזנטי",
+      "slugAliases": [],
+      "nameAliases": [
+        "משה פיזנטי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ed0c7c9bcc",
+      "slug": "שמעון-הרוש",
+      "slugAliases": [],
+      "nameAliases": [
+        "Shimon Harush",
+        "שמעון הרוש"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ed1610b21e",
+      "slug": "אסי-דומב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Asi Domb",
+        "Assi Domb",
+        "אסי דומב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ed570afa6e",
+      "slug": "ביסקוט-אמבלה",
+      "slugAliases": [],
+      "nameAliases": [
+        "ביסקוט אמבלה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ed8c4930dd",
+      "slug": "תומר-לוי",
+      "slugAliases": [],
+      "nameAliases": [
+        "תומר לוי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ed92c8fb33",
+      "slug": "לוקאס-סאשה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Lucas Sasha",
+        "לוקאס סאשה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ef0852b3bb",
+      "slug": "פיליפ-מנה",
+      "slugAliases": [],
+      "nameAliases": [
+        "פיליפ מנה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ef24d0310e",
+      "slug": "ניקולאס-גורובסוב",
+      "slugAliases": [],
+      "nameAliases": [
+        "Nicolás Gorobsov",
+        "ניקולאס גורובסוב"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ef5486a68a",
+      "slug": "רמזי-ספורי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ramzi Safuri",
+        "רמזי ספורי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ef8495b081",
+      "slug": "יהונתן-לוי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yehonatan Levy",
+        "יהונתן לוי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_efd0fed260",
+      "slug": "מריו-מסטרוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Mario Meštrović",
+        "מריו מסטרוביץ"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f04c393b45",
+      "slug": "מנחם-רוזנשטרייך",
+      "slugAliases": [],
+      "nameAliases": [
+        "מנחם רוזנשטרייך"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f05836d2d4",
+      "slug": "יעקב-בריהון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ya'akov Berihon",
+        "יעקב בריהון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f09e03e43d",
+      "slug": "יוסי-מדר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yossi Madar",
+        "יוסי מדר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f1262369e6",
+      "slug": "עידו-אלמישלי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ido Elmichly",
+        "עידו אלמישלי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f12f909ac3",
+      "slug": "אביב-דדו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Aviv Dado",
+        "אביב דדו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f1e65c010d",
+      "slug": "סתיו-למקין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Stav Lemkin",
+        "סתיו למקין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f2115cfcec",
+      "slug": "גורג-דיבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "George Diba",
+        "ג'ורג' דיבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f24970530f",
+      "slug": "יניב-מזרחי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Yaniv Mizrahi",
+        "יניב מזרחי",
+        "יניב מזרחי (שוער)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f3c3ea8564",
+      "slug": "טל-איילה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tal Ayala",
+        "טל איילה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f3d90770ef",
+      "slug": "רז-שלמה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Raz Shlomo",
+        "רז שלמה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f3e79bccbe",
+      "slug": "איתי-שביט",
+      "slugAliases": [],
+      "nameAliases": [
+        "Itay Shavit",
+        "איתי שביט"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f3f6fcfb03",
+      "slug": "רז-שטיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Raz Stain",
+        "רז שטיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f40aca5867",
+      "slug": "גיא-גומברג",
+      "slugAliases": [],
+      "nameAliases": [
+        "Guy Gomberg",
+        "גיא גומברג"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f47f7d2088",
+      "slug": "גון-פיינטסיל",
+      "slugAliases": [],
+      "nameAliases": [
+        "ג'ון פיינטסיל"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f4d9404511",
+      "slug": "ביברס-נאתכו",
+      "slugAliases": [],
+      "nameAliases": [
+        "Bibars Natcho",
+        "ביברס נאתכו"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f519e72f4b",
+      "slug": "דאבור-רופניק",
+      "slugAliases": [],
+      "nameAliases": [
+        "Davor Rupnik",
+        "דאבור רופניק"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f5ec2e9271",
+      "slug": "תום-אלמדון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Tom Al-Madon",
+        "תום אלמדון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f67d8cedec",
+      "slug": "דאמיר-שובשיץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Damir Šovšić",
+        "דאמיר שובשיץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f73e868810",
+      "slug": "עומאר-גאריבה",
+      "slugAliases": [],
+      "nameAliases": [
+        "עומאר גאריבה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f74a361546",
+      "slug": "אלי-בכר",
+      "slugAliases": [],
+      "nameAliases": [
+        "אלי בכר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f7501519c1",
+      "slug": "גל-מלכה",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gal Malca",
+        "גל מלכה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f76834937e",
+      "slug": "פיני-בלילי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Pini Balili",
+        "פיני בלילי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f87f9db8da",
+      "slug": "מייקל-סיטון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Michael Seaton",
+        "מייקל סיטון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f936d54d5d",
+      "slug": "עומר-פרץ-חלוץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "עומר פרץ (חלוץ)"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_f9ce6c1b99",
+      "slug": "אלפה-קונטה",
+      "slugAliases": [],
+      "nameAliases": [
+        "אלפה קונטה"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fb02e74b38",
+      "slug": "עמית-ביטון",
+      "slugAliases": [],
+      "nameAliases": [
+        "Amit Bitton",
+        "עמית ביטון"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fb2afa79d0",
+      "slug": "גאבור-הלמאי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Gábor Halmai",
+        "גאבור הלמאי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fbb04763b0",
+      "slug": "טוטו-תמוז",
+      "slugAliases": [],
+      "nameAliases": [
+        "Toto Tamuz",
+        "טוטו תמוז"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fbca06cc69",
+      "slug": "ויקטור-מרעי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Victor Merey",
+        "ויקטור מרעי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fbda86940b",
+      "slug": "עידו-וייר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Ido Vaier",
+        "עידו וייר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fc78cb8855",
+      "slug": "רועי-אלקוקין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roy Alkokin",
+        "רועי אלקוקין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fd182dfc02",
+      "slug": "מאיר-בן-שטרית",
+      "slugAliases": [],
+      "nameAliases": [
+        "מאיר בן שטרית"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fd415ce669",
+      "slug": "זוראב-מנטשאשווילי",
+      "slugAliases": [],
+      "nameAliases": [
+        "Zurab Menteshashvili",
+        "זוראב מנטשאשווילי"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fd7772ba65",
+      "slug": "מוטי-פליטר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Moti Fliter",
+        "מוטי פליטר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fde4eb7dae",
+      "slug": "רובי-לבקוביץ",
+      "slugAliases": [],
+      "nameAliases": [
+        "Rubi Levkovich",
+        "רובי לבקוביץ'"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fdf0162568",
+      "slug": "מנחם-מור",
+      "slugAliases": [],
+      "nameAliases": [
+        "מנחם מור"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fe3d8cf84a",
+      "slug": "רוי-ברנס",
+      "slugAliases": [],
+      "nameAliases": [
+        "Roy Baranes",
+        "רוי ברנס"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_fe84441949",
+      "slug": "עמאר-מנצור",
+      "slugAliases": [],
+      "nameAliases": [
+        "Amer Manzur",
+        "עמאר מנצור"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_febfe0fef8",
+      "slug": "אריק-איינשטיין",
+      "slugAliases": [],
+      "nameAliases": [
+        "Arik Einstein",
+        "אריק איינשטיין"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ff6658c1ea",
+      "slug": "איציק-שולמייסטר",
+      "slugAliases": [],
+      "nameAliases": [
+        "Itzik Sholmyster",
+        "איציק שולמייסטר"
+      ],
+      "mintedOn": "2026-09-21"
+    },
+    {
+      "id": "p_ffb0dfdc88",
+      "slug": "רוגר-ברנרדו",
+      "slugAliases": [],
+      "nameAliases": [
+        "רוג'ר ברנרדו"
+      ],
+      "mintedOn": "2026-09-21"
+    }
+  ]
+}

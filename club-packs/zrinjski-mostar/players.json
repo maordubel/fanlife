@@ -1,0 +1,492 @@
+[
+  {
+    "id": "marko-maric",
+    "name": "Marko Marić",
+    "positions": [
+      "GK"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "Pipa winner 2024"
+    ],
+    "sourceIds": [
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "ivica-matas",
+    "name": "Ivica Matas",
+    "positions": [
+      "GK"
+    ],
+    "eras": [
+      "2000s"
+    ],
+    "tags": [
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "igor-melher",
+    "name": "Igor Melher",
+    "positions": [
+      "GK"
+    ],
+    "eras": [
+      "2010s"
+    ],
+    "tags": [
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "goran-karacic",
+    "name": "Goran Karačić",
+    "positions": [
+      "GK"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "2026 Cup winner"
+    ],
+    "sourceIds": [
+      "src-2026-cup-1",
+      "src-2026-cup-2"
+    ]
+  },
+  {
+    "id": "pero-stojkic",
+    "name": "Pero Stojkić",
+    "positions": [
+      "LB"
+    ],
+    "eras": [
+      "2000s",
+      "2010s"
+    ],
+    "tags": [
+      "record appearance tier",
+      "long-serving captain",
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-stats",
+      "src-fans"
+    ]
+  },
+  {
+    "id": "slobodan-jakovljevic",
+    "name": "Slobodan Jakovljević",
+    "positions": [
+      "CB"
+    ],
+    "eras": [
+      "2010s",
+      "2020s"
+    ],
+    "tags": [
+      "Club 200",
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-stats",
+      "src-fans"
+    ]
+  },
+  {
+    "id": "hrvoje-barisic",
+    "name": "Hrvoje Barišić",
+    "positions": [
+      "CB"
+    ],
+    "eras": [
+      "2010s",
+      "2020s"
+    ],
+    "tags": [
+      "Club 200"
+    ],
+    "sourceIds": [
+      "src-stats"
+    ]
+  },
+  {
+    "id": "marin-anicic",
+    "name": "Marin Aničić",
+    "positions": [
+      "CB"
+    ],
+    "eras": [
+      "2010s"
+    ],
+    "tags": [
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-pipa",
+      "src-stats"
+    ]
+  },
+  {
+    "id": "toni-sunjic",
+    "name": "Toni Šunjić",
+    "positions": [
+      "CB"
+    ],
+    "eras": [
+      "2000s",
+      "2010s"
+    ],
+    "tags": [
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "josip-corluka",
+    "name": "Josip Ćorluka",
+    "positions": [
+      "RB"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "Pipa winner",
+      "AZ comeback scorer"
+    ],
+    "sourceIds": [
+      "src-pipa",
+      "src-uefa-az"
+    ]
+  },
+  {
+    "id": "daniel-graovac",
+    "name": "Daniel Graovac",
+    "positions": [
+      "CB"
+    ],
+    "eras": [
+      "2010s"
+    ],
+    "tags": [
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "mario-ticinovic",
+    "name": "Mario Tičinović",
+    "positions": [
+      "LB",
+      "LW"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "Pipa winner",
+      "AZ starter"
+    ],
+    "sourceIds": [
+      "src-pipa",
+      "src-uefa-az-report"
+    ]
+  },
+  {
+    "id": "luka-modric",
+    "name": "Luka Modrić",
+    "positions": [
+      "CM"
+    ],
+    "eras": [
+      "2000s"
+    ],
+    "tags": [
+      "2003/04",
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-club-info",
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "mladen-zizovic",
+    "name": "Mladen Žižović",
+    "positions": [
+      "AM"
+    ],
+    "eras": [
+      "2000s",
+      "2010s"
+    ],
+    "tags": [
+      "top scorer list",
+      "coach later"
+    ],
+    "sourceIds": [
+      "src-stats"
+    ]
+  },
+  {
+    "id": "velibor-djuric",
+    "name": "Velibor Đurić",
+    "positions": [
+      "CM"
+    ],
+    "eras": [
+      "2000s",
+      "2010s"
+    ],
+    "tags": [
+      "Club 200",
+      "scorer list"
+    ],
+    "sourceIds": [
+      "src-stats"
+    ]
+  },
+  {
+    "id": "vucina-scepanovic",
+    "name": "Vučina Šćepanović",
+    "positions": [
+      "CM"
+    ],
+    "eras": [
+      "2010s"
+    ],
+    "tags": [
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "milos-filipovic",
+    "name": "Miloš Filipović",
+    "positions": [
+      "AM"
+    ],
+    "eras": [
+      "2010s"
+    ],
+    "tags": [
+      "top scorer list"
+    ],
+    "sourceIds": [
+      "src-stats"
+    ]
+  },
+  {
+    "id": "ognjen-todorovic",
+    "name": "Ognjen Todorović",
+    "positions": [
+      "LW",
+      "RW"
+    ],
+    "eras": [
+      "2010s"
+    ],
+    "tags": [
+      "Pipa winner",
+      "top scorer list"
+    ],
+    "sourceIds": [
+      "src-pipa",
+      "src-stats"
+    ]
+  },
+  {
+    "id": "zvonimir-kozulj",
+    "name": "Zvonimir Kožulj",
+    "positions": [
+      "AM"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "AZ comeback substitute/scorer"
+    ],
+    "sourceIds": [
+      "src-uefa-az",
+      "src-uefa-az-report"
+    ]
+  },
+  {
+    "id": "andrija-balic",
+    "name": "Andrija Balić",
+    "positions": [
+      "CM"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "AZ starter"
+    ],
+    "sourceIds": [
+      "src-uefa-az-report"
+    ]
+  },
+  {
+    "id": "nemanja-bilbija",
+    "name": "Nemanja Bilbija",
+    "positions": [
+      "CF"
+    ],
+    "eras": [
+      "2010s",
+      "2020s"
+    ],
+    "tags": [
+      "club all-time top scorer",
+      "captain",
+      "Pipa winner",
+      "2026 Cup scorer"
+    ],
+    "sourceIds": [
+      "src-stats",
+      "src-pipa",
+      "src-2026-cup-1",
+      "src-2026-cup-2"
+    ]
+  },
+  {
+    "id": "kresimir-kordic",
+    "name": "Krešimir Kordić",
+    "positions": [
+      "CF"
+    ],
+    "eras": [
+      "2000s",
+      "2010s"
+    ],
+    "tags": [
+      "second on official scorer table",
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-stats",
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "mario-cuze",
+    "name": "Mario Ćuže",
+    "positions": [
+      "LW",
+      "RW"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "2026 Cup final assist in first leg"
+    ],
+    "sourceIds": [
+      "src-2026-cup-1"
+    ]
+  },
+  {
+    "id": "stevo-nikolic",
+    "name": "Stevo Nikolić",
+    "positions": [
+      "CF"
+    ],
+    "eras": [
+      "2000s",
+      "2010s"
+    ],
+    "tags": [
+      "official scorer table"
+    ],
+    "sourceIds": [
+      "src-stats"
+    ]
+  },
+  {
+    "id": "zoran-rajovic",
+    "name": "Zoran Rajović",
+    "positions": [
+      "CF"
+    ],
+    "eras": [
+      "2000s"
+    ],
+    "tags": [
+      "Pipa winner",
+      "official scorer table"
+    ],
+    "sourceIds": [
+      "src-pipa",
+      "src-stats"
+    ]
+  },
+  {
+    "id": "sulejman-smajic",
+    "name": "Sulejman Smajić",
+    "positions": [
+      "FW",
+      "W"
+    ],
+    "eras": [
+      "2000s"
+    ],
+    "tags": [
+      "Pipa winner"
+    ],
+    "sourceIds": [
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "matija-malekinusic",
+    "name": "Matija Malekinušić",
+    "positions": [
+      "LW",
+      "RW"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "modern title era"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "nardin-mulahusejnovic",
+    "name": "Nardin Mulahusejnović",
+    "positions": [
+      "CF"
+    ],
+    "eras": [
+      "2020s"
+    ],
+    "tags": [
+      "2025 Supercup starter"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  }
+]

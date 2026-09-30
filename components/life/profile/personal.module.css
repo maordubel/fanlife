@@ -1,0 +1,253 @@
+/*
+ * אני · התיק שלי · הסיפור שלי — the motion and material of the personal layer (delta 90-H).
+ *
+ * One file, scoped by CSS modules, so nothing here can leak into the gates or the glass.
+ * Colours are the house tokens only (rgb(var(--…))) — no raw colour, no gradient, no glow,
+ * no shadow. Depth is made of offset hairlines and transform (§31).
+ *
+ * Motion tokens (§33) and three speeds (§34): fast = press, base = open/focus, narrative =
+ * a path being drawn, a person moving, a line of a life running down the page. Nothing
+ * loops; every animation runs once when its element mounts (§35).
+ *
+ * Reduced motion is scoped to `.root` (§43): every animation below starts from its visible
+ * state as the element's own style, so switching animations off leaves a finished page,
+ * not a blank one.
+ */
+
+.root {
+  --motion-fast: 160ms;
+  --motion-base: 280ms;
+  --motion-medium: 420ms;
+  --motion-slow: 700ms;
+  --ease-life: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-reveal: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root *,
+  .root *::before,
+  .root *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+/* ---- the dossier opening, and the turn between its two halves (§39) ---- */
+
+.sheetIn {
+  animation: sheetIn var(--motion-medium) var(--ease-life) both;
+}
+@keyframes sheetIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* RTL: the next half of the dossier lies to the LEFT, so it arrives from the left */
+.turnNext {
+  animation: turnNext var(--motion-base) var(--ease-life) both;
+}
+.turnBack {
+  animation: turnBack var(--motion-base) var(--ease-life) both;
+}
+@keyframes turnNext {
+  from { opacity: 0; transform: translateX(-14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes turnBack {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* the red spine stays put while the pages under it change */
+.spine {
+  transform-origin: 100% 50%;
+  animation: spine var(--motion-slow) var(--ease-life) both;
+}
+@keyframes spine {
+  from { transform: scaleX(0.12); }
+  to { transform: none; }
+}
+
+/* ---- the reveal of a line, from the side Hebrew is read from (§7.2) ----
+   inset(0 0 0 100%) hides everything but the RIGHT edge, and the clip opens leftwards —
+   the same direction the eye travels along a Hebrew line. */
+.reveal {
+  animation: revealLine var(--motion-medium) var(--ease-reveal) both;
+}
+@keyframes revealLine {
+  from { opacity: 0; clip-path: inset(0 0 0 100%); transform: translateX(-8px); }
+  to { opacity: 1; clip-path: inset(0); transform: none; }
+}
+
+/* §38 — the sentence he used to be, struck through once */
+.struck {
+  position: relative;
+  display: inline-block;
+}
+.struck::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: 55%;
+  height: 2px;
+  background: rgb(var(--red));
+  transform-origin: 100% 50%;
+  animation: strike var(--motion-medium) var(--ease-life) 240ms both;
+}
+@keyframes strike {
+  from { transform: scaleX(0); }
+  to { transform: none; }
+}
+.fadeAway {
+  animation: fadeAway var(--motion-medium) ease 1300ms both;
+}
+@keyframes fadeAway {
+  from { opacity: 1; }
+  to { opacity: 0.35; }
+}
+
+/* ---- the drawer (§18) ---- */
+
+.drawer {
+  transform-origin: top;
+  animation: drawerOpen 340ms var(--ease-life) both;
+}
+@keyframes drawerOpen {
+  from { transform: translateY(-18px) scaleY(0.92); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+/* ---- lines being drawn (§9) — the wrapper is revealed along the line's own direction.
+   (Not a dash trick: under `vector-effect: non-scaling-stroke` a dash is measured on
+   screen, so `pathLength` cannot describe it.) ---- */
+
+.drawRtl {
+  animation: drawRtl 900ms var(--ease-life) both;
+}
+@keyframes drawRtl {
+  from { clip-path: inset(0 0 0 100%); }
+  to { clip-path: inset(0); }
+}
+.drawOut {
+  transform-origin: 50% 50%;
+  animation: drawOut 820ms var(--ease-life) both;
+}
+@keyframes drawOut {
+  from { transform: scale(0.2); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+/* a stop on a path lands after its line */
+.stop {
+  animation: stopIn var(--motion-base) var(--ease-life) both;
+}
+@keyframes stopIn {
+  from { transform: scale(0); }
+  to { transform: none; }
+}
+
+/* ---- the timeline (§15) — the spine runs down, the days land on it ---- */
+
+.lineDown {
+  transform-origin: top;
+  animation: lineDown 800ms var(--ease-life) both;
+}
+@keyframes lineDown {
+  from { transform: scaleY(0); }
+  to { transform: none; }
+}
+.dayIn {
+  animation: dayIn var(--motion-medium) var(--ease-life) both;
+}
+@keyframes dayIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---- people (§12) — a node travels to where the relationship puts it ---- */
+
+.node {
+  transition:
+    inset-inline-start var(--motion-slow) var(--ease-life),
+    top var(--motion-slow) var(--ease-life),
+    opacity 350ms ease;
+}
+
+/* ---- objects (§20–22) ---- */
+
+/* a ticket: two notches cut out of its long edges, the colour of the table under it */
+.ticket {
+  position: relative;
+}
+.ticket::before,
+.ticket::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  background: rgb(var(--ink));
+  transform: rotate(45deg);
+}
+.ticket::before { inset-inline-start: -7px; }
+.ticket::after { inset-inline-end: -7px; }
+
+/* depth without a shadow — a second sheet of paper, offset, drawn in a hairline (§31) */
+.paperLayer {
+  position: relative;
+  isolation: isolate;
+}
+.paperLayer::before {
+  content: '';
+  position: absolute;
+  inset: 5px -5px -5px 5px;
+  border: 1px solid rgb(var(--sheet) / 0.22);
+  z-index: -1;
+}
+
+/* the object you picked is lifted off the table; the rest wait (§26) */
+.liftable {
+  transition:
+    transform var(--motion-base) var(--ease-life),
+    opacity var(--motion-base) ease;
+}
+.lifted {
+  transform: translateY(-6px) scale(1.06);
+}
+.lowered {
+  opacity: 0.35;
+}
+
+/* ---- the wardrobe rail (§23) ---- */
+
+.rail {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.rail::-webkit-scrollbar { display: none; }
+.hanger {
+  scroll-snap-align: center;
+  transform: scale(0.84);
+  opacity: 0.45;
+  transition:
+    transform 320ms var(--ease-reveal),
+    opacity 320ms var(--ease-reveal);
+}
+.hanger[data-active='true'] {
+  transform: none;
+  opacity: 1;
+}
+
+/* the compartment of the bag you press gives a little under the thumb */
+.press {
+  transition: transform var(--motion-fast) var(--ease-life);
+}
+.press:active {
+  transform: translateY(2px);
+}

@@ -1,0 +1,105 @@
+{
+  "status": "OPEN",
+  "cards": [
+    {
+      "id": "mem-01",
+      "front": "1905",
+      "back": "Club foundation"
+    },
+    {
+      "id": "mem-02",
+      "front": "1992",
+      "back": "Re-establishment"
+    },
+    {
+      "id": "mem-03",
+      "front": "1994",
+      "back": "Modern home era"
+    },
+    {
+      "id": "mem-04",
+      "front": "1998",
+      "back": "Ultras formal foundation"
+    },
+    {
+      "id": "mem-05",
+      "front": "2000",
+      "back": "First Europe"
+    },
+    {
+      "id": "mem-06",
+      "front": "2003/04",
+      "back": "Modrić season"
+    },
+    {
+      "id": "mem-07",
+      "front": "2005",
+      "back": "First league title"
+    },
+    {
+      "id": "mem-08",
+      "front": "2008",
+      "back": "First cup / Volim te bola"
+    },
+    {
+      "id": "mem-09",
+      "front": "2009",
+      "back": "Second title"
+    },
+    {
+      "id": "mem-10",
+      "front": "2014",
+      "back": "Third title"
+    },
+    {
+      "id": "mem-11",
+      "front": "2016",
+      "back": "Start of three-title run"
+    },
+    {
+      "id": "mem-12",
+      "front": "2018",
+      "back": "Third straight title"
+    },
+    {
+      "id": "mem-13",
+      "front": "2022",
+      "back": "Return to title"
+    },
+    {
+      "id": "mem-14",
+      "front": "2023",
+      "back": "Double"
+    },
+    {
+      "id": "mem-15",
+      "front": "2023 AZ",
+      "back": "0-3 to 4-3"
+    },
+    {
+      "id": "mem-16",
+      "front": "2024",
+      "back": "Cup"
+    },
+    {
+      "id": "mem-17",
+      "front": "2025",
+      "back": "Ninth title"
+    },
+    {
+      "id": "mem-18",
+      "front": "2026 Palace",
+      "back": "Knockout play-off"
+    },
+    {
+      "id": "mem-19",
+      "front": "2026 Cup",
+      "back": "Final vs Velež"
+    },
+    {
+      "id": "mem-20",
+      "front": "Pipa",
+      "back": "Supporter award"
+    }
+  ]
+}

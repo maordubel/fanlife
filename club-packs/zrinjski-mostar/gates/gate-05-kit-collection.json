@@ -1,0 +1,72 @@
+{
+  "status": "OPEN",
+  "collectionItems": [
+    {
+      "kitId": "kit-1994-home",
+      "season": "1994/95",
+      "manufacturer": "Pienne",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-1995-home",
+      "season": "1995/96",
+      "manufacturer": "In-House",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-1997-home",
+      "season": "1997/98",
+      "manufacturer": "Fotex",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-2004-home",
+      "season": "2004/05",
+      "manufacturer": "Naai",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-2006-home",
+      "season": "2006/07",
+      "manufacturer": "Lotto",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-2007-home",
+      "season": "2007/08",
+      "manufacturer": "Zeus",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-2013-home",
+      "season": "2013/14",
+      "manufacturer": "Zeus",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-2017-era",
+      "season": "2017/18",
+      "manufacturer": "Macron",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-2022-home",
+      "season": "2022/23",
+      "manufacturer": "Macron",
+      "truth": "verified/secondary database"
+    },
+    {
+      "kitId": "kit-2025-home",
+      "season": "2025/26",
+      "manufacturer": "Macron",
+      "truth": "verified/secondary database"
+    }
+  ],
+  "personalFields": [
+    "owned",
+    "wanted",
+    "seen in person",
+    "family memory",
+    "first shirt"
+  ]
+}

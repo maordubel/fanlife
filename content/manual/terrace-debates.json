@@ -1,0 +1,30 @@
+{
+  "note": "שער 7 · הוויכוח של היציע (ONE RED WORLD §16, 28.9.2026). שאלות דעה בלבד: אין כאן עובדה, אין מספר, אין שם של אדם אמיתי בפה של אף אחד. התשובות לא מוקלדות כאן — kind 'roster' עונה מכל הסגל דרך RosterSheet, ו-options נפתרות בשרת מתוך המאסטרים (lib/polls/debates-server.ts). id יציב: הוא המפתח של הקול בקלפי (debate:<id>), ולכן לא משנים id — מוסיפים שורה.",
+  "debates": [
+    { "id": "keeper-one-game", "promptHe": "איזה שוער אתה לוקח למשחק אחד?", "kind": "roster", "filter": { "position": "GK" } },
+    { "id": "bring-back", "promptHe": "איזה שחקן היית מחזיר לעונה אחת?", "kind": "roster" },
+    { "id": "final-stays", "promptHe": "איזה גמר נשאר אצלך?", "kind": "match", "options": "cup-finals" },
+    { "id": "europe-night", "promptHe": "איזה ערב אירופי היית רוצה לחוות שוב?", "kind": "match", "options": "europe-wins" },
+    { "id": "derby-again", "promptHe": "איזה ניצחון בדרבי היית רוצה לראות שוב מהיציע?", "kind": "match", "options": "derby-wins" },
+    { "id": "title-season", "promptHe": "לאיזו עונת אליפות היית חוזר?", "kind": "season", "options": "league-titles" },
+    { "id": "cup-again", "promptHe": "איזה גביע היית רוצה להרים שוב?", "kind": "season", "options": "state-cups" },
+    { "id": "last-penalty", "promptHe": "פנדל אחרון, הכול על זה. מי ניגש?", "kind": "roster" },
+    { "id": "armband", "promptHe": "למי אתה נותן את סרט הקפטן?", "kind": "roster" },
+    { "id": "ninetieth", "promptHe": "דקה תשעים, תוצאה שוויונית. למי אתה רוצה שהכדור יגיע?", "kind": "roster" },
+    { "id": "shirt-on-wall", "promptHe": "חולצה של מי היית תולה על הקיר בבית?", "kind": "roster" },
+    { "id": "never-saw", "promptHe": "איזה שחקן אתה מצטער שלא ראית בעיניים?", "kind": "roster" },
+    { "id": "empty-net", "promptHe": "שער ריק, הזדמנות אחת. מי בועט?", "kind": "roster", "filter": { "position": "FW" } },
+    { "id": "middle-brain", "promptHe": "את מי אתה שם באמצע כדי שיחשוב בשבילך?", "kind": "roster", "filter": { "position": "MF" } },
+    { "id": "last-wall", "promptHe": "איזה בלם אתה שם מול החלוץ הכי טוב שלהם?", "kind": "roster", "filter": { "position": "DF" } },
+    { "id": "foreign-heart", "promptHe": "איזה זר הרגיש לך הכי מפה?", "kind": "roster", "filter": { "origin": "foreign" } },
+    { "id": "underrated", "promptHe": "מי השחקן שלדעתך היציע לא העריך מספיק?", "kind": "roster" },
+    { "id": "own-song", "promptHe": "לאיזה שחקן הכי מגיע שיר משלו?", "kind": "roster" },
+    { "id": "take-the-kid", "promptHe": "את מי היית לוקח את הילד לראות, אם היה אפשר לחזור בזמן?", "kind": "roster" },
+    { "id": "coffee-after", "promptHe": "עם מי היית רוצה לשבת על קפה אחרי משחק?", "kind": "roster" },
+    { "id": "shirt-today", "promptHe": "את מי היית רוצה לראות בחולצה של העונה הזאת?", "kind": "roster" },
+    { "id": "first-name", "promptHe": "איזה שם אתה צועק ראשון כשמדברים על הפועל?", "kind": "roster" },
+    { "id": "rainy-night", "promptHe": "ערב גשום, יציע חצי ריק. בשביל מי עוד היית בא?", "kind": "roster" },
+    { "id": "one-more-derby", "promptHe": "דרבי אחד אחרון. מי השחקן שאתה רוצה על הדשא?", "kind": "roster" },
+    { "id": "half-hour-more", "promptHe": "את מי היית רוצה לראות עוד חצי שעה על הדשא?", "kind": "roster" }
+  ]
+}

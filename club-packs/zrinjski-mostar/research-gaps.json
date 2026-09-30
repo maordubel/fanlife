@@ -1,0 +1,50 @@
+[
+  {
+    "priority": "P0",
+    "question": "How did children obtain Zrinjski shirts/scarves in Mostar from 1994–1998?",
+    "why": "FIRST_SHIRT authenticity",
+    "method": "5 supporter interviews born 1982–1989 + collectors/photos."
+  },
+  {
+    "priority": "P0",
+    "question": "Where did organised Zrinjski away buses depart from in the late 1990s and early 2000s, and how were seats booked/paid?",
+    "why": "Away Days / FIRST_AWAY_TRIP",
+    "method": "early Ultras oral history + old flyers/photos."
+  },
+  {
+    "priority": "P0",
+    "question": "What safe, ordinary tasks did first-generation Ultras organisers actually do?",
+    "why": "Supporter Organiser route",
+    "method": "founder/early-member interviews; exclude incriminating details."
+  },
+  {
+    "priority": "P0",
+    "question": "What radio/TV/newspaper/phone routine did Zrinjski families use around matches in the mid/late 1990s?",
+    "why": "ordinary LIFE chapters",
+    "method": "supporter family interviews + media schedules."
+  },
+  {
+    "priority": "P1",
+    "question": "Which cafés or public meeting places were genuinely associated with supporters by era?",
+    "why": "upgrade fictional café / city authenticity",
+    "method": "oral history; do not overwrite kiosk unless useful."
+  },
+  {
+    "priority": "P1",
+    "question": "Which 10–20 historical goals have enough legal video for full spatial reconstruction?",
+    "why": "Gate 8 full mode",
+    "method": "club/UEFA/federation video archive."
+  },
+  {
+    "priority": "P1",
+    "question": "Verify positions for legacy XI candidates with a club historian.",
+    "why": "Gate 1 production accuracy",
+    "method": "club archive / season rosters."
+  },
+  {
+    "priority": "P1",
+    "question": "Verify sponsor/collar/crest details for selected 1990s/2000s kits.",
+    "why": "Gate 4 hard mode",
+    "method": "collectors + dated photos."
+  }
+]

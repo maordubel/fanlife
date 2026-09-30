@@ -1,0 +1,601 @@
+[
+  {
+    "id": "Z-A0",
+    "year": 1992,
+    "age": 6,
+    "template": "FAMILY_MEMORY",
+    "title": "A Name Returns",
+    "historicalAnchorId": "renewal-1992",
+    "placeId": "family-flat",
+    "requiredActions": [
+      "open old family envelope",
+      "ask father one question",
+      "put newspaper clipping in memory box"
+    ],
+    "choices": [
+      "listen",
+      "ask why the name disappeared",
+      "go back to play"
+    ],
+    "failForward": "No historical exposition quiz. The child may understand only fragments.",
+    "truth": [
+      "1992 restoration is verified"
+    ],
+    "fiction": [
+      "family conversation",
+      "objects in envelope"
+    ],
+    "routes": []
+  },
+  {
+    "id": "Z-A1",
+    "year": 1994,
+    "age": 8,
+    "template": "FIRST_MEMORY",
+    "title": "The Stand Is Bigger Than You",
+    "historicalAnchorId": "home-1994",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "stay close to father",
+      "look at the crowd",
+      "touch scarf",
+      "find the correct stand entrance"
+    ],
+    "choices": [
+      "hold father's hand",
+      "follow Marko",
+      "stare at the supporters"
+    ],
+    "memoryObject": "first-red-white-scarf",
+    "failForward": "Wrong turn costs time but father finds you before entry.",
+    "routes": []
+  },
+  {
+    "id": "Z-A2",
+    "year": 1995,
+    "age": 9,
+    "template": "ERRAND_VS_PLAY",
+    "title": "Two Bottles and a Ball",
+    "placeId": "kiosk-kod-ive",
+    "requiredActions": [
+      "bring household errand to Kiosk Kod Ive",
+      "decide whether to play street football first",
+      "return home"
+    ],
+    "choices": [
+      "family first",
+      "football first",
+      "ask Ivo to hold the bag"
+    ],
+    "costs": [
+      "time",
+      "family trust"
+    ],
+    "truth": [],
+    "fiction": [
+      "Kiosk Kod Ive",
+      "Ivo",
+      "street errand"
+    ],
+    "routes": [
+      "regular-supporter"
+    ]
+  },
+  {
+    "id": "Z-A3",
+    "year": 1997,
+    "age": 11,
+    "template": "FIRST_SHIRT",
+    "title": "The Sash",
+    "placeId": "kiosk-kod-ive",
+    "kitId": "kit-1997-home",
+    "requiredActions": [
+      "count savings",
+      "do one small job",
+      "choose between an unofficial scarf now or saving for a shirt",
+      "receive/obtain first sash shirt"
+    ],
+    "choices": [
+      "save",
+      "take hand-me-down from older cousin",
+      "buy cheaper supporter item first"
+    ],
+    "failForward": "Every path ends with a meaningful first club object; not necessarily an official replica.",
+    "truth": [
+      "1997/98 Fotex sash kit is documented"
+    ],
+    "fiction": [
+      "exact purchase channel",
+      "prices",
+      "older cousin"
+    ],
+    "routes": []
+  },
+  {
+    "id": "Z-A4",
+    "year": 1998,
+    "age": 12,
+    "template": "SUPPORTER_ORIGIN",
+    "title": "People Who Carry Things",
+    "historicalAnchorId": "ultras-1998",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "help carry safe materials",
+      "write names for a meeting list",
+      "return an unused roll/banner tube"
+    ],
+    "choices": [
+      "help Ante",
+      "go home with father",
+      "watch from distance"
+    ],
+    "failForward": "No initiation test and no illegal task.",
+    "truth": [
+      "formal supporter club founding in 1998"
+    ],
+    "fiction": [
+      "Ante",
+      "specific task"
+    ],
+    "routes": [
+      "supporter-organiser"
+    ]
+  },
+  {
+    "id": "Z-B1",
+    "year": 2000,
+    "age": 14,
+    "template": "EUROPE_TRIP",
+    "title": "Europe Comes to Mostar",
+    "historicalAnchorId": "europe-2000",
+    "placeId": "stadium-zrinjski",
+    "matchId": "europe-2000-home-frolunda",
+    "requiredActions": [
+      "collect the newspaper",
+      "decide whether to spend savings on the home match",
+      "track aggregate score"
+    ],
+    "choices": [
+      "go with father",
+      "go with Marko",
+      "listen outside if ticket money fails"
+    ],
+    "failForward": "Presence may be inside/outside/home; historical result never changes.",
+    "routes": [
+      "international-traveller"
+    ]
+  },
+  {
+    "id": "Z-B2",
+    "year": 2003,
+    "age": 17,
+    "template": "YOUNG_STAR",
+    "title": "Number 23",
+    "historicalAnchorId": "modric-2003",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "watch a young midfielder",
+      "choose whether to keep the program/newspaper",
+      "vote in a supporter conversation"
+    ],
+    "choices": [
+      "talent matters",
+      "effort matters",
+      "wait before judging"
+    ],
+    "memoryObject": "2003-04-clipping",
+    "truth": [
+      "Modrić 2003/04; Pipa winner"
+    ],
+    "routes": [
+      "journalist-archivist"
+    ]
+  },
+  {
+    "id": "Z-B3",
+    "year": 2005,
+    "age": 19,
+    "template": "MAJOR_TITLE",
+    "title": "The First One",
+    "historicalAnchorId": "title-2005",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "resolve work shift",
+      "choose match companion",
+      "call home after the title"
+    ],
+    "choices": [
+      "work then rush",
+      "refuse shift",
+      "trade shift with colleague"
+    ],
+    "costs": [
+      "money",
+      "work reliability",
+      "presence"
+    ],
+    "failForward": "Late/home paths still receive title aftermath.",
+    "routes": [
+      "work-first",
+      "relationship-first"
+    ]
+  },
+  {
+    "id": "Z-B4",
+    "year": 2008,
+    "age": 22,
+    "template": "COMMUNITY_BUILDER",
+    "title": "Do Something With It",
+    "historicalAnchorId": "cup-2008",
+    "placeId": "cafe-local",
+    "requiredActions": [
+      "help organise a small supporter event",
+      "choose task: registration / refreshments / equipment / charity box",
+      "close accounts"
+    ],
+    "choices": [
+      "stay organiser",
+      "just play",
+      "donate and leave"
+    ],
+    "truth": [
+      "Volim te bola supporter futsal tournament begins in 2008 and supports humanitarian actions"
+    ],
+    "fiction": [
+      "specific edition task list",
+      "fictional staff"
+    ],
+    "routes": [
+      "supporter-community-builder"
+    ]
+  },
+  {
+    "id": "Z-B5",
+    "year": 2009,
+    "age": 23,
+    "template": "MAJOR_TITLE",
+    "title": "Winning Is Not New Anymore",
+    "historicalAnchorId": "title-2009",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "finish one adult obligation",
+      "choose who gets your spare ticket",
+      "attend or miss kickoff"
+    ],
+    "choices": [
+      "family",
+      "friend",
+      "work contact"
+    ],
+    "routes": []
+  },
+  {
+    "id": "Z-C1",
+    "year": 2014,
+    "age": 28,
+    "template": "RETURN_TO_TOP",
+    "title": "You Know the Route Without Thinking",
+    "historicalAnchorId": "title-2014",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "return after a period of irregular attendance",
+      "find old people/new routines",
+      "update personal club file"
+    ],
+    "choices": [
+      "regular supporter",
+      "organiser again",
+      "observe and document"
+    ],
+    "routes": [
+      "distance-return",
+      "journalist-archivist",
+      "supporter-organiser"
+    ]
+  },
+  {
+    "id": "Z-C2",
+    "year": 2016,
+    "age": 30,
+    "template": "HOUSEHOLD_WEEK",
+    "title": "Five Evenings",
+    "historicalAnchorId": "three-peat-2016-18",
+    "placeId": "family-flat",
+    "requiredActions": [
+      "schedule work",
+      "protect relationship time",
+      "choose one supporter responsibility",
+      "attend one match"
+    ],
+    "choices": [
+      "club-heavy",
+      "work-heavy",
+      "relationship-heavy"
+    ],
+    "routes": [
+      "work-first",
+      "relationship-first",
+      "supporter-organiser"
+    ]
+  },
+  {
+    "id": "Z-C3",
+    "year": 2017,
+    "age": 31,
+    "template": "SUPPORTER_JOB",
+    "title": "The Work Nobody Sees",
+    "historicalAnchorId": "three-peat-2016-18",
+    "placeId": "bus-departure",
+    "requiredActions": [
+      "confirm names",
+      "carry neutral equipment",
+      "call one late supporter",
+      "delegate when family calls"
+    ],
+    "choices": [
+      "do it yourself",
+      "delegate",
+      "leave early"
+    ],
+    "routes": [
+      "supporter-organiser"
+    ]
+  },
+  {
+    "id": "Z-C4",
+    "year": 2018,
+    "age": 32,
+    "template": "ERA_CLOSER",
+    "title": "Three in a Row",
+    "historicalAnchorId": "three-peat-2016-18",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "choose which person to celebrate with",
+      "return one old debt",
+      "store one memory object"
+    ],
+    "choices": [
+      "father",
+      "partner",
+      "supporter crew"
+    ],
+    "routes": []
+  },
+  {
+    "id": "Z-D1",
+    "year": 2021,
+    "age": 35,
+    "template": "DISTANCE_CHOICE",
+    "title": "The Club Is Still There",
+    "placeId": "family-flat",
+    "requiredActions": [
+      "decide whether to watch",
+      "answer/ignore friend's message",
+      "do one non-club life task"
+    ],
+    "choices": [
+      "armchair",
+      "distance",
+      "return next week"
+    ],
+    "routes": [
+      "distance-return",
+      "work-first",
+      "relationship-first"
+    ]
+  },
+  {
+    "id": "Z-D2",
+    "year": 2022,
+    "age": 36,
+    "template": "MAJOR_TITLE",
+    "title": "Back at the Top",
+    "historicalAnchorId": "title-2022",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "make return plan",
+      "bring father/partner/friend",
+      "choose whether to stay for aftermath"
+    ],
+    "routes": [
+      "distance-return",
+      "parent"
+    ]
+  },
+  {
+    "id": "Z-D3",
+    "year": 2023,
+    "age": 37,
+    "template": "EUROPE_BREAKTHROUGH",
+    "title": "The Map Gets Bigger",
+    "historicalAnchorId": "double-2023",
+    "placeId": "cafe-local",
+    "requiredActions": [
+      "budget Europe",
+      "host Niko from Vienna / visit him",
+      "verify group-stage draw",
+      "choose work leave"
+    ],
+    "choices": [
+      "travel",
+      "host",
+      "cover as journalist"
+    ],
+    "routes": [
+      "international-traveller",
+      "journalist-archivist",
+      "diaspora-abroad-return"
+    ]
+  },
+  {
+    "id": "Z-D4",
+    "year": 2023,
+    "age": 37,
+    "template": "EUROPE_NIGHT",
+    "title": "Do Not Leave at Half-Time",
+    "historicalAnchorId": "az-2023",
+    "placeId": "stadium-zrinjski",
+    "matchId": "uecl-2023-az",
+    "requiredActions": [
+      "react at 0-3",
+      "decide whether to stay",
+      "put phone away or document",
+      "call father after final whistle"
+    ],
+    "choices": [
+      "stay silent",
+      "keep singing",
+      "send message 'I'm staying'"
+    ],
+    "failForward": "Player can leave and experience comeback through city/phone; match result is immutable.",
+    "memoryObject": "az-2023-ticket",
+    "routes": [
+      "regular-supporter",
+      "journalist-archivist",
+      "parent"
+    ]
+  },
+  {
+    "id": "Z-D5",
+    "year": 2024,
+    "age": 38,
+    "template": "PLACE_CHANGE",
+    "title": "The East Is Changing",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "walk past construction",
+      "compare old standing memory",
+      "choose one photo/object to archive"
+    ],
+    "truth": [
+      "east stand under construction; Standing Tribune used by Ultras until 2023"
+    ],
+    "fiction": [
+      "personal memories"
+    ],
+    "routes": [
+      "journalist-archivist",
+      "supporter-organiser"
+    ]
+  },
+  {
+    "id": "Z-D6",
+    "year": 2025,
+    "age": 39,
+    "template": "HIGH_AGENCY_CLUB",
+    "title": "Not an Owner",
+    "historicalAnchorId": "title-2025",
+    "placeId": "club-office",
+    "requiredActions": [
+      "renew membership",
+      "meet fictional local sponsor/member contact",
+      "choose one infrastructure/community contribution",
+      "return home on time or stay late"
+    ],
+    "choices": [
+      "support youth/community",
+      "help membership drive",
+      "support stadium project communication"
+    ],
+    "truth": [
+      "club has Assembly/Management Board structure; membership program; major stadium infrastructure project"
+    ],
+    "fiction": [
+      "player's access/contact",
+      "individual influence"
+    ],
+    "routes": [
+      "member-community-governance",
+      "relationship-first"
+    ]
+  },
+  {
+    "id": "Z-E1",
+    "year": 2026,
+    "age": 40,
+    "template": "EUROPE_TRIP",
+    "title": "A Ticket Costs More Than It Used To",
+    "historicalAnchorId": "palace-2026",
+    "placeId": "kiosk-kod-ive",
+    "requiredActions": [
+      "check member presale",
+      "budget ticket",
+      "decide whether father/child comes",
+      "choose stand"
+    ],
+    "truth": [
+      "documented Crystal Palace ticket prices and member presale"
+    ],
+    "fiction": [
+      "kiosk conversation"
+    ],
+    "routes": [
+      "parent",
+      "international-traveller",
+      "work-first"
+    ]
+  },
+  {
+    "id": "Z-E2",
+    "year": 2026,
+    "age": 40,
+    "template": "MAJOR_CUP_DERBY",
+    "title": "Two Sides of Mostar, Two Legs",
+    "historicalAnchorId": "cup-2026",
+    "placeId": "stadium-zrinjski",
+    "matchId": "cup-2026-first",
+    "requiredActions": [
+      "get to first leg",
+      "choose companion",
+      "handle derby tension without hate-scoring",
+      "follow second leg away/home broadcast/travel plan"
+    ],
+    "choices": [
+      "sporting rivalry",
+      "family memory",
+      "document the final"
+    ],
+    "failForward": "No political/ethnic choice affects score. Historical result is fixed.",
+    "routes": [
+      "regular-supporter",
+      "journalist-archivist",
+      "supporter-organiser"
+    ]
+  },
+  {
+    "id": "Z-E3",
+    "year": 2026,
+    "age": 40,
+    "template": "LAST_WALK",
+    "title": "The Same Route, Different Legs",
+    "placeId": "stadium-zrinjski",
+    "requiredActions": [
+      "walk out slowly",
+      "carry old scarf",
+      "answer one call",
+      "pass the fictional kiosk",
+      "decide who leads the final few metres"
+    ],
+    "callbacks": [
+      "1994 scarf",
+      "1997 sash",
+      "2000 Europe",
+      "2005 first title",
+      "2008 community work",
+      "2023 AZ",
+      "2026 cup"
+    ],
+    "endings": [
+      "regular",
+      "organiser",
+      "community-builder",
+      "journalist",
+      "traveller/diaspora",
+      "governance/member",
+      "parent",
+      "no-child",
+      "work-first",
+      "relationship-first"
+    ]
+  }
+]

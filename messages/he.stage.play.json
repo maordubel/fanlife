@@ -1,0 +1,17 @@
+{
+  "stage.play.ballotSlip": "הפתק",
+  "stage.play.hateLog": "יומן הקרב",
+  "stage.play.options": "עוד",
+  "stage.play.thread.coach.1.title": "המסלול",
+  "stage.play.thread.coach.1.body": "למעלה נקודת ההתחלה, למטה היעד. אתם בונים חוט אדום ביניהם.",
+  "stage.play.thread.coach.2.title": "כל תחנה — קשר אמיתי",
+  "stage.play.thread.coach.2.body": "כל קלף שתבחרו חייב להיות קשור בפועל לתחנה האחרונה בחוט.",
+  "stage.play.thread.coach.3.title": "עקבו אחרי החוט",
+  "stage.play.thread.coach.3.body": "הקו האדום מתארך עם כל בחירה נכונה, עד שתגיעו ליעד.",
+  "stage.play.thread.coach.skip": "הבנתי, שחקו",
+  "stage.play.thread.step": "צעד {n}",
+  "stage.play.thread.instruct": "מה מחבר את „{name}” לתחנה הבאה?",
+  "stage.play.thread.hud.stop": "תחנה {n} מתוך {max}",
+  "stage.play.thread.hud.rules": "{met}/{total} חוקים",
+  "stage.play.ballotBox": "שאלה {n}"
+}

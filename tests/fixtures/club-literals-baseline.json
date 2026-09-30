@@ -1,0 +1,21 @@
+{
+ "lib/game/archive.ts": 10,
+ "lib/game/blind-cow/build.ts": 12,
+ "lib/game/blind-cow/validate.ts": 1,
+ "lib/game/craft/recipes.ts": 2,
+ "lib/game/lineup.ts": 1,
+ "lib/game/questions/build.ts": 1,
+ "lib/game/questions/templates/generated.ts": 5,
+ "lib/game/questions/templates/goals.ts": 1,
+ "lib/game/questions/templates/matches.ts": 6,
+ "lib/game/questions/templates/players.ts": 2,
+ "lib/game/questions/templates/ussishkin.ts": 14,
+ "lib/game/replay/holds.ts": 6,
+ "lib/game/timeline.ts": 2,
+ "lib/archive/match-master-types.ts": 4,
+ "lib/links/index.ts": 2,
+ "lib/daily/resolve.ts": 1,
+ "lib/analytics/progress.ts": 1,
+ "lib/kit/crestMarks.ts": 3,
+ "lib/kit/spec.ts": 1
+}

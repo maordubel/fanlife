@@ -1,0 +1,535 @@
+{
+  "status": "OPEN",
+  "nodes": [
+    {
+      "id": "founded-1905",
+      "kind": "event",
+      "title": "Club founded",
+      "year": 1905,
+      "sourceIds": [
+        "src-club-history"
+      ]
+    },
+    {
+      "id": "ban-1945",
+      "kind": "event",
+      "title": "Club activity banned",
+      "year": 1945,
+      "sourceIds": [
+        "src-club-history"
+      ]
+    },
+    {
+      "id": "renewal-1992",
+      "kind": "event",
+      "title": "Club activity restored",
+      "year": 1992,
+      "sourceIds": [
+        "src-club-history"
+      ]
+    },
+    {
+      "id": "home-1994",
+      "kind": "event",
+      "title": "Modern home era and organised support",
+      "year": 1994,
+      "sourceIds": [
+        "src-stadium",
+        "src-fans"
+      ]
+    },
+    {
+      "id": "ultras-1998",
+      "kind": "event",
+      "title": "Ultras-Zrinjski formally founded",
+      "year": 1998,
+      "sourceIds": [
+        "src-fans"
+      ]
+    },
+    {
+      "id": "europe-2000",
+      "kind": "event",
+      "title": "First European campaign",
+      "year": 2000,
+      "sourceIds": [
+        "src-europe-2000"
+      ]
+    },
+    {
+      "id": "modric-2003",
+      "kind": "event",
+      "title": "Luka Modrić season",
+      "year": 2003,
+      "sourceIds": [
+        "src-club-info",
+        "src-pipa"
+      ]
+    },
+    {
+      "id": "title-2005",
+      "kind": "event",
+      "title": "First BiH league title",
+      "year": 2005,
+      "sourceIds": [
+        "src-club-history"
+      ]
+    },
+    {
+      "id": "cup-2008",
+      "kind": "event",
+      "title": "First BiH Cup",
+      "year": 2008,
+      "sourceIds": [
+        "src-club-info",
+        "src-fans"
+      ]
+    },
+    {
+      "id": "title-2009",
+      "kind": "event",
+      "title": "Second league title",
+      "year": 2009,
+      "sourceIds": [
+        "src-club-info"
+      ]
+    },
+    {
+      "id": "title-2014",
+      "kind": "event",
+      "title": "Third league title",
+      "year": 2014,
+      "sourceIds": [
+        "src-club-info"
+      ]
+    },
+    {
+      "id": "three-peat-2016-18",
+      "kind": "event",
+      "title": "Three consecutive league titles",
+      "year": 2016,
+      "sourceIds": [
+        "src-club-info"
+      ]
+    },
+    {
+      "id": "title-2022",
+      "kind": "event",
+      "title": "League title 2022",
+      "year": 2022,
+      "sourceIds": [
+        "src-club-info"
+      ]
+    },
+    {
+      "id": "double-2023",
+      "kind": "event",
+      "title": "Double and UEFA breakthrough",
+      "year": 2023,
+      "sourceIds": [
+        "src-club-info",
+        "src-club-history"
+      ]
+    },
+    {
+      "id": "az-2023",
+      "kind": "event",
+      "title": "Zrinjski 4-3 AZ Alkmaar",
+      "year": 2023,
+      "sourceIds": [
+        "src-uefa-az",
+        "src-uefa-az-report"
+      ]
+    },
+    {
+      "id": "cup-2024",
+      "kind": "event",
+      "title": "BiH Cup 2024",
+      "year": 2024,
+      "sourceIds": [
+        "src-club-info"
+      ]
+    },
+    {
+      "id": "title-2025",
+      "kind": "event",
+      "title": "Ninth league title",
+      "year": 2025,
+      "sourceIds": [
+        "src-2025-title",
+        "src-club-info"
+      ]
+    },
+    {
+      "id": "palace-2026",
+      "kind": "event",
+      "title": "Conference League knockout play-off vs Crystal Palace",
+      "year": 2026,
+      "sourceIds": [
+        "src-2026-palace-tickets",
+        "src-club-info"
+      ]
+    },
+    {
+      "id": "cup-2026",
+      "kind": "event",
+      "title": "Fourth BiH Cup, final vs Velež",
+      "year": 2026,
+      "sourceIds": [
+        "src-2026-cup-1",
+        "src-2026-cup-2"
+      ]
+    },
+    {
+      "id": "marko-maric",
+      "kind": "player",
+      "title": "Marko Marić",
+      "tags": [
+        "Pipa winner 2024"
+      ],
+      "sourceIds": [
+        "src-pipa"
+      ]
+    },
+    {
+      "id": "ivica-matas",
+      "kind": "player",
+      "title": "Ivica Matas",
+      "tags": [
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-pipa"
+      ]
+    },
+    {
+      "id": "igor-melher",
+      "kind": "player",
+      "title": "Igor Melher",
+      "tags": [
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-pipa"
+      ]
+    },
+    {
+      "id": "goran-karacic",
+      "kind": "player",
+      "title": "Goran Karačić",
+      "tags": [
+        "2026 Cup winner"
+      ],
+      "sourceIds": [
+        "src-2026-cup-1",
+        "src-2026-cup-2"
+      ]
+    },
+    {
+      "id": "pero-stojkic",
+      "kind": "player",
+      "title": "Pero Stojkić",
+      "tags": [
+        "record appearance tier",
+        "long-serving captain",
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-stats",
+        "src-fans"
+      ]
+    },
+    {
+      "id": "slobodan-jakovljevic",
+      "kind": "player",
+      "title": "Slobodan Jakovljević",
+      "tags": [
+        "Club 200",
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-stats",
+        "src-fans"
+      ]
+    },
+    {
+      "id": "hrvoje-barisic",
+      "kind": "player",
+      "title": "Hrvoje Barišić",
+      "tags": [
+        "Club 200"
+      ],
+      "sourceIds": [
+        "src-stats"
+      ]
+    },
+    {
+      "id": "marin-anicic",
+      "kind": "player",
+      "title": "Marin Aničić",
+      "tags": [
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-stats"
+      ]
+    },
+    {
+      "id": "toni-sunjic",
+      "kind": "player",
+      "title": "Toni Šunjić",
+      "tags": [
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-pipa"
+      ]
+    },
+    {
+      "id": "josip-corluka",
+      "kind": "player",
+      "title": "Josip Ćorluka",
+      "tags": [
+        "Pipa winner",
+        "AZ comeback scorer"
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-uefa-az"
+      ]
+    },
+    {
+      "id": "daniel-graovac",
+      "kind": "player",
+      "title": "Daniel Graovac",
+      "tags": [
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-fans"
+      ]
+    },
+    {
+      "id": "mario-ticinovic",
+      "kind": "player",
+      "title": "Mario Tičinović",
+      "tags": [
+        "Pipa winner",
+        "AZ starter"
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-uefa-az-report"
+      ]
+    },
+    {
+      "id": "luka-modric",
+      "kind": "player",
+      "title": "Luka Modrić",
+      "tags": [
+        "2003/04",
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-club-info",
+        "src-pipa"
+      ]
+    },
+    {
+      "id": "mladen-zizovic",
+      "kind": "player",
+      "title": "Mladen Žižović",
+      "tags": [
+        "top scorer list",
+        "coach later"
+      ],
+      "sourceIds": [
+        "src-stats"
+      ]
+    },
+    {
+      "id": "velibor-djuric",
+      "kind": "player",
+      "title": "Velibor Đurić",
+      "tags": [
+        "Club 200",
+        "scorer list"
+      ],
+      "sourceIds": [
+        "src-stats"
+      ]
+    },
+    {
+      "id": "vucina-scepanovic",
+      "kind": "player",
+      "title": "Vučina Šćepanović",
+      "tags": [
+        "Pipa winner"
+      ],
+      "sourceIds": [
+        "src-fans"
+      ]
+    },
+    {
+      "id": "milos-filipovic",
+      "kind": "player",
+      "title": "Miloš Filipović",
+      "tags": [
+        "top scorer list"
+      ],
+      "sourceIds": [
+        "src-stats"
+      ]
+    },
+    {
+      "id": "ognjen-todorovic",
+      "kind": "player",
+      "title": "Ognjen Todorović",
+      "tags": [
+        "Pipa winner",
+        "top scorer list"
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-stats"
+      ]
+    },
+    {
+      "id": "zvonimir-kozulj",
+      "kind": "player",
+      "title": "Zvonimir Kožulj",
+      "tags": [
+        "AZ comeback substitute/scorer"
+      ],
+      "sourceIds": [
+        "src-uefa-az",
+        "src-uefa-az-report"
+      ]
+    },
+    {
+      "id": "andrija-balic",
+      "kind": "player",
+      "title": "Andrija Balić",
+      "tags": [
+        "AZ starter"
+      ],
+      "sourceIds": [
+        "src-uefa-az-report"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "renewal-1992",
+      "to": "home-1994",
+      "type": "modern-era-leads-to"
+    },
+    {
+      "from": "home-1994",
+      "to": "ultras-1998",
+      "type": "supporter-culture"
+    },
+    {
+      "from": "home-1994",
+      "to": "standing-east",
+      "type": "place"
+    },
+    {
+      "from": "ultras-1998",
+      "to": "modric-2003",
+      "type": "pipa-award-tradition"
+    },
+    {
+      "from": "europe-2000",
+      "to": "double-2023",
+      "type": "european-growth"
+    },
+    {
+      "from": "modric-2003",
+      "to": "luka-modric",
+      "type": "player"
+    },
+    {
+      "from": "title-2005",
+      "to": "title-2009",
+      "type": "title-history"
+    },
+    {
+      "from": "title-2009",
+      "to": "title-2014",
+      "type": "title-history"
+    },
+    {
+      "from": "title-2014",
+      "to": "three-peat-2016-18",
+      "type": "title-history"
+    },
+    {
+      "from": "three-peat-2016-18",
+      "to": "nemanja-bilbija",
+      "type": "era-player"
+    },
+    {
+      "from": "title-2022",
+      "to": "double-2023",
+      "type": "era"
+    },
+    {
+      "from": "double-2023",
+      "to": "az-2023",
+      "type": "europe"
+    },
+    {
+      "from": "az-2023",
+      "to": "zvonimir-kozulj",
+      "type": "match-player"
+    },
+    {
+      "from": "az-2023",
+      "to": "josip-corluka",
+      "type": "match-player"
+    },
+    {
+      "from": "title-2025",
+      "to": "cup-2026",
+      "type": "late-era"
+    }
+  ],
+  "dock": [
+    "Today",
+    "Timeline",
+    "Dig",
+    "Search",
+    "Mine"
+  ],
+  "digBoxes": [
+    {
+      "id": "box-1994",
+      "title": "1994 — A Club Returns Home",
+      "items": [
+        "home-1994",
+        "standing-east",
+        "ultras-1998"
+      ]
+    },
+    {
+      "id": "box-2005",
+      "title": "2005 — The First Title",
+      "items": [
+        "title-2005",
+        "kit-2004-home"
+      ]
+    },
+    {
+      "id": "box-2023",
+      "title": "2023 — Europe Becomes Real",
+      "items": [
+        "double-2023",
+        "az-2023",
+        "luka-modric",
+        "nemanja-bilbija"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "note": "Only deals with a source. A deal may be scoped to one competition — confirmed for 2010/11, where Keter appeared in the Champions League and Bonei HaTichon in the league. Everything the research document listed before 2009 remains unsourced and absent.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Verified research pass, 31 Aug 2026",
+    "url": null
+  },
+  "records": [
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "sponsorSlug": "כתר",
+      "fromLabel": "2010/11",
+      "toLabel": "2010/11",
+      "sport": "football",
+      "confidence": 3,
+      "sourceUrl": null,
+      "sourceTitle": "ידע אישי — צוות The Worker, אימות ישיר",
+      "competitionSlug": "ליגת-האלופות",
+      "noteHe": "בליגת האלופות בלבד; בליגה שיחקו עם בוני התיכון",
+      "sourceKind": "manual"
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "sponsorSlug": "ניו-דרייב",
+      "toLabel": "2016/17",
+      "sport": "football",
+      "confidence": 1,
+      "noteHe": "החסות שקדמה לארקיע; מועד ההתחלה לא אומת",
+      "sourceUrl": "https://www.one.co.il/Article/297584.html",
+      "sourceTitle": "ONE"
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "sponsorSlug": "ארקיע",
+      "fromLabel": "2017/18",
+      "toLabel": "2019/20",
+      "sport": "football",
+      "endedEarly": true,
+      "confidence": 2,
+      "noteHe": "חוזה לשלוש עונות עם אופציה; ארקיע פעלה לביטולו אחרי אירועי הדרבי בדצמבר 2019",
+      "sourceUrl": "https://www.one.co.il/Article/377561.html",
+      "sourceTitle": "ONE"
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "sponsorSlug": "הכשרה",
+      "fromLabel": "2019/20",
+      "toLabel": "2023/24",
+      "sport": "football",
+      "confidence": 2,
+      "noteHe": "נכנסה כבר בפלייאוף העליון של 2019/20, לפני ההודעה הרשמית ביוני 2020",
+      "sourceUrl": "https://www.one.co.il/Article/377561.html",
+      "sourceTitle": "ONE + Ynet, 11.6.2020"
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "sponsorSlug": "איביאיי",
+      "fromLabel": "2024/25",
+      "sport": "football",
+      "confidence": 2,
+      "noteHe": "נחתם בספטמבר 2024; הוארך במרץ 2026 לשלוש עונות נוספות מ-2026/27",
+      "sourceUrl": "https://www.htafc.co.il/ibi-בית-השקעות-חתמה-על-הסכם-חסות-ראשית-עם/",
+      "sourceTitle": "אתר המועדון הרשמי, 24.9.2024"
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "sponsorSlug": "בוני-התיכון",
+      "fromLabel": "2010/11",
+      "toLabel": "2010/11",
+      "competitionSlug": "ליגת-העל",
+      "sport": "football",
+      "confidence": 3,
+      "noteHe": "חסות הליגה בעונת 2010/11, במקביל לכתר בליגת האלופות",
+      "sourceTitle": "ידע אישי — צוות The Worker, אימות ישיר",
+      "sourceUrl": null,
+      "sourceKind": "manual"
+    },
+    {
+      "clubSlug": "הפועל-תל-אביב",
+      "sponsorSlug": "סובארו",
+      "fromLabel": "2009/10",
+      "toLabel": "2009/10",
+      "sport": "football",
+      "confidence": 3,
+      "noteHe": "עונת הדאבל; יצרן המדים אמברו",
+      "sourceTitle": "ידע אישי — צוות The Worker, אימות ישיר",
+      "sourceUrl": null,
+      "sourceKind": "manual"
+    }
+  ]
+}

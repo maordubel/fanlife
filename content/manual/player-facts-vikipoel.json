@@ -1,0 +1,5979 @@
+{
+ "note": "ויקיפועל — האנציקלופדיה של הפועל תל אביב (wiki.red-fans.com), קטגוריה \"שחקני הפועל תל אביב (כדורגל)\": 638 שחקנים. זה המקור שרשימת 637 השמות בארכיון נולדה ממנו, ולכן השמות מתאימים אחד-לאחד. שלושה שדות נקראו מכל ערך: `תפקיד` מתיבת המידע, החברות בקטגוריה \"שחקנים זרים (כדורגל)\" — שהיא ההגדרה של המועדון עצמו למי שתפס מקום של זר — וקטגוריות \"סגל הפועל ת'א (כדורגל) YYYY/YY\", עונה-עונה, שמהן נגזרות השנים. האתר חסום ל-Cloudflare בפני גישה אוטומטית; הוא נקרא בדפדפן של מאור, ואומת מול הדפדפן בטביעת SHA-256 (46e106131821c699) על כל 638 השורות. מ-17.9.2026 העמדה נקראת מהוויקיטקסט הגולמי ב-`content/raw/vikipoel-player-wikitext.json` על ידי `npm run ingest:players`: `תפקיד` הוא **רשימה** ולא ערך יחיד, כל תפקיד נשמר ב-`positions`, ומשפט הפתיחה של הדף — שאומר מה הוא שיחק **בהפועל** — גובר על התיבה, שאומרת מה הוא שיחק בקריירה. `positionFrom` אומר מי הכריע ו-`positionSays` שומר את שני הצדדים איפה שהם חלוקים. ראה `docs/12-player-roles.md`.",
+ "sport": "football",
+ "confidence": 2,
+ "source": {
+  "title": "ויקיפועל — קטגוריה:שחקני הפועל תל אביב (כדורגל)",
+  "url": "https://wiki.red-fans.com/index.php?title=%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%A9%D7%97%D7%A7%D7%A0%D7%99_%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+  "read": 638,
+  "readOn": "2026-09-16"
+ },
+ "confirmedSpelling": {
+  "יאניק ללינדאל": "יאניק לליינדל"
+ },
+ "table": [
+  {
+   "personNameHe": "אומיט גונזלס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אבדג'י",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אביב וולנרמן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2001,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אבי כנפו",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2006,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אדוארדו מראקש",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איבזיטו אוגבונה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2003,
+   "toYear": 2007,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אולוביו אדפמי",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2005,
+   "toYear": 2006,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אבי תקווה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2000,
+   "toYear": 2001,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אהוד כחילה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אורי קרגולה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אדי אלקיים",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2001,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אוגנין לאקיץ'",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2005,
+   "toYear": 2006,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אבי סופר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אביב אלחדד",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2002,
+   "toYear": 2003,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אבי אזולאי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1992,
+   "toYear": 1999,
+   "squadSeasons": 6,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אביחי ידין",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2018,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אברהם בית הלוי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1931,
+   "toYear": 1937,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אחמד מוסא",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1986,
+   "toYear": 1993,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אבי אדרי",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "אדמונד שמילוביץ'",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1951,
+   "toYear": 1952,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אברהם פלמן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positions": [
+    "FW",
+    "DF"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אברהם נודלמן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1927,
+   "toYear": 1938,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אברהם פרידריך",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1961,
+   "toYear": 1966,
+   "squadSeasons": 5,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "אדוארדו לובוס",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אברהם (אבי) בנימין",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1968,
+   "toYear": 1971,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "איאד חוט'בא",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2013,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אוראל דגני",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2020,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אברהם צ'קול",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אורי כהן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אביב דדו",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אדי גוטליב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2023,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איאד אבו עביד",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2021,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אורי קויאטק",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1956,
+   "toYear": 1961,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אזקיאל נדואסל",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אור אוסטוינד",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2018,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אופיר טקיאר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אופק בלס",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2021,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אדבינאס גירדבאיניס",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2018,
+   "toYear": 2019,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אחמד עאבד",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2025,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אושר דוידה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2023,
+   "squadSeasons": 4,
+   "positions": [
+    "FW",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "MF",
+    "vikipoel-body": "FW"
+   }
+  },
+  {
+   "personNameHe": "אור אינברום",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positions": [
+    "MF",
+    "DF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "DF",
+    "vikipoel-body": "MF"
+   }
+  },
+  {
+   "personNameHe": "אופק ביטון",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2022,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אור ישראלוב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2027,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אבו דוסו",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אביב סלם",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אור בלוריאן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אבי תורג'מן",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2025,
+   "squadSeasons": 2,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "אוהד חזוט",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אופק עובדיה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2021,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אולריש מלקה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2018,
+   "toYear": 2019,
+   "squadSeasons": 1,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אלין טופוזאקוב",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2009,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איוון יוליץ'",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אילונגו אנגסניה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלון חלפון",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2002,
+   "toYear": 2004,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אייל בן עמי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 2004,
+   "squadSeasons": 9,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "איליה יבוריאן",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2005,
+   "toYear": 2006,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אישטוואן פישונט",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1999,
+   "toYear": 2002,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אליניב ברדה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2007,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אילן בכר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2002,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איתי אלקסלסי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אלון חזן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1996,
+   "toYear": 1997,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלון מזרחי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1990,
+   "toYear": 1991,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלי \"קוקוס\" כהן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1979,
+   "toYear": 1993,
+   "squadSeasons": 14,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "איגור שקווירין",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 1992,
+   "toYear": 1994,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אייל אחואן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2000,
+   "toYear": 2002,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלון אופיר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1992,
+   "toYear": 1997,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אמנון חרל\"פ",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1927,
+   "toYear": 1935,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אלי יאני",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1984,
+   "toYear": 1986,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אייל אברמוב",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1988,
+   "toYear": 1994,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אייל אקשטיין",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1978,
+   "toYear": 1982,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "איתי שכטר",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2014,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלי אוזן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1984,
+   "toYear": 1985,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אמיר ליברמן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1975,
+   "toYear": 1981,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "איתמר ניצן",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלרואי כהן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2013,
+   "squadSeasons": 3,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלכס באסוק",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2012,
+   "squadSeasons": 2,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "אלירן דנין",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלמוג כהן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אמידו בלדה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איזואגבו אבונימה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איסומעילה לינגאנה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אליהו נשלסקי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1957,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אלון תורג'מן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אייל משומר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איציק שולמייסטר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2023,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אמיר עגייב",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2019,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אילן שוקרון",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1985,
+   "toYear": 1990,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אל-ים קנצפולסקי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2027,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלון אזוגי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלן אוז'בולט",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אמיליוס זובאס",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלכסנדר בולייביץ'",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אליאן רוחנא",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איהאב גנאים",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אלי שכטר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1985,
+   "toYear": 1986,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אליאור ברנס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1985,
+   "toYear": 1991,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "איתמר שבירו",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איברהים ספורי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אלי בכר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1967,
+   "toYear": 1972,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "איתי שביט",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2026,
+   "toYear": 2027,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ביברס נאתכו",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2010,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ברוך דגו",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2008,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אשר בלוט",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1949,
+   "toYear": 1959,
+   "squadSeasons": 9,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אסי דומב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2006,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ארז מסיקה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2000,
+   "toYear": 2001,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ביסקוט אמבלה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בן לוז",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2009,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אמציה לבקוביץ",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1966,
+   "squadSeasons": 11,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אסי טובי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ברק בדש",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בני חדד",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2005,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אריה בז'רנו",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1968,
+   "toYear": 1985,
+   "squadSeasons": 17,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ארתור אטצזיאנוב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2014,
+   "squadSeasons": 6,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אריק ינקו",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2020,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בויאן ורוצ'ינה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2009,
+   "toYear": 2010,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ביוואן פרנסמן",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2010,
+   "toYear": 2012,
+   "squadSeasons": 2,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בן שהר",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2025,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אפואלה אדל",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2015,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בוריס קליימן",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2014,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בן ציון ריידר",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1956,
+   "toYear": 1957,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "בן ציון צין (צינוביץ')",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1957,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אריה אלטר",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1985,
+   "toYear": 1994,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "בני גולדשטיין",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1956,
+   "toYear": 1959,
+   "squadSeasons": 3,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "אריק דג'מבה דג'מבה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ברונו קוטיניו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בראיין גרזיצ'יץ'",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ברנקו איליץ'",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בסארט עבדורחימי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בנג'מין פראנסיס",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בן רייכרט",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2017,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אריאל הרוש",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בן אלגרבלי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אנאס מחאמיד",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2027,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ארון שוינפלד",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בני כהן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1982,
+   "toYear": 1983,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ברונו סוארס",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positions": [
+    "DF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "FW",
+    "vikipoel-body": "DF"
+   }
+  },
+  {
+   "personNameHe": "ארנסטס שטקוס",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 2020,
+   "toYear": 2022,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ארמנדו קופר",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בנימין טרידובסקי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2022,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בוגדן סרנבסקי",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אנז'-פרדי פלומה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אנטואן קונטה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אריאל כהן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2026,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בראיין פאסי",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "בובאקר טאמבדו",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אריה אריאל",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1980,
+   "toYear": 1981,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "אנריקה ג'וקו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אנג'י קואמה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אסף צור",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "אנדריאן קרייב",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דוד שוייצר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1951,
+   "toYear": 1954,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גאבור הלמאי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2000,
+   "toYear": 2003,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גיורגי דרסיליה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 1997,
+   "toYear": 1998,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דאגלס דה סילבה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2008,
+   "toYear": 2011,
+   "squadSeasons": 3,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גבור מרטון",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גבריאל דוס סנטוס",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "גיא צרפתי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גיל ורמוט",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2015,
+   "squadSeasons": 8,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גילי לנדאו",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1974,
+   "toYear": 1990,
+   "squadSeasons": 16,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דוד פרימו",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1963,
+   "toYear": 1974,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ג'ון פיינטסיל",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2004,
+   "toYear": 2013,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גדעון טיש",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1969,
+   "squadSeasons": 11,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גליל בן סנן",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2002,
+   "toYear": 2011,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דאבור רופניק",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1998,
+   "toYear": 2000,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דוד אמסלם",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1995,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "גל שיש",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2017,
+   "squadSeasons": 8,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גיא קואז",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ג'ובאני ואלדיירו",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "גיא שרעבי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1997,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גיורא אנטמן",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1986,
+   "toYear": 1987,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גבי לסרי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1975,
+   "toYear": 1987,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "גד מכנס",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1983,
+   "toYear": 1984,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דוד פיזנטי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1986,
+   "toYear": 1987,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דב רמלר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1981,
+   "toYear": 1984,
+   "squadSeasons": 3,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דדי בן דיין",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2012,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גל מאיו",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2012,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דוד מיץ",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1944,
+   "toYear": 1947,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דוד רוצ'לה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גל מלכה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גאל אטוק",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גיא גומברג",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דוד בליס",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1957,
+   "toYear": 1961,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גל הרשליקוביץ",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1987,
+   "toYear": 1994,
+   "squadSeasons": 7,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גיא אסולין",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דאמיר שובשיץ'",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ג'ון צ'יבויקה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ג'וזף גנדה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2019,
+   "squadSeasons": 3,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "גיא בדש",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ג'ורג' דיבה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דוד קלטינס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positions": [
+    "MF",
+    "DF"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גיל יצחק",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גבריאל סגל",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גיא מיכאלי",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2025,
+   "squadSeasons": 2,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "דוד ונטורה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1995,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גוני נאור",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גוראן אנטוניץ'",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דוד הרשליקוביץ",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1983,
+   "toYear": 1990,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דוד קרמו",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1968,
+   "toYear": 1973,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "גד עמוס",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דגלאס אווסו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2026,
+   "toYear": 2027,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דני בונדר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2011,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "וינסנט אניימה",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2011,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "וואליד באדיר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2013,
+   "squadSeasons": 8,
+   "positions": [
+    "MF",
+    "DF"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דניס אונישנקו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1999,
+   "toYear": 2003,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "וולינגטון דה אוליברה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "וולטון סילבה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2002,
+   "toYear": 2003,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דימיטאר טלקיסקי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2009,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דיאן רצ'וניצה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1999,
+   "toYear": 2000,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דודו דהאן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2000,
+   "toYear": 2002,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דמיטרי מיכאלנקו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2000,
+   "toYear": 2001,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דמיאן לוקאשיק",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 1993,
+   "toYear": 1996,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דמיאן גייזר",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1997,
+   "toYear": 1998,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דנוץ מויססקו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "וילי ברגר",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1927,
+   "toYear": 1937,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ויקטור מרעי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2013,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "הרברט מייטנר",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "הרצל פריצנר",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דניאל דניאלי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1961,
+   "toYear": 1966,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דני בורסוק",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1961,
+   "toYear": 1969,
+   "squadSeasons": 6,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דניאל דה רידר",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2009,
+   "toYear": 2010,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "וויליאם אוואסו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דניאל גולדשטיין",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1961,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דני ילובסקי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1951,
+   "toYear": 1952,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דני עמוס",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דור חמו",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "הרמוני איקינדה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positions": [
+    "MF",
+    "DF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "DF",
+    "vikipoel-body": "MF"
+   }
+  },
+  {
+   "personNameHe": "דודו ביטון",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2017,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דני אלקיים",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1957,
+   "toYear": 1966,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דוד שטיינוורצל",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1952,
+   "toYear": 1954,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דודי אלון",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2018,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דולי מנגה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "וויאם עמאשה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דניאל גרץ",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דנילו לופז",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דור חוגי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דמבה קמארה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דני גרופר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2022,
+   "squadSeasons": 3,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דורון ליידנר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2027,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דן איינבינדר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2024,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "הישאם לאיוס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דור אלו",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "הרוויה איליץ'",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דן עזריה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דניאל צדיק",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positions": [
+    "MF",
+    "GK"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "GK",
+    "vikipoel-body": "MF"
+   }
+  },
+  {
+   "personNameHe": "דויד קופרמן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2025,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דודו סמפאיו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דור בנימיני",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2027,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "דסליי טגניה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "דניאל דאפה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יגאל אנטבי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2014,
+   "squadSeasons": 13,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "טל חן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2008,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יוסי אבוקסיס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1987,
+   "toYear": 2007,
+   "squadSeasons": 12,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חאבייר פאאס",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חיים רביבו",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יוסי ביטון",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "זיו כבדה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2000,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יהודה חוטה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2012,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יאיר כהן צדק",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חנן אלקיים",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2006,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "חיים איצרין",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "חזי שירזי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1991,
+   "toYear": 1994,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יהודה עמר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1985,
+   "toYear": 1994,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "חסן בדג'ייב",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "זוראב מנטשאשווילי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2009,
+   "toYear": 2010,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "חיים נוריאלי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1961,
+   "toYear": 1969,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "חיים גלזר",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1949,
+   "toYear": 1959,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "טוטו תמוז",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2017,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "טל איילה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2009,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "טל אוסובסקי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1992,
+   "toYear": 1994,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יהושע זילברשטיין",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1956,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "זאב סגל",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1961,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חיים חוזבקו",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1958,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יונה פוקס",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "זאב חיימוביץ'",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2014,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חנן ממן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "טל בן חיים",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positions": [
+    "FW",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "MF",
+    "vikipoel-body": "FW"
+   }
+  },
+  {
+   "personNameHe": "טיאגו קוסטה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "זלמן פרידמן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1931,
+   "toYear": 1945,
+   "squadSeasons": 13,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חמזה בארי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חן עזרא",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חסן אבו זייד",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "טל בנש",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יונתן רודיונוב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יהונתן לוי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2018,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יואב ג'ראפי",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "טום אחי מרדכי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2022,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יגאל בקר",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2022,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יואב תומר",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2023,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חוטפריט רומראטו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יואב הופמייסטר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יהב גורפינקל",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "טל ארצ'ל",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2027,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יובל כהן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2025,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "חוסה רודריגס",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "זיו מורגן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2026,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יואל שוהם",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1963,
+   "toYear": 1965,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יובל פילוס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1989,
+   "toYear": 1992,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יונתן פרבר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2026,
+   "toYear": 2027,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יאניק ללינדאל",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2026,
+   "toYear": 2027,
+   "squadSeasons": 1,
+   "positions": [
+    "DF",
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יעקב חודורוב",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1946,
+   "toYear": 1962,
+   "squadSeasons": 15,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "לוסיאנו דה ברונו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יחזקאל חזום",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1964,
+   "toYear": 1977,
+   "squadSeasons": 11,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יעקב הלל",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2003,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ירוסלב באקו",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 1993,
+   "toYear": 1996,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "כפיר אדרי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2005,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יוסי רוזן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2005,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יעקב אקהויז",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1974,
+   "toYear": 1992,
+   "squadSeasons": 18,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יקיר לוסקי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2008,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "כפיר אודי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1996,
+   "toYear": 2007,
+   "squadSeasons": 8,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יניב ירון",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 1999,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ישראל כהן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2000,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יניב בן ניסן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יוסף אובה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2000,
+   "toYear": 2001,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יוסי זאנה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1979,
+   "toYear": 1989,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ישראל מאיה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1989,
+   "toYear": 1992,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יוסי מדר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1997,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יוסי בלאס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1997,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יעקב שוורץ",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1996,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יעקב כהן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1984,
+   "toYear": 1986,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יעקב רחמינוביץ'",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1968,
+   "toYear": 1980,
+   "squadSeasons": 12,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ירמיהו לוף",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1958,
+   "toYear": 1960,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ליאונרדו בוארב",
+   "position": null,
+   "origin": "foreign",
+   "fromYear": 1996,
+   "toYear": 1997,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "יוסי שבחון",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2012,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "כפיר אייזנשטיין",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2014,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יצחק מנחם",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1956,
+   "toYear": 1962,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ישראל וייס",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1951,
+   "toYear": 1956,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יעקב בוזגלו",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1979,
+   "toYear": 1982,
+   "squadSeasons": 3,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יצחק צ'צ'יק",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1949,
+   "toYear": 1952,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ירון בן דב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ישראל בריקר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1927,
+   "toYear": 1934,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יצחק ביבאס",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1945,
+   "toYear": 1956,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יורגן קולין",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ישראל זגורי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2017,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לוקאס סאשה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לוקאס וינטרה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לוטם זינו",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ישראל ראש",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ירין פרץ",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לבאן קוטליה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לוסיו מרינאו",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ליאו בנבנישתי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ליאו בנבינשתי",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "יזן נסאר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2026,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "יעקב בריהון",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ישי ברוש",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positions": [
+    "MF",
+    "DF"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "לוקאס פלקאו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לי און מזרחי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "יעקב רודיק",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1972,
+   "toYear": 1973,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "לויזוס לויזו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מזואה אנסומבו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מהראן לאלה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2012,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מנואל ניירה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מאור פרץ",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2009,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מילאן אוסטרץ",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2000,
+   "toYear": 2002,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מסאיי דגו",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2008,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ליאור אסולין",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ליאור בקשי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2009,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לירן שטראובר",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1992,
+   "toYear": 1993,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "לריאה קינגסטון",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מוטי אוחיון",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2000,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מוריס ז'אנו",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1981,
+   "toYear": 1991,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מיכאל זנדברג",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2010,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מאיר אהרן מליקה",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מאיר מליקה (חלוץ)",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1995,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מיגל אנחלס הויוס",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מור שושן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2013,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מאיר נחמיאס",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1980,
+   "toYear": 1985,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מאיר בן שטרית",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1986,
+   "toYear": 1988,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מוניה גושן",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "מחמוד עבאס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לירון דיאמנט",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "squadSeasons": 1,
+   "positions": [
+    "FW",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "MF",
+    "vikipoel-body": "FW"
+   }
+  },
+  {
+   "personNameHe": "מירקו אורמוש",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "squadSeasons": 1,
+   "positions": [
+    "MF",
+    "DF"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מיכאל מיכאלוב",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1956,
+   "toYear": 1959,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מיכאל לפרדון",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1973,
+   "toYear": 1976,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מאיר אריה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1982,
+   "toYear": 1983,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ליאור לוי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מוחמד אבו אל היג'א",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2016,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מיכאל כהן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1956,
+   "toYear": 1961,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מיחאי פינטילי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ליביו אנטל",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "לירון ליכטרמן",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1996,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מיקי דהאן",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מייקל סיטון",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מוטי ברשצקי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2020,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מייקל אולהה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מאור בוזגלו",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מור נעמן (כדורגלן)",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מוחמד טראורה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ליעד רמות",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2025,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מאיר ברנר",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1968,
+   "toYear": 1972,
+   "squadSeasons": 4,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "לידור כהן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מאוויס צ'יבוטה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מאט פרנק",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מנחם רוזנשטרייך",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1963,
+   "toYear": 1970,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מילאן מקאריץ'",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מקס צ'ליץ'",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "לירן רוטמן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2026,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מור בוסקילה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מנחם מור",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1974,
+   "toYear": 1977,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "משה מלמד",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1939,
+   "toYear": 1950,
+   "squadSeasons": 11,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ניל אברבנל",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2010,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ניר רחמין",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2006,
+   "squadSeasons": 8,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סבסטיאן סימרוטיץ'",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 1997,
+   "toYear": 2000,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "משה סיני",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1979,
+   "toYear": 1993,
+   "squadSeasons": 13,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "נמרוד דרייפוס",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1972,
+   "toYear": 1982,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מריו מסטרוביץ",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1997,
+   "toYear": 1998,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "נלסון מנסה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ניר חדד",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2000,
+   "toYear": 2002,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "משה אייזנברג",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1991,
+   "toYear": 1992,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ניסים אביטן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 1997,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מריוס ניביידומסקי",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 1991,
+   "toYear": 1992,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "משה דננבאום",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2011,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "נמניה ווצ'יצ'ביץ'",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2009,
+   "toYear": 2010,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "משה סקל",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1958,
+   "toYear": 1961,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "נחמן קסטרו",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1968,
+   "toYear": 1978,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "משה פוליאקוב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1927,
+   "toYear": 1943,
+   "squadSeasons": 16,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "משה פיזנטי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1982,
+   "toYear": 1984,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "מריו פצ'אלקה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2010,
+   "toYear": 2012,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מרדכי מאיר",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1927,
+   "toYear": 1937,
+   "squadSeasons": 10,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "נוסא איגייבור",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2013,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מרקו שולר",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ניר לקס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2020,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "משה רסקין",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1951,
+   "toYear": 1952,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "משה פיימן",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1956,
+   "toYear": 1958,
+   "squadSeasons": 2,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "נסים חלפון",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1982,
+   "toYear": 1983,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "ניקולה פטקוביץ'",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ניר נחום",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "MF",
+    "vikipoel-body": "DF"
+   }
+  },
+  {
+   "personNameHe": "סאבו פאביצ'ביץ'",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מתן אריאל לזמי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "משה אוחיון",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2016,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סארי פלאח",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מתן אוחיון",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ניר מנחם",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "נמניה ניקוליץ'",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ניקולאס גורובסוב",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מרקו סימיץ'",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "משה מוסטרל",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1983,
+   "toYear": 1992,
+   "squadSeasons": 9,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "מרווין פירסמן",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2017,
+   "toYear": 2020,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "נריוס ואלסקיס",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2018,
+   "toYear": 2019,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ניב סרדל",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "מרקו ינקוביץ'",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ניב זריהן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סבסטיאן הרננדז",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "נועם בונה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "משה מורדכוביץ׳",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1967,
+   "toYear": 1976,
+   "squadSeasons": 9,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "FW",
+    "vikipoel-body": "MF"
+   }
+  },
+  {
+   "personNameHe": "סאמי אדם",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "משה מרקוביץ'",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1975,
+   "toYear": 1986,
+   "squadSeasons": 9,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "נפתלי שוואלב",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1949,
+   "toYear": 1950,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "מרקוס קוקו",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומרי קנדה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2012,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עידן סרור",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2002,
+   "toYear": 2010,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סלים טועמה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2014,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עומר פרץ (חלוץ)",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2006,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עמאר מנצור",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2004,
+   "toYear": 2008,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "סמואל יבואה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2008,
+   "toYear": 2010,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "סרגיי קלשנקו",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2001,
+   "toYear": 2003,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עדי סבג",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומרי אפק",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2003,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עידן טל",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עופר שטרית",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 1998,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עידן סקורצ'רו",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2000,
+   "toYear": 2002,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עזרי בבאייב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2003,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "סרגיי פוגודין",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1995,
+   "toYear": 1997,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עדן בן בסט",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2009,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומאר גאריבה",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "עדן שרם",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2015,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומר דמארי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2020,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עומר פדידה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "squadSeasons": 2,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומר פרץ (קשר)",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עוביידה חטאב",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומרי אלטמן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2027,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עופר ורטה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומרי שקל",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סיראז' נסאר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סער בנבנישתי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עידן כהן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2020,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עידו אקסברד",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עדן הרשקוביץ",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2021,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עלי אלעוברה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עבדי פרחאת",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2020,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עדי טבצ'ניק",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עלי כנאנה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סטפן ספירובסקי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עידו שרון",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2025,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומאר בראון",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סיאנדה קולו",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2020,
+   "toYear": 2022,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עידן ורד",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2023,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "סתיו למקין",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2023,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומר סניור",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2024,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סינטיהו סלליך",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סטפן מרינוביץ'",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עזיז קאיונדו",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "סתיו טוריאל",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2027,
+   "squadSeasons": 4,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "FW",
+    "vikipoel-body": "MF"
+   }
+  },
+  {
+   "personNameHe": "עידו אלמישלי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עופר גלברד",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2027,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עידו וייר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עמי אדמוני",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1968,
+   "toYear": 1979,
+   "squadSeasons": 11,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "עידן ברנס",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עומרי לוי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פאביו ג'וניור פריירה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ראובן עובד",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2009,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פבריציו קארבליו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פליקס אובוקה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2005,
+   "toYear": 2006,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פליקס חלפון",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1988,
+   "toYear": 1999,
+   "squadSeasons": 9,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "קלמי סבן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2004,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פיני בלילי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2003,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "קובי שאלו",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1996,
+   "toYear": 1999,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "ערן זהבי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2011,
+   "squadSeasons": 4,
+   "positions": [
+    "MF",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "FW",
+    "vikipoel-body": "MF"
+   }
+  },
+  {
+   "personNameHe": "ציקי קוטלר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2003,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "פאביו רוסה",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עמנואל איילה",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "קז'ימיש מוסקאל",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1994,
+   "toYear": 1998,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פיטר קרמנס",
+   "position": "GK",
+   "origin": "foreign",
+   "fromYear": 1991,
+   "toYear": 1992,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "קונסטנטין מרקו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רואי חדד",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1992,
+   "toYear": 1994,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "קרזימיר קואב",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 1990,
+   "toYear": 1991,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "צבי ארליך",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "קובי סגל",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1980,
+   "toYear": 1991,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עמרי עטיה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ראובן אללוף",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1949,
+   "toYear": 1954,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "פנחס יהודיוף",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1955,
+   "toYear": 1961,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "פטר אורלנדיץ'",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פיליפ מנה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2015,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "קוסטל לזר",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1992,
+   "toYear": 1993,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "צליל חתוכה",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "קלאודיו בומבה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "קובי הדדי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1967,
+   "toYear": 1997,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "צחי זנטי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1995,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "קאווה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עמית ביטון",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פדרו גלבאן",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פייסל מוליץ'",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2017,
+   "toYear": 2019,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עמית מלכה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2019,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רובי לבקוביץ'",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2025,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עמירן שקלים",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2019,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "קאיו אלבס",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2018,
+   "toYear": 2019,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עמנואל בואטנג (קשר)",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2018,
+   "toYear": 2021,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "קלאודמיר פריירה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2018,
+   "toYear": 2020,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פרנסיס קיירמה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פליפה רודריגס",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פארלי רוסה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "קייס גאנם",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "פבלו גונזאלס",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עמית מאיר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "עמית למקין",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2027,
+   "squadSeasons": 4,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "קובי זיתוני",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1978,
+   "toYear": 1981,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "פרנאן מאיימבו",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "צ'יקו",
+   "position": "DF",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "עמנואל בואטנג (חלוץ)",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רמי דואני",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2011,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רחביה רוזנבוים",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1950,
+   "toYear": 1964,
+   "squadSeasons": 13,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רומן וסילוק",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רועי דיין",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רמי חליס",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2006,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שביט אלימלך",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1996,
+   "toYear": 2007,
+   "squadSeasons": 11,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שבי בן ברוך",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1962,
+   "toYear": 1972,
+   "squadSeasons": 8,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רונן חרזי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2000,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רמי אבו לאבן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רובן סולצ'אגה",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רוני קלדרון",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1968,
+   "toYear": 1972,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ריפעת טורק",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1971,
+   "toYear": 1985,
+   "squadSeasons": 12,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שבתאי לוי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1977,
+   "toYear": 1989,
+   "squadSeasons": 12,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רוברט טזצקי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שגיא זינגר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2000,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רון נחמן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רפי שמואל",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1982,
+   "toYear": 1992,
+   "squadSeasons": 8,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רונן הילל",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1990,
+   "toYear": 1991,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רועי גורדנה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2014,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רמי ארמה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1982,
+   "toYear": 1992,
+   "squadSeasons": 10,
+   "positions": [
+    "DF",
+    "MF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "MF",
+    "vikipoel-body": "DF"
+   }
+  },
+  {
+   "personNameHe": "רומאן רוקי",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שבתאי יחבס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1977,
+   "toYear": 1985,
+   "squadSeasons": 8,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רן יצחק",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רמזי ספורי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2019,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "ריף מסיקה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רוי רונן",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positions": [
+    "GK",
+    "FW"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "FW",
+    "vikipoel-body": "GK"
+   }
+  },
+  {
+   "personNameHe": "רז נחמיאס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2018,
+   "squadSeasons": 2,
+   "positions": [
+    "MF",
+    "DF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "DF",
+    "vikipoel-body": "MF"
+   }
+  },
+  {
+   "personNameHe": "רם שטראוס",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רז שלמה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2021,
+   "squadSeasons": 5,
+   "positions": [
+    "MF",
+    "DF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "DF",
+    "vikipoel-body": "MF"
+   }
+  },
+  {
+   "personNameHe": "רז כהן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2020,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רוג'ר ברנרדו",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2018,
+   "toYear": 2019,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רועי זיקרי",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2021,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רז טוויזר",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2023,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שגיא גניס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2025,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רן בנימין",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2026,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שביט מזל",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2023,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רווה אסייג",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רועי אלקוקין",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2027,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רז שטיין",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רוי ברנס",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2024,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רז מאיר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רועי הרמן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רוי קורין",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2027,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רועי לוי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "רותם חטואל",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רועי דיין (יליד 1997)",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רון תלמי",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "שאנדה סילבה",
+   "position": "MF",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2027,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "רונאלדו ואסקס",
+   "position": "FW",
+   "origin": "foreign",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שלומי ארבייטמן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שי אבוטבול",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2002,
+   "toYear": 2015,
+   "squadSeasons": 13,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שייע פייגנבוים",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1964,
+   "toYear": 1979,
+   "squadSeasons": 13,
+   "positions": [
+    "FW",
+    "DF"
+   ],
+   "positionFrom": "vikipoel-body",
+   "positionSays": {
+    "vikipoel": "DF",
+    "vikipoel-body": "FW"
+   }
+  },
+  {
+   "personNameHe": "שמעון גרשון",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1996,
+   "toYear": 2006,
+   "squadSeasons": 10,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שלום תקוה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 2000,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שמעון בן יהונתן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1960,
+   "toYear": 1975,
+   "squadSeasons": 13,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "תומר חליבה",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שולי גילארדי",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1990,
+   "toYear": 1991,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שמעון צימרמן",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": null,
+   "toYear": null,
+   "squadSeasons": 0,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "תומר אליהו",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1998,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שרון מימר",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1997,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "תמיר לינהרט",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1985,
+   "toYear": 1995,
+   "squadSeasons": 7,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שלום אביטן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1985,
+   "toYear": 1986,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שי רביבו",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שמואל כהן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 1958,
+   "toYear": 1964,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שגיב אליהו",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1992,
+   "toYear": 1997,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שחר כהן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1999,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "תומר בן יוסף",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שמעון הרוש",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2014,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שון מלכה",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שמחה חינקיס",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1928,
+   "toYear": 1929,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "שלמה פוליאקוב",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1927,
+   "toYear": 1941,
+   "squadSeasons": 14,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שגיב יחזקאל",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2017,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "תום אלמדון",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שובל גוזלן",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שלומי אזולאי (חלוץ)",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2022,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שמואל שיימן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שון גולדברג",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שלמה ספוז'ניקוב",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1957,
+   "toYear": 1961,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שוקה ברשדסקי",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 1936,
+   "toYear": 1937,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שחר הירש",
+   "position": "FW",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2021,
+   "squadSeasons": 5,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שי אליאס",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2022,
+   "squadSeasons": 6,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שי אייזן",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2022,
+   "squadSeasons": 4,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שמעון ברנס",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 1960,
+   "toYear": 1961,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שלומי אזולאי (קשר)",
+   "position": "MF",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2023,
+   "squadSeasons": 2,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שמעון בנודיס",
+   "position": null,
+   "origin": "israeli",
+   "fromYear": 1949,
+   "toYear": 1950,
+   "squadSeasons": 1,
+   "positionFrom": null
+  },
+  {
+   "personNameHe": "שחר פיבן",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2027,
+   "squadSeasons": 3,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "שגיא פנחס",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel"
+  },
+  {
+   "personNameHe": "שון בן נשר",
+   "position": "GK",
+   "origin": "israeli",
+   "fromYear": 2026,
+   "toYear": 2027,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  },
+  {
+   "personNameHe": "תומר לוי",
+   "position": "DF",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "squadSeasons": 1,
+   "positionFrom": "vikipoel-body"
+  }
+ ]
+}

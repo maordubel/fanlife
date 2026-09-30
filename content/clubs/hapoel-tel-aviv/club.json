@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "hapoel-tel-aviv",
+  "sport": "football",
+  "slug": "הפועל-תל-אביב",
+  "names": { "he": "הפועל תל אביב", "en": "Hapoel Tel Aviv" },
+  "short": { "he": "הפועל", "en": "Hapoel" },
+  "city": { "he": "תל אביב", "en": "Tel Aviv" },
+  "founded": 1923,
+  "locales": ["he"],
+  "defaultLocale": "he",
+  "direction": "rtl",
+  "derbyRivalSlug": "מכבי-תל-אביב",
+  "modules": ["derby", "curva-gate5", "ussishkin", "black-file", "life", "royal-rumble", "blind-cow", "away-days", "kits", "collector-market"],
+  "dataRoot": "content/manual",
+  "sourcesNote": "Every fact in this club's data files carries source_id + confidence (rule 2). Fields not found stay null.",
+  "note": "The club manifest is the ONE place the engine reads club identity from. The derby rival slug mirrors clubs.json isDerbyRival (rule 13) and is checked against it by tests/club-context.test.ts."
+}

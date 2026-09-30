@@ -1,0 +1,21 @@
+{
+  "note": "Quotes reproduced from the reporting that carries them.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Verified research pass, 31 Aug 2026",
+    "url": null
+  },
+  "records": [
+    {
+      "textHe": "אין לי יותר כוח להמשיך ולתרום",
+      "personSlug": "מאור-הראל",
+      "personNameHe": "מאור הראל",
+      "saidOn": "2012-10-17",
+      "contextHe": "בהודעת ההתפטרות מהנהלת עמותת הפועל אוסישקין, אחרי כחמש וחצי שנים",
+      "confidence": 1,
+      "sourceUrl": "https://www.ynet.co.il/articles/1,7340,L-4293753,00.html",
+      "sourceTitle": "ynet, יעל שחרור, 17.10.2012"
+    }
+  ]
+}

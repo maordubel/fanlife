@@ -1,0 +1,194 @@
+{
+  "status": "OPEN",
+  "cards": [
+    {
+      "answer": "Luka Modrić",
+      "clues": [
+        "Played his first professional season at Zrinjski.",
+        "Season: 2003/04.",
+        "Won the supporter player award.",
+        "Later won the Ballon d'Or."
+      ],
+      "sourceIds": [
+        "src-club-info",
+        "src-pipa"
+      ]
+    },
+    {
+      "answer": "Nemanja Bilbija",
+      "clues": [
+        "Centre forward.",
+        "Long-serving captain.",
+        "Official club stats list him as the all-time top scorer.",
+        "Scored in both legs of the 2026 cup final."
+      ],
+      "sourceIds": [
+        "src-stats",
+        "src-2026-cup-1",
+        "src-2026-cup-2"
+      ]
+    },
+    {
+      "answer": "Pero Stojkić",
+      "clues": [
+        "Long-serving defender.",
+        "Played in twelve different Zrinjski seasons.",
+        "Captain in eight seasons.",
+        "At the top of the official appearance table."
+      ],
+      "sourceIds": [
+        "src-fans",
+        "src-stats"
+      ]
+    },
+    {
+      "answer": "Slobodan Jakovljević",
+      "clues": [
+        "Central defender.",
+        "Joined in 2016.",
+        "Reached Club 200.",
+        "Won the Pipa award in his first season."
+      ],
+      "sourceIds": [
+        "src-fans",
+        "src-stats"
+      ]
+    },
+    {
+      "answer": "Marko Marić",
+      "clues": [
+        "Goalkeeper.",
+        "Joined during the 2023 winter window.",
+        "Pipa award winner for 2023/24.",
+        "Started the 4-3 win against AZ."
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-uefa-az-report"
+      ]
+    },
+    {
+      "answer": "Josip Ćorluka",
+      "clues": [
+        "Right-sided defender.",
+        "Pipa award winner for 2021/22.",
+        "Started against AZ in 2023.",
+        "Scored in the comeback."
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-uefa-az"
+      ]
+    },
+    {
+      "answer": "Mario Tičinović",
+      "clues": [
+        "Left-sided player.",
+        "Pipa award winner for 2022/23.",
+        "Started against AZ in 2023."
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-uefa-az-report"
+      ]
+    },
+    {
+      "answer": "Krešimir Kordić",
+      "clues": [
+        "Forward.",
+        "Pipa award winner for 2008/09.",
+        "Second on the official club scorer table."
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-stats"
+      ]
+    },
+    {
+      "answer": "Marin Aničić",
+      "clues": [
+        "Defender.",
+        "Pipa award winner for 2010/11.",
+        "Among the leading appearance makers on the club stats page."
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-stats"
+      ]
+    },
+    {
+      "answer": "Ognjen Todorović",
+      "clues": [
+        "Attacking wide player.",
+        "Pipa award winner for 2017/18.",
+        "Appears on the official all-time scorer table."
+      ],
+      "sourceIds": [
+        "src-pipa",
+        "src-stats"
+      ]
+    },
+    {
+      "answer": "Zvonimir Kožulj",
+      "clues": [
+        "Midfielder.",
+        "Was on the bench at kick-off against AZ.",
+        "Entered during the comeback.",
+        "Scored after Zrinjski trailed 0-3."
+      ],
+      "sourceIds": [
+        "src-uefa-az",
+        "src-uefa-az-report"
+      ]
+    },
+    {
+      "answer": "Mario Ivanković",
+      "clues": [
+        "Appears high on the official appearance and scorer lists.",
+        "Was captain in multiple seasons.",
+        "Scored Zrinjski's first goal after the 1992 re-establishment according to the club."
+      ],
+      "sourceIds": [
+        "src-stats",
+        "src-club-history"
+      ]
+    },
+    {
+      "answer": "Slaven Musa",
+      "clues": [
+        "Was in Zrinjski's first European home starting XI in 2000.",
+        "Was a captain in the early modern era.",
+        "Won the first listed supporter player award in 2000/01."
+      ],
+      "sourceIds": [
+        "src-europe-2000",
+        "src-stats",
+        "src-pipa"
+      ]
+    },
+    {
+      "answer": "Mario Ćuže",
+      "clues": [
+        "Wide attacker.",
+        "Played in the modern European era.",
+        "Crossed for Bilbija's first-leg winner in the 2026 cup final."
+      ],
+      "sourceIds": [
+        "src-2026-cup-1"
+      ]
+    },
+    {
+      "answer": "Hrvoje Barišić",
+      "clues": [
+        "Defender.",
+        "Reached Club 200.",
+        "Played in the 2026 cup final."
+      ],
+      "sourceIds": [
+        "src-stats",
+        "src-2026-cup-1",
+        "src-2026-cup-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2137 @@
+{
+ "note": "match → physical venue (AWAY DAYS spec §20, 24.9.2026). One row per official international match in the match master. `venueId` names a row of venue-registry.json; `countryCode` is the physical country (it decides Away Days — never HOME/AWAY). `check` is what the venue source itself says about the match (date, Hapoel's side, Hapoel's goals first); the builder compares it with the match master and a disagreement is a CONFLICT, not a correction. A row with no venueId says why (`status`, `reason`) and what was considered (`candidates`) — the research queue reads it.",
+ "records": [
+  {
+   "matchId": "m_26a26d7e5164",
+   "venueId": "suphachalasai",
+   "countryCode": "TH",
+   "sourceRefs": [
+    "https://www.rsssf.org/tablesa/ascup67.html",
+    "https://wildstat.com/p/5014/ch/ASI_CL_1967",
+    "https://en.wikipedia.org/wiki/Malaysian_football_clubs_in_Asian_competitions"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1967-12-19",
+    "side": null,
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_ade940e178c3",
+   "venueId": "amjadieh",
+   "countryCode": "IR",
+   "sourceRefs": [
+    "https://www.rsssf.org/tablesa/ascup70.html",
+    "https://wildstat.com/p/146/cht/514/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://en.wikipedia.org/wiki/Shahid_Shiroudi_Stadium"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": null,
+    "side": null,
+    "for": 5,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_05035a203a47",
+   "venueId": "amjadieh",
+   "countryCode": "IR",
+   "sourceRefs": [
+    "https://www.rsssf.org/tablesa/ascup70.html",
+    "https://wildstat.com/p/146/cht/514/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://en.wikipedia.org/wiki/Shahid_Shiroudi_Stadium"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": null,
+    "side": null,
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_8d113e123825",
+   "venueId": "amjadieh",
+   "countryCode": "IR",
+   "sourceRefs": [
+    "https://www.rsssf.org/tablesa/ascup70.html",
+    "https://wildstat.com/p/146/cht/514/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://en.wikipedia.org/wiki/Shahid_Shiroudi_Stadium"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": null,
+    "side": null,
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_e6e65bf7eeff",
+   "venueId": null,
+   "countryCode": "IR",
+   "sourceRefs": [
+    "https://www.rsssf.org/tablesa/ascup70.html",
+    "https://wildstat.com/p/146/cht/514/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://en.wikipedia.org/wiki/1970_Asian_Champion_Club_Tournament"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "walkover",
+   "reason": "Not played: RSSSF \"w/o (Homenetmen withdrew)\", Wikipedia \"scratched\", Wildstat \"+:-\". The Games table's 2:0 is a technical result — no visit."
+  },
+  {
+   "matchId": "m_a427fe384a36",
+   "venueId": "amjadieh",
+   "countryCode": "IR",
+   "sourceRefs": [
+    "https://www.rsssf.org/tablesa/ascup70.html",
+    "https://wildstat.com/p/146/cht/514/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://en.wikipedia.org/wiki/Shahid_Shiroudi_Stadium"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1970-04-10",
+    "side": "AWAY",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_1034209debb9",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wiki.red-fans.com/index.php?title=1981%2F82%2F%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+    "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1981-06-27",
+    "side": "HOME",
+    "for": 1,
+    "against": 3
+   },
+   "status": "in-israel",
+   "reason": "ויקיפועל, טבלת Games (עמוד הנתונים של העונה): stadium = \"אצטדיון בלומפילד\" ל-27.6.1981 — בישראל, ולכן לא יום חוץ."
+  },
+  {
+   "matchId": "m_1d8ed809645b",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wiki.red-fans.com/index.php?title=1981%2F82%2F%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+    "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1981-07-04",
+    "side": "HOME",
+    "for": 1,
+    "against": 1
+   },
+   "status": "in-israel",
+   "reason": "ויקיפועל, טבלת Games (עמוד הנתונים של העונה): stadium = \"אצטדיון בלומפילד\" ל-4.7.1981 — בישראל, ולכן לא יום חוץ."
+  },
+  {
+   "matchId": "m_13e80d4a88e1",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wiki.red-fans.com/index.php?title=1982%2F83%2F%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+    "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1982-06-26",
+    "side": "HOME",
+    "for": 4,
+    "against": 0
+   },
+   "status": "in-israel",
+   "reason": "ויקיפועל, טבלת Games (עמוד הנתונים של העונה): stadium = \"אצטדיון בלומפילד\" ל-26.6.1982 — בישראל, ולכן לא יום חוץ."
+  },
+  {
+   "matchId": "m_68d63e52e424",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wiki.red-fans.com/index.php?title=1982%2F83%2F%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+    "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1982-07-03",
+    "side": "HOME",
+    "for": 2,
+    "against": 0
+   },
+   "status": "in-israel",
+   "reason": "ויקיפועל, טבלת Games (עמוד הנתונים של העונה): stadium = \"אצטדיון בלומפילד\" ל-3.7.1982 — בישראל, ולכן לא יום חוץ."
+  },
+  {
+   "matchId": "m_e15df84e2732",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated HOME; no source read names the ground, so it is not known that it was in Israel."
+  },
+  {
+   "matchId": "m_8e6459cccdb8",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated HOME; no source read names the ground, so it is not known that it was in Israel."
+  },
+  {
+   "matchId": "m_2305a1a3996a",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated HOME; no source read names the ground, so it is not known that it was in Israel."
+  },
+  {
+   "matchId": "m_4e102c388e12",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated HOME; no source read names the ground, so it is not known that it was in Israel."
+  },
+  {
+   "matchId": "m_03ea50267e68",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated AWAY — almost certainly abroad (Vienna (Wiener Sport-Club)), but no source read names the ground or the city; Wildstat lists the leg without a stadium."
+  },
+  {
+   "matchId": "m_c5bc75e2925d",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated AWAY — almost certainly abroad (Liège (RFC Liège)), but no source read names the ground or the city; Wildstat lists the leg without a stadium."
+  },
+  {
+   "matchId": "m_a2ae15ea6409",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated AWAY — almost certainly abroad (Maria Enzersdorf / Vienna (Admira Wacker)), but no source read names the ground or the city; Wildstat lists the leg without a stadium."
+  },
+  {
+   "matchId": "m_4a94f95d1c39",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated AWAY — almost certainly abroad (Norrköping), but no source read names the ground or the city; Wildstat lists the leg without a stadium."
+  },
+  {
+   "matchId": "m_707cd3f83431",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated AWAY — almost certainly abroad (Lyngby), but no source read names the ground or the city; Wildstat lists the leg without a stadium."
+  },
+  {
+   "matchId": "m_b1ddad26659a",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated AWAY — almost certainly abroad (Graz (Grazer AK)), but no source read names the ground or the city; Wildstat lists the leg without a stadium."
+  },
+  {
+   "matchId": "m_61fe8b3a779f",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated AWAY — almost certainly abroad (Lucerne), but no source read names the ground or the city; Wildstat lists the leg without a stadium."
+  },
+  {
+   "matchId": "m_163ffc05212e",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "venue-unknown",
+   "reason": "Designated AWAY — almost certainly abroad (Gothenburg (Örgryte)), but no source read names the ground or the city; Wildstat lists the leg without a stadium."
+  },
+  {
+   "matchId": "m_55a86aebdbc9",
+   "venueId": null,
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wiki.red-fans.com/index.php?title=1981%2F82%2F%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+    "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1981-07-11",
+    "side": "AWAY",
+    "for": 1,
+    "against": 1
+   },
+   "status": "in-israel",
+   "reason": "ויקיפועל, טבלת Games: stadium = \"אצטדיון הקופסא\" (נתניה) ל-11.7.1981 — בישראל, ולכן לא יום חוץ."
+  },
+  {
+   "matchId": "m_a185c7722dd4",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wiki.red-fans.com/index.php?title=1981%2F82%2F%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+    "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1981-07-14",
+    "side": "HOME",
+    "for": 1,
+    "against": 4
+   },
+   "status": "in-israel",
+   "reason": "ויקיפועל, טבלת Games (עמוד הנתונים של העונה): stadium = \"אצטדיון בלומפילד\" ל-14.7.1981 — בישראל, ולכן לא יום חוץ."
+  },
+  {
+   "matchId": "m_543f5cb56aba",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "domestic-opponent",
+   "reason": "Both clubs Israeli (the Intertoto grouped two Israeli clubs); no ground recorded. Almost certainly not abroad — kept out of the journey, never guessed onto the map."
+  },
+  {
+   "matchId": "m_45c9517bf40f",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wiki.red-fans.com/index.php?title=1982%2F83%2F%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+    "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1982-07-10",
+    "side": "AWAY",
+    "for": 1,
+    "against": 0
+   },
+   "status": "in-israel",
+   "reason": "ויקיפועל, טבלת Games: stadium = \"אצטדיון בלומפילד\" ל-10.7.1982 (הפועל כפ\"ס מארחת בבלומפילד) — בישראל, ולכן לא יום חוץ."
+  },
+  {
+   "matchId": "m_3848dada1459",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "domestic-opponent",
+   "reason": "Both clubs Israeli (the Intertoto grouped two Israeli clubs); no ground recorded. Almost certainly not abroad — kept out of the journey, never guessed onto the map."
+  },
+  {
+   "matchId": "m_169a9eaf871f",
+   "venueId": null,
+   "countryCode": null,
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/515/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 0,
+   "check": null,
+   "status": "domestic-opponent",
+   "reason": "Both clubs Israeli (the Intertoto grouped two Israeli clubs); no ground recorded. Almost certainly not abroad — kept out of the journey, never guessed onto the map."
+  },
+  {
+   "matchId": "m_3993271026c1",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/MDA_Zimbru_Chisinau",
+    "content/manual/euro-ties.json#1995-uefa-q-zimbru"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1995-08-22",
+    "side": "HOME",
+    "for": 0,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_b00f1661c729",
+   "venueId": "republican-chisinau",
+   "countryCode": "MD",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=51922",
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/MDA_Zimbru_Chisinau",
+    "content/manual/euro-ties.json#1995-uefa-q-zimbru"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1995-08-08",
+    "side": "AWAY",
+    "for": 0,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_328a8af1129c",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/FIN_FinnPa_Helsinki"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1998-07-22",
+    "side": "HOME",
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_ebb89fd4b964",
+   "venueId": "helsinki-olympic",
+   "countryCode": "FI",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/FIN_FinnPa_Helsinki"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1998-07-29",
+    "side": "AWAY",
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_35a941ac66f2",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "content/manual/euro-ties.json#1998-uefa-q2-stromsgodset"
+   ],
+   "confidence": 2,
+   "check": null
+  },
+  {
+   "matchId": "m_79b2d4bbb455",
+   "venueId": "marienlyst",
+   "countryCode": "NO",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=55638",
+    "content/manual/euro-ties.json#1998-uefa-q2-stromsgodset",
+    "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C._in_international_football"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1998-08-25",
+    "side": "AWAY",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_8ef74ecc34a1",
+   "venueId": "hrazdan",
+   "countryCode": "AM",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/ARM_FC_Erevan"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1999-08-12",
+    "side": "AWAY",
+    "for": 2,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_1c86b4ba34aa",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/ARM_FC_Erevan"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1999-08-26",
+    "side": "HOME",
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_2cc1076dcb1b",
+   "venueId": "celtic-park",
+   "countryCode": "GB",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/SCO_Celtic_Glasgow/club2/ISR_Hapoel_Tel_Aviv"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1999-09-16",
+    "side": "AWAY",
+    "for": 0,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_876323f36ae8",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/SCO_Celtic_Glasgow/club2/ISR_Hapoel_Tel_Aviv"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "1999-09-30",
+    "side": "HOME",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_e2797f5f4e3d",
+   "venueId": "graz-liebenau",
+   "countryCode": "AT",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2000-07-26",
+    "side": "AWAY",
+    "for": 0,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_f20554fa7b6b",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2000-08-02",
+    "side": "HOME",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_477c271aa85e",
+   "venueId": "vazgen-sargsyan",
+   "countryCode": "AM",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/ARM_Ararat_Erevan/club2/ISR_Hapoel_Tel_Aviv"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2001-08-09",
+    "side": "AWAY",
+    "for": 2,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_74d2093c1d71",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/ch/all/club1/ARM_Ararat_Erevan/club2/ISR_Hapoel_Tel_Aviv"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2001-08-23",
+    "side": "HOME",
+    "for": 3,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_c2ae681d07f6",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2001-09-20",
+    "side": "HOME",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_905f83a3f3d7",
+   "venueId": "kamil-ocak",
+   "countryCode": "TR",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2001-09-25",
+    "side": "AWAY",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_67a2f41af253",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2001-10-18",
+    "side": "HOME",
+    "for": 2,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_73bc1426d0e3",
+   "venueId": "stamford-bridge",
+   "countryCode": "GB",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2001-11-01",
+    "side": "AWAY",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_14704051eab9",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2001-11-20",
+    "side": "HOME",
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_c545aeca7ad8",
+   "venueId": "saturn-ramenskoye",
+   "countryCode": "RU",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2001-uefa-r3-lokomotiv"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2001-12-04",
+    "side": "AWAY",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_346aef4b055c",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-02-21",
+    "side": "HOME",
+    "for": 0,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_b68a7cff7df1",
+   "venueId": "tardini",
+   "countryCode": "IT",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-02-28",
+    "side": "AWAY",
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_b88bc98d09db",
+   "venueId": "gsp-nicosia",
+   "countryCode": "CY",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-03-14",
+    "side": "HOME",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_8d8e47eb1354",
+   "venueId": "san-siro",
+   "countryCode": "IT",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-03-21",
+    "side": "AWAY",
+    "for": 0,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_685e879499af",
+   "venueId": "georgi-asparuhov",
+   "countryCode": "BG",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=69718",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2002-uefa-q-partizani"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-08-15",
+    "side": "HOME",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_63e4ce123461",
+   "venueId": "qemal-stafa",
+   "countryCode": "AL",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=69719",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-08-29",
+    "side": "AWAY",
+    "for": 4,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_ca2623b733b8",
+   "venueId": "woerthersee",
+   "countryCode": "AT",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=70197",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-09-19",
+    "side": "AWAY",
+    "for": 4,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_2beb997da718",
+   "venueId": "georgi-asparuhov",
+   "countryCode": "BG",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=70198",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2002-uefa-r1-karnten"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-10-03",
+    "side": "HOME",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_892217fe1d8b",
+   "venueId": "elland-road",
+   "countryCode": "GB",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-10-31",
+    "side": "AWAY",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_4100110bcfb1",
+   "venueId": "artemio-franchi",
+   "countryCode": "IT",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=70341",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2002-uefa-r2-leeds"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2002-11-14",
+    "side": "HOME",
+    "for": 1,
+    "against": 4
+   }
+  },
+  {
+   "matchId": "m_c4998e555ca1",
+   "venueId": "het-kasteel",
+   "countryCode": "NL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2003-uefa-q-banants"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2003-08-14",
+    "side": "HOME",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_f2707cd62f4a",
+   "venueId": "vazgen-sargsyan",
+   "countryCode": "AM",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2003-08-28",
+    "side": "AWAY",
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_bdaa05a9d887",
+   "venueId": "kamil-ocak",
+   "countryCode": "TR",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2003-09-24",
+    "side": "AWAY",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_4b2d5762dabb",
+   "venueId": "het-kasteel",
+   "countryCode": "NL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2003-uefa-r1-gaziantepspor"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2003-10-15",
+    "side": "HOME",
+    "for": 0,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_b433bc26d75a",
+   "venueId": "willem-ii",
+   "countryCode": "NL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2006-uefa-q2-domzale"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2006-08-10",
+    "side": "HOME",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_cc3a9d5a80dc",
+   "venueId": "domzale",
+   "countryCode": "SI",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2006-08-24",
+    "side": "AWAY",
+    "for": 3,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_6a74dd69bdc0",
+   "venueId": "chornomorets",
+   "countryCode": "UA",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2006-09-14",
+    "side": "AWAY",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_8715ba9165a3",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2006-uefa-r1-chornomorets"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2006-09-28",
+    "side": "HOME",
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_163caa26e2fe",
+   "venueId": "spyros-louis",
+   "countryCode": "GR",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2006-10-19",
+    "side": "AWAY",
+    "for": 0,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_389491638630",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2006-11-02",
+    "side": "HOME",
+    "for": 2,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_bfb580c67356",
+   "venueId": "parc-des-princes",
+   "countryCode": "FR",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2006-11-23",
+    "side": "AWAY",
+    "for": 4,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_de9e7d7ab236",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2006-12-13",
+    "side": "HOME",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_040ed1288f81",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-02-14",
+    "side": "HOME",
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_e5e623c03c7a",
+   "venueId": "ibrox",
+   "countryCode": "GB",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-02-22",
+    "side": "AWAY",
+    "for": 0,
+    "against": 4
+   }
+  },
+  {
+   "matchId": "m_66664a604e31",
+   "venueId": "pecara",
+   "countryCode": "BA",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-08-16",
+    "side": "AWAY",
+    "for": 3,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_cb83136cbfc8",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-08-30",
+    "side": "HOME",
+    "for": 3,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_144e14a443a8",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-09-20",
+    "side": "HOME",
+    "for": 0,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_119456dabd38",
+   "venueId": "rasunda",
+   "countryCode": "SE",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-10-04",
+    "side": "AWAY",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_1fe48a2058f2",
+   "venueId": "lotto-park",
+   "countryCode": "BE",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-10-25",
+    "side": "AWAY",
+    "for": 0,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_3014e98ff48b",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-11-08",
+    "side": "HOME",
+    "for": 0,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_38869cb53172",
+   "venueId": "coliseum-getafe",
+   "countryCode": "ES",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-11-29",
+    "side": "AWAY",
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_ee9dd5219a85",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2007-12-19",
+    "side": "HOME",
+    "for": 1,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_e348989caa76",
+   "venueId": null,
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 0,
+   "check": {
+    "playedOn": "2008-07-17",
+    "side": "HOME",
+    "for": 3,
+    "against": 0
+   },
+   "status": "in-israel",
+   "reason": "Rishon LeZion (\"Municipal\") per Wildstat — in Israel, so not an away day."
+  },
+  {
+   "matchId": "m_740e5380fccb",
+   "venueId": "san-marino-stadium",
+   "countryCode": "SM",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=303568",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://en.wikipedia.org/wiki/San_Marino_Stadium"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2008-07-31",
+    "side": "AWAY",
+    "for": 2,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_8a67d10d0bfe",
+   "venueId": "karadjordje",
+   "countryCode": "RS",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2008-08-14",
+    "side": "AWAY",
+    "for": 0,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_f0109e97f809",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2008-08-28",
+    "side": "HOME",
+    "for": 3,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_63458d55df7c",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2008-09-18",
+    "side": "HOME",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_a07c7dc28854",
+   "venueId": "geoffroy-guichard",
+   "countryCode": "FR",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2008-10-02",
+    "side": "AWAY",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_d23bd54c1c53",
+   "venueId": "gamla-ullevi",
+   "countryCode": "SE",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-07-30",
+    "side": "AWAY",
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_90e09a161922",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-08-06",
+    "side": "HOME",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_c4fdcf7a9b56",
+   "venueId": "na-stinadlech",
+   "countryCode": "CZ",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-08-20",
+    "side": "AWAY",
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_e9a72e9ef9e1",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-08-27",
+    "side": "HOME",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_023d521ae574",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-09-17",
+    "side": "HOME",
+    "for": 2,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_784923268adf",
+   "venueId": "volksparkstadion",
+   "countryCode": "DE",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-10-01",
+    "side": "AWAY",
+    "for": 2,
+    "against": 4
+   }
+  },
+  {
+   "matchId": "m_3fa656984f8d",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-10-22",
+    "side": "HOME",
+    "for": 5,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_6f2a8ae3c9c8",
+   "venueId": "ernst-happel",
+   "countryCode": "AT",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-11-05",
+    "side": "AWAY",
+    "for": 3,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_0053edd3bb31",
+   "venueId": "celtic-park",
+   "countryCode": "GB",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-12-02",
+    "side": "AWAY",
+    "for": 0,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_b5b005ef7349",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2009-12-17",
+    "side": "HOME",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_d73d4996a704",
+   "venueId": "kazan-central",
+   "countryCode": "RU",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-02-18",
+    "side": "AWAY",
+    "for": 0,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_88d0d63b9659",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-02-25",
+    "side": "HOME",
+    "for": 0,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_90b3c374a3c0",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-07-13",
+    "side": "HOME",
+    "for": 5,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_7474ea421257",
+   "venueId": "kosevo",
+   "countryCode": "BA",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-07-21",
+    "side": "AWAY",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_1969384dd251",
+   "venueId": "aktobe-central",
+   "countryCode": "KZ",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-07-28",
+    "side": "AWAY",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_ac4f696be0e3",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-08-03",
+    "side": "HOME",
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_9b658c3bbc9e",
+   "venueId": "red-bull-arena-salzburg",
+   "countryCode": "AT",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=2002389",
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-08-18",
+    "side": "AWAY",
+    "for": 3,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_7b61fac81ad6",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-08-24",
+    "side": "HOME",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_6f82d27fb7c8",
+   "venueId": "estadio-da-luz",
+   "countryCode": "PT",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-09-14",
+    "side": "AWAY",
+    "for": 0,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_8b772bcbe1d6",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-09-29",
+    "side": "HOME",
+    "for": 1,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_b7410d26e2bc",
+   "venueId": "veltins-arena",
+   "countryCode": "DE",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-10-20",
+    "side": "AWAY",
+    "for": 1,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_2a3faec9323a",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-11-02",
+    "side": "HOME",
+    "for": 0,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_abdc77e0eedc",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-11-24",
+    "side": "HOME",
+    "for": 3,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_5e1a6f8a252a",
+   "venueId": "gerland",
+   "countryCode": "FR",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2010-12-07",
+    "side": "AWAY",
+    "for": 2,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_483d5fdea249",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-07-28",
+    "side": "HOME",
+    "for": 4,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_78fbff5606a5",
+   "venueId": "rheinpark",
+   "countryCode": "LI",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-08-04",
+    "side": "AWAY",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_7fa5add25dc9",
+   "venueId": "aukstaitija",
+   "countryCode": "LT",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-08-18",
+    "side": "AWAY",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_07f6809df1a9",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-08-25",
+    "side": "HOME",
+    "for": 4,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_88f8503e3a12",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-09-15",
+    "side": "HOME",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_71daddd4b591",
+   "venueId": "polish-army",
+   "countryCode": "PL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-09-29",
+    "side": "AWAY",
+    "for": 2,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_b7742fa4f377",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-10-20",
+    "side": "HOME",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_7ff471a43d9a",
+   "venueId": "philips-stadion",
+   "countryCode": "NL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-11-03",
+    "side": "AWAY",
+    "for": 3,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_60aefece7777",
+   "venueId": "arena-nationala",
+   "countryCode": "RO",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-11-30",
+    "side": "AWAY",
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_9a79f56d20a3",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2011-12-15",
+    "side": "HOME",
+    "for": 2,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_f4641fa38910",
+   "venueId": "differdange-municipal",
+   "countryCode": "LU",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=2009845",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2012-el-po-dudelange"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2012-08-23",
+    "side": "AWAY",
+    "for": 3,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_877e70bdeac5",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2012-08-30",
+    "side": "HOME",
+    "for": 4,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_b44a2815fa85",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2012-09-20",
+    "side": "HOME",
+    "for": 0,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_ec126274acaa",
+   "venueId": "coimbra",
+   "countryCode": "PT",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2012-10-04",
+    "side": "AWAY",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_ebea75916278",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2012-10-25",
+    "side": "HOME",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_4230332e5da2",
+   "venueId": "doosan-arena",
+   "countryCode": "CZ",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2012-11-08",
+    "side": "AWAY",
+    "for": 0,
+    "against": 4
+   }
+  },
+  {
+   "matchId": "m_4bcdd707f836",
+   "venueId": "vicente-calderon",
+   "countryCode": "ES",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2012-11-22",
+    "side": "AWAY",
+    "for": 0,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_d3e34147efe7",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2012-12-06",
+    "side": "HOME",
+    "for": 2,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_57e54f92eac6",
+   "venueId": "beroe",
+   "countryCode": "BG",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2013-07-18",
+    "side": "AWAY",
+    "for": 4,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_2072eb598ac9",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2013-07-25",
+    "side": "HOME",
+    "for": 2,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_11587a1ff024",
+   "venueId": "cluj-arena",
+   "countryCode": "RO",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2013-08-01",
+    "side": "AWAY",
+    "for": 1,
+    "against": 1
+   }
+  },
+  {
+   "matchId": "m_768749eeff5d",
+   "venueId": "bloomfield",
+   "countryCode": "IL",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2013-08-08",
+    "side": "HOME",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_02a05d947dc0",
+   "venueId": "astana-arena",
+   "countryCode": "KZ",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2014-07-17",
+    "side": "AWAY",
+    "for": 0,
+    "against": 3
+   }
+  },
+  {
+   "matchId": "m_0955979b241c",
+   "venueId": "antonis-papadopoulos",
+   "countryCode": "CY",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "content/manual/euro-ties.json#2014-el-q2-astana"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2014-07-24",
+    "side": "HOME",
+    "for": 1,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_86af3347e553",
+   "venueId": "dvtk",
+   "countryCode": "HU",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2026-07-23",
+    "side": "HOME",
+    "for": 2,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_0c4347200189",
+   "venueId": "huvepharma",
+   "countryCode": "BG",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=2048802",
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2026-07-30",
+    "side": "AWAY",
+    "for": 2,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_4e102450e21f",
+   "venueId": "dvtk",
+   "countryCode": "HU",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2026-08-06",
+    "side": "HOME",
+    "for": 2,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_70333ef102d5",
+   "venueId": "arena-katowice",
+   "countryCode": "PL",
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=2049189",
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://en.wikipedia.org/wiki/Arena_Katowice"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2026-08-12",
+    "side": "AWAY",
+    "for": 1,
+    "against": 2
+   }
+  },
+  {
+   "matchId": "m_0960e42e5b58",
+   "venueId": "atleti-azzurri",
+   "countryCode": "IT",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2026-08-20",
+    "side": "AWAY",
+    "for": 0,
+    "against": 0
+   }
+  },
+  {
+   "matchId": "m_2a0184e917fa",
+   "venueId": "dvtk",
+   "countryCode": "HU",
+   "sourceRefs": [
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "check": {
+    "playedOn": "2026-08-27",
+    "side": "HOME",
+    "for": 0,
+    "against": 1
+   }
+  }
+ ]
+}

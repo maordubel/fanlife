@@ -1,0 +1,12 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fan-life-master@1.0.0-rc.2 master:local-db
+> node scripts/master/check-local-db.mjs
+
+{
+  "migrations": 20,
+  "profile": "passed",
+  "admin": "passed",
+  "closet": "passed",
+  "database": "local PostgreSQL; no Supabase connection"
+}

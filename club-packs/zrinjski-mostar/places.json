@@ -1,0 +1,125 @@
+[
+  {
+    "id": "stadium-zrinjski",
+    "name": "HŠK Zrinjski Stadium / Stadion pod Bijelim Brijegom",
+    "role": "football-home",
+    "city": "Mostar",
+    "activeFrom": 1994,
+    "sections": [
+      "Lower West",
+      "Upper West",
+      "Standing Tribune / East until 2023"
+    ],
+    "sourceIds": [
+      "src-stadium",
+      "src-club-info"
+    ],
+    "truthMode": "VERIFIED_REAL"
+  },
+  {
+    "id": "standing-east",
+    "name": "Standing Tribune / East",
+    "role": "supporter-section",
+    "city": "Mostar",
+    "activeFrom": 1994,
+    "activeTo": 2023,
+    "sourceIds": [
+      "src-stadium",
+      "src-fans"
+    ],
+    "truthMode": "VERIFIED_REAL"
+  },
+  {
+    "id": "lower-west",
+    "name": "Lower West Stand",
+    "role": "supporter-section",
+    "city": "Mostar",
+    "activeFrom": 1994,
+    "sourceIds": [
+      "src-stadium",
+      "src-fans"
+    ],
+    "truthMode": "VERIFIED_REAL"
+  },
+  {
+    "id": "training-south",
+    "name": "Training Ground Behind South Goal",
+    "role": "training-ground",
+    "city": "Mostar",
+    "activeFrom": 1994,
+    "sourceIds": [
+      "src-stadium"
+    ],
+    "truthMode": "VERIFIED_REAL"
+  },
+  {
+    "id": "kiosk-kod-ive",
+    "name": "Kiosk 'Kod Ive'",
+    "role": "kiosk",
+    "city": "Mostar",
+    "activeFrom": 1994,
+    "sourceIds": [],
+    "notes": [
+      "Fictional neighbourhood kiosk. Not a claim about a real Mostar business.",
+      "Universal social hub: newspapers, drinks, small errands, sticker/scarf talk, match gossip."
+    ],
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "family-flat",
+    "name": "Kovač Family Flat",
+    "role": "family-home",
+    "city": "Mostar",
+    "activeFrom": 1986,
+    "sourceIds": [],
+    "notes": [
+      "Fictional residential home within plausible travel distance of stadium."
+    ],
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "school-local",
+    "name": "Local Secondary School",
+    "role": "school",
+    "city": "Mostar",
+    "activeFrom": 1998,
+    "sourceIds": [],
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "cafe-local",
+    "name": "Café 'Most'",
+    "role": "supporter-bar",
+    "city": "Mostar",
+    "activeFrom": 2004,
+    "sourceIds": [],
+    "notes": [
+      "Fictional café. Used for friends, journalism, Europe planning."
+    ],
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "bus-departure",
+    "name": "Supporter Departure Point",
+    "role": "away-departure",
+    "city": "Mostar",
+    "activeFrom": 1998,
+    "sourceIds": [],
+    "notes": [
+      "Fictional placeholder until oral-history research identifies real departure customs."
+    ],
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "club-office",
+    "name": "Club Offices at HŠK Zrinjski Stadium",
+    "role": "club-office",
+    "city": "Mostar",
+    "activeFrom": 1994,
+    "sourceIds": [
+      "src-stadium",
+      "src-board"
+    ],
+    "truthMode": "VERIFIED_REAL"
+  }
+]

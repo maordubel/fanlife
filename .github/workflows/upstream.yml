@@ -1,0 +1,85 @@
+name: The Worker updates
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: worker-upstream
+  cancel-in-progress: false
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NODE_OPTIONS: --max-old-space-size=6144
+      FAN_LIFE_UPDATE_REPORT_DIR: /tmp/fan-life-update
+    outputs:
+      updated: ${{ steps.update.outputs.updated }}
+      manual: ${{ steps.update.outputs.manual_review }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - id: update
+        run: node scripts/master/upstream.mjs --apply
+      - name: Validate integration candidate
+        if: steps.update.outputs.updated == 'true'
+        run: |
+          npm ci
+          npm run repo:hygiene
+          npm run assets:provenance
+          npm run lint
+          npm run typecheck
+          npm run life:deadends
+          npm test -- --maxWorkers=2 --minWorkers=1
+          npm run master:local-db
+          npm run build
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.update.outputs.updated == 'true'
+        with:
+          name: worker-update-review
+          path: /tmp/fan-life-update/
+  propose:
+    needs: candidate
+    if: needs.candidate.outputs.updated == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: worker-update-review
+          path: /tmp/fan-life-update
+      - run: git apply --index /tmp/fan-life-update/candidate.patch
+      - uses: peter-evans/create-pull-request@v7
+        id: pr
+        with:
+          branch: automation/the-worker-update
+          title: Integrate verified The Worker updates
+          commit-message: Integrate verified The Worker updates
+          body-path: /tmp/fan-life-update/report.md
+          draft: ${{ needs.candidate.outputs.manual == 'true' }}
+      - name: Run checks on the proposed branch
+        if: steps.pr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --ref automation/the-worker-update
+      - name: Enable automatic merge only with required checks
+        if: steps.pr.outputs.pull-request-number != '' && needs.candidate.outputs.manual != 'true' && vars.FAN_LIFE_AUTO_MERGE == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ steps.pr.outputs.pull-request-url }}
+        run: |
+          branch=$(gh api "repos/$GITHUB_REPOSITORY" --jq .default_branch)
+          gh api "repos/$GITHUB_REPOSITORY/branches/$branch/protection/required_status_checks" --jq '.strict == true and ((.contexts + [.checks[]?.context]) | any(. == "doctor"))' | grep -qx true
+          gh pr merge "$PR_URL" --auto --squash

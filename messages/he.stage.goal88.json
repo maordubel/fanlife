@@ -1,0 +1,19 @@
+{
+  "goal88.ballAria": "הכדור אצל {name} — גררו אותו לחבר, לשטח או לשער",
+  "goal88.goal": "גול!",
+  "goal88.replay": "שידור חוזר",
+  "goal88.tapSkip": "נגיעה במגרש — דילוג",
+  "goal88.whistle": "שריקת סיום",
+  "goal88.details": "פירוט",
+  "goal88.soundOn": "הפעלת קול הקהל",
+  "goal88.soundOff": "השתקת הקהל",
+  "goal88.inNetLead": "ברשת!",
+  "goal88.cap.start": "בחרו את השחקן עם הכדור",
+  "goal88.cap.armed": "{name} — געו איפה עמד",
+  "goal88.cap.holder": "גררו את הכדור: לחבר, לשטח או לשער",
+  "goal88.cap.carry": "{name} מכדרר — געו לאן",
+  "goal88.cap.loose": "הכדור חופשי — בחרו מי לוקח אותו",
+  "goal88.cap.inNet": "ברשת — שרקו לסיום, או המשיכו",
+  "goal88.cap.edit": "גררו מחדש, או בחרו פעולה",
+  "goal88.needTwoShort": "לפחות 2 נגיעות"
+}

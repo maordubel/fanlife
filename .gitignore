@@ -1,0 +1,25 @@
+.next/
+data/life-shots/
+__pycache__/
+*.pyc
+*.log
+node_modules/
+tsconfig.all.tsbuildinfo
+tsconfig.tsbuildinfo
+.deliver/
+scripts/life/.art-spec-dump.ts
+data/maor-shots/
+delta/
+scripts/life/.scene-dump.ts
+docs/life-shots/
+docs/goal-shots/
+
+# agent worktrees (local only)
+.claude/worktrees/
+
+.env*
+!.env.example
+.fan-life/
+release/
+test-results/
+playwright-report/

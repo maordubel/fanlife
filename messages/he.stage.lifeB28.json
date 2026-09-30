@@ -1,0 +1,10 @@
+{
+  "lifeB28.board.close": "לקפל את הפתק",
+  "lifeB28.board.scrap": "פתק",
+  "lifeB28.board.left": "עוד {n} פתקים",
+  "lifeB28.board.empty": "הערימה נגמרה.",
+  "lifeB28.board.takeBack": "להחזיר לערימה",
+  "lifeB28.board.belongs": "← {col}",
+  "lifeB28.board.enough": "מספיק. לקפל כמו שזה.",
+  "lifeB28.board.fold": "לקפל ולשים בכיס"
+}

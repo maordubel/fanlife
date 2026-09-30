@@ -1,0 +1,134 @@
+{
+  "note": "נגזרות רשת של ציורי אוסישקין. המקור תמיד public/life/art — אל תערוך כאן.",
+  "generator": "scripts/uss/make-web-art.py",
+  "plates": {
+    "approach": {
+      "source": "panoUssOutside",
+      "whatHe": "הפינה מבחוץ — הגג הירוק",
+      "sizes": [
+        {
+          "w": 760,
+          "h": 339,
+          "bytes": 33022
+        },
+        {
+          "w": 1200,
+          "h": 535,
+          "bytes": 478858
+        }
+      ]
+    },
+    "hall": {
+      "source": "panoUssHall",
+      "whatHe": "האולם מבפנים",
+      "sizes": [
+        {
+          "w": 760,
+          "h": 380,
+          "bytes": 39652
+        },
+        {
+          "w": 1520,
+          "h": 760,
+          "bytes": 141366
+        }
+      ]
+    },
+    "derby": {
+      "source": "panoUssDerby",
+      "whatHe": "ליל הדרבי",
+      "sizes": [
+        {
+          "w": 760,
+          "h": 380,
+          "bytes": 46050
+        },
+        {
+          "w": 1520,
+          "h": 760,
+          "bytes": 167966
+        }
+      ]
+    },
+    "high": {
+      "source": "ussHigh",
+      "whatHe": "מלמעלה, מהיציע",
+      "sizes": [
+        {
+          "w": 760,
+          "h": 428,
+          "bytes": 76472
+        },
+        {
+          "w": 1520,
+          "h": 856,
+          "bytes": 250382
+        }
+      ]
+    },
+    "low": {
+      "source": "ussLow",
+      "whatHe": "מהפרקט",
+      "sizes": [
+        {
+          "w": 760,
+          "h": 428,
+          "bytes": 65876
+        },
+        {
+          "w": 1520,
+          "h": 856,
+          "bytes": 206138
+        }
+      ]
+    },
+    "night": {
+      "source": "ussHallNight",
+      "whatHe": "האולם בלילה",
+      "sizes": [
+        {
+          "w": 760,
+          "h": 428,
+          "bytes": 44608
+        },
+        {
+          "w": 1520,
+          "h": 855,
+          "bytes": 161906
+        }
+      ]
+    },
+    "cream": {
+      "source": "ussCream",
+      "whatHe": "היציע הבהיר",
+      "sizes": [
+        {
+          "w": 760,
+          "h": 428,
+          "bytes": 52646
+        },
+        {
+          "w": 1520,
+          "h": 855,
+          "bytes": 166744
+        }
+      ]
+    },
+    "end": {
+      "source": "ussEnd",
+      "whatHe": "קיר הסל",
+      "sizes": [
+        {
+          "w": 760,
+          "h": 428,
+          "bytes": 47720
+        },
+        {
+          "w": 1520,
+          "h": 856,
+          "bytes": 160806
+        }
+      ]
+    }
+  }
+}

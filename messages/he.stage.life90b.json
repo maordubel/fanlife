@@ -1,0 +1,17 @@
+{
+  "life90b.packet.back": "סגור",
+  "life90b.packet.price": "מעטפה:",
+  "life90b.packet.wallet": "יש לך:",
+  "life90b.packet.emptyBtn": "אין מה לקנות",
+  "life90b.offer.main": "ראשי",
+  "life90b.offer.can": "אפשר עכשיו",
+  "life90b.offer.time": "זמן",
+  "life90b.offer.pay": "שכר",
+  "life90b.offer.energy": "אנרגיה",
+  "life90b.offer.minutes": "כ־{n} דקות",
+  "life90b.offer.later": "לא עכשיו",
+  "life90b.offer.start.work": "להתחיל לעבוד",
+  "life90b.offer.start.wager": "להתערב",
+  "life90b.offer.start.play": "לשחק",
+  "life90b.offer.start.favour": "לעזור"
+}

@@ -1,0 +1,14 @@
+{
+  "goal.anchorNote": "העוגנים והמעטפות הם פרשנות של המקור — לא GPS מומצא.",
+  "goal.phase.touch": "נגיעה {n}",
+  "goal.phase.rolling": "המהלך שלך מתגלגל — השופט בודק",
+  "goal.undoStep": "בטל צעד",
+  "goal.pool.opponentAria": "{name} — שחקן היריבה",
+  "goal.hint.reception": "איפה קיבל",
+  "goal.hint.receptionFor": "האזור שבו נגיעה {n} התחילה מסומן על המגרש בקו מקווקו בהיר.",
+  "goal.verdict.yours": "שלך: {name} · {act}",
+  "goal.verdict.unnamed": "המקור לא נוקב בשם",
+  "goal.reveal.continue": "לשער הבא",
+  "goal.reveal.final": "לשריקת הסיום",
+  "goal.goodTouches": "נגיעות טובות"
+}

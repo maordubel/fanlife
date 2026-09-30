@@ -1,0 +1,285 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fan-life-master@1.0.0-rc.2 test
+> vitest run --maxWorkers=2 --minWorkers=1
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+ RUN  v2.1.9 /workspace/scratch/d9a1de64e50e/fan-life-master
+
+ ✓ tests/life-routes.test.ts (77 tests) 64ms
+ ✓ tests/life.test.ts (94 tests) 367ms
+ ✓ tests/replay.test.ts (77 tests) 464ms
+ ✓ tests/life-adult-quests-b.test.ts (84 tests) 457ms
+ ✓ tests/brand.test.ts (52 tests) 302ms
+ ✓ tests/life-systems.test.ts (49 tests) 132ms
+ ✓ tests/portal-sync.test.ts (66 tests) 34ms
+ ✓ tests/game.test.ts (124 tests) 1907ms
+   ✓ trivia — the client never receives the answer > never puts a right answer inside a dealt id — 400 seeds, every topic that fills a round 977ms
+ ✓ tests/life-achievements.test.ts (43 tests) 29ms
+ ✓ tests/life-stagea-quest-90c.test.ts (68 tests) 661ms
+ ✓ tests/vikipoel.test.ts (34 tests) 510ms
+ ✓ tests/life-adult-quests-a.test.ts (41 tests) 84ms
+ ✓ tests/lineup.test.ts (54 tests) 39ms
+ ✓ tests/life-missions.test.ts (28 tests) 94ms
+ ✓ tests/scorers.test.ts (49 tests) 387ms
+ ✓ tests/progress.test.ts (42 tests) 30ms
+ ✓ tests/polls.test.ts (45 tests) 24ms
+ ✓ tests/life-ledger.test.ts (17 tests) 27ms
+ ✓ tests/worker-card.test.ts (42 tests) 79ms
+ ✓ tests/life-tiers.test.ts (28 tests) 65ms
+ ✓ tests/life-subscription.test.ts (38 tests) 20ms
+ ✓ tests/life-1991.test.ts (30 tests) 31ms
+ ✓ tests/collector-closet.test.ts (33 tests) 28ms
+ ✓ tests/life-economy-matrix.test.ts (11 tests) 23ms
+ ✓ tests/life-d-pass-2026-09-28.test.ts (35 tests) 77ms
+ ✓ tests/life-audio.test.ts (24 tests) 22ms
+ ✓ tests/life-history.test.ts (41 tests) 46ms
+ ✓ tests/xi-scout.test.ts (29 tests) 164ms
+ ✓ tests/life-dialogue-followups.test.ts (23 tests) 29ms
+ ✓ tests/market.test.ts (30 tests) 22ms
+ ✓ tests/city.test.ts (26 tests) 21ms
+ ✓ tests/redfans-canon.test.ts (31 tests) 20ms
+ ✓ tests/one-red-world-gates-a.test.ts (28 tests) 284ms
+ ✓ tests/life-worldline.test.ts (80 tests) 1729ms
+   ✓ כל יעד שפרק מצביע עליו נמצא בתוך הסגור של אותו פרק > שום פרק לא מצביע על חדר שאי אפשר להגיע אליו — בשום קו חיים 596ms
+ ✓ tests/auction.test.ts (28 tests) 107ms
+ ✓ tests/life-stage-b.test.ts (79 tests) 206ms
+ ✓ tests/life-rooms-2000.test.ts (24 tests) 177ms
+ ✓ tests/archive.test.ts (28 tests) 461ms
+ ✓ tests/kit.test.ts (30 tests) 1734ms
+   ✓ שער 4 — משחק המדים > deals five shirts, five steps each, 3 to the ramp of real options a step 490ms
+   ✓ שער 4 — משחק המדים > can be assembled perfectly, and pays what the screen says it pays 519ms
+ ✓ tests/wiki-corpus.test.ts (19 tests) 4712ms
+   ✓ ויקיפועל — discovery goes past the API cap > walks every page in a namespace, not the first 500 1048ms
+   ✓ ויקיפועל — discovery goes past the API cap > reads the wiki its own namespace list 1018ms
+   ✓ ויקיפועל — content and metadata > returns the complete original text and the revision metadata 1013ms
+   ✓ ויקיפועל — the import is idempotent > imports the whole wiki on the first run 1157ms
+ ✓ tests/life-stickers.test.ts (33 tests) 50ms
+ ✓ tests/royal-rumble-v2.test.ts (22 tests) 6029ms
+   ✓ slot composition > composes boards that meet the hard rules of §23 and land inside the legal-ratio band 329ms
+   ✓ multi-position men > lets a two-way man be offered as either of his positions, and only once per board 626ms
+   ✓ the shuffle > is meaningfully different: ten new cards of fifteen at least, twelve nearly always, two per slot 387ms
+   ✓ property sweep (§79) > holds every board invariant across the seed space 3166ms
+   ✓ property sweep (§79) > keeps the shuffle valid and the opponent legal on sampled seeds 1003ms
+ ✓ tests/memory.test.ts (29 tests) 105ms
+ ✓ tests/life-stagea-pass-2026-09-28.test.ts (23 tests) 44ms
+ ✓ tests/profile.test.ts (26 tests) 115ms
+ ✓ tests/life-progress.test.ts (19 tests) 54ms
+ ✓ tests/life-activities.test.ts (22 tests) 304ms
+ ✓ tests/life-free-time.test.ts (25 tests) 45ms
+ ✓ tests/personal-area.test.ts (37 tests) 29ms
+ ✓ tests/life-opening.test.ts (24 tests) 388ms
+   ✓ the film is tried fairly — the retry state machine (§34–37, §57–58) > has two automatic attempts and one gesture — never a loop 361ms
+ ✓ tests/life-metrics.test.ts (21 tests) 15ms
+ ✓ tests/seed.test.ts (19 tests) 1382ms
+ ✓ tests/life-1990.test.ts (21 tests) 41ms
+ ✓ tests/challenges.test.ts (28 tests) 10778ms
+   ✓ a challenge reproduces the run — 500 seeds per scoped gate (§49) > trivia · general: same seed + cursor → same deal, and the landing agrees 1315ms
+   ✓ a challenge reproduces the run — 500 seeds per scoped gate (§49) > memory: same seed + cursor → same deal, and the landing agrees 420ms
+   ✓ a challenge reproduces the run — 500 seeds per scoped gate (§49) > goal: same seed + cursor → same deal, and the landing agrees 355ms
+   ✓ a challenge reproduces the run — 500 seeds per scoped gate (§49) > royal rumble: same seed + cursor → same deal, and the landing agrees 6230ms
+   ✓ a challenge reproduces the run — 500 seeds per scoped gate (§49) > red thread: the same levels for the same round 1719ms
+ ✓ tests/life-mandatory-choice-recovery.test.ts (37 tests) 69ms
+ ✓ tests/life-me-bag.test.ts (26 tests) 23ms
+ ✓ tests/life-wallet.test.ts (6 tests) 22ms
+ ✓ tests/life-delta-93.test.ts (20 tests) 24ms
+ ✓ tests/life-bag.test.ts (24 tests) 35ms
+ ✓ tests/life-shop.test.ts (21 tests) 32ms
+ ✓ tests/question-master.test.ts (22 tests) 1202ms
+   ✓ מאסטר השאלות — the file is current > rebuilds to the same bytes from content/manual (run `npm run trivia:master` if not) 435ms
+ ✓ tests/blind-cow.test.ts (31 tests) 1421ms
+   ✓ פרה עיוורת — the bank is generated, deterministic and clean > is exactly what a fresh build makes from the masters — twice 1270ms
+ ✓ tests/away-days.test.ts (30 tests) 282ms
+ ✓ tests/match-master.test.ts (18 tests) 1036ms
+   ✓ freshness > rebuilds byte for byte, with no problem 604ms
+ ✓ tests/life-football.test.ts (25 tests) 643ms
+ ✓ tests/guards.test.ts (14 tests) 43ms
+ ✓ tests/life-report.test.ts (14 tests) 21ms
+ ✓ tests/royal-rumble-pricing.test.ts (24 tests) 967ms
+   ✓ value discovery (§9, §51) — bargains at €1, €2 and €3 > a dealt slot holds a real bargain often enough 467ms
+   ✓ value discovery (§9, §51) — bargains at €1, €2 and €3 > does not let the ten headline every board — a €5 card is rare on a dealt slot 427ms
+ ✓ tests/life-screenplay.test.ts (14 tests) 35ms
+ ✓ tests/life-reachable.test.ts (3 tests) 3ms
+ ✓ tests/life-upgrade-92.test.ts (24 tests) 88ms
+ ✓ tests/life-keys.test.ts (28 tests) 394ms
+   ✓ אין שיחות יתומות — every conversation has a way in > names no conversation that nothing in the game can open 362ms
+ ✓ tests/life-match.test.ts (12 tests) 21ms
+ ✓ tests/player-master.test.ts (22 tests) 349ms
+ ✓ tests/trivia-run.test.ts (24 tests) 1407ms
+ ✓ tests/life-walk.test.ts (26 tests) 11ms
+ ✓ tests/life-supergoal-transaction.test.ts (19 tests) 96ms
+ ✓ tests/xi-challenge.test.ts (18 tests) 15ms
+ ✓ tests/life-story.test.ts (24 tests) 12ms
+ ✓ tests/life-footage-wiring.test.ts (14 tests) 8ms
+ ✓ tests/life-c-pass-2026-09-28.test.ts (120 tests) 1154ms
+ ✓ tests/life-reach.test.ts (22 tests) 32ms
+ ✓ tests/life-gameplay-density.test.ts (49 tests) 31ms
+ ✓ tests/away-days-media.test.ts (18 tests) 152ms
+ ✓ tests/life-stagea.test.ts (14 tests) 18ms
+ ✓ tests/rotation.test.ts (36 tests) 197ms
+ ✓ tests/stand.test.ts (27 tests) 17ms
+ ✓ tests/polls-v3.test.ts (14 tests) 159ms
+ ✓ tests/life-stadium-side.test.ts (16 tests) 13ms
+ ✓ tests/voice.test.ts (21 tests) 42ms
+ ✓ tests/life-flow.test.ts (17 tests) 23ms
+ ✓ tests/life-stageb-pass-2026-09-28.test.ts (15 tests) 26ms
+ ✓ tests/players.test.ts (10 tests) 126ms
+ ✓ tests/analytics.test.ts (19 tests) 67ms
+ ✓ tests/life-jaffa.test.ts (17 tests) 24ms
+ ✓ tests/life-portraits.test.ts (6 tests) 51ms
+ ✓ tests/thread.test.ts (16 tests) 1007ms
+   ✓ generated levels — 300 seeds, all playable > solves every level the generator deals 890ms
+ ✓ tests/redfans-cargo.test.ts (33 tests) 15ms
+ ✓ tests/entity-graph.test.ts (19 tests) 1646ms
+   ✓ edges — real, sourced, one sport > has both ends of every edge, and at least one known source on it 653ms
+   ✓ freshness > rebuilds byte for byte, with no problem 490ms
+ ✓ tests/life-doorways.test.ts (4 tests) 313ms
+   ✓ דלתות — אף אדם לא עומד בתוכן > שני גופים שאפשר לדבר איתם לא נחתכים באותו עומק 304ms
+ ✓ tests/daily.test.ts (22 tests) 97ms
+ ✓ tests/credits.test.ts (18 tests) 420ms
+ ✓ tests/memory-pair-quality.test.ts (19 tests) 169ms
+ ✓ tests/life-decade.test.ts (14 tests) 21ms
+ ✓ tests/life-upgrade.test.ts (10 tests) 17ms
+ ✓ tests/life-checkpoint.test.ts (16 tests) 19ms
+ ✓ tests/life-confused-player.test.ts (136 tests) 3447ms
+ ✓ tests/life-payoffs.test.ts (18 tests) 130ms
+ ✓ tests/life-work-discovery.test.ts (10 tests) 1478ms
+   ✓ "?" — אפשר עכשיו > names at least one paid thing to go and do, in every chapter a boy can earn in, for every save 1223ms
+ ✓ tests/life-doors.test.ts (17 tests) 33ms
+ ✓ tests/xi.test.ts (12 tests) 155ms
+ ✓ tests/life-orphans.test.ts (6 tests) 10ms
+ ✓ tests/life-deck.test.ts (21 tests) 7ms
+ ✓ tests/life-parallax.test.ts (9 tests) 6ms
+ ✓ tests/life-tickets.test.ts (12 tests) 7ms
+ ✓ tests/redfans-songs.test.ts (25 tests) 17ms
+ ✓ tests/xi-decade-mission.test.ts (21 tests) 11ms
+ ✓ tests/life-europe-2010.test.ts (12 tests) 32ms
+ ✓ tests/life-share.test.ts (14 tests) 7ms
+ ✓ tests/life-bloomfield.test.ts (11 tests) 16ms
+ ✓ tests/share-contract.test.ts (13 tests) 15ms
+ ✓ tests/terrace-debates.test.ts (16 tests) 48ms
+ ✓ tests/goal-gesture.test.ts (19 tests) 10ms
+ ✓ tests/craft-score.test.ts (13 tests) 11ms
+ ✓ tests/challenges-wired.test.ts (20 tests) 163ms
+ ✓ tests/marks.test.ts (15 tests) 32ms
+ ✓ tests/kit-truth-normalization.test.ts (14 tests) 105ms
+ ✓ tests/events-schema.test.ts (19 tests) 9ms
+ ✓ tests/match-ids.test.ts (10 tests) 883ms
+   ✓ the match id registry > is frozen — re-running the mint over it changes nothing, byte for byte 340ms
+ ✓ tests/kit-gate4.test.ts (12 tests) 962ms
+   ✓ שער 4 — the deal carries no answer > sends no truth, no season, no archive path and no year in any label or info line 425ms
+ ✓ tests/craft-recipes.test.ts (9 tests) 10ms
+ ✓ tests/life-identity.test.ts (14 tests) 25ms
+stdout | tests/player-shirt.test.ts > playerShirt — the one resolver > dresses most men in a real photograph (coverage reported)
+player-shirt coverage: 631/657 photo (606 in-era, 25 a few seasons off), 26 engine
+
+ ✓ tests/player-shirt.test.ts (12 tests) 72ms
+ ✓ tests/life-ads.test.ts (15 tests) 7ms
+ ✓ tests/life-box.test.ts (19 tests) 23ms
+ ✓ tests/dedupe.test.ts (13 tests) 8ms
+ ✓ tests/life-stickers-era.test.ts (9 tests) 10ms
+ ✓ tests/owner-spelling.test.ts (7 tests) 333ms
+ ✓ tests/merch.test.ts (11 tests) 241ms
+ ✓ tests/life-time-advance.test.ts (7 tests) 6954ms
+   ✓ every plan in every chapter is one the world can carry out > sweeps a real number of plans 2449ms
+   ✓ every plan in every chapter is one the world can carry out > plannedArrivalMinute <= eventMinute, always; a walk only on a reachable route; steps land where the plan says 2142ms
+   ✓ every plan in every chapter is one the world can carry out > never waits through a lapse by default, never walks past an unresolved choice 2356ms
+ ✓ tests/life-realism.test.ts (11 tests) 16ms
+ ✓ tests/life-bridge.test.ts (12 tests) 23ms
+ ✓ tests/craft-serialize.test.ts (11 tests) 15ms
+ ✓ tests/collector-schema.test.ts (11 tests) 8ms
+ ✓ tests/parse.test.ts (18 tests) 13ms
+ ✓ tests/redfans-squads.test.ts (12 tests) 11ms
+ ✓ tests/lineup-grading-regression.test.ts (12 tests) 10ms
+ ✓ tests/results-context.test.ts (13 tests) 9ms
+ ✓ tests/links.test.ts (10 tests) 48ms
+ ✓ tests/life-hints.test.ts (252 tests) 115ms
+ ✓ tests/kit-master.test.ts (8 tests) 37ms
+ ✓ tests/router.test.ts (6 tests) 207ms
+ ✓ tests/i18n.test.ts (5 tests) 58ms
+ ✓ tests/life-cast.test.ts (6 tests) 16ms
+ ✓ tests/life-lastresort.test.ts (70 tests) 8ms
+ ✓ tests/timeline.test.ts (7 tests) 2037ms
+   ✓ ציר הזמן — every seed, not a sample > keeps the board a truthful chronology at every step of every run 507ms
+   ✓ ציר הזמן — every seed, not a sample > can be played perfectly — the true slot always grades correct 594ms
+   ✓ ציר הזמן — every seed, not a sample > grades a rotated deal against its own board — cursors 1 to 3 781ms
+ ✓ tests/life-gameplay-pass.test.ts (10 tests) 10ms
+ ✓ tests/life-anchors-b.test.ts (8 tests) 9ms
+ ✓ tests/life-film-playback.test.ts (12 tests) 9ms
+ ✓ tests/identity.test.ts (6 tests) 442ms
+ ✓ tests/life-scale.test.ts (10 tests) 17ms
+ ✓ tests/normalize.test.ts (34 tests) 15ms
+ ✓ tests/wiki-export.test.ts (7 tests) 9ms
+ ✓ tests/share-card.test.ts (10 tests) 614ms
+   ✓ gate 8 card — the goal, the accuracy, his real shirt > the card route only draws a goal the gate deals 605ms
+ ✓ tests/royal-rumble-rating.test.ts (8 tests) 7ms
+ ✓ tests/life-bodies.test.ts (4 tests) 11ms
+ ✓ tests/royal-rumble-round.test.ts (9 tests) 1020ms
+   ✓ Royal Rumble round cursor > sweeps 500 cursors with no repeated board (no deck to exhaust: every cursor is a new board) 859ms
+ ✓ tests/life-minigames-3d.test.ts (10 tests) 21ms
+ ✓ tests/pipeline.test.ts (10 tests) 778ms
+ ✓ tests/life-flagsurvival.test.ts (3 tests) 12ms
+ ✓ tests/life-1993.test.ts (6 tests) 13ms
+ ✓ tests/owner-source.test.ts (6 tests) 323ms
+   ✓ the owner’s name is not an archive source (spec §0.2) > no source, credit, attribution, byline or photographer field carries the name 318ms
+ ✓ tests/kit-collection-route.test.ts (9 tests) 25ms
+ ✓ tests/songs-context.test.ts (8 tests) 37ms
+ ✓ tests/merchant-seed.test.ts (8 tests) 7ms
+ ✓ tests/life-goals.test.ts (63 tests) 28ms
+ ✓ tests/kit-assets.test.ts (6 tests) 5360ms
+   ✓ brand/source/kits — no hidden picture in a source > keeps every mask as a single channel 4737ms
+   ✓ brand/source/kits — no hidden picture in a source > zeroes the colour of every transparent pixel 618ms
+ ✓ tests/kit-render.test.ts (7 tests) 24ms
+ ✓ tests/life-finale-gates.test.ts (5 tests) 4ms
+ ✓ tests/life-screenplay-coverage.test.ts (21 tests) 6ms
+ ✓ tests/date-israel.test.ts (9 tests) 5ms
+ ✓ tests/player-display-name.test.ts (15 tests) 15ms
+ ✓ tests/life-input.test.ts (8 tests) 3ms
+ ✓ tests/life-time-advance-windows.test.ts (4 tests) 16ms
+ ✓ tests/home-now.test.ts (9 tests) 9ms
+ ✓ tests/life-bible.test.ts (8 tests) 6ms
+ ✓ tests/life-time-advance-routing.test.ts (7 tests) 22ms
+ ✓ tests/life-money.test.ts (4 tests) 131ms
+ ✓ tests/life-dialogue-world-contract.test.ts (66 tests) 42ms
+ ✓ tests/craft-bench.test.ts (6 tests) 5ms
+ ✓ tests/life-own-face.test.ts (6 tests) 75ms
+ ✓ tests/life-anchor-owner.test.ts (5 tests) 8ms
+ ✓ tests/life-scarf.test.ts (4 tests) 5ms
+ ✓ tests/kit-legacy-link.test.ts (5 tests) 204ms
+ ✓ tests/goal-mismatch.test.ts (5 tests) 4ms
+ ✓ tests/life-match-ritual.test.ts (5 tests) 4ms
+ ✓ tests/life-batya.test.ts (5 tests) 4ms
+ ✓ tests/life-help.test.ts (4 tests) 5ms
+ ✓ tests/imports.test.ts (3 tests) 122ms
+ ✓ tests/life-director-v2.test.ts (6 tests) 10ms
+ ✓ tests/life-1983-2000-rc.test.ts (8 tests) 10ms
+ ✓ tests/life-tail.test.ts (4 tests) 4ms
+ ✓ tests/club-agnostic.test.ts (2 tests) 3ms
+ ✓ tests/life-real-people.test.ts (3 tests) 5ms
+ ✓ tests/kit-truth-deep-qa.test.ts (13 tests) 6ms
+ ✓ tests/royal-rumble.test.ts (5 tests) 71ms
+ ✓ tests/blind-cow-recognition.test.ts (7 tests) 13ms
+ ✓ tests/kit-v3.test.ts (4 tests) 11ms
+ ✓ tests/home-owner-fixes.test.ts (8 tests) 4ms
+ ✓ tests/blind-cow-polish.test.ts (6 tests) 3ms
+ ✓ tests/visual-round-98.test.ts (4 tests) 31ms
+ ✓ tests/vercel-build.test.ts (5 tests) 29ms
+ ✓ tests/life-partner.test.ts (4 tests) 4ms
+ ✓ tests/away-days-polish.test.ts (6 tests) 3ms
+ ✓ tests/life-input-arm.test.ts (5 tests) 3ms
+ ✓ tests/goal-contextual-controls.test.ts (5 tests) 3ms
+ ✓ tests/life-action-contract.test.ts (2 tests) 3ms
+ ✓ tests/arena-logos.test.ts (4 tests) 3ms
+ ✓ tests/club-context.test.ts (5 tests) 3ms
+ ✓ tests/kit-engine-v5.test.ts (3 tests) 4ms
+ ✓ tests/life-map.test.ts (2 tests) 3ms
+ ✓ tests/crests-approved.test.ts (3 tests) 4ms
+ ✓ tests/master/evaluation.test.ts (3 tests) 2254ms
+ ✓ tests/life-plates.test.ts (2 tests) 4ms
+
+ Test Files  224 passed (224)
+      Tests  4894 passed (4894)
+   Start at  22:15:51
+   Duration  113.71s (transform 12.58s, setup 0ms, collect 109.52s, tests 79.05s, environment 34ms, prepare 11.38s)
+

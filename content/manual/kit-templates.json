@@ -1,0 +1,424 @@
+{
+  "note": "ספר המדידה של כל קובץ תחת public/kits שאינו תצלום ארכיון (kit-photos.json): תבניות הצילום של מנוע החולצות, הסימנים שמאור אישר לשערים 4–5 (21.9.2026), וחלקי ההרכבה של 20.9.2026. כל שורה נמדדה על הקובץ המפוענח (WebP) או על טבלת הצבעים שלו (SVG), והצהוב נספר בפס של lib/isYellow.ts. tests/kit-assets.test.ts דורש שורה לכל קובץ, ו-yellowPx 0 בכולן — התיקייה פטורה מכלל 8 רק לתצלומים (כלל 69), לא לשום דבר אחר בה.",
+  "confidence": 2,
+  "source": "scripts/kits/build-photo-templates.py · brand/source/kits/ (מקורות מנוקים מחבילת V14 של צוות The Worker, 21.9.2026)",
+  "records": [
+    {
+      "file": "assembly/1985-86/home-master.svg",
+      "role": "assembly",
+      "bytes": 2869,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/1985-86/parts-sheet.svg",
+      "role": "assembly",
+      "bytes": 1678,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/1985-86/parts/collar.svg",
+      "role": "assembly",
+      "bytes": 252,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/1985-86/parts/crest-hapoel.svg",
+      "role": "assembly",
+      "bytes": 566,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/1985-86/parts/cuffs.svg",
+      "role": "assembly",
+      "bytes": 237,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/1985-86/parts/maker-adidas.svg",
+      "role": "assembly",
+      "bytes": 393,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/1985-86/parts/shoulder-stripes.svg",
+      "role": "assembly",
+      "bytes": 310,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/1985-86/parts/sponsor-visa.svg",
+      "role": "assembly",
+      "bytes": 415,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/home-master-a.svg",
+      "role": "assembly",
+      "bytes": 3022,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/home-master-b.svg",
+      "role": "assembly",
+      "bytes": 3032,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/parts-sheet.svg",
+      "role": "assembly",
+      "bytes": 2215,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/parts/badge.svg",
+      "role": "assembly",
+      "bytes": 475,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/parts/collar.svg",
+      "role": "assembly",
+      "bytes": 236,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/parts/crest-hapoel.svg",
+      "role": "assembly",
+      "bytes": 733,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/parts/maker-umbro.svg",
+      "role": "assembly",
+      "bytes": 250,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/parts/side-panels.svg",
+      "role": "assembly",
+      "bytes": 242,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/parts/sleeves.svg",
+      "role": "assembly",
+      "bytes": 237,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "assembly/2009-10/parts/sponsor-subaru.svg",
+      "role": "assembly",
+      "bytes": 510,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "crop",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "marks/maker-macron.webp",
+      "role": "granted-mark",
+      "bytes": 8008,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "cut-from-sheet",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "marks/maker-puma.webp",
+      "role": "granted-mark",
+      "bytes": 10812,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "cut-from-sheet",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "marks/sponsor-arkia.webp",
+      "role": "granted-mark",
+      "bytes": 26076,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "cut-from-sheet",
+        "trim-alpha",
+        "de-yellow"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "marks/sponsor-fujitsu.webp",
+      "role": "granted-mark",
+      "bytes": 20876,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "cut-from-sheet",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/2010s-fitted/highlight.webp",
+      "role": "photo-template",
+      "bytes": 62946,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/2010s-fitted/shading.webp",
+      "role": "photo-template",
+      "bytes": 92910,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/early-2000s-athletic/highlight.webp",
+      "role": "photo-template",
+      "bytes": 9402,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/early-2000s-athletic/shading.webp",
+      "role": "photo-template",
+      "bytes": 31916,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/modern-athletic/highlight.webp",
+      "role": "photo-template",
+      "bytes": 11282,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/modern-athletic/shading.webp",
+      "role": "photo-template",
+      "bytes": 43762,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/retro-80s-long/highlight.webp",
+      "role": "photo-template",
+      "bytes": 11382,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/retro-80s-long/shading.webp",
+      "role": "photo-template",
+      "bytes": 31666,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/retro-90s-boxy/highlight.webp",
+      "role": "photo-template",
+      "bytes": 9556,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "templates/retro-90s-boxy/shading.webp",
+      "role": "photo-template",
+      "bytes": 32276,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "shading-map",
+        "lossy-webp-measured"
+      ],
+      "measuredOn": "2026-09-23"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+ "note": "הפועל תל אביב במפעלי אסיה — 1967 (אלופה, גמר בבנגקוק) ו-1970 (סגנית, טהרן). A second reading of the Asian rows already in matches.json, from RSSSF (Enda Mulcahy, updated 4.1.2018) cross-read with Wildstat and Wikipedia on 24.9.2026. It adds only what those sources state: the 1967 final's date, city and ground (raising it from one source to three), the 1970 final's date, and the 1970 semi-final as a WALKOVER — RSSSF prints 'w/o' ('Homenetmen withdrew'), Wikipedia 'scratched … refused to play Hapoel for political reasons', Wildstat '+:-'; the Games table's 2:0 is therefore a claim, not a played match. The 1970 group games are not repeated here: RSSSF gives only the window ('all matches in Tehran, Apr 1-10, 1970'), not the day, and a row may not assert a date its source does not print. 1967: byes in rounds 1–2 and a walkover semi-final (RSSSF: Indian Railways; Wildstat: Bangkok Bank — the two disagree on WHO, agree it was not played) — no match row. venueSlug stays null (the ground lives in match-venues.json, spec §20); venueHe is the source's own wording, kept for the reader.",
+ "confidence": 2,
+ "source": {
+  "kind": "other",
+  "title": "RSSSF · Asian Club Competitions 1967 / 1970",
+  "url": "https://www.rsssf.org/tablesa/ascup70.html"
+ },
+ "records": [
+  {
+   "sport": "football",
+   "seasonLabel": "1967/68",
+   "competitionSlug": "גביע-אלופות-אסיה",
+   "stage": "גמר",
+   "playedOn": "1967-12-19",
+   "homeClubSlug": "הפועל-תל-אביב",
+   "awayClubSlug": "סלנגור",
+   "homeScore": 2,
+   "awayScore": 1,
+   "venueSlug": null,
+   "venueHe": "האצטדיון הלאומי, בנגקוק",
+   "neutralGround": true,
+   "status": "played",
+   "confidence": 2,
+   "sourceUrl": "https://www.rsssf.org/tablesa/ascup67.html",
+   "sourceTitle": "RSSSF — Asian Club Competitions 1967 (Final, Bangkok, Dec 19: 2-1)",
+   "crossRefs": [
+    {
+     "url": "https://wildstat.com/p/5014/ch/ASI_CL_1967",
+     "title": "Wildstat — Asian Champion Club Tournament 1967 (19.12.1967, Bangkok, 2:1)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Malaysian_football_clubs_in_Asian_competitions",
+     "title": "Wikipedia — Malaysian football clubs in Asian competitions (Final, 1–2, National Stadium, Bangkok)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/1967_Asian_Champion_Club_Tournament",
+     "title": "Wikipedia — 1967 Asian Champion Club Tournament"
+    }
+   ],
+   "scorers": [
+    {
+     "nameHe": "צ'או קוואי לאם",
+     "minute": 74,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": true
+    },
+    {
+     "nameHe": "יעקב רחמינוביץ",
+     "minute": 83,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "scorersNote": "RSSSF: '[Kwai Lam 74og, Rachmanivich 83pen; Agus Salim 54]' — Hapoel's two goals as RSSSF prints them. Wikipedia agrees (Chow Kwai Lam 74' o.g., Rachminovich 83' pen.)."
+  },
+  {
+   "sport": "football",
+   "seasonLabel": "1969/70",
+   "competitionSlug": "גביע-אסיה",
+   "stage": "1/2 גמר",
+   "playedOn": null,
+   "homeClubSlug": "הפועל-תל-אביב",
+   "awayClubSlug": "הומנטמן",
+   "homeScore": null,
+   "awayScore": null,
+   "venueSlug": null,
+   "venueHe": null,
+   "neutralGround": true,
+   "status": "walkover",
+   "confidence": 2,
+   "sourceUrl": "https://www.rsssf.org/tablesa/ascup70.html",
+   "sourceTitle": "RSSSF — Asian Club Competitions 1970 (Semifinals: Hapoel Tel-Aviv – Homenetmen w/o; Homenetmen withdrew)",
+   "crossRefs": [
+    {
+     "url": "https://en.wikipedia.org/wiki/1970_Asian_Champion_Club_Tournament",
+     "title": "Wikipedia — 1970 Asian Champion Club Tournament (semi-final scratched)"
+    },
+    {
+     "url": "https://wildstat.com/p/146/cht/514/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+     "title": "Wildstat — Hapoel Tel Aviv in the Asian Champions Cup (Semifinal, Homenetmen, +:-)"
+    }
+   ]
+  },
+  {
+   "sport": "football",
+   "seasonLabel": "1969/70",
+   "competitionSlug": "גביע-אסיה",
+   "stage": "גמר",
+   "playedOn": "1970-04-10",
+   "homeClubSlug": "טאג'-קלאב",
+   "awayClubSlug": "הפועל-תל-אביב",
+   "homeScore": 2,
+   "awayScore": 1,
+   "venueSlug": null,
+   "venueHe": "טהרן — אצטדיון אמג'דיה (היום שהיד שירודי)",
+   "neutralGround": true,
+   "status": "played",
+   "confidence": 2,
+   "sourceUrl": "https://www.rsssf.org/tablesa/ascup70.html",
+   "sourceTitle": "RSSSF — Asian Club Competitions 1970 (Final, in Tehran, Apr 10: Taj Club – Hapoel Tel-Aviv 2-1)",
+   "crossRefs": [
+    {
+     "url": "https://wildstat.com/p/146/cht/514/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+     "title": "Wildstat — Hapoel Tel Aviv in the Asian Champions Cup (Final, Taj Club 1:2, Tehran, Shahid Shiroudi Stadium)"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Shahid_Shiroudi_Stadium",
+     "title": "Wikipedia — Shahid Shiroudi Stadium ('The Asian Club Championship was also held in Amjadieh Stadium in 1970')"
+    }
+   ]
+  }
+ ]
+}

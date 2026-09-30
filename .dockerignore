@@ -1,0 +1,7 @@
+node_modules
+.next
+.git
+.fan-life
+.env*
+release
+test-results

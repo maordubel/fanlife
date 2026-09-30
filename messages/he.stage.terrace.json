@@ -1,0 +1,18 @@
+{
+  "terrace.tabs": "שער 7 — שני חלקים",
+  "terrace.tab.card": "הכרטיס שלי",
+  "terrace.tab.debate": "הוויכוח של היציע",
+  "terrace.latin": "TERRACE DEBATE",
+  "terrace.round": "סבב {n} מתוך {of}",
+  "terrace.pick.roster": "לבחור מכל הסגל",
+  "terrace.pick.list": "לבחור",
+  "terrace.why": "למה דווקא זה?",
+  "terrace.change": "שיניתי את דעתי",
+  "terrace.count.loading": "סופרים…",
+  "terrace.count.honest": "היציע עוד לא ספר. יש פה את הקול שלך, ואת השאר אנחנו לא ממציאים.",
+  "terrace.count.total": "{n} אוהדים ענו על זה.",
+  "terrace.count.you": "אתה",
+  "terrace.count.other": "תשובה אחרת",
+  "terrace.more": "עוד ויכוחים",
+  "terrace.options.empty": "הארכיון לא מחזיק כרגע תשובה נקייה לשאלה הזאת."
+}

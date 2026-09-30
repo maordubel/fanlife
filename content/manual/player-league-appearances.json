@@ -1,0 +1,5239 @@
+{
+ "schemaVersion": 1,
+ "source": "ויקיפועל — הדף \"רשימת הופעות\": הופעות ושערי ליגה בכל הליגות, מדויק עד תום עונת 2016/17",
+ "note": "הופעות ליגה עד 2016/17 בלבד — לא סך קריירה ולא השדה \"הופעות\" בתיבת המידע. שם שלא נפתר, או בכורה מחוץ לשנות השחקן, אינו כאן (כלל 7, כלל 11).",
+ "counts": {
+  "records": 435,
+  "unmatched": 173,
+  "rejected": 2
+ },
+ "unmatched": [
+  {
+   "name": "אברהם כהן (ג'מבו)",
+   "games": 142,
+   "debut": "1966-09-17"
+  },
+  {
+   "name": "דוד פוליאקוב",
+   "games": 99,
+   "debut": "1976-09-18"
+  },
+  {
+   "name": "ישראל גולדשטיין",
+   "games": 98,
+   "debut": "1972-02-12"
+  },
+  {
+   "name": "אברהם לוי",
+   "games": 88,
+   "debut": "1961-11-18"
+  },
+  {
+   "name": "חיים פרנקו",
+   "games": 86,
+   "debut": "1972-01-29"
+  },
+  {
+   "name": "משה בורסוק",
+   "games": 83,
+   "debut": "1958-11-22"
+  },
+  {
+   "name": "חיים רייך",
+   "games": 78,
+   "debut": "1937-02-13"
+  },
+  {
+   "name": "רחמים עטיה",
+   "games": 71,
+   "debut": "1973-05-05"
+  },
+  {
+   "name": "שלמה טובולסקי",
+   "games": 67,
+   "debut": "1964-11-07"
+  },
+  {
+   "name": "גד רבינוביץ'",
+   "games": 58,
+   "debut": "1938-03-12"
+  },
+  {
+   "name": "אריך רוזנבאום",
+   "games": 58,
+   "debut": "1943-11-29"
+  },
+  {
+   "name": "משה גבאי",
+   "games": 57,
+   "debut": "1934-12-28"
+  },
+  {
+   "name": "דוד מיר",
+   "games": 50,
+   "debut": "1976-01-24"
+  },
+  {
+   "name": "יונה זליקובסקי",
+   "games": 49,
+   "debut": "1972-09-16"
+  },
+  {
+   "name": "דני ספוקוייני",
+   "games": 49,
+   "debut": "1975-11-08"
+  },
+  {
+   "name": "יצחק נעמן",
+   "games": 46,
+   "debut": "1975-03-08"
+  },
+  {
+   "name": "משה דורן",
+   "games": 44,
+   "debut": "1938-03-12"
+  },
+  {
+   "name": "משה גולן",
+   "games": 44,
+   "debut": "1977-10-08"
+  },
+  {
+   "name": "יצחק וולף",
+   "games": 43,
+   "debut": "1970-05-02"
+  },
+  {
+   "name": "יהושע פינצ'י",
+   "games": 38,
+   "debut": "1964-03-28"
+  },
+  {
+   "name": "אשר שוורצבוים",
+   "games": 38,
+   "debut": "1977-04-16"
+  },
+  {
+   "name": "פורי קראוס",
+   "games": 37,
+   "debut": "1933-11-04"
+  },
+  {
+   "name": "יעקב ביבס",
+   "games": 35,
+   "debut": "1947-05-17"
+  },
+  {
+   "name": "יחיאל לוי",
+   "games": 35,
+   "debut": "1967-01-21"
+  },
+  {
+   "name": "שלמה לוי",
+   "games": 35,
+   "debut": "1975-10-25"
+  },
+  {
+   "name": "משה קליינמן",
+   "games": 34,
+   "debut": "1947-05-17"
+  },
+  {
+   "name": "אבנר קוסיוב",
+   "games": 30,
+   "debut": "1946-11-16"
+  },
+  {
+   "name": "יצחק מאיר",
+   "games": 29,
+   "debut": "146-10-12"
+  },
+  {
+   "name": "יהודה פילוסוף",
+   "games": 28,
+   "debut": "1941-03-01"
+  },
+  {
+   "name": "אהוד קרביאן",
+   "games": 27,
+   "debut": "1986-11-01"
+  },
+  {
+   "name": "חיים בכר",
+   "games": 27,
+   "debut": "1991-06-08"
+  },
+  {
+   "name": "אבי פוזנרסון",
+   "games": 26,
+   "debut": "1966-11-19"
+  },
+  {
+   "name": "משה זימון",
+   "games": 24,
+   "debut": "1931-12-03"
+  },
+  {
+   "name": "בני רובין",
+   "games": 24,
+   "debut": "1960-03-12"
+  },
+  {
+   "name": "מאיר שולמן",
+   "games": 23,
+   "debut": "1939-11-25"
+  },
+  {
+   "name": "אליעזר וילצ'ינסקי",
+   "games": 23,
+   "debut": "1973-12-22"
+  },
+  {
+   "name": "זלמן לאמין",
+   "games": 22,
+   "debut": "1935-12-07"
+  },
+  {
+   "name": "דוד רץ",
+   "games": 20,
+   "debut": "1953-02-21"
+  },
+  {
+   "name": "שמואל קורצקי",
+   "games": 20,
+   "debut": "1989-04-22"
+  },
+  {
+   "name": "מרדכי יעקובי",
+   "games": 19,
+   "debut": "1962-11-03"
+  },
+  {
+   "name": "אריה מאיר",
+   "games": 18,
+   "debut": "1981-12-19"
+  },
+  {
+   "name": "דוד שרביט",
+   "games": 18,
+   "debut": "1988-12-17"
+  },
+  {
+   "name": "אהרון כבשנר",
+   "games": 17,
+   "debut": "1930-12-06"
+  },
+  {
+   "name": "יהודה חדד",
+   "games": 17,
+   "debut": "1962-02-24"
+  },
+  {
+   "name": "אלי פוקס",
+   "games": 16,
+   "debut": "1938-03-26"
+  },
+  {
+   "name": "שלי פליקס",
+   "games": 16,
+   "debut": "1953-10-10"
+  },
+  {
+   "name": "דן פוקס",
+   "games": 16,
+   "debut": "1959-05-09"
+  },
+  {
+   "name": "צבי גינזבורג",
+   "games": 16,
+   "debut": "1964-10-10"
+  },
+  {
+   "name": "שאול יחזקאל",
+   "games": 16,
+   "debut": "1974-10-12"
+  },
+  {
+   "name": "גיל פרידמן",
+   "games": 16,
+   "debut": "1976-06-05"
+  },
+  {
+   "name": "ליאור מזרחי",
+   "games": 16,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "אברהם ריקלין",
+   "games": 15,
+   "debut": "1933-11-04"
+  },
+  {
+   "name": "אהרון בקשי",
+   "games": 15,
+   "debut": "1935-12-07"
+  },
+  {
+   "name": "משה קפרטה",
+   "games": 14,
+   "debut": "1929-10-12"
+  },
+  {
+   "name": "אבי בן עזרא",
+   "games": 14,
+   "debut": "1987-09-05"
+  },
+  {
+   "name": "אברהם מורדוך",
+   "games": 14,
+   "debut": "1949-10-15"
+  },
+  {
+   "name": "משה שולמן",
+   "games": 14,
+   "debut": "1971-11-27"
+  },
+  {
+   "name": "שלמה כפתורי",
+   "games": 13,
+   "debut": "1929-01-12"
+  },
+  {
+   "name": "אבי דבח",
+   "games": 12,
+   "debut": "1994-05-28"
+  },
+  {
+   "name": "יצחק בן רובי",
+   "games": 12,
+   "debut": "1952-05-03"
+  },
+  {
+   "name": "גולן שרעבי",
+   "games": 12,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "אייל כהן",
+   "games": 12,
+   "debut": "1995-08-26"
+  },
+  {
+   "name": "אבנר לוי",
+   "games": 11,
+   "debut": "1945-06-30"
+  },
+  {
+   "name": "אמנון מקמל",
+   "games": 11,
+   "debut": "1971-06-05"
+  },
+  {
+   "name": "יצחק קובה",
+   "games": 10,
+   "debut": "1929-10-12"
+  },
+  {
+   "name": "הרברט ג'ורג'",
+   "games": 10,
+   "debut": "1929-01-12"
+  },
+  {
+   "name": "יצחק שולר",
+   "games": 10,
+   "debut": "1949-06-11"
+  },
+  {
+   "name": "יצחק אפרוני",
+   "games": 10,
+   "debut": "1952-11-01"
+  },
+  {
+   "name": "יצחק נשלסקי",
+   "games": 10,
+   "debut": "1955-12-03"
+  },
+  {
+   "name": "דני צ'רבינקה",
+   "games": 10,
+   "debut": "1974-04-06"
+  },
+  {
+   "name": "שלמה הוד",
+   "games": 9,
+   "debut": "1974-03-09"
+  },
+  {
+   "name": "יצחק רוזנבוים",
+   "games": 9,
+   "debut": "1930-12-06"
+  },
+  {
+   "name": "משה יאיר",
+   "games": 9,
+   "debut": "1947-05-17"
+  },
+  {
+   "name": "אברהם סעיד",
+   "games": 9,
+   "debut": "1973-11-24"
+  },
+  {
+   "name": "מאיר בן גיגי",
+   "games": 9,
+   "debut": "1977-10-08"
+  },
+  {
+   "name": "עזרא מועלם",
+   "games": 9,
+   "debut": "1986-10-11"
+  },
+  {
+   "name": "שוקי אמריליו",
+   "games": 8,
+   "debut": "1970-10-24"
+  },
+  {
+   "name": "מוטי אצלן",
+   "games": 8,
+   "debut": "1974-01-05"
+  },
+  {
+   "name": "משה מגדשי",
+   "games": 8,
+   "debut": "1974-12-07"
+  },
+  {
+   "name": "אבא פישמן",
+   "games": 7,
+   "debut": "1931-01-31"
+  },
+  {
+   "name": "מאיר לוי",
+   "games": 7,
+   "debut": "1941-03-01"
+  },
+  {
+   "name": "יצחק מגדלוביץ'",
+   "games": 7,
+   "debut": "1950-01-28"
+  },
+  {
+   "name": "דוד אסיפט",
+   "games": 7,
+   "debut": "1952-05-10"
+  },
+  {
+   "name": "ניב עדן",
+   "games": 7,
+   "debut": "1988-10-22"
+  },
+  {
+   "name": "יוסי לוי",
+   "games": 7,
+   "debut": "1995-10-21"
+  },
+  {
+   "name": "שלמה אסיסקוביץ'",
+   "games": 6,
+   "debut": "1941-03-01"
+  },
+  {
+   "name": "ישראל ז'אקו זאקוטו",
+   "games": 6,
+   "debut": "1947-05-17"
+  },
+  {
+   "name": "יעקב שטטמן",
+   "games": 6,
+   "debut": "1947-05-31"
+  },
+  {
+   "name": "פנחס גורדון",
+   "games": 6,
+   "debut": "1955-04-16"
+  },
+  {
+   "name": "יצחק אברהם",
+   "games": 6,
+   "debut": "1972-11-11"
+  },
+  {
+   "name": "יולי מטריקין",
+   "games": 6,
+   "debut": "1973-12-22"
+  },
+  {
+   "name": "ז'אן קלוד בן שטרית",
+   "games": 6,
+   "debut": "1975-01-18"
+  },
+  {
+   "name": "שבתאי קרקו",
+   "games": 6,
+   "debut": "1975-03-08"
+  },
+  {
+   "name": "רמי שרם",
+   "games": 6,
+   "debut": "1987-05-23"
+  },
+  {
+   "name": "שמעון כהן",
+   "games": 5,
+   "debut": "1988-12-03"
+  },
+  {
+   "name": "חגי לוק",
+   "games": 5,
+   "debut": "1994-05-28"
+  },
+  {
+   "name": "אברהם ברזובסקי",
+   "games": 5,
+   "debut": "1947-05-17"
+  },
+  {
+   "name": "יעקב שני",
+   "games": 5,
+   "debut": "1972-09-16"
+  },
+  {
+   "name": "שי פורייליך",
+   "games": 5,
+   "debut": "1972-09-23"
+  },
+  {
+   "name": "יוסי ביסון",
+   "games": 5,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "יובל ביטון",
+   "games": 5,
+   "debut": "1990-11-24"
+  },
+  {
+   "name": "פבלו רובן סולצ'אגה",
+   "games": 5,
+   "debut": "2003-09-13"
+  },
+  {
+   "name": "יהושע זמל",
+   "games": 4,
+   "debut": "1941-12-20"
+  },
+  {
+   "name": "יוסף טרומפולר",
+   "games": 4,
+   "debut": "1944-06-24"
+  },
+  {
+   "name": "משה ורגן",
+   "games": 4,
+   "debut": "1947-05-17"
+  },
+  {
+   "name": "יצחק ליכטר",
+   "games": 4,
+   "debut": "1947-05-17"
+  },
+  {
+   "name": "אמיל סאבו",
+   "games": 4,
+   "debut": "1964-05-09"
+  },
+  {
+   "name": "יאיר פואר",
+   "games": 4,
+   "debut": "1971-11-27"
+  },
+  {
+   "name": "יגאל קרן",
+   "games": 4,
+   "debut": "1979-03-10"
+  },
+  {
+   "name": "יצחק לזר",
+   "games": 3,
+   "debut": "1930-12-20"
+  },
+  {
+   "name": "מאיר פאליק",
+   "games": 3,
+   "debut": "1940-04-13"
+  },
+  {
+   "name": "יצחק נוריאל",
+   "games": 3,
+   "debut": "1958-02-22"
+  },
+  {
+   "name": "יצחק בוטשווילי",
+   "games": 3,
+   "debut": "1962-03-16"
+  },
+  {
+   "name": "צבי הרפז",
+   "games": 3,
+   "debut": "1977-11-12"
+  },
+  {
+   "name": "יהודה זגורי",
+   "games": 3,
+   "debut": "1986-09-20"
+  },
+  {
+   "name": "דב פליישר",
+   "games": 3,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "עופר נוסובסקי",
+   "games": 3,
+   "debut": "1989-03-10"
+  },
+  {
+   "name": "קובי נכטיילר",
+   "games": 2,
+   "debut": "1997-02-15"
+  },
+  {
+   "name": "משה רובשנה",
+   "games": 2,
+   "debut": "1931-12-11"
+  },
+  {
+   "name": "פאול קסטנבאום",
+   "games": 2,
+   "debut": "1933-11-04"
+  },
+  {
+   "name": "יונה דבורקין",
+   "games": 2,
+   "debut": "1933-11-11"
+  },
+  {
+   "name": "אברהם פרוכטמן",
+   "games": 2,
+   "debut": "146-10-12"
+  },
+  {
+   "name": "סימיון אייזיק",
+   "games": 2,
+   "debut": "1952-11-01"
+  },
+  {
+   "name": "יוסף הכט",
+   "games": 2,
+   "debut": "1955-02-05"
+  },
+  {
+   "name": "משה לוי",
+   "games": 2,
+   "debut": "1956-02-11"
+  },
+  {
+   "name": "צבי בלבוס",
+   "games": 2,
+   "debut": "1971-02-06"
+  },
+  {
+   "name": "עוזי זנדר",
+   "games": 2,
+   "debut": "1972-04-15"
+  },
+  {
+   "name": "ליאון חסון",
+   "games": 2,
+   "debut": "1972-06-17"
+  },
+  {
+   "name": "מינו קריסטולבסקי",
+   "games": 2,
+   "debut": "1974-11-09"
+  },
+  {
+   "name": "יואל קרן",
+   "games": 2,
+   "debut": "1980-09-06"
+  },
+  {
+   "name": "דוד נמני",
+   "games": 2,
+   "debut": "1981-05-23"
+  },
+  {
+   "name": "רמי יצחק",
+   "games": 2,
+   "debut": "1981-10-03"
+  },
+  {
+   "name": "יעקב ביטרן",
+   "games": 2,
+   "debut": "1983-04-23"
+  },
+  {
+   "name": "משה דיין",
+   "games": 2,
+   "debut": "1992-05-23"
+  },
+  {
+   "name": "שלומי רותם",
+   "games": 2,
+   "debut": "1996-12-10"
+  },
+  {
+   "name": "שי שמואלי",
+   "games": 2,
+   "debut": "1996-12-10"
+  },
+  {
+   "name": "רוסלן שוקרוב",
+   "games": 2,
+   "debut": "2004-10-18"
+  },
+  {
+   "name": "אליעזר בירמן",
+   "games": 1,
+   "debut": "1930-12-06"
+  },
+  {
+   "name": "בן ציון טשמכר",
+   "games": 1,
+   "debut": "1933-11-11"
+  },
+  {
+   "name": "דוד בן עמי",
+   "games": 1,
+   "debut": "1935-02-26"
+  },
+  {
+   "name": "צבי הלרמן",
+   "games": 1,
+   "debut": "1938-05-14"
+  },
+  {
+   "name": "שלמה הין",
+   "games": 1,
+   "debut": "1939-01-14"
+  },
+  {
+   "name": "שלמה גולדברג",
+   "games": 1,
+   "debut": "1939-01-21"
+  },
+  {
+   "name": "אברהם רוקח",
+   "games": 1,
+   "debut": "1939-01-21"
+  },
+  {
+   "name": "צביקה הפטל",
+   "games": 1,
+   "debut": "1939-01-21"
+  },
+  {
+   "name": "ניסים קאולי",
+   "games": 1,
+   "debut": "1941-09-27"
+  },
+  {
+   "name": "שלמה ברדה",
+   "games": 1,
+   "debut": "1947-12-20"
+  },
+  {
+   "name": "יצחק רוזנבאום",
+   "games": 1,
+   "debut": "1949-06-25"
+  },
+  {
+   "name": "מרדכי בן עזרא",
+   "games": 1,
+   "debut": "1952-05-31"
+  },
+  {
+   "name": "רוברט אייכין",
+   "games": 1,
+   "debut": "1956-03-24"
+  },
+  {
+   "name": "איתמר פרס",
+   "games": 1,
+   "debut": "1957-12-14"
+  },
+  {
+   "name": "אהרון וינר",
+   "games": 1,
+   "debut": "1957-12-21"
+  },
+  {
+   "name": "חיים עוזרי",
+   "games": 1,
+   "debut": "1960-04-23"
+  },
+  {
+   "name": "רוברט גוטליב",
+   "games": 1,
+   "debut": "1970-05-02"
+  },
+  {
+   "name": "יוסף בונן",
+   "games": 1,
+   "debut": "1972-01-25"
+  },
+  {
+   "name": "מרדכי זבלודבר",
+   "games": 1,
+   "debut": "1972-03-11"
+  },
+  {
+   "name": "פטר קפלן",
+   "games": 1,
+   "debut": "1976-10-09"
+  },
+  {
+   "name": "אברהם לבגולד",
+   "games": 1,
+   "debut": "1977-12-03"
+  },
+  {
+   "name": "יעקב גואטה",
+   "games": 1,
+   "debut": "1977-12-10"
+  },
+  {
+   "name": "דוד סטמפו",
+   "games": 1,
+   "debut": "1981-05-23"
+  },
+  {
+   "name": "מאיר בלושטיין",
+   "games": 1,
+   "debut": "1983-01-29"
+  },
+  {
+   "name": "חזי דמארי",
+   "games": 1,
+   "debut": "1985-05-25"
+  },
+  {
+   "name": "אמיר ארמר",
+   "games": 1,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "יוסי מאיר",
+   "games": 1,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "יעקב לוי",
+   "games": 1,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "אברהם רונן",
+   "games": 1,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "יורם אברבוך",
+   "games": 1,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "ויקטור בוקובזה",
+   "games": 1,
+   "debut": "1988-11-18"
+  },
+  {
+   "name": "אבידן מדר",
+   "games": 1,
+   "debut": "1992-04-11"
+  },
+  {
+   "name": "רפי רומנו",
+   "games": 1,
+   "debut": "1995-03-18"
+  },
+  {
+   "name": "גילי רגב",
+   "games": 1,
+   "debut": "1997-05-17"
+  },
+  {
+   "name": "גיל גילקרוב",
+   "games": 1,
+   "debut": "2012-05-08"
+  },
+  {
+   "name": "אריאל טליאס",
+   "games": 1,
+   "debut": "2014-05-17"
+  }
+ ],
+ "rejected": [
+  {
+   "name": "מאיר אהרון מליקה",
+   "reason": "debut 1935 outside documented years 1994–1995"
+  },
+  {
+   "name": "רוני קלדרון",
+   "reason": "debut 1974 outside documented years 1968–1972"
+  }
+ ],
+ "records": [
+  {
+   "playerId": "p_2ef10a5876",
+   "slug": "אבדגי",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2007-08-20",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אבדג'י"
+  },
+  {
+   "playerId": "p_6fa23a3cdc",
+   "slug": "אבי-אדרי",
+   "leagueAppearances": 4,
+   "leagueGoals": 1,
+   "debutDate": "1993-04-09",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אבי אדרי"
+  },
+  {
+   "playerId": "p_3fc7f6fcf1",
+   "slug": "אבי-אזולאי",
+   "leagueAppearances": 143,
+   "leagueGoals": 3,
+   "debutDate": "1992-01-31",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אבי אזולאי"
+  },
+  {
+   "playerId": "p_abe3ea1c69",
+   "slug": "אבי-כנפו",
+   "leagueAppearances": 79,
+   "leagueGoals": 8,
+   "debutDate": "2000-12-30",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אבי כנפו"
+  },
+  {
+   "playerId": "p_bf592a87a9",
+   "slug": "אבי-סופר",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2004-08-22",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "אבי סופר"
+  },
+  {
+   "playerId": "p_b1fbfd5d16",
+   "slug": "אבי-תקווה",
+   "leagueAppearances": 24,
+   "leagueGoals": 4,
+   "debutDate": "2000-08-12",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אבי תקוה"
+  },
+  {
+   "playerId": "p_e7ffc8109d",
+   "slug": "אביב-אלחדד",
+   "leagueAppearances": 5,
+   "leagueGoals": 1,
+   "debutDate": "2003-05-04",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אביב אלחדד"
+  },
+  {
+   "playerId": "p_32534644ac",
+   "slug": "אביב-וולנרמן",
+   "leagueAppearances": 22,
+   "leagueGoals": 2,
+   "debutDate": "1998-08-21",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אביב וולנרמן"
+  },
+  {
+   "playerId": "p_4a4c618031",
+   "slug": "אביחי-ידין",
+   "leagueAppearances": 153,
+   "leagueGoals": 5,
+   "debutDate": "2008-09-22",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אביחי ידין"
+  },
+  {
+   "playerId": "p_5993128bae",
+   "slug": "אברהם-אבי-בנימין",
+   "leagueAppearances": 41,
+   "leagueGoals": null,
+   "debutDate": "1969-06-07",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "אבי בנימין"
+  },
+  {
+   "playerId": "p_919b824fd0",
+   "slug": "אברהם-בית-הלוי",
+   "leagueAppearances": 65,
+   "leagueGoals": 7,
+   "debutDate": "1931-01-17",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אברהם בית הלוי"
+  },
+  {
+   "playerId": "p_161c5bc4dd",
+   "slug": "אברהם-נודלמן",
+   "leagueAppearances": 98,
+   "leagueGoals": 45,
+   "debutDate": "1929-10-12",
+   "debutNote": null,
+   "positionRaw": "התקפה",
+   "nameOnPage": "אברהם נודלמן"
+  },
+  {
+   "playerId": "p_6a760d726a",
+   "slug": "אברהם-פלמן",
+   "leagueAppearances": 150,
+   "leagueGoals": 50,
+   "debutDate": "1935-12-07",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אברהם בוצ'קה פלמן"
+  },
+  {
+   "playerId": "p_a9f3874b86",
+   "slug": "אברהם-פרידריך",
+   "leagueAppearances": 107,
+   "leagueGoals": 6,
+   "debutDate": "1961-11-18",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אברהם פרידריך"
+  },
+  {
+   "playerId": "p_0ee0329896",
+   "slug": "אברהם-צקול",
+   "leagueAppearances": 30,
+   "leagueGoals": null,
+   "debutDate": "2013-10-26",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "אברהם צ'קול"
+  },
+  {
+   "playerId": "p_615688f377",
+   "slug": "אדוארדו-מראקש",
+   "leagueAppearances": 15,
+   "leagueGoals": 1,
+   "debutDate": "2004-08-22",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אדוארדו מראקש"
+  },
+  {
+   "playerId": "p_4ad6480435",
+   "slug": "אדי-אלקיים",
+   "leagueAppearances": 15,
+   "leagueGoals": null,
+   "debutDate": "1999-09-25",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "אדי אלקיים"
+  },
+  {
+   "playerId": "p_58ba967d26",
+   "slug": "אדי-גוטליב",
+   "leagueAppearances": 48,
+   "leagueGoals": 7,
+   "debutDate": "2015-09-12",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "אדי גוטליב"
+  },
+  {
+   "playerId": "p_6fe0288598",
+   "slug": "אדמונד-שמילוביץ",
+   "leagueAppearances": 21,
+   "leagueGoals": 3,
+   "debutDate": "1951-10-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אדמונד שמילוביץ'"
+  },
+  {
+   "playerId": "p_d65c4fce2b",
+   "slug": "אהוד-כחילה",
+   "leagueAppearances": 11,
+   "leagueGoals": null,
+   "debutDate": "1998-12-26",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "אהוד כחילה"
+  },
+  {
+   "playerId": "p_cbd86a87d0",
+   "slug": "אוגנין-לאקיץ",
+   "leagueAppearances": 4,
+   "leagueGoals": null,
+   "debutDate": "2005-09-18",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אוגנין לאקיץ'"
+  },
+  {
+   "playerId": "p_753c7293ca",
+   "slug": "אולוביו-אדפמי",
+   "leagueAppearances": 10,
+   "leagueGoals": null,
+   "debutDate": "2005-10-02",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "ביו אדפמי"
+  },
+  {
+   "playerId": "p_c2448c7be1",
+   "slug": "אומיט-גונזלס",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2007-11-11",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "אומיט גונזאלס"
+  },
+  {
+   "playerId": "p_65f9e00e24",
+   "slug": "אור-אוסטוינד",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2016-12-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אור אוסטוינד"
+  },
+  {
+   "playerId": "p_dd86df8ba8",
+   "slug": "אוראל-דגני",
+   "leagueAppearances": 59,
+   "leagueGoals": 1,
+   "debutDate": "2013-08-25",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "אוראל דגני"
+  },
+  {
+   "playerId": "p_e0b4d82d31",
+   "slug": "אורי-כהן",
+   "leagueAppearances": 1,
+   "leagueGoals": 1,
+   "debutDate": "2014-05-17",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "אורי כהן"
+  },
+  {
+   "playerId": "p_9c29bc2867",
+   "slug": "אורי-קויאטק",
+   "leagueAppearances": 81,
+   "leagueGoals": 12,
+   "debutDate": "1956-03-31",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אורי קויאטק"
+  },
+  {
+   "playerId": "p_a5c53f27aa",
+   "slug": "אורי-קרגולה",
+   "leagueAppearances": 20,
+   "leagueGoals": 1,
+   "debutDate": "2003-10-04",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אורי קרגולה"
+  },
+  {
+   "playerId": "p_49de1e4f0f",
+   "slug": "אזקיאל-נדואסל",
+   "leagueAppearances": 5,
+   "leagueGoals": 1,
+   "debutDate": "2017-02-05",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אזקיאל אנדואסל"
+  },
+  {
+   "playerId": "p_967d4b240c",
+   "slug": "אחמד-מוסא",
+   "leagueAppearances": 128,
+   "leagueGoals": 2,
+   "debutDate": "1986-12-20",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "אחמד מוסא"
+  },
+  {
+   "playerId": "p_a922020380",
+   "slug": "איאד-אבו-עביד",
+   "leagueAppearances": 25,
+   "leagueGoals": null,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "איאד אבו עביד"
+  },
+  {
+   "playerId": "p_a816bd7492",
+   "slug": "איאד-חוטבא",
+   "leagueAppearances": 42,
+   "leagueGoals": null,
+   "debutDate": "2011-08-22",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "איאד חטבא"
+  },
+  {
+   "playerId": "p_a4051dabb2",
+   "slug": "איבזיטו-אוגבונה",
+   "leagueAppearances": 116,
+   "leagueGoals": 37,
+   "debutDate": "2003-09-13",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "איבזיטו אוגבונה"
+  },
+  {
+   "playerId": "p_4c1070bb33",
+   "slug": "איברהים-ספורי",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2016-12-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "איברהים ספורי"
+  },
+  {
+   "playerId": "p_585fbc12eb",
+   "slug": "איגור-שקווירין",
+   "leagueAppearances": 39,
+   "leagueGoals": 16,
+   "debutDate": "1992-08-29",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "איגור שקווירין"
+  },
+  {
+   "playerId": "p_3d9813724a",
+   "slug": "איוון-יוליץ",
+   "leagueAppearances": 19,
+   "leagueGoals": 1,
+   "debutDate": "2006-08-28",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "איבן יוליץ'"
+  },
+  {
+   "playerId": "p_5c58512da5",
+   "slug": "איזואגבו-אבונימה",
+   "leagueAppearances": 6,
+   "leagueGoals": 1,
+   "debutDate": "2015-03-21",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "איזוגבו אבונימה"
+  },
+  {
+   "playerId": "p_9da3d676ab",
+   "slug": "אייל-אברמוב",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "1991-06-08",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "אייל אברמוב"
+  },
+  {
+   "playerId": "p_2f36be94d9",
+   "slug": "אייל-אקשטיין",
+   "leagueAppearances": 25,
+   "leagueGoals": null,
+   "debutDate": "1978-12-30",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "אייל אקשטיין"
+  },
+  {
+   "playerId": "p_7c9ce04140",
+   "slug": "אייל-בן-עמי",
+   "leagueAppearances": 155,
+   "leagueGoals": 7,
+   "debutDate": "1993-11-20",
+   "debutNote": null,
+   "positionRaw": "מגן / קשר",
+   "nameOnPage": "אייל בן עמי"
+  },
+  {
+   "playerId": "p_c4a7f257d3",
+   "slug": "אייל-משומר",
+   "leagueAppearances": 11,
+   "leagueGoals": null,
+   "debutDate": "2017-02-12",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "אייל משומר"
+  },
+  {
+   "playerId": "p_625af500eb",
+   "slug": "אילונגו-אנגסניה",
+   "leagueAppearances": 4,
+   "leagueGoals": null,
+   "debutDate": "2005-01-15",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אילונגו אנגאסניה"
+  },
+  {
+   "playerId": "p_7845e3c111",
+   "slug": "איליה-יבוריאן",
+   "leagueAppearances": 20,
+   "leagueGoals": 8,
+   "debutDate": "2005-11-19",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "איליה יברויאן"
+  },
+  {
+   "playerId": "p_34eb87490c",
+   "slug": "אילן-בכר",
+   "leagueAppearances": 91,
+   "leagueGoals": 7,
+   "debutDate": "1999-08-14",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "אילן בכר"
+  },
+  {
+   "playerId": "p_cd5e023a2e",
+   "slug": "אילן-שוקרון",
+   "leagueAppearances": 85,
+   "leagueGoals": 1,
+   "debutDate": "1985-09-28",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אילן שוקרון"
+  },
+  {
+   "playerId": "p_327cb6b402",
+   "slug": "איסומעילה-לינגאנה",
+   "leagueAppearances": 16,
+   "leagueGoals": null,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "איסומעילה לינגאנה"
+  },
+  {
+   "playerId": "p_ff6658c1ea",
+   "slug": "איציק-שולמייסטר",
+   "leagueAppearances": 6,
+   "leagueGoals": null,
+   "debutDate": "2016-12-25",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "איציק שולמייסטר"
+  },
+  {
+   "playerId": "p_6c61f19a2c",
+   "slug": "אישטוואן-פישונט",
+   "leagueAppearances": 89,
+   "leagueGoals": 10,
+   "debutDate": "1999-08-14",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אישטוואן פישונט"
+  },
+  {
+   "playerId": "p_5da62520ae",
+   "slug": "איתי-אלקסלסי",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2007-09-29",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "איתי אלקסלסי"
+  },
+  {
+   "playerId": "p_0b04f3bfc5",
+   "slug": "איתי-שכטר",
+   "leagueAppearances": 61,
+   "leagueGoals": 35,
+   "debutDate": "2009-08-24",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "איתי שכטר"
+  },
+  {
+   "playerId": "p_b6f4564010",
+   "slug": "איתמר-ניצן",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "2011-03-20",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "איתמר ניצן"
+  },
+  {
+   "playerId": "p_e8a5d5b837",
+   "slug": "אלון-אופיר",
+   "leagueAppearances": 106,
+   "leagueGoals": 14,
+   "debutDate": "1992-11-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אלון אופיר"
+  },
+  {
+   "playerId": "p_cc459a96c2",
+   "slug": "אלון-חזן",
+   "leagueAppearances": 26,
+   "leagueGoals": 3,
+   "debutDate": "1996-09-09",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אלון חזן"
+  },
+  {
+   "playerId": "p_713b3bbb03",
+   "slug": "אלון-חלפון",
+   "leagueAppearances": 40,
+   "leagueGoals": null,
+   "debutDate": "1998-12-26",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "אלון חלפון"
+  },
+  {
+   "playerId": "p_3ade4c1df3",
+   "slug": "אלון-מזרחי",
+   "leagueAppearances": 18,
+   "leagueGoals": 3,
+   "debutDate": "1990-12-08",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אלון מזרחי"
+  },
+  {
+   "playerId": "p_714585313e",
+   "slug": "אלון-תורגמן",
+   "leagueAppearances": 14,
+   "leagueGoals": 1,
+   "debutDate": "2016-01-09",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אלון תורג'מן"
+  },
+  {
+   "playerId": "p_8fcc1fab5d",
+   "slug": "אלי-אוזן",
+   "leagueAppearances": 10,
+   "leagueGoals": null,
+   "debutDate": "1984-11-10",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אלי אוזן"
+  },
+  {
+   "playerId": "p_f74a361546",
+   "slug": "אלי-בכר",
+   "leagueAppearances": 19,
+   "leagueGoals": null,
+   "debutDate": "1969-10-04",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אלי בכר"
+  },
+  {
+   "playerId": "p_ce50c6869c",
+   "slug": "אלי-יאני",
+   "leagueAppearances": 46,
+   "leagueGoals": 8,
+   "debutDate": "1984-10-27",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "אלי יאני"
+  },
+  {
+   "playerId": "p_29ba0c2a95",
+   "slug": "אלי-קוקוס-כהן",
+   "leagueAppearances": 301,
+   "leagueGoals": 46,
+   "debutDate": "1980-04-05",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אלי (קוקוס) כהן"
+  },
+  {
+   "playerId": "p_48448da21d",
+   "slug": "אלי-שכטר",
+   "leagueAppearances": 4,
+   "leagueGoals": null,
+   "debutDate": "1986-02-15",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אלי שכטר"
+  },
+  {
+   "playerId": "p_af404e42dc",
+   "slug": "אליאור-ברנס",
+   "leagueAppearances": 54,
+   "leagueGoals": 4,
+   "debutDate": "1986-01-11",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "אליאור ברנס"
+  },
+  {
+   "playerId": "p_87a6b909aa",
+   "slug": "אלין-טופוזאקוב",
+   "leagueAppearances": 43,
+   "leagueGoals": 1,
+   "debutDate": "2008-01-12",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "אלין טופוזאקוב"
+  },
+  {
+   "playerId": "p_d7910679ca",
+   "slug": "אליניב-ברדה",
+   "leagueAppearances": 61,
+   "leagueGoals": 17,
+   "debutDate": "2005-08-27",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אליניב ברדה"
+  },
+  {
+   "playerId": "p_6800d0750c",
+   "slug": "אלירן-דנין",
+   "leagueAppearances": 18,
+   "leagueGoals": null,
+   "debutDate": "2012-08-26",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "אלירן דנין"
+  },
+  {
+   "playerId": "p_13d06f8b6e",
+   "slug": "אלמוג-כהן",
+   "leagueAppearances": 12,
+   "leagueGoals": 1,
+   "debutDate": "2013-02-11",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אלמוג כהן"
+  },
+  {
+   "playerId": "p_72dcaddbad",
+   "slug": "אלרואי-כהן",
+   "leagueAppearances": 62,
+   "leagueGoals": 6,
+   "debutDate": "2011-02-14",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אלרואי כהן"
+  },
+  {
+   "playerId": "p_0567517457",
+   "slug": "אמידו-בלדה",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2015-01-19",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אמידו באלדה"
+  },
+  {
+   "playerId": "p_80250357d6",
+   "slug": "אמיר-ליברמן",
+   "leagueAppearances": 141,
+   "leagueGoals": 18,
+   "debutDate": "1974-01-05",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אמיר ליברמן"
+  },
+  {
+   "playerId": "p_761c46b64a",
+   "slug": "אמנון-חרלפ",
+   "leagueAppearances": 44,
+   "leagueGoals": 47,
+   "debutDate": "1931-12-11",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אמנון חרל\"פ"
+  },
+  {
+   "playerId": "p_936c703295",
+   "slug": "אמציה-לבקוביץ",
+   "leagueAppearances": 285,
+   "leagueGoals": 5,
+   "debutDate": "1955-02-05",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "אמציה לבקוביץ'"
+  },
+  {
+   "playerId": "p_0619566adc",
+   "slug": "אנאס-מחאמיד",
+   "leagueAppearances": 15,
+   "leagueGoals": null,
+   "debutDate": "2015-08-29",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אנאס מחאמיד"
+  },
+  {
+   "playerId": "p_ed1610b21e",
+   "slug": "אסי-דומב",
+   "leagueAppearances": 154,
+   "leagueGoals": 11,
+   "debutDate": "1997-08-02",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "אסי דומב"
+  },
+  {
+   "playerId": "p_e1efc9cae0",
+   "slug": "אסי-טובי",
+   "leagueAppearances": 27,
+   "leagueGoals": 10,
+   "debutDate": "1998-08-29",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "אסי טובי"
+  },
+  {
+   "playerId": "p_13728ba87d",
+   "slug": "אפואלה-אדל",
+   "leagueAppearances": 72,
+   "leagueGoals": 1,
+   "debutDate": "2011-08-22",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "אפולה אדל"
+  },
+  {
+   "playerId": "p_8dbe63daf7",
+   "slug": "ארון-שוינפלד",
+   "leagueAppearances": 23,
+   "leagueGoals": 10,
+   "debutDate": "2016-02-07",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "ארון שוינפלד"
+  },
+  {
+   "playerId": "p_5b56eac65e",
+   "slug": "ארז-מסיקה",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "2000-09-11",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ארז מסיקה"
+  },
+  {
+   "playerId": "p_43ad8316b1",
+   "slug": "אריאל-הרוש",
+   "leagueAppearances": 48,
+   "leagueGoals": null,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "אריאל הרוש"
+  },
+  {
+   "playerId": "p_eb6dd2ac08",
+   "slug": "אריה-אלטר",
+   "leagueAppearances": 111,
+   "leagueGoals": null,
+   "debutDate": "1985-09-14",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "אריה אלטר"
+  },
+  {
+   "playerId": "p_cd51742c62",
+   "slug": "אריה-אריאל",
+   "leagueAppearances": 3,
+   "leagueGoals": 1,
+   "debutDate": "1980-10-11",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אריה אריאל"
+  },
+  {
+   "playerId": "p_b272171d0e",
+   "slug": "אריה-בזרנו",
+   "leagueAppearances": 432,
+   "leagueGoals": null,
+   "debutDate": "1969-11-15",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "אריה בז'רנו"
+  },
+  {
+   "playerId": "p_d41234a2fe",
+   "slug": "אריק-דגמבה-דגמבה",
+   "leagueAppearances": 28,
+   "leagueGoals": null,
+   "debutDate": "2012-08-26",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אריק דג'מבה דג'מבה"
+  },
+  {
+   "playerId": "p_d854744ec2",
+   "slug": "אריק-ינקו",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2009-04-04",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "אריק יאנקו"
+  },
+  {
+   "playerId": "p_47c1ab38e1",
+   "slug": "ארתור-אטצזיאנוב",
+   "leagueAppearances": 4,
+   "leagueGoals": null,
+   "debutDate": "2012-03-18",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ארתור אטצז'יאנוב"
+  },
+  {
+   "playerId": "p_46690b8e39",
+   "slug": "אשר-בלוט",
+   "leagueAppearances": 134,
+   "leagueGoals": 19,
+   "debutDate": "1949-05-28",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "אשר בלוט"
+  },
+  {
+   "playerId": "p_c4d8dee06b",
+   "slug": "בויאן-ורוצינה",
+   "leagueAppearances": 10,
+   "leagueGoals": 1,
+   "debutDate": "2010-02-07",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "בויאן ורוצ'ינה"
+  },
+  {
+   "playerId": "p_1d8475b0ee",
+   "slug": "בוריס-קליימן",
+   "leagueAppearances": 25,
+   "leagueGoals": null,
+   "debutDate": "2011-10-29",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "בוריס קליימן"
+  },
+  {
+   "playerId": "p_f4d9404511",
+   "slug": "ביברס-נאתכו",
+   "leagueAppearances": 91,
+   "leagueGoals": 5,
+   "debutDate": "2006-11-18",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ביברס נאתכו"
+  },
+  {
+   "playerId": "p_d027706b2f",
+   "slug": "ביוואן-פרנסמן",
+   "leagueAppearances": 46,
+   "leagueGoals": 2,
+   "debutDate": "2010-08-21",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "ביוואן פרנסמן"
+  },
+  {
+   "playerId": "p_ed570afa6e",
+   "slug": "ביסקוט-אמבלה",
+   "leagueAppearances": 14,
+   "leagueGoals": 3,
+   "debutDate": "2005-01-15",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ביסקוט אמבלה"
+  },
+  {
+   "playerId": "p_c8b2f83cda",
+   "slug": "בן-אלגרבלי",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "בן אלגרבלי"
+  },
+  {
+   "playerId": "p_6923a21427",
+   "slug": "בן-לוז",
+   "leagueAppearances": 86,
+   "leagueGoals": 18,
+   "debutDate": "2001-09-08",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "בן לוז"
+  },
+  {
+   "playerId": "p_0088d3232b",
+   "slug": "בן-ציון-צין-צינוביץ",
+   "leagueAppearances": 43,
+   "leagueGoals": 1,
+   "debutDate": "1955-02-05",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "בן ציון צינוביץ'"
+  },
+  {
+   "playerId": "p_6780090f07",
+   "slug": "בן-ציון-ריידר",
+   "leagueAppearances": 5,
+   "leagueGoals": 2,
+   "debutDate": "1956-12-01",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "בן ציון ריידר"
+  },
+  {
+   "playerId": "p_1b2ef8745b",
+   "slug": "בן-רייכרט",
+   "leagueAppearances": 65,
+   "leagueGoals": 3,
+   "debutDate": "2015-02-07",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "בן רייכרט"
+  },
+  {
+   "playerId": "p_d20e3a28f6",
+   "slug": "בן-שהר",
+   "leagueAppearances": 34,
+   "leagueGoals": 16,
+   "debutDate": "2010-08-21",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "בן שהר"
+  },
+  {
+   "playerId": "p_82efab9dcc",
+   "slug": "בנגמין-פראנסיס",
+   "leagueAppearances": 3,
+   "leagueGoals": null,
+   "debutDate": "2014-09-13",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "פרנסיס בנג'מין"
+  },
+  {
+   "playerId": "p_81af211a4f",
+   "slug": "בני-גולדשטיין",
+   "leagueAppearances": 42,
+   "leagueGoals": null,
+   "debutDate": "1955-04-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "בני גולדשטיין"
+  },
+  {
+   "playerId": "p_9a2ca355d7",
+   "slug": "בני-חדד",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "2001-08-26",
+   "debutNote": null,
+   "positionRaw": "מגן / קשר",
+   "nameOnPage": "בני חדד"
+  },
+  {
+   "playerId": "p_b6c7cb222f",
+   "slug": "בני-כהן",
+   "leagueAppearances": 29,
+   "leagueGoals": 1,
+   "debutDate": "1981-09-12",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "בני כהן"
+  },
+  {
+   "playerId": "p_5ca5b74aca",
+   "slug": "בסארט-עבדורחימי",
+   "leagueAppearances": 20,
+   "leagueGoals": 4,
+   "debutDate": "2013-12-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "בסארט עבדורחימי"
+  },
+  {
+   "playerId": "p_d0fb92ec93",
+   "slug": "בראיין-גרזיציץ",
+   "leagueAppearances": 30,
+   "leagueGoals": null,
+   "debutDate": "2013-08-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "בראיין גרזיצ'יץ"
+  },
+  {
+   "playerId": "p_c59b3f9c06",
+   "slug": "ברוך-דגו",
+   "leagueAppearances": 89,
+   "leagueGoals": 11,
+   "debutDate": "2005-08-27",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ברוך דגו"
+  },
+  {
+   "playerId": "p_96b192447f",
+   "slug": "ברונו-קוטיניו",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "2012-08-26",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ברונו קאוטיניו"
+  },
+  {
+   "playerId": "p_ea9c78eb0a",
+   "slug": "ברנקו-איליץ",
+   "leagueAppearances": 28,
+   "leagueGoals": 1,
+   "debutDate": "2013-08-25",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "ברנקו איליץ'"
+  },
+  {
+   "playerId": "p_6036557ed5",
+   "slug": "ברק-בדש",
+   "leagueAppearances": 14,
+   "leagueGoals": 2,
+   "debutDate": "2005-01-02",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "ברק בדש"
+  },
+  {
+   "playerId": "p_fb2afa79d0",
+   "slug": "גאבור-הלמאי",
+   "leagueAppearances": 76,
+   "leagueGoals": 11,
+   "debutDate": "2000-08-12",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "גאבור הולמאי"
+  },
+  {
+   "playerId": "p_81dbfd0fa0",
+   "slug": "גבור-מרטון",
+   "leagueAppearances": 12,
+   "leagueGoals": null,
+   "debutDate": "1999-01-29",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "גאבור מרטון"
+  },
+  {
+   "playerId": "p_4b46fbda65",
+   "slug": "גבי-לסרי",
+   "leagueAppearances": 194,
+   "leagueGoals": 4,
+   "debutDate": "1984-09-05",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "גבי לסרי"
+  },
+  {
+   "playerId": "p_3a14b04826",
+   "slug": "גבריאל-דוס-סנטוס",
+   "leagueAppearances": 13,
+   "leagueGoals": 1,
+   "debutDate": "2007-08-20",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "גבריאל דוס סנטוס"
+  },
+  {
+   "playerId": "p_8593416923",
+   "slug": "גד-מכנס",
+   "leagueAppearances": 24,
+   "leagueGoals": null,
+   "debutDate": "1983-09-24",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "גדי מכנס"
+  },
+  {
+   "playerId": "p_5f3ad834a6",
+   "slug": "גדעון-טיש",
+   "leagueAppearances": 199,
+   "leagueGoals": 55,
+   "debutDate": "1955-12-03",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "גדעון טיש"
+  },
+  {
+   "playerId": "p_2646464da6",
+   "slug": "גובאני-ואלדיירו",
+   "leagueAppearances": 8,
+   "leagueGoals": null,
+   "debutDate": "2004-09-19",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "ג'ובאני וואלדיירו"
+  },
+  {
+   "playerId": "p_bb5c182554",
+   "slug": "גוזף-גנדה",
+   "leagueAppearances": 8,
+   "leagueGoals": 1,
+   "debutDate": "2017-02-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ג'וזף גנדה"
+  },
+  {
+   "playerId": "p_f47f7d2088",
+   "slug": "גון-פיינטסיל",
+   "leagueAppearances": 51,
+   "leagueGoals": 3,
+   "debutDate": "2004-12-20",
+   "debutNote": null,
+   "positionRaw": "מגן / קשר",
+   "nameOnPage": "ג'ון פנטסיל"
+  },
+  {
+   "playerId": "p_62023e15dc",
+   "slug": "גון-ציבויקה",
+   "leagueAppearances": 11,
+   "leagueGoals": 3,
+   "debutDate": "2017-01-29",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ג'ון צ'יבויקה"
+  },
+  {
+   "playerId": "p_1114e68a4b",
+   "slug": "גורג-בורבה",
+   "leagueAppearances": 181,
+   "leagueGoals": 47,
+   "debutDate": "1965-10-02",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "ג'ורג' בורבה"
+  },
+  {
+   "playerId": "p_73205926e8",
+   "slug": "גיא-אסולין",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "2016-01-16",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "גיא אסולין"
+  },
+  {
+   "playerId": "p_1643580a61",
+   "slug": "גיא-חדידה",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2015-05-02",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "גיא חדידה"
+  },
+  {
+   "playerId": "p_c527fa95be",
+   "slug": "גיא-צרפתי",
+   "leagueAppearances": 24,
+   "leagueGoals": 1,
+   "debutDate": "2004-08-22",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "גיא צרפתי"
+  },
+  {
+   "playerId": "p_83ccf18cd8",
+   "slug": "גיא-קואז",
+   "leagueAppearances": 4,
+   "leagueGoals": null,
+   "debutDate": "2004-04-10",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "גיא קואז"
+  },
+  {
+   "playerId": "p_2f733558ab",
+   "slug": "גיא-שרעבי",
+   "leagueAppearances": 77,
+   "leagueGoals": null,
+   "debutDate": "1994-09-10",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "גיא שרעבי"
+  },
+  {
+   "playerId": "p_164f143bb6",
+   "slug": "גיורא-אנטמן",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "1986-09-20",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "גיורא אנטמן"
+  },
+  {
+   "playerId": "p_cb0adec91f",
+   "slug": "גיורגי-דרסיליה",
+   "leagueAppearances": 29,
+   "leagueGoals": 66,
+   "debutDate": "1997-08-02",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "גיורגי דרסליה"
+  },
+  {
+   "playerId": "p_4ede2d4c2f",
+   "slug": "גיל-ורמוט",
+   "leagueAppearances": 217,
+   "leagueGoals": 33,
+   "debutDate": "2005-08-27",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "גיל ורמוט"
+  },
+  {
+   "playerId": "p_25fbe5fc0d",
+   "slug": "גילי-לנדאו",
+   "leagueAppearances": 302,
+   "leagueGoals": 44,
+   "debutDate": "1974-10-05",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "גיל לנדאו"
+  },
+  {
+   "playerId": "p_3acb6dedd8",
+   "slug": "גל-הרשליקוביץ",
+   "leagueAppearances": 130,
+   "leagueGoals": 4,
+   "debutDate": "1988-02-20",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "גל הרשליקוביץ'"
+  },
+  {
+   "playerId": "p_dcf4113be8",
+   "slug": "גל-שיש",
+   "leagueAppearances": 77,
+   "leagueGoals": null,
+   "debutDate": "2007-05-19",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "גל שיש"
+  },
+  {
+   "playerId": "p_4252f24e61",
+   "slug": "גליל-בן-סנן",
+   "leagueAppearances": 11,
+   "leagueGoals": null,
+   "debutDate": "2007-02-17",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "גליל בן שאנן"
+  },
+  {
+   "playerId": "p_f519e72f4b",
+   "slug": "דאבור-רופניק",
+   "leagueAppearances": 54,
+   "leagueGoals": 1,
+   "debutDate": "1998-08-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דאבור רופניק"
+  },
+  {
+   "playerId": "p_dff7d98add",
+   "slug": "דאגלס-דה-סילבה",
+   "leagueAppearances": 77,
+   "leagueGoals": 12,
+   "debutDate": "2008-09-01",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "דגלאס דה סילבה"
+  },
+  {
+   "playerId": "p_f67d8cedec",
+   "slug": "דאמיר-שובשיץ",
+   "leagueAppearances": 12,
+   "leagueGoals": 1,
+   "debutDate": "2016-08-22",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דאמיר שובשיץ'"
+  },
+  {
+   "playerId": "p_d1c100a162",
+   "slug": "דב-רמלר",
+   "leagueAppearances": 56,
+   "leagueGoals": 11,
+   "debutDate": "1982-09-25",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "דב רמלר"
+  },
+  {
+   "playerId": "p_b150788697",
+   "slug": "דדי-בן-דיין",
+   "leagueAppearances": 59,
+   "leagueGoals": 11,
+   "debutDate": "2009-08-24",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "דדי בן דיין"
+  },
+  {
+   "playerId": "p_e948dc8f34",
+   "slug": "דוד-אמסלם",
+   "leagueAppearances": 26,
+   "leagueGoals": 4,
+   "debutDate": "1994-08-27",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "דוד אמסלם"
+  },
+  {
+   "playerId": "p_342d66515c",
+   "slug": "דוד-בליס",
+   "leagueAppearances": 34,
+   "leagueGoals": 1,
+   "debutDate": "1959-04-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דוד בליס"
+  },
+  {
+   "playerId": "p_a8459249bd",
+   "slug": "דוד-הרשליקוביץ",
+   "leagueAppearances": 171,
+   "leagueGoals": 4,
+   "debutDate": "1984-05-12",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "דוד הרשליקוביץ'"
+  },
+  {
+   "playerId": "p_0e92b2ee28",
+   "slug": "דוד-ונטורה",
+   "leagueAppearances": 22,
+   "leagueGoals": null,
+   "debutDate": "1993-08-28",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "דוד ונטורה"
+  },
+  {
+   "playerId": "p_bf39cc3354",
+   "slug": "דוד-מיץ",
+   "leagueAppearances": 23,
+   "leagueGoals": 22,
+   "debutDate": "1944-05-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דוד מיץ"
+  },
+  {
+   "playerId": "p_a7bdc2d943",
+   "slug": "דוד-פיזנטי",
+   "leagueAppearances": 18,
+   "leagueGoals": null,
+   "debutDate": "1986-11-22",
+   "debutNote": null,
+   "positionRaw": "מגן / קשר",
+   "nameOnPage": "דוד פיזנטי"
+  },
+  {
+   "playerId": "p_9a2e350257",
+   "slug": "דוד-פרימו",
+   "leagueAppearances": 272,
+   "leagueGoals": 1,
+   "debutDate": "1963-11-23",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "דוד פרימו"
+  },
+  {
+   "playerId": "p_459f44d285",
+   "slug": "דוד-קרמו",
+   "leagueAppearances": 27,
+   "leagueGoals": 1,
+   "debutDate": "1968-01-20",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "דוד קרמו"
+  },
+  {
+   "playerId": "p_ab31d6c079",
+   "slug": "דוד-רוצלה",
+   "leagueAppearances": 13,
+   "leagueGoals": null,
+   "debutDate": "2013-02-11",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "דוד רוצ'לה"
+  },
+  {
+   "playerId": "p_bc4b85ce47",
+   "slug": "דוד-שוייצר",
+   "leagueAppearances": 92,
+   "leagueGoals": 1,
+   "debutDate": "1947-06-21",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "דוד שוייצר (דוביד)"
+  },
+  {
+   "playerId": "p_3245f05ce9",
+   "slug": "דוד-שטיינוורצל",
+   "leagueAppearances": 11,
+   "leagueGoals": 1,
+   "debutDate": "1953-12-05",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דוד שטיינוורצל"
+  },
+  {
+   "playerId": "p_27a9c4a320",
+   "slug": "דודו-ביטון",
+   "leagueAppearances": 32,
+   "leagueGoals": 3,
+   "debutDate": "2015-01-19",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "דודו ביטון"
+  },
+  {
+   "playerId": "p_b0f1c9f234",
+   "slug": "דודי-אלון",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2015-10-17",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "דודי אלון"
+  },
+  {
+   "playerId": "p_52409c5791",
+   "slug": "דולי-מנגה",
+   "leagueAppearances": 14,
+   "leagueGoals": null,
+   "debutDate": "2016-09-12",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "דולי מנגה"
+  },
+  {
+   "playerId": "p_3f6380cdd9",
+   "slug": "דיאן-רצוניצה",
+   "leagueAppearances": 59,
+   "leagueGoals": 3,
+   "debutDate": "1999-08-14",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דיאן ראצ'וניצה"
+  },
+  {
+   "playerId": "p_d37cc554be",
+   "slug": "דימיטאר-טלקיסקי",
+   "leagueAppearances": 49,
+   "leagueGoals": 8,
+   "debutDate": "2008-01-12",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דימיטאר טלקיסקי"
+  },
+  {
+   "playerId": "p_2ab3b7e966",
+   "slug": "דמיאן-גייזר",
+   "leagueAppearances": 20,
+   "leagueGoals": null,
+   "debutDate": "1997-09-20",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דמיין גייזר"
+  },
+  {
+   "playerId": "p_702c5aa0e1",
+   "slug": "דמיאן-לוקאשיק",
+   "leagueAppearances": 61,
+   "leagueGoals": 2,
+   "debutDate": "1994-01-08",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "דמיין לוקאשיק"
+  },
+  {
+   "playerId": "p_66dbe0b7e5",
+   "slug": "דמיטרי-מיכאלנקו",
+   "leagueAppearances": 14,
+   "leagueGoals": 2,
+   "debutDate": "2001-02-11",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דימטרי מיכאלנקו"
+  },
+  {
+   "playerId": "p_0ff3a1691e",
+   "slug": "דנוץ-מויססקו",
+   "leagueAppearances": 11,
+   "leagueGoals": null,
+   "debutDate": "1993-08-28",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דנוץ מוייססקו"
+  },
+  {
+   "playerId": "p_43edb562c4",
+   "slug": "דני-אלקיים",
+   "leagueAppearances": 118,
+   "leagueGoals": null,
+   "debutDate": "1958-02-08",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "דני אלקלעי-אלקיים"
+  },
+  {
+   "playerId": "p_8155ae390e",
+   "slug": "דני-בונדר",
+   "leagueAppearances": 75,
+   "leagueGoals": 1,
+   "debutDate": "2006-08-28",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "דני בונדר"
+  },
+  {
+   "playerId": "p_428a295f22",
+   "slug": "דני-בורסוק",
+   "leagueAppearances": 157,
+   "leagueGoals": 30,
+   "debutDate": "1961-09-30",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "דני בורסוק"
+  },
+  {
+   "playerId": "p_40024f2b46",
+   "slug": "דני-ילובסקי",
+   "leagueAppearances": 8,
+   "leagueGoals": 8,
+   "debutDate": "1950-05-20",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "דני ילובסקי"
+  },
+  {
+   "playerId": "p_81c054a50a",
+   "slug": "דני-עמוס",
+   "leagueAppearances": 36,
+   "leagueGoals": null,
+   "debutDate": "2013-08-25",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "דני עמוס"
+  },
+  {
+   "playerId": "p_02cffa1140",
+   "slug": "דניאל-גולדשטיין",
+   "leagueAppearances": 98,
+   "leagueGoals": 9,
+   "debutDate": "1961-09-30",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דני גולדשטיין"
+  },
+  {
+   "playerId": "p_54bee20274",
+   "slug": "דניאל-דה-רידר",
+   "leagueAppearances": 11,
+   "leagueGoals": 2,
+   "debutDate": "2010-01-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דניאל דה רידר"
+  },
+  {
+   "playerId": "p_14e7aebf67",
+   "slug": "דניאל-דניאלי",
+   "leagueAppearances": 79,
+   "leagueGoals": 36,
+   "debutDate": "1961-11-18",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "דניאל דניאלי"
+  },
+  {
+   "playerId": "p_46676d770e",
+   "slug": "דניס-אונישנקו",
+   "leagueAppearances": 79,
+   "leagueGoals": 2,
+   "debutDate": "2000-02-26",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "דניס אונישנקו"
+  },
+  {
+   "playerId": "p_768dfcae71",
+   "slug": "דסליי-טגניה",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2016-12-25",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "דסליי טגניה"
+  },
+  {
+   "playerId": "p_40a9f939f5",
+   "slug": "הרברט-מייטנר",
+   "leagueAppearances": 61,
+   "leagueGoals": 28,
+   "debutDate": "1939-01-07",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "צבי הרברט מייטנר"
+  },
+  {
+   "playerId": "p_3adcceeb66",
+   "slug": "הרמוני-איקינדה",
+   "leagueAppearances": 12,
+   "leagueGoals": 1,
+   "debutDate": "2014-09-13",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "הרמוני איקינדה"
+  },
+  {
+   "playerId": "p_73bd5cc79f",
+   "slug": "הרצל-פריצנר",
+   "leagueAppearances": 20,
+   "leagueGoals": 4,
+   "debutDate": "1951-11-03",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "הרצל פריצנר"
+  },
+  {
+   "playerId": "p_98a480c32b",
+   "slug": "וואליד-באדיר",
+   "leagueAppearances": 237,
+   "leagueGoals": 24,
+   "debutDate": "2005-08-27",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "וואליד באדיר"
+  },
+  {
+   "playerId": "p_52a1eb57ee",
+   "slug": "וויאם-עמאשה",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2016-10-01",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "וויאם עמאשה"
+  },
+  {
+   "playerId": "p_0367f9bb14",
+   "slug": "וולטון-סילבה",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2002-09-28",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "וולטון קרלוס סילבה"
+  },
+  {
+   "playerId": "p_bf8f9eb385",
+   "slug": "וולינגטון-דה-אוליברה",
+   "leagueAppearances": 14,
+   "leagueGoals": null,
+   "debutDate": "2007-02-03",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "וולינגטון אוליביירה"
+  },
+  {
+   "playerId": "p_b34ba373df",
+   "slug": "וילי-ברגר",
+   "leagueAppearances": 52,
+   "leagueGoals": 5,
+   "debutDate": "1930-12-06",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "זאב וילי ברגר"
+  },
+  {
+   "playerId": "p_37bd946fc6",
+   "slug": "וינסנט-אניימה",
+   "leagueAppearances": 113,
+   "leagueGoals": 8,
+   "debutDate": "2007-08-20",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "וינסנט אניימה"
+  },
+  {
+   "playerId": "p_fbca06cc69",
+   "slug": "ויקטור-מרעי",
+   "leagueAppearances": 60,
+   "leagueGoals": 4,
+   "debutDate": "2009-03-16",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "ויקטור מרעי"
+  },
+  {
+   "playerId": "p_9f3f7375b8",
+   "slug": "זאב-חיימוביץ",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2012-09-29",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "זאב חיימוביץ'"
+  },
+  {
+   "playerId": "p_5a936c84ba",
+   "slug": "זאב-סגל",
+   "leagueAppearances": 116,
+   "leagueGoals": 1,
+   "debutDate": "1953-05-09",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "זאב סגל"
+  },
+  {
+   "playerId": "p_fd415ce669",
+   "slug": "זוראב-מנטשאשווילי",
+   "leagueAppearances": 25,
+   "leagueGoals": null,
+   "debutDate": "2009-08-30",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "זוראב מנטשאשווילי"
+  },
+  {
+   "playerId": "p_9064e7e906",
+   "slug": "זיו-כבדה",
+   "leagueAppearances": 24,
+   "leagueGoals": 1,
+   "debutDate": "1998-01-24",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "זיו כבדה"
+  },
+  {
+   "playerId": "p_5984733f88",
+   "slug": "זלמן-פרידמן",
+   "leagueAppearances": 171,
+   "leagueGoals": 3,
+   "debutDate": "1930-12-06",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "זלמן (דז'מפה) פרידמן"
+  },
+  {
+   "playerId": "p_0300bb4677",
+   "slug": "חאבייר-פאאס",
+   "leagueAppearances": 23,
+   "leagueGoals": 2,
+   "debutDate": "2006-08-28",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "חאבייר פאאס"
+  },
+  {
+   "playerId": "p_4923c8325d",
+   "slug": "חזי-שירזי",
+   "leagueAppearances": 92,
+   "leagueGoals": 29,
+   "debutDate": "1991-09-14",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "חזי שירזי"
+  },
+  {
+   "playerId": "p_ad6d8585b7",
+   "slug": "חיים-איצרין",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2004-11-21",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "חיים איצרין"
+  },
+  {
+   "playerId": "p_b118d52099",
+   "slug": "חיים-גלזר",
+   "leagueAppearances": 62,
+   "leagueGoals": 37,
+   "debutDate": "1948-02-07",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "חיים גלזר"
+  },
+  {
+   "playerId": "p_b015646311",
+   "slug": "חיים-חוזבקו",
+   "leagueAppearances": 35,
+   "leagueGoals": 1,
+   "debutDate": "1949-11-19",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "חיים חוז'בקו"
+  },
+  {
+   "playerId": "p_c45a88c8d6",
+   "slug": "חיים-נוריאלי",
+   "leagueAppearances": 174,
+   "leagueGoals": 31,
+   "debutDate": "1962-01-06",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "חיים נוריאלי"
+  },
+  {
+   "playerId": "p_3480051a3e",
+   "slug": "חיים-רביבו",
+   "leagueAppearances": 36,
+   "leagueGoals": 12,
+   "debutDate": "1993-08-28",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "חיים רביבו"
+  },
+  {
+   "playerId": "p_4e03e2ea2a",
+   "slug": "חמזה-בארי",
+   "leagueAppearances": 12,
+   "leagueGoals": null,
+   "debutDate": "2016-02-07",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "חמזה בארי"
+  },
+  {
+   "playerId": "p_addc6725b3",
+   "slug": "חן-עזרא",
+   "leagueAppearances": 13,
+   "leagueGoals": 2,
+   "debutDate": "2016-08-22",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "חן עזרא"
+  },
+  {
+   "playerId": "p_e13a867a8b",
+   "slug": "חנן-אלקיים",
+   "leagueAppearances": 3,
+   "leagueGoals": null,
+   "debutDate": "2003-12-08",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "חנן אלקיים"
+  },
+  {
+   "playerId": "p_e636f3dfe3",
+   "slug": "חנן-ממן",
+   "leagueAppearances": 32,
+   "leagueGoals": 3,
+   "debutDate": "2012-08-26",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "חנן ממן"
+  },
+  {
+   "playerId": "p_1494e9d514",
+   "slug": "חסן-אבו-זייד",
+   "leagueAppearances": 14,
+   "leagueGoals": null,
+   "debutDate": "2017-01-16",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "חסן אבו זייד"
+  },
+  {
+   "playerId": "p_2bdc7a0330",
+   "slug": "חסן-בדגייב",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "1992-08-29",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "חסן בדג'אייב"
+  },
+  {
+   "playerId": "p_fbb04763b0",
+   "slug": "טוטו-תמוז",
+   "leagueAppearances": 96,
+   "leagueGoals": 45,
+   "debutDate": "2010-09-11",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "טוטו תמוז"
+  },
+  {
+   "playerId": "p_6c2d1e76ab",
+   "slug": "טיאגו-קוסטה",
+   "leagueAppearances": 12,
+   "leagueGoals": null,
+   "debutDate": "2013-02-02",
+   "debutNote": null,
+   "positionRaw": "מגן / קשר",
+   "nameOnPage": "טיאגו קוסטה"
+  },
+  {
+   "playerId": "p_6d4fae32df",
+   "slug": "טל-אוסובסקי",
+   "leagueAppearances": 46,
+   "leagueGoals": 1,
+   "debutDate": "1991-09-14",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "טל אוסובסקי"
+  },
+  {
+   "playerId": "p_42e9990edc",
+   "slug": "טל-בן-חיים",
+   "leagueAppearances": 30,
+   "leagueGoals": 7,
+   "debutDate": "2012-08-26",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "טל בן חיים"
+  },
+  {
+   "playerId": "p_60526f4be6",
+   "slug": "טל-חן",
+   "leagueAppearances": 94,
+   "leagueGoals": 6,
+   "debutDate": "2003-11-08",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "טל חן"
+  },
+  {
+   "playerId": "p_43ec160acb",
+   "slug": "יאיר-כהן-צדק",
+   "leagueAppearances": 6,
+   "leagueGoals": null,
+   "debutDate": "2003-10-25",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "יאיר כהן צדק"
+  },
+  {
+   "playerId": "p_3c34db1727",
+   "slug": "יגאל-אנטבי",
+   "leagueAppearances": 353,
+   "leagueGoals": 8,
+   "debutDate": "1999-08-14",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "יגאל אנטבי"
+  },
+  {
+   "playerId": "p_d8b9afcb38",
+   "slug": "יהודה-חוטה",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "2010-01-09",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "יהודה חוטה"
+  },
+  {
+   "playerId": "p_d41b1a477b",
+   "slug": "יהודה-עמר",
+   "leagueAppearances": 119,
+   "leagueGoals": 13,
+   "debutDate": "1985-09-14",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "יהודה עמר"
+  },
+  {
+   "playerId": "p_ef8495b081",
+   "slug": "יהונתן-לוי",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2017-04-29",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "יהונתן לוי"
+  },
+  {
+   "playerId": "p_a605ffbd7f",
+   "slug": "יהושע-זילברשטיין",
+   "leagueAppearances": 77,
+   "leagueGoals": 7,
+   "debutDate": "1951-10-13",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "יהושע זילברשטיין"
+  },
+  {
+   "playerId": "p_a389316c8d",
+   "slug": "יואל-שוהם",
+   "leagueAppearances": 36,
+   "leagueGoals": null,
+   "debutDate": "1963-11-23",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "יואל שוהם"
+  },
+  {
+   "playerId": "p_cd9d148325",
+   "slug": "יובל-פילוס",
+   "leagueAppearances": 51,
+   "leagueGoals": 8,
+   "debutDate": "1990-10-06",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "יובל פילוס"
+  },
+  {
+   "playerId": "p_4bf07007f9",
+   "slug": "יוחנן-סוקניק",
+   "leagueAppearances": 100,
+   "leagueGoals": 17,
+   "debutDate": "1929-01-12",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "יוחנן סוקניק"
+  },
+  {
+   "playerId": "p_a82f4f89e9",
+   "slug": "יום-טוב-טליאס",
+   "leagueAppearances": 41,
+   "leagueGoals": null,
+   "debutDate": "1986-04-26",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "יום טוב טליאס"
+  },
+  {
+   "playerId": "p_df55a90930",
+   "slug": "יונה-פוקס",
+   "leagueAppearances": 17,
+   "leagueGoals": 1,
+   "debutDate": "1953-12-05",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "יונה פוקס"
+  },
+  {
+   "playerId": "p_d49e466873",
+   "slug": "יוסי-אבוקסיס",
+   "leagueAppearances": 251,
+   "leagueGoals": 31,
+   "debutDate": "1988-10-29",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יוסי אבוקסיס"
+  },
+  {
+   "playerId": "p_9a786d53af",
+   "slug": "יוסי-ביטון",
+   "leagueAppearances": 6,
+   "leagueGoals": null,
+   "debutDate": "2006-11-06",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "יוסי ביטון"
+  },
+  {
+   "playerId": "p_4ab6990602",
+   "slug": "יוסי-בלאס",
+   "leagueAppearances": 41,
+   "leagueGoals": 1,
+   "debutDate": "1994-08-27",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "יוסי בלאס"
+  },
+  {
+   "playerId": "p_eabb2bc45d",
+   "slug": "יוסי-זאנה",
+   "leagueAppearances": 215,
+   "leagueGoals": 1,
+   "debutDate": "1986-05-10",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "יוסי זאנה"
+  },
+  {
+   "playerId": "p_f09e03e43d",
+   "slug": "יוסי-מדר",
+   "leagueAppearances": 90,
+   "leagueGoals": 27,
+   "debutDate": "1993-08-28",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יוסי מדר"
+  },
+  {
+   "playerId": "p_02b7dcce64",
+   "slug": "יוסי-קרמר",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "1985-12-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יוסי קרמר"
+  },
+  {
+   "playerId": "p_0e43957a83",
+   "slug": "יוסי-רוזן",
+   "leagueAppearances": 41,
+   "leagueGoals": 2,
+   "debutDate": "2003-09-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יוסי רוזן"
+  },
+  {
+   "playerId": "p_be26644441",
+   "slug": "יוסי-שבחון",
+   "leagueAppearances": 25,
+   "leagueGoals": 1,
+   "debutDate": "2010-08-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יוסי שבחון"
+  },
+  {
+   "playerId": "p_c50d07541e",
+   "slug": "יוסף-אובה",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2001-05-19",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יוסף אובה"
+  },
+  {
+   "playerId": "p_9be895d63b",
+   "slug": "יורגן-קולין",
+   "leagueAppearances": 39,
+   "leagueGoals": null,
+   "debutDate": "2013-08-25",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "יורגן קולין"
+  },
+  {
+   "playerId": "p_b232d1ebcf",
+   "slug": "יחזקאל-חזום",
+   "leagueAppearances": 330,
+   "leagueGoals": 97,
+   "debutDate": "1964-05-09",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "יחזקאל חזום"
+  },
+  {
+   "playerId": "p_600ec36fbc",
+   "slug": "יניב-בן-ניסן",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "2004-09-11",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "יניב בן ניסן"
+  },
+  {
+   "playerId": "p_7decd8d1ed",
+   "slug": "יניב-ירון",
+   "leagueAppearances": 37,
+   "leagueGoals": 2,
+   "debutDate": "1993-01-02",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יניב ירון"
+  },
+  {
+   "playerId": "p_f24970530f",
+   "slug": "יניב-מזרחי",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2009-04-04",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "יניב מזרחי"
+  },
+  {
+   "playerId": "p_c324982118",
+   "slug": "יעקב-אקהויז",
+   "leagueAppearances": 479,
+   "leagueGoals": 12,
+   "debutDate": "1974-10-19",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "יעקב אקהויז"
+  },
+  {
+   "playerId": "p_9ce327b19f",
+   "slug": "יעקב-בוזגלו",
+   "leagueAppearances": 27,
+   "leagueGoals": 3,
+   "debutDate": "1979-11-03",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יעקב בוזגלו"
+  },
+  {
+   "playerId": "p_59b1f192aa",
+   "slug": "יעקב-הלל",
+   "leagueAppearances": 103,
+   "leagueGoals": 1,
+   "debutDate": "1997-08-02",
+   "debutNote": null,
+   "positionRaw": "מגן / בלם / קשר",
+   "nameOnPage": "יעקב הילל"
+  },
+  {
+   "playerId": "p_30f1a8b59b",
+   "slug": "יעקב-חודורוב",
+   "leagueAppearances": 210,
+   "leagueGoals": 2,
+   "debutDate": null,
+   "debutNote": "debut year unreadable in the source",
+   "positionRaw": "שוער",
+   "nameOnPage": "יעקב חודורוב"
+  },
+  {
+   "playerId": "p_72e3940ed2",
+   "slug": "יעקב-כהן",
+   "leagueAppearances": 40,
+   "leagueGoals": null,
+   "debutDate": "1984-11-10",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יעקב כהן"
+  },
+  {
+   "playerId": "p_c4fdaa9ac3",
+   "slug": "יעקב-רודיק",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "1972-09-16",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יעקב רודיק"
+  },
+  {
+   "playerId": "p_ad4a8b0671",
+   "slug": "יעקב-רחמינוביץ",
+   "leagueAppearances": 334,
+   "leagueGoals": 30,
+   "debutDate": "1966-09-17",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "קיקו רחמינוביץ'"
+  },
+  {
+   "playerId": "p_d831dd512b",
+   "slug": "יעקב-שוורץ",
+   "leagueAppearances": 30,
+   "leagueGoals": 2,
+   "debutDate": "1994-08-27",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יעקב שוורץ"
+  },
+  {
+   "playerId": "p_cc6bb93ec0",
+   "slug": "יצחק-מנחם",
+   "leagueAppearances": 79,
+   "leagueGoals": 12,
+   "debutDate": "1956-12-29",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יצחק מנחם (איצ'ה)"
+  },
+  {
+   "playerId": "p_74471a92ea",
+   "slug": "יצחק-צציק",
+   "leagueAppearances": 97,
+   "leagueGoals": 54,
+   "debutDate": "1941-03-01",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "יצחק אייזיק צצ'יק"
+  },
+  {
+   "playerId": "p_3a36968e08",
+   "slug": "יקיר-לוסקי",
+   "leagueAppearances": 15,
+   "leagueGoals": null,
+   "debutDate": "2003-10-19",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "יקיר לוסקי"
+  },
+  {
+   "playerId": "p_b07c88f9d8",
+   "slug": "ירון-בן-דב",
+   "leagueAppearances": 31,
+   "leagueGoals": null,
+   "debutDate": "1993-08-28",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "ירון בן דב"
+  },
+  {
+   "playerId": "p_29e474dd4d",
+   "slug": "ירוסלב-באקו",
+   "leagueAppearances": 84,
+   "leagueGoals": null,
+   "debutDate": "1993-12-18",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "ירוסלאב באקו"
+  },
+  {
+   "playerId": "p_bc4846f066",
+   "slug": "ירמיהו-לוף",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "1959-03-28",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "ירמיהו לוף"
+  },
+  {
+   "playerId": "p_550e1e5dd9",
+   "slug": "ישראל-בריקר",
+   "leagueAppearances": 41,
+   "leagueGoals": null,
+   "debutDate": "1929-10-12",
+   "debutNote": null,
+   "positionRaw": "הגנה",
+   "nameOnPage": "ישראל בריקר"
+  },
+  {
+   "playerId": "p_3fd1797d69",
+   "slug": "ישראל-וייס",
+   "leagueAppearances": 69,
+   "leagueGoals": 17,
+   "debutDate": "1949-10-15",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ישראל וייס"
+  },
+  {
+   "playerId": "p_93eb3c2b8b",
+   "slug": "ישראל-זגורי",
+   "leagueAppearances": 73,
+   "leagueGoals": 9,
+   "debutDate": "2013-08-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ישראל זגורי"
+  },
+  {
+   "playerId": "p_375eedf27f",
+   "slug": "ישראל-כהן",
+   "leagueAppearances": 62,
+   "leagueGoals": 1,
+   "debutDate": "1997-10-25",
+   "debutNote": null,
+   "positionRaw": "מגן / בלם",
+   "nameOnPage": "ישראל כהן"
+  },
+  {
+   "playerId": "p_9499858769",
+   "slug": "ישראל-מאיה",
+   "leagueAppearances": 36,
+   "leagueGoals": 3,
+   "debutDate": "1989-12-16",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ישראל מאיה"
+  },
+  {
+   "playerId": "p_56a0e6382c",
+   "slug": "כפיר-אדרי",
+   "leagueAppearances": 61,
+   "leagueGoals": 11,
+   "debutDate": "2003-09-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "כפיר אדרי"
+  },
+  {
+   "playerId": "p_a6f4efca3b",
+   "slug": "כפיר-אודי",
+   "leagueAppearances": 135,
+   "leagueGoals": 17,
+   "debutDate": "1996-11-16",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "כפיר אודי"
+  },
+  {
+   "playerId": "p_d10dcaf2ff",
+   "slug": "כפיר-אייזנשטיין",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2011-05-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "כפיר אייזנשטיין"
+  },
+  {
+   "playerId": "p_c4881178a0",
+   "slug": "לוטם-זינו",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2016-01-16",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "לוטם זינו"
+  },
+  {
+   "playerId": "p_ac6faa18da",
+   "slug": "לוסיאנו-דה-ברונו",
+   "leagueAppearances": 22,
+   "leagueGoals": 2,
+   "debutDate": "2006-08-28",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "לוסיאנו דה ברונו"
+  },
+  {
+   "playerId": "p_47d5fc2bb5",
+   "slug": "לוקאס-וינטרה",
+   "leagueAppearances": 25,
+   "leagueGoals": null,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "לוקאס וינטרה"
+  },
+  {
+   "playerId": "p_ed92c8fb33",
+   "slug": "לוקאס-סאשה",
+   "leagueAppearances": 58,
+   "leagueGoals": 7,
+   "debutDate": "2013-08-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "לוקאס סאשה"
+  },
+  {
+   "playerId": "p_45cd55bc49",
+   "slug": "ליאונרדו-בוארב",
+   "leagueAppearances": 11,
+   "leagueGoals": null,
+   "debutDate": "1996-12-10",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "לאונרדו באואר"
+  },
+  {
+   "playerId": "p_5858cf2f9c",
+   "slug": "ליאור-אסולין",
+   "leagueAppearances": 10,
+   "leagueGoals": null,
+   "debutDate": "2007-08-20",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "ליאור אסולין"
+  },
+  {
+   "playerId": "p_4d1b19672f",
+   "slug": "ליאור-בקשי",
+   "leagueAppearances": 3,
+   "leagueGoals": null,
+   "debutDate": "2007-11-03",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "ליאור בקשי"
+  },
+  {
+   "playerId": "p_a312334289",
+   "slug": "ליאור-לוי",
+   "leagueAppearances": 48,
+   "leagueGoals": null,
+   "debutDate": "2013-09-21",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "ליאור לוי"
+  },
+  {
+   "playerId": "p_a2ae0e9fc9",
+   "slug": "ליביו-אנטל",
+   "leagueAppearances": 16,
+   "leagueGoals": 2,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "ליביו אנטל"
+  },
+  {
+   "playerId": "p_87301b4e02",
+   "slug": "לירון-ליכטרמן",
+   "leagueAppearances": 3,
+   "leagueGoals": null,
+   "debutDate": "1994-11-05",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "לירון ליכטרמן"
+  },
+  {
+   "playerId": "p_79868ef7ef",
+   "slug": "לירן-שטראובר",
+   "leagueAppearances": 15,
+   "leagueGoals": null,
+   "debutDate": "1992-10-03",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "לירן שטראובר"
+  },
+  {
+   "playerId": "p_c272fbc8a3",
+   "slug": "לריאה-קינגסטון",
+   "leagueAppearances": 23,
+   "leagueGoals": 2,
+   "debutDate": "2003-09-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "לריאה קינגסטון"
+  },
+  {
+   "playerId": "p_676e785deb",
+   "slug": "מאור-פרץ",
+   "leagueAppearances": 6,
+   "leagueGoals": null,
+   "debutDate": "2006-08-28",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "מאור פרץ"
+  },
+  {
+   "playerId": "p_fd182dfc02",
+   "slug": "מאיר-בן-שטרית",
+   "leagueAppearances": 44,
+   "leagueGoals": 12,
+   "debutDate": "1986-09-20",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "מיקי בן שטרית"
+  },
+  {
+   "playerId": "p_72181cf8a0",
+   "slug": "מאיר-ברנר",
+   "leagueAppearances": 97,
+   "leagueGoals": 7,
+   "debutDate": "1966-05-28",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "מאיר ברנר"
+  },
+  {
+   "playerId": "p_78adb477be",
+   "slug": "מאיר-מליקה-חלוץ",
+   "leagueAppearances": 12,
+   "leagueGoals": 2,
+   "debutDate": "1994-11-19",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "מאיר מליקה"
+  },
+  {
+   "playerId": "p_6827ecc242",
+   "slug": "מאיר-נחמיאס",
+   "leagueAppearances": 105,
+   "leagueGoals": 3,
+   "debutDate": "1980-11-22",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מאיר נחמיאס"
+  },
+  {
+   "playerId": "p_b10f839818",
+   "slug": "מהראן-לאלה",
+   "leagueAppearances": 95,
+   "leagueGoals": 15,
+   "debutDate": "2008-09-01",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "מהראן לאלא"
+  },
+  {
+   "playerId": "p_b27141ca2d",
+   "slug": "מוחמד-אבו-אל-היגא",
+   "leagueAppearances": 18,
+   "leagueGoals": null,
+   "debutDate": "2014-09-27",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "מוחמד אבו אל היג'ה"
+  },
+  {
+   "playerId": "p_92eaa76de2",
+   "slug": "מוטי-אוחיון",
+   "leagueAppearances": 39,
+   "leagueGoals": 1,
+   "debutDate": "1998-08-21",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "מוטי אוחיון"
+  },
+  {
+   "playerId": "p_d73bf6d73e",
+   "slug": "מוטי-ברשצקי",
+   "leagueAppearances": 11,
+   "leagueGoals": 2,
+   "debutDate": "2017-02-12",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מוטי ברשצקי"
+  },
+  {
+   "playerId": "p_fd7772ba65",
+   "slug": "מוטי-פליטר",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "1995-12-30",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "מוטי פליטר"
+  },
+  {
+   "playerId": "p_5b424cbd82",
+   "slug": "מור-שושן",
+   "leagueAppearances": 25,
+   "leagueGoals": null,
+   "debutDate": "2011-12-18",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "מור שושן"
+  },
+  {
+   "playerId": "p_75ef40e9c5",
+   "slug": "מוריס-זאנו",
+   "leagueAppearances": 279,
+   "leagueGoals": 54,
+   "debutDate": "1981-09-19",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מוריס ז'אנו"
+  },
+  {
+   "playerId": "p_de8f21975e",
+   "slug": "מזואה-אנסומבו",
+   "leagueAppearances": 28,
+   "leagueGoals": null,
+   "debutDate": "2007-08-20",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מזואה אנסומבו"
+  },
+  {
+   "playerId": "p_df6dbfe5c5",
+   "slug": "מחמוד-עבאס",
+   "leagueAppearances": 20,
+   "leagueGoals": null,
+   "debutDate": "2011-09-18",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מחמוד עבאס"
+  },
+  {
+   "playerId": "p_667fcabc5d",
+   "slug": "מיחאי-פינטילי",
+   "leagueAppearances": 14,
+   "leagueGoals": null,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מיחאי פינטילי"
+  },
+  {
+   "playerId": "p_f87f9db8da",
+   "slug": "מייקל-סיטון",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2017-01-29",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "מייקל סיטון"
+  },
+  {
+   "playerId": "p_b6c6274a18",
+   "slug": "מיכאל-זנדברג",
+   "leagueAppearances": 14,
+   "leagueGoals": 1,
+   "debutDate": "2009-08-24",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מיכאל זנדברג"
+  },
+  {
+   "playerId": "p_8ef6b8aaed",
+   "slug": "מיכאל-כהן",
+   "leagueAppearances": 45,
+   "leagueGoals": null,
+   "debutDate": "1957-12-14",
+   "debutNote": null,
+   "positionRaw": "מגן / בלם",
+   "nameOnPage": "מיכאל כהן"
+  },
+  {
+   "playerId": "p_a7e9317daf",
+   "slug": "מיכאל-לפרדון",
+   "leagueAppearances": 77,
+   "leagueGoals": 3,
+   "debutDate": "1973-12-01",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "מיכאל לפרדון (מישקה)"
+  },
+  {
+   "playerId": "p_4cba6b9c40",
+   "slug": "מיכאל-מיכאלוב",
+   "leagueAppearances": 56,
+   "leagueGoals": 34,
+   "debutDate": "1955-02-26",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "מיכאל מיכאלוב"
+  },
+  {
+   "playerId": "p_eb6083c0af",
+   "slug": "מילאן-אוסטרץ",
+   "leagueAppearances": 53,
+   "leagueGoals": 10,
+   "debutDate": "2000-08-12",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "מילאן אוסטרץ'"
+  },
+  {
+   "playerId": "p_92f0c7dbdc",
+   "slug": "מיקי-דהאן",
+   "leagueAppearances": 20,
+   "leagueGoals": null,
+   "debutDate": "1993-02-06",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "מיקי דהאן"
+  },
+  {
+   "playerId": "p_ab21047b1e",
+   "slug": "מירקו-אורמוש",
+   "leagueAppearances": 21,
+   "leagueGoals": 2,
+   "debutDate": "2011-09-11",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מירקו אורמוש"
+  },
+  {
+   "playerId": "p_fdf0162568",
+   "slug": "מנחם-מור",
+   "leagueAppearances": 50,
+   "leagueGoals": 1,
+   "debutDate": "1975-10-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מנחם מור"
+  },
+  {
+   "playerId": "p_f04c393b45",
+   "slug": "מנחם-רוזנשטרייך",
+   "leagueAppearances": 63,
+   "leagueGoals": 2,
+   "debutDate": "1964-10-10",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "מנחם רוזנשטרייך"
+  },
+  {
+   "playerId": "p_57574a63ef",
+   "slug": "מסאיי-דגו",
+   "leagueAppearances": 8,
+   "leagueGoals": null,
+   "debutDate": "2004-04-30",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מסאיי דגו"
+  },
+  {
+   "playerId": "p_42019f6512",
+   "slug": "מרדכי-מאיר",
+   "leagueAppearances": 61,
+   "leagueGoals": 24,
+   "debutDate": "1929-10-12",
+   "debutNote": null,
+   "positionRaw": "התקפה",
+   "nameOnPage": "מרדכי מאיר"
+  },
+  {
+   "playerId": "p_efd0fed260",
+   "slug": "מריו-מסטרוביץ",
+   "leagueAppearances": 21,
+   "leagueGoals": 1,
+   "debutDate": "1997-09-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "מריו מסטרוביץ'"
+  },
+  {
+   "playerId": "p_5023309c8f",
+   "slug": "מריו-פצאלקה",
+   "leagueAppearances": 19,
+   "leagueGoals": 1,
+   "debutDate": "2011-02-14",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "מריו פצ'אלקה"
+  },
+  {
+   "playerId": "p_dfc51cdd9b",
+   "slug": "מריוס-ניביידומסקי",
+   "leagueAppearances": 4,
+   "leagueGoals": null,
+   "debutDate": "1990-12-08",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "מריוס נייביאדומסקי"
+  },
+  {
+   "playerId": "p_44d2364f80",
+   "slug": "מרקו-סימיץ",
+   "leagueAppearances": 6,
+   "leagueGoals": null,
+   "debutDate": "2016-08-22",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "מרקו סימיץ'"
+  },
+  {
+   "playerId": "p_84096bfe16",
+   "slug": "מרקו-שולר",
+   "leagueAppearances": 15,
+   "leagueGoals": null,
+   "debutDate": "2012-01-21",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "מרקו שולר"
+  },
+  {
+   "playerId": "p_6173d474e2",
+   "slug": "משה-אוחיון",
+   "leagueAppearances": 29,
+   "leagueGoals": 2,
+   "debutDate": "2014-10-18",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "משה אוחיון"
+  },
+  {
+   "playerId": "p_0694db8ed4",
+   "slug": "משה-אייזנברג",
+   "leagueAppearances": 21,
+   "leagueGoals": 1,
+   "debutDate": "1991-09-14",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "משה אייזנברג"
+  },
+  {
+   "playerId": "p_d2cf8ead07",
+   "slug": "משה-מוסטרל",
+   "leagueAppearances": 105,
+   "leagueGoals": 8,
+   "debutDate": "1984-05-12",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "משה מוסטרל"
+  },
+  {
+   "playerId": "p_491c4a7088",
+   "slug": "משה-מורדכוביץ",
+   "leagueAppearances": 193,
+   "leagueGoals": 20,
+   "debutDate": "1976-05-15",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "משה מורדוכוביץ' (גוגו)"
+  },
+  {
+   "playerId": "p_d911596da4",
+   "slug": "משה-מלמד",
+   "leagueAppearances": 149,
+   "leagueGoals": 10,
+   "debutDate": "1938-05-14",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "משה מלמד"
+  },
+  {
+   "playerId": "p_c57645355d",
+   "slug": "משה-מרקוביץ",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "1977-12-10",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "משה מרקוביץ'"
+  },
+  {
+   "playerId": "p_d5b6d6ee0a",
+   "slug": "משה-סיני",
+   "leagueAppearances": 317,
+   "leagueGoals": 87,
+   "debutDate": "1980-01-12",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "משה סיני"
+  },
+  {
+   "playerId": "p_4ddc70552e",
+   "slug": "משה-סקל",
+   "leagueAppearances": 45,
+   "leagueGoals": 7,
+   "debutDate": "1958-11-22",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "משה סקל"
+  },
+  {
+   "playerId": "p_a403651950",
+   "slug": "משה-פוליאקוב",
+   "leagueAppearances": 42,
+   "leagueGoals": 5,
+   "debutDate": "1929-01-12",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "משה פוליאקוב"
+  },
+  {
+   "playerId": "p_ec8052f6ab",
+   "slug": "משה-פיזנטי",
+   "leagueAppearances": 26,
+   "leagueGoals": 1,
+   "debutDate": "1982-10-23",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "משה פיזנטי"
+  },
+  {
+   "playerId": "p_abff31f026",
+   "slug": "משה-פיימן",
+   "leagueAppearances": 39,
+   "leagueGoals": 2,
+   "debutDate": "1956-12-01",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "משה פיימן"
+  },
+  {
+   "playerId": "p_e50849c7c4",
+   "slug": "משה-רסקין",
+   "leagueAppearances": 12,
+   "leagueGoals": 2,
+   "debutDate": "1949-06-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "משה רסקין"
+  },
+  {
+   "playerId": "p_7806e6f4ec",
+   "slug": "מתן-אוחיון",
+   "leagueAppearances": 14,
+   "leagueGoals": 1,
+   "debutDate": "2015-01-24",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "מתן אוחיון"
+  },
+  {
+   "playerId": "p_9cd489e1b9",
+   "slug": "מתן-אריאל-לזמי",
+   "leagueAppearances": 11,
+   "leagueGoals": 1,
+   "debutDate": "2014-10-27",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "אריאל לזמי"
+  },
+  {
+   "playerId": "p_50c4f2bc0d",
+   "slug": "נוסא-איגייבור",
+   "leagueAppearances": 27,
+   "leagueGoals": 3,
+   "debutDate": "2011-08-22",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "נוסא איגייבור"
+  },
+  {
+   "playerId": "p_4edb67e49d",
+   "slug": "נחמן-קסטרו",
+   "leagueAppearances": 160,
+   "leagueGoals": 1,
+   "debutDate": "1967-09-20",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "נחמן קסטרו"
+  },
+  {
+   "playerId": "p_8b208fc966",
+   "slug": "ניל-אברבנל",
+   "leagueAppearances": 10,
+   "leagueGoals": null,
+   "debutDate": "2007-05-05",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "ניל אברבנל"
+  },
+  {
+   "playerId": "p_54af9e800a",
+   "slug": "ניסים-אביטן",
+   "leagueAppearances": 53,
+   "leagueGoals": 18,
+   "debutDate": "1995-08-26",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "ניסים אביטן (ניסו)"
+  },
+  {
+   "playerId": "p_ef24d0310e",
+   "slug": "ניקולאס-גורובסוב",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "2016-08-22",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ניקולאס גורובסוב"
+  },
+  {
+   "playerId": "p_9fada5719b",
+   "slug": "ניקולה-פטקוביץ",
+   "leagueAppearances": 8,
+   "leagueGoals": null,
+   "debutDate": "2012-11-04",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "ניקולה פטקוביץ'"
+  },
+  {
+   "playerId": "p_76a80e539c",
+   "slug": "ניר-לקס",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2012-03-24",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ניר לקס"
+  },
+  {
+   "playerId": "p_68bfa0d410",
+   "slug": "ניר-נחום",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2013-01-12",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ניר נחום"
+  },
+  {
+   "playerId": "p_92e5eca2c1",
+   "slug": "ניר-רחמין",
+   "leagueAppearances": 15,
+   "leagueGoals": null,
+   "debutDate": "1999-10-16",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "ניר רחמין"
+  },
+  {
+   "playerId": "p_44c339b22d",
+   "slug": "נלסון-מנסה",
+   "leagueAppearances": 13,
+   "leagueGoals": 1,
+   "debutDate": "1993-08-28",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "נלסון מנסה"
+  },
+  {
+   "playerId": "p_71c1c818bd",
+   "slug": "נמניה-ווציצביץ",
+   "leagueAppearances": 9,
+   "leagueGoals": 3,
+   "debutDate": "2009-09-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "נמניה ווצ'יצ'ביץ'"
+  },
+  {
+   "playerId": "p_04fe540318",
+   "slug": "נמניה-ניקוליץ",
+   "leagueAppearances": 17,
+   "leagueGoals": 2,
+   "debutDate": "2016-02-07",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "נמניה ניקוליץ'"
+  },
+  {
+   "playerId": "p_54d8d9fd90",
+   "slug": "נמרוד-דרייפוס",
+   "leagueAppearances": 151,
+   "leagueGoals": 10,
+   "debutDate": "1973-11-24",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "נמרוד דרייפוס"
+  },
+  {
+   "playerId": "p_3761a4caa2",
+   "slug": "נסים-חלפון",
+   "leagueAppearances": 38,
+   "leagueGoals": 1,
+   "debutDate": "1984-10-27",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "ניסים חלפון"
+  },
+  {
+   "playerId": "p_82db47f9fa",
+   "slug": "נפתלי-שוואלב",
+   "leagueAppearances": 2,
+   "leagueGoals": 1,
+   "debutDate": "1949-06-04",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "נפתלי שוואלב"
+  },
+  {
+   "playerId": "p_c4798ab261",
+   "slug": "סאבו-פאביצביץ",
+   "leagueAppearances": 12,
+   "leagueGoals": null,
+   "debutDate": "2013-01-12",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "סאבו פאביצ'ביץ'"
+  },
+  {
+   "playerId": "p_7d6b6d439f",
+   "slug": "סארי-פלאח",
+   "leagueAppearances": 26,
+   "leagueGoals": 1,
+   "debutDate": "2014-09-27",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "סארי פאלח"
+  },
+  {
+   "playerId": "p_aafc47b09f",
+   "slug": "סבסטיאן-סימרוטיץ",
+   "leagueAppearances": 69,
+   "leagueGoals": 18,
+   "debutDate": "1998-01-24",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "סבסטיאן סימרוטיץ'"
+  },
+  {
+   "playerId": "p_a76bdf2f05",
+   "slug": "סיראז-נסאר",
+   "leagueAppearances": 13,
+   "leagueGoals": 2,
+   "debutDate": "2015-10-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "סיראז' נאסר"
+  },
+  {
+   "playerId": "p_2cc60c0e20",
+   "slug": "סלים-טועמה",
+   "leagueAppearances": 286,
+   "leagueGoals": 44,
+   "debutDate": "1998-08-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "סלים טועמה"
+  },
+  {
+   "playerId": "p_393f104107",
+   "slug": "סמואל-יבואה",
+   "leagueAppearances": 41,
+   "leagueGoals": 15,
+   "debutDate": "2008-09-01",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "סמואל יבואה"
+  },
+  {
+   "playerId": "p_7bca9ff65c",
+   "slug": "סער-בנבנישתי",
+   "leagueAppearances": 10,
+   "leagueGoals": null,
+   "debutDate": "2017-01-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "סער בנבנישתי"
+  },
+  {
+   "playerId": "p_35384581c0",
+   "slug": "סרגיי-פוגודין",
+   "leagueAppearances": 37,
+   "leagueGoals": 5,
+   "debutDate": "1996-01-27",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "סרגיי פוגודין"
+  },
+  {
+   "playerId": "p_6f1fd9dc54",
+   "slug": "סרגיי-קלשנקו",
+   "leagueAppearances": 62,
+   "leagueGoals": 21,
+   "debutDate": "2001-09-08",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "סרגיי קלשצ'נקו"
+  },
+  {
+   "playerId": "p_bee3f5aae1",
+   "slug": "עדי-סבג",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2007-08-20",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "עדי סבג"
+  },
+  {
+   "playerId": "p_337bf515cf",
+   "slug": "עדן-בן-בסט",
+   "leagueAppearances": 9,
+   "leagueGoals": 1,
+   "debutDate": "2009-01-31",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "עדן בן בסט"
+  },
+  {
+   "playerId": "p_b58800342d",
+   "slug": "עדן-הרשקוביץ",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2016-12-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "עדן הרשקוביץ'"
+  },
+  {
+   "playerId": "p_e8190181b0",
+   "slug": "עדן-שרם",
+   "leagueAppearances": 17,
+   "leagueGoals": 2,
+   "debutDate": "2012-08-26",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "עדן שרם"
+  },
+  {
+   "playerId": "p_785510a74c",
+   "slug": "עוביידה-חטאב",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2014-12-03",
+   "debutNote": null,
+   "positionRaw": "בלם / מגן",
+   "nameOnPage": "חטאב עוביידה"
+  },
+  {
+   "playerId": "p_22f2ce2f73",
+   "slug": "עומר-דמארי",
+   "leagueAppearances": 101,
+   "leagueGoals": 56,
+   "debutDate": "2011-08-22",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "עומר דמארי"
+  },
+  {
+   "playerId": "p_6cfdc33356",
+   "slug": "עומר-פדידה",
+   "leagueAppearances": 14,
+   "leagueGoals": 1,
+   "debutDate": "2013-10-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "עומר פדידה"
+  },
+  {
+   "playerId": "p_f936d54d5d",
+   "slug": "עומר-פרץ-חלוץ",
+   "leagueAppearances": 25,
+   "leagueGoals": 3,
+   "debutDate": "2005-09-18",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "עומר פרץ"
+  },
+  {
+   "playerId": "p_5375c40146",
+   "slug": "עומרי-אלטמן",
+   "leagueAppearances": 54,
+   "leagueGoals": 8,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "עומרי אלטמן"
+  },
+  {
+   "playerId": "p_b09152b9d6",
+   "slug": "עומרי-אפק",
+   "leagueAppearances": 93,
+   "leagueGoals": 14,
+   "debutDate": "1999-11-06",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "עומרי אפק"
+  },
+  {
+   "playerId": "p_6d9974711f",
+   "slug": "עומרי-קנדה",
+   "leagueAppearances": 108,
+   "leagueGoals": null,
+   "debutDate": "2008-02-02",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "עומרי קנדה"
+  },
+  {
+   "playerId": "p_a1249ca06d",
+   "slug": "עומרי-שקל",
+   "leagueAppearances": 3,
+   "leagueGoals": null,
+   "debutDate": "2015-08-29",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "עומרי שקל"
+  },
+  {
+   "playerId": "p_8bf30b10a2",
+   "slug": "עופר-ורטה",
+   "leagueAppearances": 49,
+   "leagueGoals": 1,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "עופר ורטה"
+  },
+  {
+   "playerId": "p_81f5a2aba5",
+   "slug": "עופר-שטרית",
+   "leagueAppearances": 29,
+   "leagueGoals": 17,
+   "debutDate": "1997-08-02",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "עופר שטרית"
+  },
+  {
+   "playerId": "p_3cb87d334a",
+   "slug": "עידן-טל",
+   "leagueAppearances": 14,
+   "leagueGoals": 2,
+   "debutDate": "1999-01-29",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "עידן טל"
+  },
+  {
+   "playerId": "p_3362416fff",
+   "slug": "עידן-סרור",
+   "leagueAppearances": 26,
+   "leagueGoals": null,
+   "debutDate": "2004-10-02",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "עידן סרור"
+  },
+  {
+   "playerId": "p_fe84441949",
+   "slug": "עמאר-מנצור",
+   "leagueAppearances": 17,
+   "leagueGoals": null,
+   "debutDate": "2004-10-23",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "עמאר מנצור"
+  },
+  {
+   "playerId": "p_67db828630",
+   "slug": "עמי-אדמוני",
+   "leagueAppearances": 129,
+   "leagueGoals": 5,
+   "debutDate": "1968-11-30",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "עמי אדמוני"
+  },
+  {
+   "playerId": "p_fb02e74b38",
+   "slug": "עמית-ביטון",
+   "leagueAppearances": 13,
+   "leagueGoals": null,
+   "debutDate": "2017-01-21",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "עמית ביטון"
+  },
+  {
+   "playerId": "p_89f9def6ee",
+   "slug": "עמנואל-איילה",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2004-12-06",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "עמנואל איילה"
+  },
+  {
+   "playerId": "p_c37eaf41cd",
+   "slug": "ערן-זהבי",
+   "leagueAppearances": 94,
+   "leagueGoals": 27,
+   "debutDate": "2008-09-01",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ערן זהבי"
+  },
+  {
+   "playerId": "p_e28931ccae",
+   "slug": "פאביו-גוניור-פריירה",
+   "leagueAppearances": 32,
+   "leagueGoals": 7,
+   "debutDate": "2007-08-20",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "פאביו ג'וניור"
+  },
+  {
+   "playerId": "p_59966b59ed",
+   "slug": "פאביו-רוסה",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "2004-08-22",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "פאביו רוסה"
+  },
+  {
+   "playerId": "p_cde776a906",
+   "slug": "פבריציו-קארבליו",
+   "leagueAppearances": 28,
+   "leagueGoals": 5,
+   "debutDate": "2003-09-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "פבריציו קראבליו"
+  },
+  {
+   "playerId": "p_804008bd39",
+   "slug": "פטר-אורלנדיץ",
+   "leagueAppearances": 6,
+   "leagueGoals": 1,
+   "debutDate": "2014-02-10",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "פטר אורלנדיץ'"
+  },
+  {
+   "playerId": "p_57827d0929",
+   "slug": "פיטר-קרמנס",
+   "leagueAppearances": 30,
+   "leagueGoals": null,
+   "debutDate": "1991-09-14",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "פיטר קרמאנס"
+  },
+  {
+   "playerId": "p_ef0852b3bb",
+   "slug": "פיליפ-מנה",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "2014-09-13",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "פיליפ מאנה"
+  },
+  {
+   "playerId": "p_f76834937e",
+   "slug": "פיני-בלילי",
+   "leagueAppearances": 130,
+   "leagueGoals": 34,
+   "debutDate": "1997-08-02",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "פיני בלילי"
+  },
+  {
+   "playerId": "p_62010e374d",
+   "slug": "פליקס-אובוקה",
+   "leagueAppearances": 11,
+   "leagueGoals": 1,
+   "debutDate": "2006-01-15",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "פליקס אובוקה"
+  },
+  {
+   "playerId": "p_96d00d5348",
+   "slug": "פליקס-חלפון",
+   "leagueAppearances": 170,
+   "leagueGoals": 5,
+   "debutDate": "1988-11-18",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "פליקס חלפון"
+  },
+  {
+   "playerId": "p_ae7a31aab2",
+   "slug": "פנחס-יהודיוף",
+   "leagueAppearances": 97,
+   "leagueGoals": 30,
+   "debutDate": "1952-10-11",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "פנחס יהודיוף"
+  },
+  {
+   "playerId": "p_e23d4d32d3",
+   "slug": "צבי-ארליך",
+   "leagueAppearances": 95,
+   "leagueGoals": 48,
+   "debutDate": "1939-03-18",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "צבי דוקטור ארליך"
+  },
+  {
+   "playerId": "p_d2278dcde8",
+   "slug": "צחי-זנטי",
+   "leagueAppearances": 27,
+   "leagueGoals": 1,
+   "debutDate": "1993-10-16",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "צחי זנטי"
+  },
+  {
+   "playerId": "p_5cc8a71ec0",
+   "slug": "ציקי-קוטלר",
+   "leagueAppearances": 6,
+   "leagueGoals": null,
+   "debutDate": "2000-11-11",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ציקי קוטלר"
+  },
+  {
+   "playerId": "p_05416445d6",
+   "slug": "צליל-חתוכה",
+   "leagueAppearances": 17,
+   "leagueGoals": null,
+   "debutDate": "2015-08-29",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "צליל חתוכה"
+  },
+  {
+   "playerId": "p_3a70c47482",
+   "slug": "קאווה",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "2016-02-07",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "קאווה ססיליו דה סילבה"
+  },
+  {
+   "playerId": "p_69e9291fab",
+   "slug": "קובי-הדדי",
+   "leagueAppearances": 43,
+   "leagueGoals": 2,
+   "debutDate": "1995-08-26",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "קובי הדדי"
+  },
+  {
+   "playerId": "p_b9e059450d",
+   "slug": "קובי-זיתוני",
+   "leagueAppearances": 79,
+   "leagueGoals": 3,
+   "debutDate": "1978-09-30",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "יעקב זיתוני"
+  },
+  {
+   "playerId": "p_1033757525",
+   "slug": "קובי-סגל",
+   "leagueAppearances": 83,
+   "leagueGoals": 1,
+   "debutDate": "1987-09-05",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "יעקב סגל"
+  },
+  {
+   "playerId": "p_77fb9ae6d9",
+   "slug": "קובי-שאלו",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "1996-12-21",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "קובי שאלו"
+  },
+  {
+   "playerId": "p_e61afd4200",
+   "slug": "קונסטנטין-מרקו",
+   "leagueAppearances": 21,
+   "leagueGoals": 7,
+   "debutDate": "1993-12-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "קונסטנטין מרקו"
+  },
+  {
+   "playerId": "p_0323d43e35",
+   "slug": "קוסטל-לזר",
+   "leagueAppearances": 25,
+   "leagueGoals": 8,
+   "debutDate": "1992-10-17",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "קוסטל לזר"
+  },
+  {
+   "playerId": "p_59c77d01b5",
+   "slug": "קזימיש-מוסקאל",
+   "leagueAppearances": 90,
+   "leagueGoals": 14,
+   "debutDate": "1994-08-27",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "קאז'ימיש מוסקאל"
+  },
+  {
+   "playerId": "p_2f99ba205b",
+   "slug": "קלאודיו-בומבה",
+   "leagueAppearances": 31,
+   "leagueGoals": 3,
+   "debutDate": "2015-08-24",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "קלאודיו בומבה"
+  },
+  {
+   "playerId": "p_64938b42c8",
+   "slug": "קלמי-סבן",
+   "leagueAppearances": 42,
+   "leagueGoals": 2,
+   "debutDate": "2001-08-26",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "קלמי סבן"
+  },
+  {
+   "playerId": "p_9e410654e2",
+   "slug": "קרזימיר-קואב",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "1990-10-06",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "קרזימיר קואב"
+  },
+  {
+   "playerId": "p_4849c1a598",
+   "slug": "ראובן-אללוף",
+   "leagueAppearances": 98,
+   "leagueGoals": 42,
+   "debutDate": null,
+   "debutNote": "debut year unreadable in the source",
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "ראובן אללוף"
+  },
+  {
+   "playerId": "p_20d52b9cb6",
+   "slug": "ראובן-עובד",
+   "leagueAppearances": 25,
+   "leagueGoals": 1,
+   "debutDate": "2007-08-20",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "ראובן עובד"
+  },
+  {
+   "playerId": "p_2b1b471e31",
+   "slug": "רואי-חדד",
+   "leagueAppearances": 65,
+   "leagueGoals": 2,
+   "debutDate": "1992-08-29",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "רואי חדד"
+  },
+  {
+   "playerId": "p_2827c6b1f8",
+   "slug": "רוברט-טזצקי",
+   "leagueAppearances": 11,
+   "leagueGoals": null,
+   "debutDate": "1998-08-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רוברט טזצקי"
+  },
+  {
+   "playerId": "p_b809bb0aca",
+   "slug": "רומאן-רוקי",
+   "leagueAppearances": 3,
+   "leagueGoals": null,
+   "debutDate": "2010-08-28",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רומאן רוקי"
+  },
+  {
+   "playerId": "p_d7006dfdc2",
+   "slug": "רומן-וסילוק",
+   "leagueAppearances": 9,
+   "leagueGoals": 1,
+   "debutDate": "2005-01-24",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "רומן וסיליוק"
+  },
+  {
+   "playerId": "p_43e1b795ff",
+   "slug": "רון-נחמן",
+   "leagueAppearances": 14,
+   "leagueGoals": 2,
+   "debutDate": "1998-08-29",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "רון נחמן"
+  },
+  {
+   "playerId": "p_cb4ad0bc1d",
+   "slug": "רונן-גבאי",
+   "leagueAppearances": 5,
+   "leagueGoals": null,
+   "debutDate": "1995-08-26",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רונן גבאי"
+  },
+  {
+   "playerId": "p_bf8edf725c",
+   "slug": "רונן-הילל",
+   "leagueAppearances": 10,
+   "leagueGoals": 1,
+   "debutDate": "1990-10-06",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "רונן הילל"
+  },
+  {
+   "playerId": "p_3508fedb99",
+   "slug": "רונן-חרזי",
+   "leagueAppearances": 28,
+   "leagueGoals": 17,
+   "debutDate": "1999-08-14",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "רונן חרזי"
+  },
+  {
+   "playerId": "p_33d60339ef",
+   "slug": "רונן-פייגנבוים",
+   "leagueAppearances": 3,
+   "leagueGoals": null,
+   "debutDate": "1993-01-02",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "רונן פייגנבוים"
+  },
+  {
+   "playerId": "p_9c70058156",
+   "slug": "רועי-גורדנה",
+   "leagueAppearances": 71,
+   "leagueGoals": 4,
+   "debutDate": "2009-05-30",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רועי גורדנה"
+  },
+  {
+   "playerId": "p_486d135fa4",
+   "slug": "רועי-דיין",
+   "leagueAppearances": 12,
+   "leagueGoals": null,
+   "debutDate": "2007-10-08",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "רועי דיין"
+  },
+  {
+   "playerId": "p_6140211903",
+   "slug": "רועי-דיין-יליד-1997",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2016-12-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רועי דיין"
+  },
+  {
+   "playerId": "p_f3d90770ef",
+   "slug": "רז-שלמה",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2016-12-25",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "רז שלמה"
+  },
+  {
+   "playerId": "p_59761a18d3",
+   "slug": "רחביה-רוזנבוים",
+   "leagueAppearances": 241,
+   "leagueGoals": 84,
+   "debutDate": "1951-10-13",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "רחביה רוזנבוים"
+  },
+  {
+   "playerId": "p_9ee57e128a",
+   "slug": "ריפעת-טורק",
+   "leagueAppearances": 238,
+   "leagueGoals": 40,
+   "debutDate": "1974-10-12",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רפעת טורק"
+  },
+  {
+   "playerId": "p_c4df01b0fe",
+   "slug": "רם-שטראוס",
+   "leagueAppearances": 1,
+   "leagueGoals": null,
+   "debutDate": "2015-10-17",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "רם שטראוס"
+  },
+  {
+   "playerId": "p_ef5486a68a",
+   "slug": "רמזי-ספורי",
+   "leagueAppearances": 66,
+   "leagueGoals": 8,
+   "debutDate": "2013-02-02",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "רמזי ספורי"
+  },
+  {
+   "playerId": "p_3c4381034b",
+   "slug": "רמי-אבו-לאבן",
+   "leagueAppearances": 18,
+   "leagueGoals": 1,
+   "debutDate": "2003-11-02",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רמי אבו לאבן"
+  },
+  {
+   "playerId": "p_8cca01eddc",
+   "slug": "רמי-ארמה",
+   "leagueAppearances": 152,
+   "leagueGoals": null,
+   "debutDate": "1987-09-19",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רמי ארמה"
+  },
+  {
+   "playerId": "p_04c3d1edb1",
+   "slug": "רמי-דואני",
+   "leagueAppearances": 35,
+   "leagueGoals": 1,
+   "debutDate": "2006-12-30",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "רמי דואני"
+  },
+  {
+   "playerId": "p_9388f9c2ce",
+   "slug": "רמי-חליס",
+   "leagueAppearances": 78,
+   "leagueGoals": 2,
+   "debutDate": "2002-09-14",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "רמי חליס"
+  },
+  {
+   "playerId": "p_b3c0e3564d",
+   "slug": "רן-יצחק",
+   "leagueAppearances": 6,
+   "leagueGoals": 1,
+   "debutDate": "2013-08-31",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "רן יצחק"
+  },
+  {
+   "playerId": "p_d33d2b7eec",
+   "slug": "רפי-שמואל",
+   "leagueAppearances": 135,
+   "leagueGoals": 15,
+   "debutDate": "1982-10-16",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "רפי שמואל"
+  },
+  {
+   "playerId": "p_2cd9d3a0a5",
+   "slug": "שבי-בן-ברוך",
+   "leagueAppearances": 148,
+   "leagueGoals": 13,
+   "debutDate": "1962-12-08",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שאר ישוב בן ברוך (שבי)"
+  },
+  {
+   "playerId": "p_9a7b6e96a1",
+   "slug": "שביט-אלימלך",
+   "leagueAppearances": 344,
+   "leagueGoals": null,
+   "debutDate": "1996-08-24",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "שביט אלימלך"
+  },
+  {
+   "playerId": "p_6dbf159c8d",
+   "slug": "שבתאי-יחבס",
+   "leagueAppearances": 125,
+   "leagueGoals": 3,
+   "debutDate": "1977-11-19",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שבתאי יחבס"
+  },
+  {
+   "playerId": "p_1108a4ea15",
+   "slug": "שבתאי-לוי",
+   "leagueAppearances": 247,
+   "leagueGoals": 59,
+   "debutDate": "1978-03-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שבתאי לוי"
+  },
+  {
+   "playerId": "p_65bbab8fb7",
+   "slug": "שגיב-אליהו",
+   "leagueAppearances": 109,
+   "leagueGoals": 29,
+   "debutDate": "1992-08-29",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "שגיב אליהו"
+  },
+  {
+   "playerId": "p_02f7576b2d",
+   "slug": "שגיב-יחזקאל",
+   "leagueAppearances": 39,
+   "leagueGoals": 6,
+   "debutDate": "2014-05-10",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "שגיב יחזקאל"
+  },
+  {
+   "playerId": "p_c410368a8a",
+   "slug": "שובל-גוזלן",
+   "leagueAppearances": 16,
+   "leagueGoals": 3,
+   "debutDate": "2014-09-13",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "שובל גוזלן"
+  },
+  {
+   "playerId": "p_4f05bf7162",
+   "slug": "שולי-גילארדי",
+   "leagueAppearances": 28,
+   "leagueGoals": null,
+   "debutDate": "1990-10-06",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "שולי גילארדי"
+  },
+  {
+   "playerId": "p_4d28a411c1",
+   "slug": "שון-גולדברג",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2015-02-14",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "שון גולדברג"
+  },
+  {
+   "playerId": "p_9d383f8236",
+   "slug": "שון-מלכה",
+   "leagueAppearances": 23,
+   "leagueGoals": null,
+   "debutDate": "2013-09-21",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שון מלכה"
+  },
+  {
+   "playerId": "p_77a438a6c5",
+   "slug": "שוקה-ברשדסקי",
+   "leagueAppearances": 11,
+   "leagueGoals": 8,
+   "debutDate": "1935-12-07",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "שוקה ברשדסקי"
+  },
+  {
+   "playerId": "p_582a5ea57b",
+   "slug": "שחר-הירש",
+   "leagueAppearances": 14,
+   "leagueGoals": 2,
+   "debutDate": "2017-01-16",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "שחר הירש"
+  },
+  {
+   "playerId": "p_1d311413e7",
+   "slug": "שחר-כהן",
+   "leagueAppearances": 44,
+   "leagueGoals": 2,
+   "debutDate": "1995-03-11",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שחר כהן"
+  },
+  {
+   "playerId": "p_3efab145df",
+   "slug": "שי-אבוטבול",
+   "leagueAppearances": 292,
+   "leagueGoals": 22,
+   "debutDate": "2002-10-06",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שי אבוטבול"
+  },
+  {
+   "playerId": "p_d95ec75524",
+   "slug": "שי-אליאס",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2016-12-25",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שי אליאס"
+  },
+  {
+   "playerId": "p_7a5c4255b1",
+   "slug": "שי-רביבו",
+   "leagueAppearances": 2,
+   "leagueGoals": null,
+   "debutDate": "2011-04-04",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שי רביבו"
+  },
+  {
+   "playerId": "p_8b7e2d4cee",
+   "slug": "שייע-פייגנבוים",
+   "leagueAppearances": 371,
+   "leagueGoals": 132,
+   "debutDate": "1965-11-13",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "יהושע פייגנבוים"
+  },
+  {
+   "playerId": "p_9a92af7371",
+   "slug": "שלום-אביטן",
+   "leagueAppearances": 8,
+   "leagueGoals": 1,
+   "debutDate": "1985-09-14",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "שלום אביטן"
+  },
+  {
+   "playerId": "p_b5d64bece3",
+   "slug": "שלום-תקוה",
+   "leagueAppearances": 89,
+   "leagueGoals": 14,
+   "debutDate": "1996-02-03",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שלום תקוה"
+  },
+  {
+   "playerId": "p_6af109a4a2",
+   "slug": "שלומי-אזולאי-חלוץ",
+   "leagueAppearances": 27,
+   "leagueGoals": 5,
+   "debutDate": "2014-09-13",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "שלומי אזולאי"
+  },
+  {
+   "playerId": "p_0503993392",
+   "slug": "שלומי-ארבייטמן",
+   "leagueAppearances": 17,
+   "leagueGoals": 4,
+   "debutDate": "2008-01-26",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "שלומי ארבייטמן"
+  },
+  {
+   "playerId": "p_5b4a0d9d83",
+   "slug": "שלמה-ספוזניקוב",
+   "leagueAppearances": 131,
+   "leagueGoals": 11,
+   "debutDate": "1957-12-14",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שלמה ספוז'ניקוב"
+  },
+  {
+   "playerId": "p_7204c0e5c4",
+   "slug": "שלמה-פוליאקוב",
+   "leagueAppearances": 74,
+   "leagueGoals": 19,
+   "debutDate": "1929-01-12",
+   "debutNote": null,
+   "positionRaw": "קשר / חלוץ",
+   "nameOnPage": "שלמה פוליאקוב"
+  },
+  {
+   "playerId": "p_cbce546561",
+   "slug": "שמואל-כהן",
+   "leagueAppearances": 63,
+   "leagueGoals": null,
+   "debutDate": "1958-11-22",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "שמואל כהן"
+  },
+  {
+   "playerId": "p_63f6ae5b05",
+   "slug": "שמואל-שיימן",
+   "leagueAppearances": 37,
+   "leagueGoals": 1,
+   "debutDate": "2015-09-12",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "שמואל שיימן"
+  },
+  {
+   "playerId": "p_c5d2cb22a6",
+   "slug": "שמחה-חינקיס",
+   "leagueAppearances": 10,
+   "leagueGoals": 1,
+   "debutDate": "1929-10-12",
+   "debutNote": null,
+   "positionRaw": "קישור",
+   "nameOnPage": "שמחה חינקיס"
+  },
+  {
+   "playerId": "p_1c74821a55",
+   "slug": "שמעון-בן-יהונתן",
+   "leagueAppearances": 247,
+   "leagueGoals": 8,
+   "debutDate": "1961-11-18",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "שמעון (שים) בן יהונתן"
+  },
+  {
+   "playerId": "p_3768acb435",
+   "slug": "שמעון-בנודיס",
+   "leagueAppearances": 2,
+   "leagueGoals": 1,
+   "debutDate": "1949-06-04",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "שמעון בנודיס"
+  },
+  {
+   "playerId": "p_d46a97aa9d",
+   "slug": "שמעון-ברנס",
+   "leagueAppearances": 7,
+   "leagueGoals": null,
+   "debutDate": "1959-12-26",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "שמעון ברנס"
+  },
+  {
+   "playerId": "p_7664d34669",
+   "slug": "שמעון-גרשון",
+   "leagueAppearances": 287,
+   "leagueGoals": 34,
+   "debutDate": "1995-12-02",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "שמעון גרשון"
+  },
+  {
+   "playerId": "p_ed0c7c9bcc",
+   "slug": "שמעון-הרוש",
+   "leagueAppearances": 22,
+   "leagueGoals": 1,
+   "debutDate": "2013-01-27",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "שמעון הרוש"
+  },
+  {
+   "playerId": "p_b9f2d20d18",
+   "slug": "שמעון-כהן",
+   "leagueAppearances": 13,
+   "leagueGoals": 1,
+   "debutDate": "1960-04-30",
+   "debutNote": null,
+   "positionRaw": "קשר",
+   "nameOnPage": "שימעל'ה כהן"
+  },
+  {
+   "playerId": "p_1ddc859543",
+   "slug": "שמעון-צימרמן",
+   "leagueAppearances": 110,
+   "leagueGoals": 18,
+   "debutDate": "1940-03-30",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "שמעון צימרמן"
+  },
+  {
+   "playerId": "p_4d1f536de0",
+   "slug": "שרון-מימר",
+   "leagueAppearances": 80,
+   "leagueGoals": 4,
+   "debutDate": "1994-08-27",
+   "debutNote": null,
+   "positionRaw": "בלם",
+   "nameOnPage": "שרון מימר"
+  },
+  {
+   "playerId": "p_f5ec2e9271",
+   "slug": "תום-אלמדון",
+   "leagueAppearances": 14,
+   "leagueGoals": null,
+   "debutDate": "2014-11-22",
+   "debutNote": null,
+   "positionRaw": "שוער",
+   "nameOnPage": "תום אלמדון"
+  },
+  {
+   "playerId": "p_4b0e8b78a9",
+   "slug": "תומר-אליהו",
+   "leagueAppearances": 76,
+   "leagueGoals": 2,
+   "debutDate": "1993-01-12",
+   "debutNote": null,
+   "positionRaw": "בלם / קשר",
+   "nameOnPage": "תומר אליהו"
+  },
+  {
+   "playerId": "p_2b71b8644e",
+   "slug": "תומר-חליבה",
+   "leagueAppearances": 9,
+   "leagueGoals": null,
+   "debutDate": "2006-09-10",
+   "debutNote": null,
+   "positionRaw": "מגן",
+   "nameOnPage": "תומר חליבה"
+  },
+  {
+   "playerId": "p_d5858e71c4",
+   "slug": "תמיר-לינהרט",
+   "leagueAppearances": 60,
+   "leagueGoals": 9,
+   "debutDate": "1986-10-18",
+   "debutNote": null,
+   "positionRaw": "חלוץ",
+   "nameOnPage": "תמיר לינהרט"
+  }
+ ]
+}

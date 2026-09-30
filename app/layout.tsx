@@ -1,0 +1,116 @@
+import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
+
+import { Analytics } from '@/components/ads/Analytics'
+import { GateMeter } from '@/components/meter/GateMeter'
+import { ADSENSE_CLIENT } from '@/lib/ads'
+import { BRAND, SITE_URL } from '@/lib/brand'
+import { DIRECTION, LOCALE, t } from '@/lib/i18n'
+import './globals.css'
+import './master.css'
+import { headers } from 'next/headers'
+import { readState } from '@/lib/master/store'
+import { GATES } from '@/lib/master/types'
+import { Shell } from '@/components/master/Shell'
+
+/**
+ * The faces live in `globals.css` as self-hosted @font-face rules (brand spec §3) —
+ * `next/font/google` needs the network at build time, and the one time it did not have
+ * it the stub that replaced it shipped, and the whole site fell back to Georgia.
+ */
+export const viewport: Viewport = {
+  // Required for env(safe-area-inset-*) to report anything on a notched iPhone.
+  viewportFit: 'cover',
+  themeColor: BRAND.ink,
+  width: 'device-width',
+  initialScale: 1,
+}
+
+/**
+ * `metadataBase` resolves every relative URL a page's `openGraph`/`twitter` images use
+ * (`lib/seo.ts` builds them as `${SITE_URL}/og/<slug>.png`, already absolute, but this
+ * is what keeps a future relative path from resolving against whatever host actually
+ * served the request instead of the canonical address rule 23 requires).
+ */
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  // The product is called The Worker. Full stop — no suffix, no bilingual pair, no
+  // brand-system tagline. A name with something appended to it is not a name.
+  title: {
+    default: 'FAN LIFE',
+    template: '%s · FAN LIFE',
+  },
+  description: t('app.description'),
+  applicationName: 'The Worker',
+  alternates: { canonical: SITE_URL },
+  // The base every route inherits unless it sets its own (`lib/seo.ts#gateMetadata`) —
+  // Next replaces this object key-for-key per route, so a route with no `openGraph` of
+  // its own still gets a real title, description and image instead of the blue-line
+  // link with no preview that this whole delta exists to fix.
+  openGraph: {
+    title: 'The Worker',
+    description: t('app.description'),
+    url: SITE_URL,
+    siteName: 'The Worker',
+    locale: 'he_IL',
+    type: 'website',
+    images: [{ url: '/og/default.png', width: 1200, height: 630, alt: 'The Worker' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Worker',
+    description: t('app.description'),
+    images: ['/og/default.png'],
+  },
+  // The badge is the identity everywhere (rule 8), and `app/icon.svg` is a Next
+  // file-convention route that would otherwise compete with this field for the tab —
+  // see the comment in `app/icon.svg` itself for why its content now IS the badge
+  // rather than the two sources disagreeing about what a reader sees.
+  icons: {
+    icon: [{ url: '/brand/logo-192.png', type: 'image/png' }],
+    apple: '/brand/logo-192.png',
+  },
+}
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname=headers().get('x-fan-life-path')||'/'
+  const master=pathname==='/'||pathname.startsWith('/master')||pathname.startsWith('/clubs')
+  const club=master?undefined:(await readState()).clubs.find(c=>c.id==='hapoel-tel-aviv')
+  const gate=GATES.find(g=>pathname===g[2]||pathname.startsWith(g[2]+'/'))
+  const closed=!master&&(club?.status!=='live'||gate&&!club?.gates.includes(gate[0]))
+  return (
+    <html lang={master?'en':LOCALE} dir={master?'ltr':DIRECTION}>
+      <body className="font-body antialiased">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:start-2 focus:z-50 focus:bg-red focus:px-4 focus:py-2 focus:text-sheet"
+        >
+          {master?'Skip to content':t('nav.skipToContent')}
+        </a>
+        {closed?<Shell><main id="main" className="section"><h1>This gate is resting.</h1><p>The administrator has paused access. <a href="/master/admin">Open administration ↗</a></p></main></Shell>:children}
+
+        {/*
+          AdSense's loader, and Google's measurement tag.
+
+          `afterInteractive` for both. Neither has any business blocking the first paint
+          of a game screen, and both are designed to arrive late — AdSense fills any
+          `<ins>` already on the page when it lands, and gtag queues into `dataLayer`.
+          Loading them `beforeInteractive` would trade the thing the app is for against
+          the things that pay for it.
+
+          The loader is global; WHERE a unit may appear is decided in `lib/ads.ts`, and
+          never inside a run.
+        */}
+        {ADSENSE_CLIENT && !master ? <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        /> : null}
+        <Analytics />
+        {/* first-party measurement: views, starts, finishes, where people leave (lib/analytics) */}
+        {!master ? <GateMeter /> : null}
+      </body>
+    </html>
+  )
+}

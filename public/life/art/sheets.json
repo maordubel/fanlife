@@ -1,0 +1,3279 @@
+{
+ "adultA1": {
+  "w": 144,
+  "h": 430,
+  "bytes": 20754,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultA2": {
+  "w": 138,
+  "h": 430,
+  "bytes": 20780,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultA3": {
+  "w": 143,
+  "h": 430,
+  "bytes": 23580,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultA4": {
+  "w": 137,
+  "h": 430,
+  "bytes": 22246,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultA5": {
+  "w": 148,
+  "h": 430,
+  "bytes": 58616,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultA6": {
+  "w": 150,
+  "h": 430,
+  "bytes": 23754,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultA7": {
+  "w": 153,
+  "h": 430,
+  "bytes": 22870,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultB1": {
+  "w": 164,
+  "h": 430,
+  "bytes": 19480,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultB2": {
+  "w": 138,
+  "h": 430,
+  "bytes": 20946,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultB3": {
+  "w": 142,
+  "h": 430,
+  "bytes": 20386,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultB4": {
+  "w": 179,
+  "h": 430,
+  "bytes": 24134,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultB5": {
+  "w": 144,
+  "h": 430,
+  "bytes": 19674,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultB6": {
+  "w": 147,
+  "h": 430,
+  "bytes": 23282,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "adultB7": {
+  "w": 202,
+  "h": 430,
+  "bytes": 20912,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "amit-3q": {
+  "w": 214,
+  "h": 603,
+  "bytes": 32368,
+  "yellowLeft": 0
+ },
+ "amit-arms": {
+  "w": 218,
+  "h": 603,
+  "bytes": 37976,
+  "yellowLeft": 0
+ },
+ "amit-back": {
+  "w": 218,
+  "h": 603,
+  "bytes": 30766,
+  "yellowLeft": 0
+ },
+ "amit-cross": {
+  "w": 276,
+  "h": 397,
+  "bytes": 29604,
+  "yellowLeft": 0
+ },
+ "amit-hold": {
+  "w": 306,
+  "h": 451,
+  "bytes": 38080,
+  "yellowLeft": 0
+ },
+ "amit-scarf": {
+  "w": 215,
+  "h": 599,
+  "bytes": 36474,
+  "yellowLeft": 0
+ },
+ "amit-scarfstand": {
+  "w": 201,
+  "h": 603,
+  "bytes": 36722,
+  "yellowLeft": 0
+ },
+ "amit-side": {
+  "w": 286,
+  "h": 588,
+  "bytes": 86202,
+  "yellowLeft": 0
+ },
+ "amit-sitA": {
+  "w": 251,
+  "h": 433,
+  "bytes": 30974,
+  "yellowLeft": 0
+ },
+ "amit-sitB": {
+  "w": 276,
+  "h": 421,
+  "bytes": 32672,
+  "yellowLeft": 0
+ },
+ "amit-sitC": {
+  "w": 250,
+  "h": 387,
+  "bytes": 25886,
+  "yellowLeft": 0
+ },
+ "amit-sitD": {
+  "w": 253,
+  "h": 432,
+  "bytes": 30096,
+  "yellowLeft": 0
+ },
+ "amit-walk": {
+  "w": 195,
+  "h": 603,
+  "bytes": 35146,
+  "yellowLeft": 0
+ },
+ "amit": {
+  "w": 239,
+  "h": 599,
+  "bytes": 36318,
+  "yellowLeft": 0
+ },
+ "amit90-3q": {
+  "w": 214,
+  "h": 607,
+  "bytes": 36134,
+  "yellowLeft": 0
+ },
+ "amit90-back": {
+  "w": 203,
+  "h": 606,
+  "bytes": 35518,
+  "yellowLeft": 0
+ },
+ "amit90-cheer": {
+  "w": 224,
+  "h": 596,
+  "bytes": 38432,
+  "yellowLeft": 0
+ },
+ "amit90-cross": {
+  "w": 273,
+  "h": 377,
+  "bytes": 32256,
+  "yellowLeft": 0
+ },
+ "amit90-drum": {
+  "w": 341,
+  "h": 444,
+  "bytes": 135308,
+  "yellowLeft": 0
+ },
+ "amit90-point": {
+  "w": 420,
+  "h": 443,
+  "bytes": 45386,
+  "yellowLeft": 0
+ },
+ "amit90-scarf": {
+  "w": 190,
+  "h": 578,
+  "bytes": 32506,
+  "yellowLeft": 0
+ },
+ "amit90-side": {
+  "w": 152,
+  "h": 606,
+  "bytes": 28480,
+  "yellowLeft": 0
+ },
+ "amit90-sitA": {
+  "w": 298,
+  "h": 441,
+  "bytes": 38546,
+  "yellowLeft": 0
+ },
+ "amit90-sitB": {
+  "w": 284,
+  "h": 422,
+  "bytes": 35840,
+  "yellowLeft": 0
+ },
+ "amit90-turn": {
+  "w": 217,
+  "h": 607,
+  "bytes": 37402,
+  "yellowLeft": 0
+ },
+ "amit90-walk": {
+  "w": 161,
+  "h": 570,
+  "bytes": 26826,
+  "yellowLeft": 0
+ },
+ "amit90": {
+  "w": 203,
+  "h": 609,
+  "bytes": 36766,
+  "yellowLeft": 0
+ },
+ "docTicket": {
+  "w": 776,
+  "h": 474,
+  "bytes": 65242,
+  "yellowLeft": 0
+ },
+ "efi": {
+  "w": 143,
+  "h": 430,
+  "bytes": 20140,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "elimelech-back": {
+  "w": 161,
+  "h": 412,
+  "bytes": 16424,
+  "yellowLeft": 0
+ },
+ "elimelech-catch": {
+  "w": 356,
+  "h": 406,
+  "bytes": 23946,
+  "yellowLeft": 0
+ },
+ "elimelech-civA": {
+  "w": 220,
+  "h": 287,
+  "bytes": 18318,
+  "yellowLeft": 0
+ },
+ "elimelech-civB": {
+  "w": 213,
+  "h": 288,
+  "bytes": 14236,
+  "yellowLeft": 0
+ },
+ "elimelech-civC": {
+  "w": 223,
+  "h": 288,
+  "bytes": 15532,
+  "yellowLeft": 0
+ },
+ "elimelech-civD": {
+  "w": 207,
+  "h": 288,
+  "bytes": 12818,
+  "yellowLeft": 0
+ },
+ "elimelech-civE": {
+  "w": 206,
+  "h": 288,
+  "bytes": 17924,
+  "yellowLeft": 0
+ },
+ "elimelech-civF": {
+  "w": 212,
+  "h": 300,
+  "bytes": 14410,
+  "yellowLeft": 0
+ },
+ "elimelech-civG": {
+  "w": 203,
+  "h": 295,
+  "bytes": 12488,
+  "yellowLeft": 0
+ },
+ "elimelech-claim": {
+  "w": 226,
+  "h": 413,
+  "bytes": 18700,
+  "yellowLeft": 0
+ },
+ "elimelech-point": {
+  "w": 234,
+  "h": 413,
+  "bytes": 26026,
+  "yellowLeft": 0
+ },
+ "elimelech-ready": {
+  "w": 267,
+  "h": 441,
+  "bytes": 24156,
+  "yellowLeft": 0
+ },
+ "elimelech-shout": {
+  "w": 263,
+  "h": 409,
+  "bytes": 25488,
+  "yellowLeft": 0
+ },
+ "faceElimelech-ball": {
+  "w": 257,
+  "h": 249,
+  "bytes": 58060,
+  "yellowLeft": 0
+ },
+ "faceElimelech-calm": {
+  "w": 194,
+  "h": 249,
+  "bytes": 44792,
+  "yellowLeft": 0
+ },
+ "faceElimelech-look": {
+  "w": 198,
+  "h": 249,
+  "bytes": 44000,
+  "yellowLeft": 0
+ },
+ "faceElimelech-shout": {
+  "w": 202,
+  "h": 249,
+  "bytes": 48014,
+  "yellowLeft": 0
+ },
+ "faceElimelech-side": {
+  "w": 178,
+  "h": 249,
+  "bytes": 43986,
+  "yellowLeft": 0
+ },
+ "faceElimelech-smile": {
+  "w": 242,
+  "h": 249,
+  "bytes": 51322,
+  "yellowLeft": 0
+ },
+ "faceElimelech": {
+  "w": 238,
+  "h": 249,
+  "bytes": 50782,
+  "yellowLeft": 0
+ },
+ "faceHero80-3q": {
+  "w": 134,
+  "h": 173,
+  "bytes": 10158,
+  "yellowLeft": 0
+ },
+ "faceHero80-back": {
+  "w": 115,
+  "h": 160,
+  "bytes": 8332,
+  "yellowLeft": 0
+ },
+ "faceHero80-profile": {
+  "w": 127,
+  "h": 172,
+  "bytes": 9346,
+  "yellowLeft": 0
+ },
+ "faceHero80-shout": {
+  "w": 113,
+  "h": 174,
+  "bytes": 9590,
+  "yellowLeft": 0
+ },
+ "faceHero80-side": {
+  "w": 123,
+  "h": 173,
+  "bytes": 9588,
+  "yellowLeft": 0
+ },
+ "faceHero80-smile": {
+  "w": 118,
+  "h": 173,
+  "bytes": 9962,
+  "yellowLeft": 0
+ },
+ "faceHero80": {
+  "w": 117,
+  "h": 174,
+  "bytes": 9802,
+  "yellowLeft": 0
+ },
+ "faceHero90-3q": {
+  "w": 124,
+  "h": 169,
+  "bytes": 10614,
+  "yellowLeft": 0
+ },
+ "faceHero90-back": {
+  "w": 116,
+  "h": 167,
+  "bytes": 9354,
+  "yellowLeft": 0
+ },
+ "faceHero90-grin": {
+  "w": 139,
+  "h": 171,
+  "bytes": 10492,
+  "yellowLeft": 0
+ },
+ "faceHero90-look": {
+  "w": 119,
+  "h": 169,
+  "bytes": 10042,
+  "yellowLeft": 0
+ },
+ "faceHero90-shades": {
+  "w": 113,
+  "h": 172,
+  "bytes": 9642,
+  "yellowLeft": 0
+ },
+ "faceHero90-shout": {
+  "w": 125,
+  "h": 172,
+  "bytes": 10276,
+  "yellowLeft": 0
+ },
+ "faceHero90-smile": {
+  "w": 135,
+  "h": 168,
+  "bytes": 10414,
+  "yellowLeft": 0
+ },
+ "faceHero90": {
+  "w": 124,
+  "h": 169,
+  "bytes": 9876,
+  "yellowLeft": 0
+ },
+ "faceKeren90-b": {
+  "w": 324,
+  "h": 318,
+  "bytes": 97424,
+  "yellowLeft": 0
+ },
+ "faceKeren90-profile": {
+  "w": 272,
+  "h": 315,
+  "bytes": 83400,
+  "yellowLeft": 0
+ },
+ "faceKeren90-side": {
+  "w": 279,
+  "h": 318,
+  "bytes": 93758,
+  "yellowLeft": 0
+ },
+ "faceKeren90-smile": {
+  "w": 309,
+  "h": 311,
+  "bytes": 80786,
+  "yellowLeft": 0
+ },
+ "faceKeren90": {
+  "w": 308,
+  "h": 317,
+  "bytes": 93128,
+  "yellowLeft": 0
+ },
+ "faceSinai-b": {
+  "w": 215,
+  "h": 212,
+  "bytes": 36554,
+  "yellowLeft": 0
+ },
+ "faceSinai-kit": {
+  "w": 208,
+  "h": 219,
+  "bytes": 42704,
+  "yellowLeft": 0
+ },
+ "faceSinai-look": {
+  "w": 178,
+  "h": 210,
+  "bytes": 33914,
+  "yellowLeft": 0
+ },
+ "faceSinai-point": {
+  "w": 275,
+  "h": 210,
+  "bytes": 48918,
+  "yellowLeft": 0
+ },
+ "faceSinai-shout": {
+  "w": 212,
+  "h": 217,
+  "bytes": 43500,
+  "yellowLeft": 0
+ },
+ "faceSinai-side": {
+  "w": 188,
+  "h": 209,
+  "bytes": 35736,
+  "yellowLeft": 0
+ },
+ "faceSinai": {
+  "w": 213,
+  "h": 214,
+  "bytes": 37632,
+  "yellowLeft": 0
+ },
+ "faceSoldier-3q": {
+  "w": 117,
+  "h": 148,
+  "bytes": 21616,
+  "yellowLeft": 0
+ },
+ "faceSoldier-back": {
+  "w": 131,
+  "h": 152,
+  "bytes": 24180,
+  "yellowLeft": 0
+ },
+ "faceSoldier-beret": {
+  "w": 106,
+  "h": 141,
+  "bytes": 18052,
+  "yellowLeft": 0
+ },
+ "faceSoldier-look": {
+  "w": 115,
+  "h": 149,
+  "bytes": 22182,
+  "yellowLeft": 0
+ },
+ "faceSoldier-shades": {
+  "w": 117,
+  "h": 148,
+  "bytes": 21682,
+  "yellowLeft": 0
+ },
+ "faceSoldier-shout": {
+  "w": 117,
+  "h": 148,
+  "bytes": 22156,
+  "yellowLeft": 0
+ },
+ "faceSoldier-side": {
+  "w": 112,
+  "h": 148,
+  "bytes": 21502,
+  "yellowLeft": 0
+ },
+ "faceSoldier-smile": {
+  "w": 116,
+  "h": 149,
+  "bytes": 22690,
+  "yellowLeft": 0
+ },
+ "faceSoldier": {
+  "w": 105,
+  "h": 148,
+  "bytes": 20924,
+  "yellowLeft": 0
+ },
+ "fanA": {
+  "w": 129,
+  "h": 390,
+  "bytes": 16938,
+  "yellowLeft": 0
+ },
+ "fanB": {
+  "w": 124,
+  "h": 390,
+  "bytes": 17242,
+  "yellowLeft": 0
+ },
+ "fanC": {
+  "w": 132,
+  "h": 390,
+  "bytes": 15692,
+  "yellowLeft": 0
+ },
+ "fanD": {
+  "w": 132,
+  "h": 390,
+  "bytes": 16214,
+  "yellowLeft": 0
+ },
+ "fanE": {
+  "w": 136,
+  "h": 390,
+  "bytes": 19398,
+  "yellowLeft": 0
+ },
+ "fanF": {
+  "w": 144,
+  "h": 390,
+  "bytes": 18742,
+  "yellowLeft": 0
+ },
+ "fanG": {
+  "w": 143,
+  "h": 390,
+  "bytes": 17754,
+  "yellowLeft": 0
+ },
+ "gershon-back": {
+  "w": 287,
+  "h": 424,
+  "bytes": 30750,
+  "yellowLeft": 0
+ },
+ "gershon-bust": {
+  "w": 301,
+  "h": 438,
+  "bytes": 33488,
+  "yellowLeft": 0
+ },
+ "gershon-civA": {
+  "w": 239,
+  "h": 215,
+  "bytes": 34384,
+  "yellowLeft": 0
+ },
+ "gershon-civB": {
+  "w": 259,
+  "h": 223,
+  "bytes": 11820,
+  "yellowLeft": 0
+ },
+ "gershon-civC": {
+  "w": 266,
+  "h": 224,
+  "bytes": 36992,
+  "yellowLeft": 0
+ },
+ "gershon-civD": {
+  "w": 252,
+  "h": 224,
+  "bytes": 12260,
+  "yellowLeft": 0
+ },
+ "gershon-civE": {
+  "w": 264,
+  "h": 224,
+  "bytes": 13336,
+  "yellowLeft": 0
+ },
+ "gershon-head": {
+  "w": 184,
+  "h": 417,
+  "bytes": 24216,
+  "yellowLeft": 0
+ },
+ "gershon-rival-back": {
+  "w": 293,
+  "h": 350,
+  "bytes": 91394,
+  "yellowLeft": 0
+ },
+ "gershon-rival-captain": {
+  "w": 325,
+  "h": 350,
+  "bytes": 98926,
+  "yellowLeft": 0
+ },
+ "gershon-rival-look": {
+  "w": 294,
+  "h": 350,
+  "bytes": 92216,
+  "yellowLeft": 0
+ },
+ "gershon-rival-shout": {
+  "w": 314,
+  "h": 350,
+  "bytes": 27482,
+  "yellowLeft": 0
+ },
+ "gershon-rival": {
+  "w": 258,
+  "h": 350,
+  "bytes": 87404,
+  "yellowLeft": 0
+ },
+ "gershon-run": {
+  "w": 193,
+  "h": 423,
+  "bytes": 24198,
+  "yellowLeft": 0
+ },
+ "gershon-side": {
+  "w": 246,
+  "h": 440,
+  "bytes": 94888,
+  "yellowLeft": 0
+ },
+ "gershon": {
+  "w": 301,
+  "h": 443,
+  "bytes": 34236,
+  "yellowLeft": 0
+ },
+ "hero80-3q": {
+  "w": 182,
+  "h": 476,
+  "bytes": 32236,
+  "yellowLeft": 0
+ },
+ "hero80-away": {
+  "w": 143,
+  "h": 352,
+  "bytes": 18028,
+  "yellowLeft": 0
+ },
+ "hero80-back": {
+  "w": 168,
+  "h": 470,
+  "bytes": 24978,
+  "yellowLeft": 0
+ },
+ "hero80-ball": {
+  "w": 226,
+  "h": 432,
+  "bytes": 30242,
+  "yellowLeft": 0
+ },
+ "hero80-cheer": {
+  "w": 247,
+  "h": 352,
+  "bytes": 27416,
+  "yellowLeft": 0
+ },
+ "hero80-crouch": {
+  "w": 162,
+  "h": 339,
+  "bytes": 15674,
+  "yellowLeft": 0
+ },
+ "hero80-kick": {
+  "w": 187,
+  "h": 394,
+  "bytes": 25700,
+  "yellowLeft": 0
+ },
+ "hero80-leave": {
+  "w": 129,
+  "h": 352,
+  "bytes": 19604,
+  "yellowLeft": 0
+ },
+ "hero80-pack": {
+  "w": 182,
+  "h": 462,
+  "bytes": 28644,
+  "yellowLeft": 0
+ },
+ "hero80-point": {
+  "w": 150,
+  "h": 341,
+  "bytes": 22338,
+  "yellowLeft": 0
+ },
+ "hero80-scarf": {
+  "w": 214,
+  "h": 352,
+  "bytes": 28362,
+  "yellowLeft": 0
+ },
+ "hero80-side": {
+  "w": 179,
+  "h": 472,
+  "bytes": 25182,
+  "yellowLeft": 0
+ },
+ "hero80-sit": {
+  "w": 192,
+  "h": 295,
+  "bytes": 23674,
+  "yellowLeft": 0
+ },
+ "hero80-tie": {
+  "w": 141,
+  "h": 229,
+  "bytes": 15700,
+  "yellowLeft": 0
+ },
+ "hero80-walk": {
+  "w": 212,
+  "h": 452,
+  "bytes": 27782,
+  "yellowLeft": 0
+ },
+ "hero80": {
+  "w": 170,
+  "h": 473,
+  "bytes": 30666,
+  "yellowLeft": 0
+ },
+ "hero90-3q": {
+  "w": 171,
+  "h": 480,
+  "bytes": 30816,
+  "yellowLeft": 0
+ },
+ "hero90-away": {
+  "w": 130,
+  "h": 344,
+  "bytes": 19276,
+  "yellowLeft": 0
+ },
+ "hero90-back": {
+  "w": 179,
+  "h": 479,
+  "bytes": 30186,
+  "yellowLeft": 0
+ },
+ "hero90-ball": {
+  "w": 211,
+  "h": 422,
+  "bytes": 31320,
+  "yellowLeft": 0
+ },
+ "hero90-cheer": {
+  "w": 198,
+  "h": 338,
+  "bytes": 23384,
+  "yellowLeft": 0
+ },
+ "hero90-crouch": {
+  "w": 157,
+  "h": 277,
+  "bytes": 18878,
+  "yellowLeft": 0
+ },
+ "hero90-kick": {
+  "w": 243,
+  "h": 431,
+  "bytes": 32420,
+  "yellowLeft": 0
+ },
+ "hero90-leave": {
+  "w": 155,
+  "h": 352,
+  "bytes": 19796,
+  "yellowLeft": 0
+ },
+ "hero90-pack": {
+  "w": 179,
+  "h": 462,
+  "bytes": 27744,
+  "yellowLeft": 0
+ },
+ "hero90-scarf": {
+  "w": 249,
+  "h": 352,
+  "bytes": 30614,
+  "yellowLeft": 0
+ },
+ "hero90-side": {
+  "w": 142,
+  "h": 471,
+  "bytes": 23622,
+  "yellowLeft": 0
+ },
+ "hero90-sit": {
+  "w": 203,
+  "h": 312,
+  "bytes": 22802,
+  "yellowLeft": 0
+ },
+ "hero90-think": {
+  "w": 169,
+  "h": 350,
+  "bytes": 21648,
+  "yellowLeft": 0
+ },
+ "hero90-tie": {
+  "w": 158,
+  "h": 246,
+  "bytes": 16202,
+  "yellowLeft": 0
+ },
+ "hero90-walk": {
+  "w": 195,
+  "h": 467,
+  "bytes": 27422,
+  "yellowLeft": 0
+ },
+ "hero90": {
+  "w": 171,
+  "h": 482,
+  "bytes": 32668,
+  "yellowLeft": 0
+ },
+ "keren": {
+  "w": 139,
+  "h": 430,
+  "bytes": 24570,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren90-arms": {
+  "w": 202,
+  "h": 434,
+  "bytes": 71460,
+  "yellowLeft": 0
+ },
+ "keren90-band": {
+  "w": 265,
+  "h": 250,
+  "bytes": 19090,
+  "yellowLeft": 0
+ },
+ "keren90-look": {
+  "w": 260,
+  "h": 249,
+  "bytes": 18192,
+  "yellowLeft": 0
+ },
+ "keren90-scarf": {
+  "w": 535,
+  "h": 251,
+  "bytes": 116858,
+  "yellowLeft": 0
+ },
+ "keren90-shout": {
+  "w": 323,
+  "h": 250,
+  "bytes": 77276,
+  "yellowLeft": 0
+ },
+ "keren90-side": {
+  "w": 189,
+  "h": 419,
+  "bytes": 22756,
+  "yellowLeft": 0
+ },
+ "keren90-sit": {
+  "w": 280,
+  "h": 425,
+  "bytes": 31492,
+  "yellowLeft": 0
+ },
+ "keren90-smile": {
+  "w": 287,
+  "h": 441,
+  "bytes": 116064,
+  "yellowLeft": 0
+ },
+ "keren90": {
+  "w": 270,
+  "h": 444,
+  "bytes": 33310,
+  "yellowLeft": 0
+ },
+ "kid-3q": {
+  "w": 164,
+  "h": 592,
+  "bytes": 36896,
+  "yellowLeft": 0
+ },
+ "kid-back-b": {
+  "w": 158,
+  "h": 569,
+  "bytes": 33236,
+  "yellowLeft": 0
+ },
+ "kid-back": {
+  "w": 156,
+  "h": 576,
+  "bytes": 33266,
+  "yellowLeft": 0
+ },
+ "kid-side-b": {
+  "w": 152,
+  "h": 574,
+  "bytes": 25064,
+  "yellowLeft": 0
+ },
+ "kid-side": {
+  "w": 158,
+  "h": 576,
+  "bytes": 28944,
+  "yellowLeft": 0
+ },
+ "kid-walk1": {
+  "w": 100,
+  "h": 384,
+  "bytes": 17690,
+  "yellowLeft": 0
+ },
+ "kid-walk2": {
+  "w": 208,
+  "h": 369,
+  "bytes": 20446,
+  "yellowLeft": 0
+ },
+ "kid-walk3": {
+  "w": 193,
+  "h": 368,
+  "bytes": 20926,
+  "yellowLeft": 0
+ },
+ "kid-walk4": {
+  "w": 180,
+  "h": 372,
+  "bytes": 21444,
+  "yellowLeft": 0
+ },
+ "kid-walk5": {
+  "w": 200,
+  "h": 369,
+  "bytes": 20860,
+  "yellowLeft": 0
+ },
+ "kid-walk6": {
+  "w": 198,
+  "h": 369,
+  "bytes": 21772,
+  "yellowLeft": 0
+ },
+ "kid-walk7": {
+  "w": 208,
+  "h": 368,
+  "bytes": 21610,
+  "yellowLeft": 0
+ },
+ "kid-walk8": {
+  "w": 209,
+  "h": 374,
+  "bytes": 21776,
+  "yellowLeft": 0
+ },
+ "kid": {
+  "w": 166,
+  "h": 593,
+  "bytes": 39630,
+  "yellowLeft": 0
+ },
+ "kobi-arms": {
+  "w": 150,
+  "h": 510,
+  "bytes": 23566,
+  "yellowLeft": 0
+ },
+ "kobi-back": {
+  "w": 141,
+  "h": 522,
+  "bytes": 26198,
+  "yellowLeft": 0
+ },
+ "kobi-bag": {
+  "w": 189,
+  "h": 459,
+  "bytes": 32494,
+  "yellowLeft": 0
+ },
+ "kobi-chair": {
+  "w": 341,
+  "h": 444,
+  "bytes": 55016,
+  "yellowLeft": 0
+ },
+ "kobi-cheer": {
+  "w": 288,
+  "h": 464,
+  "bytes": 52438,
+  "yellowLeft": 0
+ },
+ "kobi-point": {
+  "w": 200,
+  "h": 510,
+  "bytes": 39332,
+  "yellowLeft": 0
+ },
+ "kobi-rail": {
+  "w": 299,
+  "h": 462,
+  "bytes": 55790,
+  "yellowLeft": 0
+ },
+ "kobi-scarf": {
+  "w": 154,
+  "h": 527,
+  "bytes": 31932,
+  "yellowLeft": 0
+ },
+ "kobi-side": {
+  "w": 106,
+  "h": 527,
+  "bytes": 23782,
+  "yellowLeft": 0
+ },
+ "kobi-walk": {
+  "w": 166,
+  "h": 485,
+  "bytes": 30162,
+  "yellowLeft": 0
+ },
+ "kobi": {
+  "w": 117,
+  "h": 523,
+  "bytes": 28644,
+  "yellowLeft": 0
+ },
+ "kobi90-arms": {
+  "w": 212,
+  "h": 625,
+  "bytes": 35762,
+  "yellowLeft": 0
+ },
+ "kobi90-back": {
+  "w": 225,
+  "h": 605,
+  "bytes": 34108,
+  "yellowLeft": 0
+ },
+ "kobi90-bag": {
+  "w": 265,
+  "h": 629,
+  "bytes": 43352,
+  "yellowLeft": 0
+ },
+ "kobi90-cheer": {
+  "w": 248,
+  "h": 627,
+  "bytes": 43736,
+  "yellowLeft": 0
+ },
+ "kobi90-lean": {
+  "w": 376,
+  "h": 381,
+  "bytes": 38936,
+  "yellowLeft": 0
+ },
+ "kobi90-paper": {
+  "w": 302,
+  "h": 441,
+  "bytes": 42750,
+  "yellowLeft": 0
+ },
+ "kobi90-point": {
+  "w": 240,
+  "h": 436,
+  "bytes": 32664,
+  "yellowLeft": 0
+ },
+ "kobi90-side": {
+  "w": 225,
+  "h": 604,
+  "bytes": 30414,
+  "yellowLeft": 0
+ },
+ "kobi90-sitA": {
+  "w": 228,
+  "h": 436,
+  "bytes": 32340,
+  "yellowLeft": 0
+ },
+ "kobi90-sitB": {
+  "w": 309,
+  "h": 451,
+  "bytes": 37060,
+  "yellowLeft": 0
+ },
+ "kobi90-stand": {
+  "w": 219,
+  "h": 620,
+  "bytes": 35790,
+  "yellowLeft": 0
+ },
+ "kobi90": {
+  "w": 212,
+  "h": 625,
+  "bytes": 36742,
+  "yellowLeft": 0
+ },
+ "ofir-3q": {
+  "w": 194,
+  "h": 605,
+  "bytes": 31550,
+  "yellowLeft": 0
+ },
+ "ofir-arms": {
+  "w": 206,
+  "h": 597,
+  "bytes": 34652,
+  "yellowLeft": 0
+ },
+ "ofir-back": {
+  "w": 193,
+  "h": 598,
+  "bytes": 30634,
+  "yellowLeft": 0
+ },
+ "ofir-cross": {
+  "w": 326,
+  "h": 412,
+  "bytes": 34686,
+  "yellowLeft": 0
+ },
+ "ofir-crouch": {
+  "w": 331,
+  "h": 430,
+  "bytes": 39098,
+  "yellowLeft": 0
+ },
+ "ofir-scarf": {
+  "w": 226,
+  "h": 609,
+  "bytes": 39416,
+  "yellowLeft": 0
+ },
+ "ofir-side": {
+  "w": 107,
+  "h": 601,
+  "bytes": 23802,
+  "yellowLeft": 0
+ },
+ "ofir-sitA": {
+  "w": 261,
+  "h": 410,
+  "bytes": 33832,
+  "yellowLeft": 0
+ },
+ "ofir-sitB": {
+  "w": 255,
+  "h": 378,
+  "bytes": 31256,
+  "yellowLeft": 0
+ },
+ "ofir-sitC": {
+  "w": 300,
+  "h": 435,
+  "bytes": 39540,
+  "yellowLeft": 0
+ },
+ "ofir-walk": {
+  "w": 264,
+  "h": 597,
+  "bytes": 36474,
+  "yellowLeft": 0
+ },
+ "ofir": {
+  "w": 205,
+  "h": 599,
+  "bytes": 36020,
+  "yellowLeft": 0
+ },
+ "ofir90-3q": {
+  "w": 124,
+  "h": 406,
+  "bytes": 13726,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "ofir90-arms": {
+  "w": 126,
+  "h": 406,
+  "bytes": 14090,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "ofir90-back": {
+  "w": 128,
+  "h": 405,
+  "bytes": 13960,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "ofir90-crouch": {
+  "w": 265,
+  "h": 397,
+  "bytes": 30214,
+  "yellowLeft": 0
+ },
+ "ofir90-point": {
+  "w": 315,
+  "h": 439,
+  "bytes": 37962,
+  "yellowLeft": 0
+ },
+ "ofir90-scarf": {
+  "w": 338,
+  "h": 441,
+  "bytes": 45634,
+  "yellowLeft": 0
+ },
+ "ofir90-side": {
+  "w": 78,
+  "h": 406,
+  "bytes": 10148,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "ofir90-sitA": {
+  "w": 155,
+  "h": 344,
+  "bytes": 13844,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "ofir90-sitB": {
+  "w": 298,
+  "h": 441,
+  "bytes": 34866,
+  "yellowLeft": 0
+ },
+ "ofir90-smoke": {
+  "w": 207,
+  "h": 636,
+  "bytes": 38210,
+  "yellowLeft": 0
+ },
+ "ofir90-walk": {
+  "w": 125,
+  "h": 402,
+  "bytes": 12076,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan": {
+  "w": 185,
+  "h": 430,
+  "bytes": 20262,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "paperAdumim": {
+  "w": 430,
+  "h": 599,
+  "bytes": 102058,
+  "yellowLeft": 0
+ },
+ "paperBefore": {
+  "w": 1500,
+  "h": 1307,
+  "bytes": 680942,
+  "yellowLeft": 0
+ },
+ "paperCollector": {
+  "w": 421,
+  "h": 599,
+  "bytes": 102660,
+  "yellowLeft": 0
+ },
+ "paperFive": {
+  "w": 427,
+  "h": 600,
+  "bytes": 113190,
+  "yellowLeft": 0
+ },
+ "pogi-3q": {
+  "w": 148,
+  "h": 430,
+  "bytes": 19032,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-arms": {
+  "w": 144,
+  "h": 430,
+  "bytes": 18270,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-back": {
+  "w": 135,
+  "h": 430,
+  "bytes": 19220,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-cheer": {
+  "w": 299,
+  "h": 409,
+  "bytes": 28064,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-cross": {
+  "w": 249,
+  "h": 350,
+  "bytes": 23494,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-hold": {
+  "w": 353,
+  "h": 430,
+  "bytes": 37992,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-kneel": {
+  "w": 260,
+  "h": 367,
+  "bytes": 24978,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-scarf": {
+  "w": 153,
+  "h": 430,
+  "bytes": 23558,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-side": {
+  "w": 186,
+  "h": 430,
+  "bytes": 18134,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-sit": {
+  "w": 219,
+  "h": 430,
+  "bytes": 73228,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-walk": {
+  "w": 201,
+  "h": 430,
+  "bytes": 22882,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi": {
+  "w": 153,
+  "h": 430,
+  "bytes": 21186,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-1": {
+  "w": 170,
+  "h": 430,
+  "bytes": 28890,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-2": {
+  "w": 169,
+  "h": 430,
+  "bytes": 27732,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-3": {
+  "w": 138,
+  "h": 430,
+  "bytes": 21258,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-4": {
+  "w": 179,
+  "h": 430,
+  "bytes": 28410,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-5": {
+  "w": 179,
+  "h": 424,
+  "bytes": 25214,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-6": {
+  "w": 195,
+  "h": 427,
+  "bytes": 25144,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-7": {
+  "w": 211,
+  "h": 420,
+  "bytes": 31756,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-8": {
+  "w": 237,
+  "h": 406,
+  "bytes": 32332,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-b1": {
+  "w": 254,
+  "h": 350,
+  "bytes": 30330,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-b2": {
+  "w": 201,
+  "h": 350,
+  "bytes": 21736,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-b3": {
+  "w": 169,
+  "h": 350,
+  "bytes": 21002,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-b4": {
+  "w": 154,
+  "h": 350,
+  "bytes": 17530,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-b5": {
+  "w": 146,
+  "h": 350,
+  "bytes": 14778,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-b6": {
+  "w": 188,
+  "h": 274,
+  "bytes": 21048,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-b7": {
+  "w": 130,
+  "h": 350,
+  "bytes": 19344,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi90-b8": {
+  "w": 155,
+  "h": 350,
+  "bytes": 18340,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-1": {
+  "w": 175,
+  "h": 410,
+  "bytes": 24930,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-2": {
+  "w": 190,
+  "h": 408,
+  "bytes": 26668,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-3": {
+  "w": 176,
+  "h": 407,
+  "bytes": 22052,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-4": {
+  "w": 180,
+  "h": 410,
+  "bytes": 26618,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-5": {
+  "w": 204,
+  "h": 399,
+  "bytes": 24192,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-6": {
+  "w": 190,
+  "h": 410,
+  "bytes": 26944,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-7": {
+  "w": 330,
+  "h": 313,
+  "bytes": 28768,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-b1": {
+  "w": 185,
+  "h": 370,
+  "bytes": 20200,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-b2": {
+  "w": 102,
+  "h": 370,
+  "bytes": 6530,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-b3": {
+  "w": 162,
+  "h": 370,
+  "bytes": 16046,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-b4": {
+  "w": 224,
+  "h": 370,
+  "bytes": 21954,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-b5": {
+  "w": 207,
+  "h": 370,
+  "bytes": 14496,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-b6": {
+  "w": 217,
+  "h": 370,
+  "bytes": 20212,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-b7": {
+  "w": 201,
+  "h": 370,
+  "bytes": 14480,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogiIDF-b8": {
+  "w": 166,
+  "h": 370,
+  "bytes": 22662,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel-smoke": {
+  "w": 167,
+  "h": 622,
+  "bytes": 24234,
+  "yellowLeft": 0
+ },
+ "rachel-tray": {
+  "w": 201,
+  "h": 628,
+  "bytes": 30250,
+  "yellowLeft": 0
+ },
+ "rachel": {
+  "w": 201,
+  "h": 628,
+  "bytes": 30250,
+  "yellowLeft": 0
+ },
+ "youngA1": {
+  "w": 194,
+  "h": 422,
+  "bytes": 60400,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngA2": {
+  "w": 143,
+  "h": 430,
+  "bytes": 50398,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngA3": {
+  "w": 178,
+  "h": 430,
+  "bytes": 62054,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngA4": {
+  "w": 125,
+  "h": 427,
+  "bytes": 18622,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngA5": {
+  "w": 134,
+  "h": 423,
+  "bytes": 54884,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngA6": {
+  "w": 144,
+  "h": 430,
+  "bytes": 55160,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngA7": {
+  "w": 166,
+  "h": 430,
+  "bytes": 48780,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngB1": {
+  "w": 210,
+  "h": 430,
+  "bytes": 22306,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngB2": {
+  "w": 127,
+  "h": 430,
+  "bytes": 55296,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngB3": {
+  "w": 145,
+  "h": 430,
+  "bytes": 53510,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngB4": {
+  "w": 164,
+  "h": 430,
+  "bytes": 68522,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngB5": {
+  "w": 153,
+  "h": 430,
+  "bytes": 24254,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngB6": {
+  "w": 187,
+  "h": 430,
+  "bytes": 58882,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "youngB7": {
+  "w": 144,
+  "h": 419,
+  "bytes": 51268,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-w1": {
+  "w": 142,
+  "h": 430,
+  "bytes": 22364,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-w2": {
+  "w": 130,
+  "h": 430,
+  "bytes": 21566,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-w3": {
+  "w": 139,
+  "h": 430,
+  "bytes": 20350,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-w4": {
+  "w": 139,
+  "h": 430,
+  "bytes": 20480,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-w5": {
+  "w": 139,
+  "h": 430,
+  "bytes": 18426,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-w6": {
+  "w": 139,
+  "h": 430,
+  "bytes": 20492,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-w7": {
+  "w": 161,
+  "h": 430,
+  "bytes": 23126,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pogi-w8": {
+  "w": 137,
+  "h": 430,
+  "bytes": 19924,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-sit": {
+  "w": 176,
+  "h": 340,
+  "bytes": 12030,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-lean": {
+  "w": 162,
+  "h": 406,
+  "bytes": 11126,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-crouch": {
+  "w": 159,
+  "h": 259,
+  "bytes": 10568,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-cheer": {
+  "w": 209,
+  "h": 417,
+  "bytes": 45266,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-scarf": {
+  "w": 255,
+  "h": 402,
+  "bytes": 16818,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-look": {
+  "w": 142,
+  "h": 393,
+  "bytes": 12398,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-away": {
+  "w": 125,
+  "h": 381,
+  "bytes": 10948,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-civA": {
+  "w": 133,
+  "h": 403,
+  "bytes": 42314,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-civB": {
+  "w": 161,
+  "h": 406,
+  "bytes": 14364,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-civC": {
+  "w": 195,
+  "h": 395,
+  "bytes": 34118,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-civD": {
+  "w": 144,
+  "h": 399,
+  "bytes": 10944,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-point": {
+  "w": 220,
+  "h": 406,
+  "bytes": 13930,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-civE": {
+  "w": 201,
+  "h": 342,
+  "bytes": 12446,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-civF": {
+  "w": 138,
+  "h": 399,
+  "bytes": 12470,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-away": {
+  "w": 124,
+  "h": 386,
+  "bytes": 11718,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-away-smile": {
+  "w": 143,
+  "h": 387,
+  "bytes": 11968,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-away-side": {
+  "w": 174,
+  "h": 383,
+  "bytes": 29696,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-away-back": {
+  "w": 119,
+  "h": 385,
+  "bytes": 32728,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-away-ball": {
+  "w": 250,
+  "h": 372,
+  "bytes": 12876,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-point": {
+  "w": 213,
+  "h": 387,
+  "bytes": 36744,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-captain": {
+  "w": 155,
+  "h": 387,
+  "bytes": 12304,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen": {
+  "w": 129,
+  "h": 430,
+  "bytes": 18976,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-3q": {
+  "w": 127,
+  "h": 430,
+  "bytes": 18206,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-side": {
+  "w": 80,
+  "h": 430,
+  "bytes": 10696,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-back": {
+  "w": 128,
+  "h": 430,
+  "bytes": 17944,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-walk": {
+  "w": 236,
+  "h": 426,
+  "bytes": 14358,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-pockets": {
+  "w": 129,
+  "h": 430,
+  "bytes": 18344,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teen-cross": {
+  "w": 106,
+  "h": 422,
+  "bytes": 12696,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai": {
+  "w": 127,
+  "h": 405,
+  "bytes": 13692,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-3q": {
+  "w": 120,
+  "h": 406,
+  "bytes": 12186,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-side": {
+  "w": 74,
+  "h": 407,
+  "bytes": 9866,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-back": {
+  "w": 131,
+  "h": 403,
+  "bytes": 12720,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-ball": {
+  "w": 254,
+  "h": 390,
+  "bytes": 14814,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-kick": {
+  "w": 336,
+  "h": 368,
+  "bytes": 38998,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "sinai-cheer": {
+  "w": 220,
+  "h": 407,
+  "bytes": 13762,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva": {
+  "w": 125,
+  "h": 388,
+  "bytes": 39790,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-3q": {
+  "w": 111,
+  "h": 389,
+  "bytes": 36482,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-side": {
+  "w": 70,
+  "h": 389,
+  "bytes": 7954,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-back": {
+  "w": 118,
+  "h": 387,
+  "bytes": 10818,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-ball": {
+  "w": 250,
+  "h": 362,
+  "bytes": 12784,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-kick": {
+  "w": 323,
+  "h": 356,
+  "bytes": 12122,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "tikva-cheer": {
+  "w": 225,
+  "h": 393,
+  "bytes": 39122,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier": {
+  "w": 132,
+  "h": 430,
+  "bytes": 19684,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-stand": {
+  "w": 120,
+  "h": 430,
+  "bytes": 17108,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-side": {
+  "w": 76,
+  "h": 430,
+  "bytes": 12468,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-back": {
+  "w": 129,
+  "h": 430,
+  "bytes": 18598,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-march": {
+  "w": 239,
+  "h": 423,
+  "bytes": 14990,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-pack": {
+  "w": 173,
+  "h": 430,
+  "bytes": 66464,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-crate": {
+  "w": 213,
+  "h": 360,
+  "bytes": 12854,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-tired": {
+  "w": 226,
+  "h": 338,
+  "bytes": 11542,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-shout": {
+  "w": 144,
+  "h": 418,
+  "bytes": 13508,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-tie": {
+  "w": 159,
+  "h": 267,
+  "bytes": 10954,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-away": {
+  "w": 159,
+  "h": 399,
+  "bytes": 12968,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-lean": {
+  "w": 146,
+  "h": 417,
+  "bytes": 44460,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-look": {
+  "w": 135,
+  "h": 418,
+  "bytes": 12820,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "soldier-beret": {
+  "w": 133,
+  "h": 418,
+  "bytes": 14760,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "ofir90": {
+  "w": 125,
+  "h": 405,
+  "bytes": 14730,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "facePogi": {
+  "w": 211,
+  "h": 260,
+  "bytes": 38886,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "facePogi-smile": {
+  "w": 213,
+  "h": 260,
+  "bytes": 39366,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "facePogi-wide": {
+  "w": 216,
+  "h": 260,
+  "bytes": 40712,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "facePogi-shout": {
+  "w": 214,
+  "h": 260,
+  "bytes": 40438,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "facePogi-down": {
+  "w": 210,
+  "h": 260,
+  "bytes": 38872,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hero80-w1": {
+  "w": 201,
+  "h": 430,
+  "bytes": 23018,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hero80-w2": {
+  "w": 158,
+  "h": 430,
+  "bytes": 19690,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hero80-w3": {
+  "w": 208,
+  "h": 430,
+  "bytes": 23614,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hero80-w4": {
+  "w": 194,
+  "h": 430,
+  "bytes": 21518,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hero80-w5": {
+  "w": 149,
+  "h": 430,
+  "bytes": 20930,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hero80-w6": {
+  "w": 157,
+  "h": 430,
+  "bytes": 21366,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hero80-w7": {
+  "w": 222,
+  "h": 430,
+  "bytes": 22666,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hero80-w8": {
+  "w": 114,
+  "h": 430,
+  "bytes": 19422,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pupil-back1": {
+  "w": 190,
+  "h": 430,
+  "bytes": 23810,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pupil-back2": {
+  "w": 194,
+  "h": 430,
+  "bytes": 23528,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pupil-back3": {
+  "w": 176,
+  "h": 430,
+  "bytes": 23822,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pupil-back4": {
+  "w": 185,
+  "h": 430,
+  "bytes": 22510,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pupil-sideA": {
+  "w": 247,
+  "h": 421,
+  "bytes": 22030,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pupil-sideB": {
+  "w": 212,
+  "h": 430,
+  "bytes": 23656,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pupil-turn": {
+  "w": 219,
+  "h": 422,
+  "bytes": 18872,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "pupil-pass": {
+  "w": 224,
+  "h": 418,
+  "bytes": 17732,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hooperRed-ball": {
+  "w": 171,
+  "h": 430,
+  "bytes": 22134,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hooperRed-dribble": {
+  "w": 227,
+  "h": 430,
+  "bytes": 25952,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hooperRed-shoot": {
+  "w": 83,
+  "h": 430,
+  "bytes": 16926,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hooperRed-stretch": {
+  "w": 179,
+  "h": 430,
+  "bytes": 21170,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hooperRed-away": {
+  "w": 147,
+  "h": 430,
+  "bytes": 20238,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hooperRed-bent": {
+  "w": 208,
+  "h": 430,
+  "bytes": 23830,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "usher": {
+  "w": 135,
+  "h": 346,
+  "bytes": 10006,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "usher-block": {
+  "w": 231,
+  "h": 346,
+  "bytes": 10340,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "usher-up": {
+  "w": 184,
+  "h": 346,
+  "bytes": 10734,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "usher-wave": {
+  "w": 229,
+  "h": 341,
+  "bytes": 10626,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hallVendor": {
+  "w": 128,
+  "h": 355,
+  "bytes": 11166,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hallVendor-hand": {
+  "w": 226,
+  "h": 351,
+  "bytes": 13078,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hallVendor-change": {
+  "w": 129,
+  "h": 351,
+  "bytes": 11498,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "hallVendor-shout": {
+  "w": 218,
+  "h": 356,
+  "bytes": 12548,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceRachel90": {
+  "w": 102,
+  "h": 260,
+  "bytes": 28680,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceRachel90-smile": {
+  "w": 130,
+  "h": 260,
+  "bytes": 43978,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceRachel90-worried": {
+  "w": 130,
+  "h": 260,
+  "bytes": 43906,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceRachel90-nu": {
+  "w": 130,
+  "h": 260,
+  "bytes": 44056,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceRachel90-angry": {
+  "w": 130,
+  "h": 260,
+  "bytes": 43594,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceRachel90-side": {
+  "w": 130,
+  "h": 260,
+  "bytes": 43638,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceTeacher": {
+  "w": 130,
+  "h": 260,
+  "bytes": 37380,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceTeacher-glasses": {
+  "w": 159,
+  "h": 260,
+  "bytes": 33230,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceTeacher-share": {
+  "w": 131,
+  "h": 260,
+  "bytes": 29588,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceTeacher-tired": {
+  "w": 173,
+  "h": 260,
+  "bytes": 36442,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceTeacher-smile": {
+  "w": 130,
+  "h": 260,
+  "bytes": 37190,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceTeacher-angry": {
+  "w": 117,
+  "h": 260,
+  "bytes": 27382,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceOldMan": {
+  "w": 190,
+  "h": 260,
+  "bytes": 8836,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceOldMan-smile": {
+  "w": 200,
+  "h": 260,
+  "bytes": 9648,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceOldMan-what": {
+  "w": 227,
+  "h": 260,
+  "bytes": 10392,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceOldMan-story": {
+  "w": 200,
+  "h": 260,
+  "bytes": 10252,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceOldMan-over": {
+  "w": 216,
+  "h": 260,
+  "bytes": 10248,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "faceOldMan-laugh": {
+  "w": 171,
+  "h": 260,
+  "bytes": 8568,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-3q": {
+  "w": 135,
+  "h": 430,
+  "bytes": 22010,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-side": {
+  "w": 105,
+  "h": 430,
+  "bytes": 17316,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-back": {
+  "w": 132,
+  "h": 430,
+  "bytes": 22906,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-sit": {
+  "w": 250,
+  "h": 412,
+  "bytes": 20000,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-cross": {
+  "w": 138,
+  "h": 430,
+  "bytes": 21390,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-point": {
+  "w": 230,
+  "h": 430,
+  "bytes": 24676,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-w1": {
+  "w": 234,
+  "h": 422,
+  "bytes": 16566,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-w2": {
+  "w": 235,
+  "h": 419,
+  "bytes": 17358,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-w3": {
+  "w": 219,
+  "h": 418,
+  "bytes": 16514,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-w4": {
+  "w": 230,
+  "h": 415,
+  "bytes": 47780,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-laugh": {
+  "w": 146,
+  "h": 430,
+  "bytes": 17216,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-shout": {
+  "w": 172,
+  "h": 430,
+  "bytes": 22784,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "keren-hips": {
+  "w": 172,
+  "h": 430,
+  "bytes": 23846,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-3q": {
+  "w": 136,
+  "h": 430,
+  "bytes": 18024,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-side": {
+  "w": 99,
+  "h": 430,
+  "bytes": 14026,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-back": {
+  "w": 141,
+  "h": 430,
+  "bytes": 18358,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-crouch": {
+  "w": 181,
+  "h": 299,
+  "bytes": 47454,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-kick": {
+  "w": 328,
+  "h": 430,
+  "bytes": 58494,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-arms": {
+  "w": 338,
+  "h": 408,
+  "bytes": 14764,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-w1": {
+  "w": 247,
+  "h": 409,
+  "bytes": 43874,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-w2": {
+  "w": 245,
+  "h": 408,
+  "bytes": 45338,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-w3": {
+  "w": 240,
+  "h": 408,
+  "bytes": 43494,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-w4": {
+  "w": 206,
+  "h": 414,
+  "bytes": 41452,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-dribble": {
+  "w": 246,
+  "h": 403,
+  "bytes": 15872,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-cheer": {
+  "w": 226,
+  "h": 407,
+  "bytes": 14376,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "efi-sulk": {
+  "w": 140,
+  "h": 401,
+  "bytes": 12848,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-3q": {
+  "w": 159,
+  "h": 430,
+  "bytes": 17262,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-side": {
+  "w": 121,
+  "h": 430,
+  "bytes": 14012,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-back": {
+  "w": 183,
+  "h": 430,
+  "bytes": 19414,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-lean": {
+  "w": 186,
+  "h": 222,
+  "bytes": 9620,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-hand": {
+  "w": 187,
+  "h": 430,
+  "bytes": 19134,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-paper": {
+  "w": 218,
+  "h": 430,
+  "bytes": 18990,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-point": {
+  "w": 253,
+  "h": 429,
+  "bytes": 14994,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-arms": {
+  "w": 156,
+  "h": 429,
+  "bytes": 13350,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-laugh": {
+  "w": 185,
+  "h": 430,
+  "bytes": 18370,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-shrug": {
+  "w": 297,
+  "h": 430,
+  "bytes": 20982,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-coins": {
+  "w": 187,
+  "h": 430,
+  "bytes": 19086,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-wipe": {
+  "w": 188,
+  "h": 277,
+  "bytes": 11904,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "oldMan-stool": {
+  "w": 213,
+  "h": 374,
+  "bytes": 14938,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90": {
+  "w": 201,
+  "h": 628,
+  "bytes": 30250,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-3q": {
+  "w": 205,
+  "h": 626,
+  "bytes": 29674,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-side": {
+  "w": 167,
+  "h": 622,
+  "bytes": 24234,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-back": {
+  "w": 207,
+  "h": 618,
+  "bytes": 26662,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-arms": {
+  "w": 220,
+  "h": 619,
+  "bytes": 29936,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-hips": {
+  "w": 220,
+  "h": 619,
+  "bytes": 29936,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-note": {
+  "w": 256,
+  "h": 618,
+  "bytes": 30980,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-apron": {
+  "w": 201,
+  "h": 628,
+  "bytes": 30250,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-point": {
+  "w": 236,
+  "h": 618,
+  "bytes": 30726,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-watch": {
+  "w": 158,
+  "h": 430,
+  "bytes": 22760,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-hug": {
+  "w": 225,
+  "h": 618,
+  "bytes": 31972,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-sit": {
+  "w": 159,
+  "h": 411,
+  "bytes": 65922,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-door": {
+  "w": 236,
+  "h": 618,
+  "bytes": 30726,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "rachel90-call": {
+  "w": 220,
+  "h": 619,
+  "bytes": 29936,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher": {
+  "w": 131,
+  "h": 430,
+  "bytes": 14880,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-3q": {
+  "w": 119,
+  "h": 430,
+  "bytes": 13366,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-side": {
+  "w": 92,
+  "h": 430,
+  "bytes": 11052,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-back": {
+  "w": 202,
+  "h": 430,
+  "bytes": 13936,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-arms": {
+  "w": 123,
+  "h": 430,
+  "bytes": 13032,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-note": {
+  "w": 128,
+  "h": 430,
+  "bytes": 12928,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-look": {
+  "w": 150,
+  "h": 430,
+  "bytes": 15770,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-point": {
+  "w": 235,
+  "h": 430,
+  "bytes": 14600,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-hand": {
+  "w": 212,
+  "h": 430,
+  "bytes": 15326,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-sit": {
+  "w": 166,
+  "h": 398,
+  "bytes": 12018,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-lean": {
+  "w": 187,
+  "h": 428,
+  "bytes": 10130,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-walk": {
+  "w": 203,
+  "h": 413,
+  "bytes": 10126,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-watch": {
+  "w": 139,
+  "h": 426,
+  "bytes": 9460,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "teacher-turn": {
+  "w": 175,
+  "h": 413,
+  "bytes": 8698,
+  "yellowLeft": 0,
+  "source": "2026-09"
+ },
+ "iconTalk": {
+  "w": 256,
+  "h": 256,
+  "bytes": 15042,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconLook": {
+  "w": 256,
+  "h": 256,
+  "bytes": 15300,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconTake": {
+  "w": 256,
+  "h": 256,
+  "bytes": 15498,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconWalk": {
+  "w": 256,
+  "h": 256,
+  "bytes": 14986,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconMap": {
+  "w": 256,
+  "h": 256,
+  "bytes": 14694,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconTasks": {
+  "w": 256,
+  "h": 256,
+  "bytes": 13860,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconBag": {
+  "w": 256,
+  "h": 256,
+  "bytes": 15354,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconPhone": {
+  "w": 256,
+  "h": 256,
+  "bytes": 14774,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconTime": {
+  "w": 256,
+  "h": 256,
+  "bytes": 14158,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconCheckpoint": {
+  "w": 256,
+  "h": 256,
+  "bytes": 14618,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconSaved": {
+  "w": 256,
+  "h": 256,
+  "bytes": 14200,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "iconSettings": {
+  "w": 256,
+  "h": 256,
+  "bytes": 14640,
+  "yellowLeft": 0,
+  "source": "life-icons-2026-09-20"
+ },
+ "emWallet": {
+  "w": 256,
+  "h": 256,
+  "bytes": 32016,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emEnergy": {
+  "w": 256,
+  "h": 256,
+  "bytes": 20012,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emMask": {
+  "w": 256,
+  "h": 256,
+  "bytes": 26332,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emHealth": {
+  "w": 256,
+  "h": 256,
+  "bytes": 25288,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emScarf": {
+  "w": 256,
+  "h": 256,
+  "bytes": 32954,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emHands": {
+  "w": 256,
+  "h": 256,
+  "bytes": 21168,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emHearts": {
+  "w": 256,
+  "h": 256,
+  "bytes": 27836,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emChild": {
+  "w": 256,
+  "h": 256,
+  "bytes": 35638,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emBook": {
+  "w": 256,
+  "h": 256,
+  "bytes": 80514,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emMegaphone": {
+  "w": 256,
+  "h": 256,
+  "bytes": 28034,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emGlobe": {
+  "w": 256,
+  "h": 256,
+  "bytes": 29290,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ },
+ "emCase": {
+  "w": 256,
+  "h": 256,
+  "bytes": 28112,
+  "yellowLeft": 0,
+  "source": "life-emblems-2026-09-21"
+ }
+}

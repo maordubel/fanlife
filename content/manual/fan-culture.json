@@ -1,0 +1,105 @@
+{
+  "note": "Supporter culture from the Bloomfield dictionary: chants, gate customs, fence meetings and superstition. Stored as folklore, deliberately separate from match statistics — a chant is not a fact about a football match. The source also indexes sensitive song categories (שירי שואה, שירי משטרה); their existence is noted in the research document and none of that material is imported as gameplay content.",
+  "confidence": 2,
+  "source": {
+    "kind": "wiki",
+    "title": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker",
+    "url": "https://wiki.red-fans.com/"
+  },
+  "records": [
+    {
+      "slug": "אדום-אדום-אדום",
+      "titleHe": "אדום! אדום! אדום! אדום!",
+      "category": "chant",
+      "descriptionHe": "קריאה חוזרת ביציע, מופיעה במילון בלומפילד השלם.",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "איזה-גול",
+      "titleHe": "איזה גול איזה גול איזה גול",
+      "category": "chant",
+      "descriptionHe": "קריאת תגובה לשער.",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "יאללה-הפועל",
+      "titleHe": "יאללה הפועל",
+      "category": "chant",
+      "descriptionHe": "קריאת עידוד בסיסית ביציע.",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "הדרבי-מעל-הכל",
+      "titleHe": "הדרבי הוא מעל הכל",
+      "category": "derby",
+      "descriptionHe": "אמירה שמסכמת את מעמד הדרבי בתרבות היציע.",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "שער-7",
+      "titleHe": "שער 7, שער 7",
+      "category": "gate",
+      "descriptionHe": "קריאה שמזוהה עם שער 7 בבלומפילד.",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "זה-הרגע-וזאת-השעה",
+      "titleHe": "זה הרגע וזאת השעה לשים 0:2",
+      "category": "superstition",
+      "descriptionHe": "מ\"נאחסים\" — אמירות שנחשבות למביאות מזל רע כשנאמרות בטרם עת. נשמר כפולקלור אוהדים ולא כסטטיסטיקה. הכיתוב נשמר מילה במילה כפי שהוא נאמר ביציע.",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker",
+      "verbatimQuote": true
+    },
+    {
+      "slug": "תנו-לנו-עוד",
+      "titleHe": "תנו לנו עוד...",
+      "category": "superstition",
+      "descriptionHe": "נאחס נוסף מהמילון.",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "פגישות-גדר",
+      "titleHe": "פגישות גדר",
+      "category": "fence",
+      "descriptionHe": "מפגשי אוהדים ליד הגדר בהפסקת המשחק. המקור מתעד שתי גדרות: בין שער 5 לשער 7, ובין שער 7 לשער 8.",
+      "locationHe": "הגדר בין שער 5 לשער 7; הגדר בין שער 7 לשער 8",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "במה-שער-5",
+      "titleHe": "הבמה בשער 5",
+      "category": "gate",
+      "descriptionHe": "ב-2009 הקימו הנהלת האצטדיון והאוהדים בשער 5 במה ל\"אנשי הגדר\" שמובילים את הקהל. במקביל ניתן אישור לגרפיטי של אוהדים ונבנה קולאז' היסטורי בכניסה, ובו קטעי עיתונות, תצלומים ומזכרות.",
+      "periodHe": "2009",
+      "locationHe": "שער 5, בלומפילד",
+      "sport": "football",
+      "confidence": 3,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — מילון בלומפילד ופגישות גדר, דרך מסמך המחקר של צוות The Worker"
+    }
+  ]
+}

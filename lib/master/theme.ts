@@ -1,0 +1,2 @@
+export const MASTER_PRIMARY='#3E4B3E'
+export const MASTER_SECONDARY='#FFFFFF'

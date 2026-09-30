@@ -1,0 +1,111 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> fan-life-master@1.0.0-rc.2 build
+> next build
+
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+  ▲ Next.js 14.2.15
+  - Experiments (use with caution):
+    · cpus
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Skipping linting
+   Checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/59) ...
+   Generating static pages (14/59) 
+   Generating static pages (29/59) 
+   Generating static pages (44/59) 
+ ✓ Generating static pages (59/59)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ƒ /                                    187 B          95.2 kB
+├ ƒ /_not-found                          156 B          88.3 kB
+├ ƒ /api/card/blind-cow                  0 B                0 B
+├ ƒ /api/card/challenge                  0 B                0 B
+├ ƒ /api/card/goal                       0 B                0 B
+├ ƒ /api/evaluation/db                   0 B                0 B
+├ ƒ /api/evaluation/files                0 B                0 B
+├ ƒ /api/kits/reference/[token]          0 B                0 B
+├ ƒ /api/master/[...action]              0 B                0 B
+├ ƒ /api/track                           0 B                0 B
+├ ƒ /archive                             14.1 kB         323 kB
+├ ƒ /auth/callback                       0 B                0 B
+├ ○ /away-days                           15.1 kB         273 kB
+├ ƒ /blind-cow                           15.3 kB         350 kB
+├ ƒ /c/[code]                            4.07 kB         194 kB
+├ ƒ /city                                196 kB          683 kB
+├ ƒ /clubs/[slug]                        187 B          95.2 kB
+├ ○ /credits                             1.09 kB         191 kB
+├ ƒ /crest                               156 B          88.3 kB
+├ ƒ /derby                               12 kB           315 kB
+├ ƒ /derby/file                          3.69 kB         307 kB
+├ ƒ /goal                                25.9 kB         358 kB
+├ ƒ /ground                              9.53 kB         297 kB
+├ ƒ /hapoel                              2.48 kB         197 kB
+├ ○ /icon.svg                            0 B                0 B
+├ ƒ /kits                                21.1 kB         344 kB
+├ ƒ /kits/admin                          1.91 kB         282 kB
+├ ƒ /kits/archive                        11.4 kB         318 kB
+├ ƒ /kits/auction                        3.44 kB         282 kB
+├ ƒ /kits/auction/[id]                   1.91 kB         289 kB
+├ ƒ /kits/auction/submit/[itemId]        1.76 kB         283 kB
+├ ƒ /kits/build                          15.3 kB         338 kB
+├ ƒ /kits/closet                         269 B           324 kB
+├ ƒ /kits/closet/[handle]                2.98 kB         326 kB
+├ ƒ /kits/market                         1.89 kB         284 kB
+├ ƒ /kits/market/c/[id]                  1.75 kB         322 kB
+├ ƒ /kits/market/item/[id]               3.28 kB         285 kB
+├ ƒ /life                                130 kB          839 kB
+├ ƒ /lineup                              14 kB           356 kB
+├ ○ /manifest.webmanifest                0 B                0 B
+├ ƒ /master/admin                        4.52 kB        99.5 kB
+├ ƒ /master/test-lab                     187 B          95.2 kB
+├ ƒ /memory                              11.3 kB         320 kB
+├ ƒ /polls                               18.1 kB         355 kB
+├ ƒ /polls/board                         7.46 kB         268 kB
+├ ƒ /qa/auction                          6.28 kB         305 kB
+├ ƒ /qa/collector                        6.98 kB         333 kB
+├ ƒ /qa/life-album                       2.4 kB          217 kB
+├ ƒ /qa/life-craft                       17 kB           188 kB
+├ ƒ /qa/life-cutscene                    6.44 kB         185 kB
+├ ƒ /qa/life-finale                      1.97 kB         655 kB
+├ ƒ /qa/life-opening                     1.95 kB         182 kB
+├ ƒ /qa/life-pitch                       1.43 kB         173 kB
+├ ƒ /qa/market                           4.31 kB         333 kB
+├ ƒ /qa/marks                            156 B          88.3 kB
+├ ƒ /qa/stats                            3.98 kB         194 kB
+├ ƒ /qa/story                            9.09 kB         196 kB
+├ ○ /robots.txt                          0 B                0 B
+├ ƒ /royal-rumble                        7.19 kB         354 kB
+├ ƒ /royal-rumble/lived                  3.29 kB         347 kB
+├ ○ /sitemap.xml                         0 B                0 B
+├ ƒ /stand                               3.13 kB         217 kB
+├ ƒ /stand/[code]                        5.91 kB         293 kB
+├ ƒ /tik                                 21.9 kB         330 kB
+├ ƒ /tik/file                            9.3 kB          208 kB
+├ ƒ /timeline                            9.26 kB         324 kB
+├ ƒ /timeline/order                      7.91 kB         316 kB
+├ ƒ /trivia                              5.36 kB         270 kB
+├ ƒ /trivia/[topic]                      11 kB           322 kB
+├ ƒ /trivia/summary                      156 B          88.3 kB
+├ ƒ /ussishkin                           4.4 kB          198 kB
+└ ƒ /xi                                  13.9 kB         359 kB
++ First Load JS shared by all            88.2 kB
+  ├ chunks/2117-ff0ffba34d0b4968.js      31.8 kB
+  ├ chunks/fd9d1056-f361bf961b225d24.js  53.6 kB
+  └ other shared chunks (total)          2.78 kB
+
+
+ƒ Middleware                             26.7 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,23 @@
+{
+  "note": "The supporter-owned association behind the basketball club.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Verified research pass, 31 Aug 2026",
+    "url": null
+  },
+  "records": [
+    {
+      "slug": "הפועל-אוסישקין",
+      "nameHe": "הפועל אוסישקין תל אביב (ע\"ר)",
+      "registryId": "580482040",
+      "foundedYear": 2007,
+      "clubSlug": "הפועל-תל-אביב-כדורסל",
+      "sport": "basketball",
+      "purposeHe": "הקמת מועדון כדורסל בניהול אוהדים, ואכסניה חלופית להיכל אוסישקין",
+      "confidence": 2,
+      "sourceUrl": "https://www.guidestar.org.il/he/organization/580482040",
+      "sourceTitle": "GuideStar + ynet, 7.9.2007"
+    }
+  ]
+}

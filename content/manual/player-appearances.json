@@ -1,0 +1,1068 @@
+{
+ "schemaVersion": 1,
+ "source": "ויקיפועל — תיבת המידע של דף השחקן, השדה \"הופעות\" (content/raw/vikipoel-player-wikitext.json)",
+ "note": "מספר כפי שהדף כתב אותו. דף בלי מספר אינו כאן; לא ממלאים מספר עונות במקום הופעות (כלל 11).",
+ "counts": {
+  "records": 104,
+  "skipped": 3
+ },
+ "skipped": [
+  {
+   "title": "איתי שביט",
+   "reason": "unreadable",
+   "raw": "הפועל כפ\"ס, הפועל ת\"א"
+  },
+  {
+   "title": "סמואל יבואה",
+   "reason": "unreadable",
+   "raw": "?"
+  },
+  {
+   "title": "פליקס חלפון",
+   "reason": "unreadable",
+   "raw": "?"
+  }
+ ],
+ "records": [
+  {
+   "playerId": "p_3a4ffa44ba",
+   "slug": "אבו-דוסו",
+   "appearances": 10,
+   "goalsInBox": null,
+   "raw": "10",
+   "pageTitle": "אבו דוסו",
+   "pageId": 17814,
+   "revisionId": 86797
+  },
+  {
+   "playerId": "p_3fc7f6fcf1",
+   "slug": "אבי-אזולאי",
+   "appearances": 143,
+   "goalsInBox": 2,
+   "raw": "143 (2 שערים)",
+   "pageTitle": "אבי אזולאי",
+   "pageId": 2659,
+   "revisionId": 86029
+  },
+  {
+   "playerId": "p_5993128bae",
+   "slug": "אברהם-אבי-בנימין",
+   "appearances": 44,
+   "goalsInBox": null,
+   "raw": "44",
+   "pageTitle": "אברהם (אבי) בנימין",
+   "pageId": 9849,
+   "revisionId": 82673
+  },
+  {
+   "playerId": "p_6fe0288598",
+   "slug": "אדמונד-שמילוביץ",
+   "appearances": 17,
+   "goalsInBox": null,
+   "raw": "17",
+   "pageTitle": "אדמונד שמילוביץ'",
+   "pageId": 4714,
+   "revisionId": 69130
+  },
+  {
+   "playerId": "p_65f9e00e24",
+   "slug": "אור-אוסטוינד",
+   "appearances": 2,
+   "goalsInBox": null,
+   "raw": "2",
+   "pageTitle": "אור אוסטוינד",
+   "pageId": 15613,
+   "revisionId": 69138
+  },
+  {
+   "playerId": "p_9a33798d32",
+   "slug": "אור-ישראלוב",
+   "appearances": 32,
+   "goalsInBox": null,
+   "raw": "32 (שער אחד)",
+   "pageTitle": "אור ישראלוב",
+   "pageId": 17703,
+   "revisionId": 86811
+  },
+  {
+   "playerId": "p_49de1e4f0f",
+   "slug": "אזקיאל-נדואסל",
+   "appearances": 5,
+   "goalsInBox": null,
+   "raw": "5",
+   "pageTitle": "אזקיאל נדואסל",
+   "pageId": 15603,
+   "revisionId": 69146
+  },
+  {
+   "playerId": "p_967d4b240c",
+   "slug": "אחמד-מוסא",
+   "appearances": 110,
+   "goalsInBox": 2,
+   "raw": "110 (2 שערים)",
+   "pageTitle": "אחמד מוסא",
+   "pageId": 3348,
+   "revisionId": 74749
+  },
+  {
+   "playerId": "p_a4051dabb2",
+   "slug": "איבזיטו-אוגבונה",
+   "appearances": 117,
+   "goalsInBox": 37,
+   "raw": "117 (37 שערים)",
+   "pageTitle": "איבזיטו אוגבונה",
+   "pageId": 1806,
+   "revisionId": 90259
+  },
+  {
+   "playerId": "p_9da3d676ab",
+   "slug": "אייל-אברמוב",
+   "appearances": 7,
+   "goalsInBox": null,
+   "raw": "7",
+   "pageTitle": "אייל אברמוב",
+   "pageId": 3781,
+   "revisionId": 69155
+  },
+  {
+   "playerId": "p_7c9ce04140",
+   "slug": "אייל-בן-עמי",
+   "appearances": 151,
+   "goalsInBox": 7,
+   "raw": "151 (7 שערים)",
+   "pageTitle": "אייל בן עמי",
+   "pageId": 1807,
+   "revisionId": 83047
+  },
+  {
+   "playerId": "p_c4a7f257d3",
+   "slug": "אייל-משומר",
+   "appearances": 15,
+   "goalsInBox": null,
+   "raw": "15",
+   "pageTitle": "אייל משומר",
+   "pageId": 15625,
+   "revisionId": 69159
+  },
+  {
+   "playerId": "p_e8a5d5b837",
+   "slug": "אלון-אופיר",
+   "appearances": 108,
+   "goalsInBox": 5,
+   "raw": "108 (5 שערים)",
+   "pageTitle": "אלון אופיר",
+   "pageId": 3341,
+   "revisionId": 69171
+  },
+  {
+   "playerId": "p_644e79dcdb",
+   "slug": "אלון-אזוגי",
+   "appearances": 15,
+   "goalsInBox": null,
+   "raw": "15",
+   "pageTitle": "אלון אזוגי",
+   "pageId": 17728,
+   "revisionId": 76286
+  },
+  {
+   "playerId": "p_cc459a96c2",
+   "slug": "אלון-חזן",
+   "appearances": 25,
+   "goalsInBox": 3,
+   "raw": "25 (3 שערים)",
+   "pageTitle": "אלון חזן",
+   "pageId": 2369,
+   "revisionId": 69173
+  },
+  {
+   "playerId": "p_f74a361546",
+   "slug": "אלי-בכר",
+   "appearances": 19,
+   "goalsInBox": null,
+   "raw": "19",
+   "pageTitle": "אלי בכר",
+   "pageId": 21424,
+   "revisionId": 82780
+  },
+  {
+   "playerId": "p_29ba0c2a95",
+   "slug": "אלי-קוקוס-כהן",
+   "appearances": 275,
+   "goalsInBox": 46,
+   "raw": "275 (46 שערים)",
+   "pageTitle": "אלי \"קוקוס\" כהן",
+   "pageId": 2759,
+   "revisionId": 79289
+  },
+  {
+   "playerId": "p_936c703295",
+   "slug": "אמציה-לבקוביץ",
+   "appearances": 278,
+   "goalsInBox": 5,
+   "raw": "278 (5 שערים)",
+   "pageTitle": "אמציה לבקוביץ",
+   "pageId": 1811,
+   "revisionId": 69194
+  },
+  {
+   "playerId": "p_0619566adc",
+   "slug": "אנאס-מחאמיד",
+   "appearances": 15,
+   "goalsInBox": null,
+   "raw": "15",
+   "pageTitle": "אנאס מחאמיד",
+   "pageId": 15050,
+   "revisionId": 86801
+  },
+  {
+   "playerId": "p_8d87fc1ab4",
+   "slug": "אנגי-קואמה",
+   "appearances": 1,
+   "goalsInBox": null,
+   "raw": "1",
+   "pageTitle": "אנג'י קואמה",
+   "pageId": 21051,
+   "revisionId": 85480
+  },
+  {
+   "playerId": "p_d68542956a",
+   "slug": "אנז-פרדי-פלומה",
+   "appearances": 10,
+   "goalsInBox": null,
+   "raw": "10",
+   "pageTitle": "אנז'-פרדי פלומה",
+   "pageId": 17700,
+   "revisionId": 69196
+  },
+  {
+   "playerId": "p_64631ae185",
+   "slug": "אנריקה-גוקו",
+   "appearances": 13,
+   "goalsInBox": null,
+   "raw": "13 משחקי ליגה",
+   "pageTitle": "אנריקה ג'וקו",
+   "pageId": 20673,
+   "revisionId": 86081
+  },
+  {
+   "playerId": "p_b272171d0e",
+   "slug": "אריה-בזרנו",
+   "appearances": 430,
+   "goalsInBox": null,
+   "raw": "430",
+   "pageTitle": "אריה בז'רנו",
+   "pageId": 2701,
+   "revisionId": 83748
+  },
+  {
+   "playerId": "p_46690b8e39",
+   "slug": "אשר-בלוט",
+   "appearances": 115,
+   "goalsInBox": null,
+   "raw": "115",
+   "pageTitle": "אשר בלוט",
+   "pageId": 1417,
+   "revisionId": 69212
+  },
+  {
+   "playerId": "p_5c4fb419a1",
+   "slug": "בובאקר-טאמבדו",
+   "appearances": 6,
+   "goalsInBox": null,
+   "raw": "6",
+   "pageTitle": "בובאקר טאמבדו",
+   "pageId": 19370,
+   "revisionId": 75798
+  },
+  {
+   "playerId": "p_537c550cb3",
+   "slug": "בוגדן-סרנבסקי",
+   "appearances": 4,
+   "goalsInBox": null,
+   "raw": "4",
+   "pageTitle": "בוגדן סרנבסקי",
+   "pageId": 17694,
+   "revisionId": 69213
+  },
+  {
+   "playerId": "p_f4d9404511",
+   "slug": "ביברס-נאתכו",
+   "appearances": 91,
+   "goalsInBox": null,
+   "raw": "91 בליגה (155 סה\"כ)",
+   "pageTitle": "ביברס נאתכו",
+   "pageId": 1394,
+   "revisionId": 86354
+  },
+  {
+   "playerId": "p_0088d3232b",
+   "slug": "בן-ציון-צין-צינוביץ",
+   "appearances": 43,
+   "goalsInBox": null,
+   "raw": "43",
+   "pageTitle": "בן ציון צין (צינוביץ')",
+   "pageId": 11916,
+   "revisionId": 69221
+  },
+  {
+   "playerId": "p_96b192447f",
+   "slug": "ברונו-קוטיניו",
+   "appearances": 5,
+   "goalsInBox": null,
+   "raw": "5",
+   "pageTitle": "ברונו קוטיניו",
+   "pageId": 12735,
+   "revisionId": 69234
+  },
+  {
+   "playerId": "p_4b46fbda65",
+   "slug": "גבי-לסרי",
+   "appearances": 193,
+   "goalsInBox": 3,
+   "raw": "193 (3 שערים)",
+   "pageTitle": "גבי לסרי",
+   "pageId": 3345,
+   "revisionId": 76152
+  },
+  {
+   "playerId": "p_27a3259923",
+   "slug": "גד-עמוס",
+   "appearances": 1,
+   "goalsInBox": null,
+   "raw": "1",
+   "pageTitle": "גד עמוס",
+   "pageId": 21967,
+   "revisionId": 86433
+  },
+  {
+   "playerId": "p_5f3ad834a6",
+   "slug": "גדעון-טיש",
+   "appearances": 199,
+   "goalsInBox": 55,
+   "raw": "199 (55 שערים)",
+   "pageTitle": "גדעון טיש",
+   "pageId": 2022,
+   "revisionId": 86073
+  },
+  {
+   "playerId": "p_67bc6e9b9c",
+   "slug": "גיל-יצחק",
+   "appearances": 27,
+   "goalsInBox": null,
+   "raw": "27",
+   "pageTitle": "גיל יצחק",
+   "pageId": 18774,
+   "revisionId": 72477
+  },
+  {
+   "playerId": "p_25fbe5fc0d",
+   "slug": "גילי-לנדאו",
+   "appearances": 298,
+   "goalsInBox": 43,
+   "raw": "298 (43 שערים)",
+   "pageTitle": "גילי לנדאו",
+   "pageId": 1820,
+   "revisionId": 77381
+  },
+  {
+   "playerId": "p_dff7d98add",
+   "slug": "דאגלס-דה-סילבה",
+   "appearances": 25,
+   "goalsInBox": null,
+   "raw": "25 (נכון ל2009)",
+   "pageTitle": "דאגלס דה סילבה",
+   "pageId": 1590,
+   "revisionId": 75525
+  },
+  {
+   "playerId": "p_9a2e350257",
+   "slug": "דוד-פרימו",
+   "appearances": 270,
+   "goalsInBox": null,
+   "raw": "270",
+   "pageTitle": "דוד פרימו",
+   "pageId": 1822,
+   "revisionId": 69273
+  },
+  {
+   "playerId": "p_7dfce7c0d8",
+   "slug": "דוד-קלטינס",
+   "appearances": 24,
+   "goalsInBox": null,
+   "raw": "24",
+   "pageTitle": "דוד קלטינס",
+   "pageId": 17941,
+   "revisionId": 72427
+  },
+  {
+   "playerId": "p_bc4b85ce47",
+   "slug": "דוד-שוייצר",
+   "appearances": 63,
+   "goalsInBox": null,
+   "raw": "63",
+   "pageTitle": "דוד שוייצר",
+   "pageId": 1421,
+   "revisionId": 70324
+  },
+  {
+   "playerId": "p_702c5aa0e1",
+   "slug": "דמיאן-לוקאשיק",
+   "appearances": 64,
+   "goalsInBox": null,
+   "raw": "64",
+   "pageTitle": "דמיאן לוקאשיק",
+   "pageId": 2813,
+   "revisionId": 69290
+  },
+  {
+   "playerId": "p_28d5380216",
+   "slug": "דן-עזריה",
+   "appearances": 16,
+   "goalsInBox": null,
+   "raw": "16",
+   "pageTitle": "דן עזריה",
+   "pageId": 18736,
+   "revisionId": 72300
+  },
+  {
+   "playerId": "p_428a295f22",
+   "slug": "דני-בורסוק",
+   "appearances": 158,
+   "goalsInBox": null,
+   "raw": "158 בליגה (30 שערים)",
+   "pageTitle": "דני בורסוק",
+   "pageId": 5343,
+   "revisionId": 69296
+  },
+  {
+   "playerId": "p_52a1eb57ee",
+   "slug": "וויאם-עמאשה",
+   "appearances": 2,
+   "goalsInBox": null,
+   "raw": "2",
+   "pageTitle": "וויאם עמאשה",
+   "pageId": 15446,
+   "revisionId": 69312
+  },
+  {
+   "playerId": "p_9f3f7375b8",
+   "slug": "זאב-חיימוביץ",
+   "appearances": 5,
+   "goalsInBox": null,
+   "raw": "5",
+   "pageTitle": "זאב חיימוביץ'",
+   "pageId": 12743,
+   "revisionId": 69319
+  },
+  {
+   "playerId": "p_4d893fb570",
+   "slug": "זיו-מורגן",
+   "appearances": 65,
+   "goalsInBox": null,
+   "raw": "65",
+   "pageTitle": "זיו מורגן",
+   "pageId": 19356,
+   "revisionId": 86437
+  },
+  {
+   "playerId": "p_cb2d91b068",
+   "slug": "חוטפריט-רומראטו",
+   "appearances": 24,
+   "goalsInBox": null,
+   "raw": "24",
+   "pageTitle": "חוטפריט רומראטו",
+   "pageId": 17672,
+   "revisionId": 86673
+  },
+  {
+   "playerId": "p_364f504d65",
+   "slug": "חוסה-רודריגס",
+   "appearances": 12,
+   "goalsInBox": null,
+   "raw": "12 בליגה ו-2 בישולים",
+   "pageTitle": "חוסה רודריגס",
+   "pageId": 18752,
+   "revisionId": 74931
+  },
+  {
+   "playerId": "p_4923c8325d",
+   "slug": "חזי-שירזי",
+   "appearances": 92,
+   "goalsInBox": 29,
+   "raw": "92 (29 שערים)",
+   "pageTitle": "חזי שירזי",
+   "pageId": 2817,
+   "revisionId": 69326
+  },
+  {
+   "playerId": "p_b118d52099",
+   "slug": "חיים-גלזר",
+   "appearances": 62,
+   "goalsInBox": null,
+   "raw": "62",
+   "pageTitle": "חיים גלזר",
+   "pageId": 5574,
+   "revisionId": 69328
+  },
+  {
+   "playerId": "p_addc6725b3",
+   "slug": "חן-עזרא",
+   "appearances": 13,
+   "goalsInBox": null,
+   "raw": "13",
+   "pageTitle": "חן עזרא",
+   "pageId": 15342,
+   "revisionId": 69333
+  },
+  {
+   "playerId": "p_1494e9d514",
+   "slug": "חסן-אבו-זייד",
+   "appearances": 15,
+   "goalsInBox": null,
+   "raw": "15",
+   "pageTitle": "חסן אבו זייד",
+   "pageId": 15621,
+   "revisionId": 69336
+  },
+  {
+   "playerId": "p_b2eff7ad62",
+   "slug": "יואב-הופמייסטר",
+   "appearances": 12,
+   "goalsInBox": null,
+   "raw": "12",
+   "pageTitle": "יואב הופמייסטר",
+   "pageId": 17677,
+   "revisionId": 69355
+  },
+  {
+   "playerId": "p_eabb2bc45d",
+   "slug": "יוסי-זאנה",
+   "appearances": 215,
+   "goalsInBox": null,
+   "raw": "215 (שער אחד)",
+   "pageTitle": "יוסי זאנה",
+   "pageId": 2821,
+   "revisionId": 69362
+  },
+  {
+   "playerId": "p_b232d1ebcf",
+   "slug": "יחזקאל-חזום",
+   "appearances": 383,
+   "goalsInBox": null,
+   "raw": "383",
+   "pageTitle": "יחזקאל חזום",
+   "pageId": 1612,
+   "revisionId": 75540
+  },
+  {
+   "playerId": "p_c324982118",
+   "slug": "יעקב-אקהויז",
+   "appearances": 484,
+   "goalsInBox": 12,
+   "raw": "484 (12 שערים)",
+   "pageTitle": "יעקב אקהויז",
+   "pageId": 2033,
+   "revisionId": 77441
+  },
+  {
+   "playerId": "p_30f1a8b59b",
+   "slug": "יעקב-חודורוב",
+   "appearances": 171,
+   "goalsInBox": null,
+   "raw": "171",
+   "pageTitle": "יעקב חודורוב",
+   "pageId": 1427,
+   "revisionId": 73248
+  },
+  {
+   "playerId": "p_c4fdaa9ac3",
+   "slug": "יעקב-רודיק",
+   "appearances": 1,
+   "goalsInBox": null,
+   "raw": "1",
+   "pageTitle": "יעקב רודיק",
+   "pageId": 21473,
+   "revisionId": 82970
+  },
+  {
+   "playerId": "p_ad4a8b0671",
+   "slug": "יעקב-רחמינוביץ",
+   "appearances": 332,
+   "goalsInBox": null,
+   "raw": "332",
+   "pageTitle": "יעקב רחמינוביץ'",
+   "pageId": 4307,
+   "revisionId": 91970
+  },
+  {
+   "playerId": "p_cc6bb93ec0",
+   "slug": "יצחק-מנחם",
+   "appearances": 72,
+   "goalsInBox": 12,
+   "raw": "72 (12 שערים)",
+   "pageTitle": "יצחק מנחם",
+   "pageId": 8821,
+   "revisionId": 69379
+  },
+  {
+   "playerId": "p_bc4846f066",
+   "slug": "ירמיהו-לוף",
+   "appearances": 7,
+   "goalsInBox": null,
+   "raw": "7",
+   "pageTitle": "ירמיהו לוף",
+   "pageId": 4924,
+   "revisionId": 69385
+  },
+  {
+   "playerId": "p_57acf4edb3",
+   "slug": "לוסיו-מרינאו",
+   "appearances": 12,
+   "goalsInBox": null,
+   "raw": "12",
+   "pageTitle": "לוסיו מרינאו",
+   "pageId": 17691,
+   "revisionId": 69398
+  },
+  {
+   "playerId": "p_430514c3e2",
+   "slug": "ליעד-רמות",
+   "appearances": 2,
+   "goalsInBox": null,
+   "raw": "2",
+   "pageTitle": "ליעד רמות",
+   "pageId": 17704,
+   "revisionId": 77506
+  },
+  {
+   "playerId": "p_7505a4e914",
+   "slug": "לירן-רוטמן",
+   "appearances": 54,
+   "goalsInBox": null,
+   "raw": "54 (עשרה שערים)",
+   "pageTitle": "לירן רוטמן",
+   "pageId": 19895,
+   "revisionId": 85240
+  },
+  {
+   "playerId": "p_fd182dfc02",
+   "slug": "מאיר-בן-שטרית",
+   "appearances": 44,
+   "goalsInBox": null,
+   "raw": "44 (12 שערי ליגה)",
+   "pageTitle": "מאיר בן שטרית",
+   "pageId": 6857,
+   "revisionId": 81703
+  },
+  {
+   "playerId": "p_d73bf6d73e",
+   "slug": "מוטי-ברשצקי",
+   "appearances": 46,
+   "goalsInBox": null,
+   "raw": "46",
+   "pageTitle": "מוטי ברשצקי",
+   "pageId": 15622,
+   "revisionId": 78418
+  },
+  {
+   "playerId": "p_75ef40e9c5",
+   "slug": "מוריס-זאנו",
+   "appearances": 251,
+   "goalsInBox": 54,
+   "raw": "251 (54 שערים)",
+   "pageTitle": "מוריס ז'אנו",
+   "pageId": 2746,
+   "revisionId": 72889
+  },
+  {
+   "playerId": "p_f87f9db8da",
+   "slug": "מייקל-סיטון",
+   "appearances": 1,
+   "goalsInBox": null,
+   "raw": "1",
+   "pageTitle": "מייקל סיטון",
+   "pageId": 15593,
+   "revisionId": 69431
+  },
+  {
+   "playerId": "p_b6c6274a18",
+   "slug": "מיכאל-זנדברג",
+   "appearances": 14,
+   "goalsInBox": null,
+   "raw": "14 (1)",
+   "pageTitle": "מיכאל זנדברג",
+   "pageId": 4483,
+   "revisionId": 70443
+  },
+  {
+   "playerId": "p_fdf0162568",
+   "slug": "מנחם-מור",
+   "appearances": 50,
+   "goalsInBox": null,
+   "raw": "50 הופעות ליגה\t(שער אחד)",
+   "pageTitle": "מנחם מור",
+   "pageId": 21128,
+   "revisionId": 82057
+  },
+  {
+   "playerId": "p_f04c393b45",
+   "slug": "מנחם-רוזנשטרייך",
+   "appearances": 64,
+   "goalsInBox": 2,
+   "raw": "64 (2 שערים)",
+   "pageTitle": "מנחם רוזנשטרייך",
+   "pageId": 19614,
+   "revisionId": 75739
+  },
+  {
+   "playerId": "p_b6e735f352",
+   "slug": "מרווין-פירסמן",
+   "appearances": 79,
+   "goalsInBox": null,
+   "raw": "79",
+   "pageTitle": "מרווין פירסמן",
+   "pageId": 15959,
+   "revisionId": 69442
+  },
+  {
+   "playerId": "p_11ded33d63",
+   "slug": "מרקו-ינקוביץ",
+   "appearances": 11,
+   "goalsInBox": null,
+   "raw": "11",
+   "pageTitle": "מרקו ינקוביץ'",
+   "pageId": 17726,
+   "revisionId": 69446
+  },
+  {
+   "playerId": "p_0694db8ed4",
+   "slug": "משה-אייזנברג",
+   "appearances": 21,
+   "goalsInBox": null,
+   "raw": "21 (שער 1)",
+   "pageTitle": "משה אייזנברג",
+   "pageId": 3339,
+   "revisionId": 70453
+  },
+  {
+   "playerId": "p_491c4a7088",
+   "slug": "משה-מורדכוביץ",
+   "appearances": 193,
+   "goalsInBox": 20,
+   "raw": "193 (20 שערים)",
+   "pageTitle": "משה מורדכוביץ׳",
+   "pageId": 19225,
+   "revisionId": 86227
+  },
+  {
+   "playerId": "p_d911596da4",
+   "slug": "משה-מלמד",
+   "appearances": 42,
+   "goalsInBox": null,
+   "raw": "42",
+   "pageTitle": "משה מלמד",
+   "pageId": 1430,
+   "revisionId": 69453
+  },
+  {
+   "playerId": "p_d5b6d6ee0a",
+   "slug": "משה-סיני",
+   "appearances": 318,
+   "goalsInBox": null,
+   "raw": "318 (87 שערים, 60 בישולים)",
+   "pageTitle": "משה סיני",
+   "pageId": 2745,
+   "revisionId": 70454
+  },
+  {
+   "playerId": "p_c7711745f0",
+   "slug": "ניב-זריהן",
+   "appearances": 17,
+   "goalsInBox": 2,
+   "raw": "17 (2 שערים)",
+   "pageTitle": "ניב זריהן",
+   "pageId": 17942,
+   "revisionId": 79790
+  },
+  {
+   "playerId": "p_54d8d9fd90",
+   "slug": "נמרוד-דרייפוס",
+   "appearances": 120,
+   "goalsInBox": null,
+   "raw": "120",
+   "pageTitle": "נמרוד דרייפוס",
+   "pageId": 2788,
+   "revisionId": 91973
+  },
+  {
+   "playerId": "p_82db47f9fa",
+   "slug": "נפתלי-שוואלב",
+   "appearances": 2,
+   "goalsInBox": null,
+   "raw": "2 (שער אחד)",
+   "pageTitle": "נפתלי שוואלב",
+   "pageId": 20018,
+   "revisionId": 77923
+  },
+  {
+   "playerId": "p_538da1a2a3",
+   "slug": "סיאנדה-קולו",
+   "appearances": 53,
+   "goalsInBox": null,
+   "raw": "53",
+   "pageTitle": "סיאנדה קולו",
+   "pageId": 17430,
+   "revisionId": 69486
+  },
+  {
+   "playerId": "p_f1e65c010d",
+   "slug": "סתיו-למקין",
+   "appearances": 36,
+   "goalsInBox": null,
+   "raw": "36",
+   "pageTitle": "סתיו למקין",
+   "pageId": 17702,
+   "revisionId": 77523
+  },
+  {
+   "playerId": "p_b58800342d",
+   "slug": "עדן-הרשקוביץ",
+   "appearances": 18,
+   "goalsInBox": null,
+   "raw": "18",
+   "pageTitle": "עדן הרשקוביץ",
+   "pageId": 15696,
+   "revisionId": 69499
+  },
+  {
+   "playerId": "p_f1262369e6",
+   "slug": "עידו-אלמישלי",
+   "appearances": 12,
+   "goalsInBox": null,
+   "raw": "12",
+   "pageTitle": "עידו אלמישלי",
+   "pageId": 19372,
+   "revisionId": 74912
+  },
+  {
+   "playerId": "p_fbda86940b",
+   "slug": "עידו-וייר",
+   "appearances": 24,
+   "goalsInBox": null,
+   "raw": "24",
+   "pageTitle": "עידו וייר",
+   "pageId": 19931,
+   "revisionId": 81701
+  },
+  {
+   "playerId": "p_67db828630",
+   "slug": "עמי-אדמוני",
+   "appearances": 129,
+   "goalsInBox": 5,
+   "raw": "129 (5 שערים)",
+   "pageTitle": "עמי אדמוני",
+   "pageId": 19943,
+   "revisionId": 82711
+  },
+  {
+   "playerId": "p_07ab67e62d",
+   "slug": "עמית-מאיר",
+   "appearances": 9,
+   "goalsInBox": null,
+   "raw": "9",
+   "pageTitle": "עמית מאיר",
+   "pageId": 19699,
+   "revisionId": 76164
+  },
+  {
+   "playerId": "p_509dd22745",
+   "slug": "עמנואל-בואטנג-קשר",
+   "appearances": 69,
+   "goalsInBox": null,
+   "raw": "69 (שני שערים)",
+   "pageTitle": "עמנואל בואטנג (קשר)",
+   "pageId": 16115,
+   "revisionId": 86802
+  },
+  {
+   "playerId": "p_b241af69cf",
+   "slug": "פבלו-גונזאלס",
+   "appearances": 7,
+   "goalsInBox": null,
+   "raw": "7",
+   "pageTitle": "פבלו גונזאלס",
+   "pageId": 17733,
+   "revisionId": 72454
+  },
+  {
+   "playerId": "p_cde776a906",
+   "slug": "פבריציו-קארבליו",
+   "appearances": 28,
+   "goalsInBox": null,
+   "raw": "28",
+   "pageTitle": "פבריציו קארבליו",
+   "pageId": 1659,
+   "revisionId": 69537
+  },
+  {
+   "playerId": "p_d4ded150b3",
+   "slug": "פדרו-גלבאן",
+   "appearances": 17,
+   "goalsInBox": null,
+   "raw": "17",
+   "pageTitle": "פדרו גלבאן",
+   "pageId": 15670,
+   "revisionId": 69538
+  },
+  {
+   "playerId": "p_646ff9d086",
+   "slug": "קייס-גאנם",
+   "appearances": 22,
+   "goalsInBox": null,
+   "raw": "22",
+   "pageTitle": "קייס גאנם",
+   "pageId": 17647,
+   "revisionId": 72106
+  },
+  {
+   "playerId": "p_fde4eb7dae",
+   "slug": "רובי-לבקוביץ",
+   "appearances": 58,
+   "goalsInBox": null,
+   "raw": "58 משחקי ליגה",
+   "pageTitle": "רובי לבקוביץ'",
+   "pageId": 15978,
+   "revisionId": 82413
+  },
+  {
+   "playerId": "p_7a34e02f09",
+   "slug": "רוני-קלדרון",
+   "appearances": 59,
+   "goalsInBox": null,
+   "raw": "59 (3 שערים, 15 בישולים)",
+   "pageTitle": "רוני קלדרון",
+   "pageId": 2442,
+   "revisionId": 70862
+  },
+  {
+   "playerId": "p_792a03746f",
+   "slug": "רותם-חטואל",
+   "appearances": 15,
+   "goalsInBox": null,
+   "raw": "15",
+   "pageTitle": "רותם חטואל",
+   "pageId": 20600,
+   "revisionId": 81831
+  },
+  {
+   "playerId": "p_9ee57e128a",
+   "slug": "ריפעת-טורק",
+   "appearances": 238,
+   "goalsInBox": 40,
+   "raw": "238 (40 שערים)",
+   "pageTitle": "ריפעת טורק",
+   "pageId": 2704,
+   "revisionId": 76148
+  },
+  {
+   "playerId": "p_d33d2b7eec",
+   "slug": "רפי-שמואל",
+   "appearances": 117,
+   "goalsInBox": 15,
+   "raw": "117 (15 שערים)",
+   "pageTitle": "רפי שמואל",
+   "pageId": 3334,
+   "revisionId": 75692
+  },
+  {
+   "playerId": "p_2cd9d3a0a5",
+   "slug": "שבי-בן-ברוך",
+   "appearances": 148,
+   "goalsInBox": 13,
+   "raw": "148\t(13 שערים)",
+   "pageTitle": "שבי בן ברוך",
+   "pageId": 1867,
+   "revisionId": 75743
+  },
+  {
+   "playerId": "p_9a7b6e96a1",
+   "slug": "שביט-אלימלך",
+   "appearances": 476,
+   "goalsInBox": null,
+   "raw": "476 (ליגה)",
+   "pageTitle": "שביט אלימלך",
+   "pageId": 1669,
+   "revisionId": 79210
+  },
+  {
+   "playerId": "p_6dbf159c8d",
+   "slug": "שבתאי-יחבס",
+   "appearances": 125,
+   "goalsInBox": null,
+   "raw": "125 משחקי ליגה ו-3 שערים",
+   "pageTitle": "שבתאי יחבס",
+   "pageId": 6852,
+   "revisionId": 80415
+  },
+  {
+   "playerId": "p_1108a4ea15",
+   "slug": "שבתאי-לוי",
+   "appearances": 247,
+   "goalsInBox": 59,
+   "raw": "247 (59 שערים)",
+   "pageTitle": "שבתאי לוי",
+   "pageId": 2776,
+   "revisionId": 70875
+  },
+  {
+   "playerId": "p_e42fa23730",
+   "slug": "שגיא-גניס",
+   "appearances": 5,
+   "goalsInBox": null,
+   "raw": "5",
+   "pageTitle": "שגיא גניס",
+   "pageId": 17706,
+   "revisionId": 80096
+  },
+  {
+   "playerId": "p_9a92af7371",
+   "slug": "שלום-אביטן",
+   "appearances": 8,
+   "goalsInBox": null,
+   "raw": "8 (שער 1)",
+   "pageTitle": "שלום אביטן",
+   "pageId": 3774,
+   "revisionId": 84454
+  },
+  {
+   "playerId": "p_3768acb435",
+   "slug": "שמעון-בנודיס",
+   "appearances": 2,
+   "goalsInBox": null,
+   "raw": "2 (שער אחד)",
+   "pageTitle": "שמעון בנודיס",
+   "pageId": 20017,
+   "revisionId": 77922
+  },
+  {
+   "playerId": "p_ed8c4930dd",
+   "slug": "תומר-לוי",
+   "appearances": 1,
+   "goalsInBox": null,
+   "raw": "1 (גביע הטוטו)",
+   "pageTitle": "תומר לוי",
+   "pageId": 22455,
+   "revisionId": 87076
+  },
+  {
+   "playerId": "p_d5858e71c4",
+   "slug": "תמיר-לינהרט",
+   "appearances": 49,
+   "goalsInBox": 9,
+   "raw": "49 (9 שערים)",
+   "pageTitle": "תמיר לינהרט",
+   "pageId": 3662,
+   "revisionId": 69640
+  }
+ ]
+}

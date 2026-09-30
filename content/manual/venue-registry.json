@@ -1,0 +1,1692 @@
+{
+ "note": "VenueRecord (AWAY DAYS spec §19, 24.9.2026): one row per physical ground, aliases and renames merged, coordinates copied from the page named first in sourceRefs (never geocoded at runtime). `legacySlug` joins a row to the `records` of venues.json that name the same ground. Read by scripts/away-days/build-master.ts only.",
+ "records": [
+  {
+   "id": "bloomfield",
+   "canonicalNameHe": "אצטדיון בלומפילד",
+   "canonicalNameLatin": "Bloomfield Stadium",
+   "aliases": [
+    "בלומפילד",
+    "Itztadion Bloomfield"
+   ],
+   "historicalNames": [],
+   "cityHe": "תל אביב־יפו",
+   "cityLatin": "Tel Aviv",
+   "countryHe": "ישראל",
+   "countryCode": "IL",
+   "latitude": 32.05176,
+   "longitude": 34.76158,
+   "openedYear": 1962,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://mapcarta.com/29589234",
+    "https://en.wikipedia.org/wiki/Bloomfield_Stadium"
+   ],
+   "confidence": 2,
+   "legacySlug": "בלומפילד",
+   "note": "נקודת היציאה של המסע"
+  },
+  {
+   "id": "suphachalasai",
+   "canonicalNameHe": "אצטדיון שופאצ׳אלאסאי",
+   "canonicalNameLatin": "Suphachalasai Stadium",
+   "aliases": [
+    "האצטדיון הלאומי, בנגקוק",
+    "National Stadium, Bangkok",
+    "National Stadium (Thailand)"
+   ],
+   "historicalNames": [],
+   "cityHe": "בנגקוק",
+   "cityLatin": "Bangkok",
+   "countryHe": "תאילנד",
+   "countryCode": "TH",
+   "latitude": 13.745556,
+   "longitude": 100.525556,
+   "openedYear": 1938,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Malaysian_football_clubs_in_Asian_competitions",
+    "https://en.wikipedia.org/wiki/Suphachalasai_Stadium",
+    "https://www.thesportsdb.com/venue/33468-suphachalasai-stadium",
+    "https://tripomatic.com/en/poi/suphachalasai-stadium-poi:44693"
+   ],
+   "confidence": 2,
+   "note": "Wikipedia names the 1967 final's ground \"National Stadium, Bangkok\"; Suphachalasai is the football stadium of that complex (Wikipedia). Coordinates: TheSportsDB 13.745556, 100.525556; Tripomatic 13°44′43.6″N 100°31′32.4″E — agree to 20 m."
+  },
+  {
+   "id": "amjadieh",
+   "canonicalNameHe": "אצטדיון אמג׳דיה",
+   "canonicalNameLatin": "Shahid Shiroudi Stadium",
+   "aliases": [
+    "Amjadieh Stadium",
+    "Shiroudi Stadium",
+    "שהיד שירודי",
+    "שירודי",
+    "אמג׳דיה"
+   ],
+   "historicalNames": [
+    {
+     "name": "Amjadieh Stadium",
+     "from": "1939",
+     "to": "1981"
+    },
+    {
+     "name": "Shahid Shiroudi Stadium",
+     "from": "1981"
+    }
+   ],
+   "cityHe": "טהרן",
+   "cityLatin": "Tehran",
+   "countryHe": "איראן",
+   "countryCode": "IR",
+   "latitude": 35.71028,
+   "longitude": 51.4275,
+   "openedYear": 1939,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Shahid_Shiroudi_Stadium",
+    "https://www.rsssf.org/tablesa/ascup70.html",
+    "https://wildstat.com/p/146/cht/514/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "RSSSF: \"all matches in Tehran, Apr 1-10, 1970\"; Wikipedia: \"The Asian Club Championship was also held in Amjadieh Stadium in 1970\"; Wildstat names Shahid Shiroudi for the final."
+  },
+  {
+   "id": "republican-chisinau",
+   "canonicalNameHe": "האצטדיון הרפובליקני, קישינב",
+   "canonicalNameLatin": "Republican Stadium (Chișinău)",
+   "aliases": [
+    "Stadionul Republican",
+    "Republican Stadium",
+    "קישינב"
+   ],
+   "historicalNames": [],
+   "cityHe": "קישינב",
+   "cityLatin": "Chișinău",
+   "countryHe": "מולדובה",
+   "countryCode": "MD",
+   "latitude": 47.012391,
+   "longitude": 28.839455,
+   "openedYear": 1952,
+   "closedYear": 2007,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Republican_Stadium_(Chișinău)",
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/MDA_Zimbru_Chisinau"
+   ],
+   "confidence": 2,
+   "legacySlug": "קישינב",
+   "note": "Demolished 2007."
+  },
+  {
+   "id": "helsinki-olympic",
+   "canonicalNameHe": "האצטדיון האולימפי, הלסינקי",
+   "canonicalNameLatin": "Helsinki Olympic Stadium",
+   "aliases": [
+    "Olympiastadion"
+   ],
+   "historicalNames": [],
+   "cityHe": "הלסינקי",
+   "cityLatin": "Helsinki",
+   "countryHe": "פינלנד",
+   "countryCode": "FI",
+   "latitude": 60.18694,
+   "longitude": 24.92722,
+   "openedYear": 1938,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Helsinki_Olympic_Stadium",
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/FIN_FinnPa_Helsinki"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "hrazdan",
+   "canonicalNameHe": "אצטדיון הרזדן",
+   "canonicalNameLatin": "Hrazdan Stadium",
+   "aliases": [
+    "Hrazdan Central Stadium"
+   ],
+   "historicalNames": [],
+   "cityHe": "ירוואן",
+   "cityLatin": "Yerevan",
+   "countryHe": "ארמניה",
+   "countryCode": "AM",
+   "latitude": 40.1804028,
+   "longitude": 44.4949667,
+   "openedYear": 1970,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Hrazdan_Stadium",
+    "https://wildstat.com/p/146/ch/all/club1/ISR_Hapoel_Tel_Aviv/club2/ARM_FC_Erevan"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "celtic-park",
+   "canonicalNameHe": "סלטיק פארק",
+   "canonicalNameLatin": "Celtic Park",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "גלזגו",
+   "cityLatin": "Glasgow",
+   "countryHe": "סקוטלנד",
+   "countryCode": "GB",
+   "latitude": 55.84972,
+   "longitude": -4.20556,
+   "openedYear": 1892,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Celtic_Park",
+    "https://wildstat.com/p/146/ch/all/club1/SCO_Celtic_Glasgow/club2/ISR_Hapoel_Tel_Aviv"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "graz-liebenau",
+   "canonicalNameHe": "אצטדיון גראץ-ליבנאו",
+   "canonicalNameLatin": "Stadion Graz-Liebenau",
+   "aliases": [
+    "Merkur Arena",
+    "UPC-Arena",
+    "Liebenauer Stadium",
+    "Arnold Schwarzenegger Stadium"
+   ],
+   "historicalNames": [
+    {
+     "name": "Arnold Schwarzenegger Stadium",
+     "to": "2005"
+    },
+    {
+     "name": "Stadion Graz-Liebenau",
+     "from": "2005",
+     "to": "2006"
+    },
+    {
+     "name": "UPC-Arena",
+     "from": "2006",
+     "to": "2016"
+    },
+    {
+     "name": "Merkur Arena"
+    }
+   ],
+   "cityHe": "גראץ",
+   "cityLatin": "Graz",
+   "countryHe": "אוסטריה",
+   "countryCode": "AT",
+   "latitude": 47.046111,
+   "longitude": 15.454444,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Liebenauer_Stadium",
+    "https://www.thesportsdb.com/venue/18698-merkur-arena-graz",
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "vazgen-sargsyan",
+   "canonicalNameHe": "אצטדיון ואזגן סרגסיאן הרפובליקני",
+   "canonicalNameLatin": "Vazgen Sargsyan Republican Stadium",
+   "aliases": [
+    "Republican Stadium (Yerevan)",
+    "Dinamo Stadium"
+   ],
+   "historicalNames": [
+    {
+     "name": "Dinamo",
+     "from": "1935",
+     "to": "1999"
+    },
+    {
+     "name": "Republican",
+     "from": "1999"
+    }
+   ],
+   "cityHe": "ירוואן",
+   "cityLatin": "Yerevan",
+   "countryHe": "ארמניה",
+   "countryCode": "AM",
+   "latitude": 40.17194,
+   "longitude": 44.52583,
+   "openedYear": 1935,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Vazgen_Sargsyan_Republican_Stadium",
+    "https://wildstat.com/p/146/ch/all/club1/ARM_Ararat_Erevan/club2/ISR_Hapoel_Tel_Aviv",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "kamil-ocak",
+   "canonicalNameHe": "אצטדיון כאמיל אוג׳אק",
+   "canonicalNameLatin": "Kamil Ocak Stadium",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "גזיאנטפ",
+   "cityLatin": "Gaziantep",
+   "countryHe": "טורקיה",
+   "countryCode": "TR",
+   "latitude": 37.0675722,
+   "longitude": 37.3775917,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Gaziantep_Kamil_Ocak_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Gaziantepspor's ground until 2017."
+  },
+  {
+   "id": "stamford-bridge",
+   "canonicalNameHe": "סטמפורד ברידג׳",
+   "canonicalNameLatin": "Stamford Bridge",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "לונדון",
+   "cityLatin": "London",
+   "countryHe": "אנגליה",
+   "countryCode": "GB",
+   "latitude": 51.481667,
+   "longitude": -0.191111,
+   "openedYear": 1877,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Stamford_Bridge_(stadium)",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "saturn-ramenskoye",
+   "canonicalNameHe": "אצטדיון סטורן",
+   "canonicalNameLatin": "Saturn Stadium",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "רמנסקויה",
+   "cityLatin": "Ramenskoye",
+   "countryHe": "רוסיה",
+   "countryCode": "RU",
+   "latitude": 55.5775222,
+   "longitude": 38.2264722,
+   "openedYear": 1999,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Saturn_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Lokomotiv Moscow's home leg of 4.12.2001 was played here (Wildstat; euro-ties)."
+  },
+  {
+   "id": "tardini",
+   "canonicalNameHe": "אצטדיון אניו טרדיני",
+   "canonicalNameLatin": "Stadio Ennio Tardini",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "פארמה",
+   "cityLatin": "Parma",
+   "countryHe": "איטליה",
+   "countryCode": "IT",
+   "latitude": 44.795,
+   "longitude": 10.33833,
+   "openedYear": 1923,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Stadio_Ennio_Tardini",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "gsp-nicosia",
+   "canonicalNameHe": "אצטדיון GSP",
+   "canonicalNameLatin": "GSP Stadium",
+   "aliases": [
+    "GSP",
+    "אצטדיון GSP ניקוסיה",
+    "Pancyprian Gymnastic Association Stadium"
+   ],
+   "historicalNames": [],
+   "cityHe": "ניקוסיה",
+   "cityLatin": "Nicosia",
+   "countryHe": "קפריסין",
+   "countryCode": "CY",
+   "latitude": 35.11444,
+   "longitude": 33.36278,
+   "openedYear": 1999,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/GSP_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "legacySlug": "גספ-ניקוסיה",
+   "note": "In Strovolos, Nicosia district."
+  },
+  {
+   "id": "san-siro",
+   "canonicalNameHe": "סן סירו",
+   "canonicalNameLatin": "Stadio Giuseppe Meazza",
+   "aliases": [
+    "San Siro",
+    "סן סירו"
+   ],
+   "historicalNames": [],
+   "cityHe": "מילאנו",
+   "cityLatin": "Milan",
+   "countryHe": "איטליה",
+   "countryCode": "IT",
+   "latitude": 45.4781,
+   "longitude": 9.1217,
+   "openedYear": 1926,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/San_Siro",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "legacySlug": "סן-סירו"
+  },
+  {
+   "id": "qemal-stafa",
+   "canonicalNameHe": "אצטדיון קמאל סטאפה",
+   "canonicalNameLatin": "Qemal Stafa Stadium",
+   "aliases": [
+    "Stadiumi Kombëtar Qemal Stafa"
+   ],
+   "historicalNames": [],
+   "cityHe": "טירנה",
+   "cityLatin": "Tirana",
+   "countryHe": "אלבניה",
+   "countryCode": "AL",
+   "latitude": 41.318314,
+   "longitude": 19.824076,
+   "openedYear": 1946,
+   "closedYear": 2016,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Qemal_Stafa_Stadium",
+    "https://dbpedia.org/page/Qemal_Stafa_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Demolished 2016; Arena Kombëtare stands on the same site (opened 2019)."
+  },
+  {
+   "id": "woerthersee",
+   "canonicalNameHe": "אצטדיון וֶרטרזה",
+   "canonicalNameLatin": "Wörthersee Stadion",
+   "aliases": [
+    "Wörtherseestadion",
+    "Hypo-Arena",
+    "28 Black Arena"
+   ],
+   "historicalNames": [
+    {
+     "name": "Wörtherseestadion",
+     "from": "1960",
+     "to": "2005"
+    },
+    {
+     "name": "Hypo-Arena",
+     "from": "2007",
+     "to": "2010"
+    },
+    {
+     "name": "Wörthersee Stadion",
+     "from": "2010",
+     "to": "2022"
+    },
+    {
+     "name": "28 Black Arena",
+     "from": "2022"
+    }
+   ],
+   "cityHe": "קלגנפורט",
+   "cityLatin": "Klagenfurt",
+   "countryHe": "אוסטריה",
+   "countryCode": "AT",
+   "latitude": 46.608927,
+   "longitude": 14.2783326,
+   "openedYear": 1960,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Wörthersee_Stadion",
+    "https://tripomatic.com/en/poi/worthersee-stadion-poi:5107737",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Hapoel played the 1960 stadium (19.9.2002); it was demolished from 2005 and rebuilt on the same site (2006–2007). The coordinates are the rebuilt stadium's."
+  },
+  {
+   "id": "georgi-asparuhov",
+   "canonicalNameHe": "אצטדיון גאורגי אספרוחוב",
+   "canonicalNameLatin": "Georgi Asparuhov Stadium",
+   "aliases": [
+    "Gerena",
+    "Vivacom Arena"
+   ],
+   "historicalNames": [],
+   "cityHe": "סופיה",
+   "cityLatin": "Sofia",
+   "countryHe": "בולגריה",
+   "countryCode": "BG",
+   "latitude": 42.705556,
+   "longitude": 23.363333,
+   "openedYear": 1963,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://www.thesportsdb.com/venue/17617-stadion-georgi-asparuhov",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://match.uefa.com/v5/matches?matchId=70198"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "elland-road",
+   "canonicalNameHe": "אלנד רואד",
+   "canonicalNameLatin": "Elland Road",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "לידס",
+   "cityLatin": "Leeds",
+   "countryHe": "אנגליה",
+   "countryCode": "GB",
+   "latitude": 53.77778,
+   "longitude": -1.57222,
+   "openedYear": 1897,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Elland_Road",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "artemio-franchi",
+   "canonicalNameHe": "אצטדיון ארטמיו פרנקי",
+   "canonicalNameLatin": "Stadio Artemio Franchi",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "פירנצה",
+   "cityLatin": "Florence",
+   "countryHe": "איטליה",
+   "countryCode": "IT",
+   "latitude": 43.780833,
+   "longitude": 11.282222,
+   "openedYear": 1931,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://www.thesportsdb.com/venue/17087-Stadio-Artemio-Franchi",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://match.uefa.com/v5/matches?matchId=70341"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "het-kasteel",
+   "canonicalNameHe": "אצטדיון ספרטה \"הטירה\"",
+   "canonicalNameLatin": "Sparta Stadion Het Kasteel",
+   "aliases": [
+    "Eneco Stadion",
+    "ENECO-stadion",
+    "אצטדיון אנקו",
+    "Stadion Spangen",
+    "Het Kasteel"
+   ],
+   "historicalNames": [
+    {
+     "name": "Stadion Spangen",
+     "from": "1916"
+    },
+    {
+     "name": "ENECO-stadion",
+     "from": "1999"
+    },
+    {
+     "name": "Sparta Stadion Het Kasteel"
+    }
+   ],
+   "cityHe": "רוטרדם",
+   "cityLatin": "Rotterdam",
+   "countryHe": "הולנד",
+   "countryCode": "NL",
+   "latitude": 51.91946,
+   "longitude": 4.43355,
+   "openedYear": 1916,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Eneco_Stadion",
+    "https://en.wikipedia.org/wiki/Sparta_Stadion_Het_Kasteel",
+    "https://mapcarta.com/W275123728",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Wildstat writes \"Eneco Stadion, Rotterdam\"; Wikipedia's disambiguation puts Rotterdam's Eneco Stadion at Sparta's Het Kasteel, renamed ENECO-stadion in the 1998–99 renovation."
+  },
+  {
+   "id": "willem-ii",
+   "canonicalNameHe": "אצטדיון המלך וילם השני",
+   "canonicalNameLatin": "Koning Willem II Stadion",
+   "aliases": [
+    "Willem II Stadion",
+    "אצטדיון וילם השני"
+   ],
+   "historicalNames": [],
+   "cityHe": "טילבורג",
+   "cityLatin": "Tilburg",
+   "countryHe": "הולנד",
+   "countryCode": "NL",
+   "latitude": 51.542778,
+   "longitude": 5.066944,
+   "openedYear": 1995,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Koning_Willem_II_Stadion",
+    "https://www.thesportsdb.com/venue/15856-Koning-Willem-II-Stadion",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "domzale",
+   "canonicalNameHe": "הפארק הספורטיבי דומז׳לה",
+   "canonicalNameLatin": "Domžale Sports Park",
+   "aliases": [
+    "Športni park Domžale"
+   ],
+   "historicalNames": [],
+   "cityHe": "דומז׳לה",
+   "cityLatin": "Domžale",
+   "countryHe": "סלובניה",
+   "countryCode": "SI",
+   "latitude": 46.13694,
+   "longitude": 14.60222,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Domžale_Sports_Park",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "chornomorets",
+   "canonicalNameHe": "אצטדיון צ׳רנומורץ",
+   "canonicalNameLatin": "Chornomorets Stadium",
+   "aliases": [
+    "Central Stadium ChMP",
+    "Central Stadium of the Black Sea Shipping Company"
+   ],
+   "historicalNames": [
+    {
+     "name": "Central Stadium of the Black Sea Shipping Company",
+     "from": "1958",
+     "to": "2009"
+    },
+    {
+     "name": "Chornomorets Stadium",
+     "from": "2011"
+    }
+   ],
+   "cityHe": "אודסה",
+   "cityLatin": "Odesa",
+   "countryHe": "אוקראינה",
+   "countryCode": "UA",
+   "latitude": 46.48028,
+   "longitude": 30.75556,
+   "openedYear": 1935,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Chornomorets_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Hapoel played the old Central Stadium ChMP (14.9.2006); it was demolished in 2009 and the new stadium built on its site (opened 19.11.2011)."
+  },
+  {
+   "id": "spyros-louis",
+   "canonicalNameHe": "האצטדיון האולימפי \"ספירוס לואיס\"",
+   "canonicalNameLatin": "Olympic Stadium Spyros Louis",
+   "aliases": [
+    "Olympic Stadium (Athens)",
+    "O.A.K.A."
+   ],
+   "historicalNames": [],
+   "cityHe": "אתונה",
+   "cityLatin": "Athens",
+   "countryHe": "יוון",
+   "countryCode": "GR",
+   "latitude": 38.036068,
+   "longitude": 23.7876,
+   "openedYear": 1982,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Olympic_Stadium_(Athens)",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "In Marousi, Athens."
+  },
+  {
+   "id": "parc-des-princes",
+   "canonicalNameHe": "פארק דה פרנס",
+   "canonicalNameLatin": "Parc des Princes",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "פריז",
+   "cityLatin": "Paris",
+   "countryHe": "צרפת",
+   "countryCode": "FR",
+   "latitude": 48.841389,
+   "longitude": 2.253056,
+   "openedYear": 1972,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://www.thesportsdb.com/venue/16024-parc-des-princes",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "ibrox",
+   "canonicalNameHe": "אייברוקס",
+   "canonicalNameLatin": "Ibrox Stadium",
+   "aliases": [
+    "Ibrox Park"
+   ],
+   "historicalNames": [],
+   "cityHe": "גלזגו",
+   "cityLatin": "Glasgow",
+   "countryHe": "סקוטלנד",
+   "countryCode": "GB",
+   "latitude": 55.85306,
+   "longitude": -4.30917,
+   "openedYear": 1899,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Ibrox_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "pecara",
+   "canonicalNameHe": "אצטדיון פצ׳ארה",
+   "canonicalNameLatin": "Pecara Stadium",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "שירוקי בריג",
+   "cityLatin": "Široki Brijeg",
+   "countryHe": "בוסניה והרצגובינה",
+   "countryCode": "BA",
+   "latitude": 43.37861,
+   "longitude": 17.59806,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Stadion_Pecara",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "rasunda",
+   "canonicalNameHe": "אצטדיון רוסונדה",
+   "canonicalNameLatin": "Råsunda Stadium",
+   "aliases": [
+    "Råsundastadion"
+   ],
+   "historicalNames": [],
+   "cityHe": "סולנה",
+   "cityLatin": "Solna",
+   "countryHe": "שוודיה",
+   "countryCode": "SE",
+   "latitude": 59.36278,
+   "longitude": 17.99639,
+   "openedYear": 1937,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Råsunda_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Solna, Stockholm county. Demolished 2013."
+  },
+  {
+   "id": "lotto-park",
+   "canonicalNameHe": "אצטדיון קונסטנט ואנדן סטוק",
+   "canonicalNameLatin": "Constant Vanden Stock Stadium",
+   "aliases": [
+    "Lotto Park",
+    "Parc Astrid",
+    "Émile Versé Stadium"
+   ],
+   "historicalNames": [
+    {
+     "name": "Émile Versé Stadium",
+     "from": "1918",
+     "to": "1980"
+    },
+    {
+     "name": "Constant Vanden Stock Stadium",
+     "from": "1980",
+     "to": "2019"
+    },
+    {
+     "name": "Lotto Park",
+     "from": "2019"
+    }
+   ],
+   "cityHe": "בריסל",
+   "cityLatin": "Brussels",
+   "countryHe": "בלגיה",
+   "countryCode": "BE",
+   "latitude": 50.834167,
+   "longitude": 4.298333,
+   "openedYear": 1917,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Lotto_Park",
+    "https://www.thesportsdb.com/venue/17664-lotto-park",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "In the municipality of Anderlecht, Brussels."
+  },
+  {
+   "id": "coliseum-getafe",
+   "canonicalNameHe": "קוליסאום אלפונסו פרס",
+   "canonicalNameLatin": "Coliseum Alfonso Pérez",
+   "aliases": [
+    "Coliseum",
+    "Estadio Coliseum"
+   ],
+   "historicalNames": [
+    {
+     "name": "Coliseum Alfonso Pérez",
+     "from": "1998",
+     "to": "2023"
+    },
+    {
+     "name": "Coliseum",
+     "from": "2023"
+    }
+   ],
+   "cityHe": "חטאפה",
+   "cityLatin": "Getafe",
+   "countryHe": "ספרד",
+   "countryCode": "ES",
+   "latitude": 40.32556,
+   "longitude": -3.71472,
+   "openedYear": 1998,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Estadio_Coliseum",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "karadjordje",
+   "canonicalNameHe": "אצטדיון קאראג׳ורג׳ה",
+   "canonicalNameLatin": "Karađorđe Stadium",
+   "aliases": [
+    "Vojvodina Stadium",
+    "Gradski stadion"
+   ],
+   "historicalNames": [],
+   "cityHe": "נובי סאד",
+   "cityLatin": "Novi Sad",
+   "countryHe": "סרביה",
+   "countryCode": "RS",
+   "latitude": 45.24667,
+   "longitude": 19.84222,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Karađorđe_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "geoffroy-guichard",
+   "canonicalNameHe": "אצטדיון ז׳ופרואה-גישאר",
+   "canonicalNameLatin": "Stade Geoffroy-Guichard",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "סנט אטיין",
+   "cityLatin": "Saint-Étienne",
+   "countryHe": "צרפת",
+   "countryCode": "FR",
+   "latitude": 45.46083,
+   "longitude": 4.39028,
+   "openedYear": 1931,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Stade_Geoffroy-Guichard",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "gamla-ullevi",
+   "canonicalNameHe": "גמלה אולווי",
+   "canonicalNameLatin": "Gamla Ullevi",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "גטבורג",
+   "cityLatin": "Gothenburg",
+   "countryHe": "שוודיה",
+   "countryCode": "SE",
+   "latitude": 57.70623,
+   "longitude": 11.98014,
+   "openedYear": 2009,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Gamla_Ullevi",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "The new Gamla Ullevi, opened 5.4.2009."
+  },
+  {
+   "id": "na-stinadlech",
+   "canonicalNameHe": "אצטדיון נה סטינאדלך",
+   "canonicalNameLatin": "Na Stínadlech",
+   "aliases": [
+    "AGC Aréna Na Stínadlech"
+   ],
+   "historicalNames": [],
+   "cityHe": "טפליצה",
+   "cityLatin": "Teplice",
+   "countryHe": "צ׳כיה",
+   "countryCode": "CZ",
+   "latitude": 50.64,
+   "longitude": 13.81806,
+   "openedYear": 1973,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Na_Stínadlech",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "volksparkstadion",
+   "canonicalNameHe": "פולקספארקשטדיון",
+   "canonicalNameLatin": "Volksparkstadion",
+   "aliases": [
+    "HSH Nordbank Arena",
+    "AOL Arena",
+    "Imtech Arena"
+   ],
+   "historicalNames": [
+    {
+     "name": "AOL Arena",
+     "from": "2001",
+     "to": "2007"
+    },
+    {
+     "name": "HSH Nordbank Arena",
+     "from": "2007",
+     "to": "2010"
+    },
+    {
+     "name": "Imtech Arena",
+     "from": "2010",
+     "to": "2015"
+    },
+    {
+     "name": "Volksparkstadion",
+     "from": "2015"
+    }
+   ],
+   "cityHe": "המבורג",
+   "cityLatin": "Hamburg",
+   "countryHe": "גרמניה",
+   "countryCode": "DE",
+   "latitude": 53.58722,
+   "longitude": 9.89861,
+   "openedYear": 1953,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Volksparkstadion",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "ernst-happel",
+   "canonicalNameHe": "אצטדיון ארנסט האפל",
+   "canonicalNameLatin": "Ernst-Happel-Stadion",
+   "aliases": [
+    "Praterstadion"
+   ],
+   "historicalNames": [
+    {
+     "name": "Praterstadion",
+     "from": "1931",
+     "to": "1992"
+    },
+    {
+     "name": "Ernst-Happel-Stadion",
+     "from": "1992"
+    }
+   ],
+   "cityHe": "וינה",
+   "cityLatin": "Vienna",
+   "countryHe": "אוסטריה",
+   "countryCode": "AT",
+   "latitude": 48.2072,
+   "longitude": 16.4208,
+   "openedYear": 1931,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Ernst-Happel-Stadion",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "kazan-central",
+   "canonicalNameHe": "האצטדיון המרכזי, קאזאן",
+   "canonicalNameLatin": "Central Stadium (Kazan)",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "קאזאן",
+   "cityLatin": "Kazan",
+   "countryHe": "רוסיה",
+   "countryCode": "RU",
+   "latitude": 55.79694,
+   "longitude": 49.09889,
+   "openedYear": 1960,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Central_Stadium_(Kazan)",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "kosevo",
+   "canonicalNameHe": "אצטדיון אסים פרהטוביץ׳ האסה",
+   "canonicalNameLatin": "Asim Ferhatović Hase Stadium",
+   "aliases": [
+    "Koševo",
+    "Stadion Koševo",
+    "Koševo Olympic Stadium",
+    "קושבו"
+   ],
+   "historicalNames": [],
+   "cityHe": "סרייבו",
+   "cityLatin": "Sarajevo",
+   "countryHe": "בוסניה והרצגובינה",
+   "countryCode": "BA",
+   "latitude": 43.873889,
+   "longitude": 18.408611,
+   "openedYear": 1947,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://www.thesportsdb.com/venue/31431-ko%C5%A1evo-city-stadium",
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "aktobe-central",
+   "canonicalNameHe": "אצטדיון קובלנדי באטיר",
+   "canonicalNameLatin": "Koblandy Batyr Stadium",
+   "aliases": [
+    "Central Stadium (Aktobe)",
+    "האצטדיון המרכזי, אקטובה"
+   ],
+   "historicalNames": [],
+   "cityHe": "אקטובה",
+   "cityLatin": "Aktobe",
+   "countryHe": "קזחסטן",
+   "countryCode": "KZ",
+   "latitude": 50.29153,
+   "longitude": 57.1591,
+   "openedYear": 1975,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Central_Stadium_(Aktobe)",
+    "https://mapcarta.com/W307134879",
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Wildstat writes \"Central Stadium, Aqtöbe\"; the Wikipedia article of that name is Koblandy Batyr Stadium."
+  },
+  {
+   "id": "red-bull-arena-salzburg",
+   "canonicalNameHe": "רד בול ארנה",
+   "canonicalNameLatin": "Red Bull Arena (Salzburg)",
+   "aliases": [
+    "Stadion Salzburg",
+    "EM-Stadion Wals-Siezenheim",
+    "Bullen-Arena"
+   ],
+   "historicalNames": [],
+   "cityHe": "זלצבורג",
+   "cityLatin": "Salzburg",
+   "countryHe": "אוסטריה",
+   "countryCode": "AT",
+   "latitude": 47.8163,
+   "longitude": 12.9982,
+   "openedYear": 2003,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Red_Bull_Arena_(Salzburg)",
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://match.uefa.com/v5/matches?matchId=2002389"
+   ],
+   "confidence": 2,
+   "note": "In Wals-Siezenheim, Salzburg."
+  },
+  {
+   "id": "estadio-da-luz",
+   "canonicalNameHe": "אצטדיון דה לוז",
+   "canonicalNameLatin": "Estádio da Luz",
+   "aliases": [
+    "Estádio do Sport Lisboa e Benfica"
+   ],
+   "historicalNames": [],
+   "cityHe": "ליסבון",
+   "cityLatin": "Lisbon",
+   "countryHe": "פורטוגל",
+   "countryCode": "PT",
+   "latitude": 38.7527,
+   "longitude": -9.1847,
+   "openedYear": 2003,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Estádio_da_Luz",
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "veltins-arena",
+   "canonicalNameHe": "ולטינס ארנה",
+   "canonicalNameLatin": "Veltins-Arena",
+   "aliases": [
+    "Arena AufSchalke"
+   ],
+   "historicalNames": [
+    {
+     "name": "Arena AufSchalke",
+     "from": "2001",
+     "to": "2005"
+    },
+    {
+     "name": "Veltins-Arena",
+     "from": "2005"
+    }
+   ],
+   "cityHe": "גלזנקירכן",
+   "cityLatin": "Gelsenkirchen",
+   "countryHe": "גרמניה",
+   "countryCode": "DE",
+   "latitude": 51.554661,
+   "longitude": 7.0676422,
+   "openedYear": 2001,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Veltins-Arena",
+    "https://arenasmap.com/veltins-arena/",
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "gerland",
+   "canonicalNameHe": "אצטדיון ז׳רלן",
+   "canonicalNameLatin": "Stade de Gerland",
+   "aliases": [
+    "Matmut Stadium de Gerland"
+   ],
+   "historicalNames": [],
+   "cityHe": "ליון",
+   "cityLatin": "Lyon",
+   "countryHe": "צרפת",
+   "countryCode": "FR",
+   "latitude": 45.72389,
+   "longitude": 4.83222,
+   "openedYear": 1926,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Stade_de_Gerland",
+    "https://wildstat.com/p/146/cht/3/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "rheinpark",
+   "canonicalNameHe": "ריינפארק שטדיון",
+   "canonicalNameLatin": "Rheinpark Stadion",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "ואדוץ",
+   "cityLatin": "Vaduz",
+   "countryHe": "ליכטנשטיין",
+   "countryCode": "LI",
+   "latitude": 47.14028,
+   "longitude": 9.51028,
+   "openedYear": 1998,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Rheinpark_Stadion",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "aukstaitija",
+   "canonicalNameHe": "אצטדיון אוקשטאיטיה",
+   "canonicalNameLatin": "Aukštaitija Stadium",
+   "aliases": [
+    "Aukštaitijos stadionas"
+   ],
+   "historicalNames": [],
+   "cityHe": "פנבז׳יס",
+   "cityLatin": "Panevėžys",
+   "countryHe": "ליטא",
+   "countryCode": "LT",
+   "latitude": 55.73917,
+   "longitude": 24.35944,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Aukštaitija_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "polish-army",
+   "canonicalNameHe": "אצטדיון הצבא הפולני",
+   "canonicalNameLatin": "Polish Army Stadium",
+   "aliases": [
+    "Stadion Wojska Polskiego",
+    "Stadion Legii Warszawa"
+   ],
+   "historicalNames": [],
+   "cityHe": "ורשה",
+   "cityLatin": "Warsaw",
+   "countryHe": "פולין",
+   "countryCode": "PL",
+   "latitude": 52.220461,
+   "longitude": 21.040628,
+   "openedYear": 1930,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Polish_Army_Stadium",
+    "https://www.thesportsdb.com/venue/31258-stadion-wojska-polskiego",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "philips-stadion",
+   "canonicalNameHe": "פיליפס סטדיון",
+   "canonicalNameLatin": "Philips Stadion",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "איינדהובן",
+   "cityLatin": "Eindhoven",
+   "countryHe": "הולנד",
+   "countryCode": "NL",
+   "latitude": 51.44167,
+   "longitude": 5.4675,
+   "openedYear": 1910,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Philips_Stadion",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "arena-nationala",
+   "canonicalNameHe": "ארנה נציונלה",
+   "canonicalNameLatin": "Arena Națională",
+   "aliases": [
+    "Stadionul Național"
+   ],
+   "historicalNames": [],
+   "cityHe": "בוקרשט",
+   "cityLatin": "Bucharest",
+   "countryHe": "רומניה",
+   "countryCode": "RO",
+   "latitude": 44.43722,
+   "longitude": 26.1525,
+   "openedYear": 2011,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Arena_Națională",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Opened 6.9.2011 — twelve weeks before Hapoel played there."
+  },
+  {
+   "id": "coimbra",
+   "canonicalNameHe": "אצטדיון העיר קוימברה",
+   "canonicalNameLatin": "Estádio Cidade de Coimbra",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "קוימברה",
+   "cityLatin": "Coimbra",
+   "countryHe": "פורטוגל",
+   "countryCode": "PT",
+   "latitude": 40.20319,
+   "longitude": -8.40765,
+   "openedYear": 2003,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Estádio_Cidade_de_Coimbra",
+    "https://mapcarta.com/35844818",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "doosan-arena",
+   "canonicalNameHe": "דוסאן ארנה",
+   "canonicalNameLatin": "Doosan Arena",
+   "aliases": [
+    "Stadion města Plzně",
+    "Štruncovy sady"
+   ],
+   "historicalNames": [
+    {
+     "name": "Stadion města Plzně",
+     "from": "1955",
+     "to": "2012"
+    },
+    {
+     "name": "Doosan Arena",
+     "from": "2012"
+    }
+   ],
+   "cityHe": "פלזן",
+   "cityLatin": "Plzeň",
+   "countryHe": "צ׳כיה",
+   "countryCode": "CZ",
+   "latitude": 49.75,
+   "longitude": 13.38556,
+   "openedYear": 1955,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Doosan_Arena",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "vicente-calderon",
+   "canonicalNameHe": "אצטדיון ויסנטה קלדרון",
+   "canonicalNameLatin": "Estadio Vicente Calderón",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "מדריד",
+   "cityLatin": "Madrid",
+   "countryHe": "ספרד",
+   "countryCode": "ES",
+   "latitude": 40.4017194,
+   "longitude": -3.7206056,
+   "openedYear": 1966,
+   "closedYear": 2017,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Vicente_Calderón_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Closed 28.5.2017, demolished 2019–2020."
+  },
+  {
+   "id": "beroe",
+   "canonicalNameHe": "אצטדיון ברואה",
+   "canonicalNameLatin": "Beroe Stadium",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "סטארה זגורה",
+   "cityLatin": "Stara Zagora",
+   "countryHe": "בולגריה",
+   "countryCode": "BG",
+   "latitude": 42.43282,
+   "longitude": 25.61528,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Stadion_Beroe",
+    "https://mapcarta.com/W1424602105",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "cluj-arena",
+   "canonicalNameHe": "קלוז׳ ארנה",
+   "canonicalNameLatin": "Cluj Arena",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "קלוז׳-נאפוקה",
+   "cityLatin": "Cluj-Napoca",
+   "countryHe": "רומניה",
+   "countryCode": "RO",
+   "latitude": 46.76833,
+   "longitude": 23.57222,
+   "openedYear": 2011,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Cluj_Arena",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Pandurii Târgu Jiu's home leg of 1.8.2013 was played here (Wildstat)."
+  },
+  {
+   "id": "astana-arena",
+   "canonicalNameHe": "אסטנה ארנה",
+   "canonicalNameLatin": "Astana Arena",
+   "aliases": [
+    "Kazhymukan Stadium"
+   ],
+   "historicalNames": [],
+   "cityHe": "אסטנה",
+   "cityLatin": "Astana",
+   "countryHe": "קזחסטן",
+   "countryCode": "KZ",
+   "latitude": 51.10806,
+   "longitude": 71.4025,
+   "openedYear": 2009,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Astana_Arena",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "antonis-papadopoulos",
+   "canonicalNameHe": "אצטדיון אנטוניס פפדופולוס",
+   "canonicalNameLatin": "Antonis Papadopoulos Stadium",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "לרנקה",
+   "cityLatin": "Larnaca",
+   "countryHe": "קפריסין",
+   "countryCode": "CY",
+   "latitude": 34.9375,
+   "longitude": 33.62083,
+   "openedYear": 1998,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Antonis_Papadopoulos_Stadium",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "dvtk",
+   "canonicalNameHe": "אצטדיון DVTK",
+   "canonicalNameLatin": "DVTK Stadion",
+   "aliases": [
+    "Diósgyőri Stadion",
+    "DVTK Stadion"
+   ],
+   "historicalNames": [],
+   "cityHe": "מישקולץ",
+   "cityLatin": "Miskolc",
+   "countryHe": "הונגריה",
+   "countryCode": "HU",
+   "latitude": 48.09944,
+   "longitude": 20.71722,
+   "openedYear": 2018,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Diósgyőri_Stadion",
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "huvepharma",
+   "canonicalNameHe": "הובפארמה ארנה",
+   "canonicalNameLatin": "Huvepharma Arena",
+   "aliases": [
+    "Ludogorets Arena",
+    "Dyanko Stefanov Stadium"
+   ],
+   "historicalNames": [
+    {
+     "name": "Dyanko Stefanov Stadium",
+     "from": "1954",
+     "to": "2011"
+    },
+    {
+     "name": "Ludogorets Arena",
+     "from": "2011",
+     "to": "2019"
+    },
+    {
+     "name": "Huvepharma Arena",
+     "from": "2019"
+    }
+   ],
+   "cityHe": "רזגרד",
+   "cityLatin": "Razgrad",
+   "countryHe": "בולגריה",
+   "countryCode": "BG",
+   "latitude": 43.53462,
+   "longitude": 26.52761,
+   "openedYear": 1954,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Huvepharma_Arena",
+    "https://mapcarta.com/W232077484",
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype",
+    "https://match.uefa.com/v5/matches?matchId=2048802"
+   ],
+   "confidence": 2,
+   "note": "Wildstat writes \"Ludogorets Arena\" for 30.7.2026."
+  },
+  {
+   "id": "atleti-azzurri",
+   "canonicalNameHe": "אצטדיון אטלטי אצורי ד׳איטליה",
+   "canonicalNameLatin": "Stadio Atleti Azzurri d'Italia",
+   "aliases": [
+    "Gewiss Stadium",
+    "New Balance Arena",
+    "Stadio Comunale"
+   ],
+   "historicalNames": [
+    {
+     "name": "Stadio Mario Brumana",
+     "from": "1928",
+     "to": "1945"
+    },
+    {
+     "name": "Gewiss Stadium",
+     "from": "2019"
+    },
+    {
+     "name": "New Balance Arena"
+    }
+   ],
+   "cityHe": "ברגמו",
+   "cityLatin": "Bergamo",
+   "countryHe": "איטליה",
+   "countryCode": "IT",
+   "latitude": 45.70889,
+   "longitude": 9.68083,
+   "openedYear": 1928,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://en.wikipedia.org/wiki/Stadio_Atleti_Azzurri_d'Italia",
+    "https://wildstat.com/p/146/cht/551/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "Wildstat writes \"New Balance Arena\" for 20.8.2026 — the ground's current sponsor name."
+  },
+  {
+   "id": "marienlyst",
+   "canonicalNameHe": "אצטדיון מריאנליסט",
+   "canonicalNameLatin": "Marienlyst Stadion",
+   "aliases": [
+    "Marienlyst"
+   ],
+   "historicalNames": [],
+   "cityHe": "דרמן",
+   "cityLatin": "Drammen",
+   "countryHe": "נורווגיה",
+   "countryCode": "NO",
+   "latitude": 59.7344111,
+   "longitude": 10.2013194,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=55638"
+   ],
+   "confidence": 2,
+   "note": "אופ\"א (משחק 55638): Strømsgodset 1-0 H. Tel-Aviv, 25.8.1998, Marienlyst, Drammen — קואורדינטות מאותו רישום."
+  },
+  {
+   "id": "san-marino-stadium",
+   "canonicalNameHe": "אצטדיון סן מרינו",
+   "canonicalNameLatin": "San Marino Stadium",
+   "aliases": [
+    "Stadio Olimpico",
+    "Stadio Olimpico di Serravalle"
+   ],
+   "historicalNames": [],
+   "cityHe": "סראוואלה",
+   "cityLatin": "Serravalle",
+   "countryHe": "סן מרינו",
+   "countryCode": "SM",
+   "latitude": 43.9712528,
+   "longitude": 12.4769694,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=303568",
+    "https://en.wikipedia.org/wiki/San_Marino_Stadium"
+   ],
+   "confidence": 2,
+   "note": "אופ\"א (משחק 303568): Juvenes/Dogana 0-2 H. Tel-Aviv, 31.7.2008, San Marino Stadium, Serravalle. Wildstat: \"Stadio Olimpico, Serravalle\"."
+  },
+  {
+   "id": "arena-katowice",
+   "canonicalNameHe": "ארנה קטוביץ",
+   "canonicalNameLatin": "Arena Katowice",
+   "aliases": [],
+   "historicalNames": [],
+   "cityHe": "קטוביץ",
+   "cityLatin": "Katowice",
+   "countryHe": "פולין",
+   "countryCode": "PL",
+   "latitude": 50.252657,
+   "longitude": 18.974696,
+   "openedYear": 2025,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=2049189",
+    "https://en.wikipedia.org/wiki/Arena_Katowice"
+   ],
+   "confidence": 2,
+   "note": "אופ\"א (משחק 2049189): Katowice 2-1 H. Tel-Aviv, 12.8.2026, Arena Katowice — קואורדינטות מאותו רישום."
+  },
+  {
+   "id": "differdange-municipal",
+   "canonicalNameHe": "האצטדיון העירוני של דיפרדאנז'",
+   "canonicalNameLatin": "Stade Municipal de la Ville de Differdange",
+   "aliases": [
+    "Stade Municipal, Differdange"
+   ],
+   "historicalNames": [],
+   "cityHe": "דיפרדאנז'",
+   "cityLatin": "Differdange",
+   "countryHe": "לוקסמבורג",
+   "countryCode": "LU",
+   "latitude": 49.514308,
+   "longitude": 5.892292,
+   "openedYear": null,
+   "closedYear": null,
+   "successorVenueId": null,
+   "sourceRefs": [
+    "https://match.uefa.com/v5/matches?matchId=2009845",
+    "https://wildstat.com/p/146/cht/5/club1/ISR_Hapoel_Tel_Aviv/stat/chtype"
+   ],
+   "confidence": 2,
+   "note": "אופ\"א (משחק 2009845): Diddeleng 1-3 H. Tel-Aviv, 23.8.2012. F91 דודלאנז' אירחה בדיפרדאנז'."
+  }
+ ]
+}

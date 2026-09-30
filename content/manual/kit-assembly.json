@@ -1,0 +1,55 @@
+{
+  "note": "Kit System V3 — historical masters plus archive-derived visual DNA shared by Royal Rumble, Gate 4 and Gate 5. Marks have physical left/top placement; RTL must never mirror garment coordinates.",
+  "version": 3,
+  "marks": {
+    "sponsors": {
+      "VISA": { "src": "/kits/assembly/1985-86/parts/sponsor-visa.svg", "label": "VISA", "fit": "contain", "defaultPlacement": { "x": 26, "y": 45, "w": 48, "h": 13 } },
+      "SUBARU": { "src": "/kits/assembly/2009-10/parts/sponsor-subaru.svg", "label": "SUBARU", "fit": "contain", "defaultPlacement": { "x": 29, "y": 44, "w": 42, "h": 15 } }
+    },
+    "makers": {
+      "adidas": { "src": "/kits/assembly/1985-86/parts/maker-adidas.svg", "label": "adidas", "fit": "contain", "defaultPlacement": { "x": 30, "y": 22, "w": 11, "h": 9 } },
+      "umbro": { "src": "/kits/assembly/2009-10/parts/maker-umbro.svg", "label": "umbro", "fit": "contain", "defaultPlacement": { "x": 30, "y": 22, "w": 11, "h": 9 } }
+    }
+  },
+  "seasons": [
+    {
+      "seasonLabel": "1985/86",
+      "variant": "home",
+      "master": "/kits/assembly/1985-86/home-master.svg",
+      "sheet": "/kits/assembly/1985-86/parts-sheet.svg",
+      "sourceTitle": "מסירת חולצת 1985/86 של צוות The Worker, 20.9.2026",
+      "sourceUrl": null,
+      "confidence": 3,
+      "noteHe": "חולצת בית אדומה ארוכת שרוול: צווארון לבן, שלושת פסי adidas בכתפיים, סמל התקופה, אתא ובלוק VISA של העונה.",
+      "spec": { "base": "red", "pattern": "solid", "patternInk": "cream", "sleeves": "shoulder-stripe", "sleeveInk": "red", "collar": "polo", "collarInk": "cream", "sponsorHe": "VISA", "makerHe": "adidas", "nameset": "block-solid", "number": null, "shorts": "red", "socks": "red", "crestKey": "worker-hapoel" },
+      "placements": {
+        "sponsor": { "x": 26, "y": 43, "w": 48, "h": 16 },
+        "maker": { "x": 30, "y": 22, "w": 11, "h": 9 },
+        "crest": { "x": 60, "y": 20, "w": 13, "h": 16 }
+      },
+      "parts": { "collar": "/kits/assembly/1985-86/parts/collar.svg", "maker": "/kits/assembly/1985-86/parts/maker-adidas.svg", "crest": "/kits/assembly/1985-86/parts/crest-hapoel.svg", "sponsor": "/kits/assembly/1985-86/parts/sponsor-visa.svg", "shoulderStripes": "/kits/assembly/1985-86/parts/shoulder-stripes.svg", "cuffs": "/kits/assembly/1985-86/parts/cuffs.svg" },
+      "gate4": { "enabled": true, "parts": ["base", "secondary", "pattern", "collar", "sleeve", "maker", "sponsor", "crest"], "truthUsesMaster": true },
+      "gate5": { "enabled": true, "historicalPreset": true, "editable": ["base", "patternInk", "pattern", "sleeves", "collar", "maker", "sponsor", "crest", "nameset"] }
+    },
+    {
+      "seasonLabel": "2009/10",
+      "variant": "home",
+      "master": "/kits/assembly/2009-10/home-master-a.svg",
+      "alternateMaster": "/kits/assembly/2009-10/home-master-b.svg",
+      "sheet": "/kits/assembly/2009-10/parts-sheet.svg",
+      "sourceTitle": "מסירת חולצות 2009/10 של צוות The Worker, 20.9.2026",
+      "sourceUrl": null,
+      "confidence": 3,
+      "noteHe": "חולצת הבית של עונת הדאבל: Umbro, סמל עם שני כוכבים, SUBARU ופאנלים לבנים בצדדים.",
+      "spec": { "base": "red", "pattern": "side-panel", "patternInk": "cream", "sleeves": "cuff", "sleeveInk": "red", "collar": "crew", "collarInk": "cream", "sponsorHe": "SUBARU", "makerHe": "umbro", "nameset": "block-solid", "number": null, "shorts": "red", "socks": "red", "crestKey": "circle-1923" },
+      "placements": {
+        "sponsor": { "x": 29, "y": 44, "w": 42, "h": 15 },
+        "maker": { "x": 30, "y": 22, "w": 11, "h": 9 },
+        "crest": { "x": 60, "y": 20, "w": 13, "h": 16 }
+      },
+      "parts": { "collar": "/kits/assembly/2009-10/parts/collar.svg", "maker": "/kits/assembly/2009-10/parts/maker-umbro.svg", "crest": "/kits/assembly/2009-10/parts/crest-hapoel.svg", "badge": "/kits/assembly/2009-10/parts/badge.svg", "sponsor": "/kits/assembly/2009-10/parts/sponsor-subaru.svg", "sidePanels": "/kits/assembly/2009-10/parts/side-panels.svg", "sleeves": "/kits/assembly/2009-10/parts/sleeves.svg" },
+      "gate4": { "enabled": true, "parts": ["base", "secondary", "pattern", "collar", "sleeve", "maker", "sponsor", "crest"], "truthUsesMaster": true },
+      "gate5": { "enabled": true, "historicalPreset": true, "editable": ["base", "patternInk", "pattern", "sleeves", "collar", "maker", "sponsor", "crest", "nameset"] }
+    }
+  ]
+}

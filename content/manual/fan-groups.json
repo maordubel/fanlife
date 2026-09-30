@@ -1,0 +1,24 @@
+{
+  "note": "Supporter organisations with a sourced founding.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Verified research pass, 31 Aug 2026",
+    "url": null
+  },
+  "records": [
+    {
+      "slug": "אולטראס-הפועל",
+      "nameHe": "אולטראס הפועל",
+      "formerNameHe": "היצורים",
+      "foundedYear": 1999,
+      "standHe": "שער 5",
+      "clubSlug": "הפועל-תל-אביב",
+      "sport": "football",
+      "noteHe": "התארגנה ב-1999 תחת השם \"היצורים\"; ביתה ביציע שער 5 בבלומפילד",
+      "confidence": 2,
+      "sourceUrl": "http://www.ultrashapoel.com/history-ultras.html",
+      "sourceTitle": "אתר אולטראס הפועל + schwatzgelb.de interview (Gate 5)"
+    }
+  ]
+}

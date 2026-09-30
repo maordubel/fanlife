@@ -1,0 +1,112 @@
+[
+  {
+    "id": "pogi",
+    "name": "Player-selected name",
+    "role": "protagonist",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1986,
+    "clubConnection": "grows up with modern Zrinjski era",
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "father-ivan",
+    "name": "Ivan Kovač",
+    "role": "father",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1958,
+    "clubConnection": "family bridge to pre-renewal memory and 1992 restoration",
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "mother-ana",
+    "name": "Ana Kovač",
+    "role": "mother",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1961,
+    "clubConnection": "family / money / practical life",
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "friend-marko",
+    "name": "Marko Barić",
+    "role": "childhood-football-friend",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1986,
+    "clubConnection": "street football / first away days",
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "friend-petra",
+    "name": "Petra Jurić",
+    "role": "best-friend",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1987,
+    "clubConnection": "school / later work and relationship counterweight",
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "mentor-ante",
+    "name": "Ante Marić",
+    "role": "supporter-mentor",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1975,
+    "clubConnection": "composite organiser who teaches safe supporter work",
+    "truthMode": "COMPOSITE_LOCAL"
+  },
+  {
+    "id": "journalist-marina",
+    "name": "Marina Šarić",
+    "role": "journalist-mentor",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1980,
+    "clubConnection": "local sports reporting / archive route",
+    "truthMode": "COMPOSITE_LOCAL"
+  },
+  {
+    "id": "diaspora-niko",
+    "name": "Niko Vidić",
+    "role": "international-friend",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1985,
+    "clubConnection": "Mostar-born fictional cousin living in Vienna",
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "partner-lana",
+    "name": "Lana Babić",
+    "role": "partner",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1988,
+    "clubConnection": "adult-life relationship route",
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "kiosk-ivo",
+    "name": "Ivo",
+    "role": "other",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1950,
+    "clubConnection": "owner of the fictional neighbourhood kiosk Kod Ive",
+    "truthMode": "FICTIONAL_LOCAL"
+  },
+  {
+    "id": "board-mate",
+    "name": "Mate Knezović",
+    "role": "owner-contact",
+    "fictional": true,
+    "canSpeakFreely": true,
+    "birthYear": 1972,
+    "clubConnection": "fictional local business/member contact used only for governance/community route",
+    "truthMode": "FICTIONAL_LOCAL"
+  }
+]

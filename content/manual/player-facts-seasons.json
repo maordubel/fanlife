@@ -1,0 +1,5880 @@
+{
+ "note": "73 סגלי עונה של worldfootball.net, 1933/34 → 2025/26, מגושרים לארכיון העברי בשלד עיצורים. זהו **מקור גולמי** — הקובץ שהאפליקציה קוראת הוא content/manual/player-facts.json, שממזג אותו עם ארבעה מקורות נוספים. השדה matchedBy אומר איך הגענו לכל שורה.",
+ "sport": "football",
+ "confidence": 2,
+ "source": {
+  "title": "worldfootball.net — סגלי הפועל תל אביב, עונה אחר עונה",
+  "url": "https://www.worldfootball.net/teams/te956/hapoel-tel-aviv/squad/"
+ },
+ "generator": "scripts/players/match.py → scripts/players/emit.py",
+ "seasonsRead": 73,
+ "playersInSource": 465,
+ "records": [
+  {
+   "personNameHe": "אבי אזולאי",
+   "personNameLatin": "Avi Azoulay",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 1999,
+   "seasons": [
+    "1995/96",
+    "1996/97",
+    "1997/98",
+    "1998/99"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אבי כנפו",
+   "personNameLatin": "Avi Knafo",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2004,
+   "seasons": [
+    "2001/02",
+    "2002/03",
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אבי תורג'מן",
+   "personNameLatin": "Avi Turgeman",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2025,
+   "seasons": [
+    "2023/24",
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אביב וולנרמן",
+   "personNameLatin": "Aviv Volnerman",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2001,
+   "seasons": [
+    "1998/99",
+    "1999/00",
+    "2000/01"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אביחי ידין",
+   "personNameLatin": "Avihay Yadin",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2018,
+   "seasons": [
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2011/12",
+    "2012/13",
+    "2015/16",
+    "2016/17",
+    "2017/18"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אברהם נודלמן",
+   "personNameLatin": "Avraham Nudelmann",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1933,
+   "toYear": 1935,
+   "seasons": [
+    "1933/34",
+    "1934/35"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אדי אלקיים",
+   "personNameLatin": "Edi Elkayam",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2000,
+   "seasons": [
+    "1998/99",
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אדי גוטליב",
+   "personNameLatin": "Adi Gotlieb",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2023,
+   "seasons": [
+    "2015/16",
+    "2016/17",
+    "2017/18",
+    "2018/19",
+    "2020/21",
+    "2021/22",
+    "2022/23"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אופיר טקיאר",
+   "personNameLatin": "Ofir Takiyar",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "seasons": [
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אופק ביטון",
+   "personNameLatin": "Ofek Biton",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "seasons": [
+    "2020/21"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אופק בלס",
+   "personNameLatin": "Afek Blas",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2021,
+   "seasons": [
+    "2018/19",
+    "2019/20",
+    "2020/21"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אופק עובדיה",
+   "personNameLatin": "Ofek Ovadia",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "seasons": [
+    "2019/20"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אור אוסטוינד",
+   "personNameLatin": "Or Ostvind",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2018,
+   "seasons": [
+    "2016/17",
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אור בלוריאן",
+   "personNameLatin": "Or Blorian",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "seasons": [
+    "2023/24"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אור ישראלוב",
+   "personNameLatin": "Or Israelov",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2025,
+   "seasons": [
+    "2021/22",
+    "2022/23",
+    "2023/24",
+    "2024/25"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אוראל דגני",
+   "personNameLatin": "Orel Dgani",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2020,
+   "seasons": [
+    "2013/14",
+    "2016/17",
+    "2017/18",
+    "2018/19",
+    "2019/20"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אורי כהן",
+   "personNameLatin": "Uri Cohen",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "seasons": [
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אורי קרגולה",
+   "personNameLatin": "Ouri Karagola",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "seasons": [
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אושר דוידה",
+   "personNameLatin": "Osher Davida",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2022,
+   "seasons": [
+    "2018/19",
+    "2019/20",
+    "2020/21",
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אזקיאל נדואסל",
+   "personNameLatin": "Ezechiel N'Douassel",
+   "position": "FW",
+   "nationalityEn": "Chad",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אחמד מוסא",
+   "personNameLatin": "Ahmed Mussa",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1986,
+   "toYear": 1993,
+   "seasons": [
+    "1986/87",
+    "1987/88",
+    "1988/89",
+    "1989/90",
+    "1990/91",
+    "1991/92",
+    "1992/93"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אחמד עאבד",
+   "personNameLatin": "Ahmed Abed",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2025,
+   "seasons": [
+    "2018/19",
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "איאד אבו עביד",
+   "personNameLatin": "Iyad Abu Abaid",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2021,
+   "seasons": [
+    "2015/16",
+    "2019/20",
+    "2020/21"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "איבזיטו אוגבונה",
+   "personNameLatin": "Ibezito Ogbonna",
+   "position": "FW",
+   "nationalityEn": "Nigeria",
+   "origin": "foreign",
+   "fromYear": 2003,
+   "toYear": 2007,
+   "seasons": [
+    "2003/04",
+    "2004/05",
+    "2005/06",
+    "2006/07"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "איברהים ספורי",
+   "personNameLatin": "Ibrahim Safuri",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "איהאב גנאים",
+   "personNameLatin": "Ihab Ganayem",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "seasons": [
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אייל בן עמי",
+   "personNameLatin": "Eyal Ben Ami",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 2004,
+   "seasons": [
+    "1993/94",
+    "1994/95",
+    "1995/96",
+    "1996/97",
+    "1997/98",
+    "1998/99",
+    "1999/00",
+    "2002/03",
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אייל משומר",
+   "personNameLatin": "Eyal Meshumar",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אילן בכר",
+   "personNameLatin": "Ilan Bakhar",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2002,
+   "seasons": [
+    "1999/00",
+    "2000/01",
+    "2001/02"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "איציק שולמייסטר",
+   "personNameLatin": "Itzik Sholmyster",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אישטוואן פישונט",
+   "personNameLatin": "István Pisont",
+   "position": "MF",
+   "nationalityEn": "Hungary",
+   "origin": "foreign",
+   "fromYear": 1999,
+   "toYear": 2002,
+   "seasons": [
+    "1999/00",
+    "2000/01",
+    "2001/02"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2,
+   "alsoSpelled": [
+    "אישטוון פישונט"
+   ]
+  },
+  {
+   "personNameHe": "אישטוון פישונט",
+   "personNameLatin": "István Pisont",
+   "position": "MF",
+   "nationalityEn": "Hungary",
+   "origin": "foreign",
+   "fromYear": 1999,
+   "toYear": 2002,
+   "seasons": [
+    "1999/00",
+    "2000/01",
+    "2001/02"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2,
+   "alsoSpelled": [
+    "אישטוואן פישונט"
+   ]
+  },
+  {
+   "personNameHe": "איתי אלקסלסי",
+   "personNameLatin": "Itay Elkaslasi",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "seasons": [
+    "2007/08"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "איתי שכטר",
+   "personNameLatin": "Itay Shechter",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2011,
+   "seasons": [
+    "2009/10",
+    "2010/11"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "איתמר ניצן",
+   "personNameLatin": "Itamar Nizan",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "seasons": [
+    "2010/11"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "איתמר שבירו",
+   "personNameLatin": "Itamar Shviro",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלון אופיר",
+   "personNameLatin": "Alon Ofir",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 1996,
+   "seasons": [
+    "1995/96"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלון אזוגי",
+   "personNameLatin": "Alon Azugi",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "seasons": [
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלון חזן",
+   "personNameLatin": "Alon Hazan",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1996,
+   "toYear": 1997,
+   "seasons": [
+    "1996/97"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלון חלפון",
+   "personNameLatin": "Alon Halfon",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2002,
+   "toYear": 2004,
+   "seasons": [
+    "2002/03",
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלון מזרחי",
+   "personNameLatin": "Alon Mizrahi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1990,
+   "toYear": 1991,
+   "seasons": [
+    "1990/91"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלון תורג'מן",
+   "personNameLatin": "Alon Turgeman",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלי \"קוקוס\" כהן",
+   "personNameLatin": "Eli Cohen",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1978,
+   "toYear": 1993,
+   "seasons": [
+    "1978/79",
+    "1979/80",
+    "1980/81",
+    "1981/82",
+    "1982/83",
+    "1983/84",
+    "1984/85",
+    "1985/86",
+    "1986/87",
+    "1987/88",
+    "1988/89",
+    "1989/90",
+    "1990/91",
+    "1991/92",
+    "1992/93"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלי אוזן",
+   "personNameLatin": "Eli Uzan",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1984,
+   "toYear": 1992,
+   "seasons": [
+    "1984/85",
+    "1985/86",
+    "1986/87",
+    "1987/88",
+    "1988/89",
+    "1989/90",
+    "1990/91",
+    "1991/92"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אליאן רוחנא",
+   "personNameLatin": "Elian Rohana",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "seasons": [
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלין טופוזאקוב",
+   "personNameLatin": "Elin Topuzakov",
+   "position": "DF",
+   "nationalityEn": "Bulgaria",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2009,
+   "seasons": [
+    "2007/08",
+    "2008/09"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אליניב ברדה",
+   "personNameLatin": "Elyaniv Barda",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2007,
+   "seasons": [
+    "2005/06",
+    "2006/07"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלירן דנין",
+   "personNameLatin": "Eliran Danin",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "seasons": [
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלמוג כהן",
+   "personNameLatin": "Almog Cohen",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "seasons": [
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלן אוז'בולט",
+   "personNameLatin": "Alen Ožbolt",
+   "position": "FW",
+   "nationalityEn": "Slovenia",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "seasons": [
+    "2022/23",
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אלרואי כהן",
+   "personNameLatin": "Elroy Cohen",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2013,
+   "seasons": [
+    "2011/12",
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אמידו בלדה",
+   "personNameLatin": "Amido Baldé",
+   "position": "FW",
+   "nationalityEn": "Guinea-Bissau",
+   "origin": "foreign",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "seasons": [
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אמיליוס זובאס",
+   "personNameLatin": "Emilijus Zubas",
+   "position": "GK",
+   "nationalityEn": "Lithuania",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "seasons": [
+    "2022/23",
+    "2023/24"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אמיר עגייב",
+   "personNameLatin": "Amir Agayev",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "seasons": [
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אמנון חרל\"פ",
+   "personNameLatin": "Amnon Harlap",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1933,
+   "toYear": 1934,
+   "seasons": [
+    "1933/34"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אנאס מחאמיד",
+   "personNameLatin": "Anas Mahamid",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אנג'י קואמה",
+   "personNameLatin": "Ange Kouamé",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אנדריאן קרייב",
+   "personNameLatin": "Andrian Kraev",
+   "position": "MF",
+   "nationalityEn": "Bulgaria",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אנטואן קונטה",
+   "personNameLatin": "Antoine Conté",
+   "position": "DF",
+   "nationalityEn": "Guinea",
+   "origin": "foreign",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "seasons": [
+    "2022/23"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אסי דומב",
+   "personNameLatin": "Asi Domb",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2006,
+   "seasons": [
+    "1997/98",
+    "2000/01",
+    "2001/02",
+    "2002/03",
+    "2004/05",
+    "2005/06"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אסי טובי",
+   "personNameLatin": "Asi Tubi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "seasons": [
+    "1998/99"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אסף צור",
+   "personNameLatin": "Assaf Tzur",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אפואלה אדל",
+   "personNameLatin": "Apoula Edel",
+   "position": "GK",
+   "nationalityEn": "Armenia",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2015,
+   "seasons": [
+    "2011/12",
+    "2012/13",
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ארון שוינפלד",
+   "personNameLatin": "Aaron Schoenfeld",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אריאל הרוש",
+   "personNameLatin": "Ariel Harush",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "seasons": [
+    "2015/16",
+    "2016/17"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אריאל כהן",
+   "personNameLatin": "Ariel Cohen",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2025,
+   "seasons": [
+    "2022/23",
+    "2024/25"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "אריק ינקו",
+   "personNameLatin": "Arik Yanko",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2020,
+   "seasons": [
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2013/14",
+    "2017/18",
+    "2018/19",
+    "2019/20"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ארנסטס שטקוס",
+   "personNameLatin": "Ernestas Šetkus",
+   "position": "GK",
+   "nationalityEn": "Lithuania",
+   "origin": "foreign",
+   "fromYear": 2020,
+   "toYear": 2022,
+   "seasons": [
+    "2020/21",
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "בובאקר טאמבדו",
+   "personNameLatin": "Bubacarr Tambedou",
+   "position": "FW",
+   "nationalityEn": "Gambia",
+   "origin": "foreign",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "seasons": [
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "בוגדן סרנבסקי",
+   "personNameLatin": "Bogdan Sarnavskiy",
+   "position": "GK",
+   "nationalityEn": "Ukraine",
+   "origin": "foreign",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "seasons": [
+    "2021/22"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "בוריס קליימן",
+   "personNameLatin": "Boris Kleyman",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2014,
+   "seasons": [
+    "2011/12",
+    "2012/13",
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ביברס נאתכו",
+   "personNameLatin": "Bibars Natcho",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2009,
+   "seasons": [
+    "2006/07",
+    "2007/08",
+    "2008/09"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ביוואן פרנסמן",
+   "personNameLatin": "Bevan Fransman",
+   "position": "DF",
+   "nationalityEn": "South Africa",
+   "origin": "foreign",
+   "fromYear": 2010,
+   "toYear": 2012,
+   "seasons": [
+    "2010/11",
+    "2011/12"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "בן לוז",
+   "personNameLatin": "Ben Luz",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2009,
+   "seasons": [
+    "2001/02",
+    "2002/03",
+    "2008/09"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "בן רייכרט",
+   "personNameLatin": "Ben Reichert",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2017,
+   "seasons": [
+    "2014/15",
+    "2015/16",
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "בן שהר",
+   "personNameLatin": "Ben Sahar",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2025,
+   "seasons": [
+    "2010/11",
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "בראיין גרזיצ'יץ'",
+   "personNameLatin": "Bryan Gerzičić",
+   "position": "MF",
+   "nationalityEn": "USA",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "seasons": [
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "בראיין פאסי",
+   "personNameLatin": "Bryan Passi",
+   "position": "DF",
+   "nationalityEn": "Congo",
+   "origin": "foreign",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "seasons": [
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ברוך דגו",
+   "personNameLatin": "Barukh Dego",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2008,
+   "seasons": [
+    "2005/06",
+    "2006/07",
+    "2007/08"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ברנקו איליץ'",
+   "personNameLatin": "Branko Ilič",
+   "position": "DF",
+   "nationalityEn": "Slovenia",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "seasons": [
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גאבור הלמאי",
+   "personNameLatin": "Gábor Halmai",
+   "position": "MF",
+   "nationalityEn": "Hungary",
+   "origin": "foreign",
+   "fromYear": 2000,
+   "toYear": 2003,
+   "seasons": [
+    "2000/01",
+    "2001/02",
+    "2002/03"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גבור מרטון",
+   "personNameLatin": "Gábor Márton",
+   "position": "MF",
+   "nationalityEn": "Hungary",
+   "origin": "foreign",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "seasons": [
+    "1998/99"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גד מכנס",
+   "personNameLatin": "Gad Machnes",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1983,
+   "toYear": 1984,
+   "seasons": [
+    "1983/84"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גד עמוס",
+   "personNameLatin": "Gad Amos",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גדעון טיש",
+   "personNameLatin": "Gidon Tish",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1956,
+   "toYear": 1966,
+   "seasons": [
+    "1956/57",
+    "1958/59",
+    "1959/60",
+    "1960/61",
+    "1961/62",
+    "1962/63",
+    "1963/64",
+    "1964/65",
+    "1965/66"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גוני נאור",
+   "personNameLatin": "Goni Naor",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גוראן אנטוניץ'",
+   "personNameLatin": "Goran Antonić",
+   "position": "DF",
+   "nationalityEn": "Serbia",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיא אסולין",
+   "personNameLatin": "Gai Assulin",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיא גומברג",
+   "personNameLatin": "Guy Gomberg",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיא מיכאלי",
+   "personNameLatin": "Guy Michaeli",
+   "position": "FW",
+   "nationalityEn": "USA",
+   "origin": "foreign",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "seasons": [
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיא צרפתי",
+   "personNameLatin": "Gay Sarfati",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "seasons": [
+    "2004/05"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיא קואז",
+   "personNameLatin": "Gay Koaz",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "seasons": [
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיא שרעבי",
+   "personNameLatin": "Guy Sharabi",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1997,
+   "seasons": [
+    "1994/95",
+    "1995/96",
+    "1996/97"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיורגי דרסיליה",
+   "personNameLatin": "Georgi Daraselia",
+   "position": "MF",
+   "nationalityEn": "Georgia",
+   "origin": "foreign",
+   "fromYear": 1997,
+   "toYear": 1998,
+   "seasons": [
+    "1997/98"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיל ורמוט",
+   "personNameLatin": "Gil Vermouth",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2005,
+   "toYear": 2014,
+   "seasons": [
+    "2005/06",
+    "2006/07",
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2012/13",
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גיל יצחק",
+   "personNameLatin": "Gil Itzhak",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "seasons": [
+    "2020/21"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גילי לנדאו",
+   "personNameLatin": "Gili Landau",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1975,
+   "toYear": 1990,
+   "seasons": [
+    "1975/76",
+    "1976/77",
+    "1977/78",
+    "1978/79",
+    "1979/80",
+    "1980/81",
+    "1981/82",
+    "1982/83",
+    "1983/84",
+    "1984/85",
+    "1985/86",
+    "1986/87",
+    "1987/88",
+    "1988/89",
+    "1989/90"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גל מאיו",
+   "personNameLatin": "Gal Mayo",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "seasons": [
+    "2010/11"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גל מלכה",
+   "personNameLatin": "Gal Malca",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "seasons": [
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גל שיש",
+   "personNameLatin": "Gal Shish",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2017,
+   "seasons": [
+    "2006/07",
+    "2007/08",
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2011/12",
+    "2015/16",
+    "2016/17"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "גליל בן סנן",
+   "personNameLatin": "Galil Ben Sha'anan",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2002,
+   "toYear": 2011,
+   "seasons": [
+    "2002/03",
+    "2003/04",
+    "2006/07",
+    "2007/08",
+    "2009/10",
+    "2010/11"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דאבור רופניק",
+   "personNameLatin": "Davor Rupnik",
+   "position": "MF",
+   "nationalityEn": "Croatia",
+   "origin": "foreign",
+   "fromYear": 1998,
+   "toYear": 2000,
+   "seasons": [
+    "1998/99",
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דאגלס דה סילבה",
+   "personNameLatin": "Douglas Silva",
+   "position": "DF",
+   "nationalityEn": "Brazil",
+   "origin": "foreign",
+   "fromYear": 2008,
+   "toYear": 2010,
+   "seasons": [
+    "2008/09",
+    "2009/10"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דדי בן דיין",
+   "personNameLatin": "Dedi Ben Dayan",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2011,
+   "seasons": [
+    "2009/10",
+    "2010/11"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דוד אמסלם",
+   "personNameLatin": "David Amsalem",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1995,
+   "seasons": [
+    "1994/95"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דוד פיזנטי",
+   "personNameLatin": "David Pizanti",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1986,
+   "toYear": 1987,
+   "seasons": [
+    "1986/87"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דוד פרימו",
+   "personNameLatin": "David Primo",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1963,
+   "toYear": 1975,
+   "seasons": [
+    "1963/64",
+    "1964/65",
+    "1965/66",
+    "1968/69",
+    "1969/70",
+    "1970/71",
+    "1971/72",
+    "1972/73",
+    "1973/74",
+    "1974/75"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דוד שוויצר",
+   "personNameLatin": "David Schweitzer",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1954,
+   "toYear": 1955,
+   "seasons": [
+    "1954/55"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2,
+   "alsoSpelled": [
+    "דוד שוייצר"
+   ]
+  },
+  {
+   "personNameHe": "דוד שוייצר",
+   "personNameLatin": "David Schweitzer",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1954,
+   "toYear": 1955,
+   "seasons": [
+    "1954/55"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2,
+   "alsoSpelled": [
+    "דוד שוויצר"
+   ]
+  },
+  {
+   "personNameHe": "דודו ביטון",
+   "personNameLatin": "Dudu Biton",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2017,
+   "seasons": [
+    "2014/15",
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דודו דהאן",
+   "personNameLatin": "Dudu Dahan",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2000,
+   "toYear": 2002,
+   "seasons": [
+    "2000/01",
+    "2001/02"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דודו סמפאיו",
+   "personNameLatin": "Dudu Sampaio",
+   "position": "MF",
+   "nationalityEn": "Brazil",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דודי אלון",
+   "personNameLatin": "David Alon",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2018,
+   "seasons": [
+    "2014/15",
+    "2015/16",
+    "2016/17",
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דויד קופרמן",
+   "personNameLatin": "David Cuperman",
+   "position": "DF",
+   "nationalityEn": "Colombia",
+   "origin": "foreign",
+   "fromYear": 2023,
+   "toYear": 2025,
+   "seasons": [
+    "2023/24",
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דור אלו",
+   "personNameLatin": "Dor Elo",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "seasons": [
+    "2022/23"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דור בנימיני",
+   "personNameLatin": "Dor Benyamini",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2026,
+   "seasons": [
+    "2023/24",
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דור חוגי",
+   "personNameLatin": "Dor Hugi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "seasons": [
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דורון ליידנר",
+   "personNameLatin": "Doron Leidner",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2026,
+   "seasons": [
+    "2019/20",
+    "2020/21",
+    "2021/22",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דיאן רצ'וניצה",
+   "personNameLatin": "Dean Računica",
+   "position": "MF",
+   "nationalityEn": "Croatia",
+   "origin": "foreign",
+   "fromYear": 1999,
+   "toYear": 2000,
+   "seasons": [
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דן איינבינדר",
+   "personNameLatin": "Dan Einbinder",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2024,
+   "seasons": [
+    "2020/21",
+    "2021/22",
+    "2022/23",
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דן עזריה",
+   "personNameLatin": "Dan Azaria",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "seasons": [
+    "2020/21"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דני גרופר",
+   "personNameLatin": "Denny Gropper",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2021,
+   "seasons": [
+    "2019/20",
+    "2020/21"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דני עמוס",
+   "personNameLatin": "Dani Amos",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "seasons": [
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דניאל גרץ",
+   "personNameLatin": "Daniel Gertz",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "seasons": [
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דניאל דאפה",
+   "personNameLatin": "Daniel Dapaah",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דניאל דה רידר",
+   "personNameLatin": "Daniël de Ridder",
+   "position": "FW",
+   "nationalityEn": "Netherlands",
+   "origin": "foreign",
+   "fromYear": 2009,
+   "toYear": 2010,
+   "seasons": [
+    "2009/10"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דניס אונישנקו",
+   "personNameLatin": "Denis Onishenko",
+   "position": "MF",
+   "nationalityEn": "Ukraine",
+   "origin": "foreign",
+   "fromYear": 1999,
+   "toYear": 2003,
+   "seasons": [
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "דסליי טגניה",
+   "personNameLatin": "Deslay Tagania",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "הישאם לאיוס",
+   "personNameLatin": "Hisham Layous",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "seasons": [
+    "2022/23",
+    "2023/24"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "הרמוני איקינדה",
+   "personNameLatin": "Harmony Ikande",
+   "position": "MF",
+   "nationalityEn": "Nigeria",
+   "origin": "foreign",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "seasons": [
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "וואליד באדיר",
+   "personNameLatin": "Walid Badir",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2013,
+   "seasons": [
+    "2006/07",
+    "2007/08",
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2011/12",
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "וילי ברגר",
+   "personNameLatin": "Willi Berger",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1933,
+   "toYear": 1934,
+   "seasons": [
+    "1933/34"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "וינסנט אניימה",
+   "personNameLatin": "Vincent Enyeama",
+   "position": "GK",
+   "nationalityEn": "Nigeria",
+   "origin": "foreign",
+   "fromYear": 2007,
+   "toYear": 2011,
+   "seasons": [
+    "2007/08",
+    "2008/09",
+    "2009/10",
+    "2010/11"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ויקטור מרעי",
+   "personNameLatin": "Victor Merey",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2013,
+   "seasons": [
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "זוראב מנטשאשווילי",
+   "personNameLatin": "Zurab Menteshashvili",
+   "position": "MF",
+   "nationalityEn": "Georgia",
+   "origin": "foreign",
+   "fromYear": 2009,
+   "toYear": 2010,
+   "seasons": [
+    "2009/10"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "זיו כבדה",
+   "personNameLatin": "Ziv Caveda",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2000,
+   "seasons": [
+    "1997/98",
+    "1998/99",
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "זיו מורגן",
+   "personNameLatin": "Ziv Morgan",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2026,
+   "seasons": [
+    "2023/24",
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "זלמן פרידמן",
+   "personNameLatin": "Zalman Friedmann",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1933,
+   "toYear": 1939,
+   "seasons": [
+    "1933/34",
+    "1934/35",
+    "1938/39"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "חזי שירזי",
+   "personNameLatin": "Hezi Shirazi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1991,
+   "toYear": 1994,
+   "seasons": [
+    "1991/92",
+    "1992/93",
+    "1993/94"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "חיים נוריאלי",
+   "personNameLatin": "Haim Nurieli",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1960,
+   "toYear": 1969,
+   "seasons": [
+    "1960/61",
+    "1961/62",
+    "1962/63",
+    "1963/64",
+    "1964/65",
+    "1965/66",
+    "1966/67",
+    "1967/68",
+    "1968/69"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "חיים רביבו",
+   "personNameLatin": "Haim Revivo",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "seasons": [
+    "1993/94"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "חמזה בארי",
+   "personNameLatin": "Hamza Barry",
+   "position": "MF",
+   "nationalityEn": "Gambia",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "חסן אבו זייד",
+   "personNameLatin": "Hasan Abu Zaid",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "טוטו תמוז",
+   "personNameLatin": "Toto Tamuz",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2017,
+   "seasons": [
+    "2010/11",
+    "2011/12",
+    "2012/13",
+    "2016/17"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "טום אחי מרדכי",
+   "personNameLatin": "Tom Ahi Mordechai",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2022,
+   "seasons": [
+    "2019/20",
+    "2021/22"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "טיאגו קוסטה",
+   "personNameLatin": "Tiago Costa",
+   "position": "MF",
+   "nationalityEn": "Portugal",
+   "origin": "foreign",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "seasons": [
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "טל ארצ'ל",
+   "personNameLatin": "Tal Archel",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2026,
+   "seasons": [
+    "2021/22",
+    "2022/23",
+    "2023/24",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "טל בן חיים",
+   "personNameLatin": "Tal Ben Haim",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "seasons": [
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "טל בנש",
+   "personNameLatin": "Tal Benesh",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "seasons": [
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "טל חן",
+   "personNameLatin": "Tal Hen",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2008,
+   "seasons": [
+    "2003/04",
+    "2004/05",
+    "2005/06",
+    "2006/07",
+    "2007/08"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יאיר כהן צדק",
+   "personNameLatin": "Yair Cohen Zedek",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "seasons": [
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יגאל אנטבי",
+   "personNameLatin": "Ygal Antebi",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2015,
+   "seasons": [
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03",
+    "2003/04",
+    "2004/05",
+    "2005/06",
+    "2006/07",
+    "2007/08",
+    "2008/09",
+    "2011/12",
+    "2012/13",
+    "2013/14",
+    "2014/15"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יגאל בקר",
+   "personNameLatin": "Yigal Becker",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2022,
+   "seasons": [
+    "2020/21",
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יהב גורפינקל",
+   "personNameLatin": "Yahav Gurfinkel",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "seasons": [
+    "2022/23"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יהודה חוטה",
+   "personNameLatin": "Yehuda Huta",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2011,
+   "seasons": [
+    "2008/09",
+    "2009/10",
+    "2010/11"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יהונתן לוי",
+   "personNameLatin": "Yehonatan Levy",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2019,
+   "seasons": [
+    "2016/17",
+    "2018/19"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יואב ג'ראפי",
+   "personNameLatin": "Yoav Gerafi",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "seasons": [
+    "2019/20"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יואב תומר",
+   "personNameLatin": "Yoav Tomer",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "seasons": [
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יוסי אבוקסיס",
+   "personNameLatin": "Yossi Abukasis",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1987,
+   "toYear": 2007,
+   "seasons": [
+    "1987/88",
+    "1988/89",
+    "1989/90",
+    "1990/91",
+    "1991/92",
+    "1992/93",
+    "2001/02",
+    "2002/03",
+    "2003/04",
+    "2004/05",
+    "2005/06",
+    "2006/07"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יוסי זאנה",
+   "personNameLatin": "Yossi Zana",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1979,
+   "toYear": 1989,
+   "seasons": [
+    "1979/80",
+    "1980/81",
+    "1981/82",
+    "1982/83",
+    "1983/84",
+    "1984/85",
+    "1985/86",
+    "1986/87",
+    "1987/88",
+    "1988/89"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יוסי מדר",
+   "personNameLatin": "Yossi Madar",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 1997,
+   "seasons": [
+    "1995/96",
+    "1996/97"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יוסי רוזן",
+   "personNameLatin": "Yossi Rozen",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2005,
+   "seasons": [
+    "2003/04",
+    "2004/05"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יוסי שבחון",
+   "personNameLatin": "Yossi Shivhon",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "seasons": [
+    "2010/11"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יזן נסאר",
+   "personNameLatin": "Yazen Nassar",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2026,
+   "seasons": [
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יניב ירון",
+   "personNameLatin": "Yaniv Yaron",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 1999,
+   "seasons": [
+    "1995/96",
+    "1996/97",
+    "1997/98",
+    "1998/99"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יעקב אקהויז",
+   "personNameLatin": "Yaakov Ekhoiz",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1975,
+   "toYear": 1992,
+   "seasons": [
+    "1975/76",
+    "1976/77",
+    "1977/78",
+    "1978/79",
+    "1979/80",
+    "1980/81",
+    "1981/82",
+    "1982/83",
+    "1983/84",
+    "1984/85",
+    "1985/86",
+    "1986/87",
+    "1987/88",
+    "1988/89",
+    "1989/90",
+    "1990/91",
+    "1991/92"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יעקב בוזגלו",
+   "personNameLatin": "Yaacov Buzaglo",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1979,
+   "toYear": 1981,
+   "seasons": [
+    "1979/80",
+    "1980/81"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יעקב בריהון",
+   "personNameLatin": "Ya'akov Berihon",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2025,
+   "seasons": [
+    "2019/20",
+    "2020/21",
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יעקב הלל",
+   "personNameLatin": "Ya'acov Hillel",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2003,
+   "seasons": [
+    "1998/99",
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יעקב חודורוב",
+   "personNameLatin": "Ya'akov Hodorov",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1954,
+   "toYear": 1962,
+   "seasons": [
+    "1954/55",
+    "1956/57",
+    "1958/59",
+    "1959/60",
+    "1960/61",
+    "1961/62"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יעקב כהן",
+   "personNameLatin": "Yuval Cohen",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2025,
+   "seasons": [
+    "2022/23",
+    "2023/24",
+    "2024/25"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "יעקב שוורץ",
+   "personNameLatin": "Yaakov Schwartz",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1996,
+   "seasons": [
+    "1994/95",
+    "1995/96"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ירין פרץ",
+   "personNameLatin": "Yarin Perez",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "seasons": [
+    "2019/20"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ישי ברוש",
+   "personNameLatin": "Yishay Brosh",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2026,
+   "seasons": [
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ישראל כהן",
+   "personNameLatin": "Israel Cohen",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2000,
+   "seasons": [
+    "1998/99",
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "כפיר אדרי",
+   "personNameLatin": "Kfir Edri",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "seasons": [
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "כפיר אודי",
+   "personNameLatin": "Kfir Udi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 2007,
+   "seasons": [
+    "1997/98",
+    "1998/99",
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03",
+    "2006/07"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "כפיר אייזנשטיין",
+   "personNameLatin": "Kfir Izenstein",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "seasons": [
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לוטם זינו",
+   "personNameLatin": "Lotem Zino",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לויזוס לויזו",
+   "personNameLatin": "Loizos Loizou",
+   "position": "FW",
+   "nationalityEn": "Cyprus",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לוסיאנו דה ברונו",
+   "personNameLatin": "Luciano De Bruno",
+   "position": "MF",
+   "nationalityEn": "Argentina",
+   "origin": "foreign",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "seasons": [
+    "2006/07"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לוקאס וינטרה",
+   "personNameLatin": "Loukas Vyntra",
+   "position": "DF",
+   "nationalityEn": "Greece",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לוקאס סאשה",
+   "personNameLatin": "Lucas Sasha",
+   "position": "MF",
+   "nationalityEn": "Brazil",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "seasons": [
+    "2013/14",
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לוקאס פלקאו",
+   "personNameLatin": "Falcão",
+   "position": "MF",
+   "nationalityEn": "Brazil",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לי און מזרחי",
+   "personNameLatin": "Li On Mizrahi",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2022,
+   "seasons": [
+    "2020/21",
+    "2021/22"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ליאו בנבינשתי",
+   "personNameLatin": "Leo Benbenisti",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "seasons": [
+    "2022/23",
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2,
+   "alsoSpelled": [
+    "ליאו בנבנישתי"
+   ]
+  },
+  {
+   "personNameHe": "ליאו בנבנישתי",
+   "personNameLatin": "Leo Benbenisti",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2024,
+   "seasons": [
+    "2022/23",
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2,
+   "alsoSpelled": [
+    "ליאו בנבינשתי"
+   ]
+  },
+  {
+   "personNameHe": "ליאור בקשי",
+   "personNameLatin": "Lior Bakshi",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2009,
+   "seasons": [
+    "2007/08",
+    "2008/09"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ליאור לוי",
+   "personNameLatin": "Lior Levi",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "seasons": [
+    "2013/14",
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לידור כהן",
+   "personNameLatin": "Lidor Cohen",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "seasons": [
+    "2020/21"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ליעד רמות",
+   "personNameLatin": "Liad Ramot",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2026,
+   "seasons": [
+    "2021/22",
+    "2022/23",
+    "2023/24",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לירן רוטמן",
+   "personNameLatin": "Liran Rotman",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "לריאה קינגסטון",
+   "personNameLatin": "Laryea Kingston",
+   "position": "MF",
+   "nationalityEn": "Ghana",
+   "origin": "foreign",
+   "fromYear": 2003,
+   "toYear": 2004,
+   "seasons": [
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מאור בוזגלו",
+   "personNameLatin": "Maor Buzaglo",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2021,
+   "seasons": [
+    "2019/20",
+    "2020/21"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מאיר אהרן מליקה",
+   "personNameLatin": "Meir Melika",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1994,
+   "toYear": 1995,
+   "seasons": [
+    "1994/95"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מהראן לאלה",
+   "personNameLatin": "Maharan Al-Lala",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2012,
+   "seasons": [
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2011/12"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מוחמד טראורה",
+   "personNameLatin": "Mohamed Kalil Traoré",
+   "position": "DF",
+   "nationalityEn": "Guinea",
+   "origin": "foreign",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "seasons": [
+    "2021/22"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מוטי אוחיון",
+   "personNameLatin": "Moti Ohaion",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2000,
+   "seasons": [
+    "1998/99",
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מוטי ברשצקי",
+   "personNameLatin": "Moti Barshazky",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2020,
+   "seasons": [
+    "2016/17",
+    "2017/18",
+    "2019/20"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מור בוסקילה",
+   "personNameLatin": "Mor Buskila",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מור שושן",
+   "personNameLatin": "Mor Shushan",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2013,
+   "seasons": [
+    "2009/10",
+    "2011/12",
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מחמוד עבאס",
+   "personNameLatin": "Mahmood Abbas",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "seasons": [
+    "2011/12"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מייקל אולהה",
+   "personNameLatin": "Michael Olaha",
+   "position": "FW",
+   "nationalityEn": "Nigeria",
+   "origin": "foreign",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "seasons": [
+    "2019/20"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מייקל סיטון",
+   "personNameLatin": "Michael Seaton",
+   "position": "FW",
+   "nationalityEn": "Jamaica",
+   "origin": "foreign",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מיכאל זנדברג",
+   "personNameLatin": "Michael Zandberg",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2010,
+   "seasons": [
+    "2009/10"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מילאן אוסטרץ",
+   "personNameLatin": "Milan Osterc",
+   "position": "FW",
+   "nationalityEn": "Slovenia",
+   "origin": "foreign",
+   "fromYear": 2000,
+   "toYear": 2002,
+   "seasons": [
+    "2000/01",
+    "2001/02"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מילאן מקאריץ'",
+   "personNameLatin": "Milan Makarić",
+   "position": "FW",
+   "nationalityEn": "Serbia",
+   "origin": "foreign",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מירקו אורמוש",
+   "personNameLatin": "Mirko Oremuš",
+   "position": "MF",
+   "nationalityEn": "Croatia",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "seasons": [
+    "2011/12"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מסאיי דגו",
+   "personNameLatin": "Mesay Dego",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "seasons": [
+    "2006/07"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מרווין פירסמן",
+   "personNameLatin": "Marvin Peersman",
+   "position": "DF",
+   "nationalityEn": "Belgium",
+   "origin": "foreign",
+   "fromYear": 2017,
+   "toYear": 2020,
+   "seasons": [
+    "2017/18",
+    "2018/19",
+    "2019/20"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מריו מסטרוביץ",
+   "personNameLatin": "Mario Meštrović",
+   "position": "MF",
+   "nationalityEn": "Croatia",
+   "origin": "foreign",
+   "fromYear": 1997,
+   "toYear": 1998,
+   "seasons": [
+    "1997/98"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מריו פצ'אלקה",
+   "personNameLatin": "Mário Pečalka",
+   "position": "DF",
+   "nationalityEn": "Slovakia",
+   "origin": "foreign",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "seasons": [
+    "2010/11"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מרקו שולר",
+   "personNameLatin": "Marko Šuler",
+   "position": "DF",
+   "nationalityEn": "Slovenia",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "seasons": [
+    "2011/12"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מרקוס קוקו",
+   "personNameLatin": "Marcus Coco",
+   "position": "FW",
+   "nationalityEn": "France",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "משה אוחיון",
+   "personNameLatin": "Moshe Ohayon",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "seasons": [
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "משה סיני",
+   "personNameLatin": "Moshe Sinai",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1980,
+   "toYear": 1993,
+   "seasons": [
+    "1980/81",
+    "1981/82",
+    "1982/83",
+    "1983/84",
+    "1984/85",
+    "1985/86",
+    "1986/87",
+    "1988/89",
+    "1990/91",
+    "1991/92",
+    "1992/93"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "מתן אוחיון",
+   "personNameLatin": "Matan Ohayon",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "seasons": [
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "נוסא איגייבור",
+   "personNameLatin": "Nosa Igiebor",
+   "position": "MF",
+   "nationalityEn": "Nigeria",
+   "origin": "foreign",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "seasons": [
+    "2011/12"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "נחמן קסטרו",
+   "personNameLatin": "Nahman Castro",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1967,
+   "toYear": 1968,
+   "seasons": [
+    "1967/68"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ניב זריהן",
+   "personNameLatin": "Niv Zrihan",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "seasons": [
+    "2022/23"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ניב סרדל",
+   "personNameLatin": "Niv Sardal",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "seasons": [
+    "2020/21"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ניל אברבנל",
+   "personNameLatin": "Neal Abarbanel",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2011,
+   "seasons": [
+    "2009/10",
+    "2010/11"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ניר לקס",
+   "personNameLatin": "Nir Lax",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2020,
+   "seasons": [
+    "2011/12",
+    "2012/13",
+    "2013/14",
+    "2015/16",
+    "2017/18",
+    "2018/19",
+    "2019/20"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ניר רחמין",
+   "personNameLatin": "Nir Rahamin",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2006,
+   "seasons": [
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03",
+    "2003/04",
+    "2005/06"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "נלסון מנסה",
+   "personNameLatin": "Nelson Mensah",
+   "position": "FW",
+   "nationalityEn": "Ghana",
+   "origin": "foreign",
+   "fromYear": 1993,
+   "toYear": 1994,
+   "seasons": [
+    "1993/94"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "נמניה ניקוליץ'",
+   "personNameLatin": "Nemanja Nikolić",
+   "position": "MF",
+   "nationalityEn": "Montenegro",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סאבו פאביצ'ביץ'",
+   "personNameLatin": "Savo Pavičević",
+   "position": "DF",
+   "nationalityEn": "Montenegro",
+   "origin": "foreign",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "seasons": [
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סאמי אדם",
+   "personNameLatin": "Sami Adam",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "seasons": [
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סארי פלאח",
+   "personNameLatin": "Sari Falah",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "seasons": [
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סלים טועמה",
+   "personNameLatin": "Salim Toama",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2015,
+   "seasons": [
+    "1998/99",
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03",
+    "2006/07",
+    "2010/11",
+    "2011/12",
+    "2012/13",
+    "2013/14",
+    "2014/15"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סמואל יבואה",
+   "personNameLatin": "Samuel Yeboah",
+   "position": "FW",
+   "nationalityEn": "Ghana",
+   "origin": "foreign",
+   "fromYear": 2008,
+   "toYear": 2009,
+   "seasons": [
+    "2008/09"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סער בנבנישתי",
+   "personNameLatin": "Saar Benbenisti",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סרגיי פוגודין",
+   "personNameLatin": "Sergey Pogodin",
+   "position": "MF",
+   "nationalityEn": "Ukraine",
+   "origin": "foreign",
+   "fromYear": 1995,
+   "toYear": 1998,
+   "seasons": [
+    "1995/96",
+    "1996/97",
+    "1997/98"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סרגיי קלשצ'נקו",
+   "personNameLatin": "Serghei Cleşcenco",
+   "position": "FW",
+   "nationalityEn": "Moldova",
+   "origin": "foreign",
+   "fromYear": 2001,
+   "toYear": 2003,
+   "seasons": [
+    "2001/02",
+    "2002/03"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סתיו טוריאל",
+   "personNameLatin": "Stav Turiel",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2026,
+   "seasons": [
+    "2023/24",
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "סתיו למקין",
+   "personNameLatin": "Stav Lemkin",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2023,
+   "seasons": [
+    "2020/21",
+    "2021/22",
+    "2022/23"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עבדי פרחאת",
+   "personNameLatin": "Abdi Farhat",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2023,
+   "seasons": [
+    "2016/17",
+    "2018/19",
+    "2019/20",
+    "2020/21",
+    "2022/23"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עדי סבג",
+   "personNameLatin": "Adi Sabag",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "seasons": [
+    "2007/08"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עדן בן בסט",
+   "personNameLatin": "Eden Ben Basat",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2009,
+   "seasons": [
+    "2008/09"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עדן הרשקוביץ",
+   "personNameLatin": "Eden Hershkovitz",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2018,
+   "seasons": [
+    "2016/17",
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עדן שרם",
+   "personNameLatin": "Eden Shrem",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2013,
+   "seasons": [
+    "2010/11",
+    "2011/12",
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עומר דמארי",
+   "personNameLatin": "Omer Damari",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2020,
+   "seasons": [
+    "2011/12",
+    "2012/13",
+    "2013/14",
+    "2018/19",
+    "2019/20"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עומר סניור",
+   "personNameLatin": "Omer Senior",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2024,
+   "seasons": [
+    "2020/21",
+    "2021/22",
+    "2022/23",
+    "2023/24"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עומר פדידה",
+   "personNameLatin": "Omer Fadida",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2015,
+   "seasons": [
+    "2013/14",
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עומרי אלטמן",
+   "personNameLatin": "Omri Altman",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2026,
+   "seasons": [
+    "2015/16",
+    "2016/17",
+    "2019/20",
+    "2020/21",
+    "2023/24",
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עומרי אפק",
+   "personNameLatin": "Omri Afek",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2003,
+   "seasons": [
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2,
+   "alsoSpelled": [
+    "עמרי אפק"
+   ]
+  },
+  {
+   "personNameHe": "עומרי קנדה",
+   "personNameLatin": "Omri Kende",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2012,
+   "seasons": [
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2011/12"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עומרי שקל",
+   "personNameLatin": "Omri Shekel",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עופר גלברד",
+   "personNameLatin": "Ofer Gelbard",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2026,
+   "seasons": [
+    "2023/24",
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עופר ורטה",
+   "personNameLatin": "Ofer Verta",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "seasons": [
+    "2015/16",
+    "2016/17"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עופר שטרית",
+   "personNameLatin": "Ofer Shitrit",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1997,
+   "toYear": 1998,
+   "seasons": [
+    "1997/98"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עידו וייר",
+   "personNameLatin": "Ido Vaier",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עידו שרון",
+   "personNameLatin": "Ido Sharon",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2025,
+   "seasons": [
+    "2019/20",
+    "2020/21",
+    "2022/23",
+    "2024/25"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עידן ורד",
+   "personNameLatin": "Idan Vered",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2022,
+   "seasons": [
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עידן טל",
+   "personNameLatin": "Idan Tal",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 1999,
+   "seasons": [
+    "1998/99"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עידן כהן",
+   "personNameLatin": "Idan Cohen",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2019,
+   "seasons": [
+    "2017/18",
+    "2018/19"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עידן סרור",
+   "personNameLatin": "Idan Srur",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2009,
+   "seasons": [
+    "2007/08",
+    "2008/09"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עלי כנאנה",
+   "personNameLatin": "Ali Kna'ana",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "seasons": [
+    "2019/20"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עמאר מנצור",
+   "personNameLatin": "Amer Manzur",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "seasons": [
+    "2007/08"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עמירן שקלים",
+   "personNameLatin": "Amiran Shkalim",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2019,
+   "seasons": [
+    "2018/19"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עמית ביטון",
+   "personNameLatin": "Amit Bitton",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2017,
+   "seasons": [
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עמית למקין",
+   "personNameLatin": "Amit Lemkin",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2026,
+   "seasons": [
+    "2023/24",
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עמית מאיר",
+   "personNameLatin": "Amit Meir",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "seasons": [
+    "2019/20"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "עמרי אפק",
+   "personNameLatin": "Omri Afek",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2003,
+   "seasons": [
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2,
+   "alsoSpelled": [
+    "עומרי אפק"
+   ]
+  },
+  {
+   "personNameHe": "עמרי עטיה",
+   "personNameLatin": "Omri Atia",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2012,
+   "seasons": [
+    "2011/12"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ערן זהבי",
+   "personNameLatin": "Eran Zahavi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2008,
+   "toYear": 2011,
+   "seasons": [
+    "2008/09",
+    "2009/10",
+    "2010/11"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "פאביו רוסה",
+   "personNameLatin": "Fábio Rosa",
+   "position": "MF",
+   "nationalityEn": "Brazil",
+   "origin": "foreign",
+   "fromYear": 2004,
+   "toYear": 2005,
+   "seasons": [
+    "2004/05"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "פטר אורלנדיץ'",
+   "personNameLatin": "Petar Orlandić",
+   "position": "FW",
+   "nationalityEn": "Montenegro",
+   "origin": "foreign",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "seasons": [
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "פייסל מוליץ'",
+   "personNameLatin": "Fejsal Mulić",
+   "position": "FW",
+   "nationalityEn": "Serbia",
+   "origin": "foreign",
+   "fromYear": 2017,
+   "toYear": 2019,
+   "seasons": [
+    "2017/18",
+    "2018/19"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "פיני בלילי",
+   "personNameLatin": "Pini Balili",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1998,
+   "toYear": 2003,
+   "seasons": [
+    "1998/99",
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "פליקס חלפון",
+   "personNameLatin": "Felix Halfon",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1988,
+   "toYear": 1997,
+   "seasons": [
+    "1988/89",
+    "1989/90",
+    "1990/91",
+    "1991/92",
+    "1992/93",
+    "1993/94",
+    "1996/97"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "צ'יקו",
+   "personNameLatin": "Chico",
+   "position": "DF",
+   "nationalityEn": "Brazil",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "צליל חתוכה",
+   "personNameLatin": "Tzlil Hatuka",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2017,
+   "seasons": [
+    "2015/16",
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "קובי זיתוני",
+   "personNameLatin": "Cobi Zeituni",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1978,
+   "toYear": 1981,
+   "seasons": [
+    "1978/79",
+    "1979/80",
+    "1980/81"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "קובי שאלו",
+   "personNameLatin": "Kobi Shalu",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 2000,
+   "seasons": [
+    "1995/96",
+    "1996/97",
+    "1997/98",
+    "1998/99",
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "קייס גאנם",
+   "personNameLatin": "Qays Ghanem",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "seasons": [
+    "2022/23"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "קלאודיו בומבה",
+   "personNameLatin": "Claudiu Bumba",
+   "position": "MF",
+   "nationalityEn": "Romania",
+   "origin": "foreign",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "קלמי סבן",
+   "personNameLatin": "Klemi Saban",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2001,
+   "toYear": 2004,
+   "seasons": [
+    "2001/02",
+    "2002/03",
+    "2003/04"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ראובן עובד",
+   "personNameLatin": "Reuven Oved",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2008,
+   "seasons": [
+    "2007/08"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רובי לבקוביץ'",
+   "personNameLatin": "Rubi Levkovich",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2025,
+   "seasons": [
+    "2018/19",
+    "2024/25"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רווה אסייג",
+   "personNameLatin": "Ravve Assayeg",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2023,
+   "seasons": [
+    "2022/23"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רוי ברנס",
+   "personNameLatin": "Roy Baranes",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2024,
+   "seasons": [
+    "2018/19",
+    "2019/20",
+    "2020/21",
+    "2021/22",
+    "2023/24"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רוי קורין",
+   "personNameLatin": "Roy Korine",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2026,
+   "seasons": [
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רוי רונן",
+   "personNameLatin": "Roy Ronen",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2018,
+   "seasons": [
+    "2017/18"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רון תלמי",
+   "personNameLatin": "Ron Talmi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2026,
+   "seasons": [
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רונן חרזי",
+   "personNameLatin": "Ronen Harazi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1999,
+   "toYear": 2000,
+   "seasons": [
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רועי אלקוקין",
+   "personNameLatin": "Roy Alkokin",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2026,
+   "seasons": [
+    "2022/23",
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רועי גורדנה",
+   "personNameLatin": "Roei Gordana",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2009,
+   "toYear": 2014,
+   "seasons": [
+    "2009/10",
+    "2011/12",
+    "2012/13",
+    "2013/14"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רועי דיין",
+   "personNameLatin": "Roy Dayan",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2007,
+   "toYear": 2017,
+   "seasons": [
+    "2007/08",
+    "2016/17"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רועי הרמן",
+   "personNameLatin": "Roy Herman",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רועי לוי",
+   "personNameLatin": "Roey Levi",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2026,
+   "seasons": [
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רותם חטואל",
+   "personNameLatin": "Rotem Hatuel",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2025,
+   "seasons": [
+    "2024/25"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רז טוויזר",
+   "personNameLatin": "Raz Twizer",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2023,
+   "seasons": [
+    "2021/22",
+    "2022/23"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רז מאיר",
+   "personNameLatin": "Raz Meir",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2023,
+   "toYear": 2024,
+   "seasons": [
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רז נחמיאס",
+   "personNameLatin": "Raz Nahmias",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2017,
+   "toYear": 2019,
+   "seasons": [
+    "2017/18",
+    "2018/19"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רז שטיין",
+   "personNameLatin": "Raz Stain",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2020,
+   "toYear": 2021,
+   "seasons": [
+    "2020/21"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רז שלמה",
+   "personNameLatin": "Raz Shlomo",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2022,
+   "seasons": [
+    "2016/17",
+    "2017/18",
+    "2018/19",
+    "2019/20",
+    "2020/21",
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רחביה רוזנבוים",
+   "personNameLatin": "Rehavia Rozenboim",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1954,
+   "toYear": 1964,
+   "seasons": [
+    "1954/55",
+    "1956/57",
+    "1958/59",
+    "1959/60",
+    "1960/61",
+    "1961/62",
+    "1962/63",
+    "1963/64"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "ריפעת טורק",
+   "personNameLatin": "Rifaat Turk",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1972,
+   "toYear": 1984,
+   "seasons": [
+    "1972/73",
+    "1973/74",
+    "1974/75",
+    "1975/76",
+    "1976/77",
+    "1977/78",
+    "1978/79",
+    "1979/80",
+    "1980/81",
+    "1981/82",
+    "1982/83",
+    "1983/84"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רמזי ספורי",
+   "personNameLatin": "Ramzi Safuri",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2019,
+   "seasons": [
+    "2013/14",
+    "2014/15",
+    "2015/16",
+    "2018/19"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רמי דואני",
+   "personNameLatin": "Rami Duani",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2008,
+   "seasons": [
+    "2006/07",
+    "2007/08"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רן בנימין",
+   "personNameLatin": "Ran Binyamin",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2022,
+   "toYear": 2025,
+   "seasons": [
+    "2022/23",
+    "2023/24",
+    "2024/25"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "רן יצחק",
+   "personNameLatin": "Ran Itzchak",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2014,
+   "seasons": [
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שאנדה סילבה",
+   "personNameLatin": "Xande Silva",
+   "position": "FW",
+   "nationalityEn": "Portugal",
+   "origin": "foreign",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שביט אלימלך",
+   "personNameLatin": "Shavit Elimelech",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1996,
+   "toYear": 2007,
+   "seasons": [
+    "1996/97",
+    "1997/98",
+    "1998/99",
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03",
+    "2003/04",
+    "2004/05",
+    "2005/06",
+    "2006/07"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שביט מזל",
+   "personNameLatin": "Shavit Mazal",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2019,
+   "toYear": 2020,
+   "seasons": [
+    "2019/20"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שבתאי לוי",
+   "personNameLatin": "Shabtai Levi",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1981,
+   "toYear": 1989,
+   "seasons": [
+    "1981/82",
+    "1982/83",
+    "1983/84",
+    "1984/85",
+    "1985/86",
+    "1986/87",
+    "1987/88",
+    "1988/89"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שגיא גניס",
+   "personNameLatin": "Sagi Genis",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2021,
+   "toYear": 2024,
+   "seasons": [
+    "2021/22",
+    "2022/23",
+    "2023/24"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שגיא פנחס",
+   "personNameLatin": "Sagi Pinhas",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2025,
+   "toYear": 2026,
+   "seasons": [
+    "2025/26"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שגיב יחזקאל",
+   "personNameLatin": "Sagiv Yehezkel",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2013,
+   "toYear": 2016,
+   "seasons": [
+    "2013/14",
+    "2014/15",
+    "2015/16"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שולי גילארדי",
+   "personNameLatin": "Shuli Gilardi",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1990,
+   "toYear": 1992,
+   "seasons": [
+    "1990/91",
+    "1991/92"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שון גולדברג",
+   "personNameLatin": "Shon Goldberg",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "seasons": [
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שון מלכה",
+   "personNameLatin": "Sean Malka",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2011,
+   "toYear": 2015,
+   "seasons": [
+    "2011/12",
+    "2013/14",
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שחר הירש",
+   "personNameLatin": "Shahar Hirsh",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2020,
+   "seasons": [
+    "2016/17",
+    "2017/18",
+    "2018/19",
+    "2019/20"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שחר כהן",
+   "personNameLatin": "Shahar Cohen",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 1999,
+   "seasons": [
+    "1995/96",
+    "1996/97",
+    "1997/98",
+    "1998/99"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שחר פיבן",
+   "personNameLatin": "Shahar Piven",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2024,
+   "toYear": 2026,
+   "seasons": [
+    "2024/25",
+    "2025/26"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שי אבוטבול",
+   "personNameLatin": "Shay Abutbul",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2002,
+   "toYear": 2015,
+   "seasons": [
+    "2002/03",
+    "2003/04",
+    "2006/07",
+    "2007/08",
+    "2008/09",
+    "2009/10",
+    "2010/11",
+    "2011/12",
+    "2012/13",
+    "2013/14",
+    "2014/15"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שי אייזן",
+   "personNameLatin": "Shay Ayzen",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2018,
+   "toYear": 2022,
+   "seasons": [
+    "2018/19",
+    "2019/20",
+    "2020/21",
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שי אליאס",
+   "personNameLatin": "Shay Elias",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2016,
+   "toYear": 2022,
+   "seasons": [
+    "2016/17",
+    "2017/18",
+    "2018/19",
+    "2020/21",
+    "2021/22"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שי רביבו",
+   "personNameLatin": "Shai Revivo",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2010,
+   "toYear": 2011,
+   "seasons": [
+    "2010/11"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שלום תקוה",
+   "personNameLatin": "Shalom Tikva",
+   "position": "FW",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1996,
+   "toYear": 2000,
+   "seasons": [
+    "1996/97",
+    "1997/98",
+    "1998/99",
+    "1999/00"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שמואל שיימן",
+   "personNameLatin": "Samuel Scheimann",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2015,
+   "toYear": 2016,
+   "seasons": [
+    "2015/16"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שמעון גרשון",
+   "personNameLatin": "Shimon Gershon",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1995,
+   "toYear": 2006,
+   "seasons": [
+    "1995/96",
+    "1996/97",
+    "1997/98",
+    "1998/99",
+    "1999/00",
+    "2000/01",
+    "2001/02",
+    "2002/03",
+    "2003/04",
+    "2004/05",
+    "2005/06"
+   ],
+   "matchedBy": "alias",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שמעון הרוש",
+   "personNameLatin": "Shimon Harush",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2014,
+   "seasons": [
+    "2012/13",
+    "2013/14"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "שרון מימר",
+   "personNameLatin": "Sharon Mimer",
+   "position": "MF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1997,
+   "seasons": [
+    "1993/94",
+    "1994/95",
+    "1995/96",
+    "1996/97"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "תום אלמדון",
+   "personNameLatin": "Tom Al-Madon",
+   "position": "GK",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2014,
+   "toYear": 2015,
+   "seasons": [
+    "2014/15"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "תומר אליהו",
+   "personNameLatin": "Tomer Eliyahu",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 1993,
+   "toYear": 1998,
+   "seasons": [
+    "1993/94",
+    "1994/95",
+    "1995/96",
+    "1996/97",
+    "1997/98"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "תומר בן יוסף",
+   "personNameLatin": "Tomer Ben Yousef",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2012,
+   "toYear": 2013,
+   "seasons": [
+    "2012/13"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  },
+  {
+   "personNameHe": "תומר חליבה",
+   "personNameLatin": "Tomer Haliva",
+   "position": "DF",
+   "nationalityEn": "Israel",
+   "origin": "israeli",
+   "fromYear": 2006,
+   "toYear": 2007,
+   "seasons": [
+    "2006/07"
+   ],
+   "matchedBy": "transliteration",
+   "sport": "football",
+   "confidence": 2
+  }
+ ],
+ "unknown": [
+  "אבדג'י",
+  "אבו דוסו",
+  "אבי אדרי",
+  "אבי סופר",
+  "אבי רן",
+  "אבי תקווה",
+  "אביב אלחדד",
+  "אביב דדו",
+  "אביב סלם",
+  "אברהם (אבי) בנימין",
+  "אברהם בית הלוי",
+  "אברהם פלמן",
+  "אברהם פרידריך",
+  "אברהם צ'קול",
+  "אדבינאס גירדבאיניס",
+  "אדוארדו לובוס",
+  "אדוארדו מראקש",
+  "אדמונד שמילוביץ'",
+  "אהוד כחילה",
+  "אוגנין לאקיץ'",
+  "אוהד חזוט",
+  "אולוביו אדפמי",
+  "אולריש מלקה",
+  "אומיט גונזלס",
+  "אור אינברום",
+  "אורי קויאטק",
+  "אורי שלף",
+  "איאד חוט'בא",
+  "איגור שקווירין",
+  "איוון יוליץ'",
+  "איזואגבו אבונימה",
+  "אייל אברמוב",
+  "אייל אחואן",
+  "אייל אקשטיין",
+  "אילונגו אנגסניה",
+  "איליה יבוריאן",
+  "אילן שוקרון",
+  "איסומעילה לינגאנה",
+  "איתי שביט",
+  "אל-ים קנצפולסקי",
+  "אלי בכר",
+  "אלי יאני",
+  "אלי שכטר",
+  "אליאור ברנס",
+  "אליהו נשלסקי",
+  "אלכס באסוק",
+  "אלכסנדר בולייביץ'",
+  "אמיר ליברמן",
+  "אמציה לבקוביץ",
+  "אנז'-פרדי פלומה",
+  "אנריקה ג'וקו",
+  "ארז זייצ'יק",
+  "ארז מסיקה",
+  "אריה אלטר",
+  "אריה אריאל",
+  "אריה בז'רנו",
+  "אריק איינשטיין",
+  "אריק דג'מבה דג'מבה",
+  "ארמנדו קופר",
+  "ארתור אטצזיאנוב",
+  "אשר בלוט",
+  "בויאן ורוצ'ינה",
+  "ביסקוט אמבלה",
+  "בן אלגרבלי",
+  "בן ציון צין (צינוביץ')",
+  "בן ציון ריידר",
+  "בנג'מין פראנסיס",
+  "בני גולדשטיין",
+  "בני חדד",
+  "בני כהן",
+  "בנימין טרידובסקי",
+  "בסארט עבדורחימי",
+  "ברונו סוארס",
+  "ברונו קוטיניו",
+  "ברק בדש",
+  "ג'ובאני ואלדיירו",
+  "ג'וזף גנדה",
+  "ג'ון פיינטסיל",
+  "ג'ון צ'יבויקה",
+  "ג'ורג' דיבה",
+  "גאל אטוק",
+  "גבי כץ",
+  "גבי לסרי",
+  "גבריאל דוס סנטוס",
+  "גבריאל סגל",
+  "גיא בדש",
+  "גיורא אנטמן",
+  "גל הרשליקוביץ",
+  "דאמיר שובשיץ'",
+  "דב רמלר",
+  "דגלאס אווסו",
+  "דוד בליס",
+  "דוד הרשליקוביץ",
+  "דוד הרשליקוביץ'",
+  "דוד ונטורה",
+  "דוד מיץ",
+  "דוד קלטינס",
+  "דוד קרמו",
+  "דוד רוצ'לה",
+  "דוד שטיינוורצל",
+  "דולי מנגה",
+  "דור חמו",
+  "דימיטאר טלקיסקי",
+  "דמבה קמארה",
+  "דמיאן גייזר",
+  "דמיאן לוקאשיק",
+  "דמיטרי מיכאלנקו",
+  "דנוץ מויססקו",
+  "דני אלקיים",
+  "דני בונדר",
+  "דני בורסוק",
+  "דני ילובסקי",
+  "דניאל גולדשטיין",
+  "דניאל דניאלי",
+  "דניאל צדיק",
+  "דנילו לופז",
+  "הרברט מייטנר",
+  "הרוויה איליץ'",
+  "הרצל פריצנר",
+  "וויאם עמאשה",
+  "וויליאם אוואסו",
+  "וולטון סילבה",
+  "וולינגטון דה אוליברה",
+  "זאב חיימוביץ'",
+  "זאב סגל",
+  "חאבייר פאאס",
+  "חוטפריט רומראטו",
+  "חוסה רודריגס",
+  "חיים איצרין",
+  "חיים גלזר",
+  "חיים חוזבקו",
+  "חן עזרא",
+  "חנן אלקיים",
+  "חנן ממן",
+  "חסן בדג'ייב",
+  "טל אוסובסקי",
+  "טל איילה",
+  "יהודה עמר",
+  "יהושע זילברשטיין",
+  "יואב הופמייסטר",
+  "יואל שוהם",
+  "יובל כהן",
+  "יובל פילוס",
+  "יום טוב טליאס",
+  "יונה פוקס",
+  "יונתן לרנר",
+  "יונתן פרבר",
+  "יונתן רודיונוב",
+  "יוסי ביטון",
+  "יוסי בלאס",
+  "יוסף אובה",
+  "יורגן קולין",
+  "יחזקאל חזום",
+  "יניב בן ניסן",
+  "יעקב רודיק",
+  "יעקב רחמינוביץ'",
+  "יצחק ביבאס",
+  "יצחק מנחם",
+  "יצחק צ'צ'יק",
+  "יקיר לוסקי",
+  "ירון בן דב",
+  "ירוסלב באקו",
+  "ירמיהו לוף",
+  "ישראל בריקר",
+  "ישראל וייס",
+  "ישראל זגורי",
+  "ישראל מאיה",
+  "ישראל ראש",
+  "לבאן קוטליה",
+  "לוסיו מרינאו",
+  "ליאונרדו בוארב",
+  "ליאור אסולין",
+  "ליביו אנטל",
+  "לירון דיאמנט",
+  "לירון ליכטרמן",
+  "לירן שטראובר",
+  "מאוויס צ'יבוטה",
+  "מאור הראל",
+  "מאור פרץ",
+  "מאט פרנק",
+  "מאיר אריה",
+  "מאיר בן שטרית",
+  "מאיר ברנר",
+  "מאיר מליקה (חלוץ)",
+  "מאיר נחמיאס",
+  "מוחמד אבו אל היג'א",
+  "מוניה גושן",
+  "מור נעמן (כדורגלן)",
+  "מוריס ז'אנו",
+  "מזואה אנסומבו",
+  "מיגל אנחלס הויוס",
+  "מיחאי פינטילי",
+  "מיכאל כהן",
+  "מיכאל לפרדון",
+  "מיכאל מיכאלוב",
+  "מיקי דהאן",
+  "מנואל ניירה",
+  "מנחם מור",
+  "מנחם רוזנשטרייך",
+  "מקס צ'ליץ'",
+  "מרדכי מאיר",
+  "מריוס ניביידומסקי",
+  "מרקו ינקוביץ'",
+  "מרקו סימיץ'",
+  "משה אייזנברג",
+  "משה דננבאום",
+  "משה מוסטרל",
+  "משה מורדכוביץ׳",
+  "משה מלמד",
+  "משה מרקוביץ'",
+  "משה סקל",
+  "משה פוליאקוב",
+  "משה פיזנטי",
+  "משה פיימן",
+  "משה רסקין",
+  "מתן אריאל לזמי",
+  "נועה סקלי",
+  "נועם בונה",
+  "ניסים אביטן",
+  "ניקולאס גורובסוב",
+  "ניקולה פטקוביץ'",
+  "ניר חדד",
+  "ניר מנחם",
+  "ניר נחום",
+  "נמניה ווצ'יצ'ביץ'",
+  "נמרוד דרייפוס",
+  "נסים חלפון",
+  "נפתלי שוואלב",
+  "נריוס ואלסקיס",
+  "סבסטיאן הרננדז",
+  "סבסטיאן סימרוטיץ'",
+  "סטפן מרינוביץ'",
+  "סטפן ספירובסקי",
+  "סיאנדה קולו",
+  "סינטיהו סלליך",
+  "סיראז' נסאר",
+  "סרגיי קלשנקו",
+  "עדי טבצ'ניק",
+  "עוביידה חטאב",
+  "עומאר בראון",
+  "עומאר גאריבה",
+  "עומר פרץ (חלוץ)",
+  "עומר פרץ (קשר)",
+  "עומרי לוי",
+  "עזיז קאיונדו",
+  "עזרי בבאייב",
+  "עידו אלמישלי",
+  "עידו אקסברד",
+  "עידן ברנס",
+  "עידן סקורצ'רו",
+  "עלי אלעוברה",
+  "עמי אדמוני",
+  "עמית מלכה",
+  "עמנואל איילה",
+  "עמנואל בואטנג (חלוץ)",
+  "עמנואל בואטנג (קשר)",
+  "פאביו ג'וניור פריירה",
+  "פארלי רוסה",
+  "פבלו גונזאלס",
+  "פבריציו קארבליו",
+  "פדרו גלבאן",
+  "פיטר קרמנס",
+  "פיליפ מנה",
+  "פליפה רודריגס",
+  "פליקס אובוקה",
+  "פנחס יהודיוף",
+  "פרנאן מאיימבו",
+  "פרנסיס קיירמה",
+  "צבי ארליך",
+  "צבי שריר",
+  "צחי זנטי",
+  "ציקי קוטלר",
+  "קאווה",
+  "קאיו אלבס",
+  "קובי הדדי",
+  "קובי סגל",
+  "קונסטנטין מרקו",
+  "קוסטל לזר",
+  "קז'ימיש מוסקאל",
+  "קלאודמיר פריירה",
+  "קרזימיר קואב",
+  "ראובן אללוף",
+  "רואי חדד",
+  "רובן סולצ'אגה",
+  "רוברט טזצקי",
+  "רוג'ר ברנרדו",
+  "רומאן רוקי",
+  "רומן וסילוק",
+  "רון נחמן",
+  "רונאלדו ואסקס",
+  "רוני קלדרון",
+  "רונן הילל",
+  "רועי דיין (יליד 1997)",
+  "רועי זיקרי",
+  "רז כהן",
+  "ריף מסיקה",
+  "רם שטראוס",
+  "רמי אבו לאבן",
+  "רמי ארמה",
+  "רמי חליס",
+  "רמי כהן",
+  "רפי שמואל",
+  "שבי בן ברוך",
+  "שבתאי יחבס",
+  "שגיא זינגר",
+  "שגיב אליהו",
+  "שובל גוזלן",
+  "שון בן נשר",
+  "שוקה ברשדסקי",
+  "שייע פייגנבוים",
+  "שלום אביטן",
+  "שלומי אזולאי (חלוץ)",
+  "שלומי אזולאי (קשר)",
+  "שלומי ארבייטמן",
+  "שלמה ספוז'ניקוב",
+  "שלמה פוליאקוב",
+  "שלמה שרף",
+  "שמואל כהן",
+  "שמחה חינקיס",
+  "שמעון בן יהונתן",
+  "שמעון בנודיס",
+  "שמעון ברנס",
+  "שמעון צימרמן",
+  "תומר לוי",
+  "תמיר לינהרט"
+ ],
+ "ambiguous": {
+  "איאד חוט'בא": [
+   "Iyad Hutba",
+   "Eyad Khutaba"
+  ],
+  "יחזקאל חזום": [
+   "Yechezkel Chazom",
+   "Yehezkel Hazum"
+  ],
+  "מאור פרץ": [
+   "Omer Peretz",
+   "Maor Peretz"
+  ],
+  "עומרי לוי": [
+   "Amir Ela",
+   "Omri Levi"
+  ],
+  "תומר לוי": [
+   "Tomer Eliyahu",
+   "Tomer Haliva"
+  ],
+  "יובל כהן": [
+   "Yuval Cohen"
+  ],
+  "רז כהן": [
+   "Raz Cohen"
+  ],
+  "רמי כהן": [
+   "Raz Cohen"
+  ]
+ }
+}
