@@ -1,0 +1,78 @@
+# השער — nothing reaches main without passing what a person would have run by hand.
+#
+# Maor does not use a terminal, which is the whole reason this file exists: until now the
+# only thing standing between a broken commit and the game was whether the assistant
+# remembered to run `npm run doctor` before saying "done". A push runs it here instead, on
+# GitHub's machine, and the answer is a green tick or a red cross on the commit page.
+#
+# The order is deliberate. `repo:hygiene` runs FIRST and takes seconds: if the repository
+# has grown a second copy of a runtime file, every result after it is untrustworthy — a
+# green typecheck on a tree with two `LifeStage.tsx` in it is exactly the false comfort the
+# audit of 7.9.2026 is about.
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  doctor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NODE_OPTIONS: --max-old-space-size=6144
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Repository hygiene — one runtime concept, one source file
+        run: npm run repo:hygiene
+
+      - name: Asset provenance — every shipped file has a recorded origin
+        run: npm run assets:provenance
+
+      # next.config.mjs sets `eslint.ignoreDuringBuilds: true` and says why in a comment
+      # right next to it: `next build` can't run ESLint here because eslint-config-next
+      # needs a postinstall script Vercel's sandboxed install blocks. That comment also
+      # claims lint "runs in CI" — and until this line existed, nothing anywhere did, which
+      # is the exact shape of defect this project treats as a fabrication (rule 11/15),
+      # just written in a config comment instead of printed on a screen. `npm run doctor`
+      # already runs it in this position, between provenance and typecheck; CI now matches
+      # the command a person would have run by hand.
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # Pure static TypeScript over THE WORKER LIFE's scene graph — no browser, no build,
+      # seconds to run — so it sits with the other static checks above rather than after
+      # the slower dynamic ones below. It reads content the way the runtime reads it and
+      # asks the five questions a player would ask with their hands: does a "go ask your
+      # father" line name someone who is actually in this chapter, does every dialogue
+      # branch lead somewhere real, can every room reached be left again, is every locked
+      # door's flag raised by something in its own chapter, does the chapter have a
+      # reachable ending. This is the project's own recurring bug class — content written
+      # for one chapter and silently inherited by eighteen others — caught before a
+      # screenshot ever could.
+      - name: Dead ends — THE WORKER LIFE
+        run: npm run life:deadends
+
+      - name: Tests
+        run: npm test -- --maxWorkers=2 --minWorkers=1
+
+      - name: Local database
+        run: npm run master:local-db
+
+      - name: Build
+        run: npm run build
