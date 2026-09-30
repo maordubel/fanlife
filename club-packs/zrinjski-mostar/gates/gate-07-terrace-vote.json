@@ -1,0 +1,105 @@
+{
+  "status": "OPEN",
+  "prompts": [
+    {
+      "id": "vote-01",
+      "prompt": "Which defines modern Zrinjski more: the first title in 2005 or the European breakthrough in 2023?",
+      "scored": false
+    },
+    {
+      "id": "vote-02",
+      "prompt": "Which memory would you show a child first: the sash, the stadium, or the 4-3 against AZ?",
+      "scored": false
+    },
+    {
+      "id": "vote-03",
+      "prompt": "What matters more in a club legend: longevity, goals, European nights, or derby moments?",
+      "scored": false
+    },
+    {
+      "id": "vote-04",
+      "prompt": "Which era feels bigger to you: 2016-18 three straight titles or 2022-25?",
+      "scored": false
+    },
+    {
+      "id": "vote-05",
+      "prompt": "Would you rather keep one ticket from 2005 or one from AZ 2023?",
+      "scored": false
+    },
+    {
+      "id": "vote-06",
+      "prompt": "For a young player passing through, what earns love fastest: talent, effort, loyalty, or one huge match?",
+      "scored": false
+    },
+    {
+      "id": "vote-07",
+      "prompt": "If you have one free evening: home league match, away trip, supporter community event, or archive night?",
+      "scored": false
+    },
+    {
+      "id": "vote-08",
+      "prompt": "What belongs in the final memory box: first scarf, first shirt, first away ticket, or first child ticket?",
+      "scored": false
+    },
+    {
+      "id": "vote-09",
+      "prompt": "When the team is 0-3 down at half-time: stay quiet, keep singing, go for air, or message everyone you know?",
+      "scored": false
+    },
+    {
+      "id": "vote-10",
+      "prompt": "What is more 'home': the exact stand, the walk to the stadium, the people, or the shirt?",
+      "scored": false
+    },
+    {
+      "id": "vote-11",
+      "prompt": "Which is harder to miss: a derby, a European game, a title decider, or a family commitment?",
+      "scored": false
+    },
+    {
+      "id": "vote-12",
+      "prompt": "What should an organiser be judged by: noise, reliability, helping people, or making things happen?",
+      "scored": false
+    },
+    {
+      "id": "vote-13",
+      "prompt": "Would you choose a famous star season or a long-serving club servant for your shirt collection?",
+      "scored": false
+    },
+    {
+      "id": "vote-14",
+      "prompt": "What makes an away day worth remembering: result, journey, people, or the city?",
+      "scored": false
+    },
+    {
+      "id": "vote-15",
+      "prompt": "Would you rather be remembered as a regular supporter, organiser, archivist, traveller, or community builder?",
+      "scored": false
+    },
+    {
+      "id": "vote-16",
+      "prompt": "What hurts more: missing the match or being there with the wrong people?",
+      "scored": false
+    },
+    {
+      "id": "vote-17",
+      "prompt": "What do you save first: newspaper, ticket, photo, scarf, or voice note?",
+      "scored": false
+    },
+    {
+      "id": "vote-18",
+      "prompt": "Which is the stronger adult challenge: money, time, work, relationship, or distance?",
+      "scored": false
+    },
+    {
+      "id": "vote-19",
+      "prompt": "Should a rivalry game focus on sporting memories, city identity, player moments, or all three?",
+      "scored": false
+    },
+    {
+      "id": "vote-20",
+      "prompt": "At the end of LIFE, who should lead the last walk: you, your father, your child, or nobody?",
+      "scored": false
+    }
+  ]
+}

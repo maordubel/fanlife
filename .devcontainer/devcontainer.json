@@ -1,0 +1,22 @@
+{
+  "name": "FAN LIFE evaluation",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
+  },
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "FAN LIFE",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm ci && node scripts/master/codespace-setup.mjs",
+  "postStartCommand": "nohup npm run dev > /tmp/fan-life-dev.log 2>&1 &",
+  "remoteEnv": {
+    "NODE_OPTIONS": "--max-old-space-size=6144"
+  }
+}

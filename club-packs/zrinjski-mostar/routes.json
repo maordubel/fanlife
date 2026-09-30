@@ -1,0 +1,82 @@
+[
+  {
+    "genericFunction": "LIVE_THE_CLUB",
+    "zrinjskiRoute": "regular-supporter",
+    "enabled": true
+  },
+  {
+    "genericFunction": "LEAD_SUPPORTERS",
+    "zrinjskiRoute": "supporter-organiser",
+    "enabled": true,
+    "researchBasis": [
+      "src-fans"
+    ]
+  },
+  {
+    "genericFunction": "BUILD_SOMETHING_FOR_THE_CLUB",
+    "zrinjskiRoute": "supporter-community-builder",
+    "enabled": true,
+    "replaces": "basketball-founder",
+    "researchBasis": [
+      "src-fans"
+    ],
+    "keyMechanic": "Volim te bola / humanitarian supporter project"
+  },
+  {
+    "genericFunction": "DOCUMENT_AND_EXPLAIN",
+    "zrinjskiRoute": "journalist-archivist",
+    "enabled": true
+  },
+  {
+    "genericFunction": "TRAVEL_AND_CONNECT",
+    "zrinjskiRoute": "international-traveller",
+    "enabled": true,
+    "researchBasis": [
+      "src-europe-2000",
+      "src-club-info"
+    ]
+  },
+  {
+    "genericFunction": "LEAVE_AND_RETURN",
+    "zrinjskiRoute": "diaspora-abroad-return",
+    "enabled": true,
+    "note": "Fictional personal route; can connect to real European match calendar without claiming a specific diaspora organisation."
+  },
+  {
+    "genericFunction": "HIGH_AGENCY_CLUB_ROUTE",
+    "zrinjskiRoute": "member-community-governance",
+    "enabled": true,
+    "replaces": "owner",
+    "note": "No private-owner fantasy. Uses membership, sponsors, assembly/board/infrastructure as the local high-agency grammar.",
+    "researchBasis": [
+      "src-membership",
+      "src-board",
+      "src-president"
+    ]
+  },
+  {
+    "genericFunction": "PARENT",
+    "zrinjskiRoute": "parent",
+    "enabled": true
+  },
+  {
+    "genericFunction": "NO_CHILD",
+    "zrinjskiRoute": "no-child",
+    "enabled": true
+  },
+  {
+    "genericFunction": "WORK_FIRST",
+    "zrinjskiRoute": "work-first",
+    "enabled": true
+  },
+  {
+    "genericFunction": "RELATIONSHIP_FIRST",
+    "zrinjskiRoute": "relationship-first",
+    "enabled": true
+  },
+  {
+    "genericFunction": "ARMCHAIR_DISTANCE_RETURN",
+    "zrinjskiRoute": "distance-return",
+    "enabled": true
+  }
+]

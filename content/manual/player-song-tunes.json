@@ -1,0 +1,2364 @@
+{
+ "schemaVersion": 1,
+ "source": "ויקיפועל — תיבת המידע של דף השחקן, השדה \"מנגינת שיר שחקן\" (content/raw/vikipoel-player-wikitext.json)",
+ "note": "שם המנגינה בלבד — לא מילות השיר (כלל 12). דף עם כמה קישורים או בלי כותרת בודדת אינו כאן.",
+ "counts": {
+  "records": 249,
+  "skipped": 22
+ },
+ "skipped": [
+  {
+   "title": "איאד אבו עביד",
+   "reason": "not a single title",
+   "raw": "[https://www.youtube.com/watch?v=DRSXzxAKVQ8 מברוק עליק-ג'ורג' בר], [https://youtu.be/B4FA_4VcNIY כמו סינדרלה-שרית חדד]"
+  },
+  {
+   "title": "אלין טופוזאקוב",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=19730&singer_id=4858&song_title=221c7d בא הביתה - עידן יניב] ([http://www.youtube.com/watch?v=PIseipEXTA0 מנגינה])"
+  },
+  {
+   "title": "אישטוואן פישונט",
+   "reason": "not a single title",
+   "raw": "[http://www.youtube.com/watch?v=ZwM70xwJChc תני לי- חיים משה ולידור יוספי] (כן, שרנו את זה לפני מכבי)"
+  },
+  {
+   "title": "אלרואי כהן",
+   "reason": "not a single title",
+   "raw": "[http://www.youtube.com/watch?v=Ev-KxmdLKzc סתיו ישראלי - גלי עטרי] / <br>"
+  },
+  {
+   "title": "אסי טובי",
+   "reason": "not a single title",
+   "raw": "נעימת התוכנית \"אגן הים התיכון\" רשת ג'. ([http://www.youtube.com/watch?v=fzRiAQeG1yg מנגינה])"
+  },
+  {
+   "title": "אריק דג'מבה דג'מבה",
+   "reason": "not a single title",
+   "raw": "[[נאהב אותך לנצח]] - [http://www.youtube.com/watch?v=h8VGQTtENSs Bonnie Tyler It's A Heartache]"
+  },
+  {
+   "title": "בן רייכרט",
+   "reason": "not a single title",
+   "raw": "[[אמרו לו]]"
+  },
+  {
+   "title": "גליל בן סנן",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=14497&singer_id=1043&song_title=10690f חיים מיום ליום - רביד גואטה] ([http://www.youtube.com/watch?v=vuv2G2BUvi0 מנגינה])"
+  },
+  {
+   "title": "גל שיש",
+   "reason": "not a single title",
+   "raw": "[[אולה אולה אולה - גל שיש|אולה אולה אולה]]"
+  },
+  {
+   "title": "וואליד באדיר",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=5117&singer_id=1013&song_title=f8b9 בסבוסה - שריף] ([http://www.youtube.com/watch?v=unpSK5br_04 מנגינה])"
+  },
+  {
+   "title": "דימיטאר טלקיסקי",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=1518&singer_id=820&song_title=56a7c יד ביד - עופרה חזה] ([http://youtube.com/watch?v=JhVrmdzoKJY מנגינה])"
+  },
+  {
+   "title": "דניאל דה רידר",
+   "reason": "not a single title",
+   "raw": "[[Creep - Radiohead - דניאל דה רידר|Creep - Radiohead]]"
+  },
+  {
+   "title": "יגאל אנטבי",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=4530&singer_id=710&song_title=2932e7 אמא שלי - נועם קניאל] ([http://www.youtube.com/watch?v=6HTFsaDNe4A מנגינה])"
+  },
+  {
+   "title": "טל חן",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=2340&singer_id=399&song_title=38686 נשבע - חיים משה] ([http://www.youtube.com/watch?v=BenrLx0TU_M מנגינה])"
+  },
+  {
+   "title": "חאבייר פאאס",
+   "reason": "not a single title",
+   "raw": "[http://www.shiron.net/songView.aspx?song_id=3490&singer_id=0&song_title=5b447 ענוג - נוער שוליים] ([http://www.youtube.com/watch?v=Fq3jN0ZYz64 מנגינה])"
+  },
+  {
+   "title": "ישראל כהן",
+   "reason": "not a single title",
+   "raw": "ברבאבא + ישראל ישראל ישראל בטח בשם (אנחנו מאמינים בני מאמינים)"
+  },
+  {
+   "title": "ליאור בקשי",
+   "reason": "not a single title",
+   "raw": "there's no limit/ 2unlimited ([http://www.youtube.com/watch?v=gzyFmilkd80 מנגינה])"
+  },
+  {
+   "title": "סארי פלאח",
+   "reason": "not a single title",
+   "raw": "[https://www.youtube.com/watch?v=CfihYWRWRTQ Love Me Again] של הזמר John Newman"
+  },
+  {
+   "title": "ראובן עובד",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=18472&singer_id=399&song_title=219a06 את הכוכב שלי - חיים משה] ([http://www.youtube.com/watch?v=6OrM_zG9RgY מנגינה])"
+  },
+  {
+   "title": "רועי דיין",
+   "reason": "not a single title",
+   "raw": "[http://www.shiron.net/songView.aspx?song_id=1185&singer_id=465&song_title=1aa5e הנני כאן - יהורם גאון] ([http://www.youtube.com/watch?v=uvDbDLAyJYo מנגינה])"
+  },
+  {
+   "title": "שלומי ארבייטמן",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=143&singer_id=206&song_title=3979 אחכה לך] ([http://www.youtube.com/watch?v=-a6k2AmumRw מנגינה])"
+  },
+  {
+   "title": "שי אבוטבול",
+   "reason": "not a single title",
+   "raw": "[http://shiron.net/songView.aspx?song_id=5319&singer_id=399&song_title=2932e7 סניוריטה - חיים משה] ([http://www.youtube.com/watch?v=ysdKQeO8Emw מנגינה])"
+  }
+ ],
+ "records": [
+  {
+   "playerId": "p_2ef10a5876",
+   "slug": "אבדגי",
+   "tuneHe": "Gimme hope Joanna",
+   "raw": "[http://www.youtube.com/watch?v=bNNfAuMq-M0 Gimme hope Joanna]",
+   "pageTitle": "אבדג'י",
+   "pageId": 1564,
+   "revisionId": 69108
+  },
+  {
+   "playerId": "p_3fc7f6fcf1",
+   "slug": "אבי-אזולאי",
+   "tuneHe": "מאמי",
+   "raw": "מאמי",
+   "pageTitle": "אבי אזולאי",
+   "pageId": 2659,
+   "revisionId": 86029
+  },
+  {
+   "playerId": "p_abe3ea1c69",
+   "slug": "אבי-כנפו",
+   "tuneHe": "Let the sunshine in",
+   "raw": "Let the sunshine in",
+   "pageTitle": "אבי כנפו",
+   "pageId": 1802,
+   "revisionId": 70243
+  },
+  {
+   "playerId": "p_bf592a87a9",
+   "slug": "אבי-סופר",
+   "tuneHe": "בום פם (אריס סאן)",
+   "raw": "[http://www.youtube.com/watch?v=TzWhBms_oG0 בום פם (אריס סאן) ]",
+   "pageTitle": "אבי סופר",
+   "pageId": 2639,
+   "revisionId": 69113
+  },
+  {
+   "playerId": "p_b1fbfd5d16",
+   "slug": "אבי-תקווה",
+   "tuneHe": "רוזה - יהורם גאון",
+   "raw": "רוזה - יהורם גאון",
+   "pageTitle": "אבי תקווה",
+   "pageId": 2010,
+   "revisionId": 69114
+  },
+  {
+   "playerId": "p_32534644ac",
+   "slug": "אביב-וולנרמן",
+   "tuneHe": "קלינקה",
+   "raw": "קלינקה",
+   "pageTitle": "אביב וולנרמן",
+   "pageId": 1565,
+   "revisionId": 77889
+  },
+  {
+   "playerId": "p_4a4c618031",
+   "slug": "אביחי-ידין",
+   "tuneHe": "קח לך אישה ובנה לה בית",
+   "raw": "[http://www.youtube.com/watch?v=ZzLIdkvQJ-I קח לך אישה ובנה לה בית]",
+   "pageTitle": "אביחי ידין",
+   "pageId": 2796,
+   "revisionId": 71463
+  },
+  {
+   "playerId": "p_0ee0329896",
+   "slug": "אברהם-צקול",
+   "tuneHe": "הפרויקט של עידן רייכל - בואי",
+   "raw": "הפרויקט של עידן רייכל - בואי",
+   "pageTitle": "אברהם צ'קול",
+   "pageId": 13297,
+   "revisionId": 69124
+  },
+  {
+   "playerId": "p_615688f377",
+   "slug": "אדוארדו-מראקש",
+   "tuneHe": "את כמו אש - קובי פרץ",
+   "raw": "[http://www.youtube.com/watch?v=06loYNEaojs את כמו אש - קובי פרץ]",
+   "pageTitle": "אדוארדו מראקש",
+   "pageId": 1803,
+   "revisionId": 69127
+  },
+  {
+   "playerId": "p_4ad6480435",
+   "slug": "אדי-אלקיים",
+   "tuneHe": "אה או (של גזוז)",
+   "raw": "אה או (של גזוז)",
+   "pageTitle": "אדי אלקיים",
+   "pageId": 2629,
+   "revisionId": 69128
+  },
+  {
+   "playerId": "p_d65c4fce2b",
+   "slug": "אהוד-כחילה",
+   "tuneHe": "משיח משיח משיח",
+   "raw": "משיח משיח משיח",
+   "pageTitle": "אהוד כחילה",
+   "pageId": 2424,
+   "revisionId": 69131
+  },
+  {
+   "playerId": "p_cbd86a87d0",
+   "slug": "אוגנין-לאקיץ",
+   "tuneHe": "באה מאהבה",
+   "raw": "[http://www.youtube.com/watch?v=3hNuL3Kt66A באה מאהבה]",
+   "pageTitle": "אוגנין לאקיץ'",
+   "pageId": 2635,
+   "revisionId": 69132
+  },
+  {
+   "playerId": "p_753c7293ca",
+   "slug": "אולוביו-אדפמי",
+   "tuneHe": "Don't you want me",
+   "raw": "Don't you want me",
+   "pageTitle": "אולוביו אדפמי",
+   "pageId": 1814,
+   "revisionId": 70256
+  },
+  {
+   "playerId": "p_c2448c7be1",
+   "slug": "אומיט-גונזלס",
+   "tuneHe": "טק טק",
+   "raw": "[http://youtube.com/watch?v=l-g0Ur8UD_I טק טק]",
+   "pageTitle": "אומיט גונזלס",
+   "pageId": 1414,
+   "revisionId": 69134
+  },
+  {
+   "playerId": "p_08fd3f491c",
+   "slug": "אור-בלוריאן",
+   "tuneHe": "I'm Blue-Eiffel 65",
+   "raw": "[https://www.youtube.com/watch?v=BinWA0EenDY I'm Blue-Eiffel 65]",
+   "pageTitle": "אור בלוריאן",
+   "pageId": 18755,
+   "revisionId": 86513
+  },
+  {
+   "playerId": "p_9a33798d32",
+   "slug": "אור-ישראלוב",
+   "tuneHe": "קרן שמש/בניה ברבי",
+   "raw": "קרן שמש/בניה ברבי",
+   "pageTitle": "אור ישראלוב",
+   "pageId": 17703,
+   "revisionId": 86811
+  },
+  {
+   "playerId": "p_dd86df8ba8",
+   "slug": "אוראל-דגני",
+   "tuneHe": "Under the sea",
+   "raw": "[http://www.youtube.com/watch?v=5qOFS-6Zt9E Under the sea]",
+   "pageTitle": "אוראל דגני",
+   "pageId": 13293,
+   "revisionId": 69141
+  },
+  {
+   "playerId": "p_a5c53f27aa",
+   "slug": "אורי-קרגולה",
+   "tuneHe": "In the army now",
+   "raw": "[http://www.youtube.com/watch?v=y1kHrTTtAqM In the army now]",
+   "pageTitle": "אורי קרגולה",
+   "pageId": 2622,
+   "revisionId": 70261
+  },
+  {
+   "playerId": "p_a816bd7492",
+   "slug": "איאד-חוטבא",
+   "tuneHe": "לחיים - כנר על הגג",
+   "raw": "[http://www.youtube.com/watch?v=cXBptXt12Pg לחיים - כנר על הגג]",
+   "pageTitle": "איאד חוט'בא",
+   "pageId": 10366,
+   "revisionId": 69150
+  },
+  {
+   "playerId": "p_a4051dabb2",
+   "slug": "איבזיטו-אוגבונה",
+   "tuneHe": "Banana Boat Song",
+   "raw": "Banana Boat Song",
+   "pageTitle": "איבזיטו אוגבונה",
+   "pageId": 1806,
+   "revisionId": 90259
+  },
+  {
+   "playerId": "p_3d9813724a",
+   "slug": "איוון-יוליץ",
+   "tuneHe": "קופה קבאנה",
+   "raw": "קופה קבאנה",
+   "pageTitle": "איוון יוליץ'",
+   "pageId": 1570,
+   "revisionId": 70266
+  },
+  {
+   "playerId": "p_7c9ce04140",
+   "slug": "אייל-בן-עמי",
+   "tuneHe": "גולני שלי + צוללת צהובה",
+   "raw": "גולני שלי + צוללת צהובה",
+   "pageTitle": "אייל בן עמי",
+   "pageId": 1807,
+   "revisionId": 83047
+  },
+  {
+   "playerId": "p_625af500eb",
+   "slug": "אילונגו-אנגסניה",
+   "tuneHe": "סאלאם - להקת שבע",
+   "raw": "סאלאם - להקת שבע",
+   "pageTitle": "אילונגו אנגסניה",
+   "pageId": 1571,
+   "revisionId": 72190
+  },
+  {
+   "playerId": "p_7845e3c111",
+   "slug": "איליה-יבוריאן",
+   "tuneHe": "אני שוב מתאהב - גידי גוב",
+   "raw": "[http://www.youtube.com/watch?v=svV_P95VUz8 אני שוב מתאהב - גידי גוב]",
+   "pageTitle": "איליה יבוריאן",
+   "pageId": 1808,
+   "revisionId": 69161
+  },
+  {
+   "playerId": "p_34eb87490c",
+   "slug": "אילן-בכר",
+   "tuneHe": "תותים - אתניקס",
+   "raw": "[http://www.youtube.com/watch?v=BXfbSYpGHi0 תותים - אתניקס]",
+   "pageTitle": "אילן בכר",
+   "pageId": 2013,
+   "revisionId": 79100
+  },
+  {
+   "playerId": "p_327cb6b402",
+   "slug": "איסומעילה-לינגאנה",
+   "tuneHe": "גידי גוב - יש אי שם",
+   "raw": "[https://www.youtube.com/watch?v=WNY_byDI6Kg גידי גוב - יש אי שם]",
+   "pageTitle": "איסומעילה לינגאנה",
+   "pageId": 14052,
+   "revisionId": 69164
+  },
+  {
+   "playerId": "p_5da62520ae",
+   "slug": "איתי-אלקסלסי",
+   "tuneHe": "In The Navy",
+   "raw": "[http://www.youtube.com/watch?v=TKc8yiq8NLo In The Navy]",
+   "pageTitle": "איתי אלקסלסי",
+   "pageId": 2014,
+   "revisionId": 69167
+  },
+  {
+   "playerId": "p_0b04f3bfc5",
+   "slug": "איתי-שכטר",
+   "tuneHe": "הבל החן שקר היופי - חיים צינוביץ'",
+   "raw": "[http://www.youtube.com/watch?v=a8yZcvoTYEE הבל החן שקר היופי - חיים צינוביץ']",
+   "pageTitle": "איתי שכטר",
+   "pageId": 4650,
+   "revisionId": 78919
+  },
+  {
+   "playerId": "p_b6f4564010",
+   "slug": "איתמר-ניצן",
+   "tuneHe": "עלילות בבאי - חני נחמיאס",
+   "raw": "[http://www.youtube.com/watch?v=jkYccuG2mXg עלילות בבאי - חני נחמיאס]",
+   "pageTitle": "איתמר ניצן",
+   "pageId": 8554,
+   "revisionId": 81668
+  },
+  {
+   "playerId": "p_ba737e5ee0",
+   "slug": "איתמר-שבירו",
+   "tuneHe": "דיווה/דנה אינטרנשיונל",
+   "raw": "דיווה/דנה אינטרנשיונל",
+   "pageTitle": "איתמר שבירו",
+   "pageId": 20645,
+   "revisionId": 82153
+  },
+  {
+   "playerId": "p_deda8456d5",
+   "slug": "אל-ים-קנצפולסקי",
+   "tuneHe": "צינגלה - תומר חן",
+   "raw": "[https://www.youtube.com/watch?v=WRneo8GPXu0 צינגלה - תומר חן]",
+   "pageTitle": "אל-ים קנצפולסקי",
+   "pageId": 17707,
+   "revisionId": 86780
+  },
+  {
+   "playerId": "p_644e79dcdb",
+   "slug": "אלון-אזוגי",
+   "tuneHe": "אבניבי",
+   "raw": "אבניבי",
+   "pageTitle": "אלון אזוגי",
+   "pageId": 17728,
+   "revisionId": 76286
+  },
+  {
+   "playerId": "p_cc459a96c2",
+   "slug": "אלון-חזן",
+   "tuneHe": "הלו הלו",
+   "raw": "הלו הלו",
+   "pageTitle": "אלון חזן",
+   "pageId": 2369,
+   "revisionId": 69173
+  },
+  {
+   "playerId": "p_713b3bbb03",
+   "slug": "אלון-חלפון",
+   "tuneHe": "דו רה מי (\"דו הוא דוב\")",
+   "raw": "[http://www.youtube.com/watch?v=PeHQ55EwnAo דו רה מי (\"דו הוא דוב\")]",
+   "pageTitle": "אלון חלפון",
+   "pageId": 1573,
+   "revisionId": 69174
+  },
+  {
+   "playerId": "p_d7910679ca",
+   "slug": "אליניב-ברדה",
+   "tuneHe": "כשאת בוכה את לא יפה",
+   "raw": "כשאת בוכה את לא יפה",
+   "pageTitle": "אליניב ברדה",
+   "pageId": 1810,
+   "revisionId": 85903
+  },
+  {
+   "playerId": "p_6800d0750c",
+   "slug": "אלירן-דנין",
+   "tuneHe": "אלף נשיקות - יהורם גאון",
+   "raw": "[http://www.youtube.com/watch?v=r5OfGhmpHl8 אלף נשיקות - יהורם גאון]",
+   "pageTitle": "אלירן דנין",
+   "pageId": 12731,
+   "revisionId": 69183
+  },
+  {
+   "playerId": "p_13d06f8b6e",
+   "slug": "אלמוג-כהן",
+   "tuneHe": "אינך יכולה - החלונות הגבוהים",
+   "raw": "[http://www.youtube.com/watch?v=Mp-oAudF6yY אינך יכולה - החלונות הגבוהים]",
+   "pageTitle": "אלמוג כהן",
+   "pageId": 13044,
+   "revisionId": 69186
+  },
+  {
+   "playerId": "p_d8f1b0bc43",
+   "slug": "אלן-אוזבולט",
+   "tuneHe": "ברוש/אריאל זילבר",
+   "raw": "ברוש/אריאל זילבר",
+   "pageTitle": "אלן אוז'בולט",
+   "pageId": 17764,
+   "revisionId": 84269
+  },
+  {
+   "playerId": "p_b8d59cbfbb",
+   "slug": "אמיליוס-זובאס",
+   "tuneHe": "איציק-פופלקס",
+   "raw": "[https://www.youtube.com/watch?v=wiSAhfPtAg4 איציק-פופלקס]",
+   "pageTitle": "אמיליוס זובאס",
+   "pageId": 18207,
+   "revisionId": 84268
+  },
+  {
+   "playerId": "p_0619566adc",
+   "slug": "אנאס-מחאמיד",
+   "tuneHe": "אני תמיד נשאר אני/עוזי חיטמן",
+   "raw": "אני תמיד נשאר אני/עוזי חיטמן",
+   "pageTitle": "אנאס מחאמיד",
+   "pageId": 15050,
+   "revisionId": 86801
+  },
+  {
+   "playerId": "p_82ea128fd2",
+   "slug": "אנדריאן-קרייב",
+   "tuneHe": "על הברכיים/טל שגב",
+   "raw": "על הברכיים/טל שגב",
+   "pageTitle": "אנדריאן קרייב",
+   "pageId": 21372,
+   "revisionId": 86781
+  },
+  {
+   "playerId": "p_ed1610b21e",
+   "slug": "אסי-דומב",
+   "tuneHe": "חנהל'ה התבלבלה",
+   "raw": "חנהל'ה התבלבלה",
+   "pageTitle": "אסי דומב",
+   "pageId": 1575,
+   "revisionId": 79997
+  },
+  {
+   "playerId": "p_c4fc293564",
+   "slug": "אסף-צור",
+   "tuneHe": "מחר/אביב גפן",
+   "raw": "מחר/אביב גפן",
+   "pageTitle": "אסף צור",
+   "pageId": 21067,
+   "revisionId": 86978
+  },
+  {
+   "playerId": "p_13728ba87d",
+   "slug": "אפואלה-אדל",
+   "tuneHe": "הופה היי - יגאל בשן",
+   "raw": "[http://www.youtube.com/watch?v=xsj07hPV9Cg הופה היי - יגאל בשן]",
+   "pageTitle": "אפואלה אדל",
+   "pageId": 10060,
+   "revisionId": 70292
+  },
+  {
+   "playerId": "p_5b56eac65e",
+   "slug": "ארז-מסיקה",
+   "tuneHe": "משיח משיח משיח",
+   "raw": "משיח משיח משיח",
+   "pageTitle": "ארז מסיקה",
+   "pageId": 1577,
+   "revisionId": 85352
+  },
+  {
+   "playerId": "p_43ad8316b1",
+   "slug": "אריאל-הרוש",
+   "tuneHe": "עוברת מולי",
+   "raw": "[https://www.youtube.com/watch?v=-Z26uQ5Aeko עוברת מולי]",
+   "pageTitle": "אריאל הרוש",
+   "pageId": 14062,
+   "revisionId": 69203
+  },
+  {
+   "playerId": "p_d854744ec2",
+   "slug": "אריק-ינקו",
+   "tuneHe": "No Limits - 2 Unlimited",
+   "raw": "[http://www.youtube.com/watch?v=GDD_gIhjh30 No Limits - 2 Unlimited]",
+   "pageTitle": "אריק ינקו",
+   "pageId": 4300,
+   "revisionId": 69208
+  },
+  {
+   "playerId": "p_47c1ab38e1",
+   "slug": "ארתור-אטצזיאנוב",
+   "tuneHe": "כוורת - נתתי לה חיי",
+   "raw": "כוורת - נתתי לה חיי",
+   "pageTitle": "ארתור אטצזיאנוב",
+   "pageId": 4222,
+   "revisionId": 69211
+  },
+  {
+   "playerId": "p_c4d8dee06b",
+   "slug": "בויאן-ורוצינה",
+   "tuneHe": "אייל גולן-ג'ונגל",
+   "raw": "אייל גולן-ג'ונגל",
+   "pageTitle": "בויאן ורוצ'ינה",
+   "pageId": 5552,
+   "revisionId": 70976
+  },
+  {
+   "playerId": "p_1d8475b0ee",
+   "slug": "בוריס-קליימן",
+   "tuneHe": "לטיול יצאנו - יפה ירקוני",
+   "raw": "[http://www.youtube.com/watch?v=Fv53p-MoOio לטיול יצאנו - יפה ירקוני]",
+   "pageTitle": "בוריס קליימן",
+   "pageId": 10296,
+   "revisionId": 69215
+  },
+  {
+   "playerId": "p_f4d9404511",
+   "slug": "ביברס-נאתכו",
+   "tuneHe": "שש עשרה מלאו לנער",
+   "raw": "שש עשרה מלאו לנער",
+   "pageTitle": "ביברס נאתכו",
+   "pageId": 1394,
+   "revisionId": 86354
+  },
+  {
+   "playerId": "p_d027706b2f",
+   "slug": "ביוואן-פרנסמן",
+   "tuneHe": "אלייך - משה פרץ",
+   "raw": "[http://www.youtube.com/watch?v=XS2NFKc856k אלייך - משה פרץ]",
+   "pageTitle": "ביוואן פרנסמן",
+   "pageId": 6284,
+   "revisionId": 69217
+  },
+  {
+   "playerId": "p_ed570afa6e",
+   "slug": "ביסקוט-אמבלה",
+   "tuneHe": "YMCA",
+   "raw": "YMCA",
+   "pageTitle": "ביסקוט אמבלה",
+   "pageId": 1578,
+   "revisionId": 72192
+  },
+  {
+   "playerId": "p_c8b2f83cda",
+   "slug": "בן-אלגרבלי",
+   "tuneHe": "Eduard Sharpe&The Magnetic Zeros-Home",
+   "raw": "[https://www.youtube.com/watch?v=_3hWYXOg1Cg Eduard Sharpe&The Magnetic Zeros-Home]",
+   "pageTitle": "בן אלגרבלי",
+   "pageId": 14104,
+   "revisionId": 69219
+  },
+  {
+   "playerId": "p_6923a21427",
+   "slug": "בן-לוז",
+   "tuneHe": "- Boney M - Rivers Of Babylon",
+   "raw": "- Boney M - Rivers Of Babylon",
+   "pageTitle": "בן לוז",
+   "pageId": 1581,
+   "revisionId": 69220
+  },
+  {
+   "playerId": "p_d20e3a28f6",
+   "slug": "בן-שהר",
+   "tuneHe": "אריק סיני - גן השקמים",
+   "raw": "אריק סיני - גן השקמים",
+   "pageTitle": "בן שהר",
+   "pageId": 6338,
+   "revisionId": 85956
+  },
+  {
+   "playerId": "p_82efab9dcc",
+   "slug": "בנגמין-פראנסיס",
+   "tuneHe": "CAMPTOWN RACES (DOO-DAH, DOO-DAH DAY)",
+   "raw": "[https://www.youtube.com/watch?v=Fpht_8VdUdI CAMPTOWN RACES (DOO-DAH, DOO-DAH DAY)]",
+   "pageTitle": "בנג'מין פראנסיס",
+   "pageId": 13786,
+   "revisionId": 69225
+  },
+  {
+   "playerId": "p_9a2ca355d7",
+   "slug": "בני-חדד",
+   "tuneHe": "אהבתיה - שלמה ארצי",
+   "raw": "[http://www.youtube.com/watch?v=PeHQ55EwnAo אהבתיה - שלמה ארצי]",
+   "pageTitle": "בני חדד",
+   "pageId": 2388,
+   "revisionId": 69227
+  },
+  {
+   "playerId": "p_5ca5b74aca",
+   "slug": "בסארט-עבדורחימי",
+   "tuneHe": "טל שגב - על הברכיים",
+   "raw": "טל שגב - על הברכיים",
+   "pageTitle": "בסארט עבדורחימי",
+   "pageId": 13471,
+   "revisionId": 70305
+  },
+  {
+   "playerId": "p_d0fb92ec93",
+   "slug": "בראיין-גרזיציץ",
+   "tuneHe": "שלוש בלילה - טיפקס",
+   "raw": "[http://www.youtube.com/watch?v=NyRZQko3gIY שלוש בלילה - טיפקס]",
+   "pageTitle": "בראיין גרזיצ'יץ'",
+   "pageId": 13284,
+   "revisionId": 69231
+  },
+  {
+   "playerId": "p_6717bcbf87",
+   "slug": "בראיין-פאסי",
+   "tuneHe": "דיינו",
+   "raw": "[https://www.youtube.com/watch?v=Ov9tqZsbjV8 דיינו]",
+   "pageTitle": "בראיין פאסי",
+   "pageId": 18709,
+   "revisionId": 77237
+  },
+  {
+   "playerId": "p_c59b3f9c06",
+   "slug": "ברוך-דגו",
+   "tuneHe": "Day By Day",
+   "raw": "[http://www.youtube.com/watch?v=WZw_dEyL_IA Day By Day]",
+   "pageTitle": "ברוך דגו",
+   "pageId": 1395,
+   "revisionId": 86915
+  },
+  {
+   "playerId": "p_96b192447f",
+   "slug": "ברונו-קוטיניו",
+   "tuneHe": "Luciano Pavarotti - La Donna È Mobile",
+   "raw": "[http://www.youtube.com/watch?v=xCFEk6Y8TmM Luciano Pavarotti - La Donna È Mobile]",
+   "pageTitle": "ברונו קוטיניו",
+   "pageId": 12735,
+   "revisionId": 69234
+  },
+  {
+   "playerId": "p_ea9c78eb0a",
+   "slug": "ברנקו-איליץ",
+   "tuneHe": "דנבר הדינוזאור האחרון",
+   "raw": "דנבר הדינוזאור האחרון",
+   "pageTitle": "ברנקו איליץ'",
+   "pageId": 13288,
+   "revisionId": 69235
+  },
+  {
+   "playerId": "p_fb2afa79d0",
+   "slug": "גאבור-הלמאי",
+   "tuneHe": "אייל גולן-מלך המגרש + פתאום מצאתי בך",
+   "raw": "אייל גולן-מלך המגרש + פתאום מצאתי בך",
+   "pageTitle": "גאבור הלמאי",
+   "pageId": 1582,
+   "revisionId": 71776
+  },
+  {
+   "playerId": "p_81dbfd0fa0",
+   "slug": "גבור-מרטון",
+   "tuneHe": "-כמו של רצוניצ'ה",
+   "raw": "-כמו של רצוניצ'ה",
+   "pageTitle": "גבור מרטון",
+   "pageId": 1816,
+   "revisionId": 78500
+  },
+  {
+   "playerId": "p_3a14b04826",
+   "slug": "גבריאל-דוס-סנטוס",
+   "tuneHe": "גבריאל - עופרה חזה",
+   "raw": "גבריאל - עופרה חזה",
+   "pageTitle": "גבריאל דוס סנטוס",
+   "pageId": 1817,
+   "revisionId": 69246
+  },
+  {
+   "playerId": "p_cf93d1a7ea",
+   "slug": "גבריאל-סגל",
+   "tuneHe": "בלבלה / מוטי טקה",
+   "raw": "[https://www.youtube.com/watch?v=kEl1vA-PxnA בלבלה / מוטי טקה]",
+   "pageTitle": "גבריאל סגל",
+   "pageId": 18795,
+   "revisionId": 86718
+  },
+  {
+   "playerId": "p_27a3259923",
+   "slug": "גד-עמוס",
+   "tuneHe": "אני לא זמין/מושיק עפיה",
+   "raw": "אני לא זמין/מושיק עפיה",
+   "pageTitle": "גד עמוס",
+   "pageId": 21967,
+   "revisionId": 86433
+  },
+  {
+   "playerId": "p_2646464da6",
+   "slug": "גובאני-ואלדיירו",
+   "tuneHe": "במבוליאו (ג'יפסי קינגס)",
+   "raw": "במבוליאו (ג'יפסי קינגס)",
+   "pageTitle": "ג'ובאני ואלדיירו",
+   "pageId": 2641,
+   "revisionId": 69237
+  },
+  {
+   "playerId": "p_f47f7d2088",
+   "slug": "גון-פיינטסיל",
+   "tuneHe": "יום שישי - בנזין",
+   "raw": "[http://www.youtube.com/watch?v=Oaev5_FHM0Y יום שישי - בנזין]",
+   "pageTitle": "ג'ון פיינטסיל",
+   "pageId": 2021,
+   "revisionId": 74848
+  },
+  {
+   "playerId": "p_2134917d13",
+   "slug": "גוני-נאור",
+   "tuneHe": "Johnny, Johnny come home/Avalanche",
+   "raw": "Johnny, Johnny come home/Avalanche",
+   "pageTitle": "גוני נאור",
+   "pageId": 19946,
+   "revisionId": 77734
+  },
+  {
+   "playerId": "p_63d75941bb",
+   "slug": "גוראן-אנטוניץ",
+   "tuneHe": "יש אי שם/גידי גוב",
+   "raw": "יש אי שם/גידי גוב",
+   "pageTitle": "גוראן אנטוניץ'",
+   "pageId": 19993,
+   "revisionId": 79114
+  },
+  {
+   "playerId": "p_73205926e8",
+   "slug": "גיא-אסולין",
+   "tuneHe": "You are my Sunshine",
+   "raw": "[https://www.youtube.com/watch?v=rc2jsjnt-HY&feature=youtu.be You are my Sunshine]",
+   "pageTitle": "גיא אסולין",
+   "pageId": 15326,
+   "revisionId": 69249
+  },
+  {
+   "playerId": "p_f40aca5867",
+   "slug": "גיא-גומברג",
+   "tuneHe": "ברי סחרוף-עבדים",
+   "raw": "[https://www.youtube.com/watch?v=2LH8kvivV-A ברי סחרוף-עבדים]",
+   "pageTitle": "גיא גומברג",
+   "pageId": 14074,
+   "revisionId": 69251
+  },
+  {
+   "playerId": "p_c527fa95be",
+   "slug": "גיא-צרפתי",
+   "tuneHe": "Big big world",
+   "raw": "Big big world",
+   "pageTitle": "גיא צרפתי",
+   "pageId": 1818,
+   "revisionId": 75813
+  },
+  {
+   "playerId": "p_83ccf18cd8",
+   "slug": "גיא-קואז",
+   "tuneHe": "חנהל'ה התבלבלה",
+   "raw": "חנהל'ה התבלבלה",
+   "pageTitle": "גיא קואז",
+   "pageId": 2638,
+   "revisionId": 69253
+  },
+  {
+   "playerId": "p_cb0adec91f",
+   "slug": "גיורגי-דרסיליה",
+   "tuneHe": "משיח משיח משיח",
+   "raw": "משיח משיח משיח",
+   "pageTitle": "גיורגי דרסיליה",
+   "pageId": 1586,
+   "revisionId": 69256
+  },
+  {
+   "playerId": "p_4ede2d4c2f",
+   "slug": "גיל-ורמוט",
+   "tuneHe": "תפילה - עופרה חזה",
+   "raw": "[http://www.youtube.com/watch?v=DtFQTjGJ83c תפילה - עופרה חזה]",
+   "pageTitle": "גיל ורמוט",
+   "pageId": 1819,
+   "revisionId": 73439
+  },
+  {
+   "playerId": "p_f519e72f4b",
+   "slug": "דאבור-רופניק",
+   "tuneHe": "פתאום מצאתי בך",
+   "raw": "[http://www.youtube.com/watch?v=LVkvGoimWBQ פתאום מצאתי בך]",
+   "pageTitle": "דאבור רופניק",
+   "pageId": 2025,
+   "revisionId": 69264
+  },
+  {
+   "playerId": "p_dff7d98add",
+   "slug": "דאגלס-דה-סילבה",
+   "tuneHe": "אם-שמוליק קראוס",
+   "raw": "[http://www.youtube.com/watch?v=K4yiX7hNqa4 אם-שמוליק קראוס]",
+   "pageTitle": "דאגלס דה סילבה",
+   "pageId": 1590,
+   "revisionId": 75525
+  },
+  {
+   "playerId": "p_342848cf55",
+   "slug": "דגלאס-אווסו",
+   "tuneHe": "Heaven/Bryan Adams",
+   "raw": "Heaven/Bryan Adams",
+   "pageTitle": "דגלאס אווסו",
+   "pageId": 22470,
+   "revisionId": 91923
+  },
+  {
+   "playerId": "p_b150788697",
+   "slug": "דדי-בן-דיין",
+   "tuneHe": "זמר נוגה - החלונות הגבוהים",
+   "raw": "[http://www.youtube.com/watch?v=4A-EllJptgg זמר נוגה - החלונות הגבוהים]",
+   "pageTitle": "דדי בן דיין",
+   "pageId": 4571,
+   "revisionId": 70323
+  },
+  {
+   "playerId": "p_ab31d6c079",
+   "slug": "דוד-רוצלה",
+   "tuneHe": "כי הוא בחור כארז",
+   "raw": "[http://www.youtube.com/watch?v=n8n-PDVYgu4 כי הוא בחור כארז]",
+   "pageTitle": "דוד רוצ'לה",
+   "pageId": 13123,
+   "revisionId": 71329
+  },
+  {
+   "playerId": "p_27a9c4a320",
+   "slug": "דודו-ביטון",
+   "tuneHe": "I Believe I Can Fly",
+   "raw": "[https://www.youtube.com/watch?v=GIQn8pab8Vc I Believe I Can Fly]",
+   "pageTitle": "דודו ביטון",
+   "pageId": 13958,
+   "revisionId": 69278
+  },
+  {
+   "playerId": "p_3df591eeea",
+   "slug": "דודו-דהאן",
+   "tuneHe": "ברבאבא",
+   "raw": "ברבאבא",
+   "pageTitle": "דודו דהאן",
+   "pageId": 2628,
+   "revisionId": 69279
+  },
+  {
+   "playerId": "p_c01a354bb8",
+   "slug": "דודו-סמפאיו",
+   "tuneHe": "אם אתה בסביבה/אריק סיני",
+   "raw": "אם אתה בסביבה/אריק סיני",
+   "pageTitle": "דודו סמפאיו",
+   "pageId": 19856,
+   "revisionId": 80375
+  },
+  {
+   "playerId": "p_bf0c3bae38",
+   "slug": "דור-בנימיני",
+   "tuneHe": "אור/אלון דה לוקו",
+   "raw": "אור/אלון דה לוקו",
+   "pageTitle": "דור בנימיני",
+   "pageId": 19880,
+   "revisionId": 86782
+  },
+  {
+   "playerId": "p_d7da5a15cf",
+   "slug": "דורון-ליידנר",
+   "tuneHe": "חורף בחלון/פאר טסי",
+   "raw": "חורף בחלון/פאר טסי",
+   "pageTitle": "דורון ליידנר",
+   "pageId": 16767,
+   "revisionId": 86754
+  },
+  {
+   "playerId": "p_3f6380cdd9",
+   "slug": "דיאן-רצוניצה",
+   "tuneHe": "Scott Joplin - The Entertainer",
+   "raw": "Scott Joplin - The Entertainer",
+   "pageTitle": "דיאן רצ'וניצה",
+   "pageId": 2383,
+   "revisionId": 71108
+  },
+  {
+   "playerId": "p_2ab3b7e966",
+   "slug": "דמיאן-גייזר",
+   "tuneHe": "אליעזר והגזר",
+   "raw": "אליעזר והגזר",
+   "pageTitle": "דמיאן גייזר",
+   "pageId": 2814,
+   "revisionId": 69289
+  },
+  {
+   "playerId": "p_66dbe0b7e5",
+   "slug": "דמיטרי-מיכאלנקו",
+   "tuneHe": "סניוריטה (חיים משה)",
+   "raw": "סניוריטה (חיים משה)",
+   "pageTitle": "דמיטרי מיכאלנקו",
+   "pageId": 2632,
+   "revisionId": 69291
+  },
+  {
+   "playerId": "p_48a51a7e43",
+   "slug": "דן-איינבינדר",
+   "tuneHe": "סהרה-טונה",
+   "raw": "[https://www.youtube.com/watch?v=dZWlObNQoZ4 סהרה-טונה]",
+   "pageTitle": "דן איינבינדר",
+   "pageId": 17509,
+   "revisionId": 84254
+  },
+  {
+   "playerId": "p_8155ae390e",
+   "slug": "דני-בונדר",
+   "tuneHe": "אף פעם לא תדעי - שלמה ארצי",
+   "raw": "[http://www.youtube.com/watch?v=bJuyjgA_gvI אף פעם לא תדעי - שלמה ארצי]",
+   "pageTitle": "דני בונדר",
+   "pageId": 1398,
+   "revisionId": 70333
+  },
+  {
+   "playerId": "p_81c054a50a",
+   "slug": "דני-עמוס",
+   "tuneHe": "סיגל - אריס סאן",
+   "raw": "[http://www.youtube.com/watch?v=psffSyLUcCY סיגל - אריס סאן]",
+   "pageTitle": "דני עמוס",
+   "pageId": 13296,
+   "revisionId": 69299
+  },
+  {
+   "playerId": "p_743b26a06b",
+   "slug": "דניאל-דאפה",
+   "tuneHe": "איזה יום/דודו טסה",
+   "raw": "איזה יום/דודו טסה",
+   "pageTitle": "דניאל דאפה",
+   "pageId": 21150,
+   "revisionId": 86957
+  },
+  {
+   "playerId": "p_46676d770e",
+   "slug": "דניס-אונישנקו",
+   "tuneHe": "דני שובבני",
+   "raw": "דני שובבני",
+   "pageTitle": "דניס אונישנקו",
+   "pageId": 1593,
+   "revisionId": 85574
+  },
+  {
+   "playerId": "p_3adcceeb66",
+   "slug": "הרמוני-איקינדה",
+   "tuneHe": "החלונות הגבוהים - באנו למילואים",
+   "raw": "[https://www.youtube.com/watch?v=FEnhlfdsYlo החלונות הגבוהים - באנו למילואים]",
+   "pageTitle": "הרמוני איקינדה",
+   "pageId": 13744,
+   "revisionId": 69309
+  },
+  {
+   "playerId": "p_0367f9bb14",
+   "slug": "וולטון-סילבה",
+   "tuneHe": "תותים",
+   "raw": "תותים",
+   "pageTitle": "וולטון סילבה",
+   "pageId": 1830,
+   "revisionId": 69314
+  },
+  {
+   "playerId": "p_bf8f9eb385",
+   "slug": "וולינגטון-דה-אוליברה",
+   "tuneHe": "לפעמים",
+   "raw": "לפעמים",
+   "pageTitle": "וולינגטון דה אוליברה",
+   "pageId": 1603,
+   "revisionId": 70377
+  },
+  {
+   "playerId": "p_37bd946fc6",
+   "slug": "וינסנט-אניימה",
+   "tuneHe": "אגדת השמש והירח",
+   "raw": "אגדת השמש והירח",
+   "pageTitle": "וינסנט אניימה",
+   "pageId": 1402,
+   "revisionId": 70380
+  },
+  {
+   "playerId": "p_fbca06cc69",
+   "slug": "ויקטור-מרעי",
+   "tuneHe": "שלומי סרנגה - מונו",
+   "raw": "שלומי סרנגה - מונו",
+   "pageTitle": "ויקטור מרעי",
+   "pageId": 4264,
+   "revisionId": 70381
+  },
+  {
+   "playerId": "p_9f3f7375b8",
+   "slug": "זאב-חיימוביץ",
+   "tuneHe": "Gnarls Barkley - Crazy",
+   "raw": "[http://www.youtube.com/watch?v=bd2B6SjMh_w Gnarls Barkley - Crazy]",
+   "pageTitle": "זאב חיימוביץ'",
+   "pageId": 12743,
+   "revisionId": 69319
+  },
+  {
+   "playerId": "p_fd415ce669",
+   "slug": "זוראב-מנטשאשווילי",
+   "tuneHe": "דנה אינטרנשיונל - דיווה",
+   "raw": "דנה אינטרנשיונל - דיווה",
+   "pageTitle": "זוראב מנטשאשווילי",
+   "pageId": 4698,
+   "revisionId": 70383
+  },
+  {
+   "playerId": "p_9064e7e906",
+   "slug": "זיו-כבדה",
+   "tuneHe": "פמלה - בועז שרעבי",
+   "raw": "פמלה - בועז שרעבי",
+   "pageTitle": "זיו כבדה",
+   "pageId": 2374,
+   "revisionId": 69322
+  },
+  {
+   "playerId": "p_4d893fb570",
+   "slug": "זיו-מורגן",
+   "tuneHe": "ככה השם רצה/ישראל אס",
+   "raw": "ככה השם רצה/ישראל אס",
+   "pageTitle": "זיו מורגן",
+   "pageId": 19356,
+   "revisionId": 86437
+  },
+  {
+   "playerId": "p_e13a867a8b",
+   "slug": "חנן-אלקיים",
+   "tuneHe": "איך הוא שר",
+   "raw": "איך הוא שר",
+   "pageTitle": "חנן אלקיים",
+   "pageId": 2637,
+   "revisionId": 69334
+  },
+  {
+   "playerId": "p_e636f3dfe3",
+   "slug": "חנן-ממן",
+   "tuneHe": "סיון - יגאל בשן",
+   "raw": "[http://www.youtube.com/watch?v=zSm9pSOkQgE סיון - יגאל בשן]",
+   "pageTitle": "חנן ממן",
+   "pageId": 12747,
+   "revisionId": 91837
+  },
+  {
+   "playerId": "p_fbb04763b0",
+   "slug": "טוטו-תמוז",
+   "tuneHe": "צמד דרום - טוטו כדורגל",
+   "raw": "[http://www.esnips.com/doc/2bfe10c7-6714-460b-963b-45f971f90e50/%20Tzemed%20Darom%20-%20Toto%20Kaduregel צמד דרום - טוטו כדורגל]",
+   "pageTitle": "טוטו תמוז",
+   "pageId": 6939,
+   "revisionId": 70386
+  },
+  {
+   "playerId": "p_6c2d1e76ab",
+   "slug": "טיאגו-קוסטה",
+   "tuneHe": "?",
+   "raw": "?",
+   "pageTitle": "טיאגו קוסטה",
+   "pageId": 13061,
+   "revisionId": 82746
+  },
+  {
+   "playerId": "p_f3c3ea8564",
+   "slug": "טל-איילה",
+   "tuneHe": "שמחה גדולה הלילה",
+   "raw": "[http://www.youtube.com/watch?v=H_dc8UTu1Sg שמחה גדולה הלילה]",
+   "pageTitle": "טל איילה",
+   "pageId": 7717,
+   "revisionId": 69342
+  },
+  {
+   "playerId": "p_023e197d01",
+   "slug": "טל-ארצל",
+   "tuneHe": "רדיו חזק/תיסלם",
+   "raw": "[https://m.youtube.com/watch?v=R0KbozRzFfI&pp=2AEAkAIB רדיו חזק/תיסלם]",
+   "pageTitle": "טל ארצ'ל",
+   "pageId": 18522,
+   "revisionId": 91075
+  },
+  {
+   "playerId": "p_42e9990edc",
+   "slug": "טל-בן-חיים",
+   "tuneHe": "יהללו - עמיר בניון",
+   "raw": "[http://www.youtube.com/watch?v=rGGs-KDjXpI יהללו - עמיר בניון]",
+   "pageTitle": "טל בן חיים",
+   "pageId": 12748,
+   "revisionId": 77236
+  },
+  {
+   "playerId": "p_43ec160acb",
+   "slug": "יאיר-כהן-צדק",
+   "tuneHe": "אהבתיה - שלמה ארצי",
+   "raw": "אהבתיה - שלמה ארצי",
+   "pageTitle": "יאיר כהן צדק",
+   "pageId": 2620,
+   "revisionId": 70389
+  },
+  {
+   "playerId": "p_05b8f8aaf9",
+   "slug": "יהב-גורפינקל",
+   "tuneHe": "יחזקאל-החלונות הגבוהים",
+   "raw": "[https://www.youtube.com/watch?v=GfR9DxI7Gnc יחזקאל-החלונות הגבוהים]",
+   "pageTitle": "יהב גורפינקל",
+   "pageId": 17820,
+   "revisionId": 74786
+  },
+  {
+   "playerId": "p_d8b9afcb38",
+   "slug": "יהודה-חוטה",
+   "tuneHe": "יודה יודה - השמחות/אני חוזר הביתה",
+   "raw": "יודה יודה - השמחות/אני חוזר הביתה",
+   "pageTitle": "יהודה חוטה",
+   "pageId": 2611,
+   "revisionId": 69350
+  },
+  {
+   "playerId": "p_5685a14a25",
+   "slug": "יונתן-פרבר",
+   "tuneHe": "לילות וקללות/עומר אדם",
+   "raw": "לילות וקללות/עומר אדם",
+   "pageTitle": "יונתן פרבר",
+   "pageId": 22318,
+   "revisionId": 86945
+  },
+  {
+   "playerId": "p_d49e466873",
+   "slug": "יוסי-אבוקסיס",
+   "tuneHe": "אין אמת בכוכבים - גילי ארגוב",
+   "raw": "אין אמת בכוכבים - גילי ארגוב",
+   "pageTitle": "יוסי אבוקסיס",
+   "pageId": 1611,
+   "revisionId": 76606
+  },
+  {
+   "playerId": "p_9a786d53af",
+   "slug": "יוסי-ביטון",
+   "tuneHe": "ברחובנו הצר גר נגר אחד",
+   "raw": "ברחובנו הצר גר נגר אחד",
+   "pageTitle": "יוסי ביטון",
+   "pageId": 1834,
+   "revisionId": 76604
+  },
+  {
+   "playerId": "p_0e43957a83",
+   "slug": "יוסי-רוזן",
+   "tuneHe": "Johnny come home",
+   "raw": "Johnny come home",
+   "pageTitle": "יוסי רוזן",
+   "pageId": 2032,
+   "revisionId": 69364
+  },
+  {
+   "playerId": "p_be26644441",
+   "slug": "יוסי-שבחון",
+   "tuneHe": "מתי לחזור - אתניקס",
+   "raw": "[http://www.youtube.com/watch?v=cqnynmSYXRo מתי לחזור - אתניקס]",
+   "pageTitle": "יוסי שבחון",
+   "pageId": 6298,
+   "revisionId": 74850
+  },
+  {
+   "playerId": "p_c50d07541e",
+   "slug": "יוסף-אובה",
+   "tuneHe": "הופה הופה (יווני)",
+   "raw": "הופה הופה (יווני)",
+   "pageTitle": "יוסף אובה",
+   "pageId": 2645,
+   "revisionId": 69366
+  },
+  {
+   "playerId": "p_9be895d63b",
+   "slug": "יורגן-קולין",
+   "tuneHe": "Call me - Blondie",
+   "raw": "[http://www.youtube.com/watch?v=y6QBaZHltJw Call me - Blondie]",
+   "pageTitle": "יורגן קולין",
+   "pageId": 13287,
+   "revisionId": 86663
+  },
+  {
+   "playerId": "p_c039cd0425",
+   "slug": "יזן-נסאר",
+   "tuneHe": "הנה זה בא",
+   "raw": "הנה זה בא",
+   "pageTitle": "יזן נסאר",
+   "pageId": 20029,
+   "revisionId": 86441
+  },
+  {
+   "playerId": "p_600ec36fbc",
+   "slug": "יניב-בן-ניסן",
+   "tuneHe": "אמסטרדם (נוער שוליים)",
+   "raw": "אמסטרדם (נוער שוליים)",
+   "pageTitle": "יניב בן ניסן",
+   "pageId": 2636,
+   "revisionId": 69369
+  },
+  {
+   "playerId": "p_3a36968e08",
+   "slug": "יקיר-לוסקי",
+   "tuneHe": "איך את מסובבת אותי - רון שובל",
+   "raw": "איך את מסובבת אותי - רון שובל",
+   "pageTitle": "יקיר לוסקי",
+   "pageId": 2034,
+   "revisionId": 69381
+  },
+  {
+   "playerId": "p_93eb3c2b8b",
+   "slug": "ישראל-זגורי",
+   "tuneHe": "World Cup 2010 Theme Song-Wavin' Flag",
+   "raw": "World Cup 2010 Theme Song-Wavin' Flag",
+   "pageTitle": "ישראל זגורי",
+   "pageId": 13299,
+   "revisionId": 69388
+  },
+  {
+   "playerId": "p_9499858769",
+   "slug": "ישראל-מאיה",
+   "tuneHe": "אולי (ULI)",
+   "raw": "אולי (ULI)",
+   "pageTitle": "ישראל מאיה",
+   "pageId": 2864,
+   "revisionId": 79446
+  },
+  {
+   "playerId": "p_56a0e6382c",
+   "slug": "כפיר-אדרי",
+   "tuneHe": "לא נפסיק לשיר",
+   "raw": "לא נפסיק לשיר",
+   "pageTitle": "כפיר אדרי",
+   "pageId": 1837,
+   "revisionId": 69392
+  },
+  {
+   "playerId": "p_a6f4efca3b",
+   "slug": "כפיר-אודי",
+   "tuneHe": "שיר הפרטיזן",
+   "raw": "שיר הפרטיזן",
+   "pageTitle": "כפיר אודי",
+   "pageId": 2036,
+   "revisionId": 78646
+  },
+  {
+   "playerId": "p_d10dcaf2ff",
+   "slug": "כפיר-אייזנשטיין",
+   "tuneHe": "הנה זה בא - אריק סיני",
+   "raw": "[http://www.youtube.com/watch?v=pZIbTx8416w הנה זה בא - אריק סיני]",
+   "pageTitle": "כפיר אייזנשטיין",
+   "pageId": 6684,
+   "revisionId": 69394
+  },
+  {
+   "playerId": "p_6b242a7f70",
+   "slug": "לויזוס-לויזו",
+   "tuneHe": "ערוץ הילדים זה אנחנו",
+   "raw": "ערוץ הילדים זה אנחנו",
+   "pageTitle": "לויזוס לויזו",
+   "pageId": 21504,
+   "revisionId": 86655
+  },
+  {
+   "playerId": "p_ac6faa18da",
+   "slug": "לוסיאנו-דה-ברונו",
+   "tuneHe": "הקולות של פיראוס - חיים משה",
+   "raw": "[http://shiron.net/songView.aspx?song_id=3405&singer_id=399&song_title=2932e7 הקולות של פיראוס - חיים משה]",
+   "pageTitle": "לוסיאנו דה ברונו",
+   "pageId": 1428,
+   "revisionId": 71563
+  },
+  {
+   "playerId": "p_47d5fc2bb5",
+   "slug": "לוקאס-וינטרה",
+   "tuneHe": "מי שטוב לו ושמח",
+   "raw": "[https://www.youtube.com/watch?v=A7TpdC-1e7U מי שטוב לו ושמח]",
+   "pageTitle": "לוקאס וינטרה",
+   "pageId": 14208,
+   "revisionId": 69399
+  },
+  {
+   "playerId": "p_ed92c8fb33",
+   "slug": "לוקאס-סאשה",
+   "tuneHe": "השפן הקטן",
+   "raw": "השפן הקטן",
+   "pageTitle": "לוקאס סאשה",
+   "pageId": 13319,
+   "revisionId": 69400
+  },
+  {
+   "playerId": "p_7a57f136a8",
+   "slug": "לוקאס-פלקאו",
+   "tuneHe": "עקבים וג׳ינס/עומר אדם",
+   "raw": "עקבים וג׳ינס/עומר אדם",
+   "pageTitle": "לוקאס פלקאו",
+   "pageId": 21134,
+   "revisionId": 86805
+  },
+  {
+   "playerId": "p_5858cf2f9c",
+   "slug": "ליאור-אסולין",
+   "tuneHe": "תני לי אויר",
+   "raw": "תני לי אויר",
+   "pageTitle": "ליאור אסולין",
+   "pageId": 2041,
+   "revisionId": 72887
+  },
+  {
+   "playerId": "p_a312334289",
+   "slug": "ליאור-לוי",
+   "tuneHe": "לחן מקורי",
+   "raw": "לחן מקורי",
+   "pageTitle": "ליאור לוי",
+   "pageId": 13466,
+   "revisionId": 69404
+  },
+  {
+   "playerId": "p_7505a4e914",
+   "slug": "לירן-רוטמן",
+   "tuneHe": "הנה בא השלום/אילנית",
+   "raw": "הנה בא השלום/אילנית",
+   "pageTitle": "לירן רוטמן",
+   "pageId": 19895,
+   "revisionId": 85240
+  },
+  {
+   "playerId": "p_c272fbc8a3",
+   "slug": "לריאה-קינגסטון",
+   "tuneHe": "מנגינת הפלינטסטונס",
+   "raw": "מנגינת הפלינטסטונס",
+   "pageTitle": "לריאה קינגסטון",
+   "pageId": 2378,
+   "revisionId": 69410
+  },
+  {
+   "playerId": "p_27a81aefb1",
+   "slug": "מאוויס-ציבוטה",
+   "tuneHe": "מתחת לשמיים-דיוויד ברוזה",
+   "raw": "[https://www.youtube.com/watch?v=3uvtOwS2t3k מתחת לשמיים-דיוויד ברוזה]",
+   "pageTitle": "מאוויס צ'יבוטה",
+   "pageId": 18730,
+   "revisionId": 77949
+  },
+  {
+   "playerId": "p_676e785deb",
+   "slug": "מאור-פרץ",
+   "tuneHe": "רונה",
+   "raw": "רונה",
+   "pageTitle": "מאור פרץ",
+   "pageId": 1844,
+   "revisionId": 69412
+  },
+  {
+   "playerId": "p_b10f839818",
+   "slug": "מהראן-לאלה",
+   "tuneHe": "במדינת הגמדים",
+   "raw": "במדינת הגמדים",
+   "pageTitle": "מהראן לאלה",
+   "pageId": 1628,
+   "revisionId": 80336
+  },
+  {
+   "playerId": "p_b27141ca2d",
+   "slug": "מוחמד-אבו-אל-היגא",
+   "tuneHe": "הבה נגילה",
+   "raw": "[https://www.youtube.com/watch?v=3dEa35drUqo הבה נגילה]",
+   "pageTitle": "מוחמד אבו אל היג'א",
+   "pageId": 13826,
+   "revisionId": 80092
+  },
+  {
+   "playerId": "p_92eaa76de2",
+   "slug": "מוטי-אוחיון",
+   "tuneHe": "דובי דוברמן",
+   "raw": "דובי דוברמן",
+   "pageTitle": "מוטי אוחיון",
+   "pageId": 2613,
+   "revisionId": 83602
+  },
+  {
+   "playerId": "p_108a2b8a19",
+   "slug": "מור-בוסקילה",
+   "tuneHe": "אולי הלילה/משה פרץ",
+   "raw": "אולי הלילה/משה פרץ",
+   "pageTitle": "מור בוסקילה",
+   "pageId": 21114,
+   "revisionId": 86786
+  },
+  {
+   "playerId": "p_5b424cbd82",
+   "slug": "מור-שושן",
+   "tuneHe": "שושנה דמארי - שני שושנים",
+   "raw": "[http://www.youtube.com/watch?v=F5CFC-Mh_sg שושנה דמארי - שני שושנים]",
+   "pageTitle": "מור שושן",
+   "pageId": 5556,
+   "revisionId": 69424
+  },
+  {
+   "playerId": "p_de8f21975e",
+   "slug": "מזואה-אנסומבו",
+   "tuneHe": "ככה וככה",
+   "raw": "ככה וככה",
+   "pageTitle": "מזואה אנסומבו",
+   "pageId": 1406,
+   "revisionId": 72193
+  },
+  {
+   "playerId": "p_df6dbfe5c5",
+   "slug": "מחמוד-עבאס",
+   "tuneHe": "תגידו לה - דודו אהרון",
+   "raw": "[http://www.youtube.com/watch?v=1uh_AVGkq-c תגידו לה - דודו אהרון]",
+   "pageTitle": "מחמוד עבאס",
+   "pageId": 9722,
+   "revisionId": 69427
+  },
+  {
+   "playerId": "p_667fcabc5d",
+   "slug": "מיחאי-פינטילי",
+   "tuneHe": "צא מזה",
+   "raw": "[http://www.youtube.com/watch?v=t3gvs8wXQNw צא מזה]",
+   "pageTitle": "מיחאי פינטילי",
+   "pageId": 14172,
+   "revisionId": 69429
+  },
+  {
+   "playerId": "p_b6c6274a18",
+   "slug": "מיכאל-זנדברג",
+   "tuneHe": "התחלה חדשה-יהודה פוליקר",
+   "raw": "התחלה חדשה-יהודה פוליקר",
+   "pageTitle": "מיכאל זנדברג",
+   "pageId": 4483,
+   "revisionId": 70443
+  },
+  {
+   "playerId": "p_eb6083c0af",
+   "slug": "מילאן-אוסטרץ",
+   "tuneHe": "אמא שלי - אריק איינשטיין",
+   "raw": "אמא שלי - אריק איינשטיין",
+   "pageTitle": "מילאן אוסטרץ",
+   "pageId": 1845,
+   "revisionId": 74365
+  },
+  {
+   "playerId": "p_ae3fcbad22",
+   "slug": "מילאן-מקאריץ",
+   "tuneHe": "שלח לי מלאך/משינה",
+   "raw": "שלח לי מלאך/משינה",
+   "pageTitle": "מילאן מקאריץ'",
+   "pageId": 19846,
+   "revisionId": 81859
+  },
+  {
+   "playerId": "p_ab21047b1e",
+   "slug": "מירקו-אורמוש",
+   "tuneHe": "הסבון בכה מאוד - צביקה פיק",
+   "raw": "[http://www.youtube.com/watch?v=ABiBAcdGQB0 הסבון בכה מאוד - צביקה פיק]",
+   "pageTitle": "מירקו אורמוש",
+   "pageId": 10661,
+   "revisionId": 69438
+  },
+  {
+   "playerId": "p_57574a63ef",
+   "slug": "מסאיי-דגו",
+   "tuneHe": "בואי - עידן רייכל",
+   "raw": "בואי - עידן רייכל",
+   "pageTitle": "מסאיי דגו",
+   "pageId": 1846,
+   "revisionId": 79191
+  },
+  {
+   "playerId": "p_efd0fed260",
+   "slug": "מריו-מסטרוביץ",
+   "tuneHe": "Boney M. - Hooray! Hooray! It's a Holi-Holiday",
+   "raw": "[https://www.youtube.com/watch?v=ModISbNyQ8I Boney M. - Hooray! Hooray! It's a Holi-Holiday]",
+   "pageTitle": "מריו מסטרוביץ",
+   "pageId": 2815,
+   "revisionId": 69443
+  },
+  {
+   "playerId": "p_5023309c8f",
+   "slug": "מריו-פצאלקה",
+   "tuneHe": "עומר אדם - נמס ממך",
+   "raw": "[http://www.youtube.com/watch?v=lXFQeM9RGTk עומר אדם - נמס ממך]",
+   "pageTitle": "מריו פצ'אלקה",
+   "pageId": 8905,
+   "revisionId": 69444
+  },
+  {
+   "playerId": "p_44d2364f80",
+   "slug": "מרקו-סימיץ",
+   "tuneHe": "אף אחת אחרת של איתי לוי",
+   "raw": "[https://www.youtube.com/watch?v=pJBbb6ycE_M&feature=youtu.be אף אחת אחרת של איתי לוי]",
+   "pageTitle": "מרקו סימיץ'",
+   "pageId": 15341,
+   "revisionId": 69447
+  },
+  {
+   "playerId": "p_396c9aac9a",
+   "slug": "מרקוס-קוקו",
+   "tuneHe": "אינך יכולה/החלונות הגבוהים",
+   "raw": "אינך יכולה/החלונות הגבוהים",
+   "pageTitle": "מרקוס קוקו",
+   "pageId": 21866,
+   "revisionId": 86787
+  },
+  {
+   "playerId": "p_6173d474e2",
+   "slug": "משה-אוחיון",
+   "tuneHe": "\"פראג\" של אריק איינשטיין",
+   "raw": "[https://www.youtube.com/watch?v=BC5GjyUV0yg \"פראג\" של אריק איינשטיין]",
+   "pageTitle": "משה אוחיון",
+   "pageId": 13814,
+   "revisionId": 69449
+  },
+  {
+   "playerId": "p_9cd489e1b9",
+   "slug": "מתן-אריאל-לזמי",
+   "tuneHe": "Moby - Lift Me Up",
+   "raw": "[https://www.youtube.com/watch?v=oUEC3q8tJ5s  Moby - Lift Me Up]",
+   "pageTitle": "מתן אריאל לזמי",
+   "pageId": 13700,
+   "revisionId": 69461
+  },
+  {
+   "playerId": "p_50c4f2bc0d",
+   "slug": "נוסא-איגייבור",
+   "tuneHe": "ליאור פרחי - ילד רע",
+   "raw": "[http://www.youtube.com/watch?v=9BQ3_qhLWZQ ליאור פרחי - ילד רע]",
+   "pageTitle": "נוסא איגייבור",
+   "pageId": 10396,
+   "revisionId": 69462
+  },
+  {
+   "playerId": "p_00a9dafdca",
+   "slug": "נועם-בונה",
+   "tuneHe": "Joe Dassin-Les Champs-Elysées",
+   "raw": "[https://www.youtube.com/watch?v=1JhYYUWOBBs Joe Dassin-Les Champs-Elysées ]",
+   "pageTitle": "נועם בונה",
+   "pageId": 18716,
+   "revisionId": 74911
+  },
+  {
+   "playerId": "p_8b208fc966",
+   "slug": "ניל-אברבנל",
+   "tuneHe": "שער 5 אברבנל + נילס הולגרסון",
+   "raw": "שער 5 אברבנל + נילס הולגרסון",
+   "pageTitle": "ניל אברבנל",
+   "pageId": 1635,
+   "revisionId": 69466
+  },
+  {
+   "playerId": "p_54af9e800a",
+   "slug": "ניסים-אביטן",
+   "tuneHe": "ניסו ניסו ניסו ניסו ניסו אביטן (לפי מאמי)",
+   "raw": "ניסו ניסו ניסו ניסו ניסו אביטן (לפי מאמי)",
+   "pageTitle": "ניסים אביטן",
+   "pageId": 3562,
+   "revisionId": 84453
+  },
+  {
+   "playerId": "p_76a80e539c",
+   "slug": "ניר-לקס",
+   "tuneHe": "יושבים בבית קפה",
+   "raw": "[https://www.youtube.com/watch?v=TT9KHnj6Mes יושבים בבית קפה]",
+   "pageTitle": "ניר לקס",
+   "pageId": 11961,
+   "revisionId": 70997
+  },
+  {
+   "playerId": "p_68bfa0d410",
+   "slug": "ניר-נחום",
+   "tuneHe": "אתניקס - ציפור מדבר",
+   "raw": "[http://www.youtube.com/watch?v=KXw58dIBL6E אתניקס - ציפור מדבר]",
+   "pageTitle": "ניר נחום",
+   "pageId": 13065,
+   "revisionId": 69473
+  },
+  {
+   "playerId": "p_92e5eca2c1",
+   "slug": "ניר-רחמין",
+   "tuneHe": "לה קופה דה לה וידה",
+   "raw": "לה קופה דה לה וידה",
+   "pageTitle": "ניר רחמין",
+   "pageId": 2046,
+   "revisionId": 69474
+  },
+  {
+   "playerId": "p_71c1c818bd",
+   "slug": "נמניה-ווציצביץ",
+   "tuneHe": "ירדנה ארזי - עוד נגיע",
+   "raw": "[http://www.youtube.com/watch?v=cM2xYXlJv5A ירדנה ארזי - עוד נגיע]",
+   "pageTitle": "נמניה ווצ'יצ'ביץ'",
+   "pageId": 4881,
+   "revisionId": 88869
+  },
+  {
+   "playerId": "p_04fe540318",
+   "slug": "נמניה-ניקוליץ",
+   "tuneHe": "שיירת רוכבים/בום פם ומאור כהן",
+   "raw": "[http://www.youtube.com/watch?v=tiMmyFi48G8&feature=youtu.be שיירת רוכבים/בום פם ומאור כהן]",
+   "pageTitle": "נמניה ניקוליץ'",
+   "pageId": 15272,
+   "revisionId": 72040
+  },
+  {
+   "playerId": "p_c4798ab261",
+   "slug": "סאבו-פאביצביץ",
+   "tuneHe": "הכוכבים דולקים על אש קטנה - משינה",
+   "raw": "[http://www.youtube.com/watch?v=-ozbcdJ9he0 הכוכבים דולקים על אש קטנה - משינה]",
+   "pageTitle": "סאבו פאביצ'ביץ'",
+   "pageId": 13067,
+   "revisionId": 69481
+  },
+  {
+   "playerId": "p_aafc47b09f",
+   "slug": "סבסטיאן-סימרוטיץ",
+   "tuneHe": "מארש צה\"ל",
+   "raw": "[http://www.youtube.com/watch?v=UVZZfvRW6lE מארש צה\"ל]",
+   "pageTitle": "סבסטיאן סימרוטיץ'",
+   "pageId": 2047,
+   "revisionId": 82594
+  },
+  {
+   "playerId": "p_2cc60c0e20",
+   "slug": "סלים-טועמה",
+   "tuneHe": "Gipsy Kings - Volare",
+   "raw": "Gipsy Kings - Volare",
+   "pageTitle": "סלים טועמה",
+   "pageId": 1637,
+   "revisionId": 81501
+  },
+  {
+   "playerId": "p_393f104107",
+   "slug": "סמואל-יבואה",
+   "tuneHe": "\"שער הרחמים\" - מאיר בנאי",
+   "raw": "\"שער הרחמים\" - מאיר בנאי",
+   "pageTitle": "סמואל יבואה",
+   "pageId": 1851,
+   "revisionId": 69490
+  },
+  {
+   "playerId": "p_6f1fd9dc54",
+   "slug": "סרגיי-קלשנקו",
+   "tuneHe": "\"תביא קצת דינרוס\"",
+   "raw": "\"תביא קצת דינרוס\"",
+   "pageTitle": "סרגיי קלשנקו",
+   "pageId": 1853,
+   "revisionId": 80335
+  },
+  {
+   "playerId": "p_745294a871",
+   "slug": "סתיו-טוריאל",
+   "tuneHe": "זה מה שנשאר/שלמה ארצי",
+   "raw": "זה מה שנשאר/שלמה ארצי",
+   "pageTitle": "סתיו טוריאל",
+   "pageId": 19187,
+   "revisionId": 91086
+  },
+  {
+   "playerId": "p_bee3f5aae1",
+   "slug": "עדי-סבג",
+   "tuneHe": "תן לה - מושיק עפייה",
+   "raw": "[http://www.shiron.net/songView.aspx?song_id=18577&singer_id=623&song_title=211894 תן לה - מושיק עפייה]",
+   "pageTitle": "עדי סבג",
+   "pageId": 1854,
+   "revisionId": 69497
+  },
+  {
+   "playerId": "p_337bf515cf",
+   "slug": "עדן-בן-בסט",
+   "tuneHe": "Funiculì, Funiculà",
+   "raw": "Funiculì, Funiculà",
+   "pageTitle": "עדן בן בסט",
+   "pageId": 3980,
+   "revisionId": 69498
+  },
+  {
+   "playerId": "p_e8190181b0",
+   "slug": "עדן-שרם",
+   "tuneHe": "מים לדוד המלך",
+   "raw": "[http://www.youtube.com/watch?v=mXb2zd40_yw מים לדוד המלך]",
+   "pageTitle": "עדן שרם",
+   "pageId": 6672,
+   "revisionId": 70469
+  },
+  {
+   "playerId": "p_785510a74c",
+   "slug": "עוביידה-חטאב",
+   "tuneHe": "טיפקס - יש לי חברה",
+   "raw": "[https://www.youtube.com/watch?v=ayetZkOsEMg טיפקס - יש לי חברה]",
+   "pageTitle": "עוביידה חטאב",
+   "pageId": 14049,
+   "revisionId": 69501
+  },
+  {
+   "playerId": "p_22f2ce2f73",
+   "slug": "עומר-דמארי",
+   "tuneHe": "ירח - שלמה ארצי",
+   "raw": "[http://www.youtube.com/watch?v=sDRSs2rrZ8o ירח - שלמה ארצי]",
+   "pageTitle": "עומר דמארי",
+   "pageId": 9934,
+   "revisionId": 85788
+  },
+  {
+   "playerId": "p_3f3135eb87",
+   "slug": "עומר-סניור",
+   "tuneHe": "תנו לגדול בשקט/שלומי שבת",
+   "raw": "תנו לגדול בשקט/שלומי שבת",
+   "pageTitle": "עומר סניור",
+   "pageId": 17723,
+   "revisionId": 77948
+  },
+  {
+   "playerId": "p_6cfdc33356",
+   "slug": "עומר-פדידה",
+   "tuneHe": "follow the leader - the soca boys",
+   "raw": "[https://www.youtube.com/watch?v=Y8zzG4n8CpM follow the leader - the soca boys]",
+   "pageTitle": "עומר פדידה",
+   "pageId": 13318,
+   "revisionId": 71866
+  },
+  {
+   "playerId": "p_f936d54d5d",
+   "slug": "עומר-פרץ-חלוץ",
+   "tuneHe": "שמש - שושנה דמארי",
+   "raw": "שמש - שושנה דמארי",
+   "pageTitle": "עומר פרץ (חלוץ)",
+   "pageId": 1646,
+   "revisionId": 69507
+  },
+  {
+   "playerId": "p_5375c40146",
+   "slug": "עומרי-אלטמן",
+   "tuneHe": "עוד לא תמו כל פלאייך",
+   "raw": "[https://www.youtube.com/watch?v=5PoevYOKh5w עוד לא תמו כל פלאייך]",
+   "pageTitle": "עומרי אלטמן",
+   "pageId": 14072,
+   "revisionId": 87052
+  },
+  {
+   "playerId": "p_b09152b9d6",
+   "slug": "עומרי-אפק",
+   "tuneHe": "חייך וחיי- גידי גוב וריטה",
+   "raw": "חייך וחיי- גידי גוב וריטה",
+   "pageTitle": "עומרי אפק",
+   "pageId": 1855,
+   "revisionId": 70472
+  },
+  {
+   "playerId": "p_6d9974711f",
+   "slug": "עומרי-קנדה",
+   "tuneHe": "אמריקה - פורטיסחרוף",
+   "raw": "אמריקה - פורטיסחרוף",
+   "pageTitle": "עומרי קנדה",
+   "pageId": 1408,
+   "revisionId": 82049
+  },
+  {
+   "playerId": "p_a1249ca06d",
+   "slug": "עומרי-שקל",
+   "tuneHe": "האוטו שלי היופי שלך",
+   "raw": "[https://www.youtube.com/watch?v=V8e3NXxWSDI האוטו שלי היופי שלך]",
+   "pageTitle": "עומרי שקל",
+   "pageId": 14106,
+   "revisionId": 69512
+  },
+  {
+   "playerId": "p_5217fd02ac",
+   "slug": "עופר-גלברד",
+   "tuneHe": "Love Me Again/John Newman",
+   "raw": "Love Me Again/John Newman",
+   "pageTitle": "עופר גלברד",
+   "pageId": 19703,
+   "revisionId": 91460
+  },
+  {
+   "playerId": "p_8bf30b10a2",
+   "slug": "עופר-ורטה",
+   "tuneHe": "הקומדי סטור-שיר הטרטע",
+   "raw": "[https://www.youtube.com/watch?v=sucWmQUikZQ הקומדי סטור-שיר הטרטע]",
+   "pageTitle": "עופר ורטה",
+   "pageId": 14081,
+   "revisionId": 69513
+  },
+  {
+   "playerId": "p_81f5a2aba5",
+   "slug": "עופר-שטרית",
+   "tuneHe": "משנכנס אדר",
+   "raw": "משנכנס אדר",
+   "pageTitle": "עופר שטרית",
+   "pageId": 2860,
+   "revisionId": 69514
+  },
+  {
+   "playerId": "p_bc19d9ebdb",
+   "slug": "עזרי-בבאייב",
+   "tuneHe": "Macarena",
+   "raw": "Macarena",
+   "pageTitle": "עזרי בבאייב",
+   "pageId": 3363,
+   "revisionId": 69515
+  },
+  {
+   "playerId": "p_fbda86940b",
+   "slug": "עידו-וייר",
+   "tuneHe": "הבא בתור הוא סוס/נושאי המגבעת",
+   "raw": "הבא בתור הוא סוס/נושאי המגבעת",
+   "pageTitle": "עידו וייר",
+   "pageId": 19931,
+   "revisionId": 81701
+  },
+  {
+   "playerId": "p_b7afb0d472",
+   "slug": "עידו-שרון",
+   "tuneHe": "אחת מאלף/רינת בר וחיילי הנקמה",
+   "raw": "אחת מאלף/רינת בר וחיילי הנקמה",
+   "pageTitle": "עידו שרון",
+   "pageId": 16523,
+   "revisionId": 84256
+  },
+  {
+   "playerId": "p_3cb87d334a",
+   "slug": "עידן-טל",
+   "tuneHe": "חנה'לה התבלבלה - דקלון",
+   "raw": "חנה'לה התבלבלה - דקלון",
+   "pageTitle": "עידן טל",
+   "pageId": 1862,
+   "revisionId": 70843
+  },
+  {
+   "playerId": "p_ab1bd1dff4",
+   "slug": "עידן-סקורצרו",
+   "tuneHe": "ב.מ.וו. שחורה - אתניקס",
+   "raw": "ב.מ.וו. שחורה - אתניקס",
+   "pageTitle": "עידן סקורצ'רו",
+   "pageId": 3205,
+   "revisionId": 69521
+  },
+  {
+   "playerId": "p_fe84441949",
+   "slug": "עמאר-מנצור",
+   "tuneHe": "מעלה מעלה",
+   "raw": "מעלה מעלה",
+   "pageTitle": "עמאר מנצור",
+   "pageId": 1655,
+   "revisionId": 69525
+  },
+  {
+   "playerId": "p_2aac9fea0a",
+   "slug": "עמית-למקין",
+   "tuneHe": "כסף ואלכוהול/דודו אהרון",
+   "raw": "כסף ואלכוהול/דודו אהרון",
+   "pageTitle": "עמית למקין",
+   "pageId": 19863,
+   "revisionId": 86944
+  },
+  {
+   "playerId": "p_89f9def6ee",
+   "slug": "עמנואל-איילה",
+   "tuneHe": "שמחה גדולה הלילה",
+   "raw": "שמחה גדולה הלילה",
+   "pageTitle": "עמנואל איילה",
+   "pageId": 2642,
+   "revisionId": 69529
+  },
+  {
+   "playerId": "p_8bc3b9b678",
+   "slug": "עמנואל-בואטנג-חלוץ",
+   "tuneHe": "September/Earth, Wind & Fire",
+   "raw": "September/Earth, Wind & Fire",
+   "pageTitle": "עמנואל בואטנג (חלוץ)",
+   "pageId": 22018,
+   "revisionId": 86791
+  },
+  {
+   "playerId": "p_c37eaf41cd",
+   "slug": "ערן-זהבי",
+   "tuneHe": "תודה - חיים משה",
+   "raw": "תודה - חיים משה",
+   "pageTitle": "ערן זהבי",
+   "pageId": 2447,
+   "revisionId": 81713
+  },
+  {
+   "playerId": "p_e28931ccae",
+   "slug": "פאביו-גוניור-פריירה",
+   "tuneHe": "חלומות",
+   "raw": "חלומות",
+   "pageTitle": "פאביו ג'וניור פריירה",
+   "pageId": 1386,
+   "revisionId": 86662
+  },
+  {
+   "playerId": "p_59966b59ed",
+   "slug": "פאביו-רוסה",
+   "tuneHe": "מה יהיה (מתי כספי מארץ טרופית נהדרת)",
+   "raw": "מה יהיה (מתי כספי מארץ טרופית נהדרת)",
+   "pageTitle": "פאביו רוסה",
+   "pageId": 2619,
+   "revisionId": 69534
+  },
+  {
+   "playerId": "p_cde776a906",
+   "slug": "פבריציו-קארבליו",
+   "tuneHe": "מארש הדייגים - הדודאים",
+   "raw": "[https://www.youtube.com/watch?v=hZ5nhnSBIKI מארש הדייגים - הדודאים]",
+   "pageTitle": "פבריציו קארבליו",
+   "pageId": 1659,
+   "revisionId": 69537
+  },
+  {
+   "playerId": "p_804008bd39",
+   "slug": "פטר-אורלנדיץ",
+   "tuneHe": "נוער שוליים - לילה",
+   "raw": "[https://www.youtube.com/watch?v=jmmdL8yRxoA נוער שוליים - לילה]",
+   "pageTitle": "פטר אורלנדיץ'",
+   "pageId": 13630,
+   "revisionId": 69539
+  },
+  {
+   "playerId": "p_ef0852b3bb",
+   "slug": "פיליפ-מנה",
+   "tuneHe": "שירי לי כנרת",
+   "raw": "[https://www.youtube.com/watch?v=P5mNnyBj9wA שירי לי כנרת]",
+   "pageTitle": "פיליפ מנה",
+   "pageId": 13775,
+   "revisionId": 69542
+  },
+  {
+   "playerId": "p_f76834937e",
+   "slug": "פיני-בלילי",
+   "tuneHe": "בואי גלי +  צוללת צהובה",
+   "raw": "בואי גלי +  צוללת צהובה",
+   "pageTitle": "פיני בלילי",
+   "pageId": 2057,
+   "revisionId": 78958
+  },
+  {
+   "playerId": "p_62010e374d",
+   "slug": "פליקס-אובוקה",
+   "tuneHe": "מאמא יוקרו",
+   "raw": "מאמא יוקרו",
+   "pageTitle": "פליקס אובוקה",
+   "pageId": 1660,
+   "revisionId": 69545
+  },
+  {
+   "playerId": "p_96d00d5348",
+   "slug": "פליקס-חלפון",
+   "tuneHe": "הלחן של המפד\"ל",
+   "raw": "הלחן של המפד\"ל",
+   "pageTitle": "פליקס חלפון",
+   "pageId": 1865,
+   "revisionId": 86868
+  },
+  {
+   "playerId": "p_5ab70161d5",
+   "slug": "פרנאן-מאיימבו",
+   "tuneHe": "חגיגה/שרית חדד",
+   "raw": "חגיגה/שרית חדד",
+   "pageTitle": "פרנאן מאיימבו",
+   "pageId": 21069,
+   "revisionId": 87047
+  },
+  {
+   "playerId": "p_b075f2d6fa",
+   "slug": "ציקו",
+   "tuneHe": "הבניין מחכה לאילן/הפיג'מות",
+   "raw": "הבניין מחכה לאילן/הפיג'מות",
+   "pageTitle": "צ'יקו",
+   "pageId": 21412,
+   "revisionId": 87048
+  },
+  {
+   "playerId": "p_5cc8a71ec0",
+   "slug": "ציקי-קוטלר",
+   "tuneHe": "קמפאונה",
+   "raw": "קמפאונה",
+   "pageTitle": "ציקי קוטלר",
+   "pageId": 2618,
+   "revisionId": 69552
+  },
+  {
+   "playerId": "p_3a70c47482",
+   "slug": "קאווה",
+   "tuneHe": "הנה מה טוב ומה נעים",
+   "raw": "[https://www.youtube.com/watch?v=p085j5DGtJA&feature=youtu.be הנה מה טוב ומה נעים]",
+   "pageTitle": "קאווה",
+   "pageId": 15317,
+   "revisionId": 69554
+  },
+  {
+   "playerId": "p_2f99ba205b",
+   "slug": "קלאודיו-בומבה",
+   "tuneHe": "התמונות שבאלבום",
+   "raw": "[https://www.youtube.com/watch?v=PhoCmqtlsek התמונות שבאלבום]",
+   "pageTitle": "קלאודיו בומבה",
+   "pageId": 14177,
+   "revisionId": 69562
+  },
+  {
+   "playerId": "p_64938b42c8",
+   "slug": "קלמי-סבן",
+   "tuneHe": "אורלי - גילי ארגוב",
+   "raw": "אורלי - גילי ארגוב",
+   "pageTitle": "קלמי סבן",
+   "pageId": 1866,
+   "revisionId": 69564
+  },
+  {
+   "playerId": "p_fde4eb7dae",
+   "slug": "רובי-לבקוביץ",
+   "tuneHe": "אני שומע שוב (שיר החייל)/שלמה ארצי",
+   "raw": "[https://www.youtube.com/watch?v=PWNGGfiuBoo אני שומע שוב (שיר החייל)/שלמה ארצי]",
+   "pageTitle": "רובי לבקוביץ'",
+   "pageId": 15978,
+   "revisionId": 82413
+  },
+  {
+   "playerId": "p_7d46eb4f28",
+   "slug": "רובן-סולצאגה",
+   "tuneHe": "תביא קצת דינרוס",
+   "raw": "תביא קצת דינרוס",
+   "pageTitle": "רובן סולצ'אגה",
+   "pageId": 2384,
+   "revisionId": 69570
+  },
+  {
+   "playerId": "p_fe3d8cf84a",
+   "slug": "רוי-ברנס",
+   "tuneHe": "Material Girl/Madonna",
+   "raw": "Material Girl/Madonna",
+   "pageTitle": "רוי ברנס",
+   "pageId": 18814,
+   "revisionId": 91936
+  },
+  {
+   "playerId": "p_14b94fb3a0",
+   "slug": "רוי-קורין",
+   "tuneHe": "אוהבת לא אוהבת/ארקדי דוכין",
+   "raw": "אוהבת לא אוהבת/ארקדי דוכין",
+   "pageTitle": "רוי קורין",
+   "pageId": 19807,
+   "revisionId": 86794
+  },
+  {
+   "playerId": "p_37e654948c",
+   "slug": "רוי-רונן",
+   "tuneHe": "Golden Boy-Nadav Guedj",
+   "raw": "[https://www.youtube.com/watch?v=BQNNtbdZ4Zg Golden Boy-Nadav Guedj]",
+   "pageTitle": "רוי רונן",
+   "pageId": 14163,
+   "revisionId": 69574
+  },
+  {
+   "playerId": "p_b809bb0aca",
+   "slug": "רומאן-רוקי",
+   "tuneHe": "פרחים בקנה - להקת חיל התותחנים",
+   "raw": "[http://www.youtube.com/watch?v=PKtNG9HYHI4 פרחים בקנה - להקת חיל התותחנים]",
+   "pageTitle": "רומאן רוקי",
+   "pageId": 6427,
+   "revisionId": 86710
+  },
+  {
+   "playerId": "p_d7006dfdc2",
+   "slug": "רומן-וסילוק",
+   "tuneHe": "המלח שלי - להקת חיל הים",
+   "raw": "המלח שלי - להקת חיל הים",
+   "pageTitle": "רומן וסילוק",
+   "pageId": 1665,
+   "revisionId": 69576
+  },
+  {
+   "playerId": "p_3508fedb99",
+   "slug": "רונן-חרזי",
+   "tuneHe": "ב.מ.וו. שחורה -אתניקס + משיח",
+   "raw": "ב.מ.וו. שחורה -אתניקס + משיח",
+   "pageTitle": "רונן חרזי",
+   "pageId": 2060,
+   "revisionId": 69580
+  },
+  {
+   "playerId": "p_fc78cb8855",
+   "slug": "רועי-אלקוקין",
+   "tuneHe": "זה לא נורמלי/רון שובל",
+   "raw": "זה לא נורמלי/רון שובל",
+   "pageTitle": "רועי אלקוקין",
+   "pageId": 18530,
+   "revisionId": 86795
+  },
+  {
+   "playerId": "p_9c70058156",
+   "slug": "רועי-גורדנה",
+   "tuneHe": "ושוב נצאה אל הדרך",
+   "raw": "ושוב נצאה אל הדרך",
+   "pageTitle": "רועי גורדנה",
+   "pageId": 4180,
+   "revisionId": 69581
+  },
+  {
+   "playerId": "p_2b8a505901",
+   "slug": "רועי-הרמן",
+   "tuneHe": "מותק/איציק קלה",
+   "raw": "מותק/איציק קלה",
+   "pageTitle": "רועי הרמן",
+   "pageId": 19804,
+   "revisionId": 81825
+  },
+  {
+   "playerId": "p_792a03746f",
+   "slug": "רותם-חטואל",
+   "tuneHe": "בחום של תל אביב/שרית חדד",
+   "raw": "בחום של תל אביב/שרית חדד",
+   "pageTitle": "רותם חטואל",
+   "pageId": 20600,
+   "revisionId": 81831
+  },
+  {
+   "playerId": "p_938f62e392",
+   "slug": "רז-נחמיאס",
+   "tuneHe": "One Day",
+   "raw": "[https://www.youtube.com/watch?v=WRmBChQjZPs One Day]",
+   "pageTitle": "רז נחמיאס",
+   "pageId": 14183,
+   "revisionId": 69586
+  },
+  {
+   "playerId": "p_726d9a47c2",
+   "slug": "ריף-מסיקה",
+   "tuneHe": "כפיים - יהודה פוליקר",
+   "raw": "כפיים - יהודה פוליקר",
+   "pageTitle": "ריף מסיקה",
+   "pageId": 13427,
+   "revisionId": 69589
+  },
+  {
+   "playerId": "p_ef5486a68a",
+   "slug": "רמזי-ספורי",
+   "tuneHe": "Bobby Vinton - Mr. Lonely",
+   "raw": "Bobby Vinton - Mr. Lonely",
+   "pageTitle": "רמזי ספורי",
+   "pageId": 13348,
+   "revisionId": 69592
+  },
+  {
+   "playerId": "p_3c4381034b",
+   "slug": "רמי-אבו-לאבן",
+   "tuneHe": "אני שטה - זהבה בן",
+   "raw": "אני שטה - זהבה בן",
+   "pageTitle": "רמי אבו לאבן",
+   "pageId": 2381,
+   "revisionId": 69593
+  },
+  {
+   "playerId": "p_04c3d1edb1",
+   "slug": "רמי-דואני",
+   "tuneHe": "שירים ושערים",
+   "raw": "[http://www.youtube.com/watch?v=IQOlMeMJCc4 שירים ושערים]",
+   "pageTitle": "רמי דואני",
+   "pageId": 1388,
+   "revisionId": 69595
+  },
+  {
+   "playerId": "p_9388f9c2ce",
+   "slug": "רמי-חליס",
+   "tuneHe": "money - abba",
+   "raw": "money - abba",
+   "pageTitle": "רמי חליס",
+   "pageId": 1667,
+   "revisionId": 69596
+  },
+  {
+   "playerId": "p_b3c0e3564d",
+   "slug": "רן-יצחק",
+   "tuneHe": "בית חם - עופרה חזה",
+   "raw": "[http://www.youtube.com/watch?v=fhtfzbiWJME בית חם - עופרה חזה]",
+   "pageTitle": "רן יצחק",
+   "pageId": 13317,
+   "revisionId": 69598
+  },
+  {
+   "playerId": "p_ea964cf2b6",
+   "slug": "שאנדה-סילבה",
+   "tuneHe": "בטיילת על המדרכה/מוג'דה & רינת בר",
+   "raw": "בטיילת על המדרכה/מוג'דה & רינת בר",
+   "pageTitle": "שאנדה סילבה",
+   "pageId": 21419,
+   "revisionId": 92031
+  },
+  {
+   "playerId": "p_9a7b6e96a1",
+   "slug": "שביט-אלימלך",
+   "tuneHe": "שיר ההבדלה",
+   "raw": "[http://www.youtube.com/watch?v=mD21Wh-2ac4 שיר ההבדלה]",
+   "pageTitle": "שביט אלימלך",
+   "pageId": 1669,
+   "revisionId": 79210
+  },
+  {
+   "playerId": "p_65bbab8fb7",
+   "slug": "שגיב-אליהו",
+   "tuneHe": "Money, Money, Money",
+   "raw": "Money, Money, Money",
+   "pageTitle": "שגיב אליהו",
+   "pageId": 9502,
+   "revisionId": 78809
+  },
+  {
+   "playerId": "p_02f7576b2d",
+   "slug": "שגיב-יחזקאל",
+   "tuneHe": "תל אביב-עומר אדם ואריסה",
+   "raw": "[https://www.youtube.com/watch?v=nMQw29nfzpg תל אביב-עומר אדם ואריסה]",
+   "pageTitle": "שגיב יחזקאל",
+   "pageId": 13680,
+   "revisionId": 69607
+  },
+  {
+   "playerId": "p_c410368a8a",
+   "slug": "שובל-גוזלן",
+   "tuneHe": "תקוף תעשה ביגועים",
+   "raw": "[https://www.youtube.com/watch?v=-gMsFvdholw תקוף תעשה ביגועים]",
+   "pageTitle": "שובל גוזלן",
+   "pageId": 13719,
+   "revisionId": 69608
+  },
+  {
+   "playerId": "p_9d383f8236",
+   "slug": "שון-מלכה",
+   "tuneHe": "מאיה בוסקילה - הלב",
+   "raw": "[https://www.youtube.com/watch?v=T5umnAkoxeo מאיה בוסקילה - הלב]",
+   "pageTitle": "שון מלכה",
+   "pageId": 13474,
+   "revisionId": 69611
+  },
+  {
+   "playerId": "p_a4798f768c",
+   "slug": "שחר-פיבן",
+   "tuneHe": "כמו מלך/משה פרץ",
+   "raw": "כמו מלך/משה פרץ",
+   "pageTitle": "שחר פיבן",
+   "pageId": 20534,
+   "revisionId": 86779
+  },
+  {
+   "playerId": "p_7a5c4255b1",
+   "slug": "שי-רביבו",
+   "tuneHe": "מרדכי בן דוד - אני מאמין",
+   "raw": "[http://www.youtube.com/watch?v=CdYaNeU9iOo מרדכי בן דוד - אני מאמין]",
+   "pageTitle": "שי רביבו",
+   "pageId": 8906,
+   "revisionId": 69618
+  },
+  {
+   "playerId": "p_b5d64bece3",
+   "slug": "שלום-תקוה",
+   "tuneHe": "הבאנו שלום עליכם, אתניקס - אין כמו אמא",
+   "raw": "הבאנו שלום עליכם, אתניקס - אין כמו אמא",
+   "pageTitle": "שלום תקוה",
+   "pageId": 2063,
+   "revisionId": 86014
+  },
+  {
+   "playerId": "p_6af109a4a2",
+   "slug": "שלומי-אזולאי-חלוץ",
+   "tuneHe": "KC & The Sunshine Band - Give It Up",
+   "raw": "[https://www.youtube.com/watch?v=IeqtAB1WgEw KC & The Sunshine Band - Give It Up]",
+   "pageTitle": "שלומי אזולאי (חלוץ)",
+   "pageId": 13831,
+   "revisionId": 69623
+  },
+  {
+   "playerId": "p_63f6ae5b05",
+   "slug": "שמואל-שיימן",
+   "tuneHe": "רמי קליינשטיין והמועצה-תפוחים ותמרים",
+   "raw": "[https://www.youtube.com/watch?v=GneIoht3iLM רמי קליינשטיין והמועצה-תפוחים ותמרים]",
+   "pageTitle": "שמואל שיימן",
+   "pageId": 14053,
+   "revisionId": 70889
+  },
+  {
+   "playerId": "p_7664d34669",
+   "slug": "שמעון-גרשון",
+   "tuneHe": "ספידי גונזלס",
+   "raw": "ספידי גונזלס",
+   "pageTitle": "שמעון גרשון",
+   "pageId": 2062,
+   "revisionId": 79085
+  },
+  {
+   "playerId": "p_ed0c7c9bcc",
+   "slug": "שמעון-הרוש",
+   "tuneHe": "Emilia- Big Big World",
+   "raw": "[http://www.youtube.com/watch?v=IwBNY2xqSX8 Emilia- Big Big World]",
+   "pageTitle": "שמעון הרוש",
+   "pageId": 13093,
+   "revisionId": 82448
+  },
+  {
+   "playerId": "p_f5ec2e9271",
+   "slug": "תום-אלמדון",
+   "tuneHe": "יוני בלוך - אחריות",
+   "raw": "יוני בלוך - אחריות",
+   "pageTitle": "תום אלמדון",
+   "pageId": 13698,
+   "revisionId": 69636
+  },
+  {
+   "playerId": "p_2b71b8644e",
+   "slug": "תומר-חליבה",
+   "tuneHe": "אם יש לך שמש",
+   "raw": "אם יש לך שמש",
+   "pageTitle": "תומר חליבה",
+   "pageId": 2066,
+   "revisionId": 69639
+  }
+ ]
+}

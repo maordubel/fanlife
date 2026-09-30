@@ -1,0 +1,24 @@
+{
+  "status": "PARTIAL",
+  "verifiedEuropeanAnchor": {
+    "year": 2000,
+    "opponent": "Västra Frölunda",
+    "awayCity": "Gothenburg",
+    "sourceIds": [
+      "src-europe-2000"
+    ]
+  },
+  "modernEuropeanExamples": [
+    "Aston Villa",
+    "AZ Alkmaar",
+    "Legia",
+    "Crystal Palace"
+  ],
+  "missingLocalTexture": [
+    "historic supporter bus departure points",
+    "booking/payment practices",
+    "typical food/stops",
+    "1990s/2000s costs"
+  ],
+  "policy": "Use fictional local logistics only when clearly labelled; production historical away quests require oral-history research."
+}

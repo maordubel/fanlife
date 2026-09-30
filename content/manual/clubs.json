@@ -1,0 +1,2379 @@
+{
+ "note": "Hapoel Tel Aviv is the club this product is about. Maccabi Tel Aviv is flagged as the derby rival — for this project a derby means Maccabi Tel Aviv and nothing else. Opponent clubs exist only to give verified matches something to point at. The basketball records were added on 2.9.2026 from the wiki's own declaration: תבנית:שםקבוצה bolds exactly הפועל ת\"א, הפועל תל אביב and הפועל אוסישקין as the club the site is about, and תבנית:שליפת טבלת משחקים פשוטה queries basketball as department='כדורסל' OR department='הפועל אוסישקין'. מכבי חיפה נוספה ב-3.9.2026 כיריבה במשחק האליפות של 1985/86 — היא קיימת כאן רק כדי שלמשחק מאומת יהיה למה להצביע, ואינה יריבת דרבי.",
+ "confidence": 2,
+ "source": {
+  "kind": "other",
+  "title": "Verified research pass, 31 Aug 2026",
+  "url": null
+ },
+ "records": [
+  {
+   "slug": "הפועל-תל-אביב",
+   "nameHe": "הפועל תל אביב",
+   "nameEn": "Hapoel Tel Aviv",
+   "city": "תל אביב",
+   "sport": "football",
+   "isUs": true,
+   "aliases": [
+    "הפועל תל אביב",
+    "הפועל ת\"א",
+    "הפועל תל אביב (כדורגל)",
+    "Hapoel Tel Aviv"
+   ],
+   "confidence": 3,
+   "sourceTitle": "ידע אישי — צוות The Worker",
+   "sourceKind": "manual"
+  },
+  {
+   "slug": "מכבי-תל-אביב",
+   "nameHe": "מכבי תל אביב",
+   "nameEn": "Maccabi Tel Aviv",
+   "city": "תל אביב",
+   "sport": "football",
+   "isDerbyRival": true,
+   "aliases": [
+    "מכבי תל אביב",
+    "מכבי ת\"א",
+    "Maccabi Tel Aviv"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Tel_Aviv_derby",
+   "sourceTitle": "Tel Aviv derby — Wikipedia"
+  },
+  {
+   "slug": "הפועל-תל-אביב-כדורסל",
+   "nameHe": "הפועל תל אביב (כדורסל)",
+   "nameEn": "Hapoel Tel Aviv B.C.",
+   "city": "תל אביב",
+   "sport": "basketball",
+   "aliases": [
+    "הפועל תל אביב כדורסל",
+    "הפועל IBI תל אביב",
+    "Hapoel Tel Aviv B.C."
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_B.C.",
+   "sourceTitle": "Hapoel Tel Aviv B.C. — Wikipedia",
+   "source": {
+    "kind": "wiki",
+    "title": "ויקיפועל — תבנית:שםקבוצה / תבנית:שליפת טבלת משחקים פשוטה",
+    "url": "https://wiki.red-fans.com/index.php?title=%D7%AA%D7%91%D7%A0%D7%99%D7%AA:%D7%A9%D7%9D%D7%A7%D7%91%D7%95%D7%A6%D7%94"
+   }
+  },
+  {
+   "slug": "צלסי",
+   "nameHe": "צ'לסי",
+   "nameEn": "Chelsea",
+   "city": "לונדון",
+   "sport": "football",
+   "aliases": [
+    "צ'לסי",
+    "Chelsea"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/match/68550--h-tel-aviv-vs-chelsea/",
+   "sourceTitle": "UEFA match centre"
+  },
+  {
+   "slug": "לוקומוטיב-מוסקבה",
+   "nameHe": "לוקומוטיב מוסקבה",
+   "nameEn": "Lokomotiv Moscow",
+   "city": "מוסקבה",
+   "sport": "football",
+   "aliases": [
+    "לוקומוטיב מוסקבה",
+    "Lokomotiv Moscow"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/025a-0eab13c1f1d5-dab99f819385-1000--tel-aviv-triumph-in-russia",
+   "sourceTitle": "UEFA report"
+  },
+  {
+   "slug": "פארמה",
+   "nameHe": "פארמה",
+   "nameEn": "Parma",
+   "city": "פארמה",
+   "sport": "football",
+   "aliases": [
+    "פארמה",
+    "Parma"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/025a-0eab0ace3480-d3cf7a771c8b-1000--tel-aviv-fairy-tale-continues/",
+   "sourceTitle": "UEFA report"
+  },
+  {
+   "slug": "מילאן",
+   "nameHe": "מילאן",
+   "nameEn": "AC Milan",
+   "city": "מילאנו",
+   "sport": "football",
+   "aliases": [
+    "מילאן",
+    "איי סי מילאן",
+    "AC Milan"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/",
+   "sourceTitle": "UEFA report"
+  },
+  {
+   "slug": "בנפיקה",
+   "nameHe": "בנפיקה",
+   "nameEn": "Benfica",
+   "city": "ליסבון",
+   "sport": "football",
+   "aliases": [
+    "בנפיקה",
+    "Benfica"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.skysports.com/football/hap-tel-aviv-vs-benfica/report/227534",
+   "sourceTitle": "Sky Sports match report"
+  },
+  {
+   "slug": "שמשון-תל-אביב",
+   "nameHe": "שמשון תל אביב",
+   "nameEn": "Shimshon Tel Aviv",
+   "city": "תל אביב",
+   "sport": "football",
+   "aliases": [
+    "שמשון תל אביב",
+    "Shimshon Tel Aviv"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
+   "sourceTitle": "Bloomfield Stadium — Wikipedia"
+  },
+  {
+   "slug": "סלנגור",
+   "nameHe": "סלנגור",
+   "nameEn": "Selangor",
+   "city": "סלנגור",
+   "sport": "football",
+   "aliases": [
+    "סלנגור",
+    "Selangor"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://en.wikipedia.org/wiki/1967_Asian_Champion_Club_Tournament",
+   "sourceTitle": "1967 Asian Champion Club Tournament — Wikipedia"
+  },
+  {
+   "slug": "ארארט-ירוואן",
+   "nameHe": "ארארט ירוואן",
+   "nameEn": "Ararat Yerevan",
+   "city": "ירוואן",
+   "sport": "football",
+   "aliases": [
+    "ארארט ירוואן",
+    "Ararat Yerevan"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://wiki.red-fans.com/",
+   "sourceTitle": "ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026"
+  },
+  {
+   "slug": "פרטיזני-טירנה",
+   "nameHe": "פרטיזני טירנה",
+   "nameEn": "Partizani Tirana",
+   "city": "טירנה",
+   "sport": "football",
+   "aliases": [
+    "פרטיזני טירנה",
+    "Partizani Tirana"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://wiki.red-fans.com/",
+   "sourceTitle": "ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026"
+  },
+  {
+   "slug": "קרנטן",
+   "nameHe": "קרנטן",
+   "nameEn": "Kärnten",
+   "city": "קלגנפורט",
+   "sport": "football",
+   "aliases": [
+    "קרנטן",
+    "Kärnten"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://wiki.red-fans.com/",
+   "sourceTitle": "ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026"
+  },
+  {
+   "slug": "לידס",
+   "nameHe": "לידס יונייטד",
+   "nameEn": "Leeds United",
+   "city": "לידס",
+   "sport": "football",
+   "aliases": [
+    "לידס יונייטד",
+    "Leeds United"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://wiki.red-fans.com/",
+   "sourceTitle": "ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026"
+  },
+  {
+   "slug": "זלצבורג",
+   "nameHe": "רד בול זלצבורג",
+   "nameEn": "Red Bull Salzburg",
+   "city": "זלצבורג",
+   "sport": "football",
+   "aliases": [
+    "רד בול זלצבורג",
+    "Red Bull Salzburg"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://wiki.red-fans.com/",
+   "sourceTitle": "ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026"
+  },
+  {
+   "slug": "הפועל-תל-אביב",
+   "nameHe": "הפועל תל אביב",
+   "nameEn": "Hapoel Tel Aviv",
+   "city": "תל אביב",
+   "sport": "basketball",
+   "isUs": true,
+   "isDerbyRival": false,
+   "aliases": [
+    "הפועל תל אביב",
+    "הפועל ת\"א",
+    "הפועל תל אביב (כדורסל)"
+   ],
+   "confidence": 1,
+   "source": {
+    "kind": "wiki",
+    "title": "ויקיפועל — תבנית:שםקבוצה / תבנית:שליפת טבלת משחקים פשוטה",
+    "url": "https://wiki.red-fans.com/index.php?title=%D7%AA%D7%91%D7%A0%D7%99%D7%AA:%D7%A9%D7%9D%D7%A7%D7%91%D7%95%D7%A6%D7%94"
+   }
+  },
+  {
+   "slug": "הפועל-אוסישקין",
+   "nameHe": "הפועל אוסישקין",
+   "nameEn": "Hapoel Ussishkin",
+   "city": "תל אביב",
+   "sport": "basketball",
+   "isUs": true,
+   "isDerbyRival": false,
+   "aliases": [
+    "הפועל אוסישקין",
+    "אוסישקין"
+   ],
+   "confidence": 1,
+   "source": {
+    "kind": "wiki",
+    "title": "ויקיפועל — תבנית:שםקבוצה / תבנית:שליפת טבלת משחקים פשוטה",
+    "url": "https://wiki.red-fans.com/index.php?title=%D7%AA%D7%91%D7%A0%D7%99%D7%AA:%D7%A9%D7%9D%D7%A7%D7%91%D7%95%D7%A6%D7%94"
+   }
+  },
+  {
+   "slug": "מכבי-תל-אביב",
+   "nameHe": "מכבי תל אביב",
+   "nameEn": "Maccabi Tel Aviv",
+   "city": "תל אביב",
+   "sport": "basketball",
+   "isUs": false,
+   "isDerbyRival": true,
+   "aliases": [
+    "מכבי תל אביב",
+    "מכבי ת\"א"
+   ],
+   "confidence": 1,
+   "source": {
+    "kind": "wiki",
+    "title": "ויקיפועל — תבנית:שםקבוצה / תבנית:שליפת טבלת משחקים פשוטה",
+    "url": "https://wiki.red-fans.com/index.php?title=%D7%AA%D7%91%D7%A0%D7%99%D7%AA:%D7%A9%D7%9D%D7%A7%D7%91%D7%95%D7%A6%D7%94"
+   }
+  },
+  {
+   "slug": "מכבי-חיפה",
+   "nameHe": "מכבי חיפה",
+   "nameEn": "Maccabi Haifa",
+   "city": "חיפה",
+   "sport": "football",
+   "aliases": [
+    "מכבי חיפה",
+    "מכבי-חיפה",
+    "Maccabi Haifa",
+    "הירוקים"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "מכבי-רמת-עמידר",
+   "nameHe": "מכבי רמת עמידר",
+   "nameEn": "Maccabi Ramat Amidar",
+   "city": "רמת גן",
+   "sport": "football",
+   "isUs": false,
+   "aliases": [
+    "מכבי רמת עמידר",
+    "Maccabi Ramat Amidar"
+   ],
+   "confidence": 2,
+   "sourceTitle": "וואלה ספורט — לא סתם עוד שבת של כדורגל: 30 שנה לסערת העלייה של הפועל תל אביב (12.5.2020)",
+   "sourceKind": "web",
+   "sourceUrl": "https://sports.walla.co.il/item/3356277"
+  },
+  {
+   "slug": "מכבי-יבנה",
+   "nameHe": "מכבי יבנה",
+   "nameEn": "Maccabi Yavne",
+   "city": "יבנה",
+   "sport": "football",
+   "isUs": false,
+   "aliases": [
+    "מכבי יבנה",
+    "Maccabi Yavne"
+   ],
+   "confidence": 2,
+   "sourceTitle": "וואלה ספורט — לא סתם עוד שבת של כדורגל: 30 שנה לסערת העלייה של הפועל תל אביב (12.5.2020)",
+   "sourceKind": "web",
+   "sourceUrl": "https://sports.walla.co.il/item/3356277"
+  },
+  {
+   "slug": "בית\"ר-נתניה",
+   "nameHe": "בית\"ר נתניה",
+   "nameEn": "Beitar Netanya",
+   "city": "נתניה",
+   "sport": "football",
+   "isUs": false,
+   "aliases": [
+    "בית\"ר נתניה",
+    "Beitar Netanya"
+   ],
+   "confidence": 2,
+   "sourceTitle": "וואלה ספורט — לא סתם עוד שבת של כדורגל: 30 שנה לסערת העלייה של הפועל תל אביב (12.5.2020)",
+   "sourceKind": "web",
+   "sourceUrl": "https://sports.walla.co.il/item/3356277"
+  },
+  {
+   "slug": "בית\"ר-ירושלים",
+   "nameHe": "בית\"ר ירושלים",
+   "sport": "football",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+   "sourceTitle": "Wikipedia / basket.co.il"
+  },
+  {
+   "slug": "בני-יהודה",
+   "nameHe": "בני יהודה תל אביב",
+   "sport": "football",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+   "sourceTitle": "Wikipedia / basket.co.il"
+  },
+  {
+   "slug": "הפועל-פתח-תקווה",
+   "nameHe": "הפועל פתח תקווה",
+   "sport": "football",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+   "sourceTitle": "Wikipedia / basket.co.il"
+  },
+  {
+   "slug": "הפועל-בית-שאן",
+   "nameHe": "הפועל בית שאן",
+   "sport": "football",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+   "sourceTitle": "Wikipedia / basket.co.il"
+  },
+  {
+   "slug": "זימברו-קישינב",
+   "nameHe": "זימברו קישינב",
+   "sport": "football",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+   "sourceTitle": "Wikipedia / basket.co.il"
+  },
+  {
+   "slug": "הפועל-גבעתיים",
+   "nameHe": "הפועל גבעתיים",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://basket.co.il/team.asp?TeamId=399&sType=p2",
+   "sourceTitle": "Wikipedia / basket.co.il"
+  },
+  {
+   "slug": "הפועל-גליל-עליון",
+   "nameHe": "הפועל גליל עליון",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://basket.co.il/team.asp?TeamId=399&sType=p2",
+   "sourceTitle": "Wikipedia / basket.co.il"
+  },
+  {
+   "slug": "מכבי-באר-יעקב",
+   "nameHe": "מכבי באר יעקב",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://sports.walla.co.il/item/2533799",
+   "sourceTitle": "וואלה ספורט — גמר הפלייאוף של הליגה הלאומית, 16.5.2012"
+  },
+  {
+   "slug": "בני-הרצליה",
+   "nameHe": "בני הרצליה",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://www.kan.org.il/content/kan-news/culture/262473/",
+   "sourceTitle": "כאן — גמר גביע המדינה בכדורסל 2022"
+  },
+  {
+   "slug": "גראן-קנאריה",
+   "nameHe": "גראן קנאריה",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://www.euroleaguebasketball.net/en/eurocup/news/hapoel-sweeps-gran-canaria-for-first-eurocup-title-and-ticket-to-euroleague/",
+   "sourceTitle": "EuroCup — גמר 2024/25"
+  },
+  {
+   "slug": "ריאל-מדריד",
+   "nameHe": "ריאל מדריד",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://www.eurohoops.net/en/euroleague/1965449/real-madrid-beats-hapoel-and-advances-to-the-final-four/",
+   "sourceTitle": "Eurohoops — רבע גמר היורוליג 2025/26"
+  },
+  {
+   "slug": "מכבי-פ\"ת",
+   "nameHe": "מכבי פ\"ת",
+   "sport": "football",
+   "aliases": [
+    "מכבי פ\"ת"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-חיפה",
+   "nameHe": "הפועל חיפה",
+   "sport": "football",
+   "aliases": [
+    "הפועל חיפה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-נתניה",
+   "nameHe": "מכבי נתניה",
+   "sport": "football",
+   "aliases": [
+    "מכבי נתניה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-פ\"ת",
+   "nameHe": "הפועל פ\"ת",
+   "sport": "football",
+   "aliases": [
+    "הפועל פ\"ת"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-י-ם",
+   "nameHe": "בית\"ר י-ם",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר י-ם"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-ב\"ש",
+   "nameHe": "הפועל ב\"ש",
+   "sport": "football",
+   "aliases": [
+    "הפועל ב\"ש"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-כפ\"ס",
+   "nameHe": "הפועל כפ\"ס",
+   "sport": "football",
+   "aliases": [
+    "הפועל כפ\"ס"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-י-ם",
+   "nameHe": "הפועל י-ם",
+   "sport": "football",
+   "aliases": [
+    "הפועל י-ם"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-ת\"א",
+   "nameHe": "בית\"ר ת\"א",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר ת\"א"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מ.ס.-אשדוד",
+   "nameHe": "מ.ס. אשדוד",
+   "sport": "football",
+   "aliases": [
+    "מ.ס. אשדוד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-יפו",
+   "nameHe": "מכבי יפו",
+   "sport": "football",
+   "aliases": [
+    "מכבי יפו"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בני-סכנין",
+   "nameHe": "בני סכנין",
+   "sport": "football",
+   "aliases": [
+    "בני סכנין"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-ר\"ג",
+   "nameHe": "הפועל ר\"ג",
+   "sport": "football",
+   "aliases": [
+    "הפועל ר\"ג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "שמשון-ת\"א",
+   "nameHe": "שמשון ת\"א",
+   "sport": "football",
+   "aliases": [
+    "שמשון ת\"א"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "עירוני-ק\"ש",
+   "nameHe": "עירוני ק\"ש",
+   "sport": "football",
+   "aliases": [
+    "עירוני ק\"ש"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-חדרה",
+   "nameHe": "הפועל חדרה",
+   "sport": "football",
+   "aliases": [
+    "הפועל חדרה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "צפרירים-חולון",
+   "nameHe": "צפרירים חולון",
+   "sport": "football",
+   "aliases": [
+    "צפרירים חולון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הכח-ר\"ג",
+   "nameHe": "הכח ר\"ג",
+   "sport": "football",
+   "aliases": [
+    "הכח ר\"ג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-ראשל\"צ",
+   "nameHe": "הפועל ראשל\"צ",
+   "sport": "football",
+   "aliases": [
+    "הפועל ראשל\"צ"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-הרצליה",
+   "nameHe": "מכבי הרצליה",
+   "sport": "football",
+   "aliases": [
+    "מכבי הרצליה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-רחובות",
+   "nameHe": "מכבי רחובות",
+   "sport": "football",
+   "aliases": [
+    "מכבי רחובות"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-עכו",
+   "nameHe": "הפועל עכו",
+   "sport": "football",
+   "aliases": [
+    "הפועל עכו"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-רעננה",
+   "nameHe": "הפועל רעננה",
+   "sport": "football",
+   "aliases": [
+    "הפועל רעננה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-נס-ציונה",
+   "nameHe": "מכבי נס ציונה",
+   "sport": "football",
+   "aliases": [
+    "מכבי נס ציונה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "עירוני-ראשל\"צ",
+   "nameHe": "עירוני ראשל\"צ",
+   "sport": "football",
+   "aliases": [
+    "עירוני ראשל\"צ"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-רמה\"ש",
+   "nameHe": "הפועל רמה\"ש",
+   "sport": "football",
+   "aliases": [
+    "הפועל רמה\"ש"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-לוד",
+   "nameHe": "הפועל לוד",
+   "sport": "football",
+   "aliases": [
+    "הפועל לוד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-יהוד",
+   "nameHe": "הפועל יהוד",
+   "sport": "football",
+   "aliases": [
+    "הפועל יהוד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-שעריים",
+   "nameHe": "מכבי שעריים",
+   "sport": "football",
+   "aliases": [
+    "מכבי שעריים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-נצרת-עילית",
+   "nameHe": "הפועל נצרת עילית",
+   "sport": "football",
+   "aliases": [
+    "הפועל נצרת עילית"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הכח-ת\"א",
+   "nameHe": "הכח ת\"א",
+   "sport": "football",
+   "aliases": [
+    "הכח ת\"א"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-טבריה",
+   "nameHe": "הפועל טבריה",
+   "sport": "football",
+   "aliases": [
+    "הפועל טבריה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-הרצליה",
+   "nameHe": "הפועל הרצליה",
+   "sport": "football",
+   "aliases": [
+    "הפועל הרצליה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-אשקלון",
+   "nameHe": "הפועל אשקלון",
+   "sport": "football",
+   "aliases": [
+    "הפועל אשקלון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-מרמורק",
+   "nameHe": "הפועל מרמורק",
+   "sport": "football",
+   "aliases": [
+    "הפועל מרמורק"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-קרית-גת",
+   "nameHe": "מכבי קרית גת",
+   "sport": "football",
+   "aliases": [
+    "מכבי קרית גת"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-אחי-נצרת",
+   "nameHe": "מכבי אחי נצרת",
+   "sport": "football",
+   "aliases": [
+    "מכבי אחי נצרת"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-רחובות",
+   "nameHe": "הפועל רחובות",
+   "sport": "football",
+   "aliases": [
+    "הפועל רחובות"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-ראשל\"צ",
+   "nameHe": "מכבי ראשל\"צ",
+   "sport": "football",
+   "aliases": [
+    "מכבי ראשל\"צ"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "עירוני-אשדוד",
+   "nameHe": "עירוני אשדוד",
+   "sport": "football",
+   "aliases": [
+    "עירוני אשדוד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הכח-עמידר-ר\"ג",
+   "nameHe": "הכח עמידר ר\"ג",
+   "sport": "football",
+   "aliases": [
+    "הכח עמידר ר\"ג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "סקציה-נס-ציונה",
+   "nameHe": "סקציה נס ציונה",
+   "sport": "football",
+   "aliases": [
+    "סקציה נס ציונה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-בני-ריינה",
+   "nameHe": "מכבי בני ריינה",
+   "sport": "football",
+   "aliases": [
+    "מכבי בני ריינה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-עפולה",
+   "nameHe": "הפועל עפולה",
+   "sport": "football",
+   "aliases": [
+    "הפועל עפולה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-חשמונאי-י-ם",
+   "nameHe": "מכבי חשמונאי י-ם",
+   "sport": "football",
+   "aliases": [
+    "מכבי חשמונאי י-ם"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-רמלה",
+   "nameHe": "בית\"ר רמלה",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר רמלה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-קטמון-י-ם",
+   "nameHe": "הפועל קטמון י-ם",
+   "sport": "football",
+   "aliases": [
+    "הפועל קטמון י-ם"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-כפר-שלם",
+   "nameHe": "הפועל כפר שלם",
+   "sport": "football",
+   "aliases": [
+    "הפועל כפר שלם"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-נוף-הגליל",
+   "nameHe": "הפועל נוף הגליל",
+   "sport": "football",
+   "aliases": [
+    "הפועל נוף הגליל"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-עירוני-ראשל\"צ",
+   "nameHe": "הפועל עירוני ראשל\"צ",
+   "sport": "football",
+   "aliases": [
+    "הפועל עירוני ראשל\"צ"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-אשדוד",
+   "nameHe": "מכבי אשדוד",
+   "sport": "football",
+   "aliases": [
+    "מכבי אשדוד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "סלטיק",
+   "nameHe": "סלטיק",
+   "sport": "football",
+   "aliases": [
+    "סלטיק"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גזיאנטפספור",
+   "nameHe": "גזיאנטפספור",
+   "sport": "football",
+   "aliases": [
+    "גזיאנטפספור"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "המשטרה-הבריטית",
+   "nameHe": "המשטרה הבריטית",
+   "sport": "football",
+   "aliases": [
+    "המשטרה הבריטית"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "דגל-ציון",
+   "nameHe": "דגל ציון",
+   "sport": "football",
+   "aliases": [
+    "דגל ציון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-קרית-חיים",
+   "nameHe": "הפועל קרית חיים",
+   "sport": "football",
+   "aliases": [
+    "הפועל קרית חיים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-בית-שמש",
+   "nameHe": "הפועל בית שמש",
+   "sport": "football",
+   "aliases": [
+    "הפועל בית שמש"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-טירת-הכרמל",
+   "nameHe": "הפועל טירת הכרמל",
+   "sport": "football",
+   "aliases": [
+    "הפועל טירת הכרמל"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-עכו",
+   "nameHe": "מכבי עכו",
+   "sport": "football",
+   "aliases": [
+    "מכבי עכו"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-טייבה",
+   "nameHe": "הפועל טייבה",
+   "sport": "football",
+   "aliases": [
+    "הפועל טייבה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ראפיד-בוקרשט",
+   "nameHe": "ראפיד בוקרשט",
+   "sport": "football",
+   "aliases": [
+    "ראפיד בוקרשט"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-תל-אביב-רמלה",
+   "nameHe": "בית\"ר תל אביב רמלה",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר תל אביב רמלה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "עירוני-טבריה",
+   "nameHe": "עירוני טבריה",
+   "sport": "football",
+   "aliases": [
+    "עירוני טבריה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית-החולים-סרפנד",
+   "nameHe": "בית החולים סרפנד",
+   "sport": "football",
+   "aliases": [
+    "בית החולים סרפנד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-ירושלים",
+   "nameHe": "הפועל ירושלים",
+   "sport": "football",
+   "aliases": [
+    "הפועל ירושלים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-חדרה",
+   "nameHe": "מכבי חדרה",
+   "sport": "football",
+   "aliases": [
+    "מכבי חדרה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-ראשון-לציון",
+   "nameHe": "מכבי ראשון לציון",
+   "sport": "football",
+   "aliases": [
+    "מכבי ראשון לציון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-גבעתיים-כדורגל",
+   "nameHe": "הפועל גבעתיים",
+   "sport": "football",
+   "aliases": [
+    "הפועל גבעתיים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-נתניה",
+   "nameHe": "הפועל נתניה",
+   "sport": "football",
+   "aliases": [
+    "הפועל נתניה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-נמל-חיפה",
+   "nameHe": "הפועל נמל חיפה",
+   "sport": "football",
+   "aliases": [
+    "הפועל נמל חיפה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-בלפוריה",
+   "nameHe": "הפועל בלפוריה",
+   "sport": "football",
+   "aliases": [
+    "הפועל בלפוריה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-מחנה-יהודה",
+   "nameHe": "הפועל מחנה יהודה",
+   "sport": "football",
+   "aliases": [
+    "הפועל מחנה יהודה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-חולון",
+   "nameHe": "הפועל חולון",
+   "sport": "football",
+   "aliases": [
+    "הפועל חולון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-בני-נצרת",
+   "nameHe": "הפועל בני נצרת",
+   "sport": "football",
+   "aliases": [
+    "הפועל בני נצרת"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ספורט-קלאב-ווינר",
+   "nameHe": "ספורט קלאב ווינר",
+   "sport": "football",
+   "aliases": [
+    "ספורט קלאב ווינר"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "פ.צ.-ליאז'",
+   "nameHe": "פ.צ. ליאז'",
+   "sport": "football",
+   "aliases": [
+    "פ.צ. ליאז'"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אדמירה-ווקר",
+   "nameHe": "אדמירה ווקר",
+   "sport": "football",
+   "aliases": [
+    "אדמירה ווקר"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "נורשפינג",
+   "nameHe": "נורשפינג",
+   "sport": "football",
+   "aliases": [
+    "נורשפינג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הכח-רמת-גן",
+   "nameHe": "הכח רמת גן",
+   "sport": "football",
+   "aliases": [
+    "הכח רמת גן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גראצר-א.ק.",
+   "nameHe": "גראצר א.ק.",
+   "sport": "football",
+   "aliases": [
+    "גראצר א.ק."
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "לינגבי-בולדקלאב",
+   "nameHe": "לינגבי בולדקלאב",
+   "sport": "football",
+   "aliases": [
+    "לינגבי בולדקלאב"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-בת-ים",
+   "nameHe": "הפועל בת ים",
+   "sport": "football",
+   "aliases": [
+    "הפועל בת ים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-טמרה",
+   "nameHe": "מכבי טמרה",
+   "sport": "football",
+   "aliases": [
+    "מכבי טמרה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "סטרומגודסט",
+   "nameHe": "סטרומגודסט",
+   "sport": "football",
+   "aliases": [
+    "סטרומגודסט"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "פינפה-הלסינקי",
+   "nameHe": "פינפה הלסינקי",
+   "sport": "football",
+   "aliases": [
+    "פינפה הלסינקי"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "פ.צ.-ירבאן",
+   "nameHe": "פ.צ. ירבאן",
+   "sport": "football",
+   "aliases": [
+    "פ.צ. ירבאן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "שטורם-גראץ",
+   "nameHe": "שטורם גראץ",
+   "sport": "football",
+   "aliases": [
+    "שטורם גראץ"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אררט-ירבאן",
+   "nameHe": "אררט ירבאן",
+   "sport": "football",
+   "aliases": [
+    "אררט ירבאן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-כפר-קנא",
+   "nameHe": "מכבי כפר קנא",
+   "sport": "football",
+   "aliases": [
+    "מכבי כפר קנא"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "פרטיזני-טיראנה",
+   "nameHe": "פרטיזני טיראנה",
+   "sport": "football",
+   "aliases": [
+    "פרטיזני טיראנה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "קארנטן",
+   "nameHe": "קארנטן",
+   "sport": "football",
+   "aliases": [
+    "קארנטן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בננטס-ירבאן",
+   "nameHe": "בננטס ירבאן",
+   "sport": "football",
+   "aliases": [
+    "בננטס ירבאן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גלאזגו-ריינג'רס",
+   "nameHe": "גלאזגו ריינג'רס",
+   "sport": "football",
+   "aliases": [
+    "גלאזגו ריינג'רס"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "דומז'אלה",
+   "nameHe": "דומז'אלה",
+   "sport": "football",
+   "aliases": [
+    "דומז'אלה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "צ'רנומורץ-אודסה",
+   "nameHe": "צ'רנומורץ אודסה",
+   "sport": "football",
+   "aliases": [
+    "צ'רנומורץ אודסה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "א.י.ק-סולנה",
+   "nameHe": "א.י.ק סולנה",
+   "sport": "football",
+   "aliases": [
+    "א.י.ק סולנה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "שירוקי",
+   "nameHe": "שירוקי",
+   "sport": "football",
+   "aliases": [
+    "שירוקי"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "וויוודינה-נובי-סאד",
+   "nameHe": "וויוודינה נובי סאד",
+   "sport": "football",
+   "aliases": [
+    "וויוודינה נובי סאד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "יובנס/דוגנה",
+   "nameHe": "יובנס/דוגנה",
+   "sport": "football",
+   "aliases": [
+    "יובנס/דוגנה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "סט.-אטיין",
+   "nameHe": "סט. אטיין",
+   "sport": "football",
+   "aliases": [
+    "סט. אטיין"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גטבורג",
+   "nameHe": "גטבורג",
+   "sport": "football",
+   "aliases": [
+    "גטבורג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "המבורג",
+   "nameHe": "המבורג",
+   "sport": "football",
+   "aliases": [
+    "המבורג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "טפליצ'ה",
+   "nameHe": "טפליצ'ה",
+   "sport": "football",
+   "aliases": [
+    "טפליצ'ה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ראפיד-וינה",
+   "nameHe": "ראפיד וינה",
+   "sport": "football",
+   "aliases": [
+    "ראפיד וינה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "רובין-קאזאן",
+   "nameHe": "רובין קאזאן",
+   "sport": "football",
+   "aliases": [
+    "רובין קאזאן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ז'לייז'ניצ'אר-סרייבו",
+   "nameHe": "ז'לייז'ניצ'אר סרייבו",
+   "sport": "football",
+   "aliases": [
+    "ז'לייז'ניצ'אר סרייבו"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אולימפיק-ליון",
+   "nameHe": "אולימפיק ליון",
+   "sport": "football",
+   "aliases": [
+    "אולימפיק ליון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אקטובה",
+   "nameHe": "אקטובה",
+   "sport": "football",
+   "aliases": [
+    "אקטובה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בנפיקה-ליסבון",
+   "nameHe": "בנפיקה ליסבון",
+   "sport": "football",
+   "aliases": [
+    "בנפיקה ליסבון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "שאלקה-04",
+   "nameHe": "שאלקה 04",
+   "sport": "football",
+   "aliases": [
+    "שאלקה 04"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אקראנס",
+   "nameHe": "אקראנס",
+   "sport": "football",
+   "aliases": [
+    "אקראנס"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-בני-לוד",
+   "nameHe": "הפועל בני לוד",
+   "sport": "football",
+   "aliases": [
+    "הפועל בני לוד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ואדוז",
+   "nameHe": "ואדוז",
+   "sport": "football",
+   "aliases": [
+    "ואדוז"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "לגיה-ורשה",
+   "nameHe": "לגיה ורשה",
+   "sport": "football",
+   "aliases": [
+    "לגיה ורשה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "פ.ס.וו-איינדהובן",
+   "nameHe": "פ.ס.וו איינדהובן",
+   "sport": "football",
+   "aliases": [
+    "פ.ס.וו איינדהובן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "F91-דודלאנג'",
+   "nameHe": "F91 דודלאנג'",
+   "sport": "football",
+   "aliases": [
+    "F91 דודלאנג'"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אקדמיקה-דה-קוימברה",
+   "nameHe": "אקדמיקה דה קוימברה",
+   "sport": "football",
+   "aliases": [
+    "אקדמיקה דה קוימברה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אתלטיקו-מדריד",
+   "nameHe": "אתלטיקו מדריד",
+   "sport": "football",
+   "aliases": [
+    "אתלטיקו מדריד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ויקטוריה-פלזן",
+   "nameHe": "ויקטוריה פלזן",
+   "sport": "football",
+   "aliases": [
+    "ויקטוריה פלזן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ברואה-סטארה-זגורה",
+   "nameHe": "ברואה סטארה זגורה",
+   "sport": "football",
+   "aliases": [
+    "ברואה סטארה זגורה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "פנדורי",
+   "nameHe": "פנדורי",
+   "sport": "football",
+   "aliases": [
+    "פנדורי"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אסטנה",
+   "nameHe": "אסטנה",
+   "sport": "football",
+   "aliases": [
+    "אסטנה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בני-לוד",
+   "nameHe": "בני לוד",
+   "sport": "football",
+   "aliases": [
+    "בני לוד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "עירוני-נשר",
+   "nameHe": "עירוני נשר",
+   "sport": "football",
+   "aliases": [
+    "עירוני נשר"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-אום-אל-פאחם",
+   "nameHe": "הפועל אום אל פאחם",
+   "sport": "football",
+   "aliases": [
+    "הפועל אום אל פאחם"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מ.ס.-כפר-קאסם",
+   "nameHe": "מ.ס. כפר קאסם",
+   "sport": "football",
+   "aliases": [
+    "מ.ס. כפר קאסם"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אטאלנטה",
+   "nameHe": "אטאלנטה",
+   "sport": "football",
+   "aliases": [
+    "אטאלנטה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "לודוגורץ-ראזגרד",
+   "nameHe": "לודוגורץ ראזגרד",
+   "sport": "football",
+   "aliases": [
+    "לודוגורץ ראזגרד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "קאטוביץ'",
+   "nameHe": "קאטוביץ'",
+   "sport": "football",
+   "aliases": [
+    "קאטוביץ'"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "משטרת-ארץ-ישראל",
+   "nameHe": "משטרת ארץ ישראל",
+   "sport": "football",
+   "aliases": [
+    "משטרת ארץ ישראל"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מעופפים-בדואים-עזה",
+   "nameHe": "מעופפים בדואים עזה",
+   "sport": "football",
+   "aliases": [
+    "מעופפים בדואים עזה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אלחוטאי-סרפנד",
+   "nameHe": "אלחוטאי סרפנד",
+   "sport": "football",
+   "aliases": [
+    "אלחוטאי סרפנד"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-חיפה-ב'",
+   "nameHe": "הפועל חיפה ב'",
+   "sport": "football",
+   "aliases": [
+    "הפועל חיפה ב'"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "נורת'המפטונשייר-רגימנט",
+   "nameHe": "נורת'המפטונשייר רגימנט",
+   "sport": "football",
+   "aliases": [
+    "נורת'המפטונשייר רגימנט"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מעופפי-רמלה",
+   "nameHe": "מעופפי רמלה",
+   "sport": "football",
+   "aliases": [
+    "מעופפי רמלה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-דרום-ת\"א",
+   "nameHe": "הפועל דרום ת\"א",
+   "sport": "football",
+   "aliases": [
+    "הפועל דרום ת\"א"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "המעופפים-רמלה",
+   "nameHe": "המעופפים רמלה",
+   "sport": "football",
+   "aliases": [
+    "המעופפים רמלה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הרגימנט-הסקוטי-השלישי",
+   "nameHe": "הרגימנט הסקוטי השלישי",
+   "sport": "football",
+   "aliases": [
+    "הרגימנט הסקוטי השלישי"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "נס\"ק-יפו",
+   "nameHe": "נס\"ק יפו",
+   "sport": "football",
+   "aliases": [
+    "נס\"ק יפו"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הררי-ת\"א",
+   "nameHe": "הררי ת\"א",
+   "sport": "football",
+   "aliases": [
+    "הררי ת\"א"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-צפון",
+   "nameHe": "הפועל צפון",
+   "sport": "football",
+   "aliases": [
+    "הפועל צפון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "נורדיה-תל-אביב",
+   "nameHe": "נורדיה תל אביב",
+   "sport": "football",
+   "aliases": [
+    "נורדיה תל אביב"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-אבן-יהודה",
+   "nameHe": "הפועל אבן יהודה",
+   "sport": "football",
+   "aliases": [
+    "הפועל אבן יהודה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-ר\"ג",
+   "nameHe": "מכבי ר\"ג",
+   "sport": "football",
+   "aliases": [
+    "מכבי ר\"ג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-נחליאל",
+   "nameHe": "הפועל נחליאל",
+   "sport": "football",
+   "aliases": [
+    "הפועל נחליאל"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-הררי",
+   "nameHe": "בית\"ר הררי",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר הררי"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ימק\"א-ירושלים",
+   "nameHe": "ימק\"א ירושלים",
+   "sport": "football",
+   "aliases": [
+    "ימק\"א ירושלים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-חולון",
+   "nameHe": "מכבי חולון",
+   "sport": "football",
+   "aliases": [
+    "מכבי חולון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הומנטמן",
+   "nameHe": "הומנטמן",
+   "sport": "football",
+   "aliases": [
+    "הומנטמן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מדאן",
+   "nameHe": "מדאן",
+   "sport": "football",
+   "aliases": [
+    "מדאן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מערב-בנגל",
+   "nameHe": "מערב בנגל",
+   "sport": "football",
+   "aliases": [
+    "מערב בנגל"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "משטרת-בנגקוק",
+   "nameHe": "משטרת בנגקוק",
+   "sport": "football",
+   "aliases": [
+    "משטרת בנגקוק"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "טאג'-קלאב",
+   "nameHe": "טאג' קלאב",
+   "sport": "football",
+   "aliases": [
+    "טאג' קלאב"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-חולון",
+   "nameHe": "בית\"ר חולון",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר חולון"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-תל-חנן",
+   "nameHe": "הפועל תל חנן",
+   "sport": "football",
+   "aliases": [
+    "הפועל תל חנן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-חיפה",
+   "nameHe": "בית\"ר חיפה",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר חיפה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "הפועל-עראבה",
+   "nameHe": "הפועל עראבה",
+   "sport": "football",
+   "aliases": [
+    "הפועל עראבה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אורגריט",
+   "nameHe": "אורגריט",
+   "sport": "football",
+   "aliases": [
+    "אורגריט"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "לוצרן",
+   "nameHe": "לוצרן",
+   "sport": "football",
+   "aliases": [
+    "לוצרן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "סגסטה",
+   "nameHe": "סגסטה",
+   "sport": "football",
+   "aliases": [
+    "סגסטה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ראן",
+   "nameHe": "ראן",
+   "sport": "football",
+   "aliases": [
+    "ראן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-בני-טירה",
+   "nameHe": "מכבי בני טירה",
+   "sport": "football",
+   "aliases": [
+    "מכבי בני טירה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-ב\"ש",
+   "nameHe": "בית\"ר ב\"ש",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר ב\"ש"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-קרית-גת",
+   "nameHe": "בית\"ר קרית גת",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר קרית גת"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "פאנאתינאיקוס",
+   "nameHe": "פאנאתינאיקוס",
+   "sport": "football",
+   "aliases": [
+    "פאנאתינאיקוס"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "פאריס-סן-ז'רמן",
+   "nameHe": "פאריס סן ז'רמן",
+   "sport": "football",
+   "aliases": [
+    "פאריס סן ז'רמן"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מלאדה-בולסלאב",
+   "nameHe": "מלאדה בולסלאב",
+   "sport": "football",
+   "aliases": [
+    "מלאדה בולסלאב"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אנדרלכט",
+   "nameHe": "אנדרלכט",
+   "sport": "football",
+   "aliases": [
+    "אנדרלכט"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "חטאפה",
+   "nameHe": "חטאפה",
+   "sport": "football",
+   "aliases": [
+    "חטאפה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "אלבורג",
+   "nameHe": "אלבורג",
+   "sport": "football",
+   "aliases": [
+    "אלבורג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "טוטנהאם",
+   "nameHe": "טוטנהאם",
+   "sport": "football",
+   "aliases": [
+    "טוטנהאם"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-שמשון/ת\"א",
+   "nameHe": "בית\"ר שמשון/ת\"א",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר שמשון/ת\"א"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מכבי-עירוני-קריית-אתא",
+   "nameHe": "מכבי עירוני קריית אתא",
+   "sport": "football",
+   "aliases": [
+    "מכבי עירוני קריית אתא"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "מ.ס-דימונה",
+   "nameHe": "מ.ס דימונה",
+   "sport": "football",
+   "aliases": [
+    "מ.ס דימונה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "בית\"ר-ת\"א-בת-ים",
+   "nameHe": "בית\"ר ת\"א בת ים",
+   "sport": "football",
+   "aliases": [
+    "בית\"ר ת\"א בת ים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "ס.כ-נס-ציונה",
+   "nameHe": "ס.כ נס ציונה",
+   "sport": "football",
+   "aliases": [
+    "ס.כ נס ציונה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=1966-68%2F%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+   "sourceTitle": "ויקיפועל — לוח המשחקים 1966-68 (טבלת Games), נקרא 17.9.2026. מועדון נפרד ממכבי נס ציונה ומסקציה נס ציונה — לא אוחד (כלל 7), delta 89"
+  }
+ ]
+}

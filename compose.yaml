@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports: ["127.0.0.1:3000:3000"]
+    environment:
+      NEXT_PUBLIC_FAN_LIFE_EVALUATION: "true"
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      FAN_LIFE_DATA_DIR: /app/.fan-life
+    volumes: ["fan-life-data:/app/.fan-life"]
+volumes:
+  fan-life-data:

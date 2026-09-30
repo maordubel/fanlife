@@ -1,0 +1,72 @@
+{
+  "note": "ציטוטים וקריאות — verbatim speech tied to a moment, for the quote questions. Two shapes: `match` asks WHERE it was said and `person` asks WHO said it. A `match` row carries its own three distractors, because a plausible wrong answer here is a real fixture from the same era and there is no pool the generator can safely draw one from — an invented fixture would break rule 11. Every distractor listed below is a real Hapoel Tel Aviv fixture. The owner's own knowledge is the source for the Berkovic call: a dedicated research pass on 1.9.2026 could not find it in any indexed outlet. It is recorded under the neutral label `ידע אישי — צוות The Worker` (spec §0.2, 22.9.2026) rather than dressed up as a press citation.",
+  "confidence": 3,
+  "source": {
+    "kind": "interview",
+    "title": "ידע אישי — צוות The Worker · ומחקר ייעודי 1.9.2026 — Walla · Sport1",
+    "url": null
+  },
+  "records": [
+    {
+      "slug": "berkovic-hine-lala",
+      "shape": "match",
+      "textHe": "הנה לאלא! הנה לאלא!",
+      "speakerHe": "איל ברקוביץ'",
+      "roleHe": "פרשן",
+      "answerHe": "מול בית\"ר ירושלים בבלומפילד, עונת 2009/10",
+      "distractorsHe": [
+        "מול מכבי תל אביב בבלומפילד, עונת 2010/11",
+        "מול מכבי חיפה בסמי עופר, עונת 2009/10",
+        "מול ליון בבלומפילד, ליגת האלופות 2010/11"
+      ],
+      "contextHe": "קריאת שידור שנחרטה אצל אוהדי הפועל.",
+      "sport": "football",
+      "confidence": 3,
+      "sourceUrl": null,
+      "sourceTitle": "ידע אישי — צוות The Worker, 1.9.2026"
+    },
+    {
+      "slug": "zahavi-yellow",
+      "shape": "person",
+      "textHe": "בחרתי מקצועית בדרך שחשבתי שנכונה, אני 100 אחוז צהוב.",
+      "speakerHe": "ערן זהבי",
+      "roleHe": "שחקן",
+      "answerHe": "ערן זהבי",
+      "distractorsHe": ["גילי ורמוט", "טל בן חיים", "שמעון גרשון"],
+      "contextHe": "ביום החתימה במכבי תל אביב, 21.1.2013.",
+      "sport": "football",
+      "confidence": 3,
+      "sourceUrl": "https://sports.walla.co.il/item/2603098",
+      "sourceTitle": "Walla, 21.1.2013"
+    },
+    {
+      "slug": "vermouth-betrayed",
+      "shape": "person",
+      "textHe": "ברור, זו הייתה ההרגשה שלהם.",
+      "speakerHe": "גילי ורמוט",
+      "roleHe": "שחקן",
+      "answerHe": "גילי ורמוט",
+      "distractorsHe": ["ערן זהבי", "שמעון גרשון", "טל בן חיים"],
+      "contextHe": "כשנשאל בפודקאסט אם אוהדי הפועל הרגישו נבגדים כשעבר למכבי.",
+      "sport": "football",
+      "confidence": 3,
+      "sourceUrl": "https://sport1.maariv.co.il/israeli-soccer/article/1480924/",
+      "sourceTitle": "Sport1 · מעריב",
+      "noteHe": "צוטט עשור אחרי המעבר."
+    },
+    {
+      "slug": "gershon-money",
+      "shape": "person",
+      "textHe": "ההנהלה יכלה לשמור עליו, זה לא היה עניין של כסף.",
+      "speakerHe": "ביטיט אלימולך",
+      "roleHe": "חבר לקבוצה",
+      "answerHe": "ביטיט אלימולך",
+      "distractorsHe": ["שמעון גרשון", "יוסי אבוקסיס", "ערן זהבי"],
+      "contextHe": "על עזיבתו של שמעון גרשון לבית\"ר ירושלים ב-2006 ללא דמי העברה.",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://sports.walla.co.il/item/3101799",
+      "sourceTitle": "Walla"
+    }
+  ]
+}

@@ -1,0 +1,971 @@
+<title>לוח ההזמנות הגרפי</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@400;500;700&family=Courier+Prime:wght@400;700&family=Karantina:wght@700&family=Archivo:wght@600;700&display=swap">
+<style>
+  :root{
+    --paper:#E9DFC7; --sheet:#F0E8D4; --ink:#15120E; --red:#E0401C;
+    --sign:#1E2C5A; --concrete:#C9BFA4; --muted:#5A5242;
+    --rule:#15120E; --hair:rgba(21,18,14,.28); --field:#F0E8D4;
+    --plate-a:var(--red); --plate-b:var(--ink);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15120E; --sheet:#1E1A15; --ink:#EDE4CE; --red:#F2542C;
+      --sign:#7E92CE; --concrete:#4A4335; --muted:#A79B80;
+      --rule:#EDE4CE; --hair:rgba(237,228,206,.24); --field:#0F0D0A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15120E; --sheet:#1E1A15; --ink:#EDE4CE; --red:#F2542C;
+    --sign:#7E92CE; --concrete:#4A4335; --muted:#A79B80;
+    --rule:#EDE4CE; --hair:rgba(237,228,206,.24); --field:#0F0D0A;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Heebo",system-ui,sans-serif; font-size:16px; line-height:1.7;
+    direction:rtl;
+  }
+  .wrap{max-width:78ch; margin:0 auto; padding:clamp(20px,4vw,52px) clamp(16px,4vw,32px) 96px}
+
+  /* ── the two plates. A constant 3px offset, never random — that is a press,
+        not a bug. It is the one flourish this page spends. ───────────────── */
+  .plate{position:relative; display:inline-block}
+  .plate span{position:relative; z-index:1; color:var(--plate-b)}
+  .plate::before{
+    content:attr(data-t); position:absolute; inset-inline-start:3px; top:3px;
+    color:var(--plate-a); z-index:0; white-space:pre;
+  }
+
+  .eyebrow{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:700;
+    font-size:11px; letter-spacing:.24em; color:var(--red);
+    direction:ltr; text-align:start;
+  }
+  h1{
+    font-family:"Suez One",Georgia,serif; font-weight:400;
+    font-size:clamp(30px,7vw,52px); line-height:1.06; margin:10px 0 0;
+    text-wrap:balance;
+  }
+  .lede{
+    font-size:clamp(16px,2.4vw,19px); line-height:1.65; color:var(--muted);
+    margin:16px 0 0; max-width:62ch;
+  }
+  h2{
+    font-family:"Suez One",Georgia,serif; font-weight:400;
+    font-size:clamp(21px,3.6vw,30px); line-height:1.15; margin:0;
+    text-wrap:balance;
+  }
+  h3{font-family:"Suez One",Georgia,serif;font-weight:400;font-size:19px;line-height:1.25;margin:0}
+
+  .band{border-top:2px solid var(--rule); margin-top:52px; padding-top:14px}
+  .band .num{
+    font-family:"Karantina",system-ui,sans-serif; font-weight:700;
+    font-size:44px; line-height:.8; color:var(--red); direction:ltr;
+  }
+  .band .head{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+  .band p{margin:10px 0 0; color:var(--muted); max-width:64ch}
+
+  /* ── the measurement table: the argument for the whole document ───────── */
+  .scroll{overflow-x:auto; margin-top:20px; border:1px solid var(--hair)}
+  table{border-collapse:collapse; width:100%; min-width:460px; background:var(--sheet)}
+  th,td{padding:8px 12px; text-align:start; border-bottom:1px solid var(--hair); font-size:14px}
+  th{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:10.5px;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+    background:var(--paper); white-space:nowrap;
+  }
+  td.n{font-family:"Courier Prime",ui-monospace,monospace; font-variant-numeric:tabular-nums; direction:ltr; text-align:start}
+  tr:last-child td{border-bottom:0}
+  .bad{color:var(--red); font-weight:700}
+  .good{color:var(--sign); font-weight:700}
+
+  /* ── an asset plate ───────────────────────────────────────────────────── */
+  .asset{border-top:1px solid var(--hair); margin-top:30px; padding-top:20px}
+  .asset > .top{display:flex; align-items:flex-start; gap:14px; flex-wrap:wrap}
+  .asset .file{
+    font-family:"Courier Prime",ui-monospace,monospace; font-size:13px;
+    color:var(--red); direction:ltr; background:var(--sheet);
+    border:1px solid var(--hair); padding:2px 7px; white-space:nowrap;
+  }
+  .spec{
+    display:flex; flex-wrap:wrap; gap:0; margin-top:14px;
+    border:1px solid var(--hair); background:var(--sheet);
+  }
+  .spec div{padding:8px 12px; flex:1 1 auto; min-width:132px; border-inline-start:1px solid var(--hair)}
+  .spec div:first-child{border-inline-start:0}
+  .spec dt{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:9.5px;
+    letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin:0;
+  }
+  .spec dd{
+    margin:3px 0 0; font-family:"Courier Prime",ui-monospace,monospace;
+    font-size:14px; font-variant-numeric:tabular-nums; direction:ltr; color:var(--ink);
+  }
+  .why{margin:14px 0 0; color:var(--muted); font-size:15px; max-width:64ch}
+
+  /* ── the prompt block ─────────────────────────────────────────────────── */
+  .prompt{margin-top:14px; border:2px solid var(--rule); background:var(--field)}
+  .prompt header{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:7px 10px; border-bottom:1px solid var(--hair); background:var(--sheet);
+  }
+  .prompt header span{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:10px;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--muted); direction:ltr;
+  }
+  .prompt pre{
+    margin:0; padding:14px; overflow-x:auto; direction:ltr; text-align:start;
+    font-family:"Courier Prime",ui-monospace,monospace; font-size:13px; line-height:1.55;
+    color:var(--ink); white-space:pre; tab-size:2;
+  }
+  button.copy{
+    font-family:"Archivo",system-ui,sans-serif; font-weight:700; font-size:10px;
+    letter-spacing:.14em; text-transform:uppercase; direction:ltr;
+    background:var(--red); color:#F0E8D4; border:0; border-radius:0;
+    padding:7px 13px; min-height:32px; cursor:pointer;
+  }
+  button.copy:hover{background:var(--ink); color:var(--paper)}
+  button.copy:focus-visible{outline:3px solid var(--sign); outline-offset:2px}
+  button.copy[data-done="1"]{background:var(--sign)}
+
+  .note{
+    border-inline-start:4px solid var(--red); padding:2px 14px; margin-top:18px;
+    color:var(--muted); font-size:15px; max-width:64ch;
+  }
+  .note strong{color:var(--ink)}
+  ul{margin:12px 0 0; padding-inline-start:20px; color:var(--muted); max-width:64ch}
+  li{margin:5px 0}
+  li strong{color:var(--ink)}
+  .foot{
+    margin-top:64px; border-top:2px solid var(--rule); padding-top:14px;
+    font-size:14px; color:var(--muted);
+  }
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+
+  <p class="eyebrow">THE WORKER LIFE · ART ORDER · 3.9.2026</p>
+  <h1><span class="plate" data-t="מה שאני צריך שתייצר"><span>מה שאני צריך שתייצר</span></span></h1>
+  <p class="lede">
+    כל פרומט כאן מוכן להעתקה, ומסודר לפי כמה זה דחוף באמת. הצדק אצלך: אני יודע לחתוך,
+    לנקות, לפרוס ולהרכיב — אני לא יודע <em>לצייר</em>. הנה בדיוק איפה זה נשבר, ולמה.
+  </p>
+
+  <!-- ══════════════════════════════════════════════════════ the argument ── -->
+  <section class="band">
+    <div class="head"><span class="num">00</span><h2>המדידה שפתחה את זה</h2></div>
+    <p>
+      בדקתי כל רקע מול הגודל שבו הוא <strong>באמת מוצג</strong> — המנוע מותח כל רקע
+      ל־1600 פיקסלים רוחב. עמודת ההגדלה היא כל הסיפור.
+    </p>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>רקע</th><th>מה יש</th><th>הגדלה בפועל</th><th>מצב</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>המטבח</td><td class="n">372 × 450</td><td class="n bad">×4.30</td><td>מטושטש. הכי גרוע במשחק</td></tr>
+          <tr><td>הקיוסק</td><td class="n">518 × 476</td><td class="n bad">×3.09</td><td>מטושטש</td></tr>
+          <tr><td>חדר השינה</td><td class="n">543 × 417</td><td class="n bad">×2.95</td><td>מטושטש</td></tr>
+          <tr><td>היציע</td><td class="n">1017 × 508</td><td class="n">×1.57</td><td>חיתוך מלוח קונספט</td></tr>
+          <tr><td>אוסישקין × 2</td><td class="n">~1020 × 450</td><td class="n">×1.56</td><td>חיתוך מלוח קונספט</td></tr>
+          <tr><td>המגרש</td><td class="n">1068 × 530</td><td class="n">×1.50</td><td>חיתוך מלוח קונספט</td></tr>
+          <tr><td>הסלון</td><td class="n">1105 × 737</td><td class="n">×1.45</td><td>חיתוך מלוח קונספט</td></tr>
+          <tr><td>המנהרה</td><td class="n">1111 × 543</td><td class="n">×1.44</td><td>חיתוך מלוח קונספט</td></tr>
+          <tr><td>ההתגלות</td><td class="n">1348 × 470</td><td class="n">×1.19</td><td>חיתוך מלוח קונספט</td></tr>
+          <tr><td>הרחוב · הדרך · שער 7</td><td class="n">1600</td><td class="n good">×1.00</td><td><strong>מצויר לצורך. זה הרף</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="why">
+      <strong>11 מתוך 15 הרקעים הם עדיין חיתוכים מלוחות קונספט.</strong> ארבעה שציירת
+      בספטמבר הם היחידים שנראים כמו משחק. לסגור את זה לא דורש שורת קוד אחת: אני מחליף
+      קובץ ומכייל מחדש את רצועת ההליכה.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ shared preamble ── -->
+  <section class="band">
+    <div class="head"><span class="num">01</span><h2>הבלוק שנדבק לתחילת כל פרומט</h2></div>
+    <p>
+      זה מה שגורם לקבצים ליפול ישר לתוך המנוע. העתק אותו פעם אחת ושמור בצד — כל פרומט
+      של רקע מתחיל בו.
+    </p>
+
+    <div class="prompt">
+      <header><span>Shared preamble · paste first</span><button class="copy" type="button">Copy</button></header>
+      <pre>STYLE: photorealistic painted matte background, cinematic adventure-game art.
+South Tel Aviv / Jaffa, 1986. Sun-bleached plaster, iron shutters, dust, worn
+concrete, exposed wiring, aged paint. Hand-painted texture — not photography,
+not a 3D render, not an illustration, not a cartoon.
+
+CRITICAL — NO PEOPLE. Not one figure, not a silhouette, not the shadow of a
+person. The characters are separate sprites the engine places on top. A painted
+person in a background can never move, and every one of them has to be erased
+by hand before the file can be used.
+
+CRITICAL — NO TEXT. No lettered signs, no posters with words, no numbers, no
+readable graffiti. Shapes and colour only. Every word in this game comes from a
+translation file; a painted Hebrew sign that says the wrong thing cannot be
+fixed without repainting the frame.
+
+COLOUR: cooler and flatter than looks right. The engine lays its own warm grade
+and vignette over the top, so a frame that looks perfect on its own comes out
+orange in the game. Push the whites toward grey, keep contrast moderate, leave
+the shadows open.
+
+NO YELLOW. None at all — no gold, no mustard, no hi-vis, no yellow-green.
+Yellow is the rival's colour and the build fails on a single yellow pixel. Warm
+tones must be brick, rust, terracotta or ochre-brown, never yellow.
+
+OUTPUT: PNG, exactly the pixel size stated below, no border, no frame, no
+watermark, full bleed to all four edges.</pre>
+    </div>
+
+    <div class="prompt">
+      <header><span>Negative prompt · every backdrop</span><button class="copy" type="button">Copy</button></header>
+      <pre>people, person, figure, silhouette, crowd, human, text, letters, words, signage,
+watermark, logo, frame, border, vignette, yellow, gold, mustard, HDR,
+oversaturated, lens flare, modern cars, modern phones, air conditioners,
+satellite dishes, plastic furniture, 3D render, cartoon, anime, illustration,
+sketch</pre>
+    </div>
+
+    <div class="note">
+      <strong>הדבר החשוב טכנית — רצועת ההליכה.</strong> לכל חדר יש פס אופקי שבו הילד הולך,
+      והפס הזה חייב להיות <strong>רצפה פנויה</strong>: בלי רהיטים, בלי מדרגות, בלי חפצים.
+      אם משהו עומד שם — או שהילד עובר דרכו, או שהוא לא מגיע לדלת. בכל פרומט למטה כתוב
+      במפורש איזה חלק מגובה התמונה הוא הפס.
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ backdrops ── -->
+  <section class="band">
+    <div class="head"><span class="num">02</span><h2>הרקעים, לפי סדר דחיפות</h2></div>
+    <p>עשרה קבצים. הראשונים שלושה הם המטושטשים; אחריהם לפי כמה הם נראים על המסך.</p>
+
+    <!-- kitchen -->
+    <div class="asset">
+      <div class="top"><h3>המטבח</h3><span class="file">kitchen.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 1152</dd></div>
+        <div><dt>Aspect</dt><dd>16 : 9</dd></div>
+        <div><dt>Walk band</dt><dd>0.76 → 0.95</dd></div>
+        <div><dt>Priority</dt><dd>1 · ×4.3 blur</dd></div>
+      </div>
+      <p class="why">הקובץ הכי גרוע במשחק. כרגע 372 פיקסלים רוחב, נמתח פי ארבע וחצי.</p>
+      <div class="prompt">
+        <header><span>kitchen · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>A small working-class kitchen in a Jaffa flat, 1986. Straight-on three-quarter
+view from just inside the doorway, camera at an adult's chest height, wide lens.
+
+LAYOUT, as fractions of the frame width, right to left:
+· 0.00–0.22  the doorway back to the living room: a plain wooden frame, open,
+             a darker room beyond it.
+· 0.22–0.55  the work counter — chipped formica top, an enamel sink under a
+             small window, a dish rack, a kettle, a tin of oil, a bread board.
+· 0.55–0.80  a tall pale-green metal cabinet, and an old fridge with a rounded
+             top and a chrome handle.
+· 0.80–1.00  a small square table against the wall under an oilcloth cover in
+             faded red-and-white check, two mismatched wooden chairs pushed in,
+             a folded newspaper lying on it.
+
+VERTICAL: floor tiles from 0.76 to 1.00 of the frame height — small octagonal
+terrazzo, worn, slightly uneven. Walls above: pale institutional green to waist
+height, whitewash above, the join line visible.
+
+WALK BAND: the strip from 0.76 to 0.95 of the frame height must be CLEAR FLOOR
+across the full width. Nothing standing in it. The table and chairs sit above
+0.76, against the wall, not out in the room.
+
+LIGHT: late morning through the window over the sink. Cool and flat, no direct
+sun patch on the floor. One bare bulb hanging, switched off.
+
+PERIOD DETAIL: a paraffin heater in a corner, a wall-mounted bottle opener, a
+plastic soda siphon, a wire basket of eggs, a calendar page with no readable
+text, a small tiled splashback.</pre>
+      </div>
+    </div>
+
+    <!-- kiosk -->
+    <div class="asset">
+      <div class="top"><h3>הקיוסק</h3><span class="file">kiosk.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 1152</dd></div>
+        <div><dt>Aspect</dt><dd>16 : 9</dd></div>
+        <div><dt>Walk band</dt><dd>0.84 → 0.96</dd></div>
+        <div><dt>Priority</dt><dd>2 · ×3.1 blur</dd></div>
+      </div>
+      <p class="why">המצלמה נמוכה בכוונה — כל הסצנה היא ילד בן שמונה מול דלפק שהוא בקושי רואה מעליו.</p>
+      <div class="prompt">
+        <header><span>kiosk · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>The INSIDE of a small neighbourhood kiosk in Jaffa, 1986, seen from where a
+customer stands. Camera at a CHILD'S eye height — low, about 1.2 metres —
+looking slightly up at the counter. The low camera is the point of the frame.
+
+LAYOUT, right to left:
+· 0.00–0.18  the doorway out to the street, bright daylight beyond, the edge of
+             a striped awning visible.
+· 0.18–0.72  the counter running across the frame: a scratched wooden top at
+             about 0.62 of the frame height, a glass-fronted case beneath with
+             sweets in open boxes, a set of scales, a cigarette rack behind,
+             a small till.
+· 0.72–1.00  shelving to the ceiling — glass soda bottles in wooden crates,
+             tinned goods, cigarette cartons, a stack of newspapers.
+
+VERTICAL: worn stone floor from 0.84 to 1.00.
+
+WALK BAND: 0.84 to 0.96 of the frame height, clear floor across the full width.
+The counter must END above it — the child walks in FRONT of the counter.
+
+LIGHT: dim inside, one fluorescent tube overhead giving flat cool light, and
+strong daylight spilling in from the doorway creating the only bright area.
+The contrast between those two is the whole picture.
+
+PERIOD DETAIL: a wall telephone, a fly strip, a crate of empty bottles on the
+floor against the counter base, a rubber mat, an ice-cream chest freezer with
+a rounded lid, folded newspapers tied with string.</pre>
+      </div>
+    </div>
+
+    <!-- bedroom -->
+    <div class="asset">
+      <div class="top"><h3>חדר השינה</h3><span class="file">bedroom.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 1152</dd></div>
+        <div><dt>Aspect</dt><dd>16 : 9</dd></div>
+        <div><dt>Walk band</dt><dd>0.84 → 0.97</dd></div>
+        <div><dt>Priority</dt><dd>3 · ×3.0 blur</dd></div>
+      </div>
+      <p class="why">
+        החדר הראשון במשחק — הדבר הראשון שמישהו רואה. שים לב לריבוע הריק על הקיר:
+        הפוסטר של סיני הוא נכס נפרד שהמשחק מניח שם.
+      </p>
+      <div class="prompt">
+        <header><span>bedroom · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>A boy's bedroom in a small Jaffa flat, 1986, shared with nobody. Straight-on
+view from the doorway, camera at a child's standing eye height, wide lens.
+This is the first room of the game and the first thing anyone sees.
+
+LAYOUT, right to left:
+· 0.00–0.16  the bedroom door, open, hallway beyond.
+· 0.16–0.42  a single iron-framed bed against the wall, a grey blanket pulled
+             up badly, one flat pillow, a folded football shirt on the end.
+· 0.42–0.60  a small wooden chest of drawers, top drawer very slightly open,
+             a tin box and a comb on top.
+· 0.60–0.78  a window, shutter half down, slats casting soft striped light,
+             a strip of street visible through the gap.
+· 0.78–1.00  a wall with a BARE PATCH where a poster goes. Leave a clean empty
+             rectangle of wall about 0.20 wide and 0.28 tall, centred at about
+             0.88 across and 0.30 down. THE POSTER IS A SEPARATE ASSET AND THE
+             GAME PLACES IT THERE. Do not paint one.
+
+VERTICAL: worn terrazzo floor from 0.82 to 1.00, a small threadbare rug.
+
+WALK BAND: 0.84 to 0.97 of the frame height, clear floor across the full width.
+The bed and the drawers sit against the wall above it.
+
+LIGHT: early Saturday morning. Shutter light in soft horizontal bars across the
+floor and the bed. Cool, quiet, blue-grey shadows. Nothing dramatic.
+
+PERIOD DETAIL: a school satchel on the floor by the drawers, worn trainers side
+by side, a plastic football under the bed with only a curve showing, a chipped
+enamel light switch, a crack in the plaster.</pre>
+      </div>
+    </div>
+
+    <!-- living -->
+    <div class="asset">
+      <div class="top"><h3>הסלון</h3><span class="file">living.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 1152</dd></div>
+        <div><dt>Aspect</dt><dd>16 : 9</dd></div>
+        <div><dt>Walk band</dt><dd>0.74 → 0.97</dd></div>
+        <div><dt>Priority</dt><dd>4</dd></div>
+      </div>
+      <p class="why">הכורסה היא החפץ הכי חשוב בפריים. כל הפרק חוזר אליה בסוף.</p>
+      <div class="prompt">
+        <header><span>living · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>The living room of a small working-class Jaffa flat, 1986. Straight-on view
+from the hallway, camera at adult chest height, wide lens.
+
+LAYOUT, right to left:
+· 0.00–0.14  the way back to the bedroom and kitchen — a dark hallway opening.
+· 0.14–0.44  a low sofa under a woven brown-and-rust cover, two flattened
+             cushions, a folded blanket over one arm.
+· 0.44–0.60  a heavy armchair angled slightly into the corner, clearly the one
+             chair in the house that belongs to one person, an ashtray on a
+             stool beside it. THIS CHAIR MATTERS — the whole chapter comes back
+             to it. Make it the most specific object in the frame.
+· 0.60–0.76  a low wooden table under a lace cloth, a radio with a fabric
+             speaker grille and two round dials, a glass ashtray.
+· 0.76–1.00  the front door of the flat: solid wood, a small frosted-glass
+             panel high up, a metal handle, a key on a nail beside it. Bright
+             daylight through the frosted panel — this door has to read as the
+             way OUT from across the room.
+
+VERTICAL: floor from 0.74 to 1.00, patterned terrazzo tiles.
+
+WALK BAND: 0.74 to 0.97 of the frame height, clear floor across the full width.
+All furniture sits above the line or hard against the walls.
+
+LIGHT: mid-morning. Flat, even, cool. The brightest thing in the frame is the
+frosted panel of the front door.
+
+PERIOD DETAIL: a framed photograph with no readable content, a rug worn through
+in a track between the sofa and the door, an electric fan on the floor, a
+bookshelf with a few books and a stack of folded newspapers.</pre>
+      </div>
+    </div>
+
+    <!-- stand -->
+    <div class="asset">
+      <div class="top"><h3>היציע · בלומפילד מבפנים</h3><span class="file">stand.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2560 × 985</dd></div>
+        <div><dt>Aspect</dt><dd>2.6 : 1</dd></div>
+        <div><dt>Walk band</dt><dd>0.86 → 0.97</dd></div>
+        <div><dt>Priority</dt><dd>5 · הפריים החשוב ביותר</dd></div>
+      </div>
+      <p class="why">
+        זה הפריים שכל הפרק הולך לקראתו — דקה 86 קורית כאן. גדול יותר בכוונה.
+        זה גם החריג היחיד לכלל "בלי אנשים", והחריגה מוגדרת במדויק.
+      </p>
+      <div class="prompt">
+        <header><span>stand · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>Inside Bloomfield Stadium, 1986, from the terrace at gate 7 — standing in the
+crowd at a CHILD'S eye height, looking out over the pitch. Late afternoon.
+This is the payoff shot of the entire chapter.
+
+CRITICAL EXCEPTION TO "NO PEOPLE": this frame needs a crowd, because a stadium
+without one is a photograph of concrete. BUT the crowd is the FAR side of the
+ground and the middle distance ONLY — small, blurred, impressionistic, never
+individual faces — and there is NOTHING in the near foreground. The near
+terrace steps must be EMPTY: that is where the game stands the child and his
+father, and they are separate sprites.
+
+LAYOUT, as fractions of the frame height:
+· 0.00–0.16  the roof edge of the far stand, floodlight pylons breaking the
+             skyline, a pale late-afternoon sky going warm at the edges.
+· 0.16–0.42  the far stand, packed — a wash of red and cream and skin tones at
+             distance, banners as blocks of colour with NO readable text, smoke
+             from a flare drifting across.
+· 0.42–0.72  the pitch: worn green, more brown than green at the ends, faded
+             markings, seen at an angle from behind one goal.
+· 0.72–0.86  the near touchline, an advertising hoarding with BLANK panels, a
+             photographers' bench, the perimeter wall.
+· 0.86–1.00  THE NEAR TERRACE, EMPTY. Concrete steps, a steel crush barrier
+             running horizontally at about 0.90, litter, a scarf tied to it.
+
+WALK BAND: 0.86 to 0.97, empty concrete terracing across the full width. The
+crush barrier is the only thing in it and it must run horizontally so a child
+can stand behind it.
+
+LIGHT: 17:40. Sun low behind the far stand, so the far side is rim-lit and the
+near terrace is in shadow. The pitch catches the last of the light. Cool shadow
+in the foreground, warm light across the grass. Floodlights on, not dominant.
+
+MOOD: enormous. The frame should make an eight-year-old feel small.</pre>
+      </div>
+    </div>
+
+    <!-- corridor -->
+    <div class="asset">
+      <div class="top"><h3>המנהרה</h3><span class="file">corridor.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 787</dd></div>
+        <div><dt>Aspect</dt><dd>2.6 : 1</dd></div>
+        <div><dt>Walk band</dt><dd>0.60 → 0.94</dd></div>
+        <div><dt>Priority</dt><dd>6</dd></div>
+      </div>
+      <p class="why">הפתח בקצה חייב להיות שרוף לגמרי — ההליכה לכיוון האור היא כל הסצנה.</p>
+      <div class="prompt">
+        <header><span>corridor · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>The terrace access passage at Bloomfield, 1986 — a dark concrete tunnel seen
+from inside, looking OUT toward the light of the stand. Camera at a child's eye
+height, walking through.
+
+LAYOUT: the passage runs away from the camera to a bright opening centred at
+about 0.52 across, occupying 0.30 to 0.78 of the frame height. Everything else
+is dark concrete: rough shuttered walls, a low ceiling with a conduit and two
+caged bulbs, a puddle on the floor reflecting the opening.
+
+The opening at the end must be BLOWN OUT — pure light, almost no detail — so
+that walking toward it reads as walking into something.
+
+VERTICAL: floor from 0.58 to 1.00, wet concrete worn smooth down the middle.
+
+WALK BAND: 0.60 to 0.94 of the frame height, clear floor down the middle.
+
+LIGHT: two dim caged bulbs and the enormous overexposed opening. Nearly
+monochrome — cold grey concrete — with the light at the end the only warm
+thing in the frame.
+
+PERIOD DETAIL: a steel handrail along one wall, a drain grate, chipped paint at
+knee height where thousands of people have brushed past, folded crush barriers
+stacked against a wall.</pre>
+      </div>
+    </div>
+
+    <!-- reveal -->
+    <div class="asset">
+      <div class="top"><h3>ההתגלות</h3><span class="file">reveal.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2560 × 985</dd></div>
+        <div><dt>Aspect</dt><dd>2.6 : 1</dd></div>
+        <div><dt>Walk band</dt><dd>אין — כרטיס מעבר</dd></div>
+        <div><dt>Priority</dt><dd>7</dd></div>
+      </div>
+      <p class="why">לא מיקום — כרטיס שמתנגן חמש שניות ומתקרב לאט. אף אחד לא הולך בו.</p>
+      <div class="prompt">
+        <header><span>reveal · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>Bloomfield Stadium 1986 seen for the first time by a child stepping out of a
+dark tunnel into the stand. This is a TRANSITION CARD, not a place — it plays
+for five seconds and slowly scales up. Nobody walks in it, so there is no walk
+band and no empty-floor requirement.
+
+Compose it like the first frame of a film: the mouth of the tunnel as a dark
+frame around the edges of the picture, and the ground exploding with light in
+the middle. Crowd, colour, smoke, floodlight pylons, the pitch below.
+
+Crowd in the middle and far distance only, impressionistic, no faces, no text
+on any banner. The dark tunnel frame occupies the outer 0.12 of every edge.
+
+LIGHT: the strongest contrast in the whole game. Near-black at the edges,
+blazing at the centre.
+
+MOOD: the moment the noise arrives.</pre>
+      </div>
+    </div>
+
+    <!-- pitch -->
+    <div class="asset">
+      <div class="top"><h3>המגרש</h3><span class="file">pitch.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 787</dd></div>
+        <div><dt>Aspect</dt><dd>2.6 : 1</dd></div>
+        <div><dt>Walk band</dt><dd>0.68 → 0.94</dd></div>
+        <div><dt>Priority</dt><dd>8</dd></div>
+      </div>
+      <div class="prompt">
+        <header><span>pitch · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>A rough neighbourhood football pitch behind the buildings in Jaffa, 1986. Not a
+real pitch — a beaten patch of dirt and gravel between apartment blocks. Camera
+at an adult's eye height, standing at one edge, wide lens.
+
+LAYOUT, right to left:
+· 0.00–0.20  the gap between two buildings you arrive through, deep shadow.
+· 0.20–0.70  the playing surface: packed dirt, patches of gravel, tufts of dry
+             grass at the edges, tyre-worn tracks, one bald area where a
+             goalmouth clearly is.
+· 0.55–0.72  a goal made of scaffolding poles with no net, leaning slightly.
+· 0.70–1.00  a low breeze-block wall at about waist height with chain-link
+             above it, apartment balconies rising behind, laundry lines.
+
+VERTICAL: ground from 0.66 to 1.00. Horizon and buildings above.
+
+WALK BAND: 0.68 to 0.94 of the frame height, clear open ground across the full
+width. The goal sits at the far edge of it, not in the middle of the walk.
+
+LIGHT: early afternoon, high sun but overcast-bright rather than harsh —
+diffuse, cool, soft short shadows. No hard sun patches.
+
+PERIOD DETAIL: two stones marking a goal on the near side, a punctured ball
+against the wall, a bicycle leaning on the fence, an oil drum, dry weeds along
+the base of the wall, a faded painted line nobody has repainted in ten years.</pre>
+      </div>
+    </div>
+
+    <!-- ground -->
+    <div class="asset">
+      <div class="top"><h3>בלומפילד מבחוץ, רחב</h3><span class="file">ground.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 787</dd></div>
+        <div><dt>Aspect</dt><dd>2.6 : 1</dd></div>
+        <div><dt>Walk band</dt><dd>0.82 → 0.96</dd></div>
+        <div><dt>Priority</dt><dd>9</dd></div>
+      </div>
+      <p class="why">פנסי התאורה הם הדבר החשוב בפריים הזה. תוציא אותם נכון — כל השאר יכול להיות משוער.</p>
+      <div class="prompt">
+        <header><span>ground · paste after the preamble</span><button class="copy" type="button">Copy</button></header>
+        <pre>Bloomfield Stadium from outside, 1986, seen from across the road — the whole
+ground in one frame, not the gate. Late afternoon.
+
+THE FLOODLIGHT PYLONS ARE THE MOST IMPORTANT THING IN THIS PICTURE. Four
+lattice steel towers, tall and thin, each carrying a rectangular head of lamps
+in rows. Get those right and everything else can be approximate.
+
+LAYOUT: the stadium occupies 0.15 to 0.80 of the frame height and runs across
+the full width — a low concrete bowl with a red-painted roof edge, pylons
+rising well above it at roughly 0.18, 0.38, 0.62 and 0.84 across.
+Below 0.80: the road, a pavement, a low wall, parked cars of the period.
+
+WALK BAND: 0.82 to 0.96 of the frame height, clear pavement across the width.
+
+LIGHT: low sun from one side, long shadows across the road, the pylons catching
+the last light on their west faces. Sky pale and cooling.
+
+PERIOD DETAIL: crush barriers stacked against a wall, a bus stop, a kiosk with
+its shutter down, weeds through the pavement cracks, a hand-painted wall with
+no readable text.</pre>
+      </div>
+    </div>
+
+    <!-- ussishkin -->
+    <div class="asset">
+      <div class="top"><h3>אוסישקין — חוץ ופנים</h3><span class="file">ussExt.png · ussHall.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 787 each</dd></div>
+        <div><dt>Aspect</dt><dd>2.6 : 1</dd></div>
+        <div><dt>Walk band</dt><dd>0.80 → 0.95 · 0.78 → 0.95</dd></div>
+        <div><dt>Priority</dt><dd>10</dd></div>
+      </div>
+      <p class="why">אגף ההנצחה. הוא צריך להרגיש שקט וקצת יותר מדי ריק — זה לא פגם, זה הכוונה.</p>
+      <div class="prompt">
+        <header><span>ussExt + ussHall · two files</span><button class="copy" type="button">Copy</button></header>
+        <pre>(A) ussExt — the outside of a small municipal sports hall in Tel Aviv, 1970s
+build, seen from the street. Flat concrete façade, a row of high windows in
+metal frames, double doors under a small canopy, a few steps up. A tarmac
+forecourt below with painted lines nobody maintains. Cypress trees at one edge.
+
+WALK BAND: 0.80 to 0.95 of the frame height, clear tarmac across the width.
+The steps and doors sit above it.
+
+(B) ussHall — the INSIDE of the same hall: a basketball court under a barrel
+roof with exposed steel trusses and hanging lamps. Worn wooden floor with faded
+painted lines. Wooden fold-out bleachers along one side, mostly folded away.
+Backboard and hoop at the far end. High windows letting in flat daylight.
+
+WALK BAND: 0.78 to 0.95 of the frame height, clear floor across the width.
+
+LIGHT for both: flat, cool, institutional. Nothing dramatic. These are the
+memorial wing and they should feel quiet and slightly too empty.</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ figures ── -->
+  <section class="band">
+    <div class="head"><span class="num">03</span><h2>פוגי — שלושה קבצים</h2></div>
+    <p>
+      הכי דחוף אחרי המטבח. הוא מהלך היום על שני פריימים בלולאה — זה עובד ולא נראה שבור,
+      אבל שמונה פריימים זה ההבדל בין דמות שזזה לילד שהולך.
+    </p>
+
+    <div class="note">
+      <strong>רקע ירוק לכל הגיליונות: <span style="font-family:'Courier Prime',monospace;direction:ltr">#00B140</span></strong>
+      — שטוח לגמרי, בלי גרדיאנט, בלי ויניאט, בלי צל על הירוק.
+      <strong>רווח נקי של 40 פיקסלים לפחות בין דמות לדמות</strong> — הסקריפט שלי חותך על
+      הרווחים, ואם יד של אחד נוגעת בכתף של השני, שניהם יוצאים דמות אחת.
+    </div>
+
+    <div class="asset">
+      <div class="top"><h3>גיליון הליכה — 8 פריימים</h3><span class="file">pogi-walk.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2560 × 640</dd></div>
+        <div><dt>Rows</dt><dd>1 × 8 frames</dd></div>
+        <div><dt>Screen</dt><dd>#00B140 flat</dd></div>
+        <div><dt>Attach</dt><dd>pogi-boy.png</dd></div>
+      </div>
+      <div class="prompt">
+        <header><span>pogi-walk · attach the 1986 Pogi sheet as reference</span><button class="copy" type="button">Copy</button></header>
+        <pre>Character sheet on a flat green screen #00B140, no gradient.
+
+The same eight-year-old boy in all eight frames — and he MUST be the boy in the
+attached `pogi.png` and `pogi-side.png`: dark straight-curly hair over the
+forehead, red t-shirt with the small white club badge on the chest, long blue
+jeans, white trainers with green stripes. NOT shorts, NOT plain shirt, NOT
+socks — the first delivery (3.9.2026) drew a different, younger boy in shorts
+and was shelved for that reason alone. South Tel Aviv, 1986. Photorealistic
+painted style matching the attached reference of the same character.
+
+EIGHT FRAMES OF A WALK CYCLE, SEEN FROM THE SIDE, WALKING TO THE LEFT.
+Full body, feet included, head to toe inside the frame, all eight at exactly
+the same height and the same distance from camera.
+
+The eight poses in order:
+1. contact — left foot forward and flat, right foot back on the toe
+2. down    — weight over the left leg, body at its lowest, right foot lifting
+3. pass    — right leg swinging through beside the left, body rising
+4. up      — body at its highest, right foot about to reach forward
+5. contact — right foot forward and flat, left foot back on the toe
+6. down    — weight over the right leg, body at its lowest
+7. pass    — left leg swinging through
+8. up      — body at its highest, left foot about to reach forward
+
+Arms swing opposite to the legs. The head bobs slightly with the body. This is
+a child's walk — a little loose, a little fast, not a march.
+
+Even 40px green gaps between frames. Nothing overlapping.</pre>
+      </div>
+    </div>
+
+    <div class="asset">
+      <div class="top"><h3>פוגי נער — 13–15</h3><span class="file">pogi-teen.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 1024</dd></div>
+        <div><dt>Rows</dt><dd>2 × 7 poses</dd></div>
+        <div><dt>Screen</dt><dd>#00B140 flat</dd></div>
+        <div><dt>Attach</dt><dd>pogi-boy.png</dd></div>
+      </div>
+      <p class="why">הגיל החסר בין הילד לנער־הצעיר. שלב ב׳ נופל בדיוק שם.</p>
+      <div class="prompt">
+        <header><span>pogi-teen · attach the 1986 Pogi sheet</span><button class="copy" type="button">Copy</button></header>
+        <pre>Character sheet on a flat green screen #00B140.
+
+The SAME boy as the attached reference, now thirteen or fourteen. Taller,
+thinner, longer limbs, the face lengthening, hair still dark and curly but
+longer and deliberately untidy. Tel Aviv, early 1990s. He must be recognisably
+the same person as the eight-year-old — same eyes, same jaw.
+
+Clothes: a faded red club t-shirt or a plain long-sleeve, jeans or tracksuit
+bottoms, cheap trainers. Nothing branded, nothing with readable text.
+
+ROW 1 — seven standing poses, full body, head to toe:
+front · three-quarter · side facing left · back · walking, side ·
+hands in pockets with shoulders up · arms folded, chin down
+
+ROW 2 — seven more:
+sitting on a wall with feet hanging · leaning on a wall, one foot up ·
+crouched, elbows on knees · shouting with both arms up · a scarf held above his
+head in two hands · looking back over his shoulder · walking away, back view
+
+Even 40px green gaps. All figures the same height and camera distance.</pre>
+      </div>
+    </div>
+
+    <div class="asset">
+      <div class="top"><h3>לוח פנים לתיבת הדיאלוג</h3><span class="file">pogi-faces.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>1536 × 512</dd></div>
+        <div><dt>Rows</dt><dd>1 × 6 portraits</dd></div>
+        <div><dt>Ground</dt><dd>#EDE6D8 cream</dd></div>
+        <div><dt>Attach</dt><dd>pogi-boy.png</dd></div>
+      </div>
+      <p class="why">
+        הלוחות האלה הם היחידים שלא על ירוק — הם נשארים על רקע קרם ולא נחתכים.
+        כרגע כשהילד מדבר, התיבה מציגה את הדמות המצוירת הישנה.
+      </p>
+      <div class="prompt">
+        <header><span>pogi-faces · cream ground, NOT green screen</span><button class="copy" type="button">Copy</button></header>
+        <pre>Portrait plate sheet. NOT a green screen — a plain warm cream background
+#EDE6D8, flat, no texture.
+
+Six head-and-shoulders portraits of the SAME eight-year-old boy from the
+attached reference, painted in the same photorealistic style. The head fills
+about 70% of each cell's height. Shoulders visible. Warm cream behind each.
+
+The six: neutral · half-smile · wide-eyed, surprised · shouting with joy ·
+looking down, disappointed · three-quarter, looking off to the side.
+
+Even 40px gaps between portraits.</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ missing characters ── -->
+  <section class="band">
+    <div class="head"><span class="num">04</span><h2>הדמויות שהקוד מכיר ואין להן קובץ</h2></div>
+    <p>
+      46 שמות ב־<span style="font-family:'Courier Prime',monospace;direction:ltr">PLANNED_FIGURE</span>
+      מחכים לקבצים. הם נחתכו פעם מלוחות שלא הגיעו למאגר. <strong>עדיף לצייר אותם מחדש
+      בסגנון ספטמבר</strong> — עירוב של חיתוך מלוח ישן עם דמות מספטמבר הוא בדיוק הפער
+      שפוגי בא לסגור.
+    </p>
+
+    <div class="asset">
+      <div class="top"><h3>משה סיני</h3><span class="file">sinai.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 1024</dd></div>
+        <div><dt>Rows</dt><dd>2 × 7 — kit, civilian</dd></div>
+        <div><dt>Screen</dt><dd>#00B140 flat</dd></div>
+        <div><dt>Used in</dt><dd>הפוסטר בחדר</dd></div>
+      </div>
+      <div class="prompt">
+        <header><span>sinai</span><button class="copy" type="button">Copy</button></header>
+        <pre>Character sheet on a flat green screen #00B140.
+
+An Israeli footballer of the mid-1980s, late twenties, athletic, dark hair,
+moustache, in a plain RED and white football kit of the period — short shorts,
+crew socks, low leather boots. No club crest, no sponsor, no number, no text of
+any kind. Photorealistic painted style matching the attached references.
+
+ROW 1 — in kit, full body head to toe, seven poses:
+standing front · standing three-quarter · side · back · running with the ball ·
+striking the ball · arms raised in celebration
+
+ROW 2 — the same man in 1986 CIVILIAN clothes, seven poses:
+standing front, open shirt and slacks · three-quarter, hands on hips ·
+side, walking · leaning against something · pointing · seated · back view
+
+Even 40px green gaps. All figures the same height.</pre>
+      </div>
+    </div>
+
+    <div class="asset">
+      <div class="top"><h3>שלום תקוה</h3><span class="file">tikva.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 1024</dd></div>
+        <div><dt>Rows</dt><dd>2 × 7 — home, away</dd></div>
+        <div><dt>Screen</dt><dd>#00B140 flat</dd></div>
+        <div><dt>Attach</dt><dd>sinai.png</dd></div>
+      </div>
+      <p class="why">חייב להיראות אדם אחר מסיני לגמרי — אחרת שתי הדמויות מתמזגות על המסך.</p>
+      <div class="prompt">
+        <header><span>tikva · attach the Sinai sheet so they differ</span><button class="copy" type="button">Copy</button></header>
+        <pre>Character sheet on a flat green screen #00B140.
+
+A different Israeli footballer of the mid-1980s — leaner, clean-shaven, lighter
+build, straighter hair. He must be clearly a DIFFERENT PERSON from the attached
+reference: different face, different build, different hair.
+
+ROW 1 — home kit, red and white, seven poses:
+standing front · three-quarter · side · back · running with the ball ·
+striking the ball · arms raised
+
+ROW 2 — away kit, white with red trim, seven poses, the same set, plus one
+with a captain's armband.
+
+No crest, no sponsor, no number, no text of any kind.
+Even 40px green gaps. All figures the same height.</pre>
+      </div>
+    </div>
+
+    <div class="asset">
+      <div class="top"><h3>פוגי חייל — 1996</h3><span class="file">pogi-idf-poses.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>2048 × 1024</dd></div>
+        <div><dt>Rows</dt><dd>2 × 7</dd></div>
+        <div><dt>Screen</dt><dd>#00B140 flat</dd></div>
+        <div><dt>Attach</dt><dd>pogi-army.png</dd></div>
+      </div>
+      <div class="prompt">
+        <header><span>pogi-idf-poses · attach the existing soldier sheet</span><button class="copy" type="button">Copy</button></header>
+        <pre>Character sheet on a flat green screen #00B140.
+
+The same young man as the attached soldier reference, an Israeli conscript,
+1996. Olive-green fatigues, boots. No insignia, no unit markings, no text,
+no flags.
+
+ROW 1: standing at ease · standing to attention · side · back · marching ·
+with a kitbag over one shoulder · sitting on a crate
+
+ROW 2: tired, sitting with his head back · shouting · crouched, tying a
+bootlace · walking away with the kitbag · leaning on a wall · looking at
+something in his hand · standing with a beret in his hand
+
+IMPORTANT: no weapons in any frame. No rifle, no holster, no ammunition.
+Even 40px green gaps. All figures the same height.</pre>
+      </div>
+    </div>
+
+    <div class="asset">
+      <div class="top"><h3>אופיר בשנות התשעים</h3><span class="file">ofir90.png</span></div>
+      <div class="spec">
+        <div><dt>Size</dt><dd>1536 × 512</dd></div>
+        <div><dt>Rows</dt><dd>1 × 7</dd></div>
+        <div><dt>Screen</dt><dd>#00B140 flat</dd></div>
+        <div><dt>Attach</dt><dd>ofir.png</dd></div>
+      </div>
+      <p class="why">הגילוח הצבאי הוא התכונה הקבועה שלו והוא לא משתנה — זה קאנון והבדיקות אוכפות אותו.</p>
+      <div class="prompt">
+        <header><span>ofir90 · attach the 1986 Ofir cut-out</span><button class="copy" type="button">Copy</button></header>
+        <pre>Character sheet on a flat green screen #00B140.
+
+The same character as the attached 1986 reference, now about twenty. STILL THE
+BUZZ CUT — this is his one fixed feature and it must not change. Taller, heavier
+in the shoulders. Early-90s Tel Aviv clothes: a plain tracksuit top or a
+t-shirt, jeans. Nothing branded, no readable text.
+
+Seven poses, full body head to toe:
+standing front · three-quarter · side · back · sitting on a wall ·
+arms folded · walking away
+
+Even 40px green gaps. All figures the same height.</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════ stage b ── -->
+  <section class="band">
+    <div class="head"><span class="num">05</span><h2>שלב ב׳ — 1990, אם יש לך זמן</h2></div>
+    <p>
+      הפרק הבא הוא הילד בגיל 12. הוא צריך את <strong>אותם מקומות, ארבע שנים אחרי</strong> —
+      ובאותה מסגרת בדיוק, כי המשחק מהלך ילד באותן קואורדינטות.
+    </p>
+    <div class="prompt">
+      <header><span>street 1990 · attach street.png as the reference</span><button class="copy" type="button">Copy</button></header>
+      <pre>THE SAME STREET as the attached 1986 reference frame — same buildings, same
+kiosk, same doorway, same camera position, same lens, same framing — but four
+years later, in 1990.
+
+WHAT CHANGED: the kiosk has a new metal shutter and fresh paint. One building
+has been re-rendered and is now a different shade. There is a satellite dish on
+one balcony. The cars at the kerb are early-90s models. The wiring is messier.
+A wall that was blank now carries layers of torn posters, no readable text.
+The tree is noticeably bigger.
+
+WHAT MUST NOT CHANGE: the position of every doorway, the kiosk opening, the
+alley, and the road east. The game walks a child through the same coordinates.
+
+Same size as the reference: 2048 × 787.</pre>
+    </div>
+    <p class="why">אותו רעיון בדיוק, אותה מסגרת, גם ל: <strong>הסלון</strong>, <strong>שער 7</strong> ו<strong>המטבח</strong> ב־1990.</p>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════ delivery ── -->
+  <section class="band">
+    <div class="head"><span class="num">06</span><h2>איך לשלוח</h2></div>
+    <ul>
+      <li><strong>PNG בלבד</strong>, ברזולוציה המקורית. לא JPG — הצהוב חוזר בדחיסה, וזה כלל 27 במאגר.</li>
+      <li><strong>שם קובץ באנגלית, בלי רווחים</strong> — בדיוק כמו שכתוב בכל כרטיס למעלה.</li>
+      <li><strong>אם יצאו כמה גרסאות, שלח את כולן.</strong> אני בוחר לפי איך שהן נראות <em>אחרי</em> הגרייד של המנוע, וזה לא תמיד היפה ביותר לבד.</li>
+      <li><strong>אל תעשה תיקון צבע.</strong> הכול עובר אצלי דרך אותו צינור — הסרת צהוב, פלטה, הסרת שוליים — ותמונה שכבר תוקנה עוברת אותו פעמיים.</li>
+    </ul>
+
+    <div class="note">
+      <strong>ומה אני עושה בזמן הזה:</strong> הכול כאן הוא החלפת קובץ. אין שורת קוד אחת
+      שצריכה להשתנות — המנוע מקבל מפתח, קורא תמונה, וכל קואורדינטה בעולם היא שבר מגובה
+      התמונה ולא פיקסל. כשהקבצים מגיעים אני מריץ את הצינור, מכייל מחדש את רצועות ההליכה,
+      ומריץ את הבדיקות.
+    </div>
+  </section>
+
+  <p class="foot">
+    THE WORKER LIFE · הפועל תל אביב · 15 רקעים, 46 שמות דמויות ממתינים, 4 פריימים מצוירים לצורך.
+  </p>
+</div>
+
+<script>
+  document.querySelectorAll('button.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var pre = btn.closest('.prompt').querySelector('pre')
+      var text = pre.textContent
+      var done = function () {
+        btn.textContent = 'Copied'
+        btn.dataset.done = '1'
+        setTimeout(function () { btn.textContent = 'Copy'; delete btn.dataset.done }, 1600)
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { fallback(text, done) })
+      } else {
+        fallback(text, done)
+      }
+    })
+  })
+  function fallback(text, done) {
+    var ta = document.createElement('textarea')
+    ta.value = text
+    ta.style.position = 'fixed'
+    ta.style.opacity = '0'
+    document.body.appendChild(ta)
+    ta.select()
+    try { document.execCommand('copy'); done() } catch (e) { /* nothing to do */ }
+    document.body.removeChild(ta)
+  }
+</script>

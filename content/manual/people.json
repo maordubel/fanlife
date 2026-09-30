@@ -1,0 +1,525 @@
+{
+ "note": "Only people named in a verified source. The 2001/02 Chelsea XI and bench were supplied by The Worker team from the Red Fans wiki match report and carry confidence 3.",
+ "confidence": 2,
+ "source": {
+  "kind": "other",
+  "title": "Verified research pass, 31 Aug 2026",
+  "url": null
+ },
+ "records": [
+  {
+   "slug": "סרגיי-קלשצנקו",
+   "fullNameHe": "סרגיי קלשצ'נקו",
+   "fullNameEn": "Serghey Clescenko",
+   "aliases": [
+    "סרגיי קלשצ'נקו",
+    "Serghey Clescenko",
+    "Sergei Kleschenko"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/",
+   "sourceTitle": "UEFA report, 14.3.2002"
+  },
+  {
+   "slug": "יוסי-אבוקסיס",
+   "fullNameHe": "יוסי אבוקסיס",
+   "fullNameEn": "Yossi Abuksis",
+   "aliases": [
+    "יוסי אבוקסיס",
+    "Yossi Abuksis"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/",
+   "sourceTitle": "UEFA report, 14.3.2002"
+  },
+  {
+   "slug": "אסי-דומב",
+   "fullNameHe": "אסי דומב",
+   "fullNameEn": "Assi Domb",
+   "aliases": [
+    "אסי דומב",
+    "Assi Domb"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/017f-0e6a31a02e21-58d549aa2129-1000--domb-gives-tel-aviv-the-advantage",
+   "sourceTitle": "UEFA report, 20.11.2001"
+  },
+  {
+   "slug": "מילאן-אוסטרץ",
+   "fullNameHe": "מילאן אוסטרץ",
+   "fullNameEn": "Milan Osterc",
+   "aliases": [
+    "מילאן אוסטרץ",
+    "Milan Osterc"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/025a-0eab13c1f1d5-dab99f819385-1000--tel-aviv-triumph-in-russia",
+   "sourceTitle": "UEFA report, 4.12.2001"
+  },
+  {
+   "slug": "ערן-זהבי",
+   "fullNameHe": "ערן זהבי",
+   "fullNameEn": "Eran Zahavi",
+   "aliases": [
+    "ערן זהבי",
+    "Eran Zahavi"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.skysports.com/football/hap-tel-aviv-vs-benfica/report/227534",
+   "sourceTitle": "Sky Sports, 24.11.2010"
+  },
+  {
+   "slug": "דאגלס-דה-סילבה",
+   "fullNameHe": "דאגלס דה סילבה",
+   "fullNameEn": "Douglas da Silva",
+   "aliases": [
+    "דאגלס דה סילבה",
+    "Douglas da Silva"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.skysports.com/football/hap-tel-aviv-vs-benfica/report/227534",
+   "sourceTitle": "Sky Sports, 24.11.2010"
+  },
+  {
+   "slug": "מאור-הראל",
+   "fullNameHe": "מאור הראל",
+   "fullNameEn": "Maor Harel",
+   "aliases": [
+    "מאור הראל",
+    "Maor Harel"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+   "sourceTitle": "Ynet, Yael Shahror, 14.10.2012"
+  },
+  {
+   "slug": "אורי-שלף",
+   "fullNameHe": "אורי שלף",
+   "fullNameEn": "Uri Shalef",
+   "aliases": [
+    "אורי שלף",
+    "Uri Shalef",
+    "Uri Shlef"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://sports.walla.co.il/item/2843036",
+   "sourceTitle": "Walla, Oren Yosifowitz, 2.4.2015"
+  },
+  {
+   "slug": "נועה-סקלי",
+   "fullNameHe": "נועה סקלי",
+   "fullNameEn": "Noa Skali",
+   "aliases": [
+    "נועה סקלי",
+    "Noa Skali"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+   "sourceTitle": "Ynet, 14.10.2012"
+  },
+  {
+   "slug": "יונתן-לרנר",
+   "fullNameHe": "יונתן לרנר",
+   "fullNameEn": "Yonatan Lerner",
+   "aliases": [
+    "יונתן לרנר",
+    "Yonatan Lerner"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+   "sourceTitle": "Ynet, 14.10.2012"
+  },
+  {
+   "slug": "רמי-כהן",
+   "fullNameHe": "רמי כהן",
+   "fullNameEn": "Rami Cohen",
+   "aliases": [
+    "רמי כהן",
+    "Rami Cohen"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+   "sourceTitle": "Ynet, 14.10.2012"
+  },
+  {
+   "slug": "גבי-כץ",
+   "fullNameHe": "גבי כץ",
+   "fullNameEn": "Gabi Katz",
+   "aliases": [
+    "גבי כץ",
+    "Gabi Katz"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+   "sourceTitle": "Ynet, 14.10.2012"
+  },
+  {
+   "slug": "ארז-זייציק",
+   "fullNameHe": "ארז זייצ'יק",
+   "fullNameEn": "Erez Zeitchik",
+   "aliases": [
+    "ארז זייצ'יק",
+    "Erez Zeitchik"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.ynet.co.il/article/4340044",
+   "sourceTitle": "Ynet, 2.2.2013"
+  },
+  {
+   "slug": "אריק-איינשטיין",
+   "fullNameHe": "אריק איינשטיין",
+   "fullNameEn": "Arik Einstein",
+   "aliases": [
+    "אריק איינשטיין",
+    "Arik Einstein"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.sport5.co.il/articles.aspx?FolderID=4483&docID=158800",
+   "sourceTitle": "Sport5, 27.11.2013"
+  },
+  {
+   "slug": "שביט-אלימלך",
+   "fullNameHe": "שביט אלימלך",
+   "aliases": [
+    "שביט אלימלך"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "אילן-בכר",
+   "fullNameHe": "אילן בכר",
+   "aliases": [
+    "אילן בכר"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "שמעון-גרשון",
+   "fullNameHe": "שמעון גרשון",
+   "aliases": [
+    "שמעון גרשון"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "יגאל-אנטבי",
+   "fullNameHe": "יגאל אנטבי",
+   "aliases": [
+    "יגאל אנטבי"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "דניס-אונישנקו",
+   "fullNameHe": "דניס אונישנקו",
+   "aliases": [
+    "דניס אונישנקו"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "גאבור-הלמאי",
+   "fullNameHe": "גאבור הלמאי",
+   "aliases": [
+    "גאבור הלמאי"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "אישטוון-פישונט",
+   "fullNameHe": "אישטוון פישונט",
+   "aliases": [
+    "אישטוון פישונט"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "ניר-רחמין",
+   "fullNameHe": "ניר רחמין",
+   "aliases": [
+    "ניר רחמין"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "אבי-כנפו",
+   "fullNameHe": "אבי כנפו",
+   "aliases": [
+    "אבי כנפו"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "בני-חדד",
+   "fullNameHe": "בני חדד",
+   "aliases": [
+    "בני חדד"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "קלמי-סבן",
+   "fullNameHe": "קלמי סבן",
+   "aliases": [
+    "קלמי סבן"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "יעקב-הלל",
+   "fullNameHe": "יעקב הלל",
+   "aliases": [
+    "יעקב הלל"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "עמרי-אפק",
+   "fullNameHe": "עמרי אפק",
+   "aliases": [
+    "עמרי אפק"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "בן-לוז",
+   "fullNameHe": "בן לוז",
+   "aliases": [
+    "בן לוז"
+   ],
+   "confidence": 3,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceTitle": "ויקיפועל · הרכב הפועל–צ'לסי 18.10.2001 (אומת ע\"י צוות The Worker)"
+  },
+  {
+   "slug": "גילי-לנדאו",
+   "fullNameHe": "גילי לנדאו",
+   "fullNameEn": "Gili Landau",
+   "aliases": [
+    "גילי לנדאו",
+    "Gili Landau"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "משה-סיני",
+   "fullNameHe": "משה סיני",
+   "fullNameEn": "Moshe Sinai",
+   "aliases": [
+    "משה סיני",
+    "Moshe Sinai"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "יום-טוב-טליאס",
+   "fullNameHe": "יום טוב טליאס",
+   "fullNameEn": "Yom Tov Talias",
+   "aliases": [
+    "יום טוב טליאס",
+    "Yom Tov Talias"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "יהודה-עמר",
+   "fullNameHe": "יהודה עמר",
+   "fullNameEn": "Yehuda Amar",
+   "aliases": [
+    "יהודה עמר",
+    "Yehuda Amar"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "יעקב-אקהויז",
+   "fullNameHe": "יעקב אקהויז",
+   "fullNameEn": "Yaakov Ekhoiz",
+   "aliases": [
+    "יעקב אקהויז",
+    "Yaakov Ekhoiz"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "יוסי-זאנה",
+   "fullNameHe": "יוסי זאנה",
+   "fullNameEn": "Yossi Zana",
+   "aliases": [
+    "יוסי זאנה",
+    "Yossi Zana"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "דוד-הרשליקוביץ",
+   "fullNameHe": "דוד הרשליקוביץ'",
+   "fullNameEn": "David Hershlikovich",
+   "aliases": [
+    "דוד הרשליקוביץ'",
+    "David Hershlikovich"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "יעקב-כהן",
+   "fullNameHe": "יעקב כהן",
+   "fullNameEn": "Yaakov Cohen",
+   "aliases": [
+    "יעקב כהן",
+    "Yaakov Cohen"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "אלי-קוקוס-כהן",
+   "fullNameHe": "אלי \"קוקוס\" כהן",
+   "fullNameEn": "Eli Cohen",
+   "aliases": [
+    "אלי \"קוקוס\" כהן",
+    "Eli Cohen"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "אליאור-ברנס",
+   "fullNameHe": "אליאור ברנס",
+   "fullNameEn": "Elior Barnes",
+   "aliases": [
+    "אליאור ברנס",
+    "Elior Barnes"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "מוריס-זאנו",
+   "fullNameHe": "מוריס ז'אנו",
+   "fullNameEn": "Maurice Jano",
+   "aliases": [
+    "מוריס ז'אנו",
+    "Maurice Jano"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "שבתאי-לוי",
+   "fullNameHe": "שבתאי לוי",
+   "fullNameEn": "Shabtai Levi",
+   "aliases": [
+    "שבתאי לוי",
+    "Shabtai Levi"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "אלי-יאני",
+   "fullNameHe": "אלי יאני",
+   "fullNameEn": "Eli Yani",
+   "aliases": [
+    "אלי יאני",
+    "Eli Yani"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "דוד-שוויצר",
+   "fullNameHe": "דוד שוויצר",
+   "fullNameEn": "David Schweitzer",
+   "aliases": [
+    "דוד שוויצר",
+    "David Schweitzer"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "צבי-שריר",
+   "fullNameHe": "צבי שריר",
+   "fullNameEn": "Zvi Sharir",
+   "aliases": [
+    "צבי שריר",
+    "Zvi Sharir"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "אבי-רן",
+   "fullNameHe": "אבי רן",
+   "fullNameEn": "Avi Ran",
+   "aliases": [
+    "אבי רן",
+    "Avi Ran"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  },
+  {
+   "slug": "שלמה-שרף",
+   "fullNameHe": "שלמה שרף",
+   "fullNameEn": "Shlomo Sharf",
+   "aliases": [
+    "שלמה שרף",
+    "Shlomo Sharf"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86"
+  }
+ ]
+}

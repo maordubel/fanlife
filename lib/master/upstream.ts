@@ -1,0 +1,4 @@
+import 'server-only'
+import lock from '@/upstream.lock.json'
+import {audit,mutate} from './store'
+export async function checkUpstream(){const headers:Record<string,string>={Accept:'application/vnd.github+json','User-Agent':'FAN-LIFE'};if(process.env.GITHUB_READ_TOKEN)headers.Authorization=`Bearer ${process.env.GITHUB_READ_TOKEN}`;const r=await fetch(`https://api.github.com/repos/${lock.repository}/compare/${lock.commit}...${lock.branch}`,{headers,cache:'no-store',signal:AbortSignal.timeout(15000)});if(!r.ok)throw new Error(`GitHub returned ${r.status}`);const b=await r.json();const result={installed:lock.commit,latest:b.commits?.at(-1)?.sha||lock.commit,behind:b.ahead_by||0,checkedAt:new Date().toISOString(),url:b.html_url};await mutate(s=>{s.upstream=result;audit(s,'upstream.checked',lock.repository,`${result.behind} new commits`)});return result}

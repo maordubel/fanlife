@@ -1,0 +1,1037 @@
+{
+  "note": "הפועל תל אביב באירופה — every UEFA tie the club has played, plus the four Intertoto groups. Cross-checked between RSSSF, Wildstat and UEFA's own club-history pages; UEFA's per-season match counts reconcile with every tie here, which is the integrity check the rest of the file rests on.\nTwo honesty flags travel on the rows. `opponentIsTransliteration` is true wherever the Hebrew spelling of a foreign club is ours rather than quoted from a Hebrew source — a reader should know which. `homeAbroadHe` records the many seasons a 'home' leg was played in Nicosia, Sofia, Florence, Rotterdam, Tilburg, Larnaca or Miskolc; that is not trivia decoration, it is most of what the terrace remembers about European away days.\nScorers stop at 2003/04 because RSSSF's scorer lists do. Attendances were not sourced for any European match and are therefore absent rather than estimated. wiki.red-fans.com returns 403 to automated reading and was NOT circumvented (rule 11).",
+  "confidence": 3,
+  "source": {
+    "kind": "other",
+    "title": "RSSSF · Wildstat · UEFA club history",
+    "url": "https://www.rsssf.org/tablesi/isra-ec.html"
+  },
+  "records": [
+    {
+      "slug": "1995-uefa-q-zimbru",
+      "seasonLabel": "1995/96",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות",
+      "opponentHe": "זימברו קישינב",
+      "opponentLatin": "Zimbru Chișinău",
+      "opponentCountryHe": "מולדובה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1995-08-08", "home": false, "forHapoel": 0, "against": 2, "venueHe": "האצטדיון הרפובליקני, קישינב" },
+        { "playedOn": "1995-08-22", "home": true, "forHapoel": 0, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "0:2",
+      "advanced": false,
+      "notableHe": "המשחק הראשון אי פעם של הפועל תל אביב במפעל אופ\"א.",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "1998-uefa-q1-finnpa",
+      "seasonLabel": "1998/99",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות סיבוב 1",
+      "opponentHe": "פינפ\"א הלסינקי",
+      "opponentLatin": "FinnPa Helsinki",
+      "opponentCountryHe": "פינלנד",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1998-07-22", "home": true, "forHapoel": 3, "against": 1, "venueHe": "בלומפילד" },
+        { "playedOn": "1998-07-29", "home": false, "forHapoel": 3, "against": 1, "venueHe": "האצטדיון האולימפי, הלסינקי" }
+      ],
+      "aggregateHe": "6:2",
+      "advanced": true,
+      "scorersHe": "צימרוטיץ', טובי, תקוה · תקוה (2), טובי",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "1998-uefa-q2-stromsgodset",
+      "seasonLabel": "1998/99",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "סטרומסגודסט",
+      "opponentLatin": "Strømsgodset",
+      "opponentCountryHe": "נורווגיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1998-08-11", "home": true, "forHapoel": 1, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "1998-08-25", "home": false, "forHapoel": 0, "against": 1, "venueHe": "דרמן" }
+      ],
+      "aggregateHe": "1:1, הפסד 4:2 בפנדלים",
+      "advanced": false,
+      "notableHe": "אחרי הארכה נפלה ההכרעה בבעיטות הפנדלים.",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "1999-uefa-q-yerevan",
+      "seasonLabel": "1999/00",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות",
+      "opponentHe": "אף.סי ירוואן",
+      "opponentLatin": "FC Yerevan",
+      "opponentCountryHe": "ארמניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1999-08-12", "home": false, "forHapoel": 2, "against": 0, "venueHe": "ירוואן" },
+        { "playedOn": "1999-08-26", "home": true, "forHapoel": 2, "against": 1, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "4:1",
+      "advanced": true,
+      "scorersHe": "הרזי (2) · פישונט, אנטבי",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "1999-uefa-r1-celtic",
+      "seasonLabel": "1999/00",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 1",
+      "opponentHe": "סלטיק",
+      "opponentLatin": "Celtic",
+      "opponentCountryHe": "סקוטלנד",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1999-09-16", "home": false, "forHapoel": 0, "against": 2, "venueHe": "סלטיק פארק" },
+        { "playedOn": "1999-09-30", "home": true, "forHapoel": 0, "against": 1, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "0:3",
+      "advanced": false,
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2000-ucl-q2-sturm",
+      "seasonLabel": "2000/01",
+      "competitionHe": "ליגת האלופות",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "שטורם גראץ",
+      "opponentLatin": "Sturm Graz",
+      "opponentCountryHe": "אוסטריה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2000-07-26", "home": false, "forHapoel": 0, "against": 3, "venueHe": "גראץ-ליבנאו" },
+        { "playedOn": "2000-08-02", "home": true, "forHapoel": 1, "against": 2, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "1:5",
+      "advanced": false,
+      "scorersHe": "בלילי",
+      "notableHe": "ההופעה היחידה של המועדון בליגת האלופות לפני 2010.",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2001-uefa-q-ararat",
+      "seasonLabel": "2001/02",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות",
+      "opponentHe": "ararat ירוואן",
+      "opponentLatin": "Ararat Yerevan",
+      "opponentCountryHe": "ארמניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2001-08-09", "home": false, "forHapoel": 2, "against": 0, "venueHe": "ירוואן" },
+        { "playedOn": "2001-08-23", "home": true, "forHapoel": 3, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "5:0",
+      "advanced": true,
+      "scorersHe": "טועמה, אוסטרץ' · אוסטרץ', דומב, אודי",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2001-uefa-r1-gaziantepspor",
+      "seasonLabel": "2001/02",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 1",
+      "opponentHe": "גאזיאנטפספור",
+      "opponentLatin": "Gaziantepspor",
+      "opponentCountryHe": "טורקיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2001-09-20", "home": true, "forHapoel": 1, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2001-09-25", "home": false, "forHapoel": 1, "against": 1, "venueHe": "גאזיאנטפ" }
+      ],
+      "aggregateHe": "2:1",
+      "advanced": true,
+      "scorersHe": "שער עצמי של רינדיוק · אוסטרץ'",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 2
+    },
+    {
+      "slug": "2001-uefa-r2-chelsea",
+      "seasonLabel": "2001/02",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 2",
+      "opponentHe": "צ'לסי",
+      "opponentLatin": "Chelsea",
+      "opponentCountryHe": "אנגליה",
+      "opponentIsTransliteration": false,
+      "legs": [
+        { "playedOn": "2001-10-18", "home": true, "forHapoel": 2, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2001-11-01", "home": false, "forHapoel": 1, "against": 1, "venueHe": "סטמפורד ברידג'" }
+      ],
+      "aggregateHe": "3:1",
+      "advanced": true,
+      "scorersHe": "גרשון, קלשצ'נקו · אוסטרץ'",
+      "notableHe": "אופ\"א עצמה כינתה את זה \"התוצאה הטובה ביותר של קבוצה ישראלית בתולדות הכדורגל האירופי\", והפועל הפכה לקבוצה הישראלית הראשונה שהגיעה לסיבוב השלישי של גביע אופ\"א.",
+      "sourceTitle": "UEFA · Tel Aviv make history",
+      "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/017f-0e6a3180548f-5f961c0c29cf-1000--tel-aviv-make-history",
+      "confidence": 3
+    },
+    {
+      "slug": "2001-uefa-r3-lokomotiv",
+      "seasonLabel": "2001/02",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 3",
+      "opponentHe": "לוקומוטיב מוסקבה",
+      "opponentLatin": "Lokomotiv Moscow",
+      "opponentCountryHe": "רוסיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2001-11-20", "home": true, "forHapoel": 2, "against": 1, "venueHe": "בלומפילד" },
+        { "playedOn": "2001-12-04", "home": false, "forHapoel": 1, "against": 0, "venueHe": "אצטדיון סטורן, רמנסקויה" }
+      ],
+      "aggregateHe": "3:1",
+      "advanced": true,
+      "scorersHe": "אוסטרץ', דומב · אוסטרץ'",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2001-uefa-r4-parma",
+      "seasonLabel": "2001/02",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "שמינית גמר",
+      "opponentHe": "פארמה",
+      "opponentLatin": "Parma",
+      "opponentCountryHe": "איטליה",
+      "opponentIsTransliteration": false,
+      "legs": [
+        { "playedOn": "2002-02-21", "home": true, "forHapoel": 0, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2002-02-28", "home": false, "forHapoel": 2, "against": 1, "venueHe": "אצטדיון טרדיני, פארמה" }
+      ],
+      "aggregateHe": "2:1",
+      "advanced": true,
+      "scorersHe": "אוסטרץ', פישונט",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2001-uefa-qf-milan",
+      "seasonLabel": "2001/02",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "רבע גמר",
+      "opponentHe": "מילאן",
+      "opponentLatin": "AC Milan",
+      "opponentCountryHe": "איטליה",
+      "opponentIsTransliteration": false,
+      "legs": [
+        { "playedOn": "2002-03-14", "home": true, "forHapoel": 1, "against": 0, "venueHe": "אצטדיון GSP, ניקוסיה" },
+        { "playedOn": "2002-03-21", "home": false, "forHapoel": 0, "against": 2, "venueHe": "סן סירו" }
+      ],
+      "aggregateHe": "1:2",
+      "advanced": false,
+      "scorersHe": "קלשצ'נקו",
+      "homeAbroadHe": "ניקוסיה, קפריסין",
+      "notableHe": "הוועדה המנהלת של אופ\"א העבירה את משחק הבית לקפריסין ב-8 במרץ 2002 מטעמי ביטחון. זהו ההישג האירופי הגדול ביותר של המועדון.",
+      "sourceTitle": "UEFA · Tel Aviv tie switched to Cyprus",
+      "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa445fba3a-f13c9fd77707-1000--tel-aviv-tie-switched-to-cyprus/",
+      "confidence": 3
+    },
+    {
+      "slug": "2002-uefa-q-partizani",
+      "seasonLabel": "2002/03",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות",
+      "opponentHe": "פרטיזני טירנה",
+      "opponentLatin": "Partizani Tirana",
+      "opponentCountryHe": "אלבניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2002-08-15", "home": true, "forHapoel": 1, "against": 0, "venueHe": "סופיה" },
+        { "playedOn": "2002-08-29", "home": false, "forHapoel": 4, "against": 1, "venueHe": "טירנה" }
+      ],
+      "aggregateHe": "5:1",
+      "advanced": true,
+      "scorersHe": "אבוקסיס · בלילי (2), אפק, אודי",
+      "homeAbroadHe": "סופיה, בולגריה",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2002-uefa-r1-karnten",
+      "seasonLabel": "2002/03",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 1",
+      "opponentHe": "קרנטן",
+      "opponentLatin": "FC Kärnten",
+      "opponentCountryHe": "אוסטריה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2002-09-19", "home": false, "forHapoel": 4, "against": 0, "venueHe": "קלגנפורט" },
+        { "playedOn": "2002-10-03", "home": true, "forHapoel": 0, "against": 1, "venueHe": "סופיה" }
+      ],
+      "aggregateHe": "4:1",
+      "advanced": true,
+      "scorersHe": "הלמאי, ולטון, גרשון, אודי",
+      "homeAbroadHe": "סופיה, בולגריה",
+      "notableHe": "4:0 בקלגנפורט — לפי אופ\"א, הניצחון הגדול ביותר של המועדון בחוץ באירופה.",
+      "sourceTitle": "UEFA · Club facts: Hapoel Tel-Aviv",
+      "sourceUrl": "https://www.uefa.com/uefaeuropaleague/history/clubs/59869--h-tel-aviv/",
+      "confidence": 3
+    },
+    {
+      "slug": "2002-uefa-r2-leeds",
+      "seasonLabel": "2002/03",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 2",
+      "opponentHe": "לידס יונייטד",
+      "opponentLatin": "Leeds United",
+      "opponentCountryHe": "אנגליה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2002-10-31", "home": false, "forHapoel": 0, "against": 1, "venueHe": "אלנד רואד" },
+        { "playedOn": "2002-11-14", "home": true, "forHapoel": 1, "against": 4, "venueHe": "פירנצה" }
+      ],
+      "aggregateHe": "1:5",
+      "advanced": false,
+      "scorersHe": "אבוקסיס",
+      "homeAbroadHe": "פירנצה, איטליה",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2003-uefa-q-banants",
+      "seasonLabel": "2003/04",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות",
+      "opponentHe": "באנאנץ ירוואן",
+      "opponentLatin": "Banants Yerevan",
+      "opponentCountryHe": "ארמניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2003-08-14", "home": true, "forHapoel": 1, "against": 1, "venueHe": "אצטדיון אנקו, רוטרדם" },
+        { "playedOn": "2003-08-28", "home": false, "forHapoel": 2, "against": 1, "venueHe": "ירוואן" }
+      ],
+      "aggregateHe": "3:2",
+      "advanced": true,
+      "scorersHe": "רוזן · סולצ'אגה, אדרי",
+      "homeAbroadHe": "רוטרדם, הולנד",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2003-uefa-r1-gaziantepspor",
+      "seasonLabel": "2003/04",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 1",
+      "opponentHe": "גאזיאנטפספור",
+      "opponentLatin": "Gaziantepspor",
+      "opponentCountryHe": "טורקיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2003-09-24", "home": false, "forHapoel": 0, "against": 1, "venueHe": "גאזיאנטפ" },
+        { "playedOn": "2003-10-15", "home": true, "forHapoel": 0, "against": 0, "venueHe": "רוטרדם" }
+      ],
+      "aggregateHe": "0:1",
+      "advanced": false,
+      "homeAbroadHe": "רוטרדם, הולנד",
+      "sourceTitle": "RSSSF · Israel in European Cups",
+      "sourceUrl": "https://www.rsssf.org/tablesi/isra-ec.html",
+      "confidence": 3
+    },
+    {
+      "slug": "2006-uefa-q2-domzale",
+      "seasonLabel": "2006/07",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "דומז'לה",
+      "opponentLatin": "Domžale",
+      "opponentCountryHe": "סלובניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2006-08-10", "home": true, "forHapoel": 1, "against": 2, "venueHe": "אצטדיון וילם השני, טילבורג" },
+        { "playedOn": "2006-08-24", "home": false, "forHapoel": 3, "against": 0, "venueHe": "דומז'לה" }
+      ],
+      "aggregateHe": "4:2",
+      "advanced": true,
+      "homeAbroadHe": "טילבורג, הולנד",
+      "notableHe": "הפסידה את משחק ה\"בית\" ועדיין עלתה, אחרי 3:0 בחוץ.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2006-uefa-r1-chornomorets",
+      "seasonLabel": "2006/07",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 1",
+      "opponentHe": "צ'רנומורץ אודסה",
+      "opponentLatin": "Chornomorets Odesa",
+      "opponentCountryHe": "אוקראינה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2006-09-14", "home": false, "forHapoel": 1, "against": 0, "venueHe": "אודסה" },
+        { "playedOn": "2006-09-28", "home": true, "forHapoel": 3, "against": 1, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "4:1",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2006-uefa-groups",
+      "seasonLabel": "2006/07",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "שלב הבתים · בית G",
+      "opponentHe": "פאנתינייקוס · ראפיד בוקרשט · פ.ס.ז' · מלאדה בולסלב",
+      "opponentLatin": "Panathinaikos · Rapid București · Paris Saint-Germain · Mladá Boleslav",
+      "opponentCountryHe": "יוון · רומניה · צרפת · צ'כיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2006-10-19", "home": false, "forHapoel": 0, "against": 2, "venueHe": "אתונה" },
+        { "playedOn": "2006-11-02", "home": true, "forHapoel": 2, "against": 2, "venueHe": "בלומפילד" },
+        { "playedOn": "2006-11-23", "home": false, "forHapoel": 4, "against": 2, "venueHe": "פארק דה פראנס, פריז" },
+        { "playedOn": "2006-12-13", "home": true, "forHapoel": 1, "against": 1, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "עלתה משלב הבתים",
+      "advanced": true,
+      "notableHe": "4:2 בפארק דה פראנס מול פ.ס.ז' — אחד הלילות האירופיים הגדולים בתולדות המועדון.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2006-uefa-r32-rangers",
+      "seasonLabel": "2006/07",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "שישית גמר",
+      "opponentHe": "ריינג'רס",
+      "opponentLatin": "Rangers",
+      "opponentCountryHe": "סקוטלנד",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2007-02-14", "home": true, "forHapoel": 2, "against": 1, "venueHe": "בלומפילד" },
+        { "playedOn": "2007-02-22", "home": false, "forHapoel": 0, "against": 4, "venueHe": "אייברוקס" }
+      ],
+      "aggregateHe": "2:5",
+      "advanced": false,
+      "notableHe": "0:4 באייברוקס — לפי אופ\"א, אחד משני ההפסדים הגדולים של המועדון באירופה.",
+      "sourceTitle": "UEFA · Club facts: Hapoel Tel-Aviv",
+      "sourceUrl": "https://www.uefa.com/uefaeuropaleague/history/clubs/59869--h-tel-aviv/",
+      "confidence": 3
+    },
+    {
+      "slug": "2007-uefa-q2-siroki",
+      "seasonLabel": "2007/08",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "שירוקי בריג",
+      "opponentLatin": "Široki Brijeg",
+      "opponentCountryHe": "בוסניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2007-08-16", "home": false, "forHapoel": 3, "against": 0, "venueHe": "שירוקי בריג" },
+        { "playedOn": "2007-08-30", "home": true, "forHapoel": 3, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "6:0",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2007-uefa-r1-aik",
+      "seasonLabel": "2007/08",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 1",
+      "opponentHe": "אי.איי.קיי",
+      "opponentLatin": "AIK",
+      "opponentCountryHe": "שבדיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2007-09-20", "home": true, "forHapoel": 0, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2007-10-04", "home": false, "forHapoel": 1, "against": 0, "venueHe": "סטוקהולם" }
+      ],
+      "aggregateHe": "1:0",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2007-uefa-groups",
+      "seasonLabel": "2007/08",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "שלב הבתים · בית G",
+      "opponentHe": "אנדרלכט · טוטנהאם · חטאפה · אלבורג",
+      "opponentLatin": "Anderlecht · Tottenham Hotspur · Getafe · AaB Aalborg",
+      "opponentCountryHe": "בלגיה · אנגליה · ספרד · דנמרק",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2007-10-25", "home": false, "forHapoel": 0, "against": 2, "venueHe": "בריסל" },
+        { "playedOn": "2007-11-08", "home": true, "forHapoel": 0, "against": 2, "venueHe": "בלומפילד" },
+        { "playedOn": "2007-11-29", "home": false, "forHapoel": 2, "against": 1, "venueHe": "חטאפה" },
+        { "playedOn": "2007-12-19", "home": true, "forHapoel": 1, "against": 3, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "מקום 5 בבית",
+      "advanced": false,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2008-uefa-q1-juvenes",
+      "seasonLabel": "2008/09",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות סיבוב 1",
+      "opponentHe": "יובנס/דוגאנה",
+      "opponentLatin": "Juvenes/Dogana",
+      "opponentCountryHe": "סן מרינו",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2008-07-17", "home": true, "forHapoel": 3, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2008-07-31", "home": false, "forHapoel": 2, "against": 0, "venueHe": "סן מרינו" }
+      ],
+      "aggregateHe": "5:0",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2008-uefa-q2-vojvodina",
+      "seasonLabel": "2008/09",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "ווידודינה",
+      "opponentLatin": "Vojvodina",
+      "opponentCountryHe": "סרביה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2008-08-14", "home": false, "forHapoel": 0, "against": 0, "venueHe": "נובי סאד" },
+        { "playedOn": "2008-08-28", "home": true, "forHapoel": 3, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "3:0",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2008-uefa-r1-saintetienne",
+      "seasonLabel": "2008/09",
+      "competitionHe": "גביע אופ\"א",
+      "stageHe": "סיבוב 1",
+      "opponentHe": "סנט אטיין",
+      "opponentLatin": "Saint-Étienne",
+      "opponentCountryHe": "צרפת",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2008-09-18", "home": true, "forHapoel": 1, "against": 2, "venueHe": "בלומפילד" },
+        { "playedOn": "2008-10-02", "home": false, "forHapoel": 1, "against": 2, "venueHe": "ז'ופרואה גישאר" }
+      ],
+      "aggregateHe": "2:4",
+      "advanced": false,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2009-el-q3-goteborg",
+      "seasonLabel": "2009/10",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "מוקדמות סיבוב 3",
+      "opponentHe": "איפ\"ק גטבורג",
+      "opponentLatin": "IFK Göteborg",
+      "opponentCountryHe": "שבדיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2009-07-30", "home": false, "forHapoel": 3, "against": 1, "venueHe": "גמלה אולווי, גטבורג" },
+        { "playedOn": "2009-08-06", "home": true, "forHapoel": 1, "against": 1, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "4:2",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2009-el-po-teplice",
+      "seasonLabel": "2009/10",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "פלייאוף",
+      "opponentHe": "טפליצה",
+      "opponentLatin": "Teplice",
+      "opponentCountryHe": "צ'כיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2009-08-20", "home": false, "forHapoel": 2, "against": 1, "venueHe": "טפליצה" },
+        { "playedOn": "2009-08-27", "home": true, "forHapoel": 1, "against": 1, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "3:2",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2009-el-groups",
+      "seasonLabel": "2009/10",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "שלב הבתים · בית C",
+      "opponentHe": "סלטיק · המבורג · ראפיד וינה",
+      "opponentLatin": "Celtic · Hamburger SV · Rapid Wien",
+      "opponentCountryHe": "סקוטלנד · גרמניה · אוסטריה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2009-09-17", "home": true, "forHapoel": 2, "against": 1, "venueHe": "בלומפילד" },
+        { "playedOn": "2009-10-01", "home": false, "forHapoel": 2, "against": 4, "venueHe": "המבורג" },
+        { "playedOn": "2009-10-22", "home": true, "forHapoel": 5, "against": 1, "venueHe": "בלומפילד" },
+        { "playedOn": "2009-11-05", "home": false, "forHapoel": 3, "against": 0, "venueHe": "וינה" },
+        { "playedOn": "2009-12-02", "home": false, "forHapoel": 0, "against": 2, "venueHe": "סלטיק פארק" },
+        { "playedOn": "2009-12-17", "home": true, "forHapoel": 1, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "מקום ראשון בבית — 12 נקודות",
+      "advanced": true,
+      "notableHe": "הפועל תל אביב סיימה ראשונה בבית, לפני המבורג (10) וסלטיק (6): ארבעה ניצחונות, שני הפסדים, 8:13.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2009-el-r32-rubin",
+      "seasonLabel": "2009/10",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "שישית גמר",
+      "opponentHe": "רובין קאזאן",
+      "opponentLatin": "Rubin Kazan",
+      "opponentCountryHe": "רוסיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2010-02-18", "home": false, "forHapoel": 0, "against": 3, "venueHe": "קאזאן" },
+        { "playedOn": "2010-02-25", "home": true, "forHapoel": 0, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "0:3",
+      "advanced": false,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2010-ucl-q2-zeljeznicar",
+      "seasonLabel": "2010/11",
+      "competitionHe": "ליגת האלופות",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "ז'ליזניצ'אר",
+      "opponentLatin": "Željezničar",
+      "opponentCountryHe": "בוסניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2010-07-13", "home": true, "forHapoel": 5, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2010-07-21", "home": false, "forHapoel": 1, "against": 0, "venueHe": "סרייבו" }
+      ],
+      "aggregateHe": "6:0",
+      "advanced": true,
+      "notableHe": "5:0 — לפי אופ\"א, הניצחון הביתי הגדול ביותר של המועדון באירופה.",
+      "sourceTitle": "UEFA · Club facts: Hapoel Tel-Aviv",
+      "sourceUrl": "https://www.uefa.com/uefachampionsleague/history/clubs/59869--h-tel-aviv/",
+      "confidence": 3
+    },
+    {
+      "slug": "2010-ucl-q3-aktobe",
+      "seasonLabel": "2010/11",
+      "competitionHe": "ליגת האלופות",
+      "stageHe": "מוקדמות סיבוב 3",
+      "opponentHe": "אקטובה",
+      "opponentLatin": "Aktobe",
+      "opponentCountryHe": "קזחסטן",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2010-07-28", "home": false, "forHapoel": 0, "against": 1, "venueHe": "אקטובה" },
+        { "playedOn": "2010-08-03", "home": true, "forHapoel": 3, "against": 1, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "3:2",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2010-ucl-po-salzburg",
+      "seasonLabel": "2010/11",
+      "competitionHe": "ליגת האלופות",
+      "stageHe": "פלייאוף",
+      "opponentHe": "רד בול זלצבורג",
+      "opponentLatin": "Red Bull Salzburg",
+      "opponentCountryHe": "אוסטריה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2010-08-18", "home": false, "forHapoel": 3, "against": 2, "venueHe": "זלצבורג" },
+        { "playedOn": "2010-08-24", "home": true, "forHapoel": 1, "against": 1, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "4:3",
+      "advanced": true,
+      "notableHe": "העלייה לשלב הבתים של ליגת האלופות.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2010-ucl-groups",
+      "seasonLabel": "2010/11",
+      "competitionHe": "ליגת האלופות",
+      "stageHe": "שלב הבתים · בית B",
+      "opponentHe": "בנפיקה · ליון · שאלקה 04",
+      "opponentLatin": "Benfica · Olympique Lyonnais · Schalke 04",
+      "opponentCountryHe": "פורטוגל · צרפת · גרמניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2010-09-14", "home": false, "forHapoel": 0, "against": 2, "venueHe": "ליסבון" },
+        { "playedOn": "2010-09-29", "home": true, "forHapoel": 1, "against": 3, "venueHe": "בלומפילד" },
+        { "playedOn": "2010-10-20", "home": false, "forHapoel": 1, "against": 3, "venueHe": "גלזנקירכן" },
+        { "playedOn": "2010-11-02", "home": true, "forHapoel": 0, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2010-11-24", "home": true, "forHapoel": 3, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2010-12-07", "home": false, "forHapoel": 2, "against": 2, "venueHe": "ז'רלן, ליון" }
+      ],
+      "aggregateHe": "מקום רביעי — 5 נקודות",
+      "advanced": false,
+      "notableHe": "3:0 על בנפיקה בבלומפילד. כל משחקי הבית נערכו בבלומפילד — הפועל היא אחת משלוש הקבוצות הישראליות שהגיעו לשלב הבתים של ליגת האלופות.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2011-el-q3-vaduz",
+      "seasonLabel": "2011/12",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "מוקדמות סיבוב 3",
+      "opponentHe": "ואדוץ",
+      "opponentLatin": "Vaduz",
+      "opponentCountryHe": "ליכטנשטיין",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2011-07-28", "home": true, "forHapoel": 4, "against": 0, "venueHe": "בלומפילד" },
+        { "playedOn": "2011-08-04", "home": false, "forHapoel": 1, "against": 2, "venueHe": "ואדוץ" }
+      ],
+      "aggregateHe": "5:2",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2011-el-po-ekranas",
+      "seasonLabel": "2011/12",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "פלייאוף",
+      "opponentHe": "אקראנס",
+      "opponentLatin": "Ekranas",
+      "opponentCountryHe": "ליטא",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2011-08-18", "home": false, "forHapoel": 0, "against": 1, "venueHe": "פנוויז'יס" },
+        { "playedOn": "2011-08-25", "home": true, "forHapoel": 4, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "4:1",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2011-el-groups",
+      "seasonLabel": "2011/12",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "שלב הבתים · בית C",
+      "opponentHe": "ראפיד בוקרשט · לגיה ורשה · פ.ס.וו איינדהובן",
+      "opponentLatin": "Rapid București · Legia Warszawa · PSV Eindhoven",
+      "opponentCountryHe": "רומניה · פולין · הולנד",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2011-09-15", "home": true, "forHapoel": 0, "against": 1, "venueHe": "בלומפילד" },
+        { "playedOn": "2011-09-29", "home": false, "forHapoel": 2, "against": 3, "venueHe": "ורשה" },
+        { "playedOn": "2011-10-20", "home": true, "forHapoel": 0, "against": 1, "venueHe": "בלומפילד" },
+        { "playedOn": "2011-11-03", "home": false, "forHapoel": 3, "against": 3, "venueHe": "פיליפס סטדיון, איינדהובן" },
+        { "playedOn": "2011-11-30", "home": false, "forHapoel": 3, "against": 1, "venueHe": "בוקרשט" },
+        { "playedOn": "2011-12-15", "home": true, "forHapoel": 2, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "מקום שלישי בבית",
+      "advanced": false,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2012-el-po-dudelange",
+      "seasonLabel": "2012/13",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "פלייאוף",
+      "opponentHe": "דודלנז'",
+      "opponentLatin": "F91 Dudelange",
+      "opponentCountryHe": "לוקסמבורג",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2012-08-23", "home": false, "forHapoel": 3, "against": 1, "venueHe": "דודלנז'" },
+        { "playedOn": "2012-08-30", "home": true, "forHapoel": 4, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "7:1",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2012-el-groups",
+      "seasonLabel": "2012/13",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "שלב הבתים · בית B",
+      "opponentHe": "אתלטיקו מדריד · אקדמיקה · ויקטוריה פלזן",
+      "opponentLatin": "Atlético Madrid · Académica · Viktoria Plzeň",
+      "opponentCountryHe": "ספרד · פורטוגל · צ'כיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2012-09-20", "home": true, "forHapoel": 0, "against": 3, "venueHe": "בלומפילד" },
+        { "playedOn": "2012-10-04", "home": false, "forHapoel": 1, "against": 1, "venueHe": "קוימברה" },
+        { "playedOn": "2012-10-25", "home": true, "forHapoel": 1, "against": 2, "venueHe": "בלומפילד" },
+        { "playedOn": "2012-11-08", "home": false, "forHapoel": 0, "against": 4, "venueHe": "פלזן" },
+        { "playedOn": "2012-11-22", "home": false, "forHapoel": 0, "against": 1, "venueHe": "ויסנטה קלדרון, מדריד" },
+        { "playedOn": "2012-12-06", "home": true, "forHapoel": 2, "against": 0, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "מקום רביעי בבית",
+      "advanced": false,
+      "notableHe": "0:4 בפלזן — לפי אופ\"א, אחד משני ההפסדים הגדולים של המועדון באירופה.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2013-el-q2-beroe",
+      "seasonLabel": "2013/14",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "ברואה סטארה זגורה",
+      "opponentLatin": "Beroe Stara Zagora",
+      "opponentCountryHe": "בולגריה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2013-07-18", "home": false, "forHapoel": 4, "against": 1, "venueHe": "סטארה זגורה" },
+        { "playedOn": "2013-07-25", "home": true, "forHapoel": 2, "against": 2, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "6:3",
+      "advanced": true,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2013-el-q3-pandurii",
+      "seasonLabel": "2013/14",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "מוקדמות סיבוב 3",
+      "opponentHe": "פנדורי טרגו ז'יו",
+      "opponentLatin": "Pandurii Târgu Jiu",
+      "opponentCountryHe": "רומניה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2013-08-01", "home": false, "forHapoel": 1, "against": 1, "venueHe": "קלוז' ארנה" },
+        { "playedOn": "2013-08-08", "home": true, "forHapoel": 1, "against": 2, "venueHe": "בלומפילד" }
+      ],
+      "aggregateHe": "2:3",
+      "advanced": false,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2014-el-q2-astana",
+      "seasonLabel": "2014/15",
+      "competitionHe": "הליגה האירופית",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "אסטנה",
+      "opponentLatin": "FC Astana",
+      "opponentCountryHe": "קזחסטן",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2014-07-17", "home": false, "forHapoel": 0, "against": 3, "venueHe": "אסטנה" },
+        { "playedOn": "2014-07-24", "home": true, "forHapoel": 1, "against": 0, "venueHe": "אצטדיון אנטוניס פפדופולוס, לרנקה" }
+      ],
+      "aggregateHe": "1:3",
+      "advanced": false,
+      "homeAbroadHe": "לרנקה, קפריסין",
+      "notableHe": "אחרי המשחק הזה לא שיחקה הפועל תל אביב באירופה עד 2026.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "2026-ecl-q2-ludogorets",
+      "seasonLabel": "2026/27",
+      "competitionHe": "ליגת הועידה",
+      "stageHe": "מוקדמות סיבוב 2",
+      "opponentHe": "לודוגורץ רזגרד",
+      "opponentLatin": "Ludogorets Razgrad",
+      "opponentCountryHe": "בולגריה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2026-07-23", "home": true, "forHapoel": 2, "against": 0, "venueHe": "אצטדיון DVTK, מישקולץ" },
+        { "playedOn": "2026-07-30", "home": false, "forHapoel": 2, "against": 2, "venueHe": "רזגרד" }
+      ],
+      "aggregateHe": "4:2",
+      "advanced": true,
+      "homeAbroadHe": "מישקולץ, הונגריה",
+      "notableHe": "החזרה של המועדון לאירופה אחרי אחת עשרה שנים.",
+      "sourceTitle": "UEFA · Conference League club history",
+      "sourceUrl": "https://www.uefa.com/uefaconferenceleague/history/clubs/59869--h-tel-aviv/",
+      "confidence": 3
+    },
+    {
+      "slug": "2026-ecl-q3-katowice",
+      "seasonLabel": "2026/27",
+      "competitionHe": "ליגת הועידה",
+      "stageHe": "מוקדמות סיבוב 3",
+      "opponentHe": "גק\"ס קטוביץ",
+      "opponentLatin": "GKS Katowice",
+      "opponentCountryHe": "פולין",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "2026-08-06", "home": true, "forHapoel": 2, "against": 0, "venueHe": "אצטדיון DVTK, מישקולץ" },
+        { "playedOn": "2026-08-12", "home": false, "forHapoel": 1, "against": 2, "venueHe": "קטוביץ" }
+      ],
+      "aggregateHe": "3:2",
+      "advanced": true,
+      "homeAbroadHe": "מישקולץ, הונגריה",
+      "sourceTitle": "UEFA · Conference League club history",
+      "sourceUrl": "https://www.uefa.com/uefaconferenceleague/history/clubs/59869--h-tel-aviv/",
+      "confidence": 3
+    },
+    {
+      "slug": "2026-ecl-po-atalanta",
+      "seasonLabel": "2026/27",
+      "competitionHe": "ליגת הועידה",
+      "stageHe": "פלייאוף",
+      "opponentHe": "אטלנטה",
+      "opponentLatin": "Atalanta",
+      "opponentCountryHe": "איטליה",
+      "opponentIsTransliteration": false,
+      "legs": [
+        { "playedOn": "2026-08-20", "home": false, "forHapoel": 0, "against": 0, "venueHe": "ברגמו" },
+        { "playedOn": "2026-08-27", "home": true, "forHapoel": 0, "against": 1, "venueHe": "אצטדיון DVTK, מישקולץ" }
+      ],
+      "aggregateHe": "0:1",
+      "advanced": false,
+      "homeAbroadHe": "מישקולץ, הונגריה",
+      "sourceTitle": "UEFA · Conference League club history",
+      "sourceUrl": "https://www.uefa.com/uefaconferenceleague/history/clubs/59869--h-tel-aviv/",
+      "confidence": 3
+    },
+    {
+      "slug": "1981-intertoto",
+      "seasonLabel": "1981",
+      "competitionHe": "גביע אינטרטוטו",
+      "stageHe": "בית 1",
+      "opponentHe": "וינר ס.צ. · סטנדרד ליאז' · מכבי נתניה",
+      "opponentLatin": "Wiener SC · RFC Liège · Maccabi Netanya",
+      "opponentCountryHe": "אוסטריה · בלגיה · ישראל",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1981-06-27", "home": true, "forHapoel": 1, "against": 3, "venueHe": null },
+        { "playedOn": "1981-07-04", "home": true, "forHapoel": 1, "against": 1, "venueHe": null },
+        { "playedOn": "1981-07-11", "home": false, "forHapoel": 1, "against": 1, "venueHe": null },
+        { "playedOn": "1981-07-14", "home": true, "forHapoel": 1, "against": 4, "venueHe": null },
+        { "playedOn": "1981-07-18", "home": false, "forHapoel": 1, "against": 3, "venueHe": null },
+        { "playedOn": "1981-07-25", "home": false, "forHapoel": 1, "against": 4, "venueHe": null }
+      ],
+      "aggregateHe": "מקום רביעי — 2 נקודות",
+      "advanced": false,
+      "notableHe": "המשחק הראשון אי פעם של המועדון במפעל אירופי כלשהו: 27 ביוני 1981, 3:1 לוינר ס.צ.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "1982-intertoto",
+      "seasonLabel": "1982",
+      "competitionHe": "גביע אינטרטוטו",
+      "stageHe": "בית 5",
+      "opponentHe": "אדמירה ואקר · איפ\"ק נורשפינג · הפועל כפר סבא",
+      "opponentLatin": "Admira Wacker · IFK Norrköping · Hapoel Kfar Saba",
+      "opponentCountryHe": "אוסטריה · שבדיה · ישראל",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1982-06-26", "home": true, "forHapoel": 4, "against": 0, "venueHe": null },
+        { "playedOn": "1982-07-03", "home": true, "forHapoel": 2, "against": 0, "venueHe": null },
+        { "playedOn": "1982-07-06", "home": false, "forHapoel": 4, "against": 3, "venueHe": null },
+        { "playedOn": "1982-07-10", "home": true, "forHapoel": 1, "against": 0, "venueHe": null },
+        { "playedOn": "1982-07-17", "home": false, "forHapoel": 1, "against": 2, "venueHe": null },
+        { "playedOn": "1982-07-24", "home": false, "forHapoel": 0, "against": 5, "venueHe": null }
+      ],
+      "aggregateHe": "מקום שני — 8 נקודות",
+      "advanced": false,
+      "notableHe": "ההופעה הטובה ביותר של המועדון באינטרטוטו: ארבעה ניצחונות ושני הפסדים.",
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "1986-intertoto",
+      "seasonLabel": "1986",
+      "competitionHe": "גביע אינטרטוטו",
+      "stageHe": "בית 8",
+      "opponentHe": "מכבי חיפה · לינגבי · גראצר א.ק.",
+      "opponentLatin": "Maccabi Haifa · Lyngby · Grazer AK",
+      "opponentCountryHe": "ישראל · דנמרק · אוסטריה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1986-06-04", "home": true, "forHapoel": 2, "against": 2, "venueHe": null },
+        { "playedOn": "1986-06-11", "home": false, "forHapoel": 2, "against": 2, "venueHe": null },
+        { "playedOn": "1986-06-14", "home": true, "forHapoel": 0, "against": 2, "venueHe": null },
+        { "playedOn": "1986-06-21", "home": true, "forHapoel": 0, "against": 1, "venueHe": null },
+        { "playedOn": "1986-06-28", "home": false, "forHapoel": 2, "against": 3, "venueHe": null },
+        { "playedOn": "1986-07-05", "home": false, "forHapoel": 3, "against": 2, "venueHe": null }
+      ],
+      "aggregateHe": "מקום שלישי — 4 נקודות",
+      "advanced": false,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    },
+    {
+      "slug": "1996-intertoto",
+      "seasonLabel": "1996",
+      "competitionHe": "גביע אינטרטוטו",
+      "stageHe": "בית 6",
+      "opponentHe": "רן · לוצרן · סגסטה · אורגריטה",
+      "opponentLatin": "Rennes · Luzern · Segesta · Örgryte",
+      "opponentCountryHe": "צרפת · שווייץ · קרואטיה · שבדיה",
+      "opponentIsTransliteration": true,
+      "legs": [
+        { "playedOn": "1996-06-23", "home": true, "forHapoel": 0, "against": 2, "venueHe": null },
+        { "playedOn": "1996-06-30", "home": false, "forHapoel": 0, "against": 2, "venueHe": null },
+        { "playedOn": "1996-07-06", "home": true, "forHapoel": 1, "against": 3, "venueHe": null },
+        { "playedOn": "1996-07-14", "home": false, "forHapoel": 0, "against": 3, "venueHe": null }
+      ],
+      "aggregateHe": "מקום אחרון — 0 נקודות",
+      "advanced": false,
+      "sourceTitle": "Wildstat · Hapoel Tel Aviv",
+      "sourceUrl": "http://wildstat.com/p/146/club/ISR_Hapoel_Tel_Aviv",
+      "confidence": 3
+    }
+  ]
+}

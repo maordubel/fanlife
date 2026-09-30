@@ -1,0 +1,242 @@
+{
+  "note": "Every candidate in both bodies, with the vote count the association published and the occupation each candidate declared in their own manifesto. Names are stored exactly as the candidate list gives them; where the results table spells a name differently, the difference is a recorded conflict, not a silent correction.",
+  "confidence": 3,
+  "source": {
+    "kind": "official",
+    "title": "אתר עמותת הפועל אוסישקין — מצעי המועמדים ותוצאות הבחירות",
+    "url": "http://www.hapoeluta.com/"
+  },
+  "records": [
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "נועה סקלי",
+      "personSlug": "נועה-סקלי",
+      "votes": 232,
+      "elected": true,
+      "rank": 1,
+      "occupationHe": "יו\"ר ההנהלה הזמנית הראשונה. שחקנית עבר בקבוצת הנשים, לשעבר מנהלת סמינר הקיבוצים.",
+      "priorRoleHe": "יו\"ר ההנהלה הזמנית",
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "מאור הראל",
+      "personSlug": "מאור-הראל",
+      "votes": 229,
+      "elected": true,
+      "rank": 2,
+      "occupationHe": "חבר ההנהלה הזמנית הראשונה. ממייסדי הקבוצה, אחראי קשרי קהל.",
+      "priorRoleHe": "חבר ההנהלה הזמנית",
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "יונתן לרנר",
+      "personSlug": "יונתן-לרנר",
+      "votes": 227,
+      "elected": true,
+      "rank": 3,
+      "occupationHe": "חבר ההנהלה הזמנית הראשונה. אל\"מ במילואים, יועץ לתהליכי תכנון אסטרטגי בחברות עסקיות ומלכ\"רים.",
+      "priorRoleHe": "חבר ההנהלה הזמנית",
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "אבי כץ",
+      "personSlug": "אבי-כץ",
+      "votes": 216,
+      "elected": true,
+      "rank": 4,
+      "occupationHe": "חבר ההנהלה הזמנית הראשונה. מנהל השיווק הראשי של חברת דובק.",
+      "priorRoleHe": "חבר ההנהלה הזמנית",
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "רמי כהן",
+      "personSlug": "רמי-כהן",
+      "votes": 213,
+      "elected": true,
+      "rank": 5,
+      "occupationHe": "חבר ההנהלה הזמנית הראשונה. שותף ומנהל של מספר חברות עסקיות. יו\"ר ועדת כספים ואחראי על הקמת מחלקות הנוער ובתי הספר לכדורסל.",
+      "priorRoleHe": "חבר ההנהלה הזמנית",
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "גיא פורת",
+      "personSlug": "גיא-פורת",
+      "votes": 114,
+      "elected": false,
+      "rank": 6,
+      "occupationHe": "חבר ועדת הביקורת הראשונה. בעל ניסיון במשרד רו\"ח וניהול עסקים.",
+      "priorRoleHe": "חבר ועדת הביקורת הזמנית",
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "יאיר אלישיב",
+      "personSlug": "יאיר-אלישיב",
+      "votes": 110,
+      "elected": false,
+      "rank": 7,
+      "occupationHe": "איש עסקים עצמאי בעל ניסיון בתפקידי ניהול בנקאיים. לשעבר יו\"ר הפועל רמת אביב (כדורעף) וחבר בהנהלת הפועל במשך עשר שנים.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "עופר שפירא",
+      "personSlug": "עופר-שפירא",
+      "votes": 36,
+      "elected": false,
+      "rank": 8,
+      "occupationHe": "דוקטור לפיזיקה, מנכ\"ל חברת היי-טק בתחום המכשור הרפואי אשר הונפקה בבורסה.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "אייל ציתיאת",
+      "personSlug": "אייל-ציתיאת",
+      "votes": 34,
+      "elected": false,
+      "rank": 9,
+      "occupationHe": "סוכן ביטוח רישוי מורשה בענף האלמנטרי.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "שרי ירוחם",
+      "personSlug": "שרי-ירוחם",
+      "votes": 30,
+      "elected": false,
+      "rank": 10,
+      "occupationHe": null,
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "יהונתן עמרני",
+      "personSlug": "יהונתן-עמרני",
+      "votes": 26,
+      "elected": false,
+      "rank": 11,
+      "occupationHe": null,
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "אסף הלחמי",
+      "personSlug": "אסף-הלחמי",
+      "votes": 25,
+      "elected": false,
+      "rank": 12,
+      "occupationHe": "יועץ למערכות מידע, פרויקטים טכנולוגיים ולמנכ\"ל משרד המדע, התרבות והספורט.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "בנימין דוידוב",
+      "personSlug": "בנימין-דוידוב",
+      "votes": 22,
+      "elected": false,
+      "rank": 13,
+      "occupationHe": "מנהל בכיר במוסד בנקאי בעל ניסיון של כ-30 שנה.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "מרדכי האן-מרקוביץ",
+      "personSlug": "מרדכי-האן-מרקוביץ",
+      "votes": 21,
+      "elected": false,
+      "rank": 14,
+      "occupationHe": "מייסד ושותף בכיר במשרד עורכי דין, לשעבר יו\"ר ועד מנהל של יישוב מגוריו.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-הנהלה",
+      "personNameHe": "אסף רובנר",
+      "personSlug": "אסף-רובנר",
+      "votes": 18,
+      "elected": false,
+      "rank": 15,
+      "occupationHe": null,
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-ועדת-ביקורת",
+      "personNameHe": "איל חלד",
+      "personSlug": "איל-חלד",
+      "votes": 226,
+      "elected": true,
+      "rank": 1,
+      "occupationHe": "יו\"ר ועדת הביקורת הראשונה. מומחה בתכנון, ניהול וביצוע ביקורת פנים במוסדות ותאגידים עסקיים וציבוריים.",
+      "priorRoleHe": "יו\"ר ועדת הביקורת הזמנית",
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-ועדת-ביקורת",
+      "personNameHe": "גיא זקס",
+      "personSlug": "גיא-זקס",
+      "votes": 210,
+      "elected": true,
+      "rank": 2,
+      "occupationHe": "חבר ועדת הביקורת הראשונה. בעל תואר שני במנהל עסקים, מתמחה במשרד עורכי דין.",
+      "priorRoleHe": "חבר ועדת הביקורת הזמנית",
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-ועדת-ביקורת",
+      "personNameHe": "משה בילופולסקי",
+      "personSlug": "משה-בילופולסקי",
+      "votes": 134,
+      "elected": false,
+      "rank": 3,
+      "occupationHe": "מומחה בתחום בקרה, ניהול ורכש של מערכות IT בחברת טבע.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-ועדת-ביקורת",
+      "personNameHe": "מתי חסיד",
+      "personSlug": "מתי-חסיד",
+      "votes": 110,
+      "elected": false,
+      "rank": 4,
+      "occupationHe": "רואה חשבון. יו\"ר ועדת ביקורת של קופת חולים לאומית, חבר דירקטוריון וועדת ביקורת והשקעות של חברת אימפקט.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-ועדת-ביקורת",
+      "personNameHe": "אסף אלוויה",
+      "personSlug": "אסף-אלוויה",
+      "votes": 90,
+      "elected": false,
+      "rank": 5,
+      "occupationHe": "סטודנט שנה שלישית בלימודי משפטים. עובד בחברת סטטיסטיקה.",
+      "priorRoleHe": null,
+      "confidence": 3
+    },
+    {
+      "electionSlug": "בחירות-ראשונות-ועדת-ביקורת",
+      "personNameHe": "רפאל אלדר",
+      "personSlug": "רפאל-אלדר",
+      "votes": 78,
+      "elected": false,
+      "rank": 6,
+      "occupationHe": null,
+      "priorRoleHe": null,
+      "confidence": 3
+    }
+  ]
+}

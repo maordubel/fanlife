@@ -1,0 +1,178 @@
+{
+  "note": "התיק השחור — documented grievances of Hapoel Tel Aviv supporters. FOOTBALL ONLY. Every row is a dated, sourced event: a transfer that happened, a court ruling, a protest that took place. Nothing here is an allegation about a person's character, and nothing is included that a source does not state. Three names Maor supplied are deliberately handled differently: Ofer Yanai and Shaul Eisenberg have no documented connection to the FOOTBALL club (both are basketball, and rule 14 keeps the sports apart), and Shimon Gershon never played for Maccabi at all — he left for Beitar Jerusalem, and he retired on medical grounds, which is not terrace material. Gershon and Zahavi are stored as `myth` rows: they are in the archive because the belief is widespread and the record says otherwise. Two things found in the record are deliberately EXCLUDED: graffiti on a public figure's family graves, and the liquidators' unproven findings about individuals. The first is desecration, not rivalry; the second is an allegation, not a fact.",
+  "confidence": 3,
+  "source": {
+    "kind": "newspaper",
+    "title": "מעבר מחקר ייעודי, 1.9.2026 — Ynet · Walla · Globes · Calcalist · ONE",
+    "url": null
+  },
+  "records": [
+    {
+      "slug": "benhaim-2013",
+      "kind": "crossing",
+      "titleHe": "טל בן חיים חוצה למכבי",
+      "happenedOn": "2013-06-25",
+      "dateConfirmed": true,
+      "personNameHe": "טל בן חיים",
+      "bodyHe": "חוזה לארבע שנים. סך העסקה 1.125 מיליון יורו, מתוכם 375 אלף להפועל ו-750 אלף למכבי פתח תקווה שהחזיקה 25% מהזכויות.",
+      "feeEur": 1125000,
+      "toClubHe": "מכבי תל אביב",
+      "confidence": 3,
+      "sourceUrl": "https://sports.walla.co.il/item/2654383",
+      "sourceTitle": "Walla, 25.6.2013"
+    },
+    {
+      "slug": "vermouth-2015",
+      "kind": "crossing",
+      "titleHe": "גילי ורמוט חוצה למכבי",
+      "happenedOn": "2015-02-03",
+      "dateConfirmed": true,
+      "personNameHe": "גילי ורמוט",
+      "bodyHe": "חוזה לשלוש שנים וחצי. 700 אלף יורו בתוספת בן רייכרט ושון גולדנברג. יום לפני החתימה ענד את סרט הקפטן של הפועל בדרבי שהסתיים בהפסד. ההסכם נסגר שבוע קודם לכן, ולפי סיקור מאוחר ידעו עליו שלושה אנשים בלבד.",
+      "feeEur": 700000,
+      "toClubHe": "מכבי תל אביב",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4622237,00.html",
+      "sourceTitle": "Ynet, 3.2.2015"
+    },
+    {
+      "slug": "layous-2024",
+      "kind": "crossing",
+      "titleHe": "הישאם לאיוס חוצה למכבי",
+      "happenedOn": "2024-08-01",
+      "dateConfirmed": true,
+      "personNameHe": "הישאם לאיוס",
+      "bodyHe": "800 אלף יורו, שלוש שנים עם אופציה. 9 שערים ב-61 הופעות בליגה בשנתיים בהפועל.",
+      "feeEur": 800000,
+      "toClubHe": "מכבי תל אביב",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/sport/israelisoccer/article/hkfohkytr",
+      "sourceTitle": "Ynet, 1.8.2024"
+    },
+    {
+      "slug": "gershon-beitar",
+      "kind": "myth",
+      "titleHe": "שמעון גרשון לא חצה למכבי",
+      "happenedOn": "2006-05-29",
+      "dateConfirmed": true,
+      "personNameHe": "שמעון גרשון",
+      "bodyHe": "גרשון מעולם לא שיחק במכבי תל אביב. הוא עזב את הפועל לבית\"ר ירושלים בקיץ 2006. פרש ב-2010 בגיל 33 בעקבות מום לב מולד.",
+      "toClubHe": "בית\"ר ירושלים",
+      "confidence": 3,
+      "sourceUrl": "https://sports.walla.co.il/item/3101799",
+      "sourceTitle": "Walla — סקירת קריירה"
+    },
+    {
+      "slug": "zahavi-palermo",
+      "kind": "myth",
+      "titleHe": "ערן זהבי לא עבר ישירות למכבי",
+      "happenedOn": "2011-06-21",
+      "dateConfirmed": true,
+      "personNameHe": "ערן זהבי",
+      "bodyHe": "זהבי עזב את הפועל לפלרמו ביוני 2011 בהליך בוררות. הוא חתם במכבי תל אביב מפלרמו בינואר 2013, שנה וחצי מאוחר יותר. הטענה שהוא עבר ישירות מהפועל למכבי אינה נכונה.",
+      "toClubHe": "פלרמו",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4081191,00.html",
+      "sourceTitle": "Ynet, 21.6.2011"
+    },
+    {
+      "slug": "tabib-sole-owner",
+      "kind": "event",
+      "titleHe": "אלי טביב הופך לבעלים היחיד",
+      "happenedOn": "2011-07-18",
+      "dateConfirmed": true,
+      "bodyHe": "בית המשפט המחוזי בתל אביב, השופטת רות רונן, אישר עסקת BMBY: 6 מיליון שקל עבור 50% של מוני הראל.",
+      "confidence": 3,
+      "sourceUrl": "https://www.globes.co.il/news/article.aspx?did=1000665389",
+      "sourceTitle": "Globes, 18.7.2011"
+    },
+    {
+      "slug": "ramon-owner",
+      "kind": "event",
+      "titleHe": "חיים רמון נכנס לבעלות",
+      "happenedOn": "2012-07-19",
+      "dateConfirmed": true,
+      "bodyHe": "רמון מקבל את זכויות הניהול; 30% מהמניות לאנשי עסקים ו-20% לעמותת האוהדים.",
+      "confidence": 3,
+      "sourceUrl": "https://sports.walla.co.il/item/2845031",
+      "sourceTitle": "Walla + כותרת הארץ, 19.7.2012"
+    },
+    {
+      "slug": "tabib-convicted",
+      "kind": "event",
+      "titleHe": "אלי טביב מורשע בתקיפה",
+      "happenedOn": "2014-06-26",
+      "dateConfirmed": true,
+      "bodyHe": "בית משפט השלום בתל אביב הרשיע בתקיפה בנסיבות מחמירות, השחתת ראיה ושיבוש. האירוע: מרץ 2012, נער בן 17 שהגיע להפגין מול ביתו.",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4534776,00.html",
+      "sourceTitle": "Ynet, 26.6.2014"
+    },
+    {
+      "slug": "derby-abandoned",
+      "kind": "event",
+      "titleHe": "הדרבי שהופסק",
+      "happenedOn": "2014-11-03",
+      "dateConfirmed": true,
+      "bodyHe": "מכבי מול הפועל בבלומפילד. בדקה 33, ב-1:1, אוהד הפועל פרץ למגרש ותקף את ערן זהבי. השופט רועי ריינשרייבר הרחיק את זהבי, עשרות אוהדים פרצו והמשחק הופסק.",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4587635,00.html",
+      "sourceTitle": "Ynet, 3.11.2014"
+    },
+    {
+      "slug": "ramon-leaves",
+      "kind": "event",
+      "titleHe": "חיים רמון עוזב",
+      "happenedOn": "2015-02-04",
+      "dateConfirmed": true,
+      "bodyHe": "רמון מוסר את השליטה לעמותת האוהדים אחרי כשנתיים וחצי. לדבריו השקיע כ-10 מיליון שקל, ואוהדים הפגינו מול ביתו.",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4622849,00.html",
+      "sourceTitle": "Ynet, 4.2.2015"
+    },
+    {
+      "slug": "tabib-sentenced",
+      "kind": "event",
+      "titleHe": "גזר הדין של טביב",
+      "happenedOn": "2015-03-02",
+      "dateConfirmed": true,
+      "bodyHe": "השופט דניאל בארי: 15 חודשים (5 בפועל) ועוד 8 חודשים (3 בפועל), כשהמאסר בפועל הומר לשישה חודשי עבודות שירות, ופיצוי של 4,000 שקל.",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4632310,00.html",
+      "sourceTitle": "Ynet, 2.3.2015"
+    },
+    {
+      "slug": "liquidation-2017",
+      "kind": "event",
+      "titleHe": "צו פירוק לחברה המחזיקה",
+      "happenedOn": "2017-01-04",
+      "dateConfirmed": true,
+      "bodyHe": "השופט איתן אורנשטיין הורה על פירוק בשל חובות של יותר מ-100 מיליון שקל.",
+      "confidence": 3,
+      "sourceUrl": "https://www.calcalist.co.il/sport/articles/0,7340,L-3705160,00.html",
+      "sourceTitle": "Calcalist, 4.1.2017"
+    },
+    {
+      "slug": "wrong-house",
+      "kind": "event",
+      "titleHe": "ההפגנה שהגיעה לבית הלא נכון",
+      "happenedOn": "2019-12-19",
+      "dateConfirmed": true,
+      "bodyHe": "אוהדים יצאו להפגין מול בית האחים ניסנוב בקיבוץ שומריה — והגיעו בטעות לביתו הסמוך של אלי טביב. המשטרה פיזרה.",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-5645154,00.html",
+      "sourceTitle": "Ynet, 19.12.2019"
+    },
+    {
+      "slug": "safra-2024",
+      "kind": "event",
+      "titleHe": "אדמונד ספרא רוכש את המועדון",
+      "happenedOn": "2024-07-11",
+      "dateConfirmed": true,
+      "bodyHe": "ההסכם נחתם אחרי כשלושה חודשי מו\"מ ומחלוקות על חובות עבר.",
+      "confidence": 3,
+      "sourceUrl": "https://www.ynet.co.il/sport/israelisoccer/article/h1tyo59ur",
+      "sourceTitle": "Ynet, 11.7.2024"
+    }
+  ]
+}

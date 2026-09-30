@@ -1,0 +1,5259 @@
+{
+ "note": "ויקיפועל (wiki.red-fans.com), international matches — the owner's enrichment of 24.9.2026 (`match-master-redfans-enriched-2026-09-24.json`), trimmed to what the canon reads: per-leg identity, the scorers with their source pages, the physically-not-played walkover and the disagreements it preserved. Its ids and its player ids are NOT carried (the canon's `m_…` and `p_…` are the only ids); rows are joined to canonical matches by date + competition (+ opponent), scorers are resolved by name through the Player Master or stay unresolved. `independentFields` lists what the red-fans pages themselves state — everything else in a row echoes the repo's own euro-ties.json and is never counted as a second source. wiki.red-fans.com was read by the owner's tool, not by this repo's crawlers (rule 11).",
+ "confidence": 2,
+ "source": {
+  "kind": "other",
+  "title": "ויקיפועל · לוחות משחקים (כדורגל) — העשרה בינלאומית 24.9.2026",
+  "url": "https://wiki.red-fans.com/"
+ },
+ "records": [
+  {
+   "playedOn": "1967-12-19",
+   "competitionHe": "גביע אסיה",
+   "stageHe": "גמר",
+   "side": "NEUTRAL",
+   "opponentHe": "סלנגור",
+   "opponentLatin": "Selangor",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בנגקוק",
+   "independentFields": [
+    "competition",
+    "date",
+    "opponent",
+    "score",
+    "scorers",
+    "season",
+    "stage",
+    "venue"
+   ],
+   "echoesRepo": false,
+   "sources": [
+    {
+     "title": "ויקיפועל · הפועל תל אביב (כדורגל)/היסטוריה · 1967 גביע אסיה",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)/%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94",
+     "confidence": 3,
+     "fields": [
+      "season",
+      "date",
+      "competition",
+      "stage",
+      "opponent",
+      "score",
+      "venue",
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "דני בורסוק",
+     "minute": 70,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)/%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94"
+    },
+    {
+     "nameHe": "יעקב רחמינוביץ'",
+     "minute": 75,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)/%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%94"
+    }
+   ],
+   "conflicts": [],
+   "notes": [
+    "גמר אליפות אסיה לקבוצות; הפועל זכתה 2:1. כל מחצית נמשכה 40 דקות לפי תיאור ויקיפועל."
+   ]
+  },
+  {
+   "playedOn": "1970-04-02",
+   "competitionHe": "גביע אסיה",
+   "stageHe": "שלב הבתים מחזור 1",
+   "side": "NEUTRAL",
+   "opponentHe": "משטרת בנגקוק",
+   "opponentLatin": "Bangkok Police",
+   "scoreFor": 5,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "טהרן",
+   "independentFields": [
+    "competition",
+    "date",
+    "opponent",
+    "score",
+    "scorers",
+    "season",
+    "stage",
+    "venue"
+   ],
+   "echoesRepo": false,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים (כדורגל) 1969/70",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70",
+     "confidence": 3,
+     "fields": [
+      "season",
+      "date",
+      "competition",
+      "stage",
+      "opponent",
+      "score",
+      "venue",
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יעקב רחמינוביץ'",
+     "minute": 4,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    },
+    {
+     "nameHe": "שייע פייגנבוים",
+     "minute": 13,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    },
+    {
+     "nameHe": "שייע פייגנבוים",
+     "minute": 24,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    },
+    {
+     "nameHe": "ג'ורג' בורבה",
+     "minute": 30,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    },
+    {
+     "nameHe": "יחזקאל חזום",
+     "minute": 39,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1970-04-04",
+   "competitionHe": "גביע אסיה",
+   "stageHe": "שלב הבתים מחזור 2",
+   "side": "NEUTRAL",
+   "opponentHe": "מערב בנגל",
+   "opponentLatin": "East Bengal",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "טהרן",
+   "independentFields": [
+    "competition",
+    "date",
+    "opponent",
+    "score",
+    "scorers",
+    "season",
+    "stage",
+    "venue"
+   ],
+   "echoesRepo": false,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים (כדורגל) 1969/70",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70",
+     "confidence": 3,
+     "fields": [
+      "season",
+      "date",
+      "competition",
+      "stage",
+      "opponent",
+      "score",
+      "venue",
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "שייע פייגנבוים",
+     "minute": 40,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    },
+    {
+     "nameHe": "שייע פייגנבוים",
+     "minute": 59,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    },
+    {
+     "nameHe": "סאאה",
+     "minute": 87,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": true,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1970-04-06",
+   "competitionHe": "גביע אסיה",
+   "stageHe": "שלב הבתים מחזור 3",
+   "side": "NEUTRAL",
+   "opponentHe": "מדאן",
+   "opponentLatin": "PSMS Medan",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "טהרן",
+   "independentFields": [
+    "competition",
+    "date",
+    "opponent",
+    "score",
+    "scorers",
+    "season",
+    "stage",
+    "venue"
+   ],
+   "echoesRepo": false,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים (כדורגל) 1969/70",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70",
+     "confidence": 3,
+     "fields": [
+      "season",
+      "date",
+      "competition",
+      "stage",
+      "opponent",
+      "score",
+      "venue",
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יחזקאל חזום",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    },
+    {
+     "nameHe": "אברהם כהן",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    },
+    {
+     "nameHe": "משה מורדכוביץ",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1970-04-08",
+   "competitionHe": "גביע אסיה",
+   "stageHe": "1/2 גמר",
+   "side": "NEUTRAL",
+   "opponentHe": "הומנטמן",
+   "opponentLatin": "Homenetmen",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": false,
+   "venueText": null,
+   "independentFields": [
+    "competition",
+    "date",
+    "opponent",
+    "score",
+    "scorers",
+    "season",
+    "stage",
+    "venue"
+   ],
+   "echoesRepo": false,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים (כדורגל) 1969/70",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1969/70",
+     "confidence": 3,
+     "fields": [
+      "season",
+      "date",
+      "competition",
+      "stage",
+      "opponent",
+      "score",
+      "venue",
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "not-applicable",
+   "scorers": [],
+   "conflicts": [],
+   "notes": [
+    "ניצחון טכני 2:0 בעקבות סירוב היריבה להתייצב; אין לסמן כתחנת משחק פיזית ב-AWAY DAYS."
+   ]
+  },
+  {
+   "playedOn": "1970-04-10",
+   "competitionHe": "גביע אסיה",
+   "stageHe": "גמר",
+   "side": "NEUTRAL",
+   "opponentHe": "טאג' קלאב",
+   "opponentLatin": "Taj Club",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון אמג'דיאח, טהרן",
+   "independentFields": [
+    "competition",
+    "date",
+    "opponent",
+    "score",
+    "scorers",
+    "season",
+    "stage",
+    "venue"
+   ],
+   "echoesRepo": false,
+   "sources": [
+    {
+     "title": "ויקיפועל · עונת 1969/70 (כדורגל) גביע אסיה גמר",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_1969/70_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%90%D7%A1%D7%99%D7%94_%D7%92%D7%9E%D7%A8",
+     "confidence": 3,
+     "fields": [
+      "season",
+      "date",
+      "competition",
+      "stage",
+      "opponent",
+      "score",
+      "venue",
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יחזקאל חזום",
+     "minute": 69,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_1969/70_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%90%D7%A1%D7%99%D7%94_%D7%92%D7%9E%D7%A8"
+    }
+   ],
+   "conflicts": [],
+   "notes": [
+    "1:1 בתום הזמן החוקי; טאג׳ ניצחה 2:1 בהארכה."
+   ]
+  },
+  {
+   "playedOn": "1981-06-27",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 1",
+   "side": "HOME",
+   "opponentHe": "וינר ס.צ.",
+   "opponentLatin": "Wiener SC",
+   "scoreFor": 1,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1981 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/5015/ch/EUR_IC_1981/stg/all/tour/all/club1/ISR_Hapoel_Tel_Aviv",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1981-07-04",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 1",
+   "side": "HOME",
+   "opponentHe": "פ.צ. ליאז'",
+   "opponentLatin": "RFC Liège",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · אינטרטוטו 1981/82 מחזור 2",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_1981/82_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%94%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%98%D7%95%D7%98%D7%95_%D7%A9%D7%9C%D7%91_%D7%94%D7%91%D7%AA%D7%99%D7%9D_%D7%9E%D7%97%D7%96%D7%95%D7%A8_2",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יצחק נעמן",
+     "minute": 41,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_1981/82_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%94%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%98%D7%95%D7%98%D7%95_%D7%A9%D7%9C%D7%91_%D7%94%D7%91%D7%AA%D7%99%D7%9D_%D7%9E%D7%97%D7%96%D7%95%D7%A8_2"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1981-07-11",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 1",
+   "side": "AWAY",
+   "opponentHe": "מכבי נתניה",
+   "opponentLatin": "Maccabi Netanya",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · אינטרטוטו 1981/82 מחזור 3",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_1981/82_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%94%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%98%D7%95%D7%98%D7%95_%D7%A9%D7%9C%D7%91_%D7%94%D7%91%D7%AA%D7%99%D7%9D_%D7%9E%D7%97%D7%96%D7%95%D7%A8_3",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מאיר נחמיאס",
+     "minute": 16,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_1981/82_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%94%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%98%D7%95%D7%98%D7%95_%D7%A9%D7%9C%D7%91_%D7%94%D7%91%D7%AA%D7%99%D7%9D_%D7%9E%D7%97%D7%96%D7%95%D7%A8_3"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1981-07-14",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 1",
+   "side": "HOME",
+   "opponentHe": "מכבי נתניה",
+   "opponentLatin": "Maccabi Netanya",
+   "scoreFor": 1,
+   "scoreAgainst": 4,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · אינטרטוטו 1981/82 מחזור 4",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_1981/82_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%94%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%98%D7%95%D7%98%D7%95_%D7%A9%D7%9C%D7%91_%D7%94%D7%91%D7%AA%D7%99%D7%9D_%D7%9E%D7%97%D7%96%D7%95%D7%A8_4",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יעקב בוזגלו",
+     "minute": 6,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_1981/82_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%94%D7%90%D7%99%D7%A0%D7%98%D7%A8%D7%98%D7%95%D7%98%D7%95_%D7%A9%D7%9C%D7%91_%D7%94%D7%91%D7%AA%D7%99%D7%9D_%D7%9E%D7%97%D7%96%D7%95%D7%A8_4"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1981-07-18",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 1",
+   "side": "AWAY",
+   "opponentHe": "וינר ס.צ.",
+   "opponentLatin": "Wiener SC",
+   "scoreFor": 1,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1981 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/5015/ch/EUR_IC_1981/stg/all/tour/all/club1/ISR_Hapoel_Tel_Aviv",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1981-07-25",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 1",
+   "side": "AWAY",
+   "opponentHe": "פ.צ. ליאז'",
+   "opponentLatin": "RFC Liège",
+   "scoreFor": 1,
+   "scoreAgainst": 4,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1981 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/5015/ch/EUR_IC_1981/stg/all/tour/all/club1/ISR_Hapoel_Tel_Aviv",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1982-06-26",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 5",
+   "side": "HOME",
+   "opponentHe": "אדמירה ווקר",
+   "opponentLatin": "Admira Wacker",
+   "scoreFor": 4,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 1982/83",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "דב רמלר",
+     "minute": 30,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    },
+    {
+     "nameHe": "דב רמלר",
+     "minute": 43,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    },
+    {
+     "nameHe": "יעקב אקהויז",
+     "minute": 61,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    },
+    {
+     "nameHe": "אלי כהן",
+     "minute": 72,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1982-07-03",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 5",
+   "side": "HOME",
+   "opponentHe": "נורשפינג",
+   "opponentLatin": "IFK Norrköping",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 1982/83",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מיכאל גרנסקוג",
+     "minute": 25,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": true,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    },
+    {
+     "nameHe": "גילי לנדאו",
+     "minute": 41,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1982-07-06",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 5",
+   "side": "AWAY",
+   "opponentHe": "הפועל כפר סבא",
+   "opponentLatin": "Hapoel Kfar Saba",
+   "scoreFor": 4,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 1982/83",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "גילי לנדאו",
+     "minute": 34,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    },
+    {
+     "nameHe": "דב רמלר",
+     "minute": 48,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    },
+    {
+     "nameHe": "יוסי זאנה",
+     "minute": 51,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    },
+    {
+     "nameHe": "מאיר נחמיאס",
+     "minute": 75,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1982-07-10",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 5",
+   "side": "HOME",
+   "opponentHe": "הפועל כפר סבא",
+   "opponentLatin": "Hapoel Kfar Saba",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 1982/83",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "משה סיני",
+     "minute": 84,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1982-07-17",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 5",
+   "side": "AWAY",
+   "opponentHe": "אדמירה ווקר",
+   "opponentLatin": "Admira Wacker",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 1982/83",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יוסי זאנה",
+     "minute": 72,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1982-07-24",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 5",
+   "side": "AWAY",
+   "opponentHe": "נורשפינג",
+   "opponentLatin": "IFK Norrköping",
+   "scoreFor": 0,
+   "scoreAgainst": 5,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 1982/83",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1982/83",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1986-06-04",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 8",
+   "side": "HOME",
+   "opponentHe": "מכבי חיפה",
+   "opponentLatin": "Maccabi Haifa",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1986 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/1/ch/all/club1/ISR_Hapoel_Tel_Aviv/ydate/1986",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1986-06-11",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 8",
+   "side": "AWAY",
+   "opponentHe": "מכבי חיפה",
+   "opponentLatin": "Maccabi Haifa",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1986 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/1/ch/all/club1/ISR_Hapoel_Tel_Aviv/ydate/1986",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1986-06-14",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 8",
+   "side": "HOME",
+   "opponentHe": "לינגבי",
+   "opponentLatin": "Lyngby BK",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1986 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/1/ch/all/club1/ISR_Hapoel_Tel_Aviv/ydate/1986",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1986-06-21",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 8",
+   "side": "HOME",
+   "opponentHe": "גראצר א.ק.",
+   "opponentLatin": "Grazer AK",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1986 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/1/ch/all/club1/ISR_Hapoel_Tel_Aviv/ydate/1986",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1986-06-28",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 8",
+   "side": "AWAY",
+   "opponentHe": "לינגבי",
+   "opponentLatin": "Lyngby BK",
+   "scoreFor": 2,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1986 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/1/ch/all/club1/ISR_Hapoel_Tel_Aviv/ydate/1986",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1986-07-05",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 8",
+   "side": "AWAY",
+   "opponentHe": "גראצר א.ק.",
+   "opponentLatin": "Grazer AK",
+   "scoreFor": 3,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "Wildstat · Intertoto Cup 1986 · Hapoel Tel Aviv",
+     "url": "https://wildstat.com/p/1/ch/all/club1/ISR_Hapoel_Tel_Aviv/ydate/1986",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1995-08-08",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "AWAY",
+   "opponentHe": "זימברו קישינב",
+   "opponentLatin": "Zimbru Chișinău",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "האצטדיון הרפובליקני, קישינב",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1995-08-22",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "HOME",
+   "opponentHe": "זימברו קישינב",
+   "opponentLatin": "Zimbru Chișinău",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1996-06-23",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 6",
+   "side": "HOME",
+   "opponentHe": "ראן",
+   "opponentLatin": "Stade Rennais",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים (כדורגל) 1996/97",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1996/97",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1996-06-30",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 6",
+   "side": "AWAY",
+   "opponentHe": "לוצרן",
+   "opponentLatin": "FC Luzern",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים (כדורגל) 1996/97",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1996/97",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1996-07-06",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 6",
+   "side": "HOME",
+   "opponentHe": "סגסטה",
+   "opponentLatin": "HNK Segesta",
+   "scoreFor": 1,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים (כדורגל) 1996/97",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1996/97",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1996-07-14",
+   "competitionHe": "גביע אינטרטוטו",
+   "stageHe": "בית 6",
+   "side": "AWAY",
+   "opponentHe": "אורגריט",
+   "opponentLatin": "Örgryte IS",
+   "scoreFor": 0,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": null,
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים (כדורגל) 1996/97",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1996/97",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1998-07-22",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "פינפ\"א הלסינקי",
+   "opponentLatin": "FinnPa Helsinki",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סבסטיאן סימרוטיץ'",
+     "minute": null,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1998/99"
+    },
+    {
+     "nameHe": "אסי טובי",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1998/99"
+    },
+    {
+     "nameHe": "שלום תקוה",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1998/99"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1998-07-29",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "פינפ\"א הלסינקי",
+   "opponentLatin": "FinnPa Helsinki",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "האצטדיון האולימפי, הלסינקי",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "שלום תקוה",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1998/99"
+    },
+    {
+     "nameHe": "שלום תקוה",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1998/99"
+    },
+    {
+     "nameHe": "אסי טובי",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1998/99"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1998-08-11",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "סטרומסגודסט",
+   "opponentLatin": "Strømsgodset",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1998-08-25",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "סטרומסגודסט",
+   "opponentLatin": "Strømsgodset",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "דרמן",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1999-08-12",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "AWAY",
+   "opponentHe": "אף.סי ירוואן",
+   "opponentLatin": "FC Yerevan",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "ירוואן",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "רונן חרזי",
+     "minute": 58,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1999/00"
+    },
+    {
+     "nameHe": "רונן חרזי",
+     "minute": 60,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1999/00"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1999-08-26",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "HOME",
+   "opponentHe": "אף.סי ירוואן",
+   "opponentLatin": "FC Yerevan",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "אישטוון פישונט",
+     "minute": 81,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1999/00"
+    },
+    {
+     "nameHe": "יגאל אנטבי",
+     "minute": 90,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_1999/00"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1999-09-16",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "סלטיק",
+   "opponentLatin": "Celtic",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "סלטיק פארק",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "1999-09-30",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "סלטיק",
+   "opponentLatin": "Celtic",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2000-07-26",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "שטורם גראץ",
+   "opponentLatin": "Sturm Graz",
+   "scoreFor": 0,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "גראץ-ליבנאו",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2000-08-02",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "שטורם גראץ",
+   "opponentLatin": "Sturm Graz",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "פיני בלילי",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2000/01"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2001-08-09",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "AWAY",
+   "opponentHe": "ארארט ירוואן",
+   "opponentLatin": "Ararat Yerevan",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "ירוואן",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סלים טועמה",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2001/02"
+    },
+    {
+     "nameHe": "מילאן אוסטרץ",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2001/02"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2001-08-23",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "HOME",
+   "opponentHe": "ארארט ירוואן",
+   "opponentLatin": "Ararat Yerevan",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מילאן אוסטרץ",
+     "minute": 2,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2001/02_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%90%D7%95%D7%A4%22%D7%90_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9D_%D7%9E%D7%A9%D7%97%D7%A7_2"
+    },
+    {
+     "nameHe": "אסי דומב",
+     "minute": 15,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2001/02_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%90%D7%95%D7%A4%22%D7%90_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9D_%D7%9E%D7%A9%D7%97%D7%A7_2"
+    },
+    {
+     "nameHe": "כפיר אודי",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2001/02_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%90%D7%95%D7%A4%22%D7%90_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9D_%D7%9E%D7%A9%D7%97%D7%A7_2"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2001-09-20",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "גאזיאנטפספור",
+   "opponentLatin": "Gaziantepspor",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "רינדיוק",
+     "minute": 90,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": true,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2001/02"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2001-09-25",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "גאזיאנטפספור",
+   "opponentLatin": "Gaziantepspor",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "גאזיאנטפ",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מילאן אוסטרץ",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2001/02"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2001-10-18",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "צ'לסי",
+   "opponentLatin": "Chelsea",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "שמעון גרשון",
+     "minute": 89,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99"
+    },
+    {
+     "nameHe": "סרגיי קלשצ'נקו",
+     "minute": 90,
+     "stoppage": 4,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2001-11-01",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "צ'לסי",
+   "opponentLatin": "Chelsea",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "סטמפורד ברידג'",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מילאן אוסטרץ",
+     "minute": 36,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2001/02_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%90%D7%95%D7%A4%22%D7%90_%D7%A1%D7%99%D7%91%D7%95%D7%91_2_%D7%9E%D7%A9%D7%97%D7%A7_2"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2001-11-20",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 3",
+   "side": "HOME",
+   "opponentHe": "לוקומוטיב מוסקבה",
+   "opponentLatin": "Lokomotiv Moscow",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מילאן אוסטרץ",
+     "minute": 41,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2001/02"
+    },
+    {
+     "nameHe": "אסי דומב",
+     "minute": 89,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 1,
+     "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/017f-0e6a31a02e21-58d549aa2129-1000--domb-gives-tel-aviv-the-advantage"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2001-12-04",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 3",
+   "side": "AWAY",
+   "opponentHe": "לוקומוטיב מוסקבה",
+   "opponentLatin": "Lokomotiv Moscow",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון סטורן, רמנסקויה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מילאן אוסטרץ",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2001/02"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-02-21",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שמינית גמר",
+   "side": "HOME",
+   "opponentHe": "פארמה",
+   "opponentLatin": "Parma",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-02-28",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שמינית גמר",
+   "side": "AWAY",
+   "opponentHe": "פארמה",
+   "opponentLatin": "Parma",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון טרדיני, פארמה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מילאן אוסטרץ",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2001/02"
+    },
+    {
+     "nameHe": "אישטוון פישונט",
+     "minute": 55,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2001/02"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-03-14",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "רבע גמר",
+   "side": "HOME",
+   "opponentHe": "מילאן",
+   "opponentLatin": "AC Milan",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון GSP, ניקוסיה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סרגיי קלשצ'נקו",
+     "minute": 32,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 2,
+     "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/"
+    }
+   ],
+   "conflicts": [
+    {
+     "field": "scorers.items[0].minute",
+     "values": [
+      {
+       "value": 32,
+       "source": "UEFA existing master"
+      },
+      {
+       "value": 31,
+       "source": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2001/02_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%90%D7%95%D7%A4%22%D7%90_1/4_%D7%92%D7%9E%D7%A8_%D7%9E%D7%A9%D7%97%D7%A7_1"
+      }
+     ],
+     "note": "Wikipoel match page says minute 31; existing UEFA-linked master says 32. Identity and goal count are not disputed."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-03-21",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "רבע גמר",
+   "side": "AWAY",
+   "opponentHe": "מילאן",
+   "opponentLatin": "AC Milan",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "סן סירו",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-08-15",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "HOME",
+   "opponentHe": "פרטיזני טירנה",
+   "opponentLatin": "Partizani Tirana",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "סופיה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יוסי אבוקסיס",
+     "minute": 49,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-08-29",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "AWAY",
+   "opponentHe": "פרטיזני טירנה",
+   "opponentLatin": "Partizani Tirana",
+   "scoreFor": 4,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "טירנה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עומרי אפק",
+     "minute": 28,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    },
+    {
+     "nameHe": "פיני בלילי",
+     "minute": 73,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    },
+    {
+     "nameHe": "פיני בלילי",
+     "minute": 83,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    },
+    {
+     "nameHe": "כפיר אודי",
+     "minute": 87,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-09-19",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "קרנטן",
+   "opponentLatin": "FC Kärnten",
+   "scoreFor": 4,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "קלגנפורט",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "גאבור הלמאי",
+     "minute": 35,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    },
+    {
+     "nameHe": "וולטון סילבה",
+     "minute": 67,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    },
+    {
+     "nameHe": "שמעון גרשון",
+     "minute": 75,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    },
+    {
+     "nameHe": "כפיר אודי",
+     "minute": 88,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-10-03",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "קרנטן",
+   "opponentLatin": "FC Kärnten",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "סופיה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-10-31",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "לידס יונייטד",
+   "opponentLatin": "Leeds United",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "אלנד רואד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2002-11-14",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "לידס יונייטד",
+   "opponentLatin": "Leeds United",
+   "scoreFor": 1,
+   "scoreAgainst": 4,
+   "physicalPlayed": null,
+   "venueText": "פירנצה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יוסי אבוקסיס",
+     "minute": 2,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2002/03"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2003-08-14",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "HOME",
+   "opponentHe": "באנאנץ ירוואן",
+   "opponentLatin": "Banants Yerevan",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון אנקו, רוטרדם",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יוסי רוזן",
+     "minute": 44,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2003/04"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2003-08-28",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות",
+   "side": "AWAY",
+   "opponentHe": "באנאנץ ירוואן",
+   "opponentLatin": "Banants Yerevan",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "ירוואן",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "רובן סולצ׳גה",
+     "minute": 13,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2003/04"
+    },
+    {
+     "nameHe": "כפיר אדרי",
+     "minute": 53,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2003/04"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2003-09-24",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "גאזיאנטפספור",
+   "opponentLatin": "Gaziantepspor",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "גאזיאנטפ",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2003-10-15",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "גאזיאנטפספור",
+   "opponentLatin": "Gaziantepspor",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "רוטרדם",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2006-08-10",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "דומז'לה",
+   "opponentLatin": "Domžale",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון וילם השני, טילבורג",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "לוסיאנו דה ברונו",
+     "minute": 41,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2006-08-24",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "דומז'לה",
+   "opponentLatin": "Domžale",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "דומז'לה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "איוון יוליץ׳",
+     "minute": 70,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "גילי ורמוט",
+     "minute": 90,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "איבזיטו אוגבונה",
+     "minute": 92,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2006-09-14",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "צ'רנומורץ אודסה",
+   "opponentLatin": "Chornomorets Odesa",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "אודסה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "לוסיאנו דה ברונו",
+     "minute": 73,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2006-09-28",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "צ'רנומורץ אודסה",
+   "opponentLatin": "Chornomorets Odesa",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סלים טועמה",
+     "minute": 24,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "אליניב ברדה",
+     "minute": 74,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "לוסיאנו דה ברונו",
+     "minute": 88,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    }
+   ],
+   "conflicts": [
+    {
+     "field": "date",
+     "values": [
+      {
+       "value": "2006-09-28",
+       "source": "existing attached master / European roll-up"
+      },
+      {
+       "value": "2006-10-04",
+       "source": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+      }
+     ],
+     "note": "Wikipoel European schedule research indicates 4.10.2006 for the second Chernomorets leg; existing master stores 28.9.2006. Preserved for owner review."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "playedOn": "2006-10-19",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שלב הבתים · בית G",
+   "side": "AWAY",
+   "opponentHe": "פאנאתינאיקוס",
+   "opponentLatin": "Panathinaikos",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "אתונה",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2006/07",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2006-11-02",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שלב הבתים · בית G",
+   "side": "HOME",
+   "opponentHe": "ראפיד בוקרשט",
+   "opponentLatin": "Rapid București",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2006/07",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "איבזיטו אוגבונה",
+     "minute": 10,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "וואליד באדיר",
+     "minute": 32,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2006-11-23",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שלב הבתים · בית G",
+   "side": "AWAY",
+   "opponentHe": "פאריס סן ז'רמן",
+   "opponentLatin": "Paris Saint-Germain",
+   "scoreFor": 4,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "פארק דה פראנס, פריז",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2006/07",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סלים טועמה",
+     "minute": 3,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "סלים טועמה",
+     "minute": 7,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "וואליד באדיר",
+     "minute": 44,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "אליניב ברדה",
+     "minute": 57,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2006-12-13",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שלב הבתים · בית G",
+   "side": "HOME",
+   "opponentHe": "מלאדה בולסלאב",
+   "opponentLatin": "Mladá Boleslav",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2006/07",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "אליניב ברדה",
+     "minute": 26,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-02-14",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שישית גמר",
+   "side": "HOME",
+   "opponentHe": "ריינג'רס",
+   "opponentLatin": "Rangers",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סלים טועמה",
+     "minute": 43,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    },
+    {
+     "nameHe": "ברוך דגו",
+     "minute": 76,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2006/07"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-02-22",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שישית גמר",
+   "side": "AWAY",
+   "opponentHe": "ריינג'רס",
+   "opponentLatin": "Rangers",
+   "scoreFor": 0,
+   "scoreAgainst": 4,
+   "physicalPlayed": null,
+   "venueText": "אייברוקס",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-08-16",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "שירוקי בריג",
+   "opponentLatin": "Široki Brijeg",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "שירוקי בריג",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "אבדג׳י",
+     "minute": 14,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    },
+    {
+     "nameHe": "ליאור אסולין",
+     "minute": 31,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    },
+    {
+     "nameHe": "גבריאל דוס סנטוס",
+     "minute": 74,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-08-30",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "שירוקי בריג",
+   "opponentLatin": "Široki Brijeg",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "ליאור אסולין",
+     "minute": 41,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    },
+    {
+     "nameHe": "וואליד באדיר",
+     "minute": 50,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    },
+    {
+     "nameHe": "ביברס נאתכו",
+     "minute": 74,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-09-20",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "אי.איי.קיי",
+   "opponentLatin": "AIK",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-10-04",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "אי.איי.קיי",
+   "opponentLatin": "AIK",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "סטוקהולם",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "ראובן עובד",
+     "minute": 63,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-10-25",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שלב הבתים · בית G",
+   "side": "AWAY",
+   "opponentHe": "אנדרלכט",
+   "opponentLatin": "Anderlecht",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "בריסל",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2007/08",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-11-08",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שלב הבתים · בית G",
+   "side": "HOME",
+   "opponentHe": "טוטנהאם",
+   "opponentLatin": "Tottenham Hotspur",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2007/08",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-11-29",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שלב הבתים · בית G",
+   "side": "AWAY",
+   "opponentHe": "חטאפה",
+   "opponentLatin": "Getafe",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "חטאפה",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2007/08",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "וואליד באדיר",
+     "minute": 5,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    },
+    {
+     "nameHe": "ברוך דגו",
+     "minute": 31,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2007-12-19",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "שלב הבתים · בית G",
+   "side": "HOME",
+   "opponentHe": "אלבורג",
+   "opponentLatin": "AaB Aalborg",
+   "scoreFor": 1,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2007/08",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "פאביו ג'וניור",
+     "minute": 45,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2007/08"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2008-07-17",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "יובנס/דוגאנה",
+   "opponentLatin": "Juvenes/Dogana",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2008-07-31",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "יובנס/דוגאנה",
+   "opponentLatin": "Juvenes/Dogana",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "סן מרינו",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2008-08-14",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "ווידודינה",
+   "opponentLatin": "Vojvodina",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "נובי סאד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2008-08-28",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "ווידודינה",
+   "opponentLatin": "Vojvodina",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2008-09-18",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "HOME",
+   "opponentHe": "סנט אטיין",
+   "opponentLatin": "Saint-Étienne",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "missing",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2008-10-02",
+   "competitionHe": "גביע אופ\"א",
+   "stageHe": "סיבוב 1",
+   "side": "AWAY",
+   "opponentHe": "סנט אטיין",
+   "opponentLatin": "Saint-Étienne",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "ז'ופרואה גישאר",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סמואל יבואה",
+     "minute": null,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%AA%D7%9C_%D7%90%D7%91%D7%99%D7%91_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-07-30",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "AWAY",
+   "opponentHe": "איפ\"ק גטבורג",
+   "opponentLatin": "IFK Göteborg",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "גמלה אולווי, גטבורג",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "איתי שכטר",
+     "minute": 73,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "סמואל יבואה",
+     "minute": 78,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "ביברס נאתכו",
+     "minute": 90,
+     "stoppage": 4,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-08-06",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "HOME",
+   "opponentHe": "איפ\"ק גטבורג",
+   "opponentLatin": "IFK Göteborg",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מיכאל זנדברג",
+     "minute": 14,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-08-20",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "פלייאוף",
+   "side": "AWAY",
+   "opponentHe": "טפליצה",
+   "opponentLatin": "Teplice",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "טפליצה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "וינסנט אניימה",
+     "minute": 72,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "גילי ורמוט",
+     "minute": 90,
+     "stoppage": 4,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-08-27",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "פלייאוף",
+   "side": "HOME",
+   "opponentHe": "טפליצה",
+   "opponentLatin": "Teplice",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "דדי בן דיין",
+     "minute": 90,
+     "stoppage": 1,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-09-17",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "HOME",
+   "opponentHe": "סלטיק",
+   "opponentLatin": "Celtic",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים גביעי אירופה (כדורגל) 2009/10",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "נמניה ווצ'יצ'ביץ'",
+     "minute": 75,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "מהראן לאלה",
+     "minute": 88,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-10-01",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "AWAY",
+   "opponentHe": "המבורג",
+   "opponentLatin": "Hamburger SV",
+   "scoreFor": 2,
+   "scoreAgainst": 4,
+   "physicalPlayed": null,
+   "venueText": "המבורג",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים גביעי אירופה (כדורגל) 2009/10",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "איתי שכטר",
+     "minute": 37,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "סמואל יבואה",
+     "minute": 62,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-10-22",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "HOME",
+   "opponentHe": "ראפיד וינה",
+   "opponentLatin": "Rapid Wien",
+   "scoreFor": 5,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים גביעי אירופה (כדורגל) 2009/10",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "דובר",
+     "minute": 30,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": true,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "זוראב מנטשאשווילי",
+     "minute": 54,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "איתי שכטר",
+     "minute": 59,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "גילי ורמוט",
+     "minute": 69,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "מהראן לאלה",
+     "minute": 90,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-11-05",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "AWAY",
+   "opponentHe": "ראפיד וינה",
+   "opponentLatin": "Rapid Wien",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "וינה",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים גביעי אירופה (כדורגל) 2009/10",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "אביחי ידין",
+     "minute": 13,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "גילי ורמוט",
+     "minute": 65,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    },
+    {
+     "nameHe": "ביברס נאתכו",
+     "minute": 70,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-12-02",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "AWAY",
+   "opponentHe": "סלטיק",
+   "opponentLatin": "Celtic",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "סלטיק פארק",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים גביעי אירופה (כדורגל) 2009/10",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2009-12-17",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "HOME",
+   "opponentHe": "המבורג",
+   "opponentLatin": "Hamburger SV",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים גביעי אירופה (כדורגל) 2009/10",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סמואל יבואה",
+     "minute": 23,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2009/10"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-02-18",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שישית גמר",
+   "side": "AWAY",
+   "opponentHe": "רובין קאזאן",
+   "opponentLatin": "Rubin Kazan",
+   "scoreFor": 0,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "קאזאן",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-02-25",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שישית גמר",
+   "side": "HOME",
+   "opponentHe": "רובין קאזאן",
+   "opponentLatin": "Rubin Kazan",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-07-13",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "ז'ליזניצ'אר",
+   "opponentLatin": "Željezničar",
+   "scoreFor": 5,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "מהראן לאלה",
+     "minute": 10,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "יוסי שבחון",
+     "minute": 12,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "באסליה",
+     "minute": 28,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": true,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "מהראן לאלה",
+     "minute": 31,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "מהראן לאלה",
+     "minute": 38,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-07-21",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "ז'ליזניצ'אר",
+   "opponentLatin": "Željezničar",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "סרייבו",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "דאגלס דה סילבה",
+     "minute": 76,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-07-28",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "AWAY",
+   "opponentHe": "אקטובה",
+   "opponentLatin": "Aktobe",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "אקטובה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-08-03",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "HOME",
+   "opponentHe": "אקטובה",
+   "opponentLatin": "Aktobe",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "ערן זהבי",
+     "minute": 16,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "בן שהר",
+     "minute": 31,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "בה",
+     "minute": 35,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": true,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-08-18",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "פלייאוף",
+   "side": "AWAY",
+   "opponentHe": "רד בול זלצבורג",
+   "opponentLatin": "Red Bull Salzburg",
+   "scoreFor": 3,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "זלצבורג",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "וינסנט אניימה",
+     "minute": 3,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "בן שהר",
+     "minute": 44,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "איתי שכטר",
+     "minute": 53,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-08-24",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "פלייאוף",
+   "side": "HOME",
+   "opponentHe": "רד בול זלצבורג",
+   "opponentLatin": "Red Bull Salzburg",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "ערן זהבי",
+     "minute": 92,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 2,
+     "sourceUrl": "https://wiki.red-fans.com/"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-09-14",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "AWAY",
+   "opponentHe": "בנפיקה ליסבון",
+   "opponentLatin": "Benfica",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "ליסבון",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2010/11",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-09-29",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "HOME",
+   "opponentHe": "אולימפיק ליון",
+   "opponentLatin": "Olympique Lyonnais",
+   "scoreFor": 1,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2010/11",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "וינסנט אניימה",
+     "minute": 79,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-10-20",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "AWAY",
+   "opponentHe": "שאלקה 04",
+   "opponentLatin": "Schalke 04",
+   "scoreFor": 1,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "גלזנקירכן",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2010/11",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "איתי שכטר",
+     "minute": 90,
+     "stoppage": 4,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-11-02",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "HOME",
+   "opponentHe": "שאלקה 04",
+   "opponentLatin": "Schalke 04",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2010/11",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-11-24",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "HOME",
+   "opponentHe": "בנפיקה",
+   "opponentLatin": "Benfica",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "ערן זהבי",
+     "minute": 24,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 2,
+     "sourceUrl": "https://www.skysports.com/football/hap-tel-aviv-vs-benfica/report/227534"
+    },
+    {
+     "nameHe": "דאגלס דה סילבה",
+     "minute": 74,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 2,
+     "sourceUrl": "https://www.skysports.com/football/hap-tel-aviv-vs-benfica/report/227534"
+    },
+    {
+     "nameHe": "ערן זהבי",
+     "minute": 90,
+     "stoppage": 2,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 2,
+     "sourceUrl": "https://www.skysports.com/football/hap-tel-aviv-vs-benfica/report/227534"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2010-12-07",
+   "competitionHe": "ליגת האלופות",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "AWAY",
+   "opponentHe": "אולימפיק ליון",
+   "opponentLatin": "Olympique Lyonnais",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "ז'רלן, ליון",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2010/11",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "בן שהר",
+     "minute": 63,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    },
+    {
+     "nameHe": "ערן זהבי",
+     "minute": 69,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2010/11"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-07-28",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "HOME",
+   "opponentHe": "ואדוץ",
+   "opponentLatin": "Vaduz",
+   "scoreFor": 4,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עומרי קנדה",
+     "minute": 24,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "טוטו תמוז",
+     "minute": 45,
+     "stoppage": 1,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 49,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "אלרואי כהן",
+     "minute": 82,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-08-04",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "AWAY",
+   "opponentHe": "ואדוץ",
+   "opponentLatin": "Vaduz",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "ואדוץ",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 1,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-08-18",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "פלייאוף",
+   "side": "AWAY",
+   "opponentHe": "אקראנס",
+   "opponentLatin": "Ekranas",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "פנוויז'יס",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-08-25",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "פלייאוף",
+   "side": "HOME",
+   "opponentHe": "אקראנס",
+   "opponentLatin": "Ekranas",
+   "scoreFor": 4,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "אלרואי כהן",
+     "minute": 37,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 53,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "טוטו תמוז",
+     "minute": 81,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "מהראן לאלה",
+     "minute": 90,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-09-15",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "HOME",
+   "opponentHe": "ראפיד בוקרשט",
+   "opponentLatin": "Rapid București",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2011/12",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-09-29",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "AWAY",
+   "opponentHe": "לגיה ורשה",
+   "opponentLatin": "Legia Warsaw",
+   "scoreFor": 2,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "ורשה",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2011/12",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "טוטו תמוז",
+     "minute": 34,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "מהראן לאלה",
+     "minute": 78,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-10-20",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "HOME",
+   "opponentHe": "פ.ס.וו איינדהובן",
+   "opponentLatin": "PSV Eindhoven",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2011/12",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-11-03",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "AWAY",
+   "opponentHe": "פ.ס.וו איינדהובן",
+   "opponentLatin": "PSV Eindhoven",
+   "scoreFor": 3,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "פיליפס סטדיון, איינדהובן",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2011/12",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 19,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "טוטו תמוז",
+     "minute": 32,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "טוטו תמוז",
+     "minute": 46,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-11-30",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "AWAY",
+   "opponentHe": "ראפיד בוקרשט",
+   "opponentLatin": "Rapid București",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "בוקרשט",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2011/12",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "נוסא איגייבור",
+     "minute": 12,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "טוטו תמוז",
+     "minute": 39,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "סלים טועמה",
+     "minute": 45,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2011-12-15",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית C",
+   "side": "HOME",
+   "opponentHe": "לגיה ורשה",
+   "opponentLatin": "Legia Warsaw",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2011/12",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סלים טועמה",
+     "minute": 33,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    },
+    {
+     "nameHe": "אביחי ידין",
+     "minute": 76,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2011/12"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2012-08-23",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "פלייאוף",
+   "side": "AWAY",
+   "opponentHe": "דודלנז'",
+   "opponentLatin": "F91 Dudelange",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "דודלנז'",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "יאן-פליפה קאייה",
+     "minute": 4,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": true,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    },
+    {
+     "nameHe": "טל בן חיים",
+     "minute": 19,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    },
+    {
+     "nameHe": "אלרואי כהן",
+     "minute": 25,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2012-08-30",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "פלייאוף",
+   "side": "HOME",
+   "opponentHe": "דודלנז'",
+   "opponentLatin": "F91 Dudelange",
+   "scoreFor": 4,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "חנן ממן",
+     "minute": 68,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    },
+    {
+     "nameHe": "ויקטור מרעי",
+     "minute": 79,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    },
+    {
+     "nameHe": "חנן ממן",
+     "minute": 84,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    },
+    {
+     "nameHe": "סלים טועמה",
+     "minute": 88,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2012-09-20",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "HOME",
+   "opponentHe": "אתלטיקו מדריד",
+   "opponentLatin": "Atlético Madrid",
+   "scoreFor": 0,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2012/13",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2012-10-04",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "AWAY",
+   "opponentHe": "אקדמיקה דה קוימברה",
+   "opponentLatin": "Académica de Coimbra",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "קוימברה",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2012/13",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 90,
+     "stoppage": 2,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2012-10-25",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "HOME",
+   "opponentHe": "ויקטוריה פלזן",
+   "opponentLatin": "Viktoria Plzeň",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2012/13",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "חנן ממן",
+     "minute": 12,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2012-11-08",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "AWAY",
+   "opponentHe": "ויקטוריה פלזן",
+   "opponentLatin": "Viktoria Plzeň",
+   "scoreFor": 0,
+   "scoreAgainst": 4,
+   "physicalPlayed": null,
+   "venueText": "פלזן",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2012/13",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2012-11-22",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "AWAY",
+   "opponentHe": "אתלטיקו מדריד",
+   "opponentLatin": "Atlético Madrid",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "ויסנטה קלדרון, מדריד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2012/13",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2012-12-06",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "שלב הבתים · בית B",
+   "side": "HOME",
+   "opponentHe": "אקדמיקה דה קוימברה",
+   "opponentLatin": "Académica de Coimbra",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [
+    "opponent"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · לוח משחקים מלא (כדורגל) 2012/13",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13",
+     "confidence": 3,
+     "fields": [
+      "opponent"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "ויקטור מרעי",
+     "minute": 56,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    },
+    {
+     "nameHe": "חנן ממן",
+     "minute": 80,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%9E%D7%9C%D7%90_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2012/13"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2013-07-18",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "ברואה סטארה זגורה",
+   "opponentLatin": "Beroe Stara Zagora",
+   "scoreFor": 4,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "סטארה זגורה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "לוקאס סאשה",
+     "minute": 5,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2013/14"
+    },
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 9,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2013/14"
+    },
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 54,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2013/14"
+    },
+    {
+     "nameHe": "איתי שכטר",
+     "minute": 61,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2013/14"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2013-07-25",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "ברואה סטארה זגורה",
+   "opponentLatin": "Beroe Stara Zagora",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 22,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2013/14"
+    },
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 61,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2013/14"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2013-08-01",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "AWAY",
+   "opponentHe": "פנדורי טרגו ז'יו",
+   "opponentLatin": "Pandurii Târgu Jiu",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "קלוז' ארנה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "לוקאס סאשה",
+     "minute": 30,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2013/14"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2013-08-08",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "HOME",
+   "opponentHe": "פנדורי טרגו ז'יו",
+   "opponentLatin": "Pandurii Târgu Jiu",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "בלומפילד",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עומר דמארי",
+     "minute": 21,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2013/14"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2014-07-17",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "אסטנה",
+   "opponentLatin": "FC Astana",
+   "scoreFor": 0,
+   "scoreAgainst": 3,
+   "physicalPlayed": null,
+   "venueText": "אסטנה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2014-07-24",
+   "competitionHe": "הליגה האירופית",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "אסטנה",
+   "opponentLatin": "FC Astana",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון אנטוניס פפדופולוס, לרנקה",
+   "independentFields": [],
+   "echoesRepo": true,
+   "sources": [],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "לוקאס סאשה",
+     "minute": 57,
+     "stoppage": null,
+     "penalty": true,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%9C%D7%95%D7%97_%D7%9E%D7%A9%D7%97%D7%A7%D7%99%D7%9D_%D7%92%D7%91%D7%99%D7%A2%D7%99_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_2014/15"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2026-07-23",
+   "competitionHe": "ליגת הועידה",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "HOME",
+   "opponentHe": "לודוגורץ רזגרד",
+   "opponentLatin": "Ludogorets Razgrad",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון DVTK, מישקולץ",
+   "independentFields": [
+    "scorers"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · עונת 2026/27 (כדורגל) קונפרנס ליג סיבוב מוקדמות 2 משחק 1",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%95%D7%AA_2_%D7%9E%D7%A9%D7%97%D7%A7_1",
+     "confidence": 3,
+     "fields": [
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עומרי אלטמן",
+     "minute": 45,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%95%D7%AA_2_%D7%9E%D7%A9%D7%97%D7%A7_1"
+    },
+    {
+     "nameHe": "צ'יקו",
+     "minute": 89,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%95%D7%AA_2_%D7%9E%D7%A9%D7%97%D7%A7_1"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2026-07-30",
+   "competitionHe": "ליגת הועידה",
+   "stageHe": "מוקדמות סיבוב 2",
+   "side": "AWAY",
+   "opponentHe": "לודוגורץ רזגרד",
+   "opponentLatin": "Ludogorets Razgrad",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "רזגרד",
+   "independentFields": [
+    "scorers"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · עונת 2026/27 (כדורגל) קונפרנס ליג סיבוב מוקדמות 2 משחק 2",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%95%D7%AA_2_%D7%9E%D7%A9%D7%97%D7%A7_2",
+     "confidence": 3,
+     "fields": [
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "עמנואל בואטנג",
+     "minute": 16,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%95%D7%AA_2_%D7%9E%D7%A9%D7%97%D7%A7_2"
+    },
+    {
+     "nameHe": "עמנואל בואטנג",
+     "minute": 58,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%95%D7%AA_2_%D7%9E%D7%A9%D7%97%D7%A7_2"
+    }
+   ],
+   "conflicts": [
+    {
+     "field": "venue",
+     "values": [
+      {
+       "value": "רזגרד",
+       "source": "existing match master / European tie source"
+      },
+      {
+       "value": "אצטדיון DVTK, הונגריה",
+       "source": "ויקיפועל infobox"
+      },
+      {
+       "value": "בולגריה / משחק חוץ אצל לודוגורץ",
+       "source": "ויקיפועל narrative"
+      }
+     ],
+     "note": "ויקיפועל עצמו סותר בין שדה \"מקום\" לבין תיאור המשחק. לא בוצע overwrite אוטומטי של האצטדיון."
+    }
+   ],
+   "notes": []
+  },
+  {
+   "playedOn": "2026-08-06",
+   "competitionHe": "ליגת הועידה",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "HOME",
+   "opponentHe": "גק\"ס קטוביץ",
+   "opponentLatin": "GKS Katowice",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון DVTK, מישקולץ",
+   "independentFields": [
+    "scorers"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · 2026/27",
+     "url": "https://wiki.red-fans.com/index.php?title=2026/27",
+     "confidence": 3,
+     "fields": [
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סתיו טוריאל",
+     "minute": 5,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=2026/27"
+    },
+    {
+     "nameHe": "רועי אלקוקין",
+     "minute": 18,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=2026/27"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2026-08-12",
+   "competitionHe": "ליגת הועידה",
+   "stageHe": "מוקדמות סיבוב 3",
+   "side": "AWAY",
+   "opponentHe": "גק\"ס קטוביץ",
+   "opponentLatin": "GKS Katowice",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "physicalPlayed": null,
+   "venueText": "קטוביץ",
+   "independentFields": [
+    "scorers"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · עונת 2026/27 (כדורגל) קונפרנס ליג סיבוב מוקדמות 3 משחק 2",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%95%D7%AA_3_%D7%9E%D7%A9%D7%97%D7%A7_2",
+     "confidence": 3,
+     "fields": [
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [
+    {
+     "nameHe": "סתיו טוריאל",
+     "minute": 23,
+     "stoppage": null,
+     "penalty": false,
+     "ownGoal": false,
+     "confidence": 3,
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A1%D7%99%D7%91%D7%95%D7%91_%D7%9E%D7%95%D7%A7%D7%93%D7%9E%D7%95%D7%AA_3_%D7%9E%D7%A9%D7%97%D7%A7_2"
+    }
+   ],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2026-08-20",
+   "competitionHe": "ליגת הועידה",
+   "stageHe": "פלייאוף",
+   "side": "AWAY",
+   "opponentHe": "אטלנטה",
+   "opponentLatin": "Atalanta",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "physicalPlayed": null,
+   "venueText": "ברגמו",
+   "independentFields": [
+    "scorers"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · 2026/27",
+     "url": "https://wiki.red-fans.com/index.php?title=2026/27",
+     "confidence": 3,
+     "fields": [
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  },
+  {
+   "playedOn": "2026-08-27",
+   "competitionHe": "ליגת הועידה",
+   "stageHe": "פלייאוף",
+   "side": "HOME",
+   "opponentHe": "אטלנטה",
+   "opponentLatin": "Atalanta",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "physicalPlayed": null,
+   "venueText": "אצטדיון DVTK, מישקולץ",
+   "independentFields": [
+    "scorers"
+   ],
+   "echoesRepo": true,
+   "sources": [
+    {
+     "title": "ויקיפועל · עונת 2026/27 (כדורגל) קונפרנס ליג פלייאוף משחק 2",
+     "url": "https://wiki.red-fans.com/index.php?title=%D7%A2%D7%95%D7%A0%D7%AA_2026/27_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%A7%D7%95%D7%A0%D7%A4%D7%A8%D7%A0%D7%A1_%D7%9C%D7%99%D7%92_%D7%A4%D7%9C%D7%99%D7%99%D7%90%D7%95%D7%A3_%D7%9E%D7%A9%D7%97%D7%A7_2",
+     "confidence": 3,
+     "fields": [
+      "scorers"
+     ]
+    }
+   ],
+   "scorerCoverage": "complete",
+   "scorers": [],
+   "conflicts": [],
+   "notes": []
+  }
+ ]
+}

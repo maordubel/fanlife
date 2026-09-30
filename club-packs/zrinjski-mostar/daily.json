@@ -1,0 +1,32 @@
+{
+  "remember": [
+    {
+      "prompt": "Which year did the club first win the BiH league?",
+      "answer": "2005",
+      "sourceIds": [
+        "src-club-history"
+      ]
+    },
+    {
+      "prompt": "Who wore number 23 in 2003/04 and later won the Ballon d'Or?",
+      "answer": "Luka Modrić",
+      "sourceIds": [
+        "src-club-info"
+      ]
+    }
+  ],
+  "choose": [
+    {
+      "prompt": "One memory for the wall: 2005 first title, AZ 2023, or 2026 derby cup final?",
+      "type": "opinion"
+    }
+  ],
+  "discover": [
+    {
+      "fact": "The club's first European home match was a 2-1 extra-time win over Västra Frölunda in 2000, but Zrinjski still went out.",
+      "sourceIds": [
+        "src-europe-2000"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1555 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  THE WORKER — אוסישקין
+  הקיר הוא המקום · התיק הוא הראיה · המגדל הוא המידה
+  אין צהוב · רדיוס 0 · אין צללים (למעט הילת פנס בלילה)
+
+  Supersedes the "archival letterpress" territory. Spec: brand/THE-WORKER-BRAND-SPEC.md
+*/
+/* ------------------------------------------------------------------ fonts ---
+   Self-hosted. On 1.9.2026 the Google-font loaders were stubbed to get a build through
+   a sandbox with no network, and the stub shipped: every page has been set in Georgia
+   and system-ui since. The faces are the brand spec's (§3), served from /public/fonts as
+   woff2 split by script, so a build needs nothing from the outside world. */
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/frank-ruhl-libre-hebrew-700-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/frank-ruhl-libre-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/frank-ruhl-libre-hebrew-900-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/frank-ruhl-libre-latin-900-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Miriam Libre';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/miriam-libre-hebrew-400-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Miriam Libre';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/miriam-libre-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Miriam Libre';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/miriam-libre-hebrew-700-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Miriam Libre';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/miriam-libre-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/heebo-hebrew-400-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/heebo-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/heebo-hebrew-500-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/heebo-latin-500-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/heebo-hebrew-800-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/heebo-latin-800-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/courier-prime-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/courier-prime-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Karantina';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/karantina-hebrew-700-normal.woff2') format('woff2');
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Karantina';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/karantina-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/archivo-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/archivo-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/archivo-latin-800-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+:root {
+  --font-frank: 'Frank Ruhl Libre';
+  --font-miriam: 'Miriam Libre';
+  --font-heebo: 'Heebo';
+  --font-courier: 'Courier Prime';
+  --font-poster: 'Karantina';
+  --font-latin: 'Archivo';
+}
+
+:root {
+  /* שערי הפועל — the two-plate screenprint. Vermilion and navy on ageing cream,
+     drawn in ink. There is no third ink: what looks like a third colour is the two
+     plates overlapping. No yellow, at any strength, ever. */
+  --sheet: 240 232 212;      /* #F0E8D4 לוחית הכרזה — נייר בהיר */
+  --paper: 233 223 199;      /* #E9DFC7 נייר מזדקן — רקע המסך */
+  --ink: 21 18 14;           /* #15120E הרישום, השחור של הדפוס */
+  --red: 176 45 16;          /* #B02D10 ורמיליון — המגש הראשון */
+  --concrete: 201 191 164;   /* #C9BFA4 שוליים, מטא, כיתוב משני על דיו */
+  --sign: 30 44 90;          /* #1E2C5A נייבי — המגש השני */
+  --muted: 90 82 66;         /* #5A5242 טקסט משני על נייר */
+  --lamp-off: 31 29 27;      /* #1F1D1B פנס כבוי בלילה */
+
+  --rule-hair: 1px;
+  --rule: 2px;
+  --rule-plate: 3px;
+
+  --gutter: 16px;
+  --stack: 20px;
+  --tap: 48px;               /* גובה מינימלי לכל אלמנט לחיץ */
+
+  --ease-stamp: cubic-bezier(0.2, 0, 0, 1);
+  --ease-peel: cubic-bezier(0.4, 0, 1, 1);
+}
+
+@media (min-width: 768px) { :root { --gutter: 40px; --stack: 24px; } }
+
+/* ============================================================================
+   שכבת הדפוס — the DUBID press layer
+   ----------------------------------------------------------------------------
+   A SECOND, SCOPED token set, taken verbatim from the DUBID design DNA:
+   "a printed 90s sports page". It governs the game surfaces only — the pitch,
+   the drawn player, the kit plates, the share cards — and never the shell.
+   The Ussishkin identity above still owns the wall, the sign plates and the file.
+
+   **NO YELLOW.** Rule 8 is absolute and it applies here too. The DUBID palette
+   rules in dim gold and discs its numbers in a bright mark yellow; both are yellow,
+   so both are out. The structure of the press language — misregistration, halftone, flat
+   colour, dot leaders, the ink line closing every printed surface — is what makes
+   it read as print, and none of it depends on yellow. Cream carries the rules and
+   red carries the emphasis.
+
+   Everything here is flat colour. Print cannot fade, so nothing printed carries a
+   gradient; gradients exist only for light (floodlight wash, wood).
+   ========================================================================== */
+:root {
+  /* 1א · PRESS — light paper */
+  --p-paper: 239 231 213;      /* #EFE7D5 yellowed newsprint — never white */
+  --p-paper-deep: 226 216 194; /* #E2D8C2 */
+  --p-card: 246 243 234;       /* #F6F3EA */
+  --p-ink: 18 16 14;           /* #12100E brown-black. Pure black does not exist in print */
+  --p-red: 217 59 59;          /* #D93B3B */
+  --p-red-deep: 178 42 42;     /* #B22A2A */
+  --p-grass: 143 190 99;       /* #8FBE63 printed grass, light screen */
+  --p-grass-dark: 125 174 82;  /* #7DAE52 mowing stripes */
+  --p-dot: 63 107 44;          /* #3F6B2C the halftone dots on the grass */
+  --p-line: 247 244 236;       /* #F7F4EC chalk — not pure white */
+  --p-halo: 239 243 230;       /* #EFF3E6 readability halo behind a name on grass */
+  --p-net: 232 234 217;        /* goal net, used at .72 alpha */
+  --p-net-line: 154 163 154;   /* #9AA39A net threads — grey-green, not ink */
+  --p-disc: 18 16 14;          /* #12100E number disc — ink. NO YELLOW (rule 8) */
+
+  /* 1ב · NIGHT_PRESS — the same paper, printed dark */
+  --n-paper: 16 13 10;         /* #100D0A warm dark. Never #000 — that reads as a screen */
+  --n-paper-deep: 11 9 7;      /* #0B0907 */
+  --n-ink: 237 228 206;        /* #EDE4CE cream, not white */
+  --n-ink-dim: 191 180 154;    /* #BFB49A */
+  --n-ink-faint: 138 128 105;  /* #8A8069 */
+  /* The DUBID night palette rules in dim gold. Gold is yellow, and yellow is
+     forbidden outright — so the rules are the same VALUE in cream instead. The
+     structure of the press language survives; its yellow does not. */
+  --n-rule: 237 228 206;       /* #EDE4CE cream, used at low alpha as a rule */
+  --n-accent: 196 52 47;       /* #C4342F the press red, for emphasis */
+  --n-red: 196 52 47;          /* #C4342F */
+  --n-red-light: 224 87 79;    /* #E0574F */
+  --n-grass: 43 48 38;         /* #2B3026 grass in negative — the dots light it */
+  --n-grass-dark: 26 33 22;    /* #1A2116 */
+
+  /* 1ג · fixed helper colours for the drawn figure */
+  --p-skin: 176 122 90;        /* #B07A5A drawn skin, kept clear of the yellow band */
+  --p-hair: 43 33 26;          /* #2B211A */
+  --p-tekhelet: 47 111 168;    /* #2F6FA8 vice-captain disc */
+}
+
+/* 2 · plate misregistration — the detail that sells the whole thing.
+   Cheap colour printing never aligned its plates, so every headline picked up a
+   red lip on one side and a blue one on the other. Must stay 0.7px: at two
+   pixels it stops reading as print and starts reading as a rendering bug. */
+.misregister {
+  text-shadow: 0.7px 0 0 rgba(196, 52, 47, 0.55), -0.7px 0 0 rgba(80, 150, 190, 0.3);
+}
+
+/* ============================================================================
+   שערי הפועל — the gate posters
+   ----------------------------------------------------------------------------
+   Two ink trays and nothing else. The navy plate is laid first, the vermilion
+   plate on top, and the press was 3px out — RIGHT and DOWN, the same way every
+   time, because that is how a misaligned machine fails. Random offsets read as a
+   bug; a constant one reads as a press.
+   The overlap is `mix-blend-mode: multiply`, so the third colour you see where
+   the plates cross is genuinely the two inks over each other, not a new swatch.
+   ========================================================================== */
+/* The navy plate goes down first and multiplies into the paper. */
+.plate-shift {
+  transform: translate(3px, 2px);
+  mix-blend-mode: multiply;
+}
+/* The vermilion plate is laid ON TOP of it and is OPAQUE — ink does not see through
+   ink. Blending it into the navy underneath multiplied two saturated colours to near
+   black and swallowed the whole glyph; the misregistration is supposed to show as a
+   3px navy sliver escaping on one side, not as a black number. */
+.plate-top { mix-blend-mode: normal; }
+
+/* קרני השמש — the rays behind a gate number. Gates 2, 5 and 8 only. */
+.rays {
+  background: repeating-conic-gradient(
+    from 12deg at 50% 50%,
+    rgb(var(--red)) 0deg 5deg,
+    transparent 5deg 11deg
+  );
+}
+
+/* פתח המנהרה — the tunnel mouth's glow. No rays here: a tunnel is roofed, so what
+   lights the wordmark is the mouth itself, not a sunburst behind it. */
+.tunnel-mouth {
+  background: radial-gradient(ellipse 120% 92% at 50% 104%, rgb(var(--red) / 0.36), transparent 62%);
+}
+
+/* רשת ההדפס — the shell's own halftone, in INK.
+   The press layer has a halftone too and it is NOT this one: that screen is printed in
+   grass green for a photographed pitch, this one is the black plate of a poster. A
+   shell component reaching across for `--p-dot` is the exact defect rule 8 forbids, so
+   the shell gets its own screen rather than borrowing. */
+.screen-dots {
+  background-image:
+    radial-gradient(rgb(var(--ink)) 0.85px, transparent 1px),
+    radial-gradient(rgb(var(--ink)) 0.85px, transparent 1px);
+  background-size: 8px 8px, 8px 8px;
+  background-position: 0 0, 4px 4px;
+  opacity: 0.11;
+}
+
+/* כתם הדפוס — an ink blotch on the paper, so no two plates print identically */
+.stain-a { background-image: radial-gradient(circle at 70% 15%, rgb(var(--muted) / 0.16), transparent 45%); }
+.stain-b { background-image: radial-gradient(circle at 25% 80%, rgb(var(--muted) / 0.16), transparent 45%); }
+.stain-c { background-image: radial-gradient(circle at 50% 50%, rgb(var(--muted) / 0.13), transparent 55%); }
+
+/* הדגל — gate 5 only. The banner the ultras hang. */
+@keyframes flagwave {
+  0%, 100% { transform: skewY(-0.5deg) }
+  50%      { transform: skewY(0.5deg) }
+}
+.flag {
+  background: rgb(var(--red));
+  animation: flagwave 7s ease-in-out infinite;
+  clip-path: polygon(0 14%, 8% 2%, 20% 12%, 33% 1%, 46% 11%, 60% 0, 73% 10%, 86% 0, 100% 9%,
+                     100% 88%, 88% 100%, 74% 90%, 60% 100%, 46% 89%, 33% 100%, 20% 90%, 8% 100%, 0 90%);
+}
+
+/* 5א · halftone — two radial layers offset by half a step make a real
+   interleaved screen rather than a dot grid. The most important texture here. */
+.halftone {
+  background-image:
+    radial-gradient(rgb(var(--p-dot)) 0.9px, transparent 1px),
+    radial-gradient(rgb(var(--p-dot)) 0.9px, transparent 1px);
+  background-size: 7px 7px, 7px 7px;
+  background-position: 0 0, 3.5px 3.5px;
+  opacity: 0.34;
+}
+
+/* 5ג · paper grain */
+.tex-paper {
+  background-color: rgb(var(--p-paper));
+  background-image:
+    radial-gradient(rgba(20, 24, 28, 0.045) 0.6px, transparent 0.7px),
+    radial-gradient(rgba(20, 24, 28, 0.03) 0.6px, transparent 0.7px);
+  background-size: 7px 7px, 11px 11px;
+  background-position: 0 0, 3px 4px;
+}
+
+.tex-paper-night {
+  background-color: rgb(var(--n-paper));
+  background-image:
+    radial-gradient(rgba(237, 228, 206, 0.1) 0.6px, transparent 0.7px),
+    radial-gradient(rgba(237, 228, 206, 0.06) 0.6px, transparent 0.7px);
+  background-size: 7px 7px, 11px 11px;
+  background-position: 0 0, 3px 4px;
+}
+
+/* 5ד · the spotlight behind a hero */
+.tex-spot {
+  background-image: radial-gradient(78% 52% at 50% 34%, rgba(237, 228, 206, 0.1), transparent 70%);
+}
+
+/* 4 · newspaper rules. On dark paper a separator is dim gold — never white or grey. */
+.press-rule-double {
+  border-top: 3px solid rgb(var(--n-rule) / 0.5);
+  border-bottom: 1px solid rgb(var(--n-rule) / 0.28);
+  height: 4px;
+}
+.press-rule-hair { border-top: 1px solid rgb(var(--n-rule) / 0.28); }
+.press-box { border: 3px double rgb(var(--n-rule) / 0.5); }
+
+/* the folio line beside a section head */
+.press-folio {
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  color: rgb(var(--n-ink-faint));
+  white-space: nowrap;
+}
+.press-spaced { letter-spacing: 4px; }
+
+/* dot leaders — «label ····· value», straight off a results table */
+.press-lead {
+  flex: 1 1 auto;
+  min-width: 12px;
+  border-bottom: 1px dotted rgb(var(--n-rule) / 0.3);
+  transform: translateY(-3px);
+}
+
+/* 3 · numbers never reorder and never dance */
+.num {
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+
+
+html {
+  /* iOS: stop Safari inflating text in landscape, and kill the grey tap flash. */
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* No rubber-band bounce past the wall — that is what made the screen feel loose. */
+  overscroll-behavior-y: none;
+}
+
+body {
+  background-color: rgb(var(--paper));
+  color: rgb(var(--ink));
+  /* מרקם הקיר: סריקות אנכיות עדינות, 5% דיו. לא גרעין הדפסה. */
+  background-image: repeating-linear-gradient(94deg, rgb(var(--ink) / 0.05) 0 1px, transparent 1px 15px);
+  overscroll-behavior-y: none;
+}
+
+/*
+ * נייר — the wall texture, as a class, for the surfaces inside the game that are paper.
+ *
+ * `body` has carried it since the first pass, and everything drawn over the glass sat on
+ * flat `bg-sheet`. That is fine for a plate — enamel IS flat — and wrong for the two
+ * surfaces that are meant to read as a printed page you are holding: the album, and any
+ * sheet that fills the screen. One class rather than a repeated inline style, so a change
+ * of texture is a change in one place.
+ */
+.paper {
+  background-color: rgb(var(--paper));
+  background-image: repeating-linear-gradient(94deg, rgb(var(--ink) / 0.05) 0 1px, transparent 1px 15px);
+}
+
+/* Every control responds to the first tap, with no 300ms wait and no double-tap zoom. */
+:where(a, button, [role="button"], select, input, label) {
+  touch-action: manipulation;
+}
+
+/* A native select must not shrink below the tap height or lose its arrow in RTL. */
+select {
+  appearance: none;
+  background-color: transparent;
+}
+
+/* קצה קרוע — יחידת התוכן */
+.torn {
+  clip-path: polygon(0 2%, 100% 0, 100% 97%, 82% 100%, 56% 96%, 30% 100%, 10% 97%, 0 99%);
+}
+/* קצה גלי — בד אוהדים */
+.cloth {
+  clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 93%);
+}
+/* סבכת התורן */
+.lattice {
+  background-image: repeating-linear-gradient(28deg, rgb(var(--ink)) 0 2px, transparent 2px 12px);
+}
+.lattice-night {
+  background-image: repeating-linear-gradient(28deg, rgb(var(--sheet)) 0 2px, transparent 2px 12px);
+}
+
+:where(a, button, [role="button"], [tabindex]):focus-visible {
+  outline: 3px solid rgb(var(--red));
+  outline-offset: 2px;
+}
+
+::selection { background: rgb(var(--red) / 0.18); }
+
+@keyframes stamp-in {
+  0%   { transform: rotate(-16deg) scale(2.8); opacity: 0; }
+  55%  { opacity: 1; }
+  75%  { transform: rotate(-7deg) scale(0.94); }
+  100% { transform: rotate(-8deg) scale(1); opacity: 1; }
+}
+@keyframes lamp-on { from { opacity: 0.15; } to { opacity: 1; } }
+@keyframes paste-in {
+  from { transform: translateY(24px) rotate(0deg); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+/* התאורה נדלקת — the floodlights coming on.
+   A real tower does not fade up smoothly: the lamps strike, stutter, and then hold.
+   Three beats of flicker before the steady burn, and a wash of light that spreads from
+   the tower across the ground below it. */
+@keyframes strike {
+  0%   { opacity: 0.08; }
+  18%  { opacity: 0.85; }
+  26%  { opacity: 0.12; }
+  40%  { opacity: 0.95; }
+  48%  { opacity: 0.25; }
+  70%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+@keyframes wash {
+  0%   { opacity: 0; transform: scaleY(0.35); }
+  55%  { opacity: 0.5; }
+  100% { opacity: 0.32; transform: scaleY(1); }
+}
+@keyframes glow-up {
+  0%   { box-shadow: 0 0 0 rgba(247, 245, 240, 0); }
+  60%  { box-shadow: 0 0 16px rgba(247, 245, 240, 0.18); }
+  100% { box-shadow: 0 0 42px rgba(247, 245, 240, 0.35); }
+}
+/* 4.9.2026 — הפופ-אפים. A ticket drops in from above and settles; the thing on it
+   lands a beat later; a plate slides up; a rule draws itself; a title rises out of the
+   ink. All of it in the stamp easing the brand already has, none of it bouncy. */
+@keyframes ticket-in {
+  0%   { transform: translateY(-18px) rotate(-1.2deg); opacity: 0; }
+  70%  { transform: translateY(2px) rotate(0.3deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+@keyframes land {
+  0%   { transform: translateY(-10px) rotate(-8deg) scale(1.25); opacity: 0; }
+  60%  { transform: translateY(1px) rotate(-3deg) scale(0.98); opacity: 1; }
+  100% { transform: translateY(0) rotate(-4deg) scale(1); opacity: 1; }
+}
+@keyframes plate-in {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes rule-draw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes title-rise {
+  0%   { transform: translateY(16px); opacity: 0; letter-spacing: 0.06em; }
+  100% { transform: translateY(0); opacity: 1; letter-spacing: 0; }
+}
+@keyframes title-sub {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes sheet-in {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes plate-bump {
+  0%   { transform: rotate(-2deg) scale(0.96); }
+  60%  { transform: rotate(-2deg) scale(1.04); }
+  100% { transform: rotate(-2deg) scale(1); }
+}
+@keyframes caret-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
+/* בלוני קומיקס — a balloon pops from its tail, overshoots a hair, settles with a lean */
+@keyframes balloon-pop {
+  0%   { transform: rotate(-0.8deg) scale(0.86) translateY(10px); opacity: 0; }
+  70%  { transform: rotate(-0.8deg) scale(1.02) translateY(-2px); opacity: 1; }
+  100% { transform: rotate(-0.8deg) scale(1) translateY(0); opacity: 1; }
+}
+@keyframes balloon-pop-end {
+  0%   { transform: rotate(0.8deg) scale(0.86) translateY(10px); opacity: 0; }
+  70%  { transform: rotate(0.8deg) scale(1.02) translateY(-2px); opacity: 1; }
+  100% { transform: rotate(0.8deg) scale(1) translateY(0); opacity: 1; }
+}
+@keyframes face-in {
+  0%   { transform: translateY(8px) rotate(-3deg) scale(0.92); opacity: 0; }
+  100% { transform: translateY(0) rotate(-2deg) scale(1); opacity: 1; }
+}
+/* הקופסה האדומה — פח אדום שחוק (21.9.2026). השפה היא שני המגשים ולא יותר: הפח הוא
+   המגש האדום, השריטות הן המגש הבהיר בעוצמה נמוכה, והשקעים הם דיו. אין צבע שלישי. */
+.tin {
+  background-color: rgb(var(--red));
+  background-image:
+    repeating-linear-gradient(97deg, rgb(var(--sheet) / .05) 0 1px, transparent 1px 7px),
+    radial-gradient(120% 90% at 30% 18%, rgb(var(--sheet) / .10), transparent 60%),
+    radial-gradient(90% 70% at 82% 92%, rgb(var(--ink) / .38), transparent 70%);
+  box-shadow: inset 0 0 0 2px rgb(var(--ink) / .45);
+}
+.tin-floor {
+  background-color: rgb(var(--ink));
+  background-image: radial-gradient(90% 80% at 50% 0%, rgb(var(--red) / .16), transparent 70%);
+  box-shadow: inset 0 8px 22px rgb(var(--ink) / .9), inset 0 0 0 1px rgb(var(--red) / .55);
+}
+/* המכסה נפתח על הציר העליון, מתקרב אלייך, ונעלם — ואז החפצים נוחתים (`land`) */
+@keyframes box-lid {
+  0%   { transform: rotateX(0deg); opacity: 1; }
+  30%  { transform: rotateX(-14deg); opacity: 1; }
+  80%  { transform: rotateX(-96deg); opacity: 1; }
+  100% { transform: rotateX(-104deg); opacity: 0; }
+}
+@keyframes push-in { from { transform: scale(1.02); opacity: 0; } 8% { opacity: 1; } to { transform: scale(1.09); opacity: 1; } }
+
+@keyframes crawl {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* תנועה — the run's own motion. Everything here is short, hard-edged and
+   interruptible: a phone game reacts inside 300ms or it reads as lag. All of it is
+   disabled under prefers-reduced-motion by the utilities that use it. */
+/* הפיצוץ — and the one property it may not animate.
+   The burst floats over whatever the gate is, and gate 8's gate is printed GRASS. An
+   opacity fade composites vermilion into green frame by frame, and every partial mix of
+   red and green passes through the yellow hues — 1,868 yellow pixels in one measured
+   frame. Rule 8 is absolute, so the burst MOVES and never dissolves; it also prints on an
+   opaque ink plate so its glyph edges meet ink instead of grass. See components/play/Burst.tsx. */
+@keyframes burst {
+  0%   { transform: translateY(14px) scale(.7) }
+  22%  { transform: translateY(-6px) scale(1.12) }
+  60%  { transform: translateY(-26px) scale(1) }
+  100% { transform: translateY(-64px) scale(.95) }
+}
+.animate-burst { animation: burst 900ms cubic-bezier(.2,.9,.3,1) forwards }
+
+@keyframes slam {
+  0%   { transform: translateY(26px) scale(.96); opacity: 0 }
+  100% { transform: translateY(0) scale(1); opacity: 1 }
+}
+.animate-slam { animation: slam 260ms cubic-bezier(.16,1,.3,1) both }
+/* על הדשא אין שקיפות (כלל 8): חולצה אדומה ועור שמתעמעמים מעל ירוק מודפס עוברים דרך צהוב
+   בפריימי הביניים — `gate3:probe` תפס 42 פיקסלים כאלה ב-21.9.2026. הגרסה הזאת נוחתת בתנועה
+   בלבד, כמו ה-burst. */
+@keyframes slam-solid {
+  0%   { transform: translateY(26px) scale(.96) }
+  100% { transform: translateY(0) scale(1) }
+}
+.animate-slam-solid { animation: slam-solid 260ms cubic-bezier(.16,1,.3,1) both }
+
+@keyframes shake {
+  0%,100% { transform: translateX(0) }
+  20% { transform: translateX(-7px) }
+  40% { transform: translateX(6px) }
+  60% { transform: translateX(-4px) }
+  80% { transform: translateX(2px) }
+}
+.animate-shake { animation: shake 340ms ease-in-out both }
+
+@keyframes flashred {
+  0%   { background-color: rgb(var(--red) / .28) }
+  100% { background-color: rgb(var(--red) / 0) }
+}
+.animate-flash { animation: flashred 520ms ease-out both }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-burst, .animate-slam, .animate-slam-solid, .animate-shake, .animate-flash { animation: none }
+}
+
+/* חגיגה — the confetti fall. One keyframe, no library. The pieces start above the
+   viewport so nothing pops into existence mid-screen, and they drift sideways as they
+   fall because paper does not fall straight.
+   The fade-in finishes at 2%, not 12%: a piece is at -9.5vh at 2% and already at 2.9vh
+   at 12%, so the old ramp was translucent paper ON the glass for a tenth of a second.
+   Over cream that is a warm red and nothing; over gate 8's printed grass every frame of
+   it is vermilion mixing into green, which is the yellow band (rule 8). */
+@keyframes confetti-fall {
+  0%   { transform: translate3d(0, -12vh, 0) rotate(0deg); opacity: 0 }
+  2%   { opacity: 1 }
+  100% { transform: translate3d(var(--drift, 0), 112vh, 0) rotate(var(--spin, 360deg)); opacity: 1 }
+}
+.confetti {
+  top: 0;
+  animation: confetti-fall 1.35s cubic-bezier(.25,.55,.45,1) forwards;
+}
+
+/* מעבר בין שאלות — the wipe that carries one question off and the next one in.
+   A vermilion band crossing the plate, gone in 420ms: long enough to read as a
+   transition, short enough that it never sits between the player and the next tap. */
+@keyframes wipe {
+  0%   { transform: scaleX(0); transform-origin: 100% 50% }
+  45%  { transform: scaleX(1); transform-origin: 100% 50% }
+  55%  { transform: scaleX(1); transform-origin: 0% 50% }
+  100% { transform: scaleX(0); transform-origin: 0% 50% }
+}
+.animate-wipe { animation: wipe 420ms cubic-bezier(.65,0,.35,1) both }
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti, .animate-wipe { animation: none; opacity: 0 }
+}
+
+/* יציאת המסך הפותח — the intro getting out of the way.
+   It lifts and fades rather than cross-fading: a cross-fade puts the wall and the pitch
+   on screen at the same weight for a moment and both read as ghosts. Lifting says the
+   sheet was pulled off the ground, which is the same gesture every plate in this app
+   uses. 420ms, matched to the timeout in `Intro.tsx` — a mismatch there leaves either a
+   flash of ink or a frozen frame. */
+@keyframes liftOff {
+  from { opacity: 1; transform: translateY(0) }
+  to   { opacity: 0; transform: translateY(-3%) }
+}
+.animate-liftOff { animation: liftOff 420ms cubic-bezier(.65,0,.35,1) both }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-liftOff { animation: none; opacity: 0 }
+}
+
+/* ============================================================================
+   שחזור השער — the pitch
+   ----------------------------------------------------------------------------
+   Two motions and one offset, all of them from the Goal Rebuild handoff.
+
+   `.plate-card` is NOT a drop shadow. The brand has no shadows; what looks like one
+   here is the ink plate printing 3px off the cream plate, the same constant
+   misregistration the shell uses. It is a hard offset with no blur and no spread,
+   which is what separates a press from a UI card.
+   ========================================================================== */
+@keyframes ball-roll { to { stroke-dashoffset: -28 } }
+.ball-roll { animation: ball-roll 1.3s linear infinite }
+
+@keyframes fig-pop {
+  0%   { transform: scale(.4); opacity: 0 }
+  70%  { transform: scale(1.12) }
+  100% { transform: scale(1); opacity: 1 }
+}
+.fig-pop { animation: fig-pop 220ms cubic-bezier(.2,0,0,1) both; transform-origin: 50% 100% }
+
+.plate-card { box-shadow: 3px 3px 0 rgb(var(--ink) / 0.45) }
+
+/* הפתיח — the slideshow's frame/bed/stage/caption rules left with the slideshow (25.9.2026,
+   LIFE 90-G): the fallback is now the documentary thread, see the OPENING DOCUMENTARY block
+   at the end of this file. `openingDrift` stays — the coda card still drifts on it. */
+/* הפתיח — the slow push on a held painting.
+   Six percent over seven seconds and no more. A still frame under a caption reads as a
+   loading screen; anything faster than this reads as a camera move, and these are
+   photographs of a family rather than shots in a film. */
+@keyframes openingDrift {
+  from { transform: scale(1.06) }
+  to   { transform: scale(1.00) }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ball-roll, .fig-pop { animation: none; opacity: 1 }
+}
+
+/* ------------------------------------------------------------------------------------
+   5.9.2026 — the director's cut. Film stock over the cuts: grain that jitters like a
+   projector gate, bars that close the frame to widescreen, a light leak that sweeps a
+   year change, a flash frame on the biggest beats, and digits that roll like a counter.
+   ------------------------------------------------------------------------------------ */
+@keyframes grain-jitter {
+  0%   { background-position: 0 0 }
+  25%  { background-position: -37px 19px }
+  50%  { background-position: 23px -41px }
+  75%  { background-position: -11px -7px }
+  100% { background-position: 0 0 }
+}
+@keyframes bars-in {
+  from { transform: scaleY(0) }
+  to   { transform: scaleY(1) }
+}
+@keyframes leak-sweep {
+  0%   { transform: translateX(-60%) scale(1.4); opacity: 0 }
+  25%  { opacity: .9 }
+  100% { transform: translateX(70%) scale(1.1); opacity: 0 }
+}
+@keyframes flash-frame {
+  0%   { opacity: .95 }
+  100% { opacity: 0 }
+}
+@keyframes digit-roll {
+  from { transform: translateY(-100%) }
+  to   { transform: translateY(0) }
+}
+@keyframes plate-push {
+  from { transform: scale(1.0) }
+  to   { transform: scale(1.08) }
+}
+@keyframes shake-frame {
+  0%, 100% { transform: translate(0, 0) }
+  20% { transform: translate(-6px, 3px) }
+  40% { transform: translate(5px, -4px) }
+  60% { transform: translate(-4px, 2px) }
+  80% { transform: translate(3px, -2px) }
+}
+.film-grain {
+  background-image: url('/life/art/fxGrain.webp');
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+  animation: grain-jitter .42s steps(1, end) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-grain { animation: none }
+}
+
+/* ------------------------------------------------------------------------------------
+   העשור על הזכוכית — the life's chrome follows the decade it is in. Same devices (the
+   sign plate, the cloth, the stamp), a different hand: the eighties are enamel and a
+   serif, the nineties a printed sticker and a heavier sign face, the two-thousands a
+   flatter, tighter poster face. Tuned through three variables the plates read.
+   ------------------------------------------------------------------------------------ */
+.life-glass { --life-sign: var(--font-miriam); --life-sign-weight: 700; --life-sign-tracking: 0; --life-plate-texture: none; --life-cloth-texture: repeating-linear-gradient(96deg, rgb(var(--ink)/.09) 0 1px, transparent 1px 15px); --life-body-tracking: 0; --ui-scale: 1; }
+/* the shell over the painting scales with the glass; the painting (the holder) does not */
+.life-glass > *:not([data-life="holder"]) { zoom: var(--ui-scale); }
+.life-glass[data-decade="80s"] {
+  --life-sign: var(--font-frank);
+  --life-sign-weight: 900;
+  --life-sign-tracking: 0.01em;
+  --life-plate-texture: repeating-linear-gradient(94deg, rgb(var(--ink) / 0.06) 0 1px, transparent 1px 9px);
+  /* צעיף תפור ביד — a coarse weave, the way a banner painted in somebody's yard reads */
+  --life-cloth-texture: repeating-linear-gradient(96deg, rgb(var(--ink)/.13) 0 2px, transparent 2px 11px);
+  --life-body-tracking: 0.004em;
+}
+.life-glass[data-decade="90s"] {
+  --life-sign: var(--font-miriam);
+  --life-sign-weight: 700;
+  --life-sign-tracking: 0.02em;
+  --life-plate-texture: repeating-linear-gradient(0deg, rgb(var(--ink) / 0.045) 0 1px, transparent 1px 4px);
+  /* דפוס מסך — the printed banner of the nineties: finer, regular, machine-made */
+  --life-cloth-texture: repeating-linear-gradient(96deg, rgb(var(--ink)/.08) 0 1px, transparent 1px 15px);
+  --life-body-tracking: 0;
+}
+.life-glass[data-decade="00s"] {
+  --life-sign: var(--font-poster);
+  --life-sign-weight: 700;
+  --life-sign-tracking: 0.04em;
+  --life-plate-texture: none;
+  /* בד מודפס דיגיטלית — flat, no weave at all */
+  --life-cloth-texture: none;
+  --life-body-tracking: -0.004em;
+}
+/*
+ * הבד לפי העשור — the cloth is the loudest object on the glass, so it carries the decade
+ * too, and not only the sign face. `Cloth` draws its own texture layer inline; that layer
+ * now reads this variable, so a banner in 1984 is woven and one in 2000 is printed flat.
+ */
+.life-glass .cloth > span[aria-hidden] { background-image: var(--life-cloth-texture) !important; }
+.life-glass .font-body { letter-spacing: var(--life-body-tracking); }
+.life-glass .font-sign { font-family: var(--life-sign), var(--font-miriam), system-ui, sans-serif; font-weight: var(--life-sign-weight); letter-spacing: var(--life-sign-tracking); }
+.life-glass [data-life="hud-plate"] > span:last-child { background-image: var(--life-plate-texture); }
+
+
+/*
+ * ממתין — the slow pulse under the waiting strip (5.9.2026).
+ *
+ * Not a spinner. A spinner means "loading" and nothing is loading; this means "running,
+ * and you are meant to be standing here". Eighteen hundred milliseconds is about a slow
+ * breath, which is the pace of the thing it is describing.
+ */
+@keyframes waiting-pulse {
+  0%, 100% { opacity: 0.28; transform: scale(0.86); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+
+/* כרטיס היכרות — the person lands, the name stamps, the lines arrive (5.9.2026) */
+@keyframes cast-land {
+  from { opacity: 0; transform: translateX(6%) translateY(4%) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes cast-stamp {
+  from { opacity: 0; transform: scale(1.14); letter-spacing: 0.12em; }
+  to { opacity: 1; transform: none; letter-spacing: normal; }
+}
+@keyframes cast-line {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+
+/*
+ * הילה — the light a Supergoal sticker sits in (Maor, 7.9.2026).
+ *
+ * *"תעשה חיתוך יפה של הקלפים, תוסיף להם איזה 'הילה' מסביבם… תשדרג את התצוגה."* The crop
+ * is done at build time (`scripts/life/build-stickers.py`); this is the light. Three
+ * layers, and none of them touches the photograph:
+ *
+ *  · `::before` — a soft vermilion bloom behind the card, wider than it, so a sticker
+ *    reads as lit rather than pasted. Red because everything that glows in this product
+ *    glows red; a neutral white halo would look like a stock product shot.
+ *  · a lifted shadow — a hard 2px lip and a long soft one, which is a piece of card
+ *    sitting ON a page rather than printed into it.
+ *  · a tilt of a degree or two, set per sticker from its own id, because nobody ever
+ *    stuck one in straight. It is deterministic, so a card does not jump when the page
+ *    re-renders.
+ *
+ * The album page itself keeps its printed slot underneath, corner marks and all, so a
+ * page that is half-filled reads as half-filled from across the room.
+ */
+.sticker {
+  position: relative;
+  transform: rotate(var(--tilt, 0deg));
+  box-shadow: 0 2px 0 rgb(var(--ink) / .30), 0 10px 20px -6px rgb(var(--ink) / .55);
+  transition: transform .18s ease-out, box-shadow .18s ease-out;
+}
+.sticker::before {
+  content: '';
+  position: absolute;
+  inset: -16%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--red) / .62), rgb(var(--red) / .18) 56%, transparent 76%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+.sticker:active { transform: rotate(0deg) scale(1.02); box-shadow: 0 2px 0 rgb(var(--ink) / .3), 0 16px 26px -6px rgb(var(--ink) / .6); }
+/* held up on its own: the same light, larger and steadier, and the tilt comes out */
+.sticker-held { transform: none; box-shadow: 0 3px 0 rgb(var(--ink) / .5), 0 26px 48px -10px rgb(0 0 0 / .7); }
+.sticker-held::before { inset: -22%; filter: blur(22px); background: radial-gradient(closest-side, rgb(var(--red) / .62), rgb(var(--red) / .16) 56%, transparent 76%); }
+/*
+ * קרוע — a slot somebody emptied on purpose.
+ *
+ * Two strokes drawn with gradients rather than a glyph, so the X is exactly the size of
+ * the frame at any column width and cannot be selected, copied or read out as a letter.
+ */
+.slot-torn {
+  background-image:
+    linear-gradient(to bottom right, transparent calc(50% - 1.5px), rgb(var(--red) / .75) calc(50% - 1.5px), rgb(var(--red) / .75) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
+    linear-gradient(to bottom left, transparent calc(50% - 1.5px), rgb(var(--red) / .75) calc(50% - 1.5px), rgb(var(--red) / .75) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/*
+ * אס — the five out of the red box, and the only cards in the game that shine.
+ *
+ * The halo every sticker has is red and soft. An ace gets a second, harder ring in the
+ * sheet's own white plus a slow breath, so it reads as different at a glance on a page
+ * of forty. No gold: rule 8 has no exceptions, not even for a legend.
+ */
+.sticker-ace::before {
+  inset: -20%;
+  background:
+    radial-gradient(closest-side, rgb(var(--sheet) / .55), transparent 62%),
+    radial-gradient(closest-side, rgb(var(--red) / .72), rgb(var(--red) / .22) 58%, transparent 78%);
+  filter: blur(10px);
+  animation: ace-breath 3.2s ease-in-out infinite;
+}
+@keyframes ace-breath {
+  0%, 100% { opacity: .78; transform: scale(1) }
+  50%      { opacity: 1;   transform: scale(1.045) }
+}
+/* the rays behind a held ace — conic, so they cost one element and no images */
+.ace-burst {
+  background: repeating-conic-gradient(from 0deg at 50% 45%, rgb(var(--sheet) / .085) 0deg 6deg, transparent 6deg 18deg);
+  animation: ace-turn 26s linear infinite;
+}
+@keyframes ace-turn { to { transform: rotate(360deg) } }
+
+/* the empty slot: printed on the page, with the corner marks an album prints */
+.slot-marks {
+  background-image:
+    linear-gradient(rgb(var(--ink) / .55), rgb(var(--ink) / .55)), linear-gradient(rgb(var(--ink) / .55), rgb(var(--ink) / .55)),
+    linear-gradient(rgb(var(--ink) / .55), rgb(var(--ink) / .55)), linear-gradient(rgb(var(--ink) / .55), rgb(var(--ink) / .55));
+  background-repeat: no-repeat;
+  background-size: 10px 1px, 1px 10px, 10px 1px, 1px 10px;
+  background-position: left top, left top, right bottom, right bottom;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sticker, .sticker:active { transition: none }
+}
+
+
+/*
+ * מעטפה — a sticker coming out of a paper envelope (7.9.2026).
+ *
+ * Not a flip and not a shine. A sticker leaves a packet edge-first and lands slightly
+ * crooked, and the whole animation is 240ms because the interesting part is not the
+ * movement, it is the four hundred milliseconds of nothing between one sticker and the
+ * next while you wait to see what the next one is.
+ */
+/*
+ * הקריעה — half a second of paper before any information arrives.
+ *
+ * The envelope shakes once the way a thumb shakes it, then splits: a hard clip-path cuts
+ * the top strip away and the rest drops out of frame. Nothing is revealed by this — the
+ * cards mount afterwards — which is the point. A reveal that starts the moment you press
+ * is a list; a reveal that makes you wait half a second is an envelope.
+ */
+.packet-tearing {
+  animation: packet-shake .18s ease-in-out 1, packet-split .34s ease-in .18s forwards;
+  transform-origin: 50% 8%;
+}
+@keyframes packet-shake {
+  0%, 100% { transform: rotate(0deg) }
+  35%      { transform: rotate(-2.4deg) }
+  70%      { transform: rotate(2deg) }
+}
+@keyframes packet-split {
+  0%   { clip-path: inset(0 0 0 0); opacity: 1; transform: translateY(0) }
+  55%  { clip-path: inset(9% 0 0 0); opacity: 1 }
+  100% { clip-path: inset(9% 0 0 0); opacity: 0; transform: translateY(14px) }
+}
+
+/*
+ * הקלף מתהפך — a card comes out face-down and turns over.
+ *
+ * `packet-in` used to be a fade with a rise. A sticker that arrives already face-up has
+ * been handed to you; one that turns over has been PULLED. The flip is on the Y axis with
+ * a little perspective so it reads as card stock rather than a sprite.
+ */
+.packet-turn {
+  animation: packet-turn .46s cubic-bezier(.2, .8, .3, 1) both;
+  transform-origin: 50% 60%;
+}
+@keyframes packet-turn {
+  0%   { opacity: 0; transform: perspective(700px) rotateY(-96deg) translateY(16px) scale(.94) }
+  55%  { opacity: 1 }
+  100% { opacity: 1; transform: perspective(700px) rotateY(0deg) translateY(0) scale(1) }
+}
+
+@keyframes packet-in {
+  from { opacity: 0; transform: translateY(-10%) rotate(-4deg) scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+.packet-in { animation: packet-in .24s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .packet-in { animation: none }
+  /* the tear, the turn and the ace's breath are all decoration: a reader who has asked
+     for less motion gets the same information without any of it */
+  .packet-tearing { animation: none; opacity: 0 }
+  .packet-turn { animation: none }
+  .sticker-ace::before { animation: none }
+  .ace-burst { animation: none }
+}
+
+
+/* מעברון — the four seconds of 1989 fading up between two rooms (5.9.2026) */
+@keyframes film-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================================================================
+   שער 11 — "דשא כבוי" — the hate wing's own night ground
+   ----------------------------------------------------------------------------
+   Approved 15.9.2026 (design canvas, turn 4 is the approved treatment; turn 3,
+   palette 3c, is the ground it is built on). The hate wing — `app/derby/**`,
+   `components/hate/**` — moves onto a dead-grass night palette so it reads as a
+   different wing of the ground: a different tray, not a re-tint of the poster.
+
+   Gate 11 is a SHELL route, not a press surface (it draws no pitch, no kit rack, no
+   share card), so it may not reach for the DUBID press layer's `--n-*`/`--p-*`
+   tokens above — `tests/brand.test.ts` polices exactly that boundary, and
+   `PRESS_SURFACES` does not list `app/derby` or `components/hate`. These seven are
+   the wing's OWN named tokens. Five of the six hexes in the approved swatch already
+   exist as the press layer's night/negative-grass values — cross-check by HEX, not
+   by reuse: field = `--n-grass-dark`, card = `--n-grass`, light red = `--n-red-light`,
+   ink = `--n-ink`, muted = `--n-ink-faint`. The deep red has no night equivalent yet
+   (`--p-red-deep` is a press token and stays scoped to the pitch), and the litho dot
+   is the press halftone's own green (`--p-grass`) at the wing's own opacity. The wing
+   gets its own declarations because it is not the pitch — it is the away end of the
+   shell, printed on a different tray. No yellow, at any opacity, anywhere in it (rule
+   8), and never a vermilion FIELD here: `--red` stays off this wing except as a small
+   accent inside `SignPlate`/`Screen`, which this wing does not use while playing.
+   ========================================================================== */
+:root {
+  --hate-field: 26 33 22;       /* #1A2116 dead grass, negative — the wing's ground */
+  --hate-card: 43 48 38;        /* #2B3026 a card raised off the field */
+  --hate-red-deep: 178 42 42;   /* #B22A2A the holder's plate, banners */
+  --hate-red-light: 224 87 79;  /* #E0574F accents, rules, the outlined charge */
+  --hate-ink: 237 228 206;      /* #EDE4CE ink text on dark */
+  --hate-muted: 138 128 105;    /* #8A8069 muted text on dark */
+  --hate-dot: 143 190 99;       /* #8FBE63 the litho dot grid over the field */
+}
+
+/* רשת הליטוגרפיה — a fine, physical dot grid over the dead-grass field: printed
+   texture, not a decorative gloss. Two offset radial layers, the same construction
+   as `.halftone` above, in the wing's own green at ~10% rather than the press
+   layer's `--p-dot`. Applied once behind a whole gate-11 screen, never per card —
+   an opaque card already covers it, which is what keeps the field readable as
+   ground and the cards readable as things sitting on it. */
+.hate-dots {
+  background-image:
+    radial-gradient(rgb(var(--hate-dot)) 0.9px, transparent 1px),
+    radial-gradient(rgb(var(--hate-dot)) 0.9px, transparent 1px);
+  background-size: 7px 7px, 7px 7px;
+  background-position: 0 0, 3.5px 3.5px;
+  opacity: 0.1;
+}
+
+/* ============================================================================
+   במת השער — the mobile gate stage (delta 87, 23.9.2026).
+
+   On a phone a gate is ONE screen: a compact header, the field, the dock. Nothing
+   scrolls the page; what does not fit lives in a slide sheet. `.fitbox` sizes a field
+   to the biggest box of its aspect that fits the space left — container-query units,
+   so a pitch is exactly as tall as the phone allows and never one pixel taller. From
+   md up the desktop layout is its own design and the box falls back to a plain
+   aspect-ratio block.
+   ========================================================================== */
+.fitbox { position: relative; min-height: 0; flex: 1 1 0%; container-type: size; display: grid; place-items: center; }
+.fitbox > .fitbox-in {
+  position: relative;
+  width: min(100cqw, calc(100cqh * var(--fit-r, 0.75)));
+  height: min(100cqh, calc(100cqw / var(--fit-r, 0.75)));
+}
+@media (min-width: 768px) {
+  .fitbox:not(.fitbox-always) { container-type: normal; display: block; flex: none; }
+  .fitbox:not(.fitbox-always) > .fitbox-in { width: 100%; height: auto; aspect-ratio: var(--fit-r, 0.75); }
+}
+
+/* the stage itself: one phone screen, the tab bar and the home indicator subtracted */
+@media (max-width: 767.98px) {
+  .stage-screen { height: 100dvh; overflow: hidden; }
+  .stage-main {
+    display: flex; flex-direction: column; min-height: 0; flex: 1 1 0%;
+    padding-bottom: calc(var(--tap) + 1.25rem + env(safe-area-inset-bottom));
+  }
+  .stage-fill { display: flex; flex-direction: column; min-height: 0; flex: 1 1 0%; }
+}
+
+/* ============================================================================
+   אפקט הבחירה — every pick is a print hit. Rays shoot out of the point, a square
+   stamp ring (radius 0) slams out of it in two misregistered plates, and the label
+   prints on an ink plate. Solid inks only and NO opacity animation: the stage is often
+   printed grass, and a fading vermilion over green passes through the yellow band
+   (rule 8, the burst note above). Everything moves, shrinks to nothing, and is removed.
+   ========================================================================== */
+@keyframes fx-ray {
+  0%   { transform: rotate(var(--a)) translateY(-6px) scaleY(0.2); }
+  45%  { transform: rotate(var(--a)) translateY(calc(var(--d) * -1)) scaleY(1); }
+  100% { transform: rotate(var(--a)) translateY(calc(var(--d) * -1.5)) scaleY(0); }
+}
+@keyframes fx-ring {
+  0%   { transform: translate(-50%, -50%) rotate(-8deg) scale(0.25); }
+  60%  { transform: translate(-50%, -50%) rotate(4deg) scale(1.15); }
+  100% { transform: translate(-50%, -50%) rotate(6deg) scale(0); }
+}
+@keyframes fx-label {
+  0%   { transform: translate(-50%, 0) scale(0.4) rotate(-10deg); }
+  25%  { transform: translate(-50%, -26px) scale(1.12) rotate(-4deg); }
+  80%  { transform: translate(-50%, -38px) scale(1) rotate(-4deg); }
+  100% { transform: translate(-50%, -44px) scale(0) rotate(-4deg); }
+}
+@keyframes fx-pop {
+  0% { transform: scale(0.55) translateY(10px); }
+  55% { transform: scale(1.14) translateY(-4px); }
+  100% { transform: scale(1) translateY(0); }
+}
+@keyframes fx-wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+@keyframes fx-sheet-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes fx-lift { from { transform: translateY(0) scale(1); } to { transform: translateY(-6px) scale(1.08); } }
+.fx-ray {
+  position: absolute; inset-inline-start: 0; top: calc(var(--len, 22px) * -1); width: 5px; height: var(--len, 22px);
+  margin-inline-start: -2.5px; transform-origin: 50% 100%;
+  animation: fx-ray 560ms cubic-bezier(.2,.9,.3,1) forwards;
+}
+.fx-ring { position: absolute; top: 0; inset-inline-start: 0; animation: fx-ring 520ms cubic-bezier(.16,1,.3,1) forwards; }
+.fx-label { position: absolute; top: 0; inset-inline-start: 0; animation: fx-label 900ms cubic-bezier(.2,.9,.3,1) forwards; }
+.animate-fx-pop { animation: fx-pop 380ms cubic-bezier(.16,1,.3,1) both; }
+.animate-fx-wobble { animation: fx-wobble 320ms ease-in-out 2; }
+.animate-fx-sheet-up { animation: fx-sheet-up 280ms cubic-bezier(.16,1,.3,1) both; }
+.animate-fx-lift { animation: fx-lift 160ms cubic-bezier(.16,1,.3,1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .fx-ray, .fx-ring, .fx-label { display: none; }
+  .animate-fx-pop, .animate-fx-wobble, .animate-fx-sheet-up, .animate-fx-lift { animation: none; }
+}
+
+/* גרירה — the ghost that follows the finger, and the zone it is over */
+.drag-ghost { position: fixed; top: 0; inset-inline-start: 0; z-index: 70; pointer-events: none; will-change: transform; }
+[data-drop][data-drop-over="true"] { outline: 3px solid rgb(var(--red)); outline-offset: 2px; }
+[data-drag-source="true"] { filter: grayscale(1); }
+
+/* ============================================================================
+   OPENING DOCUMENTARY — begin (LIFE 90-G, 25.9.2026)
+   ----------------------------------------------------------------------------
+   The film's fallback as a second real opening, built from code only: no image, no
+   video, no fetch (owner spec "OPENING DOCUMENTARY HYBRID", §19–33). Seven layers:
+   ink base · vignette · grain · film marks · red thread · year · copy + controls.
+   Brand: red / ink / sheet / concrete / sign only — no yellow, gold, amber, orange,
+   the floodlights included (§52). Radius 0. The stage is ink, never printed grass,
+   so opacity fades are allowed here; the ONE place red could meet the game's
+   colours — the end of the opening — moves the thread off the glass by transform
+   before the overlay fades (rule 79).
+   Used by components/life/OpeningDocumentary.tsx and the waiting ground of
+   components/life/OpeningFilm.tsx. Nothing outside this block may reach for .odoc-*.
+   ========================================================================== */
+.odoc {
+  position: absolute; inset: 0; overflow: hidden; background: rgb(var(--ink));
+  --thread-y: 71%;
+  --gutter-doc: 28px;
+}
+@media (min-aspect-ratio: 6/5) { .odoc { --thread-y: 67%; --gutter-doc: 10vw; } }
+
+/* 1 · ink base — black with depth, never flat */
+.odoc-base {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(120% 70% at 50% 42%, rgb(var(--concrete) / .055), transparent 62%),
+    linear-gradient(180deg, rgb(var(--sign) / .16), transparent 42%, rgb(var(--ink)) 100%),
+    rgb(var(--ink));
+}
+/* the per-mode light on the base: one layer each, faded in when the beat asks for it */
+.odoc-tint { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 1200ms ease; }
+.odoc-tint-memory { background: radial-gradient(70% 45% at 62% 58%, rgb(var(--sheet) / .06), transparent 70%); }
+.odoc-tint-archive { background: linear-gradient(180deg, rgb(var(--concrete) / .035), rgb(var(--concrete) / .02)); }
+.odoc-tint-lights {
+  background:
+    radial-gradient(60% 40% at 24% 0%, rgb(var(--sheet) / .11), transparent 70%),
+    radial-gradient(90% 60% at 30% 20%, rgb(var(--concrete) / .07), transparent 75%);
+}
+.odoc[data-mode="memory"] .odoc-tint-memory,
+.odoc[data-mode="archive"] .odoc-tint-archive,
+.odoc[data-mode="lights"] .odoc-tint-lights { opacity: 1; }
+
+/* 2 · vignette — holds the eye, is not a black frame */
+.odoc-vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 88% 78% at 50% 46%, transparent 52%, rgb(var(--ink) / .82) 100%);
+}
+
+/* 3 · grain without an image: a grey fractal-noise tile drawn by the browser. Same jitter
+   as the film's stock (`.film-grain`), so the two openings share one grain. */
+.film-grain-code {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .55  0 0 0 0 .55  0 0 0 0 .55  1.3 0 0 0 -.5'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+  mix-blend-mode: normal;
+}
+
+/* 4 · film language — sprocket marks top and bottom, and four corner marks. Archive
+   only (and a quieter clean frame at the handoff); never a film strip that eats the text. */
+.odoc-marks { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0; transition: opacity 700ms ease; }
+.odoc[data-mode="archive"] .odoc-marks { opacity: 1; }
+.odoc[data-mode="handoff"] .odoc-marks { opacity: .45; }
+.odoc-perf {
+  position: absolute; inset-inline: 0; height: 7px;
+  background: repeating-linear-gradient(90deg, transparent 0 13px, rgb(var(--concrete) / .2) 13px 21px, transparent 21px 34px);
+}
+.odoc-perf-top { top: calc(env(safe-area-inset-top) + 9px); }
+.odoc-perf-bottom { bottom: calc(env(safe-area-inset-bottom) + 5px); }
+.odoc-frame {
+  position: absolute; inset: calc(env(safe-area-inset-top) + 26px) 16px calc(env(safe-area-inset-bottom) + 62px);
+  --c: rgb(var(--concrete) / .38);
+  background:
+    linear-gradient(var(--c), var(--c)) top left / 18px 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) top left / 1px 18px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / 18px 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / 1px 18px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 18px 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 1px 18px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / 18px 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / 1px 18px no-repeat;
+}
+@media (min-aspect-ratio: 6/5) { .odoc-frame { inset: 6% 5%; } }
+
+/* the floodlights — two cold beams from below and a haze; white/grey only (§13, §52) */
+.odoc-beams { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 1400ms ease; }
+.odoc[data-mode="lights"] .odoc-beams { opacity: 1; }
+.odoc-beam {
+  position: absolute; bottom: -12%; width: 24vw; height: 125%;
+  transform-origin: 50% 100%;
+  background: linear-gradient(to top, rgb(var(--sheet) / .13), rgb(var(--concrete) / .05) 50%, transparent 84%);
+  clip-path: polygon(47% 100%, 53% 100%, 100% 0, 0 0);
+}
+.odoc-beam-a { inset-inline-end: 4%; transform: rotate(-17deg); animation: odoc-sway-a 7s ease-in-out infinite alternate; }
+.odoc-beam-b { inset-inline-end: 22%; transform: rotate(-6deg); animation: odoc-sway-b 8.5s ease-in-out infinite alternate; }
+@media (min-aspect-ratio: 6/5) { .odoc-beam { width: 14vw; } }
+@keyframes odoc-sway-a { from { transform: rotate(-17deg) } to { transform: rotate(-15.4deg) } }
+@keyframes odoc-sway-b { from { transform: rotate(-6deg) } to { transform: rotate(-7.3deg) } }
+
+/* 5 · the red thread. Revealed from the start edge by two opposite transforms (the outer
+   box slides in, the inner slides back), so the line is drawn with `transform` alone and
+   its speed is the beat's own duration: the thread IS the progress (§33). Its geometry is
+   physical (x = a share of the width), so the layer is `direction: ltr` on purpose. */
+.odoc-thread {
+  position: absolute; inset-inline: 0; top: var(--thread-y); height: 64px; margin-top: -32px;
+  direction: ltr; pointer-events: none;
+  transition: transform 520ms cubic-bezier(.55,0,.8,.4);
+}
+.odoc-thread[data-exit="true"] { transform: translateX(-108%); }
+.odoc-reveal-out, .odoc-reveal-in { position: absolute; inset: 0; transition-property: transform; transition-timing-function: linear; }
+.odoc-reveal-out { overflow: hidden; transform: translateX(calc((1 - var(--p)) * 100%)); }
+.odoc-reveal-in { transform: translateX(calc((var(--p) - 1) * 100%)); }
+.odoc-line { fill: none; stroke: rgb(var(--red)); stroke-width: 2; vector-effect: non-scaling-stroke; transition: stroke-width 600ms ease; }
+.odoc[data-mode="identity"] .odoc-line { stroke-width: 3; }
+/* the drawing front — a hairline playhead riding the edge of the reveal */
+.odoc-tip { position: absolute; inset-inline-start: 0; top: 18px; width: 1px; height: 28px; background: rgb(var(--sheet) / .55); }
+.odoc-node {
+  position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px;
+  background: rgb(var(--red)); transform: rotate(45deg) scale(0);
+  transition: transform 420ms cubic-bezier(.2,.9,.3,1.2);
+}
+.odoc-node[data-lit="true"] { transform: rotate(45deg) scale(1); }
+.odoc-node[data-now="true"]::after {
+  content: ''; position: absolute; inset: -6px; border: 1px solid rgb(var(--red) / .7);
+  animation: odoc-ring 900ms cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes odoc-ring { from { transform: scale(.3) } to { transform: scale(1) } }
+.odoc-year-label {
+  position: absolute; margin-top: 12px; transform: translateX(-50%);
+  font-family: var(--font-courier), ui-monospace, monospace; font-size: 11px; letter-spacing: .08em;
+  color: rgb(var(--concrete) / .5); transition: color 600ms ease;
+}
+.odoc-year-label[data-now="true"] { color: rgb(var(--sheet)); }
+/* the mark drawn again and again (identity) — three diamonds around the node, each a hand
+   a little off the last one: the two-plate misregistration of the whole brand */
+.odoc-mark {
+  position: absolute; border: 1.5px solid rgb(var(--red)); transform: translate(-50%, -50%) rotate(45deg) scale(0);
+}
+.odoc[data-mode="identity"] .odoc-mark, .odoc[data-mode="lights"] .odoc-mark, .odoc[data-mode="handoff"] .odoc-mark {
+  animation: odoc-mark 700ms cubic-bezier(.2,.8,.2,1) var(--d, 0ms) both;
+}
+.odoc-mark-1 { width: 20px; height: 20px; }
+.odoc-mark-2 { width: 30px; height: 30px; margin: 2px 0 0 3px; border-color: rgb(var(--red) / .7); }
+.odoc-mark-3 { width: 42px; height: 42px; margin: -2px 0 0 -3px; border-color: rgb(var(--sheet) / .35); }
+@keyframes odoc-mark {
+  from { transform: translate(-50%, -50%) rotate(45deg) scale(.35); opacity: 0 }
+  to   { transform: translate(-50%, -50%) rotate(45deg) scale(1); opacity: 1 }
+}
+
+/* 6 · the year — background architecture, huge and cropped by the glass (§26) */
+.odoc-year {
+  position: absolute; pointer-events: none; line-height: .8;
+  font-family: var(--font-poster), sans-serif; font-weight: 700;
+  font-size: clamp(150px, 56vw, 400px);
+  opacity: 0; transition: opacity 1100ms ease;
+}
+@media (min-aspect-ratio: 6/5) { .odoc-year { font-size: clamp(180px, 31vw, 480px); } }
+.odoc-year[data-on="true"] { opacity: 1; animation: odoc-drift 6s ease-out both; }
+.odoc-year-a { top: 7%; inset-inline-end: -5vw; }
+.odoc-year-b { top: 9%; inset-inline-start: -4vw; }
+@media (min-aspect-ratio: 6/5) { .odoc-year-a { top: 4%; } .odoc-year-b { top: 6%; } }
+.odoc-year-ink { color: rgb(var(--sheet) / .075); }
+.odoc-year-plate { position: absolute; inset: 0; color: rgb(var(--red) / .07); transform: translate(4px, 3px); }
+@keyframes odoc-drift { from { translate: 0 0 } to { translate: 0 -8px } }
+
+/* 7 · the copy — never always in the middle (§27), always inside a reading width */
+.odoc-copy {
+  position: absolute; inset-inline: var(--gutter-doc); max-width: 28rem;
+  bottom: calc(100% - var(--thread-y) + 58px);
+}
+@media (min-aspect-ratio: 6/5) { .odoc-copy { max-width: 36rem; } }
+.odoc-copy[data-mode="memory"] { bottom: calc(100% - var(--thread-y) + 64px); }
+.odoc-copy[data-mode="archive"] { bottom: calc(100% - var(--thread-y) + 46px); }
+.odoc-copy[data-mode="identity"] { bottom: calc(100% - var(--thread-y) + 104px); }
+.odoc-copy[data-mode="lights"] { bottom: calc(100% - var(--thread-y) + 52px); margin-inline: auto; text-align: center; }
+.odoc-copy[data-mode="handoff"] { bottom: auto; top: 50%; margin-inline: auto; text-align: center; translate: 0 -60%; }
+.odoc-over {
+  font-family: var(--font-heebo), system-ui, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .08em;
+  color: rgb(var(--red)); margin-bottom: 14px;
+}
+.odoc-caption {
+  font-family: var(--font-frank), Georgia, serif; color: rgb(var(--sheet));
+  font-size: clamp(24px, 6.9vw, 40px); line-height: 1.32; text-wrap: balance;
+}
+@media (min-aspect-ratio: 6/5) { .odoc-caption { font-size: clamp(34px, 3.3vw, 56px); } }
+.odoc-copy[data-mode="handoff"] .odoc-caption { font-size: clamp(28px, 8vw, 46px); }
+@media (min-aspect-ratio: 6/5) { .odoc-copy[data-mode="handoff"] .odoc-caption { font-size: clamp(38px, 3.8vw, 60px); } }
+.odoc-piece { display: block; opacity: 0; animation: odoc-rise 900ms cubic-bezier(.2,.7,.2,1) var(--d, 0ms) both; }
+.odoc-piece[data-soft="true"] { color: rgb(var(--sheet) / .72); }
+/* the entry breath: the words are already in place (nothing jumps when they arrive), unseen */
+.odoc-copy [data-wait="true"] { animation: none; opacity: 0; }
+.odoc-archive, .odoc-note {
+  opacity: 0; animation: odoc-rise 800ms cubic-bezier(.2,.7,.2,1) var(--d, 0ms) both;
+  font-family: var(--font-courier), ui-monospace, monospace; font-size: 11px; line-height: 1.6;
+  color: rgb(var(--concrete) / .62); margin-top: 16px; font-variant-numeric: tabular-nums;
+}
+.odoc-note { font-family: var(--font-heebo), system-ui, sans-serif; font-size: 12px; letter-spacing: .1em; color: rgb(var(--concrete) / .55); }
+.odoc-archive { border-top: 1px solid rgb(var(--concrete) / .22); padding-top: 9px; display: inline-block; }
+/* memory paper — 10% of the idea: one dark ruled strip behind the line the beat turns on */
+.odoc-paper {
+  display: inline; padding: 2px 10px 4px; margin-inline-start: -10px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  background:
+    repeating-linear-gradient(0deg, rgb(var(--concrete) / .07) 0 1px, transparent 1px 9px),
+    rgb(var(--concrete) / .085);
+  outline: 1px solid rgb(var(--concrete) / .22); outline-offset: -1px;
+}
+.odoc-paper-wrap { display: inline-block; transform: rotate(-.45deg); transform-origin: 100% 50%; }
+.odoc-brand { opacity: 0; animation: odoc-rise 1100ms cubic-bezier(.2,.7,.2,1) var(--d, 0ms) both; margin-top: 26px; }
+.odoc-brand-rule { display: block; width: 44px; height: 2px; margin: 0 auto 16px; background: rgb(var(--red)); }
+.odoc-out { animation: odoc-sink 480ms ease-in both; }
+@keyframes odoc-rise { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes odoc-sink { from { opacity: 1; transform: translateY(0) } to { opacity: 0; transform: translateY(-6px) } }
+.odoc[data-leaving="true"] { opacity: 0; transition: opacity 480ms ease 460ms; }
+
+/* the gesture attempt of the film (attempt 3) — one square, one word */
+.odoc-play-mark {
+  width: 64px; height: 64px; background: rgb(var(--red)); display: grid; place-items: center;
+}
+.odoc-play-mark::before {
+  content: ''; width: 20px; height: 22px; background: rgb(var(--sheet));
+  clip-path: polygon(0 0, 100% 50%, 0 100%); margin-inline-start: 5px; direction: ltr;
+}
+
+/* reduced motion: the same composition, cut instead of moved (§38) */
+@media (prefers-reduced-motion: reduce) {
+  .odoc-reveal-out, .odoc-reveal-in, .odoc-thread, .odoc-node, .odoc-tint, .odoc-marks, .odoc-beams, .odoc-year { transition: none !important; }
+  .odoc-beam-a, .odoc-beam-b, .odoc-year[data-on="true"], .odoc-node[data-now="true"]::after { animation: none; }
+  .odoc-piece, .odoc-archive, .odoc-note, .odoc-brand, .odoc-mark { animation-duration: 1ms !important; animation-delay: 0ms !important; }
+  .odoc[data-mode="identity"] .odoc-mark, .odoc[data-mode="lights"] .odoc-mark, .odoc[data-mode="handoff"] .odoc-mark { animation-duration: 1ms !important; }
+  .odoc-out { animation: none; opacity: 0; }
+  .odoc[data-leaving="true"] { transition: none; }
+}
+/* ============================================================================
+   OPENING DOCUMENTARY — end
+   ========================================================================== */
+
+/* ============================================================================
+   CRAFT CALLBACKS — begin (LIFE delta 91, 25.9.2026)
+   The thing made comes back: a banner sways over the stand, confetti drifts down
+   the hall. Transform and opacity only; both stop under reduced motion (the
+   component sets `animate-none` there). No colour here — the tokens are on the
+   elements.
+   ========================================================================== */
+@keyframes craft-sway {
+  0%, 100% { transform: rotate(-0.6deg) translateY(0); }
+  50% { transform: rotate(0.6deg) translateY(2px); }
+}
+@keyframes craft-fleck {
+  0% { transform: translateY(-12vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.85; }
+  100% { transform: translateY(110vh) rotate(540deg); opacity: 0.6; }
+}
+/* ============================================================================
+   CRAFT CALLBACKS — end
+   ========================================================================== */
+
+/* ============================================================================
+   FILM SKIP — begin (upgrade plan §7, 27.9.2026)
+   `components/life/FilmSkipButton.tsx`, the one skip control both films carry
+   (OpeningFilm, HistoricalCutscene). Ink ground, vermilion hairline, cream type
+   at full strength — never faded, never under 15px, never hidden until hover.
+   A 48px target in the bottom start corner, clear of the notch and home bar.
+   The `Esc` plate shows only where a fine pointer can hover (a keyboard is likely).
+   ========================================================================== */
+.film-skip {
+  position: fixed;
+  z-index: 70;
+  inset-block-end: max(12px, env(safe-area-inset-bottom));
+  /* either physical inset may be the start side, so the larger one is honoured */
+  inset-inline-start: max(12px, env(safe-area-inset-left), env(safe-area-inset-right));
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 44px;
+  min-height: var(--tap);
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  border: 2px solid rgb(var(--red));
+  border-radius: 0;
+  background: rgb(var(--ink));
+  color: rgb(var(--sheet));
+  font-family: var(--font-heebo), system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  opacity: 1;
+  cursor: pointer;
+}
+.film-skip:hover { background: rgb(var(--red)); }
+.film-skip:focus-visible {
+  outline: 3px solid rgb(var(--sheet));
+  outline-offset: 3px;
+}
+.film-skip-icon { font-size: 15px; line-height: 1; }
+.film-skip-key {
+  display: none;
+  padding-inline: 0.375rem;
+  border: 1px solid rgb(var(--sheet));
+  border-radius: 0;
+  font-family: var(--font-courier), ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 1.3;
+}
+@media (hover: hover) and (pointer: fine) {
+  .film-skip-key { display: inline-block; }
+}
+/* ============================================================================
+   FILM SKIP — end
+   ========================================================================== */
+
+/* ==========================================================================
+   STORY DIRECTOR — begin (upgrade plan §2.2, 27.9.2026)
+   The first-mission cue (one ring round the action button, then still) and the
+   dilemma card. Tokens only: red / ink / sheet. No yellow, no gold, no orange.
+   ========================================================================== */
+.life-teach-pulse {
+  position: relative;
+}
+.life-teach-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border: 2px solid rgb(var(--red));
+  pointer-events: none;
+  animation: lifeTeachPulse 1.1s var(--ease-stamp, ease-out) 2 both;
+}
+@keyframes lifeTeachPulse {
+  0% { transform: scale(0.92); opacity: 1; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+.life-director-card {
+  animation: lifeDirectorIn 360ms var(--ease-stamp, ease-out) both;
+}
+@keyframes lifeDirectorIn {
+  from { transform: translateY(-8px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .life-teach-pulse::after { animation: none; opacity: 0; }
+  .life-director-card { animation: none; }
+}
+/* STORY DIRECTOR — end */
+
+
+/* BLIND COW STAGE — begin (gate 10, 29.9.2026)
+   The dark portrait card from the comps: an ink plate, the shell's own halftone in CREAM and a
+   vermilion glow rising from the foot. Shell tokens only — this is not the press layer. */
+.bc-stage {
+  background-color: rgb(var(--ink));
+  background-image:
+    radial-gradient(ellipse 90% 70% at 50% 108%, rgb(var(--red) / 0.42), transparent 66%),
+    radial-gradient(rgb(var(--paper) / 0.07) 0.9px, transparent 1.2px);
+  background-size: auto, 7px 7px;
+}
+/* BLIND COW STAGE — end */
+
+/* MUSEUM STAGE — the same ink plate for the club's own wing and the census (29.9.2026) */
+.museum-stage {
+  background-color: rgb(var(--ink));
+  background-image:
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgb(var(--red) / 0.34), transparent 70%),
+    radial-gradient(rgb(var(--paper) / 0.07) 0.9px, transparent 1.2px);
+  background-size: auto, 7px 7px;
+}
+
+/* ARENA ENTRANCE — begin (gates 9 and 10, 29.9.2026)
+   The tunnel walk: an ink plate, a vermilion beam that sweeps once, the logo rising out of the
+   dark. Shell tokens only. The component is not even mounted under reduced motion; the guard
+   below is for the case where the preference flips while it plays. */
+.arena-entrance { background-image: radial-gradient(ellipse 80% 55% at 50% 50%, rgb(var(--red) / 0.28), transparent 70%); }
+.arena-beam {
+  background: linear-gradient(100deg, transparent 38%, rgb(var(--paper) / 0.14) 50%, transparent 62%);
+  transform: translateX(-120%);
+  animation: arenaBeam 1.5s 0.25s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.arena-logo { opacity: 0; transform: scale(0.8); filter: blur(6px); animation: arenaRise 0.9s 0.3s cubic-bezier(.16,1,.3,1) forwards; }
+.arena-entrance-rumble .arena-logo { transform: scale(1.25); }
+.arena-line { opacity: 0; animation: arenaFade 0.6s 1.1s ease-out forwards; }
+.arena-scarf { height: 22%; background: repeating-linear-gradient(90deg, rgb(var(--red)) 0 28px, rgb(var(--paper)) 28px 56px); opacity: 0.9; }
+.arena-scarf-a { top: 6%; transform: translateX(-110%); animation: arenaScarfIn 0.7s 0.1s cubic-bezier(.2,.8,.2,1) forwards; }
+.arena-scarf-b { bottom: 6%; transform: translateX(110%); animation: arenaScarfIn 0.7s 0.2s cubic-bezier(.2,.8,.2,1) forwards; }
+@keyframes arenaBeam { to { transform: translateX(120%); } }
+@keyframes arenaRise { to { opacity: 1; transform: scale(1); filter: blur(0); } }
+@keyframes arenaFade { to { opacity: 1; } }
+@keyframes arenaScarfIn { to { transform: translateX(0); opacity: 0.16; } }
+@media (prefers-reduced-motion: reduce) {
+  .arena-beam, .arena-scarf { animation: none; display: none; }
+  .arena-logo, .arena-line { animation: none; opacity: 1; transform: none; filter: none; }
+}
+/* ARENA ENTRANCE — end */

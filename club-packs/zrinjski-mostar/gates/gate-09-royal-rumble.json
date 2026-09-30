@@ -1,0 +1,265 @@
+{
+  "status": "OPEN_FOR_EVALUATION",
+  "budget": 20,
+  "squadSize": 5,
+  "pool": [
+    {
+      "playerId": "marko-maric",
+      "name": "Marko Marić",
+      "positions": [
+        "GK"
+      ],
+      "cost": 5,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "ivica-matas",
+      "name": "Ivica Matas",
+      "positions": [
+        "GK"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "igor-melher",
+      "name": "Igor Melher",
+      "positions": [
+        "GK"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "goran-karacic",
+      "name": "Goran Karačić",
+      "positions": [
+        "GK"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "pero-stojkic",
+      "name": "Pero Stojkić",
+      "positions": [
+        "LB"
+      ],
+      "cost": 5,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "slobodan-jakovljevic",
+      "name": "Slobodan Jakovljević",
+      "positions": [
+        "CB"
+      ],
+      "cost": 5,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "hrvoje-barisic",
+      "name": "Hrvoje Barišić",
+      "positions": [
+        "CB"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "marin-anicic",
+      "name": "Marin Aničić",
+      "positions": [
+        "CB"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "toni-sunjic",
+      "name": "Toni Šunjić",
+      "positions": [
+        "CB"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "josip-corluka",
+      "name": "Josip Ćorluka",
+      "positions": [
+        "RB"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "daniel-graovac",
+      "name": "Daniel Graovac",
+      "positions": [
+        "CB"
+      ],
+      "cost": 3,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "mario-ticinovic",
+      "name": "Mario Tičinović",
+      "positions": [
+        "LB",
+        "LW"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "luka-modric",
+      "name": "Luka Modrić",
+      "positions": [
+        "CM"
+      ],
+      "cost": 6,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "mladen-zizovic",
+      "name": "Mladen Žižović",
+      "positions": [
+        "AM"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "velibor-djuric",
+      "name": "Velibor Đurić",
+      "positions": [
+        "CM"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "vucina-scepanovic",
+      "name": "Vučina Šćepanović",
+      "positions": [
+        "CM"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "milos-filipovic",
+      "name": "Miloš Filipović",
+      "positions": [
+        "AM"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "ognjen-todorovic",
+      "name": "Ognjen Todorović",
+      "positions": [
+        "LW",
+        "RW"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "zvonimir-kozulj",
+      "name": "Zvonimir Kožulj",
+      "positions": [
+        "AM"
+      ],
+      "cost": 5,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "andrija-balic",
+      "name": "Andrija Balić",
+      "positions": [
+        "CM"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "nemanja-bilbija",
+      "name": "Nemanja Bilbija",
+      "positions": [
+        "CF"
+      ],
+      "cost": 7,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "kresimir-kordic",
+      "name": "Krešimir Kordić",
+      "positions": [
+        "CF"
+      ],
+      "cost": 6,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "mario-cuze",
+      "name": "Mario Ćuže",
+      "positions": [
+        "LW",
+        "RW"
+      ],
+      "cost": 5,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "stevo-nikolic",
+      "name": "Stevo Nikolić",
+      "positions": [
+        "CF"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "zoran-rajovic",
+      "name": "Zoran Rajović",
+      "positions": [
+        "CF"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "sulejman-smajic",
+      "name": "Sulejman Smajić",
+      "positions": [
+        "FW",
+        "W"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "matija-malekinusic",
+      "name": "Matija Malekinušić",
+      "positions": [
+        "LW",
+        "RW"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    },
+    {
+      "playerId": "nardin-mulahusejnovic",
+      "name": "Nardin Mulahusejnović",
+      "positions": [
+        "CF"
+      ],
+      "cost": 4,
+      "note": "Game-balance cost; not an objective historical ranking."
+    }
+  ],
+  "methodology": "Costs are editorial gameplay values based on role scarcity, longevity, major moments and era balance; they must not be presented as a factual ranking."
+}

@@ -1,0 +1,195 @@
+{
+  "source": {
+    "kind": "manual",
+    "title": "THE WORKER — מסלולי החוט האדום הראשונים, נבחרו מהגרף ונבדקו בפותר (21.9.2026, ממתין לאישור מאור)",
+    "url": null
+  },
+  "note": "Curated Red Thread levels. Every start, end and hand card is an Entity Graph id; every level is proved solvable by tests/thread.test.ts. No Hebrew UI text lives here — titles and rules are composed from the catalogue.",
+  "records": [
+    {
+      "id": "rt-01",
+      "tier": 1,
+      "start": "p_b5d64bece3",
+      "end": "trophy:ליגת-העל:1999/00",
+      "hand": [
+        "kit-1999-00-home",
+        "season:1998/99",
+        "crest:1997",
+        "season:1999/00",
+        "maker:nike",
+        "trophy:גביע-המדינה:1998/99",
+        "season:1995/96"
+      ],
+      "integrity": 4,
+      "rules": {
+        "maxStops": 3,
+        "time": "free"
+      }
+    },
+    {
+      "id": "rt-02",
+      "tier": 2,
+      "start": "moment:גמר-הגביע-1983",
+      "end": "trophy:ליגת-העל:1985/86",
+      "hand": [
+        "p_25fbe5fc0d",
+        "season:1982/83",
+        "kit-1985-86-home",
+        "crest:1923",
+        "goal:haifa-1986-landau-86",
+        "maker:adidas",
+        "season:1985/86",
+        "trophy:גביע-המדינה:1982/83",
+        "m_16c96a911748"
+      ],
+      "integrity": 4,
+      "rules": {
+        "maxStops": 4,
+        "mustTypes": [
+          "object"
+        ],
+        "time": "free"
+      }
+    },
+    {
+      "id": "rt-03",
+      "tier": 3,
+      "start": "goal:chelsea-2001-gershon-88",
+      "end": "moment:מילאן-2002",
+      "hand": [
+        "m_67a2f41af253",
+        "season:1999/00",
+        "p_6f1fd9dc54",
+        "tie:2001-uefa-r2-chelsea",
+        "p_7664d34669",
+        "goal:chelsea-2001-kleschenko-90-4",
+        "crest:2001",
+        "m_b88bc98d09db",
+        "team:football:צלסי",
+        "goal:milan-2002-kleschenko-31"
+      ],
+      "integrity": 3,
+      "rules": {
+        "maxStops": 3,
+        "time": "forward"
+      }
+    },
+    {
+      "id": "rt-04",
+      "tier": 4,
+      "start": "kit-2022-23-home",
+      "end": "fans:אולטראס-הפועל",
+      "hand": [
+        "moment:ירידה-2024",
+        "season:2022/23",
+        "song:ואלה-שמות-—-גרסת-הפועל-תא",
+        "maker:adidas",
+        "season:2023/24",
+        "kit-2025-26-home",
+        "song:לא-יודע-להסביר",
+        "moment:עלייה-2025",
+        "season:2024/25"
+      ],
+      "integrity": 3,
+      "rules": {
+        "maxStops": 4,
+        "world": true,
+        "noConsecutiveMatches": true,
+        "time": "forward"
+      }
+    },
+    {
+      "id": "rt-05",
+      "tier": 5,
+      "start": "place:גספ-ניקוסיה",
+      "end": "place:סן-סירו",
+      "hand": [
+        "moment:מילאן-2002",
+        "m_8d8e47eb1354",
+        "p_6f1fd9dc54",
+        "team:football:מילאן",
+        "goal:milan-2002-kleschenko-31",
+        "tie:2001-uefa-qf-milan",
+        "m_b88bc98d09db",
+        "p_d49e466873",
+        "season:2001/02",
+        "crest:2001"
+      ],
+      "integrity": 2,
+      "rules": {
+        "maxStops": 3,
+        "exact": true,
+        "time": "free"
+      }
+    },
+    {
+      "id": "rt-06",
+      "tier": 1,
+      "start": "kit-2009-10-home",
+      "end": "goal:benfica-2010-zahavi-24",
+      "hand": [
+        "season:2010/11",
+        "p_0b04f3bfc5",
+        "trophy:ליגת-העל:2009/10",
+        "season:2009/10",
+        "crest:2008",
+        "p_c37eaf41cd",
+        "maker:umbro",
+        "goal:championship-2010-zahavi-92"
+      ],
+      "integrity": 4,
+      "rules": {
+        "maxStops": 4,
+        "time": "free"
+      }
+    },
+    {
+      "id": "rt-07",
+      "tier": 2,
+      "start": "trophy:גביע-המדינה:1998/99",
+      "end": "goal:chelsea-2001-gershon-88",
+      "hand": [
+        "season:1999/00",
+        "m_1497e5549422",
+        "kit-1999-00-home",
+        "p_7664d34669",
+        "crest:1997",
+        "season:1998/99",
+        "p_b5d64bece3",
+        "maker:nike",
+        "season:2001/02"
+      ],
+      "integrity": 4,
+      "rules": {
+        "maxStops": 4,
+        "mustTypes": [
+          "person"
+        ],
+        "time": "free"
+      }
+    },
+    {
+      "id": "rt-08",
+      "tier": 3,
+      "start": "moment:גמר-הגביע-1983",
+      "end": "goal:haifa-1986-landau-86",
+      "hand": [
+        "season:1980/81",
+        "m_16c96a911748",
+        "crest:1923",
+        "p_25fbe5fc0d",
+        "trophy:ליגת-העל:1985/86",
+        "season:1982/83",
+        "kit-1985-86-home",
+        "maker:adidas",
+        "m_ba6c1583a5ec",
+        "season:1985/86"
+      ],
+      "integrity": 3,
+      "rules": {
+        "maxStops": 3,
+        "time": "forward"
+      }
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "src-club-history",
+    "title": "HŠK Zrinjski Mostar — History",
+    "url": "https://hskzrinjski.ba/en/povijest/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-club-info",
+    "title": "HŠK Zrinjski Mostar — Club Brochure / Info",
+    "url": "https://hskzrinjski.ba/en/info/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-stadium",
+    "title": "HŠK Zrinjski Mostar — Stadium",
+    "url": "https://hskzrinjski.ba/en/stadion/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-fans",
+    "title": "HŠK Zrinjski Mostar — Fans / Ultras",
+    "url": "https://hskzrinjski.ba/en/navijaci/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-stats",
+    "title": "HŠK Zrinjski Mostar in numbers",
+    "url": "https://hskzrinjski.ba/en/stats-4/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-pipa",
+    "title": "Marko Marić, winner of the Filip Šunjić - Pipa trophy",
+    "url": "https://hskzrinjski.ba/en/marko-maric-dobitnik-trofeja-filip-sunjic-pipa/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-europe-2000",
+    "title": "25 years since Zrinjski's first European home match",
+    "url": "https://hskzrinjski.ba/en/on-this-day-25-years-ago-hsk-zrinjski-played-its-first-european-match-in-mostar/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-uefa-az",
+    "title": "UEFA — Zrinjski 4-3 AZ Alkmaar",
+    "url": "https://www.uefa.com/uefaconferenceleague/news/0288-19b32c5492cc-3406f976f0d4-1000--best-games-of-the-season/",
+    "publisher": "UEFA",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-uefa-az-report",
+    "title": "UEFA Full Time Report — Zrinjski v AZ, 21 Sep 2023",
+    "url": "https://www.uefa.com/newsfiles/uefaeuropaconferenceleague/2024/2039291_FR.pdf",
+    "publisher": "UEFA",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-2025-title",
+    "title": "Zrinjski wins Bosnia and Herzegovina championship",
+    "url": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-wins-bih-championship/",
+    "publisher": "Football Association of Bosnia and Herzegovina",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-2026-cup-1",
+    "title": "Zrinjski wins first leg of the BiH Cup final",
+    "url": "https://www.nfsbih.ba/en/news/football-m/cup-bih-m/zrinjski-wins-first-leg-of-the-bih-cup-final/",
+    "publisher": "Football Association of Bosnia and Herzegovina",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-2026-cup-2",
+    "title": "HŠK Zrinjski wins the BiH Cup",
+    "url": "https://www.nfsbih.ba/en/news/football-m/cup-bih-m/hsk-zrinjski-wins-the-bih-cup/",
+    "publisher": "Football Association of Bosnia and Herzegovina",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-2026-palace-tickets",
+    "title": "Zrinjski - Crystal Palace ticket information",
+    "url": "https://hskzrinjski.ba/en/zrinjski-crystal-palace-ulaznice/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-membership",
+    "title": "Become a member of HŠK Zrinjski Mostar",
+    "url": "https://hskzrinjski.ba/en/clanstvo/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-board",
+    "title": "Assembly: Continuity in club management structures",
+    "url": "https://hskzrinjski.ba/skupstina-nastavak-kontinuiteta-u-upravljackim-strukturama-kluba/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-president",
+    "title": "Interview with HŠK Zrinjski President Denis Lasić",
+    "url": "https://hskzrinjski.ba/en/intervju-predsjednik-denis-lasic/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-macron",
+    "title": "HŠK Zrinjski and Macron extended partnership until 2027",
+    "url": "https://hskzrinjski.ba/en/hsk-zrinjski-i-macron-produzili-suradnju-do-2027-godine/",
+    "publisher": "HŠK Zrinjski Mostar",
+    "confidence": "A_PRIMARY",
+    "sourceType": "official"
+  },
+  {
+    "id": "src-kits",
+    "title": "HŠK Zrinjski Kit History",
+    "url": "https://www.footballkitarchive.com/hsk-zrinjski-kits-t6351/",
+    "publisher": "Football Kit Archive",
+    "confidence": "C_SECONDARY",
+    "sourceType": "database"
+  },
+  {
+    "id": "src-1994-kit",
+    "title": "HŠK Zrinjski 1994-95 Home Kit",
+    "url": "https://www.footballkitarchive.com/hsk-zrinjski-1994-95-home-kit-154125/",
+    "publisher": "Football Kit Archive",
+    "confidence": "C_SECONDARY",
+    "sourceType": "database"
+  },
+  {
+    "id": "src-1995-kit",
+    "title": "HŠK Zrinjski 1995-96 Home Kit",
+    "url": "https://www.footballkitarchive.com/hsk-zrinjski-1995-96-home-kit-154145/",
+    "publisher": "Football Kit Archive",
+    "confidence": "C_SECONDARY",
+    "sourceType": "database"
+  },
+  {
+    "id": "src-1997-kit",
+    "title": "HŠK Zrinjski 1997-98 Home Kit",
+    "url": "https://www.footballkitarchive.com/hsk-zrinjski-1997-98-home-kit/",
+    "publisher": "Football Kit Archive",
+    "confidence": "C_SECONDARY",
+    "sourceType": "database"
+  },
+  {
+    "id": "src-2005-kit",
+    "title": "HŠK Zrinjski 2004-05 Home Kit",
+    "url": "https://www.footballkitarchive.com/hsk-zrinjski-2004-05-home-kit/",
+    "publisher": "Football Kit Archive",
+    "confidence": "C_SECONDARY",
+    "sourceType": "database"
+  },
+  {
+    "id": "src-2022-kit",
+    "title": "HŠK Zrinjski 2022-23 Home Kit",
+    "url": "https://www.footballkitarchive.com/hsk-zrinjski-2022-23-home-kit/",
+    "publisher": "Football Kit Archive",
+    "confidence": "C_SECONDARY",
+    "sourceType": "database"
+  },
+  {
+    "id": "src-derby-context",
+    "title": "ECMI — Ethnic Identity and Football in Mostar",
+    "url": "https://www.ecmi.de/infochannel/detail/ecmi-minorities-blog-ethnic-identity-and-football-in-mostar-a-clear-divide-along-the-old-front-line",
+    "publisher": "European Centre for Minority Issues",
+    "confidence": "B_VERIFIED",
+    "sourceType": "other"
+  }
+]

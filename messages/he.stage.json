@@ -1,0 +1,11 @@
+{
+  "stage.close": "סגור",
+  "stage.more": "עוד",
+  "stage.howTo": "איך משחקים",
+  "stage.share": "שיתוף",
+  "stage.soon": "בקרוב",
+  "stage.dragHint": "גררו למגרש — או הקישו",
+  "gate.soon.aria": "שער {number} — {title}, בקרוב. המשחק עוד לא נפתח.",
+  "away.title": "יוצאים לחוץ",
+  "away.lede": "כל המסעות — האוטובוסים, היציעים הזרים והדרך הביתה."
+}

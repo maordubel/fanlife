@@ -1,0 +1,43 @@
+{
+  "note": "The first Hapoel Ussishkin association elections, from the association's own website as Maor supplied it: the double-envelope method, the full candidate list with the occupation each candidate declared, and the vote count for every candidate in both bodies. Two things in the source disagree with themselves and are recorded as conflicts rather than tidied: the envelope dates (July 2007 vs August 2008 in one sentence) and two names spelled differently in the candidate list and in the results. Turnout figures are given in the source as approximations and are stored as stated.",
+  "confidence": 3,
+  "source": {
+    "kind": "official",
+    "title": "אתר עמותת הפועל אוסישקין — מצעי המועמדים ותוצאות הבחירות",
+    "url": "http://www.hapoeluta.com/"
+  },
+  "records": [
+    {
+      "slug": "בחירות-ראשונות-הנהלה",
+      "associationSlug": "הפועל-אוסישקין",
+      "titleHe": "הבחירות הראשונות להנהלת העמותה",
+      "bodyHe": "הנהלה",
+      "heldOn": null,
+      "dateConfirmed": false,
+      "methodHe": "מעטפות כפולות; המעטפות נשלחו לחברי העמותה ולהחזרה במשרדי העמותה. תעמולת הבחירות התקיימה בפרסום מצעי המועמדים באתר העמותה.",
+      "eligibleVoters": 637,
+      "votesCast": 335,
+      "invalidVotes": 6,
+      "seats": 5,
+      "figuresApproximate": true,
+      "noteHe": "מספרי המצביעים מופיעים במקור עם 'כ-'. להנהלה נבחרו כל חמשת חברי ההנהלה הזמנית הראשונה.",
+      "confidence": 3
+    },
+    {
+      "slug": "בחירות-ראשונות-ועדת-ביקורת",
+      "associationSlug": "הפועל-אוסישקין",
+      "titleHe": "הבחירות הראשונות לוועדת הביקורת",
+      "bodyHe": "ועדת ביקורת",
+      "heldOn": null,
+      "dateConfirmed": false,
+      "methodHe": "מעטפות כפולות, במקביל לבחירות להנהלה.",
+      "eligibleVoters": 637,
+      "votesCast": 335,
+      "invalidVotes": 6,
+      "seats": null,
+      "figuresApproximate": true,
+      "noteHe": "המקור מציין ששניים מחברי ועדת הביקורת הזמנית נבחרו מחדש, ביניהם היו\"ר איל חלד וגיא זקס. מספר המקומות המלא לא נאמר ולכן לא נטען.",
+      "confidence": 3
+    }
+  ]
+}

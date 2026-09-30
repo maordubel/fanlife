@@ -1,0 +1,138 @@
+{
+  "status": "OPEN",
+  "nodes": [
+    {
+      "id": "time-01",
+      "year": 1905,
+      "label": "Club founded",
+      "anchorId": "founded-1905"
+    },
+    {
+      "id": "time-02",
+      "year": 1945,
+      "label": "Club activity banned",
+      "anchorId": "ban-1945"
+    },
+    {
+      "id": "time-03",
+      "year": 1992,
+      "label": "Re-establishment",
+      "anchorId": "renewal-1992"
+    },
+    {
+      "id": "time-04",
+      "year": 1994,
+      "label": "Official competition / modern stadium era",
+      "anchorId": "home-1994"
+    },
+    {
+      "id": "time-05",
+      "year": 1998,
+      "label": "Ultras formally founded",
+      "anchorId": "ultras-1998"
+    },
+    {
+      "id": "time-06",
+      "year": 2000,
+      "label": "First European campaign",
+      "anchorId": "europe-2000"
+    },
+    {
+      "id": "time-07",
+      "year": 2003,
+      "label": "Modrić 2003/04 season",
+      "anchorId": "modric-2003"
+    },
+    {
+      "id": "time-08",
+      "year": 2005,
+      "label": "First league title",
+      "anchorId": "title-2005"
+    },
+    {
+      "id": "time-09",
+      "year": 2008,
+      "label": "First cup / Volim te bola begins",
+      "anchorId": "cup-2008"
+    },
+    {
+      "id": "time-10",
+      "year": 2009,
+      "label": "Second league title",
+      "anchorId": "title-2009"
+    },
+    {
+      "id": "time-11",
+      "year": 2014,
+      "label": "Third league title",
+      "anchorId": "title-2014"
+    },
+    {
+      "id": "time-12",
+      "year": 2016,
+      "label": "League title",
+      "anchorId": "three-peat-2016-18"
+    },
+    {
+      "id": "time-13",
+      "year": 2017,
+      "label": "League title",
+      "anchorId": "three-peat-2016-18"
+    },
+    {
+      "id": "time-14",
+      "year": 2018,
+      "label": "League title",
+      "anchorId": "three-peat-2016-18"
+    },
+    {
+      "id": "time-15",
+      "year": 2022,
+      "label": "League title",
+      "anchorId": "title-2022"
+    },
+    {
+      "id": "time-16",
+      "year": 2023,
+      "label": "League + cup + first UEFA group stage",
+      "anchorId": "double-2023"
+    },
+    {
+      "id": "time-17",
+      "year": 2023,
+      "label": "4-3 vs AZ",
+      "anchorId": "az-2023"
+    },
+    {
+      "id": "time-18",
+      "year": 2024,
+      "label": "BiH Cup",
+      "anchorId": "cup-2024"
+    },
+    {
+      "id": "time-19",
+      "year": 2025,
+      "label": "Ninth league title",
+      "anchorId": "title-2025"
+    },
+    {
+      "id": "time-20",
+      "year": 2026,
+      "label": "Conference League play-off vs Crystal Palace",
+      "anchorId": "palace-2026"
+    },
+    {
+      "id": "time-21",
+      "year": 2026,
+      "label": "Fourth BiH Cup vs Velež",
+      "anchorId": "cup-2026"
+    }
+  ],
+  "modes": [
+    "order 4",
+    "find missing year",
+    "connect event→player",
+    "connect event→place",
+    "hard mode no year labels"
+  ]
+}

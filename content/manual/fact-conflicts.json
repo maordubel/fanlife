@@ -1,0 +1,976 @@
+{
+ "note": "Sources disagree. Recorded and displayed, never resolved by quietly picking one. The last five come from the kit-engine spec, which contradicts the verified kit archive — the spec drives the ENGINE, not the facts. Four further conflicts come from the association's own election page — two of them are the source disagreeing with itself.",
+ "confidence": 2,
+ "source": {
+  "kind": "other",
+  "title": "Verified research pass, 31 Aug 2026",
+  "url": null
+ },
+ "records": [
+  {
+   "entityTable": "trophy",
+   "entityKey": "ליגת-העל",
+   "field": "championship_count",
+   "claimA": "13 — ההתאחדות והמועדון",
+   "claimB": "12 — פיפ\"א ואופ\"א, שאינן מכירות בעונות 1934/35 ו-1937/38 שננטשו",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+   "sourceBUrl": "https://en.wikipedia.org/wiki/List_of_Israeli_football_champions",
+   "noteHe": "worldfootball.net מונה 14 ומוסיף 1936 ו-1943 — עוד גרסה שלישית"
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1962/63 בלומפילד — שמשון",
+   "field": "score",
+   "claimA": "1:1",
+   "claimB": "0:0",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
+   "sourceBUrl": "https://golden-lotus.co.il/bloomfield/",
+   "noteHe": "ויקיפדיה ו-StadiumDB אומרים 1:1; golden-lotus אומר 0:0"
+  },
+  {
+   "entityTable": "venue",
+   "entityKey": "בלומפילד",
+   "field": "opening_match_date",
+   "claimA": "13.12.1962",
+   "claimB": "12.12.1962",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
+   "sourceBUrl": "https://www.stadiumguide.com/bloomfield-stadium/",
+   "noteHe": "משחק החנוכה הרשמי מול SC Enschede, 1:1 — התאריך במחלוקת"
+  },
+  {
+   "entityTable": "crest_version",
+   "entityKey": "הפועל-תל-אביב",
+   "field": "stages",
+   "claimA": "אתר המועדון: תשעה שלבים, כולל 2008-2015 וכיתוב המאה",
+   "claimB": "Football Kit Archive: מדלג על 2008-2015 ועל שלב המאה",
+   "sourceAUrl": "https://www.htafc.co.il/היסטוריה-והישגים/",
+   "sourceBUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-logo-history/",
+   "noteHe": "אתר המועדון עדיף כמקור ראשוני; הפער נשמר"
+  },
+  {
+   "entityTable": "membership_milestone",
+   "entityKey": "1000",
+   "field": "date",
+   "claimA": "ינואר 2010 (מסמך המחקר, ללא מקור)",
+   "claimB": "ואלה דיווחה על הצטרפות איינשטיין לעמותה ב-13.8.2007",
+   "sourceAUrl": null,
+   "sourceBUrl": "https://sports.walla.co.il/item/1153094",
+   "noteHe": "לא הוכרע; ייתכן שמדובר בשתי פעולות שונות"
+  },
+  {
+   "entityTable": "association_event",
+   "entityKey": "name_change",
+   "field": "date",
+   "claimA": "24.7.2010 (מסמך המחקר)",
+   "claimB": "23.7.2010 (ואלה, מהערב עצמו)",
+   "sourceAUrl": null,
+   "sourceBUrl": "https://sports.walla.co.il/item/1713821",
+   "noteHe": "נבחר 23.7.2010 — דיווח בן־זמן מאותו ערב"
+  },
+  {
+   "entityTable": "kit_supply_spell",
+   "entityKey": "2009-2012",
+   "field": "manufacturer",
+   "claimA": "אמברו 2006/07–2010/11 ואז קאפה 2011–14",
+   "claimB": "Uhlsport 2009–2012 (מפרט המדים)",
+   "sourceAUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits/",
+   "sourceBUrl": null,
+   "noteHe": "Uhlsport אינה מופיעה בארכיון המדים לאף עונה. לא נטען עד לאימות מול תמונה.",
+   "resolution": "הוכרע לטובת הארכיון: אמברו. מאור אישר אמברו ל-2009/10.",
+   "resolvedBy": "ידע אישי — צוות The Worker, אימות ישיר"
+  },
+  {
+   "entityTable": "sponsor_deal",
+   "entityKey": "2010/11",
+   "field": "shirt_sponsor",
+   "claimA": "כתר — נראית על חולצת הבית 2010/11",
+   "claimB": "סמסונג (מפרט המדים)",
+   "sourceAUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-2010-11-home-kit-20115/",
+   "sourceBUrl": null,
+   "noteHe": "ייתכן ששתיהן נכונות בעונות/תחרויות שונות; לא הוכרע.",
+   "resolution": "הוכרע ע\"י צוות The Worker: כתר בליגת האלופות בלבד, בוני התיכון בליגה. שתי הרשומות נשמרו, מופרדות לפי תחרות.",
+   "resolvedBy": "ידע אישי — צוות The Worker, אימות ישיר"
+  },
+  {
+   "entityTable": "sponsor_deal",
+   "entityKey": "2009/10",
+   "field": "shirt_sponsor",
+   "claimA": "לא אומת",
+   "claimB": "Sunday / Eliot (מפרט המדים)",
+   "sourceAUrl": null,
+   "sourceBUrl": null,
+   "noteHe": "לא נמצא מקור נגיש. לא נטען.",
+   "resolution": "הוכרע ע\"י צוות The Worker: סובארו, עונת הדאבל. נטען בוודאות 3.",
+   "resolvedBy": "ידע אישי — צוות The Worker, אימות ישיר"
+  },
+  {
+   "entityTable": "kit_supply_spell",
+   "entityKey": "2014-2019",
+   "field": "manufacturer",
+   "claimA": "אמברו 2014/15, פומה 2015/16, נייקי 2016/17, מקרון 2017/18–2021/22",
+   "claimB": "נייקי 2014–2019 (מפרט המדים)",
+   "sourceAUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits/",
+   "sourceBUrl": null,
+   "noteHe": "הארכיון מפרט ארבעה יצרנים בטווח הזה, לא אחד.",
+   "resolution": "הוכרע לטובת הארכיון: ארבעה יצרנים בטווח.",
+   "resolvedBy": "ידע אישי — צוות The Worker, אימות ישיר"
+  },
+  {
+   "entityTable": "kit_supply_spell",
+   "entityKey": "2021-",
+   "field": "manufacturer",
+   "claimA": "אדידס 2022/23–2023/24, נייקי מ-2024/25",
+   "claimB": "אדידס 2021–היום (מפרט המדים)",
+   "sourceAUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits/",
+   "sourceBUrl": null,
+   "noteHe": "נייקי היא היצרנית הנוכחית לפי הארכיון.",
+   "resolution": "הוכרע לטובת הארכיון: נייקי היא היצרנית הנוכחית.",
+   "resolvedBy": "ידע אישי — צוות The Worker, אימות ישיר"
+  },
+  {
+   "entityTable": "election",
+   "entityKey": "בחירות-ראשונות-הנהלה",
+   "field": "envelope_dates",
+   "claimA": "המעטפות נשלחו ב-27 ביולי 2007",
+   "claimB": "המעטפות היו לחזור עד 17 באוגוסט 2008",
+   "sourceAUrl": "http://www.hapoeluta.com/",
+   "sourceBUrl": "http://www.hapoeluta.com/",
+   "noteHe": "שני התאריכים מופיעים באותו משפט במקור ומפרידה ביניהם שנה שלמה. אחד מהם שגוי, ואין דרך לדעת איזה. מועד הבחירות נשמר null.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "election_candidate",
+   "entityKey": "אייל-ציתיאת",
+   "field": "name_spelling",
+   "claimA": "אייל ציתיאת — ברשימת המועמדים",
+   "claimB": "אייל צטיאט — בטבלת התוצאות",
+   "sourceAUrl": "http://www.hapoeluta.com/",
+   "sourceBUrl": "http://www.hapoeluta.com/",
+   "noteHe": "אותו מקור מאיית את השם בשתי צורות. נשמר כפי שברשימת המועמדים, עם השם השני כאליאס.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "election_candidate",
+   "entityKey": "אסף-רובנר",
+   "field": "name_spelling",
+   "claimA": "אסף רובנר — ברשימת המועמדים",
+   "claimB": "אסף רוברנר — בטבלת התוצאות",
+   "sourceAUrl": "http://www.hapoeluta.com/",
+   "sourceBUrl": "http://www.hapoeluta.com/",
+   "noteHe": "כנ\"ל. נשמר כפי שברשימת המועמדים.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "election_candidate",
+   "entityKey": "אבי-כץ",
+   "field": "given_name",
+   "claimA": "אבי כץ — אתר העמותה, רשימת המועמדים ותוצאות",
+   "claimB": "גבי כץ — מקור מסר הפוך במעבר המחקר הקודם",
+   "sourceAUrl": "http://www.hapoeluta.com/",
+   "sourceBUrl": null,
+   "noteHe": "מעבר המחקר הקודם תיקן 'אבי' ל'גבי'. אתר העמותה עצמו כותב 'אבי' פעמיים. הסתירה נרשמת; השם נשמר כפי שבמקור הראשוני של העמותה.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "shirt_number",
+   "entityKey": "2016/17 · 2",
+   "field": "holder",
+   "claimA": "יום טוב עופר — הרכב 27.8.2016",
+   "claimB": "עופר ורטה — הרכב 25.9.2016",
+   "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "shirt_number",
+   "entityKey": "2016/17 · 16",
+   "field": "holder",
+   "claimA": "שגיב יחזקאל — הרכב 27.8.2016",
+   "claimB": "ויאם עמאשה — הרכב 25.9.2016",
+   "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "shirt_number",
+   "entityKey": "2018/19 · 21",
+   "field": "holder",
+   "claimA": "מוטי ברשצקי — הרכב 1.9.2018",
+   "claimB": "קאיו — הרכב 1.10.2018",
+   "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "shirt_number",
+   "entityKey": "2021/22 · 7 ו-18",
+   "field": "holder",
+   "claimA": "אושר דוידה כ-7 — הרכב 25.9.2021",
+   "claimB": "אושר דוידה כ-18 — הרכב 28.8.2021",
+   "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "shirt_number",
+   "entityKey": "2021/22 · 28",
+   "field": "holder",
+   "claimA": "יואב תומר",
+   "claimB": "שי אייזן — שניהם מופיעים כ-28 באותו דיווח",
+   "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
+   "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
+   "resolution": null,
+   "resolvedBy": null,
+   "confidence": 3
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1989/90|ליגה-ארצית|1990-05-12",
+   "field": "scorers",
+   "claimA": "וואלה ספורט: ז'אנו ×2, מאיה, שמואל, אבוקסיס, אלבז",
+   "claimB": "הבריף הפנימי של שלב ב׳ (3.9.2026): ז'אנו ×3, שמואל, מאיה, אבוקסיס",
+   "sourceAUrl": "https://sports.walla.co.il/item/3356277",
+   "sourceBUrl": null,
+   "noteHe": "עד שיימצא מקור שני, המשחק בחיים של פוגי לא מייחס שער לשם — רק הסך: הפועל תל אביב 6 — רמת עמידר 0."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1962-10-13 הפועל-תל-אביב — שמשון-תל-אביב",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": null,
+   "field": "opponent_club",
+   "claimA": "הפועל-תל-אביב מול שמשון-תל-אביב — Bloomfield Stadium — Wikipedia (StadiumDB agrees; golden-lotus.co.il says 0-0 — see fact-conflicts)",
+   "claimB": "הפועל ת\"א מול שמשון ת\"א — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7)."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1962-10-13 הפועל-תל-אביב — שמשון-תל-אביב",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": null,
+   "field": "score",
+   "claimA": "1:1 — Bloomfield Stadium — Wikipedia (StadiumDB agrees; golden-lotus.co.il says 0-0 — see fact-conflicts)",
+   "claimB": "0:0 — ויקיפועל",
+   "noteHe": "1962-10-13 · הפועל-תל-אביב מול שמשון-תל-אביב. שתי התוצאות נשמרות; אין הכרעה."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1962-10-13 הפועל-תל-אביב — שמשון-תל-אביב",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": null,
+   "field": "competition",
+   "claimA": "ליגת-העל — Bloomfield Stadium — Wikipedia (StadiumDB agrees; golden-lotus.co.il says 0-0 — see fact-conflicts)",
+   "claimB": "ליגה לאומית — ויקיפועל",
+   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1986-05-24 הפועל-תל-אביב — מכבי-חיפה",
+   "sourceAUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": null,
+   "field": "competition",
+   "claimA": "ליגת-העל — ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86",
+   "claimB": "ליגה לאומית — ויקיפועל",
+   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1995-08-08 הפועל-תל-אביב — זימברו-קישינב",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C._in_international_football",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: 8.8.1995 זימברו בבית 2:0 (אצטדיון הרפובליקני, קישינב); 22.8.1995 הפועל בבית 0:0 (בלומפילד). אופ\"א (משחקים 51922, 51923) ו-RSSSF ec199596 (\"Zimbru Chisinau – Hapoel Tel-Aviv 2-0 0-0\") מסכימים עם טבלת Games של ויקיפועל; השורות שנבנו מוויקיפדיה החליפו בין התאריכים. התוצאות עצמן נכונות — מה שזז הוא היום והשלב.",
+   "field": "home_away",
+   "claimA": "בית: הפועל-תל-אביב — Hapoel Tel Aviv F.C. in international football — Wikipedia (0–0, 0–2, agg 0–2)",
+   "claimB": "בית: זימברו קישינב — ויקיפועל",
+   "noteHe": "שני המקורות מסכימים על הזוג ועל התאריך וחלוקים על מי אירח. שניהם נשמרים.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_3993271026c1",
+     "field": "playedOn",
+     "value": "1995-08-22",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=51923",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 0-0 Zimbru, 22.8.1995, Bloomfield Stadium",
+     "decidedOn": "2026-09-25"
+    },
+    {
+     "matchId": "m_3993271026c1",
+     "field": "stage",
+     "value": "סיבוב מוקדם משחק 2",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=51923",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 0-0 Zimbru, 22.8.1995, Bloomfield Stadium",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1995-08-08 הפועל-תל-אביב — זימברו-קישינב",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C._in_international_football",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: 8.8.1995 זימברו בבית 2:0 (אצטדיון הרפובליקני, קישינב); 22.8.1995 הפועל בבית 0:0 (בלומפילד). אופ\"א (משחקים 51922, 51923) ו-RSSSF ec199596 (\"Zimbru Chisinau – Hapoel Tel-Aviv 2-0 0-0\") מסכימים עם טבלת Games של ויקיפועל; השורות שנבנו מוויקיפדיה החליפו בין התאריכים. התוצאות עצמן נכונות — מה שזז הוא היום והשלב.",
+   "field": "score",
+   "claimA": "0:0 — Hapoel Tel Aviv F.C. in international football — Wikipedia (0–0, 0–2, agg 0–2)",
+   "claimB": "0:2 — ויקיפועל",
+   "noteHe": "1995-08-08 · הפועל-תל-אביב מול זימברו-קישינב. שתי התוצאות נשמרות; אין הכרעה.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה"
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1995-08-22 זימברו-קישינב — הפועל-תל-אביב",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C._in_international_football",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: 8.8.1995 זימברו בבית 2:0 (אצטדיון הרפובליקני, קישינב); 22.8.1995 הפועל בבית 0:0 (בלומפילד). אופ\"א (משחקים 51922, 51923) ו-RSSSF ec199596 (\"Zimbru Chisinau – Hapoel Tel-Aviv 2-0 0-0\") מסכימים עם טבלת Games של ויקיפועל; השורות שנבנו מוויקיפדיה החליפו בין התאריכים. התוצאות עצמן נכונות — מה שזז הוא היום והשלב.",
+   "field": "home_away",
+   "claimA": "בית: זימברו-קישינב — Hapoel Tel Aviv F.C. in international football — Wikipedia (0–0, 0–2, agg 0–2)",
+   "claimB": "בית: הפועל ת\"א — ויקיפועל",
+   "noteHe": "שני המקורות מסכימים על הזוג ועל התאריך וחלוקים על מי אירח. שניהם נשמרים.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_b00f1661c729",
+     "field": "playedOn",
+     "value": "1995-08-08",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=51922",
+     "winningSourceTitle": "UEFA — match centre API, Zimbru 2-0 H. Tel-Aviv, 8.8.1995, Republika, Chisinau",
+     "decidedOn": "2026-09-25"
+    },
+    {
+     "matchId": "m_b00f1661c729",
+     "field": "stage",
+     "value": "סיבוב מוקדם משחק 1",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=51922",
+     "winningSourceTitle": "UEFA — match centre API, Zimbru 2-0 H. Tel-Aviv, 8.8.1995, Republika, Chisinau",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1995-08-22 זימברו-קישינב — הפועל-תל-אביב",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C._in_international_football",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: 8.8.1995 זימברו בבית 2:0 (אצטדיון הרפובליקני, קישינב); 22.8.1995 הפועל בבית 0:0 (בלומפילד). אופ\"א (משחקים 51922, 51923) ו-RSSSF ec199596 (\"Zimbru Chisinau – Hapoel Tel-Aviv 2-0 0-0\") מסכימים עם טבלת Games של ויקיפועל; השורות שנבנו מוויקיפדיה החליפו בין התאריכים. התוצאות עצמן נכונות — מה שזז הוא היום והשלב.",
+   "field": "score",
+   "claimA": "2:0 — Hapoel Tel Aviv F.C. in international football — Wikipedia (0–0, 0–2, agg 0–2)",
+   "claimB": "0:0 — ויקיפועל",
+   "noteHe": "1995-08-22 · זימברו-קישינב מול הפועל-תל-אביב. שתי התוצאות נשמרות; אין הכרעה.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה"
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1998-05-02 הפועל-תל-אביב — הפועל-פתח-תקווה",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/1997%E2%80%9398_Liga_Leumit",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": null,
+   "field": "opponent_club",
+   "claimA": "הפועל-תל-אביב מול הפועל-פתח-תקווה — 1997–98 Liga Leumit — Wikipedia (final table: בית\"ר 69, הפועל ת\"א 68)",
+   "claimB": "הפועל ת\"א מול הפועל פ\"ת — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7)."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1998-05-02 הפועל-תל-אביב — הפועל-פתח-תקווה",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/1997%E2%80%9398_Liga_Leumit",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": null,
+   "field": "competition",
+   "claimA": "ליגת-העל — 1997–98 Liga Leumit — Wikipedia (final table: בית\"ר 69, הפועל ת\"א 68)",
+   "claimB": "ליגה לאומית — ויקיפועל",
+   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1999-05-19 בית\"ר-ירושלים — הפועל-תל-אביב",
+   "sourceAUrl": "https://wiki.red-fans.com/index.php/%D7%A2%D7%95%D7%A0%D7%AA_1998/99_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94_%D7%92%D7%9E%D7%A8",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": null,
+   "field": "opponent_club",
+   "claimA": "בית\"ר-ירושלים מול הפועל-תל-אביב — ויקיפועל — עונת 1998/99 (כדורגל) גביע המדינה גמר (19.5.1999; סביליה 6׳, תקוה 13׳; 40,000)",
+   "claimB": "הפועל ת\"א מול בית\"ר י-ם — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7)."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2000-05-17 בית\"ר-ירושלים — הפועל-תל-אביב",
+   "sourceAUrl": "https://en.wikipedia.org/wiki/1999%E2%80%932000_Israel_State_Cup",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": null,
+   "field": "opponent_club",
+   "claimA": "בית\"ר-ירושלים מול הפועל-תל-אביב — 1999–2000 Israel State Cup — Wikipedia (2–2, 4–2 בפנדלים; 40,000; שופט לוי)",
+   "claimB": "הפועל ת\"א מול בית\"ר י-ם — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7)."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2001-08-23 הפועל-תל-אביב — ארארט-ירוואן",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: אותו מועדון, שני כתיבים (אופ\"א: \"Ararat-Yerevan\", משחק 67877). הכתיב הקנוני הוא הסלאג שבארכיון; הכתיב של ויקיפועל נשמר כאן. לא נוסף כינוי ל-clubs.json — המשחק כבר מאוחד תחת מזהה אחד.",
+   "field": "opponent_club",
+   "claimA": "הפועל-תל-אביב מול ארארט-ירוואן — ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026",
+   "claimB": "הפועל ת\"א מול אררט ירבאן — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_74d2093c1d71",
+     "field": "opponent",
+     "value": "ארארט-ירוואן",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=67877",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 3-0 Ararat-Yerevan, 23.8.2001",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2002-08-29 פרטיזני-טירנה — הפועל-תל-אביב",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: אותו מועדון, שני כתיבים (אופ\"א: \"Partizani\", משחק 69719). הכתיב הקנוני הוא הסלאג שבארכיון; הכתיב של ויקיפועל נשמר כאן. לא נוסף כינוי ל-clubs.json — המשחק כבר מאוחד תחת מזהה אחד.",
+   "field": "opponent_club",
+   "claimA": "פרטיזני-טירנה מול הפועל-תל-אביב — ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026",
+   "claimB": "פרטיזני טיראנה מול הפועל ת\"א — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_63e4ce123461",
+     "field": "opponent",
+     "value": "פרטיזני-טירנה",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=69719",
+     "winningSourceTitle": "UEFA — match centre API, Partizani 1-4 H. Tel-Aviv, 29.8.2002, Qemal Stafa Stadium, Tirana",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2002-09-19 קרנטן — הפועל-תל-אביב",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: אותו מועדון, שני כתיבים (אופ\"א: \"Kärnten\", משחק 70197). הכתיב הקנוני הוא הסלאג שבארכיון; הכתיב של ויקיפועל נשמר כאן. לא נוסף כינוי ל-clubs.json — המשחק כבר מאוחד תחת מזהה אחד.",
+   "field": "opponent_club",
+   "claimA": "קרנטן מול הפועל-תל-אביב — ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026",
+   "claimB": "קארנטן מול הפועל ת\"א — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_ca2623b733b8",
+     "field": "opponent",
+     "value": "קרנטן",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=70197",
+     "winningSourceTitle": "UEFA — match centre API, Kärnten 0-4 H. Tel-Aviv, 19.9.2002, Wörthersee Stadion, Klagenfurt",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2002-11-14 הפועל-תל-אביב — לידס",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: הפועל 1:4 לידס, \"בית\" באצטדיון ארטמיו פרנקי, פירנצה — אופ\"א, משחק 70341 (לידס עלתה 5:1 בסיכום). ויקיפועל (Games) אומר 1:4 כמו אופ\"א; ה-4:1 של מסמך המחקר הפוך, ו\"בלומפילד\" שבו היה ברירת מחדל.",
+   "field": "score",
+   "claimA": "4:1 — ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026",
+   "claimB": "1:4 — ויקיפועל",
+   "noteHe": "2002-11-14 · הפועל-תל-אביב מול לידס. שתי התוצאות נשמרות; אין הכרעה.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_4100110bcfb1",
+     "field": "result",
+     "value": {
+      "hapoel": 1,
+      "opponent": 4
+     },
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=70341",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 1-4 Leeds, 14.11.2002, Stadio Artemio Franchi, Florence",
+     "decidedOn": "2026-09-25"
+    },
+    {
+     "matchId": "m_4100110bcfb1",
+     "field": "venue",
+     "value": null,
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=70341",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 1-4 Leeds, 14.11.2002, Stadio Artemio Franchi, Florence",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2002-08-15 הפועל-תל-אביב — פרטיזני-טירנה",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: אותו מועדון, שני כתיבים (אופ\"א: \"Partizani\", משחק 69718). הכתיב הקנוני הוא הסלאג שבארכיון; הכתיב של ויקיפועל נשמר כאן. לא נוסף כינוי ל-clubs.json — המשחק כבר מאוחד תחת מזהה אחד.",
+   "field": "opponent_club",
+   "claimA": "הפועל-תל-אביב מול פרטיזני-טירנה — ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026",
+   "claimB": "הפועל ת\"א מול פרטיזני טיראנה — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_685e879499af",
+     "field": "opponent",
+     "value": "פרטיזני-טירנה",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=69718",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 1-0 Partizani, 15.8.2002, Georgi Asparuhov Stadium, Sofia",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2002-08-15 הפועל-תל-אביב — פרטיזני-טירנה",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: הפועל 1:0 (אבוקסיס 49′), \"בית\" באצטדיון גאורגי אספרוחוב, סופיה — אופ\"א, משחק 69718. ה-0:1 של מסמך המחקר (1.9.2026) הפוך, ו\"בלומפילד\" שבו היה ברירת מחדל (כלל 36): ב-2002/03 אופ\"א לא אישרה משחקים בישראל. ויקיפועל (Games) אומר 1:0 — כמו אופ\"א.",
+   "field": "score",
+   "claimA": "0:1 — ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026",
+   "claimB": "1:0 — ויקיפועל",
+   "noteHe": "2002-08-15 · הפועל-תל-אביב מול פרטיזני-טירנה. שתי התוצאות נשמרות; אין הכרעה.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_685e879499af",
+     "field": "result",
+     "value": {
+      "hapoel": 1,
+      "opponent": 0
+     },
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=69718",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 1-0 Partizani, 15.8.2002, Georgi Asparuhov Stadium, Sofia",
+     "decidedOn": "2026-09-25"
+    },
+    {
+     "matchId": "m_685e879499af",
+     "field": "venue",
+     "value": null,
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=69718",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 1-0 Partizani, 15.8.2002, Georgi Asparuhov Stadium, Sofia",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2002-10-03 הפועל-תל-אביב — קרנטן",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: אותו מועדון, שני כתיבים (אופ\"א: \"Kärnten\", משחק 70198). הכתיב הקנוני הוא הסלאג שבארכיון; הכתיב של ויקיפועל נשמר כאן. לא נוסף כינוי ל-clubs.json — המשחק כבר מאוחד תחת מזהה אחד.",
+   "field": "opponent_club",
+   "claimA": "הפועל-תל-אביב מול קרנטן — ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026",
+   "claimB": "הפועל ת\"א מול קארנטן — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_2beb997da718",
+     "field": "opponent",
+     "value": "קרנטן",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=70198",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 0-1 Kärnten, 3.10.2002, Georgi Asparuhov Stadium, Sofia",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2002-10-03 הפועל-תל-אביב — קרנטן",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: הפועל 0:1 קרנטן (אוברלייטנר 44′), \"בית\" באצטדיון גאורגי אספרוחוב, סופיה — אופ\"א, משחק 70198. ויקיפועל (Games) ו-Wildstat אומרים 0:1 כמו אופ\"א; ה-1:0 של מסמך המחקר הפוך, ו\"בלומפילד\" שבו היה ברירת מחדל. הפועל עלתה בסיכום 4:1.",
+   "field": "score",
+   "claimA": "1:0 — ויקיפועל — מסמך המחקר של צוות The Worker, 1.9.2026",
+   "claimB": "0:1 — ויקיפועל",
+   "noteHe": "2002-10-03 · הפועל-תל-אביב מול קרנטן. שתי התוצאות נשמרות; אין הכרעה.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_2beb997da718",
+     "field": "result",
+     "value": {
+      "hapoel": 0,
+      "opponent": 1
+     },
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=70198",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 0-1 Kärnten, 3.10.2002, Georgi Asparuhov Stadium, Sofia",
+     "decidedOn": "2026-09-25"
+    },
+    {
+     "matchId": "m_2beb997da718",
+     "field": "venue",
+     "value": null,
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=70198",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 0-1 Kärnten, 3.10.2002, Georgi Asparuhov Stadium, Sofia",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2010-11-24 הפועל-תל-אביב — בנפיקה",
+   "sourceAUrl": "https://www.skysports.com/football/hap-tel-aviv-vs-benfica/report/227534",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: אותו מועדון, שני כתיבים (אופ\"א: \"Benfica\", משחק שלב הבתים 2010/11). הכתיב הקנוני הוא הסלאג שבארכיון; הכתיב של ויקיפועל נשמר כאן. לא נוסף כינוי ל-clubs.json — המשחק כבר מאוחד תחת מזהה אחד.",
+   "field": "opponent_club",
+   "claimA": "הפועל-תל-אביב מול בנפיקה — Sky Sports match report",
+   "claimB": "הפועל ת\"א מול בנפיקה ליסבון — ויקיפועל",
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_abdc77e0eedc",
+     "field": "opponent",
+     "value": "בנפיקה",
+     "winningSourceUrl": "https://www.skysports.com/football/hap-tel-aviv-vs-benfica/report/227534",
+     "winningSourceTitle": "Sky Sports match report",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "ussishkin",
+   "entityKey": "demolition",
+   "field": "started_at_hour",
+   "claimA": "6:39 בבוקר — ynet, ביום עצמו (25.7.2007)",
+   "claimB": "12:00 בצהריים בדיוק — ONE, חמש שנים אחר כך (2012)",
+   "sourceAUrl": "https://www.ynet.co.il/articles/0,7340,L-3429531,00.html",
+   "sourceBUrl": "https://www.one.co.il/Article/203222.html",
+   "noteHe": "שני המקורות מסכימים על היום וחלוקים על השעה. הדיווח בזמן אמת נוקב במספר חריג (6:39), מה שבדרך כלל מצביע על שעה שנמדדה; הסקירה מ-2012 נוקבת בשעה עגולה. לא הוכרע — ושום סצנה במשחק לא נוקבת בשעה של ההריסה."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2010/11 ליגת-האלופות · פלייאוף משחק 1 · הפועל-תל-אביב — זלצבורג",
+   "field": "played_on_and_home_away",
+   "claimA": "17.8.2010 · הפועל-תל-אביב בבית 3:2 · אצטדיון לא נקוב",
+   "claimB": "18.8.2010 · זלצבורג בבית 2:3 להפועל",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: 18.8.2010, זלצבורג בבית, 2:3 להפועל, אצטדיון זלצבורג (Red Bull Arena, ואלס-זיזנהיים) — אופ\"א, משחק 2002389. טבלת Games של ויקיפועל צודקת; הקריאה של 17.8 \"הפועל בבית\" הייתה ברירת מחדל שהמקור עצמו סימן כלא נקובה.",
+   "noteHe": "אותו מקור בשתי קריאות: מסמך המחקר של 1.9.2026 מול טבלת Games שנקראה 17.9.2026. הן מסכימות על התוצאה וחלוקות על היום ועל מי היה הבית. הקריאה הראשונה מציינת בעצמה שהמקור אינו נוקב באצטדיון — כלומר הבית שם הוא ברירת מחדל, וזה בדיוק מה שכלל 36 אוסר. שתי השורות קיימות היום ב-matches.json ולא אוחדו: איחוד משחק הוא הכרעה של בעל הבית (כלל 35), והפרק של 2010 קורא את משחק החזרה בלבד. · 21.9.2026: מאור הכריע שזה משחק אחד — מזהה m_9b658c3bbc9e לשתי השורות (content/manual/match-ids.json, השורה השנייה היא alias). היום ומי היה הבית נשארים כאן במחלוקת; המזהה אינו מכריע בהם.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_9b658c3bbc9e",
+     "field": "playedOn",
+     "value": "2010-08-18",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=2002389",
+     "winningSourceTitle": "UEFA — match centre API, Salzburg 2-3 H. Tel-Aviv, 18.8.2010, Stadion Salzburg",
+     "decidedOn": "2026-09-25"
+    },
+    {
+     "matchId": "m_9b658c3bbc9e",
+     "field": "home",
+     "value": "זלצבורג",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=2002389",
+     "winningSourceTitle": "UEFA — match centre API, Salzburg 2-3 H. Tel-Aviv, 18.8.2010, Stadion Salzburg",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2010/11 ליגת-האלופות · פלייאוף משחק 2 · הפועל-תל-אביב — זלצבורג",
+   "field": "played_on",
+   "claimA": "25.8.2010 · בלומפילד · 1:1 · זהבי השווה בדקה 92",
+   "claimB": "24.8.2010 · 1:1 · אצטדיון לא נקוב",
+   "sourceAUrl": "https://wiki.red-fans.com/",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: 24.8.2010 (שלישי), בלומפילד, 1:1 — אופ\"א, משחק 2002390 (שעת פתיחה 18:45Z). הקריאה של 25.8 שגויה ביום. שים לב: העוגן `2010-salzburg` של LIFE עדיין כותב 25.8 — מחכה לצוות LIFE.",
+   "noteHe": "אותו תיק, אותה תוצאה, תאריך שנבדל ביום. העוגן `2010-salzburg` קורא את 25.8, השורה היחידה מבין השתיים שנושאת אצטדיון והערה מפורטת — בחירת קריאוּת של הפרק, לא פסיקה על הארכיון. · 21.9.2026: מאור הכריע שזה משחק אחד — מזהה m_7b61fac81ad6 לשתי השורות. שני התאריכים נשמרים כטענות (claims) ב-content/generated/match-master.json; המזהה אינו מכריע ביניהם.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_7b61fac81ad6",
+     "field": "playedOn",
+     "value": "2010-08-24",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=2002390",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 1-1 Salzburg, 24.8.2010, Bloomfield Stadium",
+     "decidedOn": "2026-09-25"
+    },
+    {
+     "matchId": "m_7b61fac81ad6",
+     "field": "venue",
+     "value": "בלומפילד",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=2002390",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 1-1 Salzburg, 24.8.2010, Bloomfield Stadium",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2010-05-11 הפועל-תל-אביב — בני-יהודה",
+   "field": "opponent_club",
+   "claimA": "בני יהודה · 3:1 להפועל · גילי ורמוט 25, 75 · וינסנט אניימה 45 (פנדל) · אצטדיון רמת גן — טבלת Games של ויקיפועל (matches.json ו-content/raw/vikipoel-games.json)",
+   "claimB": "בית\"ר ירושלים · 1:3 להפועל · אצטדיון רמת גן — goals.json (cupfinal-2010-vermouth-25, cupfinal-2010-vermouth-73)",
+   "sourceAUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceBUrl": "https://www.ynet.co.il/articles/0,7340,L-3887864,00.html",
+   "resolution": null,
+   "resolvedBy": null,
+   "noteHe": "גמר גביע המדינה 2010. שתי הרשומות מסכימות על התאריך, על האצטדיון ועל התוצאה — שלושה שערים להפועל ואחד ליריבה — וחלוקות על היריבה. אם goals.json צודק, שני המהלכים שלו שייכים למשחק אחר; אם הארכיון צודק, היריבה ברשומות השער שגויה. לא הוכרע כאן: שער 8 והטריוויה לא משתמשים בשני השערים עד שמאור יקרא מחדש את ynet (match-master: usable.replay=false, usable.trivia=false)."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2012-05-15 הפועל-תל-אביב — מכבי-חיפה",
+   "field": "opponent_club",
+   "claimA": "מכבי חיפה · 2:1 להפועל · מירקו אורמוש 58 · נוסא איגייבור 92 · אצטדיון רמת גן — טבלת Games של ויקיפועל (matches.json ו-content/raw/vikipoel-games.json)",
+   "claimB": "הפועל באר שבע · שער הניצחון של איגייבור בדקה 90+2 — goals.json (cupfinal-2012-igiebor-90-2)",
+   "sourceAUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceBUrl": "https://www.one.co.il/Article/199799.html",
+   "resolution": null,
+   "resolvedBy": null,
+   "noteHe": "גמר גביע המדינה 2012. הדקה והכובש מסכימים (איגייבור, 92 = 90+2); היריבה לא. רשומת השער עצמה נוקבת בשוער 'דוידוביץ'' שמולו נכבש השער — פרט לבדיקה מול ONE, לא הכרעה. שער 8 והטריוויה לא משתמשים בשער עד שמאור יקרא מחדש את המקור."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2026-01-26 מכבי-תל-אביב — הפועל-תל-אביב",
+   "field": "played_on",
+   "claimA": "26.1.2026 · ליגת העל מחזור 20 · מכבי ת\"א 1:2 הפועל · בלומפילד · עומרי אלטמן 90+2, צ'יקו 90+4 — טבלת Games של ויקיפועל",
+   "claimB": "25.1.2026 · בלומפילד · 1:2 להפועל · 'אלטמן' בדקה 90+2 — goals.json (derby-2026-altman-90-2)",
+   "sourceAUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceBUrl": "https://sports.walla.co.il/item/3811685",
+   "resolution": null,
+   "resolvedBy": null,
+   "noteHe": "אותו דרבי — אותה תוצאה, אותו אצטדיון, אותה דקת שער — ותאריך שנבדל ביום. בגלל התאריך הצירוף לפי יום לא מצא את המשחק ('אין שורה'); ה-match-master מקשר את השער למשחק דרך היריבה והיום הסמוך ומסמן את הקישור כ-date±1. רשומת השער כותבת שם משפחה בלבד ('אלטמן') — הכובש לא מזוהה אוטומטית (כלל 64 §5), והמועמד מופיע ב-match-master כהצעה בלבד."
+  },
+  {
+   "entityTable": "goal",
+   "entityKey": "chelsea-2001-gershon-88",
+   "field": "minute",
+   "claimA": "89 (פנדל) — ויקיפועל: דף המשחק (match-events.json) וטבלת Games (match-scorers.json)",
+   "claimB": "88 — goals.json, ynet",
+   "sourceAUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+   "sourceBUrl": "https://www.ynet.co.il/articles/0,7340,L-1216728,00.html",
+   "resolution": null,
+   "resolvedBy": null,
+   "noteHe": "דקה אחת בין שתי קריאות. המהלך עצמו אינו במחלוקת; הדקה אינה נשאלת בטריוויה עד שתוכרע (match-master: usable.trivia=false)."
+  },
+  {
+   "entityTable": "goal",
+   "entityKey": "cupfinal-2010-vermouth-73",
+   "field": "minute",
+   "claimA": "75 — טבלת Games של ויקיפועל ('גילי ורמוט (25 ,75)')",
+   "claimB": "73 — goals.json, ynet",
+   "sourceAUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceBUrl": "https://www.ynet.co.il/articles/0,7340,L-3887864,00.html",
+   "resolution": null,
+   "resolvedBy": null,
+   "noteHe": "נוסף על המחלוקת על היריבה באותו גמר (2010-05-11 … opponent_club). הדקה אינה נשאלת."
+  },
+  {
+   "entityTable": "goal",
+   "entityKey": "milan-2002-kleschenko-31",
+   "field": "minute",
+   "claimA": "32 — דיווח אופ\"א (match-events.json: 'Clescenko 32′, assist Abuksis')",
+   "claimB": "31 — goals.json (ynet) וטבלת Games של ויקיפועל (match-scorers.json)",
+   "sourceAUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/",
+   "sourceBUrl": "https://www.ynet.co.il/articles/0,7340,L-1765670,00.html",
+   "resolution": null,
+   "resolvedBy": null,
+   "noteHe": "דקה אחת בין אופ\"א לשני מקורות עבריים. המהלך אינו במחלוקת; הדקה אינה נשאלת."
+  },
+  {
+   "entityTable": "kit",
+   "entityKey": "kit-2009-10-home",
+   "field": "crest",
+   "claimA": "circle-1923 — מסירת חולצות 2009/10 של צוות The Worker, 20.9.2026 (content/manual/kit-assembly.json)",
+   "claimB": "circle-1927 — ציר הסמלים: 'צבעי המועדון' 2008–2015 (content/manual/crest-versions.json)",
+   "sourceAUrl": null,
+   "sourceBUrl": null,
+   "resolution": null,
+   "noteHe": "שני המקורות בביטחון 3. ה-Kit Master שומר את שניהם: הערך הוא של המסירה (ספציפית לחולצה), והחלופה של ציר הזמן — ושער 4 מקבל את שתיהן בציון (ניקוד סובלני), ולא מציע את החלופה כמסיח."
+  },
+  {
+   "entityTable": "crest_version",
+   "entityKey": "הפועל-תל-אביב|1997",
+   "field": "has_keter",
+   "claimA": "כתר נכנס לסמל ב-2001 — המועדון, היסטוריה והישגים",
+   "claimB": "הסמל של 1997–2000 כבר נושא \"כתר KETER\" — הסמל עצמו, ידע אישי — צוות The Worker, 22.9.2026",
+   "sourceAUrl": "https://www.htafc.co.il/היסטוריה-והישגים/",
+   "sourceBUrl": null,
+   "noteHe": "הסמל הוא ראיה ישירה; הדף של המועדון הוא סיכום. לא הוכרע — מחכה לתאריך המדויק שבו כתר נכנס לסמל."
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1967-12-19 הפועל-תל-אביב — סלנגור",
+   "field": "scorers",
+   "claimA": "צ'או קוואי לאם (עצמי) 74′ · רחמינוביץ 83′ (פנדל); סלנגור: אגוס סלים 54′ — RSSSF ascup67 (וויקיפדיה מצטטת אותו)",
+   "claimB": "דני בורסוק 70′ · יעקב רחמינוביץ' 75′ (פנדל) — ויקיפועל, עמוד המשחק",
+   "sourceAUrl": "https://www.rsssf.org/tablesa/ascup67.html",
+   "sourceBUrl": "https://wiki.red-fans.com/",
+   "resolution": "הוכרע לטובת RSSSF: שער עצמי של צ'או קוואי לאם בדקה 74 ופנדל של רחמינוביץ בדקה 83. אין אתר AFC לגמר 1967, ועיתונות בת-זמנה (JPress, NewspaperSG) לא הייתה נגישה מכאן (אימות Cloudflare / שגיאת שרת) — לכן RSSSF הוא המקור הגבוה ביותר שנקרא, מעל ויקיפועל. ייתכן שהשער העצמי הוא בעיטה של בורסוק שהוסטה — זו השערה, לא ראיה; אם מאור ימצא דיווח של \"דבר\"/\"מעריב\" מ-20.12.1967, הוא גובר על שניהם.",
+   "noteHe": "גמר אליפות אסיה לקבוצות 1967, בנגקוק. הקריאה של ויקיפועל נשמרת ב-decided.overruled במאסטר.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_26a26d7e5164",
+     "field": "scorers",
+     "value": "asian-competition-matches.json",
+     "winningSourceUrl": "https://www.rsssf.org/tablesa/ascup67.html",
+     "winningSourceTitle": "RSSSF — Asian Champions' Cup 1967",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2026-07-30 לודוגורץ-ראזגרד — הפועל-תל-אביב",
+   "field": "venue",
+   "claimA": "רזגרד — Ludogorets Arena (Huvepharma Arena), אופ\"א",
+   "claimB": "אצטדיון DVTK, מישקולץ, הונגריה — קריאה אחת של העשרת ויקיפועל",
+   "sourceAUrl": "https://match.uefa.com/v5/matches?matchId=2048802",
+   "sourceBUrl": "https://wiki.red-fans.com/",
+   "resolution": "הוכרע: רזגרד, Ludogorets Arena (43.534722, 26.527222), לודוגורץ בבית 2:2 — אופ\"א, משחק 2048802. מישקולץ היה משחק הבית של הפועל ב-23.7 (אתר לודוגורץ: \"the away match against Hapoel in Hungary\"); הקריאה שהעבירה את משחק החוץ להונגריה בלבלה בין הרגליים.",
+   "noteHe": "קונפרנס ליג 2026/27, סיבוב מוקדמות 2 משחק 2.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_0c4347200189",
+     "field": "venue",
+     "value": null,
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=2048802",
+     "winningSourceTitle": "UEFA — match centre API, Ludogorets 2-2 H. Tel-Aviv, 30.7.2026, Ludogorets Arena, Razgrad",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "2006/07 גביע-אופא · סיבוב 3 משחק 2 · הפועל-תל-אביב — צ'רנומורץ-אודסה",
+   "field": "played_on",
+   "claimA": "28.9.2006 — שורת הארכיון",
+   "claimB": "4.10.2006 — ויקיפועל",
+   "sourceAUrl": "https://match.uefa.com/v5/matches?matchId=84840",
+   "sourceBUrl": "https://wiki.red-fans.com/",
+   "resolution": "הוכרע: 28.9.2006, בלומפילד, 3:1 — אופ\"א, משחק 84840.",
+   "noteHe": "גביע אופ\"א 2006/07, משחק החזרה מול צ'רנומורץ.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_8715ba9165a3",
+     "field": "playedOn",
+     "value": "2006-09-28",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=84840",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 3-1 Chornomorets Odesa, 28.9.2006, Bloomfield Stadium",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1969/70|גביע-אסיה|1970-04-08",
+   "field": "played_on_and_score",
+   "claimA": "לא שוחק — RSSSF \"w/o (Homenetmen withdrew)\", ויקיפדיה \"scratched\", Wildstat \"+:-\"",
+   "claimB": "8.4.1970, 2:0 להפועל — טבלת Games של ויקיפועל",
+   "sourceAUrl": "https://www.rsssf.org/tablesa/ascup70.html",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע: חצי הגמר מול הומנטמן (לבנון) לא שוחק — הומנטמן פרשה, והפועל עלתה לגמר בניצחון טכני. ה-2:0 של ויקיפועל הוא התוצאה הטכנית ולא משחק; 8.4.1970 הוא יום שנקבע ולא יום שבו שיחקו. במאסטר: בלי תאריך ובלי תוצאה, notPlayed נשאר. אינו ביקור ב-Away Days.",
+   "noteHe": "אליפות אסיה לקבוצות 1970, טהרן.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "decisions": [
+    {
+     "matchId": "m_e6e65bf7eeff",
+     "field": "playedOn",
+     "value": null,
+     "winningSourceUrl": "https://www.rsssf.org/tablesa/ascup70.html",
+     "winningSourceTitle": "RSSSF — Asian Champions' Cup 1970",
+     "decidedOn": "2026-09-25"
+    },
+    {
+     "matchId": "m_e6e65bf7eeff",
+     "field": "result",
+     "value": null,
+     "winningSourceUrl": "https://www.rsssf.org/tablesa/ascup70.html",
+     "winningSourceTitle": "RSSSF — Asian Champions' Cup 1970",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match_venue",
+   "entityKey": "2012-08-23 F91-דודלאנג' — הפועל-תל-אביב",
+   "field": "venue",
+   "claimA": "Stade Municipal de la Ville de Differdange, דיפרדאנז' — Wildstat ואופ\"א",
+   "claimB": "דודלאנז' — euro-ties.json",
+   "sourceAUrl": "https://match.uefa.com/v5/matches?matchId=2009845",
+   "sourceBUrl": null,
+   "resolution": "הוכרע: דיפרדאנז', Stade Municipal (49.514308, 5.892292) — אופ\"א, משחק 2009845. F91 דודלאנז' אירחה בדיפרדאנז' כי האצטדיון שלה לא עמד בדרישות; \"דודלאנז'\" ב-euro-ties הוא שם הקבוצה ולא המגרש.",
+   "noteHe": "הליגה האירופית 2012/13, פלייאוף משחק 1 — הפועל ניצחה בשלושה שערים מול אחד.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה"
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1996-06-23 הפועל-תל-אביב — ראן",
+   "field": "played_on",
+   "claimA": "1996-06-22 — אופ\"א, משחק 52841",
+   "claimB": "1996-06-23 — טבלת Games של ויקיפועל",
+   "sourceAUrl": "https://match.uefa.com/v5/matches?matchId=52841",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע לטובת אופ\"א: 22.06.1996 (שבת). ויקיפועל רושם יום אחד אחרי. התוצאה זהה בשני המקורות. אופ\"א אינו נוקב באצטדיון למשחקי האינטרטוטו 1996 — המגרש נשאר לא ידוע.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "noteHe": "גביע האינטרטוטו 1996, בית 8.",
+   "decisions": [
+    {
+     "matchId": "m_2305a1a3996a",
+     "field": "playedOn",
+     "value": "1996-06-22",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=52841",
+     "winningSourceTitle": "UEFA — match centre API, H. Tel-Aviv 0-2 Rennes, 22.6.1996",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1996-06-30 לוצרן — הפועל-תל-אביב",
+   "field": "played_on",
+   "claimA": "1996-06-29 — אופ\"א, משחק 52844",
+   "claimB": "1996-06-30 — טבלת Games של ויקיפועל",
+   "sourceAUrl": "https://match.uefa.com/v5/matches?matchId=52844",
+   "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "resolution": "הוכרע לטובת אופ\"א: 29.06.1996 (שבת). ויקיפועל רושם יום אחד אחרי. התוצאה זהה בשני המקורות. אופ\"א אינו נוקב באצטדיון למשחקי האינטרטוטו 1996 — המגרש נשאר לא ידוע.",
+   "resolvedBy": "סוכן DATA, דלתא 89 — מאור ביקש שהסוכן יכריע (25.9.2026); סדר ראיות: אתר המפעל הרשמי > עיתונות בת-זמנה > RSSSF > ויקיפועל > ויקיפדיה",
+   "noteHe": "גביע האינטרטוטו 1996, בית 8.",
+   "decisions": [
+    {
+     "matchId": "m_61fe8b3a779f",
+     "field": "playedOn",
+     "value": "1996-06-29",
+     "winningSourceUrl": "https://match.uefa.com/v5/matches?matchId=52844",
+     "winningSourceTitle": "UEFA — match centre API, Luzern 2-0 H. Tel-Aviv, 29.6.1996",
+     "decidedOn": "2026-09-25"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+[
+  {
+    "id": "kit-1994-home",
+    "season": "1994/95",
+    "type": "home",
+    "manufacturer": "Pienne",
+    "construction": {
+      "design": "hoops",
+      "colors": "red/white"
+    },
+    "sourceIds": [
+      "src-kits",
+      "src-1994-kit"
+    ]
+  },
+  {
+    "id": "kit-1995-home",
+    "season": "1995/96",
+    "type": "home",
+    "manufacturer": "In-House",
+    "construction": {
+      "design": "checkers",
+      "colors": "red/white"
+    },
+    "sourceIds": [
+      "src-kits",
+      "src-1995-kit"
+    ]
+  },
+  {
+    "id": "kit-1997-home",
+    "season": "1997/98",
+    "type": "home",
+    "manufacturer": "Fotex",
+    "construction": {
+      "design": "sash",
+      "colors": "white/red"
+    },
+    "sourceIds": [
+      "src-kits",
+      "src-1997-kit"
+    ]
+  },
+  {
+    "id": "kit-2004-home",
+    "season": "2004/05",
+    "type": "home",
+    "manufacturer": "Naai",
+    "construction": {
+      "design": "sash",
+      "colors": "white/red"
+    },
+    "sourceIds": [
+      "src-kits",
+      "src-2005-kit"
+    ]
+  },
+  {
+    "id": "kit-2006-home",
+    "season": "2006/07",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "construction": {
+      "design": "archive-verify",
+      "colors": "club colors"
+    },
+    "sourceIds": [
+      "src-kits"
+    ]
+  },
+  {
+    "id": "kit-2007-home",
+    "season": "2007/08",
+    "type": "home",
+    "manufacturer": "Zeus",
+    "construction": {
+      "design": "archive-verify",
+      "colors": "club colors"
+    },
+    "sourceIds": [
+      "src-kits"
+    ]
+  },
+  {
+    "id": "kit-2013-home",
+    "season": "2013/14",
+    "type": "home",
+    "manufacturer": "Zeus",
+    "construction": {
+      "design": "archive-verify",
+      "colors": "club colors"
+    },
+    "sourceIds": [
+      "src-kits"
+    ]
+  },
+  {
+    "id": "kit-2017-era",
+    "season": "2017/18",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+      "design": "archive-verify",
+      "colors": "club colors"
+    },
+    "sourceIds": [
+      "src-kits",
+      "src-macron"
+    ]
+  },
+  {
+    "id": "kit-2022-home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+      "design": "stripes",
+      "colors": "white/red"
+    },
+    "sourceIds": [
+      "src-kits",
+      "src-2022-kit"
+    ]
+  },
+  {
+    "id": "kit-2025-home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+      "design": "production image required",
+      "colors": "club colors"
+    },
+    "sourceIds": [
+      "src-club-info",
+      "src-kits",
+      "src-macron"
+    ]
+  }
+]

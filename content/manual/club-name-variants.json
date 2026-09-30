@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "note": "Reviewed by hand (29.9.2026) from the spellings that occur in the `מועדונים` field of ויקיפועל player pages. Each canonical club lists the spellings seen for the SAME club. Matching is exact-string after quote normalisation (rule 7) — a spelling not listed here is not guessed. Only clubs listed here can appear in the 'other clubs' clue; a club with an unreviewed variant is left out rather than risk two spellings of one club counting as two.",
+  "source": "wiki.red-fans.com player pages, infobox field מועדונים",
+  "clubs": [
+    {
+      "nameHe": "מכבי נתניה",
+      "variants": [
+        "מכבי נתניה"
+      ]
+    },
+    {
+      "nameHe": "בני יהודה",
+      "variants": [
+        "בני יהודה"
+      ]
+    },
+    {
+      "nameHe": "הפועל באר שבע",
+      "variants": [
+        "הפועל ב\"ש",
+        "הפועל באר שבע"
+      ]
+    },
+    {
+      "nameHe": "מכבי חיפה",
+      "variants": [
+        "מכבי חיפה"
+      ]
+    },
+    {
+      "nameHe": "הפועל כפר סבא",
+      "variants": [
+        "הפועל כפ\"ס",
+        "הפועל כפר סבא"
+      ]
+    },
+    {
+      "nameHe": "מכבי תל אביב",
+      "variants": [
+        "מכבי ת\"א",
+        "מכבי תל אביב"
+      ]
+    },
+    {
+      "nameHe": "בית\"ר ירושלים",
+      "variants": [
+        "בית\"ר ירושלים",
+        "בית\"ר י-ם"
+      ]
+    },
+    {
+      "nameHe": "הפועל חיפה",
+      "variants": [
+        "הפועל חיפה"
+      ]
+    },
+    {
+      "nameHe": "הפועל פתח תקווה",
+      "variants": [
+        "הפועל פ\"ת",
+        "הפועל פתח תקווה"
+      ]
+    },
+    {
+      "nameHe": "מכבי פתח תקווה",
+      "variants": [
+        "מכבי פ\"ת"
+      ]
+    },
+    {
+      "nameHe": "הפועל רמת גן",
+      "variants": [
+        "הפועל ר\"ג",
+        "הפועל רמת גן"
+      ]
+    },
+    {
+      "nameHe": "הפועל עכו",
+      "variants": [
+        "הפועל עכו"
+      ]
+    },
+    {
+      "nameHe": "מכבי הרצליה",
+      "variants": [
+        "מכבי הרצליה"
+      ]
+    },
+    {
+      "nameHe": "מ.ס. אשדוד",
+      "variants": [
+        "מ.ס. אשדוד",
+        "מ.ס אשדוד"
+      ]
+    },
+    {
+      "nameHe": "הפועל רעננה",
+      "variants": [
+        "הפועל רעננה"
+      ]
+    },
+    {
+      "nameHe": "בני סכנין",
+      "variants": [
+        "בני סכנין"
+      ]
+    },
+    {
+      "nameHe": "הפועל אשקלון",
+      "variants": [
+        "הפועל אשקלון"
+      ]
+    },
+    {
+      "nameHe": "הפועל ראשון לציון",
+      "variants": [
+        "הפועל ראשל\"צ",
+        "הפועל ראשון לציון"
+      ]
+    },
+    {
+      "nameHe": "הפועל ירושלים",
+      "variants": [
+        "הפועל ירושלים",
+        "הפועל י-ם"
+      ]
+    },
+    {
+      "nameHe": "מכבי יפו",
+      "variants": [
+        "מכבי יפו"
+      ]
+    },
+    {
+      "nameHe": "הפועל חדרה",
+      "variants": [
+        "הפועל חדרה"
+      ]
+    },
+    {
+      "nameHe": "בני לוד",
+      "variants": [
+        "בני לוד"
+      ]
+    },
+    {
+      "nameHe": "הפועל הרצליה",
+      "variants": [
+        "הפועל הרצליה"
+      ]
+    },
+    {
+      "nameHe": "מכבי שעריים",
+      "variants": [
+        "מכבי שעריים"
+      ]
+    },
+    {
+      "nameHe": "הפועל עפולה",
+      "variants": [
+        "הפועל עפולה"
+      ]
+    },
+    {
+      "nameHe": "הפועל בית שאן",
+      "variants": [
+        "הפועל בית שאן"
+      ]
+    },
+    {
+      "nameHe": "הפועל לוד",
+      "variants": [
+        "הפועל לוד"
+      ]
+    },
+    {
+      "nameHe": "הפועל מרמורק",
+      "variants": [
+        "הפועל מרמורק"
+      ]
+    },
+    {
+      "nameHe": "שמשון תל אביב",
+      "variants": [
+        "שמשון ת\"א"
+      ]
+    },
+    {
+      "nameHe": "צפרירים חולון",
+      "variants": [
+        "צפרירים חולון"
+      ]
+    },
+    {
+      "nameHe": "עירוני קריית שמונה",
+      "variants": [
+        "עירוני ק\"ש",
+        "עירוני קרית שמונה",
+        "עירוני קריית שמונה"
+      ]
+    },
+    {
+      "nameHe": "עירוני ראשון לציון",
+      "variants": [
+        "עירוני ראשל\"צ"
+      ]
+    },
+    {
+      "nameHe": "הכח עמידר רמת גן",
+      "variants": [
+        "הכח עמידר ר\"ג",
+        "הכח עמידר רמת גן"
+      ]
+    },
+    {
+      "nameHe": "עירוני רמת השרון",
+      "variants": [
+        "עירוני רמה\"ש",
+        "עירוני רמת השרון"
+      ]
+    },
+    {
+      "nameHe": "הפועל רמת השרון",
+      "variants": [
+        "הפועל רמה\"ש"
+      ]
+    },
+    {
+      "nameHe": "מכבי אחי נצרת",
+      "variants": [
+        "מכבי אחי נצרת",
+        "אחי נצרת"
+      ]
+    },
+    {
+      "nameHe": "סקציה נס ציונה",
+      "variants": [
+        "סקציה נס ציונה",
+        "ס.כ. נס ציונה"
+      ]
+    },
+    {
+      "nameHe": "בית\"ר תל אביב",
+      "variants": [
+        "בית\"ר ת\"א"
+      ]
+    },
+    {
+      "nameHe": "הפועל כפר שלם",
+      "variants": [
+        "הפועל כפר שלם"
+      ]
+    },
+    {
+      "nameHe": "הפועל אום אל פאחם",
+      "variants": [
+        "הפועל אום אל פאחם"
+      ]
+    },
+    {
+      "nameHe": "הפועל נצרת עילית",
+      "variants": [
+        "הפועל נצרת עילית"
+      ]
+    },
+    {
+      "nameHe": "מאריבור",
+      "variants": [
+        "מאריבור"
+      ]
+    },
+    {
+      "nameHe": "בוורן",
+      "variants": [
+        "בוורן"
+      ]
+    },
+    {
+      "nameHe": "סטנדרד ליאז'",
+      "variants": [
+        "סטנדרד ליאז'"
+      ]
+    },
+    {
+      "nameHe": "אנורתוסיס פמגוסטה",
+      "variants": [
+        "אנורתוסיס פמגוסטה"
+      ]
+    },
+    {
+      "nameHe": "לבסקי סופיה",
+      "variants": [
+        "לבסקי סופיה"
+      ]
+    },
+    {
+      "nameHe": "גנק",
+      "variants": [
+        "גנק"
+      ]
+    },
+    {
+      "nameHe": "עירוני נשר",
+      "variants": [
+        "עירוני נשר"
+      ]
+    },
+    {
+      "nameHe": "מכבי יבנה",
+      "variants": [
+        "מכבי יבנה"
+      ]
+    },
+    {
+      "nameHe": "הכוכב האדום בלגרד",
+      "variants": [
+        "הכוכב האדום בלגרד"
+      ]
+    }
+  ]
+}

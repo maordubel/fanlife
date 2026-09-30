@@ -1,0 +1,112 @@
+{
+ "note": "Only venues a verified match points at. Ussishkin Hall is basketball and is marked as such.",
+ "confidence": 2,
+ "source": {
+  "kind": "other",
+  "title": "Verified research pass, 31 Aug 2026",
+  "url": null
+ },
+ "records": [
+  {
+   "slug": "בלומפילד",
+   "nameHe": "אצטדיון בלומפילד",
+   "city": "תל אביב־יפו",
+   "sport": "football",
+   "aliases": [
+    "בלומפילד",
+    "אצטדיון בלומפילד",
+    "Bloomfield Stadium"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
+   "sourceTitle": "Bloomfield Stadium — Wikipedia"
+  },
+  {
+   "slug": "בסה",
+   "nameHe": "אצטדיון בסה",
+   "city": "תל אביב־יפו",
+   "sport": "football",
+   "aliases": [
+    "בסה",
+    "אצטדיון בסה",
+    "Basa Stadium"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
+   "sourceTitle": "Bloomfield Stadium — Wikipedia (Basa was Hapoel's home from 1950, on the same site)"
+  },
+  {
+   "slug": "גספ-ניקוסיה",
+   "nameHe": "אצטדיון GSP ניקוסיה",
+   "city": "ניקוסיה",
+   "sport": "football",
+   "aliases": [
+    "GSP",
+    "אצטדיון GSP",
+    "GSP Stadium"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/",
+   "sourceTitle": "UEFA report"
+  },
+  {
+   "slug": "סן-סירו",
+   "nameHe": "סן סירו",
+   "city": "מילאנו",
+   "sport": "football",
+   "aliases": [
+    "סן סירו",
+    "San Siro"
+   ],
+   "confidence": 2,
+   "sourceUrl": "https://www.espn.com/soccer/match/_/gameId/38212/hapoel-tel-aviv-ac-milan",
+   "sourceTitle": "ESPN match page"
+  },
+  {
+   "slug": "היכל-אוסישקין",
+   "nameHe": "היכל אוסישקין",
+   "city": "תל אביב",
+   "sport": "basketball",
+   "aliases": [
+    "היכל אוסישקין",
+    "אוסישקין",
+    "Ussishkin Hall"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3429531,00.html",
+   "sourceTitle": "Ynet, 25.7.2007"
+  },
+  {
+   "slug": "אצטדיון-רמת-גן",
+   "nameHe": "אצטדיון רמת גן",
+   "sport": "football",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Ramat_Gan_Stadium",
+   "sourceTitle": "Wikipedia"
+  },
+  {
+   "slug": "שכונת-התקווה",
+   "nameHe": "אצטדיון שכונת התקווה",
+   "sport": "football",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Ramat_Gan_Stadium",
+   "sourceTitle": "Wikipedia"
+  },
+  {
+   "slug": "יד-אליהו",
+   "nameHe": "היכל יד אליהו",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Ramat_Gan_Stadium",
+   "sourceTitle": "Wikipedia"
+  },
+  {
+   "slug": "קישינב",
+   "nameHe": "קישינב",
+   "sport": "football",
+   "confidence": 2,
+   "sourceUrl": "https://en.wikipedia.org/wiki/Ramat_Gan_Stadium",
+   "sourceTitle": "Wikipedia"
+  }
+ ]
+}

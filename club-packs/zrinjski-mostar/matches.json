@@ -1,0 +1,146 @@
+[
+  {
+    "id": "europe-2000-home-frolunda",
+    "date": "2000-06-25",
+    "competition": "UEFA Intertoto Cup",
+    "home": "HŠK Zrinjski Mostar",
+    "away": "Västra Frölunda IF",
+    "venueId": "stadium-zrinjski",
+    "score": "2-1 aet",
+    "lineupIds": [
+      "Toni Jurjev",
+      "Tihomir Skoko",
+      "Kenan Lizde",
+      "Joško Farac",
+      "Slaven Musa",
+      "Tihomir Bogdan",
+      "Elvis Margeta",
+      "Ante Marijanović",
+      "Anđelko Kvesić",
+      "Hrvoje Erceg",
+      "Berislav Miloš"
+    ],
+    "benchUsed": [
+      "Teo Krešić",
+      "Leon Buhić",
+      "Draženko Bogdan"
+    ],
+    "goals": [
+      {
+        "minute": 43,
+        "scorer": "Berislav Miloš"
+      },
+      {
+        "minute": 96,
+        "scorer": "Leon Buhić"
+      }
+    ],
+    "sourceIds": [
+      "src-europe-2000"
+    ]
+  },
+  {
+    "id": "uecl-2023-az",
+    "date": "2023-09-21",
+    "competition": "UEFA Europa Conference League Group E",
+    "home": "HŠK Zrinjski Mostar",
+    "away": "AZ Alkmaar",
+    "venueId": "stadium-zrinjski",
+    "score": "4-3",
+    "halftime": "0-3",
+    "lineupIds": [
+      "Marko Marić",
+      "Dario Čanađija",
+      "Josip Ćorluka",
+      "Andrija Balić",
+      "Stipe Radić",
+      "Antonio Ivančić",
+      "Mario Ćuže",
+      "Slobodan Jakovljević",
+      "Kerim Memija",
+      "Mario Tičinović",
+      "Nemanja Bilbija"
+    ],
+    "benchIds": [
+      "Omer Yaacov Nir On",
+      "Luka Marin",
+      "Damir Zlomislić",
+      "Franko Sabljić",
+      "Tomislav Kiš",
+      "Matija Malekinušić",
+      "Aldin Hrvanović",
+      "Petar Mišić",
+      "Filip Bradarić",
+      "Antonio Prskalo",
+      "Zvonimir Kožulj",
+      "Matej Senić"
+    ],
+    "sourceIds": [
+      "src-uefa-az",
+      "src-uefa-az-report"
+    ]
+  },
+  {
+    "id": "cup-2026-first",
+    "date": "2026-05-06",
+    "competition": "Bosnia and Herzegovina Cup Final — First Leg",
+    "home": "HŠK Zrinjski Mostar",
+    "away": "FK Velež Mostar",
+    "venueId": "stadium-zrinjski",
+    "score": "1-0",
+    "attendance": 7200,
+    "lineupIds": [
+      "Goran Karačić",
+      "Hrvoje Barišić",
+      "Dan Lagumdžija",
+      "Leo Mikić",
+      "Petar Mamić",
+      "Antonio Ilić",
+      "Mario Ćuže",
+      "Neven Đurasek",
+      "Kerim Memija",
+      "Duje Dujmović",
+      "Nemanja Bilbija"
+    ],
+    "goals": [
+      {
+        "minute": 38,
+        "scorer": "Nemanja Bilbija",
+        "assistContext": "Mario Ćuže crossed from the left; Bilbija finished from 5–6 metres"
+      }
+    ],
+    "sourceIds": [
+      "src-2026-cup-1"
+    ]
+  },
+  {
+    "id": "cup-2026-second",
+    "date": "2026-05-13",
+    "competition": "Bosnia and Herzegovina Cup Final — Second Leg",
+    "home": "FK Velež Mostar",
+    "away": "HŠK Zrinjski Mostar",
+    "venueId": "stadium-rodjeni",
+    "score": "1-1",
+    "lineupIds": [
+      "Goran Karačić",
+      "Hrvoje Barišić",
+      "Petar Mamić",
+      "Antonio Ilić",
+      "Mario Ćuže",
+      "Neven Đurasek",
+      "Kerim Memija",
+      "Duje Dujmović",
+      "Karlo Abramović",
+      "Nemanja Bilbija"
+    ],
+    "goals": [
+      {
+        "minute": 4,
+        "scorer": "Nemanja Bilbija"
+      }
+    ],
+    "sourceIds": [
+      "src-2026-cup-2"
+    ]
+  }
+]

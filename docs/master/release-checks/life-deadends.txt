@@ -1,0 +1,6 @@
+
+=== חורים (0) ===
+
+(77 warnings — VERBOSE=1 to list)
+
+PASS — no dead ends found

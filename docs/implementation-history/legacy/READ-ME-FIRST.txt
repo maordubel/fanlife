@@ -1,0 +1,36 @@
+FULL REPO — one-time reset, not a delta.
+
+Five rounds of delta zips drifted and `lib/ingest/normalize.ts` went missing from the
+repo, which is what killed the Vercel build. Rather than hunt for what else is missing,
+this is the whole project, verified green here:
+
+  lint OK · typecheck OK · 142 tests OK · next build OK
+
+HOW TO APPLY
+
+  cd <your repo>
+  git checkout -b fix/build
+  # delete everything tracked except .git, then unpack this folder over the repo:
+  git rm -r --cached . -q
+  # (copy the contents of the-worker/ over your working tree, overwriting)
+  git add -A
+  git commit -m "fix: move ingest lib out of the Next build graph; restore missing files"
+  git push -u origin fix/build
+
+WHAT CHANGED IN THIS ROUND
+
+1. lib/ingest/  ->  scripts/ingest/lib/
+   Importer code has no business inside the Next build graph. `next build` was
+   typechecking the whole ingestion layer, so one missing importer file failed the
+   deploy. Now the build only sees app/, components/, lib/, types/.
+
+2. tests/imports.test.ts — walks every local import in the build graph and fails if
+   any target file does not exist. This exact failure cannot reach Vercel again.
+
+3. next.config.mjs — ESLint no longer runs inside `next build` (Vercel's sandboxed
+   install blocks the postinstall that eslint-config-next's native resolver needs).
+   Lint still runs in CI and locally.
+
+VERIFY BEFORE PUSHING
+
+  npm run doctor      # clean install + lint + typecheck + test + build

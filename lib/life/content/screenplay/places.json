@@ -1,0 +1,988 @@
+{
+  "rows": [
+    {
+      "scene": "B00",
+      "chapter": "BRIDGE",
+      "placeHe": "הדרך הביתה / הבית",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "B01",
+      "chapter": "BRIDGE",
+      "placeHe": "החדר של פוגי",
+      "suggest": "bedroom",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "bedroom00",
+        "whyHe": "החדר של בן 22 — `bedroom`/`bedroom90` הם ילד (ציור מבוקש, אפשר לוותר)"
+      }
+    },
+    {
+      "scene": "B02",
+      "chapter": "BRIDGE",
+      "placeHe": "הקיוסק של רפי",
+      "suggest": "kiosk",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "E01",
+      "chapter": "EUROPE",
+      "placeHe": "סביב בלומפילד / סלון",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "E02",
+      "chapter": "EUROPE",
+      "placeHe": "דירת חברים",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "E03",
+      "chapter": "EUROPE",
+      "placeHe": "שולחן המטבח",
+      "suggest": "kitchen",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "אותה דירה — פינת המטבח של `homeAdult` (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "E04",
+      "chapter": "EUROPE",
+      "placeHe": "ניקוסיה / ערב צפייה בישראל",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "E05",
+      "chapter": "EUROPE",
+      "placeHe": "אחרי ההדחה מול מילאן / הבית",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "H01",
+      "chapter": "HOME",
+      "placeHe": "אוסישקין / בית",
+      "suggest": "ussishkin-outside",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "H02",
+      "chapter": "HOME",
+      "placeHe": "מחוץ לאוסישקין",
+      "suggest": "ussishkin-outside",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "H03",
+      "chapter": "HOME",
+      "placeHe": "הסדנה של לירון",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "H04",
+      "chapter": "HOME",
+      "placeHe": "נקודת מפגש לנסיעה, 2006",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "U01",
+      "chapter": "FOUNDING",
+      "placeHe": "שולחן קהילה",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "U02",
+      "chapter": "FOUNDING",
+      "placeHe": "מפגש מתנדבים סביב הרישום",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "U03",
+      "chapter": "FOUNDING",
+      "placeHe": "ליד אוסישקין / הודעה מרחוק",
+      "suggest": "ussishkin-outside",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "U04",
+      "chapter": "FOUNDING",
+      "placeHe": "אולם אימון של הקבוצה החדשה",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "U05",
+      "chapter": "FOUNDING",
+      "placeHe": "אחרי משחק עלייה / בית",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "D01",
+      "chapter": "DOUBLE",
+      "placeHe": "מגרש החברים, חורף 2009/10",
+      "suggest": "pitch",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "pitchSmall",
+        "whyHe": "מגרש של מבוגרים — `pitch` הוא חצר האבנים של 1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "D02",
+      "chapter": "DOUBLE",
+      "placeHe": "הקיוסק",
+      "suggest": "kiosk",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "D03",
+      "chapter": "DOUBLE",
+      "placeHe": "אחרי הדרבי לפני מחזור הסיום",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "D04",
+      "chapter": "DOUBLE",
+      "placeHe": "לפני ואחרי גמר הגביע",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "D05",
+      "chapter": "DOUBLE",
+      "placeHe": "ליד הרכב של אולי",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "D06",
+      "chapter": "DOUBLE",
+      "placeHe": "טדי / הסלון / מקום ההתחייבות",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "D07",
+      "chapter": "DOUBLE",
+      "placeHe": "אחרי השריקה",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "D08",
+      "chapter": "DOUBLE",
+      "placeHe": "ביציאה מטדי / אחרי ערב הצפייה",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "D09",
+      "chapter": "DOUBLE",
+      "placeHe": "מטבח / שיחת בוקר",
+      "suggest": "kitchen",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "אותה דירה — פינת המטבח של `homeAdult` (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "C01",
+      "chapter": "CHAMPIONS",
+      "placeHe": "שלושת סיבובי המוקדמות",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "C02",
+      "chapter": "CHAMPIONS",
+      "placeHe": "עם רומא בבית קפה",
+      "suggest": "allenby",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "C03",
+      "chapter": "CHAMPIONS",
+      "placeHe": "ליסבון / סלון",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "C04",
+      "chapter": "CHAMPIONS",
+      "placeHe": "תל אביב, ערב עם אורחים",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "C05",
+      "chapter": "CHAMPIONS",
+      "placeHe": "גלזנקירכן / בית; בהמשך תיקו הבית מול שאלקה",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "C06",
+      "chapter": "CHAMPIONS",
+      "placeHe": "בלומפילד / צפייה",
+      "suggest": "bloomfield-outside",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "bloomOldTerrace",
+        "whyHe": "בלומפילד 2000–2016 — שער 5 ✓ (`bloomOldGates`); היציע מבפנים מבוקש (ART-PROMPTS §17א)"
+      }
+    },
+    {
+      "scene": "C07",
+      "chapter": "CHAMPIONS",
+      "placeHe": "ליון / סלון",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "N01",
+      "chapter": "GROWTH",
+      "placeHe": "2011–2012, הבית והיציע",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "N02",
+      "chapter": "GROWTH",
+      "placeHe": "2012, אחרי העלייה בכדורסל",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "N03",
+      "chapter": "GROWTH",
+      "placeHe": "מפגש אוהדים בדיוני סביב 2012",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "N04",
+      "chapter": "GROWTH",
+      "placeHe": "חדר חזרות, 2013",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "N05",
+      "chapter": "RELOCATION",
+      "placeHe": "הדרייב אין, 2015",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "N06",
+      "chapter": "RELOCATION",
+      "placeHe": "2016, יציאה למשחק במגרש חלופי",
+      "suggest": "pitch",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "pitchSmall",
+        "whyHe": "מגרש של מבוגרים — `pitch` הוא חצר האבנים של 1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "P01",
+      "chapter": "COLLAPSE",
+      "placeHe": "דצמבר 2016, הקיוסק",
+      "suggest": "kiosk",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "P02",
+      "chapter": "COLLAPSE",
+      "placeHe": "קופת קבוצת החברים",
+      "suggest": "ticket-office",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "P03",
+      "chapter": "COLLAPSE",
+      "placeHe": "ינואר 2017, מפגש קהילתי",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "P04",
+      "chapter": "COLLAPSE",
+      "placeHe": "10 בינואר 2017, ליד הטבלה",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "P05",
+      "chapter": "COLLAPSE",
+      "placeHe": "עם עמית, אחרי המשבר בקופה",
+      "suggest": "ticket-office",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "P06",
+      "chapter": "COLLAPSE",
+      "placeHe": "אחרי הירידה ב־2017",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "P07",
+      "chapter": "COLLAPSE",
+      "placeHe": "בין החברים לקראת 2018",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "R01",
+      "chapter": "RETURN",
+      "placeHe": "2018, מפגש אחרי העלייה",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "R02",
+      "chapter": "RETURN",
+      "placeHe": "בלומפילד המחודש, 2019",
+      "suggest": "bloomfield-outside",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "bloomNewPlaza",
+        "whyHe": "בלומפילד המחודש — ✓ מחובר (`repaints`, רצפה נמדדה); 2016–2018 הדלת נעולה"
+      }
+    },
+    {
+      "scene": "R03",
+      "chapter": "RETURN",
+      "placeHe": "2020, הבית בזמן הגבלות",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "R04",
+      "chapter": "RETURN",
+      "placeHe": "אחרי גמר הגביע 2021",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "R05",
+      "chapter": "RETURN",
+      "placeHe": "אחרי גמר הכדורסל 2022",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Z01",
+      "chapter": "LATE",
+      "placeHe": "מפגש החבורה סביב יצורניר 2023",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Z02",
+      "chapter": "LATE",
+      "placeHe": "יוני 2023, אחרי הדרבי בגמר הכדורסל",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Z03",
+      "chapter": "LATE",
+      "placeHe": "מפגש אוהדים, 2023–2024",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Z04",
+      "chapter": "LATE",
+      "placeHe": "לאחר 7 באוקטובר 2023, מרחב אישי",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "Z05",
+      "chapter": "LATE",
+      "placeHe": "אחרי ירידת הכדורגל ב־2024",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Z06",
+      "chapter": "LATE",
+      "placeHe": "אפריל 2025, מסע היורוקאפ",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "Z07",
+      "chapter": "LATE",
+      "placeHe": "אביב 2025, אחרי חזרת הכדורגל לליגת העל",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "F00",
+      "chapter": "FINALE",
+      "placeHe": "תכנון מוקדם, 2025–תחילת 2026",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "F01",
+      "chapter": "FINALE",
+      "placeHe": "2026, תכנון הנסיעה",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "F02",
+      "chapter": "FINALE",
+      "placeHe": "נמל הגעה באירופה והדרך לבוטבגרד",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "F03",
+      "chapter": "FINALE",
+      "placeHe": "מחוץ לאולם ובמושבים",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "F04",
+      "chapter": "FINALE",
+      "placeHe": "מחוץ לאולם, אחרי המשחק",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "L01",
+      "chapter": "FAMILY",
+      "placeHe": "מפגש עם מלאני, מ־2011",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "L02",
+      "chapter": "FAMILY",
+      "placeHe": "מפגש עם דור, מ־2011",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "L03",
+      "chapter": "FAMILY",
+      "placeHe": "מפגש עם תמר, דמות אקדמאית בדיונית מוצעת",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "L04",
+      "chapter": "FAMILY",
+      "placeHe": "בית משותף / בית עצמאי",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "L05",
+      "chapter": "FAMILY",
+      "placeHe": "שיחה פרטית על הורות",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "L06",
+      "chapter": "FAMILY",
+      "placeHe": "לאחר מעבר חיים מאושר להורות",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "L07",
+      "chapter": "FAMILY",
+      "placeHe": "לפני יציאה עם ילד",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "L08",
+      "chapter": "FAMILY",
+      "placeHe": "בית / שיחה עם קרן",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "L09",
+      "chapter": "FAMILY",
+      "placeHe": "ילד גדל / שיחה משפחתית",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "A01",
+      "chapter": "ARMCHAIR",
+      "placeHe": "סלון קובי",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "A02",
+      "chapter": "ARMCHAIR",
+      "placeHe": "אלבום אישי",
+      "suggest": null,
+      "kind": "a-system",
+      "proposed": true
+    },
+    {
+      "scene": "A03",
+      "chapter": "ARMCHAIR",
+      "placeHe": "בית / מקום פעילות אישית",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "A04",
+      "chapter": "ARMCHAIR",
+      "placeHe": "שיחה לקראת הסיום",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "X01",
+      "chapter": "ABROAD",
+      "placeHe": "הבית לפני מעבר לחו״ל",
+      "suggest": "home",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "homeAdult",
+        "whyHe": "הבית של פוגי המבוגר — `living`/`kitchen` הם הדירה של קובי ב-1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "X02",
+      "chapter": "ABROAD",
+      "placeHe": "דירה בחו״ל",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "X03",
+      "chapter": "ABROAD",
+      "placeHe": "מקום העבודה / מפגש חברים בחו״ל",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "X04",
+      "chapter": "ABROAD",
+      "placeHe": "ביקור בישראל",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "X05",
+      "chapter": "ABROAD",
+      "placeHe": "הדירה בחו״ל, לקראת 2026",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "I01",
+      "chapter": "INTERNATIONAL",
+      "placeHe": "מפגש אוהדים בינלאומי",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "I02",
+      "chapter": "INTERNATIONAL",
+      "placeHe": "הכנת פעילות משותפת",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "I03",
+      "chapter": "INTERNATIONAL",
+      "placeHe": "אימון ידידות",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "I04",
+      "chapter": "INTERNATIONAL",
+      "placeHe": "שיחה עם חבר מחו״ל בתקופה מאוחרת",
+      "suggest": "ticket-office",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "Y01",
+      "chapter": "TOURNAMENT",
+      "placeHe": "מגרש אימון, החל מקיץ 2000",
+      "suggest": "pitch",
+      "kind": "room-exists",
+      "proposed": true,
+      "repaint": {
+        "backdrop": "pitchSmall",
+        "whyHe": "מגרש של מבוגרים — `pitch` הוא חצר האבנים של 1986 (ציור מבוקש)"
+      }
+    },
+    {
+      "scene": "Y02",
+      "chapter": "TOURNAMENT",
+      "placeHe": "שיחת סגל בכל מהדורה",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Y03",
+      "chapter": "TOURNAMENT",
+      "placeHe": "אימון לפני מפגש",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Y04",
+      "chapter": "TOURNAMENT",
+      "placeHe": "מפגש משחקי של החבורה",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Y05",
+      "chapter": "TOURNAMENT",
+      "placeHe": "אחרי המשחק",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "J01",
+      "chapter": "CAREER",
+      "placeHe": "מפגש עם עמית ושני",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "J02",
+      "chapter": "CAREER",
+      "placeHe": "מערכת קטנה / פרסום אישי",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "J03",
+      "chapter": "CAREER",
+      "placeHe": "מפגש מקצועי, אחרי הכרה בעבודה",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "T01",
+      "chapter": "CAREER",
+      "placeHe": "הכנות ביציע",
+      "suggest": "gate5",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "T02",
+      "chapter": "CAREER",
+      "placeHe": "מפגש הכנה בתקופה אחרת",
+      "suggest": "ticket-office",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "T03",
+      "chapter": "CAREER",
+      "placeHe": "הכנה לאירוע מאוחר",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "O01",
+      "chapter": "OWNER",
+      "placeHe": "קיץ 2025, ענף בעלות בדיוני",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "O02",
+      "chapter": "OWNER",
+      "placeHe": "פגישות צוות",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "O03",
+      "chapter": "OWNER",
+      "placeHe": "שולחן עבודה עסקי",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "O04",
+      "chapter": "OWNER",
+      "placeHe": "חלון חתימה בדיוני",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "O05",
+      "chapter": "OWNER",
+      "placeHe": "אחרי רכישה, שני סבבי ניהול בדיוניים",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "K01",
+      "chapter": "DISTANCE",
+      "placeHe": "צומת חיים, מ־2000 ועד 2015",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "K02",
+      "chapter": "DISTANCE",
+      "placeHe": "שלוש תחנות בתוך תקופת הריחוק",
+      "suggest": "ticket-office",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "K03",
+      "chapter": "DISTANCE",
+      "placeHe": "מפגש חזרה אפשרי",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Q01",
+      "chapter": "COMBINATIONS",
+      "placeHe": "הקיוסק / שיחת טלפון",
+      "suggest": "kiosk",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "Q02",
+      "chapter": "COMBINATIONS",
+      "placeHe": "ערב צפייה / יציע לפי נוכחות מאומתת",
+      "suggest": "gate5",
+      "kind": "room-exists",
+      "proposed": true
+    },
+    {
+      "scene": "Q03",
+      "chapter": "COMBINATIONS",
+      "placeHe": "מחסן קהילתי",
+      "suggest": null,
+      "kind": "needs-painting",
+      "proposed": true
+    },
+    {
+      "scene": "Q04",
+      "chapter": "COMBINATIONS",
+      "placeHe": "מפגש חזרה אחרי היעדרות",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Q05",
+      "chapter": "COMBINATIONS",
+      "placeHe": "הדירה בחו״ל / שיחה עם רומא",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Q06",
+      "chapter": "COMBINATIONS",
+      "placeHe": "מערכת / שיחה עם שני",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Q07",
+      "chapter": "COMBINATIONS",
+      "placeHe": "שולחן התכנון האישי",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Q08",
+      "chapter": "COMBINATIONS",
+      "placeHe": "שיחת ערב עם אפי",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    },
+    {
+      "scene": "Q09",
+      "chapter": "COMBINATIONS",
+      "placeHe": "הקופסה האדומה",
+      "suggest": null,
+      "kind": "a-system",
+      "proposed": true
+    },
+    {
+      "scene": "Q10",
+      "chapter": "COMBINATIONS",
+      "placeHe": "לפני הנסיעה האחרונה",
+      "suggest": null,
+      "kind": "a-moment",
+      "proposed": true
+    }
+  ]
+}

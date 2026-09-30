@@ -1,0 +1,429 @@
+{
+  "sport": "basketball",
+  "confidence": 3,
+  "source": {
+    "title": "אגף אוסישקין — מקורות פר-שורה",
+    "url": null
+  },
+  "records": [
+    {
+      "slug": "site",
+      "cat": "building",
+      "periodHe": "",
+      "factHe": "אולם אוסישקין שכן על גדות נחל הירקון בצפון תל אביב, ברחוב מנחם מנדל אוסישקין, וממנו נגזר שמו.",
+      "sourceTitle": "meny.co.il · אולם אוסישקין",
+      "sourceUrl": "https://meny.co.il/teva/%D7%90%D7%95%D7%9C%D7%9D-%D7%90%D7%95%D7%A1%D7%99%D7%A9%D7%A7%D7%99%D7%9F-%D7%90%D7%95%D7%9C%D7%9D-%D7%94%D7%A4%D7%95%D7%A2%D7%9C-%D7%AA%D7%90/",
+      "confidence": 3
+    },
+    {
+      "slug": "official-name",
+      "cat": "building",
+      "periodHe": "",
+      "factHe": "שמו הרשמי היה \"אולם הפועל תל אביב\", אבל אף אחד לא קרא לו כך. הוא היה אוסישקין.",
+      "sourceTitle": "meny.co.il · אולם אוסישקין",
+      "sourceUrl": "https://meny.co.il/teva/%D7%90%D7%95%D7%9C%D7%9D-%D7%90%D7%95%D7%A1%D7%99%D7%A9%D7%A7%D7%99%D7%9F-%D7%90%D7%95%D7%9C%D7%9D-%D7%94%D7%A4%D7%95%D7%A2%D7%9C-%D7%AA%D7%90/",
+      "confidence": 2
+    },
+    {
+      "slug": "open-court",
+      "cat": "building",
+      "periodHe": "עד 1980",
+      "factHe": "עד 1980 שיחקה הפועל תל אביב במגרש פתוח באתר. רק אז נחנך במקומו האולם המקורה.",
+      "sourceTitle": "Ussishkin Arena · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ussishkin_Arena",
+      "confidence": 2
+    },
+    {
+      "slug": "first-night",
+      "cat": "building",
+      "periodHe": "29.9.1980",
+      "factHe": "המשחק הרשמי הראשון באולם המקורה נערך ב-29 בספטמבר 1980. הפועל תל אביב הביסה בו את הפועל חיפה 73:91.",
+      "sourceTitle": "וואלה ספורט · ברוכים הבאים לאוסישקינוב",
+      "sourceUrl": "https://sports.walla.co.il/item/3741005",
+      "confidence": 3
+    },
+    {
+      "slug": "capacity",
+      "cat": "building",
+      "periodHe": "1980—2007",
+      "factHe": "הקיבולת הרשמית עמדה על 2,000 מקומות. מקור אחר מונה כ-2,500.",
+      "sourceTitle": "וואלה ספורט · ברוכים הבאים לאוסישקינוב",
+      "sourceUrl": "https://sports.walla.co.il/item/3741005",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-man",
+      "cat": "building",
+      "periodHe": "1863—1941",
+      "factHe": "מנחם אוסישקין, שעל שמו נקרא האולם, היה ממנהיגי התנועה הציונית, מזכיר הקונגרס הציוני הראשון, ועמד בראש הקרן הקיימת לישראל בשנים 1923—1941.",
+      "sourceTitle": "Menachem Ussishkin · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Menachem_Ussishkin",
+      "confidence": 3
+    },
+    {
+      "slug": "condition",
+      "cat": "building",
+      "periodHe": "1980—2007",
+      "factHe": "הפרקט היה רעוע ושקע, גגות הפח העתיקים זלפו טיפות על האוהדים, והחום היה בלתי נסבל.",
+      "sourceTitle": "ONE · 5 שנים להריסת אוסישקין",
+      "sourceUrl": "https://www.one.co.il/Article/203222.html",
+      "confidence": 3
+    },
+    {
+      "slug": "atmosphere",
+      "cat": "building",
+      "periodHe": "1980—2007",
+      "factHe": "תופים, עשן סיגריות וריח של גרעינים ונקניקיות מהמזנון. שחקנים שמעדו על הקווים נפלו כמעט לידי האוהדים.",
+      "sourceTitle": "וואלה ספורט · ברוכים הבאים לאוסישקינוב",
+      "sourceUrl": "https://sports.walla.co.il/item/3741005",
+      "confidence": 3
+    },
+    {
+      "slug": "fortress",
+      "cat": "building",
+      "periodHe": "",
+      "factHe": "\"משאבה של ניצחונות, המבצר שלנו — כבר בכניסה קבוצות היו עם מינוס עשר.\"",
+      "sourceTitle": "ישראל היום · נשנה את האולם",
+      "sourceUrl": "https://www.israelhayom.co.il/article/246601",
+      "confidence": 3
+    },
+    {
+      "slug": "kotel",
+      "cat": "building",
+      "periodHe": "",
+      "factHe": "יצחק לוי, מנהל האולם לשעבר: \"אוסישקין בשבילי היה כמו הכותל המערבי עבור חרדי\".",
+      "sourceTitle": "ישראל היום · נשנה את האולם",
+      "sourceUrl": "https://www.israelhayom.co.il/article/246601",
+      "confidence": 3
+    },
+    {
+      "slug": "preservation",
+      "cat": "building",
+      "periodHe": "27.2.2006",
+      "factHe": "בפברואר 2006 הגישו אוהדי הפועל ת\"א מכתב חתום לוועדה לשימור אתרים בעיריית תל אביב, וביקשו להכריז על האולם כאתר לשימור ולקרוא לו על שם המאמן המנוח יהושע רוזין, \"מר כדורסל\".",
+      "sourceTitle": "ynet · הצעה: לקרוא את אולם אוסישקין ע\"ש יהושע רוזין",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3221619,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "demolition",
+      "cat": "building",
+      "periodHe": "25.7.2007",
+      "factHe": "ב-25 ביולי 2007, בשעה 6:39 בבוקר, החלה עיריית תל אביב להרוס את האולם — אחרי שנה וחצי של מאבקים פיזיים ומשפטיים של האוהדים.",
+      "sourceTitle": "ynet · הדחפורים עלו על אוסישקין, האולם נהרס",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3429531,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "huldai",
+      "cat": "building",
+      "periodHe": "2007",
+      "factHe": "ראש העיר רון חולדאי נימק את ההריסה: \"המקום אינו ראוי לשמש כמרכז ספורט\".",
+      "sourceTitle": "ynet · הדחפורים עלו על אוסישקין",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3429531,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "torn-shirts",
+      "cat": "building",
+      "periodHe": "25.7.2007",
+      "factHe": "ביום ההריסה קרעו אוהדים את חולצותיהם כאות אבל. ynet תיאר \"מראות קורעי לב של בכי ועצב\".",
+      "sourceTitle": "ynet · הדחפורים עלו על אוסישקין",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3429531,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "27-years",
+      "cat": "building",
+      "periodHe": "1980—2007",
+      "factHe": "האולם שימש את הפועל תל אביב 27 שנה, ונהרס אחרי מאבק ממושך וקשה של האוהדים.",
+      "sourceTitle": "הארץ · החלה הריסת אולם הכדורסל אוסישקין",
+      "sourceUrl": "https://www.haaretz.co.il/sport/basketball/2007-07-25/ty-article/0000017f-db08-dee4-a9ff-ff7b7d250000",
+      "confidence": 3
+    },
+    {
+      "slug": "park",
+      "cat": "building",
+      "periodHe": "2007—היום",
+      "factHe": "האולם נהרס כדי להמשיך את טיילת פארק הירקון. היום יש במקום גן עירוני.",
+      "sourceTitle": "הארץ · החלה הריסת אולם הכדורסל אוסישקין",
+      "sourceUrl": "https://www.haaretz.co.il/sport/basketball/2007-07-25/ty-article/0000017f-db08-dee4-a9ff-ff7b7d250000",
+      "confidence": 3
+    },
+    {
+      "slug": "derbies",
+      "cat": "nights",
+      "periodHe": "1953—2005",
+      "factHe": "מכבי תל אביב אירחה כאורחת באוסישקין 26 דרבי ליגה ופלייאוף. המאזן היה צמוד — 14:12 למכבי.",
+      "sourceTitle": "maccabi.co.il · כשיוצאים לשחק דרבי מחוץ לבית",
+      "sourceUrl": "https://maccabi.co.il/news.asp?id=3808",
+      "confidence": 2
+    },
+    {
+      "slug": "maccabi-view",
+      "cat": "nights",
+      "periodHe": "",
+      "factHe": "כך תיארו את המגרש במכבי ת\"א עצמה: \"צפוף, מיוזע, ומבצר אדום שקשה לנצח בו\".",
+      "sourceTitle": "maccabi.co.il · כשיוצאים לשחק דרבי מחוץ לבית",
+      "sourceUrl": "https://maccabi.co.il/news.asp?id=3808",
+      "confidence": 2
+    },
+    {
+      "slug": "derby-1972",
+      "cat": "nights",
+      "periodHe": "1972",
+      "factHe": "הדרבי הדרמטי של 1972 באוסישקין הסתיים 95:97 בהארכה, אחרי 87:87 בתום הזמן החוקי.",
+      "sourceTitle": "maccabi.co.il · כשיוצאים לשחק דרבי מחוץ לבית",
+      "sourceUrl": "https://maccabi.co.il/news.asp?id=3808",
+      "confidence": 2
+    },
+    {
+      "slug": "last-derby",
+      "cat": "nights",
+      "periodHe": "2005",
+      "factHe": "הדרבי האחרון שנערך באוסישקין היה ב-2005, ובו עלתה מכבי ל-0:2 בסדרה.",
+      "sourceTitle": "maccabi.co.il · כשיוצאים לשחק דרבי מחוץ לבית",
+      "sourceUrl": "https://maccabi.co.il/news.asp?id=3808",
+      "confidence": 2
+    },
+    {
+      "slug": "left-2005",
+      "cat": "nights",
+      "periodHe": "5.12.2005",
+      "factHe": "ב-5 בדצמבר 2005 חדל אוסישקין לשמש כאולם הבית, אחרי שהיו\"ר שאול אייזנברג העביר את הקבוצה ליד אליהו. האולם עמד עוד שנה וחצי.",
+      "sourceTitle": "וואלה ספורט · ברוכים הבאים לאוסישקינוב",
+      "sourceUrl": "https://sports.walla.co.il/item/3741005",
+      "confidence": 3
+    },
+    {
+      "slug": "founded",
+      "cat": "club",
+      "periodHe": "1935",
+      "factHe": "מועדון הכדורסל הפועל תל אביב נוסד ב-1935.",
+      "sourceTitle": "Hapoel Tel Aviv B.C. · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_B.C.",
+      "confidence": 3
+    },
+    {
+      "slug": "golden-age",
+      "cat": "club",
+      "periodHe": "1954—1969",
+      "factHe": "חמש עשרה השנים שאחרי הקמת הליגה הלאומית ב-1954 היו תור הזהב של המועדון. רוב התארים נאספו בהן.",
+      "sourceTitle": "Hapoel Tel Aviv B.C. · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_B.C.",
+      "confidence": 3
+    },
+    {
+      "slug": "titles",
+      "cat": "club",
+      "periodHe": "1960—1969",
+      "factHe": "חמש אליפויות ישראל: 1959/60, 1960/61, 1964/65, 1965/66 ו-1968/69.",
+      "sourceTitle": "Hapoel Tel Aviv B.C. · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_B.C.",
+      "confidence": 3
+    },
+    {
+      "slug": "cups",
+      "cat": "club",
+      "periodHe": "1962—1993",
+      "factHe": "ארבעה גביעי מדינה: 1961/62, 1968/69, 1983/84 ו-1992/93.",
+      "sourceTitle": "Hapoel Tel Aviv B.C. · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_B.C.",
+      "confidence": 3
+    },
+    {
+      "slug": "drought",
+      "cat": "club",
+      "periodHe": "19.4.1993",
+      "factHe": "התואר המקומי האחרון הוא גביע המדינה של 19 באפריל 1993. מאז — בצורת של 32 שנים.",
+      "sourceTitle": "ישראל היום · בצורת של 32 שנים",
+      "sourceUrl": "https://www.israelhayom.co.il/sport/israeli-basketball/article/17729131",
+      "confidence": 3
+    },
+    {
+      "slug": "eurocup",
+      "cat": "club",
+      "periodHe": "11.4.2025",
+      "factHe": "ב-11 באפריל 2025 זכתה הפועל תל אביב ביורוקאפ לראשונה בתולדותיה, אחרי 0:2 בסדרת הגמר על גראן קנאריה — 94:103 בספרד.",
+      "sourceTitle": "ynet · הישג היסטורי: הפועל ת\"א זכתה ביורוקאפ",
+      "sourceUrl": "https://www.ynet.co.il/sport/israelibasketball/article/rjqokhuakg",
+      "confidence": 3
+    },
+    {
+      "slug": "euroleague",
+      "cat": "club",
+      "periodHe": "2025/26",
+      "factHe": "הזכייה ביורוקאפ הקנתה עלייה ליורוליג בעונת 2025/26.",
+      "sourceTitle": "Hapoel Tel Aviv B.C. · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_B.C.",
+      "confidence": 3
+    },
+    {
+      "slug": "homeless",
+      "cat": "club",
+      "periodHe": "2007—2014",
+      "factHe": "מהריסת אוסישקין ובמשך שבע שנים הייתה הפועל ת\"א ללא בית משלה.",
+      "sourceTitle": "ynet · נעים להכיר: האולם החדש של הפועל ת\"א",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4594709,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "drivein",
+      "cat": "club",
+      "periodHe": "2015",
+      "factHe": "בתחילת 2015 נחנך אולם ביתי חדש במתחם הדרייב-אין, 3,400 מקומות לעומת 2,000 באוסישקין.",
+      "sourceTitle": "ynet · נעים להכיר: האולם החדש של הפועל ת\"א",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4594709,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "naming",
+      "cat": "club",
+      "periodHe": "29.6.2015",
+      "factHe": "ביוני 2015 נקבע שהדרייב-אין ייקרא \"היכל קבוצת שלמה\". האוהדים קיוו שייקרא על שם אריק איינשטיין או אלי מוהר.",
+      "sourceTitle": "ynet · הדרייב אין ייקרא היכל קבוצת שלמה",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4674132,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "menora",
+      "cat": "club",
+      "periodHe": "10.1.2025",
+      "factHe": "ב-10 בינואר 2025 עברה הפועל ת\"א לארח בהיכל מנורה מבטחים ביד אליהו, ופתחה עידן חדש במשחק מול הפועל ירושלים.",
+      "sourceTitle": "ישראל היום · אולם ומלואו",
+      "sourceUrl": "https://www.israelhayom.co.il/sport/israeli-basketball/article/17125433",
+      "confidence": 3
+    },
+    {
+      "slug": "today",
+      "cat": "club",
+      "periodHe": "2025/26",
+      "factHe": "היום האולם הביתי הוא היכל מנורה מבטחים ברחוב יגאל אלון 51, כ-11,000 מקומות. המאמן הראשי בעונת 2025/26 הוא דימיטריס איטודיס.",
+      "sourceTitle": "basket.co.il · הפועל IBI תל אביב",
+      "sourceUrl": "https://basket.co.il/team.asp?TeamId=1110",
+      "confidence": 3
+    },
+    {
+      "slug": "players",
+      "cat": "players",
+      "periodHe": "1953—2017",
+      "factHe": "מבין שחקני העבר הבולטים: חיים חזן (1953—1966), צבי לובצקי (1956—1971), גרשון דקל (1961—1975), בארי לייבוביץ' (1968—1982), דני ברכה (1973—1984), פיני חוזז (1974—1985), לבון מרסר (1980—1988), מייק לארג'י (1983—1987), שמעון אמסלם (1985—1994), תומר שטיינהאור (1991—1994) ומתן נאור (2002—2017).",
+      "sourceTitle": "Hapoel Tel Aviv B.C. · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_B.C.",
+      "confidence": 2
+    },
+    {
+      "slug": "rozin",
+      "cat": "players",
+      "periodHe": "1918—2002",
+      "factHe": "יהושע רוזין, \"מר כדורסל\", המאמן הראשון של נבחרת ישראל (1948) וחתן פרס ישראל לספורט (1999), אימן בין היתר את הפועל תל אביב.",
+      "sourceTitle": "Yehoshua Rozin · Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Yehoshua_Rozin",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-founded",
+      "cat": "ussishkin-club",
+      "periodHe": "יוני 2007",
+      "factHe": "\"ביוני 2007 רשם מאור הראל את קבוצת הפועל אוסישקין תל אביב כקבוצת האוהדים הראשונה בישראל.\"",
+      "sourceTitle": "ONE · 5 שנים להריסת אוסישקין",
+      "sourceUrl": "https://www.one.co.il/Article/203222.html",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-founder",
+      "cat": "ussishkin-club",
+      "periodHe": "2012",
+      "factHe": "\"מאור הראל (27), מייסד העמותה והיחיד מבין השלושה שמכהן עד היום בהנהלה.\"",
+      "sourceTitle": "ynet · הוועד הפועל, 14.10.2012",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-why",
+      "cat": "ussishkin-club",
+      "periodHe": "2007",
+      "factHe": "מטרת העמותה הייתה \"ייסוד קבוצה חדשה לגמרי, שתהיה מנותקת מההנהלה הקודמת ותייצג ערכים אחרים, מתוך הבנה שהקבוצה שייכת קודם כל לאוהדיה\".",
+      "sourceTitle": "ynet · הוועד הפועל, 14.10.2012",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-board",
+      "cat": "ussishkin-club",
+      "periodHe": "2007—2011",
+      "factHe": "לצד הראל בלטו נועה סקלי, היו\"ר הראשונה של העמותה שכיהנה עד ספטמבר 2011, ויונתן לרנר, חבר הוועד המנהל מרגע ההקמה.",
+      "sourceTitle": "ynet · הוועד הפועל, 14.10.2012",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-name",
+      "cat": "ussishkin-club",
+      "periodHe": "2007",
+      "factHe": "\"האולם אולי נהרס, אבל האוהדים האדומים מצאו דרך להנציח את זכרו עם הקמת קבוצה על שמו\". הקבוצה נרשמה באותה שנה לליגה ב'.",
+      "sourceTitle": "ynet · איך נולדת קבוצה? הפועל אוסישקין ת\"א, 7.9.2007",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3447054,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-members",
+      "cat": "ussishkin-club",
+      "periodHe": "2007",
+      "factHe": "בין חברי העמותה הראשונים: אריק איינשטיין, רוני דניאל ויהלי סובול, לצד שחקני עבר כעמי נאווי, תומר שטיינהאור, חיים זלוטיקמן, צבי לובצקי, דני ברכה, פיני חוזז, גרשון דקל, דני ברזילי ויצחק לוי (שחור).",
+      "sourceTitle": "ynet · איך נולדת קבוצה? הפועל אוסישקין ת\"א",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3447054,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-climb",
+      "cat": "ussishkin-club",
+      "periodHe": "2007—2010",
+      "factHe": "הקבוצה החלה בליגה ב' באולם העירוני הדר יוסף, ותוך שלוש שנים מהקמתה עלתה עד לליגה הלאומית — בלי אף הפסד ליגה.",
+      "sourceTitle": "ONE · 5 שנים להריסת אוסישקין",
+      "sourceUrl": "https://www.one.co.il/Article/203222.html",
+      "confidence": 2
+    },
+    {
+      "slug": "ussishkin-merge",
+      "cat": "ussishkin-club",
+      "periodHe": "2009/10",
+      "factHe": "\"במהלך עונת 2009/2010 פורק מועדון הפועל תל אביב והזכויות שלו נקנו על ידי אוהד שהעביר אותן בחינם לעמותת הפועל אוסישקין, שהפכה באותה עת להפועל תל אביב.\"",
+      "sourceTitle": "ONE · 5 שנים להריסת אוסישקין",
+      "sourceUrl": "https://www.one.co.il/Article/203222.html",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-members-count",
+      "cat": "ussishkin-club",
+      "periodHe": "13.10.2012",
+      "factHe": "נכון לאוקטובר 2012 מנתה העמותה 1,755 חברים, והפועל ת\"א הוצגה כ\"הקבוצה הראשונה בישראל השייכת לאוהדיה\".",
+      "sourceTitle": "ynet · הוועד הפועל, 14.10.2012",
+      "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-4291776,00.html",
+      "confidence": 3
+    },
+    {
+      "slug": "ussishkin-youth",
+      "cat": "ussishkin-club",
+      "periodHe": "2025/26",
+      "factHe": "היום פועלת בשם \"הפועל ת\"א אוסישקין\" קבוצת נוער בליגת נוער לאומית דרום. אולמה הביתי הוא תיכונט ברחוב שושנה פרסיץ 3 — לא האולם ההיסטורי.",
+      "sourceTitle": "ibasketball.co.il · הפועל ת\"א אוסישקין",
+      "sourceUrl": "https://ibasketball.co.il/team/3873-%D7%94%D7%A4%D7%95%D7%A2%D7%9C-%D7%AA%D7%90-%D7%90%D7%95%D7%A1%D7%99%D7%A9%D7%A7%D7%99%D7%9F/",
+      "confidence": 3
+    }
+  ],
+  "unknown": [
+    "אדריכל האולם — לא נמצא בשום מקור.",
+    "מספר הבית המדויק ברחוב אוסישקין. (אזהרה: אולם אוסישקין ברמת השרון הוא אולם אחר.)",
+    "שנת הקמת המגרש הפתוח המקורי — רק ויקיפדיה האנגלית נותנת 1953, בלי מקור עצמאי.",
+    "שיא קהל באולם — לא נמצא.",
+    "האם מכבי ת\"א שיחקה שם כאולם בית — לא נמצאה שום עדות. כל האזכורים הם משחקי חוץ.",
+    "תוצאת הדרבי האחרון ב-2005 — לא אושרה בקריאה חוזרת. לא נכנסה."
+  ],
+  "blocked": [
+    "wiki.red-fans.com — 403 לקריאה אוטומטית. לא נעקף (חוק 11).",
+    "he.wikipedia.org — cache-only, לא ניתן להביא.",
+    "themarker.com, hamichlol.org.il — robots.txt.",
+    "timeout.co.il — read timeout חוזר."
+  ]
+}

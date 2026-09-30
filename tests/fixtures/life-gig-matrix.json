@@ -1,0 +1,2652 @@
+[
+ {
+  "gig": "street-match",
+  "chapter": "a2-alley",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "a3-hall",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "a4-shirt",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "a5-first",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "a6-radio",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "a7-week",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1986",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1990",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1991",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1993-cup",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1993-galil",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1995-sinai",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1996-army",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1997-basket",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1998-laces",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1999-basket",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "1999-cup",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "2000-title",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "street-match",
+  "chapter": "2000-double",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "pitch",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "a2-alley",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "a3-hall",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "a4-shirt",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "bottles-round",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:bottles-round",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-kiosk",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "kiosk",
+  "start": "chore:crates-kiosk",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "a3-hall",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "a4-shirt",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "27 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sweep-hall",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:sweep-hall",
+  "pay": "27 ₪",
+  "dead": []
+ },
+ {
+  "gig": "papers-round",
+  "chapter": "a4-shirt",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:papers-round",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "papers-round",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:papers-round",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "papers-round",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:papers-round",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "papers-round",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:papers-round",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "papers-round",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:papers-round",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "shopping-neighbour",
+  "chapter": "a2-alley",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:shopping-neighbour",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "shopping-neighbour",
+  "chapter": "a3-hall",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:shopping-neighbour",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "shopping-neighbour",
+  "chapter": "a4-shirt",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:shopping-neighbour",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "shopping-neighbour",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:shopping-neighbour",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "shopping-neighbour",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:shopping-neighbour",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "shopping-neighbour",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:shopping-neighbour",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "shopping-neighbour",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:shopping-neighbour",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "drinks-hall",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-outside",
+  "start": "chore:drinks-hall",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "a4-shirt",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "errands-rafi",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:errands-rafi",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "a4-shirt",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "crates-allenby",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "allenby",
+  "start": "chore:crates-allenby",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "sell-scarves",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "bloomfield-outside",
+  "start": "chore:sell-scarves",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "a3-hall",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "a4-shirt",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "balls-hall",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "ussishkin-hall",
+  "start": "chore:balls-hall",
+  "pay": "18 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "a4-shirt",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "a5-first",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "a6-radio",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "a7-week",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1986",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1990",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1991",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1993-cup",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1993-galil",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1995-sinai",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1996-army",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1997-basket",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1998-laces",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1999-basket",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "1999-cup",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "5 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "2000-title",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "9 ₪",
+  "dead": []
+ },
+ {
+  "gig": "toto-slip",
+  "chapter": "2000-double",
+  "kind": "wager",
+  "placed": true,
+  "where": "kiosk",
+  "start": "toto",
+  "pay": "9 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "a4-shirt",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "1 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "a5-first",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "1 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "a6-radio",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "1 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "a7-week",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "1 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1986",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "1 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1990",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1991",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1993-cup",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1993-galil",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1995-sinai",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1996-army",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1997-basket",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1998-laces",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1999-basket",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "1999-cup",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "2 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "2000-title",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "alley-coin",
+  "chapter": "2000-double",
+  "kind": "wager",
+  "placed": true,
+  "where": "pitch",
+  "start": "coin",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "a2-alley",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "a3-hall",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "a4-shirt",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "a5-first",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "a6-radio",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "a7-week",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1986",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1990",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1991",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1993-cup",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1993-galil",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1995-sinai",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1996-army",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1997-basket",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1998-laces",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1999-basket",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "1999-cup",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "2000-title",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "penalty-contest",
+  "chapter": "2000-double",
+  "kind": "play",
+  "placed": true,
+  "where": "pitch",
+  "start": "penalty",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "hoops-contest",
+  "chapter": "1991",
+  "kind": "play",
+  "placed": true,
+  "where": "schoolyard",
+  "start": "hoops",
+  "pay": "none (play)",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "15 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "27 ₪",
+  "dead": []
+ },
+ {
+  "gig": "wash-cars",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "street",
+  "start": "chore:wash-cars",
+  "pay": "27 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "8 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "14 ₪",
+  "dead": []
+ },
+ {
+  "gig": "seeds-route",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "route",
+  "start": "chore:seeds-route",
+  "pay": "14 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "a3-hall",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "a4-shirt",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "a5-first",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "a6-radio",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "a7-week",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1986",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "3 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1990",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "6 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "11 ₪",
+  "dead": []
+ },
+ {
+  "gig": "kitchen-help",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "kitchen",
+  "start": "chore:kitchen-help",
+  "pay": "11 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1991",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1993-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1993-galil",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1995-sinai",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1997-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "1999-cup",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "4 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "2000-title",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "7 ₪",
+  "dead": []
+ },
+ {
+  "gig": "board-classroom",
+  "chapter": "2000-double",
+  "kind": "work",
+  "placed": true,
+  "where": "classroom",
+  "start": "chore:board-classroom",
+  "pay": "7 ₪",
+  "dead": []
+ },
+ {
+  "gig": "platform-bags",
+  "chapter": "1996-army",
+  "kind": "work",
+  "placed": true,
+  "where": "bus-station",
+  "start": "chore:platform-bags",
+  "pay": "7 ₪",
+  "dead": []
+ },
+ {
+  "gig": "banner-gate5",
+  "chapter": "1998-laces",
+  "kind": "work",
+  "placed": true,
+  "where": "gate5",
+  "start": "chore:banner-gate5",
+  "pay": "10 ₪",
+  "dead": []
+ },
+ {
+  "gig": "banner-gate5",
+  "chapter": "1999-basket",
+  "kind": "work",
+  "placed": true,
+  "where": "gate5",
+  "start": "chore:banner-gate5",
+  "pay": "10 ₪",
+  "dead": []
+ }
+]

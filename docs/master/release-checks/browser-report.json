@@ -1,0 +1,131 @@
+{
+  "startedAt": "2026-09-30T05:19:39.018Z",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/master/admin",
+      "status": 200
+    },
+    {
+      "route": "/master/test-lab",
+      "status": 200
+    },
+    {
+      "route": "/clubs/hapoel-tel-aviv",
+      "status": 200
+    },
+    {
+      "route": "/clubs/zrinjski-mostar",
+      "status": 200
+    },
+    {
+      "route": "/ground",
+      "status": 200
+    },
+    {
+      "route": "/xi",
+      "status": 200
+    },
+    {
+      "route": "/trivia",
+      "status": 200
+    },
+    {
+      "route": "/lineup",
+      "status": 200
+    },
+    {
+      "route": "/kits/build",
+      "status": 200
+    },
+    {
+      "route": "/kits",
+      "status": 200
+    },
+    {
+      "route": "/memory",
+      "status": 200
+    },
+    {
+      "route": "/polls",
+      "status": 200
+    },
+    {
+      "route": "/goal",
+      "status": 200
+    },
+    {
+      "route": "/royal-rumble",
+      "status": 200
+    },
+    {
+      "route": "/blind-cow",
+      "status": 200
+    },
+    {
+      "route": "/derby",
+      "status": 200
+    },
+    {
+      "route": "/archive",
+      "status": 200
+    },
+    {
+      "route": "/timeline",
+      "status": 200
+    },
+    {
+      "route": "/life",
+      "status": 200
+    },
+    {
+      "route": "/city",
+      "status": 200
+    },
+    {
+      "route": "/away-days",
+      "status": 200
+    },
+    {
+      "route": "/stand",
+      "status": 200
+    },
+    {
+      "route": "/tik",
+      "status": 200
+    },
+    {
+      "route": "/kits/closet",
+      "status": 200
+    },
+    {
+      "route": "/kits/market",
+      "status": 200
+    },
+    {
+      "route": "/kits/auction",
+      "status": 200
+    },
+    {
+      "route": "/kits/admin",
+      "status": 200
+    },
+    {
+      "route": "/qa/stats",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "supabaseRequests": [],
+  "checks": [
+    {
+      "qaLinks": 14
+    },
+    "Admin club creation persisted through UI",
+    "Three mobile pages fit at 390px"
+  ],
+  "status": "passed"
+}

@@ -1,0 +1,16 @@
+{
+  "pick.rail.aria": "בחירת שחקן — {target}",
+  "pick.rail.search": "חיפוש שם",
+  "pick.rail.allEras": "כל התקופות",
+  "pick.rail.era": "שנות ה־{n}",
+  "pick.rail.fitOnly": "רק {role}",
+  "pick.rail.list": "רשימה מלאה",
+  "pick.rail.hint": "הקישו על חולצה — או גררו אותה למעלה אל המגרש",
+  "pick.rail.empty": "אין שחקנים בסינון הזה",
+  "pick.rail.open": "בחירת שחקנים",
+  "pick.rail.taken": "במגרש",
+  "pick.rail.count": "{n} שחקנים",
+  "pick.shirt.alt": "חולצת {season}",
+  "pick.shirt.approx": "חולצת {season} (בערך)",
+  "pick.shirt.plain": "חולצת בית"
+}

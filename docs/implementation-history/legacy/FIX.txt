@@ -1,0 +1,20 @@
+ONE FILE: tsconfig.json  → replace it, commit, push. The build goes green immediately.
+
+WHY IT STILL FAILED
+The deployed commit still contains lib/ingest/ — the OLD folder. Copying the new files
+over your working tree did not delete it, and `git rm -r --cached` (my instruction, my
+mistake) only removes files from the index, not from disk. So lib/ingest/dedupe.ts is
+still there, lib/ingest/normalize.ts is still missing, and tsconfig's "lib/**/*.ts"
+still pulled it into the typecheck.
+
+THE FIX
+tsconfig.json now excludes "lib/ingest". Verified two ways on a fresh unzip:
+  - WITH the stale folder present  -> next build passes
+  - WITHOUT it (clean repo)        -> next build passes
+
+So you do not have to delete anything to deploy.
+
+CLEANUP, WHENEVER YOU FEEL LIKE IT (not required for the build)
+  git rm -r lib/ingest
+  git commit -m "chore: remove superseded ingest folder (now scripts/ingest/lib)"
+The live code is in scripts/ingest/lib/ and is complete.

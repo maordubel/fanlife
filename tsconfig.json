@@ -1,0 +1,73 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    /*
+     * `incremental` is deliberately FALSE, spelled out (7.9.2026).
+     *
+     * It wrote `tsconfig.all.tsbuildinfo` next to this file and `tsc` read it back to decide
+     * which files it was allowed to skip. A copy of that cache reached the repository, which
+     * is the worst kind of artefact to have there: a typecheck that reports clean while the
+     * errors are still in the tree. Ignoring it would have needed a `.gitignore`, and the
+     * GitHub web uploader silently drops every path that starts with a dot — so the cache
+     * would have kept coming back. The check takes half a minute either way.
+     *
+     * It has to be written as an explicit `false` rather than simply left out: `next build`
+     * fills in the options it thinks are missing and writes them back into this file, so an
+     * absent `incremental` came back as `true` on the very next build. An explicit value is
+     * a decision, and Next leaves decisions alone.
+     *
+     * **And a belt as well as braces (delta 47).** An explicit `false` is a decision Next
+     * respects today, but the cache only ever reached the repository because it had nowhere
+     * else to go. `tsBuildInfoFile` gives it somewhere: inside `.next/`, which
+     * `tsconfig.all.json` already excludes and which the uploader will never carry. So even
+     * on the day some future Next flips the flag back, nothing lands in the root and
+     * `npm run repo:hygiene` keeps passing straight after `npm run typecheck` — which it did
+     * not, in a clean checkout, before this line existed.
+     */
+    "tsBuildInfoFile": ".next/tsconfig.tsbuildinfo",
+    "incremental": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+  },
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/**/*.ts",
+    "types/**/*.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests",
+    "scripts",
+    "data",
+    "lib/ingest"
+  ]
+}

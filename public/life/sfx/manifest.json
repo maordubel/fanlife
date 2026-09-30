@@ -1,0 +1,123 @@
+{
+ "amb-park": {
+  "seconds": 37.5,
+  "loop": true,
+  "tags": [
+   "amb",
+   "real"
+  ],
+  "source": "maor-2026-09-05",
+  "note": "a park by a street; the street outside the ground"
+ },
+ "park-wave": {
+  "seconds": 14.0,
+  "loop": false,
+  "tags": [
+   "amb",
+   "real"
+  ],
+  "source": "maor-2026-09-05",
+  "note": "a passing wave in the park"
+ },
+ "crowd-real-murmur": {
+  "seconds": 23.5,
+  "loop": true,
+  "tags": [
+   "terrace",
+   "real",
+   "amb"
+  ],
+  "source": "maor-2026-09-05",
+  "note": "the murmur between things"
+ },
+ "crowd-real-build": {
+  "seconds": 6.0,
+  "loop": false,
+  "tags": [
+   "terrace",
+   "real"
+  ],
+  "source": "maor-2026-09-05",
+  "note": "something is building"
+ },
+ "crowd-real-goal": {
+  "seconds": 9.0,
+  "loop": false,
+  "tags": [
+   "terrace",
+   "real"
+  ],
+  "source": "maor-2026-09-05",
+  "note": "a goal, nine seconds down"
+ },
+ "crowd-real-miss": {
+  "seconds": 6.5,
+  "loop": false,
+  "tags": [
+   "terrace",
+   "real"
+  ],
+  "source": "maor-2026-09-05",
+  "note": "a near miss: peak and fall"
+ },
+ "crowd-real-after": {
+  "seconds": 4.5,
+  "loop": false,
+  "tags": [
+   "terrace",
+   "real"
+  ],
+  "source": "maor-2026-09-05",
+  "note": "the settle after a chance"
+ },
+ "crowd-real-final": {
+  "seconds": 11.2,
+  "loop": false,
+  "tags": [
+   "terrace",
+   "real"
+  ],
+  "source": "maor-2026-09-05",
+  "note": "the final whistle: burst, then the ground empties"
+ },
+ "amb-theme": {
+  "seconds": 15.8,
+  "loop": true,
+  "tags": [
+   "music"
+  ],
+  "source": "maor-theme-2026-09-05"
+ },
+ "crowd-bed": {
+  "seconds": 88.81,
+  "loop": true,
+  "tags": [
+   "crowd",
+   "real",
+   "match"
+  ],
+  "source": "maor-2026-09-06",
+  "note": "the constant bed under every match, football or basketball; reacts to nothing"
+ },
+ "chant-derby": {
+  "seconds": 8.2,
+  "loop": true,
+  "tags": [
+   "crowd",
+   "real",
+   "derby"
+  ],
+  "source": "maor-2026-09-06",
+  "note": "the derby only, mixed over the bed; ducks under a goal rather than stopping"
+ },
+ "radio-open": {
+  "seconds": 23.57,
+  "loop": false,
+  "tags": [
+   "radio",
+   "real"
+  ],
+  "source": "maor-2026-09-06",
+  "note": "the opening of \"שירים ושערים\" — the sound a transistor makes before the results"
+ }
+}

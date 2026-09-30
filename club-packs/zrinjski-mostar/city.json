@@ -1,0 +1,18 @@
+{
+  "realPlaces": [
+    "stadium-zrinjski",
+    "standing-east",
+    "lower-west",
+    "training-south",
+    "club-office"
+  ],
+  "fictionalLocalPlaces": [
+    "family-flat",
+    "kiosk-kod-ive",
+    "school-local",
+    "cafe-local",
+    "bus-departure"
+  ],
+  "worldRule": "Verified landmark truth + fictional everyday connective tissue.",
+  "kioskRule": "Every Club Pack receives one fictional neighbourhood kiosk unless the editor deliberately replaces it with a researched real business."
+}

@@ -1,0 +1,300 @@
+{
+ "note": "Competition names and types. Participation is a season-level fact and is asserted only through trophies and matches, never here.",
+ "confidence": 2,
+ "source": {
+  "kind": "other",
+  "title": "Verified research pass, 31 Aug 2026",
+  "url": null
+ },
+ "records": [
+  {
+   "slug": "ליגת-העל",
+   "nameHe": "ליגת העל",
+   "type": "league",
+   "tier": 1,
+   "sport": "football",
+   "aliases": [
+    "ליגת העל",
+    "הליגה הלאומית",
+    "ליגת הבכירה",
+    "Israeli Premier League"
+   ]
+  },
+  {
+   "slug": "גביע-המדינה",
+   "nameHe": "גביע המדינה",
+   "type": "national_cup",
+   "sport": "football",
+   "aliases": [
+    "גביע המדינה",
+    "גביע המדינה בכדורגל",
+    "Israel State Cup"
+   ]
+  },
+  {
+   "slug": "גביע-הטוטו",
+   "nameHe": "גביע הטוטו",
+   "type": "league_cup",
+   "sport": "football",
+   "aliases": [
+    "גביע הטוטו",
+    "גביע הטוטו על",
+    "Toto Cup"
+   ]
+  },
+  {
+   "slug": "גביע-אופא",
+   "nameHe": "גביע אופ\"א",
+   "type": "europe",
+   "sport": "football",
+   "aliases": [
+    "גביע אופא",
+    "גביע אופ\"א",
+    "UEFA Cup"
+   ]
+  },
+  {
+   "slug": "הליגה-האירופית",
+   "nameHe": "הליגה האירופית",
+   "type": "europe",
+   "sport": "football",
+   "aliases": [
+    "הליגה האירופית",
+    "יורופה ליג",
+    "Europa League"
+   ]
+  },
+  {
+   "slug": "ליגת-האלופות",
+   "nameHe": "ליגת האלופות",
+   "type": "europe",
+   "sport": "football",
+   "aliases": [
+    "ליגת האלופות",
+    "Champions League"
+   ]
+  },
+  {
+   "slug": "גביע-אלופות-אסיה",
+   "nameHe": "גביע אלופות אסיה",
+   "type": "other",
+   "sport": "football",
+   "aliases": [
+    "גביע אלופות אסיה",
+    "Asian Champion Club Tournament"
+   ]
+  },
+  {
+   "slug": "ליגה-ב-כדורסל",
+   "nameHe": "ליגה ב' בכדורסל",
+   "type": "league",
+   "tier": 5,
+   "sport": "basketball",
+   "aliases": [
+    "ליגה ב' כדורסל"
+   ]
+  },
+  {
+   "slug": "ליגה-א-כדורסל",
+   "nameHe": "ליגה א' בכדורסל",
+   "type": "league",
+   "tier": 4,
+   "sport": "basketball",
+   "aliases": [
+    "ליגה א' כדורסל"
+   ]
+  },
+  {
+   "slug": "ליגה-ארצית-כדורסל",
+   "nameHe": "ליגה ארצית בכדורסל",
+   "type": "league",
+   "tier": 3,
+   "sport": "basketball",
+   "aliases": [
+    "ליגה ארצית כדורסל"
+   ]
+  },
+  {
+   "slug": "ליגה-לאומית-כדורסל",
+   "nameHe": "ליגה לאומית בכדורסל",
+   "type": "league",
+   "tier": 2,
+   "sport": "basketball",
+   "aliases": [
+    "ליגה לאומית כדורסל"
+   ]
+  },
+  {
+   "slug": "ליגת-העל-כדורסל",
+   "nameHe": "ליגת העל בכדורסל",
+   "type": "league",
+   "tier": 1,
+   "sport": "basketball",
+   "aliases": [
+    "ליגת העל כדורסל",
+    "ליגת העל בכדורסל"
+   ]
+  },
+  {
+   "slug": "ליגה-ארצית",
+   "nameHe": "ליגה ארצית",
+   "type": "league",
+   "tier": 2,
+   "sport": "football",
+   "aliases": [
+    "ליגה ארצית",
+    "הליגה הארצית",
+    "Liga Artzit"
+   ]
+  },
+  {
+   "slug": "יורוליג",
+   "nameHe": "יורוליג",
+   "type": "cup",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://www.eurohoops.net/en/euroleague/1965449/real-madrid-beats-hapoel-and-advances-to-the-final-four/",
+   "sourceTitle": "Eurohoops"
+  },
+  {
+   "slug": "יורוקאפ",
+   "nameHe": "יורוקאפ",
+   "type": "cup",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://www.euroleaguebasketball.net/en/eurocup/news/hapoel-sweeps-gran-canaria-for-first-eurocup-title-and-ticket-to-euroleague/",
+   "sourceTitle": "EuroCup — האתר הרשמי"
+  },
+  {
+   "slug": "גביע-המדינה-כדורסל",
+   "nameHe": "גביע המדינה בכדורסל",
+   "sport": "basketball",
+   "confidence": 2,
+   "sourceUrl": "https://he.wikipedia.org/wiki/גביע_המדינה_בכדורסל",
+   "sourceTitle": "ויקיפדיה"
+  },
+  {
+   "slug": "ליגה-לאומית",
+   "nameHe": "ליגה לאומית",
+   "sport": "football",
+   "aliases": [
+    "ליגה לאומית"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026",
+   "type": "league"
+  },
+  {
+   "slug": "ליגה-א'",
+   "nameHe": "ליגה א'",
+   "sport": "football",
+   "aliases": [
+    "ליגה א'"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026",
+   "type": "league"
+  },
+  {
+   "slug": "גביע-ארץ-ישראל",
+   "nameHe": "גביע ארץ ישראל",
+   "sport": "football",
+   "aliases": [
+    "גביע ארץ ישראל"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גביע-האינטרטוטו",
+   "nameHe": "גביע האינטרטוטו",
+   "sport": "football",
+   "aliases": [
+    "גביע האינטרטוטו"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גביע-הטוטו-לאומית",
+   "nameHe": "גביע הטוטו לאומית",
+   "sport": "football",
+   "aliases": [
+    "גביע הטוטו לאומית"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גביע-אלוף-האלופים",
+   "nameHe": "גביע אלוף האלופים",
+   "sport": "football",
+   "aliases": [
+    "גביע אלוף האלופים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גביע-העשרים",
+   "nameHe": "גביע העשרים",
+   "sport": "football",
+   "aliases": [
+    "גביע העשרים"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "קונפרנס-ליג",
+   "nameHe": "קונפרנס ליג",
+   "sport": "football",
+   "aliases": [
+    "קונפרנס ליג"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גביע-אסיה",
+   "nameHe": "גביע אסיה",
+   "sport": "football",
+   "aliases": [
+    "גביע אסיה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גביע-הכ\"ה",
+   "nameHe": "גביע הכ\"ה",
+   "sport": "football",
+   "aliases": [
+    "גביע הכ\"ה"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  },
+  {
+   "slug": "גביע-העשור",
+   "nameHe": "גביע העשור",
+   "sport": "football",
+   "aliases": [
+    "גביע העשור"
+   ],
+   "confidence": 1,
+   "sourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+   "sourceTitle": "ויקיפועל — טבלת Games (Special:CargoExport), נקרא 17.9.2026"
+  }
+ ]
+}

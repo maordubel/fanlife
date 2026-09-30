@@ -1,0 +1,857 @@
+{
+ "confidence": 3,
+ "note": "אזורי המגרש הם פרשנות של המילים במקור, לא קואורדינטות שמקור מסר. כל רשומה מצהירה approximateCoords, וכל מגע שומר את ניסוח המקור ב-positionHe — וממנו, ורק ממנו, נגזרת מעטפת אי-הוודאות (lib/game/replay/truth.ts). הפעולה של מגע נקראת מהמילה של הכתב עצמו ב-noteHe: \"נגח\" היא נגיחה, \"הדיפה\" של שוער היא הדיפה, \"עומק\" היא מסירת עומק. playedOn הוא התאריך שה-subtitleHe כבר אומר, בכתיב ISO, וממנו נגזרת העונה שממנה נבנה מאגר השמות.",
+ "records": [
+  {
+   "goalId": "chelsea-2001-gershon-88",
+   "titleHe": "הפנדל של גרשון מול צ'לסי",
+   "subtitleHe": "18.10.2001 · בלומפילד · דקה 88",
+   "playedOn": "2001-10-18",
+   "competitionHe": "גביע אופ\"א · סיבוב 2, משחק ראשון",
+   "opponentHe": "צ'לסי",
+   "scoreHe": "0:2 להפועל",
+   "narrativeHe": "בדקה ה-88 פרץ בן לוז באגף ימין, ג'ון טרי נגע בכדור ביד והשופט פסק פנדל. הקפטן שמעון גרשון ניגש לנקודה ובעט לפינה העליונה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "בן לוז",
+     "action": "dribble",
+     "zone": "D2",
+     "positionHe": "אגף ימין",
+     "noteHe": "פריצה באגף ימין"
+    },
+    {
+     "step": 2,
+     "actorHe": "בן לוז",
+     "action": "dribble",
+     "zone": "D1",
+     "positionHe": "בתוך רחבת צ'לסי",
+     "noteHe": "ג'ון טרי נגע בכדור ביד — פנדל"
+    },
+    {
+     "step": 3,
+     "actorHe": "שמעון גרשון",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "נקודת הפנדל",
+     "noteHe": "הקפטן בעט לפינה העליונה"
+    }
+   ],
+   "sourceTitle": "ynet · גביע אופ\"א: הפועל ת\"א – צ'לסי 0:2",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-1216728,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "chelsea-2001-kleschenko-90-4",
+   "titleHe": "הנגיחה של קלשצ'נקו בדקה 90+4",
+   "subtitleHe": "18.10.2001 · בלומפילד · דקה 90+4",
+   "playedOn": "2001-10-18",
+   "competitionHe": "גביע אופ\"א · סיבוב 2, משחק ראשון",
+   "opponentHe": "צ'לסי",
+   "scoreHe": "0:2 להפועל",
+   "narrativeHe": "יוסי אבוקסיס הגביה כדור מצוין לתוך הרחבה, וסרגיי קלשצ'נקו התרומם באוויר ונגח פנימה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "יוסי אבוקסיס",
+     "action": "pass",
+     "zone": "D3",
+     "positionHe": "אזור האגף, מחוץ לרחבה",
+     "noteHe": "השתלטות והרמת ראש"
+    },
+    {
+     "step": 2,
+     "actorHe": "יוסי אבוקסיס",
+     "action": "cross",
+     "zone": "D2",
+     "positionHe": "מחוץ לרחבה",
+     "noteHe": "הגבהה מצוינת לתוך הרחבה"
+    },
+    {
+     "step": 3,
+     "actorHe": "סרגיי קלשצ'נקו",
+     "action": "header",
+     "zone": "C1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "התרומם באוויר ונגח פנימה"
+    }
+   ],
+   "sourceTitle": "ynet · גביע אופ\"א: הפועל ת\"א – צ'לסי 0:2",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-1216728,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "chelsea-away-2001-osterc-36",
+   "titleHe": "אוסטרץ' משתיק את סטמפורד ברידג'",
+   "subtitleHe": "01.11.2001 · סטמפורד ברידג' · דקה 36",
+   "playedOn": "2001-11-01",
+   "competitionHe": "גביע אופ\"א · סיבוב 2, משחק שני",
+   "opponentHe": "צ'לסי",
+   "scoreHe": "1:1",
+   "narrativeHe": "אישטוואן פישונט, שנכנס במקום בן לוז שפרק את הכתף, קיבל כדור כשלושים מטר מהשער וחיפש את מילאן אוסטרץ'. החלוץ הסלובני סיים מול בוסניץ'.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "אישטוואן פישונט",
+     "action": "dribble",
+     "zone": "C3",
+     "positionHe": "כ-30 מטר מהשער, מרכז המגרש",
+     "noteHe": "קיבל כדור והרים ראש"
+    },
+    {
+     "step": 2,
+     "actorHe": "אישטוואן פישונט",
+     "action": "pass",
+     "zone": "C2",
+     "positionHe": "מרכז, קדימה אל החלוץ",
+     "noteHe": "מסירה קדימה לאוסטרץ'"
+    },
+    {
+     "step": 3,
+     "actorHe": "מילאן אוסטרץ'",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "מול השוער בוסניץ'",
+     "noteHe": "סיים בנונשלנטיות אוסטרצ'ית טיפוסית"
+    }
+   ],
+   "sourceTitle": "ynet · גביע אופ\"א: צ'לסי – הפועל ת\"א 1:1",
+   "sourceUrl": "https://www.ynet.co.il/articles/1,7340,L-1267448,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "lokomotiv-2001-osterc-48",
+   "titleHe": "הפריצה של אוסטרץ' במוסקבה",
+   "subtitleHe": "04.12.2001 · רמנסקויה, מוסקבה · דקה 48",
+   "playedOn": "2001-12-04",
+   "competitionHe": "גביע אופ\"א · סיבוב 3, משחק שני",
+   "opponentHe": "לוקומוטיב מוסקבה",
+   "scoreHe": "1:0 להפועל",
+   "narrativeHe": "סלים טועמה השתלט על כדור במרכז המגרש ושחרר מסירה חכמה לאוסטרץ', שפרץ לבד מול ניגמטולין ובעט לפינה. אופ\"א תיארה בעיטה נמוכה מקצה הרחבה שלוש דקות אחרי המחצית.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "סלים טועמה",
+     "action": "dribble",
+     "zone": "C3",
+     "positionHe": "מרכז המגרש",
+     "noteHe": "השתלטות על הכדור"
+    },
+    {
+     "step": 2,
+     "actorHe": "סלים טועמה",
+     "action": "throughBall",
+     "zone": "C2",
+     "positionHe": "מרכז המגרש קדימה",
+     "noteHe": "מסירת עומק חכמה"
+    },
+    {
+     "step": 3,
+     "actorHe": "מילאן אוסטרץ'",
+     "action": "dribble",
+     "zone": "C2",
+     "positionHe": "חדירה לעבר הרחבה",
+     "noteHe": "אחד על אחד מול השוער"
+    },
+    {
+     "step": 4,
+     "actorHe": "מילאן אוסטרץ'",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "קצה הרחבה",
+     "noteHe": "בעיטה נמוכה לפינה"
+    }
+   ],
+   "sourceTitle": "ynet · לוקומוטיב מוסקבה – הפועל ת\"א 1:0",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-1386648,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "parma-2002-osterc-32",
+   "titleHe": "הפצצה של אוסטרץ' בטרדיני",
+   "subtitleHe": "28.02.2002 · אצטדיון טרדיני, פארמה · דקה 32",
+   "playedOn": "2002-02-28",
+   "competitionHe": "גביע אופ\"א · שמינית גמר, משחק שני",
+   "opponentHe": "פארמה",
+   "scoreHe": "2:1 להפועל",
+   "narrativeHe": "פיני בלילי חילץ כדור לאוסטרץ', שמ-17 מטר שיחרר כדור אדיר לרשת.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "פיני בלילי",
+     "action": "pass",
+     "zone": "C2",
+     "positionHe": "אזור ההתקפה",
+     "noteHe": "חילוץ ומסירה"
+    },
+    {
+     "step": 2,
+     "actorHe": "מילאן אוסטרץ'",
+     "action": "dribble",
+     "zone": "C2",
+     "positionHe": "כ-17 מטר מהשער",
+     "noteHe": "קבלת כדור מחוץ לרחבה"
+    },
+    {
+     "step": 3,
+     "actorHe": "מילאן אוסטרץ'",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "מ-17 מטר",
+     "noteHe": "כדור אדיר לרשת"
+    }
+   ],
+   "sourceTitle": "ynet · גביע אופ\"א: פארמה – הפועל ת\"א 2:1",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-1716228,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "parma-2002-pisont-55",
+   "titleHe": "הטיל של פישונט מול פארמה",
+   "subtitleHe": "28.02.2002 · אצטדיון טרדיני, פארמה · דקה 55",
+   "playedOn": "2002-02-28",
+   "competitionHe": "גביע אופ\"א · שמינית גמר, משחק שני",
+   "opponentHe": "פארמה",
+   "scoreHe": "2:1 להפועל",
+   "narrativeHe": "פיני בלילי מסר כדור נהדר לפישונט, שפרץ לרחבה ובעט טיל אדיר לחיבורים של פארמה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "פיני בלילי",
+     "action": "throughBall",
+     "zone": "C3",
+     "positionHe": "מרכז המגרש",
+     "noteHe": "מסירת עומק נהדרת"
+    },
+    {
+     "step": 2,
+     "actorHe": "אישטוואן פישונט",
+     "action": "dribble",
+     "zone": "C2",
+     "positionHe": "חדירה לתוך הרחבה",
+     "noteHe": "פריצה פנימה"
+    },
+    {
+     "step": 3,
+     "actorHe": "אישטוואן פישונט",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "טיל אדיר לחיבורים"
+    }
+   ],
+   "sourceTitle": "ynet · גביע אופ\"א: פארמה – הפועל ת\"א 2:1",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-1716228,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "milan-2002-kleschenko-31",
+   "titleHe": "הוולה של קלשצ'נקו מול מילאן",
+   "subtitleHe": "14.03.2002 · אצטדיון GSP, ניקוסיה · דקה 31",
+   "playedOn": "2002-03-14",
+   "competitionHe": "גביע אופ\"א · רבע גמר, משחק ראשון",
+   "opponentHe": "מילאן",
+   "scoreHe": "0:1 להפועל",
+   "narrativeHe": "אבוקסיס הגביה מימין, וקלשצ'נקו שיגר בעיטת וולה בזווית קשה משמאל וקבע יתרון לאדומים.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "יוסי אבוקסיס",
+     "action": "cross",
+     "zone": "D2",
+     "positionHe": "אגף ימין",
+     "noteHe": "הגבהה מימין"
+    },
+    {
+     "step": 2,
+     "actorHe": "סרגיי קלשצ'נקו",
+     "action": "dribble",
+     "zone": "B1",
+     "positionHe": "צד שמאל של הרחבה, זווית קשה",
+     "noteHe": "קליטת הכדור באוויר"
+    },
+    {
+     "step": 3,
+     "actorHe": "סרגיי קלשצ'נקו",
+     "action": "shot",
+     "zone": "B1",
+     "positionHe": "זווית קשה משמאל",
+     "noteHe": "בעיטת וולה לרשת"
+    }
+   ],
+   "sourceTitle": "ynet · הפועל תל אביב – מילאן 0:1",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-1765670,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "salzburg-2010-bensahar-44",
+   "titleHe": "הנגיחה של בן סהר בזלצבורג",
+   "subtitleHe": "18.08.2010 · זלצבורג · דקה 44",
+   "playedOn": "2010-08-18",
+   "competitionHe": "פלייאוף ליגת האלופות · משחק ראשון",
+   "opponentHe": "רד בול זלצבורג",
+   "scoreHe": "2:3 להפועל",
+   "narrativeHe": "תנועה נהדרת של ורמוט במרכז הסתיימה אצל בן דיין באגף, וזה הרים כדור מדויק אל הרחבה שם ניצב בן סהר, שנגח פנימה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "גילי ורמוט",
+     "action": "dribble",
+     "zone": "C3",
+     "positionHe": "מרכז המגרש",
+     "noteHe": "תנועה נהדרת עם הכדור"
+    },
+    {
+     "step": 2,
+     "actorHe": "גילי ורמוט",
+     "action": "pass",
+     "zone": "D2",
+     "positionHe": "אל האגף",
+     "noteHe": "מסירה החוצה לבן דיין"
+    },
+    {
+     "step": 3,
+     "actorHe": "דדי בן דיין",
+     "action": "cross",
+     "zone": "D2",
+     "positionHe": "אגף",
+     "noteHe": "הגבהה מדויקת אל הרחבה"
+    },
+    {
+     "step": 4,
+     "actorHe": "בן סהר",
+     "action": "header",
+     "zone": "C1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "נגיחה פנימה"
+    }
+   ],
+   "sourceTitle": "וואלה ספורט · מוקדמות ליגת האלופות: זלצבורג – הפועל ת\"א 2:3",
+   "sourceUrl": "https://sports.walla.co.il/item/1723442",
+   "confidence": 3
+  },
+  {
+   "goalId": "salzburg-2010-shechter-53",
+   "titleHe": "שכטר שובר את מלכודת הנבדל",
+   "subtitleHe": "18.08.2010 · זלצבורג · דקה 53",
+   "playedOn": "2010-08-18",
+   "competitionHe": "פלייאוף ליגת האלופות · משחק ראשון",
+   "opponentHe": "רד בול זלצבורג",
+   "scoreHe": "2:3 להפועל",
+   "narrativeHe": "כדור עומק נהדר של אביחי ידין מצא את שכטר, ששבר את מלכודת ההגנה של האוסטרים, הגיע מול טרמל ובסטייל קבע 1:3.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "אביחי ידין",
+     "action": "throughBall",
+     "zone": "C3",
+     "positionHe": "מרכז המגרש",
+     "noteHe": "כדור עומק נהדר"
+    },
+    {
+     "step": 2,
+     "actorHe": "איתי שכטר",
+     "action": "dribble",
+     "zone": "C2",
+     "positionHe": "מאחורי ההגנה",
+     "noteHe": "שבר את מלכודת הנבדל"
+    },
+    {
+     "step": 3,
+     "actorHe": "איתי שכטר",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "מול השוער טרמל",
+     "noteHe": "סיים בסטייל"
+    }
+   ],
+   "sourceTitle": "וואלה ספורט · מוקדמות ליגת האלופות: זלצבורג – הפועל ת\"א 2:3",
+   "sourceUrl": "https://sports.walla.co.il/item/1723442",
+   "confidence": 3
+  },
+  {
+   "goalId": "benfica-2010-zahavi-24",
+   "titleHe": "הנגיחה של זהבי מול בנפיקה",
+   "subtitleHe": "24.11.2010 · בלומפילד · דקה 24",
+   "playedOn": "2010-11-24",
+   "competitionHe": "ליגת האלופות · שלב הבתים",
+   "opponentHe": "בנפיקה",
+   "scoreHe": "0:3 להפועל",
+   "narrativeHe": "שי אבוטבול הרים כדור חופשי מכ-25 מטר אלכסונית מצד ימין, ערן זהבי עלה נפלא ונגח. לפי וואלה הכדור פגע בדויד לואיז, שינה כיוון וחדר פנימה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "שי אבוטבול",
+     "action": "cross",
+     "zone": "D2",
+     "positionHe": "כ-25 מטר, אלכסונית מצד ימין",
+     "noteHe": "בעיטה חופשית אל הרחבה"
+    },
+    {
+     "step": 2,
+     "actorHe": "ערן זהבי",
+     "action": "dribble",
+     "zone": "C1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "עלה נפלא לכדור"
+    },
+    {
+     "step": 3,
+     "actorHe": "ערן זהבי",
+     "action": "header",
+     "zone": "B1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "נגיחה לפינה השמאלית"
+    }
+   ],
+   "sourceTitle": "ynet · היסטוריה אדומה: 0:3 להפועל ת\"א על בנפיקה",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3989220,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "benfica-2010-zahavi-90-2",
+   "titleHe": "זהבי סוגר ערב חלומי",
+   "subtitleHe": "24.11.2010 · בלומפילד · דקה 90+2",
+   "playedOn": "2010-11-24",
+   "competitionHe": "ליגת האלופות · שלב הבתים",
+   "opponentHe": "בנפיקה",
+   "scoreHe": "0:3 להפועל",
+   "narrativeHe": "הכדור עבר את הגנת בנפיקה והגיע לערן זהבי, שחדר לרחבה ובעט מצד אחד לצד השני; רוברטו לא יכול היה להושיע.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "הכדור",
+     "action": "pass",
+     "zone": "C2",
+     "positionHe": "מרכז, מאחורי קו ההגנה",
+     "noteHe": "הכדור עבר את הגנת בנפיקה"
+    },
+    {
+     "step": 2,
+     "actorHe": "ערן זהבי",
+     "action": "dribble",
+     "zone": "C1",
+     "positionHe": "כניסה לרחבה",
+     "noteHe": "חדירה פנימה"
+    },
+    {
+     "step": 3,
+     "actorHe": "ערן זהבי",
+     "action": "shot",
+     "zone": "B1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "בעיטה מצד אחד לצד השני, לפינה הרחוקה"
+    }
+   ],
+   "sourceTitle": "וואלה ספורט · ליגת האלופות: הפועל ת\"א – בנפיקה 0:3",
+   "sourceUrl": "https://sports.walla.co.il/item/1759685",
+   "confidence": 3
+  },
+  {
+   "goalId": "schalke-2010-shechter-90-4",
+   "titleHe": "שכטר כובש מול נויר",
+   "subtitleHe": "20.10.2010 · גלזנקירכן · דקה 90+4",
+   "playedOn": "2010-10-20",
+   "competitionHe": "ליגת האלופות · שלב הבתים",
+   "opponentHe": "שאלקה 04",
+   "scoreHe": "1:3 לשאלקה",
+   "narrativeHe": "טועמה הגביה, שכטר נשאר לבד מול מנואל נויר וגלגל פנימה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "סלים טועמה",
+     "action": "cross",
+     "zone": "D2",
+     "positionHe": "אגף",
+     "noteHe": "הגבהה אל הרחבה"
+    },
+    {
+     "step": 2,
+     "actorHe": "איתי שכטר",
+     "action": "dribble",
+     "zone": "C1",
+     "positionHe": "לבד מול השוער",
+     "noteHe": "יציאה לעבר השער"
+    },
+    {
+     "step": 3,
+     "actorHe": "איתי שכטר",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "מול נויר",
+     "noteHe": "גלגול פנימה"
+    }
+   ],
+   "sourceTitle": "וואלה ספורט · ליגת האלופות: שאלקה – הפועל ת\"א 1:3",
+   "sourceUrl": "https://sports.walla.co.il/item/1746062",
+   "confidence": 2
+  },
+  {
+   "goalId": "championship-2010-zahavi-92",
+   "titleHe": "שער האליפות של זהבי",
+   "subtitleHe": "15.05.2010 · טדי, ירושלים · דקה 92",
+   "playedOn": "2010-05-15",
+   "competitionHe": "ליגת העל · מחזור אחרון",
+   "opponentHe": "בית\"ר ירושלים",
+   "scoreHe": "1:2 להפועל",
+   "narrativeHe": "בעיטה של גילי ורמוט מקצה הרחבה נהדפה על ידי הרוש, ערן זהבי עט על הריבאונד ובעט מ-8 מטרים פנימה — שער ששווה אליפות.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "גילי ורמוט",
+     "action": "shot",
+     "zone": "C2",
+     "positionHe": "קצה הרחבה",
+     "noteHe": "בעיטה שנהדפה"
+    },
+    {
+     "step": 2,
+     "actorHe": "השוער הרוש",
+     "action": "save",
+     "zone": "C1",
+     "positionHe": "קו השער",
+     "noteHe": "הדיפה של השוער"
+    },
+    {
+     "step": 3,
+     "actorHe": "ערן זהבי",
+     "action": "dribble",
+     "zone": "C1",
+     "positionHe": "כ-8 מטרים מהשער",
+     "noteHe": "הסתערות על הריבאונד"
+    },
+    {
+     "step": 4,
+     "actorHe": "ערן זהבי",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "כ-8 מטרים",
+     "noteHe": "בעיטה פנימה — האליפות"
+    }
+   ],
+   "sourceTitle": "ynet · שער הזהבי: הפועל תל אביב זכתה באליפות",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3889711,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "cupfinal-2010-vermouth-25",
+   "titleHe": "ורמוט בחלק החיצוני של הנעל",
+   "subtitleHe": "11.05.2010 · אצטדיון רמת גן · דקה 25",
+   "playedOn": "2010-05-11",
+   "competitionHe": "גמר גביע המדינה",
+   "opponentHe": "בית\"ר ירושלים",
+   "scoreHe": "1:3 להפועל",
+   "narrativeHe": "המהלך החל בערן זהבי, ששיגר פצצה מ-25 מטרים שנהדפה בקושי; גילי ורמוט השתלט על הכדור החוזר, ומ-12 מטרים בעט עם החלק החיצוני של הנעל ומצא את הרשת.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "ערן זהבי",
+     "action": "shot",
+     "zone": "C2",
+     "positionHe": "כ-25 מטר מהשער",
+     "noteHe": "פצצה מרחוק"
+    },
+    {
+     "step": 2,
+     "actorHe": "השוער",
+     "action": "save",
+     "zone": "C1",
+     "positionHe": "קו השער",
+     "noteHe": "הדיפה בקושי"
+    },
+    {
+     "step": 3,
+     "actorHe": "גילי ורמוט",
+     "action": "dribble",
+     "zone": "C1",
+     "positionHe": "כ-12 מטר מהשער",
+     "noteHe": "השתלטות על הכדור החוזר"
+    },
+    {
+     "step": 4,
+     "actorHe": "גילי ורמוט",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "כ-12 מטר",
+     "noteHe": "בעיטה עם החלק החיצוני של הנעל"
+    }
+   ],
+   "sourceTitle": "ynet · אחרי 3 שנים: הפועל ת\"א זכתה בגביע המדינה",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3887864,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "cupfinal-2010-vermouth-73",
+   "titleHe": "בעיטת היעף של ורמוט",
+   "subtitleHe": "11.05.2010 · אצטדיון רמת גן · דקה 73",
+   "playedOn": "2010-05-11",
+   "competitionHe": "גמר גביע המדינה",
+   "opponentHe": "בית\"ר ירושלים",
+   "scoreHe": "1:3 להפועל",
+   "narrativeHe": "ורמוט החליף מסירות עם ערן זהבי וסיים בבעיטת יעף אדירה מ-10 מטרים; קדוש נכנע.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "גילי ורמוט",
+     "action": "pass",
+     "zone": "C2",
+     "positionHe": "מרכז ההתקפה",
+     "noteHe": "מסירה לזהבי"
+    },
+    {
+     "step": 2,
+     "actorHe": "ערן זהבי",
+     "action": "pass",
+     "zone": "C2",
+     "positionHe": "מרכז ההתקפה",
+     "noteHe": "מסירה חוזרת"
+    },
+    {
+     "step": 3,
+     "actorHe": "גילי ורמוט",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "כ-10 מטרים",
+     "noteHe": "בעיטת יעף אדירה"
+    }
+   ],
+   "sourceTitle": "ynet · אחרי 3 שנים: הפועל ת\"א זכתה בגביע המדינה",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3887864,00.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "cupfinal-2011-toama-2",
+   "titleHe": "טועמה בנגיעה אחת בדקה השנייה",
+   "subtitleHe": "25.05.2011 · אצטדיון רמת גן · דקה 2",
+   "playedOn": "2011-05-25",
+   "competitionHe": "גמר גביע המדינה",
+   "opponentHe": "מכבי חיפה",
+   "scoreHe": "0:1 להפועל",
+   "narrativeHe": "בן סהר הרים מימין, זהבי המשיך עם הראש, וטועמה בעט בנגיעה אחת כדור חזק וחד ברגל שמאל ישר לפינה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "בן סהר",
+     "action": "cross",
+     "zone": "D2",
+     "positionHe": "אגף ימין",
+     "noteHe": "הגבהה מימין"
+    },
+    {
+     "step": 2,
+     "actorHe": "ערן זהבי",
+     "action": "header",
+     "zone": "C1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "הארכה בראש"
+    },
+    {
+     "step": 3,
+     "actorHe": "סלים טועמה",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "בעיטה בנגיעה אחת ברגל שמאל לפינה"
+    }
+   ],
+   "sourceTitle": "וואלה ספורט · הפועל ת\"א – מכבי חיפה 0:1, גמר הגביע",
+   "sourceUrl": "https://sports.walla.co.il/item/1826777",
+   "confidence": 3
+  },
+  {
+   "goalId": "cupfinal-2012-igiebor-90-2",
+   "titleHe": "איגייבור בדקה 92",
+   "subtitleHe": "15.05.2012 · אצטדיון רמת גן · דקה 90+2",
+   "playedOn": "2012-05-15",
+   "competitionHe": "גמר גביע המדינה",
+   "opponentHe": "הפועל באר שבע",
+   "scoreHe": "שער הניצחון",
+   "narrativeHe": "נוסא איגייבור קיבל כדור עומק מסלים טועמה, לא היה בנבדל, ומול דוידוביץ' כבש את שער הניצחון הדרמטי.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "סלים טועמה",
+     "action": "throughBall",
+     "zone": "C3",
+     "positionHe": "מרכז המגרש",
+     "noteHe": "כדור עומק"
+    },
+    {
+     "step": 2,
+     "actorHe": "נוסא איגייבור",
+     "action": "dribble",
+     "zone": "C2",
+     "positionHe": "מאחורי ההגנה",
+     "noteHe": "פריצה — ולא בנבדל"
+    },
+    {
+     "step": 3,
+     "actorHe": "נוסא איגייבור",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "מול דוידוביץ'",
+     "noteHe": "שער הניצחון הדרמטי"
+    }
+   ],
+   "sourceTitle": "ONE · גמר גביע המדינה 2012",
+   "sourceUrl": "https://www.one.co.il/Article/199799.html",
+   "confidence": 3
+  },
+  {
+   "goalId": "derby-2010-shechter-21",
+   "titleHe": "שכטר פותח את הדרבי",
+   "subtitleHe": "22.02.2010 · דרבי תל אביב · דקה 21",
+   "playedOn": "2010-02-22",
+   "competitionHe": "ליגת העל · דרבי תל אביב",
+   "opponentHe": "מכבי תל אביב",
+   "scoreHe": "2:4 להפועל",
+   "narrativeHe": "זהבי בכדור עומק נפלא מצד לצד מצא את לאלה, שבכדור רוחב בישל לשכטר שער קל.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "ערן זהבי",
+     "action": "throughBall",
+     "zone": "C3",
+     "positionHe": "מרכז המגרש",
+     "noteHe": "כדור עומק אלכסוני מצד לצד"
+    },
+    {
+     "step": 2,
+     "actorHe": "לאלה",
+     "action": "pass",
+     "zone": "B2",
+     "positionHe": "אגף / קו הרחבה",
+     "noteHe": "כדור רוחב פנימה"
+    },
+    {
+     "step": 3,
+     "actorHe": "איתי שכטר",
+     "action": "shot",
+     "zone": "C1",
+     "positionHe": "מקרוב",
+     "noteHe": "שער קל"
+    }
+   ],
+   "sourceTitle": "וואלה ספורט · דרבי תל אביב 2:4 להפועל",
+   "sourceUrl": "https://sports.walla.co.il/item/1646079",
+   "confidence": 3
+  },
+  {
+   "goalId": "derby-2010-shechter-65",
+   "titleHe": "המתפרצת של ורמוט בדרבי",
+   "subtitleHe": "22.02.2010 · דרבי תל אביב · דקה 65",
+   "playedOn": "2010-02-22",
+   "competitionHe": "ליגת העל · דרבי תל אביב",
+   "opponentHe": "מכבי תל אביב",
+   "scoreHe": "2:4 להפועל",
+   "narrativeHe": "דה רידר שלח את ורמוט למתפרצת, הקשר עבר בקלות את ראלדס ופירגן לשכטר שגלגל פנימה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "דה רידר",
+     "action": "pass",
+     "zone": "C4",
+     "positionHe": "מרכז, חצי המגרש שלנו",
+     "noteHe": "שחרור למתפרצת"
+    },
+    {
+     "step": 2,
+     "actorHe": "גילי ורמוט",
+     "action": "dribble",
+     "zone": "C2",
+     "positionHe": "מתפרצת דרך המרכז",
+     "noteHe": "עבר בקלות את ראלדס"
+    },
+    {
+     "step": 3,
+     "actorHe": "גילי ורמוט",
+     "action": "pass",
+     "zone": "C1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "פירגן לשכטר"
+    },
+    {
+     "step": 4,
+     "actorHe": "איתי שכטר",
+     "action": "shot",
+     "zone": "B1",
+     "positionHe": "בתוך הרחבה",
+     "noteHe": "גלגול לרשת"
+    }
+   ],
+   "sourceTitle": "וואלה ספורט · דרבי תל אביב 2:4 להפועל",
+   "sourceUrl": "https://sports.walla.co.il/item/1646079",
+   "confidence": 3
+  },
+  {
+   "goalId": "derby-2026-altman-90-2",
+   "titleHe": "אלטמן הופך את הדרבי",
+   "subtitleHe": "25.01.2026 · בלומפילד · דקה 90+2",
+   "playedOn": "2026-01-25",
+   "competitionHe": "ליגת העל · דרבי תל אביב",
+   "opponentHe": "מכבי תל אביב",
+   "scoreHe": "1:2 להפועל",
+   "narrativeHe": "סילבה הרים מצד ימין ואלטמן נגח מ-12 מטרים אל החיבורים של מליקה.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "סילבה",
+     "action": "cross",
+     "zone": "D2",
+     "positionHe": "אגף ימין",
+     "noteHe": "הגבהה מצד ימין"
+    },
+    {
+     "step": 2,
+     "actorHe": "אלטמן",
+     "action": "dribble",
+     "zone": "C1",
+     "positionHe": "כ-12 מטרים מהשער",
+     "noteHe": "עלייה לכדור"
+    },
+    {
+     "step": 3,
+     "actorHe": "אלטמן",
+     "action": "header",
+     "zone": "C1",
+     "positionHe": "כ-12 מטרים",
+     "noteHe": "נגיחה אל החיבורים"
+    }
+   ],
+   "sourceTitle": "וואלה ספורט · דרבי תל אביב 1:2 להפועל",
+   "sourceUrl": "https://sports.walla.co.il/item/3811685",
+   "confidence": 3
+  },
+  {
+   "goalId": "haifa-1986-landau-86",
+   "titleHe": "השער של לנדאו בדקה ה-86",
+   "subtitleHe": "24.5.1986 · בלומפילד · דקה 86",
+   "playedOn": "1986-05-24",
+   "competitionHe": "הליגה הלאומית · המחזור האחרון",
+   "opponentHe": "מכבי חיפה",
+   "scoreHe": "0:1 להפועל",
+   "narrativeHe": "משחק משובח זה לא היה. מכבי חיפה הגיעה לעשות מה שהיא צריכה — תיקו הספיק לה לאליפות — והפועל תל אביב ניסתה מול הסתגרות, צפיפות ואיטיות. גילי לנדאו נכנס בדקה ה-48. בדקה ה-86 נתן לו משה סיני צ'יפ קטן, ולנדאו הקשית מעל אבי רן בקור רוח. שחקני חיפה עטו על השופט צבי שריר בטענת נבדל של אלי יאני; השער אושר, ומעורר מחלוקת עד היום.",
+   "sequence": [
+    {
+     "step": 1,
+     "actorHe": "משה סיני",
+     "action": "throughBall",
+     "zone": "C2",
+     "positionHe": "מרכז המגרש, קדימה",
+     "noteHe": "צ'יפ קטן מעל ההגנה"
+    },
+    {
+     "step": 2,
+     "actorHe": "גילי לנדאו",
+     "action": "shot",
+     "zone": "D1",
+     "positionHe": "מול אבי רן",
+     "noteHe": "הקשתה בקור רוח, מעל השוער, לרשת. שחקני חיפה עטו על השופט בטענת נבדל של אלי יאני — השער אושר"
+    }
+   ],
+   "sourceTitle": "ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86",
+   "sourceUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
+   "confidence": 2
+  }
+ ]
+}

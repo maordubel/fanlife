@@ -1,0 +1,334 @@
+{
+  "note": "13 championships is the IFA/club count; FIFA and UEFA recognise 12, because the abandoned 1934/35 and 1937/38 seasons are not universally counted — recorded as an open conflict rather than resolved here. Pre-state cups are named by bare year in the sources; the canonicaliser renders them YYYY/YY. The research document's claim of a 2025 Toto Cup WIN is wrong and is entered here as the runner-up place it actually was.",
+  "confidence": 2,
+  "source": {
+    "kind": "other",
+    "title": "Verified research pass, 31 Aug 2026",
+    "url": null
+  },
+  "records": [
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1933/34",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1934/35",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1938/39",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1939/40",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1943/44",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1956/57",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1965/66",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1968/69",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1980/81",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1985/86",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1987/88",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "1999/00",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "ליגת-העל",
+      "seasonLabel": "2009/10",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia (IFA/club count: 13)"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1928",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1934",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1937",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1938",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1939",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1944",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1960/61",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1971/72",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1982/83",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1998/99",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "1999/00",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "2005/06",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "2006/07",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "2009/10",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "2010/11",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-המדינה",
+      "seasonLabel": "2011/12",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Hapoel Tel Aviv F.C. — Wikipedia"
+    },
+    {
+      "competitionSlug": "גביע-הטוטו",
+      "seasonLabel": "2001/02",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 2,
+      "noteHe": "גביע הטוטו על היחיד של המועדון",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
+      "sourceTitle": "Wikipedia + worldfootball Toto Cup Al winners"
+    },
+    {
+      "competitionSlug": "גביע-הטוטו",
+      "seasonLabel": "2025/26",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "runner_up",
+      "sport": "football",
+      "confidence": 2,
+      "noteHe": "הפסד בגמר לבית\"ר ירושלים, בית\"ר 2 — הפועל תל אביב 1, 28.10.2025",
+      "sourceUrl": "https://www.kan.org.il/content/kan-news/sport/965001/",
+      "sourceTitle": "כאן חדשות, 28.10.2025"
+    },
+    {
+      "competitionSlug": "גביע-אלופות-אסיה",
+      "seasonLabel": "1967/68",
+      "clubSlug": "הפועל-תל-אביב",
+      "result": "won",
+      "sport": "football",
+      "confidence": 1,
+      "noteHe": "ניצחון בגמר בבנגקוק, הפועל תל אביב 2 — סלנגור 1",
+      "sourceUrl": "https://en.wikipedia.org/wiki/1967_Asian_Champion_Club_Tournament",
+      "sourceTitle": "1967 Asian Champion Club Tournament — Wikipedia"
+    }
+  ]
+}

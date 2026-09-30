@@ -1,0 +1,800 @@
+[
+  {
+    "id": "trivia-001",
+    "question": "In which year was Zrinjski founded?",
+    "answer": "1905",
+    "options": [
+      "1898",
+      "1905",
+      "1912",
+      "1922"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-002",
+    "question": "In which year was the club re-established?",
+    "answer": "1992",
+    "options": [
+      "1945",
+      "1988",
+      "1992",
+      "1994"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-003",
+    "question": "How long does the club describe the post-1945 prohibition as lasting?",
+    "answer": "47 years",
+    "options": [
+      "25 years",
+      "32 years",
+      "47 years",
+      "50 years"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-004",
+    "question": "When did Zrinjski resume official competition after re-establishment?",
+    "answer": "1994",
+    "options": [
+      "1992",
+      "1993",
+      "1994",
+      "1996"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-005",
+    "question": "Which club did Zrinjski face in its first match after renewal?",
+    "answer": "Croatia Zmijavci",
+    "options": [
+      "Velež",
+      "Croatia Zmijavci",
+      "Široki Brijeg",
+      "Sarajevo"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-006",
+    "question": "Where was that 1992 match played?",
+    "answer": "Gospin Dolac, Imotski",
+    "options": [
+      "Mostar",
+      "Gospin Dolac, Imotski",
+      "Sarajevo",
+      "Međugorje"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-007",
+    "question": "Who scored Zrinjski's first post-renewal goal according to the club?",
+    "answer": "Mario Ivanković",
+    "options": [
+      "Luka Modrić",
+      "Mario Ivanković",
+      "Nemanja Bilbija",
+      "Slaven Musa"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-008",
+    "question": "Since which year has Zrinjski played in the unified BiH Premier League?",
+    "answer": "2002",
+    "options": [
+      "1998",
+      "2000",
+      "2002",
+      "2005"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-009",
+    "question": "When did Zrinjski win its first BiH league title?",
+    "answer": "2005",
+    "options": [
+      "2000",
+      "2003",
+      "2005",
+      "2008"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-010",
+    "question": "What was special about the 2004/05 title season?",
+    "answer": "It was the club's centenary season",
+    "options": [
+      "First European season",
+      "Centenary season",
+      "First season at stadium",
+      "First year of Ultras"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "trivia-011",
+    "question": "How many national league titles does the current club brochure list?",
+    "answer": "9",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-012",
+    "question": "Which year is NOT one of Zrinjski's league-title years?",
+    "answer": "2024",
+    "options": [
+      "2018",
+      "2022",
+      "2024",
+      "2025"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-013",
+    "question": "How many BiH Cups does the current club brochure list?",
+    "answer": "4",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-014",
+    "question": "Which year did Zrinjski win its first BiH Cup?",
+    "answer": "2008",
+    "options": [
+      "2005",
+      "2008",
+      "2009",
+      "2014"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-015",
+    "question": "Which club does the official page call Zrinjski's home?",
+    "answer": "HŠK Zrinjski Stadium",
+    "options": [
+      "Rođeni",
+      "Bilino Polje",
+      "HŠK Zrinjski Stadium",
+      "Koševo"
+    ],
+    "sourceIds": [
+      "src-stadium"
+    ]
+  },
+  {
+    "id": "trivia-016",
+    "question": "What is the current stadium address?",
+    "answer": "Stjepana Radića 45",
+    "options": [
+      "Stjepana Radića 45",
+      "Maršala Tita 10",
+      "Kralja Tomislava 1",
+      "Rondo 5"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-017",
+    "question": "What capacity does the club brochure list for the stadium?",
+    "answer": "7,255",
+    "options": [
+      "5,000",
+      "7,255",
+      "10,000",
+      "20,000"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-018",
+    "question": "How many seats are listed for the lower west stand?",
+    "answer": "4,875",
+    "options": [
+      "2,380",
+      "4,875",
+      "5,500",
+      "7,255"
+    ],
+    "sourceIds": [
+      "src-stadium"
+    ]
+  },
+  {
+    "id": "trivia-019",
+    "question": "Which stand was the Ultras' historical home until 2023?",
+    "answer": "Standing Tribune / East",
+    "options": [
+      "Upper West",
+      "Lower West",
+      "Standing Tribune / East",
+      "Away Sector"
+    ],
+    "sourceIds": [
+      "src-stadium"
+    ]
+  },
+  {
+    "id": "trivia-020",
+    "question": "Where is the club training ground located within the stadium complex?",
+    "answer": "Behind the southern goal",
+    "options": [
+      "Behind the northern goal",
+      "Behind the southern goal",
+      "Under upper west",
+      "Outside the city"
+    ],
+    "sourceIds": [
+      "src-stadium"
+    ]
+  },
+  {
+    "id": "trivia-021",
+    "question": "In which year was Ultras-Zrinjski formally founded?",
+    "answer": "1998",
+    "options": [
+      "1993",
+      "1994",
+      "1998",
+      "2000"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "trivia-022",
+    "question": "Since which year does the club say Ultras followed Zrinjski as an unregistered group?",
+    "answer": "1994",
+    "options": [
+      "1992",
+      "1993",
+      "1994",
+      "1998"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "trivia-023",
+    "question": "When did the idea of an organised supporter group begin taking shape?",
+    "answer": "1993",
+    "options": [
+      "1990",
+      "1992",
+      "1993",
+      "1998"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "trivia-024",
+    "question": "Where did Ultras support the first modern home match from?",
+    "answer": "Central/lower west stand",
+    "options": [
+      "East standing",
+      "Away sector",
+      "Central/lower west stand",
+      "Upper west"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "trivia-025",
+    "question": "What is the supporter player-of-the-year award called today?",
+    "answer": "Filip Šunjić – Pipa Trophy",
+    "options": [
+      "Mostar Cup",
+      "Plemići Medal",
+      "Filip Šunjić – Pipa Trophy",
+      "Red Sash Award"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "trivia-026",
+    "question": "What was the award originally called?",
+    "answer": "Zrinjevac",
+    "options": [
+      "Zrinjevac",
+      "Plemić",
+      "Mostarac",
+      "Lenta"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "trivia-027",
+    "question": "Which season did Luka Modrić play for Zrinjski?",
+    "answer": "2003/04",
+    "options": [
+      "2001/02",
+      "2003/04",
+      "2005/06",
+      "2007/08"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-028",
+    "question": "Which supporter award did Modrić win?",
+    "answer": "Filip Šunjić – Pipa Trophy",
+    "options": [
+      "Golden Boot",
+      "Zrinjevac only",
+      "Filip Šunjić – Pipa Trophy",
+      "Captain's Medal"
+    ],
+    "sourceIds": [
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "trivia-029",
+    "question": "Who is the club's all-time top scorer on the official stats page?",
+    "answer": "Nemanja Bilbija",
+    "options": [
+      "Krešimir Kordić",
+      "Nemanja Bilbija",
+      "Mario Ivanković",
+      "Mladen Žižović"
+    ],
+    "sourceIds": [
+      "src-stats"
+    ]
+  },
+  {
+    "id": "trivia-030",
+    "question": "Who is listed alongside the very top of the appearance table?",
+    "answer": "Pero Stojkić",
+    "options": [
+      "Pero Stojkić",
+      "Luka Modrić",
+      "Marko Marić",
+      "Mario Ćuže"
+    ],
+    "sourceIds": [
+      "src-stats"
+    ]
+  },
+  {
+    "id": "trivia-031",
+    "question": "Which defender entered Club 200 and is among the appearance leaders?",
+    "answer": "Slobodan Jakovljević",
+    "options": [
+      "Toni Šunjić",
+      "Slobodan Jakovljević",
+      "Daniel Graovac",
+      "Josip Ćorluka"
+    ],
+    "sourceIds": [
+      "src-stats"
+    ]
+  },
+  {
+    "id": "trivia-032",
+    "question": "When did Zrinjski first play in Europe?",
+    "answer": "2000",
+    "options": [
+      "1998",
+      "2000",
+      "2005",
+      "2008"
+    ],
+    "sourceIds": [
+      "src-europe-2000"
+    ]
+  },
+  {
+    "id": "trivia-033",
+    "question": "Who were Zrinjski's first European opponents?",
+    "answer": "Västra Frölunda IF",
+    "options": [
+      "Legia",
+      "Västra Frölunda IF",
+      "AZ Alkmaar",
+      "Maribor"
+    ],
+    "sourceIds": [
+      "src-europe-2000"
+    ]
+  },
+  {
+    "id": "trivia-034",
+    "question": "What was the score in the first European home game after extra time?",
+    "answer": "2-1 to Zrinjski",
+    "options": [
+      "1-0",
+      "2-1 to Zrinjski",
+      "2-2",
+      "3-1"
+    ],
+    "sourceIds": [
+      "src-europe-2000"
+    ]
+  },
+  {
+    "id": "trivia-035",
+    "question": "Who scored Zrinjski's first goal in that 2000 home European match?",
+    "answer": "Berislav Miloš",
+    "options": [
+      "Leon Buhić",
+      "Berislav Miloš",
+      "Slaven Musa",
+      "Tihomir Skoko"
+    ],
+    "sourceIds": [
+      "src-europe-2000"
+    ]
+  },
+  {
+    "id": "trivia-036",
+    "question": "Who made it 2-0 in extra time in that match?",
+    "answer": "Leon Buhić",
+    "options": [
+      "Leon Buhić",
+      "Mario Ivanković",
+      "Modrić",
+      "Kordić"
+    ],
+    "sourceIds": [
+      "src-europe-2000"
+    ]
+  },
+  {
+    "id": "trivia-037",
+    "question": "What historic UEFA milestone did Zrinjski reach in 2023/24?",
+    "answer": "First BiH club to reach a UEFA group stage",
+    "options": [
+      "First BiH club to win UCL",
+      "First BiH club to reach a UEFA group stage",
+      "First Balkan club in Conference League",
+      "First BiH club to beat an English team"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-038",
+    "question": "Which three clubs were in Zrinjski's 2023/24 Conference League group?",
+    "answer": "Aston Villa, AZ Alkmaar, Legia",
+    "options": [
+      "Aston Villa, AZ Alkmaar, Legia",
+      "West Ham, AZ, Slovan",
+      "Palace, Legia, Botev",
+      "AZ, Maribor, Roma"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-039",
+    "question": "How many points did Zrinjski take in that group?",
+    "answer": "4",
+    "options": [
+      "1",
+      "3",
+      "4",
+      "6"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "trivia-040",
+    "question": "What was the half-time score against AZ on 21 September 2023?",
+    "answer": "0-3",
+    "options": [
+      "0-0",
+      "0-1",
+      "0-2",
+      "0-3"
+    ],
+    "sourceIds": [
+      "src-uefa-az"
+    ]
+  },
+  {
+    "id": "trivia-041",
+    "question": "What was the final score against AZ?",
+    "answer": "4-3",
+    "options": [
+      "3-3",
+      "4-3",
+      "4-4",
+      "5-3"
+    ],
+    "sourceIds": [
+      "src-uefa-az"
+    ]
+  },
+  {
+    "id": "trivia-042",
+    "question": "Who captained Zrinjski in the UEFA full-time report for AZ?",
+    "answer": "Nemanja Bilbija",
+    "options": [
+      "Mario Tičinović",
+      "Marko Marić",
+      "Nemanja Bilbija",
+      "Slobodan Jakovljević"
+    ],
+    "sourceIds": [
+      "src-uefa-az-report"
+    ]
+  },
+  {
+    "id": "trivia-043",
+    "question": "Which kit brand has supplied Zrinjski since 2017?",
+    "answer": "Macron",
+    "options": [
+      "Zeus",
+      "Naai",
+      "Macron",
+      "Lotto"
+    ],
+    "sourceIds": [
+      "src-kits"
+    ]
+  },
+  {
+    "id": "trivia-044",
+    "question": "Which brand supplied the 2004/05 title-season home shirt?",
+    "answer": "Naai",
+    "options": [
+      "Fotex",
+      "Naai",
+      "Zeus",
+      "Macron"
+    ],
+    "sourceIds": [
+      "src-2005-kit"
+    ]
+  },
+  {
+    "id": "trivia-045",
+    "question": "What design does Football Kit Archive list for the 2004/05 home shirt?",
+    "answer": "Sash",
+    "options": [
+      "Hoops",
+      "Checkers",
+      "Sash",
+      "Plain"
+    ],
+    "sourceIds": [
+      "src-2005-kit"
+    ]
+  },
+  {
+    "id": "trivia-046",
+    "question": "What design is listed for the 1994/95 home shirt?",
+    "answer": "Hoops",
+    "options": [
+      "Hoops",
+      "Sash",
+      "Stripes",
+      "Plain"
+    ],
+    "sourceIds": [
+      "src-1994-kit"
+    ]
+  },
+  {
+    "id": "trivia-047",
+    "question": "What design is listed for the 1995/96 home shirt?",
+    "answer": "Checkers",
+    "options": [
+      "Checkers",
+      "Hoops",
+      "Sash",
+      "Plain"
+    ],
+    "sourceIds": [
+      "src-1995-kit"
+    ]
+  },
+  {
+    "id": "trivia-048",
+    "question": "What design is listed for the 1997/98 home shirt?",
+    "answer": "Sash",
+    "options": [
+      "Sash",
+      "Stripes",
+      "Hoops",
+      "Checkers"
+    ],
+    "sourceIds": [
+      "src-1997-kit"
+    ]
+  },
+  {
+    "id": "trivia-049",
+    "question": "Who scored the only goal in the first leg of the 2026 Cup final?",
+    "answer": "Nemanja Bilbija",
+    "options": [
+      "Mario Ćuže",
+      "Nemanja Bilbija",
+      "Karlo Abramović",
+      "Hrvoje Barišić"
+    ],
+    "sourceIds": [
+      "src-2026-cup-1"
+    ]
+  },
+  {
+    "id": "trivia-050",
+    "question": "Who assisted the documented 2026 Cup-final first-leg goal with a cross from the left?",
+    "answer": "Mario Ćuže",
+    "options": [
+      "Petar Mamić",
+      "Mario Ćuže",
+      "Kerim Memija",
+      "Duje Dujmović"
+    ],
+    "sourceIds": [
+      "src-2026-cup-1"
+    ]
+  },
+  {
+    "id": "trivia-051",
+    "question": "What was the attendance for the 2026 Cup-final first leg?",
+    "answer": "7,200",
+    "options": [
+      "4,875",
+      "6,000",
+      "7,200",
+      "10,000"
+    ],
+    "sourceIds": [
+      "src-2026-cup-1"
+    ]
+  },
+  {
+    "id": "trivia-052",
+    "question": "What was the second-leg score at Rođeni?",
+    "answer": "1-1",
+    "options": [
+      "0-0",
+      "1-0 Velež",
+      "1-1",
+      "2-1 Zrinjski"
+    ],
+    "sourceIds": [
+      "src-2026-cup-2"
+    ]
+  },
+  {
+    "id": "trivia-053",
+    "question": "Who scored for Zrinjski in the second leg?",
+    "answer": "Nemanja Bilbija",
+    "options": [
+      "Mario Ćuže",
+      "Nemanja Bilbija",
+      "Antonio Ilić",
+      "Karlo Abramović"
+    ],
+    "sourceIds": [
+      "src-2026-cup-2"
+    ]
+  },
+  {
+    "id": "trivia-054",
+    "question": "Which English club did Zrinjski face in the 2026 Conference League knockout play-off?",
+    "answer": "Crystal Palace",
+    "options": [
+      "Aston Villa",
+      "Chelsea",
+      "Crystal Palace",
+      "West Ham"
+    ],
+    "sourceIds": [
+      "src-2026-palace-tickets"
+    ]
+  },
+  {
+    "id": "trivia-055",
+    "question": "What was the member presale price for lower west vs Crystal Palace?",
+    "answer": "30 KM",
+    "options": [
+      "20 KM",
+      "30 KM",
+      "40 KM",
+      "50 KM"
+    ],
+    "sourceIds": [
+      "src-2026-palace-tickets"
+    ]
+  },
+  {
+    "id": "trivia-056",
+    "question": "What is the current junior membership fee listed by the club?",
+    "answer": "10 KM",
+    "options": [
+      "5 KM",
+      "10 KM",
+      "20 KM",
+      "30 KM"
+    ],
+    "sourceIds": [
+      "src-membership"
+    ]
+  },
+  {
+    "id": "trivia-057",
+    "question": "What supporter event has been organised since 2008 with proceeds for humanitarian actions?",
+    "answer": "Volim te bola",
+    "options": [
+      "Pipa Cup",
+      "Volim te bola",
+      "Mostar Masters",
+      "Lenta Cup"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  }
+]

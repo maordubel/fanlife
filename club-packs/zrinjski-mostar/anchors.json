@@ -1,0 +1,344 @@
+[
+  {
+    "id": "founded-1905",
+    "year": 1905,
+    "type": "foundation",
+    "title": "Club founded",
+    "summary": "Zrinjski traces its founding to 1905.",
+    "knownFacts": [
+      "Founded in Mostar in 1905."
+    ],
+    "suitableTemplates": [
+      "ARCHIVE_PROLOGUE"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "ban-1945",
+    "year": 1945,
+    "type": "sensitive-history",
+    "title": "Club activity banned",
+    "summary": "The club says its activity was prohibited by the post-war communist authorities.",
+    "knownFacts": [
+      "Last friendly in March 1945.",
+      "Club activity ceased until early 1990s."
+    ],
+    "suitableTemplates": [
+      "FAMILY_MEMORY"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "renewal-1992",
+    "year": 1992,
+    "date": "1992-08-04",
+    "type": "reestablishment",
+    "title": "Club activity restored",
+    "summary": "Modern Zrinjski era begins.",
+    "knownFacts": [
+      "Re-established in 1992.",
+      "First post-renewal match 30 September 1992 vs Croatia Zmijavci in Imotski."
+    ],
+    "suitableTemplates": [
+      "FAMILY_MEMORY"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "home-1994",
+    "year": 1994,
+    "type": "stadium/supporters",
+    "title": "Modern home era and organised support",
+    "summary": "Zrinjski begins modern home history at the current stadium; Ultras support dates from this era.",
+    "knownFacts": [
+      "Official competition begins in 1994.",
+      "Club marks first home-era playoff at the stadium in 1994.",
+      "Ultras followed as an unregistered group from 1994."
+    ],
+    "suitableTemplates": [
+      "FIRST_MEMORY",
+      "SUPPORTER_ORIGIN"
+    ],
+    "sourceIds": [
+      "src-stadium",
+      "src-fans"
+    ]
+  },
+  {
+    "id": "ultras-1998",
+    "year": 1998,
+    "type": "supporter-culture",
+    "title": "Ultras-Zrinjski formally founded",
+    "summary": "Supporter club formalisation.",
+    "knownFacts": [
+      "Officially founded in 1998."
+    ],
+    "suitableTemplates": [
+      "SUPPORTER_JOB",
+      "COMMUNITY_BUILDER"
+    ],
+    "sourceIds": [
+      "src-fans"
+    ]
+  },
+  {
+    "id": "europe-2000",
+    "year": 2000,
+    "type": "europe",
+    "title": "First European campaign",
+    "summary": "Intertoto tie with Västra Frölunda.",
+    "knownFacts": [
+      "First European away leg 18 June 2000.",
+      "First European home game 25 June 2000.",
+      "Zrinjski won home leg 2-1 after extra time but did not advance."
+    ],
+    "suitableTemplates": [
+      "EUROPE_TRIP"
+    ],
+    "sourceIds": [
+      "src-europe-2000"
+    ]
+  },
+  {
+    "id": "modric-2003",
+    "year": 2003,
+    "type": "player",
+    "title": "Luka Modrić season",
+    "summary": "Modrić played his first professional season at Zrinjski.",
+    "knownFacts": [
+      "2003/04 season.",
+      "Won supporter Pipa award for that season."
+    ],
+    "suitableTemplates": [
+      "YOUNG_STAR",
+      "MEMORY"
+    ],
+    "sourceIds": [
+      "src-club-info",
+      "src-pipa"
+    ]
+  },
+  {
+    "id": "title-2005",
+    "year": 2005,
+    "type": "title",
+    "title": "First BiH league title",
+    "summary": "First national league championship in the centenary season.",
+    "knownFacts": [
+      "First league title 2004/05."
+    ],
+    "suitableTemplates": [
+      "MAJOR_TITLE"
+    ],
+    "sourceIds": [
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "cup-2008",
+    "year": 2008,
+    "type": "cup",
+    "title": "First BiH Cup",
+    "summary": "First national cup success.",
+    "knownFacts": [
+      "Cup winner in 2008."
+    ],
+    "suitableTemplates": [
+      "MAJOR_CUP",
+      "COMMUNITY_BUILDER"
+    ],
+    "sourceIds": [
+      "src-club-info",
+      "src-fans"
+    ]
+  },
+  {
+    "id": "title-2009",
+    "year": 2009,
+    "type": "title",
+    "title": "Second league title",
+    "summary": "Second league championship.",
+    "knownFacts": [
+      "League champion 2009."
+    ],
+    "suitableTemplates": [
+      "MAJOR_TITLE"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "title-2014",
+    "year": 2014,
+    "type": "title",
+    "title": "Third league title",
+    "summary": "League champion 2014.",
+    "knownFacts": [
+      "League champion 2014."
+    ],
+    "suitableTemplates": [
+      "RETURN_TO_TOP"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "three-peat-2016-18",
+    "year": 2016,
+    "type": "era",
+    "title": "Three consecutive league titles",
+    "summary": "2016, 2017 and 2018 titles create a sustained winning era.",
+    "knownFacts": [
+      "League titles in 2016, 2017, 2018."
+    ],
+    "suitableTemplates": [
+      "HOUSEHOLD_WEEK",
+      "ERA_ARC"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "title-2022",
+    "year": 2022,
+    "type": "title",
+    "title": "League title 2022",
+    "summary": "Return to the top.",
+    "knownFacts": [
+      "League champion 2022."
+    ],
+    "suitableTemplates": [
+      "RETURN_VISIT",
+      "MAJOR_TITLE"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "double-2023",
+    "year": 2023,
+    "type": "double/europe",
+    "title": "Double and UEFA breakthrough",
+    "summary": "League and cup success precede the club's first UEFA group-stage appearance.",
+    "knownFacts": [
+      "League champion 2023.",
+      "Cup winner 2023.",
+      "First club from Bosnia and Herzegovina to reach a UEFA group stage in 2023/24."
+    ],
+    "suitableTemplates": [
+      "MAJOR_TITLE",
+      "MAJOR_CUP",
+      "EUROPE_TRIP"
+    ],
+    "sourceIds": [
+      "src-club-info",
+      "src-club-history"
+    ]
+  },
+  {
+    "id": "az-2023",
+    "year": 2023,
+    "date": "2023-09-21",
+    "type": "europe",
+    "title": "Zrinjski 4-3 AZ Alkmaar",
+    "summary": "Historic comeback from 0-3 at half-time.",
+    "knownFacts": [
+      "0-3 at half-time.",
+      "4-3 final score."
+    ],
+    "suitableTemplates": [
+      "EUROPE_NIGHT",
+      "GOAL_RECONSTRUCTION"
+    ],
+    "sourceIds": [
+      "src-uefa-az",
+      "src-uefa-az-report"
+    ]
+  },
+  {
+    "id": "cup-2024",
+    "year": 2024,
+    "type": "cup",
+    "title": "BiH Cup 2024",
+    "summary": "Cup success during European-era continuity.",
+    "knownFacts": [
+      "Cup winner 2024."
+    ],
+    "suitableTemplates": [
+      "MAJOR_CUP"
+    ],
+    "sourceIds": [
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "title-2025",
+    "year": 2025,
+    "type": "title",
+    "title": "Ninth league title",
+    "summary": "Zrinjski becomes 2024/25 champion.",
+    "knownFacts": [
+      "Ninth national title.",
+      "Secured with one round remaining."
+    ],
+    "suitableTemplates": [
+      "MAJOR_TITLE",
+      "CLUB_GOVERNANCE"
+    ],
+    "sourceIds": [
+      "src-2025-title",
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "palace-2026",
+    "year": 2026,
+    "type": "europe",
+    "title": "Conference League knockout play-off vs Crystal Palace",
+    "summary": "A late-life European chapter with documented ticketing and membership priority.",
+    "knownFacts": [
+      "Home leg 19 February 2026.",
+      "Official ticket prices and member presale documented."
+    ],
+    "suitableTemplates": [
+      "EUROPE_TRIP",
+      "FINAL_TRIP_PLAN"
+    ],
+    "sourceIds": [
+      "src-2026-palace-tickets",
+      "src-club-info"
+    ]
+  },
+  {
+    "id": "cup-2026",
+    "year": 2026,
+    "type": "cup/derby",
+    "title": "Fourth BiH Cup, final vs Velež",
+    "summary": "Two-leg Mostar derby final.",
+    "knownFacts": [
+      "First leg 1-0 Zrinjski.",
+      "Second leg 1-1.",
+      "Zrinjski won fourth cup.",
+      "Bilbija scored in both legs."
+    ],
+    "suitableTemplates": [
+      "MAJOR_CUP",
+      "DERBY",
+      "LAST_WALK"
+    ],
+    "sourceIds": [
+      "src-2026-cup-1",
+      "src-2026-cup-2"
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+import{PGlite}from'@electric-sql/pglite'
+import{pgcrypto}from'@electric-sql/pglite/contrib/pgcrypto'
+import{readFile,readdir}from'node:fs/promises'
+import assert from'node:assert/strict'
+const db=await PGlite.create({extensions:{pgcrypto}})
+try{await db.exec(await readFile('scripts/master/local-bootstrap.sql','utf8'));const files=(await readdir('supabase/migrations')).filter(f=>f.endsWith('.sql')).sort();for(const f of files)await db.exec(await readFile(`supabase/migrations/${f}`,'utf8'));const id='11111111-1111-4111-8111-111111111111';await db.query('insert into auth.users(id) values($1)',[id]);await db.query("insert into worker_admin(user_id,note) values($1,'Evaluation probe')",[id]);const r=await db.transaction(async tx=>{await tx.query("select set_config('request.jwt.claim.sub',$1,true),set_config('request.jwt.claims',$2,true)",[id,JSON.stringify({sub:id,role:'authenticated',is_anonymous:false})]);await tx.exec('set local role authenticated');await tx.query('select * from worker_profile_ensure()');return tx.query('select worker_admin_whoami() as admin,worker_closet_mine() as closet')});assert.equal(r.rows[0].admin.admin,true);assert.equal(r.rows[0].closet.ok,true);console.log(JSON.stringify({migrations:files.length,profile:'passed',admin:'passed',closet:'passed',database:'local PostgreSQL; no Supabase connection'},null,2))}finally{await db.close()}

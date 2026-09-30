@@ -1,0 +1,47 @@
+{
+  "status": "OPEN_WITH_EDITORIAL_GUARDRAILS",
+  "primaryRival": "FK Velež Mostar",
+  "cards": [
+    {
+      "title": "The 2026 Cup Final",
+      "type": "sporting",
+      "facts": [
+        "Zrinjski won first leg 1-0",
+        "Second leg 1-1",
+        "Bilbija scored in both legs"
+      ],
+      "sourceIds": [
+        "src-2026-cup-1",
+        "src-2026-cup-2"
+      ]
+    },
+    {
+      "title": "Same City, Different Histories",
+      "type": "archive-context",
+      "facts": [
+        "The stadium was Velež's home from 1958 before Zrinjski's modern home era began in 1994."
+      ],
+      "sourceIds": [
+        "src-stadium"
+      ],
+      "editorial": "Explain contested city history through sourced context; do not decide political claims."
+    },
+    {
+      "title": "Full House",
+      "type": "sporting",
+      "facts": [
+        "2026 first leg attendance: 7,200"
+      ],
+      "sourceIds": [
+        "src-2026-cup-1"
+      ]
+    }
+  ],
+  "hardRules": [
+    "No ethnic or political hate scoring.",
+    "No slurs.",
+    "No violent challenge mechanics.",
+    "Contested history is attributed, not declared by the game.",
+    "Sports rivalry can remain emotionally intense."
+  ]
+}

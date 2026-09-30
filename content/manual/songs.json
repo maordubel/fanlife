@@ -1,0 +1,203 @@
+{
+  "note": "Songs by type — never one undifferentiated table. A player song carries the player and the melody it borrows, which is what makes 'לאיזה שחקן הוקדש Creep?' answerable. Terrace titles the source names but does not describe are stored at confidence 1: they are in the archive and below the floor, so they cannot become questions until a melody or a season is attached. Lyrics are not stored — metadata only, per the copyright rule.",
+  "confidence": 2,
+  "source": {
+    "kind": "wiki",
+    "title": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker",
+    "url": "https://wiki.red-fans.com/"
+  },
+  "records": [
+    {
+      "slug": "16-מלאו-לנער",
+      "titleHe": "16 מלאו לנער",
+      "songType": "player_song",
+      "sport": "football",
+      "personNameHe": "ביברס נאתכו",
+      "originalTitle": "16 מלאו לנער",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "Bella-Ciao-—-יניב-מזרחי",
+      "titleHe": "Bella Ciao — יניב מזרחי",
+      "songType": "player_song",
+      "sport": "football",
+      "personNameHe": "יניב מזרחי",
+      "originalTitle": "Bella Ciao",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "Big-Big-World-—-גיא-צרפתי",
+      "titleHe": "Big Big World — גיא צרפתי",
+      "songType": "player_song",
+      "sport": "football",
+      "personNameHe": "גיא צרפתי",
+      "originalTitle": "Big Big World",
+      "originalArtist": "Emilia",
+      "backgroundHe": "המקור מקשר את הלחן גם לליאור ליובין.",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "Call-Me-—-יורגן-קולין",
+      "titleHe": "Call Me — יורגן קולין",
+      "songType": "player_song",
+      "sport": "football",
+      "personNameHe": "יורגן קולין",
+      "originalTitle": "Call Me",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "Creep-—-דניאל-דה-רידר",
+      "titleHe": "Creep — דניאל דה רידר",
+      "songType": "player_song",
+      "sport": "football",
+      "personNameHe": "דניאל דה רידר",
+      "originalTitle": "Creep",
+      "originalArtist": "Radiohead",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "Elle-était-si-jolie-—-עומר-פדידה",
+      "titleHe": "Elle était si jolie — עומר פדידה",
+      "songType": "player_song",
+      "sport": "football",
+      "personNameHe": "עומר פדידה",
+      "originalTitle": "Elle était si jolie",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "Im-Mr-Lonely-—-רמזי-ספורי",
+      "titleHe": "I'm Mr Lonely — רמזי ספורי",
+      "songType": "player_song",
+      "sport": "football",
+      "personNameHe": "רמזי ספורי",
+      "originalTitle": "Mr. Lonely",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "Let-the-Sunshine-In-—-אבי-כנפו",
+      "titleHe": "Let the Sunshine In — אבי כנפו",
+      "songType": "player_song",
+      "sport": "football",
+      "personNameHe": "אבי כנפו",
+      "originalTitle": "Let the Sunshine In",
+      "backgroundHe": "המקור מקשר את הלחן גם לאורי שלף.",
+      "confidence": 2,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "לא-יודע-להסביר",
+      "titleHe": "לא יודע להסביר",
+      "songType": "terrace_song",
+      "sport": "football",
+      "seasonLabel": "2023/24",
+      "originalTitle": "Suavemente",
+      "originalArtist": "Elvis Crespo",
+      "lyricsAuthorHe": "אולטראס הפועל",
+      "backgroundHe": "ידוע גם כ\"בחרתי בך - הפועל\". התקבל היטב ביציע. הופיעה גרסת ערש ב-HTA Babies, ולאה קטמין הקליטה גרסה באלבומה הרביעי.",
+      "confidence": 3,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "ואלה-שמות-—-גרסת-הפועל-תא",
+      "titleHe": "ואלה שמות — גרסת הפועל ת\"א",
+      "songType": "club_song",
+      "sport": "football",
+      "seasonLabel": "2014/15",
+      "originalTitle": "ואלה שמות",
+      "originalArtist": "יוני רכטר",
+      "lyricsAuthorHe": "יפתח לינדנר",
+      "backgroundHe": "פורסם ב-2014 ויצא בפתיחת עונת 2014/15. מונה שחקני הפועל לאורך ההיסטוריה. מכיל גם התייחסויות לכדורסל, שמסומנות מחוץ לתחום עבור משחק הכדורגל.",
+      "confidence": 3,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "אדום-עולה-בבלומפילד",
+      "titleHe": "אדום עולה בבלומפילד",
+      "songType": "terrace_song",
+      "sport": "football",
+      "confidence": 1,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "אדום-עולה-עולה",
+      "titleHe": "אדום עולה עולה",
+      "songType": "terrace_song",
+      "sport": "football",
+      "confidence": 1,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "אדומה-לא-תצעדי-לבד",
+      "titleHe": "אדומה לא תצעדי לבד",
+      "songType": "terrace_song",
+      "sport": "football",
+      "confidence": 1,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "אדומה-שלי",
+      "titleHe": "אדומה שלי",
+      "songType": "terrace_song",
+      "sport": "football",
+      "confidence": 1,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "אהבה-בת-מאה-—-שיר-המאה-של-הפועל-תל-אביב",
+      "titleHe": "אהבה בת מאה — שיר המאה של הפועל תל אביב",
+      "songType": "terrace_song",
+      "sport": "football",
+      "confidence": 1,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "אמרו-לו",
+      "titleHe": "אמרו לו",
+      "songType": "terrace_song",
+      "sport": "football",
+      "confidence": 1,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "גם-כשאת-מגמגמת",
+      "titleHe": "גם כשאת מגמגמת",
+      "songType": "terrace_song",
+      "sport": "football",
+      "confidence": 1,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    },
+    {
+      "slug": "היה-לנו-טוב-נהיה-לנו-רע",
+      "titleHe": "היה לנו טוב נהיה לנו רע",
+      "songType": "terrace_song",
+      "sport": "football",
+      "confidence": 1,
+      "sourceUrl": "https://wiki.red-fans.com/",
+      "sourceTitle": "ויקיפועל — קטגוריות השירים, דרך מסמך המחקר של צוות The Worker"
+    }
+  ]
+}

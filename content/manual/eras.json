@@ -1,0 +1,53 @@
+{
+  "note": "PROPOSED product taxonomy for navigation and progression — not a historical claim. Names and boundaries await Maor's answers to docs/02-data-questions.md section 1. Loaded at confidence 0 so nothing here can reach question generation.",
+  "confidence": 0,
+  "source": {
+    "kind": "manual",
+    "title": "Proposed era taxonomy (awaiting confirmation)",
+    "url": null
+  },
+  "records": [
+    {
+      "slug": "era-1",
+      "nameHe": "תקופה 1",
+      "startYear": 1923,
+      "endYear": 1955,
+      "sortOrder": 1
+    },
+    {
+      "slug": "era-2",
+      "nameHe": "תקופה 2",
+      "startYear": 1956,
+      "endYear": 1969,
+      "sortOrder": 2
+    },
+    {
+      "slug": "era-3",
+      "nameHe": "תקופה 3",
+      "startYear": 1970,
+      "endYear": 1998,
+      "sortOrder": 3
+    },
+    {
+      "slug": "era-4",
+      "nameHe": "תקופה 4",
+      "startYear": 1999,
+      "endYear": 2003,
+      "sortOrder": 4
+    },
+    {
+      "slug": "era-5",
+      "nameHe": "תקופה 5",
+      "startYear": 2004,
+      "endYear": 2012,
+      "sortOrder": 5
+    },
+    {
+      "slug": "era-6",
+      "nameHe": "תקופה 6",
+      "startYear": 2013,
+      "endYear": null,
+      "sortOrder": 6
+    }
+  ]
+}
