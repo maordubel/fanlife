@@ -37,7 +37,7 @@ Compiler normalizes identifiers, numeric confidence and supported legacy confide
 
 ## Tenant authority and compatibility
 
-Closed registry host resolution runs on the server for pages and every action. Mismatched path selectors fail. Unknown subdomains do not default to Hapoel. Explicit club paths on neutral hosts are evaluation-only. Actions validate pack version, current card ID, seed/cursor and placement indices. Scores are local evaluation display, not persisted rankings. Production account/RLS/anti-cheat are later milestones.
+Closed registry host resolution runs on the server for pages and every action. Mismatched path selectors fail. Unknown subdomains do not default to Hapoel. Explicit club paths on neutral hosts are evaluation-only. Existing admin pauses and disabled live-club gates also block shared actions. Research/review club previews require evaluation mode. Actions validate pack version, current card ID, seed/cursor and placement indices. Scores are local evaluation display, not persisted rankings. Production account/RLS/anti-cheat are later milestones.
 
 `timeline-engine.ts` owns one dealing/grading algorithm. `SharedTimelineBoard` owns the timer, slots, feedback, lives, combo and score display. The native wrapper retains coach, recording, sharing and recommendations. Shared wrappers provide English/Hebrew results. No algorithm is forked.
 
