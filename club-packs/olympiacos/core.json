@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "clubId": "olympiacos",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "uefa-results",
+      "title": "UEFA: all results, 2023/24",
+      "url": "https://www.uefa.com/uefaconferenceleague/news/0285-18e1b615fd5b-6fe5294e3ddd-1000--europa-conference-league-all-the-results/",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-09-30"
+    },
+    {
+      "id": "villa-away",
+      "title": "Aston Villa vs Olympiacos match report",
+      "url": "https://www.espn.com/soccer/report/_/gameId/702132",
+      "publisher": "Reuters",
+      "access": "available",
+      "checkedAt": "2026-09-30"
+    },
+    {
+      "id": "villa-home",
+      "title": "Olympiacos reach Conference League final",
+      "url": "https://www.reuters.com/sports/soccer/olympiakos-beat-villa-reach-europa-conference-league-final-2024-05-09/",
+      "publisher": "Reuters",
+      "access": "available",
+      "checkedAt": "2026-09-30"
+    },
+    {
+      "id": "final",
+      "title": "Olympiacos win Conference League final",
+      "url": "https://www.reuters.com/sports/soccer/olympiakos-beat-fiorentina-1-0-extra-time-win-europa-conference-league-2024-05-29/",
+      "publisher": "Reuters",
+      "access": "available",
+      "checkedAt": "2026-09-30"
+    }
+  ],
+  "archive": [
+    {
+      "id": "villa-away",
+      "value": {
+        "name": "Aston Villa 2–4 Olympiacos",
+        "on": "2024-05-02",
+        "precision": "day",
+        "hint": "UEFA Europa Conference League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-results",
+        "villa-away"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-09-30",
+      "approvedAt": "2026-09-30",
+      "approvedBy": "automated:cross-source-review-m1",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+    },
+    {
+      "id": "villa-home",
+      "value": {
+        "name": "Olympiacos 2–0 Aston Villa",
+        "on": "2024-05-09",
+        "precision": "day",
+        "hint": "UEFA Europa Conference League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-results",
+        "villa-home"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-09-30",
+      "approvedAt": "2026-09-30",
+      "approvedBy": "automated:cross-source-review-m1",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+    },
+    {
+      "id": "fiorentina-final",
+      "value": {
+        "name": "Olympiacos 1–0 Fiorentina (after extra time)",
+        "on": "2024-05-29",
+        "precision": "day",
+        "hint": "UEFA Europa Conference League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-results",
+        "final"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-09-30",
+      "approvedAt": "2026-09-30",
+      "approvedBy": "automated:cross-source-review-m1",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+    }
+  ]
+}

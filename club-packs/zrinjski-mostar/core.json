@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "uefa-results",
+      "title": "UEFA: all results, 2023/24",
+      "url": "https://www.uefa.com/uefaconferenceleague/news/0285-18e1b615fd5b-6fe5294e3ddd-1000--europa-conference-league-all-the-results/",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-09-30"
+    },
+    {
+      "id": "az-report",
+      "title": "Zrinjski vs AZ match report",
+      "url": "https://balkans.aljazeera.net/news/sports/2023/9/21/zrinjski-u-sjajnoj-utakmici-slavio-historijsku-pobjedu-protiv-az-alkmaara",
+      "publisher": "Al Jazeera",
+      "access": "available",
+      "checkedAt": "2026-09-30"
+    },
+    {
+      "id": "villa-away",
+      "title": "Aston Villa: Unai Emery match wins",
+      "url": "https://www.avfc.co.uk/news/2026/march/13/feature-unai-emery-s-100-villa-wins/",
+      "publisher": "Aston Villa FC",
+      "access": "available",
+      "checkedAt": "2026-09-30"
+    },
+    {
+      "id": "villa-home",
+      "title": "Zrinjski vs Aston Villa match report",
+      "url": "https://www.skysports.com/football/zrinjski-vs-a-villa/499166",
+      "publisher": "Sky Sports",
+      "access": "available",
+      "checkedAt": "2026-09-30"
+    }
+  ],
+  "archive": [
+    {
+      "id": "az-home",
+      "value": {
+        "name": "Zrinjski 4–3 AZ Alkmaar",
+        "on": "2023-09-21",
+        "precision": "day",
+        "hint": "UEFA Europa Conference League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-results",
+        "az-report"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-09-30",
+      "approvedAt": "2026-09-30",
+      "approvedBy": "automated:cross-source-review-m1",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+    },
+    {
+      "id": "villa-away",
+      "value": {
+        "name": "Aston Villa 1–0 Zrinjski",
+        "on": "2023-10-05",
+        "precision": "day",
+        "hint": "UEFA Europa Conference League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-results",
+        "villa-away"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-09-30",
+      "approvedAt": "2026-09-30",
+      "approvedBy": "automated:cross-source-review-m1",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+    },
+    {
+      "id": "villa-home",
+      "value": {
+        "name": "Zrinjski 1–1 Aston Villa",
+        "on": "2023-12-14",
+        "precision": "day",
+        "hint": "UEFA Europa Conference League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-results",
+        "villa-home"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-09-30",
+      "approvedAt": "2026-09-30",
+      "approvedBy": "automated:cross-source-review-m1",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+    }
+  ]
+}
