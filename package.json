@@ -73,7 +73,9 @@
     "master:upstream": "node scripts/master/upstream.mjs",
     "master:test": "vitest run tests/master",
     "master:local-db": "node scripts/master/check-local-db.mjs",
-    "master:browser": "node scripts/master/browser-smoke.mjs"
+    "master:browser": "node scripts/master/browser-smoke.mjs",
+    "master:identity": "node --import tsx scripts/master/club-colors.ts",
+    "master:core-browser": "node --import tsx scripts/master/core-browser-smoke.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "0.5.8",

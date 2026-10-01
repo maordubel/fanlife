@@ -1,4 +1,5 @@
 import type {DatedCard} from '@/lib/game/timeline-run'
+import type {ClubTheme} from './theme'
 export type FactStatus = 'draft' | 'review' | 'approved' | 'rejected' | 'deep_research'
 export type Confidence = 0 | 1 | 2 | 3
 export type Locale = 'en' | 'he' | 'el' | 'hr'
@@ -16,7 +17,7 @@ export type ClubData = {
   schemaVersion:1; version:string
   identity:{id:string;name:string;city:string;country:string;sport:'football'}
   locales:{ui:Locale;content:Locale;supported:Locale[];direction:'ltr'|'rtl'}
-  theme:{primary:string;foreground:string;background:string;forbidden:string[]}
+  theme:ClubTheme
   rivals:Fact<Entity>[]|null;competitions:Fact<Entity>[]|null;seasons:Fact<Entity>[]|null
   players:Fact<Entity>[]|null;matches:Fact<Entity>[]|null;trophies:Fact<Entity>[]|null
   kits:Fact<Entity>[]|null;stadiums:Fact<Entity>[]|null;places:Fact<Entity>[]|null;culture:Fact<Entity>[]|null

@@ -42,3 +42,7 @@ Closed registry host resolution runs on the server for pages and every action. M
 `timeline-engine.ts` owns one dealing/grading algorithm. `SharedTimelineBoard` owns the timer, slots, feedback, lives, combo and score display. The native wrapper retains coach, recording, sharing and recommendations. Shared wrappers provide English/Hebrew results. No algorithm is forked.
 
 Native `/timeline` remains Red Thread; `/timeline/order` remains chronology. Non-Hapoel hosts route Timeline into compiled club data. Unmigrated native screens show unavailable on other registered hosts. Native compatibility facades remain explicit Hapoel exceptions; full legacy API/action isolation is not claimed. No active Supabase connection or signup is introduced.
+
+## M2 identity extension
+
+`theme` now uses the versioned `ClubTheme` contract described in [M2](29-m2-identity-and-theme.md). It includes secondary/surface/text/muted/accent/onPrimary, fonts, pattern, identity colors, reviewed rival policy and exact historical exemptions. Compiled content versions include the resolved theme, invalidating stale runs after an identity edit. UI defaults to English; English/Hebrew support is separate from archive source language. Locale direction is selected at render time.

@@ -5,6 +5,12 @@ import {middleware} from '@/middleware'
 const request=(path:string,host='olympiacos.localhost:3217',method='GET')=>new NextRequest(`http://${host}${path}`,{method,headers:{host}})
 
 describe('club Timeline entry routing',()=>{
+ it('sets document language from supported club-route locale and ignores forged headers',()=>{
+  const r=request('/clubs/olympiacos?lang=he');r.headers.set('x-fan-life-locale','el')
+  expect(middleware(r).headers.get('x-middleware-request-x-fan-life-locale')).toBe('he')
+  expect(middleware(request('/clubs/olympiacos?lang=el')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
+  expect(middleware(request('/life?lang=he')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
+ })
  it('redirects both legacy entry points before the legacy layout, preserving the round and language',()=>{
   for(const path of ['/timeline','/timeline/order']){
    const response=middleware(request(`${path}?seed=42&r=1&lang=he`))

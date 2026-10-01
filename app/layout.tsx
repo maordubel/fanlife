@@ -8,10 +8,12 @@ import { BRAND, SITE_URL } from '@/lib/brand'
 import { DIRECTION, LOCALE, t } from '@/lib/i18n'
 import './globals.css'
 import './master.css'
+import './club-theme.css'
 import { headers } from 'next/headers'
 import {clubFromHost,DEFAULT_CLUB} from '@/lib/master/registry'
 import { readState } from '@/lib/master/store'
 import { GATES } from '@/lib/master/types'
+import {uiLocale,localeDirection} from '@/lib/clubs/locale'
 import { Shell } from '@/components/master/Shell'
 
 /**
@@ -75,6 +77,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname=headers().get('x-fan-life-path')||'/'
+  const sharedLocale=pathname.startsWith('/clubs/')?uiLocale(headers().get('x-fan-life-locale')||undefined):'en'
   const master=pathname==='/'||pathname.startsWith('/master')||pathname.startsWith('/clubs')
   const club=master?undefined:(await readState()).clubs.find(c=>c.id==='hapoel-tel-aviv')
   const gate=GATES.find(g=>pathname===g[2]||pathname.startsWith(g[2]+'/'))
@@ -82,7 +85,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const otherTenant=Boolean(tenant&&tenant!==DEFAULT_CLUB)
   const closed=!master&&(otherTenant||(club?.status!=='live'||gate&&!club?.gates.includes(gate[0])))
   return (
-    <html lang={master||otherTenant?'en':LOCALE} dir={master||otherTenant?'ltr':DIRECTION}>
+    <html lang={master||otherTenant?sharedLocale:LOCALE} dir={master||otherTenant?localeDirection(sharedLocale):DIRECTION}>
       <body className="font-body antialiased">
         <a
           href="#main"

@@ -54,3 +54,7 @@ Only teams, match date and final score are asserted. No media/article prose copi
 Golden fixtures captured from the untouched base before extraction: 12 seed/cursor combinations including former duplicate-ID regression seed 95. The original 300-seed suite is unchanged. New tests cover all clubs, caches, sparse packs, compiler failures, host override attempts, stale versions and wrong-card payloads.
 
 Local browser execution was blocked by the environment's Unix-socket restriction (Chromium process singleton EPERM). No local visual pass is claimed. `scripts/master/core-browser-smoke.mjs` is part of CI: it launches the production build, completes all three club rounds through real server actions, checks replay, RTL/mobile, evidence UI, host mismatch and absence of live Supabase requests. CI screenshots/logs are written under `/tmp/fanlife-m1-browser*`.
+
+## Closed milestone
+
+PR #3 was merged to main at `355ca2e70d5d66d8838f1b25f3dab7e6698cbf5f`. [CI run 36826215373](https://github.com/maordubel/fanlife/actions/runs/36826215373) passed all steps: 4,922 tests, typecheck, lint, local database, build and real browser flow. All three rounds, replay, RTL, mobile and tenant mismatch passed with no browser errors and zero live Supabase requests. Vercel reported successful deployment. The owner's final browser assertion checks tenant isolation directly rather than framework-owned 404 wording.

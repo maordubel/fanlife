@@ -6,6 +6,8 @@ import {Num} from '@/components/ui/Num'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {LIVES,MAX_MULTIPLIER} from '@/lib/game/session'
 import {formatDate,secondsFor,type BlindCard,type DatedCard} from '@/lib/game/timeline-run'
+import type {Locale} from '@/lib/clubs/contract'
+import {localizedDate,type UiLocale} from '@/lib/clubs/locale'
 import type {InsertVerdict} from '@/lib/game/timeline-engine'
 export type TimelineCopy={lives:string;where:string;right:string;wrong:string;intro:string;note:string;slot:string;here:string;error:string}
 export type ResultProps={run:Run;board:DatedCard[];seed:number;cursor:number;missed:string[];queue:BlindCard[]}
@@ -36,7 +38,7 @@ export function SharedTimelineBoard({
   queue,
   seed,
   cursor = 0,
-  submit, renderResult, copy, coachOpen = false,
+  submit, renderResult, copy, coachOpen = false, dateLocale, contentLocale,
 }: {
   anchor: DatedCard
   queue: BlindCard[]
@@ -45,6 +47,8 @@ export function SharedTimelineBoard({
   submit: (seed:number, placed:number, slot:number, cursor:number) => Promise<InsertVerdict | null>
   renderResult: (props: ResultProps) => ReactNode
   copy: TimelineCopy
+  dateLocale?: UiLocale
+  contentLocale?: Locale
   coachOpen?: boolean
 }) {
   const [run, setRun] = useState<Run>(NEW_RUN)
@@ -63,6 +67,7 @@ export function SharedTimelineBoard({
   const [error, setError] = useState(false)
   const inFlight = useRef(false)
   const length = queue.length
+  const showDate = (on:string) => dateLocale?localizedDate(on,dateLocale):formatDate(on)
 
   const hand = queue[run.placed] ?? null
   const total = secondsFor(run.placed)
@@ -202,7 +207,7 @@ export function SharedTimelineBoard({
           <p className="font-body text-[10px] font-extrabold tracking-widest text-ink">
             {copy.where}
           </p>
-          <p className="mt-1 font-display text-step-2 leading-tight text-paper">{hand.title}</p>
+          <p lang={contentLocale} dir="auto" className="mt-1 font-display text-step-2 leading-tight text-paper">{hand.title}</p>
           {hand.hint !== '' && (
             <p className="mt-1 font-mono text-[11px] text-ink">
               <bdi>{hand.hint}</bdi>
@@ -222,11 +227,11 @@ export function SharedTimelineBoard({
           <p className="font-body text-[10px] font-extrabold tracking-widest text-paper/80">
             {feedback.correct ? copy.right : copy.wrong}
           </p>
-          <p className="mt-1 font-display text-step-2 leading-tight text-paper">
+          <p lang={contentLocale} dir="auto" className="mt-1 font-display text-step-2 leading-tight text-paper">
             {feedback.card.title}
           </p>
           <p className="mt-1 font-mono text-[13px] text-paper">
-            <Num>{formatDate(feedback.card.on)}</Num>
+            <Num>{showDate(feedback.card.on)}</Num>
           </p>
         </div>
       )}
@@ -250,11 +255,11 @@ export function SharedTimelineBoard({
               }`}
             >
               <div className="flex items-baseline justify-between gap-2">
-                <span className="min-w-0 font-sign text-step-0 leading-tight text-ink">
+                <span lang={contentLocale} dir="auto" className="min-w-0 font-sign text-step-0 leading-tight text-ink">
                   {card.title}
                 </span>
                 <span className="shrink-0 font-mono text-[12px] tabular-nums text-red">
-                  <Num>{formatDate(card.on)}</Num>
+                  <Num>{showDate(card.on)}</Num>
                 </span>
               </div>
             </div>

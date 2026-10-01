@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "secondary": "#FFFFFF",
+  "surface": "#FFFFFF",
+  "text": "#20242B",
+  "muted": "#535962",
+  "accent": "#92270F",
+  "fonts": {
+    "display": "frank",
+    "body": "heebo",
+    "mono": "courier",
+    "poster": "karantina"
+  },
+  "colorPolicy": {
+    "status": "legacy",
+    "rivalIdentityColors": [],
+    "approvedBy": "legacy-brand-rules",
+    "approvedAt": null,
+    "legacyRules": [
+      {
+        "id": "legacy-yellow",
+        "label": "Legacy Hapoel yellow restriction",
+        "hue": [
+          38,
+          70
+        ],
+        "minSaturation": 0.35,
+        "minValue": 0.35
+      }
+    ]
+  },
+  "historicalExemptions": [],
+  "clubId": "hapoel-tel-aviv",
+  "background": "#EEE9DE",
+  "pattern": "rules"
+}
