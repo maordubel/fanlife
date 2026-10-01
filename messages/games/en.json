@@ -102,7 +102,7 @@
   "gate.derby": "The derby",
   "gate.archive": "Living archive",
   "gate.timeline": "Timeline",
-  "pollSub": "Your own choices from this club’s documented archive. Votes stay on this device; there are no invented community totals.",
+  "pollSub": "Choose from documented club moments and players. Your choices are saved on this device.",
   "pollReplay": "Which documented match would you watch again?",
   "pollStory": "Which event would you feature in your club story?",
   "pollCalendar": "Which club date would you mark on your calendar?",
@@ -119,5 +119,6 @@
   "gaveUp": "Answer revealed",
   "weightedTime": "Weighted time",
   "rawTime": "Elapsed time",
-  "mysteryScoring": "Each extra clue adds 15 seconds; each distinct wrong guess adds 5 seconds."
+  "mysteryScoring": "Each extra clue adds 15 seconds; each distinct wrong guess adds 5 seconds.",
+  "chooseOption": "Choose an option"
 }

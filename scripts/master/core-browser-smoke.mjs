@@ -246,6 +246,8 @@ try {
   await hostPage.goto(`http://olympiacos.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/olympiacos/${entry}`)
   await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).includes('Zrinjski Mostar')))
  }
+ await hostPage.goto(`http://olympiacos.localhost:${port}/blind-cow?lang=he`);await hostPage.getByTestId('gate-locked').waitFor();assert.equal(new URL(hostPage.url()).pathname,'/clubs/olympiacos/blind-cow')
+ await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/hapoel-tel-aviv/blind-cow`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId('mystery-board').count(),0)
  await page.goto(`${base}/master/core?club=olympiacos`)
  await page.getByRole('heading',{name:'Gate readiness and missing content',exact:true}).waitFor()
  assert((await page.locator('main').innerText()).includes('Human-approved primary rival'))
