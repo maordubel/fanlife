@@ -136,7 +136,7 @@ try {
   }
   await page.getByTestId('memory-result').waitFor()
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-memory.png`)
-  await page.getByRole('link',{name:'Play again',exact:true}).click();assert.equal(new URL(page.url()).searchParams.get('r'),'1');await page.getByTestId('memory-board').waitFor()
+  await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('memory-board').waitFor();assert.equal(await page.getByTestId('memory-result').count(),0)
   await page.goto(`${base}/clubs/${slug}/archive`)
   await page.getByTestId('archive-entry').first().waitFor()
   await page.getByRole('link',{name:'Open archive entry ↗',exact:true}).first().click()
