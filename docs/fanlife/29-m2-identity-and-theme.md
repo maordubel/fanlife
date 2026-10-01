@@ -38,7 +38,7 @@ Owner-approved rival colors minus the club's own color families produce forbidde
 
 Historical exemptions are exact-path and provenance-based, never folder-wide or global color permissions. No new historical exemption is granted by this milestone. Existing native assets and their original rights/exception ledgers stay in their original scope.
 
-`master:identity` validates every registry palette and scans shared source paths for raw colors and hardcoded color utilities. Browser CI scans rendered PNG pixels against each identity's forbidden rules. This is a scoped check over the portal cards, hubs and shared Timeline; it is not a claim that every native gate is migrated.
+`master:identity` validates every registry palette and scans shared source paths for raw colors and hardcoded color utilities. Browser CI scans rendered PNG pixels against each identity's forbidden rules. It uses the same grayscale text-rasterization flags as the existing `scripts/brand/qa-sweep.mjs`; LCD subpixel glyph edges otherwise introduce renderer-only color fringes. The forbidden-color threshold remains zero. This is a scoped check over the portal cards, hubs and shared Timeline; it is not a claim that every native gate is migrated.
 
 ## Review
 

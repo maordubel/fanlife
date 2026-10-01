@@ -7,7 +7,6 @@
 .club-theme :focus-visible { outline:3px solid var(--club-accent); outline-offset:4px; }
 .club-theme .bg-red { color:var(--club-on-primary); }
 .club-theme .bg-red .text-paper,.club-theme .bg-red .text-ink { color:var(--club-on-primary); }
-.club-theme .bg-red p:last-child { opacity:.9; }
 .club-theme time,.club-theme .text-red { color:var(--club-accent); }
 .club-theme .bg-ink .text-red { color:var(--club-on-primary); }
 .club-theme .club-wordmark { display:flex;align-items:center;gap:14px; }

@@ -52,10 +52,11 @@ export function validateTheme(theme:ClubTheme):string[]{
 }
 /** Small identity manifests are independent of historical gameplay content. */
 export function clubTheme(club:{id:string;primary:string}):ClubTheme {
- const manifest=(catalogue[club.id]||neutral) as typeof hapoel
+ const hasManifest=Object.hasOwn(catalogue,club.id)
+ const manifest=(hasManifest?catalogue[club.id]:neutral) as typeof hapoel
  const primary=HEX.test(club.primary)?club.primary:neutral.accent
  const identityColors=[primary,manifest.secondary]
- if(catalogue[club.id]&&(manifest.schemaVersion!==1||manifest.clubId!==club.id))throw new Error('INVALID_IDENTITY_MANIFEST')
+ if(hasManifest&&(manifest.schemaVersion!==1||manifest.clubId!==club.id))throw new Error('INVALID_IDENTITY_MANIFEST')
  const policy:ColorPolicy={...manifest.colorPolicy,status:manifest.colorPolicy.status as ColorPolicy['status'],legacyRules:manifest.colorPolicy.legacyRules.map(rule=>({...rule,hue:[rule.hue[0]!,rule.hue[1]!]}))}
  const theme:ClubTheme={schemaVersion:1,primary,secondary:manifest.secondary,background:manifest.background,surface:manifest.surface,text:manifest.text,muted:manifest.muted,accent:manifest.accent,onPrimary:contrast(primary,'#FFFFFF')>=4.5?'#FFFFFF':'#151515',fonts:manifest.fonts as ClubTheme['fonts'],pattern:manifest.pattern as ClubTheme['pattern'],identityColors,rivalForbiddenColors:rivalForbiddenColors(identityColors,policy),colorPolicy:policy,historicalExemptions:manifest.historicalExemptions}
  const issues=validateTheme(theme)

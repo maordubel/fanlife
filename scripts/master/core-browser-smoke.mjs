@@ -31,7 +31,8 @@ try {
  let ready=false
  for(let i=0;i<120;i++){try{if((await fetch(base)).ok){ready=true;break}}catch{}await new Promise(r=>setTimeout(r,500))}
  assert(ready,`Server unavailable: ${logs.slice(-2000)}`)
- browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE}:{})})
+ // Match the existing brand QA rasterization: LCD glyph edges invent colors.
+ browser=await chromium.launch({headless:true,args:['--disable-lcd-text','--disable-font-subpixel-positioning','--font-render-hinting=none'],...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE}:{})})
  const context=await browser.newContext({viewport:{width:390,height:844}})
  const page=await context.newPage(),errors=[],external=[]
  context.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));page.on('pageerror',e=>errors.push(e.message));context.on('request',r=>{if(/supabase\.co/.test(r.url()))external.push(r.url())})
