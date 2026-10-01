@@ -28,6 +28,7 @@ export type MemoryPairType =
   | 'trophy-season'
   | 'goal-year'
   | 'moment-year'
+  | 'moment-date'
   | 'tie-season'
   | 'crest-years'
   | 'maker-span'
@@ -37,6 +38,7 @@ export const MEMORY_PAIR_TYPES: readonly MemoryPairType[] = [
   'trophy-season',
   'goal-year',
   'moment-year',
+  'moment-date',
   'tie-season',
   'crest-years',
   'maker-span',
@@ -50,6 +52,7 @@ export const TYPE_STRENGTH: Record<MemoryPairType, MemoryStrength> = {
   'trophy-season': 3,
   'goal-year': 3,
   'moment-year': 3,
+  'moment-date': 3,
   'tie-season': 3,
   'crest-years': 2,
   'maker-span': 2,
@@ -66,6 +69,7 @@ export type MemoryValue = 1 | 2 | 3
 export const MEMORY_VALUE: Record<MemoryPairType, MemoryValue> = {
   'trophy-season': 3,
   'moment-year': 3,
+  'moment-date': 3,
   'goal-year': 2,
   'tie-season': 2,
   'crest-years': 1,
@@ -92,6 +96,7 @@ const DATED: ReadonlySet<MemoryPairType> = new Set<MemoryPairType>([
   'trophy-season',
   'goal-year',
   'moment-year',
+  'moment-date',
   'tie-season',
   'crest-years',
   'maker-span',

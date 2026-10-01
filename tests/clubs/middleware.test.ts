@@ -20,7 +20,10 @@ describe('club Timeline entry routing',()=>{
  })
  it('keeps native Hapoel, neutral portal and other gates on their existing routes',()=>{
   for(const host of ['hapoeltelaviv.localhost:3217','localhost:3217','unknown.localhost:3217'])expect(middleware(request('/timeline/order',host)).headers.get('location')).toBeNull()
-  expect(middleware(request('/trivia')).headers.get('location')).toBeNull()
+  expect(middleware(request('/polls')).headers.get('location')).toBeNull()
+ })
+ it('routes migrated gate entry points to host-owned club data',()=>{
+  for(const [path,gate] of [['/trivia','trivia'],['/memory','memory'],['/xi','xi'],['/archive','archive']]){expect(middleware(request(`${path}?lang=he`)).headers.get('location')).toBe(`http://olympiacos.localhost:3217/clubs/olympiacos/${gate}?lang=he`);expect(middleware(request(path!,'hapoeltelaviv.localhost:3217')).headers.get('location')).toBeNull();expect(middleware(request(path!,'olympiacos.localhost:3217','POST')).headers.get('location')).toBeNull()}
  })
  it('does not redirect legacy action payloads into the shared route',()=>{
   expect(middleware(request('/timeline/order','olympiacos.localhost:3217','POST')).headers.get('location')).toBeNull()

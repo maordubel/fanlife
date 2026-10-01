@@ -86,3 +86,7 @@ English is the shared UI default. `?lang=he` selects Hebrew and RTL independentl
 Rivalry policies for Zrinjski and Olympiacos remain pending owner review. The existing Hapoel restriction is carried forward with a legacy label. Historical color exemptions need an exact asset, source, context, rights and dated human approval; none are newly granted by M2. Identity manifests currently govern compiled shared themes; legacy admin color inputs do not edit these manifests.
 
 See [M2 identity contract and review](docs/fanlife/29-m2-identity-and-theme.md).
+
+## Shared gates — playable wave
+
+The club hubs now expose shared Trivia, Memory, All-time XI and a searchable sourced Archive alongside Timeline. Sparse clubs have explicit short rounds and content-dependent locks. All thirteen gates report readiness and missing content. Device activity and XI saves are scoped per club; evaluation remains open with no active Supabase connection. See [the delivery scope and remaining work](docs/fanlife/30-shared-gates-wave-a.md).

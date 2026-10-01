@@ -5,6 +5,10 @@ import {REGISTRY} from '@/lib/master/registry'
 import {missingSections,timelineReadiness,type ClubData,type Source} from '../contract'
 import {hapoelTimelinePool,hapoelCardSources} from './hapoel-timeline'
 import {clubTheme} from '../theme'
+import {sharedReadiness} from '../gate-data'
+import {pickablePlayers} from '@/lib/archive/player-master'
+import {allQuestions,poolValues} from '@/lib/game/question-master'
+import {memoryCandidates} from '@/lib/game/memory'
 let cached:ClubData|undefined
 /** Existing curated gameplay eligibility carried forward, without re-research or invented approvals. */
 export function getHapoelData():ClubData {
@@ -15,7 +19,14 @@ export function getHapoelData():ClubData {
   sources.set(sourceId,{id:sourceId,title:s.sourceTitle,url:s.sourceUrl,publisher:s.sourceTitle,access:'unknown',checkedAt:null})
   return {id:value.id,value,sources:[sourceId],confidence:Math.min(3,s.confidence) as 2|3,status:'approved' as const,researchedAt:null,approvedAt:null,approvedBy:'legacy-curation',notes:'Existing curated eligibility carried forward. Source access is not newly asserted; no new owner approval is claimed.'}
  })
+ const players=pickablePlayers().map(p=>{
+  const refs=p.provenance.map(s=>{const id=createHash('sha256').update(JSON.stringify(s)).digest('hex').slice(0,16);sources.set(id,{id,title:s.sourceTitle||s.file,url:s.sourceUrl||null,publisher:s.sourceTitle||s.file,access:'unknown',checkedAt:null});return id})
+  return {id:p.id,value:{id:p.id,name:p.displayName,positions:p.positions.codes,fromYear:p.years.from,toYear:p.years.to,aliases:[...p.aliases.he,...p.aliases.latin]},sources:refs,confidence:2 as const,status:'approved' as const,researchedAt:null,approvedAt:null,approvedBy:'legacy-curation',notes:'Existing Player Master eligibility carried forward; current source access and new approvals are not asserted.'}
+ })
+ const questions=allQuestions().filter(q=>q.sport==='football'&&q.source.confidence>=2),pools:Record<string,string[]>={}
+ for(const q of questions)if(q.pool)pools[q.pool]=[...poolValues(q.pool)]
+ const trivia={questions,pools},memory=memoryCandidates(),gates=sharedReadiness({players,trivia,memory,timeline})
  const readiness=timelineReadiness(timeline.length)
  const theme=clubTheme(club)
- return cached={schemaVersion:1,version:createHash('sha256').update(JSON.stringify({timeline,theme})).digest('hex').slice(0,16),identity:{id:club.id,name:club.name,city:club.city,country:club.country,sport:'football'},locales:{ui:'en',content:'he',supported:['he','en'],direction:'ltr'},theme,...missingSections,archive:[],timeline,gates:{timeline:readiness},readiness,life:{state:'legacy',reason:'Original hand-authored Hapoel LIFE preserved; not migrated in M1.'},sources:[...sources.values()]}
+ return cached={schemaVersion:1,version:createHash('sha256').update(JSON.stringify({timeline,theme,players,trivia,memory})).digest('hex').slice(0,16),identity:{id:club.id,name:club.name,city:club.city,country:club.country,sport:'football'},locales:{ui:'en',content:'he',supported:['he','en'],direction:'ltr'},theme,...missingSections,players,trivia,memory,archive:[],timeline,gates:{timeline:readiness,...gates},readiness,life:{state:'legacy',reason:'Original hand-authored Hapoel LIFE preserved; not migrated in M1.'},sources:[...sources.values()]}
 }

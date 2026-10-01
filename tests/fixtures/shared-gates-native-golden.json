@@ -1,0 +1,147 @@
+{
+  "capturedFrom": "ed65709f1d12c6b277d1966ba56cb4c2d399460b",
+  "trivia": [
+    {
+      "seed": 1,
+      "cursor": 0,
+      "spec": {
+        "topic": null,
+        "decade": null,
+        "hard": false
+      },
+      "hash": "e527a9d67ce2e11c2fdd725bd88f0ae03dcd47883409e130d12d02fde0a6f5a6"
+    },
+    {
+      "seed": 1,
+      "cursor": 0,
+      "spec": {
+        "topic": "players",
+        "decade": null,
+        "hard": false
+      },
+      "hash": "3e195e16c9333a1fe496565fd65afbd6fe5c1c3c00d8428e54273a1ac72c5811"
+    },
+    {
+      "seed": 1,
+      "cursor": 0,
+      "spec": {
+        "topic": "history",
+        "decade": null,
+        "hard": true
+      },
+      "hash": "9f2bc43e4f566dea3101999af8147ef4f4c3772239c9bb36bfbde412024c2cec"
+    },
+    {
+      "seed": 1,
+      "cursor": 0,
+      "spec": {
+        "topic": null,
+        "decade": 1990,
+        "hard": false
+      },
+      "hash": "6588dcdbd6ab0a722b0607ae5aa89c28a5409aac7e5c4e0964e1705c3cb4a9c0"
+    },
+    {
+      "seed": 42,
+      "cursor": 1,
+      "spec": {
+        "topic": null,
+        "decade": null,
+        "hard": false
+      },
+      "hash": "57f3aecddab49c0c4805ace1022d9c899890384798a5690a28a54efe7c2701de"
+    },
+    {
+      "seed": 42,
+      "cursor": 1,
+      "spec": {
+        "topic": "players",
+        "decade": null,
+        "hard": false
+      },
+      "hash": "f015c57ef03ff5eae653059b10e46601489af544513a5dc48dd52c36d3ada42e"
+    },
+    {
+      "seed": 42,
+      "cursor": 1,
+      "spec": {
+        "topic": "history",
+        "decade": null,
+        "hard": true
+      },
+      "hash": "5297d7ca9ed3c5f85879fbb4ea35f7f96b5e085eb4cefd59510bed55cca594a0"
+    },
+    {
+      "seed": 42,
+      "cursor": 1,
+      "spec": {
+        "topic": null,
+        "decade": 1990,
+        "hard": false
+      },
+      "hash": "247fa5e18022724a8586f40b69ed2792c9d720a51e503cbb0fa4828cfd0d1145"
+    },
+    {
+      "seed": 95,
+      "cursor": 3,
+      "spec": {
+        "topic": null,
+        "decade": null,
+        "hard": false
+      },
+      "hash": "9d29325fb3b69e7e76260007780d757845250bac8e2aa02a9e18b6a6a1e985e1"
+    },
+    {
+      "seed": 95,
+      "cursor": 3,
+      "spec": {
+        "topic": "players",
+        "decade": null,
+        "hard": false
+      },
+      "hash": "52dfda178e91890b8501a87b60f11c3e5d6f10460e365c02a341516193ad4efa"
+    },
+    {
+      "seed": 95,
+      "cursor": 3,
+      "spec": {
+        "topic": "history",
+        "decade": null,
+        "hard": true
+      },
+      "hash": "1f0e6725ee08b0f630049c6e84e2ef4408b099c1ae4246b62875a887b3bc0f27"
+    },
+    {
+      "seed": 95,
+      "cursor": 3,
+      "spec": {
+        "topic": null,
+        "decade": 1990,
+        "hard": false
+      },
+      "hash": "68eb2905dfd4cda1cdbec35db610fa0b2ea4c1bf1af9ea13426d9184dd099027"
+    }
+  ],
+  "memory": [
+    {
+      "seed": 1,
+      "cursor": 0,
+      "hash": "f00bfb0cbc094b4a7802d2badad1b9d1d0f79a9cda4589b1fe561ab3c076d3d0"
+    },
+    {
+      "seed": 42,
+      "cursor": 1,
+      "hash": "12a2ab63274e8a7fec0f5d7a2ccfff0be48783e6b2f972a5bd7efb98d2290677"
+    },
+    {
+      "seed": 95,
+      "cursor": 3,
+      "hash": "275d3db42d470e9ff2d6586aca9da4226e7d93419a88dc1758874f73c8e23c30"
+    },
+    {
+      "seed": 300,
+      "cursor": 2,
+      "hash": "76066ae8c332095383bfbf96ab3eace1e038adcb45b16179c44961ac47a6c12d"
+    }
+  ]
+}
