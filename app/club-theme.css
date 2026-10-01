@@ -43,6 +43,8 @@
 .club-theme .game-panel { border:1px solid rgb(var(--ink)/.25);background:var(--club-surface);padding:clamp(16px,4vw,28px);margin-block:20px; }
 .club-theme .game-panel h2 { font-family:var(--font-frank),system-ui,sans-serif;font-size:clamp(22px,5vw,32px);overflow-wrap:anywhere; }
 .club-theme .game-panel p { margin-block:12px;overflow-wrap:anywhere; }
+.club-theme .game-panel input,.club-theme .game-panel select { max-width:100%;background:var(--club-background);color:var(--club-text);border:1px solid rgb(var(--ink)/.3);min-height:48px;padding:10px; }
+.club-theme .game-panel :focus-visible { outline:2px solid var(--club-accent);outline-offset:3px; }
 .club-theme .game-hud { display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;margin-block:16px;border-block:1px solid rgb(var(--ink)/.25);padding-block:12px; }
 .club-theme .game-options { display:grid;gap:10px;margin-block:16px; }
 .club-theme .game-option { display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:14px;border:1px solid rgb(var(--ink)/.3);text-align:start;min-height:48px;background:var(--club-background);color:var(--club-text);overflow-wrap:anywhere; }

@@ -6,6 +6,7 @@ import {clubTheme} from './theme'
 import {UI_LOCALES} from './locale'
 import {eventGames,sharedReadiness} from './gate-data'
 import {compilePlayers} from './players'
+import {eligibleArchive} from './archive'
 const object=(v:unknown):Record<string,unknown>=>v&&typeof v==='object'&&!Array.isArray(v)?v as Record<string,unknown>:{}
 const text=(v:unknown)=>typeof v==='string'?v.trim():''
 const list=(v:unknown):unknown[]=>Array.isArray(v)?v:[]
@@ -37,8 +38,10 @@ export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagno
   if(!Number.isInteger(level)||level<0||level>3||value.sport!=='football'||!text(value.name)){issue(key,'FACT_INVALID','Invalid confidence, sport or title.');continue}
   const on=date(value.on),precision=value.precision==='day'?'day':value.precision==='year'?'year':'unknown'
   if(precision==='day'&&!on){issue(key,'DATE_INVALID','Exact dates must be real ISO calendar dates.');continue}
+  const year=Number.isInteger(value.year)&&Number(value.year)>=1800&&Number(value.year)<=2100?Number(value.year):null
+  if(precision==='year'&&!year){issue(key,'YEAR_INVALID','Year precision requires a documented year.');continue}
   const status=['draft','review','approved','rejected','deep_research'].includes(text(f.status))?text(f.status) as FactStatus:'draft'
-  const fact:Fact<HistoricalEvent>={id:`${club.id}:${key}`,value:{id:`${club.id}:${key}`,name:text(value.name),on,precision,hint:hint(text(value.hint)),sport:'football',sensitive:value.sensitive!==false},sources:refs,confidence:level as 0|1|2|3,status,researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:text(f.approvedBy)||null,notes:text(f.notes)}
+  const fact:Fact<HistoricalEvent>={id:`${club.id}:${key}`,value:{id:`${club.id}:${key}`,name:text(value.name),on,precision,year:precision==='year'?year:on?Number(on.slice(0,4)):null,hint:hint(text(value.hint)),sport:'football',sensitive:value.sensitive!==false},sources:refs,confidence:level as 0|1|2|3,status,researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:text(f.approvedBy)||null,notes:text(f.notes)}
   if(status==='approved'&&(!fact.approvedAt||!fact.approvedBy||!fact.researchedAt)){fact.status='review';issue(key,'APPROVAL_INCOMPLETE','Approval requires actor, research date and approval date.')}
   if(status==='approved'&&fact.approvedBy?.startsWith('automated:')) {
    const independent=new Set(refs.map(ref=>sources.find(s=>s.id===ref)!.publisher.toLowerCase()))
@@ -52,7 +55,7 @@ export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagno
   if(f.status!=='approved'||f.confidence<2)continue
   if(f.sources.some(ref=>{const s=sources.find(s=>s.id===ref)!;return s.access!=='available'||!s.checkedAt})){issue(f.id,'SOURCE_UNAVAILABLE','Blocked or unchecked sources cannot supply gameplay.');continue}
   const v=f.value
-  if(!v.on||v.precision!=='day'){issue(f.id,'EXACT_DATE_REQUIRED','Year-only dates stay in review; never invent a day.');continue}
+  if(!v.on||v.precision!=='day'){issue(f.id,'EXACT_DATE_REQUIRED','This eligible archive record has no exact day; never invent one for chronology.');continue}
   if(/\b(?:18|19|20)\d{2}\b/.test(v.name)){issue(f.id,'ANSWER_IN_TITLE','Title exposes its date; excluded without rewriting history.');continue}
   if(dates.has(v.on)){issue(f.id,'SAME_DAY','Chronology uses one card per date.');continue}dates.add(v.on)
   timeline.push({...f,value:{id:hash(`${club.id}:${f.id}:${v.on}`),title:v.name,hint:v.hint,on:v.on}})
@@ -60,6 +63,6 @@ export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagno
  timeline.sort((a,b)=>a.value.on.localeCompare(b.value.on))
  const readiness=timelineReadiness(timeline.length),content=['en','he','el','hr'].includes(text(pack.contentLocale))?text(pack.contentLocale) as Locale:'en'
  const theme=clubTheme(club),games=eventGames(timeline,sources),players=compilePlayers(pack.players,club.id,sources,diagnostics)
- return {diagnostics,data:{schemaVersion:1,version:hash(JSON.stringify({pack,club,theme})),identity:{id:club.id,name:club.name,city:club.city,country:club.country,sport:'football'},locales:{ui:'en',content,supported:[...UI_LOCALES],direction:'ltr'},theme,...missingSections,players,...games,archive,timeline,sources,readiness,gates:{timeline:readiness,...sharedReadiness({players,timeline,...games})},life:{state:'unavailable',reason:'Authored LIFE content has not been migrated.'}}}
+ return {diagnostics,data:{schemaVersion:1,version:hash(JSON.stringify({pack,club,theme})),identity:{id:club.id,name:club.name,city:club.city,country:club.country,sport:'football'},locales:{ui:'en',content,supported:[...UI_LOCALES],direction:'ltr'},theme,...missingSections,players,...games,mysteries:[],archive,timeline,sources,readiness,gates:{timeline:readiness,...sharedReadiness({players,timeline,...games,archiveCount:eligibleArchive({archive,timeline,sources,players}).length})},life:{state:'unavailable',reason:'Authored LIFE content has not been migrated.'}}}
 }
 type FactStatus=Fact<HistoricalEvent>['status']

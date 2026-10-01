@@ -18,7 +18,7 @@ export function eventGames(events:ClubData['timeline'],sources:ClubData['sources
 export function gateReadiness(count:number,target:number,minimum:number,requirement:string):Readiness {
  return {state:count>=target?'READY':count>=minimum?'PARTIAL':'LOCKED',playable:count>=minimum,eligible:count,target,reasons:count>=target?[]:[`${Math.max(0,target-count)} more ${requirement} needed for full readiness.`]}
 }
-export function sharedReadiness(data:Pick<ClubData,'players'|'trivia'|'memory'|'timeline'>) {
+export function sharedReadiness(data:Pick<ClubData,'players'|'trivia'|'memory'|'timeline'>&{archiveCount?:number}) {
  const faces=new Set<string>();let pairs=0
  for(const c of data.memory)if(!faces.has(c.a)&&!faces.has(c.b)){faces.add(c.a);faces.add(c.b);pairs++}
  const players=(data.players||[]).map(f=>f.value),xi=gateReadiness(players.length,22,11,'approved player identities')
@@ -36,5 +36,5 @@ export function sharedReadiness(data:Pick<ClubData,'players'|'trivia'|'memory'|'
   return formation.slots.every((_,i)=>assign(i,new Set()))
  })
  if(!coverage){if(xi.state==='READY')xi.state='PARTIAL';xi.reasons.push('Documented positions cannot yet fill a complete supported formation. Unknown positions are labelled in free play.')}
- return {trivia:gateReadiness(data.trivia.questions.length,60,3,'eligible questions'),xi,archive:gateReadiness(data.timeline.length,20,1,'eligible archive entries'),memory:gateReadiness(pairs,6,2,'distinct sourced memory pairs')}
+ return {trivia:gateReadiness(data.trivia.questions.length,60,3,'eligible questions'),xi,archive:gateReadiness(data.archiveCount??data.timeline.length,20,1,'eligible archive entries'),memory:gateReadiness(pairs,6,2,'distinct sourced memory pairs')}
 }
