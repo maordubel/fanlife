@@ -9,6 +9,7 @@ import { DIRECTION, LOCALE, t } from '@/lib/i18n'
 import './globals.css'
 import './master.css'
 import { headers } from 'next/headers'
+import {clubFromHost,DEFAULT_CLUB} from '@/lib/master/registry'
 import { readState } from '@/lib/master/store'
 import { GATES } from '@/lib/master/types'
 import { Shell } from '@/components/master/Shell'
@@ -77,9 +78,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const master=pathname==='/'||pathname.startsWith('/master')||pathname.startsWith('/clubs')
   const club=master?undefined:(await readState()).clubs.find(c=>c.id==='hapoel-tel-aviv')
   const gate=GATES.find(g=>pathname===g[2]||pathname.startsWith(g[2]+'/'))
-  const closed=!master&&(club?.status!=='live'||gate&&!club?.gates.includes(gate[0]))
+  const tenant=clubFromHost(headers().get('host'))
+  const otherTenant=Boolean(tenant&&tenant!==DEFAULT_CLUB)
+  const closed=!master&&(otherTenant||(club?.status!=='live'||gate&&!club?.gates.includes(gate[0])))
   return (
-    <html lang={master?'en':LOCALE} dir={master?'ltr':DIRECTION}>
+    <html lang={master||otherTenant?'en':LOCALE} dir={master||otherTenant?'ltr':DIRECTION}>
       <body className="font-body antialiased">
         <a
           href="#main"
@@ -87,7 +90,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         >
           {master?'Skip to content':t('nav.skipToContent')}
         </a>
-        {closed?<Shell><main id="main" className="section"><h1>This gate is resting.</h1><p>The administrator has paused access. <a href="/master/admin">Open administration ↗</a></p></main></Shell>:children}
+        {closed?<Shell><main id="main" className="section"><h1>This gate is resting.</h1><p>{otherTenant?<>This mode is not yet available for this club. <a href={`/clubs/${tenant}/timeline`}>Open Timeline ↗</a></>:<>The administrator has paused access. <a href="/master/admin">Open administration ↗</a></>}</p></main></Shell>:children}
 
         {/*
           AdSense's loader, and Google's measurement tag.

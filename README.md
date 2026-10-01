@@ -68,3 +68,9 @@ npm run build
 For browser verification after a successful build, run `npx playwright install chromium` then `npm run master:browser`. It starts an isolated server and writes screenshots and a report to `test-results/release`.
 
 The integrated core passed 4,894 tests across 224 files, production build, typecheck, local SQL checks and 29-route browser verification. See `docs/master/UPDATE.md` for scope and remaining warnings. `docs/master/ARCHITECTURE.md` explains the local database adapter and limitations; `docs/UPSTREAM-README.md` retains the original documentation. Asset provenance gaps remain explicitly marked unknown; inclusion is not an assertion of new usage rights.
+
+## M1 shared club core
+
+Chronological Timeline now uses one engine and board for Hapoel, Zrinjski and Olympiacos. Open `/master/core` for evidence; `/clubs/<club-id>/timeline` for play. Small packs have labelled short rounds. Default evaluation needs no Supabase credentials or registration.
+
+[Canonical direction](docs/fanlife/26-canonical-bible-2026-09-30.md) · [Contract](docs/fanlife/27-club-data-contract.md) · [Migration and verification](docs/fanlife/28-m1-migration-report.md). Other gates and production storage remain separate milestones.

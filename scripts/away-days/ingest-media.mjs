@@ -34,8 +34,8 @@ import { pathToFileURL } from 'node:url'
 import { createHash } from 'node:crypto'
 import { createRequire } from 'node:module'
 
-// CommonJS resolution on purpose: sharp is a tool of this box (NODE_PATH / global install),
-// not a dependency of the app, and ESM `import` would not look there.
+// The image importer and its tests use the declared sharp dev dependency.
+// CommonJS resolution also supports the existing standalone tooling invocation.
 const sharp = createRequire(import.meta.url)('sharp')
 
 const ROOT = process.cwd()
