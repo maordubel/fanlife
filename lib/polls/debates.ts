@@ -45,7 +45,7 @@ export type DebateOption = { id: string; labelHe: string; subHe: string | null }
 export type DebateView = Debate & { choices: DebateOption[] | null }
 
 /** prompts per rotation — the spec asks for four to six */
-export const DEBATE_ROUND = 5
+export {DEBATE_ROUND} from './debate-engine'
 
 export const DEBATES: readonly Debate[] = (bank as { debates: Debate[] }).debates
 
