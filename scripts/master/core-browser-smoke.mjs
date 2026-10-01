@@ -46,7 +46,7 @@ try {
   assert(await page.locator('main').getAttribute('dir')==='ltr')
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Mobile overflow')
   identities.push({club:slug,...await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}.png`)})
-  const length=slug==='hapoel-tel-aviv'?10:2
+  const length=slug==='hapoel-tel-aviv'?10:Math.min(10,[...dates.values()].filter(Boolean).length-1)
   for(let placed=0;placed<length;placed++) {
    const hand=page.getByTestId('timeline-hand');await hand.waitFor()
    const cardId=await hand.getAttribute('data-card-id'),on=dates.get(cardId)
@@ -157,7 +157,8 @@ try {
  // All six existing interactions are preserved in native QA; this mixed browser round
  // exercises the interaction types actually dealt, without forcing a handpicked fork.
  assert(interactions.has('mcq')&&interactions.size>=2)
- await page.goto(`${base}/clubs/hapoel-tel-aviv/xi`)
+ for(const xiClub of ['hapoel-tel-aviv','zrinjski-mostar']){
+ await page.goto(`${base}/clubs/${xiClub}/xi`)
  await page.getByTestId('xi-builder').waitFor()
  for(let i=0;i<11;i++){
   await page.getByTestId('xi-pitch').locator('button').nth(i).click()
@@ -171,10 +172,11 @@ try {
  await page.getByTestId('xi-complete').waitFor();await page.getByRole('button',{name:'Save my XI',exact:true}).click()
  await page.getByRole('status').filter({hasText:'Your XI is saved'}).waitFor()
  await page.reload();await page.getByTestId('xi-complete').waitFor()
- await identityCheck(page,'hapoel-tel-aviv','.club-surface','/tmp/fanlife-m1-browser/hapoel-xi.png')
- const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('fan-life:club:hapoel-tel-aviv:xi:v1')))
+ await identityCheck(page,xiClub,'.club-surface',`/tmp/fanlife-m1-browser/${xiClub}-xi.png`)
+ const saved=await page.evaluate(club=>JSON.parse(localStorage.getItem(`fan-life:club:${club}:xi:v1`)),xiClub)
  assert.equal(new Set(Object.values(saved.picks)).size,11)
- for(const slug of ['zrinjski-mostar','olympiacos']){await page.goto(`${base}/clubs/${slug}/xi`);await page.getByTestId('gate-locked').waitFor();assert.equal(await page.getByTestId('xi-builder').count(),0)}
+ }
+ await page.goto(`${base}/clubs/olympiacos/xi`);await page.getByTestId('gate-locked').waitFor();assert.equal(await page.getByTestId('xi-builder').count(),0)
  await page.goto(`${base}/clubs/hapoel-tel-aviv/trivia?seed=42&lang=he`)
  await page.getByTestId('trivia-question').waitFor();assert.equal(await page.locator('html').getAttribute('dir'),'rtl')
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Shared trivia RTL overflow')
@@ -189,6 +191,44 @@ try {
  await page.goto(`${base}/clubs/olympiacos/trivia?seed=42&hard=1`)
  await page.getByTestId('trivia-empty').waitFor();assert.equal(await page.getByTestId('trivia-question').count(),0)
  assert.deepEqual(errors,[]);assert.deepEqual(external,[])
+ const nextGates=[]
+ for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos']){
+  await page.goto(`${base}/clubs/${slug}/polls?seed=42&lang=en`);await page.getByTestId('polls-board').waitFor()
+  const selects=page.getByTestId('polls-board').locator('select'),count=await selects.count()
+  assert(count>=3&&count<=5)
+  for(let i=0;i<count;i++){const value=await selects.nth(i).locator('option').nth(1).getAttribute('value');assert(value);await selects.nth(i).selectOption(value)}
+  await page.getByTestId('polls-result').waitFor();await page.getByRole('status').filter({hasText:'Your choices are saved'}).waitFor()
+  const votes=await page.evaluate(club=>JSON.parse(localStorage.getItem(`fan-life:club:${club}:polls:v1`)),slug)
+  await page.reload();await page.getByTestId('polls-result').waitFor()
+  for(let i=0;i<count;i++)assert.equal(await selects.nth(i).inputValue(),votes[await selects.nth(i).evaluate(el=>el.closest('fieldset').dataset.pollId)])
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`Polls mobile overflow: ${slug}`)
+  await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-polls.png`)
+  await page.goto(`${base}/clubs/${slug}/polls?seed=42&lang=he`);await page.getByTestId('polls-board').waitFor();assert.equal(await page.locator('html').getAttribute('dir'),'rtl')
+  nextGates.push({club:slug,polls:count,persistence:'passed'})
+ }
+ await page.goto(`${base}/clubs/zrinjski-mostar/archive?q=seventh`);await page.getByTestId('archive-entry').waitFor()
+ assert((await page.getByTestId('archive-entry').innerText()).includes('2022'));assert.equal(await page.getByTestId('archive-entry').locator('time').count(),0)
+ await page.goto(`${base}/clubs/zrinjski-mostar/archive?q=Karačić`);await page.getByTestId('archive-entry').waitFor();assert((await page.getByTestId('archive-entry').innerText()).includes('Goran Karačić'))
+ await page.getByRole('link',{name:'Open archive entry ↗',exact:true}).click();await page.waitForURL(url=>url.searchParams.has('event'));await page.getByRole('link',{name:'Back to the archive',exact:true}).waitFor();assert.equal(await page.getByTestId('archive-entry').locator('a[target="_blank"]').count(),2)
+ const mysteryBank=JSON.parse(readFileSync('content/generated/blind-cow-bank.json','utf8'))
+ await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=en`);await page.getByTestId('mystery-board').waitFor();await page.getByRole('button',{name:'Start or resume',exact:true}).click();await page.locator('[data-clue-n="1"]').waitFor()
+ let clues=await page.locator('[data-clue-n] p').allTextContents(),candidates=mysteryBank.questions.filter(q=>q.eligibleModes.includes('solo')&&q.remaining[q.remaining.length-1]===1&&q.clueIds.every(id=>(mysteryBank.clues[id]?.confidence||0)>=2)&&clues.every((value,i)=>mysteryBank.clues[q.clueIds[i]]?.valueHe===value))
+ const initial=clues[0];await page.reload();await page.getByRole('button',{name:'Start or resume',exact:true}).click();await page.locator('[data-clue-n="1"]').waitFor();assert.equal(await page.locator('[data-clue-n="1"] p').innerText(),initial)
+ assert.equal(await page.getByTestId('mystery-result').count(),0)
+ for(let i=0;candidates.length>1&&i<20;i++){
+  const before=clues.length;await page.getByRole('button',{name:'Reveal next clue',exact:true}).click();await page.waitForFunction(n=>document.querySelectorAll('[data-clue-n]').length>n,before)
+  clues=await page.locator('[data-clue-n] p').allTextContents();candidates=candidates.filter(q=>clues.every((value,i)=>mysteryBank.clues[q.clueIds[i]]?.valueHe===value))
+ }
+ assert.equal(candidates.length,1,'Opened mystery clues must identify a documented bank question')
+ const target=candidates[0].targetPlayerId,nativePlayers=JSON.parse(readFileSync('content/generated/player-master.json','utf8')).players,targetRow=nativePlayers.find(p=>p.id===target);assert(targetRow)
+ const wrong=await page.getByTestId('mystery-players').locator('button').evaluateAll((nodes,target)=>nodes.find(n=>n.dataset.playerId!==target)?.dataset.playerId,target);assert(wrong)
+ await page.locator(`[data-player-id="${wrong}"]`).click();await page.getByText('Wrong guesses: 1',{exact:true}).waitFor();assert.equal(await page.getByTestId('mystery-result').count(),0)
+ await page.getByRole('searchbox',{name:'Search names or history',exact:true}).fill(targetRow.displayName)
+ await page.locator(`[data-player-id="${target}"]`).click();await page.getByTestId('mystery-result').waitFor();assert((await page.getByTestId('mystery-result').innerText()).includes(targetRow.displayName))
+ await identityCheck(page,'hapoel-tel-aviv','.club-surface','/tmp/fanlife-m1-browser/hapoel-mystery.png')
+ await page.getByRole('button',{name:'Play again',exact:true}).click();await page.getByRole('button',{name:'Give up and reveal',exact:true}).waitFor();await page.getByRole('button',{name:'Give up and reveal',exact:true}).click();await page.getByTestId('mystery-result').waitFor();assert((await page.getByTestId('mystery-result').innerText()).includes('Answer revealed'))
+ await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=he`);await page.getByTestId('mystery-board').waitFor();assert.equal(await page.locator('html').getAttribute('dir'),'rtl');assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))
+ for(const slug of ['zrinjski-mostar','olympiacos']){await page.goto(`${base}/clubs/${slug}/blind-cow`);await page.getByTestId('gate-locked').waitFor();assert.equal(await page.getByTestId('mystery-board').count(),0)}
  const hostPage=await context.newPage()
  await hostPage.goto(`http://olympiacos.localhost:${port}/timeline/order`)
  await hostPage.getByTestId('timeline-hand').waitFor()
@@ -202,7 +242,7 @@ try {
  assert.equal(await hostPage.getByTestId('timeline-hand').count(),0)
  assert(!((await hostPage.locator('body').innerText()).includes('Zrinjski Mostar')),'Cross-tenant content leaked into mismatched host')
 
- for(const [entry,testId] of [['trivia','trivia-question'],['memory','memory-board'],['archive','archive-entry']]){
+ for(const [entry,testId] of [['trivia','trivia-question'],['memory','memory-board'],['archive','archive-entry'],['polls','polls-board']]){
   await hostPage.goto(`http://olympiacos.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/olympiacos/${entry}`)
   await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).includes('Zrinjski Mostar')))
  }
@@ -210,7 +250,7 @@ try {
  await page.getByRole('heading',{name:'Gate readiness and missing content',exact:true}).waitFor()
  assert((await page.locator('main').innerText()).includes('Human-approved primary rival'))
  assert.deepEqual(errors,[]);assert.deepEqual(external,[])
- const result={sharedGames,interactionTypes:[...interactions],xiSaveReload:'passed',newGatesRtl:'passed',allGateReadiness:'passed',flows:report,identities,portalCards:'passed',clubHubsRtl:'passed',unsupportedLocale:'passed',rtl:'passed',evidence:'passed',hostIsolation:'passed',browserErrors:errors,liveSupabaseRequests:external.length}
+ const result={nextGates,zrinjskiArchive:{records:42,exactDates:14,players:27,yearOnly:'passed',playerEvidence:'passed'},mystery:{solve:'passed',wrongGuess:'passed',resume:'passed',giveUp:'passed',insufficientDataLocks:'passed'},sharedGames,interactionTypes:[...interactions],xiSaveReload:'passed',newGatesRtl:'passed',allGateReadiness:'passed',flows:report,identities,portalCards:'passed',clubHubsRtl:'passed',unsupportedLocale:'passed',rtl:'passed',evidence:'passed',hostIsolation:'passed',browserErrors:errors,liveSupabaseRequests:external.length}
  writeFileSync('/tmp/fanlife-m1-browser/report.json',JSON.stringify(result,null,2))
  console.log(JSON.stringify(result,null,2))
 } finally {
