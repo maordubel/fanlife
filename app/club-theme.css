@@ -1,0 +1,42 @@
+/* Shared identity scope. Colors come from validated manifests, never from club selectors. */
+.club-theme { color:var(--club-text); background-color:var(--club-background); font-family:var(--font-heebo),system-ui,sans-serif; text-align:start; }
+.club-surface { min-height:100vh; }
+.club-theme[data-pattern=rules] { background-image:repeating-linear-gradient(94deg,transparent 0 23px,rgb(var(--ink)/.04) 23px 24px); }
+.club-theme[data-pattern=diagonal] { background-image:repeating-linear-gradient(135deg,transparent 0 48px,rgb(var(--red)/.04) 48px 56px); }
+.club-theme[data-pattern=stripes] { background-image:repeating-linear-gradient(90deg,transparent 0 56px,rgb(var(--red)/.04) 56px 68px); }
+.club-theme :focus-visible { outline:3px solid var(--club-accent); outline-offset:4px; }
+.club-theme .bg-red { color:var(--club-on-primary); }
+.club-theme .bg-red .text-paper,.club-theme .bg-red .text-ink { color:var(--club-on-primary); }
+.club-theme .bg-red p:last-child { opacity:.9; }
+.club-theme time,.club-theme .text-red { color:var(--club-accent); }
+.club-theme .bg-ink .text-red { color:var(--club-on-primary); }
+.club-theme .club-wordmark { display:flex;align-items:center;gap:14px; }
+.club-theme .identity-mark { display:inline-grid;place-content:center;min-width:54px;min-height:64px;border:2px solid currentColor;background:var(--club-primary);color:var(--club-on-primary);font-family:var(--font-latin),sans-serif;font-weight:800;line-height:1;text-align:center; }
+.club-theme .identity-mark small { margin-top:6px;font-size:8px;letter-spacing:.08em; }
+.club-theme .identity-rule { height:6px;background:var(--club-primary); }
+.fl.club-theme { --fl-ink:var(--club-text);--fl-paper:var(--club-background);--line:rgb(var(--ink)/.25);font-family:var(--font-heebo),system-ui,sans-serif; }
+.fl.club-theme h1,.fl.club-theme h2,.fl.club-theme h3 { font-family:var(--font-frank),system-ui,sans-serif;letter-spacing:-.02em;overflow-wrap:anywhere; }
+.fl.club-theme .club-hero { background-color:var(--club-surface); }
+.fl.club-theme .panel { background:var(--club-surface); }
+.fl.club-theme .button { background:var(--club-primary);color:var(--club-on-primary)!important;border-color:var(--club-primary); }
+.fl.club-theme .button:hover { background:var(--club-accent); }
+.fl.club-theme .gate:hover,.fl.club-theme .evaluation { background:var(--club-surface); }
+.fl.club-theme .evaluation { border-color:var(--line); }
+.fl.club-theme .gate p,.fl.club-theme .muted { color:var(--club-muted); }
+.fl.club-theme .gate>b,.fl[dir=rtl] .evaluation a { margin-left:0;margin-inline-start:auto; }
+.fl[dir=rtl] { text-align:start; }
+.fl[dir=rtl] .edition { border-left:0;border-inline-start:1px solid var(--line);padding-left:0;padding-inline-start:25px; }
+.fl[dir=rtl] ul { padding-left:0;padding-inline-start:22px; }
+.fl .club-card.club-theme { border-top:6px solid var(--club-primary); }
+.fl .club-card.club-theme h3 { font-family:var(--font-frank),system-ui,sans-serif; }
+.fl .club-card.club-theme .club-art>span:last-child { color:var(--club-muted);opacity:.16; }
+.fl .club-card.club-theme .badge { background:var(--club-surface); }
+.fl .club-card.club-theme .card-bottom { border-color:rgb(var(--ink)/.25); }
+.fl .club-card.club-theme .club-art { margin-inline:-12px;padding-inline:12px; }
+@media(max-width:640px) {
+ .fl.club-theme>header { height:auto;min-height:100px;flex-wrap:wrap;padding-block:16px; }
+ .fl.club-theme header nav { flex-wrap:wrap;gap:12px; }
+ .fl.club-theme .evaluation { flex-wrap:wrap; }
+ .fl.club-theme .evaluation a { margin-inline-start:0; }
+ .fl.club-theme .club-hero h1 { font-size:clamp(28px,8vw,42px); }
+}

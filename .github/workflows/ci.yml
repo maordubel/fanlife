@@ -68,6 +68,9 @@ jobs:
       - name: Dead ends — THE WORKER LIFE
         run: npm run life:deadends
 
+      - name: Club identity and color policy
+        run: npm run master:identity
+
       - name: Tests
         run: npm test -- --maxWorkers=2 --minWorkers=1
 
@@ -81,7 +84,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Shared Timeline browser flow — three clubs and RTL
-        run: node scripts/master/core-browser-smoke.mjs
+        run: npm run master:core-browser
 
       - name: Browser evidence
         if: always()

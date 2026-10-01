@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "secondary": "#FFFFFF",
+  "surface": "#FFFFFF",
+  "text": "#20242B",
+  "muted": "#535962",
+  "accent": "#96212C",
+  "fonts": {
+    "display": "miriam",
+    "body": "heebo",
+    "mono": "courier",
+    "poster": "karantina"
+  },
+  "colorPolicy": {
+    "status": "pending",
+    "rivalIdentityColors": [],
+    "approvedBy": null,
+    "approvedAt": null,
+    "legacyRules": []
+  },
+  "historicalExemptions": [],
+  "clubId": "zrinjski-mostar",
+  "background": "#F4F1ED",
+  "pattern": "diagonal"
+}

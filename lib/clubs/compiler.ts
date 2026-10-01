@@ -2,6 +2,8 @@ import 'server-only'
 import {createHash} from 'node:crypto'
 import {missingSections,timelineReadiness,type ClubData,type Diagnostic,type Fact,type HistoricalEvent,type Locale,type Source} from './contract'
 import type {RegistryClub} from '@/lib/master/registry'
+import {clubTheme} from './theme'
+import {UI_LOCALES} from './locale'
 const object=(v:unknown):Record<string,unknown>=>v&&typeof v==='object'&&!Array.isArray(v)?v as Record<string,unknown>:{}
 const text=(v:unknown)=>typeof v==='string'?v.trim():''
 const list=(v:unknown):unknown[]=>Array.isArray(v)?v:[]
@@ -55,6 +57,7 @@ export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagno
  }
  timeline.sort((a,b)=>a.value.on.localeCompare(b.value.on))
  const readiness=timelineReadiness(timeline.length),content=['en','he','el','hr'].includes(text(pack.contentLocale))?text(pack.contentLocale) as Locale:'en'
- return {diagnostics,data:{schemaVersion:1,version:hash(JSON.stringify({pack,club})),identity:{id:club.id,name:club.name,city:club.city,country:club.country,sport:'football'},locales:{ui:'en',content,supported:['en'],direction:'ltr'},theme:{primary:club.primary,foreground:'#FFFFFF',background:'#F6F3EA',forbidden:[]},...missingSections,archive,timeline,sources,readiness,gates:{timeline:readiness},life:{state:'unavailable',reason:'Authored LIFE content has not been migrated.'}}}
+ const theme=clubTheme(club)
+ return {diagnostics,data:{schemaVersion:1,version:hash(JSON.stringify({pack,club,theme})),identity:{id:club.id,name:club.name,city:club.city,country:club.country,sport:'football'},locales:{ui:'en',content,supported:[...UI_LOCALES],direction:'ltr'},theme,...missingSections,archive,timeline,sources,readiness,gates:{timeline:readiness},life:{state:'unavailable',reason:'Authored LIFE content has not been migrated.'}}}
 }
 type FactStatus=Fact<HistoricalEvent>['status']

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "secondary": "#FFFFFF",
+  "surface": "#FFFFFF",
+  "text": "#20242B",
+  "muted": "#535962",
+  "accent": "#A20F18",
+  "fonts": {
+    "display": "archivo",
+    "body": "heebo",
+    "mono": "courier",
+    "poster": "karantina"
+  },
+  "colorPolicy": {
+    "status": "pending",
+    "rivalIdentityColors": [],
+    "approvedBy": null,
+    "approvedAt": null,
+    "legacyRules": []
+  },
+  "historicalExemptions": [],
+  "clubId": "olympiacos",
+  "background": "#F1F3F5",
+  "pattern": "stripes"
+}
