@@ -61,10 +61,13 @@ try {
  await hostPage.getByTestId('timeline-hand').waitFor()
  assert(new URL(hostPage.url()).pathname==='/clubs/olympiacos/timeline')
  const mismatch=await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/zrinjski-mostar/timeline`)
- // App Router may stream a 200 shell before an async notFound decision.
+ // App Router may stream a 200 shell before an async notFound decision. The security
+ // contract is tenant isolation, not Next.js' framework-owned 404 copy: a mismatched
+ // host/path must never render a playable Timeline for the path tenant.
  assert([200,404].includes(mismatch.status()))
- await hostPage.getByText('This page could not be found.').waitFor()
+ await hostPage.waitForLoadState('networkidle')
  assert.equal(await hostPage.getByTestId('timeline-hand').count(),0)
+ assert(!((await hostPage.locator('body').innerText()).includes('Zrinjski Mostar')),'Cross-tenant content leaked into mismatched host')
  console.log(JSON.stringify({flows:report,rtl:'passed',evidence:'passed',hostIsolation:'passed',browserErrors:errors,liveSupabaseRequests:external.length},null,2))
 } finally {
  writeFileSync('/tmp/fanlife-m1-browser-server.log',logs)
