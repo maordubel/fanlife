@@ -46,3 +46,7 @@ Native `/timeline` remains Red Thread; `/timeline/order` remains chronology. Non
 ## M2 identity extension
 
 `theme` now uses the versioned `ClubTheme` contract described in [M2](29-m2-identity-and-theme.md). It includes secondary/surface/text/muted/accent/onPrimary, fonts, pattern, identity colors, reviewed rival policy and exact historical exemptions. Compiled content versions include the resolved theme, invalidating stale runs after an identity edit. UI defaults to English; English/Hebrew support is separate from archive source language. Locale direction is selected at render time.
+
+## Shared gate extension
+
+The first shared gate wave adds a server-only question bank, sourced memory candidates, typed canonical players and per-gate readiness. The optional schema-1 player section is backwards compatible; missing player research remains null. See [the exact scope, validation and thresholds](30-shared-gates-wave-a.md). The native facade retains the original algorithms.

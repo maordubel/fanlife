@@ -1,5 +1,7 @@
 import type {DatedCard} from '@/lib/game/timeline-run'
 import type {ClubTheme} from './theme'
+import type {MasterQuestion} from '@/lib/game/questions/types'
+import type {MemoryCandidate} from '@/lib/game/memory-engine'
 export type FactStatus = 'draft' | 'review' | 'approved' | 'rejected' | 'deep_research'
 export type Confidence = 0 | 1 | 2 | 3
 export type Locale = 'en' | 'he' | 'el' | 'hr'
@@ -11,6 +13,8 @@ export type Fact<T> = {
 export type Source = {id:string;title:string;url:string|null;publisher:string;access:'available'|'blocked'|'unknown';checkedAt:string|null}
 export type Readiness = {state:ReadinessState;playable:boolean;eligible:number;target:number;reasons:string[]}
 export type Entity = {id:string;name:string}
+export type ClubPlayer = Entity & {positions:('GK'|'DF'|'MF'|'FW')[];fromYear:number|null;toYear:number|null;aliases:string[]}
+export type ClubTrivia = {questions:MasterQuestion[];pools:Record<string,string[]>}
 export type HistoricalEvent = Entity & {on:string|null;precision:'day'|'year'|'unknown';hint:string;sport:'football';sensitive:boolean}
 /** null = not researched/migrated; [] = known empty. Never invent missing fields. */
 export type ClubData = {
@@ -19,10 +23,11 @@ export type ClubData = {
   locales:{ui:Locale;content:Locale;supported:Locale[];direction:'ltr'|'rtl'}
   theme:ClubTheme
   rivals:Fact<Entity>[]|null;competitions:Fact<Entity>[]|null;seasons:Fact<Entity>[]|null
-  players:Fact<Entity>[]|null;matches:Fact<Entity>[]|null;trophies:Fact<Entity>[]|null
+  players:Fact<ClubPlayer>[]|null;matches:Fact<Entity>[]|null;trophies:Fact<Entity>[]|null
   kits:Fact<Entity>[]|null;stadiums:Fact<Entity>[]|null;places:Fact<Entity>[]|null;culture:Fact<Entity>[]|null
   archive:Fact<HistoricalEvent>[];timeline:Fact<DatedCard>[]
-  gates:{timeline:Readiness};life:{state:'legacy'|'unavailable';reason:string};sources:Source[];readiness:Readiness
+  trivia:ClubTrivia;memory:MemoryCandidate[]
+  gates:{timeline:Readiness;trivia:Readiness;xi:Readiness;archive:Readiness;memory:Readiness};life:{state:'legacy'|'unavailable';reason:string};sources:Source[];readiness:Readiness
 }
 export type Diagnostic = {record:string;code:string;message:string}
 export const missingSections={rivals:null,competitions:null,seasons:null,players:null,matches:null,trophies:null,kits:null,stadiums:null,places:null,culture:null} as const

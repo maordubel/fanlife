@@ -83,7 +83,7 @@ jobs:
       - name: Install browser for shared-club smoke test
         run: npx playwright install --with-deps chromium
 
-      - name: Shared Timeline browser flow — three clubs and RTL
+      - name: Shared gates browser flow — three clubs, local activity and RTL
         run: npm run master:core-browser
 
       - name: Browser evidence
