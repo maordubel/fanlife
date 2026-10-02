@@ -38,7 +38,7 @@ try {
  context.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));page.on('pageerror',e=>errors.push(e.message));context.on('request',r=>{if(/supabase\.co/.test(r.url()))external.push(r.url())})
  const golden=JSON.parse(readFileSync('tests/fixtures/timeline-golden.json','utf8')).runs.find(r=>r.seed===42&&r.cursor===0)
  mkdirSync('/tmp/fanlife-m1-browser',{recursive:true})
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos']) {
+ for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']) {
   const dates=new Map(slug==='hapoel-tel-aviv'?golden.board.map(c=>[c.id,c.on]):JSON.parse(readFileSync(`club-packs/${slug}/core.json`,'utf8')).archive.map(f=>[createHash('sha256').update(`${slug}:${slug}:${f.id}:${f.value.on}`).digest('hex').slice(0,16),f.value.on]))
   const response=await page.goto(`${base}/clubs/${slug}/timeline?seed=42`)
   assert.equal(response.status(),200)
@@ -66,9 +66,9 @@ try {
   assert(new URL(page.url()).searchParams.get('r')==='1')
   report.push({club:slug,placements:length,result:'passed',mobile:'390x844'})
  }
- assert.equal(new Set(identities.map(i=>i.background)).size,3)
+ assert.equal(new Set(identities.map(i=>i.background)).size,4)
  assert.equal(new Set(identities.map(i=>i.display)).size,3)
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos']) {
+ for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']) {
   await page.goto(`${base}/clubs/${slug}?lang=he`)
   await page.getByRole('heading',{name:REGISTRY.find(c=>c.id===slug).name,exact:true}).waitFor()
   assert.equal(await page.locator('.fl').getAttribute('dir'),'rtl')
@@ -85,7 +85,7 @@ try {
  assert.equal(await page.locator('main').getAttribute('lang'),'en')
  assert((await page.locator('main').innerText()).includes('This language is not available yet.'))
  await page.goto(`${base}/`)
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos'])await identityCheck(page,slug,`.club-card[data-club="${slug}"]`,`/tmp/fanlife-m1-browser/${slug}-portal.png`)
+ for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva'])await identityCheck(page,slug,`.club-card[data-club="${slug}"]`,`/tmp/fanlife-m1-browser/${slug}-portal.png`)
  await page.goto(`${base}/clubs/hapoel-tel-aviv/timeline?seed=42&lang=he`)
  await page.getByTestId('timeline-hand').waitFor()
  assert.equal(await page.locator('main').getAttribute('dir'),'rtl')
@@ -102,7 +102,7 @@ try {
  const questionMaster=JSON.parse(readFileSync('content/generated/question-master.json','utf8'))
  const nativeQuestions=new Map(questionMaster.questions.map(q=>[q.id,q]))
  const interactions=new Set()
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos']) {
+ for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']) {
   const response=await page.goto(`${base}/clubs/${slug}/trivia?seed=42&lang=en`)
   assert.equal(response.status(),200)
   const truthDates=slug==='hapoel-tel-aviv'?null:JSON.parse(readFileSync(`club-packs/${slug}/core.json`,'utf8')).archive
@@ -157,7 +157,7 @@ try {
  // All six existing interactions are preserved in native QA; this mixed browser round
  // exercises the interaction types actually dealt, without forcing a handpicked fork.
  assert(interactions.has('mcq')&&interactions.size>=2)
- for(const xiClub of ['hapoel-tel-aviv','zrinjski-mostar']){
+ for(const xiClub of ['hapoel-tel-aviv','zrinjski-mostar','hapoel-petah-tikva']){
  await page.goto(`${base}/clubs/${xiClub}/xi`)
  await page.getByTestId('xi-builder').waitFor()
  for(let i=0;i<11;i++){
@@ -192,7 +192,7 @@ try {
  await page.getByTestId('trivia-empty').waitFor();assert.equal(await page.getByTestId('trivia-question').count(),0)
  assert.deepEqual(errors,[]);assert.deepEqual(external,[])
  const nextGates=[]
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos']){
+ for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']){
   await page.goto(`${base}/clubs/${slug}/polls?seed=42&lang=en`);await page.getByTestId('polls-board').waitFor()
   const selects=page.getByTestId('polls-board').locator('select'),count=await selects.count()
   assert(count>=3&&count<=5)
@@ -209,6 +209,10 @@ try {
  await page.goto(`${base}/clubs/zrinjski-mostar/archive?q=seventh`);await page.getByTestId('archive-entry').waitFor()
  assert((await page.getByTestId('archive-entry').innerText()).includes('2022'));assert.equal(await page.getByTestId('archive-entry').locator('time').count(),0)
  await page.goto(`${base}/clubs/zrinjski-mostar/archive?q=Karačić`);await page.getByTestId('archive-entry').waitFor();assert((await page.getByTestId('archive-entry').innerText()).includes('Goran Karačić'))
+ await page.getByRole('link',{name:'Open archive entry ↗',exact:true}).click();await page.waitForURL(url=>url.searchParams.has('event'));await page.getByRole('link',{name:'Back to the archive',exact:true}).waitFor();assert.equal(await page.getByTestId('archive-entry').locator('a[target="_blank"]').count(),2)
+ await page.goto(`${base}/clubs/hapoel-petah-tikva/archive?q=${encodeURIComponent('1954/55')}`);await page.getByTestId('archive-entry').waitFor()
+ assert((await page.getByTestId('archive-entry').innerText()).includes('1955'));assert.equal(await page.getByTestId('archive-entry').locator('time').count(),0)
+ await page.goto(`${base}/clubs/hapoel-petah-tikva/archive?q=${encodeURIComponent('עומר כץ')}`);await page.getByTestId('archive-entry').waitFor()
  await page.getByRole('link',{name:'Open archive entry ↗',exact:true}).click();await page.waitForURL(url=>url.searchParams.has('event'));await page.getByRole('link',{name:'Back to the archive',exact:true}).waitFor();assert.equal(await page.getByTestId('archive-entry').locator('a[target="_blank"]').count(),2)
  const mysteryBank=JSON.parse(readFileSync('content/generated/blind-cow-bank.json','utf8'))
  await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=en`);await page.getByTestId('mystery-board').waitFor();await page.getByRole('button',{name:'Start or resume',exact:true}).click();await page.locator('[data-clue-n="1"]').waitFor()
@@ -228,7 +232,7 @@ try {
  await identityCheck(page,'hapoel-tel-aviv','.club-surface','/tmp/fanlife-m1-browser/hapoel-mystery.png')
  await page.getByRole('button',{name:'Play again',exact:true}).click();await page.getByRole('button',{name:'Give up and reveal',exact:true}).waitFor();await page.getByRole('button',{name:'Give up and reveal',exact:true}).click();await page.getByTestId('mystery-result').waitFor();assert((await page.getByTestId('mystery-result').innerText()).includes('Answer revealed'))
  await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=he`);await page.getByTestId('mystery-board').waitFor();assert.equal(await page.locator('html').getAttribute('dir'),'rtl');assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))
- for(const slug of ['zrinjski-mostar','olympiacos']){await page.goto(`${base}/clubs/${slug}/blind-cow`);await page.getByTestId('gate-locked').waitFor();assert.equal(await page.getByTestId('mystery-board').count(),0)}
+ for(const slug of ['zrinjski-mostar','olympiacos','hapoel-petah-tikva']){await page.goto(`${base}/clubs/${slug}/blind-cow`);await page.getByTestId('gate-locked').waitFor();assert.equal(await page.getByTestId('mystery-board').count(),0)}
  const hostPage=await context.newPage()
  await hostPage.goto(`http://olympiacos.localhost:${port}/timeline/order`)
  await hostPage.getByTestId('timeline-hand').waitFor()
@@ -248,11 +252,15 @@ try {
  }
  await hostPage.goto(`http://olympiacos.localhost:${port}/blind-cow?lang=he`);await hostPage.getByTestId('gate-locked').waitFor();assert.equal(new URL(hostPage.url()).pathname,'/clubs/olympiacos/blind-cow')
  await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/hapoel-tel-aviv/blind-cow`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId('mystery-board').count(),0)
+ for(const [entry,testId] of [['timeline','timeline-hand'],['trivia','trivia-question'],['memory','memory-board'],['archive','archive-entry'],['xi','xi-builder'],['polls','polls-board']]){
+  await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/hapoel-petah-tikva/${entry}`)
+  await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).includes('Zrinjski Mostar')))
+ }
  await page.goto(`${base}/master/core?club=olympiacos`)
  await page.getByRole('heading',{name:'Gate readiness and missing content',exact:true}).waitFor()
  assert((await page.locator('main').innerText()).includes('Human-approved primary rival'))
  assert.deepEqual(errors,[]);assert.deepEqual(external,[])
- const result={nextGates,zrinjskiArchive:{records:42,exactDates:14,players:27,yearOnly:'passed',playerEvidence:'passed'},mystery:{solve:'passed',wrongGuess:'passed',resume:'passed',giveUp:'passed',insufficientDataLocks:'passed'},sharedGames,interactionTypes:[...interactions],xiSaveReload:'passed',newGatesRtl:'passed',allGateReadiness:'passed',flows:report,identities,portalCards:'passed',clubHubsRtl:'passed',unsupportedLocale:'passed',rtl:'passed',evidence:'passed',hostIsolation:'passed',browserErrors:errors,liveSupabaseRequests:external.length}
+ const result={nextGates,hapoelPetahTikvaArchive:{facts:24,exactDates:11,players:21,yearOnly:'passed',playerEvidence:'passed'},zrinjskiArchive:{records:42,exactDates:14,players:27,yearOnly:'passed',playerEvidence:'passed'},mystery:{solve:'passed',wrongGuess:'passed',resume:'passed',giveUp:'passed',insufficientDataLocks:'passed'},sharedGames,interactionTypes:[...interactions],xiSaveReload:'passed',newGatesRtl:'passed',allGateReadiness:'passed',flows:report,identities,portalCards:'passed',clubHubsRtl:'passed',unsupportedLocale:'passed',rtl:'passed',evidence:'passed',hostIsolation:'passed',browserErrors:errors,liveSupabaseRequests:external.length}
  writeFileSync('/tmp/fanlife-m1-browser/report.json',JSON.stringify(result,null,2))
  console.log(JSON.stringify(result,null,2))
 } finally {

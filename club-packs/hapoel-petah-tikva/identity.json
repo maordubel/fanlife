@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "secondary": "#FFFFFF",
+  "surface": "#FFFFFF",
+  "text": "#20242B",
+  "muted": "#535962",
+  "accent": "#1F4E9C",
+  "fonts": {
+    "display": "frank",
+    "body": "heebo",
+    "mono": "courier",
+    "poster": "karantina"
+  },
+  "colorPolicy": {
+    "status": "pending",
+    "rivalIdentityColors": [],
+    "approvedBy": null,
+    "approvedAt": null,
+    "legacyRules": []
+  },
+  "historicalExemptions": [],
+  "clubId": "hapoel-petah-tikva",
+  "background": "#EEF3FA",
+  "pattern": "rules"
+}
