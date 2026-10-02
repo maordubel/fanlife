@@ -25,4 +25,4 @@ Identity uses the registry's blue and a readable light blue surface. Rival color
 
 ## Regression coverage
 
-The dedicated pack tests check year precision, unknown player fields, gate states, host isolation and removal of all dependent gameplay when museum corroboration is blocked. Existing parameterized shared-engine/action tests now include this club. The production browser smoke covers complete chronology/trivia/memory runs, archive evidence and year-only search, XI save/reload, polls persistence, Hebrew RTL hubs and registered-host isolation across six gates. CI retains native golden captures and the full repository checks.
+The dedicated pack tests check year precision, unknown player fields, gate states, host isolation and removal of all dependent gameplay when museum corroboration is blocked. Existing parameterized shared-engine tests now include this club. The production browser smoke covers complete chronology/trivia/memory runs, archive evidence and year-only search, XI save/reload, polls persistence, Hebrew RTL hubs and registered-host isolation across six gates. CI retains native golden captures and the full repository checks.
