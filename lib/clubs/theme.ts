@@ -1,6 +1,7 @@
 import type {CSSProperties} from 'react'
 import hapoel from '@/club-packs/hapoel-tel-aviv/identity.json'
 import zrinjski from '@/club-packs/zrinjski-mostar/identity.json'
+import petahTikva from '@/club-packs/hapoel-petah-tikva/identity.json'
 import olympiacos from '@/club-packs/olympiacos/identity.json'
 import type {UiLocale} from './locale'
 
@@ -16,7 +17,7 @@ export type ClubTheme={
 const HEX=/^#[\da-f]{6}$/i
 const calendarDate=(s:string|null)=>Boolean(s&&/^\d{4}-\d{2}-\d{2}$/.test(s)&&Number.isFinite(Date.parse(s))&&new Date(s).toISOString().slice(0,10)===s)
 const FONT:Record<FontId,string>={archivo:'Archivo',heebo:'Heebo',frank:'Frank Ruhl Libre',miriam:'Miriam Libre',courier:'Courier Prime',karantina:'Karantina'}
-const catalogue:Record<string,unknown>={'hapoel-tel-aviv':hapoel,'zrinjski-mostar':zrinjski,olympiacos}
+const catalogue:Record<string,unknown>={'hapoel-tel-aviv':hapoel,'zrinjski-mostar':zrinjski,olympiacos,'hapoel-petah-tikva':petahTikva}
 const neutral={background:'#F0F1ED',surface:'#FFFFFF',text:'#243027',muted:'#536050',accent:'#3E4B3E',secondary:'#FFFFFF',fonts:{display:'archivo',body:'heebo',mono:'courier',poster:'karantina'},pattern:'plain',colorPolicy:{status:'pending',rivalIdentityColors:[],approvedBy:null,approvedAt:null,legacyRules:[]},historicalExemptions:[]}
 export function rgb(hex:string):[number,number,number] {
  if(!HEX.test(hex))throw new Error('INVALID_THEME_COLOR')

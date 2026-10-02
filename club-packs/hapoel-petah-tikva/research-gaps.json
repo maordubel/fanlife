@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-02",
+  "clubId": "hapoel-petah-tikva",
+  "items": [
+    {
+      "id": "history-year-conflict",
+      "status": "review",
+      "sources": [
+        "https://www.hapoelpt.com/history",
+        "https://www.hpt.co.il/?AllSeasons=1",
+        "https://www.football.org.il/clubs/club-titles/?club_id=2173"
+      ],
+      "reason": "Official history explicitly credits museum content and shifts the consecutive title sequence by one year. It is neither independent corroboration nor the active trophy source. Use concordant HPT/IFA senior title seasons."
+    },
+    {
+      "id": "role-noam-cohen",
+      "status": "review",
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "reason": "Museum lists forward; club squad places this name in midfield. Identity only; positions empty."
+    },
+    {
+      "id": "squad-name-variants",
+      "status": "review",
+      "reason": "Omri/Amri Cohen, Moshe/Moshiko Meir and Euclides Andrade name variants need canonical profile corroboration. Not merged into active identities or aliases."
+    },
+    {
+      "id": "hpt-match-3066-unavailable",
+      "status": "deep_research",
+      "sources": [
+        "https://www.hpt.co.il/?ShowGame=3066"
+      ],
+      "reason": "2026-10-02 retrieval returned database max_user_connections error. Exact date not approved from this unavailable museum page."
+    },
+    {
+      "id": "historical-player-coverage",
+      "status": "deep_research",
+      "reason": "Historic greats, full career years and complete position coverage remain unresearched. Current observed squad is not marketed as a complete all-time player archive."
+    },
+    {
+      "id": "remaining-gates",
+      "status": "deep_research",
+      "reason": "Historical lineups, kit components/rights, goal geometry, Rumble ratings, mystery clues, culture/rivalry and LIFE require their own sourced content and shared engine work."
+    },
+    {
+      "id": "recent-detail-conflicts",
+      "status": "review",
+      "reason": "Some official fixture round numbers, venues and kick-off times differ from museum/IFA reports. Active recent records approve only concordant dates, team pairing and final totals. No disputed minutes or other detail imported."
+    }
+  ]
+}

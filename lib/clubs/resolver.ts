@@ -8,6 +8,7 @@ import {gateReadiness} from './gate-data'
 const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[]}>>={
  'hapoel-tel-aviv':async()=>({data:(await import('./adapters/hapoel')).getHapoelData(),diagnostics:[]}),
  'zrinjski-mostar':async()=>compilePack((await import('./adapters/zrinjski')).zrinjskiPack(),REGISTRY.find(c=>c.id==='zrinjski-mostar')!),
+ 'hapoel-petah-tikva':async()=>compilePack((await import('@/club-packs/hapoel-petah-tikva/core.json')).default,REGISTRY.find(c=>c.id==='hapoel-petah-tikva')!),
  olympiacos:async()=>compilePack((await import('@/club-packs/olympiacos/core.json')).default,REGISTRY.find(c=>c.id==='olympiacos')!),
 }
 export const CORE_CLUB_IDS=Object.keys(providers)
