@@ -7,13 +7,14 @@
     "trim": "#2A1216"
   },
   "kit": {
-    "pattern": "stripes",
+    "pattern": "sash",
     "status": "review",
     "kitId": "kit-2022-home",
     "sourceIds": [
       "src-kits"
     ],
-    "note": "kits.json records the 2022/23 home shirt as white/red stripes. Earlier designs (hoops 1994/95, checkers 1995/96, sash 1997/98) are in kits.json and can dress earlier chapters once approved."
+    "note": "Owner-supplied shirts (Macron, 5.10.2026): white cloth, one wide red diagonal sash from the left shoulder with fine pinstripes beside it; a second away-style design with fine red diagonal lines. The 2022/23 stripe record in kits.json is superseded for the current shirt; earlier designs (hoops 1994/95, checkers 1995/96, sash 1997/98) can dress earlier chapters once approved.",
+    "base": "secondary"
   },
   "gateNumbers": [
     1,

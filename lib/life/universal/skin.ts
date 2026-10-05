@@ -22,7 +22,7 @@ export type LifeSkinManifest = {
   clubId: string
   shortName?: string
   colors?: {secondary?: string; trim?: string}
-  kit?: {pattern: string; status: string; kitId?: string; sourceIds?: string[]; note?: string}
+  kit?: {pattern: string; /** 'secondary' = the cloth is the second colour and the pattern is drawn in the first (a white shirt with a red sash) */ base?: 'primary' | 'secondary'; status: string; kitId?: string; sourceIds?: string[]; note?: string}
   gateNumbers?: number[]
   signage?: Partial<Record<SignKey | 'script', string>>
   venue?: {name: string; status: string; approvedBy?: string; placeId?: string; sourceIds?: string[]; note?: string} | null
@@ -37,6 +37,8 @@ export type VoxelSkin = {
   s: string
   t: string
   pattern: KitPattern
+  /** inverse kit: the shirt's cloth is `s` and its pattern is `p` */
+  ik?: boolean
   crest: 'real' | 'monogram'
   art: {crest: string; shirt: string | null} | null
   nums: [number, number, number]
@@ -89,6 +91,7 @@ export function buildSkin(club: SkinSubject, theme: ClubTheme, manifest: LifeSki
       short: (m?.shortName ?? club.name).toUpperCase().slice(0, 22),
       initials: club.initials.toUpperCase().slice(0, 3),
       p, s, t, pattern,
+      ...(m?.kit?.base === 'secondary' && pattern !== 'solid' ? {ik: true} : {}),
       crest: printed ? 'real' : 'monogram',
       art: printed ? {crest: m!.crest!.crest!, shirt: m!.crest!.shirt?.startsWith('/life/voxel/tex/') ? m!.crest!.shirt : null} : null,
       nums,

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>LIFE · Cinema</title>
+<link rel="stylesheet" href="/life/voxel/play.css">
+<link rel="stylesheet" href="/life/voxel/cinema.css">
+</head><body>
+<main class="stage day" id="stage">
+ <div class="sky"></div>
+ <canvas id="gl"></canvas>
+ <div class="vig"></div><div class="grain"></div>
+ <div class="ghost" id="ghost" aria-hidden="true"><canvas id="ghostc"></canvas></div>
+ <div class="hud">
+  <div class="place" id="place" aria-live="polite"></div>
+  <div class="bar">
+   <button id="tour" type="button">Auto tour</button>
+   <button id="cmp" type="button" aria-pressed="true">Cinema: on</button>
+  </div>
+  <div class="hint" id="hint">Tap to walk · WASD / arrows · C to compare</div>
+  <div class="end" id="end" hidden><p>That is the walk — six rooms, no cuts.</p><button id="again" type="button">Walk it again</button></div>
+ </div>
+ <div class="loader" id="loader" aria-hidden="true"></div>
+</main>
+<script src="/life/voxel/three.r128.min.js"></script>
+<script src="/life/voxel/engine.js"></script>
+<script src="/life/voxel/rooms-core.js"></script>
+<script src="/life/voxel/rooms-kit.js"></script>
+<script src="/life/voxel/rooms-base.js"></script>
+<script src="/life/voxel/rooms-interior.js"></script>
+<script src="/life/voxel/rooms-outdoor.js"></script>
+<script src="/life/voxel/rooms-stadium.js"></script>
+<script src="/life/voxel/rooms-universal.js"></script>
+<script src="/life/voxel/play.js"></script>
+<script src="/life/voxel/cinema.js"></script>
+</body></html>

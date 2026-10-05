@@ -1,0 +1,18 @@
+/* The cinema demo: a lens (bloom, grade, grain) and the glue between rooms. Two plates only — ink and cream. */
+:root{--ink:#0d1017;--cream:#ece6d8;--red:#b02d10}
+.stage.cine .vig,.stage.cine .grain{display:none}
+.ghost{position:absolute;inset:0;pointer-events:none;z-index:2;opacity:0;will-change:transform,opacity}
+.ghost canvas{position:absolute;inset:0;width:100%;height:100%}
+.hud{position:absolute;inset:0;pointer-events:none;z-index:4;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));font:600 13px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--cream)}
+.place{position:absolute;inset-inline-start:16px;top:max(16px,env(safe-area-inset-top));letter-spacing:.18em;text-transform:uppercase;font-size:12px;opacity:0;transition:opacity .6s;text-shadow:0 1px 8px rgba(13,16,23,.8)}
+.place.on{opacity:.95}
+.bar{position:absolute;inset-inline-end:16px;top:max(12px,env(safe-area-inset-top));display:flex;gap:8px;pointer-events:auto}
+.hud button{min-height:44px;padding:0 16px;border:1.5px solid var(--cream);border-radius:0;background:rgba(13,16,23,.72);color:var(--cream);font:inherit;letter-spacing:.06em;cursor:pointer}
+.hud button[aria-pressed="true"],.hud button.live{background:var(--red);border-color:var(--red)}
+.hint{position:absolute;inset-inline:16px;bottom:max(18px,env(safe-area-inset-bottom));text-align:center;opacity:.8;font-weight:500;text-shadow:0 1px 8px rgba(13,16,23,.9);transition:opacity 1.2s}
+.hint.off{opacity:0}
+.end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:rgba(13,16,23,.55);pointer-events:auto;text-align:center;padding:24px}
+.end[hidden]{display:none}
+.end p{margin:0;font-size:18px}
+@media (max-width:520px){.bar{inset-inline:16px;top:auto;bottom:max(56px,calc(env(safe-area-inset-bottom) + 40px));justify-content:center}}
+@media (prefers-reduced-motion:reduce){.place{transition:none}.hint{transition:none}}
