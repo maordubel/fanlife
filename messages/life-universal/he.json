@@ -165,5 +165,8 @@
   "score.lost": "הפסד",
   "score.drew": "תיקו",
   "score.note": "הרישום מוסיף",
-  "score.competition": "מפעל"
+  "score.competition": "מפעל",
+  "score.scorers": "שערים",
+  "score.lineup": "פתחו",
+  "score.bench": "נכנסו"
 }

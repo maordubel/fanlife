@@ -21,7 +21,7 @@ import {ROOMS} from './rooms'
 import {sideLife} from './content/side'
 import type {VoxelSkin} from './skin'
 import {fillChapter, type Vars} from './text'
-import type {ArchiveRef, CardDef, Chapter, LifePack, LifeReadiness} from './types'
+import type {ArchiveRef, CardDef, Chapter, LifePack, LifeReadiness, MatchDetail} from './types'
 import {validateChapter, lifeFlagsOf} from './validate'
 
 export type TimelineManifest = {schemaVersion: 1; clubId: string; birthYear: number; status: string; note?: string}
@@ -40,6 +40,8 @@ export type ComposeInput = {
   selection: AnchorSelection | null
   /** approved, sourced, confidence ≥ 2 — eligibility is decided by the club compiler, not here */
   anchors: ArchiveRef[]
+  /** the club's own match record by ISO day: starters, bench and goals, where it has them */
+  details?: Record<string, MatchDetail>
   /** the club's data version: a new archive is a new pack */
   dataVersion: string
 }
@@ -78,7 +80,7 @@ export function composeLife(input: ComposeInput): LifePack {
 
   // the short name is never used to read a scoreline: "Hapoel" is half the league
   const names = [club.name, ...(input.aliases ?? [])]
-  const withMatch = (a: ArchiveRef): ArchiveRef => { const m = a.precision === 'day' ? readMatch(a.title, names) : null; return m ? {...a, match: m} : a }
+  const withMatch = (a: ArchiveRef): ArchiveRef => { const m = a.precision === 'day' ? readMatch(a.title, names) : null; const d = m && a.on ? input.details?.[a.on] : undefined; return m ? {...a, match: d ? {...m, detail: d} : m} : a }
   const dated = input.anchors.filter(a => a.precision === 'day' && a.on).map(withMatch).sort((a, b) => a.on!.localeCompare(b.on!))
   const yearly = input.anchors.filter(a => a.precision === 'year').sort((a, b) => a.year - b.year)
   const timelineOk = input.timeline?.clubId === club.id && Number.isInteger(input.timeline.birthYear)

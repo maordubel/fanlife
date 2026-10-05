@@ -9,7 +9,7 @@ import type {ClubData} from '@/lib/clubs/contract'
 import {REGISTRY} from '@/lib/master/registry'
 import {composeLife} from '@/lib/life/universal/compose'
 import type {ArchiveRef, LifePack} from '@/lib/life/universal/types'
-import {LIFE_ANCHORS, LIFE_CAST, LIFE_TIMELINE} from './packs'
+import {LIFE_ANCHORS, LIFE_CAST, LIFE_MATCH_DETAIL, LIFE_TIMELINE} from './packs'
 import {clubSkin} from './skins'
 
 const scriptOf = (s: string, fallback: string) => /[֐-׿]/.test(s) ? 'he' : /[Ͱ-Ͽ]/.test(s) ? 'el' : fallback === 'he' || fallback === 'el' ? 'en' : fallback
@@ -51,7 +51,7 @@ export function clubLife(data: ClubData): LifePack {
     aliases: selection?.aliases ?? [],
     skin, skinIssues: issues, skinPending: pending,
     cast, timeline: has(LIFE_TIMELINE), selection,
-    anchors: lifeAnchors(data), dataVersion: data.version,
+    anchors: lifeAnchors(data), details: has(LIFE_MATCH_DETAIL) ?? undefined, dataVersion: data.version,
   })
   cache.set(key, pack)
   return pack
