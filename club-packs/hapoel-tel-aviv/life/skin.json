@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-tel-aviv",
+  "shortName": "HAPOEL",
+  "colors": {
+    "secondary": "#EFE9DE",
+    "trim": "#1A2036"
+  },
+  "kit": {
+    "pattern": "solid",
+    "status": "approved",
+    "note": "Golden reference: the red home shirt of the hand-authored LIFE."
+  },
+  "gateNumbers": [
+    4,
+    5,
+    6
+  ],
+  "signage": {
+    "script": "he",
+    "kiosk": "קיוסק",
+    "ticket": "כרטיסים",
+    "school": "בית ספר",
+    "club": "מועדון",
+    "news": "חדשות",
+    "bus": "תחנה מרכזית",
+    "cafe": "קפה",
+    "snack": "מזנון",
+    "shop": "מכולת",
+    "market": "שוק"
+  },
+  "venue": {
+    "name": "Bloomfield",
+    "status": "approved",
+    "approvedBy": "legacy-curation",
+    "note": "Carried from the hand-authored Hapoel LIFE, where the ground is canon."
+  },
+  "crest": {
+    "mode": "printed",
+    "crest": "/life/voxel/tex/crestHapoel.png",
+    "shirt": "/life/voxel/tex/shirtHome.webp",
+    "rights": "owner artwork (The Worker brand library)"
+  }
+}

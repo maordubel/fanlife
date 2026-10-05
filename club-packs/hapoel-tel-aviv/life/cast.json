@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-tel-aviv",
+  "status": "review",
+  "note": "The fictional family and street of the hand-authored Hapoel LIFE, reused by name. Nobody here is a real person. Roles with no name keep the role's own word.",
+  "names": {
+    "dad": "Kobi",
+    "mum": "Rachel",
+    "friend": "Ofir",
+    "kiosk": "Rafi",
+    "elder": "Barry",
+    "mate": "Amit"
+  }
+}

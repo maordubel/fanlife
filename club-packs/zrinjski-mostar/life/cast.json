@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "status": "review",
+  "note": "First names from this pack's own fictional local cast (characters.json, truthMode FICTIONAL_LOCAL). The classmate who supports another club is left unnamed until the owner approves how rivalry is told.",
+  "names": {
+    "dad": "Ivan",
+    "mum": "Ana",
+    "friend": "Marko",
+    "kiosk": "Ivo",
+    "elder": "Ante"
+  }
+}

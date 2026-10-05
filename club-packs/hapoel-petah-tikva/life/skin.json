@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-petah-tikva",
+  "shortName": "PETAH TIKVA",
+  "colors": {
+    "secondary": "#EEF0F4",
+    "trim": "#0C1F4A"
+  },
+  "kit": {
+    "pattern": "solid",
+    "status": "review",
+    "note": "Solid blue as shown in the approved Voxel Realism Lab; the primary was confirmed by the owner on 2.10.2026. No kit source is in the pack yet."
+  },
+  "gateNumbers": [
+    3,
+    6,
+    9
+  ],
+  "signage": {
+    "script": "he",
+    "kiosk": "קיוסק",
+    "ticket": "כרטיסים",
+    "school": "בית ספר",
+    "club": "מועדון",
+    "news": "חדשות",
+    "bus": "תחנה מרכזית",
+    "cafe": "קפה",
+    "snack": "מזנון",
+    "shop": "מכולת",
+    "market": "שוק"
+  },
+  "venue": null,
+  "crest": {
+    "mode": "monogram"
+  }
+}

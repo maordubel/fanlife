@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "clubId": "olympiacos",
+  "shortName": "OLYMPIACOS",
+  "colors": {
+    "secondary": "#F1EEE8",
+    "trim": "#2A0E14"
+  },
+  "kit": {
+    "pattern": "stripes",
+    "status": "review",
+    "note": "Red and white stripes as shown in the approved Voxel Realism Lab (1.10.2026). No kit source is in the pack yet."
+  },
+  "gateNumbers": [
+    7,
+    8,
+    9
+  ],
+  "signage": {
+    "script": "el",
+    "kiosk": "ΠΕΡΙΠΤΕΡΟ",
+    "ticket": "ΕΙΣΙΤΗΡΙΑ",
+    "school": "ΣΧΟΛΕΙΟ",
+    "club": "ΣΥΛΛΟΓΟΣ",
+    "news": "ΕΙΔΗΣΕΙΣ",
+    "bus": "ΣΤΑΘΜΟΣ",
+    "ground": "ΓΗΠΕΔΟ",
+    "gate": "ΘΥΡΑ",
+    "stand": "ΚΕΡΚΙΔΑ",
+    "away": "ΦΙΛΟΞΕΝΟΥΜΕΝΟΙ",
+    "cafe": "ΚΑΦΕ",
+    "snack": "ΣΟΥΒΛΑΚΙ",
+    "since": "ΓΙΑ ΠΑΝΤΑ",
+    "shop": "ΠΑΝΤΟΠΩΛΕΙΟ",
+    "market": "ΑΓΟΡΑ"
+  },
+  "venue": null,
+  "crest": {
+    "mode": "monogram"
+  }
+}

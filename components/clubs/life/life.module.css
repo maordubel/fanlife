@@ -1,0 +1,215 @@
+/*
+ * LIFE, universal — "The Keepsake Drawer".
+ *
+ * Everything the supporter reads is a piece of matchday paper lying over the diorama: a ticket
+ * with a punched edge, a programme page, a stub with a serial number. The paper takes its
+ * colours from the club's validated theme tokens and from nothing else — no colour is written
+ * in this file. The punched edge (a row of holes along the top of every sheet) is the motif.
+ * Radius is 0; a "shadow" here is a second plate printed 3px down and across, never a blur.
+ */
+.life {
+  --l-paper: var(--club-surface);
+  --l-ink: var(--club-text);
+  --l-soft: var(--club-muted);
+  --l-prime: var(--club-primary);
+  --l-on: var(--club-on-primary);
+  --l-ground: var(--club-background);
+  --l-mark: var(--club-accent);
+  --l-deep: color-mix(in srgb, var(--club-text) 90%, var(--club-primary));
+  --l-rule: color-mix(in srgb, var(--club-text) 26%, transparent);
+  --l-hole: 14px;
+  --l-safe-b: env(safe-area-inset-bottom, 0px);
+  --l-safe-t: env(safe-area-inset-top, 0px);
+  position: relative;
+  inline-size: 100%;
+  block-size: 100vh;
+  block-size: 100dvh;
+  overflow: hidden;
+  background: var(--l-deep);
+  color: var(--l-ink);
+  font-family: var(--font-heebo), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.life button { font: inherit; cursor: pointer; }
+.life p { margin: 0; }
+.life kbd { display: inline-grid; place-content: center; min-inline-size: 1.7em; padding: 0 .35em; border: 1px solid currentColor; font-family: var(--font-courier), monospace; font-size: .8125rem; line-height: 1.5; }
+
+/* ───── the diorama ───── */
+.stage { position: absolute; inset: 0; }
+.world { display: block; inline-size: 100%; block-size: 100%; border: 0; background: var(--l-deep); }
+.loading { position: absolute; inset: 0; display: grid; place-content: center; color: var(--l-paper); font-family: var(--font-courier), monospace; letter-spacing: .08em; text-transform: uppercase; font-size: .875rem; background: var(--l-deep); }
+.failed { position: absolute; inset: 0; display: grid; place-content: center; gap: 16px; padding: 24px; text-align: center; color: var(--l-paper); background: var(--l-deep); }
+
+/* ───── paper ───── */
+.ticket, .sheet, .chip, .act, .toast, .game { position: relative; background: var(--l-paper); color: var(--l-ink); }
+.ticket::before, .sheet::before, .game::before {
+  content: ''; position: absolute; inset-inline: 0; inset-block-start: calc(var(--l-hole) / -2); block-size: var(--l-hole); pointer-events: none;
+  background: radial-gradient(circle at center, var(--l-deep) 4px, transparent 4.6px) 0 0 / var(--l-hole) var(--l-hole) repeat-x;
+}
+.serial { font-family: var(--font-courier), monospace; font-size: .8125rem; letter-spacing: .1em; text-transform: uppercase; color: var(--l-soft); font-variant-numeric: tabular-nums; }
+.heading { margin: 20px 0 8px; font-family: var(--font-courier), monospace; font-size: .8125rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--l-soft); }
+.muted { color: var(--l-soft); }
+
+/* ───── phone: the top strip ───── */
+.strip {
+  position: absolute; inset-inline: 0; inset-block-start: 0; z-index: 2; display: flex; align-items: center; gap: 12px;
+  padding: calc(10px + var(--l-safe-t)) 12px 10px; color: var(--l-paper);
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--l-deep) 86%, transparent), transparent);
+}
+.strip .serial { color: color-mix(in srgb, var(--l-paper) 78%, transparent); }
+.mark { display: grid; place-content: center; min-inline-size: 44px; min-block-size: 44px; padding-inline: 6px; background: var(--l-prime); color: var(--l-on); border: 2px solid var(--l-paper); font-family: var(--font-poster), var(--font-frank), sans-serif; font-size: 1.375rem; line-height: 1; }
+.stripText { flex: 1; min-inline-size: 0; }
+.stripTitle { font-family: var(--font-frank), serif; font-size: 1.125rem; font-weight: 700; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menuButton { padding: 8px 14px; background: var(--l-paper); color: var(--l-ink); border: 2px solid var(--l-ink); font-family: var(--font-courier), monospace; font-size: .8125rem; letter-spacing: .08em; text-transform: uppercase; }
+
+.chip { position: absolute; z-index: 2; inset-inline: 12px; inset-block-start: calc(70px + var(--l-safe-t)); padding: 8px 12px; border-inline-start: 6px solid var(--l-prime); font-size: .9375rem; line-height: 1.35; }
+.chip > span:first-child { font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--l-soft); margin-inline-end: 6px; }
+
+.programme { display: none; }
+
+/* ───── the thing in reach ───── */
+.act {
+  position: absolute; z-index: 3; inset-inline-end: 14px; inset-block-end: calc(34px + var(--l-safe-b)); max-inline-size: min(62vw, 20rem);
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 2px solid var(--l-ink); text-align: start;
+  box-shadow: 3px 3px 0 var(--l-prime);
+}
+.act[data-locked='true'] { border-style: dashed; box-shadow: none; }
+.actVerb { font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--l-mark); white-space: nowrap; }
+.actName { font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; }
+.stick {
+  position: absolute; z-index: 3; inset-inline-start: 18px; inset-block-end: calc(26px + var(--l-safe-b)); inline-size: 112px; block-size: 112px; border-radius: 50%;
+  border: 2px solid var(--l-paper); background: color-mix(in srgb, var(--l-deep) 55%, transparent); touch-action: none; display: grid; place-content: center;
+}
+.stick > span { display: block; inline-size: 48px; block-size: 48px; border-radius: 50%; background: var(--l-paper); border: 2px solid var(--l-ink); }
+.toast { position: absolute; z-index: 3; inset-inline: 14px; inset-block-end: calc(160px + var(--l-safe-b)); padding: 10px 14px; border-inline-start: 6px solid var(--l-mark); font-size: .9375rem; animation: rise .22s ease-out both; }
+
+/* ───── the conversation: a programme page ───── */
+.sheet {
+  position: absolute; z-index: 4; inset-inline: 0; inset-block-end: 0; max-block-size: 52dvh; overflow-y: auto; overscroll-behavior: contain;
+  padding: 22px 18px calc(18px + var(--l-safe-b)); border-block-start: 4px solid var(--l-prime); animation: rise .22s ease-out both;
+}
+.sheet[data-narration='true'] .line { font-style: italic; }
+.leave { color: var(--l-soft); position: absolute; inset-block-start: 8px; inset-inline-end: 8px; min-inline-size: 44px; background: none; border: 0; font-size: 1.5rem; line-height: 1; color: var(--l-soft); }
+.speaker { display: inline-block; margin-block-end: 8px; padding: 2px 10px; background: var(--l-prime); color: var(--l-on); font-family: var(--font-courier), monospace; font-size: .8125rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.speaker[data-me='true'] { background: var(--l-ink); color: var(--l-paper); }
+.line { font-family: var(--font-frank), serif; font-size: 1.1875rem; line-height: 1.5; padding-inline-end: 36px; min-block-size: 3.2em; animation: ink .18s ease-out both; }
+.more { display: flex; align-items: center; gap: 8px; margin-block-start: 12px; margin-inline-start: auto; padding: 8px 18px; background: var(--l-prime); color: var(--l-on); border: 0; font-weight: 700; }
+.choices { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+.choice { color: var(--l-ink); display: flex; gap: 12px; align-items: baseline; inline-size: 100%; padding: 10px 12px; text-align: start; background: var(--l-ground); border: 2px solid var(--l-ink); line-height: 1.35; }
+.choice > span:first-child { font-family: var(--font-courier), monospace; font-weight: 700; color: var(--l-mark); }
+.choice:hover { background: var(--l-paper); box-shadow: 3px 3px 0 var(--l-prime); }
+
+/* ───── cards: tickets out of the drawer ───── */
+.cover { position: fixed; inset: 0; display: grid; place-items: center; padding: calc(20px + var(--l-safe-t)) 14px calc(20px + var(--l-safe-b)); overflow-y: auto; background: color-mix(in srgb, var(--l-deep) 88%, transparent); }
+.cover[data-clear='true'] { background: color-mix(in srgb, var(--l-deep) 62%, transparent); }
+.ticket { inline-size: min(100%, 31rem); padding: 26px 22px 22px; border-inline-start: 10px solid var(--l-prime); box-shadow: 3px 3px 0 var(--l-prime); animation: drawer .26s cubic-bezier(.2, .7, .2, 1) both; }
+.ticket[data-kind='archive'] { border-inline-start-color: var(--l-ink); box-shadow: 3px 3px 0 var(--l-ink); }
+.poster { margin: 4px 0 0; font-family: var(--font-poster), var(--font-frank), serif; font-size: clamp(4.5rem, 26vw, 8rem); line-height: .86; letter-spacing: .01em; color: var(--l-mark); }
+.cardTitle { margin: 6px 0 10px; font-family: var(--font-frank), serif; font-size: clamp(1.625rem, 6.4vw, 2.25rem); font-weight: 700; line-height: 1.12; overflow-wrap: anywhere; }
+.kicker { font-family: var(--font-courier), monospace; font-size: .875rem; color: var(--l-mark); }
+.ageBig { float: inline-end; margin-inline-start: 12px; font-family: var(--font-poster), var(--font-frank), serif; font-size: 5.5rem; line-height: .8; color: var(--l-mark); font-variant-numeric: tabular-nums; }
+.lede { font-size: 1.0625rem; line-height: 1.55; max-inline-size: 60ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-block-start: 20px; clear: both; }
+.button { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; background: var(--l-prime); color: var(--l-on); border: 2px solid var(--l-prime); font-weight: 700; text-decoration: none; }
+.button:disabled { background: var(--l-ground); color: var(--l-soft); border-color: var(--l-soft); cursor: default; }
+.quiet { display: inline-flex; align-items: center; padding: 10px 14px; background: none; border: 2px solid var(--l-rule); color: var(--l-ink); text-decoration: none; }
+.stub { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 22px 0 0; padding-block-start: 14px; border-block-start: 2px dashed var(--l-rule); }
+.stub dt { font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--l-soft); }
+.stub dd { margin: 0; font-weight: 700; }
+.about { margin-block-start: 14px; font-size: .9375rem; }
+.about summary { display: flex; align-items: center; cursor: pointer; color: var(--l-mark); font-weight: 700; }
+.about p, .about ul { margin: 8px 0 0; }
+.about ul { padding-inline-start: 20px; color: var(--l-soft); }
+.links { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-block-start: 14px; }
+.links a { display: inline-flex; align-items: center; color: var(--l-mark); }
+.credit { display: flex; align-items: center; margin-block-start: 8px; padding-block-start: 8px; border-block-start: 1px solid var(--l-rule); font-family: var(--font-courier), monospace; font-size: .8125rem; letter-spacing: .04em; color: var(--l-soft); text-decoration: none; }
+.credit:hover { color: var(--l-ink); text-decoration: underline; }
+.archive { margin-block-start: 14px; padding-block-start: 12px; border-block-start: 2px dashed var(--l-rule); }
+.stamp { display: inline-block; padding: 2px 8px; border: 2px solid var(--l-mark); color: var(--l-mark); font-family: var(--font-courier), monospace; font-size: .8125rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transform: rotate(-1.5deg); }
+.sources { margin-block-start: 8px; font-size: .875rem; color: var(--l-soft); overflow-wrap: anywhere; }
+.sources a { color: var(--l-mark); }
+.kept { margin-block-start: 16px; padding: 12px 14px; background: var(--l-ground); border-inline-start: 6px solid var(--l-mark); }
+.keptName { margin-block: 8px 2px; font-family: var(--font-frank), serif; font-size: 1.1875rem; font-weight: 700; }
+.lifeLine { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.lifeLine li { display: grid; grid-template-columns: 2.6rem 1fr; gap: 8px; align-items: baseline; }
+.lifeLine li > span:first-child, .boxAge { font-family: var(--font-poster), var(--font-frank), serif; font-size: 1.5rem; line-height: 1; color: var(--l-mark); font-variant-numeric: tabular-nums; }
+.menuList { display: grid; gap: 8px; }
+.row { color: var(--l-ink); display: grid; gap: 2px; padding: 10px 12px; text-align: start; background: var(--l-ground); border: 2px solid var(--l-rule); }
+.row small { color: var(--l-soft); font-size: .875rem; }
+.row[aria-pressed='false'] { color: var(--l-soft); }
+.box ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.box li { display: grid; grid-template-columns: 2.6rem 1fr; gap: 8px; align-items: baseline; padding-block-end: 8px; border-block-end: 1px dashed var(--l-rule); }
+.box b { display: block; }
+.box small { display: block; color: var(--l-soft); font-size: .875rem; line-height: 1.4; }
+
+/* ───── hands ───── */
+.game { inline-size: min(100%, 26rem); padding: 26px 20px 20px; border-inline-start: 10px solid var(--l-prime); box-shadow: 3px 3px 0 var(--l-prime); text-align: center; animation: drawer .26s cubic-bezier(.2, .7, .2, 1) both; }
+.help { color: var(--l-soft); margin-block-end: 14px; }
+.gameState { min-block-size: 1.6em; margin-block: 10px; font-weight: 700; }
+.dial { display: flex; align-items: flex-end; justify-content: center; gap: 5px; block-size: 84px; padding-block-end: 4px; border-block-end: 2px solid var(--l-ink); }
+.dial span { inline-size: 12px; background: var(--l-rule); }
+.dial span[data-on='true'] { background: var(--l-prime); }
+.range { inline-size: 100%; min-block-size: 44px; accent-color: var(--l-prime); }
+.ring { position: relative; inline-size: 132px; block-size: 132px; margin-inline: auto; display: grid; place-content: center; border: 4px solid var(--l-ink); border-radius: 50%; }
+.ring span { position: absolute; inset: -4px; border: 4px solid var(--l-prime); border-radius: 50%; animation: beat .9s linear infinite; }
+.ring[data-still='true'] span { animation: none; }
+.ring b { font-family: var(--font-poster), var(--font-frank), serif; font-size: 3.25rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.big { min-inline-size: 5.5rem; padding: 14px 22px; background: var(--l-prime); color: var(--l-on); border: 2px solid var(--l-ink); font-size: 1.25rem; font-weight: 700; touch-action: manipulation; user-select: none; }
+.big:disabled { background: var(--l-ground); color: var(--l-soft); }
+.track { position: relative; block-size: 44px; border: 2px solid var(--l-ink); background: var(--l-ground); }
+.track i { position: absolute; inset-block: 0; inset-inline: 34%; background: color-mix(in srgb, var(--l-prime) 22%, transparent); border-inline: 2px dashed var(--l-prime); }
+.track span { position: absolute; inset-block: 4px; inline-size: 14px; margin-inline-start: -7px; background: var(--l-ink); }
+.track span[data-steady='true'] { background: var(--l-prime); }
+.progress { block-size: 6px; margin-block-start: 6px; background: var(--l-rule); }
+.progress span { display: block; block-size: 100%; background: var(--l-ink); }
+.pair { display: flex; justify-content: center; gap: 16px; }
+.coins { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.coin { inline-size: 48px; block-size: 48px; border-radius: 50%; border: 3px double var(--l-ink); background: var(--l-ground); }
+.coin[aria-pressed='true'] { background: var(--l-ink); border-color: var(--l-paper); transform: scale(.82); }
+.game .quiet { margin-block-start: 14px; margin-inline: auto; }
+
+@keyframes drawer { from { opacity: 0; transform: translateY(22px) rotate(-.7deg); } }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+@keyframes ink { from { opacity: 0; } }
+@keyframes beat { from { transform: scale(1.7); opacity: 0; } 60% { opacity: 1; } to { transform: scale(1); opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticket, .game, .sheet, .toast, .line, .ring span { animation: none; }
+}
+
+/* a short phone held sideways: the page keeps to one side and the room keeps the other */
+@media (max-width: 899px) and (orientation: landscape) and (max-height: 520px) {
+  .sheet { inset-inline-start: auto; inline-size: min(54vw, 26rem); max-block-size: 100dvh; inset-block-start: 0; border-block-start: 0; border-inline-start: 4px solid var(--l-prime); }
+  .sheet::before { display: none; }
+  .chip { inset-inline-end: auto; max-inline-size: 46vw; }
+}
+
+/* ───── desk: the diorama is a stage, and the programme lies beside it ───── */
+@media (min-width: 900px) {
+  .life { display: grid; grid-template-columns: minmax(0, 1fr) clamp(22rem, 30vw, 27rem); grid-template-rows: auto minmax(0, 1fr) auto; background: var(--l-paper); }
+  .stage { position: relative; inset: auto; grid-column: 1; grid-row: 1 / -1; min-block-size: 0; }
+  .strip { position: static; grid-column: 2; grid-row: 1; padding: 18px 20px 14px; background: var(--l-paper); color: var(--l-ink); border-block-end: 2px dashed var(--l-rule); }
+  .strip .serial { color: var(--l-soft); }
+  .mark { border-color: var(--l-ink); }
+  .stripTitle { font-size: 1.5rem; white-space: normal; }
+  .chip { display: none; }
+  .programme { display: block; grid-column: 2; grid-row: 2; min-block-size: 0; overflow-y: auto; padding: 4px 20px 18px; }
+  .objectives { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .objectives li { display: grid; grid-template-columns: 2rem 1fr; gap: 6px; align-items: baseline; line-height: 1.4; }
+  .objectives li > span:first-child { font-family: var(--font-courier), monospace; font-weight: 700; color: var(--l-mark); }
+  .objectives li[data-done='true'] { color: var(--l-soft); text-decoration: line-through; text-decoration-thickness: 1px; }
+  .objectives li[aria-current='step'] { font-weight: 700; }
+  .cast { line-height: 1.4; }
+  .keys { margin: 22px 0 0; padding-block-start: 14px; border-block-start: 2px dashed var(--l-rule); display: grid; gap: 6px; font-size: .875rem; color: var(--l-soft); }
+  .keys div { display: flex; align-items: center; gap: 10px; }
+  .keys dt { display: flex; gap: 3px; min-inline-size: 7.5rem; }
+  .keys dd { margin: 0; }
+  .sheet { position: relative; grid-column: 2; grid-row: 3; inset: auto; max-block-size: 62vh; padding: 24px 20px 20px; }
+  .line { font-size: 1.25rem; }
+  .act { inset-inline-end: 28px; inset-block-end: 28px; max-inline-size: 24rem; padding: 12px 16px; }
+  .toast { inset-inline: auto 28px; inset-block-end: 96px; max-inline-size: 26rem; }
+  .cover { padding: 32px; }
+  .ticket { inline-size: min(100%, 36rem); padding: 34px 32px 28px; }
+  .poster { font-size: 9rem; }
+}

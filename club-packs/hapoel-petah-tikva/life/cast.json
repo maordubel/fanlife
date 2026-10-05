@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-petah-tikva",
+  "status": "proposed",
+  "note": "Proposed fictional first names; awaiting owner approval. Nobody here is a real person.",
+  "names": {
+    "dad": "Moshe",
+    "mum": "Dalia",
+    "friend": "Eran",
+    "kiosk": "Shlomo",
+    "elder": "Avraham"
+  }
+}

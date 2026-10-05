@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-tel-aviv",
+  "status": "review",
+  "note": "Nights chosen among the archive's approved rows, by the date the archive records. A row that is not in the approved archive is simply not played.",
+  "aliases": [
+    "הפועל תל אביב",
+    "הפועל ת\"א"
+  ],
+  "nights": [
+    "1986-05-24",
+    "1990-05-12",
+    "2001-10-18",
+    "2002-03-14"
+  ]
+}

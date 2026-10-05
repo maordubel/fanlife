@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LIFE · Voxel Realism Lab</title>
+<link rel="stylesheet" href="/life/voxel/lab.css">
+</head><body>
+<div class="app">
+ <aside class="side">
+  <div class="brand"><h1>Voxel Realism Lab</h1><p>Style A, rebuilt from The Worker's real materials — plaster, terrazzo, kiosk tile, doors, sofa fabric, asphalt.</p></div>
+  <div class="grp"><div class="lab">Club pack</div>
+   <div class="seg" id="s-club"></div></div>
+  <div class="grp"><div class="lab">Room · <span id="rn"></span> built</div>
+   <select id="room" aria-label="Room"></select>
+   <div class="seg"><button id="prev">‹ Prev</button><button id="next">Next ›</button></div></div>
+  <div class="grp"><div class="lab">Time</div>
+   <div class="seg"><button data-k="time" data-v="day">Day</button><button data-k="time" data-v="night">Match night</button></div></div>
+  <div class="grp"><div class="lab">Look</div>
+   <div class="seg"><button data-k="look" data-v="voxel">Voxel</button><button data-k="look" data-v="painting">Painting</button><button data-k="look" data-v="split">Split</button></div>
+   <input id="cut" type="range" min="0" max="100" value="50" hidden aria-label="Split position"></div>
+  <div class="grp"><div class="lab">ClubSkin — the only thing a club pack changes</div>
+   <div class="sw" id="sw"></div><pre id="skin"></pre></div>
+  <div class="note">
+   <div><b>Real materials.</b> Every wall, floor and fabric samples a crop of the Worker paintings, one random patch per voxel cell — so no two blocks repeat.</div>
+   <div><b>Crest rule.</b> A club with licensed artwork prints it. Every other club carries a monogram of its initials until a licensed crest arrives — a crest is never redrawn.</div>
+   <div><b>Drag</b> over the scene to tilt the diorama; on a phone, to travel along it.</div>
+  </div>
+ </aside>
+ <main class="stage" id="stage">
+  <div class="frame day" id="frame">
+   <div class="sky"></div>
+   <canvas id="gl"></canvas>
+   <div class="over" id="over"></div>
+   <div class="vig"></div><div class="grain"></div>
+   <div class="hud"><div class="cap" id="cap"></div><div class="tag" id="tag"></div></div>
+  </div>
+  <div class="loader" id="loader">Laying voxels…</div>
+ </main>
+</div>
+
+<script src="/life/voxel/three.r128.min.js"></script>
+<script src="/life/voxel/engine.js"></script>
+<script src="/life/voxel/rooms-core.js"></script>
+<script src="/life/voxel/rooms-kit.js"></script>
+<script src="/life/voxel/rooms-base.js"></script>
+<script src="/life/voxel/rooms-interior.js"></script>
+<script src="/life/voxel/rooms-outdoor.js"></script>
+<script src="/life/voxel/rooms-stadium.js"></script>
+<script src="/life/voxel/rooms-universal.js"></script>
+<script src="/life/voxel/lab.js"></script>
+</body></html>

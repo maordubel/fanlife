@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "shortName": "ZRINJSKI",
+  "colors": {
+    "secondary": "#F1EEE8",
+    "trim": "#2A1216"
+  },
+  "kit": {
+    "pattern": "stripes",
+    "status": "review",
+    "kitId": "kit-2022-home",
+    "sourceIds": [
+      "src-kits"
+    ],
+    "note": "kits.json records the 2022/23 home shirt as white/red stripes. Earlier designs (hoops 1994/95, checkers 1995/96, sash 1997/98) are in kits.json and can dress earlier chapters once approved."
+  },
+  "gateNumbers": [
+    1,
+    2,
+    3
+  ],
+  "signage": {
+    "script": "hr",
+    "kiosk": "KIOSK",
+    "ticket": "ULAZNICE",
+    "school": "ŠKOLA",
+    "club": "KLUB",
+    "news": "VIJESTI",
+    "bus": "AUTOBUSNI KOLODVOR",
+    "ground": "STADION",
+    "gate": "ULAZ",
+    "stand": "TRIBINA",
+    "away": "GOSTI",
+    "cafe": "KAFIĆ",
+    "snack": "GRILL",
+    "since": "ZAUVIJEK",
+    "shop": "TRGOVINA",
+    "market": "TRŽNICA"
+  },
+  "venue": {
+    "name": "Pod Bijelim Brijegom",
+    "status": "review",
+    "placeId": "stadium-zrinjski",
+    "sourceIds": [
+      "src-stadium",
+      "src-club-info"
+    ],
+    "note": "places.json marks the ground VERIFIED_REAL from 1994; it prints on walls only after owner approval."
+  },
+  "crest": {
+    "mode": "monogram"
+  }
+}

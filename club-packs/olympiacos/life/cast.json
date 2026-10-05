@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "clubId": "olympiacos",
+  "status": "proposed",
+  "note": "Proposed fictional first names; awaiting owner approval. Nobody here is a real person.",
+  "names": {
+    "dad": "Nikos",
+    "mum": "Eleni",
+    "friend": "Stelios",
+    "kiosk": "Thanasis",
+    "elder": "Giannis"
+  }
+}
