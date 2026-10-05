@@ -113,7 +113,7 @@ describe('reading a recorded scoreline', () => {
 
 describe('every core club gets a life', () => {
   it('there is a universal chapter for every stage of a life, and the finale is last', () => {
-    expect(UNIVERSAL_CHAPTERS.map(c => c.id)).toEqual(['c1-colours', 'c2-shirt', 'c3-saturday', 'c4-yard', 'c5-away', 'c6-work', 'c7-far', 'c8-seat', 'finale'])
+    expect(UNIVERSAL_CHAPTERS.map(c => c.id)).toEqual(['c1-colours', 'c2-shirt', 'c3-saturday', 'c3a-album', 'c4-yard', 'c5-away', 'c6-work', 'c6a-empty', 'c7-far', 'c7a-meeting', 'c8-seat', 'finale'])
     const ages = UNIVERSAL_CHAPTERS.map(c => c.age)
     expect([...ages].sort((a, b) => a - b)).toEqual(ages)
     expect(Object.keys(catalogue(UNIVERSAL_CHAPTERS)).length).toBeGreaterThan(900)
