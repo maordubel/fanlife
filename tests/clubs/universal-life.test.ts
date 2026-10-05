@@ -146,10 +146,17 @@ describe('every core club gets a life', () => {
       for (const night of nights) {
         const row = eligible.get(night.anchor!.factId)
         expect(row, night.id).toBeDefined()
-        expect(night.anchor).toEqual(row)
+        // the row is quoted as the archive recorded it; the only thing added is what its title states, read with certainty
+        const {match, ...quoted} = night.anchor!
+        expect(quoted).toEqual(row)
+        if (match) expect(`${match.homeGoals}${match.awayGoals}`).toMatch(/^\d+$/)
         expect(night.anchor!.precision).toBe('day')
         expect(night.anchor!.sources.length).toBeGreaterThan(0)
-        expect(night.cards![0]!.title).toBe(row!.title)
+        // the record is printed exactly as it was recorded; the kick-off card only names the two sides it states
+        expect(night.cards!.find(c => c.id === 'archive')!.title).toBe(row!.title)
+        const kick = night.cards!.find(c => c.id === 'kickoff')
+        if (kick) expect(kick.title).toBe(`${match!.home} v ${match!.away}`)
+        if (kick) expect(JSON.stringify([kick.kicker, kick.title, kick.body])).not.toMatch(/\d+\s*[–—-]\s*\d+/)
         expect(night.age).toBe(row!.year - pack.hero.birthYear!)
       }
       for (const c of pack.chapters) for (const card of c.prelude ?? []) {

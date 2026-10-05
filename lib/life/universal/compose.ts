@@ -15,8 +15,10 @@
  */
 import {buildCast, HERO_LOOKS, type CastManifest} from './cast'
 import {UNIVERSAL_CHAPTERS} from './content'
-import {nightChapter, readResult} from './content/night'
+import {nightChapter} from './content/night'
+import {centrepieceOf, readMatch} from './match'
 import {ROOMS} from './rooms'
+import {sideLife} from './content/side'
 import type {VoxelSkin} from './skin'
 import {fillChapter, type Vars} from './text'
 import type {ArchiveRef, CardDef, Chapter, LifePack, LifeReadiness} from './types'
@@ -24,7 +26,7 @@ import {validateChapter, lifeFlagsOf} from './validate'
 
 export type TimelineManifest = {schemaVersion: 1; clubId: string; birthYear: number; status: string; note?: string}
 /** `nights` name archive rows by fact id or by the ISO day the archive records; `aliases` are other names the archive writes the club by. */
-export type AnchorSelection = {schemaVersion: 1; clubId: string; status: string; nights: string[]; aliases?: string[]; note?: string}
+export type AnchorSelection = {schemaVersion: 1; clubId: string; status: string; nights: string[]; aliases?: string[]; /** the fact id or ISO day of THE night; without it the best-served readable row is chosen */ centrepiece?: string; note?: string}
 
 export type ComposeInput = {
   club: {id: string; name: string; city: string; country: string}
@@ -74,7 +76,10 @@ export function composeLife(input: ComposeInput): LifePack {
     dadName: given('dad', 'your father'), mumName: given('mum', 'your mother'),
   }
 
-  const dated = input.anchors.filter(a => a.precision === 'day' && a.on).sort((a, b) => a.on!.localeCompare(b.on!))
+  // the short name is never used to read a scoreline: "Hapoel" is half the league
+  const names = [club.name, ...(input.aliases ?? [])]
+  const withMatch = (a: ArchiveRef): ArchiveRef => { const m = a.precision === 'day' ? readMatch(a.title, names) : null; return m ? {...a, match: m} : a }
+  const dated = input.anchors.filter(a => a.precision === 'day' && a.on).map(withMatch).sort((a, b) => a.on!.localeCompare(b.on!))
   const yearly = input.anchors.filter(a => a.precision === 'year').sort((a, b) => a.year - b.year)
   const timelineOk = input.timeline?.clubId === club.id && Number.isInteger(input.timeline.birthYear)
   const birthYear = timelineOk ? input.timeline!.birthYear : dated.length ? median(dated.map(a => a.year)) - DEFAULT_AGE_AT_NIGHT : null
@@ -82,10 +87,17 @@ export function composeLife(input: ComposeInput): LifePack {
 
   // the nights: the pack's own choice among its approved rows, else an even spread of them
   const chosen = input.selection?.clubId === club.id ? input.selection.nights.map(id => dated.find(a => a.factId === id || a.factId.endsWith(':' + id) || a.on === id)).filter((a): a is ArchiveRef => !!a) : []
-  const nightRows = (chosen.length ? chosen : spread(dated, MAX_NIGHTS)).filter(a => { const age = ageAt(a.year); return age !== null && age >= FIRST_AGE })
-  // the short name is never used to read a scoreline: "Hapoel" is half the league
-  const names = [club.name, ...(input.aliases ?? [])]
-  const nights = nightRows.map((a, i) => nightChapter(a, ageAt(a.year)!, readResult(a.title, names), i + 1))
+  const grown = (a: ArchiveRef) => { const age = ageAt(a.year); return age !== null && age >= FIRST_AGE }
+  let nightRows = (chosen.length ? chosen : spread(dated, MAX_NIGHTS)).filter(grown)
+  // THE night: the pack's own word, else the best-served readable row (of its chosen nights, or of the whole archive when it chose none)
+  const centre = centrepieceOf(chosen.length ? [...nightRows, ...dated.filter(a => a.factId === input.selection?.centrepiece || a.on === input.selection?.centrepiece)].filter(grown) : dated.filter(grown), input.selection?.clubId === club.id ? input.selection.centrepiece : undefined)
+  if (centre && !nightRows.some(a => a.factId === centre.factId)) {
+    // it takes the place of the night nearest to it in years, or joins the others when there is room
+    if (nightRows.length >= MAX_NIGHTS) { const at = nightRows.reduce((best, a, i) => Math.abs(a.year - centre.year) < Math.abs(nightRows[best]!.year - centre.year) ? i : best, 0); nightRows = nightRows.map((a, i) => i === at ? centre : a) }
+    else nightRows = [...nightRows, centre]
+    nightRows = nightRows.filter((a, i) => nightRows.findIndex(b => b.factId === a.factId) === i)
+  }
+  const nights = nightRows.map((a, i) => nightChapter(a, ageAt(a.year)!, a.match?.result ?? 'unread', i + 1, !!centre && a.factId === centre.factId))
 
   const universal = UNIVERSAL_CHAPTERS.map(c => c)
   const lastAge = Math.max(...universal.map(c => c.age), ...nights.map(c => c.age), 0)
@@ -106,7 +118,7 @@ export function composeLife(input: ComposeInput): LifePack {
     preludes.set(host.id, list)
   }
 
-  const chapters: Chapter[] = ordered.map(c => fillChapter({...c, prelude: preludes.get(c.id)}, vars))
+  const chapters: Chapter[] = ordered.map(c => fillChapter({...sideLife(c), prelude: preludes.get(c.id)}, vars))
   const rooms = Object.fromEntries(Object.entries(ROOMS).filter(([id]) => chapters.some(c => c.start.room === id || c.cast.some(p => p.room === id) || c.doors.some(d => d.room === id || d.to === id) || c.spots.some(s => s.room === id) || c.beats.some(b => b.room === id) || JSON.stringify(c.talks).includes(`"room":"${id}"`))))
 
   const issues: string[] = [], earlier = new Set<string>()

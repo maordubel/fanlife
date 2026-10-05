@@ -10,29 +10,15 @@
  * If the row's title is a scoreline the engine can read ("A 2–1 B"), the room reacts to the
  * result. If it is not, the room reacts to nothing and says so.
  */
-import type {ArchiveRef, Chapter, Line} from '../types'
+import {readMatch} from '../match'
+import type {ArchiveRef, CardDef, Chapter, Effect, Line} from '../types'
 import {bond, flag, heart, keep, say, tell} from './kit'
 
 export type NightResult = 'won' | 'lost' | 'drew' | 'unread'
 export type NightEra = 'child' | 'teen' | 'adult'
 
-const SCORE = /^(.+?)\s+(\d+)\s*[–—-]\s*(\d+)\s+(.+?)(?:\s+[·(|].*)?$/
-/** the other way an archive writes it: "A 2 — B 1" */
-const SCORE_SPLIT = /^(.+?)\s+(\d+)\s*[–—-]\s*(.+?)\s+(\d+)$/
-
 /** Reads a recorded scoreline. Anything it cannot read with certainty is `unread` — never a guess. */
-export function readResult(title: string, clubNames: readonly string[]): NightResult {
-  const a = SCORE.exec(title.trim()), b = a ? null : SCORE_SPLIT.exec(title.trim())
-  const m = a ?? (b && [b[0], b[1], b[2], b[4], b[3]])
-  if (!m) return 'unread'
-  const norm = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim()
-  const names = clubNames.map(norm).filter(Boolean)
-  const isUs = (side: string) => names.some(n => norm(side) === n || norm(side).startsWith(n + ' ') || n.startsWith(norm(side) + ' ') || n.endsWith(' ' + norm(side)))
-  const home = isUs(m[1]!), away = isUs(m[4]!)
-  if (home === away) return 'unread'
-  const ours = Number(home ? m[2] : m[3]), theirs = Number(home ? m[3] : m[2])
-  return ours > theirs ? 'won' : ours < theirs ? 'lost' : 'drew'
-}
+export const readResult = (title: string, clubNames: readonly string[]): NightResult => readMatch(title, clubNames)?.result ?? 'unread'
 
 const whistle: Record<NightResult, {child: Line[]; teen: Line[]; adult: Line[]; ending: string}> = {
   won: {
@@ -62,17 +48,23 @@ const whistle: Record<NightResult, {child: Line[]; teen: Line[]; adult: Line[]; 
 }
 
 /** One anchored night. `n` keeps ids unique when a life has several. */
-export function nightChapter(anchor: ArchiveRef, age: number, result: NightResult, n: number): Chapter {
+export function nightChapter(anchor: ArchiveRef, age: number, result: NightResult, n: number, centre = false): Chapter {
   const era: NightEra = age < 13 ? 'child' : age < 20 ? 'teen' : 'adult'
   const id = `night-${n}`, f = (k: string) => `${id}:${k}`
   const item = `night:${anchor.factId}`
-  const card = {id: 'archive', kicker: 'From the archive', title: anchor.title, body: anchor.hint, archive: anchor}
-  const done = [flag(f('over')), keep(item), heart(result === 'won' ? 8 : 5), {e: 'end' as const, ending: 'night'}]
+  const m = anchor.match
+  // a match the archive states in full is told as a match: the two sides first, the result when the whistle goes
+  const card: CardDef = {id: 'archive', kicker: 'From the archive', title: anchor.title, body: anchor.hint, archive: anchor, stage: m ? 'result' : undefined}
+  const kickoff: CardDef | null = m ? {id: 'kickoff', kicker: 'Tonight', title: `${m.home} v ${m.away}`, body: anchor.hint, archive: anchor, stage: 'kickoff'} : null
+  /** at the whistle the recorded result is laid on the table, then the night is over */
+  const done: Effect[] = [...(m ? [{e: 'card' as const, card: 'archive'}] : []), flag(f('over')), keep(item), heart((result === 'won' ? 8 : 5) + (centre ? 4 : 0)), {e: 'standing', by: centre ? 6 : 3}, {e: 'end' as const, ending: 'night'}]
+  /** the card that shows the night before it starts: with a readable match it is the kick-off, otherwise the record itself */
+  const watching: Effect[] = [{e: 'card', card: kickoff ? 'kickoff' : 'archive'}]
   const base = {
     id, act: (era === 'child' ? 1 : era === 'teen' ? 2 : 3) as 1 | 2 | 3, age,
-    title: 'A Night from the Archive', kicker: `Age ${age} · a night the club wrote down`,
-    anchor,
-    cards: [card],
+    title: centre ? 'The Night' : 'A Night from the Archive', kicker: centre ? `Age ${age} · the match` : `Age ${age} · a night the club wrote down`,
+    anchor, ...(centre ? {centrepiece: true} : {}),
+    cards: kickoff ? [kickoff, card] : [card],
     keepsakes: [{id: item, name: anchor.title, note: 'A night from the archive. You know where you were.'}],
     endings: {night: {title: 'You Were There', body: whistle[result].ending, keep: item}},
   }
@@ -110,7 +102,7 @@ export function nightChapter(anchor: ArchiveRef, age: number, result: NightResul
         ]},
         {lines: [say('dad', 'Not like that. Tonight you dress for it.')]},
       ]},
-      {id: 'watch', branches: [{lines: [{who: null, t: 'It starts. After that the evening has no minutes in it, only breaths.'}], then: [{e: 'card', card: 'archive'}], next: 'whistle'}]},
+      {id: 'watch', branches: [{lines: [{who: null, t: 'It starts. After that the evening has no minutes in it, only breaths.'}], then: watching, next: 'whistle'}]},
       {id: 'whistle', branches: [{lines: whistle[result].child, then: done}]},
     ],
   }
@@ -142,7 +134,7 @@ export function nightChapter(anchor: ArchiveRef, age: number, result: NightResul
         ]},
         {lines: [say('kiosk', 'You are looking for your friend, not for me. Over there.')]},
       ]},
-      {id: 'watch', branches: [{lines: [tell('The street goes quiet the way a classroom does. Then it starts, and the evening has no minutes in it, only breaths.')], then: [{e: 'card', card: 'archive'}], next: 'whistle'}]},
+      {id: 'watch', branches: [{lines: [tell('The street goes quiet the way a classroom does. Then it starts, and the evening has no minutes in it, only breaths.')], then: watching, next: 'whistle'}]},
       {id: 'whistle', branches: [{lines: whistle[result].teen, then: done}]},
     ],
   }
@@ -176,7 +168,7 @@ export function nightChapter(anchor: ArchiveRef, age: number, result: NightResul
         ]},
         {lines: [say('dad', 'I am fine. I am early, that is all.'), say('dad', 'Bring glasses. Not the good ones.')]},
       ]},
-      {id: 'watch', branches: [{lines: [tell('It starts. After that the evening has no minutes in it, only breaths — his and yours, not quite together.')], then: [{e: 'card', card: 'archive'}], next: 'whistle'}]},
+      {id: 'watch', branches: [{lines: [tell('It starts. After that the evening has no minutes in it, only breaths — his and yours, not quite together.')], then: watching, next: 'whistle'}]},
       {id: 'whistle', branches: [{lines: whistle[result].adult, then: done}]},
     ],
   }

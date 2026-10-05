@@ -17,6 +17,9 @@ import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {chapterOf, eventsOf, Life, meets, nextChapter, openChapter, type Directive, type LifeStore} from '@/lib/life/universal/engine'
 import type {CardDef, Chapter, LifePack, LifeState} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
+import {cityOf, type Place} from '@/lib/life/universal/city'
+import {CityMap} from './CityMap'
+import {MeSheet} from './MeSheet'
 import {MiniGame} from './MiniGame'
 import {people, roomConfig, type PlayEvent, type PlayRuntime, type PlayTarget} from './runtime'
 import {LifeSound} from './sound'
@@ -65,13 +68,15 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const [touch, setTouch] = useState(false)
   const [reduced, setReduced] = useState(false)
   const [reload, setReload] = useState(0)
+  const [sheet, setSheet] = useState<'none' | 'map' | 'me'>('none')
+  const [intro, setIntro] = useState<{id: string; name: string; role: string; blurb: string} | null>(null)
 
   const life = useRef<Life | null>(null)
   const rt = useRef<PlayRuntime | null>(null)
   const frame = useRef<HTMLIFrameElement | null>(null)
   const sound = useRef<LifeSound | null>(null)
   const runner = useRef<Runner | null>(null)
-  const live = useRef({phase: 'boot' as Phase, talk: null as TalkContext | null, overlay: false, menu: false, scene: null as Scene | null, time: 'day', wide: false})
+  const live = useRef({phase: 'boot' as Phase, talk: null as TalkContext | null, overlay: false, menu: false, sheet: false, scene: null as Scene | null, time: 'day', wide: false})
   const entered = useRef<(() => void) | null>(null)
   const dismiss = useRef<(() => void) | null>(null)
   const skipped = useRef(new Set<string>())
@@ -85,6 +90,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   live.current.talk = talk
   live.current.overlay = !!overlay
   live.current.menu = menu !== 'closed'
+  live.current.sheet = sheet !== 'none'
   live.current.scene = scene
   live.current.wide = wide
 
@@ -134,8 +140,16 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     runner.current = run
     rt.current?.freeze(true)
     setTalk({...ctx, view})
+    // an introduction: the first time he speaks with somebody, the life writes it down and the screen says who it is
+    const who = ctx.actor ?? view.lines.find(x => x.who && x.who !== 'me')?.who ?? null
+    if (who && !l.state.met.includes(who) && pack.cast[who]) {
+      l.dispatch({t: 'met', who})
+      const m = pack.cast[who]!
+      setIntro({id: who, name: nameOf(pack, ch, who), role: m.role, blurb: m.blurb})
+      later(() => setIntro(cur => (cur?.id === who ? null : cur)), 5200)
+    }
     return true
-  }, [pack])
+  }, [later, pack])
 
   /** After anything happened: redraw who is here, play the beat that is waiting, or hand the room back. */
   const settle = useCallback(async () => {
@@ -155,6 +169,19 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     // a beat that was closed before its end comes back by itself — nothing in a day can be lost by closing a box
     if (beat) later(() => { skipped.current.delete(beat.id); if (!live.current.talk && !live.current.overlay && !live.current.menu) void settle() }, 6000)
   }, [enterRoom, later, pack, startTalk])
+
+  /** A walk from the map: one `moved` per street, each through a door that is open; the room is drawn once, where he ends up. */
+  const travel = useCallback((place: Place) => {
+    const l = life.current
+    if (!l || !place.route.ok) return
+    const walked = place.route.doors
+    setSheet('none'); cue('door')
+    for (const d of walked) {
+      const through = throughDoor({to: d.to, spawn: d.spawn, time: d.time ?? null}, l.state)
+      if (through.ok) l.dispatch(...through.events)
+    }
+    void enterRoom().then(settle)
+  }, [cue, enterRoom, settle])
 
   const finishChapter = useCallback((ending: string) => {
     const l = life.current, ch = l && chapterOf(pack, l.state.chapter)
@@ -320,9 +347,9 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   /* the room stands still while a card, a game or the drawer is open */
   useEffect(() => {
     if (phase !== 'play' || !roomUp) return
-    if (menu !== 'closed') rt.current?.freeze(true)
+    if (menu !== 'closed' || sheet !== 'none') rt.current?.freeze(true)
     else if (!talk && !overlay) rt.current?.freeze(false)
-  }, [menu, overlay, phase, roomUp, talk])
+  }, [menu, overlay, phase, roomUp, sheet, talk])
 
   /* ───────────── keys ───────────── */
   useEffect(() => {
@@ -335,12 +362,15 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const down = (e: KeyboardEvent) => {
       const k = e.key.toLowerCase(), field = (e.target as HTMLElement | null)?.tagName === 'INPUT'
       if (k === 'escape') {
-        if (live.current.menu) setMenu('closed')
+        if (live.current.sheet) setSheet('none')
+        else if (live.current.menu) setMenu('closed')
         else if (live.current.talk) void closeTalk(false)
         else if (live.current.phase === 'play' && !live.current.overlay) setMenu('menu')
         return
       }
       if (live.current.phase !== 'play' || live.current.menu || live.current.overlay) return
+      if (live.current.sheet) { if (k === 'm') setSheet('none'); return }
+      if (k === 'm' && !live.current.talk && !field) { e.preventDefault(); setSheet('map'); return }
       if (live.current.talk) {
         if ((k === 'e' || k === 'enter' || k === ' ') && (e.target as HTMLElement | null)?.tagName !== 'BUTTON') { e.preventDefault(); advance() }
         const n = Number(k)
@@ -403,7 +433,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const lastLine = !!talk && talk.view.index >= talk.view.lines.length - 1
   const speaker = !line || line.who === null ? null : line.who === 'me' ? copy.you! : chapter ? nameOf(pack, chapter, line.who) : line.who
   const playing = phase === 'play'
-  const idle = playing && roomUp && !talk && !overlay && menu === 'closed'
+  const idle = playing && roomUp && !talk && !overlay && menu === 'closed' && sheet === 'none'
   const targetText = (() => {
     if (!target || !scene) return null
     if (target.kind === 'actor') { const a = scene.actors.find(x => x.id === target.id); return a ? {verb: copy.talkTo!, name: a.name} : null }
@@ -417,8 +447,27 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const prelude = phase === 'chapter' && cardAt < chapterCards.length ? chapterCards[cardAt]! : null
   const saved = state.started && !!chapter
 
+  const scoreboard = (card: CardDef) => {
+    const m = card.archive?.match
+    if (!m || !card.stage) return null
+    const final = card.stage === 'result'
+    return (
+      <div className={styles.board} data-life="scoreboard" data-stage={card.stage} data-result={final ? m.result : 'pending'}>
+        <p className={styles.boardMeta}>{final ? copy['score.final'] : copy['score.kickoff']}{card.archive?.hint ? <> · <bdi>{card.archive.hint}</bdi></> : null}</p>
+        <div className={styles.boardRow} dir="ltr">
+          <span className={styles.boardTeam} data-us={m.us === 'home' ? 'true' : 'false'}>{m.home}</span>
+          <span className={styles.boardScore} data-hidden={final ? 'false' : 'true'}><bdi>{final ? `${m.homeGoals}–${m.awayGoals}` : '–'}</bdi></span>
+          <span className={styles.boardTeam} data-us={m.us === 'away' ? 'true' : 'false'}>{m.away}</span>
+        </div>
+        <p className={styles.boardMeta}>{copy['score.home']} · {copy['score.away']}{final && <> · {copy[`score.${m.result}`]}</>}</p>
+        {final && m.note && <p className={styles.boardMeta}>{copy['score.note']}: <bdi>{m.note}</bdi></p>}
+      </div>
+    )
+  }
+
   const archiveBlock = (card: CardDef) => card.archive && (
     <div className={styles.archive}>
+      {scoreboard(card)}
       <p className={styles.stamp}>{card.archive.precision === 'day' && card.archive.on
         ? <>{copy.archiveDate} · <time dateTime={card.archive.on}><bdi>{new Intl.DateTimeFormat(locale, {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'}).format(new Date(`${card.archive.on}T00:00:00Z`))}</bdi></time></>
         : <>{copy.archiveYear} · <bdi>{card.archive.year}</bdi></>}</p>
@@ -456,8 +505,24 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
             <p className={styles.serial}>№ {pad2(chapterNo)} · {copy.age} <bdi>{chapter.age}</bdi></p>
             <p className={styles.stripTitle} {...story}>{chapter.title}</p>
           </div>
-          <button type="button" className={`${styles.menuButton} min-h-tap`} onClick={() => setMenu('menu')} aria-haspopup="dialog" data-life="menu-open">{copy.menu}</button>
+          <div className={styles.hudButtons}>
+            <button type="button" className={`${styles.menuButton} min-h-tap`} onClick={() => setSheet('map')} aria-haspopup="dialog" data-life="map-open">{copy.map}</button>
+            <button type="button" className={`${styles.menuButton} min-h-tap`} onClick={() => setSheet('me')} aria-haspopup="dialog" data-life="me-open">{copy.me}</button>
+            <button type="button" className={`${styles.menuButton} min-h-tap`} onClick={() => setMenu('menu')} aria-haspopup="dialog" data-life="menu-open">{copy.menu}</button>
+          </div>
         </header>
+      )}
+
+      {playing && chapter && !talk && (
+        <div className={styles.meterRow} data-life="meters">
+          <span className={styles.meterChip} data-meter="coins">{copy['me.coins']} <b><bdi>{state.coins}</bdi></b></span>
+          <span className={styles.meterChip} data-meter="energy" data-low={state.energy < 25 ? 'true' : 'false'}>{copy['me.energy']} <i aria-hidden="true"><b style={{display: 'block', inlineSize: `${Math.max(0, Math.min(100, state.energy))}%`}} /></i><b><bdi>{Math.round(state.energy)}</bdi></b></span>
+          <span className={styles.meterChip} data-meter="standing">{copy['me.standing']} <b><bdi>{Math.round(state.standing)}</bdi></b></span>
+        </div>
+      )}
+
+      {intro && !talk && (
+        <aside className={styles.intro} role="status" data-life="intro"><small>{copy.intro}</small><b {...story}>{intro.name}</b><small {...story}>{intro.role} — {intro.blurb}</small></aside>
       )}
 
       {playing && chapter && current && !talk && (
@@ -604,6 +669,11 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
           <MiniGame game={overlay.d.game} id={overlay.d.id} amount={overlay.d.then.reduce((n, fx) => n + (fx.e === 'coins' && fx.by > 0 ? fx.by : 0), 0) || 8} copy={copy} reduced={reduced} cue={cue} onDone={closeOverlay} />
         </div>
       )}
+
+      {sheet === 'map' && playing && chapter && (
+        <CityMap city={cityOf(pack, chapter, state)} clubId={pack.clubId} night={state.time === 'night'} copy={copy} story={story} onTravel={travel} onClose={() => setSheet('none')} />
+      )}
+      {sheet === 'me' && playing && chapter && <MeSheet pack={pack} chapter={chapter} state={state} copy={copy} locale={locale} story={story} onClose={() => setSheet('none')} />}
 
       {menu !== 'closed' && (
         <section className={`${styles.cover} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-menu-title" data-life="menu">

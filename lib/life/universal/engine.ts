@@ -14,7 +14,7 @@ export const LIFE_PREFIX = 'life:'
 
 export const emptyState = (): LifeState => ({
   v: 1, started: false, chapter: null, room: null, spawn: 'start', time: 'day',
-  flags: {}, heart: 0, coins: 0, bonds: {}, keeps: [], wear: 'plain', done: {}, finished: false,
+  flags: {}, heart: 0, coins: 0, energy: 100, standing: 10, met: [], seen: [], bonds: {}, keeps: [], wear: 'plain', done: {}, finished: false,
 })
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n))
@@ -27,13 +27,18 @@ export function apply(state: LifeState, event: LifeEvent): LifeState {
       // a new chapter is a new day: what happened today is gone, who he is stays
       const flags: Record<string, FlagValue> = {}
       for (const [k, v] of Object.entries(state.flags)) if (k.startsWith(LIFE_PREFIX)) flags[k] = v
-      return {...state, chapter: event.id, flags, finished: false}
+      // …and he has slept: a new day starts rested
+      return {...state, chapter: event.id, flags, finished: false, energy: 100}
     }
-    case 'moved': return {...state, room: event.room, spawn: event.spawn, time: event.time}
+    case 'moved': return {...state, room: event.room, spawn: event.spawn, time: event.time, seen: state.seen.includes(event.room) ? state.seen : [...state.seen, event.room]}
     case 'flag': return {...state, flags: {...state.flags, [event.k]: event.v}}
     case 'heart': return {...state, heart: clamp(state.heart + event.by, 0, 100)}
     case 'bond': return {...state, bonds: {...state.bonds, [event.who]: clamp((state.bonds[event.who] ?? 50) + event.by, 0, 100)}}
     case 'coins': return {...state, coins: Math.max(0, state.coins + event.by)}
+    case 'energy': return {...state, energy: clamp(state.energy + event.by, 0, 100)}
+    case 'standing': return {...state, standing: clamp(state.standing + event.by, 0, 100)}
+    case 'met': return state.met.includes(event.who) ? state
+      : {...state, met: [...state.met, event.who]}
     case 'keep': return state.keeps.includes(event.item) ? state : {...state, keeps: [...state.keeps, event.item]}
     case 'wear': return {...state, wear: event.what}
     case 'time': return {...state, time: event.to}
@@ -54,7 +59,7 @@ export function meets(state: LifeState, c: Cond | undefined): boolean {
   if ('all' in c) return c.all.every(x => meets(state, x))
   if ('any' in c) return c.any.some(x => meets(state, x))
   if ('none' in c) return !c.none.some(x => meets(state, x))
-  if ('min' in c) return (c.min[0] === 'heart' ? state.heart : state.coins) >= c.min[1]
+  if ('min' in c) return state[c.min[0]] >= c.min[1]
   if ('bond' in c) return (state.bonds[c.bond[0]] ?? 50) >= c.bond[1]
   if ('has' in c) return state.keeps.includes(c.has)
   if ('wears' in c) return WEARS[c.wears].includes(state.wear)
@@ -78,6 +83,8 @@ export function eventsOf(effects: readonly Effect[] | undefined, state: LifeStat
       case 'heart': events.push({t: 'heart', by: fx.by}); break
       case 'bond': events.push({t: 'bond', who: fx.who, by: fx.by}); break
       case 'coins': events.push({t: 'coins', by: fx.by}); break
+      case 'energy': events.push({t: 'energy', by: fx.by}); break
+      case 'standing': events.push({t: 'standing', by: fx.by}); break
       case 'keep': events.push({t: 'keep', item: fx.item}); break
       case 'wear': events.push({t: 'wear', what: fx.what}); break
       case 'time': events.push({t: 'time', to: fx.to}); break

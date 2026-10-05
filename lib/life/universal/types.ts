@@ -65,7 +65,7 @@ export type RoomPlay = {
 /* ───────────── conditions and effects ───────────── */
 
 export type CastId = string
-export type Gauge = 'heart' | 'coins'
+export type Gauge = 'heart' | 'coins' | 'energy' | 'standing'
 
 export type Cond =
   | {flag: string}
@@ -86,6 +86,10 @@ export type Effect =
   | {e: 'heart'; by: number}
   | {e: 'bond'; who: CastId; by: number}
   | {e: 'coins'; by: number}
+  /** tiredness: a day has a limited amount of doing in it */
+  | {e: 'energy'; by: number}
+  /** how the street and the terrace see you */
+  | {e: 'standing'; by: number}
   /** something goes into the box under the bed */
   | {e: 'keep'; item: string}
   | {e: 'wear'; what: Wear}
@@ -121,7 +125,8 @@ export type Beat = {id: string; room: RoomId; when?: Cond; talk: string}
 export type Objective = {id: string; t: Tx; done: Cond; room?: RoomId}
 export type Ending = {title: Tx; body: Tx; keep?: string}
 export type Keepsake = {id: string; name: Tx; note: Tx}
-export type CardDef = {id: string; kicker: Tx; title: Tx; body: Tx; archive?: ArchiveRef}
+/** `kickoff` names the two sides and hides the score; `result` shows it. A card with neither is a plain archive card. */
+export type CardDef = {id: string; kicker: Tx; title: Tx; body: Tx; archive?: ArchiveRef; stage?: 'kickoff' | 'result'}
 
 export type Act = 1 | 2 | 3
 
@@ -149,9 +154,24 @@ export type Chapter = {
   prelude?: CardDef[]
   /** an anchored night carries the archive row it stands on; a universal chapter carries none */
   anchor?: ArchiveRef
+  /** the one night of this life that is the club's own match, told with its teams, its competition and its result */
+  centrepiece?: boolean
 }
 
 /* ───────────── history (only what the archive holds) ───────────── */
+
+/** What a recorded scoreline says, read with certainty or not at all. The competition is the archive row's own `hint`. */
+export type MatchFacts = {
+  home: string
+  away: string
+  homeGoals: number
+  awayGoals: number
+  /** which side the club was on */
+  us: 'home' | 'away'
+  result: 'won' | 'lost' | 'drew'
+  /** what the title adds after the score ("league title secured", "after extra time"), as recorded */
+  note: string | null
+}
 
 /** A row of the club's approved archive, quoted — never paraphrased, never completed. */
 export type ArchiveRef = {
@@ -165,11 +185,13 @@ export type ArchiveRef = {
   /** the language the archive row is written in (a row is printed as it was recorded) */
   locale: string
   sources: {title: string; publisher: string; url: string | null}[]
+  /** present only when the title is a scoreline this build could read with certainty */
+  match?: MatchFacts
 }
 
 /* ───────────── a club's life, composed ───────────── */
 
-export type CastMember = {id: CastId; name: string; look: Look; fictional: true}
+export type CastMember = {id: CastId; name: string; /** the role's own word: Kiosk, Teacher */ role: string; /** one line, printed when the supporter is introduced */ blurb: string; look: Look; fictional: true}
 
 export type LifeReadiness = {state: 'READY' | 'PARTIAL' | 'LOCKED'; playable: boolean; reasons: string[]; anchors: number; target: number}
 
@@ -204,6 +226,10 @@ export type LifeEvent =
   | {t: 'heart'; by: number}
   | {t: 'bond'; who: CastId; by: number}
   | {t: 'coins'; by: number}
+  | {t: 'energy'; by: number}
+  | {t: 'standing'; by: number}
+  /** he has been introduced to somebody: the first conversation with them */
+  | {t: 'met'; who: CastId}
   | {t: 'keep'; item: string}
   | {t: 'wear'; what: Wear}
   | {t: 'time'; to: TimeOfDay}
@@ -220,6 +246,13 @@ export type LifeState = {
   flags: Record<string, FlagValue>
   heart: number
   coins: number
+  /** rested at 100 when a day begins */
+  energy: number
+  standing: number
+  /** people he has been introduced to, in the order he met them (a life, not a day) */
+  met: CastId[]
+  /** rooms he has stood in, in the order he found them (a life, not a day): what the map has revealed */
+  seen: RoomId[]
   bonds: Record<CastId, number>
   keeps: string[]
   wear: Wear
