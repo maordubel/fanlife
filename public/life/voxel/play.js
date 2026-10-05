@@ -254,7 +254,7 @@ function frame(t,dt){
    var ox=player.x,oz=player.z;if(slide(player,dx,dz)){moved=Math.hypot(player.x-ox,player.z-oz);player.wantYaw=Math.atan2(player.x-ox,player.z-oz)}
   }else if(path){
    player.path=path;player.speed=SPEED*(running?RUN:1);moved=follow(player,dt);path=player.path;
-   if(!path&&pending){var pd=pending;pending=null;retarget(true);if(target&&target.kind===pd.kind&&target.id===pd.id)act(pd);else{faceEachOther(pd.id)}}
+   if(!path&&pending){var pd=pending;pending=null;retarget(true);var pr=reachOf(pd.kind,pd.id),pm=marks.filter(function(m){return m.kind===pd.kind&&m.id===pd.id})[0];/* walked there on purpose: a neighbour standing closer must not take the press */if(target&&target.kind===pd.kind&&target.id===pd.id)act(pd);else if(pr&&pm&&pm.on&&(pr[0]-player.x)*(pr[0]-player.x)+(pr[1]-player.z)*(pr[1]-player.z)<pm.reach*pm.reach)act(pd);else{faceEachOther(pd.id)}}
   }
  }
  if(moved>0){player.stride(moved,1);stepAcc+=moved;if(stepAcc>2.6*player.P.s){stepAcc=0;emit({type:'step',surface:cfg.surface||'floor'})}}else player.rest(dt);
