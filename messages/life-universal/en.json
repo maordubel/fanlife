@@ -165,5 +165,8 @@
   "score.lost": "A defeat",
   "score.drew": "A draw",
   "score.note": "The record adds",
-  "score.competition": "Competition"
+  "score.competition": "Competition",
+  "score.scorers": "Goals",
+  "score.lineup": "Started",
+  "score.bench": "Came on"
 }

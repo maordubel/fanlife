@@ -65,3 +65,15 @@ describe('copy', () => {
     for (const v of [...Object.values(en), ...Object.values(he)]) expect(String(v).length).toBeGreaterThan(0)
   })
 })
+
+describe('the club\'s own match record', () => {
+  it('prints starters from the record, and scorers only when the record lists every goal', async () => {
+    const pack = await packOf('zrinjski-mostar')
+    const seen = pack.chapters.flatMap(c => c.anchor?.match?.detail ? [c.anchor.match] : [])
+    for (const m of seen) {
+      expect(m.detail!.lineup.length).toBeGreaterThan(0)
+      const ours = m.us === 'home' ? m.homeGoals : m.awayGoals
+      expect(m.detail!.scorers.length === 0 || m.detail!.scorers.length === ours).toBe(true)
+    }
+  })
+})

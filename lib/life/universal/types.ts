@@ -171,6 +171,15 @@ export type MatchFacts = {
   result: 'won' | 'lost' | 'drew'
   /** what the title adds after the score ("league title secured", "after extra time"), as recorded */
   note: string | null
+  /** who scored and who started, only where the club's own match record states it for this day */
+  detail?: MatchDetail
+}
+
+export type MatchDetail = {
+  /** the club's own goals, in order; `null` minute when the record has none. Empty when the record does not list them all. */
+  scorers: {name: string; minute: number | null}[]
+  lineup: string[]
+  bench: string[]
 }
 
 /** A row of the club's approved archive, quoted — never paraphrased, never completed. */

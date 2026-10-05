@@ -461,6 +461,13 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
         </div>
         <p className={styles.boardMeta}>{copy['score.home']} · {copy['score.away']}{final && <> · {copy[`score.${m.result}`]}</>}</p>
         {final && m.note && <p className={styles.boardMeta}>{copy['score.note']}: <bdi>{m.note}</bdi></p>}
+        {m.detail && (
+          <div className={styles.boardDetail} data-life="match-detail">
+            {final && m.detail.scorers.length > 0 && <p><b>{copy['score.scorers']}</b> {m.detail.scorers.map((g, i) => <span key={i}>{i > 0 && ' · '}<bdi>{g.name}{g.minute !== null ? ` ${g.minute}′` : ''}</bdi></span>)}</p>}
+            {m.detail.lineup.length > 0 && <p><b>{copy['score.lineup']}</b> <bdi>{m.detail.lineup.join(' · ')}</bdi></p>}
+            {m.detail.bench.length > 0 && <p><b>{copy['score.bench']}</b> <bdi>{m.detail.bench.join(' · ')}</bdi></p>}
+          </div>
+        )}
       </div>
     )
   }

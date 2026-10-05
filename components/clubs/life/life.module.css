@@ -300,3 +300,6 @@
 
 @media (prefers-reduced-motion: reduce) { .intro { animation: none } .meterBar i { transition: none } }
 @media (prefers-reduced-motion: reduce) { .mapSvg animate, .mapSvg animateMotion, .mapSvg animateTransform { display: none } }
+
+.boardDetail { margin-block-start: 8px; padding-block-start: 8px; border-block-start: 1px dashed color-mix(in srgb, var(--l-paper) 40%, transparent); text-align: start; font-size: .875rem; line-height: 1.5; display: grid; gap: 4px; }
+.boardDetail b { font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; margin-inline-end: 6px; opacity: .85; }
