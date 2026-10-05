@@ -12,7 +12,7 @@ import {beatFlag, beatFor, branchOf, choicesOf, sceneOf, talkOf, throughDoor} fr
 
 export type SimResult = {chapter: string; states: number; endings: string[]; stuck: string[]; truncated: boolean}
 
-const key = (s: LifeState) => JSON.stringify([s.room, s.spawn, s.time, Object.entries(s.flags).sort(([a], [b]) => a < b ? -1 : 1), s.coins, s.wear, [...s.keeps].sort(), Math.round(s.heart / 5), Object.entries(s.bonds).sort(([a], [b]) => a < b ? -1 : 1).map(([k, v]) => [k, Math.round(v / 10)])])
+const key = (s: LifeState) => JSON.stringify([s.room, s.spawn, s.time, Object.entries(s.flags).sort(([a], [b]) => a < b ? -1 : 1), s.coins, Math.round(s.energy / 20), Math.round(s.standing / 20), s.wear, [...s.keeps].sort(), Math.round(s.heart / 5), Object.entries(s.bonds).sort(([a], [b]) => a < b ? -1 : 1).map(([k, v]) => [k, Math.round(v / 10)])])
 
 /** `left`: the player closed the box before the conversation had finished (what was already applied stays applied). */
 type Outcome = {state: LifeState; ended: string | null; left?: boolean}
