@@ -9,7 +9,7 @@ describe('club Timeline entry routing',()=>{
   const r=request('/clubs/olympiacos?lang=he');r.headers.set('x-fan-life-locale','el')
   expect(middleware(r).headers.get('x-middleware-request-x-fan-life-locale')).toBe('he')
   expect(middleware(request('/clubs/olympiacos?lang=el')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
-  expect(middleware(request('/life?lang=he')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
+  expect(middleware(request('/life?lang=he','localhost:3217')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
  })
  it('redirects both legacy entry points before the legacy layout, preserving the round and language',()=>{
   for(const path of ['/timeline','/timeline/order']){
@@ -23,7 +23,7 @@ describe('club Timeline entry routing',()=>{
   expect(middleware(request('/goal')).headers.get('location')).toBeNull()
  })
  it('routes migrated gate entry points to host-owned club data',()=>{
-  for(const [path,gate] of [['/trivia','trivia'],['/memory','memory'],['/xi','xi'],['/archive','archive'],['/polls','polls'],['/blind-cow','blind-cow']]){expect(middleware(request(`${path}?lang=he`)).headers.get('location')).toBe(`http://olympiacos.localhost:3217/clubs/olympiacos/${gate}?lang=he`);expect(middleware(request(path!,'hapoeltelaviv.localhost:3217')).headers.get('location')).toBeNull();expect(middleware(request(path!,'olympiacos.localhost:3217','POST')).headers.get('location')).toBeNull()}
+  for(const [path,gate] of [['/trivia','trivia'],['/memory','memory'],['/xi','xi'],['/archive','archive'],['/polls','polls'],['/blind-cow','blind-cow'],['/life','life']]){expect(middleware(request(`${path}?lang=he`)).headers.get('location')).toBe(`http://olympiacos.localhost:3217/clubs/olympiacos/${gate}?lang=he`);expect(middleware(request(path!,'hapoeltelaviv.localhost:3217')).headers.get('location')).toBeNull();expect(middleware(request(path!,'olympiacos.localhost:3217','POST')).headers.get('location')).toBeNull()}
  })
  it('does not redirect legacy action payloads into the shared route',()=>{
   expect(middleware(request('/timeline/order','olympiacos.localhost:3217','POST')).headers.get('location')).toBeNull()
