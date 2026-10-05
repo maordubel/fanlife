@@ -73,7 +73,7 @@ function route(fx,fz,tx,tz){
 /* ---------- bodies ---------- */
 function lookOf(o,S){
  var d={h:o.h||6.2,skin:o.skin,hair:o.hair,pants:o.pants,shirt:o.shirt,shirt2:o.shirt2,pat:o.pat||null,scarf:o.scarf||null,cap:o.cap||null,vest:o.vest||null,cane:!!o.cane,long:!!o.long,anim:o.anim||'idle'};
- if(o.kit){d.shirt=S.p;d.shirt2=S.s;d.pat=S.pattern&&S.pattern!=='solid'?S.pattern:null}
+ if(o.kit){d.shirt=S.ik?S.s:S.p;d.shirt2=S.ik?S.p:S.s;d.pat=S.pattern&&S.pattern!=='solid'?S.pattern:null}
  if(o.scarf===true)d.scarf=[S.p,S.s];
  if(o.cap===true)d.cap=S.t;
  return d;

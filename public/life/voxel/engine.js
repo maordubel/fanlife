@@ -18,7 +18,7 @@ function normSkin(id,s){
  s=s||{};var k,str={};for(k in STR)str[k]=STR[k];if(s.strings)for(k in s.strings)if(s.strings[k])str[k]=s.strings[k];
  var name=s.name||'Club',short=(s.short||name).toUpperCase();
  var o={id:id,name:name,short:short,initials:(s.initials||short.replace(/[^A-Z0-9 ]/g,'').split(/\s+/).map(function(w){return w.charAt(0)}).join('').slice(0,3)||'FC').toUpperCase(),
-  p:s.p||'#9a3324',s:s.s||'#efe9de',t:s.t||'#1a2036',pattern:s.pattern||'solid',crest:s.crest||'monogram',art:s.art||null,
+  p:s.p||'#9a3324',s:s.s||'#efe9de',t:s.t||'#1a2036',pattern:s.pattern||'solid',ik:!!s.ik,crest:s.crest||'monogram',art:s.art||null,
   nums:(s.nums&&s.nums.length>=3)?s.nums:[1,2,3],city:s.city||'',strings:str,policy:s.policy||[],
   stadium:s.stadium||str.ground,stadiumKnown:!!s.stadium};
  o.kiosk=str.kiosk;o.ticket=str.ticket;o.school=str.school;
@@ -159,8 +159,8 @@ function mkDec(S){
  add('banner',512,180,function(g,w,h){g.fillStyle=sP;g.fillRect(0,0,w,h);g.fillStyle=sS;g.fillRect(0,0,w,10);g.fillRect(0,h-10,w,10);g.fillStyle=sT;g.fillRect(0,10,w,5);g.fillRect(0,h-15,w,5);drawCrest(g,26,22,136,S);g.fillStyle=sS;g.textAlign='left';g.font='700 62px '+FF;g.fillText(S.short,190,92,300);g.font='500 26px '+FF;g.globalAlpha=.85;g.fillText((S.stadiumKnown?S.stadium:S.city||S.stadium).toUpperCase(),192,132,300)});
  add('shirtF',192,252,function(g,w,h){g.fillStyle='#4a392e';g.fillRect(0,0,w,h);g.fillStyle='#d9d3c7';g.fillRect(10,10,w-20,h-20);
   if(IM['shirt:'+S.id]){g.drawImage(IM['shirt:'+S.id],16,36,160,160)}
-  else{g.fillStyle=sP;g.beginPath();g.moveTo(52,34);g.lineTo(78,28);g.quadraticCurveTo(96,48,114,28);g.lineTo(140,34);g.lineTo(176,70);g.lineTo(152,92);g.lineTo(140,80);g.lineTo(140,208);g.lineTo(52,208);g.lineTo(52,80);g.lineTo(40,92);g.lineTo(16,70);g.closePath();g.fill();
-   g.save();g.clip();g.fillStyle=sS;
+  else{g.fillStyle=S.ik?sS:sP;g.beginPath();g.moveTo(52,34);g.lineTo(78,28);g.quadraticCurveTo(96,48,114,28);g.lineTo(140,34);g.lineTo(176,70);g.lineTo(152,92);g.lineTo(140,80);g.lineTo(140,208);g.lineTo(52,208);g.lineTo(52,80);g.lineTo(40,92);g.lineTo(16,70);g.closePath();g.fill();
+   g.save();g.clip();g.fillStyle=S.ik?sP:sS;
    if(S.pattern==='stripes'){for(var x=16;x<176;x+=28)g.fillRect(x,20,14,200)}
    else if(S.pattern==='hoops'){for(var y=40;y<210;y+=28)g.fillRect(0,y,192,14)}
    else if(S.pattern==='halves'){g.fillRect(96,0,96,252)}
