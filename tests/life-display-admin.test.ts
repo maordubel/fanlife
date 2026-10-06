@@ -1,4 +1,5 @@
 import {afterAll,beforeAll,describe,expect,it,vi} from 'vitest'
+import {NextRequest} from 'next/server'
 import {mkdtemp,rm,readFile} from 'node:fs/promises'
 import {tmpdir} from 'node:os'
 import path from 'node:path'
@@ -45,7 +46,7 @@ describe('display.json route and admin actions',()=>{
  let dir:string
  beforeAll(async()=>{dir=await mkdtemp(path.join(tmpdir(),'fan-life-display-'));vi.stubEnv('FAN_LIFE_DATA_DIR',dir);vi.stubEnv('NEXT_PUBLIC_FAN_LIFE_EVALUATION','true')})
  afterAll(async()=>{vi.unstubAllEnvs();await rm(dir,{recursive:true,force:true})})
- const post=async(op:string,body:unknown={})=>{const {POST}=await import('@/app/api/master/[...action]/route');return POST(new Request(`http://local/api/master/life-display/${op}`,{method:'POST',headers:{'content-type':'application/json',origin:'http://local'},body:JSON.stringify(body)}),{params:{action:['life-display',op]}} as never)}
+ const post=async(op:string,body:unknown={})=>{const {POST}=await import('@/app/api/master/[...action]/route');return POST(new NextRequest(`http://local/api/master/life-display/${op}`,{method:'POST',headers:{'content-type':'application/json',origin:'http://local'},body:JSON.stringify(body)}),{params:{action:['life-display',op]}} as never)}
  const live=async()=>{const {GET}=await import('@/app/life/voxel/display.json/route');return (await GET()).json()}
  it('serves nothing before a publish, the draft never, and the live version after',async()=>{
   expect(await live()).toEqual({})

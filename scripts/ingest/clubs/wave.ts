@@ -26,7 +26,7 @@ export function toWaveFact(m:ProviderMatch,clubNames:string[],second:Corroborati
  return {sources:src,fact:{id,value:{name:`${m.home} ${m.score.home}-${m.score.away} ${m.away}`,on:m.on,competition:m.competition,score:`${m.score.home}-${m.score.away}`,venue:m.venue,primaryOnly:{source:src[0]!.id,scorers:ours,lineup,bench}},sources:src.map(s=>s.id),researchedAt:today,parserCertainty:'high' as const,conflictFree:true,notes:approved?'Date, teams and score agree across two publishers. Line-up and scorers are held as primary-only claims until a second publisher states them.':'One publisher only; awaiting corroboration.',confidence:approved?3:2,status:approved?'approved' as const:'review' as const,approvedAt:approved?today:null,approvedBy:approved?`automated:cross-source-review-${clubId}-auto`:null}}
 }
 export function buildWave(rows:{m:ProviderMatch;second:Corroboration|null}[],clubNames:string[],clubId:string,today:string){
- const sources=new Map<string,WaveSource>(),matches:ReturnType<typeof toWaveFact> extends infer T?NonNullable<T>['fact'][]:never=[]
+ const sources=new Map<string,WaveSource>(),matches:NonNullable<ReturnType<typeof toWaveFact>>['fact'][]=[]
  for(const r of rows){const w=toWaveFact(r.m,clubNames,r.second,today,clubId);if(!w)continue;for(const s of w.sources)sources.set(s.id,s);matches.push(w.fact)}
  matches.sort((x,y)=>String(y.value.on).localeCompare(String(x.value.on)))
  return {sources:[...sources.values()],matches,kits:[],rivals:[]}
