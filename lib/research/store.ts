@@ -2,6 +2,7 @@ import {mkdir,readFile,rename,writeFile} from 'node:fs/promises'
 import {randomUUID} from 'node:crypto'
 import path from 'node:path'
 import type {ResearchJob,ResearchRun,SnapshotMeta} from './contract'
+import {researchRoot} from './paths'
 
 /**
  * File-backed research store under the control-room data dir (`FAN_LIFE_DATA_DIR`, default `.fan-life`):
@@ -11,7 +12,7 @@ import type {ResearchJob,ResearchRun,SnapshotMeta} from './contract'
  * At-least-once with idempotent writes — the same snapshot hash is stored once however often it is fetched.
  * (A shared Postgres store with SKIP LOCKED is the next step when more than one worker runs; the API stays the same.)
  */
-export const root=()=>path.resolve(process.env.FAN_LIFE_DATA_DIR||'.fan-life','research')
+export const root=researchRoot
 export const dir=(club:string)=>{if(!/^[a-z][a-z0-9-]{1,60}$/.test(club))throw new Error('Invalid club id');return path.join(root(),club)}
 const g=globalThis as typeof globalThis&{researchWrites?:Promise<unknown>}
 export async function readJson<T>(file:string,fallback:T):Promise<T>{try{return JSON.parse(await readFile(file,'utf8')) as T}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return fallback;throw e}}

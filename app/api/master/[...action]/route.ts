@@ -12,6 +12,7 @@ import {runWorker} from '@/lib/research/worker'
 import {loadProfile} from '@/lib/research/bundle'
 import {loadClubProfile,validateArchiveSource,saveArchiveSource,removeArchiveSource,ensureProfile} from '@/lib/research/profiles'
 import {exportArchiveStaging} from '@/lib/research/staging'
+import {isReadOnlyError,READ_ONLY_HINT} from '@/lib/research/paths'
 import {runPipeline,recordPipeline,lastPipelineRuns,AUTOMATION_ACTOR} from '@/lib/master/automation'
 import type {Club} from '@/lib/master/types'
 export const dynamic='force-dynamic'
@@ -66,4 +67,4 @@ if(a.startsWith('life-display/')){const op=a.slice(13);return json(await mutate(
  if(op==='save-draft'){const v=validateDisplay(b.patch,{partial:true});if(!v.ok)throw new Error(`Rejected: ${v.errors.map(e=>`${e.key} (${e.problem})`).join(', ')}`);next=saveDraft(cur,v.value)}
  else if(op==='publish')next=publish(cur,now);else if(op==='revert')next=revert(cur,now);else if(op==='reset')next=reset(cur,now);else throw new Error('Unknown display operation.')
  const keys=op==='save-draft'?changedKeys(cur.draft||cur.live,next.draft!):changedKeys(cur.live,next.live);s.lifeDisplay=next;audit(s,`life-display.${op}`,'global',keys.join(', ')||'no change',{before:JSON.stringify(op==='save-draft'?cur.draft||cur.live:cur.live),after:JSON.stringify(op==='save-draft'?next.draft:next.live)});return next}))}
-return json({error:'Unknown operation'},404)}catch(e){return json({error:e instanceof Error?e.message:'Operation failed'},e instanceof Conflict?409:400)}}
+return json({error:'Unknown operation'},404)}catch(e){if(isReadOnlyError(e))return json({error:READ_ONLY_HINT},503);return json({error:e instanceof Error?e.message:'Operation failed'},e instanceof Conflict?409:400)}}

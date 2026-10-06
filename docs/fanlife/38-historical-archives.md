@@ -20,11 +20,17 @@
 | Partizan Belgrade | Partizanopedia (HTML) · Crno-bela Nostalgija (WP) · Partizan history (HTML) |
 | Union Berlin | Immer Unioner (HTML) · official season archive (HTML) |
 
-## What is NOT done yet (honest)
-- **No parsers.** None is written until fixtures of real pages are stored; until then documents are kept and nothing
-  is extracted. Next: AEKpedia (season/player), Celtic Wiki (year/match/player), then PAO via Paopedia.
-- From this build server every source answered 403 (its network allowlist). Run from the deployed server; whose block it
-  is gets recorded as unknown until checked from another network.
+## Where it runs
+- **GitHub → Actions → Archive collect → Run workflow** (and automatically every Tuesday). It runs on GitHub's network,
+  collects a polite batch per club, and commits only `research-data/`. The admin shows it after the next deploy.
+- On a writable server (local evaluation) the Data tab buttons collect directly. A read-only server answers with the
+  GitHub instruction instead of failing.
+
+## Parsers
+- **AEKpedia — done** (`aekpedia-football-v1`): players, coaches and season reviews by the site's own categories;
+  name as written + the span on the opening line, as unresolved candidates.
+- Next: Celtic Wiki (year/match/player pages via the page hierarchy), Paopedia, Partizanopedia, Immer Unioner.
+  Each needs its structure checked first; nothing is extracted from a source without one.
 - Raw bodies are not stored (`metadata-only`) until each source's reuse policy is reviewed.
 
 CLI: `npm run research:collect -- <club> [--source id] [--max-requests N]` · `research:export -- <club>` · `research:status`.
