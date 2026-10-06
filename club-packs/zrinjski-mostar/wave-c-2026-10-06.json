@@ -948,11 +948,11 @@
    "researchedAt": "2026-10-06",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Three independent publishers describe the Zrinjski-Velež fixture as the Mostar derby. Awaiting owner confirmation of Velež as primary rival.",
+   "notes": "Three independent publishers describe the Zrinjski-Velež fixture as the Mostar derby. Owner-confirmed as primary rival 2026-10-06.",
    "confidence": 3,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "owner:maor-harel-2026-10-06"
   }
  ]
 }

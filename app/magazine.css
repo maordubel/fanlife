@@ -287,3 +287,81 @@
 }
 @media (min-width: 901px) { .mag-letter p.dropcap { column-count: 1; max-width: 70ch; } }
 @media (prefers-reduced-motion: reduce) { .mag-chip[aria-selected='true']::after { animation: none; } }
+
+/* ───────── MAGAZINE COVER v2 (6.10.2026) — printed poster cover, collage, teasers, PLUS strip ─────────
+   Karantina 700 is for editorial headlines only (cover teasers, section names, club names, issue numbers);
+   Bowlby stays the brand. Rotations and offsets are constant. No yellow anywhere. */
+:root { --mag-condensed: 'Karantina', 'Archivo', 'Heebo', Impact, sans-serif; }
+.mag-editorial .mag-h2, .mag-cover-poster .mag-tease b, .mag-tile b, .mag-cover-bottom, .mag-toc i { font-family: var(--mag-condensed); font-weight: 700; letter-spacing: 0.5px; }
+.mag-cover-poster .mag-cover-in { position: relative; display: block; width: min(850px, 100% - 28px); height: 530px; padding: 0; }
+.mag-cover-poster .mag-dateline { position: relative; z-index: 3; margin-top: 14px; }
+.mag-cover-poster .mag-masthead { position: absolute; z-index: 2; inset-inline-start: 0; inset-block-start: 52px; font-size: 85px; display: flex; flex-direction: column; line-height: 0.82; }
+.mag-collage { position: absolute; z-index: 1; inset-inline-end: -24px; inset-block-start: 93px; width: 300px; height: auto; pointer-events: none; }
+.mag-cover-poster .mag-gates-burst { position: absolute; z-index: 4; inset-block-start: 60px; inset-inline-end: 4px; width: 83px; height: 83px; margin: 0; background: var(--mag-card); color: var(--mag-navy); font-family: var(--mag-condensed); font-size: 18px; line-height: 0.9; transform: rotate(12deg); }
+.mag-gates-burst b { font-size: 26px; }
+.mag-rail { position: absolute; z-index: 4; inset-block-start: 218px; inset-inline-start: 4px; width: 138px; display: grid; gap: 8px; }
+.mag-tease { display: block; min-height: 58px; padding: 4px 0; background: none; border: 0; color: var(--mag-paper); text-align: start; font: inherit; cursor: pointer; }
+.mag-tease b { display: block; font-size: 32px; line-height: 0.9; text-transform: uppercase; text-shadow: 1px 2px 0 var(--mag-ink); }
+.mag-tease small { display: block; font-size: 10px; font-weight: 800; line-height: 1.15; margin-top: 3px; text-shadow: 1px 1px 0 var(--mag-ink); }
+.mag-tease-a b { color: var(--mag-lilac); }
+.mag-cover-bottom { position: absolute; z-index: 4; inset-inline: 4px; inset-block-end: 68px; margin: 0; font-size: 31px; line-height: 0.97; text-align: start; transform: rotate(-2deg); text-transform: uppercase; text-shadow: 2px 2px 0 var(--mag-ink); }
+.mag-plus { position: absolute; z-index: 5; inset-inline: 0; inset-block-end: 16px; margin: 0; display: flex; align-items: center; gap: 8px; padding: 7px 9px; background: var(--mag-card); color: var(--mag-ink); border: 2px solid var(--mag-ink); box-shadow: 2px 2px 0 var(--mag-ink); font-family: var(--mag-body); font-weight: 700; font-size: 11px; line-height: 1.25; }
+.mag-plus b { font-family: var(--mag-condensed); font-size: 23px; line-height: 0.8; color: var(--mag-vermilion); }
+.mag-hubnav { display: flex; background: var(--mag-ink); border-bottom: 3px solid var(--mag-vermilion); position: sticky; inset-block-start: 0; z-index: 40; }
+.mag-hubnav a { flex: 1; min-height: 44px; display: flex; align-items: center; justify-content: center; color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 2px; }
+.mag-hubnav a:focus-visible, .mag-tease:focus-visible, .mag-card-cta:focus-visible, .mag-chooser a:focus-visible, .mag-chooser button:focus-visible, .mag-chooser input:focus-visible { outline: 3px solid var(--mag-ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--mag-paper); }
+.mag-toc { max-width: 520px; margin-inline: auto; transform: rotate(-0.8deg); background: var(--mag-card); color: var(--mag-ink); border: 3px solid var(--mag-ink); box-shadow: var(--mag-shadow); }
+.mag-toc ol { list-style: none; margin: 8px 0 0; padding: 0; }
+.mag-toc a { display: flex; align-items: baseline; gap: 12px; min-height: 44px; padding-block: 8px; border-bottom: 1px dotted var(--mag-ink); font-weight: 800; }
+.mag-toc i { font-style: normal; font-size: 24px; color: var(--mag-vermilion); width: 34px; }
+.mag-section, #clubs, #gates, #archive, #life-entry, #next { scroll-margin-top: 56px; }
+.mag-tile { background-image: radial-gradient(rgb(20 18 16 / 0.09) 1px, transparent 1.4px); background-size: 6px 6px; }
+.mag-tile b { font-size: 22px; }
+.mag-gate { width: 100%; text-align: start; background: none; border-inline: 0; border-top: 0; font: inherit; color: inherit; cursor: pointer; }
+.mag-gate-xi, .mag-gate-trivia { background: var(--mag-navy); color: var(--mag-paper); padding-inline: 8px; }
+.mag-gate-polls { background: var(--mag-lilac); border-inline-start: 8px solid var(--mag-purple); padding-inline-start: 8px; }
+.mag-gate-timeline { background-image: repeating-linear-gradient(transparent 0 19px, rgb(27 42 94 / 0.25) 19px 20px); }
+.mag-gate small { display: block; font-family: var(--mag-mono); font-size: 10px; letter-spacing: 1px; font-weight: 700; opacity: 0.8; }
+.mag-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mag-card-cta { min-height: 92px; padding: 14px; text-align: start; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; background: var(--mag-card); color: var(--mag-ink); border: 3px solid var(--mag-ink); box-shadow: var(--mag-shadow); font: inherit; cursor: pointer; width: 100%; }
+.mag-card-cta b { font-family: var(--mag-condensed); font-size: 26px; line-height: 1; text-transform: uppercase; }
+.mag-card-cta small { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+.mag-card-cta.ink { background: var(--mag-ink); color: var(--mag-paper); }
+.mag-card-cta.navy { background: var(--mag-navy); color: var(--mag-paper); }
+.mag-chooser { width: min(520px, 100% - 24px); max-height: 82vh; padding: 0; border: 3px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); box-shadow: 6px 6px 0 var(--mag-vermilion); }
+.mag-chooser::backdrop { background: rgb(20 18 16 / 0.7); }
+.mag-chooser-in { padding: 14px; }
+.mag-chooser-head { display: flex; justify-content: space-between; align-items: center; }
+.mag-chooser-head h2 { font-family: var(--mag-condensed); font-size: 30px; text-transform: uppercase; margin: 0; }
+.mag-chooser-x { min-width: 44px; min-height: 44px; font-size: 28px; border: 3px solid var(--mag-ink); background: var(--mag-card); }
+.mag-chooser-q { width: 100%; min-height: 44px; margin-block: 10px; padding: 0 10px; border: 3px solid var(--mag-ink); background: var(--mag-card); font: inherit; }
+.mag-chooser ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.mag-chooser li a, .mag-chooser li .off { min-height: 52px; display: flex; align-items: center; gap: 10px; padding: 8px 12px; border: 3px solid var(--mag-ink); background: var(--mag-card); }
+.mag-chooser li .off { border-style: dashed; color: var(--mag-muted); }
+.mag-chooser li b { font-family: var(--mag-condensed); font-size: 22px; text-transform: uppercase; }
+.mag-chooser li small { font-family: var(--mag-mono); font-size: 10px; font-weight: 700; letter-spacing: 1px; margin-inline-start: auto; }
+@media (min-width: 901px) {
+ .mag-cover-poster .mag-cover-in { height: 600px; }
+ .mag-cover-poster .mag-masthead { font-size: 142px; inset-block-start: 54px; }
+ .mag-collage { width: 470px; inset-block-start: 66px; inset-inline-end: 1%; }
+ .mag-cover-poster .mag-gates-burst { width: 109px; height: 109px; inset-inline-end: 27px; font-size: 24px; }
+ .mag-rail { inset-block-start: 314px; width: 310px; grid-template-columns: 1fr 1fr; gap: 20px; }
+ .mag-tease b { font-size: 32px; } .mag-tease small { font-size: 12px; }
+ .mag-cover-bottom { font-size: 40px; inset-block-end: 81px; }
+ .mag-plus { font-size: 14px; justify-content: center; }
+ .mag-hubnav { display: none; }
+}
+@media (max-width: 380px) {
+ .mag-cover-poster .mag-cover-in { height: 510px; }
+ .mag-cover-poster .mag-masthead { font-size: 76px; } .mag-collage { width: 260px; inset-block-start: 117px; inset-inline-end: -34px; }
+ .mag-rail { width: 110px; inset-block-start: 217px; } .mag-tease b { font-size: 29px; } .mag-tease small { font-size: 9px; }
+ .mag-cover-bottom { font-size: 26px; } .mag-plus { font-size: 9px; }
+ .mag-two { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .mag-chooser { scroll-behavior: auto; } }
+@media (max-width: 900px) { .mag-date-long { display: none; } }
+.mag-cover-poster .mag-dateline { font-size: 10px; letter-spacing: 1px; }
+[dir='rtl'] .mag-collage { inset-inline-end: auto; inset-inline-start: -24px; }
+[dir='rtl'] .mag-cover-poster .mag-gates-burst { inset-inline-end: auto; inset-inline-start: 4px; }
+@media (min-width: 901px) { [dir='rtl'] .mag-collage { inset-inline-start: 1%; } [dir='rtl'] .mag-cover-poster .mag-gates-burst { inset-inline-start: 27px; } }
+@media (max-width: 380px) { [dir='rtl'] .mag-collage { inset-inline-start: -34px; } }
