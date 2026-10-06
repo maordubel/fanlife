@@ -20,7 +20,7 @@ import {ratedPool,dealDraft} from '@/lib/clubs/rumble'
 import {KitBuilderBoard} from '@/components/clubs/games/KitBuilderBoard'
 import {KitPlate} from '@/components/clubs/games/KitPlate'
 import {lineupMatches,lineupPool,buildableKits,kitViews,rivalsOf} from '@/lib/clubs/gate-content'
-import {livery} from '@/lib/club-livery'
+import {GateHead} from '@/components/clubs/GateHead'
 import {meetingsBetween} from '@/lib/fixtures/meetings'
 const rotate=<T,>(a:T[],by:number)=>a.length?[...a.slice(by%a.length),...a.slice(0,by%a.length)]:a
 const pick=(own:string,all:(string|null)[])=>{const rest=[...new Set(all.filter((x):x is string=>!!x&&x!==own))].sort().slice(0,3);return [own,...rest].sort((a,b)=>a.localeCompare(b))}
@@ -33,18 +33,13 @@ export default async function Page({params,searchParams}:{params:{slug:string;ga
  const resolved=await requestClub(params.slug,gate.number)
  if(!resolved)notFound()
  const club=resolved.data,locale=uiLocale(searchParams.lang),copy=gameCopy(locale),readiness=gateAvailability(club,gate.key),round=roundFrom(searchParams)
- const lv=livery(club.identity.id),gameKey=`${club.identity.id}:${club.version}:${round.seed}:${round.cursor}:${locale}:${searchParams.topic||''}:${searchParams.era||''}:${searchParams.hard||''}`
+ const gameKey=`${club.identity.id}:${club.version}:${round.seed}:${round.cursor}:${locale}:${searchParams.topic||''}:${searchParams.era||''}:${searchParams.hard||''}`
  const trivia=gate.key==='trivia'?clubTrivia(club):null,spec=triviaSpec(searchParams.topic,searchParams.era,searchParams.hard),questions=trivia?.publicQuestions(trivia.dealSeededRun(spec,round.seed,round.cursor).ids,round.seed)||[]
  const dates=new Date().toISOString().slice(5,10),query=(searchParams.q||'').slice(0,100).toLocaleLowerCase(),records=eligibleArchive(club),events=records.filter(f=>(!searchParams.today||f.value.on?.slice(5,10)===dates)&&(!query||`${f.value.title} ${f.value.on||f.value.year||''} ${f.value.hint}`.toLocaleLowerCase().includes(query))),selected=searchParams.event?records.find(f=>f.id===searchParams.event):null
  if(searchParams.event&&!selected&&gate.key==='archive')notFound()
  const rawPage=Number(searchParams.page),page=Number.isSafeInteger(rawPage)&&rawPage>0?Math.min(rawPage,Math.max(1,Math.ceil(events.length/20))):1
  return <ClubSurface theme={club.theme} clubId={club.identity.id} locale={locale}><main id="main" className="mag-game mx-auto min-h-screen max-w-3xl px-gutter py-8" lang={locale}>
-  <header className="mag-gamehead">
-   <nav className="mag-gamenav"><Link className="min-h-tap" href={`/clubs/${club.identity.id}?lang=${locale}`}>{copy.hub} · <bdi>{club.identity.name}</bdi> ↗</Link><div>{(['en','he'] as const).map(l=><Link key={l} className="min-h-tap" aria-current={l===locale?'true':undefined} href={`?${new URLSearchParams({...searchParams,lang:l} as Record<string,string>)}`} hrefLang={l}>{l==='en'?copy.english:copy.hebrew}</Link>)}</div></nav>
-   <div className="mag-gamehead-row" data-n={gate.number}>{lv&&<span className="mag-badge" data-livery={lv.pattern} aria-hidden="true">{lv.initials}</span>}<div><p className="mag-kicker">{copy.gateNo} <bdi>{gate.number}</bdi> · <bdi>{club.identity.name}</bdi></p><h1 className="mag-editorial">{copy[`gate.${gate.key}`]}</h1></div></div>
-   <span className="mag-gate-stamp" data-state={readiness.state} role="status">{copy[`state.${readiness.state}` as 'state.READY']}</span>
-   <span className="mag-band" data-livery={lv?.pattern} aria-hidden="true"/>
-  </header>
+  <GateHead clubId={club.identity.id} clubName={club.identity.name} hubLabel={copy.hub} gateNo={String(gate.number)} gateNoLabel={copy.gateNo} title={copy[`gate.${gate.key}`]} state={readiness.state} stateLabel={copy[`state.${readiness.state}` as 'state.READY']} locale={locale} langLinks={(['en','he'] as const).map(l=>({l,label:l==='en'?copy.english:copy.hebrew,href:`?${new URLSearchParams({...searchParams,lang:l} as Record<string,string>)}`}))}/>
   {!readiness.playable?<section className="game-panel" data-testid="gate-locked"><h2>{copy.locked}</h2><p>{gate.requirement}</p>{readiness.reasons.map(r=><p key={r}>{r}</p>)}<Link className="game-button" href={`/master/core?club=${club.identity.id}`}>{copy.evidence} ↗</Link></section>:<>
    {readiness.state==='PARTIAL'&&<p className="my-4 border-hair border-ink p-3">{copy.partial}</p>}
    {gate.key==='trivia'&&trivia&&<><form className="game-filters" method="get"><input type="hidden" name="lang" value={locale}/><input type="hidden" name="seed" value={round.seed}/><label>{copy.anyTopic}<select name="topic" defaultValue={spec.topic||''}><option value="">{copy.anyTopic}</option>{Object.entries(trivia.topicCounts()).filter(([t,n])=>t!=='general'&&n>=3).map(([t,n])=><option key={t} value={t}>{t} ({n})</option>)}</select></label><label>{copy.anyEra}<select name="era" defaultValue={spec.decade||''}><option value="">{copy.anyEra}</option>{trivia.eraChips(spec.topic).filter(e=>e.count>=3).map(e=><option key={e.decade} value={e.decade}>{e.decade} ({e.count})</option>)}</select></label><label><input type="checkbox" name="hard" value="1" defaultChecked={spec.hard}/>{copy.hard}</label><button className="game-button min-h-tap">{copy.play}</button></form>{questions.length>=3?<TriviaBoard key={gameKey} questions={questions} club={club.identity.id} version={club.version} seed={round.seed} cursor={round.cursor} locale={locale} contentLocale={club.locales.content} topic={spec.topic||undefined} era={spec.decade===null?undefined:String(spec.decade)} hard={spec.hard?'1':undefined}/>:<p className="game-panel" data-testid="trivia-empty">{copy.empty}</p>}</>}
