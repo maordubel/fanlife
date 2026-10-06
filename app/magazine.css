@@ -565,3 +565,37 @@
 .mag-gaps td[data-state='PARTIAL'] { background: var(--mag-lilac); font-weight: 700; }
 .mag-gaps td[data-state='LOCKED'], .mag-gaps td[data-state='NONE'] { background: var(--mag-paper); color: var(--mag-muted); }
 .mag-gaplist summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+
+/* ---- Gate 8 · goal reconstruction (shared) ---- */
+.mag-skin .goal-layout { display: grid; gap: 20px; }
+@media (min-width: 860px) { .mag-skin .goal-layout { grid-template-columns: minmax(280px, 380px) 1fr; align-items: start; } }
+.mag-skin .goal-pitch { position: relative; margin: 0; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); aspect-ratio: 300 / 400; max-inline-size: 380px; inline-size: 100%; margin-inline: auto; }
+.mag-skin .goal-pitch svg { display: block; inline-size: 100%; block-size: 100%; }
+.mag-skin .goal-zones { position: absolute; inset-block-start: 10%; inset-inline-start: 4.33%; inline-size: 91.67%; block-size: 86%; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(4, 1fr); direction: ltr; }
+.mag-skin .goal-zone { background: transparent; border: 1px dashed rgb(255 255 255 / 0.35); min-block-size: 44px; cursor: pointer; }
+.mag-skin .goal-zone:not(:disabled):hover, .mag-skin .goal-zone:not(:disabled):focus-visible { background: rgb(255 255 255 / 0.22); outline: 3px solid var(--mag-ink); outline-offset: -3px; }
+.mag-skin .goal-zone:disabled { cursor: default; }
+.mag-skin .goal-list { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 6px; font-family: var(--mag-mono); }
+.mag-skin .goal-list b { display: inline-grid; place-items: center; inline-size: 26px; block-size: 26px; background: var(--mag-ink); color: var(--mag-paper); }
+.mag-skin .goal-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 10px; }
+.mag-skin .goal-legend span { display: inline-block; padding: 2px 8px; border: 2px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; }
+.mag-skin .goal-legend .yours { background: var(--mag-navy); color: var(--mag-white); }
+.mag-skin .goal-legend .archive { background: var(--mag-vermilion); color: var(--mag-white); }
+
+/* ---- Gate 11 · the rivalry wall (shared) ---- */
+.mag-skin .derby-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); margin-block: 18px; background: var(--mag-card); }
+.mag-skin .derby-cell { display: grid; justify-items: center; padding: 14px 6px; border-inline-end: 3px solid var(--mag-ink); }
+.mag-skin .derby-cell:nth-child(3) { border-inline-end: 0; }
+.mag-skin .derby-cell b { font-family: var(--mag-display); font-size: clamp(34px, 9vw, 56px); line-height: 1; }
+.mag-skin .derby-cell span { font-family: var(--mag-mono); font-weight: 700; text-transform: uppercase; font-size: 13px; }
+.mag-skin .derby-cell.won { background: var(--mag-ink); color: var(--mag-paper); }
+.mag-skin .derby-cell.lost { background: var(--mag-salmon); }
+.mag-skin .derby-goals { grid-column: 1 / -1; margin: 0; padding: 8px 12px; border-block-start: 3px solid var(--mag-ink); text-align: center; }
+.mag-skin .derby-decades { list-style: none; padding: 0; margin: 8px 0 20px; display: grid; gap: 6px; }
+.mag-skin .derby-decades li { display: grid; grid-template-columns: 56px 1fr; align-items: center; gap: 8px; }
+.mag-skin .derby-bar { display: flex; min-block-size: 26px; border: 2px solid var(--mag-ink); }
+.mag-skin .derby-bar i { font-style: normal; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; display: grid; place-items: center; min-inline-size: 18px; }
+.mag-skin .derby-bar .won { background: var(--mag-ink); color: var(--mag-paper); }
+.mag-skin .derby-bar .drawn { background: var(--mag-card); }
+.mag-skin .derby-bar .lost { background: var(--mag-salmon); }
+.mag-skin .derby-more summary { list-style: none; margin-block: 12px; }

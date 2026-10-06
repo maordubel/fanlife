@@ -25,13 +25,13 @@ export type ClubData = {
   theme:ClubTheme
   rivals:Fact<Entity>[]|null;competitions:Fact<Entity>[]|null;seasons:Fact<Entity>[]|null
   players:Fact<ClubPlayer>[]|null;matches:Fact<Entity>[]|null;trophies:Fact<Entity>[]|null
-  kits:Fact<Entity>[]|null;stadiums:Fact<Entity>[]|null;places:Fact<Entity>[]|null;culture:Fact<Entity>[]|null
+  kits:Fact<Entity>[]|null;goals?:Fact<Entity>[]|null;stadiums:Fact<Entity>[]|null;places:Fact<Entity>[]|null;culture:Fact<Entity>[]|null
   archive:Fact<HistoricalEvent>[];timeline:Fact<DatedCard>[]
   trivia:ClubTrivia;memory:MemoryCandidate[];mysteries:Fact<ClubMystery>[]
-  gates:{timeline:Readiness;trivia:Readiness;xi:Readiness;archive:Readiness;memory:Readiness;polls?:Readiness;'blind-cow'?:Readiness;lineup?:Readiness;'kit-builder'?:Readiness;kits?:Readiness;derby?:Readiness;goal?:Readiness;'royal-rumble'?:Readiness};life:{state:'legacy'|'unavailable';reason:string};sources:Source[];readiness:Readiness
+  gates:{timeline:Readiness;trivia:Readiness;xi:Readiness;archive:Readiness;memory:Readiness;polls?:Readiness;'blind-cow'?:Readiness;lineup?:Readiness;'kit-builder'?:Readiness;kits?:Readiness;derby?:Readiness;goal?:Readiness;'royal-rumble'?:Readiness};life:{state:'legacy'|'unavailable';reason:string;href?:string};sources:Source[];readiness:Readiness
 }
 export type Diagnostic = {record:string;code:string;message:string}
-export const missingSections={rivals:null,competitions:null,seasons:null,players:null,matches:null,trophies:null,kits:null,stadiums:null,places:null,culture:null} as const
+export const missingSections={rivals:null,competitions:null,seasons:null,players:null,matches:null,trophies:null,kits:null,goals:null,stadiums:null,places:null,culture:null} as const
 export function timelineReadiness(count:number):Readiness {
   return {state:count>=11?'READY':count>=3?'PARTIAL':'LOCKED',playable:count>=3,eligible:count,target:11,
     reasons:count>=11?[]:[`${Math.max(0,11-count)} more approved, distinct, exact-date events needed for a full ten-card run.`]}
