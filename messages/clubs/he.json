@@ -85,5 +85,11 @@
   "meetingsKicker": "ארכיון המפגשים",
   "scoreWord": "תוצאה",
   "fixtureCard": "המשחק הבא",
-  "fixtureNone": "אין משחק מאושר"
+  "fixtureNone": "אין משחק מאושר",
+  "insideTitle": "בגיליון הזה",
+  "psKicker": "נ.ב. מחדר הדפוס",
+  "psBody": "שריקת סיום בכל עמוד: בלי מועדפות, בלי שמועות, ובלי מילה בלי מקור.",
+  "pageWord": "עמ׳",
+  "teamSheet": "דף הרכב",
+  "editor": "— המערכת"
 }

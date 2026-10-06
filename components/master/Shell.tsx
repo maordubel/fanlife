@@ -25,7 +25,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
   </div></div>
   <div className="mag-stop">{stop===undefined?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:stop}</div>
   {children}
-  <footer className="mag-foot"><div className="mag-foot-in">
+  <footer className="mag-foot"><div className="mag-printbar" aria-hidden="true"><i/><i/><i/><i/><i/><i/><u>+</u></div><div className="mag-foot-in">
    <div className="mag-mono">FAN LIFE · {copy.issue}<br/>{copy.footer}<br/>{copy.printed}</div>
    <div className="mag-barcode" aria-hidden="true"/>
    <div className="mag-mono"><Link className="mag-credit" href="/credits">{copy.credits}</Link><br/><Link className="mag-credit" href="/master/admin">{copy.administration}</Link></div>
