@@ -18,7 +18,7 @@ import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {chapterOf, eventsOf, Life, meets, nextChapter, openChapter, type Directive, type LifeStore} from '@/lib/life/universal/engine'
 import type {CardDef, Chapter, LifePack, LifeState} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
-import {cityOf, type Place} from '@/lib/life/universal/city'
+import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
 import {CityMap} from './CityMap'
 import {MeSheet} from './MeSheet'
 import {MiniGame} from './MiniGame'
@@ -62,6 +62,9 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const [talk, setTalk] = useState<(TalkContext & {view: RunnerView}) | null>(null)
   const [overlay, setOverlay] = useState<Overlay>(null)
   const [toast, setToast] = useState<string | null>(null)
+  const [place, setPlace] = useState<{id: string; name: string} | null>(null)
+  const known = useRef<Set<string>>(new Set())
+  const arrival = useRef<{id: string; name: string} | null>(null)
   const [menu, setMenu] = useState<'closed' | 'menu' | 'confirm'>('closed')
   const [failed, setFailed] = useState<string | null>(null)
   const [soundOn, setSoundOn] = useState(true)
@@ -103,6 +106,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   useEffect(() => {
     const l = Life.load(pack, browserStore())
     life.current = l
+    known.current = new Set(l.state.seen)
     sound.current = new LifeSound()
     setSoundOn(sound.current.on)
     const off = l.subscribe(setState)
@@ -129,7 +133,13 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     setScene(built.scene)
     skipped.current.clear()
     entered.current = resolve
-    if (!r.enter(built.config)) { entered.current = null; resolve() }
+    // a place he has never stood in opens wide and is named; one he knows just settles
+    const room = l.state.room
+    const first = !!room && !known.current.has(room)
+    if (room) known.current.add(room)
+    // named once the room is actually up, so a slow load never spends the card before anybody sees the place
+    arrival.current = first && room ? {id: room, name: roomName(pack, room, ch)} : null
+    if (!r.enter({...built.config, reveal: first})) { entered.current = null; resolve(); return }
   }), [pack])
 
   const startTalk = useCallback((id: string, ctx: TalkContext) => {
@@ -190,6 +200,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const keep = ch.endings[ending]?.keep
     l.dispatch({t: 'ended', chapter: ch.id, ending}, ...(keep ? [{t: 'keep' as const, item: keep}] : []))
     rt.current?.freeze(true)
+    rt.current?.emote('tender', 8)
     cue('end')
     setPhase('ending')
   }, [cue, pack])
@@ -259,6 +270,19 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
 
   /* the camera goes to whoever is speaking */
   const talking = !!talk
+  /* a line that carries a feeling bends the picture while it is on screen; the next one lets it go */
+  const roomNow = state?.room ?? null, timeNow = state?.time ?? 'day'
+  const lineMood = talk ? talk.view.lines[talk.view.index]?.mood ?? null : null
+  useEffect(() => { rt.current?.emote(lineMood, 30) }, [lineMood, talk?.view.talk])
+  /* the town sounds like where it is: a crowd that is far away, nearer the closer he walks to the ground */
+  useEffect(() => {
+    if (phase !== 'play' || !roomNow) { sound.current?.bed(0); return }
+    const me = SITES[roomNow], grounds = Object.values(SITES).filter(x => x.kind === 'stadium')
+    if (!me) { sound.current?.bed(0); return }
+    const d = Math.min(...grounds.map(g => Math.hypot(g.x - me.x, g.y - me.y)))
+    const indoors = me.kind === 'home' || me.kind === 'school' || me.kind === 'work'
+    sound.current?.bed((Math.max(0, 1 - d / 70) * (indoors ? 0.45 : 1)) * (timeNow === 'night' ? 1.15 : 1))
+  }, [phase, roomNow, timeNow])
   useEffect(() => { if (!wide) rt.current?.frame(talking ? FRAME.talk : FRAME.phone) }, [talking, wide])
   useEffect(() => {
     if (!talk) return
@@ -272,7 +296,13 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const l = life.current
     if (e.type === 'ready') { setReady(true); return }
     if (e.type === 'error') { setFailed(e.message || 'error'); return }
-    if (e.type === 'entered') { setRoomUp(true); const done = entered.current; entered.current = null; done?.(); return }
+    if (e.type === 'entered') {
+      setRoomUp(true)
+      const at = arrival.current
+      arrival.current = null
+      if (at) { setPlace(at); cue('reveal'); rt.current?.emote('wonder', 3); later(() => setPlace(cur => (cur?.id === at.id ? null : cur)), 3800) }
+      const done = entered.current; entered.current = null; done?.(); return
+    }
     if (e.type === 'target') { setTarget(e.target); return }
     if (e.type === 'step') { cue('step'); return }
     if (!l || live.current.phase !== 'play' || live.current.talk || live.current.overlay) return
@@ -288,7 +318,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       if (through?.ok) { cue('door'); l.dispatch(...through.events); void enterRoom().then(settle) }
       else { if (door?.blocked) say(door.blocked); rt.current?.freeze(false) }
     }
-  }, [copy.locked, cue, enterRoom, say, settle, startTalk])
+  }, [copy.locked, cue, enterRoom, later, say, settle, startTalk])
   const onPlayRef = useRef(onPlay)
   onPlayRef.current = onPlay
 
@@ -491,6 +521,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
         <iframe key={reload} ref={frame} className={styles.world} src={`/life/voxel/play.html?club=${encodeURIComponent(pack.clubId)}`} title={copy.title} tabIndex={-1} aria-hidden="true" />
         {playing && !roomUp && !failed && <p className={styles.loading} role="status">{copy.loading}</p>}
         {failed && <div className={styles.failed} role="alert"><p>{failed === 'timeout' ? copy.loadFailed : copy.noWebgl}</p><button type="button" className={`${styles.button} min-h-tap`} onClick={() => { setFailed(null); setReady(false); rt.current = null; setReload(n => n + 1) }}>{copy.retry}</button></div>}
+        {place && <div className={styles.place} role="status" data-life="place" key={place.id}><small>{copy['place.new']}</small><b {...story}>{place.name}</b></div>}
         {toast && <p className={styles.toast} role="status" {...story}>{toast}</p>}
         {idle && targetText && (
           <button type="button" className={`${styles.act} min-h-tap`} data-life="act" data-locked={target?.locked ? 'true' : 'false'} onClick={() => { sound.current?.wake(); rt.current?.act() }}>

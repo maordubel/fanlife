@@ -737,7 +737,10 @@ function loop(now){
  }
  zc+=((view.mode==='follow'?view.zoom:1)-zc)*Math.min(1,dtr*2.6);var bd=base.dist/(zc*(DISP.zoom||1));
  /* camera life: a slow drift in on entry, a kick on a goal, a talk lean */
- var ie=1-Math.pow(1-FX.intro,3);bd*=1+.09*(1-ie)-.05*FX.kick*FX.kick;az+=.06*(1-ie);if(FX.kick>0)el+=Math.sin(now*.05)*.002*FX.kick;
+ var ie=1-Math.pow(1-FX.intro,3);bd*=1+.09*(1-ie)-.05*FX.kick*FX.kick;az+=.06*(1-ie);
+ /* a place seen for the first time opens wide and settles to the player; a feeling leans the camera in */
+ if(FX.rev>0){FX.rev=Math.max(0,FX.rev-dtr/2.8);var rr=FX.rev*FX.rev*(3-2*FX.rev);bd*=1+.34*rr;el+=.16*rr;az+=.12*rr}
+ emoFrame(dtr);bd*=1-(FX.emo.push||0)*FX.emo.v;if(FX.kick>0)el+=Math.sin(now*.05)*.002*FX.kick;
  if(view.mode==='follow'&&view.lift)cy+=view.lift*(zc-1);
  cam.position.set(cx+Math.sin(az)*Math.cos(el)*bd,cy+Math.sin(el)*bd,cz+Math.cos(az)*Math.cos(el)*bd);
  tgt.set(cx,cy,cz);cam.lookAt(tgt);
@@ -757,7 +760,7 @@ function step(n){
 
 
 /* ---------- polish: window light, motes, night halos, corner shade, live crowd, confetti, slow-mo, fades ---------- */
-var FX={lvl:2,ts:1,tsT:1,tsHold:0,intro:0,kick:0,TT:0,cheerUntil:0,crowdMode:'idle',crowdUntil:0,fade:null,flash:null,conf:null,crowd:null,motes:null,halos:[]};
+var FX={lvl:2,ts:1,tsT:1,tsHold:0,intro:0,kick:0,rev:0,revOn:false,emo:{k:null,v:0,vT:0,hold:0,lastW:1,push:0},TT:0,cheerUntil:0,crowdMode:'idle',crowdUntil:0,fade:null,flash:null,conf:null,crowd:null,motes:null,halos:[]};
 var _soft=null;
 function softTex(){if(_soft)return _soft;var c=document.createElement('canvas');c.width=c.height=64;var g=c.getContext('2d'),r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.35,'rgba(255,255,255,.35)');r.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=r;g.fillRect(0,0,64,64);_soft=new THREE.CanvasTexture(c);return _soft}
 function gradTex(a0,a1){var c=document.createElement('canvas');c.width=4;c.height=64;var g=c.getContext('2d'),r=g.createLinearGradient(0,0,0,64);r.addColorStop(0,'rgba(255,255,255,'+a0+')');r.addColorStop(1,'rgba(255,255,255,'+a1+')');g.fillStyle=r;g.fillRect(0,0,4,64);var t=new THREE.CanvasTexture(c);return t}
@@ -768,7 +771,7 @@ function fxAdd(o){cur.root.add(o);return o}
 function fxLevel(){return Q.name==='high'?2:Q.name==='medium'?1:0}
 function polishBuild(c){
  FX.lvl=Math.min(FX.lvl,fxLevel());if(!Q.fxDown)FX.lvl=fxLevel();
- FX.intro=0;FX.halos=[];FX.motes=null;FX.conf=null;FX.crowd=null;
+ FX.intro=0;FX.rev=FX.revOn?1:0;FX.revOn=false;FX.emo.v=0;FX.emo.vT=0;FX.emo.k=null;FX.halos=[];FX.motes=null;FX.conf=null;FX.crowd=null;
  var m=c.meta,W=m.W,D=m.D,H=m.H;
  /* corner shade: where wall meets wall and floor, light falls away */
  if(c.indoor){
@@ -865,9 +868,27 @@ function celebrate(o){
 function flash(){if(!host)return;var el=FX.flash;if(!el){el=FX.flash=document.createElement('div');el.style.cssText='position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:4';host.stage.appendChild(el)}
  el.style.transition='none';el.style.opacity='.55';void el.offsetWidth;el.style.transition='opacity .7s ease-out';el.style.opacity='0'}
 /* ---- fades between rooms ---- */
+
+/* ---- feeling: a small table that bends the picture, never the story ---- */
+var EMO={tender:{push:.12,vig:.55,warm:.42,sat:.95,ts:.9},warm:{push:.06,vig:.15,warm:.34,sat:1.05,ts:1},tense:{push:.1,vig:.9,warm:-.22,sat:.85,ts:.86},grief:{push:.15,vig:1,warm:-.4,sat:.55,ts:.78},joy:{push:.04,vig:-.25,warm:.3,sat:1.15,ts:1},wonder:{push:-.03,vig:-.1,warm:.1,sat:1.1,ts:.95}};
+function emote(k,hold){var e=FX.emo;if(!k||!EMO[k]){e.vT=0;e.hold=0;return}e.k=k;e.vT=1;e.hold=hold==null?4:hold;var d=EMO[k];e.push=d.push;if(d.ts<1){FX.tsT=d.ts;FX.tsHold=Math.max(FX.tsHold,e.hold)}}
+function emoFrame(dtr){var e=FX.emo;if(e.hold>0){e.hold-=dtr;if(e.hold<=0&&e.vT>0)e.vT=0}
+ e.v+=(e.vT-e.v)*Math.min(1,dtr*(e.vT>e.v?1.6:1.5));
+ if(e.v<.004&&e.vT===0){if(e.v!==0){e.v=0;emoLook(0)}return}
+ e.lastW+=dtr;if(e.lastW>.12){e.lastW=0;emoLook(e.v)}}
+function emoLook(v){if(!host)return;var d=EMO[FX.emo.k]||EMO.warm,vg=host.stage.querySelector('.vig');if(vg)vg.style.opacity=Math.max(0,Math.min(1.6,(DISP.vignette||1)*(1+d.vig*v)));
+ var w=DISP.warmth||0,ew=d.warm*v,m=MOODS[sceneMood]||MOODS.normal;/* a feeling never rotates hue: a cool moment drains and darkens, a warm one browns */var f=m.css+(w?' sepia('+(Math.abs(w)*.4).toFixed(2)+') hue-rotate('+(w<0?170:-8)+'deg)':'')+(ew>0?' sepia('+(ew*.55).toFixed(2)+')':'')+(v?' saturate('+(1+(d.sat-1)*v).toFixed(2)+')':'')+(ew<0?' brightness('+(1+ew*.22).toFixed(2)+') contrast(1.06)':'');host.canvas.style.filter=f.trim()}
+function reveal(){FX.revOn=true}
+/* doors: the curtain comes from the side the door is on and leaves from the side the player arrives, tinted by the hour */
+var WIPE={n:['inset(0 0 100% 0)','inset(100% 0 0 0)'],s:['inset(100% 0 0 0)','inset(0 0 100% 0)'],e:['inset(0 0 0 100%)','inset(0 100% 0 0)'],w:['inset(0 100% 0 0)','inset(0 0 0 100%)']};
+function curtain(el){el.style.background=(cur&&cur.night)?'#04060d':'#120e0a'}
+function fadeIn(dir){if(!host||host.capture)return;FX.tok=(FX.tok||0)+1;var el=fadeEl();curtain(el);el.style.transition='none';el.style.opacity='1';var w=WIPE[FX.lastDir];el.style.clipPath='inset(0)';void el.offsetWidth;
+ if(w&&FX.lvl>0){el.style.transition='clip-path .62s cubic-bezier(.65,0,.35,1),opacity .62s ease-out';el.style.clipPath=w[1]}else{el.style.transition='opacity .6s ease-out'}el.style.opacity='0';FX.lastDir=null}
+function fadeOut(ms,cb,dir){if(!host||host.capture){cb&&cb();return}var el=fadeEl();curtain(el);ms=ms||280;FX.lastDir=dir||null;var w=WIPE[dir];
+ if(w&&FX.lvl>0){el.style.transition='none';el.style.opacity='1';el.style.clipPath=w[0];void el.offsetWidth;el.style.transition='clip-path '+ms/1000+'s cubic-bezier(.5,0,.75,0)';el.style.clipPath='inset(0)'}
+ else{el.style.transition='opacity '+ms/1000+'s ease-in';el.style.opacity='1';el.style.clipPath='inset(0)'}
+ var tk=FX.tok||0;setTimeout(function(){cb&&cb()},ms);/* if the host keeps the same room, the curtain lifts again */setTimeout(function(){if((FX.tok||0)===tk){el.style.transition='opacity .5s ease-out';el.style.opacity='0'}},ms+1500)}
 function fadeEl(){if(FX.fade||!host)return FX.fade;var el=FX.fade=document.createElement('div');el.style.cssText='position:absolute;inset:0;background:#07080c;opacity:1;pointer-events:none;z-index:4';host.stage.appendChild(el);return el}
-function fadeIn(){if(!host||host.capture)return;FX.tok=(FX.tok||0)+1;var el=fadeEl();el.style.transition='none';el.style.opacity='1';void el.offsetWidth;el.style.transition='opacity .6s ease-out';el.style.opacity='0'}
-function fadeOut(ms,cb){if(!host||host.capture){cb&&cb();return}var el=fadeEl();el.style.transition='opacity '+(ms||280)/1000+'s ease-in';el.style.opacity='1';var tk=FX.tok||0;setTimeout(function(){cb&&cb()},ms||280);/* if the host keeps the same room, the curtain lifts again */setTimeout(function(){if((FX.tok||0)===tk){el.style.transition='opacity .5s ease-out';el.style.opacity='0'}},(ms||280)+1500)}
 /* ---- per-frame ---- */
 function polishFrame(t,dtr){
  if(FX.motes){var M=FX.motes,pos=M.pos;for(var i=0;i<M.meta.length;i++){var q=M.meta[i],b=q.b,w=b.w;q.v=(q.v+dtr*q.sp*.12)%1;var v=q.v,x=w[0]+(w[1]-w[0])*q.u+b.sx*v+Math.sin(t*.6+q.ph)*.4,y=w[3]*(1-v)+.2+Math.sin(t*.8+q.ph)*.25,z=.2+(b.zf-.2)*v;pos[i*3]=x;pos[i*3+1]=y;pos[i*3+2]=z}M.pts.geometry.attributes.position.needsUpdate=true}
@@ -930,7 +951,7 @@ var V=window.__vx={THREE:window.THREE,box:box,face:face,wallZ:wallZ,decal:decal,
  boot:boot,stop:stop,fit:fit,view:view,setSkins:setSkins,loadArt:loadArt,skin:skin,
  onFrame:function(fn){frameHooks.push(fn)},onBuild:function(fn){buildHooks.push(fn)},
  camera:function(){return cam},renderer:function(){return ren},quality:function(){return Q},base:function(){return base},
- softTex:softTex,celebrate:celebrate,fx:FX,fadeOut:fadeOut,crowdMode:function(m){FX.crowdMode=m||'idle'},slowmo:function(k,s){FX.tsT=k;FX.tsHold=s||1},
+ softTex:softTex,celebrate:celebrate,fx:FX,fadeOut:fadeOut,emote:emote,reveal:reveal,crowdMode:function(m){FX.crowdMode=m||'idle'},slowmo:function(k,s){FX.tsT=k;FX.tsHold=s||1},
  win:function(x0,x1,y0,y1){if(cur&&cur.win)cur.win.push([x0,x1,y0,y1])},interior:function(){if(cur)cur.indoor=true},
  addCrowd:function(o){if(cur&&cur.crowd)cur.crowd.push(o)},
  patMat:patMat,STR:STR,display:DISP,setDisplay:dispSet,setMood:setMood,MOODS:MOODS,onDisplay:function(fn){dispHooks.push(fn)},shade:shade};

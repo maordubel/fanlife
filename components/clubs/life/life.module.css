@@ -303,3 +303,14 @@
 
 .boardDetail { margin-block-start: 8px; padding-block-start: 8px; border-block-start: 1px dashed color-mix(in srgb, var(--l-paper) 40%, transparent); text-align: start; font-size: .875rem; line-height: 1.5; display: grid; gap: 4px; }
 .boardDetail b { font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; margin-inline-end: 6px; opacity: .85; }
+
+/* ───── a place seen for the first time: named once, then gone ───── */
+.place { position: absolute; z-index: 3; inset-inline: 14px; inset-block-start: calc(158px + var(--l-safe-t)); max-inline-size: 460px; margin-inline: auto; padding: 12px 16px 14px; background: var(--l-paper); color: var(--l-ink); border-inline-start: 8px solid var(--l-prime); box-shadow: 4px 4px 0 var(--l-ink); pointer-events: none; animation: placeShow 3.8s cubic-bezier(.2, .8, .2, 1) both; }
+.place small { display: block; font-family: var(--font-courier), monospace; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--l-soft); }
+.place b { display: block; margin-block-start: 2px; font-family: var(--font-frank), serif; font-size: clamp(1.5rem, 6vw, 2.1rem); line-height: 1.05; }
+@keyframes placeShow { 0% { opacity: 0; transform: translateY(-14px) skewX(-3deg); } 12% { opacity: 1; transform: none; } 80% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .place { animation: placeFade 3.8s linear both; } @keyframes placeFade { 0%, 100% { opacity: 0; } 10%, 85% { opacity: 1; } } }
+
+/* ───── the map: a newly found district lifts its fog, then settles ───── */
+.mapNew { fill: none; stroke: var(--l-mark); stroke-width: .7; pointer-events: none; }
+.mapNewTag { fill: var(--l-mark); font: 700 2.4px var(--font-courier), monospace; letter-spacing: .1em; pointer-events: none; }
