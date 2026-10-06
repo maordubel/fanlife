@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex"><title>LIFE · Display Control</title>
+<link rel="stylesheet" href="/life/voxel/display-admin.css">
+</head><body>
+<div class="app">
+ <aside class="panel" id="panel">
+  <header><h1>Display Control</h1><p>Every visual dial of the LIFE game, live. Changes apply instantly to the preview and are kept on this device; <b>Download</b> produces the file that sets the default for every player.</p></header>
+
+  <section><h2>Preview</h2>
+   <div class="row"><label>Room</label><select id="room"></select></div>
+   <div class="row"><label>Club</label><div class="seg" id="club"></div></div>
+   <div class="row"><label>Time</label><div class="seg" id="time"><button data-v="day">Day</button><button data-v="night">Match night</button></div></div>
+   <div class="row"><label>Screen</label><div class="seg wrap" id="dev"></div></div>
+  </section>
+
+  <section><h2>View</h2>
+   <div class="row"><label>Mirror view</label><div class="seg" id="mirror"><button data-v="0">Normal</button><button data-v="1">Mirrored</button></div></div>
+   <p class="hint">Mirror flips the whole picture left–right (for right-to-left layouts); signs and text inside the world mirror with it. Stick and taps are flipped to match.</p>
+   <div id="sliders-view"></div>
+  </section>
+
+  <section><h2>Characters</h2>
+   <div id="sliders-char"></div>
+   <div class="row"><label>Figure style</label><div class="seg" id="figure"></div></div>
+   <div class="tg" id="toggles"></div>
+  </section>
+
+  <section><h2>Look &amp; mood</h2>
+   <div class="row"><label>Scene mood</label><div class="seg wrap" id="mood"></div></div>
+   <div id="sliders-look"></div>
+   <div class="row"><label>Quality</label><div class="seg" id="quality"></div></div>
+  </section>
+
+  <section class="act">
+   <button id="reset" class="ghost">Reset</button>
+   <button id="copy" class="ghost">Copy JSON</button>
+   <button id="dl" class="pri">Download display.json</button>
+  </section>
+  <section><h2>Current values</h2><pre id="json"></pre></section>
+ </aside>
+
+ <main class="preview" id="preview">
+  <div class="bar"><span id="bar-size"></span><button id="shot" class="ghost">Save picture</button></div>
+  <div class="well" id="well">
+   <div class="device" id="device">
+    <div class="stage day" id="stage">
+     <div class="sky"></div>
+     <canvas id="gl"></canvas>
+     <div class="vig"></div><div class="grain"></div>
+    </div>
+   </div>
+  </div>
+  <div class="loader" id="loader">Laying voxels…</div>
+ </main>
+</div>
+<script src="/life/voxel/three.r128.min.js"></script>
+<script src="/life/voxel/engine.js"></script>
+<script src="/life/voxel/rooms-core.js"></script>
+<script src="/life/voxel/rooms-kit.js"></script>
+<script src="/life/voxel/rooms-base.js"></script>
+<script src="/life/voxel/rooms-interior.js"></script>
+<script src="/life/voxel/rooms-outdoor.js"></script>
+<script src="/life/voxel/rooms-stadium.js"></script>
+<script src="/life/voxel/rooms-universal.js"></script>
+<script src="/life/voxel/rooms-showcase.js"></script>
+<script src="/life/voxel/display-admin.js"></script>
+</body></html>

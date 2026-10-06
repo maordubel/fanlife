@@ -220,6 +220,7 @@ function pick(cx,cy){
  return{kind:'ground',x:hit.x,z:hit.z};
 }
 function tap(cx,cy){
+ if(V.display.mirror){var rr=canvas.getBoundingClientRect();cx=rr.left+rr.right-cx}
  if(frozen||!player)return;var t=pick(cx,cy);if(!t)return;
  emit({type:'tap',kind:t.kind});
  if(t.kind==='ground'){walkTo(t.x,t.z);return}
@@ -246,7 +247,7 @@ function frame(t,dt){
  now=t;if(!player||!cfg)return;
  var moved=0;
  if(!frozen){
-  var ax=axis.x,ay=axis.y,mag=Math.hypot(ax,ay);
+  var ax=axis.x*(V.display.mirror?-1:1),ay=axis.y,mag=Math.hypot(ax,ay);
   if(mag>.12){
    path=null;pending=null;if(mag>1){ax/=mag;ay/=mag;mag=1}
    /* the stick is the screen: right is along the room, up is into it */
