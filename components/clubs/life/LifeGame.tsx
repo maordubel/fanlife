@@ -287,9 +287,12 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   useEffect(() => { rt.current?.emote(lineMood, 30) }, [lineMood, talk?.view.talk])
   /* the town sounds like where it is: a crowd that is far away, nearer the closer he walks to the ground */
   useEffect(() => {
-    if (phase !== 'play' || !roomNow) { sound.current?.bed(0); return }
+    if (phase !== 'play' || !roomNow) { sound.current?.bed(0); sound.current?.ambience(null); return }
     const me = SITES[roomNow], grounds = Object.values(SITES).filter(x => x.kind === 'stadium')
-    if (!me) { sound.current?.bed(0); return }
+    if (!me) { sound.current?.bed(0); sound.current?.ambience(null); return }
+    /* and the place has its own air, a real recording, not a hiss */
+    const air: Record<string, string> = {home: roomNow === 'kitchen' ? 'amb-kitchen' : 'amb-room', school: 'amb-classroom', street: timeNow === 'night' ? 'amb-street-dusk' : 'amb-street-day', pitch: 'amb-park', work: 'amb-hall', bus: roomNow === 'bus-station' ? 'amb-station' : 'amb-bus', stadium: roomNow === 'tunnel' ? 'amb-tunnel' : 'amb-stadium', abroad: 'amb-street-day'}
+    sound.current?.ambience(air[me.kind] ?? null, me.kind === 'home' ? 0.22 : 0.3)
     const d = Math.min(...grounds.map(g => Math.hypot(g.x - me.x, g.y - me.y)))
     const indoors = me.kind === 'home' || me.kind === 'school' || me.kind === 'work'
     sound.current?.bed((Math.max(0, 1 - d / 70) * (indoors ? 0.45 : 1)) * (timeNow === 'night' ? 1.15 : 1))
@@ -315,7 +318,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       const done = entered.current; entered.current = null; done?.(); return
     }
     if (e.type === 'target') { setTarget(e.target); return }
-    if (e.type === 'step') { cue('step'); return }
+    if (e.type === 'step') { sound.current?.setSurface(['floor', 'street', 'terrace', 'stairs'].includes(e.surface) ? e.surface : 'floor'); cue('step'); return }
     if (!l || live.current.phase !== 'play' || live.current.talk || live.current.overlay) return
     const sc = live.current.scene
     if (e.type === 'act') {
