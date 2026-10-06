@@ -342,7 +342,7 @@
 .mapTripDot { fill: var(--l-paper); stroke: var(--l-mark); stroke-width: .8; pointer-events: none; }
 
 /* keepsakes, drawn: a painted object that lands on the page like something put down on a table */
-.kept :global(.keepArt), .box :global(.keepArt) { display: block; max-inline-size: 132px; max-block-size: 84px; inline-size: auto; block-size: auto; object-fit: contain; filter: drop-shadow(2px 3px 0 rgb(0 0 0 / .22)); animation: keepLand .7s cubic-bezier(.2, .9, .3, 1) both; }
+.kept :global(.keepArt), .box :global(.keepArt) { display: block; max-inline-size: 132px; max-block-size: 84px; inline-size: auto; block-size: auto; object-fit: contain; filter: drop-shadow(2px 3px 0 color-mix(in srgb, black 22%, transparent)); animation: keepLand .7s cubic-bezier(.2, .9, .3, 1) both; }
 .kept :global(.keepArt) { margin-block-end: 8px; max-inline-size: 168px; max-block-size: 108px; }
 .box li[data-art='true'] { display: grid; grid-template-columns: 76px 1fr; align-items: center; gap: 0 12px; }
 .box li[data-art='true'] :global(.keepArt) { grid-row: 1 / span 2; max-inline-size: 76px; max-block-size: 60px; }
