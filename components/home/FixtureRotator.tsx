@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import {useEffect, useRef, useState} from 'react'
 import type {CSSProperties} from 'react'
+import type {LiveryPattern} from '@/lib/club-livery'
 import {dwellMs} from '@/lib/fixtures/rotation'
 
 /** One card of the rotation, fully resolved on the server: the client formats time and nothing else. */
@@ -11,7 +12,7 @@ export type RotatorItem = {
   opponent: string
   initials: string
   primary: string
-  pattern: 'solid' | 'stripes' | 'sash'
+  pattern: LiveryPattern
   kickoff: string
   dateOnly: boolean
   clubSide: 'home' | 'away'

@@ -482,7 +482,7 @@
 .fl.club-theme { background-color: var(--mag-paper); color: var(--mag-ink); }
 .fl.club-theme .club-hero { background-color: transparent; }
 .fl .club-hero { background-image: none; }
-.fl.club-theme .club-hero h1 { font-size: clamp(52px, 15vw, 96px); line-height: .88; overflow-wrap: anywhere; }
+.fl.club-theme .club-hero h1 { font-size: clamp(40px, 11vw, 96px); line-height: .88; overflow-wrap: anywhere; }
 .fl .club-hero nav a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 12px; border: 3px solid var(--mag-ink); background: var(--mag-card); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
 @media (max-width: 900px) {
   .mag-foot-in { flex-direction: column; align-items: flex-start; }
@@ -501,3 +501,51 @@
 .mag-skin fieldset.mag-chips .mag-chip[aria-pressed='true'] { background: var(--mag-navy); color: var(--mag-paper); box-shadow: 3px 3px 0 var(--mag-vermilion); }
 .mag-skin .mag-price { flex: none; min-width: 34px; height: 34px; display: grid; place-items: center; background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-condensed); font-size: 24px; line-height: 1; }
 .mag-skin .mag-chip[aria-pressed='true'] .mag-price { background: var(--mag-vermilion); }
+
+/* ───────── club signature: pattern × layout (lib/club-signature.ts) ─────────
+   Colour is worn only by .mag-band / .mag-badge; the layouts below only move, size and frame them. */
+.mag-badge[data-livery='hoops'], .mag-band[data-livery='hoops'] { background: repeating-linear-gradient(0deg, var(--club-primary) 0 7px, var(--mag-white) 7px 14px); color: var(--mag-ink); text-shadow: 0 0 3px var(--mag-white), 0 0 3px var(--mag-white); }
+.mag-badge[data-livery='halves'], .mag-band[data-livery='halves'] { background: linear-gradient(90deg, var(--club-primary) 0 50%, var(--mag-white) 50%); color: var(--mag-ink); text-shadow: 0 0 3px var(--mag-white), 0 0 3px var(--mag-white); }
+.mag-badge[data-livery='checks'], .mag-band[data-livery='checks'] { background: repeating-conic-gradient(var(--club-primary) 0 25%, var(--mag-white) 0 50%) 0 0 / 14px 14px; color: var(--mag-ink); text-shadow: 0 0 3px var(--mag-white), 0 0 3px var(--mag-white); }
+.fl .club-hero { position: relative; overflow: hidden; }
+.mag-sig { position: relative; display: flex; align-items: stretch; gap: 0; margin-block-start: 18px; min-height: 64px; pointer-events: none; }
+.mag-sig .mag-band { flex: 1; display: grid; place-items: center; min-height: 64px; }
+.mag-sig .mag-band b { font-family: var(--mag-condensed); font-weight: 700; font-size: 44px; line-height: 1; letter-spacing: 6px; color: var(--mag-ink); background: var(--mag-paper); border: 3px solid var(--mag-ink); padding: 2px 14px; }
+.mag-sig i { font-style: normal; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: var(--mag-ink); color: var(--mag-paper); writing-mode: vertical-rl; padding: 8px 6px; display: grid; place-items: center; }
+/* poster: a tilted stub pinned to the corner */
+[data-sig-layout='poster'] .mag-sig { transform: rotate(-1.6deg); box-shadow: 5px 5px 0 var(--mag-ink); }
+/* curtain: the whole width is the shirt, initials hang from it */
+[data-sig-layout='curtain'] .mag-sig { margin-inline: calc(var(--gutter, 14px) * -1); min-height: 78px; border-block: 4px solid var(--mag-ink); }
+[data-sig-layout='curtain'] .mag-sig .mag-band { border-width: 0; }
+[data-sig-layout='curtain'] .mag-sig i { display: none; }
+/* ground: the stub sits inside a pitch — centre circle and halfway line */
+[data-sig-layout='ground'] .mag-sig { background: var(--mag-green); border: 3px solid var(--mag-ink); padding: 10px; min-height: 96px; background-image: linear-gradient(var(--mag-paper), var(--mag-paper)); background-size: 3px 100%; background-position: 50% 0; background-repeat: no-repeat; }
+[data-sig-layout='ground'] .mag-sig .mag-band { flex: 0 0 76px; margin-inline: auto; aspect-ratio: 1; border-radius: 50%; min-height: 0; }
+[data-sig-layout='ground'] .mag-sig .mag-band b { font-size: 24px; letter-spacing: 1px; padding: 0 6px; }
+/* split: a diagonal cut, colour on one side and the city on the other */
+[data-sig-layout='split'] .mag-sig { clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%); min-height: 84px; }
+[data-sig-layout='split'] .mag-sig .mag-band { border-width: 3px 0 3px 3px; }
+/* ticket: perforated stub with notches */
+[data-sig-layout='ticket'] .mag-sig { border: 3px dashed var(--mag-ink); padding: 6px; background: var(--mag-card); }
+[data-sig-layout='ticket'] .mag-sig .mag-band { border-width: 3px; margin-inline-end: 6px; }
+@media (min-width: 900px) {
+  .fl .club-hero .mag-sig { position: absolute; inset-inline-end: 4vw; inset-block-end: 28px; width: min(340px, 30vw); margin: 0; min-height: 120px; }
+  .fl .club-hero .mag-sig .mag-band b { font-size: 64px; }
+  [data-sig-layout='curtain'] .mag-sig { inset-inline-end: 0; inset-inline-start: auto; width: min(260px, 22vw); margin: 0; border-inline-start: 4px solid var(--mag-ink); border-block: 0; inset-block: 0; min-height: 0; height: auto; }
+  [data-sig-layout='ground'] .mag-sig { min-height: 150px; }
+  [data-sig-layout='ground'] .mag-sig .mag-band { flex-basis: 110px; }
+}
+/* game pages: the band under the header takes the club's own weight */
+[data-sig-layout='curtain'].mag-gamehead > .mag-band { height: 18px; }
+[data-sig-layout='ground'].mag-gamehead > .mag-band { height: 8px; border-radius: 0; margin-block-start: 6px; }
+[data-sig-layout='split'].mag-gamehead > .mag-band { clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%); height: 16px; }
+[data-sig-layout='ticket'].mag-gamehead > .mag-band { border-style: dashed; height: 14px; }
+[data-sig-layout='poster'].mag-gamehead > .mag-band { height: 12px; transform: rotate(-.6deg); }
+
+/* club signature — mobile: the hero wraps and the signature takes its own row under the title */
+@media (max-width: 899px) {
+  .fl .club-hero { flex-wrap: wrap; }
+  .fl .club-hero > div:not(.mag-sig) { flex: 1 1 0; min-width: 0; }
+  .fl .club-hero .mag-sig { flex: 1 0 100%; width: 100%; }
+  .fl .club-hero h1 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+}
