@@ -12,6 +12,7 @@
  * button next to somebody) into the engine's own calls. What the simulator in the test suite
  * walks is therefore exactly what is walked here.
  */
+import {KeepArt, keepArt} from './KeepArt'
 import {ENABLED_LOCALES} from '@/lib/clubs/locale'
 import Link from 'next/link'
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
@@ -725,7 +726,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
             <p className={styles.serial}>{copy.ending} · {copy.age} <bdi>{chapter.age}</bdi></p>
             <h2 id="life-card-title" className={styles.cardTitle} {...story}>{ending.title}</h2>
             <p className={styles.lede} {...story}>{ending.body}</p>
-            {keepsake(ending.keep) && <div className={styles.kept}><p className={styles.stamp}>{copy.kept}</p><p className={styles.keptName} {...story}>{keepsake(ending.keep)!.name}</p><p {...story}>{keepsake(ending.keep)!.note}</p></div>}
+            {keepsake(ending.keep) && <div className={styles.kept}><KeepArt id={ending.keep!} tilt={-3} /><p className={styles.stamp}>{copy.kept}</p><p className={styles.keptName} {...story}>{keepsake(ending.keep)!.name}</p><p {...story}>{keepsake(ending.keep)!.note}</p></div>}
             <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={toNext} data-life="next-chapter">{nextChapter(pack, chapter.id) ? copy.nextChapter : copy.theEnd}</button></div>
           </div>
         </section>
@@ -818,7 +819,7 @@ function Box({pack, state, copy, story}: {pack: LifePack; state: LifeState; copy
     <section className={styles.box} aria-label={copy.box} data-life="box">
       <h3 className={styles.heading}>{copy.box}</h3>
       {kept.length === 0 ? <p className={styles.muted}>{copy.boxEmpty}</p> : (
-        <ul>{kept.map(k => <li key={k.id}><span className={styles.boxAge}><bdi>{k.age}</bdi></span><span><b lang={k.id.startsWith('night:') ? undefined : story.lang} dir="auto">{k.name}</b><small {...story}>{k.note}</small></span></li>)}</ul>
+        <ul>{kept.map((k, i) => <li key={k.id} data-art={keepArt(k.id) ? 'true' : 'false'}><KeepArt id={k.id} tilt={i % 2 ? 3 : -3} /><span className={styles.boxAge}><bdi>{k.age}</bdi></span><span><b lang={k.id.startsWith('night:') ? undefined : story.lang} dir="auto">{k.name}</b><small {...story}>{k.note}</small></span></li>)}</ul>
       )}
     </section>
   )
