@@ -19,6 +19,7 @@ const INERT = [
   /^tests\//,
   /^scripts\//,
   /^supabase\//,
+  /^research-staging\//,
   /^brand\/source\//,
   /^data\/(reports|staging)\//,
   /^content\/raw\//,
