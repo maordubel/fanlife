@@ -48,8 +48,20 @@ export function CityMap({city, clubId, night, copy, story, onTravel, onClose}: P
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clubId])
   useEffect(() => { shown.set(clubId, new Set(lit.map(p => p.id))) }, [clubId, lit])
+  const [trip, setTrip] = useState<{d: string; ms: number; to: Place} | null>(null)
   const here = city.places.find(p => p.status === 'here') ?? null
   const sel = pick ? at[pick] ?? null : null
+  /* he does not teleport: the route is drawn from where he stands, a dot walks it, and only then does the town change */
+  const setOff = (to: Place) => {
+    if (trip) return
+    const stops = [here?.id, ...(to.route.ok ? to.route.hops : [])].map(id => (id ? at[id] : undefined)).filter((q): q is Place => !!q)
+    const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (stops.length < 2 || reduce) { onTravel(to); return }
+    const d = stops.slice(1).reduce((acc, q, i) => `${acc} L${stops[i]!.x} ${q.y} L${q.x} ${q.y}`, `M${stops[0]!.x} ${stops[0]!.y}`)
+    const ms = Math.min(2600, 700 + stops.length * 500)
+    setTrip({d, ms, to})
+    window.setTimeout(() => onTravel(to), ms + 250)
+  }
   const bent = (a: Place, b: Place) => `M${a.x} ${a.y} L${a.x} ${b.y} L${b.x} ${b.y}`
   const road = (a: string, b: string) => { const p = at[a], q = at[b]; return p && q ? bent(p, q) : null }
 
@@ -103,6 +115,17 @@ export function CityMap({city, clubId, night, copy, story, onTravel, onClose}: P
                 </g>
               )
             })}
+            {trip && (
+              <g data-life="map-trip" aria-hidden="true">
+                <path d={trip.d} className={styles.mapTripBase} />
+                <path d={trip.d} pathLength={1} className={styles.mapTrip} strokeDasharray="1" strokeDashoffset="1">
+                  <animate attributeName="stroke-dashoffset" from="1" to="0" dur={`${trip.ms}ms`} fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1" />
+                </path>
+                <circle r="2.1" className={styles.mapTripDot}>
+                  <animateMotion dur={`${trip.ms}ms`} fill="freeze" path={trip.d} calcMode="spline" keyTimes="0;1" keySplines=".4 0 .2 1" />
+                </circle>
+              </g>
+            )}
           </svg>
         </div>
         {sel && (
@@ -114,7 +137,7 @@ export function CityMap({city, clubId, night, copy, story, onTravel, onClose}: P
             {sel.offers.length > 0 && <ul className={styles.mapOffers}>{sel.offers.map(o => <li key={o.id} data-kind={o.kind}><span className={styles.mapTag}>{copy[`map.offer.${o.kind}`]}</span> <span {...story}>{o.label}</span></li>)}</ul>}
             {sel.status !== 'here' && sel.status !== 'hidden' && (
               sel.route.ok
-                ? <button type="button" className={`${styles.button} min-h-tap`} onClick={() => onTravel(sel)} data-life="map-go">{sel.route.stopsAt ? copy['map.goStops'] : copy['map.go']}{' · '}<bdi>{sel.route.hops.length}</bdi>{' '}{copy['map.hops']}</button>
+                ? <button type="button" className={`${styles.button} min-h-tap`} onClick={() => setOff(sel)} disabled={!!trip} data-life="map-go">{sel.route.stopsAt ? copy['map.goStops'] : copy['map.go']}{' · '}<bdi>{sel.route.hops.length}</bdi>{' '}{copy['map.hops']}</button>
                 : <p className={styles.mapShut} data-life="map-shut">{sel.route.reason ? <span {...story}>{sel.route.reason}</span> : copy['map.noRoute']}</p>
             )}
             {sel.status === 'here' && <button type="button" className={`${styles.button} min-h-tap`} onClick={onClose}>{copy['map.stay']}</button>}

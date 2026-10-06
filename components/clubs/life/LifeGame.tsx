@@ -22,6 +22,8 @@ import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
 import {CityMap} from './CityMap'
 import {MeSheet} from './MeSheet'
 import {MiniGame} from './MiniGame'
+import {instantText, Typed, type TypedHandle} from './Typed'
+import {skyOf} from '@/lib/life/universal/sky'
 import {people, roomConfig, type PlayEvent, type PlayRuntime, type PlayTarget} from './runtime'
 import {LifeSound} from './sound'
 import styles from './life.module.css'
@@ -64,6 +66,11 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const [toast, setToast] = useState<string | null>(null)
   const [place, setPlace] = useState<{id: string; name: string} | null>(null)
   const known = useRef<Set<string>>(new Set())
+  const typing = useRef<TypedHandle | null>(null)
+  const hang = useRef<{x: number; y: number} | null>(null)
+  const [typed, setTyped] = useState(true)
+  const sheetEl = useRef<HTMLElement | null>(null)
+  const actEl = useRef<HTMLButtonElement | null>(null)
   const arrival = useRef<{id: string; name: string} | null>(null)
   const [menu, setMenu] = useState<'closed' | 'menu' | 'confirm'>('closed')
   const [failed, setFailed] = useState<string | null>(null)
@@ -139,7 +146,10 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     if (room) known.current.add(room)
     // named once the room is actually up, so a slow load never spends the card before anybody sees the place
     arrival.current = first && room ? {id: room, name: roomName(pack, room, ch)} : null
-    if (!r.enter({...built.config, reveal: first})) { entered.current = null; resolve(); return }
+    const kind = room ? SITES[room]?.kind : undefined
+    const outdoors = !!kind && kind !== 'home' && kind !== 'work' && kind !== 'abroad'
+    const sky = skyOf(ch?.id ?? '', l.state.time, outdoors)
+    if (!r.enter({...built.config, reveal: first, weather: sky.weather, mood: sky.mood})) { entered.current = null; resolve(); return }
   }), [pack])
 
   const startTalk = useCallback((id: string, ctx: TalkContext) => {
@@ -251,6 +261,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const advance = useCallback(() => {
     const run = runner.current
     if (!run || !live.current.talk) return
+    if (typing.current?.finish()) return
     const before = run.view()
     if (before.index >= before.lines.length - 1 && before.choices.length) return
     cue('page')
@@ -454,15 +465,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   }
   const stickEnd = () => { stick.current = null; setKnob({x: 0, y: 0}); rt.current?.axis(0, 0) }
 
-  /* ───────────── what is drawn ───────────── */
-  if (!state) return <div className={styles.life} data-phase="boot"><p className={styles.loading} role="status">{copy.loading}</p></div>
-
-  const objectives = chapter?.objectives ?? []
-  const firstOpen = chapter && state ? objectives.findIndex(o => !doneObjective(o.done, state)) : -1
-  const current = firstOpen >= 0 ? objectives[firstOpen]! : null
   const line = talk ? talk.view.lines[talk.view.index] : null
-  const lastLine = !!talk && talk.view.index >= talk.view.lines.length - 1
-  const speaker = !line || line.who === null ? null : line.who === 'me' ? copy.you! : chapter ? nameOf(pack, chapter, line.who) : line.who
   const playing = phase === 'play'
   const idle = playing && roomUp && !talk && !overlay && menu === 'closed' && sheet === 'none'
   const targetText = (() => {
@@ -472,6 +475,61 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const d = scene.doors.find(x => x.id === target.id)
     return d ? {verb: d.locked ? copy.locked! : copy.go!, name: d.label} : null
   })()
+  /* the line is set down a letter at a time; the choices arrive when it has finished */
+  useEffect(() => { setTyped(instantText()) }, [talk?.view.talk, talk?.view.index])
+  const typedDone = useCallback(() => setTyped(true), [])
+  /* the name balloon hangs over whatever he is facing; off the glass, it falls back to the corner */
+  useEffect(() => {
+    if (!idle || !target || !targetText) return
+    let raf = 0
+    const loop = () => {
+      const el = actEl.current, r = rt.current
+      if (el && r) {
+        const p = r.project(target.kind, target.id), par = el.offsetParent as HTMLElement | null
+        if (p && par && p.x > 0.03 && p.x < 0.97 && p.y > 0.14 && p.y < 0.88) {
+          const W = par.clientWidth, H = par.clientHeight, w = el.offsetWidth, h = el.offsetHeight, rtl = getComputedStyle(el).direction === 'rtl'
+          const want = p.x * W, c = Math.min(W - w / 2 - 8, Math.max(w / 2 + 8, want)), ty = Math.max(64, p.y * H - h - 14)
+          const tx = rtl ? c - W + w / 2 : c - w / 2
+          // the camera never quite rests; a balloon that drifts a pixel is a balloon nobody can tap, so it moves only when the target does
+          const last = hang.current
+          if (el.dataset.float !== 'true' || !last || Math.abs(last.x - tx) > 2.5 || Math.abs(last.y - ty) > 2.5) {
+            hang.current = {x: tx, y: ty}
+            el.dataset.float = 'true'
+            el.style.transform = `translate(${tx}px, ${ty}px)`
+            el.style.setProperty('--tail', `${rtl ? c - want : want - c}px`)
+          }
+        } else if (el.dataset.float === 'true') { el.dataset.float = 'false'; el.style.transform = ''; hang.current = null }
+      }
+      raf = window.requestAnimationFrame(loop)
+    }
+    raf = window.requestAnimationFrame(loop)
+    const btn = actEl.current
+    return () => { window.cancelAnimationFrame(raf); if (btn) { btn.dataset.float = 'false'; btn.style.transform = '' } }
+  }, [idle, target, targetText])
+  /* the tail of the speech box points at whoever is talking */
+  const talkWho = line?.who ?? null
+  useEffect(() => {
+    const el = sheetEl.current
+    if (!el) return
+    const aim = () => {
+      const a = talkWho && talkWho !== 'me' ? scene?.actors.find(x => x.id === talkWho) : null
+      const p = a ? rt.current?.project('actor', a.id) : null
+      if (!p) { el.dataset.tail = 'none'; return }
+      const rtl = getComputedStyle(el).direction === 'rtl', f = Math.min(0.9, Math.max(0.1, rtl ? 1 - p.x : p.x))
+      el.dataset.tail = 'on'; el.style.setProperty('--tail', String(f))
+    }
+    aim()
+    const t1 = window.setTimeout(aim, 450), t2 = window.setTimeout(aim, 1400)
+    return () => { window.clearTimeout(t1); window.clearTimeout(t2) }
+  }, [talkWho, talk?.view.index, scene])
+  /* ───────────── what is drawn ───────────── */
+  if (!state) return <div className={styles.life} data-phase="boot"><p className={styles.loading} role="status">{copy.loading}</p></div>
+
+  const objectives = chapter?.objectives ?? []
+  const firstOpen = chapter && state ? objectives.findIndex(o => !doneObjective(o.done, state)) : -1
+  const current = firstOpen >= 0 ? objectives[firstOpen]! : null
+  const lastLine = !!talk && talk.view.index >= talk.view.lines.length - 1
+  const speaker = !line || line.who === null ? null : line.who === 'me' ? copy.you! : chapter ? nameOf(pack, chapter, line.who) : line.who
   const ending = chapter && state.done[chapter.id] ? chapter.endings[state.done[chapter.id]!] : null
   const keepsake = (id: string | undefined) => { for (const c of pack.chapters) { const k = c.keepsakes?.find(x => x.id === id); if (k) return k } return null }
   const chapterCards: CardDef[] = chapter?.prelude ?? []
@@ -524,7 +582,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
         {place && <div className={styles.place} role="status" data-life="place" key={place.id}><small>{copy['place.new']}</small><b {...story}>{place.name}</b></div>}
         {toast && <p className={styles.toast} role="status" {...story}>{toast}</p>}
         {idle && targetText && (
-          <button type="button" className={`${styles.act} min-h-tap`} data-life="act" data-locked={target?.locked ? 'true' : 'false'} onClick={() => { sound.current?.wake(); rt.current?.act() }}>
+          <button type="button" ref={actEl} className={`${styles.act} min-h-tap`} data-life="act" data-locked={target?.locked ? 'true' : 'false'} onClick={() => { sound.current?.wake(); rt.current?.act() }}>
             <span className={styles.actVerb}>{targetText.verb}</span><span className={styles.actName} {...(target?.kind === 'actor' ? {} : story)}><bdi>{targetText.name}</bdi></span>{!touch && <kbd aria-hidden="true">E</kbd>}
           </button>
         )}
@@ -588,17 +646,17 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       )}
 
       {playing && talk && line && (
-        <section className={styles.sheet} aria-label={speaker ?? copy.title} data-life="dialogue" data-narration={line.who === null ? 'true' : 'false'}>
+        <section ref={sheetEl} className={styles.sheet} aria-label={speaker ?? copy.title} data-life="dialogue" data-narration={line.who === null ? 'true' : 'false'}>
           <button type="button" className={`${styles.leave} min-h-tap`} onClick={() => void closeTalk(false)} aria-label={copy.leave} data-life="leave">×</button>
           {speaker && <p className={styles.speaker} data-me={line.who === 'me' ? 'true' : 'false'}><bdi>{speaker}</bdi></p>}
-          <p className={styles.line} aria-live="polite" data-life="line" key={`${talk.view.talk}:${talk.view.index}`} {...story}>{line.t}</p>
-          {lastLine && talk.view.choices.length > 0 ? (
+          <Typed className={styles.line} aria-live="polite" data-life="line" key={`${talk.view.talk}:${talk.view.index}`} text={line.t} onClick={() => typing.current?.finish()} handle={typing} onDone={typedDone} {...story} />
+          {lastLine && talk.view.choices.length > 0 ? (!typed ? null : (
             <ol className={styles.choices} data-life="choices">
               {talk.view.choices.map((c, i) => (
-                <li key={c.id}><button type="button" ref={i === 0 ? primary : undefined} className={`${styles.choice} min-h-tap`} onClick={() => choose(c.id)} data-choice={c.id}><span aria-hidden="true">{i + 1}</span><span {...story}>{c.t}</span></button></li>
+                <li key={c.id} style={{'--i': i} as React.CSSProperties}><button type="button" ref={i === 0 ? primary : undefined} className={`${styles.choice} min-h-tap`} onClick={() => choose(c.id)} data-choice={c.id}><span aria-hidden="true">{i + 1}</span><span {...story}>{c.t}</span></button></li>
               ))}
             </ol>
-          ) : (
+          )) : (
             <button type="button" ref={primary} className={`${styles.more} min-h-tap`} onClick={advance} data-life="continue">{copy.more} <span aria-hidden="true">▸</span></button>
           )}
         </section>

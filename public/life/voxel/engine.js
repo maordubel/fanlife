@@ -760,7 +760,7 @@ function step(n){
 
 
 /* ---------- polish: window light, motes, night halos, corner shade, live crowd, confetti, slow-mo, fades ---------- */
-var FX={lvl:2,ts:1,tsT:1,tsHold:0,intro:0,kick:0,rev:0,revOn:false,emo:{k:null,v:0,vT:0,hold:0,lastW:1,push:0},TT:0,cheerUntil:0,crowdMode:'idle',crowdUntil:0,fade:null,flash:null,conf:null,crowd:null,motes:null,halos:[]};
+var FX={wx:null,rain:null,lvl:2,ts:1,tsT:1,tsHold:0,intro:0,kick:0,rev:0,revOn:false,emo:{k:null,v:0,vT:0,hold:0,lastW:1,push:0},TT:0,cheerUntil:0,crowdMode:'idle',crowdUntil:0,fade:null,flash:null,conf:null,crowd:null,motes:null,halos:[]};
 var _soft=null;
 function softTex(){if(_soft)return _soft;var c=document.createElement('canvas');c.width=c.height=64;var g=c.getContext('2d'),r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.35,'rgba(255,255,255,.35)');r.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=r;g.fillRect(0,0,64,64);_soft=new THREE.CanvasTexture(c);return _soft}
 function gradTex(a0,a1){var c=document.createElement('canvas');c.width=4;c.height=64;var g=c.getContext('2d'),r=g.createLinearGradient(0,0,0,64);r.addColorStop(0,'rgba(255,255,255,'+a0+')');r.addColorStop(1,'rgba(255,255,255,'+a1+')');g.fillStyle=r;g.fillRect(0,0,4,64);var t=new THREE.CanvasTexture(c);return t}
@@ -773,6 +773,15 @@ function polishBuild(c){
  FX.lvl=Math.min(FX.lvl,fxLevel());if(!Q.fxDown)FX.lvl=fxLevel();
  FX.intro=0;FX.rev=FX.revOn?1:0;FX.revOn=false;FX.emo.v=0;FX.emo.vT=0;FX.emo.k=null;FX.halos=[];FX.motes=null;FX.conf=null;FX.crowd=null;
  var m=c.meta,W=m.W,D=m.D,H=m.H;
+ /* weather: rain only falls where there is sky */
+ FX.rain=null;
+ if(FX.wx==='rain'&&!c.indoor){
+  var RN=Math.round((FX.lvl===2?520:FX.lvl===1?360:200)*Math.max(1,W/20)),rp=new Float32Array(RN*6),rs=[];
+  for(var ri=0;ri<RN;ri++){var rx=Math.random()*W,ry=Math.random()*(H+6),rz=Math.random()*D;rp[ri*6]=rx;rp[ri*6+1]=ry+.95;rp[ri*6+2]=rz;rp[ri*6+3]=rx-.14;rp[ri*6+4]=ry;rp[ri*6+5]=rz;rs.push(20+Math.random()*10)}
+  var rg=new THREE.BufferGeometry();rg.setAttribute('position',new THREE.BufferAttribute(rp,3));
+  var rm=new THREE.LineBasicMaterial({color:0xe4f0fb,transparent:true,opacity:.6,depthWrite:false});c.mats.push(rm);
+  var rpts=new THREE.LineSegments(rg,rm);rpts.frustumCulled=false;fxAdd(rpts).renderOrder=5;FX.rain={pts:rpts,pos:rp,sp:rs,W:W,H:H+6,D:D}
+ }
  /* corner shade: where wall meets wall and floor, light falls away */
  if(c.indoor){
   var sh=gradTex(0,.42);/* top transparent, bottom dark */
@@ -879,6 +888,9 @@ function emoFrame(dtr){var e=FX.emo;if(e.hold>0){e.hold-=dtr;if(e.hold<=0&&e.vT>
 function emoLook(v){if(!host)return;var d=EMO[FX.emo.k]||EMO.warm,vg=host.stage.querySelector('.vig');if(vg)vg.style.opacity=Math.max(0,Math.min(1.6,(DISP.vignette||1)*(1+d.vig*v)));
  var w=DISP.warmth||0,ew=d.warm*v,m=MOODS[sceneMood]||MOODS.normal;/* a feeling never rotates hue: a cool moment drains and darkens, a warm one browns */var f=m.css+(w?' sepia('+(Math.abs(w)*.4).toFixed(2)+') hue-rotate('+(w<0?170:-8)+'deg)':'')+(ew>0?' sepia('+(ew*.55).toFixed(2)+')':'')+(v?' saturate('+(1+(d.sat-1)*v).toFixed(2)+')':'')+(ew<0?' brightness('+(1+ew*.22).toFixed(2)+') contrast(1.06)':'');host.canvas.style.filter=f.trim()}
 function reveal(){FX.revOn=true}
+function weather(k){FX.wx=k||null}
+/* where on the glass (0..1) a point in the room lands; null if it is behind the camera */
+function screenOf(x,y,z){if(!cam||!host)return null;var v=new THREE.Vector3(x,y,z).project(cam);if(v.z>1)return null;return{x:(v.x+1)/2,y:(1-v.y)/2}}
 /* doors: the curtain comes from the side the door is on and leaves from the side the player arrives, tinted by the hour */
 var WIPE={n:['inset(0 0 100% 0)','inset(100% 0 0 0)'],s:['inset(100% 0 0 0)','inset(0 0 100% 0)'],e:['inset(0 0 0 100%)','inset(0 100% 0 0)'],w:['inset(0 100% 0 0)','inset(0 0 0 100%)']};
 function curtain(el){el.style.background=(cur&&cur.night)?'#04060d':'#120e0a'}
@@ -891,6 +903,7 @@ function fadeOut(ms,cb,dir){if(!host||host.capture){cb&&cb();return}var el=fadeE
 function fadeEl(){if(FX.fade||!host)return FX.fade;var el=FX.fade=document.createElement('div');el.style.cssText='position:absolute;inset:0;background:#07080c;opacity:1;pointer-events:none;z-index:4';host.stage.appendChild(el);return el}
 /* ---- per-frame ---- */
 function polishFrame(t,dtr){
+ if(FX.rain){var R=FX.rain,rp2=R.pos;for(var ri2=0;ri2<R.sp.length;ri2++){var d_=R.sp[ri2]*dtr,b6=ri2*6;rp2[b6+1]-=d_;rp2[b6+4]-=d_;if(rp2[b6+4]<0){var nx=Math.random()*R.W;rp2[b6]=nx;rp2[b6+3]=nx-.14;rp2[b6+2]=rp2[b6+5]=Math.random()*R.D;rp2[b6+1]=R.H+.95;rp2[b6+4]=R.H}}R.pts.geometry.attributes.position.needsUpdate=true}
  if(FX.motes){var M=FX.motes,pos=M.pos;for(var i=0;i<M.meta.length;i++){var q=M.meta[i],b=q.b,w=b.w;q.v=(q.v+dtr*q.sp*.12)%1;var v=q.v,x=w[0]+(w[1]-w[0])*q.u+b.sx*v+Math.sin(t*.6+q.ph)*.4,y=w[3]*(1-v)+.2+Math.sin(t*.8+q.ph)*.25,z=.2+(b.zf-.2)*v;pos[i*3]=x;pos[i*3+1]=y;pos[i*3+2]=z}M.pts.geometry.attributes.position.needsUpdate=true}
  for(var h=0;h<FX.halos.length;h++){var H_=FX.halos[h];H_.sp.material.opacity=.5+Math.sin(t*1.7+H_.ph)*.05+(Math.sin(t*23+H_.ph*9)>.97?-.06:0)}
  confettiStep(dtr*FX.ts);
@@ -898,7 +911,7 @@ function polishFrame(t,dtr){
 }
 
 /* ---------- scene mood + display application ---------- */
-var MOODS={normal:{exp:1,css:''},match:{exp:1.14,css:'saturate(1.14) contrast(1.05)'},grief:{exp:.86,css:'saturate(.5) brightness(.93) contrast(.97)'},dusk:{exp:.95,css:'sepia(.18) saturate(1.1)'},memory:{exp:1.08,css:'sepia(.32) saturate(.9) contrast(.96)'}};
+var MOODS={normal:{exp:1,css:''},match:{exp:1.14,css:'saturate(1.14) contrast(1.05)'},grief:{exp:.86,css:'saturate(.5) brightness(.93) contrast(.97)'},dusk:{exp:.82,css:'sepia(.5) saturate(1.3) contrast(1.05)'},rain:{exp:.84,css:'saturate(.72) brightness(.94) contrast(1.06)'},memory:{exp:1.08,css:'sepia(.32) saturate(.9) contrast(.96)'}};
 var sceneMood='normal';
 function applyDisplay(){
  if(!ren||!host)return;
@@ -951,7 +964,7 @@ var V=window.__vx={THREE:window.THREE,box:box,face:face,wallZ:wallZ,decal:decal,
  boot:boot,stop:stop,fit:fit,view:view,setSkins:setSkins,loadArt:loadArt,skin:skin,
  onFrame:function(fn){frameHooks.push(fn)},onBuild:function(fn){buildHooks.push(fn)},
  camera:function(){return cam},renderer:function(){return ren},quality:function(){return Q},base:function(){return base},
- softTex:softTex,celebrate:celebrate,fx:FX,fadeOut:fadeOut,emote:emote,reveal:reveal,crowdMode:function(m){FX.crowdMode=m||'idle'},slowmo:function(k,s){FX.tsT=k;FX.tsHold=s||1},
+ softTex:softTex,celebrate:celebrate,fx:FX,fadeOut:fadeOut,emote:emote,reveal:reveal,weather:weather,screenOf:screenOf,crowdMode:function(m){FX.crowdMode=m||'idle'},slowmo:function(k,s){FX.tsT=k;FX.tsHold=s||1},
  win:function(x0,x1,y0,y1){if(cur&&cur.win)cur.win.push([x0,x1,y0,y1])},interior:function(){if(cur)cur.indoor=true},
  addCrowd:function(o){if(cur&&cur.crowd)cur.crowd.push(o)},
  patMat:patMat,STR:STR,display:DISP,setDisplay:dispSet,setMood:setMood,MOODS:MOODS,onDisplay:function(fn){dispHooks.push(fn)},shade:shade};
