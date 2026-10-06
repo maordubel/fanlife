@@ -159,5 +159,11 @@
   "rumbleRival": "Rival side",
   "rumbleYou": "Your side",
   "rumbleOver": "Over budget",
-  "rumbleNote": "Ratings are rank inside position from the club's own approved archive. Missing data counts as neutral, never as weak."
+  "rumbleNote": "Ratings are rank inside position from the club's own approved archive. Missing data counts as neutral, never as weak.",
+  "gateNo": "Gate No.",
+  "state.READY": "In play",
+  "state.PARTIAL": "Short round",
+  "state.LOCKED": "Not open",
+  "edition": "Edition",
+  "backToHub": "Back to the club"
 }
