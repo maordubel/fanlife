@@ -492,3 +492,12 @@
 .mag-foot-in { width: calc(100% - 28px); max-width: 1240px; box-sizing: border-box; }
 .mag-foot { display: block; }
 .fl > footer.mag-foot { display: block; padding: 0; gap: 0; }
+
+/* Rumble / lineup / kit chips: each choice is a full-width player card with a price plate */
+.mag-skin fieldset.mag-chips { display: grid; gap: 10px; border: 3px solid var(--mag-ink); background: var(--mag-card); padding: 12px; margin-block: 18px; box-shadow: 4px 4px 0 var(--mag-ink); min-inline-size: 0; }
+.mag-skin fieldset.mag-chips legend { background: var(--mag-ink); color: var(--mag-paper); padding: 4px 10px; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+.mag-skin fieldset.mag-chips .mag-chip { width: 100%; justify-content: space-between; min-height: 52px; background: var(--mag-white); font-family: var(--mag-body); font-size: 15px; letter-spacing: 0; text-align: start; box-shadow: 3px 3px 0 var(--mag-ink); }
+.mag-skin fieldset.mag-chips .mag-chip:disabled { opacity: 1; }
+.mag-skin fieldset.mag-chips .mag-chip[aria-pressed='true'] { background: var(--mag-navy); color: var(--mag-paper); box-shadow: 3px 3px 0 var(--mag-vermilion); }
+.mag-skin .mag-price { flex: none; min-width: 34px; height: 34px; display: grid; place-items: center; background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-condensed); font-size: 24px; line-height: 1; }
+.mag-skin .mag-chip[aria-pressed='true'] .mag-price { background: var(--mag-vermilion); }
