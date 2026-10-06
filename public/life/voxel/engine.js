@@ -88,6 +88,7 @@ var cur=null,DEC={};
 function Batch(){this.P=[];this.N=[];this.U=[];this.C=[];this.I=[];this.n=0}
 Batch.prototype.vtx=function(p,n,u,v,c){this.P.push(p[0],p[1],p[2]);this.N.push(n[0],n[1],n[2]);this.U.push(u,v);this.C.push(c[0],c[1],c[2]);return this.n++};
 function bt(k){return cur.b[k]||(cur.b[k]=new Batch())}
+var SHADE=1;
 function face(k,o,u,v,n,w,h,op){
  op=op||{};var b=bt(k);
  var tiled=!!TILE[k]&&!op.full;
@@ -103,7 +104,16 @@ function face(k,o,u,v,n,w,h,op){
   var lo=jf*(1-ao),hi=jf;
   var P=function(a,bb){return[o[0]+u[0]*a*cw+v[0]*bb*ch,o[1]+u[1]*a*cw+v[1]*bb*ch,o[2]+u[2]*a*cw+v[2]*bb*ch]};
   var cl=function(f){return[base[0]*f,base[1]*f,base[2]*f]};
-  var A=b.vtx(P(i,j),n,s0,t0,cl(j===0?lo:hi)),B=b.vtx(P(i+1,j),n,s1,t0,cl(j===0?lo:hi)),C=b.vtx(P(i+1,j+1),n,s1,t1,cl(hi)),D=b.vtx(P(i,j+1),n,s0,t1,cl(hi));
+  /* edge light: contact shade at the foot, a lit top lip, softened side edges, bevelled rims on tops — every box reads as an object, not a flat block */
+  var G=function(a,bb){
+   if(op.full||SHADE===0)return null;var A=a*cw,B=bb*ch;
+   if(op.ao!=null)return null;
+   var e=Math.min(A,w-A);
+   if(vert){var g=1,fo=Math.min(h,2.4);if(h>1)g*=1-.2*Math.max(0,1-B/fo);if(h>.6&&h-B<.35)g*=1+.07*(1-(h-B)/.35);if(w>.6&&e<.3)g*=1-.07*(1-e/.3);return g}
+   var e2=Math.min(e,B,h-B);return e2<.3&&w>.6&&h>.6?1-.09*(1-e2/.3):1;
+  };
+  var cv_=function(a,bb,f){var g=G(a,bb);return cl(g==null?f:jf*g)};
+  var A=b.vtx(P(i,j),n,s0,t0,G(i,j)==null?cl(j===0?lo:hi):cv_(i,j)),B=b.vtx(P(i+1,j),n,s1,t0,G(i+1,j)==null?cl(j===0?lo:hi):cv_(i+1,j)),C=b.vtx(P(i+1,j+1),n,s1,t1,G(i+1,j+1)==null?cl(hi):cv_(i+1,j+1)),D=b.vtx(P(i,j+1),n,s0,t1,G(i,j+1)==null?cl(hi):cv_(i,j+1));
   b.I.push(A,B,C,A,C,D);
  }
 }
