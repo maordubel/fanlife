@@ -1,5 +1,6 @@
 import type {ClubData,Readiness} from './contract'
 import {gateReadiness} from './gate-data'
+import {ratedPool,rumbleReadiness} from './rumble'
 
 /**
  * Wave C content (gates 3, 4, 5, 8, 9, 11), read from a club's COMPILED data only — i.e. facts that
@@ -48,6 +49,6 @@ export function waveCReadiness(data:ClubData):Record<string,Readiness> {
   kits:gateReadiness(kitViews(data).length,8,1,'approved kits with a season'),
   derby:rivals.length?gateReadiness(rivals.length,1,1,'human-approved primary rival'):locked('Human-approved primary rival needed; derby meetings are then read from the club archives.'),
   goal:locked('Needs sourced scorer, minute, player and ball positions and cleared footage for at least one goal. No club archive holds positions yet.'),
-  'royal-rumble':locked('Needs documented player versions with attribute coverage. No club archive holds attributes yet.'),
+  'royal-rumble':(()=>{const r=rumbleReadiness(ratedPool(data));const n=ratedPool(data).length;return r.playable?{state:r.full?'READY':'PARTIAL',playable:true,eligible:n,target:20,reasons:r.full?[]:['Thin squad data: some positions have few players, so deals repeat sooner.']} as Readiness:locked(`Needs players with documented positions: ${r.short.join(', ')}.`)})(),
  }
 }

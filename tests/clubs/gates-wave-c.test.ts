@@ -10,7 +10,7 @@ describe('wave C gates are computed, never asserted',()=>{
   for(const id of CORE_CLUB_IDS){
    const d=(await loadClub(id))!.data
    for(const g of ['lineup','kit-builder','kits','derby','goal','royal-rumble'] as const)expect(d.gates[g],`${id}:${g}`).toBeTruthy()
-   for(const g of ['goal','royal-rumble'] as const){expect(d.gates[g]!.playable).toBe(false);expect(d.gates[g]!.reasons.length).toBeGreaterThan(0)}
+   for(const g of ['goal'] as const){expect(d.gates[g]!.playable).toBe(false);expect(d.gates[g]!.reasons.length).toBeGreaterThan(0)}
    for(const g of SHARED_GATES)expect(gateAvailability(d,g.key).state).toBeTruthy()
   }
  })

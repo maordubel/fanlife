@@ -146,5 +146,18 @@
   "derbyMeetings": "Meetings",
   "derbyOpen": "Open meetings",
   "goalLocked": "Goal reconstruction needs sourced positions and cleared footage. It opens when a club archive holds them.",
-  "rumbleLocked": "Royal Rumble needs documented player attributes. It opens when a club archive holds them."
+  "rumbleLocked": "Royal Rumble needs documented player attributes. It opens when a club archive holds them.",
+  "rumbleSub": "Draft five: keeper, defender, two midfielders, forward. Three cards each. Budget 15.",
+  "rumbleBudget": "Budget",
+  "rumbleCost": "Cost",
+  "rumbleSlot": "Pick",
+  "rumbleKickoff": "Kick off",
+  "rumbleWin": "You win",
+  "rumbleDraw": "Draw",
+  "rumbleLoss": "You lose",
+  "rumbleAgain": "New draft",
+  "rumbleRival": "Rival side",
+  "rumbleYou": "Your side",
+  "rumbleOver": "Over budget",
+  "rumbleNote": "Ratings are rank inside position from the club's own approved archive. Missing data counts as neutral, never as weak."
 }
