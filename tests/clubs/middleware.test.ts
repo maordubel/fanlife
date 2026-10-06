@@ -1,3 +1,4 @@
+import {HEBREW_ENABLED} from '@/lib/clubs/locale'
 import {describe,it,expect} from 'vitest'
 import {NextRequest} from 'next/server'
 import {middleware} from '@/middleware'
@@ -7,7 +8,7 @@ const request=(path:string,host='olympiacos.localhost:3217',method='GET')=>new N
 describe('club Timeline entry routing',()=>{
  it('sets document language from supported club-route locale and ignores forged headers',()=>{
   const r=request('/clubs/olympiacos?lang=he');r.headers.set('x-fan-life-locale','el')
-  expect(middleware(r).headers.get('x-middleware-request-x-fan-life-locale')).toBe('he')
+  expect(middleware(r).headers.get('x-middleware-request-x-fan-life-locale')).toBe(HEBREW_ENABLED?'he':'en')
   expect(middleware(request('/clubs/olympiacos?lang=el')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
   expect(middleware(request('/life?lang=he','localhost:3217')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
  })
