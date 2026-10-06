@@ -28,7 +28,7 @@ export function compileMysteries(raw:unknown,clubId:string,sources:Source[],play
  }
  return out
 }
-export const ENTITY_SECTIONS=['competitions','seasons','matches','trophies','kits','stadiums','places','culture'] as const
+export const ENTITY_SECTIONS=['rivals','competitions','seasons','matches','trophies','kits','stadiums','places','culture'] as const
 /** Entity sections: null = not researched, [] = known empty. Facts keep their own sources and status. */
 export function compileEntities(raw:unknown,section:string,clubId:string,sources:Source[],diagnostics:Diagnostic[]):Fact<Entity>[]|null {
  if(raw===undefined||raw===null)return null

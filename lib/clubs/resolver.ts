@@ -6,11 +6,12 @@ import {clubMystery} from './mystery'
 import {clubPolls} from './polls'
 import {gateReadiness} from './gate-data'
 import {waveCReadiness} from './gate-content'
+import {mergeWave} from './waves'
 const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[]}>>={
  'hapoel-tel-aviv':async()=>({data:(await import('./adapters/hapoel')).getHapoelData(),diagnostics:[]}),
- 'zrinjski-mostar':async()=>compilePack((await import('./adapters/zrinjski')).zrinjskiPack(),REGISTRY.find(c=>c.id==='zrinjski-mostar')!),
- 'hapoel-petah-tikva':async()=>compilePack((await import('@/club-packs/hapoel-petah-tikva/core.json')).default,REGISTRY.find(c=>c.id==='hapoel-petah-tikva')!),
- olympiacos:async()=>compilePack((await import('@/club-packs/olympiacos/core.json')).default,REGISTRY.find(c=>c.id==='olympiacos')!),
+ 'zrinjski-mostar':async()=>compilePack(mergeWave((await import('./adapters/zrinjski')).zrinjskiPack(),mergeWave((await import('@/club-packs/zrinjski-mostar/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/zrinjski-mostar/wave-auto.json')).default as never)),REGISTRY.find(c=>c.id==='zrinjski-mostar')!),
+ 'hapoel-petah-tikva':async()=>compilePack(mergeWave((await import('@/club-packs/hapoel-petah-tikva/core.json')).default,mergeWave((await import('@/club-packs/hapoel-petah-tikva/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/hapoel-petah-tikva/wave-auto.json')).default as never)),REGISTRY.find(c=>c.id==='hapoel-petah-tikva')!),
+ olympiacos:async()=>compilePack(mergeWave((await import('@/club-packs/olympiacos/core.json')).default,mergeWave((await import('@/club-packs/olympiacos/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/olympiacos/wave-auto.json')).default as never)),REGISTRY.find(c=>c.id==='olympiacos')!),
 }
 export const CORE_CLUB_IDS=Object.keys(providers)
 const cache=new Map<string,Promise<{data:ClubData;diagnostics:Diagnostic[]}>>()
