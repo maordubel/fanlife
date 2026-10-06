@@ -2,6 +2,7 @@ import type {ClubData,Readiness} from './contract'
 import {gateReadiness} from './gate-data'
 import {ratedPool,rumbleReadiness} from './rumble'
 import {goalReadiness} from './goal'
+import {GATE_THRESHOLDS as T} from './thresholds'
 
 /**
  * Wave C content (gates 3, 4, 5, 8, 9, 11), read from a club's COMPILED data only — i.e. facts that
@@ -46,11 +47,11 @@ export function waveCReadiness(data:ClubData):Record<string,Readiness> {
  const locked=(why:string):Readiness=>({state:'LOCKED',playable:false,eligible:0,target:0,reasons:[why]})
  const rivals=rivalsOf(data)
  return {
-  lineup:gateReadiness(lineupMatches(data).length,5,1,'matches with a documented eleven and at least three other squad players'),
-  'kit-builder':gateReadiness(buildableKits(data).length,5,3,'approved kits naming season, maker and design'),
-  kits:gateReadiness(kitViews(data).length,8,1,'approved kits with a season'),
-  derby:rivals.length?gateReadiness(rivals.length,1,1,'human-approved primary rival'):locked('Human-approved primary rival needed; derby meetings are then read from the club archives.'),
+  lineup:gateReadiness(lineupMatches(data).length,T.lineup.target,T.lineup.minimum,T.lineup.unit),
+  'kit-builder':gateReadiness(buildableKits(data).length,T['kit-builder'].target,T['kit-builder'].minimum,T['kit-builder'].unit),
+  kits:gateReadiness(kitViews(data).length,T.kits.target,T.kits.minimum,T.kits.unit),
+  derby:rivals.length?gateReadiness(rivals.length,T.derby.target,T.derby.minimum,T.derby.unit):locked('Human-approved primary rival needed; derby meetings are then read from the club archives.'),
   goal:goalReadiness(data),
-  'royal-rumble':(()=>{const r=rumbleReadiness(ratedPool(data));const n=ratedPool(data).length;return r.playable?{state:r.full?'READY':'PARTIAL',playable:true,eligible:n,target:20,reasons:r.full?[]:['Thin squad data: some positions have few players, so deals repeat sooner.']} as Readiness:locked(`Needs players with documented positions: ${r.short.join(', ')}.`)})(),
+  'royal-rumble':(()=>{const r=rumbleReadiness(ratedPool(data));const n=ratedPool(data).length;return r.playable?{state:r.full?'READY':'PARTIAL',playable:true,eligible:n,target:T['royal-rumble'].target,reasons:r.full?[]:['Thin squad data: some positions have few players, so deals repeat sooner.']} as Readiness:locked(`Needs players with documented positions: ${r.short.join(', ')}.`)})(),
  }
 }

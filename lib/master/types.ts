@@ -1,8 +1,15 @@
-export type Source={id:string;title:string;url:string;excerpt:string;reviewed:boolean;retrievedAt:string}
-export type Finding={field:string;value:string;sources:string[];approved:boolean}
+import type {LifeDisplayState} from './lifeDisplay'
+/** `contentHash` fingerprints the excerpt; a reviewed source whose content later changes keeps its review and parks the new
+ * snapshot in `incoming` until a person re-reviews it (audit A13). */
+export type Source={id:string;title:string;url:string;excerpt:string;reviewed:boolean;retrievedAt:string;contentHash?:string;incoming?:{excerpt:string;retrievedAt:string;contentHash:string}}
+/** A research finding with a STABLE id (field+value+sources), so a decision never lands on the wrong row (audit A11).
+ * `decision` is the research decision only — it is not a pack fact; packs change through a build. */
+export type Finding={id?:string;field:string;value:string;sources:string[];approved:boolean;decision?:'approved'|'rejected'|'deferred';decidedAt?:string;reason?:string}
 export type Club={id:string;name:string;city:string;country:string;initials:string;primary:string;secondary:string;status:'research'|'review'|'live'|'paused';version:number;gates:number[];sources:Source[];findings:Finding[];gaps:string[]}
 export type Job={id:string;clubId:string;query:string;title?:string;adapter?:string;status:'queued'|'running'|'completed'|'failed';attempts:number;createdAt:string;startedAt?:string;error?:string;lease?:string;baseVersion?:number}
-export type State={schemaVersion:1;revision:number;clubs:Club[];jobs:Job[];audit:{at:string;action:string;target:string;detail:string}[];upstream:{installed:string;latest:string;behind:number;checkedAt:string;url:string}|null}
+export type State={schemaVersion:1;revision:number;clubs:Club[];jobs:Job[];audit:AuditEntry[];upstream:{installed:string;latest:string;behind:number;checkedAt:string;url:string}|null;lifeDisplay?:LifeDisplayState}
+/** Who did it, to what, the value before and after, and why (audit A12). Old entries carry only at/action/target/detail. */
+export type AuditEntry={at:string;action:string;target:string;detail:string;actor?:string;before?:string;after?:string;reason?:string}
 export const GATES=[
 [1,'All-time XI','/xi','Build the team that defines your club.'],[2,'Trivia wing','/trivia','Twelve questions. A whole history.'],[3,'The line-up','/lineup','Rebuild the eleven from a real match.'],[4,'Kit builder','/kits/build','Reconstruct a shirt from memory.'],[5,'The shirt collection','/kits','Explore the colours and collect the shirts.'],[6,'Memory','/memory','Find the pairs. Remember the people.'],[7,'Terrace vote','/polls','Pick your side in the big debates.'],[8,'The goal','/goal','Reconstruct the moment that changed everything.'],[9,'Royal Rumble','/royal-rumble','Build your five. Play the match.'],[10,'Blind Cow','/blind-cow','Uncover the player through historical clues.'],[11,'The derby','/derby','The rivalry that lives beyond the whistle.'],[12,'Living archive','/archive','Dig into the history and follow the connections.'],[13,'Timeline','/timeline','Put a lifetime of memories in order.']
 ] as const

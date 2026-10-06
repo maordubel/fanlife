@@ -27,7 +27,7 @@ describe('wave building',()=>{
  })
  it('two publishers approve; one publisher stays in review; club side is never guessed',()=>{
   const ok=toWaveFact(m,['Olympiacos'],{publisher:'TheSportsDB',title:'t',url:'https://www.thesportsdb.com/event/9'},'2026-10-06','olympiacos')!
-  expect(ok.fact.status).toBe('approved');expect(ok.fact.value.lineup).toHaveLength(11);expect(ok.fact.value.scorers).toEqual([{name:'A Scorer',minute:10}]);expect(ok.fact.approvedBy).toMatch(/^automated:/)
+  expect(ok.fact.status).toBe('approved');expect('lineup' in ok.fact.value).toBe(false);expect('scorers' in ok.fact.value).toBe(false);expect(ok.fact.value.primaryOnly.lineup).toHaveLength(11);expect(ok.fact.value.primaryOnly.scorers).toEqual([{name:'A Scorer',minute:10}]);expect(ok.fact.approvedBy).toMatch(/^automated:/)
   const one=toWaveFact(m,['Olympiacos'],null,'2026-10-06','olympiacos')!;expect(one.fact.status).toBe('review');expect(one.fact.confidence).toBe(2)
   expect(toWaveFact(m,['Somebody Else'],null,'2026-10-06','x')).toBeNull()
   expect(buildWave([{m,second:null}],['Olympiacos'],'olympiacos','2026-10-06').matches).toHaveLength(1)

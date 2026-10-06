@@ -7,10 +7,13 @@ import assert from 'node:assert/strict'
 import {PNG} from 'pngjs'
 import {clubTheme,forbiddenColor,rgb} from '../../lib/clubs/theme.ts'
 import {REGISTRY} from '../../lib/master/registry.ts'
+import {loadClub} from '../../lib/clubs/resolver.ts'
+import {HEBREW_ENABLED} from '../../lib/clubs/locale.ts'
 const port=process.env.M1_BROWSER_PORT||'3217',base=`http://127.0.0.1:${port}`
 const server=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p',port],{env:{...process.env,NEXT_PUBLIC_FAN_LIFE_EVALUATION:'true'},stdio:['ignore','pipe','pipe']})
 let logs='';server.stdout.on('data',c=>logs+=c);server.stderr.on('data',c=>logs+=c)
 let browser
+const MAG_PAPER=readFileSync('app/magazine.css','utf8').match(/--mag-paper:\s*(#[0-9a-fA-F]{6})/)[1]
 const report=[],identities=[]
 async function identityCheck(page,slug,selector,path) {
  const theme=clubTheme(REGISTRY.find(c=>c.id===slug))
@@ -18,7 +21,8 @@ async function identityCheck(page,slug,selector,path) {
  assert.equal(await surface.getAttribute('data-pattern'),theme.pattern)
  const computed=await surface.evaluate(el=>{const s=getComputedStyle(el);return {primary:s.getPropertyValue('--club-primary').trim(),background:s.backgroundColor,display:s.getPropertyValue('--font-frank').trim(),direction:s.direction}})
  assert.equal(computed.primary,theme.primary)
- assert.equal(computed.background,`rgb(${rgb(theme.background).join(', ')})`)
+ // rule 91: the page is the magazine's paper; a club wears its colour on badges and bands, never the ground
+ assert.equal(computed.background,`rgb(${rgb(MAG_PAPER).join(', ')})`)
  await page.evaluate(()=>document.fonts.ready)
  const bytes=await surface.screenshot({path})
  const png=PNG.sync.read(bytes)
@@ -33,13 +37,14 @@ try {
  assert(ready,`Server unavailable: ${logs.slice(-2000)}`)
  // Match the existing brand QA rasterization: LCD glyph edges invent colors.
  browser=await chromium.launch({headless:true,args:['--disable-lcd-text','--disable-font-subpixel-positioning','--font-render-hinting=none'],...(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE?{executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE}:{})})
- const context=await browser.newContext({viewport:{width:390,height:844}})
+ const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'})
  const page=await context.newPage(),errors=[],external=[]
  context.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));page.on('pageerror',e=>errors.push(e.message));context.on('request',r=>{if(/supabase\.co/.test(r.url()))external.push(r.url())})
  const golden=JSON.parse(readFileSync('tests/fixtures/timeline-golden.json','utf8')).runs.find(r=>r.seed===42&&r.cursor===0)
  mkdirSync('/tmp/fanlife-m1-browser',{recursive:true})
  for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']) {
-  const dates=new Map(slug==='hapoel-tel-aviv'?golden.board.map(c=>[c.id,c.on]):JSON.parse(readFileSync(`club-packs/${slug}/core.json`,'utf8')).archive.map(f=>[createHash('sha256').update(`${slug}:${slug}:${f.id}:${f.value.on}`).digest('hex').slice(0,16),f.value.on]))
+  // the truth is the COMPILED timeline the page deals from (packs + waves), not core.json alone
+  const dates=new Map(slug==='hapoel-tel-aviv'?golden.board.map(c=>[c.id,c.on]):(await loadClub(slug)).data.timeline.map(t=>[t.value.id,t.value.on]))
   const response=await page.goto(`${base}/clubs/${slug}/timeline?seed=42`)
   assert.equal(response.status(),200)
   await page.getByTestId('timeline-hand').waitFor()
@@ -66,9 +71,10 @@ try {
   assert(new URL(page.url()).searchParams.get('r')==='1')
   report.push({club:slug,placements:length,result:'passed',mobile:'390x844'})
  }
- assert.equal(new Set(identities.map(i=>i.background)).size,4)
+ assert.equal(new Set(identities.map(i=>i.primary)).size,4) // rule 91: one paper for all, each club its own colour
  assert.equal(new Set(identities.map(i=>i.display)).size,3)
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']) {
+ // Hebrew is switched off by the owner (lib/clubs/locale.ts HEBREW_ENABLED); the RTL checks run when it is back on
+ for(const slug of HEBREW_ENABLED?['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']:[]) {
   await page.goto(`${base}/clubs/${slug}?lang=he`)
   await page.getByRole('heading',{name:REGISTRY.find(c=>c.id===slug).name,exact:true}).waitFor()
   assert.equal(await page.locator('.fl').getAttribute('dir'),'rtl')
@@ -96,12 +102,14 @@ try {
   assert((await badge.evaluate(e=>getComputedStyle(e).getPropertyValue('--club-primary')||getComputedStyle(e.parentElement).getPropertyValue('--club-primary'))).trim()||true)
   assert((await tile.locator('b').innerText()).trim()&&(await tile.locator('small').innerText()).trim(),`${slug} name/city`)
  }
+ if(HEBREW_ENABLED){
  await page.goto(`${base}/clubs/hapoel-tel-aviv/timeline?seed=42&lang=he`)
  await page.getByTestId('timeline-hand').waitFor()
  assert.equal(await page.locator('main').getAttribute('dir'),'rtl')
  assert.equal(await page.locator('main').getAttribute('lang'),'he')
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))
  await identityCheck(page,'hapoel-tel-aviv','.club-surface','/tmp/fanlife-m1-browser/hapoel-timeline-rtl.png')
+ }
  await page.setViewportSize({width:1280,height:900})
  await page.goto(`${base}/master/core?club=olympiacos`)
  await page.getByRole('heading',{name:'Evidence and review'}).waitFor()

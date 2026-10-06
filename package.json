@@ -78,7 +78,12 @@
     "master:local-db": "node scripts/master/check-local-db.mjs",
     "master:browser": "node scripts/master/browser-smoke.mjs",
     "master:identity": "node --import tsx scripts/master/club-colors.ts",
-    "master:core-browser": "node --import tsx scripts/master/core-browser-smoke.mjs"
+    "master:core-browser": "node --require ./scripts/master/server-only.cjs --import tsx scripts/master/core-browser-smoke.mjs",
+    "research:plan": "tsx scripts/research/cli.ts plan",
+    "research:run": "tsx scripts/research/cli.ts run",
+    "research:status": "tsx scripts/research/cli.ts status",
+    "research:collect": "tsx scripts/research/cli.ts collect",
+    "research:export": "tsx scripts/research/cli.ts export"
   },
   "dependencies": {
     "@electric-sql/pglite": "0.5.8",

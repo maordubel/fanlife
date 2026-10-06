@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "clubId": "union-berlin",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-06",
+  "desiredGates": [],
+  "priorityMatchIds": [],
+  "sources": [],
+  "notes": "Historical archive collection only (6.10.2026 plan): public sources, no paid data, no AI, nothing activated in the game. Documents stay needs-parser until a parser is written against stored fixtures.",
+  "archive": [
+    {
+      "providerId": "immer-unioner",
+      "familyId": "immer-unioner",
+      "publisher": "Immer Unioner",
+      "reader": "html",
+      "origin": "https://www.immerunioner.de",
+      "role": "mixed",
+      "locale": "de-DE",
+      "seeds": [
+        "/listen.php",
+        "/trikotliste.php",
+        "/impressum.php"
+      ],
+      "allowedPathPrefixes": [
+        "/"
+      ],
+      "parserId": "immerunioner-v1",
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "No public API; links are followed only from the site's own index pages, PHP file names are never guessed.",
+        "listen.php answered 502 once — check availability before relying on it."
+      ],
+      "follow": "^/[a-z0-9_-]+\\.php(\\?[a-z0-9_=&%-]*)?$"
+    },
+    {
+      "providerId": "union-official",
+      "familyId": "union-institutional",
+      "publisher": "1. FC Union Berlin",
+      "reader": "html",
+      "origin": "https://www.fc-union-berlin.de",
+      "role": "results",
+      "locale": "de-DE",
+      "seeds": [
+        "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0"
+      ],
+      "allowedPathPrefixes": [
+        "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Season and competition ids are opaque; their labels are read from the page and stored with the id.",
+        "The current club, predecessors and historical names are separate entities until a source defines continuity."
+      ]
+    }
+  ]
+}

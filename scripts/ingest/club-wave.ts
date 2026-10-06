@@ -43,7 +43,7 @@ async function main(){
  const matches=(await uefaMatchesForTeam(fetchJson,teamId)).slice(0,max),rows=[]
  for(const m of matches){const full=await withLineup(fetchJson,m);rows.push({m:full,second:await corroborate(fetchJson,full,process.env.THESPORTSDB_KEY||'123')})}
  const wave=buildWave(rows,cfg.names,club,today),path=`club-packs/${club}/wave-auto.json`
- console.log(`[${club}] ${wave.matches.length} matches (${wave.matches.filter(f=>f.status==='approved').length} approved, ${wave.matches.filter(f=>f.value.lineup.length===11).length} with a full eleven)`)
+ console.log(`[${club}] ${wave.matches.length} matches (${wave.matches.filter(f=>f.status==='approved').length} approved, ${wave.matches.filter(f=>f.value.primaryOnly.lineup.length===11).length} with a full eleven)`)
  if(arg('dry-run')){console.log('dry run, nothing written');return}
  writeFileSync(path,JSON.stringify(wave,null,1)+'\n')
 }

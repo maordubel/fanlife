@@ -5,4 +5,5 @@ import type {Source,Finding,Job} from '../types'
  * refusal (403/404) as an answer instead of retrying around it. Approval is a separate, human step.
  */
 export type AdapterResult={sources:Source[];findings:Finding[];gaps?:string[]}
-export type Adapter={id:string;label:string;collect:(job:Job)=>Promise<AdapterResult>}
+/** `capabilities` say what an adapter can produce; `needsQuery` whether it needs a search phrase; `available` whether it can run for a club now. */
+export type Adapter={id:string;label:string;collect:(job:Job)=>Promise<AdapterResult>;needsQuery:boolean;capabilities:string[];available?:(clubId:string)=>boolean}
