@@ -12,6 +12,7 @@
  * button next to somebody) into the engine's own calls. What the simulator in the test suite
  * walks is therefore exactly what is walked here.
  */
+import {ENABLED_LOCALES} from '@/lib/clubs/locale'
 import Link from 'next/link'
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {chapterOf, eventsOf, Life, meets, nextChapter, openChapter, type Directive, type LifeStore} from '@/lib/life/universal/engine'
@@ -595,8 +596,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
             </details>
             <nav className={styles.links} aria-label={copy.language}>
               <Link className="min-h-tap" href={hubHref}>{copy.backToClub}</Link>
-              <Link className="min-h-tap" href={langHref.en} hrefLang="en" lang="en">{copy.english}</Link>
-              <Link className="min-h-tap" href={langHref.he} hrefLang="he" lang="he">{copy.hebrew}</Link>
+                            {ENABLED_LOCALES.length>1&&<Link className="min-h-tap" href={langHref.he} hrefLang="he" lang="he">{copy.hebrew}</Link>}
               {legacyHref && <Link className="min-h-tap" href={legacyHref}>{copy.hubLegacy}</Link>}
             </nav>
             <a className={`${styles.credit} min-h-tap`} href="https://DubelTeam.com" target="_blank" rel="noopener noreferrer" aria-label={copy.creditAria}>{copy.credit}</a>
@@ -707,8 +707,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
                 <Box pack={pack} state={state} copy={copy} story={story} />
                 <nav className={styles.links} aria-label={copy.language}>
                   <Link className="min-h-tap" href={hubHref}>{copy.backToClub}</Link>
-                  <Link className="min-h-tap" href={langHref.en} hrefLang="en" lang="en">{copy.english}</Link>
-                  <Link className="min-h-tap" href={langHref.he} hrefLang="he" lang="he">{copy.hebrew}</Link>
+                                    {ENABLED_LOCALES.length>1&&<Link className="min-h-tap" href={langHref.he} hrefLang="he" lang="he">{copy.hebrew}</Link>}
                 </nav>
               </>
             )}

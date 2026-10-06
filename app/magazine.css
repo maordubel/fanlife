@@ -549,3 +549,8 @@
   .fl .club-hero .mag-sig { flex: 1 0 100%; width: 100%; }
   .fl .club-hero h1 { overflow-wrap: normal; word-break: normal; hyphens: manual; }
 }
+
+/* rivalry: a colour an owner-approved rival owns is not worn on this club's pages — the shell's own accent follows the club instead */
+[data-rival-no~='red'] { --mag-vermilion: var(--club-primary); --mag-salmon: color-mix(in srgb, var(--club-primary) 55%, var(--mag-white)); }
+[data-rival-no~='green'] { --mag-green: var(--club-primary); }
+[data-rival-no~='blue'] { --mag-navy: var(--club-primary); }

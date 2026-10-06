@@ -3,8 +3,8 @@
   "secondary": "#FFFFFF",
   "surface": "#FFFFFF",
   "text": "#20242B",
-  "muted": "#535962",
-  "accent": "#A20F18",
+  "muted": "#4F5C50",
+  "accent": "#0B5A2C",
   "fonts": {
     "display": "archivo",
     "body": "heebo",
@@ -14,14 +14,14 @@
   "colorPolicy": {
     "status": "approved",
     "rivalIdentityColors": [
-      "#0B7A3B"
+      "#D71920"
     ],
     "approvedBy": "Maor Harel (owner, chat)",
     "approvedAt": "2026-10-06",
     "legacyRules": []
   },
   "historicalExemptions": [],
-  "clubId": "olympiacos",
-  "background": "#F1F3F5",
-  "pattern": "stripes"
+  "clubId": "panathinaikos",
+  "background": "#EEF1EA",
+  "pattern": "rules"
 }

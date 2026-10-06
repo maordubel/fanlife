@@ -3,6 +3,7 @@ import hapoel from '@/club-packs/hapoel-tel-aviv/identity.json'
 import zrinjski from '@/club-packs/zrinjski-mostar/identity.json'
 import petahTikva from '@/club-packs/hapoel-petah-tikva/identity.json'
 import olympiacos from '@/club-packs/olympiacos/identity.json'
+import panathinaikos from '@/club-packs/panathinaikos/identity.json'
 import type {UiLocale} from './locale'
 
 export type ColorRule={id:string;label:string;hue:[number,number];minSaturation:number;minValue:number}
@@ -17,7 +18,7 @@ export type ClubTheme={
 const HEX=/^#[\da-f]{6}$/i
 const calendarDate=(s:string|null)=>Boolean(s&&/^\d{4}-\d{2}-\d{2}$/.test(s)&&Number.isFinite(Date.parse(s))&&new Date(s).toISOString().slice(0,10)===s)
 const FONT:Record<FontId,string>={archivo:'Archivo',heebo:'Heebo',frank:'Frank Ruhl Libre',miriam:'Miriam Libre',courier:'Courier Prime',karantina:'Karantina'}
-const catalogue:Record<string,unknown>={'hapoel-tel-aviv':hapoel,'zrinjski-mostar':zrinjski,olympiacos,'hapoel-petah-tikva':petahTikva}
+const catalogue:Record<string,unknown>={'hapoel-tel-aviv':hapoel,'zrinjski-mostar':zrinjski,olympiacos,panathinaikos,'hapoel-petah-tikva':petahTikva}
 const neutral={background:'#F0F1ED',surface:'#FFFFFF',text:'#243027',muted:'#536050',accent:'#3E4B3E',secondary:'#FFFFFF',fonts:{display:'archivo',body:'heebo',mono:'courier',poster:'karantina'},pattern:'plain',colorPolicy:{status:'pending',rivalIdentityColors:[],approvedBy:null,approvedAt:null,legacyRules:[]},historicalExemptions:[]}
 export function rgb(hex:string):[number,number,number] {
  if(!HEX.test(hex))throw new Error('INVALID_THEME_COLOR')
@@ -33,6 +34,12 @@ export function rivalForbiddenColors(identity:string[],policy:ColorPolicy):strin
 export function forbiddenColor(theme:ClubTheme,color:string):boolean {
  const c=hsv(color)
  return theme.rivalForbiddenColors.some(r=>sameColorFamily(r,color))||theme.colorPolicy.legacyRules.some(r=>c.s>=r.minSaturation&&c.v>=r.minValue&&(r.hue[0]<=r.hue[1]?c.h>=r.hue[0]&&c.h<=r.hue[1]:c.h>=r.hue[0]||c.h<=r.hue[1]))
+}
+/** Colour families an owner-approved rivalry takes away from a club's pages (red for Panathinaikos, green for Olympiacos). */
+export function rivalBans(theme:ClubTheme):string[]{
+ const bans=new Set<string>()
+ for(const c of theme.rivalForbiddenColors){const x=hsv(c);if(x.s<0.2)continue;if(x.h<=18||x.h>=342)bans.add('red');else if(x.h>=90&&x.h<=170)bans.add('green');else if(x.h>=190&&x.h<=260)bans.add('blue')}
+ return [...bans]
 }
 function luminance(hex:string){return rgb(hex).map(n=>n/255).map(n=>n<=0.04045?n/12.92:((n+0.055)/1.055)**2.4).reduce((n,v,i)=>n+v*[0.2126,0.7152,0.0722][i]!,0)}
 export function contrast(a:string,b:string){const x=luminance(a),y=luminance(b);return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05)}

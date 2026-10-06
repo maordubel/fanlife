@@ -2,9 +2,12 @@ import type {Locale} from './contract'
 
 export const UI_LOCALES = ['en','he'] as const
 export type UiLocale = typeof UI_LOCALES[number]
+/** Hebrew is switched off for now (owner, 2026-10-06): English only. Flip to true to bring the switch back. */
+export const HEBREW_ENABLED = false
+export const ENABLED_LOCALES: readonly UiLocale[] = HEBREW_ENABLED ? UI_LOCALES : ['en']
 export const localeDirection = (locale:Locale):'ltr'|'rtl' => locale==='he'?'rtl':'ltr'
 export function uiLocale(requested?:string):UiLocale {
- return UI_LOCALES.includes(requested as UiLocale)?requested as UiLocale:'en'
+ return ENABLED_LOCALES.includes(requested as UiLocale)?requested as UiLocale:'en'
 }
 export function localizedDate(iso:string,locale:UiLocale):string {
  const date=new Date(`${iso}T00:00:00Z`)
