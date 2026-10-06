@@ -235,6 +235,14 @@ export function buildMatchMaster(root = process.cwd()): { out: MatchMasterFile; 
       decisionsByMatch.set(d.matchId, [...(decisionsByMatch.get(d.matchId) ?? []), { row, d }])
     }
   }
+  // a goal's minute that a named person decided ("הוכרע: דקה 67"): the record already carries the
+  // winning minute, so the readings that differ are overruled, not open — the cross-check agrees
+  const settledGoalMinute = new Map<string, number>()
+  for (const row of conflictRows) {
+    if (row.entityTable !== 'goal' || row.field !== 'minute' || !row.resolution) continue
+    const m = String(row.resolution).match(/דקה (\d+)/)
+    if (m) settledGoalMinute.set(String(row.entityKey), Number(m[1]))
+  }
   for (const row of conflictRows) {
     if (row.resolution !== null && row.resolution !== undefined) continue // settled by a named person
     if (row.entityTable === 'match' && row.entityKey) {
@@ -617,6 +625,9 @@ export function buildMatchMaster(root = process.cwd()): { out: MatchMasterFile; 
         record.score = scoreFrom()
       } else if (field === 'venue') {
         record.venue = typeof d.value === 'string' ? d.value : null
+      } else if (field === 'competition') {
+        // Maor's call (1.10.2026): before the Ligat Ha'al era the top flight was the Liga Leumit
+        record.competition = typeof d.value === 'string' ? d.value : record.competition
       } else if (field === 'stage') {
         record.stage = typeof d.value === 'string' ? d.value : record.stage
       } else if (field === 'scorers') {
@@ -807,13 +818,14 @@ export function buildMatchMaster(root = process.cwd()): { out: MatchMasterFile; 
         })
       }
       if (total !== null && minuteClaims.length) {
+        const minuteAgrees = settledGoalMinute.get(goal.goalId) === total || minuteClaims.every((c) => c.minute + (c.stoppage ?? 0) === total)
         crossChecks.push({
           momentId,
           field: 'minute',
           record: `${minute}${stoppage ? `+${stoppage}` : ''}`,
           archive: minuteClaims.map((c) => `${c.minute}${c.stoppage ? `+${c.stoppage}` : ''}`).join(' | '),
-          status: minuteClaims.every((c) => c.minute + (c.stoppage ?? 0) === total) ? 'agree' : 'disagree',
-          conflictRef: minuteClaims.every((c) => c.minute + (c.stoppage ?? 0) === total) ? null : refFor(goalConflicts, ['minute']),
+          status: minuteAgrees ? 'agree' : 'disagree',
+          conflictRef: minuteAgrees ? null : refFor(goalConflicts, ['minute']),
         })
       }
     }

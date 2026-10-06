@@ -6,7 +6,7 @@
   "exactPhoto": 12,
   "candidateOnly": 20,
   "noPhoto": 3,
-  "conflicts": 4,
+  "conflicts": 3,
   "photoComplete": 28
  },
  "kits": [
@@ -3283,18 +3283,13 @@
     },
     "crest": {
      "value": {
-      "key": "circle-1923",
-      "yearOnBadge": 1923
+      "key": "circle-1927",
+      "yearOnBadge": 1927
      },
      "source": "kit-assembly",
      "confidence": 3,
-     "alternates": [
-      {
-       "key": "circle-1927",
-       "yearOnBadge": 1927
-      }
-     ],
-     "conflict": "kit-assembly says circle-1923; crest-versions says circle-1927 for this season"
+     "alternates": [],
+     "conflict": null
     },
     "maker": {
      "value": {

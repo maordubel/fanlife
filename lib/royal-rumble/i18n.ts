@@ -57,6 +57,11 @@ const COPY = {
   playShotOurs: '{player} נכנס למצב. היציע כבר עומד.', playShotTheirs: '{player} מול השער. החמישייה שלך נסוגה עד הקו.',
   playGoalOurs: 'שער! {player} שם את זה בפנים.', playGoalTheirs: 'היריבה כובשת. {player}.',
   playReset: 'הקצב לא יורד. תיקול באמצע, הכדור שוב חופשי והזירה נפתחת.', playRegroup: 'החמישיות מסתדרות מחדש. אין זמן לנשום במשחק של דקה.',
+  // delta 99 — the match as a show
+  entranceKicker: 'הכניסה לזירה', entranceFive: 'החמישייה שלך', theirEntrance: 'היריבה נכנסת', headToHead: 'ראש בראש',
+  kickoffWhistle: 'שריקה', skipMatch: 'דלג לסיום', fullTime: 'שריקה סופית', manOfMatch: 'איש המשחק',
+  matchLive: 'בשידור', goalScorer: 'שער', goalAssist: 'בישל: {name}', goalThemLabel: 'ספגנו', goalUsLabel: 'שער!',
+  savedLabel: 'הצלה', chanceLabel: 'הזדמנות', missLabel: 'החמיץ', blockLabel: 'חסימה',
 } as const
 
 export function t(key: RoyalRumbleMessageKey, vars?: Record<string, string>): string {

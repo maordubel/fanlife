@@ -53,6 +53,11 @@ function records(): GoalSourceRecord[] {
 }
 
 /** The records held out of play, each with the conflict that holds it. */
+/** The eligible, unheld, truth-clean records — read by the club adapter (server-only), never sent as-is. */
+export function eligibleGoalRecords(): GoalSourceRecord[] {
+  return records()
+}
+
 export function goalHolds(): Array<{ goalId: string; fields: readonly string[] }> {
   return Object.entries(REPLAY_HOLDS).map(([goalId, hold]) => ({ goalId, fields: hold.fields }))
 }

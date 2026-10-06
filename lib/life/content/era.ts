@@ -680,7 +680,7 @@ export const ERA_2002_EUROPE = stageB('2002-europe', 2002, '2002-milan', {
 })
 
 /** the six days before the Saturday — the same boy, the same rooms, a beat each */
-function stageA(chapter: string, year: number, extra: Pick<Era, 'endings' | 'objective' | 'beats' | 'goal'>): Era {
+function stageA(chapter: string, year: number, extra: Pick<Era, 'endings' | 'objective' | 'beats' | 'goal'> & Partial<Pick<Era, 'anchorKey' | 'player'>>): Era {
   return {
     chapter,
     year,
@@ -699,10 +699,10 @@ function stageA(chapter: string, year: number, extra: Pick<Era, 'endings' | 'obj
 }
 
 export const ERA_A2 = stageA('a2-alley', 1984, { endings: ENDINGS_A2, objective: (state, sceneId) => objectiveA2(state, sceneId), beats: BEATS_A2, goal: goalA2 })
-export const ERA_A3 = stageA('a3-hall', 1984, { endings: ENDINGS_A3, objective: (state, sceneId) => objectiveA3(state, sceneId), beats: BEATS_A3, goal: goalA3 })
+export const ERA_A3 = stageA('a3-hall', 1992, { anchorKey: '1993-cup', player: ERA_1990.player, endings: ENDINGS_A3, objective: (state, sceneId) => objectiveA3(state, sceneId), beats: BEATS_A3, goal: goalA3 })
 export const ERA_A4 = stageA('a4-shirt', 1985, { endings: ENDINGS_A4, objective: (state, sceneId) => objectiveA4(state, sceneId), beats: BEATS_A4, goal: goalA4 })
-export const ERA_A5 = stageA('a5-first', 1985, { endings: ENDINGS_A5, objective: (state, sceneId) => objectiveA5(state, sceneId), beats: BEATS_A5, goal: goalA5 })
-export const ERA_A6 = stageA('a6-radio', 1986, { endings: ENDINGS_A6, objective: (state, sceneId) => objectiveA6(state, sceneId), beats: BEATS_A6, goal: goalA6 })
+export const ERA_A5 = stageA('a5-first', 1985, { anchorKey: '1985-hpt', endings: ENDINGS_A5, objective: (state, sceneId) => objectiveA5(state, sceneId), beats: BEATS_A5, goal: goalA5 })
+export const ERA_A6 = stageA('a6-radio', 1985, { anchorKey: '1985-bj', endings: ENDINGS_A6, objective: (state, sceneId) => objectiveA6(state, sceneId), beats: BEATS_A6, goal: goalA6 })
 export const ERA_A7 = stageA('a7-week', 1986, { endings: ENDINGS_A7, objective: (state, sceneId) => objectiveA7(state, sceneId), beats: BEATS_A7, goal: goalA7 })
 
 /**

@@ -189,9 +189,6 @@
   "life.menu.continue": "המשך",
   "life.menu.day": "להתחיל את היום מחדש",
   "life.menu.dayConfirm": "בטוח? היום יתחיל מהבוקר",
-  "life.menu.deck": "לוח ההפעלה על המסך",
-  "life.menu.off": "מוסתר",
-  "life.menu.on": "מוצג",
   "life.menu.sound": "סאונד",
   "life.menu.soundOff": "מושתק",
   "life.menu.soundOn": "פועל",
@@ -560,5 +557,17 @@
   "life.act.fan-shirt.ask": "החולצה הלבנה של אבא על הכיסא, טוש, ופתק מאמא: ״רק לא על השולחן.״",
   "life.act.fan-shirt.back": "לתלות על הכיסא",
   "life.act.friend-shirt.ask": "אופיר מושיט חולצה לבנה מקופלת: ״של אח שלי. הוא לא יודע. עד שבת.״",
-  "life.act.friend-shirt.back": "למסור לאופיר"
+  "life.act.friend-shirt.back": "למסור לאופיר",
+  "life.dress.pen.goal.1": "יש!",
+  "life.dress.pen.goal.2": "ידעתי.",
+  "life.dress.pen.goal.3": "עוד אחד.",
+  "life.dress.pen.miss.1": "נו באמת.",
+  "life.dress.pen.miss.2": "קרוב.",
+  "life.dress.pen.miss.3": "עוד פעם.",
+  "life.dress.hoops.in.1": "נכנס!",
+  "life.dress.hoops.in.2": "חלק.",
+  "life.dress.hoops.in.3": "עוד אחד.",
+  "life.dress.hoops.miss.1": "קצר.",
+  "life.dress.hoops.miss.2": "כמעט.",
+  "life.dress.hoops.miss.3": "תנסה שוב."
 }

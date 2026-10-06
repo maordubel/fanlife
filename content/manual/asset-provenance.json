@@ -2297,13 +2297,40 @@
    "sourceUrl": null,
    "sourceTitle": "ידע אישי — צוות The Worker, 29.9.2026 (סמל פרה עיוורת, סמל רויאל ראמבל)",
    "treatment": [
-    "resize",
     "de-yellow",
+    "encode-webp",
+    "encode-webp-lossless",
     "key-flat",
-    "encode-webp"
+    "resize",
+    "yellow-clean"
    ],
    "confidence": 2,
    "noteHe": "שני הסמלים של שערים 9 ו-10, ציור של הבעלים על רקע שחור. הוקטנו ל-1200px, נוקו מצהוב, והרקע השחור הוסר לשקיפות אמיתית (RGBA), וקודדו WebP חסר אובדן — הצהוב נמדד על הפענוח (0 פיקסלים, lib/isYellow.ts). מוצגים בתוך שערים 9 ו-10 בלבד."
+  },
+  {
+   "key": "life-transitions-2026-09-30",
+   "kind": "video",
+   "origin": "maor-upload",
+   "folder": "public/life/transitions",
+   "match": [
+    "enter-stadium-a.webm",
+    "enter-stadium-b.webm",
+    "enter-stand.webm",
+    "take-ticket.webm",
+    "generic.webm",
+    "kobi-friends-road.webm",
+    "kobi-confetti.webm",
+    "player-celebrates.webm"
+   ],
+   "sourceUrl": null,
+   "sourceTitle": "סרטוני מעבר של מאור, נמסרו לפרויקט ב-30.9.2026",
+   "treatment": [
+    "de-yellow-frame-level",
+    "lossless-vp9",
+    "downscale-270x480"
+   ],
+   "confidence": 1,
+   "noteHe": "שמונה סרטוני מעבר לשלב א'. צהוב נמדד על הפריימים המפוענחים (0), הקידוד VP9 חסר אובדן כדי שהפענוח לא ימציא צהוב. מי יצר אותם נמסר בעל פה, ולכן הביטחון 1."
   },
   {
    "key": "fan-life-import-unresolved-art",

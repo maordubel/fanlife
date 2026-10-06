@@ -22,14 +22,12 @@ import { t } from '@/lib/i18n'
  */
 export function LifeMenu({
   touch,
-  deck,
   sound,
   persisted,
   debug,
   onClose,
   onProfile,
   onMe,
-  onDeck,
   onSound,
   onDebug,
   onReset,
@@ -43,7 +41,6 @@ export function LifeMenu({
   hasRoutes,
 }: {
   touch: boolean
-  deck: boolean
   sound: boolean
   persisted: boolean
   /** the developer panel is offered only outside production — a build fact, not a flag */
@@ -52,7 +49,6 @@ export function LifeMenu({
   onProfile: () => void
   /** אני — the other half of the dossier, its own row (delta 90-H, spec §66) */
   onMe?: () => void
-  onDeck: (on: boolean) => void
   onSound: (on: boolean) => void
   onDebug: () => void
   onReset: () => void
@@ -132,14 +128,6 @@ export function LifeMenu({
             {sound ? t('life.menu.soundOn') : t('life.menu.soundOff')}
           </span>
         </button>
-        {touch && (
-          <button type="button" className={row} onClick={() => onDeck(!deck)} data-life="menu-deck">
-            <span>{t('life.menu.deck')}</span>
-            <span className="font-mono text-[11px] tabular-nums" dir="ltr">
-              {deck ? t('life.menu.on') : t('life.menu.off')}
-            </span>
-          </button>
-        )}
         {debug && (
           <button type="button" className={`${row} text-red`} onClick={onDebug}>
             <span>{t('life.debug')}</span>

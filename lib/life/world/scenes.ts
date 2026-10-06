@@ -3396,6 +3396,8 @@ const SCENES: SceneDef[] = [
       { id: 'a7-gap', era: 'a7-week', x: 0.11, y: 0.86, w: 0.07, act: 'a7-gap', verb: 'enter', labelHe: 'לרווח מתחת לגדר, ליד העמוד השלישי', when: { flag: 'a7:knows-gap' }, priority: 4 },
       { id: 'hatch-1986', era: '1986', x: 0.7, y: 0.88, w: 0.06, act: 'ticket-window', verb: 'buy', labelHe: 'כרטיס לילד, באשנב', when: { notFlag: 'entry:granted' }, priority: 5 },
       { id: 'turnstile-1986', era: '1986', x: 0.36, y: 0.85, w: 0.09, act: 'gate-family', verb: 'enter', labelHe: 'לתור לקרוסלה, ליד אבא וילד', when: { notFlag: 'entry:granted' }, priority: 5 },
+      { id: 'vendor-1986', era: '1986', x: 0.56, y: 0.87, w: 0.07, act: 'vendor-cart-1986', verb: 'enter', labelHe: 'רפי, עם המגש, ליד השער', when: { all: [{ notFlag: 'entry:granted' }, { notFlag: 'entry:vendor' }] }, priority: 5 },
+      { id: 'batya-1986', era: '1986', x: 0.8, y: 0.88, w: 0.05, act: 'batya-ticket-1986', verb: 'enter', labelHe: 'בתיה, ליד האשנב', when: { all: [{ notFlag: 'entry:granted' }, { flag: 'entry:sent-home' }] }, priority: 5 },
       { id: 'gap-1986', era: '1986', x: 0.11, y: 0.86, w: 0.07, act: 'gap-1986', verb: 'enter', labelHe: 'לרווח מתחת לגדר', when: { all: [{ notFlag: 'entry:granted' }, { any: [{ flag: 'life:a7:scouted' }, { personalityAbove: { key: 'streetSmarts', min: 14 } }] }] }, priority: 5 },
       /**
        * ULTRAS · `ORGANIZE_GROUP` — הכיכר שלפני השער, במקום שאנשים עומדים בו וממתינים.

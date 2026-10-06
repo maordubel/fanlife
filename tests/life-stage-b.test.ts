@@ -78,7 +78,7 @@ const PRESENCE: PresenceMode[] = ['inside', 'late', 'outside', 'radio', 'televis
 
 describe('שלב ב׳ — the decade as a whole', () => {
   it('has eleven units chained in order, all playable, ending on the Double', () => {
-    expect(stageB.map((c) => c.unit)).toEqual(['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'B10', 'B11a', 'B11b'])
+    expect(stageB.map((c) => c.unit)).toEqual(['B1', 'B2', 'B2b', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'B10', 'B11a', 'B11b'])
     for (const c of stageB) expect(c.playable, c.id).toBe(true)
     for (let i = 0; i < stageB.length - 1; i += 1) expect(stageB[i]!.next, stageB[i]!.id).toBe(stageB[i + 1]!.id)
     /**
@@ -201,9 +201,10 @@ import {
   ENDINGS_A2, ENDINGS_A3, ENDINGS_A4, ENDINGS_A5, ENDINGS_A6, ENDINGS_A7,
 } from '@/lib/life/content/chapterStageA'
 
+// a3-hall moved to Stage B (B2b, winter 1992) — its content checks run in the same table below
+const A3_HALL: Unit = { id: 'a3-hall', unit: 'B2b', beats: BEATS_A3, conversations: CONVERSATIONS_A3, endings: ENDINGS_A3 }
 const DAYS: Unit[] = [
   { id: 'a2-alley', unit: 'A2', beats: BEATS_A2, conversations: CONVERSATIONS_A2, endings: ENDINGS_A2 },
-  { id: 'a3-hall', unit: 'A3', beats: BEATS_A3, conversations: CONVERSATIONS_A3, endings: ENDINGS_A3 },
   { id: 'a4-shirt', unit: 'A4', beats: BEATS_A4, conversations: CONVERSATIONS_A4, endings: ENDINGS_A4 },
   { id: 'a5-first', unit: 'A5', beats: BEATS_A5, conversations: CONVERSATIONS_A5, endings: ENDINGS_A5 },
   { id: 'a6-radio', unit: 'A6', beats: BEATS_A6, conversations: CONVERSATIONS_A6, endings: ENDINGS_A6 },
@@ -219,7 +220,7 @@ describe('שלב א׳ — the six days before the Saturday', () => {
     for (const d of DAYS) expect(CHAPTER[d.id]!.stage).toBe('A')
   })
 
-  describe.each(DAYS)('$unit · $id', (day) => {
+  describe.each([...DAYS, A3_HALL])('$unit · $id', (day) => {
     const texts = everyText(day)
     it('states no score', () => {
       for (const text of texts) expect(/\d+\s*[:\-–]\s*\d+/.test(text), text).toBe(false)

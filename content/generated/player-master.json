@@ -1,6 +1,6 @@
 {
  "schemaVersion": 2,
- "inputsSha": "a1b14536f15ca602d8ce5b939ec17f4fdd97c052c01fcec2a0c7622f69060df7",
+ "inputsSha": "b58a3c3531d5d443b719ac372550273b6bbce5689f7bb688782ce911a732714c",
  "inputs": [
   "content/manual/player-ids.json",
   "content/manual/player-aliases.json",
@@ -38,8 +38,8 @@
   "withLineups": 44,
   "withArchiveGoals": 357,
   "currentSquad": 31,
-  "unresolvedSpellings": 59,
-  "unresolvedShirtNumberSpellings": 59,
+  "unresolvedSpellings": 56,
+  "unresolvedShirtNumberSpellings": 56,
   "scorerEntriesUnresolved": 716,
   "ambiguousKeys": 3
  },
@@ -4903,10 +4903,6 @@
       {
        "number": 7,
        "seasonLabel": "2021/22"
-      },
-      {
-       "number": 18,
-       "seasonLabel": "2021/22"
       }
      ],
      "documentedGoals": {
@@ -4935,22 +4931,10 @@
      "number": 7,
      "seasonLabel": "2021/22",
      "historical": true,
-     "disputed": true,
      "source": {
       "file": "shirt-numbers.json",
       "sourceTitle": "worldfootball · הפועל ת\"א – הפועל חיפה 25.09.2021",
       "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma9238819/hapoel-tel-aviv_hapoel-haifa/"
-     }
-    },
-    {
-     "number": 18,
-     "seasonLabel": "2021/22",
-     "historical": true,
-     "disputed": true,
-     "source": {
-      "file": "shirt-numbers.json",
-      "sourceTitle": "worldfootball · הפועל ת\"א – אשדוד 28.08.2021",
-      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma9238799/hapoel-tel-aviv_fc-ashdod/"
      }
     }
    ],
@@ -34368,7 +34352,6 @@
      "number": 28,
      "seasonLabel": "2021/22",
      "historical": true,
-     "disputed": true,
      "source": {
       "file": "shirt-numbers.json",
       "sourceTitle": "worldfootball · הפועל ת\"א – הפועל חיפה 25.09.2021",
@@ -43748,7 +43731,6 @@
      "number": 21,
      "seasonLabel": "2018/19",
      "historical": true,
-     "disputed": true,
      "source": {
       "file": "shirt-numbers.json",
       "sourceTitle": "worldfootball · הפועל ת\"א – הפועל חיפה 01.09.2018",
@@ -56057,7 +56039,6 @@
      "number": 2,
      "seasonLabel": "2016/17",
      "historical": true,
-     "disputed": true,
      "source": {
       "file": "shirt-numbers.json",
       "sourceTitle": "worldfootball · מכבי ת\"א – הפועל ת\"א 25.09.2016",
@@ -70318,7 +70299,6 @@
      "number": 16,
      "seasonLabel": "2016/17",
      "historical": true,
-     "disputed": true,
      "source": {
       "file": "shirt-numbers.json",
       "sourceTitle": "worldfootball · הפועל ת\"א – הפועל באר שבע 27.08.2016",
@@ -71646,10 +71626,6 @@
       {
        "number": 29,
        "seasonLabel": "2020/21"
-      },
-      {
-       "number": 28,
-       "seasonLabel": "2021/22"
       }
      ]
     }
@@ -71668,17 +71644,6 @@
       "file": "shirt-numbers.json",
       "sourceTitle": "worldfootball · הפועל כפר סבא – הפועל ת\"א 29.08.2020",
       "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma9102883/hapoel-kfar-saba_hapoel-tel-aviv/"
-     }
-    },
-    {
-     "number": 28,
-     "seasonLabel": "2021/22",
-     "historical": true,
-     "disputed": true,
-     "source": {
-      "file": "shirt-numbers.json",
-      "sourceTitle": "worldfootball · הפועל ת\"א – אשדוד 28.08.2021",
-      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma9238799/hapoel-tel-aviv_fc-ashdod/"
      }
     }
    ],
@@ -75276,26 +75241,6 @@
    ]
   },
   {
-   "nameHe": "ויאם עמאשה",
-   "file": "shirt-numbers.json",
-   "contextHe": "#16 2016/17",
-   "reason": "no-person",
-   "candidates": [
-    {
-     "slug": "וויאם-עמאשה",
-     "evidence": "same consonant skeleton as 'וויאם עמאשה'; squads.json places him in every season the row names; ויקיפועל lists the same club number"
-    }
-   ],
-   "numbers": [
-    {
-     "number": 16,
-     "seasonLabel": "2016/17",
-     "sourceTitle": "worldfootball · מכבי ת\"א – הפועל ת\"א 25.09.2016",
-     "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma8287023/maccabi-tel-aviv_hapoel-tel-aviv/"
-    }
-   ]
-  },
-  {
    "nameHe": "וינסנט אנייאמה",
    "file": "shirt-numbers.json",
    "contextHe": "#1 2008/09, #1 2010/11",
@@ -75352,20 +75297,6 @@
      "seasonLabel": "2019/20",
      "sourceTitle": "worldfootball · הפועל ת\"א – מכבי נתניה 26.08.2019",
      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma8929638/hapoel-tel-aviv_maccabi-netanya/"
-    }
-   ]
-  },
-  {
-   "nameHe": "יום טוב עופר",
-   "file": "shirt-numbers.json",
-   "contextHe": "#2 2016/17",
-   "reason": "no-person",
-   "numbers": [
-    {
-     "number": 2,
-     "seasonLabel": "2016/17",
-     "sourceTitle": "worldfootball · הפועל ת\"א – הפועל באר שבע 27.08.2016",
-     "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma8287004/hapoel-tel-aviv_hapoel-beer-sheva/"
     }
    ]
   },
@@ -75840,26 +75771,6 @@
      "seasonLabel": "2016/17",
      "sourceTitle": "worldfootball · הפועל ת\"א – הפועל באר שבע 27.08.2016",
      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma8287004/hapoel-tel-aviv_hapoel-beer-sheva/"
-    }
-   ]
-  },
-  {
-   "nameHe": "קאיו",
-   "file": "shirt-numbers.json",
-   "contextHe": "#21 2018/19",
-   "reason": "no-person",
-   "candidates": [
-    {
-     "slug": "קאווה",
-     "evidence": "same consonant skeleton as 'קאווה'; NOT in the squad for every season the row names"
-    }
-   ],
-   "numbers": [
-    {
-     "number": 21,
-     "seasonLabel": "2018/19",
-     "sourceTitle": "worldfootball · מכבי ת\"א – הפועל ת\"א 01.10.2018",
-     "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma8754810/maccabi-tel-aviv_hapoel-tel-aviv/"
     }
    ]
   },

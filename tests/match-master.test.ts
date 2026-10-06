@@ -161,7 +161,7 @@ describe('the cross-check against matches.json — no unlisted disagreement', ()
     }
   })
 
-  it('records the conflicts the replay spec found, open and unresolved', () => {
+  it('records the conflicts the replay spec found — all settled by Maor on 1.10.2026', () => {
     const expected = [
       'match|2010-05-11 הפועל-תל-אביב — בני-יהודה|opponent_club',
       'match|2012-05-15 הפועל-תל-אביב — מכבי-חיפה|opponent_club',
@@ -173,8 +173,8 @@ describe('the cross-check against matches.json — no unlisted disagreement', ()
     for (const key of expected) {
       expect(conflictKeys.has(key), key).toBe(true)
       const row = conflicts.find((r) => [r.entityTable, r.entityKey ?? '', r.field].join('|') === key)!
-      expect(row.resolution ?? null, key).toBeNull()
-      expect(row.resolvedBy ?? null, key).toBeNull()
+      expect(String(row.resolution), key).toMatch(/^הוכרע/)
+      expect(String(row.resolvedBy), key).toMatch(/מאור הראל/)
     }
     // the two Salzburg rows were decided in delta 89 (UEFA) — resolved by a named decider, with decisions
     for (const key of [
@@ -190,20 +190,26 @@ describe('the cross-check against matches.json — no unlisted disagreement', ()
     expect(conflictKeys.size).toBe(conflicts.length)
   })
 
-  it('turns the conflicted goals off for the surfaces that would use the disputed field', () => {
+  it('turns every goal ON once its conflict is settled — the cup finals, Chelsea, Milan and the derby', () => {
     for (const goalId of ['cupfinal-2010-vermouth-25', 'cupfinal-2010-vermouth-73', 'cupfinal-2012-igiebor-90-2']) {
       const moment = momentForGoal(goalId)!
-      expect(moment.usable.replay, goalId).toBe(false)
-      expect(moment.usable.trivia, goalId).toBe(false)
+      expect(moment.usable.replay, goalId).toBe(true)
+      expect(moment.usable.trivia, goalId).toBe(true)
       expect(moment.usable.archive, goalId).toBe(true)
     }
     // salzburg-2010-bensahar-44 left this list in delta 89: its match's day and home side were decided (UEFA)
     expect(momentForGoal('salzburg-2010-bensahar-44')!.usable.replay).toBe(true)
-    for (const goalId of ['chelsea-2001-gershon-88', 'milan-2002-kleschenko-31', 'derby-2026-altman-90-2']) {
+    for (const goalId of ['chelsea-2001-gershon-88', 'milan-2002-kleschenko-31']) {
       const moment = momentForGoal(goalId)!
-      expect(moment.usable.trivia, goalId).toBe(false)
+      expect(moment.usable.trivia, goalId).toBe(true)
       expect(moment.usable.replay, goalId).toBe(true)
     }
+    // the derby: the date conflict is settled, but goals.json writes the scorer as a surname only
+    // ('אלטמן') — rule 64 §5, no guess — so trivia stays off for THAT reason, not for a conflict
+    const derby = momentForGoal('derby-2026-altman-90-2')!
+    expect(derby.usable.replay).toBe(true)
+    expect(derby.usable.trivia).toBe(false)
+    expect(derby.usableWhy.trivia).toEqual(['scorer unresolved'])
     for (const moment of usableMoments('trivia')) expect(moment.conflictRefs, moment.momentId).toEqual([])
     for (const moment of allMoments()) {
       expect(moment.usable.replay).toBe(moment.usableWhy.replay.length === 0)
@@ -213,9 +219,9 @@ describe('the cross-check against matches.json — no unlisted disagreement', ()
     expect(usableMoments('replay').filter((m) => m.kind === 'goal').length).toBeGreaterThanOrEqual(15)
   })
 
-  it('links the 2026 derby across the one-day disagreement — and says so', () => {
+  it('links the 2026 derby by its day — goals.json now says 26.1, as the archive does', () => {
     const moment = momentForGoal('derby-2026-altman-90-2')!
-    expect(moment.matchLink).toBe('date±1')
+    expect(moment.matchLink).toBe('date')
     const match = matchById(moment.matchId)!
     expect(match.opponent).toBe('מכבי-תל-אביב')
     expect(match.result).toEqual({ hapoel: 2, opponent: 1 })

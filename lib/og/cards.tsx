@@ -107,7 +107,7 @@ export function blindCowHeadline(card: BlindCowCard): string {
   return t('connect.card.bc.gaveUp')
 }
 
-export function BlindCowCardArt({ card, size }: { card: BlindCowCard; size: CardSize }) {
+export function BlindCowCardArt({ card, size, logo = null }: { card: BlindCowCard; size: CardSize; logo?: string | null }) {
   const box = CARD_SIZE[size]
   const story = size === 'story'
   const u = box.width / 100
@@ -147,7 +147,12 @@ export function BlindCowCardArt({ card, size }: { card: BlindCowCard; size: Card
           gap: u * 3,
         }}
       >
-        <Cow size={u * (story ? 30 : 19)} />
+        {logo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={logo} alt="" width={Math.round(u * (story ? 60 : 30))} height={Math.round(u * (story ? 20 : 10))} />
+        ) : (
+          <Cow size={u * (story ? 30 : 19)} />
+        )}
         {text}
       </div>
       <div style={{ display: 'flex', position: 'absolute', left: u * 3, bottom: u * 2 }}>

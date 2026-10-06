@@ -717,9 +717,15 @@ export function GoalPitch({
                 <path d="M39 42 L45 60 L44 70" />
               </g>
             </symbol>
-            <pattern id="pitchDots" width="5" height="5" patternUnits="userSpaceOnUse">
-              <circle cx="1.4" cy="1.4" r="1" fill="rgb(var(--p-dot))" opacity=".5" />
-            </pattern>
+            <linearGradient id="turf" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="rgb(var(--p-grass-dark))" />
+              <stop offset=".55" stopColor="rgb(var(--p-grass))" />
+              <stop offset="1" stopColor="rgb(var(--p-grass-dark))" />
+            </linearGradient>
+            <radialGradient id="turfVignette" cx=".5" cy=".42" r=".75">
+              <stop offset=".55" stopColor="rgb(var(--p-ink))" stopOpacity="0" />
+              <stop offset="1" stopColor="rgb(var(--p-ink))" stopOpacity=".18" />
+            </radialGradient>
             <marker id="truthHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
               <path d="M0 1 L9 5 L0 9 z" fill="rgb(var(--p-tekhelet))" />
             </marker>
@@ -746,13 +752,13 @@ export function GoalPitch({
           {/* behind the goal */}
           <rect x="0" y={STAND_BOTTOM + 4} width={PITCH.w} height={PITCH.goalY - STAND_BOTTOM} fill="rgb(var(--p-ink))" />
 
-          <rect width={PITCH.w} height={PITCH.h} fill="rgb(var(--p-grass))" />
-          <g fill="rgb(var(--p-grass-dark))">
+          <rect width={PITCH.w} height={PITCH.h} fill="url(#turf)" />
+          <g fill="rgb(var(--p-grass-dark))" opacity=".34">
             {[0, 80, 160, 240, 320].map((y) => (
               <rect key={y} y={y} width={PITCH.w} height="40" />
             ))}
           </g>
-          <rect width={PITCH.w} height={PITCH.h} fill="url(#pitchDots)" opacity=".18" />
+          <rect width={PITCH.w} height={PITCH.h} fill="url(#turfVignette)" />
           {night && <rect width={PITCH.w} height={PITCH.h} fill="rgb(var(--p-ink))" opacity=".2" />}
 
           <g stroke="rgb(var(--p-line))" fill="none" strokeWidth="2.4">
@@ -1066,25 +1072,26 @@ export function GoalPitch({
                     armed === man.name && !lifted ? 'animate-fx-wobble motion-reduce:animate-none' : ''
                   }`}
                 >
-                  {/* the active man carries a ring: ink under paper, so it reads on any grass */}
-                  <span
-                    data-goal-active={hot ? 'true' : undefined}
-                    className={`block ${hot ? 'outline outline-[3px] outline-offset-[3px] outline-[rgb(var(--p-line))] [box-shadow:0_0_0_6px_rgb(var(--p-ink))]' : ''}`}
-                  >
-                    {man.look && !man.opponent ? (
-                      <PlayerShirt look={man.look} eager title={man.name} className="aspect-[5/6] w-[11.5cqw] max-w-[62px]" />
-                    ) : (
-                      <AwayShirt opponent={man.opponent} />
-                    )}
-                  </span>
-                  <span className="mt-px block border-rule border-ink bg-ink p-[2px]">
-                    <span
-                      className={`block max-w-[27cqw] truncate px-1 font-body text-[10px] font-extrabold leading-[1.35] text-paper ${
-                        hot ? 'bg-red' : man.opponent ? 'bg-sign' : ''
-                      }`}
-                    >
-                      {man.name}
+                  {/* no boxes: a soft ground shadow, a thin ring under the active man, the name printed straight on the grass */}
+                  <span className="relative block">
+                    <svg viewBox="0 0 60 16" aria-hidden="true" className="absolute inset-x-[-12%] bottom-[-14%] block h-auto w-[124%]">
+                      <ellipse cx="30" cy="8" rx="22" ry="5" fill="rgb(var(--p-ink))" opacity=".3" />
+                      {hot && <ellipse data-goal-active="true" cx="30" cy="8" rx="27" ry="6.5" fill="none" stroke="rgb(var(--p-line))" strokeWidth="1.6" />}
+                    </svg>
+                    <span className="relative block [filter:drop-shadow(0_2px_1.5px_rgb(var(--p-ink)/.45))]">
+                      {man.look && !man.opponent ? (
+                        <PlayerShirt look={man.look} eager title={man.name} className="aspect-[5/6] w-[10.5cqw] max-w-[54px]" />
+                      ) : (
+                        <AwayShirt opponent={man.opponent} />
+                      )}
                     </span>
+                  </span>
+                  <span
+                    className={`mt-[3px] block max-w-[27cqw] truncate font-body text-[10px] font-extrabold leading-[1.3] [paint-order:stroke] [-webkit-text-stroke:3px_rgb(var(--p-ink))] ${
+                      hot ? 'text-paper' : 'text-paper/95'
+                    }`}
+                  >
+                    {man.name}
                   </span>
                 </span>
               </button>
@@ -1145,13 +1152,12 @@ export function GoalPitch({
 /** the other side's man, or a man with no shirt to hand: a flat printed jersey */
 function AwayShirt({ opponent }: { opponent: boolean }) {
   return (
-    <svg viewBox="0 0 50 60" className="block aspect-[5/6] w-[11.5cqw] max-w-[62px]" aria-hidden="true">
-      <path d="M17 4 L33 4 L47 13 L41 25 L37 23 L37 56 L13 56 L13 23 L9 25 L3 13 Z" fill="rgb(var(--p-ink))" transform="translate(2 2)" opacity=".35" />
+    <svg viewBox="0 0 50 60" className="block aspect-[5/6] w-[10.5cqw] max-w-[54px]" aria-hidden="true">
       <path
         d="M17 4 L33 4 L47 13 L41 25 L37 23 L37 56 L13 56 L13 23 L9 25 L3 13 Z"
         fill={opponent ? 'rgb(var(--sign))' : 'rgb(var(--p-red))'}
         stroke="rgb(var(--p-ink))"
-        strokeWidth="3"
+        strokeWidth="2"
         strokeLinejoin="round"
       />
       <path d="M20 4 Q25 11 30 4" fill="none" stroke="rgb(var(--p-line))" strokeWidth="2.4" />

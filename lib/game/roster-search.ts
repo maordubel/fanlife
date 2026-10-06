@@ -86,6 +86,11 @@ export function compactName(nameHe: string): string {
   return isSharedFamily(familyHe) ? nameCore(nameHe) : familyHe
 }
 
+/** the family name, always — the label Maor asked for on the Rumble pitch (1.10.2026) */
+export function surname(nameHe: string): string {
+  return splitName(nameHe).familyHe
+}
+
 export type Searchable = {
   /**
    * The Player Master's `p_…` id (21.9.2026) — the key a saved pick should hold from now

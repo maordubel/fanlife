@@ -2,7 +2,7 @@
  * עצירות — goals the archive holds and this gate may not PLAY, and why each one is held.
  *
  * Joining `content/manual/goals.json` to the match archive (21.9.2026) found three records
- * whose FIXTURE disagrees with the archive's own match rows. The move itself — who, what,
+ * (all three settled and released on 1.10.2026 — see below) whose FIXTURE disagrees with the archive's own match rows. The move itself — who, what,
  * from where — is not what is disputed; the match it happened in is. A rebuild is dealt
  * under a masthead that prints the opponent and the score, so a record whose opponent is
  * in dispute would put a contested fact on screen as a heading, and grade the player
@@ -28,30 +28,14 @@ export type ReplayHold = {
   against: string
 }
 
-export const REPLAY_HOLDS: Readonly<Record<string, ReplayHold>> = {
-  // Cup final, 11.5.2010. goals.json prints בית"ר ירושלים and 1:3; the Vikipoel Games table
-  // (matches.json, confidence 2) has הפועל ת"א 3:1 בני יהודה for the same date and stage,
-  // and raw Vikipoel lists ורמוט 25 and 75 and אניימה (pen.) 45 — i.e. Bnei Yehuda's night.
-  'cupfinal-2010-vermouth-25': {
-    fields: ['opponentHe', 'scoreHe'],
-    claim: 'goals.json: בית"ר ירושלים · 1:3 להפועל',
-    against: 'matches.json 2010-05-11 גמר גביע המדינה: הפועל ת"א 3:1 בני יהודה (ויקיפועל Games)',
-  },
-  // Same match, and the minute disagrees as well: 73 here, 75 in raw Vikipoel.
-  'cupfinal-2010-vermouth-73': {
-    fields: ['opponentHe', 'scoreHe', 'minute'],
-    claim: 'goals.json: בית"ר ירושלים · 1:3 להפועל · דקה 73',
-    against: 'matches.json 2010-05-11: הפועל ת"א 3:1 בני יהודה; ויקיפועל: ורמוט 75',
-  },
-  // Cup final, 15.5.2012. goals.json prints הפועל באר שבע; the archive has מכבי חיפה 2:1,
-  // and the record contradicts ITSELF — its last touch is "מול דוידוביץ'", Maccabi Haifa's
-  // keeper that season.
-  'cupfinal-2012-igiebor-90-2': {
-    fields: ['opponentHe'],
-    claim: 'goals.json: הפועל באר שבע',
-    against: 'matches.json 2012-05-15 גמר גביע המדינה: הפועל ת"א 2:1 מכבי חיפה; הרשומה עצמה נוקבת בדוידוביץ\'',
-  },
-}
+/**
+ * Empty since 1.10.2026. Maor settled the three cup-final records on that day — 2010: the
+ * opponent is בני יהודה and Vermouth's second goal is minute 73; 2012: the opponent is
+ * מכבי חיפה and Dovidovitch is right — and `goals.json` was corrected to match. A hold is a
+ * reaction to a REAL conflict (rule 65); when the evidence is settled the hold goes, and
+ * this list stays as the place the next one would be named.
+ */
+export const REPLAY_HOLDS: Readonly<Record<string, ReplayHold>> = {}
 
 export function replayHeld(goalId: string): boolean {
   return Object.prototype.hasOwnProperty.call(REPLAY_HOLDS, goalId)

@@ -3,6 +3,7 @@ import {REGISTRY} from '@/lib/master/registry'
 import {CORE_CLUB_IDS,REVIEW_CLUB_IDS,loadClub} from '@/lib/clubs/resolver'
 import {SHARED_GATES,gateAvailability} from '@/lib/clubs/gates'
 import type {ReadinessState} from '@/lib/clubs/contract'
+import {GATE_METHOD,CLUB_SOURCES} from '@/lib/club-research/plan'
 
 const MARK:Record<ReadinessState,string>={READY:'READY',PARTIAL:'PART',LOCKED:'LOCK',HIDDEN:'—'}
 /** One board: every club × every gate, and under it what each club still lacks. Read-only; computed from compiled data. */
@@ -26,10 +27,11 @@ export async function ClubGaps(){
    </table>
   </div>
   <div className="mag-gaplist">{rows.map(({id,data,diagnostics})=>{
-   const locked=SHARED_GATES.map(g=>({g,r:gateAvailability(data,g.key)})).filter(x=>!x.r.playable)
+   const locked=SHARED_GATES.map(g=>({g,r:gateAvailability(data,g.key)})).filter(x=>x.r.state!=='READY'),src=CLUB_SOURCES[id]
    return <details key={id} className="panel spaced" open={locked.length>0&&locked.length<=7}>
-    <summary><b>{data.identity.name}</b> · {data.timeline.length} eligible events · {locked.length?`${locked.length} gates need work`:'all gates open'}{diagnostics.length?` · ${diagnostics.length} compiler notes`:''}</summary>
-    {locked.length>0&&<ul>{locked.map(({g,r})=><li key={g.key}><b>{g.number} {g.name}</b> — {r.eligible}{r.target?` / ${r.target}`:''} eligible. {r.reasons[0]||g.requirement}</li>)}</ul>}
+    <summary><b>{data.identity.name}</b> · {data.timeline.length} eligible events · {locked.length?`${locked.length} gates need work`:'all gates READY'}{diagnostics.length?` · ${diagnostics.length} compiler notes`:''}</summary>
+    {locked.length>0&&<ul>{locked.map(({g,r})=>{const m=GATE_METHOD[g.key];return <li key={g.key}><b>{g.number} {g.name}</b> <span data-state={r.state}>{MARK[r.state]}</span> — {r.eligible}{r.target?` / ${r.target}`:''} eligible. {r.reasons[0]||g.requirement}<br/><small><b>How:</b> {m.what} Source pairs: {m.pairs.join(' · ')}. <i>{m.watch}</i></small></li>})}</ul>}
+    {src&&<div className="muted"><p><b>Sources that worked:</b> {src.worked.join(' · ')}</p><p><b>Refused us:</b> {src.blocked.join(' · ')}</p><ul>{src.next.map(n=><li key={n}>{n}</li>)}</ul></div>}
     {diagnostics.length>0&&<p className="muted">Top compiler notes: {[...new Set(diagnostics.map(d=>d.code))].slice(0,6).join(', ')}.</p>}
     <p><Link href={`/master/core?club=${id}`}>Evidence and diagnostics ↗</Link></p>
    </details>})}</div>

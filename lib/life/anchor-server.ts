@@ -408,6 +408,26 @@ type AnchorSpec = {
 }
 
 const ANCHOR_SPECS: Record<string, AnchorSpec> = {
+  /** 14.9.1985 — home, Hapoel Petah Tikva, 1–1 (A5). The row is in matches.json at confidence 2. */
+  '1985-hpt': {
+    sport: 'football',
+    seasonLabel: '1985/86',
+    competitionSlug: 'ליגה-לאומית',
+    playedOn: '1985-09-14',
+    year: 1985,
+    headlineHe: 'ליגה לאומית 1985/86 — הפועל תל אביב נגד הפועל פתח תקווה',
+    placeholderHe: 'משחק הבית מול הפועל פתח תקווה, 14.9.1985',
+  },
+  /** 21.12.1985 — away at Beitar Jerusalem, 3–2 to Hapoel (A6). The venue is not in the row; Maor's knowledge puts it at Ramat Gan, and the game says so as his, not as the archive's. */
+  '1985-bj': {
+    sport: 'football',
+    seasonLabel: '1985/86',
+    competitionSlug: 'ליגה-לאומית',
+    playedOn: '1985-12-21',
+    year: 1985,
+    headlineHe: 'ליגה לאומית 1985/86 — בית"ר ירושלים נגד הפועל תל אביב',
+    placeholderHe: 'משחק החוץ מול בית"ר ירושלים, 21.12.1985',
+  },
   '1993-cup': {
     sport: 'basketball',
     seasonLabel: '1992/93',

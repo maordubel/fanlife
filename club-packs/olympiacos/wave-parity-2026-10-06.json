@@ -1,0 +1,958 @@
+{
+  "schemaVersion": 1,
+  "clubId": "olympiacos",
+  "note": "Parity wave 2026-10-06: two-publisher research, automated cross-source approval (compiler rules). Records whose sources disagreed were left out (see skipped).",
+  "sources": [
+    {
+      "id": "uefa-final",
+      "title": "Olympiacos 1-0 Fiorentina (aet): El Kaabi swoops",
+      "url": "https://www.uefa.com/uefaeuropaconferenceleague/news/028d-1b01e5ec31a5-144c1f00e4f3-1000--olympiacos-1-0-fiorentina-aet-el-kaabi-swoops-to-secure-g/",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "tnt-final",
+      "title": "Olympiacos 1-0 Fiorentina (aet)",
+      "url": "https://www.tntsports.co.uk/football/uefa-europa-conference-league/2023-2024/olympiacos-1-0-fiorentina-aet-ayoub-el-kaabi-s-extra-time-winner-sees-greek-side-win-uefa-conference_sto10165162/story.shtml",
+      "publisher": "TNT Sports",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "espn-final",
+      "title": "2023-24 UEFA Europa Conference League Final commentary",
+      "url": "https://global.espn.com/soccer/commentary/_/gameId/702408",
+      "publisher": "ESPN",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-avl1",
+      "title": "Report: Olympiacos stun Aston Villa",
+      "url": "https://www.uefa.com/uefaeuropaconferenceleague/news/028d-1acb87e80493-a2c21428ae7d-1000--report-olympiacos-stun-aston-villa/",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "espn-avl1",
+      "title": "Aston Villa v Olympiakos commentary",
+      "url": "https://global.espn.com/soccer/commentary/_/gameId/702132",
+      "publisher": "ESPN",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "sky-avl1",
+      "title": "Aston Villa vs Olympiakos FC report",
+      "url": "https://www.skysports.com/football/aston-villa-vs-olympiakos-fc/report/504407",
+      "publisher": "Sky Sports",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "espn-avl2",
+      "title": "Olympiakos v Aston Villa commentary",
+      "url": "https://global.espn.com/soccer/commentary/_/gameId/702133",
+      "publisher": "ESPN",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "sky-avl2",
+      "title": "Olympiakos 2-0 Aston Villa (agg 6-2)",
+      "url": "https://www.skysports.com/football/news/12309/13130519/olympiakos-2-0-aston-villa-agg-6-2-unai-emerys-sides-conference-league-dream-ended-at-semi-final-stage",
+      "publisher": "Sky Sports",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "ahram-mun",
+      "title": "Manchester United suffer more misery after 2-0 loss to Olympiakos",
+      "url": "https://english.ahram.org.eg/News/95250.aspx",
+      "publisher": "Ahram Online",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "smole-mun",
+      "title": "Olympiacos see off Man Utd",
+      "url": "https://www.sportsmole.co.uk/football/olympiacos/champions-league/result/olympiacos-see-off-man-utd_141127.html",
+      "publisher": "Sports Mole",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wf-2020",
+      "title": "Olympiakos Piraeus fixtures 2019/2020",
+      "url": "https://www.worldfootball.net/teams/olympiakos-piraeus/2020/3/",
+      "publisher": "worldfootball.net",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wf-2021",
+      "title": "Olympiakos Piraeus fixtures 2020/2021",
+      "url": "https://www.worldfootball.net/teams/olympiakos-piraeus/2021/3/",
+      "publisher": "worldfootball.net",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wf-2024",
+      "title": "Olympiakos Piraeus fixtures 2023/2024",
+      "url": "https://www.worldfootball.net/teams/olympiakos-piraeus/2024/3/",
+      "publisher": "worldfootball.net",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wf-2025",
+      "title": "Olympiakos Piraeus fixtures 2024/2025",
+      "url": "https://www.worldfootball.net/teams/olympiakos-piraeus/2025/3/",
+      "publisher": "worldfootball.net",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-h2h-tot",
+      "title": "Olympiacos v Tottenham head-to-head",
+      "url": "https://www.uefa.com/uefachampionsleague/history/h2h/2610/1652",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-h2h-crv",
+      "title": "Olympiacos v Crvena Zvezda head-to-head",
+      "url": "https://www.uefa.com/uefachampionsleague/history/h2h/2610/50069",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-h2h-ars",
+      "title": "Olympiacos v Arsenal head-to-head",
+      "url": "https://www.uefa.com/uefaeuropaleague/history/h2h/2610/52280",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-h2h-psv",
+      "title": "Olympiacos v PSV head-to-head",
+      "url": "https://www.uefa.com/uefaeuropaleague/history/h2h/2610/50062",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-h2h-om",
+      "title": "Olympiacos v Marseille head-to-head",
+      "url": "https://www.uefa.com/uefachampionsleague/history/h2h/2610/52748",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-h2h-por",
+      "title": "Olympiacos v Porto head-to-head",
+      "url": "https://www.uefa.com/uefaeuropaleague/history/h2h/2610/50064",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-h2h-bod",
+      "title": "Olympiacos v Bodø/Glimt head-to-head",
+      "url": "https://www.uefa.com/uefaeuropaleague/history/h2h/2610/59333",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-el2324gs",
+      "title": "2023–24 UEFA Europa League group stage",
+      "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_UEFA_Europa_League_group_stage",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-el2425lp",
+      "title": "2024–25 UEFA Europa League league phase",
+      "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_UEFA_Europa_League_league_phase",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    }
+  ],
+  "archive": [
+    {
+      "id": "oly-2019-09-18-tottenham",
+      "value": {
+        "name": "Olympiacos 2–2 Tottenham Hotspur",
+        "on": "2019-09-18",
+        "precision": "day",
+        "hint": "Champions League group stage, matchday 1",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-tot",
+        "wf-2020"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 2-2 score."
+    },
+    {
+      "id": "oly-2019-11-26-tottenham",
+      "value": {
+        "name": "Tottenham Hotspur 4–2 Olympiacos",
+        "on": "2019-11-26",
+        "precision": "day",
+        "hint": "Champions League group stage, matchday 5",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-tot",
+        "wf-2020"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 4-2 score."
+    },
+    {
+      "id": "oly-2019-10-01-crvena-zvezda",
+      "value": {
+        "name": "Crvena Zvezda 3–1 Olympiacos",
+        "on": "2019-10-01",
+        "precision": "day",
+        "hint": "Champions League group stage, matchday 2",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-crv",
+        "wf-2020"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 3-1 score."
+    },
+    {
+      "id": "oly-2019-12-11-crvena-zvezda",
+      "value": {
+        "name": "Olympiacos 1–0 Crvena Zvezda",
+        "on": "2019-12-11",
+        "precision": "day",
+        "hint": "Champions League group stage, matchday 6",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-crv",
+        "wf-2020"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 1-0 score."
+    },
+    {
+      "id": "oly-2020-10-21-marseille",
+      "value": {
+        "name": "Olympiacos 1–0 Marseille",
+        "on": "2020-10-21",
+        "precision": "day",
+        "hint": "Champions League group stage, matchday 1",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-om",
+        "wf-2021"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date and 1-0 home win; Wikipedia gave a different date and was not used."
+    },
+    {
+      "id": "oly-2020-12-01-marseille",
+      "value": {
+        "name": "Marseille 2–1 Olympiacos",
+        "on": "2020-12-01",
+        "precision": "day",
+        "hint": "Champions League group stage, matchday 5",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-om",
+        "wf-2021"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 2-1 score."
+    },
+    {
+      "id": "oly-2021-02-18-psv",
+      "value": {
+        "name": "Olympiacos 4–2 PSV Eindhoven",
+        "on": "2021-02-18",
+        "precision": "day",
+        "hint": "Europa League round of 32, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-psv",
+        "wf-2021"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date and 4-2 score; aggregate winner not asserted."
+    },
+    {
+      "id": "oly-2021-02-25-psv",
+      "value": {
+        "name": "PSV Eindhoven 2–1 Olympiacos",
+        "on": "2021-02-25",
+        "precision": "day",
+        "hint": "Europa League round of 32, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-psv",
+        "wf-2021"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date and 2-1 score."
+    },
+    {
+      "id": "oly-2021-03-11-arsenal",
+      "value": {
+        "name": "Olympiacos 1–3 Arsenal",
+        "on": "2021-03-11",
+        "precision": "day",
+        "hint": "Europa League round of 16, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-ars",
+        "wf-2021"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 1-3 score."
+    },
+    {
+      "id": "oly-2021-03-18-arsenal",
+      "value": {
+        "name": "Arsenal 0–1 Olympiacos",
+        "on": "2021-03-18",
+        "precision": "day",
+        "hint": "Europa League round of 16, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-ars",
+        "wf-2021"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 0-1 score."
+    },
+    {
+      "id": "oly-2023-10-05-tsc",
+      "value": {
+        "name": "TSC Bačka Topola 2–2 Olympiacos",
+        "on": "2023-10-05",
+        "precision": "day",
+        "hint": "Europa League group stage",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-el2324gs",
+        "wf-2024"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and worldfootball agree on date, venue and 2-2 score."
+    },
+    {
+      "id": "oly-2023-10-26-west-ham",
+      "value": {
+        "name": "Olympiacos 2–1 West Ham United",
+        "on": "2023-10-26",
+        "precision": "day",
+        "hint": "Europa League group stage",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-el2324gs",
+        "wf-2024"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and worldfootball agree on date, venue and 2-1 score."
+    },
+    {
+      "id": "oly-2023-11-09-west-ham",
+      "value": {
+        "name": "West Ham United 1–0 Olympiacos",
+        "on": "2023-11-09",
+        "precision": "day",
+        "hint": "Europa League group stage",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-el2324gs",
+        "wf-2024"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and worldfootball agree on date, venue and 1-0 score."
+    },
+    {
+      "id": "oly-2023-11-30-freiburg",
+      "value": {
+        "name": "SC Freiburg 5–0 Olympiacos",
+        "on": "2023-11-30",
+        "precision": "day",
+        "hint": "Europa League group stage",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-el2324gs",
+        "wf-2024"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and worldfootball agree on date, venue and 5-0 score."
+    },
+    {
+      "id": "oly-2024-10-03-braga",
+      "value": {
+        "name": "Olympiacos 3–0 Braga",
+        "on": "2024-10-03",
+        "precision": "day",
+        "hint": "Europa League league phase",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-el2425lp",
+        "wf-2025"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and worldfootball agree on date, venue and 3-0 score."
+    },
+    {
+      "id": "oly-2024-10-24-malmo",
+      "value": {
+        "name": "Malmö FF 0–1 Olympiacos",
+        "on": "2024-10-24",
+        "precision": "day",
+        "hint": "Europa League league phase",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-el2425lp",
+        "wf-2025"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and worldfootball agree on date, venue and 0-1 score."
+    },
+    {
+      "id": "oly-2024-11-07-rangers",
+      "value": {
+        "name": "Olympiacos 1–1 Rangers",
+        "on": "2024-11-07",
+        "precision": "day",
+        "hint": "Europa League league phase",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-el2425lp",
+        "wf-2025"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and worldfootball agree on date, venue and 1-1 score."
+    },
+    {
+      "id": "oly-2025-01-23-porto",
+      "value": {
+        "name": "Porto 0–1 Olympiacos",
+        "on": "2025-01-23",
+        "precision": "day",
+        "hint": "Europa League league phase, matchday 7",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-por",
+        "wf-2025"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 0-1 score."
+    },
+    {
+      "id": "oly-2025-01-30-qarabag",
+      "value": {
+        "name": "Olympiacos 3–0 Qarabağ",
+        "on": "2025-01-30",
+        "precision": "day",
+        "hint": "Europa League league phase, final matchday",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-el2425lp",
+        "wf-2025"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and worldfootball agree on date, venue and 3-0 score."
+    },
+    {
+      "id": "oly-2025-03-06-bodo-glimt",
+      "value": {
+        "name": "Bodø/Glimt 3–0 Olympiacos",
+        "on": "2025-03-06",
+        "precision": "day",
+        "hint": "Europa League round of 16, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-bod",
+        "wf-2025"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 3-0 score."
+    },
+    {
+      "id": "oly-2025-03-13-bodo-glimt",
+      "value": {
+        "name": "Olympiacos 2–1 Bodø/Glimt",
+        "on": "2025-03-13",
+        "precision": "day",
+        "hint": "Europa League round of 16, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-h2h-bod",
+        "wf-2025"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and worldfootball agree on date, venue and 2-1 score; Olympiacos went out on aggregate."
+    }
+  ],
+  "matches": [],
+  "kits": [],
+  "goals": [
+    {
+      "id": "oly-goal-elkaabi-final-fiorentina",
+      "value": {
+        "name": "El Kaabi's extra-time winner v Fiorentina",
+        "subtitle": "29 May 2024 · Athens · 116'",
+        "on": "2024-05-29",
+        "competition": "UEFA Europa Conference League final",
+        "opponent": "Fiorentina",
+        "score": "1-0 (aet)",
+        "narrative": "Hezze whipped a cross in from the right and El Kaabi beat his marker to force it home from close range.",
+        "sequence": [
+          {
+            "actor": "Santiago Hezze",
+            "side": "club",
+            "action": "cross",
+            "zone": "E2",
+            "position": "right side, crossing into the box",
+            "note": "whipped delivery towards the near area"
+          },
+          {
+            "actor": "Ayoub El Kaabi",
+            "side": "club",
+            "action": "header",
+            "zone": "C1",
+            "position": "close range in front of goal",
+            "note": "got ahead of his defender and headed it in"
+          }
+        ]
+      },
+      "sources": [
+        "uefa-final",
+        "tnt-final",
+        "espn-final"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and TNT agree on the right-sided Hezze cross and close-range El Kaabi finish at 116; ESPN confirms header. Wikipedia said left side, so not used."
+    },
+    {
+      "id": "oly-goal-elkaabi-villa-opener",
+      "value": {
+        "name": "El Kaabi opens the scoring at Villa Park",
+        "subtitle": "2 May 2024 · Birmingham · 16'",
+        "on": "2024-05-02",
+        "competition": "UEFA Europa Conference League semi-final, first leg",
+        "opponent": "Aston Villa",
+        "score": "4-2",
+        "narrative": "Chiquinho's flick sent El Kaabi through and he finished from the middle of the box.",
+        "sequence": [
+          {
+            "actor": "Chiquinho",
+            "side": "club",
+            "action": "pass",
+            "zone": "C3",
+            "position": "central, ahead of the box (exact spot not given)",
+            "note": "flick that opened space for the striker"
+          },
+          {
+            "actor": "Ayoub El Kaabi",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "centre of the penalty area",
+            "note": "left-footed finish past Olsen"
+          }
+        ]
+      },
+      "sources": [
+        "uefa-avl1",
+        "espn-avl1"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and ESPN agree on the Chiquinho flick/assist and El Kaabi finish at 16; Sky credited Podence and was not used for this goal."
+    },
+    {
+      "id": "oly-goal-elkaabi-villa-second",
+      "value": {
+        "name": "El Kaabi's second at Villa Park",
+        "subtitle": "2 May 2024 · Birmingham · 29'",
+        "on": "2024-05-02",
+        "competition": "UEFA Europa Conference League semi-final, first leg",
+        "opponent": "Aston Villa",
+        "score": "4-2",
+        "narrative": "Podence lifted a ball through Villa's back line and El Kaabi finished low from the centre of the box.",
+        "sequence": [
+          {
+            "actor": "Daniel Podence",
+            "side": "club",
+            "action": "throughBall",
+            "zone": "C3",
+            "position": "central, beyond Villa's defensive line",
+            "note": "lofted ball over the defence for the run"
+          },
+          {
+            "actor": "Ayoub El Kaabi",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "centre of the penalty area",
+            "note": "low left-footed finish past the keeper"
+          }
+        ]
+      },
+      "sources": [
+        "uefa-avl1",
+        "espn-avl1",
+        "sky-avl1"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA, ESPN and Sky agree Podence supplied the pass and El Kaabi scored at 29."
+    },
+    {
+      "id": "oly-goal-elkaabi-villa-long-kick",
+      "value": {
+        "name": "El Kaabi runs onto Tzolakis's long ball",
+        "subtitle": "9 May 2024 · Piraeus",
+        "on": "2024-05-09",
+        "competition": "UEFA Europa Conference League semi-final, second leg",
+        "opponent": "Aston Villa",
+        "score": "2-0",
+        "narrative": "Tzolakis launched a long ball past Villa's high line and El Kaabi raced on to fire past Martinez.",
+        "sequence": [
+          {
+            "actor": "Konstantinos Tzolakis",
+            "side": "club",
+            "action": "throughBall",
+            "zone": "C4",
+            "position": "long kick landing near halfway behind Villa's line",
+            "note": "goalkeeper's long ball that broke the defence"
+          },
+          {
+            "actor": "Ayoub El Kaabi",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "centre of the penalty area",
+            "note": "emphatic finish past the returning Martinez"
+          }
+        ]
+      },
+      "sources": [
+        "espn-avl2",
+        "sky-avl2"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "ESPN and Sky agree on the long ball and the 78th-minute finish; UEFA gave 81 so the minute rests on ESPN and Sky only. Minute left out: UEFA gives 81, ESPN and Sky 78."
+    },
+    {
+      "id": "oly-goal-dominguez-man-utd",
+      "value": {
+        "name": "Dominguez's flick v Manchester United",
+        "subtitle": "25 February 2014 · Piraeus · 38'",
+        "on": "2014-02-25",
+        "competition": "UEFA Champions League round of 16, first leg",
+        "opponent": "Manchester United",
+        "score": "2-0",
+        "narrative": "A cleared corner fell to Maniatis, whose low drive from distance was flicked past De Gea by Dominguez.",
+        "sequence": [
+          {
+            "actor": "Giannis Maniatis",
+            "side": "club",
+            "action": "shot",
+            "zone": "C3",
+            "position": "about 25 metres out after a cleared corner",
+            "note": "low strike towards goal"
+          },
+          {
+            "actor": "Alejandro Dominguez",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "in front of goal",
+            "note": "deft flick diverting the shot past De Gea"
+          }
+        ]
+      },
+      "sources": [
+        "ahram-mun",
+        "smole-mun"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Ahram Online and Sports Mole agree on Maniatis's low shot flicked in by Dominguez at 38."
+    },
+    {
+      "id": "oly-goal-campbell-man-utd",
+      "value": {
+        "name": "Campbell's curler v Manchester United",
+        "subtitle": "25 February 2014 · Piraeus",
+        "on": "2014-02-25",
+        "competition": "UEFA Champions League round of 16, first leg",
+        "opponent": "Manchester United",
+        "score": "2-0",
+        "narrative": "Campbell went past Carrick on the edge of the area and bent a shot into the bottom corner.",
+        "sequence": [
+          {
+            "actor": "Joel Campbell",
+            "side": "club",
+            "action": "dribble",
+            "zone": "D3",
+            "position": "right of centre, around 25 metres out",
+            "note": "skipped past Carrick"
+          },
+          {
+            "actor": "Joel Campbell",
+            "side": "club",
+            "action": "shot",
+            "zone": "D2",
+            "position": "edge of the area",
+            "note": "bent a shot into the bottom corner"
+          }
+        ]
+      },
+      "sources": [
+        "ahram-mun",
+        "smole-mun"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-olympiacos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both agree on the dribble past Carrick and curled finish to the bottom corner; minute (50 vs 54) omitted as sources disagree."
+    }
+  ],
+  "players": [],
+  "mysteries": [],
+  "skipped": [
+    {
+      "what": "mysteries",
+      "why": "Every approved player in the context already has a mystery."
+    },
+    {
+      "what": "Hezze's 67th-minute goal at Aston Villa",
+      "why": "Assist only in ESPN; UEFA and Sky describe only a deflected shot."
+    },
+    {
+      "what": "El Kaabi's 10th-minute goal v Aston Villa (second leg)",
+      "why": "Sources disagree on assist (Quini vs Podence) and give no crossing side."
+    },
+    {
+      "what": "Panathinaikos derbies 2020-2025 and Greek Cup derbies",
+      "why": "Only one fetchable publisher (worldfootball) gave exact dates; Wikipedia/other pages did not confirm."
+    },
+    {
+      "what": "Olympiacos v Freiburg 2023, Lyon and Twente 2024",
+      "why": "Wikipedia and worldfootball disagree on score or date."
+    }
+  ]
+}

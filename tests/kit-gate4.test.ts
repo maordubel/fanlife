@@ -76,7 +76,6 @@ describe('שער 4 — the photo invariant', () => {
 describe('שער 4 — tolerant grading', () => {
   it('never offers an alternate the sources give as a distractor', () => {
     const doubles = [
-      { season: '2009/10', variant: 'home', step: 'crest', alt: 'circle-1927' },
       { season: '2019/20', variant: 'home', step: 'sponsor', alt: 'הכשרה' },
     ] as const
     for (const row of doubles) {

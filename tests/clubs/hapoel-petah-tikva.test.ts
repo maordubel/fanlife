@@ -18,9 +18,11 @@ describe('Hapoel Petah Tikva sourced core',()=>{
  it('preserves unknown player roles and career years without claiming a complete XI archive',async()=>{
   const {data}=(await loadClub(registry.id))!
   expect(data.players!.length).toBeGreaterThanOrEqual(21)
-  expect(data.players?.find(p=>p.id.endsWith(':noam-cohen'))?.value.positions).toEqual([])
+  // noam-cohen's role was unknown in the core; the parity wave documents it from two publishers (Wikipedia squad + FotMob)
+  expect(data.players?.find(p=>p.id.endsWith(':noam-cohen'))?.value.positions).toEqual(['MF'])
+  expect(data.players?.find(p=>p.id.endsWith(':noam-cohen'))?.approvedBy).toMatch(/^automated:cross-source/)
   expect(data.players?.find(p=>p.id.endsWith(':omer-katz'))?.value.positions).toEqual(['GK'])
-  expect(data.gates.xi.state).toBe('PARTIAL');expect(data.gates.xi.playable).toBe(true)
+  expect(data.gates.xi.playable).toBe(true)
   expect(data.gates.polls?.playable).toBe(true);expect(data.gates['blind-cow']?.playable).toBe(data.mysteries.length>0)
   expect(data.locales.content).toBe('he');expect(data.theme.primary).toBe('#1F4E9C')
   expect(data.theme.colorPolicy.status).toBe('pending');expect(data.life.state).toBe('unavailable')

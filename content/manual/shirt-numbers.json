@@ -3384,23 +3384,10 @@
     {
       "shirtNumber": 2,
       "seasonLabel": "2016/17",
-      "personNameHe": "יום טוב עופר",
-      "personNameLatin": "Yom-Tov Ofer",
-      "hebrewIsTransliteration": true,
-      "disputed": true,
-      "clubSlug": "הפועל-תל-אביב",
-      "sport": "football",
-      "confidence": 3,
-      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma8287004/hapoel-tel-aviv_hapoel-beer-sheva/",
-      "sourceTitle": "worldfootball · הפועל ת\"א – הפועל באר שבע 27.08.2016"
-    },
-    {
-      "shirtNumber": 2,
-      "seasonLabel": "2016/17",
       "personNameHe": "עופר ורטה",
       "personNameLatin": "Ofer Verta",
       "hebrewIsTransliteration": true,
-      "disputed": true,
+      "disputed": false,
       "clubSlug": "הפועל-תל-אביב",
       "sport": "football",
       "confidence": 3,
@@ -3413,7 +3400,7 @@
       "personNameHe": "שגיב יחזקאל",
       "personNameLatin": "Sagiv Yehezkel",
       "hebrewIsTransliteration": true,
-      "disputed": true,
+      "disputed": false,
       "clubSlug": "הפועל-תל-אביב",
       "sport": "football",
       "confidence": 3,
@@ -3421,25 +3408,12 @@
       "sourceTitle": "worldfootball · הפועל ת\"א – הפועל באר שבע 27.08.2016"
     },
     {
-      "shirtNumber": 16,
-      "seasonLabel": "2016/17",
-      "personNameHe": "ויאם עמאשה",
-      "personNameLatin": "Wiyam Amashe",
-      "hebrewIsTransliteration": true,
-      "disputed": true,
-      "clubSlug": "הפועל-תל-אביב",
-      "sport": "football",
-      "confidence": 3,
-      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma8287023/maccabi-tel-aviv_hapoel-tel-aviv/",
-      "sourceTitle": "worldfootball · מכבי ת\"א – הפועל ת\"א 25.09.2016"
-    },
-    {
       "shirtNumber": 21,
       "seasonLabel": "2018/19",
       "personNameHe": "מוטי ברשצקי",
       "personNameLatin": "Moti Barshazky",
       "hebrewIsTransliteration": true,
-      "disputed": true,
+      "disputed": false,
       "clubSlug": "הפועל-תל-אביב",
       "sport": "football",
       "confidence": 3,
@@ -3447,43 +3421,17 @@
       "sourceTitle": "worldfootball · הפועל ת\"א – הפועל חיפה 01.09.2018"
     },
     {
-      "shirtNumber": 21,
-      "seasonLabel": "2018/19",
-      "personNameHe": "קאיו",
-      "personNameLatin": "Caio",
-      "hebrewIsTransliteration": true,
-      "disputed": true,
-      "clubSlug": "הפועל-תל-אביב",
-      "sport": "football",
-      "confidence": 3,
-      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma8754810/maccabi-tel-aviv_hapoel-tel-aviv/",
-      "sourceTitle": "worldfootball · מכבי ת\"א – הפועל ת\"א 01.10.2018"
-    },
-    {
       "shirtNumber": 7,
       "seasonLabel": "2021/22",
       "personNameHe": "אושר דוידה",
       "personNameLatin": "Osher Davida",
       "hebrewIsTransliteration": true,
-      "disputed": true,
+      "disputed": false,
       "clubSlug": "הפועל-תל-אביב",
       "sport": "football",
       "confidence": 3,
       "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma9238819/hapoel-tel-aviv_hapoel-haifa/",
       "sourceTitle": "worldfootball · הפועל ת\"א – הפועל חיפה 25.09.2021"
-    },
-    {
-      "shirtNumber": 18,
-      "seasonLabel": "2021/22",
-      "personNameHe": "אושר דוידה",
-      "personNameLatin": "Osher Davida",
-      "hebrewIsTransliteration": true,
-      "disputed": true,
-      "clubSlug": "הפועל-תל-אביב",
-      "sport": "football",
-      "confidence": 3,
-      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma9238799/hapoel-tel-aviv_fc-ashdod/",
-      "sourceTitle": "worldfootball · הפועל ת\"א – אשדוד 28.08.2021"
     },
     {
       "shirtNumber": 28,
@@ -3491,25 +3439,12 @@
       "personNameHe": "יואב תומר",
       "personNameLatin": "Yoav Tomer",
       "hebrewIsTransliteration": true,
-      "disputed": true,
+      "disputed": false,
       "clubSlug": "הפועל-תל-אביב",
       "sport": "football",
       "confidence": 3,
       "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma9238819/hapoel-tel-aviv_hapoel-haifa/",
       "sourceTitle": "worldfootball · הפועל ת\"א – הפועל חיפה 25.09.2021"
-    },
-    {
-      "shirtNumber": 28,
-      "seasonLabel": "2021/22",
-      "personNameHe": "שי אייזן",
-      "personNameLatin": "Shay Ayzen",
-      "hebrewIsTransliteration": true,
-      "disputed": true,
-      "clubSlug": "הפועל-תל-אביב",
-      "sport": "football",
-      "confidence": 3,
-      "sourceUrl": "https://www.worldfootball.net/match-report/co70/ligat-haal/ma9238799/hapoel-tel-aviv_fc-ashdod/",
-      "sourceTitle": "worldfootball · הפועל ת\"א – אשדוד 28.08.2021"
     }
   ]
 }

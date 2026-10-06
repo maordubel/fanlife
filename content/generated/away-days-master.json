@@ -1,6 +1,6 @@
 {
 "schemaVersion":1,
-"generatedFrom":{"matchMasterFingerprint":"f5e6a4009e53e42439e76f1f85495ece2bc3b71fa4c5a0536a95cbef5d5fa3a5","venuesFingerprint":"9d8d1101e16bb3a7b23c3a4034c58d19d23bd1469df0586b4dfe772437f3e6e0","matchVenuesFingerprint":"942055b05a023893a056db690a5da3b7e56f95adf8ac873a1f0aab042875f6a9"},
+"generatedFrom":{"matchMasterFingerprint":"f337516f4ed83dd8ca0a7d7047c536847ea445fba516559624939eb0eba0afb6","venuesFingerprint":"9d8d1101e16bb3a7b23c3a4034c58d19d23bd1469df0586b4dfe772437f3e6e0","matchVenuesFingerprint":"942055b05a023893a056db690a5da3b7e56f95adf8ac873a1f0aab042875f6a9"},
 "origin":{"venueId":"bloomfield"},
 "counts":{"candidates":88,"visits":72,"stops":62,"countries":35,"inIsrael":52,"researchQueue":16,"byStatus":{"PARTIAL":0,"CONFLICT":0,"BLOCKED":16}},
 "venues":[

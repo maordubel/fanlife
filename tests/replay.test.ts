@@ -728,12 +728,12 @@ describe('עצירות — a goal whose fixture the archive contradicts is held 
     expect(goalHolds().map((hold) => hold.goalId).sort()).toEqual(Object.keys(REPLAY_HOLDS).sort())
   })
 
-  it('holds exactly the three conflicted cup-final goals', () => {
-    expect(Object.keys(REPLAY_HOLDS).sort()).toEqual([
-      'cupfinal-2010-vermouth-25',
-      'cupfinal-2010-vermouth-73',
-      'cupfinal-2012-igiebor-90-2',
-    ])
+  it('holds nothing since 1.10.2026 — Maor settled the three cup-final goals and goals.json was corrected', () => {
+    expect(Object.keys(REPLAY_HOLDS)).toEqual([])
+    const opponent = (goalId: string) => (ARCHIVE.find((r) => r.goalId === goalId) as GoalSourceRecord).opponentHe
+    expect(opponent('cupfinal-2010-vermouth-25')).toBe('בני יהודה')
+    expect(opponent('cupfinal-2010-vermouth-73')).toBe('בני יהודה')
+    expect(opponent('cupfinal-2012-igiebor-90-2')).toBe('מכבי חיפה')
   })
 
   it('holds a record only while the conflict is REAL — the archive names another opponent', () => {
@@ -977,9 +977,9 @@ describe('/goal?g= — a pinned goal is goal 1 of a normal run', () => {
     expect(inside).toEqual([plain[2], plain[0], plain[1]])
   })
 
-  it('ignores a held, unknown or malformed pin', () => {
+  it('ignores an unknown or malformed pin', () => {
     const plain = JSON.stringify(dealRun(4, 0))
-    for (const pin of ['cupfinal-2010-vermouth-25', 'no-such-goal', '../etc', 'A B', '', null, undefined]) {
+    for (const pin of ['no-such-goal', '../etc', 'A B', '', null, undefined]) {
       expect(pinnedGoal(pin as string | null | undefined)).toBeNull()
       expect(JSON.stringify(dealRun(4, 0, pin as string | null | undefined)), String(pin)).toBe(plain)
     }

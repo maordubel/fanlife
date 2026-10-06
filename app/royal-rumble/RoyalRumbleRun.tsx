@@ -40,10 +40,16 @@ import type { NextAction } from '@/lib/results/types'
 import { voice, voiceAction, type ResultTier } from '@/lib/voice'
 import { nextAfterRumble, submitRoyalRumble } from './actions'
 import { RoyalRumbleSlotReveal } from './RoyalRumbleSlotReveal'
+import { buildRumbleScript } from '@/lib/game/royal-rumble-presentation'
+import { RumbleFullTime } from './RumbleFullTime'
+import { RumbleHeadToHead } from './RumbleHeadToHead'
+import { RumbleMatchStage } from './RumbleMatchStage'
+import { RumbleSquadEntrance } from './RumbleSquadEntrance'
 import { RumbleLooks, RumbleShirt } from './RumbleShirt'
 import type { Wardrobe } from '@/lib/kit/playerShirt'
 
 type Phase = 'draft' | 'reveal' | 'match' | 'result'
+type RevealStep = 'your-entrance' | 'your-five' | 'opponent' | 'head-to-head'
 type EraKit = { seasonLabel: string; spec: KitSpec }
 
 const POSITION_SHORT: Record<Position, string> = {
@@ -331,120 +337,6 @@ function LineupRail({
   )
 }
 
-function FighterToken({
-  player,
-  publicPlayer,
-  ours,
-  kits,
-}: {
-  player: RoyalRumblePitchPlayer
-  publicPlayer: RoyalRumblePublicPlayer | undefined
-  ours: boolean
-  kits: EraKit[]
-}) {
-  const first = player.nameHe.split(' ')[0] ?? player.nameHe
-  return (
-    <div
-      className="absolute z-20 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 motion-reduce:transition-none"
-      style={{ insetInlineStart: `${player.x}%`, top: `${player.y}%` }}
-      title={`${player.nameHe} · ${positionHe(player.position)}`}
-    >
-      <div className={`mx-auto flex h-12 w-12 items-center justify-center border-2 sm:h-14 sm:w-14 ${ours ? 'border-red bg-transparent' : 'border-ink bg-transparent'}`}>
-        {publicPlayer ? (
-          <Shirt player={publicPlayer} kits={kits} className="h-10 w-9 sm:h-12 sm:w-11" />
-        ) : (
-          <span className="font-mono tabular-nums text-[8px] font-black text-ink">{first.slice(0, 2)}</span>
-        )}
-      </div>
-      <div className={`mt-1 max-w-[76px] truncate border-hair px-1 py-0.5 text-center font-body text-[7px] font-bold text-paper sm:text-[8px] ${ours ? 'border-red bg-red' : 'border-paper/20 bg-ink'}`}>
-        {first}
-      </div>
-    </div>
-  )
-}
-
-function MatchPitch({
-  result,
-  frameIndex,
-  ours,
-  kits,
-  bare = false,
-}: {
-  result: RoyalRumbleResult
-  frameIndex: number
-  ours: RoyalRumblePublicPlayer[]
-  kits: EraKit[]
-  /** inside the life: the pitch without the site's plate */
-  bare?: boolean
-}) {
-  const frame = result.frames[Math.min(frameIndex, result.frames.length - 1)] ?? result.frames[0]
-  if (!frame) return null
-  const ourMap = new Map(ours.map((player) => [player.slug, player]))
-  const theirMap = new Map(result.opponent.map((offer) => [offer.player.slug, offer.player]))
-
-  return (
-    <div className="relative mx-auto max-w-5xl overflow-hidden border-rule border-ink bg-ink text-paper">
-      <div className="relative border-b-rule border-paper/15 px-3 py-3 sm:px-5">
-        <div className="absolute inset-y-0 start-0 w-2 bg-red" />
-        <div className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-3 ps-2">
-          <div>
-            {!bare && <p className="font-mono tabular-nums text-[8px] font-black tracking-[0.2em] text-red" dir="ltr">THE WORKER · GATE 09</p>}
-            <p className="font-display text-[20px] leading-none sm:text-[26px]">{t('title')}</p>
-            <p className="mt-1 font-mono tabular-nums text-[7px] font-black tracking-[0.12em] text-paper/45 sm:text-[8px]" dir="ltr">
-              1–1–2–1 · 1–1–2–1
-            </p>
-          </div>
-          <div className="border-x-hair border-paper/20 px-4 text-center sm:px-8">
-            <p className="font-display text-[42px] leading-none sm:text-[56px]" dir="ltr">{frame.scoreFor}–{frame.scoreAgainst}</p>
-          </div>
-          <div className="text-end">
-            <p className="font-mono tabular-nums text-[8px] font-black tracking-[0.16em] text-paper/45" dir="ltr">MATCH CLOCK</p>
-            <p className="font-display text-[24px] leading-none text-red sm:text-[30px]" dir="ltr">{String(frame.at).padStart(2, '0')}:00</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="relative bg-sign p-2 sm:p-4">
-        <div className="absolute inset-x-0 top-0 grid h-6 grid-cols-12 opacity-45">
-          {Array.from({ length: 12 }, (_, index) => <span key={index} className={index % 2 === 0 ? 'bg-red' : 'bg-ink'} />)}
-        </div>
-        <div className="absolute inset-x-0 bottom-0 grid h-6 grid-cols-12 opacity-45">
-          {Array.from({ length: 12 }, (_, index) => <span key={index} className={index % 2 === 0 ? 'bg-ink' : 'bg-red'} />)}
-        </div>
-
-        <div className="relative mb-7 mt-7 aspect-[1.52/1] overflow-hidden border-2 border-paper/65 bg-sign sm:mb-8 sm:mt-8">
-          <div className="absolute inset-y-0 start-1/2 w-px -translate-x-1/2 bg-paper/55" />
-          <div className="absolute start-1/2 top-1/2 aspect-square h-[28%] -translate-x-1/2 -translate-y-1/2 border border-paper/55" />
-          <div className="absolute start-0 top-[28%] h-[44%] w-[13%] border-y border-e border-paper/55" />
-          <div className="absolute end-0 top-[28%] h-[44%] w-[13%] border-y border-s border-paper/55" />
-          <div className="absolute start-0 top-[40%] h-[20%] w-[4%] border-y border-e border-paper/45" />
-          <div className="absolute end-0 top-[40%] h-[20%] w-[4%] border-y border-s border-paper/45" />
-          <div className="absolute inset-x-0 top-1/2 h-px bg-paper/10" />
-
-          {frame.us.map((player) => (
-            <FighterToken key={`us-${player.slug}`} player={player} publicPlayer={ourMap.get(player.slug)} ours kits={kits} />
-          ))}
-          {frame.them.map((player) => (
-            <FighterToken key={`them-${player.slug}`} player={player} publicPlayer={theirMap.get(player.slug)} ours={false} kits={kits} />
-          ))}
-
-          <div
-            className="absolute z-30 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rotate-45 border-2 border-ink bg-paper transition-all duration-700 motion-reduce:transition-none sm:h-4 sm:w-4"
-            style={{ insetInlineStart: `${frame.ball.x}%`, top: `${frame.ball.y}%` }}
-          />
-        </div>
-
-        <div className="relative mb-7 grid grid-cols-[auto_1fr] items-center gap-3 border-rule border-paper/15 bg-ink px-3 py-3 sm:mb-8 sm:px-4">
-          <div className="flex items-center gap-2 font-mono tabular-nums text-[8px] font-black tracking-[0.18em] text-red" dir="ltr">
-            <span className="h-2 w-2 bg-red" /> LIVE
-          </div>
-          <p className="font-body text-[12px] font-bold leading-snug sm:text-[14px]" aria-live="polite">{frame.commentaryHe}</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function CompactPlayer({ offer, dark = false, kits, marked = false }: { offer: RoyalRumbleOffer; dark?: boolean; kits: EraKit[]; marked?: boolean }) {
   const { player, offeredAs } = offer
   return (
@@ -538,8 +430,7 @@ function RoyalRumbleRunInner({
   const [picks, setPicks] = useState<RoyalRumblePick[]>(() => Array.from({ length: draft.slots.length }, () => null))
   const [activeSlot, setActiveSlot] = useState(0)
   const [result, setResult] = useState<RoyalRumbleResult | null>(null)
-  const [revealCount, setRevealCount] = useState(0)
-  const [frameIndex, setFrameIndex] = useState(0)
+  const [revealStep, setRevealStep] = useState<RevealStep>('your-entrance')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
   /** the stage's one sheet for what used to be desktop-only fine print (delta 87) */
@@ -606,8 +497,9 @@ function RoyalRumbleRunInner({
       return
     }
     setResult(resolved)
+    setRevealStep('your-entrance')
     setPhase('reveal')
-    setRevealCount(0)
+    track('rumble_reveal_start', { detail: 'royal-rumble' })
     if (!embedded && !themed) {
       setHistory(
         pushHistory({
@@ -622,16 +514,6 @@ function RoyalRumbleRunInner({
       )
     }
   }
-
-  useEffect(() => {
-    if (phase !== 'reveal' || !result) return
-    if (revealCount >= result.opponent.length) {
-      const launch = window.setTimeout(() => setPhase('match'), 900)
-      return () => window.clearTimeout(launch)
-    }
-    const timer = window.setTimeout(() => setRevealCount((value) => value + 1), 520)
-    return () => window.clearTimeout(timer)
-  }, [phase, result, revealCount])
 
   // inside the life the full-time whistle ends in the room, not on a result page
   useEffect(() => {
@@ -656,77 +538,58 @@ function RoyalRumbleRunInner({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, result, embedded])
 
-  useEffect(() => {
-    if (phase !== 'match' || !result) return
-    if (frameIndex >= result.frames.length - 1) {
-      const finish = window.setTimeout(() => setPhase('result'), 1500)
-      return () => window.clearTimeout(finish)
-    }
-    const timer = window.setTimeout(() => setFrameIndex((value) => value + 1), 1150)
-    return () => window.clearTimeout(timer)
-  }, [phase, result, frameIndex])
+  // the show is derived from the server's result — never decided here (delta 99)
+  const script = useMemo(
+    () => (result ? buildRumbleScript({ result, ours: selectedPlayers, seed: activeDraft.seed }) : null),
+    [result, selectedPlayers, activeDraft.seed],
+  )
 
-  if (phase === 'reveal' && result) {
+  if (phase === 'reveal' && result && script) {
+    const ourStage = revealStep === 'your-entrance' || revealStep === 'your-five'
     return (
       <div className="relative mx-auto flex min-h-0 w-full flex-1 flex-col overflow-y-auto overscroll-contain border-rule border-ink bg-ink px-3 py-4 text-paper max-w-5xl sm:px-6 sm:py-8 md:block md:flex-none md:overflow-visible">
         <div className="absolute inset-y-0 start-0 w-2 bg-red" />
-        <div className="relative text-center">
-          <p className="font-mono tabular-nums text-[9px] font-black tracking-[0.32em] text-red" dir="ltr">OPPONENT ENTRANCE</p>
-          <h2 className="mt-2 font-display text-[38px] leading-[0.85] sm:text-[66px]">{voiceAction(9, 'opponent')}</h2>
-          <p className="mx-auto mt-4 hidden max-w-lg font-body text-[11px] text-paper/50 sm:block">{t('opponentBody')}</p>
-        </div>
-
-        <div className="relative mt-4 grid grid-cols-5 gap-1 sm:mt-8 sm:gap-2" aria-live="polite">
-          {result.opponent.map((offer, index) => {
-            const open = index < revealCount
-            const { player, offeredAs } = offer
-            return (
-              <div key={player.slug} className={`relative min-h-[176px] overflow-hidden border-rule sm:min-h-[280px] ${open ? 'border-red bg-paper text-ink' : 'border-paper/15 bg-ink text-paper'}`}>
-                {!open ? (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-ink">
-                    <span className="font-display text-[54px] leading-none text-paper/10 sm:text-[80px]" aria-hidden="true">?</span>
-                    <span className="mt-4 border-t-hair border-red pt-2 font-mono tabular-nums text-[7px] font-black tracking-[0.2em] text-red sm:text-[9px]" dir="ltr">
-                      {index === revealCount ? 'SPINNING' : 'LOCKED'}
-                    </span>
-                  </div>
-                ) : (
-                  <div className="relative flex h-full min-h-[176px] animate-[rrDrop_.32s_ease-out] flex-col p-2 motion-reduce:animate-none sm:min-h-[280px] sm:p-3">
-                    <div className="absolute inset-x-0 top-0 h-2 bg-red" />
-                    <div className="flex items-start justify-between gap-1">
-                      <span className="font-mono tabular-nums text-[7px] font-black tracking-[0.14em] text-red sm:text-[9px]" dir="ltr">ENTRY {index + 1}</span>
-                      <span className="font-display text-[22px] text-red sm:text-[30px]" dir="ltr">{money(player.price)}</span>
-                    </div>
-                    <div className="mx-auto mt-2 flex w-full justify-center border-y-hair border-ink/10 bg-transparent py-2">
-                      <Shirt player={player} kits={kits} className="h-[96px] w-[84px] sm:h-[126px] sm:w-[112px]" />
-                    </div>
-                    <div className="mt-auto pt-2">
-                      <p className="font-display text-[17px] leading-[0.9] sm:text-[25px]">{player.nameHe}</p>
-                      <p className="mt-2 font-mono tabular-nums text-[7px] font-black tracking-[0.1em] text-concrete sm:text-[9px]" dir="ltr">{POSITION_SHORT[offeredAs]}</p>
-                      <div className="mt-3"><PriceBars price={player.price} /></div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-
-        <div className="relative mt-4 text-center sm:mt-6">
-          <span className="inline-block border-x-rule border-red px-5 py-2 font-display text-[30px] text-red sm:text-[42px]" dir="ltr">VS</span>
-          <p className="mt-2 font-mono tabular-nums text-[8px] font-black tracking-[0.2em] text-paper/45" dir="ltr">
-            1–1–2–1 · 1–1–2–1
-          </p>
-          {!embedded && <p className="mt-2 font-mono tabular-nums text-[8px] font-black tracking-[0.24em] text-paper/40" dir="ltr">ROYAL RUMBLE · GATE 09</p>}
-        </div>
-        <style>{`@keyframes rrDrop{0%{opacity:0;transform:translateY(-18px) scale(.96)}100%{opacity:1;transform:none}}`}</style>
+        {ourStage ? (
+          <RumbleSquadEntrance
+            us={script.us}
+            kits={kits}
+            stage={revealStep === 'your-five' ? 'your-five' : 'your-entrance'}
+            onFive={() => setRevealStep('your-five')}
+            onDone={() => setRevealStep('opponent')}
+          />
+        ) : (
+          <RumbleHeadToHead
+            us={script.us}
+            them={script.them}
+            kits={kits}
+            stage={revealStep === 'head-to-head' ? 'head-to-head' : 'opponent'}
+            onOpponentDone={() => setRevealStep('head-to-head')}
+            onDone={() => {
+              track('rumble_reveal_complete', { detail: 'royal-rumble' })
+              track('rumble_match_start', { detail: 'royal-rumble' })
+              setPhase('match')
+            }}
+          />
+        )}
       </div>
     )
   }
 
-  if (phase === 'match' && result) {
+  if (phase === 'match' && result && script) {
     return (
       <div className="mx-auto flex min-h-0 w-full flex-1 flex-col overflow-y-auto overscroll-contain max-w-5xl py-2 md:block md:flex-none md:overflow-visible">
-        <MatchPitch result={result} frameIndex={frameIndex} ours={selectedPlayers.map((offer) => offer.player)} kits={kits} bare={Boolean(embedded)} />
+        <RumbleMatchStage
+          script={script}
+          kits={kits}
+          bare={Boolean(embedded)}
+          onStep={() => undefined}
+          onGoal={(event) => track('rumble_goal_shown', { detail: event.side, value: event.minute })}
+          onSkip={() => track('rumble_match_skip', { detail: 'royal-rumble' })}
+          onComplete={() => {
+            track('rumble_match_complete', { detail: 'royal-rumble', value: script.final.us })
+            setPhase('result')
+          }}
+        />
       </div>
     )
   }
@@ -745,18 +608,12 @@ function RoyalRumbleRunInner({
         {/* `shrink-0` on every block: a flex column lets an `overflow-hidden` child collapse to nothing on a phone */}
         <section className="relative shrink-0 overflow-hidden border-rule border-ink bg-ink px-4 py-5 text-center text-paper sm:px-8 sm:py-8">
           <div className="pointer-events-none absolute -start-8 top-1/2 -translate-y-1/2 font-display text-[190px] leading-none text-paper/5" dir="ltr" aria-hidden="true">09</div>
-          <p className="relative font-mono tabular-nums text-[9px] font-black tracking-[0.3em] text-red" dir="ltr">FULL TIME · ROYAL RUMBLE</p>
-          <p className="relative mt-3 font-display text-[92px] leading-[0.8] sm:text-[132px]" dir="ltr">{result.scoreFor}–{result.scoreAgainst}</p>
-          <div className="relative mx-auto mt-5 h-1 w-20 bg-red" />
-          <h2 className="relative mt-5 font-display text-[34px] leading-none sm:text-[46px]" data-exit="emotion">
-            {spoken.title}
-          </h2>
-          {spoken.body && <p className="relative mt-2 font-body text-[13px] text-paper/80">{spoken.body}</p>}
-          {/* the small story (§50): one line the server chose, one line the formation earned */}
-          <div className="relative mx-auto mt-4 flex max-w-lg flex-col items-center gap-1.5">
-            {result.highlight && (
-              <p className="border-hair border-red px-3 py-1.5 font-body text-[13px] font-black text-paper sm:text-[14px]">{result.highlight.textHe}</p>
-            )}
+          {script ? (
+            <RumbleFullTime script={script} title={spoken.title} body={spoken.body} />
+          ) : (
+            <h2 className="relative font-display text-[34px] leading-none sm:text-[46px]" data-exit="emotion">{spoken.title}</h2>
+          )}
+          <div className="relative mx-auto mt-3 flex max-w-lg flex-col items-center gap-1.5">
             {(won || draw) && <p className="font-body text-[11px] text-paper/70">{formationLine}</p>}
           </div>
           <p className="relative mx-auto mt-3 max-w-lg font-body text-[11px] leading-relaxed text-paper/50">{t('resultSecret')}</p>

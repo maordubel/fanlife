@@ -1981,6 +1981,65 @@ const CONVERSATIONS: Conversation[] = [
       },
     ],
   },
+  /**
+   * (Stage A finale, 30.9.2026) Two more ways in, both people and neither free.
+   *
+   * Rafi has a tray at the gate. He sees the boy alone and sends him home — and the boy
+   * does not go: a "no" here is a door that closes on ONE way, not on the day. The second
+   * time round the tray is on offer, and a boy carrying seeds through the crowd is part of
+   * the crowd. Batya, from the third floor, is the other: she has been watching the
+   * window and buys the ticket herself, and says so to nobody.
+   */
+  {
+    id: 'vendor-cart-1986',
+    nameHe: 'רפי',
+    branches: [
+      {
+        when: { flag: 'entry:sent-home' },
+        lines: [
+          { who: 'רפי', text: 'אתה עוד פה?' },
+          { who: null, text: 'הוא מסתכל על הדלפק שלו, על השורה שמתארכת, ועל הילד. משהו מתחלף לו בפנים.' },
+          { who: 'רפי', text: 'תחזיק את המגש. תצעק "גרעינים, גרעינים" — ואל תעמוד במקום. מי שמוכר, נכנס איתי מהצד.' },
+        ],
+        then: [
+          { e: 'flag', flag: 'entry:granted' },
+          { e: 'flag', flag: 'entry:vendor' },
+          { e: 'time', minutes: 12 },
+          { e: 'trait', trait: 'streetSmarts', delta: 4 },
+          { e: 'plate', art: 'gate5', titleHe: 'גרעינים, גרעינים', subHe: 'מוכר בדרך פנימה', ms: 1800 },
+          { e: 'toast', text: 'אתה נכנס', tone: 'red' },
+        ],
+      },
+      {
+        lines: [
+          { who: 'רפי', text: 'פוגי? מה אתה עושה פה לבד? זה לא מקום. לך הביתה.' },
+          { who: null, text: 'הוא לא צועק. הוא מצביע בסנטר לכיוון הרחוב, כמו שמורים מצביעים על הדלת.' },
+        ],
+        then: [{ e: 'flag', flag: 'entry:sent-home' }, { e: 'time', minutes: 4 }, { e: 'toast', text: 'שלחו אותך הביתה. אבל השער עוד פתוח.', tone: 'plain' }],
+      },
+    ],
+  },
+  {
+    id: 'batya-ticket-1986',
+    nameHe: 'בתיה',
+    branches: [
+      {
+        lines: [
+          { who: 'בתיה', text: 'ראיתי אותך מהחלון של הקומה השלישית, מסתובב פה כמו חתול בלי בית.' },
+          { who: null, text: 'היא לא מחכה לתשובה. היא כבר ליד האשנב, עם ארנק שמור מתחת לזרוע.' },
+          { who: 'בתיה', text: 'ילד אחד, ילדים. ובלי להגיד לאמא שלך שאני. קובי יודע מה זה, שיגיד לך הוא.' },
+        ],
+        then: [
+          { e: 'give', item: 'ticket-stub' },
+          { e: 'flag', flag: 'entry:granted' },
+          { e: 'flag', flag: 'entry:ticket' },
+          { e: 'flag', flag: 'entry:batya' },
+          { e: 'redheart', key: 'community', delta: 6 },
+          { e: 'toast', text: 'כרטיס. מישהי קנתה לך', tone: 'red' },
+        ],
+      },
+    ],
+  },
 ]
 
 /**

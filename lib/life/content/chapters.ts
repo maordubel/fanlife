@@ -32,7 +32,13 @@ import type { LifeState, LocationId } from '../types'
  */
 export type ChapterStage = 'A' | 'B' | 'C'
 
+import type { TransitionKey } from '@/lib/life/transitions'
+
 export type Bridge = {
+  /** a clip played over the game before the card — Maor's cuts, 30.9.2026 */
+  clip?: TransitionKey
+  /** a season documentary plays in place of the clip (A7) */
+  docu?: boolean
   /** the big word on the card — a month, a year, a place */
   titleHe: string
   subHe: string | null
@@ -106,30 +112,10 @@ export const CHAPTERS: readonly ChapterDef[] = [
     weekday: 2,
     minute: MIN(15, 40),
     start: { location: 'home', spawn: 'start' },
-    next: 'a3-hall',
-    bridge: { titleHe: '1984', subHe: 'השכונה נהיית משחק', ms: 2600 },
+    next: 'a4-shirt',
+    bridge: { clip: 'generic', titleHe: '1984', subHe: 'השכונה נהיית משחק', ms: 2600 },
     anchorKey: '1986',
     hudDateHe: 'אביב 1984',
-    playable: true,
-  },
-  {
-    id: 'a3-hall',
-    stage: 'A',
-    unit: 'A3',
-    // (delta 92, upgrade plan §3) Every life plays A3 now: it is where Efi is MET, as a new
-    // person on the street. It used to be only for a boy who had answered him in the A2
-    // alley — which made the whole basketball branch depend on pressing an unmarked NPC in
-    // the first mission. "Not now" here is still a real answer, and A4 asks once more.
-    titleHe: 'הבית האדום השני',
-    dateHe: 'סתיו 1984',
-    year: 1984,
-    weekday: 4,
-    minute: MIN(17, 0),
-    start: { location: 'street', spawn: 'fromHome' },
-    next: 'a4-shirt',
-    bridge: { titleHe: 'סתיו 1984', subHe: 'אחרי הקיר, ימינה', ms: 2600 },
-    anchorKey: '1986',
-    hudDateHe: 'סתיו 1984',
     playable: true,
   },
   {
@@ -147,15 +133,15 @@ export const CHAPTERS: readonly ChapterDef[] = [
      * after the changeover, and before 28.9.1985, which is A5. Nothing else about the day
      * moves. (Found by the language audit, 6.9.2026.)
      */
-    dateHe: 'ספטמבר 1985',
+    dateHe: 'תחילת ספטמבר 1985',
     year: 1985,
     weekday: 0,
     minute: MIN(9, 30),
     start: { location: 'bedroom', spawn: 'start' },
     next: 'a5-first',
-    bridge: { titleHe: 'ספטמבר 1985', subHe: 'פחית עם חריץ', ms: 2600 },
+    bridge: { clip: 'generic', titleHe: 'ספטמבר 1985', subHe: 'פחית עם חריץ', ms: 2600 },
     anchorKey: '1986',
-    hudDateHe: 'ספטמבר 1985',
+    hudDateHe: 'תחילת ספטמבר 1985',
     playable: true,
   },
   {
@@ -163,31 +149,31 @@ export const CHAPTERS: readonly ChapterDef[] = [
     stage: 'A',
     unit: 'A5',
     titleHe: 'בחולצה שלך',
-    dateHe: '28 בספטמבר 1985',
+    dateHe: '14 בספטמבר 1985',
     year: 1985,
     weekday: 6,
     minute: MIN(13, 0),
     start: { location: 'bedroom', spawn: 'start' },
     next: 'a6-radio',
-    bridge: { titleHe: '28.9.1985', subHe: 'שבת', ms: 2600 },
-    anchorKey: '1986',
-    hudDateHe: '28 בספטמבר 1985',
+    bridge: { clip: 'enter-stadium-a', titleHe: '14.9.1985', subHe: 'שבת · בית', ms: 2600 },
+    anchorKey: '1985-hpt',
+    hudDateHe: '14 בספטמבר 1985',
     playable: true,
   },
   {
     id: 'a6-radio',
     stage: 'A',
     unit: 'A6',
-    titleHe: 'אכזבה רגילה',
-    dateHe: 'חורף 1985/86',
-    year: 1986,
+    titleHe: 'ניצחון בגשם',
+    dateHe: '21 בדצמבר 1985',
+    year: 1985,
     weekday: 6,
     minute: MIN(14, 0),
     start: { location: 'home', spawn: 'start' },
     next: 'a7-week',
-    bridge: { titleHe: 'חורף', subHe: 'גשם על התריס', ms: 2600 },
-    anchorKey: '1986',
-    hudDateHe: 'חורף 1986',
+    bridge: { clip: 'kobi-friends-road', titleHe: 'חורף 1985', subHe: 'שבת · חוץ', ms: 2600 },
+    anchorKey: '1985-bj',
+    hudDateHe: '21 בדצמבר 1985',
     playable: true,
   },
   {
@@ -201,7 +187,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
     minute: MIN(16, 0),
     start: { location: 'street', spawn: 'fromHome' },
     next: '1986',
-    bridge: { titleHe: 'שבוע לפני', subHe: '17.5.1986', ms: 2600 },
+    bridge: { docu: true, titleHe: 'שבוע לפני', subHe: '17.5.1986', ms: 2600 },
     anchorKey: '1986',
     hudDateHe: '17 במאי 1986',
     playable: true,
@@ -217,7 +203,7 @@ export const CHAPTERS: readonly ChapterDef[] = [
     minute: MIN(12, 35),
     start: { location: 'bedroom', spawn: 'start' },
     next: '1990',
-    bridge: { titleHe: '1986', subHe: 'שבת', ms: 2400 },
+    bridge: { clip: 'take-ticket', titleHe: '1986', subHe: 'שבת', ms: 2400 },
     anchorKey: '1986',
     entry: (state) => {
       // (Director V3 §11, 24.9.2026) the house key is no longer handed over on entry to
@@ -256,9 +242,30 @@ export const CHAPTERS: readonly ChapterDef[] = [
     weekday: 1,
     minute: MIN(8, 10),
     start: { location: 'classroom', spawn: 'start' },
-    next: '1993-cup',
+    next: 'a3-hall',
     bridge: { titleHe: 'מרץ', subHe: 'אוסישקין', ms: 2400 },
     anchorKey: '1991',
+    playable: true,
+  },
+  /** (30.9.2026, Maor: A3 came too early) the Ussishkin thread moved from 1984 to Stage B, between the derby night of 1991 and the cup final of 1993 — the hall is now something the boy is old enough to walk into for the cup, not a six-year-old's errand. Same id, so every save and flag that names it still resolves. */
+  {
+    id: 'a3-hall',
+    stage: 'B',
+    unit: 'B2b',
+    // (delta 92, upgrade plan §3) Every life plays A3 now: it is where Efi is MET, as a new
+    // person on the street. It used to be only for a boy who had answered him in the A2
+    // alley — which made the whole basketball branch depend on pressing an unmarked NPC in
+    // the first mission. "Not now" here is still a real answer, and A4 asks once more.
+    titleHe: 'הבית האדום השני',
+    dateHe: 'חורף 1992',
+    year: 1992,
+    weekday: 4,
+    minute: MIN(17, 0),
+    start: { location: 'street', spawn: 'fromHome' },
+    next: '1993-cup',
+    bridge: { titleHe: 'חורף 1992', subHe: 'אחרי הקיר, ימינה', ms: 2600 },
+    anchorKey: '1993-cup',
+    hudDateHe: 'חורף 1992',
     playable: true,
   },
   {

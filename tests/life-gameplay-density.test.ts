@@ -163,7 +163,7 @@ describe('a chapter asks something of the hands, not only of the eyes', () => {
   }
 
   it('the places that decide are places: A3 finds a way in, A5 pushes the turnstile, 1986 has ways in with the body', () => {
-    expect(density('a3-hall').verbs).toEqual(new Set(['enter', 'sit', 'play']))
+    expect(density('a3-hall').verbs).toEqual(new Set(['take', 'enter', 'sit', 'play']))
     expect([...density('a5-first').verbs]).toEqual(expect.arrayContaining(['take', 'enter', 'hold']))
     expect([...density('a7-week').verbs]).toEqual(expect.arrayContaining(['take', 'enter', 'sit']))
     expect([...density('1986').verbs]).toEqual(expect.arrayContaining(['buy', 'enter']))

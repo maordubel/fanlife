@@ -1,5 +1,6 @@
 'use client'
 
+import { GateLogo } from '@/components/gates/GateLogo'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { firePickFx, firePickFxAt } from '@/components/stage/PickFx'
@@ -175,6 +176,9 @@ export function LiveRoom({
   return (
     <div className="flex min-h-0 flex-1 flex-col md:block md:flex-none" data-live="room">
       <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-3 text-center md:min-h-[420px]">
+        <div className="bc-stage flex w-full max-w-[340px] justify-center border-rule border-ink py-2">
+          <GateLogo logo="blind-cow" decorative className="w-[min(78%,240px)]" />
+        </div>
         <p className="font-latin text-[10px] font-bold tracking-[0.22em] text-red" dir="ltr">
           LIVE · READY ROOM
         </p>

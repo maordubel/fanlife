@@ -41,7 +41,7 @@
       "sourceUrl": null,
       "confidence": 3,
       "noteHe": "חולצת הבית של עונת הדאבל: Umbro, סמל עם שני כוכבים, SUBARU ופאנלים לבנים בצדדים.",
-      "spec": { "base": "red", "pattern": "side-panel", "patternInk": "cream", "sleeves": "cuff", "sleeveInk": "red", "collar": "crew", "collarInk": "cream", "sponsorHe": "SUBARU", "makerHe": "umbro", "nameset": "block-solid", "number": null, "shorts": "red", "socks": "red", "crestKey": "circle-1923" },
+      "spec": { "base": "red", "pattern": "side-panel", "patternInk": "cream", "sleeves": "cuff", "sleeveInk": "red", "collar": "crew", "collarInk": "cream", "sponsorHe": "SUBARU", "makerHe": "umbro", "nameset": "block-solid", "number": null, "shorts": "red", "socks": "red", "crestKey": "circle-1927" },
       "placements": {
         "sponsor": { "x": 29, "y": 44, "w": 42, "h": 15 },
         "maker": { "x": 30, "y": 22, "w": 11, "h": 9 },

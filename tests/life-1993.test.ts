@@ -20,7 +20,8 @@ const lines = CONVERSATIONS_1993.flatMap((c) => c.branches.flatMap((b) => b.line
 describe('B3 — הגביע אדום', () => {
   it('is playable and chained after 1991', () => {
     expect(CHAPTER['1993-cup']!.playable).toBe(true)
-    expect(CHAPTER['1991']!.next).toBe('1993-cup')
+    expect(CHAPTER['1991']!.next).toBe('a3-hall')
+    expect(CHAPTER['a3-hall']!.next).toBe('1993-cup')
     expect(eraFor('1993-cup')).toBe(ERA_1993_CUP)
   })
 

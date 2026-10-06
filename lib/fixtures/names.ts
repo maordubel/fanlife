@@ -11,3 +11,15 @@ export const norm = (s: string): string =>
 const FORM = new Set(['fc', 'fk', 'hsk', 'afc', 'sc', 'ac', 'cf', 'nk', 'sk', 'pfc', 'bc'])
 export const core = (s: string): string => norm(s).split(' ').filter(w => !FORM.has(w)).join(' ')
 export const sameClub = (a: string, b: string): boolean => core(a) !== '' && core(a) === core(b)
+
+/**
+ * Hebrew archive spellings of registry clubs — the names The Worker's match archive writes. Exact
+ * spellings only (rule 7): a club meets another under one of these or not at all.
+ */
+export const HEBREW_NAMES: Readonly<Record<string, readonly string[]>> = {
+  'Hapoel Tel Aviv': ['הפועל תל אביב', 'הפועל ת"א'],
+  'Maccabi Tel Aviv': ['מכבי תל אביב', 'מכבי ת"א'],
+  'Hapoel Petah Tikva': ['הפועל פ"ת', 'הפועל פתח תקווה', 'הפועל פתח תקוה'],
+  'Maccabi Haifa': ['מכבי חיפה'],
+}
+export const namesOf = (name: string): string[] => [name, ...(Object.entries(HEBREW_NAMES).find(([en]) => sameClub(en, name))?.[1] ?? [])]

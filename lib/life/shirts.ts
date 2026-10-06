@@ -352,6 +352,7 @@ export const shopId = (chapter: string) => `fan-shop-${chapter}`
 export const SHOP_ORDER_CONVERSATIONS: Readonly<Record<string, string>> = {
   '1990': 'gig-order-shop-1990',
   '1991': 'gig-order-shop-1991',
+  'a3-hall': 'gig-order-shop-a3-hall',
   '1993-cup': 'gig-order-shop-1993-cup',
   '1993-galil': 'gig-order-shop-1993-galil',
   '1995-sinai': 'gig-order-shop-1995-sinai',

@@ -2,6 +2,7 @@
 import {requestClub} from '@/lib/clubs/request'
 import {ratedPool,dealDraft,play,rumbleReadiness} from '@/lib/clubs/rumble'
 import {lineupMatches,buildableKits,kitViews} from '@/lib/clubs/gate-content'
+import {clubGoals,goalPool,cleanTouches,judgeGoal} from '@/lib/clubs/goal'
 /** Answers never ship to the client: tenant, gate switch, content version are checked here on every grade. */
 export async function gradeLineup(slug:string,version:string,matchId:string,picks:string[]){
  if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||typeof matchId!=='string'||matchId.length>200||!Array.isArray(picks)||picks.length!==11||picks.some(p=>typeof p!=='string'||p.length>120))return null
@@ -31,3 +32,22 @@ export async function playRumble(slug:string,version:string,seed:number,picks:st
  return r?{verdict:r.verdict,goals:r.goals,you:{power:r.you.power,cost:r.you.cost,names:r.you.cards.map(c=>c.name)},rival:{power:r.rival.power,names:r.rival.cards.map(c=>c.name)}}:null
 }
 export const rumbleDeal=async(slug:string,seed:number)=>{const r=await requestClub(slug,9);return r&&Number.isSafeInteger(seed)&&rumbleReadiness(ratedPool(r.data)).playable?dealDraft(ratedPool(r.data),seed):null}
+/** Gate 8 — the touches are graded here; the cast, verbs, order and count never left the server before this. */
+export async function gradeClubGoal(slug:string,version:string,goalId:string,seed:number,touches:unknown){
+ if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||typeof goalId!=='string'||goalId.length>200||!Number.isSafeInteger(seed))return null
+ const resolved=await requestClub(slug,8)
+ if(!resolved||resolved.data.version!==version||!resolved.data.gates.goal?.playable)return null
+ const g=clubGoals(resolved.data).find(x=>x.id===goalId)
+ if(!g)return null
+ const clean=cleanTouches(touches,goalPool(resolved.data,g,seed))
+ if(!clean)return null
+ const verdict=judgeGoal(g,clean)
+ return {...verdict,truth:g.steps.map(s=>({actor:s.actor,action:s.action,zone:s.zone,note:s.note})),narrative:g.narrative,sources:g.sources.map(id=>{const s=resolved.data.sources.find(x=>x.id===id);return {title:s?.title||id,url:s?.url||null}})}
+}
+/** Paid hint: how many touches the report describes — never who, what or where. */
+export async function clubGoalCount(slug:string,version:string,goalId:string){
+ if(typeof slug!=='string'||typeof version!=='string'||typeof goalId!=='string'||goalId.length>200)return null
+ const resolved=await requestClub(slug,8)
+ if(!resolved||resolved.data.version!==version||!resolved.data.gates.goal?.playable)return null
+ return clubGoals(resolved.data).find(x=>x.id===goalId)?.steps.length??null
+}

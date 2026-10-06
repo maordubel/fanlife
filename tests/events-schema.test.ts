@@ -135,6 +135,6 @@ describe('the taxonomy file (ONE RED WORLD §37, 28.9.2026)', () => {
   })
 
   it('ends on its check line', () => {
-    expect(readFileSync(join(ROOT, TAXONOMY), 'utf8')).toContain('event_names 36 · anon_can_read 0 · auth_triggers 0')
+    expect(readFileSync(join(ROOT, TAXONOMY), 'utf8')).toContain('event_names 42 · anon_can_read 0 · auth_triggers 0')
   })
 })

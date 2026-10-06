@@ -69,14 +69,13 @@ export function shirtConflict(season: string, number: number): string | null {
 }
 
 /**
- * The 2010 and 2012 cup-final opponents. The goal records name Beitar (2010) and Hapoel
- * Be'er Sheva (2012); the masters pass found sources that disagree and records the
- * conflict in `fact-conflicts.json` on its own branch. Until that lands and is resolved,
- * the OPPONENT of those five goals is not asked — named here so the exclusion is visible
- * rather than inferred.
+ * The 2010 and 2012 cup-final opponents — SETTLED by Maor on 1.10.2026 (2010: בני יהודה;
+ * 2012: מכבי חיפה) and `goals.json` was corrected to match, so nothing is withheld any more.
+ * The pattern and the function stay: the exclusion map in the master is where a future
+ * contested goal opponent would be named again.
  */
 export const CUP_FINAL_OPPONENT_CONFLICT = /^cupfinal-(2010|2012)-/
 
-export function goalOpponentConflict(goalId: string): string | null {
-  return CUP_FINAL_OPPONENT_CONFLICT.test(goalId) ? `conflict:goal:${goalId}:opponent` : null
+export function goalOpponentConflict(_goalId: string): string | null {
+  return null
 }
