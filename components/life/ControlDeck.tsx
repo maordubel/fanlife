@@ -180,9 +180,17 @@ function DeckPlate({ floating }: { floating: boolean }) {
   )
 }
 
-/** One moulded button: a bezel, a rim, and a top that travels when you press it. */
+/**
+ * הכפתור הרטרו — the plate is a picture, the button is a hit zone laid over its red dome.
+ *
+ * Maor, 1.10.2026: the console becomes a worn metal pad (public/life/deck/*.webp, measured
+ * for yellow on the decoded bytes — rule 61). The artwork carries the look; this draws only
+ * what the artwork cannot: the 44px+ target, the lit rim when the button can act, and the
+ * press. The caption sits under the plate, because the printed B/A is the button's NAME and
+ * the caption is what it does.
+ */
 function ArcadeButton({
-  size,
+  at,
   letter,
   caption,
   live,
@@ -191,9 +199,8 @@ function ArcadeButton({
   onDown,
   onUp,
 }: {
-  /** a CSS length, because on a full-bleed phone the console sizes off the glass, not off
-   *  a band that is zero pixels tall */
-  size: string
+  /** the dome's centre, as a fraction of the plate's width (x) */
+  at: number
   letter: string
   caption: string
   live: boolean
@@ -215,8 +222,15 @@ function ArcadeButton({
     <button
       type="button"
       data-deck={mark}
+      data-letter={letter}
       aria-label={caption}
-      style={{ width: size, height: size }}
+      style={{
+        insetInlineStart: `${at * 100}%`,
+        top: '44%',
+        width: '29%',
+        aspectRatio: '1',
+        transform: 'translate(-50%, -50%)',
+      }}
       onPointerDown={(event) => {
         event.preventDefault()
         press()
@@ -224,57 +238,51 @@ function ArcadeButton({
       onPointerUp={release}
       onPointerCancel={release}
       onPointerLeave={() => held && release()}
-      className="pointer-events-auto relative shrink-0 touch-none rounded-full"
+      className="pointer-events-auto absolute touch-none rounded-full"
     >
-      {/*
-        המסגרת שנדלקת. A button that can do something and a button that cannot used to
-        differ by the colour of the plastic alone, which on a sunlit phone is nothing. The
-        armed state now has a RIM around the bezel — the ring of light round a live button
-        on a real cabinet — so the thing the strip just named has something pointing at it.
-      */}
       <span
-        className={`absolute rounded-full border-hair transition-colors duration-plate motion-reduce:transition-none ${
-          live ? 'border-red' : 'border-transparent'
-        }`}
-        style={{ inset: -4 }}
         aria-hidden="true"
-      />
-      {/* the bezel the button is seated in */}
-      <span
-        className="absolute inset-0 rounded-full border-hair border-ink/80"
+        className="absolute inset-[8%] rounded-full transition-all duration-press motion-reduce:transition-none"
         style={{
-          background: 'linear-gradient(160deg, rgb(255 255 255 / 0.16), rgb(0 0 0 / 0.5))',
-        }}
-        aria-hidden="true"
-      />
-      {/* the moulded top */}
-      <span
-        className="absolute rounded-full transition-transform duration-press ease-stamp motion-reduce:transition-none"
-        style={{
-          inset: 5,
-          transform: held ? 'translateY(3px) scale(0.965)' : 'translateY(0) scale(1)',
-          background: live
-            ? 'radial-gradient(120% 100% at 32% 24%, rgb(255 255 255 / 0.55), rgb(var(--red)) 46%, color-mix(in srgb, rgb(var(--red)) 62%, rgb(var(--ink))) 100%)'
+          background: held ? 'rgb(0 0 0 / 0.38)' : 'transparent',
+          boxShadow: live
+            ? '0 0 0 2px rgb(var(--red)), 0 0 14px 2px rgb(var(--red) / 0.7)'
             : warn
-              ? 'radial-gradient(120% 100% at 32% 24%, rgb(255 255 255 / 0.3), rgb(70 66 62) 48%, rgb(24 22 21) 100%)'
-              : 'radial-gradient(120% 100% at 32% 24%, rgb(255 255 255 / 0.24), rgb(58 55 52) 48%, rgb(20 19 18) 100%)',
-          boxShadow: held
-            ? 'inset 0 2px 5px rgb(0 0 0 / 0.55)'
-            : '0 3px 0 rgb(0 0 0 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.22)',
+              ? '0 0 0 1px rgb(var(--sheet) / 0.35)'
+              : 'none',
         }}
-        aria-hidden="true"
       />
-      <span className="absolute inset-0 flex flex-col items-center justify-center gap-0.5 px-1">
-        <span className="max-w-full truncate font-display text-[15px] leading-none text-sheet drop-shadow">
-          <bdi>{caption}</bdi>
-        </span>
-        <span className="font-mono text-[9px] leading-none tabular-nums text-sheet/70" dir="ltr">
-          {letter}
-        </span>
-      </span>
     </button>
   )
 }
+
+/** the worn metal plate itself */
+function Plate({
+  src,
+  width,
+  children,
+}: {
+  src: string
+  width: string
+  children?: React.ReactNode
+}) {
+  return (
+    <span className="pointer-events-none relative block shrink-0" style={{ width }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        draggable={false}
+        className="block h-auto w-full select-none"
+        style={{ filter: 'drop-shadow(0 6px 8px rgb(0 0 0 / 0.55))' }}
+      />
+      {children}
+    </span>
+  )
+}
+
+const DECK_ART = '/life/deck'
 
 export function ControlDeck({
   top,
@@ -357,8 +365,7 @@ export function ControlDeck({
   // console the same phone gets upright.
   const padSize = floating ? 'clamp(96px, 30vmin, 134px)' : `${clamp(band - 34, 88, 134)}px`
   const btnSize = floating ? 'clamp(70px, 21vmin, 94px)' : `${clamp((band - 30) / 1.5, 64, 94)}px`
-  const bSize = `calc(${btnSize} * 0.78)`
-
+  
   /**
    * The thumb writes an axis, and once in a while it writes a decision.
    *
@@ -443,6 +450,8 @@ export function ControlDeck({
       <div className={shell} style={shellStyle} dir="ltr" data-life="deck" ref={findDeck}>
         <DeckPlate floating={floating} />
         <div className="pointer-events-none relative flex shrink-0 items-center gap-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`${DECK_ART}/dpad.webp`} alt="" aria-hidden="true" draggable={false} className="h-9 w-9 select-none object-contain" style={{ filter: 'drop-shadow(0 2px 3px rgb(0 0 0 / 0.5))' }} />
           <span className="flex items-center gap-1">
             <Cap>↑</Cap>
             <Cap>←</Cap>
@@ -466,7 +475,9 @@ export function ControlDeck({
           <span className={`font-body text-[11px] leading-none ${muted}`} dir="rtl">
             <bdi>{verb ? t(`life.verb.short.${verb}` as MessageKey) : t('life.deck.act')}</bdi>
           </span>
-          <span className={pulse ? 'life-teach-pulse relative inline-flex' : 'relative inline-flex'} data-teach={pulse ? '1' : undefined}>
+          <span className={pulse ? 'life-teach-pulse relative inline-flex items-center gap-1.5' : 'relative inline-flex items-center gap-1.5'} data-teach={pulse ? '1' : undefined}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`${DECK_ART}/btn-a.webp`} alt="" aria-hidden="true" draggable={false} className="h-9 w-auto select-none" style={{ filter: 'drop-shadow(0 2px 3px rgb(0 0 0 / 0.5))' }} />
             <Cap live={Boolean(verb) && !locked}>E</Cap>
           </span>
         </div>
@@ -521,17 +532,8 @@ export function ControlDeck({
             // both jobs in the accessible name, built from keys the catalogue already
             // carries — a console is not worth a new string nobody can add here
             aria-label={`${t('life.deck.stick')} · ${t('life.deck.run')}`}
-            className="pointer-events-auto relative touch-none border-hair border-ink/70"
-            style={{
-              width: padSize,
-              height: padSize,
-              // an octagonal restrictor gate, which is the shape the hardware actually is
-              clipPath:
-                'polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%)',
-              background:
-                'linear-gradient(155deg, rgb(72 70 68) 0%, rgb(44 42 41) 42%, rgb(28 27 26) 100%)',
-              boxShadow: 'inset 0 1px 0 rgb(255 255 255 / 0.14), inset 0 -3px 8px rgb(0 0 0 / 0.5)',
-            }}
+            className="pointer-events-auto relative touch-none"
+            style={{ width: padSize, height: padSize }}
             onPointerDown={(event) => {
               if (pointer.current !== null) return
               pointer.current = event.pointerId
@@ -559,85 +561,69 @@ export function ControlDeck({
             <span
               className="absolute rounded-full border-hair transition-colors duration-press motion-reduce:transition-none"
               style={{
-                inset: '7.5%',
+                inset: '-5%',
                 borderStyle: 'dashed',
-                borderColor: running ? 'rgb(var(--red))' : 'rgb(255 255 255 / 0.16)',
+                borderColor: running ? 'rgb(var(--red))' : 'rgb(255 255 255 / 0.2)',
               }}
               aria-hidden="true"
             />
-            {/* the dust washer the shaft comes through */}
-            <span
-              className="absolute rounded-full"
+            {/* the worn metal cross; it leans toward the thumb like a real rocker pad */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${DECK_ART}/dpad.webp`}
+              alt=""
+              aria-hidden="true"
+              draggable={false}
+              className="pointer-events-none absolute inset-0 h-full w-full select-none object-contain"
               style={{
-                inset: '21%',
-                background:
-                  'radial-gradient(circle at 50% 45%, rgb(14 13 13) 0%, rgb(30 29 28) 62%, rgb(58 56 54) 100%)',
-                boxShadow: 'inset 0 2px 6px rgb(0 0 0 / 0.7)',
+                transform: `perspective(260px) rotateX(${(-nub.y / 5).toFixed(2)}deg) rotateY(${(nub.x / 5).toFixed(2)}deg) translate3d(${nub.x * 0.18}px, ${nub.y * 0.18}px, 0)`,
+                filter: running
+                  ? 'drop-shadow(0 0 10px rgb(var(--red) / 0.8))'
+                  : 'drop-shadow(0 6px 8px rgb(0 0 0 / 0.55))',
+                transition: dragging ? 'none' : 'transform 120ms var(--ease-stamp)',
               }}
-              aria-hidden="true"
             />
-            <span className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-              {/* the shaft, swinging out from under the ball — the comment above this file
-                  has promised one since the console was built and there was never one */}
-              <span
-                className="absolute origin-[0_50%] rounded-full"
-                style={{
-                  width: Math.max(0, Math.hypot(nub.x, nub.y)),
-                  height: 9,
-                  transform: `rotate(${(Math.atan2(nub.y, nub.x) * 180) / Math.PI}deg)`,
-                  background:
-                    'linear-gradient(to bottom, rgb(150 148 145), rgb(96 94 92) 45%, rgb(38 37 36))',
-                  opacity: dragging ? 1 : 0,
-                }}
-              />
-              {/* the ball top, riding the shaft */}
-              <span
-                className="absolute rounded-full"
-                style={{
-                  width: '34%',
-                  height: '34%',
-                  transform: `translate3d(${nub.x}px, ${nub.y}px, 0)`,
-                  background: running
-                    ? 'radial-gradient(circle at 34% 26%, rgb(255 255 255 / 0.9) 0%, rgb(var(--red)) 26%, color-mix(in srgb, rgb(var(--red)) 74%, rgb(var(--sheet))) 100%)'
-                    : 'radial-gradient(circle at 34% 26%, rgb(255 255 255 / 0.75) 0%, rgb(var(--red)) 34%, color-mix(in srgb, rgb(var(--red)) 58%, rgb(var(--ink))) 100%)',
-                  boxShadow: '0 4px 8px rgb(0 0 0 / 0.55), inset 0 -3px 6px rgb(0 0 0 / 0.35)',
-                  transition: dragging ? 'none' : 'transform 120ms var(--ease-stamp)',
-                }}
-              />
-            </span>
           </div>
         </div>
 
         <div className="flex-1" aria-hidden="true" />
 
         {/* ---- A, and B only where a mechanic pays for it ---- */}
-        <div className="pointer-events-none relative flex shrink-0 items-end gap-2.5">
-          {second !== 'none' && (
-            <ArcadeButton
-              size={bSize}
-              mark="b"
-              letter="B"
-              caption={second === 'leave' ? t('life.deck.bLeave') : t('life.deck.bRun')}
-              live={false}
-              warn
-              onDown={() => onCancel(true)}
-              onUp={() => onCancel(false)}
-            />
-          )}
-          <span className={pulse ? 'life-teach-pulse relative inline-flex' : 'relative inline-flex'} data-teach={pulse ? '1' : undefined}>
-          <ArcadeButton
-            size={btnSize}
-            mark="a"
-            letter="A"
-            caption={verb ? t(`life.verb.short.${verb}` as MessageKey) : t('life.deck.act')}
-            // In a football match A is ALWAYS the ball — tackle, shot, pass — and there is
-            // no prompt system to name it, so it drew itself grey for ninety minutes and
-            // said the game was not listening. A console that lies about being live is the
-            // defect rule 42 exists about, one mini-game along.
-            live={second === 'run' || (Boolean(verb) && !locked)}
-            onDown={() => onAction(true)}
-            onUp={() => onAction(false)}
-          />
+        <div className="pointer-events-none relative flex shrink-0 items-end">
+          <span
+            className={pulse ? 'life-teach-pulse relative inline-flex' : 'relative inline-flex'}
+            data-teach={pulse ? '1' : undefined}
+          >
+            <Plate
+              src={`${DECK_ART}/${second !== 'none' ? 'btn-ba' : 'btn-a'}.webp`}
+              width={`calc(${btnSize} * ${second !== 'none' ? 2.5 : 1.9})`}
+            >
+              {second !== 'none' && (
+                <ArcadeButton
+                  at={0.31}
+                  mark="b"
+                  letter="B"
+                  caption={second === 'leave' ? t('life.deck.bLeave') : t('life.deck.bRun')}
+                  live={false}
+                  warn
+                  onDown={() => onCancel(true)}
+                  onUp={() => onCancel(false)}
+                />
+              )}
+              <ArcadeButton
+                at={second !== 'none' ? 0.69 : 0.5}
+                mark="a"
+                letter="A"
+                caption={verb ? t(`life.verb.short.${verb}` as MessageKey) : t('life.deck.act')}
+                // In a football match A is ALWAYS the ball — tackle, shot, pass — and there is
+                // no prompt system to name it, so it drew itself grey for ninety minutes and
+                // said the game was not listening. A console that lies about being live is the
+                // defect rule 42 exists about, one mini-game along.
+                live={second === 'run' || (Boolean(verb) && !locked)}
+                onDown={() => onAction(true)}
+                onUp={() => onAction(false)}
+              />
+            </Plate>
           </span>
         </div>
       </div>

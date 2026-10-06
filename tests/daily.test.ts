@@ -118,7 +118,7 @@ describe('Historical Daily — never an invented anniversary (366 days)', () => 
     const daily = resolveDaily('2026-05-24')
     expect(daily.theme?.playedOn).toBe('1986-05-24')
     expect(daily.theme?.yearsAgo).toBe(40)
-    expect(daily.theme?.competitionHe).toBeNull()
+    expect(daily.theme?.competitionHe).toBe('ליגה לאומית')
     expect(daily.items[0].kind).toBe('goal')
     expect(daily.items[0].href).toMatch(/^\/goal\?g=/)
   })

@@ -241,7 +241,8 @@ describe('what the research pass could not verify stays out', () => {
     // is named as having settled it — an anonymous verdict is indistinguishable
     // from the pipeline quietly picking a winner, which rule 11 forbids.
     const open = bundle.factConflicts.filter((conflict) => conflict.resolution === null)
-    expect(open.length).toBeGreaterThanOrEqual(5)
+    // 1.10.2026: Maor settled most of them; what remains open stays open until a person decides
+    expect(open.length).toBeGreaterThanOrEqual(1)
     for (const conflict of bundle.factConflicts) {
       if (conflict.resolution === null) {
         expect(conflict.resolvedBy, `${conflict.field} has a resolver but no verdict`).toBeNull()

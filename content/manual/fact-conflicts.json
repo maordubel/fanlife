@@ -15,7 +15,9 @@
    "claimB": "12 — פיפ\"א ואופ\"א, שאינן מכירות בעונות 1934/35 ו-1937/38 שננטשו",
    "sourceAUrl": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C.",
    "sourceBUrl": "https://en.wikipedia.org/wiki/List_of_Israeli_football_champions",
-   "noteHe": "worldfootball.net מונה 14 ומוסיף 1936 ו-1943 — עוד גרסה שלישית"
+   "noteHe": "worldfootball.net מונה 14 ומוסיף 1936 ו-1943 — עוד גרסה שלישית",
+   "resolution": "הוכרע: 13 אליפויות.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "match",
@@ -25,7 +27,9 @@
    "claimB": "0:0",
    "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
    "sourceBUrl": "https://golden-lotus.co.il/bloomfield/",
-   "noteHe": "ויקיפדיה ו-StadiumDB אומרים 1:1; golden-lotus אומר 0:0"
+   "noteHe": "ויקיפדיה ו-StadiumDB אומרים 1:1; golden-lotus אומר 0:0",
+   "resolution": "הוכרע: 0:0 (ויקיפועל).",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "venue",
@@ -45,7 +49,9 @@
    "claimB": "Football Kit Archive: מדלג על 2008-2015 ועל שלב המאה",
    "sourceAUrl": "https://www.htafc.co.il/היסטוריה-והישגים/",
    "sourceBUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-logo-history/",
-   "noteHe": "אתר המועדון עדיף כמקור ראשוני; הפער נשמר"
+   "noteHe": "אתר המועדון עדיף כמקור ראשוני; הפער נשמר",
+   "resolution": "הוכרע לטובת אתר המועדון: תשעה שלבים, כולל 2008–2015 (סמל 1927) ועד 2015/16 (סמל 1923).",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "membership_milestone",
@@ -55,7 +61,9 @@
    "claimB": "ואלה דיווחה על הצטרפות איינשטיין לעמותה ב-13.8.2007",
    "sourceAUrl": null,
    "sourceBUrl": "https://sports.walla.co.il/item/1153094",
-   "noteHe": "לא הוכרע; ייתכן שמדובר בשתי פעולות שונות"
+   "noteHe": "לא הוכרע; ייתכן שמדובר בשתי פעולות שונות",
+   "resolution": "הוכרע: ינואר 2010, אריק איינשטיין.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "association_event",
@@ -65,7 +73,9 @@
    "claimB": "23.7.2010 (ואלה, מהערב עצמו)",
    "sourceAUrl": null,
    "sourceBUrl": "https://sports.walla.co.il/item/1713821",
-   "noteHe": "נבחר 23.7.2010 — דיווח בן־זמן מאותו ערב"
+   "noteHe": "נבחר 23.7.2010 — דיווח בן־זמן מאותו ערב",
+   "resolution": "אושר: 23.7.2010.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "kit_supply_spell",
@@ -136,8 +146,8 @@
    "sourceAUrl": "http://www.hapoeluta.com/",
    "sourceBUrl": "http://www.hapoeluta.com/",
    "noteHe": "שני התאריכים מופיעים באותו משפט במקור ומפרידה ביניהם שנה שלמה. אחד מהם שגוי, ואין דרך לדעת איזה. מועד הבחירות נשמר null.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: המעטפות נשלחו ב-27.7.2007 ונפתחו ב-17.8.2007; \"2008\" במקור טעות.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -149,8 +159,8 @@
    "sourceAUrl": "http://www.hapoeluta.com/",
    "sourceBUrl": "http://www.hapoeluta.com/",
    "noteHe": "אותו מקור מאיית את השם בשתי צורות. נשמר כפי שברשימת המועמדים, עם השם השני כאליאס.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: אייל צטיאט.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -162,8 +172,8 @@
    "sourceAUrl": "http://www.hapoeluta.com/",
    "sourceBUrl": "http://www.hapoeluta.com/",
    "noteHe": "כנ\"ל. נשמר כפי שברשימת המועמדים.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: אסף רובנר.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -175,8 +185,8 @@
    "sourceAUrl": "http://www.hapoeluta.com/",
    "sourceBUrl": null,
    "noteHe": "מעבר המחקר הקודם תיקן 'אבי' ל'גבי'. אתר העמותה עצמו כותב 'אבי' פעמיים. הסתירה נרשמת; השם נשמר כפי שבמקור הראשוני של העמותה.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: אבי כץ.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -188,8 +198,8 @@
    "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: עופר ורטה.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -201,8 +211,8 @@
    "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: שגיב יחזקאל.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -214,8 +224,8 @@
    "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: מוטי ברשצקי.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -227,8 +237,8 @@
    "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: אושר דוידה לבש 7.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -240,8 +250,8 @@
    "sourceAUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "sourceBUrl": "https://www.worldfootball.net/teams/hapoel-tel-aviv/",
    "noteHe": "שני הרכבים רשמיים מאותה עונה חולקים על מי לבש את המספר. שתי הרשומות נשמרו; מחולל השאלות מפיל כל צמד (מספר, עונה) עם יותר ממחזיק אחד ולא בוחר ביניהם.",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: יואב תומר; שי אייזן לבש 29.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "confidence": 3
   },
   {
@@ -252,51 +262,90 @@
    "claimB": "הבריף הפנימי של שלב ב׳ (3.9.2026): ז'אנו ×3, שמואל, מאיה, אבוקסיס",
    "sourceAUrl": "https://sports.walla.co.il/item/3356277",
    "sourceBUrl": null,
-   "noteHe": "עד שיימצא מקור שני, המשחק בחיים של פוגי לא מייחס שער לשם — רק הסך: הפועל תל אביב 6 — רמת עמידר 0."
+   "noteHe": "עד שיימצא מקור שני, המשחק בחיים של פוגי לא מייחס שער לשם — רק הסך: הפועל תל אביב 6 — רמת עמידר 0.",
+   "resolution": "הוכרע: ז'אנו ×3, רפי שמואל, ישראל מאיה, יוסי אבוקסיס (6:0 על רמת עמידר).",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "match",
    "entityKey": "1962-10-13 הפועל-תל-אביב — שמשון-תל-אביב",
    "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
    "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
-   "resolution": null,
+   "resolution": "הוכרע: שמשון ת\"א.",
    "field": "opponent_club",
    "claimA": "הפועל-תל-אביב מול שמשון-תל-אביב — Bloomfield Stadium — Wikipedia (StadiumDB agrees; golden-lotus.co.il says 0-0 — see fact-conflicts)",
    "claimB": "הפועל ת\"א מול שמשון ת\"א — ויקיפועל",
-   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7)."
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "match",
    "entityKey": "1962-10-13 הפועל-תל-אביב — שמשון-תל-אביב",
    "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
    "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
-   "resolution": null,
+   "resolution": "הוכרע לטובת ויקיפועל: 0:0.",
    "field": "score",
    "claimA": "1:1 — Bloomfield Stadium — Wikipedia (StadiumDB agrees; golden-lotus.co.il says 0-0 — see fact-conflicts)",
    "claimB": "0:0 — ויקיפועל",
-   "noteHe": "1962-10-13 · הפועל-תל-אביב מול שמשון-תל-אביב. שתי התוצאות נשמרות; אין הכרעה."
+   "noteHe": "1962-10-13 · הפועל-תל-אביב מול שמשון-תל-אביב. שתי התוצאות נשמרות; אין הכרעה.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
+   "decisions": [
+    {
+     "matchId": "m_bf8d10f00107",
+     "field": "result",
+     "value": {
+      "hapoel": 0,
+      "opponent": 0
+     },
+     "winningSourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+     "winningSourceTitle": "ויקיפועל — טבלת Games",
+     "decidedOn": "2026-10-01"
+    }
+   ]
   },
   {
    "entityTable": "match",
    "entityKey": "1962-10-13 הפועל-תל-אביב — שמשון-תל-אביב",
    "sourceAUrl": "https://en.wikipedia.org/wiki/Bloomfield_Stadium",
    "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
-   "resolution": null,
+   "resolution": "הוכרע: ליגה לאומית — היא הייתה הליגה העליונה באותה עונה (הליגה הלאומית לפני ליגת העל).",
    "field": "competition",
    "claimA": "ליגת-העל — Bloomfield Stadium — Wikipedia (StadiumDB agrees; golden-lotus.co.il says 0-0 — see fact-conflicts)",
    "claimB": "ליגה לאומית — ויקיפועל",
-   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת."
+   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
+   "decisions": [
+    {
+     "matchId": "m_bf8d10f00107",
+     "field": "competition",
+     "value": "ליגה-לאומית",
+     "winningSourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+     "winningSourceTitle": "ויקיפועל — טבלת Games",
+     "decidedOn": "2026-10-01"
+    }
+   ]
   },
   {
    "entityTable": "match",
    "entityKey": "1986-05-24 הפועל-תל-אביב — מכבי-חיפה",
    "sourceAUrl": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html",
    "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
-   "resolution": null,
+   "resolution": "הוכרע: ליגה לאומית — היא הייתה הליגה העליונה באותה עונה (הליגה הלאומית לפני ליגת העל).",
    "field": "competition",
    "claimA": "ליגת-העל — ynet — הדרמה של 1986, גילי לנדאו בדקה ה-86",
    "claimB": "ליגה לאומית — ויקיפועל",
-   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת."
+   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
+   "decisions": [
+    {
+     "matchId": "m_ba6c1583a5ec",
+     "field": "competition",
+     "value": "ליגה-לאומית",
+     "winningSourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+     "winningSourceTitle": "ויקיפועל — טבלת Games",
+     "decidedOn": "2026-10-01"
+    }
+   ]
   },
   {
    "entityTable": "match",
@@ -387,44 +436,58 @@
    "entityKey": "1998-05-02 הפועל-תל-אביב — הפועל-פתח-תקווה",
    "sourceAUrl": "https://en.wikipedia.org/wiki/1997%E2%80%9398_Liga_Leumit",
    "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
-   "resolution": null,
+   "resolution": "הוכרע: הפועל פ\"ת.",
    "field": "opponent_club",
    "claimA": "הפועל-תל-אביב מול הפועל-פתח-תקווה — 1997–98 Liga Leumit — Wikipedia (final table: בית\"ר 69, הפועל ת\"א 68)",
    "claimB": "הפועל ת\"א מול הפועל פ\"ת — ויקיפועל",
-   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7)."
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "match",
    "entityKey": "1998-05-02 הפועל-תל-אביב — הפועל-פתח-תקווה",
    "sourceAUrl": "https://en.wikipedia.org/wiki/1997%E2%80%9398_Liga_Leumit",
    "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
-   "resolution": null,
+   "resolution": "הוכרע: ליגה לאומית — היא הייתה הליגה העליונה באותה עונה (הליגה הלאומית לפני ליגת העל).",
    "field": "competition",
    "claimA": "ליגת-העל — 1997–98 Liga Leumit — Wikipedia (final table: בית\"ר 69, הפועל ת\"א 68)",
    "claimB": "ליגה לאומית — ויקיפועל",
-   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת."
+   "noteHe": "שני המקורות מתעדים את אותו משחק תחת מפעל אחר. ליגה לאומית וליגת העל אינן אותה תחרות ואינן מקופלות זו לזו — הסתירה נרשמת.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
+   "decisions": [
+    {
+     "matchId": "m_3a044a315fe7",
+     "field": "competition",
+     "value": "ליגה-לאומית",
+     "winningSourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+     "winningSourceTitle": "ויקיפועל — טבלת Games",
+     "decidedOn": "2026-10-01"
+    }
+   ]
   },
   {
    "entityTable": "match",
    "entityKey": "1999-05-19 בית\"ר-ירושלים — הפועל-תל-אביב",
    "sourceAUrl": "https://wiki.red-fans.com/index.php/%D7%A2%D7%95%D7%A0%D7%AA_1998/99_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)_%D7%92%D7%91%D7%99%D7%A2_%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94_%D7%92%D7%9E%D7%A8",
    "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
-   "resolution": null,
+   "resolution": "הוכרע: בית\"ר י-ם.",
    "field": "opponent_club",
    "claimA": "בית\"ר-ירושלים מול הפועל-תל-אביב — ויקיפועל — עונת 1998/99 (כדורגל) גביע המדינה גמר (19.5.1999; סביליה 6׳, תקוה 13׳; 40,000)",
    "claimB": "הפועל ת\"א מול בית\"ר י-ם — ויקיפועל",
-   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7)."
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "match",
    "entityKey": "2000-05-17 בית\"ר-ירושלים — הפועל-תל-אביב",
    "sourceAUrl": "https://en.wikipedia.org/wiki/1999%E2%80%932000_Israel_State_Cup",
    "sourceBUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
-   "resolution": null,
+   "resolution": "הוכרע: בית\"ר י-ם.",
    "field": "opponent_club",
    "claimA": "בית\"ר-ירושלים מול הפועל-תל-אביב — 1999–2000 Israel State Cup — Wikipedia (2–2, 4–2 בפנדלים; 40,000; שופט לוי)",
    "claimB": "הפועל ת\"א מול בית\"ר י-ם — ויקיפועל",
-   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7)."
+   "noteHe": "אותו תאריך, אותו מועדון, שם יריבה שונה בין שני המקורות. לא אוחד: איחוד כינויים הוא החלטה על קובץ המועדונים, לא התאמה מקורבת בשכבת הקליטה (כלל 7).",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "match",
@@ -665,7 +728,9 @@
    "claimB": "12:00 בצהריים בדיוק — ONE, חמש שנים אחר כך (2012)",
    "sourceAUrl": "https://www.ynet.co.il/articles/0,7340,L-3429531,00.html",
    "sourceBUrl": "https://www.one.co.il/Article/203222.html",
-   "noteHe": "שני המקורות מסכימים על היום וחלוקים על השעה. הדיווח בזמן אמת נוקב במספר חריג (6:39), מה שבדרך כלל מצביע על שעה שנמדדה; הסקירה מ-2012 נוקבת בשעה עגולה. לא הוכרע — ושום סצנה במשחק לא נוקבת בשעה של ההריסה."
+   "noteHe": "שני המקורות מסכימים על היום וחלוקים על השעה. הדיווח בזמן אמת נוקב במספר חריג (6:39), מה שבדרך כלל מצביע על שעה שנמדדה; הסקירה מ-2012 נוקבת בשעה עגולה. לא הוכרע — ושום סצנה במשחק לא נוקבת בשעה של ההריסה.",
+   "resolution": "הוכרע: ההריסה החלה ב-6:39 בבוקר.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "match",
@@ -735,9 +800,19 @@
    "claimB": "בית\"ר ירושלים · 1:3 להפועל · אצטדיון רמת גן — goals.json (cupfinal-2010-vermouth-25, cupfinal-2010-vermouth-73)",
    "sourceAUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
    "sourceBUrl": "https://www.ynet.co.il/articles/0,7340,L-3887864,00.html",
-   "resolution": null,
-   "resolvedBy": null,
-   "noteHe": "גמר גביע המדינה 2010. שתי הרשומות מסכימות על התאריך, על האצטדיון ועל התוצאה — שלושה שערים להפועל ואחד ליריבה — וחלוקות על היריבה. אם goals.json צודק, שני המהלכים שלו שייכים למשחק אחר; אם הארכיון צודק, היריבה ברשומות השער שגויה. לא הוכרע כאן: שער 8 והטריוויה לא משתמשים בשני השערים עד שמאור יקרא מחדש את ynet (match-master: usable.replay=false, usable.trivia=false)."
+   "resolution": "הוכרע: היריבה בגמר גביע המדינה 2010 היא בני יהודה; רשומות goals.json תוקנו.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
+   "noteHe": "גמר גביע המדינה 2010. שתי הרשומות מסכימות על התאריך, על האצטדיון ועל התוצאה — שלושה שערים להפועל ואחד ליריבה — וחלוקות על היריבה. אם goals.json צודק, שני המהלכים שלו שייכים למשחק אחר; אם הארכיון צודק, היריבה ברשומות השער שגויה. לא הוכרע כאן: שער 8 והטריוויה לא משתמשים בשני השערים עד שמאור יקרא מחדש את ynet (match-master: usable.replay=false, usable.trivia=false).",
+   "decisions": [
+    {
+     "matchId": "m_a166e1b1a395",
+     "field": "opponent",
+     "value": "בני-יהודה",
+     "winningSourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+     "winningSourceTitle": "ויקיפועל — טבלת Games",
+     "decidedOn": "2026-10-01"
+    }
+   ]
   },
   {
    "entityTable": "match",
@@ -747,9 +822,19 @@
    "claimB": "הפועל באר שבע · שער הניצחון של איגייבור בדקה 90+2 — goals.json (cupfinal-2012-igiebor-90-2)",
    "sourceAUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
    "sourceBUrl": "https://www.one.co.il/Article/199799.html",
-   "resolution": null,
-   "resolvedBy": null,
-   "noteHe": "גמר גביע המדינה 2012. הדקה והכובש מסכימים (איגייבור, 92 = 90+2); היריבה לא. רשומת השער עצמה נוקבת בשוער 'דוידוביץ'' שמולו נכבש השער — פרט לבדיקה מול ONE, לא הכרעה. שער 8 והטריוויה לא משתמשים בשער עד שמאור יקרא מחדש את המקור."
+   "resolution": "הוכרע: מכבי חיפה; השוער דוידוביץ' נכון. רשומת goals.json תוקנה.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
+   "noteHe": "גמר גביע המדינה 2012. הדקה והכובש מסכימים (איגייבור, 92 = 90+2); היריבה לא. רשומת השער עצמה נוקבת בשוער 'דוידוביץ'' שמולו נכבש השער — פרט לבדיקה מול ONE, לא הכרעה. שער 8 והטריוויה לא משתמשים בשער עד שמאור יקרא מחדש את המקור.",
+   "decisions": [
+    {
+     "matchId": "m_8912b7e638cb",
+     "field": "opponent",
+     "value": "מכבי-חיפה",
+     "winningSourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+     "winningSourceTitle": "ויקיפועל — טבלת Games",
+     "decidedOn": "2026-10-01"
+    }
+   ]
   },
   {
    "entityTable": "match",
@@ -759,9 +844,19 @@
    "claimB": "25.1.2026 · בלומפילד · 1:2 להפועל · 'אלטמן' בדקה 90+2 — goals.json (derby-2026-altman-90-2)",
    "sourceAUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
    "sourceBUrl": "https://sports.walla.co.il/item/3811685",
-   "resolution": null,
-   "resolvedBy": null,
-   "noteHe": "אותו דרבי — אותה תוצאה, אותו אצטדיון, אותה דקת שער — ותאריך שנבדל ביום. בגלל התאריך הצירוף לפי יום לא מצא את המשחק ('אין שורה'); ה-match-master מקשר את השער למשחק דרך היריבה והיום הסמוך ומסמן את הקישור כ-date±1. רשומת השער כותבת שם משפחה בלבד ('אלטמן') — הכובש לא מזוהה אוטומטית (כלל 64 §5), והמועמד מופיע ב-match-master כהצעה בלבד."
+   "resolution": "הוכרע: 26.1.2026. רשומת goals.json תוקנה.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
+   "noteHe": "אותו דרבי — אותה תוצאה, אותו אצטדיון, אותה דקת שער — ותאריך שנבדל ביום. בגלל התאריך הצירוף לפי יום לא מצא את המשחק ('אין שורה'); ה-match-master מקשר את השער למשחק דרך היריבה והיום הסמוך ומסמן את הקישור כ-date±1. רשומת השער כותבת שם משפחה בלבד ('אלטמן') — הכובש לא מזוהה אוטומטית (כלל 64 §5), והמועמד מופיע ב-match-master כהצעה בלבד.",
+   "decisions": [
+    {
+     "matchId": "m_14050c4f1ef3",
+     "field": "playedOn",
+     "value": "2026-01-26",
+     "winningSourceUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
+     "winningSourceTitle": "ויקיפועל — טבלת Games",
+     "decidedOn": "2026-10-01"
+    }
+   ]
   },
   {
    "entityTable": "goal",
@@ -771,8 +866,8 @@
    "claimB": "88 — goals.json, ynet",
    "sourceAUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
    "sourceBUrl": "https://www.ynet.co.il/articles/0,7340,L-1216728,00.html",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: דקה 89 (פנדל). רשומת goals.json תוקנה.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "noteHe": "דקה אחת בין שתי קריאות. המהלך עצמו אינו במחלוקת; הדקה אינה נשאלת בטריוויה עד שתוכרע (match-master: usable.trivia=false)."
   },
   {
@@ -783,8 +878,8 @@
    "claimB": "73 — goals.json, ynet",
    "sourceAUrl": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games",
    "sourceBUrl": "https://www.ynet.co.il/articles/0,7340,L-3887864,00.html",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: דקה 73.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "noteHe": "נוסף על המחלוקת על היריבה באותו גמר (2010-05-11 … opponent_club). הדקה אינה נשאלת."
   },
   {
@@ -795,8 +890,8 @@
    "claimB": "31 — goals.json (ynet) וטבלת Games של ויקיפועל (match-scorers.json)",
    "sourceAUrl": "https://www.uefa.com/uefaeuropaleague/news/0183-0eaa43ba228a-d6fe8d77e124-1000--clescenko-stuns-milan/",
    "sourceBUrl": "https://www.ynet.co.il/articles/0,7340,L-1765670,00.html",
-   "resolution": null,
-   "resolvedBy": null,
+   "resolution": "הוכרע: דקה 31.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026",
    "noteHe": "דקה אחת בין אופ\"א לשני מקורות עבריים. המהלך אינו במחלוקת; הדקה אינה נשאלת."
   },
   {
@@ -807,8 +902,9 @@
    "claimB": "circle-1927 — ציר הסמלים: 'צבעי המועדון' 2008–2015 (content/manual/crest-versions.json)",
    "sourceAUrl": null,
    "sourceBUrl": null,
-   "resolution": null,
-   "noteHe": "שני המקורות בביטחון 3. ה-Kit Master שומר את שניהם: הערך הוא של המסירה (ספציפית לחולצה), והחלופה של ציר הזמן — ושער 4 מקבל את שתיהן בציון (ניקוד סובלני), ולא מציע את החלופה כמסיח."
+   "resolution": "הוכרע: circle-1927 (סמל 2008–2015); 1923 הוחזר ב-2015/16.",
+   "noteHe": "שני המקורות בביטחון 3. ה-Kit Master שומר את שניהם: הערך הוא של המסירה (ספציפית לחולצה), והחלופה של ציר הזמן — ושער 4 מקבל את שתיהן בציון (ניקוד סובלני), ולא מציע את החלופה כמסיח.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "crest_version",
@@ -818,7 +914,9 @@
    "claimB": "הסמל של 1997–2000 כבר נושא \"כתר KETER\" — הסמל עצמו, ידע אישי — צוות The Worker, 22.9.2026",
    "sourceAUrl": "https://www.htafc.co.il/היסטוריה-והישגים/",
    "sourceBUrl": null,
-   "noteHe": "הסמל הוא ראיה ישירה; הדף של המועדון הוא סיכום. לא הוכרע — מחכה לתאריך המדויק שבו כתר נכנס לסמל."
+   "noteHe": "הסמל הוא ראיה ישירה; הדף של המועדון הוא סיכום. לא הוכרע — מחכה לתאריך המדויק שבו כתר נכנס לסמל.",
+   "resolution": "הוכרע: הסמל של 1997 כבר נושא כתר (צהוב); ב-2001 הצהוב הוחלף באדום.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   },
   {
    "entityTable": "match",
@@ -971,6 +1069,18 @@
      "decidedOn": "2026-09-25"
     }
    ]
+  },
+  {
+   "entityTable": "match",
+   "entityKey": "1983-06-01 הפועל-תל-אביב — מכבי-תל-אביב",
+   "sourceAUrl": "https://www.ynet.co.il/articles/0,7340,L-219628,00.html",
+   "sourceBUrl": "https://he.wikipedia.org/wiki/גמר_גביע_המדינה_בכדורגל_1983",
+   "resolution": "הוכרע: שער היד של לנדאו בדקה 67. הקהל: 30,000 (ויקיפדיה).",
+   "field": "goal_minute",
+   "claimA": "שער היד של לנדאו — דקה 67 (ynet; ויקיפדיה העברית)",
+   "claimB": "דקה 66 (כתבה נוספת של ynet)",
+   "noteHe": "מקורות חלוקים בדקה אחת. הארכיון נושא 67; שום שורה במשחק לא מדפיסה דקה. הקהל: 30,000 בוויקיפדיה מול 50,000 ב-mako — לא נרשם בארכיון.",
+   "resolvedBy": "מאור הראל — הכרעה בצ'אט, 1.10.2026"
   }
  ]
 }

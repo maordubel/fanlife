@@ -1,3 +1,5 @@
+import { t } from '@/lib/i18n'
+import { TRANSITIONS } from '@/lib/life/transitions'
 import Phaser from 'phaser'
 
 import { eligibleFor, offerConversationFor, offeredFlag } from '../../routes'
@@ -298,6 +300,8 @@ export class WorldScene extends Phaser.Scene {
   private goalMinute: number | null = null
   /** the one line before the goal, said once — its OWN latch, never `flagCount` */
   private saidTense = false
+  private matchTicks = 0
+  private matchLines = 0
   private lastMatchLabel = ''
   private streamers: Phaser.GameObjects.Rectangle[] = []
 
@@ -4324,6 +4328,8 @@ export class WorldScene extends Phaser.Scene {
    */
   private watchMatch() {
     this.matchPhase = 'watching'
+    this.matchTicks = 0
+    this.matchLines = 0
     this.goalMinute = decidingMinute(this.anchor)
     this.timeScale = 26
     this.ctx.bus.emit('toast', { text: 'המשחק מתחיל.', tone: 'red' })
@@ -4338,6 +4344,7 @@ export class WorldScene extends Phaser.Scene {
         const clock = matchClock(this.ctx.engine.state.minute, KICKOFF)
         this.timeScale = this.goalMinute === null ? 26 : matchPace(clock.minute, this.goalMinute)
         this.pushMatch()
+        this.matchLife()
 
         // …the six minutes before it. One line, once, and then nothing until the ball.
         if (this.goalMinute !== null && clock.minute >= this.goalMinute - 5 && !this.saidTense) {
@@ -4356,6 +4363,22 @@ export class WorldScene extends Phaser.Scene {
         }
       },
     })
+  }
+
+  /**
+   * (30.9.2026, Maor: waiting in the ground was boring) the terrace lives while the clock
+   * runs: every few real seconds the crowd swells, a small thing happens near the boy, and
+   * the picture leans a hair. No score, no minute, no fact — the archive keeps those.
+   */
+  private matchLife() {
+    this.matchTicks += 1
+    if (this.matchTicks % 30 !== 0) return
+    const lines = [t('life98a.match.seeds'), t('life98a.match.chant'), t('life98a.match.radio'), t('life98a.match.flag'), t('life98a.match.bench'), t('life98a.match.shoulders')]
+    const text = lines[this.matchLines % lines.length]
+    this.matchLines += 1
+    if (text && !this.saidTense) this.ctx.bus.emit('toast', { text, tone: 'plain' })
+    this.ctx.bus.emit('sound', { kind: 'sample', key: this.matchLines % 3 === 0 ? 'crowd-claps' : 'crowd-swell', level: 0.4 })
+    this.cameras.main.shake(500, 0.0018)
   }
 
   /**
@@ -4517,8 +4540,18 @@ export class WorldScene extends Phaser.Scene {
     this.ctx.bus.emit('controls', { visible: true })
     this.pushMatch()
     this.refresh()
-    if (showCard) this.ctx.bus.emit('anchor', { anchor: this.anchor, showing: true })
     this.cameras.main.shake(700, 0.004)
+    if (!showCard) return
+    // a mission that ends is felt before it is filed: three whistles, the terrace on its
+    // feet, paper in the air, a breath — and only then the card that says what it was
+    this.ctx.bus.emit('sound', { kind: 'whistle', blasts: 3 })
+    this.time.delayedCall(700, () => {
+      this.ctx.bus.emit('sound', { kind: 'roar', big: 1.2 })
+      this.startCarnival()
+      this.ctx.bus.emit('toast', { text: t('life98a.match.whistle'), tone: 'red' })
+    })
+    this.time.delayedCall(3800, () => this.ctx.bus.emit('toast', { text: t('life98a.match.grown'), tone: 'plain' }))
+    this.time.delayedCall(5600, () => this.ctx.bus.emit('anchor', { anchor: this.anchor, showing: true }))
   }
 
   /** The scoreboard, pushed only when it changes — a strip that rerenders is a strip. */
@@ -5766,15 +5799,18 @@ export class WorldScene extends Phaser.Scene {
     this.paused = true
     this.ctx.bus.emit('controls', { visible: false })
     this.ctx.bus.emit('prompt', null)
+    const clipMs = next.bridge.clip ? TRANSITIONS[next.bridge.clip].ms : 0
     this.ctx.bus.emit('card', {
+      clip: next.bridge.clip,
+      docu: next.bridge.docu,
       titleHe: next.bridge.titleHe,
       subHe: next.bridge.subHe,
-      ms: next.bridge.ms,
+      ms: next.bridge.ms + clipMs,
       art: plateFor(next.id),
       fromYear: state.year,
       nameHe: next.titleHe,
     })
-    this.time.delayedCall(next.bridge.ms + 100, () => {
+    this.time.delayedCall(next.bridge.ms + clipMs + 100, () => {
       this.ctx.engine.dispatch(
         { t: 'year.entered', year: next.year, weekday: next.weekday, minute: next.minute },
         { t: 'chapter.entered', chapter: next.id },

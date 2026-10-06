@@ -67,12 +67,6 @@ export const decadeOf = (year: number) => (year >= 2000 ? '00s' : year >= 1990 ?
  * than a one-character edit. Anything else — absent, corrupt, a value from a build that
  * does not exist yet — falls to the default, and the default is now SHOWN.
  */
-const DECK_PREF = 'the-worker:life:deck'
-const deckFromPref = (raw: string | null): boolean => {
-  if (raw === 'off' || raw === '1') return false
-  if (raw === 'on' || raw === '0') return true
-  return true
-}
 
 export function useLifeRuntime({
   holder,
@@ -211,7 +205,6 @@ export function useLifeRuntime({
    * So the hardware is on the glass and the toggle stays for whoever wants the painting
    * clean — the opposite way round from where it was, which is the only part that changed.
    */
-  const [deck, setDeck] = useState(true)
   /**
    * הפתיח — five pictures before the game, once per sitting.
    *
@@ -247,11 +240,6 @@ export function useLifeRuntime({
       typeof window !== 'undefined' &&
         (window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window),
     )
-    try {
-      setDeck(deckFromPref(window.localStorage.getItem(DECK_PREF)))
-    } catch {
-      /* the deck simply shows */
-    }
 
     // --- the sound -------------------------------------------------------------------
     const sfx = new LifeAudio()
@@ -605,14 +593,6 @@ export function useLifeRuntime({
     if (p < 0.1) tunnelHeard.current = false
   }, [audio])
 
-  const toggleDeck = useCallback((on: boolean) => {
-    setDeck(on)
-    try {
-      window.localStorage.setItem(DECK_PREF, on ? 'on' : 'off')
-    } catch {
-      /* it simply does not persist */
-    }
-  }, [])
   return {
     ready,
     hud,
@@ -704,8 +684,6 @@ export function useLifeRuntime({
     setMapState,
     reveal,
     setReveal,
-    deck,
-    toggleDeck,
     opening,
     closeOpening,
   }

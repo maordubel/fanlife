@@ -50,6 +50,13 @@ export const EVENT_NAMES = [
   'daily_open',
   'daily_item_complete',
   'daily_complete',
+  // Royal Rumble match experience (30.9.2026)
+  'rumble_reveal_start',
+  'rumble_reveal_complete',
+  'rumble_match_start',
+  'rumble_match_skip',
+  'rumble_goal_shown',
+  'rumble_match_complete',
 ] as const
 
 export type EventName = (typeof EVENT_NAMES)[number]

@@ -38,11 +38,12 @@ alter table public.worker_event
             'entity_follow', 'life_chapter_complete', 'share_open', 'share_created',
             'share_joined', 'challenge_created', 'challenge_joined', 'challenge_complete',
             'stand_created', 'stand_joined', 'stand_daily_complete', 'daily_open',
-            'daily_item_complete', 'daily_complete'));
+            'daily_item_complete', 'daily_complete',
+            'rumble_reveal_start', 'rumble_reveal_complete', 'rumble_match_start', 'rumble_match_skip', 'rumble_goal_shown', 'rumble_match_complete'));
 
 -- =====================================================================
 -- בדיקה — התוצאה הנכונה:
---    event_names 36 · anon_can_read 0 · auth_triggers 0
+--    event_names 42 · anon_can_read 0 · auth_triggers 0
 -- =====================================================================
 select
   (select count(*) from regexp_matches(pg_get_constraintdef(c.oid), '''[a-z_]+''', 'g')) as event_names,

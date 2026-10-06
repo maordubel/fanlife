@@ -494,7 +494,8 @@ export function activityChapters(def: ActivityDef): string[] {
   const from = order.indexOf(def.from)
   const until = order.indexOf(def.until ?? order[order.length - 1] ?? def.from)
   if (from < 0 || until < 0) return []
-  return order.slice(from, until + 1)
+  // the ticket office has no door in the Ussishkin night (a3-hall, winter 1992)
+  return order.slice(from, until + 1).filter((id) => !(id === 'a3-hall' && def.where === 'ticket-office'))
 }
 
 export function activityIn(def: ActivityDef, chapter: string): boolean {
@@ -514,7 +515,8 @@ export function chapterYear(chapter: string, fallback = 1986): number {
 
 /** the tested 1984–86 economy, which none of this may move */
 export function isStageA(chapter: string): boolean {
-  return chapter === '1986' || chapter === 'prologue' || /^a\d/.test(chapter)
+  // a3-hall moved to Stage B (winter 1992) — it plays under the nineties economy
+  return chapter === '1986' || chapter === 'prologue' || (/^a\d/.test(chapter) && chapter !== 'a3-hall')
 }
 
 /* ------------------------------------------------------------------ flags */

@@ -74,6 +74,7 @@ const SHIPPED = [
   'public/life/artefacts',
   'public/life/docs',
   'public/life/film',
+  'public/life/transitions',
   'public/life/opening',
   'public/life/sfx',
   // 7.9.2026 — תבניות השיתוף, שני קבצים שמאור צייר לפי הבריף
@@ -112,7 +113,7 @@ const TREATMENT = new Set([
   'key-green', 'key-flat', 'key-checker', 'fade',
   // 21.9.2026 — כלל 61: WebP מאבד-מידע שהאיכות שלו נבחרה במדידה — הצהוב נספר על הפענוח
   // של הבייטים שנשמרו, לא על המקור. שונה מ-`encode-webp` של הארכיון, שהוא קידוד אחד קבוע.
-  'lossy-webp-measured',
+  'lossy-webp-measured', 'de-yellow-frame-level', 'lossless-vp9', 'downscale-270x480',
   'cut', 'loop-crossfade', 'normalise', 'encode-ogg-m4a', 'encode-mp4',
   // 17.9.2026 — סרט הפתיחה. `encode-webm` הוא הקידוד השני שכלל 30 דורש, ו-`poster-frame`
   // הוא פריים שנשלף מהסרט והפך לתמונה — שניהם פעולות פיזיות על קובץ, ולכן הם טוקנים

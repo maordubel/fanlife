@@ -422,6 +422,7 @@ export const CONVERSATIONS_A1: Conversation[] = [
         ],
         then: [
           { e: 'sfx', key: 'crowd-real-goal', level: 0.8 },
+          { e: 'plate', art: 'cup83', titleHe: 'גול', subHe: 'הכול קופץ', ms: 1800 },
           { e: 'redheart', key: 'footballLove', delta: 6 },
           { e: 'remember', who: 'kobi', eventId: 'shoulders-1983', significance: 'major' },
           { e: 'goto', node: 'a1-kobi' },
@@ -564,7 +565,7 @@ export const CONVERSATIONS_A1: Conversation[] = [
 ]
 
 /** joining the two-on-two — the same act whatever is in his hands */
-const A2_PLAY: ChoiceDef['then'] = [{ e: 'flag', flag: 'a2:played' }, { e: 'rel', who: 'ofir', axis: 'bond', delta: 4 }, { e: 'remember', who: 'ofir', eventId: 'first-team-1984', significance: 'major' }, { e: 'wellbeing', key: 'happiness', delta: 6 }, { e: 'sfx', key: 'ball-kick', level: 0.7 }, { e: 'minigame', id: 'football' }]
+const A2_PLAY: ChoiceDef['then'] = [{ e: 'plate', art: 'alley', titleHe: 'שניים־שניים', subHe: 'אפי איתך. מי שמפסיד יוצא.', ms: 1600 }, { e: 'flag', flag: 'a2:played' }, { e: 'rel', who: 'ofir', axis: 'bond', delta: 4 }, { e: 'remember', who: 'ofir', eventId: 'first-team-1984', significance: 'major' }, { e: 'wellbeing', key: 'happiness', delta: 6 }, { e: 'sfx', key: 'ball-kick', level: 0.7 }, { e: 'minigame', id: 'football' }]
 
 /** the evening in the flat — every answer closes the same day; each is a different boy */
 const A2_HOME = (value: string, extra: ChoiceDef['then'] = []): ChoiceDef['then'] => [
@@ -653,12 +654,12 @@ export const CONVERSATIONS_A2: Conversation[] = [
       {
         when: { flag: 'a2:errand', beforeMinute: BREAD_BY },
         lines: [{ who: 'רפי מהקיוסק', text: 'לחם לרחל. על החשבון — תשאיר את המטבעות בכיס. ותגיד לה שהחשבון כבר לא זוכר את עצמו.' }],
-        then: [{ e: 'flag', flag: 'a2:bread' }, { e: 'time', minutes: 6 }, { e: 'proof', kind: 'promise_kept', proofId: 'promise_kept:{chapter}:bread', subjectHe: BREAD_PROMISE, noteHe: 'הלחם היה על השיש לפני חמש.' }, { e: 'personality', key: 'reliability', delta: 2 }, { e: 'sfx', key: 'bell-shop', level: 0.5 }, { e: 'toast', text: 'לחם חם. הנייר נרטב מהחום.', tone: 'plain' }],
+        then: [{ e: 'plate', art: 'kiosk', titleHe: 'לחם חם', subHe: 'על החשבון', ms: 1500 }, { e: 'flag', flag: 'a2:bread' }, { e: 'time', minutes: 6 }, { e: 'proof', kind: 'promise_kept', proofId: 'promise_kept:{chapter}:bread', subjectHe: BREAD_PROMISE, noteHe: 'הלחם היה על השיש לפני חמש.' }, { e: 'personality', key: 'reliability', delta: 2 }, { e: 'sfx', key: 'bell-shop', level: 0.5 }, { e: 'toast', text: 'לחם חם. הנייר נרטב מהחום.', tone: 'plain' }],
       },
       {
         when: { flag: 'a2:errand' },
         lines: [{ who: 'רפי מהקיוסק', text: 'לחם לרחל. האחרון. על החשבון, כמו תמיד — ותגיד לה שהגעת עכשיו.' }],
-        then: [{ e: 'flag', flag: 'a2:bread' }, { e: 'time', minutes: 6 }, { e: 'sfx', key: 'bell-shop', level: 0.5 }, { e: 'toast', text: 'לחם, כבר לא חם. הוא הוציא אותו מתחת לדלפק.', tone: 'plain' }],
+        then: [{ e: 'plate', art: 'kiosk', titleHe: 'לחם', subHe: 'האחרון', ms: 1500 }, { e: 'flag', flag: 'a2:bread' }, { e: 'time', minutes: 6 }, { e: 'sfx', key: 'bell-shop', level: 0.5 }, { e: 'toast', text: 'לחם, כבר לא חם. הוא הוציא אותו מתחת לדלפק.', tone: 'plain' }],
       },
       {
         lines: [{ who: 'רפי מהקיוסק', text: 'ילד. אתה קונה, או שאתה עומד לי בשמש?' }],
@@ -702,7 +703,7 @@ export const CONVERSATIONS_A2: Conversation[] = [
       {
         when: { flag: 'a2:bread', none: [{ flag: 'a2:bread-home' }] },
         lines: [
-          { who: 'אופיר', text: 'פוגי, איתי. מה זה ביד — לחם? תזרוק אותו איפשהו, מתחילים.' },
+          { who: 'אופיר', text: 'פוגי, אתה עם אפי. מה זה ביד — לחם? תזרוק אותו איפשהו, מתחילים.' },
           { who: null, text: 'הלחם עוד חם דרך הנייר. הקיר נמוך, והכדור כבר מקפץ עליו.' },
         ],
         choices: [
@@ -712,7 +713,7 @@ export const CONVERSATIONS_A2: Conversation[] = [
         ],
       },
       {
-        lines: [{ who: 'אופיר', text: 'פוגי, איתי. אתה מאחורה. לא לגעת ביד, ולא לברוח מהכדור.' }],
+        lines: [{ who: 'אופיר', text: 'פוגי, אתה עם אפי. אתה מאחורה. לא לגעת ביד, ולא לברוח מהכדור.' }],
         choices: [
           { id: 'play', text: 'להיכנס.', then: A2_PLAY },
           { id: 'watch', text: 'לעמוד ולראות קודם.', then: [{ e: 'personality', key: 'curiosity', delta: 1 }, { e: 'toast', text: '"תעמוד. אבל תעמוד רחוק מהשער."', tone: 'plain' }] },
@@ -806,7 +807,7 @@ export const ENDINGS_A3: Record<string, EndingCard> = {
   hall: {
     id: 'hall',
     titleHe: 'הבית האדום השני',
-    bodyHe: 'הסדרן ידע את השם של אפי. ואז שאל את שלך, ואמר אותו בקול, כאילו זה דבר שאומרים. בפנים: פרקט ששוקע, גג פח שמטפטף על השורה הראשונה, וכדור שעשה קול אחר מכל כדור ששמעת. לא ראית משחק. ראית מקום.',
+    bodyHe: 'הסדרן ידע את השם של אפי. ואז שאל את שלך, ואמר אותו בקול, כאילו זה דבר שאומרים. בפנים: פרקט ששוקע, גג פח שמטפטף על השורה הראשונה, וכדור שעשה קול אחר מכל כדור ששמעת. לא ראית משחק. ראית מקום. בדרך הביתה אפי אמר: "בשנה הבאה יהיה גביע. תבוא."',
     memoryHe: 'הסדרן שאמר את השם שלך.',
     memoryItem: 'ticket-stub',
   },
@@ -814,7 +815,7 @@ export const ENDINGS_A3: Record<string, EndingCard> = {
   street: {
     id: 'street',
     titleHe: 'לא עכשיו',
-    bodyHe: 'הילד עם הכדור הכתום הלך לכיוון הקיר, ואתה נשארת ברחוב שאתה מכיר. שיחקת עם מה שהיה, עד שקראו לך הביתה. לא ידעת אז שיש עוד בית, ושהוא עוד יחכה לך פעם אחת.',
+    bodyHe: 'הילד עם הכדור הכתום הלך לכיוון הקיר, ואתה נשארת ברחוב שאתה מכיר. שיחקת עם מה שהיה, עד שאמא צעקה מהחלון. לא ידעת אז שיש עוד בית, ושהוא עוד יחכה לך.',
     memoryHe: 'כדור כתום, מתרחק.',
     memoryItem: 'coin',
   },
@@ -842,7 +843,7 @@ export const BEATS_A3: Beat[] = [
        * ball, and walking up to him is the player's own act. A life that answered him in the
        * old A2 (`life:efi:met` via the legacy alias) is greeted by name in `efi-a3`.
        */
-      { a: 'lines', lines: [{ who: null, text: 'אותו רחוב, שנה אחרי. אתה כבר יודע איפה הבור במדרכה.' }, { who: null, text: 'בקצה הרחוב, ליד הקיר, ילד שאתה לא מכיר מקפיץ כדור כתום. גדול, מנוקד, וכל הקפצה שלו נשמעת כמו דלת שנטרקת.' }] },
+      { a: 'lines', lines: [{ who: null, text: 'אותו רחוב, חורף 1992. אתה בן ארבע־עשרה, והבור במדרכה נראה קטן יותר.' }, { who: null, text: 'בקצה הרחוב, ליד הקיר, ילד שאתה לא מכיר מקפיץ כדור כתום. גדול, מנוקד, וכל הקפצה שלו נשמעת כמו דלת שנטרקת.' }] },
     ],
   },
   {
@@ -988,7 +989,7 @@ export const BEATS_A3: Beat[] = [
     id: 'a3-night-alone',
     trigger: 'clock',
     when: { flag: A3, afterMinute: at(20, 0), none: [{ flag: 'life:efi:met' }, { flag: 'life:efi:deferred' }, { flag: 'a3:inside' }, { flag: 'a3:done' }] },
-    do: [{ a: 'lines', lines: [{ who: null, text: 'חושך. הילד עם הכדור הכתום כבר לא בקצה הרחוב. מישהו קורא לך מהחלון.' }] }, { a: 'flag', flag: 'a3:done' }, { a: 'ending', id: 'street' }],
+    do: [{ a: 'lines', lines: [{ who: null, text: 'חושך. הילד עם הכדור הכתום כבר לא בקצה הרחוב. אמא קוראת לך מהחלון, כמו שקראה כשהיית קטן.' }] }, { a: 'flag', flag: 'a3:done' }, { a: 'ending', id: 'street' }],
   },
 ]
 
@@ -1780,7 +1781,7 @@ export const CONVERSATIONS_A4: Conversation[] = [
 export function objectiveA5(state: LifeState, sceneId: string): string | null {
   if (state.chapterDone) return null
   if (state.flags['a5:there']) return null
-  if (!state.flags['a5:dressed']) return 'שבת. משחק. אבא מחכה למטה. תתלבש לבד.'
+  if (!state.flags['a5:dressed']) return 'שבת. משחק. אבא מחכה למטה עד שלוש. תתלבש לבד.'
   if (state.flags['a5:in']) return 'הברזל שאבא אמר. בפתח המנהרה.'
   if (sceneId === 'bloomfield-outside') return 'שער 7. אבא. הקרוסלה.'
   return 'לבלומפילד. בחולצה.'
@@ -2136,16 +2137,16 @@ export function objectiveA6(state: LifeState, sceneId: string): string | null {
 export const ENDINGS_A6: Record<string, EndingCard> = {
   heard: {
     id: 'heard',
-    titleHe: 'אכזבה רגילה',
-    bodyHe: 'שמעת עד הסוף, עם הרעש, עם הידיים על הטרנזיסטור כמו על תנור. לא נגמר טוב. אמא אמרה "יש עוד שבת" בלי להרים את הראש מהעיתון, וזה היה בדיוק מה שצריך. זו הפעם הראשונה שהבנת שזה קורה גם ככה. שזה קורה הרבה.',
-    memoryHe: 'הידיים על הטרנזיסטור, כמו על תנור.',
+    titleHe: 'ניצחון בגשם',
+    bodyHe: 'שמעת עד הסוף, עם הרעש, עם הידיים על הטרנזיסטור כמו על תנור. וכשהמקריין צעק את הסוף — קפצת על הספה, בגרביים, עם הרדיו ביד, וצרחת כמו שרואים באצטדיון. אמא אמרה "תרד משם!" וחייכה לתוך העיתון. חוץ, בחורף, בגשם — ניצחנו.',
+    memoryHe: 'הרדיו ביד, על הספה, בגרביים.',
     memoryItem: 'folded-paper',
     presence: 'radio',
   },
   liron: {
     id: 'liron',
     titleHe: 'הרדיו של לירון',
-    bodyHe: 'הרדיו בבית מת בדקה שלושים. רצת בגשם ללירון, והוא פתח לו את הגב על השולחן ואמר "תחזיק פה". שמעתם ביחד, בין החוטים, עם מברג ביד שלו וחוט אדום ביד שלך. לא נגמר טוב. הוא אמר "ככה זה", וזה נשמע כמו מישהו שאמר את זה הרבה פעמים.',
+    bodyHe: 'הרדיו בבית מת בדקה שלושים. רצת בגשם ללירון, והוא פתח את הגב על השולחן ואמר "תחזיק פה". שמעתם ביחד, בין החוטים, עם מברג ביד שלו וחוט אדום ביד שלך — ובסוף, כשהצעקה יצאה מהרמקול, לירון זרק את המברג באוויר ואתה צרחת יחד איתו. ניצחנו בחוץ. הוא אמר "ככה זה", ורקד על הכיסא.',
     memoryHe: 'הגב הפתוח של הרדיו, והמברג.',
     memoryItem: 'transistor',
     presence: 'radio',
@@ -2153,7 +2154,7 @@ export const ENDINGS_A6: Record<string, EndingCard> = {
   quiet: {
     id: 'quiet',
     titleHe: 'לא שמעת',
-    bodyHe: 'הרדיו מת ולא יצאת בגשם. שמעת מאבא בערב, במילה אחת, כשהוריד את המעיל הרטוב. לא שאלת עוד. למדת באיזה שקט לא שואלים.',
+    bodyHe: 'הרדיו מת ולא יצאת בגשם. שמעת מאבא בערב, במילה אחת, כשהוריד את המעיל הרטוב והחיוך שלו כבר אמר הכול: ניצחנו. לא שאלת עוד. הוא תלה את המעיל, ואתה רקדת איתו במטבח, בלי מוזיקה.',
     memoryHe: 'המעיל הרטוב על הכיסא.',
     memoryItem: 'coin',
     presence: 'heard-from-friend',

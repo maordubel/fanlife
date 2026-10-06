@@ -21,23 +21,13 @@ const STAGE = readFileSync(join(ROOT, 'app/life/LifeStage.tsx'), 'utf8')
  * touch target's SIZE is a number no unit test can see).
  */
 describe('הגוייסטיק על המסך — the console is the phone default, not a preference', () => {
-  it('the deck starts shown, and the comment says whose sentence that is', () => {
-    const state = RUNTIME.slice(RUNTIME.indexOf('const [deck, setDeck]') - 1200, RUNTIME.indexOf('const [deck, setDeck]') + 60)
-    expect(state).toContain('const [deck, setDeck] = useState(true)')
-    expect(state).toContain('מחויביים להיות על המסך')
-  })
-
-  it('reads the OLD spelling of the preference, because it is on real devices', () => {
-    // `0` meant shown and `1` meant hidden — the inversion that made flipping the default
-    // dangerous. Both are still honoured; the file writes the words from now on.
-    expect(RUNTIME).toContain("if (raw === 'off' || raw === '1') return false")
-    expect(RUNTIME).toContain("if (raw === 'on' || raw === '0') return true")
-    expect(RUNTIME).toContain("on ? 'on' : 'off'")
-  })
-
-  it('and the toggle survives, so the painting can still be cleared', () => {
-    expect(RUNTIME).toContain('toggleDeck')
-    expect(STAGE).toContain('onDeck={toggleDeck}')
+  it('the deck is MANDATORY: no preference, no toggle, no tap-chip fallback (1.10.2026)', () => {
+    // Maor: "הגויסטיק צריך להיות חובה! בתצוגת נייד. ללא אפשרות לביטול."
+    expect(RUNTIME).not.toContain('DECK_PREF')
+    expect(RUNTIME).not.toContain('toggleDeck')
+    expect(STAGE).not.toContain('onDeck')
+    expect(STAGE).not.toContain('<TapChip')
+    expect(readFileSync(join(ROOT, 'components/life/LifeMenu.tsx'), 'utf8')).not.toContain('menu-deck')
   })
 })
 
@@ -156,8 +146,9 @@ describe('גרפית וטכנית — the console is hardware, and it is measura
   })
 
   it('is drawn as an object: a gate, a washer, a shaft, a ball, a plate', () => {
-    expect(DECK).toContain('clipPath')
-    expect(DECK).toContain('radial-gradient')
+    // retro metal pad: the artwork is the object, the file draws target, rim and lean
+    for (const art of ['dpad', 'btn-a', 'btn-ba']) expect(DECK).toContain(art)
+    expect(DECK).toContain('perspective(')
     expect(DECK).toContain('boxShadow')
     expect(DECK).toContain('DeckPlate')
   })
@@ -181,6 +172,6 @@ describe('גרפית וטכנית — the console is hardware, and it is measura
     expect(/margin(Left|Right)|padding(Left|Right)/.test(DECK)).toBe(false)
     // the ball used to be placed with `left: 50%` and a translate. It is centred by flex
     // now, which has no side at all — the version that cannot be wrong in either direction.
-    expect(DECK).toContain('absolute inset-0 flex items-center justify-center')
+    expect(DECK).toContain('insetInlineStart')
   })
 })

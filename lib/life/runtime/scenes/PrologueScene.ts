@@ -68,7 +68,6 @@ export class PrologueScene extends Phaser.Scene {
 
     this.tweens.add({
       targets: image,
-      x: { from: cam.width / 2 + cam.width * 0.06, to: cam.width / 2 - cam.width * 0.06 },
       scale: { from: scale, to: scale * 1.08 },
       duration: 30000,
       ease: 'Sine.easeInOut',
@@ -99,6 +98,11 @@ export class PrologueScene extends Phaser.Scene {
       .setScrollFactor(0)
       .setDepth(20)
 
+    this.reduced = !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    this.pov = { gx: 0, gy: 0, surge: 0 }
+    this.clockMs = 0
+    if (!this.reduced) cam.setZoom(1.04)
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => cam.setAngle(0).setZoom(1))
     cam.fadeIn(1400, 0, 0, 0)
 
     this.ctx.dialogue.setHooks({
@@ -134,11 +138,17 @@ export class PrologueScene extends Phaser.Scene {
    * that decides for him.
    */
   private idleMs = 0
+  /** a child's eyes: where the glance has carried the picture, and how long the terrace has been breathing */
+  private pov = { gx: 0, gy: 0, surge: 0 }
+  private clockMs = 0
+  private glanceIn = 4200
+  private ambientIn = 6500
+  private povLine = 0
+  private reduced = false
   private surge() {
     if (!this.image) return
     const cam = this.cameras.main
-    const baseY = this.image.y
-    this.tweens.add({ targets: this.image, y: baseY - cam.height * 0.018, duration: 180, yoyo: true, repeat: 2, ease: 'Sine.easeInOut', onComplete: () => this.image?.setY(baseY) })
+    this.tweens.add({ targets: this.pov, surge: -cam.height * 0.018, duration: 180, yoyo: true, repeat: 2, ease: 'Sine.easeInOut', onComplete: () => { this.pov.surge = 0 } })
     this.ctx.bus.emit('sound', { kind: 'sample', key: 'crowd-swell', level: 0.45 })
   }
 
@@ -169,8 +179,7 @@ export class PrologueScene extends Phaser.Scene {
     this.gestureMark = mark
     // the terrace erupting under him: the picture jumps, transform only
     if (gesture.shake && this.image) {
-      const baseY = this.image.y
-      this.gestureShake = this.tweens.add({ targets: this.image, y: baseY - cam.height * 0.012, duration: 160, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' })
+      this.gestureShake = this.tweens.add({ targets: this.pov, surge: -cam.height * 0.012, duration: 160, yoyo: true, repeat: -1, ease: 'Sine.easeInOut' })
     }
     this.ctx.bus.emit('controls', { visible: true })
     this.ctx.bus.emit('prompt', { verb: gesture.verb, label: gesture.labelHe, locked: false })
@@ -198,6 +207,7 @@ export class PrologueScene extends Phaser.Scene {
     this.gestureMark = null
     this.gestureShake?.stop()
     this.gestureShake = null
+    this.pov.surge = 0
     this.ctx.bus.emit('prompt', null)
     this.ctx.bus.emit('controls', { visible: false })
     this.ctx.dialogue.applyEffects(done ? gesture.done : gesture.ignored)
@@ -205,7 +215,43 @@ export class PrologueScene extends Phaser.Scene {
     if (!this.ctx.dialogue.start(gesture.next, () => this.closed())) this.finish()
   }
 
+  /**
+   * (30.9.2026, Maor: "כל החוויה משעממת") a child's-eye life under every question: the head
+   * sways, the picture breathes, the eyes wander to a new corner every few seconds, and the
+   * terrace speaks on its own — a drum, a smell, a hand — whether or not he has answered.
+   * Transform only; nothing here decides anything for him.
+   */
+  private live(delta: number) {
+    if (this.done) return
+    const cam = this.cameras.main
+    this.clockMs += delta
+    const now = this.clockMs
+    if (this.image) {
+      const drift = Math.sin(now / 15000) * cam.width * 0.05
+      this.image.setPosition(cam.width / 2 + drift + this.pov.gx, cam.height / 2 + this.pov.gy + this.pov.surge)
+    }
+    if (this.reduced) return
+    cam.setAngle(Math.sin(now / 2300) * 0.55)
+    cam.setZoom(1.04 + Math.sin(now / 3100) * 0.012)
+    this.glanceIn -= delta
+    if (this.glanceIn <= 0) {
+      this.glanceIn = 5200 + Math.random() * 3600
+      const to = { gx: (Math.random() - 0.5) * cam.width * 0.11, gy: (Math.random() - 0.35) * cam.height * 0.05 }
+      this.tweens.add({ targets: this.pov, ...to, duration: 1900, ease: 'Sine.easeInOut' })
+    }
+    this.ambientIn -= delta
+    if (this.ambientIn <= 0) {
+      this.ambientIn = 8000 + Math.random() * 4000
+      this.surge()
+      const lines = [t('life98a.pov.legs'), t('life98a.pov.smoke'), t('life98a.pov.drum'), t('life98a.pov.song'), t('life98a.pov.flag'), t('life98a.pov.hand')]
+      const text = lines[this.povLine % lines.length]
+      this.povLine += 1
+      if (text) this.ctx.bus.emit('toast', { text, tone: 'plain' })
+    }
+  }
+
   override update(_time: number, delta: number) {
+    this.live(delta)
     if (!this.gesture) {
       if (!this.ctx.dialogue.open || this.done) return
       this.idleMs += delta

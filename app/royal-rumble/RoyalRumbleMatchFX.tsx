@@ -1,14 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-
-import { t } from '@/lib/royal-rumble/i18n'
-
-type GoalFlash = {
-  ours: boolean
-  score: string
-  key: number
-}
+import { useEffect, useRef } from 'react'
 
 const SFX = {
   unlock: '/life/sfx/crowd-hush.m4a',
@@ -60,13 +52,11 @@ function playOneShot(src: string, volume: number) {
 }
 
 export function RoyalRumbleMatchFX() {
-  const [flash, setFlash] = useState<GoalFlash | null>(null)
   const unlocked = useRef(false)
   const matchActive = useRef(false)
   const previous = useRef<{ forUs: number; against: number } | null>(null)
   const ambient = useRef<HTMLAudioElement | null>(null)
   const lastCommentary = useRef('')
-  const flashTimer = useRef<number | null>(null)
   const buildCooldown = useRef(0)
 
   useEffect(() => {
@@ -111,15 +101,12 @@ export function RoyalRumbleMatchFX() {
       })
     }
 
-    const showGoal = (ours: boolean, score: string) => {
-      if (flashTimer.current !== null) window.clearTimeout(flashTimer.current)
-      setFlash({ ours, score, key: Date.now() })
+    const showGoal = (ours: boolean) => {
       playOneShot(SFX.kick, 0.48)
       window.setTimeout(() => {
         playOneShot(ours ? SFX.goal : SFX.concede, ours ? 0.9 : 0.72)
       }, 110)
       window.setTimeout(() => playOneShot(SFX.after, 0.34), 950)
-      flashTimer.current = window.setTimeout(() => setFlash(null), 2100)
     }
 
     const scan = () => {
@@ -147,8 +134,8 @@ export function RoyalRumbleMatchFX() {
       } else {
         const before = previous.current
         if (before) {
-          if (current.forUs > before.forUs) showGoal(true, current.score)
-          else if (current.against > before.against) showGoal(false, current.score)
+          if (current.forUs > before.forUs) showGoal(true)
+          else if (current.against > before.against) showGoal(false)
         }
         previous.current = { forUs: current.forUs, against: current.against }
       }
@@ -168,40 +155,10 @@ export function RoyalRumbleMatchFX() {
     const timer = window.setInterval(scan, 120)
     return () => {
       window.clearInterval(timer)
-      if (flashTimer.current !== null) window.clearTimeout(flashTimer.current)
       stopAmbient()
     }
   }, [])
 
-  if (!flash) return null
-
-  return (
-    <div
-      key={flash.key}
-      className="pointer-events-none fixed inset-0 z-[90] grid place-items-center bg-ink/35 px-4"
-      aria-live="assertive"
-      aria-atomic="true"
-    >
-      <div
-        className={`relative w-full max-w-3xl overflow-hidden border-[6px] px-4 py-7 text-center sm:px-8 sm:py-10 ${
-          flash.ours ? 'border-paper bg-red text-paper' : 'border-red bg-ink text-paper'
-        }`}
-      >
-        <div className={`absolute inset-x-0 top-0 h-3 ${flash.ours ? 'bg-paper' : 'bg-red'}`} />
-        <p className="font-mono tabular-nums text-[10px] font-black tracking-[0.32em] opacity-70" dir="ltr">
-          ROYAL RUMBLE · MATCH EVENT
-        </p>
-        <p className="mt-3 font-display text-[86px] leading-[0.78] sm:text-[142px]">
-          {t(flash.ours ? 'goalFlashOurs' : 'goalFlashTheirs')}
-        </p>
-        <div className={`mx-auto mt-5 h-2 w-28 ${flash.ours ? 'bg-paper' : 'bg-red'}`} />
-        <p className="mt-5 font-display text-[62px] leading-none sm:text-[88px]" dir="ltr">
-          {flash.score}
-        </p>
-        <p className="mt-3 font-body text-[12px] font-black sm:text-[14px]">
-          {t(flash.ours ? 'goalFlashOursBody' : 'goalFlashTheirsBody')}
-        </p>
-      </div>
-    </div>
-  )
+  // the goal picture is RumbleGoalMoment's now; this only plays the sound
+  return null
 }

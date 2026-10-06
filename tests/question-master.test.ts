@@ -36,6 +36,16 @@ describe('מאסטר השאלות — the file is current', () => {
   })
 })
 
+/** legacy keys whose old answer lost to Maor's decision of 1.10.2026 (fact-conflicts.json) */
+const SETTLED_ON_1_10_2026 = [
+  'אייל ציתיאת', // the spelling is אייל צטיאט
+  'shirt:18:2021/22', // Davida wore 7
+  'which-number:ויאם עמאשה:2016/17', // 16 was Sagiv Yehezkel
+  'which-number:יום טוב עופר:2016/17', // 2 was Ofer Verta
+  'which-number:קאיו:2018/19', // 21 was Moti Barshazky
+  'goal-opponent:cupfinal-201', // 2010 בני יהודה, 2012 מכבי חיפה — the old answers were goals.json's error
+]
+
 describe('מאסטר השאלות — every old question survives', () => {
   it('asks every question the old bank asked, with the same answer — or says which conflict stopped it', () => {
     const byLegacy = new Map<string, string[]>()
@@ -52,6 +62,9 @@ describe('מאסטר השאלות — every old question survives', () => {
         conflicted += 1
         continue
       }
+      // Maor settled these on 1.10.2026: the old answer was the losing reading, so the old
+      // question is retired on purpose (shirt holders and the Tzetiat spelling)
+      if (SETTLED_ON_1_10_2026.some((part) => key.includes(part))) continue
       lost.push(`${key} → ${answer}`)
     }
     expect(lost, lost.slice(0, 10).join('\n')).toEqual([])
@@ -60,20 +73,27 @@ describe('מאסטר השאלות — every old question survives', () => {
     expect(conflicted).toBeLessThan(100)
   })
 
-  it('never asks the contested 2010 and 2012 cup-final opponents', () => {
+  it('asks the 2010 and 2012 cup-final opponents now that Maor has settled them', () => {
+    const answer = (goal: string) => questions.find((question) => question.key === `goal-opponent:${goal}`)?.answer
+    expect(answer('cupfinal-2010-vermouth-25')).toBe('בני יהודה')
+    expect(answer('cupfinal-2010-vermouth-73')).toBe('בני יהודה')
+    expect(answer('cupfinal-2012-igiebor-90-2')).toBe('מכבי חיפה')
     for (const goal of ['cupfinal-2010-vermouth-25', 'cupfinal-2010-vermouth-73', 'cupfinal-2012-igiebor-90-2']) {
-      expect(questions.some((question) => question.key === `goal-opponent:${goal}`), goal).toBe(false)
-      expect(file.excluded[`goal-opponent:${goal}`], goal).toMatch(/^conflict:goal:/)
-    }
-    // …and no true/false or match question asks it by the back door
-    for (const question of questions.filter((q) => q.template === 'tf-goal' || q.template === 'match-goal')) {
-      expect(question.key).not.toMatch(/cupfinal-201[02]/)
+      expect(file.excluded[`goal-opponent:${goal}`], goal).toBeUndefined()
     }
   })
 
-  it('stops asking the championship count, which the sources give as 13, 12 and 14', () => {
-    expect(questions.some((question) => question.key === 'trophy-count:ליגת-העל')).toBe(false)
-    expect(file.excluded['trophy-count:ליגת-העל']).toMatch(/^conflict:trophy:/)
+  it('asks the championship count again — Maor settled it at 13 (1.10.2026)', () => {
+    const q = questions.find((question) => question.key === 'trophy-count:ליגת-העל')
+    expect(q?.answer).toBe('13')
+    expect(file.excluded['trophy-count:ליגת-העל']).toBeUndefined()
+  })
+
+  it('does not ask a shirt holder that Maor ruled out', () => {
+    const keys = questions.map((question) => question.key)
+    for (const gone of ['which-number:יום טוב עופר:2016/17', 'which-number:ויאם עמאשה:2016/17', 'which-number:קאיו:2018/19']) {
+      expect(keys, gone).not.toContain(gone)
+    }
   })
 })
 

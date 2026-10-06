@@ -75,6 +75,15 @@ export type RoyalRumbleHighlight = {
   textHe: string
 }
 
+/** one goal as the server decided it — public: names and minutes, never a rating */
+export type RoyalRumbleGoal = {
+  side: 'us' | 'them'
+  minute: number
+  scorerSlug: string
+  /** only when the simulation really had a second man in the move */
+  assistSlug: string | null
+}
+
 export type RoyalRumbleResult = {
   opponent: RoyalRumbleOffer[]
   formation: RoyalRumbleFormation
@@ -83,6 +92,8 @@ export type RoyalRumbleResult = {
   scoreAgainst: number
   winner: 'us' | 'them' | 'draw'
   frames: RoyalRumbleFrame[]
+  /** the goals in order; length === scoreFor + scoreAgainst */
+  goals: RoyalRumbleGoal[]
   highlight?: RoyalRumbleHighlight
 }
 
@@ -167,6 +178,7 @@ export type RoyalRumbleEvidence = {
   shirtSeasons: number
   songs: number
   moments: number
+  /** the current squad's captain — also read by the owner report */
   captain: boolean
 }
 
@@ -1009,8 +1021,8 @@ function moveShape(
   })
 }
 
-/** scorer weight by RESOLVED position (§38): FW > MF > DF > GK */
-const SCORER_WEIGHT: Record<Position, number> = { FW: 5, MF: 3, DF: 2, GK: 1 }
+/** scorer weight by RESOLVED position (§38): FW > MF > DF; a keeper never scores */
+const SCORER_WEIGHT: Record<Position, number> = { FW: 5, MF: 3, DF: 2, GK: 0 }
 
 function scorer(team: readonly ValidatedRoyalRumblePick[], random: () => number): ValidatedRoyalRumblePick {
   const weighted = team.flatMap((pick) => Array.from({ length: SCORER_WEIGHT[pick.offeredAs] }, () => pick))
@@ -1066,6 +1078,7 @@ function simulateWithTallies(
     them: { goals: new Map(), involvement: new Map() },
   }
 
+  const goals: RoyalRumbleGoal[] = []
   const frames: RoyalRumbleFrame[] = [
     {
       at: 0,
@@ -1120,6 +1133,12 @@ function simulateWithTallies(
 
     if (ours) scoreFor += 1
     else scoreAgainst += 1
+    goals.push({
+      side: ours ? 'us' : 'them',
+      minute: baseMinute + 2,
+      scorerSlug: player.slug,
+      assistSlug: helper.player.slug === player.slug ? null : helper.player.slug,
+    })
 
     frames.push({
       at: baseMinute + 2,
@@ -1167,6 +1186,7 @@ function simulateWithTallies(
       scoreAgainst,
       winner,
       frames,
+      goals,
       highlight: highlightFor(us, tallies.us, winner),
     },
     tallies,
@@ -1231,6 +1251,7 @@ function awayPerspective(result: RoyalRumbleResult, home: readonly ValidatedRoya
       us: frame.them.map(mirrorPitchPlayer),
       them: frame.us.map(mirrorPitchPlayer),
     })),
+    goals: result.goals.map((goal) => ({ ...goal, side: goal.side === 'us' ? 'them' : 'us' })),
     highlight: guestHighlight,
   }
 }

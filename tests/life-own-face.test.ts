@@ -68,7 +68,7 @@ describe('the red box lights the age he is, not the age he was', () => {
   it('lights the slot of the body the chapter walks in', async () => {
     const { ageReached, leadKey } = await import('@/components/life/LifeLine')
     expect(ageReached('1986')).toBe(0)
-    expect(ageReached('a3-hall')).toBe(0)
+    expect(ageReached('a3-hall')).toBe(1)
     expect(ageReached('1990')).toBe(1)
     expect(ageReached('1996-army')).toBe(2)
     expect(ageReached('2018-return')).toBe(3)

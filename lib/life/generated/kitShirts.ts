@@ -172,7 +172,7 @@ export const ARCHIVE_SHIRTS: readonly ArchiveShirt[] = [
       "number": null,
       "shorts": "cream",
       "socks": "red",
-      "crestKey": "ball-waves"
+      "crestKey": "keter-color"
     }
   },
   {
@@ -198,7 +198,7 @@ export const ARCHIVE_SHIRTS: readonly ArchiveShirt[] = [
       "number": null,
       "shorts": "red",
       "socks": "red",
-      "crestKey": "ball-waves"
+      "crestKey": "keter-color"
     }
   },
   {

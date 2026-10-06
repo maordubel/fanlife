@@ -204,7 +204,7 @@ describe('סופרגול — מתי הדף הגיע לדלפק', () => {
   it('answers what arrived between two chapters, and nothing at the start of a life', () => {
     expect(setsArrivedBetween(null, '1990')).toEqual([])
     expect(setsArrivedBetween('a7-week', '1986')).toEqual([])
-    expect(setsArrivedBetween('1991', '1993-cup').map((set) => set.id)).toEqual(['9293'])
+    expect(setsArrivedBetween('1991', 'a3-hall').map((set) => set.id)).toEqual(['9293'])
   })
 
   it('actually has arrivals to announce, in more than one decade', () => {
@@ -216,7 +216,7 @@ describe('סופרגול — מתי הדף הגיע לדלפק', () => {
     )
     expect(news).toContain('a4-shirt:8586')
     expect(news).toContain('1990:sg90')
-    expect(news).toContain('1993-cup:9293')
+    expect(news.filter((n) => n.endsWith(':9293')).length).toBe(1)
     expect(news.length).toBeGreaterThanOrEqual(3)
   })
 

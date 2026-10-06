@@ -66,6 +66,17 @@
   "dead": []
  },
  {
+  "entry": "shop:counter",
+  "chapter": "a3-hall",
+  "where": "allenby",
+  "claims": null,
+  "price": 200,
+  "set": "sg90",
+  "empty": "short: מעטפה: 2 ₪ · יש לך 0 ₪ · חסר 2 ₪",
+  "full": "ok",
+  "dead": []
+ },
+ {
   "entry": "dialogue:rafi-1993/packet",
   "chapter": "1993-cup",
   "where": "kiosk",

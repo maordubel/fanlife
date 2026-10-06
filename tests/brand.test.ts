@@ -149,6 +149,7 @@ describe('brand acceptance — colour', () => {
       'app/lineup/',
       'app/xi/',
       'app/goal/',
+      'app/royal-rumble/RumblePitchFive', // the rumble pitch is a printed pitch, same drawing as gate 8
       'app/share/',
     ]
     for (const { path, text } of SOURCES) {

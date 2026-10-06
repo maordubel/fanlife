@@ -6,6 +6,9 @@ import * as THREE from 'three'
 import { t } from '@/lib/i18n'
 import { LIFE_PALETTE } from '@/lib/life/runtime/palette'
 import type { LifeBusEvents } from '@/lib/life/runtime/bus'
+import { DressBubble } from '@/components/life/DressBubble'
+import { PENALTIES_SCENE } from '@/lib/life/content/minigameScenes'
+import { dressScene, type Dressing, type Say } from '@/lib/life/runtime/sceneDressing'
 import { billboard, daylightRig, disposeThree, faceCamera, imageTexture, mountThree, resizeThree, shadowDecal, type Three3D } from '@/lib/life/runtime/three3d'
 
 /**
@@ -52,6 +55,8 @@ export function PenaltyCard({
     null,
   )
   const dragRef = useRef<{ x: number; y: number } | null>(null)
+  const dressRef = useRef<Dressing | null>(null)
+  const [say, setSay] = useState<(Say & { n: number }) | null>(null)
 
   const [phase, setPhase] = useState<Phase>('ready')
   const [attempt, setAttempt] = useState(0)
@@ -161,6 +166,28 @@ export function PenaltyCard({
     shadow.position.set(0, 0.01, 0)
     scene.add(shadow)
 
+    // the world around the pitch: a backdrop cut from the alley, three kids, a bin in front
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+    let sayN = 0
+    const dressing = dressScene({
+      scene,
+      camera,
+      reducedMotion: reduced,
+      onSay: (s) => setSay({ ...s, n: (sayN += 1) }),
+      config: {
+        ...PENALTIES_SCENE,
+        npcs: PENALTIES_SCENE.npcs.map((n) => ({
+          ...n,
+          lines: {
+            goal: n.onGoal === 'mock' ? [t('life.dress.pen.goal.2'), t('life.dress.pen.goal.3')] : [t('life.dress.pen.goal.1'), t('life.dress.pen.goal.3')],
+            miss: [t('life.dress.pen.miss.1'), t('life.dress.pen.miss.2'), t('life.dress.pen.miss.3')],
+          },
+        })),
+      },
+    })
+    dressing.layout(host.clientWidth)
+    dressRef.current = dressing
+
     // probe hook: what the scene actually contains, for the screenshot audit
     ;(window as unknown as { __penaltyDebug?: unknown }).__penaltyDebug = () => 0
     camera.position.set(0, 1.55, 2.6)
@@ -192,18 +219,24 @@ export function PenaltyCard({
         if (diveT > 0.08) showPose(flight.keeperX > 0.05 ? 'right' : flight.keeperX < -0.05 ? 'left' : 'ready')
         if (tRaw >= 1) flightRef.current = null
       }
+      dressing.update(performance.now())
       faceCamera(scene, camera)
       three.renderer.render(scene, camera)
     }
     animate()
     void clock // kept for parity with the hoops scene's clock use; unused here on purpose
 
-    const onResize = () => resizeThree(three, host)
+    const onResize = () => {
+      resizeThree(three, host)
+      dressing.layout(host.clientWidth)
+    }
     window.addEventListener('resize', onResize)
 
     return () => {
       window.removeEventListener('resize', onResize)
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      dressing.dispose()
+      dressRef.current = null
       disposeThree(three, host)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -247,10 +280,13 @@ export function PenaltyCard({
       ms: 620,
     }
     setPhase('flight')
+    dressRef.current?.puff(0.05, -0.15, performance.now())
+    dressRef.current?.react('aim', performance.now())
     window.setTimeout(() => {
       setLastOutcome(outcome)
       // caught it, or fetching it out of the net
       showPose(outcome === 'save' ? 'caught' : 'beaten')
+      dressRef.current?.react(outcome === 'goal' ? 'goal' : 'miss', performance.now())
       setResults((prev) => [...prev, outcome])
       setPhase('result')
       window.setTimeout(() => {
@@ -301,6 +337,7 @@ export function PenaltyCard({
             {lastOutcome === 'goal' ? t('life.penalty.goal') : lastOutcome === 'save' ? t('life.penalty.save') : t('life.penalty.out')}
           </p>
         )}
+        <DressBubble say={say} />
       </div>
 
       <div className="px-5 pb-6 pt-3 text-center">

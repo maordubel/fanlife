@@ -40,6 +40,7 @@ import heStageCraft from '@/messages/he.stage.craft.json'
 import heStageLife91m from '@/messages/he.stage.life91m.json'
 // delta 92 — the story director, the first-mission cues and the pre-match wardrobe
 import heStageLife92 from '@/messages/he.stage.life92.json'
+import heStageLife98a from '@/messages/he.stage.life98a.json'
 // 28.9.2026 — Stage B pass: the note board (`components/life/NoteBoardSheet.tsx`)
 import heStageLifeB28 from '@/messages/he.stage.lifeB28.json'
 // 28.9.2026 — gate 7 split: הכרטיס שלי / הוויכוח של היציע (`terrace.*`, ONE RED WORLD §16)
@@ -138,6 +139,7 @@ export const CATALOGUE_FILES = {
   heStageCraft,
   heStageLife91m,
   heStageLife92,
+  heStageLife98a,
   heStageLifeB28,
   heStageTerrace,
   heVoice,
@@ -187,6 +189,7 @@ const catalogue = {
   ...heStageCraft,
   ...heStageLife91m,
   ...heStageLife92,
+  ...heStageLife98a,
   ...heStageLifeB28,
   ...heStageTerrace,
   ...heVoice,

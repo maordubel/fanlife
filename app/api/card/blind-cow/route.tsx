@@ -1,3 +1,6 @@
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
+
 import { ImageResponse } from 'next/og'
 
 import { BlindCowCardArt } from '@/lib/og/cards'
@@ -16,7 +19,10 @@ export async function GET(request: Request): Promise<Response> {
   const card = parseBlindCowCard(url.searchParams)
   if (!card) return new Response(null, { status: 404 })
   const size = cleanSize(url.searchParams.get('v'))
-  return new ImageResponse(<BlindCowCardArt card={card} size={size} />, {
+  const logo = await readFile(join(process.cwd(), 'public/brand/gates/blind-cow.png'))
+    .then((b) => `data:image/png;base64,${b.toString('base64')}`)
+    .catch(() => null)
+  return new ImageResponse(<BlindCowCardArt card={card} size={size} logo={logo} />, {
     ...CARD_SIZE[size],
     fonts: await ogFonts(),
     headers: { 'cache-control': 'public, max-age=86400, s-maxage=31536000, immutable' },

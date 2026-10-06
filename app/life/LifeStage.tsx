@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { AnchorCard } from '@/components/life/AnchorCard'
 import { DocSheet } from '@/components/life/DocSheet'
@@ -38,7 +38,7 @@ import type { LocationId } from '@/lib/life/types'
 import { afterConversation, type ActivityId, type Settlement } from '@/lib/life/activities'
 import { describeMoneyChange } from '@/lib/life/money'
 import type { MechanicCatalog } from '@/lib/mechanics/types'
-import { ControlDeck, TapChip } from '@/components/life/ControlDeck'
+import { ControlDeck } from '@/components/life/ControlDeck'
 import { DebugPanel } from '@/components/life/DebugPanel'
 import { LifeDevOverlay, useLifeDebug } from '@/components/life/LifeDevOverlay'
 import { DialogueBox } from '@/components/life/DialogueBox'
@@ -47,6 +47,8 @@ import { EndingCard } from '@/components/life/EndingCard'
 import { AchievementQueue } from '@/components/life/AchievementCard'
 import { RouteCard } from '@/components/life/RouteCard'
 import { PlaceCard, Stamp, TitleCard } from '@/components/life/Stamp'
+import { TransitionClip } from '@/components/life/TransitionClip'
+import { SeasonDocu } from '@/components/life/SeasonDocu'
 import { CloseUp } from '@/components/life/CloseUp'
 import { Panorama } from '@/components/life/Panorama'
 import { TunnelWalk } from '@/components/life/TunnelWalk'
@@ -56,6 +58,7 @@ import { LifeHud } from '@/components/life/LifeHud'
 import { LifeMap } from '@/components/life/LifeMap'
 import { LifeMenu } from '@/components/life/LifeMenu'
 import { Opening } from '@/components/life/Opening'
+import { MapIntro } from '@/components/life/MapIntro'
 import { CodaCard } from '@/components/life/CodaCard'
 import { MapReveal } from '@/components/life/MapReveal'
 import { ChapterCard } from '@/components/life/ChapterCard'
@@ -240,11 +243,13 @@ export function LifeStage({
     setRoute,
     earned,
     dismissEarned,
-    deck,
-    toggleDeck,
     opening,
     closeOpening,
   } = useLifeRuntime({ holder, runtime, engineRef, busRef, audio, anchor, prologueAnchor, anchors, catalog })
+  const [clipDone, setClipDone] = useState(false)
+  const [mapIntro, setMapIntro] = useState(false)
+  useEffect(() => setClipDone(false), [titleCard])
+  const docuOn = Boolean(titleCard?.docu) && !clipDone
 
   const {
     snapshot,
@@ -423,7 +428,7 @@ export function LifeStage({
         )}
         {help && <HelpSheet objective={hud.objective} hint={hud.hint} waitingOn={hud.waitingOn ?? null} checklist={checklist} offers={offers} capHe={cap} onClose={closeHelp} />}
 
-        {ready && !covered && controls && (touch ? deck : true) && (
+        {ready && !covered && controls && (
           <ControlDeck
             top={fullBleed ? stage : frame}
             height={fullBleed ? 0 : Math.max(0, stage - frame)}
@@ -434,16 +439,6 @@ export function LifeStage({
             onAxis={onAxis}
             onAction={onAction}
             onCancel={onCancel}
-            pulse={pulseAct}
-          />
-        )}
-
-        {ready && !covered && controls && touch && !deck && (
-          <TapChip
-            verb={prompt?.verb ?? null}
-            label={prompt ? `${t(`life.verb.${prompt.verb}` as MessageKey)} ${prompt.label}` : null}
-            locked={prompt?.locked ?? false}
-            onAction={onAction}
             pulse={pulseAct}
           />
         )}
@@ -588,8 +583,15 @@ export function LifeStage({
         {/* הפתיח — over everything, including the loading plate, because it IS the
             loading plate: the game boots underneath it while the player watches a cot,
             a bus and a man lifting a five-year-old over a crowd. */}
-        {opening && (
-          <Opening anchor={prologueAnchor} onDone={closeOpening} />
+        {opening && !mapIntro && <Opening anchor={prologueAnchor} onDone={() => setMapIntro(true)} />}
+        {/* מפת הפתיחה — between the film and the terrace: the house opens on the map (delta 98) */}
+        {opening && mapIntro && (
+          <MapIntro
+            onDone={() => {
+              setMapIntro(false)
+              closeOpening()
+            }}
+          />
         )}
 
         {cutscene && (
@@ -824,8 +826,10 @@ export function LifeStage({
             }}
           />
         )}
+        {docuOn && <SeasonDocu onDone={() => setClipDone(true)} />}
+        {titleCard?.clip && !clipDone && <TransitionClip clip={titleCard.clip} onDone={() => setClipDone(true)} />}
         {titleCard &&
-          (titleCard.art ? (
+          ((titleCard.clip || titleCard.docu) && !clipDone ? null : titleCard.art ? (
             <ChapterCard
               titleHe={titleCard.titleHe}
               subHe={titleCard.subHe}
@@ -876,7 +880,6 @@ export function LifeStage({
         {menu && (
           <LifeMenu
             touch={touch}
-            deck={deck}
             persisted={persisted}
             debug={process.env.NODE_ENV !== 'production'}
             onClose={closeMenu}
@@ -888,7 +891,6 @@ export function LifeStage({
               setMenu(false)
               openMe()
             }}
-            onDeck={toggleDeck}
             sound={sound}
             onSound={(on) => {
               setSound(on)

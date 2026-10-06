@@ -996,8 +996,13 @@ describe('לוח ההפעלה — the controls are a place on the screen, on eve
   })
 
   it('the stick is a physical object, not a translucent circle', () => {
-    // the directive asks for arcade hardware: a ball top, a shaft, a deck plate, travel
-    expect(deck).toContain('radial-gradient')
+    // the directive asks for arcade hardware: a deck plate, a worn-metal stick that leans
+    // toward the thumb (since the 98 visual round the stick is painted art, not a CSS
+    // radial-gradient), a shadow it casts, moulded buttons
+    expect(deck).toContain('<DeckPlate')
+    expect(deck).toContain('dpad.webp')
+    expect(deck).toContain('perspective(')
+    expect(deck).toContain('drop-shadow(')
     expect(deck).toContain('boxShadow')
     expect(deck).toContain('ArcadeButton')
   })

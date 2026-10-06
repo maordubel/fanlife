@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 
+import { DressBubble } from '@/components/life/DressBubble'
 import { t } from '@/lib/i18n'
+import { HOOPS_SCENE } from '@/lib/life/content/minigameScenes'
+import { dressScene, type Dressing, type Say } from '@/lib/life/runtime/sceneDressing'
 import { LIFE_PALETTE } from '@/lib/life/runtime/palette'
 import type { LifeBusEvents } from '@/lib/life/runtime/bus'
 import { daylightRig, disposeThree, faceCamera, imageTexture, mountThree, resizeThree, shadowDecal, type Three3D } from '@/lib/life/runtime/three3d'
@@ -40,6 +43,9 @@ export function HoopsCard({
   const rafRef = useRef<number | null>(null)
   const flightRef = useRef<{ start: number; targetX: number; targetZ: number; endY: number; ms: number } | null>(null)
   const dragRef = useRef<{ x: number; y: number } | null>(null)
+  const dressRef = useRef<Dressing | null>(null)
+  const netRef = useRef<{ mesh: THREE.Mesh; at: number } | null>(null)
+  const [say, setSay] = useState<(Say & { n: number }) | null>(null)
 
   const [phase, setPhase] = useState<Phase>('ready')
   const [attempt, setAttempt] = useState(0)
@@ -137,6 +143,28 @@ export function HoopsCard({
     shadow.position.set(0, 0.01, 0)
     scene.add(shadow)
 
+    netRef.current = { mesh: net, at: -1e9 }
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+    let sayN = 0
+    const dressing = dressScene({
+      scene,
+      camera,
+      reducedMotion: reduced,
+      onSay: (s) => setSay({ ...s, n: (sayN += 1) }),
+      config: {
+        ...HOOPS_SCENE,
+        npcs: HOOPS_SCENE.npcs.map((n) => ({
+          ...n,
+          lines: {
+            goal: [t('life.dress.hoops.in.1'), t('life.dress.hoops.in.2'), t('life.dress.hoops.in.3')],
+            miss: [t('life.dress.hoops.miss.1'), t('life.dress.hoops.miss.2'), t('life.dress.hoops.miss.3')],
+          },
+        })),
+      },
+    })
+    dressing.layout(host.clientWidth)
+    dressRef.current = dressing
+
     camera.position.set(0, 1.55, 1.1)
     camera.lookAt(0, RIM_HEIGHT - 0.3, RIM_Z)
 
@@ -155,15 +183,28 @@ export function HoopsCard({
         ball.rotation.x -= 0.3
         if (tRaw >= 1) flightRef.current = null
       }
+      // the net gives a little when a ball goes through it, then settles
+      const nr = netRef.current
+      if (nr) {
+        const k = Math.max(0, 1 - (performance.now() - nr.at) / 420)
+        nr.mesh.scale.set(1 + 0.12 * k, 1 + 0.18 * k, 1 + 0.12 * k)
+      }
+      dressing.update(performance.now())
+      faceCamera(scene, camera)
       three.renderer.render(scene, camera)
     }
     animate()
 
-    const onResize = () => resizeThree(three, host)
+    const onResize = () => {
+      resizeThree(three, host)
+      dressing.layout(host.clientWidth)
+    }
     window.addEventListener('resize', onResize)
     return () => {
       window.removeEventListener('resize', onResize)
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      dressing.dispose()
+      dressRef.current = null
       disposeThree(three, host)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -191,8 +232,11 @@ export function HoopsCard({
 
     flightRef.current = { start: performance.now(), targetX, targetZ, endY, ms: 600 }
     setPhase('flight')
+    dressRef.current?.react('aim', performance.now())
     window.setTimeout(() => {
       setLastOutcome(outcome)
+      dressRef.current?.react(outcome === 'in' ? 'goal' : 'miss', performance.now())
+      if (outcome === 'in' && netRef.current) netRef.current.at = performance.now()
       setResults((prev) => [...prev, outcome])
       setPhase('result')
       window.setTimeout(() => {
@@ -236,6 +280,7 @@ export function HoopsCard({
       </div>
 
       <div ref={hostRef} className="relative mt-2 min-h-0 flex-1 touch-none" onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
+        <DressBubble say={say} />
         {phase === 'result' && lastOutcome && (
           <p
             className={`pointer-events-none absolute inset-x-0 top-[8%] text-center font-display text-[30px] leading-none ${lastOutcome === 'in' ? 'text-red' : 'text-sheet'}`}

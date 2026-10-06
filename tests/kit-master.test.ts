@@ -44,17 +44,18 @@ describe('Kit Master', () => {
     }
   })
 
-  it('keeps a conflict instead of deciding it — the 2009/10 crest', () => {
+  it('the 2009/10 crest is settled — circle-1927 (Maor, 1.10.2026), with the decision on record', () => {
     const kit = kitRecord('kit-2009-10-home')!
-    expect(kit.fields.crest.value?.key).toBe('circle-1923')
-    expect(kit.fields.crest.alternates.map((row) => row.key)).toEqual(['circle-1927'])
-    expect(kit.fields.crest.conflict).toMatch(/crest-versions/)
+    expect(kit.fields.crest.value?.key).toBe('circle-1927')
+    expect(kit.fields.crest.alternates).toEqual([])
+    expect(kit.fields.crest.conflict).toBeNull()
     const conflicts = JSON.parse(readFileSync(join(ROOT, 'content/manual/fact-conflicts.json'), 'utf8')) as {
-      records: { entityTable: string; entityKey: string; field: string; resolution: unknown }[]
+      records: { entityTable: string; entityKey: string; field: string; resolution: unknown; resolvedBy: unknown }[]
     }
     const row = conflicts.records.find((r) => r.entityTable === 'kit' && r.entityKey === 'kit-2009-10-home')
     expect(row?.field).toBe('crest')
-    expect(row?.resolution).toBeNull()
+    expect(String(row?.resolution)).toMatch(/circle-1927/)
+    expect(String(row?.resolvedBy)).toMatch(/מאור הראל/)
   })
 
   it('prints the era\'s own crest once the artwork exists — and none before it does', () => {
