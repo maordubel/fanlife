@@ -28,7 +28,7 @@ export type ClubData = {
   kits:Fact<Entity>[]|null;stadiums:Fact<Entity>[]|null;places:Fact<Entity>[]|null;culture:Fact<Entity>[]|null
   archive:Fact<HistoricalEvent>[];timeline:Fact<DatedCard>[]
   trivia:ClubTrivia;memory:MemoryCandidate[];mysteries:Fact<ClubMystery>[]
-  gates:{timeline:Readiness;trivia:Readiness;xi:Readiness;archive:Readiness;memory:Readiness;polls?:Readiness;'blind-cow'?:Readiness};life:{state:'legacy'|'unavailable';reason:string};sources:Source[];readiness:Readiness
+  gates:{timeline:Readiness;trivia:Readiness;xi:Readiness;archive:Readiness;memory:Readiness;polls?:Readiness;'blind-cow'?:Readiness;lineup?:Readiness;'kit-builder'?:Readiness;kits?:Readiness;derby?:Readiness;goal?:Readiness;'royal-rumble'?:Readiness};life:{state:'legacy'|'unavailable';reason:string};sources:Source[];readiness:Readiness
 }
 export type Diagnostic = {record:string;code:string;message:string}
 export const missingSections={rivals:null,competitions:null,seasons:null,players:null,matches:null,trophies:null,kits:null,stadiums:null,places:null,culture:null} as const

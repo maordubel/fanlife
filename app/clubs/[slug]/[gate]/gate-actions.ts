@@ -1,0 +1,24 @@
+'use server'
+import {requestClub} from '@/lib/clubs/request'
+import {lineupMatches,buildableKits,kitViews} from '@/lib/clubs/gate-content'
+/** Answers never ship to the client: tenant, gate switch, content version are checked here on every grade. */
+export async function gradeLineup(slug:string,version:string,matchId:string,picks:string[]){
+ if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||typeof matchId!=='string'||matchId.length>200||!Array.isArray(picks)||picks.length!==11||picks.some(p=>typeof p!=='string'||p.length>120))return null
+ const resolved=await requestClub(slug,3)
+ if(!resolved||resolved.data.version!==version||!resolved.data.gates.lineup?.playable)return null
+ const m=lineupMatches(resolved.data).find(x=>x.id===matchId)
+ if(!m)return null
+ const set=new Set(picks)
+ if(set.size!==11)return null
+ const right=m.starters.filter(s=>set.has(s)),missed=m.starters.filter(s=>!set.has(s))
+ return {correct:right.length,missed,wrong:picks.filter(p=>!m.starters.includes(p)),sources:m.sources}
+}
+export async function gradeKit(slug:string,version:string,kitId:string,season:string,maker:string,design:string){
+ if([slug,version,kitId,season,maker,design].some(v=>typeof v!=='string'||v.length>120))return null
+ const resolved=await requestClub(slug,4)
+ if(!resolved||resolved.data.version!==version||!resolved.data.gates['kit-builder']?.playable)return null
+ const k=buildableKits(resolved.data).find(x=>x.id===kitId)
+ if(!k)return null
+ return {season:k.season===season,maker:k.maker===maker,design:k.design===design,truth:{season:k.season,maker:k.maker,design:k.design},sources:k.sources}
+}
+export const kitCount=async(slug:string)=>{const r=await requestClub(slug,5);return r?kitViews(r.data).length:0}
