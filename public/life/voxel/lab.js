@@ -42,6 +42,7 @@ document.addEventListener('click',function(e){
  st[b.dataset.k]=b.dataset.v;
  try{if(b.dataset.k!=='look')V.rebuild();sync()}catch(er){window.__err.push(String(er&&er.stack||er))}
 });
+$('#goal').addEventListener('click',function(){V.celebrate()});$('#sing').addEventListener('click',function(){V.crowdMode('sing')});$('#calm').addEventListener('click',function(){V.crowdMode('idle')});
 $('#cut').addEventListener('input',function(e){frame.style.setProperty('--cut',e.target.value+'%')});
 
 fetch('/life/voxel/skins').then(function(r){return r.ok?r.json():{skins:{}}}).catch(function(){return{skins:{}}}).then(function(d){
