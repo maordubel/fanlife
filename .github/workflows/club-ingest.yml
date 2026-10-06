@@ -1,0 +1,38 @@
+name: club-ingest
+# Click "Run workflow" (Actions tab) to pull a club's matches, scorers and elevens; no terminal needed.
+# Also runs weekly for the clubs below. It opens a pull request — nothing reaches main unreviewed.
+on:
+  workflow_dispatch:
+    inputs:
+      club:
+        description: 'Club id (folder under club-packs/ with ingest.json), or "all"'
+        default: all
+  schedule:
+    - cron: '17 4 * * 1'
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - run: npm ci
+      - name: Pull club data
+        env:
+          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
+          CLUB: ${{ github.event.inputs.club || 'all' }}
+        run: |
+          for dir in club-packs/*/; do
+            id=$(basename "$dir")
+            [ -f "$dir/ingest.json" ] || continue
+            if [ "$CLUB" = "all" ] || [ "$CLUB" = "$id" ]; then npm run club:wave -- --club "$id" || echo "::warning::$id failed"; fi
+          done
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: club-ingest/auto
+          title: 'club-ingest: refreshed match data'
+          commit-message: 'club-ingest: refreshed wave-auto.json'
+          body: 'Automatic pull from UEFA (primary) corroborated by TheSportsDB. Approved only where two publishers agree; everything else stays in review.'

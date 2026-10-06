@@ -1,0 +1,580 @@
+{
+ "sources": [
+  {
+   "id": "w-hpt-3194",
+   "title": "HPT Museum: game 3194",
+   "url": "https://www.hpt.co.il/?ShowGame=3194",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ifa-1121211",
+   "title": "IFA match report 1121211",
+   "url": "https://www.football.org.il/national-cup-game/?game_id=1121211",
+   "publisher": "Israel Football Association",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-3195",
+   "title": "HPT Museum: game 3195",
+   "url": "https://www.hpt.co.il/?ShowGame=3195",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ifa-1121215",
+   "title": "IFA match report 1121215",
+   "url": "https://www.football.org.il/national-cup-game/?game_id=1121215",
+   "publisher": "Israel Football Association",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-3196",
+   "title": "HPT Museum: game 3196",
+   "url": "https://www.hpt.co.il/?ShowGame=3196",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ifa-1121221",
+   "title": "IFA match report 1121221",
+   "url": "https://www.football.org.il/national-cup-game/?game_id=1121221",
+   "publisher": "Israel Football Association",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-3198",
+   "title": "HPT Museum: game 3198",
+   "url": "https://www.hpt.co.il/?ShowGame=3198",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ifa-1125397",
+   "title": "IFA match report 1125397",
+   "url": "https://www.football.org.il/national-cup-game/?game_id=1125397",
+   "publisher": "Israel Football Association",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-3199",
+   "title": "HPT Museum: game 3199",
+   "url": "https://www.hpt.co.il/?ShowGame=3199",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ifa-1120562",
+   "title": "IFA match report 1120562",
+   "url": "https://www.football.org.il/leagues/games/game/?game_id=1120562",
+   "publisher": "Israel Football Association",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-3200",
+   "title": "HPT Museum: game 3200",
+   "url": "https://www.hpt.co.il/?ShowGame=3200",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ifa-1120573",
+   "title": "IFA match report 1120573",
+   "url": "https://www.football.org.il/leagues/games/game/?game_id=1120573",
+   "publisher": "Israel Football Association",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-3203",
+   "title": "HPT Museum: game 3203",
+   "url": "https://www.hpt.co.il/?ShowGame=3203",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ifa-1120592",
+   "title": "IFA match report 1120592",
+   "url": "https://www.football.org.il/leagues/games/game/?game_id=1120592",
+   "publisher": "Israel Football Association",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-3150",
+   "title": "HPT Museum: game 3150",
+   "url": "https://www.hpt.co.il/?ShowGame=3150",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ifa-954822",
+   "title": "IFA match report 954822",
+   "url": "https://www.football.org.il/leagues/games/game/?game_id=954822",
+   "publisher": "Israel Football Association",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-3030",
+   "title": "HPT Museum: game 3030",
+   "url": "https://www.hpt.co.il/?ShowGame=3030",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-hpt-opp4",
+   "title": "HPT Museum: head-to-head vs Maccabi Petah Tikva",
+   "url": "https://www.hpt.co.il/?Opponent=4",
+   "publisher": "HPT Museum",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-maariv-derby-2022",
+   "title": "Sport1 (Maariv): Maccabi Petah Tikva celebrates 0:4 derby",
+   "url": "https://sport1.maariv.co.il/israeli-soccer/liga-leumit/article/955566/",
+   "publisher": "Maariv Sport1",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-rsssf-isra92",
+   "title": "RSSSF Israel 1991/92",
+   "url": "https://rsssf.org/tablesi/isra92.html",
+   "publisher": "RSSSF",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  }
+ ],
+ "matches": [
+  {
+   "id": "w-m-2026-07-25-hpt-3194",
+   "value": {
+    "name": "הפועל פתח תקווה 1-0 מכבי פתח תקווה",
+    "on": "2026-07-25",
+    "competition": "גביע הטוטו ליגת העל - בית ב'",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [
+     {
+      "name": "נעם כהן",
+      "minute": 89
+     }
+    ],
+    "lineup": [
+     "עומר כץ",
+     "אבישי כהן",
+     "שביט מזל",
+     "רועי דוד",
+     "צ'יפיוקה סונגה",
+     "גיא בדש",
+     "אוראל דגני",
+     "עידו טסה",
+     "נעם כהן",
+     "בוני אמיאן",
+     "יזן נסאר"
+    ],
+    "bench": [
+     "סתיו ישראלי",
+     "קארים קימבידי",
+     "תומר אלטמן",
+     "פרנק ריבולייה",
+     "אוקלידס אנדרדה"
+    ]
+   },
+   "sources": [
+    "w-hpt-3194",
+    "w-ifa-1121211"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Scope: score, scorers (Hapoel Petah Tikva only), starting XI and substitutes used, where HPT Museum and IFA match reports agree. Names use club-museum Hebrew spelling; IFA transliteration variants of the same person noted. City derby. Venue omitted: IFA says Petah Tikva (Shlomo Bituach stadium), HPT says Ramat Hasharon (Rosh HaZahav).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  },
+  {
+   "id": "w-m-2026-07-29-hpt-3195",
+   "value": {
+    "name": "הפועל רמת גן 2-1 הפועל פתח תקווה",
+    "on": "2026-07-29",
+    "competition": "גביע הטוטו ליגת העל - בית ב'",
+    "score": "2-1",
+    "venue": "אצטדיון עירוני רחובות",
+    "scorers": [
+     {
+      "name": "שביט מזל",
+      "minute": 20
+     }
+    ],
+    "lineup": [
+     "רוי ששון",
+     "סתיו ישראלי",
+     "אוראל דגני",
+     "עידו טסה",
+     "הראל שלום",
+     "תומר אלטמן",
+     "רועי דוד",
+     "נעם כהן",
+     "גיא בדש",
+     "קארים קימבידי",
+     "שביט מזל"
+    ],
+    "bench": [
+     "אוקלידס אנדרדה",
+     "בוני אמיאן",
+     "אשיל קואדיו",
+     "פרנק ריבולייה"
+    ]
+   },
+   "sources": [
+    "w-hpt-3195",
+    "w-ifa-1121215"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Scope: score, scorers (Hapoel Petah Tikva only), starting XI and substitutes used, where HPT Museum and IFA match reports agree. Names use club-museum Hebrew spelling; IFA transliteration variants of the same person noted. Bench: Avishai Cohen appears in the IFA substitutes list only, omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  },
+  {
+   "id": "w-m-2026-08-05-hpt-3196",
+   "value": {
+    "name": "הפועל פתח תקווה 0-2 מכבי נתניה",
+    "on": "2026-08-05",
+    "competition": "גביע הטוטו ליגת העל - בית ב'",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [
+     "עומר כץ",
+     "אבישי כהן",
+     "אוראל דגני",
+     "סתיו ישראלי",
+     "יזן נסאר",
+     "קארים קימבידי",
+     "רועי דוד",
+     "בוני אמיאן",
+     "אוקלידס אנדרדה",
+     "צ'יפיוקה סונגה",
+     "פרנק ריבולייה"
+    ],
+    "bench": [
+     "תומר אלטמן",
+     "גיא בדש",
+     "טדרוס דמלאש",
+     "נעם כהן",
+     "שביט מזל"
+    ]
+   },
+   "sources": [
+    "w-hpt-3196",
+    "w-ifa-1121221"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Scope: score, scorers (Hapoel Petah Tikva only), starting XI and substitutes used, where HPT Museum and IFA match reports agree. Names use club-museum Hebrew spelling; IFA transliteration variants of the same person noted. Both goals were scored by Maccabi Netanya. Venue omitted: IFA says Petah Tikva, HPT says Ramat Hasharon.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  },
+  {
+   "id": "w-m-2026-08-15-hpt-3198",
+   "value": {
+    "name": "בני סכנין 1-0 הפועל פתח תקווה",
+    "on": "2026-08-15",
+    "competition": "גביע הטוטו ליגת העל - בית ב'",
+    "score": "1-0",
+    "venue": "אצטדיון דוחא, סכנין",
+    "scorers": [],
+    "lineup": [
+     "עומר כץ",
+     "אבישי כהן",
+     "עידו טסה",
+     "אוראל דגני",
+     "יזן נסאר",
+     "בוני אמיאן",
+     "תומר אלטמן",
+     "רועי דוד",
+     "גיא בדש",
+     "אוקלידס אנדרדה",
+     "פרנק ריבולייה"
+    ],
+    "bench": [
+     "אלכס מוסונדה",
+     "קארים קימבידי",
+     "טדרוס דמלאש",
+     "שביט מזל"
+    ]
+   },
+   "sources": [
+    "w-hpt-3198",
+    "w-ifa-1125397"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Scope: score, scorers (Hapoel Petah Tikva only), starting XI and substitutes used, where HPT Museum and IFA match reports agree. Names use club-museum Hebrew spelling; IFA transliteration variants of the same person noted. Sole goal by Sakhnin. Bench: Harel Shalom appears in IFA only, omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  },
+  {
+   "id": "w-m-2026-08-22-hpt-3199",
+   "value": {
+    "name": "עירוני דורות טבריה 1-0 הפועל פתח תקווה",
+    "on": "2026-08-22",
+    "competition": "ליגת העל - מחזור 1",
+    "score": "1-0",
+    "venue": "אצטדיון בראל, נוף הגליל",
+    "scorers": [],
+    "lineup": [
+     "עומר כץ",
+     "אבישי כהן",
+     "אלכס מוסונדה",
+     "תומר אלטמן",
+     "פרנק ריבולייה",
+     "רועי דוד",
+     "גיא בדש",
+     "אוראל דגני",
+     "קארים קימבידי",
+     "יזן נסאר",
+     "אוקלידס אנדרדה"
+    ],
+    "bench": [
+     "נעם כהן",
+     "שביט מזל",
+     "בוני אמיאן",
+     "סתיו ישראלי"
+    ]
+   },
+   "sources": [
+    "w-hpt-3199",
+    "w-ifa-1120562"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Scope: score, scorers (Hapoel Petah Tikva only), starting XI and substitutes used, where HPT Museum and IFA match reports agree. Names use club-museum Hebrew spelling; IFA transliteration variants of the same person noted. Sole goal (penalty) by Tiberias. Bench: Edmund Asante appears in HPT only, omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  },
+  {
+   "id": "w-m-2026-08-29-hpt-3200",
+   "value": {
+    "name": "הפועל פתח תקווה 1-0 הפועל ירושלים",
+    "on": "2026-08-29",
+    "competition": "ליגת העל - מחזור 2",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [
+     {
+      "name": "קארים קימבידי",
+      "minute": 14
+     }
+    ],
+    "lineup": [
+     "עומר כץ",
+     "אבישי כהן",
+     "אלכס מוסונדה",
+     "תומר אלטמן",
+     "פרנק ריבולייה",
+     "סתיו ישראלי",
+     "רועי דוד",
+     "אוראל דגני",
+     "קארים קימבידי",
+     "בוני אמיאן",
+     "יזן נסאר"
+    ],
+    "bench": [
+     "אוקלידס אנדרדה",
+     "איתי אהוד",
+     "גיא בדש",
+     "שביט מזל"
+    ]
+   },
+   "sources": [
+    "w-hpt-3200",
+    "w-ifa-1120573"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Scope: score, scorers (Hapoel Petah Tikva only), starting XI and substitutes used, where HPT Museum and IFA match reports agree. Names use club-museum Hebrew spelling; IFA transliteration variants of the same person noted. Venue omitted: IFA says Petah Tikva, HPT says Ramat Hasharon. Bench: Meir (Moshe/Moshiko) omitted, spelling unresolved.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  },
+  {
+   "id": "w-m-2026-09-18-hpt-3203",
+   "value": {
+    "name": "הפועל תל אביב 3-0 הפועל פתח תקווה",
+    "on": "2026-09-18",
+    "competition": "ליגת העל - מחזור 5",
+    "score": "3-0",
+    "venue": "בלומפילד",
+    "scorers": [],
+    "lineup": [
+     "עומר כץ",
+     "אבישי כהן",
+     "דייגו ארויו",
+     "אלכס מוסונדה",
+     "אריק בילה",
+     "סתיו ישראלי",
+     "רועי דוד",
+     "קארים קימבידי",
+     "בוני אמיאן",
+     "יזן נסאר",
+     "אוקלידס אנדרדה"
+    ],
+    "bench": [
+     "אור ישראלוב",
+     "רועי לוי",
+     "חמידו קייטה",
+     "נעם כהן"
+    ]
+   },
+   "sources": [
+    "w-hpt-3203",
+    "w-ifa-1120592"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Scope: score, scorers (Hapoel Petah Tikva only), starting XI and substitutes used, where HPT Museum and IFA match reports agree. Names use club-museum Hebrew spelling; IFA transliteration variants of the same person noted. All goals for Hapoel Tel Aviv (one own goal by a Hapoel Petah Tikva player). Bench: Itay Ehud in IFA only, omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  },
+  {
+   "id": "w-m-2025-05-19-hpt-3150",
+   "value": {
+    "name": "מכבי הרצליה 0-3 הפועל פתח תקווה",
+    "on": "2025-05-19",
+    "competition": "ליגה לאומית - מחזור 37",
+    "score": "0-3",
+    "venue": "אצטדיון רמת השרון",
+    "scorers": [
+     {
+      "name": "פרנק ריבולייה",
+      "minute": null
+     },
+     {
+      "name": "גולן בני",
+      "minute": 47
+     },
+     {
+      "name": "דוד דגו",
+      "minute": 70
+     }
+    ],
+    "lineup": [
+     "ליאור גליקליך",
+     "עידן כהן",
+     "רוי בן נביא",
+     "איתי רוטמן",
+     "דניאל מור יוסף",
+     "תומר אלטמן",
+     "גולן בני",
+     "רועי דוד",
+     "צ'יפיוקה סונגה",
+     "ג'וסלין טאבי",
+     "פרנק ריבולייה"
+    ],
+    "bench": [
+     "שון עדרי",
+     "אוהד חזוט",
+     "נועם שחר",
+     "דוד דגו",
+     "יובל ששון"
+    ]
+   },
+   "sources": [
+    "w-hpt-3150",
+    "w-ifa-954822"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Scope: score, scorers (Hapoel Petah Tikva only), starting XI and substitutes used, where HPT Museum and IFA match reports agree. Names use club-museum Hebrew spelling; IFA transliteration variants of the same person noted. Rivolier minute omitted: HPT 31', IFA 30'.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  },
+  {
+   "id": "w-m-2022-09-21-hpt-3030",
+   "value": {
+    "name": "מכבי פתח תקווה 4-0 הפועל פתח תקווה",
+    "on": "2022-09-21",
+    "competition": "ליגה לאומית - מחזור 6",
+    "score": "4-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "w-hpt-3030",
+    "w-maariv-derby-2022"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "City derby. Scope: date, teams, score, competition. Lineup, scorers and venue omitted (fourth goal minute 86 HPT vs 87 Maariv; venue and lineup single-source).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt-wavec"
+  }
+ ],
+ "kits": [],
+ "rivals": [
+  {
+   "id": "w-r-maccabi-pt",
+   "value": {
+    "name": "Maccabi Petah Tikva",
+    "note": "City derby"
+   },
+   "sources": [
+    "w-hpt-opp4",
+    "w-maariv-derby-2022"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "owner:maor-harel-2026-10-06"
+  }
+ ]
+}

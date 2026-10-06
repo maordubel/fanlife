@@ -1,0 +1,1976 @@
+{
+ "sources": [
+  {
+   "id": "w-uefa-uecl24-lu",
+   "title": "UEFA Europa Conference League final 2024: team line-ups (PDF)",
+   "url": "https://www.uefa.com/newsfiles/uefaeuropaconferenceleague/2024/2039972_LU.pdf",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-uefa-uecl24-rep",
+   "title": "Olympiacos 1-0 Fiorentina (aet): El Kaabi swoops to secure glory",
+   "url": "https://www.uefa.com/uefaeuropaconferenceleague/news/028d-1b01e5ec31a5-144c1f00e4f3-1000--olympiacos-1-0-fiorentina-aet-el-kaabi-swoops-to-secure-g/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fotmob-uecl24",
+   "title": "Olympiacos vs Fiorentina (29 May 2024) - FotMob",
+   "url": "https://www.fotmob.com/ro/matches/fiorentina-vs-olympiacos/2fsv1h",
+   "publisher": "FotMob",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-wp-uecl24",
+   "title": "2024 UEFA Europa Conference League final - Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2024_UEFA_Europa_Conference_League_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-no-pao2006",
+   "title": "Olympiacos - Panathinaikos line-up (2019-20) - Eurosport Norway",
+   "url": "https://www.eurosport.no/fotball/souroti-super-league/2019-2020/olympiacos-panathinaikos_mtc1126259/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-footdirect-pao2006",
+   "title": "Olympiakos - Panathinaikos 21 June 2020 - Foot Direct",
+   "url": "https://www.foot-direct.com/live/4338991349779394175-olympiakos-piree-vs-panathinaikos-athenes",
+   "publisher": "Foot Direct",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-protothema-pao2006",
+   "title": "Olympiacos-Panathinaikos 3-0 (play-off) - Protothema",
+   "url": "https://www.protothema.gr/sports/article/1019115/super-league-1-play-off-olubiakos-panathinaikos-3-0-psekaste-skoupiste-teleiosate/",
+   "publisher": "Protothema",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-lavoz-pao2006",
+   "title": "Olympiakos se acerca al titulo en Grecia - La Voz de San Justo",
+   "url": "https://www.lavozdesanjusto.com.ar/olympiakos-se-acerca-al-titulo-en-grecia-89031",
+   "publisher": "La Voz de San Justo",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-pao2006",
+   "title": "Olympiakos - Panathinaikos 21 June 2020 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/olympiakos-panathinaikos-20200621.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-fr-and1310",
+   "title": "Olympiakos - RSC Anderlecht compositions - Eurosport France",
+   "url": "https://www.eurosport.fr/football/ligue-des-champions/2013-2014/olympiakos-anderlecht_mtc624018/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-sky-and1310",
+   "title": "Olympiakos Piraeus - Anderlecht line-up - Sky Sport Germany",
+   "url": "https://sport.sky.de/fussball/piraeus-vs-anderlecht/aufstellung/300963",
+   "publisher": "Sky Sport Deutschland",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-uefa-and1310",
+   "title": "Olympiacos FC vs RSC Anderlecht post-match report - UEFA",
+   "url": "https://www.uefa.com/uefachampionsleague/match/2011852--olympiacos-vs-anderlecht/postmatch/report/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-bkkpost-and1310",
+   "title": "Saviola the saviour as Olympiakos reach last 16 - Bangkok Post",
+   "url": "https://www.bangkokpost.com/sports/384232/saviola-the-saviour-as-olympiakos-reach-last-16",
+   "publisher": "Bangkok Post",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-it-psg13",
+   "title": "Olympiakos - PSG formazioni - Eurosport Italia",
+   "url": "https://www.eurosport.it/calcio/champions-league/2013-2014/olympiakos-psg_mtc624019/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-sky-psg13",
+   "title": "Olympiakos Piraeus - PSG line-up - Sky Sport Germany",
+   "url": "https://sport.sky.de/fussball/piraeus-vs-psg/aufstellung/300910",
+   "publisher": "Sky Sport Deutschland",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-uefa-psg13",
+   "title": "Motta double helps PSG prevail at Olympiacos - UEFA",
+   "url": "https://www.uefa.com/uefachampionsleague/news/020d-0e9fd8c45bea-a446d8a1a589-1000--motta-double-helps-psg-prevail-at-olympiacos/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-no-ben13",
+   "title": "Olympiacos - Benfica lagoppstilling - Eurosport Norway",
+   "url": "https://www.eurosport.no/fotball/champions-league/2013-2014/olympiacos-benfica_mtc624020/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-sky-ben13",
+   "title": "Olympiakos Piraeus - Benfica line-up - Sky Sport Germany",
+   "url": "https://sport.sky.de/fussball/piraeus-vs-benfica/aufstellung/300944",
+   "publisher": "Sky Sport Deutschland",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-it-and0210",
+   "title": "Anderlecht - Olympiakos formazioni - Eurosport Italia",
+   "url": "https://www.eurosport.it/calcio/champions-league/2013-2014/live-anderlecht-olympiakos_mtc624015/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-sky-and0210",
+   "title": "Anderlecht - Olympiakos Piraeus line-up - Sky Sport Germany",
+   "url": "https://sport.sky.de/fussball/anderlecht-vs-piraeus/aufstellung/300930",
+   "publisher": "Sky Sport Deutschland",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-no-atm14",
+   "title": "Olympiacos - Atletico Madrid lagoppstilling - Eurosport Norway",
+   "url": "https://www.eurosport.no/fotball/champions-league/2014-2015/olympiacos-atletico-madrid_mtc704653/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-laliga-atm14",
+   "title": "Olympiacos - Atletico de Madrid match - LaLiga",
+   "url": "https://www.laliga.com/en-GB/match/temporada-2014-2015-champions-league-olympiacos-atletico-de-madrid-3",
+   "publisher": "LaLiga",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-voetbalkrant-atm14",
+   "title": "Olympiakos Piraeus - Atletico Madrid (Champions League 2014/2015) - Voetbalkrant",
+   "url": "https://www.voetbalkrant.com/europa/champions-league/2014-2015/kalender/speeldag-1/olympiakos-piraeus/atltico-madrid",
+   "publisher": "Voetbalkrant",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-skysports-atm14",
+   "title": "Olympiakos vs Atletico Madrid - Sky Sports",
+   "url": "https://www.skysports.com/football/olympiakos-vs-a-madrid/325311",
+   "publisher": "Sky Sports",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-uefa-atm14",
+   "title": "Olympiacos stun Atletico in five-goal thriller - UEFA",
+   "url": "https://www.uefa.com/uefachampionsleague/news/newsid=2140397.html",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-sky-bay1509",
+   "title": "Olympiakos Piraeus - FC Bayern Munchen line-up - Sky Sport Germany",
+   "url": "https://sport.sky.de/fussball/piraeus-vs-fc-bayern/aufstellung/351346",
+   "publisher": "Sky Sport Deutschland",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-watson-bay1509",
+   "title": "Olympiacos - Bayern Munich liste - Watson Sportresultate",
+   "url": "https://sportresultate.watson.ch/fr/football/uefa-champions-league/ma2479965/olympiacos-le-piree_bayern-munich/liste",
+   "publisher": "Watson",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-sportsmole-bay1509",
+   "title": "Olympiacos 0-3 Bayern Munich as it happened - Sports Mole",
+   "url": "https://www.sportsmole.co.uk/football/bayern-munich/champions-league/live-commentary/olympiacos-0-3-bayern-munich-as-it-happened_246535.html",
+   "publisher": "Sports Mole",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fcb-bay1509",
+   "title": "Match report: Olympiakos - FC Bayern 16.09.15 - FC Bayern Munich",
+   "url": "https://fcbayern.com/en/news/matchreports/2015/09/match-report-olympiakos---fc-bayern-160915",
+   "publisher": "FC Bayern Munich",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-tnt-bar1710",
+   "title": "Olympiacos - FC Barcelona line-up (2017-18) - TNT Sports/Eurosport",
+   "url": "https://www.tntsports.co.uk/football/champions-league/2017-2018/live-olympiacos-fc-barcelona_mtc948791/live-lineup.shtml",
+   "publisher": "TNT Sports (Eurosport)",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-sladuma-bar1710",
+   "title": "UEFA Champions League starting XI: Olympiacos vs FC Barcelona - SoccerLaduma",
+   "url": "https://www.soccerladuma.co.za/international/uefa-champions-league/uefa-champions-league-starting-xi-olympiacos-vs-fc-barcelona-20171031",
+   "publisher": "SoccerLaduma",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-bar1710",
+   "title": "Olympiakos - FC Barcelone 31 October 2017 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/olympiakos-barcelone-20171031.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-tnt-psv21",
+   "title": "Olympiacos - PSV line-up (2020-21) - TNT Sports/Eurosport",
+   "url": "https://www.tntsports.co.uk/football/europa-league/2020-2021/live-olympiacos-psv_mtc1207655/live-lineup.shtml",
+   "publisher": "TNT Sports (Eurosport)",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-psv21",
+   "title": "Olympiakos - PSV Eindhoven 18 February 2021 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/olympiakos-psv-eindhoven-20210218.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-tnt-atah22",
+   "title": "Olympiacos - Atalanta line-up (2021-22) - TNT Sports/Eurosport",
+   "url": "https://www.tntsports.co.uk/football/europa-league/2021-2022/live-olympiacos-atalanta_mtc1290477/live-lineup.shtml",
+   "publisher": "TNT Sports (Eurosport)",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-atah22",
+   "title": "Olympiakos - Atalanta Bergame 24 February 2022 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/olympiakos-atalanta-bergame-20220224.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-tnt-ataa22",
+   "title": "Atalanta - Olympiacos line-up (2021-22) - TNT Sports/Eurosport",
+   "url": "https://www.tntsports.co.uk/football/europa-league/2021-2022/live-atalanta-olympiacos_mtc1290504/live-lineup.shtml",
+   "publisher": "TNT Sports (Eurosport)",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-ataa22",
+   "title": "Atalanta Bergame - Olympiakos 17 February 2022 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/atalanta-bergame-olympiakos-20220217.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-tnt-pao2205",
+   "title": "Olympiacos - Panathinaikos line-up (2021-22) - TNT Sports/Eurosport",
+   "url": "https://www.tntsports.co.uk/football/greek-super-league/2021-2022/live-olympiacos-panathinaikos_mtc1296575/live-lineup.shtml",
+   "publisher": "TNT Sports (Eurosport)",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-pao2205",
+   "title": "Olympiakos - Panathinaikos 11 May 2022 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/olympiakos-panathinaikos-20220511.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-betfred-pao2205",
+   "title": "Olympiacos vs Panathinaikos 11-05-2022 - Betfred Insights",
+   "url": "https://insights.betfred.com/football/match/greece/11-05-2022/olympiacos-v-panathinaikos/",
+   "publisher": "Betfred",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-it-pao2011",
+   "title": "Olympiakos - Panathinaikos formazioni (2020-21) - Eurosport Italia",
+   "url": "https://www.eurosport.it/calcio/campionato-greco/2020-2021/live-olympiakos-panathinaikos_mtc1222245/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-pao2011",
+   "title": "Olympiakos - Panathinaikos 21 November 2020 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/olympiakos-panathinaikos-20201121.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-betfred-pao2011",
+   "title": "Olympiacos vs Panathinaikos 21-11-2020 - Betfred Insights",
+   "url": "https://insights.betfred.com/football/match/greece/21-11-2020/olympiacos-v-panathinaikos/",
+   "publisher": "Betfred",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-fr-pao2304",
+   "title": "Panathinaikos - Olympiakos compositions (2022-23) - Eurosport France",
+   "url": "https://www.eurosport.fr/football/super-league-grecque/2022-2023/live-panathinaikos-olympiakos_mtc1379143/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-pao2304",
+   "title": "Panathinaikos - Olympiakos 9 April 2023 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/panathinaikos-olympiakos-20230409.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-de-pao2104",
+   "title": "Olympiakos Piraeus - Panathinaikos Athen Aufstellungen (2020-21) - Eurosport Germany",
+   "url": "https://www.eurosport.de/fussball/super-league/2020-2021/live-olympiakos-piraeus-panathinaikos-athen_mtc1222433/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-pao2104",
+   "title": "Olympiakos - Panathinaikos 11 April 2021 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/olympiakos-panathinaikos-20210411.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-eur-de-pao1909",
+   "title": "Panathinaikos Athen - Olympiacos Aufstellungen (2019-20) - Eurosport Germany",
+   "url": "https://www.eurosport.de/fussball/super-league/2019-2020/live-panathinaikos-athen-olympiacos_mtc1126086/live-lineup.shtml",
+   "publisher": "Eurosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-pao1909",
+   "title": "Panathinaikos - Olympiakos 22 September 2019 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/panathinaikos-olympiakos-20190922.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fotmob-pao2007",
+   "title": "Panathinaikos vs Olympiacos 5 July 2020 - FotMob",
+   "url": "https://www.fotmob.com/livescores/3287937?show=all",
+   "publisher": "FotMob",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-mf-pao2007",
+   "title": "Panathinaikos - Olympiakos 5 July 2020 - Maxifoot",
+   "url": "https://www.maxifoot.fr/match/panathinaikos-olympiakos-20200705.htm",
+   "publisher": "Maxifoot",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-1516-home",
+   "title": "Football Kit Archive: Olympiacos 2015-16 home kit",
+   "url": "https://www.footballkitarchive.com/olympiacos-piraeus-2015-16-home-kit/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-1617-home",
+   "title": "Football Kit Archive: Olympiacos 2016-17 home kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2016-17-home-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-1718-home",
+   "title": "Football Kit Archive: Olympiacos 2017-18 home kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2017-18-home-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-1819-home",
+   "title": "Football Kit Archive: Olympiacos 2018-19 home kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2018-19-home-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-1920-home",
+   "title": "Football Kit Archive: Olympiacos 2019-20 home kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2019-20-home-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-2021-home",
+   "title": "Football Kit Archive: Olympiacos 2020-21 home kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2020-21-home-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-2122-home",
+   "title": "Football Kit Archive: Olympiacos 2021-22 home kit",
+   "url": "https://www.footballkitarchive.com/ms/olympiacos-piraeus-2021-22-home-kit/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-2223-home",
+   "title": "Football Kit Archive: Olympiacos 2022-23 home kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2022-23-home-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-2425-home",
+   "title": "Football Kit Archive: Olympiacos 2024-25 home kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2024-25-home-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-1516-away",
+   "title": "Football Kit Archive: Olympiacos 2015-16 away kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2015-16-away-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-1718-away",
+   "title": "Football Kit Archive: Olympiacos 2017-18 away kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2017-18-away-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-1920-away",
+   "title": "Football Kit Archive: Olympiacos 2019-20 away kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2019-20-away-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-2122-away",
+   "title": "Football Kit Archive: Olympiacos 2021-22 away kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2021-22-away-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fka-2223-away",
+   "title": "Football Kit Archive: Olympiacos 2022-23 away kit",
+   "url": "https://footballkitarchive.com/olympiacos-piraeus-2022-23-away-kit",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-1516",
+   "title": "Adidas Olympiacos 15-16 kits - Footy Headlines",
+   "url": "https://www.footyheadlines.com/2015/06/adidas-olympiacos-15-16-kit.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-1617",
+   "title": "Olympiacos 16-17 kit - Footy Headlines",
+   "url": "https://www.footyheadlines.com/2016/06/olympiacos-16-17-kit.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-1718",
+   "title": "Olympiacos 17-18 home and away kits - Footy Headlines",
+   "url": "https://www.footyheadlines.com/2017/05/olympiacos-17-18-home-away-kits.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-1819",
+   "title": "Olympiacos 18-19 home kit - Footy Headlines",
+   "url": "https://www.footyheadlines.com/2018/07/olympiacos-18-19-home-kit.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-1920",
+   "title": "Olympiacos 19-20 kit - Footy Headlines",
+   "url": "https://www.footyheadlines.com/2019/07/olympiacos-19-20-kit.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-ff-2021",
+   "title": "Olympiacos FC 2020/21 adidas kits - Football Fashion",
+   "url": "https://footballfashion.org/wordpress/2020/11/02/olympiacos-fc-2020-21-adidas-kits/",
+   "publisher": "Football Fashion",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-2122",
+   "title": "Olympiacos 21-22 home kit - Footy Headlines",
+   "url": "https://footyheadlines.com/2021/06/olympiacos-21-22-home-kit.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-2223",
+   "title": "Olympiacos 22-23 home kit - Footy Headlines",
+   "url": "https://www.footyheadlines.com/2022/07/olympiacos-22-23-home-kit.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-2223a",
+   "title": "Olympiacos 22-23 away kit released - Footy Headlines",
+   "url": "https://www.footyheadlines.com/2022/07/olympiacos-22-23-away-kit-released.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-fh-2425",
+   "title": "Olympiacos 24-25 home kit - Footy Headlines",
+   "url": "https://footyheadlines.com/2024/08/olympiacos-24-25-home-kit.html",
+   "publisher": "Footy Headlines",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-wp-derby",
+   "title": "Derby of the Eternal Enemies - Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Derby_of_the_Eternal_Enemies",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "w-flash-derby",
+   "title": "Derby Week: an intense rivalry from Greece's Athenian football triangle - Flashscore",
+   "url": "https://www.flashscore.com/news/soccer-super-league-derby-week-an-intense-rivalry-from-greece-s-athenian-football-triangle/OCVlsscR/",
+   "publisher": "Flashscore",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  }
+ ],
+ "matches": [
+  {
+   "id": "w-m-uecl-final-fiorentina-2024",
+   "value": {
+    "name": "Olympiacos 1-0 Fiorentina (after extra time)",
+    "on": "2024-05-29",
+    "competition": "UEFA Europa Conference League final",
+    "score": "1-0",
+    "venue": "Agia Sophia Stadium (OPAP Arena), Athens",
+    "scorers": [
+     {
+      "name": "Ayoub El Kaabi",
+      "minute": 116
+     }
+    ],
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Rodinei",
+     "Panagiotis Retsos",
+     "David Carmo",
+     "Francisco Ortega",
+     "Santiago Hezze",
+     "Vicente Iborra",
+     "Kostas Fortounis",
+     "Chiquinho",
+     "Daniel Podence",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Stevan Jovetic",
+     "Andre Horta",
+     "Quini",
+     "Giorgos Masouras",
+     "Youssef El-Arabi"
+    ]
+   },
+   "sources": [
+    "w-uefa-uecl24-lu",
+    "w-uefa-uecl24-rep",
+    "w-fotmob-uecl24",
+    "w-wp-uecl24"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in UEFA line-up PDF, UEFA report and FotMob. Goal 116' (El Kaabi) in UEFA, FotMob and Wikipedia. Venue named Agia Sophia Stadium (Wikipedia) / OPAP Arena (FotMob), same ground. Quini (91') from UEFA only."
+  },
+  {
+   "id": "w-m-pao-2020-06-21",
+   "value": {
+    "name": "Olympiacos 3-0 Panathinaikos",
+    "on": "2020-06-21",
+    "competition": "Super League Greece (play-offs)",
+    "score": "3-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Guilherme",
+      "minute": 5
+     },
+     {
+      "name": "Youssef El Arabi",
+      "minute": 21
+     },
+     {
+      "name": "Cafu",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Jose Sa",
+     "Omar Elabdellaoui",
+     "Ruben Semedo",
+     "Kostas Tsimikas",
+     "Ousseynou Ba",
+     "Kostas Fortounis",
+     "Guilherme",
+     "Andreas Bouchalakis",
+     "Mady Camara",
+     "Youssef El Arabi",
+     "Maximiliano Lovera"
+    ],
+    "bench": [
+     "Cafu",
+     "Bruno Gaspar",
+     "Giorgos Masouras",
+     "Ahmed Hassan Koka"
+    ]
+   },
+   "sources": [
+    "w-eur-no-pao2006",
+    "w-footdirect-pao2006",
+    "w-protothema-pao2006",
+    "w-lavoz-pao2006",
+    "w-mf-pao2006"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in Eurosport, Foot Direct, Protothema (transliterated) and Maxifoot. Guilherme 5' (Foot Direct, Protothema, Maxifoot; Eurosport 6') and El Arabi 21' (same three; Eurosport 22'). Cafu's goal minute disputed (90+1 vs 90+3) so left null. Scorers agree across five sources."
+  },
+  {
+   "id": "w-m-anderlecht-home-2013",
+   "value": {
+    "name": "Olympiacos 3-1 Anderlecht",
+    "on": "2013-12-10",
+    "competition": "UEFA Champions League group stage",
+    "score": "3-1",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Javier Saviola",
+      "minute": 33
+     },
+     {
+      "name": "Sacha Kljestan",
+      "minute": 39
+     },
+     {
+      "name": "Javier Saviola",
+      "minute": 58
+     },
+     {
+      "name": "Alejandro Dominguez",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Roberto",
+     "Leandro Salino",
+     "Dimitris Siovas",
+     "Kostas Manolas",
+     "Jose Holebas",
+     "Paulo Machado",
+     "Andreas Samaris",
+     "David Fuster",
+     "Javier Saviola",
+     "Joel Campbell",
+     "Michael Olaitan"
+    ],
+    "bench": [
+     "Vladimir Weiss",
+     "Alejandro Dominguez",
+     "Delvin Ndinga"
+    ]
+   },
+   "sources": [
+    "w-eur-fr-and1310",
+    "w-sky-and1310",
+    "w-uefa-and1310",
+    "w-bkkpost-and1310"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in Eurosport and Sky Sport DE. Saviola 33'/58' per Eurosport, Sky and UEFA (Bangkok Post says 59'). Dominguez penalty in stoppage time (90+5) so minute left null. Kljestan (Anderlecht) 39'."
+  },
+  {
+   "id": "w-m-psg-2013-09-17",
+   "value": {
+    "name": "Olympiacos 1-4 Paris Saint-Germain",
+    "on": "2013-09-17",
+    "competition": "UEFA Champions League group stage",
+    "score": "1-4",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Edinson Cavani",
+      "minute": null
+     },
+     {
+      "name": "Vladimir Weiss",
+      "minute": 25
+     },
+     {
+      "name": "Thiago Motta",
+      "minute": 68
+     },
+     {
+      "name": "Thiago Motta",
+      "minute": 73
+     },
+     {
+      "name": "Marquinhos",
+      "minute": 86
+     }
+    ],
+    "lineup": [
+     "Roberto",
+     "Giannis Maniatis",
+     "Carl Medjani",
+     "Dimitris Siovas",
+     "Gaetan Bong",
+     "Paulo Machado",
+     "Andreas Samaris",
+     "David Fuster",
+     "Alejandro Dominguez",
+     "Vladimir Weiss",
+     "Kostas Mitroglou"
+    ],
+    "bench": [
+     "Joel Campbell",
+     "Sambou Yatabare",
+     "Javier Saviola"
+    ]
+   },
+   "sources": [
+    "w-eur-it-psg13",
+    "w-sky-psg13",
+    "w-uefa-psg13"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in Eurosport and Sky Sport DE. Scorers agree in all three; Cavani minute left null (19' vs 20'). Venue: Karaiskakis (Eurosport), Piraeus (UEFA)."
+  },
+  {
+   "id": "w-m-benfica-2013-11-05",
+   "value": {
+    "name": "Olympiacos 1-0 Benfica",
+    "on": "2013-11-05",
+    "competition": "UEFA Champions League group stage",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [
+     {
+      "name": "Kostas Manolas",
+      "minute": 13
+     }
+    ],
+    "lineup": [
+     "Roberto",
+     "Leandro Salino",
+     "Dimitris Siovas",
+     "Kostas Manolas",
+     "Jose Holebas",
+     "Sambou Yatabare",
+     "Giannis Maniatis",
+     "Andreas Samaris",
+     "David Fuster",
+     "Javier Saviola",
+     "Kostas Mitroglou"
+    ],
+    "bench": [
+     "Alejandro Dominguez",
+     "Delvin Ndinga",
+     "Gaetan Bong"
+    ]
+   },
+   "sources": [
+    "w-eur-no-ben13",
+    "w-sky-ben13"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI, scorer and minute identical in Eurosport and Sky Sport DE. Venue given by one source only (Eurosport: Karaiskakis) so omitted."
+  },
+  {
+   "id": "w-m-anderlecht-away-2013",
+   "value": {
+    "name": "Anderlecht 0-3 Olympiacos",
+    "on": "2013-10-02",
+    "competition": "UEFA Champions League group stage",
+    "score": "0-3",
+    "venue": null,
+    "scorers": [
+     {
+      "name": "Kostas Mitroglou",
+      "minute": 17
+     },
+     {
+      "name": "Kostas Mitroglou",
+      "minute": 56
+     },
+     {
+      "name": "Kostas Mitroglou",
+      "minute": 72
+     }
+    ],
+    "lineup": [
+     "Roberto",
+     "Giannis Maniatis",
+     "Dimitris Siovas",
+     "Kostas Manolas",
+     "Gaetan Bong",
+     "Delvin Ndinga",
+     "Vladimir Weiss",
+     "Andreas Samaris",
+     "Javier Saviola",
+     "Michael Olaitan",
+     "Kostas Mitroglou"
+    ],
+    "bench": [
+     "David Fuster",
+     "Alejandro Dominguez",
+     "Jose Holebas"
+    ]
+   },
+   "sources": [
+    "w-eur-it-and0210",
+    "w-sky-and0210"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI and Mitroglou hat-trick (17', 56', 72') identical in Eurosport and Sky Sport DE. Venue by one source only so omitted."
+  },
+  {
+   "id": "w-m-atletico-2014-09-16",
+   "value": {
+    "name": "Olympiacos 3-2 Atletico Madrid",
+    "on": "2014-09-16",
+    "competition": "UEFA Champions League group stage",
+    "score": "3-2",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Arthur Masuaku",
+      "minute": 13
+     },
+     {
+      "name": "Ibrahim Afellay",
+      "minute": 31
+     },
+     {
+      "name": "Mario Mandzukic",
+      "minute": 38
+     },
+     {
+      "name": "Kostas Mitroglou",
+      "minute": 73
+     },
+     {
+      "name": "Antoine Griezmann",
+      "minute": 86
+     }
+    ],
+    "lineup": [
+     "Roberto",
+     "Giannis Maniatis",
+     "Alberto Botia",
+     "Omar Elabdellaoui",
+     "Luka Milivojevic",
+     "Ibrahim Afellay",
+     "Kostas Mitroglou",
+     "Alejandro Dominguez",
+     "Pajtim Kasami",
+     "Eric Abidal",
+     "Arthur Masuaku"
+    ],
+    "bench": [
+     "David Fuster",
+     "Delvin Ndinga",
+     "Konstantinos Giannoulis"
+    ]
+   },
+   "sources": [
+    "w-laliga-atm14",
+    "w-voetbalkrant-atm14",
+    "w-eur-no-atm14",
+    "w-skysports-atm14",
+    "w-uefa-atm14"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in LaLiga and Voetbalkrant; Eurosport lists the same ten plus one blank slot; Sky Sports and UEFA mention Abidal. Scorers and minutes agree across LaLiga, Voetbalkrant, Eurosport."
+  },
+  {
+   "id": "w-m-bayern-2015-09-16",
+   "value": {
+    "name": "Olympiacos 0-3 Bayern Munich",
+    "on": "2015-09-16",
+    "competition": "UEFA Champions League group stage",
+    "score": "0-3",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Thomas Muller",
+      "minute": 52
+     },
+     {
+      "name": "Mario Gotze",
+      "minute": 89
+     },
+     {
+      "name": "Thomas Muller",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Roberto",
+     "Manuel da Costa",
+     "Omar Elabdellaoui",
+     "Arthur Masuaku",
+     "Pajtim Kasami",
+     "Dimitris Siovas",
+     "Leandro Salino",
+     "Felipe Pardo",
+     "Esteban Cambiasso",
+     "Alejandro Dominguez",
+     "Brown Ideye"
+    ],
+    "bench": [
+     "Hernani",
+     "Kostas Fortounis",
+     "Seba"
+    ]
+   },
+   "sources": [
+    "w-sky-bay1509",
+    "w-watson-bay1509",
+    "w-sportsmole-bay1509",
+    "w-fcb-bay1509"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in Sky Sport DE, Watson and Sports Mole. Date 16 Sep 2015 in Sky, Sports Mole and FC Bayern (Watson page shows 15.09, treated as an outlier). Muller's second goal was a stoppage-time penalty (90+2) so minute left null."
+  },
+  {
+   "id": "w-m-barcelona-2017-10-31",
+   "value": {
+    "name": "Olympiacos 0-0 Barcelona",
+    "on": "2017-10-31",
+    "competition": "UEFA Champions League group stage",
+    "score": "0-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [
+     "Silvio Proto",
+     "Omar Elabdellaoui",
+     "Alberto Botia",
+     "Bjorn Engels",
+     "Leonardo Koutris",
+     "Panagiotis Tachtsidis",
+     "Alaixys Romao",
+     "Vadis Odjidja-Ofoe",
+     "Mehdi Carcela",
+     "Diogo Figueiras",
+     "Kostas Fortounis"
+    ],
+    "bench": [
+     "Guillaume Gillet",
+     "Felipe Pardo",
+     "Uros Djurdjevic"
+    ]
+   },
+   "sources": [
+    "w-tnt-bar1710",
+    "w-sladuma-bar1710",
+    "w-mf-bar1710"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in TNT/Eurosport, SoccerLaduma and Maxifoot. Goalless draw per TNT and Maxifoot."
+  },
+  {
+   "id": "w-m-psv-2021-02-18",
+   "value": {
+    "name": "Olympiacos 4-2 PSV Eindhoven",
+    "on": "2021-02-18",
+    "competition": "UEFA Europa League",
+    "score": "4-2",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Andreas Bouchalakis",
+      "minute": null
+     },
+     {
+      "name": "Eran Zahavi",
+      "minute": null
+     },
+     {
+      "name": "Yann M'Vila",
+      "minute": null
+     },
+     {
+      "name": "Eran Zahavi",
+      "minute": null
+     },
+     {
+      "name": "Youssef El Arabi",
+      "minute": null
+     },
+     {
+      "name": "Giorgos Masouras",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Jose Sa",
+     "Kenny Lala",
+     "Oleg Reabciuk",
+     "Mady Camara",
+     "Andreas Bouchalakis",
+     "Yann M'Vila",
+     "Sokratis Papastathopoulos",
+     "Ousseynou Ba",
+     "Mathieu Valbuena",
+     "Bruma",
+     "Youssef El Arabi"
+    ],
+    "bench": [
+     "Giorgos Masouras",
+     "Kostas Fortounis",
+     "Marios Vrousai",
+     "Ahmed Hassan Koka",
+     "Thanasis Androutsos"
+    ]
+   },
+   "sources": [
+    "w-tnt-psv21",
+    "w-mf-psv21"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI, scorers and substitutes identical in TNT/Eurosport and Maxifoot; goal minutes differ by one minute between the two (e.g. Bouchalakis 10' vs 9') so minutes left null."
+  },
+  {
+   "id": "w-m-atalanta-home-2022-02-24",
+   "value": {
+    "name": "Olympiacos 0-3 Atalanta",
+    "on": "2022-02-24",
+    "competition": "UEFA Europa League round of 16 (second leg)",
+    "score": "0-3",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Joakim Maehle",
+      "minute": null
+     },
+     {
+      "name": "Ruslan Malinovskyi",
+      "minute": null
+     },
+     {
+      "name": "Ruslan Malinovskyi",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Tomas Vaclik",
+     "Sokratis Papastathopoulos",
+     "Kostas Manolas",
+     "Pape Abou Cisse",
+     "Mady Camara",
+     "Yann M'Vila",
+     "Aguibou Camara",
+     "Kenny Lala",
+     "Oleg Reabciuk",
+     "Henry Onyekuru",
+     "Tiquinho Soares"
+    ],
+    "bench": [
+     "Giorgos Masouras",
+     "Mathieu Valbuena",
+     "Marios Vrousai",
+     "Youssef El Arabi",
+     "Bandiougou Fadiga"
+    ]
+   },
+   "sources": [
+    "w-tnt-atah22",
+    "w-mf-atah22"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI, scorers and substitutes identical in TNT/Eurosport and Maxifoot; minutes differ by 1-2 minutes so left null."
+  },
+  {
+   "id": "w-m-atalanta-away-2022-02-17",
+   "value": {
+    "name": "Atalanta 2-1 Olympiacos",
+    "on": "2022-02-17",
+    "competition": "UEFA Europa League round of 16 (first leg)",
+    "score": "2-1",
+    "venue": "Gewiss Stadium (New Balance Arena), Bergamo",
+    "scorers": [
+     {
+      "name": "Tiquinho Soares",
+      "minute": null
+     },
+     {
+      "name": "Berat Djimsiti",
+      "minute": null
+     },
+     {
+      "name": "Berat Djimsiti",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Tomas Vaclik",
+     "Yann M'Vila",
+     "Henry Onyekuru",
+     "Sokratis Papastathopoulos",
+     "Giorgos Masouras",
+     "Aguibou Camara",
+     "Kenny Lala",
+     "Oleg Reabciuk",
+     "Tiquinho Soares",
+     "Kostas Manolas",
+     "Pape Abou Cisse"
+    ],
+    "bench": [
+     "Mady Camara",
+     "Youssef El Arabi",
+     "Andreas Bouchalakis",
+     "Rony Lopes"
+    ]
+   },
+   "sources": [
+    "w-tnt-ataa22",
+    "w-mf-ataa22"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in TNT/Eurosport and Maxifoot; minutes differ by 1-2 so left null. Venue named New Balance Arena (TNT) / Gewiss Stadium (Maxifoot), same ground."
+  },
+  {
+   "id": "w-m-pao-2022-05-11",
+   "value": {
+    "name": "Olympiacos 1-2 Panathinaikos",
+    "on": "2022-05-11",
+    "competition": "Super League Greece (play-offs)",
+    "score": "1-2",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Sebastian Palacios",
+      "minute": null
+     },
+     {
+      "name": "Tiquinho Soares",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Tomas Vaclik",
+     "Avraam Papadopoulos",
+     "Sokratis Papastathopoulos",
+     "Kenny Lala",
+     "Oleg Reabciuk",
+     "Yann M'Vila",
+     "Mady Camara",
+     "Aguibou Camara",
+     "Youssef El Arabi",
+     "Rony Lopes",
+     "Garry Rodrigues"
+    ],
+    "bench": [
+     "Pape Abou Cisse",
+     "Tiquinho Soares",
+     "Mathieu Valbuena",
+     "Mamadou Kane",
+     "Giorgos Masouras"
+    ]
+   },
+   "sources": [
+    "w-tnt-pao2205",
+    "w-mf-pao2205",
+    "w-betfred-pao2205"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in TNT/Eurosport and Maxifoot. Palacios and Soares scored per all three; minutes differ by 1 so left null. Panathinaikos' second scorer is disputed (Schenkeveld in Maxifoot and Betfred, Kourbelis in TNT) so omitted."
+  },
+  {
+   "id": "w-m-pao-2020-11-21",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2020-11-21",
+    "competition": "Super League Greece",
+    "score": "1-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Kostas Fortounis",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Jose Sa",
+     "Rafinha",
+     "Ruben Semedo",
+     "Pape Abou Cisse",
+     "Mohamed Drager",
+     "Yann M'Vila",
+     "Kostas Fortounis",
+     "Andreas Bouchalakis",
+     "Giorgos Masouras",
+     "Mady Camara",
+     "Lazar Randjelovic"
+    ],
+    "bench": [
+     "Maximiliano Lovera",
+     "Thanasis Androutsos"
+    ]
+   },
+   "sources": [
+    "w-eur-it-pao2011",
+    "w-mf-pao2011",
+    "w-betfred-pao2011"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in Eurosport Italia and Maxifoot. Fortounis scored in all three; minute disputed (21' in Maxifoot and Betfred, 23' in Eurosport) so left null."
+  },
+  {
+   "id": "w-m-pao-2023-04-09",
+   "value": {
+    "name": "Panathinaikos 2-0 Olympiacos",
+    "on": "2023-04-09",
+    "competition": "Super League Greece",
+    "score": "2-0",
+    "venue": "Apostolos Nikolaidis Stadium, Athens",
+    "scorers": [
+     {
+      "name": "Andraz Sporar",
+      "minute": null
+     },
+     {
+      "name": "Youssef El Arabi (own goal)",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Alexandros Paschalakis",
+     "Ousseynou Ba",
+     "Sokratis Papastathopoulos",
+     "Oleg Reabciuk",
+     "Rodinei",
+     "Yann M'Vila",
+     "Kostas Fortounis",
+     "Hwang In-beom",
+     "James Rodriguez",
+     "Giorgos Masouras",
+     "Youssef El Arabi"
+    ],
+    "bench": [
+     "Cedric Bakambu",
+     "Mathieu Valbuena",
+     "Marios Vrousai"
+    ]
+   },
+   "sources": [
+    "w-eur-fr-pao2304",
+    "w-mf-pao2304"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in Eurosport France and Maxifoot. Scorers agree; minutes differ by 1 so left null."
+  },
+  {
+   "id": "w-m-pao-2021-04-11",
+   "value": {
+    "name": "Olympiacos 3-1 Panathinaikos",
+    "on": "2021-04-11",
+    "competition": "Super League Greece (play-offs)",
+    "score": "3-1",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Federico Macheda",
+      "minute": null
+     },
+     {
+      "name": "Ahmed Hassan Koka",
+      "minute": null
+     },
+     {
+      "name": "Ahmed Hassan Koka",
+      "minute": null
+     },
+     {
+      "name": "Bruma",
+      "minute": null
+     }
+    ],
+    "lineup": [
+     "Jose Sa",
+     "Ruben Semedo",
+     "Andreas Bouchalakis",
+     "Yann M'Vila",
+     "Kostas Fortounis",
+     "Youssef El Arabi",
+     "Thanasis Androutsos",
+     "Sokratis Papastathopoulos",
+     "Ousseynou Ba",
+     "Jose Holebas",
+     "Giorgos Masouras"
+    ],
+    "bench": [
+     "Ahmed Hassan Koka",
+     "Mady Camara",
+     "Bruma",
+     "Oleg Reabciuk"
+    ]
+   },
+   "sources": [
+    "w-eur-de-pao2104",
+    "w-mf-pao2104"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in Eurosport Germany and Maxifoot. Scorers agree; minutes differ by 1 in each case so left null."
+  },
+  {
+   "id": "w-m-pao-2019-09-22",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2019-09-22",
+    "competition": "Super League Greece",
+    "score": "1-1",
+    "venue": "Olympic Stadium (OAKA), Athens",
+    "scorers": [
+     {
+      "name": "Miguel Angel Guerrero",
+      "minute": null
+     },
+     {
+      "name": "Yohan Mollo",
+      "minute": 90
+     }
+    ],
+    "lineup": [
+     "Jose Sa",
+     "Ruben Semedo",
+     "Omar Elabdellaoui",
+     "Yassine Meriah",
+     "Kostas Tsimikas",
+     "Andreas Bouchalakis",
+     "Guilherme",
+     "Daniel Podence",
+     "Mathieu Valbuena",
+     "Giorgos Masouras",
+     "Miguel Angel Guerrero"
+    ],
+    "bench": [
+     "Lazar Randjelovic",
+     "Mady Camara",
+     "Youssef El Arabi"
+    ]
+   },
+   "sources": [
+    "w-eur-de-pao1909",
+    "w-mf-pao1909"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI identical in Eurosport Germany and Maxifoot. Mollo penalty 90' in both; Guerrero minute differs (37' vs 35') so left null."
+  },
+  {
+   "id": "w-m-pao-2020-07-05",
+   "value": {
+    "name": "Panathinaikos 0-0 Olympiacos",
+    "on": "2020-07-05",
+    "competition": "Super League Greece (play-offs)",
+    "score": "0-0",
+    "venue": "Olympic Stadium (OAKA), Athens",
+    "scorers": [],
+    "lineup": [
+     "Jose Sa",
+     "Omar Elabdellaoui",
+     "Ruben Semedo",
+     "Ousseynou Ba",
+     "Bruno Gaspar",
+     "Guilherme",
+     "Andreas Bouchalakis",
+     "Mathieu Valbuena",
+     "Mady Camara",
+     "Kostas Fortounis",
+     "Youssef El Arabi"
+    ],
+    "bench": [
+     "Ahmed Hassan Koka",
+     "Pape Abou Cisse",
+     "Maximiliano Lovera",
+     "Giorgos Masouras"
+    ]
+   },
+   "sources": [
+    "w-fotmob-pao2007",
+    "w-mf-pao2007"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "XI, score, venue and substitutes identical in FotMob and Maxifoot."
+  }
+ ],
+ "kits": [
+  {
+   "id": "w-k-2015-16-home",
+   "value": {
+    "name": "Olympiacos 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    }
+   },
+   "sources": [
+    "w-fka-1516-home",
+    "w-fh-1516"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Red and white stripes, white sleeves, red three stripes (both sources). Anniversary badge in both."
+  },
+  {
+   "id": "w-k-2016-17-home",
+   "value": {
+    "name": "Olympiacos 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    }
+   },
+   "sources": [
+    "w-fka-1617-home",
+    "w-fh-1617"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Red and white stripes with three white stripes on front (both sources)."
+  },
+  {
+   "id": "w-k-2017-18-home",
+   "value": {
+    "name": "Olympiacos 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    }
+   },
+   "sources": [
+    "w-fka-1718-home",
+    "w-fh-1718"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Predominantly white, four red stripes on front, white sleeves and back, red collar and cuffs (both sources). Gold accents on Adidas marks are not listed as a main colour."
+  },
+  {
+   "id": "w-k-2018-19-home",
+   "value": {
+    "name": "Olympiacos 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    }
+   },
+   "sources": [
+    "w-fka-1819-home",
+    "w-fh-1819"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Red with relatively thin white stripes on the front, solid red sleeves and back (both sources)."
+  },
+  {
+   "id": "w-k-2019-20-home",
+   "value": {
+    "name": "Olympiacos 2019/20 home",
+    "season": "2019/20",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    }
+   },
+   "sources": [
+    "w-fka-1920-home",
+    "w-fh-1920"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Five red stripes on a white base, white sleeves, red shoulder stripes (both sources)."
+  },
+  {
+   "id": "w-k-2020-21-home",
+   "value": {
+    "name": "Olympiacos 2020/21 home",
+    "season": "2020/21",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    }
+   },
+   "sources": [
+    "w-fka-2021-home",
+    "w-ff-2021"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Red and white stripes (Football Kit Archive and Football Fashion)."
+  },
+  {
+   "id": "w-k-2021-22-home",
+   "value": {
+    "name": "Olympiacos 2021/22 home",
+    "season": "2021/22",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    }
+   },
+   "sources": [
+    "w-fka-2122-home",
+    "w-fh-2122"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Traditional red and white stripes, red sleeves with white cuffs (both sources)."
+  },
+  {
+   "id": "w-k-2022-23-home",
+   "value": {
+    "name": "Olympiacos 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    }
+   },
+   "sources": [
+    "w-fka-2223-home",
+    "w-fh-2223"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Red and white stripes, v-collar, red sleeves, mostly white back (both sources)."
+  },
+  {
+   "id": "w-k-2024-25-home",
+   "value": {
+    "name": "Olympiacos 2024/25 home",
+    "season": "2024/25",
+    "type": "home",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    }
+   },
+   "sources": [
+    "w-fka-2425-home",
+    "w-fh-2425"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Traditional red and white stripes, wider than the previous season, centenary logo (both sources)."
+  },
+  {
+   "id": "w-k-2015-16-away",
+   "value": {
+    "name": "Olympiacos 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "navy/red"
+    }
+   },
+   "sources": [
+    "w-fka-1516-away",
+    "w-fh-1516"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Navy shirt with red pinstripes on the front (both sources)."
+  },
+  {
+   "id": "w-k-2017-18-away",
+   "value": {
+    "name": "Olympiacos 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "solid",
+     "colors": "orange"
+    }
+   },
+   "sources": [
+    "w-fka-1718-away",
+    "w-fh-1718"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Orange shirt in both sources; accent colour disputed (purple per Footy Headlines, navy per Football Kit Archive) so only the base colour is recorded."
+  },
+  {
+   "id": "w-k-2019-20-away",
+   "value": {
+    "name": "Olympiacos 2019/20 away",
+    "season": "2019/20",
+    "type": "away",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "solid",
+     "colors": "grey/white"
+    }
+   },
+   "sources": [
+    "w-fka-1920-away",
+    "w-fh-1920"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Grey and white (both sources); Football Kit Archive calls it a graphic design on the Tiro 19 template, recorded as solid base."
+  },
+  {
+   "id": "w-k-2021-22-away",
+   "value": {
+    "name": "Olympiacos 2021/22 away",
+    "season": "2021/22",
+    "type": "away",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "solid",
+     "colors": "blue/white"
+    }
+   },
+   "sources": [
+    "w-fka-2122-away",
+    "w-fh-2122"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Blue shirt with subtle pattern and white logos (both sources)."
+  },
+  {
+   "id": "w-k-2022-23-away",
+   "value": {
+    "name": "Olympiacos 2022/23 away",
+    "season": "2022/23",
+    "type": "away",
+    "manufacturer": "Adidas",
+    "construction": {
+     "design": "solid",
+     "colors": "blue/navy"
+    }
+   },
+   "sources": [
+    "w-fka-2223-away",
+    "w-fh-2223a"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos-wavec",
+   "notes": "Blue torso with navy raglan sleeves and navy spiral graphic (both sources); orange accents noted but not a main colour."
+  }
+ ],
+ "rivals": [
+  {
+   "id": "w-r-panathinaikos",
+   "value": {
+    "name": "Panathinaikos",
+    "note": "Eternal derby"
+   },
+   "sources": [
+    "w-wp-derby",
+    "w-flash-derby"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "owner:maor-harel-2026-10-06",
+   "notes": "Both sources name the fixture the Derby of the Eternal Enemies and describe a class/regional rivalry (Panathinaikos central Athens, Olympiacos port of Piraeus)."
+  }
+ ]
+}

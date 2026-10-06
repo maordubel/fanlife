@@ -46,6 +46,7 @@
     "wiki:import": "tsx scripts/ingest/export-cli.ts",
     "wiki:cargo": "tsx scripts/ingest/cargo-cli.ts",
     "wiki:squads": "tsx scripts/ingest/squads-cli.ts",
+    "club:wave": "tsx scripts/ingest/club-wave.ts",
     "ingest:vikipoel": "tsx scripts/ingest/vikipoel-cli.ts",
     "ingest:vikipoel-schedules": "tsx scripts/ingest/vikipoel-schedules.ts",
     "ingest:players": "tsx scripts/ingest/players-cli.ts",
