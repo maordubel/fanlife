@@ -33,6 +33,7 @@ export class LifeSound {
         this.noise = buf
       }
       if (this.ctx.state === 'suspended') void this.ctx.resume()
+      this.preload(['door', 'page', 'coins', 'tick', 'step-floor-1', 'step-floor-2', 'step-floor-3', 'step-street-1', 'step-street-2', 'step-street-3', 'reveal'])
     } catch { this.ctx = null; this.bedGain = null }
   }
 
@@ -69,7 +70,88 @@ export class LifeSound {
     s.stop(t + len + 0.05)
   }
 
+  /** Real recordings (public/life/sfx) lead; the synthesised cue below is the fallback while one loads, or if it never does. */
+  private bufs = new Map<string, AudioBuffer | null>()
+  private surface = 'floor'
+  private stepN = 0
+  private ext(): 'ogg' | 'm4a' {
+    try { return document.createElement('audio').canPlayType('audio/ogg; codecs="vorbis"') ? 'ogg' : 'm4a' } catch { return 'm4a' }
+  }
+  private load(name: string): AudioBuffer | null {
+    if (this.bufs.has(name)) return this.bufs.get(name) ?? null
+    this.bufs.set(name, null)
+    const c = this.ctx
+    if (c && typeof fetch === 'function') {
+      fetch(`/life/sfx/${name}.${this.ext()}`).then(r => (r.ok ? r.arrayBuffer() : Promise.reject(new Error('sfx')))).then(b => c.decodeAudioData(b)).then(buf => { this.bufs.set(name, buf) }).catch(() => { /* synth stays */ })
+    }
+    return null
+  }
+  private sample(name: string, gain = 0.6, rate = 1, delay = 0): boolean {
+    const c = this.ctx, b = this.load(name)
+    if (!c || !this.on || !b) return false
+    const s = c.createBufferSource(), g = c.createGain()
+    s.buffer = b; s.playbackRate.value = rate; g.gain.value = gain
+    s.connect(g).connect(c.destination)
+    s.start(c.currentTime + delay)
+    return true
+  }
+  /** Warm the cues a room is about to need, so the first door or step is already a real one. */
+  preload(names: string[]) { names.forEach(n => this.load(n)) }
+  setSurface(s: string) { this.surface = s }
+
+  private real(cue: string): boolean {
+    const jit = 0.94 + Math.random() * 0.12
+    switch (cue) {
+      case 'step': { this.stepN = (this.stepN % 3) + 1; return this.sample(`step-${this.surface}-${this.stepN}`, 0.22, jit) }
+      case 'door': return this.sample('door', 0.55)
+      case 'coin': return this.sample('coins', 0.5)
+      case 'page': return this.sample('page', 0.5, jit)
+      case 'tick': return this.sample('tick', 0.35)
+      case 'choice': return this.sample('choice', 0.4)
+      case 'open': return this.sample('ui-open', 0.4)
+      case 'close': return this.sample('ui-close', 0.4)
+      case 'whistle': return this.sample('whistle-' + (1 + Math.floor(Math.random() * 3)), 0.5)
+      case 'murmur': return this.sample('crowd-real-murmur', 0.45)
+      case 'roar': return this.sample('crowd-real-goal', 0.6)
+      case 'bus': return this.sample('bus-door', 0.55)
+      case 'clap': return this.sample('crowd-claps', 0.5)
+      case 'keep': return this.sample('box-item', 0.5)
+      case 'reveal': return this.sample('reveal', 0.5)
+      case 'end': return this.sample('ending', 0.5)
+      case 'radio': return this.sample('radio-tune', 0.5)
+      case 'kick': return this.sample('ball-kick', 0.6, jit)
+      case 'bounce': return this.sample('ball-bounce', 0.5, jit)
+      case 'bell': return this.sample('bell-shop', 0.5)
+      case 'heart': return this.sample('heart', 0.5)
+      default: return false
+    }
+  }
+
+  private amb: {name: string; gain: GainNode; src: AudioBufferSourceNode} | null = null
+  private ambWant: string | null = null
+  /** The place's own air — a real loop under everything, crossfaded as the supporter walks from one kind of place to another. */
+  ambience(name: string | null, level = 0.5) {
+    const c = this.ctx
+    this.ambWant = name
+    if (!c || !this.on) return
+    if (this.amb && this.amb.name === name) { this.amb.gain.gain.setTargetAtTime(level, c.currentTime, 0.8); return }
+    if (this.amb) {
+      const old = this.amb; this.amb = null
+      old.gain.gain.setTargetAtTime(0.0001, c.currentTime, 0.7)
+      window.setTimeout(() => { try { old.src.stop() } catch { /* ended */ } }, 3000)
+    }
+    if (!name) return
+    const b = this.load(name)
+    if (!b) { window.setTimeout(() => { if (this.ambWant === name && !this.amb) this.ambience(name, level) }, 900); return }
+    const src = c.createBufferSource(), g = c.createGain()
+    src.buffer = b; src.loop = true; g.gain.value = 0.0001
+    src.connect(g).connect(c.destination); src.start()
+    g.gain.setTargetAtTime(level, c.currentTime, 0.9)
+    this.amb = {name, gain: g, src}
+  }
+
   play(cue: string) {
+    if (this.real(cue)) return
     switch (cue) {
       case 'step': this.hiss(0.07, 0.035, 900, 500, 1.4); break
       case 'page': this.hiss(0.12, 0.05, 2600, 1400, 0.9); break
@@ -107,5 +189,5 @@ export class LifeSound {
     this.bedGain.gain.setTargetAtTime(Math.max(0.0001, Math.min(1, level) * 0.05), c.currentTime, 1.4)
   }
 
-  close() { try { void this.ctx?.close() } catch { /* already gone */ } this.ctx = null; this.bedGain = null }
+  close() { try { void this.ctx?.close() } catch { /* already gone */ } this.ctx = null; this.bedGain = null; this.amb = null; this.bufs.clear() }
 }
