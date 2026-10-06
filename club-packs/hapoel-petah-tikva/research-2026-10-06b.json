@@ -1,0 +1,293 @@
+{
+ "schemaVersion": 1,
+ "sources": [
+  {
+   "id": "r26-wp-p-varon",
+   "title": "Wikipedia: player article (Moshe_Varon)",
+   "url": "https://en.wikipedia.org/wiki/Moshe_Varon",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  }
+ ],
+ "players": [
+  {
+   "id": "r26-boaz-kofman",
+   "value": {
+    "name": "בועז קופמן",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "aliases": [
+     "Boaz Kofman",
+     "Boaz Koffman"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-hpt-p-kofman",
+    "r26-wp-p-kofman"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "notes": "Forward per both publishers. Years omitted: start year differs (museum 1951/52 vs Wikipedia 1953). Born 29 Mar 1935 per both. Round 2: approved on agreed fields only.",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt",
+   "parserCertainty": "high",
+   "conflictFree": true
+  },
+  {
+   "id": "r26-shmuel-rosenthal",
+   "value": {
+    "name": "שמוליק רוזנטל",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "aliases": [
+     "Shmuel Rosenthal",
+     "Shmulik Rosenthal",
+     "Sam Rosenthal"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-hpt-p-rosenthal",
+    "r26-wp-p-rosenthal"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "notes": "Midfielder per both. Years omitted: museum 1963/64-1975/76 vs Wikipedia 1965-1976. Born 22 Apr 1947 per both. Approved on agreed fields only.",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt",
+   "parserCertainty": "high",
+   "conflictFree": true
+  },
+  {
+   "id": "r26-yaakov-visoker",
+   "value": {
+    "name": "יעקב ויסוקר",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "aliases": [
+     "Yaacov Visoker",
+     "Yaakov Visoker"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-hpt-p-yakov",
+    "r26-wp-p-yakov"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "notes": "Goalkeeper per both; born 5 Sep 1930 per both. Years omitted: club years are museum only. Approved on agreed fields only.",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt",
+   "parserCertainty": "high",
+   "conflictFree": true
+  },
+  {
+   "id": "r26-moshe-varon",
+   "value": {
+    "name": "משה וארון",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1941,
+    "toYear": 1956,
+    "aliases": [
+     "Moshe Varon"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-hpt-p-varon",
+    "r26-wp-p-varon"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "notes": "Forward per museum and Wikipedia; 1941/42-1955/56 (museum) = 1941-1956 (Wikipedia). Round 2: Wikipedia fetched as second publisher.",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt",
+   "parserCertainty": "high",
+   "conflictFree": true
+  }
+ ],
+ "mysteries": [
+  {
+   "id": "r26-m-boaz-kofman",
+   "value": {
+    "targetPlayerId": "r26-boaz-kofman",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "אחרי השחקן",
+      "value": "אימן את הקבוצה בכמה תקופות, כולל עונה שהגיעה לגמר גביע",
+      "sources": [
+       "r26-hpt-p-kofman",
+       "r26-wp-p-kofman"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "נבחרת",
+      "value": "שיחק שמונה פעמים בנבחרת ישראל",
+      "sources": [
+       "r26-hpt-p-kofman",
+       "r26-wp-p-kofman"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "תארים",
+      "value": "זכה בשש אליפויות ובגביע המדינה",
+      "sources": [
+       "r26-hpt-p-kofman",
+       "r26-wp-p-kofman"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "עמדה",
+      "value": "חלוץ, נולד ב-1935",
+      "sources": [
+       "r26-hpt-p-kofman",
+       "r26-wp-p-kofman"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-hpt-p-kofman",
+    "r26-wp-p-kofman"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "notes": "Round 2: target approved; single-source clue removed, every remaining clue has both publishers; no name/nickname.",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt",
+   "parserCertainty": "high",
+   "conflictFree": true
+  },
+  {
+   "id": "r26-m-shmuel-rosenthal",
+   "value": {
+    "targetPlayerId": "r26-shmuel-rosenthal",
+    "clues": [
+     {
+      "id": "c2",
+      "label": "בחו\"ל",
+      "value": "זכה בגביע גרמניה עם בורוסיה מנשנגלדבך בעונה שבה הגיעה לגמר גביע אופ\"א",
+      "sources": [
+       "r26-wp-p-rosenthal",
+       "r26-hpt-p-rosenthal"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "מונדיאל",
+      "value": "שיחק במונדיאל 1970",
+      "sources": [
+       "r26-wp-p-rosenthal",
+       "r26-hpt-p-rosenthal"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "נולד",
+      "value": "נולד בפתח תקווה ב-1947",
+      "sources": [
+       "r26-wp-p-rosenthal",
+       "r26-hpt-p-rosenthal"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "עמדה",
+      "value": "קשר",
+      "sources": [
+       "r26-wp-p-rosenthal",
+       "r26-hpt-p-rosenthal"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-hpt-p-rosenthal",
+    "r26-wp-p-rosenthal"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "notes": "Round 2: target approved; single-source clue removed, every remaining clue has both publishers; no name/nickname.",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt",
+   "parserCertainty": "high",
+   "conflictFree": true
+  },
+  {
+   "id": "r26-m-moshe-varon",
+   "value": {
+    "targetPlayerId": "r26-moshe-varon",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "נולד",
+      "value": "נולד בבולגריה",
+      "sources": [
+       "r26-wp-p-varon"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "שחקן-מאמן",
+      "value": "היה שחקן-מאמן של הקבוצה בין 1953 ל-1956",
+      "sources": [
+       "r26-wp-p-varon"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "אחרי השחקן",
+      "value": "אימן את הקבוצה בתקופת האליפות הראשונה שלה",
+      "sources": [
+       "r26-club-history"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "עמדה",
+      "value": "חלוץ ששיחק בקבוצה בין 1941 ל-1956",
+      "sources": [
+       "r26-hpt-p-varon",
+       "r26-wp-p-varon"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-hpt-p-varon",
+    "r26-wp-p-varon",
+    "r26-club-history"
+   ],
+   "notes": "Each clue individually sourced; no name in clues. c3 per club history (as recorded in round 1).",
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-hpt",
+   "parserCertainty": "high",
+   "conflictFree": true
+  }
+ ]
+}

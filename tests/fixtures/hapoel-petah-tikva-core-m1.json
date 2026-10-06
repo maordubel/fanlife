@@ -1,0 +1,1284 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-petah-tikva",
+  "contentLocale": "he",
+  "sources": [
+    {
+      "id": "hpt-seasons",
+      "title": "HPT Museum: seasons and senior honours",
+      "url": "https://www.hpt.co.il/?AllSeasons=1",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-titles",
+      "title": "IFA: Hapoel Petah Tikva senior honours",
+      "url": "https://www.football.org.il/clubs/club-titles/?club_id=2173",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "club-fixtures",
+      "title": "Hapoel Petah Tikva: completed fixtures",
+      "url": "https://www.hapoelpt.com/fixtures",
+      "publisher": "Hapoel Petah Tikva FC",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "club-roster",
+      "title": "Hapoel Petah Tikva: senior squad by position",
+      "url": "https://www.hapoelpt.com/team",
+      "publisher": "Hapoel Petah Tikva FC",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-roster",
+      "title": "HPT Museum: observed senior squad, 2026/27",
+      "url": "https://www.hpt.co.il/?ShowSeason=2026/2027&show=details",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3194",
+      "title": "HPT Museum: match 3194",
+      "url": "https://www.hpt.co.il/?ShowGame=3194",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-match-1121211",
+      "title": "IFA: match report 1121211",
+      "url": "https://www.football.org.il/national-cup-game/?game_id=1121211",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3195",
+      "title": "HPT Museum: match 3195",
+      "url": "https://www.hpt.co.il/?ShowGame=3195",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-match-1121215",
+      "title": "IFA: match report 1121215",
+      "url": "https://www.football.org.il/national-cup-game/?game_id=1121215",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3196",
+      "title": "HPT Museum: match 3196",
+      "url": "https://www.hpt.co.il/?ShowGame=3196",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-match-1121221",
+      "title": "IFA: match report 1121221",
+      "url": "https://www.football.org.il/national-cup-game/?game_id=1121221",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3197",
+      "title": "HPT Museum: match 3197",
+      "url": "https://www.hpt.co.il/?ShowGame=3197",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3198",
+      "title": "HPT Museum: match 3198",
+      "url": "https://www.hpt.co.il/?ShowGame=3198",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-match-1125397",
+      "title": "IFA: match report 1125397",
+      "url": "https://www.football.org.il/national-cup-game/?game_id=1125397",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3199",
+      "title": "HPT Museum: match 3199",
+      "url": "https://www.hpt.co.il/?ShowGame=3199",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-match-1120562",
+      "title": "IFA: match report 1120562",
+      "url": "https://www.football.org.il/leagues/games/game/?game_id=1120562",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3200",
+      "title": "HPT Museum: match 3200",
+      "url": "https://www.hpt.co.il/?ShowGame=3200",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-match-1120573",
+      "title": "IFA: match report 1120573",
+      "url": "https://www.football.org.il/leagues/games/game/?game_id=1120573",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3201",
+      "title": "HPT Museum: match 3201",
+      "url": "https://www.hpt.co.il/?ShowGame=3201",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3202",
+      "title": "HPT Museum: match 3202",
+      "url": "https://www.hpt.co.il/?ShowGame=3202",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3203",
+      "title": "HPT Museum: match 3203",
+      "url": "https://www.hpt.co.il/?ShowGame=3203",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-match-1120592",
+      "title": "IFA: match report 1120592",
+      "url": "https://www.football.org.il/leagues/games/game/?game_id=1120592",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "hpt-match-3150",
+      "title": "HPT Museum: match 3150",
+      "url": "https://www.hpt.co.il/?ShowGame=3150",
+      "publisher": "HPT Museum",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "ifa-match-954822",
+      "title": "IFA: match report 954822",
+      "url": "https://www.football.org.il/leagues/games/game/?game_id=954822",
+      "publisher": "Israel Football Association",
+      "access": "available",
+      "checkedAt": "2026-10-02"
+    }
+  ],
+  "archive": [
+    {
+      "id": "match-3194",
+      "value": {
+        "name": "Hapoel Petah Tikva 1–0 Maccabi Petah Tikva",
+        "on": "2026-07-25",
+        "precision": "day",
+        "hint": "Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3194",
+        "ifa-match-1121211"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3195",
+      "value": {
+        "name": "Hapoel Ramat Gan 2–1 Hapoel Petah Tikva",
+        "on": "2026-07-29",
+        "precision": "day",
+        "hint": "Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3195",
+        "ifa-match-1121215"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3196",
+      "value": {
+        "name": "Hapoel Petah Tikva 0–2 Maccabi Netanya",
+        "on": "2026-08-05",
+        "precision": "day",
+        "hint": "Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3196",
+        "ifa-match-1121221"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3197",
+      "value": {
+        "name": "Hapoel Jerusalem 3–1 Hapoel Petah Tikva",
+        "on": "2026-08-09",
+        "precision": "day",
+        "hint": "Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3197",
+        "club-fixtures"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3198",
+      "value": {
+        "name": "Bnei Sakhnin 1–0 Hapoel Petah Tikva",
+        "on": "2026-08-15",
+        "precision": "day",
+        "hint": "Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3198",
+        "ifa-match-1125397"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3199",
+      "value": {
+        "name": "Ironi Tiberias 1–0 Hapoel Petah Tikva",
+        "on": "2026-08-22",
+        "precision": "day",
+        "hint": "Israeli Premier League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3199",
+        "ifa-match-1120562"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3200",
+      "value": {
+        "name": "Hapoel Petah Tikva 1–0 Hapoel Jerusalem",
+        "on": "2026-08-29",
+        "precision": "day",
+        "hint": "Israeli Premier League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3200",
+        "ifa-match-1120573"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3201",
+      "value": {
+        "name": "Maccabi Haifa 2–1 Hapoel Petah Tikva",
+        "on": "2026-09-05",
+        "precision": "day",
+        "hint": "Israeli Premier League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3201",
+        "club-fixtures"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3202",
+      "value": {
+        "name": "Hapoel Petah Tikva 0–2 Hapoel Beer Sheva",
+        "on": "2026-09-13",
+        "precision": "day",
+        "hint": "Israeli Premier League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3202",
+        "club-fixtures"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3203",
+      "value": {
+        "name": "Hapoel Tel Aviv 3–0 Hapoel Petah Tikva",
+        "on": "2026-09-18",
+        "precision": "day",
+        "hint": "Israeli Premier League",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3203",
+        "ifa-match-1120592"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "match-3150",
+      "value": {
+        "name": "Maccabi Herzliya 0–3 Hapoel Petah Tikva",
+        "on": "2025-05-19",
+        "precision": "day",
+        "hint": "Liga Leumit season finale",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-match-3150",
+        "ifa-match-954822"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: match date, named teams and final team totals only. HPT explicit team totals corroborated by the cited independent result record. Inline RTL score order is not used. Kick-off, venue, round, goals and substitutions are outside this approval."
+    },
+    {
+      "id": "league-title-1955",
+      "value": {
+        "name": "אליפות הליגה — 1954/55",
+        "on": null,
+        "year": 1955,
+        "precision": "year",
+        "hint": "Senior league championship",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior championship and season only; no exact clinching date asserted. Museum labels the inaugural season 1955; IFA labels it 1954/1955. Both identify the same title year."
+    },
+    {
+      "id": "league-title-1959",
+      "value": {
+        "name": "אליפות הליגה — 1958/59",
+        "on": null,
+        "year": 1959,
+        "precision": "year",
+        "hint": "Senior league championship",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior championship and season only; no exact clinching date asserted. Museum labels the inaugural season 1955; IFA labels it 1954/1955. Both identify the same title year."
+    },
+    {
+      "id": "league-title-1960",
+      "value": {
+        "name": "אליפות הליגה — 1959/60",
+        "on": null,
+        "year": 1960,
+        "precision": "year",
+        "hint": "Senior league championship",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior championship and season only; no exact clinching date asserted. Museum labels the inaugural season 1955; IFA labels it 1954/1955. Both identify the same title year."
+    },
+    {
+      "id": "league-title-1961",
+      "value": {
+        "name": "אליפות הליגה — 1960/61",
+        "on": null,
+        "year": 1961,
+        "precision": "year",
+        "hint": "Senior league championship",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior championship and season only; no exact clinching date asserted. Museum labels the inaugural season 1955; IFA labels it 1954/1955. Both identify the same title year."
+    },
+    {
+      "id": "league-title-1962",
+      "value": {
+        "name": "אליפות הליגה — 1961/62",
+        "on": null,
+        "year": 1962,
+        "precision": "year",
+        "hint": "Senior league championship",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior championship and season only; no exact clinching date asserted. Museum labels the inaugural season 1955; IFA labels it 1954/1955. Both identify the same title year."
+    },
+    {
+      "id": "league-title-1963",
+      "value": {
+        "name": "אליפות הליגה — 1962/63",
+        "on": null,
+        "year": 1963,
+        "precision": "year",
+        "hint": "Senior league championship",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior championship and season only; no exact clinching date asserted. Museum labels the inaugural season 1955; IFA labels it 1954/1955. Both identify the same title year."
+    },
+    {
+      "id": "state-cup-1957",
+      "value": {
+        "name": "גביע המדינה — 1956/57",
+        "on": null,
+        "year": 1957,
+        "precision": "year",
+        "hint": "Senior State Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior trophy and season only; no final day, score, scorers or lineup asserted."
+    },
+    {
+      "id": "state-cup-1992",
+      "value": {
+        "name": "גביע המדינה — 1991/92",
+        "on": null,
+        "year": 1992,
+        "precision": "year",
+        "hint": "Senior State Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior trophy and season only; no final day, score, scorers or lineup asserted."
+    },
+    {
+      "id": "toto-cup-1986",
+      "value": {
+        "name": "גביע הטוטו — 1985/86",
+        "on": null,
+        "year": 1986,
+        "precision": "year",
+        "hint": "Senior Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior trophy and season only. The 2007/08 trophy is Liga Leumit; youth trophies in the IFA ledger are excluded. No exact final day inferred."
+    },
+    {
+      "id": "toto-cup-1990",
+      "value": {
+        "name": "גביע הטוטו — 1989/90",
+        "on": null,
+        "year": 1990,
+        "precision": "year",
+        "hint": "Senior Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior trophy and season only. The 2007/08 trophy is Liga Leumit; youth trophies in the IFA ledger are excluded. No exact final day inferred."
+    },
+    {
+      "id": "toto-cup-1991",
+      "value": {
+        "name": "גביע הטוטו — 1990/91",
+        "on": null,
+        "year": 1991,
+        "precision": "year",
+        "hint": "Senior Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior trophy and season only. The 2007/08 trophy is Liga Leumit; youth trophies in the IFA ledger are excluded. No exact final day inferred."
+    },
+    {
+      "id": "toto-cup-2005",
+      "value": {
+        "name": "גביע הטוטו — 2004/05",
+        "on": null,
+        "year": 2005,
+        "precision": "year",
+        "hint": "Senior Toto Cup",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior trophy and season only. The 2007/08 trophy is Liga Leumit; youth trophies in the IFA ledger are excluded. No exact final day inferred."
+    },
+    {
+      "id": "toto-cup-2008",
+      "value": {
+        "name": "גביע הטוטו — 2007/08",
+        "on": null,
+        "year": 2008,
+        "precision": "year",
+        "hint": "Senior Toto Cup (Liga Leumit)",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-seasons",
+        "ifa-titles"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: senior trophy and season only. The 2007/08 trophy is Liga Leumit; youth trophies in the IFA ledger are excluded. No exact final day inferred."
+    }
+  ],
+  "players": [
+    {
+      "id": "itay-ehud",
+      "value": {
+        "name": "איתי אהוד",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "tomer-altman",
+      "value": {
+        "name": "תומר אלטמן",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "bony-amian",
+      "value": {
+        "name": "בוני אמיאן",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "edmond-asante",
+      "value": {
+        "name": "אדמונד אסנטה",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "diego-arroyo",
+      "value": {
+        "name": "דייגו ארויו",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "guy-badash",
+      "value": {
+        "name": "גיא בדש",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "eric-billa",
+      "value": {
+        "name": "אריק בילה",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "orel-dgani",
+      "value": {
+        "name": "אוראל דגני",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "roei-david",
+      "value": {
+        "name": "רועי דוד",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "or-israelov",
+      "value": {
+        "name": "אור ישראלוב",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "stav-israeli",
+      "value": {
+        "name": "סתיו ישראלי",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "noam-cohen",
+      "value": {
+        "name": "נעם כהן",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "avishay-cohen",
+      "value": {
+        "name": "אבישי כהן",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "omer-katz",
+      "value": {
+        "name": "עומר כץ",
+        "positions": [
+          "GK"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "roei-levi",
+      "value": {
+        "name": "רועי לוי",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "alex-musonda",
+      "value": {
+        "name": "אלכס מוסונדה",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "shavit-mazal",
+      "value": {
+        "name": "שביט מזל",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "yazan-nassar",
+      "value": {
+        "name": "יזן נסאר",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "hamidou-keita",
+      "value": {
+        "name": "חמידו קייטה",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "karim-kimvuidi",
+      "value": {
+        "name": "קארים קימבידי",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    },
+    {
+      "id": "harel-shalom",
+      "value": {
+        "name": "הראל שלום",
+        "positions": [],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-roster",
+        "club-roster"
+      ],
+      "confidence": 3,
+      "status": "approved",
+      "researchedAt": "2026-10-02",
+      "approvedAt": "2026-10-02",
+      "approvedBy": "automated:cross-source-review-hpt",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Scope: documented senior club identity observed in the 2026/27 museum squad and the official squad checked on 2026-10-02. This is not a full career range or an all-time ranking. Positions require agreement in both cited roster descriptions; otherwise positions remain empty. No aliases, ratings, appearances or shirt number inferred."
+    }
+  ]
+}
