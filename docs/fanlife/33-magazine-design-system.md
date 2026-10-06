@@ -17,3 +17,10 @@ Fixed liveries from the registry (`lib/club-livery.ts`): solid, stripes or sash,
 
 ## Adding a feature
 Wrap the page in `Shell`/`ClubSurface`, use only `mag-*` classes and tokens, design mobile first and desktop separately, keep the credit footer. `tests/magazine.test.ts` enforces it.
+
+## 6.10.2026 — Cover v2 (poster cover)
+- Cover: `.mag-cover-poster` — dateline, FAN/LIFE (Bowlby, LTR-isolated), `public/brand/magazine/football-cover-collage.png` (1254², palette PNG, `unoptimized`, `alt=""`), 13-gates stamp (from `SHARED_GATES.length`), two teaser rails (XI, Big Quiz) that open the club chooser, EVERY CLUB. A WORLD., PLUS! card. Mobile 530px/510px at 320; desktop 850×600. Constant rotations only.
+- `--mag-condensed` (Karantina 700) only inside `.mag-editorial`, teasers, tiles, chooser, TOC.
+- Hub: `.mag-hubnav` (CLUBS/PLAY/ARCHIVE), TOC "Inside this issue", club tiles carry `data-club`, games special is one `GateChooser` per shared gate (`components/home/MagazineHubControls.tsx`), data from `lib/home/hub-model.ts` (one `loadClub` per club; href only when `gateAvailability().playable`, else "not open yet"). Archive and "On this day" (`?today=1`) and LIFE use the same chooser; LIFE hrefs come from `lifeEntries()`.
+- Tabbar: Home / Clubs / Archive / Games.
+- Browser smoke: home tiles are `.mag-tile[data-club]` (livery on the badge); theme assertions stay on `.club-surface`.

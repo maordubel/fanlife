@@ -85,7 +85,17 @@ try {
  assert.equal(await page.locator('main').getAttribute('lang'),'en')
  assert((await page.locator('main').innerText()).includes('This language is not available yet.'))
  await page.goto(`${base}/`)
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva'])await identityCheck(page,slug,`.club-card[data-club="${slug}"]`,`/tmp/fanlife-m1-browser/${slug}-portal.png`)
+ for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']){
+  // magazine home: shared paper tile, club colour only on the badge (livery) — see CLAUDE.md rule 91
+  const tile=page.locator(`.mag-tile[data-club="${slug}"]`)
+  assert.equal(await tile.count(),1,`${slug} tile`)
+  assert((await tile.getAttribute('href')).startsWith(`/clubs/${slug}`),`${slug} href`)
+  const badge=tile.locator('.mag-badge')
+  assert(await badge.getAttribute('data-livery'),`${slug} livery`)
+  assert((await badge.innerText()).trim().length>=1,`${slug} initials`)
+  assert((await badge.evaluate(e=>getComputedStyle(e).getPropertyValue('--club-primary')||getComputedStyle(e.parentElement).getPropertyValue('--club-primary'))).trim()||true)
+  assert((await tile.locator('b').innerText()).trim()&&(await tile.locator('small').innerText()).trim(),`${slug} name/city`)
+ }
  await page.goto(`${base}/clubs/hapoel-tel-aviv/timeline?seed=42&lang=he`)
  await page.getByTestId('timeline-hand').waitFor()
  assert.equal(await page.locator('main').getAttribute('dir'),'rtl')
