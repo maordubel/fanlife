@@ -1,0 +1,1784 @@
+{
+  "schemaVersion": 1,
+  "clubId": "panathinaikos",
+  "note": "Parity wave 2026-10-06: two-publisher research, automated cross-source approval (compiler rules). Records whose sources disagreed were left out (see skipped).",
+  "sources": [
+    {
+      "id": "rsssf-ec7071det",
+      "title": "European Champions' Cup and Fairs' Cup 1970-71 - Details",
+      "url": "https://rsssf.org/ec/ec197071det.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-everton-7071",
+      "title": "1970–71 Everton F.C. season",
+      "url": "https://en.wikipedia.org/wiki/1970%E2%80%9371_Everton_F.C._season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-season-1970",
+      "title": "UEFA Champions League 1970/71 season",
+      "url": "https://www.uefa.com/uefachampionsleague/history/seasons/1970/",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-class-of-71",
+      "title": "Panathinaikos class of '71 get their due",
+      "url": "https://www.uefa.com/news-media/news/0253-0d7f4de51f55-1ef0afc69e52-1000--panathinaikos-class-of-71-get-their-due/",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-ec8485det",
+      "title": "European Champions' Cup 1984-85 - Details",
+      "url": "https://rsssf.org/ec/ec198485det.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-lfc-8485",
+      "title": "1984–85 Liverpool F.C. season",
+      "url": "https://en.wikipedia.org/wiki/1984%E2%80%9385_Liverpool_F.C._season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-ec8485",
+      "title": "1984–85 European Cup",
+      "url": "https://en.wikipedia.org/wiki/1984%E2%80%9385_European_Cup",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-ec9596",
+      "title": "European Competitions 1995-96",
+      "url": "https://www.rsssf.org/ec/ec199596.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-pao-9596",
+      "title": "1995–96 Panathinaikos F.C. season",
+      "url": "https://en.wikipedia.org/wiki/1995%E2%80%9396_Panathinaikos_F.C._season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-ucl9596-groups",
+      "title": "1995–96 UEFA Champions League group stage",
+      "url": "https://en.wikipedia.org/wiki/1995%E2%80%9396_UEFA_Champions_League_group_stage",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-ucl9596-ko",
+      "title": "1995–96 UEFA Champions League knockout stage",
+      "url": "https://en.wikipedia.org/wiki/1995%E2%80%9396_UEFA_Champions_League_knockout_stage",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-greek-nights",
+      "title": "Greece's greatest Champions League nights",
+      "url": "https://www.uefa.com/uefachampionsleague/news/025a-0ea6b9e73a0b-464e72f6dc9c-1000--greece-s-greatest-champions-league-nights",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-warzycha",
+      "title": "Krzysztof Warzycha",
+      "url": "https://en.wikipedia.org/wiki/Krzysztof_Warzycha",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-ec0102",
+      "title": "European Competitions 2001-02",
+      "url": "https://rsssf.org/ec/ec200102.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-pao-0102",
+      "title": "2001–02 Panathinaikos F.C. season",
+      "url": "https://en.wikipedia.org/wiki/2001%E2%80%9302_Panathinaikos_F.C._season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-ucl0102-g1",
+      "title": "2001–02 UEFA Champions League first group stage",
+      "url": "https://en.wikipedia.org/wiki/2001%E2%80%9302_UEFA_Champions_League_first_group_stage",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-arsenal-0102",
+      "title": "2001–02 Arsenal F.C. season",
+      "url": "https://en.wikipedia.org/wiki/2001%E2%80%9302_Arsenal_F.C._season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk86",
+      "title": "Greece 1985/86",
+      "url": "https://rsssf.org/tablesg/grk86.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk88",
+      "title": "Greece 1987/88",
+      "url": "https://rsssf.org/tablesg/grk88.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk89",
+      "title": "Greece 1988/89",
+      "url": "https://rsssf.org/tablesg/grk89.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk93",
+      "title": "Greece 1992/93",
+      "url": "https://rsssf.org/tablesg/grk93.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk94",
+      "title": "Greece 1993/94",
+      "url": "https://rsssf.org/tablesg/grk94.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk95",
+      "title": "Greece 1994/95",
+      "url": "https://rsssf.org/tablesg/grk95.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk2010",
+      "title": "Greece 2009/10",
+      "url": "https://rsssf.org/tablesg/grk2010.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grkcup04",
+      "title": "Greece Cup 2003/04",
+      "url": "https://rsssf.org/tablesg/grkcup04.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk84",
+      "title": "Greece 1983/84",
+      "url": "https://rsssf.org/tablesg/grk84.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-grk82",
+      "title": "Greece 1981/82",
+      "url": "https://rsssf.org/tablesg/grk82.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-1982",
+      "title": "1982 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/1982_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-1984",
+      "title": "1984 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/1984_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-1986",
+      "title": "1986 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/1986_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-1988",
+      "title": "1988 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/1988_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-1989",
+      "title": "1989 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/1989_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-1993",
+      "title": "1993 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/1993_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-1994",
+      "title": "1994 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/1994_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-1995",
+      "title": "1995 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/1995_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-2004",
+      "title": "2004 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/2004_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-cupfinal-2010",
+      "title": "2010 Greek Football Cup final",
+      "url": "https://en.wikipedia.org/wiki/2010_Greek_Football_Cup_final",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "footbola-1971",
+      "title": "Panathinaikos champions 1971",
+      "url": "https://www.footbola.it/panathinaikos-champions-1971",
+      "publisher": "Footbola",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "eroicalcio-1971",
+      "title": "Gli eroi del calcio – Ajax-Panathinaikos 1971",
+      "url": "https://www.glieroidelcalcio.com/?p=25029",
+      "publisher": "Gli Eroi del Calcio",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-saravakos",
+      "title": "Dimitris Saravakos",
+      "url": "https://en.wikipedia.org/wiki/Dimitris_Saravakos",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "greeceindex-saravakos",
+      "title": "Dimitris Saravakos: A Titan of Greek Football",
+      "url": "https://www.greeceindex.com/sports/greek_football_players_dimitris_saravakos/",
+      "publisher": "GreeceIndex",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-domazos",
+      "title": "Mimis Domazos",
+      "url": "https://en.wikipedia.org/wiki/Mimis_Domazos",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "tovima-domazos",
+      "title": "Mimis Domazos: who was the General of Greek football",
+      "url": "https://www.tovima.com/sports/mimis-domazos-who-was-the-general-of-greek-football/",
+      "publisher": "To Vima",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-warzycha",
+      "title": "Warzycha sets benchmark for Wawrzyniak",
+      "url": "https://www.uefa.com/uefachampionsleague/news/01d6-0e70e524316d-3696b50e3237-1000--warzycha-sets-benchmark-for-wawrzyniak",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "meczyki-warzycha",
+      "title": "Poznajesz? Dla wielu Polaków to anonim, a jest legendą",
+      "url": "https://www.meczyki.pl/newsy/pilka-nozna/poznajesz-dla-wielu-polakow-to-anonim-a-jest-legenda/240963",
+      "publisher": "Meczyki.pl",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-konstantinou",
+      "title": "Michalis Konstantinou",
+      "url": "https://en.wikipedia.org/wiki/Michalis_Konstantinou",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-konstantinou",
+      "title": "Cyprus's leading marksman Konstantinou retires",
+      "url": "https://www.uefa.com/news-media/news/0211-0f8a385fa52e-870a148159c8-1000--cyprus-s-leading-marksman-konstantinou-retires",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-antoniadis",
+      "title": "Antonis Antoniadis",
+      "url": "https://en.wikipedia.org/wiki/Antonis_Antoniadis",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-antoniadis",
+      "title": "Antonis Antoniadis: Greece's first European star",
+      "url": "https://www.uefa.com/uefachampionsleague/news/021f-0e8ff85416a7-e507e13a3bfa-1000--antonis-antoniadis-greece-s-first-european-star/",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-rocha",
+      "title": "Juan Ramón Rocha",
+      "url": "https://en.wikipedia.org/wiki/Juan_Ram%C3%B3n_Rocha",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "neoskosmos-rocha",
+      "title": "Argentine or Greek, PAO coach Rocha is a true green",
+      "url": "https://neoskosmos.com/en/2012/11/19/sport/argentine-or-greek-pao-coach-rocha-is-a-true-green/",
+      "publisher": "Neos Kosmos",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    }
+  ],
+  "archive": [
+    {
+      "id": "ec71-qf1-everton-away",
+      "value": {
+        "name": "Everton 1–1 Panathinaikos",
+        "on": "1971-03-09",
+        "precision": "day",
+        "hint": "European Cup quarter-final, first leg at Goodison Park",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec7071det",
+        "wiki-everton-7071"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day and 1-1 score; Panathinaikos got the vital away goal late."
+    },
+    {
+      "id": "ec71-qf2-everton-home",
+      "value": {
+        "name": "Panathinaikos 0–0 Everton",
+        "on": "1971-03-24",
+        "precision": "day",
+        "hint": "European Cup quarter-final, second leg; through on away goals",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec7071det",
+        "wiki-everton-7071"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both agree on day and goalless draw sending Panathinaikos through on away goals."
+    },
+    {
+      "id": "ec71-sf1-red-star-away",
+      "value": {
+        "name": "Red Star Belgrade 4–1 Panathinaikos",
+        "on": "1971-04-14",
+        "precision": "day",
+        "hint": "European Cup semi-final, first leg in Belgrade",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec7071det",
+        "uefa-season-1970",
+        "uefa-class-of-71"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and UEFA agree on day and 4-1 defeat; UEFA date from season page, score from UEFA feature."
+    },
+    {
+      "id": "ec71-sf2-red-star-home",
+      "value": {
+        "name": "Panathinaikos 3–0 Red Star Belgrade",
+        "on": "1971-04-28",
+        "precision": "day",
+        "hint": "European Cup semi-final comeback, through on away goals",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec7071det",
+        "uefa-season-1970",
+        "uefa-class-of-71"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and UEFA agree on day and 3-0 win that overturned the first-leg deficit."
+    },
+    {
+      "id": "ec85-qf1-goteborg-away",
+      "value": {
+        "name": "IFK Göteborg 0–1 Panathinaikos",
+        "on": "1985-03-06",
+        "precision": "day",
+        "hint": "European Cup quarter-final, first leg in Sweden",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec8485det",
+        "wiki-ec8485"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day and 1-0 away win."
+    },
+    {
+      "id": "ec85-qf2-goteborg-home",
+      "value": {
+        "name": "Panathinaikos 2–2 IFK Göteborg",
+        "on": "1985-03-20",
+        "precision": "day",
+        "hint": "European Cup quarter-final second leg; into the semi-finals",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec8485det",
+        "wiki-ec8485"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both agree on day and 2-2 draw (3-2 aggregate)."
+    },
+    {
+      "id": "ec85-sf1-liverpool-away",
+      "value": {
+        "name": "Liverpool 4–0 Panathinaikos",
+        "on": "1985-04-10",
+        "precision": "day",
+        "hint": "European Cup semi-final, first leg at Anfield",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec8485det",
+        "wiki-lfc-8485"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day and 4-0 score."
+    },
+    {
+      "id": "ec85-sf2-liverpool-home",
+      "value": {
+        "name": "Panathinaikos 0–1 Liverpool",
+        "on": "1985-04-24",
+        "precision": "day",
+        "hint": "European Cup semi-final, second leg in Athens",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec8485det",
+        "wiki-lfc-8485"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both agree on day and 1-0 Liverpool win; scorer minute differs by one so not asserted."
+    },
+    {
+      "id": "ec85-r2-linfield-home",
+      "value": {
+        "name": "Panathinaikos 2–1 Linfield",
+        "on": "1984-10-24",
+        "precision": "day",
+        "hint": "European Cup second round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec8485det",
+        "wiki-ec8485"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both agree on day and 2-1 score."
+    },
+    {
+      "id": "ucl96-grp-pao-nantes-home",
+      "value": {
+        "name": "Panathinaikos 3–1 Nantes",
+        "on": "1995-09-27",
+        "precision": "day",
+        "hint": "Champions League group stage, Group A",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-groups"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, venue side and score."
+    },
+    {
+      "id": "ucl96-grp-porto-pao-away",
+      "value": {
+        "name": "Porto 0–1 Panathinaikos",
+        "on": "1995-10-18",
+        "precision": "day",
+        "hint": "Champions League group stage, Group A",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-groups"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, venue side and score."
+    },
+    {
+      "id": "ucl96-grp-aab-pao-away",
+      "value": {
+        "name": "AaB 2–1 Panathinaikos",
+        "on": "1995-10-25",
+        "precision": "day",
+        "hint": "Champions League group stage, Group A",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-groups"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, venue side and score."
+    },
+    {
+      "id": "ucl96-grp-pao-porto-home",
+      "value": {
+        "name": "Panathinaikos 0–0 Porto",
+        "on": "1995-11-01",
+        "precision": "day",
+        "hint": "Champions League group stage, Group A",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-groups"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, venue side and score."
+    },
+    {
+      "id": "ucl96-grp-pao-aab-home",
+      "value": {
+        "name": "Panathinaikos 2–0 AaB",
+        "on": "1995-11-22",
+        "precision": "day",
+        "hint": "Champions League group stage, Group A",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-groups"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, venue side and score."
+    },
+    {
+      "id": "ucl96-grp-nantes-pao-away",
+      "value": {
+        "name": "Nantes 0–0 Panathinaikos",
+        "on": "1995-12-06",
+        "precision": "day",
+        "hint": "Champions League group stage, Group A",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-groups"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, venue side and score."
+    },
+    {
+      "id": "ucl96-qf1-legia-away",
+      "value": {
+        "name": "Legia Warsaw 0–0 Panathinaikos",
+        "on": "1996-03-06",
+        "precision": "day",
+        "hint": "Champions League quarter-final, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-ko"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF round date and Wikipedia season page agree on day; both give 0-0."
+    },
+    {
+      "id": "ucl96-qf2-legia-home",
+      "value": {
+        "name": "Panathinaikos 3–0 Legia Warsaw",
+        "on": "1996-03-20",
+        "precision": "day",
+        "hint": "Champions League quarter-final, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-ko"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both agree on day and 3-0 win."
+    },
+    {
+      "id": "ucl96-sf1-ajax-away",
+      "value": {
+        "name": "Ajax 0–1 Panathinaikos",
+        "on": "1996-04-03",
+        "precision": "day",
+        "hint": "Champions League semi-final, first leg in Amsterdam",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-greek-nights",
+        "wiki-warzycha",
+        "rsssf-ec9596"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and Wikipedia agree on day and 1-0 away win, Ajax's first home defeat in years."
+    },
+    {
+      "id": "ucl96-sf2-ajax-home",
+      "value": {
+        "name": "Panathinaikos 0–3 Ajax",
+        "on": "1996-04-17",
+        "precision": "day",
+        "hint": "Champions League semi-final, second leg in Athens",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec9596",
+        "wiki-pao-9596",
+        "wiki-ucl9596-ko"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day and 3-0 Ajax win."
+    },
+    {
+      "id": "ucl02-g1-schalke-away",
+      "value": {
+        "name": "Schalke 04 0–2 Panathinaikos",
+        "on": "2001-09-11",
+        "precision": "day",
+        "hint": "Champions League first group stage",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec0102",
+        "wiki-pao-0102",
+        "wiki-ucl0102-g1"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day and 2-0 away win."
+    },
+    {
+      "id": "ucl02-g1-mallorca-home",
+      "value": {
+        "name": "Panathinaikos 2–0 Mallorca",
+        "on": "2001-09-19",
+        "precision": "day",
+        "hint": "Champions League first group stage",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec0102",
+        "wiki-pao-0102",
+        "wiki-ucl0102-g1"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both agree on day and 2-0 score."
+    },
+    {
+      "id": "ucl02-g1-arsenal-home",
+      "value": {
+        "name": "Panathinaikos 1–0 Arsenal",
+        "on": "2001-09-26",
+        "precision": "day",
+        "hint": "Champions League first group stage",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-ec0102",
+        "wiki-arsenal-0102",
+        "wiki-ucl0102-g1"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day and 1-0 win, Karagounis scoring."
+    },
+    {
+      "id": "ucl02-qf1-barcelona-home",
+      "value": {
+        "name": "Panathinaikos 1–0 Barcelona",
+        "on": "2002-04-03",
+        "precision": "day",
+        "hint": "Champions League quarter-final, first leg in Athens",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-greek-nights",
+        "rsssf-ec0102",
+        "wiki-pao-0102"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA, RSSSF and Wikipedia agree on day and 1-0 win; scorer differs across sources so not asserted."
+    },
+    {
+      "id": "greek-cup-final-1982",
+      "value": {
+        "name": "Panathinaikos 1–0 Larisa",
+        "on": "1982-06-19",
+        "precision": "day",
+        "hint": "Greek Cup final at Nea Filadelfia",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk82",
+        "wiki-cupfinal-1982"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-1984",
+      "value": {
+        "name": "Panathinaikos 2–0 Larisa",
+        "on": "1984-06-06",
+        "precision": "day",
+        "hint": "Greek Cup final at the Olympic Stadium",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk84",
+        "wiki-cupfinal-1984"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-1986",
+      "value": {
+        "name": "Panathinaikos 4–0 Olympiacos",
+        "on": "1986-05-28",
+        "precision": "day",
+        "hint": "Greek Cup final at the Olympic Stadium",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk86",
+        "wiki-cupfinal-1986"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-1988",
+      "value": {
+        "name": "Panathinaikos 2–2 Olympiacos",
+        "on": "1988-05-08",
+        "precision": "day",
+        "hint": "Greek Cup final, won 4-3 on penalties after extra time",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk88",
+        "wiki-cupfinal-1988"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-1989",
+      "value": {
+        "name": "Panathinaikos 3–1 Panionios",
+        "on": "1989-05-11",
+        "precision": "day",
+        "hint": "Greek Cup final at the Olympic Stadium",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk89",
+        "wiki-cupfinal-1989"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-1993",
+      "value": {
+        "name": "Panathinaikos 1–0 Olympiacos",
+        "on": "1993-05-12",
+        "precision": "day",
+        "hint": "Greek Cup final, early winner",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk93",
+        "wiki-cupfinal-1993"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-1994",
+      "value": {
+        "name": "Panathinaikos 3–3 AEK Athens",
+        "on": "1994-04-20",
+        "precision": "day",
+        "hint": "Greek Cup final, won 4-2 on penalties after extra time",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk94",
+        "wiki-cupfinal-1994"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-1995",
+      "value": {
+        "name": "Panathinaikos 1–0 AEK Athens",
+        "on": "1995-04-19",
+        "precision": "day",
+        "hint": "Greek Cup final, late extra-time penalty",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk95",
+        "wiki-cupfinal-1995"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-2004",
+      "value": {
+        "name": "Panathinaikos 3–1 Olympiacos",
+        "on": "2004-05-08",
+        "precision": "day",
+        "hint": "Greek Cup final at Nea Smyrni",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grkcup04",
+        "wiki-cupfinal-2004"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    },
+    {
+      "id": "greek-cup-final-2010",
+      "value": {
+        "name": "Panathinaikos 1–0 Aris",
+        "on": "2010-04-24",
+        "precision": "day",
+        "hint": "Greek Cup final at the Olympic Stadium",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "rsssf-grk2010",
+        "wiki-cupfinal-2010"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on day, score and outcome of the cup final."
+    }
+  ],
+  "matches": [
+    {
+      "id": "ec-final-1971-ajax",
+      "value": {
+        "name": "Ajax 2-0 Panathinaikos",
+        "on": "1971-06-02",
+        "competition": "European Cup final",
+        "score": "2-0",
+        "bench": [],
+        "lineup": [
+          "Panayotis Ekonomopoulos",
+          "Ioannis Tomaras",
+          "Fragiskos Sourpis",
+          "Aristidis Kamaras",
+          "George Vlachos",
+          "Kostas Eleftherakis",
+          "Dimitrios Domazos",
+          "Anthimos Kapsis",
+          "Charis Grammos",
+          "Antonis Antoniadis",
+          "Totis Filakouris"
+        ]
+      },
+      "sources": [
+        "rsssf-ec7071det",
+        "footbola-1971",
+        "eroicalcio-1971"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF, Footbola and Gli Eroi del Calcio list the same eleven (spellings vary: Ekonomopoulos/Ikonomopoulos, Vlachos/Vlahos); RSSSF spellings used. Bench not given by two sources."
+    },
+    {
+      "id": "greek-cup-final-match-1986",
+      "value": {
+        "name": "Panathinaikos 4-0 Olympiacos",
+        "on": "1986-05-28",
+        "competition": "Greek Cup final",
+        "score": "4-0",
+        "bench": []
+      },
+      "sources": [
+        "rsssf-grk86",
+        "wiki-cupfinal-1986"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on date and score of this derby final; line-up not in two sources, omitted."
+    },
+    {
+      "id": "greek-cup-final-match-1988",
+      "value": {
+        "name": "Panathinaikos 2-2 Olympiacos",
+        "on": "1988-05-08",
+        "competition": "Greek Cup final",
+        "score": "2-2",
+        "bench": []
+      },
+      "sources": [
+        "rsssf-grk88",
+        "wiki-cupfinal-1988"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on date and score of this derby final; line-up not in two sources, omitted."
+    },
+    {
+      "id": "greek-cup-final-match-1993",
+      "value": {
+        "name": "Panathinaikos 1-0 Olympiacos",
+        "on": "1993-05-12",
+        "competition": "Greek Cup final",
+        "score": "1-0",
+        "bench": []
+      },
+      "sources": [
+        "rsssf-grk93",
+        "wiki-cupfinal-1993"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on date and score of this derby final; line-up not in two sources, omitted."
+    },
+    {
+      "id": "greek-cup-final-match-2004",
+      "value": {
+        "name": "Panathinaikos 3-1 Olympiacos",
+        "on": "2004-05-08",
+        "competition": "Greek Cup final",
+        "score": "3-1",
+        "bench": []
+      },
+      "sources": [
+        "rsssf-grkcup04",
+        "wiki-cupfinal-2004"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "RSSSF and Wikipedia agree on date and score of this derby final; line-up not in two sources, omitted."
+    },
+    {
+      "id": "ucl96-sf1-ajax-pao",
+      "value": {
+        "name": "Ajax 0-1 Panathinaikos",
+        "on": "1996-04-03",
+        "competition": "UEFA Champions League semi-final, first leg",
+        "score": "0-1",
+        "bench": []
+      },
+      "sources": [
+        "uefa-greek-nights",
+        "wiki-warzycha"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and Wikipedia agree on date and 0-1; line-up omitted."
+    },
+    {
+      "id": "ucl02-arsenal-home",
+      "value": {
+        "name": "Panathinaikos 1-0 Arsenal",
+        "on": "2001-09-26",
+        "competition": "UEFA Champions League first group stage",
+        "score": "1-0",
+        "bench": []
+      },
+      "sources": [
+        "rsssf-ec0102",
+        "wiki-arsenal-0102"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both agree on date and 1-0; line-up omitted."
+    }
+  ],
+  "kits": [],
+  "goals": [],
+  "players": [],
+  "mysteries": [
+    {
+      "id": "mystery-dimitris-saravakos",
+      "value": {
+        "targetPlayerId": "dimitris-saravakos",
+        "clues": [
+          {
+            "id": "c1",
+            "label": "Born",
+            "value": "Born in Athens in the summer of 1961.",
+            "sources": [
+              "wiki-saravakos",
+              "greeceindex-saravakos"
+            ]
+          },
+          {
+            "id": "c2",
+            "label": "Arrived from",
+            "value": "Joined the club in 1984 from Panionios.",
+            "sources": [
+              "wiki-saravakos",
+              "greeceindex-saravakos"
+            ]
+          },
+          {
+            "id": "c3",
+            "label": "Country",
+            "value": "Won 78 caps for Greece, scoring 22 goals.",
+            "sources": [
+              "wiki-saravakos",
+              "greeceindex-saravakos"
+            ]
+          },
+          {
+            "id": "c4",
+            "label": "Detour",
+            "value": "Spent two seasons at AEK Athens in the mid-1990s before a brief return.",
+            "sources": [
+              "wiki-saravakos",
+              "greeceindex-saravakos"
+            ]
+          },
+          {
+            "id": "c5",
+            "label": "Club record",
+            "value": "Scored 125 goals in 252 appearances in his first spell, 1984 to 1994.",
+            "sources": [
+              "wiki-saravakos",
+              "greeceindex-saravakos"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        "wiki-saravakos",
+        "greeceindex-saravakos"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and GreeceIndex agree on all five clues."
+    },
+    {
+      "id": "mystery-mimis-domazos",
+      "value": {
+        "targetPlayerId": "mimis-domazos",
+        "clues": [
+          {
+            "id": "c1",
+            "label": "Born",
+            "value": "Born in January 1942 in Ampelokipoi, Athens.",
+            "sources": [
+              "wiki-domazos",
+              "tovima-domazos"
+            ]
+          },
+          {
+            "id": "c2",
+            "label": "Wembley",
+            "value": "Captain of the side that reached the 1971 European Cup final.",
+            "sources": [
+              "wiki-domazos",
+              "tovima-domazos"
+            ]
+          },
+          {
+            "id": "c3",
+            "label": "Country",
+            "value": "Won 50 caps for Greece and scored 4 times.",
+            "sources": [
+              "wiki-domazos",
+              "tovima-domazos"
+            ]
+          },
+          {
+            "id": "c4",
+            "label": "Rivals",
+            "value": "Moved to AEK Athens late in his career and won a league title there.",
+            "sources": [
+              "wiki-domazos",
+              "tovima-domazos"
+            ]
+          },
+          {
+            "id": "c5",
+            "label": "Recognition",
+            "value": "Received Ballon d'Or votes in 1971.",
+            "sources": [
+              "wiki-domazos",
+              "tovima-domazos"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        "wiki-domazos",
+        "tovima-domazos"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and To Vima agree on every clue; nickname deliberately excluded."
+    },
+    {
+      "id": "mystery-krzysztof-warzycha",
+      "value": {
+        "targetPlayerId": "krzysztof-warzycha",
+        "clues": [
+          {
+            "id": "c1",
+            "label": "Born",
+            "value": "Born in Katowice.",
+            "sources": [
+              "wiki-warzycha",
+              "uefa-warzycha"
+            ]
+          },
+          {
+            "id": "c2",
+            "label": "Previous club",
+            "value": "Came to Athens from Ruch Chorzów.",
+            "sources": [
+              "wiki-warzycha",
+              "uefa-warzycha"
+            ]
+          },
+          {
+            "id": "c3",
+            "label": "Golden boots",
+            "value": "Finished as the Greek league's top scorer three times.",
+            "sources": [
+              "wiki-warzycha",
+              "meczyki-warzycha"
+            ]
+          },
+          {
+            "id": "c4",
+            "label": "Amsterdam",
+            "value": "Scored in the 1996 semi-final win that ended Ajax's long unbeaten home record in Europe.",
+            "sources": [
+              "wiki-warzycha",
+              "meczyki-warzycha"
+            ]
+          },
+          {
+            "id": "c5",
+            "label": "Farewell",
+            "value": "Retired as a player in 2004.",
+            "sources": [
+              "wiki-warzycha",
+              "meczyki-warzycha"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        "wiki-warzycha",
+        "uefa-warzycha",
+        "meczyki-warzycha"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Each clue agreed by Wikipedia and UEFA or Meczyki; goal totals and transfer year differ between sources so omitted."
+    },
+    {
+      "id": "mystery-michalis-konstantinou",
+      "value": {
+        "targetPlayerId": "michalis-konstantinou",
+        "clues": [
+          {
+            "id": "c1",
+            "label": "Country",
+            "value": "Cyprus's all-time leading scorer, with 32 international goals.",
+            "sources": [
+              "wiki-konstantinou",
+              "uefa-konstantinou"
+            ]
+          },
+          {
+            "id": "c2",
+            "label": "Beginnings",
+            "value": "Started his senior career at Paralimni.",
+            "sources": [
+              "wiki-konstantinou",
+              "uefa-konstantinou"
+            ]
+          },
+          {
+            "id": "c3",
+            "label": "Record move",
+            "value": "Signed from Iraklis in 2001 for a Greek record fee.",
+            "sources": [
+              "wiki-konstantinou",
+              "uefa-konstantinou"
+            ]
+          },
+          {
+            "id": "c4",
+            "label": "Crossed over",
+            "value": "Later played for Olympiacos.",
+            "sources": [
+              "wiki-konstantinou",
+              "uefa-konstantinou"
+            ]
+          },
+          {
+            "id": "c5",
+            "label": "Final years",
+            "value": "Won the Cypriot league with Omonia and retired in January 2014.",
+            "sources": [
+              "wiki-konstantinou",
+              "uefa-konstantinou"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        "wiki-konstantinou",
+        "uefa-konstantinou"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and UEFA agree; caps total and fee amount differ so omitted."
+    },
+    {
+      "id": "mystery-antonis-antoniadis",
+      "value": {
+        "targetPlayerId": "antonis-antoniadis",
+        "clues": [
+          {
+            "id": "c1",
+            "label": "Europe",
+            "value": "Top scorer of the 1970/71 European Cup with 10 goals.",
+            "sources": [
+              "wiki-antoniadis",
+              "uefa-antoniadis"
+            ]
+          },
+          {
+            "id": "c2",
+            "label": "Height",
+            "value": "Stood 1.87 metres tall.",
+            "sources": [
+              "wiki-antoniadis",
+              "uefa-antoniadis"
+            ]
+          },
+          {
+            "id": "c3",
+            "label": "Country",
+            "value": "Scored 6 goals in 21 internationals for Greece.",
+            "sources": [
+              "wiki-antoniadis",
+              "uefa-antoniadis"
+            ]
+          },
+          {
+            "id": "c4",
+            "label": "Golden boots",
+            "value": "Greek league top scorer in 1970 and every year from 1972 to 1975.",
+            "sources": [
+              "wiki-antoniadis",
+              "uefa-antoniadis"
+            ]
+          },
+          {
+            "id": "c5",
+            "label": "Record season",
+            "value": "Netted 39 league goals in 1971/72.",
+            "sources": [
+              "wiki-antoniadis",
+              "uefa-antoniadis"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        "wiki-antoniadis",
+        "uefa-antoniadis"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and UEFA agree on every clue; nickname excluded."
+    },
+    {
+      "id": "mystery-juan-ramon-rocha",
+      "value": {
+        "targetPlayerId": "juan-ramon-rocha",
+        "clues": [
+          {
+            "id": "c1",
+            "label": "Born",
+            "value": "Born in Santo Tomé, Argentina.",
+            "sources": [
+              "wiki-rocha",
+              "neoskosmos-rocha"
+            ]
+          },
+          {
+            "id": "c2",
+            "label": "Early career",
+            "value": "Played for Newell's Old Boys and Boca Juniors before Greece.",
+            "sources": [
+              "wiki-rocha",
+              "neoskosmos-rocha"
+            ]
+          },
+          {
+            "id": "c3",
+            "label": "Arrived",
+            "value": "Joined the club in 1979.",
+            "sources": [
+              "wiki-rocha",
+              "neoskosmos-rocha"
+            ]
+          },
+          {
+            "id": "c4",
+            "label": "Dugout",
+            "value": "Later coached the club to back-to-back league titles in 1995 and 1996.",
+            "sources": [
+              "wiki-rocha",
+              "neoskosmos-rocha"
+            ]
+          },
+          {
+            "id": "c5",
+            "label": "Europe as coach",
+            "value": "Led the team to the 1996 Champions League semi-final.",
+            "sources": [
+              "wiki-rocha",
+              "neoskosmos-rocha"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        "wiki-rocha",
+        "neoskosmos-rocha"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-panathinaikos-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Wikipedia and Neos Kosmos agree; national caps differ so omitted, nickname excluded."
+    }
+  ],
+  "skipped": [
+    {
+      "what": "kits",
+      "why": "footballkitarchive.com reachable but its design text mirrors footyheadlines.com (same kit-news network), so no independent second publisher for design; Wikipedia only gives manufacturers; colours-of-football 404."
+    },
+    {
+      "what": "goals",
+      "why": "Only UEFA described build-ups (Warzycha in Amsterdam 1996 after Donis's run; Basinas penalty v Barcelona 2002); no second publisher describing the same move."
+    },
+    {
+      "what": "line-ups beyond 1971 final",
+      "why": "RSSSF gives XIs for 1982, 1984, 1989 and 2004 cup finals, but Wikipedia final pages render line-ups as images and worldfootball/11v11/transfermarkt blocked by robots or proxy."
+    },
+    {
+      "what": "1991-92 Fram and Göteborg legs, 20 Mar 2002 v Real Madrid",
+      "why": "Sources disagree on home side or score (Wikipedia season page gave 3-3 vs RSSSF 2-2), so dropped."
+    },
+    {
+      "what": "1970-71 first/second round legs, 1977 cup final, 1991-92 group, other 2001-02 games",
+      "why": "Dates only in one source or sources conflict on fixture/score."
+    },
+    {
+      "what": "mysteries for remaining approved players",
+      "why": "Budget reached; six legends covered."
+    }
+  ]
+}

@@ -1,0 +1,857 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "note": "Parity wave 2026-10-06: two-publisher research, automated cross-source approval (compiler rules). Records whose sources disagreed were left out (see skipped).",
+  "sources": [
+    {
+      "id": "uefa-api-2000",
+      "title": "UEFA match feed – Zrinjski 2000–2005",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&order=ASC&offset=0&limit=100",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-api-2014",
+      "title": "UEFA match feed – Zrinjski 2014–15",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&fromDate=2014-07-01&toDate=2015-07-31&order=ASC&offset=0&limit=10",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-api-2016",
+      "title": "UEFA match feed – Zrinjski July 2016",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&fromDate=2016-07-01&toDate=2016-07-31&order=ASC&offset=0&limit=10",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-api-2017",
+      "title": "UEFA match feed – Zrinjski 2017",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&fromDate=2017-07-01&toDate=2017-08-31&order=ASC&offset=0&limit=10",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-api-2019a",
+      "title": "UEFA match feed – Zrinjski July 2019",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&fromDate=2019-07-01&toDate=2019-08-31&order=ASC&offset=0&limit=10",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-api-2019b",
+      "title": "UEFA match feed – Zrinjski Aug 2019",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&fromDate=2019-07-30&toDate=2019-08-31&order=ASC&offset=0&limit=10",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-utrecht-2019",
+      "title": "Utrecht v Zrinjski match data",
+      "url": "https://match.uefa.com/v5/matches/2027633",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-api-2023a",
+      "title": "UEFA match feed – Zrinjski July 2023",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&fromDate=2023-07-01&toDate=2023-08-05&order=ASC&offset=0&limit=10",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-api-2023b",
+      "title": "UEFA match feed – Zrinjski late July 2023",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&fromDate=2023-07-20&toDate=2023-08-05&order=ASC&offset=0&limit=10",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-api-2024",
+      "title": "UEFA match feed – Zrinjski July 2024",
+      "url": "https://match.uefa.com/v5/matches?teamId=73390&fromDate=2024-07-01&toDate=2024-08-01&order=ASC&offset=0&limit=10",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-lineups-64933",
+      "title": "Zrinjski v Västra Frölunda line-ups",
+      "url": "https://match.uefa.com/v5/matches/64933/lineups",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "uefa-lineups-2039291",
+      "title": "Zrinjski v AZ line-ups",
+      "url": "https://match.uefa.com/v5/matches/2039291/lineups",
+      "publisher": "UEFA",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "club-first-euro",
+      "title": "On this day 25 years ago, HŠK Zrinjski played its first European match in Mostar",
+      "url": "https://hskzrinjski.ba/en/?p=5692",
+      "publisher": "HŠK Zrinjski Mostar",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "club-ucl-history",
+      "title": "A Look Back at Zrinjski’s Previous UEFA Champions League Qualification Campaigns",
+      "url": "https://hskzrinjski.ba/en/?p=5481",
+      "publisher": "HŠK Zrinjski Mostar",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-club",
+      "title": "HŠK Zrinjski Mostar",
+      "url": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-2324",
+      "title": "2023–24 HŠK Zrinjski Mostar season",
+      "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_H%C5%A0K_Zrinjski_Mostar_season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-legia-1617",
+      "title": "2016–17 Legia Warsaw season",
+      "url": "https://en.wikipedia.org/wiki/2016%E2%80%9317_Legia_Warsaw_season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-maribor-1718",
+      "title": "2017–18 NK Maribor season",
+      "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_NK_Maribor_season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-maribor-1415",
+      "title": "2014–15 NK Maribor season",
+      "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_NK_Maribor_season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-malmo-2019",
+      "title": "2019 Malmö FF season",
+      "url": "https://en.wikipedia.org/wiki/2019_Malm%C3%B6_FF_season",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "fbref-1920",
+      "title": "Zrinjski Mostar 2019-2020 Stats",
+      "url": "https://fbref.com/en/squads/2a6cfcb2/2019-2020/Zrinjski-Mostar-Stats",
+      "publisher": "FBref",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-ec1920",
+      "title": "European Competitions 2019-20",
+      "url": "https://www.rsssf.org/ec/ec201920.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "soccerway-utrecht",
+      "title": "Utrecht v Zrinjski",
+      "url": "https://ke.soccerway.com/matches/2019/07/25/europe/uefa-cup/fc-utrecht/h-k-zrinjski-mostar/3034723",
+      "publisher": "Soccerway",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "ontour-utrecht",
+      "title": "Zrinjski vs Utrecht 2019-08-01",
+      "url": "https://ontourfootball.com/fixtures/zrinjski-vs-utrecht-2019-08-01",
+      "publisher": "On Tour Football",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "klix-2024-kits",
+      "title": "Zrinjski predstavio nove dresove, navijači posebno oduševljeni gostujućom garniturom",
+      "url": "https://www.klix.ba/sport/nogomet/zrinjski-predstavio-nove-dresove-navijaci-posebno-odusevljeni-gostujucom-garniturom/240723107",
+      "publisher": "Klix.ba",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "nfsbih-az",
+      "title": "Zrinjski debuted in the group stage of the Conference League and celebrated after a great turnaround",
+      "url": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
+      "publisher": "NFSBiH",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "nhnieuws-az",
+      "title": "Bizarre nederlaag voor AZ, dat 3-0 voorsprong uit handen geeft tegen Zrinjski",
+      "url": "https://www.nhnieuws.nl/nieuws/325057/bizarre-nederlaag-voor-az-dat-3-0-voorsprong-uit-handen-geeft-tegen-zrinjski",
+      "publisher": "NH Nieuws",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "soccerway-squad",
+      "title": "Zrinjski squad",
+      "url": "https://www.soccerway.com/team/zrinjski/0C6tPiIc/squad/",
+      "publisher": "Soccerway",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "fka-274027",
+      "title": "HŠK Zrinjski 2024-25 Home Kit",
+      "url": "https://www.footballkitarchive.com/hsk-zrinjski-2024-25-home-kit-274027/",
+      "publisher": "Football Kit Archive",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hi-2425-kits",
+      "title": "Navijači oduševljeni novim dresovima Zrinjskog",
+      "url": "https://www.hercegovina.info/sport/nogomet/navijaci-odusevljeni-novim-dresovima-zrinjskog/226399/",
+      "publisher": "Hercegovina.info",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "bljesak-2425-kits",
+      "title": "HŠK Zrinjski predstavio novu garnituru dresova",
+      "url": "https://bljesak.info/sport/nogomet/fotovideo-hsk-zrinjski-predstavio-novu-garnituru-dresova-ciji-je-izgled-odusevio-navijace/461686",
+      "publisher": "Bljesak.info",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    }
+  ],
+  "archive": [
+    {
+      "id": "ev-2000-06-18-vastra-frolunda-away",
+      "value": {
+        "name": "Västra Frölunda 1–0 Zrinjski",
+        "on": "2000-06-18",
+        "precision": "day",
+        "hint": "Intertoto Cup first round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2000",
+        "club-first-euro"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA feed and club site agree on day and 1–0 away defeat in the club's first European tie."
+    },
+    {
+      "id": "ev-2000-06-25-vastra-frolunda-home",
+      "value": {
+        "name": "Zrinjski 2–1 Västra Frölunda",
+        "on": "2000-06-25",
+        "precision": "day",
+        "hint": "Intertoto Cup first round, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2000",
+        "club-first-euro"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA feed and club site agree on day and 2–1 home win; out on away goals after 2–2 aggregate."
+    },
+    {
+      "id": "ev-2014-07-15-maribor-home",
+      "value": {
+        "name": "Zrinjski 0–0 Maribor",
+        "on": "2014-07-15",
+        "precision": "day",
+        "hint": "Champions League second qualifying round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2014",
+        "wiki-maribor-1415"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and Wikipedia agree on day and goalless draw; return leg omitted because sources differ on its date."
+    },
+    {
+      "id": "ev-2016-07-19-legia-away",
+      "value": {
+        "name": "Legia Warszawa 2–0 Zrinjski",
+        "on": "2016-07-19",
+        "precision": "day",
+        "hint": "Champions League second qualifying round, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2016",
+        "wiki-legia-1617",
+        "club-ucl-history"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA gives date and 2–0; Legia season page confirms date, club site confirms 2–0."
+    },
+    {
+      "id": "ev-2017-07-12-maribor-home",
+      "value": {
+        "name": "Zrinjski 1–2 Maribor",
+        "on": "2017-07-12",
+        "precision": "day",
+        "hint": "Champions League second qualifying round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2017",
+        "wiki-maribor-1718",
+        "club-ucl-history"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and Wikipedia agree on date, venue Mostar and 2–1 Maribor win."
+    },
+    {
+      "id": "ev-2017-07-19-maribor-away",
+      "value": {
+        "name": "Maribor 1–1 Zrinjski",
+        "on": "2017-07-19",
+        "precision": "day",
+        "hint": "Champions League second qualifying round, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2017",
+        "wiki-maribor-1718"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and Wikipedia agree on date and 1–1; Maribor through 3–2 on aggregate."
+    },
+    {
+      "id": "ev-2019-07-11-akademija-pandev-away",
+      "value": {
+        "name": "Akademija Pandev 0–3 Zrinjski",
+        "on": "2019-07-11",
+        "precision": "day",
+        "hint": "Europa League first qualifying round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2019a",
+        "fbref-1920"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and FBref agree on date and 3–0 away win; UEFA lists the opponent under its later name Brera Strumica."
+    },
+    {
+      "id": "ev-2019-07-18-akademija-pandev-home",
+      "value": {
+        "name": "Zrinjski 3–0 Akademija Pandev",
+        "on": "2019-07-18",
+        "precision": "day",
+        "hint": "Europa League first qualifying round, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2019a",
+        "fbref-1920"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and FBref agree on date and 3–0; 6–0 on aggregate."
+    },
+    {
+      "id": "ev-2019-07-25-utrecht-away",
+      "value": {
+        "name": "Utrecht 1–1 Zrinjski",
+        "on": "2019-07-25",
+        "precision": "day",
+        "hint": "Europa League second qualifying round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-utrecht-2019",
+        "soccerway-utrecht",
+        "fbref-1920"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA, Soccerway and FBref agree on date and 1–1 at Stadion Galgenwaard."
+    },
+    {
+      "id": "ev-2019-08-01-utrecht-home",
+      "value": {
+        "name": "Zrinjski 2–1 Utrecht",
+        "on": "2019-08-01",
+        "precision": "day",
+        "hint": "Europa League second qualifying round, second leg, after extra time",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2019b",
+        "ontour-utrecht",
+        "fbref-1920"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA, On Tour Football and FBref agree on date; FBref and On Tour give 2–1, UEFA says Zrinjski won after extra time."
+    },
+    {
+      "id": "ev-2019-08-08-malmo-away",
+      "value": {
+        "name": "Malmö 3–0 Zrinjski",
+        "on": "2019-08-08",
+        "precision": "day",
+        "hint": "Europa League third qualifying round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2019b",
+        "fbref-1920",
+        "wiki-malmo-2019"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and FBref agree on date and 3–0; Malmö season page confirms the date."
+    },
+    {
+      "id": "ev-2019-08-15-malmo-home",
+      "value": {
+        "name": "Zrinjski 1–0 Malmö",
+        "on": "2019-08-15",
+        "precision": "day",
+        "hint": "Europa League third qualifying round, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2019b",
+        "fbref-1920",
+        "rsssf-ec1920"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and FBref agree on date; FBref and RSSSF give 1–0 home win; Malmö through 3–1."
+    },
+    {
+      "id": "ev-2023-07-18-urartu-home",
+      "value": {
+        "name": "Zrinjski win shoot-out v Urartu",
+        "on": "2023-07-18",
+        "precision": "day",
+        "hint": "Champions League first qualifying round, second leg; 2–3 after extra time, 4–3 on penalties",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2023a",
+        "wiki-club",
+        "wiki-2324"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA and Wikipedia agree on date, 3–3 aggregate and 4–3 penalty win."
+    },
+    {
+      "id": "ev-2023-07-25-slovan-home",
+      "value": {
+        "name": "Zrinjski 0–1 Slovan Bratislava",
+        "on": "2023-07-25",
+        "precision": "day",
+        "hint": "Champions League second qualifying round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2023b",
+        "wiki-club",
+        "club-ucl-history"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA gives date and 0–1; club site and Wikipedia confirm score, Wikipedia season page the date."
+    },
+    {
+      "id": "ev-2023-08-01-slovan-away",
+      "value": {
+        "name": "Slovan Bratislava 2–2 Zrinjski",
+        "on": "2023-08-01",
+        "precision": "day",
+        "hint": "Champions League second qualifying round, second leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2023b",
+        "wiki-club",
+        "club-ucl-history"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA gives date and 2–2; club site and Wikipedia confirm score; Slovan through 3–2."
+    },
+    {
+      "id": "ev-2024-07-25-bravo-home",
+      "value": {
+        "name": "Zrinjski 0–1 Bravo",
+        "on": "2024-07-25",
+        "precision": "day",
+        "hint": "Conference League second qualifying round, first leg",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-api-2024",
+        "klix-2024-kits",
+        "wiki-club"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA gives date and 0–1; Klix confirms the date, club Wikipedia page the score."
+    }
+  ],
+  "matches": [
+    {
+      "id": "match-2000-06-25-vastra-frolunda",
+      "value": {
+        "name": "Zrinjski 2-1 Västra Frölunda",
+        "on": "2000-06-25",
+        "competition": "UEFA Intertoto Cup",
+        "score": "2-1",
+        "lineup": [
+          "Toni Jurjev",
+          "Tihomir Skoko",
+          "Kenan Lizde",
+          "Joško Farac",
+          "Slaven Musa",
+          "Tihomir Bogdan",
+          "Elvis Margeta",
+          "Ante Marijanović",
+          "Anđelko Kvesić",
+          "Hrvoje Erceg",
+          "Berislav Miloš"
+        ],
+        "bench": []
+      },
+      "sources": [
+        "uefa-lineups-64933",
+        "club-first-euro",
+        "uefa-api-2000"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA line-up feed and club site list the same eleven starters (UEFA spells Marjanovic without diacritics); bench omitted as lists differ."
+    }
+  ],
+  "kits": [
+    {
+      "id": "kit-2024-25-home",
+      "value": {
+        "name": "Zrinjski 2024/25 home",
+        "season": "2024/25",
+        "type": "home",
+        "manufacturer": "Macron",
+        "construction": {
+          "design": "sash",
+          "colors": "white/red"
+        }
+      },
+      "sources": [
+        "fka-274027",
+        "hi-2425-kits",
+        "bljesak-2425-kits"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "FKA and Hercegovina.info agree on Macron 2024/25 white-red home kit; FKA and Bljesak both describe a red sash."
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-2023-09-21-kozulj-winner-az",
+      "value": {
+        "name": "Kožulj's winner v AZ",
+        "subtitle": "21 Sep 2023 · 81'",
+        "on": "2023-09-21",
+        "competition": "UEFA Europa Conference League",
+        "opponent": "AZ Alkmaar",
+        "score": "4-3",
+        "narrative": "Malekinušić's shot struck the post and Kožulj, following up, tapped the rebound in to complete the comeback from 0–3.",
+        "sequence": [
+          {
+            "actor": "Matija Malekinušić",
+            "side": "club",
+            "action": "shot",
+            "zone": "C2",
+            "position": "attempt on goal (reports do not place it precisely)",
+            "note": "his effort came back off the post"
+          },
+          {
+            "actor": "Zvonimir Kožulj",
+            "side": "club",
+            "action": "shot",
+            "zone": "C1",
+            "position": "close range, following up the rebound",
+            "note": "redirected the loose ball off the post into the net"
+          }
+        ]
+      },
+      "sources": [
+        "nfsbih-az",
+        "nhnieuws-az"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "NFSBiH and NH Nieuws agree: 81st minute, Kožulj scored after the ball rebounded off the post; NFSBiH names Malekinušić as the shooter. Venue from club context."
+    }
+  ],
+  "players": [
+    {
+      "id": "antonio-ivancic",
+      "value": {
+        "name": "Antonio Ivančić",
+        "sport": "football",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-lineups-2039291",
+        "wiki-club",
+        "soccerway-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA line-up, Wikipedia squad and Soccerway all list him as a midfielder; spell dates not read."
+    },
+    {
+      "id": "damir-zlomislic",
+      "value": {
+        "name": "Damir Zlomislić",
+        "sport": "football",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-lineups-2039291",
+        "wiki-2324"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA line-up and Wikipedia 2023–24 squad both list him as a midfielder; spell dates not read."
+    },
+    {
+      "id": "filip-bradaric",
+      "value": {
+        "name": "Filip Bradarić",
+        "sport": "football",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "uefa-lineups-2039291",
+        "wiki-2324"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-zrinjski-mostar-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "UEFA line-up and Wikipedia 2023–24 squad both list him as a midfielder; spell dates not read."
+    }
+  ],
+  "mysteries": [],
+  "skipped": [
+    {
+      "what": "Most FKA-only kits (2017/18 away, 2022/23 home, 2023/24, 2024/25 away, 2025/26)",
+      "why": "Second publishers (Klix, Hercegovina.info, Jabuka, club shop) either omit the maker or describe the design differently from FKA (e.g. 'stripes' vs 'hoops', 'band' vs 'sash'); colours-of-football and club shop pages gave no maker."
+    },
+    {
+      "what": "2026/27 home kit",
+      "why": "Already in the pack with FKA + Footy Headlines + Macron sources."
+    },
+    {
+      "what": "Line-ups for AZ, Aston Villa, Breidablik 2023",
+      "why": "UEFA line-up feed truncated after six starters; Wikipedia season pages unreachable in full; only NFSBiH listed the AZ XI."
+    },
+    {
+      "what": "Maribor away 2014, Spartak Trnava 2018, Dudelange 2005, Bravo away 2024, Differdange 2020, APOEL 2020",
+      "why": "Only one publisher gave the exact day, or sources disagreed (22 vs 23 July 2014; APOEL score 1–1 vs 2–2)."
+    },
+    {
+      "what": "League title clinchers and cup finals",
+      "why": "Wikipedia league/season pages did not give clinching dates; existing pack already holds the 2023-05-17 and 2024-05-23 finals."
+    },
+    {
+      "what": "Malekinušić as MF",
+      "why": "UEFA lists him as midfielder but pack holds FW; conflict, left alone."
+    },
+    {
+      "what": "Mysteries",
+      "why": "Could not assemble four clues each backed by two publishers for any approved player within budget."
+    }
+  ]
+}

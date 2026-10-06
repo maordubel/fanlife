@@ -1,0 +1,1525 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-petah-tikva",
+  "note": "Parity wave 2026-10-06: two-publisher research, automated cross-source approval (compiler rules). Records whose sources disagreed were left out (see skipped).",
+  "sources": [
+    {
+      "id": "hpt-game-1799",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1799",
+      "url": "https://www.hpt.co.il/?ShowGame=1799",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra55",
+      "title": "Israel 1954/55 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra55.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1800",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1800",
+      "url": "https://www.hpt.co.il/?ShowGame=1800",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1801",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1801",
+      "url": "https://www.hpt.co.il/?ShowGame=1801",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1802",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1802",
+      "url": "https://www.hpt.co.il/?ShowGame=1802",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1747",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1747",
+      "url": "https://www.hpt.co.il/?ShowGame=1747",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra57",
+      "title": "Israel 1956/57 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra57.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1748",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1748",
+      "url": "https://www.hpt.co.il/?ShowGame=1748",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-2405",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 2405",
+      "url": "https://www.hpt.co.il/?ShowGame=2405",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-1957-israel-super-cup",
+      "title": "1957 Israel Super Cup — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/1957_Israel_Super_Cup",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1725",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1725",
+      "url": "https://www.hpt.co.il/?ShowGame=1725",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra58",
+      "title": "Israel 1957/58 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra58.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1699",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1699",
+      "url": "https://www.hpt.co.il/?ShowGame=1699",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra59",
+      "title": "Israel 1958/59 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra59.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1700",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1700",
+      "url": "https://www.hpt.co.il/?ShowGame=1700",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1701",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1701",
+      "url": "https://www.hpt.co.il/?ShowGame=1701",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1671",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1671",
+      "url": "https://www.hpt.co.il/?ShowGame=1671",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra61",
+      "title": "Israel 1960/61 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra61.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1672",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1672",
+      "url": "https://www.hpt.co.il/?ShowGame=1672",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1674",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1674",
+      "url": "https://www.hpt.co.il/?ShowGame=1674",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1623",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1623",
+      "url": "https://www.hpt.co.il/?ShowGame=1623",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra62",
+      "title": "Israel 1961/62 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra62.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1624",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1624",
+      "url": "https://www.hpt.co.il/?ShowGame=1624",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1595",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1595",
+      "url": "https://www.hpt.co.il/?ShowGame=1595",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra63",
+      "title": "Israel 1962/63 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra63.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1597",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1597",
+      "url": "https://www.hpt.co.il/?ShowGame=1597",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1598",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1598",
+      "url": "https://www.hpt.co.il/?ShowGame=1598",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1599",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1599",
+      "url": "https://www.hpt.co.il/?ShowGame=1599",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1540",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1540",
+      "url": "https://www.hpt.co.il/?ShowGame=1540",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra64",
+      "title": "Israel 1963/64 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra64.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1544",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1544",
+      "url": "https://www.hpt.co.il/?ShowGame=1544",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1570",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1570",
+      "url": "https://www.hpt.co.il/?ShowGame=1570",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra65",
+      "title": "Israel 1964/65 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra65.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1571",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1571",
+      "url": "https://www.hpt.co.il/?ShowGame=1571",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-2072",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 2072",
+      "url": "https://www.hpt.co.il/?ShowGame=2072",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra66",
+      "title": "Israel 1965/66 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra66.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1498",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1498",
+      "url": "https://www.hpt.co.il/?ShowGame=1498",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra67",
+      "title": "Israel 1966/67 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra67.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1499",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1499",
+      "url": "https://www.hpt.co.il/?ShowGame=1499",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1502",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1502",
+      "url": "https://www.hpt.co.il/?ShowGame=1502",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra68",
+      "title": "Israel 1967/68 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra68.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-1503",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 1503",
+      "url": "https://www.hpt.co.il/?ShowGame=1503",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-578",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 578",
+      "url": "https://www.hpt.co.il/?ShowGame=578",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra69",
+      "title": "Israel 1968/69 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra69.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-60",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 60",
+      "url": "https://www.hpt.co.il/?ShowGame=60",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra70",
+      "title": "Israel 1969/70 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra70.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-61",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 61",
+      "url": "https://www.hpt.co.il/?ShowGame=61",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-98",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 98",
+      "url": "https://www.hpt.co.il/?ShowGame=98",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "rsssf-isra71",
+      "title": "Israel 1970/71 — RSSSF",
+      "url": "https://rsssf.org/tablesi/isra71.html",
+      "publisher": "RSSSF",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "hpt-game-99",
+      "title": "מוזיאון הפועל פתח-תקוה — משחק 99",
+      "url": "https://www.hpt.co.il/?ShowGame=99",
+      "publisher": "Hapoel Petah Tikva Museum (hpt.co.il)",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "wiki-hapoel-petah-tikva-fc",
+      "title": "Hapoel Petah Tikva F.C. — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C.",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "fotmob-squad",
+      "title": "Hapoel Petah Tikva squad — FotMob",
+      "url": "https://www.fotmob.com/teams/9755/squad/hapoel-petah-tikva",
+      "publisher": "FotMob",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    }
+  ],
+  "archive": [
+    {
+      "id": "hpt-cup-1955-03-26",
+      "value": {
+        "name": "הפועל פתח תקווה 5–1 מכבי יפו",
+        "on": "1955-03-26",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב שלישי",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1799",
+        "rsssf-isra55"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 5-1 score agree; Wikipedia's differing date deliberately not used."
+    },
+    {
+      "id": "hpt-cup-1955-05-28",
+      "value": {
+        "name": "הפועל פתח תקווה 7–0 הפועל נהריה",
+        "on": "1955-05-28",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב רביעי",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1800",
+        "rsssf-isra55"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 7-0 score agree."
+    },
+    {
+      "id": "hpt-cup-1955-08-27",
+      "value": {
+        "name": "בית\"ר תל אביב 0–4 הפועל פתח תקווה",
+        "on": "1955-08-27",
+        "precision": "day",
+        "hint": "גביע המדינה — רבע גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1801",
+        "rsssf-isra55"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, quarter-final stage and 4-0 away win agree."
+    },
+    {
+      "id": "hpt-cup-1955-10-22",
+      "value": {
+        "name": "ניצחון 2–0 על הפועל רמת גן בחצי גמר הגביע",
+        "on": "1955-10-22",
+        "precision": "day",
+        "hint": "גביע המדינה — חצי גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1802",
+        "rsssf-isra55"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, semi-final and 2-0 win agree; home side listed differently so title is neutral."
+    },
+    {
+      "id": "hpt-cup-1957-06-15",
+      "value": {
+        "name": "הפועל פתח תקווה 2–1 מכבי חיפה",
+        "on": "1957-06-15",
+        "precision": "day",
+        "hint": "גביע המדינה — רבע גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1747",
+        "rsssf-isra57"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, quarter-final and 2-1 win agree."
+    },
+    {
+      "id": "hpt-cup-1957-06-22",
+      "value": {
+        "name": "תיקו 2–2 עם מכבי תל אביב בחצי גמר הגביע",
+        "on": "1957-06-22",
+        "precision": "day",
+        "hint": "גביע המדינה — חצי גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1748",
+        "rsssf-isra57"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, semi-final and 2-2 draw agree; home side differs so title is neutral."
+    },
+    {
+      "id": "hpt-cup-1957-11-23",
+      "value": {
+        "name": "הפועל תל אביב ניצחה 3–0 במשחק אלוף האלופים",
+        "on": "1957-11-23",
+        "precision": "day",
+        "hint": "אלוף האלופים — גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-2405",
+        "wiki-1957-israel-super-cup"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, Champions-of-Champions match and 3-0 Hapoel Tel Aviv win agree."
+    },
+    {
+      "id": "hpt-cup-1958-06-21",
+      "value": {
+        "name": "הכח תל אביב 0–4 הפועל פתח תקווה",
+        "on": "1958-06-21",
+        "precision": "day",
+        "hint": "גביע המדינה",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1725",
+        "rsssf-isra58"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date and 4-0 away win agree; round numbering differs so only the competition is given."
+    },
+    {
+      "id": "hpt-cup-1959-09-26",
+      "value": {
+        "name": "הפועל פתח תקווה 10–2 בית\"ר בנימינה",
+        "on": "1959-09-26",
+        "precision": "day",
+        "hint": "גביע המדינה",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1699",
+        "rsssf-isra59"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date and 10-2 score agree; round numbering differs so omitted."
+    },
+    {
+      "id": "hpt-cup-1959-10-24",
+      "value": {
+        "name": "ניצחון על הפועל חיפה ברבע גמר הגביע",
+        "on": "1959-10-24",
+        "precision": "day",
+        "hint": "גביע המדינה — רבע גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1700",
+        "rsssf-isra59"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, quarter-final and win agree; final margin differs between sources so score omitted."
+    },
+    {
+      "id": "hpt-cup-1959-10-31",
+      "value": {
+        "name": "הפועל פתח תקווה 4–2 מכבי חיפה",
+        "on": "1959-10-31",
+        "precision": "day",
+        "hint": "גביע המדינה — חצי גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1701",
+        "rsssf-isra59"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, semi-final and 4-2 win agree."
+    },
+    {
+      "id": "hpt-cup-1960-06-25",
+      "value": {
+        "name": "הפועל רמת גן 1–1 הפועל פתח תקווה",
+        "on": "1960-06-25",
+        "precision": "day",
+        "hint": "גביע המדינה — שמינית גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1671",
+        "rsssf-isra61"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, last-16 tie and 1-1 draw agree."
+    },
+    {
+      "id": "hpt-cup-1960-07-02",
+      "value": {
+        "name": "הפועל פתח תקווה 3–2 הפועל רמת גן",
+        "on": "1960-07-02",
+        "precision": "day",
+        "hint": "גביע המדינה — משחק חוזר בשמינית הגמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1672",
+        "rsssf-isra61"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, replay and 3-2 win agree."
+    },
+    {
+      "id": "hpt-cup-1960-12-21",
+      "value": {
+        "name": "ניצחון 4–0 על הפועל הרצליה בחצי גמר הגביע",
+        "on": "1960-12-21",
+        "precision": "day",
+        "hint": "גביע המדינה — חצי גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1674",
+        "rsssf-isra61"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, semi-final and 4-0 win agree; home side differs so title is neutral."
+    },
+    {
+      "id": "hpt-cup-1961-12-16",
+      "value": {
+        "name": "הפועל קרית חיים 0–4 הפועל פתח תקווה",
+        "on": "1961-12-16",
+        "precision": "day",
+        "hint": "גביע המדינה — רבע גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1623",
+        "rsssf-isra62"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, quarter-final and 4-0 away win agree."
+    },
+    {
+      "id": "hpt-cup-1962-02-03",
+      "value": {
+        "name": "הפועל פתח תקווה 1–5 מכבי חיפה",
+        "on": "1962-02-03",
+        "precision": "day",
+        "hint": "גביע המדינה — חצי גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1624",
+        "rsssf-isra62"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, semi-final and 1-5 defeat agree."
+    },
+    {
+      "id": "hpt-cup-1962-10-06",
+      "value": {
+        "name": "מכבי נתניה 1–2 הפועל פתח תקווה",
+        "on": "1962-10-06",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב חמישי, אחרי הארכה",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1595",
+        "rsssf-isra63"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 2-1 away win agree; Wikipedia's differing date not used."
+    },
+    {
+      "id": "hpt-cup-1963-03-30",
+      "value": {
+        "name": "הפועל פתח תקווה 5–3 הפועל נהריה",
+        "on": "1963-03-30",
+        "precision": "day",
+        "hint": "גביע המדינה — רבע גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1597",
+        "rsssf-isra63"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, quarter-final and 5-3 win agree."
+    },
+    {
+      "id": "hpt-cup-1963-05-11",
+      "value": {
+        "name": "הפועל פתח תקווה 1–1 מכבי חיפה",
+        "on": "1963-05-11",
+        "precision": "day",
+        "hint": "גביע המדינה — חצי גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1598",
+        "rsssf-isra63"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, semi-final and 1-1 draw agree."
+    },
+    {
+      "id": "hpt-cup-1963-05-22",
+      "value": {
+        "name": "מכבי חיפה ניצחה 1–0 במשחק החוזר והדיחה את הפועל",
+        "on": "1963-05-22",
+        "precision": "day",
+        "hint": "גביע המדינה — משחק חוזר בחצי הגמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1599",
+        "rsssf-isra63"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, replay and 1-0 Maccabi Haifa win agree; home side differs so title is neutral."
+    },
+    {
+      "id": "hpt-cup-1963-10-05",
+      "value": {
+        "name": "הפועל פתח תקווה 17–0 מכבי באר שבע",
+        "on": "1963-10-05",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב שני",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1540",
+        "rsssf-isra64"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 17-0 score agree (Wikipedia concurs)."
+    },
+    {
+      "id": "hpt-cup-1964-09-12",
+      "value": {
+        "name": "הפועל מחנה יהודה הדיחה את הפועל פתח תקווה מהגביע",
+        "on": "1964-09-12",
+        "precision": "day",
+        "hint": "גביע המדינה",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1544",
+        "rsssf-isra64"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date and 2-0 Mahane Yehuda win agree; round number differs so omitted."
+    },
+    {
+      "id": "hpt-cup-1965-01-23",
+      "value": {
+        "name": "ניצחון 4–2 על מ.ס. אבן יהודה בגביע",
+        "on": "1965-01-23",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב רביעי",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1570",
+        "rsssf-isra65"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 4-2 win agree; home side differs so title is neutral."
+    },
+    {
+      "id": "hpt-cup-1965-02-13",
+      "value": {
+        "name": "הפועל פתח תקווה 3–2 מכבי חולון",
+        "on": "1965-02-13",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב חמישי",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1571",
+        "rsssf-isra65"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 3-2 win agree."
+    },
+    {
+      "id": "hpt-cup-1966-03-23",
+      "value": {
+        "name": "ניצחון 6–0 על הפועל ראשון לציון בגביע",
+        "on": "1966-03-23",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב שישי",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-2072",
+        "rsssf-isra66"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 6-0 win agree; home side differs so title is neutral."
+    },
+    {
+      "id": "hpt-cup-1967-02-18",
+      "value": {
+        "name": "הפועל פתח תקווה 3–0 מכבי רמת עמידר",
+        "on": "1967-02-18",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב שישי",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1498",
+        "rsssf-isra67"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 3-0 win agree."
+    },
+    {
+      "id": "hpt-cup-1967-05-03",
+      "value": {
+        "name": "הפועל פתח תקווה 0–1 מכבי תל אביב",
+        "on": "1967-05-03",
+        "precision": "day",
+        "hint": "גביע המדינה",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1499",
+        "rsssf-isra67"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date and 0-1 defeat agree; round label differs so omitted."
+    },
+    {
+      "id": "hpt-cup-1968-05-25",
+      "value": {
+        "name": "הפועל צפת 0–1 הפועל פתח תקווה",
+        "on": "1968-05-25",
+        "precision": "day",
+        "hint": "גביע המדינה — רבע גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1502",
+        "rsssf-isra68"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, quarter-final and 1-0 away win agree."
+    },
+    {
+      "id": "hpt-cup-1968-05-29",
+      "value": {
+        "name": "ניצחון 2–1 בחצי גמר הגביע בדרך לגמר",
+        "on": "1968-05-29",
+        "precision": "day",
+        "hint": "גביע המדינה — חצי גמר",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-1503",
+        "rsssf-isra68"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, semi-final and 2-1 win agree; opponent named differently (Maccabi/Hapoel Netanya) so omitted."
+    },
+    {
+      "id": "hpt-cup-1969-04-12",
+      "value": {
+        "name": "הפועל פתח תקווה 2–1 הפועל נתניה",
+        "on": "1969-04-12",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב שישי",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-578",
+        "rsssf-isra69"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 2-1 win agree."
+    },
+    {
+      "id": "hpt-cup-1970-09-12",
+      "value": {
+        "name": "הפועל פתח תקווה 2–0 מכבי שעריים",
+        "on": "1970-09-12",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב שישי",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-60",
+        "rsssf-isra70"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 2-0 win agree."
+    },
+    {
+      "id": "hpt-cup-1970-09-19",
+      "value": {
+        "name": "מכבי פתח תקווה 1–0 הפועל פתח תקווה",
+        "on": "1970-09-19",
+        "precision": "day",
+        "hint": "גביע המדינה — דרבי העיר בגביע",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-61",
+        "rsssf-isra70"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date and 1-0 Maccabi win in the city cup derby agree; RSSSF adds extra time."
+    },
+    {
+      "id": "hpt-cup-1971-04-10",
+      "value": {
+        "name": "הפועל פתח תקווה 5–1 הפועל גבעת אולגה",
+        "on": "1971-04-10",
+        "precision": "day",
+        "hint": "גביע המדינה — סיבוב שישי, אחרי הארכה",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-98",
+        "rsssf-isra71"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date, round and 5-1 win agree."
+    },
+    {
+      "id": "hpt-cup-1971-05-01",
+      "value": {
+        "name": "מכבי תל אביב 5–3 הפועל פתח תקווה",
+        "on": "1971-05-01",
+        "precision": "day",
+        "hint": "גביע המדינה",
+        "sport": "football",
+        "sensitive": false
+      },
+      "sources": [
+        "hpt-game-99",
+        "rsssf-isra71"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Date and 5-3 Maccabi Tel Aviv win agree; round label differs so omitted."
+    }
+  ],
+  "matches": [],
+  "kits": [],
+  "goals": [],
+  "players": [
+    {
+      "id": "avishay-cohen",
+      "value": {
+        "name": "אבישי כהן",
+        "sport": "football",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the DF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "harel-shalom",
+      "value": {
+        "name": "הראל שלום",
+        "sport": "football",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the DF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "alex-musonda",
+      "value": {
+        "name": "אלכס מוסונדה",
+        "sport": "football",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the DF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "stav-israeli",
+      "value": {
+        "name": "סתיו ישראלי",
+        "sport": "football",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the DF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "yazan-nassar",
+      "value": {
+        "name": "יזן נסאר",
+        "sport": "football",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the DF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "diego-arroyo",
+      "value": {
+        "name": "דייגו ארויו",
+        "sport": "football",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the DF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "itay-ehud",
+      "value": {
+        "name": "איתי אהוד",
+        "sport": "football",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the MF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "edmond-asante",
+      "value": {
+        "name": "אדמונד אסנטה",
+        "sport": "football",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the MF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "karim-kimvuidi",
+      "value": {
+        "name": "קארים קימבידי",
+        "sport": "football",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the MF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "noam-cohen",
+      "value": {
+        "name": "נעם כהן",
+        "sport": "football",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the MF group of the current squad; spell of years not stated, left null."
+    },
+    {
+      "id": "guy-badash",
+      "value": {
+        "name": "גיא בדש",
+        "sport": "football",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sensitive": false
+      },
+      "sources": [
+        "wiki-hapoel-petah-tikva-fc",
+        "fotmob-squad"
+      ],
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-parity",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "notes": "Both squad lists place him among the FW group of the current squad; spell of years not stated, left null."
+    }
+  ],
+  "mysteries": [],
+  "skipped": [
+    {
+      "what": "matches with starting XI (1957, 1959, 1961 cup finals)",
+      "why": "hpt.co.il museum gives full XIs, but no second publisher with line-ups was reachable (Wikipedia final pages and he.wikipedia are cache-only/unfetchable)."
+    },
+    {
+      "what": "kits",
+      "why": "Football Kit Archive lists makers per season (Lotto, Givova, Puma, Diadora, adidas, Nike, Umbro) but no second publisher giving maker+design could be fetched; hpt.co.il kit gallery is images only."
+    },
+    {
+      "what": "goals",
+      "why": "Museum match pages give scorers and minutes only, no build-up descriptions."
+    },
+    {
+      "what": "mysteries",
+      "why": "Only 3 facts (nationality, number, position) agreed by two publishers per modern player; below the 4-clue minimum."
+    },
+    {
+      "what": "events with date conflicts",
+      "why": "Dropped: 1957-06-30 replay, 1958 Tiberias QF, 1960 Haifa QF (Dec 7 vs 14), 1961-12-02, 1963 Super Cup (22 vs 23 Jan), 1963-03-02 (opponent conflict), 1964 Herzliya, 1965 Maccabi TA (13 vs 14 Mar), 1966 Hakoah, 1968 Kfar Blum (25 vs 27 Apr), 1968-05-04."
+    },
+    {
+      "what": "Feyenoord 1992 and league derbies 1955-63",
+      "why": "Feyenoord dates already in pack; RSSSF league pages carry no match dates, so derby days have only one source."
+    }
+  ]
+}
