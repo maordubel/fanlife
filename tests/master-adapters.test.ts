@@ -15,14 +15,17 @@ describe('research adapters',()=>{
   expect(r.gaps!.some(g=>g.startsWith('P0'))).toBe(true)})
  it('a club with no staged package fails loudly, not silently',async()=>{await expect(ADAPTERS.package!.collect(job('olympiacos'))).rejects.toThrow(/No staged research package/)})
 })
-describe('panathinaikos review pack',()=>{
+describe('panathinaikos pack (owner-approved 2026-10-06)',()=>{
  const club=REGISTRY.find(c=>c.id==='panathinaikos')!,pack=JSON.parse(readFileSync('club-packs/panathinaikos/core.json','utf8'))
- it('compiles with zero approved facts and every gate locked',()=>{
+ it('carries a named owner approval and compiles its exact-day events into the timeline',()=>{
   const {data}=compilePack(pack,club)
-  expect(data.archive).toHaveLength(30);expect(data.archive.every(f=>f.status==='review'&&f.approvedBy===null)).toBe(true)
-  expect(data.timeline).toHaveLength(0);expect(data.gates.timeline.playable).toBe(false)
-  expect(data.players).toBeNull();expect(data.matches).toBeNull()})
- it('is regenerated identically from staging (idempotent)',()=>{
+  expect(data.archive).toHaveLength(30);expect(data.archive.every(f=>f.status==='approved'&&/Maor Harel/.test(f.approvedBy||'')&&f.approvedAt==='2026-10-06')).toBe(true)
+  expect(data.timeline.length).toBeGreaterThanOrEqual(7);expect(data.timeline.every(t=>t.value.on))
+  expect(data.players).toHaveLength(52);expect(data.rivals?.[0]?.value.name).toBe('Olympiacos');expect(data.matches).toBeNull()})
+ it('is English, and still the same facts as staging (ids and sources unchanged by approval)',()=>{
+  expect(pack.contentLocale).toBe('en')
   const d='research-staging/panathinaikos',r=(n:string)=>JSON.parse(readFileSync(`${d}/${n}.json`,'utf8'))
-  expect(buildReviewPack('panathinaikos',{timeline:r('timeline'),sources:r('sources')})).toEqual(pack)})
+  const fresh=buildReviewPack('panathinaikos',{timeline:r('timeline'),sources:r('sources')})
+  expect(pack.archive.map((a:{id:string;sources:string[]})=>[a.id,a.sources])).toEqual(fresh.archive.map((a:{id:string;sources:string[]})=>[a.id,a.sources]))
+  expect(pack.archive.map((a:{value:{on:string|null}})=>a.value.on)).toEqual(fresh.archive.map((a:{value:{on:string|null}})=>a.value.on))})
 })
