@@ -107,7 +107,9 @@ export type SoundCue = 'roar' | 'murmur' | 'whistle' | 'radio' | 'door' | 'coin'
 
 /* ───────────── conversations ───────────── */
 
-export type Line = {who: CastId | 'me' | null; t: Tx}
+/** How a moment feels. Bends the picture (camera, light, pace) and nothing else; a line without one lets the feeling go. */
+export type Mood = 'tender' | 'warm' | 'tense' | 'grief' | 'joy' | 'wonder'
+export type Line = {who: CastId | 'me' | null; t: Tx; mood?: Mood}
 export type Choice = {id: string; t: Tx; when?: Cond; then?: Effect[]; next?: string}
 export type Branch = {when?: Cond; lines: Line[]; choices?: Choice[]; then?: Effect[]; next?: string}
 /** The first branch whose `when` holds is the one that plays. The last branch carries no `when`: there is always something to say. */

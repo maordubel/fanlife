@@ -168,5 +168,7 @@
   "score.competition": "Competition",
   "score.scorers": "Goals",
   "score.lineup": "Started",
-  "score.bench": "Came on"
+  "score.bench": "Came on",
+  "place.new": "A place you have not seen",
+  "map.new": "Newly found"
 }

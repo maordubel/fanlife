@@ -164,6 +164,7 @@ function enter(c){
  var st=V.st;st.club=c.club&&V.SK[c.club]?c.club:st.club;st.scene=c.room;st.time=c.time==='night'?'night':'day';st.play=true;
  var stage=document.getElementById('stage');if(stage)stage.className='stage '+st.time;
  var f=c.frame||{};V.view.mode='follow';V.view.top=f.top==null?.86:f.top;V.view.bottom=f.bottom==null?-.8:f.bottom;V.view.side=.96;V.view.viewH=c.viewH||null;V.view.zoom=1;V.view.lift=2;
+ if(c.reveal)V.reveal();
  V.rebuild();
  var sp=c.spawn||{x:(c.walk[0]+c.walk[2])/2,z:(c.walk[1]+c.walk[3])/2,yaw:0};
  (c.actors||[]).forEach(function(a){addActor(a,sp)});
@@ -201,7 +202,7 @@ function act(t){
  emit({type:'act',kind:t.kind,id:t.id});return true;
 }
 function exitOf(id){for(var i=0;i<exits.length;i++)if(exits[i].def.id===id)return exits[i];return null}
-function leave(x){if(frozen)return;frozen=true;path=null;pending=null;V.fadeOut(260,function(){emit({type:'exit',id:x.def.id})})}
+function leave(x){if(frozen)return;frozen=true;path=null;pending=null;V.fadeOut(300,function(){emit({type:'exit',id:x.def.id})},x.def.dir||'n')}
 function faceEachOther(id){var a=actors[id];if(!a)return;player.wantYaw=Math.atan2(a.x-player.x,a.z-player.z);if(!a.def.sit&&!a.def.still)a.wantYaw=Math.atan2(player.x-a.x,player.z-a.z)}
 
 /* ---------- input ---------- */
@@ -319,6 +320,7 @@ var P=window.__vxPlay={
  act:function(){return act()},
  tap:tap,walkTo:walkTo,goTo:goTo,
  freeze:function(b){frozen=!!b;if(frozen){axis.x=axis.y=0;path=null;pending=null}else{graceUntil=now+.35;retarget(true)}},
+ emote:function(k,h){V.emote(k,h)},
  focus:function(id){focusId=id||null;if(id)faceEachOther(id)},
  mark:function(kind,id,on){marks.forEach(function(m){if(m.kind===kind&&m.id===id)m.on=!!on});retarget(true)},
  lock:function(id,locked){var x=exitOf(id);if(x){x.locked=!!locked;retarget(true)}},

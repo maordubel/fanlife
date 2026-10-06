@@ -7,7 +7,7 @@
  * only over rooms the supporter has stood in. Colours come from the `--l-*` tokens; the shell
  * decides what a tap does.
  */
-import {useId, useMemo, useState} from 'react'
+import {useEffect, useId, useMemo, useState} from 'react'
 import {CITY, type City, type Place, type SiteKind} from '@/lib/life/universal/city'
 import styles from './life.module.css'
 
@@ -16,6 +16,9 @@ type Props = {city: City; clubId: string; night: boolean; copy: Copy; story: {la
 
 const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) } return h >>> 0 }
 const rng = (seed: number) => () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296 }
+
+/** Districts the map has already shown lit, per town, for this visit: a new one lifts its fog in front of the player's eyes. */
+const shown = new Map<string, Set<string>>()
 
 const GLYPH: Record<SiteKind, string> = {home: 'H', school: 'S', street: '·', work: 'W', stadium: '▲', bus: 'B', abroad: '✈', pitch: '○'}
 
@@ -39,6 +42,12 @@ export function CityMap({city, clubId, night, copy, story, onTravel, onClose}: P
     return city.roads.filter(([a, b]) => at[a]?.status !== 'hidden' && at[b]?.status !== 'hidden').map(([a, b], i) => ({a, b, dur: 9 + r() * 9, delay: -r() * 9, back: i % 2 === 0}))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clubId, city.roads])
+  const fresh = useMemo(() => {
+    const was = shown.get(clubId)
+    return new Set(was ? lit.filter(p => !was.has(p.id)).map(p => p.id) : [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clubId])
+  useEffect(() => { shown.set(clubId, new Set(lit.map(p => p.id))) }, [clubId, lit])
   const here = city.places.find(p => p.status === 'here') ?? null
   const sel = pick ? at[pick] ?? null : null
   const bent = (a: Place, b: Place) => `M${a.x} ${a.y} L${a.x} ${b.y} L${b.x} ${b.y}`
@@ -59,7 +68,7 @@ export function CityMap({city, clubId, night, copy, story, onTravel, onClose}: P
             <defs>
               <mask id={`${uid}m`}>
                 <rect width={CITY.w} height={CITY.h} fill="black" />
-                {lit.map(p => <circle key={p.id} cx={p.x} cy={p.y} r={p.status === 'here' ? 24 : 17} fill="white" />)}
+                {lit.map(p => { const r = p.status === 'here' ? 24 : 17; return <circle key={p.id} cx={p.x} cy={p.y} r={r} fill="white">{fresh.has(p.id) && <animate attributeName="r" from="0" to={r} dur="1.8s" begin="0.35s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .8 .2 1" />}</circle> })}
               </mask>
               <pattern id={`${uid}g`} width="6" height="6" patternUnits="userSpaceOnUse"><path d="M6 0H0V6" className={styles.mapGrid} /></pattern>
             </defs>
@@ -83,6 +92,7 @@ export function CityMap({city, clubId, night, copy, story, onTravel, onClose}: P
                 <g key={p.id} className={styles.mapSite} data-status={p.status} data-selected={pick === p.id ? 'true' : 'false'} data-kind={p.kind} data-place={p.id}
                   transform={`translate(${p.x} ${p.y})`} tabIndex={hidden ? -1 : 0} role="button" aria-pressed={pick === p.id} aria-label={hidden ? copy['map.unknown'] : p.name}
                   onClick={() => !hidden && setPick(p.id)} onKeyDown={e => { if ((e.key === 'Enter' || e.key === ' ') && !hidden) { e.preventDefault(); setPick(p.id) } }}>
+                  {fresh.has(p.id) && <><circle r="4" className={styles.mapNew}><animate attributeName="r" values="4;16" dur="1.8s" begin="0.35s" repeatCount="2" /><animate attributeName="opacity" values="1;0" dur="1.8s" begin="0.35s" repeatCount="2" /></circle><text className={styles.mapNewTag} textAnchor="middle" y="-10.6">{copy['map.new']}</text></>}
                   <rect x="-6.5" y="-4.5" width="13" height="9" className={styles.mapPlot} />
                   {!hidden && <text className={styles.mapGlyph} textAnchor="middle" dy="1.6" aria-hidden="true">{known ? '?' : GLYPH[p.kind]}</text>}
                   {hidden && <text className={styles.mapFog} textAnchor="middle" dy="1.8" aria-hidden="true">?</text>}
