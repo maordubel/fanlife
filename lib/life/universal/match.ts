@@ -17,12 +17,17 @@ const SCORE_SPLIT = /^(.+?)\s+(\d+)\s*[–—-]\s*(.+?)\s+(\d+)$/
 
 const norm = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim()
 
+const PROSE = /\b(beat|beats|defeat|defeated|after|on|in|v|vs|lost|won|drew|win|wins|reach|reached|clinch|clinched|win|secure|secured|the|a|an|to|at|with|of|and|their|first|second|leg|final|title)\b/iu
+const isSide = (side: string) => { const w = side.trim().split(/\s+/); return w.length <= 4 && !/\d/.test(side) && !w.slice(1).some(x => PROSE.test(x)) }
+
 /** Reads a recorded scoreline. Anything it cannot read with certainty is `null`. */
 export function readMatch(title: string, clubNames: readonly string[]): MatchFacts | null {
   const t = title.trim()
   const a = SCORE.exec(t), b = a ? null : SCORE_SPLIT.exec(t)
   const m = a ? {home: a[1]!, hg: a[2]!, ag: a[3]!, away: a[4]!, note: a[5]} : b ? {home: b[1]!, hg: b[2]!, ag: b[4]!, away: b[3]!, note: undefined} : null
   if (!m) return null
+  // a side is a club's name, not a sentence: prose such as "A beat B on penalties after losing 1-0" is not a scoreline
+  if (![m.home, m.away].every(isSide)) return null
   const names = clubNames.map(norm).filter(Boolean)
   // the short name is never used to read a scoreline: "Hapoel" is half the league
   const isUs = (side: string) => names.some(n => norm(side) === n || norm(side).startsWith(n + ' ') || n.startsWith(norm(side) + ' ') || n.endsWith(' ' + norm(side)))

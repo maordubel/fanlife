@@ -1,0 +1,5636 @@
+{
+ "schemaVersion": 1,
+ "clubId": "olympiacos",
+ "sources": [
+  {
+   "id": "r26-ah-ars11",
+   "title": "Olympiakos vs Arsenal match report",
+   "url": "https://english.ahram.org.eg/News/28690.aspx",
+   "publisher": "Ahram Online",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-ah-mu1",
+   "title": "Manchester United 0-2 Olympiakos",
+   "url": "https://english.ahram.org.eg/News/95250.aspx",
+   "publisher": "Ahram Online",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-ah-mu2",
+   "title": "Van Persie scores hat-trick as Manchester United reach last eight",
+   "url": "https://english.ahram.org.eg/News/97100.aspx",
+   "publisher": "Ahram Online",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-bein-kai",
+   "title": "Martins lifts Olympiacos to first Champions League win",
+   "url": "https://prod.beinsports.com/en-nz/football/uefa-champions-league/articles-video/martins-lifts-olympiacos-to-first-champions-league-win-2025-12-09",
+   "publisher": "beIN SPORTS",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-bein-lev",
+   "title": "Olympiacos 2-0 Bayer Leverkusen",
+   "url": "https://prod.beinsports.com/en-us/soccer/uefa-champions-league/articles/olympiacos-2-0-bayer-leverkusen-hosts-propel-themselves-into-play-off-contention-2026-01-20",
+   "publisher": "beIN SPORTS",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-bein-rm",
+   "title": "Mbappe nets four to fire Madrid past Olympiacos",
+   "url": "https://www.beinsports.com/en-au/football/uefa-champions-league/articles-video/mbappe-nets-four-to-fire-madrid-past-olympiacos-2025-11-26",
+   "publisher": "beIN SPORTS",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-bg-mta1",
+   "title": "Conference League round of 16 first leg recap",
+   "url": "https://babagol.net/blog/2024/3/8/conference-league-round-of-16-first-leg-recap-maccabi-tel-aviv-rocked-the-karaisakakis",
+   "publisher": "Babagol",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-dhn-alg",
+   "title": "Imanol Alguacil nomme coach de l'Olympiakos",
+   "url": "https://www.dhnet.be/dernieres-depeches/2026/09/10/imanol-alguacil-nomme-coach-de-lolympiakos-54DAHGSD3FCIRMNGNYHAG5QZC4/",
+   "publisher": "DHnet",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-ds-fb1",
+   "title": "Fenerbahce fall to Olympiacos 3-2 in Conference League quarters",
+   "url": "https://www.dailysabah.com/sports/football/fenerbahce-fall-to-olympiacos-3-2-in-conference-league-quarters/amp",
+   "publisher": "Daily Sabah",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-espn-lev",
+   "title": "Olympiacos v Bayer Leverkusen",
+   "url": "https://www.espn.com/soccer/match/_/gameId/401858737",
+   "publisher": "ESPN",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fif-juv",
+   "title": "Olympiakos 1-0 Juventus: Roberto heroics deny the Bianconeri",
+   "url": "https://forzaitalianfootball.com/2014/10/olympiakos-1-0-juventus-robertos-heroics-deny-the-bianconeri/",
+   "publisher": "Forza Italian Football",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fm-elkaabi",
+   "title": "Ayoub El Kaabi player profile",
+   "url": "https://www.fotmob.com/players/884382",
+   "publisher": "FotMob",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fm-fb2",
+   "title": "Fenerbahce vs Olympiacos",
+   "url": "https://www.fotmob.com/en-GB/matches/olympiacos-vs-fenerbahce/2hg15a",
+   "publisher": "FotMob",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fm-fer2",
+   "title": "Ferencvaros vs Olympiacos",
+   "url": "https://www.fotmob.com/en-GB/matches/ferencvaros-vs-olympiacos/2cmp84",
+   "publisher": "FotMob",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fm-mta2",
+   "title": "Maccabi Tel Aviv vs Olympiacos",
+   "url": "https://www.fotmob.com/en-GB/matches/maccabi-tel-aviv-vs-olympiacos/28zind",
+   "publisher": "FotMob",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fox-mu2",
+   "title": "Van Persie hat trick lifts Manchester United past Olympiakos",
+   "url": "https://www.foxnews.com/sports/van-persie-hat-trick-lifts-manchester-united-past-olympiakos-in-champions-league.amp",
+   "publisher": "Fox News",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fp-fer1",
+   "title": "It didn't take long, Olympiakos won by one goal",
+   "url": "https://www.fradi.hu/en/football/men-s/news/it-didn-t-take-long-olympiakos-won-by-one-goal",
+   "publisher": "Ferencvarosi TC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fs-fb1",
+   "title": "Olympiacos hold on to claim first-leg win over Fenerbahce",
+   "url": "https://www.flashscore.com/news/soccer-europa-conference-league-olympiacos-hold-on-to-claim-first-leg-win-over-fenerbahce-in-conference-league-quarters/GO5dBOsn",
+   "publisher": "Flashscore",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fwp-mta2",
+   "title": "Maccabi Tel-Aviv 1-6 Olympiakos",
+   "url": "https://www.footballwebpages.co.uk/maccabi-tel-aviv/match/2023-2024/europa-conference/maccabi-tel-aviv/olympiakos/485922",
+   "publisher": "Football Web Pages",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gct-aja",
+   "title": "Olympiacos 2-1 Ajax",
+   "url": "https://greekcitytimes.com/2026/01/29/olympiacos-2-1-ajax-champions-league-playoff-qualification-2026",
+   "publisher": "Greek City Times",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gct-t20",
+   "title": "Olympiacos celebrate their 45th championship",
+   "url": "https://greekcitytimes.com/2020/07/20/olympiacos-celebrate-their-45th-championship",
+   "publisher": "Greek City Times",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gh-t21",
+   "title": "Olympiacos clinch 46th Greek title",
+   "url": "https://greekherald.com.au/?p=32585",
+   "publisher": "Greek Herald",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gh-t22",
+   "title": "Olympiacos win 47th Greek title",
+   "url": "https://greekherald.com.au/?p=60218",
+   "publisher": "Greek Herald",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gh-t25",
+   "title": "Olympiacos FC clinches Greek Super League title",
+   "url": "https://greekherald.com.au/?p=174184",
+   "publisher": "Greek Herald",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gn-rm",
+   "title": "Mbappe hits four as Real Madrid hold off Olympiacos in thriller",
+   "url": "https://gulfnews.com/sport/football/mbappe-hits-four-as-real-madrid-hold-off-olympiacos-in-thriller-1.500361124",
+   "publisher": "Gulf News",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gp-ars20",
+   "title": "Arsenal out of Europa League as Olympiacos snatch dramatic extra-time winner",
+   "url": "https://guernseypress.com/sport/uk-sport/2020/02/27/arsenal-out-of-europa-league-as-olympiacos-snatch-dramatic-extra-time-winner",
+   "publisher": "Guernsey Press",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gr-t21",
+   "title": "Olympiacos wins 2020-21 Greek football league",
+   "url": "https://greekreporter.com/2021/04/11/olympiacos-wins-2020-21-greek-football-league/",
+   "publisher": "Greek Reporter",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-gt-t16",
+   "title": "Olympiakos win record-extending 43rd Greek title",
+   "url": "https://www.gulf-times.com/story/481716/olympiakos-win-record-extending-43rd-greek-title/amp",
+   "publisher": "Gulf Times",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-hur-cup13",
+   "title": "Olympiakos wins cup for record 26th time",
+   "url": "https://hurriyetdailynews.com/olympiakos-wins-cup-for-record-26th-time-46723",
+   "publisher": "Hurriyet Daily News",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-inq-mu1",
+   "title": "Manchester United suffer 2-0 loss to Olympiakos",
+   "url": "https://sports.inquirer.net/?p=146267",
+   "publisher": "Philippine Daily Inquirer",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-iwf-t17",
+   "title": "Olympiakos title confirmed, AEK appeal closed-door sanctions",
+   "url": "https://www.insideworldfootball.com/2017/04/25/olympaikos-title-confirmed-aek-appeal-closed-door-sanctions/",
+   "publisher": "Inside World Football",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-nk-cup20",
+   "title": "Olympiakos returns to the throne of Greek soccer, winning Cup final over AEK",
+   "url": "https://neoskosmos.com/en/175448/olympiakos-returns-to-the-throne-of-greek-soccer-winning-cup-final-over-aek/",
+   "publisher": "Neos Kosmos",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-nk-mta1",
+   "title": "PAOK and Olympiacos on the ropes after European losses",
+   "url": "https://neoskosmos.com/en/2024/03/08/sport/football/paok-and-olympiacos-on-the-ropes-after-european-losses/",
+   "publisher": "Neos Kosmos",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-nk-t12",
+   "title": "Olympiakos secure second consecutive Super League title",
+   "url": "https://neoskosmos.com/en/?p=11246",
+   "publisher": "Neos Kosmos",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-nk-t14",
+   "title": "Olympiakos crowned champion in front of empty stands",
+   "url": "https://neoskosmos.com/en/2014/03/18/sport/football/olympiakos-crowned-champion-in-front-of-empty-stands/",
+   "publisher": "Neos Kosmos",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-nk-t25",
+   "title": "Olympiacos triumphs over AEK to seal 48th league trophy",
+   "url": "https://neoskosmos.com/en/2025/04/14/sport/football/olympiacos-triumphs-over-aek-to-seal-48th-league-trophy/",
+   "publisher": "Neos Kosmos",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-nlt-aja",
+   "title": "Ajax vs Olympiacos match summary",
+   "url": "https://nltimes.nl/node/86288",
+   "publisher": "NL Times",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-rs-cup05",
+   "title": "Greece Cup 2004/05",
+   "url": "https://rsssf.org/tablesg/grkcup05.html",
+   "publisher": "RSSSF",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-rs-cup06",
+   "title": "Greece Cup 2005/06",
+   "url": "https://rsssf.org/tablesg/grkcup06.html",
+   "publisher": "RSSSF",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-rs-cup08",
+   "title": "Greece Cup 2007/08",
+   "url": "https://rsssf.org/tablesg/grkcup08.html",
+   "publisher": "RSSSF",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-rs-cup99",
+   "title": "Greece Cup 1998/99",
+   "url": "https://rsssf.org/tablesg/grkcup99.html",
+   "publisher": "RSSSF",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-sky-juv",
+   "title": "Olympiakos 1-0 Juventus report",
+   "url": "https://www.skysports.com/football/olympiakos-vs-juventus/report/325350",
+   "publisher": "Sky Sports",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-sky-wol",
+   "title": "Olympiakos 1-1 Wolves report",
+   "url": "https://www.skysports.com/football/olympiakos-vs-wolves/report/423801",
+   "publisher": "Sky Sports",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-t42-t22",
+   "title": "Olympiakos clinch Greek title at PAOK",
+   "url": "https://www.the42.ie/article.php?id=5755190",
+   "publisher": "The42",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tnt-ars20a",
+   "title": "Lacazette steers Arsenal to away win at Olympiacos",
+   "url": "https://www.tntsports.co.uk/football/europa-league/2019-2020/football-news-lacazette-steers-arsenal-to-away-win-at-olympiacos_sto7671587/story.shtml",
+   "publisher": "TNT Sports",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tnt-ars20b",
+   "title": "Arsenal crash out of Europa League after Olympiacos score extra-time winner",
+   "url": "https://www.tntsports.co.uk/football/europa-league/2019-2020/football-news-arsenal-crash-out-of-europa-league-after-olympiacos-score-extra-time-winner_sto7681531/story.shtml",
+   "publisher": "TNT Sports",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-alexandris",
+   "title": "Alekos Alexandris: the hitman",
+   "url": "https://www.tovima.com/sports/alekos-alexandris-the-hitman/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-alg",
+   "title": "Marinakis introduces Alguacil at Olympiacos",
+   "url": "https://www.tovima.com/sports/marinakis-introduces-alguacil-at-olympiacos-he-fits-our-mentality-winning-spirit/amp/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-anastopoulos",
+   "title": "Nikos Anastopoulos: a star who needs no director",
+   "url": "https://www.tovima.com/sports/nikos-anastopoulos-a-star-who-needs-no-director/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-cup15",
+   "title": "Olympiacos defeats Xanthe 3-1 in Cup final, wins the Double",
+   "url": "https://www.tovima.gr/2015/05/25/international/olympiacos-defeats-xanthe-3-1-in-cup-final-wins-the-double/amp/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-cup25",
+   "title": "Olympiacos FC crowned Greek Cup winners, beat OFI 2-0 in final",
+   "url": "https://www.tovima.com/sports/olympiacos-fc-crowned-greek-cup-winners-beat-ofi-2-0-in-final",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-detari",
+   "title": "Lajos Detari: even the gods have gone mad",
+   "url": "https://www.tovima.com/sports/lajos-detari-even-the-gods-have-gone-mad/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-djordjevic",
+   "title": "Predrag Djordjevic: profession champion",
+   "url": "https://www.tovima.com/sports/predrag-djordjevic-profession-champion/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-elarabi",
+   "title": "Youssef El-Arabi: a goal-scoring machine",
+   "url": "https://www.tovima.com/sports/youssef-el-arabi-a-goal-scoring-machine/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-fortounis",
+   "title": "Kostas Fortounis: the captain who was blessed",
+   "url": "https://www.tovima.com/sports/kostas-fortounis-the-captain-who-was-blessed/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-galletti",
+   "title": "Luciano Galletti: La Plata confidential",
+   "url": "https://www.tovima.com/sports/luciano-galetti-la-plata-confidential/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-georgatos",
+   "title": "Grigoris Georgatos: a football genius",
+   "url": "https://www.tovima.com/sports/grigoris-georgatos-a-football-genius/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-giovanni",
+   "title": "Giovanni: when imagination calls the shots",
+   "url": "https://www.tovima.com/sports/giovanni-when-imagination-calls-the-shots/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-kai",
+   "title": "Olympiacos downs Kairat Almaty for first win in this season's CL",
+   "url": "https://www.tovima.com/sports/olympiacos-downs-kairat-almaty-for-first-win-in-this-seasons-cl",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-karapialis",
+   "title": "Vassilis Karapialis: a poem in motion",
+   "url": "https://www.tovima.com/sports/vassilis-karapialis-a-poem-in-motion/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-karataidis",
+   "title": "Koulis Karataidis: a player who united two generations",
+   "url": "https://www.tovima.com/sports/koulis-karataidis-a-player-who-united-two-generations/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-karembeu",
+   "title": "Christian Karembeu: the ambassador",
+   "url": "https://www.tovima.com/sports/christian-karembeu-the-ambassador/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-kritikopoulos",
+   "title": "Michalis Kritikopoulos: linked with the team forever",
+   "url": "https://www.tovima.com/sports/michalis-kritikopoulos-linked-with-the-team-forever/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-men",
+   "title": "Mendilibar assumes reins of Olympiacos FC",
+   "url": "https://tovima.com/sports/mendilibar-assumes-reins-of-olympiacos-fc",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-mitropoulos",
+   "title": "Tasos Mitropoulos",
+   "url": "https://www.tovima.com/sports/tasos-mitropoulos-greek-footballs-rambo/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-mouratis",
+   "title": "Andreas Mouratis: a lion and a Piraeus icon",
+   "url": "https://www.tovima.com/sports/andreas-mouratis-a-lion-and-a-piraeus-icon/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-sideris",
+   "title": "Giorgos Sideris: the striker who couldn't be brought down",
+   "url": "https://www.tovima.com/sports/giorgos-sideris-the-striker-who-couldnt-be-brought-down/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-t16",
+   "title": "Superleague: Olympiacos wins 43rd football championship",
+   "url": "https://www.tovima.gr/2016/02/29/international/superleague-olympiacos-wins-43rd-football-championship/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-torosidis",
+   "title": "Vassilis Torosidis: a boy reaches for the stars",
+   "url": "https://www.tovima.com/sports/vassilis-torosidis-a-boy-reaches-for-the-stars/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-valbuena",
+   "title": "Mathieu Valbuena: the adventures of Asterix",
+   "url": "https://www.tovima.com/sports/mathieu-valbuena-the-adventures-of-asterix/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tv-vazos",
+   "title": "Giannis Vazos: the Olympiacos legend who crossed the sea from Smyrna",
+   "url": "https://www.tovima.com/sports/giannis-vazos-the-olympiacos-legend-who-crossed-the-sea-from-smyrna/",
+   "publisher": "To Vima",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-ars11",
+   "title": "Olympiacos beat Arsenal but bow out",
+   "url": "https://www.uefa.com/uefachampionsleague/news/01f8-0e7c5dbaefa1-a9e91b3a51aa-1000--olympiacos-beat-arsenal-but-bow-out",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-ars20a",
+   "title": "Olympiacos 0-1 Arsenal: Lacazette gives Gunners advantage",
+   "url": "https://www.uefa.com/uefaeuropaleague/news/025a-0eaca78b4975-46b33dec39fd-1000--olympiacos-0-1-arsenal-lacazette-gives-gunners-advantage/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-cup06",
+   "title": "Olympiacos claim double with cup win",
+   "url": "https://www.uefa.com/news-media/news/01b5-0f8488d92d83-7aaeddd77399-1000--olympiacos-claim-double-with-cup-win/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-cup08",
+   "title": "Olympiacos seal double after cup win",
+   "url": "https://www.uefa.com/news-media/news/01cd-0f84db79a934-9a7eb146b0ea-1000--olympiacos-seal-double-after-cup-win",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-cup09",
+   "title": "Olympiacos prevail in Greek Cup classic",
+   "url": "https://www.uefa.com/news-media/news/01d9-0e721f5a1b25-553614c7150c-1000--olympiacos-prevail-in-greek-cup-classic/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-cup12",
+   "title": "Olympiacos clinch 25th Greek Cup",
+   "url": "https://de.uefa.com/news-media/news/0253-0d7de2232ebd-49f095199f8d-1000--olympiacos-clinch-25th-greek-cup",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-cup15",
+   "title": "Dominguez stunner helps Olympiacos to 27th Cup",
+   "url": "https://www.uefa.com/news-media/news/0221-0f8a98f973d2-d1b37c118493-1000--dominguez-stunner-helps-olympiacos-to-27th-cup",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-ecl",
+   "title": "Europa Conference League: all the results",
+   "url": "https://www.uefa.com/uefaconferenceleague/news/0285-18e1b615fd5b-6fe5294e3ddd-1000--europa-conference-league-all-the-results/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-t05",
+   "title": "Olympiacos reclaim Greek crown",
+   "url": "https://www.uefa.com/news-media/news/01a9-0f846fb31931-83dde9ab3fe8-1000--olympiacos-reclaim-greek-crown",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-t06",
+   "title": "Olympiacos claim Greek title",
+   "url": "https://www.uefa.com/news-media/news/01b4-0f8487cc6379-0cea08060c99-1000--olympiacos-claim-greek-title/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-t09a",
+   "title": "Olympiacos celebrate fifth straight Greek crown",
+   "url": "https://www.uefa.com/news-media/news/01d7-0f85b341af63-2b1ac0845a44-1000--olympiacos-celebrate-fifth-straight-greek-crown",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-t09b",
+   "title": "Olympiacos overwhelm Greece once again",
+   "url": "https://www.uefa.com/news-media/news/01d7-0e7121b4d8be-7af3617c4fa5-1000--olympiacos-overwhelm-greece-once-again",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-t12",
+   "title": "Olympiacos wrap up 39th Greek title",
+   "url": "https://www.uefa.com/news-media/news/01fc-0e7d8a57ad5e-45b7c3bc615b-1000--olympiacos-wrap-up-39th-greek-title/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-t14",
+   "title": "Olympiacos wrap up 41st Greek title",
+   "url": "https://www.uefa.com/news-media/news/0253-0d7f296bcc6d-d1ce2337a9d3-1000--olympiacos-wrap-up-41st-greek-title",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-t15",
+   "title": "Olympiacos celebrate 42nd Greek title",
+   "url": "https://www.uefa.com/news-media/news/0220-0e90395004df-161fb89f1514-1000--olympiacos-celebrate-42nd-greek-title/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-uefa-ucl26",
+   "title": "2025/26 Champions League: all the results",
+   "url": "https://www.uefa.com/uefachampionsleague/news/029c-1e9a2f63fe2d-ebf9ad643892-1000--2025-26-champions-league-all-the-results/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-v11-kar",
+   "title": "Christian Karembeu: Olympiakos",
+   "url": "https://www.11v11.com/players/christian-karembeu-3833/team/olympiakos/",
+   "publisher": "11v11",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-alexandris",
+   "title": "Alexandros Alexandris",
+   "url": "https://en.wikipedia.org/wiki/Alexandros_Alexandris",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-anastopoulos",
+   "title": "Nikos Anastopoulos",
+   "url": "https://en.wikipedia.org/wiki/Nikos_Anastopoulos",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-club",
+   "title": "Olympiacos F.C.",
+   "url": "https://en.wikipedia.org/wiki/Olympiacos_F.C.",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup05",
+   "title": "2005 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2005_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup06",
+   "title": "2006 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2006_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup08",
+   "title": "2008 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2008_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup09",
+   "title": "2009 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2009_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup12",
+   "title": "2012 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2012_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup13",
+   "title": "2013 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2013_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup15",
+   "title": "2015 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2015_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup20",
+   "title": "2020 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2020_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup25",
+   "title": "2025 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/2025_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup90",
+   "title": "1990 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/1990_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup92",
+   "title": "1992 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/1992_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-cup99",
+   "title": "1999 Greek Football Cup final",
+   "url": "https://en.wikipedia.org/wiki/1999_Greek_Football_Cup_final",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-djordjevic",
+   "title": "Predrag Djordjevic",
+   "url": "https://en.wikipedia.org/wiki/Predrag_%C4%90or%C4%91evi%C4%87",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-ecl",
+   "title": "2023-24 UEFA Europa Conference League",
+   "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_UEFA_Europa_Conference_League",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-elkaabi",
+   "title": "Ayoub El Kaabi",
+   "url": "https://en.wikipedia.org/wiki/Ayoub_El_Kaabi",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-fortounis",
+   "title": "Kostas Fortounis",
+   "url": "https://en.wikipedia.org/wiki/Kostas_Fortounis",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-giannakopoulos",
+   "title": "Stelios Giannakopoulos",
+   "url": "https://en.wikipedia.org/wiki/Stelios_Giannakopoulos",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-giovanni",
+   "title": "Giovanni (footballer, born 1972)",
+   "url": "https://en.wikipedia.org/wiki/Giovanni_(footballer,_born_1972)",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-karataidis",
+   "title": "Kyriakos Karataidis",
+   "url": "https://en.wikipedia.org/wiki/Kyriakos_Karataidis",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-list",
+   "title": "List of Olympiacos F.C. seasons",
+   "url": "https://en.wikipedia.org/wiki/List_of_Olympiacos_F.C._seasons",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-mitroglou",
+   "title": "Kostas Mitroglou",
+   "url": "https://en.wikipedia.org/wiki/Kostas_Mitroglou",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-mitropoulos",
+   "title": "Tasos Mitropoulos",
+   "url": "https://en.wikipedia.org/wiki/Tasos_Mitropoulos",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-mouratis",
+   "title": "Andreas Mouratis",
+   "url": "https://en.wikipedia.org/wiki/Andreas_Mouratis",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-nikopolidis",
+   "title": "Antonis Nikopolidis",
+   "url": "https://en.wikipedia.org/wiki/Antonios_Nikopolidis",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-rivaldo",
+   "title": "Rivaldo",
+   "url": "https://en.wikipedia.org/wiki/Rivaldo",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-s0506",
+   "title": "2005-06 Olympiacos F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2005%E2%80%9306_Olympiacos_F.C._season",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-s1920",
+   "title": "2019-20 Olympiacos F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Olympiacos_F.C._season",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-s2324",
+   "title": "2023-24 Olympiacos F.C. season",
+   "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Olympiacos_F.C._season",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-s9899",
+   "title": "1998-99 Olympiacos F.C. season",
+   "url": "https://en.wikipedia.org/wiki/1998%E2%80%9399_Olympiacos_F.C._season",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-sideris",
+   "title": "Giorgos Sideris",
+   "url": "https://en.wikipedia.org/wiki/Giorgos_Sideris",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-t25",
+   "title": "2024-25 Super League Greece",
+   "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Super_League_Greece",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-torosidis",
+   "title": "Vasilis Torosidis",
+   "url": "https://en.wikipedia.org/wiki/Vasilis_Torosidis",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-uel20",
+   "title": "2019-20 UEFA Europa League knockout phase",
+   "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_UEFA_Europa_League_knockout_phase",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wp-vazos",
+   "title": "Giannis Vazos",
+   "url": "https://en.wikipedia.org/wiki/Giannis_Vazos",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wt-t15",
+   "title": "Olympiakos clinches 42nd Greek league title",
+   "url": "https://www.washingtontimes.com/news/2015/apr/19/olympiakos-clinches-42nd-greek-league-title/",
+   "publisher": "The Washington Times",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  }
+ ],
+ "archive": [
+  {
+   "id": "r26-cup-aek-pens",
+   "value": {
+    "name": "Olympiacos beat AEK Athens on penalties after a 4-4 draw in the Greek Cup final",
+    "on": "2009-05-02",
+    "precision": "day",
+    "hint": "The shootout finished 15-14 after eight goals in normal and extra time, with Matt Derbyshire scoring twice for Olympiacos.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup09",
+    "r26-uefa-cup09"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, 4-4 after extra time and 15-14 shootout agree in Wikipedia and UEFA; scorer names agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-atromitos",
+   "value": {
+    "name": "Olympiacos beat Atromitos 2-1 after extra time in the Greek Cup final",
+    "on": "2012-04-28",
+    "precision": "day",
+    "hint": "Played at the Olympic Stadium in Athens; Olympiacos won the cup under Ernesto Valverde.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup12",
+    "r26-uefa-cup12"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, extra time and venue agree. Wikipedia lists only Djebbour for Olympiacos, UEFA also names Fuster, so scorers omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-aek-volos",
+   "value": {
+    "name": "Olympiacos beat AEK Athens 1-0 in the Greek Cup final at Volos",
+    "on": "2020-09-12",
+    "precision": "day",
+    "hint": "Lazar Randelovic scored in the ninth minute in a stadium closed to the public.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup20",
+    "r26-nk-cup20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, scorer, minute and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-aris-kaftanzoglio",
+   "value": {
+    "name": "Olympiacos beat Aris 2-0 in the Greek Cup final in Thessaloniki",
+    "on": "2008-05-17",
+    "precision": "day",
+    "hint": "Played at the Kaftanzoglio Stadium.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup08",
+    "r26-uefa-cup08",
+    "r26-rs-cup08"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and venue agree across three publishers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-asteras",
+   "value": {
+    "name": "Olympiacos beat Asteras Tripolis 3-1 after extra time in the Greek Cup final",
+    "on": "2013-05-11",
+    "precision": "day",
+    "hint": "Played at the Olympic Stadium in Athens.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup13",
+    "r26-hur-cup13"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, extra time and venue agree; scorer lists differ between sources so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-pao-99",
+   "value": {
+    "name": "Olympiacos beat Panathinaikos 2-0 in the Greek Cup final",
+    "on": "1999-05-05",
+    "precision": "day",
+    "hint": "Dimitris Mavrogenidis scored in the 54th minute and the win completed a domestic double.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup99",
+    "r26-rs-cup99"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and Mavrogenidis 54th minute agree; second scorer is Ofori-Quaye (90th vs 89th minute, minute omitted). Double is stated in Wikipedia.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-aek-heraklion",
+   "value": {
+    "name": "Olympiacos beat AEK Athens 3-0 in the Greek Cup final in Heraklion",
+    "on": "2006-05-10",
+    "precision": "day",
+    "hint": "Michalis Konstantinou, an own goal and Nery Castillo scored in a second straight domestic double.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup06",
+    "r26-uefa-cup06",
+    "r26-rs-cup06"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue city and scorers agree in Wikipedia and UEFA; RSSSF confirms date and score.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-aris-patras",
+   "value": {
+    "name": "Olympiacos beat Aris 3-0 in the Greek Cup final in Patras",
+    "on": "2005-05-21",
+    "precision": "day",
+    "hint": "The first cup final held outside the Athens and Thessaloniki areas.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup05",
+    "r26-rs-cup05"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and Patras venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-xanthi",
+   "value": {
+    "name": "Olympiacos beat Xanthi 3-1 in the Greek Cup final to complete a domestic double",
+    "on": "2015-05-23",
+    "precision": "day",
+    "hint": "Played at the Olympic Stadium in Athens; Kostas Fortounis scored a free kick.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup15",
+    "r26-uefa-cup15",
+    "r26-tv-cup15"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and venue agree; UEFA and To Vima agree on the three Olympiacos scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-ofi",
+   "value": {
+    "name": "Olympiacos beat OFI 2-0 in the Greek Cup final",
+    "on": "2025-05-17",
+    "precision": "day",
+    "hint": "Played at the Olympic Stadium in Athens in the club centenary season.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup25",
+    "r26-tv-cup25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-title-levadiakos",
+   "value": {
+    "name": "Olympiacos beat Levadiakos 4-0 to clinch the league title",
+    "on": "2015-04-19",
+    "precision": "day",
+    "hint": "The 42nd league title was secured with three rounds to spare at Karaiskakis Stadium.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wt-t15",
+    "r26-uefa-t15"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue and title number agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-title-veria",
+   "value": {
+    "name": "Olympiacos beat Veria 3-0 to clinch the league title",
+    "on": "2016-02-28",
+    "precision": "day",
+    "hint": "The 43rd league title came with six matchdays remaining, the earliest in the club history.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-gt-t16",
+    "r26-tv-t16"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, title number and timing agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-title-panthrakikos",
+   "value": {
+    "name": "Olympiacos beat Panthrakikos 2-0 behind closed doors to clinch the league title",
+    "on": "2014-03-15",
+    "precision": "day",
+    "hint": "The 41st league title was secured with five matches remaining.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-uefa-t14",
+    "r26-nk-t14"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and title number agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-title-panetolikos",
+   "value": {
+    "name": "Olympiacos won 1-0 at Panetolikos to clinch the league title",
+    "on": "2012-04-01",
+    "precision": "day",
+    "hint": "The 39th league title and a third consecutive championship.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-uefa-t12",
+    "r26-nk-t12"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and title number agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-title-pao-21",
+   "value": {
+    "name": "Olympiacos came from behind to beat Panathinaikos 3-1 and clinch the league title",
+    "on": "2021-04-11",
+    "precision": "day",
+    "hint": "The 46th league title was secured with seven games left and a 22-point lead.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-gr-t21",
+    "r26-gh-t21"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, title number and gap agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-title-paok-22",
+   "value": {
+    "name": "Olympiacos won 2-1 at PAOK to clinch the league title",
+    "on": "2022-05-04",
+    "precision": "day",
+    "hint": "The 47th league title was secured with four matches remaining.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-t42-t22",
+    "r26-gh-t22"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, title number and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-title-aek-25",
+   "value": {
+    "name": "Olympiacos beat AEK Athens 1-0 at home to clinch the league title",
+    "on": "2025-04-13",
+    "precision": "day",
+    "hint": "The title was secured in the third round of the championship play-offs.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-t25",
+    "r26-gh-t25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and home venue agree between Wikipedia and Greek Herald. A Neos Kosmos report is dated one day later (publication date), so it is not cited for the date.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-eu-manutd-home",
+   "value": {
+    "name": "Olympiacos beat Manchester United 2-0 in the Champions League round of 16 first leg",
+    "on": "2014-02-25",
+    "precision": "day",
+    "hint": "Alejandro Dominguez scored in the 38th minute at Karaiskakis Stadium.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-ah-mu1",
+    "r26-inq-mu1"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue and the 38th-minute goal agree; the second scorer Joel Campbell is named by both, his minute differs (50th vs 55th) so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-eu-manutd-away",
+   "value": {
+    "name": "Manchester United won 3-0 at home to knock Olympiacos out of the Champions League",
+    "on": "2014-03-19",
+    "precision": "day",
+    "hint": "Robin van Persie scored a hat-trick and United went through 3-2 on aggregate.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-ah-mu2",
+    "r26-fox-mu2"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, aggregate and hat-trick agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-eu-juventus",
+   "value": {
+    "name": "Olympiacos beat Juventus 1-0 in a Champions League group match",
+    "on": "2014-10-22",
+    "precision": "day",
+    "hint": "Pajtim Kasami scored in the 36th minute at Karaiskakis Stadium.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-sky-juv",
+    "r26-fif-juv"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue and scorer agree; another outlet gave the following day, which is its publication day.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-eu-arsenal-home",
+   "value": {
+    "name": "Olympiacos beat Arsenal 3-1 in the final Champions League group match but missed out on the last 16",
+    "on": "2011-12-06",
+    "precision": "day",
+    "hint": "Results elsewhere in the group sent the club into the Europa League.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-ah-ars11",
+    "r26-uefa-ars11"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, scorers and outcome agree; David Fuster minute differs (36th vs 45th) so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-eu-arsenal-20-first",
+   "value": {
+    "name": "Arsenal won 1-0 in Piraeus in the Europa League round of 32 first leg",
+    "on": "2020-02-20",
+    "precision": "day",
+    "hint": "Alexandre Lacazette scored in the 81st minute.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-uefa-ars20a",
+    "r26-tnt-ars20a",
+    "r26-wp-uel20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and scorer agree across three publishers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-eu-arsenal-20-second",
+   "value": {
+    "name": "Olympiacos won 2-1 after extra time at Arsenal to go through on away goals",
+    "on": "2020-02-27",
+    "precision": "day",
+    "hint": "Youssef El Arabi scored in the final seconds of extra time at the Emirates Stadium.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tnt-ars20b",
+    "r26-wp-uel20",
+    "r26-gp-ars20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "TNT Sports and Wikipedia give the match date; 90min gives a different day, so the date is held for review. Score, aggregate and the El Arabi goal agree.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-eu-wolves",
+   "value": {
+    "name": "Olympiacos drew 1-1 with Wolverhampton Wanderers in the Europa League round of 16 first leg",
+    "on": "2020-03-12",
+    "precision": "day",
+    "hint": "Played at Karaiskakis Stadium.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-sky-wol",
+    "r26-wp-uel20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and venue agree. Neos Kosmos dates it the next day (publication day) and is not cited.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ecl-ferencvaros-1",
+   "value": {
+    "name": "Olympiacos beat Ferencvaros 1-0 in the Conference League knockout play-off first leg",
+    "on": "2024-02-15",
+    "precision": "day",
+    "hint": "Played at Karaiskakis Stadium in Piraeus.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-fp-fer1",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and round agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ecl-ferencvaros-2",
+   "value": {
+    "name": "Olympiacos won 1-0 at Ferencvaros to take the Conference League play-off 2-0 on aggregate",
+    "on": "2024-02-22",
+    "precision": "day",
+    "hint": "Played in Budapest.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-fm-fer2",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and round agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ecl-maccabi-1",
+   "value": {
+    "name": "Olympiacos lost 4-1 at home to Maccabi Tel Aviv in the Conference League round of 16 first leg",
+    "on": "2024-03-07",
+    "precision": "day",
+    "hint": "Played at Karaiskakis Stadium in Piraeus.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-uefa-ecl",
+    "r26-nk-mta1",
+    "r26-bg-mta1"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date (7 March in UEFA; Neos Kosmos report published next morning in Australia), score and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ecl-maccabi-2",
+   "value": {
+    "name": "Olympiacos won 6-1 after extra time at Maccabi Tel Aviv to turn round the Conference League tie",
+    "on": "2024-03-14",
+    "precision": "day",
+    "hint": "The tie finished 7-5 on aggregate; the match was played at a venue in Backa Topola, Serbia.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-fm-mta2",
+    "r26-fwp-mta2",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue and all six goals with minutes agree between FotMob and Football Web Pages; UEFA confirms the 6-1 win.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ecl-fener-1",
+   "value": {
+    "name": "Olympiacos beat Fenerbahce 3-2 at home in the Conference League quarter-final first leg",
+    "on": "2024-04-11",
+    "precision": "day",
+    "hint": "Played at Karaiskakis Stadium; Fortounis, Jovetic and Chiquinho scored.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-ds-fb1",
+    "r26-fs-fb1",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and scorer names agree; scorer minutes differ between reports so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ecl-fener-2",
+   "value": {
+    "name": "Olympiacos beat Fenerbahce 3-2 on penalties after losing 1-0 in extra time in Istanbul",
+    "on": "2024-04-18",
+    "precision": "day",
+    "hint": "The tie finished 3-3 on aggregate and Olympiacos reached the semi-final.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-fm-fb2",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, extra time and shootout result agree between FotMob and UEFA. A Daily Sabah preview gives the day before and is not cited.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ucl-realmadrid",
+   "value": {
+    "name": "Olympiacos lost 4-3 at home to Real Madrid in a Champions League league-phase match",
+    "on": "2025-11-26",
+    "precision": "day",
+    "hint": "Kylian Mbappe scored four times; Chiquinho, Mehdi Taremi and Ayoub El Kaabi scored for Olympiacos.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-gn-rm",
+    "r26-bein-rm"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score, venue and scorers agree. Gulf News gives the day (Wednesday 26 November, a beIN URL also carries that date); beIN text is dated a day later in Australia.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ucl-kairat",
+   "value": {
+    "name": "Olympiacos won 1-0 at Kairat Almaty for their first Champions League win of the season",
+    "on": "2025-12-09",
+    "precision": "day",
+    "hint": "Gelson Martins scored in the 73rd minute at the Astana Arena.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-bein-kai",
+    "r26-tv-kai"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, scorer, minute and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-ucl-ajax",
+   "value": {
+    "name": "Olympiacos won 2-1 at Ajax in the final Champions League league-phase match",
+    "on": "2026-01-28",
+    "precision": "day",
+    "hint": "Gelson Martins opened the scoring in the 52nd minute in Amsterdam.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-gct-aja",
+    "r26-nlt-aja",
+    "r26-uefa-ucl26"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and Martins 52nd minute agree; Hezze minute differs (79th vs 84th) so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-alguacil",
+   "value": {
+    "name": "Olympiacos named Imanol Alguacil as head coach",
+    "on": "2026-09-10",
+    "precision": "day",
+    "hint": "He replaced Jose Luis Mendilibar and was introduced by president Evangelos Marinakis.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-dhn-alg",
+    "r26-tv-alg"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date and appointment agree in both reports.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-mendilibar",
+   "value": {
+    "name": "Jose Luis Mendilibar took charge of Olympiacos as head coach",
+    "on": "2024-02-11",
+    "precision": "day",
+    "hint": "The Spanish coach arrived after winning the Europa League with Sevilla and later won the Conference League with the club.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-s2324",
+    "r26-tv-men"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia states he is coach from 11 February; To Vima announces it that week. A transfer-news site dated 10 February says the club was set to announce him; the start date is taken from Wikipedia and To Vima.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-cup-ofi-90",
+   "value": {
+    "name": "Olympiacos beat OFI 4-2 in the Greek Cup final",
+    "on": "1990-05-17",
+    "precision": "day",
+    "hint": "Lajos Detari scored twice, from a penalty and late in the match.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup90"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher (Wikipedia); second source not found.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-cup-paok-92",
+   "value": {
+    "name": "Olympiacos beat PAOK 2-0 in the second leg of the Greek Cup final",
+    "on": "1992-05-27",
+    "precision": "day",
+    "hint": "Olympiacos won the two-leg final 3-1 on aggregate.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-cup92"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher (Wikipedia); RSSSF page returned 404.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-title-aek-20",
+   "value": {
+    "name": "Olympiacos beat AEK Athens 3-0 on the last matchday of the play-offs to take the league title",
+    "on": "2020-07-20",
+    "precision": "day",
+    "hint": "The 45th league title was celebrated with supporters outside the closed stadium.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-gct-t20",
+    "r26-wp-s1920"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Greek City Times dates the match 20 July; the Wikipedia season page lists 19 July. Held for review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-title-panionios-09",
+   "value": {
+    "name": "Olympiacos won 3-2 at Panionios to secure the league title",
+    "on": "2009-03-22",
+    "precision": "day",
+    "hint": "The 37th league title came with three matches remaining.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-uefa-t09a",
+    "r26-uefa-t09b"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Both UEFA reports are the same publisher; one gives 22 March, the other 23 March.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-title-larissa-06",
+   "value": {
+    "name": "Olympiacos were confirmed league champions even though they lost 2-1 at Larissa",
+    "on": "2006-04-16",
+    "precision": "day",
+    "hint": "The title was settled when a rival lost, leaving Olympiacos eight points clear.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-uefa-t06",
+    "r26-wp-s0506"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "UEFA reports the Larissa match on 16 April; the Wikipedia season page shows a Larissa fixture on 3 April, so the date is unresolved.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-title-iraklis-05",
+   "value": {
+    "name": "Olympiacos beat Iraklis 1-0 to reclaim the league title",
+    "on": "2005-05-25",
+    "precision": "day",
+    "hint": "Rivaldo was on target as the club completed a domestic double.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-uefa-t05"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher (UEFA).",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-eu-leverkusen-home",
+   "value": {
+    "name": "Olympiacos beat Bayer Leverkusen 2-0 in a Champions League league-phase match",
+    "on": "2026-01-20",
+    "precision": "day",
+    "hint": "Costinha scored inside two minutes and Mehdi Taremi added a second before half-time.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-bein-lev",
+    "r26-uefa-ucl26"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "beIN and UEFA agree on the date and the 2-0 score; UEFA table lists home and away inconsistently so the venue is held for review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-eu-leverkusen-playoff",
+   "value": {
+    "name": "Olympiacos lost 2-0 at home to Bayer Leverkusen in the Champions League play-off first leg",
+    "on": "2026-02-18",
+    "precision": "day",
+    "hint": "Patrik Schick scored twice in three minutes.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-espn-lev"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher (ESPN).",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-founding",
+   "value": {
+    "name": "Olympiacos was founded in Piraeus",
+    "on": "1924-05-16",
+    "precision": "day",
+    "hint": "The club was officially recognised the following year.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-club"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher (Wikipedia).",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-milan-59",
+   "value": {
+    "name": "Olympiacos drew 2-2 with AC Milan in their first European Cup match",
+    "on": "1959-09-13",
+    "precision": "day",
+    "hint": "Played at Karaiskakis Stadium.",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-club"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher (Wikipedia).",
+   "confidence": 2,
+   "status": "review"
+  }
+ ],
+ "players": [
+  {
+   "id": "r26-sideris",
+   "value": {
+    "name": "Giorgos Sideris",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1959,
+    "toYear": 1970,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-sideris",
+    "r26-tv-sideris"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both agree on years 1959-1970, striker, 5 cups, 2 league titles. A later brief second spell is dated 1971/72 differently, not asserted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-vazos",
+   "value": {
+    "name": "Giannis Vazos",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1931,
+    "toYear": 1949,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-vazos",
+    "r26-tv-vazos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Years, position, seven titles and one cup agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-mouratis",
+   "value": {
+    "name": "Andreas Mouratis",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1945,
+    "toYear": 1955,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-mouratis",
+    "r26-tv-mouratis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Years and position agree; birth date and title counts differ between sources and are not used.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-anastopoulos",
+   "value": {
+    "name": "Nikos Anastopoulos",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1980,
+    "toYear": 1993,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-anastopoulos",
+    "r26-tv-anastopoulos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and span agree (Wikipedia: two spells 1980-87 and 1989-93).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-mitropoulos",
+   "value": {
+    "name": "Tasos Mitropoulos",
+    "sport": "football",
+    "positions": [
+     "MF",
+     "FW"
+    ],
+    "fromYear": 1981,
+    "toYear": 1992,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-mitropoulos",
+    "r26-tv-mitropoulos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Years, 270 appearances and 55 goals agree; title counts differ and are not used.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-karataidis",
+   "value": {
+    "name": "Kyriakos Karataidis",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1988,
+    "toYear": 2001,
+    "aliases": [
+     "Koulis Karataidis"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-karataidis",
+    "r26-tv-karataidis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Years, position, cups and league titles agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-giovanni",
+   "value": {
+    "name": "Giovanni",
+    "sport": "football",
+    "positions": [
+     "MF",
+     "FW"
+    ],
+    "fromYear": 1999,
+    "toYear": 2005,
+    "aliases": [
+     "Giovanni Silva de Oliveira"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-giovanni",
+    "r26-tv-giovanni"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Years, position, five league titles and one cup agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-torosidis",
+   "value": {
+    "name": "Vasilis Torosidis",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2020,
+    "aliases": [
+     "Vassilis Torosidis"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-torosidis",
+    "r26-tv-torosidis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two spells (2007-13, 2018-20) and position agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-elkaabi",
+   "value": {
+    "name": "Ayoub El Kaabi",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2023,
+    "toYear": null,
+    "aliases": [
+     "Ayoub El-Kaabi"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-elkaabi",
+    "r26-fm-elkaabi"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Striker, joined 2023 and still at the club per both sources.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-fortounis",
+   "value": {
+    "name": "Kostas Fortounis",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": null,
+    "aliases": [
+     "Konstantinos Fortounis"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-fortounis",
+    "r26-tv-fortounis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Attacking midfielder at the club from 2014; Wikipedia notes a return, so no end year given.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-karembeu",
+   "value": {
+    "name": "Christian Karembeu",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2001,
+    "toYear": 2004,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tv-karembeu",
+    "r26-v11-kar"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Years 2001-2004 and midfield role agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-djordjevic",
+   "value": {
+    "name": "Predrag Djordjevic",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": 2009,
+    "aliases": [
+     "Predrag Dordevic"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-djordjevic",
+    "r26-tv-djordjevic"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Start year differs (1996 in Wikipedia, 1997 in To Vima); end year 2009 agrees.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-rivaldo",
+   "value": {
+    "name": "Rivaldo",
+    "sport": "football",
+    "positions": [
+     "MF",
+     "FW"
+    ],
+    "fromYear": 2004,
+    "toYear": 2007,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-rivaldo",
+    "r26-rs-cup05",
+    "r26-uefa-t05"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Years from Wikipedia only; RSSSF and UEFA confirm he scored in 2005 for the club.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-nikopolidis",
+   "value": {
+    "name": "Antonis Nikopolidis",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2004,
+    "toYear": 2011,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-nikopolidis",
+    "r26-uefa-cup09"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Years from Wikipedia only; UEFA confirms he played in the 2009 cup final.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-giannakopoulos",
+   "value": {
+    "name": "Stelios Giannakopoulos",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1996,
+    "toYear": 2003,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-giannakopoulos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-mitroglou",
+   "value": {
+    "name": "Kostas Mitroglou",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2007,
+    "toYear": 2014,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-mitroglou"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; loan spells not itemised.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-karapialis",
+   "value": {
+    "name": "Vasilis Karapialis",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1991,
+    "toYear": 2000,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tv-karapialis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher (To Vima).",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-alexandris",
+   "value": {
+    "name": "Alexandros Alexandris",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1994,
+    "toYear": null,
+    "aliases": [
+     "Alexis Alexandris",
+     "Alekos Alexandris"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wp-alexandris",
+    "r26-tv-alexandris"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "End year differs (2004 vs about 2003), left open.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-georgatos",
+   "value": {
+    "name": "Grigoris Georgatos",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1996,
+    "toYear": 2007,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tv-georgatos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; spells 1996-99 and 2004-07.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-detari",
+   "value": {
+    "name": "Lajos Detari",
+    "sport": "football",
+    "positions": [
+     "MF",
+     "FW"
+    ],
+    "fromYear": 1988,
+    "toYear": 1990,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tv-detari",
+    "r26-wp-cup90"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Years from To Vima only; Wikipedia confirms two goals in the 1990 cup final.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-galletti",
+   "value": {
+    "name": "Luciano Galletti",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2007,
+    "toYear": 2009,
+    "aliases": [
+     "Luciano Galetti"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tv-galletti",
+    "r26-wp-cup09",
+    "r26-uefa-cup09"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Years from To Vima only; Wikipedia and UEFA confirm he scored in the 2009 cup final.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-valbuena",
+   "value": {
+    "name": "Mathieu Valbuena",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2019,
+    "toYear": 2023,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tv-valbuena"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-elarabi",
+   "value": {
+    "name": "Youssef El Arabi",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2019,
+    "toYear": 2024,
+    "aliases": [
+     "Youssef El-Arabi"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tv-elarabi",
+    "r26-tnt-ars20b"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Years from To Vima only; TNT confirms his goal in 2020.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-kritikopoulos",
+   "value": {
+    "name": "Michalis Kritikopoulos",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1973,
+    "toYear": 1980,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "r26-tv-kritikopoulos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher.",
+   "confidence": 2,
+   "status": "review"
+  }
+ ],
+ "mysteries": [
+  {
+   "id": "r26-m-sideris",
+   "value": {
+    "targetPlayerId": "r26-sideris",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born on 5 April in the Agios Ioannis Rentis area of Piraeus.",
+      "sources": [
+       "r26-wp-sideris",
+       "r26-tv-sideris"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Abroad",
+      "value": "Played for Royal Antwerp in Belgium in the early 1970s.",
+      "sources": [
+       "r26-wp-sideris",
+       "r26-tv-sideris"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Individual honour",
+      "value": "Won the national top-scorer award three times.",
+      "sources": [
+       "r26-wp-sideris",
+       "r26-tv-sideris"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "European scoring",
+      "value": "Finished second in the European Golden Shoe race with 35 goals in 1968/69.",
+      "sources": [
+       "r26-wp-sideris",
+       "r26-tv-sideris"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Club record",
+      "value": "A striker who won two league titles and five Greek Cups and is the club's all-time leading scorer.",
+      "sources": [
+       "r26-wp-sideris",
+       "r26-tv-sideris"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-sideris",
+    "r26-wp-sideris"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Clues agree in Wikipedia and To Vima.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-vazos",
+   "value": {
+    "targetPlayerId": "r26-vazos",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in 1914 in Smyrna, now Izmir.",
+      "sources": [
+       "r26-wp-vazos",
+       "r26-tv-vazos"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Early club",
+      "value": "Started out in youth football with Apollon Drapetsona.",
+      "sources": [
+       "r26-wp-vazos",
+       "r26-tv-vazos"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Top scorer",
+      "value": "League top scorer four times, in the 1930s and again in the 1940s.",
+      "sources": [
+       "r26-wp-vazos",
+       "r26-tv-vazos"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Honours",
+      "value": "Won seven league titles and one Greek Cup, in 1946/47.",
+      "sources": [
+       "r26-wp-vazos",
+       "r26-tv-vazos"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Career",
+      "value": "A forward who stayed 18 years at one club, from 1931 to 1949.",
+      "sources": [
+       "r26-wp-vazos",
+       "r26-tv-vazos"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-vazos",
+    "r26-wp-vazos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-mouratis",
+   "value": {
+    "targetPlayerId": "r26-mouratis",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Later club",
+      "value": "Played for Argonaftis Piraeus after leaving the club.",
+      "sources": [
+       "r26-wp-mouratis"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Birth",
+      "value": "Born in Piraeus.",
+      "sources": [
+       "r26-wp-mouratis",
+       "r26-tv-mouratis"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "International",
+      "value": "Won 16 caps for Greece between 1948 and 1953.",
+      "sources": [
+       "r26-wp-mouratis"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Honours",
+      "value": "Won five Greek Cups with the club.",
+      "sources": [
+       "r26-wp-mouratis",
+       "r26-tv-mouratis"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Career",
+      "value": "A defender who spent ten years at the club, from 1945 to 1955, known for courage and self-sacrifice.",
+      "sources": [
+       "r26-wp-mouratis",
+       "r26-tv-mouratis"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-mouratis",
+    "r26-wp-mouratis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-anastopoulos",
+   "value": {
+    "targetPlayerId": "r26-anastopoulos",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Dafni, Athens, on 22 January 1958.",
+      "sources": [
+       "r26-wp-anastopoulos",
+       "r26-tv-anastopoulos"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Abroad",
+      "value": "Played in Italy for Avellino.",
+      "sources": [
+       "r26-wp-anastopoulos",
+       "r26-tv-anastopoulos"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "International",
+      "value": "Scored Greece's first goal at a major tournament, against Czechoslovakia at Euro 1980.",
+      "sources": [
+       "r26-wp-anastopoulos",
+       "r26-tv-anastopoulos"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Europe",
+      "value": "Won the Bronze Boot in 1982/83 as Europe's third-highest scorer.",
+      "sources": [
+       "r26-wp-anastopoulos",
+       "r26-tv-anastopoulos"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Club",
+      "value": "A striker who won four league titles with the club.",
+      "sources": [
+       "r26-wp-anastopoulos",
+       "r26-tv-anastopoulos"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-anastopoulos",
+    "r26-wp-anastopoulos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-mitropoulos",
+   "value": {
+    "targetPlayerId": "r26-mitropoulos",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Volos on 23 August 1957.",
+      "sources": [
+       "r26-wp-mitropoulos",
+       "r26-tv-mitropoulos"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Previous club",
+      "value": "Joined from Ethnikos Piraeus.",
+      "sources": [
+       "r26-wp-mitropoulos",
+       "r26-tv-mitropoulos"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Later move",
+      "value": "Moved to AEK Athens after leaving the club.",
+      "sources": [
+       "r26-wp-mitropoulos",
+       "r26-tv-mitropoulos"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Major tournament",
+      "value": "Played at the 1994 FIFA World Cup.",
+      "sources": [
+       "r26-wp-mitropoulos",
+       "r26-tv-mitropoulos"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Club record",
+      "value": "Played 270 games and scored 55 goals for the club between 1981 and 1992.",
+      "sources": [
+       "r26-wp-mitropoulos",
+       "r26-tv-mitropoulos"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-mitropoulos",
+    "r26-wp-mitropoulos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-karataidis",
+   "value": {
+    "targetPlayerId": "r26-karataidis",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born on 4 July 1965 in the Kastoria area.",
+      "sources": [
+       "r26-wp-karataidis",
+       "r26-tv-karataidis"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Previous club",
+      "value": "Played for Kastoria before joining the club.",
+      "sources": [
+       "r26-wp-karataidis",
+       "r26-tv-karataidis"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Major tournament",
+      "value": "A defender who played at the 1994 FIFA World Cup.",
+      "sources": [
+       "r26-wp-karataidis",
+       "r26-tv-karataidis"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Cups",
+      "value": "Won the Greek Cup in 1990, 1992 and 1999.",
+      "sources": [
+       "r26-wp-karataidis",
+       "r26-tv-karataidis"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "League",
+      "value": "Won five league titles in a row from 1997 to 2001 across 13 seasons at the club.",
+      "sources": [
+       "r26-wp-karataidis",
+       "r26-tv-karataidis"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-karataidis",
+    "r26-wp-karataidis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-giovanni",
+   "value": {
+    "targetPlayerId": "r26-giovanni",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Belem, Brazil, on 4 February 1972.",
+      "sources": [
+       "r26-wp-giovanni",
+       "r26-tv-giovanni"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Brazil",
+      "value": "Played for Santos before moving to Barcelona.",
+      "sources": [
+       "r26-wp-giovanni",
+       "r26-tv-giovanni"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Spain",
+      "value": "Played for Barcelona from 1996 to 1999.",
+      "sources": [
+       "r26-wp-giovanni",
+       "r26-tv-giovanni"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Scoring",
+      "value": "Top scorer in Greece in 2003/04 with 21 goals.",
+      "sources": [
+       "r26-wp-giovanni",
+       "r26-tv-giovanni"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Honours",
+      "value": "A Brazilian attacking midfielder who won five league titles and one Greek Cup with the club.",
+      "sources": [
+       "r26-wp-giovanni",
+       "r26-tv-giovanni"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-giovanni",
+    "r26-wp-giovanni"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-torosidis",
+   "value": {
+    "targetPlayerId": "r26-torosidis",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Xanthi on 10 June 1985.",
+      "sources": [
+       "r26-wp-torosidis",
+       "r26-tv-torosidis"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Italy",
+      "value": "Played for Roma and Bologna in between his two spells.",
+      "sources": [
+       "r26-wp-torosidis",
+       "r26-tv-torosidis"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "World Cup",
+      "value": "Scored Greece's first World Cup winning goal, against Nigeria in 2010.",
+      "sources": [
+       "r26-wp-torosidis",
+       "r26-tv-torosidis"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Spells",
+      "value": "Two spells at the club, 2007 to 2013 and 2018 to 2020.",
+      "sources": [
+       "r26-wp-torosidis",
+       "r26-tv-torosidis"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Role",
+      "value": "A right-back who captained the national team.",
+      "sources": [
+       "r26-wp-torosidis",
+       "r26-tv-torosidis"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-torosidis",
+    "r26-wp-torosidis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-elkaabi",
+   "value": {
+    "targetPlayerId": "r26-elkaabi",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Casablanca on 25 June 1993.",
+      "sources": [
+       "r26-wp-elkaabi",
+       "r26-fm-elkaabi"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Trade",
+      "value": "Learned carpentry to support himself before football.",
+      "sources": [
+       "r26-wp-elkaabi"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Previous clubs",
+      "value": "Played for Hebei in China and Al-Sadd before joining.",
+      "sources": [
+       "r26-wp-elkaabi",
+       "r26-fm-elkaabi"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Shirt",
+      "value": "Wears number 9.",
+      "sources": [
+       "r26-wp-elkaabi",
+       "r26-fm-elkaabi"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Final",
+      "value": "Scored the extra-time winner in the Conference League final in Athens.",
+      "sources": [
+       "r26-wp-elkaabi",
+       "r26-uefa-ecl"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-fm-elkaabi",
+    "r26-uefa-ecl",
+    "r26-wp-elkaabi"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-fortounis",
+   "value": {
+    "targetPlayerId": "r26-fortounis",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Youth",
+      "value": "Joined the youth academy at 12 from Kalabaka, left in 2008 and came back in 2014.",
+      "sources": [
+       "r26-tv-fortounis"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Germany",
+      "value": "Played for Kaiserslautern in Germany.",
+      "sources": [
+       "r26-wp-fortounis"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Record",
+      "value": "Holds the club record for most assists.",
+      "sources": [
+       "r26-wp-fortounis"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Cup final",
+      "value": "Scored a 25-yard free kick in the 2015 Greek Cup final.",
+      "sources": [
+       "r26-wp-fortounis",
+       "r26-tv-cup15"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Number",
+      "value": "Wore number 7 and was the first to lift the Conference League trophy for the club.",
+      "sources": [
+       "r26-wp-fortounis",
+       "r26-tv-fortounis"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-cup15",
+    "r26-tv-fortounis",
+    "r26-wp-fortounis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-karembeu",
+   "value": {
+    "targetPlayerId": "r26-karembeu",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in New Caledonia on 3 December 1970.",
+      "sources": [
+       "r26-tv-karembeu",
+       "r26-v11-kar"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Previous clubs",
+      "value": "Played for Nantes, Sampdoria, Real Madrid and Middlesbrough before joining.",
+      "sources": [
+       "r26-tv-karembeu"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Real Madrid",
+      "value": "Won two Champions Leagues with Real Madrid.",
+      "sources": [
+       "r26-tv-karembeu"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "France",
+      "value": "Won the 1998 World Cup and Euro 2000 with France.",
+      "sources": [
+       "r26-tv-karembeu"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Role",
+      "value": "A defensive midfielder at the club from 2001 to 2004 who won two league titles.",
+      "sources": [
+       "r26-tv-karembeu",
+       "r26-v11-kar"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-karembeu",
+    "r26-v11-kar"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-rivaldo",
+   "value": {
+    "targetPlayerId": "r26-rivaldo",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Later clubs",
+      "value": "Later played for AEK Athens, Bunyodkor and Kabuscorp.",
+      "sources": [
+       "r26-wp-rivaldo"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Birth",
+      "value": "Born in Recife on 19 April 1972.",
+      "sources": [
+       "r26-wp-rivaldo"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Club years",
+      "value": "Played for the club from 2004 to 2007 and won the 2004/05 league title.",
+      "sources": [
+       "r26-wp-rivaldo"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Cup final",
+      "value": "Scored twice, one a penalty, in the 2005 Greek Cup final.",
+      "sources": [
+       "r26-rs-cup05"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Position",
+      "value": "A Brazilian attacking midfielder who scored against Liverpool in the Champions League group stage.",
+      "sources": [
+       "r26-wp-rivaldo"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-rs-cup05",
+    "r26-wp-rivaldo"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single-publisher clues except the cup-final clue; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-nikopolidis",
+   "value": {
+    "targetPlayerId": "r26-nikopolidis",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Arta on 14 January 1971.",
+      "sources": [
+       "r26-wp-nikopolidis"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Earlier club",
+      "value": "Spent 1989 to 2004 at Panathinaikos before joining.",
+      "sources": [
+       "r26-wp-nikopolidis"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Europe",
+      "value": "Kept three clean sheets in the knockout stages as Greece won Euro 2004.",
+      "sources": [
+       "r26-wp-nikopolidis"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Farewell",
+      "value": "Made his last appearance in a 6-0 win against AEL, replaced late so he could wave goodbye.",
+      "sources": [
+       "r26-wp-nikopolidis"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Cup final",
+      "value": "A goalkeeper who saved a penalty and then scored the winning kick in a 15-14 cup final shootout.",
+      "sources": [
+       "r26-uefa-cup09",
+       "r26-wp-cup09"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-uefa-cup09",
+    "r26-wp-cup09",
+    "r26-wp-nikopolidis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Mostly single-publisher clues; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-mitroglou",
+   "value": {
+    "targetPlayerId": "r26-mitroglou",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Krinides, Kavala, on 12 March 1988.",
+      "sources": [
+       "r26-wp-mitroglou"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Later clubs",
+      "value": "Later played for Fulham, Benfica and Marseille.",
+      "sources": [
+       "r26-wp-mitroglou"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "International",
+      "value": "Won 65 caps for Greece and played at Euro 2012 and the 2014 World Cup.",
+      "sources": [
+       "r26-wp-mitroglou"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Champions League",
+      "value": "Became the first Greek player to score a Champions League hat-trick.",
+      "sources": [
+       "r26-wp-mitroglou"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Style",
+      "value": "A striker who scored four consecutive hat-tricks in 2013.",
+      "sources": [
+       "r26-wp-mitroglou"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-wp-mitroglou"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-giannakopoulos",
+   "value": {
+    "targetPlayerId": "r26-giannakopoulos",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Athens on 12 July 1974.",
+      "sources": [
+       "r26-wp-giannakopoulos"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Early clubs",
+      "value": "Played for Ethnikos Asteras and Paniliakos before joining.",
+      "sources": [
+       "r26-wp-giannakopoulos"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Later clubs",
+      "value": "Later played for Bolton Wanderers and Hull City.",
+      "sources": [
+       "r26-wp-giannakopoulos"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Champions League",
+      "value": "Scored the club's first Champions League goal, a 40-metre lob against Porto.",
+      "sources": [
+       "r26-wp-giannakopoulos"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Role",
+      "value": "A winger and attacking midfielder who won seven league titles between 1996 and 2003.",
+      "sources": [
+       "r26-wp-giannakopoulos"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-wp-giannakopoulos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-djordjevic",
+   "value": {
+    "targetPlayerId": "r26-djordjevic",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Kragujevac.",
+      "sources": [
+       "r26-wp-djordjevic",
+       "r26-tv-djordjevic"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Early clubs",
+      "value": "Started at Red Star Belgrade before playing in Greece with Paniliakos.",
+      "sources": [
+       "r26-wp-djordjevic"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "World Cup",
+      "value": "Played for Serbia and Montenegro at the 2006 World Cup.",
+      "sources": [
+       "r26-wp-djordjevic",
+       "r26-tv-djordjevic"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Honours",
+      "value": "Won 12 league titles with the club.",
+      "sources": [
+       "r26-wp-djordjevic",
+       "r26-tv-djordjevic"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Role",
+      "value": "A Serbian left winger who is the club's top foreign goalscorer.",
+      "sources": [
+       "r26-wp-djordjevic",
+       "r26-tv-djordjevic"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-djordjevic",
+    "r26-wp-djordjevic"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Clues agree but the player start year is held for review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-alexandris",
+   "value": {
+    "targetPlayerId": "r26-alexandris",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born on 21 October 1968.",
+      "sources": [
+       "r26-wp-alexandris"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Earlier clubs",
+      "value": "Played for Veria and AEK Athens before joining.",
+      "sources": [
+       "r26-wp-alexandris"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "World Cup",
+      "value": "Played at the 1994 FIFA World Cup for Greece.",
+      "sources": [
+       "r26-wp-alexandris"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Top scorer",
+      "value": "Top scorer in the Greek league in 1996/97 with 23 goals.",
+      "sources": [
+       "r26-tv-alexandris"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Titles",
+      "value": "A striker who won seven league titles in a row with the club.",
+      "sources": [
+       "r26-wp-alexandris",
+       "r26-tv-alexandris"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-alexandris",
+    "r26-wp-alexandris"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Mostly single-publisher clues; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-galletti",
+   "value": {
+    "targetPlayerId": "r26-galletti",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in La Plata, Argentina.",
+      "sources": [
+       "r26-tv-galletti"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Spain",
+      "value": "Played for Zaragoza and Atletico Madrid.",
+      "sources": [
+       "r26-tv-galletti"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Debut",
+      "value": "Scored on his Champions League debut for the club against Lazio.",
+      "sources": [
+       "r26-tv-galletti"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Honours",
+      "value": "Won two consecutive league and cup doubles.",
+      "sources": [
+       "r26-tv-galletti"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Cup final",
+      "value": "Scored in extra time in the 2009 Greek Cup final.",
+      "sources": [
+       "r26-wp-cup09",
+       "r26-uefa-cup09",
+       "r26-tv-galletti"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-galletti",
+    "r26-uefa-cup09",
+    "r26-wp-cup09"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Mostly single-publisher clues; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-georgatos",
+   "value": {
+    "targetPlayerId": "r26-georgatos",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Piraeus.",
+      "sources": [
+       "r26-tv-georgatos"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Clubs",
+      "value": "Played for Ethnikos Patras, Panachaiki, Inter Milan and AEK Athens.",
+      "sources": [
+       "r26-tv-georgatos"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Europe",
+      "value": "Reached the Champions League quarter-final with the club.",
+      "sources": [
+       "r26-tv-georgatos"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Record",
+      "value": "Played 273 games and scored 42 goals before retiring.",
+      "sources": [
+       "r26-tv-georgatos"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Role",
+      "value": "A left-back with a famous left foot.",
+      "sources": [
+       "r26-tv-georgatos"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-georgatos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-valbuena",
+   "value": {
+    "targetPlayerId": "r26-valbuena",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Height",
+      "value": "Only 1.65 metres tall.",
+      "sources": [
+       "r26-tv-valbuena"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Clubs",
+      "value": "Played for Lyon, Fenerbahce and Marseille.",
+      "sources": [
+       "r26-tv-valbuena"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "International",
+      "value": "Won 52 caps and scored 8 goals for France.",
+      "sources": [
+       "r26-tv-valbuena"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "First season",
+      "value": "Recorded 9 goals and 23 assists in his first season in a double-winning campaign.",
+      "sources": [
+       "r26-tv-valbuena"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Role",
+      "value": "A French midfielder who spent four seasons at the club and won three league titles and one cup.",
+      "sources": [
+       "r26-tv-valbuena"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-valbuena"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-elarabi",
+   "value": {
+    "targetPlayerId": "r26-elarabi",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Herouville in northwestern France.",
+      "sources": [
+       "r26-tv-elarabi"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Clubs",
+      "value": "Played for Caen, Al-Hilal, Granada and Al-Duhail.",
+      "sources": [
+       "r26-tv-elarabi"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Golden Boot",
+      "value": "Won the league Golden Boot with 20 goals and again with 22 the next season.",
+      "sources": [
+       "r26-tv-elarabi"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Arsenal",
+      "value": "Scored in the final seconds of extra time at the Emirates to eliminate Arsenal.",
+      "sources": [
+       "r26-tnt-ars20b",
+       "r26-gp-ars20"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Europe",
+      "value": "A centre-forward who won the Conference League in 2024.",
+      "sources": [
+       "r26-tv-elarabi"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-gp-ars20",
+    "r26-tnt-ars20b",
+    "r26-tv-elarabi"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Only the Arsenal clue has two publishers; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-detari",
+   "value": {
+    "targetPlayerId": "r26-detari",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "A Hungarian forward.",
+      "sources": [
+       "r26-tv-detari"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Youth",
+      "value": "Came through the Budapest Honved academy and won three Hungarian championships.",
+      "sources": [
+       "r26-tv-detari"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Germany",
+      "value": "Won the West German Cup with Eintracht Frankfurt, scoring the winning goal.",
+      "sources": [
+       "r26-tv-detari"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Welcome",
+      "value": "Was greeted in Piraeus by between 30,000 and 50,000 supporters.",
+      "sources": [
+       "r26-tv-detari"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Cup final",
+      "value": "Scored twice, once from a penalty, in the 1990 Greek Cup final.",
+      "sources": [
+       "r26-wp-cup90"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-detari",
+    "r26-wp-cup90"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Mostly single-publisher clues; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-karapialis",
+   "value": {
+    "targetPlayerId": "r26-karapialis",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born in Larissa.",
+      "sources": [
+       "r26-tv-karapialis"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Earlier club",
+      "value": "Won the Greek Cup in 1985 and the league in 1988 with AEL Larissa.",
+      "sources": [
+       "r26-tv-karapialis"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Arrival",
+      "value": "Joined the club in the summer of 1991.",
+      "sources": [
+       "r26-tv-karapialis"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Titles",
+      "value": "Won four consecutive league titles from 1997 to 2000.",
+      "sources": [
+       "r26-tv-karapialis"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Role",
+      "value": "A central attacking playmaker known for technique rather than speed.",
+      "sources": [
+       "r26-tv-karapialis"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-karapialis"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; review.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-m-kritikopoulos",
+   "value": {
+    "targetPlayerId": "r26-kritikopoulos",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Birth",
+      "value": "Born on 3 January 1946.",
+      "sources": [
+       "r26-tv-kritikopoulos"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Clubs",
+      "value": "Played for Kaisariani, Panegialios, Ethnikos and Apollon Athens.",
+      "sources": [
+       "r26-tv-kritikopoulos"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "Skill",
+      "value": "Famous for his heading ability.",
+      "sources": [
+       "r26-tv-kritikopoulos"
+      ]
+     },
+     {
+      "id": "c4",
+      "label": "Final match",
+      "value": "His last match for the club was a 2-0 championship play-off win against Aris in Volos.",
+      "sources": [
+       "r26-tv-kritikopoulos"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Honours",
+      "value": "A striker who won three league titles and two cups between 1973 and 1980.",
+      "sources": [
+       "r26-tv-kritikopoulos"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "r26-tv-kritikopoulos"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; review.",
+   "confidence": 2,
+   "status": "review"
+  }
+ ],
+ "stadiums": [
+  {
+   "id": "r26-st-karaiskakis",
+   "value": {
+    "name": "Georgios Karaiskakis Stadium",
+    "city": "Piraeus",
+    "capacity": 33334,
+    "opened": null,
+    "role": "home ground"
+   },
+   "sources": [
+    "r26-wp-club",
+    "r26-sky-juv"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Capacity and role from Wikipedia only; the stadium as match venue is confirmed by many reports. Opening year not sourced.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-st-phaliron",
+   "value": {
+    "name": "Neo Phaliron Velodrome",
+    "city": "Piraeus",
+    "capacity": null,
+    "opened": null,
+    "role": "former ground"
+   },
+   "sources": [
+    "r26-wp-club"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher; Wikipedia lists it as the previous ground.",
+   "confidence": 2,
+   "status": "review"
+  }
+ ],
+ "trophies": [
+  {
+   "id": "r26-tr-league",
+   "value": {
+    "name": "Greek league champions",
+    "count": 48,
+    "seasons": [
+     "1930/31",
+     "1932/33",
+     "1933/34",
+     "1935/36",
+     "1936/37",
+     "1937/38",
+     "1946/47",
+     "1947/48",
+     "1950/51",
+     "1953/54",
+     "1954/55",
+     "1955/56",
+     "1956/57",
+     "1957/58",
+     "1958/59",
+     "1965/66",
+     "1966/67",
+     "1972/73",
+     "1973/74",
+     "1974/75",
+     "1979/80",
+     "1980/81",
+     "1981/82",
+     "1982/83",
+     "1986/87",
+     "1996/97",
+     "1997/98",
+     "1998/99",
+     "1999/00",
+     "2000/01",
+     "2001/02",
+     "2002/03",
+     "2004/05",
+     "2005/06",
+     "2006/07",
+     "2007/08",
+     "2008/09",
+     "2010/11",
+     "2011/12",
+     "2012/13",
+     "2013/14",
+     "2014/15",
+     "2015/16",
+     "2016/17",
+     "2019/20",
+     "2020/21",
+     "2021/22",
+     "2024/25"
+    ]
+   },
+   "sources": [
+    "r26-wp-club",
+    "r26-nk-t25",
+    "r26-wp-t25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia lists 48 titles; the 2024/25 title is described as the 48th by Neos Kosmos and Wikipedia. Individual 42nd to 47th titles also corroborated in event records.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-tr-cup",
+   "value": {
+    "name": "Greek Cup",
+    "count": 29,
+    "seasons": [
+     "1998/99",
+     "2004/05",
+     "2005/06",
+     "2007/08",
+     "2008/09",
+     "2011/12",
+     "2012/13",
+     "2014/15",
+     "2019/20",
+     "2024/25"
+    ]
+   },
+   "sources": [
+    "r26-wp-club",
+    "r26-tv-cup25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Total of 29 agrees in Wikipedia and To Vima; the seasons list is a partial list of finals verified in the archive records.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-tr-ecl",
+   "value": {
+    "name": "UEFA Conference League",
+    "count": 1,
+    "seasons": [
+     "2023/24"
+    ]
+   },
+   "sources": [
+    "r26-wp-ecl",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both sources confirm the win over Fiorentina in the final.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  }
+ ],
+ "competitions": [
+  {
+   "id": "r26-co-sl",
+   "value": {
+    "name": "Super League Greece",
+    "level": "domestic",
+    "note": "Top division of Greek football."
+   },
+   "sources": [
+    "r26-wp-t25",
+    "r26-nk-t25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both sources describe the league title.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-co-cup",
+   "value": {
+    "name": "Greek Cup",
+    "level": "domestic",
+    "note": "National knockout cup."
+   },
+   "sources": [
+    "r26-wp-cup25",
+    "r26-tv-cup25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both sources describe the final.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-co-ucl",
+   "value": {
+    "name": "UEFA Champions League",
+    "level": "european",
+    "note": "Played most recently in the 2025/26 league phase."
+   },
+   "sources": [
+    "r26-uefa-ucl26",
+    "r26-wp-s9899"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA and Wikipedia both document the club in this competition.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-co-uel",
+   "value": {
+    "name": "UEFA Europa League",
+    "level": "european",
+    "note": "Included a round of 16 appearance in 2019/20."
+   },
+   "sources": [
+    "r26-uefa-ars20a",
+    "r26-wp-uel20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both sources document the 2019/20 knockout ties.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-co-ecl",
+   "value": {
+    "name": "UEFA Conference League",
+    "level": "european",
+    "note": "Won in 2023/24."
+   },
+   "sources": [
+    "r26-wp-ecl",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both sources document the run and the final.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  }
+ ],
+ "seasons": [
+  {
+   "id": "r26-se-1314",
+   "value": {
+    "name": "2013/14",
+    "league": "Super League Greece",
+    "finish": "1st (86 points)",
+    "note": "Champions League round of 16."
+   },
+   "sources": [
+    "r26-wp-list",
+    "r26-uefa-t14"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Title confirmed by UEFA; points from Wikipedia list.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-se-1415",
+   "value": {
+    "name": "2014/15",
+    "league": "Super League Greece",
+    "finish": "1st",
+    "note": "Won the Greek Cup for a double."
+   },
+   "sources": [
+    "r26-wp-list",
+    "r26-uefa-t15",
+    "r26-uefa-cup15"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Title and cup confirmed by UEFA.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-se-1516",
+   "value": {
+    "name": "2015/16",
+    "league": "Super League Greece",
+    "finish": "1st (85 points)",
+    "note": "Sixth consecutive title."
+   },
+   "sources": [
+    "r26-wp-list",
+    "r26-gt-t16"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Title confirmed by Gulf Times.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-se-1617",
+   "value": {
+    "name": "2016/17",
+    "league": "Super League Greece",
+    "finish": "1st",
+    "note": "44th title confirmed after a hearing."
+   },
+   "sources": [
+    "r26-wp-list",
+    "r26-iwf-t17"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Title confirmed by Inside World Football.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-se-1718",
+   "value": {
+    "name": "2017/18",
+    "league": "Super League Greece",
+    "finish": "3rd (57 points)",
+    "note": "Champions League group stage."
+   },
+   "sources": [
+    "r26-wp-list"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-se-1819",
+   "value": {
+    "name": "2018/19",
+    "league": "Super League Greece",
+    "finish": "2nd (75 points)",
+    "note": "Europa League round of 32."
+   },
+   "sources": [
+    "r26-wp-list"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-se-1920",
+   "value": {
+    "name": "2019/20",
+    "league": "Super League Greece",
+    "finish": "1st (91 points)",
+    "note": "Won the league and the Greek Cup; Europa League round of 16."
+   },
+   "sources": [
+    "r26-wp-list",
+    "r26-gct-t20",
+    "r26-nk-cup20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Title confirmed by Greek City Times; cup by Neos Kosmos.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-se-2021",
+   "value": {
+    "name": "2020/21",
+    "league": "Super League Greece",
+    "finish": "1st (90 points)",
+    "note": "46th league title."
+   },
+   "sources": [
+    "r26-wp-list",
+    "r26-gr-t21"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Title confirmed by Greek Reporter.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-se-2122",
+   "value": {
+    "name": "2021/22",
+    "league": "Super League Greece",
+    "finish": "1st (83 points)",
+    "note": "47th league title."
+   },
+   "sources": [
+    "r26-wp-list",
+    "r26-t42-t22"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Title confirmed by The42.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-se-2223",
+   "value": {
+    "name": "2022/23",
+    "league": "Super League Greece",
+    "finish": "3rd (73 points)",
+    "note": "Champions League second qualifying round."
+   },
+   "sources": [
+    "r26-wp-list"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Single publisher.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-se-2324",
+   "value": {
+    "name": "2023/24",
+    "league": "Super League Greece",
+    "finish": "3rd (74 points)",
+    "note": "Won the Conference League."
+   },
+   "sources": [
+    "r26-wp-list",
+    "r26-wp-s2324",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "League finish from Wikipedia only; the Conference League win is confirmed by UEFA.",
+   "confidence": 2,
+   "status": "review"
+  },
+  {
+   "id": "r26-se-2425",
+   "value": {
+    "name": "2024/25",
+    "league": "Super League Greece",
+    "finish": "1st (75 points)",
+    "note": "Won the league and the Greek Cup."
+   },
+   "sources": [
+    "r26-wp-t25",
+    "r26-gh-t25",
+    "r26-tv-cup25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Title confirmed by Greek Herald; cup by To Vima.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  }
+ ],
+ "kits": [],
+ "matches": [
+  {
+   "id": "r26-m-cup-aek-pens",
+   "value": {
+    "name": "AEK Athens 4-4 Olympiacos (Olympiacos won 15-14 on penalties)",
+    "on": "2009-05-02",
+    "competition": "Greek Cup final",
+    "score": "4-4",
+    "venue": null,
+    "scorers": [
+     {
+      "name": "Matt Derbyshire",
+      "minute": null
+     },
+     {
+      "name": "Matt Derbyshire",
+      "minute": null
+     },
+     {
+      "name": "Dudu",
+      "minute": null
+     },
+     {
+      "name": "Luciano Galletti",
+      "minute": null
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup09",
+    "r26-uefa-cup09"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, 4-4 after extra time and 15-14 shootout agree in Wikipedia and UEFA; scorer names agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-atromitos",
+   "value": {
+    "name": "Atromitos 1-2 Olympiacos (after extra time)",
+    "on": "2012-04-28",
+    "competition": "Greek Cup final",
+    "score": "1-2",
+    "venue": "Olympic Stadium, Athens",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup12",
+    "r26-uefa-cup12"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, extra time and venue agree. Wikipedia lists only Djebbour for Olympiacos, UEFA also names Fuster, so scorers omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-aek-volos",
+   "value": {
+    "name": "AEK Athens 0-1 Olympiacos",
+    "on": "2020-09-12",
+    "competition": "Greek Cup final",
+    "score": "0-1",
+    "venue": "Panthessaliko Stadium, Volos",
+    "scorers": [
+     {
+      "name": "Lazar Randelovic",
+      "minute": 9
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup20",
+    "r26-nk-cup20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, scorer, minute and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-aris-kaftanzoglio",
+   "value": {
+    "name": "Olympiacos 2-0 Aris",
+    "on": "2008-05-17",
+    "competition": "Greek Cup final",
+    "score": "2-0",
+    "venue": "Kaftanzoglio Stadium, Thessaloniki",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup08",
+    "r26-uefa-cup08",
+    "r26-rs-cup08"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and venue agree across three publishers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-asteras",
+   "value": {
+    "name": "Olympiacos 3-1 Asteras Tripolis (after extra time)",
+    "on": "2013-05-11",
+    "competition": "Greek Cup final",
+    "score": "3-1",
+    "venue": "Olympic Stadium, Athens",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup13",
+    "r26-hur-cup13"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, extra time and venue agree; scorer lists differ between sources so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-pao-99",
+   "value": {
+    "name": "Panathinaikos 0-2 Olympiacos",
+    "on": "1999-05-05",
+    "competition": "Greek Cup final",
+    "score": "0-2",
+    "venue": "Athens",
+    "scorers": [
+     {
+      "name": "Dimitris Mavrogenidis",
+      "minute": 54
+     },
+     {
+      "name": "Peter Ofori-Quaye",
+      "minute": null
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup99",
+    "r26-rs-cup99"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and Mavrogenidis 54th minute agree; second scorer is Ofori-Quaye (90th vs 89th minute, minute omitted). Double is stated in Wikipedia.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-aek-heraklion",
+   "value": {
+    "name": "AEK Athens 0-3 Olympiacos",
+    "on": "2006-05-10",
+    "competition": "Greek Cup final",
+    "score": "0-3",
+    "venue": "Pankritio Stadium, Heraklion",
+    "scorers": [
+     {
+      "name": "Michalis Konstantinou",
+      "minute": 61
+     },
+     {
+      "name": "Vladimir Ivic (own goal)",
+      "minute": 70
+     },
+     {
+      "name": "Nery Castillo",
+      "minute": 90
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup06",
+    "r26-uefa-cup06",
+    "r26-rs-cup06"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue city and scorers agree in Wikipedia and UEFA; RSSSF confirms date and score.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-aris-patras",
+   "value": {
+    "name": "Olympiacos 3-0 Aris",
+    "on": "2005-05-21",
+    "competition": "Greek Cup final",
+    "score": "3-0",
+    "venue": "Patras",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup05",
+    "r26-rs-cup05"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and Patras venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-xanthi",
+   "value": {
+    "name": "Olympiacos 3-1 Xanthi",
+    "on": "2015-05-23",
+    "competition": "Greek Cup final",
+    "score": "3-1",
+    "venue": "Olympic Stadium, Athens",
+    "scorers": [
+     {
+      "name": "Franco Jara",
+      "minute": null
+     },
+     {
+      "name": "Alejandro Dominguez",
+      "minute": null
+     },
+     {
+      "name": "Kostas Fortounis",
+      "minute": null
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup15",
+    "r26-uefa-cup15",
+    "r26-tv-cup15"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and venue agree; UEFA and To Vima agree on the three Olympiacos scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-cup-ofi",
+   "value": {
+    "name": "OFI 0-2 Olympiacos",
+    "on": "2025-05-17",
+    "competition": "Greek Cup final",
+    "score": "0-2",
+    "venue": "Olympic Stadium, Athens",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-cup25",
+    "r26-tv-cup25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-title-levadiakos",
+   "value": {
+    "name": "Olympiacos 4-0 Levadiakos",
+    "on": "2015-04-19",
+    "competition": "Super League Greece",
+    "score": "4-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wt-t15",
+    "r26-uefa-t15"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue and title number agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-title-veria",
+   "value": {
+    "name": "Olympiacos 3-0 Veria",
+    "on": "2016-02-28",
+    "competition": "Super League Greece",
+    "score": "3-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-gt-t16",
+    "r26-tv-t16"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, title number and timing agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-title-panthrakikos",
+   "value": {
+    "name": "Olympiacos 2-0 Panthrakikos",
+    "on": "2014-03-15",
+    "competition": "Super League Greece",
+    "score": "2-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-uefa-t14",
+    "r26-nk-t14"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and title number agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-title-panetolikos",
+   "value": {
+    "name": "Panetolikos 0-1 Olympiacos",
+    "on": "2012-04-01",
+    "competition": "Super League Greece",
+    "score": "0-1",
+    "venue": "Agrinio",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-uefa-t12",
+    "r26-nk-t12"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and title number agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-title-pao-21",
+   "value": {
+    "name": "Olympiacos 3-1 Panathinaikos",
+    "on": "2021-04-11",
+    "competition": "Super League Greece",
+    "score": "3-1",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-gr-t21",
+    "r26-gh-t21"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, title number and gap agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-title-paok-22",
+   "value": {
+    "name": "PAOK 1-2 Olympiacos",
+    "on": "2022-05-04",
+    "competition": "Super League Greece",
+    "score": "1-2",
+    "venue": "Toumba Stadium, Thessaloniki",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-t42-t22",
+    "r26-gh-t22"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, title number and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-title-aek-25",
+   "value": {
+    "name": "Olympiacos 1-0 AEK Athens",
+    "on": "2025-04-13",
+    "competition": "Super League Greece",
+    "score": "1-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-wp-t25",
+    "r26-gh-t25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and home venue agree between Wikipedia and Greek Herald. A Neos Kosmos report is dated one day later (publication date), so it is not cited for the date.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-eu-manutd-home",
+   "value": {
+    "name": "Olympiacos 2-0 Manchester United",
+    "on": "2014-02-25",
+    "competition": "UEFA Champions League round of 16, first leg",
+    "score": "2-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Alejandro Dominguez",
+      "minute": 38
+     },
+     {
+      "name": "Joel Campbell",
+      "minute": null
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-ah-mu1",
+    "r26-inq-mu1"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue and the 38th-minute goal agree; the second scorer Joel Campbell is named by both, his minute differs (50th vs 55th) so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-eu-manutd-away",
+   "value": {
+    "name": "Manchester United 3-0 Olympiacos",
+    "on": "2014-03-19",
+    "competition": "UEFA Champions League round of 16, second leg",
+    "score": "3-0",
+    "venue": "Old Trafford, Manchester",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-ah-mu2",
+    "r26-fox-mu2"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, aggregate and hat-trick agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-eu-juventus",
+   "value": {
+    "name": "Olympiacos 1-0 Juventus",
+    "on": "2014-10-22",
+    "competition": "UEFA Champions League group stage",
+    "score": "1-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Pajtim Kasami",
+      "minute": 36
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-sky-juv",
+    "r26-fif-juv"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue and scorer agree; another outlet gave the following day, which is its publication day.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-eu-arsenal-home",
+   "value": {
+    "name": "Olympiacos 3-1 Arsenal",
+    "on": "2011-12-06",
+    "competition": "UEFA Champions League group stage",
+    "score": "3-1",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Rafik Djebbour",
+      "minute": 16
+     },
+     {
+      "name": "David Fuster",
+      "minute": null
+     },
+     {
+      "name": "Francois Modesto",
+      "minute": 90
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-ah-ars11",
+    "r26-uefa-ars11"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, scorers and outcome agree; David Fuster minute differs (36th vs 45th) so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-eu-arsenal-20-first",
+   "value": {
+    "name": "Olympiacos 0-1 Arsenal",
+    "on": "2020-02-20",
+    "competition": "UEFA Europa League round of 32, first leg",
+    "score": "0-1",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-uefa-ars20a",
+    "r26-tnt-ars20a",
+    "r26-wp-uel20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and scorer agree across three publishers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-eu-wolves",
+   "value": {
+    "name": "Olympiacos 1-1 Wolverhampton Wanderers",
+    "on": "2020-03-12",
+    "competition": "UEFA Europa League round of 16, first leg",
+    "score": "1-1",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-sky-wol",
+    "r26-wp-uel20"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and venue agree. Neos Kosmos dates it the next day (publication day) and is not cited.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ecl-ferencvaros-1",
+   "value": {
+    "name": "Olympiacos 1-0 Ferencvaros",
+    "on": "2024-02-15",
+    "competition": "UEFA Conference League knockout play-off, first leg",
+    "score": "1-0",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-fp-fer1",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and round agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ecl-ferencvaros-2",
+   "value": {
+    "name": "Ferencvaros 0-1 Olympiacos",
+    "on": "2024-02-22",
+    "competition": "UEFA Conference League knockout play-off, second leg",
+    "score": "0-1",
+    "venue": "Budapest",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-fm-fer2",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and round agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ecl-maccabi-1",
+   "value": {
+    "name": "Olympiacos 1-4 Maccabi Tel Aviv",
+    "on": "2024-03-07",
+    "competition": "UEFA Conference League round of 16, first leg",
+    "score": "1-4",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-uefa-ecl",
+    "r26-nk-mta1",
+    "r26-bg-mta1"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date (7 March in UEFA; Neos Kosmos report published next morning in Australia), score and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ecl-maccabi-2",
+   "value": {
+    "name": "Maccabi Tel Aviv 1-6 Olympiacos (after extra time)",
+    "on": "2024-03-14",
+    "competition": "UEFA Conference League round of 16, second leg",
+    "score": "1-6",
+    "venue": "TSC Arena, Backa Topola",
+    "scorers": [
+     {
+      "name": "Daniel Podence",
+      "minute": 10
+     },
+     {
+      "name": "Kostas Fortounis",
+      "minute": 36
+     },
+     {
+      "name": "Ayoub El Kaabi",
+      "minute": 48
+     },
+     {
+      "name": "Ayoub El Kaabi",
+      "minute": 65
+     },
+     {
+      "name": "Stevan Jovetic",
+      "minute": 93
+     },
+     {
+      "name": "Youssef El Arabi",
+      "minute": 103
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-fm-mta2",
+    "r26-fwp-mta2",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, venue and all six goals with minutes agree between FotMob and Football Web Pages; UEFA confirms the 6-1 win.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ecl-fener-1",
+   "value": {
+    "name": "Olympiacos 3-2 Fenerbahce",
+    "on": "2024-04-11",
+    "competition": "UEFA Conference League quarter-final, first leg",
+    "score": "3-2",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Kostas Fortounis",
+      "minute": null
+     },
+     {
+      "name": "Stevan Jovetic",
+      "minute": null
+     },
+     {
+      "name": "Chiquinho",
+      "minute": null
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-ds-fb1",
+    "r26-fs-fb1",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and scorer names agree; scorer minutes differ between reports so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ecl-fener-2",
+   "value": {
+    "name": "Fenerbahce 1-0 Olympiacos (Olympiacos won 3-2 on penalties)",
+    "on": "2024-04-18",
+    "competition": "UEFA Conference League quarter-final, second leg",
+    "score": "1-0",
+    "venue": "Istanbul",
+    "scorers": [],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-fm-fb2",
+    "r26-uefa-ecl"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, extra time and shootout result agree between FotMob and UEFA. A Daily Sabah preview gives the day before and is not cited.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ucl-realmadrid",
+   "value": {
+    "name": "Olympiacos 3-4 Real Madrid",
+    "on": "2025-11-26",
+    "competition": "UEFA Champions League league phase",
+    "score": "3-4",
+    "venue": "Karaiskakis Stadium, Piraeus",
+    "scorers": [
+     {
+      "name": "Chiquinho",
+      "minute": null
+     },
+     {
+      "name": "Mehdi Taremi",
+      "minute": null
+     },
+     {
+      "name": "Ayoub El Kaabi",
+      "minute": null
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-gn-rm",
+    "r26-bein-rm"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score, venue and scorers agree. Gulf News gives the day (Wednesday 26 November, a beIN URL also carries that date); beIN text is dated a day later in Australia.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ucl-kairat",
+   "value": {
+    "name": "Kairat Almaty 0-1 Olympiacos",
+    "on": "2025-12-09",
+    "competition": "UEFA Champions League league phase",
+    "score": "0-1",
+    "venue": "Astana Arena",
+    "scorers": [
+     {
+      "name": "Gelson Martins",
+      "minute": 73
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-bein-kai",
+    "r26-tv-kai"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score, scorer, minute and venue agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  },
+  {
+   "id": "r26-m-ucl-ajax",
+   "value": {
+    "name": "Ajax 1-2 Olympiacos",
+    "on": "2026-01-28",
+    "competition": "UEFA Champions League league phase",
+    "score": "1-2",
+    "venue": "Johan Cruijff Arena, Amsterdam",
+    "scorers": [
+     {
+      "name": "Gelson Martins",
+      "minute": 52
+     },
+     {
+      "name": "Santiago Hezze",
+      "minute": null
+     }
+    ],
+    "lineup": [],
+    "bench": []
+   },
+   "sources": [
+    "r26-gct-aja",
+    "r26-nlt-aja",
+    "r26-uefa-ucl26"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and Martins 52nd minute agree; Hezze minute differs (79th vs 84th) so omitted.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
+  }
+ ],
+ "culture": [],
+ "blocked": [
+  {
+   "url": "https://www.transfermarkt.com/olympiakos-piraus/startseite/verein/683",
+   "reason": "Fetch returned SITE_BLOCKED; not circumvented."
+  },
+  {
+   "url": "https://www.footballwebpages.co.uk/match/2023-2024/europa-conference/fenerbahce/olympiakos/486740",
+   "reason": "Served an \"Archive Request Pending\" verification challenge; not circumvented (a different Football Web Pages match page did load and is used as a source)."
+  },
+  {
+   "url": "https://www.espn.com/soccer/match/_/gameId/700740/olympiacos-fenerbahce",
+   "reason": "Fetch returned empty content."
+  },
+  {
+   "url": "https://www.espn.com/soccer/match/_/gameId/702408",
+   "reason": "Fetch returned empty content."
+  },
+  {
+   "url": "https://www.rsssf.org/ec/ec199899det.html",
+   "reason": "Returned 404."
+  },
+  {
+   "url": "https://www.olympiacos.org/en/club/history/",
+   "reason": "Returned 404."
+  },
+  {
+   "url": "https://www.uefa.com/uefaconferenceleague/history/clubs/50171--olympiacos/",
+   "reason": "Returned 404."
+  }
+ ],
+ "gaps": [
+  "Archive target of 60 exact-date events not reached: 34 approved and 11 held for review (45 total); remaining events lacked a second independent publisher.",
+  "Players target of 35 not reached: 24 players documented (11 approved, 13 review); other legends were not verified from two publishers.",
+  "Mysteries target of 30 not reached: 24 drafted (11 approved, 13 review).",
+  "No kit maker or sponsor source was found, so kits is empty.",
+  "Karaiskakis Stadium opening year and capacity are single-source; Wikipedia only.",
+  "Not included for lack of a reliable second source: 1998/99 Champions League ties (Ajax, Juventus quarter-final), 1963 Balkans Cup final date, 2024 Aston Villa semi-finals (already in core), 2008 and 2011 title clinchers (sources conflicted or were single-publisher).",
+  "Scorer minutes are omitted wherever sources disagreed."
+ ]
+}

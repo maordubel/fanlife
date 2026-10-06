@@ -1,0 +1,406 @@
+{
+ "schemaVersion": 1,
+ "clubId": "zrinjski-mostar",
+ "sources": [],
+ "archive": [],
+ "players": [
+  {
+   "id": "marko-maric",
+   "value": {
+    "name": "Marko Marić",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2023,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob",
+    "r26-sm"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "goran-karacic",
+   "value": {
+    "name": "Goran Karačić",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2015,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "hrvoje-barisic",
+   "value": {
+    "name": "Hrvoje Barišić",
+    "positions": [
+     "CB"
+    ],
+    "fromYear": 2013,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "slobodan-jakovljevic",
+   "value": {
+    "name": "Slobodan Jakovljević",
+    "positions": [
+     "CB"
+    ],
+    "fromYear": 2016,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "marin-magdic",
+   "value": {
+    "name": "Marin Magdić",
+    "positions": [
+     "CB"
+    ],
+    "fromYear": 2021,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "josip-corluka",
+   "value": {
+    "name": "Josip Ćorluka",
+    "positions": [
+     "CB"
+    ],
+    "fromYear": 2020,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "mario-ticinovic",
+   "value": {
+    "name": "Mario Tičinović",
+    "positions": [
+     "LB"
+    ],
+    "fromYear": 2019,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "zvonimir-kozulj",
+   "value": {
+    "name": "Zvonimir Kožulj",
+    "positions": [
+     "CM"
+    ],
+    "fromYear": 2023,
+    "toYear": 2024,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob",
+    "r26-hajduk"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "nemanja-bilbija",
+   "value": {
+    "name": "Nemanja Bilbija",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2016,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "tomislav-kis",
+   "value": {
+    "name": "Tomislav Kiš",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2023,
+    "toYear": 2026,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "matija-malekinusic",
+   "value": {
+    "name": "Matija Malekinušić",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2021,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "nardin-mulahusejnovic",
+   "value": {
+    "name": "Nardin Mulahusejnović",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2017,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "marijo-cuze",
+   "value": {
+    "name": "Marijo Ćuže",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2022,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "r26-milos-filipovic",
+   "value": {
+    "name": "Miloš Filipović",
+    "positions": [
+     "CM"
+    ],
+    "fromYear": 2015,
+    "toYear": 2019,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia also lists a 2020-21 spell; FotMob 2015-2019."
+  }
+ ],
+ "playerYears": [],
+ "mysteries": [],
+ "stadiums": [],
+ "trophies": [],
+ "competitions": [],
+ "seasons": [],
+ "kits": [],
+ "matches": [],
+ "culture": [],
+ "blocked": [
+  {
+   "url": "https://www.sofascore.com/football/team/zrinjski-mostar/3178",
+   "reason": "fetch permission not granted"
+  },
+  {
+   "url": "https://int.soccerway.com/teams/bosnia-herzegovina/hsk-zrinjski-mostar/2138/squad/",
+   "reason": "redirects to an unrelated team page"
+  },
+  {
+   "url": "https://hr.wikipedia.org",
+   "reason": "cache-only, not fetchable"
+  },
+  {
+   "url": "https://www.fotmob.com/teams/8629/squad/zrinjski-mostar",
+   "reason": "HTTP 500"
+  }
+ ],
+ "gaps": [
+  "Web search budget exhausted this turn; no new events, mysteries, kits or matches could be researched or cross-sourced.",
+  "Approved squad coverage: 2 GK (Marić, Karačić), 6 DF (Barišić, Jakovljević, Magdić, Ćorluka, Tičinović + r26 Stojkić), 3 MF (Kožulj, Filipović, Modrić), 5 FW (Bilbija, Kiš, Malekinušić, Mulahusejnović, Ćuže). Midfield still short of 6.",
+  "Mysteries remain 1 approved of 30 target; events remain ~43 of 60."
+ ]
+}

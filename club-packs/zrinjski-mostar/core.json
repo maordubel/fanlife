@@ -1,1192 +1,3119 @@
 {
-  "schemaVersion": 1,
-  "clubId": "zrinjski-mostar",
-  "contentLocale": "en",
-  "sources": [
+ "schemaVersion": 1,
+ "clubId": "zrinjski-mostar",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "uefa-results",
+   "title": "UEFA: all results, 2023/24",
+   "url": "https://www.uefa.com/uefaconferenceleague/news/0285-18e1b615fd5b-6fe5294e3ddd-1000--europa-conference-league-all-the-results/",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-09-30"
+  },
+  {
+   "id": "az-report",
+   "title": "Zrinjski vs AZ match report",
+   "url": "https://balkans.aljazeera.net/news/sports/2023/9/21/zrinjski-u-sjajnoj-utakmici-slavio-historijsku-pobjedu-protiv-az-alkmaara",
+   "publisher": "Al Jazeera",
+   "access": "available",
+   "checkedAt": "2026-09-30"
+  },
+  {
+   "id": "villa-away",
+   "title": "Aston Villa: Unai Emery match wins",
+   "url": "https://www.avfc.co.uk/news/2026/march/13/feature-unai-emery-s-100-villa-wins/",
+   "publisher": "Aston Villa FC",
+   "access": "available",
+   "checkedAt": "2026-09-30"
+  },
+  {
+   "id": "villa-home",
+   "title": "Zrinjski vs Aston Villa match report",
+   "url": "https://www.skysports.com/football/zrinjski-vs-a-villa/499166",
+   "publisher": "Sky Sports",
+   "access": "available",
+   "checkedAt": "2026-09-30"
+  },
+  {
+   "id": "club-europe",
+   "title": "Zrinjski: European results by season",
+   "url": "https://hskzrinjski.ba/zrinjski-u-europi/",
+   "publisher": "HŠK Zrinjski Mostar",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "club-history",
+   "title": "Zrinjski: history and trophy years",
+   "url": "https://hskzrinjski.ba/povijest/",
+   "publisher": "HŠK Zrinjski Mostar",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "uefa-az-full",
+   "title": "UEFA: Zrinjski–AZ full match report, 21 September 2023",
+   "url": "https://www.uefa.com/newsfiles/uefaeuropaconferenceleague/2024/2039291_FR.pdf",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "club-cup-2024",
+   "title": "Zrinjski: Borac 0–1 Zrinjski, 23 May 2024",
+   "url": "https://hskzrinjski.ba/en/izvjestaj-fk-borac-01-hsk-zrinjski/",
+   "publisher": "HŠK Zrinjski Mostar",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "club-title-2025",
+   "title": "Zrinjski: ninth league title, 25 May 2025",
+   "url": "https://hskzrinjski.ba/wwin-lige-hsk-zrinjski-deveti-put-prvak-bosne-i-hercegovine/",
+   "publisher": "HŠK Zrinjski Mostar",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-history-2022",
+   "title": "NFSBiH: history of 2022",
+   "url": "https://www.nfsbih.ba/en/about-us/history/history-2022/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-legia-home",
+   "title": "NFSBiH: zrinjski porazen od legije",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-porazen-od-legije/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-legia-away",
+   "title": "NFSBiH: legia po drugi put bolja od zrinjskog",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/legia-po-drugi-put-bolja-od-zrinjskog/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-az-away",
+   "title": "NFSBiH: zrinjski porazen golom iz penala",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-porazen-golom-iz-penala/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-breid-home",
+   "title": "NFSBiH: zrinjski ubjedljiv protiv breidablika",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-ubjedljiv-protiv-breidablika/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-breid-away",
+   "title": "NFSBiH: zrinjski se plasirao u play off uefa evropa lige",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/premijer-liga-bih/zrinjski-se-plasirao-u-play-off-uefa-evropa-lige/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-lask-away",
+   "title": "NFSBiH: zrinjski porazen u linzu",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-porazen-u-linzu/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-lask-home",
+   "title": "NFSBiH: zrinjski takmicenje nastavlja u uefa konferencijskoj ligi",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-takmicenje-nastavlja-u-uefa-konferencijskoj-ligi/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-slovan-home",
+   "title": "NFSBiH: pobjeda zrinjskog protiv slovana",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/pobjeda-zrinjskog-protiv-slovana/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-urartu-home",
+   "title": "NFSBiH: zrinjski se plasirao u drugo pretkolo lige prvaka",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-se-plasirao-u-drugo-pretkolo-lige-prvaka/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-cup-2023",
+   "title": "NFSBiH: hsk zrinjski osvojio kup bih i duplu krunu",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/kup-bih-m/hsk-zrinjski-osvojio-kup-bih-i-duplu-krunu/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-cup-2024",
+   "title": "NFSBiH: hsk zrinjski po treci put osvojio kup bosne i hercegovine",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/kup-bih-m/hsk-zrinjski-po-treci-put-osvojio-kup-bosne-i-hercegovine/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "ns-title-2025",
+   "title": "NFSBiH: hsk zrinjski prvak bosne i hercegovine",
+   "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/hsk-zrinjski-prvak-bosne-i-hercegovine/",
+   "publisher": "NFSBiH",
+   "access": "available",
+   "checkedAt": "2026-10-01"
+  },
+  {
+   "id": "r26-nfs",
+   "title": "NFSBiH news archive",
+   "url": "https://nfsbih.ba/en/news/",
+   "publisher": "Football Association of Bosnia and Herzegovina",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-corr",
+   "title": "Corriere dello Sport live match pages",
+   "url": "https://www.corrieredellosport.it/live/",
+   "publisher": "Corriere dello Sport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-tutto",
+   "title": "Tuttosport live match pages",
+   "url": "https://www.tuttosport.com/live/",
+   "publisher": "Tuttosport",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fotmob",
+   "title": "FotMob match and player pages",
+   "url": "https://www.fotmob.com/",
+   "publisher": "FotMob",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-sky",
+   "title": "Sky Sports Tobol v Zrinjski",
+   "url": "https://www.skysports.com/football/tobol-kostanay-vs-zrinjski-mostar/476262",
+   "publisher": "Sky Sports",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-ontour",
+   "title": "OnTourFootball match reports",
+   "url": "https://www.ontourfootball.com/",
+   "publisher": "OnTourFootball",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-ipn",
+   "title": "IPN Sheriff v Zrinjski",
+   "url": "https://www.ipn.md/en/sheriff-vs-zrinjski-game-to-be-played-at-zimbru-7979_1090729.html",
+   "publisher": "IPN",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-wiki",
+   "title": "Wikipedia: HSK Zrinjski Mostar and UEFA competition pages",
+   "url": "https://en.wikipedia.org/wiki/HŠK_Zrinjski_Mostar",
+   "publisher": "Wikipedia",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-sw",
+   "title": "Soccerway player and match pages",
+   "url": "https://int.soccerway.com/",
+   "publisher": "Soccerway",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-portu",
+   "title": "Portugoal Vitoria v Zrinjski",
+   "url": "https://www.portugoal.net/",
+   "publisher": "Portugoal",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fsgc",
+   "title": "FSGC San Marino federation",
+   "url": "https://www.fsgc.sm/",
+   "publisher": "FSGC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-botev",
+   "title": "Botev Plovdiv official site",
+   "url": "https://botevplovdiv.bg/",
+   "publisher": "Botev Plovdiv",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fussb",
+   "title": "Fussballtransfers match pages",
+   "url": "https://www.fussballtransfers.com/",
+   "publisher": "Fussballtransfers",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fmerc",
+   "title": "Footmercato match pages",
+   "url": "https://www.footmercato.net/",
+   "publisher": "Footmercato",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-fh",
+   "title": "footballhistory.org player pages",
+   "url": "https://www.footballhistory.org/",
+   "publisher": "footballhistory.org",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-club",
+   "title": "HSK Zrinjski official site",
+   "url": "https://hskzrinjski.ba/en/",
+   "publisher": "HSK Zrinjski",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-hajduk",
+   "title": "Hajduk Split official site",
+   "url": "https://hajduk.hr/",
+   "publisher": "Hajduk Split",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "r26-sm",
+   "title": "Sports Mole",
+   "url": "https://www.sportsmole.co.uk/",
+   "publisher": "Sports Mole",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  }
+ ],
+ "archive": [
+  {
+   "id": "az-home",
+   "value": {
+    "name": "Zrinjski 4–3 AZ Alkmaar",
+    "on": "2023-09-21",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-results",
+    "az-report"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-09-30",
+   "approvedAt": "2026-09-30",
+   "approvedBy": "automated:cross-source-review-m1",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+  },
+  {
+   "id": "villa-away",
+   "value": {
+    "name": "Aston Villa 1–0 Zrinjski",
+    "on": "2023-10-05",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-results",
+    "villa-away"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-09-30",
+   "approvedAt": "2026-09-30",
+   "approvedBy": "automated:cross-source-review-m1",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+  },
+  {
+   "id": "villa-home",
+   "value": {
+    "name": "Zrinjski 1–1 Aston Villa",
+    "on": "2023-12-14",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-results",
+    "villa-home"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-09-30",
+   "approvedAt": "2026-09-30",
+   "approvedBy": "automated:cross-source-review-m1",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+  },
+  {
+   "id": "legia-home",
+   "value": {
+    "name": "Zrinjski 1–2 Legia Warszawa",
+    "on": "2023-10-26",
+    "precision": "day",
+    "year": null,
+    "hint": "UEFA Europa Conference League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-results",
+    "ns-legia-home"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Non-sensitive match date, teams, score and competition checked against the cited primary records. Match date is distinct from publication or sidebar dates."
+  },
+  {
+   "id": "legia-away",
+   "value": {
+    "name": "Legia Warszawa 2–0 Zrinjski",
+    "on": "2023-11-09",
+    "precision": "day",
+    "year": null,
+    "hint": "UEFA Europa Conference League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-results",
+    "ns-legia-away"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Non-sensitive match date, teams, score and competition checked against the cited primary records. Match date is distinct from publication or sidebar dates."
+  },
+  {
+   "id": "az-away",
+   "value": {
+    "name": "AZ Alkmaar 1–0 Zrinjski",
+    "on": "2023-11-30",
+    "precision": "day",
+    "year": null,
+    "hint": "UEFA Europa Conference League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-results",
+    "ns-az-away"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Non-sensitive match date, teams, score and competition checked against the cited primary records. Match date is distinct from publication or sidebar dates."
+  },
+  {
+   "id": "breid-home",
+   "value": {
+    "name": "Zrinjski 6–2 Breidablik",
+    "on": "2023-08-10",
+    "precision": "day",
+    "year": null,
+    "hint": "UEFA Europa League qualifying",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-breid-home",
+    "club-europe"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Federation match-day report supplies the exact day and score. The club European season ledger independently confirms the pairing, competition and result. Only these concordant fields are approved; the ledger’s other inconsistent rows are not promoted."
+  },
+  {
+   "id": "breid-away",
+   "value": {
+    "name": "Breidablik 1–0 Zrinjski",
+    "on": "2023-08-17",
+    "precision": "day",
+    "year": null,
+    "hint": "UEFA Europa League qualifying",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-breid-away",
+    "club-europe"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Federation match-day report supplies the exact day and score. The club European season ledger independently confirms the pairing, competition and result. Only these concordant fields are approved; the ledger’s other inconsistent rows are not promoted."
+  },
+  {
+   "id": "lask-away",
+   "value": {
+    "name": "LASK 2–1 Zrinjski",
+    "on": "2023-08-24",
+    "precision": "day",
+    "year": null,
+    "hint": "UEFA Europa League qualifying",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-lask-away",
+    "club-europe"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Federation match-day report supplies the exact day and score. The club European season ledger independently confirms the pairing, competition and result. Only these concordant fields are approved; the ledger’s other inconsistent rows are not promoted."
+  },
+  {
+   "id": "lask-home",
+   "value": {
+    "name": "Zrinjski 1–1 LASK",
+    "on": "2023-08-31",
+    "precision": "day",
+    "year": null,
+    "hint": "UEFA Europa League qualifying",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-lask-home",
+    "club-europe"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Federation match-day report supplies the exact day and score. The club European season ledger independently confirms the pairing, competition and result. Only these concordant fields are approved; the ledger’s other inconsistent rows are not promoted."
+  },
+  {
+   "id": "slovan-home-2022",
+   "value": {
+    "name": "Zrinjski 1–0 Slovan Bratislava",
+    "on": "2022-08-18",
+    "precision": "day",
+    "year": null,
+    "hint": "UEFA Europa Conference League qualifying",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-slovan-home",
+    "club-europe"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Exact day and score from the federation match report; pairing, score and competition corroborated by the club season ledger."
+  },
+  {
+   "id": "cup-final-2023",
+   "value": {
+    "name": "Velež 0–1 Zrinjski · Bosnia and Herzegovina Cup won",
+    "on": "2023-05-17",
+    "precision": "day",
+    "year": null,
+    "hint": "Bosnia and Herzegovina Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-cup-2023",
+    "club-history"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Federation final report confirms the match day, score and trophy; official club trophy ledger confirms the cup won in the same year. No supporter, rivalry or sensitive claim is approved."
+  },
+  {
+   "id": "cup-final-2024",
+   "value": {
+    "name": "Borac 0–1 Zrinjski · Bosnia and Herzegovina Cup retained",
+    "on": "2024-05-23",
+    "precision": "day",
+    "year": null,
+    "hint": "Bosnia and Herzegovina Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-cup-2024",
+    "club-cup-2024"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both primary match reports agree on day, score and the cup being retained. It was the second leg, not a single-match final."
+  },
+  {
+   "id": "league-title-2025",
+   "value": {
+    "name": "Zrinjski 3–0 Igman · league title secured",
+    "on": "2025-05-25",
+    "precision": "day",
+    "year": null,
+    "hint": "Bosnia and Herzegovina Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-title-2025",
+    "club-title-2025"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The two primary match reports agree on day, score and securing the title. Scoring minutes differ (39/40 and 85/86) and are intentionally omitted."
+  },
+  {
+   "id": "league-title-2022",
+   "value": {
+    "name": "Bosnia and Herzegovina league champions · seventh title",
+    "on": null,
+    "precision": "year",
+    "year": 2022,
+    "hint": "Bosnia and Herzegovina Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-history-2022",
+    "club-history"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The federation identifies the 2021/22 champions; club history lists its seventh league title in 2022. Exact clinching day is not asserted."
+  },
+  {
+   "id": "r26-sheriff-home-2022",
+   "value": {
+    "name": "Zrinjski v Sheriff Tiraspol",
+    "on": "2022-07-06",
+    "precision": "day",
+    "hint": "UEFA Champions League first qualifying round, first leg in Mostar",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-ipn",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date from three publishers; score not asserted."
+  },
+  {
+   "id": "r26-sheriff-away-2022",
+   "value": {
+    "name": "Sheriff Tiraspol 1–0 Zrinjski",
+    "on": "2022-07-12",
+    "precision": "day",
+    "hint": "UEFA Champions League first qualifying round, second leg in Chișinău; Sheriff won on aggregate",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-ipn"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Played at Zimbru Stadium; two publishers."
+  },
+  {
+   "id": "r26-tobol-home-2022",
+   "value": {
+    "name": "Zrinjski 1–0 Tobol",
+    "on": "2022-08-04",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League third qualifying round, first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-ontour",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Janković 76'."
+  },
+  {
+   "id": "r26-tobol-away-2022",
+   "value": {
+    "name": "Tobol v Zrinjski",
+    "on": "2022-08-11",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League third qualifying round, second leg in Kostanay",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-sky",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score recorded only by Sky Sports (1-1); name omits score."
+  },
+  {
+   "id": "r26-slovan-away-2022",
+   "value": {
+    "name": "Slovan Bratislava 2–1 Zrinjski",
+    "on": "2022-08-25",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League play-off second leg, after extra time",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-ontour",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Zrinjski eliminated on penalties per NFSBiH."
+  },
+  {
+   "id": "r26-botev-away-2024",
+   "value": {
+    "name": "Botev Plovdiv 2–1 Zrinjski",
+    "on": "2024-08-08",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League third qualifying round, first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-botev"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Date conflict: NFSBiH 8 Aug, Botev site 9 Aug; scorer minute also differs."
+  },
+  {
+   "id": "r26-botev-home-2024",
+   "value": {
+    "name": "Zrinjski 2–0 Botev Plovdiv",
+    "on": "2024-08-15",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League third qualifying round, second leg; Zrinjski won 3–2 on aggregate",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-fotmob",
+    "r26-botev"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Mulahusejnović 39', Kiš 83'."
+  },
+  {
+   "id": "r26-vitoria-away-2024",
+   "value": {
+    "name": "Vitória SC 3–0 Zrinjski",
+    "on": "2024-08-21",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League play-off first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-portu"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Aggregate 7-0 per Portugoal."
+  },
+  {
+   "id": "r26-vitoria-home-2024",
+   "value": {
+    "name": "Zrinjski 0–4 Vitória SC",
+    "on": "2024-08-29",
+    "precision": "day",
+    "hint": "UEFA Europa Conference League play-off second leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-portu"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Aggregate 0-7."
+  },
+  {
+   "id": "r26-virtus-away-2025",
+   "value": {
+    "name": "Virtus 0–2 Zrinjski",
+    "on": "2025-07-08",
+    "precision": "day",
+    "hint": "UEFA Champions League first qualifying round, first leg in San Marino",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-fsgc"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Date conflict: NFSBiH 8 Jul, FSGC 9 Jul."
+  },
+  {
+   "id": "r26-virtus-home-2025",
+   "value": {
+    "name": "Zrinjski 2–1 Virtus",
+    "on": "2025-07-15",
+    "precision": "day",
+    "hint": "UEFA Champions League first qualifying round, second leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Single publisher (NFSBiH)."
+  },
+  {
+   "id": "r26-slovan-away-2025",
+   "value": {
+    "name": "Slovan Bratislava 4–0 Zrinjski",
+    "on": "2025-07-22",
+    "precision": "day",
+    "hint": "UEFA Champions League second qualifying round, first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score also from a betting-odds publisher."
+  },
+  {
+   "id": "r26-slovan-home-2025",
+   "value": {
+    "name": "Zrinjski v Slovan Bratislava",
+    "on": "2025-07-29",
+    "precision": "day",
+    "hint": "UEFA Champions League second qualifying round, second leg; Zrinjski dropped into Europa League qualifying",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score 2-2 per NFSBiH; name omits score."
+  },
+  {
+   "id": "r26-breid-home-2025",
+   "value": {
+    "name": "Zrinjski 1–1 Breidablik",
+    "on": "2025-08-07",
+    "precision": "day",
+    "hint": "UEFA Europa League third qualifying round, first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-tutto"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-breid-away-2025",
+   "value": {
+    "name": "Breidablik 1–2 Zrinjski",
+    "on": "2025-08-14",
+    "precision": "day",
+    "hint": "UEFA Europa League third qualifying round, second leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Bilbija 7', own goal 46', Gunnlaugsson pen 61'."
+  },
+  {
+   "id": "r26-utrecht-home-2025",
+   "value": {
+    "name": "Zrinjski 0–2 Utrecht",
+    "on": "2025-08-21",
+    "precision": "day",
+    "hint": "UEFA Europa League play-off first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-utrecht-away-2025",
+   "value": {
+    "name": "Utrecht 0–0 Zrinjski",
+    "on": "2025-08-28",
+    "precision": "day",
+    "hint": "UEFA Europa League play-off second leg; Utrecht won 2–0 on aggregate",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-fotmob",
+    "r26-corr"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Zrinjski then entered the Conference League."
+  },
+  {
+   "id": "r26-lincoln-home-2025",
+   "value": {
+    "name": "Zrinjski 5–0 Lincoln Red Imps",
+    "on": "2025-10-02",
+    "precision": "day",
+    "hint": "UEFA Conference League league phase",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Bilbija 12', Dujmović 22', Jakovljević 40', Damașcan 69', Mikić 85'."
+  },
+  {
+   "id": "r26-mainz-away-2025",
+   "value": {
+    "name": "Mainz 1–0 Zrinjski",
+    "on": "2025-10-23",
+    "precision": "day",
+    "hint": "UEFA Conference League league phase",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-corr",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Weiper 24'."
+  },
+  {
+   "id": "r26-dynamo-away-2025",
+   "value": {
+    "name": "Dynamo Kyiv 6–0 Zrinjski",
+    "on": "2025-11-06",
+    "precision": "day",
+    "hint": "UEFA Conference League league phase",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-hacken-home-2025",
+   "value": {
+    "name": "Zrinjski 2–1 Häcken",
+    "on": "2025-11-27",
+    "precision": "day",
+    "hint": "UEFA Conference League league phase",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-corr",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Ćuže 78', Bilbija 82'."
+  },
+  {
+   "id": "r26-rakow-away-2025",
+   "value": {
+    "name": "Raków 1–0 Zrinjski",
+    "on": "2025-12-11",
+    "precision": "day",
+    "hint": "UEFA Conference League league phase",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Brunes penalty 45+5'."
+  },
+  {
+   "id": "r26-rapid-home-2025",
+   "value": {
+    "name": "Zrinjski 1–1 Rapid Wien",
+    "on": "2025-12-18",
+    "precision": "day",
+    "hint": "UEFA Conference League league phase final round; Zrinjski finished 23rd and advanced to the play-off",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Schaub 11', Cvetković own goal 90+3'."
+  },
+  {
+   "id": "r26-palace-home-2026",
+   "value": {
+    "name": "Zrinjski 1–1 Crystal Palace",
+    "on": "2026-02-19",
+    "precision": "day",
+    "hint": "UEFA Conference League knockout play-off first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Abramović 55'."
+  },
+  {
+   "id": "r26-palace-away-2026",
+   "value": {
+    "name": "Crystal Palace 2–0 Zrinjski",
+    "on": "2026-02-26",
+    "precision": "day",
+    "hint": "UEFA Conference League knockout play-off second leg; Palace won 3–1 on aggregate",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-title-2016",
+   "value": {
+    "name": "Zrinjski 2–1 Sloboda Tuzla",
+    "on": "2016-05-15",
+    "precision": "day",
+    "hint": "Final league match after the title was secured; 69 points",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Single publisher; second source pending."
+  },
+  {
+   "id": "r26-title-2017",
+   "value": {
+    "name": "Zrinjski 3–0 Sloboda Tuzla",
+    "on": "2017-05-28",
+    "precision": "day",
+    "hint": "League title decider",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-fussb"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Bilbija 11', 42', Mešanović 59'."
+  },
+  {
+   "id": "r26-title-2018",
+   "value": {
+    "name": "Zrinjski 4–0 Krupa",
+    "on": "2018-05-20",
+    "precision": "day",
+    "hint": "Third consecutive league title",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Single publisher; second source pending."
+  },
+  {
+   "id": "r26-title-2022-clinch",
+   "value": {
+    "name": "Zrinjski 4–0 Sarajevo",
+    "on": "2022-04-16",
+    "precision": "day",
+    "hint": "Seventh league title secured with seven rounds left",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-fmerc"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-title-2023",
+   "value": {
+    "name": "Posušje 0–2 Zrinjski",
+    "on": "2023-04-30",
+    "precision": "day",
+    "hint": "Eighth league title secured",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-fussb"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Bilbija 60', 73' pen."
+  },
+  {
+   "id": "r26-cup-final-1st-2024",
+   "value": {
+    "name": "Zrinjski 1–0 Borac",
+    "on": "2024-05-08",
+    "precision": "day",
+    "hint": "Cup final first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only."
+  },
+  {
+   "id": "r26-supercup-2025-may",
+   "value": {
+    "name": "Borac 0–1 Zrinjski",
+    "on": "2025-05-22",
+    "precision": "day",
+    "hint": "Supercup in Zenica",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Bilbija 78'."
+  },
+  {
+   "id": "r26-supercup-2026",
+   "value": {
+    "name": "Zrinjski 0–0 Sarajevo",
+    "on": "2026-03-18",
+    "precision": "day",
+    "hint": "Supercup at Bijeli Brijeg; Zrinjski won 4–1 on penalties",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-cup-final1-2026",
+   "value": {
+    "name": "Zrinjski 1–0 Velež",
+    "on": "2026-05-06",
+    "precision": "day",
+    "hint": "Cup final first leg",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Bilbija 38'."
+  },
+  {
+   "id": "r26-cup-final2-2026",
+   "value": {
+    "name": "Velež 1–1 Zrinjski",
+    "on": "2026-05-13",
+    "precision": "day",
+    "hint": "Cup final second leg; Zrinjski won the cup 2–1 on aggregate",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Bilbija 4', Spahić 90+6'."
+  }
+ ],
+ "players": [
+  {
+   "id": "marko-maric",
+   "value": {
+    "name": "Marko Marić",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2023,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob",
+    "r26-sm"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "dario-canadija",
+   "value": {
+    "name": "Dario Čanađija",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-breid-home"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "andrija-balic",
+   "value": {
+    "name": "Andrija Balić",
+    "positions": [],
+    "fromYear": 2023,
+    "toYear": 2024,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-az-away",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "stipe-radic",
+   "value": {
+    "name": "Stipe Radić",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-legia-away"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "antonio-ivancic",
+   "value": {
+    "name": "Antonio Ivančić",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-breid-home"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "marijo-cuze",
+   "value": {
+    "name": "Marijo Ćuže",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2022,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "slobodan-jakovljevic",
+   "value": {
+    "name": "Slobodan Jakovljević",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2016,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "kerim-memija",
+   "value": {
+    "name": "Kerim Memija",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-legia-away"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "mario-ticinovic",
+   "value": {
+    "name": "Mario Tičinović",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2019,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "nemanja-bilbija",
+   "value": {
+    "name": "Nemanja Bilbija",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2016,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "luka-marin",
+   "value": {
+    "name": "Luka Marin",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-urartu-home"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "damir-zlomislic",
+   "value": {
+    "name": "Damir Zlomislić",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-urartu-home"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "tomislav-kis",
+   "value": {
+    "name": "Tomislav Kiš",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2023,
+    "toYear": 2026,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "matija-malekinusic",
+   "value": {
+    "name": "Matija Malekinušić",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2021,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "aldin-hrvanovic",
+   "value": {
+    "name": "Aldin Hrvanović",
+    "positions": [],
+    "fromYear": 2023,
+    "toYear": 2024,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-urartu-home",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "petar-misic",
+   "value": {
+    "name": "Petar Mišić",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-breid-home"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "filip-bradaric",
+   "value": {
+    "name": "Filip Bradarić",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-legia-away"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "zvonimir-kozulj",
+   "value": {
+    "name": "Zvonimir Kožulj",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2023,
+    "toYear": 2024,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob",
+    "r26-hajduk"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "matej-senic",
+   "value": {
+    "name": "Matej Senić",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-az-full",
+    "ns-urartu-home"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+  },
+  {
+   "id": "goran-karacic",
+   "value": {
+    "name": "Goran Karačić",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2015,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "hrvoje-barisic",
+   "value": {
+    "name": "Hrvoje Barišić",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2013,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "nardin-mulahusejnovic",
+   "value": {
+    "name": "Nardin Mulahusejnović",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2017,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "tarik-ramic",
+   "value": {
+    "name": "Tarik Ramić",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-cup-2024",
+    "club-cup-2024"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
+  },
+  {
+   "id": "toni-sunjic",
+   "value": {
+    "name": "Toni Šunjić",
+    "positions": [],
+    "fromYear": 2024,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-cup-2024",
+    "club-cup-2024",
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
+  },
+  {
+   "id": "marin-magdic",
+   "value": {
+    "name": "Marin Magdić",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2021,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "besart-abdurahimi",
+   "value": {
+    "name": "Besart Abdurahimi",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "ns-cup-2024",
+    "club-cup-2024"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-01",
+   "approvedAt": "2026-10-01",
+   "approvedBy": "automated:cross-source-review-wave-b",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
+  },
+  {
+   "id": "josip-corluka",
+   "value": {
+    "name": "Josip Ćorluka",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2025,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position and years agree across two publishers; replaces earlier pack envelope."
+  },
+  {
+   "id": "r26-daniel-graovac",
+   "value": {
+    "name": "Daniel Graovac",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2012,
+    "toYear": 2016,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia 2012-16; Soccerway departure Aug 2016, loan 2017."
+  },
+  {
+   "id": "r26-stevo-nikolic",
+   "value": {
+    "name": "Stevo Nikolić",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2013,
+    "toYear": 2016,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia from 2013, FotMob from Jan 2014."
+  },
+  {
+   "id": "r26-marin-anicic",
+   "value": {
+    "name": "Marin Aničić",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2014,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia 2007-14, FotMob 2009-13."
+  },
+  {
+   "id": "r26-kresimir-kordic",
+   "value": {
+    "name": "Krešimir Kordić",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2000,
+    "toYear": 2016,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fh",
+    "r26-fotmob"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Several spells; club all-time top scorer (75 goals in 188 apps per Wikipedia and footballhistory.org); FotMob only 2014-16."
+  },
+  {
+   "id": "r26-luka-modric",
+   "value": {
+    "name": "Luka Modrić",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2003,
+    "toYear": 2004,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob",
+    "r26-fh"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Loan spell, three publishers."
+  },
+  {
+   "id": "r26-pero-stojkic",
+   "value": {
+    "name": "Pero Stojkić",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2005,
+    "toYear": 2021,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two stints."
+  },
+  {
+   "id": "r26-tomi-juric",
+   "value": {
+    "name": "Tomi Juric",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-fotmob"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "FotMob joined Jan 2026; Wikipedia stale."
+  },
+  {
+   "id": "r26-karlo-abramovic",
+   "value": {
+    "name": "Karlo Abramović",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2025,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-fotmob",
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "FotMob Feb 2025; scorer vs Crystal Palace per NFSBiH."
+  },
+  {
+   "id": "r26-petar-mamic",
+   "value": {
+    "name": "Petar Mamić",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2024,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-fotmob",
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "FotMob Jul 2024; scorer vs Virtus per NFSBiH."
+  },
+  {
+   "id": "r26-ognjen-todorovic",
+   "value": {
+    "name": "Ognjen Todorović",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2022,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-sw"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia left midfielder 2014-18 and 2020-21; Soccerway forward 2015-22."
+  },
+  {
+   "id": "r26-matija-katanec",
+   "value": {
+    "name": "Matija Katanec",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2018,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only."
+  },
+  {
+   "id": "r26-zoran-rajovic",
+   "value": {
+    "name": "Zoran Rajović",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2004,
+    "toYear": 2008,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only."
+  },
+  {
+   "id": "r26-sulejman-smajic",
+   "value": {
+    "name": "Sulejman Smajić",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2001,
+    "toYear": 2008,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only."
+  },
+  {
+   "id": "r26-velibor-djuric",
+   "value": {
+    "name": "Velibor Đurić",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2005,
+    "toYear": 2015,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only; two spells."
+  },
+  {
+   "id": "r26-vucina-scepanovic",
+   "value": {
+    "name": "Vučina Šćepanović",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2012,
+    "toYear": 2016,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only."
+  },
+  {
+   "id": "r26-igor-melher",
+   "value": {
+    "name": "Igor Melher",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2008,
+    "toYear": 2014,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only."
+  },
+  {
+   "id": "r26-matej-bogdan",
+   "value": {
+    "name": "Matej Bogdan",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-sw"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Years unknown."
+  },
+  {
+   "id": "r26-niko-jankovic",
+   "value": {
+    "name": "Niko Janković",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-ontour"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Scorer in 2022 reports; position and years unverified."
+  },
+  {
+   "id": "r26-ivan-jukic",
+   "value": {
+    "name": "Ivan Jukić",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Scorer 2022; position and years unverified."
+  },
+  {
+   "id": "r26-jasmin-mesanovic",
+   "value": {
+    "name": "Jasmin Mešanović",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Scorer 2017; position and years unverified."
+  },
+  {
+   "id": "r26-haris-handzic",
+   "value": {
+    "name": "Haris Handžić",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Scorer 2018; position and years unverified."
+  },
+  {
+   "id": "r26-marko-bencun",
+   "value": {
+    "name": "Marko Bencun",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Scorer 2018; position and years unverified."
+  },
+  {
+   "id": "r26-duje-dujmovic",
+   "value": {
+    "name": "Duje Dujmović",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Scorer 2025; position and years unverified."
+  },
+  {
+   "id": "r26-leo-mikic",
+   "value": {
+    "name": "Leo Mikić",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-corr"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Scorer 2025; position and years unverified."
+  },
+  {
+   "id": "r26-milos-filipovic",
+   "value": {
+    "name": "Miloš Filipović",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2015,
+    "toYear": 2019,
+    "aliases": [],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia also lists a 2020-21 spell; FotMob 2015-2019."
+  }
+ ],
+ "mysteries": [
+  {
+   "id": "r26-m-bilbija",
+   "playerId": "nemanja-bilbija",
+   "clues": [
     {
-      "id": "uefa-results",
-      "title": "UEFA: all results, 2023/24",
-      "url": "https://www.uefa.com/uefaconferenceleague/news/0285-18e1b615fd5b-6fe5294e3ddd-1000--europa-conference-league-all-the-results/",
-      "publisher": "UEFA",
-      "access": "available",
-      "checkedAt": "2026-09-30"
+     "text": "A forward who scored the only goal of a Supercup win in Zenica.",
+     "sources": [
+      "r26-nfs",
+      "r26-wiki"
+     ]
     },
     {
-      "id": "az-report",
-      "title": "Zrinjski vs AZ match report",
-      "url": "https://balkans.aljazeera.net/news/sports/2023/9/21/zrinjski-u-sjajnoj-utakmici-slavio-historijsku-pobjedu-protiv-az-alkmaara",
-      "publisher": "Al Jazeera",
-      "access": "available",
-      "checkedAt": "2026-09-30"
+     "text": "He scored twice, once from the spot, as his team clinched a league title away in Posušje.",
+     "sources": [
+      "r26-nfs",
+      "r26-fussb"
+     ]
     },
     {
-      "id": "villa-away",
-      "title": "Aston Villa: Unai Emery match wins",
-      "url": "https://www.avfc.co.uk/news/2026/march/13/feature-unai-emery-s-100-villa-wins/",
-      "publisher": "Aston Villa FC",
-      "access": "available",
-      "checkedAt": "2026-09-30"
+     "text": "He opened the scoring in a 5–0 league-phase win over a Gibraltar side.",
+     "sources": [
+      "r26-nfs",
+      "r26-corr"
+     ]
     },
     {
-      "id": "villa-home",
-      "title": "Zrinjski vs Aston Villa match report",
-      "url": "https://www.skysports.com/football/zrinjski-vs-a-villa/499166",
-      "publisher": "Sky Sports",
-      "access": "available",
-      "checkedAt": "2026-09-30"
-    },
-    {
-      "id": "club-europe",
-      "title": "Zrinjski: European results by season",
-      "url": "https://hskzrinjski.ba/zrinjski-u-europi/",
-      "publisher": "HŠK Zrinjski Mostar",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "club-history",
-      "title": "Zrinjski: history and trophy years",
-      "url": "https://hskzrinjski.ba/povijest/",
-      "publisher": "HŠK Zrinjski Mostar",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "uefa-az-full",
-      "title": "UEFA: Zrinjski–AZ full match report, 21 September 2023",
-      "url": "https://www.uefa.com/newsfiles/uefaeuropaconferenceleague/2024/2039291_FR.pdf",
-      "publisher": "UEFA",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "club-cup-2024",
-      "title": "Zrinjski: Borac 0–1 Zrinjski, 23 May 2024",
-      "url": "https://hskzrinjski.ba/en/izvjestaj-fk-borac-01-hsk-zrinjski/",
-      "publisher": "HŠK Zrinjski Mostar",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "club-title-2025",
-      "title": "Zrinjski: ninth league title, 25 May 2025",
-      "url": "https://hskzrinjski.ba/wwin-lige-hsk-zrinjski-deveti-put-prvak-bosne-i-hercegovine/",
-      "publisher": "HŠK Zrinjski Mostar",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-history-2022",
-      "title": "NFSBiH: history of 2022",
-      "url": "https://www.nfsbih.ba/en/about-us/history/history-2022/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-legia-home",
-      "title": "NFSBiH: zrinjski porazen od legije",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-porazen-od-legije/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-legia-away",
-      "title": "NFSBiH: legia po drugi put bolja od zrinjskog",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/legia-po-drugi-put-bolja-od-zrinjskog/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-az-away",
-      "title": "NFSBiH: zrinjski porazen golom iz penala",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-porazen-golom-iz-penala/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-breid-home",
-      "title": "NFSBiH: zrinjski ubjedljiv protiv breidablika",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-ubjedljiv-protiv-breidablika/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-breid-away",
-      "title": "NFSBiH: zrinjski se plasirao u play off uefa evropa lige",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/premijer-liga-bih/zrinjski-se-plasirao-u-play-off-uefa-evropa-lige/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-lask-away",
-      "title": "NFSBiH: zrinjski porazen u linzu",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-porazen-u-linzu/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-lask-home",
-      "title": "NFSBiH: zrinjski takmicenje nastavlja u uefa konferencijskoj ligi",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-takmicenje-nastavlja-u-uefa-konferencijskoj-ligi/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-slovan-home",
-      "title": "NFSBiH: pobjeda zrinjskog protiv slovana",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/pobjeda-zrinjskog-protiv-slovana/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-urartu-home",
-      "title": "NFSBiH: zrinjski se plasirao u drugo pretkolo lige prvaka",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-se-plasirao-u-drugo-pretkolo-lige-prvaka/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-cup-2023",
-      "title": "NFSBiH: hsk zrinjski osvojio kup bih i duplu krunu",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/kup-bih-m/hsk-zrinjski-osvojio-kup-bih-i-duplu-krunu/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-cup-2024",
-      "title": "NFSBiH: hsk zrinjski po treci put osvojio kup bosne i hercegovine",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/kup-bih-m/hsk-zrinjski-po-treci-put-osvojio-kup-bosne-i-hercegovine/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
-    },
-    {
-      "id": "ns-title-2025",
-      "title": "NFSBiH: hsk zrinjski prvak bosne i hercegovine",
-      "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/hsk-zrinjski-prvak-bosne-i-hercegovine/",
-      "publisher": "NFSBiH",
-      "access": "available",
-      "checkedAt": "2026-10-01"
+     "text": "He first joined the club in February 2016 as a forward.",
+     "sources": [
+      "r26-wiki",
+      "r26-sw"
+     ]
     }
-  ],
-  "archive": [
+   ],
+   "sources": [
+    "r26-corr",
+    "r26-fussb",
+    "r26-nfs",
+    "r26-sw",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-m-kordic",
+   "playerId": "kresimir-kordic",
+   "clues": [
     {
-      "id": "az-home",
-      "value": {
-        "name": "Zrinjski 4–3 AZ Alkmaar",
-        "on": "2023-09-21",
-        "precision": "day",
-        "hint": "UEFA Europa Conference League",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-results",
-        "az-report"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-09-30",
-      "approvedAt": "2026-09-30",
-      "approvedBy": "automated:cross-source-review-m1",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+     "text": "A forward with several separate spells at the club.",
+     "sources": [
+      "r26-wiki",
+      "r26-fh"
+     ]
     },
     {
-      "id": "villa-away",
-      "value": {
-        "name": "Aston Villa 1–0 Zrinjski",
-        "on": "2023-10-05",
-        "precision": "day",
-        "hint": "UEFA Europa Conference League",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-results",
-        "villa-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-09-30",
-      "approvedAt": "2026-09-30",
-      "approvedBy": "automated:cross-source-review-m1",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+     "text": "His career total for the club is 75 league goals.",
+     "sources": [
+      "r26-wiki",
+      "r26-fh"
+     ]
     },
     {
-      "id": "villa-home",
-      "value": {
-        "name": "Zrinjski 1–1 Aston Villa",
-        "on": "2023-12-14",
-        "precision": "day",
-        "hint": "UEFA Europa Conference League",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-results",
-        "villa-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-09-30",
-      "approvedAt": "2026-09-30",
-      "approvedBy": "automated:cross-source-review-m1",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Date, teams and score cross-checked between two independent publishers under Bible section 35. No owner approval or culture, rivalry, rights or personal allegation inferred. Match date, not publication date."
+     "text": "He is the club's all-time leading scorer.",
+     "sources": [
+      "r26-wiki",
+      "r26-fh"
+     ]
     },
     {
-      "id": "legia-home",
-      "value": {
-        "name": "Zrinjski 1–2 Legia Warszawa",
-        "on": "2023-10-26",
-        "precision": "day",
-        "year": null,
-        "hint": "UEFA Europa Conference League",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-results",
-        "ns-legia-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Non-sensitive match date, teams, score and competition checked against the cited primary records. Match date is distinct from publication or sidebar dates."
-    },
-    {
-      "id": "legia-away",
-      "value": {
-        "name": "Legia Warszawa 2–0 Zrinjski",
-        "on": "2023-11-09",
-        "precision": "day",
-        "year": null,
-        "hint": "UEFA Europa Conference League",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-results",
-        "ns-legia-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Non-sensitive match date, teams, score and competition checked against the cited primary records. Match date is distinct from publication or sidebar dates."
-    },
-    {
-      "id": "az-away",
-      "value": {
-        "name": "AZ Alkmaar 1–0 Zrinjski",
-        "on": "2023-11-30",
-        "precision": "day",
-        "year": null,
-        "hint": "UEFA Europa Conference League",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-results",
-        "ns-az-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Non-sensitive match date, teams, score and competition checked against the cited primary records. Match date is distinct from publication or sidebar dates."
-    },
-    {
-      "id": "breid-home",
-      "value": {
-        "name": "Zrinjski 6–2 Breidablik",
-        "on": "2023-08-10",
-        "precision": "day",
-        "year": null,
-        "hint": "UEFA Europa League qualifying",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-breid-home",
-        "club-europe"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Federation match-day report supplies the exact day and score. The club European season ledger independently confirms the pairing, competition and result. Only these concordant fields are approved; the ledger’s other inconsistent rows are not promoted."
-    },
-    {
-      "id": "breid-away",
-      "value": {
-        "name": "Breidablik 1–0 Zrinjski",
-        "on": "2023-08-17",
-        "precision": "day",
-        "year": null,
-        "hint": "UEFA Europa League qualifying",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-breid-away",
-        "club-europe"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Federation match-day report supplies the exact day and score. The club European season ledger independently confirms the pairing, competition and result. Only these concordant fields are approved; the ledger’s other inconsistent rows are not promoted."
-    },
-    {
-      "id": "lask-away",
-      "value": {
-        "name": "LASK 2–1 Zrinjski",
-        "on": "2023-08-24",
-        "precision": "day",
-        "year": null,
-        "hint": "UEFA Europa League qualifying",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-lask-away",
-        "club-europe"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Federation match-day report supplies the exact day and score. The club European season ledger independently confirms the pairing, competition and result. Only these concordant fields are approved; the ledger’s other inconsistent rows are not promoted."
-    },
-    {
-      "id": "lask-home",
-      "value": {
-        "name": "Zrinjski 1–1 LASK",
-        "on": "2023-08-31",
-        "precision": "day",
-        "year": null,
-        "hint": "UEFA Europa League qualifying",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-lask-home",
-        "club-europe"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Federation match-day report supplies the exact day and score. The club European season ledger independently confirms the pairing, competition and result. Only these concordant fields are approved; the ledger’s other inconsistent rows are not promoted."
-    },
-    {
-      "id": "slovan-home-2022",
-      "value": {
-        "name": "Zrinjski 1–0 Slovan Bratislava",
-        "on": "2022-08-18",
-        "precision": "day",
-        "year": null,
-        "hint": "UEFA Europa Conference League qualifying",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-slovan-home",
-        "club-europe"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Exact day and score from the federation match report; pairing, score and competition corroborated by the club season ledger."
-    },
-    {
-      "id": "cup-final-2023",
-      "value": {
-        "name": "Velež 0–1 Zrinjski · Bosnia and Herzegovina Cup won",
-        "on": "2023-05-17",
-        "precision": "day",
-        "year": null,
-        "hint": "Bosnia and Herzegovina Cup",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2023",
-        "club-history"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Federation final report confirms the match day, score and trophy; official club trophy ledger confirms the cup won in the same year. No supporter, rivalry or sensitive claim is approved."
-    },
-    {
-      "id": "cup-final-2024",
-      "value": {
-        "name": "Borac 0–1 Zrinjski · Bosnia and Herzegovina Cup retained",
-        "on": "2024-05-23",
-        "precision": "day",
-        "year": null,
-        "hint": "Bosnia and Herzegovina Cup",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Both primary match reports agree on day, score and the cup being retained. It was the second leg, not a single-match final."
-    },
-    {
-      "id": "league-title-2025",
-      "value": {
-        "name": "Zrinjski 3–0 Igman · league title secured",
-        "on": "2025-05-25",
-        "precision": "day",
-        "year": null,
-        "hint": "Bosnia and Herzegovina Premier League",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-title-2025",
-        "club-title-2025"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "The two primary match reports agree on day, score and securing the title. Scoring minutes differ (39/40 and 85/86) and are intentionally omitted."
-    },
-    {
-      "id": "league-title-2022",
-      "value": {
-        "name": "Bosnia and Herzegovina league champions · seventh title",
-        "on": null,
-        "precision": "year",
-        "year": 2022,
-        "hint": "Bosnia and Herzegovina Premier League",
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-history-2022",
-        "club-history"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "The federation identifies the 2021/22 champions; club history lists its seventh league title in 2022. Exact clinching day is not asserted."
+     "text": "He played in 188 matches for the club.",
+     "sources": [
+      "r26-wiki",
+      "r26-fh"
+     ]
     }
-  ],
-  "players": [
+   ],
+   "sources": [
+    "r26-fh",
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Conflicting year range between sources."
+  },
+  {
+   "id": "r26-m-kozulj",
+   "playerId": "zvonimir-kozulj",
+   "clues": [
     {
-      "id": "marko-maric",
-      "value": {
-        "name": "Marko Marić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-breid-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+     "text": "A midfielder at the club for the 2023–24 season.",
+     "sources": [
+      "r26-wiki",
+      "r26-fotmob"
+     ]
     },
     {
-      "id": "dario-canadija",
-      "value": {
-        "name": "Dario Čanađija",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-breid-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+     "text": "He played in the Conference League group against a Dutch side.",
+     "sources": [
+      "r26-wiki",
+      "r26-fotmob"
+     ]
     },
     {
-      "id": "andrija-balic",
-      "value": {
-        "name": "Andrija Balić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-az-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
+     "text": "His career also includes a club from Split.",
+     "sources": [
+      "r26-wiki",
+      "r26-hajduk"
+     ]
     },
     {
-      "id": "stipe-radic",
-      "value": {
-        "name": "Stipe Radić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-legia-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "antonio-ivancic",
-      "value": {
-        "name": "Antonio Ivančić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-breid-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "marijo-cuze",
-      "value": {
-        "name": "Marijo Ćuže",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-legia-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "slobodan-jakovljevic",
-      "value": {
-        "name": "Slobodan Jakovljević",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-legia-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "kerim-memija",
-      "value": {
-        "name": "Kerim Memija",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-legia-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "mario-ticinovic",
-      "value": {
-        "name": "Mario Tičinović",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-breid-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "nemanja-bilbija",
-      "value": {
-        "name": "Nemanja Bilbija",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-breid-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "luka-marin",
-      "value": {
-        "name": "Luka Marin",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-urartu-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "damir-zlomislic",
-      "value": {
-        "name": "Damir Zlomislić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-urartu-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "tomislav-kis",
-      "value": {
-        "name": "Tomislav Kiš",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-urartu-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "matija-malekinusic",
-      "value": {
-        "name": "Matija Malekinušić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-breid-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "aldin-hrvanovic",
-      "value": {
-        "name": "Aldin Hrvanović",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-urartu-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "petar-misic",
-      "value": {
-        "name": "Petar Mišić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-breid-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "filip-bradaric",
-      "value": {
-        "name": "Filip Bradarić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-legia-away"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "zvonimir-kozulj",
-      "value": {
-        "name": "Zvonimir Kožulj",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-urartu-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "matej-senic",
-      "value": {
-        "name": "Matej Senić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "uefa-az-full",
-        "ns-urartu-home"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in the UEFA Zrinjski–AZ matchday squad, 21 September 2023, and independently named in the cited federation match roster in 2023. This confirms identity and club membership in those observations, not an uninterrupted career range. Positions and career years remain undocumented."
-    },
-    {
-      "id": "goran-karacic",
-      "value": {
-        "name": "Goran Karačić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
-    },
-    {
-      "id": "hrvoje-barisic",
-      "value": {
-        "name": "Hrvoje Barišić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
-    },
-    {
-      "id": "nardin-mulahusejnovic",
-      "value": {
-        "name": "Nardin Mulahusejnović",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
-    },
-    {
-      "id": "tarik-ramic",
-      "value": {
-        "name": "Tarik Ramić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
-    },
-    {
-      "id": "toni-sunjic",
-      "value": {
-        "name": "Toni Šunjić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
-    },
-    {
-      "id": "marin-magdic",
-      "value": {
-        "name": "Marin Magdić",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
-    },
-    {
-      "id": "besart-abdurahimi",
-      "value": {
-        "name": "Besart Abdurahimi",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
-    },
-    {
-      "id": "josip-corluka",
-      "value": {
-        "name": "Josip Ćorluka",
-        "positions": [],
-        "fromYear": null,
-        "toYear": null,
-        "aliases": [],
-        "sport": "football",
-        "sensitive": false
-      },
-      "sources": [
-        "ns-cup-2024",
-        "club-cup-2024"
-      ],
-      "confidence": 3,
-      "status": "approved",
-      "researchedAt": "2026-10-01",
-      "approvedAt": "2026-10-01",
-      "approvedBy": "automated:cross-source-review-wave-b",
-      "parserCertainty": "high",
-      "conflictFree": true,
-      "notes": "Documented in both independent primary lineups for Borac–Zrinjski, 23 May 2024 (including used substitutes). Club membership is confirmed for this observation; full career range and permanent position remain undocumented."
+     "text": "He left after one season.",
+     "sources": [
+      "r26-wiki",
+      "r26-fotmob"
+     ]
     }
-  ]
+   ],
+   "sources": [
+    "r26-fotmob",
+    "r26-hajduk",
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Clue coverage thin; review."
+  }
+ ],
+ "stadiums": [
+  {
+   "id": "r26-bijeli-brijeg",
+   "value": {
+    "name": "Stadion pod Bijelim Brijegom",
+    "city": "Mostar",
+    "opened": 1958,
+    "capacity": null,
+    "sport": "football"
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-club"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Opening 1958 from two sources; capacity conflicts (7,255 / 9,000 / 4,875+2,380) so left null."
+  }
+ ],
+ "trophies": [
+  {
+   "id": "r26-league-titles",
+   "value": {
+    "name": "Premier League of Bosnia and Herzegovina",
+    "count": 9,
+    "seasons": [
+     "2004–05",
+     "2008–09",
+     "2013–14",
+     "2015–16",
+     "2016–17",
+     "2017–18",
+     "2021–22",
+     "2022–23",
+     "2024–25"
+    ]
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-cup-wins",
+   "value": {
+    "name": "Bosnia and Herzegovina Cup",
+    "count": 4,
+    "seasons": [
+     "2007–08",
+     "2022–23",
+     "2023–24",
+     "2025–26"
+    ]
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "NFSBiH calls 2026 the fourth cup."
+  },
+  {
+   "id": "r26-supercup-wins",
+   "value": {
+    "name": "Bosnia and Herzegovina Supercup",
+    "count": 2,
+    "seasons": [
+     "2024",
+     "2025"
+    ]
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  }
+ ],
+ "competitions": [
+  {
+   "id": "r26-bih-premier",
+   "value": {
+    "name": "Premier League of Bosnia and Herzegovina",
+    "level": 1
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only."
+  },
+  {
+   "id": "r26-bih-cup",
+   "value": {
+    "name": "Bosnia and Herzegovina Cup",
+    "level": null
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  }
+ ],
+ "seasons": [
+  {
+   "id": "r26-s-2025-26",
+   "value": {
+    "season": "2025–26",
+    "finish": "2nd"
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-nfs"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "League finish from Wikipedia; UECL league phase 23rd, then knockout play-off lost to Crystal Palace."
+  },
+  {
+   "id": "r26-s-2024-25",
+   "value": {
+    "season": "2024–25",
+    "finish": "1st"
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-fotmob"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-s-2023-24",
+   "value": {
+    "season": "2023–24",
+    "finish": "2nd"
+   },
+   "sources": [
+    "r26-wiki"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-10-06",
+   "notes": "Wikipedia only."
+  },
+  {
+   "id": "r26-s-2022-23",
+   "value": {
+    "season": "2022–23",
+    "finish": "1st"
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "78 points, Borac 58 per RSSSF."
+  },
+  {
+   "id": "r26-s-2021-22",
+   "value": {
+    "season": "2021–22",
+    "finish": "1st"
+   },
+   "sources": [
+    "r26-wiki",
+    "r26-nfs"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-s-2017-18",
+   "value": {
+    "season": "2017–18",
+    "finish": "1st"
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  },
+  {
+   "id": "r26-s-2016-17",
+   "value": {
+    "season": "2016–17",
+    "finish": "1st"
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "64 points vs Željezničar 63."
+  },
+  {
+   "id": "r26-s-2015-16",
+   "value": {
+    "season": "2015–16",
+    "finish": "1st"
+   },
+   "sources": [
+    "r26-nfs",
+    "r26-wiki"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-06",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-zrinjski",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "69 points."
+  }
+ ]
 }
