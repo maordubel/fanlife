@@ -26,7 +26,7 @@ type PlaySpot = {id: string; x: number; z: number; y?: number}
 type PlayExit = {id: string; x: number; z: number; w: number; d: number; dir: string; locked: boolean}
 export type PlayPeople = {actors: PlayActor[]; spots: PlaySpot[]; exits: PlayExit[]; player: Look}
 export type PlayConfig = PlayPeople & {
-  room: string; club: string; time: 'day' | 'night'; floorY: number; walk: [number, number, number, number]; viewH?: number; surface: string; reveal?: boolean
+  room: string; club: string; time: 'day' | 'night'; floorY: number; walk: [number, number, number, number]; viewH?: number; surface: string; reveal?: boolean; weather?: 'rain' | null; mood?: string
   spawn: {x: number; z: number; yaw?: number}; frame: {top: number; bottom: number}; blocks?: number[][]; clear?: number[][]; frozen?: boolean
 }
 
@@ -40,6 +40,7 @@ export type PlayRuntime = {
   freeze(on: boolean): void
   focus(id: string | null): void
   emote(mood: string | null, hold?: number): void
+  project(kind: 'actor' | 'spot' | 'exit', id: string): {x: number; y: number} | null
   frame(f: {top: number; bottom: number}): void
   where(): {room: string; x: number; z: number; target: PlayTarget; frozen: boolean; moving: boolean} | null
 }

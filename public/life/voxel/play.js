@@ -164,7 +164,7 @@ function enter(c){
  var st=V.st;st.club=c.club&&V.SK[c.club]?c.club:st.club;st.scene=c.room;st.time=c.time==='night'?'night':'day';st.play=true;
  var stage=document.getElementById('stage');if(stage)stage.className='stage '+st.time;
  var f=c.frame||{};V.view.mode='follow';V.view.top=f.top==null?.86:f.top;V.view.bottom=f.bottom==null?-.8:f.bottom;V.view.side=.96;V.view.viewH=c.viewH||null;V.view.zoom=1;V.view.lift=2;
- if(c.reveal)V.reveal();
+ if(c.reveal)V.reveal();V.weather(c.weather||null);V.setMood(c.mood||'normal');
  V.rebuild();
  var sp=c.spawn||{x:(c.walk[0]+c.walk[2])/2,z:(c.walk[1]+c.walk[3])/2,yaw:0};
  (c.actors||[]).forEach(function(a){addActor(a,sp)});
@@ -321,6 +321,7 @@ var P=window.__vxPlay={
  tap:tap,walkTo:walkTo,goTo:goTo,
  freeze:function(b){frozen=!!b;if(frozen){axis.x=axis.y=0;path=null;pending=null}else{graceUntil=now+.35;retarget(true)}},
  emote:function(k,h){V.emote(k,h)},
+ project:function(kind,id){var b=null,y=0;if(kind==='actor'){b=actors[id];if(b)y=(cfg.floorY||0)+(b.sit?(b.seat||1.6):0)+b.h*(b.sit?.78:1.05)+.9}else if(kind==='spot'){for(var i=0;i<spots.length;i++)if(spots[i].id===id){b=spots[i];y=(cfg.floorY||0)+(b.y==null?2.6:b.y)+.5}}else if(kind==='exit'){var x=exitOf(id);if(x){b={x:x.def.x+x.def.w/2,z:x.def.z+x.def.d/2};y=(cfg.floorY||0)+3.2}}return b?V.screenOf(b.x,y,b.z):null},
  focus:function(id){focusId=id||null;if(id)faceEachOther(id)},
  mark:function(kind,id,on){marks.forEach(function(m){if(m.kind===kind&&m.id===id)m.on=!!on});retarget(true)},
  lock:function(id,locked){var x=exitOf(id);if(x){x.locked=!!locked;retarget(true)}},

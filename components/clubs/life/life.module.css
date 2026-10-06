@@ -314,3 +314,29 @@
 /* ───── the map: a newly found district lifts its fog, then settles ───── */
 .mapNew { fill: none; stroke: var(--l-mark); stroke-width: .7; pointer-events: none; }
 .mapNewTag { fill: var(--l-mark); font: 700 2.4px var(--font-courier), monospace; letter-spacing: .1em; pointer-events: none; }
+
+/* ───── the name balloon: hangs over whoever he is facing, tail down to them ───── */
+.act[data-float='true'] { inset-inline-end: auto; inset-inline-start: 0; inset-block-start: 0; inset-block-end: auto; max-inline-size: min(70vw, 18rem); border-width: 2px; box-shadow: 3px 3px 0 var(--l-ink); animation: balloonIn .22s cubic-bezier(.2, 1.4, .4, 1) both; will-change: transform; }
+.act[data-float='true']::after { content: ''; position: absolute; inset-block-end: -11px; inset-inline-start: calc(50% + var(--tail, 0px) - 8px); inline-size: 16px; block-size: 11px; background: var(--l-ink); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+.act[data-float='true']::before { content: ''; position: absolute; inset-block-end: -8px; inset-inline-start: calc(50% + var(--tail, 0px) - 6px); inline-size: 12px; block-size: 9px; background: var(--l-paper); clip-path: polygon(0 0, 100% 0, 50% 100%); z-index: 1; }
+.act[data-float='true'] .actName { font-size: 1rem; }
+.act:active { filter: brightness(.94); }
+@keyframes balloonIn { from { opacity: 0; scale: .8; } }
+
+/* ───── the speech box points at the speaker; its lines are set letter by letter; answers arrive one after another ───── */
+.sheet[data-tail='on']::after { content: ''; position: absolute; inset-block-start: 0; inset-inline-start: calc(var(--tail, .5) * 100% - 11px); inline-size: 22px; block-size: 13px; background: var(--l-prime); clip-path: polygon(0 0, 100% 0, 50% 100%); pointer-events: none; }
+.sheet[data-tail='on'] .speaker { transform: translateY(2px); }
+.choices li { animation: choiceIn .32s cubic-bezier(.2, 1.2, .4, 1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+.choice { transition: transform .1s, box-shadow .1s, background .1s; }
+.choice:active { transform: translate(2px, 2px); box-shadow: none; }
+.more { transition: transform .1s; }
+.more:active { transform: translate(2px, 2px); }
+.more > span { display: inline-block; animation: nudge 1.1s ease-in-out infinite; }
+@keyframes choiceIn { from { opacity: 0; transform: translateY(8px) scale(.97); } }
+@keyframes nudge { 50% { transform: translateX(3px); } }
+@media (prefers-reduced-motion: reduce) { .choices li, .more > span, .act[data-float='true'] { animation: none; } }
+
+/* ───── the walk across the map ───── */
+.mapTripBase { fill: none; stroke: var(--l-ink); stroke-width: 2; opacity: .3; stroke-linejoin: round; pointer-events: none; }
+.mapTrip { fill: none; stroke: var(--l-mark); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; pointer-events: none; }
+.mapTripDot { fill: var(--l-paper); stroke: var(--l-mark); stroke-width: .8; pointer-events: none; }
