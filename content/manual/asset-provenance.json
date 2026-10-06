@@ -2292,20 +2292,19 @@
    "origin": "maor-upload",
    "folder": "public/brand/gates",
    "match": [
-    "*.webp"
+    "*.webp",
+    "*.png"
    ],
    "sourceUrl": null,
    "sourceTitle": "ידע אישי — צוות The Worker, 29.9.2026 (סמל פרה עיוורת, סמל רויאל ראמבל)",
    "treatment": [
     "de-yellow",
     "encode-webp",
-    "encode-webp-lossless",
     "key-flat",
-    "resize",
-    "yellow-clean"
+    "resize"
    ],
    "confidence": 2,
-   "noteHe": "שני הסמלים של שערים 9 ו-10, ציור של הבעלים על רקע שחור. הוקטנו ל-1200px, נוקו מצהוב, והרקע השחור הוסר לשקיפות אמיתית (RGBA), וקודדו WebP חסר אובדן — הצהוב נמדד על הפענוח (0 פיקסלים, lib/isYellow.ts). מוצגים בתוך שערים 9 ו-10 בלבד."
+   "noteHe": "שני הסמלים של שערים 9 ו-10, ציור של הבעלים על רקע שחור. הוקטנו ל-1200px, נוקו מצהוב, והרקע השחור הוסר לשקיפות אמיתית (RGBA), וקודדו WebP חסר אובדן — הצהוב נמדד על הפענוח (0 פיקסלים, lib/isYellow.ts). מוצגים בתוך שערים 9 ו-10 בלבד. קובצי ה-PNG הם התאומים של אותם שני סמלים לכרטיסי השיתוף, כי satori לא קורא WebP (נוספו ב-30.9.2026)."
   },
   {
    "key": "life-transitions-2026-09-30",
@@ -2331,6 +2330,24 @@
    ],
    "confidence": 1,
    "noteHe": "שמונה סרטוני מעבר לשלב א'. צהוב נמדד על הפריימים המפוענחים (0), הקידוד VP9 חסר אובדן כדי שהפענוח לא ימציא צהוב. מי יצר אותם נמסר בעל פה, ולכן הביטחון 1."
+  },
+  {
+   "key": "life-transitions-mp4-2026-10-01",
+   "kind": "video",
+   "origin": "maor-upload",
+   "folder": "public/life/transitions",
+   "match": [
+    "*.mp4"
+   ],
+   "sourceUrl": null,
+   "sourceTitle": "סרטוני מעבר של מאור, נמסרו לפרויקט ב-30.9.2026",
+   "treatment": [
+    "de-yellow-frame-level",
+    "encode-mp4",
+    "downscale-270x480"
+   ],
+   "confidence": 1,
+   "noteHe": "התאומים ב-h.264 של שמונת סרטוני המעבר (1.10.2026), כי iOS ומובייל לא מנגנים VP9 חסר אובדן. הצהוב נמדד על הפריימים המפוענחים (0). אותו מקור ואותו ביטחון כמו קובצי ה-WebM."
   },
   {
    "key": "fan-life-import-unresolved-art",
@@ -2403,6 +2420,24 @@
    ],
    "confidence": 0,
    "noteHe": "Imported unchanged from The Worker revision 0adf546. Original creator and provenance are undocumented; this records the gap and does not establish ownership or permission."
+  },
+  {
+   "key": "life-minigame-scene-backdrops-2026-09-30",
+   "kind": "backdrop",
+   "origin": "maor-upload",
+   "folder": "public/life/art",
+   "match": [
+    "life-scene-penalties-backdrop-01.webp",
+    "life-scene-hoops-backdrop-01.webp"
+   ],
+   "sourceUrl": null,
+   "sourceTitle": "חיתוכים מציורי הרקע alley.webp ו-hoop-building.webp שכבר בתיקייה",
+   "treatment": [
+    "crop",
+    "de-yellow"
+   ],
+   "confidence": 2,
+   "noteHe": "רקעי משחקי הפנדלים והסלים (30.9.2026): חיתוך מהסמטה ביפו ומקיר חצר בית הספר, נבנו ב-scripts/life/cut-minigame-scenes-2026-09-30.py. הצהוב נמדד 0. נגזרות של ציורים שהמקור שלהם כבר רשום."
   }
  ]
 }

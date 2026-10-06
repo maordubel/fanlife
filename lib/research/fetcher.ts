@@ -12,7 +12,7 @@ import type {SnapshotMeta,SourceProfile} from './contract'
 export const USER_AGENT='FanLifeResearch/1.0 (+https://fanlife.dubelteam.com; no AI; respects robots.txt)'
 export type FetchLike=(url:string,init:{headers:Record<string,string>;redirect:'manual';signal:AbortSignal})=>Promise<{status:number;headers:{get(n:string):string|null};arrayBuffer():Promise<ArrayBuffer>;text():Promise<string>}>
 export type FetchOutcome=
- |{kind:'fetched';meta:SnapshotMeta;body:Buffer}
+ |{kind:'fetched';meta:SnapshotMeta;body:Buffer;/** listing headers some APIs return (WordPress: x-wp-total / x-wp-totalpages) */paging?:{total:number|null;totalPages:number|null}}
  |{kind:'unchanged';meta:Pick<SnapshotMeta,'url'|'fetchedAt'|'status'>}
  |{kind:'refused';status:number;reason:string}
  |{kind:'retry';afterMs:number;reason:string}
@@ -50,7 +50,8 @@ export async function politeFetch(url:string,src:SourceProfile,prior:Pick<Snapsh
  if(r.status!==200)return {kind:'retry',afterMs:600000,reason:`HTTP ${r.status}`}
  const len=Number(r.headers.get('content-length'));if(Number.isFinite(len)&&len>src.rate.maxBytes)return {kind:'refused',status:200,reason:'Body larger than the source budget'}
  const body=Buffer.from(await r.arrayBuffer());if(body.length>src.rate.maxBytes)return {kind:'refused',status:200,reason:'Body larger than the source budget'}
- return {kind:'fetched',body,meta:{hash:createHash('sha256').update(body).digest('hex'),url,fetchedAt,status:200,contentType:r.headers.get('content-type'),bytes:body.length,etag:r.headers.get('etag'),lastModified:r.headers.get('last-modified')}}
+ const int=(n:string)=>{const v=r.headers.get(n);if(v===null)return null;const x=Number(v);return Number.isInteger(x)&&x>=0?x:null}
+ return {kind:'fetched',body,paging:{total:int('x-wp-total'),totalPages:int('x-wp-totalpages')},meta:{hash:createHash('sha256').update(body).digest('hex'),url,fetchedAt,status:200,contentType:r.headers.get('content-type'),bytes:body.length,etag:r.headers.get('etag'),lastModified:r.headers.get('last-modified')}}
 }
 /** test hook — clears the per-process robots and rate caches */
 export function resetFetcherState(){robotsCache.clear();lastHit.clear()}

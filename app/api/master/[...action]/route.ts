@@ -7,9 +7,12 @@ import {checkUpstream} from '@/lib/master/upstream'
 import {clubSummary,allSummaries} from '@/lib/master/summary'
 import {ADAPTER_LIST} from '@/lib/master/adapters'
 import {validateDisplay,saveDraft,publish,revert,reset,changedKeys,emptyDisplay} from '@/lib/master/lifeDisplay'
-import {readRuns,planClub} from '@/lib/research/service'
+import {readRuns,planClub,collectClub} from '@/lib/research/service'
 import {runWorker} from '@/lib/research/worker'
 import {loadProfile} from '@/lib/research/bundle'
+import {loadClubProfile,validateArchiveSource,saveArchiveSource,removeArchiveSource,ensureProfile} from '@/lib/research/profiles'
+import {exportArchiveStaging} from '@/lib/research/staging'
+import {runPipeline,recordPipeline,lastPipelineRuns,AUTOMATION_ACTOR} from '@/lib/master/automation'
 import type {Club} from '@/lib/master/types'
 export const dynamic='force-dynamic'
 export const maxDuration=60
@@ -17,8 +20,10 @@ const json=(data:unknown,status=200)=>NextResponse.json(data,{status,headers:{'C
 const PAGE=25
 class Conflict extends Error{}
 export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try{requireOpenEvaluation();const a=params.action.join('/'),q=r.nextUrl.searchParams
- // the scheduler also gives every profiled club one small, polite fetch batch — no click needed, never more than 3 pages each
- if(a==='cron'){if(!cronAuthorized(r))return json({error:'Invalid scheduler authorization'},401);const research=await runResearch();const fetch=[];for(const row of await readRuns()){const p=row.hasProfile?loadProfile(row.clubId):null;if(p&&(row.states.planned||row.states.failed))fetch.push(await runWorker(p,{max:3}))}return json({research,fetch})}
+ // the scheduler runs the whole autopilot: collect → stage → bring in (unreviewed) → fetch planned pages → process jobs
+ if(a==='cron'){if(!cronAuthorized(r))return json({error:'Invalid scheduler authorization'},401);const report=await runPipeline();await recordPipeline(report,AUTOMATION_ACTOR);return json(report)}
+ if(a==='pipeline/runs')return json(await lastPipelineRuns(10))
+ if(a==='archive/profile'){const p=await loadClubProfile(slug(q.get('club')));return p?json(p):json({error:'No research profile for this club.'},404)}
  if(a==='state')return json(await readState())
  if(a==='summary')return json(await allSummaries(await readState()))
  if(a==='adapters')return json(ADAPTER_LIST)
@@ -31,7 +36,16 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  if(a==='export')return new NextResponse(JSON.stringify(await readState(),null,2),{headers:{'Content-Type':'application/json','Content-Disposition':'attachment; filename="fan-life-control.json"','Cache-Control':'no-store'}})
  return json({error:'Not found'},404)}catch(e){return json({error:e instanceof Error?e.message:'Operation failed'},400)}}
 export async function POST(r:NextRequest,{params}:{params:{action:string[]}}){try{requireOpenEvaluation();sameOrigin(r);const a=params.action.join('/');if(a==='upstream/check')return json(await checkUpstream());if(a==='research/run')return json(await runResearch());const raw=await r.text();if(raw.length>250000)throw new Error('Request too large.');const b=raw?JSON.parse(raw):{}
-if(a==='clubs/create')return json(await mutate(s=>{const id=slug(b.id);if(s.clubs.some(c=>c.id===id))throw new Error('Club already exists.');if(s.clubs.length>=100)throw new Error('Registry limit reached.');const c:Club={id,name:text(b.name,'Name'),city:text(b.city,'City'),country:text(b.country,'Country'),initials:text(b.initials,'Initials',4),primary:color(b.primary),secondary:color(b.secondary),status:'research',version:1,gates:[],sources:[],findings:[],gaps:['Research file created. Engine connection missing: register the club and build a first pack.']};s.clubs.push(c);audit(s,'club.created',id,'Research file only — no registry entry or data provider yet.');return c}),201);
+if(a==='clubs/create'){const created=await mutate(s=>{const id=slug(b.id);if(s.clubs.some(c=>c.id===id))throw new Error('Club already exists.');if(s.clubs.length>=100)throw new Error('Registry limit reached.');const c:Club={id,name:text(b.name,'Name'),city:text(b.city,'City'),country:text(b.country,'Country'),initials:text(b.initials,'Initials',4),primary:color(b.primary),secondary:color(b.secondary),status:'research',version:1,gates:[],sources:[],findings:[],gaps:['Research file created. Engine connection missing: register the club and build a first pack.']};s.clubs.push(c);audit(s,'club.created',id,'Research file only — no registry entry or data provider yet.');return c});await ensureProfile(created.id);return json(created,201)}
+// one bounded archive pass + staging export, from the Data tab
+if(a==='archive/collect'){const id=slug(b.clubId),max=Math.min(20,Math.max(1,Number(b.maxRequests)||5)),out=await collectClub(id,{providerId:typeof b.providerId==='string'&&b.providerId?b.providerId:undefined,maxRequests:max});await mutate(s=>{audit(s,'archive.collected',id,`${out.run.providers.join(', ')} · ${out.run.state} · ${out.run.counts.requests} requests · ${out.run.counts.documentsRead} documents (${out.run.counts.newDocuments} new, ${out.run.counts.changedDocuments} changed) · ${out.run.counts.recordsExtracted} records extracted`);return true});return json(out)}
+if(a==='archive/export'){const id=slug(b.clubId),p=await loadClubProfile(id);if(!p)throw new Error('No research profile for this club.');return json(await exportArchiveStaging(id,p.archive))}
+if(a==='archive/source/save'){const id=slug(b.clubId),v=validateArchiveSource(b.source);if(!v.ok)throw new Error(`Source rejected: ${v.errors.join('; ')}`);await saveArchiveSource(id,v.value);await mutate(s=>{audit(s,'archive.source.saved',id,`${v.value.providerId} · ${v.value.reader} · ${v.value.origin}`,{after:JSON.stringify(v.value)});return true});return json(await loadClubProfile(id))}
+if(a==='archive/source/remove'){const id=slug(b.clubId),pid=slug(b.providerId);await removeArchiveSource(id,pid);await mutate(s=>{audit(s,'archive.source.removed',id,pid);return true});return json(await loadClubProfile(id))}
+if(a==='pipeline/run'){const clubs=b.clubId?[slug(b.clubId)]:undefined,report=await runPipeline({clubs,maxRequestsPerClub:6});await recordPipeline(report,'evaluator:open-evaluation');return json(report)}
+// publish every gate whose COMPILED data is playable, in one click — still passes the activation check, still the owner's click
+if(a==='clubs/open-playable'){const pre=(await readState()).clubs.find(c=>c.id===b.id);if(!pre)throw new Error('Club not found.');const sum=await clubSummary(pre),gates=(sum.data?.gates||[]).filter(g=>g.dataPlayable).map(g=>g.number);const check=await clubSummary({...pre,gates});if(!gates.length||!check.activation.allowed)throw new Error(`Cannot open: ${(gates.length?check.activation.reasons:['No gate has playable compiled data yet.']).join(' ')}`)
+ return json(await mutate(s=>{const c=s.clubs.find(c=>c.id===b.id);if(!c||c.version!==b.version)throw new Conflict('Club changed. Reload before saving.');const before=JSON.stringify({status:c.status,gates:c.gates});Object.assign(c,{status:'live',gates,version:c.version+1});audit(s,'club.opened-playable',c.id,`${gates.length} gates with playable data`,{before,after:JSON.stringify({status:c.status,gates}),reason:typeof b.reason==='string'?b.reason.slice(0,500):undefined});return c}))}
 if(a==='clubs/update'){
  // A02: going live is a capability check against the COMPILED data and the engine, never a club id
  if(!['research','review','live','paused'].includes(b.status))throw new Error('Invalid status.')

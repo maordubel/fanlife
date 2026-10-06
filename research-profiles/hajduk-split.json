@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hajduk-split",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-06",
+  "desiredGates": [],
+  "priorityMatchIds": [],
+  "sources": [],
+  "notes": "Historical archive collection only (6.10.2026 plan): public sources, no paid data, no AI, nothing activated in the game. Documents stay needs-parser until a parser is written against stored fixtures.",
+  "archive": [
+    {
+      "providerId": "hajduk-official",
+      "familyId": "hajduk-institutional",
+      "publisher": "HNK Hajduk Split",
+      "reader": "html",
+      "origin": "https://hajduk.hr",
+      "role": "results",
+      "locale": "hr-HR",
+      "seeds": [
+        "/eng/matches/archive/league",
+        "/eng/history/players",
+        "/povijest",
+        "/povijest/1991-2000",
+        "/povijest/2001-danas"
+      ],
+      "allowedPathPrefixes": [
+        "/eng/matches/archive/",
+        "/eng/history/",
+        "/povijest"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Direct access answered 403 in one sampling and some pages need rendering — check access before writing a parser; a 403 is recorded, never bypassed."
+      ]
+    },
+    {
+      "providerId": "torcida",
+      "familyId": "torcida-split",
+      "publisher": "Torcida Split",
+      "reader": "wordpress-rest",
+      "origin": "https://www.torcida.hr",
+      "role": "fan-culture",
+      "locale": "hr-HR",
+      "collections": [
+        "posts",
+        "pages"
+      ],
+      "allowedPathPrefixes": [
+        "/wp-json/wp/v2/"
+      ],
+      "parserId": "torcida-history-v1",
+      "budget": {
+        "perPage": 25,
+        "maxRequests": 10,
+        "minDelayMs": 3000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Fan-group history, not the club's match archive; results are never inferred from fan articles."
+      ]
+    }
+  ]
+}

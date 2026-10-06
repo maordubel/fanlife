@@ -2846,3 +2846,23 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
    `lib/master/lifeDisplay.ts`, ולידציה קשיחה — מפתח לא מוכר נדחה בשמו). השחקנים מקבלים רק את ה-live
    מ-`/life/voxel/display.json` (ריק עד הפרסום הראשון), והבחירה המקומית של השחקן גוברת לכל מפתח.
    התצוגה המקדימה (`display-preview.html`) לא שומרת לעולם. `display-admin.*` הם מצבות (כלל 26).
+
+## 93 · ארכיונים היסטוריים חינמיים — אספן, טייס אוטומטי, ועצירה בהחלטה של אדם (6.10.2026)
+
+מסמך: `FANLIFE-FREE-HISTORICAL-ARCHIVES-8-CLUBS-IMPLEMENTATION-HE-2026-10-06` · מפה: `docs/fanlife/38-historical-archives.md`.
+1. **Reader ≠ Parser.** `lib/research/archive.ts` קורא רשימות WordPress REST (`posts`/`pages`, pagination, `X-WP-Total`)
+   ודפי HTML מאינדקסים מאושרים בלבד (`seeds` + `follow`). מסמך אינו היסטוריה: עד שיש parser עם fixtures
+   (`ARCHIVE_PARSERS` ריק) כל מסמך הוא `needs-parser` ו-`recordsExtracted` הוא 0.
+2. **מפתח מסמך = `provider:collection:id`** — `posts:7` ו-`pages:7` הם שניים. תאריך פרסום ≠ תאריך אירוע (`publishedAsReported`).
+3. **checkpoint אחרי שמירה; ריצה נגמרת `partial_budget` או `listed` — לעולם לא "complete"**; 403/login HTML/סכימה
+   אחרת = פער בשם (`SOURCE_BLOCKED`/`SOURCE_NOT_JSON`/`SOURCE_SCHEMA_CHANGED`), לא רשימה ריקה, ולא עוקפים (כלל 11).
+   מי חסם (המקור או הרשת של השרת) נרשם כלא ידוע עד שנבדק מרשת אחרת.
+4. **פרופיל = קונפיגורציה:** `research-profiles/<club>.json` (`archive`) + עותק של חדר הבקרה (`<data>/research/<club>/profile.json`)
+   שגובר לפי providerId. מקור חדש עובר `validateArchiveSource` (שגיאה בשם השדה). ClubPulse לא מוגדר כמקור.
+5. **staging של האספן** נכתב ל-`<data>/research-staging/<club>/` (קטלוג + backlog, `approvedForProduction:0`, matches ריק),
+   וה-package adapter קורא אותו יחד עם החבילה בריפו. `research:stage` כבר לא מוסיף `pao:` לזהויות — מזהים מאומתים
+   לפי מועדון וספק ב-`content/manual/provider-ids/<club>.json`.
+6. **טייס אוטומטי** (`lib/master/automation.ts`, ה-cron): איסוף → staging → הבאה לתיק המועדון כשורות לא נבדקות →
+   דפי משחק מתוכננים → עיבוד. **עוצר בביקורת**: לא מאשר, לא בונה pack, לא מפרסם. "Open all playable gates" הוא
+   לחיצה של הבעלים, ועוברת את בדיקת ההפעלה.
+7. סלטיק, פרטיזן ואוניון ברלין ב-registry בסטטוס research בלבד.

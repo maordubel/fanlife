@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "clubId": "partizan-belgrade",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-06",
+  "desiredGates": [],
+  "priorityMatchIds": [],
+  "sources": [],
+  "notes": "Historical archive collection only (6.10.2026 plan): public sources, no paid data, no AI, nothing activated in the game. Documents stay needs-parser until a parser is written against stored fixtures.",
+  "archive": [
+    {
+      "providerId": "partizanopedia",
+      "familyId": "partizanopedia",
+      "publisher": "Partizanopedia",
+      "reader": "html",
+      "origin": "https://partizanopedia.rs",
+      "role": "people",
+      "locale": "sr-RS",
+      "seeds": [
+        "/"
+      ],
+      "allowedPathPrefixes": [
+        "/"
+      ],
+      "parserId": "partizanopedia-v1",
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 12,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "The index lists seasons 1946/47–2019/20; later seasons are a documented gap, not an assumed full archive.",
+        "www and the bare domain are one source family."
+      ],
+      "follow": "^/[a-z0-9]+\\.html$"
+    },
+    {
+      "providerId": "crno-bela-nostalgija",
+      "familyId": "crnobela-nostalgija",
+      "publisher": "Crno-bela Nostalgija",
+      "reader": "wordpress-rest",
+      "origin": "https://crnobelanostalgija.com",
+      "role": "club-history",
+      "locale": "sr-RS",
+      "collections": [
+        "posts",
+        "pages"
+      ],
+      "allowedPathPrefixes": [
+        "/wp-json/wp/v2/"
+      ],
+      "parserId": "cbn-history-v1",
+      "budget": {
+        "perPage": 25,
+        "maxRequests": 10,
+        "minDelayMs": 3000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Mixes current-season items with history; search answered 403 and is not used.",
+        "Independence from Partizanopedia is checked by ownership and citations, not by domain."
+      ]
+    },
+    {
+      "providerId": "partizan-official",
+      "familyId": "partizan-institutional",
+      "publisher": "FK Partizan",
+      "reader": "html",
+      "origin": "https://www.partizan.rs",
+      "role": "club-history",
+      "locale": "sr-RS",
+      "seeds": [
+        "/vesti/istorijat"
+      ],
+      "allowedPathPrefixes": [
+        "/vesti/istorijat"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": []
+    }
+  ]
+}

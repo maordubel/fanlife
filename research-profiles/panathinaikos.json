@@ -4,7 +4,15 @@
   "sport": "football",
   "contentLocale": "en",
   "snapshotAsOf": "2026-10-06",
-  "desiredGates": ["xi", "trivia", "memory", "archive", "timeline", "lineup", "goal"],
+  "desiredGates": [
+    "xi",
+    "trivia",
+    "memory",
+    "archive",
+    "timeline",
+    "lineup",
+    "goal"
+  ],
   "priorityMatchIds": [],
   "notes": "Match-detail pages are fetched and kept as snapshots. No parser for them is registered yet, so jobs end as needs-adapter until one is written against a stored fixture.",
   "sources": [
@@ -13,10 +21,129 @@
       "familyId": "panathinaikos-institutional",
       "origin": "https://www.pao.gr",
       "adapterVersion": "pao-research-v1",
-      "paths": { "match-detail": "^/en/match/[0-9]+/?$" },
-      "capabilities": ["match-detail"],
-      "rate": { "minIntervalMs": 4000, "maxBytes": 2000000, "timeoutMs": 20000 },
+      "paths": {
+        "match-detail": "^/en/match/[0-9]+/?$"
+      },
+      "capabilities": [
+        "match-detail"
+      ],
+      "rate": {
+        "minIntervalMs": 4000,
+        "maxBytes": 2000000,
+        "timeoutMs": 20000
+      },
       "scope": "men's first team, all competitions the club site lists"
+    }
+  ],
+  "archive": [
+    {
+      "providerId": "paopedia",
+      "familyId": "paopedia-editorial",
+      "publisher": "Paopedia",
+      "reader": "wordpress-rest",
+      "origin": "https://paopedia.gr",
+      "role": "mixed",
+      "locale": "el-GR",
+      "collections": [
+        "posts",
+        "pages"
+      ],
+      "allowedPathPrefixes": [
+        "/wp-json/wp/v2/"
+      ],
+      "parserId": "paopedia-history-v1",
+      "budget": {
+        "perPage": 25,
+        "maxRequests": 10,
+        "minDelayMs": 3000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "categories and search answered 403 in sampling — not used as required routes."
+      ]
+    },
+    {
+      "providerId": "pao-official-history",
+      "familyId": "panathinaikos-institutional",
+      "publisher": "Panathinaikos FC",
+      "reader": "html",
+      "origin": "https://www.pao.gr",
+      "role": "club-history",
+      "locale": "en",
+      "seeds": [
+        "/en/history/",
+        "/en/history/championships/",
+        "/en/history/greek-cups/",
+        "/en/history/super-cup/",
+        "/en/history/valkaniko-kypello/",
+        "/en/history/european-history/",
+        "/en/history/events/",
+        "/en/the-club/stadium/",
+        "/en/historyitem/all-time-coaches/",
+        "/en/historyitem/all-time-foreigners/",
+        "/historyitem/all-time-roster/"
+      ],
+      "allowedPathPrefixes": [
+        "/en/history/",
+        "/en/the-club/stadium/",
+        "/en/historyitem/",
+        "/historyitem/"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 12,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Season result URLs are read from the site's own season options, never generated from a season-YYYY-YYYY guess."
+      ]
+    },
+    {
+      "providerId": "rsssf-greece",
+      "familyId": "rsssf",
+      "publisher": "RSSSF",
+      "reader": "html",
+      "origin": "https://www.rsssf.org",
+      "role": "results",
+      "locale": "en",
+      "seeds": [
+        "/tablesg/grkcuphist.html",
+        "/ec/Greece.html",
+        "/tablesg/grkprehist.html",
+        "/tablesg/grkhist.html",
+        "/tablesg/grkchamp.html"
+      ],
+      "allowedPathPrefixes": [
+        "/tablesg/",
+        "/ec/Greece.html"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Cross-check within each table's scope only — not proof of a line-up or a date the table does not show."
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 import 'server-only'
 import {existsSync,readFileSync} from 'node:fs'
-import {join} from 'node:path'
+import {join,resolve} from 'node:path'
 import type {Source,Finding,Job} from '../types'
 import type {Adapter} from './types'
 type Row=Record<string,unknown>
@@ -12,12 +12,17 @@ const https=(u:unknown)=>{try{return typeof u==='string'&&new URL(u).protocol===
  * package statistics (counts, versions, conflicts) are a REPORT, not historical claims, so they go to the gap list and
  * can never be approved as a fact.
  */
+/** repository staging first, then the collector's export under the data dir — only those that hold a manifest */
+export function stagingDirs(clubId:string){return [join(process.cwd(),'research-staging',clubId),join(resolve(process.env.FAN_LIFE_DATA_DIR||'.fan-life'),'research-staging',clubId)].filter(d=>existsSync(join(d,'manifest.json')))}
 async function collect(job:Job){
- const dir=join(process.cwd(),'research-staging',job.clubId)
- if(!existsSync(join(dir,'manifest.json')))throw new Error('No staged research package for this club. Import the package and run research:stage first.')
- const manifest=JSON.parse(readFileSync(join(dir,'manifest.json'),'utf8')) as Row,now=new Date().toISOString()
- const raw=read(dir,'sources'),identity=read(dir,'club-identity'),matches=read(dir,'matches'),backlog=read(dir,'backlog'),conflicts=read(dir,'conflicts')
- const sources:Source[]=raw.filter(s=>https(s.url)).map(s=>({id:`pkg-${s.id}`,title:String(s.title),url:String(s.url),excerpt:`${s.sourceFamilyId||s.publisher} · ${s.scope||'record_specific'} · images usable: ${s.imagesUsableInApp===true}`,reviewed:false,retrievedAt:typeof s.retrievedAt==='string'?s.retrievedAt:now}))
+ // two staging places, read as one: the package in the repository (staged by hand / research:stage) and the
+ // archive collector's export in the control-room data dir. The repository manifest wins when both exist.
+ const dirs=stagingDirs(job.clubId)
+ if(!dirs.length)throw new Error('No staged research package for this club. Collect archive sources (Data tab) or import a package and run research:stage first.')
+ const manifest=JSON.parse(readFileSync(join(dirs[0]!,'manifest.json'),'utf8')) as Row,now=new Date().toISOString()
+ const all=(n:string)=>{const seen=new Set<string>();return dirs.flatMap(d=>read(d,n)).filter(r=>{const id=String(r.id??JSON.stringify(r));if(seen.has(id))return false;seen.add(id);return true})}
+ const raw=all('sources'),identity=all('club-identity'),matches=all('matches'),backlog=all('backlog'),conflicts=all('conflicts')
+ const sources:Source[]=raw.filter(s=>https(s.url)).map(s=>({id:`pkg-${s.id}`,title:String(s.title),url:String(s.url),excerpt:`${s.sourceFamilyId||s.publisher} · ${s.scope||'record_specific'} · images usable: ${s.imagesUsableInApp===true}${s.collected&&typeof s.collected==='object'?` · collector: ${(s.collected as Row).documents} documents read (${(s.collected as Row).state}), ${(s.collected as Row).parser?'parser '+(s.collected as Row).parser:'no parser yet — nothing extracted'}`:''}`,reviewed:false,retrievedAt:typeof s.retrievedAt==='string'?s.retrievedAt:now}))
  const known=new Set(sources.map(s=>s.id))
  const findings:Finding[]=[]
  for(const row of identity){
@@ -34,4 +39,4 @@ async function collect(job:Job){
  ]
  return {sources,findings,gaps:[...report,...backlog.map(b=>`${b.priority} · ${b.taskHe||b.task||''}`)]}
 }
-export const packageAdapter:Adapter={id:'package',label:'Staged research package',collect,needsQuery:false,capabilities:['identity','package-report'],available:(clubId)=>existsSync(join(process.cwd(),'research-staging',clubId,'manifest.json'))}
+export const packageAdapter:Adapter={id:'package',label:'Staged research package',collect,needsQuery:false,capabilities:['identity','package-report'],available:(clubId)=>stagingDirs(clubId).length>0}

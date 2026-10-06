@@ -11,12 +11,12 @@ import type {ResearchJob,ResearchRun,SnapshotMeta} from './contract'
  * At-least-once with idempotent writes — the same snapshot hash is stored once however often it is fetched.
  * (A shared Postgres store with SKIP LOCKED is the next step when more than one worker runs; the API stays the same.)
  */
-const root=()=>path.resolve(process.env.FAN_LIFE_DATA_DIR||'.fan-life','research')
-const dir=(club:string)=>{if(!/^[a-z][a-z0-9-]{1,60}$/.test(club))throw new Error('Invalid club id');return path.join(root(),club)}
+export const root=()=>path.resolve(process.env.FAN_LIFE_DATA_DIR||'.fan-life','research')
+export const dir=(club:string)=>{if(!/^[a-z][a-z0-9-]{1,60}$/.test(club))throw new Error('Invalid club id');return path.join(root(),club)}
 const g=globalThis as typeof globalThis&{researchWrites?:Promise<unknown>}
-async function readJson<T>(file:string,fallback:T):Promise<T>{try{return JSON.parse(await readFile(file,'utf8')) as T}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return fallback;throw e}}
-async function writeJson(file:string,value:unknown){await mkdir(path.dirname(file),{recursive:true});const tmp=`${file}.${randomUUID()}.tmp`;await writeFile(tmp,JSON.stringify(value,null,1));await rename(tmp,file)}
-function serial<T>(fn:()=>Promise<T>):Promise<T>{const op=(g.researchWrites||Promise.resolve()).then(fn);g.researchWrites=op.catch(()=>undefined);return op}
+export async function readJson<T>(file:string,fallback:T):Promise<T>{try{return JSON.parse(await readFile(file,'utf8')) as T}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return fallback;throw e}}
+export async function writeJson(file:string,value:unknown){await mkdir(path.dirname(file),{recursive:true});const tmp=`${file}.${randomUUID()}.tmp`;await writeFile(tmp,JSON.stringify(value,null,1));await rename(tmp,file)}
+export function serial<T>(fn:()=>Promise<T>):Promise<T>{const op=(g.researchWrites||Promise.resolve()).then(fn);g.researchWrites=op.catch(()=>undefined);return op}
 
 export const readJobs=(club:string)=>readJson<ResearchJob[]>(path.join(dir(club),'jobs.json'),[])
 export const readRunsFor=(club:string)=>readJson<ResearchRun[]>(path.join(dir(club),'runs.json'),[])

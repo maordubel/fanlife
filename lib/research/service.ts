@@ -3,6 +3,10 @@ import {loadBundle,loadProfile} from './bundle'
 import {plan} from './planner'
 import {appendRun,readJobs,readRunsFor,upsertJobs} from './store'
 import type {ResearchRun} from './contract'
+import {loadClubProfile,profiledClubs} from './profiles'
+import {archiveStatus,collectArchive} from './archive'
+import {exportArchiveStaging} from './staging'
+import type {FetchLike} from './fetcher'
 /** Plan research for one club from its profile and staged bundle. Records a run; enqueues only NEW jobs. */
 export async function planClub(clubId:string){
  const profile=loadProfile(clubId)
@@ -15,9 +19,17 @@ export async function planClub(clubId:string){
  await appendRun(clubId,run)
  return {ok:true as const,run,report:result.report,issues:result.issues.slice(0,50),issueKinds:result.issues.reduce((a:Record<string,number>,i)=>{a[i.kind]=(a[i.kind]||0)+1;return a},{})}
 }
-/** Runs and job-state counts for the admin; one club or every club with a profile. */
+/** Runs, job states and archive status for the admin; one club or every club with a profile (repository or admin). */
 export async function readRuns(clubId?:string){
- const {readdirSync,existsSync}=await import('node:fs')
- const ids=clubId?[clubId]:existsSync('research-profiles')?readdirSync('research-profiles').filter(f=>f.endsWith('.json')).map(f=>f.slice(0,-5)):[]
- return Promise.all(ids.map(async id=>{const [runs,jobs]=await Promise.all([readRunsFor(id),readJobs(id)]);const states=jobs.reduce((a:Record<string,number>,j)=>{a[j.state]=(a[j.state]||0)+1;return a},{});return {clubId:id,hasProfile:!!loadProfile(id),runs:runs.slice(-10).reverse(),jobs:jobs.length,states}}))
+ const ids=clubId?[clubId]:profiledClubs()
+ return Promise.all(ids.map(async id=>{const [runs,jobs,profile]=await Promise.all([readRunsFor(id),readJobs(id),loadClubProfile(id)]);const states=jobs.reduce((a:Record<string,number>,j)=>{a[j.state]=(a[j.state]||0)+1;return a},{})
+  return {clubId:id,hasProfile:!!profile,canPlan:!!loadProfile(id)&&!!profile?.sources.length,runs:runs.slice(-10).reverse(),jobs:jobs.length,states,archive:profile?await archiveStatus(id,profile.archive):null,profileOrigin:profile?.origin||null}}))
+}
+/** One bounded archive pass for a club, then a fresh staging export — what the button and the scheduler both run. */
+export async function collectClub(clubId:string,{providerId,maxRequests=10,fetchImpl}:{providerId?:string;maxRequests?:number;fetchImpl?:FetchLike}={}){
+ const profile=await loadClubProfile(clubId)
+ if(!profile||!profile.archive.length)throw new Error('This club has no archive sources yet. Add one in the Data tab (or research-profiles/<club>.json).')
+ const run=await collectArchive(clubId,profile.archive,{providerId,maxRequests,fetchImpl})
+ const staging=await exportArchiveStaging(clubId,profile.archive)
+ return {run,staging}
 }

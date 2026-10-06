@@ -1,4 +1,5 @@
 'use client'
+import {Pipeline} from './Pipeline'
 import {useEffect,useState} from 'react'
 import Link from 'next/link'
 import {GATES,type Club,type Finding,type Job,type Source} from '@/lib/master/types'
@@ -27,6 +28,7 @@ export function ClubFile({club,summary,adapters,jobs,api,onChange}:{club:Omit<Cl
 function Summary({s,onGo}:{s:ClubSummary;onGo:(k:'research'|'decisions'|'publish')=>void}){
  const st=s.research.staging
  return <div className="cr-three">
+  <article className="cr-wide"><p className="eyebrow">PIPELINE · WHERE THIS CLUB STANDS</p><Pipeline steps={s.pipeline}/></article>
   <article><p className="eyebrow">1 · RESEARCH COLLECTED</p><ul><li>{s.research.reviewedSources} of {s.research.sources} sources reviewed{s.research.changedSources?` · ${s.research.changedSources} changed since review`:''}</li><li>{s.research.findingsPending} findings waiting · {s.research.findingsDecided} decided</li><li>Last job: {s.research.lastJob?`${s.research.lastJob.status} · ${s.research.lastJob.adapter} · ${s.research.lastJob.at.slice(0,16).replace('T',' ')}`:'none'}</li><li>Staged package: {st.present?`snapshot ${st.snapshotAsOf} · ${Object.entries(st.counts).map(([k,n])=>`${n} ${k}`).join(', ')} · ${st.approvedForProduction??0} approved`:'none'}</li></ul><button className="min-h-tap" onClick={()=>onGo('decisions')}>Decide evidence ↗</button></article>
   <article><p className="eyebrow">2 · PACK DATA (COMPILER)</p>{s.data?<ul><li>{s.data.full} gates READY · {s.data.dataPlayable} playable</li><li>{s.data.timelineEvents} eligible dated events</li><li>Compiler notes: {s.data.diagnostics.blocker} blocking · {s.data.diagnostics.review} to review · {s.data.diagnostics.info} kept out by design</li></ul>:<p>No compiled pack — the engine cannot load this club.</p>}<p className="muted">Approving a research finding does not change the pack; packs change through a reviewed build.</p></article>
   <article><p className="eyebrow">3 · PUBLISHED</p><ul><li>Status: <b>{s.control.status}</b> · {s.publication.preview?'evaluation preview':'production'}</li><li>{s.publication.openNow} gates open now · {s.control.gatesOn.length} switched on</li><li>Activation: {s.activation.allowed?'allowed':'blocked'}</li></ul>{!s.activation.allowed&&<ul className="muted">{s.activation.reasons.slice(0,4).map(r=><li key={r}>{r}</li>)}</ul>}<button className="min-h-tap" onClick={()=>onGo('publish')}>Readiness & publish ↗</button></article>
@@ -80,5 +82,6 @@ function Publish({club,s,api,onChange}:{club:Omit<Club,'sources'|'findings'>;s:C
   {status==='live'&&!s.activation.allowed&&<div className="error" role="alert"><p>Going live is blocked until:</p><ul>{s.activation.reasons.map(r=><li key={r}>{r}</li>)}</ul></div>}
   <p className="muted">A gate switch says you WANT it open. It cannot make data playable — the compiler decides that.</p>
   <button className="min-h-tap button" disabled={api.busy}>Save {club.name} ↗</button>
+  {(s.data?.dataPlayable||0)>0&&<div className="panel spaced"><p className="eyebrow">ONE CLICK</p><p>Open every gate whose compiled data is playable ({s.data!.gates.filter(g=>g.dataPlayable).map(g=>g.number).join(', ')}) and set the club live. The activation check still runs; this is your decision, never the autopilot’s.</p><button type="button" className="min-h-tap button secondary" disabled={api.busy} onClick={async()=>{if(await api.post('clubs/open-playable',{id:club.id,version:club.version,reason:reason||'Opened all playable gates'},`${club.name} is live with every playable gate.`))await onChange()}}>Open all playable gates ↗</button></div>}
  </form>
 }

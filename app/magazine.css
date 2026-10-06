@@ -715,3 +715,28 @@
   .mag-adminnav a { flex-shrink: 0; }
   .dc-viewport { max-block-size: 60vh; }
 }
+
+/* control room · pipeline and archive sources */
+.cr-pipeline { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 6px; }
+.cr-pipeline li { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: start; padding: 8px 10px; border: 2px solid var(--mag-ink); background: var(--mag-paper); }
+.cr-pipeline li p { margin: 2px 0 0; font-size: 13px; overflow-wrap: anywhere; }
+.cr-pipeline small { font-family: var(--mag-mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--mag-muted); }
+.cr-step-n { display: grid; place-items: center; inline-size: 32px; block-size: 32px; border: 2px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; background: var(--mag-card); }
+.cr-pipeline li[data-state='done'] .cr-step-n { background: var(--mag-green); color: var(--mag-white); }
+.cr-pipeline li[data-state='active'] .cr-step-n { background: var(--mag-lilac); }
+.cr-pipeline li[data-state='blocked'] .cr-step-n { background: var(--mag-vermilion); color: var(--mag-white); }
+.cr-sources { display: grid; gap: 12px; margin-block: 12px; }
+.cr-source { display: grid; gap: 8px; padding: 12px; border: 3px solid var(--mag-ink); background: var(--mag-card); min-inline-size: 0; }
+.cr-source header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: start; }
+.cr-source h3 { font-size: 20px; }
+.cr-source .muted { margin: 4px 0 0 !important; overflow-wrap: anywhere; }
+.cr-source a { text-decoration: underline; }
+.fl .cr-source ul, .fl .cr-data ul { margin: 6px 0; }
+.cr-listings { list-style: none; padding: 0 !important; display: grid; gap: 4px; font-size: 13px; }
+.cr-listings li { padding: 6px 8px; border-inline-start: 4px solid var(--mag-muted); background: var(--mag-paper); overflow-wrap: anywhere; }
+.cr-listings li[data-state='listed'] { border-inline-start-color: var(--mag-green); }
+.cr-listings li[data-state='blocked'], .cr-listings li[data-state='not-json'], .cr-listings li[data-state='schema-changed'] { border-inline-start-color: var(--mag-vermilion); }
+.cr-listings small { display: block; color: var(--mag-muted); }
+.cr-source code, .cr-log code { font-family: var(--mag-mono); font-size: 11px; overflow-wrap: anywhere; }
+.fl .cr textarea { background: transparent; border: 1px solid var(--mag-ink); border-radius: 0; padding: 12px; font: inherit; font-size: 13px; inline-size: 100%; min-inline-size: 0; color: inherit; }
+@media (min-width: 1100px) { .cr-sources { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

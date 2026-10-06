@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "clubId": "st-pauli",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-06",
+  "desiredGates": [],
+  "priorityMatchIds": [],
+  "sources": [],
+  "notes": "Historical archive collection only (6.10.2026 plan): public sources, no paid data, no AI, nothing activated in the game. Documents stay needs-parser until a parser is written against stored fixtures.",
+  "archive": [
+    {
+      "providerId": "millernton",
+      "familyId": "millernton-editorial",
+      "publisher": "MillernTon",
+      "reader": "wordpress-rest",
+      "origin": "https://millernton.de",
+      "role": "mixed",
+      "locale": "de-DE",
+      "collections": [
+        "posts",
+        "pages"
+      ],
+      "allowedPathPrefixes": [
+        "/wp-json/wp/v2/"
+      ],
+      "parserId": "millernton-stats-v1",
+      "budget": {
+        "perPage": 25,
+        "maxRequests": 10,
+        "minDelayMs": 3000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Mostly news and match previews; start from the statistics index, not from thousands of posts by publication date.",
+        "A new article about 1974 is about 1974: publication date is never the event date."
+      ]
+    },
+    {
+      "providerId": "fcstpauli-museum",
+      "familyId": "fcstpauli-museum",
+      "publisher": "FC St. Pauli Museum",
+      "reader": "wordpress-rest",
+      "origin": "https://www.fcstpauli-museum.de",
+      "role": "club-history",
+      "locale": "de-DE",
+      "collections": [
+        "posts",
+        "pages"
+      ],
+      "allowedPathPrefixes": [
+        "/wp-json/wp/v2/"
+      ],
+      "parserId": "stpauli-museum-v1",
+      "budget": {
+        "perPage": 25,
+        "maxRequests": 10,
+        "minDelayMs": 3000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Museum pages describe the archive; they do not make the physical collection downloadable."
+      ]
+    }
+  ]
+}

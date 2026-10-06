@@ -39,3 +39,49 @@ export type PlanReport={
  limits:string[]
 }
 export type ResearchRun={id:string;clubId:string;createdAt:string;kind:'plan'|'fetch';state:'completed'|'partial'|'failed';inputVersion:string|null;counts:Record<string,number>;issues:number;note:string}
+
+/* ---------- historical archive collection (WordPress REST + HTML), 6.10.2026 ---------- */
+/** How a public archive is read. A READER returns documents; turning a document into history is a PARSER's job,
+ * and a parser exists only once it was written against stored fixtures of that site. */
+export type ArchiveReader='wordpress-rest'|'html'
+/** What a source is good for — fan culture is never a results database, and an article is never a match row. */
+export type ArchiveRole='results'|'people'|'club-history'|'fan-culture'|'items'|'mixed'
+export type ArchiveSource={
+ providerId:string;familyId:string;publisher:string;reader:ArchiveReader;origin:string;role:ArchiveRole;locale:string
+ /** wordpress-rest: which collections to list (Celtic Wiki = pages, not posts) */
+ collections?:('posts'|'pages')[]
+ /** html: approved index pages to start from (paths on `origin`), and the path pattern links may be followed by */
+ seeds?:string[];follow?:string
+ /** every requested path must start with one of these */
+ allowedPathPrefixes:string[]
+ parserId:string|null
+ budget:{perPage:number;maxRequests:number;minDelayMs:number;timeoutMs:number;maxResponseBytes:number}
+ /** metadata-only until the source's reuse policy was reviewed; images are never downloaded */
+ retention:{rawBody:'metadata-only'|'private-copy';downloadImages:false}
+ knownLimits?:string[]
+}
+export type ArchiveProfile={schemaVersion:typeof RESEARCH_SCHEMA;clubId:string;sport:'football';archive:ArchiveSource[];notes?:string}
+export type ArchiveDoc={
+ providerKey:string;providerId:string;collection:string;url:string;title:string|null;contentHash:string;bytes:number
+ /** publication metadata — NEVER the date of the event a page describes */
+ publishedAsReported:string|null;modifiedAsReported:string|null;retrievedAt:string
+ firstRunId:string;lastRunId:string;changed:boolean;snapshot:string|null;parse:'needs-parser'|'parsed'
+}
+export type CheckpointState='new'|'running'|'partial_budget'|'listed'|'blocked'|'not-json'|'schema-changed'|'retry-later'
+export type ArchiveCheckpoint={
+ schemaVersion:typeof RESEARCH_SCHEMA;providerId:string;collection:string;queryFingerprint:string;parserVersion:string|null
+ nextPage:number;lastCommittedPage:number;observedTotalDocuments:number|null;observedTotalPages:number|null;perPage:number
+ /** html only: discovered paths still to read, and paths already read */
+ queue?:string[];seen?:string[]
+ state:CheckpointState;updatedAt:string;lastError:string|null
+}
+export type EndpointStatus={endpoint:string;providerId:string;state:'ok'|'blocked'|'not-found'|'not-json'|'schema-changed'|'retry-later'|'error';status:number;reason:string|null;checkedAt:string}
+export type DiagnosticCode='SOURCE_BLOCKED'|'RESOURCE_NOT_FOUND'|'SOURCE_NOT_JSON'|'SOURCE_SCHEMA_CHANGED'|'RETRY_LATER'|'OFF_ORIGIN_LINK'|'FINGERPRINT_CHANGED'|'NEEDS_PARSER'|'BUDGET_EXHAUSTED'|'PATH_NOT_ALLOWED'
+export type ArchiveDiagnostic={code:DiagnosticCode;providerId:string;url:string|null;message:string}
+export type ArchiveRun={
+ schemaVersion:typeof RESEARCH_SCHEMA;id:string;clubId:string;startedAt:string;finishedAt:string;providers:string[]
+ /** never 'complete': a listing that reached its last page is 'listed', which says nothing about historical coverage */
+ state:'partial_budget'|'listed'|'blocked'|'failed'|'nothing-to-do'
+ counts:{requests:number;documentsRead:number;newDocuments:number;changedDocuments:number;unchangedDocuments:number;recordsExtracted:number;blockedEndpoints:number;budgetLeft:number}
+ diagnostics:ArchiveDiagnostic[];completeArchiveClaim:false;approvedForProduction:0
+}

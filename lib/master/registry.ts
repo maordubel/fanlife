@@ -18,6 +18,11 @@ export const REGISTRY: readonly RegistryClub[] = [
   c('borussia-dortmund', 'dortmund', 'Borussia Dortmund', 'Dortmund', 'Germany', 'BD', '#1F1F1F', 5),
   c('leicester-city', 'leicestercity', 'Leicester City', 'Leicester', 'England', 'LC', '#1F4E9C', 5),
   c('atalanta', 'atalanta', 'Atalanta', 'Bergamo', 'Italy', 'AT', '#1F4E9C', 5),
+  // 6.10.2026 — research only (historical-archives plan): in the registry so the control room and the collector know
+  // them; status stays `research`, so nothing is public until a pack is compiled and an owner publishes it.
+  c('celtic', 'celtic', 'Celtic', 'Glasgow', 'Scotland', 'CE', '#0B7A3B', 5),
+  c('partizan-belgrade', 'partizan', 'Partizan Belgrade', 'Belgrade', 'Serbia', 'PB', '#1F1F1F', 5),
+  c('union-berlin', 'unionberlin', '1. FC Union Berlin', 'Berlin', 'Germany', 'UB', '#C92D39', 5),
 ]
 export const PORTAL_HOST_ROOT = process.env.FANLIFE_ROOT_DOMAIN || 'fanlife.game'
 export const DEFAULT_CLUB = 'hapoel-tel-aviv'
