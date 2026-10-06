@@ -7,15 +7,36 @@ import {localeDirection,type UiLocale} from '@/lib/clubs/locale'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 
-export function Shell({children,club,theme,locale='en'}:{children:ReactNode;club?:Club;theme?:ClubTheme;locale?:UiLocale}) {
+const ICON={fill:'none',stroke:'currentColor',strokeWidth:2.5,'aria-hidden':true} as const
+
+/**
+ * The magazine's cover furniture: sticky masthead bar, the STOP PRESS strip, the credit footer
+ * and the phone tab bar. Every page of the site is wrapped in this (CLAUDE.md rule 91), so a
+ * screen can be new but it cannot be off-brand.
+ */
+export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode;club?:Club;theme?:ClubTheme;locale?:UiLocale;stop?:ReactNode}) {
  const copy=locale==='he'?he:en
  const identity=theme||(club?clubTheme(club):undefined)
- return <div className={`fl${identity?' club-theme':''}`} data-club={club?.id} data-pattern={identity?.pattern} dir={localeDirection(locale)} lang={locale} style={identity?themeStyle(identity,locale):{'--club':MASTER_PRIMARY} as CSSProperties}>
+ return <div className={`fl mag${identity?' club-theme':''}`} data-club={club?.id} data-pattern={identity?.pattern} dir={localeDirection(locale)} lang={locale} style={identity?themeStyle(identity,locale):{'--club':MASTER_PRIMARY} as CSSProperties}>
   <a className="sr-only focus:not-sr-only" href="#main">{copy.skip}</a>
-  <header><Link href="/" className="wordmark"><b>FL<span>✦</span></b><span>FAN LIFE<small>{copy.tagline}</small></span></Link><nav><Link href="/#clubs">{copy.clubs}</Link><Link href="/#gates">{copy.gates}</Link><Link href="/master/core">{copy.data}</Link><Link href="/master/admin">{copy.admin}</Link></nav><small className="edition">EST. 2026<br/>{copy.edition}</small></header>
-  <div className="evaluation">{copy.evaluation}<span>{copy.evaluationNote}</span><Link href="/master/test-lab">{copy.test}</Link></div>
+  <div className="mag-top"><div className="mag-top-in">
+   <Link href="/" className="mag-logo" aria-label="FAN LIFE">FAN<b>LIFE</b></Link>
+   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/#next">{copy.tabNext}</Link><Link href="/#gates">{copy.gates}</Link><Link href="/master/core">{copy.data}</Link><Link href="/master/admin">{copy.admin}</Link></nav>
+  </div></div>
+  <div className="mag-stop">{stop===undefined?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:stop}</div>
   {children}
-  <footer><strong>FAN LIFE</strong><p>{copy.footer}</p><div>Built by DUBEL<br/><Link href="/credits">{copy.credits}</Link><br/><Link href="/master/admin">{copy.administration}</Link></div></footer>
+  <footer className="mag-foot"><div className="mag-foot-in">
+   <div className="mag-mono">FAN LIFE · {copy.issue}<br/>{copy.footer}<br/>{copy.printed}</div>
+   <div className="mag-barcode" aria-hidden="true"/>
+   <div className="mag-mono"><Link className="mag-credit" href="/credits">{copy.credits}</Link><br/><Link className="mag-credit" href="/master/admin">{copy.administration}</Link></div>
+   <a className="mag-credit" href="https://DubelTeam.com" target="_blank" rel="noopener noreferrer" aria-label={copy.creditAria}>{copy.credit} ↗</a>
+  </div></footer>
+  <nav className="mag-tabbar" aria-label={copy.primaryNav}>
+   <Link href="/"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><path d="M3 11l9-7 9 7v9H3z"/></svg>{copy.home}</Link>
+   <Link href="/#clubs"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><circle cx="12" cy="12" r="9"/><path d="M12 8l4 3-1.5 5h-5L8 11z"/></svg>{copy.tabClubs}</Link>
+   <Link href="/#next"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>{copy.tabNext}</Link>
+   <Link href="/#gates"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>{copy.tabGames}</Link>
+  </nav>
  </div>
 }
 export function Mark({club,theme}:{club:Club;theme?:ClubTheme}) {
