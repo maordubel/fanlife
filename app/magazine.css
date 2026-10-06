@@ -198,3 +198,92 @@
   .mag *, .mag *::before, .mag *::after { animation: none !important; transition: none !important; }
   .mag-tile, .mag-tile:hover, .mag-cta:hover, .fl .button:hover { transform: none; }
 }
+
+/* ───────── TIGHTENING (6.10.2026) — more old paper, more old football ─────────
+   Everything below is constant: fixed rotations, fixed offsets, no random jitter. No yellow:
+   the "age" of the paper is a grey-brown vignette and a pink-cream edge, never a warm tint. */
+.mag::before { content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 40%, transparent 55%, rgb(0 0 0 / 0.07) 100%), linear-gradient(90deg, rgb(0 0 0 / 0.05), transparent 3%, transparent 97%, rgb(0 0 0 / 0.05)); }
+.mag > * { position: relative; z-index: 1; }
+.mag-top, .mag-tabbar { position: sticky; }
+
+/* folio: every section is a numbered page, counted by the browser */
+.mag main { counter-reset: folio 1; }
+.mag-section { counter-increment: folio; position: relative; }
+.mag-rule { position: relative; border-top: 6px solid var(--mag-ink); height: 8px; border-bottom: 2px solid var(--mag-ink); margin: 0 0 12px; }
+.mag-rule::after { content: 'PAGE ' counter(folio, decimal-leading-zero); position: absolute; inset-inline-end: 0; inset-block-start: 4px; padding: 0 8px; background: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 2px; }
+.mag[lang='he'] .mag-rule::after { content: 'עמ׳ ' counter(folio, decimal-leading-zero); }
+
+/* cover: pitch markings printed under the vermilion, halftone, peeled corner */
+.mag-cover { background-image:
+  linear-gradient(rgb(239 230 212 / 0.20), rgb(239 230 212 / 0.20)),
+  radial-gradient(circle at 80% 58%, transparent 0 118px, rgb(239 230 212 / 0.30) 118px 121px, transparent 121px),
+  linear-gradient(90deg, transparent calc(80% - 1.5px), rgb(239 230 212 / 0.30) calc(80% - 1.5px) calc(80% + 1.5px), transparent calc(80% + 1.5px)),
+  radial-gradient(rgb(20 18 16 / 0.18) 1.4px, transparent 1.7px);
+  background-size: 100% 4px, auto, auto, 7px 7px; background-blend-mode: normal; }
+.mag-cover::after { content: ''; position: absolute; inset-inline-end: 0; inset-block-end: 0; width: 46px; height: 46px; background: linear-gradient(315deg, var(--mag-paper) 0 50%, var(--mag-ink) 50% 54%, rgb(0 0 0 / 0.25) 54% 100%); }
+[dir='rtl'] .mag-cover::after { transform: scaleX(-1); }
+.mag-masthead { -webkit-text-stroke: 3px var(--mag-ink); paint-order: stroke fill; text-shadow: 3px 3px 0 var(--mag-paper), 7px 7px 0 var(--mag-navy); }
+.mag-inside { margin-top: 20px; border: 3px solid var(--mag-paper); padding: 10px 14px 12px; max-width: 420px; background: rgb(20 18 16 / 0.32); transform: rotate(-1deg); }
+.mag-inside ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; font-weight: 800; font-size: 15px; }
+.mag-inside li { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px dotted var(--mag-paper); padding-bottom: 3px; }
+.mag-inside i { font-family: var(--mag-display); font-style: normal; font-size: 18px; width: 30px; flex: none; color: var(--mag-salmon); }
+.mag-xi { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 16px; }
+.mag-xi span { width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 2px solid var(--mag-paper); background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-display); font-size: 12px; }
+.mag-xi span:nth-child(1) { background: var(--mag-green); }
+.mag-gates-burst { position: absolute; inset-block-start: 14px; inset-inline-end: 6px; width: 104px; height: 104px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; transform: rotate(9deg); }
+.mag-gates-burst b { font-family: var(--mag-display); font-weight: 400; font-size: 34px; line-height: 1; }
+.mag-cover-in > div:last-child { position: relative; }
+
+/* sections: ruled newsprint headings */
+.mag-h2 { text-shadow: 2px 2px 0 var(--mag-salmon); }
+.mag[lang='he'] .mag-h2, .mag[lang='he'] .mag-masthead { text-shadow: none; }
+.mag-kicker::before { content: '▌'; margin-inline-end: 6px; color: var(--mag-ink); }
+
+/* tiles: photo-corner mounts and a printed caption bar */
+.mag-tile::before, .mag-tile::after { content: ''; position: absolute; width: 14px; height: 14px; background: var(--mag-ink); }
+.mag-tile::before { inset-block-start: -3px; inset-inline-start: -3px; clip-path: polygon(0 0, 100% 0, 0 100%); }
+.mag-tile::after { inset-block-end: -3px; inset-inline-end: -3px; clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+.mag-tile b { border-top: 2px solid var(--mag-ink); padding-top: 6px; }
+.mag-tile:hover { box-shadow: 6px 6px 0 var(--club-primary, var(--mag-ink)), 6px 6px 0 3px var(--mag-ink); }
+
+/* contents: the team sheet — each gate is a shirt number */
+.mag-row em { background: var(--mag-ink); color: var(--mag-paper); width: 40px; height: 34px; display: inline-flex; align-items: center; justify-content: center; font-size: 17px; clip-path: polygon(0 18%, 22% 0, 36% 12%, 64% 12%, 78% 0, 100% 18%, 88% 40%, 88% 100%, 12% 100%, 12% 40%); }
+.mag-row:hover em { background: var(--mag-vermilion); }
+.mag-row > span:nth-child(2) { font-family: var(--mag-body); }
+
+/* next up: a scoreboard and a coupon with a perforated edge */
+.mag-fixture::after { content: ''; position: absolute; inset-block: 0; inset-inline-end: 56px; border-inline-start: 3px dashed var(--mag-ink); opacity: 0.6; }
+.mag-fixture h3 { position: relative; padding-bottom: 8px; border-bottom: 3px double var(--mag-ink); }
+.mag-fixture-body { padding-inline-end: 66px; }
+.mag-fixture-meta::before { content: '⚽ '; font-family: system-ui, sans-serif; }
+.mag-chip[aria-selected='true']::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--mag-salmon); animation: mag-blink 1.4s steps(2) infinite; }
+@keyframes mag-blink { 50% { opacity: 0.15; } }
+
+/* letter: two columns, drop cap, signature */
+.mag-letter { position: relative; }
+.mag-letter p.dropcap::first-letter { float: inline-start; font-family: var(--mag-display); font-size: 56px; line-height: 0.82; padding-inline-end: 8px; padding-block-start: 4px; color: var(--mag-salmon); }
+.mag-sign { font-family: var(--mag-mono); font-weight: 700; letter-spacing: 3px; font-size: 11px; text-align: end; color: var(--mag-salmon); }
+.mag-ps { border: 3px dashed var(--mag-ink); padding: 14px 16px; background: var(--mag-card); transform: rotate(0.6deg); position: relative; }
+.mag-ps::before { content: '✂'; position: absolute; inset-block-start: -13px; inset-inline-start: 16px; background: var(--mag-paper); padding: 0 6px; font-size: 18px; font-family: system-ui, sans-serif; }
+.mag-ps p:last-child { margin: 6px 0 0; font-weight: 700; }
+
+/* footer: the printer's colour bar and register mark — ink, vermilion, navy, purple, lilac, green */
+.mag-printbar { display: flex; height: 12px; }
+.mag-printbar i { flex: 1; }
+.mag-printbar i:nth-child(1) { background: var(--mag-paper); }
+.mag-printbar i:nth-child(2) { background: var(--mag-vermilion); }
+.mag-printbar i:nth-child(3) { background: var(--mag-navy); }
+.mag-printbar i:nth-child(4) { background: var(--mag-purple); }
+.mag-printbar i:nth-child(5) { background: var(--mag-lilac); }
+.mag-printbar i:nth-child(6) { background: var(--mag-green); }
+.mag-printbar u { text-decoration: none; flex: none; width: 28px; text-align: center; font: 700 12px/12px var(--mag-mono); background: var(--mag-paper); color: var(--mag-ink); }
+
+@media (max-width: 900px) {
+  .mag-cover::after { width: 34px; height: 34px; }
+  .mag-gates-burst { position: relative; inset: auto; width: 92px; height: 92px; margin: -6px auto 0; }
+  .mag-inside { max-width: none; }
+  .mag-fixture::after { inset-inline-end: 44px; }
+  .mag-fixture-body { padding-inline-end: 54px; }
+}
+@media (min-width: 901px) { .mag-letter p.dropcap { column-count: 1; max-width: 70ch; } }
+@media (prefers-reduced-motion: reduce) { .mag-chip[aria-selected='true']::after { animation: none; } }

@@ -85,5 +85,11 @@
   "meetingsKicker": "The archive of meetings",
   "scoreWord": "Score",
   "fixtureCard": "Next match",
-  "fixtureNone": "No confirmed fixture"
+  "fixtureNone": "No confirmed fixture",
+  "insideTitle": "INSIDE THIS ISSUE",
+  "psKicker": "P.S. FROM THE PRESS ROOM",
+  "psBody": "Final whistle on every page: no favourites, no rumours, no yellow cards in the paper.",
+  "pageWord": "PAGE",
+  "teamSheet": "TEAM SHEET",
+  "editor": "— THE EDITOR"
 }

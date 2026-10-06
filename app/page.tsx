@@ -42,11 +42,14 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
     <div className="mag-dateline"><span>{date}</span><span>No. 1 · FREE</span></div>
     <h1 className="mag-masthead">FAN<br/>LIFE</h1>
     <p className="mag-sticker paper">{copy.coverTag}</p>
+    <div className="mag-inside"><p className="mag-mono">{copy.insideTitle}</p><ul>{GATES.slice(0,4).map(([n,name])=><li key={n}><i>{String(n).padStart(2,'0')}</i>{name}</li>)}</ul></div>
    </div>
    <div>
     <div className="mag-circle" role="img" aria-label={copy.coverHead}><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="var(--mag-paper)" stroke="var(--mag-ink)" strokeWidth="4"/><polygon points="50,30 66,42 60,62 40,62 34,42" fill="var(--mag-ink)"/><path d="M50 30V8M66 42l22-8M60 62l14 18M40 62L26 80M34 42L12 34" stroke="var(--mag-ink)" strokeWidth="3" fill="none"/></svg></div>
     <p className="mag-bowl" style={{fontSize:'clamp(26px,5vw,38px)',lineHeight:1,textAlign:'center',marginTop:18}}>{copy.coverHead}</p>
     <p className="mag-mono" style={{textAlign:'center',marginTop:8}}>{copy.coverSub}</p>
+    <div className="mag-xi" role="img" aria-label={copy.teamSheet}>{Array.from({length:11},(_,i)=><span key={i} aria-hidden="true">{i+1}</span>)}</div>
+    <span className="mag-burst mag-gates-burst" aria-hidden="true"><b>{GATES.length}</b>{copy.gates}</span>
    </div>
   </div></section>
 
@@ -78,5 +81,6 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <div className="mag-contents mag-contents-grid">{GATES.map(([n,name,url,desc])=><Link className="mag-row" href={url} key={n}><em>{String(n).padStart(2,'0')}</em><span>{name}<small>{desc}</small></span><span className="lead" aria-hidden="true"/><s>→</s></Link>)}</div>
   </section>
 
-  <section className="mag-section"><div className="mag-letter"><p className="mag-kicker" style={{color:'var(--mag-salmon)'}}>{copy.letterKicker}</p><p>{copy.letterBody}</p></div></section>
+  <section className="mag-section"><div className="mag-letter"><p className="mag-kicker" style={{color:'var(--mag-salmon)'}}>{copy.letterKicker}</p><p className="dropcap">{copy.letterBody}</p><p className="mag-sign">{copy.editor}</p></div></section>
+  <section className="mag-section"><div className="mag-ps"><p className="mag-kicker">{copy.psKicker}</p><p>{copy.psBody}</p></div></section>
  </main></Shell>}
