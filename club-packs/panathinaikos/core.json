@@ -82,6 +82,38 @@
       "publisher": "Panathinaikos institutional",
       "access": "available",
       "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "src_94ef9bad8c1c",
+      "title": "alltime",
+      "url": "https://www.pao.gr/historyitem/all-time-roster/",
+      "publisher": "Panathinaikos institutional",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "src_f9d695aa8792",
+      "title": "squad",
+      "url": "https://www.pao.gr/en/team/squad/",
+      "publisher": "Panathinaikos institutional",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "w-wp-derby",
+      "title": "Derby of the Eternal Enemies - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Derby_of_the_Eternal_Enemies",
+      "publisher": "Wikipedia",
+      "access": "available",
+      "checkedAt": "2026-10-06"
+    },
+    {
+      "id": "w-flash-derby",
+      "title": "Derby Week: an intense rivalry from Greece's Athenian football triangle - Flashscore",
+      "url": "https://www.flashscore.com/news/soccer-super-league-derby-week-an-intense-rivalry-from-greece-s-athenian-football-triangle/OCVlsscR/",
+      "publisher": "Flashscore",
+      "access": "available",
+      "checkedAt": "2026-10-06"
     }
   ],
   "archive": [
@@ -774,6 +806,1277 @@
       "parserCertainty": "high",
       "conflictFree": false,
       "notes": "Approved by the owner in chat on 2026-10-06. English wording written from the staged Hebrew research; no fact added."
+    }
+  ],
+  "players": [
+    {
+      "id": "mimis-domazos",
+      "value": {
+        "name": "Mimis Domazos",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": 1959,
+        "toYear": 1980,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (1959-1978, Ιαν.1980-1980)."
+    },
+    {
+      "id": "antonis-antoniadis",
+      "value": {
+        "name": "Antonis Antoniadis",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": 1968,
+        "toYear": 1981,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (1968-1978,1981)."
+    },
+    {
+      "id": "krzysztof-warzycha",
+      "value": {
+        "name": "Krzysztof Warzycha",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": 1990,
+        "toYear": 2004,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (Ιαν.1990-2004)."
+    },
+    {
+      "id": "dimitris-saravakos",
+      "value": {
+        "name": "Dimitris Saravakos",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": 1985,
+        "toYear": 1998,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (1985-1994 & 1998)."
+    },
+    {
+      "id": "marcus-berg",
+      "value": {
+        "name": "Marcus Berg",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": 2013,
+        "toYear": 2017,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (2013-2017)."
+    },
+    {
+      "id": "djibril-cisse",
+      "value": {
+        "name": "Djibril Cisse",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": 2009,
+        "toYear": 2011,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (2009-2011)."
+    },
+    {
+      "id": "gilberto-silva",
+      "value": {
+        "name": "Gilberto Silva",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": 2008,
+        "toYear": 2011,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (2008-2011)."
+    },
+    {
+      "id": "juan-ramon-rocha",
+      "value": {
+        "name": "Juan Ramon Rocha",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": 1980,
+        "toYear": 1989,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (Ιαν.1980-1989)."
+    },
+    {
+      "id": "giorgos-karagounis",
+      "value": {
+        "name": "Giorgos Karagounis",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": 1995,
+        "toYear": 2012,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (1995-1996, 1998-2003, 2007-2012)."
+    },
+    {
+      "id": "angelos-basinas",
+      "value": {
+        "name": "Angelos Basinas",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": 1995,
+        "toYear": 2006,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (1995-Ιαν. 2006)."
+    },
+    {
+      "id": "takis-ikonomopoulos",
+      "value": {
+        "name": "Takis Ikonomopoulos",
+        "positions": [
+          "GK"
+        ],
+        "fromYear": 1963,
+        "toYear": 1976,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (1963-1976)."
+    },
+    {
+      "id": "antonis-nikopolidis",
+      "value": {
+        "name": "Antonis Nikopolidis",
+        "positions": [
+          "GK"
+        ],
+        "fromYear": 1990,
+        "toYear": 2004,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (1990-2004)."
+    },
+    {
+      "id": "jozef-wandzik",
+      "value": {
+        "name": "Jozef Wandzik",
+        "positions": [
+          "GK"
+        ],
+        "fromYear": 1990,
+        "toYear": 1999,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (1990-1999)."
+    },
+    {
+      "id": "emmanuel-olisadebe",
+      "value": {
+        "name": "Emmanuel Olisadebe",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": 2001,
+        "toYear": 2006,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (Ιαν.2001-2006)."
+    },
+    {
+      "id": "michalis-konstantinou",
+      "value": {
+        "name": "Michalis Konstantinou",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": 2002,
+        "toYear": 2005,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (2002-2005)."
+    },
+    {
+      "id": "zeca",
+      "value": {
+        "name": "Zeca",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": 2011,
+        "toYear": 2025,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (2011-2017, 2023-2025)."
+    },
+    {
+      "id": "aitor-cantalapiedra",
+      "value": {
+        "name": "Aitor Cantalapiedra",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": 2020,
+        "toYear": 2024,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (2020-2024)."
+    },
+    {
+      "id": "omri-altman",
+      "value": {
+        "name": "Omri Altman",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": 2017,
+        "toYear": 2019,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_94ef9bad8c1c"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "All-time roster highlight; years are the explicit years in the source period (2017-2019)."
+    },
+    {
+      "id": "inaki-pena",
+      "value": {
+        "name": "Inaki Pena",
+        "positions": [
+          "GK"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "lucas-chaves",
+      "value": {
+        "name": "Lucas Chaves",
+        "positions": [
+          "GK"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "konstantinos-kotsaris",
+      "value": {
+        "name": "Konstantinos Kotsaris",
+        "positions": [
+          "GK"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "christos-geitonas",
+      "value": {
+        "name": "Christos Geitonas",
+        "positions": [
+          "GK"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "davide-calabria",
+      "value": {
+        "name": "Davide Calabria",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "giorgos-katris",
+      "value": {
+        "name": "Giorgos Katris",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "anass-salah-eddine",
+      "value": {
+        "name": "Anass Salah-eddine",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "stefan-de-vrij",
+      "value": {
+        "name": "Stefan De Vrij",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "erik-palmer-brown",
+      "value": {
+        "name": "Erik Palmer-brown",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "sverrir-ingi-ingason",
+      "value": {
+        "name": "Sverrir Ingi Ingason",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "triantafyllos-tsapras",
+      "value": {
+        "name": "Triantafyllos Tsapras",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "victor-kristiansen",
+      "value": {
+        "name": "Victor Kristiansen",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "rick-van-drongelen",
+      "value": {
+        "name": "Rick Van Drongelen",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "vasilis-lavdas",
+      "value": {
+        "name": "Vasilis Lavdas",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "giorgos-kyriakopoulos",
+      "value": {
+        "name": "Giorgos Kyriakopoulos",
+        "positions": [
+          "DF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "moussa-sissoko",
+      "value": {
+        "name": "Moussa Sissoko",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "pedro-chirivella",
+      "value": {
+        "name": "Pedro Chirivella",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "adriano-jagusic",
+      "value": {
+        "name": "Adriano Jagusic",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "santino-andino",
+      "value": {
+        "name": "Santino Andino",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "pavlos-pantelidis",
+      "value": {
+        "name": "Pavlos Pantelidis",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "sotiris-kontouris",
+      "value": {
+        "name": "Sotiris Kontouris",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "vicente-taborda",
+      "value": {
+        "name": "Vicente Taborda",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "azzedine-ounahi",
+      "value": {
+        "name": "Azzedine Ounahi",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "etienne-camara",
+      "value": {
+        "name": "Etienne Camara",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "imran-louza",
+      "value": {
+        "name": "Imran Louza",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "facundo-pellistri",
+      "value": {
+        "name": "Facundo Pellistri",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "ioannis-gavriil-mpokos",
+      "value": {
+        "name": "Ioannis Gavriil Mpokos",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "kings-kangwa",
+      "value": {
+        "name": "Kings Kangwa",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "panagiotis-mpiniaris",
+      "value": {
+        "name": "Panagiotis Mpiniaris",
+        "positions": [
+          "MF"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "andreas-tetteh",
+      "value": {
+        "name": "Andreas Tetteh",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "cyriel-dessers",
+      "value": {
+        "name": "Cyriel Dessers",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "iason-nempis",
+      "value": {
+        "name": "Iason Nempis",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "elmin-rastoder",
+      "value": {
+        "name": "Elmin Rastoder",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    },
+    {
+      "id": "levi-garcia",
+      "value": {
+        "name": "Levi Garcia",
+        "positions": [
+          "FW"
+        ],
+        "fromYear": null,
+        "toYear": null,
+        "aliases": [],
+        "sport": "football"
+      },
+      "sources": [
+        "src_f9d695aa8792"
+      ],
+      "confidence": 2,
+      "status": "approved",
+      "researchedAt": "2026-10-06",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "notes": "Current squad listing of 2026-10-06; not proof of match participation; join year not stated."
+    }
+  ],
+  "rivals": [
+    {
+      "id": "w-r-olympiacos",
+      "value": {
+        "name": "Olympiacos",
+        "note": "Eternal derby"
+      },
+      "sources": [
+        "w-wp-derby",
+        "w-flash-derby"
+      ],
+      "researchedAt": "2026-10-06",
+      "parserCertainty": "high",
+      "conflictFree": true,
+      "confidence": 3,
+      "status": "approved",
+      "approvedAt": "2026-10-06",
+      "approvedBy": "Maor Harel (owner, chat)",
+      "notes": "Both sources name the fixture the Derby of the Eternal Enemies (Panathinaikos central Athens, Olympiacos port of Piraeus)."
     }
   ]
 }

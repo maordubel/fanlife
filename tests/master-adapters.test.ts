@@ -21,7 +21,7 @@ describe('panathinaikos pack (owner-approved 2026-10-06)',()=>{
   const {data}=compilePack(pack,club)
   expect(data.archive).toHaveLength(30);expect(data.archive.every(f=>f.status==='approved'&&/Maor Harel/.test(f.approvedBy||'')&&f.approvedAt==='2026-10-06')).toBe(true)
   expect(data.timeline.length).toBeGreaterThanOrEqual(7);expect(data.timeline.every(t=>t.value.on))
-  expect(data.players).toBeNull();expect(data.matches).toBeNull()})
+  expect(data.players).toHaveLength(52);expect(data.rivals?.[0]?.value.name).toBe('Olympiacos');expect(data.matches).toBeNull()})
  it('is English, and still the same facts as staging (ids and sources unchanged by approval)',()=>{
   expect(pack.contentLocale).toBe('en')
   const d='research-staging/panathinaikos',r=(n:string)=>JSON.parse(readFileSync(`${d}/${n}.json`,'utf8'))

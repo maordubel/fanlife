@@ -15,7 +15,7 @@ const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[
  olympiacos:async()=>compilePack(mergeWave((await import('@/club-packs/olympiacos/core.json')).default,mergeWave((await import('@/club-packs/olympiacos/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/olympiacos/wave-auto.json')).default as never)),REGISTRY.find(c=>c.id==='olympiacos')!),
 }
 /** Review-only clubs: material staged, nothing approved — loadable (gates show LOCKED), never in the playable set. */
-export const REVIEW_CLUB_IDS=['panathinaikos']
+export const REVIEW_CLUB_IDS:string[]=[]
 export const CORE_CLUB_IDS=Object.keys(providers).filter(id=>!REVIEW_CLUB_IDS.includes(id))
 const cache=new Map<string,Promise<{data:ClubData;diagnostics:Diagnostic[]}>>()
 function freeze<T>(v:T):T {if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.freeze(v);for(const item of Object.values(v))freeze(item)}return v}
