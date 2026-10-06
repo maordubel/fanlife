@@ -22,17 +22,18 @@ function sceneRoom(S,night){
  box('doorWood',17.2,0,-.45,.4,7.6,.6,{c:dc});box('doorWood',20.8,0,-.45,.4,7.6,.6,{c:dc});box('doorWood',17.2,7.2,-.45,4,.4,.6,{c:dc});
  box('doorWood',17.6,0,-.5,3.2,7.2,.3,{c:'#e6d8c4'});box('flat',18.05,3.4,-.2,.25,.25,.5,{c:'#9aa0a8'});
  // sofa
- box('sofaFab',6,.25,.6,7.8,3.5,1.1,{c:'#e9e1d6'});box('sofaFab',6,.25,1.7,7.8,1.15,3.2);
- box('sofaFab',6,.25,1.7,.9,2.6,3.2);box('sofaFab',12.9,.25,1.7,.9,2.6,3.2);
- for(var c=0;c<3;c++)box('sofaFab',6.9+c*2.0,1.4,1.8,1.95,.6,3.0,{c:'#f2ece2'});
- box('flat',6.1,2.85,2.2,.7,.05,1.2,{c:'#efe9de'});box('flat',13.0,2.85,2.2,.7,.05,1.2,{c:'#efe9de'});
+ L.sofa(6,0,.6,7.8,'#e9e1d6',{pillow:S.p,cushion:'#f2ece2'});
+ box('flat',6.1,3.62,2.2,.7,.06,1.2,{c:'#efe9de'});box('flat',13.0,3.62,2.2,.7,.06,1.2,{c:'#efe9de'});
  // dresser + tv
  box('doorWood',0,0,4.0,2.6,2.9,5.2,{c:'#d3c2aa'});box('flat',.3,2.9,4.5,2.1,2.4,4.2,{c:'#2a2c32'});
  face('tv',[2.42,3.2,8.4],[0,0,-1],[0,1,0],[1,0,0],3.4,1.8,{full:1});
- box('flat',.9,5.3,5.8,.12,1.4,.12,{c:'#8a8f98'});box('flat',.9,5.3,7.6,.12,1.4,.12,{c:'#8a8f98'});
+ box('flat',.9,5.3,5.8,.12,1.4,.12,{c:'#8a8f98'});box('flat',.9,5.3,7.6,.12,1.4,.12,{c:'#8a8f98'});box('flat',.85,6.6,5.7,.1,.1,2.1,{c:'#6a6f78',jit:0});
+ box('flat',2.45,3.0,4.3,.06,.35,.35,{c:'#8a8f98',jit:0});box('flat',2.45,4.1,4.55,.06,.3,.3,{c:'#8a8f98',jit:0});
+ box('doorWood',2.55,.3,4.25,.06,2.4,2.3,{c:'#bfae94',jit:.02});box('doorWood',2.55,.3,6.7,.06,2.4,2.3,{c:'#bfae94',jit:.02});box('flat',2.62,1.3,6.45,.1,.6,.1,{c:'#7a7f87',jit:0});box('flat',2.62,1.3,6.9,.1,.6,.1,{c:'#7a7f87',jit:0});
+ box('flat',.2,2.92,5.0,2.2,.07,3.3,{c:'#efe9de',jit:.02});box('flat',.2,2.92,5.0,.1,.1,3.3,{c:'#c7bfae',jit:0});
  // side table + lamp
- box('woodPanel',4.2,0,.8,1.6,2.2,1.6,{c:'#cdbca4'});box('flat',4.85,2.2,1.45,.3,1.4,.3,{c:'#8a8f98'});
- box('glow',4.3,3.6,.9,1.4,1.1,1.4,{c:night?'#ff9450':'#f2e6d6',s:'ny'});
+ box('woodPanel',4.2,0,.8,1.6,2.2,1.6,{c:'#cdbca4'});box('woodPanel',4.1,2.1,.7,1.8,.18,1.8,{c:'#b09a80',jit:.02});box('flat',4.35,.3,.95,1.3,.1,1.3,{c:'#a8947c',jit:0});
+ L.lamp(4.45,2.25,1.05,night?'#ff9450':'#f2e6d6');
  // rug
  decalY('rug',5.2,5.4,.03,8,6);
  // pennant
@@ -43,18 +44,21 @@ function sceneRoom(S,night){
  box('doorWood',21.3,4.1,.0,1.8,2.3,.08,{c:'#6a5848'});decal('photo',21.4,4.2,.1,1.6,2.1);
  box('doorWood',22.1,7.0,.0,1.2,1.5,.08,{c:'#6a5848'});decal('photo',22.2,7.1,.1,1.0,1.3);
  // table + chairs
- box('woodPanel',14.8,2.7,6.2,3.8,.4,2.8,{c:'#d9c9b0'});[[14.9,6.3],[18.2,6.3],[14.9,8.7],[18.2,8.7]].forEach(function(p){box('woodPanel',p[0],0,p[1],.4,2.7,.4,{c:'#bfa98c'})});
- box('flat',16.2,3.1,7.2,1.1,.3,1.1,{c:'#efe9de'});box('flat',16.5,3.4,7.5,.5,.5,.5,{c:S.p});
- [[15.4,9.3],[17.6,9.3]].forEach(function(p){box('woodPanel',p[0],0,p[1],1.5,1.7,1.5,{c:'#c7b296'});box('woodPanel',p[0],1.7,p[1]+1.2,1.5,2.2,.3,{c:'#c7b296'})});
+ L.table(14.8,0,6.2,3.8,2.8,3.1,'woodPanel','#bfa98c');
+ box('flat',15.2,3.1,6.55,3.0,.05,2.1,{c:'#efe9de',jit:.02});box('flat',15.2,3.1,6.55,.12,.07,2.1,{c:S.p,jit:0});box('flat',18.08,3.1,6.55,.12,.07,2.1,{c:S.p,jit:0});
+ box('flat',16.1,3.15,7.1,1.2,.18,1.2,{c:'#d9d2c4'});box('flat',16.25,3.3,7.25,.9,.2,.9,{c:'#e9e1d2'});box('flat',16.4,3.5,7.4,.28,.28,.28,{c:S.p,jit:.04});box('flat',16.78,3.5,7.55,.28,.28,.28,{c:'#d8a23a',jit:.04});
+ box('flat',17.55,3.15,6.8,.4,.42,.4,{c:'#efe9de'});box('flat',17.95,3.3,6.92,.12,.2,.1,{c:'#efe9de',jit:0});
+ [[15.4,9.3],[17.6,9.3]].forEach(function(p){L.chair(p[0],0,p[1],-1,'#c7b296')});
+ L.plant(22.1,0,1.0,1.1);
  // fan
- var fan=new THREE.Group();fan.position.set(21.8,0,9.8);cube(fan,1.6,.3,1.6,pm('#5a5f68'),0,.15,0);cube(fan,.3,2.9,.3,pm('#7a8088'),0,1.6,0);cube(fan,1.9,1.9,.5,pm('#4a4f58'),0,3.5,0);
+ var fan=new THREE.Group();fan.position.set(21.8,0,9.8);cube(fan,1.6,.3,1.6,pm('#5a5f68'),0,.15,0);cube(fan,.3,2.9,.3,pm('#7a8088'),0,1.6,0);cube(fan,2.1,.18,.5,pm('#4a4f58'),0,4.45,0);cube(fan,2.1,.18,.5,pm('#4a4f58'),0,2.55,0);cube(fan,.18,2.0,.5,pm('#4a4f58'),-1.0,3.5,0);cube(fan,.18,2.0,.5,pm('#4a4f58'),1.0,3.5,0);cube(fan,.6,.6,.62,pm('#7a8088'),0,3.5,0);cube(fan,1.9,.06,.1,pm('#6a6f78'),0,3.5,.28);cube(fan,.06,1.9,.1,pm('#6a6f78'),0,3.5,.28);
  var bl=new THREE.Group();bl.position.set(0,3.5,.35);cube(bl,1.7,.45,.06,pm('#cfd3d8'),0,0,0);cube(bl,.45,1.7,.06,pm('#cfd3d8'),0,0,0);fan.add(bl);G.add(fan);cur.anims.push(function(t,dt){bl.rotation.z+=dt*9});
  // actors
  box('woodPanel',4.9,0,6.7,1.2,1.15,1.2,{c:'#cdbca4'});
  addPerson({cast:1,x:5.5,z:7.3,y:0,seat:1.15,sit:true,h:4.6,yaw:-Math.PI/2,shirt:S.p,pat:L.pat(S),shirt2:S.s,pants:'#3a4560',skin:SKIN[3],hair:HAIR[1]});
  addPerson({cast:1,x:9.9,z:3.4,y:0,seat:2.0,sit:true,h:6.6,yaw:0,look:-1.1,shirt:'#e4dccd',pants:'#4a4f5c',skin:SKIN[0],hair:HAIR[3]});
  addPerson({cast:1,x:20.4,z:5.0,y:0,h:6.2,yaw:-1.2,shirt:'#7a5a6a',pants:'#3a3f48',skin:SKIN[1],hair:HAIR[0]});
- if(night){cur.L.push(pt(0xff9450,1.1,24,4.9,3.9,1.6));cur.L.push(pt(0x9bb8ff,.9,18,3.4,4.2,6.7))}
+ if(night){cur.L.push(pt(0xff9450,1.1,24,4.9,5.6,1.6));cur.L.push(pt(0x9bb8ff,.9,18,3.4,4.2,6.7))}
  return{W:W,H:H,D:D,fx:[2,22]};
 }
 function sceneStreet(S,night){
