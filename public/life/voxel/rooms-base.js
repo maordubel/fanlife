@@ -5,7 +5,7 @@
 var V=window.__vx,L=window.__vxLib,THREE=V.THREE,box=V.box,face=V.face,wallZ=V.wallZ,decal=V.decal,decalY=V.decalY,addPerson=V.addPerson,cube=V.cube,pm=V.pm,pt=V.pt,rnd=V.rnd,pick=V.pick;
 var SKIN=V.SKIN,HAIR=V.HAIR,PANTS=V.PANTS;
 function sceneRoom(S,night){
- var cur=V.cur();var W=24,D=13,H=9.6,G=cur.G,gc=night?'#2a3a66':'#a8c8e8';
+ var cur=V.cur();var W=24,D=13,H=9.6,G=cur.G,gc=night?'#2a3a66':'#a8c8e8';V.interior();V.win(7,12.6,4.2,8.4);
  box('terrazzo',0,-1,0,W,1,D,{cell:2,kp:{pz:'concrete',nz:'concrete',px:'concrete',nx:'concrete'}});
  wallZ('plaster',0,W,0,H,-.8,.8,[[7,12.6,4.2,8.4],[17.6,20.8,0,7.2]],{kp:{py:'concrete',px:'concrete'}});
  box('plaster',-.8,0,-.8,.8,H,D+.8,{kp:{pz:'concrete',py:'concrete'},s:'nx'});
@@ -147,6 +147,7 @@ function sceneStreet(S,night){
  addPerson({x:28,z:10.6,y:.5,h:4.6,path:[[28,10.6],[41,10.6]],spd:2.4,shirt:'#5a7a9a',pants:PANTS[0],skin:SKIN[3],hair:HAIR[1]});
  addPerson({x:18,z:12.2,y:.5,h:6.1,path:[[18,12.2],[25,12.2]],spd:1.0,shirt:'#7a6a5a',pants:PANTS[3],skin:SKIN[0],hair:HAIR[3],cane:true});
  if(night){cur.L.push(pt(0xff9450,1.2,20,21.5,5.2,6.2));cur.L.push(pt(0xff9450,1.1,26,29,9.5,12.6))}
+ L.hydrant(2.2,.5,12.2);L.cat(33.5,.5,8.6,'#cfa070');
  return{W:44,H:21,D:22,fx:[8,34]};
 }
 function sceneGate(S,night){

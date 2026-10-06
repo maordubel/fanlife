@@ -95,7 +95,11 @@ Body.prototype.remove=function(){var g=this.P.g;if(g.parent)g.parent.remove(g)};
 
 function marker(col,size){
  var g=new THREE.Group(),m=new THREE.Mesh(new THREE.OctahedronGeometry(size||.42,0),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.95}));
- g.add(m);V.cur().G.add(g);V.cur().mats.push(m.material);return{g:g,m:m};
+ g.add(m);V.cur().G.add(g);V.cur().mats.push(m.material);
+ /* a soft halo behind the gem, and a ring on the floor that breathes — you can see what is talkable from across the room */
+ var sp=new THREE.Sprite(new THREE.SpriteMaterial({map:V.softTex(),color:col,transparent:true,opacity:.5,depthWrite:false,blending:THREE.AdditiveBlending}));sp.scale.set(2.4,2.4,1);g.add(sp);V.cur().mats.push(sp.material);
+ var rg=new THREE.Mesh(new THREE.RingGeometry(.95,1.25,36),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.4,depthWrite:false,side:THREE.DoubleSide,blending:THREE.AdditiveBlending}));rg.rotation.x=-PI/2;V.cur().G.add(rg);V.cur().mats.push(rg.material);
+ return{g:g,m:m,halo:sp,ring:rg};
 }
 function pad(e,col){
  var geo=new THREE.PlaneGeometry(e.w,e.d),mat=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.34,depthWrite:false,side:THREE.DoubleSide});
@@ -118,7 +122,7 @@ function addActor(a,near){
  var b=new Body(def,cur.S,fy);b.sig=sigActor(a);actors[a.id]=b;b.place();cur.anims.push(b.P.u);
  if(a.talk!==false){var mk=marker(white(),.36);mk.g.position.set(b.x,(a.sit?(a.seat||1.6):0)+fy+b.h*(a.sit?.78:1.05)+1.1,b.z);marks.push({kind:'actor',id:a.id,mk:mk,on:a.mark!==false,reach:a.reach||REACH})}
 }
-function dropMark(kind,id){marks=marks.filter(function(m){if(m.kind===kind&&m.id===id){if(m.mk.g.parent)m.mk.g.parent.remove(m.mk.g);return false}return true})}
+function dropMark(kind,id){marks=marks.filter(function(m){if(m.kind===kind&&m.id===id){if(m.mk.g.parent)m.mk.g.parent.remove(m.mk.g);if(m.mk.ring&&m.mk.ring.parent)m.mk.ring.parent.remove(m.mk.ring);return false}return true})}
 function dropActor(id){var a=actors[id];if(!a)return;a.remove();var an=V.cur().anims,i=an.indexOf(a.P.u);if(i>=0)an.splice(i,1);dropMark('actor',id);delete actors[id];if(focusId===id)focusId=null}
 function addSpot(s){var fy=cfg.floorY||0,mk=marker(white(),.34);mk.g.position.set(s.x,fy+(s.y==null?2.6:s.y),s.z);spots.push(s);marks.push({kind:'spot',id:s.id,mk:mk,on:s.on!==false,reach:s.reach||REACH})}
 function addExit(e){exits.push({def:e,sig:sigExit(e),locked:!!e.locked,vis:pad(e,white())})}
@@ -197,7 +201,7 @@ function act(t){
  emit({type:'act',kind:t.kind,id:t.id});return true;
 }
 function exitOf(id){for(var i=0;i<exits.length;i++)if(exits[i].def.id===id)return exits[i];return null}
-function leave(x){if(frozen)return;frozen=true;path=null;pending=null;emit({type:'exit',id:x.def.id})}
+function leave(x){if(frozen)return;frozen=true;path=null;pending=null;V.fadeOut(260,function(){emit({type:'exit',id:x.def.id})})}
 function faceEachOther(id){var a=actors[id];if(!a)return;player.wantYaw=Math.atan2(a.x-player.x,a.z-player.z);if(!a.def.sit&&!a.def.still)a.wantYaw=Math.atan2(player.x-a.x,player.z-a.z)}
 
 /* ---------- input ---------- */
@@ -283,13 +287,15 @@ function frame(t,dt){
  }
  if(!frozen)retarget(false);
  /* marks breathe; the one in reach breathes faster */
- marks.forEach(function(m,i){var on=m.on&&!frozen,hot=target&&target.kind===m.kind&&target.id===m.id;m.mk.g.visible=on;if(!on)return;
+ marks.forEach(function(m,i){var on=m.on&&!frozen,hot=target&&target.kind===m.kind&&target.id===m.id;m.mk.g.visible=on;if(m.mk.ring)m.mk.ring.visible=on;if(!on)return;
   if(m.kind==='actor'){var a=actors[m.id];if(a){m.mk.g.position.x=a.x;m.mk.g.position.z=a.z}}
-  m.mk.m.position.y=Math.sin(t*(hot?5:2.2)+i)*.18;m.mk.m.rotation.y=t*(hot?2.4:1.1);m.mk.m.scale.setScalar(hot?1.35:1)});
+  m.mk.m.position.y=Math.sin(t*(hot?5:2.2)+i)*.18;m.mk.m.rotation.y=t*(hot?2.4:1.1);m.mk.m.scale.setScalar(hot?1.35:1);
+  var rg=m.mk.ring,pl=hot?1+Math.sin(t*5)*.1:1+Math.sin(t*2+i)*.05;if(rg){rg.visible=true;rg.position.set(m.mk.g.position.x,(cfg.floorY||0)+.09,m.mk.g.position.z);rg.scale.setScalar((hot?1.35:1)*pl*(m.kind==='spot'?1.1:1));rg.material.opacity=hot?.8:.32}
+  if(m.mk.halo)m.mk.halo.material.opacity=hot?.95:.42});
  exits.forEach(function(x,i){var hot=target&&target.kind==='exit'&&target.id===x.def.id,k=x.locked?.12:(.26+.14*Math.sin(t*2.4+i)+(hot?.2:0));x.vis.mat.opacity=k;x.vis.a.material.opacity=x.locked?.25:.9;x.vis.a.visible=!frozen;
   var dir=x.def.dir||'n',bob=Math.sin(t*3+i)*.25;x.vis.a.position.y=(cfg.floorY||0)+2.2+(dir==='n'||dir==='s'?0:bob*0);if(dir==='n')x.vis.a.position.z=x.def.z+x.def.d/2-bob;else if(dir==='s')x.vis.a.position.z=x.def.z+x.def.d/2+bob;else if(dir==='e')x.vis.a.position.x=x.def.x+x.def.w/2+bob;else x.vis.a.position.x=x.def.x+x.def.w/2-bob});
  /* camera: with the player; in a conversation, between the two of them and a step closer */
- var fa=focusId&&actors[focusId];V.view.focus=fa?(player.x+fa.x)/2:player.x;V.view.zoom=fa?(cfg.talkZoom||1.22):1;
+ Object.keys(actors).forEach(function(k){var a=actors[k];if(a&&a.P)a.P.talk=(k===focusId)});var fa=focusId&&actors[focusId];V.view.focus=fa?(player.x+fa.x)/2:player.x;V.view.zoom=fa?(cfg.talkZoom||1.22):1;
 }
 
 /* ---------- checks the host (and the probe) can ask for ---------- */
@@ -322,6 +328,7 @@ var P=window.__vxPlay={
  where:function(){return player?{room:cfg.room,x:player.x,z:player.z,target:target,frozen:frozen,moving:!!path}:null},
  update:function(n){try{return sync(n)}catch(er){window.__err.push(String(er&&er.stack||er));emit({type:'error',message:String(er&&er.message||er)});return false}},
  audit:audit,grid:gridDump,
+ celebrate:function(o){V.celebrate(o);if(player&&player.P){var pp=player.P,m0=pp.mode;pp.mode='cheer';setTimeout(function(){if(pp.mode==='cheer')pp.mode=m0||'idle'},6500)}Object.keys(actors).forEach(function(k){var a=actors[k];if(a&&a.P&&!a.def.sit){var m1=a.P.mode;a.P.mode='cheer';setTimeout(function(){if(a.P.mode==='cheer')a.P.mode=m1||'idle'},6500)}})},
  frame:function(f){if(!cfg)return;V.view.top=f.top;V.view.bottom=f.bottom;V.fit()}
 };
 V.onFrame(frame);
