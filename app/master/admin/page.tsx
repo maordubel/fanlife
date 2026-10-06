@@ -1,7 +1,26 @@
+import {Suspense} from 'react'
 import {Shell} from '@/components/master/Shell'
 import {ClubGaps} from '@/components/master/ClubGaps'
-import {Admin} from '@/components/master/Admin'
+import {Admin,type LightState,type AdapterInfo} from '@/components/master/Admin'
 import {readState} from '@/lib/master/store'
 import {requireOpenEvaluation} from '@/lib/master/request'
+import {allSummaries} from '@/lib/master/summary'
+import {ADAPTER_LIST,adapterAvailable} from '@/lib/master/adapters'
+import {readRuns} from '@/lib/research/service'
+import {emptyDisplay} from '@/lib/master/lifeDisplay'
 export const dynamic='force-dynamic'
-export default async function Page(){requireOpenEvaluation();return <Shell><main id="main"><nav className="mag-adminnav" aria-label="Control room sections"><a href="#gaps">What is missing</a><a href="#controls">Controls</a><a href="/master/core">Club data</a><a href="/master/test-lab">Test lab</a></nav><ClubGaps/><div id="controls"><Admin initial={await readState()}/></div></main></Shell>}
+
+export default async function Page(){
+ requireOpenEvaluation()
+ const state=await readState()
+ const [summaries,runs]=await Promise.all([allSummaries(state),readRuns()])
+ // evidence arrays are paged on demand (audit A17); the page ships the light state only
+ const {audit,clubs,...rest}=state
+ const initial:LightState={...rest,clubs:clubs.map(({sources:_s,findings:_f,...c})=>c),auditTail:audit.slice(-100)}
+ const adapters:AdapterInfo[]=ADAPTER_LIST.map(a=>({...a,available:Object.fromEntries(clubs.map(c=>[c.id,adapterAvailable(a.id,c.id)]))}))
+ return <Shell><main id="main">
+  <nav className="mag-adminnav" aria-label="Control room sections"><a href="#gaps">What is missing</a><a href="#controls">Controls</a><a href="/master/admin?tab=display#controls">LIFE display</a><a href="/master/core">Club data</a><a href="/master/test-lab">Test lab</a></nav>
+  <ClubGaps summaries={summaries}/>
+  <Suspense fallback={<p className="muted" role="status">Loading the control room…</p>}><Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()}/></Suspense>
+ </main></Shell>
+}

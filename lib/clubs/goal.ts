@@ -1,5 +1,6 @@
 import type {ClubData,Fact,Entity,Readiness} from './contract'
 import {gateReadiness} from './gate-data'
+import {GATE_THRESHOLDS as T} from './thresholds'
 import {ZONES,zoneParts} from '@/lib/game/goal-zones'
 import {REPLAY_ACTIONS} from '@/lib/game/replay/vocab'
 
@@ -35,7 +36,7 @@ export function clubGoals(data:Pick<ClubData,'goals'>):ClubGoal[]{
 }
 export function goalReadiness(data:Pick<ClubData,'goals'>):Readiness{
  const n=clubGoals(data).length
- return n?gateReadiness(n,6,1,'goals with a sourced touch-by-touch sequence'):{state:'LOCKED',playable:false,eligible:0,target:6,reasons:['Needs at least one goal whose report names each touch — who, what, and where on the pitch — with a checked source.']}
+ return n?gateReadiness(n,T.goal.target,T.goal.minimum,T.goal.unit):{state:'LOCKED',playable:false,eligible:0,target:T.goal.target,reasons:['Needs at least one goal whose report names each touch — who, what, and where on the pitch — with a checked source.']}
 }
 const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^(seed>>>15),1|seed);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}
 /** Names on the bench for a goal: everyone the report names, plus club players who are not in it. Sorted, so order leaks nothing. */

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "clubId": "panathinaikos",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-06",
+  "desiredGates": ["xi", "trivia", "memory", "archive", "timeline", "lineup", "goal"],
+  "priorityMatchIds": [],
+  "notes": "Match-detail pages are fetched and kept as snapshots. No parser for them is registered yet, so jobs end as needs-adapter until one is written against a stored fixture.",
+  "sources": [
+    {
+      "providerId": "pao-official",
+      "familyId": "panathinaikos-institutional",
+      "origin": "https://www.pao.gr",
+      "adapterVersion": "pao-research-v1",
+      "paths": { "match-detail": "^/en/match/[0-9]+/?$" },
+      "capabilities": ["match-detail"],
+      "rate": { "minIntervalMs": 4000, "maxBytes": 2000000, "timeoutMs": 20000 },
+      "scope": "men's first team, all competitions the club site lists"
+    }
+  ]
+}

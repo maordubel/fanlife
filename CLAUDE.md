@@ -2824,3 +2824,25 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
 6. **הקרדיט של Dubel Team בפוטר נשאר** (Shell נושא אותו — לא מסירים).
 7. **נתון חי = מתאם אחד.** משחק הבא מגיע מ-`lib/fixtures/provider.ts` בלבד; אין ניחוש: שם מדויק + מדינה, עמימות = אין משחק,
    וקבוצה בלי משחק מאושר יושבת מחוץ לרוטציה. `/api/fixtures` מציג אבחון לכל קבוצה — פותחים אותו אחרי כל פריסה.
+
+## 92 · חדר הבקרה: שלוש שכבות, מדיניות גישה אחת, מנוע מחקר בלי AI, ותצוגת LIFE (6.10.2026)
+
+מסמכים: `docs/fanlife/37-control-room-v2.md` · ממצאי הביקורת A01–A18 · תוכנית מנוע המחקר.
+1. **שלוש שכבות, לעולם לא מתערבבות:** מחקר (מקורות/ממצאים/הכרעות) · נתוני חבילה (מוכנות לפי הקומפיילר) ·
+   פרסום (סטטוס, שערים דולקים). `lib/master/summary.ts → clubSummary` הוא מודל הקריאה היחיד; לוח הפערים,
+   כרטיס המועדון והפעלה קוראים ממנו. "פתוח עכשיו" ≠ "יש נתונים".
+2. **מדיניות גישה אחת:** `lib/clubs/access.ts → gateAccess` — הבית, עמוד המועדון, ציר הזמן, בקשת משחק
+   וחדר הבקרה. אין `status==='live'` מפוזר.
+3. **ספים במקום אחד:** `lib/clubs/thresholds.ts → GATE_THRESHOLDS` (target/minimum). gate-data, gate-content,
+   goal, resolver, contract ומתכנן המחקר קוראים ממנו.
+4. **הכרעה = שורה עם מזהה יציב** (`findingId` = sha256), `approved|rejected|deferred`, סיבה חובה לדחייה/דחייה
+   נדחית, ויומן עם before/after/actor. מקור שתוכנו השתנה נחנה ב-`incoming` עד שמאשרים — לא נדרס.
+   **אף אחד לא מאשר בשם הבעלים**: רק מאור, במילים שלו.
+5. **מנוע המחקר (`lib/research/*`) בלי AI ובלי OCR:** מתכנן דטרמיניסטי → משימות עם lease → fetcher מנומס
+   (robots.txt, קצב לכל host, ETag/Last-Modified, 403/451 = תשובה, לא עוקפים — כלל 11) → snapshot לפי sha256.
+   **אין parser בלי fixture**: דף בלי parser נשמר כ-`needs-adapter` ונקרא אחר כך בלי בקשה חדשה. פרופיל מקורות =
+   `research-profiles/<club>.json`. ה-cron מריץ עד 3 דפים לכל מועדון; כפתור "Fetch a small batch" בלשונית Data.
+6. **תצוגת LIFE גרה ב-`/master/admin?tab=display`**: טיוטה/פרסום/חזרה/איפוס בשרת (`.fan-life/control.json`,
+   `lib/master/lifeDisplay.ts`, ולידציה קשיחה — מפתח לא מוכר נדחה בשמו). השחקנים מקבלים רק את ה-live
+   מ-`/life/voxel/display.json` (ריק עד הפרסום הראשון), והבחירה המקומית של השחקן גוברת לכל מפתח.
+   התצוגה המקדימה (`display-preview.html`) לא שומרת לעולם. `display-admin.*` הם מצבות (כלל 26).

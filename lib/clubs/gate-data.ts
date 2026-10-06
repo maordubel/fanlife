@@ -5,6 +5,8 @@ import type {MemoryCandidate} from '@/lib/game/memory-engine'
 import type {MasterQuestion} from '@/lib/game/questions/types'
 import {FORMATIONS} from '@/lib/game/formations'
 import {fitOf} from '@/lib/xi/roles'
+import {GATE_THRESHOLDS as T} from './thresholds'
+const by=(k:keyof typeof T,count:number)=>gateReadiness(count,T[k].target,T[k].minimum,T[k].unit)
 const key=(s:string)=>createHash('sha256').update(s).digest('hex').slice(0,16)
 /** Already eligible dated facts only. No extra historical assertions or invented options. */
 export function eventGames(events:ClubData['timeline'],sources:ClubData['sources']):{trivia:ClubTrivia;memory:MemoryCandidate[]} {
@@ -21,7 +23,7 @@ export function gateReadiness(count:number,target:number,minimum:number,requirem
 export function sharedReadiness(data:Pick<ClubData,'players'|'trivia'|'memory'|'timeline'>&{archiveCount?:number}) {
  const faces=new Set<string>();let pairs=0
  for(const c of data.memory)if(!faces.has(c.a)&&!faces.has(c.b)){faces.add(c.a);faces.add(c.b);pairs++}
- const players=(data.players||[]).map(f=>f.value),xi=gateReadiness(players.length,22,11,'approved player identities')
+ const players=(data.players||[]).map(f=>f.value),xi=by('xi',players.length)
  // Match distinct documented people to slots. Unknown positions remain usable in
  // free play, but cannot silently certify full position coverage.
  const coverage=Object.values(FORMATIONS).some(formation=>{
@@ -36,5 +38,5 @@ export function sharedReadiness(data:Pick<ClubData,'players'|'trivia'|'memory'|'
   return formation.slots.every((_,i)=>assign(i,new Set()))
  })
  if(!coverage){if(xi.state==='READY')xi.state='PARTIAL';xi.reasons.push('Documented positions cannot yet fill a complete supported formation. Unknown positions are labelled in free play.')}
- return {trivia:gateReadiness(data.trivia.questions.length,60,3,'eligible questions'),xi,archive:gateReadiness(data.archiveCount??data.timeline.length,20,1,'eligible archive entries'),memory:gateReadiness(pairs,6,2,'distinct sourced memory pairs')}
+ return {trivia:by('trivia',data.trivia.questions.length),xi,archive:by('archive',data.archiveCount??data.timeline.length),memory:by('memory',pairs)}
 }

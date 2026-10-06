@@ -220,7 +220,7 @@ function patMat(kind,a,b){
 }
 function part(par,w,h,d,m,x,y,z,top){var piv=new THREE.Group();piv.position.set(x,y,z);var me=new THREE.Mesh(BG,m);me.scale.set(w,h,d);me.position.y=top?-h/2:0;me.castShadow=true;me.receiveShadow=true;piv.add(me);par.add(piv);return piv}
 function cube(par,w,h,d,m,x,y,z){var me=new THREE.Mesh(BG,m);me.scale.set(w,h,d);me.position.set(x,y,z);me.castShadow=true;me.receiveShadow=true;par.add(me);return me}
-/* ---- display settings (admin-controlled, see display-admin.html): every visual dial in one place ---- */
+/* ---- display settings (admin-controlled in /master/admin → Display; published config served at /life/voxel/display.json): every visual dial in one place ---- */
 var DISP={figure:'human',mirror:false,charScale:1,zoom:1,fov:20,azimuth:.22,elevation:.24,blob:true,blobOpacity:.3,faces:true,idle:true,vignette:1,grain:1,exposure:1,warmth:0,quality:'auto'};
 var DKEY='life:display';
 function dispLoad(){try{var s=JSON.parse(localStorage.getItem(DKEY)||'null');if(s)for(var k in s)if(k in DISP)DISP[k]=s[k]}catch(e){}

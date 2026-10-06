@@ -7,6 +7,7 @@ import {clubPolls} from './polls'
 import {gateReadiness} from './gate-data'
 import {waveCReadiness} from './gate-content'
 import {mergeWave} from './waves'
+import {GATE_THRESHOLDS as T} from './thresholds'
 const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[]}>>={
  'hapoel-tel-aviv':async()=>({data:(await import('./adapters/hapoel')).getHapoelData(),diagnostics:[]}),
  'zrinjski-mostar':async()=>compilePack(mergeWave(mergeWave((await import('./adapters/zrinjski')).zrinjskiPack(),(await import('@/club-packs/zrinjski-mostar/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/zrinjski-mostar/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/zrinjski-mostar/wave-auto.json')).default as never)),REGISTRY.find(c=>c.id==='zrinjski-mostar')!),
@@ -22,7 +23,7 @@ function freeze<T>(v:T):T {if(v&&typeof v==='object'&&!Object.isFrozen(v)){Objec
 /** Static packs are immutable within a deployment; content versions travel with each run. */
 export function loadClub(id:string) {
  if(!Object.hasOwn(providers,id))return Promise.resolve(null)
- if(!cache.has(id))cache.set(id,providers[id]!().then(result=>{result.data.gates.polls=gateReadiness(clubPolls(result.data,'en').length,6,1,'opinion prompts with eligible club choices');result.data.gates['blind-cow']=gateReadiness(clubMystery(result.data).poolSize,30,1,'canonical players with at least four eligible clues');for(const [k,r] of Object.entries(waveCReadiness(result.data)))(result.data.gates as Record<string,unknown>)[k]=r;return freeze(result)}).catch(e=>{cache.delete(id);throw e}))
+ if(!cache.has(id))cache.set(id,providers[id]!().then(result=>{result.data.gates.polls=gateReadiness(clubPolls(result.data,'en').length,T.polls.target,T.polls.minimum,T.polls.unit);result.data.gates['blind-cow']=gateReadiness(clubMystery(result.data).poolSize,T['blind-cow'].target,T['blind-cow'].minimum,T['blind-cow'].unit);for(const [k,r] of Object.entries(waveCReadiness(result.data)))(result.data.gates as Record<string,unknown>)[k]=r;return freeze(result)}).catch(e=>{cache.delete(id);throw e}))
  return cache.get(id)!
 }
 /** Host is authority. Neutral-portal path selection is available only in evaluation. */
