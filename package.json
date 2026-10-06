@@ -47,6 +47,8 @@
     "wiki:cargo": "tsx scripts/ingest/cargo-cli.ts",
     "wiki:squads": "tsx scripts/ingest/squads-cli.ts",
     "club:wave": "tsx scripts/ingest/club-wave.ts",
+    "research:stage": "tsx scripts/club-research/stage-package.ts",
+    "research:pack": "tsx scripts/club-research/build-review-pack.ts",
     "ingest:vikipoel": "tsx scripts/ingest/vikipoel-cli.ts",
     "ingest:vikipoel-schedules": "tsx scripts/ingest/vikipoel-schedules.ts",
     "ingest:players": "tsx scripts/ingest/players-cli.ts",

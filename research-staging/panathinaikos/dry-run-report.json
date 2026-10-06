@@ -1,0 +1,252 @@
+{
+ "club": "panathinaikos",
+ "snapshotAsOf": "2026-10-06",
+ "approvedForProduction": 0,
+ "sources": {
+  "total": 105,
+  "families": {
+   "Panathinaikos institutional": 94,
+   "Wikimedia": 2,
+   "RSSSF": 5,
+   "UEFA": 4
+  },
+  "imagesUsableInApp": 0,
+  "sourcesWithHash": 104
+ },
+ "records": {
+  "archive-players": 930,
+  "backlog": 17,
+  "chapters": 74,
+  "claims": 17300,
+  "club-identity": 3,
+  "coach-spells": 121,
+  "conflicts": 3,
+  "culture-venues-kits": 7,
+  "cup-final-assertions": 33,
+  "current-squad": 34,
+  "current-staff": 1,
+  "early-tables": 56,
+  "euro-ties": 70,
+  "evidence": 4222,
+  "extraction-issues": 15,
+  "foreign-stats": 261,
+  "goal-claims": 295,
+  "highlights": 18,
+  "historical-index": 99,
+  "honours": 45,
+  "league-tables": 40,
+  "lineups": 155,
+  "match-events": 315,
+  "matches": 917,
+  "quarantined": 1,
+  "result-matrix": 439,
+  "season-coverage": 18,
+  "sources": 105,
+  "timeline": 30,
+  "uefa-campaigns": 55
+ },
+ "identity": {
+  "archivePlayers": {
+   "total": 930,
+   "matched": 0,
+   "unmatched": 930
+  },
+  "squad": {
+   "total": 34,
+   "matched": 0,
+   "unmatched": 34
+  },
+  "rule": "verified provider id only; names are leads"
+ },
+ "matches": {
+  "total": 917,
+  "quarantined": [
+   {
+    "id": "research_match_221f1592b71e",
+    "reason": "source_date_outside_selected_season",
+    "sourceDateClaim": "2026-10-06"
+   }
+  ],
+  "futureDated": [],
+  "seasonMismatch": [],
+  "neutralFinals": 16,
+  "homeAway": {
+   "neutral": 16,
+   "unassigned": 821
+  },
+  "resultKinds": {
+   "displayed_unqualified": 915,
+   "shootout_recorded": 2
+  },
+  "assertionsNotMatches": 598
+ },
+ "lineups": {
+  "total": 155,
+  "xiCandidatesNeedIdentity": 143,
+  "blocked": [
+   {
+    "id": "research_lineup_738a45209bd1",
+    "reasons": [
+     "10 names, not 11",
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_4f594a59ae27",
+    "reasons": [
+     "12 names, not 11",
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_2a9fa379b260",
+    "reasons": [
+     "12 names, not 11",
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_47e90cd538f8",
+    "reasons": [
+     "10 names, not 11",
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_e657f2bb73d1",
+    "reasons": [
+     "10 names, not 11",
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_a6d19a847326",
+    "reasons": [
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_f1ad460798af",
+    "reasons": [
+     "10 names, not 11",
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_9e0f8bc84246",
+    "reasons": [
+     "13 names, not 11",
+     "duplicate names",
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_574c0e1a148e",
+    "reasons": [
+     "10 names, not 11",
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_1ee608692580",
+    "reasons": [
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_ab44a8e47592",
+    "reasons": [
+     "partial_or_malformed_listing"
+    ]
+   },
+   {
+    "id": "research_lineup_140916a78a8c",
+    "reasons": [
+     "4 names, not 11",
+     "partial_or_malformed_listing"
+    ]
+   }
+  ]
+ },
+ "goals": {
+  "groups": 295,
+  "duplicates": 0,
+  "sideUnresolved": 295,
+  "ownGoals": 4,
+  "disputed": 2
+ },
+ "conflicts": [
+  {
+   "id": "research_conflict_05811cc47067",
+   "matchId": "research_match_821878aa0ec9",
+   "topic": null,
+   "status": "deep_research",
+   "rule": "result 2-0 can be reviewed separately; second-goal trivia/replay withheld"
+  },
+  {
+   "id": "research_conflict_39f7d58b0118",
+   "matchId": null,
+   "topic": "Marcus Berg league appearances and goals",
+   "status": "deep_research",
+   "rule": [
+    "single-value statistics",
+    "trivia",
+    "records ranking"
+   ]
+  },
+  {
+   "id": "research_conflict_cf26f884f7f7",
+   "matchId": null,
+   "topic": "Leoforos floodlights date and event definition",
+   "status": "deep_research",
+   "rule": [
+    "date trivia",
+    "timeline exact claim"
+   ]
+  }
+ ],
+ "honoursWithTwoFamilies": 40,
+ "sensitiveClaims": 0,
+ "gates": {
+  "timeline": "LOCKED",
+  "trivia": "LOCKED",
+  "xi": "LOCKED",
+  "lineup": "LOCKED",
+  "archive": "LOCKED",
+  "memory": "LOCKED",
+  "goal": "LOCKED",
+  "note": "review material is never playable; gates unlock only from approved, sourced, conflict-free facts"
+ },
+ "fingerprints": {
+  "archive-players": "32a77cbb95d7052b",
+  "backlog": "8a1fc294b56a23cb",
+  "chapters": "4c92e7d429e2bd86",
+  "claims": "b7851d88cb487cff",
+  "club-identity": "d185711f582ae5e1",
+  "coach-spells": "06258754ebc5dbc7",
+  "conflicts": "13c32c4cf941b8c7",
+  "culture-venues-kits": "04cd1ad8d6e00a78",
+  "cup-final-assertions": "78fb1e35b133bada",
+  "current-squad": "7a495188603f9113",
+  "current-staff": "75e84e76ebe53053",
+  "early-tables": "e32aa3711d8c9b4e",
+  "euro-ties": "9f7ae6d141e7f8e5",
+  "evidence": "104678ba2d723e55",
+  "extraction-issues": "f9796f10051646d5",
+  "foreign-stats": "caa7683791d8f858",
+  "goal-claims": "d07df48cc0b0a6f8",
+  "highlights": "21abb236965ddd98",
+  "historical-index": "fc5079f237f23175",
+  "honours": "fbfc710e3a60e19f",
+  "league-tables": "e7d83d330056ce13",
+  "lineups": "cc970149c481ae51",
+  "match-events": "2b5660f01718c07b",
+  "matches": "ff9a0213509ff9d1",
+  "quarantined": "d5af8b252fb69a04",
+  "result-matrix": "5e906a255a681f26",
+  "season-coverage": "abe4ee7a105042f7",
+  "sources": "e6ade01c5191d748",
+  "timeline": "5a1603c764f63be8",
+  "uefa-campaigns": "bf16058ccd3bc281"
+ }
+}
