@@ -23,6 +23,8 @@ function buildGrid(){
  c.solids.forEach(function(s){if(s[4]<fy+3.2&&s[5]>fy+.75)block(s[0]-RADIUS,s[1]-RADIUS,s[0]+s[2]+RADIUS,s[1]+s[3]+RADIUS)});
  c.bodies.forEach(function(p){block(p[0]-p[2]-RADIUS*.6,p[1]-p[2]-RADIUS*.6,p[0]+p[2]+RADIUS*.6,p[1]+p[2]+RADIUS*.6)});
  (cfg.blocks||[]).forEach(function(r){block(r[0]-RADIUS,r[1]-RADIUS,r[2]+RADIUS,r[3]+RADIUS)});
+ /* every exit mouth is a hole in the furniture round it, so a door can always be reached and walked into */
+ (exits||[]).forEach(function(x){var e=x.def,i0=Math.max(0,Math.floor((e.x-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((e.x+e.w-w[0])/CELL)),j0=Math.max(0,Math.floor((e.z-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((e.z+e.d-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
  Object.keys(actors).forEach(function(id){var a=actors[id];if(a.def.ghost||a.def.follow)return;var r=a.def.sit?1.0:.7;block(a.x-r,a.z-r,a.x+r,a.z+r)});
  /* a door is a hole in whatever stands in front of it */
  (cfg.clear||[]).forEach(function(r){var i0=Math.max(0,Math.floor((r[0]-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((r[2]-w[0])/CELL)),j0=Math.max(0,Math.floor((r[1]-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((r[3]-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
