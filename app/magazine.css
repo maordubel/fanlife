@@ -599,3 +599,13 @@
 .mag-skin .derby-bar .drawn { background: var(--mag-card); }
 .mag-skin .derby-bar .lost { background: var(--mag-salmon); }
 .mag-skin .derby-more summary { list-style: none; margin-block: 12px; }
+.mag-skin .goal-verdicts li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.mag-skin .goal-verdicts li > div { display: grid; gap: 2px; }
+.mag-skin .goal-name { font-family: var(--mag-body); font-weight: 700; font-size: 17px; }
+.mag-skin .goal-meta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 13px; }
+.mag-skin .goal-mark { display: inline-grid; place-items: center; inline-size: 20px; block-size: 20px; border: 2px solid var(--mag-ink); font-weight: 700; }
+.mag-skin .goal-mark[data-ok='true'] { background: var(--mag-ink); color: var(--mag-paper); }
+.mag-skin .goal-meta [data-zone='exact'] { background: var(--mag-ink); color: var(--mag-paper); padding-inline: 4px; }
+.mag-skin .derby-score { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+.mag-skin .derby-score b { font-family: var(--mag-mono); }
+.mag-skin .derby-best-line { font-size: clamp(20px, 5vw, 28px); }

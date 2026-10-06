@@ -11,7 +11,9 @@ export function DerbyWall({rival,meetings,tally,copy,locale,contentLocale}:{riva
  const decades=new Map<number,{w:number;d:number;l:number}>()
  for(const m of meetings){if(!m.us)continue;const y=m.on?Number(m.on.slice(0,4)):m.year;if(!y)continue;const k=Math.floor(y/10)*10,[f,a]=mine(m),row=decades.get(k)||{w:0,d:0,l:0};if(f!>a!)row.w++;else if(f===a)row.d++;else row.l++;decades.set(k,row)}
  const rows=[...decades.entries()].sort((a,b)=>a[0]-b[0]),peak=Math.max(1,...rows.map(([,r])=>r.w+r.d+r.l))
- const line=(m:Meeting)=><div className="mag-row" key={`${m.on??m.year}|${m.home}|${m.homeGoals}-${m.awayGoals}`}><span><bdi lang={contentLocale} dir="auto">{m.home} {m.homeGoals}–{m.awayGoals} {m.away}</bdi><small><bdi>{m.on??m.year}</bdi>{m.competition?<> · <bdi lang={contentLocale} dir="auto">{m.competition}</bdi></>:null}</small></span></div>
+  // a scoreline is three isolated runs in one fixed LTR row, so a Hebrew name can never flip the score
+ const score=(m:Meeting)=><span className="derby-score" dir="ltr"><bdi lang={contentLocale} dir="auto">{m.home}</bdi> <b>{m.homeGoals}–{m.awayGoals}</b> <bdi lang={contentLocale} dir="auto">{m.away}</bdi></span>
+ const line=(m:Meeting)=><div className="mag-row" key={`${m.on??m.year}|${m.home}|${m.homeGoals}-${m.awayGoals}`}><span>{score(m)}<small><bdi>{m.on??m.year}</bdi>{m.competition?<> · <bdi lang={contentLocale} dir="auto">{m.competition}</bdi></>:null}</small></span></div>
  return <section className="derby-wall" data-testid="derby-wall" lang={locale}>
   <p>{copy.sub}</p>
   <p className="mag-kicker">{copy.rival}</p>
@@ -23,7 +25,7 @@ export function DerbyWall({rival,meetings,tally,copy,locale,contentLocale}:{riva
     <div className="derby-cell lost"><b>{tally.lost}</b><span>{copy.lost}</span></div>
     <p className="derby-goals mag-mono">{copy.goals} <bdi>{tally.for}–{tally.against}</bdi> · {copy.meetings} {tally.played}</p>
    </div>}
-   {best&&<div className="game-panel derby-best"><p className="mag-kicker">{copy.biggest}</p><p className="mag-bowl"><bdi lang={contentLocale} dir="auto">{best.home} {best.homeGoals}–{best.awayGoals} {best.away}</bdi></p><small><bdi>{best.on??best.year}</bdi> · <bdi lang={contentLocale} dir="auto">{best.competition}</bdi></small></div>}
+   {best&&<div className="game-panel derby-best"><p className="mag-kicker">{copy.biggest}</p><p className="mag-bowl derby-best-line">{score(best)}</p><small><bdi>{best.on??best.year}</bdi> · <bdi lang={contentLocale} dir="auto">{best.competition}</bdi></small></div>}
    {rows.length>1&&<><p className="mag-kicker">{copy.decade}</p><ol className="derby-decades">{rows.map(([dec,r])=>{const n=r.w+r.d+r.l;return <li key={dec}><span className="mag-mono">{dec}s</span><span className="derby-bar" style={{inlineSize:`${Math.max(8,(n/peak)*100)}%`}} aria-label={`${dec}s: ${r.w} ${copy.won}, ${r.d} ${copy.drawn}, ${r.l} ${copy.lost}`}>{r.w>0&&<i className="won" style={{flexGrow:r.w}}>{r.w}</i>}{r.d>0&&<i className="drawn" style={{flexGrow:r.d}}>{r.d}</i>}{r.l>0&&<i className="lost" style={{flexGrow:r.l}}>{r.l}</i>}</span></li>})}</ol></>}
    <p className="mag-kicker">{copy.meetings} · {meetings.length}</p>
    <div className="mag-contents">{meetings.slice(0,12).map(line)}</div>

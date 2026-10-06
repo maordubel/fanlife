@@ -15,7 +15,8 @@ const W=300,H=400,X0=13,Y0=40,CW=55,CH=86
 const centre=(z:string)=>{const p=zoneParts(z);return p?{x:X0+p.col*CW+CW/2,y:Y0+p.row*CH+CH/2}:{x:W/2,y:H/2}}
 
 function Path({touches,tone,dashed}:{touches:{zone:string}[];tone:string;dashed?:boolean}){
- const pts=touches.map(t=>centre(t.zone))
+ // two touches in one zone sit side by side, never on top of each other
+ const pts=touches.map((t,i)=>{const c=centre(t.zone),k=touches.slice(0,i).filter(x=>x.zone===t.zone).length;return {x:c.x+k*18,y:c.y-k*6}})
  return <g>
   {pts.slice(1).map((p,i)=><line key={i} x1={pts[i]!.x} y1={pts[i]!.y} x2={p.x} y2={p.y} stroke={tone} strokeWidth={5} strokeDasharray={dashed?'9 7':undefined} strokeLinecap="round"/>)}
   {pts.length>0&&<line x1={pts[pts.length-1]!.x} y1={pts[pts.length-1]!.y} x2={W/2} y2={Y0-14} stroke={tone} strokeWidth={5} strokeDasharray="2 9" strokeLinecap="round"/>}
@@ -60,7 +61,7 @@ export function GoalBoard({items,club,version,seed,locale,contentLocale}:{items:
      <fieldset className="mag-chips"><legend className="mag-kicker">{copy.goalWho}</legend>{g.pool.map(p=><button key={p} type="button" className="mag-chip min-h-tap" aria-pressed={actor===p} onClick={()=>setActor(p)}><bdi lang={contentLocale} dir="auto">{p}</bdi></button>)}<button type="button" className="mag-chip min-h-tap" aria-pressed={actor===''} onClick={()=>setActor('')}>{copy.goalUnnamed}</button></fieldset>
      <fieldset className="mag-chips"><legend className="mag-kicker">{copy.goalWhat}</legend>{REPLAY_ACTIONS.map(a=><button key={a} type="button" className="mag-chip min-h-tap" aria-pressed={action===a} onClick={()=>setAction(a)}>{act(a)}</button>)}</fieldset>
      <p className="mag-fine" aria-live="polite">{ready?copy.goalWhere:touches.length<MAX?copy.goalPickFirst:''}</p>
-     {touches.length>0&&<ol className="goal-list">{touches.map((t,i)=><li key={i}><b>{i+1}</b> <bdi lang={contentLocale} dir="auto">{t.actor||copy.goalUnnamed}</bdi> · {act(t.action)} · <span className="mag-mono">{t.zone}</span></li>)}</ol>}
+     {touches.length>0&&<ol className="goal-list goal-verdicts">{touches.map((t,i)=><li key={i}><b>{i+1}</b><div><bdi className="goal-name" lang={contentLocale} dir="auto">{t.actor||copy.goalUnnamed}</bdi><span className="goal-meta"><span>{act(t.action)}</span><span className="mag-mono">{t.zone}</span></span></div></li>)}</ol>}
      <div className="goal-actions">
       {touches.length>0&&<button type="button" className="mag-chip min-h-tap" onClick={()=>setTouches(t=>t.slice(0,-1))}>{copy.goalUndo}</button>}
       {count===null&&<button type="button" className="mag-chip min-h-tap" disabled={pending} onClick={hint}>{copy.goalHintCount}</button>}
@@ -72,7 +73,7 @@ export function GoalBoard({items,club,version,seed,locale,contentLocale}:{items:
      <p className="mag-bowl" style={{fontSize:30}}>{copy.goalPoints}: {res.points}/{res.max}</p>
      <p className="mag-kicker">{res.countRight?copy.goalCountRight:copy.goalCountWrong}</p>
      <p className="goal-legend"><span className="yours">{copy.goalYours}</span> <span className="archive">{copy.goalArchive}</span></p>
-     <ol className="goal-list">{res.truth.map((t,i)=>{const v=res.steps[i]!;return <li key={i}><b>{i+1}</b> <bdi lang={contentLocale} dir="auto">{t.actor||copy.goalUnnamed}</bdi> · {act(t.action)} · <span className="mag-mono">{t.zone}</span> <small>({v.actor?'✓':'✗'} · {v.action?'✓':'✗'} · {v.zone==='exact'?copy.goalExact:v.zone==='near'?copy.goalNear:copy.goalMiss})</small>{t.note&&<><br/><small lang={contentLocale} dir="auto">{t.note}</small></>}</li>})}</ol>
+     <ol className="goal-list goal-verdicts">{res.truth.map((t,i)=>{const v=res.steps[i]!,mark=(ok:boolean)=><span className="goal-mark" data-ok={ok}>{ok?'✓':'✗'}</span>;return <li key={i}><b>{i+1}</b><div><bdi className="goal-name" lang={contentLocale} dir="auto">{t.actor||copy.goalUnnamed}</bdi><span className="goal-meta"><span>{act(t.action)}</span><span className="mag-mono">{t.zone}</span></span><span className="goal-meta">{copy.goalWho} {mark(v.actor)} {copy.goalWhat} {mark(v.action)} <span data-zone={v.zone}>{v.zone==='exact'?copy.goalExact:v.zone==='near'?copy.goalNear:copy.goalMiss}</span></span>{t.note&&<small lang={contentLocale} dir="auto">{t.note}</small>}</div></li>})}</ol>
      {res.narrative&&<p lang={contentLocale} dir="auto">{res.narrative}</p>}
      {res.sources.map(s=>s.url?<p key={s.title} className="mag-fine"><a href={s.url} target="_blank" rel="noreferrer">{copy.goalSource}: <bdi>{s.title}</bdi> ↗</a></p>:<p key={s.title} className="mag-fine">{copy.goalSource}: <bdi>{s.title}</bdi></p>)}
      <p className="mag-fine">{copy.goalApprox}</p>
