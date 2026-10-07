@@ -4,6 +4,7 @@ import path from 'node:path'
 import {politeFetch,type FetchLike} from './fetcher'
 import {dir,readJson,saveSnapshot,writeJson} from './store'
 import {archiveParserFor,type ArchiveObservation} from './parsers'
+import {canonicalJson} from './canonical'
 import {RESEARCH_SCHEMA,type ArchiveCheckpoint,type ArchiveDiagnostic,type ArchiveDoc,type ArchiveRun,type ArchiveSource,type EndpointStatus,type SourceProfile} from './contract'
 
 /**
@@ -20,17 +21,27 @@ export const readArchiveDocs=(club:string)=>readJson<Record<string,ArchiveDoc>>(
 export const readCheckpoints=(club:string)=>readJson<Record<string,ArchiveCheckpoint>>(files(club).cps,{})
 export const readEndpoints=(club:string)=>readJson<Record<string,EndpointStatus>>(files(club).eps,{})
 export const readArchiveRuns=(club:string)=>readJson<ArchiveRun[]>(files(club).runs,[])
-export const readObservations=(club:string)=>readJson<Record<string,ArchiveObservation&{providerId:string}>>(files(club).obs,{})
+/**
+ * An observation is tied to the document VERSION it came from (`contentHash`, `runId`). When a new version of that
+ * document no longer produces it, it is retired with a reason — kept as history, never silently left active (audit F07).
+ */
+export type StoredObservation=ArchiveObservation&{providerId:string;contentHash?:string;runId?:string;retired?:{at:string;runId:string;reason:string}|null;history?:{at:string;runId:string;change:'retired'|'restored';reason:string}[]}
+export const readObservations=(club:string)=>readJson<Record<string,StoredObservation>>(files(club).obs,{})
+export const activeObservations=(obs:Record<string,StoredObservation>)=>Object.values(obs).filter(o=>!o.retired)
 const readTaxonomy=(club:string)=>readJson<Record<string,Record<string,string>>>(files(club).tax,{})
 
 const sha=(s:string|Buffer)=>createHash('sha256').update(s).digest('hex')
-/** what defines "the same listing": change any of these and the checkpoint starts again from page 1 */
-export const fingerprint=(src:ArchiveSource,collection:string)=>sha(JSON.stringify({p:src.providerId,o:src.origin,c:collection,pp:src.budget.perPage,a:src.allowedPathPrefixes,f:src.follow||null,parser:src.parserId,v:RESEARCH_SCHEMA})).slice(0,16)
+/**
+ * What defines "the same listing": change any of these and the checkpoint starts again from page 1.
+ * Canonical JSON (sorted keys; seeds and prefixes as sets), and it includes the seeds and the parser's version —
+ * a new seed or a new parser is a new listing (audit F16).
+ */
+export const fingerprint=(src:ArchiveSource,collection:string)=>sha(canonicalJson({p:src.providerId,o:src.origin,c:collection,pp:src.budget.perPage,a:[...src.allowedPathPrefixes].sort(),seeds:collection==='html'?[...new Set(src.seeds||[])].sort():null,f:src.follow||null,parser:src.parserId,parserVersion:archiveParserFor(src.parserId)?.id??null,v:RESEARCH_SCHEMA})).slice(0,16)
 const asFetchSource=(src:ArchiveSource):SourceProfile=>({providerId:src.providerId,familyId:src.familyId,origin:src.origin,adapterVersion:src.parserId||'reader-only',paths:{},capabilities:[],rate:{minIntervalMs:src.budget.minDelayMs,maxBytes:src.budget.maxResponseBytes,timeoutMs:src.budget.timeoutMs},scope:src.role})
 export const allowedPath=(src:ArchiveSource,p:string)=>src.allowedPathPrefixes.some(a=>p.startsWith(a))
 const decode=(s:string)=>s.replace(/<[^>]*>/g,'').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/&#x([0-9a-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16))).replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#039;|&apos;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim()
 
-type Ctx={club:string;runId:string;now:()=>Date;fetchImpl?:FetchLike;budget:number;requests:number;diag:ArchiveDiagnostic[];resources:unknown[];docs:Record<string,ArchiveDoc>;cps:Record<string,ArchiveCheckpoint>;eps:Record<string,EndpointStatus>;counts:ArchiveRun['counts'];obs:Record<string,ArchiveObservation&{providerId:string}>;newObs:ArchiveObservation[];tax:Record<string,Record<string,string>>}
+type Ctx={byDoc?:Map<string,Set<string>>;club:string;runId:string;now:()=>Date;fetchImpl?:FetchLike;budget:number;requests:number;diag:ArchiveDiagnostic[];resources:unknown[];docs:Record<string,ArchiveDoc>;cps:Record<string,ArchiveCheckpoint>;eps:Record<string,EndpointStatus>;counts:ArchiveRun['counts'];obs:Record<string,StoredObservation>;newObs:ArchiveObservation[];tax:Record<string,Record<string,string>>}
 function endpoint(ctx:Ctx,src:ArchiveSource,ep:string,state:EndpointStatus['state'],status:number,reason:string|null){ctx.eps[`${src.providerId}:${ep}`]={endpoint:ep,providerId:src.providerId,state,status,reason,checkedAt:ctx.now().toISOString()}}
 type Meta={slug:string|null;categories:number[];parent:number|null}
 async function keep(ctx:Ctx,src:ArchiveSource,collection:string,id:string,url:string,title:string|null,content:string,published:string|null,modified:string|null,raw:Buffer|null,meta:Meta={slug:null,categories:[],parent:null}){
@@ -43,7 +54,18 @@ async function keep(ctx:Ctx,src:ArchiveSource,collection:string,id:string,url:st
  let parse:ArchiveDoc['parse']='needs-parser'
  if(parser&&(!parser.needsTaxonomy||tax)){
   const r=parser.parse({url,title,html:content,providerKey:key,meta:{slug:meta.slug,parent:meta.parent,categories:meta.categories.map(c=>tax?.[String(c)]).filter((x):x is string=>!!x)}})
-  for(const o of r.observations){ctx.obs[o.id]={...o,providerId:src.providerId};ctx.newObs.push(o)}
+  const fresh=new Set(r.observations.map(o=>o.id))
+  for(const o of r.observations){
+   const had=ctx.obs[o.id],history=[...(had?.history||[])]
+   if(had?.retired)history.push({at,runId:ctx.runId,change:'restored',reason:`produced again by document version ${hash.slice(0,12)}`})
+   ctx.obs[o.id]={...o,providerId:src.providerId,contentHash:hash,runId:ctx.runId,retired:null,...(history.length?{history:history.slice(-20)}:{})};ctx.newObs.push(o)}
+  // the active set for THIS document is replaced: what the new version no longer yields is retired, with the reason
+  if(!ctx.byDoc){ctx.byDoc=new Map();for(const o of Object.values(ctx.obs)){const s=ctx.byDoc.get(o.providerRecordKey)||new Set<string>();s.add(o.id);ctx.byDoc.set(o.providerRecordKey,s)}}
+  const mine=ctx.byDoc.get(key)||new Set<string>();for(const id of fresh)mine.add(id);ctx.byDoc.set(key,mine)
+  for(const old of [...mine].map(id=>ctx.obs[id]!).filter(Boolean))if(!old.retired&&!fresh.has(old.id)){
+   const reason=prev&&prev.contentHash!==hash?`document changed (${prev.contentHash.slice(0,12)} → ${hash.slice(0,12)}); ${parser.id} no longer produces this observation`:`${parser.id} no longer produces this observation from document version ${hash.slice(0,12)}`
+   ctx.obs[old.id]={...old,retired:{at,runId:ctx.runId,reason},history:[...(old.history||[]),{at,runId:ctx.runId,change:'retired' as const,reason}].slice(-20)}
+  }
   ctx.counts.recordsExtracted+=r.observations.length;parse='parsed'
  }
  ctx.docs[key]={providerKey:key,providerId:src.providerId,collection,url,title,contentHash:hash,bytes:Buffer.byteLength(content),publishedAsReported:published,modifiedAsReported:modified,retrievedAt:at,firstRunId:prev?.firstRunId||ctx.runId,lastRunId:ctx.runId,changed:!!prev&&prev.contentHash!==hash,snapshot,parse}
@@ -162,13 +184,13 @@ function serialRun<T>(club:string,fn:()=>Promise<T>):Promise<T>{const prev=runni
 /** What the control room shows per source: listing progress, endpoint health, documents kept, parser state. */
 export async function archiveStatus(clubId:string,sources:ArchiveSource[]){
  const [docs,cps,eps,runs,obs]=await Promise.all([readArchiveDocs(clubId),readCheckpoints(clubId),readEndpoints(clubId),readArchiveRuns(clubId),readObservations(clubId)])
- const allObs=Object.values(obs)
+ const allObs=activeObservations(obs)
  const all=Object.values(docs)
  return {
   sources:sources.map(s=>({providerId:s.providerId,publisher:s.publisher,reader:s.reader,role:s.role,origin:s.origin,familyId:s.familyId,parser:archiveParserFor(s.parserId)?s.parserId:null,plannedParser:s.parserId,knownLimits:s.knownLimits||[],
    listings:(s.reader==='wordpress-rest'?(s.collections||[]):['html']).map(c=>{const cp=cps[`${s.providerId}:${c}`];return {collection:c,state:cp?.state||'new',pagesRead:cp?.lastCommittedPage||0,observedTotalDocuments:cp?.observedTotalDocuments??null,observedTotalPages:cp?.observedTotalPages??null,queue:cp?.queue?.length??null,lastError:cp?.lastError||null}}),
    documents:all.filter(d=>d.providerId===s.providerId).length,observations:allObs.filter(o=>o.providerId===s.providerId).length,changed:all.filter(d=>d.providerId===s.providerId&&d.changed).length,
    endpoints:Object.values(eps).filter(e=>e.providerId===s.providerId)})),
-  documents:all.length,observations:allObs.length,observationsByType:allObs.reduce((a:Record<string,number>,o)=>{a[o.recordType]=(a[o.recordType]||0)+1;return a},{}),needsParser:all.filter(d=>d.parse==='needs-parser').length,lastRun:runs.at(-1)||null,runs:runs.slice(-10).reverse()
+  documents:all.length,observations:allObs.length,retiredObservations:Object.values(obs).length-allObs.length,observationsByType:allObs.reduce((a:Record<string,number>,o)=>{a[o.recordType]=(a[o.recordType]||0)+1;return a},{}),needsParser:all.filter(d=>d.parse==='needs-parser').length,lastRun:runs.at(-1)||null,runs:runs.slice(-10).reverse()
  }
 }

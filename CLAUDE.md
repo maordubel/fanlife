@@ -2907,3 +2907,18 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
    מאור, לא שחקנים אמיתיים, באישורו המפורש.
 6. **הכתובת הרשמית: https://fanlife.dubelteam.com** (מאור, 7.10.2026). `SITE_URL` (ב-production בלי משתנה סביבה),
    `PORTAL_HOST_ROOT` (מועדון = `<sub>.fanlife.dubelteam.com`), ה-sitemap (עמודי המועדונים ו-`/sources`) וה-User-Agent של המחקר.
+
+## 96 · שלמות חדר הבקרה (ביקורת הבעלים, 7.10.2026)
+
+1. **מחקר לא נוגע בפרסום** (F05): `runResearch` לא משנה `status`/`gates`; למחקר שדה משלו (`club.research`).
+2. **ממצאים = upsert לפי מזהה עם שושלת** (F06, `lib/master/researchMerge.ts`): ממצאים ממתינים מכל מתאם נשמרים;
+   מה שהמתאם הפסיק להפיק מסומן `superseded` עם סיבה ולא נמחק; הכרעה לא נפתחת מחדש. "ממתין" = `isPending`.
+3. **תצפית קשורה לגרסת מסמך** (F07): גרסה חדשה מחליפה את הסט הפעיל של המסמך; מה שלא מופק עוד — `retired` עם סיבה.
+4. **מקור ציבורי בלבד** (F10, `lib/research/netguard.ts`): אין loopback/פרטי/link-local/metadata/ULA/שם מקומי —
+   גם בפרופיל וגם אחרי DNS ב-`politeFetch`. בבדיקות DNS תמיד מדומה.
+5. **טביעת אצבע = JSON קנוני של התוכן** (F16, `lib/research/canonical.ts`), כולל seeds וגרסת parser.
+6. **כפתור שמכניס משימה מריץ את המשימה שלו** (F15): `research/run` מקבל `id`.
+7. **שלוש עובדות נפרדות** (F20, `lib/master/layers.ts`): נתונים מוכנים · שערים שנבחרו · פורסם. שלב "בוצע" רק כשלא נשאר
+   כלום; יקום לא ידוע = "total unknown", אף פעם לא אחוז.
+8. **קבצים שהשרת קורא ב-fs בונים** (F14): `scripts/master/`, `supabase/`, `research-*` ב-`RUNTIME_READ`.
+   מפתחות `outputFileTracingIncludes` הם picomatch — סוגריים של catch-all מוברחים (F03).

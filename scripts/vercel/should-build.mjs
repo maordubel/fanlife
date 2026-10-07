@@ -13,13 +13,26 @@
  */
 import { execSync } from 'node:child_process'
 
+/**
+ * Paths the server reads at runtime with fs (not imports), even though they look like tooling (audit F14, 7.10.2026):
+ *  - scripts/master/local-bootstrap.sql — the evaluation database bootstrap (lib/master/evaluation-db.ts)
+ *  - supabase/migrations — replayed by the evaluation database
+ *  - research-staging / research-profiles / research-data — the control room's research files
+ * A commit touching any of these always builds, before INERT is consulted.
+ */
+export const RUNTIME_READ = [
+  /^scripts\/master\//,
+  /^supabase\//,
+  /^research-staging\//,
+  /^research-profiles\//,
+  /^research-data\//,
+]
+
 /** Paths the running site never reads. Everything else builds. */
-const INERT = [
+export const INERT = [
   /^docs\//,
   /^tests\//,
   /^scripts\//,
-  /^supabase\//,
-  /^research-staging\//,
   /^brand\/source\//,
   /^data\/(reports|staging)\//,
   /^content\/raw\//,
@@ -39,9 +52,9 @@ function changedFiles() {
 
 export function decide(files) {
   if (files.length === 0) return { build: true, why: 'no file list — building to be safe' }
-  const live = files.filter((file) => !INERT.some((pattern) => pattern.test(file)))
+  const live = files.filter((file) => RUNTIME_READ.some((pattern) => pattern.test(file)) || !INERT.some((pattern) => pattern.test(file)))
   if (live.length > 0) return { build: true, why: `${live.length} file(s) the site runs, e.g. ${live[0]}` }
-  return { build: false, why: `all ${files.length} changed file(s) are docs, tests, scripts or sources` }
+  return { build: false, why: `all ${files.length} changed file(s) are docs, tests, build-time scripts or sources` }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

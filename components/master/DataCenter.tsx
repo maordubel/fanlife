@@ -21,10 +21,15 @@ const when=(s?:string|null)=>s?s.slice(0,16).replace('T',' '):'—'
  * that resume from checkpoints; each batch re-exports the staging package, and "Bring into the club file" turns it into
  * unreviewed sources and findings. Nothing here approves, builds a pack or publishes.
  */
-export function DataCenter({runs,selected,summary,api,onChange}:{runs:RunsRow[];selected:string;summary?:ClubSummary;api:ReturnType<typeof useAdminApi>;onChange?:()=>Promise<void>}){
+export function DataCenter({runs,selected,summary,api,onChange}:{runs:RunsRow[];selected:string;summary?:ClubSummary;api:ReturnType<typeof useAdminApi>;onChange?:(clubId?:string)=>Promise<void>}){
  const [rows,setRows]=useState(runs),[result,setResult]=useState<PlanResult|null>(null),[adding,setAdding]=useState(false)
  const row=rows.find(r=>r.clubId===selected),arc=row?.archive
- const refresh=async()=>{const fresh=await api.get<RunsRow[]>('research/runs');if(fresh)setRows(fresh);await onChange?.()}
+ const refresh=async()=>{const fresh=await api.get<RunsRow[]>('research/runs');if(fresh)setRows(fresh);await onChange?.(selected)}
+ // F15: run the job THIS button queued (by id) — never whichever job is first in the global queue — then refresh this club
+ const bringIn=async()=>{const job=await api.post<{id:string}>('research/create',{clubId:selected,adapter:'package'},'Queued: the staged package goes to the club file as unreviewed rows.');if(!job?.id)return
+  const r=await api.post<{ran:boolean;status?:string;reason?:string}>('research/run',{id:job.id},'Brought into the club file as unreviewed rows. Nothing was approved.')
+  if(r&&!r.ran)api.setError(`Not processed: ${r.reason||'the job is not runnable'}`);else if(r?.status==='failed')api.setError('The job failed — retry it from the Club file → Research tab.')
+  await refresh()}
  useEffect(()=>{void api.get<RunsRow[]>('research/runs').then(f=>{if(f)setRows(f)})},[selected])// eslint-disable-line react-hooks/exhaustive-deps
  const collect=async(providerId?:string)=>{const r=await api.post<{run:ArchiveRun}>('archive/collect',{clubId:selected,providerId,maxRequests:providerId?5:10},'Collection batch finished.');if(r){const c=r.run.counts;api.setNotice(`${r.run.providers.join(', ')}: ${c.requests} requests · ${c.documentsRead} documents read (${c.newDocuments} new, ${c.changedDocuments} changed) · ${c.recordsExtracted} records extracted · ${LISTING[r.run.state]||r.run.state}. Staging re-exported.`);await refresh()}}
  const plan=async()=>{const r=await api.post<PlanResult>('research/plan',{clubId:selected},'Plan built.');if(r){setResult(r);if(!r.ok)api.setError(r.reason);await refresh()}}
@@ -34,7 +39,7 @@ export function DataCenter({runs,selected,summary,api,onChange}:{runs:RunsRow[];
   <div className="dc-actions spaced">
    <button className="min-h-tap button" disabled={api.busy||!arc?.sources.length} onClick={()=>collect()}>Collect from every source (10 requests) ↗</button>
    <button className="min-h-tap button secondary" disabled={api.busy||!arc?.sources.length} onClick={async()=>{if(await api.post('archive/export',{clubId:selected},'Staging package re-exported (nothing approved).'))await refresh()}}>Re-export staging</button>
-   <button className="min-h-tap button secondary" disabled={api.busy} onClick={async()=>{if(await api.post('research/create',{clubId:selected,adapter:'package'},'Queued: the staged package goes to the club file as unreviewed rows.')){await api.post('research/run',{},'Processed.')}}}>Bring into the club file</button>
+   <button className="min-h-tap button secondary" disabled={api.busy} onClick={()=>void bringIn()}>Bring into the club file</button>
    <button className="min-h-tap button secondary" disabled={api.busy} onClick={async()=>{const r=await api.post<{steps:{clubId:string;error?:string}[]}>('pipeline/run',{clubId:selected},'Pipeline ran for this club.');if(r){await refresh();const e=r.steps.find(x=>x.error);if(e)api.setError(e.error!)}}}>Run the whole pipeline now</button>
   </div>
   <p className="muted">Collection also runs on GitHub every Tuesday, from a network that can reach the sources, and on demand: <a href="https://github.com/maordubel/fanlife/actions/workflows/archive-collect.yml" target="_blank" rel="noreferrer">Archive collect → Run workflow ↗</a>. Its results land in <code>research-data/</code> and show here after the next deploy.</p>
