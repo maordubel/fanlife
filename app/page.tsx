@@ -58,12 +58,12 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   <nav className="mag-hubnav" aria-label={copy.primaryNav}><a href="#clubs">{copy.navClubs}</a><a href="#gates">{copy.navPlay}</a><a href="#archive">{copy.navArchive}</a></nav>
   <section className="mag-section" aria-labelledby="toc-h"><div className="mag-inside mag-toc"><p className="mag-mono" id="toc-h">{copy.tocTitle}</p><ol>{(['toc1','toc2','toc3','toc4'] as const).map((k,i)=><li key={k}><a href={['#clubs','#gates','#archive','#life-entry'][i]}><i>{String(i+1).padStart(2,'0')}</i>{copy[k]}</a></li>)}</ol></div></section>
 
-  <section className="mag-section" id="next">
+  {/* No confirmed fixture, no section: an empty box on the front page tells a fan nothing (audit 7.10.2026). */}
+  {items.length>0&&<section className="mag-section" id="next">
    <hr className="mag-rule"/>
    <div className="mag-head"><div><p className="mag-kicker">{copy.tabNext}</p><h2 className="mag-h2">{copy.nextUp}</h2></div><p className="mag-fine">{copy.nextNote}</p></div>
-   {items.length>0?<FixtureRotator items={items} copy={rotatorCopy} locale={locale}/>
-    :<div className="mag-fixture empty"><div className="mag-fixture-body"><h3>{feed&&feed.status!=='unavailable'?copy.nextEmpty:copy.nextDown}</h3></div></div>}
-  </section>
+   <FixtureRotator items={items} copy={rotatorCopy} locale={locale}/>
+  </section>}
 
   <section className="mag-section mag-editorial" id="clubs">
    <hr className="mag-rule"/>
@@ -76,7 +76,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
       {l&&<span className="mag-badge" data-livery={l.pattern} aria-hidden="true">{l.initials}</span>}
       <span><b>{c.name}</b><small>{c.city}</small></span>
      </Link>
-     {entry?.href?<Link className="mag-tile-life" href={entry.href}>{copy.lifeStrip}<span>{copy.lifeIn} →</span></Link>:<span className="mag-tile-life off">{copy.lifeStrip} · {copy.lifeOff}</span>}
+     {entry?.href&&<Link className="mag-tile-life" href={entry.href}>{copy.lifeStrip}<span>{copy.lifeIn} →</span></Link>}
     </div>})}</div>
   </section>
 

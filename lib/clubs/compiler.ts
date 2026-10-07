@@ -15,7 +15,7 @@ const id=(v:unknown)=>text(v).normalize('NFKC').toLowerCase().replace(/\s+/g,'-'
 const validId=(v:string)=>/^[a-z0-9][a-z0-9_-]{0,100}$/.test(v)
 const date=(v:unknown):string|null=>{const s=text(v);return /^\d{4}-\d{2}-\d{2}$/.test(s)&&Number.isFinite(Date.parse(s))&&new Date(s).toISOString().slice(0,10)===s?s:null}
 const confidence=(v:unknown)=>({A_PRIMARY:3,B_SECONDARY:2,C_UNVERIFIED:1}[text(v)]??Number(v))
-const hint=(s:string)=>s.replace(/\d{4}-\d{2}-\d{2}|\d{1,2}[./]\d{1,2}[./]\d{2,4}|\b(?:18|19|20)\d{2}\b|\d{2,4}\s*\/\s*\d{2,4}/g,'').replace(/\s+/g,' ').trim()
+const hint=(s:string)=>s.replace(/\d{4}-\d{2}-\d{2}|\d{1,2}[./]\d{1,2}[./]\d{2,4}|\d{2,4}\s*\/\s*\d{2,4}|\b(?:18|19|20)\d{2}\b/g,'').replace(/\s+/g,' ').trim()
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex').slice(0,16)
 /** Deterministic validation, not a researcher or approval service. */
 export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagnostics:Diagnostic[]} {

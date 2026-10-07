@@ -18,17 +18,17 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
  const copy=locale==='he'?he:en
  const identity=theme||(club?clubTheme(club):undefined)
  return <div className={`fl mag${identity?' club-theme':''}`} data-club={club?.id} data-pattern={identity?.pattern} data-rival-no={identity?rivalBans(identity).join(' ')||undefined:undefined} dir={localeDirection(locale)} lang={locale} style={identity?themeStyle(identity,locale):{'--club':MASTER_PRIMARY} as CSSProperties}>
-  <a className="sr-only focus:not-sr-only" href="#main">{copy.skip}</a>
+  <a className="mag-skip" href="#main">{copy.skip}</a>
   <div className="mag-top"><div className="mag-top-in">
    <Link href="/" className="mag-logo" aria-label="FAN LIFE">FAN<b>LIFE</b></Link>
-   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/#archive">{copy.tabArchive}</Link><Link href="/#gates">{copy.gates}</Link><Link href="/master/core">{copy.data}</Link><Link href="/master/admin">{copy.admin}</Link></nav>
+   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/#archive">{copy.tabArchive}</Link><Link href="/#gates">{copy.gates}</Link></nav>
   </div></div>
   <div className="mag-stop">{stop===undefined?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:stop}</div>
   {children}
   <footer className="mag-foot"><div className="mag-printbar" aria-hidden="true"><i/><i/><i/><i/><i/><i/><u>+</u></div><div className="mag-foot-in">
    <div className="mag-mono">FAN LIFE · {copy.issue}<br/>{copy.footer}<br/>{copy.printed}</div>
    <div className="mag-barcode" aria-hidden="true"/>
-   <div className="mag-mono"><Link className="mag-credit" href="/credits">{copy.credits}</Link><br/><Link className="mag-credit" href="/master/admin">{copy.administration}</Link></div>
+   <div className="mag-mono"><Link className="mag-credit" href="/sources">{copy.credits}</Link><br/><Link className="mag-credit" href="/master/admin">{copy.administration}</Link></div>
    <a className="mag-credit" href="https://DubelTeam.com" target="_blank" rel="noopener noreferrer" aria-label={copy.creditAria}>{copy.credit} ↗</a>
   </div></footer>
   <nav className="mag-tabbar" aria-label={copy.primaryNav}>
