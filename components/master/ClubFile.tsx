@@ -13,11 +13,13 @@ type Page<T>={rows:T[];page:number;pages:number;total:number;version:number}
 const SUB=[['summary','Summary'],['research','Research'],['decisions','Decisions'],['publish','Readiness & publish']] as const
 
 /** One club, four layers kept apart: what research collected, what the pack compiles, what is published. */
-export function ClubFile({club,summary,adapters,jobs,api,onChange}:{club:Omit<Club,'sources'|'findings'>;summary:ClubSummary;adapters:AdapterInfo[];jobs:Job[];api:Api;onChange:()=>Promise<void>}){
- const [sub,setSub]=useState<typeof SUB[number][0]>('summary')
+export type ClubFileView=typeof SUB[number][0]
+/** `view`/`onView` let the Editor's Desk keep the subview in the URL; without them the file keeps its own tabs. */
+export function ClubFile({club,summary,adapters,jobs,api,onChange,view,onView}:{club:Omit<Club,'sources'|'findings'>;summary:ClubSummary;adapters:AdapterInfo[];jobs:Job[];api:Api;onChange:()=>Promise<void>;view?:ClubFileView;onView?:(v:ClubFileView)=>void}){
+ const [local,setLocal]=useState<ClubFileView>('summary'),sub=view??local,setSub=onView??setLocal
  return <section className="panel cr-file">
   <div className="section-head"><div><p className="eyebrow">CLUB FILE · v{club.version}</p><h2>{club.name}</h2><p className="muted">{club.city} · {club.country} · {summary.engine.inRegistry?'in registry':'not in registry'} · {summary.engine.hasProvider?'engine provider connected':'no engine provider'}{summary.engine.reviewOnly?' · review-only pack':''}</p></div><Link className="button secondary" href={`/clubs/${club.id}`}>Open the club page ↗</Link></div>
-  <nav className="cr-sub" aria-label="Club file sections">{SUB.map(([k,l])=><button key={k} className={`min-h-tap ${sub===k?'active':''}`} aria-current={sub===k?'page':undefined} onClick={()=>setSub(k)}>{l}</button>)}</nav>
+  {!onView&&<nav className="cr-sub" aria-label="Club file sections">{SUB.map(([k,l])=><button key={k} className={`min-h-tap ${sub===k?'active':''}`} aria-current={sub===k?'page':undefined} onClick={()=>setSub(k)}>{l}</button>)}</nav>}
   {sub==='summary'&&<Summary s={summary} onGo={setSub}/>}
   {sub==='research'&&<Research club={club} adapters={adapters} jobs={jobs} api={api} onChange={onChange}/>}
   {sub==='decisions'&&<Decisions club={club} api={api} onChange={onChange}/>}
