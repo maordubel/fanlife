@@ -29,7 +29,7 @@ const lastStamp=new Map<string,string>()
 
 export async function runPipeline({maxRequestsPerClub=6,clubs}:{maxRequestsPerClub?:number;clubs?:string[]}={}){
  const steps:ClubStep[]=[]
- for(const clubId of clubs||profiledClubs()){
+ for(const clubId of clubs||await profiledClubs()){
   const step:ClubStep={clubId}
   try{
    const profile=await loadClubProfile(clubId)

@@ -116,8 +116,8 @@
   "archiveToday": "On this day",
   "archiveOpen": "Open an archive",
   "lifeEntryTitle": "A supporter's life",
-  "lifeEntryNote": "Live one fan's seasons, club by club — from the first match holding someone's hand to the last one you'll never forget.",
-  "lifeEntryCta": "Choose a club",
+  "lifeEntryNote": "Live one fan's seasons — from the first match holding someone's hand to the one you'll never forget.",
+  "lifeEntryCta": "Play — choose a club",
   "chooseClub": "Choose a club",
   "chooserSearch": "Search by club or city",
   "chooserClose": "Close",
@@ -177,5 +177,11 @@
   "beenMarked": "I was there",
   "beenHint": "Mark it: it goes into Me → My story",
   "clubBeenTitle": "Were you there, {club}?",
-  "clubBeenBody": "Every match and moment in the {club} archive carries a stamp: I was there. Press it on the days you saw — they go into your story, on your card."
+  "clubBeenBody": "Every match and moment in the {club} archive carries a stamp: I was there. Press it on the days you saw — they go into your story, on your card.",
+  "tabLife": "LIFE",
+  "tabMarket": "Market",
+  "lifeGame": "THE GAME",
+  "nextMore": "of",
+  "nextPrev": "Previous match",
+  "nextNext": "Next match"
 }

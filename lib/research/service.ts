@@ -21,7 +21,7 @@ export async function planClub(clubId:string){
 }
 /** Runs, job states and archive status for the admin; one club or every club with a profile (repository or admin). */
 export async function readRuns(clubId?:string){
- const ids=clubId?[clubId]:profiledClubs()
+ const ids=clubId?[clubId]:await profiledClubs()
  return Promise.all(ids.map(async id=>{const [runs,jobs,profile]=await Promise.all([readRunsFor(id),readJobs(id),loadClubProfile(id)]);const states=jobs.reduce((a:Record<string,number>,j)=>{a[j.state]=(a[j.state]||0)+1;return a},{})
   return {clubId:id,hasProfile:!!profile,canPlan:!!loadProfile(id)&&!!profile?.sources.length,runs:runs.slice(-10).reverse(),jobs:jobs.length,states,archive:profile?await archiveStatus(id,profile.archive):null,profileOrigin:profile?.origin||null}}))
 }

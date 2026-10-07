@@ -3,6 +3,7 @@ import path from 'node:path'
 import {RESEARCH_SCHEMA,type ArchiveSource,type ClubProfile} from './contract'
 import {dir,readJson,root,serial,writeJson} from './store'
 import {hostProblem} from './netguard'
+import {durable} from '@/lib/master/durable'
 
 /**
  * Research profiles come from two places and are read as one:
@@ -16,6 +17,13 @@ const REPO='research-profiles'
 const empty=(clubId:string):ClubProfile&{archive:ArchiveSource[]}=>({schemaVersion:RESEARCH_SCHEMA,clubId,sport:'football',contentLocale:'en',snapshotAsOf:new Date().toISOString().slice(0,10),desiredGates:[],priorityMatchIds:[],sources:[],archive:[]})
 function repoProfile(clubId:string,cwd=process.cwd()){const p=path.join(cwd,REPO,`${clubId}.json`);if(!existsSync(p))return null;const v=JSON.parse(readFileSync(p,'utf8'));if(v.clubId!==clubId)throw new Error('PROFILE_CLUB_MISMATCH');return {...empty(clubId),...v,archive:v.archive||[],sources:v.sources||[]} as ClubProfile&{archive:ArchiveSource[]}}
 const overlayFile=(clubId:string)=>path.join(dir(clubId),'profile.json')
+type Overlay=ClubProfile&{archive:ArchiveSource[]}
+/** The control-room overlay is configuration the owner typed: on a serverless deployment it lives in the durable
+ * store (profiles/<club>.json), not on an instance's /tmp that the next cold start forgets. */
+async function readOverlay(clubId:string):Promise<Overlay|null>{const d=durable();if(d){const r=await d.read(`profiles/${clubId}.json`);return r?JSON.parse(r.text) as Overlay:null}return readJson<Overlay|null>(overlayFile(clubId),null)}
+async function writeOverlay(clubId:string,edit:(cur:Overlay|null)=>Overlay|null):Promise<Overlay|null>{const d=durable()
+ if(d){for(let i=0;i<5;i++){const r=await d.read(`profiles/${clubId}.json`),next=edit(r?JSON.parse(r.text) as Overlay:null);if(!next)return null;if(await d.write(`profiles/${clubId}.json`,JSON.stringify(next),r?.etag??null))return next}throw new Error('The research profile is busy. Try again.')}
+ const next=edit(await readJson<Overlay|null>(overlayFile(clubId),null));if(next)await writeJson(overlayFile(clubId),next);return next}
 
 /**
  * Whether the repository's profile dataset is present on this server at all. A deployment that did not ship
@@ -24,15 +32,16 @@ const overlayFile=(clubId:string)=>path.join(dir(clubId),'profile.json')
 export const profilesShipped=(cwd=process.cwd())=>existsSync(path.join(cwd,REPO))
 
 export async function loadClubProfile(clubId:string,cwd=process.cwd()):Promise<FullProfile|null>{
- const repo=repoProfile(clubId,cwd),admin=await readJson<(ClubProfile&{archive:ArchiveSource[]})|null>(overlayFile(clubId),null)
+ const repo=repoProfile(clubId,cwd),admin=await readOverlay(clubId)
  if(!repo&&!admin)return null
  const base=repo||empty(clubId)
  const byId=<T extends {providerId:string}>(a:T[],b:T[])=>[...a.filter(x=>!b.some(y=>y.providerId===x.providerId)),...b]
  return {...base,sources:byId(base.sources,admin?.sources||[]),archive:byId(base.archive,admin?.archive||[]),origin:{repo:!!repo,admin:!!admin}}
 }
 /** Every club that has a profile, in the repository or written from the control room. */
-export function profiledClubs(cwd=process.cwd()):string[]{
+export async function profiledClubs(cwd=process.cwd()):Promise<string[]>{
  const ids=new Set<string>()
+ const d=durable();if(d)for(const f of await d.list('profiles/'))if(f.endsWith('.json'))ids.add(f.split('/').pop()!.slice(0,-5))
  if(existsSync(path.join(cwd,REPO)))for(const f of readdirSync(path.join(cwd,REPO)))if(f.endsWith('.json'))ids.add(f.slice(0,-5))
  if(existsSync(root()))for(const d of readdirSync(root()))if(existsSync(path.join(root(),d,'profile.json')))ids.add(d)
  return [...ids].sort()
@@ -71,12 +80,8 @@ export function validateArchiveSource(input:unknown):{ok:true;value:ArchiveSourc
 /** Add or replace one archive source in the control-room profile of a club (creates the profile if needed). */
 export const saveArchiveSource=(clubId:string,src:ArchiveSource)=>serial(async()=>{
  if(!ID.test(clubId))throw new Error('Invalid club id')
- const cur=await readJson<(ClubProfile&{archive:ArchiveSource[]})|null>(overlayFile(clubId),null)||empty(clubId)
- const next={...cur,archive:[...(cur.archive||[]).filter(a=>a.providerId!==src.providerId),src]}
- await writeJson(overlayFile(clubId),next);return next})
+ return (await writeOverlay(clubId,cur0=>{const cur=cur0||empty(clubId);return {...cur,archive:[...(cur.archive||[]).filter(a=>a.providerId!==src.providerId),src]}}))!})
 export const removeArchiveSource=(clubId:string,providerId:string)=>serial(async()=>{
- const cur=await readJson<(ClubProfile&{archive:ArchiveSource[]})|null>(overlayFile(clubId),null)
- if(!cur||!cur.archive.some(a=>a.providerId===providerId))throw new Error('Only sources added in the control room can be removed here; repository sources are changed in code review.')
- await writeJson(overlayFile(clubId),{...cur,archive:cur.archive.filter(a=>a.providerId!==providerId)});return true})
+ await writeOverlay(clubId,cur=>{if(!cur||!cur.archive.some(a=>a.providerId===providerId))throw new Error('Only sources added in the control room can be removed here; repository sources are changed in code review.');return {...cur,archive:cur.archive.filter(a=>a.providerId!==providerId)}});return true})
 /** A club created in the control room starts with an empty profile, so it shows up in the data centre at once. */
-export const ensureProfile=(clubId:string)=>serial(async()=>{if(repoProfile(clubId))return false;const cur=await readJson(overlayFile(clubId),null);if(cur)return false;await writeJson(overlayFile(clubId),empty(clubId));return true})
+export const ensureProfile=(clubId:string)=>serial(async()=>{if(repoProfile(clubId))return false;let made=false;await writeOverlay(clubId,cur=>{if(cur)return null;made=true;return empty(clubId)});return made})

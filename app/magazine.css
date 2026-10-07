@@ -1131,3 +1131,64 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .mag-torn-b { background: var(--club-torn, color-mix(in srgb, var(--club-primary, var(--mag-vermilion)) 52%, var(--mag-ink))); }
 .game-panel .mag-been { margin-inline-start: 10px; vertical-align: middle; }
 .mag-pass-show { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-family: var(--mag-mono); font-size: 12px; }
+.cr-steps { margin: 8px 0 14px; padding-inline-start: 22px; display: grid; gap: 6px; font-size: 15px; line-height: 1.45; }
+.cr-storage { border-inline-start: 6px solid var(--mag-vermilion); }
+
+/* ───────── HOME, SECOND PASS (7.10.2026) — fixed tab bar, THE GAME first, a modest Next up ───────── */
+/* The phone tab bar is fixed to the glass on every page (owner: "fixed, on all pages, on mobile"). The page pads
+   its own bottom so the footer and the last button never sit under it. */
+@media (max-width: 900px) {
+  .mag .mag-tabbar, .mag-skin .mag-tabbar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 50; display: flex; background: var(--mag-ink); border-top: 3px solid var(--mag-vermilion); padding-bottom: env(safe-area-inset-bottom); }
+  .mag-skin .mag-tabbar a { flex: 1; min-height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; color: var(--mag-paper); text-transform: uppercase; }
+  .mag-tabbar a[aria-current='page'] { color: var(--mag-salmon); box-shadow: inset 0 3px 0 var(--mag-salmon); }
+  .fl.mag, .mag-skin.has-tabbar { padding-bottom: calc(59px + env(safe-area-inset-bottom)); }
+  .mag-desk-only { display: none; }
+  .mag-editor-more { display: none; }
+  .mag-editor .mag-editor-photo { max-inline-size: 140px; }
+}
+.mag-skin .mag-tabbar { display: none; }
+@media (max-width: 900px) { .mag-skin.has-tabbar .mag-tabbar { display: flex; } }
+.mag-skin .mag-tabbar svg { width: 22px; height: 22px; }
+
+/* THE GAME — the app's central feature, a full band under the cover */
+.mag-game-band { display: grid; gap: 0; background: var(--mag-navy); background-image: var(--mag-grain); color: var(--mag-paper); border: 4px solid var(--mag-ink); box-shadow: 6px 6px 0 var(--mag-ink); overflow: hidden; padding: 0; margin-block-start: 24px; }
+.mag-game-band .mag-kicker { color: var(--mag-salmon); }
+.mag-game-art { position: relative; block-size: 230px; }
+.mag-game-art .mag-torn { position: absolute; inset: auto 0 0 0; block-size: 70%; display: flex; }
+.mag-game-photo { position: absolute; z-index: 1; inset-block-end: 0; inset-inline-start: 50%; block-size: 104%; inline-size: auto; transform: translateX(-50%); }
+[dir='rtl'] .mag-game-photo { transform: translateX(50%); }
+.mag-game-text { display: grid; gap: 10px; justify-items: start; padding: 18px 16px 24px; }
+.mag-game-text > p:not(.mag-kicker) { margin: 0; font-size: 16px; line-height: 1.45; max-inline-size: 520px; }
+.mag-game-title { margin: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mag-display); font-weight: 400; font-size: clamp(64px, 19vw, 132px); line-height: .85; transform: skewX(-6deg); color: var(--mag-paper); -webkit-text-stroke: 2px var(--mag-ink); text-shadow: 4px 4px 0 var(--mag-vermilion); }
+.mag-game-stamp { order: -1; flex-basis: 100%; font-size: clamp(18px, 4.6vw, 26px); letter-spacing: 3px; -webkit-text-stroke: 0; text-shadow: none; }
+.mag-game-stamp::before { content: ''; display: inline-block; inline-size: 34px; block-size: 6px; background: var(--mag-vermilion); margin-inline-end: 10px; vertical-align: middle; }
+.mag-game-band .mag-cta { margin-top: 6px; font-size: 17px; }
+@media (min-width: 760px) {
+  .mag-game-band { grid-template-columns: 1fr 1fr; align-items: center; }
+  .mag-game-art { block-size: 420px; order: 2; }
+  .mag-game-text { padding: 34px 30px; }
+}
+
+/* Next up — one slim ticket with arrows, not a wall of chips */
+.mag-next-section { padding-block: 16px 4px; }
+.mag-next-section > .mag-kicker { margin: 0 0 8px; font-size: 12px; }
+.mag-next { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 8px; max-inline-size: 760px; }
+.mag-next-card { display: flex; align-items: center; gap: 12px; min-block-size: 64px; padding: 8px 12px; background: var(--mag-card); border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); border-inline-start: 10px solid var(--club-primary, var(--mag-vermilion)); }
+.mag-next-card .mag-badge { flex: none; }
+.mag-next-txt { display: grid; min-inline-size: 0; gap: 1px; }
+.mag-next-txt small { font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--mag-vermilion); }
+.mag-next-txt b { font-family: var(--mag-condensed); font-weight: 700; font-size: 22px; line-height: 1.05; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mag-next-txt b span { color: var(--club-type, var(--club-primary, var(--mag-vermilion))); }
+.mag-next-txt i { font-style: normal; font-family: var(--mag-mono); font-size: 11px; letter-spacing: .5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mag-next-go { margin-inline-start: auto; font-family: var(--mag-display); font-size: 20px; flex: none; }
+[dir='rtl'] .mag-next-go, [dir='rtl'] .mag-next-step span { display: inline-block; transform: scaleX(-1); }
+.mag-next-step { inline-size: 44px; block-size: 44px; display: grid; place-items: center; border: 3px solid var(--mag-ink); background: var(--mag-paper); font-family: var(--mag-display); font-size: 24px; line-height: 1; cursor: pointer; }
+.mag-next-step:hover { background: var(--mag-ink); color: var(--mag-paper); }
+.mag-next-count { grid-column: 2; margin: 2px 0 0; display: flex; justify-content: space-between; align-items: center; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; }
+.mag-next-count button { min-block-size: 32px; padding: 0 8px; background: none; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: inherit; }
+@media (max-width: 420px) { .mag-next { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: 6px; } .mag-next-step { inline-size: 36px; block-size: 44px; } .mag-next-card .mag-badge { display: none; } .mag-next-txt b { font-size: 19px; } }
+.fl.mag .mag-game-title { font-family: var(--mag-display); font-weight: 400; text-transform: uppercase; font-size: clamp(88px, 27vw, 168px); }
+.fl.mag .mag-game-title .mag-game-stamp { font-size: clamp(20px, 5.4vw, 28px); }
+.fl.mag[lang='he'] .mag-game-stamp { font-family: var(--mag-body); font-weight: 800; letter-spacing: 1px; }
+/* A control scrolled into view (keyboard focus, a tap target near the bottom) lands above the fixed bar, not under it. */
+@media (max-width: 900px) { html:has(.mag-tabbar) { scroll-padding-block-end: calc(72px + env(safe-area-inset-bottom)); } }

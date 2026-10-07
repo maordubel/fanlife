@@ -30,7 +30,7 @@ export default async function Page({params, searchParams}: {params: {slug: strin
   if (!pack.readiness.playable) notFound()
   const locale = uiLocale(searchParams.lang), base = `/clubs/${id}`
   return (
-    <ClubSurface theme={club.data.theme} clubId={id} locale={locale}>
+    <ClubSurface theme={club.data.theme} clubId={id} locale={locale} tabbar={false}>
       <main id="main">
         <LifeGame pack={pack} locale={locale} copy={locale === 'he' ? he : en} hubHref={`${base}?lang=${locale}`} langHref={{en: `${base}/life?lang=en`, he: `${base}/life?lang=he`}} legacyHref={club.data.life.state === 'legacy' ? '/life' : null} />
       </main>
