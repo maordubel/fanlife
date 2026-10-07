@@ -24,7 +24,7 @@ export function shade(hex: string, f: number): string {
   return `#${((1 << 24) + (c(n >> 16) << 16) + (c(n >> 8 & 255) << 8) + c(n & 255)).toString(16).slice(1)}`
 }
 function rng(s: number) {
-  return () => { s |= 0; s = s + 0x6D2B79F5 | 0; let t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
+  return () => { s |= 0; s = s + 1831565813 | 0; let t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 }
 }
 
 export type District = 'home' | 'housing' | 'street' | 'river' | 'work' | 'industry' | 'school' | 'plaza' | 'pitch' | 'towers' | 'park' | 'bus' | 'mall' | 'abroad' | 'away' | 'stadium'
@@ -246,4 +246,8 @@ export function buildIso(club: string, seed = 11): Iso {
   void all
   return {html: ground.join('') + cars + objs + fogs, sky: `<g opacity=".7">${sky}</g>`, road}
 }
+/** the colours the shell cannot read from a token: the sky behind the board and the lit windows */
+export const SKY = {day: ['#bfe1ee', '#e5f4f7'], night: ['#0e1830', '#27345a']} as const
+export const WINDOW = {day: ['#bfe0f4', '#9cc7e6'], night: ['#e9f4ff', '#cfe6ff']} as const
+export const FALLBACK_CLUB = '#c8452d'
 export const isoKey = (k: District) => { const b = BOARD.find(x => x.k === k)!; return k + b.bi + b.bj }

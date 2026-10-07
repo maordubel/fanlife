@@ -11,7 +11,7 @@
 import {useEffect, useId, useMemo, useRef, useState} from 'react'
 import type {RoomId} from '@/lib/life/universal/types'
 import type {Place} from '@/lib/life/universal/city'
-import {BOARD, P, boxOf, buildIso, centreOf, isoKey, type District} from '@/lib/life/universal/iso'
+import {BOARD, FALLBACK_CLUB, P, SKY, WINDOW, boxOf, buildIso, centreOf, isoKey, type District} from '@/lib/life/universal/iso'
 import styles from './life.module.css'
 
 const DISTRICT_OF: Record<string, District> = {
@@ -23,7 +23,7 @@ const SLOT: [number, number][] = [[-1.1, -.8], [.9, -.4], [-.2, 1.1], [1.2, 1], 
 const hexOf = (css: string): string => {
   const m = /rgba?\((\d+)[ ,]+(\d+)[ ,]+(\d+)/.exec(css)
   if (m) return `#${[m[1], m[2], m[3]].map(v => Number(v).toString(16).padStart(2, '0')).join('')}`
-  return /^#[0-9a-f]{6}$/i.test(css.trim()) ? css.trim() : '#c8452d'
+  return /^#[0-9a-f]{6}$/i.test(css.trim()) ? css.trim() : FALLBACK_CLUB
 }
 
 export type IsoProps = {places: Place[]; pick: string | null; onPick: (id: string) => void; night: boolean; clubId: string; label: string; trip: {stops: RoomId[]; ms: number} | null; unknown: string; story: {lang?: string; dir?: 'ltr'}}
@@ -32,7 +32,7 @@ export function IsoBoard({places, pick, onPick, night, clubId, label, trip, unkn
   const uid = 'iso' + useId().replace(/:/g, '')
   const host = useRef<HTMLDivElement>(null)
   const svg = useRef<SVGSVGElement>(null)
-  const [club, setClub] = useState('#c8452d')
+  const [club, setClub] = useState(FALLBACK_CLUB)
   useEffect(() => { if (host.current) setClub(hexOf(getComputedStyle(host.current).getPropertyValue('--club-primary') || getComputedStyle(host.current).color)) }, [])
   const iso = useMemo(() => buildIso(club, [...clubId].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7)), [club, clubId])
 
@@ -54,7 +54,7 @@ export function IsoBoard({places, pick, onPick, night, clubId, label, trip, unkn
     `#${uid} .pin{transition:opacity .6s ease}`,
     ...dark.map(k => `#${uid} .obj[data-k="${k}"]{opacity:0;transform:translateY(-30px)}#${uid} .tile[data-k="${k}"]{filter:grayscale(.9) brightness(1.08) opacity(.8)}`),
     ...litKeys.map(k => `#${uid} .fog[data-k="${k}"]{opacity:0;transform:translateY(-34px);pointer-events:none}`),
-    `#${uid} .w1{fill:${night ? '#e9f4ff' : '#bfe0f4'}}#${uid} .w2{fill:${night ? '#cfe6ff' : '#9cc7e6'}}`,
+    `#${uid} .w1{fill:${WINDOW[night ? 'night' : 'day'][0]}}#${uid} .w2{fill:${WINDOW[night ? 'night' : 'day'][1]}}`,
     `@media (prefers-reduced-motion:reduce){#${uid} *{transition:none!important}}`,
   ].join('')
 
@@ -106,7 +106,7 @@ export function IsoBoard({places, pick, onPick, night, clubId, label, trip, unkn
       onPointerUp={() => { drag.current = null }} onPointerCancel={() => { drag.current = null }}>
       <style>{rules}</style>
       <svg ref={svg} className={styles.isoSvg} role="group" aria-label={label} viewBox="0 0 900 620" preserveAspectRatio="xMidYMid slice">
-        <defs><linearGradient id={`${uid}s`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={night ? '#0e1830' : '#bfe1ee'} /><stop offset="1" stopColor={night ? '#27345a' : '#e5f4f7'} /></linearGradient></defs>
+        <defs><linearGradient id={`${uid}s`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={SKY[night ? 'night' : 'day'][0]} /><stop offset="1" stopColor={SKY[night ? 'night' : 'day'][1]} /></linearGradient></defs>
         <rect x="-3000" y="-3000" width="7000" height="7000" fill={`url(#${uid}s)`} />
         <g style={{filter: night ? 'brightness(.62) saturate(.85)' : undefined, transition: 'filter 1s ease'}}>
           <g dangerouslySetInnerHTML={{__html: iso.sky}} />
@@ -116,7 +116,7 @@ export function IsoBoard({places, pick, onPick, night, clubId, label, trip, unkn
         {placed.filter(x => x.p.status !== 'hidden').map(({p, xy}) => {
           const known = p.status === 'known', sel = pick === p.id, here = p.status === 'here'
           return (
-            <g key={p.id} className={`pin ${styles.isoPin}`} data-status={p.status} data-selected={sel ? 'true' : 'false'} data-place={p.id} data-kind={p.kind} data-goal={p.goal ? 'true' : 'false'}
+            <g key={p.id} className={`pin min-h-tap ${styles.isoPin}`} data-status={p.status} data-selected={sel ? 'true' : 'false'} data-place={p.id} data-kind={p.kind} data-goal={p.goal ? 'true' : 'false'}
               role="button" tabIndex={0} aria-pressed={sel} aria-label={known ? unknown : p.name}
               onClick={() => { if (!drag.current?.moved) onPick(p.id) }} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPick(p.id) } }}>
               {here && <circle cx={xy[0]} cy={xy[1]} r="9" className={styles.isoYou}><animate attributeName="r" values="7;14;7" dur="1.8s" repeatCount="indefinite" /></circle>}
