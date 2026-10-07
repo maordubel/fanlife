@@ -21,6 +21,7 @@ import type {CardDef, Chapter, LifePack, LifeState} from '@/lib/life/universal/t
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
 import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
 import {CityMap} from './CityMap'
+import {ControlDeck} from '@/components/life/ControlDeck'
 import {MeSheet} from './MeSheet'
 import {MiniGame} from './MiniGame'
 import {instantText, Typed, type TypedHandle} from './Typed'
@@ -492,17 +493,17 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     return () => { delete host.__lifeProbe }
   }, [pack])
 
-  /* ───────────── the stick (touch) ───────────── */
-  const stick = useRef<{id: number; cx: number; cy: number} | null>(null)
-  const [knob, setKnob] = useState({x: 0, y: 0})
-  const stickMove = (e: React.PointerEvent) => {
-    const s = stick.current
-    if (!s || s.id !== e.pointerId) return
-    const R = 46, dx = (e.clientX - s.cx) / R, dy = (e.clientY - s.cy) / R, m = Math.hypot(dx, dy), k = m > 1 ? 1 / m : 1
-    setKnob({x: dx * k, y: dy * k})
-    rt.current?.axis(dx * k, dy * k)
-  }
-  const stickEnd = () => { stick.current = null; setKnob({x: 0, y: 0}); rt.current?.axis(0, 0) }
+  /* ───────────── the console (the Worker's own ControlDeck) ───────────── */
+  const [stageEl, setStageEl] = useState<HTMLDivElement | null>(null)
+  const [stageH, setStageH] = useState(0)
+  useEffect(() => {
+    const el = stageEl; if (!el) return
+    const ro = new ResizeObserver(() => setStageH(el.clientHeight)); ro.observe(el); setStageH(el.clientHeight)
+    return () => ro.disconnect()
+  }, [stageEl])
+  const onAxis = useCallback((x: number, y: number) => { sound.current?.wake(); rt.current?.axis(Math.max(-1, Math.min(1, x)), Math.max(-1, Math.min(1, y))) }, [])
+  const onAction = useCallback((down: boolean) => { if (down) { sound.current?.wake(); rt.current?.act() } }, [])
+  const onCancel = useCallback((down: boolean) => { rt.current?.run(down) }, [])
 
   const line = talk ? talk.view.lines[talk.view.index] : null
   const playing = phase === 'play'
@@ -514,6 +515,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const d = scene.doors.find(x => x.id === target.id)
     return d ? {verb: d.locked ? copy.locked! : copy.go!, name: d.label} : null
   })()
+  const deckVerb = !target ? null : target.kind === 'actor' ? 'talk' : target.kind === 'exit' ? 'enter' : (scene?.spots.find(x => x.id === target.id)?.verb ?? 'look')
+  const deckLabel = targetText ? `${targetText.verb} ${targetText.name}` : null
   /* the line is set down a letter at a time; the choices arrive when it has finished */
   useEffect(() => { setTyped(instantText()) }, [talk?.view.talk, talk?.view.index])
   const typedDone = useCallback(() => setTyped(true), [])
@@ -614,23 +617,19 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
 
   return (
     <div className={styles.life} data-phase={phase} data-wide={wide ? 'true' : 'false'} data-talking={talk ? 'true' : 'false'} data-life="root" data-room={state.room ?? ''} data-chapter={state.chapter ?? ''}>
-      <div className={styles.stage}>
+      <div className={styles.stage} ref={setStageEl}>
         <iframe key={reload} ref={frame} className={styles.world} src={lookSrc(look, pack.clubId)} title={copy.title} tabIndex={-1} aria-hidden="true" />
         {playing && !roomUp && !failed && <p className={styles.loading} role="status">{copy.loading}</p>}
         {failed && <div className={styles.failed} role="alert"><p>{failed === 'timeout' ? copy.loadFailed : copy.noWebgl}</p><button type="button" className={`${styles.button} min-h-tap`} onClick={() => { setFailed(null); setReady(false); rt.current = null; setReload(n => n + 1) }}>{copy.retry}</button></div>}
         {place && <div className={styles.place} role="status" data-life="place" key={place.id}><small>{copy['place.new']}</small><b {...story}>{place.name}</b></div>}
         {toast && <p className={styles.toast} role="status" {...story}>{toast}</p>}
-        {idle && targetText && (
+        {idle && targetText && !touch && (
           <button type="button" ref={actEl} className={`${styles.act} min-h-tap`} data-life="act" data-locked={target?.locked ? 'true' : 'false'} onClick={() => { sound.current?.wake(); rt.current?.act() }}>
             <span className={styles.actVerb}>{targetText.verb}</span><span className={styles.actName} {...(target?.kind === 'actor' ? {} : story)}><bdi>{targetText.name}</bdi></span>{!touch && <kbd aria-hidden="true">E</kbd>}
           </button>
         )}
-        {idle && touch && (
-          <div className={styles.stick} role="application" aria-label={copy.stickAria} dir="ltr"
-            onPointerDown={e => { const r = e.currentTarget.getBoundingClientRect(); stick.current = {id: e.pointerId, cx: r.left + r.width / 2, cy: r.top + r.height / 2}; e.currentTarget.setPointerCapture(e.pointerId); sound.current?.wake(); stickMove(e) }}
-            onPointerMove={stickMove} onPointerUp={stickEnd} onPointerCancel={stickEnd}>
-            <span style={{transform: `translate(${knob.x * 30}px, ${knob.y * 30}px)`}} />
-          </div>
+        {idle && stageH > 0 && (
+          <ControlDeck top={stageH} height={0} touch={touch} verb={deckVerb} label={deckLabel} locked={!!target?.locked} onAxis={onAxis} onAction={onAction} onCancel={onCancel} />
         )}
       </div>
 
