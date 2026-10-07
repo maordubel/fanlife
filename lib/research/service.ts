@@ -26,10 +26,10 @@ export async function readRuns(clubId?:string){
   return {clubId:id,hasProfile:!!profile,canPlan:!!loadProfile(id)&&!!profile?.sources.length,runs:runs.slice(-10).reverse(),jobs:jobs.length,states,archive:profile?await archiveStatus(id,profile.archive):null,profileOrigin:profile?.origin||null}}))
 }
 /** One bounded archive pass for a club, then a fresh staging export — what the button and the scheduler both run. */
-export async function collectClub(clubId:string,{providerId,maxRequests=10,fetchImpl}:{providerId?:string;maxRequests?:number;fetchImpl?:FetchLike}={}){
+export async function collectClub(clubId:string,{providerId,maxRequests=10,fetchImpl,deadline}:{providerId?:string;maxRequests?:number;fetchImpl?:FetchLike;deadline?:number}={}){
  const profile=await loadClubProfile(clubId)
  if(!profile||!profile.archive.length)throw new Error('This club has no archive sources yet. Add one in the Data tab (or research-profiles/<club>.json).')
- const run=await collectArchive(clubId,profile.archive,{providerId,maxRequests,fetchImpl})
+ const run=await collectArchive(clubId,profile.archive,{providerId,maxRequests,fetchImpl,deadline})
  const staging=await exportArchiveStaging(clubId,profile.archive)
  return {run,staging}
 }
