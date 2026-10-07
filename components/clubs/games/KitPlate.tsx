@@ -3,11 +3,15 @@ import type {KitView} from '@/lib/clubs/gate-content'
 const TOKEN:Record<string,string>={red:'--mag-vermilion',white:'--mag-white',cream:'--mag-paper',blue:'--mag-navy',navy:'--mag-navy',green:'--mag-green',black:'--mag-ink',purple:'--mag-purple',grey:'--mag-muted',gray:'--mag-muted'}
 export const paint=(name:string|undefined)=>name&&TOKEN[name]?`var(${TOKEN[name]})`:null
 const BODY='M82 18 L120 6 Q170 28 220 6 L258 18 L312 74 L282 110 L252 92 L252 300 L88 300 L88 92 L58 110 L28 74 Z'
-/** One garment, drawn from the sourced fields only: design (hoops/stripes/checkers/halves/sash/solid) and up to two painted colours. */
-export function KitPlate({kit,label=true}:{kit:Pick<KitView,'id'|'design'|'colours'|'season'>;label?:boolean}) {
- const a=paint(kit.colours[0]),b=paint(kit.colours[1])||a,id=`kp-${kit.id.replace(/[^a-z0-9]/gi,'')}`,design=(kit.design||'').toLowerCase()
+/**
+ * One garment, drawn from the sourced fields only: design (hoops/stripes/checkers/halves/sash/solid) and up to two painted colours.
+ * `paints` lets a caller dress it in CSS variables instead (the club livery, when the archive documents no kit);
+ * `decorative` hides it from assistive tech where the name beside it already says who wears it.
+ */
+export function KitPlate({kit,label=true,paints,decorative=false,className='kit-plate'}:{kit:Pick<KitView,'id'|'design'|'colours'|'season'>;label?:boolean;paints?:{a:string;b?:string|null};decorative?:boolean;className?:string}) {
+ const a=paints?.a??paint(kit.colours[0]),b=(paints?paints.b:paint(kit.colours[1]))||a,id=`kp-${kit.id.replace(/[^a-z0-9]/gi,'')}`,design=(kit.design||'').toLowerCase()
  const painted=!!a
- return <svg viewBox="0 0 340 320" role="img" aria-label={`${kit.season} ${kit.design||''} ${kit.colours.join('/')}`.trim()} className="kit-plate" data-painted={painted}>
+ return <svg viewBox="0 0 340 320" role={decorative?undefined:'img'} aria-hidden={decorative||undefined} aria-label={decorative?undefined:`${kit.season} ${kit.design||''} ${kit.colours.join('/')}`.trim()} className={className} data-painted={painted}>
   <defs><clipPath id={id}><path d={BODY}/></clipPath></defs>
   <g clipPath={`url(#${id})`}>
    <rect width="340" height="320" fill={a||'var(--mag-card)'}/>

@@ -4,8 +4,17 @@ import type {LifeDisplayState} from './lifeDisplay'
 export type Source={id:string;title:string;url:string;excerpt:string;reviewed:boolean;retrievedAt:string;contentHash?:string;incoming?:{excerpt:string;retrievedAt:string;contentHash:string}}
 /** A research finding with a STABLE id (field+value+sources), so a decision never lands on the wrong row (audit A11).
  * `decision` is the research decision only — it is not a pack fact; packs change through a build. */
-export type Finding={id?:string;field:string;value:string;sources:string[];approved:boolean;decision?:'approved'|'rejected'|'deferred';decidedAt?:string;reason?:string}
-export type Club={id:string;name:string;city:string;country:string;initials:string;primary:string;secondary:string;status:'research'|'review'|'live'|'paused';version:number;gates:number[];sources:Source[];findings:Finding[];gaps:string[]}
+export type Finding={id?:string;field:string;value:string;sources:string[];approved:boolean;decision?:'approved'|'rejected'|'deferred';decidedAt?:string;reason?:string
+ /** lineage (audit F06): the adapter that first proposed it, every adapter that still produces it, first/last run */
+ adapter?:string;lineage?:{adapters:string[];firstRunId:string;lastRunId:string;lastSeenAt:string}
+ /** set when the adapter(s) behind a pending finding stop producing it — kept as history, not offered for decision */
+ superseded?:{at:string;runId:string;adapter:string;reason:string}}
+/**
+ * `status`/`gates` are PUBLICATION state — changed only by the owner's clicks (clubs/update, open-playable).
+ * `research` is the research layer's own status (audit F05): research never moves `status`.
+ */
+export type ResearchStatus={state:'collected'|'needs-review';lastRunId:string;lastAdapter:string;at:string}
+export type Club={id:string;name:string;city:string;country:string;initials:string;primary:string;secondary:string;status:'research'|'review'|'live'|'paused';version:number;gates:number[];sources:Source[];findings:Finding[];gaps:string[];research?:ResearchStatus}
 export type Job={id:string;clubId:string;query:string;title?:string;adapter?:string;status:'queued'|'running'|'completed'|'failed';attempts:number;createdAt:string;startedAt?:string;error?:string;lease?:string;baseVersion?:number}
 export type State={schemaVersion:1;revision:number;clubs:Club[];jobs:Job[];audit:AuditEntry[];upstream:{installed:string;latest:string;behind:number;checkedAt:string;url:string}|null;lifeDisplay?:LifeDisplayState}
 /** Who did it (actor + role, audit F19), to what, the value before and after, and why (audit A12). Old entries carry only at/action/target/detail. */

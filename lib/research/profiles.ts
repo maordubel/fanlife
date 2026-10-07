@@ -2,6 +2,7 @@ import {existsSync,readFileSync,readdirSync} from 'node:fs'
 import path from 'node:path'
 import {RESEARCH_SCHEMA,type ArchiveSource,type ClubProfile} from './contract'
 import {dir,readJson,root,serial,writeJson} from './store'
+import {hostProblem} from './netguard'
 
 /**
  * Research profiles come from two places and are read as one:
@@ -16,8 +17,14 @@ const empty=(clubId:string):ClubProfile&{archive:ArchiveSource[]}=>({schemaVersi
 function repoProfile(clubId:string,cwd=process.cwd()){const p=path.join(cwd,REPO,`${clubId}.json`);if(!existsSync(p))return null;const v=JSON.parse(readFileSync(p,'utf8'));if(v.clubId!==clubId)throw new Error('PROFILE_CLUB_MISMATCH');return {...empty(clubId),...v,archive:v.archive||[],sources:v.sources||[]} as ClubProfile&{archive:ArchiveSource[]}}
 const overlayFile=(clubId:string)=>path.join(dir(clubId),'profile.json')
 
-export async function loadClubProfile(clubId:string):Promise<FullProfile|null>{
- const repo=repoProfile(clubId),admin=await readJson<(ClubProfile&{archive:ArchiveSource[]})|null>(overlayFile(clubId),null)
+/**
+ * Whether the repository's profile dataset is present on this server at all. A deployment that did not ship
+ * `research-profiles/` (audit F03: the API route's trace missed it) must say so — "no profile" would read as zero data.
+ */
+export const profilesShipped=(cwd=process.cwd())=>existsSync(path.join(cwd,REPO))
+
+export async function loadClubProfile(clubId:string,cwd=process.cwd()):Promise<FullProfile|null>{
+ const repo=repoProfile(clubId,cwd),admin=await readJson<(ClubProfile&{archive:ArchiveSource[]})|null>(overlayFile(clubId),null)
  if(!repo&&!admin)return null
  const base=repo||empty(clubId)
  const byId=<T extends {providerId:string}>(a:T[],b:T[])=>[...a.filter(x=>!b.some(y=>y.providerId===x.providerId)),...b]
@@ -40,6 +47,9 @@ export function validateArchiveSource(input:unknown):{ok:true;value:ArchiveSourc
  if(providerId&&!ID.test(providerId))errors.push('providerId: lowercase letters, digits and hyphens')
  if(familyId&&!ID.test(familyId))errors.push('familyId: lowercase letters, digits and hyphens')
  if(origin&&!ORIGIN.test(origin))errors.push('origin must be https://host with no path')
+ else if(origin){let host='';try{host=new URL(origin).hostname}catch{errors.push('origin is not a valid URL')}
+  // F10: a public web source only — never loopback, private, link-local, metadata or a local name
+  const why=host?hostProblem(host):null;if(why)errors.push(`origin: ${why}`)}
  const reader=s.reader==='wordpress-rest'||s.reader==='html'?s.reader:(errors.push('reader must be wordpress-rest or html'),'html')
  const roles=['results','people','club-history','fan-culture','items','mixed'],role=roles.includes(String(s.role))?s.role as ArchiveSource['role']:(errors.push('role is not one of '+roles.join(', ')),'mixed')
  const list=(k:string)=>Array.isArray(s[k])?(s[k] as unknown[]).map(String).map(x=>x.trim()).filter(Boolean):typeof s[k]==='string'?String(s[k]).split(/[\n,]/).map(x=>x.trim()).filter(Boolean):[]

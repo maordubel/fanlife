@@ -19,9 +19,26 @@ describe('should-build — the Ignored Build Step', () => {
     expect(config.ignoreCommand).toBe('node scripts/vercel/should-build.mjs')
   })
 
-  it('skips a commit of docs, tests, scripts, SQL and art sources only', () => {
-    expect(decide(['docs/14-portal-identity.md', 'tests/kit.test.ts', 'supabase/migrations/x.sql']).build).toBe(false)
+  it('skips a commit of docs, tests, build-time scripts and art sources only', () => {
+    expect(decide(['docs/14-portal-identity.md', 'tests/kit.test.ts', 'scripts/brand/art.py']).build).toBe(false)
     expect(decide(['brand/source/crests-2026-09-22/keter-black.png', 'CLAUDE.md']).build).toBe(false)
+  })
+
+  it('F14: builds when a file the server reads at runtime with fs changes', () => {
+    for (const runtime of ['scripts/master/local-bootstrap.sql', 'supabase/migrations/20260928090000_worker_events_taxonomy.sql', 'research-staging/aek-athens/manifest.json', 'research-profiles/celtic.json', 'research-data/aek-athens/archive-docs.json']) {
+      expect(decide(['docs/a.md', runtime]).build, runtime).toBe(true)
+      expect(decide([runtime]).build, runtime).toBe(true)
+    }
+    // docs and tests alone still skip
+    expect(decide(['docs/a.md', 'tests/x.test.ts']).build).toBe(false)
+  })
+
+  it('F14: every path the server reads with fs is outside the skip list', () => {
+    const src = readFileSync(join(ROOT, 'lib/master/evaluation-db.ts'), 'utf8')
+    for (const p of ['scripts/master/local-bootstrap.sql', 'supabase/migrations']) {
+      expect(src.includes(p), p).toBe(true)
+      expect(decide([`${p.replace(/\/$/, '')}${p.endsWith('.sql') ? '' : '/x.sql'}`]).build, p).toBe(true)
+    }
   })
 
   it('builds the moment one file is something the site runs or serves', () => {

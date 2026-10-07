@@ -1,5 +1,5 @@
 import path from 'node:path'
-import {archiveStatus,readObservations} from './archive'
+import {activeObservations,archiveStatus,readObservations} from './archive'
 import {readJson,writeJson} from './store'
 import type {ArchiveSource} from './contract'
 import {collectorStagingRoot} from './paths'
@@ -26,7 +26,7 @@ export async function exportArchiveStaging(clubId:string,sources:ArchiveSource[]
   ...s.endpoints.filter(e=>e.state==='blocked'||e.state==='not-json').map(e=>({id:`blocked-${s.providerId}-${e.endpoint}`,priority:'P2',task:`${s.publisher}: ${e.endpoint} answered ${e.status||e.state} (${e.reason}). Recorded as a gap — not bypassed.`,taskHe:`${s.publisher}: ${e.endpoint} חסום (${e.status||e.state}). נרשם כפער — לא עוקפים.`,status:'queued',owner:null})),
   ...s.listings.filter(l=>l.state==='partial_budget'||l.state==='new'||l.state==='retry-later').map(l=>({id:`continue-${s.providerId}-${l.collection}`,priority:'P3',task:`${s.publisher} ${l.collection}: ${l.pagesRead} page(s) read${l.observedTotalPages?` of ${l.observedTotalPages}`:''}; the scheduled task continues from the checkpoint.`,taskHe:`${s.publisher} ${l.collection}: נקראו ${l.pagesRead} עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.`,status:'queued',owner:null})),
   ...s.knownLimits.map((t,i)=>({id:`limit-${s.providerId}-${i}`,priority:'P3',task:t,taskHe:t,status:'noted',owner:null}))])
- const obs=Object.values(await readObservations(clubId))
+ const obs=activeObservations(await readObservations(clubId)) // retired observations stay in history, not in staging
  // people are CANDIDATES: the name as the source wrote it, the span it printed, the page it came from — identity unresolved
  const people=obs.filter(o=>o.recordType==='player'||o.recordType==='coach').map(o=>({id:o.id,role:o.recordType,nameAsReported:o.nameAsReported,seasonsAsReported:o.seasonsAsReported,providerRecordKey:o.providerRecordKey,sourceUrl:o.sourceUrl,sourceIds:[`collector-${o.providerId}-${o.providerRecordKey.split(':')[1]}`],parserVersion:o.parserVersion,identityState:'unresolved',status:'candidate'}))
  const seasons=obs.filter(o=>o.recordType==='season').map(o=>({season:o.seasonAsReported,providerId:o.providerId,sourceUrl:o.sourceUrl}))

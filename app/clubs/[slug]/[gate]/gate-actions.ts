@@ -1,6 +1,7 @@
 'use server'
 import {requestClub} from '@/lib/clubs/request'
 import {ratedPool,dealDraft,play,rumbleReadiness} from '@/lib/clubs/rumble'
+import {stageMatch} from '@/lib/clubs/rumble-show'
 import {lineupMatches,buildableKits,kitViews} from '@/lib/clubs/gate-content'
 import {clubGoals,goalPool,cleanTouches,judgeGoal} from '@/lib/clubs/goal'
 /** Answers never ship to the client: tenant, gate switch, content version are checked here on every grade. */
@@ -24,12 +25,16 @@ export async function gradeKit(slug:string,version:string,kitId:string,season:st
  return {season:k.season===season,maker:k.maker===maker,design:k.design===design,truth:{season:k.season,maker:k.maker,design:k.design},sources:k.sources}
 }
 export const kitCount=async(slug:string)=>{const r=await requestClub(slug,5);return r?kitViews(r.data).length:0}
+/**
+ * Gate 9 — the five are checked against the board the seed deals, the score is decided from hidden
+ * ratings, and the match is staged HERE (`stageMatch`). Only public cards and the finished script leave.
+ */
 export async function playRumble(slug:string,version:string,seed:number,picks:string[]){
  if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||!Number.isSafeInteger(seed)||!Array.isArray(picks)||picks.length!==5||picks.some(p=>typeof p!=='string'||p.length>200))return null
  const resolved=await requestClub(slug,9)
  if(!resolved||resolved.data.version!==version||!resolved.data.gates['royal-rumble']?.playable)return null
  const r=play(ratedPool(resolved.data),seed,picks)
- return r?{verdict:r.verdict,goals:r.goals,you:{power:r.you.power,cost:r.you.cost,names:r.you.cards.map(c=>c.name)},rival:{power:r.rival.power,names:r.rival.cards.map(c=>c.name)}}:null
+ return r?{verdict:r.verdict,goals:r.goals,script:stageMatch(r,seed)}:null
 }
 export const rumbleDeal=async(slug:string,seed:number)=>{const r=await requestClub(slug,9);return r&&Number.isSafeInteger(seed)&&rumbleReadiness(ratedPool(r.data)).playable?dealDraft(ratedPool(r.data),seed):null}
 /** Gate 8 — the touches are graded here; the cast, verbs, order and count never left the server before this. */

@@ -156,7 +156,7 @@ describe('the control-room API answers 401 without the owner (route handler)',()
 })
 
 describe('every admin surface goes through the one gate (source)',()=>{
- const PAGES=['app/master/admin/page.tsx','app/master/core/page.tsx','app/master/test-lab/page.tsx','app/kits/admin/page.tsx']
+ const PAGES=['app/master/admin/page.tsx','app/master/core/page.tsx','app/master/test-lab/page.tsx','app/kits/admin/page.tsx','app/master/exchange/page.tsx']
  it('calls requireAdmin on every control-room page',()=>{
   for(const p of PAGES){expect(existsSync(path.join(ROOT,p)),p).toBe(true);expect(src(p),p).toMatch(/requireAdmin\('\/[a-z/-]+'\)/)}
   expect(src('app/qa/stats/page.tsx')).toContain('adminSession()')
