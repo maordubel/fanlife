@@ -20,7 +20,7 @@ describe('the magazine is the house style (rule 91)',()=>{
  })
  it('the shell carries the credit, the tab bar and the masthead',()=>{
   const s=read('components/master/Shell.tsx')
-  expect(s).toContain('https://DubelTeam.com');expect(s).toContain('mag-tabbar');expect(s).toContain('mag-top');expect(s).toContain('mag-foot')
+  expect(s).toContain('https://DubelTeam.com');expect(s).toContain('<TabBar');expect(read('components/master/TabBar.tsx')).toContain('mag-tabbar');expect(s).toContain('mag-top');expect(s).toContain('mag-foot')
  })
  it('the stylesheet defines the tokens, self-hosts the display face and never names a yellow',()=>{
   const css=read('app/magazine.css')

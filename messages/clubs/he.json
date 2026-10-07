@@ -117,7 +117,7 @@
   "archiveOpen": "פתחו ארכיון",
   "lifeEntryTitle": "חיי אוהד",
   "lifeEntryNote": "חיים שלמים של אוהד, קבוצה אחרי קבוצה.",
-  "lifeEntryCta": "בחרו מועדון",
+  "lifeEntryCta": "לשחק — בחרו מועדון",
   "chooseClub": "בחרו מועדון",
   "chooserSearch": "חיפוש לפי מועדון או עיר",
   "chooserClose": "סגירה",
@@ -177,5 +177,11 @@
   "beenMarked": "הייתי שם",
   "beenHint": "סמנו: זה נכנס לסיפור שלי",
   "clubBeenTitle": "הייתם שם?",
-  "clubBeenBody": "כל משחק ורגע בארכיון נושא חותמת: הייתי שם. סמנו את הימים שראיתם."
+  "clubBeenBody": "כל משחק ורגע בארכיון נושא חותמת: הייתי שם. סמנו את הימים שראיתם.",
+  "tabLife": "LIFE",
+  "tabMarket": "שוק",
+  "lifeGame": "המשחק",
+  "nextMore": "מתוך",
+  "nextPrev": "המשחק הקודם",
+  "nextNext": "המשחק הבא"
 }
