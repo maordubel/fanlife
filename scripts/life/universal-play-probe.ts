@@ -1,7 +1,7 @@
 /**
  * LIFE, universal — the acceptance script. Plays a whole life in a real browser.
  *
- *   npx tsx scripts/life/universal-play-probe.ts http://127.0.0.1:3200 --club=olympiacos [--phone] [--chapters=3] [--pick=0] [--shots=/tmp/dir] [--lang=he]
+ *   npx tsx scripts/life/universal-play-probe.ts http://127.0.0.1:3200 --club=olympiacos [--phone] [--chapters=3] [--pick=0] [--shots=/tmp/dir] [--lang=he] [--story=2]
  *
  * It does what a supporter does and nothing a supporter cannot: it walks the body to people,
  * things and doors through the runtime's own `goTo`, presses the buttons that are on the screen,
@@ -14,7 +14,7 @@ import {mkdirSync} from 'node:fs'
 
 const arg = (name: string, fallback = '') => (process.argv.find(a => a.startsWith(`--${name}=`)) || '').split('=')[1] || fallback
 const base = process.argv[2]?.startsWith('http') ? process.argv[2] : 'http://127.0.0.1:3200'
-const club = arg('club', 'olympiacos'), phone = process.argv.includes('--phone'), shots = arg('shots'), lang = arg('lang', 'en')
+const club = arg('club', 'olympiacos'), phone = process.argv.includes('--phone'), shots = arg('shots'), lang = arg('lang', 'en'), story = arg('story')
 const maxChapters = Number(arg('chapters', '99')), pick = Number(arg('pick', '0'))
 const size = arg('size') ? arg('size').split('x').map(Number) as [number, number] : phone ? [390, 844] as [number, number] : [1440, 900] as [number, number]
 if (shots) mkdirSync(shots, {recursive: true})
@@ -54,7 +54,7 @@ async function main(): Promise<number> {
   page.on('pageerror', e => faults.push(`page error: ${e.message}`))
   page.on('console', m => { if (m.type() === 'error' && !/favicon|Failed to load resource.*(40[34])|net::ERR/.test(m.text())) faults.push(`console: ${m.text().slice(0, 200)}`) })
   page.on('response', r => { if (r.status() >= 400 && new URL(r.url()).origin === new URL(base).origin && !/favicon/.test(r.url())) faults.push(`${r.status()} ${r.url()}`) })
-  await page.goto(`${base}/clubs/${club}/life?lang=${lang}`, {waitUntil: 'load'})
+  await page.goto(`${base}/clubs/${club}/life?lang=${lang}${story ? `&story=${story}` : ''}`, {waitUntil: 'load'})
   await page.waitForSelector('[data-life="title"]', {timeout: 120000})
   const shot = async (name: string) => { if (shots) await page.screenshot({path: `${shots}/${tag}-${name}.png`}) }
   await shot('00-title')

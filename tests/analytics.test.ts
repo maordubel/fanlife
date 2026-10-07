@@ -30,6 +30,13 @@ describe('the vocabulary', () => {
     expect(meteredGate('/goalkeeper')).toBeNull()
     expect(meteredGate('/')).toBeNull()
     expect(meteredGate('/qa/stats')).toBeNull()
+    // FAN LIFE club gates are measured per club (research 7.10.2026 §4.2)
+    expect(meteredGate('/clubs/panathinaikos/trivia')).toBe('/clubs/panathinaikos/trivia')
+    expect(meteredGate('/clubs/hapoel-tel-aviv/goal')).toBe('/clubs/hapoel-tel-aviv/goal')
+    expect(meteredGate('/clubs/partizan-belgrade/royal-rumble/')).toBe('/clubs/partizan-belgrade/royal-rumble')
+    expect(meteredGate('/clubs/olympiacos')).toBeNull()
+    expect(meteredGate('/clubs/olympiacos/unknown')).toBeNull()
+    expect(cleanEvent({ name: 'gate_view', gate: meteredGate('/clubs/hapoel-petah-tikva/kit-builder') })).not.toBeNull()
   })
 
   it('drops what it does not know, never fixes it', () => {

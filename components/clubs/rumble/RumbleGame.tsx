@@ -11,6 +11,7 @@ import {Crown,RumbleShirt,money,posShort,tr,useReducedMotion,useRumbleSound} fro
 import {RumbleSlotMachine} from './RumbleSlotMachine'
 import {RumbleMatch,RumbleReveal,type RevealStep} from './RumbleStage'
 import {RumbleFullTime,type RecentRound} from './RumbleFullTime'
+import {RecordRun} from '../games/RecordRun'
 import s from './rumble.module.css'
 
 type Board={seed:number;draft:RumbleCard[][]}
@@ -70,7 +71,7 @@ export function RumbleGame({club,version,locale,main,shuffle,wardrobe,playerCoun
   window.setTimeout(()=>setPhase('reveal'),reduced?700:1250)
  }
 
- if(phase==='result'&&script)return <div ref={root}><RumbleFullTime script={script} copy={copy} wardrobe={wardrobe} againHref={againHref} recent={recent}/></div>
+ if(phase==='result'&&script)return <div ref={root}><RecordRun club={club} gate="royal-rumble" run={`royal-rumble:${version}:${board.seed}:${picks.join(',')}`} score={script.final.us}/><RumbleFullTime script={script} copy={copy} wardrobe={wardrobe} againHref={againHref} recent={recent}/></div>
  if((phase==='reveal'||phase==='match')&&script)return <div ref={root} className={s.game} data-phase="show">
   {phase==='reveal'?<RumbleReveal script={script} step={step} onStep={setStep} onDone={()=>setPhase('match')} wardrobe={wardrobe} copy={copy} reduced={reduced}/>
    :<RumbleMatch script={script} wardrobe={wardrobe} copy={copy} reduced={reduced} sound={sound.play} soundOn={sound.on} onSound={sound.toggle} onDone={()=>setPhase('result')}/>}

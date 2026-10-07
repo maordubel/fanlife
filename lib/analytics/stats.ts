@@ -88,7 +88,9 @@ export function orderedFunnel(rows: readonly FunnelRow[]): FunnelRow[] {
     gate, visitors: 0, starters: 0, finishers: 0, finishRate: null, leaves: 0, topLeaveStep: null, topLeaveCount: null, crossClicks: 0, shares: 0,
   })
   const routes = [...new Set(METERED_ROUTES)].sort((a, b) => (gateNumberOf(a) ?? 100 + METERED_ROUTES.indexOf(a)) - (gateNumberOf(b) ?? 100 + METERED_ROUTES.indexOf(b)))
-  return routes.map((route) => by.get(route) ?? empty(route))
+  // FAN LIFE club routes (`/clubs/<club>/<gate>`) follow the wall, grouped by club, only when they were visited
+  const clubs = rows.filter((row) => !routes.includes(row.gate)).sort((a, b) => a.gate.localeCompare(b.gate))
+  return [...routes.map((route) => by.get(route) ?? empty(route)), ...clubs]
 }
 
 export function gateTitleKey(route: string) {

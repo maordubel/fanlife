@@ -17,7 +17,7 @@ type Tab = 'me' | 'people' | 'nights'
 
 export const bondWord = (n: number) => (n >= 18 ? 3 : n >= 10 ? 2 : n >= 5 ? 1 : 0)
 
-export function MeSheet({pack, chapter, state, copy, locale, story, onClose}: {pack: LifePack; chapter: Chapter; state: LifeState; copy: Copy; locale: 'en' | 'he'; story: {lang?: string; dir?: 'ltr'}; onClose: () => void}) {
+export function MeSheet({pack, chapter, state, copy, locale, story, onClose}: {pack: LifePack; chapter: Chapter; state: LifeState; copy: Copy; locale: 'en' | 'he'; story: {lang?: string; dir?: 'ltr' | 'rtl'}; onClose: () => void}) {
   const [tab, setTab] = useState<Tab>('me')
   const meters: {k: string; v: number; max: number}[] = [
     {k: 'energy', v: state.energy, max: 100}, {k: 'standing', v: state.standing, max: 100}, {k: 'heart', v: state.heart, max: 100}, {k: 'coins', v: state.coins, max: 0},
