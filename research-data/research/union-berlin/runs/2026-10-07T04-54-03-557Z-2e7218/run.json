@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-10-07T04-54-03-557Z-2e7218",
+ "clubId": "union-berlin",
+ "startedAt": "2026-10-07T04:54:03.557Z",
+ "finishedAt": "2026-10-07T04:54:26.380Z",
+ "providers": [
+  "immer-unioner",
+  "union-official"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 7,
+  "documentsRead": 7,
+  "newDocuments": 7,
+  "changedDocuments": 0,
+  "unchangedDocuments": 0,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 0,
+  "budgetLeft": 5
+ },
+ "diagnostics": [
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "immer-unioner",
+   "url": null,
+   "message": "No tested parser for Immer Unioner yet (immerunioner-v1 is planned): documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "union-official",
+   "url": null,
+   "message": "No tested parser for 1. FC Union Berlin yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

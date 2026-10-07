@@ -1,0 +1,65 @@
+[
+ {
+  "id": "collector-partizanopedia-html",
+  "title": "Partizanopedia — pages (people)",
+  "url": "https://partizanopedia.rs/",
+  "providerId": "partizanopedia",
+  "publisher": "Partizanopedia",
+  "sourceFamilyId": "partizanopedia",
+  "scope": "people",
+  "access": "available",
+  "checkedAt": "2026-10-07",
+  "retrievedAt": "2026-10-07T04:53:37.823Z",
+  "collected": {
+   "documents": 3,
+   "observedTotalDocuments": 78,
+   "state": "partial_budget",
+   "parser": null
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "collector-crno-bela-nostalgija-pages",
+  "title": "Crno-bela Nostalgija — pages (club-history)",
+  "url": "https://crnobelanostalgija.com/wp-json/wp/v2/pages",
+  "providerId": "crno-bela-nostalgija",
+  "publisher": "Crno-bela Nostalgija",
+  "sourceFamilyId": "crnobela-nostalgija",
+  "scope": "club-history",
+  "access": "available",
+  "checkedAt": "2026-10-07",
+  "retrievedAt": "2026-10-07T04:53:37.823Z",
+  "collected": {
+   "documents": 5,
+   "observedTotalDocuments": 5,
+   "state": "listed",
+   "parser": null
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "collector-partizan-official-html",
+  "title": "FK Partizan — pages (club-history)",
+  "url": "https://www.partizan.rs/vesti/istorijat",
+  "providerId": "partizan-official",
+  "publisher": "FK Partizan",
+  "sourceFamilyId": "partizan-institutional",
+  "scope": "club-history",
+  "access": "available",
+  "checkedAt": "2026-10-07",
+  "retrievedAt": "2026-10-07T04:53:37.823Z",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
+   "state": "listed",
+   "parser": null
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ }
+]

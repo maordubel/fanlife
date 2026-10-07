@@ -1,0 +1,4 @@
+{"code":"SOURCE_BLOCKED","providerId":"hajduk-official","url":"https://hajduk.hr/eng/matches/archive/league","message":"HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."}
+{"code":"NEEDS_PARSER","providerId":"hajduk-official","url":null,"message":"No tested parser for HNK Hajduk Split yet: documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"torcida","url":null,"message":"No tested parser for Torcida Split yet (torcida-history-v1 is planned): documents are kept, nothing is extracted."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

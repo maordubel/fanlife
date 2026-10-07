@@ -1,0 +1,58 @@
+[
+ {
+  "providerId": "millernton",
+  "role": "mixed",
+  "listings": [
+   {
+    "collection": "posts",
+    "state": "partial_budget",
+    "pagesRead": 3,
+    "observedTotalDocuments": 4392,
+    "observedTotalPages": 176,
+    "queue": null,
+    "lastError": null
+   },
+   {
+    "collection": "pages",
+    "state": "listed",
+    "pagesRead": 1,
+    "observedTotalDocuments": 20,
+    "observedTotalPages": 1,
+    "queue": null,
+    "lastError": null
+   }
+  ],
+  "documents": 95,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ },
+ {
+  "providerId": "fcstpauli-museum",
+  "role": "club-history",
+  "listings": [
+   {
+    "collection": "posts",
+    "state": "listed",
+    "pagesRead": 2,
+    "observedTotalDocuments": 31,
+    "observedTotalPages": 2,
+    "queue": null,
+    "lastError": null
+   },
+   {
+    "collection": "pages",
+    "state": "listed",
+    "pagesRead": 2,
+    "observedTotalDocuments": 29,
+    "observedTotalPages": 2,
+    "queue": null,
+    "lastError": null
+   }
+  ],
+  "documents": 60,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ }
+]

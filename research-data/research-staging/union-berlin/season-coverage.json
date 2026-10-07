@@ -1,0 +1,40 @@
+[
+ {
+  "providerId": "immer-unioner",
+  "role": "mixed",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "partial_budget",
+    "pagesRead": 0,
+    "observedTotalDocuments": 118,
+    "observedTotalPages": null,
+    "queue": 112,
+    "lastError": null
+   }
+  ],
+  "documents": 6,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ },
+ {
+  "providerId": "union-official",
+  "role": "results",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "listed",
+    "pagesRead": 0,
+    "observedTotalDocuments": 1,
+    "observedTotalPages": null,
+    "queue": 0,
+    "lastError": null
+   }
+  ],
+  "documents": 1,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ }
+]

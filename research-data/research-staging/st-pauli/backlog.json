@@ -1,0 +1,50 @@
+[
+ {
+  "id": "parser-millernton",
+  "priority": "P1",
+  "task": "Write and test the millernton-stats-v1 against stored fixtures (season, person, match pages) before anything is extracted from MillernTon.",
+  "taskHe": "לכתוב parser ל-MillernTon מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "continue-millernton-posts",
+  "priority": "P3",
+  "task": "MillernTon posts: 3 page(s) read of 176; the scheduled task continues from the checkpoint.",
+  "taskHe": "MillernTon posts: נקראו 3 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-millernton-0",
+  "priority": "P3",
+  "task": "Mostly news and match previews; start from the statistics index, not from thousands of posts by publication date.",
+  "taskHe": "Mostly news and match previews; start from the statistics index, not from thousands of posts by publication date.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "limit-millernton-1",
+  "priority": "P3",
+  "task": "A new article about 1974 is about 1974: publication date is never the event date.",
+  "taskHe": "A new article about 1974 is about 1974: publication date is never the event date.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-fcstpauli-museum",
+  "priority": "P1",
+  "task": "Write and test the stpauli-museum-v1 against stored fixtures (season, person, match pages) before anything is extracted from FC St. Pauli Museum.",
+  "taskHe": "לכתוב parser ל-FC St. Pauli Museum מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-fcstpauli-museum-0",
+  "priority": "P3",
+  "task": "Museum pages describe the archive; they do not make the physical collection downloadable.",
+  "taskHe": "Museum pages describe the archive; they do not make the physical collection downloadable.",
+  "status": "noted",
+  "owner": null
+ }
+]

@@ -1,0 +1,56 @@
+{
+ "hajduk-official:html": {
+  "schemaVersion": 1,
+  "providerId": "hajduk-official",
+  "collection": "html",
+  "queryFingerprint": "007fcc23c5befbb0",
+  "parserVersion": null,
+  "nextPage": 0,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": 5,
+  "observedTotalPages": null,
+  "perPage": 1,
+  "queue": [
+   "/eng/history/players",
+   "/povijest",
+   "/povijest/1991-2000",
+   "/povijest/2001-danas"
+  ],
+  "seen": [
+   "/eng/matches/archive/league"
+  ],
+  "state": "blocked",
+  "updatedAt": "2026-10-07T04:52:41.964Z",
+  "lastError": "HTTP 403 — a refusal is an answer"
+ },
+ "torcida:posts": {
+  "schemaVersion": 1,
+  "providerId": "torcida",
+  "collection": "posts",
+  "queryFingerprint": "0ab201d84e1c0929",
+  "parserVersion": "torcida-history-v1",
+  "nextPage": 5,
+  "lastCommittedPage": 4,
+  "observedTotalDocuments": 657,
+  "observedTotalPages": 27,
+  "perPage": 25,
+  "state": "partial_budget",
+  "updatedAt": "2026-10-07T04:52:53.771Z",
+  "lastError": null
+ },
+ "torcida:pages": {
+  "schemaVersion": 1,
+  "providerId": "torcida",
+  "collection": "pages",
+  "queryFingerprint": "8795f59b6bbf8eea",
+  "parserVersion": "torcida-history-v1",
+  "nextPage": 2,
+  "lastCommittedPage": 1,
+  "observedTotalDocuments": 17,
+  "observedTotalPages": 1,
+  "perPage": 25,
+  "state": "listed",
+  "updatedAt": "2026-10-07T04:52:57.185Z",
+  "lastError": null
+ }
+}

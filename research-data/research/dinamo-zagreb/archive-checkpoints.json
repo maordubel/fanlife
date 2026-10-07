@@ -1,0 +1,73 @@
+{
+ "dinamo-official:html": {
+  "schemaVersion": 1,
+  "providerId": "dinamo-official",
+  "collection": "html",
+  "queryFingerprint": "d8cd95376a12314c",
+  "parserVersion": null,
+  "nextPage": 0,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": 3,
+  "observedTotalPages": null,
+  "perPage": 1,
+  "queue": [
+   "/en/club/history",
+   "/en/timeline/145"
+  ],
+  "seen": [
+   "/hr/klub/povijest"
+  ],
+  "state": "blocked",
+  "updatedAt": "2026-10-07T04:52:28.002Z",
+  "lastError": "HTTP 403 — a refusal is an answer"
+ },
+ "bad-blue-boys:posts": {
+  "schemaVersion": 1,
+  "providerId": "bad-blue-boys",
+  "collection": "posts",
+  "queryFingerprint": "c41b98c1d0a24081",
+  "parserVersion": "bbb-history-v1",
+  "nextPage": 4,
+  "lastCommittedPage": 3,
+  "observedTotalDocuments": 79,
+  "observedTotalPages": 4,
+  "perPage": 25,
+  "state": "partial_budget",
+  "updatedAt": "2026-10-07T04:52:35.872Z",
+  "lastError": null
+ },
+ "bad-blue-boys:pages": {
+  "schemaVersion": 1,
+  "providerId": "bad-blue-boys",
+  "collection": "pages",
+  "queryFingerprint": "fbef998996ab89a5",
+  "parserVersion": "bbb-history-v1",
+  "nextPage": 2,
+  "lastCommittedPage": 1,
+  "observedTotalDocuments": 17,
+  "observedTotalPages": 1,
+  "perPage": 25,
+  "state": "listed",
+  "updatedAt": "2026-10-07T04:52:39.062Z",
+  "lastError": null
+ },
+ "hns-semafor:html": {
+  "schemaVersion": 1,
+  "providerId": "hns-semafor",
+  "collection": "html",
+  "queryFingerprint": "78c180cf438f1de8",
+  "parserVersion": null,
+  "nextPage": 0,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": 1,
+  "observedTotalPages": null,
+  "perPage": 1,
+  "queue": [],
+  "seen": [
+   "/klubovi/609/gnk-dinamo/"
+  ],
+  "state": "listed",
+  "updatedAt": "2026-10-07T04:52:40.678Z",
+  "lastError": null
+ }
+}

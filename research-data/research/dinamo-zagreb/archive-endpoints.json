@@ -1,0 +1,34 @@
+{
+ "dinamo-official:/hr/klub/povijest": {
+  "endpoint": "/hr/klub/povijest",
+  "providerId": "dinamo-official",
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-10-07T04:52:28.002Z"
+ },
+ "bad-blue-boys:/wp-json/wp/v2/posts": {
+  "endpoint": "/wp-json/wp/v2/posts",
+  "providerId": "bad-blue-boys",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:52:35.872Z"
+ },
+ "bad-blue-boys:/wp-json/wp/v2/pages": {
+  "endpoint": "/wp-json/wp/v2/pages",
+  "providerId": "bad-blue-boys",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:52:39.061Z"
+ },
+ "hns-semafor:/klubovi/609/gnk-dinamo/": {
+  "endpoint": "/klubovi/609/gnk-dinamo/",
+  "providerId": "hns-semafor",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:52:40.677Z"
+ }
+}

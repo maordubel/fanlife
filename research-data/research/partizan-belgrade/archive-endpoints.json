@@ -1,0 +1,50 @@
+{
+ "partizanopedia:/": {
+  "endpoint": "/",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:53:24.731Z"
+ },
+ "partizanopedia:/index.html": {
+  "endpoint": "/index.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:53:28.768Z"
+ },
+ "partizanopedia:/osajtu.html": {
+  "endpoint": "/osajtu.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:53:32.424Z"
+ },
+ "crno-bela-nostalgija:/wp-json/wp/v2/posts": {
+  "endpoint": "/wp-json/wp/v2/posts",
+  "providerId": "crno-bela-nostalgija",
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-10-07T04:53:32.537Z"
+ },
+ "crno-bela-nostalgija:/wp-json/wp/v2/pages": {
+  "endpoint": "/wp-json/wp/v2/pages",
+  "providerId": "crno-bela-nostalgija",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:53:36.286Z"
+ },
+ "partizan-official:/vesti/istorijat": {
+  "endpoint": "/vesti/istorijat",
+  "providerId": "partizan-official",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:53:37.818Z"
+ }
+}

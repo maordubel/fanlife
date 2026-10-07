@@ -1,0 +1,74 @@
+[
+ {
+  "id": "parser-partizanopedia",
+  "priority": "P1",
+  "task": "Write and test the partizanopedia-v1 against stored fixtures (season, person, match pages) before anything is extracted from Partizanopedia.",
+  "taskHe": "לכתוב parser ל-Partizanopedia מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "continue-partizanopedia-html",
+  "priority": "P3",
+  "task": "Partizanopedia html: 0 page(s) read; the scheduled task continues from the checkpoint.",
+  "taskHe": "Partizanopedia html: נקראו 0 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-partizanopedia-0",
+  "priority": "P3",
+  "task": "The index lists seasons 1946/47–2019/20; later seasons are a documented gap, not an assumed full archive.",
+  "taskHe": "The index lists seasons 1946/47–2019/20; later seasons are a documented gap, not an assumed full archive.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "limit-partizanopedia-1",
+  "priority": "P3",
+  "task": "www and the bare domain are one source family.",
+  "taskHe": "www and the bare domain are one source family.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-crno-bela-nostalgija",
+  "priority": "P1",
+  "task": "Write and test the cbn-history-v1 against stored fixtures (season, person, match pages) before anything is extracted from Crno-bela Nostalgija.",
+  "taskHe": "לכתוב parser ל-Crno-bela Nostalgija מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "blocked-crno-bela-nostalgija-/wp-json/wp/v2/posts",
+  "priority": "P2",
+  "task": "Crno-bela Nostalgija: /wp-json/wp/v2/posts answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "Crno-bela Nostalgija: /wp-json/wp/v2/posts חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-crno-bela-nostalgija-0",
+  "priority": "P3",
+  "task": "Mixes current-season items with history; search answered 403 and is not used.",
+  "taskHe": "Mixes current-season items with history; search answered 403 and is not used.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "limit-crno-bela-nostalgija-1",
+  "priority": "P3",
+  "task": "Independence from Partizanopedia is checked by ownership and citations, not by domain.",
+  "taskHe": "Independence from Partizanopedia is checked by ownership and citations, not by domain.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-partizan-official",
+  "priority": "P1",
+  "task": "Write and test the partizan-official parser against stored fixtures (season, person, match pages) before anything is extracted from FK Partizan.",
+  "taskHe": "לכתוב parser ל-FK Partizan מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ }
+]

@@ -1,0 +1,68 @@
+[
+ {
+  "providerId": "partizanopedia",
+  "role": "people",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "partial_budget",
+    "pagesRead": 0,
+    "observedTotalDocuments": 78,
+    "observedTotalPages": null,
+    "queue": 75,
+    "lastError": null
+   }
+  ],
+  "documents": 3,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ },
+ {
+  "providerId": "crno-bela-nostalgija",
+  "role": "club-history",
+  "listings": [
+   {
+    "collection": "posts",
+    "state": "blocked",
+    "pagesRead": 0,
+    "observedTotalDocuments": null,
+    "observedTotalPages": null,
+    "queue": null,
+    "lastError": "HTTP 403 — a refusal is an answer"
+   },
+   {
+    "collection": "pages",
+    "state": "listed",
+    "pagesRead": 1,
+    "observedTotalDocuments": 5,
+    "observedTotalPages": 1,
+    "queue": null,
+    "lastError": null
+   }
+  ],
+  "documents": 5,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ },
+ {
+  "providerId": "partizan-official",
+  "role": "club-history",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "listed",
+    "pagesRead": 0,
+    "observedTotalDocuments": 1,
+    "observedTotalPages": null,
+    "queue": 0,
+    "lastError": null
+   }
+  ],
+  "documents": 1,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ }
+]

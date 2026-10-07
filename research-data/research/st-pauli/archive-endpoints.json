@@ -1,0 +1,34 @@
+{
+ "millernton:/wp-json/wp/v2/posts": {
+  "endpoint": "/wp-json/wp/v2/posts",
+  "providerId": "millernton",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:53:46.980Z"
+ },
+ "millernton:/wp-json/wp/v2/pages": {
+  "endpoint": "/wp-json/wp/v2/pages",
+  "providerId": "millernton",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:53:50.156Z"
+ },
+ "fcstpauli-museum:/wp-json/wp/v2/posts": {
+  "endpoint": "/wp-json/wp/v2/posts",
+  "providerId": "fcstpauli-museum",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:53:57.145Z"
+ },
+ "fcstpauli-museum:/wp-json/wp/v2/pages": {
+  "endpoint": "/wp-json/wp/v2/pages",
+  "providerId": "fcstpauli-museum",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:54:03.175Z"
+ }
+}

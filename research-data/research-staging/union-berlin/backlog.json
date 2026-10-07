@@ -1,0 +1,58 @@
+[
+ {
+  "id": "parser-immer-unioner",
+  "priority": "P1",
+  "task": "Write and test the immerunioner-v1 against stored fixtures (season, person, match pages) before anything is extracted from Immer Unioner.",
+  "taskHe": "לכתוב parser ל-Immer Unioner מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "continue-immer-unioner-html",
+  "priority": "P3",
+  "task": "Immer Unioner html: 0 page(s) read; the scheduled task continues from the checkpoint.",
+  "taskHe": "Immer Unioner html: נקראו 0 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-immer-unioner-0",
+  "priority": "P3",
+  "task": "No public API; links are followed only from the site's own index pages, PHP file names are never guessed.",
+  "taskHe": "No public API; links are followed only from the site's own index pages, PHP file names are never guessed.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "limit-immer-unioner-1",
+  "priority": "P3",
+  "task": "listen.php answered 502 once — check availability before relying on it.",
+  "taskHe": "listen.php answered 502 once — check availability before relying on it.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-union-official",
+  "priority": "P1",
+  "task": "Write and test the union-official parser against stored fixtures (season, person, match pages) before anything is extracted from 1. FC Union Berlin.",
+  "taskHe": "לכתוב parser ל-1. FC Union Berlin מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-union-official-0",
+  "priority": "P3",
+  "task": "Season and competition ids are opaque; their labels are read from the page and stored with the id.",
+  "taskHe": "Season and competition ids are opaque; their labels are read from the page and stored with the id.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "limit-union-official-1",
+  "priority": "P3",
+  "task": "The current club, predecessors and historical names are separate entities until a source defines continuity.",
+  "taskHe": "The current club, predecessors and historical names are separate entities until a source defines continuity.",
+  "status": "noted",
+  "owner": null
+ }
+]

@@ -1,0 +1,59 @@
+[
+ {
+  "schemaVersion": 1,
+  "id": "2026-10-07T04-52-27-676Z-73e8c3",
+  "clubId": "dinamo-zagreb",
+  "startedAt": "2026-10-07T04:52:27.676Z",
+  "finishedAt": "2026-10-07T04:52:40.678Z",
+  "providers": [
+   "dinamo-official",
+   "bad-blue-boys",
+   "hns-semafor"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 6,
+   "documentsRead": 93,
+   "newDocuments": 93,
+   "changedDocuments": 0,
+   "unchangedDocuments": 0,
+   "recordsExtracted": 0,
+   "blockedEndpoints": 1,
+   "budgetLeft": 6
+  },
+  "diagnostics": [
+   {
+    "code": "SOURCE_BLOCKED",
+    "providerId": "dinamo-official",
+    "url": "https://gnkdinamo.hr/hr/klub/povijest",
+    "message": "HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "dinamo-official",
+    "url": null,
+    "message": "No tested parser for GNK Dinamo Zagreb yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "bad-blue-boys",
+    "url": null,
+    "message": "No tested parser for Bad Blue Boys yet (bbb-history-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "hns-semafor",
+    "url": null,
+    "message": "No tested parser for HNS Semafor yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
+ }
+]

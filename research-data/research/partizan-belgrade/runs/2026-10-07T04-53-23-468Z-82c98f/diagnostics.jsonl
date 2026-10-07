@@ -1,0 +1,5 @@
+{"code":"SOURCE_BLOCKED","providerId":"crno-bela-nostalgija","url":"https://crnobelanostalgija.com/wp-json/wp/v2/posts?per_page=25&page=1&orderby=id&order=asc&_fields=id%2Clink%2Cslug%2Ctitle%2Ccontent%2Cdate_gmt%2Cmodified_gmt%2Ctype%2Cparent%2Ccategories","message":"HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."}
+{"code":"NEEDS_PARSER","providerId":"partizanopedia","url":null,"message":"No tested parser for Partizanopedia yet (partizanopedia-v1 is planned): documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"crno-bela-nostalgija","url":null,"message":"No tested parser for Crno-bela Nostalgija yet (cbn-history-v1 is planned): documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"partizan-official","url":null,"message":"No tested parser for FK Partizan yet: documents are kept, nothing is extracted."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

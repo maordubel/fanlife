@@ -1,0 +1,44 @@
+[
+ {
+  "id": "collector-immer-unioner-html",
+  "title": "Immer Unioner — pages (mixed)",
+  "url": "https://www.immerunioner.de/listen.php",
+  "providerId": "immer-unioner",
+  "publisher": "Immer Unioner",
+  "sourceFamilyId": "immer-unioner",
+  "scope": "mixed",
+  "access": "available",
+  "checkedAt": "2026-10-07",
+  "retrievedAt": "2026-10-07T04:54:26.386Z",
+  "collected": {
+   "documents": 6,
+   "observedTotalDocuments": 118,
+   "state": "partial_budget",
+   "parser": null
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "collector-union-official-html",
+  "title": "1. FC Union Berlin — pages (results)",
+  "url": "https://www.fc-union-berlin.de/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0",
+  "providerId": "union-official",
+  "publisher": "1. FC Union Berlin",
+  "sourceFamilyId": "union-institutional",
+  "scope": "results",
+  "access": "available",
+  "checkedAt": "2026-10-07",
+  "retrievedAt": "2026-10-07T04:54:26.386Z",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
+   "state": "listed",
+   "parser": null
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ }
+]

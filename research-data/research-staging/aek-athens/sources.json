@@ -1,0 +1,44 @@
+[
+ {
+  "id": "collector-aekpedia-posts",
+  "title": "AEKpedia — posts (mixed)",
+  "url": "https://www.aekpedia.com/wp-json/wp/v2/posts",
+  "providerId": "aekpedia",
+  "publisher": "AEKpedia",
+  "sourceFamilyId": "aekpedia-editorial",
+  "scope": "mixed",
+  "access": "available",
+  "checkedAt": "2026-10-07",
+  "retrievedAt": "2026-10-07T04:52:06.272Z",
+  "collected": {
+   "documents": 80,
+   "observedTotalDocuments": 751,
+   "state": "partial_budget",
+   "parser": "aekpedia-football-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "collector-aekpedia-pages",
+  "title": "AEKpedia — pages (mixed)",
+  "url": "https://www.aekpedia.com/wp-json/wp/v2/pages",
+  "providerId": "aekpedia",
+  "publisher": "AEKpedia",
+  "sourceFamilyId": "aekpedia-editorial",
+  "scope": "mixed",
+  "access": "available",
+  "checkedAt": "2026-10-07",
+  "retrievedAt": "2026-10-07T04:52:06.272Z",
+  "collected": {
+   "documents": 80,
+   "observedTotalDocuments": 5,
+   "state": "listed",
+   "parser": "aekpedia-football-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ }
+]

@@ -1,0 +1,86 @@
+{
+ "paopedia:posts": {
+  "schemaVersion": 1,
+  "providerId": "paopedia",
+  "collection": "posts",
+  "queryFingerprint": "930d0e0c3e1edba2",
+  "parserVersion": "paopedia-history-v1",
+  "nextPage": 1,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": null,
+  "observedTotalPages": null,
+  "perPage": 25,
+  "state": "schema-changed",
+  "updatedAt": "2026-10-07T04:52:58.590Z",
+  "lastError": "schema"
+ },
+ "paopedia:pages": {
+  "schemaVersion": 1,
+  "providerId": "paopedia",
+  "collection": "pages",
+  "queryFingerprint": "48820156b572bb45",
+  "parserVersion": "paopedia-history-v1",
+  "nextPage": 3,
+  "lastCommittedPage": 2,
+  "observedTotalDocuments": 33,
+  "observedTotalPages": 2,
+  "perPage": 25,
+  "state": "listed",
+  "updatedAt": "2026-10-07T04:53:04.306Z",
+  "lastError": null
+ },
+ "pao-official-history:html": {
+  "schemaVersion": 1,
+  "providerId": "pao-official-history",
+  "collection": "html",
+  "queryFingerprint": "a325749559b698b5",
+  "parserVersion": null,
+  "nextPage": 0,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": 11,
+  "observedTotalPages": null,
+  "perPage": 1,
+  "queue": [
+   "/en/history/super-cup/",
+   "/en/history/valkaniko-kypello/",
+   "/en/history/european-history/",
+   "/en/history/events/",
+   "/en/the-club/stadium/",
+   "/en/historyitem/all-time-coaches/",
+   "/en/historyitem/all-time-foreigners/",
+   "/historyitem/all-time-roster/"
+  ],
+  "seen": [
+   "/en/history/",
+   "/en/history/championships/",
+   "/en/history/greek-cups/"
+  ],
+  "state": "partial_budget",
+  "updatedAt": "2026-10-07T04:53:13.580Z",
+  "lastError": null
+ },
+ "rsssf-greece:html": {
+  "schemaVersion": 1,
+  "providerId": "rsssf-greece",
+  "collection": "html",
+  "queryFingerprint": "1bcfff251b5c0481",
+  "parserVersion": null,
+  "nextPage": 0,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": 5,
+  "observedTotalPages": null,
+  "perPage": 1,
+  "queue": [
+   "/tablesg/grkhist.html",
+   "/tablesg/grkchamp.html"
+  ],
+  "seen": [
+   "/tablesg/grkcuphist.html",
+   "/ec/Greece.html",
+   "/tablesg/grkprehist.html"
+  ],
+  "state": "partial_budget",
+  "updatedAt": "2026-10-07T04:53:23.091Z",
+  "lastError": null
+ }
+}
