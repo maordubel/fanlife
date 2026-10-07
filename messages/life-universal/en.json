@@ -173,5 +173,8 @@
   "score.lineup": "Started",
   "score.bench": "Came on",
   "place.new": "A place you have not seen",
-  "map.new": "Newly found"
+  "map.new": "Newly found",
+  "editionNav": "Story edition",
+  "editionOriginal": "Original story",
+  "editionTwo": "Story 2 · paths and promises"
 }

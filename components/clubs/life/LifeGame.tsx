@@ -56,7 +56,6 @@ function browserStore(): LifeStore {
 const pad2 = (n: number) => String(n).padStart(2, '0')
 
 export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Props) {
-  const story = locale === 'en' ? {} : {lang: 'en', dir: 'ltr' as const}
   const [state, setState] = useState<LifeState | null>(null)
   const [phase, setPhase] = useState<Phase>('boot')
   const [cardAt, setCardAt] = useState(0)
@@ -100,6 +99,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const primary = useRef<HTMLButtonElement | null>(null)
 
   const chapter = useMemo<Chapter | null>(() => (state ? chapterOf(pack, state.chapter) : null), [pack, state])
+  const story = pack.storyLocale === 'he' && !chapter?.anchor ? {lang: 'he', dir: 'rtl' as const} : locale === 'en' ? {} : {lang: 'en', dir: 'ltr' as const}
   const chapterNo = chapter ? pack.chapters.findIndex(c => c.id === chapter.id) + 1 : 0
   live.current.phase = phase
   live.current.talk = talk
@@ -702,7 +702,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
             </dl>
             <details className={styles.about}>
               <summary className="min-h-tap">{copy.readiness}</summary>
-              <p>{copy.provenance}</p><p>{copy.fiction}</p>{locale !== 'en' && <p>{copy.storyLanguage}</p>}
+              <p>{copy.provenance}</p><p>{copy.fiction}</p>{locale !== 'en' && pack.storyLocale !== 'he' && <p>{copy.storyLanguage}</p>}
               <ul lang="en" dir="ltr">{pack.readiness.reasons.map(r => <li key={r}>{r}</li>)}</ul>
             </details>
             <nav className={styles.links} aria-label={copy.language}>
@@ -845,7 +845,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
 
 const doneObjective = (c: Chapter['objectives'][number]['done'], state: LifeState): boolean => meets(state, c)
 
-function Box({pack, state, copy, story}: {pack: LifePack; state: LifeState; copy: Copy; story: {lang?: string; dir?: 'ltr'}}) {
+function Box({pack, state, copy, story}: {pack: LifePack; state: LifeState; copy: Copy; story: {lang?: string; dir?: 'ltr' | 'rtl'}}) {
   const kept = state.keeps.flatMap(id => { for (const c of pack.chapters) { const k = c.keepsakes?.find(x => x.id === id); if (k) return [{...k, age: c.age}] } return [] })
   return (
     <section className={styles.box} aria-label={copy.box} data-life="box">

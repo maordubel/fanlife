@@ -112,7 +112,7 @@ export function openChapter(chapter: Chapter): LifeEvent[] {
 /* ───────────── the life the shell holds ───────────── */
 
 export type LifeStore = {read(key: string): string | null; write(key: string, value: string): void; clear(key: string): void}
-export const saveKey = (clubId: string) => `fan-life:club:${clubId}:life`
+export const saveKey = (clubId: string, edition?: 2) => `fan-life:club:${clubId}:life${edition === 2 ? ':story2' : ''}`
 
 export class Life {
   private log: LifeEvent[]
@@ -165,12 +165,12 @@ export class Life {
   save(): void {
     if (!this.store) return
     const file: SaveFile = {v: SAVE_VERSION, club: this.pack.clubId, pack: this.pack.version, events: this.log, savedAt: new Date().toISOString()}
-    try { this.store.write(saveKey(this.pack.clubId), JSON.stringify(file)) } catch { /* a full or private store never stops the game */ }
+    try { this.store.write(saveKey(this.pack.clubId, this.pack.storyEdition), JSON.stringify(file)) } catch { /* a full or private store never stops the game */ }
   }
 
   static load(pack: LifePack, store: LifeStore): Life {
     try {
-      const raw = store.read(saveKey(pack.clubId))
+      const raw = store.read(saveKey(pack.clubId, pack.storyEdition))
       if (raw) {
         const file = JSON.parse(raw) as Partial<SaveFile>
         // a life saved against chapters that no longer exist cannot be folded into this pack

@@ -12,7 +12,7 @@ import {CITY, type City, type Place, type SiteKind} from '@/lib/life/universal/c
 import styles from './life.module.css'
 
 type Copy = Record<string, string>
-type Props = {city: City; clubId: string; night: boolean; copy: Copy; story: {lang?: string; dir?: 'ltr'}; onTravel: (place: Place) => void; onClose: () => void}
+type Props = {city: City; clubId: string; night: boolean; copy: Copy; story: {lang?: string; dir?: 'ltr' | 'rtl'}; onTravel: (place: Place) => void; onClose: () => void}
 
 const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) } return h >>> 0 }
 const rng = (seed: number) => () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296 }
