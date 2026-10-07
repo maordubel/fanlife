@@ -98,10 +98,14 @@ export function generateMetadata(): Metadata {
   return clubFromHost(headers().get('host')) === DEFAULT_CLUB ? workerMetadata : fanLifeMetadata
 }
 
+const FAN_PATHS=['/master','/clubs','/sources','/closet','/market','/auction','/shirts','/me','/stands']
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname=headers().get('x-fan-life-path')||'/'
   const sharedLocale=pathname.startsWith('/clubs/')?uiLocale(headers().get('x-fan-life-locale')||undefined):'en'
-  const master=pathname==='/'||pathname.startsWith('/master')||pathname.startsWith('/clubs')
+  // FAN LIFE's own pages (English, LTR, never behind The Worker's gate switches): the hub, the clubs,
+  // the control room, and "your corner" — the personal area ported from The Worker (7.10.2026).
+  const master=pathname==='/'||FAN_PATHS.some(p=>pathname===p||pathname.startsWith(p+'/'))
   const club=master?undefined:(await readState()).clubs.find(c=>c.id==='hapoel-tel-aviv')
   const gate=GATES.find(g=>pathname===g[2]||pathname.startsWith(g[2]+'/'))
   const tenant=clubFromHost(headers().get('host'))

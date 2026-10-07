@@ -1,0 +1,22 @@
+{
+  "share.button": "Share ↗",
+  "share.copied": "Link copied ✓",
+  "corner.kicker": "Your corner",
+  "corner.nav": "Your corner",
+  "corner.closet": "My closet",
+  "corner.market": "Shirt Market",
+  "corner.auction": "Auction",
+  "corner.shirts": "All shirts",
+  "corner.preview": "Preview: no sign-up yet. Your closet, offers and bids live on this server for testing, under a private tester key in this browser.",
+  "shirts.title": "Every shirt, every club",
+  "shirts.sub": "The shirts the clubs' archives document — the ones you can hold, want, swap and sell.",
+  "shirts.kicker": "The shirt archive",
+  "shirts.count": "{n} shirts",
+  "shirts.photo": "Photographed",
+  "shirts.drawn": "Drawn from the record",
+  "shirts.hold": "In my closet",
+  "shirts.market": "On the market",
+  "exchange.kicker": "Control room",
+  "exchange.title": "Shirt economy",
+  "exchange.sub": "Approve and schedule auction lots, handle reports, manage shops, read the audit log."
+}

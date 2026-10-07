@@ -46,7 +46,7 @@
 /* ───────── the page ───────── */
 .mag { background-color: var(--mag-paper); background-image: var(--mag-grain); color: var(--mag-ink); font-family: var(--mag-body); line-height: 1.5; min-height: 100vh; overflow-x: clip; }
 .mag *, .mag *::before, .mag *::after { box-sizing: border-box; }
-.mag a { color: inherit; text-decoration: none; }
+:where(.mag) a { color: inherit; text-decoration: none; } /* zero-specificity, so a component's own colour class wins */
 .mag :focus-visible { outline: 3px solid var(--mag-ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--mag-paper); }
 .mag-bowl { font-family: var(--mag-display); text-transform: uppercase; letter-spacing: 0; line-height: 1.02; }
 .mag-mono { font-family: var(--mag-mono); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
@@ -155,8 +155,8 @@
    re-dressed here, so the whole site is one magazine and a screen cannot be "the old one". */
 .fl { --fl-ink: var(--mag-ink); --fl-paper: var(--mag-paper); --line: var(--mag-ink); background-color: var(--fl-paper); background-image: var(--mag-grain); font-family: var(--mag-body); }
 .fl.club-theme { background-color: var(--club-background); --fl-ink: var(--club-text); --fl-paper: var(--club-background); --line: rgb(var(--ink) / 0.55); }
-.fl h1, .fl h2 { font-family: var(--mag-display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; line-height: 1; }
-.fl h3 { font-weight: 800; letter-spacing: -0.01em; }
+.fl h1:where(:not(.fl-worker, .fl-worker *)), .fl h2:where(:not(.fl-worker, .fl-worker *)) { font-family: var(--mag-display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; line-height: 1; }
+.fl h3:where(:not(.fl-worker, .fl-worker *)) { font-weight: 800; letter-spacing: -0.01em; }
 .fl[lang='he'] h1, .fl[lang='he'] h2 { font-family: var(--mag-body); font-weight: 800; text-transform: none; }
 .fl .eyebrow { font-family: var(--mag-mono); font-weight: 700; letter-spacing: 2px; }
 .fl .button { background: var(--mag-ink); color: var(--mag-paper) !important; border: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; min-height: 48px; }
@@ -171,7 +171,7 @@
 .fl .club-hero::after { content: ''; position: absolute; inset-inline: 0; inset-block-end: -5px; height: 12px; background: var(--club-primary, var(--mag-vermilion)); border-block: 3px solid var(--mag-ink); }
 .fl .section-head h2, .fl .section h2 { font-size: clamp(28px, 5vw, 40px); }
 .fl .life-feature { background: var(--mag-navy); color: var(--mag-paper); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-vermilion); }
-.fl .table-wrap, .fl table { background: var(--mag-card); }
+.fl .table-wrap, .fl table:where(:not(.fl-worker, .fl-worker *)) { background: var(--mag-card); }
 .club-surface { background-image: var(--mag-grain); }
 .club-surface h1, .club-surface h2 { font-family: var(--mag-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0; }
 .club-surface[lang='he'] h1, .club-surface[lang='he'] h2 { font-family: var(--mag-body); font-weight: 800; text-transform: none; }
@@ -914,3 +914,37 @@
 .mag-dye.halftone::before { opacity: .26; }
 .mag-tile-shirt { inset-block-end: auto; inset-block-start: 30px; inset-inline-end: 12px; }
 .mag-tile-shirt { inset-block-start: 6px; inset-inline-end: 46px; inline-size: 30px; width: 30px; }
+
+/* ── Your corner (the personal area ported from The Worker, 7.10.2026) ─────────────────────────
+   `.fl-worker` re-inks The Worker's components: their Tailwind colours read `--sheet/--paper/--ink…`
+   as RGB triplets and their faces read `--font-*`; here those resolve to the magazine's paper,
+   card, ink and type. Same values as the magazine tokens above, written as the triplets the
+   Worker's utilities expect. */
+.fl-worker { --sheet: 255 248 232; --paper: 239 230 212; --ink: 20 18 16; --red: 176 45 16; --sign: 27 42 94; --muted: 92 84 68; --concrete: 239 230 212;
+  --font-frank: 'Karantina'; --font-heebo: 'Archivo'; --font-miriam: 'Archivo'; --font-latin: 'Archivo'; --font-courier: 'Courier Prime'; --font-poster: 'Bowlby One';
+  font-family: var(--mag-body); color: var(--mag-ink); text-align: start; margin-top: 18px; }
+.fl-worker :where(h1, h2, h3) { letter-spacing: 0; }
+.fl-worker :where(h2, h3).font-display, .fl-worker .font-display { text-transform: uppercase; }
+.fl-worker :where(button, a).bg-ink { box-shadow: 3px 3px 0 var(--mag-vermilion); }
+.fl-corner-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.fl-corner-tabs a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 14px; border: 3px solid var(--mag-ink); background: var(--mag-card); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; box-shadow: 3px 3px 0 var(--mag-ink); }
+.fl-corner-tabs a[aria-current='page'] { background: var(--mag-ink); color: var(--mag-paper); box-shadow: 3px 3px 0 var(--mag-vermilion); }
+.fl-corner-note { margin-top: 12px; font-family: var(--mag-mono); font-size: 12px; color: var(--mag-muted); max-width: 70ch; border-inline-start: 4px solid var(--mag-vermilion); padding-inline-start: 10px; }
+.fl-shirts { display: grid; gap: 18px; }
+.fl-shirts summary { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fl-shirt-grid { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; }
+.fl-shirt-grid li { display: grid; gap: 4px; align-content: start; border: 2px solid var(--mag-ink); background: var(--mag-paper); padding: 8px; scroll-margin-top: 90px; }
+.fl-shirt-grid li[data-focus] { outline: 4px solid var(--club-primary, var(--mag-vermilion)); outline-offset: 2px; }
+.fl-shirt-grid small { color: var(--mag-muted); }
+.fl-shirt-links { display: grid; gap: 2px; font-family: var(--mag-mono); font-size: 11px; font-weight: 700; }
+.fl-shirt-links a { min-height: 32px; display: inline-flex; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
+.fl-thumb-drawn { background: var(--mag-paper); padding: 6px; }
+.fl-thumb-drawn svg { width: 100%; height: 100%; }
+.fl-corner .mag-head .mag-fine { font-family: var(--mag-body); text-transform: none; letter-spacing: 0; font-size: 16px; max-width: 60ch; color: var(--mag-ink); }
+.fl-shirt-open { display: grid; gap: 4px; text-align: start; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: inherit; }
+.fl-shirt-sheet { margin-top: 16px; display: grid; gap: 14px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 5px 5px 0 var(--club-primary, var(--mag-ink)); padding: 16px; }
+.fl-shirt-sheet h3 { font-family: var(--mag-condensed); font-size: 28px; text-transform: uppercase; margin: 2px 0 8px; }
+.fl-shirt-sheet-pic { max-width: 260px; }
+@media (min-width: 760px) { .fl-shirt-sheet { grid-template-columns: 260px 1fr; } }
+/* A modal sheet owns the bottom of the phone: the tab bar steps aside while one is open (rule 33). */
+body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
