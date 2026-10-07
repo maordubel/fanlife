@@ -2908,7 +2908,7 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
 6. **הכתובת הרשמית: https://fanlife.dubelteam.com** (מאור, 7.10.2026). `SITE_URL` (ב-production בלי משתנה סביבה),
    `PORTAL_HOST_ROOT` (מועדון = `<sub>.fanlife.dubelteam.com`), ה-sitemap (עמודי המועדונים ו-`/sources`) וה-User-Agent של המחקר.
 
-## 96 · מפתח הבעלים: תצוגה מקדימה לאוהדים ≠ חדר בקרה (ביקורת 7.10.2026, F01/F19/F13)
+## 97 · מפתח הבעלים: תצוגה מקדימה לאוהדים ≠ חדר בקרה (ביקורת 7.10.2026, F01/F19/F13)
 
 1. **מצב הערכה (`NEXT_PUBLIC_FAN_LIFE_EVALUATION`) פותח את השערים לאוהדים — ולעולם לא את האדמין.** כל עמוד אדמין
    (`/master/admin`, `/master/core`, `/master/test-lab`, `/kits/admin`, `/qa/stats`) קורא ל-`requireAdmin(path)` מ-`lib/master/admin.ts`,
