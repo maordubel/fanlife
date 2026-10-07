@@ -59,7 +59,7 @@ export function dealDraft(pool:Rated[],seed:number):RumbleCard[][]{
  })
 }
 export type RumbleResult={you:{cards:Rated[];power:number;cost:number};rival:{cards:Rated[];power:number};verdict:'win'|'draw'|'loss';goals:[number,number]}
-/** Plays the dealt draft. Opponent: the best affordable side the other seeded deal can make from men the player did not take. */
+/** Plays the dealt draft. Opponent: the best affordable side (same €15M budget) another seeded deal makes from men the player did not take. */
 export function play(pool:Rated[],seed:number,picks:string[]):RumbleResult|null{
  const draft=dealDraft(pool,seed)
  if(picks.length!==SLOTS.length||new Set(picks).size!==picks.length)return null
@@ -68,7 +68,16 @@ export function play(pool:Rated[],seed:number,picks:string[]):RumbleResult|null{
  const cost=chosen.reduce((s,c)=>s+c.price,0)
  if(cost>BUDGET)return null
  const r=mulberry(seed^0x9e3779b9),taken=new Set(chosen.map(c=>c.id)),rival:Rated[]=[]
- for(const pos of SLOTS){const options=shuffle(pool.filter(x=>x.position===pos&&!taken.has(x.id)),r).slice(0,OFFERS);const best=options.sort((a,b)=>b.rating-a.rating)[0];if(!best)return null;taken.add(best.id);rival.push(best)}
+ // the rival plays by the same budget: per slot, the strongest of its three cards that still leaves the rest fillable
+ let money=BUDGET
+ for(let i=0;i<SLOTS.length;i++){
+  const pos=SLOTS[i]!,options=shuffle(pool.filter(x=>x.position===pos&&!taken.has(x.id)),r).slice(0,OFFERS)
+  if(!options.length)return null
+  const floor=SLOTS.slice(i+1).reduce((t,p,j,rest)=>{const free=pool.filter(x=>x.position===p&&!taken.has(x.id)).map(x=>x.price).sort((a,b)=>a-b);return t+(free[rest.slice(0,j).filter(q=>q===p).length]??1)},0)
+  const fits=options.filter(o=>o.price+floor<=money).sort((a,b)=>b.rating-a.rating||a.price-b.price)
+  const best=fits[0]??[...pool.filter(x=>x.position===pos&&!taken.has(x.id))].sort((a,b)=>a.price-b.price||b.rating-a.rating)[0]!
+  taken.add(best.id);rival.push(best);money-=best.price
+ }
  const you=chosen.reduce((s,c)=>s+c.rating,0),them=rival.reduce((s,c)=>s+c.rating,0),edge=you-them
  const goals:[number,number]=[Math.max(0,Math.round(2+edge/40+(r()-0.5))),Math.max(0,Math.round(2-edge/40+(r()-0.5)))]
  if(goals[0]===goals[1]&&Math.abs(edge)>=15)goals[edge>0?0:1]++
