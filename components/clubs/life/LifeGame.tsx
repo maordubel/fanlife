@@ -23,6 +23,7 @@ import type {CardDef, Chapter, LifePack, LifeState} from '@/lib/life/universal/t
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
 import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
 import {CityMap} from './CityMap'
+import {ControlDeck} from '@/components/life/ControlDeck'
 import {MeSheet} from './MeSheet'
 import {MiniGame} from './MiniGame'
 import {instantText, Typed, type TypedHandle} from './Typed'
@@ -43,6 +44,23 @@ const MOVE: Record<string, [number, number]> = {
   arrowleft: [-1, 0], a: [-1, 0], arrowright: [1, 0], d: [1, 0],
   // up is INTO the room, which is away from the camera
   arrowup: [0, -1], w: [0, -1], arrowdown: [0, 1], s: [0, 1],
+}
+
+type Look3d = 'high' | 'lite' | 'blocks'
+const LOOK_KEY = 'the-worker:life:look'
+const LOOKS: Look3d[] = ['high', 'lite', 'blocks']
+function lookSrc(look: Look3d, club: string): string {
+  const c = encodeURIComponent(club)
+  return look === 'blocks' ? `/life/voxel/play.html?club=${c}` : `/life/town/play.html?play=1&club=${c}${look === 'lite' ? '&q=low' : ''}`
+}
+/** a phone that cannot do WebGL2 well gets the light picture without being asked */
+function firstLook(): Look3d {
+  try {
+    const saved = window.localStorage.getItem(LOOK_KEY)
+    if (saved && (LOOKS as string[]).includes(saved)) return saved as Look3d
+    const weak = typeof navigator !== 'undefined' && ((navigator as {deviceMemory?: number}).deviceMemory ?? 8) <= 2
+    return weak ? 'lite' : 'high'
+  } catch { return 'high' }
 }
 
 function browserStore(): LifeStore {
@@ -82,6 +100,10 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const [touch, setTouch] = useState(false)
   const [reduced, setReduced] = useState(false)
   const [reload, setReload] = useState(0)
+  /* the picture: the smooth 3D engine (high / lite) or the block engine, kept per device */
+  const [look, setLook] = useState<Look3d>('high')
+  const lookRef = useRef<Look3d>('high')
+  lookRef.current = look
   const [sheet, setSheet] = useState<'none' | 'map' | 'me'>('none')
   const [intro, setIntro] = useState<{id: string; name: string; role: string; blurb: string} | null>(null)
 
@@ -118,6 +140,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const l = Life.load(pack, browserStore())
     life.current = l
     known.current = new Set(l.state.seen)
+    const wanted = firstLook()
+    if (wanted !== 'high') setLook(wanted)
     sound.current = new LifeSound()
     setSoundOn(sound.current.on)
     const off = l.subscribe(setState)
@@ -309,11 +333,17 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     rt.current?.focus(inRoom ?? null)
   }, [talk])
 
+  /* the smooth picture fell over (a room it cannot draw): the block picture takes the same room, once; only then is it a failure */
+  const rendererFailed = useCallback((message?: string) => {
+    if (lookRef.current !== 'blocks') { setLook('blocks'); rt.current = null; setRoomUp(false); dispatchBoot({type: 'retry'}); setReload(n => n + 1); return }
+    dispatchBoot({type: 'renderer-error', message})
+  }, [])
+
   /* ───────────── what the runtime says ───────────── */
   const onPlay = useCallback((e: PlayEvent) => {
     const l = life.current
     if (e.type === 'ready') { dispatchBoot({type: 'ready'}); return }
-    if (e.type === 'error') { dispatchBoot({type: 'renderer-error', message: e.message}); return }
+    if (e.type === 'error') { rendererFailed(e.message); return }
     if (e.type === 'entered') {
       setRoomUp(true)
       const at = arrival.current
@@ -351,12 +381,12 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const onMessage = (e: MessageEvent) => {
       if (e.origin !== window.location.origin || e.source !== frame.current?.contentWindow) return
       const failure = voxelFailure(e.data)
-      if (failure) dispatchBoot({type: 'renderer-error', message: failure.message})
+      if (failure) rendererFailed(failure.message)
     }
     window.addEventListener('message', onMessage)
     const poll = window.setInterval(() => {
       const w = frame.current?.contentWindow as unknown as {__vxPlay?: PlayRuntime; __ready?: boolean; __err?: string[]; __bootError?: string} | null
-      if (w?.__bootError) { window.clearInterval(poll); dispatchBoot({type: 'renderer-error', message: w.__bootError}); return }
+      if (w?.__bootError) { window.clearInterval(poll); rendererFailed(w.__bootError); return }
       if (w?.__ready && w.__vxPlay && rt.current !== w.__vxPlay) attach(w.__vxPlay)
       if (w?.__ready) window.clearInterval(poll)
     }, 250)
@@ -406,6 +436,14 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     openChapterCard()
   }, [openChapterCard])
 
+  const cycleLook = useCallback(() => {
+    setLook(cur => {
+      const next = LOOKS[(LOOKS.indexOf(cur) + 1) % LOOKS.length]!
+      try { window.localStorage.setItem(LOOK_KEY, next) } catch { /* a private window still plays */ }
+      return next
+    })
+    dispatchBoot({type: 'retry'}); rt.current = null; setRoomUp(false); setReload(n => n + 1)
+  }, [])
   const toggleSound = useCallback(() => { const s = sound.current; if (!s) return; s.set(!s.on); s.wake(); setSoundOn(s.on) }, [])
 
   /* the room stands still while a card, a game or the drawer is open */
@@ -475,17 +513,17 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     return () => { delete host.__lifeProbe }
   }, [pack])
 
-  /* ───────────── the stick (touch) ───────────── */
-  const stick = useRef<{id: number; cx: number; cy: number} | null>(null)
-  const [knob, setKnob] = useState({x: 0, y: 0})
-  const stickMove = (e: React.PointerEvent) => {
-    const s = stick.current
-    if (!s || s.id !== e.pointerId) return
-    const R = 46, dx = (e.clientX - s.cx) / R, dy = (e.clientY - s.cy) / R, m = Math.hypot(dx, dy), k = m > 1 ? 1 / m : 1
-    setKnob({x: dx * k, y: dy * k})
-    rt.current?.axis(dx * k, dy * k)
-  }
-  const stickEnd = () => { stick.current = null; setKnob({x: 0, y: 0}); rt.current?.axis(0, 0) }
+  /* ───────────── the console (the Worker's own ControlDeck) ───────────── */
+  const [stageEl, setStageEl] = useState<HTMLDivElement | null>(null)
+  const [stageH, setStageH] = useState(0)
+  useEffect(() => {
+    const el = stageEl; if (!el) return
+    const ro = new ResizeObserver(() => setStageH(el.clientHeight)); ro.observe(el); setStageH(el.clientHeight)
+    return () => ro.disconnect()
+  }, [stageEl])
+  const onAxis = useCallback((x: number, y: number) => { sound.current?.wake(); rt.current?.axis(Math.max(-1, Math.min(1, x)), Math.max(-1, Math.min(1, y))) }, [])
+  const onAction = useCallback((down: boolean) => { if (down) { sound.current?.wake(); rt.current?.act() } }, [])
+  const onCancel = useCallback((down: boolean) => { rt.current?.run(down) }, [])
 
   const line = talk ? talk.view.lines[talk.view.index] : null
   const playing = phase === 'play'
@@ -497,6 +535,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const d = scene.doors.find(x => x.id === target.id)
     return d ? {verb: d.locked ? copy.locked! : copy.go!, name: d.label} : null
   })()
+  const deckVerb = !target ? null : target.kind === 'actor' ? 'talk' : target.kind === 'exit' ? 'enter' : (scene?.spots.find(x => x.id === target.id)?.verb ?? 'look')
+  const deckLabel = targetText ? `${targetText.verb} ${targetText.name}` : null
   /* the line is set down a letter at a time; the choices arrive when it has finished */
   useEffect(() => { setTyped(instantText()) }, [talk?.view.talk, talk?.view.index])
   const typedDone = useCallback(() => setTyped(true), [])
@@ -597,22 +637,18 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
 
   return (
     <div className={styles.life} data-phase={phase} data-wide={wide ? 'true' : 'false'} data-talking={talk ? 'true' : 'false'} data-life="root" data-room={state.room ?? ''} data-chapter={state.chapter ?? ''}>
-      <div className={styles.stage}>
-        {failed !== 'webgl' && <iframe key={reload} ref={frame} className={styles.world} src={`/life/voxel/play.html?club=${encodeURIComponent(pack.clubId)}`} title={copy.title} tabIndex={-1} aria-hidden="true" />}
+      <div className={styles.stage} ref={setStageEl}>
+        {failed !== 'webgl' && <iframe key={reload} ref={frame} className={styles.world} src={lookSrc(look, pack.clubId)} title={copy.title} tabIndex={-1} aria-hidden="true" />}
         {playing && !roomUp && !failed && <p className={styles.loading} role="status">{copy.loading}</p>}
         {place && <div className={styles.place} role="status" data-life="place" key={place.id}><small>{copy['place.new']}</small><b {...story}>{place.name}</b></div>}
         {toast && <p className={styles.toast} role="status" {...story}>{toast}</p>}
-        {idle && targetText && (
+        {idle && targetText && !touch && (
           <button type="button" ref={actEl} className={`${styles.act} min-h-tap`} data-life="act" data-locked={target?.locked ? 'true' : 'false'} onClick={() => { sound.current?.wake(); rt.current?.act() }}>
             <span className={styles.actVerb}>{targetText.verb}</span><span className={styles.actName} {...(target?.kind === 'actor' ? {} : story)}><bdi>{targetText.name}</bdi></span>{!touch && <kbd aria-hidden="true">E</kbd>}
           </button>
         )}
-        {idle && touch && (
-          <div className={styles.stick} role="application" aria-label={copy.stickAria} dir="ltr"
-            onPointerDown={e => { const r = e.currentTarget.getBoundingClientRect(); stick.current = {id: e.pointerId, cx: r.left + r.width / 2, cy: r.top + r.height / 2}; e.currentTarget.setPointerCapture(e.pointerId); sound.current?.wake(); stickMove(e) }}
-            onPointerMove={stickMove} onPointerUp={stickEnd} onPointerCancel={stickEnd}>
-            <span style={{transform: `translate(${knob.x * 30}px, ${knob.y * 30}px)`}} />
-          </div>
+        {idle && stageH > 0 && (
+          <ControlDeck top={stageH} height={0} touch={touch} verb={deckVerb} label={deckLabel} locked={!!target?.locked} onAxis={onAxis} onAction={onAction} onCancel={onCancel} />
         )}
       </div>
 
@@ -812,6 +848,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
                 <div className={styles.menuList}>
                   <button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => setMenu('closed')} data-life="menu-resume">{copy.resume}</button>
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={toggleSound} aria-pressed={soundOn}>{soundOn ? copy.soundOn : copy.soundOff}</button>
+                  <button type="button" className={`${styles.row} min-h-tap`} onClick={() => { cycleLook(); setMenu('closed') }} data-life="menu-look">{copy.lookLabel}: {copy[`look.${look}`]}<small>{copy.lookNote}</small></button>
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={restartChapter}>{copy.restartChapter}<small>{copy.restartChapterNote}</small></button>
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={() => setMenu('confirm')}>{copy.startOver}</button>
                 </div>
