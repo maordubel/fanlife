@@ -1,6 +1,6 @@
 import 'server-only'
 import {appendFile,mkdir,readFile,readdir,rename,writeFile} from 'node:fs/promises'
-import {AUDIT_ARCHIVE_DIR,SYSTEM_ACTOR,actorOf,archiveLines,splitAudit} from './audit-log'
+import {AUDIT_ARCHIVE_DIR,SYSTEM_ACTOR,actorOf,newArchiveLines,splitAudit} from './audit-log'
 import {randomUUID} from 'node:crypto'
 import path from 'node:path'
 import {createHash} from 'node:crypto'
@@ -20,13 +20,23 @@ const parse=(text:string)=>withIds(withRegistry(JSON.parse(text)))
 /** The control state and, when a durable store is connected, the ETag it was read at (for a conditional write). */
 async function readWithTag():Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL);return r?{state:parse(r.text),etag:r.etag}:{state:seedState(),etag:null}}
  try{return{state:parse(await readFile(path.join(root(),CONTROL),'utf8')),etag:null}}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return{state:seedState(),etag:null};throw e}}
-export async function readState():Promise<State>{return(await readWithTag()).state}
+/** The last error the durable store gave on a read, for the admin's storage line; null once a read succeeds. */
+const health=globalThis as typeof globalThis & {fanStoreError?:string|null}
+/**
+ * Pages read through here. If the connected store refuses (credentials not active yet, an outage), the public site
+ * keeps serving the seed rather than a 500, and the admin says why; a WRITE never falls back (`mutate` reads with
+ * `readWithTag`, which throws), so nothing is saved somewhere that will vanish.
+ */
+export async function readState():Promise<State>{
+ try{const r=(await readWithTag()).state;health.fanStoreError=null;return r}
+ catch(e){if(!durable())throw e;health.fanStoreError=String((e as Error)?.message||e).slice(0,300);console.error('[fan-life] durable store read failed:',health.fanStoreError);return seedState()}
+}
 /** Where the control room keeps its state, for the health line in the admin. */
-export function storageInfo():{kind:'vercel-blob'|'memory'|'disk'|'temporary';durable:boolean;note:string}{const d=durable();if(d)return{kind:d.kind,durable:true,note:'Saved to durable storage.'};if(onServerless())return{kind:'temporary',durable:false,note:'No storage connected: changes last until this server instance restarts. Connect a Vercel Blob store to keep them.'};return{kind:'disk',durable:true,note:`Saved on this machine (${root()}).`}}
+export function storageInfo():{kind:'vercel-blob'|'memory'|'disk'|'temporary';durable:boolean;note:string;error?:string}{const d=durable();if(d)return health.fanStoreError?{kind:d.kind,durable:false,note:'A storage store is connected but refused the last read, so nothing can be saved until it answers.',error:health.fanStoreError}:{kind:d.kind,durable:true,note:'Saved to durable storage.'};if(onServerless())return{kind:'temporary',durable:false,note:'No storage connected: changes last until this server instance restarts. Connect a Vercel Blob store to keep them.'};return{kind:'disk',durable:true,note:`Saved on this machine (${root()}).`}}
 /** F19: entries past AUDIT_KEEP are appended to their month's archive file BEFORE control.json drops them. */
 async function rotateAudit(s:State){const {kept,archive}=splitAudit(s.audit);if(kept===s.audit)return;const d=durable()
- if(d){for(const [month,rows] of Object.entries(archive)){for(let i=0;i<5;i++){const cur=await d.read(`${AUDIT_ARCHIVE_DIR}/${month}.jsonl`);if(await d.write(`${AUDIT_ARCHIVE_DIR}/${month}.jsonl`,(cur?.text||'')+archiveLines(rows),cur?.etag??null))break;if(i===4)throw new Error('Audit archive is busy. Try again.')}}s.audit=kept;return}
- const dir=path.join(root(),AUDIT_ARCHIVE_DIR);await mkdir(dir,{recursive:true});for(const [month,rows] of Object.entries(archive))await appendFile(path.join(dir,`${month}.jsonl`),archiveLines(rows),{mode:0o600});s.audit=kept}
+ if(d){for(const [month,rows] of Object.entries(archive)){for(let i=0;i<5;i++){const cur=await d.read(`${AUDIT_ARCHIVE_DIR}/${month}.jsonl`);const add=newArchiveLines(cur?.text||'',rows);if(!add||await d.write(`${AUDIT_ARCHIVE_DIR}/${month}.jsonl`,(cur?.text||'')+add,cur?.etag??null))break;if(i===4)throw new Error('Audit archive is busy. Try again.')}}s.audit=kept;return}
+ const dir=path.join(root(),AUDIT_ARCHIVE_DIR);await mkdir(dir,{recursive:true});for(const [month,rows] of Object.entries(archive)){const f=path.join(dir,`${month}.jsonl`);const add=newArchiveLines(await readFile(f,'utf8').catch(()=>''),rows);if(add)await appendFile(f,add,{mode:0o600})}s.audit=kept}
 export function mutate<T>(fn:(s:State)=>T):Promise<T>{const op=(globals.fanWrites||Promise.resolve()).then(async()=>{const d=durable()
  if(d){// optimistic: read with its ETag, apply, write only if nobody wrote in between; otherwise re-read and re-apply
   for(let attempt=0;attempt<5;attempt++){const {state:s,etag}=await readWithTag();const result=fn(s);s.revision++;await rotateAudit(s);if(await d.write(CONTROL,JSON.stringify(s),etag))return result}
