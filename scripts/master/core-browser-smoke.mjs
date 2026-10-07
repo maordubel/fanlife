@@ -10,11 +10,15 @@ import {REGISTRY} from '../../lib/master/registry.ts'
 import {loadClub} from '../../lib/clubs/resolver.ts'
 import {HEBREW_ENABLED} from '../../lib/clubs/locale.ts'
 import {gateAvailability} from '../../lib/clubs/gates.ts'
+import {ADMIN_COOKIE,issueToken} from '../../lib/master/admin-token.ts'
+import {randomBytes} from 'node:crypto'
 // a gate is expected open or locked from the COMPILED data — packs grow, and a hand-written "locked" goes stale
 const playable=async(slug,key)=>gateAvailability((await loadClub(slug)).data,key).playable
 async function expectGate(p,url,slug,key,openId){await p.goto(url);if(await playable(slug,key)){await p.getByTestId(openId).first().waitFor()}else{await p.getByTestId('gate-locked').waitFor();assert.equal(await p.getByTestId(openId).count(),0)}}
 const port=process.env.M1_BROWSER_PORT||'3217',base=`http://127.0.0.1:${port}`
-const server=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p',port],{env:{...process.env,NEXT_PUBLIC_FAN_LIFE_EVALUATION:'true'},stdio:['ignore','pipe','pipe']})
+// the control room is behind the owner key (rule 97): the smoke server gets a throwaway key and the browser a session for it
+const ADMIN_KEY=randomBytes(24).toString('hex')
+const server=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-p',port],{env:{...process.env,NEXT_PUBLIC_FAN_LIFE_EVALUATION:'true',FAN_LIFE_ADMIN_KEY:ADMIN_KEY},stdio:['ignore','pipe','pipe']})
 let logs='';server.stdout.on('data',c=>logs+=c);server.stderr.on('data',c=>logs+=c)
 let browser
 // headings and labels are printed in capitals by the magazine (rule 91): text checks compare case-insensitively
@@ -122,6 +126,7 @@ try {
  await identityCheck(page,'hapoel-tel-aviv','.club-surface','/tmp/fanlife-m1-browser/hapoel-timeline-rtl.png')
  }
  await page.setViewportSize({width:1280,height:900})
+ await page.context().addCookies([{name:ADMIN_COOKIE,value:issueToken(ADMIN_KEY),url:base}])
  await page.goto(`${base}/master/core?club=olympiacos`)
  await page.getByRole('heading',{name:'Evidence and review'}).waitFor()
  assert((await page.locator('main').innerText()).toLowerCase().includes(String('automated:cross-source-review-m1').toLowerCase()))

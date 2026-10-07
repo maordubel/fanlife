@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Shell } from '@/components/master/Shell'
 import { AdminGate } from '@/components/fanlife/admin/AdminGate'
 import { fl } from '@/lib/fanlife/copy'
+import { requireAdmin } from '@/lib/master/admin'
 
 export const metadata: Metadata = { title: fl('exchange.title'), robots: { index: false, follow: false, nocache: true } }
 
@@ -11,7 +12,10 @@ export const metadata: Metadata = { title: fl('exchange.title'), robots: { index
  * Worker's /kits/admin, forked to English. Who may act is decided by the database
  * (`worker_admin_whoami`); a non-admin sees an ordinary 404.
  */
+export const dynamic = 'force-dynamic'
+
 export default function ExchangeAdminPage() {
+  requireAdmin('/master/exchange')
   return (
     <Shell locale="en">
       <main id="main" className="mag-section fl-corner">

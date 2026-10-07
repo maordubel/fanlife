@@ -64,3 +64,21 @@ describe('FAN LIFE · prices in euros', () => {
     }
   })
 })
+
+describe('FAN LIFE · I was there', () => {
+  it('marks, un-marks (keeping a tombstone) and lists in date order', async () => {
+    const { setBeen, readBeen, beenList, mergeBeen } = await import('@/lib/fanlife/been')
+    ;(globalThis as { window?: unknown }).window = { dispatchEvent: () => true }
+    expect(setBeen('olympiacos', 'm-1998-05-02', 'Olympiacos 2–0 AEK', '1998-05-02', true)).toBe(true)
+    expect(setBeen('olympiacos', 'm-1971', 'Olympiacos v Panathinaikos', '1971', true)).toBe(true)
+    expect(setBeen('olympiacos', 'bad id with spaces', 'x', null, true)).toBe(false)
+    expect(beenList(readBeen()).map((b) => b.on)).toEqual(['1971', '1998-05-02'])
+    setBeen('olympiacos', 'm-1971', 'Olympiacos v Panathinaikos', '1971', false)
+    expect(readBeen()['olympiacos:m-1971']!.b).toBe(false)
+    expect(beenList(readBeen())).toHaveLength(1)
+    const a = { 'x-club:1': { club: 'x-club', label: 'a', on: null, b: true, at: '2026-01-01' } }
+    const b = { 'x-club:1': { club: 'x-club', label: 'a', on: null, b: false, at: '2026-02-01' } }
+    expect(mergeBeen(a, b)['x-club:1']!.b).toBe(false)
+    expect(mergeBeen(b, a)['x-club:1']!.b).toBe(false)
+  })
+})

@@ -12,7 +12,7 @@ import {gameCopy} from '@/lib/clubs/game-copy'
 import {GateHead} from '@/components/clubs/GateHead'
 import {ClubTimelineBoard} from './ClubTimelineBoard'
 export const dynamic='force-dynamic'
-export const metadata={title:'Timeline · FAN LIFE'}
+export const metadata={title:'Timeline'}
 export default async function Page({params,searchParams}:{params:{slug:string};searchParams:{seed?:string;r?:string;lang?:string}}) {
  const resolved=await requestClub(params.slug)
  if(!resolved)notFound()

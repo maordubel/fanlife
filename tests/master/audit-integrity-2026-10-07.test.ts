@@ -17,6 +17,7 @@ import {archiveSummary,pipeline,publishState,type ClubSummary,type GateSummary} 
 import {overviewCounts,progressText} from '@/lib/master/layers'
 import {requestGate} from '@/lib/master/requestGate'
 import {lightState} from '@/lib/master/lightState'
+// @ts-expect-error -- next.config.mjs is plain JS with no declaration file
 import nextConfig from '../../next.config.mjs'
 
 const dir=mkdtempSync(path.join(tmpdir(),'audit-master-'));vi.stubEnv('FAN_LIFE_DATA_DIR',dir);vi.stubEnv('RESEARCH_DATA_DIR','')

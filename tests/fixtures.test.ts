@@ -67,3 +67,10 @@ describe('meetings archive',()=>{
   for(const m of own){expect(m.homeGoals).toBeGreaterThanOrEqual(0);expect(m.from.length).toBeGreaterThan(0)}
  })
 })
+
+describe('every club in the portal is on the fixture feed (owner, 7.10.2026)',()=>{
+ it('one team row per registry club, names already normalised',()=>{
+  for(const c of REGISTRY)expect(FIXTURE_TEAMS.filter(t=>t.clubId===c.id),c.id).toHaveLength(1)
+  for(const t of FIXTURE_TEAMS)for(const n of t.names)expect(norm(n),`${t.clubId}: ${n}`).toBe(n)
+ })
+})

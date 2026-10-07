@@ -2,9 +2,11 @@ import Link from 'next/link'
 import {Shell} from '@/components/master/Shell'
 import {CORE_CLUB_IDS,REVIEW_CLUB_IDS,loadClub} from '@/lib/clubs/resolver'
 import {SHARED_GATES,gateAvailability} from '@/lib/clubs/gates'
+import {requireAdmin} from '@/lib/master/admin'
 export const dynamic='force-dynamic'
 export const metadata={title:'Club data · FAN LIFE'}
 export default async function Page({searchParams}:{searchParams:{club?:string;page?:string}}) {
+ requireAdmin('/master/core')
  const clubs=await Promise.all([...CORE_CLUB_IDS,...REVIEW_CLUB_IDS].map(loadClub)),selected=clubs.find(c=>c?.data.identity.id===searchParams.club)||clubs[0]!
  if(!selected)return null
  const {data,diagnostics}=selected,facts=data.archive.length?data.archive:data.timeline,rawPage=Number(searchParams.page)||1,page=Math.max(1,Math.min(Math.ceil(facts.length/100)||1,Math.floor(Number.isFinite(rawPage)?rawPage:1))),visible=facts.slice((page-1)*100,page*100)

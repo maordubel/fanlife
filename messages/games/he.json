@@ -335,5 +335,10 @@
   "rr.W": "נ",
   "rr.D": "ת",
   "rr.L": "ה",
-  "rr.bill": "חשבון"
+  "rr.bill": "חשבון",
+  "ticketGate": "שער",
+  "ticketAdmit": "כניסה אחת",
+  "beenMark": "הייתי שם",
+  "beenMarked": "הייתי שם",
+  "beenHint": "סמנו: זה נכנס לסיפור שלי"
 }

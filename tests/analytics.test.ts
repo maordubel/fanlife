@@ -231,6 +231,8 @@ describe('the stats page', () => {
   it('is behind the same QA gate as every /qa screen', () => {
     const page = readFileSync(join(ROOT, 'app/qa/stats/page.tsx'), 'utf8')
     expect(page).toContain('if (!qaAllowed() && !keyed) notFound()')
+    // audit F01: evaluation mode opens qaAllowed() for fans — the numbers still need the owner
+    expect(page).toContain("if (!keyed && !adminSession()) redirect(loginPath('/qa/stats'))")
     // the demo fixture is only reachable where qaAllowed() is
     expect(page).toContain("const demo = qaAllowed() && searchParams.demo === '1'")
   })

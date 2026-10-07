@@ -335,5 +335,10 @@
   "rr.W": "W",
   "rr.D": "D",
   "rr.L": "L",
-  "rr.bill": "Bill"
+  "rr.bill": "Bill",
+  "ticketGate": "Gate",
+  "ticketAdmit": "Admit one",
+  "beenMark": "I was there",
+  "beenMarked": "I was there",
+  "beenHint": "Mark it: it goes into Me → My story"
 }

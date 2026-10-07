@@ -39,7 +39,13 @@
 .stage { position: absolute; inset: 0; }
 .world { display: block; inline-size: 100%; block-size: 100%; border: 0; background: var(--l-deep); }
 .loading { position: absolute; inset: 0; display: grid; place-content: center; color: var(--l-paper); font-family: var(--font-courier), monospace; letter-spacing: .08em; text-transform: uppercase; font-size: .875rem; background: var(--l-deep); }
-.failed { position: absolute; inset: 0; display: grid; place-content: center; gap: 16px; padding: 24px; text-align: center; color: var(--l-paper); background: var(--l-deep); }
+/* F13: the boot failure sits above every card (z-[70] on the element) and owns the screen until Back or Try again */
+.failed { position: fixed; inset: 0; display: grid; place-items: center; padding: calc(20px + var(--l-safe-t, 0px)) 14px calc(20px + var(--l-safe-b, 0px)); background: color-mix(in srgb, var(--l-deep) 94%, transparent); }
+.failCard { position: relative; inline-size: min(100%, 28rem); padding: 24px 20px 20px; background: var(--l-paper); color: var(--l-ink); border-inline-start: 10px solid var(--l-ink); box-shadow: 3px 3px 0 var(--l-ink); text-align: start; }
+.failCard p { margin: 0; font-size: 1.0625rem; line-height: 1.45; }
+.failTitle { margin: 0 0 10px; font-family: var(--font-frank), serif; font-size: clamp(1.5rem, 6vw, 2rem); font-weight: 700; line-height: 1.12; }
+.failActions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: flex-end; margin-block-start: 20px; }
+@media (max-width: 420px) { .failActions { flex-direction: column-reverse; align-items: stretch; } .failActions > * { justify-content: center; } }
 
 /* ───── paper ───── */
 .ticket, .sheet, .chip, .act, .toast, .game { position: relative; background: var(--l-paper); color: var(--l-ink); }
