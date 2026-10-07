@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "clubId": "aek-athens",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-06",
+  "desiredGates": [],
+  "priorityMatchIds": [],
+  "sources": [],
+  "notes": "Historical archive collection only (6.10.2026 plan): public sources, no paid data, no AI, nothing activated in the game. Documents stay needs-parser until a parser is written against stored fixtures.",
+  "archive": [
+    {
+      "providerId": "aekpedia",
+      "familyId": "aekpedia-editorial",
+      "publisher": "AEKpedia",
+      "reader": "wordpress-rest",
+      "origin": "https://www.aekpedia.com",
+      "role": "mixed",
+      "locale": "el-GR",
+      "collections": [
+        "posts",
+        "pages"
+      ],
+      "allowedPathPrefixes": [
+        "/wp-json/wp/v2/"
+      ],
+      "parserId": "aekpedia-football-v1",
+      "budget": {
+        "perPage": 25,
+        "maxRequests": 30,
+        "minDelayMs": 3000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "A post is not a match: season pages, player profiles and articles are mixed in posts.",
+        "URL slugs like season-1974-75 are discovery hints, not a schema."
+      ]
+    },
+    {
+      "providerId": "aek-official-history",
+      "familyId": "aek-institutional",
+      "publisher": "AEK FC",
+      "reader": "html",
+      "origin": "https://www.aekfc.gr",
+      "role": "club-history",
+      "locale": "el-GR",
+      "seeds": [
+        "/pages/history.aspx?lang=el",
+        "/c/gegonota-42826.htm?lang=en&path=-1828815320"
+      ],
+      "allowedPathPrefixes": [
+        "/pages/history.aspx",
+        "/c/gegonota-42826.htm"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Cross-check source for events and honours; AEKpedia and the club site are separate families."
+      ]
+    }
+  ]
+}

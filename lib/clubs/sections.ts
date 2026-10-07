@@ -28,6 +28,8 @@ export function compileMysteries(raw:unknown,clubId:string,sources:Source[],play
  }
  return out
 }
+/** Sections whose undeclared records are treated as sensitive (A15). Facts about fixtures, kits, seasons stay factual. */
+export const SENSITIVE_BY_DEFAULT=new Set(['rivals','culture','places'])
 export const ENTITY_SECTIONS=['rivals','competitions','seasons','matches','trophies','kits','goals','stadiums','places','culture'] as const
 /** Entity sections: null = not researched, [] = known empty. Facts keep their own sources and status. */
 export function compileEntities(raw:unknown,section:string,clubId:string,sources:Source[],diagnostics:Diagnostic[]):Fact<Entity>[]|null {
@@ -36,7 +38,9 @@ export function compileEntities(raw:unknown,section:string,clubId:string,sources
  const out:Fact<Entity>[]=[],seen=new Set<string>()
  for(const input of raw){
   const f=obj(input),v=obj(f.value),id=typeof f.id==='string'?f.id.trim():''
-  const sensitive=v.sensitive!==false?false:false
+  // explicit `sensitive:true` always needs a person; an UNDECLARED flag counts as sensitive in the sections where
+  // the claim is about people, rivalry or culture (they decide tone, not just facts) — automated approval stops there
+  const sensitive=v.sensitive===true||(v.sensitive!==false&&SENSITIVE_BY_DEFAULT.has(section))
   const env=envelope(f,sources,ID.test(id)&&!seen.has(id)&&typeof v.name==='string'&&!!v.name.trim(),sensitive)
   if(!env){diagnostics.push({record:`${section}:${id}`,code:'ENTITY_INELIGIBLE',message:'Entity needs unique id, name, checked sources and a complete approval.'});continue}
   seen.add(id)

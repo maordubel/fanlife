@@ -12,6 +12,8 @@ export type RotatorItem = {
   opponent: string
   initials: string
   primary: string
+  on: string
+  type: string
   pattern: LiveryPattern
   kickoff: string
   dateOnly: boolean
@@ -19,14 +21,14 @@ export type RotatorItem = {
   competition: string | null
   venue: string | null
   href: string
-  tag: 'live' | 'today' | 'soon' | 'later'
+  tag: 'live' | 'today' | 'soon' | 'later' | 'tbc'
 }
 export type RotatorCopy = {
-  next: string; cta: string; home: string; away: string; vs: string; pause: string; play: string
-  live: string; today: string; soon: string; later: string
+  next: string; cta: string; of: string; prev: string; fwd: string; home: string; away: string; vs: string; pause: string; play: string
+  live: string; today: string; soon: string; later: string; tbc: string; tbcLine: string; tbcCta: string
 }
 
-const wear = (primary: string): CSSProperties => ({['--club-primary' as string]: primary})
+const wear = (x: {primary: string; on: string; type: string}): CSSProperties => ({['--club-primary' as string]: x.primary, ['--club-on-primary' as string]: x.on, ['--club-type' as string]: x.type})
 
 export function FixtureRotator({items, copy, locale}: {items: RotatorItem[]; copy: RotatorCopy; locale: string}) {
   const [i, setI] = useState(0)
@@ -45,43 +47,40 @@ export function FixtureRotator({items, copy, locale}: {items: RotatorItem[]; cop
   }, [])
   // kick-off is shown in the reader's own time zone, so it can only be written after mount
   useEffect(() => {
-    setWhen(items.map(f => new Intl.DateTimeFormat(locale, f.dateOnly ? {dateStyle: 'full', timeZone: 'UTC'} : {dateStyle: 'full', timeStyle: 'short'}).format(new Date(f.kickoff))))
+    setWhen(items.map(f => !f.kickoff ? '' : new Intl.DateTimeFormat(locale, f.dateOnly ? {weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC'} : {weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'}).format(new Date(f.kickoff))))
   }, [items, locale])
   useEffect(() => {
     if (reduced || held || pinned || items.length < 2) return
-    const t = window.setTimeout(() => setI(n => (n + 1) % items.length), dwellMs(items[i]!.tag))
+    const t = window.setTimeout(() => setI(n => (n + 1) % items.length), dwellMs(items[i]!.tag === 'tbc' ? 'later' : items[i]!.tag))
     return () => window.clearTimeout(t)
   }, [i, reduced, held, pinned, items])
 
   const f = items[i]
   if (!f) return null
   const tagWord = copy[f.tag]
+  const step = (d: number) => { setI(n => (n + d + items.length) % items.length); setPinned(true) }
+  // One slim ticket, not a wall of chips (owner, 7.10.2026: "smaller, more modest"). Every club is still on the roll.
   return (
-    <div ref={box} onMouseEnter={() => setHeld(true)} onMouseLeave={() => setHeld(false)} onFocus={() => setHeld(true)} onBlur={() => setHeld(false)} onTouchStart={() => setHeld(true)}>
-      <div className="mag-chips" role="tablist" aria-label={copy.next}>
-        {items.map((x, n) => (
-          <button key={x.clubId} role="tab" type="button" className="mag-chip min-h-tap" aria-selected={n === i} style={wear(x.primary)}
-            onClick={() => { setI(n); setPinned(true) }}>
-            <i /><span>{x.initials}</span>
-          </button>
-        ))}
-        {!reduced && items.length > 1 && (
-          <button type="button" className="mag-chip min-h-tap" aria-pressed={pinned} onClick={() => setPinned(p => !p)}>{pinned ? copy.play : copy.pause}</button>
-        )}
-      </div>
-      <article className="mag-fixture" style={wear(f.primary)} role="tabpanel" aria-live={pinned || held ? 'off' : 'polite'}>
-        <span className="mag-band" data-livery={f.pattern} aria-hidden="true" />
-        <div className="mag-fixture-body">
-          <span className="mag-kicker">{tagWord} · {f.clubSide === 'home' ? copy.home : copy.away}</span>
-          <h3><span>{f.club}</span> {copy.vs} {f.opponent}</h3>
-          <p className="mag-fixture-meta">
-            <time dateTime={f.kickoff}>{when ? when[i] : f.kickoff.slice(0, 10)}</time>
-            {f.competition ? <> · {f.competition}</> : null}
-            {f.venue ? <> · {f.venue}</> : null}
-          </p>
-          <Link className="mag-cta red" href={f.href}>{copy.cta}<span aria-hidden="true">→</span></Link>
-        </div>
-      </article>
+    <div ref={box} className="mag-next" onMouseEnter={() => setHeld(true)} onMouseLeave={() => setHeld(false)} onFocus={() => setHeld(true)} onBlur={() => setHeld(false)} onTouchStart={() => setHeld(true)}>
+      {items.length > 1 && <button type="button" className="mag-next-step min-h-tap" aria-label={copy.prev} onClick={() => step(-1)}><span aria-hidden="true">‹</span></button>}
+      <Link className="mag-next-card" href={f.href} style={wear(f)} aria-live={pinned || held ? 'off' : 'polite'}>
+        <span className="mag-badge" data-livery={f.pattern} aria-hidden="true">{f.initials}</span>
+        <span className="mag-next-txt">
+          <small>{tagWord}{f.tag === 'tbc' ? null : <> · {f.clubSide === 'home' ? copy.home : copy.away}</>}</small>
+          {f.tag === 'tbc'
+            ? <b><span>{f.club}</span></b>
+            : <b><span>{f.club}</span> {copy.vs} {f.opponent}</b>}
+          {f.tag === 'tbc'
+            ? <i>{copy.tbcLine}</i>
+            : <i><time dateTime={f.kickoff}>{when ? when[i] : f.kickoff.slice(0, 10)}</time>{f.competition ? <> · {f.competition}</> : null}</i>}
+        </span>
+        <span className="mag-next-go" aria-hidden="true">→</span>
+      </Link>
+      {items.length > 1 && <button type="button" className="mag-next-step min-h-tap" aria-label={copy.fwd} onClick={() => step(1)}><span aria-hidden="true">›</span></button>}
+      {items.length > 1 && <p className="mag-next-count">
+        <span>{i + 1} {copy.of} {items.length}</span>
+        {!reduced && <button type="button" className="min-h-tap" aria-pressed={pinned} onClick={() => setPinned(p => !p)}>{pinned ? copy.play : copy.pause}</button>}
+      </p>}
     </div>
   )
 }

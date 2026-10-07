@@ -14,7 +14,7 @@ import {IsoBoard} from './IsoBoard'
 import styles from './life.module.css'
 
 type Copy = Record<string, string>
-type Props = {city: City; clubId: string; night: boolean; copy: Copy; story: {lang?: string; dir?: 'ltr'}; onTravel: (place: Place) => void; onClose: () => void}
+type Props = {city: City; clubId: string; night: boolean; copy: Copy; story: {lang?: string; dir?: 'ltr' | 'rtl'}; onTravel: (place: Place) => void; onClose: () => void}
 
 export function CityMap({city, clubId, night, copy, story, onTravel, onClose}: Props) {
   const [pick, setPick] = useState<string | null>(() => city.places.find(p => p.goal)?.id ?? city.places.find(p => p.status === 'here')?.id ?? null)

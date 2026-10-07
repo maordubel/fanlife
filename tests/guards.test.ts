@@ -88,6 +88,9 @@ describe('retired files are tombstones', () => {
     'app/derby/HateHill.tsx', // → HateWall.tsx, gate 11 v3 (21.9.2026)
     'components/ui/Standfirst.tsx', // → nothing: the home page prints no standfirst (29.9.2026)
     'app/archive/ArchiveWing.tsx', // → components/archive/ArchiveApp.tsx, gate 12 v10 (21.9.2026)
+    'public/life/voxel/display-admin.html', // → /master/admin Display tab (6.10.2026)
+    'public/life/voxel/display-admin.js', // → components/master/DisplayControl.tsx + display-preview.js
+    'public/life/voxel/display-admin.css', // → magazine admin styles
   ]
 
   it('every retired path still exists and says it is retired', () => {

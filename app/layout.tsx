@@ -36,7 +36,7 @@ export const viewport: Viewport = {
  * is what keeps a future relative path from resolving against whatever host actually
  * served the request instead of the canonical address rule 23 requires).
  */
-export const metadata: Metadata = {
+const workerMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   // The product is called The Worker. Full stop — no suffix, no bilingual pair, no
   // brand-system tagline. A name with something appended to it is not a name.
@@ -76,10 +76,36 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * Two products, one app: The Worker keeps its own name, badge and Hebrew card on Hapoel's host;
+ * everywhere else the tab, the app icon and the share card are FAN LIFE's seal (owner, 7.10.2026).
+ * The tab shows only the ball and its ring (`mark-*`) — the lettering cannot be read at 32px.
+ */
+const fanLifeMetadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: { default: 'FAN LIFE — Football. Forever.', template: '%s · FAN LIFE' },
+  description: 'Every club, a world: the games, the archive and a supporter\'s life, from each club\'s own history.',
+  applicationName: 'FAN LIFE',
+  openGraph: { title: 'FAN LIFE', description: 'Football. Forever. Every club, a world.', siteName: 'FAN LIFE', locale: 'en_GB', type: 'website', images: [{ url: '/brand/fanlife/og.png', width: 1200, height: 630, alt: 'FAN LIFE — Football. Forever.' }] },
+  twitter: { card: 'summary_large_image', title: 'FAN LIFE', description: 'Football. Forever. Every club, a world.', images: ['/brand/fanlife/og.png'] },
+  icons: {
+    icon: [{ url: '/brand/fanlife/mark-32.png', sizes: '32x32', type: 'image/png' }, { url: '/brand/fanlife/mark-64.png', sizes: '64x64', type: 'image/png' }, { url: '/brand/fanlife/logo-192.png', sizes: '192x192', type: 'image/png' }],
+    apple: '/brand/fanlife/logo-180.png',
+  },
+}
+
+export function generateMetadata(): Metadata {
+  return clubFromHost(headers().get('host')) === DEFAULT_CLUB ? workerMetadata : fanLifeMetadata
+}
+
+const FAN_PATHS=['/master','/clubs','/sources','/closet','/market','/auction','/shirts','/me','/stands']
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname=headers().get('x-fan-life-path')||'/'
   const sharedLocale=pathname.startsWith('/clubs/')?uiLocale(headers().get('x-fan-life-locale')||undefined):'en'
-  const master=pathname==='/'||pathname.startsWith('/master')||pathname.startsWith('/clubs')
+  // FAN LIFE's own pages (English, LTR, never behind The Worker's gate switches): the hub, the clubs,
+  // the control room, and "your corner" — the personal area ported from The Worker (7.10.2026).
+  const master=pathname==='/'||FAN_PATHS.some(p=>pathname===p||pathname.startsWith(p+'/'))
   const club=master?undefined:(await readState()).clubs.find(c=>c.id==='hapoel-tel-aviv')
   const gate=GATES.find(g=>pathname===g[2]||pathname.startsWith(g[2]+'/'))
   const tenant=clubFromHost(headers().get('host'))
@@ -116,7 +142,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         /> : null}
         <Analytics />
         {/* first-party measurement: views, starts, finishes, where people leave (lib/analytics) */}
-        {!master ? <GateMeter /> : null}
+        <GateMeter />
       </body>
     </html>
   )

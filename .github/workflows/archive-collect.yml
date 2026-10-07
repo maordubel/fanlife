@@ -1,0 +1,70 @@
+name: Archive collect
+# The historical-archive collector, on GitHub's network (the build sandbox cannot reach the sources).
+# Click "Run workflow" (Actions tab) — no terminal. Also runs every Tuesday.
+# Each run reads a small, polite batch per source (resuming from the committed checkpoints), re-exports the
+# staging catalogue, and commits ONLY research-data/. Nothing is approved; the club file shows it as unreviewed.
+on:
+  workflow_dispatch:
+    inputs:
+      club:
+        description: 'Club id (research-profiles/<id>.json) or "all"'
+        default: all
+      max_requests:
+        description: 'Requests per club this run (1–40)'
+        default: '12'
+  schedule:
+    - cron: '23 3 * * 2'
+permissions:
+  contents: write
+concurrency:
+  group: archive-collect
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: npm}
+      - run: npm ci
+      # The control room's sources, pinned for this run (admin ⇄ runner handoff). Written outside the repository and
+      # never committed. Without FAN_LIFE_RESEARCH_URL + FAN_LIFE_CRON_SECRET the run uses repository profiles only, and says so.
+      - name: Pin control-room profiles
+        env:
+          URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+          CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/overlays"
+          echo "RESEARCH_OVERLAY_DIR=$RUNNER_TEMP/overlays" >> "$GITHUB_ENV"
+          if [ -z "$URL" ] || [ ${#CRON_SECRET} -lt 32 ]; then echo "PROFILE_VERSION=repository-only" >> "$GITHUB_ENV"; echo "::notice::Control-room sources not pinned: set the FAN_LIFE_RESEARCH_URL variable and the FAN_LIFE_CRON_SECRET secret."; exit 0; fi
+          curl --fail --show-error --max-time 60 -H "Authorization: Bearer $CRON_SECRET" "$URL/api/master/research/profiles-export" -o "$RUNNER_TEMP/export.json"
+          node -e "const fs=require('fs'),d=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/export.json','utf8'));for(const [id,p] of Object.entries(d.profiles||{})){if(/^[a-z][a-z0-9-]{1,60}$/.test(id))fs.writeFileSync(process.env.RUNNER_TEMP+'/overlays/'+id+'.json',JSON.stringify(p))}fs.appendFileSync(process.env.GITHUB_ENV,'PROFILE_VERSION='+d.version+'\\n');console.log('pinned',Object.keys(d.profiles||{}).length,'profiles at',d.version)"
+      - name: Collect
+        env:
+          CLUB: ${{ github.event.inputs.club || 'all' }}
+          MAX: ${{ github.event.inputs.max_requests || '12' }}
+          RESEARCH_DATA_DIR: research-data
+        run: |
+          case "$MAX" in ''|*[!0-9]*) MAX=12;; esac; [ "$MAX" -gt 40 ] && MAX=40
+          echo "Profiles: **$PROFILE_VERSION**" > summary.md
+          ids=$( (ls research-profiles/*.json "$RESEARCH_OVERLAY_DIR"/*.json 2>/dev/null || true) | xargs -n1 basename 2>/dev/null | sed 's/\.json$//' | sort -u)
+          for id in $ids; do
+            [ "$CLUB" = "all" ] || [ "$CLUB" = "$id" ] || continue
+            node -e "const fs=require('fs');const has=f=>{try{return (JSON.parse(fs.readFileSync(f,'utf8')).archive||[]).length>0}catch{return false}};process.exit(has('research-profiles/$id.json')||has(process.env.RESEARCH_OVERLAY_DIR+'/$id.json')?0:1)" || continue
+            if out=$(npm run -s research:collect -- "$id" --max-requests "$MAX" 2>&1); then
+              echo "- **$id**: $(echo "$out" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{const r=JSON.parse(s).run;console.log(r.state+' · '+r.counts.requests+' requests · '+r.counts.documentsRead+' documents ('+r.counts.newDocuments+' new) · '+r.counts.blockedEndpoints+' refused')}catch{console.log('done')}})")" >> summary.md
+            else
+              echo "- **$id**: FAILED — $(echo "$out" | tail -1)" >> summary.md; echo "::warning::$id: $(echo "$out" | tail -1)"
+            fi
+          done
+          cat summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit research-data
+        run: |
+          git config user.name "fanlife-archive-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add research-data
+          if git diff --cached --quiet; then echo "Nothing new collected."; exit 0; fi
+          git commit -m "research-data: archive collection $(date -u +%Y-%m-%d)" -m "$(cat summary.md)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

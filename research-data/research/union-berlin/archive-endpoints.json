@@ -1,0 +1,58 @@
+{
+ "immer-unioner:/listen.php": {
+  "endpoint": "/listen.php",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:54:06.051Z"
+ },
+ "immer-unioner:/trikotliste.php": {
+  "endpoint": "/trikotliste.php",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:54:09.546Z"
+ },
+ "immer-unioner:/impressum.php": {
+  "endpoint": "/impressum.php",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:54:12.503Z"
+ },
+ "immer-unioner:/spieler.php?getid=84": {
+  "endpoint": "/spieler.php?getid=84",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:54:16.835Z"
+ },
+ "immer-unioner:/spieler.php?getid=453": {
+  "endpoint": "/spieler.php?getid=453",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:54:20.756Z"
+ },
+ "immer-unioner:/spieler.php?getid=209": {
+  "endpoint": "/spieler.php?getid=209",
+  "providerId": "immer-unioner",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:54:24.588Z"
+ },
+ "union-official:/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0": {
+  "endpoint": "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0",
+  "providerId": "union-official",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:54:26.379Z"
+ }
+}

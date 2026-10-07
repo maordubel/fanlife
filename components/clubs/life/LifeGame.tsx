@@ -15,7 +15,9 @@
 import {KeepArt, keepArt} from './KeepArt'
 import {ENABLED_LOCALES} from '@/lib/clubs/locale'
 import Link from 'next/link'
-import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
+import {Dye} from '@/components/master/Dye'
+import {useCallback, useEffect, useMemo, useReducer, useRef, useState} from 'react'
+import {BOOT_START, BOOT_TIMEOUT_MS, bootReducer, failureCopyKey, probeWebgl, voxelFailure} from './boot'
 import {chapterOf, eventsOf, Life, meets, nextChapter, openChapter, type Directive, type LifeStore} from '@/lib/life/universal/engine'
 import type {CardDef, Chapter, LifePack, LifeState} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
@@ -72,11 +74,12 @@ function browserStore(): LifeStore {
 const pad2 = (n: number) => String(n).padStart(2, '0')
 
 export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Props) {
-  const story = locale === 'en' ? {} : {lang: 'en', dir: 'ltr' as const}
   const [state, setState] = useState<LifeState | null>(null)
   const [phase, setPhase] = useState<Phase>('boot')
   const [cardAt, setCardAt] = useState(0)
-  const [ready, setReady] = useState(false)
+  const [boot, dispatchBoot] = useReducer(bootReducer, BOOT_START)
+  const ready = boot.phase === 'ready'
+  const failed = boot.phase === 'failed' ? boot.failure : null
   const [roomUp, setRoomUp] = useState(false)
   const [scene, setScene] = useState<Scene | null>(null)
   const [target, setTarget] = useState<PlayTarget>(null)
@@ -92,7 +95,6 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const actEl = useRef<HTMLButtonElement | null>(null)
   const arrival = useRef<{id: string; name: string} | null>(null)
   const [menu, setMenu] = useState<'closed' | 'menu' | 'confirm'>('closed')
-  const [failed, setFailed] = useState<string | null>(null)
   const [soundOn, setSoundOn] = useState(true)
   const [wide, setWide] = useState(false)
   const [touch, setTouch] = useState(false)
@@ -119,6 +121,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const primary = useRef<HTMLButtonElement | null>(null)
 
   const chapter = useMemo<Chapter | null>(() => (state ? chapterOf(pack, state.chapter) : null), [pack, state])
+  const story = pack.storyLocale === 'he' && !chapter?.anchor ? {lang: 'he', dir: 'rtl' as const} : locale === 'en' ? {} : {lang: 'en', dir: 'ltr' as const}
   const chapterNo = chapter ? pack.chapters.findIndex(c => c.id === chapter.id) + 1 : 0
   live.current.phase = phase
   live.current.talk = talk
@@ -330,15 +333,17 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     rt.current?.focus(inRoom ?? null)
   }, [talk])
 
+  /* the smooth picture fell over (a room it cannot draw): the block picture takes the same room, once; only then is it a failure */
+  const rendererFailed = useCallback((message?: string) => {
+    if (lookRef.current !== 'blocks') { setLook('blocks'); rt.current = null; setRoomUp(false); dispatchBoot({type: 'retry'}); setReload(n => n + 1); return }
+    dispatchBoot({type: 'renderer-error', message})
+  }, [])
+
   /* ───────────── what the runtime says ───────────── */
   const onPlay = useCallback((e: PlayEvent) => {
     const l = life.current
-    if (e.type === 'ready') { setReady(true); return }
-    if (e.type === 'error') {
-      // the smooth picture fell over (no WebGL2, a room it cannot draw): the block picture takes the same room, once
-      if (lookRef.current !== 'blocks') { setLook('blocks'); setReady(false); rt.current = null; setRoomUp(false); setReload(n => n + 1); return }
-      setFailed(e.message || 'error'); return
-    }
+    if (e.type === 'ready') { dispatchBoot({type: 'ready'}); return }
+    if (e.type === 'error') { rendererFailed(e.message); return }
     if (e.type === 'entered') {
       setRoomUp(true)
       const at = arrival.current
@@ -367,17 +372,32 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
 
   /* the iframe hands over its runtime once the world is built */
   useEffect(() => {
+    // F13: a browser that cannot create a WebGL context is told so before the room is even loaded
+    if (!probeWebgl(() => document.createElement('canvas'))) { dispatchBoot({type: 'webgl-unavailable'}); return }
     const host = window as unknown as {__vxHostReady?: (p: PlayRuntime) => void}
-    const attach = (p: PlayRuntime) => { rt.current = p; p.on(e => onPlayRef.current(e)); setReady(true) }
+    const attach = (p: PlayRuntime) => { rt.current = p; p.on(e => onPlayRef.current(e)); dispatchBoot({type: 'ready'}) }
     host.__vxHostReady = attach
+    // the room posts its boot failure (play.js → vxBootFailed); only our own iframe, on our own origin, counts
+    const onMessage = (e: MessageEvent) => {
+      if (e.origin !== window.location.origin || e.source !== frame.current?.contentWindow) return
+      const failure = voxelFailure(e.data)
+      if (failure) rendererFailed(failure.message)
+    }
+    window.addEventListener('message', onMessage)
     const poll = window.setInterval(() => {
-      const w = frame.current?.contentWindow as unknown as {__vxPlay?: PlayRuntime; __ready?: boolean; __err?: string[]} | null
+      const w = frame.current?.contentWindow as unknown as {__vxPlay?: PlayRuntime; __ready?: boolean; __err?: string[]; __bootError?: string} | null
+      if (w?.__bootError) { window.clearInterval(poll); rendererFailed(w.__bootError); return }
       if (w?.__ready && w.__vxPlay && rt.current !== w.__vxPlay) attach(w.__vxPlay)
       if (w?.__ready) window.clearInterval(poll)
     }, 250)
-    const giveUp = window.setTimeout(() => { if (!rt.current) setFailed('timeout') }, 30000)
-    return () => { window.clearInterval(poll); window.clearTimeout(giveUp); delete host.__vxHostReady; rt.current = null }
+    // the reducer ignores this once the renderer has failed or started — a renderer failure is never a "network" timeout
+    const giveUp = window.setTimeout(() => { if (!rt.current) dispatchBoot({type: 'timeout'}) }, BOOT_TIMEOUT_MS)
+    return () => { window.removeEventListener('message', onMessage); window.clearInterval(poll); window.clearTimeout(giveUp); delete host.__vxHostReady; rt.current = null }
   }, [reload])
+  const retryEl = useRef<HTMLButtonElement | null>(null)
+  const retryBoot = useCallback(() => { rt.current = null; dispatchBoot({type: 'retry'}); setReload(n => n + 1) }, [])
+  // the error takes focus, so a keyboard or screen-reader player lands on "Try again", not behind the card
+  useEffect(() => { if (failed) retryEl.current?.focus() }, [failed])
 
   /* ───────────── phases ───────────── */
   const beginDay = useCallback(() => {
@@ -422,7 +442,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       try { window.localStorage.setItem(LOOK_KEY, next) } catch { /* a private window still plays */ }
       return next
     })
-    setFailed(null); setReady(false); rt.current = null; setRoomUp(false); setReload(n => n + 1)
+    dispatchBoot({type: 'retry'}); rt.current = null; setRoomUp(false); setReload(n => n + 1)
   }, [])
   const toggleSound = useCallback(() => { const s = sound.current; if (!s) return; s.set(!s.on); s.wake(); setSoundOn(s.on) }, [])
 
@@ -618,9 +638,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   return (
     <div className={styles.life} data-phase={phase} data-wide={wide ? 'true' : 'false'} data-talking={talk ? 'true' : 'false'} data-life="root" data-room={state.room ?? ''} data-chapter={state.chapter ?? ''}>
       <div className={styles.stage} ref={setStageEl}>
-        <iframe key={reload} ref={frame} className={styles.world} src={lookSrc(look, pack.clubId)} title={copy.title} tabIndex={-1} aria-hidden="true" />
+        {failed !== 'webgl' && <iframe key={reload} ref={frame} className={styles.world} src={lookSrc(look, pack.clubId)} title={copy.title} tabIndex={-1} aria-hidden="true" />}
         {playing && !roomUp && !failed && <p className={styles.loading} role="status">{copy.loading}</p>}
-        {failed && <div className={styles.failed} role="alert"><p>{failed === 'timeout' ? copy.loadFailed : copy.noWebgl}</p><button type="button" className={`${styles.button} min-h-tap`} onClick={() => { setFailed(null); setReady(false); rt.current = null; setReload(n => n + 1) }}>{copy.retry}</button></div>}
         {place && <div className={styles.place} role="status" data-life="place" key={place.id}><small>{copy['place.new']}</small><b {...story}>{place.name}</b></div>}
         {toast && <p className={styles.toast} role="status" {...story}>{toast}</p>}
         {idle && targetText && !touch && (
@@ -703,6 +722,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       {phase === 'title' && (
         <section className={`${styles.cover} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-title" data-life="title">
           <div className={styles.ticket}>
+            <Dye art="face" ink="var(--l-prime)" className={styles.titleArt}/>
             <p className={styles.serial}>{pack.club.name} · {pack.club.city}</p>
             <h1 id="life-title" className={styles.poster}>{copy.title}</h1>
             <p className={styles.lede}>{copy.tagline}</p>
@@ -718,7 +738,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
             </dl>
             <details className={styles.about}>
               <summary className="min-h-tap">{copy.readiness}</summary>
-              <p>{copy.provenance}</p><p>{copy.fiction}</p>{locale !== 'en' && <p>{copy.storyLanguage}</p>}
+              <p>{copy.provenance}</p><p>{copy.fiction}</p>{locale !== 'en' && pack.storyLocale !== 'he' && <p>{copy.storyLanguage}</p>}
               <ul lang="en" dir="ltr">{pack.readiness.reasons.map(r => <li key={r}>{r}</li>)}</ul>
             </details>
             <nav className={styles.links} aria-label={copy.language}>
@@ -842,13 +862,27 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
           </div>
         </section>
       )}
+
+      {failed && (
+        // F13: above every card (z-70 over the chapter card's z-60), so Back and Try again are always reachable
+        <section className={`${styles.failed} z-[70]`} role="alertdialog" aria-modal="true" aria-labelledby="life-fail-title" aria-describedby="life-fail-body" data-life="boot-failed" data-failure={failed}>
+          <div className={styles.failCard}>
+            <h2 id="life-fail-title" className={styles.failTitle}>{copy.failTitle}</h2>
+            <p id="life-fail-body">{copy[failureCopyKey(failed)]}</p>
+            <div className={styles.failActions}>
+              <Link className={`${styles.quiet} min-h-tap`} href={hubHref} data-life="boot-back">{copy.back}</Link>
+              <button type="button" ref={retryEl} className={`${styles.button} min-h-tap`} onClick={retryBoot} data-life="boot-retry">{copy.retry}</button>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   )
 }
 
 const doneObjective = (c: Chapter['objectives'][number]['done'], state: LifeState): boolean => meets(state, c)
 
-function Box({pack, state, copy, story}: {pack: LifePack; state: LifeState; copy: Copy; story: {lang?: string; dir?: 'ltr'}}) {
+function Box({pack, state, copy, story}: {pack: LifePack; state: LifeState; copy: Copy; story: {lang?: string; dir?: 'ltr' | 'rtl'}}) {
   const kept = state.keeps.flatMap(id => { for (const c of pack.chapters) { const k = c.keepsakes?.find(x => x.id === id); if (k) return [{...k, age: c.age}] } return [] })
   return (
     <section className={styles.box} aria-label={copy.box} data-life="box">

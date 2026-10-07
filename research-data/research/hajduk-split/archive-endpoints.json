@@ -1,0 +1,26 @@
+{
+ "hajduk-official:/eng/matches/archive/league": {
+  "endpoint": "/eng/matches/archive/league",
+  "providerId": "hajduk-official",
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-10-07T04:52:41.964Z"
+ },
+ "torcida:/wp-json/wp/v2/posts": {
+  "endpoint": "/wp-json/wp/v2/posts",
+  "providerId": "torcida",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:52:53.769Z"
+ },
+ "torcida:/wp-json/wp/v2/pages": {
+  "endpoint": "/wp-json/wp/v2/pages",
+  "providerId": "torcida",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-07T04:52:57.184Z"
+ }
+}

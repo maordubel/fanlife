@@ -17,7 +17,12 @@ for(const f of readdirSync(dir)){
  if(f.endsWith('.jsonl.gz'))s[n]=gunzipSync(readFileSync(`${dir}/${f}`)).toString('utf8').split('\n').filter(Boolean).map(l=>JSON.parse(l))
  else if(f.endsWith('.json')&&!['manifest','dry-run-report'].includes(n))s[n]=JSON.parse(readFileSync(`${dir}/${f}`,'utf8'))
 }
-const ids=JSON.parse(readFileSync('content/manual/player-ids.json','utf8')).records as {id:string}[]
-const report=dryRun(club,asOf,s,new Set(ids.map(r=>`pao:${r.id}`)))
+// Verified provider ids are PER CLUB and PER PROVIDER: content/manual/provider-ids/<club>.json → {records:[{provider,id}]}.
+// (This used to read Hapoel's player-ids.json and prefix every id with `pao:` — Hapoel ids are not Panathinaikos
+// provider ids, and a global prefix would have marked every other club's people as "verified".) No file = none verified.
+const idFile=`content/manual/provider-ids/${club}.json`
+const known=existsSync(idFile)?new Set((JSON.parse(readFileSync(idFile,'utf8')).records as {provider:string;id:string}[]).map(r=>`${r.provider}:${r.id}`)):new Set<string>()
+if(!known.size)console.error(`No verified provider ids for ${club} (${idFile}); identities stay leads.`)
+const report=dryRun(club,asOf,s,known)
 writeFileSync(`${dir}/dry-run-report.json`,JSON.stringify(report,null,1));writeFileSync(`${dir}/dry-run-report.md`,reportMarkdown(report))
 console.log(reportMarkdown(report))

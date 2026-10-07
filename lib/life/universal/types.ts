@@ -208,6 +208,8 @@ export type LifeReadiness = {state: 'READY' | 'PARTIAL' | 'LOCKED'; playable: bo
 
 export type LifePack = {
   schemaVersion: 1
+  storyEdition?: 2
+  storyLocale?: 'en' | 'he'
   /** changes whenever anything a save depends on changes */
   version: string
   clubId: string

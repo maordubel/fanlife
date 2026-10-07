@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 
 import { SITE_URL } from '@/lib/brand'
 import { GATES, isOpen } from '@/lib/gates'
+import { REGISTRY } from '@/lib/master/registry'
 
 /**
  * מפת האתר — every public gate, derived from `lib/gates.ts` so it can never drift from
@@ -45,5 +46,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/kits/auction`, lastModified: now },
     { url: `${SITE_URL}/credits`, lastModified: now },
     { url: `${SITE_URL}/away-days`, lastModified: now },
+    // FAN LIFE (7.10.2026): every club's own page and the sources page
+    ...REGISTRY.map((club) => ({ url: `${SITE_URL}/clubs/${club.id}`, lastModified: now })),
+    { url: `${SITE_URL}/sources`, lastModified: now },
   ]
 }

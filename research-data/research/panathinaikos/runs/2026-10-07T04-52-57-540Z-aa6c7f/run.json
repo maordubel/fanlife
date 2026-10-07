@@ -1,0 +1,57 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-10-07T04-52-57-540Z-aa6c7f",
+ "clubId": "panathinaikos",
+ "startedAt": "2026-10-07T04:52:57.540Z",
+ "finishedAt": "2026-10-07T04:53:23.091Z",
+ "providers": [
+  "paopedia",
+  "pao-official-history",
+  "rsssf-greece"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 9,
+  "documentsRead": 39,
+  "newDocuments": 39,
+  "changedDocuments": 0,
+  "unchangedDocuments": 0,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 0,
+  "budgetLeft": 3
+ },
+ "diagnostics": [
+  {
+   "code": "SOURCE_SCHEMA_CHANGED",
+   "providerId": "paopedia",
+   "url": "https://paopedia.gr/wp-json/wp/v2/posts?per_page=25&page=1&orderby=id&order=asc&_fields=id%2Clink%2Cslug%2Ctitle%2Ccontent%2Cdate_gmt%2Cmodified_gmt%2Ctype%2Cparent%2Ccategories",
+   "message": "Rows are not WordPress documents with id and link — nothing stored from this page."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "paopedia",
+   "url": null,
+   "message": "No tested parser for Paopedia yet (paopedia-history-v1 is planned): documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "pao-official-history",
+   "url": null,
+   "message": "No tested parser for Panathinaikos FC yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "rsssf-greece",
+   "url": null,
+   "message": "No tested parser for RSSSF yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

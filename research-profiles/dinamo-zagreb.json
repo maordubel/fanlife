@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "clubId": "dinamo-zagreb",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-06",
+  "desiredGates": [],
+  "priorityMatchIds": [],
+  "sources": [],
+  "notes": "Historical archive collection only (6.10.2026 plan): public sources, no paid data, no AI, nothing activated in the game. Documents stay needs-parser until a parser is written against stored fixtures.",
+  "archive": [
+    {
+      "providerId": "dinamo-official",
+      "familyId": "dinamo-institutional",
+      "publisher": "GNK Dinamo Zagreb",
+      "reader": "html",
+      "origin": "https://gnkdinamo.hr",
+      "role": "club-history",
+      "locale": "hr-HR",
+      "seeds": [
+        "/hr/klub/povijest",
+        "/en/club/history",
+        "/en/timeline/145"
+      ],
+      "allowedPathPrefixes": [
+        "/hr/klub/povijest",
+        "/en/club/history",
+        "/en/timeline/"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "The Croatian and English pages are one source family.",
+        "Founding 1911 and 1945 are separate claims with their own scope; never merged.",
+        "The ClubPulse API addresses in the site's HTML answered 403 and are not used."
+      ],
+      "follow": "^/en/timeline/[0-9]+$"
+    },
+    {
+      "providerId": "bad-blue-boys",
+      "familyId": "bbb-zagreb",
+      "publisher": "Bad Blue Boys",
+      "reader": "wordpress-rest",
+      "origin": "https://www.badblueboys.hr",
+      "role": "fan-culture",
+      "locale": "hr-HR",
+      "collections": [
+        "posts",
+        "pages"
+      ],
+      "allowedPathPrefixes": [
+        "/wp-json/wp/v2/"
+      ],
+      "parserId": "bbb-history-v1",
+      "budget": {
+        "perPage": 25,
+        "maxRequests": 10,
+        "minDelayMs": 3000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Fan-organisation history; not a results database."
+      ]
+    },
+    {
+      "providerId": "hns-semafor",
+      "familyId": "hns",
+      "publisher": "HNS Semafor",
+      "reader": "html",
+      "origin": "https://semafor.hns.family",
+      "role": "results",
+      "locale": "hr-HR",
+      "seeds": [
+        "/klubovi/609/gnk-dinamo/"
+      ],
+      "allowedPathPrefixes": [
+        "/klubovi/609/"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Possible official results source; historical range and extraction path not yet verified."
+      ]
+    }
+  ]
+}

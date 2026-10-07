@@ -1,0 +1,50 @@
+[
+ {
+  "id": "parser-hajduk-official",
+  "priority": "P1",
+  "task": "Write and test the hajduk-official parser against stored fixtures (season, person, match pages) before anything is extracted from HNK Hajduk Split.",
+  "taskHe": "לכתוב parser ל-HNK Hajduk Split מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "blocked-hajduk-official-/eng/matches/archive/league",
+  "priority": "P2",
+  "task": "HNK Hajduk Split: /eng/matches/archive/league answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "HNK Hajduk Split: /eng/matches/archive/league חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-hajduk-official-0",
+  "priority": "P3",
+  "task": "Direct access answered 403 in one sampling and some pages need rendering — check access before writing a parser; a 403 is recorded, never bypassed.",
+  "taskHe": "Direct access answered 403 in one sampling and some pages need rendering — check access before writing a parser; a 403 is recorded, never bypassed.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-torcida",
+  "priority": "P1",
+  "task": "Write and test the torcida-history-v1 against stored fixtures (season, person, match pages) before anything is extracted from Torcida Split.",
+  "taskHe": "לכתוב parser ל-Torcida Split מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "continue-torcida-posts",
+  "priority": "P3",
+  "task": "Torcida Split posts: 4 page(s) read of 27; the scheduled task continues from the checkpoint.",
+  "taskHe": "Torcida Split posts: נקראו 4 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-torcida-0",
+  "priority": "P3",
+  "task": "Fan-group history, not the club's match archive; results are never inferred from fan articles.",
+  "taskHe": "Fan-group history, not the club's match archive; results are never inferred from fan articles.",
+  "status": "noted",
+  "owner": null
+ }
+]

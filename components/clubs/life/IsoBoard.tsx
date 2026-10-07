@@ -26,7 +26,7 @@ const hexOf = (css: string): string => {
   return /^#[0-9a-f]{6}$/i.test(css.trim()) ? css.trim() : FALLBACK_CLUB
 }
 
-export type IsoProps = {places: Place[]; pick: string | null; onPick: (id: string) => void; night: boolean; clubId: string; label: string; trip: {stops: RoomId[]; ms: number} | null; unknown: string; story: {lang?: string; dir?: 'ltr'}}
+export type IsoProps = {places: Place[]; pick: string | null; onPick: (id: string) => void; night: boolean; clubId: string; label: string; trip: {stops: RoomId[]; ms: number} | null; unknown: string; story: {lang?: string; dir?: 'ltr' | 'rtl'}}
 
 export function IsoBoard({places, pick, onPick, night, clubId, label, trip, unknown, story}: IsoProps) {
   const uid = 'iso' + useId().replace(/:/g, '')

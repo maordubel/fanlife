@@ -1,0 +1,62 @@
+{
+ "millernton:posts": {
+  "schemaVersion": 1,
+  "providerId": "millernton",
+  "collection": "posts",
+  "queryFingerprint": "03f76ffd8ed8cde8",
+  "parserVersion": "millernton-stats-v1",
+  "nextPage": 4,
+  "lastCommittedPage": 3,
+  "observedTotalDocuments": 4392,
+  "observedTotalPages": 176,
+  "perPage": 25,
+  "state": "partial_budget",
+  "updatedAt": "2026-10-07T04:53:46.981Z",
+  "lastError": null
+ },
+ "millernton:pages": {
+  "schemaVersion": 1,
+  "providerId": "millernton",
+  "collection": "pages",
+  "queryFingerprint": "28478d6eedbc56a3",
+  "parserVersion": "millernton-stats-v1",
+  "nextPage": 2,
+  "lastCommittedPage": 1,
+  "observedTotalDocuments": 20,
+  "observedTotalPages": 1,
+  "perPage": 25,
+  "state": "listed",
+  "updatedAt": "2026-10-07T04:53:50.158Z",
+  "lastError": null
+ },
+ "fcstpauli-museum:posts": {
+  "schemaVersion": 1,
+  "providerId": "fcstpauli-museum",
+  "collection": "posts",
+  "queryFingerprint": "734a483e3736828c",
+  "parserVersion": "stpauli-museum-v1",
+  "nextPage": 3,
+  "lastCommittedPage": 2,
+  "observedTotalDocuments": 31,
+  "observedTotalPages": 2,
+  "perPage": 25,
+  "state": "listed",
+  "updatedAt": "2026-10-07T04:53:57.145Z",
+  "lastError": null
+ },
+ "fcstpauli-museum:pages": {
+  "schemaVersion": 1,
+  "providerId": "fcstpauli-museum",
+  "collection": "pages",
+  "queryFingerprint": "88ceaf2bc0029fe1",
+  "parserVersion": "stpauli-museum-v1",
+  "nextPage": 3,
+  "lastCommittedPage": 2,
+  "observedTotalDocuments": 29,
+  "observedTotalPages": 2,
+  "perPage": 25,
+  "state": "listed",
+  "updatedAt": "2026-10-07T04:54:03.175Z",
+  "lastError": null
+ }
+}

@@ -1,3 +1,4 @@
+import {GATE_THRESHOLDS} from './thresholds'
 import type {DatedCard} from '@/lib/game/timeline-run'
 import type {ClubTheme} from './theme'
 import type {MasterQuestion} from '@/lib/game/questions/types'
@@ -33,6 +34,7 @@ export type ClubData = {
 export type Diagnostic = {record:string;code:string;message:string}
 export const missingSections={rivals:null,competitions:null,seasons:null,players:null,matches:null,trophies:null,kits:null,goals:null,stadiums:null,places:null,culture:null} as const
 export function timelineReadiness(count:number):Readiness {
-  return {state:count>=11?'READY':count>=3?'PARTIAL':'LOCKED',playable:count>=3,eligible:count,target:11,
-    reasons:count>=11?[]:[`${Math.max(0,11-count)} more approved, distinct, exact-date events needed for a full ten-card run.`]}
+  const {target,minimum}=GATE_THRESHOLDS.timeline
+  return {state:count>=target?'READY':count>=minimum?'PARTIAL':'LOCKED',playable:count>=minimum,eligible:count,target,
+    reasons:count>=target?[]:[`${Math.max(0,target-count)} more approved, distinct, exact-date events needed for a full ten-card run.`]}
 }

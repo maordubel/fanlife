@@ -30,6 +30,6 @@ describe('manifest-driven club identity',()=>{
 })
 describe('UI language and content are separate',()=>{
  it('uses English by default, handles unsupported locales and derives direction from language',()=>{expect(uiLocale()).toBe('en');expect(uiLocale('el')).toBe('en');expect(uiLocale('he')).toBe(HEBREW_ENABLED?'he':'en');expect(localeDirection('he')).toBe('rtl');expect(localeDirection('el')).toBe('ltr');expect(themeStyle(get(),'he')['--font-frank' as keyof ReturnType<typeof themeStyle>]).toBe("'Frank Ruhl Libre'")})
- it('formats dates consistently in UTC',()=>{expect(localizedDate('2024-05-02','en')).toBe('05/02/2024');expect(localizedDate('2024-05-02','he')).toBe('02.05.2024');expect(localizedDate('unknown','en')).toBe('unknown')})
+ it('formats dates consistently in UTC',()=>{expect(localizedDate('2024-05-02','en')).toBe('2 May 2024');expect(localizedDate('2024-05-02','he')).toBe('02.05.2024');expect(localizedDate('unknown','en')).toBe('unknown')})
  it('keeps translated message keys complete',()=>expect(Object.keys(he).sort()).toEqual(Object.keys(en).sort()))
 })

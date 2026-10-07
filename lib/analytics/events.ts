@@ -109,6 +109,8 @@ export const METERED_ROUTES: readonly string[] = [
 export function meteredGate(pathname: string | null | undefined): string | null {
   if (!pathname) return null
   const path = pathname.split('?')[0]?.replace(/\/$/, '') || '/'
+  const club = CLUB_GATE.exec(path)
+  if (club) return `/clubs/${club[1]}/${club[2]}`
   let best: string | null = null
   for (const route of METERED_ROUTES) {
     if (path === route || path.startsWith(`${route}/`)) {
@@ -117,6 +119,14 @@ export function meteredGate(pathname: string | null | undefined): string | null 
   }
   return best
 }
+
+/**
+ * FAN LIFE's club gates (research 7.10.2026 §4.2): `/clubs/<club>/<gate>` is measured as itself, so
+ * the stats can tell Panathinaikos' trivia from Hapoel's. The club slug and gate key are the route's
+ * own segments — no name, no account. Fits the table's gate check (`^/[a-z0-9/-]{0,48}$`).
+ */
+export const CLUB_GATE_KEYS = ['xi', 'trivia', 'lineup', 'kit-builder', 'kits', 'memory', 'polls', 'goal', 'royal-rumble', 'blind-cow', 'derby', 'archive', 'timeline', 'life'] as const
+const CLUB_GATE = new RegExp(`^/clubs/([a-z0-9-]{1,24})/(${CLUB_GATE_KEYS.join('|')})(?:/|$)`)
 
 /** The stats page's order and names: gate number, then AWAY DAYS, then LIFE. */
 export function gateNumberOf(route: string): number | null {

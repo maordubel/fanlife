@@ -1,0 +1,68 @@
+[
+ {
+  "providerId": "paopedia",
+  "role": "mixed",
+  "listings": [
+   {
+    "collection": "posts",
+    "state": "schema-changed",
+    "pagesRead": 0,
+    "observedTotalDocuments": null,
+    "observedTotalPages": null,
+    "queue": null,
+    "lastError": "schema"
+   },
+   {
+    "collection": "pages",
+    "state": "listed",
+    "pagesRead": 2,
+    "observedTotalDocuments": 33,
+    "observedTotalPages": 2,
+    "queue": null,
+    "lastError": null
+   }
+  ],
+  "documents": 33,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ },
+ {
+  "providerId": "pao-official-history",
+  "role": "club-history",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "partial_budget",
+    "pagesRead": 0,
+    "observedTotalDocuments": 11,
+    "observedTotalPages": null,
+    "queue": 8,
+    "lastError": null
+   }
+  ],
+  "documents": 3,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ },
+ {
+  "providerId": "rsssf-greece",
+  "role": "results",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "partial_budget",
+    "pagesRead": 0,
+    "observedTotalDocuments": 5,
+    "observedTotalPages": null,
+    "queue": 2,
+    "lastError": null
+   }
+  ],
+  "documents": 3,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ }
+]

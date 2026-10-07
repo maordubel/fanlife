@@ -1,0 +1,37 @@
+{
+ "thecelticwiki:pages": {
+  "schemaVersion": 1,
+  "providerId": "thecelticwiki",
+  "collection": "pages",
+  "queryFingerprint": "e1cd92eb33c40a8e",
+  "parserVersion": "celticwiki-football-v1",
+  "nextPage": 7,
+  "lastCommittedPage": 6,
+  "observedTotalDocuments": 19298,
+  "observedTotalPages": 772,
+  "perPage": 25,
+  "state": "partial_budget",
+  "updatedAt": "2026-10-07T04:52:22.396Z",
+  "lastError": null
+ },
+ "celtic-official:html": {
+  "schemaVersion": 1,
+  "providerId": "celtic-official",
+  "collection": "html",
+  "queryFingerprint": "3b6997006386b30d",
+  "parserVersion": null,
+  "nextPage": 0,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": 2,
+  "observedTotalPages": null,
+  "perPage": 1,
+  "queue": [],
+  "seen": [
+   "/history/",
+   "/history/history-timeline/"
+  ],
+  "state": "listed",
+  "updatedAt": "2026-10-07T04:52:27.311Z",
+  "lastError": null
+ }
+}

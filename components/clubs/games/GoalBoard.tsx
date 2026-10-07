@@ -1,5 +1,6 @@
 'use client'
 import {useState,useTransition} from 'react'
+import {recordActivity} from '@/lib/clubs/activity'
 import {gradeClubGoal,clubGoalCount} from '@/app/clubs/[slug]/[gate]/gate-actions'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
@@ -33,7 +34,7 @@ export function GoalBoard({items,club,version,seed,locale,contentLocale}:{items:
  const [res,setRes]=useState<Verdict|null>(null),[count,setCount]=useState<number|null>(null),[err,setErr]=useState(false),[pending,start]=useTransition()
  const g=items[n%items.length]!,ready=actor!==null&&action!==null&&touches.length<MAX&&!res
  const place=(zone:string)=>{if(!ready)return;setTouches(t=>[...t,{actor:actor!,action:action!,zone}]);setActor(null);setAction(null)}
- const whistle=()=>start(async()=>{const r=await gradeClubGoal(club,version,g.id,seed,touches);setErr(!r);setRes(r)})
+ const whistle=()=>start(async()=>{const r=await gradeClubGoal(club,version,g.id,seed,touches);setErr(!r);setRes(r);if(r)recordActivity(club,'goal',`goal:${version}:${seed}:${n}:${g.id}`)})
  const hint=()=>start(async()=>setCount(await clubGoalCount(club,version,g.id)))
  const next=()=>{setN(n+1);setTouches([]);setActor(null);setAction(null);setRes(null);setCount(null);setErr(false)}
  const act=(a:string)=>copy[`act.${a}` as 'act.pass']||a

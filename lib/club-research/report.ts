@@ -1,9 +1,17 @@
 import {createHash} from 'node:crypto'
+import {canonicalJson,canonicalSet} from '@/lib/research/canonical'
 import {timelineReadiness} from '@/lib/clubs/contract'
 import {seasonStart,dateFitsSeason,groupGoals,homeAwayFor,identityReport,independentEnough,isFuture,isNeutralFinal,lineupVerdict,separateResult,sourceFamilies,type Rec} from './rules'
 export type Staging=Record<string,Rec[]>
 const approvedCount=(s:Staging)=>Object.entries(s).reduce((n,[k,rows])=>k==='claims'||k==='evidence'?n:n+rows.filter(r=>r.status==='approved'||r.approvedBy).length,0)
-const hash=(rows:Rec[])=>createHash('sha256').update(rows.map(r=>r.id).sort().join('\n')).digest('hex').slice(0,16)
+/** bump when the fields a fingerprint covers change meaning */
+export const FINGERPRINT_VERSION='dryrun-fp-2'
+/**
+ * A record set's fingerprint covers its CONTENT, not its ids (audit F16): canonical JSON of every record (sorted keys),
+ * order-insensitive across the set, with the fingerprint version and the set's name. A corrected date or score under
+ * the same id changes it; reordering rows does not.
+ */
+export const hash=(rows:Rec[],kind='')=>createHash('sha256').update(`${canonicalJson({v:FINGERPRINT_VERSION,kind})}\n${canonicalSet(rows)}`).digest('hex').slice(0,16)
 /** Dry run: counts what an import WOULD do and what it refuses. Writes nothing. */
 export function dryRun(club:string,asOf:string,s:Staging,known=new Set<string>()){
  const sources=new Map((s.sources||[]).map(r=>[r.id,r])),matches=s.matches||[],quarantined=s.quarantined||[]
@@ -29,7 +37,7 @@ export function dryRun(club:string,asOf:string,s:Staging,known=new Set<string>()
   goals,conflicts:(s.conflicts||[]).map(c=>({id:c.id,matchId:c.matchId,topic:c.topic,status:c.status,rule:c.productRule||c.blockedUses})),
   honoursWithTwoFamilies:dualFamily,seasonTokenIssues,sensitiveClaims:sensitive,
   gates:{timeline:timelineReadiness(exactDayEvents).state,trivia:'LOCKED',xi:'LOCKED',lineup:'LOCKED',archive:'LOCKED',memory:'LOCKED',goal:'LOCKED',note:'review material is never playable; gates unlock only from approved, sourced, conflict-free facts'},
-  fingerprints:Object.fromEntries(Object.entries(s).map(([k,v])=>[k,hash(v)]))}
+  fingerprints:Object.fromEntries(Object.entries(s).map(([k,v])=>[k,hash(v,k)]))}
 }
 export type DryRun=ReturnType<typeof dryRun>
 export const reportMarkdown=(r:DryRun)=>`# Dry run — ${r.club} (as of ${r.snapshotAsOf})

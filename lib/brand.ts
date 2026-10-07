@@ -29,11 +29,12 @@ export const BRAND = {
  *
  * Every story, every WhatsApp message and every copied link carries this, because a
  * share that does not name where it came from is a share that recruits nobody. Set
- * `NEXT_PUBLIC_SITE_URL` on the deployment; the fallback is the production host,
- * theworker.dubelteam.com.
+ * `NEXT_PUBLIC_SITE_URL` on the deployment; without it a production build uses the official
+ * address, https://fanlife.dubelteam.com (owner, 7.10.2026), and a dev server uses localhost —
+ * so a canonical link, the sitemap and a share card never point at localhost in production.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+  process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.NODE_ENV === 'production' ? 'https://fanlife.dubelteam.com' : 'http://localhost:3000')
 ).replace(/\/$/, '')
 
 /** The line printed along the foot of every share card, under the badge. */

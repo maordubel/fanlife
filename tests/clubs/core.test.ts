@@ -28,6 +28,6 @@ describe('pack validation',()=>{
  it('rejects invalid grading indices but accepts timeout misses',()=>{const g=clubTimeline(compile().data);for(const p of [-1,NaN,1.5,Infinity,2])expect(g.gradeInsert(1,p,0)).toBeNull();expect(g.gradeInsert(NaN,0,0)).toBeNull();expect(g.gradeInsert(1,0,3)).toBeNull();expect(g.gradeInsert(1,0,-1)?.correct).toBe(false)})
 })
 describe('tenant resolution',()=>{
- it('host wins over path selection',()=>{expect(resolveClubId('olympiacos.fanlife.game','zrinjski-mostar',true)).toBeNull();expect(resolveClubId('olympiacos.fanlife.game','olympiacos',true)).toBe('olympiacos');expect(resolveClubId('olympiacos.fanlife.game')).toBe('olympiacos')})
- it('unknown subdomains stay neutral; path previews need evaluation',()=>{expect(resolveClubId('unknown.fanlife.game','hapoel-tel-aviv',true)).toBeNull();expect(resolveClubId('localhost:3000','olympiacos',false)).toBeNull();expect(resolveClubId('localhost:3000','olympiacos',true)).toBe('olympiacos')})
+ it('host wins over path selection',()=>{expect(resolveClubId('olympiacos.fanlife.dubelteam.com','zrinjski-mostar',true)).toBeNull();expect(resolveClubId('olympiacos.fanlife.dubelteam.com','olympiacos',true)).toBe('olympiacos');expect(resolveClubId('olympiacos.fanlife.dubelteam.com')).toBe('olympiacos')})
+ it('unknown subdomains stay neutral; path previews need evaluation',()=>{expect(resolveClubId('unknown.fanlife.dubelteam.com','hapoel-tel-aviv',true)).toBeNull();expect(resolveClubId('localhost:3000','olympiacos',false)).toBeNull();expect(resolveClubId('localhost:3000','olympiacos',true)).toBe('olympiacos')})
 })

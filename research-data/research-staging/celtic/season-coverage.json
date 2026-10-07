@@ -1,0 +1,40 @@
+[
+ {
+  "providerId": "thecelticwiki",
+  "role": "mixed",
+  "listings": [
+   {
+    "collection": "pages",
+    "state": "partial_budget",
+    "pagesRead": 6,
+    "observedTotalDocuments": 19298,
+    "observedTotalPages": 772,
+    "queue": null,
+    "lastError": null
+   }
+  ],
+  "documents": 150,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ },
+ {
+  "providerId": "celtic-official",
+  "role": "club-history",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "listed",
+    "pagesRead": 0,
+    "observedTotalDocuments": 2,
+    "observedTotalPages": null,
+    "queue": 0,
+    "lastError": null
+   }
+  ],
+  "documents": 2,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ }
+]

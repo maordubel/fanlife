@@ -1,7 +1,7 @@
 {
   "title": "LIFE",
   "tagline": "One supporter. One club. A whole life.",
-  "metaTitle": "LIFE · FAN LIFE",
+  "metaTitle": "LIFE",
   "begin": "Begin a life",
   "continue": "Continue",
   "startOver": "Start a new life",
@@ -64,7 +64,7 @@
   "archiveYear": "The club's own book",
   "sources": "Sources",
   "readiness": "About this life",
-  "readinessPartial": "Evaluation build",
+  "readinessPartial": "Early access",
   "provenance": "Composed from universal chapters and this club's approved archive rows. Nothing about history is added beyond what the archive records.",
   "fiction": "The family and the street are fiction. No real person speaks.",
   "nights": "nights from the archive",
@@ -72,7 +72,10 @@
   "loading": "Opening the room",
   "loadFailed": "The room did not open. Check the connection and try again.",
   "retry": "Try again",
-  "noWebgl": "This device cannot draw the room. LIFE needs WebGL.",
+  "noWebgl": "This device's browser could not start the 3D room.",
+  "roomFailed": "The room could not be built on this device. Try again, or go back.",
+  "failTitle": "The room did not open",
+  "back": "Back",
   "keys.move": "Move",
   "keys.act": "Act · continue",
   "keys.run": "Run",
@@ -109,7 +112,7 @@
   "hubNote": "A playable life in a voxel world, dressed in this club's colours and standing only on approved archive rows.",
   "hubPlay": "Enter LIFE",
   "hubChapters": "chapters",
-  "hubLegacy": "The hand-authored original",
+  "hubLegacy": "The hand-authored original (in Hebrew)",
   "map": "Map",
   "map.title": "The town",
   "map.explored": "Seen",
@@ -175,5 +178,8 @@
   "look.high": "Smooth",
   "look.lite": "Light",
   "look.blocks": "Blocks",
-  "lookNote": "Smooth is the best looking. Light is for weaker phones. Blocks is the lightest."
+  "lookNote": "Smooth is the best looking. Light is for weaker phones. Blocks is the lightest.",
+  "editionNav": "Story edition",
+  "editionOriginal": "Original story",
+  "editionTwo": "Story 2 · paths and promises"
 }

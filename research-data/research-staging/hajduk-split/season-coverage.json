@@ -1,0 +1,49 @@
+[
+ {
+  "providerId": "hajduk-official",
+  "role": "results",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "blocked",
+    "pagesRead": 0,
+    "observedTotalDocuments": 5,
+    "observedTotalPages": null,
+    "queue": 4,
+    "lastError": "HTTP 403 — a refusal is an answer"
+   }
+  ],
+  "documents": 0,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ },
+ {
+  "providerId": "torcida",
+  "role": "fan-culture",
+  "listings": [
+   {
+    "collection": "posts",
+    "state": "partial_budget",
+    "pagesRead": 4,
+    "observedTotalDocuments": 657,
+    "observedTotalPages": 27,
+    "queue": null,
+    "lastError": null
+   },
+   {
+    "collection": "pages",
+    "state": "listed",
+    "pagesRead": 1,
+    "observedTotalDocuments": 17,
+    "observedTotalPages": 1,
+    "queue": null,
+    "lastError": null
+   }
+  ],
+  "documents": 117,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ }
+]

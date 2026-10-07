@@ -2824,3 +2824,137 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
 6. **הקרדיט של Dubel Team בפוטר נשאר** (Shell נושא אותו — לא מסירים).
 7. **נתון חי = מתאם אחד.** משחק הבא מגיע מ-`lib/fixtures/provider.ts` בלבד; אין ניחוש: שם מדויק + מדינה, עמימות = אין משחק,
    וקבוצה בלי משחק מאושר יושבת מחוץ לרוטציה. `/api/fixtures` מציג אבחון לכל קבוצה — פותחים אותו אחרי כל פריסה.
+
+## 92 · חדר הבקרה: שלוש שכבות, מדיניות גישה אחת, מנוע מחקר בלי AI, ותצוגת LIFE (6.10.2026)
+
+מסמכים: `docs/fanlife/37-control-room-v2.md` · ממצאי הביקורת A01–A18 · תוכנית מנוע המחקר.
+1. **שלוש שכבות, לעולם לא מתערבבות:** מחקר (מקורות/ממצאים/הכרעות) · נתוני חבילה (מוכנות לפי הקומפיילר) ·
+   פרסום (סטטוס, שערים דולקים). `lib/master/summary.ts → clubSummary` הוא מודל הקריאה היחיד; לוח הפערים,
+   כרטיס המועדון והפעלה קוראים ממנו. "פתוח עכשיו" ≠ "יש נתונים".
+2. **מדיניות גישה אחת:** `lib/clubs/access.ts → gateAccess` — הבית, עמוד המועדון, ציר הזמן, בקשת משחק
+   וחדר הבקרה. אין `status==='live'` מפוזר.
+3. **ספים במקום אחד:** `lib/clubs/thresholds.ts → GATE_THRESHOLDS` (target/minimum). gate-data, gate-content,
+   goal, resolver, contract ומתכנן המחקר קוראים ממנו.
+4. **הכרעה = שורה עם מזהה יציב** (`findingId` = sha256), `approved|rejected|deferred`, סיבה חובה לדחייה/דחייה
+   נדחית, ויומן עם before/after/actor. מקור שתוכנו השתנה נחנה ב-`incoming` עד שמאשרים — לא נדרס.
+   **אף אחד לא מאשר בשם הבעלים**: רק מאור, במילים שלו.
+5. **מנוע המחקר (`lib/research/*`) בלי AI ובלי OCR:** מתכנן דטרמיניסטי → משימות עם lease → fetcher מנומס
+   (robots.txt, קצב לכל host, ETag/Last-Modified, 403/451 = תשובה, לא עוקפים — כלל 11) → snapshot לפי sha256.
+   **אין parser בלי fixture**: דף בלי parser נשמר כ-`needs-adapter` ונקרא אחר כך בלי בקשה חדשה. פרופיל מקורות =
+   `research-profiles/<club>.json`. ה-cron מריץ עד 3 דפים לכל מועדון; כפתור "Fetch a small batch" בלשונית Data.
+6. **תצוגת LIFE גרה ב-`/master/admin?tab=display`**: טיוטה/פרסום/חזרה/איפוס בשרת (`.fan-life/control.json`,
+   `lib/master/lifeDisplay.ts`, ולידציה קשיחה — מפתח לא מוכר נדחה בשמו). השחקנים מקבלים רק את ה-live
+   מ-`/life/voxel/display.json` (ריק עד הפרסום הראשון), והבחירה המקומית של השחקן גוברת לכל מפתח.
+   התצוגה המקדימה (`display-preview.html`) לא שומרת לעולם. `display-admin.*` הם מצבות (כלל 26).
+
+## 93 · ארכיונים היסטוריים חינמיים — אספן, טייס אוטומטי, ועצירה בהחלטה של אדם (6.10.2026)
+
+מסמך: `FANLIFE-FREE-HISTORICAL-ARCHIVES-8-CLUBS-IMPLEMENTATION-HE-2026-10-06` · מפה: `docs/fanlife/38-historical-archives.md`.
+1. **Reader ≠ Parser.** `lib/research/archive.ts` קורא רשימות WordPress REST (`posts`/`pages`, pagination, `X-WP-Total`)
+   ודפי HTML מאינדקסים מאושרים בלבד (`seeds` + `follow`). מסמך אינו היסטוריה: עד שיש parser עם fixtures
+   (`ARCHIVE_PARSERS` ריק) כל מסמך הוא `needs-parser` ו-`recordsExtracted` הוא 0.
+2. **מפתח מסמך = `provider:collection:id`** — `posts:7` ו-`pages:7` הם שניים. תאריך פרסום ≠ תאריך אירוע (`publishedAsReported`).
+3. **checkpoint אחרי שמירה; ריצה נגמרת `partial_budget` או `listed` — לעולם לא "complete"**; 403/login HTML/סכימה
+   אחרת = פער בשם (`SOURCE_BLOCKED`/`SOURCE_NOT_JSON`/`SOURCE_SCHEMA_CHANGED`), לא רשימה ריקה, ולא עוקפים (כלל 11).
+   מי חסם (המקור או הרשת של השרת) נרשם כלא ידוע עד שנבדק מרשת אחרת.
+4. **פרופיל = קונפיגורציה:** `research-profiles/<club>.json` (`archive`) + עותק של חדר הבקרה (`<data>/research/<club>/profile.json`)
+   שגובר לפי providerId. מקור חדש עובר `validateArchiveSource` (שגיאה בשם השדה). ClubPulse לא מוגדר כמקור.
+5. **staging של האספן** נכתב ל-`<data>/research-staging/<club>/` (קטלוג + backlog, `approvedForProduction:0`, matches ריק),
+   וה-package adapter קורא אותו יחד עם החבילה בריפו. `research:stage` כבר לא מוסיף `pao:` לזהויות — מזהים מאומתים
+   לפי מועדון וספק ב-`content/manual/provider-ids/<club>.json`.
+6. **טייס אוטומטי** (`lib/master/automation.ts`, ה-cron): איסוף → staging → הבאה לתיק המועדון כשורות לא נבדקות →
+   דפי משחק מתוכננים → עיבוד. **עוצר בביקורת**: לא מאשר, לא בונה pack, לא מפרסם. "Open all playable gates" הוא
+   לחיצה של הבעלים, ועוברת את בדיקת ההפעלה.
+7. סלטיק, פרטיזן ואוניון ברלין ב-registry בסטטוס research בלבד.
+8. **(6.10.2026, ערב) איפה זה רץ ואיפה זה נשמר.** נתוני המחקר יושבים ב-`research-data/` בריפו (`lib/research/paths.ts`;
+   `RESEARCH_DATA_DIR`/`FAN_LIFE_DATA_DIR` דורסים). האיסוף האמיתי רץ ב-GitHub — **Actions → Archive collect** (כל יום ג׳
+   ובלחיצה), ומקומט רק את `research-data/`; ארגז החול של הבנייה לא מגיע לאף מקור. שרת לקריאה בלבד מחזיר 503 עם ההוראה
+   הזאת (`READ_ONLY_HINT`), ו-`outputFileTracingIncludes` שולח את התיקייה עם מסלולי האדמין.
+9. **ה-parser הראשון: `aekpedia-football-v1`.** מסווג לפי הקטגוריות של האתר עצמו (players / coaches / seasons, נקראות
+   מ-`/categories` לפי slug), ומחלץ רק שם כפי שנכתב + הטווח שבשורת הפתיחה ("(1976/77)") או תווית עונה — כמועמדים
+   (`identityState: 'unresolved'`). ה-fixture הוא שחזור מינימלי של המבנה שנצפה (עובדות בלבד, בלי פרוזה — הריפו ציבורי).
+   מועמדים יוצאים ל-`archive-players.json` של ה-staging, וה-package adapter מדווח עליהם בשורת REPORT — לא כממצא.
+
+## 94 · מה שהאוהד רואה ומה שהאדמין רואה (ביקורת עמודים, 7.10.2026)
+
+1. **עמודי האוהד לא מציגים מנגנון:** אין ספירות מוכנות, דרישות שער, "evidence", גרסת חבילה, מדיניות צבע או שפת תוכן
+   בעמוד מועדון/שער/ציר זמן. כל אלה בחדר הבקרה (`/master/admin`, `/master/core`) — הקישור אליו רק בפוטר.
+2. **ריק לא מוצג:** אין משחק קרוב → אין מקטע; אין LIFE → אין פס "בסדנה" בכרטיס. שער סגור = שורה אפורה "In preparation".
+3. **FAN LIFE באנגלית לא מקשר לעמודי ה-Worker העבריים** (`/ground`, `/credits`, `EXTRAS`). LIFE של הפועל נכנס דרך החבילה
+   האנגלית; המקור העברי הוא קישור אחד בתוכה, מסומן "(in Hebrew)". המקורות והקרדיטים של המגזין: `/sources`.
+4. **תוכן הארכיון של הפועל ת"א / פ"ת נשאר בשפת המקור** (מסומן `lang`/`dir="auto"`). תרגום/תעתיק של אלפי רשומות הוא
+   החלטת בעלים ופרויקט נתונים, לא תיקון UI. תוויות קטגוריה (למשל קלפי הזיכרון) מתורגמות — הן לא עובדות.
+5. תאריך באנגלית: `2 May 2024` (`localizedDate`), לא 05/02.
+
+## 95 · צבע ב-HUB, צבע אסור בעמוד מועדון, ותמונות דפוס צבועות (7.10.2026)
+
+1. **מאור:** *"החוק איסור צהוב לא חל יותר, זה HUB. כל הצבעים מותרים. למעט צבעים שהם צבעי יריבה בעמודי הקבוצה."*
+   ב-FAN LIFE האיסור הוא **לפי מועדון**: בעמוד של הפועל ת"א אסור צהוב (מכבי ת"א), בעמוד של מכבי ת"א אסור אדום;
+   באולימפיאקוס אסור ירוק (פנאתינאיקוס), בפנאתינאיקוס אסור אדום. המקור: `colorPolicy.rivalIdentityColors`
+   ב-`club-packs/<club>/identity.json` ו-`data-rival-no` על ה-Shell. כלל 8 נשאר כפי שהוא ל-The Worker (מוצר הפועל).
+   השומרים הקיימים (סריקת צהוב גלובלית) מחמירים מהכלל הזה — מותר לשמור אותם, אסור לסמוך עליהם כהגדרה.
+2. **עמוד המועדון הוא הבית של האוהד** (`app/clubs/[slug]/page.tsx`): דגל בדוגמת החולצה, הבועט, "Welcome home",
+   החולצה על הקולב בצבעי המועדון, היציע עם הצעיף, וכרטיס עונה של הפעילות במכשיר. שורות מודגשות לובשות את צבע המועדון.
+3. **אלמנטים גרפיים = `components/master/Dye.tsx`.** הדף של מאור (7.10.2026) נחתך ב-`scripts/brand/magazine-elements.py`
+   לאפור עם שקיפות (`public/brand/magazine/elements/`), ונצבע בדף בצבע המועדון (mask + multiply; `soft` = luminosity
+   לחולצה). קובץ אחד לכל המועדונים, ואף פעם לא בצבע יריבה — הצבע הוא `--club-primary` או דיו של המגזין.
+4. **הלוגו של FAN LIFE** (חותם עגול, "FOOTBALL. FOREVER.", 7.10.2026) — `scripts/brand/fanlife-logo.py` → `public/brand/fanlife/`.
+   בכותרת ובפוטר של כל עמוד, חותמת על השער בעמוד הבית, אייקון הלשונית (`mark-*`: רק הכדור והטבעת), אייקון האפליקציה וכרטיס
+   השיתוף (`og.png`). **בעמוד של מועדון הלוגו מודפס באפור** (`logo-mono.webp`) — האדום/ירוק/כחול שלו יכולים להיות צבע יריבה.
+   ה-metadata וה-manifest תלויים ב-host: על ה-host של הפועל נשארים The Worker והבאדג' שלו.
+5. **שפת הפוסטר** (מהפוסטר של מאור): חותם עגול למועדון (`Seal`), גושי צבע קרועים (`TornBlocks`), דמות ברסטר עם שוליים
+   של נייר (`Cutout`), קווי מגרש מקווקווים — `components/master/Poster.tsx`. הדמויות מהפוסטר (`shirt-swap`) הן גרפיקה של
+   מאור, לא שחקנים אמיתיים, באישורו המפורש.
+6. **הכתובת הרשמית: https://fanlife.dubelteam.com** (מאור, 7.10.2026). `SITE_URL` (ב-production בלי משתנה סביבה),
+   `PORTAL_HOST_ROOT` (מועדון = `<sub>.fanlife.dubelteam.com`), ה-sitemap (עמודי המועדונים ו-`/sources`) וה-User-Agent של המחקר.
+
+## 96 · שלמות חדר הבקרה (ביקורת הבעלים, 7.10.2026)
+
+1. **מחקר לא נוגע בפרסום** (F05): `runResearch` לא משנה `status`/`gates`; למחקר שדה משלו (`club.research`).
+2. **ממצאים = upsert לפי מזהה עם שושלת** (F06, `lib/master/researchMerge.ts`): ממצאים ממתינים מכל מתאם נשמרים;
+   מה שהמתאם הפסיק להפיק מסומן `superseded` עם סיבה ולא נמחק; הכרעה לא נפתחת מחדש. "ממתין" = `isPending`.
+3. **תצפית קשורה לגרסת מסמך** (F07): גרסה חדשה מחליפה את הסט הפעיל של המסמך; מה שלא מופק עוד — `retired` עם סיבה.
+4. **מקור ציבורי בלבד** (F10, `lib/research/netguard.ts`): אין loopback/פרטי/link-local/metadata/ULA/שם מקומי —
+   גם בפרופיל וגם אחרי DNS ב-`politeFetch`. בבדיקות DNS תמיד מדומה.
+5. **טביעת אצבע = JSON קנוני של התוכן** (F16, `lib/research/canonical.ts`), כולל seeds וגרסת parser.
+6. **כפתור שמכניס משימה מריץ את המשימה שלו** (F15): `research/run` מקבל `id`.
+7. **שלוש עובדות נפרדות** (F20, `lib/master/layers.ts`): נתונים מוכנים · שערים שנבחרו · פורסם. שלב "בוצע" רק כשלא נשאר
+   כלום; יקום לא ידוע = "total unknown", אף פעם לא אחוז.
+8. **קבצים שהשרת קורא ב-fs בונים** (F14): `scripts/master/`, `supabase/`, `research-*` ב-`RUNTIME_READ`.
+   מפתחות `outputFileTracingIncludes` הם picomatch — סוגריים של catch-all מוברחים (F03).
+
+## 97 · מפתח הבעלים: תצוגה מקדימה לאוהדים ≠ חדר בקרה (ביקורת 7.10.2026, F01/F19/F13)
+
+1. **מצב הערכה (`NEXT_PUBLIC_FAN_LIFE_EVALUATION`) פותח את השערים לאוהדים — ולעולם לא את האדמין.** כל עמוד אדמין
+   (`/master/admin`, `/master/core`, `/master/test-lab`, `/kits/admin`, `/qa/stats`) קורא ל-`requireAdmin(path)` מ-`lib/master/admin.ts`,
+   וכל פעולה ב-`/api/master/*` עוברת `adminFromRequest` (401 JSON). `cron` מקבל גם את `CRON_SECRET` — ה-workflow המתוזמן לא משתנה.
+2. **`FAN_LIFE_ADMIN_KEY`** (≥16 תווים) → `/master/login`, השוואה ב-`timingSafeEqual`, עוגייה httpOnly/SameSite=Lax/Secure בפרודקשן
+   עם טוקן HMAC (סוד נגזר מהמפתח, iat + 30 יום). בלי מפתח: פיתוח מקומי פתוח, **פרודקשן סגור**. החלפת מפתח מנתקת את כולם.
+3. **`worker_admin` רק לבקשה מאומתת** (`operate(op,id,{admin})`); הענקה ישנה של "Open local evaluation" נלקחת בבקשה הבאה.
+4. **F19 — היומן:** `actor`+`role` (`owner` רק מעוגייה מאומתת; בלי שם = `system`). מעבר ל-`AUDIT_KEEP` (5,000) הרשומות **עוברות**
+   ל-`<data>/audit-archive/<YYYY-MM>.jsonl` — לא נחתכות. קריאה: `GET /api/master/audit/archive[?month=]`.
+5. **F13 — LIFE:** `components/clubs/life/boot.ts` — בדיקת WebGL לפני טעינת החדר, `play.js` שולח `fan-life:voxel` לחלון האב,
+   וכשל רנדרר אף פעם לא מוצג כ-timeout רשת. מסך השגיאה הוא `alertdialog` ב-`z-[70]`, מעל כרטיס הפרק, עם Back ו-Try again.
+
+## 98 · The hub's second issue: every club on the roll, photos, "I was there", euros (7.10.2026)
+
+1. **Next up lists every club.** `lib/fixtures/teams.ts` has a row for every registry club (exact names + country, rule 7); a club with no confirmed match shows a "To be confirmed" card — never an invented date.
+2. **Colours on the hub are the clubs' own, yellow included** (AEK, Dortmund). Light colours travel with their reading ink: `livery().on/type` → `wearLivery()` sets `--club-on-primary`, `--club-type` (club colour as type on paper, ink when it would not read) and `--dye-shade`. Rival bans on club pages (rule 95) are unchanged.
+3. **The owner's press-photo stickers** (`public/brand/magazine/photos/`, cut by `scripts/brand/magazine-photos.py`, sepia capped so no decoded pixel is yellow) are drawn by `PressPhoto` (components/master/Poster.tsx). Home: editor's letter as a side column, swap band, "Were you there?", "Your corner", "A supporter's life". The home page has no table of contents, gates list or archive block — those live on the club pages.
+4. **A club's games are match tickets** (`.mag-ticket`): stub in the club's livery, gate number, ADMIT ONE.
+5. **"I was there"** (`lib/fanlife/been.ts`, `components/fanlife/BeenThere.tsx`): a stamp on archive entries and meetings, stored on the device (`fanlife.been.v1`, tombstones on un-mark, later `at` wins); shown in Me → My story, the clubs standing and My file.
+6. **FAN LIFE prices in euros**: the forks default to and offer EUR only (`CURRENCY_SUBS` in scripts/fanlife/fork-economy.py); a row that already carries a currency keeps it.
+7. **Every gate page carries the FAN LIFE mark** (mono on club pages) in its nav; page titles never repeat "· FAN LIFE" (the layout template adds it).
+
+## 99 · The Editor's Desk — the control room has its own frame (7.10.2026)
+
+Plan: owner's FAN-LIFE-ADMIN-CONTROL-ROOM-PLAN (7.10.2026).
+1. **`/master/admin` is wrapped in `components/master/desk/AdminShell.tsx`, not `Shell`** — a scoped exception to rule 91:
+   no public masthead, stop-press or tab bar on an admin screen. Styles live under `.desk` in `app/desk.css` only.
+2. **Six sections, one context in the URL:** `?section=overview|clubs|data|audience|operations|settings&club=&view=`.
+   Old `?tab=` links map on the server (`LEGACY` in the page) — never break a bookmark.
+3. **The overview is `lib/master/attention.ts`:** deterministic rules over the same summaries the detail screens read.
+   A new rule names its club, its reason and the one screen that resolves it.
+4. **Honest states:** "Not connected", "Unavailable", "No records" and zero are different; an unconnected store is never zero.
+5. **Schedules are read from the workflows** (`lib/master/schedules.ts`, guarded by `tests/master/schedules.test.ts`);
+   the archive runner pins the control room's profiles via `GET /api/master/research/profiles-export` (CRON_SECRET).

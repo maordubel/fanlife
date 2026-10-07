@@ -1,0 +1,254 @@
+[
+ {
+  "id": "obs:aekpedia:posts:28:player",
+  "role": "player",
+  "nameAsReported": "Ντέμης Νικολαΐδης",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:28",
+  "sourceUrl": "https://www.aekpedia.com/demis-nikolaidis/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:43:coach",
+  "role": "coach",
+  "nameAsReported": "Μπράνκο Στάνκοβιτς",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:43",
+  "sourceUrl": "https://www.aekpedia.com/branko-stankovic/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:53:coach",
+  "role": "coach",
+  "nameAsReported": "Ντούσαν Μπάγεβιτς",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:53",
+  "sourceUrl": "https://www.aekpedia.com/vatraxos/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:82:coach",
+  "role": "coach",
+  "nameAsReported": "Νίκος Αλέφαντος",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:82",
+  "sourceUrl": "https://www.aekpedia.com/nikos-alefantos/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:85:coach",
+  "role": "coach",
+  "nameAsReported": "Θεμιστοκλής Ασδέρης",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:85",
+  "sourceUrl": "https://www.aekpedia.com/themos-asderis/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:97:coach",
+  "role": "coach",
+  "nameAsReported": "Έγκεν Γκέραρντ",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:97",
+  "sourceUrl": "https://www.aekpedia.com/eugene-gerards/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:100:player",
+  "role": "player",
+  "nameAsReported": "Ηλίας Ατματσίδης",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:100",
+  "sourceUrl": "https://www.aekpedia.com/ilias-atmatsidis/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:104:player",
+  "role": "player",
+  "nameAsReported": "Μιχάλης Κασάπης",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:104",
+  "sourceUrl": "https://www.aekpedia.com/michalis-kasapis/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:148:player",
+  "role": "player",
+  "nameAsReported": "Τραϊανός Δέλλας",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:148",
+  "sourceUrl": "https://www.aekpedia.com/traianos-dellas/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:154:player",
+  "role": "player",
+  "nameAsReported": "Λάκης Αβραμίδης",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:154",
+  "sourceUrl": "https://www.aekpedia.com/lakis-avramidis/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:661:player",
+  "role": "player",
+  "nameAsReported": "Γιώργος Αγγελής",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:661",
+  "sourceUrl": "https://www.aekpedia.com/giorgos-angelis/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:664:player",
+  "role": "player",
+  "nameAsReported": "Ζοζέφ Αγκιριμπά",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:664",
+  "sourceUrl": "https://www.aekpedia.com/joseph-agyriba/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:667:player",
+  "role": "player",
+  "nameAsReported": "Γιώργος Αγορογιάννης",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:667",
+  "sourceUrl": "https://www.aekpedia.com/giorgos-agorogiannis/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:670:player",
+  "role": "player",
+  "nameAsReported": "Φεντερίκο Αζκάρατε",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:670",
+  "sourceUrl": "https://www.aekpedia.com/federico-azcarate/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:673:player",
+  "role": "player",
+  "nameAsReported": "Μπάμπης Ακριβόπουλος",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:673",
+  "sourceUrl": "https://www.aekpedia.com/babis-akrivopoulos/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:676:player",
+  "role": "player",
+  "nameAsReported": "Μπρούνο Άλβες",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:676",
+  "sourceUrl": "https://www.aekpedia.com/bruno-alves/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:679:player",
+  "role": "player",
+  "nameAsReported": "Ζεράλντο Άλβες",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:679",
+  "sourceUrl": "https://www.aekpedia.com/geraldo-alves/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:aekpedia:posts:682:player",
+  "role": "player",
+  "nameAsReported": "Αλέκος Αλεξανδρής",
+  "seasonsAsReported": null,
+  "providerRecordKey": "aekpedia:posts:682",
+  "sourceUrl": "https://www.aekpedia.com/alekos-alexandris/",
+  "sourceIds": [
+   "collector-aekpedia-posts"
+  ],
+  "parserVersion": "aekpedia-football-v1",
+  "identityState": "unresolved",
+  "status": "candidate"
+ }
+]

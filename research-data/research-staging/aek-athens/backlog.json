@@ -1,0 +1,50 @@
+[
+ {
+  "id": "continue-aekpedia-posts",
+  "priority": "P3",
+  "task": "AEKpedia posts: 3 page(s) read of 31; the scheduled task continues from the checkpoint.",
+  "taskHe": "AEKpedia posts: נקראו 3 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-aekpedia-0",
+  "priority": "P3",
+  "task": "A post is not a match: season pages, player profiles and articles are mixed in posts.",
+  "taskHe": "A post is not a match: season pages, player profiles and articles are mixed in posts.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "limit-aekpedia-1",
+  "priority": "P3",
+  "task": "URL slugs like season-1974-75 are discovery hints, not a schema.",
+  "taskHe": "URL slugs like season-1974-75 are discovery hints, not a schema.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-aek-official-history",
+  "priority": "P1",
+  "task": "Write and test the aek-official-history parser against stored fixtures (season, person, match pages) before anything is extracted from AEK FC.",
+  "taskHe": "לכתוב parser ל-AEK FC מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "blocked-aek-official-history-/pages/history.aspx?lang=el",
+  "priority": "P2",
+  "task": "AEK FC: /pages/history.aspx?lang=el answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "AEK FC: /pages/history.aspx?lang=el חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-aek-official-history-0",
+  "priority": "P3",
+  "task": "Cross-check source for events and honours; AEKpedia and the club site are separate families.",
+  "taskHe": "Cross-check source for events and honours; AEKpedia and the club site are separate families.",
+  "status": "noted",
+  "owner": null
+ }
+]

@@ -11,7 +11,8 @@ const pages=(dir:string):string[]=>readdirSync(join(root,dir)).flatMap(n=>{const
 describe('the magazine is the house style (rule 91)',()=>{
  it('every page is dressed as the magazine, or is a named Worker-native page',()=>{
   const allowed=new Set(native.pages)
-  const bad=pages('app').filter(p=>!/Shell|ClubSurface/.test(read(p))&&!allowed.has(p))
+  // FanPage (components/fanlife/FanPage.tsx) is the Shell plus the corner's header — the same dress
+  const bad=pages('app').filter(p=>!/Shell|ClubSurface|FanPage/.test(read(p))&&!allowed.has(p))
   expect(bad,`new pages must wrap in Shell or ClubSurface: ${bad.join(', ')}`).toEqual([])
  })
  it('the Worker-native list only shrinks: every entry still exists and still is not magazine',()=>{
@@ -19,7 +20,7 @@ describe('the magazine is the house style (rule 91)',()=>{
  })
  it('the shell carries the credit, the tab bar and the masthead',()=>{
   const s=read('components/master/Shell.tsx')
-  expect(s).toContain('https://DubelTeam.com');expect(s).toContain('mag-tabbar');expect(s).toContain('mag-top');expect(s).toContain('mag-foot')
+  expect(s).toContain('https://DubelTeam.com');expect(s).toContain('<TabBar');expect(read('components/master/TabBar.tsx')).toContain('mag-tabbar');expect(s).toContain('mag-top');expect(s).toContain('mag-foot')
  })
  it('the stylesheet defines the tokens, self-hosts the display face and never names a yellow',()=>{
   const css=read('app/magazine.css')

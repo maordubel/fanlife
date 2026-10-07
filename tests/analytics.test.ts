@@ -30,6 +30,13 @@ describe('the vocabulary', () => {
     expect(meteredGate('/goalkeeper')).toBeNull()
     expect(meteredGate('/')).toBeNull()
     expect(meteredGate('/qa/stats')).toBeNull()
+    // FAN LIFE club gates are measured per club (research 7.10.2026 §4.2)
+    expect(meteredGate('/clubs/panathinaikos/trivia')).toBe('/clubs/panathinaikos/trivia')
+    expect(meteredGate('/clubs/hapoel-tel-aviv/goal')).toBe('/clubs/hapoel-tel-aviv/goal')
+    expect(meteredGate('/clubs/partizan-belgrade/royal-rumble/')).toBe('/clubs/partizan-belgrade/royal-rumble')
+    expect(meteredGate('/clubs/olympiacos')).toBeNull()
+    expect(meteredGate('/clubs/olympiacos/unknown')).toBeNull()
+    expect(cleanEvent({ name: 'gate_view', gate: meteredGate('/clubs/hapoel-petah-tikva/kit-builder') })).not.toBeNull()
   })
 
   it('drops what it does not know, never fixes it', () => {
@@ -231,6 +238,8 @@ describe('the stats page', () => {
   it('is behind the same QA gate as every /qa screen', () => {
     const page = readFileSync(join(ROOT, 'app/qa/stats/page.tsx'), 'utf8')
     expect(page).toContain('if (!qaAllowed() && !keyed) notFound()')
+    // audit F01: evaluation mode opens qaAllowed() for fans — the numbers still need the owner
+    expect(page).toContain("if (!keyed && !adminSession()) redirect(loginPath('/qa/stats'))")
     // the demo fixture is only reachable where qaAllowed() is
     expect(page).toContain("const demo = qaAllowed() && searchParams.demo === '1'")
   })

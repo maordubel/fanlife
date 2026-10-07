@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "clubId": "celtic",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-06",
+  "desiredGates": [],
+  "priorityMatchIds": [],
+  "sources": [],
+  "notes": "Historical archive collection only (6.10.2026 plan): public sources, no paid data, no AI, nothing activated in the game. Documents stay needs-parser until a parser is written against stored fixtures.",
+  "archive": [
+    {
+      "providerId": "thecelticwiki",
+      "familyId": "thecelticwiki-editorial",
+      "publisher": "The Celtic Wiki",
+      "reader": "wordpress-rest",
+      "origin": "https://www.thecelticwiki.com",
+      "role": "mixed",
+      "locale": "en-GB",
+      "collections": [
+        "pages"
+      ],
+      "allowedPathPrefixes": [
+        "/wp-json/wp/v2/"
+      ],
+      "parserId": "celticwiki-football-v1",
+      "budget": {
+        "perPage": 25,
+        "maxRequests": 20,
+        "minDelayMs": 3000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "The archive lives in pages (about 19,000); posts held a single default post.",
+        "Despite the name it is WordPress, not MediaWiki — the Hapoel MediaWiki/Cargo reader does not apply.",
+        "media answered 403; facts do not need images."
+      ]
+    },
+    {
+      "providerId": "celtic-official",
+      "familyId": "celtic-institutional",
+      "publisher": "Celtic FC",
+      "reader": "html",
+      "origin": "https://www.celticfc.com",
+      "role": "club-history",
+      "locale": "en-GB",
+      "seeds": [
+        "/history/",
+        "/history/history-timeline/"
+      ],
+      "allowedPathPrefixes": [
+        "/history/"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 10,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": []
+    }
+  ]
+}

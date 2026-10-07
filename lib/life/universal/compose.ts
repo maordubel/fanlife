@@ -15,6 +15,7 @@
  */
 import {buildCast, HERO_LOOKS, type CastManifest} from './cast'
 import {UNIVERSAL_CHAPTERS} from './content'
+import {screenplayChapters} from './screenplay'
 import {nightChapter} from './content/night'
 import {centrepieceOf, readMatch} from './match'
 import {ROOMS} from './rooms'
@@ -44,6 +45,8 @@ export type ComposeInput = {
   details?: Record<string, MatchDetail>
   /** the club's data version: a new archive is a new pack */
   dataVersion: string
+  storyEdition?: 2
+  storyLocale?: 'en' | 'he'
 }
 
 export const ANCHOR_TARGET = 8
@@ -101,7 +104,7 @@ export function composeLife(input: ComposeInput): LifePack {
   }
   const nights = nightRows.map((a, i) => nightChapter(a, ageAt(a.year)!, a.match?.result ?? 'unread', i + 1, !!centre && a.factId === centre.factId))
 
-  const universal = UNIVERSAL_CHAPTERS.map(c => c)
+  const universal = input.storyEdition === 2 ? screenplayChapters(input.storyLocale ?? 'en') : UNIVERSAL_CHAPTERS.map(c => c)
   const lastAge = Math.max(...universal.map(c => c.age), ...nights.map(c => c.age), 0)
   // one life, in the order it was lived: by age, a night after the ordinary day of the same age
   const ordered = [...universal.map((c, i) => ({c, k: c.age, o: i, night: 0})), ...nights.map((c, i) => ({c, k: c.age, o: i, night: 1}))]
@@ -120,7 +123,7 @@ export function composeLife(input: ComposeInput): LifePack {
     preludes.set(host.id, list)
   }
 
-  const chapters: Chapter[] = ordered.map(c => fillChapter({...sideLife(c), prelude: preludes.get(c.id)}, vars))
+  const chapters: Chapter[] = ordered.map(c => fillChapter({...input.storyEdition === 2 ? c : sideLife(c), prelude: preludes.get(c.id)}, vars))
   const rooms = Object.fromEntries(Object.entries(ROOMS).filter(([id]) => chapters.some(c => c.start.room === id || c.cast.some(p => p.room === id) || c.doors.some(d => d.room === id || d.to === id) || c.spots.some(s => s.room === id) || c.beats.some(b => b.room === id) || JSON.stringify(c.talks).includes(`"room":"${id}"`))))
 
   const issues: string[] = [], earlier = new Set<string>()
@@ -139,6 +142,7 @@ export function composeLife(input: ComposeInput): LifePack {
 
   return {
     schemaVersion: 1,
+    ...(input.storyEdition === 2 ? {storyEdition: 2 as const, storyLocale: input.storyLocale ?? 'en'} : {}),
     version: hash(JSON.stringify({v: input.dataVersion, chapters: chapters.map(c => c.id), skin, cast, birthYear, text: chapters})),
     clubId: club.id,
     club: {name: club.name, short: skin.short, city: club.city, country: club.country},

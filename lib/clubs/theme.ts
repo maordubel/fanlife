@@ -42,6 +42,8 @@ export function rivalBans(theme:ClubTheme):string[]{
  return [...bans]
 }
 function luminance(hex:string){return rgb(hex).map(n=>n/255).map(n=>n<=0.04045?n/12.92:((n+0.055)/1.055)**2.4).reduce((n,v,i)=>n+v*[0.2126,0.7152,0.0722][i]!,0)}
+/** Club colour as TYPE on the magazine's paper: the colour itself when it reads (3:1, large type), the ink when it does not (a yellow). */
+export function typeOnPaper(primary:string){return HEX.test(primary)&&contrast(primary,'#EFE6D4')>=3?primary:'#141210'}
 export function contrast(a:string,b:string){const x=luminance(a),y=luminance(b);return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05)}
 export function validateTheme(theme:ClubTheme):string[]{
  const issues:string[]=[]
@@ -77,5 +79,5 @@ export function historicalColorAllowed(theme:ClubTheme,path:string):boolean {
 /** Tokens are scoped on the rendered club surface; native gates keep their own scope. */
 export function themeStyle(theme:ClubTheme,locale:UiLocale='en'):CSSProperties {
  const r=(s:string)=>rgb(s).join(' ')
- return {'--club-primary':theme.primary,'--club-secondary':theme.secondary,'--club-background':theme.background,'--club-surface':theme.surface,'--club-text':theme.text,'--club-muted':theme.muted,'--club-accent':theme.accent,'--club-on-primary':theme.onPrimary,'--club':theme.primary,'--sheet':r(theme.surface),'--paper':r(theme.background),'--ink':r(theme.text),'--red':r(theme.primary),'--sign':r(theme.accent),'--muted':r(theme.muted),'--concrete':r(theme.background),'--font-frank':`'${locale==='he'?'Frank Ruhl Libre':FONT[theme.fonts.display]}'`,'--font-heebo':`'${FONT[theme.fonts.body]}'`,'--font-miriam':`'${FONT[theme.fonts.display]}'`,'--font-latin':`'${FONT[theme.fonts.display]}'`,'--font-courier':`'${FONT[theme.fonts.mono]}'`,'--font-poster':`'${FONT[theme.fonts.poster]}'`} as CSSProperties
+ return {'--club-primary':theme.primary,'--club-secondary':theme.secondary,'--club-background':theme.background,'--club-surface':theme.surface,'--club-text':theme.text,'--club-muted':theme.muted,'--club-accent':theme.accent,'--club-on-primary':theme.onPrimary,'--club-type':typeOnPaper(theme.primary),...(theme.onPrimary==='#FFFFFF'?{}:{'--dye-shade':'0.45','--club-torn':'#141210'}),'--club':theme.primary,'--sheet':r(theme.surface),'--paper':r(theme.background),'--ink':r(theme.text),'--red':r(theme.primary),'--sign':r(theme.accent),'--muted':r(theme.muted),'--concrete':r(theme.background),'--font-frank':`'${locale==='he'?'Frank Ruhl Libre':FONT[theme.fonts.display]}'`,'--font-heebo':`'${FONT[theme.fonts.body]}'`,'--font-miriam':`'${FONT[theme.fonts.display]}'`,'--font-latin':`'${FONT[theme.fonts.display]}'`,'--font-courier':`'${FONT[theme.fonts.mono]}'`,'--font-poster':`'${FONT[theme.fonts.poster]}'`} as CSSProperties
 }

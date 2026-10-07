@@ -1,0 +1,21 @@
+{
+ "club": "celtic",
+ "snapshotAsOf": "2026-10-07",
+ "researchVersion": 1,
+ "approvedForProduction": 0,
+ "counts": {
+  "sources": 2,
+  "matches": 0,
+  "archive-players": 0,
+  "conflicts": 0
+ },
+ "collection": {
+  "schemaVersion": 1,
+  "runId": "2026-10-07T04-52-06-632Z-b87f89",
+  "state": "partial_budget",
+  "historicalOnly": true,
+  "completeArchiveClaim": false,
+  "documents": 152,
+  "needsParser": 152
+ }
+}

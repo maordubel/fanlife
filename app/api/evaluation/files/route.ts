@@ -1,11 +1,12 @@
 import {NextRequest,NextResponse} from 'next/server'
+import {dataRoot} from '@/lib/dataRoot'
 import {mkdir,readFile,unlink,writeFile} from 'node:fs/promises'
 import path from 'node:path'
 import {database,testerId} from '@/lib/master/evaluation-db'
 import {requireOpenEvaluation,sameOrigin} from '@/lib/master/request'
 export const dynamic='force-dynamic'
 const uuid='[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}',pattern=new RegExp(`^${uuid}/${uuid}/${uuid}\\.(png|jpg|webp)$`)
-const root=()=>path.resolve(process.env.FAN_LIFE_DATA_DIR||'.fan-life','photos')
+const root=()=>path.join(dataRoot(),'photos')
 function checked(v:unknown,owner?:string):string{if(typeof v!=='string'||!pattern.test(v)||(owner&&!v.startsWith(`${owner}/`)))throw new Error('Invalid photo path.');return v}
 const failure=(e:unknown)=>NextResponse.json({data:null,error:{message:e instanceof Error?e.message:'Photo operation failed.'}},{status:400})
 export async function GET(r:NextRequest){try{requireOpenEvaluation();const name=checked(r.nextUrl.searchParams.get('path')),bytes=await readFile(path.join(root(),name));return new NextResponse(bytes,{headers:{'Content-Type':name.endsWith('.webp')?'image/webp':name.endsWith('.png')?'image/png':'image/jpeg','X-Content-Type-Options':'nosniff','Cache-Control':'private, max-age=3600'}})}catch{return new NextResponse('Photo not found',{status:404})}}

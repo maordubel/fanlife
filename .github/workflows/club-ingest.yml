@@ -18,21 +18,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: {node-version: 20, cache: npm}
+        with: {node-version: 22, cache: npm}
       - run: npm ci
       - name: Pull club data
+        id: pull
         env:
           THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
           CLUB: ${{ github.event.inputs.club || 'all' }}
         run: |
+          failed=0; : > ingest-summary.md
           for dir in club-packs/*/; do
             id=$(basename "$dir")
             [ -f "$dir/ingest.json" ] || continue
-            if [ "$CLUB" = "all" ] || [ "$CLUB" = "$id" ]; then npm run club:wave -- --club "$id" || echo "::warning::$id failed"; fi
+            if [ "$CLUB" = "all" ] || [ "$CLUB" = "$id" ]; then
+              if npm run club:wave -- --club "$id"; then echo "- $id: ok" >> ingest-summary.md
+              else echo "- $id: FAILED" >> ingest-summary.md; echo "::error::$id failed"; failed=1; fi
+            fi
           done
+          cat ingest-summary.md >> "$GITHUB_STEP_SUMMARY"
+          echo "failed=$failed" >> "$GITHUB_OUTPUT"
       - uses: peter-evans/create-pull-request@v6
         with:
           branch: club-ingest/auto
           title: 'club-ingest: refreshed match data'
           commit-message: 'club-ingest: refreshed wave-auto.json'
           body: 'Automatic pull from UEFA (primary) corroborated by TheSportsDB. Approved only where two publishers agree; everything else stays in review.'
+      - name: Fail the run when a club failed (the pull request above still carries the clubs that worked)
+        if: steps.pull.outputs.failed == '1'
+        run: exit 1

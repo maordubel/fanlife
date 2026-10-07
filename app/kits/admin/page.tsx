@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 
+import { requireAdmin } from '@/lib/master/admin'
+
 import { AdminGate } from './AdminGate'
 
 /**
@@ -13,6 +15,10 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
 }
 
+export const dynamic = 'force-dynamic'
+
 export default function AdminPage() {
+  // the owner key first (audit F01); the database functions still check worker_admin on every call
+  requireAdmin('/kits/admin')
   return <AdminGate />
 }
