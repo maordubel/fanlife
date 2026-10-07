@@ -3,7 +3,7 @@ import {Shell} from '@/components/master/Shell'
 import {ClubGaps} from '@/components/master/ClubGaps'
 import {Admin,type AdapterInfo} from '@/components/master/Admin'
 import {lightState} from '@/lib/master/lightState'
-import {readState} from '@/lib/master/store'
+import {readState,storageInfo} from '@/lib/master/store'
 import {requireAdmin} from '@/lib/master/admin'
 import {LogoutButton} from '@/components/master/LogoutButton'
 import {allSummaries} from '@/lib/master/summary'
@@ -22,6 +22,6 @@ export default async function Page(){
  return <Shell><main id="main">
   <nav className="mag-adminnav" aria-label="Control room sections"><a href="#gaps">What is missing</a><a href="#controls">Controls</a><a href="/master/admin?tab=display#controls">LIFE display</a><a href="/master/core">Club data</a><a href="/master/exchange">Shirt economy</a><a href="/master/test-lab">Test lab</a>{session.role==='owner'&&<LogoutButton/>}</nav>
   <ClubGaps summaries={summaries}/>
-  <Suspense fallback={<p className="muted" role="status">Loading the control room…</p>}><Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()}/></Suspense>
+  <Suspense fallback={<p className="muted" role="status">Loading the control room…</p>}><Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()} storage={storageInfo()}/></Suspense>
  </main></Shell>
 }

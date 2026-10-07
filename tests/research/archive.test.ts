@@ -108,7 +108,7 @@ describe('profiles, staging and the eight clubs',()=>{
   const p=await loadClubProfile('aek-athens')
   expect(p!.archive.filter(a=>a.providerId==='aekpedia')).toHaveLength(1);expect(p!.archive.find(a=>a.providerId==='aekpedia')!.publisher).toBe('AEKpedia (retuned)')
   expect(p!.archive.some(a=>a.providerId==='aek-official-history')).toBe(true);expect(p!.origin).toEqual({repo:true,admin:true})
-  await saveArchiveSource('brand-new-club',{...v.value,providerId:'newsource'});expect(profiledClubs()).toContain('brand-new-club')
+  await saveArchiveSource('brand-new-club',{...v.value,providerId:'newsource'});expect(await profiledClubs()).toContain('brand-new-club')
  })
  it('the staging export is a catalogue and a backlog — unreviewed, nothing approved, no invented records',async()=>{
   const {f}=web(listing({pages:[[1,2]]}));const s=wp({collections:['pages']})
