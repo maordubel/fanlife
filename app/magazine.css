@@ -1190,3 +1190,5 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .fl.mag .mag-game-title { font-family: var(--mag-display); font-weight: 400; text-transform: uppercase; font-size: clamp(88px, 27vw, 168px); }
 .fl.mag .mag-game-title .mag-game-stamp { font-size: clamp(20px, 5.4vw, 28px); }
 .fl.mag[lang='he'] .mag-game-stamp { font-family: var(--mag-body); font-weight: 800; letter-spacing: 1px; }
+/* A control scrolled into view (keyboard focus, a tap target near the bottom) lands above the fixed bar, not under it. */
+@media (max-width: 900px) { html:has(.mag-tabbar) { scroll-padding-block-end: calc(72px + env(safe-area-inset-bottom)); } }
