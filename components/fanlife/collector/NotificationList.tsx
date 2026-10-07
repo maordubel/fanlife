@@ -95,7 +95,7 @@ function details(note: CollectorNotification, shirts: Readonly<Record<string, Co
   if (note.kind === 'COLLECTOR_ITEM_REQUESTED' && p.kind === 'trade') out.push(t('collector.notify.trade'))
   if (note.kind === 'COLLECTOR_ITEM_REQUESTED' && p.kind === 'buy') out.push(t('collector.notify.buy'))
   const amount = typeof p.amount === 'number' ? p.amount : typeof p.price === 'number' ? p.price : null
-  if (amount !== null) out.push(formatPrice(amount, (p.currency ?? 'ILS') as Currency))
+  if (amount !== null) out.push(formatPrice(amount, (p.currency ?? 'EUR') as Currency))
   if (p.startsAt && note.kind !== 'AUCTION_STARTED') out.push(t('collector.notify.startsAt', { when: when(p.startsAt) }))
   if (p.endsAt && (note.kind === 'AUCTION_ENDING' || note.kind === 'AUCTION_STARTED')) out.push(t('collector.notify.endsAt', { when: when(p.endsAt) }))
   if (p.reserveMissed) out.push(t('collector.notify.reserveMissed'))

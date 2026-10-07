@@ -21,7 +21,7 @@ import {
   type SubmitProblem,
 } from '@/lib/fanlife/collector/auction'
 import { errorLabel, formatPrice } from '@/lib/fanlife/collector/labels'
-import { CURRENCIES, type CollectorError, type Currency, type OwnerItem } from '@/lib/collector/types'
+import { type CollectorError, type Currency, type OwnerItem } from '@/lib/collector/types'
 import { t, type MessageKey } from '@/lib/fanlife/i18n'
 
 type Page =
@@ -139,7 +139,7 @@ function SubmitForm({ item, shirt, onSent }: { item: OwnerItem; shirt: AuctionSh
     description: item.description ?? '',
     startPrice: '',
     reservePrice: '',
-    currency: item.currency,
+    currency: 'EUR' as Currency,
     hours: 72,
     increment: '',
     checked: {},
@@ -286,7 +286,7 @@ function SubmitForm({ item, shirt, onSent }: { item: OwnerItem; shirt: AuctionSh
           <label className="font-body text-step--1 font-extrabold text-ink">
             {t('auction.submit.currency')}
             <select value={draft.currency} onChange={(event) => set('currency', event.target.value as Currency)} className={`${field} min-h-tap`}>
-              {CURRENCIES.map((currency) => (
+              {(['EUR'] as const).map((currency) => (
                 <option key={currency} value={currency}>
                   {currency}
                 </option>

@@ -134,7 +134,7 @@ export function OfferSlip({
                 onClick={() => setCountering((open) => !open)}
                 className="min-h-tap min-w-[5.5rem] flex-1 whitespace-nowrap border-rule border-dashed border-ink bg-paper px-3 font-body text-step--1 font-extrabold text-ink disabled:opacity-60"
               >
-                {offer.currency === 'ILS' ? t('market.act.counter') : t('market.act.counterOther')}
+                {offer.currency === 'EUR' ? t('market.act.counter') : t('market.act.counterOther')}
               </button>
             ) : null}
           </div>

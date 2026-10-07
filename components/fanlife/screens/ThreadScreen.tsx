@@ -113,7 +113,7 @@ export function ThreadScreen({ id, shirts }: { id: string; shirts: Record<string
     send: (body) => act(() => sendMessage(id, body)),
     photoRequest: () => void act(() => sendMessage(id, '', 'photo_request')),
     offerPrice: (amount: number, currency: Currency) => act(() => offerMake(id, 'price', amount, currency)),
-    offerTrade: (ids) => act(() => offerMake(id, 'trade', null, 'ILS', ids)),
+    offerTrade: (ids) => act(() => offerMake(id, 'trade', null, 'EUR', ids)),
     answer: (offerId, action) => void act(() => offerRespond(offerId, action)),
     counter: (offerId, amount) => act(() => offerRespond(offerId, 'counter', amount)),
     step: (which) => void act(() => step(id, which)),

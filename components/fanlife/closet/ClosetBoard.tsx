@@ -453,7 +453,7 @@ function HaveCard({ item, shirt, copy, onOpen }: { item: OwnerItem; shirt: Colle
         {item.forSale || item.forTrade ? (
           <span className="absolute start-0 top-0 flex gap-px">
             {item.forTrade ? <span className="bg-sign px-1.5 py-0.5 font-body text-[11px] font-extrabold text-paper">⇄</span> : null}
-            {item.forSale ? <span className="bg-red px-1.5 py-0.5 font-body text-[11px] font-extrabold text-paper">₪</span> : null}
+            {item.forSale ? <span className="bg-red px-1.5 py-0.5 font-body text-[11px] font-extrabold text-paper">€</span> : null}
           </span>
         ) : null}
         {item.state !== 'held' ? (

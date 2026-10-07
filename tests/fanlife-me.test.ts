@@ -53,3 +53,14 @@ describe('FAN LIFE · Me card', () => {
     for (const t of ['card', 'oath', 'story', 'details']) expect(copy[`me.tab.${t}`]).toBeTruthy()
   })
 })
+
+describe('FAN LIFE · prices in euros', () => {
+  it('no fork defaults to shekels or offers a currency other than EUR', async () => {
+    const { readdirSync, statSync } = await import('node:fs')
+    const walk = (d: string): string[] => readdirSync(d).flatMap((f) => { const p = `${d}/${f}`; return statSync(p).isDirectory() ? walk(p) : [p] })
+    for (const f of [...walk('components/fanlife'), ...walk('lib/fanlife')].filter((f) => /\.tsx?$/.test(f))) {
+      const src = readFileSync(f, 'utf8')
+      expect(src, f).not.toMatch(/\?\? 'ILS'|Currency = 'ILS'|CURRENCIES\.map\(|>₪</)
+    }
+  })
+})

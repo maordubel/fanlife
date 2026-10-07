@@ -96,7 +96,22 @@ PATCHES = [
      "import { Num } from '@/components/ui/Num'\nimport { ShirtThumb } from '@/components/fanlife/ShirtThumb'"),
 ]
 
+# FAN LIFE prices in euros (owner, 7.10.2026: "the currency here is the euro, not the shekel").
+# A row that already carries a currency keeps it — the tables are shared with The Worker, so a
+# shekel price stays a shekel price; everything FAN LIFE creates or defaults to is EUR.
+CURRENCY_SUBS = [
+    (r"\?\? 'ILS'", "?? 'EUR'"), (r"Currency = 'ILS'", "Currency = 'EUR'"), (r"(\n\s*)currency: 'ILS',", r"\1currency: 'EUR',"),
+    (r"null, 'ILS', ids", "null, 'EUR', ids"), (r"offer\.currency === 'ILS'", "offer.currency === 'EUR'"),
+    (r"\bCURRENCIES\.map\(", "(['EUR'] as const).map("), (r">₪<", ">€<"),
+    (r"useState<Draft>\(\(\) => draftOf\(item\)\)", "useState<Draft>(() => { const d = draftOf(item); return d.askingPrice === '' ? { ...d, currency: 'EUR' } : d })"),
+    (r"(\n\s*)currency: item\.currency,(\n\s*hours:)", r"\1currency: 'EUR' as Currency,\2"),
+]
+
 def patched(dst, text):
+    for a, b in CURRENCY_SUBS:
+        text = re.sub(a, b, text)
+    if len(re.findall(r'\bCURRENCIES\b', text)) == 1:   # only the import is left: drop it
+        text = re.sub(r'\bCURRENCIES,\s*', '', text, count=1)
     for f, old, new in PATCHES:
         if f != dst: continue
         if text.count(old) != 1: raise SystemExit(f'patch did not match once in {dst}: {old[:60]}')

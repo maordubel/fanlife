@@ -226,7 +226,7 @@ function ThreadView({ thread, onClose }: { thread: Thread; onClose: () => void }
             <span className="font-mono text-[11px] tabular-nums text-muted">{bidTimeText(message.createdAt, now)}</span>
             <p className="whitespace-pre-line">
               {message.kind === 'offer' && message.meta?.amount ? (
-                formatPrice(message.meta.amount, message.meta.currency ?? 'ILS')
+                formatPrice(message.meta.amount, message.meta.currency ?? 'EUR')
               ) : (
                 <bdi>{message.body ?? ''}</bdi>
               )}

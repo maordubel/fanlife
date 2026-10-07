@@ -13,7 +13,6 @@ import { claimLabel, conditionLabel, errorLabel, isReproduction, sizeLabel, type
 import {
   CLAIMS,
   CONDITIONS,
-  CURRENCIES,
   ITEM_TYPES,
   SIZES,
   type CollectorError,
@@ -79,7 +78,7 @@ export function ItemEditor({
   onClose: () => void
 }) {
   const ref = useDialog<HTMLDivElement>(onClose)
-  const [draft, setDraft] = useState<Draft>(() => draftOf(item))
+  const [draft, setDraft] = useState<Draft>(() => { const d = draftOf(item); return d.askingPrice === '' ? { ...d, currency: 'EUR' } : d })
   const [photos, setPhotos] = useState<string[]>(item.photos)
   const [problem, setProblem] = useState<DraftProblem | null>(null)
   const [photoError, setPhotoError] = useState<DraftProblem | null>(null)
@@ -279,7 +278,7 @@ export function ItemEditor({
                     />
                   </label>
                   <div role="group" aria-label={t('collector.editor.currency')} className="flex flex-wrap gap-1.5">
-                    {CURRENCIES.map((currency) => (
+                    {(['EUR'] as const).map((currency) => (
                       <button key={currency} type="button" aria-pressed={draft.currency === currency} onClick={() => set('currency', currency)} className={chip(draft.currency === currency)}>
                         <span dir="ltr">{currency}</span>
                       </button>

@@ -152,7 +152,7 @@ export function PublicCloset({
                     {item.id ? (
                       <span className="mt-1 flex gap-px">
                         {item.forTrade ? <span className="bg-sign px-1.5 font-body text-[11px] font-extrabold text-paper">⇄</span> : null}
-                        {item.forSale ? <span className="bg-red px-1.5 font-body text-[11px] font-extrabold text-paper">₪</span> : null}
+                        {item.forSale ? <span className="bg-red px-1.5 font-body text-[11px] font-extrabold text-paper">€</span> : null}
                         <span className="ps-1.5 font-body text-[11px] font-extrabold text-sign">{t('collector.public.openItem')}</span>
                       </span>
                     ) : null}

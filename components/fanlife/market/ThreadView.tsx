@@ -22,7 +22,7 @@ import {
   threadActions,
   type ThreadActions,
 } from '@/lib/fanlife/collector/market'
-import { CURRENCIES, type CollectorShirt, type Currency, type OwnerItem, type Thread, type ThreadMessage } from '@/lib/collector/types'
+import { type CollectorShirt, type Currency, type OwnerItem, type Thread, type ThreadMessage } from '@/lib/collector/types'
 import { t, type MessageKey } from '@/lib/fanlife/i18n'
 
 import { itemHref } from '@/components/fanlife/market/CopyTicket'
@@ -397,7 +397,7 @@ function Actions({
           {tool === 'price' && can.offerPrice ? (
             <PriceForm
               busy={busy}
-              initial={thread.item?.currency ?? 'ILS'}
+              initial={thread.item?.currency ?? 'EUR'}
               onSend={async (amount, currency) => {
                 const ok = await on.offerPrice(amount, currency)
                 if (ok) setTool(null)
@@ -540,7 +540,7 @@ function PriceForm({ busy, initial, onSend }: { busy: boolean; initial: Currency
           onChange={(event) => setCurrency(event.target.value as Currency)}
           className="mt-1 block min-h-tap border-rule border-ink bg-paper px-2 font-body text-step--1 text-ink"
         >
-          {CURRENCIES.map((code) => (
+          {(['EUR'] as const).map((code) => (
             <option key={code} value={code}>
               {t(CURRENCY[code])}
             </option>

@@ -215,7 +215,7 @@ const AUCTION_ERROR: Partial<Record<CollectorError, Parameters<typeof t>[0]>> = 
 }
 
 /** A refusal from the database, as one sentence — with the minimum or the ceiling when it came back. */
-export function auctionErrorLabel(fail: Pick<Fail, 'error' | 'minNext' | 'yourMax'>, currency: Currency = 'ILS'): string {
+export function auctionErrorLabel(fail: Pick<Fail, 'error' | 'minNext' | 'yourMax'>, currency: Currency = 'EUR'): string {
   if (fail.error === 'too_low' && typeof fail.minNext === 'number') {
     return t('auction.error.too_low', { min: formatPrice(fail.minNext, currency) })
   }
@@ -502,7 +502,7 @@ export const EMPTY_MERCHANT: MerchantDraft = {
   offerType: 'replica',
   title: '',
   price: '',
-  currency: 'ILS',
+  currency: 'EUR',
   productUrl: '',
   imageUrl: '',
   availability: 'unknown',

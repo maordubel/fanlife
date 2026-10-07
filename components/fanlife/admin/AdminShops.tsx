@@ -17,7 +17,7 @@ import {
   type UrlProblem,
 } from '@/lib/fanlife/collector/auction'
 import { formatPrice } from '@/lib/fanlife/collector/labels'
-import { CURRENCIES, type CollectorError, type Currency } from '@/lib/collector/types'
+import { type CollectorError, type Currency } from '@/lib/collector/types'
 import { t, type MessageKey } from '@/lib/fanlife/i18n'
 
 const OFFER: Record<MerchantRow['offer_type'], MessageKey> = {
@@ -247,7 +247,7 @@ function ShopForm({ draft: initial, onCancel, onSave }: { draft: MerchantDraft; 
         <span className="mt-1 flex gap-2">
           <input inputMode="decimal" dir="ltr" value={draft.price} onChange={(event) => set('price', event.target.value)} className={`${field} mt-0 ${tone('price')}`} />
           <select value={draft.currency} onChange={(event) => set('currency', event.target.value as Currency)} className={`${field} mt-0 w-28 shrink-0 border-ink`}>
-            {CURRENCIES.map((currency) => (
+            {(['EUR'] as const).map((currency) => (
               <option key={currency} value={currency}>
                 {currency}
               </option>
