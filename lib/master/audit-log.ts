@@ -20,3 +20,9 @@ export function splitAudit(entries:AuditEntry[],keep=AUDIT_KEEP):{kept:AuditEntr
  return{kept:entries.slice(cut),archive}
 }
 export const archiveLines=(rows:AuditEntry[])=>rows.map(r=>JSON.stringify(r)).join('\n')+'\n'
+/**
+ * The archive lines still to append to a month file that already holds `existing`. A control write that loses a
+ * race re-runs the rotation, and a crash between the append and the control write re-runs it on the next change:
+ * either way the same entries arrive again, and an entry already in the month file is not written twice.
+ */
+export function newArchiveLines(existing:string,rows:AuditEntry[]):string{const have=new Set(existing.split('\n').filter(Boolean));const fresh=rows.map(r=>JSON.stringify(r)).filter(l=>!have.has(l));return fresh.length?fresh.join('\n')+'\n':''}

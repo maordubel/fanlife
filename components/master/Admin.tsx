@@ -20,7 +20,7 @@ export type AdapterInfo={id:string;label:string;needsQuery:boolean;capabilities:
 const TABS=[['overview','Overview'],['club','Club file'],['data','Data'],['display','LIFE display'],['updates','Updates'],['activity','Activity']] as const
 type Tab=typeof TABS[number][0]
 
-export function Admin({initial,summaries,adapters,runs,display,storage}:{initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string}}){
+export function Admin({initial,summaries,adapters,runs,display,storage}:{initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string}}){
  const router=useRouter(),path=usePathname(),params=useSearchParams()
  const tab=(TABS.some(([k])=>k===params.get('tab'))?params.get('tab'):'overview') as Tab
  const selected=summaries.some(s=>s.id===params.get('club'))?params.get('club')!:summaries[0]?.id||''
@@ -43,7 +43,7 @@ export function Admin({initial,summaries,adapters,runs,display,storage}:{initial
   <div className="section-head"><div><p className="eyebrow">FAN LIFE / CONTROL ROOM</p><h1>The editor’s desk.</h1><p className="spaced">Pick a club, see what is missing, collect, decide, build — and know which layer you are touching.</p></div><div className="toolbar"><a className="button secondary" href="/api/master/export">Export control data ↓</a><Link href="/master/test-lab">Test lab ↗</Link></div></div>
   <div className="cr-context"><label>Club<select value={selected} onChange={e=>go({club:e.target.value})}>{sums.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label>{summary&&<p className="cr-layers"><span data-layer="research">Research · {summary.research.reviewedSources}/{summary.research.sources} sources · {summary.research.findingsPending} to decide</span><span data-layer="data">Data · {summary.data?`${summary.data.dataPlayable}/13 playable`:'no pack'}</span><span data-layer="publication">Publication · {summary.publication.label} · {summary.control.gatesOn.length} switched on · {summary.publication.openNow} open now</span></p>}</div>
   <nav className="tabs cr-tabs" aria-label="Admin sections">{TABS.map(([k,label])=><button key={k} onClick={()=>go({tab:k})} aria-current={tab===k?'page':undefined} className={`min-h-tap ${tab===k?'active':''}`}>{label}{k==='club'&&summary&&summary.research.findingsPending?` (${summary.research.findingsPending})`:''}</button>)}</nav>
-  {storage&&!storage.durable?<p role="alert" className="error cr-storage"><b>Storage not connected.</b> {storage.note}</p>:null}
+  {storage&&!storage.durable?<p role="alert" className="error cr-storage"><b>{storage.error?'Storage connected, not answering.':'Storage not connected.'}</b> {storage.note}{storage.error?<><br/><code>{storage.error}</code></>:null}</p>:null}
   {api.error?<p role="alert" className="error">{api.error}</p>:null}{api.notice?<p role="status" className="success">{api.notice}</p>:null}
   {tab==='overview'&&<>
    <div className="metrics">
