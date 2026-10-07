@@ -14,7 +14,7 @@ import {validateDisplay,saveDraft,publish,revert,reset,changedKeys,emptyDisplay}
 import {readRuns,planClub,collectClub} from '@/lib/research/service'
 import {runWorker} from '@/lib/research/worker'
 import {loadProfile} from '@/lib/research/bundle'
-import {loadClubProfile,validateArchiveSource,saveArchiveSource,removeArchiveSource,ensureProfile} from '@/lib/research/profiles'
+import {exportOverlays,loadClubProfile,validateArchiveSource,saveArchiveSource,removeArchiveSource,ensureProfile} from '@/lib/research/profiles'
 import {exportArchiveStaging} from '@/lib/research/staging'
 import {isReadOnlyError,READ_ONLY_HINT} from '@/lib/research/paths'
 import {runPipeline,recordPipeline,lastPipelineRuns,AUTOMATION_ACTOR} from '@/lib/master/automation'
@@ -30,6 +30,8 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  // the scheduler runs the whole autopilot: collect → stage → bring in (unreviewed) → fetch planned pages → process jobs.
  // The GitHub workflow sends CRON_SECRET; the owner may also run it from a signed-in browser.
  if(a==='cron'){const owner=adminFromRequest(r);if(!cronAuthorized(r)&&!owner)return json({error:'Invalid scheduler authorization'},401);const report=await runPipeline();await recordPipeline(report,owner?actorOf(owner):{actor:AUTOMATION_ACTOR,role:'scheduler'});return json(report)}
+ // the archive runner pins the control room's source profiles before it collects (handoff: admin ⇄ runner)
+ if(a==='research/profiles-export'){if(!cronAuthorized(r)&&!adminFromRequest(r))return json({error:'Invalid scheduler authorization'},401);return json(await exportOverlays())}
  if(!adminFromRequest(r))return unauthorized()
  if(a==='pipeline/runs')return json(await lastPipelineRuns(10))
  if(a==='archive/profile'){const p=await loadClubProfile(slug(q.get('club')));return p?json(p):json({error:'No research profile for this club.'},404)}

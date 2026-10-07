@@ -151,7 +151,8 @@ describe('F20 — data-ready, publish-configured and published are separate; ste
  })
  it('the Admin overview shows the three layers separately (English copy)',()=>{
   const s=readFileSync(path.join(ROOT,'components/master/Admin.tsx'),'utf8')
-  for(const label of ['DATA READY','CHOOSE GATES','READY TO PUBLISH','PUBLISHED'])expect(s).toContain(`<small>${label}</small>`)
+  // the Editor's Desk (7.10.2026) keeps the four layers as separate figures, now a definition list
+  for(const label of ['Data ready','Choose gates','Ready to publish','Published'])expect(s).toContain(`<dt>${label}</dt>`)
   expect(s).toContain('overviewCounts(sums)')
  })
 })
@@ -171,7 +172,8 @@ describe('F21 — light refresh, Activity reset per club, stale answers dropped'
   const s=readFileSync(path.join(ROOT,'components/master/Admin.tsx'),'utf8'),route=readFileSync(path.join(ROOT,'app/api/master/[...action]/route.ts'),'utf8')
   expect(s).not.toMatch(/api\.get<State>\('state'\)/);expect(s).toContain("api.get<LightState>('state/light')")
   expect(route).toContain("a==='state/light'")
-  expect(s).toMatch(/<Activity key=\{selected\}/)
+  // keyed by the club in scope (the desk's workspace) so a new club starts on page 1
+  expect(s).toMatch(/<Activity key=\{club\.id\}/)
   expect(s).toMatch(/if\(live\)setData/)
   expect(s).toMatch(/stateOk\(\)/)
  })

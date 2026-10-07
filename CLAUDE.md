@@ -2945,3 +2945,16 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
 5. **"I was there"** (`lib/fanlife/been.ts`, `components/fanlife/BeenThere.tsx`): a stamp on archive entries and meetings, stored on the device (`fanlife.been.v1`, tombstones on un-mark, later `at` wins); shown in Me → My story, the clubs standing and My file.
 6. **FAN LIFE prices in euros**: the forks default to and offer EUR only (`CURRENCY_SUBS` in scripts/fanlife/fork-economy.py); a row that already carries a currency keeps it.
 7. **Every gate page carries the FAN LIFE mark** (mono on club pages) in its nav; page titles never repeat "· FAN LIFE" (the layout template adds it).
+
+## 99 · The Editor's Desk — the control room has its own frame (7.10.2026)
+
+Plan: owner's FAN-LIFE-ADMIN-CONTROL-ROOM-PLAN (7.10.2026).
+1. **`/master/admin` is wrapped in `components/master/desk/AdminShell.tsx`, not `Shell`** — a scoped exception to rule 91:
+   no public masthead, stop-press or tab bar on an admin screen. Styles live under `.desk` in `app/desk.css` only.
+2. **Six sections, one context in the URL:** `?section=overview|clubs|data|audience|operations|settings&club=&view=`.
+   Old `?tab=` links map on the server (`LEGACY` in the page) — never break a bookmark.
+3. **The overview is `lib/master/attention.ts`:** deterministic rules over the same summaries the detail screens read.
+   A new rule names its club, its reason and the one screen that resolves it.
+4. **Honest states:** "Not connected", "Unavailable", "No records" and zero are different; an unconnected store is never zero.
+5. **Schedules are read from the workflows** (`lib/master/schedules.ts`, guarded by `tests/master/schedules.test.ts`);
+   the archive runner pins the control room's profiles via `GET /api/master/research/profiles-export` (CRON_SECRET).

@@ -1,27 +1,49 @@
 import {Suspense} from 'react'
-import {Shell} from '@/components/master/Shell'
 import {ClubGaps} from '@/components/master/ClubGaps'
-import {Admin,type AdapterInfo} from '@/components/master/Admin'
+import {Admin,type AdapterInfo,type DeskSection} from '@/components/master/Admin'
+import {AdminShell,MoreMenu,type Section} from '@/components/master/desk/AdminShell'
+import {AudienceDesk} from '@/components/master/desk/AudienceDesk'
 import {lightState} from '@/lib/master/lightState'
 import {readState,storageInfo} from '@/lib/master/store'
 import {requireAdmin} from '@/lib/master/admin'
-import {LogoutButton} from '@/components/master/LogoutButton'
 import {allSummaries} from '@/lib/master/summary'
 import {ADAPTER_LIST,adapterAvailable} from '@/lib/master/adapters'
 import {readRuns} from '@/lib/research/service'
 import {emptyDisplay} from '@/lib/master/lifeDisplay'
+import {attention} from '@/lib/master/attention'
+import {integrations,release,storageMap} from '@/lib/master/storageMap'
+import {portalConfigured} from '@/lib/portal/env'
+import {evaluationMode} from '@/lib/master/mode'
+import '../../desk.css'
 export const dynamic='force-dynamic'
 
-export default async function Page(){
+const SECTION_KEYS=['overview','clubs','data','audience','operations','settings','more'] as const
+/** Old bookmarks (`?tab=`) keep working: each maps to its place on the desk (plan §3). */
+const LEGACY:Record<string,{section:DeskSection;view?:string}>={overview:{section:'overview'},club:{section:'clubs',view:'evidence'},data:{section:'data'},display:{section:'settings'},updates:{section:'operations'},activity:{section:'operations'}}
+
+export default async function Page({searchParams}:{searchParams:{section?:string;tab?:string;club?:string;view?:string;days?:string}}){
  const session=requireAdmin('/master/admin')
  const state=await readState()
+ const storage=storageInfo()
  const [summaries,runs]=await Promise.all([allSummaries(state),readRuns()])
- // evidence arrays are paged on demand (audit A17); the page ships the light state only
+ const legacy=searchParams.tab?LEGACY[searchParams.tab]:undefined
+ const section:Section=legacy?.section||(SECTION_KEYS.includes(searchParams.section as Section)?searchParams.section as Section:'overview')
+ const club=summaries.some(s=>s.id===searchParams.club)?searchParams.club!:null
+ const view=searchParams.view||legacy?.view||null
  const initial=lightState(state),clubs=state.clubs
  const adapters:AdapterInfo[]=ADAPTER_LIST.map(a=>({...a,available:Object.fromEntries(clubs.map(c=>[c.id,adapterAvailable(a.id,c.id)]))}))
- return <Shell><main id="main">
-  <nav className="mag-adminnav" aria-label="Control room sections"><a href="#gaps">What is missing</a><a href="#controls">Controls</a><a href="/master/admin?tab=display#controls">LIFE display</a><a href="/master/core">Club data</a><a href="/master/exchange">Shirt economy</a><a href="/master/test-lab">Test lab</a>{session.role==='owner'&&<LogoutButton/>}</nav>
-  <ClubGaps summaries={summaries}/>
-  <Suspense fallback={<p className="muted" role="status">Loading the control room…</p>}><Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()} storage={storageInfo()}/></Suspense>
- </main></Shell>
+ const measurement=evaluationMode()?'evaluation':portalConfigured()?'connected':'not-connected'
+ const inbox=attention(summaries,state.jobs,{storage,measurement,runnerPinned:process.env.CRON_SECRET?null:false})
+ const clubName=club?summaries.find(s=>s.id===club)!.name:null
+ const owner=session.role==='owner'
+ return <AdminShell section={section} club={club} clubName={clubName} owner={owner}>
+  {section==='more'?<MoreMenu owner={owner}/>:
+  <Suspense fallback={<p className="desk-state" role="status">Loading the desk…</p>}>
+   <Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()} storage={storage}
+    section={section} view={view} club={club} attention={inbox}
+    ops={{storage:storageMap(),integrations:integrations(),release:release()}}
+    audience={section==='audience'?<AudienceDesk days={searchParams.days} club={club} clubNames={Object.fromEntries(summaries.map(s=>[s.id,s.name]))}/>:undefined}
+    gaps={section==='clubs'&&!club?<ClubGaps summaries={summaries}/>:undefined}/>
+  </Suspense>}
+ </AdminShell>
 }
