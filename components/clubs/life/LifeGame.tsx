@@ -15,6 +15,7 @@
 import {KeepArt, keepArt} from './KeepArt'
 import {ENABLED_LOCALES} from '@/lib/clubs/locale'
 import Link from 'next/link'
+import {Dye} from '@/components/master/Dye'
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {chapterOf, eventsOf, Life, meets, nextChapter, openChapter, type Directive, type LifeStore} from '@/lib/life/universal/engine'
 import type {CardDef, Chapter, LifePack, LifeState} from '@/lib/life/universal/types'
@@ -669,6 +670,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       {phase === 'title' && (
         <section className={`${styles.cover} z-[60]`} role="dialog" aria-modal="true" aria-labelledby="life-title" data-life="title">
           <div className={styles.ticket}>
+            <Dye art="face" ink="var(--l-prime)" className={styles.titleArt}/>
             <p className={styles.serial}>{pack.club.name} · {pack.club.city}</p>
             <h1 id="life-title" className={styles.poster}>{copy.title}</h1>
             <p className={styles.lede}>{copy.tagline}</p>

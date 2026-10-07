@@ -2,6 +2,8 @@ import Link from 'next/link'
 import {headers} from 'next/headers'
 import {redirect} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
+import {Dye} from '@/components/master/Dye'
+import {TornBlocks,Cutout} from '@/components/master/Poster'
 import {FixtureRotator,type RotatorItem} from '@/components/home/FixtureRotator'
 import {readState} from '@/lib/master/store'
 import Image from 'next/image'
@@ -46,6 +48,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   <section className="mag-cover mag-cover-poster" aria-labelledby="cover-h"><div className="mag-cover-in">
    <div className="mag-dateline"><span>{copy.coverIssue}</span><span><span className="mag-date-long">{date} · </span>{copy.coverNo}</span></div>
    <h1 className="mag-masthead" id="cover-h" dir="ltr"><span>FAN</span><span>LIFE</span></h1>
+   <Image className="mag-cover-seal" src="/brand/fanlife/logo-192.png" alt="" width={192} height={192} priority unoptimized/>
    <Image className="mag-collage" src="/brand/magazine/football-cover-collage.png" alt="" width={1254} height={1254} priority unoptimized/>
    <span className="mag-burst mag-gates-burst" aria-hidden="true"><b>{SHARED_GATES.length}</b>{copy.gates}<br/>{copy.coverStamp}</span>
    <div className="mag-rail">
@@ -74,24 +77,30 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
      <Link className="mag-tile" data-club={c.id} href={`/clubs/${c.id}?lang=${locale}`} style={l?wear(l.primary):undefined}>
       <span className="no" aria-label={`${copy.collectorNo} ${n+1}`}>{String(n+1).padStart(2,'0')}</span>
       {l&&<span className="mag-badge" data-livery={l.pattern} aria-hidden="true">{l.initials}</span>}
-      <span><b>{c.name}</b><small>{c.city}</small></span>
+      <span><b>{c.name}</b><small>{c.city}</small></span>{l&&<Dye art="shirt" soft className="mag-tile-shirt"/>}
      </Link>
      {entry?.href&&<Link className="mag-tile-life" href={entry.href}>{copy.lifeStrip}<span>{copy.lifeIn} →</span></Link>}
     </div>})}</div>
   </section>
 
+  {/* A poster band after Maor's matchday posters: two fans swap shirts on torn blocks of colour. The hub
+      has no club, so every colour is allowed here (owner, 7.10.2026). */}
+  <section className="mag-section mag-posterband" aria-labelledby="swap-h">
+   <div className="mag-posterband-in"><p className="mag-kicker">{copy.swapKicker}</p><h2 className="mag-h2" id="swap-h">{copy.swapTitle}</h2><p>{copy.swapBody}</p><a className="mag-cta red" href="#clubs">{copy.chooseClub} →</a></div>
+   <div className="mag-homestage mag-swapstage" aria-hidden="true"><TornBlocks seed="swap" inks={['var(--mag-green)','var(--mag-vermilion)','var(--mag-navy)']}/><Cutout art="shirt-swap" className="mag-swap"/></div>
+  </section>
   <section className="mag-section mag-editorial" id="gates">
    <hr className="mag-rule"/>
-   <div className="mag-head"><div><p className="mag-kicker">{copy.gates}</p><h2 className="mag-h2">{copy.gatesTitle}</h2></div><p className="mag-fine">{copy.gatesNote}</p></div>
+   <div className="mag-head"><div><p className="mag-kicker">{copy.gates}</p><h2 className="mag-h2">{copy.gatesTitle}</h2></div><p className="mag-fine">{copy.gatesNote}</p><Dye art="net-keeper" ink="var(--mag-navy)" className="mag-headart"/></div>
    <div className="mag-contents mag-contents-grid">{SHARED_GATES.map(g=><GateChooser key={g.key} gate={g.key} clubs={model} copy={chooser} className={`mag-row mag-gate mag-gate-${g.key}`}><em>{String(g.number).padStart(2,'0')}</em><span>{gc[`gate.${g.key}`]}<small>{g.key==='archive'?copy.archiveToday:copy.chooseClub}</small></span><span className="lead" aria-hidden="true"/><s>→</s></GateChooser>)}</div>
   </section>
 
   <section className="mag-section" id="archive"><hr className="mag-rule"/>
-   <div className="mag-head"><div><p className="mag-kicker">{copy.toc3}</p><h2 className="mag-h2">{copy.archiveTitle}</h2></div></div>
+   <div className="mag-head"><div><p className="mag-kicker">{copy.toc3}</p><h2 className="mag-h2">{copy.archiveTitle}</h2></div><Dye art="boot-ball-ticket" ink="var(--mag-vermilion)" className="mag-headart"/></div>
    <div className="mag-tiles mag-two"><GateChooser gate="archive" clubs={model} copy={chooser} className="mag-card-cta"><b>{copy.archiveOpen}</b><small>{copy.chooseClub}</small></GateChooser>
    <GateChooser gate="archive-today" clubs={todayModel} copy={chooser} className="mag-card-cta ink"><b>{copy.archiveToday}</b><small>{copy.chooseClub}</small></GateChooser></div></section>
   <section className="mag-section" id="life-entry"><hr className="mag-rule"/>
-   <div className="mag-head"><div><p className="mag-kicker">{copy.toc4}</p><h2 className="mag-h2">{copy.lifeEntryTitle}</h2></div><p className="mag-fine">{copy.lifeEntryNote}</p></div>
+   <div className="mag-head"><div><p className="mag-kicker">{copy.toc4}</p><h2 className="mag-h2">{copy.lifeEntryTitle}</h2></div><p className="mag-fine">{copy.lifeEntryNote}</p><Dye art="terrace-scarf" ink="var(--mag-navy)" className="mag-headart wide"/></div>
    <GateChooser gate="life" clubs={model} life={Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))} copy={chooser} className="mag-card-cta navy"><b>{copy.lifeEntryCta}</b><small>{copy.toc4}</small></GateChooser></section>
   <section className="mag-section"><div className="mag-letter"><p className="mag-kicker" style={{color:'var(--mag-salmon)'}}>{copy.letterKicker}</p><p className="dropcap">{copy.letterBody}</p><p className="mag-sign">{copy.editor}</p></div></section>
   <section className="mag-section"><div className="mag-ps"><p className="mag-kicker">{copy.psKicker}</p><p>{copy.psBody}</p></div></section>

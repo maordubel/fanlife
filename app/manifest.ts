@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 
 import { BRAND } from '@/lib/brand'
 import { t } from '@/lib/i18n'
+import { headers } from 'next/headers'
+import { clubFromHost, DEFAULT_CLUB } from '@/lib/master/registry'
 
 /**
  * The PWA manifest.
@@ -18,6 +20,17 @@ import { t } from '@/lib/i18n'
  * circle when nobody checked that is exactly the kind of invented fact rule 11 forbids.
  */
 export default function manifest(): MetadataRoute.Manifest {
+  // FAN LIFE everywhere but Hapoel's own host, where The Worker keeps its badge (owner, 7.10.2026)
+  if (clubFromHost(headers().get('host')) !== DEFAULT_CLUB) {
+    return {
+      name: 'FAN LIFE', short_name: 'FAN LIFE', description: 'Football. Forever. Every club, a world.', lang: 'en', dir: 'ltr',
+      start_url: '/', display: 'standalone', background_color: BRAND.sheet, theme_color: BRAND.ink,
+      icons: [
+        { src: '/brand/fanlife/logo-192.png', sizes: '192x192', type: 'image/png' },
+        { src: '/brand/fanlife/logo-512.png', sizes: '512x512', type: 'image/png' },
+      ],
+    }
+  }
   return {
     name: 'The Worker',
     short_name: 'The Worker',
