@@ -68,7 +68,8 @@ try {
    assert(on,`Unexpected ${slug} card ${cardId}`)
    const shown=await page.getByTestId('timeline-entry').evaluateAll(nodes=>nodes.map(n=>n.dataset.cardId))
    const position=shown.filter(id=>dates.get(id)<on).length
-   await page.getByRole('button',{name:`Insert in position ${position+1}`,exact:true}).click()
+   // a DOM click: the placed card animates into the list, so a coordinate click can land on the gap below the one asked for
+   await page.getByRole('button',{name:`Insert in position ${position+1}`,exact:true}).evaluate(b=>b.click())
    await page.getByRole('status').waitFor()
    assert((await page.getByRole('status').innerText()).toLowerCase().includes(String('In the right place.').toLowerCase()))
    await page.getByRole('status').waitFor({state:'detached'})
