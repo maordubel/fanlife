@@ -40,4 +40,14 @@ describe('device activity is per club',()=>{
  beforeEach(()=>{const values=new Map<string,string>();vi.stubGlobal('localStorage',{getItem:(k:string)=>values.get(k)||null,setItem:(k:string,v:string)=>values.set(k,v),removeItem:(k:string)=>values.delete(k)})})
  it('records local results once and keeps club progress/lineups independent',()=>{recordActivity('olympiacos','trivia','run-1',500);recordActivity('olympiacos','trivia','run-1',900);recordActivity('zrinjski-mostar','memory','run-1',300);expect(readActivity('olympiacos').trivia).toEqual({completed:1,best:500});expect(readActivity('olympiacos').memory.completed).toBe(0);expect(readActivity('zrinjski-mostar').memory.completed).toBe(1);expect(xiKey('olympiacos')).not.toBe(xiKey('zrinjski-mostar'))})
  it('rejects malformed device state and handles unavailable storage',()=>{localStorage.setItem(activityKey('olympiacos'),JSON.stringify({xi:true,recent:[],trivia:{completed:-1,best:1},memory:{completed:0,best:0}}));expect(readActivity('olympiacos').xi).toBe(false);vi.stubGlobal('localStorage',{getItem:()=>{throw new Error('blocked')},setItem:()=>{throw new Error('blocked')}});expect(recordActivity('olympiacos','xi','save')).toBe(false);expect(readActivity('olympiacos').trivia.completed).toBe(0)})
+ it('every game with a finish is on the ticket, a round is never counted twice, and old tickets still read (research 7.10.2026 §4.3)',()=>{
+  localStorage.setItem(activityKey('olympiacos'),JSON.stringify({xi:false,recent:['trivia:a'],trivia:{completed:1,best:3},memory:{completed:0,best:0},polls:{completed:0,best:0},'blind-cow':{completed:0,best:0}}))
+  expect(readActivity('olympiacos').trivia.completed).toBe(1)
+  for(const g of ['lineup','goal','kit-builder','royal-rumble','timeline'] as const){recordActivity('olympiacos',g,`${g}:1`,7);recordActivity('olympiacos',g,`${g}:1`,9);expect(readActivity('olympiacos')[g]).toEqual({completed:1,best:7})}
+  recordActivity('olympiacos','trivia','trivia:a',99);expect(readActivity('olympiacos').trivia.completed).toBe(1)
+  for(let i=0;i<150;i++)recordActivity('olympiacos','memory',`memory:${i}`)
+  recordActivity('olympiacos','memory','memory:0');expect(readActivity('olympiacos').memory.completed).toBe(150)
+  const long='royal-rumble:v:1:'+'x'.repeat(400);expect(recordActivity('olympiacos','royal-rumble',long,2)).toBe(true);recordActivity('olympiacos','royal-rumble',long,2)
+  const t=readActivity('olympiacos');expect(t['royal-rumble'].completed).toBe(2);expect(t.recent.every(r=>r.length<=150)).toBe(true)
+ })
 })

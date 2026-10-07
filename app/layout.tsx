@@ -142,7 +142,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         /> : null}
         <Analytics />
         {/* first-party measurement: views, starts, finishes, where people leave (lib/analytics) */}
-        {!master ? <GateMeter /> : null}
+        <GateMeter />
       </body>
     </html>
   )
