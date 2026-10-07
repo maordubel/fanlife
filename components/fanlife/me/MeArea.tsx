@@ -6,7 +6,9 @@ import { useEffect, useMemo, useState } from 'react'
 import { activityKey, readActivity, xiKey } from '@/lib/clubs/activity'
 import { closetMine } from '@/lib/collector/api'
 import type { Closet } from '@/lib/collector/types'
+import { wearLivery } from '@/lib/club-livery'
 import { fl } from '@/lib/fanlife/copy'
+import { beenList, readBeen, type BeenRow } from '@/lib/fanlife/been'
 import { BEGAN, barsOf, NAME_MAX, rankOf, readCard, writeCard, type MeCard } from '@/lib/fanlife/me'
 import { saveKey } from '@/lib/life/universal/engine'
 
@@ -17,7 +19,7 @@ import type { MeClub } from '@/app/me/data'
  * standing, the closet door) for a hub of clubs. Everything is read from this device after mount,
  * so the first render is the empty reading and server and client agree on every character.
  */
-type Played = { club: MeClub; rounds: number; best: number; xi: boolean; life: number; lifeAt: string | null }
+type Played = { club: MeClub; rounds: number; best: number; xi: boolean; life: number; lifeAt: string | null; been: number }
 type Tab = 'card' | 'oath' | 'story' | 'details'
 
 export function lifeOf(club: string): { chapters: number; at: string | null } {
@@ -31,14 +33,14 @@ export function lifeOf(club: string): { chapters: number; at: string | null } {
   }
 }
 
-function played(clubs: MeClub[]): Played[] {
+function played(clubs: MeClub[], been: BeenRow[]): Played[] {
   return clubs.map((club) => {
     let has = false
     try { has = localStorage.getItem(activityKey(club.id)) !== null || localStorage.getItem(xiKey(club.id)) !== null } catch { /* no storage */ }
     const a = readActivity(club.id)
     const life = lifeOf(club.id)
     const rounds = a.trivia.completed + a.memory.completed + a.polls.completed + a['blind-cow'].completed
-    return { club, rounds: has ? rounds : 0, best: a.trivia.best, xi: a.xi, life: life.chapters, lifeAt: life.at }
+    return { club, rounds: has ? rounds : 0, best: a.trivia.best, xi: a.xi, life: life.chapters, lifeAt: life.at, been: been.filter((b) => b.club === club.id).length }
   })
 }
 
@@ -48,17 +50,20 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
   const [card, setCard] = useState<MeCard | null>(null)
   const [rows, setRows] = useState<Played[]>([])
   const [closet, setCloset] = useState<Closet | null>(null)
+  const [been, setBeen] = useState<BeenRow[]>([])
   const [tab, setTab] = useState<Tab>('card')
   useEffect(() => {
     setCard(readCard())
-    setRows(played(clubs))
+    const days = beenList(readBeen())
+    setBeen(days)
+    setRows(played(clubs, days))
     void closetMine().then((r) => { if (r.ok) setCloset(r) })
   }, [clubs])
 
   const club = clubs.find((c) => c.id === card?.club) ?? null
   const total = rows.reduce((n, r) => n + r.rounds, 0)
   const rank = rankOf(total)
-  const active = rows.filter((r) => r.rounds || r.xi || r.life)
+  const active = rows.filter((r) => r.rounds || r.xi || r.life || r.been)
 
   return (
     <div className="fl-me">
@@ -70,7 +75,7 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
       <div role="tabpanel">
         {tab === 'card' ? <Card card={card} club={club} rank={rank} /> : null}
         {tab === 'oath' ? <Oath card={card} club={club} /> : null}
-        {tab === 'story' ? <Story card={card} club={club} rows={rows} closet={closet} /> : null}
+        {tab === 'story' ? <Story card={card} club={club} rows={rows} closet={closet} been={been} /> : null}
         {tab === 'details' ? <Details card={card} clubs={clubs} onSave={(next) => { setCard(writeCard(next)); setTab('card') }} /> : null}
       </div>
 
@@ -79,12 +84,12 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
         <p className="fl-me-rank"><b>{fl(`me.rank.${rank}`)}</b> <span>{fl('me.rank.note', { n: total })}</span></p>
         <ul className="fl-me-clubs">
           {(active.length ? active : rows.filter((r) => r.club.core)).map((r) => (
-            <li key={r.club.id} style={{ ['--club-primary' as string]: r.club.primary }}>
+            <li key={r.club.id} style={wearLivery(r.club)}>
               <span className="mag-badge" data-livery={r.club.pattern} aria-hidden="true">{r.club.initials}</span>
               <div>
                 <b>{r.club.name}</b>
-                {r.rounds || r.xi || r.life ? (
-                  <small>{[fl('me.clubs.rounds', { n: r.rounds }), r.best ? fl('me.clubs.best', { n: r.best }) : null, r.xi ? fl('me.clubs.xi') : null, r.life ? fl('me.clubs.life', { n: r.life, of: r.club.lifeChapters || r.life }) : null].filter(Boolean).join(' · ')}</small>
+                {r.rounds || r.xi || r.life || r.been ? (
+                  <small>{[fl('me.clubs.rounds', { n: r.rounds }), r.best ? fl('me.clubs.best', { n: r.best }) : null, r.xi ? fl('me.clubs.xi') : null, r.life ? fl('me.clubs.life', { n: r.life, of: r.club.lifeChapters || r.life }) : null, r.been ? fl('me.clubs.been', { n: r.been }) : null].filter(Boolean).join(' · ')}</small>
                 ) : <small>{fl('me.clubs.none')}</small>}
               </div>
               <Link className="mag-chip min-h-tap" href={`/clubs/${r.club.id}`}>{fl('me.clubs.open')} →</Link>
@@ -106,7 +111,7 @@ function Card({ card, club, rank }: { card: MeCard | null; club: MeClub | null; 
   const bars = useMemo(() => barsOf(card?.memberNo ?? 'FL-0000'), [card?.memberNo])
   const blank = !card?.name && !club
   return (
-    <article className="fl-card" style={{ ['--club-primary' as string]: club?.primary ?? 'var(--mag-vermilion)' }} aria-label={fl('me.card.kicker')}>
+    <article className="fl-card" style={wearLivery(club) ?? { ['--club-primary' as string]: 'var(--mag-vermilion)' }} aria-label={fl('me.card.kicker')}>
       <header className="fl-card-head"><span>{fl('me.card.kicker')}</span><span>{fl('me.card.member')} <b>{card?.memberNo ?? '—'}</b></span></header>
       <div className="fl-card-body">
         <div className="fl-card-who">
@@ -144,22 +149,23 @@ function Oath({ card, club }: { card: MeCard | null; club: MeClub | null }) {
     fl('me.oath.l6'),
   ].filter(Boolean)
   return (
-    <section className="fl-oath" style={{ ['--club-primary' as string]: club.primary }}>
+    <section className="fl-oath" style={wearLivery(club)}>
       <p className="fl-me-note">{fl('me.oath.intro')}</p>
       <ol>{lines.map((l, i) => <li key={i}>{l}</li>)}</ol>
     </section>
   )
 }
 
-function Story({ card, club, rows, closet }: { card: MeCard | null; club: MeClub | null; rows: Played[]; closet: Closet | null }) {
+function Story({ card, club, rows, closet, been }: { card: MeCard | null; club: MeClub | null; rows: Played[]; closet: Closet | null; been: BeenRow[] }) {
   const beats: { at: string; sort: string; text: string }[] = []
   if (card?.since && club) beats.push({ at: String(card.since), sort: `${card.since}`, text: fl('me.story.since', { club: club.name }) })
   if (card) beats.push({ at: fmt(card.joined), sort: card.joined, text: fl('me.story.joined') })
   for (const r of rows) if (r.life && r.lifeAt) beats.push({ at: fmt(r.lifeAt), sort: r.lifeAt, text: fl('me.story.life', { club: r.club.name, n: r.life }) })
+  for (const b of been) beats.push({ at: b.on ? (b.on.length === 4 ? b.on : fmt(b.on)) : '—', sort: b.on ?? '9999', text: fl('me.story.been', { label: b.label }) })
   const first = closet?.items.map((i) => i.createdAt).sort()[0]
   if (first) beats.push({ at: fmt(first), sort: first, text: fl('me.story.closet') })
   beats.sort((a, b) => a.sort.localeCompare(b.sort))
-  if (beats.length < 2 && !first) return <p className="fl-me-note">{fl('me.story.empty')}</p>
+  if (beats.length < 2 && !first && !been.length) return <p className="fl-me-note">{fl('me.story.empty')}</p>
   return (
     <section className="fl-story">
       <p className="fl-me-note">{fl('me.story.intro')}</p>

@@ -227,5 +227,10 @@
   "topic.numbers": "By the numbers",
   "topic.songs": "Songs",
   "topic.kits": "Shirts",
-  "topic.derby": "The derby"
+  "topic.derby": "The derby",
+  "ticketGate": "Gate",
+  "ticketAdmit": "Admit one",
+  "beenMark": "I was there",
+  "beenMarked": "I was there",
+  "beenHint": "Mark it: it goes into Me → My story"
 }

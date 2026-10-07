@@ -99,5 +99,10 @@
   "file.shirts.title": "In my closet",
   "file.shirts.none": "No shirts yet.",
   "file.wants.title": "My wanted list",
-  "file.wants.none": "Nothing on your wanted list."
+  "file.wants.none": "Nothing on your wanted list.",
+  "me.story.been": "I was there — {label}",
+  "me.clubs.been": "{n} days there",
+  "file.been.title": "I was there",
+  "file.been.none": "Nothing marked yet. Open a club's archive or its meetings and press \"I was there\" on the days you saw with your own eyes.",
+  "file.been.undated": "date unknown"
 }
