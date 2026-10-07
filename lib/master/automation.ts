@@ -27,25 +27,28 @@ type ClubStep={clubId:string;collected?:{state:string;requests:number;documents:
 const manifestStamp=(clubId:string)=>stagingDirs(clubId).map(d=>{const p=join(d,'manifest.json');return existsSync(p)?readFileSync(p,'utf8'):''}).join('|')
 const lastStamp=new Map<string,string>()
 
-export async function runPipeline({maxRequestsPerClub=6,clubs}:{maxRequestsPerClub?:number;clubs?:string[]}={}){
- const steps:ClubStep[]=[]
+/** A web request has ~60s on Vercel; the pipeline stops starting new work at the budget and says which clubs wait. */
+export const PIPELINE_BUDGET_MS=40000
+export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_BUDGET_MS}:{maxRequestsPerClub?:number;clubs?:string[];budgetMs?:number}={}){
+ const steps:ClubStep[]=[],deadline=Date.now()+budgetMs
  for(const clubId of clubs||await profiledClubs()){
   const step:ClubStep={clubId}
+  if(Date.now()>deadline){step.error='Deferred: this run used its time budget; the next run continues here.';steps.push(step);continue}
   try{
    const profile=await loadClubProfile(clubId)
    if(profile?.archive.length){
-    const before=manifestStamp(clubId),{run}=await collectClub(clubId,{maxRequests:maxRequestsPerClub})
+    const before=manifestStamp(clubId),{run}=await collectClub(clubId,{maxRequests:maxRequestsPerClub,deadline})
     step.collected={state:run.state,requests:run.counts.requests,documents:run.counts.documentsRead};step.staged=true
     const after=manifestStamp(clubId),seen=lastStamp.get(clubId)
     // 3 — a package that changed (or was never brought in on this server) goes to the club file as unreviewed rows
     if(after&&(after!==before||seen!==after)){step.queued=await queuePackage(clubId);lastStamp.set(clubId,after)}
    }
-   if(profile?.sources.length){const jobs=await readJobs(clubId);if(jobs.some(j=>j.state==='planned'||j.state==='failed')){const r=await runWorker(profile,{max:3});step.fetched=r.counts.fetched}}
+   if(Date.now()<deadline&&profile?.sources.length){const jobs=await readJobs(clubId);if(jobs.some(j=>j.state==='planned'||j.state==='failed')){const r=await runWorker(profile,{max:3});step.fetched=r.counts.fetched}}
   }catch(e){step.error=e instanceof Error?e.message:'failed'}
   steps.push(step)
  }
  // 5 — process what is queued (bounded: one adapter run per club at most per pass)
- const processed=[];for(let i=0;i<Math.max(1,steps.filter(s=>s.queued).length);i++){const r=await runResearch();processed.push(r);if(!('ran' in r)||!r.ran)break}
+ const processed=[];for(let i=0;Date.now()<deadline+10000&&i<Math.max(1,steps.filter(s=>s.queued).length);i++){const r=await runResearch();processed.push(r);if(!('ran' in r)||!r.ran)break}
  return {at:new Date().toISOString(),steps,processed:processed.length,stopsAt:'review — sources and findings wait for the owner; packs and publishing are never automatic'}
 }
 

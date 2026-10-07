@@ -33,6 +33,11 @@ describe('archive collector — WordPress REST',()=>{
   // publication metadata is kept as such — a document has no event date
   expect(d['testwiki:posts:7']!.publishedAsReported).toBe('2025-01-01T00:00:00');expect(d['testwiki:posts:7']).not.toHaveProperty('playedOn')
  })
+ it('a web request stops at its time budget instead of being cut off by the platform (owner, 7.10.2026)',async()=>{
+  const {f,calls}=web(listing({pages:[[1,2],[3,4]]}))
+  const r=await collectArchive('club-t',[wp({collections:['pages']})],{maxRequests:6,fetchImpl:f,deadline:Date.now()-1})
+  expect(calls.length).toBe(0);expect(r.completeArchiveClaim).toBe(false)
+ })
  it('ends a budget-limited pass as partial_budget and resumes from the checkpoint without duplicates',async()=>{
   const {f,calls}=web(listing({pages:[[1,2],[3,4],[5]]}))
   const r1=await collectArchive('club-b',[wp({collections:['pages']})],{maxRequests:1,fetchImpl:f})

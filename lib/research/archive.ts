@@ -41,7 +41,7 @@ const asFetchSource=(src:ArchiveSource):SourceProfile=>({providerId:src.provider
 export const allowedPath=(src:ArchiveSource,p:string)=>src.allowedPathPrefixes.some(a=>p.startsWith(a))
 const decode=(s:string)=>s.replace(/<[^>]*>/g,'').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/&#x([0-9a-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16))).replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#039;|&apos;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim()
 
-type Ctx={byDoc?:Map<string,Set<string>>;club:string;runId:string;now:()=>Date;fetchImpl?:FetchLike;budget:number;requests:number;diag:ArchiveDiagnostic[];resources:unknown[];docs:Record<string,ArchiveDoc>;cps:Record<string,ArchiveCheckpoint>;eps:Record<string,EndpointStatus>;counts:ArchiveRun['counts'];obs:Record<string,StoredObservation>;newObs:ArchiveObservation[];tax:Record<string,Record<string,string>>}
+type Ctx={deadline?:number;byDoc?:Map<string,Set<string>>;club:string;runId:string;now:()=>Date;fetchImpl?:FetchLike;budget:number;requests:number;diag:ArchiveDiagnostic[];resources:unknown[];docs:Record<string,ArchiveDoc>;cps:Record<string,ArchiveCheckpoint>;eps:Record<string,EndpointStatus>;counts:ArchiveRun['counts'];obs:Record<string,StoredObservation>;newObs:ArchiveObservation[];tax:Record<string,Record<string,string>>}
 function endpoint(ctx:Ctx,src:ArchiveSource,ep:string,state:EndpointStatus['state'],status:number,reason:string|null){ctx.eps[`${src.providerId}:${ep}`]={endpoint:ep,providerId:src.providerId,state,status,reason,checkedAt:ctx.now().toISOString()}}
 type Meta={slug:string|null;categories:number[];parent:number|null}
 async function keep(ctx:Ctx,src:ArchiveSource,collection:string,id:string,url:string,title:string|null,content:string,published:string|null,modified:string|null,raw:Buffer|null,meta:Meta={slug:null,categories:[],parent:null}){
@@ -73,13 +73,15 @@ async function keep(ctx:Ctx,src:ArchiveSource,collection:string,id:string,url:st
 }
 /** The site's own category list (id → slug), read once per source when its parser classifies by it. */
 async function readTaxonomy_(ctx:Ctx,src:ArchiveSource){
- if(ctx.tax[src.providerId]||!archiveParserFor(src.parserId)?.needsTaxonomy||ctx.requests>=ctx.budget)return
+ if(ctx.tax[src.providerId]||!archiveParserFor(src.parserId)?.needsTaxonomy||!more(ctx))return
  const ep='/wp-json/wp/v2/categories',u=new URL(ep,src.origin);u.searchParams.set('per_page','100');u.searchParams.set('_fields','id,slug')
  const out=await get(ctx,src,u.href)
  if(out.kind!=='fetched'||!/json/i.test(out.meta.contentType||'')){endpoint(ctx,src,ep,out.kind==='refused'?(out.status===404?'not-found':'blocked'):'error',out.kind==='refused'?out.status:0,'reason' in out?out.reason:'not json');ctx.diag.push({code:'SOURCE_BLOCKED',providerId:src.providerId,url:u.href,message:'Categories unreadable — documents are kept and parsed on a later run.'});return}
  try{const rows=JSON.parse(out.body.toString('utf8')) as {id:number;slug:string}[];ctx.tax[src.providerId]=Object.fromEntries(rows.filter(r=>Number.isInteger(r.id)&&typeof r.slug==='string').map(r=>[String(r.id),decodeURIComponent(r.slug)]));endpoint(ctx,src,ep,'ok',200,null)}catch{endpoint(ctx,src,ep,'schema-changed',200,'categories not a list')}
 }
 /** One fetch, with the outcome turned into checkpoint/endpoint language. Never retried within a run. */
+/** Budget left AND time left: a web request must answer before the platform cuts it off; the checkpoint resumes next run. */
+const more=(ctx:Ctx)=>ctx.requests<ctx.budget&&!(ctx.deadline&&Date.now()>ctx.deadline)
 async function get(ctx:Ctx,src:ArchiveSource,url:string){ctx.requests++;const out=await politeFetch(url,asFetchSource(src),null,ctx.fetchImpl,()=>ctx.now().getTime());ctx.resources.push({url,at:ctx.now().toISOString(),outcome:out.kind,...(out.kind==='fetched'?{status:200,hash:out.meta.hash,bytes:out.meta.bytes,contentType:out.meta.contentType}:out.kind==='refused'?{status:out.status,reason:out.reason}:'reason' in out?{reason:out.reason}:{})});return out}
 
 async function readWordPress(ctx:Ctx,src:ArchiveSource,collection:'posts'|'pages'){
@@ -90,7 +92,7 @@ async function readWordPress(ctx:Ctx,src:ArchiveSource,collection:'posts'|'pages
  if(cp.state==='listed'||cp.state==='blocked')cp={...cp,nextPage:cp.state==='listed'?1:cp.nextPage,state:'running'} // a new pass re-reads for changes; a block is re-checked once
  if(!allowedPath(src,ep)){ctx.diag.push({code:'PATH_NOT_ALLOWED',providerId:src.providerId,url:ep,message:'The REST path is not in allowedPathPrefixes.'});return}
  await readTaxonomy_(ctx,src)
- while(ctx.requests<ctx.budget){
+ while(more(ctx)){
   if(cp.observedTotalPages!==null&&cp.nextPage>cp.observedTotalPages){cp.state='listed';break}
   const u=new URL(ep,src.origin);u.searchParams.set('per_page',String(src.budget.perPage));u.searchParams.set('page',String(cp.nextPage));u.searchParams.set('orderby','id');u.searchParams.set('order','asc');u.searchParams.set('_fields','id,link,slug,title,content,date_gmt,modified_gmt,type,parent,categories')
   const out=await get(ctx,src,u.href)
@@ -130,7 +132,7 @@ async function readHtml(ctx:Ctx,src:ArchiveSource){
  cp=cp||{schemaVersion:RESEARCH_SCHEMA,providerId:src.providerId,collection:'html',queryFingerprint:fp,parserVersion:src.parserId,nextPage:0,lastCommittedPage:0,observedTotalDocuments:null,observedTotalPages:null,perPage:1,queue:[...(src.seeds||[])],seen:[],state:'new',updatedAt:ctx.now().toISOString(),lastError:null}
  if(cp.state==='listed'){cp.queue=[...(src.seeds||[])];cp.seen=[];cp.state='running'}
  const follow=src.follow?new RegExp(src.follow):null
- while(ctx.requests<ctx.budget&&cp.queue!.length){
+ while(more(ctx)&&cp.queue!.length){
   const p=cp.queue![0]!
   if(!allowedPath(src,p)){cp.queue!.shift();ctx.diag.push({code:'PATH_NOT_ALLOWED',providerId:src.providerId,url:p,message:'Not under allowedPathPrefixes; not requested.'});continue}
   const url=new URL(p,src.origin).href,out=await get(ctx,src,url)
@@ -149,16 +151,16 @@ async function readHtml(ctx:Ctx,src:ArchiveSource){
 }
 
 /** One bounded collection pass for a club (optionally one source). Resumes from the stored checkpoints. */
-export async function collectArchive(clubId:string,sources:ArchiveSource[],{maxRequests=10,providerId,now=()=>new Date(),fetchImpl}:{maxRequests?:number;providerId?:string;now?:()=>Date;fetchImpl?:FetchLike}={}):Promise<ArchiveRun>{
+export async function collectArchive(clubId:string,sources:ArchiveSource[],{maxRequests=10,providerId,now=()=>new Date(),fetchImpl,deadline}:{maxRequests?:number;providerId?:string;now?:()=>Date;fetchImpl?:FetchLike;deadline?:number}={}):Promise<ArchiveRun>{
  const chosen=sources.filter(s=>!providerId||s.providerId===providerId)
  if(providerId&&!chosen.length)throw new Error(`No archive source "${providerId}" in this club's profile.`)
  return serialRun(clubId,async()=>{
   const f=files(clubId),runId=`${now().toISOString().replace(/[:.]/g,'-')}-${randomUUID().slice(0,6)}`,startedAt=now().toISOString()
-  const ctx:Ctx={club:clubId,runId,now,fetchImpl,budget:Math.max(1,Math.min(200,maxRequests)),requests:0,diag:[],resources:[],docs:await readArchiveDocs(clubId),cps:await readCheckpoints(clubId),eps:await readEndpoints(clubId),counts:{requests:0,documentsRead:0,newDocuments:0,changedDocuments:0,unchangedDocuments:0,recordsExtracted:0,blockedEndpoints:0,budgetLeft:0},obs:await readObservations(clubId),newObs:[],tax:await readTaxonomy(clubId)}
+  const ctx:Ctx={deadline,club:clubId,runId,now,fetchImpl,budget:Math.max(1,Math.min(200,maxRequests)),requests:0,diag:[],resources:[],docs:await readArchiveDocs(clubId),cps:await readCheckpoints(clubId),eps:await readEndpoints(clubId),counts:{requests:0,documentsRead:0,newDocuments:0,changedDocuments:0,unchangedDocuments:0,recordsExtracted:0,blockedEndpoints:0,budgetLeft:0},obs:await readObservations(clubId),newObs:[],tax:await readTaxonomy(clubId)}
   // share the budget fairly: every listing gets a turn, and no source exceeds its own per-run cap
   const total=ctx.budget,tasks=chosen.flatMap(src=>src.reader==='wordpress-rest'?(src.collections||[]).map(c=>({src,c:c as 'posts'|'pages'|'html'})):[{src,c:'html' as const}])
   const per=Math.max(1,Math.floor(total/Math.max(1,tasks.length)))
-  for(const t of tasks){ctx.budget=Math.min(total,ctx.requests+Math.min(per,t.src.budget.maxRequests));if(t.c==='html')await readHtml(ctx,t.src);else await readWordPress(ctx,t.src,t.c)}
+  for(const t of tasks){if(deadline&&Date.now()>deadline)break;ctx.budget=Math.min(total,ctx.requests+Math.min(per,t.src.budget.maxRequests));if(t.c==='html')await readHtml(ctx,t.src);else await readWordPress(ctx,t.src,t.c)}
   ctx.budget=total
   for(const src of chosen)if(!archiveParserFor(src.parserId))ctx.diag.push({code:'NEEDS_PARSER',providerId:src.providerId,url:null,message:`No tested parser for ${src.publisher} yet${src.parserId?` (${src.parserId} is planned)`:''}: documents are kept, nothing is extracted.`})
   ctx.counts.requests=ctx.requests;ctx.counts.budgetLeft=Math.max(0,Math.min(200,maxRequests)-ctx.requests)
