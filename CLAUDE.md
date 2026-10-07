@@ -2907,3 +2907,16 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
    מאור, לא שחקנים אמיתיים, באישורו המפורש.
 6. **הכתובת הרשמית: https://fanlife.dubelteam.com** (מאור, 7.10.2026). `SITE_URL` (ב-production בלי משתנה סביבה),
    `PORTAL_HOST_ROOT` (מועדון = `<sub>.fanlife.dubelteam.com`), ה-sitemap (עמודי המועדונים ו-`/sources`) וה-User-Agent של המחקר.
+
+## 96 · מפתח הבעלים: תצוגה מקדימה לאוהדים ≠ חדר בקרה (ביקורת 7.10.2026, F01/F19/F13)
+
+1. **מצב הערכה (`NEXT_PUBLIC_FAN_LIFE_EVALUATION`) פותח את השערים לאוהדים — ולעולם לא את האדמין.** כל עמוד אדמין
+   (`/master/admin`, `/master/core`, `/master/test-lab`, `/kits/admin`, `/qa/stats`) קורא ל-`requireAdmin(path)` מ-`lib/master/admin.ts`,
+   וכל פעולה ב-`/api/master/*` עוברת `adminFromRequest` (401 JSON). `cron` מקבל גם את `CRON_SECRET` — ה-workflow המתוזמן לא משתנה.
+2. **`FAN_LIFE_ADMIN_KEY`** (≥16 תווים) → `/master/login`, השוואה ב-`timingSafeEqual`, עוגייה httpOnly/SameSite=Lax/Secure בפרודקשן
+   עם טוקן HMAC (סוד נגזר מהמפתח, iat + 30 יום). בלי מפתח: פיתוח מקומי פתוח, **פרודקשן סגור**. החלפת מפתח מנתקת את כולם.
+3. **`worker_admin` רק לבקשה מאומתת** (`operate(op,id,{admin})`); הענקה ישנה של "Open local evaluation" נלקחת בבקשה הבאה.
+4. **F19 — היומן:** `actor`+`role` (`owner` רק מעוגייה מאומתת; בלי שם = `system`). מעבר ל-`AUDIT_KEEP` (5,000) הרשומות **עוברות**
+   ל-`<data>/audit-archive/<YYYY-MM>.jsonl` — לא נחתכות. קריאה: `GET /api/master/audit/archive[?month=]`.
+5. **F13 — LIFE:** `components/clubs/life/boot.ts` — בדיקת WebGL לפני טעינת החדר, `play.js` שולח `fan-life:voxel` לחלון האב,
+   וכשל רנדרר אף פעם לא מוצג כ-timeout רשת. מסך השגיאה הוא `alertdialog` ב-`z-[70]`, מעל כרטיס הפרק, עם Back ו-Try again.

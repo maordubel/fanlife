@@ -8,6 +8,7 @@ export function sameOrigin(r:Request){const origin=r.headers.get('origin')
  const host=r.headers.get('x-forwarded-host')||r.headers.get('host'),proto=r.headers.get('x-forwarded-proto')||new URL(r.url).protocol.replace(':','')
  const allowed=new Set([new URL(r.url).origin,...(host?[`${proto}://${host}`]:[]),...(process.env.NEXT_PUBLIC_SITE_URL?[new URL(process.env.NEXT_PUBLIC_SITE_URL).origin]:[])])
  if(!allowed.has(origin))throw new Error('Use the application origin for this operation.')}
+/** The fans' preview (every gate playable without an account). It is NOT an admin check — see `lib/master/admin.ts` (audit F01). */
 export function requireOpenEvaluation(){if(!evaluationMode())throw new Error('This release is available in open local evaluation only.')}
 export function cronAuthorized(r:Request){const secret=process.env.CRON_SECRET||'',a=Buffer.from(r.headers.get('authorization')||''),b=Buffer.from(`Bearer ${secret}`);return secret.length>=32&&a.length===b.length&&timingSafeEqual(a,b)}
 export function text(v:unknown,name:string,max=200){if(typeof v!=='string'||!v.trim()||v.length>max)throw new Error(`${name} is required (maximum ${max} characters).`);return v.trim()}

@@ -4,8 +4,17 @@
  * It decides NOTHING about the story. The host (the React shell) tells it which room, who stands
  * where and which doors exist; it answers with what the player did: walked into a door, pressed
  * the button next to somebody. Every word the player reads is the host's DOM, never this canvas. */
+/* A boot failure is told to the shell at once (audit F13): the host's sink is not attached until the room
+ * is ready, so an error emitted before that went nowhere and the player waited 30 s for a "network" timeout. */
+function vxBootFailed(er){
+ var msg=String(er&&er.message||er||'error');
+ try{(window.__err=window.__err||[]).push(String(er&&er.stack||er))}catch(e){}
+ window.__bootError=msg;
+ try{if(window.parent!==window)window.parent.postMessage({type:'fan-life:voxel',event:'error',message:msg},location.origin)}catch(e){}
+}
 (function(){
 "use strict";
+if(!window.__vx||!window.__vx.THREE){vxBootFailed(new Error('The 3D engine did not load (no WebGL renderer).'));return}
 var V=window.__vx,THREE=V.THREE,PI=Math.PI;
 var CELL=.5,RADIUS=.45,REACH=3.5,SPEED=5.6,RUN=1.55;
 var sink=function(){},cfg=null,grid=null,player=null,actors={},exits=[],spots=[],marks=[],target=null,frozen=false;
@@ -348,5 +357,5 @@ fetch('/life/voxel/skins').then(function(r){return r.ok?r.json():{skins:{}}}).ca
  var l=document.getElementById('loader');if(l)l.classList.add('off');
  window.__ready=true;emit({type:'ready',quality:V.quality().name});
  if(window.parent!==window&&window.parent.__vxHostReady)window.parent.__vxHostReady(P);
-}).catch(function(er){window.__err.push(String(er&&er.stack||er));emit({type:'error',message:String(er&&er.message||er)})});
+}).catch(function(er){vxBootFailed(er);emit({type:'error',message:String(er&&er.message||er)})});
 })();

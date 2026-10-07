@@ -914,3 +914,25 @@
 .mag-dye.halftone::before { opacity: .26; }
 .mag-tile-shirt { inset-block-end: auto; inset-block-start: 30px; inset-inline-end: 12px; }
 .mag-tile-shirt { inset-block-start: 6px; inset-inline-end: 46px; inline-size: 30px; width: 30px; }
+
+/* control room door (audit F01): a press pass — perforated stub, stamped title, one field */
+.mag-pass-wrap { padding-block: 28px 64px; }
+.mag-pass { position: relative; display: grid; grid-template-rows: auto 1fr; max-inline-size: 520px; margin-inline: auto; background: var(--mag-card); border: 3px solid var(--mag-ink); box-shadow: var(--mag-shadow); }
+.mag-pass-stub { display: flex; justify-content: space-between; gap: 12px; padding: 10px 16px; background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 3px; border-block-end: 3px dashed var(--mag-paper); }
+.mag-pass-body { padding: 22px 16px 24px; }
+.mag-pass-title { font-family: var(--mag-display); font-size: clamp(2.2rem, 11vw, 3.6rem); line-height: .92; text-transform: uppercase; margin: 0 0 14px; transform: rotate(-1.5deg); transform-origin: 0 50%; }
+.mag-pass-note { font-family: var(--mag-body); font-size: 1rem; line-height: 1.45; margin: 0 0 18px; }
+.mag-pass-note code { font-family: var(--mag-mono); background: var(--mag-paper); padding: 0 4px; overflow-wrap: anywhere; }
+.mag-pass-form { display: grid; gap: 10px; }
+.mag-pass-label { font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+.mag-pass-input { min-height: 52px; padding: 10px 12px; border: 3px solid var(--mag-ink); border-radius: 0; background: var(--mag-white); color: var(--mag-ink); font-family: var(--mag-mono); font-size: 1.1rem; letter-spacing: 3px; inline-size: 100%; }
+.mag-pass-input:focus-visible, .mag-pass-go:focus-visible { outline: 3px solid var(--mag-vermilion); outline-offset: 3px; }
+.mag-pass-error { margin: 0; padding: 8px 10px; border-inline-start: 6px solid var(--mag-vermilion); background: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; }
+.fl .mag-pass-go { inline-size: 100%; justify-content: center; }
+.mag-logout { display: inline-flex; margin: 0; }
+.mag-logout button { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 12px; border: 3px solid var(--mag-ink); background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
+@media (min-width: 760px) {
+  .mag-pass { grid-template-rows: none; grid-template-columns: 64px 1fr; max-inline-size: 640px; margin-block-start: 24px; }
+  .mag-pass-stub { flex-direction: column; justify-content: space-between; align-items: center; writing-mode: vertical-rl; padding: 18px 10px; border-block-end: 0; border-inline-end: 3px dashed var(--mag-paper); }
+  .mag-pass-body { padding: 32px 32px 34px; }
+}

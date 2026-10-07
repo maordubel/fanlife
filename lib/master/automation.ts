@@ -61,6 +61,6 @@ async function queuePackage(clubId:string){
 
 /** What the overview shows: when the autopilot last ran and what it did (kept in the audit, newest first). */
 export async function lastPipelineRuns(n=5){const s=await readState();return [...s.audit].reverse().filter(a=>a.action==='automation.pipeline').slice(0,n)}
-export async function recordPipeline(report:Awaited<ReturnType<typeof runPipeline>>,actor:string){
- return mutate(s=>{audit(s,'automation.pipeline','global',report.steps.map(x=>`${x.clubId}: ${x.error?`error (${x.error})`:x.collected?`${x.collected.state}, ${x.collected.requests} req, ${x.collected.documents} docs${x.queued?', package queued':''}`:'no archive sources'}`).join(' · ').slice(0,1500),{actor});return true})
+export async function recordPipeline(report:Awaited<ReturnType<typeof runPipeline>>,who:{actor:string;role?:string}){
+ return mutate(s=>{audit(s,'automation.pipeline','global',report.steps.map(x=>`${x.clubId}: ${x.error?`error (${x.error})`:x.collected?`${x.collected.state}, ${x.collected.requests} req, ${x.collected.documents} docs${x.queued?', package queued':''}`:'no archive sources'}`).join(' · ').slice(0,1500),{actor:who.actor,role:who.role});return true})
 }
