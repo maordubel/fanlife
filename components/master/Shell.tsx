@@ -21,7 +21,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
  return <div className={`fl mag${identity?' club-theme':''}`} data-club={club?.id} data-pattern={identity?.pattern} data-rival-no={identity?rivalBans(identity).join(' ')||undefined:undefined} dir={localeDirection(locale)} lang={locale} style={identity?themeStyle(identity,locale):{'--club':MASTER_PRIMARY} as CSSProperties}>
   <div className="mag-top"><div className="mag-top-in">
    <Link href="/" className="mag-logo" aria-label="FAN LIFE"><img className="mag-seal-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-96.png'} alt="" width={40} height={40}/>FAN<b>LIFE</b></Link>
-   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/#archive">{copy.tabArchive}</Link><Link href="/#gates">{copy.gates}</Link><Link href="/closet">{copy.corner}</Link></nav>
+   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/#archive">{copy.tabArchive}</Link><Link href="/#gates">{copy.gates}</Link><Link href="/me">{copy.corner}</Link></nav>
   </div></div>
   <div className="mag-stop">{stop===undefined?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:stop}</div>
   {children}
@@ -37,7 +37,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
    <Link href="/#clubs"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><circle cx="12" cy="12" r="9"/><path d="M12 8l4 3-1.5 5h-5L8 11z"/></svg>{copy.tabClubs}</Link>
    <Link href="/#archive"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><rect x="3" y="5" width="18" height="16"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>{copy.tabArchive}</Link>
    <Link href="/#gates"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>{copy.tabGames}</Link>
-   <Link href="/closet"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><path d="M8 3l-5 4 3 4 2-1v11h8V10l2 1 3-4-5-4c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg>{copy.tabCorner}</Link>
+   <Link href="/me"><svg width="22" height="22" viewBox="0 0 24 24" {...ICON}><path d="M8 3l-5 4 3 4 2-1v11h8V10l2 1 3-4-5-4c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg>{copy.tabCorner}</Link>
   </nav>
  </div>
 }

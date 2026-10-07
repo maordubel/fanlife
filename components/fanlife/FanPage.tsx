@@ -5,8 +5,10 @@ import { Shell } from '@/components/master/Shell'
 import { fl } from '@/lib/fanlife/copy'
 import { evaluationMode } from '@/lib/master/mode'
 
-export type CornerTab = 'closet' | 'market' | 'auction' | 'shirts'
+export type CornerTab = 'me' | 'file' | 'closet' | 'market' | 'auction' | 'shirts'
 const TABS: { key: CornerTab; href: string; label: Parameters<typeof fl>[0] }[] = [
+  { key: 'me', href: '/me', label: 'corner.me' },
+  { key: 'file', href: '/me/file', label: 'corner.file' },
   { key: 'closet', href: '/closet', label: 'corner.closet' },
   { key: 'market', href: '/market', label: 'corner.market' },
   { key: 'auction', href: '/auction', label: 'corner.auction' },
