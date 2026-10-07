@@ -24,7 +24,8 @@ export const REGISTRY: readonly RegistryClub[] = [
   c('partizan-belgrade', 'partizan', 'Partizan Belgrade', 'Belgrade', 'Serbia', 'PB', '#1F1F1F', 5),
   c('union-berlin', 'unionberlin', '1. FC Union Berlin', 'Berlin', 'Germany', 'UB', '#C92D39', 5),
 ]
-export const PORTAL_HOST_ROOT = process.env.FANLIFE_ROOT_DOMAIN || 'fanlife.game'
+/** The official address (owner, 7.10.2026): https://fanlife.dubelteam.com — a club's own host is `<sub>.fanlife.dubelteam.com`. */
+export const PORTAL_HOST_ROOT = process.env.FANLIFE_ROOT_DOMAIN || 'fanlife.dubelteam.com'
 export const DEFAULT_CLUB = 'hapoel-tel-aviv'
 /** host → club id, or null for the neutral portal. Closed list: an unknown subdomain is the portal, never a guess. */
 export function clubFromHost(host: string | null | undefined, reg: readonly RegistryClub[] = REGISTRY, root = PORTAL_HOST_ROOT): string | null {
