@@ -443,7 +443,8 @@
 .mag-skin .xi-pitch::after { content: ''; position: absolute; inset-inline: 30%; inset-block-start: calc(50% - 15%); aspect-ratio: 1; border: 3px solid rgb(255 255 255 / 0.8); border-radius: 50%; pointer-events: none; }
 .mag-skin .xi-slot { background: var(--mag-card); border: 3px solid var(--mag-ink); border-radius: 0; box-shadow: 2px 2px 0 var(--mag-ink); color: var(--mag-ink); font-weight: 700; z-index: 1; box-sizing: border-box; border-width: 2px; width: 23%; padding: 3px; font-size: 11px; }
 .mag-skin .xi-slot small { color: var(--mag-vermilion); font-family: var(--mag-mono); }
-.mag-skin .xi-slot[aria-pressed='true'] { background: var(--mag-navy); color: var(--mag-paper); box-shadow: 2px 2px 0 var(--mag-vermilion); }
+/* on the grass a red edge never touches green (ONE RED WORLD §9): the red sits INSIDE the slot, the outer edge is ink */
+.mag-skin .xi-slot[aria-pressed='true'] { background: var(--mag-navy); color: var(--mag-paper); border-color: var(--mag-ink); box-shadow: inset 0 0 0 2px var(--mag-vermilion), 2px 2px 0 var(--mag-ink); }
 .mag-skin .xi-slot[aria-pressed='true'] small { color: var(--mag-lilac); }
 
 /* match list rows (derby meetings, tables): dotted leaders like a results column */

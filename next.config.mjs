@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: { serverComponentsExternalPackages: ['@electric-sql/pglite'], cpus: 2 },
+  experimental: {
+    serverComponentsExternalPackages: ['@electric-sql/pglite'], cpus: 2,
+    // the control room reads research files at runtime (fs, not imports): ship them with the routes that read them
+    outputFileTracingIncludes: {
+      '/master/admin': ['./research-data/**/*', './research-profiles/**/*', './research-staging/**/*'],
+      '/api/master/[...action]': ['./research-data/**/*', './research-profiles/**/*', './research-staging/**/*'],
+    },
+  },
   poweredByHeader: false,
   images: { formats: ['image/avif', 'image/webp'] },
 

@@ -2866,3 +2866,11 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
    דפי משחק מתוכננים → עיבוד. **עוצר בביקורת**: לא מאשר, לא בונה pack, לא מפרסם. "Open all playable gates" הוא
    לחיצה של הבעלים, ועוברת את בדיקת ההפעלה.
 7. סלטיק, פרטיזן ואוניון ברלין ב-registry בסטטוס research בלבד.
+8. **(6.10.2026, ערב) איפה זה רץ ואיפה זה נשמר.** נתוני המחקר יושבים ב-`research-data/` בריפו (`lib/research/paths.ts`;
+   `RESEARCH_DATA_DIR`/`FAN_LIFE_DATA_DIR` דורסים). האיסוף האמיתי רץ ב-GitHub — **Actions → Archive collect** (כל יום ג׳
+   ובלחיצה), ומקומט רק את `research-data/`; ארגז החול של הבנייה לא מגיע לאף מקור. שרת לקריאה בלבד מחזיר 503 עם ההוראה
+   הזאת (`READ_ONLY_HINT`), ו-`outputFileTracingIncludes` שולח את התיקייה עם מסלולי האדמין.
+9. **ה-parser הראשון: `aekpedia-football-v1`.** מסווג לפי הקטגוריות של האתר עצמו (players / coaches / seasons, נקראות
+   מ-`/categories` לפי slug), ומחלץ רק שם כפי שנכתב + הטווח שבשורת הפתיחה ("(1976/77)") או תווית עונה — כמועמדים
+   (`identityState: 'unresolved'`). ה-fixture הוא שחזור מינימלי של המבנה שנצפה (עובדות בלבד, בלי פרוזה — הריפו ציבורי).
+   מועמדים יוצאים ל-`archive-players.json` של ה-staging, וה-package adapter מדווח עליהם בשורת REPORT — לא כממצא.
