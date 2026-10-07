@@ -60,7 +60,7 @@ describe('the session token',()=>{
  })
  it('compares the typed key in constant time and exactly',()=>{
   expect(keyMatches(KEY,KEY)).toBe(true)
-  expect(keyMatches(`${KEY} `,KEY)).toBe(false)
+  expect(keyMatches(`${KEY} `,KEY)).toBe(true) // 7.10.2026: a trailing space from a phone keyboard is not a different key (owner locked out)
   expect(keyMatches(KEY.slice(0,-1),KEY)).toBe(false)
   expect(keyMatches(null,KEY)).toBe(false)
   expect(keyMatches('',KEY)).toBe(false)
@@ -203,5 +203,16 @@ describe('the audit log keeps more than 1,000 entries by rotating to monthly arc
   const {audit}=await import('@/lib/master/store')
   const s={audit:[]} as unknown as Parameters<typeof audit>[0];audit(s,'x','y')
   expect(s.audit[0]).toMatchObject({actor:'system',role:'system'})
+ })
+})
+
+describe('owner key is compared as the owner means it',()=>{
+ it('ignores outer spaces, wrapping quotes and Unicode form on either side',async()=>{
+  const {keyMatches,configuredKey}=await import('@/lib/master/admin-token')
+  const key=configuredKey({FAN_LIFE_ADMIN_KEY:' "Red-Terrace-1923-forever" \n',NODE_ENV:'production'})
+  expect(key).toBe('Red-Terrace-1923-forever')
+  expect(keyMatches('Red-Terrace-1923-forever ',key)).toBe(true)
+  expect(keyMatches('“Red-Terrace-1923-forever”',key)).toBe(true)
+  expect(keyMatches('red-Terrace-1923-forever',key)).toBe(false)
  })
 })
