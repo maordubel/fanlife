@@ -3,7 +3,7 @@ import {Shell} from '@/components/master/Shell'
 import {CORE_CLUB_IDS,loadClub} from '@/lib/clubs/resolver'
 import en from '@/messages/clubs/en.json'
 export const dynamic='force-dynamic'
-export const metadata={title:'Sources & credits · FAN LIFE'}
+export const metadata={title:'Sources & credits'}
 
 /**
  * The magazine's sources page (page audit, 7.10.2026). Every playable club's facts carry a source;

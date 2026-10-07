@@ -39,3 +39,18 @@ export function TornBlocks({seed,pattern,inks}:{seed:string;pattern?:string;inks
 export function Cutout({art,className=''}:{art:DyeArt;className?:string}){
  return <span className={`mag-cutout ${className}`} aria-hidden="true"><Dye art={art} ink="var(--mag-paper)" className="halftone"/></span>
 }
+
+/**
+ * The owner's press-photo stickers (7.10.2026): sepia prints with their own cream outline, cut by
+ * scripts/brand/magazine-photos.py (warmth capped so no decoded pixel is yellow — one file, every club).
+ */
+export const PRESS_PHOTOS={
+ 'shirt-swap':[1000,770],'fan-fist':[964,1514],'fans-group':[1000,654],'dribbler':[884,1456],
+ 'father-son':[973,1451],'memorabilia':[1000,651],'friends-walk':[1000,674],'striped-shirt':[1000,902],
+} as const
+export type PressPhotoArt=keyof typeof PRESS_PHOTOS
+export function PressPhoto({art,className='',alt=''}:{art:PressPhotoArt;className?:string;alt?:string}){
+ const [w,h]=PRESS_PHOTOS[art]
+ // eslint-disable-next-line @next/next/no-img-element -- the measured bytes ship unchanged (no re-encode, rule 61)
+ return <img className={`mag-press ${className}`} src={`/brand/magazine/photos/${art}.webp`} width={w} height={h} alt={alt} aria-hidden={alt?undefined:true} loading="lazy" decoding="async"/>
+}

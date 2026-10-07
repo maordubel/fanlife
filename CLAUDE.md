@@ -2935,3 +2935,13 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
    ל-`<data>/audit-archive/<YYYY-MM>.jsonl` — לא נחתכות. קריאה: `GET /api/master/audit/archive[?month=]`.
 5. **F13 — LIFE:** `components/clubs/life/boot.ts` — בדיקת WebGL לפני טעינת החדר, `play.js` שולח `fan-life:voxel` לחלון האב,
    וכשל רנדרר אף פעם לא מוצג כ-timeout רשת. מסך השגיאה הוא `alertdialog` ב-`z-[70]`, מעל כרטיס הפרק, עם Back ו-Try again.
+
+## 98 · The hub's second issue: every club on the roll, photos, "I was there", euros (7.10.2026)
+
+1. **Next up lists every club.** `lib/fixtures/teams.ts` has a row for every registry club (exact names + country, rule 7); a club with no confirmed match shows a "To be confirmed" card — never an invented date.
+2. **Colours on the hub are the clubs' own, yellow included** (AEK, Dortmund). Light colours travel with their reading ink: `livery().on/type` → `wearLivery()` sets `--club-on-primary`, `--club-type` (club colour as type on paper, ink when it would not read) and `--dye-shade`. Rival bans on club pages (rule 95) are unchanged.
+3. **The owner's press-photo stickers** (`public/brand/magazine/photos/`, cut by `scripts/brand/magazine-photos.py`, sepia capped so no decoded pixel is yellow) are drawn by `PressPhoto` (components/master/Poster.tsx). Home: editor's letter as a side column, swap band, "Were you there?", "Your corner", "A supporter's life". The home page has no table of contents, gates list or archive block — those live on the club pages.
+4. **A club's games are match tickets** (`.mag-ticket`): stub in the club's livery, gate number, ADMIT ONE.
+5. **"I was there"** (`lib/fanlife/been.ts`, `components/fanlife/BeenThere.tsx`): a stamp on archive entries and meetings, stored on the device (`fanlife.been.v1`, tombstones on un-mark, later `at` wins); shown in Me → My story, the clubs standing and My file.
+6. **FAN LIFE prices in euros**: the forks default to and offer EUR only (`CURRENCY_SUBS` in scripts/fanlife/fork-economy.py); a row that already carries a currency keeps it.
+7. **Every gate page carries the FAN LIFE mark** (mono on club pages) in its nav; page titles never repeat "· FAN LIFE" (the layout template adds it).

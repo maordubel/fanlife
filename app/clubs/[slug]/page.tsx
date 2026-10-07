@@ -3,7 +3,7 @@ import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
 import {Dye} from '@/components/master/Dye'
-import {Seal,TornBlocks,Cutout} from '@/components/master/Poster'
+import {Seal,TornBlocks,Cutout,PressPhoto} from '@/components/master/Poster'
 import {readState} from '@/lib/master/store'
 import {loadClub,resolveClubId} from '@/lib/clubs/resolver'
 import {gateAccess} from '@/lib/clubs/access'
@@ -18,8 +18,9 @@ import {gameCopy} from '@/lib/clubs/game-copy'
 import {lifeEntry} from '@/lib/clubs/life/entry'
 import {ClubActivity} from '@/components/clubs/games/ClubActivity'
 import {getFixtureFeed} from '@/lib/fixtures/service'
-import {livery} from '@/lib/club-livery'
+import {livery,wearLivery} from '@/lib/club-livery'
 export const dynamic='force-dynamic'
+export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?{title:`${c.name} — ${c.city}`}:{}}
 export default async function Page({params,searchParams}:{params:{slug:string};searchParams:{lang?:string}}) {
  const id=resolveClubId(headers().get('host'),params.slug,evaluationMode())
  if(!id)notFound()
@@ -47,20 +48,26 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
    </div>
    <div className="mag-homestage" aria-hidden="true"><TornBlocks seed={c.id} pattern={lv?.pattern}/><Cutout art="kicker" className="mag-homekick"/></div>
   </section>
-  {fx&&lv&&<section className="mag-section mag-homefixture" id="next"><Dye art="boot-ball-ticket" className="mag-homeprop"/><div><div className="mag-head"><div><p className="mag-kicker">{copy.fixtureCard}</p></div></div><article className="mag-fixture" style={{['--club-primary' as string]:lv.primary}}><span className="mag-band" data-livery={lv.pattern} aria-hidden="true"/><div className="mag-fixture-body"><h3><span>{c.name}</span> {copy.vs} {fx.opponent}</h3><p className="mag-fixture-meta"><time dateTime={fx.kickoff}>{fx.kickoff.slice(0,10)}</time>{fx.competition?` · ${fx.competition}`:''}</p><Link className="mag-cta red" href={`/clubs/${id}/meetings?vs=${encodeURIComponent(fx.opponent)}&lang=${locale}`}>{copy.nextCta}<span aria-hidden="true">→</span></Link></div></article></div></section>}
+  {fx&&lv&&<section className="mag-section mag-homefixture" id="next"><Dye art="boot-ball-ticket" className="mag-homeprop"/><div><div className="mag-head"><div><p className="mag-kicker">{copy.fixtureCard}</p></div></div><article className="mag-fixture" style={wearLivery(lv)}><span className="mag-band" data-livery={lv.pattern} aria-hidden="true"/><div className="mag-fixture-body"><h3><span>{c.name}</span> {copy.vs} {fx.opponent}</h3><p className="mag-fixture-meta"><time dateTime={fx.kickoff}>{fx.kickoff.slice(0,10)}</time>{fx.competition?` · ${fx.competition}`:''}</p><Link className="mag-cta red" href={`/clubs/${id}/meetings?vs=${encodeURIComponent(fx.opponent)}&lang=${locale}`}>{copy.nextCta}<span aria-hidden="true">→</span></Link></div></article></div></section>}
   {searchParams.lang&&!UI_LOCALES.includes(searchParams.lang as 'en'|'he')&&<section className="mag-section"><p className="panel">{copy.fallback}</p></section>}
   <section className="mag-section" id="games">
    <hr className="mag-rule"/>
    <div className="mag-head mag-homehead"><div><p className="mag-kicker">{copy.homeProgramme}</p><h2 className="mag-h2">{core?games.gamesTitle:copy.workshopTitle}</h2></div><Dye art="net-keeper" className="mag-homenet"/></div>
-   {core?<div className="mag-contents mag-contents-grid" data-testid="shared-gates">{gamesOpen.map(({g,allowed,ready})=>allowed&&ready.playable
-     ?<Link key={g.key} data-gate={g.key} className={`mag-row mag-gate mag-gate-${g.key}`} href={`/clubs/${c.id}/${g.key}?lang=${locale}`}><em>{String(g.number).padStart(2,'0')}</em><span>{games[`gate.${g.key}`]}<small>{games[`blurb.${g.key}`]}</small></span><span className="lead" aria-hidden="true"/><s>{games.play} →</s></Link>
-     :<div key={g.key} data-gate={g.key} className="mag-row mag-gate mag-gate-off" aria-disabled="true"><em>{String(g.number).padStart(2,'0')}</em><span>{games[`gate.${g.key}`]}<small>{c.status==='paused'?copy.paused:games.comingSoon}</small></span></div>)}</div>
+   {/* Every gate is a ticket to its own end of the ground: the stub in the club's colours, the gate's number, ADMIT ONE (owner, 7.10.2026: "more interesting, more attractive"). */}
+   {core?<div className="mag-tickets" data-testid="shared-gates">{gamesOpen.map(({g,allowed,ready},i)=>allowed&&ready.playable
+     ?<Link key={g.key} data-gate={g.key} className={`mag-ticket${i<2?' feature':''}`} href={`/clubs/${c.id}/${g.key}?lang=${locale}`}><span className="mag-ticket-stub mag-band" data-livery={lv?.pattern}><span className="mag-ticket-no"><small>{games.ticketGate}</small><b>{String(g.number).padStart(2,'0')}</b></span></span><span className="mag-ticket-body"><b>{games[`gate.${g.key}`]}</b><small>{games[`blurb.${g.key}`]}</small><s>{games.ticketAdmit} · {games.play} →</s></span></Link>
+     :<div key={g.key} data-gate={g.key} className="mag-ticket mag-gate-off" aria-disabled="true"><span className="mag-ticket-stub"><span className="mag-ticket-no"><small>{games.ticketGate}</small><b>{String(g.number).padStart(2,'0')}</b></span></span><span className="mag-ticket-body"><b>{games[`gate.${g.key}`]}</b><small>{games[`blurb.${g.key}`]}</small><s className="mag-ticket-soon">{c.status==='paused'?copy.paused:games.comingSoon}</s></span></div>)}</div>
    :<div className="panel"><p className="eyebrow">{copy.workshop}</p><p>{copy.workshopNote}</p></div>}
   </section>
   <section className="mag-section mag-homepair">
    <article className="mag-homecard ink" id="life" data-life-entry={life.state}><Dye art="face" className="mag-homeface"/><div><p className="mag-kicker">LIFE</p><h2>{copy.lifeTitle}</h2>{life.href?<><p>{copy.lifeOpen}</p><Link className="mag-cta red" href={life.href}>{copy.life}</Link></>:<p>{copy.lifeWorkshop}</p>}</div></article>
    <article className="mag-homecard"><div className="mag-homeshirts"><Dye art="shirt" soft/><Dye art="shirt" soft ink={theme.secondary}/></div><div><p className="mag-kicker">{copy.homeColours}</p><h2>{fill(copy.homeColoursTitle)}</h2><p>{copy.homeColoursNote}</p>{core&&<Link className="mag-cta red" href={`/clubs/${c.id}/kits?lang=${locale}`}>{games['gate.kits']} →</Link>}</div></article>
   </section>
+  {core&&gamesOpen.some(x=>x.g.key==='archive'&&x.allowed&&x.ready.playable)&&<section className="mag-section mag-feature mag-feature-flip mag-clubbeen" aria-labelledby="been-h">
+   <div className="mag-feature-art" aria-hidden="true"><TornBlocks seed={c.id+'been'} pattern={lv?.pattern}/><PressPhoto art="fans-group" className="mag-feature-main"/><PressPhoto art="memorabilia" className="mag-feature-side"/></div>
+   <div className="mag-feature-text"><p className="mag-kicker">{copy.beenKicker}</p><h2 className="mag-h2" id="been-h">{fill(copy.clubBeenTitle)}</h2><p>{fill(copy.clubBeenBody)}</p>
+    <div className="mag-feature-ctas"><Link className="mag-cta red" href={`/clubs/${c.id}/archive?lang=${locale}`}>{copy.beenPick} →</Link><Link className="mag-cta ghost" href="/me/file#been">{copy.beenCta}</Link></div></div>
+  </section>}
   {core&&<section className="mag-section" id="terrace"><hr className="mag-rule"/><div className="mag-hometerrace"><Dye art="terrace-scarf" className="mag-homescarf"/><div className="mag-head"><div><p className="mag-kicker">{copy.homeTerrace}</p><h2 className="mag-h2">{copy.homeTerraceTitle}</h2></div></div></div><ClubActivity club={c.id} locale={locale}/></section>}
  </main></Shell>
 }

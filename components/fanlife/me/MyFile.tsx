@@ -8,8 +8,11 @@ import type { MeClub } from '@/app/me/data'
 import { xiKey } from '@/lib/clubs/activity'
 import { closetMine } from '@/lib/collector/api'
 import type { Closet } from '@/lib/collector/types'
+import { wearLivery } from '@/lib/club-livery'
 import { fl } from '@/lib/fanlife/copy'
 import { FORMATIONS } from '@/lib/game/formations'
+
+import { beenList, readBeen, type BeenRow } from '@/lib/fanlife/been'
 
 import { lifeOf } from './MeArea'
 
@@ -39,8 +42,10 @@ export function MyFile({ clubs, labels }: { clubs: MeClub[]; labels: Labels }) {
   const [xis, setXis] = useState<SavedXI[] | null>(null)
   const [lives, setLives] = useState<Life[]>([])
   const [closet, setCloset] = useState<Closet | null>(null)
+  const [been, setBeen] = useState<(BeenRow & { key: string })[]>([])
   useEffect(() => {
     let live = true
+    setBeen(beenList(readBeen()))
     const found = clubs.map(readXI).filter((x): x is Omit<SavedXI, 'names'> => !!x)
     void Promise.all(found.map(async (x) => ({ ...x, names: await xiNames(x.club.id, x.rows.map((r) => r.id)).catch(() => ({})) })))
       .then((rows) => { if (live) setXis(rows) })
@@ -59,7 +64,7 @@ export function MyFile({ clubs, labels }: { clubs: MeClub[]; labels: Labels }) {
         {xis === null ? null : xis.length === 0 ? <p className="fl-me-note">{fl('file.xi.none')}</p> : (
           <ul className="fl-file-xis">
             {xis.map((x) => (
-              <li key={x.club.id} style={{ ['--club-primary' as string]: x.club.primary }}>
+              <li key={x.club.id} style={wearLivery(x.club)}>
                 <header><span className="mag-badge" data-livery={x.club.pattern} aria-hidden="true">{x.club.initials}</span><b>{x.club.name}</b><small>{x.formation}</small></header>
                 <ol>{x.rows.map((r) => <li key={r.slot}><span>{r.role}</span>{x.names[r.id] ?? '—'}{x.captain === r.id ? <em> (C)</em> : null}</li>)}</ol>
                 <Link className="mag-chip min-h-tap" href={`/clubs/${x.club.id}/xi`}>{fl('me.clubs.open')} →</Link>
@@ -69,12 +74,26 @@ export function MyFile({ clubs, labels }: { clubs: MeClub[]; labels: Labels }) {
         )}
       </section>
 
+      <section className="fl-me-section" id="been" aria-labelledby="file-been">
+        <h2 id="file-been">{fl('file.been.title')}</h2>
+        {been.length === 0 ? <p className="fl-me-note">{fl('file.been.none')}</p> : (
+          <ul className="fl-me-clubs fl-been-list">
+            {been.map((b) => { const club = clubs.find((c) => c.id === b.club); return club ? (
+              <li key={b.key} style={wearLivery(club)}>
+                <span className="mag-badge" data-livery={club.pattern} aria-hidden="true">{club.initials}</span>
+                <div><b dir="auto">{b.label}</b><small>{club.name} · {b.on ? (b.on.length === 4 ? b.on : fmt(b.on)) : fl('file.been.undated')}</small></div>
+                <span className="fl-been-star" aria-hidden="true">★</span>
+              </li>) : null })}
+          </ul>
+        )}
+      </section>
+
       <section className="fl-me-section" aria-labelledby="file-life">
         <h2 id="file-life">{fl('file.life.title')}</h2>
         {lives.length === 0 ? <p className="fl-me-note">{fl('file.life.none')}</p> : (
           <ul className="fl-me-clubs">
             {lives.map((l) => (
-              <li key={l.club.id} style={{ ['--club-primary' as string]: l.club.primary }}>
+              <li key={l.club.id} style={wearLivery(l.club)}>
                 <span className="mag-badge" data-livery={l.club.pattern} aria-hidden="true">{l.club.initials}</span>
                 <div><b>{l.club.name}</b><small>{fl('file.life.at', { n: l.chapters, of: l.club.lifeChapters || l.chapters, when: l.at ? fmt(l.at) : '—' })}</small></div>
                 <Link className="mag-chip min-h-tap" href={`/clubs/${l.club.id}/life`}>{fl('me.clubs.open')} →</Link>

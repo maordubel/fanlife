@@ -7,8 +7,9 @@
  *
  * Rules that live in this file and nowhere else:
  *   · Colour is defined HERE as `--mag-*` tokens. Components never write a hex (brand test).
- *   · No yellow. Not gold, not amber, not orange-yellow. The "warm" in this palette is
- *     vermilion and salmon; the paper is cream at 10% saturation, which reads as paper.
+ *   · The magazine's own inks carry no yellow: the "warm" is vermilion and salmon, the paper
+ *     cream at 10% saturation. A club wears its own colours, yellow included on the hub
+ *     (AEK, Dortmund); a club PAGE never shows its rival's colour (CLAUDE.md rules 95, 98).
  *   · A club's colours are FIXED and come from its identity manifest as `--club-primary`;
  *     they are worn by `.mag-badge` / `.mag-band` and by nothing else, so every club is
  *     dressed by the same rule and no club is "the default".
@@ -89,7 +90,7 @@
 .mag-rule { border: 0; border-top: 6px solid var(--mag-ink); margin: 0 0 8px; }
 
 /* ───────── a club is a livery, always the same one ───────── */
-.mag-badge { width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--mag-ink); background: var(--club-primary, var(--mag-ink)); color: var(--mag-white); display: inline-flex; align-items: center; justify-content: center; font-family: var(--mag-display); font-size: 11px; flex: none; }
+.mag-badge { width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--mag-ink); background: var(--club-primary, var(--mag-ink)); color: var(--club-on-primary, var(--mag-white)); display: inline-flex; align-items: center; justify-content: center; font-family: var(--mag-display); font-size: 11px; flex: none; }
 .mag-badge[data-livery='stripes'], .mag-band[data-livery='stripes'] { background: repeating-linear-gradient(90deg, var(--club-primary) 0 7px, var(--mag-white) 7px 14px); color: var(--mag-ink); text-shadow: 0 0 3px var(--mag-white), 0 0 3px var(--mag-white); }
 .mag-badge[data-livery='sash'], .mag-band[data-livery='sash'] { background: linear-gradient(135deg, var(--club-primary) 0 38%, var(--mag-white) 38% 62%, var(--club-primary) 62%); color: var(--mag-ink); text-shadow: 0 0 3px var(--mag-white), 0 0 3px var(--mag-white); }
 .mag-band { background: var(--club-primary, var(--mag-ink)); border: 3px solid var(--mag-ink); }
@@ -125,7 +126,7 @@
 .mag-fixture .mag-band { width: 22px; flex: none; border-width: 0 3px 0 0; }
 .mag-fixture-body { padding: 14px 16px 16px; flex: 1; min-width: 0; }
 .mag-fixture h3 { font-family: var(--mag-display); font-weight: 400; font-size: clamp(22px, 5vw, 32px); line-height: 1.02; text-transform: uppercase; margin: 6px 0 0; }
-.mag-fixture h3 span { color: var(--club-primary, var(--mag-vermilion)); }
+.mag-fixture h3 span { color: var(--club-type, var(--club-primary, var(--mag-vermilion))); }
 .mag-fixture-meta { font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; margin-top: 8px; text-transform: uppercase; }
 .mag-cta { margin-top: 12px; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 14px; background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; border: 3px solid var(--mag-ink); }
 .mag-cta.red { background: var(--mag-vermilion); }
@@ -388,7 +389,7 @@
 .mag-gamehead-row .mag-badge { width: 56px; height: 56px; font-size: 15px; box-shadow: 3px 3px 0 var(--mag-ink); }
 .mag-gamehead-row > div { min-width: 0; }
 .mag-skin .mag-editorial { font-family: var(--mag-condensed); font-weight: 700; font-size: clamp(40px, 11vw, 76px); line-height: .9; text-transform: uppercase; letter-spacing: 0; margin: 2px 0 0; overflow-wrap: anywhere; position: relative; isolation: isolate; color: var(--mag-vermilion); }
-.mag-skin .mag-editorial::before { content: attr(data-text); position: absolute; inset: 0; z-index: -1; color: var(--mag-navy); transform: translate(3px, 2px); mix-blend-mode: multiply; pointer-events: none; }
+.mag-skin .mag-editorial::before { content: attr(data-text); content: attr(data-text) / ''; position: absolute; inset: 0; z-index: -1; color: var(--mag-navy); transform: translate(3px, 2px); mix-blend-mode: multiply; pointer-events: none; }
 .mag-skin .mag-editorial { text-shadow: none; }
 .mag-skin[lang='he'] .mag-editorial { text-transform: none; font-size: clamp(38px, 10.5vw, 68px); line-height: 1; }
 /* oversized outlined gate number, printed behind the title */
@@ -655,7 +656,7 @@
 .cr-plan dd { margin: 0; font-family: var(--mag-condensed); font-size: 28px; line-height: 1.1; }
 .cr-data .button, .cr-file .button { margin-block: 6px; }
 .cr-file .source p { max-block-size: 260px; }
-.cr-mono { display: inline-grid; place-items: center; inline-size: 44px; block-size: 44px; flex-shrink: 0; background: var(--club-primary, var(--mag-ink)); color: var(--mag-white); border: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; }
+.cr-mono { display: inline-grid; place-items: center; inline-size: 44px; block-size: 44px; flex-shrink: 0; background: var(--club-primary, var(--mag-ink)); color: var(--club-on-primary, var(--mag-white)); border: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; }
 .cr-cards { display: grid; gap: 12px; margin-block: 16px; }
 .cr-card { display: grid; gap: 10px; padding: 14px; background: var(--mag-card); border: 3px solid var(--mag-ink); box-shadow: var(--mag-shadow); }
 .cr-card header { display: flex; gap: 12px; align-items: center; }
@@ -791,7 +792,8 @@
    (luminosity) keeps the whites white — a shirt keeps its collar. */
 .mag-dye { display: block; position: relative; aspect-ratio: var(--ar); background: var(--dye, var(--club-primary, var(--mag-vermilion))); -webkit-mask: var(--art) center / contain no-repeat; mask: var(--art) center / contain no-repeat; pointer-events: none; }
 .mag-dye::after { content: ''; position: absolute; inset: 0; background: var(--art) center / contain no-repeat; mix-blend-mode: multiply; }
-.mag-dye.soft::after { mix-blend-mode: luminosity; }
+.mag-dye.soft::after { mix-blend-mode: luminosity; opacity: var(--dye-shade, 1); }
+/* a light club colour keeps its brightness: the shading is printed lighter */
 @media print { .mag-dye { display: none; } }
 
 /* ── The club's own page: its end of the ground (7.10.2026) ───────────────────────────────────── */
@@ -870,10 +872,10 @@
 .mag-seal .ring-text { font-family: var(--mag-mono); font-weight: 700; font-size: 11.5px; letter-spacing: 1.4px; fill: var(--club-on-primary, var(--mag-paper)); }
 .mag-seal-core { position: relative; inline-size: 86px; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; }
 .mag-seal-core b { font-family: var(--mag-display); font-size: 26px; background: var(--mag-card); color: var(--mag-ink); padding: 0 6px; border: 2px solid var(--mag-ink); }
-.mag-homehero .mag-homewelcome { background: none; box-shadow: none; transform: none; padding: 0; color: var(--club-primary, var(--mag-vermilion)); font-family: var(--mag-display); font-size: clamp(24px, 6vw, 36px); letter-spacing: 1px; margin-top: 6px; }
+.mag-homehero .mag-homewelcome { background: none; box-shadow: none; transform: none; padding: 0; color: var(--club-type, var(--club-primary, var(--mag-vermilion))); font-family: var(--mag-display); font-size: clamp(24px, 6vw, 36px); letter-spacing: 1px; margin-top: 6px; }
 .mag-homehero h1 { text-shadow: none; color: var(--mag-ink); }
 .mag-homeplace { font-family: var(--mag-display); font-size: clamp(18px, 4.6vw, 26px); text-transform: uppercase; letter-spacing: 1px; color: var(--mag-ink); }
-.mag-homeplace i { font-style: normal; color: var(--club-primary, var(--mag-vermilion)); padding-inline: 6px; }
+.mag-homeplace i { font-style: normal; color: var(--club-type, var(--club-primary, var(--mag-vermilion))); padding-inline: 6px; }
 .mag-homehero .mag-homelead { background: none; padding: 0; max-width: 40ch; }
 .mag-homehero .mag-homejump { justify-content: center; }
 .mag-homestage { position: relative; block-size: 340px; margin-inline: -16px; margin-top: 6px; }
@@ -980,11 +982,11 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .fl-me-tabs button[aria-selected='true'] { background: var(--mag-vermilion); color: var(--mag-paper); border-color: var(--mag-vermilion); }
 .fl-me [role='tabpanel'] { margin-top: 16px; }
 .fl-card { position: relative; max-width: 560px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 7px 7px 0 var(--club-primary); overflow: hidden; }
-.fl-card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; background: var(--club-primary); color: var(--mag-white); padding: 8px 14px; font-family: var(--mag-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 3px solid var(--mag-ink); }
+.fl-card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; background: var(--club-primary); color: var(--club-on-primary, var(--mag-white)); padding: 8px 14px; font-family: var(--mag-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 3px solid var(--mag-ink); }
 .fl-card-body { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 16px 14px 10px; }
 .fl-card-who { display: grid; gap: 4px; min-width: 0; }
 .fl-card-who h2 { font-family: var(--mag-condensed); font-size: clamp(34px, 9vw, 52px); line-height: .95; text-transform: uppercase; margin: 0; overflow-wrap: anywhere; }
-.fl-card-badge { width: 54px; height: 54px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--mag-white); font-family: var(--mag-display); font-size: 13px; }
+.fl-card-badge { width: 54px; height: 54px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--club-on-primary, var(--mag-white)); font-family: var(--mag-display); font-size: 13px; }
 .fl-card-club { font-weight: 700; margin: 0; }
 .fl-card-rank { margin: 0; font-family: var(--mag-mono); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-muted); }
 .fl-card-number { flex: none; font-family: var(--mag-condensed); font-size: 72px; line-height: 1; color: var(--club-primary); -webkit-text-stroke: 2px var(--mag-ink); padding-inline: 6px; }
@@ -1003,7 +1005,7 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .fl-me-note { margin: 0; font-family: var(--mag-mono); font-size: 13px; color: var(--mag-muted); max-width: 64ch; border-inline-start: 4px solid var(--mag-vermilion); padding-inline-start: 10px; }
 .fl-oath ol { list-style: none; padding: 18px; margin: 14px 0 0; max-width: 560px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 5px 5px 0 var(--club-primary); display: grid; gap: 8px; }
 .fl-oath li { font-family: var(--mag-condensed); font-size: 26px; line-height: 1.1; text-transform: uppercase; }
-.fl-oath li:last-child { color: var(--club-primary); }
+.fl-oath li:last-child { color: var(--club-type, var(--club-primary)); }
 .fl-story ol { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 0; border-inline-start: 3px solid var(--mag-ink); max-width: 560px; }
 .fl-story li { display: grid; gap: 2px; padding: 8px 0 12px 16px; position: relative; }
 .fl-story li::before { content: ''; position: absolute; inset-inline-start: -9px; top: 12px; width: 13px; height: 13px; border-radius: 50%; background: var(--mag-vermilion); border: 2px solid var(--mag-ink); }
@@ -1043,3 +1045,88 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .fl-file-list small { color: var(--mag-muted); }
 .fl-me-section > .mag-cta { justify-self: start; }
 .fl-corner-tabs + .fl-corner-note { margin-top: 18px; }
+
+/* ── Hub, second issue (7.10.2026) ─────────────────────────────────────────────
+   The owner's press-photo stickers (`.mag-press`), the editor's side column, and
+   feature bands that pair a sticker on torn colour with a short story. */
+.mag-press { display: block; inline-size: 100%; block-size: auto; filter: drop-shadow(5px 6px 0 color-mix(in srgb, var(--mag-ink) 24%, transparent)); }
+.mag-cta.ghost { background: var(--mag-card); color: var(--mag-ink); }
+.mag a.mag-cta.ghost, .mag button.mag-cta.ghost { color: var(--mag-ink); }
+.mag-clubsrow { display: grid; gap: 28px; align-items: start; }
+@media (min-width: 1100px) { .mag-clubsrow { grid-template-columns: minmax(0, 1fr) 300px; } .mag-clubsrow .mag-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mag-editor { position: sticky; inset-block-start: 84px; margin-block-start: 34px; } }
+.mag-editor { position: relative; background: var(--mag-card); border: 3px solid var(--mag-ink); outline: 1px solid var(--mag-ink); outline-offset: -9px; padding: 26px 20px 20px; box-shadow: 6px 6px 0 var(--mag-navy); background-image: var(--mag-grain); }
+.mag-editor-stamp { position: absolute; inset-block-start: -16px; inset-inline-start: 14px; margin: 0; background: var(--mag-vermilion); color: var(--mag-paper); font-family: var(--mag-display); font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border: 3px solid var(--mag-ink); transform: rotate(-3deg); box-shadow: 3px 3px 0 var(--mag-ink); }
+.mag-editor .mag-kicker { margin-top: 4px; }
+.mag-editor-photo { margin: 12px auto 4px; max-inline-size: 190px; transform: rotate(2.5deg); position: relative; }
+.mag-editor-photo::before { content: ''; position: absolute; z-index: 1; inline-size: 70px; block-size: 18px; inset-block-start: -6px; inset-inline-start: 50%; margin-inline-start: -35px; background: color-mix(in srgb, var(--mag-paper) 70%, transparent); border: 1px solid color-mix(in srgb, var(--mag-ink) 20%, transparent); transform: rotate(-6deg); }
+.mag-editor h2 { font-family: var(--mag-condensed); font-size: 40px; line-height: .95; text-transform: uppercase; margin: 10px 0 6px; border-block-end: 3px double var(--mag-ink); padding-block-end: 6px; }
+.mag-editor p { margin: 8px 0 0; font-size: 15px; line-height: 1.5; }
+.mag-editor p.dropcap::first-letter { float: inline-start; font-family: var(--mag-display); font-size: 54px; line-height: .8; padding-inline-end: 8px; padding-block-start: 5px; color: var(--mag-vermilion); }
+.mag-editor .mag-sign { font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 2px; color: var(--mag-vermilion); text-align: end; margin-top: 14px; }
+.mag-feature { display: grid; gap: 18px; align-items: center; border-block-start: 4px solid var(--mag-ink); padding-block-start: 22px; }
+.mag-feature-text { display: grid; gap: 10px; justify-items: start; max-inline-size: 560px; }
+.mag-feature-text > p:not(.mag-kicker) { margin: 0; font-size: 17px; line-height: 1.5; }
+.mag-feature-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+.mag-feature-ctas .mag-cta { margin-top: 4px; }
+.mag-feature-art { position: relative; block-size: 330px; margin-inline: -16px; }
+.mag-feature-art .mag-torn { position: absolute; inset: auto 0 0 0; block-size: 62%; display: flex; }
+.mag-feature-main { position: absolute; z-index: 1; inset-block-end: 0; inset-inline-start: 50%; inline-size: min(400px, 86%); transform: translateX(-50%); }
+[dir='rtl'] .mag-feature-main { transform: translateX(50%); }
+.mag-feature-main.tall { inline-size: auto; block-size: 104%; }
+.mag-feature-side { position: absolute; z-index: 2; inline-size: min(170px, 40%); inset-block-start: 4px; inset-inline-end: 6px; transform: rotate(5deg); }
+@media (min-width: 760px) {
+  .mag-feature { grid-template-columns: 1.1fr 1fr; gap: 34px; }
+  .mag-feature-flip .mag-feature-art { order: 2; }
+  .mag-feature-art { block-size: 440px; margin: 0; }
+  .mag-feature-main { inline-size: min(520px, 92%); }
+  .mag-feature-side { inline-size: 220px; }
+}
+@media (prefers-reduced-motion: no-preference) { .mag-feature-side { transition: transform .3s ease; } .mag-feature:hover .mag-feature-side { transform: rotate(1deg) translateY(-4px); } }
+
+/* The club's games as match tickets (7.10.2026): stub in the club's livery, perforation, ADMIT ONE. */
+.mag-tickets { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .mag-tickets { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .mag-tickets { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mag-ticket.feature { grid-column: span 1; } }
+.mag-ticket { position: relative; display: grid; grid-template-columns: 92px minmax(0, 1fr); min-height: 112px; background: var(--mag-card); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); color: var(--mag-ink); text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; }
+.mag a.mag-ticket { color: var(--mag-ink); }
+.mag-ticket-stub { position: relative; display: grid; align-content: center; justify-items: center; gap: 2px; border: 0 !important; border-inline-end: 3px dashed var(--mag-ink) !important; color: var(--club-on-primary, var(--mag-white)); }
+.mag-ticket-no { display: grid; justify-items: center; background: var(--mag-card); color: var(--mag-ink); border: 3px solid var(--mag-ink); padding: 4px 8px 2px; transform: rotate(-4deg); box-shadow: 3px 3px 0 var(--mag-ink); }
+.mag-ticket-stub small { font-family: var(--mag-mono); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.mag-ticket-stub b { font-family: var(--mag-condensed); font-size: 40px; line-height: .9; }
+.mag-ticket-stub::before, .mag-ticket-stub::after { content: ''; position: absolute; inset-inline-end: -11px; inline-size: 18px; block-size: 18px; border-radius: 50%; background: var(--mag-paper); border: 3px solid var(--mag-ink); }
+.mag-ticket-stub::before { inset-block-start: -11px; }
+.mag-ticket-stub::after { inset-block-end: -11px; }
+.mag-ticket-body { display: grid; align-content: center; gap: 4px; padding: 12px 14px 12px 18px; min-width: 0; }
+.mag-ticket-body b { font-family: var(--mag-condensed); font-size: 30px; line-height: .95; text-transform: uppercase; }
+.mag-ticket-body small { font-size: 14px; line-height: 1.35; color: var(--mag-muted); }
+.mag-ticket-body s { text-decoration: none; justify-self: start; margin-top: 4px; font-family: var(--mag-mono); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; background: var(--mag-ink); color: var(--mag-paper); padding: 4px 8px; }
+.mag-ticket:hover { transform: translate(-3px, -3px) rotate(-.4deg); box-shadow: 8px 8px 0 var(--club-primary, var(--mag-vermilion)), 8px 8px 0 3px var(--mag-ink); }
+.mag-ticket:hover .mag-ticket-body s { background: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-paper)); }
+.mag-ticket.feature { background: var(--mag-ink); color: var(--mag-paper); }
+.mag a.mag-ticket.feature { color: var(--mag-paper); }
+.mag-ticket.feature .mag-ticket-body small { color: color-mix(in srgb, var(--mag-paper) 80%, transparent); }
+.mag-ticket.feature .mag-ticket-body s { background: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-paper)); }
+.mag-ticket.mag-gate-off { box-shadow: 3px 3px 0 color-mix(in srgb, var(--mag-ink) 35%, transparent); border-style: dashed; background: transparent; }
+.mag-ticket.mag-gate-off .mag-ticket-stub { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--mag-ink) 12%, transparent) 0 6px, transparent 6px 12px); color: var(--mag-muted); }
+.mag-ticket.mag-gate-off .mag-ticket-body b { color: var(--mag-muted); }
+.mag-ticket .mag-ticket-soon { background: transparent; color: var(--mag-vermilion); border: 2px solid currentColor; transform: rotate(-2deg); }
+@media (prefers-reduced-motion: reduce) { .mag-ticket, .mag-ticket:hover { transform: none; transition: none; } }
+
+/* "I was there" — a stamp you press onto a match (7.10.2026). */
+.mag-been { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding-inline: 12px; border: 2px dashed var(--mag-ink); background: transparent; color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
+.mag-been span { font-size: 18px; line-height: 1; }
+.mag-been[aria-pressed='true'] { border-style: solid; background: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-paper)); transform: rotate(-2deg); box-shadow: 3px 3px 0 var(--mag-ink); }
+@media (prefers-reduced-motion: reduce) { .mag-been[aria-pressed='true'] { transform: none; } }
+.fl-been-star { font-size: 22px; color: var(--club-type, var(--club-primary, var(--mag-vermilion))); }
+
+.mag-feature-flip .mag-feature-side { inset-inline-end: auto; inset-inline-start: 6px; transform: rotate(-5deg); }
+@media (max-width: 759px) { #next .mag-chips { flex-wrap: nowrap; overflow-x: auto; padding-block-end: 8px; scroll-snap-type: x proximity; } #next .mag-chips > * { flex: none; scroll-snap-align: start; } }
+
+/* Every gate keeps the masthead's mark: FAN LIFE in the gate nav (art pass, 7.10.2026). */
+.mag-gamenav .mag-gamebrand { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mag-display); font-size: 15px; letter-spacing: .5px; text-transform: uppercase; color: var(--mag-ink); }
+.mag-gamenav .mag-gamebrand img { inline-size: 28px; block-size: 28px; border-radius: 50%; }
+.mag-gamenav .mag-gamebrand i { font-style: normal; color: var(--mag-vermilion); }
+.mag-gamenav-l { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+/* light club colours (AEK, Dortmund): the second torn block is ink, not a muddied mix */
+.mag-torn-b { background: var(--club-torn, color-mix(in srgb, var(--club-primary, var(--mag-vermilion)) 52%, var(--mag-ink))); }
+.game-panel .mag-been { margin-inline-start: 10px; vertical-align: middle; }
