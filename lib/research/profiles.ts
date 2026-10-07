@@ -16,11 +16,14 @@ export type FullProfile=ClubProfile&{archive:ArchiveSource[];origin:{repo:boolea
 const REPO='research-profiles'
 const empty=(clubId:string):ClubProfile&{archive:ArchiveSource[]}=>({schemaVersion:RESEARCH_SCHEMA,clubId,sport:'football',contentLocale:'en',snapshotAsOf:new Date().toISOString().slice(0,10),desiredGates:[],priorityMatchIds:[],sources:[],archive:[]})
 function repoProfile(clubId:string,cwd=process.cwd()){const p=path.join(cwd,REPO,`${clubId}.json`);if(!existsSync(p))return null;const v=JSON.parse(readFileSync(p,'utf8'));if(v.clubId!==clubId)throw new Error('PROFILE_CLUB_MISMATCH');return {...empty(clubId),...v,archive:v.archive||[],sources:v.sources||[]} as ClubProfile&{archive:ArchiveSource[]}}
-const overlayFile=(clubId:string)=>path.join(dir(clubId),'profile.json')
+/** The runner (GitHub Actions) has no Blob store: it receives the control room's profiles as files, pinned to one
+ * exported version, in RESEARCH_OVERLAY_DIR/<club>.json — never committed to the public repository. */
+const pinned=()=>process.env.RESEARCH_OVERLAY_DIR||''
+const overlayFile=(clubId:string)=>pinned()?path.join(pinned(),`${clubId}.json`):path.join(dir(clubId),'profile.json')
 type Overlay=ClubProfile&{archive:ArchiveSource[]}
 /** The control-room overlay is configuration the owner typed: on a serverless deployment it lives in the durable
  * store (profiles/<club>.json), not on an instance's /tmp that the next cold start forgets. */
-async function readOverlay(clubId:string):Promise<Overlay|null>{const d=durable();if(d){const r=await d.read(`profiles/${clubId}.json`);return r?JSON.parse(r.text) as Overlay:null}return readJson<Overlay|null>(overlayFile(clubId),null)}
+async function readOverlay(clubId:string):Promise<Overlay|null>{const d=pinned()?null:durable();if(d){const r=await d.read(`profiles/${clubId}.json`);return r?JSON.parse(r.text) as Overlay:null}return readJson<Overlay|null>(overlayFile(clubId),null)}
 async function writeOverlay(clubId:string,edit:(cur:Overlay|null)=>Overlay|null):Promise<Overlay|null>{const d=durable()
  if(d){for(let i=0;i<5;i++){const r=await d.read(`profiles/${clubId}.json`),next=edit(r?JSON.parse(r.text) as Overlay:null);if(!next)return null;if(await d.write(`profiles/${clubId}.json`,JSON.stringify(next),r?.etag??null))return next}throw new Error('The research profile is busy. Try again.')}
  const next=edit(await readJson<Overlay|null>(overlayFile(clubId),null));if(next)await writeJson(overlayFile(clubId),next);return next}
@@ -44,6 +47,7 @@ export async function profiledClubs(cwd=process.cwd()):Promise<string[]>{
  const d=durable();if(d)for(const f of await d.list('profiles/'))if(f.endsWith('.json'))ids.add(f.split('/').pop()!.slice(0,-5))
  if(existsSync(path.join(cwd,REPO)))for(const f of readdirSync(path.join(cwd,REPO)))if(f.endsWith('.json'))ids.add(f.slice(0,-5))
  if(existsSync(root()))for(const d of readdirSync(root()))if(existsSync(path.join(root(),d,'profile.json')))ids.add(d)
+ if(pinned()&&existsSync(pinned()))for(const f of readdirSync(pinned()))if(f.endsWith('.json'))ids.add(f.slice(0,-5))
  return [...ids].sort()
 }
 
@@ -85,3 +89,18 @@ export const removeArchiveSource=(clubId:string,providerId:string)=>serial(async
  await writeOverlay(clubId,cur=>{if(!cur||!cur.archive.some(a=>a.providerId===providerId))throw new Error('Only sources added in the control room can be removed here; repository sources are changed in code review.');return {...cur,archive:cur.archive.filter(a=>a.providerId!==providerId)}});return true})
 /** A club created in the control room starts with an empty profile, so it shows up in the data centre at once. */
 export const ensureProfile=(clubId:string)=>serial(async()=>{if(repoProfile(clubId))return false;let made=false;await writeOverlay(clubId,cur=>{if(cur)return null;made=true;return empty(clubId)});return made})
+
+/**
+ * What the runner needs from the control room: every overlay the owner saved, and a version (sha256 of the canonical
+ * JSON) that the run records — so "the source I added" and "the source the run used" can be compared.
+ */
+export async function exportOverlays():Promise<{version:string;exportedAt:string;profiles:Record<string,Overlay>}>{
+ const {createHash}=await import('node:crypto')
+ const ids=new Set<string>()
+ const d=durable();if(d)for(const f of await d.list('profiles/'))if(f.endsWith('.json'))ids.add(f.split('/').pop()!.slice(0,-5))
+ if(existsSync(root()))for(const x of readdirSync(root()))if(existsSync(path.join(root(),x,'profile.json')))ids.add(x)
+ const profiles:Record<string,Overlay>={}
+ for(const id of [...ids].sort()){const o=await readOverlay(id);if(o&&ID.test(id))profiles[id]=o}
+ const version=createHash('sha256').update(JSON.stringify(profiles)).digest('hex').slice(0,16)
+ return {version,exportedAt:new Date().toISOString(),profiles}
+}
