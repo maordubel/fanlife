@@ -46,7 +46,7 @@
 /* ───────── the page ───────── */
 .mag { background-color: var(--mag-paper); background-image: var(--mag-grain); color: var(--mag-ink); font-family: var(--mag-body); line-height: 1.5; min-height: 100vh; overflow-x: clip; }
 .mag *, .mag *::before, .mag *::after { box-sizing: border-box; }
-.mag a { color: inherit; text-decoration: none; }
+:where(.mag) a { color: inherit; text-decoration: none; } /* zero-specificity, so a component's own colour class wins */
 .mag :focus-visible { outline: 3px solid var(--mag-ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--mag-paper); }
 .mag-bowl { font-family: var(--mag-display); text-transform: uppercase; letter-spacing: 0; line-height: 1.02; }
 .mag-mono { font-family: var(--mag-mono); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
@@ -155,8 +155,8 @@
    re-dressed here, so the whole site is one magazine and a screen cannot be "the old one". */
 .fl { --fl-ink: var(--mag-ink); --fl-paper: var(--mag-paper); --line: var(--mag-ink); background-color: var(--fl-paper); background-image: var(--mag-grain); font-family: var(--mag-body); }
 .fl.club-theme { background-color: var(--club-background); --fl-ink: var(--club-text); --fl-paper: var(--club-background); --line: rgb(var(--ink) / 0.55); }
-.fl h1, .fl h2 { font-family: var(--mag-display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; line-height: 1; }
-.fl h3 { font-weight: 800; letter-spacing: -0.01em; }
+.fl h1:where(:not(.fl-worker, .fl-worker *)), .fl h2:where(:not(.fl-worker, .fl-worker *)) { font-family: var(--mag-display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; line-height: 1; }
+.fl h3:where(:not(.fl-worker, .fl-worker *)) { font-weight: 800; letter-spacing: -0.01em; }
 .fl[lang='he'] h1, .fl[lang='he'] h2 { font-family: var(--mag-body); font-weight: 800; text-transform: none; }
 .fl .eyebrow { font-family: var(--mag-mono); font-weight: 700; letter-spacing: 2px; }
 .fl .button { background: var(--mag-ink); color: var(--mag-paper) !important; border: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; min-height: 48px; }
@@ -171,7 +171,7 @@
 .fl .club-hero::after { content: ''; position: absolute; inset-inline: 0; inset-block-end: -5px; height: 12px; background: var(--club-primary, var(--mag-vermilion)); border-block: 3px solid var(--mag-ink); }
 .fl .section-head h2, .fl .section h2 { font-size: clamp(28px, 5vw, 40px); }
 .fl .life-feature { background: var(--mag-navy); color: var(--mag-paper); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-vermilion); }
-.fl .table-wrap, .fl table { background: var(--mag-card); }
+.fl .table-wrap, .fl table:where(:not(.fl-worker, .fl-worker *)) { background: var(--mag-card); }
 .club-surface { background-image: var(--mag-grain); }
 .club-surface h1, .club-surface h2 { font-family: var(--mag-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0; }
 .club-surface[lang='he'] h1, .club-surface[lang='he'] h2 { font-family: var(--mag-body); font-weight: 800; text-transform: none; }
@@ -914,3 +914,111 @@
 .mag-dye.halftone::before { opacity: .26; }
 .mag-tile-shirt { inset-block-end: auto; inset-block-start: 30px; inset-inline-end: 12px; }
 .mag-tile-shirt { inset-block-start: 6px; inset-inline-end: 46px; inline-size: 30px; width: 30px; }
+
+/* ── Your corner (the personal area ported from The Worker, 7.10.2026) ─────────────────────────
+   `.fl-worker` re-inks The Worker's components: their Tailwind colours read `--sheet/--paper/--ink…`
+   as RGB triplets and their faces read `--font-*`; here those resolve to the magazine's paper,
+   card, ink and type. Same values as the magazine tokens above, written as the triplets the
+   Worker's utilities expect. */
+.fl-worker { --sheet: 255 248 232; --paper: 239 230 212; --ink: 20 18 16; --red: 176 45 16; --sign: 27 42 94; --muted: 92 84 68; --concrete: 239 230 212;
+  --font-frank: 'Karantina'; --font-heebo: 'Archivo'; --font-miriam: 'Archivo'; --font-latin: 'Archivo'; --font-courier: 'Courier Prime'; --font-poster: 'Bowlby One';
+  font-family: var(--mag-body); color: var(--mag-ink); text-align: start; margin-top: 18px; }
+.fl-worker :where(h1, h2, h3) { letter-spacing: 0; }
+.fl-worker :where(h2, h3).font-display, .fl-worker .font-display { text-transform: uppercase; }
+.fl-worker :where(button, a).bg-ink { box-shadow: 3px 3px 0 var(--mag-vermilion); }
+.fl-corner-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.fl-corner-tabs a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 14px; border: 3px solid var(--mag-ink); background: var(--mag-card); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; box-shadow: 3px 3px 0 var(--mag-ink); }
+.fl-corner-tabs a[aria-current='page'] { background: var(--mag-ink); color: var(--mag-paper); box-shadow: 3px 3px 0 var(--mag-vermilion); }
+.fl-corner-note { margin-top: 12px; font-family: var(--mag-mono); font-size: 12px; color: var(--mag-muted); max-width: 70ch; border-inline-start: 4px solid var(--mag-vermilion); padding-inline-start: 10px; }
+.fl-shirts { display: grid; gap: 18px; }
+.fl-shirts summary { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fl-shirt-grid { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; }
+.fl-shirt-grid li { display: grid; gap: 4px; align-content: start; border: 2px solid var(--mag-ink); background: var(--mag-paper); padding: 8px; scroll-margin-top: 90px; }
+.fl-shirt-grid li[data-focus] { outline: 4px solid var(--club-primary, var(--mag-vermilion)); outline-offset: 2px; }
+.fl-shirt-grid small { color: var(--mag-muted); }
+.fl-shirt-links { display: grid; gap: 2px; font-family: var(--mag-mono); font-size: 11px; font-weight: 700; }
+.fl-shirt-links a { min-height: 32px; display: inline-flex; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
+.fl-thumb-drawn { background: var(--mag-paper); padding: 6px; }
+.fl-thumb-drawn svg { width: 100%; height: 100%; }
+.fl-corner .mag-head .mag-fine { font-family: var(--mag-body); text-transform: none; letter-spacing: 0; font-size: 16px; max-width: 60ch; color: var(--mag-ink); }
+.fl-shirt-open { display: grid; gap: 4px; text-align: start; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: inherit; }
+.fl-shirt-sheet { margin-top: 16px; display: grid; gap: 14px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 5px 5px 0 var(--club-primary, var(--mag-ink)); padding: 16px; }
+.fl-shirt-sheet h3 { font-family: var(--mag-condensed); font-size: 28px; text-transform: uppercase; margin: 2px 0 8px; }
+.fl-shirt-sheet-pic { max-width: 260px; }
+@media (min-width: 760px) { .fl-shirt-sheet { grid-template-columns: 260px 1fr; } }
+/* A modal sheet owns the bottom of the phone: the tab bar steps aside while one is open (rule 33). */
+body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
+
+/* ── Me & My file (the personal area, 7.10.2026) ─────────────────────────────
+   The Worker's TIK card, reprinted as a magazine member card: paper body, the
+   chosen club's colour as the head stripe and the shadow, the number plate in
+   the condensed face, and bars printed from the member number. */
+.fl-me { display: grid; gap: 28px; }
+.fl-me-tabs { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 3px solid var(--mag-ink); padding-bottom: 8px; }
+.fl-me-tabs button { min-height: 44px; padding-inline: 14px; border: 2px solid var(--mag-ink); background: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; cursor: pointer; color: var(--mag-ink); }
+.fl-me-tabs button[aria-selected='true'] { background: var(--mag-vermilion); color: var(--mag-paper); border-color: var(--mag-vermilion); }
+.fl-me [role='tabpanel'] { margin-top: 16px; }
+.fl-card { position: relative; max-width: 560px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 7px 7px 0 var(--club-primary); overflow: hidden; }
+.fl-card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; background: var(--club-primary); color: var(--mag-white); padding: 8px 14px; font-family: var(--mag-mono); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 3px solid var(--mag-ink); }
+.fl-card-body { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 16px 14px 10px; }
+.fl-card-who { display: grid; gap: 4px; min-width: 0; }
+.fl-card-who h2 { font-family: var(--mag-condensed); font-size: clamp(34px, 9vw, 52px); line-height: .95; text-transform: uppercase; margin: 0; overflow-wrap: anywhere; }
+.fl-card-badge { width: 54px; height: 54px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--mag-white); font-family: var(--mag-display); font-size: 13px; }
+.fl-card-club { font-weight: 700; margin: 0; }
+.fl-card-rank { margin: 0; font-family: var(--mag-mono); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-muted); }
+.fl-card-number { flex: none; font-family: var(--mag-condensed); font-size: 72px; line-height: 1; color: var(--club-primary); -webkit-text-stroke: 2px var(--mag-ink); padding-inline: 6px; }
+.fl-card-boxes { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 2px solid var(--mag-ink); }
+.fl-card-boxes div { padding: 8px 14px; border-bottom: 2px solid var(--mag-ink); min-width: 0; }
+.fl-card-boxes div:nth-child(odd) { border-inline-end: 2px solid var(--mag-ink); }
+.fl-card-boxes dt { font-family: var(--mag-mono); font-size: 10.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--mag-muted); }
+.fl-card-boxes dd { margin: 2px 0 0; font-weight: 700; overflow-wrap: anywhere; }
+.fl-card-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; padding: 10px 14px 12px; flex-wrap: wrap; }
+.fl-card-bars { display: inline-flex; height: 30px; align-items: stretch; }
+.fl-card-bars i { display: block; }
+.fl-card-bars i[data-on] { background: var(--mag-ink); }
+.fl-card-sign { font-family: var(--mag-mono); font-size: 12px; color: var(--mag-muted); }
+.fl-card-sign b { font-family: var(--mag-display); font-size: 15px; color: var(--mag-ink); font-weight: 400; }
+.fl-card-empty { margin: 0; padding: 10px 14px; background: var(--mag-paper); border-top: 2px dashed var(--mag-ink); font-size: 14px; }
+.fl-me-note { margin: 0; font-family: var(--mag-mono); font-size: 13px; color: var(--mag-muted); max-width: 64ch; border-inline-start: 4px solid var(--mag-vermilion); padding-inline-start: 10px; }
+.fl-oath ol { list-style: none; padding: 18px; margin: 14px 0 0; max-width: 560px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 5px 5px 0 var(--club-primary); display: grid; gap: 8px; }
+.fl-oath li { font-family: var(--mag-condensed); font-size: 26px; line-height: 1.1; text-transform: uppercase; }
+.fl-oath li:last-child { color: var(--club-primary); }
+.fl-story ol { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 0; border-inline-start: 3px solid var(--mag-ink); max-width: 560px; }
+.fl-story li { display: grid; gap: 2px; padding: 8px 0 12px 16px; position: relative; }
+.fl-story li::before { content: ''; position: absolute; inset-inline-start: -9px; top: 12px; width: 13px; height: 13px; border-radius: 50%; background: var(--mag-vermilion); border: 2px solid var(--mag-ink); }
+.fl-story time { font-family: var(--mag-mono); font-size: 12px; font-weight: 700; color: var(--mag-muted); }
+.fl-form { display: grid; gap: 16px; max-width: 560px; }
+.fl-form label, .fl-form fieldset { display: grid; gap: 6px; font-weight: 700; border: 0; padding: 0; margin: 0; min-width: 0; }
+.fl-form legend { font-weight: 700; margin-bottom: 6px; }
+.fl-form input, .fl-form select { min-height: 44px; border: 2px solid var(--mag-ink); background: var(--mag-card); padding-inline: 10px; font: inherit; font-weight: 400; color: var(--mag-ink); width: 100%; }
+.fl-form small { font-weight: 400; color: var(--mag-muted); font-size: 13px; }
+.fl-chips, .fl-numbers { display: flex; flex-wrap: wrap; gap: 6px; }
+.fl-chips button, .fl-numbers button { min-height: 44px; min-width: 44px; padding-inline: 10px; border: 2px solid var(--mag-ink); background: var(--mag-paper); font: inherit; font-weight: 700; cursor: pointer; color: var(--mag-ink); }
+.fl-numbers { max-height: 220px; overflow-y: auto; padding: 4px; border: 2px dashed var(--mag-ink); }
+.fl-chips button[aria-pressed='true'], .fl-numbers button[aria-pressed='true'] { background: var(--mag-ink); color: var(--mag-paper); }
+.fl-form-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.fl-me-section { display: grid; gap: 12px; }
+.fl-me-section > h2 { font-family: var(--mag-condensed); font-size: 30px; text-transform: uppercase; margin: 0; }
+.fl-me-rank { margin: 0; display: flex; gap: 10px; flex-wrap: wrap; align-items: baseline; }
+.fl-me-rank b { font-family: var(--mag-display); font-weight: 400; font-size: 18px; background: var(--mag-ink); color: var(--mag-paper); padding: 2px 10px; }
+.fl-me-rank span { font-family: var(--mag-mono); font-size: 12px; color: var(--mag-muted); }
+.fl-me-clubs { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+@media (min-width: 760px) { .fl-me-clubs { grid-template-columns: 1fr 1fr; } }
+.fl-me-clubs li { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; border: 2px solid var(--mag-ink); background: var(--mag-card); padding: 10px; box-shadow: 3px 3px 0 var(--club-primary); }
+.fl-me-clubs li div { display: grid; gap: 2px; min-width: 0; }
+.fl-me-clubs small { color: var(--mag-muted); font-size: 13px; }
+.fl-me-closet { border: 3px solid var(--mag-ink); background: var(--mag-paper); padding: 16px; justify-items: start; }
+.fl-me-closet p { margin: 0; }
+.fl-file-xis { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+@media (min-width: 760px) { .fl-file-xis { grid-template-columns: 1fr 1fr; } }
+.fl-file-xis > li { display: grid; gap: 10px; border: 2px solid var(--mag-ink); background: var(--mag-card); padding: 12px; box-shadow: 4px 4px 0 var(--club-primary); justify-items: start; }
+.fl-file-xis header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fl-file-xis header small { font-family: var(--mag-mono); font-size: 12px; color: var(--mag-muted); }
+.fl-file-xis ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 3px; width: 100%; }
+.fl-file-xis ol li { display: flex; gap: 10px; align-items: baseline; border-bottom: 1px dotted var(--mag-ink); padding-bottom: 3px; }
+.fl-file-xis ol li span { font-family: var(--mag-mono); font-size: 11px; font-weight: 700; min-width: 30px; color: var(--mag-muted); }
+.fl-file-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+.fl-file-list li { border-bottom: 1px dotted var(--mag-ink); padding: 4px 0; }
+.fl-file-list small { color: var(--mag-muted); }
+.fl-me-section > .mag-cta { justify-self: start; }
+.fl-corner-tabs + .fl-corner-note { margin-top: 18px; }

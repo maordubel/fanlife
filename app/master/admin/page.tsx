@@ -19,7 +19,7 @@ export default async function Page(){
  const initial:LightState={...rest,clubs:clubs.map(({sources:_s,findings:_f,...c})=>c),auditTail:audit.slice(-100)}
  const adapters:AdapterInfo[]=ADAPTER_LIST.map(a=>({...a,available:Object.fromEntries(clubs.map(c=>[c.id,adapterAvailable(a.id,c.id)]))}))
  return <Shell><main id="main">
-  <nav className="mag-adminnav" aria-label="Control room sections"><a href="#gaps">What is missing</a><a href="#controls">Controls</a><a href="/master/admin?tab=display#controls">LIFE display</a><a href="/master/core">Club data</a><a href="/master/test-lab">Test lab</a></nav>
+  <nav className="mag-adminnav" aria-label="Control room sections"><a href="#gaps">What is missing</a><a href="#controls">Controls</a><a href="/master/admin?tab=display#controls">LIFE display</a><a href="/master/core">Club data</a><a href="/master/exchange">Shirt economy</a><a href="/master/test-lab">Test lab</a></nav>
   <ClubGaps summaries={summaries}/>
   <Suspense fallback={<p className="muted" role="status">Loading the control room…</p>}><Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()}/></Suspense>
  </main></Shell>
