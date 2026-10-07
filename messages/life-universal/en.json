@@ -170,5 +170,10 @@
   "score.lineup": "Started",
   "score.bench": "Came on",
   "place.new": "A place you have not seen",
-  "map.new": "Newly found"
+  "map.new": "Newly found",
+  "lookLabel": "Picture",
+  "look.high": "Smooth",
+  "look.lite": "Light",
+  "look.blocks": "Blocks",
+  "lookNote": "Smooth is the best looking. Light is for weaker phones. Blocks is the lightest."
 }

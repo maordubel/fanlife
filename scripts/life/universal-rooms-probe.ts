@@ -4,6 +4,7 @@
  * Prints a top-down map per room (# = cannot stand, S spawn, a person, o thing, D door).
  *
  *   npx tsx scripts/life/universal-rooms-probe.ts http://127.0.0.1:3200 [room,room] [--shots=/tmp/dir]
+ *   ENGINE=town …   the same probe against the smooth 3D picture (`public/life/town`)
  */
 import {chromium} from 'playwright'
 import {mkdirSync} from 'node:fs'
@@ -22,7 +23,7 @@ async function main(): Promise<number> {
     if (tag === 'm' && !shots) continue
     const page = await (await browser.newContext({viewport: {width: w, height: h}, deviceScaleFactor: 1})).newPage()
     page.on('pageerror', e => { failures++; console.log('PAGE ERROR', e.message) })
-    await page.goto(`${base}/life/voxel/play.html?q=high&capture=1`, {waitUntil: 'load'})
+    await page.goto(process.env.ENGINE === 'town' ? `${base}/life/town/play.html?play=1&q=${process.env.Q || 'med'}&capture=1` : `${base}/life/voxel/play.html?q=high&capture=1`, {waitUntil: 'load'})
     await page.waitForFunction(() => (window as unknown as {__ready?: boolean}).__ready, null, {timeout: 120000})
     for (const room of Object.values(ROOMS)) {
       if (only && !only.includes(room.id)) continue

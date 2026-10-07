@@ -43,6 +43,23 @@ const MOVE: Record<string, [number, number]> = {
   arrowup: [0, -1], w: [0, -1], arrowdown: [0, 1], s: [0, 1],
 }
 
+type Look3d = 'high' | 'lite' | 'blocks'
+const LOOK_KEY = 'the-worker:life:look'
+const LOOKS: Look3d[] = ['high', 'lite', 'blocks']
+function lookSrc(look: Look3d, club: string): string {
+  const c = encodeURIComponent(club)
+  return look === 'blocks' ? `/life/voxel/play.html?club=${c}` : `/life/town/play.html?play=1&club=${c}${look === 'lite' ? '&q=low' : ''}`
+}
+/** a phone that cannot do WebGL2 well gets the light picture without being asked */
+function firstLook(): Look3d {
+  try {
+    const saved = window.localStorage.getItem(LOOK_KEY)
+    if (saved && (LOOKS as string[]).includes(saved)) return saved as Look3d
+    const weak = typeof navigator !== 'undefined' && ((navigator as {deviceMemory?: number}).deviceMemory ?? 8) <= 2
+    return weak ? 'lite' : 'high'
+  } catch { return 'high' }
+}
+
 function browserStore(): LifeStore {
   return {
     read: k => { try { return window.localStorage.getItem(k) } catch { return null } },
@@ -80,6 +97,10 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const [touch, setTouch] = useState(false)
   const [reduced, setReduced] = useState(false)
   const [reload, setReload] = useState(0)
+  /* the picture: the smooth 3D engine (high / lite) or the block engine, kept per device */
+  const [look, setLook] = useState<Look3d>('high')
+  const lookRef = useRef<Look3d>('high')
+  lookRef.current = look
   const [sheet, setSheet] = useState<'none' | 'map' | 'me'>('none')
   const [intro, setIntro] = useState<{id: string; name: string; role: string; blurb: string} | null>(null)
 
@@ -115,6 +136,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const l = Life.load(pack, browserStore())
     life.current = l
     known.current = new Set(l.state.seen)
+    const wanted = firstLook()
+    if (wanted !== 'high') setLook(wanted)
     sound.current = new LifeSound()
     setSoundOn(sound.current.on)
     const off = l.subscribe(setState)
@@ -310,7 +333,11 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const onPlay = useCallback((e: PlayEvent) => {
     const l = life.current
     if (e.type === 'ready') { setReady(true); return }
-    if (e.type === 'error') { setFailed(e.message || 'error'); return }
+    if (e.type === 'error') {
+      // the smooth picture fell over (no WebGL2, a room it cannot draw): the block picture takes the same room, once
+      if (lookRef.current !== 'blocks') { setLook('blocks'); setReady(false); rt.current = null; setRoomUp(false); setReload(n => n + 1); return }
+      setFailed(e.message || 'error'); return
+    }
     if (e.type === 'entered') {
       setRoomUp(true)
       const at = arrival.current
@@ -388,6 +415,14 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     openChapterCard()
   }, [openChapterCard])
 
+  const cycleLook = useCallback(() => {
+    setLook(cur => {
+      const next = LOOKS[(LOOKS.indexOf(cur) + 1) % LOOKS.length]!
+      try { window.localStorage.setItem(LOOK_KEY, next) } catch { /* a private window still plays */ }
+      return next
+    })
+    setFailed(null); setReady(false); rt.current = null; setRoomUp(false); setReload(n => n + 1)
+  }, [])
   const toggleSound = useCallback(() => { const s = sound.current; if (!s) return; s.set(!s.on); s.wake(); setSoundOn(s.on) }, [])
 
   /* the room stands still while a card, a game or the drawer is open */
@@ -580,7 +615,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   return (
     <div className={styles.life} data-phase={phase} data-wide={wide ? 'true' : 'false'} data-talking={talk ? 'true' : 'false'} data-life="root" data-room={state.room ?? ''} data-chapter={state.chapter ?? ''}>
       <div className={styles.stage}>
-        <iframe key={reload} ref={frame} className={styles.world} src={`/life/voxel/play.html?club=${encodeURIComponent(pack.clubId)}`} title={copy.title} tabIndex={-1} aria-hidden="true" />
+        <iframe key={reload} ref={frame} className={styles.world} src={lookSrc(look, pack.clubId)} title={copy.title} tabIndex={-1} aria-hidden="true" />
         {playing && !roomUp && !failed && <p className={styles.loading} role="status">{copy.loading}</p>}
         {failed && <div className={styles.failed} role="alert"><p>{failed === 'timeout' ? copy.loadFailed : copy.noWebgl}</p><button type="button" className={`${styles.button} min-h-tap`} onClick={() => { setFailed(null); setReady(false); rt.current = null; setReload(n => n + 1) }}>{copy.retry}</button></div>}
         {place && <div className={styles.place} role="status" data-life="place" key={place.id}><small>{copy['place.new']}</small><b {...story}>{place.name}</b></div>}
@@ -794,6 +829,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
                 <div className={styles.menuList}>
                   <button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => setMenu('closed')} data-life="menu-resume">{copy.resume}</button>
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={toggleSound} aria-pressed={soundOn}>{soundOn ? copy.soundOn : copy.soundOff}</button>
+                  <button type="button" className={`${styles.row} min-h-tap`} onClick={() => { cycleLook(); setMenu('closed') }} data-life="menu-look">{copy.lookLabel}: {copy[`look.${look}`]}<small>{copy.lookNote}</small></button>
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={restartChapter}>{copy.restartChapter}<small>{copy.restartChapterNote}</small></button>
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={() => setMenu('confirm')}>{copy.startOver}</button>
                 </div>
