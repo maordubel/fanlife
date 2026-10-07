@@ -162,13 +162,13 @@ Gate / LIFE / Archive / UI
 # 5. ארכיטקטורת יעד
 
 ```text
-fanlife.game
+fanlife.dubelteam.com
 │
 ├── Portal
 │
 ├── Admin
 │
-└── <club>.fanlife.game
+└── <club>.fanlife.dubelteam.com
       │
       ▼
    Middleware
@@ -219,11 +219,11 @@ Compiled Club Pack    Legacy/Native Adapter
 דוגמאות:
 
 ```text
-fanlife.game
-hapoeltelaviv.fanlife.game
-zrinjski.fanlife.game
-olympiacos.fanlife.game
-atalanta.fanlife.game
+fanlife.dubelteam.com
+hapoeltelaviv.fanlife.dubelteam.com
+zrinjski.fanlife.dubelteam.com
+olympiacos.fanlife.dubelteam.com
+atalanta.fanlife.dubelteam.com
 ```
 
 Unknown subdomain:

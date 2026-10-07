@@ -2905,3 +2905,5 @@ Spec: `SMART-FREE-TIME-TIME-ADVANCE-SPEC-2026-09-25`. One system; `PassTime` and
 5. **שפת הפוסטר** (מהפוסטר של מאור): חותם עגול למועדון (`Seal`), גושי צבע קרועים (`TornBlocks`), דמות ברסטר עם שוליים
    של נייר (`Cutout`), קווי מגרש מקווקווים — `components/master/Poster.tsx`. הדמויות מהפוסטר (`shirt-swap`) הן גרפיקה של
    מאור, לא שחקנים אמיתיים, באישורו המפורש.
+6. **הכתובת הרשמית: https://fanlife.dubelteam.com** (מאור, 7.10.2026). `SITE_URL` (ב-production בלי משתנה סביבה),
+   `PORTAL_HOST_ROOT` (מועדון = `<sub>.fanlife.dubelteam.com`), ה-sitemap (עמודי המועדונים ו-`/sources`) וה-User-Agent של המחקר.

@@ -36,7 +36,7 @@ describe('Hapoel Petah Tikva sourced core',()=>{
   expect(data.gates.timeline.playable).toBe(false);expect(data.gates.xi.playable).toBe(false)
  })
  it('uses the registered host as authority and rejects foreign club paths',()=>{
-  expect(resolveClubId('hapoelpetahtikva.fanlife.game',registry.id,true)).toBe(registry.id)
-  expect(resolveClubId('hapoelpetahtikva.fanlife.game','zrinjski-mostar',true)).toBeNull()
+  expect(resolveClubId('hapoelpetahtikva.fanlife.dubelteam.com',registry.id,true)).toBe(registry.id)
+  expect(resolveClubId('hapoelpetahtikva.fanlife.dubelteam.com','zrinjski-mostar',true)).toBeNull()
  })
 })
