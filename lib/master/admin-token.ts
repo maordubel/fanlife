@@ -20,12 +20,15 @@ export type AdminPolicy='keyed'|'open-dev'|'closed'
 export type AdminEnv={FAN_LIFE_ADMIN_KEY?:string;NODE_ENV?:string}
 /** Who an audit entry says acted. `owner` only ever comes from a verified cookie. */
 export type AdminSession={actor:'owner'|'local-developer';role:'owner'|'dev-open'}
-export const configuredKey=(env:AdminEnv)=>{const k=(env.FAN_LIFE_ADMIN_KEY||'').trim();return k.length>=ADMIN_KEY_MIN?k:''}
+/** The key as typed or pasted: Unicode-normalised, outer spaces and one pair of wrapping quotes dropped — a value pasted
+ * into Vercel as "abc…" or typed with a trailing space from a phone keyboard is still the same key. */
+export const normalizeKey=(v:string)=>{let k=v.normalize('NFKC').trim();const q=k.match(/^(["'“”‘’])(.*)(["'“”‘’])$/s);if(q)k=q[2]!.trim();return k}
+export const configuredKey=(env:AdminEnv)=>{const k=normalizeKey(env.FAN_LIFE_ADMIN_KEY||'');return k.length>=ADMIN_KEY_MIN?k:''}
 export function adminPolicy(env:AdminEnv):AdminPolicy{if(configuredKey(env))return 'keyed';return env.NODE_ENV==='production'?'closed':'open-dev'}
 const signingSecret=(key:string)=>createHmac('sha256',key).update('fan-life-admin-session-v1').digest()
 const sign=(key:string,payload:string)=>createHmac('sha256',signingSecret(key)).update(payload).digest('base64url')
 /** Constant-time comparison of what was typed against the key; hashing first makes the lengths equal. */
-export function keyMatches(input:unknown,key:string){if(typeof input!=='string'||!key)return false;const a=createHash('sha256').update(input).digest(),b=createHash('sha256').update(key).digest();return timingSafeEqual(a,b)&&input.length===key.length}
+export function keyMatches(raw:unknown,key:string){if(typeof raw!=='string'||!key)return false;const input=normalizeKey(raw);const a=createHash('sha256').update(input).digest(),b=createHash('sha256').update(key).digest();return timingSafeEqual(a,b)&&input.length===key.length}
 /** `v1.<issued-at>.<expires>.<hmac>` — seconds since the epoch. */
 export function issueToken(key:string,now=Math.floor(Date.now()/1000)){const payload=`v1.${now}.${now+ADMIN_SESSION_DAYS*DAY}`;return `${payload}.${sign(key,payload)}`}
 export function verifyToken(token:unknown,key:string,now=Math.floor(Date.now()/1000)):boolean{

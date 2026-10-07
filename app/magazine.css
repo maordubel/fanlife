@@ -1130,3 +1130,4 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 /* light club colours (AEK, Dortmund): the second torn block is ink, not a muddied mix */
 .mag-torn-b { background: var(--club-torn, color-mix(in srgb, var(--club-primary, var(--mag-vermilion)) 52%, var(--mag-ink))); }
 .game-panel .mag-been { margin-inline-start: 10px; vertical-align: middle; }
+.mag-pass-show { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-family: var(--mag-mono); font-size: 12px; }
