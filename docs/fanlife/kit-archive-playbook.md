@@ -19,7 +19,7 @@ Every other open club gets the same structure: `public/kits/<club>/<slug>.webp`,
    palette measured; `parts` filled from the source page only; `cutQuality` ok/review by solidity; `usableInApp` = ok AND flat).
 5. **Look at it**: build a contact sheet (see the snippet in the session log) and list player-worn photos for `--worn`. White shirts on light
    grounds lose pieces → they stay `review`, never silently passed.
-6. **Register**: add the manifest to `lib/kit/clubArchive.ts`, credit the photographer/source on `/credits`, add a row to
+6. **Register**: add the manifest to `lib/clubs/kitArchive.ts`, credit the photographer/source on `/credits`, add a row to
    `content/manual/asset-provenance.json`, and run `npm run test`. Yellow in real photos is a fact (rule 69), not a defect.
 7. **Cross-check** (rule 16): the club's own site / Wikipedia kit pages for manufacturer and sponsor years; record conflicts, never overwrite.
 

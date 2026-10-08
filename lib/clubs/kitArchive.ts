@@ -2,6 +2,8 @@ import 'server-only'
 
 import zrinjski from '@/content/manual/kit-photos-zrinjski-mostar.json'
 import olympiacos from '@/content/manual/kit-photos-olympiacos.json'
+import petahTikva from '@/content/manual/kit-photos-hapoel-petah-tikva.json'
+import panathinaikos from '@/content/manual/kit-photos-panathinaikos.json'
 
 /**
  * Per-club shirt archives (FAN LIFE) — the same shape Hapoel Tel Aviv's `archive.ts` reads, one
@@ -33,6 +35,8 @@ export type ClubKitArchive = { club: string; records: ClubKitRecord[]; sources: 
 const ARCHIVES: Record<string, ClubKitArchive> = {
   'zrinjski-mostar': zrinjski as unknown as ClubKitArchive,
   'olympiacos': olympiacos as unknown as ClubKitArchive,
+  'panathinaikos': panathinaikos as unknown as ClubKitArchive,
+  'hapoel-petah-tikva': petahTikva as unknown as ClubKitArchive,
 }
 
 export function clubKitArchive(club: string): ClubKitArchive | null {
@@ -44,4 +48,12 @@ export function usableClubKits(club: string): ClubKitRecord[] {
   return (ARCHIVES[club]?.records ?? [])
     .filter((r) => r.usableInApp)
     .sort((a, b) => (a.seasonLabel ?? '').localeCompare(b.seasonLabel ?? ''))
+}
+
+/** The cut-out photo for a pack kit (`fka-k-<id>`), when one exists and shows only the shirt. */
+export function clubKitPhoto(club: string, kitId: string): string | null {
+  // ids arrive club-prefixed and wave-prefixed (`club:uefa-fka-k-123`); the archive key is the trailing FKA number
+  const id = kitId.match(/fka-k-(\d+)$/)?.[1] ?? kitId.replace(/^fka-k-/, '')
+  const r = (ARCHIVES[club]?.records ?? []).find((x) => x.usableInApp && x.sourcePage.replace(/\/$/, '').endsWith(`-${id}`))
+  return r ? `/kits/${club}/${r.file.split('/').pop()}` : null
 }

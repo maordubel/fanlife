@@ -57,6 +57,18 @@ export type Look = {
   track?: boolean
   trackCol?: string
   denim?: boolean
+  /** a two-tone retro track top: shoulders and sleeves in this colour over the body, a white band between ('club' = the club's colour) */
+  yoke?: string
+  trackPants?: boolean
+  /** trainers: the shoe, and three stripes on its side ('club' / 'club2' resolve to the club's colours) */
+  shoe?: string
+  shoeStripe?: string
+  /** a steward's armband on the left arm */
+  armband?: string
+  bangles?: boolean
+  bag?: string
+  necklace?: boolean
+  watch?: boolean
   skirt?: string
   apron?: string
   anim?: 'idle' | 'cheer'

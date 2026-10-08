@@ -62,10 +62,22 @@ function H(c){
   var d=new T.Object3D(),col=new T.Color(),first=null,dim=o.dim||1;
   function setc(att,i,hex,k){col.set(hex);col.multiplyScalar(k);col.convertSRGBToLinear();att.setXYZ(i,col.r,col.g,col.b)}
   Object.keys(groups).forEach(function(k){var L=groups[k];if(!L.length)return;var im=PEOPLE.crowdMesh(k,L.length);if(!im)return;var A=im.userData.att;
-   L.forEach(function(s,i){var sc=(s.s||1)*(.88+rnd()*.14)*.93,ry=(s.ry||0)+(rnd()-.5)*.5,sw=1+(rnd()-.5)*.16;d.position.set(s.x,s.y,s.z);d.rotation.set(0,ry,0);d.scale.set(sc*sw,sc,sc*(1+(sw-1)*.6));d.updateMatrix();im.setMatrixAt(i,d.matrix);
+   L.forEach(function(s,i){var sc=(s.s||1)*(.88+rnd()*.14)*.93,ry=(s.ry||0)+(rnd()-.5)*.5,sw=rnd()<.28?1.1+rnd()*.14:1+(rnd()-.5)*.14;d.position.set(s.x,s.y,s.z);d.rotation.set(0,ry,0);d.scale.set(sc*sw,sc,sc*(1+(sw-1)*.6));d.updateMatrix();im.setMatrixAt(i,d.matrix);
     var sk=h.pick(SK),hr=rnd()<.12?sk:h.pick(HAIR),sh=s.col||h.pick(pal),k2=dim*(.85+rnd()*.2);
     setc(A.cSkin,i,sk,Math.min(1,dim*1.1));setc(A.cShirt,i,sh,k2);setc(A.cPants,i,h.pick(PANTS),dim);setc(A.cShoe,i,h.pick(SHOE),dim);setc(A.cHair,i,hr,dim)});
-   ['cSkin','cShirt','cPants','cShoe','cHair'].forEach(function(n){A[n].needsUpdate=true});w.add(im);if(!first)first=im});return first};
+   ['cSkin','cShirt','cPants','cShoe','cHair'].forEach(function(n){A[n].needsUpdate=true});w.add(im);if(!first)first=im;
+   /* both arms up: most of them hold a scarf stretched between the hands; one arm up: some carry a small flag */
+   if(k!=='down'&&!o.noProps){var hp=handsOf(k),props=[];L.forEach(function(s,i){if(rnd()<(k==='both'?.62:.22))props.push(i)});if(!props.length)return;
+    var geo=k==='both'?new T.BoxGeometry(1,.085,.012):new T.PlaneGeometry(.34,.22),mat=new T.MeshStandardMaterial({map:scarfTex(),roughness:.9,side:T.DoubleSide});mat.__al=1;
+    var pm=new T.InstancedMesh(geo,mat,props.length),pole=k==='one'?new T.InstancedMesh(new T.CylinderGeometry(.008,.008,.62,5),new T.MeshStandardMaterial({color:'#2a2622',roughness:.8}),props.length):null,M4=new T.Matrix4(),P4=new T.Matrix4(),q=new T.Object3D();
+    props.forEach(function(i,n){im.getMatrixAt(i,P4);if(k==='both'){var L0=hp.l,R0=hp.r,mid=L0.clone().add(R0).multiplyScalar(.5);q.position.copy(mid);q.position.y-=.03;q.rotation.set(rr(-.15,.15),0,rr(-.06,.06));q.scale.set(L0.distanceTo(R0)+.08,1,1)}
+     else{var hh=hp.r.y>hp.l.y?hp.r:hp.l;q.position.set(hh.x,hh.y+.24,hh.z);q.rotation.set(0,rr(-.4,.4),rr(-.12,.12));q.scale.set(1,1,1);if(pole){var qp=new T.Object3D();qp.position.set(hh.x,hh.y+.2,hh.z);qp.updateMatrix();M4.multiplyMatrices(P4,qp.matrix);pole.setMatrixAt(n,M4)}q.position.x+=(hh.x>0?.17:-.17)}
+     q.updateMatrix();M4.multiplyMatrices(P4,q.matrix);pm.setMatrixAt(n,M4)});
+    [pm,pole].forEach(function(m){if(!m)return;m.frustumCulled=false;m.castShadow=false;w.add(m)})}});return first};
+ var HANDS={};function handsOf(k){if(HANDS[k])return HANDS[k];var g=PEOPLE.crowd[k],p=g.attributes.position,my=-1e9,i;for(i=0;i<p.count;i++)my=Math.max(my,p.getY(i));
+  var l=new T.Vector3(),r=new T.Vector3(),nl=0,nr=0;for(i=0;i<p.count;i++){var y=p.getY(i);if(y<my-.16)continue;if(p.getX(i)>0){l.x+=p.getX(i);l.y+=y;l.z+=p.getZ(i);nl++}else{r.x+=p.getX(i);r.y+=y;r.z+=p.getZ(i);nr++}}
+  if(nl)l.divideScalar(nl);if(nr)r.divideScalar(nr);if(!nl)l.copy(r);if(!nr)r.copy(l);return HANDS[k]={l:l,r:r}}
+ var SCT=null;function scarfTex(){if(SCT)return SCT;var cv=c.cvs(256,32),g2=cv.getContext('2d'),a=h.c1,b=h.c2||'#f2ede4';for(var x=0;x<8;x++){g2.fillStyle=x%2?b:a;g2.fillRect(x*32,0,32,32)}g2.fillStyle=a;g2.fillRect(0,0,256,4);g2.fillRect(0,28,256,4);return SCT=c.tex(cv,1,1)}
  /* tiered stand. o:{x0,x1,z0,rows,rise,run,y0,cut:{xa,xb,from},mat} rows climb toward -z */
  h.stand=function(o){var rows=o.rows,rise=o.rise||.42,run=o.run||.85,y0=o.y0||0,mat=o.mat||h.M('#ffffff',{map:c.concrete('#8c909c',(o.x1-o.x0)/3,1),roughness:.85});
   var info=[];for(var r=0;r<rows;r++){var Ht=y0+rise*(r+1),zc=o.z0-r*run-run/2;info.push({y:Ht,z:zc});
