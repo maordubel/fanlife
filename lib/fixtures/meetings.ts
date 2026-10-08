@@ -18,13 +18,15 @@ export type Meeting = {
   from: string[]
   /** the asking club's side, when the record says it; null = not stated */
   us: 'home' | 'away' | null
+  /** a penalty shoot-out, when the record states one; never folded into the score */
+  shootout?: {home: number; away: number} | null
 }
 
-type Structured = {home?: unknown; away?: unknown; homeGoals?: unknown; awayGoals?: unknown; on?: unknown; competition?: unknown; us?: unknown}
+type Structured = {shootoutHome?: unknown; shootoutAway?: unknown; home?: unknown; away?: unknown; homeGoals?: unknown; awayGoals?: unknown; on?: unknown; competition?: unknown; us?: unknown}
 /** A structured match row (home, away and both goal counts as numbers) — the shape a full archive carries. */
 function structured(v: Structured) {
   if (typeof v.home !== 'string' || typeof v.away !== 'string' || !Number.isInteger(v.homeGoals) || !Number.isInteger(v.awayGoals)) return null
-  return {home: v.home, away: v.away, homeGoals: v.homeGoals as number, awayGoals: v.awayGoals as number, on: typeof v.on === 'string' ? v.on : null, competition: typeof v.competition === 'string' ? v.competition : '', us: v.us === 'home' || v.us === 'away' ? v.us : null}
+  return {shootout: Number.isInteger(v.shootoutHome) && Number.isInteger(v.shootoutAway) ? {home: v.shootoutHome as number, away: v.shootoutAway as number} : null, home: v.home, away: v.away, homeGoals: v.homeGoals as number, awayGoals: v.awayGoals as number, on: typeof v.on === 'string' ? v.on : null, competition: typeof v.competition === 'string' ? v.competition : '', us: v.us === 'home' || v.us === 'away' ? v.us : null}
 }
 
 export type Tally = {played: number; won: number; drawn: number; lost: number; for: number; against: number}
@@ -59,7 +61,7 @@ export async function meetingsBetween(clubId: string, opponent: string, aliases:
       const other = m.us === 'home' ? m.away : m.home
       if (!isRival(other)) continue
       const key = `${m.on ?? '?'}|${m.homeGoals}-${m.awayGoals}|${m.us === 'home' ? club.name : other}`
-      if (!found.has(key)) found.set(key, {on: m.on, year: m.on ? Number(m.on.slice(0, 4)) : null, home: m.home, away: m.away, homeGoals: m.homeGoals, awayGoals: m.awayGoals, competition: m.competition, from: [club.name], us: m.us as 'home' | 'away'})
+      if (!found.has(key)) found.set(key, {on: m.on, year: m.on ? Number(m.on.slice(0, 4)) : null, home: m.home, away: m.away, homeGoals: m.homeGoals, awayGoals: m.awayGoals, competition: m.competition, from: [club.name], us: m.us as 'home' | 'away', shootout: m.shootout})
     }
     for (const f of eligibleArchive(pack.data)) {
       const m = readMatch(f.value.title, [club.name])

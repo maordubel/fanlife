@@ -1,5 +1,16 @@
+import {KitStudio} from '@/components/clubs/gates/kits/KitStudio'
+import {livery} from '@/lib/club-livery'
+import {collectionOf,gate4Playable,identityOf,studioLimits} from '@/lib/clubs/kit-collection'
 import {clubKitPhoto} from '@/lib/clubs/kitArchive'
-import {KitPlate} from '@/components/clubs/games/KitPlate'
-import {kitViews} from '@/lib/clubs/gate-content'
 import type {GateView} from '../types'
-export const view:GateView=({club,copy})=><><p>{copy.kitsSub}</p><ul className="mag-tiles" style={{listStyle:'none',padding:0}}>{kitViews(club).map(k=><li className="mag-tile" key={k.id}>{(()=>{const ph=clubKitPhoto(club.identity.id,k.id);return ph?<img src={ph} alt={`${k.season} ${k.type} shirt`} width={160} height={160} data-archive-photo loading="lazy"/>:<KitPlate kit={k}/>})()}<b><bdi>{k.season}</bdi></b><small><bdi>{[k.type,k.maker,k.design].filter(Boolean).join(' · ')}</bdi></small></li>)}</ul></>
+
+/**
+ * Gate 5 · The Kit Studio — a free studio in the club's own approved colours, the club's documented shirts as a shelf, and an
+ * earned collection from Build the Kit. Three separate things (KS-R01): none of them is a market, and nothing here sells.
+ */
+export const view:GateView=({club,locale,copy,searchParams})=>{
+ const rows=collectionOf(club),kit=typeof searchParams.kit==='string'?searchParams.kit:null
+ const photos:Record<string,string>={};for(const r of rows)if(r.open){const p=clubKitPhoto(club.identity.id,r.id);if(p)photos[r.id]=p}
+ const shared=typeof searchParams.design==='string'?searchParams.design.slice(0,1200):null
+ return <KitStudio club={club.identity.id} clubName={club.identity.name} locale={locale} contentLocale={club.locales.content} copy={copy} monogram={livery(club.identity.id)?.initials??''} limits={studioLimits(club)} identity={identityOf(club)} rows={rows} gate4={gate4Playable(club)} focusKit={kit&&rows.some(r=>r.id===kit)?kit:null} sharedDesign={shared} photos={photos}/>
+}

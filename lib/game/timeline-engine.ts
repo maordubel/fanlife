@@ -21,14 +21,32 @@ export type InsertVerdict = {
 
 /** One algorithm; only compiled cards differ by club. */
 export function createTimelineEngine(cardsPool:readonly DatedCard[]) {
- const length=Math.max(0,Math.min(TIMELINE_LENGTH,cardsPool.length-1))
+ // TI-R01/R02: a run needs distinct DATES — a legacy pool may hold several cards for one day, so the length counts days
+ const distinctDays=new Set(cardsPool.map(c=>c.on)).size
+ const length=Math.max(0,Math.min(TIMELINE_LENGTH,cardsPool.length-1,distinctDays-1))
 function runCards(seed: number, cursor: number): DatedCard[] {
   if (length < 2) return []
   const all = cardsPool
   // Eleven cards out of roughly 160, so a lap of the pool is about fourteen runs before
   // any card is seen twice — and the lap after that is a different shuffle.
   const at = positionOf(seed, cursor, all.length, length + 1)
-  const drawn = takeFrom(shuffle(all, rng(at.seed)), at.slot * (length + 1), length + 1)
+  const shuffled = shuffle(all, rng(at.seed))
+  const start = at.slot * (length + 1)
+  const slice = takeFrom(shuffled, start, length + 1)
+  // One card per date inside a run: a same-day repeat is replaced by the next unused date after the slice, in
+  // shuffle order, so the repair is deterministic and a run without a collision is dealt exactly as before.
+  const days = new Set<string>()
+  const drawn: DatedCard[] = []
+  let spare = start + length + 1
+  for (const card of slice) {
+    let pick = card
+    for (let tries = 0; days.has(pick.on) && tries < shuffled.length; tries += 1) {
+      pick = shuffled[spare % shuffled.length] as DatedCard
+      spare += 1
+    }
+    days.add(pick.on)
+    drawn.push(pick)
+  }
   const byDate = [...drawn].sort((a, b) => a.on.localeCompare(b.on))
   const middle = byDate[Math.floor(byDate.length / 2)] as DatedCard
 
@@ -107,5 +125,5 @@ function gradeInsert(
 }
 
 
-return {length,available:length>=2,poolSize:cardsPool.length,dealTimelineRun,boardAfter,gradeInsert}
+return {length,distinctDays,available:length>=2,poolSize:cardsPool.length,dealTimelineRun,boardAfter,gradeInsert}
 }

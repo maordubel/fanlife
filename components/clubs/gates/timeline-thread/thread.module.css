@@ -1,0 +1,110 @@
+/*
+ * Gate 13 · The Thread — a printed thread of dated clippings you scrub, swipe and step through (rules 91 + 95).
+ * Tokens only: --mag-* and the club livery. Every colour that is not ink or paper is the CLUB's own, so a rival's
+ * identity colour can never reach this page. Dated-to-the-day and year-only are told apart by shape (solid stamp vs
+ * dashed stamp) as well as by words. Motion stops under prefers-reduced-motion.
+ */
+.stage { --t-ink: var(--mag-ink); --t-lit: var(--club-primary); --t-on: var(--club-on-primary, var(--mag-white)); display: flex; flex-direction: column; gap: 8px; min-width: 0; height: calc(100dvh - 52px - env(safe-area-inset-top) - 64px - env(safe-area-inset-bottom)); min-height: 480px; padding-block-start: 6px; }
+.stage *, .stage *::before, .stage *::after { box-sizing: border-box; }
+.layout { display: flex; flex-direction: column; gap: 8px; flex: 1 1 0; min-height: 0; min-width: 0; }
+.fine { margin: 0; font-size: 12px; line-height: 1.4; color: var(--mag-muted); }
+.kicker { margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-muted); }
+
+/* ------------------------------------------------------------- the mode switch (Chronology | The Thread) */
+.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 3px solid var(--mag-ink); background: var(--mag-card); margin-block: 6px 8px; }
+.mode { min-height: 44px; display: grid; place-items: center; padding: 0 4px; min-width: 0; overflow-wrap: anywhere; color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; text-align: center; }
+.mode + .mode { border-inline-start: 3px solid var(--mag-ink); }
+.mode[aria-current='page'] { background: var(--club-primary); color: var(--club-on-primary, var(--mag-white)); }
+
+/* ------------------------------------------------------------- the rail: decades + years */
+.rail { display: flex; flex-direction: column; gap: 6px; flex: none; min-width: 0; }
+.decades { display: flex; gap: 6px; margin: 0; padding: 2px 2px 6px; list-style: none; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+.decades::-webkit-scrollbar { display: none; }
+.decade { flex: none; display: grid; align-content: center; justify-items: center; gap: 1px; min-height: 44px; min-width: 64px; padding: 2px 10px; border: 3px solid var(--t-ink); background: var(--mag-card); color: var(--t-ink); text-decoration: none; font-family: var(--mag-condensed, var(--mag-display)); font-weight: 700; font-size: 17px; line-height: 1; white-space: nowrap; }
+.decade small { font-family: var(--mag-mono); font-weight: 700; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; opacity: .8; }
+.decade[aria-current='page'] { background: var(--t-lit); color: var(--t-on); box-shadow: 3px 3px 0 var(--t-ink); }
+.knots { display: flex; gap: 4px; margin: 0; padding: 2px 2px 4px; list-style: none; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+.knots::-webkit-scrollbar { display: none; }
+.knot { flex: none; min-height: 36px; min-width: 52px; padding: 0 8px; border: 2px solid var(--t-ink); background: transparent; color: var(--t-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: .5px; font-variant-numeric: tabular-nums; cursor: pointer; }
+.knot[aria-current='true'] { background: var(--t-ink); color: var(--mag-paper); }
+.knot:active { transform: translate(1px, 1px); }
+
+/* ------------------------------------------------------------- the scrubber: a dashed thread with a knot to drag */
+.scrub { display: flex; align-items: center; gap: 10px; flex: none; min-height: 44px; }
+.range { appearance: none; -webkit-appearance: none; flex: 1; min-width: 0; height: 44px; margin: 0; background: transparent; cursor: pointer; touch-action: pan-y; }
+.range:focus-visible { outline: 3px solid var(--t-ink); outline-offset: 2px; }
+.range::-webkit-slider-runnable-track { height: 6px; border: 0; background: repeating-linear-gradient(90deg, var(--t-ink) 0 8px, transparent 8px 14px); }
+.range::-moz-range-track { height: 6px; border: 0; background: repeating-linear-gradient(90deg, var(--t-ink) 0 8px, transparent 8px 14px); }
+.range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 26px; height: 26px; margin-block-start: -10px; border: 3px solid var(--t-ink); background: var(--t-lit); transform: rotate(45deg); box-shadow: 2px 2px 0 var(--t-ink); }
+.range::-moz-range-thumb { width: 20px; height: 20px; border: 3px solid var(--t-ink); border-radius: 0; background: var(--t-lit); transform: rotate(45deg); box-shadow: 2px 2px 0 var(--t-ink); }
+.pos { flex: none; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: .5px; text-transform: uppercase; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ------------------------------------------------------------- the clipping */
+.main { display: flex; flex-direction: column; gap: 8px; flex: 1 1 0; min-height: 0; min-width: 0; }
+.scroll { flex: 1 1 0; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 6px 4px 10px; display: flex; flex-direction: column; gap: 8px; }
+.trail { position: relative; display: flex; flex-direction: column; gap: 8px; padding-inline-start: 14px; }
+.trail::before { content: ''; position: absolute; inset-block: 0; inset-inline-start: 3px; border-inline-start: 3px dashed var(--t-lit); }
+.peek { display: flex; align-items: baseline; gap: 8px; width: 100%; min-height: 44px; padding: 6px 10px; border: 2px solid var(--t-ink); background: transparent; color: var(--t-ink); font: inherit; text-align: start; cursor: pointer; position: relative; }
+.peek::before { content: ''; position: absolute; inset-block-start: 50%; inset-inline-start: -17px; width: 11px; height: 11px; margin-block-start: -5px; border: 2px solid var(--t-ink); background: var(--t-lit); transform: rotate(45deg); }
+.peek small { flex: none; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--mag-muted); }
+.peek span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 700; }
+.peek time { flex: none; font-family: var(--mag-mono); font-size: 11px; font-variant-numeric: tabular-nums; }
+
+.clip { --lean: 0px; --tilt: 0deg; position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; padding: 18px 12px 12px; border: 3px solid var(--t-ink); background: var(--mag-card); box-shadow: 5px 5px 0 var(--t-ink); touch-action: pan-y; user-select: none; -webkit-user-select: none; transform: translateX(var(--lean)) rotate(calc(var(--tilt) + var(--lean) / 60)); }
+.clip[data-parity='1'] { --tilt: -.6deg; }
+.clip[data-parity='0'] { --tilt: .5deg; }
+.clip[data-drag='true'] { transition: none; cursor: grabbing; }
+.clip:not([data-drag='true']) { transition: transform .18s ease; }
+.clip::before { content: ''; position: absolute; inset-block-start: -9px; inset-inline-start: 50%; width: 52px; height: 15px; margin-inline-start: -26px; background: color-mix(in srgb, var(--mag-card) 70%, var(--mag-paper)); border: 2px solid color-mix(in srgb, var(--t-ink) 45%, transparent); transform: rotate(-3deg); }
+.clip[data-dir='next'] { animation: tIn .24s cubic-bezier(.3, 1.2, .5, 1) both; --from: 22px; }
+.clip[data-dir='prev'] { animation: tIn .24s cubic-bezier(.3, 1.2, .5, 1) both; --from: -22px; }
+@keyframes tIn { from { opacity: 0; transform: translateX(var(--from)) rotate(var(--tilt)); } to { opacity: 1; transform: translateX(0) rotate(var(--tilt)); } }
+.stamp { align-self: start; display: grid; align-content: start; justify-items: center; gap: 2px; min-width: 76px; padding: 8px 8px 6px; border: 3px solid var(--t-ink); background: var(--t-lit); color: var(--t-on); text-align: center; direction: ltr; }
+.stamp b { font-family: var(--mag-display); font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.stamp span { font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+.stamp i { font-family: var(--mag-mono); font-style: normal; font-weight: 700; font-size: 13px; letter-spacing: 1px; font-variant-numeric: tabular-nums; border-block-start: 2px solid currentColor; padding-block-start: 3px; margin-block-start: 2px; }
+.clip[data-precision='year'] .stamp { background: transparent; color: var(--t-ink); border-style: dashed; }
+.clip[data-precision='year'] .stamp b { font-size: 32px; }
+.body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.body h2 { margin: 0; font-family: var(--mag-display); font-weight: 800; font-size: clamp(18px, 5vw, 28px); line-height: 1.12; overflow-wrap: anywhere; }
+.hint { margin: 0; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.gap { margin: 0; padding-block-start: 6px; border-block-start: 2px dashed color-mix(in srgb, var(--t-ink) 45%, transparent); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: .5px; text-transform: uppercase; color: var(--mag-muted); }
+.src { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; font-size: 12px; line-height: 1.35; }
+.src a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.open { align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; border: 3px solid var(--t-ink); background: var(--mag-card); color: var(--t-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; box-shadow: 3px 3px 0 var(--t-ink); }
+
+/* ------------------------------------------------------------- the dock */
+.dock { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; flex: none; }
+.step { min-height: 56px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 6px 10px; border: 3px solid var(--t-ink); background: var(--mag-card); color: var(--t-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-align: center; text-decoration: none; cursor: pointer; box-shadow: 3px 3px 0 var(--t-ink); }
+.step:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: none; }
+.step:disabled, .step[aria-disabled='true'] { opacity: .4; cursor: default; box-shadow: none; }
+.stepNext { background: var(--t-lit); color: var(--t-on); }
+.hintRow { margin: 0; text-align: center; }
+
+.bare { padding: 18px 14px; border: 3px dashed var(--t-ink); background: var(--mag-card); display: flex; flex-direction: column; gap: 8px; }
+.bare h2 { margin: 0; font-family: var(--mag-condensed, var(--mag-display)); font-weight: 700; font-size: 24px; line-height: 1; text-transform: uppercase; }
+.bare p { margin: 0; font-size: 14px; line-height: 1.45; }
+
+/* ------------------------------------------------------------- desktop: its own two-column design */
+@media (min-width: 901px) {
+  .stage { height: auto; min-height: 560px; }
+  .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; align-items: start; flex: none; }
+  .rail { position: sticky; inset-block-start: 8px; }
+  .decades { flex-direction: column; overflow: visible; padding-block-end: 2px; }
+  .decade { flex-direction: row; justify-content: space-between; min-width: 0; padding-inline: 12px; }
+  .knots { flex-wrap: wrap; overflow: visible; }
+  .main { flex: none; }
+  .scroll { overflow: visible; flex: none; padding-block-end: 4px; }
+  .clip { padding: 22px 18px 16px; gap: 18px; }
+  .stamp { min-width: 104px; padding: 12px 12px 8px; }
+  .stamp b { font-size: 58px; }
+  .clip[data-precision='year'] .stamp b { font-size: 40px; }
+  .body h2 { font-size: clamp(26px, 2.6vw, 36px); }
+  .hint { font-size: 16px; }
+  .dock { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); max-width: 560px; }
+}
+@media (max-height: 700px) and (max-width: 900px) { .peek { display: none; } .clip { padding-block-start: 14px; } .stamp b { font-size: 32px; } }
+@media (prefers-reduced-motion: reduce) {
+  .clip, .clip[data-dir] { animation: none; transition: none; }
+  .knot:active, .step:active:not(:disabled) { transform: none; }
+}
