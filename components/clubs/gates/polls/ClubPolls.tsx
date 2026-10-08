@@ -48,10 +48,10 @@ export function ClubPolls({players,debates,club,clubName,version,seed,cursor,loc
 
  const word=(qid:string)=>answerOf(slip,qid,byId,t)
  const openSheet=(s:NonNullable<Sheet>)=>(e:React.SyntheticEvent)=>{opener.current=e.currentTarget as HTMLElement;touched.current=true;setSheet(s)}
- const closeSheet=()=>{setSheet(null);opener.current?.focus?.()}
+ const closeSheet=()=>{setSheet(null);setNotice('');opener.current?.focus?.()}
  function choose(qid:string,value:string,from:HTMLElement|null){
   const was=isComplete(slip),next=setPick(slip,qid,value)
-  touched.current=true;setSlip(next);setWhy(qid);setAim(nextOpen(next,qid));setSheet(null);setNotice('');markStep(filled(next))
+  touched.current=true;setSlip(next);setWhy(null);setAim(nextOpen(next,qid));setSheet(null);setNotice('');markStep(filled(next))
   window.requestAnimationFrame(()=>{const row=document.querySelector(`[data-q="${qid}"]`);firePickFxAt(row??from,{label:answerOf(next,qid,byId,t)??undefined})})
   if(!was&&isComplete(next))window.setTimeout(()=>{opener.current=null;setSheet({kind:'card',id:'card'})},650)
  }
@@ -122,7 +122,7 @@ export function ClubPolls({players,debates,club,clubName,version,seed,cursor,loc
 
  const tabs=<div className={css.bar}>
   <div className={css.tabs} role="tablist" aria-label={t('tv.tabs')}>
-   {(['card','debates'] as const).map(k=><button key={k} type="button" role="tab" id={`tv-tab-${k}`} aria-controls={`tv-pane-${k}`} className={css.tab} aria-selected={tab===k} onClick={()=>setTab(k)}>{t(`tv.tab.${k}`)}</button>)}
+   {(['card','debates'] as const).map(k=><button key={k} type="button" role="tab" id={`tv-tab-${k}`} aria-controls={`tv-pane-${k}`} className={css.tab} aria-selected={tab===k} onClick={()=>{setTab(k);setNotice('')}}>{t(`tv.tab.${k}`)}</button>)}
   </div>
   <span className={css.count} data-done={tab==='card'?done:debatesDone(votes,debates)} aria-live="polite">{tab==='card'?t('tv.count',{n}):t('tv.deb.count',{n:answered,m:debates.length})}</span>
  </div>

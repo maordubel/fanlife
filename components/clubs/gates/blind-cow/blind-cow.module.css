@@ -39,7 +39,7 @@
 .entryTitle { grid-area: title; font-family: var(--mag-condensed, var(--mag-display)); font-weight: 700; font-size: 18px; line-height: 1.05; text-transform: uppercase; display: flex; gap: 8px; align-items: baseline; }
 [lang='he'] .entryTitle { text-transform: none; font-family: var(--mag-body); font-weight: 900; font-size: 16px; }
 .entryTitle small { font-family: var(--mag-mono); font-size: 10px; letter-spacing: .5px; opacity: .7; text-transform: none; }
-.entrySub { grid-area: sub; font-size: 12px; line-height: 1.25; color: var(--mag-muted); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.entrySub { grid-area: sub; font-size: 12px; line-height: 1.25; color: var(--mag-muted); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 .entryGo { grid-area: go; align-self: center; min-height: 36px; display: inline-flex; align-items: center; padding: 0 10px; border: 2px solid var(--bc-ink); background: var(--bc-ink); color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: .5px; text-transform: uppercase; text-align: center; max-width: 42vw; }
 .entry[data-status='new'], .resume, .challenge { background: var(--bc-lit); color: var(--bc-on); }
 .entry[data-status='new'] .entrySub, .resume .entrySub, .challenge .entrySub { color: inherit; opacity: .92; }

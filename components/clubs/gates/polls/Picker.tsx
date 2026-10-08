@@ -27,10 +27,10 @@ export function PlayerPicker({open,onClose,title,players,wardrobe,contentLocale,
   <div className={css.pickBody}>
    <div className={css.pickTop}>
     <input ref={input} type="search" className={css.search} value={f.q} placeholder={searchLabel} aria-label={searchLabel} data-testid="polls-search" onChange={e=>{setF(x=>({...x,q:e.target.value}));setLimit(PAGE)}}/>
-    <div className={css.chipRow} role="group" aria-label={title}>
+    {(opens||mine.size>0)&&<div className={css.chipRow} role="group" aria-label={title}>
      {opens&&<button type="button" className={css.chip} aria-pressed={f.pos!==null} onClick={()=>{setF(x=>({...x,pos:x.pos?null:opens}));setLimit(PAGE)}}>{t('tv.pick.only',{pos:posLabel(opens)})}</button>}
      {mine.size>0&&<button type="button" className={css.chip} aria-pressed={f.mine} onClick={()=>{setF(x=>({...x,mine:!x.mine}));setLimit(PAGE)}}>{t('tv.pick.mine')}</button>}
-    </div>
+    </div>}
    </div>
    {list.length===0
     ?<p className={css.empty}>{t('tv.pick.none')}</p>

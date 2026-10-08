@@ -68,6 +68,7 @@
 .cta:disabled { opacity: .35; box-shadow: none; cursor: default; }
 .wide { width: 100%; }
 .debates { display: flex; flex-direction: column; }
+.debates .stamp { font-size: 12px; }
 .roundDone { margin: 10px; padding: 10px; border: 3px solid var(--pl-ink); background: var(--mag-paper); display: flex; flex-direction: column; gap: 8px; }
 .roundDone p { margin: 0; font-weight: 700; font-size: 14px; }
 .actions { display: flex; flex-direction: column; gap: 6px; }
@@ -136,5 +137,5 @@
   .line:hover .lineMain { background: color-mix(in srgb, var(--pl-ink) 6%, transparent); }
 }
 @media (max-width: 380px) { .tab { font-size: 10px; letter-spacing: .5px; } .lineMain { grid-template-columns: 24px minmax(0, 1fr) minmax(0, 42%); gap: 6px; padding-inline: 8px; } .whyRow { padding-inline-start: 38px; } }
-@media (max-height: 640px) and (max-width: 900px) { .stage { min-height: 480px; } }
+@media (max-height: 700px) and (max-width: 900px) { .stage { min-height: 480px; } .paperHead { padding-block: 6px; } .paperHead .fine { display: none; } .paperTitle { font-size: 20px; } }
 @media (prefers-reduced-motion: reduce) { .line[data-done='true'] .stamp { animation: none; } .cta:active:not(:disabled), .prow:active, .num:active { transform: none; } }

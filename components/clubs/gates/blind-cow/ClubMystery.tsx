@@ -127,7 +127,7 @@ export function ClubMystery(props:ClubMysteryProps){
     ?<RunBoard {...{t,run,play,fresh,pending,sure,pen}} onReveal={()=>void reveal()} onGuess={()=>setDrawer(true)} onGiveUp={giveUp} onFocusOpener={e=>{opener.current=e.currentTarget as HTMLElement}}/>
     :<ResultCard run={run} mode={play.mode} player={byId.get(run.result.playerId)??null} wardrobe={wardrobe} contentLocale={contentLocale} club={club} locale={locale} versus={versus} t={t} notice={notice} pending={pending} nextDaily={play.mode==='daily'}
       onShare={shareResult} onChallenge={play.mode==='duel'?sendChallenge:null} onAgain={play.mode==='daily'?null:()=>void begin(play.mode==='duel'?{mode:'solo',tag:''}:play,{fresh:true})} onLobby={toLobby}/>)}
-  <GuessDrawer open={drawer&&screen==='run'&&run?.status==='playing'} onClose={()=>setDrawer(false)} players={players} tried={run?.tried??[]} contentLocale={contentLocale} closeLabel={copy['play.close']} t={t} posLabel={p=>copy[p]??p} allLabel={copy.all} groupLabel={copy.position} onPick={guess}/>
+  <GuessDrawer open={drawer&&screen==='run'&&run?.status==='playing'} onClose={()=>setDrawer(false)} players={players} tried={run?.tried??[]} contentLocale={contentLocale} closeLabel={copy['play.close']} t={t} posLabel={p=>copy[`rr.short.${p}`]??copy[p]??p} allLabel={copy.all} groupLabel={copy.position} onPick={guess}/>
   <SlideSheet open={sheet==='howto'} onClose={closeSheet} title={t('bc.help')} closeLabel={copy['play.close']}>
    <ol className={css.howto}>{[1,2,3,4].map(i=><li key={i}><span aria-hidden="true">{i}</span><span>{t(`bc.howto.${i}`)}</span></li>)}</ol>
    <p className={css.fine}>{t('bc.share.noName')}</p>
