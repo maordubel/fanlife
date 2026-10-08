@@ -34,3 +34,5 @@ export function recordActivity(club:string,gate:RunGate|'xi',raw:string,score=0)
 }
 
 export const pollKey=(club:string)=>`fan-life:club:${club}:polls:v1`
+/** The "worst XI" is a personal opinion on this device — it is never counted on the ticket and never ranked. */
+export const worstXiKey=(club:string)=>`fan-life:club:${club}:xi-worst:v1`

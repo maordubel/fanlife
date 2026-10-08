@@ -4,54 +4,28 @@ import {notFound} from 'next/navigation'
 import {ShareComposer} from '@/components/share/v3/ShareComposer'
 import {archiveShare,onThisDayShare} from '@/lib/share/v3/adapters'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
-import {BeenThere} from '@/components/fanlife/BeenThere'
-import {TriviaBoard} from '@/components/clubs/games/TriviaBoard'
-import {MemoryBoard} from '@/components/clubs/games/MemoryBoard'
-import {MysteryBoard} from '@/components/clubs/games/MysteryBoard'
-import {PollsBoard} from '@/components/clubs/games/PollsBoard'
-import {clubPollRound} from '@/lib/clubs/polls'
-import {XIBuilder} from '@/components/clubs/games/XIBuilder'
 import {requestClub} from '@/lib/clubs/request'
 import {sharedGate,gateAvailability} from '@/lib/clubs/gates'
-import {clubTrivia,clubMemory,triviaSpec} from '@/lib/clubs/games'
-import {uiLocale,localizedDate} from '@/lib/clubs/locale'
+import {uiLocale} from '@/lib/clubs/locale'
 import {gameCopy} from '@/lib/clubs/game-copy'
-import {eligibleArchive} from '@/lib/clubs/archive'
 import {roundFrom} from '@/lib/rotation/round'
-import {LineupBoard} from '@/components/clubs/games/LineupBoard'
-import {RumbleGame} from '@/components/clubs/rumble/RumbleGame'
-import {ratedPool,dealDraft} from '@/lib/clubs/rumble'
-import {affordableSeed,shuffleSeed} from '@/lib/clubs/rumble-show'
-import {rumbleWardrobe} from '@/lib/clubs/rumble-kit'
-import {forbiddenColor} from '@/lib/clubs/theme'
-import {KitBuilderBoard} from '@/components/clubs/games/KitBuilderBoard'
-import {KitPlate} from '@/components/clubs/games/KitPlate'
-import {lineupMatches,lineupPool,buildableKits,kitViews,rivalsOf} from '@/lib/clubs/gate-content'
 import {GateHead} from '@/components/clubs/GateHead'
 import {PlayHeader} from '@/components/clubs/PlayHeader'
 import {modeOf,isPlayMode} from '@/lib/clubs/layout-mode'
-import {meetingsBetween,tallyOf} from '@/lib/fixtures/meetings'
-import {DerbyWall} from '@/components/clubs/games/DerbyWall'
-import {GoalBoard} from '@/components/clubs/games/GoalBoard'
-import {goalDeal} from '@/lib/clubs/goal'
-const rotate=<T,>(a:T[],by:number)=>a.length?[...a.slice(by%a.length),...a.slice(0,by%a.length)]:a
-const pick=(own:string,all:(string|null)[])=>{const rest=[...new Set(all.filter((x):x is string=>!!x&&x!==own))].sort().slice(0,3);return [own,...rest].sort((a,b)=>a.localeCompare(b))}
+import {GATE_VIEWS} from '@/components/clubs/gates/registry'
+import type {GateSearch,ViewKey} from '@/components/clubs/gates/types'
 export const dynamic='force-dynamic'
 export async function generateMetadata({params}:{params:{slug:string;gate:string}}){const c=REGISTRY.find(r=>r.id===params.slug),g=sharedGate(params.gate),name=g?(gameCopy('en') as Record<string,string>)[`gate.${g.key}`]:null;return {title:[name,c?.name].filter(Boolean).join(' · ')||'Club games'}}
-type Search={seed?:string;r?:string;lang?:string;topic?:string;era?:string;hard?:string;q?:string;event?:string;today?:string;page?:string}
-export default async function Page({params,searchParams}:{params:{slug:string;gate:string};searchParams:Search}){
+export default async function Page({params,searchParams}:{params:{slug:string;gate:string};searchParams:GateSearch}){
  const gate=sharedGate(params.gate)
  if(!gate||gate.key==='timeline')notFound()
  const resolved=await requestClub(params.slug,gate.number)
  if(!resolved)notFound()
  const club=resolved.data,locale=uiLocale(searchParams.lang),copy=gameCopy(locale),readiness=gateAvailability(club,gate.key),round=roundFrom(searchParams)
  const gameKey=`${club.identity.id}:${club.version}:${round.seed}:${round.cursor}:${locale}:${searchParams.topic||''}:${searchParams.era||''}:${searchParams.hard||''}`
- const trivia=gate.key==='trivia'?clubTrivia(club):null,spec=triviaSpec(searchParams.topic,searchParams.era,searchParams.hard),questions=trivia?.publicQuestions(trivia.dealSeededRun(spec,round.seed,round.cursor).ids,round.seed)||[]
- const dates=new Date().toISOString().slice(5,10),query=(searchParams.q||'').slice(0,100).toLocaleLowerCase(),records=eligibleArchive(club),events=records.filter(f=>(!searchParams.today||f.value.on?.slice(5,10)===dates)&&(!query||`${f.value.title} ${f.value.on||f.value.year||''} ${f.value.hint}`.toLocaleLowerCase().includes(query))),selected=searchParams.event?records.find(f=>f.id===searchParams.event):null
- if(searchParams.event&&!selected&&gate.key==='archive')notFound()
- const rawPage=Number(searchParams.page),page=Number.isSafeInteger(rawPage)&&rawPage>0?Math.min(rawPage,Math.max(1,Math.ceil(events.length/20))):1
  const mode=modeOf(gate.key),compact=readiness.playable&&isPlayMode(mode),sub={xi:'xiSub',trivia:'triviaSub',lineup:'lineupSub','kit-builder':'kitSub',kits:'kitsSub',memory:'memorySub',polls:'pollSub',goal:'goalSub','royal-rumble':'rumbleSub','blind-cow':'mysterySub',derby:'derbySub',archive:'archiveSub',timeline:'archiveSub'}[gate.key] as keyof typeof copy
  const langLinks=(['en','he'] as const).map(l=>({l,label:l==='en'?copy.english:copy.hebrew,href:`?${new URLSearchParams({...searchParams,lang:l} as Record<string,string>)}`}))
+ const View=GATE_VIEWS[gate.key as ViewKey]
  return <ClubSurface theme={club.theme} clubId={club.identity.id} locale={locale} tabbar={!compact}><main id="main" className={`mag-game mx-auto min-h-screen ${gate.key==='royal-rumble'?'max-w-5xl':'max-w-3xl'} px-gutter py-8`} lang={locale} data-mode={mode}>
   {compact?<PlayHeader clubId={club.identity.id} clubName={club.identity.name} title={copy[`gate.${gate.key}`]} locale={locale} help={String(copy[sub])} copy={{back:copy['play.back'],help:copy['play.help'],close:copy['play.close'],fanlife:copy['play.fanlife'],language:copy['play.language']}} langLinks={langLinks}/>:<GateHead clubId={club.identity.id} clubName={club.identity.name} hubLabel={copy.hub} gateNo={String(gate.number)} gateNoLabel={copy.gateNo} title={copy[`gate.${gate.key}`]} state={readiness.state} stateLabel={copy[`state.${readiness.state}` as 'state.READY']} locale={locale} langLinks={langLinks}/>}
   {!readiness.playable?<section className="game-panel" data-testid="gate-locked"><h2>{copy.locked}</h2><p>{copy.lockedNote}</p><Link className="game-button" href={`/clubs/${club.identity.id}?lang=${locale}`}>{copy.backToClub}</Link></section>:<>
