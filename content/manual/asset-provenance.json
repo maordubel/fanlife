@@ -2438,6 +2438,70 @@
    ],
    "confidence": 2,
    "noteHe": "רקעי משחקי הפנדלים והסלים (30.9.2026): חיתוך מהסמטה ביפו ומקיר חצר בית הספר, נבנו ב-scripts/life/cut-minigame-scenes-2026-09-30.py. הצהוב נמדד 0. נגזרות של ציורים שהמקור שלהם כבר רשום."
+  },
+  {
+   "key": "kit-photos-zrinjski-mostar-2026-10-08",
+   "kind": "photo",
+   "origin": "third-party-archive",
+   "folder": "public/kits/zrinjski-mostar",
+   "match": [],
+   "sourceUrl": "https://www.footballkitarchive.com/hsk-zrinjski-kits/",
+   "sourceTitle": "Football Kit Archive — קטלוג חולצות (קרדיט צילום: instagram.com/hsk_zrinjski_shirts)",
+   "treatment": [
+    "cut-out (rembg)",
+    "webp q88",
+    "yellow measured on decode"
+   ],
+   "confidence": 1,
+   "noteHe": "ארכיון מדים של המועדון לפי קובץ kit-photos-zrinjski-mostar.json. צילום מוצר של החולצה בלבד (לא שחקן לבוש); זכויות התצלומים טרם הוסדרו מול המקור — החלטת הבעלים לפני עלייה לפרודקשן."
+  },
+  {
+   "key": "kit-photos-olympiacos-2026-10-08",
+   "kind": "photo",
+   "origin": "third-party-archive",
+   "folder": "public/kits/olympiacos",
+   "match": [],
+   "sourceUrl": "https://www.footballkitarchive.com/olympiacos-fc-kits-t582/",
+   "sourceTitle": "Football Kit Archive — קטלוג חולצות",
+   "treatment": [
+    "cut-out (rembg)",
+    "webp q88",
+    "yellow measured on decode"
+   ],
+   "confidence": 1,
+   "noteHe": "ארכיון מדים של המועדון לפי קובץ kit-photos-olympiacos.json. צילום מוצר של החולצה בלבד (לא שחקן לבוש); זכויות התצלומים טרם הוסדרו מול המקור — החלטת הבעלים לפני עלייה לפרודקשן."
+  },
+  {
+   "key": "kit-photos-hapoel-petah-tikva-2026-10-08",
+   "kind": "photo",
+   "origin": "third-party-archive",
+   "folder": "public/kits/hapoel-petah-tikva",
+   "match": [],
+   "sourceUrl": "https://www.footballkitarchive.com/hapoel-petah-tikva-kits-t1103/",
+   "sourceTitle": "Football Kit Archive — קטלוג חולצות",
+   "treatment": [
+    "cut-out (rembg)",
+    "webp q88",
+    "yellow measured on decode"
+   ],
+   "confidence": 1,
+   "noteHe": "ארכיון מדים של המועדון לפי קובץ kit-photos-hapoel-petah-tikva.json. צילום מוצר של החולצה בלבד (לא שחקן לבוש); זכויות התצלומים טרם הוסדרו מול המקור — החלטת הבעלים לפני עלייה לפרודקשן."
+  },
+  {
+   "key": "kit-photos-panathinaikos-2026-10-08",
+   "kind": "photo",
+   "origin": "third-party-archive",
+   "folder": "public/kits/panathinaikos",
+   "match": [],
+   "sourceUrl": "https://www.footballkitarchive.com/panathinaikos-fc-kits-t959/",
+   "sourceTitle": "Football Kit Archive — קטלוג חולצות",
+   "treatment": [
+    "cut-out (rembg)",
+    "webp q88",
+    "yellow measured on decode"
+   ],
+   "confidence": 1,
+   "noteHe": "ארכיון מדים של המועדון לפי קובץ kit-photos-panathinaikos.json. צילום מוצר של החולצה בלבד (לא שחקן לבוש); זכויות התצלומים טרם הוסדרו מול המקור — החלטת הבעלים לפני עלייה לפרודקשן."
   }
  ]
 }
