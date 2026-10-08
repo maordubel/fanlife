@@ -144,7 +144,7 @@
   .stage { height: auto; min-height: 0; padding-block-start: 0; }
   .layout { display: grid; flex: none; grid-template-columns: minmax(0, 580px) minmax(0, 380px); gap: 24px; align-items: start; }
   .main { flex: none; gap: 10px; }
-  .paper { overflow: visible; }
+  .paper { flex: none; overflow: visible; }
   .side { display: flex; flex-direction: column; gap: 10px; min-width: 0; position: sticky; inset-block-start: 12px; }
   .onlyMobile { display: none; }
   .line:hover .lineMain { background: color-mix(in srgb, var(--pl-ink) 6%, transparent); }
