@@ -4,10 +4,10 @@
  * cross; the echo is a double border AND a blink — no state rides on colour alone, and no rival's colour is drawn.
  * Every animation stops under prefers-reduced-motion. The sheet is the shared SlideSheet (z 60, rule 33).
  */
-.stage { --mm-ink: var(--mag-ink); --mm-lit: var(--club-primary); --mm-on: var(--club-on-primary, var(--mag-white)); display: flex; flex-direction: column; min-width: 0; height: calc(100dvh - 52px - env(safe-area-inset-top) - 20px - env(safe-area-inset-bottom)); min-height: 520px; padding-block-start: 8px; }
+.stage { --mm-ink: var(--mag-ink); --mm-lit: var(--club-primary); --mm-on: var(--club-on-primary, var(--mag-white)); display: flex; flex-direction: column; min-width: 0; height: auto; min-height: max(520px, calc(100dvh - 52px - env(safe-area-inset-top) - 20px - env(safe-area-inset-bottom))); padding-block-start: 8px; }
 .stage[data-phase='done'] { height: auto; min-height: 0; }
 .stage *, .stage *::before, .stage *::after { box-sizing: border-box; }
-.play { display: flex; flex-direction: column; gap: 8px; flex: 1 1 0; min-height: 0; min-width: 0; }
+.play { display: flex; flex-direction: column; gap: 8px; flex: 1 1 auto; min-height: 0; min-width: 0; }
 .fine { margin: 0; font-family: var(--mag-mono); font-size: 11px; font-weight: 700; letter-spacing: .4px; color: var(--mag-muted); }
 .obj { inline-size: 100%; block-size: 100%; display: block; }
 
@@ -15,12 +15,13 @@
 .hud { flex: none; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 5px 10px; align-items: center; padding: 6px 8px; border: 3px solid var(--mm-ink); background: var(--mag-card); box-shadow: 3px 3px 0 var(--mm-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: .6px; text-transform: uppercase; }
 .hud p { margin: 0; }
 .hud b { font-family: var(--mag-condensed, var(--mag-display)); font-size: 20px; line-height: 1; letter-spacing: 0; font-variant-numeric: tabular-nums; }
-.hudPairs, .hudMoves { display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+.hudPairs, .hudMoves, .hudStreak { display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap; }
 .pips { display: flex; gap: 3px; margin: 0; padding: 0; list-style: none; min-inline-size: 0; }
 .pips li { flex: 1 1 0; max-inline-size: 22px; block-size: 8px; border: 2px solid var(--mm-ink); }
 .pips li[data-lit='true'] { background: var(--mm-lit); }
 .hudClock { font-variant-numeric: tabular-nums; font-size: 13px; }
-.wallBar { grid-column: 1 / 4; display: flex; align-items: center; gap: 8px; color: var(--mag-muted); }
+.hudStreak { grid-column: 1; }
+.wallBar { grid-column: 2 / 4; display: flex; align-items: center; gap: 8px; color: var(--mag-muted); }
 .wallBar i { flex: 1 1 0; block-size: 8px; border: 2px solid var(--mm-ink); background: var(--mag-paper); overflow: hidden; }
 .wallBar i b { display: block; block-size: 100%; background: var(--mm-lit); transition: inline-size .4s ease; }
 .wallBar[data-lit] i { border-width: 3px; }
@@ -30,21 +31,20 @@
 .echo[data-state='spent'] { opacity: .5; }
 
 /* ------------------------------------------------------------- the board */
-.boardBox { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; gap: 6px; }
-.boardWrap { position: relative; flex: 1 1 0; min-height: 0; }
+.boardBox { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; gap: 6px; }
+.boardWrap { position: relative; flex: 1 1 auto; min-height: calc(var(--rows) * 62px); }
 .board { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); grid-template-rows: repeat(var(--rows), minmax(0, 1fr)); }
 .cell { padding: 4px; min-width: 0; min-height: 0; }
 .threads { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; pointer-events: none; z-index: 2; overflow: visible; }
 .threads line { stroke: var(--mm-ink); stroke-width: 3px; stroke-dasharray: 6 4; vector-effect: non-scaling-stroke; opacity: .85; }
-.threads circle { fill: var(--mm-ink); }
 .threads g { animation: mmThread 1.3s ease-out both; }
 .flashBanner { flex: none; display: flex; align-items: center; justify-content: space-between; margin: 0; padding: 6px 12px; border: 3px solid var(--mm-ink); background: var(--mm-ink); color: var(--mag-paper); font-family: var(--mag-condensed, var(--mag-display)); font-size: 20px; letter-spacing: 1px; text-transform: uppercase; }
 .flashBanner span { font-size: 28px; color: var(--mag-paper); font-variant-numeric: tabular-nums; }
 
 /* ------------------------------------------------------------- a card */
 .card { position: relative; inline-size: 100%; block-size: 100%; min-height: 44px; display: flex; align-items: center; justify-content: center; padding: 4px; border: 3px solid var(--mm-ink); background: var(--mag-white); color: var(--mm-ink); box-shadow: 3px 3px 0 var(--mm-ink); font-family: var(--mag-body); cursor: pointer; overflow: hidden; transition: transform .08s; }
-.card:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: none; }
-.card:disabled { cursor: default; }
+.card:active:not([aria-disabled='true']) { transform: translate(2px, 2px); box-shadow: none; }
+.card[aria-disabled='true'] { cursor: default; }
 .card[data-state='closed'] { background: repeating-linear-gradient(135deg, var(--mag-card) 0 7px, var(--mag-paper) 7px 14px); }
 .card[data-state='open'] { background: var(--mag-white); }
 .card[data-state='done'] { background: var(--mm-lit); color: var(--mm-on); animation: mmLock .45s cubic-bezier(.3, 1.6, .5, 1); }
@@ -128,10 +128,7 @@
 
 @media (min-width: 901px) {
   .stage { min-height: 600px; padding-block-start: 12px; }
-  .play { display: grid; grid-template-columns: minmax(0, 560px) minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 12px 24px; justify-content: center; }
-  .hud { grid-column: 2; grid-row: 1; align-self: start; }
-  .boardBox { grid-column: 1; grid-row: 1 / 3; }
-  .dock { grid-column: 2; grid-row: 2; justify-content: flex-start; }
+  .boardWrap { min-height: calc(var(--rows) * 96px); }
   .faceText { font-size: 15px; }
   .ready { padding: 24px; }
   .result { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
@@ -147,5 +144,21 @@
   .face, .card[data-state], .card[data-echo], .echo, .plate { animation: none; }
   .threads { display: none; }
   .card, .wallBar i b { transition: none; }
-  .card:active:not(:disabled), .tool:active:not(:disabled), .start:active, .cta:active { transform: none; }
+  .card:active:not([aria-disabled='true']), .tool:active:not(:disabled), .start:active, .cta:active { transform: none; }
+}
+
+/* ---- delta: start-card modes, notices, reveal lines, streak, reduced motion ------------------------------------------ */
+.readyLine { margin: 0; font-size: 14px; line-height: 1.4; }
+.notice { margin: 0; padding: 6px 8px; border: 2px dashed var(--mm-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; line-height: 1.35; letter-spacing: .3px; }
+.notice code { font-size: 10px; opacity: .75; }
+.modes { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { min-block-size: 44px; min-inline-size: 44px; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 4px 12px; border: 3px solid var(--mm-ink); background: var(--mag-card); color: var(--mm-ink); box-shadow: 2px 2px 0 var(--mm-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; text-decoration: none; cursor: pointer; }
+.chip small { font-size: 9px; letter-spacing: .3px; opacity: .8; text-transform: none; max-inline-size: 22ch; text-align: center; line-height: 1.2; }
+.chip[data-on] { background: var(--mm-lit); color: var(--mm-on); }
+.chip[data-off] { opacity: .55; border-style: dashed; box-shadow: none; cursor: default; }
+.chip:active:not([data-off]) { transform: translate(2px, 2px); box-shadow: none; }
+.inlineBtn { min-block-size: 44px; padding: 0 10px; border: 2px solid var(--mm-ink); background: var(--mag-card); color: var(--mm-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; cursor: pointer; }
+.plate[data-fusing] { border-block-end-width: 6px; }
+@media (prefers-reduced-motion: reduce) {
+  .chip:active:not([data-off]) { transform: none; }
 }

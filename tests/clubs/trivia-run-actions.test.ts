@@ -10,7 +10,7 @@ import type {Ledger} from '@/lib/clubs/trivia-ledger'
 import {GRACE_MS} from '@/lib/clubs/trivia-ledger'
 
 const KEY='fanlife-trivia-hapoel-tel-aviv'
-let data:Awaited<ReturnType<typeof loadClub>> extends infer T?NonNullable<T>['data']:never
+let data:NonNullable<Awaited<ReturnType<typeof loadClub>>>['data']
 beforeEach(async()=>{request.host='hapoeltelaviv.localhost';request.paused=false;request.gates=[2];request.values.clear();request.now=1_700_000_000_000;vi.spyOn(Date,'now').mockImplementation(()=>request.now);data=(await loadClub('hapoel-tel-aviv'))!.data},60000)
 const start=async(extra={})=>(await startTriviaRun({slug:'hapoel-tel-aviv',version:data.version,seed:42,cursor:0,...extra})) as RunView
 const ledger=()=>open<Ledger>(request.values.get(KEY))!

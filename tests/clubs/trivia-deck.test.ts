@@ -6,7 +6,7 @@ import {bandOf,factsOf,normKey} from '@/lib/clubs/trivia-bank'
 let hapoel:Bank,olympiacos:Bank
 beforeAll(async()=>{hapoel=clubBank((await loadClub('hapoel-tel-aviv'))!.data);olympiacos=clubBank((await loadClub('olympiacos'))!.data)},120000)
 
-const ok=<T,>(d:T|{blocked:unknown})=>{if(typeof d==='object'&&d!==null&&'blocked' in d)throw new Error('blocked '+JSON.stringify(d));return d as T}
+const ok=<D,>(d:D):Exclude<D,{blocked:unknown}>=>{if(typeof d==='object'&&d!==null&&'blocked' in d)throw new Error('blocked '+JSON.stringify(d));return d as Exclude<D,{blocked:unknown}>}
 
 describe('Gate 2 · the standard run is honest where the bank can field it (TR-R04, R05)',()=>{
  it('deals twelve in three bands of four, no fact twice, no prompt twice, answers in the shape of their type',()=>{

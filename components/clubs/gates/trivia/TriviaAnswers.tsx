@@ -43,14 +43,14 @@ function Choices({q,locked,graded,struck,contentLocale,labels,onAnswer,multi=fal
    {q.options.map(o=>{
     const right=graded?graded.correctAnswers.includes(o):null,mine=picked.includes(o),gone=struck.includes(o)
     const state=graded?(right?'right':mine?'wrong':null):mine?'picked':null
-    return <li key={o}><button type="button" className={css.choice} data-state={state??'none'} data-gone={gone||undefined} aria-pressed={multi?mine:undefined} disabled={locked||gone} onClick={()=>tap(o)}>
+    return <li key={o}><button type="button" className={`min-h-tap ${css.choice}`} data-state={state??'none'} data-gone={gone||undefined} aria-pressed={multi?mine:undefined} disabled={locked||gone} onClick={()=>tap(o)}>
      <Mark state={state}/>
      <span className={css.choiceText} lang={contentLocale} dir="auto" style={gone?{textDecoration:'line-through'}:undefined}>{o}</span>
      {graded&&right&&<span className="sr-only">{labels.right}</span>}{graded&&!right&&mine&&<span className="sr-only">{labels.wrong}</span>}{gone&&<span className="sr-only">{labels.struck}</span>}
     </button></li>
    })}
   </ul>
-  {multi&&!graded&&<button type="button" className={css.confirm} disabled={locked||picked.length!==want} onClick={()=>onAnswer(picked)}>{labels.confirm}</button>}
+  {multi&&!graded&&<button type="button" className={`min-h-tap ${css.confirm}`} disabled={locked||picked.length!==want} onClick={()=>onAnswer(picked)}>{labels.confirm}</button>}
  </div>
 }
 
@@ -59,7 +59,7 @@ function TrueFalse({locked,graded,labels,onAnswer}:Props){
  return <div className={css.answers} data-kind="tf"><ul className={css.tf}>
   {(['true','false'] as const).map(v=>{
    const right=graded?graded.correctAnswers.includes(v):null,mine=picked===v,state=graded?(right?'right':mine?'wrong':null):mine?'picked':null
-   return <li key={v}><button type="button" className={css.choice} data-state={state??'none'} data-big="true" disabled={locked} onClick={()=>{if(locked)return;haptic('tap');setPicked(v);onAnswer(v)}}>
+   return <li key={v}><button type="button" className={`min-h-tap ${css.choice}`} data-state={state??'none'} data-big="true" disabled={locked} onClick={()=>{if(locked)return;haptic('tap');setPicked(v);onAnswer(v)}}>
     <Mark state={state??null}/><span className={css.choiceText}>{v==='true'?labels.true:labels.false}</span>
     {graded&&right&&<span className="sr-only">{labels.right}</span>}</button></li>
   })}
@@ -73,15 +73,15 @@ function Order({q,locked,graded,contentLocale,labels,onAnswer}:Props){
    {q.options.map((_,i)=>{
     const item=placed[i],truth=graded?.correctAnswers[i],ok=graded&&item!==undefined?item===truth:null
     return <li key={i} className={css.slotRow}><span className={css.slotNo} aria-hidden="true">{i+1}</span>
-     <button type="button" className={css.slot} data-state={item===undefined?'empty':ok===null?'picked':ok?'right':'wrong'} disabled={locked||item===undefined} onClick={()=>{haptic('tap');setPlaced(placed.filter((_,at)=>at!==i))}} aria-label={item===undefined?`${labels.order.slot(i+1)}: ${labels.order.empty}`:undefined}>
+     <button type="button" className={`min-h-tap ${css.slot}`} data-state={item===undefined?'empty':ok===null?'picked':ok?'right':'wrong'} disabled={locked||item===undefined} onClick={()=>{haptic('tap');setPlaced(placed.filter((_,at)=>at!==i))}} aria-label={item===undefined?`${labels.order.slot(i+1)}: ${labels.order.empty}`:undefined}>
       <span lang={contentLocale} dir="auto">{item??labels.order.empty}</span>
       {graded&&item!==undefined&&<><span aria-hidden="true">{ok?'✓':'✗'}</span><span className="sr-only">{ok?labels.right:labels.wrong}</span></>}
      </button></li>
    })}
   </ol>
-  {!graded&&bank.length>0&&<><p className={css.how}>{labels.order.bank}</p><div className={css.bank}>{bank.map(o=><button key={o} type="button" className={css.chipBtn} disabled={locked} onClick={()=>{haptic('tap');setPlaced([...placed,o])}}><span lang={contentLocale} dir="auto">{o}</span></button>)}</div></>}
+  {!graded&&bank.length>0&&<><p className={css.how}>{labels.order.bank}</p><div className={css.bank}>{bank.map(o=><button key={o} type="button" className={`min-h-tap ${css.chipBtn}`} disabled={locked} onClick={()=>{haptic('tap');setPlaced([...placed,o])}}><span lang={contentLocale} dir="auto">{o}</span></button>)}</div></>}
   {graded&&!graded.correct&&<p className={css.how}><b>{labels.order.truth}</b> <bdi lang={contentLocale}>{graded.correctAnswers.join(' → ')}</bdi></p>}
-  {!graded&&<button type="button" className={css.confirm} disabled={locked||placed.length!==q.options.length} onClick={()=>onAnswer(placed)}>{labels.confirm}</button>}
+  {!graded&&<button type="button" className={`min-h-tap ${css.confirm}`} disabled={locked||placed.length!==q.options.length} onClick={()=>onAnswer(placed)}>{labels.confirm}</button>}
  </div>
 }
 
@@ -102,7 +102,7 @@ function Pairs({q,locked,graded,contentLocale,labels,onAnswer}:Props){
    <ul className={css.pairCol} aria-label={labels.match.left}>
     {left.map((item,i)=>{
      const mine=pairs[item],truth=graded?.correctAnswers[i],ok=graded&&mine!==undefined?mine===truth:null
-     return <li key={item}><button type="button" className={css.pairLeft} data-active={active===item||undefined} data-state={ok===null?'none':ok?'right':'wrong'} disabled={locked} aria-pressed={active===item} onClick={()=>pickLeft(item)}>
+     return <li key={item}><button type="button" className={`min-h-tap ${css.pairLeft}`} data-active={active===item||undefined} data-state={ok===null?'none':ok?'right':'wrong'} disabled={locked} aria-pressed={active===item} onClick={()=>pickLeft(item)}>
       <span lang={contentLocale} dir="auto">{item}</span>
       {mine!==undefined&&<small><span aria-hidden="true">{graded?(ok?'✓ ':'✗ '):'↔ '}</span><bdi lang={contentLocale}>{mine}</bdi></small>}
       {graded&&ok===false&&truth!==undefined&&<small>{labels.match.was} <bdi lang={contentLocale}>{truth}</bdi></small>}
@@ -110,10 +110,10 @@ function Pairs({q,locked,graded,contentLocale,labels,onAnswer}:Props){
     })}
    </ul>
    <ul className={css.pairCol} aria-label={labels.match.right}>
-    {q.options.map(v=><li key={v}><button type="button" className={css.pairRight} disabled={locked||used.has(v)||active===null} onClick={()=>pickRight(v)}><bdi lang={contentLocale}>{v}</bdi></button></li>)}
+    {q.options.map(v=><li key={v}><button type="button" className={`min-h-tap ${css.pairRight}`} disabled={locked||used.has(v)||active===null} onClick={()=>pickRight(v)}><bdi lang={contentLocale}>{v}</bdi></button></li>)}
    </ul>
   </div>
   {!graded&&<p className={css.how}>{labels.match.help}</p>}
-  {!graded&&<button type="button" className={css.confirm} disabled={locked||!done} onClick={()=>onAnswer(left.map(l=>pairs[l]!))}>{labels.confirm}</button>}
+  {!graded&&<button type="button" className={`min-h-tap ${css.confirm}`} disabled={locked||!done} onClick={()=>onAnswer(left.map(l=>pairs[l]!))}>{labels.confirm}</button>}
  </div>
 }

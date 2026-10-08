@@ -225,7 +225,7 @@ export function ClubTrivia(props:ClubTriviaProps){
     <Answers key={`${q.id}:answers`} q={q} locked={locked} graded={graded} struck={struck} contentLocale={contentLocale} labels={labels} onAnswer={a=>submit(a)}/>
    </div>
    <div className={css.dock}>
-    {(conn||fatal)&&<div className={css.error} role="alert" data-testid="trivia-error"><p>{fatal?t(fatal):t(conn==='open'?'tq.offline.open':'tq.error')}</p><div>{!fatal&&<button type="button" className={css.tool} onClick={retry}>{copy.retry}</button>}<Link className={css.tool} href={`?${roundQuery({seed,cursor,lang:locale,mode:run.meta.mode,topic:run.meta.topic||undefined,era:run.meta.era||undefined,practice})}`}>{copy.restart}</Link></div></div>}
+    {(conn||fatal)&&<div className={css.error} role="alert" data-testid="trivia-error"><p>{fatal?t(fatal):t(conn==='open'?'tq.offline.open':'tq.error')}</p><div>{!fatal&&<button type="button" className={`min-h-tap ${css.tool}`} onClick={retry}>{copy.retry}</button>}<Link className={css.tool} href={`?${roundQuery({seed,cursor,lang:locale,mode:run.meta.mode,topic:run.meta.topic||undefined,era:run.meta.era||undefined,practice})}`}>{copy.restart}</Link></div></div>}
     {shown?<div ref={plate} className={css.verdict} data-right={shown.answer.correct} role="status" onClick={e=>{if(!(e.target as Element).closest('a'))next()}}
       onPointerMove={e=>{if(e.pointerType==='mouse')setPaused(true)}} onPointerLeave={e=>{if(e.pointerType==='mouse')setPaused(false)}} onFocus={()=>setPaused(true)} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget))setPaused(false)}}>
      <h3><span className={css.verdictMark} aria-hidden="true">{shown.answer.correct?'✓':'✗'}</span>{shown.answer.timeout?t('tq.timeup'):shown.answer.correct?copy.correct:copy.wrong}{shown.answer.correct&&!practice&&<b className={css.points}>{`+${shown.answer.gained}`}</b>}</h3>
@@ -237,14 +237,14 @@ export function ClubTrivia(props:ClubTriviaProps){
      {shown.answer.hinted&&shown.answer.correct&&!practice&&<p className={css.fine}>{t('tq.hinted',{cost:HINT_COST})}</p>}
      {shown.answer.verdict.source.url&&<a className={css.source} href={shown.answer.verdict.source.url} target="_blank" rel="noreferrer">{copy.source}: <bdi>{shown.answer.verdict.source.title}</bdi> ↗</a>}
      <div className={css.nextRow}>{pace==='auto'&&<i className={css.drain} aria-hidden="true"><b style={{inlineSize:`${progress*100}%`}}/></i>}
-      <button type="button" className={css.next} onClick={e=>{e.stopPropagation();next()}}>{t('tq.next')}</button></div>
+      <button type="button" className={`min-h-tap ${css.next}`} onClick={e=>{e.stopPropagation();next()}}>{t('tq.next')}</button></div>
     </div>
     :<div className={css.hintRow}>
-     <button type="button" className={css.tool} disabled={locked||hinted||hintBusy||!q.hint} onClick={askHint} data-testid="trivia-hint">{!q.hint?t('tq.hint.unavailable'):practice?t('tq.hint.free'):t('tq.hint.cost',{cost:HINT_COST})}</button>
+     <button type="button" className={`min-h-tap ${css.tool}`} disabled={locked||hinted||hintBusy||!q.hint} onClick={askHint} data-testid="trivia-hint">{!q.hint?t('tq.hint.unavailable'):practice?t('tq.hint.free'):t('tq.hint.cost',{cost:HINT_COST})}</button>
      <p className={css.hintText} aria-live="polite" lang={hint?.kind==='context'?contentLocale:undefined} dir={hint?.kind==='context'?'auto':undefined}>
       {hint?.kind==='decade'&&t('tq.hint.decade',{decade:hint.decade})}{hint?.kind==='context'&&hint.text}{hint?.kind==='strike'&&t('tq.hint.struck')}{hintNone&&!hint&&t('tq.hint.none')}
      </p>
-     <button type="button" className={css.tool} aria-pressed={pace==='tap'} onClick={()=>setPaceSaved(pace==='tap'?'auto':'tap')} title={t('tq.pace.title')}>{pace==='tap'?t('tq.pace.tap'):t('tq.pace.auto')}</button>
+     <button type="button" className={`min-h-tap ${css.tool}`} aria-pressed={pace==='tap'} onClick={()=>setPaceSaved(pace==='tap'?'auto':'tap')} title={t('tq.pace.title')}>{pace==='tap'?t('tq.pace.tap'):t('tq.pace.auto')}</button>
     </div>}
    </div>
   </div>
@@ -256,7 +256,7 @@ function StageBreak({stage,t,count,practice,onDone}:{stage:number;t:T;count:numb
  const done=useRef(onDone);done.current=onDone
  useEffect(()=>{const id=window.setTimeout(()=>done.current(),1300);return ()=>window.clearTimeout(id)},[])
  const seconds=secondsOf(stage*4,count),cap=capOf(stage*4,count)
- return <button type="button" className={css.stageBreak} onClick={onDone} aria-label={t('tq.stage.skip')} data-testid="trivia-stage">
+ return <button type="button" className={`min-h-tap ${css.stageBreak}`} onClick={onDone} aria-label={t('tq.stage.skip')} data-testid="trivia-stage">
   <span className={css.breakKicker}>{t('tq.hud.stage',{n:stage+1,of:3})}</span>
   <span className={css.breakNo} aria-hidden="true">{stage+1}</span>
   <span className={css.breakName}>{t(`tq.stage.${stage+1}`)}</span>
@@ -286,13 +286,13 @@ function Ready({club,clubName,seed,cursor,locale,plan,practice,onPractice,pace,o
    {!practice&&category==='short'&&<p className={css.fine}>{t('tq.ready.note.short',{n:size})}</p>}
    {plan.asked&&<p className={css.fine} role="note" data-blocker={plan.asked.blocker.code} data-counts={plan.asked.blocker.counts.join('/')}>{t(`tq.ready.blocked.${plan.asked.mode}`,blockerVars(plan.asked.blocker))}</p>}
    {sel.blocker&&<p className={css.fine} role="note" data-blocker={sel.blocker.code} data-counts={sel.blocker.counts.join('/')}>{t('tq.ready.blocked.deck',blockerVars(sel.blocker))}</p>}
-   {resume&&<div className={css.resume} data-testid="trivia-resume"><p>{t('tq.resume',{n:Math.min(resume.meta.count,(resume.openIndex??resume.session.index)+1),of:resume.meta.count})}</p><button type="button" className={css.tool} onClick={onResume}>{t('tq.resume.go')}</button></div>}
+   {resume&&<div className={css.resume} data-testid="trivia-resume"><p>{t('tq.resume',{n:Math.min(resume.meta.count,(resume.openIndex??resume.session.index)+1),of:resume.meta.count})}</p><button type="button" className={`min-h-tap ${css.tool}`} onClick={onResume}>{t('tq.resume.go')}</button></div>}
    {retired&&<p className={css.fine} role="note">{t('tq.resume.retired')}</p>}
    <div className={css.rail} role="group" aria-label={t('tq.pick.mode')}>
     {plan.modes.filter(m=>m.available||m.id!=='history').map(m=>m.available
      ?<Link key={m.id} className={css.chip} href={href({mode:m.id})} aria-current={sel.mode===m.id?'true':undefined}>{t(`tq.mode.${m.id}`)} <small>{m.size}</small></Link>
      :<span key={m.id} className={css.chip} aria-disabled="true" data-blocker={m.blocker?.code} data-counts={m.blocker?.counts.join('/')} title={m.blocker?t(`tq.ready.blocked.${m.id}`,blockerVars(m.blocker)):undefined}>{t(`tq.mode.${m.id}`)} <small>—</small></span>)}
-    <button type="button" className={css.chip} disabled={!revengeReady||loading} onClick={()=>onStart('revenge')} data-testid="trivia-revenge">{t('tq.mode.revenge')} <small>{revengeReady?review?.playable:missed.items.length===0?0:review?.playable??'…'}</small></button>
+    <button type="button" className={`min-h-tap ${css.chip}`} disabled={!revengeReady||loading} onClick={()=>onStart('revenge')} data-testid="trivia-revenge">{t('tq.mode.revenge')} <small>{revengeReady?review?.playable:missed.items.length===0?0:review?.playable??'…'}</small></button>
    </div>
    {review&&(review.retired+review.withdrawn+review.merged>0)&&<p className={css.fine} role="note">{t('tq.revenge.explain',{retired:review.retired,withdrawn:review.withdrawn,merged:review.merged})}</p>}
    {!revengeReady&&review&&<p className={css.fine}>{t('tq.revenge.need',{n:MIN_ROUND})}</p>}
@@ -305,11 +305,11 @@ function Ready({club,clubName,seed,cursor,locale,plan,practice,onPractice,pace,o
     {plan.eras.map(e=><Link key={e.decade} className={css.chip} href={href({topic:sel.topic,era:String(e.decade)})} aria-current={sel.era===String(e.decade)?'true':undefined}>{e.decade}s <small>{e.size}</small></Link>)}
    </div>}
    <div className={css.switches}>
-    <button type="button" className={css.switch} aria-pressed={practice} onClick={()=>onPractice(!practice)}>{t('tq.pick.practice')}</button>
-    <button type="button" className={css.switch} aria-pressed={pace==='tap'} onClick={()=>onPace(pace==='tap'?'auto':'tap')}>{t('tq.pick.tap')}</button>
+    <button type="button" className={`min-h-tap ${css.switch}`} aria-pressed={practice} onClick={()=>onPractice(!practice)}>{t('tq.pick.practice')}</button>
+    <button type="button" className={`min-h-tap ${css.switch}`} aria-pressed={pace==='tap'} onClick={()=>onPace(pace==='tap'?'auto':'tap')}>{t('tq.pick.tap')}</button>
    </div>
    {error&&<p className={css.errorLine} role="alert" data-testid="trivia-start-error">{t(error)}</p>}
-   <button type="button" className={css.start} disabled={!startable} aria-busy={loading} onClick={()=>onStart()} data-testid="trivia-start">{loading?t('tq.loading'):t('tq.start')}</button>
+   <button type="button" className={`min-h-tap ${css.start}`} disabled={!startable} aria-busy={loading} onClick={()=>onStart()} data-testid="trivia-start">{loading?t('tq.loading'):t('tq.start')}</button>
   </div>
  </section>
 }

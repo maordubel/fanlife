@@ -6,13 +6,13 @@
  * sentence of its own. It lives in `localStorage` per club and is never sent anywhere; every read and write is
  * guarded, because storage can be blocked or full and the wall must still play (rule 11, playbook).
  */
-export type ShelfEntry={id:string;a:string;b:string;kind:string;object:string;fact:string|null;at:number}
+export type ShelfEntry={id:string;a:string;b:string;kind:string;object:string;fact:string|null;at:number;href?:string|null}
 export type Shelf=Record<string,ShelfEntry>
 
 const KEY=(club:string)=>`fan-life:memory:shelf:v1:${club}`
 export const SHELF_MAX=400
 
-const isEntry=(x:unknown):x is ShelfEntry=>!!x&&typeof x==='object'&&typeof (x as ShelfEntry).id==='string'&&typeof (x as ShelfEntry).a==='string'&&typeof (x as ShelfEntry).b==='string'&&typeof (x as ShelfEntry).kind==='string'&&typeof (x as ShelfEntry).object==='string'&&typeof (x as ShelfEntry).at==='number'&&((x as ShelfEntry).fact===null||typeof (x as ShelfEntry).fact==='string')
+const isEntry=(x:unknown):x is ShelfEntry=>!!x&&typeof x==='object'&&typeof (x as ShelfEntry).id==='string'&&typeof (x as ShelfEntry).a==='string'&&typeof (x as ShelfEntry).b==='string'&&typeof (x as ShelfEntry).kind==='string'&&typeof (x as ShelfEntry).object==='string'&&typeof (x as ShelfEntry).at==='number'&&((x as ShelfEntry).fact===null||typeof (x as ShelfEntry).fact==='string')&&((x as ShelfEntry).href===undefined||(x as ShelfEntry).href===null||typeof (x as ShelfEntry).href==='string')
 
 /** a shelf out of whatever storage held: anything malformed is dropped, never repaired */
 export function parseShelf(raw:string|null|undefined):Shelf{
@@ -26,10 +26,19 @@ export function parseShelf(raw:string|null|undefined):Shelf{
  }catch{return {}}
 }
 
-/** file a pair: the first time wins, so an old find is never re-dated; the shelf is capped by dropping the oldest */
-export function addToShelf(shelf:Shelf,pair:{id:string;a:string;b:string;kind:string;object:string;factHe:string|null},at:number):Shelf{
- if(shelf[pair.id])return shelf
- const next:Shelf={...shelf,[pair.id]:{id:pair.id,a:pair.a,b:pair.b,kind:pair.kind,object:pair.object,fact:pair.factHe,at}}
+/**
+ * file a pair: the first find keeps its date, so an old find is never re-dated; a later call may only FILL what the first
+ * one did not have (the archive sentence and entry arrive from the server after the match), never overwrite it. The shelf
+ * is capped by dropping the oldest.
+ */
+export function addToShelf(shelf:Shelf,pair:{id:string;a:string;b:string;kind:string;object:string;factHe:string|null;href?:string|null},at:number):Shelf{
+ const held=shelf[pair.id]
+ if(held){
+  const fact=held.fact??pair.factHe,href=held.href??pair.href??null
+  if(fact===held.fact&&href===(held.href??null))return shelf
+  return {...shelf,[pair.id]:{...held,fact,href}}
+ }
+ const next:Shelf={...shelf,[pair.id]:{id:pair.id,a:pair.a,b:pair.b,kind:pair.kind,object:pair.object,fact:pair.factHe,at,href:pair.href??null}}
  const ids=Object.keys(next)
  if(ids.length<=SHELF_MAX)return next
  const keep=ids.sort((x,y)=>next[y]!.at-next[x]!.at).slice(0,SHELF_MAX),out:Shelf={}
