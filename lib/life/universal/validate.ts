@@ -22,7 +22,7 @@ const flagsOf = (c: Cond | undefined, out: Set<string>): Set<string> => {
 
 function effectsOf(chapter: Chapter): Effect[] {
   const out: Effect[] = []
-  const walk = (list: readonly Effect[] | undefined) => { for (const fx of list ?? []) { out.push(fx); if (fx.e === 'play') walk(fx.then) } }
+  const walk = (list: readonly Effect[] | undefined) => { for (const fx of list ?? []) { out.push(fx); if (fx.e === 'play') { walk(fx.then); walk(fx.good); walk(fx.slip) } } }
   for (const t of chapter.talks) for (const b of t.branches) { walk(b.then); for (const c of b.choices ?? []) walk(c.then) }
   return out
 }

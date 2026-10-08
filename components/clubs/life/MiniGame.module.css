@@ -1,0 +1,89 @@
+/*
+ * The small games of LIFE. Colours are the club's own tokens (--l-*, set by the shell) and nothing else.
+ * Every moving part is switched off by [data-still='true'] (the player asked) and by prefers-reduced-motion.
+ */
+.stage { display: grid; gap: 10px; justify-items: center; }
+.meter { inline-size: 100%; block-size: 6px; background: var(--l-rule); overflow: hidden; }
+.meterFill { display: block; inline-size: 100%; block-size: 100%; background: var(--l-ink); transform-origin: 0 50%; transform: scaleX(1); }
+[dir='rtl'] .meterFill { transform-origin: 100% 50%; }
+.meterFill[data-low='true'] { background: var(--l-prime); }
+
+.status { min-block-size: 1.6em; margin: 0; font-weight: 700; }
+.verdict { position: absolute; inset: 0; display: grid; place-content: center; gap: 4px; padding: 20px; text-align: center; background: color-mix(in srgb, var(--l-paper) 92%, transparent); animation: pop .22s cubic-bezier(.2, .9, .3, 1.2) both; }
+.verdict b { font-family: var(--font-poster), var(--font-frank), serif; font-size: clamp(2rem, 9vw, 3rem); line-height: 1; letter-spacing: .02em; }
+.verdict[data-result='good'] b { color: var(--l-prime); }
+.verdict[data-result='slip'] b { color: var(--l-soft); }
+.verdict small { color: var(--l-soft); }
+
+.btn { min-inline-size: 5.5rem; min-block-size: 48px; padding: 12px 22px; background: var(--l-prime); color: var(--l-on); border: 2px solid var(--l-ink); font-size: 1.25rem; font-weight: 700; touch-action: manipulation; user-select: none; -webkit-user-select: none; cursor: pointer; transition: transform .06s; }
+.btn:active { transform: translateY(2px); }
+.btn[aria-disabled='true'], .btn:disabled { background: var(--l-ground); color: var(--l-soft); }
+.btn:focus-visible, .coin:focus-visible, .dud:focus-visible { outline: 3px solid var(--l-ink); outline-offset: 3px; }
+.pair { display: flex; justify-content: center; gap: 16px; }
+
+/* tune */
+.dial { display: flex; align-items: flex-end; justify-content: center; gap: 5px; block-size: 84px; padding-block-end: 4px; border-block-end: 2px solid var(--l-ink); inline-size: 100%; }
+.dial span { inline-size: 12px; background: var(--l-rule); transition: background .08s; }
+.dial span[data-on='true'] { background: var(--l-prime); }
+.dial[data-clear='true'] span[data-on='true'] { background: var(--l-ink); }
+.range { inline-size: 100%; min-block-size: 44px; accent-color: var(--l-prime); }
+
+/* clap: the ring that closes is the same clock the judge reads */
+.clap { position: relative; inline-size: 150px; block-size: 150px; display: grid; place-content: center; }
+.clapTarget { position: absolute; inset: 22px; border: 4px solid var(--l-ink); border-radius: 50%; }
+.clapCue { position: absolute; inset: 22px; border: 4px solid var(--l-prime); border-radius: 50%; transform: scale(calc(2 - var(--p, 0))); opacity: calc(.2 + .8 * var(--p, 0)); will-change: transform; }
+.clapCue[data-now='true'] { background: color-mix(in srgb, var(--l-prime) 28%, transparent); }
+.clapHub { position: relative; font-family: var(--font-poster), var(--font-frank), serif; font-size: 3rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.pips { display: flex; gap: 6px; justify-content: center; }
+.pip { inline-size: 14px; block-size: 14px; border: 2px solid var(--l-ink); background: transparent; }
+.pip[data-s='hit'] { background: var(--l-prime); }
+.pip[data-s='miss'] { background: repeating-linear-gradient(45deg, transparent 0 3px, var(--l-rule) 3px 5px); border-style: dashed; }
+.late { color: var(--l-soft); }
+
+/* carry */
+.lane { position: relative; inline-size: 100%; block-size: 48px; border: 2px solid var(--l-ink); background: var(--l-ground); }
+.lane i { position: absolute; inset-block: 0; inset-inline: 33%; background: color-mix(in srgb, var(--l-prime) 22%, transparent); border-inline: 2px dashed var(--l-prime); }
+.lane span { position: absolute; inset-block: 5px; inline-size: 16px; margin-inline-start: -8px; background: var(--l-ink); }
+.lane span[data-steady='true'] { background: var(--l-prime); }
+
+/* count */
+.tray { display: grid; grid-template-columns: repeat(4, 56px); gap: 10px; justify-content: center; }
+.coin, .dud { inline-size: 56px; block-size: 56px; padding: 0; cursor: pointer; touch-action: manipulation; transition: transform .1s; }
+.coin { border-radius: 50%; border: 3px double var(--l-ink); background: radial-gradient(circle at 35% 30%, var(--l-paper), var(--l-ground)); }
+.dud { border: 2px dashed var(--l-ink); border-radius: 8px; background: radial-gradient(circle, var(--l-ink) 0 2px, transparent 2.5px) 30% 35% / 100% 100% no-repeat, radial-gradient(circle, var(--l-ink) 0 2px, transparent 2.5px) 70% 65% / 100% 100% no-repeat, var(--l-ground); }
+.coin[aria-pressed='true'] { background: var(--l-ink); border-color: var(--l-paper); transform: scale(.78); }
+.dud[data-hit='true'] { border-style: solid; background-color: var(--l-rule); animation: shake .24s linear; }
+.tally { display: flex; gap: 16px; justify-content: center; font-weight: 700; }
+.tally s { text-decoration: none; color: var(--l-soft); }
+
+/* kick */
+.pitch { inline-size: 100%; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+.pitch svg { display: block; inline-size: 100%; block-size: auto; border: 2px solid var(--l-ink); background: var(--l-ground); }
+.flash { min-block-size: 2.2rem; margin: 0; font-family: var(--font-poster), var(--font-frank), serif; font-size: 1.75rem; line-height: 1.2; letter-spacing: .03em; }
+.flash[data-k='goal'] { color: var(--l-prime); animation: pop .22s both; }
+.flash[data-k='saved'], .flash[data-k='wide'] { color: var(--l-soft); }
+.balls { display: flex; gap: 8px; justify-content: center; }
+.ball { inline-size: 16px; block-size: 16px; border-radius: 50%; border: 2px solid var(--l-ink); }
+.ball[data-k='goal'] { background: var(--l-prime); }
+.ball[data-k='saved'], .ball[data-k='wide'] { background: repeating-linear-gradient(45deg, transparent 0 3px, var(--l-rule) 3px 5px); }
+
+/* chant: eight beats the stand calls, eight you give back */
+.beats { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; inline-size: 100%; }
+.beat { position: relative; block-size: 76px; border: 2px solid var(--l-ink); background: var(--l-ground); overflow: hidden; }
+.beat:nth-child(4) { margin-inline-end: 5px; }
+.beat::after { content: ''; position: absolute; inset-inline: 0; inset-block-end: 0; block-size: 0; background: var(--l-prime); transition: block-size .1s; }
+.beat[data-lit='true']::after { block-size: 100%; }
+.beat[data-s='hit']::after { block-size: 100%; background: var(--l-ink); }
+.beat[data-s='miss'] { border-style: dashed; background: repeating-linear-gradient(45deg, transparent 0 4px, var(--l-rule) 4px 6px); }
+.beat[data-head='true'] { outline: 3px solid var(--l-prime); outline-offset: 1px; }
+.beat[data-stray='true']::before { content: '×'; position: absolute; inset: 0; display: grid; place-content: center; font-weight: 700; font-size: 1.5rem; color: var(--l-soft); z-index: 1; }
+.rounds { display: flex; gap: 8px; justify-content: center; }
+
+[data-still='true'] .clapCue, [data-still='true'] .btn, [data-still='true'] .coin, [data-still='true'] .beat::after, [data-still='true'] .dial span, [data-still='true'] .verdict, [data-still='true'] .flash, [data-still='true'] .dud { transition: none; animation: none; }
+[data-still='true'] .clapCue { transform: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .clapCue { transform: none; opacity: 1; }
+  .clapCue, .btn, .coin, .beat::after, .dial span, .verdict, .flash, .dud { transition: none; animation: none; }
+}
+@keyframes pop { from { transform: scale(.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }

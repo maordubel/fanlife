@@ -6,13 +6,42 @@
  * state from which it no longer can. The second is the one that matters: "you cannot get stuck"
  * is a property of the whole graph, not of the path the author had in mind.
  */
-import {apply, eventsOf, fold, openChapter, type Directive} from './engine'
-import type {Chapter, Effect, LifeEvent, LifePack, LifeState} from './types'
+import {afterPlay, apply, eventsOf, fold, openChapter, type Directive} from './engine'
+import type {Chapter, Cond, Effect, LifeEvent, LifePack, LifeState} from './types'
 import {beatFlag, beatFor, branchOf, choicesOf, sceneOf, talkOf, throughDoor} from './world'
 
 export type SimResult = {chapter: string; states: number; endings: string[]; stuck: string[]; truncated: boolean}
 
-const key = (s: LifeState) => JSON.stringify([s.room, s.spawn, s.time, Object.entries(s.flags).sort(([a], [b]) => a < b ? -1 : 1), s.coins, Math.round(s.energy / 20), Math.round(s.standing / 20), s.wear, [...s.keeps].sort(), Math.round(s.heart / 5), Object.entries(s.bonds).sort(([a], [b]) => a < b ? -1 : 1).map(([k, v]) => [k, Math.round(v / 10)])])
+/**
+ * Every threshold a chapter reads off a gauge or a bond ("coins ≥ 8", "heart ≥ 15", "bond with mum ≥ 50").
+ * The simulator tells two states apart by which side of each threshold the gauges are on, not by their exact
+ * value: the exact value only ever matters through a comparison, and a hatch, four jobs and a bench would otherwise
+ * make the same afternoon a million different ones.
+ */
+type Cuts = {coins: number[]; heart: number[]; energy: number[]; standing: number[]; bond: Map<string, number[]>; flags: Set<string>; has: Set<string>}
+/** The side of a day (jobs, benches, the hatch) is done once and read by nothing but itself: it makes no state of its own. */
+const SIDE_FLAG = /^(job|rest|shop):/
+function cutsOf(chapter: Chapter): Cuts {
+  const cuts: Cuts = {coins: [], heart: [], energy: [], standing: [], bond: new Map(), flags: new Set(), has: new Set()}
+  const walk = (c: Cond | undefined) => {
+    if (!c) return
+    if ('flag' in c) cuts.flags.add(c.flag)
+    else if ('not' in c) cuts.flags.add(c.not)
+    else if ('is' in c) cuts.flags.add(c.is[0])
+    else if ('has' in c) cuts.has.add(c.has)
+    else if ('min' in c) cuts[c.min[0]].push(c.min[1])
+    else if ('bond' in c) cuts.bond.set(c.bond[0], [...(cuts.bond.get(c.bond[0]) ?? []), c.bond[1]])
+    else if ('all' in c) c.all.forEach(walk)
+    else if ('any' in c) c.any.forEach(walk)
+    else if ('none' in c) c.none.forEach(walk)
+  }
+  chapter.cast.forEach(p => walk(p.when)); chapter.spots.forEach(x => walk(x.when)); chapter.doors.forEach(d => { walk(d.when); walk(d.needs) })
+  chapter.beats.forEach(b => walk(b.when)); chapter.objectives.forEach(o => walk(o.done))
+  chapter.talks.forEach(t => t.branches.forEach(b => { walk(b.when); b.choices?.forEach(c => walk(c.when)) }))
+  return cuts
+}
+const rank = (cuts: readonly number[], v: number) => cuts.reduce((n, c) => n + (v >= c ? 1 : 0), 0)
+const keyOf = (cuts: Cuts) => (s: LifeState) => JSON.stringify([s.room, s.spawn, s.time, Object.entries(s.flags).filter(([k]) => !SIDE_FLAG.test(k)).sort(([a], [b]) => a < b ? -1 : 1), rank(cuts.coins, s.coins), rank(cuts.energy, s.energy), rank(cuts.standing, s.standing), s.wear, s.keeps.filter(k => !k.startsWith('shop-') || cuts.has.has(k)).sort(), rank(cuts.heart, s.heart), [...cuts.bond].sort(([a], [b]) => a < b ? -1 : 1).map(([who, at]) => [who, rank(at, s.bonds[who] ?? 50)])])
 
 /** `left`: the player closed the box before the conversation had finished (what was already applied stays applied). */
 type Outcome = {state: LifeState; ended: string | null; left?: boolean}
@@ -36,14 +65,16 @@ function run(chapter: Chapter, state: LifeState, directives: Directive[], next: 
     if (d.d === 'end') return states.map(s => ({state: s, ended: d.ending}))
     if (d.d === 'goto') states = states.map(s => apply(s, {t: 'moved', room: d.room, spawn: d.spawn, time: d.time ?? s.time}))
     if (d.d === 'play') {
-      // a mini-game never fails the day: its effects simply happen
+      // a mini-game never fails the day: it ends one of two ways, and the player who tries everything takes both
       const after: LifeState[] = []
       for (const s of states) {
-        const r = eventsOf(d.then, s)
-        const inner = run(chapter, r.events.reduce(apply, s), r.directives, undefined, depth + 1)
-        const ended = inner.find(o => o.ended)
-        if (ended) return [ended]
-        after.push(...inner.map(o => o.state))
+        for (const result of ['good', 'slip'] as const) {
+          const r = eventsOf(afterPlay(d, result), s)
+          const inner = run(chapter, r.events.reduce(apply, s), r.directives, undefined, depth + 1)
+          const ended = inner.find(o => o.ended)
+          if (ended) return [ended]
+          after.push(...inner.map(o => o.state))
+        }
       }
       states = after
     }
@@ -67,6 +98,7 @@ function settle(chapter: Chapter, state: LifeState, depth = 0): Outcome[] {
 }
 
 export function simulate(pack: LifePack, chapter: Chapter, seedEvents: readonly LifeEvent[] = [], cap = 40000): SimResult {
+  const key = keyOf(cutsOf(chapter))
   const opened = [...seedEvents, ...openChapter(chapter)].reduce(apply, fold([]))
   const starts = settle(chapter, opened)
   const seen = new Map<string, LifeState>(), edges = new Map<string, Set<string>>(), ends = new Set<string>(), endings = new Set<string>()

@@ -14,7 +14,6 @@
  *    until somebody who knows that terrace has written it and the owner has approved it.
  */
 import {buildCast, HERO_LOOKS, type CastManifest} from './cast'
-import {UNIVERSAL_CHAPTERS} from './content'
 import {screenplayChapters} from './screenplay'
 import {nightChapter} from './content/night'
 import {centrepieceOf, readMatch} from './match'
@@ -45,7 +44,7 @@ export type ComposeInput = {
   details?: Record<string, MatchDetail>
   /** the club's data version: a new archive is a new pack */
   dataVersion: string
-  storyEdition?: 2
+  /** the language the club's life is told in; default English */
   storyLocale?: 'en' | 'he'
 }
 
@@ -61,6 +60,24 @@ function hash(s: string): string {
   return ((a >>> 0).toString(16).padStart(8, '0') + (b >>> 0).toString(16).padStart(8, '0'))
 }
 
+/** The cast in Hebrew, where the pack has not named them: [name, one line]. */
+const HE_ROLE: Record<string, [string, string]> = {
+  dad: ['אבא', 'לימד אותך איפה לעמוד, ולא הסביר אף פעם למה זה חשוב.'],
+  mum: ['אמא', 'מקפלת מגבות כשהיא לחוצה. אף פעם לא לחוצה.'],
+  friend: ['חבר', 'זה שכבר שם כשאתה מגיע, ואומר שלא אכפת לו אם תבוא.'],
+  rival: ['חברה לכיתה', 'לא מפסיקה להתווכח איתך, ולא מפספסת אף משחק.'],
+  kiosk: ['בעל הקיוסק', 'מחליט מי עומד איפה, מי חייב למי, ומי הפעם מקבל סליחה.'],
+  elder: ['אוהד ותיק', 'זוכר את כל מה שהספרים שכחו.'],
+  teacher: ['מורה', 'רואה הכול מהשורה הראשונה ולא מספר.'],
+  steward: ['סדרן', 'עומד בשער הרבה לפני כולם, ונשאר אחרי כולם.'],
+  seller: ['מוכר הצעיפים', 'מכיר כל צבע ואת כל מי שלבש אותו.'],
+  boss: ['הבוס', 'מדבר מעט, ומשלם בזמן.'],
+  mate: ['חבר לעבודה', 'מחליף איתך משמרות ומספר מה קרה אתמול.'],
+  driver: ['נהג', 'עוצר רק כשהוא רוצה, ומחכה כשצריך.'],
+  stranger: ['זר', 'מישהו שיושב לידך ויודע את כל השירים.'],
+  child: ['הקטן', 'נשען עליך כמו שהיית נשען פעם.'],
+}
+
 const median = (xs: number[]) => { const s = [...xs].sort((a, b) => a - b); return s[Math.floor(s.length / 2)]! }
 
 /** Up to `max`, spread over the span: the first, the last, and what lies evenly between. */
@@ -71,14 +88,16 @@ function spread<T>(items: T[], max: number): T[] {
 
 export function composeLife(input: ComposeInput): LifePack {
   const {club, skin} = input
+  const locale = input.storyLocale ?? 'en'
   const cast = buildCast(input.cast && input.cast.clubId === club.id ? input.cast : null)
+  if (locale === 'he') for (const m of Object.values(cast)) { const he = HE_ROLE[m.id]; if (he && m.name === m.role) { m.name = he[0]; m.role = he[0]; m.blurb = he[1] } }
   const given = (id: string, fallback: string) => { const v = input.cast?.clubId === club.id ? input.cast.names[id] : undefined; return typeof v === 'string' && v.trim() ? v.trim() : fallback }
   const vars: Vars = {
     club: club.name, short: skin.short.charAt(0) + skin.short.slice(1).toLowerCase(), city: club.city,
-    ground: skin.stadium ?? 'the ground',
+    ground: skin.stadium ?? (locale === 'he' ? 'המגרש' : 'the ground'),
     friend: cast.friend!.name, kiosk: cast.kiosk!.name, elder: cast.elder!.name, rival: cast.rival!.name, teacher: cast.teacher!.name,
     boss: cast.boss!.name, mate: cast.mate!.name, seller: cast.seller!.name, child: cast.child!.name,
-    dadName: given('dad', 'your father'), mumName: given('mum', 'your mother'),
+    dadName: given('dad', locale === 'he' ? 'אבא שלך' : 'your father'), mumName: given('mum', locale === 'he' ? 'אמא שלך' : 'your mother'),
   }
 
   // the short name is never used to read a scoreline: "Hapoel" is half the league
@@ -102,9 +121,9 @@ export function composeLife(input: ComposeInput): LifePack {
     else nightRows = [...nightRows, centre]
     nightRows = nightRows.filter((a, i) => nightRows.findIndex(b => b.factId === a.factId) === i)
   }
-  const nights = nightRows.map((a, i) => nightChapter(a, ageAt(a.year)!, a.match?.result ?? 'unread', i + 1, !!centre && a.factId === centre.factId))
+  const nights = nightRows.map((a, i) => nightChapter(a, ageAt(a.year)!, a.match?.result ?? 'unread', i + 1, !!centre && a.factId === centre.factId, locale))
 
-  const universal = input.storyEdition === 2 ? screenplayChapters(input.storyLocale ?? 'en') : UNIVERSAL_CHAPTERS.map(c => c)
+  const universal = screenplayChapters(locale)
   const lastAge = Math.max(...universal.map(c => c.age), ...nights.map(c => c.age), 0)
   // one life, in the order it was lived: by age, a night after the ordinary day of the same age
   const ordered = [...universal.map((c, i) => ({c, k: c.age, o: i, night: 0})), ...nights.map((c, i) => ({c, k: c.age, o: i, night: 1}))]
@@ -123,7 +142,7 @@ export function composeLife(input: ComposeInput): LifePack {
     preludes.set(host.id, list)
   }
 
-  const chapters: Chapter[] = ordered.map(c => fillChapter({...input.storyEdition === 2 ? c : sideLife(c), prelude: preludes.get(c.id)}, vars))
+  const chapters: Chapter[] = ordered.map(c => fillChapter({...sideLife(c), prelude: preludes.get(c.id)}, vars))
   const rooms = Object.fromEntries(Object.entries(ROOMS).filter(([id]) => chapters.some(c => c.start.room === id || c.cast.some(p => p.room === id) || c.doors.some(d => d.room === id || d.to === id) || c.spots.some(s => s.room === id) || c.beats.some(b => b.room === id) || JSON.stringify(c.talks).includes(`"room":"${id}"`))))
 
   const issues: string[] = [], earlier = new Set<string>()
@@ -142,8 +161,8 @@ export function composeLife(input: ComposeInput): LifePack {
 
   return {
     schemaVersion: 1,
-    ...(input.storyEdition === 2 ? {storyEdition: 2 as const, storyLocale: input.storyLocale ?? 'en'} : {}),
-    version: hash(JSON.stringify({v: input.dataVersion, chapters: chapters.map(c => c.id), skin, cast, birthYear, text: chapters})),
+    storyLocale: locale,
+    version: hash(JSON.stringify({v: input.dataVersion, chapters: chapters.map(c => c.id), locale, skin, cast, birthYear, text: chapters})),
     clubId: club.id,
     club: {name: club.name, short: skin.short, city: club.city, country: club.country},
     skin, cast,
