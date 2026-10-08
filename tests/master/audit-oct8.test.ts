@@ -19,8 +19,8 @@ afterEach(()=>{useDurableStore(undefined as unknown as null);vi.unstubAllEnvs();
 
 it('A02: a storage outage never reopens a paused club',async()=>{
  const store=memoryStore();useDurableStore(store)
- const id=(await readState()).clubs[0].id
- await mutate(s=>{s.clubs[0].status='paused';s.clubs[0].gates=[]})
+ const id=(await readState()).clubs[0]!.id
+ await mutate(s=>{s.clubs[0]!.status='paused';s.clubs[0]!.gates=[]})
  store.read=async()=>{throw Error('simulated outage')}
  vi.spyOn(console,'error').mockImplementation(()=>{})
  const fallback=(await readState()).clubs.find(c=>c.id===id)!
