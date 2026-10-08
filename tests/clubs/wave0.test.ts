@@ -11,7 +11,7 @@ describe('Wave 0 · layout modes',()=>{
  })
  it('reading gates keep the masthead; play gates get the compact header',()=>{
   expect(isPlayMode('reading')).toBe(false);(['game','arena','studio'] as const).forEach(m=>expect(isPlayMode(m)).toBe(true))
-  expect(modeOf('archive')).toBe('reading');expect(modeOf('derby')).toBe('reading')
+  expect(modeOf('archive')).toBe('reading');expect(modeOf('derby')).toBe('game')
   expect(modeOf('royal-rumble')).toBe('arena');expect(modeOf('kits')).toBe('studio')
  })
  it('the dispatcher uses the compact header only for a playable play-mode gate, and hides the tab bar there',()=>{
