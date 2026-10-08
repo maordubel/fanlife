@@ -14,8 +14,13 @@ export type Fact<T> = {
 export type Source = {id:string;title:string;url:string|null;publisher:string;access:'available'|'blocked'|'unknown';checkedAt:string|null}
 export type Readiness = {state:ReadinessState;playable:boolean;eligible:number;target:number;reasons:string[]}
 export type Entity = {id:string;name:string}
-export type ClubPlayer = Entity & {positions:('GK'|'DF'|'MF'|'FW')[];fromYear:number|null;toYear:number|null;aliases:string[]}
-export type ClubMystery={id:string;targetPlayerId:string;clues:{id:string;label:string;value:string;sources:string[]}[]}
+/** Optional finer evidence (rulebook PO-R03): `centreBack` only where a source states it beyond DF; `foreignSlot` is the club's own foreign-slot record, never a passport. */
+export type PlayerDetail={centreBack?:boolean;foreignSlot?:'foreign'|'domestic'}
+export type ClubPlayer = Entity & {positions:('GK'|'DF'|'MF'|'FW')[];fromYear:number|null;toYear:number|null;aliases:string[];detail?:PlayerDetail}
+/** Optional typed fact on a clue (rulebook BC-R02/R03): when present the clue can be proven to narrow; prose-only clues stay valid for practice. */
+export type MysteryClue={id:string;label:string;value:string;sources:string[];type?:string;family?:string;facet?:string;factKey?:string;scope?:{season?:string;competition?:string}}
+/** `remaining[i]` = candidates still fitting after clue i+1, computed by the bank builder INCLUDING unresolved-name phantoms (BC-R04/R05). */
+export type ClubMystery={id:string;targetPlayerId:string;clues:MysteryClue[];remaining?:number[]}
 export type ClubTrivia = {questions:MasterQuestion[];pools:Record<string,string[]>}
 export type HistoricalEvent = Entity & {on:string|null;precision:'day'|'year'|'unknown';year?:number|null;hint:string;sport:'football';sensitive:boolean}
 /** null = not researched/migrated; [] = known empty. Never invent missing fields. */
