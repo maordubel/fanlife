@@ -5,7 +5,7 @@ import type {PublicQuestion,Verdict,SourceRef} from '@/lib/game/questions/types'
 import {advance,NEW_SESSION,secondsFor,stageCap} from '@/lib/game/session'
 import {answerTrivia} from '@/app/clubs/[slug]/[gate]/actions'
 import {gameCopy} from '@/lib/clubs/game-copy'
-import {recordActivity} from '@/lib/clubs/activity'
+import {completeRun} from '@/lib/clubs/completion'
 import type {UiLocale} from '@/lib/clubs/locale'
 export function TriviaBoard({questions,club,version,seed,cursor,locale,contentLocale,topic,era,hard}:{questions:PublicQuestion[];club:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;topic?:string;era?:string;hard?:string}){
  const copy=gameCopy(locale),[session,setSession]=useState({...NEW_SESSION}),[picked,setPicked]=useState<string[]>([]),[verdict,setVerdict]=useState<(Verdict&{source:SourceRef})|null>(null),[seconds,setSeconds]=useState(secondsFor(0)),[error,setError]=useState(false),[busy,setBusy]=useState(false),[started,setStarted]=useState(false)
@@ -30,7 +30,7 @@ export function TriviaBoard({questions,club,version,seed,cursor,locale,contentLo
   const timer=setTimeout(()=>{const next=advance(session,{correct:verdict.correct,difficulty:verdict.difficulty,secondsLeft:seconds,total,cap:stageCap(session.index)});setSession(next);setVerdict(null);setPicked([]);setSeconds(secondsFor(next.index));setError(false)},2000)
   return ()=>clearTimeout(timer)
  },[verdict,session,seconds,total])
- useEffect(()=>{if(over&&!recorded.current){recorded.current=true;recordActivity(club,'trivia',`trivia:${version}:${seed}:${cursor}:${topic||''}:${era||''}:${hard||''}`,session.score)}},[over,club,version,seed,cursor,topic,era,hard,session.score])
+ useEffect(()=>{if(over&&!recorded.current){recorded.current=true;completeRun(club,'trivia',`trivia:${version}:${seed}:${cursor}:${topic||''}:${era||''}:${hard||''}`,session.score)}},[over,club,version,seed,cursor,topic,era,hard,session.score])
  const replay=new URLSearchParams({seed:String(seed),r:String(cursor+1),lang:locale,...(topic?{topic}:{}),...(era?{era}:{}),...(hard?{hard}:{})})
  if(over)return <section className="game-panel" data-testid="trivia-result"><p>{copy.report}</p><h2>{copy.complete}</h2><p>{copy.correct}: {session.correct}/{session.index} · {copy.answered}: {session.index}/{questions.length}</p><p>{copy.score}: {session.score} · {copy.combo}: {session.bestCombo}</p><p>{copy.localOnly}</p><Link className="game-button" href={`?${replay}`}>{copy.replay}</Link><Link className="game-button" href={`/clubs/${club}/archive?lang=${locale}`}>{copy['gate.archive']}</Link></section>
  if(!q)return null

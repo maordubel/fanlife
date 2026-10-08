@@ -26,6 +26,7 @@ export function SlideSheet({
   size = 'auto',
   footer,
   tone = 'sheet',
+  closeLabel,
 }: {
   open: boolean
   onClose: () => void
@@ -37,10 +38,12 @@ export function SlideSheet({
   /** pinned under the scrolling body — the sheet's one action */
   footer?: ReactNode
   tone?: 'sheet' | 'ink'
+  /** the close button's words — club games pass their own locale's; the Worker's Hebrew is the default */
+  closeLabel?: string
 }) {
   if (!open) return null
   return (
-    <SheetBody onClose={onClose} title={title} latin={latin} size={size} footer={footer} tone={tone}>
+    <SheetBody onClose={onClose} title={title} latin={latin} size={size} footer={footer} tone={tone} closeLabel={closeLabel}>
       {children}
     </SheetBody>
   )
@@ -54,6 +57,7 @@ function SheetBody({
   size,
   footer,
   tone,
+  closeLabel,
 }: {
   onClose: () => void
   title: string
@@ -62,6 +66,7 @@ function SheetBody({
   size: 'auto' | 'half' | 'full'
   footer?: ReactNode
   tone: 'sheet' | 'ink'
+  closeLabel?: string
 }) {
   const ref = useDialog<HTMLDivElement>(onClose)
   const [dy, setDy] = useState(0)
@@ -127,7 +132,7 @@ function SheetBody({
               onClick={onClose}
               className="min-h-tap shrink-0 px-2 font-body text-[12px] font-extrabold text-red"
             >
-              {t('stage.close')}
+              {closeLabel ?? t('stage.close')}
             </button>
           </div>
         </div>

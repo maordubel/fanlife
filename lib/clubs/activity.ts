@@ -4,7 +4,7 @@ import {finishVisit} from '@/lib/analytics/meter'
  * Every game with a finish is on the ticket (research 7.10.2026 §4.3): a round is counted once by its run id,
  * and `seen` keeps the ids as a set so a round that drops out of `recent` is never counted again.
  */
-export const RUN_GATES=['trivia','memory','polls','blind-cow','lineup','goal','kit-builder','royal-rumble','timeline'] as const
+export const RUN_GATES=['trivia','memory','polls','blind-cow','lineup','goal','kit-builder','royal-rumble','timeline','derby','archive'] as const
 export type RunGate=(typeof RUN_GATES)[number]
 type Counter={completed:number;best:number}
 export type Activity=Record<RunGate,Counter>&{xi:boolean;recent:string[];seen:string[]}
@@ -24,7 +24,7 @@ export function readActivity(club:string):Activity {
  }catch{return blank()}
 }
 /** A run id longer than the ledger keeps is folded to a short stable hash — never truncated into a collision. */
-const runId=(run:string)=>{if(run.length<=120)return run;let h=2166136261;for(let i=0;i<run.length;i++)h=Math.imul(h^run.charCodeAt(i),16777619);return `${run.slice(0,40)}#${(h>>>0).toString(36)}:${run.length}`}
+export const runId=(run:string)=>{if(run.length<=120)return run;let h=2166136261;for(let i=0;i<run.length;i++)h=Math.imul(h^run.charCodeAt(i),16777619);return `${run.slice(0,40)}#${(h>>>0).toString(36)}:${run.length}`}
 export function recordActivity(club:string,gate:RunGate|'xi',raw:string,score=0):boolean {
  const run=runId(raw)
  // audience (audit A07, 8.10.2026): a finished round is a finish for the meter too — sent first, so a full or blocked

@@ -50,16 +50,36 @@ export function rumbleReadiness(pool:Rated[]){
  const short=(Object.keys(need) as Pos[]).filter(p=>n(p)<need[p])
  return {playable:short.length===0,full:(Object.keys(need) as Pos[]).every(p=>n(p)>=(p==='MF'?6:3)),short:short.map(p=>`${need[p]-n(p)} more ${p}`)}
 }
-/** The deal: per slot, up to three cards of that position, never repeating a man across slots. Deterministic in the seed. */
+/**
+ * The opponent is COMMITTED from the pool, the seed and the rules alone — never from what the player picks.
+ * (Before 8.10.2026 the rival was built from "men the player did not take", so swapping one legal pick
+ * silently changed the opponent's midfield. A fan could not trust a replay, and a link could not hand over the same match.)
+ * It plays by the same budget: per slot the strongest of three seeded cards that still leaves the rest fillable.
+ * The draft is then dealt from everyone the opponent did NOT field, so the two sides can never share a man.
+ */
+export function dealRival(pool:Rated[],seed:number):Rated[]|null{
+ const r=mulberry(seed^0x9e3779b9),taken=new Set<string>(),rival:Rated[]=[]
+ let money=BUDGET
+ for(let i=0;i<SLOTS.length;i++){
+  const pos=SLOTS[i]!,left=pool.filter(x=>x.position===pos&&!taken.has(x.id)),options=shuffle(left,r).slice(0,OFFERS)
+  if(!options.length)return null
+  const floor=SLOTS.slice(i+1).reduce((t,p,j,rest)=>{const free=pool.filter(x=>x.position===p&&!taken.has(x.id)).map(x=>x.price).sort((a,b)=>a-b);return t+(free[rest.slice(0,j).filter(q=>q===p).length]??1)},0)
+  const fits=options.filter(o=>o.price+floor<=money).sort((a,b)=>b.rating-a.rating||a.price-b.price)
+  const best=fits[0]??[...left].sort((a,b)=>a.price-b.price||b.rating-a.rating)[0]!
+  taken.add(best.id);rival.push(best);money-=best.price
+ }
+ return rival
+}
+/** The deal: per slot, up to three cards of that position, never repeating a man across slots and never a man the opponent fields. Deterministic in the seed. */
 export function dealDraft(pool:Rated[],seed:number):RumbleCard[][]{
- const r=mulberry(seed),used=new Set<string>()
+ const r=mulberry(seed),used=new Set<string>((dealRival(pool,seed)||[]).map(c=>c.id))
  return SLOTS.map(pos=>{
   const cards=shuffle(pool.filter(x=>x.position===pos&&!used.has(x.id)),r).slice(0,OFFERS)
   cards.forEach(c=>used.add(c.id));return cards.map(strip)
  })
 }
 export type RumbleResult={you:{cards:Rated[];power:number;cost:number};rival:{cards:Rated[];power:number};verdict:'win'|'draw'|'loss';goals:[number,number]}
-/** Plays the dealt draft. Opponent: the best affordable side (same €15M budget) another seeded deal makes from men the player did not take. */
+/** Plays the dealt draft against the committed opponent. The score reads only hidden ratings, so it stays on the server. */
 export function play(pool:Rated[],seed:number,picks:string[]):RumbleResult|null{
  const draft=dealDraft(pool,seed)
  if(picks.length!==SLOTS.length||new Set(picks).size!==picks.length)return null
@@ -67,17 +87,9 @@ export function play(pool:Rated[],seed:number,picks:string[]):RumbleResult|null{
  for(let i=0;i<SLOTS.length;i++){const offered=draft[i]!.find(c=>c.id===picks[i]);const full=offered&&pool.find(x=>x.id===offered.id);if(!full)return null;chosen.push(full)}
  const cost=chosen.reduce((s,c)=>s+c.price,0)
  if(cost>BUDGET)return null
- const r=mulberry(seed^0x9e3779b9),taken=new Set(chosen.map(c=>c.id)),rival:Rated[]=[]
- // the rival plays by the same budget: per slot, the strongest of its three cards that still leaves the rest fillable
- let money=BUDGET
- for(let i=0;i<SLOTS.length;i++){
-  const pos=SLOTS[i]!,options=shuffle(pool.filter(x=>x.position===pos&&!taken.has(x.id)),r).slice(0,OFFERS)
-  if(!options.length)return null
-  const floor=SLOTS.slice(i+1).reduce((t,p,j,rest)=>{const free=pool.filter(x=>x.position===p&&!taken.has(x.id)).map(x=>x.price).sort((a,b)=>a-b);return t+(free[rest.slice(0,j).filter(q=>q===p).length]??1)},0)
-  const fits=options.filter(o=>o.price+floor<=money).sort((a,b)=>b.rating-a.rating||a.price-b.price)
-  const best=fits[0]??[...pool.filter(x=>x.position===pos&&!taken.has(x.id))].sort((a,b)=>a.price-b.price||b.rating-a.rating)[0]!
-  taken.add(best.id);rival.push(best);money-=best.price
- }
+ const rival=dealRival(pool,seed)
+ if(!rival)return null
+ const r=mulberry(seed^0x51ed270b)
  const you=chosen.reduce((s,c)=>s+c.rating,0),them=rival.reduce((s,c)=>s+c.rating,0),edge=you-them
  const goals:[number,number]=[Math.max(0,Math.round(2+edge/40+(r()-0.5))),Math.max(0,Math.round(2-edge/40+(r()-0.5)))]
  if(goals[0]===goals[1]&&Math.abs(edge)>=15)goals[edge>0?0:1]++

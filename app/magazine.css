@@ -1192,3 +1192,28 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .fl.mag[lang='he'] .mag-game-stamp { font-family: var(--mag-body); font-weight: 800; letter-spacing: 1px; }
 /* A control scrolled into view (keyboard focus, a tap target near the bottom) lands above the fixed bar, not under it. */
 @media (max-width: 900px) { html:has(.mag-tabbar) { scroll-padding-block-end: calc(72px + env(safe-area-inset-bottom)); } }
+
+/* ===== PLAY HEADER + LAYOUT MODES (Wave 0, 8.10.2026) =====
+   A round on the glass gets one 52px row, not the masthead. Reading gates keep .mag-gamehead. */
+.mag-playhead { position: sticky; inset-block-start: 0; z-index: 20; display: flex; align-items: center; gap: 6px; min-height: 52px; margin-inline: calc(var(--gutter, 16px) * -1); padding: env(safe-area-inset-top) var(--gutter, 16px) 0; background: var(--mag-paper); border-block-end: 3px solid var(--mag-ink); }
+.mag-playhead-back, .mag-playhead-mark, .mag-playhead-help { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+.mag-playhead-back { gap: 6px; padding-inline: 2px 8px; }
+.mag-playhead-back > span:first-child { font-size: 20px; line-height: 1; }
+.mag-playhead-title { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; }
+.mag-playhead-title .mag-badge { width: 34px; height: 34px; font-size: 11px; flex: none; box-shadow: 2px 2px 0 var(--mag-ink); }
+.mag-playhead-title > div { min-width: 0; }
+.mag-playhead-kicker { margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mag-playhead h1 { margin: 0; font-family: var(--mag-condensed); font-weight: 700; font-size: 22px; line-height: 1; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+[lang='he'] .mag-playhead h1 { text-transform: none; }
+.mag-playhead-aside { flex: none; font-family: var(--mag-mono); font-weight: 700; font-size: 13px; }
+.mag-playhead-help { border: 3px solid var(--mag-ink); background: var(--mag-card); font-size: 18px; border-radius: 50%; min-width: 44px; box-shadow: 2px 2px 0 var(--mag-ink); }
+.mag-playhead-help:active { transform: translate(2px, 2px); box-shadow: none; }
+.mag-playhead-rules { font-size: 16px; line-height: 1.5; margin: 4px 0 12px; }
+.mag-playhead-langs { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 380px) { .mag-playhead-backtext { display: none; } .mag-playhead h1 { font-size: 19px; } }
+@media (min-width: 901px) { .mag-playhead { position: static; margin-inline: 0; padding-inline: 0; margin-block-end: 18px; } .mag-playhead h1 { font-size: 30px; } }
+/* arena / studio: the field wants the width; the page frame stops padding it away */
+.mag-game[data-mode='arena'], .mag-game[data-mode='studio'] { max-width: 64rem; padding-block-start: 0; }
+.mag-game[data-mode='game'] { padding-block-start: 0; }
+@media (max-width: 900px) { .mag-game[data-mode='arena'], .mag-game[data-mode='studio'], .mag-game[data-mode='game'] { padding-bottom: calc(24px + env(safe-area-inset-bottom)); min-height: 100dvh; } }
+@media (prefers-reduced-motion: reduce) { .mag-playhead-help:active { transform: none; } }
