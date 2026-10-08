@@ -1,0 +1,125 @@
+/* ───────── A CLUB'S OWN APP (club shell, 8.10.2026) ─────────
+   One layout for every /clubs/<id>/… page: the club's masthead, its own five-door bar, a slim footer.
+   Phone: bar fixed to the glass, LIFE raised in the middle. Desktop: the bar becomes a rail on the inline-start edge.
+   Club colour appears only on .mag-badge / .mag-band (rule 91); everything here is ink, paper and the magazine's inks.
+   Logical properties only (rule 9). */
+.club-app { background-color: var(--mag-paper); color: var(--mag-ink); font-family: var(--mag-body); min-height: 100dvh; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'mast' 'body' 'foot'; grid-template-rows: auto 1fr auto; }
+.club-masthead { grid-area: mast; position: sticky; inset-block-start: 0; z-index: 50; background: var(--mag-ink); color: var(--mag-paper); }
+.club-masthead-in { display: flex; align-items: center; gap: 10px; min-height: 56px; padding-inline: 12px; width: min(1240px, 100%); margin-inline: auto; }
+.club-who { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; color: var(--mag-paper); }
+.club-who .mag-badge { width: 40px; height: 40px; flex: none; }
+.club-who-name { display: block; font-family: var(--mag-condensed); font-weight: 700; font-size: 24px; line-height: 1; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.club-who-kicker { display: block; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-salmon); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.club-switch { min-height: 44px; min-width: 44px; padding-inline: 12px; display: inline-flex; align-items: center; gap: 6px; border: 3px solid var(--mag-paper); background: transparent; color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
+.club-switch:hover { background: var(--mag-paper); color: var(--mag-ink); }
+.club-exit { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.club-exit img { width: 34px; height: 34px; }
+.club-band { display: block; height: 8px; border-inline: 0; border-block-end: 0; border-block-start: 3px solid var(--mag-ink); border-radius: 0; }
+.club-body { grid-area: body; min-width: 0; }
+.club-body > * { min-width: 0; }
+.club-foot { grid-area: foot; background: var(--mag-ink); color: var(--mag-paper); border-top: 5px solid var(--mag-vermilion); margin-top: 32px; }
+.club-foot-in { width: min(1240px, 100% - 28px); margin-inline: auto; padding: 18px 0 22px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; line-height: 1.7; }
+.club-foot a { color: var(--mag-paper); text-underline-offset: 4px; }
+.club-foot img { width: 56px; height: 56px; }
+
+/* the five doors */
+.club-tabbar { grid-area: rail; position: relative; display: flex; background: var(--mag-ink); color: var(--mag-paper); border-top: 3px solid var(--mag-vermilion); }
+.club-tab { position: relative; flex: 1; min-width: 44px; min-height: 58px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-family: var(--mag-mono); font-weight: 700; font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--mag-paper); text-align: center; }
+.club-tab-label { max-inline-size: 100%; padding-inline: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.club-tab[aria-current='page'] { color: var(--mag-salmon); box-shadow: inset 0 3px 0 var(--mag-salmon); }
+.club-tab-centre { box-shadow: none !important; }
+.club-tab-badge { width: 54px; height: 54px; margin-block-start: -22px; color: var(--club-on-primary, var(--mag-white)); border-width: 4px; box-shadow: 0 0 0 4px var(--mag-ink); }
+.club-tab-badge svg { width: 24px; height: 24px; }
+.club-tab-centre[aria-current='page'] .club-tab-badge { box-shadow: 0 0 0 4px var(--mag-ink), 0 0 0 7px var(--mag-salmon); }
+.club-tab-centre .club-tab-label { margin-block-start: -2px; }
+
+@media (max-width: 900px) {
+  .club-app { padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
+  .club-tabbar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 50; padding-bottom: env(safe-area-inset-bottom); }
+  .club-foot { margin-top: 24px; }
+}
+
+/* desktop: a rail, a different design (not the phone bar stretched) */
+@media (min-width: 901px) {
+  .club-app { grid-template-columns: 104px minmax(0, 1fr); grid-template-areas: 'mast mast' 'rail body' 'rail foot'; grid-template-rows: auto 1fr auto; }
+  .club-masthead-in { padding-inline: 20px; min-height: 64px; }
+  .club-who-name { font-size: 30px; }
+  .club-tabbar { position: sticky; inset-block-start: 72px; align-self: start; height: calc(100dvh - 72px); flex-direction: column; justify-content: flex-start; gap: 6px; padding-block: 18px; border-top: 0; border-inline-end: 3px solid var(--mag-ink); background: var(--mag-ink); }
+  .club-tab { flex: none; width: 100%; min-height: 76px; font-size: 11px; }
+  .club-tab[aria-current='page'] { box-shadow: inset 4px 0 0 var(--mag-salmon); background: rgb(255 255 255 / .06); }
+  .club-tab-centre { order: 0; margin-block: 8px; }
+  .club-tab-badge { margin-block-start: 0; width: 58px; height: 58px; }
+  .club-foot-in { width: calc(100% - 40px); }
+}
+
+/* immersive pages (LIFE, a game in play mode) own the whole glass */
+.club-app:has([data-chrome='immersive']) { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'body'; grid-template-rows: 1fr; padding-bottom: 0; }
+.club-app:has([data-chrome='immersive']) .club-masthead,
+.club-app:has([data-chrome='immersive']) .club-tabbar,
+.club-app:has([data-chrome='immersive']) .club-foot { display: none; }
+
+/* the switcher sheet */
+.club-switch-note { margin: 0 0 12px; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; }
+.club-switch-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.club-switch-row { min-height: 56px; display: flex; align-items: center; gap: 12px; padding: 8px 10px; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); }
+.club-switch-row b { display: block; font-family: var(--mag-condensed); font-size: 20px; line-height: 1.05; text-transform: uppercase; }
+.club-switch-row small { display: block; font-family: var(--mag-mono); font-size: 11px; letter-spacing: 1px; color: var(--mag-muted); }
+.club-switch-row[aria-current='true'] { background: var(--mag-ink); color: var(--mag-paper); }
+.club-switch-row[aria-current='true'] small { color: var(--mag-salmon); }
+.club-switch-more { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.club-switch-more a { min-height: 44px; display: inline-flex; align-items: center; padding-inline: 14px; border: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-ink); }
+
+/* entering a club: the page settles in from the hub (view transition where supported; nothing under reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  .club-body { animation: club-settle .28s ease-out both; }
+}
+@keyframes club-settle { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.club-body .club-surface { min-height: 0; }
+
+/* your rounds: stamps that open the game again */
+.club-rounds { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 10px; }
+.club-rounds a { min-height: 64px; display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 3px dashed var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); }
+.club-rounds b { font-family: var(--mag-display); font-size: 30px; line-height: 1; font-variant-numeric: tabular-nums; }
+.club-rounds span { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.club-rounds a:hover { background: var(--mag-ink); color: var(--mag-paper); }
+
+/* ───────── the club home: one markup, five heroes (club-signature layout) ───────── */
+.club-home .club-hero { min-height: 0; }
+.club-aka { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-ink); }
+.club-aka span + span::before { content: '/'; margin-inline-end: 14px; color: var(--club-type, var(--mag-vermilion)); }
+.club-local { font-family: var(--mag-body); font-weight: 700; text-transform: none; letter-spacing: 0; }
+/* phones: nicknames stack, no slash; the home lead sentence lives in the strip below instead */
+@media (max-width: 759px) { .club-aka { flex-direction: column; align-items: center; gap: 2px; } .club-aka span + span::before { content: none; } }
+@media (max-width: 600px) { .club-home .mag-homelead { display: none; } }
+@media (min-width: 760px) { .club-aka { justify-content: flex-start; } }
+/* poster is the base hero; the other four change its furniture, not its content */
+.club-curtain { position: absolute; inset-inline: 0; inset-block-start: 0; height: 46px; border-width: 0 0 4px; z-index: 0; -webkit-mask: radial-gradient(circle 14px at 14px 100%, transparent 98%, black) 0 0 / 28px 100% repeat-x; mask: radial-gradient(circle 14px at 14px 100%, transparent 98%, black) 0 0 / 28px 100% repeat-x; }
+[data-hero='curtain'] .club-hero { padding-block-start: 74px; }
+.club-halfpane { position: absolute; inset-block: 0; inset-inline-start: 0; inline-size: 34%; border-width: 0 4px 0 0; z-index: -1; opacity: .92; }
+/* split hero: the welcome sits on paper, never over the pane */
+[data-hero='split'] .club-hero .mag-kicker, [data-hero='split'] .club-hero h1, [data-hero='split'] .club-hero .mag-homewelcome { position: relative; z-index: 1; background: color-mix(in srgb, var(--mag-paper) 92%, transparent); padding-inline: 8px; }
+[data-hero='split'] .club-hero { background-image: var(--mag-grain); }
+.club-markings { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(var(--mag-ink), var(--mag-ink)) 50% 0 / 2px 100% no-repeat; opacity: .16; }
+.club-markings::before { content: ''; position: absolute; inset-inline: 12%; inset-block-end: 0; height: 42%; border: 3px solid var(--mag-ink); border-block-end: 0; }
+[data-hero="ground"] .mag-pitchlines { opacity: .9; }
+[data-hero='ticket'] .club-hero { margin: 14px 12px 0; border: 4px solid var(--mag-ink); box-shadow: 8px 8px 0 var(--mag-ink); }
+[data-hero='ticket'] .club-hero::before { content: ''; position: absolute; inset-block: 0; inset-inline-end: 22%; border-inline-end: 4px dashed var(--mag-ink); opacity: .35; z-index: 0; }
+@media (min-width: 760px) { [data-hero='ticket'] .club-hero { margin: 24px max(28px, calc((100% - 1240px) / 2)) 0; } [data-hero='curtain'] .club-hero { padding-block-start: 88px; } }
+.club-pick { margin-top: 22px; }
+.club-pick .mag-kicker { margin-bottom: 6px; }
+.club-terrace-line, .club-credit { max-width: 60ch; }
+.club-terrace-line { font-size: 17px; line-height: 1.5; margin: 6px 0 0; }
+.club-group { margin-bottom: 28px; }
+.club-nick ul { list-style: none; margin: 4px 0 18px; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.club-nick li { display: inline-flex; align-items: baseline; gap: 10px; padding: 6px 12px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 3px 3px 0 var(--mag-ink); }
+.club-nick b { font-family: var(--mag-condensed); font-size: 24px; text-transform: uppercase; }
+.club-nick bdi { font-weight: 700; }
+.club-facts { display: grid; gap: 22px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .club-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.club-factlist { margin: 6px 0 0; padding-inline-start: 18px; display: grid; gap: 10px; }
+.club-history-shirt { width: 96px; flex: none; }
+.club-credit { margin-top: 22px; }
+
+/* terrace: the season ticket stacks on a phone so the stub never squeezes the figures */
+@media (max-width: 599px) { .club-terrace .mag-ticket { display: block; } .club-terrace .mag-ticket > .mag-fine { margin-block-end: 12px; } .club-terrace .mag-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

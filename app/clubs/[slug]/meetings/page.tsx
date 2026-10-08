@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
-import {Shell} from '@/components/master/Shell'
+import {ClubSurface} from '@/components/clubs/ClubSurface'
+import {REGISTRY} from '@/lib/master/registry'
+import {clubTheme} from '@/lib/clubs/theme'
 import {BeenThere} from '@/components/fanlife/BeenThere'
 import {readState} from '@/lib/master/store'
 import {resolveClubId} from '@/lib/clubs/resolver'
@@ -23,7 +25,7 @@ export default async function Meetings({params,searchParams}:{params:{slug:strin
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en
  const l=livery(id)
  const rows=await meetingsBetween(id,vs)
- return <Shell club={c} locale={locale}><main id="main"><section className="mag-section">
+ return <ClubSurface theme={clubTheme(REGISTRY.find(r=>r.id===c.id)||c)} clubId={id} locale={locale}><main id="main"><section className="mag-section">
   <hr className="mag-rule"/>
   <div className="mag-head"><div><p className="mag-kicker">{copy.meetingsKicker}</p><h1 className="mag-h2">{c.name} {copy.vs} {vs}</h1></div>
    <Link className="mag-chip" href={`/clubs/${id}?lang=${locale}`}>{copy.meetingsBack}</Link></div>
@@ -36,4 +38,4 @@ export default async function Meetings({params,searchParams}:{params:{slug:strin
     <p className="mag-fixture-meta">{copy.meetingsFrom}: {m.from.join(' · ')}</p>
     <BeenThere club={id} id={`m-${m.on??m.year??'x'}-${m.home}-${m.away}`.replace(/\s+/g,'_').slice(0,150)} label={`${m.home} ${m.homeGoals}–${m.awayGoals} ${m.away}`} on={m.on??(m.year?String(m.year).slice(0,4):null)} copy={{mark:copy.beenMark,marked:copy.beenMarked,hint:copy.beenHint}}/>
    </div></article>)}</div>}
- </section></main></Shell>}
+ </section></main></ClubSurface>}

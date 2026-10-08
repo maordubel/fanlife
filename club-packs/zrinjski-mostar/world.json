@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "review": "cross-source-2026-10-08",
+  "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Correction found in research: the home shirt is WHITE with a RED sash (RSSSF, Footy Headlines), not red and blue. Left out on purpose, by the sensitivity rules: the 1945 history, anything about supporters' politics or identity, derbies, incidents. No motto, stadium nickname or crest description is confirmed by two publishers.",
+  "voice": {
+    "welcome": "Come in under the white hill.",
+    "kicker": "Mostar · Bijeli Brijeg"
+  },
+  "nicknames": [
+    {
+      "text": "The Nobles",
+      "local": "Plemići",
+      "script": "hr",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar"},
+        {"publisher": "HŠK Zrinjski", "url": "https://hskzrinjski.ba/en/history/"},
+        {"publisher": "TV Arena Sport", "url": "https://tvarenasport.ba/?p=30906"}
+      ]
+    }
+  ],
+  "ground": {
+    "name": "Stadion pod Bijelim Brijegom",
+    "local": "Bijeli Brijeg",
+    "script": "hr",
+    "line": "The ground is in the Bijeli Brijeg district, on the west bank of the Neretva. It opened in 1958.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Stadion_pod_Bijelim_Brijegom"},
+      {"publisher": "NFSBiH", "url": "https://www.nfsbih.ba/en/wu-17-ch-en/stadiums/hsk-zrinjski-stadium-in-mostar/"},
+      {"publisher": "Crystal Palace FC", "url": "https://www.cpfc.co.uk/news/club/palace-in-europe-get-to-know-zrinjski-mostar/"}
+    ]
+  },
+  "founded": {
+    "line": "Founded in 1905 as a student sports club, a football club called Zrinjski since 1912. Often named the oldest in Bosnia and Herzegovina.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "HŠK Zrinjski", "url": "https://hskzrinjski.ba/en/history/"},
+      {"publisher": "Crystal Palace FC", "url": "https://www.cpfc.co.uk/news/club/palace-in-europe-get-to-know-zrinjski-mostar/"},
+      {"publisher": "Croatia Week", "url": "https://www.croatiaweek.com/?p=136222"}
+    ]
+  },
+  "emblem": {
+    "line": "The name comes from the Zrinski noble family, which is where The Nobles come from.",
+    "confidence": 2,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/H%C5%A0K_Zrinjski_Mostar"},
+      {"publisher": "Croatia Week", "url": "https://www.croatiaweek.com/?p=136222"}
+    ]
+  },
+  "colours": {
+    "line": "A white shirt with a red sash across the chest.",
+    "confidence": 2,
+    "sources": [
+      {"publisher": "RSSSF", "url": "https://rsssf.org/colours/bosniah.html"},
+      {"publisher": "Footy Headlines", "url": "https://www.footyheadlines.com/6389221482/hsk-zrinjski-mostar-26-27-home-kit-released.html"}
+    ]
+  },
+  "terrace": {
+    "name": "The Standing Tribune",
+    "local": "Tribina stajanje",
+    "script": "hr",
+    "tab": "Terrace",
+    "line": "The Standing Tribune, the east end, was where the organised support stood from 1994 to 2023.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "HŠK Zrinjski", "url": "https://hskzrinjski.ba/en/?p=927"},
+      {"publisher": "Libero Guide", "url": "https://liberoguide.com/zrinjski-mostar"},
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Ultras_Mostar"}
+    ]
+  },
+  "facts": []
+}
