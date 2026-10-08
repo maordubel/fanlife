@@ -13,6 +13,14 @@ function envelope(f:Raw,sources:Source[],valueOK:boolean,sensitive:boolean):{ref
  if(f.approvedBy.startsWith('automated:')&&!(new Set(cited.map(s=>s!.publisher.toLowerCase())).size>=2&&f.confidence===3&&f.parserCertainty==='high'&&f.conflictFree===true&&!sensitive))return null
  return {refs}
 }
+/** Optional typed-fact fields of a pack clue (BC-R02). Anything malformed is dropped, never guessed. */
+function typedFact(c:Record<string,unknown>){
+ const str=(x:unknown)=>typeof x==='string'&&x.trim()&&x.length<=120?x.trim():undefined,sc=obj(c.scope)
+ const scope={...(str(sc.season)?{season:str(sc.season)}:{}),...(str(sc.competition)?{competition:str(sc.competition)}:{})}
+ return {...(str(c.type)?{type:str(c.type)}:{}),...(str(c.family)?{family:str(c.family)}:{}),...(str(c.facet)?{facet:str(c.facet)}:{}),...(str(c.factKey)?{factKey:str(c.factKey)}:{}),...(Object.keys(scope).length?{scope}:{})}
+}
+/** A per-prefix candidate ladder is kept only when it is one non-negative integer per clue. */
+function ladderOf(raw:unknown,n:number):number[]|null{return Array.isArray(raw)&&raw.length===n&&raw.every(x=>Number.isInteger(x)&&x>=0)?raw as number[]:null}
 export function compileMysteries(raw:unknown,clubId:string,sources:Source[],players:Fact<ClubPlayer>[]|null,diagnostics:Diagnostic[]):Fact<ClubMystery>[] {
  if(!Array.isArray(raw))return []
  const known=new Set((players||[]).map(p=>p.value.id)),out:Fact<ClubMystery>[]=[],seen=new Set<string>()
@@ -24,7 +32,7 @@ export function compileMysteries(raw:unknown,clubId:string,sources:Source[],play
   const env=ok?envelope(f,sources,true,false):null
   if(!ok||!env){diagnostics.push({record:id,code:'MYSTERY_INELIGIBLE',message:'Mystery needs a known player, four sourced clues and a complete approval.'});continue}
   seen.add(id)
-  out.push({id:`${clubId}:${id}`,value:{id:`${clubId}:${id}`,targetPlayerId:target,clues:clues.map(c=>({id:`${clubId}:${id}:${c.id}`,label:String(c.label),value:String(c.value),sources:c.sources as string[]}))},sources:env.refs,confidence:f.confidence as 2|3,status:'approved',researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:String(f.approvedBy),notes:typeof f.notes==='string'?f.notes:''})
+  out.push({id:`${clubId}:${id}`,value:{id:`${clubId}:${id}`,targetPlayerId:target,clues:clues.map(c=>({id:`${clubId}:${id}:${c.id}`,label:String(c.label),value:String(c.value),sources:c.sources as string[],...typedFact(c)})),...(ladderOf(v.remaining,clues.length)?{remaining:ladderOf(v.remaining,clues.length)!}:{})},sources:env.refs,confidence:f.confidence as 2|3,status:'approved',researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:String(f.approvedBy),notes:typeof f.notes==='string'?f.notes:''})
  }
  return out
 }
