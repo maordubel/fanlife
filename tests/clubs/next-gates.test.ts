@@ -17,7 +17,8 @@ describe('archive projection and researched Zrinjski data',()=>{
   expect(archive.some(f=>f.id.endsWith(':legacy-founded-1905'))).toBe(false)
   expect(data.players!.length).toBeGreaterThanOrEqual(27)
   expect(['PARTIAL','READY']).toContain(data.gates.xi.state);expect(data.gates.archive.state).toBe('READY');expect(data.gates.memory.state).toBe('READY')
-  expect(data.gates['blind-cow']?.playable).toBe(false)
+  // 8.10.2026: forty mysteries whose four clues each agree between UEFA line-ups and Wikimedia open the gate
+  expect(data.gates['blind-cow']?.playable).toBe(true);expect(data.mysteries.length).toBeGreaterThanOrEqual(30)
  })
  it('retains same-day and answer-in-title facts in archive while excluding them from chronology',()=>{
   const raw=structuredClone(pack),fact=structuredClone(raw.archive[0]!)
