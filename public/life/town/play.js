@@ -9,7 +9,7 @@
 (function(){
 "use strict";
 window.__err=window.__err||[];
-var K=window.__town,T=K.T,RM=window.RM,U=K.U,PI=Math.PI;
+var IND={home:1,hall:1,school:1,work:1};var K=window.__town,T=K.T,RM=window.RM,U=K.U,PI=Math.PI;
 var CELL=.5,RADIUS=.45,REACH=3.5,SPEED=5.6,RUN=1.55;
 var sink=function(){},cfg=null,grid=null,player=null,actors={},exits=[],spots=[],marks=[],decor=[],target=null,frozen=false,S=null,SKINS={};
 var FR={top:.8,bottom:-.4},axis={x:0,y:0},running=false,path=null,pending=null,graceUntil=0,lastExit=null,focusId=null,stepAcc=0,now=0,camX=0,camZ=1,fade=null;
@@ -177,6 +177,7 @@ function enter(c){
  var sk=S?{name:c.club,c1:S.p,c2:S.s,c3:S.t||'#14141c'}:null;
  RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true});
  var def=RM.defs[c.room];pruneDecor(c,def&&def.kind);
+ if(window.__fill)window.__sc.remove(window.__fill);var fi=new T.DirectionalLight('#fff0e0',def&&IND[def.kind]?.3:.15);fi.position.set(0,6,14);window.__sc.add(fi);window.__fill=fi;
  var sp=c.spawn||{x:(c.walk[0]+c.walk[2])/2,z:(c.walk[1]+c.walk[3])/2,yaw:0};
  setView();skyOf(c.time==='night',def&&def.kind);
  (c.actors||[]).forEach(function(a){addActor(a,sp)});
@@ -199,13 +200,13 @@ function setView(){
  /* a phone: the picture IS the glass, edge to edge; the room is a window of about 3 m that follows him, lifted while somebody speaks */
  if(W/H<.9){var c=(top+bottom)/2*.3;top=1+c;bottom=-1+c}
  var a=W/(H*(top-bottom)/2);
- if(info&&a<1.15){var d=Math.hypot(info.p[1]-info.l[1],info.p[2]-info.l[2]),roomW=(cfg.walk[2]-cfg.walk[0]+2)*U,vis=Math.min(roomW,W/H<.9?3.1:4.6);fov=Math.max(20,Math.min(70,2*Math.atan(vis/2/(d*a))*180/PI))}
+ if(info&&a<1.15){var d=Math.hypot(info.p[1]-info.l[1],info.p[2]-info.l[2]),roomW=(cfg.walk[2]-cfg.walk[0]+2)*U,vis=Math.min(roomW,W/H<.9?(IND[((RM.defs[cfg.room]||{}).kind)]?4.2:5.0):4.6);fov=Math.max(20,Math.min(70,2*Math.atan(vis/2/(d*a))*180/PI))}
  K.view(top,bottom,fov);
 }
 function skyOf(night,kind){
- var inside=kind==='home'||kind==='club';
+ var inside=!!IND[kind];
  if(inside)window.__sc.children.forEach(function(o){if(o.isMesh&&o.geometry&&o.geometry.parameters&&o.geometry.parameters.radius===90&&o.material.isShaderMaterial)o.visible=false});
- if(inside)K.bg(night?'#33303e':'#3e3a46',night?'#26222e':'#2e2a36');
+ if(inside)K.bg(night?'#5a5066':'#d8c4a6',night?'#463e56':'#c8b090');
  else if(night)K.bg('#1a2a6a','#0a1030');else K.bg('#6f9bd0','#cfd9e6');
 }
 function trackCam(dt,snap){
