@@ -10,17 +10,16 @@ import type {QTopic,QType} from '@/lib/game/questions/types'
 import {HINT_COST,RUN_LENGTH,STAGE_CAPS,STAGE_LENGTH,STAGE_SECONDS,stageCap,stageOf} from '@/lib/game/session'
 import {tierFor,type Tier} from '@/lib/game/trivia-report'
 
-/** a round is STAGED (three stages with a card between them) only when it is nearly a full run */
-export const MIN_STAGED=9
+/** a round is STAGED (three stages of four, a card between them) only when it is a full twelve; anything shorter is one stage */
 export const MIN_ROUND=3
-export const staged=(count:number)=>count>=MIN_STAGED
+export const staged=(count:number)=>count>=RUN_LENGTH
 /** which stage a question belongs to; a short round is one stage */
 export const stageIndex=(index:number,count:number)=>staged(count)?Math.min(2,stageOf(index)):0
-export const stageCount=(count:number)=>staged(count)?Math.min(3,Math.ceil(count/STAGE_LENGTH)):1
-/** seconds per question; a short round runs on the middle clock so a four-question bank is not a sprint */
+export const stageCount=(count:number)=>staged(count)?3:1
+/** seconds per question; a short round runs on the first stage's clock — it is one stage, and says so */
 export const secondsOf=(index:number,count:number)=>staged(count)?STAGE_SECONDS[stageIndex(index,count)]!:STAGE_SECONDS[0]
-/** the stage's combo cap; a short round holds ×3 */
-export const capOf=(index:number,count:number)=>staged(count)?stageCap(index):STAGE_CAPS[1]
+/** the stage's combo cap; a short round holds the first stage's ×2 */
+export const capOf=(index:number,count:number)=>staged(count)?stageCap(index):STAGE_CAPS[0]
 /** a stage card shows before the first question of stage 2 and 3 — and only in a staged round */
 export const breakBefore=(index:number,count:number)=>staged(count)&&index>0&&index<count&&index%STAGE_LENGTH===0
 /** how many questions a run asks at most: never more than the session's twelve */
@@ -75,26 +74,23 @@ export function reportOf(log:readonly LogEntry[],count:number,lives:number):Repo
 
 /** the next-challenge doors a finished run offers: the weak topic when there is one and it can field a round, then a harder mix */
 export type Next={kind:'weak';topic:QTopic}|{kind:'hard'}|{kind:'mix'}
-export function nextChallenges(input:{report:Report;share:number;hard:boolean;topic:string|undefined;available:readonly QTopic[]}):Next[]{
+export function nextChallenges(input:{report:Report;share:number;hard:boolean;topic:string|undefined;available:readonly QTopic[];hardOpen:boolean}):Next[]{
  const out:Next[]=[]
  if(input.report.weakest&&input.report.weakest!==input.topic&&input.available.includes(input.report.weakest))out.push({kind:'weak',topic:input.report.weakest})
- if(input.share>=0.75&&!input.hard)out.push({kind:'hard'})
+ if(input.share>=0.75&&!input.hard&&input.hardOpen)out.push({kind:'hard'})
  if(input.topic||input.hard)out.push({kind:'mix'})
  return out.slice(0,2)
 }
 
-/** the challenge as a URL: the same filters, the next slice of the same deck */
-export function roundQuery(input:{seed:number;cursor:number;lang:string;topic?:string;era?:string;hard?:string;go?:boolean;practice?:boolean}):string{
- return new URLSearchParams({seed:String(input.seed),r:String(input.cursor),lang:input.lang,...(input.topic?{topic:input.topic}:{}),...(input.era?{era:input.era}:{}),...(input.hard?{hard:input.hard}:{}),...(input.go?{go:'1'}:{}),...(input.practice?{practice:'1'}:{})}).toString()
+/** the challenge as a URL: the same mode and filters, the next slice of the same deck */
+export function roundQuery(input:{seed:number;cursor:number;lang:string;mode?:string;topic?:string;era?:string;go?:boolean;practice?:boolean}):string{
+ return new URLSearchParams({seed:String(input.seed),r:String(input.cursor),lang:input.lang,...(input.mode?{mode:input.mode}:{}),...(input.topic?{topic:input.topic}:{}),...(input.era?{era:input.era}:{}),...(input.go?{go:'1'}:{}),...(input.practice?{practice:'1'}:{})}).toString()
 }
 
-/** the text a share carries: club, score, the run as ticks, and the link that deals the same round */
-export function shareText(input:{club:string;title:string;score:number;correct:number;asked:number;marks:readonly boolean[];url:string}):string{
- const ticks=input.marks.map(m=>m?'✓':'✗').join('')
- return `${input.club} · ${input.title}\n${input.correct}/${input.asked} · ${input.score}\n${ticks}\n${input.url}`
-}
-
-/** the run's identity for the ticket: one attempt, one id — a replay is a new cursor, practice is its own attempt */
-export const runKey=(input:{version:string;seed:number;cursor:number;topic?:string;era?:string;hard?:string;practice?:boolean})=>`trivia:${input.version}:${input.seed}:${input.cursor}:${input.topic||''}:${input.era||''}:${input.hard||''}${input.practice?':practice':''}`
+/**
+ * The run's identity for the ticket: one attempt, one id. The mode, the filters and practice are all IN it — a
+ * practice run and a standard run of one deck are two attempts and never share a result bucket (TR-R10).
+ */
+export const runKey=(input:{version:string;seed:number;cursor:number;mode?:string;topic?:string;era?:string;practice?:boolean})=>`trivia:${input.version}:${input.seed}:${input.cursor}:${input.mode||''}:${input.topic||''}:${input.era||''}${input.practice?':practice':''}`
 /** a practice attempt is on the ticket as played but carries no score: it ran with free hints and no clock */
 export const reportedScore=(score:number,practice:boolean)=>practice?0:Math.max(0,Math.floor(score))

@@ -1,43 +1,59 @@
 'use client'
 import Link from 'next/link'
-import {useMemo,useState} from 'react'
+import {useMemo} from 'react'
 import type {QTopic} from '@/lib/game/questions/types'
 import type {Session} from '@/lib/game/session'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
 import {tr} from '@/components/clubs/rumble/shared'
-import {nextChallenges,reportOf,roundQuery,shareText,type LogEntry} from '@/lib/clubs/trivia-model'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {triviaShare,type ShareDraft} from '@/lib/share/v3/adapters'
+import type {RunMeta} from '@/app/clubs/[slug]/[gate]/trivia-run-actions'
+import {MIN_ROUND,nextChallenges,reportOf,roundQuery,type LogEntry} from '@/lib/clubs/trivia-model'
 import css from './trivia.module.css'
 
 type Props={
- session:Session;log:LogEntry[];count:number;asked:number;club:string;clubName:string;version:string;seed:number;cursor:number
- locale:UiLocale;contentLocale:string;topic?:string;era?:string;hard?:string;practice:boolean;copy:GameCopy
- available:QTopic[];topicLabel:(id:string)=>string
+ session:Session;log:LogEntry[];count:number;asked:number;meta:RunMeta;club:string;clubName:string;version:string
+ locale:UiLocale;contentLocale:string;copy:GameCopy;available:QTopic[];hardOpen:boolean;topicLabel:(id:string)=>string;missedLeft:number
+}
+
+/** the plain-English line a shared card carries for each result category (a share is always English: the card is the club's public face) */
+const CATEGORY_EN:Record<string,string>={standard:'Standard run',hard:'Hard run',history:'History run',topic:'Topic run',era:'Era run',short:'Short run',revenge:'Revenge run',practice:'Practice run'}
+
+/**
+ * The share draft for a finished run. The link is the SAME deck (seed + cursor + mode + filters), never a practice
+ * link; a practice run is shared without a score because it had none (TR-R10); the card's detail names the category so
+ * a short or hard run is never read as a standard one.
+ */
+export function triviaDraft(input:{club:string;meta:RunMeta;log:readonly LogEntry[];session:Pick<Session,'score'|'bestCombo'>}):ShareDraft|null{
+ const {club,meta,log,session}=input
+ if(log.length===0)return null
+ const correct=log.filter(e=>e.correct).length
+ const base=triviaShare(club,{seed:meta.seed,cursor:meta.cursor,correct,answered:log.length,marks:log.map(e=>e.correct),score:meta.practice?0:session.score,bestCombo:session.bestCombo,topic:meta.topic||undefined,era:meta.era||undefined})
+ const link=new URL(base.data.link)
+ if(meta.mode&&meta.mode!=='standard'&&meta.mode!=='revenge')link.searchParams.set('mode',meta.mode)
+ const label=CATEGORY_EN[meta.category]??CATEGORY_EN.standard!
+ const detail=meta.practice?`${label} · no clock, nothing scored · Best streak: ${session.bestCombo}`:`${label} · Best streak: ${session.bestCombo} · Score: ${session.score}`
+ return {...base,data:{...base.data,link:link.href,detail,statement:`I remembered ${correct} of ${log.length}.`}}
 }
 
 /** The match report: what the run was, said from the run's own log, with the next door already open. */
 export function TriviaReport(p:Props){
- const {session,log,asked,club,clubName,seed,cursor,locale,topic,era,hard,practice,copy,topicLabel}=p
+ const {session,log,asked,meta,club,clubName,locale,copy,topicLabel,missedLeft}=p
  const t=(k:string,v?:Record<string,string|number>)=>tr(copy,k,v)
- const right=log.filter(e=>e.correct).length,answered=log.length
+ const right=log.filter(e=>e.correct).length,answered=log.length,practice=meta.practice
  const report=useMemo(()=>reportOf(log,p.count,session.lives),[log,p.count,session.lives])
- const next=nextChallenges({report,share:asked>0?right/asked:0,hard:!!hard,topic,available:p.available})
- const [note,setNote]=useState('')
- const query=(extra:{topic?:string;era?:string;hard?:string;practice?:boolean})=>`?${roundQuery({seed,cursor:cursor+1,lang:locale,go:true,...extra})}`
- const again=query({topic,era,hard,practice})
- async function share(){
-  const url=`${location.origin}${location.pathname}?${roundQuery({seed,cursor,lang:locale,topic,era,hard,practice})}`
-  const text=shareText({club:clubName,title:copy['gate.trivia'],score:practice?0:session.score,correct:right,asked:answered,marks:log.map(e=>e.correct),url})
-  try{
-   if(typeof navigator.share==='function'){await navigator.share({title:clubName,text,url});return}
-   await navigator.clipboard.writeText(text);setNote(t('tq.report.copied'))
-  }catch{/* a cancelled share is not an error */}
- }
+ const category=practice?'practice':meta.category
+ const next=nextChallenges({report,share:asked>0?right/asked:0,hard:meta.mode==='hard',topic:meta.topic||undefined,available:p.available,hardOpen:p.hardOpen&&meta.mode==='standard'})
+ const draft=useMemo(()=>triviaDraft({club,meta,log,session}),[club,meta,log,session])
+ const query=(extra:{mode?:string;topic?:string;era?:string;practice?:boolean;go?:boolean}={})=>`?${roundQuery({seed:meta.seed,cursor:meta.cursor+1,lang:locale,...extra})}`
+ const again=meta.mode==='revenge'?query():query({mode:meta.mode,topic:meta.topic||undefined,era:meta.era||undefined,practice,go:true})
  const out=session.lives<=0
- return <section className={css.report} data-testid="trivia-result" data-tier={report.tier}>
+ return <section className={css.report} data-testid="trivia-result" data-tier={report.tier} data-category={category}>
   <div className={css.reportHead}>
    <p className={css.reportKicker}>{clubName} · {t('tq.report.kicker')}</p>
    <h2 className={css.reportTitle}>{t(`tq.report.tier.${report.tier}`)}</h2>
+   <p className={css.reportCat} data-testid="trivia-category">{t(`tq.cat.${category}`)}</p>
    {practice?<p className={css.reportLine}>{t('tq.report.practice')}</p>:<p className={css.reportScore}><span className="sr-only">{copy.score}: </span>{session.score}</p>}
    <p className={css.reportLine}>{copy.correct}: {right}/{answered}</p>
    <p className={css.reportLine}>{copy.answered}: {answered}/{asked}{out?` · ${t('tq.report.out')}`:''}</p>
@@ -62,12 +78,12 @@ export function TriviaReport(p:Props){
   <div className={css.actions}>
    <Link className={css.cta} data-kind="lit" href={again}><span>{copy.replay}</span><span aria-hidden="true">→</span></Link>
    {next.map(n=>{
-    const href=n.kind==='weak'?query({topic:n.topic}):n.kind==='hard'?query({topic,era,hard:'1'}):query({})
+    const href=n.kind==='weak'?query({topic:n.topic,go:true}):n.kind==='hard'?query({mode:'hard',go:true}):query({mode:'standard',go:true})
     const label=n.kind==='weak'?t('tq.report.nextWeak',{topic:topicLabel(n.topic)}):n.kind==='hard'?t('tq.report.nextHard'):t('tq.report.nextMix')
     return <Link key={n.kind} className={css.cta} data-kind="plain" href={href}><span>{label}</span><span aria-hidden="true">→</span></Link>
    })}
-   <button type="button" className={css.cta} onClick={share}><span>{t('tq.report.share')}</span><span aria-hidden="true">↗</span></button>
-   {note&&<p className={css.copied} role="status">{note}</p>}
+   {missedLeft>=MIN_ROUND&&meta.mode!=='revenge'&&<Link className={css.cta} data-kind="plain" href={query()} data-testid="trivia-next-revenge"><span>{t('tq.report.nextRevenge',{n:missedLeft})}</span><span aria-hidden="true">→</span></Link>}
+   {draft&&<ShareComposer label={t('tq.report.share')} draft={draft}/>}
    <Link className={css.cta} data-kind="plain" href={`/clubs/${club}/archive?lang=${locale}`}><span>{t('tq.report.archive')}</span><span aria-hidden="true">→</span></Link>
    <Link className={css.cta} data-kind="plain" href={`/clubs/${club}?lang=${locale}`}><span>{copy.backToClub}</span><span aria-hidden="true">→</span></Link>
   </div>
