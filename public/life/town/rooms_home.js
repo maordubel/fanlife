@@ -52,9 +52,9 @@ L.wallTex=function(W,H,o){o=o||{};var pw=1024,ph=Math.round(pw*H/W),cv=C(pw,ph),
  if(o.stain){var sg=x.createLinearGradient(0,ph-1.6*u,0,ph);sg.addColorStop(0,'rgba(60,40,30,0)');sg.addColorStop(1,'rgba(60,40,30,.2)');x.fillStyle=sg;x.fillRect(0,ph-1.6*u,pw,1.6*u)}
  var vg=x.createLinearGradient(0,0,0,ph);vg.addColorStop(0,'rgba(0,0,0,.12)');vg.addColorStop(.25,'rgba(0,0,0,0)');x.fillStyle=vg;x.fillRect(0,0,pw,ph);
  nz(x,pw,ph,9);var t=c.tex(cv,1,1);return t};
-L.shell=function(o){var W=o.W||24,D=o.D||14,H=o.H||9;L.W=W;L.D=D;L.H=H;var m;
+L.shell=function(o){var PLAY=!!(c.o&&c.o.play),W=o.W||24,D=o.D||14,H=o.H||(PLAY?13:9);L.W=W;L.D=D;L.H=H;var m;
  m=c.mesh(new T.BoxGeometry(W+1.4,.8,D+1.4),M(o.slab||'#4a3a34'),W/2,-.4,D/2+.1,g);m.castShadow=false;
- var fl=new T.Mesh(new T.PlaneGeometry(W,D),M('#ffffff',{map:o.floor,rough:o.floorRough===undefined?.55:o.floorRough}));fl.rotation.x=-PI/2;fl.position.set(W/2,.01,D/2);fl.receiveShadow=true;g.add(fl);L.floorMesh=fl;
+ var FX=PLAY?7:0,fgeo=new T.PlaneGeometry(W,D+FX);if(FX){var fu=fgeo.attributes.uv;for(var q=0;q<fu.count;q++)fu.setY(q,1-(1-fu.getY(q))*(D+FX)/D)}var fl=new T.Mesh(fgeo,M('#ffffff',{map:o.floor,rough:o.floorRough===undefined?.55:o.floorRough}));fl.rotation.x=-PI/2;fl.position.set(W/2,.01,(D+FX)/2);fl.receiveShadow=true;g.add(fl);L.floorMesh=fl;
  if(c.o&&c.o.play&&fl.material.map){var aC=new T.Color(o.apron||'#e0cdb0').convertSRGBToLinear();var am=new T.MeshBasicMaterial({color:aC});var ap=new T.Mesh(new T.PlaneGeometry(W+80,70),am);ap.rotation.x=-PI/2;ap.position.set(W/2,-.005,D+35);ap.receiveShadow=true;g.add(ap)}
  var ec=o.edge||'#d8cdbd';
  m=c.mesh(new T.BoxGeometry(W+1.4,H,.7),M(ec),W/2,H/2,-.36,g);m.castShadow=false;
@@ -227,8 +227,8 @@ RM.def('room',{kind:'home',build:function(c){var L=lib(c),g=c.g,SK=c.SK,C1=c.ski
  L.plant(1.4,9.2,1.4,{pot:'#a8543c',n:13});
  // front-left door (to bedroom) on left wall
  L.door(LW,-12.0,2.2,7,{frame:'#e6dccb',col:'#8a5a40',open:.15,inside:'#201a1c'});
- L.cyl(1.0,1.0,.1,'#6a4a40',2.0,0,12.0,{rough:1,seg:20});
- L.ball(7.6,.45,10.0,.45);L.cyl(1.0,1.0,.5,'#a82a30',16,0,10.8,{rough:.9,seg:20});L.box(1.4,.18,.6,'#6a4a38',3.6,.04,10.0,{r:.07}).rotation.y=.5;L.box(1.4,.18,.6,'#6a4a38',4.4,.04,10.7,{r:.07}).rotation.y=-.2;
+ /* the floor stays clear to walk: the pouf lives by the sofa */
+ L.cyl(1.0,1.0,.5,'#a82a30',5.5,0,4.7,{rough:.9,seg:24});
  /* ---- people ---- */
  c.person({skin:SK[1],top:'#c22a3a',bot:'#2a3040',hair:'#4a4a50',style:'short',stubble:true,scarf:[C1,'#f4f1ff'],w:1.25,mode:'sit',s:1.1,ry:-.55,eye:'#4a3a2a'},{x:9.9,z:3.5});
  c.person({skin:SK[2],top:'#3d6a6a',bot:'#2e2a3a',hair:'#2a1a14',style:'bun',w:.92,mode:'listen',s:1.05,ry:-.9,lash:true,necklace:true,look:-.3},{x:20.8,z:8.4});
@@ -309,11 +309,10 @@ RM.def('bedroom',{kind:'home',build:function(c){var L=lib(c),g=c.g,SK=c.SK,C1=c.
  // toys / comics on floor and rug
  L.rug(7,4.4,'#2e3a50','#7a2a30','#c8a89a','#e0d6c8',.04,{x:13.4,z:8.4,rot:-.4});
  L.ball(11.9,.45,7.8,.45);
- for(i=0;i<5;i++)L.box(1.0,.07,1.4,['#c22a3a','#2d4a6b','#e8e2da','#3a7a4a','#5a3a5a'][i],14.8+i*.08,.04+i*.07,9.3-i*.04,{r:.02}).rotation.y=i*.35;
- L.box(1.6,1.2,.7,'#2e3a50',2.6,0,9.4,{r:.2,s:4}).rotation.y=.8;
+ /* (tidied: the comics are on the desk now, the bag is in the wardrobe) */
  // nightstand with alarm clock and glass
  L.box(1.6,2.1,1.6,'#7a5a46',9.3,0,2.7,{r:.08});L.box(.8,.55,.5,'#f4f1ee',9.3,2.1,2.5,{r:.1,s:4,rough:.4});L.glow(9.3,2.35,2.76,'#ffb48a',1.6,.5);L.mug(g,9.9,2.1,2.9,'#e6eef0');
- L.box(2.2,.7,1.2,'#2e3a50',8.8,0,10.8,{r:.25,s:4}).rotation.y=-.4;L.box(.6,.35,1.3,'#f4f1ee',10.6,0,11.2,{r:.15,s:4}).rotation.y=.7;L.box(.6,.35,1.3,'#f4f1ee',11.3,0,11.6,{r:.15,s:4}).rotation.y=.5;
+ L.box(.6,.35,1.3,'#f4f1ee',8.6,0,4.9,{r:.15,s:4}).rotation.y=.1;L.box(.6,.35,1.3,'#f4f1ee',9.3,0,5.0,{r:.15,s:4}).rotation.y=-.05;
  /* people */
  c.person({skin:SK[1],top:'#c22a3a',bot:'#2a3040',hair:'#2a1a14',style:'short',w:.9,mode:'sit',s:.74,ry:1.57,eye:'#3a2a1c'},{x:5.7,z:3.4});
  c.person({skin:SK[2],top:'#e8e4de',bot:'#3a4a6a',hair:'#1a1210',style:'buzz',w:.9,mode:'talk',s:.78,ry:-1.2,eye:'#3a2a1c',look:.2},{x:14.4,z:7.2});

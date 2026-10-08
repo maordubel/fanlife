@@ -76,7 +76,7 @@ var BASE_SKIN=['#f1c7a5','#e0a982','#c68863','#8d5a3e','#6b4430'];
 function hash(s){var h=7;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
 function lookOf(o,id){
  var h=hash(id||'x'),d={skin:o.skin||BASE_SKIN[h%5],hair:o.hair||'#2a1a14',top:o.shirt||'#8a8a92',bot:o.pants||'#2a3040',s:((o.h||6.2)/6.2)*1.07,w:o.h&&o.h<5?.9:1,
-  style:o.long?'bun':(h%4===0?'buzz':'short'),long:!!o.long,eye:'#3a2a1c',mode:'ctrl',sv:0,sw:0};
+  style:o.long?'bun':(h%4===0?'buzz':'short'),long:!!o.long,eye:'#3a2a1c',mode:'ctrl',sv:0,sw:0,_id:id};
  if(o.pat&&o.shirt2){d.top2=o.shirt2;d.pat=o.pat}
  if(o.kit&&S){d.top=S.ik?S.s:S.p;d.top2=S.ik?S.p:S.s;if(S.pattern&&S.pattern!=='solid')d.pat=S.pattern;else{d.pat=null;d.top2=null}}
  if(o.scarf===true&&S)d.scarf=[S.p,S.s];else if(o.scarf&&o.scarf.length)d.scarf=o.scarf;
@@ -173,6 +173,8 @@ function pruneDecor(c,kind){
 function enter(c){
  cfg=c;actors={};exits=[];spots=[];marks=[];decor=[];target=null;path=null;pending=null;focusId=null;frozen=!!c.frozen;axis.x=axis.y=0;lastExit=null;
  S=SKINS[c.club]||null;
+ /* the picture never invents yellow, unless yellow is this club's own colour */
+ if(K.yellowGuard){var yc=S&&S.p?new T.Color(S.p):null,yh={};if(yc)yc.getHSL(yh);K.yellowGuard(!(yc&&yh.h*360>36&&yh.h*360<72&&yh.s>.35))}
  FR=c.frame||{};
  var sk=S?{name:c.club,c1:S.p,c2:S.s,c3:S.t||'#14141c'}:null;
  RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true});
@@ -201,7 +203,7 @@ function setView(){
  /* a phone: the picture IS the glass, edge to edge; the room is a window of about 3 m that follows him, lifted while somebody speaks */
  if(W/H<.9){var c=(top+bottom)/2*.3;top=1+c;bottom=-1+c}
  var a=W/(H*(top-bottom)/2);
- if(info&&a<1.15){var d=Math.hypot(info.p[1]-info.l[1],info.p[2]-info.l[2]),roomW=(cfg.walk[2]-cfg.walk[0]+2)*U,vis=Math.min(roomW,W/H<.9?(IND[((RM.defs[cfg.room]||{}).kind)]?4.8:5.4):4.6);fov=Math.max(20,Math.min(70,2*Math.atan(vis/2/(d*a))*180/PI))}
+ if(info&&a<1.15){var d=Math.hypot(info.p[1]-info.l[1],info.p[2]-info.l[2]),roomW=(cfg.walk[2]-cfg.walk[0]+2)*U,vis=Math.min(roomW,W/H<.9?(IND[((RM.defs[cfg.room]||{}).kind)]?3.3:4.2):4.6);fov=Math.max(20,Math.min(70,2*Math.atan(vis/2/(d*a))*180/PI))}
  K.view(top,bottom,fov);
 }
 function skyOf(night,kind){

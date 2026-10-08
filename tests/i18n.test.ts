@@ -22,6 +22,17 @@ import { CATALOGUE_FILES, MESSAGES } from '@/lib/i18n'
  * shrink, never grow.
  */
 const catalogue = MESSAGES
+/**
+ * FAN LIFE's universal gates read their own per-gate catalogues (`messages/games/gates/<gate>.<locale>.json`, merged
+ * over `messages/games/<locale>.json` by the gate copy) through a local `t`. Their keys are checked against those
+ * files, not against The Worker's Hebrew catalogue.
+ */
+const GATE_DIR = join(__dirname, '..', 'messages', 'games')
+const gateKeys = new Set<string>([
+  ...Object.keys(JSON.parse(readFileSync(join(GATE_DIR, 'en.json'), 'utf8'))),
+  ...readdirSync(join(GATE_DIR, 'gates')).filter((f) => f.endsWith('.en.json')).flatMap((f) => Object.keys(JSON.parse(readFileSync(join(GATE_DIR, 'gates', f), 'utf8')))),
+])
+const knownKey = (file: string, key: string) => key in catalogue || (file.includes('/components/clubs/') && gateKeys.has(key))
 const ROOT = join(__dirname, '..')
 const SOURCE_ROOTS = ['app', 'components', 'lib']
 
@@ -46,7 +57,7 @@ describe('כל מפתח שנקרא — exists', () => {
       const text = readFileSync(file, 'utf8')
       for (const match of text.matchAll(/\bt\(\s*'([a-z][a-zA-Z0-9_]*(?:\.[a-zA-Z0-9_]+)+)'/g)) {
         const key = match[1] as string
-        if (!(key in catalogue)) missing.push(`${file.slice(ROOT.length + 1)}: ${key}`)
+        if (!knownKey(file, key)) missing.push(`${file.slice(ROOT.length + 1)}: ${key}`)
       }
     }
     expect(missing, missing.join('\n')).toEqual([])

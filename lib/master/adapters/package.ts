@@ -33,12 +33,23 @@ async function collect(job:Job){
    const v=row[key];if(v!==null&&v!==undefined&&v!=='')findings.push({field,value:String(v),sources:cites,approved:false})
   }
  }
+ // people the parser read: each PLAYER is a finding the owner can approve (name as written + the page it came from).
+ // Coaches stay in the report — no game uses them yet. Approving a player does not open anything: the owner builds
+ // game data from approved rows, and the compiler still decides what is playable.
+ for(const p of people){
+  if(p.role!=='player'||typeof p.nameAsReported!=='string'||!p.nameAsReported.trim())continue
+  const cites=(Array.isArray(p.sourceIds)?p.sourceIds:[]).map(id=>`pkg-${id}`).filter(id=>known.has(id))
+  if(!cites.length)continue
+  const seasons=typeof p.seasonsAsReported==='string'?p.seasonsAsReported:null,years=(seasons?.match(/\b(18|19|20)\d{2}\b/g)||[]).map(Number)
+  const from=years.length?Math.min(...years):null,to=years.length?Math.max(...years):null
+  findings.push({field:'player',value:p.nameAsReported.trim(),sources:cites,approved:false,record:{kind:'player',name:p.nameAsReported.trim(),sourceUrl:typeof p.sourceUrl==='string'?p.sourceUrl:undefined,seasons,positions:[],fromYear:from,toYear:to}})
+ }
  const report=[
   `REPORT · package v${manifest.researchVersion} · snapshot ${manifest.snapshotAsOf} · ${manifest.approvedForProduction} approved for production`,
   `REPORT · ${matches.length} dated matches staged — a count of what was collected, not proof of a complete archive`,
-  ...(people.length?[`REPORT · ${people.length} people read from sources as candidates (names as written, identities unresolved) — not a squad`]:[]),
+  ...(people.length?[`REPORT · ${people.length} people read from sources (${people.filter(p=>p.role==='player').length} players offered for approval, ${people.filter(p=>p.role!=='player').length} coaches/staff kept as report) — names as written`]:[]),
   ...(conflicts.length?[`REPORT · ${conflicts.length} conflicts held open: ${conflicts.map(c=>c.topic||c.matchId).join('; ')}`]:[]),
  ]
  return {sources,findings,gaps:[...report,...backlog.map(b=>`${b.priority} · ${b.taskHe||b.task||''}`)]}
 }
-export const packageAdapter:Adapter={id:'package',label:'Staged research package',collect,needsQuery:false,capabilities:['identity','package-report'],available:(clubId)=>stagingDirs(clubId).length>0}
+export const packageAdapter:Adapter={id:'package',label:'Staged research package',collect,needsQuery:false,capabilities:['identity','players','package-report'],available:(clubId)=>stagingDirs(clubId).length>0}
