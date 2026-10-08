@@ -20,6 +20,17 @@ P.load=function(base){base=base||'/life/town/people/';
   var mn=1e9;for(var i=1;i<NB*3;i+=3)if(P.pos[i]<mn)mn=P.pos[i];P.y0=mn;P.hc=new T.Vector3(P.joints[BONE.head*3],P.joints[BONE.head*3+1]-mn,P.joints[BONE.head*3+2]);P.adj=adjacency();P.ready=true;P.q.forEach(function(f){f()});P.q=[]})
  .catch(function(e){P.failed=true;console.warn('[people] falling back to the procedural figures:',e)})};
 P.whenReady=function(f){if(P.ready)f();else P.q.push(f)};
+/* terrace crowd: the same body, three static poses, ~1.1k triangles each (scripts/life/build-crowd.py). Each region —
+   skin, shirt, trousers, shoes, hair — takes its colour per instance, so a stand of six hundred is six hundred people. */
+P.loadCrowd=function(base){base=base||'/life/town/people/';if(P.crowdP)return P.crowdP;
+ return P.crowdP=Promise.all([fetch(base+'crowd.json').then(function(r){if(!r.ok)throw new Error('crowd.json');return r.json()}),fetch(base+'crowd.bin').then(function(r){if(!r.ok)throw new Error('crowd.bin');return r.arrayBuffer()})]).then(function(a){var J=a[0],B=a[1],C={f4:Float32Array,u2:Uint16Array,u1:Uint8Array};
+  function cs(n){var q=J.sections[n];return new C[q.t](B,q.o,q.n)}P.crowd={};J.poses.forEach(function(k){var g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(cs(k+'_pos'),3));
+   g.setAttribute('normal',new T.BufferAttribute(new Int8Array(cs(k+'_nrm').buffer,J.sections[k+'_nrm'].o,J.sections[k+'_nrm'].n),3,true));var rg=cs(k+'_reg'),rf=new Float32Array(rg.length);for(var i=0;i<rg.length;i++)rf[i]=rg[i];g.setAttribute('reg',new T.BufferAttribute(rf,1));g.setIndex(new T.BufferAttribute(cs(k+'_idx'),1));P.crowd[k]=g})}).catch(function(e){console.warn('[people] crowd mesh unavailable',e)})};
+P.crowdMesh=function(pose,n){var g=P.crowd&&P.crowd[pose];if(!g)return null;g=g.clone();var att={};['cSkin','cShirt','cPants','cShoe','cHair'].forEach(function(k){att[k]=new T.InstancedBufferAttribute(new Float32Array(n*3),3);g.setAttribute(k,att[k])});
+ var m=new T.MeshStandardMaterial({color:'#ffffff',roughness:.86});m.onBeforeCompile=function(sh){sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nattribute float reg;attribute vec3 cSkin,cShirt,cPants,cShoe,cHair;varying vec3 vRC;varying float vReg;').replace('#include <begin_vertex>','#include <begin_vertex>\nvReg=reg;vRC=reg<.5?cSkin:reg<1.5?cShirt:reg<2.5?cPants:reg<3.5?cShoe:cHair;');
+  sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vRC;varying float vReg;').replace('vec4 diffuseColor = vec4( diffuse, opacity );','vec4 diffuseColor = vec4( diffuse*vRC, opacity );').replace('float roughnessFactor = roughness;','float roughnessFactor = vReg<.5?.62:vReg>3.5?.75:roughness;')};
+ m.__al=1;m.customProgramCacheKey=function(){return 'crowdP'};var im=new T.InstancedMesh(g,m,n);im.userData.att=att;im.castShadow=false;im.receiveShadow=true;im.frustumCulled=false;return im};
+
 
 /* ---------- topology, once ---------- */
 function adjacency(){var n=NB,deg=new Uint16Array(n),t=P.otri,i;for(i=0;i<t.length;i+=3){deg[t[i]]+=2;deg[t[i+1]]+=2;deg[t[i+2]]+=2}
