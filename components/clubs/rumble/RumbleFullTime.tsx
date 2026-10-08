@@ -5,11 +5,13 @@ import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {Bulbs,RumbleShirt,money,posShort,shortName,tr,years} from './shared'
 import {findPlayer} from './RumbleStage'
 import s from './rumble.module.css'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {rumbleShare} from '@/lib/share/v3/adapters'
 
 export type RecentRound={seed:number;cost:number;us:number;them:number;r:'W'|'D'|'L'}
 
 /** The full-time board (port of RumbleFullTime): score, who scored and when, man of the match, two lines of story — all read from the script. */
-export function RumbleFullTime({script,copy,wardrobe,againHref,recent}:{script:ShowScript;copy:GameCopy;wardrobe:RumbleWardrobe;againHref:string;recent:RecentRound[]}){
+export function RumbleFullTime({script,copy,wardrobe,againHref,recent,club,seed}:{script:ShowScript;copy:GameCopy;wardrobe:RumbleWardrobe;againHref:string;recent:RecentRound[];club?:string;seed?:number}){
  const f=script.final,goals=script.events.filter(e=>e.type==='goal')
  const verdict=f.winner==='us'?'won':f.winner==='draw'?'drew':'lost'
  const mvp=findPlayer(script,script.motm.side,script.motm.id)
@@ -33,6 +35,7 @@ export function RumbleFullTime({script,copy,wardrobe,againHref,recent}:{script:S
    {mvp&&<div className={s.motm}><p className={`${s.mono} ${s.stageKicker}`}>{tr(copy,'rr.motm')}</p><b dir="auto">{mvp.name}</b><p style={{fontSize:12,opacity:.75}}>{reason}</p></div>}
    <p className={s.summary}>{summary}</p>
    <p className={s.secret}>{tr(copy,'rr.secret')}</p>
+   {club&&seed!==undefined&&<ShareComposer draft={rumbleShare(club,{seed,us:f.us,them:f.them,five:script.us.map(p=>({position:String(p.position),name:shortName(p.name)})),bill:money(script.bills.us)})}/>}
   </section>
   <div className={s.fives}>
    <section className={s.five} data-side="us"><div className={s.fiveHead}><p><span className={`${s.mono} ${s.stageKicker}`} style={{display:'block'}}>{tr(copy,'rr.bill')} {money(script.bills.us)}</span><b>{tr(copy,'rr.yourFive')}</b></p></div>{script.us.map(row)}</section>

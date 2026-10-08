@@ -82,7 +82,7 @@ async function readTaxonomy_(ctx:Ctx,src:ArchiveSource){
 /** One fetch, with the outcome turned into checkpoint/endpoint language. Never retried within a run. */
 /** Budget left AND time left: a web request must answer before the platform cuts it off; the checkpoint resumes next run. */
 const more=(ctx:Ctx)=>ctx.requests<ctx.budget&&!(ctx.deadline&&Date.now()>ctx.deadline)
-async function get(ctx:Ctx,src:ArchiveSource,url:string){ctx.requests++;const out=await politeFetch(url,asFetchSource(src),null,ctx.fetchImpl,()=>ctx.now().getTime());ctx.resources.push({url,at:ctx.now().toISOString(),outcome:out.kind,...(out.kind==='fetched'?{status:200,hash:out.meta.hash,bytes:out.meta.bytes,contentType:out.meta.contentType}:out.kind==='refused'?{status:out.status,reason:out.reason}:'reason' in out?{reason:out.reason}:{})});return out}
+async function get(ctx:Ctx,src:ArchiveSource,url:string){ctx.requests++;const out=await politeFetch(url,asFetchSource(src),null,ctx.fetchImpl,()=>ctx.now().getTime(),undefined,ctx.deadline);ctx.resources.push({url,at:ctx.now().toISOString(),outcome:out.kind,...(out.kind==='fetched'?{status:200,hash:out.meta.hash,bytes:out.meta.bytes,contentType:out.meta.contentType}:out.kind==='refused'?{status:out.status,reason:out.reason}:'reason' in out?{reason:out.reason}:{})});return out}
 
 async function readWordPress(ctx:Ctx,src:ArchiveSource,collection:'posts'|'pages'){
  const ep=`/wp-json/wp/v2/${collection}`,fp=fingerprint(src,collection),k=`${src.providerId}:${collection}`

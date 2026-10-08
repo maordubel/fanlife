@@ -8,7 +8,9 @@ import {stagingDirs} from './adapters/package'
 import {loadClubProfile,profiledClubs} from '@/lib/research/profiles'
 import {collectClub} from '@/lib/research/service'
 import {runWorker} from '@/lib/research/worker'
-import {readJobs} from '@/lib/research/store'
+import {readJobs,readJson,writeJson} from '@/lib/research/store'
+import {durable} from './durable'
+import {dataRoot} from '@/lib/dataRoot'
 
 /**
  * The control room's autopilot — what the scheduled task runs, and what "Run the pipeline now" runs by hand.
@@ -29,11 +31,22 @@ const lastStamp=new Map<string,string>()
 
 /** A web request has ~60s on Vercel; the pipeline stops starting new work at the budget and says which clubs wait. */
 export const PIPELINE_BUDGET_MS=40000
+/**
+ * Fair turns (audit A04, 8.10.2026): each pass starts with the club after the last one that got work, remembered
+ * durably (Blob when connected, the data dir otherwise), so a slow first club cannot defer the same later club forever.
+ */
+const CURSOR='pipeline-cursor.json'
+async function readCursor():Promise<string|null>{const d=durable();if(d){const r=await d.read(CURSOR).catch(()=>null);return r?(JSON.parse(r.text).last??null):null}return (await readJson<{last?:string}>(join(dataRoot(),CURSOR),{})).last??null}
+async function writeCursor(last:string){const d=durable();if(d){for(let i=0;i<3;i++){const r=await d.read(CURSOR).catch(()=>null);if(await d.write(CURSOR,JSON.stringify({last,at:new Date().toISOString()}),r?.etag??null))return}return}await writeJson(join(dataRoot(),CURSOR),{last,at:new Date().toISOString()})}
+export function rotateFrom<T extends string>(ids:T[],last:string|null):T[]{const i=last?ids.indexOf(last as T):-1;return i<0?ids:[...ids.slice(i+1),...ids.slice(0,i+1)]}
 export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_BUDGET_MS}:{maxRequestsPerClub?:number;clubs?:string[];budgetMs?:number}={}){
  const steps:ClubStep[]=[],deadline=Date.now()+budgetMs
- for(const clubId of clubs||await profiledClubs()){
+ const order=rotateFrom(clubs||await profiledClubs(),await readCursor().catch(()=>null))
+ let lastWorked:string|null=null
+ for(const clubId of order){
   const step:ClubStep={clubId}
-  if(Date.now()>deadline){step.error='Deferred: this run used its time budget; the next run continues here.';steps.push(step);continue}
+  if(Date.now()>deadline){step.error='Deferred: this run used its time budget; the next run starts with this club.';steps.push(step);continue}
+  lastWorked=clubId
   try{
    const profile=await loadClubProfile(clubId)
    if(profile?.archive.length){
@@ -48,7 +61,9 @@ export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_
   steps.push(step)
  }
  // 5 — process what is queued (bounded: one adapter run per club at most per pass)
- const processed=[];for(let i=0;Date.now()<deadline+10000&&i<Math.max(1,steps.filter(s=>s.queued).length);i++){const r=await runResearch();processed.push(r);if(!('ran' in r)||!r.ran)break}
+ if(lastWorked)await writeCursor(lastWorked).catch(()=>undefined)
+ // queued adapters make their own requests: start one only with time to finish it (A03)
+ const processed=[];for(let i=0;Date.now()<deadline-15000&&i<Math.max(1,steps.filter(s=>s.queued).length);i++){const r=await runResearch();processed.push(r);if(!('ran' in r)||!r.ran)break}
  return {at:new Date().toISOString(),steps,processed:processed.length,stopsAt:'review — sources and findings wait for the owner; packs and publishing are never automatic'}
 }
 

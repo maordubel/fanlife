@@ -7,24 +7,26 @@ import {answerTrivia} from '@/app/clubs/[slug]/[gate]/actions'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import {completeRun} from '@/lib/clubs/completion'
 import type {UiLocale} from '@/lib/clubs/locale'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {triviaShare} from '@/lib/share/v3/adapters'
 export function TriviaBoard({questions,club,version,seed,cursor,locale,contentLocale,topic,era,hard}:{questions:PublicQuestion[];club:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;topic?:string;era?:string;hard?:string}){
- const copy=gameCopy(locale),[session,setSession]=useState({...NEW_SESSION}),[picked,setPicked]=useState<string[]>([]),[verdict,setVerdict]=useState<(Verdict&{source:SourceRef})|null>(null),[seconds,setSeconds]=useState(secondsFor(0)),[error,setError]=useState(false),[busy,setBusy]=useState(false)
+ const copy=gameCopy(locale),[session,setSession]=useState({...NEW_SESSION}),[picked,setPicked]=useState<string[]>([]),[verdict,setVerdict]=useState<(Verdict&{source:SourceRef})|null>(null),[seconds,setSeconds]=useState(secondsFor(0)),[error,setError]=useState(false),[busy,setBusy]=useState(false),[started,setStarted]=useState(false),[marks,setMarks]=useState<boolean[]>([])
  const lock=useRef(false),recorded=useRef(false),submitRef=useRef<(answer:string|string[])=>void>(()=>{}),q=questions[session.index],over=session.over||session.index>=questions.length,total=secondsFor(session.index)
  async function submit(answer:string|string[]){
   if(lock.current||verdict||!q||over)return
   lock.current=true;setBusy(true);setError(false)
   try{const v=await answerTrivia(club,version,q.id,seed,cursor,session.index,answer,topic,era,hard)
    if(!v){setError(true);return}
-   setVerdict(v)
+   setVerdict(v);setMarks(m=>[...m,v.correct])
   }catch{setError(true)}finally{setBusy(false);lock.current=false}
  }
  submitRef.current=submit
  useEffect(()=>{
-  if(over||verdict||busy||error)return
+  if(!started||over||verdict||busy||error)return
   if(seconds===0){submitRef.current([]);return}
   const timer=setTimeout(()=>setSeconds(n=>Math.max(0,n-1)),1000)
   return ()=>clearTimeout(timer)
- },[seconds,over,verdict,busy,error])
+ },[started,seconds,over,verdict,busy,error])
  useEffect(()=>{
   if(!verdict)return
   const timer=setTimeout(()=>{const next=advance(session,{correct:verdict.correct,difficulty:verdict.difficulty,secondsLeft:seconds,total,cap:stageCap(session.index)});setSession(next);setVerdict(null);setPicked([]);setSeconds(secondsFor(next.index));setError(false)},2000)
@@ -32,8 +34,9 @@ export function TriviaBoard({questions,club,version,seed,cursor,locale,contentLo
  },[verdict,session,seconds,total])
  useEffect(()=>{if(over&&!recorded.current){recorded.current=true;completeRun(club,'trivia',`trivia:${version}:${seed}:${cursor}:${topic||''}:${era||''}:${hard||''}`,session.score)}},[over,club,version,seed,cursor,topic,era,hard,session.score])
  const replay=new URLSearchParams({seed:String(seed),r:String(cursor+1),lang:locale,...(topic?{topic}:{}),...(era?{era}:{}),...(hard?{hard}:{})})
- if(over)return <section className="game-panel" data-testid="trivia-result"><p>{copy.report}</p><h2>{copy.complete}</h2><p>{copy.correct}: {session.correct}/{session.index} · {copy.answered}: {session.index}/{questions.length}</p><p>{copy.score}: {session.score} · {copy.combo}: {session.bestCombo}</p><p>{copy.localOnly}</p><Link className="game-button" href={`?${replay}`}>{copy.replay}</Link><Link className="game-button" href={`/clubs/${club}/archive?lang=${locale}`}>{copy['gate.archive']}</Link></section>
+ if(over)return <section className="game-panel" data-testid="trivia-result"><p>{copy.report}</p><h2>{copy.complete}</h2><p>{copy.correct}: {session.correct}/{session.index} · {copy.answered}: {session.index}/{questions.length}</p><p>{copy.score}: {session.score} · {copy.combo}: {session.bestCombo}</p><p>{copy.localOnly}</p>{session.index>0&&<ShareComposer draft={triviaShare(club,{seed,cursor,correct:session.correct,answered:session.index,marks,score:session.score,bestCombo:session.bestCombo,topic,era,hard})}/>}<Link className="game-button" href={`?${replay}`}>{copy.replay}</Link><Link className="game-button" href={`/clubs/${club}/archive?lang=${locale}`}>{copy['gate.archive']}</Link></section>
  if(!q)return null
+ if(!started)return <section className="game-panel" data-testid="trivia-ready"><div className="game-hud"><span>{questions.length}</span><span>{copy.lives}: {session.lives}</span><span>{copy.seconds}: {secondsFor(0)}</span></div><button type="button" className="game-button min-h-tap" data-testid="trivia-start" autoFocus onClick={()=>{setSeconds(secondsFor(0));setStarted(true)}}>{copy.play}</button></section>
  const selected=(option:string)=>{if(['order','multi'].includes(q.type)){setPicked(p=>p.includes(option)?p.filter(s=>s!==option):p.length<(q.type==='multi'?q.pickCount:q.options.length)?[...p,option]:p)}else void submit(option)}
  const label=(value:string)=>q.type==='tf'?(value==='true'?copy.true:copy.false):value
  const canConfirm=q.type==='multi'?picked.length===q.pickCount:q.type==='match'?picked.length===q.left?.length&&picked.every(Boolean)&&new Set(picked).size===picked.length:picked.length===q.options.length

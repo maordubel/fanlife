@@ -38,6 +38,27 @@ export type Look = {
   cap?: boolean | string
   vest?: string
   cane?: boolean
+  /** the figure: who this is, so the body is built for them (the town reads these; the block picture ignores them) */
+  sex?: 'm' | 'f'
+  age?: number
+  /** -1 thin · 0 average · 1 heavy */
+  build?: number
+  style?: 'short' | 'curly' | 'curlyLong' | 'long' | 'bun' | 'pony' | 'buzz' | 'bald' | 'slick' | 'spiky'
+  mustache?: boolean
+  beard?: boolean
+  stubble?: boolean
+  glasses?: boolean
+  sleeves?: 'long' | 'short'
+  /** an open jacket over the shirt (its colour) · `denimJacket` makes it denim */
+  jacket?: string
+  denimJacket?: boolean
+  cardigan?: string
+  /** a zipped track top with two stripes, in the club's colour unless `trackCol` says otherwise */
+  track?: boolean
+  trackCol?: string
+  denim?: boolean
+  skirt?: string
+  apron?: string
   anim?: 'idle' | 'cheer'
 }
 

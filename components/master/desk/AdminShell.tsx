@@ -29,7 +29,7 @@ const ICON:Record<string,ReactNode>={
 const Icon=({k}:{k:string})=><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden="true">{ICON[k]}</svg>
 
 export function AdminShell({section,club,clubName,owner,children}:{section:Section;club:string|null;clubName:string|null;owner:boolean;children:ReactNode}){
- const keep=(s:string)=>s==='clubs'||s==='data'?{club:club||undefined}:{}
+ const keep=(s:string)=>s==='clubs'||s==='data'||s==='audience'?{club:club||undefined}:{}
  return <div className="fl mag desk" lang="en" dir="ltr">
   <a className="desk-skip" href="#desk-main">Skip to the desk</a>
   <header className="desk-top">
