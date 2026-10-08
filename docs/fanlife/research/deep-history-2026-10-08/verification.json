@@ -1,0 +1,16 @@
+{
+  "all_exported_json_parse": true,
+  "all_player_records_have_sources": true,
+  "all_player_records_unapproved": true,
+  "player_source_record_count": true,
+  "aek_season_match_count_consistency": true,
+  "celtic_major_totals": true,
+  "celtic_minor_duplicate_removed": true,
+  "pauli_nft_names_and_dates_valid": true,
+  "explorer_payload_count": true,
+  "zip_crc_passed": true,
+  "private_research_caches_excluded": true,
+  "zip_file_count": 51,
+  "celtic_key_matches_with_fact_lines": 87,
+  "celtic_index_link_conflicts": 84
+}

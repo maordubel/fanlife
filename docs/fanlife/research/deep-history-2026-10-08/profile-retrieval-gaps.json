@@ -1,0 +1,4444 @@
+[
+  {
+    "club": "celtic",
+    "ref": "turn14view0",
+    "link": 48,
+    "indexName": "Tierney, Kieran",
+    "indexContext": "Defender – 2015-19, 2025-Present",
+    "letter": "T"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn6view2",
+    "link": 56,
+    "indexName": "Juninho",
+    "indexContext": "Midfielder – 2004-05",
+    "letter": "J"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 256,
+    "indexName": "Murphy, Frank",
+    "indexContext": "Forward – 1933-45",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 257,
+    "indexName": "Murphy, James B",
+    "indexContext": "Defender – 1920-23",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 258,
+    "indexName": "Murphy, James F",
+    "indexContext": "Defender – 1921-24",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 259,
+    "indexName": "Murray, Dane",
+    "indexContext": "Defender – 2021-Present",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 260,
+    "indexName": "Murray, Michael",
+    "indexContext": "Forward – 1890, 1892",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 261,
+    "indexName": "Murray, Patrick",
+    "indexContext": "Forward – 1902-03",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 262,
+    "indexName": "Murray, Philip",
+    "indexContext": "Defender – 1888",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 263,
+    "indexName": "Murray, Steve",
+    "indexContext": "Midfielder – 1973-76",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 264,
+    "indexName": "Musonda, Charly",
+    "indexContext": "Midfielder – 2018",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn7view1",
+    "link": 265,
+    "indexName": "Mvuka, Joel",
+    "indexContext": "Forward – 2026",
+    "letter": "M"
+  },
+  {
+    "club": "celtic",
+    "ref": "turn17view1",
+    "link": 32,
+    "indexName": "O’Brien, John",
+    "indexContext": "Goalkeeper – 1895",
+    "letter": "O"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 11,
+    "indexName": "Benjamin Adrion",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "31.03.1981"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 22,
+    "indexName": "Romeo Aigbekaen",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "22.06.2004"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 28,
+    "indexName": "Sami Allagui",
+    "positionCode": "ST",
+    "nationality": "Tunesien",
+    "birthSource": "28.05.1986"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 35,
+    "indexName": "Etienne Amenyido",
+    "positionCode": "ST",
+    "nationality": "Togo",
+    "birthSource": "01.03.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 59,
+    "indexName": "Ralf Becker",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "26.09.1970"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 60,
+    "indexName": "Jakub Bednarczyk",
+    "positionCode": "AB",
+    "nationality": "Polen",
+    "birthSource": "02.01.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 79,
+    "indexName": "Michael Bochtler",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "15.10.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 93,
+    "indexName": "Mourad Bounoua",
+    "positionCode": "MF",
+    "nationality": "Frankreich",
+    "birthSource": "30.07.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 111,
+    "indexName": "Christopher Buchtmann",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "25.04.1992"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 125,
+    "indexName": "Kyoung-rok Choi",
+    "positionCode": "MF",
+    "nationality": "Südkorea",
+    "birthSource": "15.03.1995"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 127,
+    "indexName": "Chris",
+    "positionCode": "AB",
+    "nationality": "Brasilien",
+    "birthSource": "25.08.1978"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 130,
+    "indexName": "Christian Conteh",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "27.08.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 142,
+    "indexName": "Dennis Daube",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "11.07.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 146,
+    "indexName": "Dietmar Demuth",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "14.01.1955"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 147,
+    "indexName": "Denker",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 148,
+    "indexName": "Dimitrios Diamantakos",
+    "positionCode": "ST",
+    "nationality": "Griechenland",
+    "birthSource": "05.03.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 153,
+    "indexName": "Kai Dittmer",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "31.10.1974"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 159,
+    "indexName": "Marvin Ducksch",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "07.03.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 175,
+    "indexName": "Uwe Eikmeier",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "17.07.1948"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 176,
+    "indexName": "Émerson",
+    "positionCode": "ST",
+    "nationality": "Brasilien",
+    "birthSource": "28.07.1973"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 185,
+    "indexName": "Heinz Feldmann",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "25.08.1927"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 189,
+    "indexName": "Petar Filipović",
+    "positionCode": "MF",
+    "nationality": "Kroatien",
+    "birthSource": "14.09.1990"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn19view0",
+    "link": 192,
+    "indexName": "Egon Flad",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "05.03.1964"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn20view0",
+    "link": 215,
+    "indexName": "Mike Göbel",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "30.01.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn20view0",
+    "link": 217,
+    "indexName": "Akaki Gogia",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "18.01.1992"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn20view0",
+    "link": 226,
+    "indexName": "Michael Gregoritsch",
+    "positionCode": "ST",
+    "nationality": "Österreich",
+    "birthSource": "18.04.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn20view0",
+    "link": 229,
+    "indexName": "Jörn Großkopf",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "29.08.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 240,
+    "indexName": "Viktor Gyökeres",
+    "positionCode": "ST",
+    "nationality": "Schweden",
+    "birthSource": "04.06.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 244,
+    "indexName": "Mathias Hain",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "31.12.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 245,
+    "indexName": "Marcel Halstenberg",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "27.09.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 253,
+    "indexName": "Marcel Hartel",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "19.01.1996"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 256,
+    "indexName": "Vegar Hedenstad",
+    "positionCode": "AB",
+    "nationality": "Norwegen",
+    "birthSource": "26.06.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 257,
+    "indexName": "Philipp Heerwagen",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "13.04.1983"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 258,
+    "indexName": "Kurt Hehl",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "18.04.1942"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 259,
+    "indexName": "Werner Heitkamp",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "03.08.1930"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 260,
+    "indexName": "Alfons Heitmann",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "18.08.1926"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 261,
+    "indexName": "Gummi Heitmann",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "07.07.1938"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 262,
+    "indexName": "Oliver Held",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "10.09.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 263,
+    "indexName": "Heinz Hempel",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "09.04.1918 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 264,
+    "indexName": "Michael Hempen",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "30.08.1974"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 265,
+    "indexName": "Rouwen Hennings",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "28.08.1987"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 266,
+    "indexName": "Simon Henzler",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "01.12.1976"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 267,
+    "indexName": "Deniz Herber",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "05.03.1992"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 268,
+    "indexName": "Hesse",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 269,
+    "indexName": "Holger Hieronymus",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "22.02.1959"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 270,
+    "indexName": "Robin Himmelmann",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "05.02.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 271,
+    "indexName": "Thomas Hinz",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "06.02.1964"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 272,
+    "indexName": "Mathias Hinzmann",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "02.01.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 273,
+    "indexName": "Hartmut Hischer",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "09.12.1947"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 274,
+    "indexName": "Ari Hjelm",
+    "positionCode": "ST",
+    "nationality": "Finnland",
+    "birthSource": "24.02.1962"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 276,
+    "indexName": "Rolf Höfert",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "08.02.1949"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 277,
+    "indexName": "Günter Hoffmann",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "24.03.1942"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 278,
+    "indexName": "Niklas Hoffmann",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "09.04.1997"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 279,
+    "indexName": "Christian Hofmeister",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "28.10.1960"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 280,
+    "indexName": "Junior Hoilett",
+    "positionCode": "MF",
+    "nationality": "Kanada",
+    "birthSource": "05.06.1990"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 281,
+    "indexName": "Bernd Hollerbach",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "08.12.1969"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 282,
+    "indexName": "Achim Hollerieth",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "24.09.1973"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 283,
+    "indexName": "Justin Hoogma",
+    "positionCode": "AB",
+    "nationality": "Niederlande",
+    "birthSource": "11.06.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 285,
+    "indexName": "Marc Hornschuh",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "02.03.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 286,
+    "indexName": "Andréas Hountondji",
+    "positionCode": "ST",
+    "nationality": "Benin",
+    "birthSource": "11.07.2002"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 287,
+    "indexName": "Branimir Hrgota",
+    "positionCode": "MF",
+    "nationality": "Schweden",
+    "birthSource": "12.01.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 288,
+    "indexName": "Axel Huberth",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "18.06.1936"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 289,
+    "indexName": "Willem Hupkes",
+    "positionCode": "MF",
+    "nationality": "Niederlande",
+    "birthSource": "19.10.1979"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 290,
+    "indexName": "Alfred Hußner",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "13.05.1950"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 291,
+    "indexName": "Wolfgang Hustig",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "01.08.1950"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 292,
+    "indexName": "Uğur İnceman",
+    "positionCode": "MF",
+    "nationality": "Türkei",
+    "birthSource": "25.05.1981"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 293,
+    "indexName": "Volker Ippig",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "28.01.1963"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 294,
+    "indexName": "Jackson Irvine",
+    "positionCode": "MF",
+    "nationality": "Australien",
+    "birthSource": "07.03.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 296,
+    "indexName": "Ricky Jade-Jones",
+    "positionCode": "ST",
+    "nationality": "England",
+    "birthSource": "08.11.2002"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 297,
+    "indexName": "Helmut Jahn",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "22.10.1917 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 298,
+    "indexName": "Rony Jansson",
+    "positionCode": "AB",
+    "nationality": "Finnland",
+    "birthSource": "10.01.2004"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 299,
+    "indexName": "Petri Järvinen",
+    "positionCode": "ST",
+    "nationality": "Finnland",
+    "birthSource": "09.05.1965"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 300,
+    "indexName": "Kevin Jendrzej",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "27.04.2005"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 301,
+    "indexName": "Morten-Fibak Jensen",
+    "positionCode": "MF",
+    "nationality": "Dänemark",
+    "birthSource": "13.07.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 302,
+    "indexName": "Andreas Jeschke",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "06.09.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 303,
+    "indexName": "Niklas Jessen",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "04.09.2003"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 304,
+    "indexName": "Wolfgang John",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "14.01.1945"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 305,
+    "indexName": "Günter Joost",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "26.10.1929"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 306,
+    "indexName": "Ian Joy",
+    "positionCode": "AB",
+    "nationality": "USA",
+    "birthSource": "14.07.1981"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 307,
+    "indexName": "Martijn Kaars",
+    "positionCode": "ST",
+    "nationality": "Niederlande",
+    "birthSource": "05.03.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 308,
+    "indexName": "Wissou Kaba",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "31.05.2008"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 309,
+    "indexName": "Deniz Kacan",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "31.05.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 310,
+    "indexName": "Jan-Philipp Kalla",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "06.08.1986"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 311,
+    "indexName": "Ulrich Kallius",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "04.10.1945"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 312,
+    "indexName": "Wolfgang Kampf",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "06.05.1949"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 313,
+    "indexName": "Cem Karaca",
+    "positionCode": "MF",
+    "nationality": "Türkei",
+    "birthSource": "08.05.1976"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 314,
+    "indexName": "Steffen Karl",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "03.02.1970"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 315,
+    "indexName": "Heinz Kaster",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "23.02.1929"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 316,
+    "indexName": "Dieter Kawohl",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "10.01.1958"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 317,
+    "indexName": "Joël Keller",
+    "positionCode": "AB",
+    "nationality": "Schweiz",
+    "birthSource": "06.03.1995"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 319,
+    "indexName": "Aljoscha Kemlein",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "02.08.2004"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 320,
+    "indexName": "Thomas Kessler",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "20.01.1986"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 321,
+    "indexName": "Jochen Kientz",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "17.09.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 322,
+    "indexName": "Peter Kilian",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "23.04.1957"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 323,
+    "indexName": "Florian Kirschke",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "24.05.1992"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 324,
+    "indexName": "Ivan Klasnić",
+    "positionCode": "ST",
+    "nationality": "Kroatien",
+    "birthSource": "29.01.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 325,
+    "indexName": "Fred Klaus",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "27.02.1967"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 326,
+    "indexName": "Michael Klauß",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "15.09.1970"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 327,
+    "indexName": "Samuel Klein",
+    "positionCode": "MF",
+    "nationality": "Australien",
+    "birthSource": "15.03.2004"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn21view0",
+    "link": 328,
+    "indexName": "Peter Knäbel",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "02.10.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 329,
+    "indexName": "Uwe Knodel",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "28.07.1955"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 330,
+    "indexName": "Ivo Knoflíček",
+    "positionCode": "ST",
+    "nationality": "Tschechien",
+    "birthSource": "23.02.1962"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 331,
+    "indexName": "Marvin Knoll",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "05.12.1990"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 332,
+    "indexName": "Hans Knubbe",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "31.08.1938"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 333,
+    "indexName": "Julian Koch",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "11.11.1990"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 334,
+    "indexName": "Reenald Koch",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "19.12.1959"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 335,
+    "indexName": "Ján Kocian",
+    "positionCode": "AB",
+    "nationality": "Slowakei",
+    "birthSource": "13.03.1958"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 337,
+    "indexName": "Reinhard Kock",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "04.09.1958"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 338,
+    "indexName": "Brian Koglin",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "07.01.1997"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 339,
+    "indexName": "Klaus Kokoska",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "27.05.1941"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 340,
+    "indexName": "Dubravko Kolinger",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "29.11.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 341,
+    "indexName": "Toralf Konetzke",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "10.12.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 342,
+    "indexName": "Heinz Köpping",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 343,
+    "indexName": "Siegfried Köstler",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "15.12.1950"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 344,
+    "indexName": "Dema Kovalenko",
+    "positionCode": "MF",
+    "nationality": "USA",
+    "birthSource": "28.08.1977"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 345,
+    "indexName": "Hans-Jürgen Kowalkowski",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "27.02.1922"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 346,
+    "indexName": "Kurt Köwitz",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "26.01.1912 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 347,
+    "indexName": "Thorsten Koy",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "20.10.1964"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 348,
+    "indexName": "Jupp Krafczyk",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "29.09.1934"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 349,
+    "indexName": "Rudolf Krčil",
+    "positionCode": "MF",
+    "nationality": "Tschechien",
+    "birthSource": "05.06.1906 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 350,
+    "indexName": "Florian Kringe",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "18.08.1982"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 351,
+    "indexName": "Wolfgang Krontal",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "20.03.1947"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 352,
+    "indexName": "Walter Krüger",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "01.11.1937"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 353,
+    "indexName": "Werner Kruppa",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "26.10.1927 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 354,
+    "indexName": "Max Kruse",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "19.03.1988"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 355,
+    "indexName": "Heinz Kubbe",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "13.07.1932"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 356,
+    "indexName": "Lothar Kuch",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "10.09.1934"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 357,
+    "indexName": "Herbert Kühl",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "03.06.1932 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 358,
+    "indexName": "Laurynas Kulikas",
+    "positionCode": "ST",
+    "nationality": "Russland",
+    "birthSource": "13.04.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 360,
+    "indexName": "Wolfgang Kulka",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "24.03.1955"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 361,
+    "indexName": "Tobias Kurbjuweit",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "30.12.1982"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 362,
+    "indexName": "Okan Kurt",
+    "positionCode": "MF",
+    "nationality": "Türkei",
+    "birthSource": "11.01.1995"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 363,
+    "indexName": "Ahmet Kuru",
+    "positionCode": "ST",
+    "nationality": "Türkei",
+    "birthSource": "23.04.1982"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 364,
+    "indexName": "Mert Kuyucu",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "11.05.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 365,
+    "indexName": "Daniel Kyereh",
+    "positionCode": "MF",
+    "nationality": "Ghana",
+    "birthSource": "08.03.1996"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 367,
+    "indexName": "Axel Lange",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "29.09.1943"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 368,
+    "indexName": "Clemens Lange",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "23.04.1986"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 369,
+    "indexName": "Kevin Lankford",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "16.11.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 370,
+    "indexName": "Benno Larsen",
+    "positionCode": "TW",
+    "nationality": "Dänemark",
+    "birthSource": "30.09.1949"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 371,
+    "indexName": "Erwin Lau",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 372,
+    "indexName": "James Lawrence",
+    "positionCode": "AB",
+    "nationality": "Wales",
+    "birthSource": "22.08.1992"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 374,
+    "indexName": "Florian Lechner",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "03.03.1981"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 375,
+    "indexName": "Heinz Lehmann",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "15.07.1921 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 376,
+    "indexName": "Matthias Lehmann",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "28.05.1983"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 377,
+    "indexName": "Leonardo Manzi",
+    "positionCode": "ST",
+    "nationality": "Brasilien",
+    "birthSource": "28.04.1969"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 378,
+    "indexName": "Heinz Lichtl",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "10.10.1931 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 379,
+    "indexName": "Herbert Liedtke",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "18.10.1950 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 380,
+    "indexName": "Karl-Heinz Liese",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "26.10.1923"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 381,
+    "indexName": "Franz Linken",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "13.07.1912 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 382,
+    "indexName": "Maurice Litka",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "02.01.1996"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 383,
+    "indexName": "Reinhard Löffler",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "22.02.1942"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 384,
+    "indexName": "Michael Lombard",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "24.01.1941"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 385,
+    "indexName": "Jörg Loß",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "26.07.1940"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 386,
+    "indexName": "Markus Lotter",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "28.09.1970"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 387,
+    "indexName": "Ronald Lotz",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "21.09.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 388,
+    "indexName": "Aurel Loubongo-M'Boungou",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "19.06.2001"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 389,
+    "indexName": "Alexander Ludwig",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "31.01.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 390,
+    "indexName": "Felix Luz",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "18.01.1982"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 391,
+    "indexName": "Fritz Machate",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "16.03.1916 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 392,
+    "indexName": "Uwe Mackensen",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "12.08.1955 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 393,
+    "indexName": "Sebastian Maier",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "18.09.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 394,
+    "indexName": "Simon Makienok",
+    "positionCode": "ST",
+    "nationality": "Dänemark",
+    "birthSource": "21.11.1990"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 395,
+    "indexName": "Siegmund Malek",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "07.11.1955"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 396,
+    "indexName": "Manfred Mannebach",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "14.07.1954 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 397,
+    "indexName": "Alireza Mansourian",
+    "positionCode": "MF",
+    "nationality": "Iran",
+    "birthSource": "02.12.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 399,
+    "indexName": "Marcão",
+    "positionCode": "ST",
+    "nationality": "Brasilien",
+    "birthSource": "17.04.1973"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 400,
+    "indexName": "Marcus Marin",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "13.12.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 401,
+    "indexName": "Omar Marmoush",
+    "positionCode": "ST",
+    "nationality": "Ägypten",
+    "birthSource": "07.02.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 403,
+    "indexName": "Siegmund Marsollek",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "13.12.1956"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 404,
+    "indexName": "André Martens",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "08.01.1964"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 405,
+    "indexName": "Michael Mason",
+    "positionCode": "ST",
+    "nationality": "USA",
+    "birthSource": "28.06.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 406,
+    "indexName": "Igor Matanović",
+    "positionCode": "ST",
+    "nationality": "Kroatien",
+    "birthSource": "31.03.2003"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 407,
+    "indexName": "Franz Mathieu",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "23.12.1952"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 408,
+    "indexName": "Marcus Mathisen",
+    "positionCode": "AB",
+    "nationality": "Dänemark",
+    "birthSource": "27.02.1996"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 409,
+    "indexName": "Jens Matthies",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "29.06.1977"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 410,
+    "indexName": "Maurides",
+    "positionCode": "ST",
+    "nationality": "Brasilien",
+    "birthSource": "10.03.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 411,
+    "indexName": "Artur Maxhuni",
+    "positionCode": "ST",
+    "nationality": "Albanien",
+    "birthSource": "27.10.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 412,
+    "indexName": "Andreas Mayer",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "13.09.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 413,
+    "indexName": "Michél Mazingu-Dinzey",
+    "positionCode": "MF",
+    "nationality": "DR Kongo",
+    "birthSource": "15.10.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 415,
+    "indexName": "Jakov Medić",
+    "positionCode": "AB",
+    "nationality": "Kroatien",
+    "birthSource": "07.09.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 416,
+    "indexName": "Thomas Meggle",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "22.02.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 417,
+    "indexName": "Alexander Meier",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "17.01.1983"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 418,
+    "indexName": "Manfred Meier",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "07.09.1951"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 419,
+    "indexName": "Steffen Menze",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "28.01.1969"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 420,
+    "indexName": "Connor Metcalfe",
+    "positionCode": "MF",
+    "nationality": "Australien",
+    "birthSource": "05.11.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 421,
+    "indexName": "Karol Mets",
+    "positionCode": "AB",
+    "nationality": "Estland",
+    "birthSource": "16.05.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 423,
+    "indexName": "Hendrik Meyer",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "05.08.1970"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 424,
+    "indexName": "Hermann Michael",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "23.03.1920"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 425,
+    "indexName": "Torsten Miethe",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "15.06.1977"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 426,
+    "indexName": "Miguel Pereira",
+    "positionCode": "ST",
+    "nationality": "Angola",
+    "birthSource": "23.08.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 428,
+    "indexName": "Stjepan Milardović",
+    "positionCode": "ST",
+    "nationality": "Serbien",
+    "birthSource": "17.11.1953"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 429,
+    "indexName": "Marinko Miletic",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "08.10.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 430,
+    "indexName": "Karl Miller",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "02.10.1913 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 431,
+    "indexName": "Dimitar Mitov",
+    "positionCode": "TW",
+    "nationality": "Bulgarien",
+    "birthSource": "22.01.1997"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn22view0",
+    "link": 433,
+    "indexName": "Ryo Miyaichi",
+    "positionCode": "ST",
+    "nationality": "Japan",
+    "birthSource": "14.12.1992"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 434,
+    "indexName": "Florian Mohr",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "25.08.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 435,
+    "indexName": "Patrick Mölzl",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "28.12.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 436,
+    "indexName": "Fabio Morena",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "19.03.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 437,
+    "indexName": "Mats Møller Dæhli",
+    "positionCode": "MF",
+    "nationality": "Norwegen",
+    "birthSource": "02.03.1995"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 438,
+    "indexName": "Heinz Müller",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "30.05.1978"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 439,
+    "indexName": "Korbinian Müller",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "06.02.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 440,
+    "indexName": "René Müller",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "11.02.1959"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 441,
+    "indexName": "Harald Münster",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "25.10.1947"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 442,
+    "indexName": "Jakob Münzner",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "14.03.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 443,
+    "indexName": "Audenzio Musci",
+    "positionCode": "ST",
+    "nationality": "Italien",
+    "birthSource": "09.03.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 444,
+    "indexName": "Lazar Mutapdzija",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "29.12.1951 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 445,
+    "indexName": "Babacar N'Diaye",
+    "positionCode": "ST",
+    "nationality": "Senegal",
+    "birthSource": "12.12.1973"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 447,
+    "indexName": "Werner Nagel",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "21.11.1928"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 448,
+    "indexName": "Deniz Naki",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "09.07.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 449,
+    "indexName": "Nascimento",
+    "positionCode": "AB",
+    "nationality": "Brasilien",
+    "birthSource": "14.03.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 450,
+    "indexName": "Bernd Nehrig",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "28.09.1986"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 451,
+    "indexName": "David Nemeth",
+    "positionCode": "AB",
+    "nationality": "Österreich",
+    "birthSource": "18.03.2001"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 452,
+    "indexName": "Carsten Nemitz",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "11.03.1963"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 453,
+    "indexName": "Richard Neudecker",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "29.10.1996"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 454,
+    "indexName": "Horst Neumann",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "05.11.1952"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 455,
+    "indexName": "Youssoupha Niang",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "25.03.2006"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 456,
+    "indexName": "Werner Nickel",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "11.08.1951"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 457,
+    "indexName": "Marc Nielsen",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "10.08.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 458,
+    "indexName": "Robert Nikolic",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "01.08.1968"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 459,
+    "indexName": "Udo Nix",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "06.07.1941 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 460,
+    "indexName": "Peter Nogly",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "14.01.1947 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 461,
+    "indexName": "Karl-Heinz Noldt",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "01.10.1952"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 462,
+    "indexName": "Werner Noormann",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "24.12.1934"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 463,
+    "indexName": "Christopher Nöthe",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "03.01.1988"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 464,
+    "indexName": "Henry Nwosu",
+    "positionCode": "ST",
+    "nationality": "Nigeria",
+    "birthSource": "14.02.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 465,
+    "indexName": "Bastian Oczipka",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "12.01.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 466,
+    "indexName": "Ofosuhene Oduro-Opuni",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "10.10.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 467,
+    "indexName": "Eric Oelschlägel",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "20.09.1995"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 468,
+    "indexName": "Adolphus Ofodile",
+    "positionCode": "ST",
+    "nationality": "Nigeria",
+    "birthSource": "15.12.1979"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 469,
+    "indexName": "Sebastian Ohlsson",
+    "positionCode": "AB",
+    "nationality": "Schweden",
+    "birthSource": "26.05.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 470,
+    "indexName": "Bernhard Olck",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "23.10.1962"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 471,
+    "indexName": "Thomas Oldenburg",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "25.08.1965"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 472,
+    "indexName": "Jerry Opoku-Karikari",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "23.07.1987"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 473,
+    "indexName": "Louis Oppie",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "17.05.2002"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 474,
+    "indexName": "Peter Osterhoff",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "25.08.1937"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 475,
+    "indexName": "Walter Oswald",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "08.10.1955"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 476,
+    "indexName": "Klaus Ottens",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "04.01.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 477,
+    "indexName": "David Otto",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "03.03.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 478,
+    "indexName": "Kazuo Ozaki",
+    "positionCode": "ST",
+    "nationality": "Japan",
+    "birthSource": "07.03.1960"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 479,
+    "indexName": "Leo Østigård",
+    "positionCode": "AB",
+    "nationality": "Norwegen",
+    "birthSource": "28.11.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 480,
+    "indexName": "Leart Paçarada",
+    "positionCode": "AB",
+    "nationality": "Kosovo",
+    "birthSource": "08.10.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 481,
+    "indexName": "Noah Palapies",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "31.08.2007"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 482,
+    "indexName": "Robert Palikuca",
+    "positionCode": "AB",
+    "nationality": "Kroatien",
+    "birthSource": "24.05.1978"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 483,
+    "indexName": "Karl-Heinz Pape",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "05.03.1941"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 484,
+    "indexName": "Yi-young Park",
+    "positionCode": "AB",
+    "nationality": "Südkorea",
+    "birthSource": "29.06.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 485,
+    "indexName": "Nico Patschinski",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "08.11.1976"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 486,
+    "indexName": "Christopher Pätzold",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 487,
+    "indexName": "Frank Pätzold",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "09.04.1953"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 488,
+    "indexName": "Christian Paulick",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "29.03.1967"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 489,
+    "indexName": "Joachim Pawlik",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "15.05.1965"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 490,
+    "indexName": "Tore Pedersen",
+    "positionCode": "AB",
+    "nationality": "Norwegen",
+    "birthSource": "29.09.1969"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 491,
+    "indexName": "Jhonny Peitzmeier",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "04.11.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 492,
+    "indexName": "Matt Penney",
+    "positionCode": "AB",
+    "nationality": "England",
+    "birthSource": "11.02.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 493,
+    "indexName": "Mathias Pereira Lage",
+    "positionCode": "ST",
+    "nationality": "Portugal",
+    "birthSource": "30.11.1996"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 495,
+    "indexName": "Heinz Petersen",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "28.10.1925"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 496,
+    "indexName": "Johnny Petersen",
+    "positionCode": "ST",
+    "nationality": "Dänemark",
+    "birthSource": "27.11.1947"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 497,
+    "indexName": "Tim Petersen",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "03.03.1986"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 498,
+    "indexName": "Andrew Pfennig",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "01.01.1962"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 499,
+    "indexName": "Joachim Philipkowski",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "26.02.1961"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 500,
+    "indexName": "Fafà Picault",
+    "positionCode": "ST",
+    "nationality": "Haiti",
+    "birthSource": "23.02.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 502,
+    "indexName": "Nils Pichinot",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "29.08.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 503,
+    "indexName": "Reinhold Pilz",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "27.10.1952"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 504,
+    "indexName": "Nikolay Pisarev",
+    "positionCode": "ST",
+    "nationality": "Russland",
+    "birthSource": "23.11.1968"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 505,
+    "indexName": "Benedikt Pliquett",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "20.12.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 506,
+    "indexName": "Werner Pokropp",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "13.04.1941"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 507,
+    "indexName": "Andrey Polunin",
+    "positionCode": "MF",
+    "nationality": "Ukraine",
+    "birthSource": "05.03.1971 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 509,
+    "indexName": "Ingo Porges",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "22.08.1938"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 510,
+    "indexName": "Dirk Prediger",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "23.01.1987"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 511,
+    "indexName": "Roman Prokoph",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "06.08.1985"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 512,
+    "indexName": "Carsten Pröpper",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "20.10.1967"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 513,
+    "indexName": "Thomas Puschmann",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "28.03.1973"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 514,
+    "indexName": "Arkadiusz Pyrka",
+    "positionCode": "AB",
+    "nationality": "Polen",
+    "birthSource": "20.09.2002"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 515,
+    "indexName": "Catalin Racanel",
+    "positionCode": "MF",
+    "nationality": "Rumänien",
+    "birthSource": "23.09.1976"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 517,
+    "indexName": "Christian Rahn",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "15.06.1979"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 518,
+    "indexName": "Harald Ramm",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "20.09.1934"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 519,
+    "indexName": "Jens Rasiejewski",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "01.01.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 520,
+    "indexName": "Jacob Rasmussen",
+    "positionCode": "AB",
+    "nationality": "Dänemark",
+    "birthSource": "28.05.1997"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 521,
+    "indexName": "Mathias Rasmussen",
+    "positionCode": "MF",
+    "nationality": "Norwegen",
+    "birthSource": "25.11.1997"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 522,
+    "indexName": "Marcel Rath",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "03.09.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 523,
+    "indexName": "Tore Reginiussen",
+    "positionCode": "AB",
+    "nationality": "Norwegen",
+    "birthSource": "10.04.1986"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 524,
+    "indexName": "John Rehrbehn",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "14.01.1928"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 525,
+    "indexName": "Max Rehrbehn",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "07.06.1930"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 526,
+    "indexName": "Andreas Reinke",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "10.01.1969"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 527,
+    "indexName": "Timo Reus",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "02.05.1974"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn23view0",
+    "link": 528,
+    "indexName": "Reinhard Rietzke",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "19.12.1948"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 529,
+    "indexName": "Arvid Rinast",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "28.07.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 530,
+    "indexName": "Lars Ritzka",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "07.05.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 531,
+    "indexName": "Jannik Robatsch",
+    "positionCode": "AB",
+    "nationality": "Österreich",
+    "birthSource": "28.12.2004"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 532,
+    "indexName": "Franz Roggow",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "14.07.2002"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 533,
+    "indexName": "Jürgen Roloff",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "04.08.1958"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 534,
+    "indexName": "Horst Romes",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "05.09.1944 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 535,
+    "indexName": "Erich Roschkowski",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "27.02.1949"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 536,
+    "indexName": "Jan-Philipp Rose",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "16.12.1985"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 537,
+    "indexName": "Detlef Rosellen",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "31.10.1946"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 538,
+    "indexName": "Rolf-Peter Rosenfeld",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "18.04.1957"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 539,
+    "indexName": "Dennis Rosin",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "27.06.1996"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 540,
+    "indexName": "Lennart Rotetzki",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "25.11.1987"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 541,
+    "indexName": "Carsten Rothenbach",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "03.09.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 542,
+    "indexName": "Ulrich Rother",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "04.06.1937"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 543,
+    "indexName": "Kurt Röwe",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "08.11.1924"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 544,
+    "indexName": "Matthias Ruländer",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "16.08.1964"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 545,
+    "indexName": "Ryszard Rybak",
+    "positionCode": "MF",
+    "nationality": "Polen",
+    "birthSource": "27.01.1960"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 546,
+    "indexName": "Jürgen Rynio",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "01.04.1948"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 547,
+    "indexName": "Marc Rzatkowski",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "02.03.1990"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 548,
+    "indexName": "Elias Saad",
+    "positionCode": "ST",
+    "nationality": "Tunesien",
+    "birthSource": "27.12.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 549,
+    "indexName": "Haron Sabah",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "11.08.2004"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 550,
+    "indexName": "Daniel Sager",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "10.06.1979"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 551,
+    "indexName": "Mahir Sağlık",
+    "positionCode": "ST",
+    "nationality": "Türkei",
+    "birthSource": "18.01.1983"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 552,
+    "indexName": "Cenk Şahin",
+    "positionCode": "MF",
+    "nationality": "Türkei",
+    "birthSource": "22.09.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 553,
+    "indexName": "Markus Sailer",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "26.04.1968"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 554,
+    "indexName": "Morike Sako",
+    "positionCode": "ST",
+    "nationality": "Frankreich",
+    "birthSource": "17.11.1981"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 555,
+    "indexName": "Manolis Saliakas",
+    "positionCode": "AB",
+    "nationality": "Griechenland",
+    "birthSource": "12.09.1996"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 556,
+    "indexName": "Abdou Sall",
+    "positionCode": "AB",
+    "nationality": "Senegal",
+    "birthSource": "01.11.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 557,
+    "indexName": "James Sands",
+    "positionCode": "MF",
+    "nationality": "USA",
+    "birthSource": "06.07.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 558,
+    "indexName": "Yuriy Savichev",
+    "positionCode": "ST",
+    "nationality": "Russland",
+    "birthSource": "13.02.1965"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 559,
+    "indexName": "Sebastian Schachten",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "06.11.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 560,
+    "indexName": "Heinrich Schaffer",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "16.12.1917 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 561,
+    "indexName": "Jens Scharping",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "16.07.1974"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 562,
+    "indexName": "Daniel Scheinhardt",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "25.10.1970"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 563,
+    "indexName": "Tjark Scheller",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "12.01.2002"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 564,
+    "indexName": "Jörg Schelletter",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "07.02.1964"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 565,
+    "indexName": "Matthias Scherz",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "14.12.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 566,
+    "indexName": "Emil Schildt",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "02.09.1930"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 567,
+    "indexName": "Dieter Schiller",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "20.10.1950"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 568,
+    "indexName": "Niels Schilling",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "24.09.1962"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 569,
+    "indexName": "Kevin Schindler",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "21.05.1988"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 570,
+    "indexName": "Horst Schlagowski",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "23.01.1938"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 571,
+    "indexName": "Dieter Schlindwein",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "07.02.1961"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 572,
+    "indexName": "Klaus-Dieter Schmidt",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "14.12.1958"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 573,
+    "indexName": "Leon Schmidt",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "11.05.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 574,
+    "indexName": "Nick Schmidt",
+    "positionCode": "MF",
+    "nationality": "Japan",
+    "birthSource": "12.09.2007"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 575,
+    "indexName": "Marwin Schmitz",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "07.01.2007"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 576,
+    "indexName": "Jan-Marc Schneider",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "25.03.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 577,
+    "indexName": "René Schnitzler",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "14.04.1985"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 578,
+    "indexName": "Günter Schocht",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "07.09.1934"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 579,
+    "indexName": "Helmut Schön",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "15.09.1915 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 580,
+    "indexName": "Rudolf Schönbeck",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "03.08.1919 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 581,
+    "indexName": "Clemens Schoppenhauer",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "23.02.1992"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 582,
+    "indexName": "Fritz Schottmann",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "1947"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 583,
+    "indexName": "Reinhard Schröder",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "05.09.1946"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 584,
+    "indexName": "Günter Schruhl",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 585,
+    "indexName": "Helmut Schulte",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "14.09.1957"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 586,
+    "indexName": "Timo Schultz",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "26.08.1977"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 587,
+    "indexName": "Ulrich Schulz",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "11.11.1946 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 588,
+    "indexName": "Eric Schumacher",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "02.06.1962"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 589,
+    "indexName": "Oliver Schweißing",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "03.03.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 590,
+    "indexName": "Jörn Schwinkendorf",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "27.01.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 591,
+    "indexName": "Thomas Seeliger",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "20.09.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 592,
+    "indexName": "Ronny Seibt",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "10.07.2005"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 593,
+    "indexName": "Hans-Helmuth Sembritzki",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "12.05.1917"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 594,
+    "indexName": "Marvin Senger",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "06.01.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 595,
+    "indexName": "August Seyda",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "27.03.1920"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 596,
+    "indexName": "Khvicha Shubitidze",
+    "positionCode": "ST",
+    "nationality": "Georgien",
+    "birthSource": "31.08.1974"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 598,
+    "indexName": "Rocky Siberie",
+    "positionCode": "ST",
+    "nationality": "Curaçao",
+    "birthSource": "24.03.1982"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 600,
+    "indexName": "Kaliph Sidibe",
+    "positionCode": "MF",
+    "nationality": "Frankreich",
+    "birthSource": "25.03.1968"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 601,
+    "indexName": "Ralf Sievers",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "30.10.1961"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 602,
+    "indexName": "Danel Sinani",
+    "positionCode": "MF",
+    "nationality": "Luxemburg",
+    "birthSource": "05.04.1997"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 604,
+    "indexName": "Ömer Şişmanoğlu",
+    "positionCode": "ST",
+    "nationality": "Türkei",
+    "birthSource": "01.08.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 605,
+    "indexName": "Søren Skov",
+    "positionCode": "ST",
+    "nationality": "Dänemark",
+    "birthSource": "21.02.1954"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 606,
+    "indexName": "Petar Slišković",
+    "positionCode": "ST",
+    "nationality": "Kroatien",
+    "birthSource": "21.02.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 607,
+    "indexName": "Dennis Smarsch",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "14.01.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 608,
+    "indexName": "Eric Smith",
+    "positionCode": "AB",
+    "nationality": "Schweden",
+    "birthSource": "08.01.1997"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 609,
+    "indexName": "Femi Smith",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "02.08.1978"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 610,
+    "indexName": "Hugh Smith",
+    "positionCode": "MF",
+    "nationality": "Schottland",
+    "birthSource": "30.01.1958"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 611,
+    "indexName": "Lasse Sobiech",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "18.01.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 612,
+    "indexName": "Waldemar Sobota",
+    "positionCode": "MF",
+    "nationality": "Polen",
+    "birthSource": "19.05.1987"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 613,
+    "indexName": "Thomas Sobotzik",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "16.10.1974"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 614,
+    "indexName": "Otmar Sommerfeld",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "16.11.1929 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 615,
+    "indexName": "Łukasz Sosnowski",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "26.01.1987"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 616,
+    "indexName": "Simon Spari",
+    "positionCode": "TW",
+    "nationality": "Österreich",
+    "birthSource": "16.06.2002"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 617,
+    "indexName": "Werner Spreckelsen",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "19.05.1936"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 618,
+    "indexName": "Christian Springer",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "15.07.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 619,
+    "indexName": "Ole Springer",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "29.11.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 620,
+    "indexName": "Piotr Staczek",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "13.09.1978"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 621,
+    "indexName": "Oskar Stahmer",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 622,
+    "indexName": "Holger Stanislawski",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "26.09.1969"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 623,
+    "indexName": "Andrej Startsev",
+    "positionCode": "AB",
+    "nationality": "Kasachstan",
+    "birthSource": "07.06.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 625,
+    "indexName": "Emil Staugaard",
+    "positionCode": "AB",
+    "nationality": "Dänemark",
+    "birthSource": "20.09.2001"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 626,
+    "indexName": "Martin Stecker",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "06.10.1958"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 627,
+    "indexName": "Arno Steffenhagen",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "24.09.1949"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 628,
+    "indexName": "Mario Steinhauer",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "20.07.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 629,
+    "indexName": "Daniel Stendel",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "04.04.1974"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn24view0",
+    "link": 630,
+    "indexName": "Harald Stender",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "18.12.1924"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 631,
+    "indexName": "Waldemar Steubing",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "30.11.1959"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 632,
+    "indexName": "Dragan Stevanović",
+    "positionCode": "ST",
+    "nationality": "Serbien",
+    "birthSource": "16.08.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 633,
+    "indexName": "Finley Stevens",
+    "positionCode": "AB",
+    "nationality": "Wales",
+    "birthSource": "10.04.2003"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 634,
+    "indexName": "Kay Stisi",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "12.06.1971"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 635,
+    "indexName": "Dejan Stojanović",
+    "positionCode": "TW",
+    "nationality": "Österreich",
+    "birthSource": "19.07.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 636,
+    "indexName": "Rolf Stoltenberg",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "25.07.1935"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 637,
+    "indexName": "Uwe Stothfang",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "12.05.1937"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 638,
+    "indexName": "Michael Streich",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "17.05.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 639,
+    "indexName": "Michael Strunck",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "27.11.1954"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 640,
+    "indexName": "Stefan Studer",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "30.01.1964"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 641,
+    "indexName": "Dirk Stülcken",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "21.09.1941"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 642,
+    "indexName": "Rudolf Sturz",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "18.11.1952"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 643,
+    "indexName": "Richard Sukuta-Pasu",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "24.06.1990"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 644,
+    "indexName": "Johnny Sulentic",
+    "positionCode": "MF",
+    "nationality": "Kanada",
+    "birthSource": "24.12.1979"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 645,
+    "indexName": "Hans Sump",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "14.08.1925"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 646,
+    "indexName": "Karsten Surmann",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "05.10.1959"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 647,
+    "indexName": "Dariusz Szubert",
+    "positionCode": "MF",
+    "nationality": "Polen",
+    "birthSource": "31.10.1970"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 648,
+    "indexName": "Charles Takyi",
+    "positionCode": "MF",
+    "nationality": "Ghana",
+    "birthSource": "12.11.1984"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 649,
+    "indexName": "Ifet Taljevic",
+    "positionCode": "MF",
+    "nationality": "Serbien",
+    "birthSource": "12.06.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 650,
+    "indexName": "Borys Tashchy",
+    "positionCode": "ST",
+    "nationality": "Ukraine",
+    "birthSource": "26.07.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 651,
+    "indexName": "Tegge",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 652,
+    "indexName": "Willy Thiele",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "21.06.1914 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 653,
+    "indexName": "Sven Tholen",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "19.11.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 654,
+    "indexName": "Klaus Thomforde",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "01.12.1962"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 655,
+    "indexName": "Hans-Joachim Thoms",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "24.07.1938"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 656,
+    "indexName": "Markus Thorandt",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "01.04.1981"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 657,
+    "indexName": "Lennart Thy",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "25.02.1992"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 658,
+    "indexName": "Dennis Tornieporth",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "06.09.1982"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 659,
+    "indexName": "Torsten Traub",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "08.09.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 660,
+    "indexName": "Marek Trejgis",
+    "positionCode": "ST",
+    "nationality": "Polen",
+    "birthSource": "04.03.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 661,
+    "indexName": "Philipp Treu",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "03.12.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 662,
+    "indexName": "Filip Trojan",
+    "positionCode": "MF",
+    "nationality": "Tschechien",
+    "birthSource": "21.02.1983"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 663,
+    "indexName": "André Trulsen",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "28.05.1965"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 664,
+    "indexName": "Tom Trybull",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "09.03.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 665,
+    "indexName": "Philipp Tschauner",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "03.11.1985"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 666,
+    "indexName": "Jean Tsoumou-Madza",
+    "positionCode": "AB",
+    "nationality": "Kongo",
+    "birthSource": "31.01.1975"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 668,
+    "indexName": "Niels Tune-Hansen",
+    "positionCode": "MF",
+    "nationality": "Dänemark",
+    "birthSource": "19.01.1953 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 669,
+    "indexName": "Cosmin Uilacan",
+    "positionCode": "ST",
+    "nationality": "Rumänien",
+    "birthSource": "05.11.1980"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 670,
+    "indexName": "Klaus Ulbricht",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "14.09.1965"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 671,
+    "indexName": "Tjorben Uphoff",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "08.09.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 672,
+    "indexName": "Ahmet Usman",
+    "positionCode": "MF",
+    "nationality": "Türkei",
+    "birthSource": "29.10.1977"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 673,
+    "indexName": "Siebe Van Der Heyden",
+    "positionCode": "AB",
+    "nationality": "Belgien",
+    "birthSource": "30.05.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 675,
+    "indexName": "Nikola Vasilj",
+    "positionCode": "TW",
+    "nationality": "Bosnien-Herzegowina",
+    "birthSource": "02.12.1995"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 676,
+    "indexName": "Henk Veerman",
+    "positionCode": "ST",
+    "nationality": "Niederlande",
+    "birthSource": "26.02.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 677,
+    "indexName": "John Verhoek",
+    "positionCode": "ST",
+    "nationality": "Niederlande",
+    "birthSource": "25.03.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 678,
+    "indexName": "Thibaud Verlinden",
+    "positionCode": "ST",
+    "nationality": "Belgien",
+    "birthSource": "09.07.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 679,
+    "indexName": "Christian Viet",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "27.03.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 680,
+    "indexName": "Ben Voll",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "09.12.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 681,
+    "indexName": "Moritz Volz",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "21.01.1983"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 682,
+    "indexName": "Manfred Waack",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "08.11.1947"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 683,
+    "indexName": "Robert Wagner",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "14.07.2003"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 684,
+    "indexName": "Hauke Wahl",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "15.04.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 685,
+    "indexName": "Hans-Ulrich Weber",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "05.04.1929"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 686,
+    "indexName": "Heinz Weber",
+    "positionCode": "TW",
+    "nationality": "Österreich",
+    "birthSource": "05.12.1976"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 687,
+    "indexName": "Hugo Weber",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "06.12.2005"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 688,
+    "indexName": "Holger Wehlage",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "03.07.1976"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 689,
+    "indexName": "Carsten Wehlmann",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "27.06.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 690,
+    "indexName": "Hans Wehrmann",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "05.01.1928"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 691,
+    "indexName": "Jürgen Weidlandt",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "06.09.1940 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 692,
+    "indexName": "Benjamin Weigelt",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "04.09.1982"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 693,
+    "indexName": "Niclas Weiland",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "22.07.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 694,
+    "indexName": "Noah Weißhaupt",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "20.09.2001"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 695,
+    "indexName": "Wolfgang Wellnitz",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "22.02.1942"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 696,
+    "indexName": "Rüdiger Wenzel",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "03.06.1953"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 697,
+    "indexName": "Karl Werner",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "21.07.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 698,
+    "indexName": "Jan Wessel",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "24.06.1966"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 699,
+    "indexName": "Jannik Westphal",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "24.07.2004"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 700,
+    "indexName": "Jannes Wieckhoff",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "02.08.2000"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 701,
+    "indexName": "Gerd Wieczorkowski",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "24.07.1948"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 702,
+    "indexName": "Fritz Wilde",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "04.07.1920 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 703,
+    "indexName": "Wille",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 704,
+    "indexName": "Klaus Winkler",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "25.05.1949 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 705,
+    "indexName": "Bennet Winter",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "16.05.2004"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 706,
+    "indexName": "Uwe Witt",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "25.01.1939"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 707,
+    "indexName": "Gustav-Adolf Wöhler",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "27.03.1924"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 708,
+    "indexName": "Horst Wohlers",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "06.08.1949"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 709,
+    "indexName": "Wohlgemuth",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": ""
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 710,
+    "indexName": "Günter Woitas",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "26.01.1927"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 711,
+    "indexName": "Sebastian Wojcik",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "07.11.1978"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 712,
+    "indexName": "Peter Woldmann",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "02.03.1943 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 713,
+    "indexName": "Dirk Wolf",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "04.08.1972"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 714,
+    "indexName": "Frank Wolf",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "09.05.1968"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 715,
+    "indexName": "Kwasi Wriedt",
+    "positionCode": "ST",
+    "nationality": "Ghana",
+    "birthSource": "10.07.1994"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 716,
+    "indexName": "Harry Wunstorf",
+    "positionCode": "TW",
+    "nationality": "Deutschland",
+    "birthSource": "13.07.1927 †"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 717,
+    "indexName": "Pavlo Yanchuk",
+    "positionCode": "AB",
+    "nationality": "Ukraine",
+    "birthSource": "12.07.1986"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 718,
+    "indexName": "Julien Yanda",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "22.08.2007"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 719,
+    "indexName": "Chen Yang",
+    "positionCode": "ST",
+    "nationality": "China",
+    "birthSource": "17.01.1974"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 721,
+    "indexName": "Serhat Yapici",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "22.07.1988"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 722,
+    "indexName": "Rodrigo Zalazar",
+    "positionCode": "MF",
+    "nationality": "Uruguay",
+    "birthSource": "12.08.1999"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 724,
+    "indexName": "Carlos Zambrano",
+    "positionCode": "AB",
+    "nationality": "Peru",
+    "birthSource": "10.07.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 726,
+    "indexName": "Dirk Zander",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "13.05.1965"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 727,
+    "indexName": "Luca Zander",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "09.08.1995"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 728,
+    "indexName": "Ersin Zehir",
+    "positionCode": "MF",
+    "nationality": "Deutschland",
+    "birthSource": "15.01.1998"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 729,
+    "indexName": "Ermir Zekiri",
+    "positionCode": "ST",
+    "nationality": "Nordmazedonien",
+    "birthSource": "13.02.1989"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 731,
+    "indexName": "Philipp Ziereis",
+    "positionCode": "AB",
+    "nationality": "Deutschland",
+    "birthSource": "14.03.1993"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 732,
+    "indexName": "Peter Zimmermann",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "19.02.1922"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 733,
+    "indexName": "Hysen Zmijani",
+    "positionCode": "MF",
+    "nationality": "Albanien",
+    "birthSource": "29.04.1963"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn25view0",
+    "link": 734,
+    "indexName": "Simon Zoller",
+    "positionCode": "ST",
+    "nationality": "Deutschland",
+    "birthSource": "26.06.1991"
+  },
+  {
+    "club": "st-pauli",
+    "ref": "turn26view0",
+    "link": 735,
+    "indexName": "Gísli Þórðarson",
+    "positionCode": "MF",
+    "nationality": "Island",
+    "birthSource": "12.09.2004"
+  }
+]

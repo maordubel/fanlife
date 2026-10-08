@@ -1,0 +1,32 @@
+[
+  {
+    "club": "st-pauli",
+    "priority": "P0",
+    "task": "Recover the remaining 482 detailed profiles through alternative player and DFB sources; accessible professional datawrapper table currently lacks extractable data. Early pre-1932 names remain uncovered."
+  },
+  {
+    "club": "celtic",
+    "priority": "P0",
+    "task": "Resolve 13 remaining original profile targets, correct links, distinguish reserves/trials/first-team, audit spellings and all personal fields."
+  },
+  {
+    "club": "aek-athens",
+    "priority": "P0",
+    "task": "Resolve AEKpedia and AEKdata identity aliases; verify birth dates and official appearances; audit zero appearance and friendly-only entries."
+  },
+  {
+    "club": "all",
+    "priority": "P0",
+    "task": "Read every season fixture, lineup, substitution and historical event source. This package contains match indexes and selected detailed matches, not all match sheets."
+  },
+  {
+    "club": "all",
+    "priority": "P1",
+    "task": "Independently verify every trophy year, exact deciding-game date and qualification; separate reserves, youth, regional honours and awards."
+  },
+  {
+    "club": "all",
+    "priority": "P1",
+    "task": "Add presidents, manager spells, captains, stadium chronology, supporter culture and memorial biographies with independent citations and date precision."
+  }
+]

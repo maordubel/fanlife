@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "clubId": "aek-athens",
+  "shortName": "AEK ATHENS",
+  "colors": {
+    "secondary": "#151515",
+    "trim": "#F1EEE8"
+  },
+  "kit": {
+    "pattern": "solid",
+    "status": "review",
+    "note": "Yellow shirt, black trim. No kit source in the pack yet."
+  },
+  "gateNumbers": [
+    21,
+    22,
+    23
+  ],
+  "signage": {
+    "script": "el",
+    "kiosk": "ΠΕΡΙΠΤΕΡΟ",
+    "ticket": "ΕΙΣΙΤΗΡΙΑ",
+    "school": "ΣΧΟΛΕΙΟ",
+    "club": "ΣΥΛΛΟΓΟΣ",
+    "news": "ΕΙΔΗΣΕΙΣ",
+    "bus": "ΣΤΑΘΜΟΣ",
+    "ground": "ΓΗΠΕΔΟ",
+    "gate": "ΘΥΡΑ",
+    "stand": "ΚΕΡΚΙΔΑ",
+    "away": "ΦΙΛΟΞΕΝΟΥΜΕΝΟΙ",
+    "cafe": "ΚΑΦΕ",
+    "snack": "ΣΟΥΒΛΑΚΙ",
+    "since": "ΓΙΑ ΠΑΝΤΑ",
+    "shop": "ΠΑΝΤΟΠΩΛΕΙΟ",
+    "market": "ΑΓΟΡΑ"
+  },
+  "venue": null,
+  "crest": {
+    "mode": "monogram"
+  }
+}

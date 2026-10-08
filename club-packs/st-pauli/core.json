@@ -130,6 +130,14 @@
    "publisher": "MillernTon",
    "access": "available",
    "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "dh-f52d8e575bfd",
+   "title": "A benefit match against Bayern Munich saves the club's finances",
+   "url": "https://www.bundesliga.com/en/bundesliga/news/st-pauli-relationship-bayern-munich-opposites-saviour-shareholder-29616",
+   "publisher": "www.bundesliga.com",
+   "access": "available",
+   "checkedAt": "2026-10-08"
   }
  ],
  "archive": [
@@ -2256,12 +2264,14 @@
    "value": {
     "name": "2. Bundesliga",
     "seasons": [
+     "2023-24",
      "2023/24"
     ],
     "count": null
    },
    "sources": [
-    "src_c80f7aa706b4f2"
+    "src_c80f7aa706b4f2",
+    "dh-f52d8e575bfd"
    ],
    "confidence": 2,
    "status": "approved",

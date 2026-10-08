@@ -23,6 +23,7 @@ import zrinjskiMatches from '@/club-packs/zrinjski-mostar/matches.json'
 import zrinjskiAnchors from '@/club-packs/zrinjski-mostar/life/anchors.json'
 import olympiacosSkin from '@/club-packs/olympiacos/life/skin.json'
 import olympiacosCast from '@/club-packs/olympiacos/life/cast.json'
+import aekSkin from '@/club-packs/aek-athens/life/skin.json'
 import petahTikvaSkin from '@/club-packs/hapoel-petah-tikva/life/skin.json'
 import petahTikvaCast from '@/club-packs/hapoel-petah-tikva/life/cast.json'
 
@@ -30,6 +31,7 @@ export const LIFE_SKINS: Record<string, LifeSkinManifest> = {
   'hapoel-tel-aviv': hapoelSkin as LifeSkinManifest,
   'zrinjski-mostar': zrinjskiSkin as LifeSkinManifest,
   olympiacos: olympiacosSkin as LifeSkinManifest,
+  'aek-athens': aekSkin as LifeSkinManifest,
   'hapoel-petah-tikva': petahTikvaSkin as LifeSkinManifest,
 }
 

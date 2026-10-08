@@ -180,7 +180,7 @@ def convert_pao():
     # notable dated matches from pao.gr (club's own record): European, intercontinental/balkan, and fixtures against Olympiacos / AEK
     staged = json.load(open("research-staging/panathinaikos/matches.json"))
     skipped = collections.Counter(); core = json.load(open("club-packs/panathinaikos/core.json")); have = set()
-    for f in ("club-packs/panathinaikos/" + x for x in os.listdir("club-packs/panathinaikos") if x.endswith(".json")):
+    for f in ("club-packs/panathinaikos/" + x for x in os.listdir("club-packs/panathinaikos") if x.endswith(".json") and x != "wave-four-clubs-2026-10-08.json"):
         d = json.load(open(f))
         if isinstance(d, dict):
             for sec in ("matches", "archive"):
@@ -197,15 +197,15 @@ def convert_pao():
         if "Panathinaikos" not in (hh, aa): skipped["club not readable"] += 1; continue
         comp = COMP.get((m["competitionAsReported"] or "").strip().lower(), m["competitionAsReported"])
         opp = aa if hh == "Panathinaikos" else hh
-        if not (comp in EURO or opp in ("Olympiacos", "AEK Athens")): continue
+        notable = comp in EURO or opp in ("Olympiacos", "AEK Athens")  # owner 2026-10-08 20:30: all single-publisher pao.gr matches approved; timeline cards only for the notable ones
         if on in have or on in seen_days: skipped["day already covered"] += 1; continue
         seen_days.add(on)
         name = f"{hh} {sc['home']}-{sc['away']} {aa}"
         used.update(m["sourceIds"])
         wave["matches"].append(fact("pm-" + m["id"][-10:], {"name": name, "on": on, "competition": comp, "score": f"{sc['home']}-{sc['away']}", "venue": None, "scorers": [], "lineup": [], "bench": [], "sport": "football"}, m["sourceIds"], 2, notes="Club's own match record; score as displayed (shootouts and extra time are not separated in the source)."))
-        wave["archive"].append(fact("pa-" + m["id"][-10:], {"name": name, "on": on, "precision": "day", "year": int(on[:4]), "hint": (comp or "") + (" derby" if opp in ("Olympiacos", "AEK Athens") else ""), "sport": "football", "sensitive": False}, m["sourceIds"], 2, notes="Club's own match record."))
+        if notable: wave["archive"].append(fact("pa-" + m["id"][-10:], {"name": name, "on": on, "precision": "day", "year": int(on[:4]), "hint": (comp or "") + (" derby" if opp in ("Olympiacos", "AEK Athens") else ""), "sport": "football", "sensitive": False}, m["sourceIds"], 2, notes="Club's own match record."))
     wave["sources"] = sources_for(sorted(used))
-    print("PAO notable matches:", len(wave["matches"]), "skipped:", dict(skipped))
+    print("PAO matches:", len(wave["matches"]), "skipped:", dict(skipped))
     return wave
 
 def main():

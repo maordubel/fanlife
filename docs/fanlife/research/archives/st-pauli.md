@@ -1,13 +1,13 @@
 # st-pauli — archive index
 
-Pack files: core.json
+Pack files: core.json, wave-deep-history-2026-10-08.json
 
 | Section | Total | Approved | Review |
 |---|---|---|---|
-| players | 25 | 25 | 0 |
+| players | 256 | 256 | 0 |
 | matches | 60 | 60 | 0 |
-| archive | 2 | 1 | 1 |
-| trophies | 1 | 1 | 0 |
+| archive | 20 | 19 | 1 |
+| trophies | 6 | 6 | 0 |
 | kits | 2 | 2 | 0 |
 | rivals | 0 | 0 | 0 |
 | goals | 0 | 0 | 0 |
@@ -17,7 +17,7 @@ Pack files: core.json
 | culture | 4 | 4 | 0 |
 | competitions | 0 | 0 | 0 |
 | seasons | 3 | 3 | 0 |
-| sources | 16 | 14 | – |
+| sources | 268 | 266 | – |
 
 Collector (research-data, never promoted without identity + approval):
 
