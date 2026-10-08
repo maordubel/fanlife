@@ -11,7 +11,7 @@ export function RecordPanel({meetings,s,onOpen}:{meetings:WallMeeting[];s:Shared
  const rec=useMemo(()=>recordOf(meetings),[meetings])
  const {tally}=rec
  const peak=Math.max(1,...rec.decades.map(r=>r.w+r.d+r.l))
- const line=(label:string,m:WallMeeting|null)=>m&&<li key={label}><button type="button" className={css.rowBtn} onClick={e=>onOpen(m,e.currentTarget)} aria-label={`${label}: ${t('derby.call.truth',{home:m.home,hg:m.hg,ag:m.ag,away:m.away})}, ${dateText(m,locale,t)}. ${t('derby.rec.open')}`}>
+ const line=(label:string,m:WallMeeting|null)=>m&&<li key={label}><button type="button" className={`${css.rowBtn} min-h-tap`} onClick={e=>onOpen(m,e.currentTarget)} aria-label={`${label}: ${t('derby.call.truth',{home:m.home,hg:m.hg,ag:m.ag,away:m.away})}, ${dateText(m,locale,t)}. ${t('derby.rec.open')}`}>
   <span><small>{label}</small><b><bdi lang={contentLocale} dir="auto">{m.home}</bdi> {m.hg}–{m.ag} <bdi lang={contentLocale} dir="auto">{m.away}</bdi></b><small><bdi>{dateText(m,locale,t)}</bdi></small></span>
   <span className={css.pill} data-r={resultOf(m)??'U'} aria-hidden="true">{t(`derby.res.${resultOf(m)??'U'}`)}</span></button></li>
  // one meeting must not be listed four times: each fixture appears once, under the first label that names it

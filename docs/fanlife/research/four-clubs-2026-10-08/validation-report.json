@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-08",
+  "structuralChecksPassed": true,
+  "historicalTruthFullyVerified": false,
+  "productionSchemaTestPassed": false,
+  "productionSchemaTestReason": "research schema intentionally different; adapter and compiler execution not part of this deliverable",
+  "errors": [],
+  "checks": [
+    {
+      "club": "aek-athens",
+      "checks": [
+        "unique ids within each collection",
+        "source ids exist",
+        "row counts match coverage",
+        "no accidental approvals",
+        "ISO match dates valid"
+      ]
+    },
+    {
+      "club": "panathinaikos",
+      "checks": [
+        "unique ids within each collection",
+        "source ids exist",
+        "row counts match coverage",
+        "no accidental approvals",
+        "ISO match dates valid"
+      ]
+    },
+    {
+      "club": "st-pauli",
+      "checks": [
+        "unique ids within each collection",
+        "source ids exist",
+        "row counts match coverage",
+        "no accidental approvals",
+        "ISO match dates valid"
+      ]
+    },
+    {
+      "club": "celtic",
+      "checks": [
+        "unique ids within each collection",
+        "source ids exist",
+        "row counts match coverage",
+        "no accidental approvals",
+        "ISO match dates valid"
+      ]
+    }
+  ],
+  "paoGraph": {
+    "claims": 17300,
+    "evidence": 4222,
+    "missingClaimEvidence": 0,
+    "missingEvidenceSources": 0
+  },
+  "lineups": [
+    {
+      "id": "celtic_lineups_fe28006165d019",
+      "unresolvedStarterIdentities": 0,
+      "independentSourceAgreement": false
+    },
+    {
+      "id": "celtic_lineups_27d57370463e46",
+      "unresolvedStarterIdentities": 8,
+      "independentSourceAgreement": false
+    }
+  ],
+  "limits": [
+    "source files not re-downloaded independently for all old records",
+    "canonical aliases and historical completeness not fully audited",
+    "no production app changes or gate activation",
+    "no ratings or licensed media generated"
+  ]
+}

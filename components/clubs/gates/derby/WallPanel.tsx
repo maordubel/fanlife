@@ -30,6 +30,6 @@ export function WallPanel({meetings,s,onOpen}:{meetings:WallMeeting[];s:Shared;o
    <h2 className={css.decade}>{g.decade===null?t('derby.wall.undated'):t('derby.wall.decade',{decade:g.decade})}</h2>
    <ul className={css.posters}>{g.items.map(m=><li key={m.id}><Poster m={m} locale={locale} contentLocale={contentLocale} t={t} onOpen={onOpen}/></li>)}</ul>
   </section>)}
-  {meetings.length>limit&&<button type="button" className={`${css.btn} ${css.btnWide} ${css.more}`} data-testid="derby-wall-more" onClick={()=>setLimit(l=>l+PAGE)}>{t('derby.wall.more',{n:meetings.length-limit})}</button>}
+  {meetings.length>limit&&<button type="button" className={`${css.btn} ${css.btnWide} ${css.more} min-h-tap`} data-testid="derby-wall-more" onClick={()=>setLimit(l=>l+PAGE)}>{t('derby.wall.more',{n:meetings.length-limit})}</button>}
  </div>
 }

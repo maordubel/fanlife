@@ -1,0 +1,6780 @@
+{
+ "sources": [
+  {
+   "id": "src_009e757a13cb",
+   "title": "results-2015-2016",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2015-2016&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_04d971b1b3df",
+   "title": "rsssf-champions",
+   "url": "https://www.rsssf.org/tablesg/grkchamp.html",
+   "publisher": "RSSSF",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_0627b493fa83",
+   "title": "rsssf-cups",
+   "url": "https://www.rsssf.org/tablesg/grkcuphist.html",
+   "publisher": "RSSSF",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_0a1d35f1ad473e",
+   "title": "ΟΙ ΝΕΕΣ ΦΑΝΕΛΕΣ ΤΟΥ ΠΑΝΑΘΗΝΑΪΚΟΥ ΓΙΑ ΤΗ ΣΕΖΟΝ 2024-25 | PANATHINAIKOS FC OFFICIAL WEB SITE",
+   "url": "https://www.pao.gr/fc/oi-nees-faneles-tou-panathinaikou-gia-ti-sezon-2024-25/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_0b05daf7ae1b",
+   "title": "results-2025-2026",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2025-2026&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_0f1ba2d0e27e",
+   "title": "results-2012-2013",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2012-2013&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_10c3e36425dc",
+   "title": "results-2018-2019",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2018-2019&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_1365db1ea6f8",
+   "title": "europe",
+   "url": "https://www.pao.gr/en/history/european-history/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_19767e5564f6",
+   "title": "stadium-greek",
+   "url": "https://www.pao.gr/the-club/stadium/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_1ec1a91a3ea9",
+   "title": "results-2010-2011",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2010-2011&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_235044c1d6e0",
+   "title": "oaka2026",
+   "url": "https://www.pao.gr/fc/odigies-pros-tous-filathlous-gia-tin-apopsini-proseleysi-sto-oaka-6/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_2705c8191967",
+   "title": "results-2009-2010",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2009-2010&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_390f5153738b",
+   "title": "results-2014-2015",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2014-2015&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_42fb0ca7cb5f",
+   "title": "results-2019-2020",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2019-2020&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_47bfe516f72d",
+   "title": "results-2011-2012",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2011-2012&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_4c23155c639c",
+   "title": "results-2013-2014",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2013-2014&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_4ccb53b6a967",
+   "title": "champions",
+   "url": "https://www.pao.gr/en/history/championships/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_4d6759401d25",
+   "title": "greek-cups",
+   "url": "https://www.pao.gr/en/history/greek-cups/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_594a1c13196a",
+   "title": "results-2023-2024",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2023-2024&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_5a7d3d152591",
+   "title": "kits2026",
+   "url": "https://www.pao.gr/commercial/parousiastikan-oi-nees-emfaniseis-tis-sezon-2026-27-stin-kardia-tis-athinas/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_90dae9d66ba8",
+   "title": "results-2022-2023",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2022-2023&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_9aa81639be55",
+   "title": "supercup-full",
+   "url": "https://www.pao.gr/en/history/super-cup/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_9f1fe0f90d07",
+   "title": "results-2021-2022",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2021-2022&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_a16d3f7ac83c",
+   "title": "events",
+   "url": "https://www.pao.gr/en/history/events/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_b06169be5384",
+   "title": "balkan-full",
+   "url": "https://www.pao.gr/en/history/valkaniko-kypello/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_d271be23b26d",
+   "title": "anthem",
+   "url": "https://www.pao1908.com/club/ymnos/",
+   "publisher": "Panathinaikos Athletic Club",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_dc925cd176f8",
+   "title": "results-2016-2017",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2016-2017&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_de731fd62b2aa5",
+   "title": "ΟΙ ΝΕΕΣ ΦΑΝΕΛΕΣ ΤΟΥ ΠΑΝΑΘΗΝΑΪΚΟΥ ΓΙΑ ΤΗ ΣΕΖΟΝ 2023-24 | PANATHINAIKOS FC OFFICIAL WEB SITE",
+   "url": "https://www.pao.gr/fc/oi-nees-faneles-tou-panathinaikou-gia-ti-sezon-2023-24/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_eb71f56c3ead",
+   "title": "results-2024-2025",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2024-2025&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_efae8db425ca",
+   "title": "results-2020-2021",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2020-2021&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_f1909892790c",
+   "title": "results-2017-2018",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2017-2018&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  }
+ ],
+ "matches": [
+  {
+   "id": "pm-e16b917198",
+   "value": {
+    "name": "Panathinaikos 0-1 Olympiacos",
+    "on": "2010-03-21",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_2705c8191967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-13d05ce724",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2010-01-31",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_2705c8191967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-8b00bbf022",
+   "value": {
+    "name": "Olympiacos 2-0 Panathinaikos",
+    "on": "2009-11-29",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_2705c8191967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-e4f7eddfe8",
+   "value": {
+    "name": "AEK Athens 0-1 Panathinaikos",
+    "on": "2009-09-27",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_2705c8191967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-b9cccbee6a",
+   "value": {
+    "name": "AEK Athens 0-2 Panathinaikos",
+    "on": "2011-05-25",
+    "competition": "Super League play-offs",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-76fe025496",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2011-05-12",
+    "competition": "Super League play-offs",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-410a4fbdaf",
+   "value": {
+    "name": "Olympiacos 2-1 Panathinaikos",
+    "on": "2011-02-19",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-d378a8fa73",
+   "value": {
+    "name": "Panathinaikos 3-1 AEK Athens",
+    "on": "2011-02-13",
+    "competition": "Super League",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-f0938753d6",
+   "value": {
+    "name": "AEK Athens 2-3 Panathinaikos",
+    "on": "2011-02-02",
+    "competition": "Greek Cup",
+    "score": "2-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-5b2d324fcf",
+   "value": {
+    "name": "Panathinaikos 0-2 AEK Athens",
+    "on": "2011-01-19",
+    "competition": "Greek Cup",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-83e035a68d",
+   "value": {
+    "name": "Panathinaikos 2-1 Olympiacos",
+    "on": "2010-10-30",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-4d94725fca",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2010-10-24",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-586d5f7942",
+   "value": {
+    "name": "Panathinaikos 1-0 AEK Athens",
+    "on": "2012-05-20",
+    "competition": "Super League play-offs",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-94d196b490",
+   "value": {
+    "name": "AEK Athens 2-0 Panathinaikos",
+    "on": "2012-05-07",
+    "competition": "Super League play-offs",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-a21f5d0e9d",
+   "value": {
+    "name": "AEK Athens 2-0 Panathinaikos",
+    "on": "2012-03-11",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-697cf30fa0",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2011-11-19",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-fd290f85b4",
+   "value": {
+    "name": "Panathinaikos 3-2 AEK Athens",
+    "on": "2011-11-06",
+    "competition": "Super League",
+    "score": "3-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-7a60b8c914",
+   "value": {
+    "name": "Panathinaikos 2-1 Maccabi Tel Aviv",
+    "on": "2011-08-25",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-4bbdf91bca",
+   "value": {
+    "name": "Maccabi Tel Aviv 3-0 Panathinaikos",
+    "on": "2011-08-18",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-bd805492d3",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2013-04-14",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0f1ba2d0e27e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-fbbd8a7e67",
+   "value": {
+    "name": "AEK Athens 0-2 Panathinaikos",
+    "on": "2013-03-03",
+    "competition": "Super League",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0f1ba2d0e27e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-731ce1d827",
+   "value": {
+    "name": "Panathinaikos 2-2 Olympiacos",
+    "on": "2012-12-09",
+    "competition": "Super League",
+    "score": "2-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0f1ba2d0e27e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-bf77aa4761",
+   "value": {
+    "name": "Panathinaikos 1-0 AEK Athens",
+    "on": "2012-11-04",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0f1ba2d0e27e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-07b022f052",
+   "value": {
+    "name": "Olympiacos 0-3 Panathinaikos",
+    "on": "2014-03-02",
+    "competition": "Super League",
+    "score": "0-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_4c23155c639c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-d1dc86cb77",
+   "value": {
+    "name": "Panathinaikos 0-1 Olympiacos",
+    "on": "2013-11-02",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_4c23155c639c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-8af223e933",
+   "value": {
+    "name": "Panathinaikos 2-1 Olympiacos",
+    "on": "2015-02-22",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_390f5153738b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-98423c4625",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2014-10-26",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_390f5153738b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-ceb78bbf92",
+   "value": {
+    "name": "AEK Athens 3-1 Panathinaikos",
+    "on": "2016-05-26",
+    "competition": "Super League play-offs",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-86e1d54d0d",
+   "value": {
+    "name": "Panathinaikos 3-0 AEK Athens",
+    "on": "2016-05-23",
+    "competition": "Super League play-offs",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-afcb8f067e",
+   "value": {
+    "name": "Olympiacos 3-1 Panathinaikos",
+    "on": "2016-03-13",
+    "competition": "Super League",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-f91b78940b",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2016-02-28",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-b0216e2229",
+   "value": {
+    "name": "Panathinaikos 0-3 Olympiacos",
+    "on": "2015-11-21",
+    "competition": "Super League",
+    "score": "0-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-7492f3002c",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2015-11-01",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-fd4995b51e",
+   "value": {
+    "name": "Panathinaikos 2-2 Gabala FK",
+    "on": "2015-08-27",
+    "competition": "UEFA Europa League",
+    "score": "2-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-20f1601c0e",
+   "value": {
+    "name": "Gabala FK 0-0 Panathinaikos",
+    "on": "2015-08-20",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-3d03da9b9c",
+   "value": {
+    "name": "Panathinaikos 1-0 AEK Athens",
+    "on": "2017-05-24",
+    "competition": "Super League play-offs",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-9639c62af8",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2017-05-21",
+    "competition": "Super League play-offs",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-35e86d4fec",
+   "value": {
+    "name": "AEK Athens 2-3 Panathinaikos",
+    "on": "2017-04-02",
+    "competition": "Super League",
+    "score": "2-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-e1237fe8e6",
+   "value": {
+    "name": "Panathinaikos 1-0 Olympiacos",
+    "on": "2017-03-19",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-a167e25f85",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2017-01-15",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-ddebd147df",
+   "value": {
+    "name": "Olympiacos 3-0 Panathinaikos",
+    "on": "2016-11-06",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-cf7ac33d73",
+   "value": {
+    "name": "Brondby IF 1-1 Panathinaikos",
+    "on": "2016-08-25",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-ccd218a1e4",
+   "value": {
+    "name": "Panathinaikos 3-0 Brondby IF",
+    "on": "2016-08-18",
+    "competition": "UEFA Europa League",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-cea69386df",
+   "value": {
+    "name": "Αικ 0-2 Panathinaikos",
+    "on": "2016-08-04",
+    "competition": "UEFA Europa League",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-431f72b312",
+   "value": {
+    "name": "Panathinaikos 1-0 Αικ",
+    "on": "2016-07-28",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-69b7182d16",
+   "value": {
+    "name": "AEK Athens 3-0 Panathinaikos",
+    "on": "2018-04-01",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-ad94761786",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2018-03-04",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-7a6146bdf6",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2017-11-19",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-5c25de8334",
+   "value": {
+    "name": "Panathinaikos 1-0 Olympiacos",
+    "on": "2017-10-28",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-e82eb5fb96",
+   "value": {
+    "name": "Athletic Club Bilbao 1-0 Panathinaikos",
+    "on": "2017-08-24",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-3a8d04c385",
+   "value": {
+    "name": "Panathinaikos 2-3 Athletic Club Bilbao",
+    "on": "2017-08-17",
+    "competition": "UEFA Europa League",
+    "score": "2-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-ab65d829e2",
+   "value": {
+    "name": "Gabala FK 1-2 Panathinaikos",
+    "on": "2017-08-03",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-2fb6ca2a56",
+   "value": {
+    "name": "Panathinaikos 1-0 Gabala FK",
+    "on": "2017-07-27",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-1aabd98ee9",
+   "value": {
+    "name": "Panathinaikos 0-3 Olympiacos",
+    "on": "2019-03-17",
+    "competition": "Super League",
+    "score": "0-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_10c3e36425dc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-c59eed88f5",
+   "value": {
+    "name": "AEK Athens 0-0 Panathinaikos",
+    "on": "2019-03-09",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_10c3e36425dc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-c5ff7a9db8",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2018-11-11",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_10c3e36425dc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-5199158170",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2018-11-03",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_10c3e36425dc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-b6964ac148",
+   "value": {
+    "name": "Panathinaikos 1-3 AEK Athens",
+    "on": "2020-07-12",
+    "competition": "Super League play-offs",
+    "score": "1-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-2ba889d239",
+   "value": {
+    "name": "Panathinaikos 0-0 Olympiacos",
+    "on": "2020-07-05",
+    "competition": "Super League play-offs",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-5cea1c1abe",
+   "value": {
+    "name": "Olympiacos 3-0 Panathinaikos",
+    "on": "2020-06-21",
+    "competition": "Super League play-offs",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-0b948581c1",
+   "value": {
+    "name": "AEK Athens 1-1 Panathinaikos",
+    "on": "2020-06-07",
+    "competition": "Super League play-offs",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-61f05b77ab",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2020-02-09",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-6fbf6fdfb7",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2020-01-05",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-747ba4d0f1",
+   "value": {
+    "name": "Panathinaikos 3-2 AEK Athens",
+    "on": "2019-11-10",
+    "competition": "Super League",
+    "score": "3-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-84f3292f4a",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2019-09-22",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-7b6264267e",
+   "value": {
+    "name": "Panathinaikos 1-4 Olympiacos",
+    "on": "2021-05-16",
+    "competition": "Super League play-offs",
+    "score": "1-4",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-368b75a5b3",
+   "value": {
+    "name": "Panathinaikos 0-1 AEK Athens",
+    "on": "2021-05-09",
+    "competition": "Super League play-offs",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-0226767f4a",
+   "value": {
+    "name": "AEK Athens 1-1 Panathinaikos",
+    "on": "2021-04-21",
+    "competition": "Super League play-offs",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-10e3013bbc",
+   "value": {
+    "name": "Olympiacos 3-1 Panathinaikos",
+    "on": "2021-04-11",
+    "competition": "Super League play-offs",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-a1d528de8b",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2021-02-28",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-6a6e557ef5",
+   "value": {
+    "name": "Panathinaikos 2-1 Olympiacos",
+    "on": "2021-02-14",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-a96ab00e1c",
+   "value": {
+    "name": "AEK Athens 1-2 Panathinaikos",
+    "on": "2020-12-06",
+    "competition": "Super League",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-0769c48b3b",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2020-11-21",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-fb79f48d15",
+   "value": {
+    "name": "Olympiacos 1-2 Panathinaikos",
+    "on": "2022-05-11",
+    "competition": "Super League play-offs",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-29cf90287b",
+   "value": {
+    "name": "AEK Athens 0-0 Panathinaikos",
+    "on": "2022-05-08",
+    "competition": "Super League play-offs",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-ee241f4cf4",
+   "value": {
+    "name": "Panathinaikos 1-0 Olympiacos",
+    "on": "2022-04-17",
+    "competition": "Super League play-offs",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-0be80c4782",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2022-03-13",
+    "competition": "Super League play-offs",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-1aedd229cf",
+   "value": {
+    "name": "Panathinaikos 3-0 AEK Athens",
+    "on": "2022-02-27",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-941d9c786f",
+   "value": {
+    "name": "Panathinaikos 0-0 Olympiacos",
+    "on": "2022-01-16",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-00783350cf",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2021-12-05",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-57d330685d",
+   "value": {
+    "name": "Olympiacos 0-0 Panathinaikos",
+    "on": "2021-10-03",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-b07408304d",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2023-05-08",
+    "competition": "Super League play-offs",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-3c584e15b5",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2023-04-30",
+    "competition": "Super League play-offs",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-2fd64886c5",
+   "value": {
+    "name": "Panathinaikos 2-0 Olympiacos",
+    "on": "2023-04-09",
+    "competition": "Super League play-offs",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-13fd576589",
+   "value": {
+    "name": "AEK Athens 0-0 Panathinaikos",
+    "on": "2023-03-19",
+    "competition": "Super League play-offs",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-aa14e61b67",
+   "value": {
+    "name": "Olympiacos 0-0 Panathinaikos",
+    "on": "2023-02-25",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-1d58deae34",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2023-01-08",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-5b9cb27dfa",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2022-11-06",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-23c56c4fa1",
+   "value": {
+    "name": "Panathinaikos 2-1 AEK Athens",
+    "on": "2022-09-11",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-1f29761094",
+   "value": {
+    "name": "Panathinaikos 2-2 Olympiacos",
+    "on": "2024-05-19",
+    "competition": "Super League play-offs",
+    "score": "2-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-a02870d4f9",
+   "value": {
+    "name": "AEK Athens 3-0 Panathinaikos",
+    "on": "2024-04-24",
+    "competition": "Super League play-offs",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-f5fc634c07",
+   "value": {
+    "name": "Panathinaikos 2-1 AEK Athens",
+    "on": "2024-04-03",
+    "competition": "Super League play-offs",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-5c287eb964",
+   "value": {
+    "name": "Olympiacos 1-3 Panathinaikos",
+    "on": "2024-03-10",
+    "competition": "Super League play-offs",
+    "score": "1-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-05fdd58f08",
+   "value": {
+    "name": "Panathinaikos 2-0 Olympiacos",
+    "on": "2024-02-04",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-098948c4a1",
+   "value": {
+    "name": "Olympiacos 0-0 Panathinaikos",
+    "on": "2024-01-17",
+    "competition": "Greek Cup",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-e5b81b98d3",
+   "value": {
+    "name": "AEK Athens 2-2 Panathinaikos",
+    "on": "2024-01-14",
+    "competition": "Super League",
+    "score": "2-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-5a2763d86e",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2024-01-10",
+    "competition": "Greek Cup",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-676b1c0153",
+   "value": {
+    "name": "Olympiacos 0-3 Panathinaikos",
+    "on": "2023-10-22",
+    "competition": "Super League",
+    "score": "0-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-2e6bcbb53b",
+   "value": {
+    "name": "Panathinaikos 1-2 AEK Athens",
+    "on": "2023-09-25",
+    "competition": "Super League",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-b484f06643",
+   "value": {
+    "name": "Panathinaikos 0-1 Olympiacos",
+    "on": "2025-05-11",
+    "competition": "Super League play-offs",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-7bb121f8c4",
+   "value": {
+    "name": "AEK Athens 1-2 Panathinaikos",
+    "on": "2025-05-04",
+    "competition": "Super League play-offs",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-dce59393ce",
+   "value": {
+    "name": "Panathinaikos 3-1 AEK Athens",
+    "on": "2025-04-06",
+    "competition": "Super League play-offs",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-7cc5547c5e",
+   "value": {
+    "name": "Olympiacos 4-2 Panathinaikos",
+    "on": "2025-03-30",
+    "competition": "Super League play-offs",
+    "score": "4-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-53657d8fa7",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2025-02-05",
+    "competition": "Greek Cup",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-d247a07b98",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2025-01-26",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-a4229d85f6",
+   "value": {
+    "name": "Panathinaikos 1-0 AEK Athens",
+    "on": "2025-01-19",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-2dacc631fa",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2025-01-15",
+    "competition": "Greek Cup",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-1799ce63b1",
+   "value": {
+    "name": "Panathinaikos 0-0 Olympiacos",
+    "on": "2024-10-06",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-fe679f61cc",
+   "value": {
+    "name": "AEK Athens 2-0 Panathinaikos",
+    "on": "2024-09-29",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-a51c4edb26",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2026-05-13",
+    "competition": "Super League play-offs",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-2794b8cf65",
+   "value": {
+    "name": "AEK Athens 2-1 Panathinaikos",
+    "on": "2026-05-10",
+    "competition": "Super League play-offs",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-bee6613f68",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2026-05-03",
+    "competition": "Super League play-offs",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-e49da1c5a0",
+   "value": {
+    "name": "Panathinaikos 0-2 Olympiacos",
+    "on": "2026-04-19",
+    "competition": "Super League play-offs",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-2a2ec0a993",
+   "value": {
+    "name": "Olympiacos 0-1 Panathinaikos",
+    "on": "2026-02-08",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-8e11b1a89f",
+   "value": {
+    "name": "Panathinaikos 1-1 AS Roma",
+    "on": "2026-01-29",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-4a61178f08",
+   "value": {
+    "name": "Ferencvarosi TC 1-1 Panathinaikos",
+    "on": "2026-01-22",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-ef0e703395",
+   "value": {
+    "name": "AEK Athens 4-0 Panathinaikos",
+    "on": "2026-01-18",
+    "competition": "Super League",
+    "score": "4-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-0a99faff39",
+   "value": {
+    "name": "Panathinaikos 0-0 Viktoria Plzen",
+    "on": "2025-12-11",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-dd189949f9",
+   "value": {
+    "name": "Panathinaikos 2-3 AEK Athens",
+    "on": "2025-11-30",
+    "competition": "Super League",
+    "score": "2-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-0429672006",
+   "value": {
+    "name": "Panathinaikos 2-1 SK Sturm Graz",
+    "on": "2025-11-27",
+    "competition": "UEFA Europa League",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-5dd1f0dc5e",
+   "value": {
+    "name": "Malmo Ff 0-1 Panathinaikos",
+    "on": "2025-11-06",
+    "competition": "UEFA Europa League",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-7575cf8801",
+   "value": {
+    "name": "Feyenoord 3-1 Panathinaikos",
+    "on": "2025-10-23",
+    "competition": "UEFA Europa League",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-40cac905a9",
+   "value": {
+    "name": "Panathinaikos 1-2 Go Ahead Eagles",
+    "on": "2025-10-02",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-1a64430e97",
+   "value": {
+    "name": "BSC Young Boys 1-4 Panathinaikos",
+    "on": "2025-09-25",
+    "competition": "UEFA Europa League",
+    "score": "1-4",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-15d0d407a7",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2025-09-21",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-f9b20723cd",
+   "value": {
+    "name": "Panathinaikos 1-1 Nacional",
+    "on": "1971-12-15",
+    "competition": "Intercontinental Cup",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-ed719a6d6d",
+   "value": {
+    "name": "Nacional 2-1 Panathinaikos",
+    "on": "1971-12-28",
+    "competition": "Intercontinental Cup",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-77a41b36e1",
+   "value": {
+    "name": "Panathinaikos 2-0 Auxerres",
+    "on": "1987-09-17",
+    "competition": "UEFA Cup",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pm-3c56cfe307",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "1969-07-09",
+    "competition": "Greek Cup",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_4d6759401d25"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record; score as displayed (shootouts and extra time are not separated in the source).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "archive": [
+  {
+   "id": "pa-e16b917198",
+   "value": {
+    "name": "Panathinaikos 0-1 Olympiacos",
+    "on": "2010-03-21",
+    "precision": "day",
+    "year": 2010,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_2705c8191967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-13d05ce724",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2010-01-31",
+    "precision": "day",
+    "year": 2010,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_2705c8191967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-8b00bbf022",
+   "value": {
+    "name": "Olympiacos 2-0 Panathinaikos",
+    "on": "2009-11-29",
+    "precision": "day",
+    "year": 2009,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_2705c8191967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-e4f7eddfe8",
+   "value": {
+    "name": "AEK Athens 0-1 Panathinaikos",
+    "on": "2009-09-27",
+    "precision": "day",
+    "year": 2009,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_2705c8191967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-b9cccbee6a",
+   "value": {
+    "name": "AEK Athens 0-2 Panathinaikos",
+    "on": "2011-05-25",
+    "precision": "day",
+    "year": 2011,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-76fe025496",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2011-05-12",
+    "precision": "day",
+    "year": 2011,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-410a4fbdaf",
+   "value": {
+    "name": "Olympiacos 2-1 Panathinaikos",
+    "on": "2011-02-19",
+    "precision": "day",
+    "year": 2011,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-d378a8fa73",
+   "value": {
+    "name": "Panathinaikos 3-1 AEK Athens",
+    "on": "2011-02-13",
+    "precision": "day",
+    "year": 2011,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-f0938753d6",
+   "value": {
+    "name": "AEK Athens 2-3 Panathinaikos",
+    "on": "2011-02-02",
+    "precision": "day",
+    "year": 2011,
+    "hint": "Greek Cup derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-5b2d324fcf",
+   "value": {
+    "name": "Panathinaikos 0-2 AEK Athens",
+    "on": "2011-01-19",
+    "precision": "day",
+    "year": 2011,
+    "hint": "Greek Cup derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-83e035a68d",
+   "value": {
+    "name": "Panathinaikos 2-1 Olympiacos",
+    "on": "2010-10-30",
+    "precision": "day",
+    "year": 2010,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-4d94725fca",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2010-10-24",
+    "precision": "day",
+    "year": 2010,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1ec1a91a3ea9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-586d5f7942",
+   "value": {
+    "name": "Panathinaikos 1-0 AEK Athens",
+    "on": "2012-05-20",
+    "precision": "day",
+    "year": 2012,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-94d196b490",
+   "value": {
+    "name": "AEK Athens 2-0 Panathinaikos",
+    "on": "2012-05-07",
+    "precision": "day",
+    "year": 2012,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-a21f5d0e9d",
+   "value": {
+    "name": "AEK Athens 2-0 Panathinaikos",
+    "on": "2012-03-11",
+    "precision": "day",
+    "year": 2012,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-697cf30fa0",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2011-11-19",
+    "precision": "day",
+    "year": 2011,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-fd290f85b4",
+   "value": {
+    "name": "Panathinaikos 3-2 AEK Athens",
+    "on": "2011-11-06",
+    "precision": "day",
+    "year": 2011,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-7a60b8c914",
+   "value": {
+    "name": "Panathinaikos 2-1 Maccabi Tel Aviv",
+    "on": "2011-08-25",
+    "precision": "day",
+    "year": 2011,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-4bbdf91bca",
+   "value": {
+    "name": "Maccabi Tel Aviv 3-0 Panathinaikos",
+    "on": "2011-08-18",
+    "precision": "day",
+    "year": 2011,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_47bfe516f72d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-bd805492d3",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2013-04-14",
+    "precision": "day",
+    "year": 2013,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0f1ba2d0e27e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-fbbd8a7e67",
+   "value": {
+    "name": "AEK Athens 0-2 Panathinaikos",
+    "on": "2013-03-03",
+    "precision": "day",
+    "year": 2013,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0f1ba2d0e27e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-731ce1d827",
+   "value": {
+    "name": "Panathinaikos 2-2 Olympiacos",
+    "on": "2012-12-09",
+    "precision": "day",
+    "year": 2012,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0f1ba2d0e27e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-bf77aa4761",
+   "value": {
+    "name": "Panathinaikos 1-0 AEK Athens",
+    "on": "2012-11-04",
+    "precision": "day",
+    "year": 2012,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0f1ba2d0e27e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-07b022f052",
+   "value": {
+    "name": "Olympiacos 0-3 Panathinaikos",
+    "on": "2014-03-02",
+    "precision": "day",
+    "year": 2014,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_4c23155c639c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-d1dc86cb77",
+   "value": {
+    "name": "Panathinaikos 0-1 Olympiacos",
+    "on": "2013-11-02",
+    "precision": "day",
+    "year": 2013,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_4c23155c639c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-8af223e933",
+   "value": {
+    "name": "Panathinaikos 2-1 Olympiacos",
+    "on": "2015-02-22",
+    "precision": "day",
+    "year": 2015,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_390f5153738b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-98423c4625",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2014-10-26",
+    "precision": "day",
+    "year": 2014,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_390f5153738b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-ceb78bbf92",
+   "value": {
+    "name": "AEK Athens 3-1 Panathinaikos",
+    "on": "2016-05-26",
+    "precision": "day",
+    "year": 2016,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-86e1d54d0d",
+   "value": {
+    "name": "Panathinaikos 3-0 AEK Athens",
+    "on": "2016-05-23",
+    "precision": "day",
+    "year": 2016,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-afcb8f067e",
+   "value": {
+    "name": "Olympiacos 3-1 Panathinaikos",
+    "on": "2016-03-13",
+    "precision": "day",
+    "year": 2016,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-f91b78940b",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2016-02-28",
+    "precision": "day",
+    "year": 2016,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-b0216e2229",
+   "value": {
+    "name": "Panathinaikos 0-3 Olympiacos",
+    "on": "2015-11-21",
+    "precision": "day",
+    "year": 2015,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-7492f3002c",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2015-11-01",
+    "precision": "day",
+    "year": 2015,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-fd4995b51e",
+   "value": {
+    "name": "Panathinaikos 2-2 Gabala FK",
+    "on": "2015-08-27",
+    "precision": "day",
+    "year": 2015,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-20f1601c0e",
+   "value": {
+    "name": "Gabala FK 0-0 Panathinaikos",
+    "on": "2015-08-20",
+    "precision": "day",
+    "year": 2015,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_009e757a13cb"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-3d03da9b9c",
+   "value": {
+    "name": "Panathinaikos 1-0 AEK Athens",
+    "on": "2017-05-24",
+    "precision": "day",
+    "year": 2017,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-9639c62af8",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2017-05-21",
+    "precision": "day",
+    "year": 2017,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-35e86d4fec",
+   "value": {
+    "name": "AEK Athens 2-3 Panathinaikos",
+    "on": "2017-04-02",
+    "precision": "day",
+    "year": 2017,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-e1237fe8e6",
+   "value": {
+    "name": "Panathinaikos 1-0 Olympiacos",
+    "on": "2017-03-19",
+    "precision": "day",
+    "year": 2017,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-a167e25f85",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2017-01-15",
+    "precision": "day",
+    "year": 2017,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-ddebd147df",
+   "value": {
+    "name": "Olympiacos 3-0 Panathinaikos",
+    "on": "2016-11-06",
+    "precision": "day",
+    "year": 2016,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-cf7ac33d73",
+   "value": {
+    "name": "Brondby IF 1-1 Panathinaikos",
+    "on": "2016-08-25",
+    "precision": "day",
+    "year": 2016,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-ccd218a1e4",
+   "value": {
+    "name": "Panathinaikos 3-0 Brondby IF",
+    "on": "2016-08-18",
+    "precision": "day",
+    "year": 2016,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-cea69386df",
+   "value": {
+    "name": "Αικ 0-2 Panathinaikos",
+    "on": "2016-08-04",
+    "precision": "day",
+    "year": 2016,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-431f72b312",
+   "value": {
+    "name": "Panathinaikos 1-0 Αικ",
+    "on": "2016-07-28",
+    "precision": "day",
+    "year": 2016,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_dc925cd176f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-69b7182d16",
+   "value": {
+    "name": "AEK Athens 3-0 Panathinaikos",
+    "on": "2018-04-01",
+    "precision": "day",
+    "year": 2018,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-ad94761786",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2018-03-04",
+    "precision": "day",
+    "year": 2018,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-7a6146bdf6",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2017-11-19",
+    "precision": "day",
+    "year": 2017,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-5c25de8334",
+   "value": {
+    "name": "Panathinaikos 1-0 Olympiacos",
+    "on": "2017-10-28",
+    "precision": "day",
+    "year": 2017,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-e82eb5fb96",
+   "value": {
+    "name": "Athletic Club Bilbao 1-0 Panathinaikos",
+    "on": "2017-08-24",
+    "precision": "day",
+    "year": 2017,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-3a8d04c385",
+   "value": {
+    "name": "Panathinaikos 2-3 Athletic Club Bilbao",
+    "on": "2017-08-17",
+    "precision": "day",
+    "year": 2017,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-ab65d829e2",
+   "value": {
+    "name": "Gabala FK 1-2 Panathinaikos",
+    "on": "2017-08-03",
+    "precision": "day",
+    "year": 2017,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-2fb6ca2a56",
+   "value": {
+    "name": "Panathinaikos 1-0 Gabala FK",
+    "on": "2017-07-27",
+    "precision": "day",
+    "year": 2017,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_f1909892790c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-1aabd98ee9",
+   "value": {
+    "name": "Panathinaikos 0-3 Olympiacos",
+    "on": "2019-03-17",
+    "precision": "day",
+    "year": 2019,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_10c3e36425dc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-c59eed88f5",
+   "value": {
+    "name": "AEK Athens 0-0 Panathinaikos",
+    "on": "2019-03-09",
+    "precision": "day",
+    "year": 2019,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_10c3e36425dc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-c5ff7a9db8",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2018-11-11",
+    "precision": "day",
+    "year": 2018,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_10c3e36425dc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-5199158170",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2018-11-03",
+    "precision": "day",
+    "year": 2018,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_10c3e36425dc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-b6964ac148",
+   "value": {
+    "name": "Panathinaikos 1-3 AEK Athens",
+    "on": "2020-07-12",
+    "precision": "day",
+    "year": 2020,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-2ba889d239",
+   "value": {
+    "name": "Panathinaikos 0-0 Olympiacos",
+    "on": "2020-07-05",
+    "precision": "day",
+    "year": 2020,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-5cea1c1abe",
+   "value": {
+    "name": "Olympiacos 3-0 Panathinaikos",
+    "on": "2020-06-21",
+    "precision": "day",
+    "year": 2020,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-0b948581c1",
+   "value": {
+    "name": "AEK Athens 1-1 Panathinaikos",
+    "on": "2020-06-07",
+    "precision": "day",
+    "year": 2020,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-61f05b77ab",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2020-02-09",
+    "precision": "day",
+    "year": 2020,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-6fbf6fdfb7",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2020-01-05",
+    "precision": "day",
+    "year": 2020,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-747ba4d0f1",
+   "value": {
+    "name": "Panathinaikos 3-2 AEK Athens",
+    "on": "2019-11-10",
+    "precision": "day",
+    "year": 2019,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-84f3292f4a",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2019-09-22",
+    "precision": "day",
+    "year": 2019,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_42fb0ca7cb5f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-7b6264267e",
+   "value": {
+    "name": "Panathinaikos 1-4 Olympiacos",
+    "on": "2021-05-16",
+    "precision": "day",
+    "year": 2021,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-368b75a5b3",
+   "value": {
+    "name": "Panathinaikos 0-1 AEK Athens",
+    "on": "2021-05-09",
+    "precision": "day",
+    "year": 2021,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-0226767f4a",
+   "value": {
+    "name": "AEK Athens 1-1 Panathinaikos",
+    "on": "2021-04-21",
+    "precision": "day",
+    "year": 2021,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-10e3013bbc",
+   "value": {
+    "name": "Olympiacos 3-1 Panathinaikos",
+    "on": "2021-04-11",
+    "precision": "day",
+    "year": 2021,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-a1d528de8b",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2021-02-28",
+    "precision": "day",
+    "year": 2021,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-6a6e557ef5",
+   "value": {
+    "name": "Panathinaikos 2-1 Olympiacos",
+    "on": "2021-02-14",
+    "precision": "day",
+    "year": 2021,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-a96ab00e1c",
+   "value": {
+    "name": "AEK Athens 1-2 Panathinaikos",
+    "on": "2020-12-06",
+    "precision": "day",
+    "year": 2020,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-0769c48b3b",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2020-11-21",
+    "precision": "day",
+    "year": 2020,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_efae8db425ca"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-fb79f48d15",
+   "value": {
+    "name": "Olympiacos 1-2 Panathinaikos",
+    "on": "2022-05-11",
+    "precision": "day",
+    "year": 2022,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-29cf90287b",
+   "value": {
+    "name": "AEK Athens 0-0 Panathinaikos",
+    "on": "2022-05-08",
+    "precision": "day",
+    "year": 2022,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-ee241f4cf4",
+   "value": {
+    "name": "Panathinaikos 1-0 Olympiacos",
+    "on": "2022-04-17",
+    "precision": "day",
+    "year": 2022,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-0be80c4782",
+   "value": {
+    "name": "Panathinaikos 1-1 AEK Athens",
+    "on": "2022-03-13",
+    "precision": "day",
+    "year": 2022,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-1aedd229cf",
+   "value": {
+    "name": "Panathinaikos 3-0 AEK Athens",
+    "on": "2022-02-27",
+    "precision": "day",
+    "year": 2022,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-941d9c786f",
+   "value": {
+    "name": "Panathinaikos 0-0 Olympiacos",
+    "on": "2022-01-16",
+    "precision": "day",
+    "year": 2022,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-00783350cf",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2021-12-05",
+    "precision": "day",
+    "year": 2021,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-57d330685d",
+   "value": {
+    "name": "Olympiacos 0-0 Panathinaikos",
+    "on": "2021-10-03",
+    "precision": "day",
+    "year": 2021,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_9f1fe0f90d07"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-b07408304d",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2023-05-08",
+    "precision": "day",
+    "year": 2023,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-3c584e15b5",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2023-04-30",
+    "precision": "day",
+    "year": 2023,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-2fd64886c5",
+   "value": {
+    "name": "Panathinaikos 2-0 Olympiacos",
+    "on": "2023-04-09",
+    "precision": "day",
+    "year": 2023,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-13fd576589",
+   "value": {
+    "name": "AEK Athens 0-0 Panathinaikos",
+    "on": "2023-03-19",
+    "precision": "day",
+    "year": 2023,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-aa14e61b67",
+   "value": {
+    "name": "Olympiacos 0-0 Panathinaikos",
+    "on": "2023-02-25",
+    "precision": "day",
+    "year": 2023,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-1d58deae34",
+   "value": {
+    "name": "AEK Athens 1-0 Panathinaikos",
+    "on": "2023-01-08",
+    "precision": "day",
+    "year": 2023,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-5b9cb27dfa",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2022-11-06",
+    "precision": "day",
+    "year": 2022,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-23c56c4fa1",
+   "value": {
+    "name": "Panathinaikos 2-1 AEK Athens",
+    "on": "2022-09-11",
+    "precision": "day",
+    "year": 2022,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_90dae9d66ba8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-1f29761094",
+   "value": {
+    "name": "Panathinaikos 2-2 Olympiacos",
+    "on": "2024-05-19",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-a02870d4f9",
+   "value": {
+    "name": "AEK Athens 3-0 Panathinaikos",
+    "on": "2024-04-24",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-f5fc634c07",
+   "value": {
+    "name": "Panathinaikos 2-1 AEK Athens",
+    "on": "2024-04-03",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-5c287eb964",
+   "value": {
+    "name": "Olympiacos 1-3 Panathinaikos",
+    "on": "2024-03-10",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-05fdd58f08",
+   "value": {
+    "name": "Panathinaikos 2-0 Olympiacos",
+    "on": "2024-02-04",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-098948c4a1",
+   "value": {
+    "name": "Olympiacos 0-0 Panathinaikos",
+    "on": "2024-01-17",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Greek Cup derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-e5b81b98d3",
+   "value": {
+    "name": "AEK Athens 2-2 Panathinaikos",
+    "on": "2024-01-14",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-5a2763d86e",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2024-01-10",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Greek Cup derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-676b1c0153",
+   "value": {
+    "name": "Olympiacos 0-3 Panathinaikos",
+    "on": "2023-10-22",
+    "precision": "day",
+    "year": 2023,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-2e6bcbb53b",
+   "value": {
+    "name": "Panathinaikos 1-2 AEK Athens",
+    "on": "2023-09-25",
+    "precision": "day",
+    "year": 2023,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_594a1c13196a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-b484f06643",
+   "value": {
+    "name": "Panathinaikos 0-1 Olympiacos",
+    "on": "2025-05-11",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-7bb121f8c4",
+   "value": {
+    "name": "AEK Athens 1-2 Panathinaikos",
+    "on": "2025-05-04",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-dce59393ce",
+   "value": {
+    "name": "Panathinaikos 3-1 AEK Athens",
+    "on": "2025-04-06",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-7cc5547c5e",
+   "value": {
+    "name": "Olympiacos 4-2 Panathinaikos",
+    "on": "2025-03-30",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-53657d8fa7",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2025-02-05",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Greek Cup derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-d247a07b98",
+   "value": {
+    "name": "Olympiacos 1-1 Panathinaikos",
+    "on": "2025-01-26",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-a4229d85f6",
+   "value": {
+    "name": "Panathinaikos 1-0 AEK Athens",
+    "on": "2025-01-19",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-2dacc631fa",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2025-01-15",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Greek Cup derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-1799ce63b1",
+   "value": {
+    "name": "Panathinaikos 0-0 Olympiacos",
+    "on": "2024-10-06",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-fe679f61cc",
+   "value": {
+    "name": "AEK Athens 2-0 Panathinaikos",
+    "on": "2024-09-29",
+    "precision": "day",
+    "year": 2024,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_eb71f56c3ead"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-a51c4edb26",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2026-05-13",
+    "precision": "day",
+    "year": 2026,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-2794b8cf65",
+   "value": {
+    "name": "AEK Athens 2-1 Panathinaikos",
+    "on": "2026-05-10",
+    "precision": "day",
+    "year": 2026,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-bee6613f68",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2026-05-03",
+    "precision": "day",
+    "year": 2026,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-e49da1c5a0",
+   "value": {
+    "name": "Panathinaikos 0-2 Olympiacos",
+    "on": "2026-04-19",
+    "precision": "day",
+    "year": 2026,
+    "hint": "Super League play-offs derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-2a2ec0a993",
+   "value": {
+    "name": "Olympiacos 0-1 Panathinaikos",
+    "on": "2026-02-08",
+    "precision": "day",
+    "year": 2026,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-8e11b1a89f",
+   "value": {
+    "name": "Panathinaikos 1-1 AS Roma",
+    "on": "2026-01-29",
+    "precision": "day",
+    "year": 2026,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-4a61178f08",
+   "value": {
+    "name": "Ferencvarosi TC 1-1 Panathinaikos",
+    "on": "2026-01-22",
+    "precision": "day",
+    "year": 2026,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-ef0e703395",
+   "value": {
+    "name": "AEK Athens 4-0 Panathinaikos",
+    "on": "2026-01-18",
+    "precision": "day",
+    "year": 2026,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-0a99faff39",
+   "value": {
+    "name": "Panathinaikos 0-0 Viktoria Plzen",
+    "on": "2025-12-11",
+    "precision": "day",
+    "year": 2025,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-dd189949f9",
+   "value": {
+    "name": "Panathinaikos 2-3 AEK Athens",
+    "on": "2025-11-30",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-0429672006",
+   "value": {
+    "name": "Panathinaikos 2-1 SK Sturm Graz",
+    "on": "2025-11-27",
+    "precision": "day",
+    "year": 2025,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-5dd1f0dc5e",
+   "value": {
+    "name": "Malmo Ff 0-1 Panathinaikos",
+    "on": "2025-11-06",
+    "precision": "day",
+    "year": 2025,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-7575cf8801",
+   "value": {
+    "name": "Feyenoord 3-1 Panathinaikos",
+    "on": "2025-10-23",
+    "precision": "day",
+    "year": 2025,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-40cac905a9",
+   "value": {
+    "name": "Panathinaikos 1-2 Go Ahead Eagles",
+    "on": "2025-10-02",
+    "precision": "day",
+    "year": 2025,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-1a64430e97",
+   "value": {
+    "name": "BSC Young Boys 1-4 Panathinaikos",
+    "on": "2025-09-25",
+    "precision": "day",
+    "year": 2025,
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-15d0d407a7",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "2025-09-21",
+    "precision": "day",
+    "year": 2025,
+    "hint": "Super League derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_0b05daf7ae1b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-f9b20723cd",
+   "value": {
+    "name": "Panathinaikos 1-1 Nacional",
+    "on": "1971-12-15",
+    "precision": "day",
+    "year": 1971,
+    "hint": "Intercontinental Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-ed719a6d6d",
+   "value": {
+    "name": "Nacional 2-1 Panathinaikos",
+    "on": "1971-12-28",
+    "precision": "day",
+    "year": 1971,
+    "hint": "Intercontinental Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-77a41b36e1",
+   "value": {
+    "name": "Panathinaikos 2-0 Auxerres",
+    "on": "1987-09-17",
+    "precision": "day",
+    "year": 1987,
+    "hint": "UEFA Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "pa-3c56cfe307",
+   "value": {
+    "name": "Panathinaikos 1-1 Olympiacos",
+    "on": "1969-07-09",
+    "precision": "day",
+    "year": 1969,
+    "hint": "Greek Cup derby",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "src_4d6759401d25"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Club's own match record.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "trophies": [
+  {
+   "id": "tr-greek-national-championship",
+   "value": {
+    "name": "Greek national championship",
+    "years": [
+     1930,
+     1949,
+     1953,
+     1960,
+     1961,
+     1962,
+     1964,
+     1965,
+     1969,
+     1970,
+     1972,
+     1977,
+     1984,
+     1986,
+     1990,
+     1991,
+     1995,
+     1996,
+     2004,
+     2010
+    ],
+    "count": null
+   },
+   "sources": [
+    "src_04d971b1b3df",
+    "src_4ccb53b6a967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years as the source reports them (football only); two publishers agree on the list.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "tr-greek-cup",
+   "value": {
+    "name": "Greek Cup",
+    "years": [
+     1940,
+     1948,
+     1955,
+     1967,
+     1969,
+     1977,
+     1982,
+     1984,
+     1986,
+     1988,
+     1989,
+     1991,
+     1993,
+     1994,
+     1995,
+     2004,
+     2010,
+     2014,
+     2022,
+     2024
+    ],
+    "count": null
+   },
+   "sources": [
+    "src_0627b493fa83",
+    "src_4d6759401d25"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years as the source reports them (football only); two publishers agree on the list.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "tr-greek-super-cup-club-recognition",
+   "value": {
+    "name": "Greek Super Cup (club recognition)",
+    "years": [
+     1970,
+     1988,
+     1993,
+     1994
+    ],
+    "count": null
+   },
+   "sources": [
+    "src_9aa81639be55"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years as the source reports them (football only); two publishers agree on the list.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "tr-balkan-cup",
+   "value": {
+    "name": "Balkan Cup",
+    "years": [
+     1978
+    ],
+    "count": null
+   },
+   "sources": [
+    "src_b06169be5384"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years as the source reports them (football only); two publishers agree on the list.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "culture": [
+  {
+   "id": "cu-3a904a38",
+   "value": {
+    "name": "Gate 13",
+    "topic": "supporters",
+    "foundedYear": 1966,
+    "scope": "supporter group; does not describe every supporter"
+   },
+   "sources": [
+    "src_a16d3f7ac83c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-0331915a",
+   "value": {
+    "name": "Eternal derby",
+    "topic": "rivalry",
+    "scope": "football rivalry; no social or political generalisations"
+   },
+   "sources": [
+    "src_4ccb53b6a967"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-21faa31a",
+   "value": {
+    "name": "Apostolos Nikolaidis",
+    "topic": "stadium"
+   },
+   "sources": [
+    "src_19767e5564f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-ecede2a7",
+   "value": {
+    "name": "Olympic Stadium of Athens (OAKA)",
+    "topic": "stadium",
+    "scope": "dated match venue evidence; not every home match or permanent home"
+   },
+   "sources": [
+    "src_235044c1d6e0"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-fa4bc59a",
+   "value": {
+    "name": "Giorgos Kalafatis Training Centre",
+    "topic": "training"
+   },
+   "sources": [
+    "src_a16d3f7ac83c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-7f2da8be",
+   "value": {
+    "name": "Club anthem",
+    "topic": "anthem"
+   },
+   "sources": [
+    "src_d271be23b26d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-0e41295b",
+   "value": {
+    "name": "Club kit tradition",
+    "topic": "kit"
+   },
+   "sources": [
+    "src_5a7d3d152591"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "kits": [
+  {
+   "id": "k4-e8fa362e",
+   "value": {
+    "name": "Panathinaikos 2023/24 kit",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": null
+    }
+   },
+   "sources": [
+    "src_de731fd62b2aa5"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Description only; no licensed image.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "k4-45d86433",
+   "value": {
+    "name": "Panathinaikos 2024/25 home",
+    "season": "2024/25",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "two green vertical stripes with a white stripe between; green shorts and socks"
+    }
+   },
+   "sources": [
+    "src_0a1d35f1ad473e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Description only; no licensed image.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "k4-9b04c380",
+   "value": {
+    "name": "Panathinaikos 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "white with green details and retro crest presentation"
+    }
+   },
+   "sources": [
+    "src_0a1d35f1ad473e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Description only; no licensed image.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ]
+}

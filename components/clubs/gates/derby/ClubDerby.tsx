@@ -45,7 +45,7 @@ export function ClubDerby(p:ClubDerbyProps){
     </div>
     {rivalNote&&<p className={css.rivalNote}><bdi>{rivalNote}</bdi></p>}
     <div className={css.tabs} role="tablist" aria-label={t('derby.tabs')} onKeyDown={onKey}>
-     {tabs.map(x=><button key={x.k} id={`derby-tab-${x.k}`} type="button" role="tab" className={css.tab} aria-selected={tab===x.k} aria-controls="derby-panel" tabIndex={tab===x.k?0:-1} onClick={()=>setTab(x.k)}>{x.label}</button>)}
+     {tabs.map(x=><button key={x.k} id={`derby-tab-${x.k}`} type="button" role="tab" className={`${css.tab} min-h-tap`} aria-selected={tab===x.k} aria-controls="derby-panel" tabIndex={tab===x.k?0:-1} onClick={()=>setTab(x.k)}>{x.label}</button>)}
     </div>
    </div>
    <div className={css.panel} id="derby-panel" role="tabpanel" aria-labelledby={`derby-tab-${tab}`}>

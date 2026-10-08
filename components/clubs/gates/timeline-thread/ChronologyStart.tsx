@@ -26,6 +26,6 @@ export function ChronologyStart({copy,clubName,placements,category,have,need,aut
   </ul>
   <p className={css.tag} data-testid="timeline-category">{category==='full'?t('tl.c.cat.full',{n:placements}):t('tl.c.cat.short',{n:placements,club:clubName,have,need})}</p>
   {category==='short'&&<p className={css.fine}>{t('tl.c.cat.note')}</p>}
-  <button type="button" className={css.cta} data-testid="timeline-start" onClick={()=>setStarted(true)}>{t('tl.c.start')}</button>
+  <button type="button" className={`${css.cta} min-h-tap`} data-testid="timeline-start" onClick={()=>setStarted(true)}>{t('tl.c.start')}</button>
  </section>
 }

@@ -1,0 +1,35 @@
+{
+  "packageSchemaVersion": 1,
+  "productionClubDataCompatible": false,
+  "approvalDefault": "review",
+  "idPolicy": "research ids are provisional; map to reviewed production registries before import",
+  "fieldEvidence": "use player-observations and existing claim/evidence graph; a record-wide source list does not substantiate every field equally",
+  "unknownSemantics": "null means unknown; empty research section means no extracted records in this deliverable, not absence in club history",
+  "datePrecision": [
+    "day",
+    "month",
+    "year",
+    "unknown"
+  ],
+  "sourceFamilyPolicy": "two language versions or multiple pages from one publisher are one family",
+  "status": [
+    "draft",
+    "review",
+    "deep_research",
+    "approved",
+    "rejected"
+  ],
+  "evidenceEnvelope": [
+    "id",
+    "value",
+    "sources",
+    "locator",
+    "confidence",
+    "status",
+    "researchedAt",
+    "approvedAt",
+    "approvedBy",
+    "provenance"
+  ],
+  "ratings": "historical facts and draft price/rating calculations are separate; no ratings minted here"
+}

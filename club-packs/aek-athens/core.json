@@ -1,0 +1,4030 @@
+{
+ "schemaVersion": 1,
+ "clubId": "aek-athens",
+ "contentLocale": "el",
+ "sources": [
+  {
+   "id": "src_03557d9e423bf5",
+   "title": "Μπρούνο Άλβες – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/bruno-alves/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_0d07886f0a8589",
+   "title": "Θωμάς Μαύρος – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/thomas-mavros/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_14ba6c62332ebe",
+   "title": "AEK F.C. Official Web Site",
+   "url": "https://www.aekfc.gr/pages/history.aspx?lang=en",
+   "publisher": "AEK FC",
+   "access": "unknown",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_181d9fa581c0f6",
+   "title": "Περίοδος 1959-60 – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/season-1959-60/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_269b1923be74db",
+   "title": "AEK FC KITS 2016-17! < ΕΙΔΗΣΕΙΣ | AEK F.C. Official Web Site",
+   "url": "https://www.aekfc.gr/newsdetails/idou-oi-emfaniseis-tis-sezon-2016-17-48735.htm?lang=el&path=-905955231",
+   "publisher": "AEK FC",
+   "access": "unknown",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_2cac483255460b",
+   "title": "Βασίλης Λάκης – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/vasilis-lakis/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_3ced6e292a12ea",
+   "title": "Ντέμης Νικολαΐδης – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/demis-nikolaidis/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_4324201cded8d2",
+   "title": "Ηλίας Ατματσίδης – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/ilias-atmatsidis/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_457613ddd33b2e",
+   "title": "Περίοδος 1993-94 – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/season-1993-94/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_47266257254d0d",
+   "title": "Βασίλης Δημητριάδης – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/vasilis-dimitriadis/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_67806347950352",
+   "title": "Μίμης Παπαϊωάννου – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/mimis-papaioannou/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_706518f7d414d0",
+   "title": "Περίοδος 1988-89 – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/season-1988-89/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_9bad760a0c7cbd",
+   "title": "Περίοδος 2002-03 – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/season-2002-03/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_9dac2fb0b971c1",
+   "title": "1924 < TIMELINE | AEK F.C. Official Web Site",
+   "url": "https://www.aekfc.gr/fp/1924-42854.htm?lang=en&path=628134112",
+   "publisher": "AEK FC",
+   "access": "unknown",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_9ebc08789b1a56",
+   "title": "Οι επίσημες εμφανίσεις της σεζόν 2023-24! < ΑΝΑΚΟΙΝΩΣΕΙΣ | AEK F.C. Official Web Site",
+   "url": "https://www.aekfc.gr/newsdetails/oi-episimes-emfaniseis-tis-sezon-2023-24-129236.htm?lang=el&path=1629294987",
+   "publisher": "AEK FC",
+   "access": "unknown",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_ac69e38fc2e51a",
+   "title": "Μάρκο Λιβάγια – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/marko-livaja/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_b7b4b1f3b9f2e7",
+   "title": "Ζεράλντο Άλβες – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/geraldo-alves/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_bf1122561d7b77",
+   "title": "Περίοδος 2017-18 – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/season-2017-18/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_c41c270dfb9198",
+   "title": "Περίοδος 2022-23 – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/season-2022-23/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_c41db1eb94410e",
+   "title": "Βασίλης Τσιάρτας – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/vasilis-tsiartas/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_d9a7d0ea6133d6",
+   "title": "Τραϊανός Δέλλας – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/traianos-dellas/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_e05279e45e696a",
+   "title": "Αντώνης Μήνου – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/antonis-minou/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_eff35aaa10b50f",
+   "title": "Μιχάλης Κασάπης – AEKpedia by Kitrinomavro Forum",
+   "url": "https://www.aekpedia.com/michalis-kasapis/",
+   "publisher": "AEKpedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  }
+ ],
+ "archive": [
+  {
+   "id": "t-b7cd7404",
+   "value": {
+    "name": "AEK Athens founded in Athens",
+    "hint": "A club formed in Athens by athletes with Constantinople roots.",
+    "sport": "football",
+    "sensitive": false,
+    "on": "1924-04-13",
+    "precision": "day",
+    "year": 1924
+   },
+   "sources": [
+    "src_14ba6c62332ebe",
+    "src_9dac2fb0b971c1"
+   ],
+   "confidence": 1,
+   "status": "review",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "English wording written from the staged Hebrew title; no fact added."
+  },
+  {
+   "id": "t-01b4c305",
+   "value": {
+    "name": "Olympiacos 0-1 AEK Athens",
+    "hint": "A Greek league win over Olympiacos on the way to the title.",
+    "sport": "football",
+    "sensitive": false,
+    "on": "1989-05-07",
+    "precision": "day",
+    "year": 1989
+   },
+   "sources": [
+    "src_706518f7d414d0"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). English wording written from the staged Hebrew title; no fact added.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-d3b0f55f9c0148",
+   "value": {
+    "name": "Στέλιος Σεραφείδης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e281a7715795b8",
+   "value": {
+    "name": "Κίμων Δημητρίου",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e78d01a611b1c6",
+   "value": {
+    "name": "Σωτήρης Φακής",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-520ae783931e7a",
+   "value": {
+    "name": "Θεόφιλος Βερνέζης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-ae03fff3ebe4e4",
+   "value": {
+    "name": "Γιάννης Μαρδίτσης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-9aa2d96e213679",
+   "value": {
+    "name": "Μίλτος Παπαποστόλου",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c0690d0d7c616e",
+   "value": {
+    "name": "Δημήτρης Αναστασιάδης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-19469ce22f4409",
+   "value": {
+    "name": "Θανάσης Τσαγγάρης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-dfaf0c9cd79a08",
+   "value": {
+    "name": "Δημήτρης Διακάκης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c8aa78b71d8a0b",
+   "value": {
+    "name": "Πέτρος Σταματελόπουλος",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-da5e507a7336a3",
+   "value": {
+    "name": "Αλέκος Σοφιανίδης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-456ed4cc0cd893",
+   "value": {
+    "name": "Σταμάτης Σκαφίδας",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d3ea932ef36167",
+   "value": {
+    "name": "Θύμιος Πολύζος",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4f633c83f18aa2",
+   "value": {
+    "name": "Ανδρέας Σταματιάδης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-082d3e47f12180",
+   "value": {
+    "name": "Νίκος Μελισσής",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f1552f26205e70",
+   "value": {
+    "name": "Κώστας Ζωγράφος",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-93e3b76f5b8627",
+   "value": {
+    "name": "Γιάννης Κανάκης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0ae55740f6359a",
+   "value": {
+    "name": "Παυλάκης Εμμανουηλίδης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-92725eeff0e0a3",
+   "value": {
+    "name": "Κώστας Νεστορίδης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-99005eb5fc5f8c",
+   "value": {
+    "name": "Γιώργος Πετρίδης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-df4dfcfbc23c67",
+   "value": {
+    "name": "Χρήστος Άμπος",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c3134bb1e5e4bc",
+   "value": {
+    "name": "Στέφανος Δεμίρης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-20ad30c75b1a15",
+   "value": {
+    "name": "Αργύρης Αργυρόπουλος",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-eb90966ac16928",
+   "value": {
+    "name": "Λουκάς Σισμάνης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-02d8ed543cdf47",
+   "value": {
+    "name": "Δημήτρης Τσανούλας",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_181d9fa581c0f6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-71fb3052fc14b5",
+   "value": {
+    "name": "Ηλίας Ατματσίδης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 1992,
+    "toYear": 2002,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e",
+    "src_9bad760a0c7cbd",
+    "src_4324201cded8d2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f044bccdf18fac",
+   "value": {
+    "name": "Βασίλης Καραγιάννης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-037c393d13c254",
+   "value": {
+    "name": "Σπύρος Οικονομόπουλος",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-6285922c387c87",
+   "value": {
+    "name": "Στέλιος Μανωλάς",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-35e1f8714ea422",
+   "value": {
+    "name": "Βάιος Καραγιάννης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0a0d4c544a53eb",
+   "value": {
+    "name": "Γιώργος Αγορογιάννης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-2cc604f98efb6d",
+   "value": {
+    "name": "Μιχάλης Βλάχος",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c1116b27b6e5bc",
+   "value": {
+    "name": "Χάρης Κοπιτσής",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-a061bd7e6772d0",
+   "value": {
+    "name": "Γιώργος Κούτουλας",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-8f5e15f569f820",
+   "value": {
+    "name": "Μανώλης Παπαδόπουλος",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-69afc4d1a46faa",
+   "value": {
+    "name": "Ανδρέας Θεοδωρόπουλος",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-79e3f46e19db81",
+   "value": {
+    "name": "Ρέφικ Σαμπανάτζοβιτς",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-9236ddd9581ef2",
+   "value": {
+    "name": "Τόνι Σαβέφσκι",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d887dcf755ace0",
+   "value": {
+    "name": "Βασίλης Τσιάρτας",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1992,
+    "toYear": 2004,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e",
+    "src_9bad760a0c7cbd",
+    "src_c41db1eb94410e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3a9a430e9772cb",
+   "value": {
+    "name": "Μιχάλης Κασάπης",
+    "sport": "football",
+    "positions": [
+     "MF",
+     "DF"
+    ],
+    "fromYear": 1993,
+    "toYear": 2004,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e",
+    "src_9bad760a0c7cbd",
+    "src_eff35aaa10b50f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f2944ab1c8063b",
+   "value": {
+    "name": "Σταύρος Σταματής",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-b8ef7114bb77b2",
+   "value": {
+    "name": "Βασίλης Μπορμπόκης",
+    "sport": "football",
+    "positions": [
+     "MF",
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e",
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-72626835ce8872",
+   "value": {
+    "name": "Παντελής Κωνσταντινίδης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-dcf555c333f840",
+   "value": {
+    "name": "Βασίλης Δημητριάδης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1991,
+    "toYear": 1997,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e",
+    "src_47266257254d0d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-866f496334d816",
+   "value": {
+    "name": "Αλέξης Αλεξανδρής",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-388f4af6d683d3",
+   "value": {
+    "name": "Ζόραν Σλίσκοβιτς",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-db29bc7f2f256e",
+   "value": {
+    "name": "Τάσος Μητρόπουλος",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-9bd20d9c0aea04",
+   "value": {
+    "name": "Σαμουήλ Δρακόπουλος",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_457613ddd33b2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-6207f14f76f6ab",
+   "value": {
+    "name": "Διονύσης Χιώτης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-79766af5488f88",
+   "value": {
+    "name": "Χρυσόστομος Μιχαηλίδης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c4f0d7eecddf7b",
+   "value": {
+    "name": "Σωτήρης Λυμπερόπουλος",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4c6eaa2fc6c07c",
+   "value": {
+    "name": "Γιάννης Αραμπατζής",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3e9c0287a00eba",
+   "value": {
+    "name": "Μιχάλης Καψής",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-328df000222d1d",
+   "value": {
+    "name": "Νίκος Κωστένογλου",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-22ffdd23ba1481",
+   "value": {
+    "name": "Νίκος Γεωργέας",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-066af3d63e57d9",
+   "value": {
+    "name": "Μαουρίτσιο Ράιτ",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-712d5e93709c42",
+   "value": {
+    "name": "Μίχελ Κρέεκ",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-81378e1fb09328",
+   "value": {
+    "name": "Γρηγόρης Τόσκας",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d131638bc85b41",
+   "value": {
+    "name": "Στέλιος Μαιστρέλλης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-609926f7c64902",
+   "value": {
+    "name": "Στάθης Κάππος",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4c863400e41628",
+   "value": {
+    "name": "Βασίλης Λάκης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1998,
+    "toYear": 2007,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd",
+    "src_2cac483255460b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c924b0556c3291",
+   "value": {
+    "name": "Χρήστος Μαλαδένης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-7e6494d6d7053d",
+   "value": {
+    "name": "Κώστας Κατσουράνης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-6f3e98d4c67aa1",
+   "value": {
+    "name": "Θοδωρής Ζαγοράκης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-326a3645794d6b",
+   "value": {
+    "name": "Γρηγόρης Γεωργάτος",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-35a1dea00be0b1",
+   "value": {
+    "name": "Βάλτερ Σεντένο",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4aea2e1f0e0df2",
+   "value": {
+    "name": "Μίλεν Πετκόφ",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-7c1b76af826a96",
+   "value": {
+    "name": "Λίβιο Αρμάντο Πριέτο",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-8f4a6ea5512501",
+   "value": {
+    "name": "Δημήτρης Καραμέρης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-dc80d5930b02f3",
+   "value": {
+    "name": "Γιώργος Πάσιος",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-733e5801f50dd6",
+   "value": {
+    "name": "Ιβάν Ρούσεφ",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-ab58eda637ae97",
+   "value": {
+    "name": "Νίκος Πορτουλίδης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-46c0ff1549ef2d",
+   "value": {
+    "name": "Ντέμης Νικολαΐδης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1996,
+    "toYear": 2003,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd",
+    "src_3ced6e292a12ea"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-03ba3daf9b4cf5",
+   "value": {
+    "name": "Ίλια Ίβιτς",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-fe73eec13513c8",
+   "value": {
+    "name": "Σωτήρης Κωνσταντινίδης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-68d4dc2caff1b2",
+   "value": {
+    "name": "Δημήτρης Ναλιτζής",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d4aac15d581bfc",
+   "value": {
+    "name": "Χρήστος Κωστής",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-cc2d3c950d277a",
+   "value": {
+    "name": "Ηλίας Σολάκης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_9bad760a0c7cbd"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0d8899e481f7b2",
+   "value": {
+    "name": "Βασίλης Μπάρκας",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4d73fca8968f12",
+   "value": {
+    "name": "Γιάννης Ανέστης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-651388d3f99177",
+   "value": {
+    "name": "Παναγιώτης Τσιντώτας",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-972db783739b84",
+   "value": {
+    "name": "Παναγιώτης Ντούνης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-250ed40ff1c2e9",
+   "value": {
+    "name": "Μιχάλης Μπακάκης",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e0f25a0f38192e",
+   "value": {
+    "name": "Ντμίτρο Τσιγκρίνσκι",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-555a01df5c74fb",
+   "value": {
+    "name": "Ούρος Τσόσιτς",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-a317bfefdc1482",
+   "value": {
+    "name": "Χέλντερ Λόπες",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0addd5d8a7159c",
+   "value": {
+    "name": "Βασίλης Λαμπρόπουλος",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-1d64fac53f1c20",
+   "value": {
+    "name": "Νίκλας Χούλτ",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-422d48562bf21a",
+   "value": {
+    "name": "Γιώργος Γιαννούτσος",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3ebb3f85a6fed4",
+   "value": {
+    "name": "Ροντρίγκο Γκάλο",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-416dbe4e6403c6",
+   "value": {
+    "name": "Άνταμ Τζανετόπουλος",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-30cff21351a085",
+   "value": {
+    "name": "Όγκνεν Βράνιες",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-18b55e169c9e1c",
+   "value": {
+    "name": "Αντρές Σιμόες",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-2026bb4b67ae3f",
+   "value": {
+    "name": "Αστρίτ Αϊντάρεβιτς",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-066df1052defe1",
+   "value": {
+    "name": "Πέτρος Μάνταλος",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77",
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0c810d9c63a848",
+   "value": {
+    "name": "Πάρης Μπάμπης",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f733cc15b910cf",
+   "value": {
+    "name": "Έρικ Μοράν",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-54161685fa6774",
+   "value": {
+    "name": "Κώστας Γαλανόπουλος",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77",
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0801315f88e4e1",
+   "value": {
+    "name": "Γιάκομπ Γιόχανσον",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-dd924b41357ae0",
+   "value": {
+    "name": "Παναγιώτης Κονέ",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d463e7d719b10c",
+   "value": {
+    "name": "Σοτζέϊ Μασούντ",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c3bbe2b5c1f856",
+   "value": {
+    "name": "Τάσος Μπακασέτας",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4868c92acb4d1b",
+   "value": {
+    "name": "Αντώνης Κυριαζής",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0203cafd2c741e",
+   "value": {
+    "name": "Βίκτωρ Ντόριαν Κλωναρίδης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-b811ad7dba3e33",
+   "value": {
+    "name": "Σέρχιο Αραούχο",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77",
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-b4ca429486e8ca",
+   "value": {
+    "name": "Γιώργος Γιακουμάκης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-8a6879e8d65354",
+   "value": {
+    "name": "Χρήστος Γιούσης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-643934e200ce46",
+   "value": {
+    "name": "Πατίτο Ροντρίγκεζ",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-92340fad365ce3",
+   "value": {
+    "name": "Μάρκο Λιβάγια",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2017,
+    "toYear": 2021,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77",
+    "src_ac69e38fc2e51a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-b34d009e058aa2",
+   "value": {
+    "name": "Λάζαρος Χριστοδουλόπουλος",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-dc3725a24202b1",
+   "value": {
+    "name": "Δημήτρης Μελικιώτης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-723fd08dca00e1",
+   "value": {
+    "name": "Χρήστος Αντωνίου",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_bf1122561d7b77"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-703acda59a001d",
+   "value": {
+    "name": "Τσίτσαν Στάνκοβιτς",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-5f6e1caf2be5e5",
+   "value": {
+    "name": "Γιώργος Αθανασιάδης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-b4f4f8a468d250",
+   "value": {
+    "name": "Βασίλης Χατζηεμμανουήλ",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-47d33ca7d5e9bf",
+   "value": {
+    "name": "Γιώργος Θεοχάρης",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-cd14dc79303005",
+   "value": {
+    "name": "Αρόλντ Μουκουντί",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-70cd3dce5e265d",
+   "value": {
+    "name": "Ντομαγκόι Βίντα",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-a4eaf6896b19b8",
+   "value": {
+    "name": "Τζιμπρίλ Σιντιμπέ",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-79f2f2a4cce96a",
+   "value": {
+    "name": "Βεντάτ Ραντόνια",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-29db91610c99d7",
+   "value": {
+    "name": "Γιώργος Τζαβέλλας",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f1cfd0ca8af0e2",
+   "value": {
+    "name": "Γεράσιμος Μήτογλου",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-35701552e3f5e7",
+   "value": {
+    "name": "Λάζαρος Ρότα",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-daec97941bec3a",
+   "value": {
+    "name": "Μίλαντ Μοχαμάντι",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-45f7282796f00a",
+   "value": {
+    "name": "Εχσάν Χατζισαφί",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f9929cb3941577",
+   "value": {
+    "name": "Ζίγκα Λάτσι",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-91dd66bdbc6e29",
+   "value": {
+    "name": "Ορμπελίν Πινέδα",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-dcd6d75c4fa94a",
+   "value": {
+    "name": "Γιενς Γιόνσον",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-2c9d8507ef66ac",
+   "value": {
+    "name": "Νταμιάν Σιμάνσκι",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d96f67bd0b13ea",
+   "value": {
+    "name": "Μιγιάτ Γκατσίνοβιτς",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-ca40acff88ac83",
+   "value": {
+    "name": "Νίκλας Ελίασον",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-8174723762038d",
+   "value": {
+    "name": "Γιώργος Μουστακόπουλος",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-fa325547dc0bf6",
+   "value": {
+    "name": "Πάολο Φερνάντεζ",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d3d3c29d61ef6c",
+   "value": {
+    "name": "Αλεξάντερ Φράνσον",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-15823d2d7ab50a",
+   "value": {
+    "name": "Χρήστος Αλμπάνης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-98114ba26cc840",
+   "value": {
+    "name": "Λιβάι Γκαρσία",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-6cecb549fe58a9",
+   "value": {
+    "name": "Τομ Φαν Βερτ",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-abd0c76b0ba901",
+   "value": {
+    "name": "Μιχάλης Κοσίδης",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-32c4d778e0dbb7",
+   "value": {
+    "name": "Στίβεν Τσούμπερ",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d28d0a1cb66f3b",
+   "value": {
+    "name": "Νορντίν Άμραμπατ",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-aa35804a979991",
+   "value": {
+    "name": "Θεοδόσης Μαχαίρας",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-a547073cd48ca4",
+   "value": {
+    "name": "Ζίνι",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-fa653eca406c93",
+   "value": {
+    "name": "Τραϊανός Δέλλας",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1999,
+    "toYear": 2012,
+    "aliases": []
+   },
+   "sources": [
+    "src_d9a7d0ea6133d6"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-2cef59e24a5992",
+   "value": {
+    "name": "Θωμάς Μαύρος",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1976,
+    "toYear": 1987,
+    "aliases": []
+   },
+   "sources": [
+    "src_0d07886f0a8589"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-bc8a5032677b79",
+   "value": {
+    "name": "Μίμης Παπαϊωάννου",
+    "sport": "football",
+    "positions": [],
+    "fromYear": 1962,
+    "toYear": 1979,
+    "aliases": []
+   },
+   "sources": [
+    "src_67806347950352"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d9a6e6ba941795",
+   "value": {
+    "name": "Μπρούνο Άλβες",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2004,
+    "toYear": 2005,
+    "aliases": []
+   },
+   "sources": [
+    "src_03557d9e423bf5"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-b2c40a8ed47efd",
+   "value": {
+    "name": "Ζεράλντο Άλβες",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2010,
+    "aliases": []
+   },
+   "sources": [
+    "src_b7b4b1f3b9f2e7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f9d4ce0d4876b0",
+   "value": {
+    "name": "Αντώνης Μήνου",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 1988,
+    "toYear": 1993,
+    "aliases": []
+   },
+   "sources": [
+    "src_e05279e45e696a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "rivals": [],
+ "matches": [
+  {
+   "id": "m-58c13799e5",
+   "value": {
+    "name": "Olympiacos 0-1 AEK Athens",
+    "on": "1989-05-07",
+    "competition": "Greek league",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_706518f7d414d0"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-c046bad6ad",
+   "value": {
+    "name": "AEK Athens 7-0 Korinthos",
+    "on": "1992-12-12",
+    "competition": "Greek league",
+    "score": "7-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c41db1eb94410e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-bb44cc4fdd",
+   "value": {
+    "name": "AEK Athens 5-1 Ionikos",
+    "on": "2000-03-19",
+    "competition": null,
+    "score": "5-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_3ced6e292a12ea"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-4b47c3b102",
+   "value": {
+    "name": "AEK Athens 8-0 Ethnikos",
+    "on": "2000-08-17",
+    "competition": null,
+    "score": "8-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_3ced6e292a12ea"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-8fab32972c",
+   "value": {
+    "name": "AEK Athens 5-0 Herfølge",
+    "on": "2000-10-26",
+    "competition": null,
+    "score": "5-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_3ced6e292a12ea"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "trophies": [
+  {
+   "id": "tr-greek-league",
+   "value": {
+    "name": "Greek league",
+    "seasons": [
+     "1993/94",
+     "2017/18",
+     "2022/23"
+    ],
+    "count": null
+   },
+   "sources": [
+    "src_457613ddd33b2e",
+    "src_bf1122561d7b77",
+    "src_c41c270dfb9198"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Seasons documented so far; not a complete honours list.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "culture": [
+  {
+   "id": "cu-6f2a6d54",
+   "value": {
+    "name": "Foundation identity",
+    "topic": "foundation identity",
+    "foundedOn": "1924-04-13",
+    "foundingPlace": "24 Veranzerou Street, Athens",
+    "firstPresident": "Konstantinos Spanoudis",
+    "emblem": "double-headed eagle",
+    "heritage": "athletes originating from Constantinople"
+   },
+   "sources": [
+    "src_9dac2fb0b971c1"
+   ],
+   "confidence": 1,
+   "status": "review",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": ""
+  }
+ ],
+ "kits": [
+  {
+   "id": "k-9e140407",
+   "value": {
+    "name": "aek-athens 2023/24 kit",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": null
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "src_9ebc08789b1a56"
+   ],
+   "confidence": 1,
+   "status": "review",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Description only; no licensed image."
+  },
+  {
+   "id": "k-8980a0f1",
+   "value": {
+    "name": "aek-athens 2016/17 kit",
+    "season": "2016/17",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": null
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "src_269b1923be74db"
+   ],
+   "confidence": 1,
+   "status": "review",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Description only; no licensed image."
+  }
+ ]
+}

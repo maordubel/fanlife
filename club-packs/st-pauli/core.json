@@ -1,0 +1,2472 @@
+{
+ "schemaVersion": 1,
+ "clubId": "st-pauli",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "src_039505f8616496",
+   "title": "Wer ist Nikola Vasilj? - Ein Spielerprofil - MillernTon",
+   "url": "https://millernton.de/2021/05/24/wer-ist-nikola-vasilj-ein-spielerprofil/",
+   "publisher": "MillernTon",
+   "access": "unknown",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_08a09fd6171a27",
+   "title": "Wer ist Daniel-Kofi Kyereh? - Ein Spielerprofil - MillernTon",
+   "url": "https://millernton.de/2020/07/29/wer-ist-daniel-kofi-kyereh-ein-spielerprofil/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_17d993fe6d1d2e",
+   "title": "Wer ist Andreas Albers? - Ein Spielerprofil - MillernTon",
+   "url": "https://millernton.de/2023/06/25/wer-ist-andreas-albers-ein-spielerprofil/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_1b50ade49a4d62",
+   "title": "How the skull and crossbones came to FC St Pauli - FC St. Pauli-Museum",
+   "url": "https://www.fcstpauli-museum.de/totenkopf-eng/",
+   "publisher": "FC St. Pauli Museum",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_2794016afe59b8",
+   "title": "Archiv und Forschung - FC St. Pauli-Museum",
+   "url": "https://www.fcstpauli-museum.de/dieter-rittmeyer-archiv/",
+   "publisher": "FC St. Pauli Museum",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_3a766d9a81cc9a",
+   "title": "Personenarchiv - MillernTon",
+   "url": "https://millernton.de/statistik-spiele-des-fc-st-pauli/spielerarchiv/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_43f866d5e842fc",
+   "title": "FC St. Pauli Saison 2024/25 - MillernTon",
+   "url": "https://millernton.de/statistik-spiele-des-fc-st-pauli/fc-st-pauli-saison-2024-25/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_5b494d48b98d01",
+   "title": "DFB Datencenter",
+   "url": "https://datencenter.dfb.de/clubs/fc-st-pauli-von-1910-e-v/",
+   "publisher": "datencenter.dfb.de",
+   "access": "unknown",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_6040cee02358f3",
+   "title": "Wer ist Hauke Wahl? - Ein Spielerprofil - MillernTon",
+   "url": "https://millernton.de/2023/05/23/wer-ist-hauke-wahl-ein-spielerprofil/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_7f0d1422a2c839",
+   "title": "Wer ist Oladapo Afolayan? - Ein Spielerprofil - MillernTon",
+   "url": "https://millernton.de/2023/01/19/wer-ist-oladapo-afolayan-ein-spielerprofil/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_8acf3b4ded610f",
+   "title": "Über 1910 e.V. - FC St. Pauli-Museum",
+   "url": "https://www.fcstpauli-museum.de/1910ev/",
+   "publisher": "FC St. Pauli Museum",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_93abd3cfc3378b",
+   "title": "FC St. Pauli Saison 2021/22 - MillernTon",
+   "url": "https://millernton.de/statistik-spiele-des-fc-st-pauli/fcsp-saison-2021-22/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_b4a7dde3f41e3b",
+   "title": "Wer ist Marcel Hartel? - Ein Spielerprofil - MillernTon",
+   "url": "https://millernton.de/2021/08/10/wer-ist-marcel-hartel-ein-spielerprofil/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_c0a6ffd7ab733b",
+   "title": "DIWP - Do it with PUMA - MillernTon",
+   "url": "https://millernton.de/2023/10/25/diwp-do-it-with-puma/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_c80f7aa706b4f2",
+   "title": "FC St. Pauli Saison 2023/24 - MillernTon",
+   "url": "https://millernton.de/statistik-spiele-des-fc-st-pauli/fcsp-saison-2023-24/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_df7926bf95d582",
+   "title": "Wer ist Manolis Saliakas? - Ein Spielerprofil - MillernTon",
+   "url": "https://millernton.de/2022/05/18/wer-ist-manolis-saliakas-ein-spielerprofil/",
+   "publisher": "MillernTon",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  }
+ ],
+ "archive": [
+  {
+   "id": "t-488b8648",
+   "value": {
+    "name": "The museum association 1910 e.V. is founded",
+    "hint": "The supporters' association behind the FC St. Pauli Museum.",
+    "sport": "football",
+    "sensitive": false,
+    "precision": "year",
+    "year": 2012
+   },
+   "sources": [
+    "src_8acf3b4ded610f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). English wording written from the staged Hebrew title; no fact added.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "t-e728a49e",
+   "value": {
+    "name": "FC St. Pauli founded",
+    "hint": "Hamburg's club of the Millerntor.",
+    "sport": "football",
+    "sensitive": false,
+    "on": "1910-05-15",
+    "precision": "day",
+    "year": 1910
+   },
+   "sources": [
+    "src_5b494d48b98d01"
+   ],
+   "confidence": 1,
+   "status": "review",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "English wording written from the staged Hebrew title; no fact added."
+  }
+ ],
+ "players": [
+  {
+   "id": "p-ed1042de6022ca",
+   "value": {
+    "name": "Oladapo Afolayan",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a",
+    "src_7f0d1422a2c839"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3f82457c62e546",
+   "value": {
+    "name": "Sören Ahlers",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-76ae62abf668f9",
+   "value": {
+    "name": "Andreas Albers",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a",
+    "src_17d993fe6d1d2e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-43903a30f67409",
+   "value": {
+    "name": "Sami Allagui",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f641a065cc0865",
+   "value": {
+    "name": "Etienne Amenyido",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-eeb4c1f68f0556",
+   "value": {
+    "name": "Afeez Aremu",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-268bb4fdec12aa",
+   "value": {
+    "name": "Christopher Avevor",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0bf161cdab3829",
+   "value": {
+    "name": "Scott Banks",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e4f731beb883c8",
+   "value": {
+    "name": "Fin Bartels",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-7080ec52dcea06",
+   "value": {
+    "name": "Finn Ole Becker",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-7f47e7de7d8c73",
+   "value": {
+    "name": "Fabian Boll",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3e24d9d639d2f7",
+   "value": {
+    "name": "Daniel Buballa",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e56d7f7323696d",
+   "value": {
+    "name": "Christopher Buchtmann",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e695b1e16dd0ca",
+   "value": {
+    "name": "Sascha Burchert",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-644de8b27db6f3",
+   "value": {
+    "name": "Guido Burgstaller",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f158c822565fed",
+   "value": {
+    "name": "Jackson Irvine",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-22fd0b5b8428d2",
+   "value": {
+    "name": "Daniel-Kofi Kyereh",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a",
+    "src_08a09fd6171a27"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f49afe97691e26",
+   "value": {
+    "name": "Karol Mets",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-61cce1815f9c76",
+   "value": {
+    "name": "Leart Paqarada",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3eae01c86d6d31",
+   "value": {
+    "name": "Manolis Saliakas",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a",
+    "src_df7926bf95d582"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-386020d119ac0f",
+   "value": {
+    "name": "Eric Smith",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-2b718ff36ab1ce",
+   "value": {
+    "name": "Nikola Vasilj",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a",
+    "src_039505f8616496"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-002fabbfd6ecd9",
+   "value": {
+    "name": "Ben Voll",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-1c73bd69f0c0d5",
+   "value": {
+    "name": "Hauke Wahl",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_3a766d9a81cc9a",
+    "src_6040cee02358f3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-fa0b9ca2de9ef6",
+   "value": {
+    "name": "Marcel Hartel",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_b4a7dde3f41e3b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "rivals": [],
+ "matches": [
+  {
+   "id": "m-71839fb3d8",
+   "value": {
+    "name": "FC St. Pauli 3-0 Holstein Kiel",
+    "on": "2021-07-25",
+    "competition": "2. Bundesliga",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-e8a9458e36",
+   "value": {
+    "name": "Erzgebirge Aue 0-0 FC St. Pauli",
+    "on": "2021-08-01",
+    "competition": "2. Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-3631cd0319",
+   "value": {
+    "name": "1. FC Magdeburg 2-3 FC St. Pauli",
+    "on": "2021-08-07",
+    "competition": "DFB-Pokal",
+    "score": "2-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-200b77e1a3",
+   "value": {
+    "name": "FC St. Pauli 3-2 Hamburger SV",
+    "on": "2021-08-13",
+    "competition": "2. Bundesliga",
+    "score": "3-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-527e867773",
+   "value": {
+    "name": "SC Paderborn 3-1 FC St. Pauli",
+    "on": "2021-08-21",
+    "competition": "2. Bundesliga",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-1188b000da",
+   "value": {
+    "name": "FC St. Pauli 2-0 Jahn Regensburg",
+    "on": "2021-08-29",
+    "competition": "2. Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-9ff5999676",
+   "value": {
+    "name": "Hannover 96 1-0 FC St. Pauli",
+    "on": "2021-09-11",
+    "competition": "2. Bundesliga",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-78fcf1b201",
+   "value": {
+    "name": "FC St. Pauli 4-1 FC Ingolstadt",
+    "on": "2021-09-19",
+    "competition": "2. Bundesliga",
+    "score": "4-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-9895132cc5",
+   "value": {
+    "name": "Karlsruher SC 1-3 FC St. Pauli",
+    "on": "2021-09-25",
+    "competition": "2. Bundesliga",
+    "score": "1-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-2ff3bffa71",
+   "value": {
+    "name": "FC St. Pauli 3-0 Dynamo Dresden",
+    "on": "2021-10-03",
+    "competition": "2. Bundesliga",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-09e08b925b",
+   "value": {
+    "name": "1.FC Heidenheim 2-4 FC St. Pauli",
+    "on": "2021-10-16",
+    "competition": "2. Bundesliga",
+    "score": "2-4",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-e2592178d4",
+   "value": {
+    "name": "FC St. Pauli 4-0 Hansa Rostock",
+    "on": "2021-10-24",
+    "competition": "2. Bundesliga",
+    "score": "4-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-2cf9fb52e3",
+   "value": {
+    "name": "Werder Bremen 1-1 FC St. Pauli",
+    "on": "2021-10-30",
+    "competition": "2. Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-b7485d337c",
+   "value": {
+    "name": "Darmstadt 98 4-0 FC St. Pauli",
+    "on": "2021-11-20",
+    "competition": "2. Bundesliga",
+    "score": "4-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-31ca96245a",
+   "value": {
+    "name": "FC St. Pauli 3-1 SV Sandhausen",
+    "on": "2021-11-24",
+    "competition": "2. Bundesliga",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-5dfb8da348",
+   "value": {
+    "name": "1.FC Nürnberg 2-3 FC St. Pauli",
+    "on": "2021-11-28",
+    "competition": "2. Bundesliga",
+    "score": "2-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-767c3749b3",
+   "value": {
+    "name": "FC St. Pauli 2-1 Schalke 04",
+    "on": "2021-12-04",
+    "competition": "2. Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-17f5733609",
+   "value": {
+    "name": "Fortuna Düsseldorf 1-1 FC St. Pauli",
+    "on": "2021-12-11",
+    "competition": "2. Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-72cbbaee96",
+   "value": {
+    "name": "Holstein Kiel 3-0 FC St. Pauli",
+    "on": "2021-12-17",
+    "competition": "2. Bundesliga",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-e909ba008f",
+   "value": {
+    "name": "FC St. Pauli 2-2 Erzgebirge Aue",
+    "on": "2022-01-15",
+    "competition": "2. Bundesliga",
+    "score": "2-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-06096be573",
+   "value": {
+    "name": "1. FC Kaiserslautern 1-2 FC St. Pauli",
+    "on": "2023-07-29",
+    "competition": "2. Bundesliga",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-48b79409b8",
+   "value": {
+    "name": "FC St. Pauli 0-0 Fortuna Düsseldorf",
+    "on": "2023-08-05",
+    "competition": "2. Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-7de0bc3618",
+   "value": {
+    "name": "Atlas Delmenhorst 0-5 FC St. Pauli",
+    "on": "2023-08-12",
+    "competition": "DFB-Pokal",
+    "score": "0-5",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-147af1a252",
+   "value": {
+    "name": "SpVgg Fürth 0-0 FC St. Pauli",
+    "on": "2023-08-19",
+    "competition": "2. Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-5d6e3398a3",
+   "value": {
+    "name": "FC St. Pauli 0-0 1. FC Magdeburg",
+    "on": "2023-08-27",
+    "competition": "2. Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-1b53d91d65",
+   "value": {
+    "name": "Eintracht Braunschweig 1-1 FC St. Pauli",
+    "on": "2023-09-01",
+    "competition": "2. Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-6adfc7f72b",
+   "value": {
+    "name": "FC St. Pauli 5-1 Holstein Kiel",
+    "on": "2023-09-17",
+    "competition": "2. Bundesliga",
+    "score": "5-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-f4ce00d5e3",
+   "value": {
+    "name": "FC St. Pauli 3-1 Schalke 04",
+    "on": "2023-09-23",
+    "competition": "2. Bundesliga",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-51ac321527",
+   "value": {
+    "name": "Hertha BSC 1-2 FC St. Pauli",
+    "on": "2023-09-30",
+    "competition": "2. Bundesliga",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-56c98f07db",
+   "value": {
+    "name": "FC St. Pauli 5-1 1. FC Nürnberg",
+    "on": "2023-10-07",
+    "competition": "2. Bundesliga",
+    "score": "5-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-a44332fa1c",
+   "value": {
+    "name": "SC Paderborn 2-2 FC St. Pauli",
+    "on": "2023-10-21",
+    "competition": "2. Bundesliga",
+    "score": "2-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-dabdaf4c61",
+   "value": {
+    "name": "FC St. Pauli 2-1 Karlsruher SC",
+    "on": "2023-10-28",
+    "competition": "2. Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-1e61450fba",
+   "value": {
+    "name": "Holstein Kiel 3-4 FC St. Pauli",
+    "on": "2024-02-23",
+    "competition": "2. Bundesliga",
+    "score": "3-4",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-a61cf90ecf",
+   "value": {
+    "name": "Schalke 04 3-1 FC St. Pauli",
+    "on": "2024-03-01",
+    "competition": "2. Bundesliga",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-393ed7369a",
+   "value": {
+    "name": "FC St. Pauli 2-0 Hertha BSC",
+    "on": "2024-03-10",
+    "competition": "2. Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-1009816269",
+   "value": {
+    "name": "1. FC Nürnberg 0-2 FC St. Pauli",
+    "on": "2024-03-16",
+    "competition": "2. Bundesliga",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-638a531ee8",
+   "value": {
+    "name": "FC St. Pauli 2-1 SC Paderborn",
+    "on": "2024-03-31",
+    "competition": "2. Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-062f38b0f6",
+   "value": {
+    "name": "Karlsruher SC 2-1 FC St. Pauli",
+    "on": "2024-04-06",
+    "competition": "2. Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-5fbade3c27",
+   "value": {
+    "name": "FC St. Pauli 3-4 SV Elversberg",
+    "on": "2024-04-14",
+    "competition": "2. Bundesliga",
+    "score": "3-4",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-47123a3633",
+   "value": {
+    "name": "Hannover 96 1-2 FC St. Pauli",
+    "on": "2024-04-21",
+    "competition": "2. Bundesliga",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-0c22305a17",
+   "value": {
+    "name": "FC St. Pauli 0-2 1. FC Heidenheim",
+    "on": "2024-08-25",
+    "competition": "Bundesliga",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-a3f98aa166",
+   "value": {
+    "name": "Union Berlin 1-0 FC St. Pauli",
+    "on": "2024-08-30",
+    "competition": "Bundesliga",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-891a818b62",
+   "value": {
+    "name": "FC Augsburg 3-1 FC St. Pauli",
+    "on": "2024-09-15",
+    "competition": "Bundesliga",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-bfa0111e91",
+   "value": {
+    "name": "FC St. Pauli 0-0 RaBa Leipzig",
+    "on": "2024-09-22",
+    "competition": "Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-ddb99d26ab",
+   "value": {
+    "name": "SC Freiburg 0-3 FC St. Pauli",
+    "on": "2024-09-28",
+    "competition": "Bundesliga",
+    "score": "0-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-ec3bd3551e",
+   "value": {
+    "name": "FC St. Pauli 0-3 FSV Mainz 05",
+    "on": "2024-10-05",
+    "competition": "Bundesliga",
+    "score": "0-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-64ed9dff43",
+   "value": {
+    "name": "FC St. Pauli 0-0 VfL Wolfsburg",
+    "on": "2024-10-26",
+    "competition": "Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-00187f47ad",
+   "value": {
+    "name": "RaBa Leipzig 4-2 FC St. Pauli",
+    "on": "2024-10-29",
+    "competition": "DFB-Pokal",
+    "score": "4-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-3ddfe67923",
+   "value": {
+    "name": "TSG Hoffenheim 0-2 FC St. Pauli",
+    "on": "2024-11-02",
+    "competition": "Bundesliga",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-7da2c98f1a",
+   "value": {
+    "name": "FC St. Pauli 0-1 Bayern München",
+    "on": "2024-11-09",
+    "competition": "Bundesliga",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-991ea20502",
+   "value": {
+    "name": "Borussia Mönchengladbach 2-0 FC St. Pauli",
+    "on": "2024-11-24",
+    "competition": "Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-678775c299",
+   "value": {
+    "name": "FC St. Pauli 3-1 Holstein Kiel",
+    "on": "2024-11-29",
+    "competition": "Bundesliga",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-478bfac94c",
+   "value": {
+    "name": "VfB Stuttgart 0-1 FC St. Pauli",
+    "on": "2024-12-21",
+    "competition": "Bundesliga",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-92476edf58",
+   "value": {
+    "name": "FC St. Pauli 0-1 Eintracht Frankfurt",
+    "on": "2025-01-11",
+    "competition": "Bundesliga",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-9a653620e3",
+   "value": {
+    "name": "VfL Bochum 1-0 FC St. Pauli",
+    "on": "2025-01-15",
+    "competition": "Bundesliga",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-03daf6fce0",
+   "value": {
+    "name": "1. FC Heidenheim 0-2 FC St. Pauli",
+    "on": "2025-01-18",
+    "competition": "Bundesliga",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-933e99915c",
+   "value": {
+    "name": "FC St. Pauli 3-0 Union Berlin",
+    "on": "2025-01-26",
+    "competition": "Bundesliga",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-d9d54924f0",
+   "value": {
+    "name": "FC St. Pauli 1-1 FC Augsburg",
+    "on": "2025-02-01",
+    "competition": "Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-b07ee1e95f",
+   "value": {
+    "name": "RaBa Leipzig 2-0 FC St. Pauli",
+    "on": "2025-02-09",
+    "competition": "Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-59107576e0",
+   "value": {
+    "name": "FC St. Pauli 0-1 SC Freiburg",
+    "on": "2025-02-15",
+    "competition": "Bundesliga",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "trophies": [
+  {
+   "id": "tr-2-bundesliga",
+   "value": {
+    "name": "2. Bundesliga",
+    "seasons": [
+     "2023/24"
+    ],
+    "count": null
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Seasons documented so far; not a complete honours list.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "culture": [
+  {
+   "id": "cu-3295f9a7",
+   "value": {
+    "name": "Dieter-Rittmeyer-Archiv",
+    "city": "Hamburg",
+    "address": "Heiligengeistfeld 1",
+    "kind": "official club archive; museum managed"
+   },
+   "sources": [
+    "src_2794016afe59b8"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-358f0b26",
+   "value": {
+    "name": "FC St. Pauli Museum",
+    "locationAsReported": "Millerntor-Stadion Gegengerade",
+    "operator": "1910 e.V."
+   },
+   "sources": [
+    "src_8acf3b4ded610f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-0c5c1d50",
+   "value": {
+    "name": "Totenkopf",
+    "topic": "Totenkopf",
+    "firstFlagCarrierAsReported": "Doc Mabuse",
+    "firstFlagApproxYear": 1986,
+    "parallelGraphicCreator": "Steph Braun",
+    "officialClubAdoptionPeriod": "late 1990s",
+    "notOriginal1910ClubCrest": true
+   },
+   "sources": [
+    "src_1b50ade49a4d62"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cu-f3732ca5",
+   "value": {
+    "name": "Fanladen",
+    "topic": "Fanladen",
+    "foundedYear": 1990,
+    "kind": "independent supporter project; not merchandise shop"
+   },
+   "sources": [
+    "src_1b50ade49a4d62"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "kits": [
+  {
+   "id": "k-f1dec0f8",
+   "value": {
+    "name": "st-pauli 2021/22 kit",
+    "season": "2021/22",
+    "type": "home",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": null
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "src_c0a6ffd7ab733b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Description only; no licensed image.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "k-2b9463c5",
+   "value": {
+    "name": "st-pauli 2024/25 kit",
+    "season": "2024/25",
+    "type": "home",
+    "manufacturer": "PUMA",
+    "construction": {
+     "design": null
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "src_c0a6ffd7ab733b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Description only; no licensed image.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "seasons": [
+  {
+   "id": "s-2021-22",
+   "value": {
+    "season": "2021/22",
+    "name": "2021/22",
+    "finish": "5th, 2. Bundesliga",
+    "points": 57
+   },
+   "sources": [
+    "src_93abd3cfc3378b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Selected season row; not a full season export.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "s-2023-24",
+   "value": {
+    "season": "2023/24",
+    "name": "2023/24",
+    "finish": "1th, 2. Bundesliga",
+    "points": 69
+   },
+   "sources": [
+    "src_c80f7aa706b4f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Selected season row; not a full season export.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "s-2024-25",
+   "value": {
+    "season": "2024/25",
+    "name": "2024/25",
+    "finish": "14th, Bundesliga",
+    "points": 32
+   },
+   "sources": [
+    "src_43f866d5e842fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Selected season row; not a full season export.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ]
+}

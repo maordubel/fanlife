@@ -87,6 +87,7 @@
 .kcard:active { transform: translate(2px, 2px); }
 .kcard[data-open='false'] { border-style: dashed; background: color-mix(in srgb, var(--ks-ink) 4%, var(--mag-card)); }
 .kcardArt { aspect-ratio: 1.1; display: grid; place-items: center; }
+.kcardArt img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .kcardArt svg { width: 100%; height: 100%; display: block; }
 .locked { width: 100%; height: 100%; display: block; opacity: .22; filter: grayscale(1); }
 .textOnly { padding: 6px; font-family: var(--mag-condensed, var(--mag-display)); font-weight: 700; font-size: 18px; text-align: center; overflow-wrap: anywhere; }
@@ -104,6 +105,7 @@
 .sheetBody { display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.45; }
 .sheetBody p { margin: 0; }
 .bigShirt { aspect-ratio: 1.15; max-height: 280px; display: grid; place-items: center; border: 3px solid var(--ks-ink); background: var(--mag-card); padding: 6px; }
+.bigShirt img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .bigShirt svg { width: 100%; height: 100%; display: block; }
 .bigShirt[data-locked='true'] svg { opacity: .22; filter: grayscale(1); }
 .saveShirt { height: 150px; display: grid; place-items: center; border: 3px solid var(--ks-ink); background: var(--mag-card); }

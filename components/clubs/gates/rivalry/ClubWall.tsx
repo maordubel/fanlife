@@ -58,7 +58,7 @@ export function ClubWall({club,clubName,version,seed,cursor,locale,contentLocale
    <li>{t('derby.w.rule.noScore')}</li>
   </ul>
   <p className={css.fine}>{curated?t('derby.w.curated'):t('derby.w.notRanked')}</p>
-  <button ref={startRef} type="button" className={css.cta} data-testid="wall-start" onClick={begin}>{t('derby.w.start')}</button>
+  <button ref={startRef} type="button" className={`${css.cta} min-h-tap`} data-testid="wall-start" onClick={begin}>{t('derby.w.start')}</button>
  </section>
 
  if(phase==='over'){
@@ -94,7 +94,7 @@ export function ClubWall({club,clubName,version,seed,cursor,locale,contentLocale
  if(!holder||!challenger)return null
  const poster=(c:WallCandidate,role:'holder'|'challenger')=>{
   const win=kept===c.id,out=kept!==null&&!win
-  return <button type="button" key={c.id} className={css.poster} data-role={role} data-damage={role==='holder'?damage:0} data-state={win?'kept':out?'out':'idle'} data-testid={`wall-${role}`} data-candidate={c.id} disabled={phase==='stamp'} aria-label={t('derby.w.keep',{name:c.name})} onClick={e=>pick(c.id,e.currentTarget)}>
+  return <button type="button" key={c.id} className={`${css.poster} min-h-tap`} data-role={role} data-damage={role==='holder'?damage:0} data-state={win?'kept':out?'out':'idle'} data-testid={`wall-${role}`} data-candidate={c.id} disabled={phase==='stamp'} aria-label={t('derby.w.keep',{name:c.name})} onClick={e=>pick(c.id,e.currentTarget)}>
    <small>{role==='holder'?t('derby.w.onWall'):duel.revenge?t('derby.w.revengeTag'):t('derby.w.nextUp')}</small>
    <b lang={contentLocale} dir="auto"><bdi>{c.name}</bdi></b>
    {c.note&&<em lang={contentLocale} dir="auto"><bdi>{c.note}</bdi></em>}
@@ -116,13 +116,13 @@ export function ClubWall({club,clubName,version,seed,cursor,locale,contentLocale
    {poster(challenger,'challenger')}
   </div>
   <div className={css.tools}>
-   <button type="button" className={css.ghost} data-testid="wall-revenge" disabled={choices.length===0||phase==='stamp'} onClick={()=>setSheet(true)}>{wall.revengeUsed?t('derby.w.revenge.used'):t('derby.w.revenge',{n:choices.length})}</button>
-   <button type="button" className={css.ghost} data-testid="wall-undo" disabled={history.length===0||phase==='stamp'} onClick={undo}>{t('derby.w.undo')}</button>
+   <button type="button" className={`${css.ghost} min-h-tap`} data-testid="wall-revenge" disabled={choices.length===0||phase==='stamp'} onClick={()=>setSheet(true)}>{wall.revengeUsed?t('derby.w.revenge.used'):t('derby.w.revenge',{n:choices.length})}</button>
+   <button type="button" className={`${css.ghost} min-h-tap`} data-testid="wall-undo" disabled={history.length===0||phase==='stamp'} onClick={undo}>{t('derby.w.undo')}</button>
   </div>
   <p className={css.fine}>{t('derby.w.noScore')}</p>
   <SlideSheet open={sheet} onClose={()=>setSheet(false)} title={t('derby.w.revenge.title')} closeLabel={copy['play.close']}>
    <p className={css.fine}>{t('derby.w.revenge.body',{n:choices.length})}</p>
-   <ul className={css.list}>{choices.map(id=><li key={id}><button type="button" className={css.listBtn} data-testid="wall-revenge-pick" onClick={()=>bringBack(id)}><bdi lang={contentLocale} dir="auto">{name(id)}</bdi></button></li>)}</ul>
+   <ul className={css.list}>{choices.map(id=><li key={id}><button type="button" className={`${css.listBtn} min-h-tap`} data-testid="wall-revenge-pick" onClick={()=>bringBack(id)}><bdi lang={contentLocale} dir="auto">{name(id)}</bdi></button></li>)}</ul>
   </SlideSheet>
  </section>
 }

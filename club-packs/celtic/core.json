@@ -1,0 +1,2173 @@
+{
+ "schemaVersion": 1,
+ "clubId": "celtic",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "src_014ad2c648c7e7",
+   "title": "Murdoch, Bobby – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/murdoch-bobby/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_0218b31341477a",
+   "title": "Auld, Bertie – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/a/auld-bertie/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_047819561969f2",
+   "title": "Lennox, Bobby – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/lennox-bobby/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_0ec93bfc43acbb",
+   "title": "2012-11-07: Celtic 2-1 Barcelona, European Cup – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/2012-11-07-celtic-2-1-barcelona-european-cup/",
+   "publisher": "The Celtic Wiki",
+   "access": "unknown",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_1062805d9c0233",
+   "title": "Celtic badge – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/celtic-kit/celtic-badge/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_14bdd7d498e51c",
+   "title": "Johnstone, Jimmy ‘Jinky’ – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/j/johnstone-jimmy-jinky/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_238493c17168ac",
+   "title": "Celtic Captains – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/celtic-captains/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_2ed2360678565e",
+   "title": "McStay, Paul – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcstay-paul/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_4223c6d59a9c18",
+   "title": "McNeill, Billy (1958-75) – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcneill-billy-1958-75/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_449fa575d1b75d",
+   "title": "1967-05-25: Celtic 2-1 Inter Milan, European Cup – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/1967-05-25-celtic-2-1-inter-milan-european-cup/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_61d852f1686530",
+   "title": "McGregor, Callum – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/first-team-squad/mcgregor-callum/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_685c250096405b",
+   "title": "McGrain, Danny – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/m/mcgrain-danny/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_6e139c22604483",
+   "title": "Brown, Scott – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/first-team-squad/brown-scott/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_74484df6a67d4b",
+   "title": "Fallon, John – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/f/fallon-john/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_77deb52f4e5346",
+   "title": "1888 – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/1888-2/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_7dd1fe8fa8df72",
+   "title": "Gemmell, Tommy – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/g/gemmell-tommy/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_807aad6bf231e7",
+   "title": "Brother Walfrid & the history of Celtic – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/about-celtic/celtics-foundation/brother-walfrid-the-history-of-celtic/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_9ea367a99e029b",
+   "title": "Craig, Jim – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/craig-jim/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_a057935cd53522",
+   "title": "Larsson, Henrik – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/l/larsson-henrik/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_b4dfb0aa296b00",
+   "title": "Clark, John – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/clark-john/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_b7130211fef2f7",
+   "title": "Honours – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/about-celtic/honours/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_c4481b42a90b34",
+   "title": "Wallace, Willie – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/wallace-willie/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_d74f3076160aae",
+   "title": "prjUCLPrint",
+   "url": "https://www.uefa.com/newsfiles/uefacup/2002/71041_FR.pdf",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_e5186b466be3f4",
+   "title": "Chalmers, Stevie – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/chalmers-stevie/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "src_ea97e704e07e73",
+   "title": "Bonner, Pat – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/b/bonner-pat/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  }
+ ],
+ "archive": [
+  {
+   "id": "t-3c1a553a",
+   "value": {
+    "name": "Celtic founded in Glasgow",
+    "hint": "Brother Walfrid and a community effort to feed poor children.",
+    "sport": "football",
+    "sensitive": false,
+    "on": "1887-11-06",
+    "precision": "day",
+    "year": 1887
+   },
+   "sources": [
+    "src_807aad6bf231e7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). English wording written from the staged Hebrew title; no fact added.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "t-49d5e492",
+   "value": {
+    "name": "Celtic's first match: Celtic 5-2 Rangers",
+    "hint": "A friendly against Rangers.",
+    "sport": "football",
+    "sensitive": false,
+    "on": "1888-05-28",
+    "precision": "day",
+    "year": 1888
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). English wording written from the staged Hebrew title; no fact added.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "t-74afb7e8",
+   "value": {
+    "name": "Celtic win the European Cup",
+    "hint": "A neutral final in Lisbon.",
+    "sport": "football",
+    "sensitive": false,
+    "on": "1967-05-25",
+    "precision": "day",
+    "year": 1967
+   },
+   "sources": [
+    "src_449fa575d1b75d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). English wording written from the staged Hebrew title; no fact added.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "t-6081fdb4",
+   "value": {
+    "name": "UEFA Cup final in Seville",
+    "hint": "A neutral final at the Estadio Olimpico.",
+    "sport": "football",
+    "sensitive": false,
+    "on": "2003-05-21",
+    "precision": "day",
+    "year": 2003
+   },
+   "sources": [
+    "src_d74f3076160aae"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). English wording written from the staged Hebrew title; no fact added.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-bba452e5216b39",
+   "value": {
+    "name": "Billy McNeill",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1957,
+    "toYear": 1975,
+    "aliases": []
+   },
+   "sources": [
+    "src_4223c6d59a9c18",
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4c519397e2cdbd",
+   "value": {
+    "name": "Danny McGrain",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1967,
+    "toYear": 1987,
+    "aliases": []
+   },
+   "sources": [
+    "src_685c250096405b",
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-623e7c9b6d4040",
+   "value": {
+    "name": "Paul McStay",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1981,
+    "toYear": 1997,
+    "aliases": []
+   },
+   "sources": [
+    "src_2ed2360678565e",
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-10312c3e5265d5",
+   "value": {
+    "name": "Scott Brown",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2021,
+    "aliases": []
+   },
+   "sources": [
+    "src_6e139c22604483",
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-120e626233c582",
+   "value": {
+    "name": "Callum McGregor",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2011,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_61d852f1686530",
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-f9f9d9206e0593",
+   "value": {
+    "name": "Henrik Larsson",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1997,
+    "toYear": 2004,
+    "aliases": []
+   },
+   "sources": [
+    "src_a057935cd53522"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-784d51044d5d15",
+   "value": {
+    "name": "Pat Bonner",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 1978,
+    "toYear": 1997,
+    "aliases": []
+   },
+   "sources": [
+    "src_ea97e704e07e73"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-0bb0292f299871",
+   "value": {
+    "name": "Jimmy Johnstone",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1961,
+    "toYear": 1975,
+    "aliases": []
+   },
+   "sources": [
+    "src_14bdd7d498e51c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c96ae91376dc7a",
+   "value": {
+    "name": "Bobby Lennox",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1961,
+    "toYear": 1980,
+    "aliases": []
+   },
+   "sources": [
+    "src_047819561969f2"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-8566217ec75cbe",
+   "value": {
+    "name": "Tommy Gemmell",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1961,
+    "toYear": 1971,
+    "aliases": []
+   },
+   "sources": [
+    "src_7dd1fe8fa8df72"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-9e54a0468bb89a",
+   "value": {
+    "name": "Bobby Murdoch",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1959,
+    "toYear": 1973,
+    "aliases": []
+   },
+   "sources": [
+    "src_014ad2c648c7e7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d12cd9fa46644a",
+   "value": {
+    "name": "Stevie Chalmers",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1959,
+    "toYear": 1971,
+    "aliases": []
+   },
+   "sources": [
+    "src_e5186b466be3f4"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d34031ba326350",
+   "value": {
+    "name": "Jim Craig",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1965,
+    "toYear": 1972,
+    "aliases": []
+   },
+   "sources": [
+    "src_9ea367a99e029b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-171971a49cab0e",
+   "value": {
+    "name": "John Clark",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1958,
+    "toYear": 1971,
+    "aliases": []
+   },
+   "sources": [
+    "src_b4dfb0aa296b00"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-bb937b54ff7ef8",
+   "value": {
+    "name": "Willie Wallace",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1966,
+    "toYear": 1971,
+    "aliases": []
+   },
+   "sources": [
+    "src_c4481b42a90b34"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-ba8be2b64c314d",
+   "value": {
+    "name": "Bertie Auld",
+    "sport": "football",
+    "positions": [
+     "MF",
+     "FW"
+    ],
+    "fromYear": 1955,
+    "toYear": 1971,
+    "aliases": []
+   },
+   "sources": [
+    "src_0218b31341477a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-14fe337856e5d5",
+   "value": {
+    "name": "John Fallon",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 1958,
+    "toYear": 1972,
+    "aliases": []
+   },
+   "sources": [
+    "src_74484df6a67d4b"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Years are club registration as reported by the source, not an appearance span.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-19eb23b47cb8a7",
+   "value": {
+    "name": "James Kelly",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-8e37c19671bfaf",
+   "value": {
+    "name": "Daniel Doyle",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e39a9358fda03f",
+   "value": {
+    "name": "Sandy McMahon",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e45aacbbcefc8e",
+   "value": {
+    "name": "Willie Orr",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-1a16aad70e8bb9",
+   "value": {
+    "name": "James Hay",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-914ba9df56e7f1",
+   "value": {
+    "name": "Sunny Jim Young",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-dd29a4fbf1d1e3",
+   "value": {
+    "name": "Alec McNair",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-e8f8f626fab4a2",
+   "value": {
+    "name": "William Cringan",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3c33b71f5137e0",
+   "value": {
+    "name": "Charlie Shaw",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d465e660b274c0",
+   "value": {
+    "name": "Willie McStay",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4f989af5d43250",
+   "value": {
+    "name": "Jimmy McStay",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-ab1ccd28bd02a1",
+   "value": {
+    "name": "Bobby Hogg",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-c333695877fdd5",
+   "value": {
+    "name": "Willie Lyon",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-15c62872b3a4ee",
+   "value": {
+    "name": "John McPhail",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-20d5eb0534f3df",
+   "value": {
+    "name": "Sean Fallon",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-7d609d07e5e8f5",
+   "value": {
+    "name": "Jock Stein",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-d6c650cdd609b6",
+   "value": {
+    "name": "Bobby Evans",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-b50e44c5597870",
+   "value": {
+    "name": "Bertie Peacock",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-a572cf73ebe8ee",
+   "value": {
+    "name": "Duncan MacKay",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-7c8e42098bcce3",
+   "value": {
+    "name": "Kenny Dalglish",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-4972b535d25054",
+   "value": {
+    "name": "Roy Aitken",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3a33b5ac68f9ba",
+   "value": {
+    "name": "Tom Boyd",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-7eee804db954f9",
+   "value": {
+    "name": "Paul Lambert",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-3da89d4ff70bde",
+   "value": {
+    "name": "Jackie McNamara (Jnr)",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-63d9aa69709df0",
+   "value": {
+    "name": "Neil Lennon",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "p-b6036e28231e5e",
+   "value": {
+    "name": "Stephen McManus",
+    "sport": "football",
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "aliases": []
+   },
+   "sources": [
+    "src_238493c17168ac"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). No career years in the source.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "rivals": [],
+ "matches": [
+  {
+   "id": "m-95e4df2137",
+   "value": {
+    "name": "Celtic 5-2 Rangers",
+    "on": "1888-05-28",
+    "competition": "Friendly",
+    "score": "5-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-de23a2dbc5",
+   "value": {
+    "name": "Celtic 2-1 Inter Milan",
+    "on": "1967-05-25",
+    "competition": "European Cup final",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [
+     "Ronnie Simpson",
+     "Jim Craig",
+     "Tommy Gemmell",
+     "Bobby Murdoch",
+     "Billy McNeill",
+     "John Clark",
+     "Jimmy Johnstone",
+     "Willie Wallace",
+     "Stevie Chalmers",
+     "Bertie Auld",
+     "Bobby Lennox"
+    ],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_449fa575d1b75d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-22c83ba20f",
+   "value": {
+    "name": "Celtic 2-3 FC Porto",
+    "on": "2003-05-21",
+    "competition": "UEFA Cup final",
+    "score": "2-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_d74f3076160aae"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-d7f93ec193",
+   "value": {
+    "name": "Celtic 2-1 Barcelona",
+    "on": "2012-11-07",
+    "competition": "Champions League group",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0ec93bfc43acbb"
+   ],
+   "confidence": 1,
+   "status": "review",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score as displayed by the source; scorers not extracted."
+  },
+  {
+   "id": "m-402d54c39b",
+   "value": {
+    "name": "Celtic 1-0 Dundee Harp",
+    "on": "1888-05-09",
+    "competition": "Friendly",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-5a0015ff90",
+   "value": {
+    "name": "Celtic 3-3 Mossend Swifts",
+    "on": "1888-05-16",
+    "competition": "Friendly",
+    "score": "3-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-8f92cb8de7",
+   "value": {
+    "name": "Celtic 3-4 Clyde",
+    "on": "1888-05-20",
+    "competition": "Friendly",
+    "score": "3-4",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-b002d468d8",
+   "value": {
+    "name": "Abercorn 1-1 Celtic",
+    "on": "1888-08-01",
+    "competition": "Glasgow Exhibition Cup",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-4454b47b43",
+   "value": {
+    "name": "Celtic 3-2 Hibernians",
+    "on": "1888-08-04",
+    "competition": "Friendly",
+    "score": "3-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-99db0720d5",
+   "value": {
+    "name": "Airdrieonians 0-6 Celtic",
+    "on": "1888-08-11",
+    "competition": "Friendly",
+    "score": "0-6",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-477e13992e",
+   "value": {
+    "name": "Clyde 1-5 Celtic",
+    "on": "1888-08-18",
+    "competition": "Friendly",
+    "score": "1-5",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-67e4048bef",
+   "value": {
+    "name": "Celtic 3-1 Dumbarton Athletic",
+    "on": "1888-08-21",
+    "competition": "Glasgow Exhibition Cup",
+    "score": "3-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-fe2620a2a6",
+   "value": {
+    "name": "Third Lanark 4-3 Celtic",
+    "on": "1888-08-22",
+    "competition": "Friendly",
+    "score": "4-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-a5671fe2f3",
+   "value": {
+    "name": "Abercorn 2-4 Celtic",
+    "on": "1888-08-23",
+    "competition": "Friendly",
+    "score": "2-4",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-7e915d90ef",
+   "value": {
+    "name": "Northern 0-3 Celtic",
+    "on": "1888-08-27",
+    "competition": "Friendly",
+    "score": "0-3",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-1f1ad4ec7f",
+   "value": {
+    "name": "Celtic 1-0 Partick Thistle",
+    "on": "1888-08-29",
+    "competition": "Glasgow Exhibition Cup SF",
+    "score": "1-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-b1c9faa4f5",
+   "value": {
+    "name": "Celtic 5-1 Shettleston",
+    "on": "1888-08-01",
+    "competition": "Scottish Cup 1st Rd",
+    "score": "5-1",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-73435e7884",
+   "value": {
+    "name": "Whitefield 1-4 Celtic",
+    "on": "1888-08-03",
+    "competition": "Friendly",
+    "score": "1-4",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-a2210b09c4",
+   "value": {
+    "name": "Celtic 0-2 Cowlairs",
+    "on": "1888-08-06",
+    "competition": "Glasgow Exhibition Cup Final",
+    "score": "0-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-7295684b90",
+   "value": {
+    "name": "Celtic 3-0 Dumbarton Athletic",
+    "on": "1888-08-08",
+    "competition": "Friendly",
+    "score": "3-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-3f84809cbe",
+   "value": {
+    "name": "Dumbarton 1-2 Celtic",
+    "on": "1888-08-15",
+    "competition": "Friendly",
+    "score": "1-2",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "m-b6037eb691",
+   "value": {
+    "name": "Celtic 8-0 Cowlairs",
+    "on": "1888-08-22",
+    "competition": "Scottish Cup 2nd Rd",
+    "score": "8-0",
+    "venue": null,
+    "scorers": [],
+    "lineup": [],
+    "bench": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_77deb52f4e5346"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Score as displayed by the source; scorers not extracted.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "trophies": [
+  {
+   "id": "tr-scottish-league",
+   "value": {
+    "name": "Scottish League",
+    "seasons": [
+     "1892-93",
+     "1893-94",
+     "1895-96",
+     "1897-98",
+     "1904-05",
+     "1905-06",
+     "1906-07",
+     "1907-08",
+     "1908-09",
+     "1909-10",
+     "1913-14",
+     "1914-15",
+     "1915-16",
+     "1916-17",
+     "1918-19",
+     "1921-22",
+     "1925-26",
+     "1935-36",
+     "1937-38",
+     "1953-54",
+     "1965-66",
+     "1966-67",
+     "1967-68",
+     "1968-69",
+     "1969-70",
+     "1970-71",
+     "1971-72",
+     "1972-73",
+     "1973-74",
+     "1976-77",
+     "1978-79",
+     "1980-81",
+     "1981-82",
+     "1985-86",
+     "1987-88",
+     "1997-98",
+     "2000-01",
+     "2001-02",
+     "2003-04",
+     "2005-06",
+     "2006-07",
+     "2007-08",
+     "2011-12",
+     "2012-13",
+     "2013-14",
+     "2014-15",
+     "2015-16",
+     "2016-17",
+     "2017-18",
+     "2018-19",
+     "2019-20",
+     "2021-22",
+     "2022-23",
+     "2023-24",
+     "2024-25",
+     "2025-26"
+    ],
+    "count": 56
+   },
+   "sources": [
+    "src_b7130211fef2f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). source list as seen 2026-10-08; current totals not independently audited",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "tr-scottish-cup",
+   "value": {
+    "name": "Scottish Cup",
+    "seasons": [
+     "1892",
+     "1899",
+     "1900",
+     "1904",
+     "1907",
+     "1908",
+     "1911",
+     "1912",
+     "1914",
+     "1923",
+     "1925",
+     "1927",
+     "1931",
+     "1933",
+     "1937",
+     "1951",
+     "1954",
+     "1965",
+     "1967",
+     "1969",
+     "1971",
+     "1972",
+     "1974",
+     "1975",
+     "1977",
+     "1980",
+     "1985",
+     "1988",
+     "1989",
+     "1995",
+     "2001",
+     "2004",
+     "2005",
+     "2007",
+     "2011",
+     "2013",
+     "2017",
+     "2018",
+     "2019",
+     "2020",
+     "2023",
+     "2024",
+     "2026"
+    ],
+    "count": 43
+   },
+   "sources": [
+    "src_b7130211fef2f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). source list as seen 2026-10-08; current totals not independently audited",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "tr-scottish-league-cup",
+   "value": {
+    "name": "Scottish League Cup",
+    "seasons": [
+     "1956-57",
+     "1957-58",
+     "1965-66",
+     "1966-67",
+     "1967-68",
+     "1968-69",
+     "1969-70",
+     "1974-75",
+     "1982-83",
+     "1997-98",
+     "1999-00",
+     "2000-01",
+     "2005-06",
+     "2008-09",
+     "2014-15",
+     "2016-17",
+     "2017-18",
+     "2018-19",
+     "2019-20",
+     "2021-22",
+     "2022-23",
+     "2024-25"
+    ],
+    "count": 22
+   },
+   "sources": [
+    "src_b7130211fef2f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). source list as seen 2026-10-08; current totals not independently audited",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "tr-european-cup",
+   "value": {
+    "name": "European Cup",
+    "seasons": [
+     "1966/67"
+    ],
+    "count": null
+   },
+   "sources": [
+    "src_449fa575d1b75d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Seasons documented so far; not a complete honours list.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "stadiums": [
+  {
+   "id": "st-est-dio-nacional",
+   "value": {
+    "name": "Estádio Nacional",
+    "city": "Vale do Jamor / Lisbon area",
+    "note": "1967 neutral final venue",
+    "sport": "football"
+   },
+   "sources": [
+    "src_449fa575d1b75d"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "st-estadio-ol-mpico",
+   "value": {
+    "name": "Estadio Olímpico",
+    "city": "Seville",
+    "note": "2003 neutral final venue",
+    "sport": "football"
+   },
+   "sources": [
+    "src_d74f3076160aae"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "culture": [
+  {
+   "id": "cu-5f7ee1ea",
+   "value": {
+    "name": "Foundation",
+    "topic": "foundation",
+    "foundedOn": "1887-11-06",
+    "place": "St Mary’s Hall, Glasgow",
+    "leadingFigure": "Brother Walfrid",
+    "purpose": "support poor children’s meals in the local community",
+    "badgeYear1888Semantics": "first playing year; not necessarily formation date"
+   },
+   "sources": [
+    "src_807aad6bf231e7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package).",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ],
+ "kits": [
+  {
+   "id": "k-a43d3cec",
+   "value": {
+    "name": "celtic 1888 home",
+    "season": "1888",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "white shirt, green collar, Celtic cross"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "src_1062805d9c0233"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Description only; no licensed image.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "k-3bb87b8a",
+   "value": {
+    "name": "celtic 1903 home",
+    "season": "1903",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "green and white hoops"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "src_1062805d9c0233"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Approved by the owner in chat on 2026-10-08 (FANLIFE-FOUR-CLUBS package). Description only; no licensed image.",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ]
+}

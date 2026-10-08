@@ -105,9 +105,9 @@ export function ClubThread(p:ClubThreadProps){
  const prevGlyph=rtl?'→':'←',nextGlyph=rtl?'←':'→'
  const atStart=idx===0,atEnd=idx===len-1
  const stepPrev=!atStart
-  ?<button type="button" className={css.step} onClick={()=>go(idx-1)} data-testid="timeline-thread-prev"><span aria-hidden="true">{prevGlyph}</span>{t('tl.prev')}</button>
+  ?<button type="button" className={`${css.step} min-h-tap`} onClick={()=>go(idx-1)} data-testid="timeline-thread-prev"><span aria-hidden="true">{prevGlyph}</span>{t('tl.prev')}</button>
   :plan.prev?<Link prefetch={false} scroll={false} className={css.step} href={href({at:plan.prev.id})} data-testid="timeline-thread-prev-decade"><span aria-hidden="true">{prevGlyph}</span>{t('tl.prevDecade',{decade:plan.prev.decade})}</Link>
-  :<button type="button" className={css.step} disabled data-testid="timeline-thread-prev"><span aria-hidden="true">{prevGlyph}</span>{t('tl.prev')}</button>
+  :<button type="button" className={`${css.step} min-h-tap`} disabled data-testid="timeline-thread-prev"><span aria-hidden="true">{prevGlyph}</span>{t('tl.prev')}</button>
  const stepNext=!atEnd
   ?<button type="button" className={`${css.step} ${css.stepNext}`} onClick={()=>go(idx+1)} data-testid="timeline-thread-next">{t('tl.next')}<span aria-hidden="true">{nextGlyph}</span></button>
   :plan.next?<Link prefetch={false} scroll={false} className={`${css.step} ${css.stepNext}`} href={href({at:plan.next.id})} data-testid="timeline-thread-next-decade">{t('tl.nextDecade',{decade:plan.next.decade})}<span aria-hidden="true">{nextGlyph}</span></Link>
@@ -119,7 +119,7 @@ export function ClubThread(p:ClubThreadProps){
     <nav aria-label={t('tl.decades')}>
      <ul className={css.decades}>{plan.decades.map(d=><li key={d.decade}><Link prefetch={false} scroll={false} className={css.decade} href={href({dec:String(d.decade)})} aria-current={d.decade===plan.decade?'page':undefined} data-testid="timeline-thread-decade"><span>{t('tl.decade',{decade:d.decade})}</span><small>{d.count===1?t('tl.count.one'):t('tl.count',{n:d.count})}</small></Link></li>)}</ul>
     </nav>
-    <ul className={css.knots} ref={knotsRef} aria-label={t('tl.years')}>{knots.map(k=><li key={k.year}><button type="button" className={css.knot} aria-current={k.year===cur.year?'true':undefined} aria-label={t('tl.year.chip',{year:k.year,n:k.count})} onClick={()=>go(k.first)} data-testid="timeline-thread-knot"><bdi>{k.year}</bdi></button></li>)}</ul>
+    <ul className={css.knots} ref={knotsRef} aria-label={t('tl.years')}>{knots.map(k=><li key={k.year}><button type="button" className={`${css.knot} min-h-tap`} aria-current={k.year===cur.year?'true':undefined} aria-label={t('tl.year.chip',{year:k.year,n:k.count})} onClick={()=>go(k.first)} data-testid="timeline-thread-knot"><bdi>{k.year}</bdi></button></li>)}</ul>
     <p className={css.fine}>{t('tl.coverage',{n:plan.total,exact:exactTotal})}</p>
    </div>
    <div className={css.main}>
@@ -131,7 +131,7 @@ export function ClubThread(p:ClubThreadProps){
     <p className="sr-only" aria-live="polite" data-testid="timeline-thread-live">{t('tl.scrub.value',{date:dateOf(cur),title:cur.title})}</p>
     <div className={css.scroll}>
      <div className={css.trail}>
-      {before&&<button type="button" className={css.peek} onClick={()=>go(idx-1)} aria-label={`${t('tl.peek.before')}: ${dateOf(before)} — ${before.title}`}><small>{t('tl.peek.before')}</small><span lang={contentLocale} dir="auto">{before.title}</span><time dateTime={before.on??undefined}><bdi>{before.on?localizedDate(before.on,locale):before.year}</bdi></time></button>}
+      {before&&<button type="button" className={`${css.peek} min-h-tap`} onClick={()=>go(idx-1)} aria-label={`${t('tl.peek.before')}: ${dateOf(before)} — ${before.title}`}><small>{t('tl.peek.before')}</small><span lang={contentLocale} dir="auto">{before.title}</span><time dateTime={before.on??undefined}><bdi>{before.on?localizedDate(before.on,locale):before.year}</bdi></time></button>}
       <article key={cur.id} className={css.clip} data-testid="timeline-thread-card" data-event={cur.id} data-precision={cur.precision} data-dir={dir} data-parity={idx%2} data-drag={drag} style={{'--lean':`${lean}px`} as React.CSSProperties} aria-label={`${dateOf(cur)} — ${cur.title}`}
        onPointerDown={onDown} onPointerMove={onMove} onPointerUp={e=>finish(e,true)} onPointerCancel={e=>finish(e,false)}>
        <div className={css.stamp} aria-hidden="true">
@@ -150,7 +150,7 @@ export function ClubThread(p:ClubThreadProps){
         {archiveOpen&&<Link prefetch={false} className={css.open} href={`/clubs/${club}/archive?${new URLSearchParams({event:cur.id,lang:locale})}`} data-testid="timeline-thread-archive">{t('tl.archive')}</Link>}
        </div>
       </article>
-      {after&&<button type="button" className={css.peek} onClick={()=>go(idx+1)} aria-label={`${t('tl.peek.after')}: ${dateOf(after)} — ${after.title}`}><small>{t('tl.peek.after')}</small><span lang={contentLocale} dir="auto">{after.title}</span><time dateTime={after.on??undefined}><bdi>{after.on?localizedDate(after.on,locale):after.year}</bdi></time></button>}
+      {after&&<button type="button" className={`${css.peek} min-h-tap`} onClick={()=>go(idx+1)} aria-label={`${t('tl.peek.after')}: ${dateOf(after)} — ${after.title}`}><small>{t('tl.peek.after')}</small><span lang={contentLocale} dir="auto">{after.title}</span><time dateTime={after.on??undefined}><bdi>{after.on?localizedDate(after.on,locale):after.year}</bdi></time></button>}
      </div>
     </div>
     <div className={css.dock}>{stepPrev}{stepNext}</div>

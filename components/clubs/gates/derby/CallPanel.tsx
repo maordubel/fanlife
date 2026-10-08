@@ -83,11 +83,11 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
  const cancel=()=>{pointer.current=null;setDrag({dx:0,dy:0,on:false})}
  const lean=drag.on?(drag.dy<-40&&Math.abs(drag.dy)>Math.abs(drag.dx)?'D':Math.abs(drag.dx)>40?(drag.dx*startSign>0?'W':'L'):null):null
 
- if(!canPlay(meetings)||qs.length===0)return <div className={css.scroll}><div className={css.bare} data-testid="derby-call-locked"><h2>{t('derby.call.locked.title')}</h2><p>{t('derby.call.locked',{min:MIN_ROUND,n:meetings.filter(m=>m.us!==null).length})}</p><button type="button" className={css.btn} onClick={onWall}>{t('derby.res.wall')}</button></div></div>
+ if(!canPlay(meetings)||qs.length===0)return <div className={css.scroll}><div className={css.bare} data-testid="derby-call-locked"><h2>{t('derby.call.locked.title')}</h2><p>{t('derby.call.locked',{min:MIN_ROUND,n:meetings.filter(m=>m.us!==null).length})}</p><button type="button" className={`${css.btn} min-h-tap`} onClick={onWall}>{t('derby.res.wall')}</button></div></div>
 
  if(phase==='intro')return <div className={css.intro} data-testid="derby-call-intro">
   <div className={css.bare}><h2>{t('derby.call.title')}</h2><p>{t('derby.call.intro',{n:qs.reduce((n,x)=>n+(x.kind==='result'?1:2),0)})}</p><p className={css.fine}>{t('derby.call.rules')}</p></div>
-  <button type="button" className={`${css.btn} ${css.btnPrimary} ${css.btnWide}`} onClick={begin} data-testid="derby-call-start">{t('derby.call.start')}</button>
+  <button type="button" className={`${css.btn} ${css.btnPrimary} ${css.btnWide} min-h-tap`} onClick={begin} data-testid="derby-call-start">{t('derby.call.start')}</button>
  </div>
 
  if(phase==='done')return <div className={css.slip} data-testid="derby-slip">
@@ -95,9 +95,9 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
   <ol className={css.trail} aria-label={t('derby.res.title')}>{summary.trail.map((ok,k)=><li key={k} data-s={ok?'right':'wrong'}><span aria-hidden="true">{ok?'✓':'✗'}</span><span className="sr-only">{ok?t('derby.call.right'):t('derby.call.wrong')}</span></li>)}</ol>
   <div className={css.actions}>
    <ShareComposer draft={callShare(club,{seed,cursor,correct:summary.correct,asked:summary.total,rival})}/>
-   <button type="button" className={css.btn} onClick={restart}>{t('derby.res.again')}</button>
-   <Link className={css.btn} href={`/clubs/${club}/derby?${roundQuery(seed,cursor+1)}&play=1&lang=${locale}`} data-testid="derby-new-round">{t('derby.res.new')}</Link>
-   <button type="button" className={css.btn} onClick={onWall}>{t('derby.res.wall')}</button>
+   <button type="button" className={`${css.btn} min-h-tap`} onClick={restart}>{t('derby.res.again')}</button>
+   <Link className={`${css.btn} min-h-tap`} href={`/clubs/${club}/derby?${roundQuery(seed,cursor+1)}&play=1&lang=${locale}`} data-testid="derby-new-round">{t('derby.res.new')}</Link>
+   <button type="button" className={`${css.btn} min-h-tap`} onClick={onWall}>{t('derby.res.wall')}</button>
   </div>
  </div>
 
@@ -106,7 +106,7 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
  const m=q.kind==='result'?byId.get(q.meeting):null
  const trueResult=m?resultOf(m):null
  const dot=(k:number)=>k<trail.length?(trail[k]?'right':'wrong'):k===i?'now':'todo'
- const plate=(c:Result,kind:'club'|'rival'|'draw',label:string)=><button key={c} type="button" className={css.plate} data-k={kind} data-choice={c} data-lean={lean===c} onClick={e=>answer(c,e.currentTarget)} aria-keyshortcuts={c==='D'?'ArrowUp D':(c==='W')!==rtl?'ArrowLeft':'ArrowRight'}>{label}</button>
+ const plate=(c:Result,kind:'club'|'rival'|'draw',label:string)=><button key={c} type="button" className={`${css.plate} min-h-tap`} data-k={kind} data-choice={c} data-lean={lean===c} onClick={e=>answer(c,e.currentTarget)} aria-keyshortcuts={c==='D'?'ArrowUp D':(c==='W')!==rtl?'ArrowLeft':'ArrowRight'}>{label}</button>
  return <div className={css.call} ref={rootRef} tabIndex={-1} data-testid="derby-call" data-phase={phase}>
   <div className={css.hud}>
    <ol className={css.dots} aria-label={t('derby.call.progress',{n:Math.min(i+1,qs.length),total:qs.length})}>{qs.map((x,k)=><li key={x.id} data-s={dot(k)}/>)}</ol>
@@ -126,7 +126,7 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
    {q.kind==='earlier'&&<div className={css.pair}>
     <p className={css.q} style={{textAlign:'center'}}>{t('derby.call.q.earlier')}</p>
     {([['A',q.a],['B',q.b]] as const).map(([tag,id])=>{const x=byId.get(id)!,state=!revealed?'':id===right?'right':id===picked?'wrong':''
-     return <button key={id} type="button" className={css.pairCard} data-choice={id} data-s={state} disabled={revealed} onClick={e=>answer(id,e.currentTarget)} aria-keyshortcuts={tag==='A'?'ArrowUp 1':'ArrowDown 2'}
+     return <button key={id} type="button" className={`${css.pairCard} min-h-tap`} data-choice={id} data-s={state} disabled={revealed} onClick={e=>answer(id,e.currentTarget)} aria-keyshortcuts={tag==='A'?'ArrowUp 1':'ArrowDown 2'}
       aria-label={t('derby.call.pairKey',{tag,home:x.home,hg:x.hg,ag:x.ag,away:x.away,comp:x.comp||t('derby.dossier.noComp')})}>
       <span className={css.pairTag}>{tag==='A'?t('derby.call.pairA'):t('derby.call.pairB')}{revealed&&<> · <bdi>{dateText(x,locale,t)}</bdi></>}</span>
       <span className={css.pairLine}><bdi lang={contentLocale} dir="auto">{x.home}</bdi> {x.hg}–{x.ag} <bdi lang={contentLocale} dir="auto">{x.away}</bdi></span>
@@ -141,8 +141,8 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
    {!revealed&&q.kind==='earlier'&&<p className={css.fine} style={{textAlign:'center'}}>{t('derby.call.q.earlier')}</p>}
    {revealed&&<>
     <div className={css.feedback} data-ok={ok} role="status"><p>{ok?t('derby.call.right'):t('derby.call.wrong')}{q.kind==='result'&&trueResult?<> · <bdi>{clubName}</bdi>: {t(`derby.word.${trueResult}`)}</>:null}</p>
-     {m&&<button type="button" className={css.btn} onClick={e=>onOpen(m,e.currentTarget)} aria-label={t('derby.dossier')}>i</button>}</div>
-    <button ref={nextRef} type="button" className={`${css.btn} ${css.btnPrimary} ${css.btnWide}`} onClick={next} data-testid="derby-next">{i+1>=qs.length?t('derby.call.finish'):t('derby.call.next')}</button>
+     {m&&<button type="button" className={`${css.btn} min-h-tap`} onClick={e=>onOpen(m,e.currentTarget)} aria-label={t('derby.dossier')}>i</button>}</div>
+    <button ref={nextRef} type="button" className={`${css.btn} ${css.btnPrimary} ${css.btnWide} min-h-tap`} onClick={next} data-testid="derby-next">{i+1>=qs.length?t('derby.call.finish'):t('derby.call.next')}</button>
    </>}
   </div>
  </div>

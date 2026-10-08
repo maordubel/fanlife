@@ -69,7 +69,7 @@ export function ClubBlackFile({club,clubName,slug,version,seed,cursor,locale,con
    {file.pairs.length>0&&<li>{t('derby.bf.rule.order')}</li>}
    <li>{t('derby.bf.rule.denom')}</li>
   </ul>
-  <button type="button" className={css.cta} data-testid="file-start" onClick={()=>{setPhase('ask');markStep(0,undefined,true)}}>{t('derby.bf.start')}</button>
+  <button type="button" className={`${css.cta} min-h-tap`} data-testid="file-start" onClick={()=>{setPhase('ask');markStep(0,undefined,true)}}>{t('derby.bf.start')}</button>
  </section>
 
  if(phase==='done')return <section className={css.card} data-testid="file-result" aria-live="polite">
@@ -99,18 +99,18 @@ export function ClubBlackFile({club,clubName,slug,version,seed,cursor,locale,con
   {row&&<>
    <p className={css.q} lang={contentLocale} dir="auto">{t(row.proposition==='direct'?'derby.bf.q.direct':'derby.bf.q.ever',{person:row.person,from:row.from,to:row.to})}</p>
    {!revealed&&<div className={css.answers}>
-    <button type="button" className={css.answer} data-k="crossed" disabled={pending} data-testid="file-crossed" onClick={e=>askCross('crossed',e.currentTarget)}>{t('derby.bf.crossed')}</button>
-    <button type="button" className={css.answer} data-k="did_not" disabled={pending} data-testid="file-didnot" onClick={e=>askCross('did_not',e.currentTarget)}>{t('derby.bf.didNot')}</button>
+    <button type="button" className={`${css.answer} min-h-tap`} data-k="crossed" disabled={pending} data-testid="file-crossed" onClick={e=>askCross('crossed',e.currentTarget)}>{t('derby.bf.crossed')}</button>
+    <button type="button" className={`${css.answer} min-h-tap`} data-k="did_not" disabled={pending} data-testid="file-didnot" onClick={e=>askCross('did_not',e.currentTarget)}>{t('derby.bf.didNot')}</button>
    </div>}
   </>}
   {pair&&<>
    <p className={css.q}>{t('derby.bf.q.order')}</p>
    {!revealed&&<div className={css.pair}>
-    {[pair.a,pair.b].map(x=><button key={x.key} type="button" className={css.pairCard} disabled={pending} data-testid="file-pick" onClick={e=>askOrder(x.key,e.currentTarget)}><bdi lang={contentLocale} dir="auto">{x.title}</bdi></button>)}
+    {[pair.a,pair.b].map(x=><button key={x.key} type="button" className={`${css.pairCard} min-h-tap`} disabled={pending} data-testid="file-pick" onClick={e=>askOrder(x.key,e.currentTarget)}><bdi lang={contentLocale} dir="auto">{x.title}</bdi></button>)}
    </div>}
   </>}
   {pending&&<p className={css.notice} role="status">{t('derby.bf.checking')}</p>}
-  {failure&&<div className={css.notice} role="alert" data-testid="file-error"><p>{failure==='offline'?t('derby.bf.offline'):t('derby.bf.err')}</p><button type="button" className={css.ghost} onClick={()=>last.current?.()}>{t('derby.bf.retry')}</button></div>}
+  {failure&&<div className={css.notice} role="alert" data-testid="file-error"><p>{failure==='offline'?t('derby.bf.offline'):t('derby.bf.err')}</p><button type="button" className={`${css.ghost} min-h-tap`} onClick={()=>last.current?.()}>{t('derby.bf.retry')}</button></div>}
   {revealed&&cross&&<div className={css.reveal} data-testid="file-reveal" role="status">
    <span className={css.verdict} data-ok={ok}>{ok?t('derby.bf.right'):t('derby.bf.wrong')}</span>
    <dl className={css.rows}>
@@ -130,6 +130,6 @@ export function ClubBlackFile({club,clubName,slug,version,seed,cursor,locale,con
     <dt>{t('derby.bf.r.why')}</dt><dd>{order.days===1?t('derby.bf.o.gap1'):t('derby.bf.o.gap',{n:order.days})}. {t('derby.bf.o.why',{a:localizedDate(order.earlier.on,locale),b:localizedDate(order.later.on,locale)})}</dd>
    </dl>
   </div>}
-  {revealed&&<button ref={nextRef} type="button" className={css.cta} data-testid="file-next" onClick={next}>{i+1>=items.length?t('derby.bf.finish'):t('derby.bf.next')}</button>}
+  {revealed&&<button ref={nextRef} type="button" className={`${css.cta} min-h-tap`} data-testid="file-next" onClick={next}>{i+1>=items.length?t('derby.bf.finish'):t('derby.bf.next')}</button>}
  </section>
 }

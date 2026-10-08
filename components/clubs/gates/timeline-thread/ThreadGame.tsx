@@ -103,7 +103,7 @@ export function ThreadGame({club,clubName,slug,version,seed,cursor,locale,conten
   <p className={css.tag} data-testid="thread-mode">{full?t('th.mode.full',{n:levels.length}):t('th.mode.practice',{n:levels.length})}</p>
   {!full&&<p className={css.fine}>{t('th.mode.why',{n:levels.length,missing:missingTiers.join(', ')})}</p>}
   <ol className={css.tiers}>{levels.map(l=><li key={l.ref}><b>{t('th.tier',{n:l.tier})}</b><span>{t('th.tier.shape',{stops:TIER_SHAPE[l.tier].stops,integrity:l.integrity})}</span></li>)}</ol>
-  <button type="button" className={css.cta} data-testid="thread-start" onClick={()=>reset(0)}>{t('th.start')}</button>
+  <button type="button" className={`${css.cta} min-h-tap`} data-testid="thread-start" onClick={()=>reset(0)}>{t('th.start')}</button>
  </section>
 
  if(phase==='done'){
@@ -127,7 +127,7 @@ export function ThreadGame({club,clubName,slug,version,seed,cursor,locale,conten
   <p className={css.body}>{t('th.closed.line',{stops:closed.stops,optimum:closed.optimum})}</p>
   <p className={css.tag}>{t('th.closed.score',{n:closed.score})}</p>
   {routeList(closed.edges)}
-  <button ref={nextRef} type="button" className={css.cta} data-testid="thread-next" onClick={advance}>{li+1>=levels.length?t('th.finish'):t('th.next')}</button>
+  <button ref={nextRef} type="button" className={`${css.cta} min-h-tap`} data-testid="thread-next" onClick={advance}>{li+1>=levels.length?t('th.finish'):t('th.next')}</button>
  </section>
 
  if(phase==='failed'&&fail)return <section className={css.card} data-testid="thread-failed" aria-live="polite">
@@ -135,7 +135,7 @@ export function ThreadGame({club,clubName,slug,version,seed,cursor,locale,conten
   <h2 className={css.h2}>{t('th.failed.title')}</h2>
   <p className={css.body}>{t('th.failed.line',{optimum:fail.optimum})}</p>
   {routeList(fail.edges)}
-  <button ref={nextRef} type="button" className={css.cta} data-testid="thread-next" onClick={advance}>{li+1>=levels.length?t('th.finish'):t('th.next')}</button>
+  <button ref={nextRef} type="button" className={`${css.cta} min-h-tap`} data-testid="thread-next" onClick={advance}>{li+1>=levels.length?t('th.finish'):t('th.next')}</button>
  </section>
 
  const states=ruleStates(level.rules,path,typeOf,{start:level.start.id,end:level.end.id})
@@ -158,15 +158,15 @@ export function ThreadGame({club,clubName,slug,version,seed,cursor,locale,conten
    <li data-end="true" className={css.stop}>{label(level.end)}</li>
   </ol>
   <p className={css.say} role={notice&&notice.kind!=='move'?'alert':'status'} data-testid="thread-notice">{pending?t('th.checking'):msg}</p>
-  {notice?.kind==='net'&&<button type="button" className={css.ghost} onClick={()=>retry.current?.()}>{t('th.retry')}</button>}
+  {notice?.kind==='net'&&<button type="button" className={`${css.ghost} min-h-tap`} onClick={()=>retry.current?.()}>{t('th.retry')}</button>}
    </div>
    <div className={css.handCol}>
   <ul className={css.hand} aria-label={t('th.hand')}>
-   {level.hand.map(c=>{const used=path.includes(c.id);return <li key={c.id}><button type="button" className={css.card2} data-type={c.type} data-used={used} disabled={used||pending} data-testid="thread-card" data-card={c.id} onClick={e=>add(c,e.currentTarget)}>{label(c)}</button></li>})}
+   {level.hand.map(c=>{const used=path.includes(c.id);return <li key={c.id}><button type="button" className={`${css.card2} min-h-tap`} data-type={c.type} data-used={used} disabled={used||pending} data-testid="thread-card" data-card={c.id} onClick={e=>add(c,e.currentTarget)}>{label(c)}</button></li>})}
   </ul>
   <div className={css.tools}>
-   <button type="button" className={css.ghost} data-testid="thread-undo" disabled={path.length===0||pending} onClick={undo}>{t('th.undo')}</button>
-   <button type="button" className={css.cta} data-testid="thread-close" disabled={pending} onClick={close}>{t('th.close')}</button>
+   <button type="button" className={`${css.ghost} min-h-tap`} data-testid="thread-undo" disabled={path.length===0||pending} onClick={undo}>{t('th.undo')}</button>
+   <button type="button" className={`${css.cta} min-h-tap`} data-testid="thread-close" disabled={pending} onClick={close}>{t('th.close')}</button>
   </div>
    </div>
   </div>

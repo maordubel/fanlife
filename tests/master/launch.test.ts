@@ -14,7 +14,7 @@ import type {Club,Finding,Source} from '@/lib/master/types'
 /** Launch (8.10.2026): approved players → desk pack → the same compiler → a playable gate. Nothing without approval. */
 const src=(id:string,reviewed=true):Source=>({id,title:`Source ${id}`,url:`https://example.org/${id}`,excerpt:'x',reviewed,retrievedAt:'2026-10-07T04:52:06.272Z'})
 const player=(n:number,decision?:Finding['decision'],source='a'):Finding=>({id:`f-${n}`,field:'player',value:`Player ${n}`,sources:[source],approved:decision==='approved',decision,decidedAt:'2026-10-08T09:00:00.000Z',record:{kind:'player',name:`Player ${n}`,positions:[],fromYear:null,toYear:null}})
-const club=(findings:Finding[],sources=[src('a')]):Pick<Club,'id'|'sources'|'findings'>=>({id:'aek-athens',sources,findings})
+const club=(findings:Finding[],sources=[src('a')],id='aek-athens'):Pick<Club,'id'|'sources'|'findings'>=>({id,sources,findings})
 afterEach(()=>{vi.unstubAllEnvs()})
 
 describe('desk pack',()=>{
@@ -41,15 +41,15 @@ describe('desk pack',()=>{
  it('is stored, listed and loaded by the engine for a club with no repository pack',async()=>{
   const dir=await mkdtemp(path.join(tmpdir(),'fanlife-desk-'));vi.stubEnv('FAN_LIFE_DATA_DIR',dir)
   try{
-   expect(await loadClub('aek-athens')).toBeNull()
-   await writeDeskPack(buildDeskPack(club(Array.from({length:13},(_,i)=>player(i+1,'approved'))),'owner'))
-   invalidateClub('aek-athens')
-   expect((await readDeskPack('aek-athens'))?.players).toHaveLength(13)
-   expect(await deskPackIds()).toEqual(['aek-athens'])
-   expect(await engineClubIds()).toContain('aek-athens')
-   const loaded=await loadClub('aek-athens')
+   expect(await loadClub('dinamo-zagreb')).toBeNull()
+   await writeDeskPack(buildDeskPack(club(Array.from({length:13},(_,i)=>player(i+1,'approved')),[src('a')],'dinamo-zagreb'),'owner'))
+   invalidateClub('dinamo-zagreb')
+   expect((await readDeskPack('dinamo-zagreb'))?.players).toHaveLength(13)
+   expect(await deskPackIds()).toEqual(['dinamo-zagreb'])
+   expect(await engineClubIds()).toContain('dinamo-zagreb')
+   const loaded=await loadClub('dinamo-zagreb')
    expect(gateAvailability(loaded!.data,'xi').playable).toBe(true)
-  }finally{invalidateClub('aek-athens');await rm(dir,{recursive:true,force:true})}
+  }finally{invalidateClub('dinamo-zagreb');await rm(dir,{recursive:true,force:true})}
  })
 })
 describe('package adapter',()=>{
