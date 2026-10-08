@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "clubId": "olympiacos",
+  "review": "cross-source-2026-10-08",
+  "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the founding-meeting date (Wikipedia says 1924, the press says 1925, so the line says 'officially established'), the 'eternal teenager' epithet (one article read), any motto (none found), anything about the 1981 tragedy.",
+  "voice": {
+    "welcome": "Welcome to the Legend's house.",
+    "kicker": "Piraeus · Red and white"
+  },
+  "nicknames": [
+    {
+      "text": "The Legend",
+      "local": "Θρύλος",
+      "script": "el",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Olympiacos_F.C."},
+        {"publisher": "To Vima", "url": "https://www.tovima.gr/2022/03/10/sports/ta-97a-genethlia-tou-thrylou-doksa-sta-paidia-sou-olympiake/"},
+        {"publisher": "Neos Kosmos", "url": "https://neoskosmos.com/en/2022/02/12/sport/sport-opinion/the-eternal-teenager-olympiacos-piraeus/"}
+      ]
+    },
+    {
+      "text": "The Red-Whites",
+      "local": "Ερυθρόλευκοι",
+      "script": "el",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Olympiacos_F.C."},
+        {"publisher": "To Vima", "url": "https://www.tovima.gr/2022/03/10/sports/ta-97a-genethlia-tou-thrylou-doksa-sta-paidia-sou-olympiake/"},
+        {"publisher": "Neos Kosmos", "url": "https://neoskosmos.com/en/2022/02/12/sport/sport-opinion/the-eternal-teenager-olympiacos-piraeus/"}
+      ]
+    }
+  ],
+  "ground": {
+    "name": "Karaiskakis Stadium",
+    "local": "Γήπεδο Γεώργιος Καραϊσκάκης",
+    "script": "el",
+    "line": "Named for Georgios Karaiskakis, a hero of the Greek War of Independence. The site began as the velodrome built for the 1896 Olympics.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Karaiskakis_Stadium"},
+      {"publisher": "My Sports Tourist", "url": "https://mysportstourist.com/venue-guides/football-stadiums/greece-football-stadiums/karaiskakis-stadium-piraeus"},
+      {"publisher": "GreeceIndex", "url": "https://www.greeceindex.com/sports/greek_football_teams_olympiacos/"}
+    ]
+  },
+  "founded": {
+    "line": "Officially established in Piraeus in 1925, formed from two earlier clubs of the port.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Olympiacos_F.C."},
+      {"publisher": "To Vima", "url": "https://www.tovima.gr/2022/03/10/sports/ta-97a-genethlia-tou-thrylou-doksa-sta-paidia-sou-olympiake/"},
+      {"publisher": "Sigmalive", "url": "https://en.sigmalive.com/on-this-day-the-founding-of-olympiacos-cf-1925/"}
+    ]
+  },
+  "emblem": {
+    "line": "A laurel-crowned youth, an Olympic victor. The name itself echoes the ancient Games.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Olympiacos_F.C."},
+      {"publisher": "To Vima", "url": "https://www.tovima.gr/2019/03/10/sports/enas-thrylos-94-xronia-doksas/"},
+      {"publisher": "Sigmalive", "url": "https://en.sigmalive.com/on-this-day-the-founding-of-olympiacos-cf-1925/"}
+    ]
+  },
+  "colours": {
+    "line": "Red and white: red for passion, white for purity.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Olympiacos_F.C."},
+      {"publisher": "in.gr", "url": "https://www.in.gr/2023/09/14/sports/emvlima-tou-olympiakou-sta-100-kalytera-tis-istorias/"},
+      {"publisher": "GreeceIndex", "url": "https://www.greeceindex.com/sports/greek_football_teams_olympiacos/"}
+    ]
+  },
+  "terrace": {
+    "name": "Gate 7",
+    "local": "Θύρα 7",
+    "script": "el",
+    "tab": "Gate 7",
+    "line": "Gate 7 is the name of the club's best-known supporters' group.",
+    "confidence": 2,
+    "sources": [
+      {"publisher": "GreeceIndex", "url": "https://www.greeceindex.com/sports/greek_football_teams_olympiacos/"},
+      {"publisher": "Neos Kosmos", "url": "https://neoskosmos.com/en/2022/02/12/sport/sport-opinion/the-eternal-teenager-olympiacos-piraeus/"}
+    ]
+  },
+  "facts": []
+}

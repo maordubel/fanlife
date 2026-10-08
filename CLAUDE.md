@@ -2958,3 +2958,12 @@ Plan: owner's FAN-LIFE-ADMIN-CONTROL-ROOM-PLAN (7.10.2026).
 4. **Honest states:** "Not connected", "Unavailable", "No records" and zero are different; an unconnected store is never zero.
 5. **Schedules are read from the workflows** (`lib/master/schedules.ts`, guarded by `tests/master/schedules.test.ts`);
    the archive runner pins the control room's profiles via `GET /api/master/research/profiles-export` (CRON_SECRET).
+
+## 100 · Each club is an app of its own: the club shell, and `world.json` is sourced or absent (8.10.2026)
+
+Owner (8.10.2026): every club page is "a world of its own", with its own bottom bar; the hub stays the roll of all clubs.
+1. **`app/clubs/[slug]/layout.tsx` owns the club chrome** (masthead, five-door `ClubTabBar`, footer): Home · Play · LIFE (centre, raised) · History · Terrace. Market and Me live only in the club-switcher sheet. A page inside a club still wraps in `ClubSurface`; a full-screen game passes `tabbar={false}`, which marks `data-chrome="immersive"` and the layout hides its chrome through CSS. Every in-club link goes through `clubHref()`.
+2. **`club-packs/<id>/world.json` is the club's voice.** Nicknames, ground, founding, emblem, colours, terrace and facts, each with ≥2 distinct publishers (a site and its sub-domains are one; `co.il`-style second-level domains are respected), confidence 2–3, https only, line ≤220, welcome/kicker ≤64, terrace tab ≤8, none of `FORBIDDEN` (politics, violence, lyrics, machinery). `validateWorld` runs on read: a file that fails is treated as absent. What was left out on purpose is written in the file's `note`.
+3. **A club without a world file gets `worldFor()`'s neutral fallback** — its name and place, nothing invented. Five clubs are researched today (Hapoel Tel Aviv, Hapoel Petah Tikva, Zrinjski Mostar, Olympiacos, Panathinaikos).
+4. **Club-voice strings come only from `world.json`**; UI words stay in `messages/clubs/*.json` (en/he key parity).
+5. **Per-club PWA:** `manifest.webmanifest` and `icon` routes under the club, colours from the club's own livery; the hub shows a "Back to <last club>" chip.

@@ -16,6 +16,8 @@ import {uiLocale} from '@/lib/clubs/locale'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {rotationOrder} from '@/lib/fixtures/rotation'
 import {livery,wearLivery} from '@/lib/club-livery'
+import {clubWorld} from '@/lib/clubs/world'
+import {BackToClub} from '@/components/clubs/BackToClub'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
@@ -28,6 +30,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const {clubs}=await readState()
  const open=clubs.filter(c=>c.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name))
  const life=await lifeEntries(open,evaluationMode())
+ const nick=(id:string)=>clubWorld(id)?.nicknames[0]?.text
  const now=new Date()
  const model=await hubModel(open,locale),chooser={title:copy.chooseClub,search:copy.chooserSearch,close:copy.chooserClose,none:copy.chooserNone,workshop:copy.chooserWorkshop,partial:''}
  const feed=await getFixtureFeed(now).catch(()=>null)
@@ -79,14 +82,14 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   <section className="mag-section mag-editorial mag-clubsrow" id="clubs">
    <div className="mag-clubsmain">
     <hr className="mag-rule"/>
-    <div className="mag-head"><div><p className="mag-kicker">{copy.clubs}</p><h2 className="mag-h2">{copy.pickClub}</h2></div></div>
+    <div className="mag-head"><div><p className="mag-kicker">{copy.clubs}</p><h2 className="mag-h2">{copy.pickClub}</h2></div><BackToClub clubs={open.map(c=>({id:c.id,name:c.name}))} locale={locale} label={copy.backTo}/></div>
     <div className="mag-tiles">{open.map((c,n)=>{
      const l=livery(c.id),entry=life[c.id]
      return <div key={c.id}>
       <Link className="mag-tile" data-club={c.id} href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}>
        <span className="no" aria-label={`${copy.collectorNo} ${n+1}`}>{String(n+1).padStart(2,'0')}</span>
        {l&&<span className="mag-badge" data-livery={l.pattern} aria-hidden="true">{l.initials}</span>}
-       <span><b>{c.name}</b><small>{c.city}</small></span>{l&&<Dye art="shirt" soft className="mag-tile-shirt"/>}
+       <span><b>{c.name}</b><small>{c.city}{nick(c.id)?` · ${nick(c.id)}`:''}</small></span>{l&&<Dye art="shirt" soft className="mag-tile-shirt"/>}
       </Link>
       {entry?.href&&<Link className="mag-tile-life" href={entry.href}>{copy.lifeStrip}<span>{copy.lifeIn} →</span></Link>}
      </div>})}</div>

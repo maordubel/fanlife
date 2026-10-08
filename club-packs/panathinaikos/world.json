@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "clubId": "panathinaikos",
+  "review": "cross-source-2026-10-08",
+  "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the exact founding day and the opening year of Leoforos (sources conflict), white as a second colour (one publisher), any motto (none found), the new Votanikos ground (status not verified), anything about violence. Panathinaikos plays at Leoforos, not at OPAP Arena (that is AEK's).",
+  "voice": {
+    "welcome": "Green, and proud of the shamrock.",
+    "kicker": "Athens · Ampelokipoi"
+  },
+  "nicknames": [
+    {
+      "text": "The Greens",
+      "local": "Πράσινοι",
+      "script": "el",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Panathinaikos_F.C."},
+        {"publisher": "UEFA.com", "url": "https://it.uefa.com/uefachampionsleague/news/0253-0d7f7b7fcbc4-cbe4b3cb3617-1000--five-claims-to-fame-panathinaikos"},
+        {"publisher": "footballhistory.org", "url": "https://footballhistory.org/club/panathinaikos.html"}
+      ]
+    },
+    {
+      "text": "The Shamrock",
+      "local": "Τριφύλλι",
+      "script": "el",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Panathinaikos_F.C."},
+        {"publisher": "footballhistory.org", "url": "https://footballhistory.org/club/panathinaikos.html"},
+        {"publisher": "pao.gr", "url": "https://www.pao.gr/en/history/events/?id=281"}
+      ]
+    }
+  ],
+  "ground": {
+    "name": "Leoforos",
+    "local": "Λεωφόρος",
+    "script": "el",
+    "line": "The Apostolos Nikolaidis Stadium on Alexandras Avenue, in Ampelokipoi. Called the oldest football ground in Greece still in use.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Leoforos_Alexandras_Stadium"},
+      {"publisher": "pao.gr", "url": "https://www.pao.gr/en/history/events/?id=281"},
+      {"publisher": "Skai.gr", "url": "https://www.skai.gr/news/sports/to-antio-tou-panathinaikou-sti-leoforo-to-meros-pou-gennithike-i-psyxi-tou-syllogou"}
+    ]
+  },
+  "founded": {
+    "line": "Founded in 1908 by Giorgos Kalafatis, first as the Football Club of Athens.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Panathinaikos_F.C."},
+      {"publisher": "Skai.gr", "url": "https://www.skai.gr/news/sports/panathinaikos-syllogos-megalos-115-eton"},
+      {"publisher": "pao.gr", "url": "https://www.pao.gr/en/history/events/?id=281"}
+    ]
+  },
+  "emblem": {
+    "line": "The shamrock became the emblem in 1918. It stands for good luck, unity and balance.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Panathinaikos_F.C."},
+      {"publisher": "pao.gr", "url": "https://www.pao.gr/en/history/events/?id=281"},
+      {"publisher": "Skai.gr", "url": "https://www.skai.gr/news/sports/panathinaikos-syllogos-megalos-115-eton"}
+    ]
+  },
+  "colours": {
+    "line": "Green.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Panathinaikos_F.C."},
+      {"publisher": "footballhistory.org", "url": "https://footballhistory.org/club/panathinaikos.html"},
+      {"publisher": "UEFA.com", "url": "https://it.uefa.com/uefachampionsleague/news/0253-0d7f7b7fcbc4-cbe4b3cb3617-1000--five-claims-to-fame-panathinaikos"}
+    ]
+  },
+  "terrace": {
+    "name": "Gate 13",
+    "local": "Θύρα 13",
+    "script": "el",
+    "tab": "Gate 13",
+    "line": "Gate 13 is the stand at Leoforos where the most devoted supporters gather.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Leoforos_Alexandras_Stadium"},
+      {"publisher": "Skai.gr", "url": "https://www.skai.gr/news/sports/to-antio-tou-panathinaikou-sti-leoforo-to-meros-pou-gennithike-i-psyxi-tou-syllogou"}
+    ]
+  },
+  "facts": [
+    {
+      "id": "indians-tomb",
+      "line": "The indoor hall beside the ground has its own nickname: The Indian's Tomb.",
+      "local": "Τάφος του Ινδού",
+      "script": "el",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Leoforos_Alexandras_Stadium"},
+        {"publisher": "Skai.gr", "url": "https://www.skai.gr/news/sports/to-antio-tou-panathinaikou-sti-leoforo-to-meros-pou-gennithike-i-psyxi-tou-syllogou"}
+      ]
+    }
+  ]
+}
