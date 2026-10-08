@@ -36,7 +36,10 @@ const sleep=(ms:number)=>new Promise(r=>setTimeout(r,ms))
  * Default: the system resolver whenever the real network is used; an injected FetchLike (tests) opens no socket, so
  * it gets no lookup unless one is passed — tests pass a mocked one and never touch DNS.
  */
-export async function politeFetch(url:string,src:SourceProfile,prior:Pick<SnapshotMeta,'etag'|'lastModified'>|null,fetchImpl:FetchLike=fetch as unknown as FetchLike,now=()=>Date.now(),lookup?:LookupFn|null):Promise<FetchOutcome>{
+/** Time left before an absolute deadline, or Infinity without one. A request is only started if it can finish. */
+const leftOf=(deadline:number|undefined,now:()=>number)=>deadline?deadline-now():Infinity
+const OUT_OF_TIME={kind:'retry',afterMs:0,reason:'Out of time for this run — resumes next run'} as const
+export async function politeFetch(url:string,src:SourceProfile,prior:Pick<SnapshotMeta,'etag'|'lastModified'>|null,fetchImpl:FetchLike=fetch as unknown as FetchLike,now=()=>Date.now(),lookup?:LookupFn|null,deadline?:number):Promise<FetchOutcome>{
  let u:URL;try{u=new URL(url)}catch{return {kind:'error',reason:'Invalid URL'}}
  if(u.protocol!=='https:'||u.username||u.password||u.origin!==src.origin)return {kind:'refused',status:0,reason:'URL outside the profiled origin'}
  const resolver=lookup===undefined?((fetchImpl as unknown)===globalThis.fetch?systemLookup:null):lookup
@@ -44,13 +47,14 @@ export async function politeFetch(url:string,src:SourceProfile,prior:Pick<Snapsh
  if(hostIssue)return {kind:'refused',status:0,reason:`Not a public source: ${hostIssue}`}
  // robots.txt (cached for a day)
  let rb=robotsCache.get(u.origin)
- if(!rb||now()-rb.at>86400000){try{const r=await fetchImpl(`${u.origin}/robots.txt`,{headers:{'user-agent':USER_AGENT},redirect:'manual',signal:AbortSignal.timeout(src.rate.timeoutMs)});const t=r.status===200?await r.text():'';rb={text:t,at:now()}}catch{rb={text:'',at:now()}}robotsCache.set(u.origin,rb)}
+ if(!rb||now()-rb.at>86400000){if(leftOf(deadline,now)<2000)return OUT_OF_TIME;try{const r=await fetchImpl(`${u.origin}/robots.txt`,{headers:{'user-agent':USER_AGENT},redirect:'manual',signal:AbortSignal.timeout(Math.max(500,Math.min(src.rate.timeoutMs,leftOf(deadline,now)-1000)))});const t=r.status===200?await r.text():'';rb={text:t,at:now()}}catch{rb={text:'',at:now()}}robotsCache.set(u.origin,rb)}
  if(robotsDisallows(rb.text,u.pathname))return {kind:'refused',status:0,reason:'robots.txt disallows this path'}
- const wait=(lastHit.get(u.host)||0)+src.rate.minIntervalMs-now();if(wait>0)await sleep(wait);lastHit.set(u.host,now())
+ const wait=(lastHit.get(u.host)||0)+src.rate.minIntervalMs-now();if(wait>0){if(wait>leftOf(deadline,now)-2000)return OUT_OF_TIME;await sleep(wait)}lastHit.set(u.host,now())
+ if(leftOf(deadline,now)<2000)return OUT_OF_TIME
  const headers:Record<string,string>={'user-agent':USER_AGENT,accept:'text/html,application/json;q=0.9,*/*;q=0.5'}
  if(prior?.etag)headers['if-none-match']=prior.etag;if(prior?.lastModified)headers['if-modified-since']=prior.lastModified
  let r:Awaited<ReturnType<FetchLike>>
- try{r=await fetchImpl(url,{headers,redirect:'manual',signal:AbortSignal.timeout(src.rate.timeoutMs)})}catch(e){return {kind:'retry',afterMs:60000,reason:e instanceof Error?e.message:'network error'}}
+ try{r=await fetchImpl(url,{headers,redirect:'manual',signal:AbortSignal.timeout(Math.max(500,Math.min(src.rate.timeoutMs,leftOf(deadline,now)-1000)))})}catch(e){return {kind:'retry',afterMs:60000,reason:e instanceof Error?e.message:'network error'}}
  const fetchedAt=new Date(now()).toISOString()
  if(r.status===304)return {kind:'unchanged',meta:{url,fetchedAt,status:304}}
  if(r.status===429||r.status===503){const ra=Number(r.headers.get('retry-after'));return {kind:'retry',afterMs:Number.isFinite(ra)&&ra>0?ra*1000:300000,reason:`HTTP ${r.status}`}}

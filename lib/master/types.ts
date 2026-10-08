@@ -8,7 +8,10 @@ export type Finding={id?:string;field:string;value:string;sources:string[];appro
  /** lineage (audit F06): the adapter that first proposed it, every adapter that still produces it, first/last run */
  adapter?:string;lineage?:{adapters:string[];firstRunId:string;lastRunId:string;lastSeenAt:string}
  /** set when the adapter(s) behind a pending finding stop producing it — kept as history, not offered for decision */
- superseded?:{at:string;runId:string;adapter:string;reason:string}}
+ superseded?:{at:string;runId:string;adapter:string;reason:string}
+ /** what a game needs from the row, read from the source (names as written; unknown stays null) — only `player` feeds a pack today */
+ record?:FindingRecord}
+export type FindingRecord={kind:'player';name:string;sourceUrl?:string;seasons?:string|null;positions?:string[];fromYear?:number|null;toYear?:number|null}
 /**
  * `status`/`gates` are PUBLICATION state — changed only by the owner's clicks (clubs/update, open-playable).
  * `research` is the research layer's own status (audit F05): research never moves `status`.

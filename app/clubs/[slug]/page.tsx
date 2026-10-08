@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {coverShare} from '@/lib/share/v3/adapters'
 import {Shell} from '@/components/master/Shell'
 import {Dye} from '@/components/master/Dye'
 import {Seal,TornBlocks,Cutout,PressPhoto} from '@/components/master/Poster'
@@ -44,6 +46,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     <p className="mag-homeplace">{c.city} <i aria-hidden="true">|</i> {c.country}</p>
     <p className="mag-homelead">{fill(copy.homeLead)}</p>
     <nav className="mag-homejump" aria-label={copy.homeJump}>{core&&<a href="#games">{games.gamesTitle}{playable?<b>{playable}</b>:null}</a>}<a href="#life">LIFE</a>{core&&<a href="#terrace">{copy.homeTerrace}</a>}</nav>
+    {core&&playable>0&&<div className="mag-homeshare"><ShareComposer draft={coverShare(c.id,gamesOpen.filter(x=>x.allowed&&x.ready.playable).map(x=>x.g.name))} label={copy.homeShare}/></div>}
     {ENABLED_LOCALES.length>1&&<nav className="flex flex-wrap gap-4"><Link className="min-h-tap py-3" href="?lang=en" hrefLang="en">{copy.english}</Link><Link className="min-h-tap py-3" href="?lang=he" hrefLang="he">{copy.hebrew}</Link></nav>}
    </div>
    <div className="mag-homestage" aria-hidden="true"><TornBlocks seed={c.id} pattern={lv?.pattern}/><Cutout art="kicker" className="mag-homekick"/></div>
@@ -61,7 +64,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   </section>
   <section className="mag-section mag-homepair">
    <article className="mag-homecard ink" id="life" data-life-entry={life.state}><Dye art="face" className="mag-homeface"/><div><p className="mag-kicker">LIFE</p><h2>{copy.lifeTitle}</h2>{life.href?<><p>{copy.lifeOpen}</p><Link className="mag-cta red" href={life.href}>{copy.life}</Link></>:<p>{copy.lifeWorkshop}</p>}</div></article>
-   <article className="mag-homecard"><div className="mag-homeshirts"><Dye art="shirt" soft/><Dye art="shirt" soft ink={theme.secondary}/></div><div><p className="mag-kicker">{copy.homeColours}</p><h2>{fill(copy.homeColoursTitle)}</h2><p>{copy.homeColoursNote}</p>{core&&<Link className="mag-cta red" href={`/clubs/${c.id}/kits?lang=${locale}`}>{games['gate.kits']} →</Link>}</div></article>
+   <article className="mag-homecard"><div className="mag-homeshirts"><Dye art="shirt" soft/><Dye art="shirt" soft ink={theme.secondary}/></div><div><p className="mag-kicker">{copy.homeColours}</p><h2>{fill(copy.homeColoursTitle)}</h2><p>{copy.homeColoursNote}</p>{/* audit A08: the same availability as the gate list — no CTA into a gate that would say "not ready" */}{gamesOpen.some(x=>x.g.key==='kits'&&x.allowed&&x.ready.playable)&&<Link className="mag-cta red" href={`/clubs/${c.id}/kits?lang=${locale}`}>{games['gate.kits']} →</Link>}</div></article>
   </section>
   {core&&gamesOpen.some(x=>x.g.key==='archive'&&x.allowed&&x.ready.playable)&&<section className="mag-section mag-feature mag-feature-flip mag-clubbeen" aria-labelledby="been-h">
    <div className="mag-feature-art" aria-hidden="true"><TornBlocks seed={c.id+'been'} pattern={lv?.pattern}/><PressPhoto art="fans-group" className="mag-feature-main"/><PressPhoto art="memorabilia" className="mag-feature-side"/></div>

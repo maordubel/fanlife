@@ -141,6 +141,7 @@ try {
   assert.equal(response.status(),200)
   const truthDates=slug==='hapoel-tel-aviv'?null:(await loadClub(slug)).data.archive // compiled (pack + waves), as the page deals it
   let answers=0
+  await page.getByTestId('trivia-start').click()
   while(await page.getByTestId('trivia-result').count()===0){
    const board=page.getByTestId('trivia-question');await board.waitFor()
    const id=await board.getAttribute('data-question-id'),type=await board.getAttribute('data-question-type')
@@ -163,7 +164,7 @@ try {
   assert((await page.getByTestId('trivia-result').innerText()).toLowerCase().includes(String(`Correct: ${answers}/${answers}`).toLowerCase()))
   assert.equal(new URL(page.url()).pathname,`/clubs/${slug}/trivia`)
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-trivia.png`)
-  await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('trivia-question').waitFor();assert.equal(new URL(page.url()).searchParams.get('r'),'1')
+  await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('trivia-start').click();await page.getByTestId('trivia-question').waitFor();assert.equal(new URL(page.url()).searchParams.get('r'),'1')
   await page.goto(`${base}/clubs/${slug}/memory?seed=42`)
   const cards=await page.getByTestId('memory-board').locator('button').evaluateAll(nodes=>nodes.map(n=>n.dataset.cardId)),pairs=[...new Set(cards.map(id=>id.slice(0,-2)))]
   assert(pairs.length>=2)
@@ -175,14 +176,16 @@ try {
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-memory.png`)
   await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('memory-board').waitFor();assert.equal(await page.getByTestId('memory-result').count(),0)
   await page.goto(`${base}/clubs/${slug}/archive`)
+  await page.getByTestId('archive-board').waitFor()
+  // Today: the supporter's own day, or the next day on file — either way a card the drawer can open
   await page.getByTestId('archive-entry').first().waitFor()
-  await page.getByRole('link',{name:'Open archive entry ↗',exact:true}).first().click()
-  await page.waitForURL(url=>url.searchParams.has('event'));await page.getByRole('link',{name:'Back to the archive',exact:true}).waitFor()
-  assert((await page.getByTestId('archive-entry').innerText()).toLowerCase().includes(String('Documented:').toLowerCase()))
-  assert((await page.getByTestId('archive-entry').locator('a[target="_blank"]').count())>0)
-  await page.getByRole('link',{name:'Back to the archive',exact:true}).click();await page.waitForURL(url=>!url.searchParams.has('event'))
-  await page.getByRole('checkbox',{name:'On this day',exact:true}).check();await page.getByRole('button',{name:'Search names or history',exact:true}).click()
-  await page.waitForURL(url=>url.searchParams.get('today')==='1')
+  await page.getByTestId('archive-entry').first().getByRole('button',{name:/^Open:/}).click()
+  await page.getByTestId('archive-detail').waitFor();await page.waitForFunction(()=>location.search.includes('event='))
+  assert((await page.getByTestId('archive-detail').innerText()).toLowerCase().includes('documented:'))
+  assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>0)
+  await page.keyboard.press('Escape');await page.getByTestId('archive-detail').waitFor({state:'detached'});await page.waitForFunction(()=>!location.search.includes('event='))
+  // the five tabs are one keyboard-reachable tablist
+  for(const tab of ['Time','Dig','Search','Mine','Today']){await page.getByRole('tab',{name:tab,exact:true}).click();await page.getByRole('tabpanel').waitFor()}
   await page.goto(`${base}/clubs/${slug}`)
   await page.getByTestId('club-activity').waitFor()
   assert.equal(await page.getByTestId('shared-gates').locator('[data-gate]').count(),13)
@@ -212,7 +215,7 @@ try {
  }
  await expectGate(page,`${base}/clubs/olympiacos/xi`,'olympiacos','xi','xi-builder')
  await page.goto(`${base}/clubs/hapoel-tel-aviv/trivia?seed=42&lang=he`)
- await page.getByTestId('trivia-question').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
+ await page.getByTestId('trivia-start').click();await page.getByTestId('trivia-question').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Shared trivia RTL overflow')
  await page.goto(`${base}/clubs/hapoel-tel-aviv/memory?seed=42&lang=he`)
  await page.getByTestId('memory-board').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
@@ -245,11 +248,11 @@ try {
  await page.goto(`${base}/clubs/zrinjski-mostar/archive?q=seventh`);await hit('seventh title').waitFor()
  assert((await hit('seventh title').textContent()).includes('2022'));assert.equal(await hit('seventh title').locator('time').count(),0)
  await page.goto(`${base}/clubs/zrinjski-mostar/archive?q=Karačić`);await hit('Goran Karačić').waitFor()
- await hit('Goran Karačić').getByRole('link',{name:'Open archive entry ↗',exact:true}).click();await page.waitForURL(url=>url.searchParams.has('event'));await page.getByRole('link',{name:'Back to the archive',exact:true}).waitFor();assert((await page.getByTestId('archive-entry').first().locator('a[target="_blank"]').count())>=1)
+ await hit('Goran Karačić').getByRole('button',{name:/^Open:/}).click();await page.getByTestId('archive-detail').waitFor();assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>=1)
  await page.goto(`${base}/clubs/hapoel-petah-tikva/archive?q=${encodeURIComponent('1954/55')}`);await hit('1955').waitFor()
  assert.equal(await hit('1955').locator('time').count(),0)
  await page.goto(`${base}/clubs/hapoel-petah-tikva/archive?q=${encodeURIComponent('עומר כץ')}`);await hit('עומר כץ').waitFor()
- await hit('עומר כץ').getByRole('link',{name:'Open archive entry ↗',exact:true}).click();await page.waitForURL(url=>url.searchParams.has('event'));await page.getByRole('link',{name:'Back to the archive',exact:true}).waitFor();assert((await page.getByTestId('archive-entry').first().locator('a[target="_blank"]').count())>=1)
+ await hit('עומר כץ').getByRole('button',{name:/^Open:/}).click();await page.getByTestId('archive-detail').waitFor();assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>=1)
  const mysteryBank=JSON.parse(readFileSync('content/generated/blind-cow-bank.json','utf8'))
  await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=en`);await page.getByTestId('mystery-board').waitFor();await page.getByRole('button',{name:'Start or resume',exact:true}).click();await page.locator('[data-clue-n="1"]').waitFor()
  let clues=await page.locator('[data-clue-n] p').allTextContents(),candidates=mysteryBank.questions.filter(q=>q.eligibleModes.includes('solo')&&q.remaining[q.remaining.length-1]===1&&q.clueIds.every(id=>(mysteryBank.clues[id]?.confidence||0)>=2)&&clues.every((value,i)=>mysteryBank.clues[q.clueIds[i]]?.valueHe===value))
@@ -282,13 +285,13 @@ try {
  assert.equal(await hostPage.getByTestId('timeline-hand').count(),0)
  assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())),'Cross-tenant content leaked into mismatched host')
 
- for(const [entry,testId] of [['trivia','trivia-question'],['memory','memory-board'],['archive','archive-entry'],['polls','polls-board']]){
+ for(const [entry,testId] of [['trivia','trivia-start'],['memory','memory-board'],['archive','archive-entry'],['polls','polls-board']]){
   await hostPage.goto(`http://olympiacos.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/olympiacos/${entry}`)
   await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())))
  }
  await expectGate(hostPage,`http://olympiacos.localhost:${port}/blind-cow?lang=he`,'olympiacos','blind-cow','mystery-board');assert.equal(new URL(hostPage.url()).pathname,'/clubs/olympiacos/blind-cow')
  await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/hapoel-tel-aviv/blind-cow`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId('mystery-board').count(),0)
- for(const [entry,testId] of [['timeline','timeline-hand'],['trivia','trivia-question'],['memory','memory-board'],['archive','archive-entry'],['xi','xi-builder'],['polls','polls-board']]){
+ for(const [entry,testId] of [['timeline','timeline-hand'],['trivia','trivia-start'],['memory','memory-board'],['archive','archive-entry'],['xi','xi-builder'],['polls','polls-board']]){
   await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/hapoel-petah-tikva/${entry}`)
   await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())))
  }

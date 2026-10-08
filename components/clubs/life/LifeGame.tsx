@@ -30,6 +30,7 @@ import {instantText, Typed, type TypedHandle} from './Typed'
 import {skyOf} from '@/lib/life/universal/sky'
 import {people, roomConfig, type PlayEvent, type PlayRuntime, type PlayTarget} from './runtime'
 import {LifeSound} from './sound'
+import {finishVisit, track} from '@/lib/analytics/meter'
 import styles from './life.module.css'
 
 type Copy = Record<string, string>
@@ -237,6 +238,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     if (!l || !ch) return
     const keep = ch.endings[ending]?.keep
     l.dispatch({t: 'ended', chapter: ch.id, ending}, ...(keep ? [{t: 'keep' as const, item: keep}] : []))
+    // audience (audit A07): which chapter closed — never the answer or the story the supporter chose
+    track('life_chapter_complete', {detail: ch.id.toLowerCase().replace(/[^a-z0-9_:.-]/g, '').slice(0, 48) || undefined})
     rt.current?.freeze(true)
     rt.current?.emote('tender', 8)
     cue('end')
@@ -421,7 +424,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const toNext = useCallback(() => {
     const l = life.current, next = l?.state.chapter ? nextChapter(pack, l.state.chapter) : null
     if (!l) return
-    if (!next) { setPhase('finished'); return }
+    if (!next) { finishVisit(`/clubs/${pack.clubId}/life`); setPhase('finished'); return }
     l.dispatch(...openChapter(next))
     openChapterCard()
   }, [openChapterCard, pack])
