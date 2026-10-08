@@ -31,6 +31,7 @@ describe('F05 / F06 / F15 — research never touches publication, keeps every so
  it('runs the job by id (not the first in the global queue) and leaves status and gates alone',async()=>{
   const clubs=(await readState()).clubs,[a,b]=[clubs[0]!.id,clubs[1]!.id]
   await mutate(s=>{const c=s.clubs.find(c=>c.id===b)!;c.status='live';c.gates=[2,13];return true})
+  const gatesBefore=[...(await readState()).clubs.find(c=>c.id===b)!.gates] // launch defaults add playable gates on read; research must not change them further
   fake.results.set('package:pkg-1',{sources:[src('s1')],findings:[fnd('founded','1911',['s1'])]})
   const first=await queue(a,'wikipedia','first-in-queue'),mine=await queue(b,'package','pkg-1')
   const r=await runResearch(mine.id)
@@ -38,7 +39,7 @@ describe('F05 / F06 / F15 — research never touches publication, keeps every so
   const s=await readState()
   expect(s.jobs.find(j=>j.id===first.id)!.status).toBe('queued') // the global first job did not run
   const club=s.clubs.find(c=>c.id===b)!
-  expect(club.status).toBe('live');expect(club.gates).toEqual([2,13]) // F05: publication untouched
+  expect(club.status).toBe('live');expect(club.gates).toEqual(gatesBefore) // F05: publication untouched
   expect(club.research).toMatchObject({state:'needs-review',lastRunId:mine.id,lastAdapter:'package'})
   // an unknown or finished id runs nothing
   expect(await runResearch('no-such-job')).toMatchObject({ran:false,reason:'Job not found.'})
