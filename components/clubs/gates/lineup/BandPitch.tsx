@@ -9,8 +9,8 @@ export type PitchLabels={band:(b:Band)=>string;short:(b:Band)=>string;place:(b:B
 /** the chalk on the board: touchlines, the halfway line and both penalty areas — drawn once, never an answer */
 function Chalk(){
  return <svg className={css.chalk} viewBox="0 0 100 119" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-  <line className="dash" x1="0" y1="29.75" x2="100" y2="29.75"/><line className="dash" x1="0" y1="89.25" x2="100" y2="89.25"/>
-  <line x1="0" y1="59.5" x2="100" y2="59.5"/><circle className="spot" cx="50" cy="59.5" r="1.2"/>
+  <line data-k="dash" x1="0" y1="29.75" x2="100" y2="29.75"/><line data-k="dash" x1="0" y1="89.25" x2="100" y2="89.25"/>
+  <line x1="0" y1="59.5" x2="100" y2="59.5"/><circle data-k="spot" cx="50" cy="59.5" r="1.2"/>
   <rect x="24" y="0" width="52" height="16"/><rect x="38" y="0" width="24" height="6"/>
   <rect x="24" y="103" width="52" height="16"/><rect x="38" y="113" width="24" height="6"/>
  </svg>
