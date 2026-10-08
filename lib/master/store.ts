@@ -6,11 +6,14 @@ import path from 'node:path'
 import {createHash} from 'node:crypto'
 import type {State,Finding,AuditEntry} from './types'
 import {seedState} from './seed'
+import LAUNCH from './launch-defaults.json'
 import {dataRoot,onServerless} from '@/lib/dataRoot'
 import {durable} from './durable'
 const root=dataRoot
 const globals=globalThis as typeof globalThis & {fanWrites?:Promise<unknown>}
-function withRegistry(s:State):State{const have=new Set(s.clubs.map(c=>c.id));const add=seedState().clubs.filter(c=>!have.has(c.id));return add.length?{...s,clubs:[...s.clubs,...add]}:s}
+/** Owner, 8.10.2026: "open everything that can open". A non-paused club with a compiled pack is live with all its playable gates (gates are only ever added; paused stays closed). */
+function withLaunch(s:State):State{for(const c of s.clubs){const g=(LAUNCH as Record<string,number[]>)[c.id];if(!g||c.status==='paused')continue;c.status='live';c.gates=[...new Set([...c.gates,...g])].sort((a,b)=>a-b)}return s}
+function withRegistry(s:State):State{const have=new Set(s.clubs.map(c=>c.id));const add=seedState().clubs.filter(c=>!have.has(c.id));return withLaunch(add.length?{...s,clubs:[...s.clubs,...add]}:s)}
 export const findingId=(f:Pick<Finding,'field'|'value'|'sources'>)=>'f-'+createHash('sha256').update(JSON.stringify([f.field,f.value,[...f.sources].sort()])).digest('hex').slice(0,16)
 export const contentHash=(text:string)=>createHash('sha256').update(text).digest('hex').slice(0,24)
 /** Older control files have findings without ids; give them their stable id on read. */
