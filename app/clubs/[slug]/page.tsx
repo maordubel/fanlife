@@ -5,6 +5,8 @@ import {ShareComposer} from '@/components/share/v3/ShareComposer'
 import {coverShare} from '@/lib/share/v3/adapters'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
 import {GateTickets,type GateState} from '@/components/clubs/GateTickets'
+import {ClubGateWall} from '@/components/clubs/ClubGateWall'
+import {ClubEntrance} from '@/components/clubs/ClubEntrance'
 import {FixtureCard} from '@/components/clubs/FixtureCard'
 import {ClubRounds} from '@/components/clubs/ClubRounds'
 import {Dye} from '@/components/master/Dye'
@@ -47,6 +49,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
  const layout=lv?.layout??'poster',place=world.voice.kicker.split(' · ')
  const names=Object.fromEntries(SHARED_GATES.map(g=>[g.key,games[`gate.${g.key}`]]))
  return <ClubSurface theme={theme} clubId={c.id} locale={locale}><main id="main" className="mag-home club-home" data-hero={layout}>
+  {core&&<ClubEntrance clubId={id} name={c.name} tap={copy.entranceTap}/>}
   <section className="mag-homehero club-hero" aria-labelledby="club-h">
    <span className="mag-pitchlines" aria-hidden="true"/>
    {layout==='curtain'&&<span className="mag-band club-curtain" data-livery={lv?.pattern} aria-hidden="true"/>}
@@ -66,6 +69,8 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {searchParams.lang&&!UI_LOCALES.includes(searchParams.lang as 'en'|'he')&&<section className="mag-section"><p className="panel">{copy.fallback}</p></section>}
   {fx&&lv?<FixtureCard clubId={id} clubName={c.name} fx={fx} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta}}/>
   :world.ground&&<section className="mag-section club-matchday" aria-labelledby="md-h"><article className="mag-homecard"><div><p className="mag-kicker">{copy.homeVoice}</p><h2 id="md-h">{world.ground.name}{world.ground.local&&<> <bdi className="club-local" lang={world.ground.script} dir="auto">{world.ground.local}</bdi></>}</h2><p>{world.ground.line}</p></div></article></section>}
+  {core&&<section className="mag-section" id="gates" aria-labelledby="gates-h"><hr className="mag-rule"/><div className="mag-head"><div><p className="mag-kicker">{copy.wallKicker}</p><h2 className="mag-h2" id="gates-h">{copy.wallTitle}</h2><p className="mag-fine">{fill(copy.wallLead)}</p></div></div>
+   <ClubGateWall clubId={id} states={states} locale={locale} games={games} soon={copy.wallSoon} gateWord={copy.wallGate}/></section>}
   {core&&<section className="mag-section club-rounds-sec" aria-labelledby="rounds-h"><hr className="mag-rule"/><div className="mag-head"><div><p className="mag-kicker">{copy.homeRounds}</p><h2 className="mag-h2" id="rounds-h">{games.gamesTitle}</h2></div><Link className="mag-chip" href={clubHref(id,'play',locale)}>{copy.homePlayCta} →</Link></div>
    <ClubRounds clubId={id} locale={locale} names={names} none={copy.homeRoundsNone}/>
    {pickGate&&<div className="club-pick"><p className="mag-kicker">{copy.homeToday}</p><GateTickets clubId={id} states={states} keys={[pickGate.key]} locale={locale} games={games} pattern={lv?.pattern} closedNote={copy.paused} feature={1}/></div>}

@@ -252,5 +252,11 @@
   "shirtsSell": "Sell or swap",
   "shirtsSellNote": "List a shirt from your closet, or find one. No fees.",
   "shirtsAuction": "Auction",
-  "shirtsAuctionNote": "One shirt, one window, one winner."
+  "shirtsAuctionNote": "One shirt, one window, one winner.",
+  "wallKicker": "The ground",
+  "wallTitle": "Pick your gate",
+  "wallLead": "Thirteen gates into {club}. Walk in by one.",
+  "wallGate": "Gate",
+  "wallSoon": "Soon",
+  "entranceTap": "Tap to enter"
 }

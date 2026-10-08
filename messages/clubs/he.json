@@ -252,5 +252,11 @@
   "shirtsSell": "מכירה והחלפה",
   "shirtsSellNote": "מציעים חולצה מהארון, או מחפשים. בלי עמלות.",
   "shirtsAuction": "מכירה פומבית",
-  "shirtsAuctionNote": "חולצה אחת, חלון אחד, זוכה אחד."
+  "shirtsAuctionNote": "חולצה אחת, חלון אחד, זוכה אחד.",
+  "wallKicker": "האצטדיון",
+  "wallTitle": "בחרו שער",
+  "wallLead": "שלושה עשר שערים אל {club}. נכנסים בשער.",
+  "wallGate": "שער",
+  "wallSoon": "בקרוב",
+  "entranceTap": "הקישו כדי להיכנס"
 }
