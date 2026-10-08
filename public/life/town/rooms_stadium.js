@@ -151,7 +151,7 @@ function facade(h,Wd,Hd,x,y,z,o){o=o||{};var tw=1024,th=Math.round(1024*Hd/Wd);
   for(var i=0;i<W;i+=48){g.fillStyle='rgba(255,255,255,.04)';g.fillRect(i,0,3,Hh)}
   var rows=o.rows||5;for(var r=0;r<rows;r++){var yy=Hh*.12+r*(Hh*.8/rows);g.fillStyle='#10131f';g.fillRect(0,yy,W,Hh*.06);
    for(var k=0;k<W/48;k++){var lit=h.c.rnd()<(o.lit==null?.55:o.lit);g.fillStyle=lit?(h.c.rnd()<.5?'#ffc8a8':'#bcd4ff'):'#222638';g.fillRect(k*48+8,yy+3,32,Hh*.06-6)}}
-  g.fillStyle='#2a2f44';g.fillRect(0,0,W,Hh*.05);g.fillStyle=o.stripe||'#d8283e';g.fillRect(0,Hh*.05,W,Hh*.018)},1,1);
+  g.fillStyle='#2a2f44';g.fillRect(0,0,W,Hh*.05);g.fillStyle=o.stripe||__CK.a;g.fillRect(0,Hh*.05,W,Hh*.018)},1,1);
  var m=new T.MeshStandardMaterial({map:t,emissive:'#ffffff',emissiveMap:t,emissiveIntensity:.6,roughness:.8});
  return h.plane(Wd,Hd,x,y,z,m,0)}
 function turnstile(h,x,z,ry){var g=new T.Group();g.position.set(x,0,z);g.rotation.y=ry||0;h.w.add(g);var m=h.M('#9aa2b6',{metalness:.8,roughness:.3}),d=h.M('#20242f',{metalness:.5,roughness:.5});
@@ -255,7 +255,7 @@ RM.def('bloomfield-tunnel',{kind:'stadium',geo:'tunnel',build:function(c){var h=
  var cm=h.M('#ffffff',{map:c.concrete('#5a5e6c',2,1),roughness:.85});
  h.bx(1.0,HT,.7,.7,HT/2,Z0-.3,cm);h.bx(1.0,HT,.7,5.3,HT/2,Z0-.3,cm);h.bx(3.8,.6,.7,CX,HT-.3,Z0-.3,cm);
  var far=h.tx(512,320,function(g,W,Hh){var gr=g.createLinearGradient(0,0,0,Hh);gr.addColorStop(0,'#0a1030');gr.addColorStop(.35,'#1a2a58');gr.addColorStop(.62,'#6a86c8');gr.addColorStop(.7,'#d8f4e0');gr.addColorStop(.74,'#3cb868');gr.addColorStop(1,'#1a6a3a');g.fillStyle=gr;g.fillRect(0,0,W,Hh);
-   for(var i=0;i<260;i++){var cx=rnd()*W,cy=Hh*(.18+rnd()*.38);g.fillStyle=['#d8283e','#f4f1ff','#8aa8ff','#ff9a64'][i%4];g.globalAlpha=.4+rnd()*.5;g.fillRect(cx,cy,3,4)}g.globalAlpha=1;
+   for(var i=0;i<260;i++){var cx=rnd()*W,cy=Hh*(.18+rnd()*.38);g.fillStyle=[__CK.a,'#f4f1ff','#8aa8ff','#ff9a64'][i%4];g.globalAlpha=.4+rnd()*.5;g.fillRect(cx,cy,3,4)}g.globalAlpha=1;
    for(i=0;i<5;i++){g.fillStyle='rgba(230,245,255,.9)';g.beginPath();g.arc(60+i*100+rnd()*30,40,12,0,7);g.fill()}},1,1);
  h.plane(5.6,3.2,CX,1.45,-2.2,new T.MeshBasicMaterial({map:far,fog:false}),0);
  var gt=h.tx(256,256,function(g,W,Hh){for(var i=0;i<8;i++){g.fillStyle=i%2?'#3fbf6c':'#2f9a56';g.fillRect(0,i*32,W,32)}},1,1);
@@ -383,7 +383,7 @@ RM.def('gate5',{kind:'stadium',build:function(c){var h=H(c),w=c.world,S=c.skin,r
  /* barriers + lamps + banners + flags */
  h.rail(.6,1.8,.6,8.5,0,1.1);h.rail(7.4,1.8,7.4,8.5,0,1.1);h.rail(-2,3.5,.2,3.5,0,1.1);h.rail(7.8,3.5,13,3.5,0,1.1);
  h.lamp(-3.5,6.2,6.2,{light:true});h.lamp(13.5,6.8,6.2);
- c.banner(-.8,2.6,2.0,1.3,'GATE 5',S.c1,'#f4f1ff');c.banner(8.8,2.6,2.0,1.3,'Together','#14141c',S.c1);
+ c.banner(-.8,2.6,2.0,1.3,('GATE '+__CK.n2),S.c1,'#f4f1ff');c.banner(8.8,2.6,2.0,1.3,'Together','#14141c',S.c1);
  [[10.2,5.4],[11.6,7.2],[-1.8,7.4]].forEach(function(f,i){h.flag(f[0],0,f[1],1.8,1.1,h.flagMat(i%2?S.c2:S.c1,i%2?S.c1:S.c2,'',i%2?'band':'stripes'),3.7)});
  /* towers behind */
  [-7,15].forEach(function(x){h.tower(x,-3,12,{pw:5,ph:3.2,gs:16,gop:.6})});
@@ -567,7 +567,7 @@ RM.def('teddy',{kind:'stadium',build:function(c){var h=H(c),w=c.world,S=c.skin,r
   for(var i=0;i<14;i++){var sx=-8+i*2.1;h.bx(.5,.55,.12,sx,y+.3,z+.3,i%5==2?seatB:seatM)}}
  /* far stand */
  var fz=-48;var far=h.tx(1024,256,function(g,W,Hh){g.fillStyle='#1a1e30';g.fillRect(0,0,W,Hh);for(var r=0;r<9;r++){g.fillStyle=r%2?'#262a40':'#20243a';g.fillRect(0,20+r*24,W,22)}
-  for(var i=0;i<2600;i++){g.fillStyle=['#d8283e','#f4f1ff','#8aa8ff','#e8503a','#3a4a7a'][i%5];g.globalAlpha=.35+rnd()*.5;g.fillRect(rnd()*W,24+rnd()*200,4,5)}g.globalAlpha=1;
+  for(var i=0;i<2600;i++){g.fillStyle=[__CK.a,'#f4f1ff','#8aa8ff','#e8503a','#3a4a7a'][i%5];g.globalAlpha=.35+rnd()*.5;g.fillRect(rnd()*W,24+rnd()*200,4,5)}g.globalAlpha=1;
   g.fillStyle=S.c1;g.fillRect(0,230,W,12);g.fillStyle='#f4f1ff';g.fillRect(0,242,W,3)},1,1);
  h.plane(90,16,6,8,fz,new T.MeshStandardMaterial({map:far,emissive:'#ffffff',emissiveMap:far,emissiveIntensity:.5}),0);
  h.bx(94,1,6,6,16.6,fz+.5,h.M('#14182a'));for(var i=0;i<12;i++){h.bx(2,.4,.2,-28+i*7.4,16,fz+3.6,h.BM('#e8f0ff',1.8));h.glow('#cfe0ff',-28+i*7.4,16,fz+4,6,3,.55)}

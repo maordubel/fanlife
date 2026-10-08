@@ -247,7 +247,7 @@ for i in np.where(is_head | is_neck)[0]:
     p = P0[i] - np.array([0, 0, hc[2] - .1])
     ang = abs(math.degrees(math.atan2(p[0], p[2])))  # 0 = front, 180 = back
     R = top - eyeY; nape = (neckY + .2) - eyeY
-    knots = [(0, .56 * R), (32, .56 * R), (58, .46 * R), (78, .1), (92, .22), (118, .18), (150, nape), (180, nape)]
+    knots = [(0, .52 * R), (24, .5 * R), (44, .36 * R), (60, .22 * R), (72, -.04), (82, -.12), (88, .1), (96, .28), (116, .2), (148, nape), (180, nape)]
     for (a0, h0), (a1, h1) in zip(knots, knots[1:]):
         if a0 <= ang <= a1:
             t = (ang - a0) / (a1 - a0); t = t * t * (3 - 2 * t); hl = eyeY + h0 + (h1 - h0) * t; break
@@ -256,9 +256,49 @@ earmask = np.zeros(NB, bool)
 for e in (eyeL, eyeR):
     s = np.sign(e[0])
     ear = np.array([s * abs(P0[is_head, 0]).max() * .96, eyeY - .15, hc[2] - .05])
-    earmask |= (np.linalg.norm(P0 - ear, axis=1) < .42) & (np.sign(P0[:, 0]) == s)
+    earmask |= (np.linalg.norm(P0 - ear, axis=1) < .3) & (np.sign(P0[:, 0]) == s)
 hf[earmask] = np.minimum(hf[earmask], 60)
 hairfield = hf.astype(np.uint8)
+
+# ---------------------------------------------------------------- limb angle: where on the sleeve / trouser leg a point sits
+# 0 = not a limb; arms 1..127, legs 129..255, measured around the limb's own axis from its outer side (stripes run there)
+limb = np.zeros(NB, np.uint8)
+for s_ in ('l', 'r'):
+    sg = 1 if s_ == 'l' else -1
+    for kind, (a, b, c_), lo in (('arm', ('upperarm_', 'lowerarm_', 'hand_'), 1), ('leg', ('thigh_', 'calf_', 'foot_'), 129)):
+        A, Bj, C = J[a + s_], J[b + s_], J[c_ + s_]
+        mask = (arm_t > -9) if kind == 'arm' else (leg_t > -9)
+        mask &= (np.sign(P0[:, 0]) == sg)
+        for i in np.where(mask)[0]:
+            p = P0[i]; t = arm_t[i] if kind == 'arm' else leg_t[i]
+            q0, q1 = (A, Bj) if t < 1 else (Bj, C)
+            ax = q1 - q0; ax = ax / np.linalg.norm(ax)
+            r = p - q0; r = r - ax * (r @ ax)
+            out = np.array([sg, 0, 0], float) if kind == 'leg' else np.array([0, 1, 0], float)
+            out = out - ax * (out @ ax); out /= np.linalg.norm(out) + 1e-9
+            fw = np.cross(ax, out)
+            ang = math.atan2(r @ fw, r @ out)  # 0 = outer side
+            limb[i] = lo + int(round((ang / math.pi * .5 + .5) * 126))
+# moustache: above the upper lip, found from the lips mask itself
+_lm = np.asarray(Image.open(MP + '/textures/mpfb_lips.jpg').convert('L'), np.float32) / 255.
+_lw = _lm.shape[1]
+vuv = np.zeros((NB, 2)); vcnt = np.zeros(NB)
+for k in range(len(tri)):
+    for j_ in range(3):
+        vuv[tri[k, j_]] += VT[triT[k, j_]]; vcnt[tri[k, j_]] += 1
+vuv /= np.maximum(vcnt, 1)[:, None]
+lipv = np.array([_lm[int((1 - v) * (_lw - 1)), int(u * (_lw - 1))] for u, v in vuv]) > .5
+lipv &= is_head
+lipTop = P0[lipv, 1].max(); lipX = P0[lipv, 0]; lipHalf = (lipX.max() - lipX.min()) / 2; lipZ = P0[lipv, 2].max()
+stache = np.zeros(NB, np.uint8)
+for i in np.where(is_head & ~lipv)[0]:
+    p = P0[i]
+    if p[2] < lipZ - .3: continue
+    dy = p[1] - lipTop; dx = abs(p[0])
+    wid = max(lipHalf * 1.25, .24); band = np.clip(1 - abs(dy - .075) / .1, 0, 1) * np.clip(1 - (dx - wid) / .05, 0, 1)
+    if dy < -.02:  # the corners droop a little past the mouth
+        band = np.clip(1 - abs(dy + .0) / .07, 0, 1) * np.clip(1 - abs(dx - max(lipHalf * 1.25, .24)) / .05, 0, 1) * .85
+    stache[i] = int(np.clip(band * 255, 0, 255))
 
 # ---------------------------------------------------------------- skin texture bake (UV space)
 TS = 1024
@@ -397,6 +437,8 @@ put('otri', otri.astype(np.uint16))
 put('ski', SKI); put('skw', SKW)
 put('hair', hairfield)
 put('cav', np.clip(cav * 127 + 128, 0, 255).astype(np.uint8))
+put('limb', limb)
+put('stache', stache)
 put('joints', (J0 * S).astype(np.float32))
 put('extra', (X0 * S).astype(np.float32))
 morphs = []
