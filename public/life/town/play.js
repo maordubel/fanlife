@@ -82,6 +82,10 @@ function lookOf(o,id){
  if(o.scarf===true&&S)d.scarf=[S.p,S.s];else if(o.scarf&&o.scarf.length)d.scarf=o.scarf;
  if(o.cap)d.beanie=o.cap===true?(S&&S.t||'#14141c'):o.cap;
  if(o.vest)d.jacket=o.vest;
+ /* who this person is, for the human figure: passed through as authored */
+ ['sex','age','build','style','mustache','beard','stubble','glasses','sleeves','jacket','denimJacket','cardigan','track','trackCol','denim','skirt','apron'].forEach(function(k){if(o[k]!=null)d[k]=o[k]});
+ if(o.track&&!o.trackCol)d.trackCol=S&&S.p?S.p:'#b02d10';
+ if(o.cap===true)d.cap=S&&S.t||'#14141c',delete d.beanie;
  return d;
 }
 function Body(def,id){
@@ -173,10 +177,10 @@ function pruneDecor(c,kind){
 function enter(c){
  cfg=c;actors={};exits=[];spots=[];marks=[];decor=[];target=null;path=null;pending=null;focusId=null;frozen=!!c.frozen;axis.x=axis.y=0;lastExit=null;
  S=SKINS[c.club]||null;
- /* the picture never invents yellow, unless yellow is this club's own colour */
- if(K.yellowGuard){var yc=S&&S.p?new T.Color(S.p):null,yh={};if(yc)yc.getHSL(yh);K.yellowGuard(!(yc&&yh.h*360>36&&yh.h*360<72&&yh.s>.35))}
+ /* the picture never paints a colour this club may not wear: its legacy rules (Hapoel's yellow) and its rivals' families */
+ if(K.colourGuard)K.colourGuard(S)
  FR=c.frame||{};
- var sk=S?{name:c.club,c1:S.p,c2:S.s,c3:S.t||'#14141c'}:null;
+ var sk=S?{name:c.club,c1:S.p,c2:S.s,c3:S.t||'#14141c',club:S}:null;
  RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true});
  var def=RM.defs[c.room];pruneDecor(c,def&&def.kind);
  if(window.__gnd)window.__sc.remove(window.__gnd);if(def&&IND[def.kind]){var gm=new T.Mesh(new T.PlaneGeometry(300,300),new T.MeshBasicMaterial({color:new T.Color('#cdb592').convertSRGBToLinear()}));gm.rotation.x=-PI/2;gm.position.set(12*U,-.06,8*U);window.__sc.add(gm);window.__gnd=gm}
