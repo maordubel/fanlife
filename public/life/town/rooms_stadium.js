@@ -40,7 +40,7 @@ function H(c){
   var pm=h.M('#2a2e3a',{metalness:.6,roughness:.4});var n=Math.max(1,Math.round(L/2.2));for(var i=0;i<=n;i++)h.cyl(.05,.05,Ht+.3,x1+(x2-x1)*i/n,y+Ht/2,z1+(z2-z1)*i/n,pm,null,6);
   h.bar(x1,y+Ht,z1,x2,y+Ht,z2,.05,pm);if(o.spikes)for(i=0;i<=n*2;i++){var q=h.cyl(0,.05,.2,x1+(x2-x1)*i/(n*2),y+Ht+.22,z1+(z2-z1)*i/(n*2),pm,null,4)}};
  /* instanced crowd of cheap figures */
- h.crowd=function(spots,o){o=o||{};var n=spots.length;if(!n)return;
+ h.crowd=function(spots,o){o=o||{};spots=spots.map(function(s){return Array.isArray(s)?{x:s[0],y:s[1],z:s[2]}:s});var n=spots.length;if(!n)return;if(window.PEOPLE&&PEOPLE.crowd&&!o.cheap)return h.crowdPeople(spots,o);
   var pal=o.pal||[h.c1,h.c1,h.c1,h.c2,h.c2,h.c3,h.c3,'#2a3a6a','#4a4a56'];
   var bg=new T.LatheGeometry([[0,0],[.1,0],[.13,.05],[.14,.5],[.16,.85],[.19,.95],[.17,1.08],[.22,1.2],[.25,1.3],[.2,1.38],[.07,1.42],[0,1.43]].map(function(p){return new T.Vector2(p[0],p[1])}),12),hg=new T.SphereGeometry(.12,10,8),ag=new T.CylinderGeometry(.048,.04,.62,6);ag.translate(0,.31,0);
   var bm=new T.InstancedMesh(bg,new T.MeshStandardMaterial({color:'#ffffff',roughness:.92}),n),hm=new T.InstancedMesh(hg,new T.MeshStandardMaterial({color:'#ffffff',roughness:.7}),n),am=new T.InstancedMesh(ag,new T.MeshStandardMaterial({color:'#ffffff',roughness:.9}),n*2);
@@ -54,6 +54,18 @@ function H(c){
     if(up){d.position.set(s.x+Math.cos(ry)*sd*.25*sc,s.y+1.12*sc,s.z-Math.sin(ry)*sd*.25*sc);d.rotation.set(-.15+rnd()*.3,ry,-sd*(.22+rnd()*.3));d.scale.setScalar(sc);d.updateMatrix();am.setMatrixAt(i*2+k,d.matrix)}else am.setMatrixAt(i*2+k,zero);
     col.set(bc);if(o.dim)col.multiplyScalar(o.dim);col.convertSRGBToLinear();am.setColorAt(i*2+k,col)}});
   [bm,hm,am].forEach(function(m){m.frustumCulled=false;w.add(m)});return bm};
+ /* real bodies on the terrace: three poses, per-person shirt/trousers/skin/hair. The palette is the club's; jackets and
+    plain dark clothes keep a stand from reading as a kit advert. */
+ h.crowdPeople=function(spots,o){var pal=o.pal||[h.c1,h.c1,h.c1,h.c2,h.c2,h.c3,'#1c1e26','#2a2e3a','#3a3a44','#24304a'];
+  var HAIR=['#120d0a','#1c1410','#2a1d16','#3a2a1e','#5a4634','#6a6a70','#1a1a1c'],PANTS=['#14151c','#1c2030','#232633','#2a3450','#30302e','#1a1a1a'],SHOE=['#121214','#1c1c20','#d8d6d0','#2a2420'];
+  var groups={down:[],one:[],both:[]};spots.forEach(function(s){var u=s.up==null?(o.up==null?.25:o.up):s.up,a=rnd()<u,b=rnd()<u;(a&&b?groups.both:a||b?groups.one:groups.down).push(s)});
+  var d=new T.Object3D(),col=new T.Color(),first=null,dim=o.dim||1;
+  function setc(att,i,hex,k){col.set(hex);col.multiplyScalar(k);col.convertSRGBToLinear();att.setXYZ(i,col.r,col.g,col.b)}
+  Object.keys(groups).forEach(function(k){var L=groups[k];if(!L.length)return;var im=PEOPLE.crowdMesh(k,L.length);if(!im)return;var A=im.userData.att;
+   L.forEach(function(s,i){var sc=(s.s||1)*(.88+rnd()*.14)*.93,ry=(s.ry||0)+(rnd()-.5)*.5,sw=1+(rnd()-.5)*.16;d.position.set(s.x,s.y,s.z);d.rotation.set(0,ry,0);d.scale.set(sc*sw,sc,sc*(1+(sw-1)*.6));d.updateMatrix();im.setMatrixAt(i,d.matrix);
+    var sk=h.pick(SK),hr=rnd()<.12?sk:h.pick(HAIR),sh=s.col||h.pick(pal),k2=dim*(.85+rnd()*.2);
+    setc(A.cSkin,i,sk,Math.min(1,dim*1.1));setc(A.cShirt,i,sh,k2);setc(A.cPants,i,h.pick(PANTS),dim);setc(A.cShoe,i,h.pick(SHOE),dim);setc(A.cHair,i,hr,dim)});
+   ['cSkin','cShirt','cPants','cShoe','cHair'].forEach(function(n){A[n].needsUpdate=true});w.add(im);if(!first)first=im});return first};
  /* tiered stand. o:{x0,x1,z0,rows,rise,run,y0,cut:{xa,xb,from},mat} rows climb toward -z */
  h.stand=function(o){var rows=o.rows,rise=o.rise||.42,run=o.run||.85,y0=o.y0||0,mat=o.mat||h.M('#ffffff',{map:c.concrete('#8c909c',(o.x1-o.x0)/3,1),roughness:.85});
   var info=[];for(var r=0;r<rows;r++){var Ht=y0+rise*(r+1),zc=o.z0-r*run-run/2;info.push({y:Ht,z:zc});
