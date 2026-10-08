@@ -4,7 +4,9 @@ import Link from 'next/link'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {completeRun} from '@/lib/clubs/completion'
 import {markStep,startVisit} from '@/lib/analytics/meter'
-import {MIN_ROUND,answerOf,canPlay,dealRound,resultOf,roundQuery,scoreStep,shareText,summarise,type Choice,type Question,type Result,type WallMeeting} from '@/lib/clubs/derby-model'
+import {MIN_ROUND,answerOf,canPlay,dealRound,resultOf,roundQuery,scoreStep,summarise,type Choice,type Question,type Result,type WallMeeting} from '@/lib/clubs/derby-model'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {callShare} from '@/lib/share/v3/adapters'
 import {dateText,type Shared,type Open} from './ui'
 import css from './derby.module.css'
 
@@ -18,7 +20,7 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
  const qs=useMemo(()=>dealRound(meetings,seed,cursor),[meetings,seed,cursor])
  const [phase,setPhase]=useState<Phase>(autoStart&&qs.length>0?'ask':'intro')
  const [i,setI]=useState(0),[trail,setTrail]=useState<boolean[]>([]),[picked,setPicked]=useState<Choice|null>(null)
- const [notice,setNotice]=useState(''),[drag,setDrag]=useState({dx:0,dy:0,on:false})
+ const [drag,setDrag]=useState({dx:0,dy:0,on:false})
  const pointer=useRef<{x:number;y:number}|null>(null),nextRef=useRef<HTMLButtonElement>(null),rootRef=useRef<HTMLDivElement>(null)
  const q:Question|undefined=qs[i],right=q?answerOf(q,byId):null,summary=useMemo(()=>summarise(trail),[trail])
  const streak=(()=>{let n=0;for(let k=trail.length-1;k>=0&&trail[k];k--)n++;return n})()
@@ -43,7 +45,7 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
   if(i+1>=qs.length){setPhase('done');return}
   setI(i+1);setPicked(null);setPhase('ask')
  }
- function restart(){setI(0);setTrail([]);setPicked(null);setNotice('');setPhase('ask')}
+ function restart(){setI(0);setTrail([]);setPicked(null);setPhase('ask')}
  function begin(){startVisit();setPhase('ask')}
 
  // ---- keyboard: arrows mirror the swipe, and never fight the page when a control has focus
@@ -81,15 +83,6 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
  const cancel=()=>{pointer.current=null;setDrag({dx:0,dy:0,on:false})}
  const lean=drag.on?(drag.dy<-40&&Math.abs(drag.dy)>Math.abs(drag.dx)?'D':Math.abs(drag.dx)>40?(drag.dx*startSign>0?'W':'L'):null):null
 
- async function share(){
-  const url=`${location.origin}/clubs/${club}/derby?${roundQuery(seed,cursor)}&tab=call&lang=${locale}`
-  const text=shareText({club:clubName,rival,summary,url,title:t('derby.share.title')})
-  try{
-   if(typeof navigator.share==='function'){await navigator.share({title:t('derby.share.title'),text});setNotice(t('derby.res.shared'))}
-   else{await navigator.clipboard.writeText(text);setNotice(t('derby.res.copied'))}
-  }catch(e){if((e as Error)?.name!=='AbortError')setNotice(t('derby.res.shareFail'))}
- }
-
  if(!canPlay(meetings)||qs.length===0)return <div className={css.scroll}><div className={css.bare} data-testid="derby-call-locked"><h2>{t('derby.call.locked.title')}</h2><p>{t('derby.call.locked',{min:MIN_ROUND,n:meetings.filter(m=>m.us!==null).length})}</p><button type="button" className={css.btn} onClick={onWall}>{t('derby.res.wall')}</button></div></div>
 
  if(phase==='intro')return <div className={css.intro} data-testid="derby-call-intro">
@@ -101,12 +94,11 @@ export function CallPanel({meetings,s,seed,cursor,version,rtl,autoStart,onOpen,o
   <div className={css.slipHead}><h2>{t('derby.res.title')}</h2><span className={css.slipBig}>{summary.correct}/{summary.total}</span><p className={css.status}>{t('derby.res.line',{correct:summary.correct,total:summary.total})} · {t('derby.call.points',{n:summary.score})} · {t('derby.res.best',{n:summary.bestStreak})}</p></div>
   <ol className={css.trail} aria-label={t('derby.res.title')}>{summary.trail.map((ok,k)=><li key={k} data-s={ok?'right':'wrong'}><span aria-hidden="true">{ok?'✓':'✗'}</span><span className="sr-only">{ok?t('derby.call.right'):t('derby.call.wrong')}</span></li>)}</ol>
   <div className={css.actions}>
-   <button type="button" className={`${css.btn} ${css.btnPrimary}`} onClick={share} data-testid="derby-share">{t('derby.res.share')}</button>
+   <ShareComposer draft={callShare(club,{seed,cursor,correct:summary.correct,asked:summary.total,rival})}/>
    <button type="button" className={css.btn} onClick={restart}>{t('derby.res.again')}</button>
    <Link className={css.btn} href={`/clubs/${club}/derby?${roundQuery(seed,cursor+1)}&play=1&lang=${locale}`} data-testid="derby-new-round">{t('derby.res.new')}</Link>
    <button type="button" className={css.btn} onClick={onWall}>{t('derby.res.wall')}</button>
   </div>
-  <p className={css.status} role="status">{notice}</p>
  </div>
 
  if(!q)return null

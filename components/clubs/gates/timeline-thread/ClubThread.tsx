@@ -33,7 +33,7 @@ export function ClubThread(p:ClubThreadProps){
  const {club,clubName,locale,contentLocale,copy,plan,sources,archiveOpen,exactTotal}=p
  const t=(k:string,v?:Record<string,string|number>)=>tr(copy,k,v)
  const rtl=localeDirection(locale)==='rtl'
- const events=plan?.events??[]
+ const events=useMemo(()=>plan?.events??[],[plan])
  const [idx,setIdx]=useState(plan?.start??0),[dir,setDir]=useState<'next'|'prev'|'none'>('none'),[lean,setLean]=useState(0),[drag,setDrag]=useState(false)
  const seen=useRef<Set<number>>(new Set([plan?.start??0])),down=useRef<{x:number;y:number;id:number}|null>(null),knotsRef=useRef<HTMLUListElement|null>(null)
  const len=events.length,cur=events[idx]
@@ -46,7 +46,7 @@ export function ClubThread(p:ClubThreadProps){
  }
  useEffect(()=>{markStep(0,undefined,true)},[])
 
- // the arrow keys step through the thread (mirrored in right-to-left); Home/End jump to the ends of the decade
+ // the arrow keys step through the thread (mirrored in RTL); Home/End jump to the ends of the decade
  const goRef=useRef(go);goRef.current=go
  const idxRef=useRef(idx);idxRef.current=idx
  useEffect(()=>{
@@ -72,7 +72,7 @@ export function ClubThread(p:ClubThreadProps){
 
  if(!plan||!cur)return <section className={css.stage} data-testid="timeline-thread-empty" lang={locale}><div className={css.bare}><h2>{t('tl.empty.title')}</h2><p>{t('tl.empty',{club:clubName})}</p></div></section>
 
- const href=(q:Record<string,string>)=>`?${new URLSearchParams({mode:'thread',lang:locale,...q})}`
+ const href=(q:Record<string,string>)=>`?${new URLSearchParams({mode:'chronicle',lang:locale,...q})}`
  const dateOf=(e:ThreadEvent)=>e.on?localizedDate(e.on,locale):t('tl.yearOnly.line',{year:e.year})
  const before=events[idx-1],after=events[idx+1]
  const gap=gapBetween(before,cur)
@@ -96,7 +96,7 @@ export function ClubThread(p:ClubThreadProps){
   const dx=e.clientX-d.x,dy=e.clientY-d.y
   setDrag(false);setLean(0)
   if(commit&&Math.abs(dx)>=SWIPE&&Math.abs(dx)>Math.abs(dy)*1.5){
-   // finger toward the line's end = the newer entry; in right-to-left reading the line runs the other way
+   // finger toward the line's end = the newer entry; in RTL reading the line runs the other way
    const forward=rtl?dx>0:dx<0
    go(idx+(forward?1:-1))
   }

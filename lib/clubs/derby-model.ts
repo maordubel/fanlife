@@ -13,9 +13,11 @@ import {rng,shuffle} from '@/lib/game/random'
 
 export type Side='home'|'away'
 /** A documented meeting, serialisable. `us` is the asking club's side when the record states it. */
-export type WallMeeting={id:string;on:string|null;year:number|null;home:string;away:string;hg:number;ag:number;comp:string;us:Side|null;from:string[]}
+export type Shootout={home:number;away:number}
+/** `so` is a penalty shoot-out, when the record states one. It is NEVER folded into the score or the W/D/L (DE-R03). */
+export type WallMeeting={id:string;on:string|null;year:number|null;home:string;away:string;hg:number;ag:number;comp:string;us:Side|null;from:string[];so?:Shootout|null}
 /** The shape `lib/fixtures/meetings` returns — structural, so this file needs no server-only import. */
-export type MeetingLike={on:string|null;year:number|null;home:string;away:string;homeGoals:number;awayGoals:number;competition:string;from:string[];us:Side|null}
+export type MeetingLike={on:string|null;year:number|null;home:string;away:string;homeGoals:number;awayGoals:number;competition:string;from:string[];us:Side|null;shootout?:Shootout|null}
 export type Result='W'|'D'|'L'
 export type Tally={played:number;won:number;drawn:number;lost:number;for:number;against:number}
 
@@ -28,9 +30,24 @@ export function wallOf(ms:readonly MeetingLike[]):WallMeeting[]{
   const key=`${m.on??m.year??'?'}|${m.home}|${m.homeGoals}-${m.awayGoals}`
   let id=`m${hash(key)}`;for(let n=2;used.has(id);n++)id=`m${hash(`${key}#${n}`)}`
   used.add(id)
-  out.push({id,on:m.on,year:m.year??(m.on?Number(m.on.slice(0,4)):null),home:m.home,away:m.away,hg:m.homeGoals,ag:m.awayGoals,comp:m.competition,us:m.us,from:[...m.from]})
+  out.push({id,on:m.on,year:m.year??(m.on?Number(m.on.slice(0,4)):null),home:m.home,away:m.away,hg:m.homeGoals,ag:m.awayGoals,comp:m.competition,us:m.us,from:[...m.from],so:m.shootout??null})
  }
  return out
+}
+
+/** The club's side of a recorded shoot-out, kept apart from the regulation / extra-time score. */
+export function shootoutOf(m:WallMeeting):{us:number;them:number;won:boolean}|null{
+ if(!m.so||m.us===null)return null
+ const us=m.us==='home'?m.so.home:m.so.away,them=m.us==='home'?m.so.away:m.so.home
+ return Number.isInteger(us)&&Number.isInteger(them)&&us!==them?{us,them,won:us>them}:null
+}
+
+export type Coverage={n:number;/** meetings whose score and side are both stated */counted:number;dated:number;undated:number;shootouts:number;competitions:string[];/** meetings with no competition stated */noCompetition:number;first:number|null;last:number|null;/** never true: a selected archive is not verified complete (DE-R02) */complete:false}
+/** What the list covers — said on screen next to every total, because 15 documented derbies are not "all-time". */
+export function coverageOf(ms:readonly WallMeeting[]):Coverage{
+ const comps=new Set<string>(),years=ms.map(m=>m.year).filter((y):y is number=>y!==null)
+ for(const m of ms)if(m.comp.trim()!=='')comps.add(m.comp.trim())
+ return {n:ms.length,counted:ms.filter(m=>m.us!==null).length,dated:ms.filter(m=>whenKey(m)!==null).length,undated:ms.filter(m=>whenKey(m)===null).length,shootouts:ms.filter(m=>shootoutOf(m)!==null).length,competitions:[...comps].sort(),noCompetition:ms.filter(m=>m.comp.trim()==='').length,first:years.length?Math.min(...years):null,last:years.length?Math.max(...years):null,complete:false}
 }
 
 /** Goals for / against the asking club, or null when the record does not say which side it was. */

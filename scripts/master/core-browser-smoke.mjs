@@ -11,6 +11,13 @@ import {loadClub} from '../../lib/clubs/resolver.ts'
 import {HEBREW_ENABLED} from '../../lib/clubs/locale.ts'
 import {gateAvailability} from '../../lib/clubs/gates.ts'
 import {ADMIN_COOKIE,issueToken} from '../../lib/master/admin-token.ts'
+// gate 13 opens on an explicit start screen (rulebook §17.4); a deep link with play=1 skips it
+async function timelineReady(p){
+ const start=p.getByTestId('timeline-start'),hand=p.getByTestId('timeline-hand')
+ await start.or(hand).first().waitFor()
+ if(await start.count())await start.click()
+ await hand.waitFor()
+}
 import {randomBytes} from 'node:crypto'
 // a gate is expected open or locked from the COMPILED data — packs grow, and a hand-written "locked" goes stale
 const playable=async(slug,key)=>gateAvailability((await loadClub(slug)).data,key).playable
@@ -61,7 +68,7 @@ try {
   const dates=new Map(slug==='hapoel-tel-aviv'?golden.board.map(c=>[c.id,c.on]):(await loadClub(slug)).data.timeline.map(t=>[t.value.id,t.value.on]))
   const response=await page.goto(`${base}/clubs/${slug}/timeline?seed=42`)
   assert.equal(response.status(),200)
-  await page.getByTestId('timeline-hand').waitFor()
+  await timelineReady(page)
   assert(await page.locator('main').getAttribute('dir')==='ltr')
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Mobile overflow')
   identities.push({club:slug,...await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}.png`)})
@@ -82,7 +89,7 @@ try {
   assert((await page.locator('main').innerText()).toLowerCase().includes(String(`Correct placements: ${length}/${length}`).toLowerCase()))
   await page.getByRole('link',{name:'Play again',exact:true}).click()
   await page.waitForURL(url=>url.searchParams.get('r')==='1')
-  await page.getByTestId('timeline-hand').waitFor()
+  await timelineReady(page)
   assert(new URL(page.url()).searchParams.get('r')==='1')
   report.push({club:slug,placements:length,result:'passed',mobile:'390x844'})
  }
@@ -98,11 +105,11 @@ try {
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'RTL hub overflow')
   await identityCheck(page,slug,'.fl.club-theme',`/tmp/fanlife-m1-browser/${slug}-hub-rtl.png`)
   await page.getByRole('link',{name:'לשחק בציר הזמן ↗',exact:true}).click()
-  await page.getByTestId('timeline-hand').waitFor()
+  await timelineReady(page)
   assert.equal(await page.locator('main').getAttribute('dir'),'rtl')
  }
  await page.goto(`${base}/clubs/olympiacos/timeline?seed=42&lang=el`)
- await page.getByTestId('timeline-hand').waitFor()
+ await timelineReady(page)
  assert.equal(await page.locator('main').getAttribute('lang'),'en')
  assert((await page.locator('main').innerText()).toLowerCase().includes(String('This language is not available yet.').toLowerCase()))
  await page.goto(`${base}/`)
@@ -119,7 +126,7 @@ try {
  }
  if(HEBREW_ENABLED){
  await page.goto(`${base}/clubs/hapoel-tel-aviv/timeline?seed=42&lang=he`)
- await page.getByTestId('timeline-hand').waitFor()
+ await timelineReady(page)
  assert.equal(await page.locator('main').getAttribute('dir'),'rtl')
  assert.equal(await page.locator('main').getAttribute('lang'),'he')
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))
@@ -274,7 +281,7 @@ try {
  for(const slug of ['zrinjski-mostar','olympiacos','hapoel-petah-tikva'])await expectGate(page,`${base}/clubs/${slug}/blind-cow`,slug,'blind-cow','mystery-board')
  const hostPage=await context.newPage()
  await hostPage.goto(`http://olympiacos.localhost:${port}/timeline/order`)
- await hostPage.getByTestId('timeline-hand').waitFor()
+ await timelineReady(hostPage)
  assert(new URL(hostPage.url()).pathname==='/clubs/olympiacos/timeline')
  const mismatch=await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/zrinjski-mostar/timeline`)
  // App Router may stream a 200 shell before an async notFound decision. The security

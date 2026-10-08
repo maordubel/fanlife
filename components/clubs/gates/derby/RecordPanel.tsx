@@ -1,6 +1,7 @@
 'use client'
 import {useMemo} from 'react'
 import {recordOf,resultOf,type WallMeeting} from '@/lib/clubs/derby-model'
+import {Coverage} from './Coverage'
 import {dateText,type Shared,type Open} from './ui'
 import css from './derby.module.css'
 
@@ -31,7 +32,7 @@ export function RecordPanel({meetings,s,onOpen}:{meetings:WallMeeting[];s:Shared
    <div className={css.col}>
     {rec.decades.length>0&&<><p className={css.kicker}>{t('derbyDecade')}</p>
      <ol className={css.bars}>{rec.decades.map(r=>{const n=r.w+r.d+r.l;return <li key={r.decade}><span>{r.decade}s</span><span className={css.bar} style={{inlineSize:`${Math.max(10,(n/peak)*100)}%`}} role="img" aria-label={`${r.decade}s: ${r.w} ${t('derby.word.W')}, ${r.d} ${t('derby.word.D')}, ${r.l} ${t('derby.word.L')}`}>{r.w>0&&<i className={css.w} style={{flexGrow:r.w}}>{r.w}</i>}{r.d>0&&<i className={css.d} style={{flexGrow:r.d}}>{r.d}</i>}{r.l>0&&<i className={css.l} style={{flexGrow:r.l}}>{r.l}</i>}</span></li>})}</ol></>}
-    <p className={css.fine}>{t('derby.coverage',{n:meetings.length})}</p>
+    <Coverage meetings={meetings} s={s}/>
     {rec.unstated>0&&<p className={css.fine}>{t('derby.rec.unstated',{n:rec.unstated,club:s.clubName})}</p>}
     {rec.undated>0&&<p className={css.fine}>{t('derby.rec.undated',{n:rec.undated})}</p>}
    </div>

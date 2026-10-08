@@ -5,7 +5,7 @@ import {Confetti} from '@/components/play/Confetti'
 import {Num} from '@/components/ui/Num'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {LIVES,MAX_MULTIPLIER} from '@/lib/game/session'
-import {formatDate,secondsFor,type BlindCard,type DatedCard} from '@/lib/game/timeline-run'
+import {formatDate,roundScore,secondsFor,type BlindCard,type DatedCard} from '@/lib/game/timeline-run'
 import type {Locale} from '@/lib/clubs/contract'
 import {localizedDate,type UiLocale} from '@/lib/clubs/locale'
 import type {InsertVerdict} from '@/lib/game/timeline-engine'
@@ -89,10 +89,7 @@ export function SharedTimelineBoard({
       if (el) firePickFxAt(el, { tone: verdict.correct ? 'red' : 'sign', haptic: verdict.correct ? 'lock' : 'miss' })
 
       const gained = verdict.correct
-        ? Math.round(
-            (120 + 90 * Math.max(0, Math.min(1, secondsLeft / total))) *
-              Math.min(MAX_MULTIPLIER, Math.max(1, run.combo + 1)),
-          )
+        ? roundScore(secondsLeft / total, run.combo + 1, MAX_MULTIPLIER)
         : 0
 
       setFeedback({ correct: verdict.correct, card: verdict.card, position: verdict.position })

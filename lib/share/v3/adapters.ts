@@ -82,6 +82,22 @@ export function goalShare(clubId:string,r:{seed:number;points:number;max:number;
 export function rumbleShare(clubId:string,x:{seed:number;us:number;them:number;five:{position:string;name:string}[];bill:string}){
  return draft('10-rumble-five',clubId,'rumble','same-run',{main:`${x.us}–${x.them}`,rows:x.five.map(p=>`${p.position} · ${p.name}`),detail:`My bill: ${x.bill} · a simulated match`,statement:'These are my five.',link:clubUrl(clubId,`/clubs/${clubId}/royal-rumble`,{seed:x.seed,lang:'en'})},{origin:'server-verified'})
 }
+/** 12 — the wall: the final holder, how many rounds, whether the one revenge was spent. A fan preference, never a score. */
+export function wallShare(clubId:string,x:{holder:string;rounds:number;revenge:boolean}){
+ return draft('12-derby-file',clubId,'hate','prompt',{main:'MY WALL',rows:[x.holder,`${x.rounds} ROUNDS`,x.revenge?'ONE REVENGE USED':'NO REVENGE USED'],detail:'My choices, not a vote.',statement:`The one I kept on the wall: ${x.holder}.`,link:clubUrl(clubId,`/clubs/${clubId}/derby`,{mode:'wall',lang:'en'})})
+}
+/** 12 — a finished "call it" round on the meetings; the same meetings, the same seed and cursor */
+export function callShare(clubId:string,r:Run&{correct:number;asked:number;rival:string}){
+ return draft('12-derby-file',clubId,'hate','same-run',{main:`${r.correct}/${r.asked}`,rows:['THE MEETINGS',`VS ${r.rival.toUpperCase()}`,'CALL IT'],detail:'Same meetings. Your call.',statement:`I called ${r.correct} of ${r.asked}.`,link:clubUrl(clubId,`/clubs/${clubId}/derby`,{mode:'meetings',play:1,seed:r.seed,r:r.cursor,lang:'en'})},{origin:'device-reported'})
+}
+/** 12 — the Black File: correct / asked with the real denominators and a subtotal per module; no answers, no paths */
+export function blackFileShare(clubId:string,r:Run&{correct:number;asked:number;binary:{correct:number;asked:number};order:{correct:number;asked:number}}){
+ return draft('12-derby-file',clubId,'hate','same-run',{main:`${r.correct}/${r.asked}`,rows:['THE BLACK FILE',`CROSSINGS ${r.binary.correct}/${r.binary.asked}`,`ORDER ${r.order.correct}/${r.order.asked}`],detail:'Documented moves and dated events.',statement:`I got ${r.correct} of ${r.asked} in the Black File.`,link:clubUrl(clubId,`/clubs/${clubId}/derby`,{mode:'blackfile',seed:r.seed,r:r.cursor,lang:'en'})},{origin:'device-reported'})
+}
+/** 14 — the Thread: levels closed out of the levels played; anonymous ticks, never a route */
+export function threadShare(clubId:string,r:Run&{closed:number;total:number;marks:boolean[];full:boolean}){
+ return draft('14-timeline-strip',clubId,'timeline','same-run',{main:`${r.closed}/${r.total}`,label:r.full?'THREADS CLOSED · FULL RUN':'THREADS CLOSED · PRACTICE',rows:r.marks.slice(0,12).map(m=>m?'✓':'×'),detail:'Every link a documented one.',statement:`I closed ${r.closed} of ${r.total} threads through the club's history.`,cta:'Same threads. Your move.',link:clubUrl(clubId,`/clubs/${clubId}/timeline`,{mode:'thread',seed:r.seed,r:r.cursor,lang:'en'})},{origin:'device-reported'})
+}
 /** 23 — an open invitation to a mode (no result, no answers) */
 export function dailyShare(clubId:string,gate:{slug:string;name:string}){
  return draft('23-daily-challenge',clubId,'daily','entry',{label:up(gate.name),rows:['PLAY','COMPARE','PASS IT ON'],statement:'Same questions. Your turn.',link:clubUrl(clubId,`/clubs/${clubId}/${gate.slug}`,{lang:'en'})})

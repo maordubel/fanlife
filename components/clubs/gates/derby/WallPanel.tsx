@@ -2,6 +2,7 @@
 import {useMemo,useState} from 'react'
 import {decadeGroups,tallyOf,type WallMeeting} from '@/lib/clubs/derby-model'
 import {Poster} from './Poster'
+import {Coverage} from './Coverage'
 import type {Shared,Open} from './ui'
 import css from './derby.module.css'
 
@@ -23,7 +24,8 @@ export function WallPanel({meetings,s,onOpen}:{meetings:WallMeeting[];s:Shared;o
    <div className={css.cell} data-r="L"><b>{tally.lost}</b><span>{t('derby.word.L')}</span></div>
    <p className={css.goals}><bdi>{tally.for}–{tally.against}</bdi> · {tally.played}</p>
   </div>}
-  <p className={css.fine}>{t('derby.coverage',{n:meetings.length})} {t('derby.wall.tap')}</p>
+  <Coverage meetings={meetings} s={s}/>
+  <p className={css.fine}>{t('derby.wall.tap')}</p>
   {shown.map(g=><section key={g.decade??'none'} aria-label={g.decade===null?t('derby.wall.undated'):t('derby.wall.decade',{decade:g.decade})}>
    <h2 className={css.decade}>{g.decade===null?t('derby.wall.undated'):t('derby.wall.decade',{decade:g.decade})}</h2>
    <ul className={css.posters}>{g.items.map(m=><li key={m.id}><Poster m={m} locale={locale} contentLocale={contentLocale} t={t} onOpen={onOpen}/></li>)}</ul>

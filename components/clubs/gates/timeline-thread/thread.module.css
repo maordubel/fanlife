@@ -11,8 +11,8 @@
 .kicker { margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-muted); }
 
 /* ------------------------------------------------------------- the mode switch (Chronology | The Thread) */
-.modes { display: grid; grid-template-columns: 1fr 1fr; border: 3px solid var(--mag-ink); background: var(--mag-card); margin-block: 6px 8px; }
-.mode { min-height: 44px; display: grid; place-items: center; padding: 0 6px; color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; text-align: center; }
+.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 3px solid var(--mag-ink); background: var(--mag-card); margin-block: 6px 8px; }
+.mode { min-height: 44px; display: grid; place-items: center; padding: 0 4px; min-width: 0; overflow-wrap: anywhere; color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; text-align: center; }
 .mode + .mode { border-inline-start: 3px solid var(--mag-ink); }
 .mode[aria-current='page'] { background: var(--club-primary); color: var(--club-on-primary, var(--mag-white)); }
 

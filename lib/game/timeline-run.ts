@@ -29,6 +29,12 @@ export function secondsFor(placed: number): number {
   return SECONDS[Math.min(SECONDS.length - 1, Math.floor(placed / 4))] ?? 14
 }
 
+/** TI-R07 — `round((120 + 90 × speedFraction) × min(4, nextCombo))`; the same formula `lib/clubs/chronology.ts` tests. */
+export function roundScore(speedFraction: number, nextCombo: number, maxMultiplier = 4): number {
+  const speed = Math.max(0, Math.min(1, Number.isFinite(speedFraction) ? speedFraction : 0))
+  return Math.round((120 + 90 * speed) * Math.min(maxMultiplier, Math.max(1, nextCombo)))
+}
+
 /** dd.mm.yyyy — the form the rest of this app prints dates in. */
 export function formatDate(iso: string): string {
   const [year, month, day] = iso.split('-')

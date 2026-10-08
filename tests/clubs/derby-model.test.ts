@@ -150,6 +150,6 @@ describe('derby model · template, not a club',()=>{
  })
  it('is typed against plain meetings so a new club needs no new code',()=>{
   const x:WallMeeting=wall[0]!
-  expect(Object.keys(x).sort()).toEqual(['ag','away','comp','from','hg','home','id','on','us','year'])
+  expect(Object.keys(x).sort()).toEqual(['ag','away','comp','from','hg','home','id','on','so','us','year'])
  })
 })

@@ -4,7 +4,7 @@
  * so a rival's identity colour can never paint a club page. Result is never colour alone: every poster carries
  * a W / D / L stamp. Motion stops under prefers-reduced-motion.
  */
-.stage { --d-ink: var(--mag-ink); --d-lit: var(--club-primary); --d-on: var(--club-on-primary, var(--mag-white)); display: flex; flex-direction: column; gap: 8px; min-width: 0; height: calc(100dvh - 52px - env(safe-area-inset-top) - 20px - env(safe-area-inset-bottom)); min-height: 520px; padding-block-start: 8px; }
+.stage { --d-ink: var(--mag-ink); --d-lit: var(--club-primary); --d-on: var(--club-on-primary, var(--mag-white)); display: flex; flex-direction: column; gap: 8px; min-width: 0; height: calc(100dvh - 52px - env(safe-area-inset-top) - 20px - env(safe-area-inset-bottom) - var(--mode-bar, 0px)); min-height: 520px; padding-block-start: 8px; }
 .stage *, .stage *::before, .stage *::after { box-sizing: border-box; }
 .layout { display: flex; flex-direction: column; gap: 8px; flex: 1 1 0; min-height: 0; min-width: 0; }
 .head { display: flex; flex-direction: column; gap: 8px; flex: none; min-width: 0; }
@@ -196,3 +196,8 @@
   .poster:hover, .poster:active, .btn:active, .plate:active:not(:disabled), .pairCard:active:not(:disabled) { transform: none; }
   .plate[data-lean='true'] { transform: none; }
 }
+
+/* ------------------------------------------------------------- DE-R02 coverage disclosure */
+.coverage { border: 2px solid var(--d-ink); background: var(--mag-card); padding: 0 10px; font-size: 12px; line-height: 1.45; }
+.coverage summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: .5px; text-transform: uppercase; }
+.coverage p { margin: 0 0 6px; color: var(--mag-muted); overflow-wrap: anywhere; }

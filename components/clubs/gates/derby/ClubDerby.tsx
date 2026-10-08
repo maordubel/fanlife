@@ -4,7 +4,7 @@ import {SlideSheet} from '@/components/stage/SlideSheet'
 import {livery} from '@/lib/club-livery'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import {localeDirection,type UiLocale} from '@/lib/clubs/locale'
-import {canPlay,type WallMeeting} from '@/lib/clubs/derby-model'
+import {canPlay,shootoutOf,type WallMeeting} from '@/lib/clubs/derby-model'
 import {CallPanel} from './CallPanel'
 import {RecordPanel} from './RecordPanel'
 import {WallPanel} from './WallPanel'
@@ -64,6 +64,7 @@ export function ClubDerby(p:ClubDerbyProps){
      <dt>{t('derby.dossier.date')}</dt><dd><bdi>{dateText(open,locale,t)}</bdi></dd>
      <dt>{t('derby.dossier.comp')}</dt><dd><bdi lang={contentLocale} dir="auto">{open.comp||t('derby.dossier.noComp')}</bdi></dd>
      <dt>{t('derby.dossier.result',{club:clubName})}</dt><dd>{t(`derby.word.${r}`)}</dd>
+     {(()=>{const so=shootoutOf(open);return so?<><dt>{t('derby.dossier.so')}</dt><dd><bdi dir="ltr">{t('derby.dossier.soLine',{us:so.us,them:so.them,word:so.won?t('derby.dossier.soWon',{club:clubName}):t('derby.dossier.soLost',{club:clubName})})}</bdi></dd></>:null})()}
      {open.us&&<><dt>{t('derby.dossier.played',{club:clubName})}</dt><dd>{open.us==='home'?t('derby.dossier.atHome'):t('derby.dossier.away')}</dd></>}
      {open.from.length>0&&<><dt>{t('derby.dossier.from')}</dt><dd>{open.from.map((f,k)=><span key={f}>{k>0?', ':''}<bdi>{f}</bdi></span>)}</dd></>}
     </dl>
