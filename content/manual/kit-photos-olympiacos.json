@@ -12,10 +12,173 @@
    "title": "footballkitarchive.com — Olympiacos FC Kit History",
    "url": "https://www.footballkitarchive.com/olympiacos-fc-kits-t582/",
    "readOn": "2026-10-08",
-   "kits": 79
+   "kits": 195
   }
  ],
  "records": [
+  {
+   "slug": "fka-1925-26-home",
+   "file": "olympiacos/fka-1925-26-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1925-26-home-kit-304832.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1925-26-home-kit-304832/",
+   "seasonLabel": "1925/26",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "In-House",
+   "sponsor": "-",
+   "competitions": "Super League Greece",
+   "photoCredit": null,
+   "solidity": 0.726,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#941720",
+    "#960e1d",
+    "#a1877d",
+    "#8a413f"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "In-House",
+    "sponsor": "-",
+    "nameset": null,
+    "body": {
+     "colour": "maroon",
+     "hex": "#952027"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 24996,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1933-34-home",
+   "file": "olympiacos/fka-1933-34-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1933-34-home-kit-218011.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1933-34-home-kit-218011/",
+   "seasonLabel": "1933/34",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "In-House",
+   "sponsor": "-",
+   "competitions": null,
+   "photoCredit": "petros",
+   "solidity": 0.929,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#dd0213",
+    "#dc0111",
+    "#de0010",
+    "#e2666f"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#e20112",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "pink",
+     "hex": "#deafa8",
+     "relation": "contrast",
+     "delta": 228
+    },
+    "crest": "club-crest",
+    "maker": "In-House",
+    "sponsor": "-",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#e20114"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 32976,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1952-53-home",
+   "file": "olympiacos/fka-1952-53-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1952-53-home-kit-312878.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1952-53-home-kit-312878/",
+   "seasonLabel": "1952/53",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "In-House",
+   "sponsor": "-",
+   "competitions": "Panhellenic Championship",
+   "photoCredit": null,
+   "solidity": 0.809,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "worn",
+   "palette": [
+    "#a67c73",
+    "#9b4642",
+    "#3d2c26",
+    "#d5c4bf"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "In-House",
+    "sponsor": "-",
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#b0786c"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 60110,
+   "yellowPx": 72,
+   "yellowPct": 0.039
+  },
   {
    "slug": "fka-1960-61-home",
    "file": "olympiacos/fka-1960-61-home.webp",
@@ -667,7 +830,7 @@
    "solidity": 0.917,
    "cutQuality": "ok",
    "skinRatio": 0.0,
-   "photoKind": "flat",
+   "photoKind": "worn",
    "palette": [
     "#000000",
     "#000002",
@@ -679,18 +842,8 @@
      "Red"
     ],
     "pattern": "Pinstripes",
-    "sleeves": {
-     "colour": "black",
-     "hex": "#010102",
-     "relation": "matches-body",
-     "delta": 2
-    },
-    "collar": {
-     "colour": "black",
-     "hex": "#060608",
-     "relation": "matches-body",
-     "delta": 12
-    },
+    "sleeves": null,
+    "collar": null,
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Fiat",
@@ -701,7 +854,7 @@
     }
    },
    "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
-   "usableInApp": true,
+   "usableInApp": false,
    "sport": "football",
    "confidence": 2,
    "bytes": 6728,
@@ -831,6 +984,67 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-1983-84-away",
+   "file": "olympiacos/fka-1983-84-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1983-84-away-kit-110859.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1983-84-away-kit-110859/",
+   "seasonLabel": "1983/84",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Contrasting sleeves",
+   "colors": "White / Blue",
+   "manufacturer": "Asics",
+   "sponsor": "Fiat",
+   "competitions": null,
+   "photoCredit": "sportclubmemories.com",
+   "solidity": 0.85,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#bbbdc1",
+    "#d2d3d7",
+    "#3b3f76",
+    "#a29fa5"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Blue"
+    ],
+    "pattern": "Contrasting sleeves",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#1b4cb0",
+     "relation": "contrast",
+     "delta": 212
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#4d4d47",
+     "relation": "contrast",
+     "delta": 214
+    },
+    "crest": "club-crest",
+    "maker": "Asics",
+    "sponsor": "Fiat",
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#c8c4c7"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 32900,
+   "yellowPx": 3,
+   "yellowPct": 0.002
+  },
+  {
    "slug": "fka-1983-84-home",
    "file": "olympiacos/fka-1983-84-home.webp",
    "source": "fka",
@@ -900,7 +1114,7 @@
    "solidity": 0.987,
    "cutQuality": "ok",
    "skinRatio": 0.0,
-   "photoKind": "flat",
+   "photoKind": "worn",
    "palette": [
     "#f9c0e6",
     "#ab6999",
@@ -913,18 +1127,8 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": {
-     "colour": "pink",
-     "hex": "#e19ec6",
-     "relation": "contrast",
-     "delta": 119
-    },
-    "collar": {
-     "colour": "pink",
-     "hex": "#d87da2",
-     "relation": "contrast",
-     "delta": 72
-    },
+    "sleeves": null,
+    "collar": null,
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "Fiat",
@@ -935,7 +1139,7 @@
     }
    },
    "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
-   "usableInApp": true,
+   "usableInApp": false,
    "sport": "football",
    "confidence": 2,
    "bytes": 63710,
@@ -943,8 +1147,304 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-1984-85-away",
+   "file": "olympiacos/fka-1984-85-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1984-85-away-kit-110857.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1984-85-away-kit-110857/",
+   "seasonLabel": "1984/85",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "White / Red",
+   "manufacturer": "Asics",
+   "sponsor": "Travel Plan",
+   "competitions": null,
+   "photoCredit": "sportclubmemories.com",
+   "solidity": 0.865,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#bec1c5",
+    "#d6dadf",
+    "#a0282c",
+    "#a09999"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#d12629",
+     "relation": "contrast",
+     "delta": 241
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#5a584b",
+     "relation": "contrast",
+     "delta": 215
+    },
+    "crest": "club-crest",
+    "maker": "Asics",
+    "sponsor": "Travel Plan",
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#cccfd5"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 33610,
+   "yellowPx": 8,
+   "yellowPct": 0.004
+  },
+  {
+   "slug": "fka-1984-85-home",
+   "file": "olympiacos/fka-1984-85-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1984-85-home-kit-110858.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1984-85-home-kit-110858/",
+   "seasonLabel": "1984/85",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Asics",
+   "sponsor": "Travel Plan",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.542,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#fe4c3b",
+    "#f2f2ee",
+    "#dcb0ae",
+    "#d43d35"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Asics",
+    "sponsor": "Travel Plan",
+    "nameset": null,
+    "body": {
+     "colour": "orange",
+     "hex": "#f35242"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 43454,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1985-86-away",
+   "file": "olympiacos/fka-1985-86-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1985-86-away-kit-401612.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1985-86-away-kit-401612/",
+   "seasonLabel": "1985/86",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Pinstripes",
+   "colors": "Blue / White / Black",
+   "manufacturer": "Puma",
+   "sponsor": "Citizen",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": null,
+   "solidity": 0.918,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#3b78b9",
+    "#2e60a4",
+    "#214074",
+    "#78a7d0"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "White",
+     "Black"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#3778b7",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#423934",
+     "relation": "contrast",
+     "delta": 153
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Citizen",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#3c7ebc"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 65264,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1985-86-home",
+   "file": "olympiacos/fka-1985-86-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1985-86-home-kit-111431.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1985-86-home-kit-111431/",
+   "seasonLabel": "1985/86",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Pinstripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Citizen",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": "sportclubmemories.com",
+   "solidity": 0.858,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#da2f35",
+    "#da1f25",
+    "#b91619",
+    "#c68288"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#db2a32",
+     "relation": "matches-body",
+     "delta": 3
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#4e5250",
+     "relation": "contrast",
+     "delta": 149
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Citizen",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#da2b2f"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 37638,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
    "slug": "fka-1986-87-away",
    "file": "olympiacos/fka-1986-87-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1986-87-away-kit-111429.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1986-87-away-kit-111429/",
+   "seasonLabel": "1986/87",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Pinstripes",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Citizen",
+   "competitions": null,
+   "photoCredit": "sportclubmemories.com",
+   "solidity": 0.853,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#b1adb1",
+    "#d3d8dc",
+    "#c2c3c7",
+    "#915b5d"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#cec8cc",
+     "relation": "matches-body",
+     "delta": 3
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#4d4d49",
+     "relation": "contrast",
+     "delta": 218
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Citizen",
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#ccc7ca"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 37934,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1986-87-away-101130",
+   "file": "olympiacos/fka-1986-87-away-101130.webp",
    "source": "fka",
    "sourceFile": "olympiacos-fc-1986-87-european-away-kit-101130.jpg",
    "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1986-87-european-away-kit-101130/",
@@ -1004,6 +1504,1579 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-1986-87-home",
+   "file": "olympiacos/fka-1986-87-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1986-87-home-kit-111430.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1986-87-home-kit-111430/",
+   "seasonLabel": "1986/87",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Citizen",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.953,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#da101f",
+    "#e1dfd6",
+    "#c29f96",
+    "#911114"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#ce1a29",
+     "relation": "matches-body",
+     "delta": 8
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#8d7c71",
+     "relation": "contrast",
+     "delta": 146
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Citizen",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#d41724"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 54232,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1988-89-away",
+   "file": "olympiacos/fka-1988-89-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1988-89-away-kit-101131.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1988-89-away-kit-101131/",
+   "seasonLabel": "1988/89",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Toyota",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": "vendora.gr",
+   "solidity": 0.801,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e3deda",
+    "#cec7c2",
+    "#eeece9",
+    "#b29391"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#d7d3cf",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#d0c5a7",
+     "relation": "contrast",
+     "delta": 63
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Toyota",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e5dfdc"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 31060,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1988-89-home",
+   "file": "olympiacos/fka-1988-89-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1988-89-home-kit-304844.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1988-89-home-kit-304844/",
+   "seasonLabel": "1988/89",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Toyota",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": null,
+   "solidity": 0.858,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#ae2733",
+    "#b3aebb",
+    "#a28c94",
+    "#892129"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#997b7b",
+     "relation": "contrast",
+     "delta": 100
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#97857f",
+     "relation": "contrast",
+     "delta": 110
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Toyota",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#b3303f"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 37654,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1989-90-home",
+   "file": "olympiacos/fka-1989-90-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1989-90-home-kit-111428.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1989-90-home-kit-111428/",
+   "seasonLabel": "1989/90",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Orange",
+   "manufacturer": "Puma",
+   "sponsor": "-",
+   "competitions": null,
+   "photoCredit": "sportclubmemories.com",
+   "solidity": 0.864,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#d64a37",
+    "#d0d9df",
+    "#baadb0",
+    "#913e36"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Orange"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "pink",
+     "hex": "#d47575",
+     "relation": "contrast",
+     "delta": 47
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#4d534f",
+     "relation": "contrast",
+     "delta": 130
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "-",
+    "nameset": null,
+    "body": {
+     "colour": "orange",
+     "hex": "#ce5e4c"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 32198,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1990-91-home",
+   "file": "olympiacos/fka-1990-91-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1990-91-home-kit-111427.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1990-91-home-kit-111427/",
+   "seasonLabel": "1990/91",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Diana",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": "sportclubmemories.com",
+   "solidity": 0.782,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c82d33",
+    "#ced6da",
+    "#83292e",
+    "#af9599"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#c4464d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 33692,
+   "yellowPx": 146,
+   "yellowPct": 0.086
+  },
+  {
+   "slug": "fka-1991-92-home",
+   "file": "olympiacos/fka-1991-92-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1991-92-home-kit-111426.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1991-92-home-kit-111426/",
+   "seasonLabel": "1991/92",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Diana",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": "oldfootballshirts.com",
+   "solidity": 0.733,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#bd3449",
+    "#b2b2b2",
+    "#887475",
+    "#6c2c38"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#c1435a"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 63436,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1991-92-special",
+   "file": "olympiacos/fka-1991-92-special.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1991-92-special-kit-394420.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1991-92-special-kit-394420/",
+   "seasonLabel": "1991/92",
+   "seasonAmbiguous": false,
+   "variant": "special",
+   "typeRaw": "Special",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Diana",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": null,
+   "solidity": 0.599,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "worn",
+   "palette": [
+    "#d84550",
+    "#d03b47",
+    "#dd4f5a",
+    "#ac2a36"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#d44751"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 13992,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1992-93-away",
+   "file": "olympiacos/fka-1992-93-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1992-93-away-kit-111433.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1992-93-away-kit-111433/",
+   "seasonLabel": "1992/93",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Graphic",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Diana",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": "vendora.gr",
+   "solidity": 0.965,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#b40922",
+    "#820314",
+    "#a9041a",
+    "#cd2f46"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Graphic",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#bb0824",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#caafb0",
+     "relation": "contrast",
+     "delta": 223
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#c2071e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 52772,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1992-93-away-111434",
+   "file": "olympiacos/fka-1992-93-away-111434.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1992-93-european-away-kit-111434.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1992-93-european-away-kit-111434/",
+   "seasonLabel": "1992/93",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "European Away",
+   "design": "Graphic",
+   "colors": "Blue / Navy / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Diana",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": "vendora.gr",
+   "solidity": 0.832,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#2a59cc",
+    "#1f3eaa",
+    "#112c93",
+    "#709ae4"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "Navy",
+     "White"
+    ],
+    "pattern": "Graphic",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#1f43b1",
+     "relation": "matches-body",
+     "delta": 24
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#faf6f1",
+     "relation": "contrast",
+     "delta": 273
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#2650c4"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 74076,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1992-93-home",
+   "file": "olympiacos/fka-1992-93-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1992-93-home-2-kit-397611.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1992-93-home-2-kit-397611/",
+   "seasonLabel": "1992/93",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home 2",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Diana",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": null,
+   "solidity": 0.823,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e21e25",
+    "#f1e7e0",
+    "#d5b8b5",
+    "#db4749"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#e6bfc0",
+     "relation": "contrast",
+     "delta": 151
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#e8dbb3",
+     "relation": "contrast",
+     "delta": 164
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "orange",
+     "hex": "#ee5555"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 46736,
+   "yellowPx": 2,
+   "yellowPct": 0.001
+  },
+  {
+   "slug": "fka-1992-93-home-19711",
+   "file": "olympiacos/fka-1992-93-home-19711.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1992-93-home-kit-19711.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1992-93-home-kit-19711/",
+   "seasonLabel": "1992/93",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Diana",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": "classicfootballshirts.co.uk",
+   "solidity": 0.626,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e82c1c",
+    "#e92314",
+    "#dd1c12",
+    "#e16e63"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#e62617"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 35506,
+   "yellowPx": 569,
+   "yellowPct": 0.462
+  },
+  {
+   "slug": "fka-1993-94-away",
+   "file": "olympiacos/fka-1993-94-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1993-94-away-kit-304841.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1993-94-away-kit-304841/",
+   "seasonLabel": "1993/94",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "White / Red",
+   "manufacturer": "Lotto",
+   "sponsor": "Diana",
+   "competitions": null,
+   "photoCredit": "legend7histories.blogspot.com",
+   "solidity": 0.649,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "worn",
+   "palette": [
+    "#d42948",
+    "#cb3957",
+    "#b32340",
+    "#c193b1"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Lotto",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#c6304f"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 39896,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1993-94-home",
+   "file": "olympiacos/fka-1993-94-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1993-94-home-kit-111435.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1993-94-home-kit-111435/",
+   "seasonLabel": "1993/94",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "Lotto",
+   "sponsor": "Diana",
+   "competitions": null,
+   "photoCredit": "wikipedia.org",
+   "solidity": 0.787,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#b7c6c7",
+    "#a11b17",
+    "#81160f",
+    "#a58687"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Lotto",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#9b1a15"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 38334,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1993-94-third",
+   "file": "olympiacos/fka-1993-94-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1993-94-third-kit-401613.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1993-94-third-kit-401613/",
+   "seasonLabel": "1993/94",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "Navy / White / Red",
+   "manufacturer": "Lotto",
+   "sponsor": "Diana",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.854,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#304d90",
+    "#151d3f",
+    "#27325d",
+    "#6987c1"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "White",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#263765",
+     "relation": "contrast",
+     "delta": 58
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#32343a",
+     "relation": "contrast",
+     "delta": 98
+    },
+    "crest": "club-crest",
+    "maker": "Lotto",
+    "sponsor": "Diana",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#2f5098"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 37810,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1994-95-away",
+   "file": "olympiacos/fka-1994-95-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1994-95-away-kit-304839.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1994-95-away-kit-304839/",
+   "seasonLabel": "1994/95",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "adidas",
+   "sponsor": "MasterCard",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": null,
+   "solidity": 0.855,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#d90836",
+    "#aa0426",
+    "#d71b45",
+    "#ce9bad"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#d0103b",
+     "relation": "matches-body",
+     "delta": 13
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#dccec9",
+     "relation": "contrast",
+     "delta": 227
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#d81a3e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 61376,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1994-95-home",
+   "file": "olympiacos/fka-1994-95-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1994-95-home-kit-110865.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1994-95-home-kit-110865/",
+   "seasonLabel": "1994/95",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "adidas",
+   "sponsor": "MasterCard",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": null,
+   "solidity": 0.557,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e50423",
+    "#e3102a",
+    "#da0220",
+    "#b98d89"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#e00625"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 40214,
+   "yellowPx": 2147,
+   "yellowPct": 1.266
+  },
+  {
+   "slug": "fka-1994-95-third",
+   "file": "olympiacos/fka-1994-95-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1994-95-third-kit-304836.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1994-95-third-kit-304836/",
+   "seasonLabel": "1994/95",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "White / Red",
+   "manufacturer": "adidas",
+   "sponsor": "MasterCard",
+   "competitions": "Alpha Ethniki",
+   "photoCredit": "legend7histories.blogspot.com",
+   "solidity": 0.895,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#aab0c8",
+    "#868a9b",
+    "#c4cae2",
+    "#643e4d"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#827a8d",
+     "relation": "contrast",
+     "delta": 57
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#8f93aa",
+     "relation": "matches-body",
+     "delta": 19
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#9f9cb0"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 47592,
+   "yellowPx": 125,
+   "yellowPct": 0.043
+  },
+  {
+   "slug": "fka-1995-96-away",
+   "file": "olympiacos/fka-1995-96-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1995-96-away-kit-304842.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1995-96-away-kit-304842/",
+   "seasonLabel": "1995/96",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "MasterCard",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.867,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#f20127",
+    "#c90119",
+    "#f0183d",
+    "#f36f6e"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#fb0b38",
+     "relation": "matches-body",
+     "delta": 10
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#fe2644",
+     "relation": "contrast",
+     "delta": 39
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#f80431"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 38536,
+   "yellowPx": 3528,
+   "yellowPct": 1.221
+  },
+  {
+   "slug": "fka-1995-96-gk-1",
+   "file": "olympiacos/fka-1995-96-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1995-96-gk-1-kit-403085.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1995-96-gk-1-kit-403085/",
+   "seasonLabel": "1995/96",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Graphic",
+   "colors": "Red / Orange / Black",
+   "manufacturer": "Puma",
+   "sponsor": "MasterCard",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.79,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e21532",
+    "#d03c3e",
+    "#eb8555",
+    "#72141f"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "Orange",
+     "Black"
+    ],
+    "pattern": "Graphic",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "orange",
+     "hex": "#f7533f"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 64282,
+   "yellowPx": 1750,
+   "yellowPct": 0.636
+  },
+  {
+   "slug": "fka-1995-96-home",
+   "file": "olympiacos/fka-1995-96-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1995-96-home-kit-111432.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1995-96-home-kit-111432/",
+   "seasonLabel": "1995/96",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "MasterCard",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.672,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#f0615d",
+    "#f0f0ef",
+    "#c85156",
+    "#d5a995"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#f07368"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 60462,
+   "yellowPx": 7232,
+   "yellowPct": 3.953
+  },
+  {
+   "slug": "fka-1995-96-third",
+   "file": "olympiacos/fka-1995-96-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1995-96-third-kit-390546.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1995-96-third-kit-390546/",
+   "seasonLabel": "1995/96",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "MasterCard",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.565,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "worn",
+   "palette": [
+    "#e7ecf0",
+    "#a56565",
+    "#6b1b20",
+    "#bbb8c4"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d1c2ce"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 42216,
+   "yellowPx": 47,
+   "yellowPct": 0.038
+  },
+  {
+   "slug": "fka-1996-97-fourth",
+   "file": "olympiacos/fka-1996-97-fourth.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1996-97-fourth-kit-394313.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1996-97-fourth-kit-394313/",
+   "seasonLabel": "1996/97",
+   "seasonAmbiguous": false,
+   "variant": "fourth",
+   "typeRaw": "Fourth",
+   "design": "Plain",
+   "colors": "Blue / White",
+   "manufacturer": "Puma",
+   "sponsor": "MasterCard",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.886,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#3868c6",
+    "#1245ac",
+    "#babed3",
+    "#3850a8"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#4073c9",
+     "relation": "matches-body",
+     "delta": 32
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#f0e4c9",
+     "relation": "contrast",
+     "delta": 240
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#2b5bc3"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 51884,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1996-97-home",
+   "file": "olympiacos/fka-1996-97-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1996-97-home-kit-19712.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1996-97-home-kit-19712/",
+   "seasonLabel": "1996/97",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "MasterCard",
+   "competitions": null,
+   "photoCredit": "classicfootballshirts.co.uk",
+   "solidity": 0.786,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e80220",
+    "#efeced",
+    "#a79594",
+    "#d50921"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "orange",
+     "hex": "#e64a21"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 24468,
+   "yellowPx": 7388,
+   "yellowPct": 5.499
+  },
+  {
+   "slug": "fka-x-home",
+   "file": "olympiacos/fka-x-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1996-97-pre-season-home-kit-304835.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1996-97-pre-season-home-kit-304835/",
+   "seasonLabel": null,
+   "seasonAmbiguous": true,
+   "variant": "home",
+   "typeRaw": "Pre-Season Home",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "MasterCard",
+   "competitions": "Friendly",
+   "photoCredit": null,
+   "solidity": 0.983,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#ed192e",
+    "#e80f24",
+    "#d60718",
+    "#ed4d5d"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#e9162a",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#e0dfde",
+     "relation": "contrast",
+     "delta": 268
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "MasterCard",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#ee172c"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 77112,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1997-98-away",
+   "file": "olympiacos/fka-1997-98-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1997-98-away-kit-303849.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1997-98-away-kit-303849/",
+   "seasonLabel": "1997/98",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Pinstripes",
+   "colors": "White / Gray",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.784,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#dcd4c1",
+    "#e7e3d8",
+    "#f2f0eb",
+    "#b9afa0"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Gray"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e9e5dc"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 30934,
+   "yellowPx": 1843,
+   "yellowPct": 0.889
+  },
+  {
+   "slug": "fka-1997-98-home",
+   "file": "olympiacos/fka-1997-98-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1997-98-home-kit-80866.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1997-98-home-kit-80866/",
+   "seasonLabel": "1997/98",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": "george",
+   "solidity": 0.664,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#850104",
+    "#6e0101",
+    "#998889",
+    "#7d1618"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "maroon",
+     "hex": "#890a10"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 30134,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1998-99-gk-1",
+   "file": "olympiacos/fka-1998-99-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1998-99-gk-1-kit-303850.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1998-99-gk-1-kit-303850/",
+   "seasonLabel": "1998/99",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Contrasting sleeves",
+   "colors": "Gray / Black / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.895,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#a79fa3",
+    "#897c7d",
+    "#bfbdc7",
+    "#2e2a2f"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "Black",
+     "Red"
+    ],
+    "pattern": "Contrasting sleeves",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#343543",
+     "relation": "contrast",
+     "delta": 200
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#212322",
+     "relation": "contrast",
+     "delta": 240
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#b0a9ad"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 42454,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1998-99-gk-2",
+   "file": "olympiacos/fka-1998-99-gk-2.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1998-99-gk-2-kit-304840.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1998-99-gk-2-kit-304840/",
+   "seasonLabel": "1998/99",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 2",
+   "design": "Chest band",
+   "colors": "Black / White / Green",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.73,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#484849",
+    "#e9e6df",
+    "#363738",
+    "#817c78"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "White",
+     "Green"
+    ],
+    "pattern": "Chest band",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "brown",
+     "hex": "#454647"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 65614,
+   "yellowPx": 61,
+   "yellowPct": 0.021
+  },
+  {
    "slug": "fka-1998-99-home",
    "file": "olympiacos/fka-1998-99-home.webp",
    "source": "fka",
@@ -1051,6 +3124,179 @@
    "sport": "football",
    "confidence": 2,
    "bytes": 25638,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1998-99-special",
+   "file": "olympiacos/fka-1998-99-special.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1998-99-special-kit-401614.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1998-99-special-kit-401614/",
+   "seasonLabel": "1998/99",
+   "seasonAmbiguous": false,
+   "variant": "special",
+   "typeRaw": "Special",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.852,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#801318",
+    "#c0b8b5",
+    "#d4d1cd",
+    "#8c5d5f"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#bcafaa",
+     "relation": "contrast",
+     "delta": 107
+    },
+    "collar": {
+     "colour": "maroon",
+     "hex": "#891619",
+     "relation": "contrast",
+     "delta": 110
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#a26264"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 54774,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1998-99-third",
+   "file": "olympiacos/fka-1998-99-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1998-99-third-kit-301269.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1998-99-third-kit-301269/",
+   "seasonLabel": "1998/99",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "Black / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.908,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#100d0e",
+    "#020202",
+    "#080505",
+    "#433a35"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#0f0f0f",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "gold",
+     "hex": "#a87745",
+     "relation": "contrast",
+     "delta": 198
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#0c0c0c"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 25710,
+   "yellowPx": 121,
+   "yellowPct": 0.049
+  },
+  {
+   "slug": "fka-1999-00-away",
+   "file": "olympiacos/fka-1999-00-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1999-00-away-kit-80865.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1999-00-away-kit-80865/",
+   "seasonLabel": "1999/00",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.486,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#f4f3f3",
+    "#f1f1f1",
+    "#f7f7f7",
+    "#bbb0b1"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f6f6f6"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 33136,
    "yellowPx": 0,
    "yellowPct": 0.0
   },
@@ -1106,6 +3352,374 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-1999-00-special",
+   "file": "olympiacos/fka-1999-00-special.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1999-00-special-2-kit-342604.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1999-00-special-2-kit-342604/",
+   "seasonLabel": "1999/00",
+   "seasonAmbiguous": false,
+   "variant": "special",
+   "typeRaw": "Special 2",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.905,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#cb0109",
+    "#ce1323",
+    "#a50102",
+    "#de6c78"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#cb030c",
+     "relation": "matches-body",
+     "delta": 10
+    },
+    "collar": {
+     "colour": "maroon",
+     "hex": "#8b0407",
+     "relation": "contrast",
+     "delta": 66
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#cb0815"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 54074,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1999-00-special-301268",
+   "file": "olympiacos/fka-1999-00-special-301268.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1999-00-special-kit-301268.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1999-00-special-kit-301268/",
+   "seasonLabel": "1999/00",
+   "seasonAmbiguous": false,
+   "variant": "special",
+   "typeRaw": "Special",
+   "design": "Stripes",
+   "colors": "Blue / White",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.82,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#17378b",
+    "#11235c",
+    "#071236",
+    "#687fb3"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#14296e",
+     "relation": "matches-body",
+     "delta": 29
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#18181a",
+     "relation": "contrast",
+     "delta": 114
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#163588"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 34220,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-1999-00-third",
+   "file": "olympiacos/fka-1999-00-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-1999-00-third-kit-395295.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-1999-00-third-kit-395295/",
+   "seasonLabel": "1999/00",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "Blue / White",
+   "manufacturer": "Puma",
+   "sponsor": "Aspis Bank",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.93,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#233d79",
+    "#1c3064",
+    "#122454",
+    "#6c79a2"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#1d356e",
+     "relation": "matches-body",
+     "delta": 14
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#dbcdcb",
+     "relation": "contrast",
+     "delta": 247
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Aspis Bank",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#253d77"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 54996,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2000-01-away",
+   "file": "olympiacos/fka-2000-01-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2000-01-away-2-kit-304837.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2000-01-away-2-kit-304837/",
+   "seasonLabel": "2000/01",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away 2",
+   "design": "Plain",
+   "colors": "White / Red / Navy",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.872,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#9db9dc",
+    "#cbdaeb",
+    "#b0cbea",
+    "#7c9abb"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red",
+     "Navy"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#bbcee4",
+     "relation": "matches-body",
+     "delta": 30
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#d1d6ce",
+     "relation": "contrast",
+     "delta": 57
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "sky blue",
+     "hex": "#a1bfe2"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 30902,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2000-01-away-110868",
+   "file": "olympiacos/fka-2000-01-away-110868.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2000-01-away-kit-110868.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2000-01-away-kit-110868/",
+   "seasonLabel": "2000/01",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "Gray / Red",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": "classicfootballshirts.co.uk",
+   "solidity": 0.882,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#9b9391",
+    "#9e9e9c",
+    "#aea7a5",
+    "#856f6f"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#9b9492",
+     "relation": "matches-body",
+     "delta": 22
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#827c7c",
+     "relation": "contrast",
+     "delta": 63
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#a8a19e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 37500,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2000-01-fourth",
+   "file": "olympiacos/fka-2000-01-fourth.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2000-01-fourth-kit-394314.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2000-01-fourth-kit-394314/",
+   "seasonLabel": "2000/01",
+   "seasonAmbiguous": false,
+   "variant": "fourth",
+   "typeRaw": "Fourth",
+   "design": "Plain",
+   "colors": "Blue / White / Black",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.877,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#1b2761",
+    "#33407c",
+    "#0e1646",
+    "#888ca2"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "White",
+     "Black"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#2e3a6f",
+     "relation": "matches-body",
+     "delta": 18
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#c5b79d",
+     "relation": "contrast",
+     "delta": 215
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#203276"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 60472,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
    "slug": "fka-2000-01-home",
    "file": "olympiacos/fka-2000-01-home.webp",
    "source": "fka",
@@ -1155,6 +3769,993 @@
    "bytes": 30690,
    "yellowPx": 0,
    "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2000-01-third",
+   "file": "olympiacos/fka-2000-01-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2000-01-third-kit-262873.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2000-01-third-kit-262873/",
+   "seasonLabel": "2000/01",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": "www.classicfootballshirts.co.uk",
+   "solidity": 0.872,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#a60115",
+    "#9e0113",
+    "#a10012",
+    "#ad2535"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#a00115",
+     "relation": "matches-body",
+     "delta": 8
+    },
+    "collar": {
+     "colour": "maroon",
+     "hex": "#92020e",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#a80115"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 21830,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2001-02-away",
+   "file": "olympiacos/fka-2001-02-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2001-02-away-kit-101129.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2001-02-away-kit-101129/",
+   "seasonLabel": "2001/02",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Pinstripes",
+   "colors": "Navy / Red",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.844,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#26283b",
+    "#0e1928",
+    "#794b56",
+    "#232030"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "Red"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#172333",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#192132",
+     "relation": "matches-body",
+     "delta": 11
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#17273b"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 35830,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2001-02-home",
+   "file": "olympiacos/fka-2001-02-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2001-02-home-kit-19710.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2001-02-home-kit-19710/",
+   "seasonLabel": "2001/02",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.415,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#d01e1e",
+    "#d02523",
+    "#b49c9d",
+    "#8e1517"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#cf2222"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 50054,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2001-02-third",
+   "file": "olympiacos/fka-2001-02-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2001-02-third-kit-106873.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2001-02-third-kit-106873/",
+   "seasonLabel": "2001/02",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "White / Red / Blue",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": "classicfootballshirts.co.uk",
+   "solidity": 0.864,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#efeff1",
+    "#f0f0f2",
+    "#f3f3f5"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red",
+     "Blue"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "white",
+     "hex": "#f0eff2",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#efeff0",
+     "relation": "matches-body",
+     "delta": 4
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f1f1f3"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 18408,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2002-03-away",
+   "file": "olympiacos/fka-2002-03-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2002-03-away-kit-19699.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2002-03-away-kit-19699/",
+   "seasonLabel": "2002/03",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Pinstripes",
+   "colors": "Black / Red",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.848,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#1b1a1f",
+    "#0f1519",
+    "#4e131c",
+    "#3d343a"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "Red"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#17181f",
+     "relation": "matches-body",
+     "delta": 4
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#1b1519",
+     "relation": "matches-body",
+     "delta": 11
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#151b20"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 36684,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2002-03-gk-1",
+   "file": "olympiacos/fka-2002-03-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2002-03-gk-1-kit-232124.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2002-03-gk-1-kit-232124/",
+   "seasonLabel": "2002/03",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Contrasting sleeves",
+   "colors": "Gray / Black",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.958,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#7f8286",
+    "#6c696e",
+    "#989396",
+    "#2c282b"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "Black"
+    ],
+    "pattern": "Contrasting sleeves",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#211f21",
+     "relation": "contrast",
+     "delta": 193
+    },
+    "collar": {
+     "colour": "maroon",
+     "hex": "#441f28",
+     "relation": "contrast",
+     "delta": 171
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#908e92"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 32926,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2002-03-home",
+   "file": "olympiacos/fka-2002-03-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2002-03-home-kit-30946.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2002-03-home-kit-30946/",
+   "seasonLabel": "2002/03",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.807,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e31329",
+    "#cbbec2",
+    "#c01023",
+    "#cb212f"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#d91729",
+     "relation": "matches-body",
+     "delta": 15
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#cb1a29",
+     "relation": "matches-body",
+     "delta": 26
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#e41f30"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 46542,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2002-03-home-356532",
+   "file": "olympiacos/fka-2002-03-home-356532.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2002-03-home-v2-kit-356532.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2002-03-home-v2-kit-356532/",
+   "seasonLabel": "2002/03",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home V2",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.796,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e2232c",
+    "#e12e34",
+    "#d3b2b7",
+    "#c61d26"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#e23236"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 37398,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2003-04-away",
+   "file": "olympiacos/fka-2003-04-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2003-04-away-kit-80859.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2003-04-away-kit-80859/",
+   "seasonLabel": "2003/04",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Pinstripes",
+   "colors": "Navy / White / Gray",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.799,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#2b3047",
+    "#33384f",
+    "#212a3f",
+    "#6c6f82"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "White",
+     "Gray"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#2c3852"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 32422,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2003-04-fourth",
+   "file": "olympiacos/fka-2003-04-fourth.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2003-04-fourth-kit-389483.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2003-04-fourth-kit-389483/",
+   "seasonLabel": "2003/04",
+   "seasonAmbiguous": false,
+   "variant": "fourth",
+   "typeRaw": "Fourth",
+   "design": "Plain",
+   "colors": "Blue / Red",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.877,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#252c60",
+    "#0b0c1f",
+    "#1c1936",
+    "#4f5a8d"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#16172b",
+     "relation": "contrast",
+     "delta": 53
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#33313b",
+     "relation": "contrast",
+     "delta": 42
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#1c285d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 30522,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2003-04-gk-1",
+   "file": "olympiacos/fka-2003-04-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2003-04-gk-1-kit-470993.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2003-04-gk-1-kit-470993/",
+   "seasonLabel": "2003/04",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Contrasting sleeves",
+   "colors": "Black / Red",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.839,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#1e1b22",
+    "#111319",
+    "#41151c"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "Red"
+    ],
+    "pattern": "Contrasting sleeves",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#3e161e",
+     "relation": "contrast",
+     "delta": 37
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#181419",
+     "relation": "matches-body",
+     "delta": 14
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#1a1d23"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 25666,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2003-04-home",
+   "file": "olympiacos/fka-2003-04-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2003-04-home-kit-80857.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2003-04-home-kit-80857/",
+   "seasonLabel": "2003/04",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.68,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#d70117",
+    "#d30216",
+    "#b3424f"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#db0118"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 32718,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2003-04-third",
+   "file": "olympiacos/fka-2003-04-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2003-04-third-kit-80858.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2003-04-third-kit-80858/",
+   "seasonLabel": "2003/04",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.858,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#df2821",
+    "#dc241e",
+    "#d01c19",
+    "#e4443c"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#db261f",
+     "relation": "matches-body",
+     "delta": 11
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#c91317",
+     "relation": "contrast",
+     "delta": 38
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#e32c23"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 27396,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2004-05-away",
+   "file": "olympiacos/fka-2004-05-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2004-05-away-kit-72699.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2004-05-away-kit-72699/",
+   "seasonLabel": "2004/05",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "Black / Red / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.868,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#171414",
+    "#131112",
+    "#0f0d0e",
+    "#332b2c"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#181315",
+     "relation": "matches-body",
+     "delta": 1
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#131111",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#171314"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 21192,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2004-05-gk-1",
+   "file": "olympiacos/fka-2004-05-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2004-05-gk-1-kit-232123.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2004-05-gk-1-kit-232123/",
+   "seasonLabel": "2004/05",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Plain",
+   "colors": "Black / White",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.961,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#07070f",
+    "#06060d",
+    "#03030a",
+    "#3e3a46"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#080911",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#151424",
+     "relation": "matches-body",
+     "delta": 30
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#05070e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 36628,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2004-05-gk-2",
+   "file": "olympiacos/fka-2004-05-gk-2.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2004-05-gk-2-kit-362099.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2004-05-gk-2-kit-362099/",
+   "seasonLabel": "2004/05",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 2",
+   "design": "Plain",
+   "colors": "Gray / Black",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.871,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "worn",
+   "palette": [
+    "#dbdbc9",
+    "#91876f",
+    "#bebcab",
+    "#3b3426"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "Black"
+    ],
+    "pattern": "Plain",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#bab7a6"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 69676,
+   "yellowPx": 9700,
+   "yellowPct": 3.221
+  },
+  {
+   "slug": "fka-2004-05-gk-3",
+   "file": "olympiacos/fka-2004-05-gk-3.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2004-05-gk-3-kit-362098.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2004-05-gk-3-kit-362098/",
+   "seasonLabel": "2004/05",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 3",
+   "design": "Plain",
+   "colors": "Sky blue / Navy",
+   "manufacturer": "Umbro",
+   "sponsor": "Siemens",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.935,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#5690c7",
+    "#497bb5",
+    "#273e69",
+    "#90b2cd"
+   ],
+   "parts": {
+    "base": [
+     "Sky blue",
+     "Navy"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#4b82c1",
+     "relation": "matches-body",
+     "delta": 6
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#75685c",
+     "relation": "contrast",
+     "delta": 115
+    },
+    "crest": "club-crest",
+    "maker": "Umbro",
+    "sponsor": "Siemens",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#4b88c2"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 64104,
+   "yellowPx": 19,
+   "yellowPct": 0.006
   },
   {
    "slug": "fka-2004-05-home",
@@ -2349,6 +5950,67 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-2009-10-away",
+   "file": "olympiacos/fka-2009-10-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2009-10-away-kit-90615.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2009-10-away-kit-90615/",
+   "seasonLabel": "2009/10",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "Black / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Citibank",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.895,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#211d1e",
+    "#201c1d",
+    "#1c1819",
+    "#49302f"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#201c1d",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#211d1d",
+     "relation": "matches-body",
+     "delta": 1
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Citibank",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#211d1e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 26976,
+   "yellowPx": 56,
+   "yellowPct": 0.02
+  },
+  {
    "slug": "fka-2009-10-fourth",
    "file": "olympiacos/fka-2009-10-fourth.webp",
    "source": "fka",
@@ -2462,6 +6124,1227 @@
    "yellowPct": 3.268
   },
   {
+   "slug": "fka-2009-10-home",
+   "file": "olympiacos/fka-2009-10-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2009-10-home-kit-31452.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2009-10-home-kit-31452/",
+   "seasonLabel": "2009/10",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Citibank",
+   "competitions": null,
+   "photoCredit": "Vintage Football Shirts",
+   "solidity": 0.909,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#df2321",
+    "#c91918",
+    "#db1b1a",
+    "#eaa9a6"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#e52220",
+     "relation": "matches-body",
+     "delta": 25
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#ece7e2",
+     "relation": "contrast",
+     "delta": 285
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Citibank",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#cd1d1b"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 35996,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2009-10-third",
+   "file": "olympiacos/fka-2009-10-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2009-10-third-kit-90614.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2009-10-third-kit-90614/",
+   "seasonLabel": "2009/10",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "Gray / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Citibank",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.877,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#9d9e9d",
+    "#a3a4a2",
+    "#adafad",
+    "#a2827d"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#9ea09e",
+     "relation": "matches-body",
+     "delta": 16
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#929290",
+     "relation": "contrast",
+     "delta": 39
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Citibank",
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#a7a9a7"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 49872,
+   "yellowPx": 120,
+   "yellowPct": 0.043
+  },
+  {
+   "slug": "fka-2010-11-away",
+   "file": "olympiacos/fka-2010-11-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2010-11-away-kit-31453.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2010-11-away-kit-31453/",
+   "seasonLabel": "2010/11",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "Black / Red / Gold",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.86,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#1f1b18",
+    "#171413"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "Red",
+     "Gold"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#1a1615",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#181312",
+     "relation": "matches-body",
+     "delta": 14
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#201c19"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 20258,
+   "yellowPx": 417,
+   "yellowPct": 0.155
+  },
+  {
+   "slug": "fka-2010-11-fourth",
+   "file": "olympiacos/fka-2010-11-fourth.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2010-11-fourth-kit-90620.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2010-11-fourth-kit-90620/",
+   "seasonLabel": "2010/11",
+   "seasonAmbiguous": false,
+   "variant": "fourth",
+   "typeRaw": "Fourth",
+   "design": "Diagonal",
+   "colors": "Blue / White",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.894,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#0852d9",
+    "#0547d3",
+    "#0732b9",
+    "#4987df"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "White"
+    ],
+    "pattern": "Diagonal",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#1f67d7",
+     "relation": "contrast",
+     "delta": 44
+    },
+    "collar": {
+     "colour": "blue",
+     "hex": "#124ec8",
+     "relation": "matches-body",
+     "delta": 20
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#0345d1"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 83016,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2010-11-home",
+   "file": "olympiacos/fka-2010-11-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2010-11-home-kit-19704.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2010-11-home-kit-19704/",
+   "seasonLabel": "2010/11",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.435,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#f6332c",
+    "#f92b24",
+    "#df231e",
+    "#ee6d6b"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#f52c27"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 43898,
+   "yellowPx": 70,
+   "yellowPct": 0.047
+  },
+  {
+   "slug": "fka-2010-11-home-365556",
+   "file": "olympiacos/fka-2010-11-home-365556.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2010-11-home-v2-kit-365556.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2010-11-home-v2-kit-365556/",
+   "seasonLabel": "2010/11",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home V2",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.619,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#cc0111",
+    "#df0119",
+    "#d90319",
+    "#db616d"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#dd021d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 42854,
+   "yellowPx": 4,
+   "yellowPct": 0.002
+  },
+  {
+   "slug": "fka-2010-11-third",
+   "file": "olympiacos/fka-2010-11-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2010-11-third-kit-19702.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2010-11-third-kit-19702/",
+   "seasonLabel": "2010/11",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Chest band",
+   "colors": "White / Red / Black",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": "www.classicfootballshirts.co.uk",
+   "solidity": 0.874,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e5e8e3",
+    "#ecefea",
+    "#f3f5f1",
+    "#e2887c"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red",
+     "Black"
+    ],
+    "pattern": "Chest band",
+    "sleeves": {
+     "colour": "white",
+     "hex": "#ecefe9",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "orange",
+     "hex": "#f76657",
+     "relation": "contrast",
+     "delta": 200
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#eaefe8"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 32028,
+   "yellowPx": 5,
+   "yellowPct": 0.002
+  },
+  {
+   "slug": "fka-2011-12-away",
+   "file": "olympiacos/fka-2011-12-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2011-12-away-kit-90617.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2011-12-away-kit-90617/",
+   "seasonLabel": "2011/12",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Sash",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": "Release date",
+   "photoCredit": null,
+   "solidity": 0.844,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#ededed",
+    "#ecebeb",
+    "#f1f1f1",
+    "#de8e92"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Sash",
+    "sleeves": {
+     "colour": "white",
+     "hex": "#ebebeb",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#efeeee",
+     "relation": "matches-body",
+     "delta": 1
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#eeeeee"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 22976,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2011-12-fourth",
+   "file": "olympiacos/fka-2011-12-fourth.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2011-12-fourth-kit-71439.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2011-12-fourth-kit-71439/",
+   "seasonLabel": "2011/12",
+   "seasonAmbiguous": false,
+   "variant": "fourth",
+   "typeRaw": "Fourth",
+   "design": "Sash",
+   "colors": "Black / White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "good.gr",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.904,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#121212",
+    "#634343",
+    "#2e1a1a"
+   ],
+   "parts": {
+    "base": [
+     "Black",
+     "White",
+     "Red"
+    ],
+    "pattern": "Sash",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#1b1a1b",
+     "relation": "matches-body",
+     "delta": 1
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#181617",
+     "relation": "matches-body",
+     "delta": 7
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "good.gr",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#1b1b1b"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 33406,
+   "yellowPx": 33,
+   "yellowPct": 0.012
+  },
+  {
+   "slug": "fka-2011-12-home",
+   "file": "olympiacos/fka-2011-12-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2011-12-home-kit-19697.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2011-12-home-kit-19697/",
+   "seasonLabel": "2011/12",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": "Release date",
+   "photoCredit": null,
+   "solidity": 0.819,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c40228",
+    "#eeefef",
+    "#b80220",
+    "#cf717c"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": {
+     "colour": "white",
+     "hex": "#ebeaea",
+     "relation": "contrast",
+     "delta": 305
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#e7e5e4",
+     "relation": "contrast",
+     "delta": 296
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#bd022a"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 42144,
+   "yellowPx": 134,
+   "yellowPct": 0.073
+  },
+  {
+   "slug": "fka-2011-12-special",
+   "file": "olympiacos/fka-2011-12-special.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2011-12-special-kit-90619.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2011-12-special-kit-90619/",
+   "seasonLabel": "2011/12",
+   "seasonAmbiguous": false,
+   "variant": "special",
+   "typeRaw": "Special",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.886,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e60113",
+    "#b0010c",
+    "#e10419",
+    "#ef2c42"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#d9041c",
+     "relation": "contrast",
+     "delta": 34
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#ed071a",
+     "relation": "matches-body",
+     "delta": 15
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#fb061e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 31844,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2011-12-third",
+   "file": "olympiacos/fka-2011-12-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2011-12-third-kit-31400.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2011-12-third-kit-31400/",
+   "seasonLabel": "2011/12",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Chest band",
+   "colors": "Blue / White / Gold",
+   "manufacturer": "Puma",
+   "sponsor": "good.gr",
+   "competitions": "Release date",
+   "photoCredit": null,
+   "solidity": 0.794,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#024ec2",
+    "#0043b7",
+    "#0542b2",
+    "#5887ca"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "White",
+     "Gold"
+    ],
+    "pattern": "Chest band",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "good.gr",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#014dc1"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 28820,
+   "yellowPx": 159,
+   "yellowPct": 0.06
+  },
+  {
+   "slug": "fka-2012-13-away",
+   "file": "olympiacos/fka-2012-13-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2012-13-away-kit-33428.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2012-13-away-kit-33428/",
+   "seasonLabel": "2012/13",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "Navy / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": "Release date",
+   "photoCredit": null,
+   "solidity": 0.838,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#2c2c38",
+    "#242432",
+    "#524c57"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#2d2a39",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#302e3a",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#2c2c38"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 20364,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2012-13-gk-1",
+   "file": "olympiacos/fka-2012-13-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2012-13-gk-1-kit-33429.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2012-13-gk-1-kit-33429/",
+   "seasonLabel": "2012/13",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Chest band",
+   "colors": "Gray / Blue",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.962,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#a9aca8",
+    "#949895",
+    "#2b6290",
+    "#c0c2bd"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "Blue"
+    ],
+    "pattern": "Chest band",
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#9ea2a1",
+     "relation": "matches-body",
+     "delta": 31
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#223a5a",
+     "relation": "contrast",
+     "delta": 207
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#b1b4b1"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 26676,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2012-13-gk-2",
+   "file": "olympiacos/fka-2012-13-gk-2.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2012-13-gk-2-kit-228832.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2012-13-gk-2-kit-228832/",
+   "seasonLabel": "2012/13",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 2",
+   "design": "Chest band",
+   "colors": "Gray / Yellow",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.976,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#525154",
+    "#464548",
+    "#9da944",
+    "#2b2a2c"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "Yellow"
+    ],
+    "pattern": "Chest band",
+    "sleeves": {
+     "colour": "brown",
+     "hex": "#4b4a49",
+     "relation": "matches-body",
+     "delta": 16
+    },
+    "collar": {
+     "colour": "gold",
+     "hex": "#99b924",
+     "relation": "contrast",
+     "delta": 132
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "brown",
+     "hex": "#545353"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 39398,
+   "yellowPx": 33873,
+   "yellowPct": 12.533
+  },
+  {
+   "slug": "fka-2012-13-home",
+   "file": "olympiacos/fka-2012-13-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2012-13-home-kit-19694.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2012-13-home-kit-19694/",
+   "seasonLabel": "2012/13",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": "Release date",
+   "photoCredit": null,
+   "solidity": 0.678,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c80012",
+    "#e2e2e4",
+    "#cbabaf",
+    "#bc1524"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#d72a2c"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 35536,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2012-13-third",
+   "file": "olympiacos/fka-2012-13-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2012-13-third-kit-19693.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2012-13-third-kit-19693/",
+   "seasonLabel": "2012/13",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Chest band",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": "Release date",
+   "photoCredit": null,
+   "solidity": 0.882,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#f6f6f8",
+    "#efefef",
+    "#f2f2f3",
+    "#c45454"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Chest band",
+    "sleeves": {
+     "colour": "white",
+     "hex": "#f1f1f1",
+     "relation": "matches-body",
+     "delta": 8
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#f0eeef",
+     "relation": "matches-body",
+     "delta": 12
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f6f4f7"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 31590,
+   "yellowPx": 1,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2013-14-away",
+   "file": "olympiacos/fka-2013-14-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2013-14-away-kit-33387.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2013-14-away-kit-33387/",
+   "seasonLabel": "2013/14",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "Navy / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": "Release date",
+   "photoCredit": null,
+   "solidity": 0.824,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#313349",
+    "#24273b",
+    "#545266"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#2d2d42",
+     "relation": "matches-body",
+     "delta": 12
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#26283c",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#32344b"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 32694,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2013-14-away-375246",
+   "file": "olympiacos/fka-2013-14-away-375246.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2013-14-away-v2-kit-375246.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2013-14-away-v2-kit-375246/",
+   "seasonLabel": "2013/14",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away V2",
+   "design": "Plain",
+   "colors": "Navy / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.823,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#303249",
+    "#24273b",
+    "#3d3c52"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#2d2d42",
+     "relation": "matches-body",
+     "delta": 11
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#25273c",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#31344a"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 33566,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2013-14-home",
+   "file": "olympiacos/fka-2013-14-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2013-14-home-kit-19703.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2013-14-home-kit-19703/",
+   "seasonLabel": "2013/14",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White / Gold",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": "Release date",
+   "photoCredit": null,
+   "solidity": 0.702,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#ebe6ed",
+    "#d32421",
+    "#b71f1c",
+    "#d5a7a6"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White",
+     "Gold"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#dc2826"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 39580,
+   "yellowPx": 14,
+   "yellowPct": 0.006
+  },
+  {
+   "slug": "fka-2013-14-home-375249",
+   "file": "olympiacos/fka-2013-14-home-375249.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2013-14-home-v2-kit-375249.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2013-14-home-v2-kit-375249/",
+   "seasonLabel": "2013/14",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home V2",
+   "design": "Stripes",
+   "colors": "Red / White / Gold",
+   "manufacturer": "Puma",
+   "sponsor": "Pame Stoixima",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.689,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#ebe7f2",
+    "#bd1110",
+    "#c52725",
+    "#d8b0b6"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White",
+     "Gold"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Pame Stoixima",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#d02726"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 35922,
+   "yellowPx": 5,
+   "yellowPct": 0.002
+  },
+  {
    "slug": "fka-2013-14-third",
    "file": "olympiacos/fka-2013-14-third.webp",
    "source": "fka",
@@ -2513,8 +7396,130 @@
    "yellowPct": 0.0
   },
   {
-   "slug": "fka-x-home",
-   "file": "olympiacos/fka-x-home.webp",
+   "slug": "fka-x-away",
+   "file": "olympiacos/fka-x-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2014-15-away-kit-33388.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2014-15-away-kit-33388/",
+   "seasonLabel": null,
+   "seasonAmbiguous": true,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Plain",
+   "colors": "Navy / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Unicef",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.816,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#25283b",
+    "#181e2c",
+    "#434456"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#202433",
+     "relation": "matches-body",
+     "delta": 13
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#1d202e",
+     "relation": "matches-body",
+     "delta": 20
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Unicef",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#252b3d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 29568,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2014-15-gk-1",
+   "file": "olympiacos/fka-2014-15-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2014-15-gk-1-kit-324790.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2014-15-gk-1-kit-324790/",
+   "seasonLabel": "2014/15",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Chest band",
+   "colors": "Sky blue / Black / White",
+   "manufacturer": "Puma",
+   "sponsor": "Unicef",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.988,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#0595ca",
+    "#027ba6",
+    "#20627a",
+    "#29a3d2"
+   ],
+   "parts": {
+    "base": [
+     "Sky blue",
+     "Black",
+     "White"
+    ],
+    "pattern": "Chest band",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#058ebe",
+     "relation": "matches-body",
+     "delta": 13
+    },
+    "collar": {
+     "colour": "blue",
+     "hex": "#196f93",
+     "relation": "contrast",
+     "delta": 68
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Unicef",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#0895c9"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 24322,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-x-home-19695",
+   "file": "olympiacos/fka-x-home-19695.webp",
    "source": "fka",
    "sourceFile": "olympiacos-fc-2014-15-home-kit-19695.jpg",
    "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2014-15-home-kit-19695/",
@@ -2565,8 +7570,241 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-x-third",
+   "file": "olympiacos/fka-x-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2014-15-third-kit-33386.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2014-15-third-kit-33386/",
+   "seasonLabel": null,
+   "seasonAmbiguous": true,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Contrasting sleeves",
+   "colors": "White / Red",
+   "manufacturer": "Puma",
+   "sponsor": "Unicef",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.813,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#dedce5",
+    "#e4e3ec",
+    "#b71e21",
+    "#ced0dc"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Contrasting sleeves",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#c21f22",
+     "relation": "contrast",
+     "delta": 276
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#c01312",
+     "relation": "contrast",
+     "delta": 296
+    },
+    "crest": "club-crest",
+    "maker": "Puma",
+    "sponsor": "Unicef",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e0dee7"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 24660,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2015-16-away",
+   "file": "olympiacos/fka-2015-16-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2015-16-away-kit-19643.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2015-16-away-kit-19643/",
+   "seasonLabel": "2015/16",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Pinstripes",
+   "colors": "Blue / Red",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Release date",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.825,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#1b3187",
+    "#0f2369",
+    "#43245c"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "Red"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#172876",
+     "relation": "matches-body",
+     "delta": 26
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#070f2f",
+     "relation": "contrast",
+     "delta": 103
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#1b338d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 43836,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2015-16-away-355566",
+   "file": "olympiacos/fka-2015-16-away-355566.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2015-16-european-away-kit-355566.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2015-16-european-away-kit-355566/",
+   "seasonLabel": "2015/16",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "European Away",
+   "design": "Pinstripes",
+   "colors": "Blue / Red",
+   "manufacturer": "adidas",
+   "sponsor": "Unicef",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.825,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#1a3087",
+    "#0f2268",
+    "#382563",
+    "#394d9a"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "Red"
+    ],
+    "pattern": "Pinstripes",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#172875",
+     "relation": "matches-body",
+     "delta": 26
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#070f2f",
+     "relation": "contrast",
+     "delta": 102
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Unicef",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#1a328d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 37744,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
    "slug": "fka-2015-16-home",
    "file": "olympiacos/fka-2015-16-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2015-16-european-home-kit-355567.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2015-16-european-home-kit-355567/",
+   "seasonLabel": "2015/16",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "European Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "adidas",
+   "sponsor": "Unicef",
+   "competitions": null,
+   "photoCredit": null,
+   "solidity": 0.719,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#dfdce5",
+    "#cd1212",
+    "#ce3136",
+    "#c7adbb"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Unicef",
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#d8769f"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 48360,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2015-16-home-19645",
+   "file": "olympiacos/fka-2015-16-home-19645.webp",
    "source": "fka",
    "sourceFile": "olympiacos-fc-2015-16-home-kit-19645.jpg",
    "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2015-16-home-kit-19645/",
@@ -2614,6 +7852,363 @@
    "bytes": 59228,
    "yellowPx": 0,
    "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2015-16-third",
+   "file": "olympiacos/fka-2015-16-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2015-16-third-kit-19644.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2015-16-third-kit-19644/",
+   "seasonLabel": "2015/16",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.822,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#be151e",
+    "#bc111d",
+    "#c8424b",
+    "#ac0e19"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#ba1221",
+     "relation": "matches-body",
+     "delta": 6
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#ac1e27",
+     "relation": "matches-body",
+     "delta": 22
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#be151e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 42826,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2016-17-away",
+   "file": "olympiacos/fka-2016-17-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2016-17-away-kit-19647.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2016-17-away-kit-19647/",
+   "seasonLabel": "2016/17",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Chevron",
+   "colors": "Gray / Red / Gray",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Release date",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.826,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#423f4d",
+    "#2b2b36",
+    "#7a7482",
+    "#512e38"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "Red",
+     "Gray"
+    ],
+    "pattern": "Chevron",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#363642",
+     "relation": "matches-body",
+     "delta": 24
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#251116",
+     "relation": "contrast",
+     "delta": 82
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "brown",
+     "hex": "#454250"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 31800,
+   "yellowPx": 7,
+   "yellowPct": 0.003
+  },
+  {
+   "slug": "fka-2016-17-gk-1",
+   "file": "olympiacos/fka-2016-17-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2016-17-gk-1-kit-76361.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2016-17-gk-1-kit-76361/",
+   "seasonLabel": "2016/17",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Plain",
+   "colors": "Blue / Black",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.866,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#064779",
+    "#003466",
+    "#0a3360",
+    "#2b618e"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "Black"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#034b7f",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#03315e",
+     "relation": "matches-body",
+     "delta": 33
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#014578"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 40420,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2016-17-gk-2",
+   "file": "olympiacos/fka-2016-17-gk-2.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2016-17-gk-2-kit-96912.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2016-17-gk-2-kit-96912/",
+   "seasonLabel": "2016/17",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 2",
+   "design": "Plain",
+   "colors": "Yellow / Black",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.882,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c7da35",
+    "#d1e53f",
+    "#e0f259",
+    "#b1ab34"
+   ],
+   "parts": {
+    "base": [
+     "Yellow",
+     "Black"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "yellow",
+     "hex": "#def051",
+     "relation": "matches-body",
+     "delta": 30
+    },
+    "collar": {
+     "colour": "yellow",
+     "hex": "#c4d638",
+     "relation": "matches-body",
+     "delta": 15
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "yellow",
+     "hex": "#cee13c"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 44682,
+   "yellowPx": 283760,
+   "yellowPct": 92.337
+  },
+  {
+   "slug": "fka-2016-17-home",
+   "file": "olympiacos/fka-2016-17-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2016-17-home-kit-19646.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2016-17-home-kit-19646/",
+   "seasonLabel": "2016/17",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Release date",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.559,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#d71d20",
+    "#dd2225",
+    "#d65c5f",
+    "#b91417"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#d72428"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 44568,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2016-17-third",
+   "file": "olympiacos/fka-2016-17-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2016-17-third-kit-33430.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2016-17-third-kit-33430/",
+   "seasonLabel": "2016/17",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "White / Red",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.84,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c9c9c9",
+    "#e3e4e4",
+    "#d1d1d1",
+    "#b68a8d"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#cccccc",
+     "relation": "matches-body",
+     "delta": 0
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#c4c4c4",
+     "relation": "matches-body",
+     "delta": 14
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#cccccc"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 33596,
+   "yellowPx": 4,
+   "yellowPct": 0.002
   },
   {
    "slug": "fka-2017-18-away",
@@ -2677,6 +8272,598 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-2017-18-gk-1",
+   "file": "olympiacos/fka-2017-18-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2017-18-gk-1-kit-278596.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2017-18-gk-1-kit-278596/",
+   "seasonLabel": "2017/18",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Plain",
+   "colors": "Sky blue / Navy",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.847,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#2594bb",
+    "#2ea2cb",
+    "#56b7de",
+    "#2e7392"
+   ],
+   "parts": {
+    "base": [
+     "Sky blue",
+     "Navy"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#299bc3",
+     "relation": "matches-body",
+     "delta": 3
+    },
+    "collar": {
+     "colour": "blue",
+     "hex": "#1d6b8a",
+     "relation": "contrast",
+     "delta": 74
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#2b9ac1"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 44414,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2017-18-gk-2",
+   "file": "olympiacos/fka-2017-18-gk-2.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2017-18-gk-2-kit-278595.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2017-18-gk-2-kit-278595/",
+   "seasonLabel": "2017/18",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 2",
+   "design": "Plain",
+   "colors": "Yellow / Green",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.876,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e1d432",
+    "#e7db39",
+    "#e7df58",
+    "#cfb633"
+   ],
+   "parts": {
+    "base": [
+     "Yellow",
+     "Green"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "yellow",
+     "hex": "#e6dc44",
+     "relation": "matches-body",
+     "delta": 10
+    },
+    "collar": {
+     "colour": "yellow",
+     "hex": "#cbc342",
+     "relation": "matches-body",
+     "delta": 30
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "yellow",
+     "hex": "#e2d63d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 42848,
+   "yellowPx": 264509,
+   "yellowPct": 91.356
+  },
+  {
+   "slug": "fka-2017-18-gk-3",
+   "file": "olympiacos/fka-2017-18-gk-3.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2017-18-gk-3-kit-278594.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2017-18-gk-3-kit-278594/",
+   "seasonLabel": "2017/18",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 3",
+   "design": "Plain",
+   "colors": "Red / White",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.822,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c53c35",
+    "#bc332c",
+    "#a52823",
+    "#d6635d"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#b9342e",
+     "relation": "matches-body",
+     "delta": 7
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#c23f38",
+     "relation": "matches-body",
+     "delta": 14
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#c0362e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 43618,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2017-18-home",
+   "file": "olympiacos/fka-2017-18-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2017-18-home-kit-18122.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2017-18-home-kit-18122/",
+   "seasonLabel": "2017/18",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red / Gold",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Release date",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.606,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c81019",
+    "#e6dde1",
+    "#bd0e15",
+    "#bd353c"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red",
+     "Gold"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#c6151d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 33156,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2017-18-third",
+   "file": "olympiacos/fka-2017-18-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2017-18-third-kit-18124.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2017-18-third-kit-18124/",
+   "seasonLabel": "2017/18",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Plain",
+   "colors": "Red / White / Black",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.82,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#a60e18",
+    "#ae131d",
+    "#ac101b",
+    "#b84a52"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White",
+     "Black"
+    ],
+    "pattern": "Plain",
+    "sleeves": {
+     "colour": "red",
+     "hex": "#a8101b",
+     "relation": "matches-body",
+     "delta": 10
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#9b141d",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#b2121d"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 27884,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2018-19-away",
+   "file": "olympiacos/fka-2018-19-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2018-19-away-kit-19650.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2018-19-away-kit-19650/",
+   "seasonLabel": "2018/19",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Chest band",
+   "colors": "White / Red",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.834,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#e0dfe5",
+    "#e8e7ec",
+    "#ededf1",
+    "#b35a5c"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Chest band",
+    "sleeves": {
+     "colour": "white",
+     "hex": "#e0e0e6",
+     "relation": "matches-body",
+     "delta": 15
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#a95658",
+     "relation": "contrast",
+     "delta": 218
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#eae8ed"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 25526,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2018-19-gk-1",
+   "file": "olympiacos/fka-2018-19-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2018-19-gk-1-kit-76362.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2018-19-gk-1-kit-76362/",
+   "seasonLabel": "2018/19",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Hoops",
+   "colors": "Sky blue / Blue",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.877,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#0681b6",
+    "#01619b",
+    "#1f9bc7"
+   ],
+   "parts": {
+    "base": [
+     "Sky blue",
+     "Blue"
+    ],
+    "pattern": "Hoops",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#0288be",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "collar": {
+     "colour": "blue",
+     "hex": "#0366a2",
+     "relation": "matches-body",
+     "delta": 22
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#0278ae"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 51294,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2018-19-gk-2",
+   "file": "olympiacos/fka-2018-19-gk-2.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2018-19-gk-2-kit-72260.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2018-19-gk-2-kit-72260/",
+   "seasonLabel": "2018/19",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 2",
+   "design": "Hoops",
+   "colors": "Orange / Navy",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.903,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#f2721e",
+    "#f45526",
+    "#f68a3c",
+    "#d64a1e"
+   ],
+   "parts": {
+    "base": [
+     "Orange",
+     "Navy"
+    ],
+    "pattern": "Hoops",
+    "sleeves": {
+     "colour": "orange",
+     "hex": "#f07109",
+     "relation": "contrast",
+     "delta": 48
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#be3505",
+     "relation": "contrast",
+     "delta": 81
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "orange",
+     "hex": "#fa5730"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 51632,
+   "yellowPx": 1,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2018-19-home",
+   "file": "olympiacos/fka-2018-19-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2018-19-home-kit-17292.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2018-19-home-kit-17292/",
+   "seasonLabel": "2018/19",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White / Gold",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.628,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c22b2f",
+    "#ba1e21",
+    "#9d1114",
+    "#d7adac"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White",
+     "Gold"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#c62b2e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 47924,
+   "yellowPx": 22,
+   "yellowPct": 0.011
+  },
+  {
+   "slug": "fka-2018-19-third",
+   "file": "olympiacos/fka-2018-19-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2018-19-third-kit-19648.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2018-19-third-kit-19648/",
+   "seasonLabel": "2018/19",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Checkers",
+   "colors": "Navy / White",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.84,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#26283e",
+    "#252334",
+    "#191c2a",
+    "#675c6b"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "White"
+    ],
+    "pattern": "Checkers",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#212333",
+     "relation": "matches-body",
+     "delta": 10
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#181c27",
+     "relation": "matches-body",
+     "delta": 26
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#26283a"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 46080,
+   "yellowPx": 2,
+   "yellowPct": 0.001
+  },
+  {
    "slug": "fka-2019-20-away",
    "file": "olympiacos/fka-2019-20-away.webp",
    "source": "fka",
@@ -2738,8 +8925,304 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-2019-20-gk-1",
+   "file": "olympiacos/fka-2019-20-gk-1.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2019-20-gk-1-kit-72230.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2019-20-gk-1-kit-72230/",
+   "seasonLabel": "2019/20",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 1",
+   "design": "Graphic",
+   "colors": "Sky blue",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.917,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#32accd",
+    "#42b9d9",
+    "#6bcae2",
+    "#4087a4"
+   ],
+   "parts": {
+    "base": [
+     "Sky blue"
+    ],
+    "pattern": "Graphic",
+    "sleeves": {
+     "colour": "sky blue",
+     "hex": "#33a8ca",
+     "relation": "contrast",
+     "delta": 37
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#4c90a8",
+     "relation": "contrast",
+     "delta": 59
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "sky blue",
+     "hex": "#53b7d4"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 104698,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2019-20-gk-2",
+   "file": "olympiacos/fka-2019-20-gk-2.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2019-20-gk-2-kit-77268.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2019-20-gk-2-kit-77268/",
+   "seasonLabel": "2019/20",
+   "seasonAmbiguous": false,
+   "variant": "gk",
+   "typeRaw": "GK 2",
+   "design": "Graphic",
+   "colors": "Orange / White",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.891,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#ee624d",
+    "#ed4533",
+    "#eb1b17",
+    "#ed9280"
+   ],
+   "parts": {
+    "base": [
+     "Orange",
+     "White"
+    ],
+    "pattern": "Graphic",
+    "sleeves": {
+     "colour": "orange",
+     "hex": "#ee5440",
+     "relation": "matches-body",
+     "delta": 3
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#e3bbbb",
+     "relation": "contrast",
+     "delta": 164
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "orange",
+     "hex": "#f0523e"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 123780,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2019-20-home",
+   "file": "olympiacos/fka-2019-20-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2019-20-home-kit-15087.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2019-20-home-kit-15087/",
+   "seasonLabel": "2019/20",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "White / Red",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.609,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#c82324",
+    "#e9e8eb",
+    "#b61a1c",
+    "#c66668"
+   ],
+   "parts": {
+    "base": [
+     "White",
+     "Red"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#c52526"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 42618,
+   "yellowPx": 6,
+   "yellowPct": 0.003
+  },
+  {
+   "slug": "fka-2019-20-third",
+   "file": "olympiacos/fka-2019-20-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2019-20-third-kit-15089.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2019-20-third-kit-15089/",
+   "seasonLabel": "2019/20",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Chest band",
+   "colors": "Blue / White / Navy",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.837,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#32438d",
+    "#283270",
+    "#5d619b",
+    "#3b3b79"
+   ],
+   "parts": {
+    "base": [
+     "Blue",
+     "White",
+     "Navy"
+    ],
+    "pattern": "Chest band",
+    "sleeves": {
+     "colour": "purple",
+     "hex": "#323d82",
+     "relation": "matches-body",
+     "delta": 17
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#22245b",
+     "relation": "contrast",
+     "delta": 65
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#324690"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 33498,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
    "slug": "fka-2020-21-away",
    "file": "olympiacos/fka-2020-21-away.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2020-21-away-kit-14883.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2020-21-away-kit-14883/",
+   "seasonLabel": "2020/21",
+   "seasonAmbiguous": false,
+   "variant": "away",
+   "typeRaw": "Away",
+   "design": "Graphic",
+   "colors": "Sky blue / Navy / Orange",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.859,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#2077a1",
+    "#164266",
+    "#244d70",
+    "#3c91b5"
+   ],
+   "parts": {
+    "base": [
+     "Sky blue",
+     "Navy",
+     "Orange"
+    ],
+    "pattern": "Graphic",
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#1c80aa",
+     "relation": "matches-body",
+     "delta": 15
+    },
+    "collar": {
+     "colour": "blue",
+     "hex": "#17648b",
+     "relation": "matches-body",
+     "delta": 27
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#1b769f"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 59816,
+   "yellowPx": 0,
+   "yellowPct": 0.0
+  },
+  {
+   "slug": "fka-2020-21-away-191250",
+   "file": "olympiacos/fka-2020-21-away-191250.webp",
    "source": "fka",
    "sourceFile": "olympiacos-fc-2020-21-european-away-kit-191250.jpg",
    "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2020-21-european-away-kit-191250/",
@@ -2798,6 +9281,180 @@
    "bytes": 40746,
    "yellowPx": 36,
    "yellowPct": 0.015
+  },
+  {
+   "slug": "fka-2020-21-third",
+   "file": "olympiacos/fka-2020-21-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2020-21-european-third-kit-191249.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2020-21-european-third-kit-191249/",
+   "seasonLabel": "2020/21",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "European Third",
+   "design": "Graphic",
+   "colors": "Navy / White",
+   "manufacturer": "adidas",
+   "sponsor": "Iroes",
+   "competitions": "Template",
+   "photoCredit": null,
+   "solidity": 0.89,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#0f254a",
+    "#122040",
+    "#0c1b3a",
+    "#758096"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "White"
+    ],
+    "pattern": "Graphic",
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#0a2249",
+     "relation": "matches-body",
+     "delta": 11
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#e8ecf2",
+     "relation": "contrast",
+     "delta": 337
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Iroes",
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#142547"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 48328,
+   "yellowPx": 2,
+   "yellowPct": 0.001
+  },
+  {
+   "slug": "fka-2020-21-home",
+   "file": "olympiacos/fka-2020-21-home.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2020-21-home-kit-14882.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2020-21-home-kit-14882/",
+   "seasonLabel": "2020/21",
+   "seasonAmbiguous": false,
+   "variant": "home",
+   "typeRaw": "Home",
+   "design": "Stripes",
+   "colors": "Red / White / Gold",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.587,
+   "cutQuality": "review",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#d73336",
+    "#cc2124",
+    "#dca1a1",
+    "#990f14"
+   ],
+   "parts": {
+    "base": [
+     "Red",
+     "White",
+     "Gold"
+    ],
+    "pattern": "Stripes",
+    "sleeves": null,
+    "collar": null,
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#df3436"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": false,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 45080,
+   "yellowPx": 109,
+   "yellowPct": 0.059
+  },
+  {
+   "slug": "fka-2020-21-third-14884",
+   "file": "olympiacos/fka-2020-21-third-14884.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2020-21-third-kit-14884.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2020-21-third-kit-14884/",
+   "seasonLabel": "2020/21",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Third",
+   "design": "Graphic",
+   "colors": "Navy / White",
+   "manufacturer": "adidas",
+   "sponsor": "Stoiximan",
+   "competitions": "Template",
+   "photoCredit": "redstore.gr",
+   "solidity": 0.854,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#272838",
+    "#252531",
+    "#72707b",
+    "#1f1e29"
+   ],
+   "parts": {
+    "base": [
+     "Navy",
+     "White"
+    ],
+    "pattern": "Graphic",
+    "sleeves": {
+     "colour": "black",
+     "hex": "#242535",
+     "relation": "matches-body",
+     "delta": 6
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#edeaed",
+     "relation": "contrast",
+     "delta": 330
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Stoiximan",
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#282838"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 30440,
+   "yellowPx": 0,
+   "yellowPct": 0.0
   },
   {
    "slug": "fka-2021-22-away",
@@ -2922,6 +9579,67 @@
    "yellowPct": 0.0
   },
   {
+   "slug": "fka-2021-22-third",
+   "file": "olympiacos/fka-2021-22-third.webp",
+   "source": "fka",
+   "sourceFile": "olympiacos-fc-2021-22-europa-league-third-kit-180174.jpg",
+   "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2021-22-europa-league-third-kit-180174/",
+   "seasonLabel": "2021/22",
+   "seasonAmbiguous": false,
+   "variant": "third",
+   "typeRaw": "Europa League Third",
+   "design": "Graphic",
+   "colors": "Gray / White",
+   "manufacturer": "adidas",
+   "sponsor": "Iroes",
+   "competitions": "Europa League",
+   "photoCredit": "www.matchwornshirt.com",
+   "solidity": 0.844,
+   "cutQuality": "ok",
+   "skinRatio": 0.0,
+   "photoKind": "flat",
+   "palette": [
+    "#b4b7b2",
+    "#c7cbc6",
+    "#bcc0bb",
+    "#a1928d"
+   ],
+   "parts": {
+    "base": [
+     "Gray",
+     "White"
+    ],
+    "pattern": "Graphic",
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#b6bbb7",
+     "relation": "matches-body",
+     "delta": 26
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#b2b6b1",
+     "relation": "contrast",
+     "delta": 35
+    },
+    "crest": "club-crest",
+    "maker": "adidas",
+    "sponsor": "Iroes",
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#c7cac4"
+    }
+   },
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
+   "usableInApp": true,
+   "sport": "football",
+   "confidence": 2,
+   "bytes": 37602,
+   "yellowPx": 56,
+   "yellowPct": 0.021
+  },
+  {
    "slug": "fka-2021-22-home",
    "file": "olympiacos/fka-2021-22-home.webp",
    "source": "fka",
@@ -2973,8 +9691,8 @@
    "yellowPct": 0.0
   },
   {
-   "slug": "fka-2021-22-third",
-   "file": "olympiacos/fka-2021-22-third.webp",
+   "slug": "fka-2021-22-third-40916",
+   "file": "olympiacos/fka-2021-22-third-40916.webp",
    "source": "fka",
    "sourceFile": "olympiacos-fc-2021-22-third-kit-40916.jpg",
    "sourcePage": "https://www.footballkitarchive.com/olympiacos-fc-2021-22-third-kit-40916/",
@@ -3176,7 +9894,7 @@
    "solidity": 0.708,
    "cutQuality": "review",
    "skinRatio": 0.0,
-   "photoKind": "flat",
+   "photoKind": "worn",
    "palette": [
     "#361513",
     "#431b18",

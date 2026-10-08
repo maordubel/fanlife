@@ -34,3 +34,9 @@ Hapoel Petah Tikva, Olympiacos, Panathinaikos, Zrinjski Mostar (Hapoel TA = THE 
 - footballkitarchive rate-limits (429) after ~80 kit pages in a session: one worker, 1.5s gap, backoff, and save progress to a `window.__skip` list. The zip is only produced at the end of a run, so a stalled run loses everything — collect in batches of <=60 kits.
 - Status: Zrinjski 68/68 complete. Olympiacos 79 of 195 collected (116 pending, 429). Panathinaikos and Hapoel Petah Tikva not yet collected. Hapoel Tel Aviv lives in THE WORKER (`public/kits/`, 168).
 - Old-era (pre-1982) photos are often players wearing the shirt: list them in `--worn`; they stay out of the games.
+
+## Update 8.10.2026 (complete)
+- All four clubs complete: Zrinjski 68, Hapoel PT 100, Panathinaikos 183, Olympiacos 195 (collected in 3 batches of ~40 — a batch finishes in ~4 min with no 429; one long run stalls and loses everything).
+- Owner decision: no second publisher needed for kits. `scripts/kits/make-club-wave.py <club>` writes `club-packs/<club>/wave-kits-photos-<date>.json` as approved (confidence 2, approvedBy owner), with sponsor, palette, photo and parts; wire it in `lib/clubs/resolver.ts`.
+- `scripts/kits/decompose-club-kits.py <club>` measures body/sleeves/collar on the decoded cut-out and writes them into `parts`; KitPlate paints contrast sleeves/collar; the Rumble wardrobe carries `parts`. Nameset stays null (back of the shirt is not in front photos).
+- Order for a new club: collect → ingest (set `--worn`/patch manifest from the contact sheet) → decompose → make-club-wave → resolver import + kitArchive.ts → provenance row → tests.
