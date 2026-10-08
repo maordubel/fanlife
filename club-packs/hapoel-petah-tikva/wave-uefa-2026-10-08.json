@@ -1,0 +1,185 @@
+{
+ "sources": [
+  {
+   "id": "uefa-m-51815",
+   "title": "UEFA match centre — official match record 51815",
+   "url": "https://match.uefa.com/v5/matches?matchId=51815",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "wp-1995-uefa-intertoto-cup",
+   "title": "Wikipedia — 1995 UEFA Intertoto Cup",
+   "url": "https://en.wikipedia.org/wiki/1995_UEFA_Intertoto_Cup",
+   "publisher": "Wikimedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "uefa-m-51817",
+   "title": "UEFA match centre — official match record 51817",
+   "url": "https://match.uefa.com/v5/matches?matchId=51817",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "uefa-m-51819",
+   "title": "UEFA match centre — official match record 51819",
+   "url": "https://match.uefa.com/v5/matches?matchId=51819",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "uefa-m-51822",
+   "title": "UEFA match centre — official match record 51822",
+   "url": "https://match.uefa.com/v5/matches?matchId=51822",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "uefa-m-64923",
+   "title": "UEFA match centre — official match record 64923",
+   "url": "https://match.uefa.com/v5/matches?matchId=64923",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "wp-2000-uefa-intertoto-cup",
+   "title": "Wikipedia — 2000 UEFA Intertoto Cup",
+   "url": "https://en.wikipedia.org/wiki/2000_UEFA_Intertoto_Cup",
+   "publisher": "Wikimedia",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  }
+ ],
+ "players": [],
+ "mysteries": [],
+ "archive": [
+  {
+   "id": "uefa-ev-51815",
+   "value": {
+    "name": "Gençlerbirliği 4–0 Hapoel Petah Tikva",
+    "on": "1995-06-25",
+    "precision": "day",
+    "year": 1995,
+    "hint": "UEFA Intertoto Cup, group matches",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-m-51815",
+    "wp-1995-uefa-intertoto-cup"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, venue side and score agree between the UEFA match record and the Wikipedia match box."
+  },
+  {
+   "id": "uefa-ev-51817",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–1 Floriana",
+    "on": "1995-07-01",
+    "precision": "day",
+    "year": 1995,
+    "hint": "UEFA Intertoto Cup, group matches",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-m-51817",
+    "wp-1995-uefa-intertoto-cup"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, venue side and score agree between the UEFA match record and the Wikipedia match box."
+  },
+  {
+   "id": "uefa-ev-51819",
+   "value": {
+    "name": "Wacker Innsbruck 2–0 Hapoel Petah Tikva",
+    "on": "1995-07-08",
+    "precision": "day",
+    "year": 1995,
+    "hint": "UEFA Intertoto Cup, group matches",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-m-51819",
+    "wp-1995-uefa-intertoto-cup"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, venue side and score agree between the UEFA match record and the Wikipedia match box."
+  },
+  {
+   "id": "uefa-ev-51822",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Strasbourg",
+    "on": "1995-07-22",
+    "precision": "day",
+    "year": 1995,
+    "hint": "UEFA Intertoto Cup, group matches",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-m-51822",
+    "wp-1995-uefa-intertoto-cup"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, venue side and score agree between the UEFA match record and the Wikipedia match box."
+  },
+  {
+   "id": "uefa-ev-64923",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–1 LASK",
+    "on": "2000-06-24",
+    "precision": "day",
+    "year": 2000,
+    "hint": "UEFA Intertoto Cup, first round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "uefa-m-64923",
+    "wp-2000-uefa-intertoto-cup"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-10-08",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "automated:cross-source-review-hapoel-petah-tikva-2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, venue side and score agree between the UEFA match record and the Wikipedia match box."
+  }
+ ],
+ "kits": []
+}
