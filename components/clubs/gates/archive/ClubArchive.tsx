@@ -165,7 +165,7 @@ function TodayPanel({day,today,browse,setBrowse,ix,t,locale,card,entriesCount,on
     <h2 className={css.bigDate}>{browsing?label:`${t('ar.today.title')} · ${label}`}</h2></div>
    <button type="button" className={css.step} aria-label={t('ar.today.next')} onClick={()=>setBrowse(shiftDay(day,1))}><span aria-hidden="true" className={css.arrow}>›</span></button>
   </div>
-  {browsing&&<button type="button" className={css.linkBtn} onClick={()=>setBrowse(null)}>{t('ar.today.reset')}</button>}
+  {browsing&&<button type="button" className={`${css.linkBtn} min-h-tap`} onClick={()=>setBrowse(null)}>{t('ar.today.reset')}</button>}
   {list.length>0?<>
    <p className={css.count} role="status">{t('ar.today.count',{n:list.length})}{list.length>1&&<span className={css.pos}> · {t('ar.today.pos',{n:pos+1,total:list.length})}</span>}</p>
    <ul ref={deckRef} className={css.deck} aria-label={t('ar.today.deck',{date:label})} data-count={list.length}
@@ -177,7 +177,7 @@ function TodayPanel({day,today,browse,setBrowse,ix,t,locale,card,entriesCount,on
    <p className={css.fine}>{entriesCount?t('ar.today.noneNote'):''}</p>
    {near.length>0&&<><p className={css.kicker}>{t('ar.today.nearest')}</p>
     <div className={css.chips}>{near.map(n=><button key={n.key} type="button" className={css.chip} onClick={()=>setBrowse(n.key)}>{t('ar.today.nearestDay',{date:keyLabel(n.key,locale),n:n.count})}</button>)}</div></>}
-   {!near.length&&<button type="button" className={css.tool} onClick={()=>onJumpTab('time')}>{t('ar.tab.time')}</button>}
+   {!near.length&&<button type="button" className={`${css.tool} min-h-tap`} onClick={()=>onJumpTab('time')}>{t('ar.tab.time')}</button>}
   </div>}
   {!list.length&&nextList.length>0&&<>
    <p className={css.count} role="status">{t('ar.today.nextOnFile',{date:keyLabel(near[0]!.key,locale,true)})}</p>
@@ -202,7 +202,7 @@ function TimePanel({entries,decade,setDecade,filter,setFilter,shown,setShown,t,c
   {!list.length&&<p className={css.fine}>{t('ar.time.empty')}</p>}
   {vMoments.length>0&&<ul className={css.list}>{vMoments.map(e=>card(e))}</ul>}
   {vPeople.length>0&&<><h3 className={css.subTitle}>{t('ar.time.players')} · {people.length}</h3><ul className={css.list}>{vPeople.map(e=>card(e))}</ul></>}
-  {list.length>shown&&<button type="button" className={css.tool} onClick={()=>setShown(shown+PAGE)}>{t('ar.sheet.more',{n:Math.min(PAGE,list.length-shown)})}</button>}
+  {list.length>shown&&<button type="button" className={`${css.tool} min-h-tap`} onClick={()=>setShown(shown+PAGE)}>{t('ar.sheet.more',{n:Math.min(PAGE,list.length-shown)})}</button>}
  </div>
 }
 
@@ -217,7 +217,7 @@ function SearchPanel({entries,q,setQ,filter,setFilter,shown,setShown,t,card}:{en
   <Filters filter={filter} setFilter={setFilter} t={t} onChange={()=>setShown(PAGE)}/>
   <p className={css.count} role="status">{has?(hits.length?t('ar.search.count',{n:hits.length,q:deferred.trim()}):t('ar.search.none',{q:deferred.trim()})):t('ar.search.start')}</p>
   {hits.length>0&&<ul className={css.list}>{hits.slice(0,shown).map(e=>card(e))}</ul>}
-  {hits.length>shown&&<button type="button" className={css.tool} onClick={()=>setShown(shown+PAGE)}>{t('ar.sheet.more',{n:Math.min(PAGE,hits.length-shown)})}</button>}
+  {hits.length>shown&&<button type="button" className={`${css.tool} min-h-tap`} onClick={()=>setShown(shown+PAGE)}>{t('ar.sheet.more',{n:Math.min(PAGE,hits.length-shown)})}</button>}
  </div>
 }
 
@@ -233,11 +233,11 @@ function MinePanel({club,byId,savedIds:saved,trail,beenTick,t,card,onOpen}:{club
    {savedEntries.length?<ul className={css.list}>{savedEntries.map(e=>card(e))}</ul>:<p className={css.fine}>{t('ar.mine.savedEmpty')}</p>}</section>
   <section className={css.mineGroup}><h3 className={css.subTitle}>{t('ar.mine.been')} · {been.length}</h3>
    {been.length?<ul className={css.beenList}>{been.map(b=>{const id=b.key.slice(club.length+1),e=byId.get(id);return <li key={b.key}>{e
-    ?<button type="button" className={css.mini} onClick={()=>onOpen(id)}><span className={css.miniDate}>{b.on??''}</span><span>{b.label}</span></button>
-    :<span className={css.mini} data-static="true"><span className={css.miniDate}>{b.on??''}</span><span>{b.label}</span></span>}</li>})}</ul>:<p className={css.fine}>{t('ar.mine.beenEmpty')}</p>}
+    ?<button type="button" className={`${css.mini} min-h-tap`} onClick={()=>onOpen(id)}><span className={css.miniDate}>{b.on??''}</span><span>{b.label}</span></button>
+    :<span className={`${css.mini} min-h-tap`} data-static="true"><span className={css.miniDate}>{b.on??''}</span><span>{b.label}</span></span>}</li>})}</ul>:<p className={css.fine}>{t('ar.mine.beenEmpty')}</p>}
    <p className={css.fine}>{t('ar.mine.beenNote')}</p></section>
   <section className={css.mineGroup}><h3 className={css.subTitle}>{t('ar.mine.trail')} · {new Set(trail).size}</h3>
-   {trail.length?<ol className={css.trailList}>{trail.map((id,i)=>{const e=byId.get(id);return e&&<li key={id}><button type="button" className={css.mini} data-n="true" onClick={()=>onOpen(id)}><span className={css.miniDate}>{i+1}</span><span>{e.title}</span></button></li>})}</ol>:<p className={css.fine}>{t('ar.mine.trailEmpty')}</p>}</section>
+   {trail.length?<ol className={css.trailList}>{trail.map((id,i)=>{const e=byId.get(id);return e&&<li key={id}><button type="button" className={`${css.mini} min-h-tap`} data-n="true" onClick={()=>onOpen(id)}><span className={css.miniDate}>{i+1}</span><span>{e.title}</span></button></li>})}</ol>:<p className={css.fine}>{t('ar.mine.trailEmpty')}</p>}</section>
   <p className={css.fine}>{t('ar.mine.device')}</p>
  </div>
 }

@@ -76,11 +76,11 @@ export function ResultCard({run,mode,player,wardrobe,contentLocale,club,locale,v
    <p className={css.status} role="status">{notice}</p>
    <div className={css.dockRow}>
     <ShareComposer label={t('bc.share')} draft={blindCowShare(club,{clues:run.shown,total:run.total,wrong:run.wrong,solved,seconds:solved?r.weightedTimeMs/1000:null,forbidden:[r.name,r.playerId]})}/>
-    {onChallenge&&<button type="button" className={css.btn} onClick={onChallenge}>{t('bc.share.challenge')}</button>}
+    {onChallenge&&<button type="button" className={`${css.btn} min-h-tap`} onClick={onChallenge}>{t('bc.share.challenge')}</button>}
    </div>
    <div className={css.dockRow}>
-    {onAgain&&<button type="button" className={css.btn} disabled={pending} onClick={onAgain} data-testid="mystery-again">{mode==='solo'?t('bc.res.again'):t('bc.res.practice')}</button>}
-    <button type="button" className={css.btn} onClick={onLobby}>{t('bc.res.lobby')}</button>
+    {onAgain&&<button type="button" className={`${css.btn} min-h-tap`} disabled={pending} onClick={onAgain} data-testid="mystery-again">{mode==='solo'?t('bc.res.again'):t('bc.res.practice')}</button>}
+    <button type="button" className={`${css.btn} min-h-tap`} onClick={onLobby}>{t('bc.res.lobby')}</button>
    </div>
   </div>
  </article>

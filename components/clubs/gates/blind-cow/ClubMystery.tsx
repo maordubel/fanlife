@@ -123,7 +123,7 @@ export function ClubMystery(props:ClubMysteryProps){
 
  return <section className={css.stage} data-testid="mystery-board" data-screen={screen} data-mode={play.mode}>
   {!online&&<p className={css.error} role="status" data-testid="mystery-offline">{t('bc.offline')}</p>}
-  {error&&<div className={css.error} role="alert" data-testid="mystery-error"><p>{t('bc.error')}</p><div className={css.dockRow}>{screen==='run'&&<button type="button" className={css.btn} disabled={pending} onClick={()=>void resync()}>{t('bc.retry')}</button>}<button type="button" className={css.btn} onClick={toLobby}>{t('bc.res.lobby')}</button></div></div>}
+  {error&&<div className={css.error} role="alert" data-testid="mystery-error"><p>{t('bc.error')}</p><div className={css.dockRow}>{screen==='run'&&<button type="button" className={`${css.btn} min-h-tap`} disabled={pending} onClick={()=>void resync()}>{t('bc.retry')}</button>}<button type="button" className={`${css.btn} min-h-tap`} onClick={toLobby}>{t('bc.res.lobby')}</button></div></div>}
   {screen==='lobby'
    ?<Lobby {...{t,lobby,history,challenge,clubName,pending,contentLocale}} onOpen={open} onDaily={()=>void begin({mode:'daily',tag:lobby.daily.day})} onSolo={()=>void begin({mode:'solo',tag:''},{fresh:!lobby.solo})} onSoloNew={()=>void begin({mode:'solo',tag:''},{fresh:true})} onDuelResume={()=>lobby.duel&&void begin({mode:'duel',tag:String(lobby.duel.seed)})} onAccept={()=>challenge&&void begin({mode:'duel',tag:String(challenge.seed)})}/>
    :run&&(run.status==='playing'||!run.result
@@ -135,7 +135,7 @@ export function ClubMystery(props:ClubMysteryProps){
    <ol className={css.howto}>{[1,2,3,4].map(i=><li key={i}><span aria-hidden="true">{i}</span><span>{t(`bc.howto.${i}`)}</span></li>)}</ol>
    <p className={css.fine}>{t('bc.share.noName')}</p>
   </SlideSheet>
-  <SlideSheet open={sheet==='duel'} onClose={closeSheet} title={t('bc.duel.sheet')} closeLabel={copy['play.close']} footer={<button type="button" className={`${css.btn} ${css.primary} ${css.wide}`} disabled={pending} onClick={startChallenge} data-testid="mystery-duel-start">{t('bc.duel.start')}</button>}>
+  <SlideSheet open={sheet==='duel'} onClose={closeSheet} title={t('bc.duel.sheet')} closeLabel={copy['play.close']} footer={<button type="button" className={`${css.btn} ${css.primary} ${css.wide} min-h-tap`} disabled={pending} onClick={startChallenge} data-testid="mystery-duel-start">{t('bc.duel.start')}</button>}>
    <p className={css.sheetText}>{t('bc.duel.sub')}</p><p className={css.fine}>{t('bc.duel.note')}</p>
   </SlideSheet>
  </section>
@@ -164,20 +164,20 @@ function Lobby({t,lobby,history,challenge,clubName,pending,onOpen,onDaily,onSolo
    </p>
    <p className={css.costs} data-testid="mystery-costs">{t('bc.costs',{clue:15,wrong:5})}</p>
   </div>
-  {!m.practice.open?<div className={css.entries}><p className={css.locked} role="status" data-testid="mystery-empty" data-blockers={codes(m.practice)}>{t('bc.empty')}</p><button type="button" className={css.help} onClick={onOpen('howto')}>{t('bc.help')}</button></div>
+  {!m.practice.open?<div className={css.entries}><p className={css.locked} role="status" data-testid="mystery-empty" data-blockers={codes(m.practice)}>{t('bc.empty')}</p><button type="button" className={`${css.help} min-h-tap`} onClick={onOpen('howto')}>{t('bc.help')}</button></div>
   :<div className={css.entries}>
-   {challenge&&comp&&<button type="button" className={`${css.entry} ${css.challenge}`} disabled={pending} onClick={mine&&lobby.duel?.status==='playing'?onDuelResume:onAccept} data-testid="mystery-accept">
+   {challenge&&comp&&<button type="button" className={`${css.entry} ${css.challenge} min-h-tap`} disabled={pending} onClick={mine&&lobby.duel?.status==='playing'?onDuelResume:onAccept} data-testid="mystery-accept">
     <span className={css.entryTitle}>{t('bc.duel.banner')}</span>
     <span className={css.entrySub}>{challenge.solved&&challenge.weightedMs!==null&&challenge.clues!==null?t('bc.duel.beat',{time:secondsLabel(challenge.weightedMs),clues:challenge.clues}):challenge.clues!==null?t('bc.duel.beatMiss'):t('bc.duel.beatOpen')}</span>
     <span className={css.entryGo}>{mine?(lobby.duel?.status==='playing'?t('bc.duel.resume'):t('bc.duel.seen')):t('bc.duel.accept')}</span>
    </button>}
-   {lobby.solo&&<button type="button" className={`${css.entry} ${css.resume}`} disabled={pending} onClick={onSolo} data-testid="mystery-resume">
+   {lobby.solo&&<button type="button" className={`${css.entry} ${css.resume} min-h-tap`} disabled={pending} onClick={onSolo} data-testid="mystery-resume">
     <span className={css.entryTitle}>{t('bc.solo.title')}</span>
     <span className={css.entrySub}>{t('bc.solo.resume',{n:lobby.solo.shown,total:lobby.solo.total})}</span>
     <span className={css.entryGo}>▶</span>
    </button>}
    {comp
-    ?<button type="button" className={css.entry} disabled={pending} onClick={onDaily} data-testid="mystery-daily" data-status={d.status}>
+    ?<button type="button" className={`${css.entry} min-h-tap`} disabled={pending} onClick={onDaily} data-testid="mystery-daily" data-status={d.status}>
      <span className={css.entryTitle}>{t('bc.daily.title')}<small>{d.day}</small></span>
      <span className={css.entrySub}>{dailySub}</span>
      <span className={css.entryGo}>{dailyGo}</span>
@@ -188,15 +188,15 @@ function Lobby({t,lobby,history,challenge,clubName,pending,onOpen,onDaily,onSolo
      <span className={css.entryGo}>{t('bc.locked')}</span>
     </div>}
    {lobby.solo
-    ?<button type="button" className={css.entry} disabled={pending} onClick={onSoloNew} data-testid="mystery-new"><span className={css.entryTitle}>{t('bc.solo.title')}</span><span className={css.entrySub}>{exploration?t('bc.solo.explore'):t('bc.solo.sub')}</span><span className={css.entryGo}>{t('bc.solo.new')}</span></button>
-    :<button type="button" className={css.entry} disabled={pending} onClick={onSolo} data-testid="mystery-start"><span className={css.entryTitle}>{t('bc.solo.title')}</span><span className={css.entrySub}>{exploration?t('bc.solo.explore'):t('bc.solo.sub')}</span><span className={css.entryGo}>{t('bc.solo.play')}</span></button>}
+    ?<button type="button" className={`${css.entry} min-h-tap`} disabled={pending} onClick={onSoloNew} data-testid="mystery-new"><span className={css.entryTitle}>{t('bc.solo.title')}</span><span className={css.entrySub}>{exploration?t('bc.solo.explore'):t('bc.solo.sub')}</span><span className={css.entryGo}>{t('bc.solo.new')}</span></button>
+    :<button type="button" className={`${css.entry} min-h-tap`} disabled={pending} onClick={onSolo} data-testid="mystery-start"><span className={css.entryTitle}>{t('bc.solo.title')}</span><span className={css.entrySub}>{exploration?t('bc.solo.explore'):t('bc.solo.sub')}</span><span className={css.entryGo}>{t('bc.solo.play')}</span></button>}
    {!challenge&&(comp
-    ?<button type="button" className={css.entry} disabled={pending} onClick={lobby.duel?.status==='playing'?onDuelResume:onOpen('duel')} data-testid="mystery-duel">
+    ?<button type="button" className={`${css.entry} min-h-tap`} disabled={pending} onClick={lobby.duel?.status==='playing'?onDuelResume:onOpen('duel')} data-testid="mystery-duel">
      <span className={css.entryTitle}>{t('bc.duel.title')}</span><span className={css.entrySub}>{t('bc.duel.sub')}</span><span className={css.entryGo}>{lobby.duel?.status==='playing'?t('bc.duel.resume'):t('bc.duel.start')}</span></button>
     :<div className={`${css.entry} ${css.entryLocked}`} data-testid="mystery-duel-locked" data-blockers={codes(m.duel)} aria-disabled="true">
      <span className={css.entryTitle}>{t('bc.duel.title')}</span><span className={css.entrySub}>{t('bc.locked.sub')}</span><span className={css.entryGo}>{t('bc.locked')}</span></div>)}
    {challenge&&!comp&&<p className={css.locked} role="status" data-testid="mystery-accept-locked" data-blockers={codes(m.duel)}>{t('bc.duel.unavailable')}</p>}
-   <button type="button" className={css.help} onClick={onOpen('howto')}>{t('bc.help')}</button>
+   <button type="button" className={`${css.help} min-h-tap`} onClick={onOpen('howto')}>{t('bc.help')}</button>
   </div>}
  </div>
 }
@@ -238,12 +238,12 @@ function RunBoard({t,run,play,fresh,pending,sure,pen,limitMs,onExpire,onReveal,o
     <span className={css.cardNo} aria-hidden="true">{c.n}</span>
     <span className={css.cardBody}><small>{c.label}{newest&&run.shown>1&&<em>{t('bc.new')}</em>}</small><span dir="auto">{c.value}</span></span></li>})}
    {more
-    ?<li className={css.sealedItem}><button type="button" className={css.sealed} disabled={pending} onClick={onReveal} data-testid="mystery-reveal"><span className={css.cardNo} aria-hidden="true">{run.shown+1}</span><span className={css.sealedText}><b>{t('bc.sealed',{n:run.shown+1})}</b><small>{t('bc.sealed.cost',{s:pen.clue})}</small></span></button></li>
+    ?<li className={css.sealedItem}><button type="button" className={`${css.sealed} min-h-tap`} disabled={pending} onClick={onReveal} data-testid="mystery-reveal"><span className={css.cardNo} aria-hidden="true">{run.shown+1}</span><span className={css.sealedText}><b>{t('bc.sealed',{n:run.shown+1})}</b><small>{t('bc.sealed.cost',{s:pen.clue})}</small></span></button></li>
     :<li className={css.lastNote}>{t('bc.sealed.none')}</li>}
   </ol>
   <div className={css.dock}>
-   <button type="button" className={`${css.btn} ${css.primary} ${css.big}`} disabled={pending} onClick={e=>{onFocusOpener(e);onGuess()}} data-testid="mystery-guess">{t('bc.guess')}</button>
-   <button type="button" className={css.giveup} data-sure={sure} disabled={pending} onClick={e=>{firePickFxAt(e.currentTarget,{tone:'ink',haptic:false});onGiveUp()}} data-testid="mystery-giveup">{sure?t('bc.giveup.sure'):t('bc.giveup')}</button>
+   <button type="button" className={`${css.btn} ${css.primary} ${css.big} min-h-tap`} disabled={pending} onClick={e=>{onFocusOpener(e);onGuess()}} data-testid="mystery-guess">{t('bc.guess')}</button>
+   <button type="button" className={`${css.giveup} min-h-tap`} data-sure={sure} disabled={pending} onClick={e=>{firePickFxAt(e.currentTarget,{tone:'ink',haptic:false});onGiveUp()}} data-testid="mystery-giveup">{sure?t('bc.giveup.sure'):t('bc.giveup')}</button>
   </div>
  </div>
 }

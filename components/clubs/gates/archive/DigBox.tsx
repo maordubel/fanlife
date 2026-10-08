@@ -24,7 +24,7 @@ export function DigBox({entries,byId,seed,ctx,saved,onOpen,onToggleSave}:{entrie
  return <div className={css.dig}>
   <h2 className={css.panelTitle}>{t('ar.dig.title')}</h2>
   <p className={css.fine}>{t('ar.dig.hint')}</p>
-  <div className={css.chips} role="group" aria-label={t('ar.filter.label')}>{FILTERS.map(f=><button key={f} type="button" className={css.chip} aria-pressed={filter===f} onClick={()=>pick(f)}>{t(`ar.filter.${f}`)}</button>)}</div>
+  <div className={css.chips} role="group" aria-label={t('ar.filter.label')}>{FILTERS.map(f=><button key={f} type="button" className={`${css.chip} min-h-tap`} aria-pressed={filter===f} onClick={()=>pick(f)}>{t(`ar.filter.${f}`)}</button>)}</div>
   <div className={css.digStage}>
    <div className={css.pulled} aria-live="polite">
     {top?<div key={top.id} className={css.pullIn}><EntryCard e={top} ctx={ctx} variant="deck" saved={saved.has(top.id)} onOpen={onOpen} onToggleSave={onToggleSave}/><p className="sr-only">{t('ar.dig.pulled',{title:top.title})}</p></div>
@@ -41,7 +41,7 @@ export function DigBox({entries,byId,seed,ctx,saved,onOpen,onToggleSave}:{entrie
   </div>
   <section className={css.tableRow} aria-label={t('ar.dig.table')}>
    <h3 className={css.subTitle}>{t('ar.dig.table')} · {table.length}</h3>
-   {table.length?<ul className={css.tableCards}>{table.map(id=>{const e=byId.get(id);return e&&<li key={id}><button type="button" className={css.tableCard} onClick={()=>onOpen(id)}>
+   {table.length?<ul className={css.tableCards}>{table.map(id=>{const e=byId.get(id);return e&&<li key={id}><button type="button" className={`${css.tableCard} min-h-tap`} onClick={()=>onOpen(id)}>
     <span>{e.on?e.on.slice(0,4):e.year??'?'}</span><b lang={ctx.contentLocale} dir="auto">{e.title}</b></button></li>})}</ul>:<p className={css.fine}>{t('ar.dig.tableEmpty')}</p>}
   </section>
  </div>
