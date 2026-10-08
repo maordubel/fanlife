@@ -2,6 +2,8 @@
 import {useMemo,useState} from 'react'
 import Link from 'next/link'
 import {BeenThere} from '@/components/fanlife/BeenThere'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {archiveShare,onThisDayShare} from '@/lib/share/v3/adapters'
 import {tr} from '@/components/clubs/rumble/shared'
 import {localizedDate,type UiLocale} from '@/lib/clubs/locale'
 import {precisionOf,type Entry} from '@/lib/clubs/entities'
@@ -23,18 +25,15 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
  const {copy,contentLocale}=ctx,t=(k:string,v?:Record<string,string|number>)=>tr(copy,k,v)
  const rel=useMemo(()=>related(entries,byId,e),[entries,byId,e])
  const deeper=useMemo(()=>nextStep(entries,byId,e,seen),[entries,byId,e,seen])
- const [notice,setNotice]=useState(''),[more,setMore]=useState<Record<string,boolean>>({})
+ const [more,setMore]=useState<Record<string,boolean>>({})
  const prec=precisionOf(e),isPlayer=e.kind==='player'
  const dateText=prec==='day'?localizedDate(e.on!,locale):prec==='year'?String(e.year):t('ar.sheet.precision.unknown')
  const posText=(e.player?.positions||[]).map(p=>(copy as Record<string,string>)[p]||p).join(' / ')
- async function share(){
-  const url=`${location.origin}/clubs/${club}/archive?${new URLSearchParams({event:e.id,lang:locale})}`
-  const text=`${e.title} — ${t('ar.sheet.sharePrefix',{club:clubName})}`
-  try{
-   if(typeof navigator.share==='function'){await navigator.share({title:e.title,text,url});setNotice(t('ar.sheet.shared'))}
-   else{await navigator.clipboard.writeText(`${text}\n${url}`);setNotice(t('ar.sheet.copied'))}
-  }catch(err){if((err as Error)?.name!=='AbortError')setNotice(t('ar.sheet.shareFail'))}
- }
+ const credit=(e.sources[0]&&sources[e.sources[0]]?.[0])||clubName
+ const shareDraft=useMemo(()=>{
+  const today=new Date(),md=`${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`
+  return e.on&&e.on.slice(5,10)===md?onThisDayShare(club,{eventId:e.id,title:e.title,on:e.on,source:credit}):archiveShare(club,{eventId:e.id,title:e.title,when:e.on?localizedDate(e.on,'en'):e.year?String(e.year):null,source:credit})
+ },[club,e,credit])
  const group=(key:string,title:string,list:Entry[])=>list.length?<section className={css.group} key={key}>
   <h3>{title}</h3>
   <ul>{(more[key]?list:list.slice(0,SHOW)).map(x=><li key={x.id}><button type="button" className={css.mini} data-entry-id={x.id} onClick={()=>onOpen(x.id)}>
@@ -67,9 +66,8 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
   <div className={css.actions}>
    {!isPlayer&&<BeenThere club={club} id={e.id} label={e.title} on={e.on||(e.year?String(e.year):null)} copy={{mark:copy.beenMark,marked:copy.beenMarked,hint:copy.beenHint}}/>}
    <button type="button" className={css.tool} aria-pressed={saved} onClick={()=>{onToggleSave(e.id)}}>{saved?t('ar.sheet.saved'):t('ar.sheet.save')}</button>
-   <button type="button" className={css.tool} onClick={share}>{t('ar.sheet.share')}</button>
+   <ShareComposer label={t('ar.sheet.share')} draft={shareDraft}/>
   </div>
-  <p className={css.fine} role="status">{notice}</p>
   {hasRelated&&<div className={css.related}>
    <h3 className={css.relatedTitle}>{t('ar.sheet.related')}</h3>
    {group('named',t('ar.sheet.named'),rel.named)}
