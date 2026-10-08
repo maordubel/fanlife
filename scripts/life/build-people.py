@@ -295,9 +295,11 @@ for i in np.where(is_head & ~lipv)[0]:
     p = P0[i]
     if p[2] < lipZ - .3: continue
     dy = p[1] - lipTop; dx = abs(p[0])
-    wid = max(lipHalf * 1.25, .24); band = np.clip(1 - abs(dy - .075) / .1, 0, 1) * np.clip(1 - (dx - wid) / .05, 0, 1)
-    if dy < -.02:  # the corners droop a little past the mouth
-        band = np.clip(1 - abs(dy + .0) / .07, 0, 1) * np.clip(1 - abs(dx - max(lipHalf * 1.25, .24)) / .05, 0, 1) * .85
+    # a full 80s moustache: wider than the mouth, thick in the middle, the ends turning down past the corners
+    wid = max(lipHalf * 1.55, .3); arch = .09 - .05 * (dx / wid) ** 2
+    band = np.clip(1 - abs(dy - arch) / .13, 0, 1) * np.clip(1 - (dx - wid) / .08, 0, 1)
+    if dy < .02 and dx > wid * .7:  # the corners droop a little past the mouth
+        band = max(band, np.clip(1 - abs(dy + .06) / .1, 0, 1) * np.clip(1 - abs(dx - wid * .92) / .08, 0, 1) * .9)
     stache[i] = int(np.clip(band * 255, 0, 255))
 
 # ---------------------------------------------------------------- skin texture bake (UV space)
