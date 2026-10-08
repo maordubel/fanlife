@@ -3,7 +3,7 @@ import {SHARE_TEMPLATES} from '@/lib/share/v3/templates'
 import {renderShare,shareCaption,SHARE_FORMATS,type ShareAssets,type ShareFormat} from '@/lib/share/v3/render'
 import {sharePalette,shareClubs,shareClub,auditColours,SHARE_PAPER} from '@/lib/share/v3/theme'
 import {contrast} from '@/lib/clubs/theme'
-import {archiveShare,blindCowShare,coverShare,kitShare,lineupShare,memoryShare,onThisDayShare,terraceShare,timelineShare,triviaShare,validateDraft,xiShare,dailyShare} from '@/lib/share/v3/adapters'
+import {archiveShare,blindCowShare,coverShare,kitShare,lineupShare,memoryShare,onThisDayShare,terraceShare,timelineShare,triviaShare,validateDraft,xiShare,dailyShare,goalShare,rumbleShare} from '@/lib/share/v3/adapters'
 import {REGISTRY} from '@/lib/master/registry'
 import {existsSync} from 'node:fs'
 
@@ -60,6 +60,8 @@ describe('adapters',()=>{
   onThisDayShare('olympiacos',{eventId:'olympiacos:e2',title:'A title',on:'1983-05-24',source:'UEFA'}),
   timelineShare('olympiacos',{...run,correct:4,total:5,marks:[true,true,false,true,true]}),
   dailyShare('olympiacos',{slug:'trivia',name:'Trivia wing'}),
+  goalShare('panathinaikos',{seed:7,points:64,max:100,forbidden:['Scorer Name']}),
+  rumbleShare('olympiacos',{seed:11,us:3,them:2,five:[{position:'GK',name:'A'},{position:'DF',name:'B'},{position:'MF',name:'C'},{position:'FW',name:'D'},{position:'FW',name:'E'}],bill:'€15M'}),
  ]
  it('every builder passes the contract and links to the club’s own host',()=>{
   for(const d of drafts){expect(validateDraft(d),d.template.id).toEqual([]);expect(new URL(d.data.link).host).toBe(`${shareClub(d.data.club)!.sub}.fanlife.dubelteam.com`)}
@@ -87,5 +89,27 @@ describe('adapters',()=>{
  })
  it('the caption carries the statement and the link, nothing the card does not',()=>{
   const d=drafts[1]!,c=shareCaption(d.template,d.data);expect(c).toContain('I remembered 9 of 12.');expect(c).toContain(d.data.link)
+ })
+ it('goal and rumble: the same deal, the five picked, the scorer never printed',()=>{
+  const g=drafts.find(d=>d.template.id==='09-goal-freeze')!,r=drafts.find(d=>d.template.id==='10-rumble-five')!
+  expect(new URL(g.data.link).searchParams.get('seed')).toBe('7');expect(g.data.main).toBe('64/100')
+  const leak={...g,data:{...g.data,statement:'Scorer Name did it'}};expect(validateDraft(leak)).toContain('spoiler')
+  expect(r.data.rows).toEqual(['GK · A','DF · B','MF · C','FW · D','FW · E']);expect(new URL(r.data.link).searchParams.get('seed')).toBe('11');expect(r.data.detail).toMatch(/simulated/)
+ })
+ it('a timeline card shows every placed mark, not the first five',()=>{
+  const t=timelineShare('olympiacos',{seed:1,cursor:0,correct:7,total:10,marks:[true,true,false,true,true,true,false,true,false,true]})
+  expect(t.data.rows).toHaveLength(10);expect(validateDraft(t)).toEqual([])
+  expect(renderShare(t.template,t.data,'story',{assets,measure}).warnings.filter(w=>/slots/.test(w))).toEqual([])
+ })
+})
+
+describe('story frame (8.10.2026)',()=>{
+ const t=SHARE_TEMPLATES[2]!,base={...t,club:'panathinaikos',link:'https://panathinaikos.fanlife.dubelteam.com/'}
+ it('keeps reading text out of the 260px Instagram bands; the person’s words are a printed quote',()=>{
+  const svg=renderShare(t,{...base,statement:'Nine from twelve, on the bus.'},'story',{assets,measure}).svg
+  const ys=[...svg.matchAll(/<text x="[\d.-]+" y="([\d.-]+)"[^>]*data-field="(headline|context|detail|cta|site)[^"]*"/g)].map(m=>Number(m[1]))
+  expect(ys.length).toBeGreaterThan(4)
+  for(const y of ys){expect(y).toBeGreaterThan(260);expect(y).toBeLessThan(1920-200)}
+  expect(svg).toContain('“');expect(svg).toContain('Nine from twelve, on the bus.')
  })
 })

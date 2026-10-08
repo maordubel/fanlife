@@ -72,7 +72,15 @@ export function onThisDayShare(clubId:string,x:{eventId:string;title:string;on:s
 }
 /** 14 — how many were placed right; anonymous ticks, no dates */
 export function timelineShare(clubId:string,r:Run&{correct:number;total:number;marks:boolean[]}){
- return draft('14-timeline-strip',clubId,'timeline','same-run',{main:`${r.correct}/${r.total}`,rows:r.marks.slice(0,5).map(m=>m?'✓':'×'),statement:'I put the memories in place.',link:clubUrl(clubId,`/clubs/${clubId}/timeline`,{seed:r.seed,r:r.cursor,lang:'en'})},{origin:'device-reported'})
+ return draft('14-timeline-strip',clubId,'timeline','same-run',{main:`${r.correct}/${r.total}`,rows:r.marks.slice(0,12).map(m=>m?'✓':'×'),statement:`I put ${r.correct} of ${r.total} in the right place.`,link:clubUrl(clubId,`/clubs/${clubId}/timeline`,{seed:r.seed,r:r.cursor,lang:'en'})},{origin:'device-reported'})
+}
+/** 09 — points for this reconstruction; the goal's own players never print (forbidden), the same deal for the next person */
+export function goalShare(clubId:string,r:{seed:number;points:number;max:number;forbidden:string[]}){
+ return draft('09-goal-freeze',clubId,'goal','prompt',{main:`${r.points}/${r.max}`,statement:r.points*2>=r.max?'That is how I remembered the move.':'I rebuilt it as I remembered it.',link:clubUrl(clubId,`/clubs/${clubId}/goal`,{seed:r.seed,lang:'en'})},{forbidden:r.forbidden,origin:'server-verified'})
+}
+/** 10 — the five this person picked and the simulated score; the played draft's own seed, labelled a simulation */
+export function rumbleShare(clubId:string,x:{seed:number;us:number;them:number;five:{position:string;name:string}[];bill:string}){
+ return draft('10-rumble-five',clubId,'rumble','same-run',{main:`${x.us}–${x.them}`,rows:x.five.map(p=>`${p.position} · ${p.name}`),detail:`My bill: ${x.bill} · a simulated match`,statement:'These are my five.',link:clubUrl(clubId,`/clubs/${clubId}/royal-rumble`,{seed:x.seed,lang:'en'})},{origin:'server-verified'})
 }
 /** 23 — an open invitation to a mode (no result, no answers) */
 export function dailyShare(clubId:string,gate:{slug:string;name:string}){
