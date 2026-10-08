@@ -38,7 +38,11 @@ export type RailItem = {
   given?: string
   /** the spell's years, one LTR run */
   years?: string | null
-  look: ShirtLook
+  /** the man's shirt as the Worker draws it (a photograph of his era, or the engine) */
+  look?: ShirtLook
+  /** …or any shirt node (a club game dresses him from the club's own kit); with `title` as its caption */
+  shirt?: ReactNode
+  title?: string
   /** already on the pitch — shown dimmed, not removed */
   taken?: boolean
   /** decades he played in (opening years) — for the era chips */
@@ -47,6 +51,30 @@ export type RailItem = {
   search?: string
   /** a small mark beside the years — "זר", "✓" */
   badge?: ReactNode
+}
+
+/** The rail's words. The Worker's Hebrew is the default; a club game passes its own locale's (English UI). */
+export type RailLabels = {
+  allEras: string
+  era: (decade: number) => string
+  aria: (target: string) => string
+  search: string
+  close: string
+  empty: string
+  count: (n: number) => string
+  taken: string
+  shirt: (look: ShirtLook) => string
+}
+export const HE_RAIL_LABELS: RailLabels = {
+  allEras: t('pick.rail.allEras'),
+  era: (decade) => eraLabel(decade),
+  aria: (target) => t('pick.rail.aria', { target }),
+  search: t('pick.rail.search'),
+  close: t('stage.close'),
+  empty: t('pick.rail.empty'),
+  count: (n) => t('pick.rail.count', { n: String(n) }),
+  taken: t('pick.rail.taken'),
+  shirt: (look) => shirtTitle(look),
 }
 
 export type RailChip = { key: string; label: string; pressed: boolean; onClick: () => void }
@@ -125,6 +153,7 @@ export function PickRail({
   searchable = true,
   era: eraProp,
   onEra,
+  labels = HE_RAIL_LABELS,
 }: {
   /** what is being picked for — the slot's role, the band */
   target: string
@@ -144,6 +173,7 @@ export function PickRail({
   /** controlled era chip — the caller re-dresses the men for that decade (an XI version) */
   era?: number | null
   onEra?: (next: number | null) => void
+  labels?: RailLabels
 }) {
   const [query, setQuery] = useState('')
   const [searching, setSearching] = useState(false)
@@ -197,10 +227,10 @@ export function PickRail({
     ...chips,
     ...(decades.length > 1
       ? [
-          { key: 'era-all', label: t('pick.rail.allEras'), pressed: era === null, onClick: () => setEra(null) },
+          { key: 'era-all', label: labels.allEras, pressed: era === null, onClick: () => setEra(null) },
           ...decades.map((decade) => ({
             key: `era-${decade}`,
-            label: eraLabel(decade),
+            label: labels.era(decade),
             pressed: era === decade,
             onClick: () => setEra(era === decade ? null : decade),
           })),
@@ -210,7 +240,7 @@ export function PickRail({
 
   return (
     <section
-      aria-label={t('pick.rail.aria', { target })}
+      aria-label={labels.aria(target)}
       data-pick-rail=""
       className="relative shrink-0 animate-fx-sheet-up border-t-rule border-ink bg-sheet motion-reduce:animate-none"
     >
@@ -225,8 +255,8 @@ export function PickRail({
             ref={searchRef}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder={t('pick.rail.search')}
-            aria-label={t('pick.rail.search')}
+            placeholder={labels.search}
+            aria-label={labels.search}
             inputMode="search"
             enterKeyHint="search"
             className="min-h-[36px] w-full min-w-0 flex-1 border-hair border-ink bg-paper px-2 font-body text-[16px] text-ink outline-none placeholder:text-muted focus-visible:border-rule"
@@ -256,7 +286,7 @@ export function PickRail({
               setSearching(!searching)
             }}
             aria-pressed={searching}
-            aria-label={t('pick.rail.search')}
+            aria-label={labels.search}
             className={`grid min-h-tap w-tap shrink-0 place-items-center border-hair ${
               searching || query !== '' ? 'border-ink bg-ink text-paper' : 'border-ink/40 text-ink'
             }`}
@@ -271,7 +301,7 @@ export function PickRail({
         <button
           type="button"
           onClick={onClose}
-          aria-label={t('stage.close')}
+          aria-label={labels.close}
           className="grid min-h-tap w-tap shrink-0 place-items-center font-mono text-[22px] leading-none text-ink"
         >
           ×
@@ -280,16 +310,16 @@ export function PickRail({
 
       {shown.length === 0 ? (
         <p className="grid h-[104px] place-items-center px-3 font-body text-[12px] text-muted [@media(max-height:700px)]:h-[86px]">
-          {t('pick.rail.empty')}
+          {labels.empty}
         </p>
       ) : (
         <ul
           ref={railRef}
-          aria-label={t('pick.rail.count', { n: String(shown.length) })}
+          aria-label={labels.count(shown.length)}
           className="flex snap-x gap-1 overflow-x-auto overscroll-x-contain px-2 pb-1 [scrollbar-width:none]"
         >
           {shown.map((item) => (
-            <RailShirt key={item.key} item={item} onPick={picked} onDrop={onDrop} />
+            <RailShirt key={item.key} item={item} onPick={picked} onDrop={onDrop} labels={labels} />
           ))}
         </ul>
       )}
@@ -301,10 +331,12 @@ function RailShirt({
   item,
   onPick,
   onDrop,
+  labels,
 }: {
   item: RailItem
   onPick: (key: string, shirt: Element | null) => void
   onDrop?: (zone: string, key: string) => void
+  labels: RailLabels
 }) {
   const shirtRef = useRef<HTMLSpanElement | null>(null)
   const drag = useDragSource({
@@ -313,7 +345,7 @@ function RailShirt({
     disabled: item.taken === true || !onDrop,
     onDrop: (zone) => onDrop?.(zone, item.key),
   })
-  const title = shirtTitle(item.look)
+  const title = item.look ? labels.shirt(item.look) : (item.title ?? '')
   return (
     <li className="shrink-0 snap-start">
       <button
@@ -326,7 +358,11 @@ function RailShirt({
         className="group flex w-[86px] flex-col [@media(max-height:700px)]:w-[72px] items-center pb-0.5 pt-1 transition-transform duration-press ease-stamp active:scale-[.93] disabled:opacity-35 motion-reduce:transition-none"
       >
         <span ref={shirtRef} className="relative block">
-          <PlayerShirt look={item.look} title={title} className="h-[70px] w-[70px] group-active:animate-fx-wobble [@media(max-height:700px)]:h-[54px] [@media(max-height:700px)]:w-[54px]" />
+          {item.look ? (
+            <PlayerShirt look={item.look} title={title} className="h-[70px] w-[70px] group-active:animate-fx-wobble [@media(max-height:700px)]:h-[54px] [@media(max-height:700px)]:w-[54px]" />
+          ) : (
+            <span className="block h-[70px] w-[70px] group-active:animate-fx-wobble [@media(max-height:700px)]:h-[54px] [@media(max-height:700px)]:w-[54px]">{item.shirt}</span>
+          )}
           {item.badge && !item.taken && <span className="absolute start-0 top-0">{item.badge}</span>}
         </span>
         <span className="mt-0.5 block w-full truncate border-t-[3px] border-red bg-ink px-1 py-[2px] text-center font-body text-[11px] font-extrabold leading-tight text-paper">
@@ -334,7 +370,7 @@ function RailShirt({
         </span>
         <span className="mt-[2px] flex h-[13px] w-full items-center justify-center gap-1 overflow-hidden whitespace-nowrap">
           {item.taken ? (
-            <span className="font-body text-[9.5px] font-extrabold text-red">{t('pick.rail.taken')}</span>
+            <span className="font-body text-[9.5px] font-extrabold text-red">{labels.taken}</span>
           ) : (
             <>
               {item.years && (
