@@ -117,7 +117,7 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
  </>
  const shareBlock=<div className={css.shareRow}>
   {fav&&<ShareComposer label={t('tv.share')} draft={terraceShare(club,{question:t('tv.q.favourite'),pick:fav.name})}/>}
-  <button type="button" className={css.cta} disabled={n===0} onClick={share} data-testid="polls-share-text">{t('tv.share.text')}</button>
+  <button type="button" className={`${css.cta} min-h-tap`} disabled={n===0} onClick={share} data-testid="polls-share-text">{t('tv.share.text')}</button>
  </div>
 
  const slipView=ballot.length===0
@@ -127,7 +127,7 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
    const answer=word(row.id),kind=row.kind,p=kind==='player'&&slip.picks[row.id]?byId.get(slip.picks[row.id]!):null,reason=slip.reasons[row.id],stand=standingOf(slip,row.id),old=receiptsFor(slip,row.id).at(-1)
    const oldName=old?old.choice&&(row.kind==='player'?byId.get(old.choice)?.name:row.kind==='number'?`#${old.choice}`:t(`tv.posn.${old.choice}`)):null
    return <li key={row.id} className={css.line} data-q={row.id} data-done={answer!==null} data-aim={aim===row.id&&answer===null} data-standing={stand??undefined}>
-    <button type="button" className={css.lineMain} aria-label={answer?t('tv.row.aria',{q:t(`tv.q.${row.id}`),a:answer}):t('tv.row.ariaEmpty',{q:t(`tv.q.${row.id}`)})} data-testid={`polls-line-${row.id}`} onClick={openSheet({kind:kind==='player'?'player':kind,id:row.id})}>
+    <button type="button" className={`${css.lineMain} min-h-tap`} aria-label={answer?t('tv.row.aria',{q:t(`tv.q.${row.id}`),a:answer}):t('tv.row.ariaEmpty',{q:t(`tv.q.${row.id}`)})} data-testid={`polls-line-${row.id}`} onClick={openSheet({kind:kind==='player'?'player':kind,id:row.id})}>
      <span className={css.lineNo} aria-hidden="true">{i+1}</span>
      <span className={css.lineText}>
       <span className={css.latin} aria-hidden="true">{row.latin}</span>
@@ -142,14 +142,14 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
       <span className={css.stamp} data-empty={answer===null} lang={kind==='player'?contentLocale:undefined} dir="auto">{answer??t('tv.row.empty')}</span>
      </span>
     </button>
-    {answer&&<button type="button" className={css.whyBtn} aria-expanded={why===row.id} onClick={()=>setWhy(w=>w===row.id?null:row.id)}>{t('tv.why.open')}</button>}
+    {answer&&<button type="button" className={`${css.whyBtn} min-h-tap`} aria-expanded={why===row.id} onClick={()=>setWhy(w=>w===row.id?null:row.id)}>{t('tv.why.open')}</button>}
     {answer&&why===row.id&&<div className={css.whyRow} role="group" aria-label={t('tv.why.label')}>
-     {reasonsOf(row.id).map(r=><button key={r} type="button" className={css.chip} aria-pressed={reason===r} onClick={()=>setSlip(s=>setReason(s,row.id,r))}>{t(`tv.why.${row.id}.${r}`)}</button>)}
-     <button type="button" className={css.chip} onClick={()=>{setUndo(slip);setSlip(s=>clearPick(s,row.id));setWhy(null)}}>{t('tv.clear')}</button>
+     {reasonsOf(row.id).map(r=><button key={r} type="button" className={`${css.chip} min-h-tap`} aria-pressed={reason===r} onClick={()=>setSlip(s=>setReason(s,row.id,r))}>{t(`tv.why.${row.id}.${r}`)}</button>)}
+     <button type="button" className={`${css.chip} min-h-tap`} onClick={()=>{setUndo(slip);setSlip(s=>clearPick(s,row.id));setWhy(null)}}>{t('tv.clear')}</button>
     </div>}
     {old&&oldName&&<div className={css.receipt} data-testid={`polls-receipt-${row.id}`} data-retired={old.retired}>
      <span>{t(old.retired?'tv.receipt.retired':'tv.receipt.older',{a:oldName})}</span>
-     {!old.retired&&!answer&&<button type="button" className={css.chip} onClick={e=>choose(row.id,old.choice,e.currentTarget)}>{t('tv.keep',{a:oldName})}</button>}
+     {!old.retired&&!answer&&<button type="button" className={`${css.chip} min-h-tap`} onClick={e=>choose(row.id,old.choice,e.currentTarget)}>{t('tv.keep',{a:oldName})}</button>}
     </div>}
    </li>
   })}
@@ -162,12 +162,12 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
    :<ol className={css.slip}>{debates.map((d,i)=>{
     const picked=d.choices.find(c=>c.id===ds.votes[d.id]),r=ds.why[d.id],earlier=ds.receipts[d.id],earlierName=earlier&&d.choices.find(c=>c.id===earlier.choice)?.name
     return <li key={d.id} className={css.line} data-debate={d.id} data-done={!!picked}>
-     <button type="button" className={css.lineMain} aria-label={picked?t('tv.deb.aria',{q:d.prompt,a:picked.name}):t('tv.deb.ariaEmpty',{q:d.prompt})} data-testid={`polls-debate-${d.id}`} onClick={openSheet({kind:'debate',id:d.id})}>
+     <button type="button" className={`${css.lineMain} min-h-tap`} aria-label={picked?t('tv.deb.aria',{q:d.prompt,a:picked.name}):t('tv.deb.ariaEmpty',{q:d.prompt})} data-testid={`polls-debate-${d.id}`} onClick={openSheet({kind:'debate',id:d.id})}>
       <span className={css.lineNo} aria-hidden="true">{i+1}</span>
       <span className={css.lineText}><span className={css.ask}>{d.prompt}</span>{picked&&r&&<span className={css.reasonLine}>{t(`tv.deb.why.${r}`)}</span>}{picked&&<span className={css.state} data-standing="device">{t('tv.state.device')}</span>}</span>
       <span className={css.mark}><span className={css.stamp} data-empty={!picked} lang={picked?contentLocale:undefined} dir="auto">{picked?.name??t('tv.deb.choose')}</span></span>
      </button>
-     {picked&&<div className={css.whyRow} role="group" aria-label={t('tv.deb.why.label')}>{DEBATE_REASONS.map(x=><button key={x} type="button" className={css.chip} aria-pressed={r===x} onClick={()=>giveReason(d.id,x)}>{t(`tv.deb.why.${x}`)}</button>)}</div>}
+     {picked&&<div className={css.whyRow} role="group" aria-label={t('tv.deb.why.label')}>{DEBATE_REASONS.map(x=><button key={x} type="button" className={`${css.chip} min-h-tap`} aria-pressed={r===x} onClick={()=>giveReason(d.id,x)}>{t(`tv.deb.why.${x}`)}</button>)}</div>}
      {earlier&&!picked&&<div className={css.receipt} data-testid={`polls-deb-receipt-${d.id}`} data-retired={earlier.retired}><span>{earlierName?t('tv.receipt.older',{a:earlierName}):t('tv.receipt.retired',{a:'—'})}</span></div>}
     </li>})}</ol>}
   {debatesDone(ds.votes,debates)&&<div className={css.roundDone} data-testid="polls-result"><p>{t('tv.deb.done')}</p><Link className={css.cta} href={`?seed=${seed}&r=${cursor+1}&lang=${locale}`}>{t('tv.deb.next')}</Link></div>}
@@ -176,7 +176,7 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
 
  const tabs=<div className={css.bar}>
   <div className={css.tabs} role="tablist" aria-label={t('tv.tabs')}>
-   {(['card','debates'] as const).map(k=><button key={k} type="button" role="tab" id={`tv-tab-${k}`} aria-controls={`tv-pane-${k}`} className={css.tab} aria-selected={tab===k} onClick={()=>{setTab(k);setNotice('')}}>{t(`tv.tab.${k}`)}</button>)}
+   {(['card','debates'] as const).map(k=><button key={k} type="button" role="tab" id={`tv-tab-${k}`} aria-controls={`tv-pane-${k}`} className={`${css.tab} min-h-tap`} aria-selected={tab===k} onClick={()=>{setTab(k);setNotice('')}}>{t(`tv.tab.${k}`)}</button>)}
   </div>
   <span className={css.count} data-done={tab==='card'?done:debatesDone(ds.votes,debates)} aria-live="polite">{tab==='card'?t('tv.count',{n,m:ballot.length}):t('tv.deb.count',{n:answered,m:debates.length})}</span>
  </div>
@@ -198,7 +198,7 @@ export function ClubPolls({players,debates:rawDebates,club,clubName,version,seed
     {tab==='card'&&<div className={css.dock}>
      <button type="button" className={`${css.cta} ${css.onlyMobile}`} disabled={n===0} data-testid="polls-seal" onClick={e=>{opener.current=e.currentTarget;setNotice(done?t('tv.sealed'):'');setSheet({kind:'card',id:'card'})}}>{done?t('tv.seal'):t('tv.view')}</button>
      {!done&&ballot.length>0&&<p className={css.hint}>{t('tv.sealHint',{m:ballot.length})}</p>}
-     {undo&&<button type="button" className={css.undo} onClick={undoLast} data-testid="polls-undo">{t('tv.undo')}</button>}
+     {undo&&<button type="button" className={`${css.undo} min-h-tap`} onClick={undoLast} data-testid="polls-undo">{t('tv.undo')}</button>}
      <p className={css.status} role="status">{notice}</p>
     </div>}
     {tab==='debates'&&notice&&<p className={css.status} role="status">{notice}</p>}

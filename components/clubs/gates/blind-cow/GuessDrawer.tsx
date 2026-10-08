@@ -42,18 +42,18 @@ export function GuessDrawer({open,onClose,players,tried,contentLocale,closeLabel
     <label className={css.searchLabel}><span className="sr-only">{t('bc.drawer.search')}</span>
      <input ref={input} type="search" dir="auto" className={css.search} value={query} onChange={e=>{setQuery(e.target.value);setLimit(PAGE)}} placeholder={t('bc.drawer.search')} autoComplete="off" autoCorrect="off" spellCheck={false} enterKeyHint="search" data-testid="mystery-search"/></label>
     <div className={css.chips} role="group" aria-label={groupLabel}>
-     {['',...POS].map(p=><button key={p||'all'} type="button" className={css.chip} aria-pressed={pos===p} onClick={()=>{setPos(p);setLimit(PAGE)}}>{p?posLabel(p):allLabel}</button>)}
+     {['',...POS].map(p=><button key={p||'all'} type="button" className={`${css.chip} min-h-tap`} aria-pressed={pos===p} onClick={()=>{setPos(p);setLimit(PAGE)}}>{p?posLabel(p):allLabel}</button>)}
     </div>
     <p className={css.drawerNote} data-missed={missed} role="status">{missed?t('bc.drawer.missed',{s:pen.wrong}):query.trim()&&!results.length?t('bc.drawer.none'):t('bc.drawer.hint',{s:pen.wrong})}</p>
    </div>
    <ul className={css.guessList} data-testid="mystery-players">
     {results.slice(0,limit).map(p=>{const struck=tried.includes(p.id);return <li key={p.id}>
-     <button type="button" ref={el=>{if(el)rows.current.set(p.id,el);else rows.current.delete(p.id)}} className={css.guessRow} data-player-id={p.id} data-struck={struck} data-shake={shaking===p.id} disabled={struck||busy} onClick={()=>void pick(p.id)}>
+     <button type="button" ref={el=>{if(el)rows.current.set(p.id,el);else rows.current.delete(p.id)}} className={`${css.guessRow} min-h-tap`} data-player-id={p.id} data-struck={struck} data-shake={shaking===p.id} disabled={struck||busy} onClick={()=>void pick(p.id)}>
       <span className={css.guessName} lang={contentLocale} dir="auto">{p.name}</span>
       <span className={css.guessMeta}>{struck?t('bc.drawer.tried'):[same.has(p.id)?p.positions.map(x=>posLabel(x)).join('/'):'',(()=>{const q=fold(query);const hit=q&&!fold(p.name).includes(q.split(/\s+/)[0]!)?p.aliases.find(a=>fold(a).includes(q.split(/\s+/)[0]!)):null;return hit?`≈ ${hit}`:''})(),`${p.fromYear??'?'}–${p.toYear??'?'}`].filter(Boolean).join(' · ')}</span>
      </button></li>})}
    </ul>
-   {results.length>limit&&<button type="button" className={css.btn} onClick={()=>setLimit(l=>l+PAGE)}>{t('bc.drawer.more')}</button>}
+   {results.length>limit&&<button type="button" className={`${css.btn} min-h-tap`} onClick={()=>setLimit(l=>l+PAGE)}>{t('bc.drawer.more')}</button>}
   </div>
  </SlideSheet>
 }
