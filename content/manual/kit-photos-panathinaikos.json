@@ -48,14 +48,28 @@
      "White"
     ],
     "pattern": "Hoops",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#22885e",
+     "relation": "contrast",
+     "delta": 88
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#116541",
+     "relation": "contrast",
+     "delta": 130
+    },
     "crest": "club-crest",
     "maker": "Unbranded",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#6ba189"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -100,9 +114,13 @@
     "crest": "club-crest",
     "maker": "In-House",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "brown",
+     "hex": "#6c5e3d"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -142,14 +160,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#06a69c",
+     "relation": "contrast",
+     "delta": 39
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#b0b3b6",
+     "relation": "contrast",
+     "delta": 160
+    },
     "crest": "club-crest",
     "maker": "In-House",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#11c0b7"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -193,9 +225,13 @@
     "crest": "club-crest",
     "maker": "In-House",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#1d2422"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -235,14 +271,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#29592d",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#315834",
+     "relation": "matches-body",
+     "delta": 12
+    },
     "crest": "club-crest",
     "maker": "In-House",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#28582c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -287,9 +337,13 @@
     "crest": "club-crest",
     "maker": "In-House",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#b1b1ac"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -329,14 +383,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#21342e",
+     "relation": "matches-body",
+     "delta": 29
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#959189",
+     "relation": "contrast",
+     "delta": 147
+    },
     "crest": "club-crest",
     "maker": "In-House",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#2c4741"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -381,9 +449,13 @@
     "crest": "club-crest",
     "maker": "In-House",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#353f3b"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -423,14 +495,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#285733",
+     "relation": "contrast",
+     "delta": 40
+    },
+    "collar": {
+     "colour": "pink",
+     "hex": "#cba476",
+     "relation": "contrast",
+     "delta": 232
+    },
     "crest": "club-crest",
     "maker": "In-House",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#034b29"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -471,14 +557,28 @@
      "Gray"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#a0917e",
+     "relation": "contrast",
+     "delta": 109
+    },
+    "collar": {
+     "colour": "gold",
+     "hex": "#cd7c4a",
+     "relation": "contrast",
+     "delta": 142
+    },
     "crest": "club-crest",
     "maker": "Uhlsport",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#e2cfbb"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -518,14 +618,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#0a8c5b",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#3d3f3d",
+     "relation": "contrast",
+     "delta": 92
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#068556"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -565,14 +679,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "gold",
+     "hex": "#bc8959",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#363c1c",
+     "relation": "contrast",
+     "delta": 167
+    },
     "crest": "club-crest",
     "maker": "Admiral",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "gold",
+     "hex": "#bf8955"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -612,14 +740,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#cdb6a4",
+     "relation": "matches-body",
+     "delta": 21
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#995941",
+     "relation": "contrast",
+     "delta": 125
+    },
     "crest": "club-crest",
     "maker": "Admiral",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#c1ab96"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -659,14 +801,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#294e3b",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#e9ccbb",
+     "relation": "contrast",
+     "delta": 264
+    },
     "crest": "club-crest",
     "maker": "Admiral",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#25513b"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -706,14 +862,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#4b8f78",
+     "relation": "matches-body",
+     "delta": 27
+    },
+    "collar": {
+     "colour": "orange",
+     "hex": "#ca7519",
+     "relation": "contrast",
+     "delta": 173
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#50a38a"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -753,14 +923,28 @@
      "Green"
     ],
     "pattern": "Contrasting sleeves",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#b7a08e",
+     "relation": "matches-body",
+     "delta": 16
+    },
+    "collar": {
+     "colour": "gold",
+     "hex": "#a6654a",
+     "relation": "contrast",
+     "delta": 104
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "Citroën",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#c3a993"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -800,14 +984,28 @@
      "White"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#a4998d",
+     "relation": "contrast",
+     "delta": 178
+    },
+    "collar": {
+     "colour": "pink",
+     "hex": "#cbafa2",
+     "relation": "contrast",
+     "delta": 228
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "Citroën",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#1f443a"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -847,14 +1045,28 @@
      "Green"
     ],
     "pattern": "Pinstripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#aca19f",
+     "relation": "matches-body",
+     "delta": 15
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#b29d92",
+     "relation": "matches-body",
+     "delta": 26
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "Citroën",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#b2aaa9"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -894,14 +1106,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#28614b",
+     "relation": "matches-body",
+     "delta": 15
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#eed3be",
+     "relation": "contrast",
+     "delta": 270
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "Citroën",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#1f5942"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -941,14 +1167,28 @@
      "White"
     ],
     "pattern": "Pinstripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#267f66",
+     "relation": "matches-body",
+     "delta": 6
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#f0e2c9",
+     "relation": "contrast",
+     "delta": 244
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "Citroën",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#258567"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -988,14 +1228,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#2f8561",
+     "relation": "contrast",
+     "delta": 35
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#dbd3b6",
+     "relation": "contrast",
+     "delta": 196
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "Citroën",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#2aa372"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1035,14 +1289,28 @@
      "Black"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "gold",
+     "hex": "#a16c2b",
+     "relation": "contrast",
+     "delta": 74
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#cab3a0",
+     "relation": "contrast",
+     "delta": 103
+    },
     "crest": "club-crest",
     "maker": "Uhlsport",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "gold",
+     "hex": "#d9993d"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1082,14 +1350,28 @@
      "White"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#256a4f",
+     "relation": "contrast",
+     "delta": 48
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#325c4c",
+     "relation": "contrast",
+     "delta": 44
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#134635"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1129,14 +1411,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#3a8051",
+     "relation": "contrast",
+     "delta": 56
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#f4dcb9",
+     "relation": "contrast",
+     "delta": 187
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#50aa6e"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1176,14 +1472,28 @@
      "White"
     ],
     "pattern": "Checkers",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#247d68",
+     "relation": "matches-body",
+     "delta": 32
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#f1e2e5",
+     "relation": "contrast",
+     "delta": 237
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#2c9779"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1223,14 +1533,28 @@
      "Black"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#14100f",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#191211",
+     "relation": "matches-body",
+     "delta": 2
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#171311"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1270,14 +1594,28 @@
      "White"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#1c8798",
+     "relation": "matches-body",
+     "delta": 22
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#b19c71",
+     "relation": "contrast",
+     "delta": 171
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#108fa8"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1317,14 +1655,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#046652",
+     "relation": "contrast",
+     "delta": 65
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#6ea78f",
+     "relation": "contrast",
+     "delta": 109
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#04957f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1364,14 +1716,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#028662",
+     "relation": "matches-body",
+     "delta": 10
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#0c7d5b",
+     "relation": "matches-body",
+     "delta": 9
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#037e5c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1412,14 +1778,28 @@
      "Black"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#af917a",
+     "relation": "contrast",
+     "delta": 43
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#20493a",
+     "relation": "contrast",
+     "delta": 213
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#c7a994"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1459,14 +1839,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#04af83",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#11aa7f",
+     "relation": "matches-body",
+     "delta": 20
+    },
     "crest": "club-crest",
     "maker": "Asics",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#04b689"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1507,14 +1901,28 @@
      "Black"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#dcdeda",
+     "relation": "matches-body",
+     "delta": 7
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#c3c0b8",
+     "relation": "contrast",
+     "delta": 45
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d9d9d6"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1559,9 +1967,13 @@
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#0c704f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -1602,14 +2014,28 @@
      "Black"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#dcdeda",
+     "relation": "matches-body",
+     "delta": 7
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#c3c0b8",
+     "relation": "contrast",
+     "delta": 45
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d9d9d6"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1654,9 +2080,13 @@
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#388167"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -1701,9 +2131,13 @@
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#0c704f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -1743,14 +2177,28 @@
      "Green"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#d1c5b6",
+     "relation": "matches-body",
+     "delta": 14
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#834622",
+     "relation": "contrast",
+     "delta": 224
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d8ccc0"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1790,14 +2238,28 @@
      "Green"
     ],
     "pattern": "Chevron",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#0b433d",
+     "relation": "contrast",
+     "delta": 279
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#a6836d",
+     "relation": "contrast",
+     "delta": 120
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#dbc7c0"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1837,14 +2299,28 @@
      "White"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#0d4f45",
+     "relation": "matches-body",
+     "delta": 30
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#7f7c6c",
+     "relation": "contrast",
+     "delta": 109
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#17625a"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1884,14 +2360,28 @@
      "Green"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#7a7569",
+     "relation": "contrast",
+     "delta": 101
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#7c7267",
+     "relation": "contrast",
+     "delta": 103
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#b0aea9"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1931,14 +2421,28 @@
      "Green"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#c3d2df",
+     "relation": "contrast",
+     "delta": 45
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#1d1e27",
+     "relation": "contrast",
+     "delta": 350
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e3eaf4"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -1978,14 +2482,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#21716a",
+     "relation": "matches-body",
+     "delta": 26
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#e3e2e9",
+     "relation": "contrast",
+     "delta": 241
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#21827e"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2030,9 +2548,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#045e3e"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -2077,9 +2599,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d1d1d5"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -2119,14 +2645,28 @@
      "Green"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#cfcdc3",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "collar": {
+     "colour": "gold",
+     "hex": "#af8662",
+     "relation": "contrast",
+     "delta": 147
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#dbd9d3"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2167,14 +2707,28 @@
      "Yellow"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "brown",
+     "hex": "#512e24",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#441f18",
+     "relation": "matches-body",
+     "delta": 24
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "maroon",
+     "hex": "#572724"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2219,9 +2773,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#037849"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -2261,14 +2819,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#32544d",
+     "relation": "matches-body",
+     "delta": 33
+    },
+    "collar": {
+     "colour": "light green",
+     "hex": "#a6ada4",
+     "relation": "contrast",
+     "delta": 202
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#164742"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2308,14 +2880,28 @@
      "Green"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#f5f5f0",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#28936f",
+     "relation": "contrast",
+     "delta": 261
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f5f6ee"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2360,9 +2946,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#0d7b59"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -2402,14 +2992,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#2b2939",
+     "relation": "matches-body",
+     "delta": 32
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#24212c",
+     "relation": "contrast",
+     "delta": 49
+    },
     "crest": "club-crest",
     "maker": "Reusch",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#393852"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2450,14 +3054,28 @@
      "Navy"
     ],
     "pattern": "Single stripe",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#098264",
+     "relation": "matches-body",
+     "delta": 15
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#cae1e5",
+     "relation": "contrast",
+     "delta": 244
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#078f6c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2498,14 +3116,28 @@
      "White"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#223356",
+     "relation": "contrast",
+     "delta": 50
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#1b4646",
+     "relation": "contrast",
+     "delta": 59
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "InterAmerican",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "purple",
+     "hex": "#314f7c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2545,14 +3177,28 @@
      "Green"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#dac4b0",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#fae1c5",
+     "relation": "matches-body",
+     "delta": 25
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#ead2ba"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2592,14 +3238,28 @@
      "Green"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#8b7a73",
+     "relation": "contrast",
+     "delta": 58
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#120f0c",
+     "relation": "contrast",
+     "delta": 249
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#b19d8d"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2639,14 +3299,28 @@
      "Gray"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#271f1a",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#867361",
+     "relation": "contrast",
+     "delta": 154
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#221817"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2686,14 +3360,28 @@
      "White"
     ],
     "pattern": "Hoops",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#1f2032",
+     "relation": "contrast",
+     "delta": 41
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#cdbe9a",
+     "relation": "contrast",
+     "delta": 218
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#34384b"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2734,14 +3422,28 @@
      "Navy"
     ],
     "pattern": "Single stripe",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#1e9b6b",
+     "relation": "matches-body",
+     "delta": 29
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#2c9372",
+     "relation": "matches-body",
+     "delta": 34
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#20b07f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2781,14 +3483,28 @@
      "Green"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#0f785f",
+     "relation": "contrast",
+     "delta": 276
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#05633e",
+     "relation": "contrast",
+     "delta": 309
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Motor Oil Hellas",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e3e8e7"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2829,14 +3545,28 @@
      "White"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#091224",
+     "relation": "contrast",
+     "delta": 71
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#b8bcbb",
+     "relation": "contrast",
+     "delta": 250
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Motor Oil Hellas",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#03582f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2877,14 +3607,28 @@
      "Navy"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#1f8e66",
+     "relation": "contrast",
+     "delta": 266
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#142a53",
+     "relation": "contrast",
+     "delta": 334
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Winbank",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e9f2f4"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -2930,9 +3674,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Winbank",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#fbd39b"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -2973,14 +3721,28 @@
      "Black"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#18171a",
+     "relation": "contrast",
+     "delta": 255
+    },
+    "collar": {
+     "colour": "blue",
+     "hex": "#1a3f94",
+     "relation": "contrast",
+     "delta": 181
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Winbank",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#aaa9af"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3021,14 +3783,28 @@
      "Navy"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#0ca073",
+     "relation": "matches-body",
+     "delta": 8
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#eeefec",
+     "relation": "contrast",
+     "delta": 264
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Winbank",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#0ca47a"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3069,14 +3845,28 @@
      "Navy"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#1d9b7e",
+     "relation": "contrast",
+     "delta": 265
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#eeeff2",
+     "relation": "matches-body",
+     "delta": 12
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f6f5f8"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3121,9 +3911,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#d84425"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -3164,14 +3958,28 @@
      "Black"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#18171b",
+     "relation": "contrast",
+     "delta": 251
+    },
+    "collar": {
+     "colour": "blue",
+     "hex": "#1a3f94",
+     "relation": "contrast",
+     "delta": 178
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#a8a7ad"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3212,14 +4020,28 @@
      "White"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#0aa072",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#edefec",
+     "relation": "contrast",
+     "delta": 264
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#0ba47a"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3259,14 +4081,28 @@
      "White"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#313366",
+     "relation": "contrast",
+     "delta": 35
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#24234c",
+     "relation": "matches-body",
+     "delta": 6
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#201f4f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3306,14 +4142,28 @@
      "Green"
     ],
     "pattern": "Contrasting sleeves",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#1d2e28",
+     "relation": "contrast",
+     "delta": 277
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#2b423b",
+     "relation": "contrast",
+     "delta": 247
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#c5c5c9"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3353,14 +4203,28 @@
      "Green"
     ],
     "pattern": "Contrasting sleeves",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#102217",
+     "relation": "contrast",
+     "delta": 309
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#cdcbca",
+     "relation": "matches-body",
+     "delta": 3
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#cecac7"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3406,9 +4270,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#252632"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -3453,9 +4321,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#3d131b"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -3500,9 +4372,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#015045"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -3542,14 +4418,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#034634",
+     "relation": "matches-body",
+     "delta": 7
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#edede9",
+     "relation": "contrast",
+     "delta": 335
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#034c38"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3590,14 +4480,28 @@
      "Black"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#c0bfb7",
+     "relation": "matches-body",
+     "delta": 34
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#c5c0ae",
+     "relation": "contrast",
+     "delta": 36
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d5d2c9"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3638,14 +4542,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#2d231d",
+     "relation": "matches-body",
+     "delta": 24
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#997d65",
+     "relation": "contrast",
+     "delta": 141
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#302f31"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3685,14 +4603,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#035347",
+     "relation": "matches-body",
+     "delta": 14
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#ebeff4",
+     "relation": "contrast",
+     "delta": 319
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#035d51"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3733,14 +4665,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#202c33",
+     "relation": "matches-body",
+     "delta": 20
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#212930",
+     "relation": "matches-body",
+     "delta": 24
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OTE",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#283643"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3780,14 +4726,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#eff1f2",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#e5eaea",
+     "relation": "matches-body",
+     "delta": 24
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f6f6f6"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3827,14 +4787,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#08513d",
+     "relation": "matches-body",
+     "delta": 25
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#5d877d",
+     "relation": "contrast",
+     "delta": 102
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#0a624f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3875,14 +4849,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#282927",
+     "relation": "matches-body",
+     "delta": 23
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#3f3b39",
+     "relation": "contrast",
+     "delta": 57
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#1c191b"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -3926,9 +4914,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#7a9797"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -3973,9 +4965,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#221f23"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -4015,14 +5011,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#024035",
+     "relation": "matches-body",
+     "delta": 4
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#073c33",
+     "relation": "matches-body",
+     "delta": 7
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#013f31"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4062,14 +5072,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#0c281d",
+     "relation": "contrast",
+     "delta": 339
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#0a0a06",
+     "relation": "contrast",
+     "delta": 370
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#e3e6d2"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4113,9 +5137,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#1e4c81"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -4160,9 +5188,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#1e1c1d"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -4202,14 +5234,28 @@
      "White"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#014240",
+     "relation": "matches-body",
+     "delta": 7
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#e0e5e8",
+     "relation": "contrast",
+     "delta": 318
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#024844"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4249,14 +5295,28 @@
      "Navy"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#cbecaa",
+     "relation": "matches-body",
+     "delta": 7
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#102438",
+     "relation": "contrast",
+     "delta": 302
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#cfeeaf"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4348,9 +5408,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f1f8f8"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -4389,14 +5453,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#037f4a",
+     "relation": "matches-body",
+     "delta": 20
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#057b45",
+     "relation": "matches-body",
+     "delta": 26
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#069055"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4441,9 +5519,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#026152"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -4483,14 +5565,28 @@
      "Black"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "light green",
+     "hex": "#a8f796",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "light green",
+     "hex": "#9eee8e",
+     "relation": "matches-body",
+     "delta": 21
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "light green",
+     "hex": "#abfa99"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4530,14 +5626,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#f1f5f7",
+     "relation": "matches-body",
+     "delta": 3
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#edf0f1",
+     "relation": "matches-body",
+     "delta": 11
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f1f8f8"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4577,14 +5687,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#8c9490",
+     "relation": "contrast",
+     "delta": 156
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#e9eaea",
+     "relation": "matches-body",
+     "delta": 1
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#eaeaea"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4624,14 +5748,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#0b8961",
+     "relation": "matches-body",
+     "delta": 1
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#0b825f",
+     "relation": "matches-body",
+     "delta": 8
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#0b8a61"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4670,14 +5808,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#037f4a",
+     "relation": "matches-body",
+     "delta": 20
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#057b45",
+     "relation": "matches-body",
+     "delta": 26
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#069055"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4717,14 +5869,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#2a2f4c",
+     "relation": "matches-body",
+     "delta": 31
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#353b5b",
+     "relation": "matches-body",
+     "delta": 11
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#403d5c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4764,14 +5930,28 @@
      "Green"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#626060",
+     "relation": "contrast",
+     "delta": 54
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#767368",
+     "relation": "matches-body",
+     "delta": 29
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#817e81"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4811,14 +5991,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#027742",
+     "relation": "matches-body",
+     "delta": 19
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#076f3e",
+     "relation": "matches-body",
+     "delta": 28
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#03874c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4864,9 +6058,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#6f6f6d"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -4906,14 +6104,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#f7f7f7",
+     "relation": "matches-body",
+     "delta": 3
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#f5f5f3",
+     "relation": "matches-body",
+     "delta": 8
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f9f9f9"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -4953,14 +6165,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#00724a",
+     "relation": "matches-body",
+     "delta": 11
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#026a44",
+     "relation": "matches-body",
+     "delta": 21
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#017b51"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5000,14 +6226,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#352e2e",
+     "relation": "matches-body",
+     "delta": 8
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#3c3435",
+     "relation": "matches-body",
+     "delta": 4
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#3b3232"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5047,14 +6287,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#d9d8db",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#909293",
+     "relation": "contrast",
+     "delta": 115
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d3d2d7"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5094,14 +6348,28 @@
      "Navy"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#071a58",
+     "relation": "contrast",
+     "delta": 255
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#0d1f48",
+     "relation": "contrast",
+     "delta": 251
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Cosmote",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "light green",
+     "hex": "#97e882"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5142,14 +6410,28 @@
      "Navy"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#3f5362",
+     "relation": "matches-body",
+     "delta": 4
+    },
+    "collar": {
+     "colour": "orange",
+     "hex": "#be5f35",
+     "relation": "contrast",
+     "delta": 139
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "purple",
+     "hex": "#3d5366"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5189,14 +6471,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#365d43",
+     "relation": "matches-body",
+     "delta": 4
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#22382b",
+     "relation": "contrast",
+     "delta": 47
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#325d44"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5236,14 +6532,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#131217",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#111013",
+     "relation": "matches-body",
+     "delta": 1
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#101014"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5283,14 +6593,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#37363a",
+     "relation": "matches-body",
+     "delta": 6
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#141317",
+     "relation": "contrast",
+     "delta": 54
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#333237"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5331,14 +6655,28 @@
      "Black"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#c3b7b2",
+     "relation": "matches-body",
+     "delta": 19
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#cec9be",
+     "relation": "matches-body",
+     "delta": 8
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d0c2bb"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5378,14 +6716,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#2b5345",
+     "relation": "matches-body",
+     "delta": 32
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#24342f",
+     "relation": "matches-body",
+     "delta": 10
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#213d30"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5425,14 +6777,28 @@
      "Green"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#ced0d4",
+     "relation": "matches-body",
+     "delta": 4
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#adbcbc",
+     "relation": "contrast",
+     "delta": 43
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#cfcdd1"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5472,14 +6838,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#2263a6",
+     "relation": "matches-body",
+     "delta": 29
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#092e6d",
+     "relation": "contrast",
+     "delta": 54
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#1a4b97"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5519,14 +6899,28 @@
      "Black"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#479139",
+     "relation": "contrast",
+     "delta": 62
+    },
+    "collar": {
+     "colour": "light green",
+     "hex": "#65cc52",
+     "relation": "matches-body",
+     "delta": 10
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "light green",
+     "hex": "#60c64c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5566,14 +6960,28 @@
      "White"
     ],
     "pattern": "Hoops",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#086e45",
+     "relation": "contrast",
+     "delta": 115
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#055637",
+     "relation": "contrast",
+     "delta": 127
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#767965"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5613,14 +7021,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#ced0d4",
+     "relation": "matches-body",
+     "delta": 4
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#adbcbc",
+     "relation": "contrast",
+     "delta": 43
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#cfcdd1"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5660,14 +7082,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "purple",
+     "hex": "#49518a",
+     "relation": "matches-body",
+     "delta": 20
+    },
+    "collar": {
+     "colour": "purple",
+     "hex": "#434b84",
+     "relation": "matches-body",
+     "delta": 30
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "purple",
+     "hex": "#535999"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5711,9 +7147,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "gold",
+     "hex": "#83c527"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -5753,14 +7193,28 @@
      "White"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#0e6fa0",
+     "relation": "matches-body",
+     "delta": 30
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#302821",
+     "relation": "contrast",
+     "delta": 179
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#0280b6"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5801,14 +7255,28 @@
      "White"
     ],
     "pattern": "Single stripe",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#035d3f",
+     "relation": "matches-body",
+     "delta": 3
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#3c664b",
+     "relation": "contrast",
+     "delta": 61
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#015b3f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5849,14 +7317,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#204633",
+     "relation": "matches-body",
+     "delta": 19
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#e4c6b2",
+     "relation": "contrast",
+     "delta": 251
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#235440"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5901,9 +7383,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "OPAP",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f4f1f6"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -5943,14 +7429,28 @@
      "Green"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#131939",
+     "relation": "matches-body",
+     "delta": 10
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#294e7c",
+     "relation": "contrast",
+     "delta": 96
+    },
     "crest": "club-crest",
     "maker": "Puma",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#15182f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -5991,14 +7491,28 @@
      "White"
     ],
     "pattern": "Hoops",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "yellow",
+     "hex": "#e3dc31",
+     "relation": "matches-body",
+     "delta": 30
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#53511e",
+     "relation": "contrast",
+     "delta": 231
+    },
     "crest": "club-crest",
     "maker": "Puma",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "yellow",
+     "hex": "#f9f032"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6038,14 +7552,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#1d594a",
+     "relation": "matches-body",
+     "delta": 25
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#316b5b",
+     "relation": "matches-body",
+     "delta": 14
+    },
     "crest": "club-crest",
     "maker": "Puma",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#236c59"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6090,9 +7618,13 @@
     "crest": "club-crest",
     "maker": "Puma",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#125d4c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -6133,14 +7665,28 @@
      "Green"
     ],
     "pattern": "Gradient",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#101318",
+     "relation": "contrast",
+     "delta": 48
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#121316",
+     "relation": "contrast",
+     "delta": 50
+    },
     "crest": "club-crest",
     "maker": "Puma",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#111948"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6181,14 +7727,28 @@
      "Navy"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "gold",
+     "hex": "#c5b746",
+     "relation": "contrast",
+     "delta": 43
+    },
+    "collar": {
+     "colour": "gold",
+     "hex": "#bd9467",
+     "relation": "contrast",
+     "delta": 55
+    },
     "crest": "club-crest",
     "maker": "Puma",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "gold",
+     "hex": "#a59e37"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6233,9 +7793,13 @@
     "crest": "club-crest",
     "maker": "Puma",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#747f80"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -6275,14 +7839,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#bfc1c2",
+     "relation": "contrast",
+     "delta": 40
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#859194",
+     "relation": "contrast",
+     "delta": 128
+    },
     "crest": "club-crest",
     "maker": "Puma",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#d7d7d9"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6322,14 +7900,28 @@
      "Green"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#232227",
+     "relation": "matches-body",
+     "delta": 16
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#181818",
+     "relation": "contrast",
+     "delta": 37
+    },
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#2a2c31"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6369,14 +7961,28 @@
      "Black"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "light green",
+     "hex": "#c5c75d",
+     "relation": "matches-body",
+     "delta": 26
+    },
+    "collar": {
+     "colour": "light green",
+     "hex": "#d3d76d",
+     "relation": "matches-body",
+     "delta": 9
+    },
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "yellow",
+     "hex": "#d8d766"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6417,14 +8023,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#5f7181",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "gold",
+     "hex": "#dda269",
+     "relation": "contrast",
+     "delta": 142
+    },
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#5a6f80"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6464,14 +8084,28 @@
      "Black"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "red",
+     "hex": "#b5273e",
+     "relation": "contrast",
+     "delta": 68
+    },
+    "collar": {
+     "colour": "red",
+     "hex": "#fb344a",
+     "relation": "matches-body",
+     "delta": 17
+    },
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "red",
+     "hex": "#f92542"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6512,14 +8146,28 @@
      "Gray"
     ],
     "pattern": "Contrasting sleeves",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#63a489",
+     "relation": "contrast",
+     "delta": 122
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#025b30",
+     "relation": "contrast",
+     "delta": 44
+    },
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#017f4a"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6560,14 +8208,28 @@
      "Blue"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#eaeaec",
+     "relation": "matches-body",
+     "delta": 12
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#0b7647",
+     "relation": "contrast",
+     "delta": 312
+    },
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f1f1f3"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6608,14 +8270,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "purple",
+     "hex": "#403280",
+     "relation": "matches-body",
+     "delta": 13
+    },
+    "collar": {
+     "colour": "purple",
+     "hex": "#42376a",
+     "relation": "matches-body",
+     "delta": 32
+    },
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "purple",
+     "hex": "#483889"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6661,9 +8337,13 @@
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "yellow",
+     "hex": "#e0cc50"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -6703,14 +8383,28 @@
      "Gold"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#f1f1f2",
+     "relation": "matches-body",
+     "delta": 10
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#e5ddd7",
+     "relation": "contrast",
+     "delta": 46
+    },
     "crest": "club-crest",
     "maker": "Nike",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#f7f6f9"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6750,14 +8444,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#038a5f",
+     "relation": "contrast",
+     "delta": 284
+    },
+    "collar": {
+     "colour": "sky blue",
+     "hex": "#93afb0",
+     "relation": "contrast",
+     "delta": 118
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e5e6f0"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6796,14 +8504,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#027345",
+     "relation": "matches-body",
+     "delta": 20
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#66857e",
+     "relation": "contrast",
+     "delta": 109
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#028252"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6842,14 +8564,28 @@
      "White"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#028152",
+     "relation": "matches-body",
+     "delta": 11
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#068656",
+     "relation": "matches-body",
+     "delta": 5
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#038a58"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6889,14 +8625,28 @@
      "Green"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#141517",
+     "relation": "matches-body",
+     "delta": 4
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#0e261c",
+     "relation": "matches-body",
+     "delta": 19
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#181618"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6936,14 +8686,28 @@
      "Green"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#c0bfaf",
+     "relation": "matches-body",
+     "delta": 24
+    },
+    "collar": {
+     "colour": "light green",
+     "hex": "#adb2a6",
+     "relation": "contrast",
+     "delta": 48
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "cream",
+     "hex": "#cecdbd"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -6982,14 +8746,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#027244",
+     "relation": "matches-body",
+     "delta": 21
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#6b8783",
+     "relation": "contrast",
+     "delta": 116
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#028251"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7029,14 +8807,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#11614a",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#566963",
+     "relation": "contrast",
+     "delta": 77
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#115a45"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7076,14 +8868,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#215848",
+     "relation": "matches-body",
+     "delta": 13
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#c2c2c3",
+     "relation": "contrast",
+     "delta": 218
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#245e53"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7123,14 +8929,28 @@
      "Green"
     ],
     "pattern": "Half-and-half",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "brown",
+     "hex": "#5f5f57",
+     "relation": "matches-body",
+     "delta": 30
+    },
+    "collar": {
+     "colour": "brown",
+     "hex": "#585654",
+     "relation": "contrast",
+     "delta": 41
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "grey",
+     "hex": "#746c68"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7170,14 +8990,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#172523",
+     "relation": "matches-body",
+     "delta": 16
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#141818",
+     "relation": "matches-body",
+     "delta": 25
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#272424"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7216,14 +9050,28 @@
      "White"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "blue",
+     "hex": "#036197",
+     "relation": "matches-body",
+     "delta": 21
+    },
+    "collar": {
+     "colour": "blue",
+     "hex": "#046b9c",
+     "relation": "matches-body",
+     "delta": 11
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "blue",
+     "hex": "#0471a5"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7269,9 +9117,13 @@
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "brown",
+     "hex": "#656557"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -7311,14 +9163,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#155932",
+     "relation": "matches-body",
+     "delta": 12
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#07321b",
+     "relation": "contrast",
+     "delta": 36
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#10512b"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7359,14 +9225,28 @@
      "Green"
     ],
     "pattern": "Hoops",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "grey",
+     "hex": "#a08b7e",
+     "relation": "contrast",
+     "delta": 43
+    },
+    "collar": {
+     "colour": "grey",
+     "hex": "#ab9a8e",
+     "relation": "matches-body",
+     "delta": 19
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Pame Stoixima",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "pink",
+     "hex": "#b8a497"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7406,14 +9286,28 @@
      "Green"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "cream",
+     "hex": "#e1d8d3",
+     "relation": "matches-body",
+     "delta": 13
+    },
+    "collar": {
+     "colour": "cream",
+     "hex": "#d6cec8",
+     "relation": "matches-body",
+     "delta": 31
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e7e0db"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7453,14 +9347,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#022f62",
+     "relation": "matches-body",
+     "delta": 11
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#053652",
+     "relation": "matches-body",
+     "delta": 14
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#082b5a"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7500,14 +9408,28 @@
      "White"
     ],
     "pattern": "Stripes",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#15775f",
+     "relation": "contrast",
+     "delta": 52
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#407963",
+     "relation": "matches-body",
+     "delta": 23
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#418b71"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7548,14 +9470,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#137e62",
+     "relation": "matches-body",
+     "delta": 18
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#094d3c",
+     "relation": "contrast",
+     "delta": 80
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#168d6b"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7595,14 +9531,28 @@
      "Green"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#2c4966",
+     "relation": "matches-body",
+     "delta": 13
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#254748",
+     "relation": "matches-body",
+     "delta": 24
+    },
     "crest": "club-crest",
     "maker": "Kappa",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#31435c"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7688,14 +9638,28 @@
      "White"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#034439",
+     "relation": "contrast",
+     "delta": 34
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#064035",
+     "relation": "contrast",
+     "delta": 40
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#055e4f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7735,14 +9699,28 @@
      "White"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#034438",
+     "relation": "contrast",
+     "delta": 35
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#064033",
+     "relation": "contrast",
+     "delta": 41
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#045e4f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7782,14 +9760,28 @@
      "White"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#034537",
+     "relation": "contrast",
+     "delta": 35
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#064034",
+     "relation": "contrast",
+     "delta": 40
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#045e4f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7829,14 +9821,28 @@
      "Black"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#212323",
+     "relation": "contrast",
+     "delta": 49
+    },
+    "collar": {
+     "colour": "dark green",
+     "hex": "#0d423f",
+     "relation": "matches-body",
+     "delta": 26
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#254348"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -7881,9 +9887,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e2e2e2"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -7928,9 +9938,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e2e2e2"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -7975,9 +9989,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#024f47"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -8017,14 +10035,28 @@
      "White"
     ],
     "pattern": "Single stripe",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#024241",
+     "relation": "contrast",
+     "delta": 321
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#4a696a",
+     "relation": "contrast",
+     "delta": 230
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e2e4e4"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8065,14 +10097,28 @@
      "Green"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#e1e0e1",
+     "relation": "matches-body",
+     "delta": 9
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#dcdcde",
+     "relation": "matches-body",
+     "delta": 16
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e5e6e7"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8113,14 +10159,28 @@
      "Yellow"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#028756",
+     "relation": "matches-body",
+     "delta": 14
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#04734b",
+     "relation": "contrast",
+     "delta": 37
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#019061"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8160,14 +10220,28 @@
      "Green"
     ],
     "pattern": "Graphic",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "navy",
+     "hex": "#332059",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "navy",
+     "hex": "#1c1e4a",
+     "relation": "matches-body",
+     "delta": 28
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Stoiximan",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "navy",
+     "hex": "#332259"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8212,9 +10286,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "A Little Shelter",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#1c5853"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -8254,14 +10332,28 @@
      "White"
     ],
     "pattern": "Contrasting sleeves",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#17615c",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#165b56",
+     "relation": "matches-body",
+     "delta": 12
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "A Little Shelter",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#14635f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8301,14 +10393,28 @@
      "White"
     ],
     "pattern": "Contrasting sleeves",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "green",
+     "hex": "#17615d",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#165b57",
+     "relation": "matches-body",
+     "delta": 13
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Superbet",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "green",
+     "hex": "#15655f"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8348,14 +10454,28 @@
      "Silver"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#e8e7e9",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#ebebec",
+     "relation": "matches-body",
+     "delta": 4
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "-",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#e9e8eb"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8401,9 +10521,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "A Little Shelter",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "brown",
+     "hex": "#4f4f52"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -8444,14 +10568,28 @@
      "Navy"
     ],
     "pattern": "Chest band",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "white",
+     "hex": "#eeecec",
+     "relation": "matches-body",
+     "delta": 2
+    },
+    "collar": {
+     "colour": "white",
+     "hex": "#e0dfe1",
+     "relation": "matches-body",
+     "delta": 23
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Superbet",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "white",
+     "hex": "#eeecee"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8491,14 +10629,28 @@
      "White"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "dark green",
+     "hex": "#04433a",
+     "relation": "matches-body",
+     "delta": 20
+    },
+    "collar": {
+     "colour": "green",
+     "hex": "#496463",
+     "relation": "contrast",
+     "delta": 75
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Superbet",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#065345"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,
@@ -8544,9 +10696,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Superbet",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "sky blue",
+     "hex": "#7f9dc6"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -8591,9 +10747,13 @@
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Superbet",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "dark green",
+     "hex": "#044840"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": false,
    "sport": "football",
    "confidence": 2,
@@ -8634,14 +10794,28 @@
      "Purple"
     ],
     "pattern": "Plain",
-    "sleeves": null,
-    "collar": null,
+    "sleeves": {
+     "colour": "black",
+     "hex": "#1e1f21",
+     "relation": "matches-body",
+     "delta": 5
+    },
+    "collar": {
+     "colour": "black",
+     "hex": "#1c1c1e",
+     "relation": "matches-body",
+     "delta": 9
+    },
     "crest": "club-crest",
     "maker": "adidas",
     "sponsor": "Superbet",
-    "nameset": null
+    "nameset": null,
+    "body": {
+     "colour": "black",
+     "hex": "#212124"
+    }
    },
-   "partsNote": "base/pattern/maker are from the source page; palette is measured on the cut-out; sleeves/collar/sponsor/nameset are not in the source and stay null until someone reads the shirt",
+   "partsNote": "base/pattern/maker/sponsor are from the source page; body, sleeves and collar are measured on the decoded cut-out (flat front view); nameset is not visible from the front and stays null.",
    "usableInApp": true,
    "sport": "football",
    "confidence": 2,

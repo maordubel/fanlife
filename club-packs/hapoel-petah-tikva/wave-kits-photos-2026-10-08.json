@@ -345,6 +345,14 @@
    "checkedAt": "2026-10-08"
   },
   {
+   "id": "fka-24570",
+   "title": "Hapoel Petah Tikva 2010/11 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2010-11-gk-kit-24570/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
    "id": "fka-24573",
    "title": "Hapoel Petah Tikva 2010/11 home kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2010-11-home-kit-24573/",
@@ -369,6 +377,22 @@
    "checkedAt": "2026-10-08"
   },
   {
+   "id": "fka-24566",
+   "title": "Hapoel Petah Tikva 2011/12 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2011-12-gk-2-kit-24566/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-24568",
+   "title": "Hapoel Petah Tikva 2011/12 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2011-12-gk-kit-24568/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
    "id": "fka-24569",
    "title": "Hapoel Petah Tikva 2011/12 home kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2011-12-home-kit-24569/",
@@ -380,6 +404,22 @@
    "id": "fka-52825",
    "title": "Hapoel Petah Tikva 2012/13 away kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2012-13-away-kit-52825/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-90239",
+   "title": "Hapoel Petah Tikva 2012/13 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2012-13-gk-2-kit-90239/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-90241",
+   "title": "Hapoel Petah Tikva 2012/13 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2012-13-gk-kit-90241/",
    "publisher": "Football Kit Archive",
    "access": "available",
    "checkedAt": "2026-10-08"
@@ -404,6 +444,14 @@
    "id": "fka-52822",
    "title": "Hapoel Petah Tikva 2013/14 away kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2013-14-away-kit-52822/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-90240",
+   "title": "Hapoel Petah Tikva 2013/14 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2013-14-gk-kit-90240/",
    "publisher": "Football Kit Archive",
    "access": "available",
    "checkedAt": "2026-10-08"
@@ -508,6 +556,14 @@
    "id": "fka-52816",
    "title": "Hapoel Petah Tikva 2018/19 away kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2018-19-away-kit-52816/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-90244",
+   "title": "Hapoel Petah Tikva 2018/19 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2018-19-gk-kit-90244/",
    "publisher": "Football Kit Archive",
    "access": "available",
    "checkedAt": "2026-10-08"
@@ -633,6 +689,14 @@
    "checkedAt": "2026-10-08"
   },
   {
+   "id": "fka-214461",
+   "title": "Hapoel Petah Tikva 2023/24 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2023-24-gk-kit-214461/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
    "id": "fka-170346",
    "title": "Hapoel Petah Tikva 2023/24 home kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/hapoel-petah-tikva-2023-24-home-kit-170346/",
@@ -748,7 +812,37 @@
     "construction": {
      "design": "graphic",
      "colors": "green/white"
-    }
+    },
+    "palette": [
+     "#217e51",
+     "#25865a",
+     "#6ca893",
+     "#185e3b"
+    ],
+    "parts": {
+     "body": {
+      "colour": "green",
+      "hex": "#22875c"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "green",
+      "hex": "#1b6d43",
+      "relation": "contrast",
+      "delta": 37
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#bfbfc2",
+      "relation": "contrast",
+      "delta": 195
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1986-87-home.webp"
    },
    "sources": [
     "fka-231953"
@@ -756,9 +850,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-90245",
@@ -770,7 +866,37 @@
     "construction": {
      "design": "stripes",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#4363b3",
+     "#324fa0",
+     "#223c85",
+     "#7187bc"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#4060a9"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#37539c",
+      "relation": "matches-body",
+      "delta": 20
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#989baa",
+      "relation": "contrast",
+      "delta": 106
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1987-88-home.webp"
    },
    "sources": [
     "fka-90245"
@@ -778,9 +904,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-142765",
@@ -792,7 +920,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#e9e1c7",
+     "#ded3b7",
+     "#f2eed7",
+     "#44475d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#e7dfc4"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#e6dec6",
+      "relation": "matches-body",
+      "delta": 2
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#60626c",
+      "relation": "contrast",
+      "delta": 204
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1990-91-away.webp"
    },
    "sources": [
     "fka-142765"
@@ -800,9 +958,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24600",
@@ -814,7 +974,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#3973d8",
+     "#3061c9",
+     "#224bae",
+     "#598cdc"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#3b76db"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#2b5dbd",
+      "relation": "contrast",
+      "delta": 42
+     },
+     "collar": {
+      "colour": "blue",
+      "hex": "#2f53b3",
+      "relation": "contrast",
+      "delta": 54
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1990-91-home.webp"
    },
    "sources": [
     "fka-24600"
@@ -822,9 +1012,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24599",
@@ -836,7 +1028,27 @@
     "construction": {
      "design": "graphic",
      "colors": "white/navy"
-    }
+    },
+    "palette": [
+     "#ede3d6",
+     "#0d0f19",
+     "#c6bcad",
+     "#7b756d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#a7a199"
+     },
+     "pattern": "Graphic",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-24599"
@@ -844,9 +1056,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231963",
@@ -858,7 +1072,37 @@
     "construction": {
      "design": "graphic",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#0e2666",
+     "#dcdcdc",
+     "#061b59",
+     "#515c7e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#0c2363"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#d8d6d7",
+      "relation": "contrast",
+      "delta": 295
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#aba89a",
+      "relation": "contrast",
+      "delta": 214
+     },
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1992-93-away.webp"
    },
    "sources": [
     "fka-231963"
@@ -866,9 +1110,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24598",
@@ -880,7 +1126,37 @@
     "construction": {
      "design": "graphic",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#797062",
+     "#9b958e",
+     "#cdcbcc",
+     "#534a3e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#88817a"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "pink",
+      "hex": "#aea9a5",
+      "relation": "contrast",
+      "delta": 70
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#442f1f",
+      "relation": "contrast",
+      "delta": 140
+     },
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1992-93-home.webp"
    },
    "sources": [
     "fka-24598"
@@ -888,9 +1164,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24597",
@@ -902,7 +1180,27 @@
     "construction": {
      "design": "stripes",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#0c1127",
+     "#efe5d4",
+     "#cac0b3",
+     "#4a4d5e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#ada79b"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-24597"
@@ -910,9 +1208,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24594",
@@ -924,7 +1224,27 @@
     "construction": {
      "design": "stripes",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#13151c",
+     "#c0b9ae",
+     "#494d55",
+     "#868581"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#181a1f"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-24594"
@@ -932,9 +1252,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24596",
@@ -946,7 +1268,37 @@
     "construction": {
      "design": "stripes",
      "colors": "blue/black"
-    }
+    },
+    "palette": [
+     "#498acd",
+     "#3b435a",
+     "#745762",
+     "#77aed9"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#578a87"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "purple",
+      "hex": "#49657d",
+      "relation": "contrast",
+      "delta": 41
+     },
+     "collar": {
+      "colour": "dark green",
+      "hex": "#343738",
+      "relation": "contrast",
+      "delta": 120
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1994-95-home.webp"
    },
    "sources": [
     "fka-24596"
@@ -954,9 +1306,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231962",
@@ -968,7 +1322,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#e0d3c0",
+     "#d7c9b7",
+     "#e7dac7",
+     "#6d6e73"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#e0d3c0"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#d3c6b6",
+      "relation": "matches-body",
+      "delta": 21
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#0b244a",
+      "relation": "contrast",
+      "delta": 300
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1994-95-special.webp"
    },
    "sources": [
     "fka-231962"
@@ -976,9 +1360,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24595",
@@ -990,7 +1376,37 @@
     "construction": {
      "design": "stripes",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#213c6c",
+     "#c5c3be",
+     "#1b2b4b",
+     "#546b91"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#2a4c86"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#1f355d",
+      "relation": "contrast",
+      "delta": 48
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#1e376a",
+      "relation": "contrast",
+      "delta": 37
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1994-95-special-24595.webp"
    },
    "sources": [
     "fka-24595"
@@ -998,9 +1414,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24593",
@@ -1012,7 +1430,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/black"
-    }
+    },
+    "palette": [
+     "#c4bcb2",
+     "#d3cbc1",
+     "#e3dcd2",
+     "#796d67"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#ccc5ba"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#d4cbc2",
+      "relation": "matches-body",
+      "delta": 13
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#303250",
+      "relation": "contrast",
+      "delta": 239
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1994-95-third.webp"
    },
    "sources": [
     "fka-24593"
@@ -1020,9 +1468,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24592",
@@ -1034,7 +1484,37 @@
     "construction": {
      "design": "plain",
      "colors": "sky blue/black"
-    }
+    },
+    "palette": [
+     "#2f74b4",
+     "#2a6caa",
+     "#1c446c",
+     "#538dbf"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#2e75b4"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#2e6ca7",
+      "relation": "matches-body",
+      "delta": 16
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#111518",
+      "relation": "contrast",
+      "delta": 185
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1995-96-home.webp"
    },
    "sources": [
     "fka-24592"
@@ -1042,9 +1522,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24590",
@@ -1056,7 +1538,37 @@
     "construction": {
      "design": "plain",
      "colors": "black/white"
-    }
+    },
+    "palette": [
+     "#252423",
+     "#222120",
+     "#1e1d1d",
+     "#4f4c44"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#22201f"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#292726",
+      "relation": "matches-body",
+      "delta": 12
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#2c2d29",
+      "relation": "matches-body",
+      "delta": 19
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1996-97-away.webp"
    },
    "sources": [
     "fka-24590"
@@ -1064,9 +1576,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231961",
@@ -1078,7 +1592,27 @@
     "construction": {
      "design": "graphic",
      "colors": "white/blue/black"
-    }
+    },
+    "palette": [
+     "#4a4950",
+     "#2e2e37",
+     "#1b1b23",
+     "#828082"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#2f2e31"
+     },
+     "pattern": "Graphic",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-231961"
@@ -1086,9 +1620,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24591",
@@ -1100,7 +1636,37 @@
     "construction": {
      "design": "stripes",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#cbc6b8",
+     "#1e2342",
+     "#0e1734",
+     "#6b6d71"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#141f3a"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#2f3b62",
+      "relation": "contrast",
+      "delta": 56
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#ddd4c2",
+      "relation": "contrast",
+      "delta": 303
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1996-97-home-24591.webp"
    },
    "sources": [
     "fka-24591"
@@ -1108,9 +1674,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24589",
@@ -1122,7 +1690,37 @@
     "construction": {
      "design": "graphic",
      "colors": "blue/red/white"
-    }
+    },
+    "palette": [
+     "#142784",
+     "#091861",
+     "#606198",
+     "#56184c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#351d65"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#0e2586",
+      "relation": "contrast",
+      "delta": 52
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#0f2784",
+      "relation": "contrast",
+      "delta": 50
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1996-97-special.webp"
    },
    "sources": [
     "fka-24589"
@@ -1130,9 +1728,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24588",
@@ -1144,7 +1744,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#8c8a83",
+     "#999994",
+     "#a5a6a3",
+     "#6f6e6a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#9b9c97"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#85827c",
+      "relation": "contrast",
+      "delta": 43
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#7f7d74",
+      "relation": "contrast",
+      "delta": 54
+     },
+     "crest": "club-crest",
+     "maker": "Nike",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1997-98-away.webp"
    },
    "sources": [
     "fka-24588"
@@ -1152,9 +1782,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231960",
@@ -1166,7 +1798,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#213f8c",
+     "#183170",
+     "#1d3981",
+     "#4c6198"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#224391"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#1a3371",
+      "relation": "contrast",
+      "delta": 37
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#666a7e",
+      "relation": "contrast",
+      "delta": 81
+     },
+     "crest": "club-crest",
+     "maker": "Nike",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1997-98-home.webp"
    },
    "sources": [
     "fka-231960"
@@ -1174,9 +1836,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24585",
@@ -1188,7 +1852,37 @@
     "construction": {
      "design": "plain",
      "colors": "sky blue/navy"
-    }
+    },
+    "palette": [
+     "#175e99",
+     "#165b94",
+     "#216aa6",
+     "#16426a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#165d97"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#1e659f",
+      "relation": "matches-body",
+      "delta": 14
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#141b27",
+      "relation": "contrast",
+      "delta": 130
+     },
+     "crest": "club-crest",
+     "maker": "Nike",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1997-98-home-24585.webp"
    },
    "sources": [
     "fka-24585"
@@ -1196,9 +1890,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24586",
@@ -1210,7 +1906,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/navy"
-    }
+    },
+    "palette": [
+     "#8b8786",
+     "#9f9d9d",
+     "#989595",
+     "#555255"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#9e9b9b"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#7c7878",
+      "relation": "contrast",
+      "delta": 60
+     },
+     "collar": {
+      "colour": "brown",
+      "hex": "#4c4c4f",
+      "relation": "contrast",
+      "delta": 137
+     },
+     "crest": "club-crest",
+     "maker": "Nike",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1998-99-away.webp"
    },
    "sources": [
     "fka-24586"
@@ -1218,9 +1944,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24587",
@@ -1232,7 +1960,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#16316e",
+     "#204180",
+     "#102257",
+     "#8291a5"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#224583"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#1b3978",
+      "relation": "matches-body",
+      "delta": 18
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#9ea5a7",
+      "relation": "contrast",
+      "delta": 161
+     },
+     "crest": "club-crest",
+     "maker": "Nike",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1998-99-home.webp"
    },
    "sources": [
     "fka-24587"
@@ -1240,9 +1998,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231959",
@@ -1254,7 +2014,37 @@
     "construction": {
      "design": "plain",
      "colors": "navy/white"
-    }
+    },
+    "palette": [
+     "#433d53",
+     "#141121",
+     "#29243a",
+     "#8a8085"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#332c46"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#413e54",
+      "relation": "matches-body",
+      "delta": 27
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#302926",
+      "relation": "matches-body",
+      "delta": 32
+     },
+     "crest": "club-crest",
+     "maker": "Nike",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1999-00-home.webp"
    },
    "sources": [
     "fka-231959"
@@ -1262,9 +2052,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24584",
@@ -1276,7 +2068,37 @@
     "construction": {
      "design": "chest band",
      "colors": "blue/white/black"
-    }
+    },
+    "palette": [
+     "#193069",
+     "#162a5b",
+     "#acacac",
+     "#101c3a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#182f6a"
+     },
+     "pattern": "Chest band",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#192f67",
+      "relation": "matches-body",
+      "delta": 3
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#111517",
+      "relation": "contrast",
+      "delta": 87
+     },
+     "crest": "club-crest",
+     "maker": "Nike",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-1999-00-third.webp"
    },
    "sources": [
     "fka-24584"
@@ -1284,9 +2106,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-486298",
@@ -1298,7 +2122,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue/black"
-    }
+    },
+    "palette": [
+     "#b2a7ad",
+     "#c0b6bb",
+     "#cac3c6",
+     "#7c7380"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c6bfc3"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#bbb0b5",
+      "relation": "matches-body",
+      "delta": 23
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#ad9f9f",
+      "relation": "contrast",
+      "delta": 54
+     },
+     "crest": "club-crest",
+     "maker": "Nike",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2000-01-home.webp"
    },
    "sources": [
     "fka-486298"
@@ -1306,9 +2160,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24582",
@@ -1320,7 +2176,27 @@
     "construction": {
      "design": "chest band",
      "colors": "white/blue/red"
-    }
+    },
+    "palette": [
+     "#17203f",
+     "#d7d2c8",
+     "#aea99f",
+     "#53545a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#3c4057"
+     },
+     "pattern": "Chest band",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-24582"
@@ -1328,9 +2204,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231958",
@@ -1342,7 +2220,37 @@
     "construction": {
      "design": "chest band",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#3a4575",
+     "#333c6a",
+     "#29315a",
+     "#7e819b"
+    ],
+    "parts": {
+     "body": {
+      "colour": "purple",
+      "hex": "#384374"
+     },
+     "pattern": "Chest band",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#3b436c",
+      "relation": "matches-body",
+      "delta": 9
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#313b5d",
+      "relation": "matches-body",
+      "delta": 25
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2001-02-home.webp"
    },
    "sources": [
     "fka-231958"
@@ -1350,9 +2258,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24583",
@@ -1364,7 +2274,27 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#08278c",
+     "#e3e6de",
+     "#051c74",
+     "#2a4498"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#0a298f"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-24583"
@@ -1372,9 +2302,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24581",
@@ -1386,7 +2318,27 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#a3a097",
+     "#182449",
+     "#b1b1ab",
+     "#726e72"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#aca9a0"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-24581"
@@ -1394,9 +2346,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231957",
@@ -1408,7 +2362,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#1f409d",
+     "#1a3b95",
+     "#16338a",
+     "#586da7"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#1f41a1"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#183589",
+      "relation": "matches-body",
+      "delta": 28
+     },
+     "collar": {
+      "colour": "blue",
+      "hex": "#213d8e",
+      "relation": "matches-body",
+      "delta": 20
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2002-03-home.webp"
    },
    "sources": [
     "fka-231957"
@@ -1416,9 +2400,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24580",
@@ -1430,7 +2416,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#3a5da1",
+     "#325395",
+     "#274684",
+     "#6983b4"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#395c9f"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#315291",
+      "relation": "matches-body",
+      "delta": 19
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#264680",
+      "relation": "contrast",
+      "delta": 42
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2002-03-home-24580.webp"
    },
    "sources": [
     "fka-24580"
@@ -1438,9 +2454,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231956",
@@ -1452,7 +2470,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#cfc0ad",
+     "#b7a997",
+     "#e3d4c0",
+     "#787165"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c9baa8"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#9a8d7a",
+      "relation": "contrast",
+      "delta": 80
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#9b8d7e",
+      "relation": "contrast",
+      "delta": 77
+     },
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2003-04-away.webp"
    },
    "sources": [
     "fka-231956"
@@ -1460,9 +2508,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24578",
@@ -1474,7 +2524,37 @@
     "construction": {
      "design": "plain",
      "colors": "white"
-    }
+    },
+    "palette": [
+     "#a8afbc",
+     "#929397",
+     "#c9d3e2",
+     "#706f65"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#a0a5ad"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#a3a8ae",
+      "relation": "matches-body",
+      "delta": 4
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#b3bfd7",
+      "relation": "contrast",
+      "delta": 53
+     },
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2003-04-away-24578.webp"
    },
    "sources": [
     "fka-24578"
@@ -1482,9 +2562,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24579",
@@ -1496,7 +2578,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#182a63",
+     "#101c41",
+     "#0c1430",
+     "#5a6889"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#101f49"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#1c357e",
+      "relation": "contrast",
+      "delta": 59
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#1d2b52",
+      "relation": "matches-body",
+      "delta": 20
+     },
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2003-04-home.webp"
    },
    "sources": [
     "fka-24579"
@@ -1504,9 +2616,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-134523",
@@ -1518,7 +2632,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/black/gray"
-    }
+    },
+    "palette": [
+     "#c2c2c7",
+     "#cacbd2",
+     "#d7dae4",
+     "#797978"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c7c8ce"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#bfbdbd",
+      "relation": "matches-body",
+      "delta": 22
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#beb9b3",
+      "relation": "matches-body",
+      "delta": 32
+     },
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2005-06-away.webp"
    },
    "sources": [
     "fka-134523"
@@ -1526,9 +2670,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52828",
@@ -1540,7 +2686,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#163f8b",
+     "#153a83",
+     "#123374",
+     "#526e9f"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#18428e"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#173d85",
+      "relation": "matches-body",
+      "delta": 10
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#143576",
+      "relation": "matches-body",
+      "delta": 28
+     },
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2005-06-home.webp"
    },
    "sources": [
     "fka-52828"
@@ -1548,9 +2724,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24575",
@@ -1562,7 +2740,37 @@
     "construction": {
      "design": "stripes",
      "colors": "blue/black"
-    }
+    },
+    "palette": [
+     "#16181c",
+     "#283f75",
+     "#202c45",
+     "#5578b9"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#1d355e"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#273340",
+      "relation": "matches-body",
+      "delta": 32
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#2b4374",
+      "relation": "matches-body",
+      "delta": 30
+     },
+     "crest": "club-crest",
+     "maker": "Diadora",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2005-06-special.webp"
    },
    "sources": [
     "fka-24575"
@@ -1570,9 +2778,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52827",
@@ -1584,7 +2794,27 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white/black"
-    }
+    },
+    "palette": [
+     "#1e2e49",
+     "#1c2a44",
+     "#17253e",
+     "#434c5c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#1e2f4c"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-52827"
@@ -1592,9 +2822,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24577",
@@ -1606,7 +2838,37 @@
     "construction": {
      "design": "graphic",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#263989",
+     "#1d2c75",
+     "#263078",
+     "#53619e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#223888"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#27337a",
+      "relation": "matches-body",
+      "delta": 16
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#2a3988",
+      "relation": "matches-body",
+      "delta": 8
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2007-08-home.webp"
    },
    "sources": [
     "fka-24577"
@@ -1614,9 +2876,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24576",
@@ -1628,7 +2892,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#204c91",
+     "#1e478b",
+     "#184185",
+     "#5975a2"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#204e93"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#1e488a",
+      "relation": "matches-body",
+      "delta": 11
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#1d3f7d",
+      "relation": "matches-body",
+      "delta": 27
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2008-09-home.webp"
    },
    "sources": [
     "fka-24576"
@@ -1636,9 +2930,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24574",
@@ -1650,7 +2946,37 @@
     "construction": {
      "design": "plain",
      "colors": "black/white"
-    }
+    },
+    "palette": [
+     "#222328",
+     "#1d1d22",
+     "#18191c",
+     "#454548"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#1e2023"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#27262b",
+      "relation": "matches-body",
+      "delta": 13
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#202125",
+      "relation": "matches-body",
+      "delta": 3
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2009-10-third.webp"
    },
    "sources": [
     "fka-24574"
@@ -1658,9 +2984,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24572",
@@ -1672,7 +3000,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#c9b9a9",
+     "#c5b5a5",
+     "#ccbcac",
+     "#706a68"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c9b9aa"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#c9b9a9",
+      "relation": "matches-body",
+      "delta": 1
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#8f837c",
+      "relation": "contrast",
+      "delta": 92
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2010-11-away.webp"
    },
    "sources": [
     "fka-24572"
@@ -1680,9 +3038,65 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-24570",
+   "value": {
+    "name": "Hapoel Petah Tikva 2010/11 gk",
+    "season": "2010/11",
+    "type": "gk",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "green/white"
+    },
+    "palette": [
+     "#255c40",
+     "#1d4d36",
+     "#154430",
+     "#507c60"
+    ],
+    "parts": {
+     "body": {
+      "colour": "dark green",
+      "hex": "#1d533b"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "green",
+      "hex": "#265b40",
+      "relation": "matches-body",
+      "delta": 13
+     },
+     "collar": {
+      "colour": "dark green",
+      "hex": "#245840",
+      "relation": "matches-body",
+      "delta": 10
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2010-11-gk.webp"
+   },
+   "sources": [
+    "fka-24570"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24573",
@@ -1694,7 +3108,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#29509a",
+     "#274c96",
+     "#24458e",
+     "#607dad"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#254e98"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#315598",
+      "relation": "matches-body",
+      "delta": 14
+     },
+     "collar": {
+      "colour": "blue",
+      "hex": "#395ba0",
+      "relation": "matches-body",
+      "delta": 25
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2010-11-home.webp"
    },
    "sources": [
     "fka-24573"
@@ -1702,9 +3146,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24571",
@@ -1716,7 +3162,27 @@
     "construction": {
      "design": "stripes",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#24436b",
+     "#365379",
+     "#c3c4b9",
+     "#193355"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#868c92"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-24571"
@@ -1724,9 +3190,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24567",
@@ -1738,7 +3206,27 @@
     "construction": {
      "design": "sash",
      "colors": "white/blue/black"
-    }
+    },
+    "palette": [
+     "#223758",
+     "#161617",
+     "#505c6c",
+     "#1d2128"
+    ],
+    "parts": {
+     "body": {
+      "colour": "dark green",
+      "hex": "#24363c"
+     },
+     "pattern": "Sash",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-24567"
@@ -1746,9 +3234,118 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-24566",
+   "value": {
+    "name": "Hapoel Petah Tikva 2011/12 gk",
+    "season": "2011/12",
+    "type": "gk",
+    "manufacturer": "Givova",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "palette": [
+     "#ad9406",
+     "#b89e07",
+     "#c3a908",
+     "#66540a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "gold",
+      "hex": "#b8a106"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "gold",
+      "hex": "#b69b07",
+      "relation": "matches-body",
+      "delta": 6
+     },
+     "collar": {
+      "colour": "gold",
+      "hex": "#be9d05",
+      "relation": "matches-body",
+      "delta": 7
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2011-12-gk-2.webp"
+   },
+   "sources": [
+    "fka-24566"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-24568",
+   "value": {
+    "name": "Hapoel Petah Tikva 2011/12 gk",
+    "season": "2011/12",
+    "type": "gk",
+    "manufacturer": "Givova",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black/white"
+    },
+    "palette": [
+     "#cf7903",
+     "#c77303",
+     "#a05a07"
+    ],
+    "parts": {
+     "body": {
+      "colour": "orange",
+      "hex": "#cd7a02"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "orange",
+      "hex": "#c57d05",
+      "relation": "matches-body",
+      "delta": 9
+     },
+     "collar": {
+      "colour": "orange",
+      "hex": "#c46605",
+      "relation": "matches-body",
+      "delta": 22
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2011-12-gk.webp"
+   },
+   "sources": [
+    "fka-24568"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24569",
@@ -1760,7 +3357,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue/black"
-    }
+    },
+    "palette": [
+     "#cfbea6",
+     "#cbbaa3",
+     "#d3c3ab",
+     "#a29380"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#d0bfa8"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#ccbca5",
+      "relation": "matches-body",
+      "delta": 6
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#c3b29d",
+      "relation": "matches-body",
+      "delta": 21
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2011-12-home.webp"
    },
    "sources": [
     "fka-24569"
@@ -1768,9 +3395,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52825",
@@ -1782,7 +3411,24 @@
     "construction": {
      "design": "stripes",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#8b8883",
+     "#121b31",
+     "#93918d",
+     "#686768"
+    ],
+    "parts": {
+     "body": null,
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-52825"
@@ -1790,9 +3436,109 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-90239",
+   "value": {
+    "name": "Hapoel Petah Tikva 2012/13 gk",
+    "season": "2012/13",
+    "type": "gk",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": "pinstripes",
+     "colors": "black/red"
+    },
+    "palette": [
+     "#b01f2c",
+     "#96a07a",
+     "#5f1920",
+     "#8d4148"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#7a805a"
+     },
+     "pattern": "Pinstripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
+   },
+   "sources": [
+    "fka-90239"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-90241",
+   "value": {
+    "name": "Hapoel Petah Tikva 2012/13 gk",
+    "season": "2012/13",
+    "type": "gk",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": "pinstripes",
+     "colors": "green/black"
+    },
+    "palette": [
+     "#77a486",
+     "#6e977c",
+     "#94b08a",
+     "#54715d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#7ba687"
+     },
+     "pattern": "Pinstripes",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#7ea083",
+      "relation": "matches-body",
+      "delta": 8
+     },
+     "collar": {
+      "colour": "green",
+      "hex": "#3f5e4e",
+      "relation": "contrast",
+      "delta": 110
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2012-13-gk.webp"
+   },
+   "sources": [
+    "fka-90241"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52826",
@@ -1804,7 +3550,27 @@
     "construction": {
      "design": "pinstripes",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#c1c3cc",
+     "#5568a8",
+     "#d2d5dc",
+     "#929dbd"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c0c4cf"
+     },
+     "pattern": "Pinstripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-52826"
@@ -1812,9 +3578,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52824",
@@ -1826,7 +3594,27 @@
     "construction": {
      "design": "pinstripes",
      "colors": "black/white"
-    }
+    },
+    "palette": [
+     "#fbfdf1",
+     "#2a2826",
+     "#dce3b5",
+     "#9e9b84"
+    ],
+    "parts": {
+     "body": {
+      "colour": "light green",
+      "hex": "#bdb97e"
+     },
+     "pattern": "Pinstripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-52824"
@@ -1834,9 +3622,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52822",
@@ -1848,7 +3638,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#989a89",
+     "#9fa391",
+     "#adad99",
+     "#706e5d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#9da391"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#a1a08f",
+      "relation": "matches-body",
+      "delta": 5
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#aaa490",
+      "relation": "matches-body",
+      "delta": 13
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2013-14-away.webp"
    },
    "sources": [
     "fka-52822"
@@ -1856,9 +3676,65 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-90240",
+   "value": {
+    "name": "Hapoel Petah Tikva 2013/14 gk",
+    "season": "2013/14",
+    "type": "gk",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "palette": [
+     "#97a60e",
+     "#9eaf12",
+     "#adbc17",
+     "#71790d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "gold",
+      "hex": "#9bac10"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "gold",
+      "hex": "#9faf14",
+      "relation": "matches-body",
+      "delta": 6
+     },
+     "collar": {
+      "colour": "gold",
+      "hex": "#a5b113",
+      "relation": "matches-body",
+      "delta": 12
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2013-14-gk.webp"
+   },
+   "sources": [
+    "fka-90240"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-486297",
@@ -1870,7 +3746,37 @@
     "construction": {
      "design": "graphic",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#132a53",
+     "#10254d",
+     "#0d1f43",
+     "#3c4860"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#142c53"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#122750",
+      "relation": "matches-body",
+      "delta": 6
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#15264a",
+      "relation": "matches-body",
+      "delta": 11
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2013-14-home.webp"
    },
    "sources": [
     "fka-486297"
@@ -1878,9 +3784,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-486296",
@@ -1892,7 +3800,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#103887",
+     "#0d327f",
+     "#0b296f",
+     "#55707c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#0f3985"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#113683",
+      "relation": "matches-body",
+      "delta": 4
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#112f74",
+      "relation": "matches-body",
+      "delta": 20
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2013-14-home-486296.webp"
    },
    "sources": [
     "fka-486296"
@@ -1900,9 +3838,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52823",
@@ -1914,7 +3854,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#1c3e83",
+     "#1b397a",
+     "#17326d",
+     "#2f4f8f"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#1d428a"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#1a3671",
+      "relation": "matches-body",
+      "delta": 28
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#193168",
+      "relation": "contrast",
+      "delta": 38
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2013-14-home-52823.webp"
    },
    "sources": [
     "fka-52823"
@@ -1922,9 +3892,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-397187",
@@ -1936,7 +3908,37 @@
     "construction": {
      "design": "chest band",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#37458e",
+     "#283885",
+     "#1d2a73",
+     "#aaaec1"
+    ],
+    "parts": {
+     "body": {
+      "colour": "purple",
+      "hex": "#2d3d8c"
+     },
+     "pattern": "Chest band",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#364692",
+      "relation": "matches-body",
+      "delta": 14
+     },
+     "collar": {
+      "colour": "purple",
+      "hex": "#47477b",
+      "relation": "matches-body",
+      "delta": 33
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2014-15-away.webp"
    },
    "sources": [
     "fka-397187"
@@ -1944,9 +3946,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-24565",
@@ -1958,7 +3962,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/black/sky blue"
-    }
+    },
+    "palette": [
+     "#b1a598",
+     "#beb2a4",
+     "#b8ab9e",
+     "#8d847a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "pink",
+      "hex": "#b8ac9d"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#aea496",
+      "relation": "matches-body",
+      "delta": 15
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#a69b8e",
+      "relation": "matches-body",
+      "delta": 29
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2014-15-home.webp"
    },
    "sources": [
     "fka-24565"
@@ -1966,9 +4000,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231955",
@@ -1980,7 +4016,26 @@
     "construction": {
      "design": "stripes",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#181d2f",
+     "#dac8ad",
+     "#151b2d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#171d2f"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-231955"
@@ -1988,9 +4043,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-91441",
@@ -2002,7 +4059,37 @@
     "construction": {
      "design": "single stripe",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#afaa9e",
+     "#c6bfb3",
+     "#ddd7c9",
+     "#787672"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c1bbad"
+     },
+     "pattern": "Single stripe",
+     "sleeves": {
+      "colour": "light green",
+      "hex": "#afab9f",
+      "relation": "matches-body",
+      "delta": 28
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#959187",
+      "relation": "contrast",
+      "delta": 72
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2015-16-home.webp"
    },
    "sources": [
     "fka-91441"
@@ -2010,9 +4097,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52821",
@@ -2024,7 +4113,37 @@
     "construction": {
      "design": "hoops",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#1e2434",
+     "#1b2233",
+     "#545051",
+     "#181f30"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#1b2134"
+     },
+     "pattern": "Hoops",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#1e2433",
+      "relation": "matches-body",
+      "delta": 4
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#373037",
+      "relation": "matches-body",
+      "delta": 32
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2016-17-away.webp"
    },
    "sources": [
     "fka-52821"
@@ -2032,9 +4151,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-91442",
@@ -2046,7 +4167,37 @@
     "construction": {
      "design": "stripes",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#a9a69d",
+     "#bdb9af",
+     "#d9d5cb",
+     "#66686b"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#bdb9ae"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#b9b4a9",
+      "relation": "matches-body",
+      "delta": 8
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#6d6b66",
+      "relation": "contrast",
+      "delta": 133
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2016-17-home.webp"
    },
    "sources": [
     "fka-91442"
@@ -2054,9 +4205,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52820",
@@ -2068,7 +4221,37 @@
     "construction": {
      "design": "stripes",
      "colors": "black/white"
-    }
+    },
+    "palette": [
+     "#26211e",
+     "#231e1b",
+     "#5f564f",
+     "#211c19"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#241f1b"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#25211e",
+      "relation": "matches-body",
+      "delta": 4
+     },
+     "collar": {
+      "colour": "brown",
+      "hex": "#433931",
+      "relation": "contrast",
+      "delta": 46
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2016-17-third.webp"
    },
    "sources": [
     "fka-52820"
@@ -2076,9 +4259,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52818",
@@ -2090,7 +4275,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/black/blue"
-    }
+    },
+    "palette": [
+     "#c4b29d",
+     "#c8b6a1",
+     "#cebca6",
+     "#ab9b87"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c7b6a2"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "pink",
+      "hex": "#c1b099",
+      "relation": "matches-body",
+      "delta": 12
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#cab8a4",
+      "relation": "matches-body",
+      "delta": 4
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2017-18-away.webp"
    },
    "sources": [
     "fka-52818"
@@ -2098,9 +4313,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52819",
@@ -2112,7 +4329,37 @@
     "construction": {
      "design": "stripes",
      "colors": "blue/black"
-    }
+    },
+    "palette": [
+     "#21366c",
+     "#131721",
+     "#1c2740",
+     "#3f5c9e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#172842"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#263a71",
+      "relation": "contrast",
+      "delta": 53
+     },
+     "collar": {
+      "colour": "dark green",
+      "hex": "#2c313a",
+      "relation": "matches-body",
+      "delta": 24
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2017-18-home.webp"
    },
    "sources": [
     "fka-52819"
@@ -2120,9 +4367,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52816",
@@ -2134,7 +4383,37 @@
     "construction": {
      "design": "contrasting sleeves",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#baac97",
+     "#c9bba6",
+     "#dcceba",
+     "#706c69"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#beb19c"
+     },
+     "pattern": "Contrasting sleeves",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#c0b3a0",
+      "relation": "matches-body",
+      "delta": 5
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#bcb1a1",
+      "relation": "matches-body",
+      "delta": 5
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2018-19-away.webp"
    },
    "sources": [
     "fka-52816"
@@ -2142,9 +4421,55 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-90244",
+   "value": {
+    "name": "Hapoel Petah Tikva 2018/19 gk",
+    "season": "2018/19",
+    "type": "gk",
+    "manufacturer": "Givova",
+    "construction": {
+     "design": "plain",
+     "colors": "white/green/black"
+    },
+    "palette": [
+     "#121514",
+     "#cfcfd6",
+     "#324e3b",
+     "#8a8d88"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#7b7a72"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
+   },
+   "sources": [
+    "fka-90244"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52817",
@@ -2156,7 +4481,37 @@
     "construction": {
      "design": "plain",
      "colors": "black/white"
-    }
+    },
+    "palette": [
+     "#242525",
+     "#3a3c3f",
+     "#161615",
+     "#7b797b"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#242425"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#40454b",
+      "relation": "contrast",
+      "delta": 58
+     },
+     "collar": {
+      "colour": "pink",
+      "hex": "#c99578",
+      "relation": "contrast",
+      "delta": 217
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2018-19-third.webp"
    },
    "sources": [
     "fka-52817"
@@ -2164,9 +4519,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52814",
@@ -2178,7 +4535,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#0d2156",
+     "#152d6b",
+     "#506ca2",
+     "#091943"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#0d245f"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#294b8f",
+      "relation": "contrast",
+      "delta": 68
+     },
+     "collar": {
+      "colour": "purple",
+      "hex": "#2f497f",
+      "relation": "contrast",
+      "delta": 60
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2019-20-away.webp"
    },
    "sources": [
     "fka-52814"
@@ -2186,9 +4573,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52815",
@@ -2200,7 +4589,37 @@
     "construction": {
      "design": "stripes",
      "colors": "blue/black"
-    }
+    },
+    "palette": [
+     "#11141b",
+     "#1d3a71",
+     "#1c2434",
+     "#40659c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#142c57"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#263757",
+      "relation": "matches-body",
+      "delta": 21
+     },
+     "collar": {
+      "colour": "dark green",
+      "hex": "#383c40",
+      "relation": "contrast",
+      "delta": 46
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2019-20-home.webp"
    },
    "sources": [
     "fka-52815"
@@ -2208,9 +4627,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52813",
@@ -2222,7 +4643,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#afada8",
+     "#a6a49e",
+     "#bfbfbb",
+     "#767776"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#abaaa5"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#a7a59e",
+      "relation": "matches-body",
+      "delta": 9
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#a9a6a0",
+      "relation": "matches-body",
+      "delta": 7
+     },
+     "crest": "club-crest",
+     "maker": "Givova",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2019-20-third.webp"
    },
    "sources": [
     "fka-52813"
@@ -2230,9 +4681,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52811",
@@ -2244,7 +4697,37 @@
     "construction": {
      "design": "graphic",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#cdc1b8",
+     "#c0b8b1",
+     "#daccc3",
+     "#979695"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c6beb5"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#decfc7",
+      "relation": "contrast",
+      "delta": 34
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#c3b5ab",
+      "relation": "matches-body",
+      "delta": 14
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2020-21-away.webp"
    },
    "sources": [
     "fka-52811"
@@ -2252,9 +4735,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52812",
@@ -2266,7 +4751,37 @@
     "construction": {
      "design": "graphic",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#1b3161",
+     "#182d5d",
+     "#132553",
+     "#485a7c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#1b3261"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#1b3164",
+      "relation": "matches-body",
+      "delta": 3
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#223565",
+      "relation": "matches-body",
+      "delta": 9
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2020-21-home.webp"
    },
    "sources": [
     "fka-52812"
@@ -2274,9 +4789,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-52810",
@@ -2288,7 +4805,37 @@
     "construction": {
      "design": "plain",
      "colors": "pink/black"
-    }
+    },
+    "palette": [
+     "#dc6a70",
+     "#e07176",
+     "#ed777e",
+     "#974d4e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "pink",
+      "hex": "#e27377"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "pink",
+      "hex": "#e8767d",
+      "relation": "matches-body",
+      "delta": 9
+     },
+     "collar": {
+      "colour": "gold",
+      "hex": "#c06165",
+      "relation": "contrast",
+      "delta": 42
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2020-21-third.webp"
    },
    "sources": [
     "fka-52810"
@@ -2296,9 +4843,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-89422",
@@ -2310,7 +4859,27 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#527acd",
+     "#53597e",
+     "#2f3044",
+     "#82a7e8"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#4876d3"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-89422"
@@ -2318,9 +4887,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-90243",
@@ -2332,7 +4903,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#c2c2c7",
+     "#b8b7ba",
+     "#d4d4de",
+     "#7e7f82"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#bfbfc4"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#b5b4b5",
+      "relation": "matches-body",
+      "delta": 21
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#b5b4b6",
+      "relation": "matches-body",
+      "delta": 20
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2021-22-home.webp"
    },
    "sources": [
     "fka-90243"
@@ -2340,9 +4941,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-90242",
@@ -2354,7 +4957,37 @@
     "construction": {
      "design": "stripes",
      "colors": "black/white"
-    }
+    },
+    "palette": [
+     "#191a1b",
+     "#9e9da3",
+     "#111213",
+     "#29292d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#1b1b1c"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#161718",
+      "relation": "matches-body",
+      "delta": 8
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#1e1e21",
+      "relation": "matches-body",
+      "delta": 7
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2021-22-third.webp"
    },
    "sources": [
     "fka-90242"
@@ -2362,9 +4995,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-144754",
@@ -2376,7 +5011,37 @@
     "construction": {
      "design": "plain",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#2a5581",
+     "#264f7a",
+     "#21466d",
+     "#3f6791"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#264f79"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#2c5a87",
+      "relation": "matches-body",
+      "delta": 19
+     },
+     "collar": {
+      "colour": "blue",
+      "hex": "#2d5982",
+      "relation": "matches-body",
+      "delta": 15
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2022-23-away.webp"
    },
    "sources": [
     "fka-144754"
@@ -2384,9 +5049,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-144755",
@@ -2398,7 +5065,27 @@
     "construction": {
      "design": "stripes",
      "colors": "white/blue/black"
-    }
+    },
+    "palette": [
+     "#9199ae",
+     "#222631",
+     "#e1e1e2",
+     "#6b6f79"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#5f636d"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-144755"
@@ -2406,9 +5093,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-231954",
@@ -2420,7 +5109,37 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue/red"
-    }
+    },
+    "palette": [
+     "#bfbfc4",
+     "#cacbd2",
+     "#dadde6",
+     "#687288"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c7c8cd"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#b8b8bc",
+      "relation": "matches-body",
+      "delta": 28
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#11316d",
+      "relation": "contrast",
+      "delta": 255
+     },
+     "crest": "club-crest",
+     "maker": "In-House",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2022-23-special.webp"
    },
    "sources": [
     "fka-231954"
@@ -2428,9 +5147,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-157524",
@@ -2442,7 +5163,37 @@
     "construction": {
      "design": "gradient",
      "colors": "black/white"
-    }
+    },
+    "palette": [
+     "#151515",
+     "#1c1c1c",
+     "#717172",
+     "#0b0b0b"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#161616"
+     },
+     "pattern": "Gradient",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#171717",
+      "relation": "matches-body",
+      "delta": 2
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#303030",
+      "relation": "contrast",
+      "delta": 45
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2022-23-third.webp"
    },
    "sources": [
     "fka-157524"
@@ -2450,9 +5201,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-170345",
@@ -2464,7 +5217,37 @@
     "construction": {
      "design": "graphic",
      "colors": "white/blue"
-    }
+    },
+    "palette": [
+     "#d5d7d8",
+     "#e4e4e4",
+     "#f2f2f2",
+     "#909eb1"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#d9dada"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "white",
+      "hex": "#dddee1",
+      "relation": "matches-body",
+      "delta": 9
+     },
+     "collar": {
+      "colour": "sky blue",
+      "hex": "#a3adcd",
+      "relation": "contrast",
+      "delta": 71
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2023-24-away.webp"
    },
    "sources": [
     "fka-170345"
@@ -2472,9 +5255,55 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-214461",
+   "value": {
+    "name": "Hapoel Petah Tikva 2023/24 gk",
+    "season": "2023/24",
+    "type": "gk",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": "plain",
+     "colors": "orange/black"
+    },
+    "palette": [
+     "#e35612",
+     "#dd7428",
+     "#883c26",
+     "#e5933c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "orange",
+      "hex": "#e66216"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
+   },
+   "sources": [
+    "fka-214461"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-170346",
@@ -2486,7 +5315,37 @@
     "construction": {
      "design": "graphic",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#2a5bbf",
+     "#2552ae",
+     "#1d4597",
+     "#628acd"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#2658b6"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#2856b0",
+      "relation": "matches-body",
+      "delta": 7
+     },
+     "collar": {
+      "colour": "blue",
+      "hex": "#587dcd",
+      "relation": "contrast",
+      "delta": 66
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2023-24-home.webp"
    },
    "sources": [
     "fka-170346"
@@ -2494,9 +5353,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-170344",
@@ -2508,7 +5369,37 @@
     "construction": {
      "design": "graphic",
      "colors": "black/gray/white"
-    }
+    },
+    "palette": [
+     "#232323",
+     "#191919",
+     "#0f0f0f",
+     "#666d6e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#1d1f1f"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#1e1e1e",
+      "relation": "matches-body",
+      "delta": 2
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#7c7e81",
+      "relation": "contrast",
+      "delta": 166
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2023-24-third.webp"
    },
    "sources": [
     "fka-170344"
@@ -2516,9 +5407,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-286515",
@@ -2530,7 +5423,27 @@
     "construction": {
      "design": "plain",
      "colors": "white/blue/black"
-    }
+    },
+    "palette": [
+     "#fffefe",
+     "#f9f8fa",
+     "#765653",
+     "#c8bfc4"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#fdfbfc"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-286515"
@@ -2538,9 +5451,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-277116",
@@ -2552,7 +5467,27 @@
     "construction": {
      "design": "stripes",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#0f287d",
+     "#f7fafb",
+     "#d4b6a8",
+     "#5466a1"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#2e6bd9"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-277116"
@@ -2560,9 +5495,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-366975",
@@ -2574,7 +5511,27 @@
     "construction": {
      "design": "graphic",
      "colors": "blue/white"
-    }
+    },
+    "palette": [
+     "#708dbc",
+     "#5c7bae",
+     "#395e9a",
+     "#99badc"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#387ccc"
+     },
+     "pattern": "Graphic",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "In-House",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-366975"
@@ -2582,9 +5539,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-286516",
@@ -2596,7 +5555,27 @@
     "construction": {
      "design": "plain",
      "colors": "black/blue/white"
-    }
+    },
+    "palette": [
+     "#231d1d",
+     "#cda591",
+     "#161414",
+     "#403434"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#272424"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-286516"
@@ -2604,9 +5583,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-392742",
@@ -2618,7 +5599,37 @@
     "construction": {
      "design": "single stripe",
      "colors": "white/blue/black"
-    }
+    },
+    "palette": [
+     "#edeeee",
+     "#fbfbfa",
+     "#cad4d4",
+     "#494e57"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#e3e3e3"
+     },
+     "pattern": "Single stripe",
+     "sleeves": {
+      "colour": "white",
+      "hex": "#e3e5e5",
+      "relation": "matches-body",
+      "delta": 3
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#949395",
+      "relation": "contrast",
+      "delta": 137
+     },
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": "/kits/hapoel-petah-tikva/fka-2025-26-away.webp"
    },
    "sources": [
     "fka-392742"
@@ -2626,9 +5637,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-392743",
@@ -2640,7 +5653,27 @@
     "construction": {
      "design": "single stripe",
      "colors": "blue/white/black"
-    }
+    },
+    "palette": [
+     "#145ee5",
+     "#1157d7",
+     "#5990e1",
+     "#0f409a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#1158d8"
+     },
+     "pattern": "Single stripe",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-392743"
@@ -2648,9 +5681,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-502687",
@@ -2662,7 +5697,27 @@
     "construction": {
      "design": "contrasting sleeves",
      "colors": "blue/white/black"
-    }
+    },
+    "palette": [
+     "#334b7d",
+     "#181f2d",
+     "#253456",
+     "#7a95b4"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#243c6a"
+     },
+     "pattern": "Contrasting sleeves",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "In House",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-502687"
@@ -2670,9 +5725,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-392744",
@@ -2684,7 +5741,27 @@
     "construction": {
      "design": "plain",
      "colors": "black/white"
-    }
+    },
+    "palette": [
+     "#262c2b",
+     "#181d1b",
+     "#9c8d81",
+     "#524b42"
+    ],
+    "parts": {
+     "body": {
+      "colour": "dark green",
+      "hex": "#2d3535"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-392744"
@@ -2692,9 +5769,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-501032",
@@ -2706,7 +5785,27 @@
     "construction": {
      "design": "graphic",
      "colors": "blue/white/blue"
-    }
+    },
+    "palette": [
+     "#b1b1bc",
+     "#433a47",
+     "#cdced7",
+     "#8a7a77"
+    ],
+    "parts": {
+     "body": {
+      "colour": "sky blue",
+      "hex": "#a8abb4"
+     },
+     "pattern": "Graphic",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-501032"
@@ -2714,9 +5813,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-500627",
@@ -2728,7 +5829,27 @@
     "construction": {
      "design": "hoops",
      "colors": "blue/navy/white"
-    }
+    },
+    "palette": [
+     "#494f7d",
+     "#0e1935",
+     "#888da7",
+     "#232b4c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#17316c"
+     },
+     "pattern": "Hoops",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-500627"
@@ -2736,9 +5857,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-501031",
@@ -2750,7 +5873,27 @@
     "construction": {
      "design": "pinstripes",
      "colors": "black/blue/white"
-    }
+    },
+    "palette": [
+     "#272c35",
+     "#0d1925",
+     "#415167",
+     "#baaeb2"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#353e4c"
+     },
+     "pattern": "Pinstripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Lotto",
+     "sponsor": null,
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-501031"
@@ -2758,9 +5901,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   }
  ]
 }

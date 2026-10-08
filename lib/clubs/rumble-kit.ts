@@ -8,7 +8,7 @@ import type {RumbleCard} from './rumble'
  * Colour rule 95: a kit colour the club page may not show (the rival's family, or one the magazine
  * cannot paint) is dropped before anything is drawn; a kit left with no colour is not worn.
  */
-export type RumbleKit={id:string;season:string;design:string|null;colours:string[]}
+export type RumbleKit={id:string;season:string;design:string|null;colours:string[];parts?:KitView['parts']}
 export type RumbleWardrobe={home:RumbleKit[];away:RumbleKit[]}
 export type Worn={source:'archive';kit:RumbleKit}|{source:'livery';variant:'home'|'away'}
 
@@ -22,7 +22,7 @@ export function allowedColours(colours:string[],forbidden:(hex:string)=>boolean)
 export const seasonYear=(season:string)=>{const m=/(\d{4})/.exec(season);return m?Number(m[1]):null}
 
 export function rumbleWardrobe(kits:KitView[],forbidden:(hex:string)=>boolean):RumbleWardrobe{
- const dress=(k:KitView):RumbleKit|null=>{const colours=allowedColours(k.colours,forbidden);return colours.length&&seasonYear(k.season)!==null?{id:k.id,season:k.season,design:k.design,colours}:null}
+ const dress=(k:KitView):RumbleKit|null=>{const colours=allowedColours(k.colours,forbidden);return colours.length&&seasonYear(k.season)!==null?{id:k.id,season:k.season,design:k.design,colours,parts:k.parts}:null}
  const by=(types:string[])=>kits.filter(k=>types.includes((k.type||'home').toLowerCase())).map(dress).filter((k):k is RumbleKit=>!!k).sort((a,b)=>seasonYear(a.season)!-seasonYear(b.season)!||a.id.localeCompare(b.id))
  return {home:by(['home']),away:by(['away','third'])}
 }

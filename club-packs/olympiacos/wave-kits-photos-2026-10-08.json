@@ -25,6 +25,14 @@
    "checkedAt": "2026-10-08"
   },
   {
+   "id": "fka-232126",
+   "title": "Olympiacos 1972/73 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1972-73-gk-1-kit-232126/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
    "id": "fka-304831",
    "title": "Olympiacos 1972/73 home kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/olympiacos-fc-1972-73-home-kit-304831/",
@@ -177,6 +185,22 @@
    "checkedAt": "2026-10-08"
   },
   {
+   "id": "fka-110867",
+   "title": "Olympiacos 2005/06 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2005-06-gk-1-kit-110867/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-232122",
+   "title": "Olympiacos 2005/06 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2005-06-gk-2-kit-232122/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
    "id": "fka-19709",
    "title": "Olympiacos 2005/06 home kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/olympiacos-fc-2005-06-home-kit-19709/",
@@ -204,6 +228,14 @@
    "id": "fka-75745",
    "title": "Olympiacos 2006/07 fourth kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/olympiacos-fc-2006-07-fourth-kit-75745/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-362095",
+   "title": "Olympiacos 2006/07 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2006-07-gk-1-kit-362095/",
    "publisher": "Football Kit Archive",
    "access": "available",
    "checkedAt": "2026-10-08"
@@ -241,6 +273,14 @@
    "checkedAt": "2026-10-08"
   },
   {
+   "id": "fka-223944",
+   "title": "Olympiacos 2007/08 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2007-08-gk-1-kit-223944/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
    "id": "fka-22961",
    "title": "Olympiacos 2007/08 home kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/olympiacos-fc-2007-08-home-kit-22961/",
@@ -273,6 +313,14 @@
    "checkedAt": "2026-10-08"
   },
   {
+   "id": "fka-479852",
+   "title": "Olympiacos 2008/09 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2008-09-gk-1-kit-479852/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
    "id": "fka-19705",
    "title": "Olympiacos 2008/09 home kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/olympiacos-fc-2008-09-home-kit-19705/",
@@ -292,6 +340,14 @@
    "id": "fka-90618",
    "title": "Olympiacos 2009/10 fourth kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/olympiacos-fc-2009-10-fourth-kit-90618/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-362091",
+   "title": "Olympiacos 2009/10 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2009-10-gk-1-kit-362091/",
    "publisher": "Football Kit Archive",
    "access": "available",
    "checkedAt": "2026-10-08"
@@ -537,6 +593,22 @@
    "checkedAt": "2026-10-08"
   },
   {
+   "id": "fka-492578",
+   "title": "Olympiacos 2026/27 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2026-27-gk-1-kit-492578/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "fka-492275",
+   "title": "Olympiacos 2026/27 gk kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2026-27-gk-2-kit-492275/",
+   "publisher": "Football Kit Archive",
+   "access": "available",
+   "checkedAt": "2026-10-08"
+  },
+  {
    "id": "fka-485564",
    "title": "Olympiacos 2026/27 home kit — Football Kit Archive",
    "url": "https://www.footballkitarchive.com/olympiacos-fc-2026-27-home-kit-485564/",
@@ -565,7 +637,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#8c2c33",
+     "#cfc3b2",
+     "#b3a193",
+     "#9f6e5e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "pink",
+      "hex": "#c89d98"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "In-House",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-304833"
@@ -573,9 +665,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-312877",
@@ -588,7 +682,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#c6c2bf",
+     "#8a3a35",
+     "#57392d",
+     "#927c76"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#986a65"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "In-House",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-312877"
@@ -596,9 +710,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-397612",
@@ -611,7 +727,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#d30232",
+     "#f5f3eb",
+     "#d3bebf",
+     "#cc2d50"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#dc1340"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "No Brand",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-397612"
@@ -619,9 +755,56 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-232126",
+   "value": {
+    "name": "Olympiacos 1972/73 gk",
+    "season": "1972/73",
+    "type": "gk",
+    "manufacturer": "In-House",
+    "construction": {
+     "design": "plain",
+     "colors": "blue/red"
+    },
+    "sponsor": "-",
+    "palette": [
+     "#264b87",
+     "#25457f",
+     "#20407e",
+     "#5d6b8d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#254986"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "In-House",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
+   },
+   "sources": [
+    "fka-232126"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-304831",
@@ -634,7 +817,27 @@
      "design": "stripes",
      "colors": "white/brown"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#ada29b",
+     "#d9d5cf",
+     "#38312d",
+     "#817168"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#afa49f"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "In-House",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-304831"
@@ -642,9 +845,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-314879",
@@ -657,7 +862,27 @@
      "design": "stripes",
      "colors": "white/red"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#c8c5ca",
+     "#69252b",
+     "#8e4a4c",
+     "#b19391"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#a38475"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-314879"
@@ -665,9 +890,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-303890",
@@ -680,7 +907,27 @@
      "design": "stripes",
      "colors": "white/red"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#edbbc5",
+     "#af0615",
+     "#ca040f",
+     "#c45162"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#bf0a1a"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-303890"
@@ -688,9 +935,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-232125",
@@ -703,7 +952,37 @@
      "design": "plain",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#af0321",
+     "#e7e4da",
+     "#c9bab4",
+     "#aa2a3d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "pink",
+      "hex": "#ca818d"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "pink",
+      "hex": "#c29496",
+      "relation": "matches-body",
+      "delta": 22
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#d3c8a7",
+      "relation": "contrast",
+      "delta": 76
+     },
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-1979-80-home-232125.webp"
    },
    "sources": [
     "fka-232125"
@@ -711,9 +990,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-401611",
@@ -726,7 +1007,27 @@
      "design": "plain",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#e5a3b0",
+     "#e9aebb",
+     "#edc7cd",
+     "#c76072"
+    ],
+    "parts": {
+     "body": {
+      "colour": "pink",
+      "hex": "#e1a7b2"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Hummel",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-401611"
@@ -734,9 +1035,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-110864",
@@ -749,7 +1052,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#bdc5c7",
+     "#681413",
+     "#7f1c1d",
+     "#a29293"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#afb3b1"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Asics",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-110864"
@@ -757,9 +1080,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-101132",
@@ -772,7 +1097,37 @@
      "design": "plain",
      "colors": "white/red"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#a6b9dc",
+     "#ecf0f2",
+     "#cbd4e4",
+     "#b05e7e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c1c3e6"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "white",
+      "hex": "#dbe1ed",
+      "relation": "contrast",
+      "delta": 40
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#f4ebcc",
+      "relation": "contrast",
+      "delta": 70
+     },
+     "crest": "club-crest",
+     "maker": "Asics",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-1981-82-away.webp"
    },
    "sources": [
     "fka-101132"
@@ -780,9 +1135,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-304838",
@@ -795,7 +1152,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#ae0017",
+     "#560007",
+     "#9e666d",
+     "#6b0210"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#a40118"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Asics",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-304838"
@@ -803,9 +1180,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-110862",
@@ -818,7 +1197,36 @@
      "design": "pinstripes",
      "colors": "white/red"
     },
-    "sponsor": "Fiat"
+    "sponsor": "Fiat",
+    "palette": [
+     "#000000",
+     "#000002",
+     "#111014"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#000000"
+     },
+     "pattern": "Pinstripes",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#010102",
+      "relation": "matches-body",
+      "delta": 2
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#060608",
+      "relation": "matches-body",
+      "delta": 12
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Fiat",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-1982-83-away.webp"
    },
    "sources": [
     "fka-110862"
@@ -826,9 +1234,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-110861",
@@ -841,7 +1251,37 @@
      "design": "stripes",
      "colors": "white/red"
     },
-    "sponsor": "Fiat"
+    "sponsor": "Fiat",
+    "palette": [
+     "#c31921",
+     "#d3dde4",
+     "#b5b1b7",
+     "#a9484a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "pink",
+      "hex": "#cf7a7f"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#d3d1d7",
+      "relation": "contrast",
+      "delta": 124
+     },
+     "collar": {
+      "colour": "brown",
+      "hex": "#4c4c48",
+      "relation": "contrast",
+      "delta": 149
+     },
+     "crest": "club-crest",
+     "maker": "Asics",
+     "sponsor": "Fiat",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-1982-83-home.webp"
    },
    "sources": [
     "fka-110861"
@@ -849,9 +1289,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-110863",
@@ -864,7 +1306,37 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Fiat"
+    "sponsor": "Fiat",
+    "palette": [
+     "#dc012c",
+     "#e3e3ed",
+     "#280008",
+     "#c75e79"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#e12d51"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "red",
+      "hex": "#ca0329",
+      "relation": "contrast",
+      "delta": 62
+     },
+     "collar": {
+      "colour": "red",
+      "hex": "#ed1039",
+      "relation": "contrast",
+      "delta": 40
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Fiat",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-1982-83-home-110863.webp"
    },
    "sources": [
     "fka-110863"
@@ -872,9 +1344,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-110860",
@@ -887,7 +1361,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Fiat"
+    "sponsor": "Fiat",
+    "palette": [
+     "#e00d25",
+     "#e6e4dc",
+     "#ccaaab",
+     "#aa1a2b"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#db4351"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Asics",
+     "sponsor": "Fiat",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-110860"
@@ -895,9 +1389,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-304843",
@@ -910,7 +1406,37 @@
      "design": "plain",
      "colors": "red/white"
     },
-    "sponsor": "Fiat"
+    "sponsor": "Fiat",
+    "palette": [
+     "#f9c0e6",
+     "#ab6999",
+     "#cb2d5a",
+     "#e4a2cd"
+    ],
+    "parts": {
+     "body": {
+      "colour": "pink",
+      "hex": "#ec4776"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "pink",
+      "hex": "#e19ec6",
+      "relation": "contrast",
+      "delta": 119
+     },
+     "collar": {
+      "colour": "pink",
+      "hex": "#d87da2",
+      "relation": "contrast",
+      "delta": 72
+     },
+     "crest": "club-crest",
+     "maker": "Asics",
+     "sponsor": "Fiat",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-1983-84-third.webp"
    },
    "sources": [
     "fka-304843"
@@ -918,9 +1444,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-101130",
@@ -933,7 +1461,37 @@
      "design": "stripes",
      "colors": "sky blue/red"
     },
-    "sponsor": "Citizen"
+    "sponsor": "Citizen",
+    "palette": [
+     "#4b8df1",
+     "#2065d1",
+     "#7ab4fa",
+     "#72519d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "sky blue",
+      "hex": "#488bf4"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "sky blue",
+      "hex": "#578dee",
+      "relation": "matches-body",
+      "delta": 16
+     },
+     "collar": {
+      "colour": "white",
+      "hex": "#fef7ec",
+      "relation": "contrast",
+      "delta": 212
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Citizen",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-1986-87-away.webp"
    },
    "sources": [
     "fka-101130"
@@ -941,9 +1499,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-80869",
@@ -956,7 +1516,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Aspis Bank"
+    "sponsor": "Aspis Bank",
+    "palette": [
+     "#c91a1f",
+     "#beaaac",
+     "#b7131b",
+     "#a1252a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#c82c34"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Aspis Bank",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-80869"
@@ -964,9 +1544,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-80864",
@@ -979,7 +1561,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Aspis Bank"
+    "sponsor": "Aspis Bank",
+    "palette": [
+     "#ee3e35",
+     "#f3f4f5",
+     "#c72825",
+     "#e4b9ba"
+    ],
+    "parts": {
+     "body": {
+      "colour": "orange",
+      "hex": "#f0473d"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Aspis Bank",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-80864"
@@ -987,9 +1589,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19698",
@@ -1002,7 +1606,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Siemens"
+    "sponsor": "Siemens",
+    "palette": [
+     "#e73228",
+     "#e0f0f1",
+     "#c82622",
+     "#bb928f"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#e7d0db"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": "Siemens",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19698"
@@ -1010,9 +1634,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-72700",
@@ -1025,7 +1651,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Siemens"
+    "sponsor": "Siemens",
+    "palette": [
+     "#d62726",
+     "#b3070e",
+     "#dfc5c9",
+     "#cd1317"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#ede2e5"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Umbro",
+     "sponsor": "Siemens",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-72700"
@@ -1033,9 +1679,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19708",
@@ -1048,7 +1696,37 @@
      "design": "gradient",
      "colors": "black/red/gray"
     },
-    "sponsor": "Siemens"
+    "sponsor": "Siemens",
+    "palette": [
+     "#1c191b",
+     "#2c292f",
+     "#676a73",
+     "#371a1d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#29292e"
+     },
+     "pattern": "Gradient",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#231d20",
+      "relation": "matches-body",
+      "delta": 19
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#1d171a",
+      "relation": "matches-body",
+      "delta": 29
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Siemens",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2005-06-away.webp"
    },
    "sources": [
     "fka-19708"
@@ -1056,9 +1734,111 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-110867",
+   "value": {
+    "name": "Olympiacos 2005/06 gk",
+    "season": "2005/06",
+    "type": "gk",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "red/gray/navy"
+    },
+    "sponsor": "Siemens",
+    "palette": [
+     "#d10121",
+     "#80545a",
+     "#c8021e",
+     "#c80723"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#d20624"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "red",
+      "hex": "#c8041f",
+      "relation": "matches-body",
+      "delta": 11
+     },
+     "collar": {
+      "colour": "red",
+      "hex": "#c4041f",
+      "relation": "matches-body",
+      "delta": 15
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Siemens",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2005-06-gk-1.webp"
+   },
+   "sources": [
+    "fka-110867"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-232122",
+   "value": {
+    "name": "Olympiacos 2005/06 gk",
+    "season": "2005/06",
+    "type": "gk",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "white/black/navy"
+    },
+    "sponsor": "Siemens",
+    "palette": [
+     "#262628",
+     "#dadcd8",
+     "#c8cac2",
+     "#302f2e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#d1d4d2"
+     },
+     "pattern": "Contrasting sleeves",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Siemens",
+     "nameset": null
+    },
+    "photo": null
+   },
+   "sources": [
+    "fka-232122"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19709",
@@ -1071,7 +1851,27 @@
      "design": "stripes",
      "colors": "red/white/black"
     },
-    "sponsor": "Siemens"
+    "sponsor": "Siemens",
+    "palette": [
+     "#e42217",
+     "#f0f0f0",
+     "#af190f",
+     "#cf655f"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#e5281d"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Siemens",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19709"
@@ -1079,9 +1879,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19707",
@@ -1094,7 +1896,24 @@
      "design": "plain",
      "colors": "white/red"
     },
-    "sponsor": "Siemens"
+    "sponsor": "Siemens",
+    "palette": [
+     "#fc3a39",
+     "#efd9db",
+     "#fa3130",
+     "#f45655"
+    ],
+    "parts": {
+     "body": null,
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Siemens",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19707"
@@ -1102,9 +1921,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-57713",
@@ -1117,7 +1938,27 @@
      "design": "plain",
      "colors": "white/red"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#f4f5f7",
+     "#f2f3f5",
+     "#f6f8f9",
+     "#efd1cf"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#f4f6f8"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-57713"
@@ -1125,9 +1966,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-75745",
@@ -1140,7 +1983,36 @@
      "design": "plain",
      "colors": "red/white/gold"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#d90110",
+     "#d5000e",
+     "#cd010c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#da0211"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "red",
+      "hex": "#db0111",
+      "relation": "matches-body",
+      "delta": 1
+     },
+     "collar": {
+      "colour": "red",
+      "hex": "#d1010d",
+      "relation": "matches-body",
+      "delta": 10
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2006-07-fourth.webp"
    },
    "sources": [
     "fka-75745"
@@ -1148,9 +2020,66 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-362095",
+   "value": {
+    "name": "Olympiacos 2006/07 gk",
+    "season": "2006/07",
+    "type": "gk",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "sky blue/black"
+    },
+    "sponsor": "Vodafone",
+    "palette": [
+     "#39657c",
+     "#22475f",
+     "#6e7f88",
+     "#39556b"
+    ],
+    "parts": {
+     "body": {
+      "colour": "green",
+      "hex": "#305e77"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#a78280",
+      "relation": "contrast",
+      "delta": 125
+     },
+     "collar": {
+      "colour": "red",
+      "hex": "#b8544f",
+      "relation": "contrast",
+      "delta": 142
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2006-07-gk-1.webp"
+   },
+   "sources": [
+    "fka-362095"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19706",
@@ -1163,7 +2092,27 @@
      "design": "stripes",
      "colors": "white/red"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#f10f22",
+     "#e9b5b6",
+     "#f01d29",
+     "#e6041a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#ef1324"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19706"
@@ -1171,9 +2120,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-57712",
@@ -1186,7 +2137,37 @@
      "design": "graphic",
      "colors": "gold/black"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#e9cb9b",
+     "#e7c796",
+     "#ecd0a3",
+     "#dba77c"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#eccea0"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#e9cb9b",
+      "relation": "matches-body",
+      "delta": 7
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#e3c18f",
+      "relation": "matches-body",
+      "delta": 23
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2006-07-third.webp"
    },
    "sources": [
     "fka-57712"
@@ -1194,9 +2175,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19701",
@@ -1209,7 +2192,27 @@
      "design": "plain",
      "colors": "white/red"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#fbfbfb",
+     "#fdfdfd",
+     "#f8f8f8",
+     "#debcbd"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#fcfbfc"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19701"
@@ -1217,9 +2220,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-110866",
@@ -1232,7 +2237,37 @@
      "design": "plain",
      "colors": "red/black"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#e12a30",
+     "#e23336",
+     "#c52225",
+     "#e26262"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#e12f35"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "red",
+      "hex": "#df2c30",
+      "relation": "matches-body",
+      "delta": 6
+     },
+     "collar": {
+      "colour": "red",
+      "hex": "#e12a30",
+      "relation": "matches-body",
+      "delta": 7
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2007-08-fourth.webp"
    },
    "sources": [
     "fka-110866"
@@ -1240,9 +2275,66 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-223944",
+   "value": {
+    "name": "Olympiacos 2007/08 gk",
+    "season": "2007/08",
+    "type": "gk",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Vodafone",
+    "palette": [
+     "#f0cc94",
+     "#efc88d",
+     "#bf9368",
+     "#f3d5a4"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#f2cd95"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#efcc92",
+      "relation": "matches-body",
+      "delta": 4
+     },
+     "collar": {
+      "colour": "gold",
+      "hex": "#db9262",
+      "relation": "contrast",
+      "delta": 81
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2007-08-gk-1.webp"
+   },
+   "sources": [
+    "fka-223944"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-22961",
@@ -1255,7 +2347,37 @@
      "design": "stripes",
      "colors": "white/red"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#dc1d25",
+     "#f8f5f5",
+     "#e1d2d1",
+     "#df4247"
+    ],
+    "parts": {
+     "body": {
+      "colour": "pink",
+      "hex": "#ec8e8b"
+     },
+     "pattern": "Stripes",
+     "sleeves": {
+      "colour": "red",
+      "hex": "#e12028",
+      "relation": "contrast",
+      "delta": 148
+     },
+     "collar": {
+      "colour": "white",
+      "hex": "#ece5e5",
+      "relation": "contrast",
+      "delta": 125
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2007-08-home.webp"
    },
    "sources": [
     "fka-22961"
@@ -1263,9 +2385,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19700",
@@ -1278,7 +2402,27 @@
      "design": "plain",
      "colors": "gold/white"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#d6c172",
+     "#dcc87d",
+     "#eadda4",
+     "#c8a466"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#d9c475"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19700"
@@ -1286,9 +2430,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-95973",
@@ -1301,7 +2447,37 @@
      "design": "plain",
      "colors": "white/red"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#f1f2f1",
+     "#ebeaea",
+     "#fbfbfb",
+     "#c98278"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#efefef"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "white",
+      "hex": "#f6f6f5",
+      "relation": "matches-body",
+      "delta": 12
+     },
+     "collar": {
+      "colour": "gold",
+      "hex": "#ae775d",
+      "relation": "contrast",
+      "delta": 200
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2008-09-away.webp"
    },
    "sources": [
     "fka-95973"
@@ -1309,9 +2485,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-57714",
@@ -1324,7 +2502,36 @@
      "design": "plain",
      "colors": "black/red/white"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#1a1a1a",
+     "#141515",
+     "#352e2d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#1a1a1a"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#1f1e1e",
+      "relation": "matches-body",
+      "delta": 8
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#181818",
+      "relation": "matches-body",
+      "delta": 3
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2008-09-fourth.webp"
    },
    "sources": [
     "fka-57714"
@@ -1332,9 +2539,66 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-479852",
+   "value": {
+    "name": "Olympiacos 2008/09 gk",
+    "season": "2008/09",
+    "type": "gk",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "blue/black"
+    },
+    "sponsor": "Vodafone",
+    "palette": [
+     "#2259bc",
+     "#1e449e",
+     "#0e2669",
+     "#4a7ccf"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#235ebf"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#255fc0",
+      "relation": "matches-body",
+      "delta": 2
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#101012",
+      "relation": "contrast",
+      "delta": 191
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2008-09-gk-1.webp"
+   },
+   "sources": [
+    "fka-479852"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19705",
@@ -1347,7 +2611,27 @@
      "design": "stripes",
      "colors": "white/red"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#f2f1f1",
+     "#ee1e30",
+     "#d41727",
+     "#e6cecf"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#ecdedf"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19705"
@@ -1355,9 +2639,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-172353",
@@ -1370,7 +2656,37 @@
      "design": "plain",
      "colors": "red/black/silver"
     },
-    "sponsor": "Vodafone"
+    "sponsor": "Vodafone",
+    "palette": [
+     "#e10018",
+     "#d30011",
+     "#d50312",
+     "#cb222e"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#dc0117"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "red",
+      "hex": "#d00113",
+      "relation": "matches-body",
+      "delta": 13
+     },
+     "collar": {
+      "colour": "red",
+      "hex": "#d2030e",
+      "relation": "matches-body",
+      "delta": 14
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Vodafone",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2008-09-third.webp"
    },
    "sources": [
     "fka-172353"
@@ -1378,9 +2694,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-90618",
@@ -1393,7 +2711,37 @@
      "design": "plain",
      "colors": "white/red"
     },
-    "sponsor": "Citibank"
+    "sponsor": "Citibank",
+    "palette": [
+     "#f2f2f2",
+     "#f3f3f3",
+     "#edd6d4",
+     "#f6f8f9"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#f3f3f3"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "white",
+      "hex": "#f2f2f2",
+      "relation": "matches-body",
+      "delta": 2
+     },
+     "collar": {
+      "colour": "white",
+      "hex": "#f2f2f2",
+      "relation": "matches-body",
+      "delta": 2
+     },
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Citibank",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2009-10-fourth.webp"
    },
    "sources": [
     "fka-90618"
@@ -1401,9 +2749,56 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-362091",
+   "value": {
+    "name": "Olympiacos 2009/10 gk",
+    "season": "2009/10",
+    "type": "gk",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "blue/red/white"
+    },
+    "sponsor": "Citibank",
+    "palette": [
+     "#1947b2",
+     "#021c71",
+     "#939b9a",
+     "#152673"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#0535a2"
+     },
+     "pattern": "Plain",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Citibank",
+     "nameset": null
+    },
+    "photo": null
+   },
+   "sources": [
+    "fka-362091"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19696",
@@ -1416,7 +2811,27 @@
      "design": "contrasting sleeves",
      "colors": "white/red"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "palette": [
+     "#e1e0e9",
+     "#e7e6f0",
+     "#ba1f1b",
+     "#d9d0d8"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#e7e4ed"
+     },
+     "pattern": "Contrasting sleeves",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "Puma",
+     "sponsor": "Pame Stoixima",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19696"
@@ -1424,9 +2839,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-19645",
@@ -1439,7 +2856,27 @@
      "design": "stripes",
      "colors": "white/red"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#cd0f10",
+     "#f2f1f6",
+     "#d32124",
+     "#d68d93"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#d71e22"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-19645"
@@ -1447,9 +2884,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-18123",
@@ -1462,7 +2901,37 @@
      "design": "plain",
      "colors": "orange/navy"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#f84721",
+     "#f7431f",
+     "#b62e1c",
+     "#f35a39"
+    ],
+    "parts": {
+     "body": {
+      "colour": "orange",
+      "hex": "#fb4c23"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "orange",
+      "hex": "#f13e1b",
+      "relation": "matches-body",
+      "delta": 19
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#30121a",
+      "relation": "contrast",
+      "delta": 211
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2017-18-away.webp"
    },
    "sources": [
     "fka-18123"
@@ -1470,9 +2939,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-15088",
@@ -1485,7 +2956,37 @@
      "design": "graphic",
      "colors": "gray/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#95989d",
+     "#9da2a7",
+     "#b4b6bc",
+     "#8f7b7f"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#a2a3a6"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#999ea4",
+      "relation": "matches-body",
+      "delta": 10
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#afb2bc",
+      "relation": "matches-body",
+      "delta": 30
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2019-20-away.webp"
    },
    "sources": [
     "fka-15088"
@@ -1493,9 +2994,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-191250",
@@ -1508,7 +3011,37 @@
      "design": "graphic",
      "colors": "sky blue/navy/orange"
     },
-    "sponsor": "Iroes"
+    "sponsor": "Iroes",
+    "palette": [
+     "#11659d",
+     "#14446d",
+     "#023961",
+     "#2790cb"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#075d93"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#05689f",
+      "relation": "matches-body",
+      "delta": 16
+     },
+     "collar": {
+      "colour": "green",
+      "hex": "#175665",
+      "relation": "contrast",
+      "delta": 49
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Iroes",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2020-21-away.webp"
    },
    "sources": [
     "fka-191250"
@@ -1516,9 +3049,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-33204",
@@ -1531,7 +3066,37 @@
      "design": "graphic",
      "colors": "blue/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#243f88",
+     "#20337b",
+     "#182562",
+     "#4f6ba8"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#253982"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#213579",
+      "relation": "matches-body",
+      "delta": 11
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#151c50",
+      "relation": "contrast",
+      "delta": 60
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2021-22-away.webp"
    },
    "sources": [
     "fka-33204"
@@ -1539,9 +3104,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-180175",
@@ -1554,7 +3121,37 @@
      "design": "graphic",
      "colors": "blue/white"
     },
-    "sponsor": "Iroes"
+    "sponsor": "Iroes",
+    "palette": [
+     "#0447b3",
+     "#043faa",
+     "#03339d",
+     "#306bc1"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#0349b4"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#0442ab",
+      "relation": "matches-body",
+      "delta": 11
+     },
+     "collar": {
+      "colour": "blue",
+      "hex": "#0640a7",
+      "relation": "matches-body",
+      "delta": 16
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Iroes",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2021-22-away-180175.webp"
    },
    "sources": [
     "fka-180175"
@@ -1562,9 +3159,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-31235",
@@ -1577,7 +3176,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#c71f24",
+     "#e6c5c8",
+     "#c43134",
+     "#aa151a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#ce2c2f"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-31235"
@@ -1585,9 +3204,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-40916",
@@ -1600,7 +3221,37 @@
      "design": "graphic",
      "colors": "gray/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#c3c5c4",
+     "#c7cbca",
+     "#ced1d1",
+     "#aea2a1"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#c7cbca"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "cream",
+      "hex": "#bfc3c2",
+      "relation": "matches-body",
+      "delta": 14
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#9ea1a6",
+      "relation": "contrast",
+      "delta": 69
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2021-22-third.webp"
    },
    "sources": [
     "fka-40916"
@@ -1608,9 +3259,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-74329",
@@ -1623,7 +3276,37 @@
      "design": "graphic",
      "colors": "blue/navy/orange"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#324388",
+     "#21243f",
+     "#363765",
+     "#4f5f9d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#2e4894"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#232434",
+      "relation": "contrast",
+      "delta": 103
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#221d3d",
+      "relation": "contrast",
+      "delta": 98
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2022-23-away.webp"
    },
    "sources": [
     "fka-74329"
@@ -1631,9 +3314,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-180177",
@@ -1646,7 +3331,37 @@
      "design": "graphic",
      "colors": "blue/navy/orange"
     },
-    "sponsor": "Iroes"
+    "sponsor": "Iroes",
+    "palette": [
+     "#2149a4",
+     "#2b335f",
+     "#11327d",
+     "#3d69c2"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#1c4bac"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#202d42",
+      "relation": "contrast",
+      "delta": 110
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#1f3e8b",
+      "relation": "contrast",
+      "delta": 36
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Iroes",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2022-23-away-180177.webp"
    },
    "sources": [
     "fka-180177"
@@ -1654,9 +3369,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-180178",
@@ -1669,7 +3386,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#361513",
+     "#431b18",
+     "#3d1613",
+     "#5a2b29"
+    ],
+    "parts": {
+     "body": {
+      "colour": "black",
+      "hex": "#3c1715"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-180178"
@@ -1677,9 +3414,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-72229",
@@ -1692,7 +3431,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#c02425",
+     "#e1d1d3",
+     "#b21d20",
+     "#c44143"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#c32e2e"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-72229"
@@ -1700,9 +3459,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-88243",
@@ -1715,7 +3476,37 @@
      "design": "graphic",
      "colors": "gray/white/black"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#909193",
+     "#8c8c8e",
+     "#9b9b9d",
+     "#6e6365"
+    ],
+    "parts": {
+     "body": {
+      "colour": "grey",
+      "hex": "#909294"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#87888b",
+      "relation": "matches-body",
+      "delta": 16
+     },
+     "collar": {
+      "colour": "brown",
+      "hex": "#4d5255",
+      "relation": "contrast",
+      "delta": 112
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2022-23-third.webp"
    },
    "sources": [
     "fka-88243"
@@ -1723,9 +3514,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-164466",
@@ -1738,7 +3531,37 @@
      "design": "graphic",
      "colors": "white/sky blue"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#ececf2",
+     "#a4bfd5",
+     "#cdd8e4",
+     "#7590ae"
+    ],
+    "parts": {
+     "body": {
+      "colour": "cream",
+      "hex": "#b5cce2"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "white",
+      "hex": "#e4e3ea",
+      "relation": "contrast",
+      "delta": 53
+     },
+     "collar": {
+      "colour": "cream",
+      "hex": "#c8cdd9",
+      "relation": "matches-body",
+      "delta": 21
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2023-24-away.webp"
    },
    "sources": [
     "fka-164466"
@@ -1746,9 +3569,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-181123",
@@ -1761,7 +3586,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#bf292b",
+     "#b31b1c",
+     "#8d0f11",
+     "#c6585a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#c32b2d"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-181123"
@@ -1769,9 +3614,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-230566",
@@ -1784,7 +3631,37 @@
      "design": "graphic",
      "colors": "gray/orange"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#40363b",
+     "#855a5a",
+     "#9c7373",
+     "#77443d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "brown",
+      "hex": "#685b54"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "grey",
+      "hex": "#62606b",
+      "relation": "matches-body",
+      "delta": 24
+     },
+     "collar": {
+      "colour": "grey",
+      "hex": "#736670",
+      "relation": "matches-body",
+      "delta": 32
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2023-24-third.webp"
    },
    "sources": [
     "fka-230566"
@@ -1792,9 +3669,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-164465",
@@ -1807,7 +3686,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#c23031",
+     "#b61e1f",
+     "#ddbabb",
+     "#911113"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#c52e2e"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-164465"
@@ -1815,9 +3714,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-164467",
@@ -1830,7 +3731,37 @@
      "design": "graphic",
      "colors": "gray/orange"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#342c2e",
+     "#73686f",
+     "#854a44",
+     "#803a2f"
+    ],
+    "parts": {
+     "body": {
+      "colour": "brown",
+      "hex": "#554e48"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "brown",
+      "hex": "#4c4e59",
+      "relation": "matches-body",
+      "delta": 19
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#2f2829",
+      "relation": "contrast",
+      "delta": 62
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2023-24-third-164467.webp"
    },
    "sources": [
     "fka-164467"
@@ -1838,9 +3769,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-271736",
@@ -1853,7 +3786,24 @@
      "design": "pinstripes",
      "colors": "white/red"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#edeff9",
+     "#9c0d12",
+     "#d9d8e3",
+     "#bb7f89"
+    ],
+    "parts": {
+     "body": null,
+     "pattern": "Pinstripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-271736"
@@ -1861,9 +3811,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-350007",
@@ -1876,7 +3828,27 @@
      "design": "stripes",
      "colors": "red/white/gold"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#d90636",
+     "#d7143c",
+     "#c9042e",
+     "#d8b0b7"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#d50837"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-350007"
@@ -1884,9 +3856,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-305869",
@@ -1899,7 +3873,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "-"
+    "sponsor": "-",
+    "palette": [
+     "#c6232a",
+     "#c21a1f",
+     "#a41419",
+     "#c6444a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#ca252b"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "-",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-305869"
@@ -1907,9 +3901,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-274963",
@@ -1922,7 +3918,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#c7242b",
+     "#c21a1f",
+     "#d9959a",
+     "#a71419"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#ca252c"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-274963"
@@ -1930,9 +3946,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-271627",
@@ -1945,7 +3963,37 @@
      "design": "plain",
      "colors": "blue/navy"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#294ba3",
+     "#264499",
+     "#1b2a64",
+     "#4765b0"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#2a4faa"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "navy",
+      "hex": "#1f3683",
+      "relation": "contrast",
+      "delta": 48
+     },
+     "collar": {
+      "colour": "navy",
+      "hex": "#111641",
+      "relation": "contrast",
+      "delta": 122
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2024-25-third.webp"
    },
    "sources": [
     "fka-271627"
@@ -1953,9 +4001,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-390789",
@@ -1968,7 +4018,27 @@
      "design": "graphic",
      "colors": "white/red"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#b61a20",
+     "#e5e2e7",
+     "#9f1217",
+     "#bc6369"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#b02b33"
+     },
+     "pattern": "Graphic",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-390789"
@@ -1976,9 +4046,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-434528",
@@ -1991,7 +4063,27 @@
      "design": "graphic",
      "colors": "white/red"
     },
-    "sponsor": "Iroes"
+    "sponsor": "Iroes",
+    "palette": [
+     "#b4191e",
+     "#d9cacf",
+     "#9c1217",
+     "#b05157"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#af2e38"
+     },
+     "pattern": "Graphic",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Iroes",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-434528"
@@ -1999,9 +4091,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-417013",
@@ -2014,7 +4108,37 @@
      "design": "single stripe",
      "colors": "gray/red/white"
     },
-    "sponsor": "Iroes"
+    "sponsor": "Iroes",
+    "palette": [
+     "#4f5362",
+     "#3f4250",
+     "#7f2d36",
+     "#7f7d88"
+    ],
+    "parts": {
+     "body": {
+      "colour": "purple",
+      "hex": "#545767"
+     },
+     "pattern": "Single stripe",
+     "sleeves": {
+      "colour": "purple",
+      "hex": "#5a5763",
+      "relation": "matches-body",
+      "delta": 7
+     },
+     "collar": {
+      "colour": "maroon",
+      "hex": "#4f1a1e",
+      "relation": "contrast",
+      "delta": 95
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Iroes",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2025-26-third.webp"
    },
    "sources": [
     "fka-417013"
@@ -2022,9 +4146,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-395901",
@@ -2037,7 +4163,27 @@
      "design": "stripes",
      "colors": "white/red"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#d82b2e",
+     "#f7f8f8",
+     "#ba1e21",
+     "#d99c9d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#d83134"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-395901"
@@ -2045,9 +4191,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-390925",
@@ -2060,7 +4208,37 @@
      "design": "single stripe",
      "colors": "gray/red/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#4f5462",
+     "#404451",
+     "#802e37",
+     "#7a7882"
+    ],
+    "parts": {
+     "body": {
+      "colour": "purple",
+      "hex": "#555767"
+     },
+     "pattern": "Single stripe",
+     "sleeves": {
+      "colour": "purple",
+      "hex": "#595360",
+      "relation": "matches-body",
+      "delta": 9
+     },
+     "collar": {
+      "colour": "maroon",
+      "hex": "#511a1f",
+      "relation": "contrast",
+      "delta": 94
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2025-26-third-390925.webp"
    },
    "sources": [
     "fka-390925"
@@ -2068,9 +4246,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-493261",
@@ -2083,7 +4263,37 @@
      "design": "plain",
      "colors": "off-white/red/gold"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#e1e3dd",
+     "#e9eae5",
+     "#eff1eb",
+     "#c19690"
+    ],
+    "parts": {
+     "body": {
+      "colour": "white",
+      "hex": "#edf0e9"
+     },
+     "pattern": "Plain",
+     "sleeves": {
+      "colour": "white",
+      "hex": "#e3e4df",
+      "relation": "matches-body",
+      "delta": 19
+     },
+     "collar": {
+      "colour": "light green",
+      "hex": "#ada998",
+      "relation": "contrast",
+      "delta": 125
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2026-27-away.webp"
    },
    "sources": [
     "fka-493261"
@@ -2091,9 +4301,121 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-492578",
+   "value": {
+    "name": "Olympiacos 2026/27 gk",
+    "season": "2026/27",
+    "type": "gk",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "graphic",
+     "colors": "blue/sky blue"
+    },
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#06aae4",
+     "#0999d6",
+     "#1a6ead",
+     "#21b1e4"
+    ],
+    "parts": {
+     "body": {
+      "colour": "blue",
+      "hex": "#0cace2"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "blue",
+      "hex": "#02a3e1",
+      "relation": "matches-body",
+      "delta": 13
+     },
+     "collar": {
+      "colour": "blue",
+      "hex": "#10a9e0",
+      "relation": "matches-body",
+      "delta": 5
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2026-27-gk-1.webp"
+   },
+   "sources": [
+    "fka-492578"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
+  },
+  {
+   "id": "fka-k-492275",
+   "value": {
+    "name": "Olympiacos 2026/27 gk",
+    "season": "2026/27",
+    "type": "gk",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "graphic",
+     "colors": "orange/off-white/gray"
+    },
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#fb894f",
+     "#fa7f45",
+     "#e86433",
+     "#f79a6d"
+    ],
+    "parts": {
+     "body": {
+      "colour": "orange",
+      "hex": "#fc894d"
+     },
+     "pattern": "Graphic",
+     "sleeves": {
+      "colour": "orange",
+      "hex": "#fd783d",
+      "relation": "matches-body",
+      "delta": 23
+     },
+     "collar": {
+      "colour": "orange",
+      "hex": "#fc874f",
+      "relation": "matches-body",
+      "delta": 3
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2026-27-gk-2.webp"
+   },
+   "sources": [
+    "fka-492275"
+   ],
+   "researchedAt": "2026-10-08",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-485564",
@@ -2106,7 +4428,27 @@
      "design": "stripes",
      "colors": "red/white"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#d8262c",
+     "#d51f25",
+     "#cc1c20",
+     "#e4969a"
+    ],
+    "parts": {
+     "body": {
+      "colour": "red",
+      "hex": "#d8282d"
+     },
+     "pattern": "Stripes",
+     "sleeves": null,
+     "collar": null,
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": null
    },
    "sources": [
     "fka-485564"
@@ -2114,9 +4456,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   },
   {
    "id": "fka-k-493558",
@@ -2129,7 +4473,37 @@
      "design": "checkers",
      "colors": "navy/gold"
     },
-    "sponsor": "Stoiximan"
+    "sponsor": "Stoiximan",
+    "palette": [
+     "#232740",
+     "#1e2339",
+     "#161a2c",
+     "#616068"
+    ],
+    "parts": {
+     "body": {
+      "colour": "navy",
+      "hex": "#252a42"
+     },
+     "pattern": "Checkers",
+     "sleeves": {
+      "colour": "black",
+      "hex": "#1b2036",
+      "relation": "matches-body",
+      "delta": 19
+     },
+     "collar": {
+      "colour": "black",
+      "hex": "#141723",
+      "relation": "contrast",
+      "delta": 40
+     },
+     "crest": "club-crest",
+     "maker": "adidas",
+     "sponsor": "Stoiximan",
+     "nameset": null
+    },
+    "photo": "/kits/olympiacos/fka-2026-27-third.webp"
    },
    "sources": [
     "fka-493558"
@@ -2137,9 +4511,11 @@
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Single publisher (Football Kit Archive, collected in the owner's browser). Needs a second independent publisher before approval."
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-08",
+   "approvedBy": "owner:maor-2026-10-08",
+   "notes": "Football Kit Archive page + measured cut-out. Owner approved 8.10.2026: no second publisher required for kits."
   }
  ]
 }
