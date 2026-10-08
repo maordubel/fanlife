@@ -6,7 +6,7 @@
  * `Life` and the simulator in the test suite holds the very same functions, which is the point:
  * what the tests walk is what the player walks.
  */
-import type {Chapter, Cond, Effect, FlagValue, LifeEvent, LifePack, LifeState, SaveFile, Wear} from './types'
+import type {Chapter, Cond, Effect, FlagValue, LifeEvent, LifePack, LifeState, MiniGame, PlayResult, SaveFile, Wear} from './types'
 
 export const SAVE_VERSION = 1
 /** A flag with this prefix is part of the person and outlives the chapter that raised it. */
@@ -69,7 +69,7 @@ export function meets(state: LifeState, c: Cond | undefined): boolean {
 /** What the shell has to DO after a conversation, as opposed to what the log has to remember. */
 export type Directive =
   | {d: 'goto'; room: string; spawn: string; time?: 'day' | 'night'}
-  | {d: 'play'; game: 'tune' | 'clap' | 'carry' | 'count'; id: string; then: Effect[]}
+  | {d: 'play'; game: MiniGame; id: string; then: Effect[]; good: Effect[]; slip: Effect[]}
   | {d: 'card'; card: string}
   | {d: 'sound'; cue: string}
   | {d: 'end'; ending: string}
@@ -89,7 +89,7 @@ export function eventsOf(effects: readonly Effect[] | undefined, state: LifeStat
       case 'wear': events.push({t: 'wear', what: fx.what}); break
       case 'time': events.push({t: 'time', to: fx.to}); break
       case 'goto': directives.push({d: 'goto', room: fx.room, spawn: fx.spawn, time: fx.time}); break
-      case 'play': directives.push({d: 'play', game: fx.game, id: fx.id, then: fx.then ?? []}); break
+      case 'play': directives.push({d: 'play', game: fx.game, id: fx.id, then: fx.then ?? [], good: fx.good ?? [], slip: fx.slip ?? []}); break
       case 'card': directives.push({d: 'card', card: fx.card}); break
       case 'sound': directives.push({d: 'sound', cue: fx.cue}); break
       case 'end': if (state.chapter) directives.push({d: 'end', ending: fx.ending}); break
@@ -97,6 +97,12 @@ export function eventsOf(effects: readonly Effect[] | undefined, state: LifeStat
   }
   return {events, directives}
 }
+
+/** What a small game does once it has been played: `then` always, then `good` (for 'good' and 'ok') or `slip`. */
+export const afterPlay = (d: Extract<Directive, {d: 'play'}>, result: PlayResult): Effect[] => [...d.then, ...(result === 'slip' ? d.slip : d.good)]
+
+/** The coins a game is about, for its tray and its target: what `then` and `good` would pay. */
+export const playAmount = (d: Extract<Directive, {d: 'play'}>): number => [...d.then, ...d.good].reduce((n, fx) => n + (fx.e === 'coins' && fx.by > 0 ? fx.by : 0), 0)
 
 export const chapterOf = (pack: LifePack, id: string | null): Chapter | null => pack.chapters.find(c => c.id === id) ?? null
 export function nextChapter(pack: LifePack, id: string): Chapter | null {
@@ -112,7 +118,11 @@ export function openChapter(chapter: Chapter): LifeEvent[] {
 /* ───────────── the life the shell holds ───────────── */
 
 export type LifeStore = {read(key: string): string | null; write(key: string, value: string): void; clear(key: string): void}
-export const saveKey = (clubId: string, edition?: 2) => `fan-life:club:${clubId}:life${edition === 2 ? ':story2' : ''}`
+/**
+ * The one save key. The second-edition script is THE script; a save written by the first edition
+ * lives under `fan-life:club:<id>:life` and is never read, so it is silently ignored (left in place, not deleted).
+ */
+export const saveKey = (clubId: string) => `fan-life:club:${clubId}:life:story2`
 
 export class Life {
   private log: LifeEvent[]
@@ -165,12 +175,12 @@ export class Life {
   save(): void {
     if (!this.store) return
     const file: SaveFile = {v: SAVE_VERSION, club: this.pack.clubId, pack: this.pack.version, events: this.log, savedAt: new Date().toISOString()}
-    try { this.store.write(saveKey(this.pack.clubId, this.pack.storyEdition), JSON.stringify(file)) } catch { /* a full or private store never stops the game */ }
+    try { this.store.write(saveKey(this.pack.clubId), JSON.stringify(file)) } catch { /* a full or private store never stops the game */ }
   }
 
   static load(pack: LifePack, store: LifeStore): Life {
     try {
-      const raw = store.read(saveKey(pack.clubId, pack.storyEdition))
+      const raw = store.read(saveKey(pack.clubId))
       if (raw) {
         const file = JSON.parse(raw) as Partial<SaveFile>
         // a life saved against chapters that no longer exist cannot be folded into this pack

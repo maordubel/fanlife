@@ -1,7 +1,7 @@
 /**
  * The gate a universal LIFE chapter passes before it is registered.
  *
- *   npx tsx scripts/life/universal-chapter-check.ts lib/life/universal/content/c2-shirt.ts [more files…]
+ *   npx tsx scripts/life/universal-chapter-check.ts lib/life/universal/content/night.ts [more files…]
  *
  * For every Chapter a file exports it runs, with the game's own functions:
  *  · the validator (rooms, slots, talks, flags, endings);

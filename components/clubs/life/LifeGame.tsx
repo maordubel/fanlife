@@ -18,13 +18,17 @@ import Link from 'next/link'
 import {Dye} from '@/components/master/Dye'
 import {useCallback, useEffect, useMemo, useReducer, useRef, useState} from 'react'
 import {BOOT_START, BOOT_TIMEOUT_MS, bootReducer, failureCopyKey, probeWebgl, voxelFailure} from './boot'
-import {chapterOf, eventsOf, Life, meets, nextChapter, openChapter, type Directive, type LifeStore} from '@/lib/life/universal/engine'
-import type {CardDef, Chapter, LifePack, LifeState} from '@/lib/life/universal/types'
+import {afterPlay, chapterOf, eventsOf, Life, meets, nextChapter, openChapter, playAmount, type Directive, type LifeStore} from '@/lib/life/universal/engine'
+import type {CardDef, Chapter, Effect, LifePack, LifeState} from '@/lib/life/universal/types'
 import {beatFlag, beatFor, nameOf, Runner, throughDoor, type RunnerView, type Scene} from '@/lib/life/universal/world'
 import {cityOf, roomName, SITES, type Place} from '@/lib/life/universal/city'
 import {CityMap} from './CityMap'
 import {ControlDeck} from '@/components/life/ControlDeck'
 import {MeSheet} from './MeSheet'
+import {Dialogue} from './Dialogue'
+import {GaugesSheet} from './GaugesSheet'
+import {Hud, type Meter} from './Hud'
+import {TapChip} from './TapChip'
 import {MiniGame} from './MiniGame'
 import {instantText, Typed, type TypedHandle} from './Typed'
 import {skyOf} from '@/lib/life/universal/sky'
@@ -36,6 +40,10 @@ import styles from './life.module.css'
 type Copy = Record<string, string>
 type Phase = 'boot' | 'title' | 'chapter' | 'play' | 'ending' | 'finished'
 type TalkContext = {actor: string | null; beat: string | null}
+type Result = 'good' | 'ok' | 'slip'
+/** the room changes through one machine: idle → leaving (he reached a door) → entering (the next room is being built) → idle */
+type Transit = 'idle' | 'leaving' | 'entering'
+type Delta = {id: number; text: string; tone: 'up' | 'down'}
 type Overlay = {k: 'card'; card: CardDef} | {k: 'game'; d: Extract<Directive, {d: 'play'}>} | null
 type Props = {pack: LifePack; locale: 'en' | 'he'; copy: Copy; hubHref: string; langHref: {en: string; he: string}; legacyHref: string | null}
 
@@ -49,6 +57,9 @@ const MOVE: Record<string, [number, number]> = {
 
 type Look3d = 'high' | 'lite' | 'blocks'
 const LOOK_KEY = 'the-worker:life:look'
+const DECK_KEY = 'fan-life:life:deck'
+/** a transition that has not finished by now is rescued: the veil lifts and he is handed back */
+const WATCHDOG_MS = 4000
 const LOOKS: Look3d[] = ['high', 'lite', 'blocks']
 function lookSrc(look: Look3d, club: string): string {
   const c = encodeURIComponent(club)
@@ -87,14 +98,14 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const [talk, setTalk] = useState<(TalkContext & {view: RunnerView}) | null>(null)
   const [overlay, setOverlay] = useState<Overlay>(null)
   const [toast, setToast] = useState<string | null>(null)
-  const [place, setPlace] = useState<{id: string; name: string} | null>(null)
+  const [place, setPlace] = useState<{id: string; name: string; first: boolean} | null>(null)
   const known = useRef<Set<string>>(new Set())
   const typing = useRef<TypedHandle | null>(null)
   const hang = useRef<{x: number; y: number} | null>(null)
   const [typed, setTyped] = useState(true)
   const sheetEl = useRef<HTMLElement | null>(null)
   const actEl = useRef<HTMLButtonElement | null>(null)
-  const arrival = useRef<{id: string; name: string} | null>(null)
+  const arrival = useRef<{id: string; name: string; first: boolean} | null>(null)
   const [menu, setMenu] = useState<'closed' | 'menu' | 'confirm'>('closed')
   const [soundOn, setSoundOn] = useState(true)
   const [wide, setWide] = useState(false)
@@ -105,7 +116,22 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const [look, setLook] = useState<Look3d>('high')
   const lookRef = useRef<Look3d>('high')
   lookRef.current = look
-  const [sheet, setSheet] = useState<'none' | 'map' | 'me'>('none')
+  const [sheet, setSheet] = useState<'none' | 'map' | 'me' | 'gauges'>('none')
+  const [gaugeFocus, setGaugeFocus] = useState<Meter | null>(null)
+  const [deckOn, setDeckOn] = useState(false)
+  const [debug, setDebug] = useState(false)
+  const [issues, setIssues] = useState<string[]>([])
+  const [hudH, setHudH] = useState(0)
+  const [hint, setHint] = useState(false)
+  const [deltas, setDeltas] = useState<Delta[]>([])
+  const hudEl = useRef<HTMLElement | null>(null)
+  const trans = useRef<Transit>('idle')
+  const watch = useRef<number | null>(null)
+  const retried = useRef(false)
+  const lastRoom = useRef<string | null>(null)
+  const armed = useRef(false)
+  const prevStat = useRef<{chapter: string | null; coins: number; energy: number; standing: number; heart: number; bonds: Record<string, number>} | null>(null)
+  const deltaId = useRef(0)
   const [intro, setIntro] = useState<{id: string; name: string; role: string; blurb: string} | null>(null)
 
   const life = useRef<Life | null>(null)
@@ -115,10 +141,11 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const runner = useRef<Runner | null>(null)
   const live = useRef({phase: 'boot' as Phase, talk: null as TalkContext | null, overlay: false, menu: false, sheet: false, scene: null as Scene | null, time: 'day', wide: false})
   const entered = useRef<(() => void) | null>(null)
-  const dismiss = useRef<(() => void) | null>(null)
+  const dismiss = useRef<((r?: Result) => void) | null>(null)
   const skipped = useRef(new Set<string>())
   const timers = useRef<number[]>([])
   const keys = useRef(new Set<string>())
+  const holding = useRef(false)
   const primary = useRef<HTMLButtonElement | null>(null)
 
   const chapter = useMemo<Chapter | null>(() => (state ? chapterOf(pack, state.chapter) : null), [pack, state])
@@ -163,7 +190,9 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   const enterRoom = useCallback((at?: {x: number; z: number; yaw?: number}) => new Promise<void>(resolve => {
     const l = life.current, r = rt.current, ch = l && chapterOf(pack, l.state.chapter)
     const built = l && ch ? roomConfig(pack, ch, l.state, live.current.wide ? FRAME.wide : FRAME.phone, at) : null
-    if (!l || !r || !built) { resolve(); return }
+    if (!l || !r || !built) { r?.veil?.(false); resolve(); return }
+    // a room still being built is superseded, never left waiting
+    const pending = entered.current; entered.current = null; pending?.()
     setRoomUp(false); setTarget(null)
     live.current.scene = built.scene; live.current.time = l.state.time
     setScene(built.scene)
@@ -174,11 +203,12 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const first = !!room && !known.current.has(room)
     if (room) known.current.add(room)
     // named once the room is actually up, so a slow load never spends the card before anybody sees the place
-    arrival.current = first && room ? {id: room, name: roomName(pack, room, ch)} : null
+    arrival.current = room && room !== lastRoom.current ? {id: room, name: roomName(pack, room, ch), first} : null
+    lastRoom.current = room ?? null
     const kind = room ? SITES[room]?.kind : undefined
     const outdoors = !!kind && kind !== 'home' && kind !== 'work' && kind !== 'abroad'
     const sky = skyOf(ch?.id ?? '', l.state.time, outdoors)
-    if (!r.enter({...built.config, reveal: first, weather: sky.weather, mood: sky.mood})) { entered.current = null; resolve(); return }
+    if (!r.enter({...built.config, reveal: first, weather: sky.weather, mood: sky.mood})) { entered.current = null; r.veil?.(false); resolve(); return }
   }), [pack])
 
   const startTalk = useCallback((id: string, ctx: TalkContext) => {
@@ -201,6 +231,13 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     return true
   }, [later, pack])
 
+  /** The ONE place the world is frozen or released: it stands still while anything holds it, and never otherwise. */
+  const syncFreeze = useCallback(() => {
+    const L = live.current
+    const busy = holding.current || !!runner.current || !!dismiss.current || L.menu || L.sheet || trans.current !== 'idle'
+    rt.current?.freeze(busy)
+  }, [])
+
   /** After anything happened: redraw who is here, play the beat that is waiting, or hand the room back. */
   const settle = useCallback(async () => {
     const l = life.current, r = rt.current
@@ -214,11 +251,56 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     setScene(now.scene)
     r.update(now.play)
     const beat = beatFor(ch, l.state, room)
-    if (beat && !skipped.current.has(beat.id)) { r.freeze(true); later(() => { if (!startTalk(beat.talk, {actor: null, beat: beat.id})) r.freeze(false) }, 420); return }
-    r.freeze(false)
+    if (beat && !skipped.current.has(beat.id)) { holding.current = true; r.freeze(true); later(() => { holding.current = false; if (!startTalk(beat.talk, {actor: null, beat: beat.id})) syncFreeze() }, 420); return }
+    syncFreeze()
     // a beat that was closed before its end comes back by itself — nothing in a day can be lost by closing a box
     if (beat) later(() => { skipped.current.delete(beat.id); if (!live.current.talk && !live.current.overlay && !live.current.menu) void settle() }, 6000)
-  }, [enterRoom, later, pack, startTalk])
+  }, [enterRoom, later, pack, startTalk, syncFreeze])
+
+  /* ───────────── room transitions: one machine ───────────── */
+  const clearWatch = useCallback(() => { if (watch.current !== null) { window.clearTimeout(watch.current); watch.current = null } }, [])
+  /** The transition is over (or was rescued): the veil is lifted and the world is handed back to whoever holds it. */
+  const settled = useCallback(() => {
+    clearWatch()
+    trans.current = 'idle'
+    retried.current = false
+    rt.current?.veil?.(false)
+    syncFreeze()
+  }, [clearWatch, syncFreeze])
+  /** Enter the current room and play whatever waits in it; the only way a room is entered. */
+  const enterAndSettle = useCallback(async (at?: {x: number; z: number; yaw?: number}) => {
+    trans.current = 'entering'
+    clearWatch()
+    watch.current = window.setTimeout(() => {
+      // it hung: lift the veil, release the room, and — once — build it again
+      watch.current = null
+      if (trans.current === 'idle') return
+      const done = entered.current; entered.current = null
+      rt.current?.veil?.(false)
+      if (!retried.current && rt.current) { retried.current = true; done?.(); void enterAndSettleRef.current(at); return }
+      done?.(); settled()
+    }, WATCHDOG_MS)
+    await enterRoom(at)
+    if (trans.current === 'entering') { await settle(); settled() }
+  }, [clearWatch, enterRoom, settle, settled])
+  const enterAndSettleRef = useRef(enterAndSettle)
+  enterAndSettleRef.current = enterAndSettle
+
+  /** A door was reached. Never dropped: an open conversation or card is closed first, and a refusal gives the room back. */
+  const leaveThrough = useCallback((id: string) => {
+    const l = life.current, r = rt.current
+    if (!l || live.current.phase !== 'play') { r?.veil?.(false); r?.freeze(false); return }
+    if (trans.current === 'entering') return
+    // whatever was open is dropped: leaving applies nothing, and a card the supporter has not read is let go
+    if (runner.current) { runner.current = null; setTalk(null); r?.focus(null) }
+    if (dismiss.current) { const done = dismiss.current; dismiss.current = null; setOverlay(null); done() }
+    trans.current = 'leaving'
+    clearWatch()
+    watch.current = window.setTimeout(() => { watch.current = null; if (trans.current === 'leaving') settled() }, WATCHDOG_MS)
+    const door = live.current.scene?.doors.find(d => d.id === id), through = door && throughDoor(door, l.state)
+    if (through?.ok) { cue('door'); l.dispatch(...through.events); void enterAndSettle() }
+    else { if (door?.blocked) say(door.blocked); settled() }
+  }, [clearWatch, cue, enterAndSettle, say, settled])
 
   /** A walk from the map: one `moved` per street, each through a door that is open; the room is drawn once, where he ends up. */
   const travel = useCallback((place: Place) => {
@@ -230,8 +312,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       const through = throughDoor({to: d.to, spawn: d.spawn, time: d.time ?? null}, l.state)
       if (through.ok) l.dispatch(...through.events)
     }
-    void enterRoom().then(settle)
-  }, [cue, enterRoom, settle])
+    void enterAndSettle()
+  }, [cue, enterAndSettle])
 
   const finishChapter = useCallback((ending: string) => {
     const l = life.current, ch = l && chapterOf(pack, l.state.chapter)
@@ -256,10 +338,11 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       if (d.d === 'sound') cue(d.cue)
       else if (d.d === 'card') {
         const card = chapterOf(pack, l.state.chapter)?.cards?.find(c => c.id === d.card)
-        if (card) await new Promise<void>(res => { dismiss.current = res; cue('page'); setOverlay({k: 'card', card}) })
+        if (card) await new Promise<void>(res => { dismiss.current = () => res(); cue('page'); setOverlay({k: 'card', card}) })
       } else if (d.d === 'play') {
-        await new Promise<void>(res => { dismiss.current = res; setOverlay({k: 'game', d}) })
-        const after = eventsOf(d.then, l.state)
+        const result = await new Promise<Result>(res => { dismiss.current = r => res(r ?? 'ok'); setOverlay({k: 'game', d}) })
+        // the game's own outcome adds to what the directive always does
+        const after = eventsOf(afterPlay(d, result), l.state)
         l.dispatch(...after.events)
         queue.unshift(...after.directives)
       } else if (d.d === 'goto') {
@@ -349,14 +432,17 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     if (e.type === 'error') { rendererFailed(e.message); return }
     if (e.type === 'entered') {
       setRoomUp(true)
+      setIssues(e.issues ?? [])
       const at = arrival.current
       arrival.current = null
-      if (at) { setPlace(at); cue('reveal'); rt.current?.emote('wonder', 3); later(() => setPlace(cur => (cur?.id === at.id ? null : cur)), 3800) }
+      if (at) { setPlace(at); if (at.first) { cue('reveal'); rt.current?.emote('wonder', 3) } later(() => setPlace(cur => (cur?.id === at.id ? null : cur)), 3800) }
       const done = entered.current; entered.current = null; done?.(); return
     }
     if (e.type === 'target') { setTarget(e.target); return }
     if (e.type === 'step') { sound.current?.setSurface(['floor', 'street', 'terrace', 'stairs'].includes(e.surface) ? e.surface : 'floor'); cue('step'); return }
-    if (!l || live.current.phase !== 'play' || live.current.talk || live.current.overlay) return
+    // an exit is the one event that is never dropped: it closes whatever is open and carries him through
+    if (e.type === 'exit') { leaveThrough(e.id); return }
+    if (!l || live.current.phase !== 'play' || live.current.talk || live.current.overlay || trans.current !== 'idle') return
     const sc = live.current.scene
     if (e.type === 'act') {
       const talkId = e.kind === 'actor' ? sc?.actors.find(a => a.id === e.id)?.talk : sc?.spots.find(s => s.id === e.id)?.talk
@@ -364,12 +450,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     } else if (e.type === 'locked') {
       const door = sc?.doors.find(d => d.id === e.id)
       say(door?.blocked ?? copy.locked!)
-    } else if (e.type === 'exit') {
-      const door = sc?.doors.find(d => d.id === e.id), through = door && throughDoor(door, l.state)
-      if (through?.ok) { cue('door'); l.dispatch(...through.events); void enterRoom().then(settle) }
-      else { if (door?.blocked) say(door.blocked); rt.current?.freeze(false) }
     }
-  }, [copy.locked, cue, enterRoom, later, say, settle, startTalk])
+  }, [copy.locked, cue, later, leaveThrough, rendererFailed, say, startTalk])
   const onPlayRef = useRef(onPlay)
   onPlayRef.current = onPlay
 
@@ -378,7 +460,13 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     // F13: a browser that cannot create a WebGL context is told so before the room is even loaded
     if (!probeWebgl(() => document.createElement('canvas'))) { dispatchBoot({type: 'webgl-unavailable'}); return }
     const host = window as unknown as {__vxHostReady?: (p: PlayRuntime) => void}
-    const attach = (p: PlayRuntime) => { rt.current = p; p.on(e => onPlayRef.current(e)); dispatchBoot({type: 'ready'}) }
+    const attach = (p: PlayRuntime) => {
+      if (rt.current === p) return
+      rt.current = p; p.on(e => onPlayRef.current(e)); dispatchBoot({type: 'ready'})
+      p.frame(live.current.wide ? FRAME.wide : FRAME.phone)
+      // the picture came back (a reload after a renderer error, a new look) while the day was running: build the room again
+      if (live.current.phase === 'play') void enterAndSettleRef.current()
+    }
     host.__vxHostReady = attach
     // the room posts its boot failure (play.js → vxBootFailed); only our own iframe, on our own origin, counts
     const onMessage = (e: MessageEvent) => {
@@ -407,8 +495,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     sound.current?.wake()
     setPhase('play')
     live.current.phase = 'play'
-    void enterRoom().then(settle)
-  }, [enterRoom, settle])
+    void enterAndSettle()
+  }, [enterAndSettle])
 
   const openChapterCard = useCallback(() => { setCardAt(0); setPhase('chapter') }, [])
 
@@ -429,7 +517,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     openChapterCard()
   }, [openChapterCard, pack])
 
-  const closeOverlay = useCallback(() => { const done = dismiss.current; dismiss.current = null; setOverlay(null); done?.() }, [])
+  const closeOverlay = useCallback((r?: Result) => { const done = dismiss.current; dismiss.current = null; setOverlay(null); done?.(r) }, [])
 
   const restartChapter = useCallback(() => {
     const l = life.current
@@ -452,9 +540,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   /* the room stands still while a card, a game or the drawer is open */
   useEffect(() => {
     if (phase !== 'play' || !roomUp) return
-    if (menu !== 'closed' || sheet !== 'none') rt.current?.freeze(true)
-    else if (!talk && !overlay) rt.current?.freeze(false)
-  }, [menu, overlay, phase, roomUp, sheet, talk])
+    syncFreeze()
+  }, [menu, overlay, phase, roomUp, sheet, syncFreeze, talk])
 
   /* ───────────── keys ───────────── */
   useEffect(() => {
@@ -479,7 +566,7 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       if (live.current.talk) {
         if ((k === 'e' || k === 'enter' || k === ' ') && (e.target as HTMLElement | null)?.tagName !== 'BUTTON') { e.preventDefault(); advance() }
         const n = Number(k)
-        if (n >= 1 && n <= 9) { const run = runner.current, c = run?.view().choices[n - 1]; if (run && c && run.view().index >= run.view().lines.length - 1) choose(c.id) }
+        if (n >= 1 && n <= 9) { const run = runner.current, c = run?.view().choices[n - 1]; if (run && c && armed.current && run.view().index >= run.view().lines.length - 1) choose(c.id) }
         return
       }
       if (field) return
@@ -587,6 +674,49 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
     const t1 = window.setTimeout(aim, 450), t2 = window.setTimeout(aim, 1400)
     return () => { window.clearTimeout(t1); window.clearTimeout(t2) }
   }, [talkWho, talk?.view.index, scene])
+  /* the device's own settings, and the debug switch */
+  useEffect(() => {
+    try { setDeckOn(window.localStorage.getItem(DECK_KEY) === '1') } catch { /* a private window keeps the default */ }
+    setDebug(new URLSearchParams(window.location.search).get('lifeDebug') === '1')
+  }, [])
+  const toggleDeck = useCallback(() => {
+    setDeckOn(cur => { const next = !cur; try { window.localStorage.setItem(DECK_KEY, next ? '1' : '0') } catch { /* nothing to keep it in */ } return next })
+  }, [])
+  /* every layer that hangs from the HUD reads its height, never a number */
+  const hudSeen = !!(playing && chapter)
+  useEffect(() => {
+    const el = hudEl.current
+    if (!hudSeen || !el) { setHudH(0); return }
+    const measure = () => setHudH(Math.ceil(el.getBoundingClientRect().height))
+    const ro = new ResizeObserver(measure); ro.observe(el); measure()
+    return () => ro.disconnect()
+  }, [hudSeen])
+  /* what an effect did, said once in the corner: +coins, −energy, a bond that moved */
+  useEffect(() => {
+    if (!state) return
+    const prev = prevStat.current
+    const cur = {chapter: state.chapter, coins: state.coins, energy: state.energy, standing: state.standing, heart: state.heart, bonds: state.bonds}
+    prevStat.current = cur
+    const ch = chapterOf(pack, cur.chapter)
+    if (!prev || prev.chapter !== cur.chapter || phase !== 'play' || !ch) return
+    const out: Delta[] = []
+    const add = (n: number, label: string | undefined) => { const d = Math.round(n); if (d && label) out.push({id: ++deltaId.current, text: `${d > 0 ? '+' : '−'}${Math.abs(d)} ${label}`, tone: d > 0 ? 'up' : 'down'}) }
+    add(cur.coins - prev.coins, copy['delta.coins']); add(cur.energy - prev.energy, copy['delta.energy']); add(cur.standing - prev.standing, copy['delta.standing']); add(cur.heart - prev.heart, copy['delta.heart'])
+    for (const who of Object.keys(cur.bonds)) {
+      const d = Math.round((cur.bonds[who] ?? 50) - (prev.bonds[who] ?? 50))
+      if (d) out.push({id: ++deltaId.current, text: `${nameOf(pack, ch, who)} · ${d > 0 ? copy['delta.bondUp'] : copy['delta.bondDown']}`, tone: d > 0 ? 'up' : 'down'})
+    }
+    if (!out.length) return
+    setDeltas(list => [...list, ...out].slice(-4))
+    out.forEach(o => later(() => setDeltas(list => list.filter(x => x.id !== o.id)), 2800))
+  }, [copy, later, pack, phase, state])
+  /* the first minute on a phone says how to move, once */
+  const hinted = useRef(false)
+  useEffect(() => {
+    if (!touch || !playing || !roomUp || hinted.current) return
+    hinted.current = true; setHint(true); later(() => setHint(false), 7000)
+  }, [later, playing, roomUp, touch])
+
   /* ───────────── what is drawn ───────────── */
   if (!state) return <div className={styles.life} data-phase="boot"><p className={styles.loading} role="status">{copy.loading}</p></div>
 
@@ -639,51 +769,49 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
   )
 
   return (
-    <div className={styles.life} data-phase={phase} data-wide={wide ? 'true' : 'false'} data-talking={talk ? 'true' : 'false'} data-life="root" data-room={state.room ?? ''} data-chapter={state.chapter ?? ''}>
+    <div className={styles.life} style={{'--l-hud': `${hudH}px`} as React.CSSProperties} data-deck={deckOn && touch ? 'true' : 'false'} data-touch={touch ? 'true' : 'false'} data-phase={phase} data-wide={wide ? 'true' : 'false'} data-talking={talk ? 'true' : 'false'} data-life="root" data-room={state.room ?? ''} data-chapter={state.chapter ?? ''}>
       <div className={styles.stage} ref={setStageEl}>
         {failed !== 'webgl' && <iframe key={reload} ref={frame} className={styles.world} src={lookSrc(look, pack.clubId)} title={copy.title} tabIndex={-1} aria-hidden="true" />}
         {playing && !roomUp && !failed && <p className={styles.loading} role="status">{copy.loading}</p>}
-        {place && <div className={styles.place} role="status" data-life="place" key={place.id}><small>{copy['place.new']}</small><b {...story}>{place.name}</b></div>}
-        {toast && <p className={styles.toast} role="status" {...story}>{toast}</p>}
+        <div className={styles.notes} data-life="notes">
+          {place && (
+            <div className={styles.place} role="status" data-life="place" data-first={place.first ? 'true' : 'false'} key={place.id}><small>{place.first ? copy['place.new'] : copy['place.now']}</small><b {...story}>{place.name}</b></div>
+          )}
+          {intro && !talk && (
+            <aside className={styles.intro} role="status" data-life="intro"><small>{copy.intro}</small><b {...story}>{intro.name}</b><small {...story}>{intro.role} — {intro.blurb}</small></aside>
+          )}
+          {deltas.length > 0 && (
+            <ul className={styles.deltas} role="status" aria-live="polite" data-life="deltas">
+              {deltas.map(d => <li key={d.id} data-tone={d.tone}><bdi>{d.text}</bdi></li>)}
+            </ul>
+          )}
+          {toast && <p className={styles.toast} role="status" {...story}>{toast}</p>}
+        </div>
         {idle && targetText && !touch && (
           <button type="button" ref={actEl} className={`${styles.act} min-h-tap`} data-life="act" data-locked={target?.locked ? 'true' : 'false'} onClick={() => { sound.current?.wake(); rt.current?.act() }}>
-            <span className={styles.actVerb}>{targetText.verb}</span><span className={styles.actName} {...(target?.kind === 'actor' ? {} : story)}><bdi>{targetText.name}</bdi></span>{!touch && <kbd aria-hidden="true">E</kbd>}
+            <span className={styles.actVerb}>{targetText.verb}</span><span className={styles.actName} {...(target?.kind === 'actor' ? {} : story)}><bdi>{targetText.name}</bdi></span><kbd aria-hidden="true">E</kbd>
           </button>
         )}
-        {idle && stageH > 0 && (
+        {idle && touch && !deckOn && (
+          <TapChip verb={targetText?.verb ?? null} name={targetText?.name ?? null} locked={!!target?.locked} hint={hint ? copy.tapHint ?? null : null} story={story} onAct={() => { sound.current?.wake(); rt.current?.act() }} />
+        )}
+        {idle && stageH > 0 && (!touch || deckOn) && (
           <ControlDeck top={stageH} height={0} touch={touch} verb={deckVerb} label={deckLabel} locked={!!target?.locked} onAxis={onAxis} onAction={onAction} onCancel={onCancel} />
+        )}
+        {debug && (
+          <aside className={styles.debug} data-life="debug" aria-label="debug">
+            <b>transit: {trans.current} · room: {state.room ?? '—'} · up: {roomUp ? 'yes' : 'no'}</b>
+            {issues.length === 0 ? <span>no entered.issues</span> : <ul>{issues.map((x, i) => <li key={i}>{x}</li>)}</ul>}
+          </aside>
         )}
       </div>
 
       {playing && chapter && (
-        <header className={styles.strip}>
-          <span className={styles.mark} aria-hidden="true">{pack.skin.initials}</span>
-          <div className={styles.stripText}>
-            <p className={styles.serial}>№ {pad2(chapterNo)} · {copy.age} <bdi>{chapter.age}</bdi></p>
-            <p className={styles.stripTitle} {...story}>{chapter.title}</p>
-          </div>
-          <div className={styles.hudButtons}>
-            <button type="button" className={`${styles.menuButton} min-h-tap`} onClick={() => setSheet('map')} aria-haspopup="dialog" data-life="map-open">{copy.map}</button>
-            <button type="button" className={`${styles.menuButton} min-h-tap`} onClick={() => setSheet('me')} aria-haspopup="dialog" data-life="me-open">{copy.me}</button>
-            <button type="button" className={`${styles.menuButton} min-h-tap`} onClick={() => setMenu('menu')} aria-haspopup="dialog" data-life="menu-open">{copy.menu}</button>
-          </div>
-        </header>
-      )}
-
-      {playing && chapter && !talk && (
-        <div className={styles.meterRow} data-life="meters">
-          <span className={styles.meterChip} data-meter="coins">{copy['me.coins']} <b><bdi>{state.coins}</bdi></b></span>
-          <span className={styles.meterChip} data-meter="energy" data-low={state.energy < 25 ? 'true' : 'false'}>{copy['me.energy']} <i aria-hidden="true"><b style={{display: 'block', inlineSize: `${Math.max(0, Math.min(100, state.energy))}%`}} /></i><b><bdi>{Math.round(state.energy)}</bdi></b></span>
-          <span className={styles.meterChip} data-meter="standing">{copy['me.standing']} <b><bdi>{Math.round(state.standing)}</bdi></b></span>
-        </div>
-      )}
-
-      {intro && !talk && (
-        <aside className={styles.intro} role="status" data-life="intro"><small>{copy.intro}</small><b {...story}>{intro.name}</b><small {...story}>{intro.role} — {intro.blurb}</small></aside>
-      )}
-
-      {playing && chapter && current && !talk && (
-        <p className={styles.chip} data-life="objective"><span>{copy.today}</span> <span {...story}>{current.t}</span></p>
+        <Hud
+          plateRef={hudEl} initials={pack.skin.initials} serial={`№ ${pad2(chapterNo)} · ${copy.age} ${chapter.age}`} place={state.room ? roomName(pack, state.room, chapter) : chapter.title}
+          objective={current ? current.t : null} coins={state.coins} energy={state.energy} standing={state.standing} talking={!!talk} copy={copy} story={story}
+          onMeter={m => { setGaugeFocus(m); setSheet('gauges') }} onMap={() => setSheet('map')} onMenu={() => setMenu('menu')}
+        />
       )}
 
       {playing && chapter && (
@@ -706,20 +834,11 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
       )}
 
       {playing && talk && line && (
-        <section ref={sheetEl} className={styles.sheet} aria-label={speaker ?? copy.title} data-life="dialogue" data-narration={line.who === null ? 'true' : 'false'}>
-          <button type="button" className={`${styles.leave} min-h-tap`} onClick={() => void closeTalk(false)} aria-label={copy.leave} data-life="leave">×</button>
-          {speaker && <p className={styles.speaker} data-me={line.who === 'me' ? 'true' : 'false'}><bdi>{speaker}</bdi></p>}
-          <Typed className={styles.line} aria-live="polite" data-life="line" key={`${talk.view.talk}:${talk.view.index}`} text={line.t} onClick={() => typing.current?.finish()} handle={typing} onDone={typedDone} {...story} />
-          {lastLine && talk.view.choices.length > 0 ? (!typed ? null : (
-            <ol className={styles.choices} data-life="choices">
-              {talk.view.choices.map((c, i) => (
-                <li key={c.id} style={{'--i': i} as React.CSSProperties}><button type="button" ref={i === 0 ? primary : undefined} className={`${styles.choice} min-h-tap`} onClick={() => choose(c.id)} data-choice={c.id}><span aria-hidden="true">{i + 1}</span><span {...story}>{c.t}</span></button></li>
-              ))}
-            </ol>
-          )) : (
-            <button type="button" ref={primary} className={`${styles.more} min-h-tap`} onClick={advance} data-life="continue">{copy.more} <span aria-hidden="true">▸</span></button>
-          )}
-        </section>
+        <Dialogue
+          text={line.t} who={line.who} speaker={speaker} me={line.who === 'me'} choices={talk.view.choices} asking={lastLine && talk.view.choices.length > 0} typed={typed}
+          serial={`${talk.view.talk}:${talk.view.index}`} story={story} handle={typing} sheetRef={sheetEl} primaryRef={primary} armedRef={armed} copy={copy}
+          onAdvance={advance} onChoose={choose} onLeave={() => void closeTalk(false)} onTyped={typedDone}
+        />
       )}
 
       {phase === 'title' && (
@@ -816,20 +935,21 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
             <h2 id="life-card-title" className={styles.cardTitle} lang={overlay.card.archive?.locale} dir="auto">{overlay.card.title}</h2>
             {overlay.card.body && <p className={styles.lede} lang={overlay.card.archive?.locale} dir="auto">{overlay.card.body}</p>}
             {archiveBlock(overlay.card)}
-            <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={closeOverlay} data-life="card-close">{copy.next}</button></div>
+            <div className={styles.actions}><button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => closeOverlay()} data-life="card-close">{copy.next}</button></div>
           </div>
         </section>
       )}
 
       {overlay?.k === 'game' && (
         <div className={`${styles.cover} z-[60]`} data-clear="true" data-life="game">
-          <MiniGame game={overlay.d.game} id={overlay.d.id} amount={overlay.d.then.reduce((n, fx) => n + (fx.e === 'coins' && fx.by > 0 ? fx.by : 0), 0) || 8} copy={copy} reduced={reduced} cue={cue} onDone={closeOverlay} />
+          <MiniGame game={overlay.d.game} id={overlay.d.id} amount={playAmount(overlay.d) || 8} copy={copy} reduced={reduced} cue={cue} onDone={(r?: unknown) => closeOverlay(r === 'good' || r === 'slip' || r === 'ok' ? r : undefined)} />
         </div>
       )}
 
       {sheet === 'map' && playing && chapter && (
         <CityMap city={cityOf(pack, chapter, state)} clubId={pack.clubId} night={state.time === 'night'} copy={copy} story={story} onTravel={travel} onClose={() => setSheet('none')} />
       )}
+      {sheet === 'gauges' && playing && chapter && <GaugesSheet pack={pack} chapter={chapter} state={state} copy={copy} story={story} focus={gaugeFocus} onMe={() => setSheet('me')} onClose={() => setSheet('none')} />}
       {sheet === 'me' && playing && chapter && <MeSheet pack={pack} chapter={chapter} state={state} copy={copy} locale={locale} story={story} onClose={() => setSheet('none')} />}
 
       {menu !== 'closed' && (
@@ -849,8 +969,11 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
                 <p className={styles.serial}>{pack.club.name}</p>
                 <h2 id="life-menu-title" className={styles.cardTitle}>{copy.menuTitle}</h2>
                 <div className={styles.menuList}>
-                  <button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => setMenu('closed')} data-life="menu-resume">{copy.resume}</button>
+                  <button type="button" ref={primary} className={`${styles.button} min-h-tap`} onClick={() => setMenu('closed')} data-life="menu-resume">{copy.resume}<small>{copy['menu.pausedNote']}</small></button>
+                  {playing && <button type="button" className={`${styles.row} min-h-tap`} onClick={() => { setMenu('closed'); setSheet('map') }} data-life="menu-map">{copy['menu.map']}</button>}
+                  {playing && <button type="button" className={`${styles.row} min-h-tap`} onClick={() => { setMenu('closed'); setSheet('me') }} data-life="me-open">{copy['menu.me']}</button>}
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={toggleSound} aria-pressed={soundOn}>{soundOn ? copy.soundOn : copy.soundOff}</button>
+                  {touch && <button type="button" className={`${styles.row} min-h-tap`} onClick={toggleDeck} aria-pressed={deckOn} data-life="menu-deck">{deckOn ? copy['menu.deckOn'] : copy['menu.deckOff']}<small>{copy['menu.deckNote']}</small></button>}
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={() => { cycleLook(); setMenu('closed') }} data-life="menu-look">{copy.lookLabel}: {copy[`look.${look}`]}<small>{copy.lookNote}</small></button>
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={restartChapter}>{copy.restartChapter}<small>{copy.restartChapterNote}</small></button>
                   <button type="button" className={`${styles.row} min-h-tap`} onClick={() => setMenu('confirm')}>{copy.startOver}</button>

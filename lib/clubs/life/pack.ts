@@ -31,8 +31,8 @@ export function lifeAnchors(data: Pick<ClubData, 'archive' | 'timeline' | 'sourc
 
 const cache = new Map<string, LifePack>()
 
-export function clubLife(data: ClubData, story: {edition?: 2; locale?: 'en' | 'he'} = {}): LifePack {
-  const key = `${data.identity.id}:${data.version}:${story.edition ?? 1}:${story.locale ?? 'en'}`
+export function clubLife(data: ClubData, story: {locale?: 'en' | 'he'} = {}): LifePack {
+  const key = `${data.identity.id}:${data.version}:${story.locale ?? 'en'}`
   const hit = cache.get(key)
   if (hit) return hit
   const club = REGISTRY.find(c => c.id === data.identity.id)
@@ -52,7 +52,7 @@ export function clubLife(data: ClubData, story: {edition?: 2; locale?: 'en' | 'h
     skin, skinIssues: issues, skinPending: pending,
     cast, timeline: has(LIFE_TIMELINE), selection,
     anchors: lifeAnchors(data), details: has(LIFE_MATCH_DETAIL) ?? undefined, dataVersion: data.version,
-    storyEdition: story.edition, storyLocale: story.locale,
+    storyLocale: story.locale,
   })
   cache.set(key, pack)
   return pack

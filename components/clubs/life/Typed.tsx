@@ -3,11 +3,12 @@
  * One line of speech, set down a letter at a time. The complete line is always in the document
  * (the unshown part is only transparent), so a screen reader, a search and a test read all of it;
  * a tap or the next press completes it first, and reduced motion — or an automated browser —
- * gets it at once.
+ * gets it at once. The pace is The Worker's (about 42 letters a second): a ninety-character line
+ * takes two seconds, and nobody who reads faster is held up, because a tap prints the rest.
  */
-import {useEffect, useRef, useState} from 'react'
+import {useEffect, useMemo, useRef, useState} from 'react'
 
-const CPS = 58
+const CPS = 42
 
 export function instantText(): boolean {
   if (typeof window === 'undefined') return true
@@ -21,22 +22,31 @@ export function instantText(): boolean {
 export type TypedHandle = {finish: () => boolean}
 
 export function Typed({text, handle, onDone, className, ...rest}: {text: string; handle: {current: TypedHandle | null}; onDone: () => void; className?: string} & React.HTMLAttributes<HTMLParagraphElement>) {
-  const chars = useRef<string[]>([])
-  chars.current = Array.from(text)
-  const [n, setN] = useState(() => (instantText() ? chars.current.length : 0))
+  const chars = useMemo(() => Array.from(text), [text])
+  const [n, setN] = useState(() => (instantText() ? chars.length : 0))
+  const finished = n >= chars.length
   const done = useRef(false)
+  const doneFn = useRef(onDone)
+  doneFn.current = onDone
   useEffect(() => {
-    const total = chars.current.length
-    if (n >= total) {
+    const total = chars.length
+    if (finished) {
       handle.current = null
-      if (!done.current) { done.current = true; onDone() }
+      if (!done.current) { done.current = true; doneFn.current() }
       return
     }
     handle.current = {finish: () => { setN(total); return true }}
-    const t = window.setTimeout(() => setN(v => Math.min(total, v + (/[.,!?…]/.test(chars.current[v] ?? '') ? 1 : 2))), (1000 / CPS) * (/[.!?…]/.test(chars.current[n - 1] ?? '') ? 7 : /,/.test(chars.current[n - 1] ?? '') ? 3 : 1))
-    return () => window.clearTimeout(t)
-  }, [n, handle, onDone])
-  const shown = chars.current.slice(0, n).join('')
-  const tail = chars.current.slice(n).join('')
+    let raf = 0
+    const t0 = performance.now()
+    const step = (now: number) => {
+      const k = Math.min(total, Math.floor(((now - t0) / 1000) * CPS))
+      setN(k)
+      if (k < total) raf = window.requestAnimationFrame(step)
+    }
+    raf = window.requestAnimationFrame(step)
+    return () => window.cancelAnimationFrame(raf)
+  }, [chars, finished, handle])
+  const shown = chars.slice(0, n).join('')
+  const tail = chars.slice(n).join('')
   return <p className={className} {...rest}>{shown}<span style={{opacity: 0}}>{tail}</span></p>
 }

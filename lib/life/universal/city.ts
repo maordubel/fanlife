@@ -135,7 +135,7 @@ export function cityOf(pack: LifePack, chapter: Chapter, state: LifeState): City
     const scene = today.has(s.id) ? sceneOf(pack, chapter, state, s.id) : null
     const offers: Offer[] = (scene?.spots ?? []).flatMap((sp): Offer[] =>
       sp.id.startsWith('job-') ? [{id: sp.id, label: sp.label, kind: 'job'}]
-        : sp.id === 'hatch' ? [{id: sp.id, label: sp.label, kind: 'shop'}]
+        : sp.id === 'hatch' || sp.id.startsWith('shop-') ? [{id: sp.id, label: sp.label, kind: 'shop'}]
           : sp.id.startsWith('rest-') ? [{id: sp.id, label: sp.label, kind: 'rest'}] : [])
     return {
       ...s,

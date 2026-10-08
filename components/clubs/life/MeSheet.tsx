@@ -15,7 +15,8 @@ import styles from './life.module.css'
 type Copy = Record<string, string>
 type Tab = 'me' | 'people' | 'nights'
 
-export const bondWord = (n: number) => (n >= 18 ? 3 : n >= 10 ? 2 : n >= 5 ? 1 : 0)
+/** bonds are 50-based (the engine's base): below 40 the person is distant, 40–59 an acquaintance, 60–79 close, 80 and over family */
+export const bondWord = (n: number) => (n >= 80 ? 3 : n >= 60 ? 2 : n >= 40 ? 1 : 0)
 
 export function MeSheet({pack, chapter, state, copy, locale, story, onClose}: {pack: LifePack; chapter: Chapter; state: LifeState; copy: Copy; locale: 'en' | 'he'; story: {lang?: string; dir?: 'ltr' | 'rtl'}; onClose: () => void}) {
   const [tab, setTab] = useState<Tab>('me')
