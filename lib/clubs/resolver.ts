@@ -8,6 +8,7 @@ import {gateReadiness} from './gate-data'
 import {waveCReadiness} from './gate-content'
 import {mergeWave} from './waves'
 import {GATE_THRESHOLDS as T} from './thresholds'
+import {readDeskPack,deskPackIds} from '@/lib/master/deskPack'
 const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[]}>>={
  'hapoel-tel-aviv':async()=>({data:(await import('./adapters/hapoel')).getHapoelData(),diagnostics:[]}),
  'zrinjski-mostar':async()=>compilePack(mergeWave(mergeWave((await import('./adapters/zrinjski')).zrinjskiPack(),(await import('@/club-packs/zrinjski-mostar/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/zrinjski-mostar/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/zrinjski-mostar/wave-auto.json')).default as never)),REGISTRY.find(c=>c.id==='zrinjski-mostar')!),
@@ -18,14 +19,28 @@ const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[
 /** Review-only clubs: material staged, nothing approved — loadable (gates show LOCKED), never in the playable set. */
 export const REVIEW_CLUB_IDS:string[]=[]
 export const CORE_CLUB_IDS=Object.keys(providers).filter(id=>!REVIEW_CLUB_IDS.includes(id))
-const cache=new Map<string,Promise<{data:ClubData;diagnostics:Diagnostic[]}>>()
+const cache=new Map<string,{at:number;desk:boolean;p:Promise<{data:ClubData;diagnostics:Diagnostic[]}|null>}>()
 function freeze<T>(v:T):T {if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.freeze(v);for(const item of Object.values(v))freeze(item)}return v}
+function finish(result:{data:ClubData;diagnostics:Diagnostic[]}){result.data.gates.polls=gateReadiness(clubPolls(result.data,'en').length,T.polls.target,T.polls.minimum,T.polls.unit);result.data.gates['blind-cow']=gateReadiness(clubMystery(result.data).poolSize,T['blind-cow'].target,T['blind-cow'].minimum,T['blind-cow'].unit);for(const [k,r] of Object.entries(waveCReadiness(result.data)))(result.data.gates as Record<string,unknown>)[k]=r;return freeze(result)}
+/** A club with no repository pack is played from its DESK PACK — built in the control room from the owner's approvals,
+ * compiled by the same compiler. It can change at any time, so it is re-read after a minute (and at once after a build). */
+const DESK_TTL_MS=60_000
+async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null;const pack=await readDeskPack(id).catch(()=>null);return pack?compilePack(pack,reg):null}
 /** Static packs are immutable within a deployment; content versions travel with each run. */
-export function loadClub(id:string) {
- if(!Object.hasOwn(providers,id))return Promise.resolve(null)
- if(!cache.has(id))cache.set(id,providers[id]!().then(result=>{result.data.gates.polls=gateReadiness(clubPolls(result.data,'en').length,T.polls.target,T.polls.minimum,T.polls.unit);result.data.gates['blind-cow']=gateReadiness(clubMystery(result.data).poolSize,T['blind-cow'].target,T['blind-cow'].minimum,T['blind-cow'].unit);for(const [k,r] of Object.entries(waveCReadiness(result.data)))(result.data.gates as Record<string,unknown>)[k]=r;return freeze(result)}).catch(e=>{cache.delete(id);throw e}))
- return cache.get(id)!
+export function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null> {
+ const isStatic=Object.hasOwn(providers,id)
+ if(!isStatic&&!REGISTRY.some(c=>c.id===id))return Promise.resolve(null)
+ const hit=cache.get(id)
+ if(hit&&(!hit.desk||Date.now()-hit.at<DESK_TTL_MS))return hit.p
+ const p=(isStatic?providers[id]!():deskProvider(id)).then(r=>r?finish(r):null).catch(e=>{cache.delete(id);throw e})
+ cache.set(id,{at:Date.now(),desk:!isStatic,p})
+ return p
 }
+/** After a desk build: the next read compiles the new pack on this instance. */
+export function invalidateClub(id:string){cache.delete(id)}
+/** Every club the engine can load: repository packs plus clubs with a desk pack. */
+export async function engineClubIds():Promise<string[]>{const desk=(await deskPackIds().catch(()=>[])).filter(id=>REGISTRY.some(c=>c.id===id)&&!CORE_CLUB_IDS.includes(id));return [...CORE_CLUB_IDS,...desk]}
+export const hasStaticPack=(id:string)=>Object.hasOwn(providers,id)
 /** Host is authority. Neutral-portal path selection is available only in evaluation. */
 export function resolveClubId(host:string|null,pathId?:string,preview=false):string|null {
  const tenant=clubFromHost(host)

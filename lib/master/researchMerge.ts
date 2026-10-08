@@ -31,6 +31,7 @@ export function mergeResearch(c:Club,result:AdapterResult,info:MergeInfo):MergeR
   const had=existing.get(id)
   if(!had){c.findings.push({...f,approved:false,decision:undefined,adapter:info.adapter,lineage:{adapters:[info.adapter],firstRunId:info.runId,lastRunId:info.runId,lastSeenAt:info.at}});rep.added++;continue}
   if(had.decision)continue // research never re-opens a decision
+  if(f.record)had.record=f.record
   const adapters=[...new Set([...adapterOf(had),info.adapter])]
   had.lineage={adapters,firstRunId:had.lineage?.firstRunId??info.runId,lastRunId:info.runId,lastSeenAt:info.at}
   if(had.superseded){delete had.superseded;rep.restored++}else rep.refreshed++

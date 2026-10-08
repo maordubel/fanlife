@@ -9,7 +9,7 @@
  *  · the name of the ground prints on a wall only when the pack carries an approved venue;
  *  · a crest is printed artwork the club (or the owner) has rights to, or it is a monogram.
  */
-import {contrast, forbiddenColor, type ClubTheme} from '@/lib/clubs/theme'
+import {contrast, forbiddenColor, rivalBans, type ClubTheme} from '@/lib/clubs/theme'
 
 export const KIT_PATTERNS = ['solid', 'stripes', 'hoops', 'halves', 'sash', 'checkers'] as const
 export type KitPattern = typeof KIT_PATTERNS[number]
@@ -46,6 +46,10 @@ export type VoxelSkin = {
   city: string
   strings: Partial<Record<SignKey, string>>
   policy: {hue: [number, number]; minSaturation: number; minValue: number}[]
+  /** colour families an owner-approved rivalry takes away (red · green · blue): the town never paints them */
+  rivals?: string[]
+  /** fictional names a sign may carry (the kiosk keeper's shop) */
+  cast?: Partial<Record<string, string>>
 }
 
 const HEX = /^#[\da-f]{6}$/i
@@ -99,6 +103,7 @@ export function buildSkin(club: SkinSubject, theme: ClubTheme, manifest: LifeSki
       city: club.city,
       strings,
       policy: theme.colorPolicy.legacyRules.map(r => ({hue: [r.hue[0], r.hue[1]], minSaturation: r.minSaturation, minValue: r.minValue})),
+      rivals: rivalBans(theme).slice(0, 3),
     },
   }
 }

@@ -1,4 +1,6 @@
 'use client'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {goalShare} from '@/lib/share/v3/adapters'
 import {useState,useTransition} from 'react'
 import {completeRun} from '@/lib/clubs/completion'
 import {gradeClubGoal,clubGoalCount} from '@/app/clubs/[slug]/[gate]/gate-actions'
@@ -78,6 +80,7 @@ export function GoalBoard({items,club,version,seed,locale,contentLocale}:{items:
      {res.narrative&&<p lang={contentLocale} dir="auto">{res.narrative}</p>}
      {res.sources.map(s=>s.url?<p key={s.title} className="mag-fine"><a href={s.url} target="_blank" rel="noreferrer">{copy.goalSource}: <bdi>{s.title}</bdi> ↗</a></p>:<p key={s.title} className="mag-fine">{copy.goalSource}: <bdi>{s.title}</bdi></p>)}
      <p className="mag-fine">{copy.goalApprox}</p>
+     <ShareComposer draft={goalShare(club,{seed,points:res.points,max:res.max,forbidden:res.truth.map(t=>t.actor).filter((a):a is string=>!!a)})}/>
      <button className="mag-cta red min-h-tap" type="button" onClick={next}>{copy.goalNext}<span>→</span></button>
     </div>}
    </div>
