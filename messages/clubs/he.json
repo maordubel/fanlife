@@ -184,5 +184,17 @@
   "nextMore": "מתוך",
   "nextPrev": "המשחק הקודם",
   "nextNext": "המשחק הבא",
-  "homeShare": "שתפו את המועדון ↗"
+  "homeShare": "שתפו את המועדון ↗",
+  "soonTitle": "עוד לא פתוח",
+  "shirtsKicker": "חולצות",
+  "shirtsTitle": "פינת החולצות",
+  "shirtsLead": "כל חולצות {club} שבארכיון — לחפש, לסמן שיש לכם, למכור או להחליף.",
+  "shirtsArchive": "ארכיון החולצות",
+  "shirtsArchiveNote": "תמונות של כל חולצה, עונה אחרי עונה.",
+  "shirtsOwn": "יש לי את החולצה",
+  "shirtsOwnNote": "מסמנים חולצה והיא נכנסת לארון שלכם.",
+  "shirtsSell": "מכירה והחלפה",
+  "shirtsSellNote": "מציעים חולצה מהארון, או מחפשים. בלי עמלות.",
+  "shirtsAuction": "מכירה פומבית",
+  "shirtsAuctionNote": "חולצה אחת, חלון אחד, זוכה אחד."
 }

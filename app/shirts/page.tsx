@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic'
  * (The Worker's `/kits/archive?shirt=` link lands here). Grouped by club, oldest first;
  * `?shirt=<slug>` opens that club's section and marks the shirt.
  */
-export default async function ShirtsPage({ searchParams }: { searchParams: { shirt?: string } }) {
+export default async function ShirtsPage({ searchParams }: { searchParams: { shirt?: string; club?: string } }) {
   const all = await fanShirts()
   const clubs = [...new Set(all.map((s) => s.club))]
   const focus = typeof searchParams.shirt === 'string' ? searchParams.shirt : null
@@ -25,7 +25,7 @@ export default async function ShirtsPage({ searchParams }: { searchParams: { shi
           const rows = all.filter((s) => s.club === club).sort((a, b) => a.year - b.year)
           const l = livery(club)
           return (
-            <details key={club} className="panel" open={!focus ? clubs[0] === club : rows.some((r) => r.slug === focus)} style={wearLivery(l)}>
+            <details key={club} className="panel" open={!focus ? (searchParams.club ? club === searchParams.club : clubs[0] === club) : rows.some((r) => r.slug === focus)} style={wearLivery(l)}>
               <summary><span className="mag-badge" data-livery={l?.pattern} aria-hidden="true">{l?.initials}</span> <b>{rows[0]!.clubName}</b> · {fl('shirts.count', { n: rows.length })} · {rows[0]!.src ? fl('shirts.photo') : fl('shirts.drawn')}</summary>
               <ShirtShelf shirts={rows} focus={focus} />
             </details>
