@@ -1,0 +1,42 @@
+{
+  "asOf": "2026-10-08",
+  "scope": "AEK Athens, Celtic, FC St. Pauli men first-team football history; separately labelled club culture and memorials",
+  "productionApproved": 0,
+  "completeAllHistory": false,
+  "counts": {
+    "aekDataPlayerProfiles": 1218,
+    "aekDataDetailedSuccessfullyRetrieved": 1218,
+    "aekPediaPlayerProfiles": 616,
+    "aekPediaCoachProfiles": 65,
+    "aekDataSeasonPages": 103,
+    "aekPediaSeasonPages": 67,
+    "aekSeasonRosterLinks": 3468,
+    "aekPediaRosterCandidates": 1843,
+    "aekOfficialMatchIndexRows": 3429,
+    "aekMatchIndexCountChecksPassed": 103,
+    "celticDetailedProfiles": 1049,
+    "celticProfilesWithStatistics": 1008,
+    "celticKeyMatchPagesRead": 94,
+    "celticUniqueKeyMatchPages": 94,
+    "pauliDetailedWeltfussballProfiles": 186,
+    "pauliNFTPlayerRecords": 113,
+    "pauliNFTSeasonPages": 93,
+    "pauliNFTSeasonRows": 281,
+    "pauliMuseumArticlesIndexed": 31,
+    "millerntonBibliographicEntries": 4393,
+    "curatedHistoricalEvents": 43,
+    "honourRows": 250,
+    "playerSourceRecords": 3182,
+    "candidateNameGroups": 2617,
+    "unresolvedCelticProfileTargets": 13,
+    "unresolvedPauliProfileTargets": 482
+  },
+  "notIncluded": [
+    "full articles and biographies",
+    "images without permissions",
+    "automatic ratings",
+    "automatic production imports",
+    "unverified all-time unique-player counts"
+  ],
+  "status": "research-review"
+}

@@ -202,6 +202,14 @@
    "publisher": "The Celtic Wiki",
    "access": "available",
    "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "dh-00ca73afb178",
+   "title": "European Cup — honours",
+   "url": "https://www.thecelticwiki.com/about-celtic/honours/",
+   "publisher": "The Celtic Wiki",
+   "access": "available",
+   "checkedAt": "2026-10-08"
   }
  ],
  "archive": [
@@ -1915,7 +1923,8 @@
     "count": 56
    },
    "sources": [
-    "src_b7130211fef2f7"
+    "src_b7130211fef2f7",
+    "dh-00ca73afb178"
    ],
    "confidence": 2,
    "status": "approved",
@@ -1978,7 +1987,8 @@
     "count": 43
    },
    "sources": [
-    "src_b7130211fef2f7"
+    "src_b7130211fef2f7",
+    "dh-00ca73afb178"
    ],
    "confidence": 2,
    "status": "approved",
@@ -2020,7 +2030,8 @@
     "count": 22
    },
    "sources": [
-    "src_b7130211fef2f7"
+    "src_b7130211fef2f7",
+    "dh-00ca73afb178"
    ],
    "confidence": 2,
    "status": "approved",
@@ -2036,12 +2047,14 @@
    "value": {
     "name": "European Cup",
     "seasons": [
+     "1966-67",
      "1966/67"
     ],
     "count": null
    },
    "sources": [
-    "src_449fa575d1b75d"
+    "src_449fa575d1b75d",
+    "dh-00ca73afb178"
    ],
    "confidence": 2,
    "status": "approved",

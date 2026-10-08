@@ -1,0 +1,36 @@
+{
+ "aek-athens": {
+  "players added": 944,
+  "players skipped: already in core (exact name, accent/case folded)": 272,
+  "players skipped: no name": 2,
+  "matches added": 3389,
+  "matches skipped: competition unknown": 20,
+  "matches skipped: label/date unreadable": 15,
+  "matches skipped: day already covered": 5,
+  "trophies extended": 1,
+  "trophies added": 6,
+  "archive events added": 834,
+  "events skipped: not an exact day": 18
+ },
+ "celtic": {
+  "players added": 1021,
+  "players skipped: already in core (exact name, folded)": 28,
+  "matches added": 85,
+  "matches skipped: day already covered": 4,
+  "matches skipped: title/date unreadable": 5,
+  "honours skipped (unmapped/empty)": 16,
+  "trophies extended": 4,
+  "trophies added": 2,
+  "archive events added": 86
+ },
+ "st-pauli": {
+  "players added (Weltfussball)": 145,
+  "players added (NFT)": 86,
+  "players skipped: already listed (exact name, folded)": 5,
+  "players skipped: no St. Pauli row / no name": 36,
+  "players skipped: NFT: already listed": 27,
+  "trophies added": 5,
+  "trophies extended": 1,
+  "archive events added": 18
+ }
+}

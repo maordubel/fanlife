@@ -186,6 +186,14 @@
    "publisher": "AEKpedia",
    "access": "available",
    "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "dh-707a4b1aa7ec",
+   "title": "Greek league — honours",
+   "url": "https://aekdata.gr/titloi",
+   "publisher": "AEKdata",
+   "access": "available",
+   "checkedAt": "2026-10-08"
   }
  ],
  "archive": [
@@ -3937,16 +3945,28 @@
    "value": {
     "name": "Greek league",
     "seasons": [
+     "1938/39",
+     "1939/40",
+     "1962/63",
+     "1967/68",
+     "1970/71",
+     "1977/78",
+     "1978/79",
+     "1988/89",
+     "1991/92",
+     "1992/93",
      "1993/94",
      "2017/18",
-     "2022/23"
+     "2022/23",
+     "2025/26"
     ],
     "count": null
    },
    "sources": [
     "src_457613ddd33b2e",
     "src_bf1122561d7b77",
-    "src_c41c270dfb9198"
+    "src_c41c270dfb9198",
+    "dh-707a4b1aa7ec"
    ],
    "confidence": 2,
    "status": "approved",

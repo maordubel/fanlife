@@ -8,7 +8,7 @@ Pack files: anchors.json, away-days.json, characters.json, city.json, core.json,
 | matches | 13 | 13 | 0 |
 | archive | 124 | 112 | 12 |
 | trophies | 6 | 6 | 0 |
-| kits | 138 | 24 | 114 |
+| kits | 138 | 59 | 79 |
 | rivals | 1 | 1 | 0 |
 | goals | 1 | 1 | 0 |
 | mysteries | 46 | 42 | 4 |

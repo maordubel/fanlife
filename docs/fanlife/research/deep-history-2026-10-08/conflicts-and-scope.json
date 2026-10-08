@@ -1,0 +1,71 @@
+[
+  {
+    "club": "st-pauli",
+    "issue": "Oberliga Nord championship years",
+    "wrongCandidate": "1981, 1982, 1984, 1986",
+    "reviewedCandidate": "1980-81, 1982-83, 1985-86",
+    "reasonHe": "טבלאות העונה מציבות את סט. פאולי במקום השישי ב־1981/82 ובמקום השני ב־1983/84. עלייה ב־1984 אינה אליפות.",
+    "sourceUrls": [
+      "https://www.transfermarkt.com/fc-st-pauli/platzierungen/verein/35",
+      "https://www.tsv1860.de/_m/media/1/3bb82.pdf"
+    ]
+  },
+  {
+    "club": "celtic",
+    "issue": "Scottish Cup subpage lists false winning years",
+    "examples": [
+      "1892-93",
+      "1893-94",
+      "1908-09"
+    ],
+    "reasonHe": "הדף המשני אינו תואם את רשימת התארים והיסטוריית הגביע. אין להשתמש בו לבדו.",
+    "sourceUrls": [
+      "https://www.thecelticwiki.com/scottish-cup/",
+      "https://www.scottishfa.co.uk/en/scottish-cup-winners"
+    ]
+  },
+  {
+    "club": "aek-athens",
+    "issue": "1931-32 Greek Cup final exact date",
+    "officialSiteCandidate": "1931-11-08",
+    "otherArchiveCandidate": "1932-11-08",
+    "resolution": "exact day unresolved; retain season and dispute, do not auto-publish",
+    "sourceUrls": [
+      "https://www.aekfc.gr/pages/history.aspx?lang=en",
+      "https://football.aek.com/fixture/8"
+    ]
+  },
+  {
+    "club": "aek-athens",
+    "issue": "debut scope",
+    "example": "Demis Nikolaidis first match in archive is Wohlen friendly, 19 July 1996",
+    "resolution": "archive first match is not necessarily competitive debut"
+  },
+  {
+    "club": "aek-athens",
+    "issue": "source lineage",
+    "resolution": "AEKdata and football.aek.com are not automatically independent confirmation"
+  },
+  {
+    "club": "st-pauli",
+    "issue": "MOPO 627 players coverage",
+    "resolution": "professional squad since 1963, including unused players; not all-time official appearances",
+    "sourceUrl": "https://www.mopo.de/sport/fc-st-pauli/von-trulsen-bis-irvine-alle-627-profis-die-jemals-fuer-st-pauli-gespielt-haben/1003869"
+  },
+  {
+    "club": "st-pauli",
+    "issue": "MOPO active-player final year 2028",
+    "resolution": "technical sentinel, not a verified future leaving year",
+    "sourceUrl": "https://datawrapper.dwcdn.net/IrhKo/8/"
+  },
+  {
+    "club": "celtic",
+    "issue": "Brandy Cup 1999 repeated in honours page",
+    "resolution": "one unique honour retained, duplicate not counted"
+  },
+  {
+    "club": "st-pauli",
+    "issue": "National Football Teams roster scope",
+    "resolution": "sparse historical international-player roster; 93 season pages are not 93 complete squads; placeholder zero values not confirmed absence of appearances"
+  }
+]

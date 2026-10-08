@@ -8,7 +8,7 @@ Pack files: core.json, identity.json, ingest.json, research-2026-10-06.json, res
 | matches | 106 | 106 | 0 |
 | archive | 143 | 122 | 21 |
 | trophies | 6 | 6 | 0 |
-| kits | 83 | 14 | 69 |
+| kits | 83 | 71 | 12 |
 | rivals | 1 | 1 | 0 |
 | goals | 6 | 6 | 0 |
 | mysteries | 77 | 62 | 15 |

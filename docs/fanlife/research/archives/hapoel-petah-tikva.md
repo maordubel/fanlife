@@ -8,7 +8,7 @@ Pack files: core.json, identity.json, ingest.json, research-2026-10-06.json, res
 | matches | 35 | 35 | 0 |
 | archive | 115 | 101 | 14 |
 | trophies | 10 | 10 | 0 |
-| kits | 92 | 0 | 92 |
+| kits | 92 | 92 | 0 |
 | rivals | 1 | 1 | 0 |
 | goals | 0 | 0 | 0 |
 | mysteries | 44 | 30 | 14 |
@@ -27,4 +27,4 @@ Collector (research-data, never promoted without identity + approval):
 - backlog: 0
 - staged sources: 0
 
-Nothing approved yet in: kits, goals
+Nothing approved yet in: goals
