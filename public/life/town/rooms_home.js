@@ -55,7 +55,7 @@ L.wallTex=function(W,H,o){o=o||{};var pw=1024,ph=Math.round(pw*H/W),cv=C(pw,ph),
 L.shell=function(o){var W=o.W||24,D=o.D||14,H=o.H||9;L.W=W;L.D=D;L.H=H;var m;
  m=c.mesh(new T.BoxGeometry(W+1.4,.8,D+1.4),M(o.slab||'#4a3a34'),W/2,-.4,D/2+.1,g);m.castShadow=false;
  var fl=new T.Mesh(new T.PlaneGeometry(W,D),M('#ffffff',{map:o.floor,rough:o.floorRough===undefined?.55:o.floorRough}));fl.rotation.x=-PI/2;fl.position.set(W/2,.01,D/2);fl.receiveShadow=true;g.add(fl);L.floorMesh=fl;
- if(c.o&&c.o.play&&fl.material.map){var am=new T.MeshBasicMaterial({color:new T.Color('#a87244').convertSRGBToLinear()});var ap=new T.Mesh(new T.PlaneGeometry(W+30,14),am);ap.rotation.x=-PI/2;ap.position.set(W/2,-.005,D+7.05);ap.receiveShadow=true;g.add(ap)}
+ if(c.o&&c.o.play&&fl.material.map){var aC=new T.Color(o.apron||'#e0cdb0').convertSRGBToLinear();var am=new T.MeshBasicMaterial({color:aC});var ap=new T.Mesh(new T.PlaneGeometry(W+80,70),am);ap.rotation.x=-PI/2;ap.position.set(W/2,-.005,D+35);ap.receiveShadow=true;g.add(ap)}
  var ec=o.edge||'#d8cdbd';
  m=c.mesh(new T.BoxGeometry(W+1.4,H,.7),M(ec),W/2,H/2,-.36,g);m.castShadow=false;
  var bf=new T.Mesh(new T.PlaneGeometry(W,H),M('#fff',{map:o.wallB,rough:.95}));bf.position.set(W/2,H/2,.005);bf.receiveShadow=true;g.add(bf);
