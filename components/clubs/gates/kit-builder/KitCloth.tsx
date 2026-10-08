@@ -58,7 +58,7 @@ export function KitCloth({spec,view='front',missing=[],texture=true,title,classN
   <path d={CUFFS} fill="none" stroke="var(--mag-ink)" strokeWidth="1.2" opacity="0.7"/>
   {back?<Back name={spec.name} number={spec.number} ink={text} halo={baseFill}/>:<g clipPath={`url(#${id('cut')})`}>
    {gone.has('maker')?<Gap slot="maker"/>:<Word slot="maker" text={spec.maker} ink={text} halo={baseFill} size={12}/>}
-   {gone.has('crest')?<Gap slot="crest"/>:spec.crest?<Crest letters={monogram} ink={text} fill={trimHex??baseFill} halo={baseFill}/>:null}
+   {gone.has('crest')?<Gap slot="crest"/>:spec.crest?<Crest letters={monogram} ink={lightCloth(spec.trim??spec.base)?'var(--mag-ink)':'var(--mag-white)'} fill={trimHex??baseFill} halo={baseFill}/>:null}
    {gone.has('sponsor')?<Gap slot="sponsor"/>:<Word slot="sponsor" text={spec.sponsor} ink={text} halo={baseFill} size={26}/>}
   </g>}
  </svg>
