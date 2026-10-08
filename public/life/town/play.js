@@ -25,12 +25,35 @@ function buildGrid(){
   for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=1;
  }
  (cfg.blocks||[]).forEach(function(r){block(r[0]-RADIUS,r[1]-RADIUS,r[2]+RADIUS,r[3]+RADIUS)});
+ AUTO.forEach(function(r){block(r[0]-RADIUS*.55,r[1]-RADIUS*.55,r[2]+RADIUS*.55,r[3]+RADIUS*.55)});
  decor.forEach(function(p){block(p.x-.8,p.z-.8,p.x+.8,p.z+.8)});
  (exits||[]).forEach(function(x){var e=x.def,i0=Math.max(0,Math.floor((e.x-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((e.x+e.w-w[0])/CELL)),j0=Math.max(0,Math.floor((e.z-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((e.z+e.d-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
  Object.keys(actors).forEach(function(id){var a=actors[id];if(a.def.ghost||a.def.follow)return;var r=a.def.sit?1.0:.7;block(a.x-r,a.z-r,a.x+r,a.z+r)});
  (cfg.clear||[]).forEach(function(r){var i0=Math.max(0,Math.floor((r[0]-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((r[2]-w[0])/CELL)),j0=Math.max(0,Math.floor((r[1]-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((r[3]-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
  grid={nx:nx,nz:nz,b:b,x0:w[0],z0:w[1]};
 }
+/* the furniture is solid: every object the room actually built that stands on the floor and is taller than a step
+   becomes a block, measured from its own mesh — so a sofa, a table, a stall or a bin is walked round, never through.
+   Anything that would cut the player off from a door, a person or a spot is given back (largest first). */
+var AUTO=[];
+function autoBlocks(){var out=[],w=cfg.walk,Wd=w[2]-w[0],Dd=w[3]-w[1],box=new T.Box3(),root=window.__town&&window.__town.world;if(!root)return out;root.updateMatrixWorld(true);
+ root.traverse(function(o){if(!o.isMesh||o.isSkinnedMesh||o.isInstancedMesh||o.isSprite||!o.visible)return;var m=o.material;if(Array.isArray(m))m=m[0];if(!m||m.blending===T.AdditiveBlending||(m.transparent&&m.opacity<.6)||m.isShaderMaterial)return;
+  for(var q=o;q;q=q.parent){if(q.userData&&(q.userData.head||q.userData.arms||q.userData.noBlock))return;if(!q.visible)return}
+  box.setFromObject(o);if(box.min.y>.95||box.max.y<.3||box.max.y-box.min.y<.08)return;
+  var x0=box.min.x/U,x1=box.max.x/U,z0=box.min.z/U,z1=box.max.z/U,dx=x1-x0,dz=z1-z0;
+  if(dx>Wd*.55||dz>Dd*.75||dx*dz>70||(dx<.3&&dz<.3))return;
+  if(x1<w[0]||x0>w[2]||z1<w[1]||z0>w[3])return;out.push([x0,z0,x1,z1])});
+ var keep=[[cfg.spawn&&cfg.spawn.x,cfg.spawn&&cfg.spawn.z]].concat((cfg.exits||[]).map(function(e){return[e.x+e.w/2,e.z+e.d/2]})).concat((cfg.actors||[]).map(function(a){return[a.x,a.z]})).filter(function(p){return p[0]!=null});
+ return out.filter(function(r){return!keep.some(function(p){return p[0]>r[0]-.9&&p[0]<r[2]+.9&&p[1]>r[1]-.9&&p[1]<r[3]+.9})})}
+function targetsOf(){var T0=[];(cfg.exits||[]).forEach(function(e){T0.push(function(){return[e.x+e.w/2,e.z+e.d/2]})});
+ (cfg.actors||[]).forEach(function(a){if(a.talk===false)return;T0.push(function(){var c=nearestFree(a.x,a.z+1.2,a.reach||REACH)||nearestFree(a.x,a.z,a.reach||REACH);return c?centre(c[0],c[1]):null})});
+ (cfg.spots||[]).forEach(function(t){T0.push(function(){var c=nearestFree(t.x,t.z,REACH-.4);return c?centre(c[0],c[1]):null})});return T0}
+function reachable(sp,T0){return T0.map(function(f){var p=f();return!!(p&&route(sp[0],sp[1],p[0],p[1]))})}
+function settleBlocks(sp){var all=Q0.get('noblock')?[]:autoBlocks();AUTO=[];buildGrid();var s0=freeAt(sp[0],sp[1])?sp:(function(){var c=nearestFree(sp[0],sp[1],6);return c?centre(c[0],c[1]):sp})();
+ var T0=targetsOf(),base=reachable(s0,T0);AUTO=all.sort(function(a,b){return(b[2]-b[0])*(b[3]-b[1])-(a[2]-a[0])*(a[3]-a[1])});buildGrid();
+ function ok(){var now=reachable(s0,T0);return base.every(function(v,i){return!v||now[i]})}
+ var guard=0;while(AUTO.length&&!ok()&&guard++<80){AUTO.shift();buildGrid()}}
+var Q0=new URLSearchParams(location.search);
 function cellOf(x,z){return[Math.floor((x-grid.x0)/CELL),Math.floor((z-grid.z0)/CELL)]}
 function free(i,j){return i>=0&&j>=0&&i<grid.nx&&j<grid.nz&&!grid.b[j*grid.nx+i]}
 function freeAt(x,z){var c=cellOf(x,z);return free(c[0],c[1])}
@@ -185,14 +208,14 @@ function enter(c){
  var sk=S?{name:c.club,c1:S.p,c2:S.s,c3:S.t||'#14141c',club:S}:null;
  RM.load(c.room,{club:c.club,time:c.time==='night'?'night':'day',skinSet:sk,play:true});
  var def=RM.defs[c.room];pruneDecor(c,def&&def.kind);
- if(window.__gnd)window.__sc.remove(window.__gnd);if(def&&IND[def.kind]){var gm=new T.Mesh(new T.PlaneGeometry(300,300),new T.MeshBasicMaterial({color:new T.Color('#cdb592').convertSRGBToLinear()}));gm.rotation.x=-PI/2;gm.position.set(12*U,-.06,8*U);window.__sc.add(gm);window.__gnd=gm}
+ if(window.__gnd)window.__sc.remove(window.__gnd);if(def&&IND[def.kind]){var gm=new T.Mesh(new T.PlaneGeometry(300,300),new T.MeshBasicMaterial({color:new T.Color('#1e1a17').convertSRGBToLinear()}));gm.rotation.x=-PI/2;gm.position.set(12*U,-.06,8*U);window.__sc.add(gm);window.__gnd=gm}
  if(window.__fill)window.__sc.remove(window.__fill);var fi=new T.DirectionalLight('#fff0e0',def&&IND[def.kind]?.3:.15);fi.position.set(0,6,14);window.__sc.add(fi);window.__fill=fi;
  var sp=c.spawn||{x:(c.walk[0]+c.walk[2])/2,z:(c.walk[1]+c.walk[3])/2,yaw:0};
  setView();skyOf(c.time==='night',def&&def.kind);
  (c.actors||[]).forEach(function(a){addActor(a,sp)});
  (c.spots||[]).forEach(addSpot);
  (c.exits||[]).forEach(addExit);
- buildGrid();
+ AUTO=[];buildGrid();try{settleBlocks([sp.x,sp.z])}catch(e){AUTO=[];buildGrid()}
  var cell=nearestFree(sp.x,sp.z,6),pos=cell?centre(cell[0],cell[1]):[sp.x,sp.z];
  if(freeAt(sp.x,sp.z))pos=[sp.x,sp.z];
  player=new Body({x:pos[0],z:pos[1],yaw:sp.yaw||0,look:c.player||{}},'player');player.place();
@@ -341,8 +364,29 @@ function frame(t,dt){
   var pl=hot?1+Math.sin(t*5)*.1:1+Math.sin(t*2+i)*.05;m.mk.ring.scale.setScalar((hot?1.35:1)*pl);m.mk.ring.material.opacity=hot?.8:.32;m.mk.halo.material.opacity=hot?.95:.42});
  exits.forEach(function(x,i){var hot=target&&target.kind==='exit'&&target.id===x.def.id,k=x.locked?.1:(.24+.12*Math.sin(t*2.4+i)+(hot?.18:0));x.vis.mat.opacity=k;x.vis.a.material.opacity=x.locked?.25:.9;x.vis.a.visible=!frozen;
   var bob=Math.sin(t*3+i)*.06,dir=x.def.dir||'n',cx=(x.def.x+x.def.w/2)*U,cz=(x.def.z+x.def.d/2)*U;x.vis.a.position.set(cx+(dir==='e'?bob:dir==='w'?-bob:0),.62,cz+(dir==='s'?bob:dir==='n'?-bob:0))});
+ swingDoors(t,dt);kickProps(dt);
  trackCam(dt,false);
 }
+/* a ball is a ball: walk into it and it goes, rolls, slows, comes off the furniture and the walls */
+var lastPP=null;
+function kickProps(dt){var P=window.__props;if(!P||!P.length||!player||dt<=0)return;var pw=new T.Vector3(player.x*U,0,player.z*U),pv=lastPP?pw.clone().sub(lastPP).divideScalar(dt):new T.Vector3();lastPP=pw.clone();pv.y=0;
+ var w=cfg.walk,v=new T.Vector3();
+ P.forEach(function(p){var m=p.m;if(!m.parent||m.userData.noKick)return;if(!p.r){var bb=new T.Box3().setFromObject(m);p.r=(bb.max.y-bb.min.y)/2;p.v=new T.Vector3()}
+  m.getWorldPosition(v);var d=Math.hypot(v.x-pw.x,v.z-pw.z),reach=p.r+.3;
+  if(d<reach&&pv.length()>.4){var dir=new T.Vector3(v.x-pw.x,0,v.z-pw.z).normalize();p.v.copy(dir.multiplyScalar(Math.min(4.2,pv.length()*1.35+.8)))}
+  if(p.v.lengthSq()<1e-4)return;var nx=v.x+p.v.x*dt,nz=v.z+p.v.z*dt,ux=nx/U,uz=nz/U;
+  if(ux<w[0]+.3||ux>w[2]-.3){p.v.x*=-.6;nx=v.x}if(uz<w[1]+.3||uz>w[3]-.3){p.v.z*=-.6;nz=v.z}
+  if(grid&&!freeAt(nx/U,nz/U)&&freeAt(v.x/U,v.z/U)){if(!freeAt(nx/U,v.z/U)){p.v.x*=-.55;nx=v.x}if(!freeAt(v.x/U,nz/U)){p.v.z*=-.55;nz=v.z}}
+  var sp=p.v.length(),dist=Math.hypot(nx-v.x,nz-v.z);if(dist>0){var ax=new T.Vector3(p.v.z,0,-p.v.x).normalize();m.rotateOnWorldAxis(ax,dist/p.r)}
+  p.v.multiplyScalar(Math.exp(-1.6*dt));if(sp<.05)p.v.set(0,0,0);
+  var wp=new T.Vector3(nx,v.y,nz);m.parent.worldToLocal(wp);m.position.copy(wp)})}
+/* a door is a door: the leaf nearest each exit swings open as somebody walks up to it and settles back after;
+   a locked one only rattles in its frame */
+function swingDoors(t,dt){var D=window.__doors;if(!D||!D.length||!player)return;var v=new T.Vector3();
+ D.forEach(function(d){if(d.ex===undefined){d.pv.getWorldPosition(v);var best=null,bd=1.9;exits.forEach(function(x){var e=x.def,cx=Math.max(e.x,Math.min(e.x+e.w,v.x/U))*U,cz=Math.max(e.z,Math.min(e.z+e.d,v.z/U))*U,dd=Math.hypot(cx-v.x,cz-v.z);if(dd<bd){bd=dd;best=x}});d.ex=best}
+  var want=d.rest;if(d.ex){var e=d.ex.def,px=Math.max(e.x,Math.min(e.x+e.w,player.x)),pz=Math.max(e.z,Math.min(e.z+e.d,player.z)),near=Math.hypot(px-player.x,pz-player.z)<2.8;
+   if(near&&!d.ex.locked)want=d.open;else if(near&&d.ex.locked)want=d.rest+Math.sin(t*38)*.012*(Math.sin(t*3)>0?1:0)}
+  d.pv.rotation.y+=(want-d.pv.rotation.y)*Math.min(1,dt*(want===d.open?3.2:2.2))})}
 
 /* ---------- checks the host (and the probe) can ask for ---------- */
 function audit(){
