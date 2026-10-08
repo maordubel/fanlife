@@ -258,5 +258,14 @@
   "wallLead": "שלושה עשר שערים אל {club}. נכנסים בשער.",
   "wallGate": "שער",
   "wallSoon": "בקרוב",
-  "entranceTap": "הקישו כדי להיכנס"
+  "entranceTap": "הקישו כדי להיכנס",
+  "wallFeatured": "השער שלכם",
+  "cardKicker": "הכרטיס שלך",
+  "cardTitle": "אוהד {club}",
+  "cardGates": "שערים שעברת",
+  "cardRounds": "סבבים",
+  "cardBeen": "הייתי שם",
+  "cardSince": "מאז",
+  "cardEmpty": "שחקו סבב והכרטיס יתחיל להתמלא.",
+  "cardNext": "השער הבא:"
 }

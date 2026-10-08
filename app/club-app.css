@@ -159,3 +159,28 @@ a.gp:active { transform: scale(.98); }
 [dir='rtl'] .ce-l { --ce-dir: 100%; }
 [dir='rtl'] .ce-r { --ce-dir: -100%; }
 @media (prefers-reduced-motion: reduce) { .club-entrance { display: none; } }
+
+/* the beloved gate: the club's own terrace number on the big plate, the shirt game behind it */
+.gp-feature { grid-column: 1 / -1; }
+.gp-big { grid-template-rows: auto auto auto; }
+.gp-big .gp-well { min-height: 150px; }
+.gp-big .gp-num { font-size: 150px; }
+.gp-big .gp-foot b { font-size: 26px; }
+.gp-big .gp-foot em { font-style: normal; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-salmon); }
+.gp-big .gp-head { background: var(--club-primary, var(--mag-ink)); color: var(--club-on-primary, var(--mag-paper)); }
+@media (min-width: 700px) { .gp-big { grid-template-columns: minmax(160px, 1fr) 2fr; grid-template-rows: auto 1fr; } .gp-big .gp-head { grid-column: 1 / -1; } .gp-big .gp-foot { align-content: center; padding: 16px 20px; } }
+/* your card */
+.sc-card { border: 3px solid var(--mag-ink); background: var(--mag-card, var(--mag-paper)); min-height: 8px; }
+.sc-card header { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-block-end: 3px solid var(--mag-ink); color: var(--club-on-primary, var(--mag-paper)); }
+.sc-card header .mag-badge { width: 44px; height: 44px; flex: none; }
+.sc-card header div { flex: 1; min-width: 0; }
+.sc-card header p { margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; }
+.sc-card header h3 { margin: 0; font-family: var(--mag-condensed); font-weight: 700; font-size: 24px; line-height: 1; text-transform: uppercase; }
+.sc-card header small { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; }
+.sc-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; }
+.sc-stats div { padding: 12px 8px; text-align: center; border-inline-end: 3px solid var(--mag-ink); }
+.sc-stats div:last-child { border-inline-end: 0; }
+.sc-stats dt { font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; }
+.sc-stats dd { margin: 2px 0 0; font-family: var(--mag-condensed); font-weight: 700; font-size: 38px; line-height: 1; color: var(--club-type, var(--mag-ink)); }
+.sc-empty { margin: 0; padding: 14px; font-size: 14px; }
+.sc-next { display: flex; align-items: center; gap: 6px; padding: 12px 14px; border-block-start: 3px solid var(--mag-ink); background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }

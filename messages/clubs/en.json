@@ -258,5 +258,14 @@
   "wallLead": "Thirteen gates into {club}. Walk in by one.",
   "wallGate": "Gate",
   "wallSoon": "Soon",
-  "entranceTap": "Tap to enter"
+  "entranceTap": "Tap to enter",
+  "wallFeatured": "Your gate",
+  "cardKicker": "Your card",
+  "cardTitle": "{club} supporter",
+  "cardGates": "Gates walked",
+  "cardRounds": "Rounds",
+  "cardBeen": "I was there",
+  "cardSince": "Since",
+  "cardEmpty": "Play a round and your card starts to fill.",
+  "cardNext": "Next gate:"
 }
