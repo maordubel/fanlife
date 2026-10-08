@@ -19,7 +19,7 @@ export const keyLabel=(key:string,locale:string,long=false)=>fmt(locale,{day:'nu
 
 /** a bookmark — the Archive's own "save", separate from "I was there" */
 export function SaveButton({saved,title,copy,onToggle,tone}:{saved:boolean;title:string;copy:GameCopy;onToggle:()=>void;tone?:'card'|'sheet'}){
- return <button type="button" className={css.save} data-tone={tone} aria-pressed={saved} onClick={onToggle}
+ return <button type="button" className={`${css.save} min-h-tap`} data-tone={tone} aria-pressed={saved} onClick={onToggle}
   aria-label={tr(copy,saved?'ar.card.unsaveLabel':'ar.card.saveLabel',{title})} title={tr(copy,saved?'ar.card.saved':'ar.card.save')}>
   <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 3h12v18l-6-4.5L6 21z" fill={saved?'currentColor':'none'} stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round"/></svg>
  </button>
@@ -51,7 +51,7 @@ export function EntryCard({e,ctx,variant='row',saved,onOpen,onToggleSave,id}:{e:
   <div className={css.cardBody}>
    <p className={css.kicker}>{tr(copy,isPlayer?'ar.kind.player':'ar.kind.moment')}{isPlayer&&e.player&&posList(copy,e)?` · ${posList(copy,e)}`:''}</p>
    <h3 className={css.cardTitle} lang={contentLocale} dir="auto">
-    <button type="button" className={css.open} aria-label={tr(copy,'ar.card.open',{title:e.title})} onClick={()=>onOpen(e.id)}>{e.title}</button>
+    <button type="button" className={`${css.open} min-h-tap`} aria-label={tr(copy,'ar.card.open',{title:e.title})} onClick={()=>onOpen(e.id)}>{e.title}</button>
    </h3>
    {isPlayer
     ?e.player&&yearsOf(copy,e.player)&&<p className={css.cardHint}>{yearsOf(copy,e.player)}</p>

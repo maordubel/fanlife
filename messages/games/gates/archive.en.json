@@ -5,7 +5,6 @@
  "ar.tab.dig": "Dig",
  "ar.tab.search": "Search",
  "ar.tab.mine": "Mine",
-
  "ar.today.title": "On this day",
  "ar.today.kicker": "Your calendar day, on your device",
  "ar.today.count": "{n} on file",
@@ -21,7 +20,6 @@
  "ar.today.loading": "Checking today's date…",
  "ar.today.deck": "Entries for {date}",
  "ar.today.pos": "{n} of {total}",
-
  "ar.time.title": "Time machine",
  "ar.time.pick": "Choose a decade",
  "ar.time.decade": "{decade}s",
@@ -29,7 +27,6 @@
  "ar.time.empty": "Nothing on file for this decade.",
  "ar.time.players": "Players whose documented years reach this decade",
  "ar.time.yearOnly": "Year only",
-
  "ar.dig.title": "The dig box",
  "ar.dig.hint": "Pull one card at a time. Open any card to read its sources.",
  "ar.dig.left": "{n} left in the box",
@@ -41,7 +38,6 @@
  "ar.dig.tableEmpty": "Nothing pulled out yet.",
  "ar.dig.pulled": "Pulled out: {title}",
  "ar.dig.boxLabel": "Archive box, {n} cards left",
-
  "ar.search.label": "Search the archive",
  "ar.search.placeholder": "A name, a place, a year",
  "ar.search.start": "Type a name, a place, a competition or a year.",
@@ -51,7 +47,6 @@
  "ar.filter.all": "Everything",
  "ar.filter.moment": "Moments",
  "ar.filter.player": "People",
-
  "ar.mine.title": "My archive",
  "ar.mine.saved": "Saved",
  "ar.mine.savedEmpty": "Nothing saved yet. Tap the bookmark on any entry.",
@@ -61,11 +56,9 @@
  "ar.mine.trail": "This visit's trail",
  "ar.mine.trailEmpty": "Open entries and your trail builds up here.",
  "ar.mine.device": "Kept on this device only. No account, no leaderboard.",
-
  "ar.round.progress": "Trail {n}/{total}",
  "ar.round.done": "Trail complete",
  "ar.round.doneNote": "{n} entries explored — this visit counts as a finished round.",
-
  "ar.kind.moment": "Moment",
  "ar.kind.player": "Player",
  "ar.date.unknown": "Date not documented",
@@ -75,7 +68,6 @@
  "ar.card.saveLabel": "Save “{title}” to my archive",
  "ar.card.unsaveLabel": "Remove “{title}” from my archive",
  "ar.card.years": "{from}–{to} at the club",
-
  "ar.sheet.fallback": "Archive entry",
  "ar.sheet.back": "Back to {title}",
  "ar.sheet.facts": "Documented facts",
@@ -106,10 +98,6 @@
  "ar.sheet.saved": "Saved to my archive",
  "ar.sheet.saveFail": "This device cannot keep saves.",
  "ar.sheet.share": "Share this entry",
- "ar.sheet.copied": "Link copied.",
- "ar.sheet.shared": "Shared.",
- "ar.sheet.shareFail": "Could not share. Copy the page address instead.",
- "ar.sheet.sharePrefix": "From the {club} archive",
  "ar.link.xi": "Build your all-time XI",
  "ar.link.derby": "The rivalry wall",
  "ar.link.more": "More from this club"

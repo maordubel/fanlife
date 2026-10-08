@@ -5,7 +5,6 @@
  "ar.tab.dig": "חפירה",
  "ar.tab.search": "חיפוש",
  "ar.tab.mine": "שלי",
-
  "ar.today.title": "היום לפני",
  "ar.today.kicker": "היום בלוח השנה שלך, לפי המכשיר",
  "ar.today.count": "{n} ברשומות",
@@ -21,7 +20,6 @@
  "ar.today.loading": "בודקים את התאריך של היום…",
  "ar.today.deck": "רשומות לתאריך {date}",
  "ar.today.pos": "{n} מתוך {total}",
-
  "ar.time.title": "מכונת הזמן",
  "ar.time.pick": "בחרו עשור",
  "ar.time.decade": "שנות ה־{decade}",
@@ -29,7 +27,6 @@
  "ar.time.empty": "אין רשומות לעשור הזה.",
  "ar.time.players": "שחקנים שהשנים המתועדות שלהם מגיעות לעשור הזה",
  "ar.time.yearOnly": "שנה בלבד",
-
  "ar.dig.title": "ארגז החפירה",
  "ar.dig.hint": "שולפים כרטיס אחד בכל פעם. פותחים כל כרטיס כדי לקרוא את המקורות שלו.",
  "ar.dig.left": "{n} נשארו בארגז",
@@ -41,7 +38,6 @@
  "ar.dig.tableEmpty": "עוד לא נשלף כלום.",
  "ar.dig.pulled": "נשלף: {title}",
  "ar.dig.boxLabel": "ארגז ארכיון, {n} כרטיסים נשארו",
-
  "ar.search.label": "חיפוש בארכיון",
  "ar.search.placeholder": "שם, מקום, שנה",
  "ar.search.start": "הקלידו שם, מקום, מסגרת משחקים או שנה.",
@@ -51,7 +47,6 @@
  "ar.filter.all": "הכול",
  "ar.filter.moment": "רגעים",
  "ar.filter.player": "אנשים",
-
  "ar.mine.title": "הארכיון שלי",
  "ar.mine.saved": "שמורים",
  "ar.mine.savedEmpty": "עוד לא שמרתם כלום. לוחצים על הסימנייה בכל רשומה.",
@@ -61,11 +56,9 @@
  "ar.mine.trail": "המסלול של הביקור הזה",
  "ar.mine.trailEmpty": "פותחים רשומות והמסלול נבנה כאן.",
  "ar.mine.device": "נשמר רק במכשיר הזה. בלי חשבון ובלי טבלה.",
-
  "ar.round.progress": "מסלול {n}/{total}",
  "ar.round.done": "המסלול הושלם",
  "ar.round.doneNote": "עיינתם ב־{n} רשומות — הביקור נספר כסבב שהושלם.",
-
  "ar.kind.moment": "רגע",
  "ar.kind.player": "שחקן",
  "ar.date.unknown": "התאריך אינו מתועד",
@@ -75,7 +68,6 @@
  "ar.card.saveLabel": "לשמור את „{title}“ בארכיון שלי",
  "ar.card.unsaveLabel": "להסיר את „{title}“ מהארכיון שלי",
  "ar.card.years": "{from}–{to} במועדון",
-
  "ar.sheet.fallback": "רשומה בארכיון",
  "ar.sheet.back": "חזרה אל {title}",
  "ar.sheet.facts": "עובדות מתועדות",
@@ -106,10 +98,6 @@
  "ar.sheet.saved": "נשמר בארכיון שלי",
  "ar.sheet.saveFail": "המכשיר הזה לא מצליח לשמור.",
  "ar.sheet.share": "לשתף את הרשומה",
- "ar.sheet.copied": "הקישור הועתק.",
- "ar.sheet.shared": "שותף.",
- "ar.sheet.shareFail": "השיתוף לא הצליח. אפשר להעתיק את כתובת העמוד.",
- "ar.sheet.sharePrefix": "מארכיון {club}",
  "ar.link.xi": "לבנות את ההרכב של כל הזמנים",
  "ar.link.derby": "קיר היריבות",
  "ar.link.more": "עוד מהמועדון"

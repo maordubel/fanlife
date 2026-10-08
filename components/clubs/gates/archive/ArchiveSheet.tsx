@@ -36,13 +36,13 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
  },[club,e,credit])
  const group=(key:string,title:string,list:Entry[])=>list.length?<section className={css.group} key={key}>
   <h3>{title}</h3>
-  <ul>{(more[key]?list:list.slice(0,SHOW)).map(x=><li key={x.id}><button type="button" className={css.mini} data-entry-id={x.id} onClick={()=>onOpen(x.id)}>
+  <ul>{(more[key]?list:list.slice(0,SHOW)).map(x=><li key={x.id}><button type="button" className={`${css.mini} min-h-tap`} data-entry-id={x.id} onClick={()=>onOpen(x.id)}>
    <span className={css.miniDate}>{x.on?dayMonth(x.on,locale)+' '+x.year:x.year??''}</span><span lang={contentLocale} dir="auto">{x.title}</span></button></li>)}</ul>
-  {list.length>SHOW&&!more[key]&&<button type="button" className={css.linkBtn} onClick={()=>setMore(m=>({...m,[key]:true}))}>{t('ar.sheet.more',{n:list.length-SHOW})}</button>}
+  {list.length>SHOW&&!more[key]&&<button type="button" className={`${css.linkBtn} min-h-tap`} onClick={()=>setMore(m=>({...m,[key]:true}))}>{t('ar.sheet.more',{n:list.length-SHOW})}</button>}
  </section>:null
  const hasRelated=rel.named.length+rel.namedBy.length+rel.sameDay.length+rel.sameYear.length+e.refs.length>0
  return <div className={css.sheet} data-testid="archive-detail" data-entry-id={e.id}>
-  {onBack&&<button type="button" className={css.linkBtn} onClick={onBack}><span aria-hidden="true" className={css.arrow}>←</span> {t('ar.sheet.back',{title:backTitle||t('ar.sheet.fallback')})}</button>}
+  {onBack&&<button type="button" className={`${css.linkBtn} min-h-tap`} onClick={onBack}><span aria-hidden="true" className={css.arrow}>←</span> {t('ar.sheet.back',{title:backTitle||t('ar.sheet.fallback')})}</button>}
   <p className={css.kicker}>{t(isPlayer?'ar.kind.player':'ar.kind.moment')} · <bdi>{prec==='day'?dayMonth(e.on!,locale)+' '+e.year:dateText}</bdi></p>
   {!isPlayer&&e.hint&&<p className={css.sheetHint} lang={contentLocale} dir="auto">{e.hint}</p>}
   <section aria-label={t('ar.sheet.facts')}>
@@ -65,7 +65,7 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
   </section>
   <div className={css.actions}>
    {!isPlayer&&<BeenThere club={club} id={e.id} label={e.title} on={e.on||(e.year?String(e.year):null)} copy={{mark:copy.beenMark,marked:copy.beenMarked,hint:copy.beenHint}}/>}
-   <button type="button" className={css.tool} aria-pressed={saved} onClick={()=>{onToggleSave(e.id)}}>{saved?t('ar.sheet.saved'):t('ar.sheet.save')}</button>
+   <button type="button" className={`${css.tool} min-h-tap`} aria-pressed={saved} onClick={()=>{onToggleSave(e.id)}}>{saved?t('ar.sheet.saved'):t('ar.sheet.save')}</button>
    <ShareComposer label={t('ar.sheet.share')} draft={shareDraft}/>
   </div>
   {hasRelated&&<div className={css.related}>
@@ -75,7 +75,7 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
    {group('sameDay',t('ar.sheet.sameDay'),rel.sameDay)}
    {group('sameYear',t('ar.sheet.sameYear'),rel.sameYear)}
    {e.refs.length>0&&<section className={css.group}><h3>{t('ar.sheet.refs')}</h3>
-    <ul>{e.refs.map(r=><li key={`${r.kind}:${r.id}`}><button type="button" className={css.mini} onClick={()=>onSearch(r.name)}>
+    <ul>{e.refs.map(r=><li key={`${r.kind}:${r.id}`}><button type="button" className={`${css.mini} min-h-tap`} onClick={()=>onSearch(r.name)}>
      <span className={css.miniDate}>{t(r.kind==='rival'?'ar.sheet.refRival':'ar.sheet.refSeason')}</span><span lang={contentLocale} dir="auto">{t('ar.sheet.refSearch',{name:r.name})}</span></button></li>)}</ul></section>}
   </div>}
   <div className={css.deeper}>
@@ -83,8 +83,8 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
     :<p className={css.fine} role="status" data-testid="archive-thread-end">{t('ar.sheet.endThread')}</p>}
   </div>
   {(links.xi&&isPlayer||links.derby&&e.refs.some(r=>r.kind==='rival'))&&<nav className={css.gateLinks} aria-label={t('ar.link.more')}>
-   {links.xi&&isPlayer&&<Link className={css.tool} href={links.xi}>{t('ar.link.xi')} ↗</Link>}
-   {links.derby&&e.refs.some(r=>r.kind==='rival')&&<Link className={css.tool} href={links.derby}>{t('ar.link.derby')} ↗</Link>}
+   {links.xi&&isPlayer&&<Link className={`${css.tool} min-h-tap`} href={links.xi}>{t('ar.link.xi')} ↗</Link>}
+   {links.derby&&e.refs.some(r=>r.kind==='rival')&&<Link className={`${css.tool} min-h-tap`} href={links.derby}>{t('ar.link.derby')} ↗</Link>}
   </nav>}
  </div>
 }
