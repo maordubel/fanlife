@@ -4,6 +4,8 @@ import {completeRun} from '@/lib/clubs/completion'
 import {gradeKit} from '@/app/clubs/[slug]/[gate]/gate-actions'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import {KitPlate} from './KitPlate'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {kitShare} from '@/lib/share/v3/adapters'
 import type {UiLocale} from '@/lib/clubs/locale'
 type Item={id:string;design:string|null;colours:string[];seasonLabel:string;seasons:string[];makers:string[];designs:string[]}
 export function KitBuilderBoard({items,club,version,locale}:{items:Item[];club:string;version:string;locale:UiLocale}) {
@@ -16,6 +18,6 @@ export function KitBuilderBoard({items,club,version,locale}:{items:Item[];club:s
   <div style={{maxWidth:280,marginInline:'auto'}}><KitPlate kit={{id:k.id,design:k.design,colours:k.colours,season:'?'}} label={false}/></div>
   {row('season',copy.kitSeason,k.seasons)}{row('maker',copy.kitMaker,k.makers)}{row('design',copy.kitDesign,k.designs)}
   {!res?<button className="mag-cta min-h-tap" type="button" disabled={!sel.season||!sel.maker||!sel.design||pending} onClick={()=>start(async()=>{const r=await gradeKit(club,version,k.id,sel.season,sel.maker,sel.design);setRes(r);if(r)completeRun(club,'kit-builder',`kit-builder:${version}:${n}:${k.id}`,[r.season,r.maker,r.design].filter(Boolean).length)})}>{copy.kitCheck}<span>→</span></button>
-   :<div aria-live="polite"><p className="mag-bowl" style={{fontSize:26}}>{[res.season,res.maker,res.design].filter(Boolean).length}/3 · {res.season&&res.maker&&res.design?copy.kitRight:copy.kitWrong}</p><p><bdi>{res.truth.season} · {res.truth.maker} · {res.truth.design}</bdi></p><button className="mag-cta red min-h-tap" type="button" onClick={()=>{setN(n+1);setSel({season:'',maker:'',design:''});setRes(null)}}>{copy.kitNext}<span>→</span></button></div>}
+   :<div aria-live="polite"><p className="mag-bowl" style={{fontSize:26}}>{[res.season,res.maker,res.design].filter(Boolean).length}/3 · {res.season&&res.maker&&res.design?copy.kitRight:copy.kitWrong}</p><p><bdi>{res.truth.season} · {res.truth.maker} · {res.truth.design}</bdi></p><ShareComposer draft={kitShare(club,{right:[res.season,res.maker,res.design].filter(Boolean).length,forbidden:[res.truth.season,res.truth.maker,res.truth.design].filter((x):x is string=>!!x)})}/><button className="mag-cta red min-h-tap" type="button" onClick={()=>{setN(n+1);setSel({season:'',maker:'',design:''});setRes(null)}}>{copy.kitNext}<span>→</span></button></div>}
  </section>
 }

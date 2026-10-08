@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {coverShare} from '@/lib/share/v3/adapters'
 import {Shell} from '@/components/master/Shell'
 import {Dye} from '@/components/master/Dye'
 import {Seal,TornBlocks,Cutout,PressPhoto} from '@/components/master/Poster'
@@ -44,6 +46,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     <p className="mag-homeplace">{c.city} <i aria-hidden="true">|</i> {c.country}</p>
     <p className="mag-homelead">{fill(copy.homeLead)}</p>
     <nav className="mag-homejump" aria-label={copy.homeJump}>{core&&<a href="#games">{games.gamesTitle}{playable?<b>{playable}</b>:null}</a>}<a href="#life">LIFE</a>{core&&<a href="#terrace">{copy.homeTerrace}</a>}</nav>
+    {core&&playable>0&&<div className="mag-homeshare"><ShareComposer draft={coverShare(c.id,gamesOpen.filter(x=>x.allowed&&x.ready.playable).map(x=>x.g.name))} label={copy.homeShare}/></div>}
     {ENABLED_LOCALES.length>1&&<nav className="flex flex-wrap gap-4"><Link className="min-h-tap py-3" href="?lang=en" hrefLang="en">{copy.english}</Link><Link className="min-h-tap py-3" href="?lang=he" hrefLang="he">{copy.hebrew}</Link></nav>}
    </div>
    <div className="mag-homestage" aria-hidden="true"><TornBlocks seed={c.id} pattern={lv?.pattern}/><Cutout art="kicker" className="mag-homekick"/></div>
