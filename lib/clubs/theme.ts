@@ -61,6 +61,8 @@ export function validateTheme(theme:ClubTheme):string[]{
  return issues
 }
 /** Small identity manifests are independent of historical gameplay content. */
+/** Does this club carry an approved identity manifest (club-packs/<id>/identity.json)? */
+export const hasIdentityManifest=(id:string)=>Object.hasOwn(catalogue,id)
 export function clubTheme(club:{id:string;primary:string}):ClubTheme {
  const hasManifest=Object.hasOwn(catalogue,club.id)
  const manifest=(hasManifest?catalogue[club.id]:neutral) as typeof hapoel

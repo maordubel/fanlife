@@ -4,6 +4,8 @@ import {completeRun} from '@/lib/clubs/completion'
 import {gradeLineup} from '@/app/clubs/[slug]/[gate]/gate-actions'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {lineupShare} from '@/lib/share/v3/adapters'
 type Item={id:string;title:string;competition:string;on:string|null;pool:string[]}
 export function LineupBoard({items,club,version,locale}:{items:Item[];club:string;version:string;locale:UiLocale}) {
  const copy=gameCopy(locale),[n,setN]=useState(0),[picks,setPicks]=useState<string[]>([]),[res,setRes]=useState<Awaited<ReturnType<typeof gradeLineup>>>(null),[err,setErr]=useState(false),[pending,start]=useTransition()
@@ -19,6 +21,6 @@ export function LineupBoard({items,club,version,locale}:{items:Item[];club:strin
   <div className="mag-chips" role="group" aria-label={copy.lineupSub}>{m.pool.map(p=>{const on=picks.includes(p),bad=res?.wrong.includes(p),miss=res?.missed.includes(p);return <button key={p} type="button" className="mag-chip min-h-tap" aria-pressed={on} data-state={bad?'wrong':miss?'missed':on?'on':''} onClick={()=>toggle(p)} style={on?{background:'var(--mag-ink)',color:'var(--mag-paper)'}:miss?{outline:'3px dashed var(--mag-vermilion)'}:undefined}><bdi>{p}</bdi></button>})}</div>
   {err&&<p role="alert">{copy.unavailable}</p>}
   {!res?<button className="mag-cta min-h-tap" type="button" disabled={picks.length!==11||pending} onClick={check}>{copy.lineupCheck}<span>→</span></button>
-   :<div aria-live="polite"><p className="mag-bowl" style={{fontSize:28}}>{copy.lineupScore}: {res.correct}/11</p>{res.missed.length>0&&<p>{copy.lineupMiss}: <bdi>{res.missed.join(' · ')}</bdi></p>}<button className="mag-cta red min-h-tap" type="button" onClick={next}>{copy.lineupAgain}<span>→</span></button></div>}
+   :<div aria-live="polite"><p className="mag-bowl" style={{fontSize:28}}>{copy.lineupScore}: {res.correct}/11</p>{res.missed.length>0&&<p>{copy.lineupMiss}: <bdi>{res.missed.join(' · ')}</bdi></p>}<ShareComposer draft={lineupShare(club,{title:m.title,on:m.on,competition:m.competition,correct:res.correct,forbidden:[...picks.filter(p=>!res.wrong.includes(p)),...res.missed]})}/><button className="mag-cta red min-h-tap" type="button" onClick={next}>{copy.lineupAgain}<span>→</span></button></div>}
  </section>
 }
