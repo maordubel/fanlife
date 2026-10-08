@@ -1,4 +1,10 @@
-import {KitPlate} from '@/components/clubs/games/KitPlate'
-import {kitViews} from '@/lib/clubs/gate-content'
+import {KitStudio} from '@/components/clubs/gates/kits/KitStudio'
+import {livery} from '@/lib/club-livery'
+import {collectionOf,gate4Playable,studioLimits} from '@/lib/clubs/kit-collection'
 import type {GateView} from '../types'
-export const view:GateView=({club,copy})=><><p>{copy.kitsSub}</p><ul className="mag-tiles" style={{listStyle:'none',padding:0}}>{kitViews(club).map(k=><li className="mag-tile" key={k.id}><KitPlate kit={k}/><b><bdi>{k.season}</bdi></b><small><bdi>{[k.type,k.maker,k.design].filter(Boolean).join(' · ')}</bdi></small></li>)}</ul></>
+
+/** Gate 5 · The Kit Studio — the club's documented shirts as a collection, and a free designer for your own FAN DESIGN. */
+export const view:GateView=({club,locale,copy,searchParams})=>{
+ const rows=collectionOf(club),kit=typeof searchParams.kit==='string'?searchParams.kit:null
+ return <KitStudio club={club.identity.id} clubName={club.identity.name} locale={locale} contentLocale={club.locales.content} copy={copy} monogram={livery(club.identity.id)?.initials??''} limits={studioLimits(club)} rows={rows} gate4={gate4Playable(club)} focusKit={kit&&rows.some(r=>r.id===kit)?kit:null}/>
+}

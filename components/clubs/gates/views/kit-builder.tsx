@@ -1,9 +1,11 @@
-import {KitBuilderBoard} from '@/components/clubs/games/KitBuilderBoard'
-import {buildableKits} from '@/lib/clubs/gate-content'
+import {KitBuilder} from '@/components/clubs/gates/kit-builder/KitBuilder'
+import {livery} from '@/lib/club-livery'
+import {canRun,dealKitRun,eligibleKits,kitModeFrom,publicRun,KIT_ROUND} from '@/lib/clubs/kit-run'
 import type {GateView} from '../types'
-const rotate=<T,>(a:T[],by:number)=>a.length?[...a.slice(by%a.length),...a.slice(0,by%a.length)]:a
-const pick=(own:string,all:(string|null)[])=>{const rest=[...new Set(all.filter((x):x is string=>!!x&&x!==own))].sort().slice(0,3);return [own,...rest].sort((a,b)=>a.localeCompare(b))}
-export const view:GateView=({club,locale,round,gameKey})=>{
- const kits=buildableKits(club)
- return <KitBuilderBoard key={gameKey} items={rotate(kits,round.seed).map(k=>({id:k.id,design:k.design,colours:k.colours,seasonLabel:'',seasons:pick(k.season,kits.map(x=>x.season)),makers:pick(k.maker!,kits.map(x=>x.maker)),designs:pick(k.design!,kits.map(x=>x.design))}))} club={club.identity.id} version={club.version} locale={locale}/>
+
+/** Gate 4 · Build the Kit — a hidden season's shirt, assembled from the parts this club's archive documents. */
+export const view:GateView=({club,locale,copy,round,gameKey,searchParams})=>{
+ const list=eligibleKits(club)
+ const puzzles=canRun(list)?publicRun(dealKitRun(list,round.seed,round.cursor,KIT_ROUND)):[]
+ return <KitBuilder key={gameKey} club={club.identity.id} clubName={club.identity.name} version={club.version} locale={locale} contentLocale={club.locales.content} copy={copy} seed={round.seed} cursor={round.cursor} puzzles={puzzles} mode={kitModeFrom(searchParams.n)} monogram={livery(club.identity.id)?.initials??''} drawable={list.length}/>
 }
