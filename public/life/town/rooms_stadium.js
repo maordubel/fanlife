@@ -62,7 +62,7 @@ function H(c){
   var d=new T.Object3D(),col=new T.Color(),first=null,dim=o.dim||1;
   function setc(att,i,hex,k){col.set(hex);col.multiplyScalar(k);col.convertSRGBToLinear();att.setXYZ(i,col.r,col.g,col.b)}
   Object.keys(groups).forEach(function(k){var L=groups[k];if(!L.length)return;var im=PEOPLE.crowdMesh(k,L.length);if(!im)return;var A=im.userData.att;
-   L.forEach(function(s,i){var sc=(s.s||1)*(.88+rnd()*.14)*.93,ry=(s.ry||0)+(rnd()-.5)*.5,sw=1+(rnd()-.5)*.16;d.position.set(s.x,s.y,s.z);d.rotation.set(0,ry,0);d.scale.set(sc*sw,sc,sc*(1+(sw-1)*.6));d.updateMatrix();im.setMatrixAt(i,d.matrix);
+   L.forEach(function(s,i){var sc=(s.s||1)*(.88+rnd()*.14)*.93,ry=(s.ry||0)+(rnd()-.5)*.5,sw=rnd()<.28?1.1+rnd()*.14:1+(rnd()-.5)*.14;d.position.set(s.x,s.y,s.z);d.rotation.set(0,ry,0);d.scale.set(sc*sw,sc,sc*(1+(sw-1)*.6));d.updateMatrix();im.setMatrixAt(i,d.matrix);
     var sk=h.pick(SK),hr=rnd()<.12?sk:h.pick(HAIR),sh=s.col||h.pick(pal),k2=dim*(.85+rnd()*.2);
     setc(A.cSkin,i,sk,Math.min(1,dim*1.1));setc(A.cShirt,i,sh,k2);setc(A.cPants,i,h.pick(PANTS),dim);setc(A.cShoe,i,h.pick(SHOE),dim);setc(A.cHair,i,hr,dim)});
    ['cSkin','cShirt','cPants','cShoe','cHair'].forEach(function(n){A[n].needsUpdate=true});w.add(im);if(!first)first=im;

@@ -41,9 +41,9 @@ function kit(c){var K={c:c},W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rn
  /* building block: front face at zf, centred x, width w, height h */
  /* a Tel Aviv street is plaster, not paint: weathered limestone-cream, sand and grey, sun-bleached, with the old coat showing */
  var PLASTER=[['#cbc2b2',['#bdb3a1','#d6cfc2','#a89e8c']],['#bfb5a3',['#b0a692','#cdc5b6','#9c927f']],['#d2ccc2',['#c4bdb1','#dcd7cf','#ada69a']],['#b5ad9f',['#a69e90','#c4bcae','#948c7e']],['#c6c0b6',['#b8b1a6','#d2ccc3','#a39c90']]];
- K.bld=function(x,w,h,zf,o){o=o||{};var d=o.d||5,G=new T.Group();G.position.set(x,0,zf-d/2);W.add(G);var fz=d/2;
-  var pl=PLASTER[Math.floor(Math.abs(Math.sin(x*12.9898+h*7.233)*43758.5453))%PLASTER.length];
-  var map=o.map||c.wall(o.keep?(o.base||'#8a8a94'):pl[0],o.keep?(o.tones||['#7a7a86','#9a9aa6','#6a6a76']):pl[1],Math.max(1,w/3),Math.max(1,h/3));
+ K._pl=[];K.bld=function(x,w,h,zf,o){o=o||{};var d=o.d||5,G=new T.Group();G.position.set(x,0,zf-d/2);W.add(G);var fz=d/2;
+  var pi=Math.floor(Math.abs(Math.sin(x*12.9898+h*7.233)*43758.5453))%PLASTER.length,pl=PLASTER[pi];
+  var map=o.map;if(!map){if(o.keep)map=c.wall(o.base||'#8a8a94',o.tones||['#7a7a86','#9a9aa6','#6a6a76'],Math.max(1,w/3),Math.max(1,h/3));else{var bt=K._pl[pi]||(K._pl[pi]=c.wall(pl[0],pl[1],1,1));map=bt.clone();map.repeat.set(Math.max(1,w/3),Math.max(1,h/3));map.needsUpdate=true}}
   var b=mesh(rbox(w,h,d,.06,4),std('#fff',{map:map,roughness:o.rough||.88}),0,h/2,0,G);
   K.box(w+.3,.32,d+.3,o.cornice||'#5a5a66',0,h+.1,0,G);K.box(w+.2,.5,.2,o.cornice||'#5a5a66',0,h-.4,fz+.05,G);
   if(o.band){K.box(w+.06,.22,.12,o.band,0,o.bandY||3.2,fz+.03,G)}
@@ -84,7 +84,7 @@ function kit(c){var K={c:c},W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rn
  var PAL=[[__CK.a,'#14141c'],['#f4f1ff','#2a2e3a'],['#14141c','#2a2e3a'],['#2a2e3a','#14141c'],[__CK.a,'#2a2e3a'],['#3a4a6a','#14141c']];
  K.p=function(x,z,ry,mode,o){o=o||{};var pl=PAL[Math.floor(rnd()*PAL.length)];if(o.jacket&&!o.top2)o=Object.assign({},o,{top:o.jacket});var op={skin:o.skin||SKN[Math.floor(rnd()*5)],top:o.top||pl[0],bot:o.bot||pl[1],hair:o.hair||pick(['#1a1210','#2a1d16','#14100e','#4a3020','#8a8a90'],rnd()),style:o.style||pick(['short','buzz','spiky','slick','curly','bald'],rnd()),w:o.w||(1.04+rnd()*.14),mode:mode||'idle',s:o.s||1.08,x:x,z:z,ry:ry||0,eye:'#2a1a10'};for(var k in o)op[k]=o[k];if(op.stubble===undefined)op.stubble=rnd()<.45;return c.person(op)};
  /* fan scarf colours */
- K.car=function(x,z,ry,col,sc){var g=c.car(x,z,ry,col);g.scale.setScalar(sc||1);g.traverse(function(o){if(o.material&&o.material.metalness>.3&&o.material.roughness>.2){o.material.metalness=.18;o.material.roughness=.5}});return g};
+ K.car=function(x,z,ry,col,sc){var g=c.car(x,z,ry,col);g.scale.setScalar(sc||1);g.traverse(function(o){if(o.material&&o.material.metalness>.3&&o.material.metalness<.6&&o.material.roughness>.2){o.material.metalness=.22;o.material.roughness=.38}});return g};
  /* bus, side-on, facing +x (ry=Math.PI faces -x). door at local x=dx */
  K.bus=function(x,z,len,dest,col,o){o=o||{};var g=new T.Group();g.position.set(x,0,z);W.add(g);if(o.ry)g.rotation.y=o.ry;col=col||'#2a4a8a';var H=2.9,D=2.5;
   K.box(len,H-.5,D,col,0,.5+(H-.5)/2,0,g,{roughness:.4,metalness:.15});K.box(len+.04,.3,D+.04,'#d8d8e4',0,1.15,0,g);K.box(len-.1,.35,D+.02,'#14141c',0,.42,0,g);
@@ -128,7 +128,28 @@ function kit(c){var K={c:c},W=c.world,std=c.std,mesh=c.mesh,rbox=c.rbox,rnd=c.rn
  K.env=function(mode,o){o=o||{};
   if(mode==='night'){c.sky('night');c.fog(o.fog||'#1c2040',o.fn||16,o.ff||62);c.light('hemi',o.hemi||'#7a82aa',.5,0,0,0,'#2c2430');var s=c.light('dir',o.sun||'#ff9a78',.6,-9,10,6);c.shadows(s,o.ext||12);c.light('dir','#8aa8ff',.8,6,8,-12);c.light('dir','#9aaad0',.35,10,14,16)}
   else if(mode==='dusk'){c.sky('dusk');c.fog(o.fog||'#5a3a5e',o.fn||16,o.ff||70);c.light('hemi','#9a86b8',.8,0,0,0,'#3a2c3c');var s2=c.light('dir','#ff9a68',1.15,-12,5,8);c.shadows(s2,o.ext||12);c.light('dir','#8a9ae0',.6,8,9,-12);c.light('dir','#b0a0c0',.3,6,14,16)}
-  else{c.sky('day');c.fog(o.fog||'#d6e4f0',o.fn||26,o.ff||90);c.light('hemi','#cfe0f4',1.0,0,0,0,'#8a7e70');var s3=c.light('dir','#fff0e0',1.5,10,16,9);c.shadows(s3,o.ext||13);c.light('dir','#a0b8e0',.4,-8,8,10)}};
+  else{c.sky('day');c.fog(o.fog||'#d6e4f0',o.fn||26,o.ff||90);c.light('hemi','#cfe0f4',.78,0,0,0,'#7a6e60');var s3=c.light('dir','#ffe6c8',1.65,-13,12,6);c.shadows(s3,o.ext||13);c.light('dir','#a0b8e0',.3,10,7,10)}};
+ /* a city goes on: more of the street past both ends, and two rows of roofs behind the front row — each with what a Tel
+    Aviv roof carries, a white water tank, a solar heater tilted at the sun, an aerial — so the sky is a skyline, not a gap */
+ K._fl=[];K.facadeTex=function(pi){if(K._fl[pi])return K._fl[pi];var pl=PLASTER[pi],cv=c.cvs(512,512),g=cv.getContext('2d');g.fillStyle=pl[0];g.fillRect(0,0,512,512);c.paint(g,512,512,500,function(){return pl[1][Math.floor(rnd()*3)]},.12);
+  /* a painted storey bay: shuttered or dark windows, a slab edge, a stain from the AC drip */
+  for(var r=0;r<2;r++)for(var k=0;k<2;k++){var x0=k*256+70,y0=r*256+60;g.fillStyle='rgba(60,54,46,.35)';g.fillRect(x0-8,y0+150,132,10);var sh=rnd();if(sh<.45){g.fillStyle=['#8a8274','#6e7a78','#a49a88'][Math.floor(rnd()*3)];g.fillRect(x0,y0,116,140);g.fillStyle='rgba(0,0,0,.18)';for(var q=0;q<140;q+=7)g.fillRect(x0,y0+q,116,2)}else{g.fillStyle='#1c2028';g.fillRect(x0,y0,116,140);g.fillStyle='rgba(140,160,180,.18)';g.fillRect(x0+6,y0+6,48,128);g.fillStyle='#d8d2c6';g.fillRect(x0+56,y0,5,140);g.fillRect(x0,y0+66,116,5)}
+   g.strokeStyle='#cfc8bb';g.lineWidth=6;g.strokeRect(x0,y0,116,140);if(rnd()<.4){g.fillStyle='#d8d6d0';g.fillRect(x0+130,y0+20,40,26);var gr=g.createLinearGradient(0,y0+46,0,y0+200);gr.addColorStop(0,'rgba(50,40,30,.35)');gr.addColorStop(1,'rgba(50,40,30,0)');g.fillStyle=gr;g.fillRect(x0+140,y0+46,14,154)}}
+  c.weather(g,512,512,{mottle:.24,peel:.3,stain:.5,grime:.6,cracks:3,specks:600,scale:.8});var t=c.tex(cv,1,1);return K._fl[pi]=t};
+ K.flatBld=function(cx,w,h,zf,d){d=d||4;var pi=Math.floor(Math.abs(Math.sin(cx*7.13+h*3.7)*9e4))%PLASTER.length,t=K.facadeTex(pi).clone();t.repeat.set(Math.max(1,Math.round(w/3.4)),Math.max(1,Math.round((h-1)/3.2)));t.needsUpdate=true;
+  var m=mesh(new T.BoxGeometry(w,h,d),std('#fff',{map:t,roughness:.92}),cx,h/2,zf-d/2,W);K.box(w+.2,.3,d+.2,'#6e6a62',cx,h+.1,zf-d/2);return m};
+ K.cityDepth=function(x0,x1,zf,o){o=o||{};var x;
+  for(var side=0;side<2;side++){x=side?x1:x0;var dir=side?1:-1,n=0;while(n++<5){var w=rr(3,4.8),h=rr(8.5,13.5),cx=x+dir*w/2;K.flatBld(cx,w,h,zf-rr(0,.4),5);if(rnd()<.6)K.box(w*.6,.1,.8,'#7a766e',cx,rr(4,6.5),zf+.35);K.roof(cx,w,h,zf-2.5);x+=dir*w}}
+  for(var row=1;row<=2;row++){var z=zf-6.5*row-rr(0,1.5);x=x0-16;while(x<x1+16){var w2=rr(3.5,6.5),h2=rr(10,15)+row*2.2,cx2=x+w2/2;K.flatBld(cx2,w2,h2,z,4);K.roof(cx2,w2,h2,z-2);x+=w2+rr(-.2,.6)}}};
+ K.roof=function(cx,w,h,z){var G=new T.Group();G.position.set(cx,h+.26,z);W.add(G);
+  K.box(w+.1,.5,.12,'#8a8478',0,.25,1.9,G);
+  var nT=1+Math.floor(rnd()*2.4);for(var i=0;i<nT;i++){var tx=rr(-w/2+.6,w/2-.6),tz=rr(-.8,.8);mesh(new T.CylinderGeometry(.42,.42,.9,12),std(rnd()<.6?'#d8d4cc':'#9a958c',{roughness:.7}),tx,.6,tz,G);mesh(new T.CylinderGeometry(.44,.44,.06,12),std('#7a766e'),tx,1.07,tz,G)}
+  if(rnd()<.8){var sx=rr(-w/2+.8,w/2-.8);var pan=K.box(1.0,.05,1.5,'#1e2a3a',sx,.75,.2,G,{metalness:.5,roughness:.3});pan.rotation.x=-.55;var tk=mesh(new T.CylinderGeometry(.22,.22,1.1,10),std('#c8c4bc',{roughness:.5}),sx,1.15,-.45,G);tk.rotation.z=Math.PI/2;K.box(.04,.7,.04,'#5a5a5a',sx-.45,.35,-.4,G);K.box(.04,.7,.04,'#5a5a5a',sx+.45,.35,-.4,G)}
+  if(rnd()<.7){var ax=rr(-w/2+.4,w/2-.4);K.box(.03,1.8,.03,'#3a3a3e',ax,.9,rr(-.6,.6),G);K.box(.9,.025,.025,'#3a3a3e',ax,1.6,0,G);K.box(.6,.025,.025,'#3a3a3e',ax,1.3,0,G)}
+  return G};
+ /* overhead wires: wooden poles with a cross-arm and three sagging cables, the cheapest way to say "a real street" */
+ K.wires=function(xs,z){var tops=[];xs.forEach(function(x){var g=new T.Group();g.position.set(x,0,z);W.add(g);mesh(new T.CylinderGeometry(.09,.13,7.4,8),std('#4a3a2e',{roughness:.9}),0,3.7,0,g);K.box(.1,.1,1.6,'#3a2e24',0,7.0,0,g);[-0.7,0,0.7].forEach(function(o){K.box(.06,.12,.06,'#d8d4cc',0,7.1,o,g)});tops.push(x)});
+  for(var i=0;i<tops.length-1;i++)[-0.7,0,0.7].forEach(function(o){var a=new T.Vector3(tops[i],7.16,z+o),b=new T.Vector3(tops[i+1],7.16,z+o),m=a.clone().lerp(b,.5);m.y-=.55;var cv=new T.QuadraticBezierCurve3(a,m,b);var tb=new T.Mesh(new T.TubeGeometry(cv,16,.012,4,false),std('#141414',{roughness:.8}));tb.castShadow=false;W.add(tb)})};
  /* camera helper: room width W, focus z, height */
  K.cam=function(Wd,zf,o){o=o||{};var d=(o.d||Wd/2/.551*1.12);var cx=o.cx!=null?o.cx:Wd/2;c.setCam(cx,o.y||3.0,zf+d,cx,o.ly||2.9,zf,o.fov||38,o.fovP||62)};
  /* tiled paving texture */
@@ -168,6 +189,7 @@ RM.def('street',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.st
  var bW=K.bld(9.65,1.6,10.5,FZ,{base:'#6e6e7a',cols:1,rows:2,base0:4.2,litP:.3});
  var bS=K.bld(12.2,3.2,9,FZ,{base:'#6a6a7a',cols:2,rows:2,base0:3.4,litP:.4,acs:2});
  K.bld(15,3,10,FZ,{base:'#7a7a8a',cols:1,rows:2,balc:true});
+ K.cityDepth(-4.4,16.5,FZ);K.wires([-7,4.45,10.55,19],FZ+.4);
  /* the real graffiti wall: lower storey of bW is covered by painted wall */
  var gw=K.plane(1.62,3.6,new T.MeshStandardMaterial({map:K.graf(1.62,3.6,{words:[__CK.SHORT,'ULTRAS']}),roughness:.9}),9.65,1.8,FZ+.012);
  /* ===== home entrance x=1.92 ===== */
@@ -258,7 +280,7 @@ RM.def('pitch',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.std
  K.bld(-1.5,5,13,FZ-.4,{base:'#b0a4b0',cols:2,rows:3,base0:2.8,balc:true,litP:.4,shut:true,acs:3,sill:'#8a8490'});
  K.bld(3,4.2,12,FZ-.4,{base:'#9aa4b4',cols:2,rows:3,base0:2.8,balc:true,litP:.3,acs:2,shut:true});
  K.bld(7.5,5,13.5,FZ-.4,{base:'#a89aa4',cols:2,rows:3,base0:2.8,balc:true,litP:.3,shut:true,acs:3});
- K.bld(12.5,4.6,12,FZ-.4,{map:c.brick(8,2,4),cols:2,rows:3,base0:2.8,litP:.3,acs:2});
+ K.bld(12.5,4.6,12,FZ-.4,{map:c.brick(8,2,4),cols:2,rows:3,base0:2.8,litP:.3,acs:2});K.cityDepth(-4.0,14.8,FZ);
  K.laundry(2.2,6.2,6.0,6.4,FZ-.1,6);K.laundry(7.4,8.3,11.2,8.1,FZ-.1,5);
  /* wire fence on the left + at the back top of the wall, street gate at right */
  K.fence(-.4,-.4+.01,2.0,3,0);
@@ -301,7 +323,7 @@ RM.def('route',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.std
  K.bld(2.2,4.2,10.5,FZ,{map:c.brick(6,2,3.4),cols:2,rows:3,base0:2.8,litP:.5});
  K.bld(6.4,4.2,8,FZ,{base:cols[2],cols:2,rows:2,base0:3.2,litP:.5,shut:true});
  K.bld(10.6,4.2,6.2,FZ,{base:cols[3],cols:2,rows:2,base0:3.2,balc:true,litP:.4,acs:2});
- K.bld(14.6,4.2,5.4,FZ,{base:cols[1],cols:2,rows:2,base0:3.2,litP:.4});
+ K.bld(14.6,4.2,5.4,FZ,{base:cols[1],cols:2,rows:2,base0:3.2,litP:.4});K.cityDepth(-4.2,16.7,FZ);
  /* shopfronts */
  K.shop(2.4,2.8,FZ+.02,{h:2.4,sign:'Stand Café',signBg:'#14141c',signFg:'#ff8a9a',signEm:'#ff2a4a',shelves:true,awning:[__CK.a,'#f4f1ff'],door:true});
  K.shop(10.4,2.6,FZ+.02,{h:2.4,sign:'Sport',signBg:'#0c1224',signFg:'#8ab0ff',signEm:'#2a6aff',awning:['#2a4a8a','#f4f1ff'],glass:'#cfe0ff',glowCol:'#8ab0ff'});
@@ -344,7 +366,7 @@ RM.def('bus-stop',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.
  K.bld(-.8,5.2,9.5,FZ,{base:'#6a7686',cols:2,rows:2,base0:3.6,litP:.5,balc:true,acs:2});
  K.shop(1.2,3.2,FZ+.02,{h:2.5,sign:'Pharmacy',signBg:'#08241a',signFg:'#7affc0',signEm:'#2aff9a',glass:'#d8fff0',glowCol:'#7affc0',shelves:true,shelfCols:['#f4f1ff','#7affc0','#e0e0ee',__CK.a]});
  K.bld(3.3,3,8.6,FZ,{base:'#6a7a8c',cols:1,rows:2,base0:3.6,litP:.6});K.bld(7.4,5.4,8.2,FZ,{base:'#7a6a7c',cols:2,rows:2,base0:3.6,litP:.4,shut:true});
- K.bld(12.2,4,9,FZ,{map:c.brick(8,2,3),cols:2,rows:2,base0:3.6,litP:.4});
+ K.bld(12.2,4,9,FZ,{map:c.brick(8,2,3),cols:2,rows:2,base0:3.6,litP:.4});K.cityDepth(-3.4,14.2,FZ);
  K.plane(3.4,1.9,new T.MeshStandardMaterial({map:K.graf(3.4,1.9,{words:[__CK.City,'ULTRAS'],tag:__CK.SHORT}),roughness:.9}),8.2,2.0,FZ+.01);
  /* ===== shelter ===== */
  var sx=5.0;K.box(3.4,.12,1.6,'#2a2e3a',sx,3.0,2.4);K.box(.08,3.0,.08,'#2a2e3a',sx-1.6,1.5,1.7);K.box(.08,3.0,.08,'#2a2e3a',sx+1.6,1.5,1.7);K.box(.08,3.0,.08,'#2a2e3a',sx-1.6,1.5,3.1);K.box(.08,3.0,.08,'#2a2e3a',sx+1.6,1.5,3.1);
@@ -506,7 +528,7 @@ RM.def('hatikva',{kind:'street',build:function(c){var K=kit(c),W=c.world,std=c.s
  K.bld(-1.2,5,8,FZ,{base:'#8a6a70',cols:2,rows:2,base0:3.2,litP:.5,balc:true,acs:1,shut:true});
  K.bld(3.8,5,9.4,FZ,{map:c.brick(6,2,3),cols:2,rows:2,base0:3.2,litP:.5,shut:true});
  K.bld(8.8,5,8.4,FZ,{base:'#6a7a8c',cols:2,rows:2,base0:3.2,litP:.5,balc:true});
- K.bld(13.6,4.8,9.4,FZ,{base:'#8a7a90',cols:2,rows:2,base0:3.2,litP:.4,acs:2});
+ K.bld(13.6,4.8,9.4,FZ,{base:'#8a7a90',cols:2,rows:2,base0:3.2,litP:.4,acs:2});K.cityDepth(-3.7,16.0,FZ);
  /* big fan wall mural between shops */
  K.plane(2.2,2.8,new T.MeshStandardMaterial({map:K.graf(2.2,2.8,{words:[__CK.SHORT,'Hope'],tag:'From the Neighbourhood'}),roughness:.9}),6.35,1.5,FZ+.015);
  /* stalls: x centres, awning colour pairs, produce colours */
