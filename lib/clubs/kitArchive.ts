@@ -52,7 +52,8 @@ export function usableClubKits(club: string): ClubKitRecord[] {
 
 /** The cut-out photo for a pack kit (`fka-k-<id>`), when one exists and shows only the shirt. */
 export function clubKitPhoto(club: string, kitId: string): string | null {
-  const id = kitId.replace(/^fka-k-/, '')
+  // ids arrive club-prefixed and wave-prefixed (`club:uefa-fka-k-123`); the archive key is the trailing FKA number
+  const id = kitId.match(/fka-k-(\d+)$/)?.[1] ?? kitId.replace(/^fka-k-/, '')
   const r = (ARCHIVES[club]?.records ?? []).find((x) => x.usableInApp && x.sourcePage.replace(/\/$/, '').endsWith(`-${id}`))
   return r ? `/kits/${club}/${r.file.split('/').pop()}` : null
 }
