@@ -160,3 +160,14 @@
   .door { min-height: 94px; } .doorShirt { width: 42px; height: 42px; margin-block-start: 6px; } .doorGiven { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .magnet, .ghostShirt { animation: none; } .btn:active:not(:disabled), .door:active:not([data-taken='true']) { transform: none; } }
+
+/* ------------------------------------------------------------- explicit start + honest mode */
+.modeChip { align-self: flex-start; margin: 0; padding: 2px 8px; border: 2px solid var(--lu-ink); background: var(--mag-card); font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.intro { display: flex; flex-direction: column; gap: 12px; padding: 16px; margin-block: 8px; border: 3px solid var(--lu-ink); background: var(--mag-card); box-shadow: var(--mag-shadow); max-width: 560px; margin-inline: auto; width: 100%; }
+.introTitle { margin: 0; font-family: var(--mag-condensed, var(--mag-display)); font-weight: 700; font-size: 28px; line-height: 1.05; text-transform: uppercase; }
+[lang='he'] .introTitle { text-transform: none; font-family: var(--mag-body); font-weight: 800; font-size: 24px; }
+.introMatch { display: flex; flex-direction: column; margin: 0; padding: 8px 10px; border-inline-start: 6px solid var(--lu-lit); background: var(--mag-paper); }
+.introMatch span { font-family: var(--mag-mono); font-size: 11px; color: var(--mag-muted); }
+
+/* the lifted copy of a man must never be what the pointer lands on, or the band under it is never found */
+.man:global(.drag-ghost), .man:global(.drag-ghost) * { pointer-events: none; }

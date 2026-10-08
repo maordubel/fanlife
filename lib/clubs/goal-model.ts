@@ -119,18 +119,68 @@ export function stateAt(tl:Timeline,ms:number):Frame{
 /** the final state: every touch drawn, the ball where the sequence leaves it */
 export const finalFrame=(tl:Timeline):Frame=>stateAt(tl,tl.total)
 
+// ---------------------------------------------------------------- the verdict (GO-R05..R15, zone practice)
+/** a full reconstruction needs at least two touches; a one-touch fact is not a sequence */
+export const MIN_TOUCHES=2
+/** what a hint costs, once per goal, in points */
+export const HINT_COST=1
+/** native thresholds: a good rebuild from 78 %, a near one from 50 % */
+export const GOOD_AT=0.78
+export const NEAR_AT=0.5
+export type TruthStep={actor:string|null;action:string;zone:string}
+export type StepVerdict={actor:boolean|null;action:boolean;zone:'exact'|'near'|'miss'}
+export type Verdict={
+ /** points earned, after the hint cost, never below zero */
+ points:number
+ /** the most the archive's own touches could have earned; an unnamed actor's term is not in it */
+ max:number
+ /** quality 0..1 against `max` plus the cost of every extra touch — extra touches can only lower it */
+ quality:number
+ perfect:boolean
+ countRight:boolean
+ extra:number
+ missing:number
+ hinted:boolean
+ steps:StepVerdict[]
+}
+const adjacent=(a:string,b:string)=>{const p=zoneParts(a),q=zoneParts(b);return !!p&&!!q&&Math.abs(p.col-q.col)<=1&&Math.abs(p.row-q.row)<=1}
+/** the most a touch can earn: 1 for the man (only if the archive names him), 1 for the verb, 2 for the exact zone */
+export const touchMax=(t:Pick<TruthStep,'actor'>)=>(t.actor===null?0:1)+1+2
+/**
+ * Grades a rebuilt goal against the archive's touches. An UNNAMED actor is not applicable: its term leaves the
+ * denominator rather than being handed to the player. A missing touch scores nothing against a full denominator; an extra
+ * touch scores nothing and ADDS to the denominator, so neither can ever produce a perfect verdict, and an arbitrary
+ * unknown actor can never improve the points (it matches a named man never, an unnamed one only by the archive's say).
+ * Zones are the report's words on a grid: this is zone practice, never an exact-coordinate reconstruction.
+ */
+export function judgeSteps(truth:readonly TruthStep[],touches:readonly {actor:string;action:string;zone:string}[],hinted=false):Verdict{
+ const steps:StepVerdict[]=truth.map((t,i)=>{
+  const u=touches[i];if(!u)return {actor:t.actor===null?null:false,action:false,zone:'miss'}
+  return {actor:t.actor===null?null:u.actor===t.actor,action:u.action===t.action,zone:u.zone===t.zone?'exact':adjacent(u.zone,t.zone)?'near':'miss'}
+ })
+ const earned=steps.reduce((n,s)=>n+(s.actor===true?1:0)+(s.action?1:0)+(s.zone==='exact'?2:s.zone==='near'?1:0),0)
+ const max=truth.reduce((n,t)=>n+touchMax(t),0)
+ const extra=Math.max(0,touches.length-truth.length),missing=Math.max(0,truth.length-touches.length)
+ const denominator=max+extra*4
+ const countRight=extra===0&&missing===0
+ const raw=Math.max(0,earned-(hinted?HINT_COST:0))
+ return {points:raw,max,quality:denominator>0?Math.min(1,raw/denominator):0,perfect:countRight&&earned===max&&!hinted,countRight,extra,missing,hinted,steps}
+}
+
 // ---------------------------------------------------------------- the run
-export type Tier='perfect'|'strong'|'keep'
-export const tierOf=(points:number,max:number):Tier=>max>0&&points>=max?'perfect':max>0&&points/max>=0.6?'strong':'keep'
+export type Tier='perfect'|'good'|'near'|'keep'
+/** perfect is an exact rebuild with the right number of touches; good from 78 %, near from 50 % */
+export const tierOf=(quality:number,perfect=false):Tier=>perfect?'perfect':quality>=GOOD_AT?'good':quality>=NEAR_AT?'near':'keep'
 /** the goals dealt to run number `run`: up to {@link RUN_MAX}, wrapping round the club's goals, never the same goal twice in a run */
 export function runIndices(len:number,run:number):number[]{
  if(!Number.isInteger(len)||len<=0)return []
  const size=Math.min(RUN_MAX,len),at=(((run*size)%len)+len)%len
  return Array.from({length:size},(_,k)=>(at+k)%len)
 }
-export type GoalResult={id:string;title:string;points:number;max:number}
-export const totals=(r:readonly GoalResult[])=>({points:r.reduce((n,x)=>n+x.points,0),max:r.reduce((n,x)=>n+x.max,0)})
+export type GoalResult={id:string;title:string;points:number;max:number;quality:number;perfect:boolean}
+/** a run adds the points; its quality is the mean of the goals' own quality, never the points over a different denominator */
+export const totals=(r:readonly GoalResult[])=>({points:r.reduce((n,x)=>n+x.points,0),max:r.reduce((n,x)=>n+x.max,0),quality:r.length?r.reduce((n,x)=>n+x.quality,0)/r.length:0,perfect:r.length>0&&r.every(x=>x.perfect)})
 
-export function shareText(o:{club:string;title:string;points:number;max:number;touches:readonly {actor:string;actionWord:string}[];unnamed:string;url:string}):string{
- return [`${o.club} · ${o.title}`,`${o.points}/${o.max}`,...o.touches.map((t,i)=>`${i+1}. ${t.actor||o.unnamed} — ${t.actionWord}`),o.url].join('\n')
+export function shareText(o:{club:string;title:string;percent:number;touches:readonly {actor:string;actionWord:string}[];unnamed:string;url:string}):string{
+ return [`${o.club} · ${o.title}`,`${o.percent}%`,...o.touches.map((t,i)=>`${i+1}. ${t.actor||o.unnamed} — ${t.actionWord}`),o.url].join('\n')
 }

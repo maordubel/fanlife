@@ -5,12 +5,14 @@ import {firePickFxAt} from '@/components/stage/PickFx'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {tr,shortName} from '@/components/clubs/rumble/shared'
 import {clubGoalCount} from '@/app/clubs/[slug]/[gate]/gate-actions'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {goalShare} from '@/lib/clubs/goal-share'
 import {completeRun} from '@/lib/clubs/completion'
 import {markStep} from '@/lib/analytics/meter'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
-import {MAX_TOUCHES,VIEW,addTouch,buildTimeline,isFull,moveTouch,pointsFor,removeAt,removeLast,runIndices,setVerb,shareText,suggestVerb,tierOf,totals,wire,type Draft,type GoalResult} from '@/lib/clubs/goal-model'
+import {MAX_TOUCHES,MIN_TOUCHES,HINT_COST,VIEW,addTouch,buildTimeline,isFull,moveTouch,pointsFor,removeAt,removeLast,runIndices,setVerb,suggestVerb,tierOf,totals,wire,type Draft,type GoalResult} from '@/lib/clubs/goal-model'
 import {cameraFor,pushFor} from '@/lib/game/replay/motion'
 import {REPLAY_ACTIONS,type ReplayAction} from '@/lib/game/replay/vocab'
 import {gradeGoalReplay,type GoalVerdict} from './goal-actions'
@@ -29,39 +31,46 @@ const reducedNow=()=>{try{return window.matchMedia('(prefers-reduced-motion: red
 /** Gate 8 · Rebuild the Goal: a run of up to three goals, each rebuilt touch by touch on a drawn pitch and replayed against the archive. */
 export function ClubGoal(props:ClubGoalProps){
  const {items}=props
- const [run,setRun]=useState(0),[pos,setPos]=useState(0),[results,setResults]=useState<GoalResult[]>([]),[summary,setSummary]=useState(false)
- const idx=useMemo(()=>runIndices(items.length,run),[items.length,run]),g=items[idx[pos]!]!
+ const [run,setRun]=useState(0),[pos,setPos]=useState(0),[results,setResults]=useState<GoalResult[]>([]),[summary,setSummary]=useState(false),[started,setStarted]=useState(false)
+ const idx=useMemo(()=>runIndices(items.length,run),[items.length,run]),g=items[idx[pos]!]
+ if(!g)return <section className={css.stage} data-testid="goal-board" lang={props.locale}><p role="alert" className={css.status} data-testid="goal-empty">{props.copy.unavailable}</p></section>
  const record=(r:GoalResult)=>setResults(x=>x.some(y=>y.id===r.id)?x:[...x,r])
  const next=()=>{if(pos>=idx.length-1)setSummary(true);else setPos(pos+1)}
  const again=()=>{setRun(r=>r+1);setPos(0);setResults([]);setSummary(false)}
  return <section className={css.stage} data-testid="goal-board" lang={props.locale}>
-  {summary
+  {!started
+   ?<Intro g={g} of={idx.length} onStart={()=>setStarted(true)} {...props}/>
+   :summary
    ?<RunSummary results={results} {...props} onAgain={again}/>
    :<Round key={`${run}:${pos}:${g.id}`} g={g} run={run} pos={pos} of={idx.length} onResult={record} onNext={next} {...props}/>}
  </section>
 }
 
-function RunSummary({results,onAgain,clubName,club,copy,contentLocale}:ClubGoalProps&{results:GoalResult[];onAgain:()=>void}){
- const tx:Say=(k,v)=>tr(copy,k,v),tot=totals(results),[note,setNote]=useState('')
- async function share(){
-  const text=[`${clubName} · ${tx('gl.run.title')}`,`${tot.points}/${tot.max}`,...results.map(r=>`${r.title} — ${r.points}/${r.max}`),`${location.origin}/clubs/${club}/goal`].join('\n')
-  try{
-   if(typeof navigator.share==='function'){await navigator.share({title:tx('gl.run.title'),text});setNote(tx('gl.shared'))}
-   else{await navigator.clipboard.writeText(text);setNote(tx('gl.copied'))}
-  }catch(e){if((e as Error)?.name!=='AbortError')setNote(tx('gl.shareFail'))}
- }
+function Intro({g,of,onStart,copy,contentLocale}:ClubGoalProps&{g:GoalItem;of:number;onStart:()=>void}){
+ const tx:Say=(k,v)=>tr(copy,k,v)
+ return <div className={css.intro} data-testid="goal-intro">
+  <p className={css.modeChip}>{tx('gl.mode.zone')}</p>
+  <h2 className={css.introTitle}>{tx('gl.intro.title')}</h2>
+  <p className={css.introMatch} lang={contentLocale} dir="auto"><b>{g.title}</b><span>{[g.competition,g.on].filter(Boolean).join(' · ')}</span></p>
+  <p>{tx('gl.intro.body',{m:of})}</p>
+  <ul className={css.rules}><li>{tx('gl.intro.rule1',{min:MIN_TOUCHES,max:MAX_TOUCHES})}</li><li>{tx('gl.intro.rule2',{cost:HINT_COST})}</li><li>{tx('gl.intro.rule3')}</li></ul>
+  <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={onStart} data-testid="goal-start">{tx('gl.intro.start')} →</button>
+ </div>
+}
+
+function RunSummary({results,onAgain,club,copy,contentLocale}:ClubGoalProps&{results:GoalResult[];onAgain:()=>void}){
+ const tx:Say=(k,v)=>tr(copy,k,v),tot=totals(results),pct=Math.round(tot.quality*100)
  return <div className={css.summary} data-testid="goal-run">
   <div className={css.score}>
-   <p className={css.scoreKicker}>{tx('gl.run.title')}</p>
-   <p className={css.scoreNum}>{tot.points}/{tot.max}</p>
-   <p className={css.scoreLine}>{tx(`gl.tier.${tierOf(tot.points,tot.max)}`)}</p>
+   <p className={css.scoreKicker}>{tx('gl.run.title')} · {tx('gl.mode.zone')}</p>
+   <p className={css.scoreNum}>{pct}%</p>
+   <p className={css.scoreLine}>{tx(`gl.tier.${tierOf(tot.quality,tot.perfect)}`)} · {tot.points}/{tot.max}</p>
   </div>
-  <ol className={css.runRows} lang={contentLocale}>{results.map(r=><li key={r.id}><span dir="auto">{r.title}</span><b>{r.points}/{r.max}</b></li>)}</ol>
+  <ol className={css.runRows} lang={contentLocale}>{results.map(r=><li key={r.id}><span dir="auto">{r.title}</span><b>{Math.round(r.quality*100)}%</b></li>)}</ol>
   <div className={css.actionsGrid}>
    <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={onAgain} data-testid="goal-run-again">{tx('gl.run.again')} →</button>
-   <button type="button" className={`min-h-tap ${css.btn}`} onClick={share}>{tx('gl.share')}</button>
+   <ShareComposer label={tx('gl.share')} draft={goalShare(club,{percent:pct,goalId:null,zonePractice:true,forbidden:[]})}/>
   </div>
-  <p className={css.status} role="status">{note}</p>
  </div>
 }
 
@@ -69,7 +78,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  const tx:Say=(k,v)=>tr(copy,k,v)
  const [draft,setDraft]=useState<Draft>([]),[actor,setActor]=useState<string|null>(null),[verb,setVerbPick]=useState<ReplayAction|null>(null),[active,setActive]=useState<number|null>(null)
  const [phase,setPhase]=useState<Phase>('build'),[verdict,setVerdict]=useState<GoalVerdict|null>(null),[sheet,setSheet]=useState<Sheet>(null)
- const [hintN,setHintN]=useState<number|null>(null),[err,setErr]=useState(false),[notice,setNotice]=useState(''),[warn,setWarn]=useState(false),[pending,start]=useTransition()
+ const [hintN,setHintN]=useState<number|null>(null),[hinted,setHinted]=useState(false),[err,setErr]=useState(false),[notice,setNotice]=useState(''),[warn,setWarn]=useState(false),[pending,start]=useTransition()
  const ball=useBallRun(),opener=useRef<HTMLElement|null>(null)
  const unnamed=tx('gl.unnamed'),verbWord=(a:string)=>tx(`gl.verb.${a}`)
  const say=(text:string,bad=false)=>{setNotice(text);setWarn(bad)}
@@ -96,7 +105,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
   if(!building)return
   if(active!==null){setDraft(d=>moveTouch(d,active,zone));setActive(null);say(tx('gl.moved'));return}
   if(full){say(tx('gl.full'),true);return}
-  if(actor===null){say(tx(verb?'gl.needWho':'gl.start0',{n:draft.length+1,max:MAX_TOUCHES}),true);return}
+  if(actor===null){say(tx(verb?'gl.needWho':'gl.start0',{n:draft.length+1,min:MIN_TOUCHES,max:MAX_TOUCHES}),true);return}
   if(verb===null){say(tx('gl.needVerb'),true);return}
   add(zone,actor,verb)
  }
@@ -113,18 +122,18 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  const undo=()=>{setDraft(removeLast);setActive(null);say('')}
 
  // ---- hint: how many touches the report describes — never who, what or where
- function hint(){start(async()=>{try{const n=await clubGoalCount(club,version,g.id);setHintN(n);if(n===null)setErr(true)}catch{setErr(true)}})}
+ function hint(){if(hinted)return;setHinted(true);start(async()=>{try{const n=await clubGoalCount(club,version,g.id);setHintN(n);if(n===null)setErr(true)}catch{setErr(true)}})}
 
  // ---- whistle, replay, result
  function whistle(){
-  const w=wire(draft);if(!w)return
+  const w=wire(draft);if(!w||w.length<MIN_TOUCHES)return
   setActive(null)
   start(async()=>{
    try{
-    const r=await gradeGoalReplay(club,version,g.id,seed,w)
+    const r=await gradeGoalReplay(club,version,g.id,seed,w,hinted)
     if(!r){setErr(true);return}
     setErr(false);setVerdict(r);say('')
-    onResult({id:g.id,title:g.title,points:r.points,max:r.max})
+    onResult({id:g.id,title:g.title,points:r.points,max:r.max,quality:r.quality,perfect:r.perfect})
     completeRun(club,'goal',`goal:${version}:${seed}:${run}:${pos}:${g.id}`,r.points)
     replay(r,w)
    }catch{setErr(true)}
@@ -139,15 +148,6 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  }
  const openSheet=(s:Sheet)=>(e?:React.SyntheticEvent)=>{opener.current=(e?.currentTarget as HTMLElement)??null;setSheet(s)}
  const closeSheet=()=>{setSheet(null);opener.current?.focus?.()}
- async function share(){
-  if(!verdict)return
-  const text=shareText({club:clubName,title:g.title,points:verdict.points,max:verdict.max,touches:draft.map(t=>({actor:t.actor,actionWord:verbWord(t.action)})),unnamed,url:`${location.origin}/clubs/${club}/goal`})
-  try{
-   if(typeof navigator.share==='function'){await navigator.share({title:tx('gl.share.title'),text});say(tx('gl.shared'))}
-   else{await navigator.clipboard.writeText(text);say(tx('gl.copied'))}
-  }catch(e){if((e as Error)?.name!=='AbortError')say(tx('gl.shareFail'),true)}
- }
-
  // ---- what the board shows
  const fr=ball.frame,n=draft.length
  const mineToks:Tok[]=draft.map(t=>({actor:t.actor,label:labelOf(t.actor),side:t.actor?'us':'unnamed',action:t.action,zone:t.zone}))
@@ -173,7 +173,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  const prompt=phase==='yours'?tx('gl.replay.yours'):phase==='archive'?tx('gl.replay.archive'):phase==='done'?tx('gl.replay.done')
   :active!==null?tx('gl.prompt.touch',{n:active+1,name:`⁨${labelOf(draft[active]?.actor??'')}⁩`})
   :full?tx('gl.full')
-  :actor===null&&verb===null?tx('gl.start0',{n:n+1,max:MAX_TOUCHES})
+  :actor===null&&verb===null?tx('gl.start0',{n:n+1,min:MIN_TOUCHES,max:MAX_TOUCHES})
   :actor!==null&&verb===null?tx('gl.needVerb')
   :actor===null?tx('gl.needWho'):tx('gl.tapZone')
  const dateLine=[g.competition,g.on,g.score].filter(Boolean).join(' · ')
@@ -186,8 +186,9 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
      <span className={css.plateText}><h2 className={css.plateTitle} lang={contentLocale} dir="auto">{g.title}</h2><p className={css.plateMeta} lang={contentLocale} dir="auto">{dateLine}</p></span>
      <button type="button" className={`min-h-tap ${css.plateBtn}`} onClick={openSheet('info')} aria-label={tx('gl.info')} title={tx('gl.info')}>i</button>
     </header>
+    <p className={css.modeChip} data-testid="goal-mode" title={tx('gl.approx')}>{tx('gl.mode.zone')}</p>
     <div className={css.counters} aria-hidden="true">
-     <span className={css.total} data-done={full}>{tx('gl.touches',{n,max:MAX_TOUCHES})}</span>
+     <span className={css.total} data-done={full}>{tx('gl.touches',{n,min:MIN_TOUCHES,max:MAX_TOUCHES})}</span>
      {hintN!==null&&<span className={css.count}>{tx('gl.hint.is',{n:hintN})}</span>}
     </div>
     <div className={css.pitchBox}><div className={css.pitchIn}>
@@ -211,8 +212,8 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
         ?<><button type="button" className={`min-h-tap ${css.btn} ${css.btnWide}`} onClick={removeActive} data-testid="goal-remove">{tx('gl.remove')}</button>
           <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={()=>setActive(null)}>{tx('gl.done')}</button></>
         :<><button type="button" className={`min-h-tap ${css.btn}`} onClick={undo} disabled={!n} data-testid="goal-undo">{tx('gl.undo')}</button>
-          <button type="button" className={`min-h-tap ${css.btn}`} onClick={hint} disabled={hintN!==null||pending} data-testid="goal-hint">{tx('gl.hint')}</button>
-          <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={whistle} disabled={!n||pending} data-testid="goal-whistle">{pending?tx('gl.checking'):tx('gl.whistle')}<span aria-hidden="true">→</span></button></>)
+          <button type="button" className={`min-h-tap ${css.btn}`} onClick={hint} disabled={hinted||pending} data-testid="goal-hint">{hinted?tx('gl.hint.used'):tx('gl.hint',{cost:HINT_COST})}</button>
+          <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={whistle} disabled={n<MIN_TOUCHES||pending} data-testid="goal-whistle">{pending?tx('gl.checking'):tx('gl.whistle')}<span aria-hidden="true">→</span></button></>)
       :replaying
        ?<><button type="button" className={`min-h-tap ${css.btn} ${css.btnWide}`} onClick={ball.paused?ball.resume:ball.pause} aria-pressed={ball.paused} data-testid="goal-pause">{ball.paused?tx('gl.play'):tx('gl.pause')}</button>
          <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={ball.skip} data-testid="goal-skip">{tx('gl.skip')} →</button></>
@@ -239,20 +240,21 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
   <SlideSheet open={sheet==='result'&&verdict!==null} onClose={closeSheet} title={tx('gl.result.title')} size="full" closeLabel={copy['play.close']}
    footer={<div className={css.actionsGrid}>
     <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={()=>{setSheet(null);onNext()}} data-testid="goal-sheet-next">{pos<of-1?tx('gl.next'):tx('gl.finish')} →</button>
-    <button type="button" className={`min-h-tap ${css.btn}`} onClick={share}>{tx('gl.share')}</button>
-    <button type="button" className={`min-h-tap ${css.btn}`} onClick={closeSheet}>{tx('gl.result.review')}</button></div>}>
+    <button type="button" className={`min-h-tap ${css.btn}`} onClick={closeSheet}>{tx('gl.result.review')}</button>
+    {verdict&&<ShareComposer label={tx('gl.share')} draft={goalShare(club,{percent:Math.round(verdict.quality*100),goalId:g.id,zonePractice:true,forbidden:verdict.truth.flatMap(t=>t.actor?[t.actor]:[])})}/>}</div>}>
    {verdict&&<div className={css.sheetBody} data-testid="goal-result">
     <div className={css.score}>
      <p className={css.scoreKicker}>{tx('gl.result.kicker')} · <bdi lang={contentLocale}>{g.title}</bdi></p>
-     <p className={css.scoreNum}>{verdict.points}/{verdict.max}</p>
-     <p className={css.scoreLine}>{tx(`gl.tier.${tierOf(verdict.points,verdict.max)}`)} · {tx(verdict.countRight?'gl.result.countRight':'gl.result.countWrong',{n:verdict.truth.length})}</p>
+     <p className={css.scoreNum}>{Math.round(verdict.quality*100)}%</p>
+     <p className={css.scoreLine}>{tx(`gl.tier.${tierOf(verdict.quality,verdict.perfect)}`)} · {tx(verdict.countRight?'gl.result.countRight':'gl.result.countWrong',{n:verdict.truth.length})}</p>
+     <p className={css.scoreKicker}>{verdict.points}/{verdict.max} {tx('gl.result.points')}{verdict.hinted?` · ${tx('gl.result.hintCost',{cost:HINT_COST})}`:''}{verdict.extra>0?` · ${tx('gl.result.extraCost',{n:verdict.extra})}`:''}</p>
     </div>
     <ol className={css.rows} lang={contentLocale}>
      {verdict.truth.map((t,i)=>{
       const v=verdict.steps[i]!,mine=draft[i],mark=(ok:boolean)=><span className={css.markOk} data-ok={ok} aria-label={tx(ok?'gl.result.yes':'gl.result.no')}>{ok?'✓':'✗'}</span>
       return <li key={i}><b className={css.rowNo}>{i+1}</b><div>
        <span className={css.rowName} dir="auto">{t.actor||unnamed} · {verbWord(t.action)} · <span className={css.zoneCode}>{t.zone}</span></span>
-       <span className={css.rowMeta}>{tx('gl.who')} {mark(v.actor)} · {tx('gl.what')} {mark(v.action)} · {tx('gl.where')} <span data-zone={v.zone}>{tx(`gl.zone.${v.zone}`)}</span></span>
+       <span className={css.rowMeta}>{tx('gl.who')} {v.actor===null?<span className={css.markOk} data-ok="na" aria-label={tx('gl.result.na')}>–</span>:mark(v.actor)} · {tx('gl.what')} {mark(v.action)} · {tx('gl.where')} <span data-zone={v.zone}>{tx(`gl.zone.${v.zone}`)}</span></span>
        <span className={css.rowMine}>{mine?tx('gl.result.yours',{name:mine.actor||unnamed,verb:verbWord(mine.action),zone:mine.zone}):tx('gl.result.missing')}</span>
        {t.note&&<small className={css.rowNote} dir="auto">{t.note}</small>}
       </div></li>})}

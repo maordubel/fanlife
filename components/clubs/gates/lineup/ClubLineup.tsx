@@ -5,14 +5,15 @@ import {SlideSheet} from '@/components/stage/SlideSheet'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {tr,shortName} from '@/components/clubs/rumble/shared'
-import {gradeLineup} from '@/app/clubs/[slug]/[gate]/gate-actions'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {lineupShare} from '@/lib/share/v3/adapters'
 import {completeRun} from '@/lib/clubs/completion'
 import {markStep} from '@/lib/analytics/meter'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
 import {kitFor,type RumbleWardrobe} from '@/lib/clubs/rumble-kit'
-import {BANDS,aimAfter,bandOf,counts,emptyBoard,filled,isBand,isComplete,onBoard,picksOf,place,remove,sheetOf,shareText,toggleLock,wire,type Band,type Board,type CoachNote,type GradeResult,type Mark} from '@/lib/clubs/lineup-model'
-import {askLineupCoach} from './coach-action'
+import {BANDS,aimAfter,bandOf,counts,emptyBoard,filled,isBand,isComplete,onBoard,picksOf,place,remove,sheetOf,toggleLock,wire,type Band,type Board,type CoachNote,type GradeResult,type Mark} from '@/lib/clubs/lineup-model'
+import {askLineupCoach,gradeLineupSheet} from './coach-action'
 import {BandPitch,type PitchLabels} from './BandPitch'
 import {LockerRack,type RackLabels} from './LockerRack'
 import css from './lineup.module.css'
@@ -26,14 +27,14 @@ export type ClubLineupProps={items:LineupItem[];club:string;clubName:string;vers
 
 /** Gate 3 · The Dressing Room: a locker wall under a four-band board, a coach who only counts, and a team sheet that is graded on the server. */
 export function ClubLineup(props:ClubLineupProps){
- const [n,setN]=useState(0),{items}=props
+ const [n,setN]=useState(0),[started,setStarted]=useState(false),{items}=props
  const m=items[n%items.length]!
  return <section className={css.stage} data-testid="lineup-board" lang={props.locale}>
-  <Match key={`${n}:${m.id}`} m={m} n={n} total={items.length} onNext={()=>setN(v=>v+1)} {...props}/>
+  <Match key={`${n}:${m.id}`} m={m} n={n} total={items.length} started={started} onStart={()=>setStarted(true)} onNext={()=>setN(v=>v+1)} {...props}/>
  </section>
 }
 
-function Match({m,n,total,onNext,club,clubName,version,locale,contentLocale,wardrobe,copy}:ClubLineupProps&{m:LineupItem;n:number;total:number;onNext:()=>void}){
+function Match({m,n,total,started,onStart,onNext,club,clubName,version,locale,contentLocale,wardrobe,copy}:ClubLineupProps&{m:LineupItem;n:number;total:number;started:boolean;onStart:()=>void;onNext:()=>void}){
  const tx:Say=(k,v)=>tr(copy,k,v)
  const [board,setBoard]=useState<Board>(emptyBoard),[aimed,setAimed]=useState<Band>('GK'),[active,setActive]=useState<string|null>(null)
  const [sheet,setSheet]=useState<Sheet>(null),[notes,setNotes]=useState<CoachNote[]>([]),[grade,setGrade]=useState<Graded|null>(null)
@@ -91,24 +92,15 @@ function Match({m,n,total,onNext,club,clubName,version,locale,contentLocale,ward
   finally{setAsking(false)}
  }
  function handIn(){
-  const names=wire(board,m.pool);if(!names)return
+  if(!wire(board,m.pool))return
   start(async()=>{
    try{
-    const r=await gradeLineup(club,version,m.id,names)
+    const r=await gradeLineupSheet(club,version,m.id,board.men.map(x=>({name:x.name,band:x.band})))
     if(!r){setErr(true);return}
     setErr(false);setGrade(r);setActive(null);setSheet('result');say('')
     completeRun(club,'lineup',`lineup:${version}:${n}:${m.id}`,r.correct)
    }catch{setErr(true)}
   })
- }
- async function share(){
-  if(!grade)return
-  const bandNames=Object.fromEntries(BANDS.map(b=>[b,bandName(b)])) as Record<Band,string>
-  const text=shareText({club:clubName,title:m.title,on:m.on,board,g:grade,bandNames,url:`${location.origin}/clubs/${club}/lineup`})
-  try{
-   if(typeof navigator.share==='function'){await navigator.share({title:tx('lu.share.title'),text});say(tx('lu.result.shared'))}
-   else{await navigator.clipboard.writeText(text);say(tx('lu.result.copied'))}
-  }catch(e){if((e as Error)?.name!=='AbortError')say(tx('lu.result.shareFail'),true)}
  }
  const open=(s:Sheet)=>(e?:React.SyntheticEvent)=>{opener.current=(e?.currentTarget as HTMLElement)??null;setSheet(s)}
  const close=()=>{setSheet(null);opener.current?.focus?.()}
@@ -129,6 +121,15 @@ function Match({m,n,total,onNext,club,clubName,version,locale,contentLocale,ward
  const rules=<ol className={css.rules}>{[1,2,3,4].map(i=><li key={i}>{tx(`lu.rules.${i}`)}</li>)}</ol>
  const activeLocked=active?locked.has(active):false
 
+ if(!started)return <div className={css.intro} data-testid="lineup-intro">
+  <p className={css.modeChip}>{tx('lu.mode.name')}</p>
+  <h2 className={css.introTitle}>{tx('lu.intro.title')}</h2>
+  <p className={css.introMatch} lang={contentLocale} dir="auto"><b>{m.title}</b><span>{[m.competition,m.on].filter(Boolean).join(' · ')}</span></p>
+  <p>{tx('lu.intro.body')}</p>
+  <ul className={css.rules}><li>{tx('lu.intro.rule1')}</li><li>{tx('lu.intro.rule2')}</li><li>{tx('lu.intro.rule3')}</li></ul>
+  <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={onStart} data-testid="lineup-start">{tx('lu.intro.start')} →</button>
+ </div>
+
  return <>
   <div className={css.layout}>
    <div className={css.pitchCol}>
@@ -137,6 +138,7 @@ function Match({m,n,total,onNext,club,clubName,version,locale,contentLocale,ward
      <span className={css.plateText}><h2 className={css.plateTitle} lang={contentLocale} dir="auto">{m.title}</h2><p className={css.plateMeta} lang={contentLocale} dir="auto">{m.competition}{m.on?` · ${m.on}`:''}</p></span>
      <button type="button" className={`min-h-tap ${css.plateBtn}`} onClick={open('info')} aria-label={tx('lu.info')} title={tx('lu.info')}>i</button>
     </header>
+    <p className={css.modeChip} data-testid="lineup-mode" title={tx('lu.mode.note')}>{tx('lu.mode.name')}</p>
     <div className={css.counters} aria-hidden="true">
      <span className={css.total} data-done={done}>{tx('lu.total',{n:filled(board)})}</span>
      {BANDS.map(b=><span key={b} className={css.count}>{tx(`lu.short.${b}`)}<b>{c[b]}</b></span>)}
@@ -177,7 +179,7 @@ function Match({m,n,total,onNext,club,clubName,version,locale,contentLocale,ward
   </div>
 
   <SlideSheet open={sheet==='info'} onClose={close} title={tx('lu.info')} closeLabel={copy['play.close']}>
-   <div className={css.sheetBody}>{facts}<p className={css.fine}>{shirtLine}</p><p className={css.fine}>{tx('lu.info.bands')}</p><h3 className={css.fine}>{tx('lu.rules.title')}</h3>{rules}</div>
+   <div className={css.sheetBody}>{facts}<p className={css.fine}>{shirtLine}</p><p className={css.fine}>{tx('lu.mode.note')}</p><p className={css.fine}>{tx('lu.info.bands')}</p><h3 className={css.fine}>{tx('lu.rules.title')}</h3>{rules}</div>
   </SlideSheet>
 
   <SlideSheet open={sheet==='coach'} onClose={close} title={tx('lu.coach.title')} closeLabel={copy['play.close']}
@@ -204,12 +206,13 @@ function Match({m,n,total,onNext,club,clubName,version,locale,contentLocale,ward
   <SlideSheet open={sheet==='result'&&graded} onClose={close} title={tx('lu.result.title')} size="full" closeLabel={copy['play.close']}
    footer={<div className={css.actionsGrid}>
     <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={()=>{setSheet(null);onNext()}} data-testid="lineup-sheet-next">{total>1?tx('lu.next'):tx('lu.again')} →</button>
-    <button type="button" className={`min-h-tap ${css.btn}`} onClick={share}>{tx('lu.result.share')}</button>
-    <button type="button" className={`min-h-tap ${css.btn}`} onClick={close}>{tx('lu.result.review')}</button></div>}>
+        <button type="button" className={`min-h-tap ${css.btn}`} onClick={close}>{tx('lu.result.review')}</button>
+    {grade&&<ShareComposer label={tx('lu.result.share')} draft={lineupShare(club,{title:m.title,on:m.on,competition:m.competition,correct:grade.correct,forbidden:[...m.pool.filter(x=>!grade.wrong.includes(x)&&picksOf(board).includes(x)),...grade.missed]})}/>}</div>}>
    {sheetData&&grade&&<div className={css.sheetBody} data-testid="lineup-result">
     <div className={css.score}>
      <p className={css.scoreKicker}>{tx('lu.result.kicker')} · <bdi lang={contentLocale}>{m.title}</bdi></p>
      <p className={css.scoreNum}>{sheetData.correct}/11</p>
+     <p className={css.scoreKicker}>{tx('lu.result.scoreLabel')} · {tx('lu.mode.name')}</p>
      <p className={css.scoreLine}>{sheetData.correct===11?tx('lu.result.perfect'):sheetData.correct>=8?tx('lu.result.strong'):tx('lu.result.keep')}</p>
     </div>
     <div className={css.sheetBands} aria-label={tx('lu.result.yours')}>

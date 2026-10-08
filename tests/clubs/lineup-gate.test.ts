@@ -3,9 +3,9 @@ const request=vi.hoisted(()=>({host:'olympiacos.fanlife.dubelteam.com',paused:fa
 vi.mock('next/headers',()=>({headers:()=>new Headers({host:request.host})}))
 vi.mock('@/lib/master/store',()=>({readState:async()=>({clubs:['olympiacos','zrinjski-mostar','hapoel-tel-aviv'].map(id=>({id,status:request.paused?'paused':'live',gates:request.gates}))})}))
 import {gradeLineup} from '@/app/clubs/[slug]/[gate]/gate-actions'
-import {askLineupCoach} from '@/components/clubs/gates/lineup/coach-action'
+import {askLineupCoach,gradeLineupSheet} from '@/components/clubs/gates/lineup/coach-action'
 import {lineupMatches} from '@/lib/clubs/gate-content'
-import {buildPool,coachBudget} from '@/lib/clubs/lineup-model'
+import {buildPool,coachBudget,matchYear} from '@/lib/clubs/lineup-model'
 import {loadClub} from '@/lib/clubs/resolver'
 beforeEach(()=>{request.host='olympiacos.fanlife.dubelteam.com';request.paused=false;request.gates=[3]})
 async function deal(id='olympiacos'){const d=(await loadClub(id))!.data,m=lineupMatches(d)[0]!;return {d,m}}
@@ -40,5 +40,21 @@ describe('gate 3 server authority',()=>{
   const picks=[...m.starters.slice(0,10),decoy]
   const g=await gradeLineup('olympiacos',d.version,m.id,picks)
   expect(g).toMatchObject({correct:10,wrong:[decoy],missed:[m.starters[10]]})
+ },60000)
+ it('grades the sheet by names, claims no band accuracy, and refuses a malformed sheet whole',async()=>{
+  const {d,m}=await deal()
+  const pool=buildPool({matchId:m.id,starters:m.starters,decoys:m.decoys,roster:(d.players||[]).map(p=>p.value),year:matchYear(m.on)})
+  const decoy=pool.find(x=>!m.starters.includes(x))!
+  const rows=[...m.starters.slice(0,10),decoy].map(name=>({name,band:'DF'}))
+  const g=await gradeLineupSheet('olympiacos',d.version,m.id,rows)
+  expect(g).toMatchObject({correct:10,wrong:[decoy],missed:[m.starters[10]],bandGraded:false})
+  // all eleven in a "wrong" band is still the same name grade: bands are not scored
+  expect((await gradeLineupSheet('olympiacos',d.version,m.id,m.starters.map(name=>({name,band:'GK'}))))!.correct).toBe(11)
+  const bad=(r:{name:string;band:string}[])=>gradeLineupSheet('olympiacos',d.version,m.id,r)
+  expect(await bad(rows.slice(0,10))).toBeNull()
+  expect(await bad([...rows.slice(0,10),rows[0]!])).toBeNull()
+  expect(await bad([...rows.slice(0,10),{name:'Not In The Room',band:'DF'}])).toBeNull()
+  expect(await bad([...rows.slice(0,10),{name:decoy,band:'WING'}])).toBeNull()
+  expect(await bad([...rows,{name:'X',band:'DF'}])).toBeNull()
  },60000)
 })

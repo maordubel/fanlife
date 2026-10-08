@@ -6,7 +6,7 @@ import {gradeGoalReplay} from '@/components/clubs/gates/goal/goal-actions'
 import {clubGoals,goalDeal,goalPool} from '@/lib/clubs/goal'
 import {loadClub} from '@/lib/clubs/resolver'
 beforeEach(()=>{request.host='olympiacos.fanlife.dubelteam.com';request.paused=false;request.gates=[8]})
-async function deal(id='olympiacos'){const d=(await loadClub(id))!.data,g=clubGoals(d)[0]!;return {d,g}}
+async function deal(id='olympiacos'){const d=(await loadClub(id))!.data,g=clubGoals(d).find(x=>x.steps.length>=2)!;return {d,g}}
 
 describe('gate 8 server authority',()=>{
  it('grades a replay, reveals the report only after the whistle, and names each toucher\'s side',async()=>{
@@ -15,12 +15,14 @@ describe('gate 8 server authority',()=>{
   const mine=g.steps.map((s,i)=>({actor:pool[i%pool.length]!,action:s.action,zone:s.zone}))
   const v=await gradeGoalReplay('olympiacos',d.version,g.id,1,mine)
   expect(v).not.toBeNull()
-  expect(v!.max).toBe(g.steps.length*4)
+  expect(v!.max).toBe(g.steps.reduce((n,x)=>n+(x.actor===null?3:4),0))
   expect(v!.truth).toHaveLength(g.steps.length)
   expect(v!.truth.every(s=>['club','opponent','unnamed'].includes(s.side))).toBe(true)
   expect(v!.countRight).toBe(true)
   // every verb and zone right: the verdict is at least the verb + zone points
   expect(v!.points).toBeGreaterThanOrEqual(g.steps.length*3)
+  expect(v!.quality).toBeGreaterThan(0)
+  expect(JSON.stringify(v!.steps)).not.toContain('Not In The Room')
  },60000)
  it('the dealt items carry no answer (no steps, no narrative, no sides)',async()=>{
   const {d}=await deal()
@@ -31,11 +33,12 @@ describe('gate 8 server authority',()=>{
  },60000)
  it('refuses a stale version, an unknown goal, another tenant, a closed gate, a paused club and malformed touches',async()=>{
   const {d,g}=await deal()
-  const ok=[{actor:'',action:'shot',zone:'C1'}]
+  const ok=[{actor:'',action:'pass',zone:'B3'},{actor:'',action:'shot',zone:'C1'}]
   expect(await gradeGoalReplay('olympiacos','stale',g.id,1,ok)).toBeNull()
   expect(await gradeGoalReplay('olympiacos',d.version,'nope',1,ok)).toBeNull()
   expect(await gradeGoalReplay('olympiacos',d.version,g.id,1.5,ok)).toBeNull()
   expect(await gradeGoalReplay('olympiacos',d.version,g.id,1,[])).toBeNull()
+  expect(await gradeGoalReplay('olympiacos',d.version,g.id,1,[ok[1]])).toBeNull()
   expect(await gradeGoalReplay('olympiacos',d.version,g.id,1,[{actor:'',action:'volley',zone:'C1'}])).toBeNull()
   expect(await gradeGoalReplay('olympiacos',d.version,g.id,1,[{actor:'Not In The Room',action:'shot',zone:'C1'}])).toBeNull()
   expect(await gradeGoalReplay('olympiacos',d.version,g.id,1,Array.from({length:6},()=>ok[0]))).toBeNull()

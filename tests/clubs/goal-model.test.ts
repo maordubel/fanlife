@@ -1,6 +1,6 @@
 import {describe,it,expect} from 'vitest'
 import {MAX_GOAL_TOUCHES} from '@/lib/clubs/goal'
-import {GOAL_MOUTH,MAX_TOUCHES,RUN_MAX,addTouch,buildTimeline,endsOnGoal,finalFrame,isFull,moveTouch,percentOf,pointsFor,removeAt,removeLast,runIndices,setVerb,shareText,stateAt,suggestVerb,tierOf,totals,wire,zonePercent,type Draft} from '@/lib/clubs/goal-model'
+import {GOAL_MOUTH,GOOD_AT,HINT_COST,MAX_TOUCHES,MIN_TOUCHES,NEAR_AT,RUN_MAX,judgeSteps,addTouch,buildTimeline,endsOnGoal,finalFrame,isFull,moveTouch,percentOf,pointsFor,removeAt,removeLast,runIndices,setVerb,shareText,stateAt,suggestVerb,tierOf,totals,wire,zonePercent,type Draft} from '@/lib/clubs/goal-model'
 
 const t=(actor:string,action:'pass'|'shot'|'header'|'cross'|'dribble'|'throughBall'|'save',zone:string)=>({actor,action,zone})
 
@@ -82,12 +82,47 @@ describe('gate 8 run',()=>{
   expect(runIndices(7,0)).toEqual([0,1,2]);expect(runIndices(7,1)).toEqual([3,4,5]);expect(runIndices(7,2)).toEqual([6,0,1])
   for(let r=0;r<20;r++)expect(new Set(runIndices(5,r)).size).toBe(Math.min(RUN_MAX,5))
  })
- it('adds a run up and names a tier',()=>{
-  expect(totals([{id:'a',title:'a',points:5,max:8},{id:'b',title:'b',points:3,max:12}])).toEqual({points:8,max:20})
-  expect(tierOf(8,8)).toBe('perfect');expect(tierOf(5,8)).toBe('strong');expect(tierOf(1,8)).toBe('keep');expect(tierOf(0,0)).toBe('keep')
+ it('names a tier from the native thresholds, and only an exact rebuild is perfect',()=>{
+  expect(GOOD_AT).toBe(.78);expect(NEAR_AT).toBe(.5)
+  expect(tierOf(1,true)).toBe('perfect');expect(tierOf(.99,false)).toBe('good');expect(tierOf(.78)).toBe('good');expect(tierOf(.77)).toBe('near');expect(tierOf(.5)).toBe('near');expect(tierOf(.49)).toBe('keep')
+ })
+ it('adds a run up by points and averages its quality',()=>{
+  const t=totals([{id:'a',title:'a',points:5,max:8,quality:.5,perfect:false},{id:'b',title:'b',points:12,max:12,quality:1,perfect:true}])
+  expect(t).toMatchObject({points:17,max:20,quality:.75,perfect:false})
  })
  it('shares the result without the archive\'s answer',()=>{
-  const s=shareText({club:'X',title:'T',points:4,max:8,touches:[{actor:'A',actionWord:'Pass'},{actor:'',actionWord:'Shot'}],unnamed:'Unnamed',url:'https://x/y'})
-  expect(s).toContain('4/8');expect(s).toContain('2. Unnamed — Shot');expect(s.endsWith('https://x/y')).toBe(true)
+  const s=shareText({club:'X',title:'T',percent:50,touches:[{actor:'A',actionWord:'Pass'},{actor:'',actionWord:'Shot'}],unnamed:'Unnamed',url:'https://x/y'})
+  expect(s).toContain('50%');expect(s).toContain('2. Unnamed — Shot');expect(s.endsWith('https://x/y')).toBe(true)
  })
+})
+
+describe('gate 8 verdict (zone practice)',()=>{
+ const truth=[{actor:'Ann',action:'pass',zone:'B3'},{actor:null,action:'cross',zone:'D2'},{actor:'Cy',action:'shot',zone:'C1'}]
+ const exact=[{actor:'Ann',action:'pass',zone:'B3'},{actor:'Zed',action:'cross',zone:'D2'},{actor:'Cy',action:'shot',zone:'C1'}]
+ it('an unnamed man is not applicable: his term leaves the denominator and nobody is handed the point',()=>{
+  const v=judgeSteps(truth,exact)
+  expect(v.steps[1]!.actor).toBeNull();expect(v.max).toBe(4+3+4)
+  expect(v.points).toBe(11);expect(v.quality).toBe(1);expect(v.perfect).toBe(true)
+ })
+ it('an extra touch can never make the verdict perfect and can only lower quality',()=>{
+  const v=judgeSteps(truth,[...exact,{actor:'',action:'pass',zone:'A4'}])
+  expect(v.extra).toBe(1);expect(v.countRight).toBe(false);expect(v.perfect).toBe(false);expect(v.quality).toBeLessThan(1)
+  expect(v.points).toBe(11)
+ })
+ it('a missing touch scores nothing against the full denominator',()=>{
+  const v=judgeSteps(truth,exact.slice(0,2))
+  expect(v.missing).toBe(1);expect(v.perfect).toBe(false);expect(v.quality).toBeLessThan(1)
+ })
+ it('an unknown actor never beats a named one, and the zone next door earns one point',()=>{
+  const v=judgeSteps(truth,[{actor:'',action:'pass',zone:'B3'},{actor:'',action:'cross',zone:'D2'},{actor:'Cy',action:'shot',zone:'B1'}])
+  expect(v.steps[0]!.actor).toBe(false);expect(v.steps[2]!.zone).toBe('near')
+  expect(v.points).toBe(3+3+3)
+ })
+ it('charges a hint once, never below zero, and a hinted rebuild is not perfect',()=>{
+  expect(HINT_COST).toBe(1)
+  const v=judgeSteps(truth,exact,true)
+  expect(v.points).toBe(10);expect(v.hinted).toBe(true);expect(v.perfect).toBe(false)
+  expect(judgeSteps(truth,[{actor:'',action:'dribble',zone:'E4'},{actor:'',action:'save',zone:'E4'}],true).points).toBe(0)
+ })
+ it('full mode wants at least two touches',()=>{expect(MIN_TOUCHES).toBe(2)})
 })

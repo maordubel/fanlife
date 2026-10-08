@@ -68,7 +68,7 @@
  "lu.result.kicker": "Team sheet",
  "lu.result.title": "The result",
  "lu.result.score": "Right: {n} of 11",
- "lu.result.perfect": "A perfect sheet — the full eleven.",
+ "lu.result.perfect": "All eleven starters named.",
  "lu.result.strong": "Most of the eleven found.",
  "lu.result.keep": "Study the archive and try again.",
  "lu.result.yours": "Your sheet",
@@ -87,5 +87,14 @@
  "lu.next": "Next match",
  "lu.again": "Play this match again",
  "lu.onlyOne": "This club has one line-up match so far, so the next round is this one again.",
- "lu.share.title": "My team sheet"
+ "lu.share.title": "My team sheet",
+ "lu.mode.name": "Name practice",
+ "lu.mode.note": "Name practice: only who started is graded. This archive records no bands for the match, so no band accuracy is claimed.",
+ "lu.intro.title": "Name the eleven who started",
+ "lu.intro.body": "Hang eleven men on the four-band board from the locker room. The lockers hold the eleven and decoys from the same era.",
+ "lu.intro.rule1": "Eleven places, each man once. Undo any move before you hand in.",
+ "lu.intro.rule2": "Up to 3 locks and up to 2 coach notes. No clock.",
+ "lu.intro.rule3": "Name practice: names are graded, bands are your own arrangement and are not scored.",
+ "lu.intro.start": "Start",
+ "lu.result.scoreLabel": "starters named"
 }
