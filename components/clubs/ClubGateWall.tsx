@@ -18,7 +18,7 @@ export function ClubGateWall({clubId,states,locale,games,soon,gateWord,beloved,f
   <span className="gp-head"><b>★ {featuredWord}</b><i>{beloved.local??beloved.name}</i></span>
   <span className="gp-well" aria-hidden="true">{beloved.number!==null?<><span className="gp-num gp-shift">{beloved.number}</span><span className="gp-num gp-top">{beloved.number}</span></>:<><span className="gp-num gp-shift">★</span><span className="gp-num gp-top">★</span></>}</span>
   <span className="gp-foot"><b>{games[`gate.${big.key}`]}</b><small>{games[`blurb.${big.key}`]}</small><em>{games.play} →</em></span>
- </Link></li>}{SHARED_GATES.filter(g=>!big||g.key!==big.key).map(g=>{
+ </Link></li>}{[...SHARED_GATES].filter(g=>!big||g.key!==big.key).sort((a,b)=>Number(!!(states.find(x=>x.key===b.key)?.allowed&&states.find(x=>x.key===b.key)?.playable))-Number(!!(states.find(x=>x.key===a.key)?.allowed&&states.find(x=>x.key===a.key)?.playable))).map(g=>{
   const s=states.find(x=>x.key===g.key),open=!!(s?.allowed&&s.playable),away=g.key==='derby'
   const inner=<>
    <span className="gp-head"><b>{gateWord}</b><i dir="ltr">{String(g.number).padStart(2,'0')}</i></span>

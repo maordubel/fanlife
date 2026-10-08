@@ -184,3 +184,13 @@ a.gp:active { transform: scale(.98); }
 .sc-stats dd { margin: 2px 0 0; font-family: var(--mag-condensed); font-weight: 700; font-size: 38px; line-height: 1; color: var(--club-type, var(--mag-ink)); }
 .sc-empty { margin: 0; padding: 14px; font-size: 14px; }
 .sc-next { display: flex; align-items: center; gap: 6px; padding: 12px 14px; border-block-start: 3px solid var(--mag-ink); background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* today at the club */
+.ct-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .ct-grid { grid-template-columns: 2fr 1fr; } }
+.ct-moment, .ct-pick { display: grid; gap: 4px; padding: 14px 16px; border: 3px solid var(--mag-ink); background: var(--mag-card, var(--mag-paper)); color: var(--mag-ink); align-content: start; }
+.ct-moment b { font-family: var(--mag-condensed); font-weight: 700; font-size: 26px; line-height: 1.05; }
+.ct-pick { background: var(--mag-ink); color: var(--mag-paper); }
+.ct-pick b { font-family: var(--mag-condensed); font-weight: 700; font-size: 26px; text-transform: uppercase; }
+.ct-moment small, .ct-pick small, .ct-moment i { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; font-style: normal; }
+.ct-moment small { color: var(--club-type, var(--mag-ink)); }

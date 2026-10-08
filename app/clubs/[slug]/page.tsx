@@ -7,6 +7,8 @@ import {ClubSurface} from '@/components/clubs/ClubSurface'
 import {GateTickets,type GateState} from '@/components/clubs/GateTickets'
 import {ClubGateWall} from '@/components/clubs/ClubGateWall'
 import {SupporterCard} from '@/components/clubs/SupporterCard'
+import {ClubToday} from '@/components/clubs/ClubToday'
+import {momentFor} from '@/lib/clubs/today'
 import {belovedOf} from '@/lib/clubs/beloved'
 import {ClubEntrance} from '@/components/clubs/ClubEntrance'
 import {FixtureCard} from '@/components/clubs/FixtureCard'
@@ -71,12 +73,13 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {searchParams.lang&&!UI_LOCALES.includes(searchParams.lang as 'en'|'he')&&<section className="mag-section"><p className="panel">{copy.fallback}</p></section>}
   {fx&&lv?<FixtureCard clubId={id} clubName={c.name} fx={fx} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta}}/>
   :world.ground&&<section className="mag-section club-matchday" aria-labelledby="md-h"><article className="mag-homecard"><div><p className="mag-kicker">{copy.homeVoice}</p><h2 id="md-h">{world.ground.name}{world.ground.local&&<> <bdi className="club-local" lang={world.ground.script} dir="auto">{world.ground.local}</bdi></>}</h2><p>{world.ground.line}</p></div></article></section>}
+  {core&&<ClubToday clubId={id} clubName={c.name} moment={momentFor(core.data,new Date())} pick={pickGate?{key:pickGate.key,name:games[`gate.${pickGate.key}`]}:null} locale={locale} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/>}
   {core&&<section className="mag-section" id="gates" aria-labelledby="gates-h"><hr className="mag-rule"/><div className="mag-head"><div><p className="mag-kicker">{copy.wallKicker}</p><h2 className="mag-h2" id="gates-h">{copy.wallTitle}</h2><p className="mag-fine">{fill(copy.wallLead)}</p></div></div>
    <ClubGateWall clubId={id} states={states} locale={locale} games={games} soon={copy.wallSoon} gateWord={copy.wallGate} beloved={belovedOf(world.terrace,open)} featuredWord={copy.wallFeatured}/></section>}
   {core&&<section className="mag-section" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
   {core&&<section className="mag-section club-rounds-sec" aria-labelledby="rounds-h"><hr className="mag-rule"/><div className="mag-head"><div><p className="mag-kicker">{copy.homeRounds}</p><h2 className="mag-h2" id="rounds-h">{games.gamesTitle}</h2></div><Link className="mag-chip" href={clubHref(id,'play',locale)}>{copy.homePlayCta} →</Link></div>
    <ClubRounds clubId={id} locale={locale} names={names} none={copy.homeRoundsNone}/>
-   {pickGate&&<div className="club-pick"><p className="mag-kicker">{copy.homeToday}</p><GateTickets clubId={id} states={states} keys={[pickGate.key]} locale={locale} games={games} pattern={lv?.pattern} closedNote={copy.paused} feature={1}/></div>}
+
   </section>}
   <section className="mag-section" id="life-block">
    <article className="mag-homecard ink" id="life" data-life-entry={life.state}><Dye art="face" className="mag-homeface"/><div><p className="mag-kicker">LIFE</p><h2>{copy.lifeTitle}</h2>{life.href?<><p>{copy.lifeOpen}</p><Link className="mag-cta red" href={life.href}>{copy.life}</Link></>:<p>{copy.lifeWorkshop}</p>}</div></article>

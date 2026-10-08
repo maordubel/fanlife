@@ -298,5 +298,10 @@
   "cardBeen": "הייתי שם",
   "cardSince": "מאז",
   "cardEmpty": "שחקו סבב והכרטיס יתחיל להתמלא.",
-  "cardNext": "השער הבא:"
+  "cardNext": "השער הבא:",
+  "todayKicker": "היום ב{club}",
+  "todayExact": "ביום הזה, לפני {n} שנים",
+  "todayNear": "השבוע בהיסטוריה · לפני {n} שנים",
+  "todayOpen": "לציר הזמן",
+  "todayPick": "הסבב של היום"
 }
