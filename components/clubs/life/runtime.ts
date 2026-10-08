@@ -38,6 +38,8 @@ export type PlayRuntime = {
   run(on: boolean): void
   act(): boolean
   freeze(on: boolean): void
+  /** the black cover between rooms: the shell can lift it (a transition that hung) or lower it; the block engine may not have it */
+  veil?(on: boolean): void
   focus(id: string | null): void
   emote(mood: string | null, hold?: number): void
   project(kind: 'actor' | 'spot' | 'exit', id: string): {x: number; y: number} | null

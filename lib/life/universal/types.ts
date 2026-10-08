@@ -129,13 +129,19 @@ export type Effect =
   /** a cut: the day moves to another room without a door */
   | {e: 'goto'; room: RoomId; spawn: string; time?: TimeOfDay}
   | {e: 'time'; to: TimeOfDay}
-  /** hands, not words: a small thing the player does. It never fails the chapter. */
-  | {e: 'play'; game: MiniGame; id: string; then?: Effect[]}
+  /**
+   * hands, not words: a small thing the player does. It never fails the chapter.
+   * `then` always happens; `good` follows a clean or good-enough go ('good' and 'ok'), `slip` follows a go that got away.
+   * A slip is a different outcome, not a lost day: put what the story needs in `then`, what skill earns in `good`.
+   */
+  | {e: 'play'; game: MiniGame; id: string; then?: Effect[]; good?: Effect[]; slip?: Effect[]}
   | {e: 'card'; card: string}
   | {e: 'sound'; cue: SoundCue}
   | {e: 'end'; ending: string}
 
-export type MiniGame = 'tune' | 'clap' | 'carry' | 'count'
+export type MiniGame = 'tune' | 'clap' | 'carry' | 'count' | 'kick' | 'chant'
+/** How a small game went. 'ok' is good enough: it applies the same effects as 'good'. */
+export type PlayResult = 'good' | 'ok' | 'slip'
 export type SoundCue = 'roar' | 'murmur' | 'whistle' | 'radio' | 'door' | 'coin' | 'bus'
 
 /* ───────────── conversations ───────────── */
@@ -241,7 +247,6 @@ export type LifeReadiness = {state: 'READY' | 'PARTIAL' | 'LOCKED'; playable: bo
 
 export type LifePack = {
   schemaVersion: 1
-  storyEdition?: 2
   storyLocale?: 'en' | 'he'
   /** changes whenever anything a save depends on changes */
   version: string

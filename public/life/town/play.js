@@ -409,6 +409,7 @@ var P=window.__vxPlay={
  run:function(b){running=!!b},
  act:function(){return act()},
  tap:tap,walkTo:walkTo,goTo:goTo,
+ veil:function(on){veil(!!on,250)},
  freeze:function(b){frozen=!!b;if(frozen){axis.x=axis.y=0;path=null;pending=null}else{graceUntil=now+.35;retarget(true)}},
  emote:function(){},
  project:function(kind,id){var b=null,x=0,y=0,z=0;

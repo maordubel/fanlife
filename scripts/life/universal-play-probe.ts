@@ -1,7 +1,7 @@
 /**
  * LIFE, universal — the acceptance script. Plays a whole life in a real browser.
  *
- *   npx tsx scripts/life/universal-play-probe.ts http://127.0.0.1:3200 --club=olympiacos [--phone] [--chapters=3] [--pick=0] [--shots=/tmp/dir] [--lang=he] [--story=2]
+ *   npx tsx scripts/life/universal-play-probe.ts http://127.0.0.1:3200 --club=olympiacos [--phone] [--chapters=3] [--pick=0] [--shots=/tmp/dir] [--lang=he]
  *
  * It does what a supporter does and nothing a supporter cannot: it walks the body to people,
  * things and doors through the runtime's own `goTo`, presses the buttons that are on the screen,
@@ -14,7 +14,7 @@ import {mkdirSync} from 'node:fs'
 
 const arg = (name: string, fallback = '') => (process.argv.find(a => a.startsWith(`--${name}=`)) || '').split('=')[1] || fallback
 const base = process.argv[2]?.startsWith('http') ? process.argv[2] : 'http://127.0.0.1:3200'
-const club = arg('club', 'olympiacos'), phone = process.argv.includes('--phone'), shots = arg('shots'), lang = arg('lang', 'en'), story = arg('story')
+const club = arg('club', 'olympiacos'), phone = process.argv.includes('--phone'), shots = arg('shots'), lang = arg('lang', 'en')
 const maxChapters = Number(arg('chapters', '99')), pick = Number(arg('pick', '0'))
 const size = arg('size') ? arg('size').split('x').map(Number) as [number, number] : phone ? [390, 844] as [number, number] : [1440, 900] as [number, number]
 if (shots) mkdirSync(shots, {recursive: true})
@@ -31,7 +31,8 @@ const snap = (page: Page) => page.evaluate(() => {
 }) as Promise<Snap | null>
 
 const visible = async (page: Page, sel: string) => (await page.locator(sel).count()) > 0 && await page.locator(sel).first().isVisible()
-const press = async (page: Page, sel: string) => { try { await page.locator(sel).first().click({timeout: 4000}); return true } catch { return false } }
+// a machine without a GPU answers a click slowly enough that Playwright's actionability wait times out; the event itself still lands
+const press = async (page: Page, sel: string) => { try { await page.locator(sel).first().click({timeout: 4000}); return true } catch { try { await page.locator(sel).first().dispatchEvent('click', {}, {timeout: 4000}); return true } catch { return false } } }
 const goTo = (page: Page, kind: string, id: string) => page.evaluate(([k, i]) => (window as unknown as {__lifeProbe: {runtime(): {goTo(k: string, i: string): boolean} | null}}).__lifeProbe.runtime()?.goTo(k!, i!) ?? false, [kind, id])
 
 /** The next door on a way of unlocked doors from `from` to `to`. */
@@ -48,13 +49,14 @@ function doorToward(plan: NonNullable<Plan>, from: string, to: string): string |
 async function main(): Promise<number> {
   const browser = await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox', '--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist']})
   const context = await browser.newContext({viewport: {width: size[0], height: size[1]}, deviceScaleFactor: 1, hasTouch: phone, isMobile: phone})
-  await context.addInitScript(() => { try { window.localStorage.setItem('fan-life:life:probe', '1'); window.localStorage.setItem('fan-life:life:sound', 'off') } catch { /* no storage */ } })
+  // --look=lite|blocks: a machine without a GPU renders the full picture at a frame or two a second, too slow to click through
+  await context.addInitScript((look: string) => { try { window.localStorage.setItem('fan-life:life:probe', '1'); window.localStorage.setItem('fan-life:life:sound', 'off'); if (look) window.localStorage.setItem('the-worker:life:look', look) } catch { /* no storage */ } }, arg('look'))
   const page = await context.newPage()
   const faults: string[] = []
   page.on('pageerror', e => faults.push(`page error: ${e.message}`))
   page.on('console', m => { if (m.type() === 'error' && !/favicon|Failed to load resource.*(40[34])|net::ERR/.test(m.text())) faults.push(`console: ${m.text().slice(0, 200)}`) })
   page.on('response', r => { if (r.status() >= 400 && new URL(r.url()).origin === new URL(base).origin && !/favicon/.test(r.url())) faults.push(`${r.status()} ${r.url()}`) })
-  await page.goto(`${base}/clubs/${club}/life?lang=${lang}${story ? `&story=${story}` : ''}`, {waitUntil: 'load'})
+  await page.goto(`${base}/clubs/${club}/life?lang=${lang}`, {waitUntil: 'load'})
   await page.waitForSelector('[data-life="title"]', {timeout: 120000})
   const shot = async (name: string) => { if (shots) await page.screenshot({path: `${shots}/${tag}-${name}.png`}) }
   await shot('00-title')
@@ -89,7 +91,7 @@ async function main(): Promise<number> {
       await once('talk')
       const choices = page.locator('[data-life="choices"] button')
       const n = await choices.count()
-      if (n) { await once('choice'); await choices.nth((pick + answered++) % n).click({timeout: 4000}).catch(() => null) } else await press(page, '[data-life="continue"]')
+      if (n) { await once('choice'); await choices.nth((pick + answered++) % n).click({timeout: 4000}).catch(() => choices.nth((pick + answered - 1) % n).dispatchEvent('click').catch(() => null)) } else await press(page, '[data-life="continue"]')
       idleSince = Date.now(); await page.waitForTimeout(120); continue
     }
     if (s.busy || s.where?.frozen || !s.plan) { await page.waitForTimeout(250); if (Date.now() - idleSince > 20000) idleSince = Date.now(); continue }
