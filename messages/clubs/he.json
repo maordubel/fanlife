@@ -303,5 +303,6 @@
   "todayExact": "ביום הזה, לפני {n} שנים",
   "todayNear": "השבוע בהיסטוריה · לפני {n} שנים",
   "todayOpen": "לציר הזמן",
-  "todayPick": "הסבב של היום"
+  "todayPick": "הסבב של היום",
+  "wallFeatureShirt": "עצבו את חולצת {club}"
 }

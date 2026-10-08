@@ -303,5 +303,6 @@
   "todayExact": "On this day, {n} years ago",
   "todayNear": "This week in history · {n} years ago",
   "todayOpen": "Open the timeline",
-  "todayPick": "Today’s round"
+  "todayPick": "Today’s round",
+  "wallFeatureShirt": "Design your {club} shirt"
 }
