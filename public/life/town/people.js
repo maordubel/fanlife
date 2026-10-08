@@ -105,10 +105,11 @@ function skinMat(look,ctx){var m=new T.MeshStandardMaterial({color:0xffffff,roug
    'diffuseColor.rgb*=c;'].join('\n'))
    .replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\ntotalEmissiveRadiance+=diffuseColor.rgb*vec3(.09,.035,.02);')};
  m.skinning=true;ctx.own(m);return m}
-var CLOTH_HEAD='uniform vec3 uA,uB,uC;uniform float uPat,uWeave,uSheen;varying vec3 vBind;varying float vEdge;varying float vAo;varying vec3 vLimb;\n';
-/* pat: 0 plain · 1 stripes · 2 hoops · 3 halves · 4 sash · 5 pinstripe · 6 sole band (shoes) · 7 side stripe (trousers) */
+var CLOTH_HEAD='uniform vec3 uA,uB,uC;uniform float uPat,uWeave,uSheen,uY;varying vec3 vBind;varying float vEdge;varying float vAo;varying vec3 vLimb;\n';
+/* pat: 0 plain · 1 stripes · 2 hoops · 3 halves · 4 sash · 5 pinstripe · 6 sole band (shoes) · 7 side stripe (trousers) · 8 denim · 9 track · 10 knit
+   · 11 retro track (body uA, yoke + sleeves uB, chest band and sleeve stripes uC, yoke line at uY) · 12 trainer (sole band + three stripes ahead of uY) */
 function clothMat(o,ctx){var m=new T.MeshStandardMaterial({color:0xffffff,roughness:o.rough==null?.86:o.rough,metalness:0,side:T.DoubleSide,envMapIntensity:window.__EI||.4});
- var U={uA:{value:lin(o.a)},uB:{value:lin(o.b||o.a)},uC:{value:lin(o.c||'#f2ede4')},uPat:{value:o.pat||0},uWeave:{value:o.weave==null?1:o.weave},uSheen:{value:o.sheen||0}};
+ var U={uA:{value:lin(o.a)},uB:{value:lin(o.b||o.a)},uC:{value:lin(o.c||'#f2ede4')},uPat:{value:o.pat||0},uWeave:{value:o.weave==null?1:o.weave},uSheen:{value:o.sheen||0},uY:{value:o.y||0}};
  m.onBeforeCompile=function(s){Object.assign(s.uniforms,U);
   s.vertexShader='attribute vec3 bind;attribute float edge;attribute float ao;attribute vec3 limb;'+CLOTH_HEAD+s.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvBind=bind;vEdge=edge;vAo=ao;vLimb=limb;');
   s.fragmentShader=CLOTH_HEAD+s.fragmentShader.replace('#include <map_fragment>',[
@@ -123,9 +124,11 @@ function clothMat(o,ctx){var m=new T.MeshStandardMaterial({color:0xffffff,roughn
    'if(uPat<7.5&&uPat>6.5)k=step(1.5,vLimb.z)*lk*(step(abs(la-9.),5.)+step(abs(la+9.),5.));',
    'else if(uPat>8.5&&uPat<9.5)k=lk*(step(abs(la-10.),5.5)+step(abs(la+10.),5.5));',
    'vec3 c=mix(uA,uB,k);',
+   'if(uPat>10.5&&uPat<11.5){float arm=step(.5,vLimb.z)*step(vLimb.z,1.5);c=mix(uA,uB,max(step(uY,b.y),arm));c=mix(c,uC,(1.-arm)*step(abs(b.y-uY+.018),.011));c=mix(c,uC,arm*lk*(step(abs(la-10.),4.)+step(abs(la+10.),4.)));if(b.z>.04&&abs(b.x)<.0045&&arm<.5)c=uA*.35;}',
+   'if(uPat>11.5){float dz=b.z-uY;float st=step(.022,b.y)*step(b.y,.085)*step(-.09,dz)*step(dz,-.005)*step(.55,fract((dz-b.y*.8)*44.));c=mix(uA,uB,st);c=mix(c,uC,step(b.y,.022));}',
    'if(uPat>8.5&&uPat<9.5&&b.z>.04&&abs(b.x)<.0045&&vLimb.z<.5)c=uA*.35;',
    'if(uPat>7.5&&uPat<8.5){float tw=sin((b.x*1.+b.y*1.7+b.z)*720.)*.5+.5;float fade=smoothstep(.35,.9,sin(b.y*6.)*.5+.5)*.12;c*=.92+tw*.1;c=mix(c,c*1.35+vec3(.02,.03,.05),fade);}',
-   'if(uPat>9.5){float rib=sin(b.x*520.)*.5+.5;c*=.9+rib*.14;}',
+   'if(uPat>9.5&&uPat<10.5){float rib=sin(b.x*520.)*.5+.5;c*=.9+rib*.14;}',
    'if(uPat>5.5&&uPat<6.5)c=mix(c,uC,step(b.y,.009));',
    'float w=(sin(b.x*900.)*sin(b.y*900.)+sin((b.x+b.z)*620.))*.5;c*=1.+w*.035*uWeave;',
    'c*=mix(.55,1.,vAo);c*=mix(.86,1.,smoothstep(0.,.014,vEdge));',
@@ -303,7 +306,7 @@ P.make=function(o,ctx){var ph=physique(o),W=weights(ph);var look=dress(o,ph);
     keep.push(t[i])}
    return grow(B,trisOf(keep),{aoK:40,loose:true,shape:shapeTop,thick:function(v,x,y,z){var t2=TORSOB[P.ski[v*4]]?thickTop+.009:.007;if(TORSOB[P.ski[v*4]]&&y<sp3.y&&y>hipY-.05)t2+=.008*(1-sstep(sp3.y-.05,sp3.y+.05,y));if(z<0)t2+=.004;return t2},relax:14,min:.014,folds:.004,hemSmooth:10})})());
   var oc=look.outerCol||'#3a4a6a',den=!!o.denimJacket;
-  addGarment(gO.geo,clothMat({a:oc,b:'#f2ede4',pat:look.outer==='track'?9:look.outer==='cardigan'?10:den?8:0,rough:look.outer==='track'?.55:look.outer==='cardigan'?.95:.8,sheen:look.outer==='track'?.18:.06,weave:den?1.4:1},ctx))}
+  addGarment(gO.geo,clothMat({a:oc,b:o.yoke||'#f2ede4',c:'#f2ede4',y:sp3.y+.035,pat:look.outer==='track'?(o.yoke?11:9):look.outer==='cardigan'?10:den?8:0,rough:look.outer==='track'?.55:look.outer==='cardigan'?.95:.8,sheen:look.outer==='track'?.18:.06,weave:den?1.4:1},ctx))}
  // ----- legs
  if(botT){var crotchY=pelv.y-.09,knL=jv(J,'calf_l'),anL=jv(J,'foot_l');
   var shapeBot=function(p,n,R,ln,bnd){var list=[],all=[],inSet=new Uint8Array(n);for(var i=0;i<n;i++){if(!bnd[i]||p[i*3+1]<pelv.y-.25)all.push(i);if(!bnd[i]){list.push(i);inSet[i]=1}}
@@ -318,7 +321,7 @@ P.make=function(o,ctx){var ph=physique(o),W=weights(ph);var look=dress(o,ph);
  else if(look.legs==='skirt'){var sk=C.skirt||(C.skirt=skirtGeo(B,o));addGarment(sk,clothMat({a:o.skirt,rough:.9,sheen:.1},ctx))}
  // ----- shoes
  var shoeCol=o.shoe||(ph.age<30&&hashf(o._id+'sh')<.6?'#f2ede4':'#2a2220');
- ['l','r'].forEach(function(side){addGarment(C['shoe'+side]||(C['shoe'+side]=shoeGeo(B,side,o)),clothMat({a:shoeCol,pat:6,b:shoeCol,c:'#ece6dc',rough:.5,weave:.15,sheen:.05},ctx))});
+ ['l','r'].forEach(function(side){addGarment(C['shoe'+side]||(C['shoe'+side]=shoeGeo(B,side,o)),clothMat({a:shoeCol,pat:o.shoeStripe?12:6,b:o.shoeStripe||shoeCol,c:'#ece6dc',y:jv(J,'ball_'+side).z,rough:.5,weave:.15,sheen:.05},ctx))});
  // ----- hair
  if(C.hair===undefined)C.hair=hairGeo(B,look,o,ph)||null;var hairMesh=C.hair?new T.SkinnedMesh(C.hair,hairMat(look.hair,look.style==='slick',ctx,(look.style==='curly'||look.style==='curlyLong')?1:0)):null;if(hairMesh){hairMesh.castShadow=true;hairMesh.frustumCulled=false}if(hairMesh){g.add(hairMesh);hairMesh.bind(S.sk,new T.Matrix4());garments.push(hairMesh)}
  // ----- eyes
@@ -417,7 +420,7 @@ function accessories(o,look,B,S,ctx,ph){var J=B.J,head=jv(J,'head'),top=0;for(va
  function std(c,x){var m=new T.MeshStandardMaterial(Object.assign({color:lin(c),roughness:.8,metalness:0},x||{}));ctx.own(m);return m}
  var eL=new T.Vector3(B.X[0],B.X[1],B.X[2]),eR=new T.Vector3(B.X[3],B.X[4],B.X[5]),eC=eL.clone().add(eR).multiplyScalar(.5);
  var hr=Math.abs(eL.x-eR.x)*1.55;// head half-width-ish
- if(look.outer==='track'){var nk0=jv(J,'neck_01');var col=new T.Mesh(new T.TorusGeometry(1,.32,10,32),std(look.outerCol||'#b02d10',{roughness:.55}));col.rotation.x=PI/2.15;col.scale.set(.068,.062,.052);attach(S,'neck_01',col,J,nk0.clone().add(new T.Vector3(0,-.005,.008)))}
+ if(look.outer==='track'){var nk0=jv(J,'neck_01');var col=new T.Mesh(new T.TorusGeometry(1,.32,10,32),std(o.yoke||look.outerCol||'#b02d10',{roughness:.55}));col.rotation.x=PI/2.15;col.scale.set(.068,.062,.052);attach(S,'neck_01',col,J,nk0.clone().add(new T.Vector3(0,-.005,.008)))}
  if(o.glasses){var gg=new T.Group();[eL,eR].forEach(function(e){var rim=new T.Mesh(new T.TorusGeometry(.021,.0022,6,24),std('#3a3030',{metalness:.4,roughness:.4}));rim.position.set(e.x-eC.x,0,0);rim.scale.y=.8;gg.add(rim)});
   var br=new T.Mesh(new T.CylinderGeometry(.0018,.0018,Math.abs(eL.x-eR.x)-.042,5),std('#3a3030'));br.rotation.z=PI/2;br.position.y=.004;gg.add(br);
   [1,-1].forEach(function(s){var arm=new T.Mesh(new T.CylinderGeometry(.0016,.0016,.09,4),std('#3a3030'));arm.rotation.x=PI/2;arm.position.set(s*(Math.abs(eL.x-eR.x)/2+.02),.004,-.045);gg.add(arm)});
@@ -437,7 +440,9 @@ function accessories(o,look,B,S,ctx,ph){var J=B.J,head=jv(J,'head'),top=0;for(va
  if(o.apron){var pla=jv(J,'pelvis'),hw=0;for(var qa=0;qa<NB;qa++){if(Math.abs(B.pos[qa*3+1]-pla.y)<.02)hw=Math.max(hw,Math.abs(B.pos[qa*3]-pla.x),Math.abs(B.pos[qa*3+2]-pla.z)*1.3)}var apg=new T.CylinderGeometry(hw*1.0,hw*1.18,.5,18,4,true,-1.05,2.1);apg.scale(1,1,.78);var ap=new T.Mesh(apg,std(o.apron,{side:T.DoubleSide,roughness:.92}));ap.castShadow=true;attach(S,'pelvis',ap,J,new T.Vector3(pla.x,pla.y-.17,pla.z+.012));var tie=new T.Mesh(new T.TorusGeometry(1,.012,4,40),std(o.apron));tie.rotation.x=PI/2;tie.scale.set(hw*1.03,hw*.82,1);attach(S,'pelvis',tie,J,new T.Vector3(pla.x,pla.y+.075,pla.z))}
  if(o.pack){var pk=new T.Mesh(new T.BoxGeometry(.28,.36,.13),std(o.pack));var s3b=jv(J,'spine_02');attach(S,'spine_02',pk,J,new T.Vector3(0,s3b.y+.06,s3b.z-.17))}
  if(o.bag){var bgm=new T.Mesh(new T.BoxGeometry(.2,.22,.07),std(o.bag));var pl2=jv(J,'pelvis');attach(S,'pelvis',bgm,J,new T.Vector3(-.2,pl2.y-.02,pl2.z+.04))}
- if(o.necklace){var nk=new T.Mesh(new T.TorusGeometry(1,.06,6,24),std('#d8c8a8',{metalness:.7,roughness:.3}));nk.rotation.x=PI/2.3;nk.scale.set(.07,.07,.07);var nn=jv(J,'neck_01');attach(S,'neck_01',nk,J,nn.clone().add(new T.Vector3(0,-.035,.025)))}
+ if(o.necklace){var nk=new T.Mesh(new T.TorusGeometry(1,.06,6,24),std('#d8c8a8',{metalness:.7,roughness:.3}));nk.rotation.x=PI/2.3;var tk=look.outer==='track';nk.scale.set(tk?.082:.07,tk?.095:.07,tk?.08:.07);var nn=jv(J,'neck_01');attach(S,'neck_01',nk,J,nn.clone().add(new T.Vector3(0,tk?-.075:-.035,tk?.05:.025)))}
+ if(o.armband){var ua=jv(J,'upperarm_l'),la=jv(J,'lowerarm_l'),ab=new T.Mesh(new T.CylinderGeometry(1,1,1,16,1,true),std(o.armband,{roughness:.8,side:T.DoubleSide}));ab.scale.set(.062,.075,.062);var ax=la.clone().sub(ua).normalize();ab.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),ax);attach(S,'upperarm_l',ab,J,ua.clone().lerp(la,.42))}
+ if(o.bangles){var hr=jv(J,'hand_r'),lr=jv(J,'lowerarm_r');for(var bi=0;bi<3;bi++){var bg=new T.Mesh(new T.TorusGeometry(.034,.004,5,16),std(bi%2?'#b88a5a':'#6a4a34',{metalness:bi%2?.6:.1,roughness:.4}));bg.quaternion.setFromUnitVectors(new T.Vector3(0,0,1),hr.clone().sub(lr).normalize());attach(S,'lowerarm_r',bg,J,hr.clone().lerp(lr,.06+bi*.035))}}
  if(o.watch){var hl=jv(J,'hand_l');var wt=new T.Mesh(new T.TorusGeometry(.03,.007,6,14),std('#3a3a44',{metalness:.5}));attach(S,'lowerarm_l',wt,J,hl.clone().lerp(jv(J,'lowerarm_l'),.08))}}
 
 /* ---------- the facade: same names, same rotation conventions as the procedural doll ---------- */

@@ -83,8 +83,10 @@ function lookOf(o,id){
  if(o.cap)d.beanie=o.cap===true?(S&&S.t||'#14141c'):o.cap;
  if(o.vest)d.jacket=o.vest;
  /* who this person is, for the human figure: passed through as authored */
- ['sex','age','build','style','mustache','beard','stubble','glasses','sleeves','jacket','denimJacket','cardigan','track','trackCol','denim','skirt','apron'].forEach(function(k){if(o[k]!=null)d[k]=o[k]});
+ ['sex','age','build','style','mustache','beard','stubble','glasses','sleeves','jacket','denimJacket','cardigan','track','trackCol','denim','skirt','apron','yoke','trackPants','shoe','shoeStripe','armband','bangles','bag','necklace','watch'].forEach(function(k){if(o[k]!=null)d[k]=o[k]});
+ ['trackCol','yoke','shoe','shoeStripe','armband','bag'].forEach(function(k){if(d[k]==='club')d[k]=S&&S.p?S.p:'#b02d10';else if(d[k]==='club2')d[k]=S&&S.s?S.s:'#f2ede4'});
  if(o.track&&!o.trackCol)d.trackCol=S&&S.p?S.p:'#b02d10';
+ if(d.trackPants&&d.trackCol)d.bot=d.trackCol;
  if(o.cap===true)d.cap=S&&S.t||'#14141c',delete d.beanie;
  return d;
 }
@@ -205,7 +207,8 @@ function enter(c){
 function setView(){
  var top=FR.top==null?.8:FR.top,bottom=FR.bottom==null?-.4:FR.bottom,W=innerWidth,H=innerHeight,fov=null,info=K.camInfo();
  /* a phone: the picture IS the glass, edge to edge; the room is a window of about 3 m that follows him, lifted while somebody speaks */
- if(W/H<.9){var c=(top+bottom)/2*.3;top=1+c;bottom=-1+c}
+ /* in a stadium the glass is tall and the roof is the dull half: the window drops so the people and the stand fill it */
+ if(W/H<.9){var c=(top+bottom)/2*.3+(((RM.defs[cfg.room]||{}).kind)==='stadium'?.28:0);top=1+c;bottom=-1+c}
  var a=W/(H*(top-bottom)/2);
  if(info&&a<1.15){var d=Math.hypot(info.p[1]-info.l[1],info.p[2]-info.l[2]),roomW=(cfg.walk[2]-cfg.walk[0]+2)*U,vis=Math.min(roomW,W/H<.9?(IND[((RM.defs[cfg.room]||{}).kind)]?3.3:4.2):4.6);fov=Math.max(20,Math.min(70,2*Math.atan(vis/2/(d*a))*180/PI))}
  K.view(top,bottom,fov);
