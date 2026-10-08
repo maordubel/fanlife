@@ -57,18 +57,18 @@ function loft(prof,seg,fn){var n=prof.length,pos=[],idx=[],i,j;seg=seg||28;
 function patternGeo(g,a,b,pat){var p=g.attributes.position,n=p.count,col=new Float32Array(n*3),A=new T.Color(a).convertSRGBToLinear(),B=new T.Color(b).convertSRGBToLinear();for(var i=0;i<n;i++){var x=p.getX(i),y=p.getY(i),z=p.getZ(i),k=0;if(pat==='hoops')k=Math.floor((y+.2)/.075)%2;else if(pat==='pinstripe')k=Math.floor((Math.atan2(x,z)+Math.PI)/(Math.PI*2)*30)%2;else if(pat==='sash')k=Math.abs(x+(y-.45)*.9)<.075?1:0;else if(pat==='diagonal')k=Math.floor((x+y*.8+1)/.09)%2;var c=k?B:A;col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b}g.setAttribute('color',new T.BufferAttribute(col,3))}
 function G_(v,s){return Math.exp(-v*v/(2*s*s))}
 function SS_(a,b,x){var t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t)}
-function torsoGeo(W,sc){sc=sc||1;var P=[[-.14,.125,.092],[-.05,.158,.098],[.06,.155,.1],[.18,.148,.098],[.32,.168,.108],[.44,.2,.12],[.54,.226,.118],[.61,.25,.105],[.66,.2,.095],[.7,.14,.085],[.75,.092,.072],[.79,.075,.066]].map(function(p){return[p[0],p[1]*W*sc,p[2]*sc*(1+(W-1)*.3)]});
+function torsoGeo(W,sc){sc=sc||1;var P=[[-.14,.138,.095],[-.05,.158,.1],[.06,.14,.092],[.18,.132,.088],[.32,.15,.1],[.44,.19,.115],[.53,.225,.115],[.6,.236,.1],[.65,.19,.09],[.69,.12,.078],[.74,.08,.068],[.79,.07,.064]].map(function(p){return[p[0],p[1]*W*sc,p[2]*sc*(1+(W-1)*.3)]});
  return loft(P,36,function(x,y,z){var dz=0,f=z>0?1:0;dz+=.022*f*G_(Math.abs(x)-.085*W,.055)*G_(y-.47,.06);dz+=-.006*f*G_(x,.012)*G_(y-.47,.1);if(z<0)dz-=.012*G_(Math.abs(x)-.09*W,.07)*G_(y-.42,.1);return[0,0,dz*sc]})}
 function sculptHead(o){var g=new T.SphereGeometry(1,48,36),p=g.attributes.position,n=p.count,col=new Float32Array(n*3);
  var C=function(h){return new T.Color(h)},sk=C(o.skin),hair=C(o.hair),blush=sk.clone().lerp(C('#e0705c'),.45),lipC=sk.clone().lerp(C('#a8484a'),.5),beard=!!o.beard,stub=!!(o.stubble||o.beard),jaw=(o.jaw||1.1)-1;
- for(var i=0;i<n;i++){var ux=p.getX(i),uy=p.getY(i),uz=p.getZ(i),x=ux*.152,y=uy*.172,z=uz*.158;
-  x*=1-.2*SS_(.0,1,-uy)+jaw*.25*G_(uy+.5,.25);z*=1+.05*SS_(.2,1,uz)*G_(uy+.1,.5);p.setXYZ(i,x,y,z);
+ for(var i=0;i<n;i++){var ux=p.getX(i),uy=p.getY(i),uz=p.getZ(i),x=ux*.148,y=uy*.184,z=uz*.158;
+  x*=1-.34*SS_(-.1,1,-uy)+jaw*.25*G_(uy+.5,.25);z*=1+.05*SS_(.2,1,uz)*G_(uy+.1,.5);p.setXYZ(i,x,y,z);
   var fr=SS_(.1,.6,uz),c=sk.clone();c.lerp(blush,.5*fr*G_(Math.abs(ux)-.55,.18)*G_(uy+.12,.2));c.lerp(lipC,fr*G_(ux,.18)*G_(uy+.5,.05)*.8);
   if(stub||beard){var bm=fr*SS_(-.2,-.5,uy)*SS_(.9,.5,Math.abs(ux));c.lerp(hair,bm*(beard?.9:.35))}
   c.convertSRGBToLinear();col[i*3]=c.r;col[i*3+1]=c.g;col[i*3+2]=c.b}
  g.setAttribute('color',new T.BufferAttribute(col,3));g.computeVertexNormals();return g}
 function makeChar(o){
- var g=new T.Group(),skin=std(o.skin,{roughness:.55}),skinD=std(new T.Color(o.skin).multiplyScalar(.82).getStyle(),{roughness:.6});
+ var g=new T.Group(),skin=std(o.skin,{roughness:.6,emissive:o.skin,emissiveIntensity:.1}),skinD=std(new T.Color(o.skin).multiplyScalar(.82).getStyle(),{roughness:.6});
  var hips=new T.Group();hips.position.y=.95;g.add(hips);
  var torso=new T.Group();torso.position.y=.02;hips.add(torso);
  var top=std(o.top,{roughness:.88}),bot=std(o.bot,{roughness:.9}),shoe=std(o.shoe||'#f4f1ff',{roughness:.5}),sole=std('#efe8de',{roughness:.7});
@@ -86,7 +86,7 @@ function makeChar(o){
  if(o.necklace)mesh(new T.TorusGeometry(.085,.006,6,16),std('#d8c8a8',{metalness:.7,roughness:.3}),0,.66,.1,torso).rotation.x=Math.PI/2.4;
  // neck + head
  mesh(new T.CylinderGeometry(.074,.088,.14,14),skinD,0,.77,0,torso);
- var head=new T.Group();head.position.set(0,.79,0);head.scale.setScalar(.97);torso.add(head);
+ var head=new T.Group();head.position.set(0,.79,0);head.scale.setScalar(.9);torso.add(head);
  var hs_=o.head||1;
  var sk=mesh(sculptHead(o),std('#ffffff',{vertexColors:true,roughness:.6}),0,.13,0,head);sk.receiveShadow=false;
  [-1,1].forEach(function(s){var ear=mesh(new T.SphereGeometry(.036,10,8),skin,s*.15,.12,-.01,head);ear.scale.set(.45,1,.9);mesh(new T.SphereGeometry(.02,8,6),skinD,s*.158,.12,0,head).scale.set(.3,.9,.7);if(o.earring)mesh(new T.SphereGeometry(.014,8,6),std('#d8c8a8',{metalness:.7,roughness:.2}),s*.155,.075,0,head)});
@@ -123,7 +123,7 @@ function makeChar(o){
 
  // arms: upper (sleeve) + forearm (skin or sleeve) + hand with thumb
  var arms=[-1,1].map(function(s){var sh=new T.Group();sh.position.set(s*.262*W_,.625,0);torso.add(sh);var UA=[[.05,.07],[.0,.078],[-.08,.074],[-.17,.064],[-.28,.052]];mesh(new T.SphereGeometry(.074,16,12),o.jacket?std(o.jacket,{roughness:.85}):top,0,-.005,0,sh);mesh(loft(UA,22),o.jacket?std(o.jacket,{roughness:.85}):top,0,0,0,sh);mesh(new T.SphereGeometry(.05,12,10),o.long||o.jacket?(o.jacket?std(o.jacket):top):skin,0,-.285,0,sh);var el=new T.Group();el.position.y=-.27;sh.add(el);var fa=mesh(loft([[.02,.044],[-.05,.054],[-.14,.047],[-.27,.034]],20),o.long?top:(o.tat?std(o.skin,{map:tatTex(o.skin),roughness:.55}):skin),0,0,0,el);
-  var hand=new T.Group();hand.position.y=-.27;el.add(hand);var pm=mesh(rbox(.082,.09,.045,.022,3),skin,0,-.04,0,hand);var th=mesh(capsule(.015,.04,8),skin,s*-.046,-.035,.02,hand);th.rotation.z=s*.35;th.rotation.x=-.5;for(var f=0;f<4;f++){var fk=new T.Group();fk.position.set((f-1.5)*.02,-.085,.018);hand.add(fk);var p1=mesh(capsule(.011,.03,8),skin,0,-.016,0,fk);fk.rotation.x=-1.25;var f2=new T.Group();f2.position.y=-.034;fk.add(f2);mesh(capsule(.0105,.026,8),skin,0,-.014,0,f2);f2.rotation.x=-1.5}
+  var hand=new T.Group();hand.position.y=-.27;el.add(hand);var pm=mesh(rbox(.074,.082,.04,.02,3),skin,0,-.04,0,hand);var th=mesh(capsule(.014,.036,8),skin,s*-.04,-.03,.018,hand);th.rotation.z=s*.3;th.rotation.x=-.3;var fg=mesh(capsule(.0145,.06,8),skin,0,-.098,.012,hand);fg.scale.set(2.5,1,1.2);fg.rotation.x=-.2;
   if(o.watch&&s===1)mesh(new T.TorusGeometry(.046,.01,6,14),std('#3a3a44',{metalness:.5}),0,-.2,0,el).rotation.x=Math.PI/2;
   return{sh:sh,el:el,hand:hand}});
  // legs
