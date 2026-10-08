@@ -21,16 +21,25 @@ const parse=(text:string)=>withIds(withRegistry(JSON.parse(text)))
 async function readWithTag():Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL);return r?{state:parse(r.text),etag:r.etag}:{state:seedState(),etag:null}}
  try{return{state:parse(await readFile(path.join(root(),CONTROL),'utf8')),etag:null}}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return{state:seedState(),etag:null};throw e}}
 /** The last error the durable store gave on a read, for the admin's storage line; null once a read succeeds. */
-const health=globalThis as typeof globalThis & {fanStoreError?:string|null}
+const health=globalThis as typeof globalThis & {fanStoreError?:string|null;fanLastGood?:string;fanLastGoodAt?:number}
 /**
  * Pages read through here. If the connected store refuses (credentials not active yet, an outage), the public site
- * keeps serving the seed rather than a 500, and the admin says why; a WRITE never falls back (`mutate` reads with
+ * keeps serving a closed copy rather than a 500, and the admin says why; a WRITE never falls back (`mutate` reads with
  * `readWithTag`, which throws), so nothing is saved somewhere that will vanish.
  */
 export async function readState():Promise<State>{
- try{const r=(await readWithTag()).state;health.fanStoreError=null;return r}
- catch(e){if(!durable())throw e;health.fanStoreError=String((e as Error)?.message||e).slice(0,300);console.error('[fan-life] durable store read failed:',health.fanStoreError);return seedState()}
+ try{const r=(await readWithTag()).state;health.fanStoreError=null;remember(r);return r}
+ catch(e){if(!durable())throw e;health.fanStoreError=String((e as Error)?.message||e).slice(0,300);console.error('[fan-life] durable store read failed:',health.fanStoreError)
+  // fail CLOSED (audit A02, 8.10.2026): the last state this instance read, or — on a cold start — the seed with every
+  // club paused and every gate off. Never the seed's own publication settings: an outage must not reopen a paused club.
+  return health.fanLastGood&&Date.now()-(health.fanLastGoodAt||0)<LAST_GOOD_MS?JSON.parse(health.fanLastGood) as State:closedSeed()}
 }
+/** A copy another instance may have changed since is trusted only briefly; after that an outage serves every club closed. */
+const LAST_GOOD_MS=10*60_000
+function remember(s:State){health.fanLastGood=JSON.stringify(s);health.fanLastGoodAt=Date.now()}
+export function closedSeed():State{const s=seedState();for(const c of s.clubs){c.status='paused';c.gates=[]}return s}
+/** True when the last read failed and pages are running on a fallback (last good or closed). */
+export const stateUnavailable=()=>!!health.fanStoreError
 /** Where the control room keeps its state, for the health line in the admin. */
 export function storageInfo():{kind:'vercel-blob'|'memory'|'disk'|'temporary';durable:boolean;note:string;error?:string}{const d=durable();if(d)return health.fanStoreError?{kind:d.kind,durable:false,note:'A storage store is connected but refused the last read, so nothing can be saved until it answers.',error:health.fanStoreError}:{kind:d.kind,durable:true,note:'Saved to durable storage.'};if(onServerless())return{kind:'temporary',durable:false,note:'No storage connected: changes last until this server instance restarts. Connect a Vercel Blob store to keep them.'};return{kind:'disk',durable:true,note:`Saved on this machine (${root()}).`}}
 /** F19: entries past AUDIT_KEEP are appended to their month's archive file BEFORE control.json drops them. */
@@ -39,7 +48,7 @@ async function rotateAudit(s:State){const {kept,archive}=splitAudit(s.audit);if(
  const dir=path.join(root(),AUDIT_ARCHIVE_DIR);await mkdir(dir,{recursive:true});for(const [month,rows] of Object.entries(archive)){const f=path.join(dir,`${month}.jsonl`);const add=newArchiveLines(await readFile(f,'utf8').catch(()=>''),rows);if(add)await appendFile(f,add,{mode:0o600})}s.audit=kept}
 export function mutate<T>(fn:(s:State)=>T):Promise<T>{const op=(globals.fanWrites||Promise.resolve()).then(async()=>{const d=durable()
  if(d){// optimistic: read with its ETag, apply, write only if nobody wrote in between; otherwise re-read and re-apply
-  for(let attempt=0;attempt<5;attempt++){const {state:s,etag}=await readWithTag();const result=fn(s);s.revision++;await rotateAudit(s);if(await d.write(CONTROL,JSON.stringify(s),etag))return result}
+  for(let attempt=0;attempt<5;attempt++){const {state:s,etag}=await readWithTag();const result=fn(s);s.revision++;await rotateAudit(s);if(await d.write(CONTROL,JSON.stringify(s),etag)){remember(s);return result}}
   throw new Error('The control room is busy (another change landed at the same moment). Try again.')}
  const s=await readState();const result=fn(s);s.revision++;await mkdir(root(),{recursive:true});await rotateAudit(s);const temp=path.join(root(),`${randomUUID()}.tmp`);await writeFile(temp,JSON.stringify(s),{mode:0o600});await rename(temp,path.join(root(),CONTROL));return result});globals.fanWrites=op.catch(()=>undefined);return op}
 /** Archived months, newest first, for the control room or an export. */

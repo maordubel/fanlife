@@ -73,8 +73,10 @@ export function activationCheck(s:Pick<ClubSummary,'engine'|'data'>,gatesOn:read
 }
 
 export async function clubSummary(c:Club,preview=evaluationMode()):Promise<ClubSummary>{
- const reg=REGISTRY.find(r=>r.id===c.id),hasProvider=CORE_CLUB_IDS.includes(c.id)||REVIEW_CLUB_IDS.includes(c.id)
- const loaded=hasProvider?await loadClub(c.id).catch(()=>null):null
+ const reg=REGISTRY.find(r=>r.id===c.id)
+ // a repository pack, or a desk pack built from the owner's approvals (lib/master/deskPack.ts)
+ const loaded=reg||CORE_CLUB_IDS.includes(c.id)?await loadClub(c.id).catch(()=>null):null
+ const hasProvider=CORE_CLUB_IDS.includes(c.id)||REVIEW_CLUB_IDS.includes(c.id)||!!loaded
  let data:ClubSummary['data']=null
  if(loaded){
   const d=loaded.data,diagnostics:Diagnostic[]=loaded.diagnostics
@@ -86,7 +88,7 @@ export async function clubSummary(c:Club,preview=evaluationMode()):Promise<ClubS
  const engine={inRegistry:!!reg,hasProvider,reviewOnly:REVIEW_CLUB_IDS.includes(c.id)}
  const next:string[]=[]
  if(!engine.inRegistry)next.push('Register the club (identity, host) before building a pack.')
- else if(!engine.hasProvider)next.push('Build a first pack: stage research, run the parity wave, connect the provider.')
+ else if(!engine.hasProvider)next.push('Approve the players research found, then build game data in the Launch view.')
  if(data){for(const g of data.gates.filter(g=>!g.full).slice(0,3))next.push(`Gate ${g.number} ${g.state==='LOCKED'?'locked':'partial'}: ${g.reason||'more eligible data'}`)}
  const st=staging(c.id)
  if(st.present&&!st.approvedForProduction)next.push('A staged research package is waiting for review.')

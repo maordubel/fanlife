@@ -19,6 +19,9 @@ import {exportArchiveStaging} from '@/lib/research/staging'
 import {isReadOnlyError,READ_ONLY_HINT} from '@/lib/research/paths'
 import {runPipeline,recordPipeline,lastPipelineRuns,AUTOMATION_ACTOR} from '@/lib/master/automation'
 import type {Club} from '@/lib/master/types'
+import {launchView} from '@/lib/master/launch'
+import {buildDeskPack,writeDeskPack} from '@/lib/master/deskPack'
+import {invalidateClub,hasStaticPack} from '@/lib/clubs/resolver'
 export const dynamic='force-dynamic'
 export const maxDuration=60
 const json=(data:unknown,status=200)=>NextResponse.json(data,{status,headers:{'Cache-Control':'no-store'}})
@@ -43,6 +46,7 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  if(a==='research/runs')return json(await readRuns(q.get('club')||undefined))
  if(a.startsWith('summary/')){const s=await readState(),c=s.clubs.find(c=>c.id===a.slice(8));if(!c)return json({error:'Club not found'},404);return json(await clubSummary(c))}
  // A17: findings and sources are paged and filtered on the server, never shipped whole
+ if(a==='launch'){const c=(await readState()).clubs.find(c=>c.id===q.get('club'));if(!c)return json({error:'Club not found'},404);return json(await launchView(c,await clubSummary(c)))}
  if(a==='evidence'){const s=await readState(),c=s.clubs.find(c=>c.id===q.get('club'));if(!c)return json({error:'Club not found'},404);const kind=q.get('kind')==='sources'?'sources':'findings',state=q.get('state')||'pending',page=Math.max(1,Number(q.get('page'))||1);const rows=kind==='sources'?c.sources.filter(x=>state==='all'||(state==='pending'?!x.reviewed||!!x.incoming:x.reviewed)):c.findings.filter(f=>state==='all'||(state==='pending'?isPending(f):!!f.decision));return json({kind,state,page,pages:Math.max(1,Math.ceil(rows.length/PAGE)),total:rows.length,version:c.version,rows:rows.slice((page-1)*PAGE,page*PAGE)})}
  if(a==='audit'){const s=await readState(),club=q.get('club'),page=Math.max(1,Number(q.get('page'))||1),rows=[...s.audit].reverse().filter(x=>!club||x.target===club);return json({page,pages:Math.max(1,Math.ceil(rows.length/PAGE)),rows:rows.slice((page-1)*PAGE,page*PAGE)})}
  // F19: entries rotated out of control.json stay readable, one month at a time
@@ -61,6 +65,19 @@ if(a==='archive/source/save'){const id=slug(b.clubId),v=validateArchiveSource(b.
 if(a==='archive/source/remove'){const id=slug(b.clubId),pid=slug(b.providerId);await removeArchiveSource(id,pid);await mutate(s=>{audit(s,'archive.source.removed',id,pid,by);return true});return json(await loadClubProfile(id))}
 if(a==='pipeline/run'){const clubs=b.clubId?[slug(b.clubId)]:undefined,report=await runPipeline({clubs,maxRequestsPerClub:6});await recordPipeline(report,by);return json(report)}
 // publish every gate whose COMPILED data is playable, in one click — still passes the activation check, still the owner's click
+// LAUNCH (8.10.2026): the owner approves the players research read, in one click, after seeing the list and the
+// sources they come from. That click is also the owner's review of those sources. Nothing here is automatic.
+if(a==='launch/approve-players')return json(await mutate(s=>{const c=s.clubs.find(c=>c.id===b.clubId);if(!c||c.version!==b.version)throw new Conflict('Club changed. Reload first.');const ids=new Set(Array.isArray(b.ids)?b.ids.filter((x:unknown)=>typeof x==='string').slice(0,2000):[]);if(!ids.size)throw new Error('Choose at least one player.')
+ const rows=c.findings.filter(f=>ids.has(f.id!)&&f.record?.kind==='player'&&isPending(f)),at=new Date().toISOString(),reviewed=new Set<string>()
+ for(const f of rows)for(const id of f.sources){const src=c.sources.find(x=>x.id===id);if(!src)throw new Error(`Source ${id} is missing — run research again.`);if(src.incoming)throw new Error(`“${src.title}” changed since you reviewed it. Compare it in Evidence first.`);if(!src.reviewed){src.reviewed=true;reviewed.add(src.title)}}
+ for(const f of rows){f.decision='approved';f.approved=true;f.decidedAt=at;delete f.reason}
+ c.version++;audit(s,'launch.players-approved',c.id,`${rows.length} players approved${reviewed.size?` · sources reviewed: ${[...reviewed].join('; ')}`:''}`,{...by,after:`${rows.length} approved`})
+ return {approved:rows.length,sourcesReviewed:reviewed.size,version:c.version}}))
+if(a==='launch/build'){const c=(await readState()).clubs.find(c=>c.id===b.clubId);if(!c)throw new Error('Club not found.');if(hasStaticPack(c.id))throw new Error('This club plays from its repository pack; approved rows reach it through a reviewed build by a developer.')
+ const pack=buildDeskPack(c,by.actor||'owner');if(!pack.players.length)throw new Error('Nothing approved to build from yet — approve players first.')
+ await writeDeskPack(pack);invalidateClub(c.id)
+ await mutate(s=>{audit(s,'launch.built',c.id,`Game data built from ${pack.players.length} approved players (${pack.sources.length} sources)`,{...by,after:`${pack.players.length} players`})})
+ const fresh=(await readState()).clubs.find(x=>x.id===c.id)!;return json(await launchView(fresh,await clubSummary(fresh)))}
 if(a==='clubs/open-playable'){const pre=(await readState()).clubs.find(c=>c.id===b.id);if(!pre)throw new Error('Club not found.');const sum=await clubSummary(pre),gates=(sum.data?.gates||[]).filter(g=>g.dataPlayable).map(g=>g.number);const check=await clubSummary({...pre,gates});if(!gates.length||!check.activation.allowed)throw new Error(`Cannot open: ${(gates.length?check.activation.reasons:['No gate has playable compiled data yet.']).join(' ')}`)
  return json(await mutate(s=>{const c=s.clubs.find(c=>c.id===b.id);if(!c||c.version!==b.version)throw new Conflict('Club changed. Reload before saving.');const before=JSON.stringify({status:c.status,gates:c.gates});Object.assign(c,{status:'live',gates,version:c.version+1});audit(s,'club.opened-playable',c.id,`${gates.length} gates with playable data`,{...by,before,after:JSON.stringify({status:c.status,gates}),reason:typeof b.reason==='string'?b.reason.slice(0,500):undefined});return c}))}
 if(a==='clubs/update'){
