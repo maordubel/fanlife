@@ -5,6 +5,8 @@ import {SlideSheet} from '@/components/stage/SlideSheet'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {tr,shortName} from '@/components/clubs/rumble/shared'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {xiShare} from '@/lib/share/v3/adapters'
 import {FORMATIONS} from '@/lib/game/formations'
 import {fitOf} from '@/lib/xi/roles'
 import type {ClubPlayer} from '@/lib/clubs/contract'
@@ -33,6 +35,9 @@ const rowsOf=(xi:XIState)=>{
  for(const s of slotsOf(xi)){const r=by.get(s.y)??[];r.push(s.slotId);by.set(s.y,r)}
  return [...by.entries()].sort((a,b)=>a[0]-b[0]).map(([,ids])=>ids.sort((a,b)=>slotsOf(xi).find(s=>s.slotId===a)!.x-slotsOf(xi).find(s=>s.slotId===b)!.x))
 }
+
+/** the eleven for the share card: keeper first, then each line from the back, left to right */
+const cardLines=(xi:XIState,byId:ReadonlyMap<string,ClubPlayer>)=>{const rows=rowsOf(xi);if(!rows[0]?.includes('GK'))rows.reverse();return rows.map(r=>r.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p?shortName(p.name):''}))}
 
 export type ClubXIProps={players:ClubPlayer[];club:string;clubName:string;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy}
 
@@ -181,7 +186,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
   <SlideSheet open={sheet==='result'} onClose={closeSheet} title={t(kind==='best'?'xi.poster.mine':'xi.poster.worst')} size="full" closeLabel={copy['play.close']}
    footer={<div className={css.actions}>
     <button type="button" className={`${css.tool} ${css.primary}`} onClick={lockIn}>{copy.save}</button>
-    <button type="button" className={css.tool} onClick={share}>{t('xi.share')}</button>
+    {kind==='best'&&complete?<ShareComposer label={t('xi.share')} draft={xiShare(club,{formation:xi.formation,lines:cardLines(xi,byId),captain:xi.captain?shortName(byId.get(xi.captain)?.name||'')||null:null})}/>:<button type="button" className={css.tool} onClick={share}>{t('xi.share')}</button>}
     <button type="button" className={css.tool} onClick={closeSheet}>{t('xi.poster.keep')}</button></div>}>
    <div className={css.poster} data-testid="xi-poster">
     <div className={css.posterHead}><p className={css.posterKicker}>{clubName} · {xi.formation}</p><h2 className={css.posterTitle}>{t(kind==='best'?'xi.poster.mine':'xi.poster.worst')}</h2></div>
