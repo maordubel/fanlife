@@ -124,6 +124,19 @@
 .posBtn span { font-size: 13px; font-weight: 700; }
 .posBtn[aria-pressed='true'] { background: var(--pl-lit); color: var(--pl-on); }
 
+/* ------------------------------------------------------------- rulebook layer: standing, receipts, offline, undo */
+.state { font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: .5px; text-transform: uppercase; color: var(--mag-muted); }
+.state[data-standing='counted'] { color: var(--pl-ink); }
+.state[data-standing='counted']::before { content: '\2713\00a0'; }
+.receipt { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 10px 10px 44px; padding: 6px 8px; border-inline-start: 4px solid var(--pl-ink); background: color-mix(in srgb, var(--pl-ink) 6%, var(--mag-card)); font-size: 12px; line-height: 1.35; }
+.receipt[data-retired='true'] { opacity: .85; }
+.offline { margin: 0; padding: 8px 10px; border: 3px solid var(--pl-ink); background: var(--mag-card); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: .5px; text-transform: uppercase; }
+.undo { min-height: 44px; border: 2px solid var(--pl-ink); background: transparent; color: var(--pl-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: .5px; text-transform: uppercase; cursor: pointer; }
+.shareRow { display: flex; flex-direction: column; gap: 6px; }
+.shareRow > button, .shareRow > div { width: 100%; }
+.paperHead .shorter { display: block; }
+@media (max-width: 380px) { .receipt { margin-inline-start: 38px; } }
+
 @keyframes plStamp { 0% { transform: rotate(-6deg) scale(1.7); opacity: 0; } 100% { transform: rotate(-1.5deg) scale(1); opacity: 1; } }
 
 /* ------------------------------------------------------------- desktop: its own design */

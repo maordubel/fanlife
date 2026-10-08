@@ -2,7 +2,7 @@
 import {useEffect,useMemo,useRef,useState} from 'react'
 import {SlideSheet} from '@/components/stage/SlideSheet'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
-import {NUMBERS,POSITION_CODES,poolFor,type Pos,type PoolFilter} from '@/lib/clubs/polls-model'
+import {NUMBERS,POSITION_CODES,poolFor,type PoolFilter} from '@/lib/clubs/polls-model'
 import type {ClubPlayer} from '@/lib/clubs/contract'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import css from './polls.module.css'
@@ -12,24 +12,22 @@ const PAGE=40
 const years=(p:ClubPlayer)=>`${p.fromYear??'?'}–${p.toYear??'?'}`
 
 /**
- * The player picker: a sheet with search, the question's own position as a removable chip, and "from my XI".
- * Opens on the question's documented position; the men no source places are one chip away (remove it).
+ * The player picker: a sheet with search and "from my XI". `players` is ONLY the people the line's evidence allows
+ * (PO-R02/R03): the picker cannot be talked into offering a non-keeper as best keeper, so there is no chip to remove.
  */
-export function PlayerPicker({open,onClose,title,players,wardrobe,contentLocale,opens,mine,current,closeLabel,searchLabel,posLabel,t,onPick}:{
- open:boolean;onClose:()=>void;title:string;players:ClubPlayer[];wardrobe:RumbleWardrobe;contentLocale:string;opens:Pos|null;mine:ReadonlySet<string>;current:string|undefined
+export function PlayerPicker({open,onClose,title,players,wardrobe,contentLocale,mine,current,closeLabel,searchLabel,posLabel,t,onPick}:{
+ open:boolean;onClose:()=>void;title:string;players:ClubPlayer[];wardrobe:RumbleWardrobe;contentLocale:string;mine:ReadonlySet<string>;current:string|undefined
  closeLabel:string;searchLabel:string;posLabel:(p:string)=>string;t:T;onPick:(id:string,from:HTMLElement|null)=>void
 }){
- const [f,setF]=useState<PoolFilter>({q:'',pos:opens,mine:false}),[limit,setLimit]=useState(PAGE),input=useRef<HTMLInputElement>(null)
- // each opening starts from the question's own position, with nothing typed
- useEffect(()=>{if(open){setF({q:'',pos:opens,mine:false});setLimit(PAGE)}},[open,opens])
+ const [f,setF]=useState<PoolFilter>({q:'',mine:false}),[limit,setLimit]=useState(PAGE),input=useRef<HTMLInputElement>(null)
+ useEffect(()=>{if(open){setF({q:'',mine:false});setLimit(PAGE)}},[open])
  const list=useMemo(()=>poolFor(players,f,mine).sort((a,b)=>(b.id===current?1:0)-(a.id===current?1:0)||a.name.localeCompare(b.name,contentLocale)),[players,f,mine,current,contentLocale])
  return <SlideSheet open={open} onClose={onClose} title={title} size="full" closeLabel={closeLabel}>
   <div className={css.pickBody}>
    <div className={css.pickTop}>
     <input ref={input} type="search" className={css.search} value={f.q} placeholder={searchLabel} aria-label={searchLabel} data-testid="polls-search" onChange={e=>{setF(x=>({...x,q:e.target.value}));setLimit(PAGE)}}/>
-    {(opens||mine.size>0)&&<div className={css.chipRow} role="group" aria-label={title}>
-     {opens&&<button type="button" className={css.chip} aria-pressed={f.pos!==null} onClick={()=>{setF(x=>({...x,pos:x.pos?null:opens}));setLimit(PAGE)}}>{t('tv.pick.only',{pos:posLabel(opens)})}</button>}
-     {mine.size>0&&<button type="button" className={css.chip} aria-pressed={f.mine} onClick={()=>{setF(x=>({...x,mine:!x.mine}));setLimit(PAGE)}}>{t('tv.pick.mine')}</button>}
+    {mine.size>0&&<div className={css.chipRow} role="group" aria-label={title}>
+     {<button type="button" className={css.chip} aria-pressed={f.mine} onClick={()=>{setF(x=>({...x,mine:!x.mine}));setLimit(PAGE)}}>{t('tv.pick.mine')}</button>}
     </div>}
    </div>
    {list.length===0

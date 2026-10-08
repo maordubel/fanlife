@@ -20,8 +20,8 @@ describe('gate 10 · daily and challenge are dealt from a tag', () => {
   const first = (await startMysteryMode(id, data.version, 'duel', '482913'))!
   expect(first.shown).toBe(1); expect(first.result).toBeUndefined()
   const cookie = request.values.get(modeKey('duel', id))!, session = open<{tag: string; run: RunState}>(cookie)!
-  const idx = pickIndex(id, data.version, '482913', clubMystery(data).poolSize)
-  expect(session.run.qid).toBe(data.mysteries[idx]!.id)
+  const game = clubMystery(data), idx = pickIndex(id, data.version, '482913', game.competitiveSize)
+  expect(session.run.qid).toBe([...game.evaluations].filter(([, e]) => e.practice.ok && e.competitive.ok)[idx]![0])
   const target = data.mysteries.find(q => q.id === session.run.qid)!.value.targetPlayerId
   expect(cookie).not.toContain(target); expect(JSON.stringify(first)).not.toContain(target)
   expect((await startMysteryMode(id, data.version, 'duel', '482913'))!.rid).toBe(first.rid)

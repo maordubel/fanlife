@@ -1,6 +1,6 @@
 'use client'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
-import {NAME_MAX,SLIP,filled,type Slip} from '@/lib/clubs/polls-model'
+import {NAME_MAX,filled,type Ballot,type Slip} from '@/lib/clubs/polls-model'
 import type {ClubPlayer} from '@/lib/clubs/contract'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import css from './polls.module.css'
@@ -18,11 +18,11 @@ export function answerOf(slip:Slip,qid:string,byId:ReadonlyMap<string,ClubPlayer
  * the number on your back, where you play, the other picks and how many carry a reason. It never prints a count of
  * other people, a rank or a score.
  */
-export function SupporterCard({slip,byId,wardrobe,clubName,contentLocale,t,editable,onName}:{
- slip:Slip;byId:ReadonlyMap<string,ClubPlayer>;wardrobe:RumbleWardrobe;clubName:string;contentLocale:string;t:T;editable:boolean;onName:(v:string)=>void
+export function SupporterCard({slip,ballot,byId,wardrobe,clubName,contentLocale,t,editable,onName}:{
+ slip:Slip;ballot:Ballot;byId:ReadonlyMap<string,ClubPlayer>;wardrobe:RumbleWardrobe;clubName:string;contentLocale:string;t:T;editable:boolean;onName:(v:string)=>void
 }){
- const fav=slip.picks.favourite?byId.get(slip.picks.favourite)??null:null,n=filled(slip),reasoned=SLIP.filter(q=>slip.reasons[q.id]).length
- const rest=SLIP.filter(q=>q.id!=='favourite'&&q.id!=='number'&&q.id!=='position')
+ const fav=slip.picks.favourite?byId.get(slip.picks.favourite)??null:null,n=filled(slip,ballot),reasoned=ballot.questions.filter(q=>slip.reasons[q.id]).length
+ const rest=ballot.questions.filter(q=>q.id!=='favourite'&&q.id!=='number'&&q.id!=='position')
  return <article className={css.card} data-testid="polls-card" data-filled={n}>
   <header className={css.cardHead}><p className={css.cardKicker}>{t('tv.card.kicker')}</p><h3 className={css.cardTitle} lang={contentLocale}>{t('tv.card.title',{club:clubName})}</h3></header>
   <div className={css.cardBody}>
@@ -38,7 +38,7 @@ export function SupporterCard({slip,byId,wardrobe,clubName,contentLocale,t,edita
     </div>
    </div>
    <ul className={css.cardList}>{rest.map(q=>{const a=answerOf(slip,q.id,byId,t);return <li key={q.id} data-empty={a===null}><span>{t(`tv.q.${q.id}`)}</span><b lang={contentLocale} dir="auto">{a??'—'}</b></li>})}</ul>
-   <p className={css.cardFoot}>{n===0?t('tv.card.empty'):`${t('tv.count',{n})} · ${t('tv.card.reasoned',{n:reasoned})}`}</p>
+   <p className={css.cardFoot}>{n===0?t('tv.card.empty'):`${t('tv.count',{n,m:ballot.length})} · ${t('tv.card.reasoned',{n:reasoned,m:ballot.length})}`}</p>
   </div>
  </article>
 }
