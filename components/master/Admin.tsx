@@ -23,11 +23,11 @@ export type AdapterInfo={id:string;label:string;needsQuery:boolean;capabilities:
 
 export type DeskSection='overview'|'clubs'|'data'|'audience'|'operations'|'settings'
 export type DeskOps={storage:StorageRow[];integrations:Integration[];release:{commit:string|null;branch:string|null;env:string;evaluation:boolean}}
-const CLUB_VIEWS=[['summary','Summary'],['decisions','Evidence'],['research','Research'],['publish','Readiness'],['history','History']] as const
+const CLUB_VIEWS=[['launch','Launch'],['summary','Summary'],['decisions','Evidence'],['research','Research'],['publish','Readiness'],['history','History']] as const
 type ClubView=typeof CLUB_VIEWS[number][0]
 // the URL words (plan §3) ↔ the club file's own tab names
-const VIEW_IN:Record<string,ClubView>={summary:'summary',evidence:'decisions',research:'research',readiness:'publish',history:'history'}
-const VIEW_OUT:Record<ClubView,string>={summary:'summary',decisions:'evidence',research:'research',publish:'readiness',history:'history'}
+const VIEW_IN:Record<string,ClubView>={launch:'launch',summary:'summary',evidence:'decisions',research:'research',readiness:'publish',history:'history'}
+const VIEW_OUT:Record<ClubView,string>={launch:'launch',summary:'summary',decisions:'evidence',research:'research',publish:'readiness',history:'history'}
 
 /**
  * The Editor's Desk (plan §3–§9): one control room in six sections. Section, club and subview live in the URL, so a
@@ -82,9 +82,9 @@ export function Admin({initial,summaries,adapters,runs,display,storage,section,v
     <p className="cr-layers"><span data-layer="research">Research · {summary.research.reviewedSources}/{summary.research.sources} sources · {summary.research.findingsPending} to decide</span><span data-layer="data">Data · {summary.data?`${summary.data.dataPlayable}/13 playable`:'no pack'}</span><span data-layer="publication">Publication · {summary.publication.label} · {summary.publication.openNow} open now</span></p>
     {summary.next[0]&&<p className="desk-next"><b>Next:</b> {summary.next[0]}</p>}
    </header>
-   <nav className="desk-tabs" aria-label="Club workspace">{CLUB_VIEWS.map(([k,l])=>{const v=VIEW_IN[view||'summary']||'summary';return <button key={k} type="button" className="min-h-tap" aria-current={v===k?'page':undefined} onClick={()=>go({view:VIEW_OUT[k]})}>{l}{k==='decisions'&&summary.research.findingsPending?` (${summary.research.findingsPending})`:''}</button>})}</nav>
-   {(VIEW_IN[view||'summary']||'summary')==='history'?<Activity key={club.id} club={club.id} api={api}/>:
-    <ClubFile key={`${club.id}-${club.version}`} club={club} summary={summary} adapters={adapters} jobs={state.jobs.filter(j=>j.clubId===club.id)} api={api} onChange={()=>refresh(club.id)} view={(VIEW_IN[view||'summary']||'summary') as ClubFileView} onView={v=>go({view:VIEW_OUT[v]})}/>}
+   <nav className="desk-tabs" aria-label="Club workspace">{CLUB_VIEWS.map(([k,l])=>{const v=VIEW_IN[view||'launch']||'launch';return <button key={k} type="button" className="min-h-tap" aria-current={v===k?'page':undefined} onClick={()=>go({view:VIEW_OUT[k]})}>{l}{k==='decisions'&&summary.research.findingsPending?` (${summary.research.findingsPending})`:''}</button>})}</nav>
+   {(VIEW_IN[view||'launch']||'launch')==='history'?<Activity key={club.id} club={club.id} api={api}/>:
+    <ClubFile key={`${club.id}-${club.version}`} club={club} summary={summary} adapters={adapters} jobs={state.jobs.filter(j=>j.clubId===club.id)} api={api} onChange={()=>refresh(club.id)} view={(VIEW_IN[view||'launch']||'launch') as ClubFileView} onView={v=>go({view:VIEW_OUT[v]})}/>}
    <p className="desk-actions"><Link className="desk-btn ghost" href={`/master/core?club=${club.id}`}>Compiler diagnostics ↗</Link><Link className="desk-btn ghost" href={deskHref('data',{club:club.id})}>Sources & collection →</Link><Link className="desk-btn ghost" href={`/clubs/${club.id}`}>Club page ↗</Link></p>
   </>}
 
