@@ -154,6 +154,7 @@ export function PickRail({
   era: eraProp,
   onEra,
   labels = HE_RAIL_LABELS,
+  onQuery,
 }: {
   /** what is being picked for — the slot's role, the band */
   target: string
@@ -174,8 +175,14 @@ export function PickRail({
   era?: number | null
   onEra?: (next: number | null) => void
   labels?: RailLabels
+  /** the search field's text, as typed — a caller with hundreds of men feeds `items` from it (the rail still filters what it is given) */
+  onQuery?: (query: string) => void
 }) {
-  const [query, setQuery] = useState('')
+  const [query, setQueryState] = useState('')
+  const setQuery = (next: string) => {
+    setQueryState(next)
+    onQuery?.(next)
+  }
   const [searching, setSearching] = useState(false)
   const searchRef = useRef<HTMLInputElement | null>(null)
   useEffect(() => {

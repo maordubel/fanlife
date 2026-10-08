@@ -197,16 +197,14 @@ try {
  await page.goto(`${base}/clubs/${xiClub}/xi`)
  await page.getByTestId('xi-builder').waitFor()
  for(let i=0;i<11;i++){
-  await page.getByTestId('xi-pitch').locator('button').nth(i).click()
-  await page.getByRole('checkbox',{name:'Show suitable or unknown positions',exact:true}).check()
-  const selected=await page.getByTestId('xi-pitch').locator('button span').allTextContents()
-  const options=page.getByTestId('xi-players').locator('button')
-  let chosen=false
-  for(let n=0;n<await options.count();n++){const name=await options.nth(n).locator('span').innerText();if(!selected.includes(name)){await options.nth(n).click();chosen=true;break}}
-  assert(chosen,`No available player for slot ${i}`)
+  await page.locator('[data-slot]:not([data-slot="twelfth"])').nth(i).click()
+  const options=page.locator('[data-rail-item]:not([disabled])')
+  await options.first().waitFor()
+  await options.first().click()
  }
- await page.getByTestId('xi-complete').waitFor();await page.getByRole('button',{name:'Save my XI',exact:true}).click()
- await page.getByRole('status').filter({hasText:'Your XI is saved'}).waitFor()
+ // the eleventh pick opens the result poster, whose Save button is the lock-in
+ await page.getByTestId('xi-complete').waitFor();await page.getByRole('button',{name:'Save my XI',exact:true}).last().click()
+ await page.getByRole('status').filter({hasText:'Your XI is saved'}).first().waitFor()
  await page.reload();await page.getByTestId('xi-complete').waitFor()
  await identityCheck(page,xiClub,'.club-surface',`/tmp/fanlife-m1-browser/${xiClub}-xi.png`)
  const saved=await page.evaluate(club=>JSON.parse(localStorage.getItem(`fan-life:club:${club}:xi:v1`)),xiClub)
