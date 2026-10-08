@@ -1,16 +1,10 @@
 import 'server-only'
-import {createTriviaEngine,type RunSpec} from '@/lib/game/trivia-engine'
+import type {RunSpec} from '@/lib/game/trivia-engine'
+import {clubBank} from './trivia-deck'
 import {dealMemoryCandidates} from '@/lib/game/memory-engine'
 import type {ClubData} from './contract'
-const cache=new Map<string,ReturnType<typeof createTriviaEngine>>()
-export function clubTrivia(club:ClubData){
- const key=`${club.identity.id}:${club.version}`
- if(!cache.has(key)){
-  const byId=new Map(club.trivia.questions.map(q=>[q.id,q]))
-  cache.set(key,createTriviaEngine({allQuestions:()=>club.trivia.questions,questionById:id=>byId.get(id),poolValues:id=>id&&Object.hasOwn(club.trivia.pools,id)?club.trivia.pools[id]!:[],factById:()=>undefined}))
- }
- return cache.get(key)!
-}
+/** the club's trivia engine, over its SANITISED bank (`trivia-bank.ts` — unfair questions are named and kept out) */
+export function clubTrivia(club:ClubData){return clubBank(club).engine}
 export function triviaSpec(topic?:string,era?:string,hard?:string):RunSpec {
  const topics=['europe','players','history','numbers','songs','kits','derby'] as const
  const decade=Number(era)

@@ -14,6 +14,29 @@ import {ADMIN_COOKIE,issueToken} from '../../lib/master/admin-token.ts'
 import {randomBytes} from 'node:crypto'
 // a gate is expected open or locked from the COMPILED data — packs grow, and a hand-written "locked" goes stale
 const playable=async(slug,key)=>gateAvailability((await loadClub(slug)).data,key).playable
+/** gate 6: card ids are positions and a closed card names nothing, so a wall is solved the way a person solves it — by trying */
+async function playMemoryWall(page){
+ await page.getByTestId('memory-start').click()
+ await page.getByTestId('memory-board').waitFor()
+ const flash=page.getByTestId('memory-skip');if(await flash.count())await flash.click().catch(()=>{})
+ await page.waitForFunction(()=>document.querySelector('[data-testid="memory-run"]')?.getAttribute('data-phase')==='play')
+ const total=await page.locator('[data-testid="memory-board"] button').count()/2
+ const found=async()=>Number((await page.getByTestId('memory-pairs').innerText()).split('/')[0])
+ const closed=()=>page.locator('[data-testid="memory-board"] button[data-state="closed"]')
+ while(await found()<total){
+  const before=await found(),first=(await closed().first().getAttribute('data-card-id'))
+  const others=await closed().evaluateAll((nodes,id)=>nodes.map(n=>n.dataset.cardId).filter(x=>x!==id),first)
+  for(const other of others){
+   await page.locator(`[data-card-id="${first}"]`).click()
+   await page.locator(`[data-card-id="${other}"]`).click()
+   await page.waitForTimeout(950)
+   if(await found()>before)break
+  }
+  assert(await found()>before,'Memory wall could not be solved by trying every mate')
+ }
+ return total
+}
+
 async function expectGate(p,url,slug,key,openId){await p.goto(url);if(await playable(slug,key)){await p.getByTestId(openId).first().waitFor()}else{await p.getByTestId('gate-locked').waitFor();assert.equal(await p.getByTestId(openId).count(),0)}}
 const port=process.env.M1_BROWSER_PORT||'3217',base=`http://127.0.0.1:${port}`
 // the control room is behind the owner key (rule 97): the smoke server gets a throwaway key and the browser a session for it
@@ -166,12 +189,8 @@ try {
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-trivia.png`)
   await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('trivia-start').click();await page.getByTestId('trivia-question').waitFor();assert.equal(new URL(page.url()).searchParams.get('r'),'1')
   await page.goto(`${base}/clubs/${slug}/memory?seed=42`)
-  const cards=await page.getByTestId('memory-board').locator('button').evaluateAll(nodes=>nodes.map(n=>n.dataset.cardId)),pairs=[...new Set(cards.map(id=>id.slice(0,-2)))]
-  assert(pairs.length>=2)
-  for(let i=0;i<pairs.length;i++){
-   for(const side of ['a','b'])await page.locator(`[data-card-id="${pairs[i]}:${side}"]`).click()
-   await page.getByText(`Pairs found: ${i+1}/${pairs.length}`,{exact:true}).waitFor()
-  }
+  const pairs=await playMemoryWall(page)
+  assert(pairs>=2)
   await page.getByTestId('memory-result').waitFor()
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-memory.png`)
   await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('memory-board').waitFor();assert.equal(await page.getByTestId('memory-result').count(),0)
@@ -218,7 +237,7 @@ try {
  await page.getByTestId('trivia-start').click();await page.getByTestId('trivia-question').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Shared trivia RTL overflow')
  await page.goto(`${base}/clubs/hapoel-tel-aviv/memory?seed=42&lang=he`)
- await page.getByTestId('memory-board').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
+ await page.getByTestId('memory-start').click();await page.getByTestId('memory-board').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Shared memory RTL overflow')
  await page.goto(`${base}/clubs/hapoel-tel-aviv/xi?lang=he`)
  await page.getByTestId('xi-complete').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
@@ -285,13 +304,13 @@ try {
  assert.equal(await hostPage.getByTestId('timeline-hand').count(),0)
  assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())),'Cross-tenant content leaked into mismatched host')
 
- for(const [entry,testId] of [['trivia','trivia-start'],['memory','memory-board'],['archive','archive-entry'],['polls','polls-board']]){
+ for(const [entry,testId] of [['trivia','trivia-start'],['memory','memory-start'],['archive','archive-entry'],['polls','polls-board']]){
   await hostPage.goto(`http://olympiacos.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/olympiacos/${entry}`)
   await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())))
  }
  await expectGate(hostPage,`http://olympiacos.localhost:${port}/blind-cow?lang=he`,'olympiacos','blind-cow','mystery-board');assert.equal(new URL(hostPage.url()).pathname,'/clubs/olympiacos/blind-cow')
  await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/hapoel-tel-aviv/blind-cow`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId('mystery-board').count(),0)
- for(const [entry,testId] of [['timeline','timeline-hand'],['trivia','trivia-start'],['memory','memory-board'],['archive','archive-entry'],['xi','xi-builder'],['polls','polls-board']]){
+ for(const [entry,testId] of [['timeline','timeline-hand'],['trivia','trivia-start'],['memory','memory-start'],['archive','archive-entry'],['xi','xi-builder'],['polls','polls-board']]){
   await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/hapoel-petah-tikva/${entry}`)
   await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())))
  }
