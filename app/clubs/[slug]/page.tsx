@@ -70,10 +70,19 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
    <ClubRounds clubId={id} locale={locale} names={names} none={copy.homeRoundsNone}/>
    {pickGate&&<div className="club-pick"><p className="mag-kicker">{copy.homeToday}</p><GateTickets clubId={id} states={states} keys={[pickGate.key]} locale={locale} games={games} pattern={lv?.pattern} closedNote={copy.paused} feature={1}/></div>}
   </section>}
-  <section className="mag-section mag-homepair">
+  <section className="mag-section" id="life-block">
    <article className="mag-homecard ink" id="life" data-life-entry={life.state}><Dye art="face" className="mag-homeface"/><div><p className="mag-kicker">LIFE</p><h2>{copy.lifeTitle}</h2>{life.href?<><p>{copy.lifeOpen}</p><Link className="mag-cta red" href={life.href}>{copy.life}</Link></>:<p>{copy.lifeWorkshop}</p>}</div></article>
-   <article className="mag-homecard"><div className="mag-homeshirts"><Dye art="shirt" soft/><Dye art="shirt" soft ink={theme.secondary}/></div><div><p className="mag-kicker">{copy.homeColours}</p><h2>{fill(copy.homeColoursTitle)}</h2><p>{world.colours?.line??copy.homeColoursNote}</p><Link className="mag-cta red" href={clubHref(id,'history',locale)}>{copy.homeHistoryCta} →</Link></div></article>
   </section>
+  {core&&<section className="mag-section" id="shirts">
+   <hr className="mag-rule"/>
+   <div className="mag-head"><div><p className="mag-kicker">{copy.shirtsKicker}</p><h2 className="mag-h2">{copy.shirtsTitle}</h2><p className="mag-fine">{fill(copy.shirtsLead)}</p></div></div>
+   <div className="mag-shirtdoors">
+    <Link className="mag-homecard min-h-tap" href={`/shirts?club=${c.id}`}><div><h3>{copy.shirtsArchive}</h3><p>{copy.shirtsArchiveNote}</p></div></Link>
+    <Link className="mag-homecard min-h-tap" href="/closet"><div><h3>{copy.shirtsOwn}</h3><p>{copy.shirtsOwnNote}</p></div></Link>
+    <Link className="mag-homecard min-h-tap" href="/market"><div><h3>{copy.shirtsSell}</h3><p>{copy.shirtsSellNote}</p></div></Link>
+    <Link className="mag-homecard min-h-tap" href="/auction"><div><h3>{copy.shirtsAuction}</h3><p>{copy.shirtsAuctionNote}</p></div></Link>
+   </div>
+  </section>}
   {core&&<section className="mag-section" id="terrace"><hr className="mag-rule"/><div className="mag-hometerrace"><Dye art="terrace-scarf" className="mag-homescarf"/><div className="mag-head"><div><p className="mag-kicker">{copy.homeTerrace}</p><h2 className="mag-h2">{world.terrace?.name??copy.homeTerraceTitle}</h2></div><Link className="mag-chip" href={clubHref(id,'terrace',locale)}>{world.terraceTab} →</Link></div></div>{world.terrace&&<p className="club-terrace-line">{world.terrace.line}</p>}</section>}
  </main></ClubSurface>
 }

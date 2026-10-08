@@ -1273,3 +1273,11 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .share3-open:hover { transform: none; } }
 .mag-homeshare { margin-block: 14px 4px; }
+
+/* Club page (owner, 8.10.2026): shirt corner doors and the collapsed "not open yet" list. */
+.mag-shirtdoors { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.mag-shirtdoors .mag-homecard { grid-template-columns: 1fr; text-decoration: none; color: inherit; }
+.mag-shirtdoors h3 { font-family: var(--mag-condensed); font-weight: 700; text-transform: uppercase; font-size: clamp(24px, 6vw, 32px); margin: 0 0 6px; }
+.mag-soon { margin-top: 18px; }
+.mag-soon > summary { cursor: pointer; font-weight: 800; padding-block: 12px; }
+@media (min-width: 760px) { .mag-shirtdoors { grid-template-columns: 1fr 1fr; } }

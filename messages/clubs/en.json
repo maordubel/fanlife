@@ -240,5 +240,17 @@
   "homePlayCta": "All games",
   "homeLifeCta": "Step in",
   "manifestDescription": "{club} — a world of its own, from FAN LIFE.",
-  "backTo": "Back to {club}"
+  "backTo": "Back to {club}",
+  "soonTitle": "Not open yet",
+  "shirtsKicker": "Shirts",
+  "shirtsTitle": "The shirt corner",
+  "shirtsLead": "Every {club} shirt on record — look them up, mark the ones you own, sell or swap.",
+  "shirtsArchive": "Shirt archive",
+  "shirtsArchiveNote": "Photos of every shirt, season by season.",
+  "shirtsOwn": "I own this shirt",
+  "shirtsOwnNote": "Mark a shirt and it goes into your closet.",
+  "shirtsSell": "Sell or swap",
+  "shirtsSellNote": "List a shirt from your closet, or find one. No fees.",
+  "shirtsAuction": "Auction",
+  "shirtsAuctionNote": "One shirt, one window, one winner."
 }
