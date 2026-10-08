@@ -12,7 +12,7 @@ import type {GateKey} from './gates'
 export type LayoutMode='reading'|'game'|'arena'|'studio'
 export const GATE_MODES:Record<GateKey,LayoutMode>={
  xi:'arena',trivia:'game',lineup:'arena','kit-builder':'game',kits:'studio',memory:'game',polls:'game',
- goal:'arena','royal-rumble':'arena','blind-cow':'arena',derby:'reading',archive:'reading',timeline:'reading',
+ goal:'arena','royal-rumble':'arena','blind-cow':'arena',derby:'game',archive:'reading',timeline:'game',
 }
 export const modeOf=(key:GateKey):LayoutMode=>GATE_MODES[key]
 /** modes that give the glass to the play: a compact header and no bottom tab bar */
