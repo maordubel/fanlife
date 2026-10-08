@@ -48,7 +48,10 @@ export function validateSpec(raw:unknown,limits:StudioLimits):ClothSpec|null{
 }
 
 // ------------------------------------------------------------------ saved designs
-export type SavedDesign={id:string;name:string;spec:ClothSpec;/** the archive shirt it started from, if any */from:string|null;at:string;updated:string}
+/** KS-R09: a saved design names the trait schema and the renderer it was drawn with, the brief it answered, and (on this
+ *  device) who made it — so a later renderer can still draw today's design, and a share can say which design it carries. */
+export const TRAIT_SCHEMA=1,RENDERER='kc1'
+export type SavedDesign={id:string;name:string;spec:ClothSpec;/** the archive shirt it started from, if any */from:string|null;brief:string|null;schema:number;renderer:string;author:'device';at:string;updated:string}
 function store():Storage|null{try{return typeof localStorage==='undefined'?null:localStorage}catch{return null}}
 export function readDesigns(club:string,limits:StudioLimits):SavedDesign[]{
  const s=store();if(!s)return []
@@ -60,7 +63,7 @@ export function readDesigns(club:string,limits:StudioLimits):SavedDesign[]{
    if(!row||typeof row!=='object')return []
    const r=row as Record<string,unknown>,spec=validateSpec(r.spec,limits)
    if(!spec||typeof r.id!=='string'||r.id.length>40)return []
-   return [{id:r.id,name:trimText(r.name,32)??'',spec,from:typeof r.from==='string'&&r.from.length<120?r.from:null,at:typeof r.at==='string'?r.at.slice(0,30):'',updated:typeof r.updated==='string'?r.updated.slice(0,30):''}]
+   return [{id:r.id,name:trimText(r.name,32)??'',spec,from:typeof r.from==='string'&&r.from.length<120?r.from:null,brief:typeof r.brief==='string'&&r.brief.length<20?r.brief:null,schema:TRAIT_SCHEMA,renderer:RENDERER,author:'device' as const,at:typeof r.at==='string'?r.at.slice(0,30):'',updated:typeof r.updated==='string'?r.updated.slice(0,30):''}]
   })
  }catch{return []}
 }
@@ -73,7 +76,7 @@ export function upsertDesign(rows:SavedDesign[],d:SavedDesign):SavedDesign[]{ret
 export const newDesignId=()=>`d${Date.now().toString(36)}${Math.random().toString(36).slice(2,6)}`
 
 // ------------------------------------------------------------------ the shirts the supporter has built in gate 4
-export type Built={/** server-minted proof */t:string;/** best score */s:number;/** ever built perfectly */p:boolean;at:string}
+export type Built={/** server-minted proof */t:string;/** best score */s:number;/** ever built perfectly */p:boolean;/** field accuracy, parts scored and rules version the proof was minted for */f:number;o:number;r:string;at:string}
 export function readBuilt(club:string):Record<string,Built>{
  const s=store();if(!s)return {}
  try{
@@ -82,7 +85,7 @@ export function readBuilt(club:string):Record<string,Built>{
   const out:Record<string,Built>={}
   for(const [k,v] of Object.entries(m as Record<string,unknown>).slice(0,500)){
    const r=v as Record<string,unknown>
-   if(k.length<=120&&r&&typeof r.t==='string'&&r.t.length===24&&Number.isFinite(r.s))out[k]={t:r.t,s:Math.max(0,Math.floor(r.s as number)),p:r.p===true,at:typeof r.at==='string'?r.at.slice(0,30):''}
+   if(k.length<=120&&r&&typeof r.t==='string'&&r.t.length===24&&Number.isFinite(r.s)&&Number.isInteger(r.f)&&Number.isInteger(r.o)&&typeof r.r==='string'&&r.r.length<=12)out[k]={t:r.t,s:Math.max(0,Math.floor(r.s as number)),p:r.p===true,f:r.f as number,o:r.o as number,r:r.r,at:typeof r.at==='string'?r.at.slice(0,30):''}
   }
   return out
  }catch{return {}}
@@ -91,16 +94,23 @@ export function saveBuilt(club:string,kitId:string,entry:Built):boolean{
  const s=store();if(!s)return false
  try{
   const all=readBuilt(club),was=all[kitId]
-  all[kitId]={t:entry.t,s:Math.max(entry.s,was?.s??0),p:entry.p||was?.p===true,at:was?.at||entry.at}
+  // the proof kept is the one for the best accuracy; the score and the perfect flag only ever improve
+  const keep=was&&was.f>=entry.f?was:entry
+  all[kitId]={t:keep.t,f:keep.f,o:keep.o,r:keep.r,s:Math.max(entry.s,was?.s??0),p:entry.p||was?.p===true,at:was?.at||entry.at}
   s.setItem(builtKey(club),JSON.stringify(all));return true
  }catch{return false}
 }
 
-// ------------------------------------------------------------------ briefs — a prompt to design to, never a score
-export type BriefId='two-tone'|'classic'|'squad'|'badge-only'
-export const BRIEFS:readonly {id:BriefId;met:(s:ClothSpec)=>boolean}[]=[
- {id:'two-tone',met:s=>!!s.base&&!!s.trim&&s.pattern!=='solid'},
- {id:'classic',met:s=>!!s.base&&s.pattern==='solid'&&!s.trim&&!s.sponsor&&s.collar!=='round'},
- {id:'squad',met:s=>!!s.base&&!!s.name&&s.number!==null},
- {id:'badge-only',met:s=>!!s.base&&s.crest&&!s.sponsor},
-]
+// ------------------------------------------------------------------ a design in a link (KS-R09)
+/** A fan design travels in a link as compact JSON. Whoever opens it re-validates every field against THEIR club's own palette. */
+export function encodeDesign(spec:ClothSpec):string{
+ const b=btoa(unescape(encodeURIComponent(JSON.stringify(spec))))
+ return b.replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')
+}
+export function decodeDesign(raw:unknown,limits:StudioLimits):ClothSpec|null{
+ if(typeof raw!=='string'||raw.length>1200||!/^[A-Za-z0-9_-]+$/.test(raw))return null
+ try{
+  const b=raw.replace(/-/g,'+').replace(/_/g,'/'),json=decodeURIComponent(escape(atob(b+'='.repeat((4-b.length%4)%4))))
+  return validateSpec(JSON.parse(json),limits)
+ }catch{return null}
+}

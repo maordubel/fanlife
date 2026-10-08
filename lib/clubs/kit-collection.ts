@@ -3,6 +3,8 @@ import {kitViews,type KitView} from './gate-content'
 import {forbiddenColor} from './theme'
 import {COLOUR_KEYS,colourHex,documentedCloth,variantOf,type ClothSpec,type ColourKey,type Variant} from './kit-model'
 import type {StudioLimits} from './kit-studio'
+import type {StudioIdentity} from './kit-design'
+import {SWATCH} from './rumble-kit'
 
 /**
  * Gate 5 · The Kit Studio — what the collection may show (Wave kits, 8.10.2026).
@@ -40,9 +42,24 @@ export function collectionOf(data:ClubData):CollectionRow[]{
  })
 }
 
-/** the studio's palette and documented parts — the club's own, under its colour policy (rule 95) */
+const dist=(a:string,b:string)=>{const x=parseInt(a.slice(1),16),y=parseInt(b.slice(1),16);return [16,8,0].reduce((n,sh)=>n+((x>>sh&255)-(y>>sh&255))**2,0)}
+/** the swatch closest to one of the club's approved colours, among the colours its colour policy lets the page show */
+function nearest(hex:string,allowed:ColourKey[],not:ColourKey|null=null):ColourKey|null{
+ if(!/^#[\da-f]{6}$/i.test(hex))return null
+ const pool=allowed.filter(k=>k!==not)
+ return pool.length?pool.reduce((best,k)=>dist(colourHex(k),hex)<dist(colourHex(best),hex)?k:best):null
+}
+/** KS-R02: the club's approved identity — its own primary and secondary, whether a rivalry is approved, a wordmark if it fits */
+export function identityOf(data:ClubData):StudioIdentity{
+ const allowed=COLOUR_KEYS.filter(k=>!paintable(data)(SWATCH[k]!)),primary=nearest(data.theme.primary,allowed),secondary=nearest(data.theme.secondary,allowed,primary)
+ const word=data.identity.name.toUpperCase()
+ return {primary,secondary,derby:data.theme.colorPolicy.status==='approved'&&data.theme.colorPolicy.rivalIdentityColors.length>0,wordmark:/^[A-Z0-9 .'-]{2,12}$/.test(word)?word:null}
+}
+
+/** the studio's palette and documented parts — the club's own, under its colour policy (rule 95), the club's colours first */
 export function studioLimits(data:ClubData):StudioLimits{
- const forbidden=paintable(data),kits=kitViews(data)
+ const forbidden=paintable(data),kits=kitViews(data),id=identityOf(data)
  const uniq=(xs:(string|null|undefined)[])=>[...new Set(xs.map(x=>x?.trim()).filter((x):x is string=>!!x))].sort((a,b)=>a.localeCompare(b))
- return {colours:COLOUR_KEYS.filter(k=>!forbidden(colourHex(k))) as ColourKey[],makers:uniq(kits.map(k=>k.maker)),sponsors:uniq(kits.map(k=>k.sponsor))}
+ const safe=COLOUR_KEYS.filter(k=>!forbidden(colourHex(k))) as ColourKey[],first=[id.primary,id.secondary].filter((k):k is ColourKey=>!!k)
+ return {colours:[...first,...safe.filter(k=>!first.includes(k))],makers:uniq(kits.map(k=>k.maker)),sponsors:uniq(kits.map(k=>k.sponsor))}
 }

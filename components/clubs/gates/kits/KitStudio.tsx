@@ -7,7 +7,12 @@ import {tr} from '@/components/clubs/rumble/shared'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
 import {BLANK,COLLARS,PATTERNS,colourHex,type ClothSpec,type CollarId,type ColourKey,type PatternId} from '@/lib/clubs/kit-model'
-import {BRIEFS,DESIGN_MAX,NAME_MAX,edit,newDesignId,readBuilt,readDesigns,redo,resetTo,startHistory,studioViewKey,undo,upsertDesign,writeDesigns,type Built,type SavedDesign,type StudioLimits} from '@/lib/clubs/kit-studio'
+import {DESIGN_MAX,NAME_MAX,RENDERER,TRAIT_SCHEMA,decodeDesign,edit,encodeDesign,newDesignId,readBuilt,readDesigns,redo,resetTo,startHistory,studioViewKey,undo,upsertDesign,writeDesigns,type Built,type SavedDesign,type StudioLimits} from '@/lib/clubs/kit-studio'
+import {METRICS,briefMet,briefsOffered,scorecard,type BriefCtx,type BriefId,type Reference,type StudioIdentity} from '@/lib/clubs/kit-design'
+import {DNA_THRESHOLD} from '@/lib/clubs/kit-rules'
+import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {templateById} from '@/lib/share/v3/templates'
+import {coverShare} from '@/lib/share/v3/adapters'
 import type {CollectionRow,OpenKit} from '@/lib/clubs/kit-collection'
 import {KitCloth} from '../kit-builder/KitCloth'
 import {colourLabel} from '../kit-builder/KitBuilder'
@@ -16,31 +21,37 @@ import css from './kits.module.css'
 
 type Tab='studio'|'collection'
 type Tool='body'|'trim'|'design'|'collar'|'sleeves'|'maker'|'sponsor'|'crest'|'back'
-type Sheet=null|{k:'shirt';id:string}|{k:'save'}|{k:'designs'}|{k:'brief'}|{k:'start'}|{k:'help'}
+type Sheet=null|{k:'shirt';id:string}|{k:'save'}|{k:'designs'}|{k:'brief'}|{k:'score'}|{k:'start'}|{k:'help'}
 const TRIM_PREFERENCE:ColourKey[]=['white','cream','black','navy','red','blue','green','grey','purple']
 
-export type KitStudioProps={club:string;clubName:string;locale:UiLocale;contentLocale:string;copy:GameCopy;monogram:string;limits:StudioLimits;rows:CollectionRow[];gate4:boolean;focusKit:string|null}
+export type KitStudioProps={club:string;clubName:string;locale:UiLocale;contentLocale:string;copy:GameCopy;monogram:string;limits:StudioLimits;identity:StudioIdentity;rows:CollectionRow[];gate4:boolean;focusKit:string|null;/** a fan design in the link, still to be validated here against this club's palette */sharedDesign:string|null}
 
 /** Gate 5 · The Kit Studio — the club's documented shirts as a collection, and a free designer for your own FAN DESIGN. */
 export function KitStudio(props:KitStudioProps){
- const {club,clubName,locale,contentLocale,copy,monogram,limits,rows,gate4,focusKit}=props
+ const {club,clubName,locale,contentLocale,copy,monogram,limits,identity,rows,gate4,focusKit,sharedDesign}=props
  const say=useCallback((k:string,v?:Record<string,string|number>)=>tr(copy,k,v),[copy])
  const [tab,setTab]=useState<Tab>(focusKit?'collection':'studio')
  const [hist,setHist]=useState(()=>startHistory()),[tool,setTool]=useState<Tool>('body'),[view,setView]=useState<'front'|'back'>('front')
  const [designs,setDesigns]=useState<SavedDesign[]>([]),[designId,setDesignId]=useState<string|null>(null),[designName,setDesignName]=useState(''),[fromKit,setFromKit]=useState<string|null>(null),[confirmDel,setConfirmDel]=useState<string|null>(null)
  const [opened,setOpened]=useState<Record<string,OpenKit>>(()=>Object.fromEntries(rows.flatMap(r=>r.open?[[r.id,r.open]]:[])))
  const [built,setBuilt]=useState<Record<string,Built>>({}),[filter,setFilter]=useState<'all'|'home'|'away'|'third'>('all')
+ const [briefId,setBriefId]=useState<BriefId>('free'),[memoryId,setMemoryId]=useState<string|null>(null)
  const [sheet,setSheet]=useState<Sheet>(null),[notice,setNotice]=useState(''),[checking,setChecking]=useState(false),[saveName,setSaveName]=useState('')
  const opener=useRef<HTMLElement|null>(null),garmentRef=useRef<HTMLDivElement>(null),focused=useRef(false)
  const spec=hist.present
 
  // ---- device-local state: saved designs, the builds gate 4 proved, the last tab
- useEffect(()=>{setDesigns(readDesigns(club,limits));setBuilt(readBuilt(club));try{const v=localStorage.getItem(studioViewKey(club));if(!focusKit&&(v==='collection'||v==='studio'))setTab(v)}catch{/* private mode */}},[club,limits,focusKit])
+ useEffect(()=>{setDesigns(readDesigns(club,limits));setBuilt(readBuilt(club));try{const v=localStorage.getItem(studioViewKey(club));if(!focusKit&&!sharedDesign&&(v==='collection'||v==='studio'))setTab(v)}catch{/* private mode */}},[club,limits,focusKit,sharedDesign])
+ useEffect(()=>{ // a fan design in the link is re-validated against THIS club's palette; anything it cannot draw is refused, not repaired
+  if(!sharedDesign)return
+  const d=decodeDesign(sharedDesign,limits)
+  if(d){setHist(h=>resetTo(h,d));setTool('body');setNotice(say('ks.shared.opened'))}else setNotice(say('ks.shared.refused'))
+ },[sharedDesign,limits,say])
  const showTab=(next:Tab)=>{setTab(next);try{localStorage.setItem(studioViewKey(club),next)}catch{/* private mode */}}
  // a build only counts once the server confirms its token (gate 4 minted it) — then the shirt's facts arrive
  const verify=useCallback(async()=>{
   if(!gate4)return
-  const have=readBuilt(club),want=Object.entries(have).filter(([id])=>!opened[id]).map(([id,b])=>({id,t:b.t}))
+  const have=readBuilt(club),want=Object.entries(have).filter(([id])=>!opened[id]).map(([id,b])=>({id,t:b.t,f:b.f,o:b.o,r:b.r}))
   setBuilt(have)
   if(!want.length)return
   setChecking(true)
@@ -88,12 +99,12 @@ export function KitStudio(props:KitStudioProps){
  function save(asNew:boolean){
   const name=saveName.trim().slice(0,32)||say('ks.save.default',{n:designs.length+1}),id=asNew||!designId?newDesignId():designId,now=new Date().toISOString()
   const was=designs.find(d=>d.id===id)
-  const next=upsertDesign(designs,{id,name,spec,from:fromKit,at:was?.at??now,updated:now})
+  const next=upsertDesign(designs,{id,name,spec,from:fromKit,brief:brief.id,schema:TRAIT_SCHEMA,renderer:RENDERER,author:'device',at:was?.at??now,updated:now})
   const ok=writeDesigns(club,next)
   setDesigns(next);setDesignId(id);setDesignName(name);setSheet(null)
   setNotice(ok?say('ks.save.done',{name}):say('ks.save.fail'))
  }
- function load(d:SavedDesign){setHist(h=>resetTo(h,d.spec));setDesignId(d.id);setDesignName(d.name);setFromKit(d.from);setSheet(null);setTool('body');setView('front');setNotice(say('ks.load.done',{name:d.name}))}
+ function load(d:SavedDesign){setHist(h=>resetTo(h,d.spec));if(d.brief&&briefsOffered(ctx).some(b=>b.id===d.brief))setBriefId(d.brief as BriefId);setDesignId(d.id);setDesignName(d.name);setFromKit(d.from);setSheet(null);setTool('body');setView('front');setNotice(say('ks.load.done',{name:d.name}))}
  function remove(id:string){
   if(confirmDel!==id){setConfirmDel(id);return}
   const next=designs.filter(d=>d.id!==id);writeDesigns(club,next);setDesigns(next);setConfirmDel(null)
@@ -104,7 +115,8 @@ export function KitStudio(props:KitStudioProps){
   setHist(h=>resetTo(h,k.cloth!));setFromKit(k.id);setDesignId(null);setDesignName('');setTool('body');setView('front');setSheet(null);showTab('studio');setNotice(say('ks.start.done',{season:k.season}))
  }
  async function share(){
-  const text=say('ks.share.text',{club:clubName,name:designName||say('ks.untitled')})+` ${location.origin}/clubs/${club}/kits`
+  const link=`${location.origin}/clubs/${club}/kits?${new URLSearchParams({design:encodeDesign(spec),lang:locale})}`
+  const text=say('ks.share.text',{club:clubName,name:designName||say('ks.untitled')})+` ${link}`
   try{if(typeof navigator.share==='function'){await navigator.share({title:say('ks.title'),text});setNotice(say('ks.share.done'))}else{await navigator.clipboard.writeText(text);setNotice(say('ks.share.copied'))}}catch(e){if((e as Error)?.name!=='AbortError')setNotice(say('ks.share.fail'))}
  }
 
@@ -116,7 +128,16 @@ export function KitStudio(props:KitStudioProps){
  const startable=Object.values(opened).filter(k=>k.cloth).sort((a,b)=>a.season.localeCompare(b.season))
  const sheetKit=sheet?.k==='shirt'?rows.find(r=>r.id===sheet.id)??null:null
  const sheetOpen=sheet?.k==='shirt'?opened[sheet.id]??null:null
- const metBriefs=BRIEFS.filter(b=>b.met(spec)).length
+
+ const refs=useMemo<Reference[]>(()=>Object.values(opened).flatMap(k=>k.cloth?[{id:k.id,season:k.season,cloth:k.cloth}]:[]).sort((a,b)=>a.season.localeCompare(b.season)),[opened])
+ const ctx=useMemo<BriefCtx>(()=>({identity,memory:refs.find(r=>r.id===memoryId)??refs.find(r=>r.id===fromKit)??refs[0]??null}),[identity,refs,memoryId,fromKit])
+ const offered=briefsOffered(ctx),brief=offered.find(b=>b.id===briefId)??offered[0]!
+ const card=scorecard(spec,brief,refs,ctx)
+ const decades=[...new Set(refs.map(r=>/(\d{3})\d/.exec(r.season)?.[1]).filter((x):x is string=>!!x))].sort().slice(0,3).map(d=>`${d}0s`)
+ const closetDraft=useMemo(()=>{
+  const t=templateById('06-my-closet')!,d=coverShare(club,[]),origin=new URL(d.data.link).origin
+  return {...d,template:t,surface:'wardrobe' as const,purpose:'entry' as const,data:{...d.data,headline:t.headline,context:t.context,main:String(openCount),label:t.label,detail:t.detail,cta:t.cta,rows:decades.length?decades:t.rows,statement:'Every shirt has a story.',link:`${origin}/clubs/${club}/kits?lang=en`}}
+ },[club,openCount,decades.join('|')]) // eslint-disable-line react-hooks/exhaustive-deps -- decades derives from opened
 
  const tools:{id:Tool;show:boolean}[]=[{id:'body',show:true},{id:'trim',show:true},{id:'design',show:true},{id:'collar',show:true},{id:'sleeves',show:true},{id:'maker',show:limits.makers.length>0},{id:'sponsor',show:limits.sponsors.length>0},{id:'crest',show:true},{id:'back',show:true}]
  const trimOk=!!spec.trim
@@ -150,7 +171,7 @@ export function KitStudio(props:KitStudioProps){
     </div>
     <div className={css.panel} role="tabpanel" data-testid="ks-panel" data-tool={tool}>
      <p className={css.hintLine}>{say(`ks.tool.${tool}.hint`)}</p>
-     {tool==='body'&&<div className={css.strip}>{limits.colours.map(k=><button key={k} type="button" className={css.swatch} aria-pressed={spec.base===k} onClick={()=>setBase(k)} data-testid={`ks-body-${k}`}><i style={{background:colourHex(k)}}/><span>{say(`kb.colour.${k}`)}</span></button>)}</div>}
+     {tool==='body'&&<div className={css.strip}>{limits.colours.map(k=><button key={k} type="button" className={css.swatch} aria-pressed={spec.base===k} onClick={()=>setBase(k)} data-testid={`ks-body-${k}`} data-club={k===identity.primary||k===identity.secondary}><i style={{background:colourHex(k)}}/><span>{say(`kb.colour.${k}`)}{(k===identity.primary||k===identity.secondary)&&<small className={css.clubDot}> · {say('ks.club.colour')}</small>}</span></button>)}</div>}
      {tool==='trim'&&<div className={css.strip}>
       <button type="button" className={`min-h-tap ${css.chip}`} aria-pressed={!spec.trim} onClick={()=>setTrim(null)} disabled={!spec.base} data-testid="ks-trim-none">{say('ks.none')}</button>
       {limits.colours.filter(k=>k!==spec.base).map(k=><button key={k} type="button" className={css.swatch} aria-pressed={spec.trim===k} onClick={()=>setTrim(k)} disabled={!spec.base} data-testid={`ks-trim-${k}`}><i style={{background:colourHex(k)}}/><span>{say(`kb.colour.${k}`)}</span></button>)}</div>}
@@ -169,12 +190,14 @@ export function KitStudio(props:KitStudioProps){
      {tool==='crest'&&<div className={css.strip}>{([false,true] as const).map(on=><button key={String(on)} type="button" className={`min-h-tap ${css.chip}`} aria-pressed={spec.crest===on} onClick={()=>apply({crest:on})} disabled={!spec.base} data-testid={`ks-crest-${on?'on':'off'}`}>{on?say('ks.crest.on'):say('ks.crest.off')}</button>)}</div>}
      {tool==='back'&&<div className={css.fields}>
       <label>{say('ks.back.name')}<input type="text" inputMode="text" maxLength={NAME_MAX} value={spec.name??''} disabled={!spec.base} dir="auto" lang={contentLocale} autoComplete="off" onChange={e=>apply({name:e.target.value.trim()?e.target.value.slice(0,NAME_MAX):null})} data-testid="ks-name"/></label>
+      {identity.wordmark&&<button type="button" className={`min-h-tap ${css.chip}`} disabled={!spec.base} onClick={()=>apply({name:identity.wordmark})} data-testid="ks-wordmark">{say('ks.back.wordmark',{name:identity.wordmark})}</button>}
       <label>{say('ks.back.number')}<input type="text" inputMode="numeric" maxLength={2} value={spec.number===null?'':String(spec.number)} disabled={!spec.base} autoComplete="off" onChange={e=>{const v=e.target.value.replace(/\D/g,'').slice(0,2);apply({number:v===''?null:Number(v)})}} data-testid="ks-number"/></label></div>}
     </div>
     <div className={css.bar2}>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({k:'designs'})} data-testid="ks-designs">{say('ks.designs')} <small>{designs.length}</small></button>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({k:'start'})} disabled={!startable.length} data-testid="ks-start">{say('ks.startFrom')}</button>
-     <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({k:'brief'})} data-testid="ks-brief">{say('ks.brief')} <small>{metBriefs}/{BRIEFS.length}</small></button>
+     <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({k:'brief'})} data-testid="ks-brief">{say('ks.brief')} <small>{say(`ks.brief.${brief.id}.short`)}</small></button>
+     <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({k:'score'})} disabled={!hasDesign} data-testid="ks-score">{say('ks.score')} <small>{card.overall===null?'—':card.overall}</small></button>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={share} disabled={!hasDesign}>{say('ks.share')}</button>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({k:'help'})} aria-label={say('ks.help.open')}><span aria-hidden="true">i</span></button>
     </div>
@@ -188,6 +211,8 @@ export function KitStudio(props:KitStudioProps){
     <h2>{say('ks.coll.title')}</h2>
     <p className={css.count} data-testid="ks-count"><b>{openCount}</b> / {rows.length} {say('ks.coll.open')}{checking&&<span> · {say('ks.coll.checking')}</span>}</p>
     {gate4?<p className={css.fine}>{say('ks.coll.lockedNote')}</p>:<p className={css.fine}>{say('ks.coll.openNote')}</p>}
+    <p className={css.fine} data-testid="ks-own-note">{say('ks.own.note')}</p>
+    {openCount>0&&<div className={css.cta2}><ShareComposer label={say('ks.coll.share')} draft={closetDraft}/></div>}
    </header>
    {variants.length>1&&<div className={css.filters} role="group" aria-label={say('ks.filter')}>
     {(['all',...variants] as const).map(v=><button key={v} type="button" className={`min-h-tap ${css.chip}`} aria-pressed={filter===v} onClick={()=>setFilter(v as typeof filter)}>{v==='all'?say('ks.filter.all'):variantName(v)}</button>)}</div>}
@@ -198,6 +223,7 @@ export function KitStudio(props:KitStudioProps){
       <span className={css.kcardArt}>{k?(k.cloth?<KitCloth spec={k.cloth} texture={false} monogram={monogram} viewBox="24 30 292 270"/>:<span className={css.textOnly}><bdi>{k.design||variantName(k.variant)}</bdi></span>):<span className={css.locked}><KitCloth spec={BLANK} texture={false} viewBox="24 30 292 270"/></span>}</span>
       <span className={css.kcardText}><b><bdi>{r.season}</bdi></b><small>{variantName(r.variant)}{b?.p&&<i aria-label={say('ks.card.perfect')}> ★</i>}</small></span>
       {!k&&<span className={css.lockTag}>{say('ks.card.tag')}</span>}
+      {k&&<span className={css.ownTag} data-ownership={r.open?'shelf':'earned'}>{r.open?say('ks.own.shelf'):say('ks.own.earned')}</span>}
      </button></li>})}
    </ul>}
    {gate4&&<div className={css.cta2}><Link className={`min-h-tap ${css.cta}`} href={`/clubs/${club}/kit-builder?lang=${locale}`} data-testid="ks-to-builder"><b>{say('ks.coll.build')}</b></Link></div>}
@@ -215,7 +241,8 @@ export function KitStudio(props:KitStudioProps){
       {sheetOpen.design&&<div><dt>{say('ks.fact.design')}</dt><dd><bdi lang={contentLocale}>{sheetOpen.design}</bdi></dd></div>}
       {sheetOpen.maker&&<div><dt>{say('ks.fact.maker')}</dt><dd><bdi lang={contentLocale}>{sheetOpen.maker}</bdi></dd></div>}
       {sheetOpen.sponsor&&<div><dt>{say('ks.fact.sponsor')}</dt><dd><bdi lang={contentLocale}>{sheetOpen.sponsor}</bdi></dd></div>}
-      {built[sheetOpen.id]&&<div><dt>{say('ks.fact.built')}</dt><dd>{built[sheetOpen.id]!.p?say('ks.fact.builtPerfect'):say('ks.fact.builtBest',{n:built[sheetOpen.id]!.s})}</dd></div>}
+      <div><dt>{say('ks.fact.shelf')}</dt><dd>{rows.find(r=>r.id===sheetOpen.id)?.open?say('ks.own.shelf'):say('ks.own.earned')}</dd></div>
+      {built[sheetOpen.id]&&<div><dt>{say('ks.fact.built')}</dt><dd>{say('ks.fact.builtAcc',{f:built[sheetOpen.id]!.f})} · {built[sheetOpen.id]!.p?say('ks.fact.builtPerfect'):say('ks.fact.builtBest',{n:built[sheetOpen.id]!.s})}</dd></div>}
      </dl>
      {sheetOpen.cloth&&<p className={css.fine}>{say('ks.card.recon')}</p>}
      {sheetOpen.sources.length>0&&<p className={css.fine}>{say('ks.card.sources')}: {sheetOpen.sources.map((s,i)=><span key={i}>{s.url?<a href={s.url} target="_blank" rel="noreferrer noopener"><bdi>{s.title}</bdi></a>:<bdi>{s.title}</bdi>}{i<sheetOpen.sources.length-1?' · ':''}</span>)}</p>}
@@ -253,9 +280,26 @@ export function KitStudio(props:KitStudioProps){
    <div className={css.sheetBody}><p>{say('ks.startFrom.body')}</p><ul className={css.designList}>{startable.map(k=><li key={k.id}><button type="button" className={css.designRow} onClick={()=>startFrom(k)} data-testid="ks-start-row"><span className={css.rowShirt}><KitCloth spec={k.cloth!} texture={false} monogram={monogram} viewBox="24 30 292 270"/></span><span className={css.rowText}><b><bdi>{k.season}</bdi></b><small>{variantName(k.variant)}</small></span></button></li>)}</ul></div>
   </SlideSheet>
 
-  {/* ---- briefs */}
+  {/* ---- briefs: parameterised by this club; the memory brief only when an opened shirt exists */}
   <SlideSheet open={sheet?.k==='brief'} onClose={closeSheet} title={say('ks.brief.title')} closeLabel={copy['play.close']}>
-   <div className={css.sheetBody}><p>{say('ks.brief.body')}</p><ul className={css.briefList}>{BRIEFS.map(b=><li key={b.id} data-met={b.met(spec)}><span className={css.mark} aria-hidden="true">{b.met(spec)?'✓':'○'}</span><span><b>{say(`ks.brief.${b.id}.title`)}</b><small>{say(`ks.brief.${b.id}.body`)}</small></span><span className="sr-only">{b.met(spec)?say('ks.brief.met'):say('ks.brief.open')}</span></li>)}</ul></div>
+   <div className={css.sheetBody}><p>{say('ks.brief.body')}</p>
+    <ul className={css.briefItems} data-testid="ks-brief-list">{offered.map(b=><li key={b.id} data-met={hasDesign&&briefMet(b,spec,ctx)}>
+     <button type="button" className={`min-h-tap ${css.briefRow}`} aria-pressed={brief.id===b.id} onClick={()=>setBriefId(b.id)} data-testid={`ks-brief-${b.id}`}>
+      <span className={css.mark} aria-hidden="true">{hasDesign&&briefMet(b,spec,ctx)?'✓':'○'}</span>
+      <span><b>{say(`ks.brief.${b.id}.title`)}</b><small>{say(`ks.brief.${b.id}.body`,{primary:identity.primary?say(`kb.colour.${identity.primary}`):'',secondary:identity.secondary?say(`kb.colour.${identity.secondary}`):'',season:ctx.memory?.season??'',club:clubName})}</small></span>
+      <span className="sr-only">{hasDesign&&briefMet(b,spec,ctx)?say('ks.brief.met'):say('ks.brief.open')}</span></button></li>)}</ul>
+    {brief.id==='memory'&&refs.length>1&&<div className={css.strip} role="group" aria-label={say('ks.brief.memory.pick')}>{refs.map(r=><button key={r.id} type="button" className={`min-h-tap ${css.chip}`} aria-pressed={ctx.memory?.id===r.id} onClick={()=>setMemoryId(r.id)}><bdi>{r.season}</bdi></button>)}</div>}
+    {refs.length===0&&<p className={css.fine}>{say('ks.brief.memory.none')}</p>}</div>
+  </SlideSheet>
+
+  {/* ---- the design scorecard: heuristics, with N/A where the club has nothing to compare */}
+  <SlideSheet open={sheet?.k==='score'} onClose={closeSheet} title={say('ks.score.title')} closeLabel={copy['play.close']}>
+   <div className={css.sheetBody} data-testid="ks-scorecard">
+    <p className={css.fine}>{say('ks.score.body')}</p>
+    <ul className={css.metricList}>{METRICS.map(id=>{const m=card.metrics.find(x=>x.id===id)!;return <li key={id} data-na={m.value===null}><span><b>{say(`ks.metric.${id}`)}</b><small>{say(`ks.metric.${id}.note`,{n:card.compared,dna:DNA_THRESHOLD})}</small></span><span className={css.metricVal} data-testid={`ks-metric-${id}`}>{m.value===null?say('ks.metric.na'):m.value}</span></li>})}</ul>
+    <p className={css.overall} data-testid="ks-overall">{say('ks.score.overall')}: <b>{card.overall===null?'—':card.overall}</b></p>
+    <p className={css.fine}>{say('ks.score.fine')}</p>
+   </div>
   </SlideSheet>
 
   {/* ---- help */}

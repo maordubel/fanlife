@@ -151,3 +151,23 @@
 @media (max-width: 380px) { .tool { padding: 0 7px; font-size: 10px; } .collHead h2 { font-size: 22px; } }
 @media (max-height: 640px) and (max-width: 900px) { .stage { min-height: 480px; } .garment { min-height: 100px; } }
 @media (prefers-reduced-motion: reduce) { .tool:active:not(:disabled), .cta:active:not(:disabled), .kcard:active { transform: none; } }
+
+/* club-first palette, ownership tags, brief choice and the design scorecard (Wave kits, rulebook §7) */
+.clubDot { display: block; font-size: 9px; letter-spacing: 0; text-transform: none; color: var(--mag-muted); }
+.swatch[data-club='true'] { border-style: double; border-width: 5px; }
+.ownTag { position: absolute; inset-block-start: 4px; inset-inline-end: 4px; padding: 1px 5px; border: 2px solid var(--ks-ink); background: var(--mag-paper); color: var(--ks-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; }
+.ownTag[data-ownership='earned'] { background: var(--ks-lit); color: var(--ks-on); }
+.briefRow { width: 100%; min-height: 48px; display: grid; grid-template-columns: 26px minmax(0, 1fr); align-items: center; gap: 8px; padding: 6px 8px; border: 3px solid var(--ks-ink); background: var(--mag-card); color: var(--ks-ink); text-align: start; cursor: pointer; font: inherit; }
+.briefRow[aria-pressed='true'] { box-shadow: 3px 3px 0 var(--ks-ink); background: color-mix(in srgb, var(--ks-lit) 10%, var(--mag-card)); }
+.briefRow b { display: block; font-size: 13px; }
+.briefRow small { display: block; font-size: 12px; color: var(--mag-muted); line-height: 1.35; }
+.metricList { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.metricList li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 6px 8px; border: 2px solid var(--ks-ink); background: var(--mag-card); }
+.metricList li[data-na='true'] { border-style: dashed; color: var(--mag-muted); }
+.metricList b { display: block; font-size: 13px; }
+.metricList small { display: block; font-size: 11px; color: var(--mag-muted); line-height: 1.35; }
+.metricVal { font-family: var(--mag-mono); font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; }
+.overall { margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+.overall b { font-size: 22px; }
+.briefItems { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.briefItems li[data-met='true'] .mark { background: var(--ks-ink); color: var(--mag-paper); }

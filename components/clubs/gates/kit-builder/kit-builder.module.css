@@ -191,3 +191,9 @@
 @media (max-width: 380px) { .railBtn { font-size: 9px; gap: 3px; } .railBtn i { width: 18px; height: 18px; } .introTitle { font-size: 26px; } }
 @media (max-height: 640px) and (max-width: 900px) { .stage { min-height: 480px; } .garment { min-height: 100px; } }
 @media (prefers-reduced-motion: reduce) { .garment, .card { transition: none; } .tool:active:not(:disabled), .cta:active:not(:disabled), .card:active:not(:disabled) { transform: none; } }
+
+/* per-field breakdown under a step on the reveal, and the notice for a link made before the rules marker */
+.fieldRow { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 11px; font-style: normal; color: var(--mag-muted); }
+.fieldRow i { font-style: normal; font-family: var(--mag-mono); }
+.fieldRow i[data-ok='false'] { text-decoration: underline dashed; text-underline-offset: 3px; }
+.notice { margin: 0; padding: 6px 10px; border: 2px dashed var(--kb-ink); font-size: 12px; line-height: 1.4; background: var(--mag-card); }
