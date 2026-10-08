@@ -1,14 +1,27 @@
-import Link from 'next/link'
 import {notFound} from 'next/navigation'
-import {BeenThere} from '@/components/fanlife/BeenThere'
-import {eligibleArchive} from '@/lib/clubs/archive'
-import {localizedDate} from '@/lib/clubs/locale'
-import {ShareComposer} from '@/components/share/v3/ShareComposer'
-import {archiveShare,onThisDayShare} from '@/lib/share/v3/adapters'
+import {ClubArchive,type ArchiveTab} from '@/components/clubs/gates/archive/ClubArchive'
+import {buildEntries,encodeArchive} from '@/lib/clubs/entities'
+import {gateAvailability} from '@/lib/clubs/gates'
+import {rumbleWardrobe} from '@/lib/clubs/rumble-kit'
+import {forbiddenColor} from '@/lib/clubs/theme'
+import {kitViews} from '@/lib/clubs/gate-content'
 import type {GateView} from '../types'
-export const view:GateView=({club,locale,copy,searchParams})=>{
- const dates=new Date().toISOString().slice(5,10),query=(searchParams.q||'').slice(0,100).toLocaleLowerCase(),records=eligibleArchive(club),events=records.filter(f=>(!searchParams.today||f.value.on?.slice(5,10)===dates)&&(!query||`${f.value.title} ${f.value.on||f.value.year||''} ${f.value.hint}`.toLocaleLowerCase().includes(query))),selected=searchParams.event?records.find(f=>f.id===searchParams.event):null
- if(searchParams.event&&!selected)notFound()
- const rawPage=Number(searchParams.page),page=Number.isSafeInteger(rawPage)&&rawPage>0?Math.min(rawPage,Math.max(1,Math.ceil(events.length/20))):1
- return <><p>{copy.archiveSub}</p><form className="game-filters" method="get"><input type="hidden" name="lang" value={locale}/><label>{copy.search}<input type="search" name="q" defaultValue={searchParams.q||''}/></label><label><input type="checkbox" name="today" value="1" defaultChecked={!!searchParams.today}/>{copy.onThisDay}</label><button className="game-button min-h-tap">{copy.search}</button></form>{!events.length&&!selected&&<p>{copy.nothingToday}</p>}{(selected?[selected]:events.slice((page-1)*20,page*20)).map(f=><article className="game-panel" data-testid="archive-entry" key={f.id}><h2 lang={club.locales.content} dir="auto">{f.value.title}</h2>{f.value.on?<time dateTime={f.value.on}>{localizedDate(f.value.on,locale)}</time>:<p>{f.value.year||copy.unknown}</p>}<BeenThere club={club.identity.id} id={f.id} label={String(f.value.title)} on={f.value.on||(f.value.year?String(f.value.year).slice(0,4):null)} copy={{mark:copy.beenMark,marked:copy.beenMarked,hint:copy.beenHint}}/><p lang={club.locales.content} dir="auto">{f.value.hint}</p>{selected?<><ShareComposer label={copy.shareRecord} draft={(()=>{const src=club.sources.find(s=>s.id===f.sources[0]),credit=src?.publisher||src?.title||'Club archive';return f.value.on&&f.value.on.slice(5,10)===dates?onThisDayShare(club.identity.id,{eventId:f.id,title:String(f.value.title),on:f.value.on,source:credit}):archiveShare(club.identity.id,{eventId:f.id,title:String(f.value.title),when:f.value.on?localizedDate(f.value.on,'en'):f.value.year?String(f.value.year):null,source:credit})})()}/><p>{copy.documented}: {f.confidence}/3</p><p>{f.approvedBy==='legacy-curation'?copy.legacy:f.notes}</p>{f.sources.map(id=>{const s=club.sources.find(s=>s.id===id);return s?.url?<p key={id}><a href={s.url} target="_blank" rel="noreferrer">{copy.source}: <bdi>{s.title}</bdi> ↗</a></p>:<p key={id}>{copy.source}: <bdi>{s?.title||id}</bdi></p>})}<Link className="game-button" href={`?lang=${locale}`}>{copy.back}</Link></>:<Link className="game-button" href={`?${new URLSearchParams({event:f.id,lang:locale})}`}>{copy.archiveEntry} ↗</Link>}</article>)}{!selected&&<nav className="flex flex-wrap gap-4">{page>1&&<Link className="game-button" href={`?${new URLSearchParams({lang:locale,page:String(page-1),q:searchParams.q||'',...(searchParams.today?{today:'1'}:{})})}`}>← {page-1}</Link>}{page*20<events.length&&<Link className="game-button" href={`?${new URLSearchParams({lang:locale,page:String(page+1),q:searchParams.q||'',...(searchParams.today?{today:'1'}:{})})}`}>{page+1} →</Link>}</nav>}</>
+
+const TABS:ArchiveTab[]=['today','time','dig','search','mine']
+/**
+ * Gate 12 · the Living Archive. The server projects the club's approved archive into entries (lib/clubs/entities.ts) and
+ * sends them in a compact wire form; the client presenter owns the five modes. URLs keep working:
+ *   ?q=… opens Search · ?today=1 opens Today · ?event=<id> opens that entry's sheet (unknown id → 404) · ?tab=… picks a mode.
+ */
+export const view:GateView=({club,locale,copy,round,searchParams})=>{
+ const entries=buildEntries(club),wire=encodeArchive(entries,club.sources)
+ if(searchParams.event&&!entries.some(e=>e.id===searchParams.event))notFound()
+ const q=(searchParams.q||'').slice(0,100),asked=searchParams.tab as ArchiveTab|undefined
+ const tab:ArchiveTab=q?'search':searchParams.today?'today':TABS.includes(asked as ArchiveTab)?asked!:'today'
+ const playable=(k:'xi'|'derby')=>gateAvailability(club,k).playable
+ const hasRival=!!club.rivals?.length
+ return <ClubArchive club={club.identity.id} clubName={club.identity.name} version={club.version} locale={locale} contentLocale={club.locales.content} copy={copy}
+  wire={wire} seed={round.seed} initial={{tab,q,event:searchParams.event||null}}
+  links={{xi:playable('xi')?`/clubs/${club.identity.id}/xi?lang=${locale}`:null,derby:hasRival&&playable('derby')?`/clubs/${club.identity.id}/derby?lang=${locale}`:null}}
+  wardrobe={rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex))}/>
 }
