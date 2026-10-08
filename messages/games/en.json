@@ -340,5 +340,11 @@
   "ticketAdmit": "Admit one",
   "beenMark": "I was there",
   "beenMarked": "I was there",
-  "beenHint": "Mark it: it goes into Me → My story"
+  "beenHint": "Mark it: it goes into Me → My story",
+  "play.back": "Club",
+  "play.help": "How to play",
+  "play.close": "Close",
+  "play.fanlife": "FAN LIFE home",
+  "play.language": "Language",
+  "triviaSub": "Answer sourced questions about the club's history. Choose a topic or an era, or take a mixed round."
 }

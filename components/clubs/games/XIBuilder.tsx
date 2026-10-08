@@ -4,7 +4,8 @@ import type {ClubPlayer} from '@/lib/clubs/contract'
 import {FORMATIONS} from '@/lib/game/formations'
 import {fitOf} from '@/lib/xi/roles'
 import {emptyXI,validateXI,searchClubPlayers} from '@/lib/clubs/xi'
-import {xiKey,recordActivity} from '@/lib/clubs/activity'
+import {xiKey} from '@/lib/clubs/activity'
+import {completeRun} from '@/lib/clubs/completion'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
 export function XIBuilder({players,club,locale,contentLocale}:{players:ClubPlayer[];club:string;locale:UiLocale;contentLocale:string}){
@@ -14,7 +15,7 @@ export function XIBuilder({players,club,locale,contentLocale}:{players:ClubPlaye
  const eligible=useMemo(()=>searchClubPlayers(players,query).filter(p=>(!position||p.positions.includes(position as ClubPlayer['positions'][number]))&&(!era||p.fromYear!==null&&p.toYear!==null&&p.fromYear<=Number(era)+9&&p.toYear>=Number(era))&&(!fitOnly||fitOf(p.positions,active.role)!=='other')),[players,query,position,era,fitOnly,active.role])
  const decades=[...new Set(players.flatMap(p=>p.fromYear===null||p.toYear===null?[]:Array.from({length:Math.floor(p.toYear/10)-Math.floor(p.fromYear/10)+1},(_,i)=>(Math.floor(p.fromYear!/10)+i)*10)))].sort((a,b)=>a-b)
  function choose(player:ClubPlayer){if(Object.values(xi.picks).includes(player.id)&&xi.picks[slot]!==player.id){setNotice(copy.duplicate);return}setXI(p=>({...p,picks:{...p.picks,[slot]:player.id},captain:p.captain===p.picks[slot]?null:p.captain}));setNotice('');const empty=formation.slots.find(s=>s.slotId!==slot&&!xi.picks[s.slotId]);if(empty)setSlot(empty.slotId)}
- function save(){if(!complete)return;try{localStorage.setItem(xiKey(club),JSON.stringify(xi));recordActivity(club,'xi','xi');setNotice(copy.saved)}catch{setNotice(copy.savedUnavailable)}}
+ function save(){if(!complete)return;try{localStorage.setItem(xiKey(club),JSON.stringify(xi));completeRun(club,'xi','xi');setNotice(copy.saved)}catch{setNotice(copy.savedUnavailable)}}
  return <section className="game-panel" data-testid="xi-builder"><p>{copy.xiSub}</p>
   <label className="game-filter">{copy.formation}<select value={xi.formation} onChange={e=>{setXI({formation:e.target.value,picks:{},captain:null});setSlot(FORMATIONS[e.target.value]!.slots[0]!.slotId);setNotice('')}}>{Object.keys(FORMATIONS).map(f=><option key={f}>{f}</option>)}</select></label>
   <p>{copy.slot} · {Object.keys(xi.picks).length}/11</p><div className="xi-pitch" data-testid="xi-pitch">{formation.slots.map(s=><button className="xi-slot min-h-tap" aria-pressed={slot===s.slotId} aria-label={`${s.slotId} ${byId.get(xi.picks[s.slotId]||'')?.name||s.role}`} key={s.slotId} style={{left:`${s.x}%`,bottom:`${100-s.y}%`}} onClick={()=>{setSlot(s.slotId);setNotice('')}}><small>{s.role}</small><span lang={contentLocale} dir="auto">{byId.get(xi.picks[s.slotId]||'')?.name||'+'}</span></button>)}</div>

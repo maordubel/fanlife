@@ -1,6 +1,6 @@
 'use client'
 import {useState,useTransition} from 'react'
-import {recordActivity} from '@/lib/clubs/activity'
+import {completeRun} from '@/lib/clubs/completion'
 import {gradeLineup} from '@/app/clubs/[slug]/[gate]/gate-actions'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
@@ -9,7 +9,7 @@ export function LineupBoard({items,club,version,locale}:{items:Item[];club:strin
  const copy=gameCopy(locale),[n,setN]=useState(0),[picks,setPicks]=useState<string[]>([]),[res,setRes]=useState<Awaited<ReturnType<typeof gradeLineup>>>(null),[err,setErr]=useState(false),[pending,start]=useTransition()
  const m=items[n%items.length]!
  const toggle=(p:string)=>{if(res)return;setPicks(x=>x.includes(p)?x.filter(y=>y!==p):x.length<11?[...x,p]:x)}
- const check=()=>start(async()=>{const r=await gradeLineup(club,version,m.id,picks);setErr(!r);setRes(r);if(r)recordActivity(club,'lineup',`lineup:${version}:${n}:${m.id}`,r.correct)})
+ const check=()=>start(async()=>{const r=await gradeLineup(club,version,m.id,picks);setErr(!r);setRes(r);if(r)completeRun(club,'lineup',`lineup:${version}:${n}:${m.id}`,r.correct)})
  const next=()=>{setN(n+1);setPicks([]);setRes(null);setErr(false)}
  return <section className="game-panel mag-card" data-testid="lineup-board">
   <p className="mag-kicker">{copy.lineupSub}</p>
