@@ -10,6 +10,8 @@ export function clubMystery(data:ClubData){
  const question=(id:string)=>{const q=byId.get(id)?.value;return q?{id,version:1,targetPlayerId:q.targetPlayerId,clueIds:q.clues.map(c=>c.id)}:null}
  const engine=createSoloEngine({questionById:question,isPlayerId:id=>players.has(id)})
  function start(now:number,recent:string[]=[]){const fresh=pool.filter(q=>!recent.includes(q.id)),from=fresh.length?fresh:pool;if(!from.length)return null;return newRun('solo',question(from[randomInt(from.length)]!.id)!,now,{recent})}
+ /** A DETERMINISTIC deal (daily / challenge): the mystery at `index` of the pool, never random. Additive — `start` is unchanged. */
+ function startAt(now:number,index:number){const q=pool[index];return q?newRun('solo',question(q.id)!,now,{recent:[]}):null}
  function valid(s:RunState):boolean{return !!s&&s.v===1&&typeof s.rid==='string'&&/^[0-9a-f]{12}$/.test(s.rid)&&s.mode==='solo'&&s.qv===1&&!!question(s.qid)&&['playing','solved','gave_up'].includes(s.status)&&Number.isSafeInteger(s.started)&&s.started>0&&Number.isInteger(s.shown)&&s.shown>=1&&s.shown<=question(s.qid)!.clueIds.length&&Number.isInteger(s.wrong)&&s.wrong>=0&&Array.isArray(s.tried)&&s.tried.length<=30&&s.tried.every(id=>players.has(id))&&Array.isArray(s.recent)&&s.recent.length<=40&&s.recent.every(id=>typeof id==='string')&&s.sv===1&&((s.status==='playing'&&s.finished===null)||(s.status!=='playing'&&Number.isSafeInteger(s.finished)&&s.finished!==null&&s.finished>=s.started))}
  function view(s:RunState,now=Date.now()):MysteryView|null{
   if(!valid(s))return null
@@ -17,5 +19,5 @@ export function clubMystery(data:ClubData){
   if(s.status!=='playing'&&s.finished!==null){const f=players.get(q.targetPlayerId)!,rawElapsedMs=s.finished-s.started,refs=[...new Set([...f.sources,...q.clues.flatMap(c=>c.sources)])];v.result={playerId:f.value.id,name:f.value.name,rawElapsedMs,weightedTimeMs:weightedTimeMs({rawElapsedMs,hintsUsed:s.shown,wrongGuesses:s.wrong},s.sv),sources:refs.map(id=>data.sources.find(s=>s.id===id)).filter((s):s is ClubData['sources'][number]=>!!s).map(({id,title,url})=>({id,title,url}))}}
   return v
  }
- return {...engine,start,valid,view,poolSize:pool.length}
+ return {...engine,start,startAt,valid,view,poolSize:pool.length}
 }
