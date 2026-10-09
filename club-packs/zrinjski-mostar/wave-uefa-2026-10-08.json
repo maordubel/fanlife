@@ -1307,32 +1307,6 @@
  ],
  "players": [
   {
-   "id": "sulejman-smajic",
-   "value": {
-    "name": "Sulejman Smajić",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-81188",
-    "wd-q2402709"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position MF stated by UEFA line-ups (uefa id 69019) and Wikidata Q2402709. Years left open: neither source states the full spell."
-  },
-  {
    "id": "milos-zeravica",
    "value": {
     "name": "Miloš Žeravica",
@@ -1357,32 +1331,6 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Identity matched on full birth date and surname; position MF stated by UEFA line-ups (uefa id 250001379) and Wikidata Q3178533. Years left open: neither source states the full spell."
-  },
-  {
-   "id": "zoran-rajovic",
-   "value": {
-    "name": "Zoran Rajović",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-300948",
-    "wd-q3443306"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position FW stated by UEFA line-ups (uefa id 39673) and Wikidata Q3443306. Years left open: neither source states the full spell."
   },
   {
    "id": "dinko-trebotic",
@@ -1593,32 +1541,6 @@
    "notes": "Identity matched on full birth date and surname; position MF stated by UEFA line-ups (uefa id 250023729) and Wikidata Q3773461. Years left open: neither source states the full spell."
   },
   {
-   "id": "marin-anicic",
-   "value": {
-    "name": "Marin Aničić",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-300985",
-    "wd-q3847988"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position DF stated by UEFA line-ups (uefa id 1903867) and Wikidata Q3847988. Years left open: neither source states the full spell."
-  },
-  {
    "id": "ante-serdarusic",
    "value": {
     "name": "Ante Serdarušić",
@@ -1669,32 +1591,6 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Identity matched on full birth date and surname; position DF stated by UEFA line-ups (uefa id 104753) and Wikidata Q5998199. Years left open: neither source states the full spell."
-  },
-  {
-   "id": "pero-stojkic",
-   "value": {
-    "name": "Pero Stojkić",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-81188",
-    "wd-q6329583"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position DF stated by UEFA line-ups (uefa id 100332) and Wikidata Q6329583. Years left open: neither source states the full spell."
   },
   {
    "id": "mateo-susic",
@@ -1773,32 +1669,6 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Identity matched on full birth date and surname; position DF stated by UEFA line-ups (uefa id 250012916) and Wikidata Q23772341. Years left open: neither source states the full spell."
-  },
-  {
-   "id": "matija-katanec",
-   "value": {
-    "name": "Matija Katanec",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-2014136",
-    "wd-q26250935"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position DF stated by UEFA line-ups (uefa id 250019932) and Wikidata Q26250935. Years left open: neither source states the full spell."
   },
   {
    "id": "kristijan-stanic",
@@ -1983,58 +1853,6 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Identity matched on full birth date and surname; position GK stated by UEFA line-ups (uefa id 250127474) and Wikidata Q123202095. Years left open: neither source states the full spell."
-  },
-  {
-   "id": "kresimir-kordic",
-   "value": {
-    "name": "Krešimir Kordić",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-84146",
-    "wd-q983878"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position FW stated by UEFA line-ups (uefa id 104750) and Wikidata Q983878. Years left open: neither source states the full spell."
-  },
-  {
-   "id": "stevo-nikolic",
-   "value": {
-    "name": "Stevo Nikolić",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-2014136",
-    "wd-q1291707"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position FW stated by UEFA line-ups (uefa id 250020297) and Wikidata Q1291707. Years left open: neither source states the full spell."
   },
   {
    "id": "mario-ticinovic",
@@ -2401,32 +2219,6 @@
    "notes": "Identity matched on full birth date and surname; position MF stated by UEFA line-ups (uefa id 1903860) and Wikidata Q13090927. Years left open: neither source states the full spell."
   },
   {
-   "id": "milos-filipovic",
-   "value": {
-    "name": "Miloš Filipović",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-2017101",
-    "wd-q16233141"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position MF stated by UEFA line-ups (uefa id 250021022) and Wikidata Q16233141. Years left open: neither source states the full spell."
-  },
-  {
    "id": "damir-zlomislic",
    "value": {
     "name": "Damir Zlomislić",
@@ -2451,32 +2243,6 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Identity matched on full birth date and surname; position MF stated by UEFA line-ups (uefa id 1907044) and Wikidata Q16234343. Years left open: neither source states the full spell."
-  },
-  {
-   "id": "jasmin-mesanovic",
-   "value": {
-    "name": "Jasmin Mešanović",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": null,
-    "toYear": null,
-    "aliases": [],
-    "sport": "football",
-    "sensitive": false
-   },
-   "sources": [
-    "uefa-lu-2017152",
-    "wd-q16234811"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-10-08",
-   "approvedAt": "2026-10-08",
-   "approvedBy": "automated:cross-source-review-zrinjski-2026-10-08",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Identity matched on full birth date and surname; position FW stated by UEFA line-ups (uefa id 250041808) and Wikidata Q16234811. Years left open: neither source states the full spell."
   },
   {
    "id": "tomislav-barisic",
@@ -2613,7 +2379,7 @@
   {
    "id": "uefa-m-sulejman-smajic",
    "value": {
-    "targetPlayerId": "sulejman-smajic",
+    "targetPlayerId": "r26-sulejman-smajic",
     "clues": [
      {
       "id": "c1",
@@ -3120,7 +2886,7 @@
   {
    "id": "uefa-m-marin-anicic",
    "value": {
-    "targetPlayerId": "marin-anicic",
+    "targetPlayerId": "r26-marin-anicic",
     "clues": [
      {
       "id": "c1",
@@ -3233,7 +2999,7 @@
   {
    "id": "uefa-m-pero-stojkic",
    "value": {
-    "targetPlayerId": "pero-stojkic",
+    "targetPlayerId": "r26-pero-stojkic",
     "clues": [
      {
       "id": "c1",
@@ -3458,7 +3224,7 @@
   {
    "id": "uefa-m-matija-katanec",
    "value": {
-    "targetPlayerId": "matija-katanec",
+    "targetPlayerId": "r26-matija-katanec",
     "clues": [
      {
       "id": "c1",
@@ -3855,7 +3621,7 @@
   {
    "id": "uefa-m-stevo-nikolic",
    "value": {
-    "targetPlayerId": "stevo-nikolic",
+    "targetPlayerId": "r26-stevo-nikolic",
     "clues": [
      {
       "id": "c1",
@@ -4642,7 +4408,7 @@
   {
    "id": "uefa-m-milos-filipovic",
    "value": {
-    "targetPlayerId": "milos-filipovic",
+    "targetPlayerId": "r26-milos-filipovic",
     "clues": [
      {
       "id": "c1",
@@ -4699,7 +4465,7 @@
   {
    "id": "uefa-m-jasmin-mesanovic",
    "value": {
-    "targetPlayerId": "jasmin-mesanovic",
+    "targetPlayerId": "r26-jasmin-mesanovic",
     "clues": [
      {
       "id": "c1",
