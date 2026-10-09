@@ -210,6 +210,14 @@
    "publisher": "The Celtic Wiki",
    "access": "available",
    "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "owner-knowledge-2026-10-09",
+   "title": "Owner knowledge: primary rival named by the owner (chat, 2026-10-09)",
+   "url": "https://fanlife.dubelteam.com/sources",
+   "publisher": "FAN LIFE owner knowledge",
+   "access": "available",
+   "checkedAt": "2026-10-09"
   }
  ],
  "archive": [
@@ -1294,7 +1302,26 @@
    "approvedBy": "Maor Harel (owner, chat)"
   }
  ],
- "rivals": [],
+ "rivals": [
+  {
+   "id": "r-rangers",
+   "value": {
+    "name": "Rangers",
+    "note": "The Old Firm"
+   },
+   "sources": [
+    "owner-knowledge-2026-10-09"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)",
+   "notes": "Primary rival named by the owner in chat on 2026-10-09."
+  }
+ ],
  "matches": [
   {
    "id": "m-95e4df2137",
@@ -1399,12 +1426,14 @@
    "sources": [
     "src_0ec93bfc43acbb"
    ],
-   "confidence": 1,
-   "status": "review",
+   "confidence": 2,
+   "status": "approved",
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Score as displayed by the source; scorers not extracted."
+   "notes": "Score as displayed by the source; scorers not extracted. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "m-402d54c39b",

@@ -194,6 +194,14 @@
    "publisher": "AEKdata",
    "access": "available",
    "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "owner-knowledge-2026-10-09",
+   "title": "Owner knowledge: primary rival named by the owner (chat, 2026-10-09)",
+   "url": "https://fanlife.dubelteam.com/sources",
+   "publisher": "FAN LIFE owner knowledge",
+   "access": "available",
+   "checkedAt": "2026-10-09"
   }
  ],
  "archive": [
@@ -212,12 +220,14 @@
     "src_14ba6c62332ebe",
     "src_9dac2fb0b971c1"
    ],
-   "confidence": 1,
-   "status": "review",
+   "confidence": 2,
+   "status": "approved",
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "English wording written from the staged Hebrew title; no fact added."
+   "notes": "English wording written from the staged Hebrew title; no fact added. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "t-01b4c305",
@@ -3811,7 +3821,26 @@
    "approvedBy": "Maor Harel (owner, chat)"
   }
  ],
- "rivals": [],
+ "rivals": [
+  {
+   "id": "r-olympiacos",
+   "value": {
+    "name": "Olympiacos",
+    "note": "Piraeus club, the long-standing main rival"
+   },
+   "sources": [
+    "owner-knowledge-2026-10-09"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)",
+   "notes": "Primary rival named by the owner in chat on 2026-10-09."
+  }
+ ],
  "matches": [
   {
    "id": "m-58c13799e5",
@@ -3993,12 +4022,14 @@
    "sources": [
     "src_9dac2fb0b971c1"
    ],
-   "confidence": 1,
-   "status": "review",
+   "confidence": 2,
+   "status": "approved",
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": ""
+   "notes": "Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   }
  ],
  "kits": [
@@ -4017,12 +4048,14 @@
    "sources": [
     "src_9ebc08789b1a56"
    ],
-   "confidence": 1,
-   "status": "review",
+   "confidence": 2,
+   "status": "approved",
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Description only; no licensed image."
+   "notes": "Description only; no licensed image. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "k-8980a0f1",
@@ -4039,12 +4072,14 @@
    "sources": [
     "src_269b1923be74db"
    ],
-   "confidence": 1,
-   "status": "review",
+   "confidence": 2,
+   "status": "approved",
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Description only; no licensed image."
+   "notes": "Description only; no licensed image. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   }
  ]
 }

@@ -138,6 +138,14 @@
    "publisher": "www.bundesliga.com",
    "access": "available",
    "checkedAt": "2026-10-08"
+  },
+  {
+   "id": "owner-knowledge-2026-10-09",
+   "title": "Owner knowledge: primary rival named by the owner (chat, 2026-10-09)",
+   "url": "https://fanlife.dubelteam.com/sources",
+   "publisher": "FAN LIFE owner knowledge",
+   "access": "available",
+   "checkedAt": "2026-10-09"
   }
  ],
  "archive": [
@@ -177,12 +185,14 @@
    "sources": [
     "src_5b494d48b98d01"
    ],
-   "confidence": 1,
-   "status": "review",
+   "confidence": 2,
+   "status": "approved",
    "researchedAt": "2026-10-08",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "English wording written from the staged Hebrew title; no fact added."
+   "notes": "English wording written from the staged Hebrew title; no fact added. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   }
  ],
  "players": [
@@ -755,7 +765,26 @@
    "approvedBy": "Maor Harel (owner, chat)"
   }
  ],
- "rivals": [],
+ "rivals": [
+  {
+   "id": "r-hamburger-sv",
+   "value": {
+    "name": "Hamburger SV",
+    "note": "The Hamburg derby"
+   },
+   "sources": [
+    "owner-knowledge-2026-10-09"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)",
+   "notes": "Primary rival named by the owner in chat on 2026-10-09."
+  }
+ ],
  "matches": [
   {
    "id": "m-71839fb3d8",
