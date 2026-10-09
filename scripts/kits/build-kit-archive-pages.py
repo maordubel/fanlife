@@ -17,6 +17,9 @@ for c in CLUBS:
     j=json.load(open(c['data']));man=json.load(open(c['man']))
     pages=man.get('pages') or {k:'https://www.colours-of-football.com/colours03/gre/aek/'+k for k in ['aek_1.html','aek_2.html','aek_athens_3.html','aek_athens_4.html']}
     data=dict(retrieved=j['retrieved'],club=dict(id=c['id'],name=c['name']),crest=f"/club-kits/{c['id']}/crest.png",catalogueUrls=list(pages.values()),sources=dict(catalogue=j['sources']['catalogue']),total=j['kitCount'],catalogue=j['catalogueKits'],drawingOnly=j['drawingOnlyKits'],crossChecked=j['crossChecked'],conflicts=j['typeConflicts'],kits=j['kits'])
+    hp=f"content/manual/kit-hfk-{c['id']}.json"
+    if os.path.exists(hp):
+        h=json.load(open(hp));fy=[k['from'] for k in h['kits'] if k['from']];ty=[k['to'] for k in h['kits'] if k['to']];data['hfk']=dict(count=h['count'],source=h['source'],kits=h['kits'],**{'from':min(fy),'to':max(ty)})
     out=(tpl.replace('/*__TITLE__*/',f"ארכיון מדים {c['name']}").replace('/*__DESC__*/',f"ארכיון המדים של {c['name']}: {j['kitCount']} מערכות, ציורי SVG ותמונות מקור, עם כל המקורות.").replace('/*__ACCENT__*/',c['accent']).replace('/*__DATA__*/null',json.dumps(data,ensure_ascii=False,separators=(',',':'))))
     os.makedirs(f"public/kit-archive/{c['id']}",exist_ok=True);open(f"public/kit-archive/{c['id']}/index.html",'w',encoding='utf8').write(out)
     hub.append((c,j['kitCount'],len({k['season'] for k in j['kits']})));print(c['id'],j['kitCount'],len(out))

@@ -340,5 +340,11 @@
   "marketPoint1": "בלי עמלה",
   "marketPoint2": "החלפה או מכירה",
   "marketPoint3": "מחירים ביורו",
-  "lifeGameSub": "המשחק"
+  "lifeGameSub": "המשחק",
+  "kitHfkTitle": "ציורים היסטוריים · {n} מערכות",
+  "kitHfkCredit": "הציורים מאת",
+  "kitHfkType_home": "בית",
+  "kitHfkType_away": "חוץ",
+  "kitHfkType_third": "שלישית",
+  "kitHfkType_change": "חילוף"
 }

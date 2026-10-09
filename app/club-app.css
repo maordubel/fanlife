@@ -247,6 +247,7 @@ a.gp:active { transform: scale(.98); }
 .kit-archive-season{margin-block:26px;border-block-start:2px solid var(--mag-ink);padding-block-start:10px}
 .kit-archive-year{font:inherit;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1;margin:0 0 12px}
 .kit-archive-row{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(170px,100%),1fr))}
+.kit-hfk{margin-block-start:2.5rem}.kit-hfk-grid{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr))}.kit-hfk .kit-archive-img{width:100%;height:auto;max-width:150px;object-fit:contain}
 .kit-archive-card{border:2px solid var(--mag-ink);background:var(--mag-card);padding:10px;display:flex;flex-direction:column;gap:4px;min-width:0}
 .kit-archive-card svg{width:100%;height:auto;aspect-ratio:auto}
 .kit-archive-type{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
