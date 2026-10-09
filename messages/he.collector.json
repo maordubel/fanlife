@@ -39,6 +39,7 @@
   "collector.signIn.off": "הארון עוד לא מחובר בגרסה הזאת של האתר.",
   "collector.error.auth_required": "צריך להתחבר כדי לשמור.",
   "collector.error.network": "לא הצלחנו להגיע לשרת. נסה שוב בעוד רגע.",
+  "collector.error.setup": "השוק עוד לא הופעל באתר הזה. אין בעיה אצלך.",
   "collector.error.off": "הארון עוד לא מחובר בגרסה הזאת של האתר.",
   "collector.error.slow_down": "רגע — יותר מדי פעולות בזמן קצר. נסה שוב בעוד כמה דקות.",
   "collector.error.details_required": "כדי לפתוח למכירה או להחלפה צריך מידה, מצב וסוג החולצה.",

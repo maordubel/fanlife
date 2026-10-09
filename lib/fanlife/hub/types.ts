@@ -81,3 +81,19 @@ export type WantInput = {
   currency: Currency
   public: boolean
 }
+
+// ------------------------------------------------------------------ wave 2 — the deal
+
+export type HandoverMethod = 'meet' | 'ship'
+export type FeedbackRating = 'good' | 'fine' | 'bad'
+export type DealExtras = {
+  status: string
+  kind: 'buy' | 'trade'
+  role: 'initiator' | 'recipient'
+  handover: { method: HandoverMethod; note: string | null; at: string } | null
+  mySent: boolean
+  theirSent: boolean
+  feedbackGiven: boolean
+  feedbackReceived: { rating: FeedbackRating; note: string | null } | null
+  bundleItems: import('@/lib/collector/types').PublicItem[]
+}

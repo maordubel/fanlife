@@ -52,3 +52,5 @@ export function Notice({ title, body, tone = 'ink', children }: { title: string;
 export const buttonPrimary = 'inline-flex min-h-tap items-center justify-center border-rule border-ink bg-red px-4 font-body text-step--1 font-extrabold text-paper disabled:opacity-50'
 export const buttonPlain = 'inline-flex min-h-tap items-center justify-center border-rule border-ink bg-sheet px-4 font-body text-step--1 font-extrabold text-ink disabled:opacity-50'
 export const linkQuiet = 'inline-flex min-h-tap items-center font-body text-step--1 font-extrabold text-sign underline underline-offset-4'
+
+export const buttonQuiet = buttonPlain
