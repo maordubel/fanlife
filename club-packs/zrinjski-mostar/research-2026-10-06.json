@@ -279,9 +279,11 @@
     "r26-botev"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Date conflict: NFSBiH 8 Aug, Botev site 9 Aug; scorer minute also differs."
+   "notes": "Date conflict: NFSBiH 8 Aug, Botev site 9 Aug; scorer minute also differs. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-botev-home-2024",
@@ -368,9 +370,11 @@
     "r26-fsgc"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Date conflict: NFSBiH 8 Jul, FSGC 9 Jul."
+   "notes": "Date conflict: NFSBiH 8 Jul, FSGC 9 Jul. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-virtus-home-2025",
@@ -386,9 +390,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Single publisher (NFSBiH)."
+   "notes": "Single publisher (NFSBiH). Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-slovan-away-2025",
@@ -729,9 +735,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Single publisher; second source pending."
+   "notes": "Single publisher; second source pending. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-title-2017",
@@ -770,9 +778,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Single publisher; second source pending."
+   "notes": "Single publisher; second source pending. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-title-2022-clinch",
@@ -834,9 +844,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only."
+   "notes": "Wikipedia only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-supercup-2025-may",
@@ -950,9 +962,11 @@
     "r26-sw"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia 2012-16; Soccerway departure Aug 2016, loan 2017."
+   "notes": "Wikipedia 2012-16; Soccerway departure Aug 2016, loan 2017. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-stevo-nikolic",
@@ -972,9 +986,11 @@
     "r26-fotmob"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia from 2013, FotMob from Jan 2014."
+   "notes": "Wikipedia from 2013, FotMob from Jan 2014. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-marin-anicic",
@@ -994,9 +1010,11 @@
     "r26-fotmob"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia 2007-14, FotMob 2009-13."
+   "notes": "Wikipedia 2007-14, FotMob 2009-13. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-kresimir-kordic",
@@ -1017,9 +1035,11 @@
     "r26-fotmob"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Several spells; club all-time top scorer (75 goals in 188 apps per Wikipedia and footballhistory.org); FotMob only 2014-16."
+   "notes": "Several spells; club all-time top scorer (75 goals in 188 apps per Wikipedia and footballhistory.org); FotMob only 2014-16. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-luka-modric",
@@ -1091,9 +1111,11 @@
     "r26-fotmob"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "FotMob joined Jan 2026; Wikipedia stale."
+   "notes": "FotMob joined Jan 2026; Wikipedia stale. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-karlo-abramovic",
@@ -1113,9 +1135,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "FotMob Feb 2025; scorer vs Crystal Palace per NFSBiH."
+   "notes": "FotMob Feb 2025; scorer vs Crystal Palace per NFSBiH. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-petar-mamic",
@@ -1135,9 +1159,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "FotMob Jul 2024; scorer vs Virtus per NFSBiH."
+   "notes": "FotMob Jul 2024; scorer vs Virtus per NFSBiH. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-ognjen-todorovic",
@@ -1157,9 +1183,11 @@
     "r26-sw"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia left midfielder 2014-18 and 2020-21; Soccerway forward 2015-22."
+   "notes": "Wikipedia left midfielder 2014-18 and 2020-21; Soccerway forward 2015-22. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-matija-katanec",
@@ -1178,9 +1206,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only."
+   "notes": "Wikipedia only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-zoran-rajovic",
@@ -1199,9 +1229,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only."
+   "notes": "Wikipedia only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-sulejman-smajic",
@@ -1220,9 +1252,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only."
+   "notes": "Wikipedia only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-velibor-djuric",
@@ -1241,9 +1275,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only; two spells."
+   "notes": "Wikipedia only; two spells. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-vucina-scepanovic",
@@ -1262,9 +1298,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only."
+   "notes": "Wikipedia only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-igor-melher",
@@ -1283,9 +1321,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only."
+   "notes": "Wikipedia only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-matej-bogdan",
@@ -1304,9 +1344,11 @@
     "r26-sw"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Years unknown."
+   "notes": "Years unknown. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-niko-jankovic",
@@ -1326,9 +1368,11 @@
     "r26-ontour"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Scorer in 2022 reports; position and years unverified."
+   "notes": "Scorer in 2022 reports; position and years unverified. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-ivan-jukic",
@@ -1347,9 +1391,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Scorer 2022; position and years unverified."
+   "notes": "Scorer 2022; position and years unverified. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-jasmin-mesanovic",
@@ -1368,9 +1414,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Scorer 2017; position and years unverified."
+   "notes": "Scorer 2017; position and years unverified. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-haris-handzic",
@@ -1389,9 +1437,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Scorer 2018; position and years unverified."
+   "notes": "Scorer 2018; position and years unverified. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-marko-bencun",
@@ -1410,9 +1460,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Scorer 2018; position and years unverified."
+   "notes": "Scorer 2018; position and years unverified. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-duje-dujmovic",
@@ -1432,9 +1484,11 @@
     "r26-corr"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Scorer 2025; position and years unverified."
+   "notes": "Scorer 2025; position and years unverified. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-leo-mikic",
@@ -1454,9 +1508,11 @@
     "r26-corr"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Scorer 2025; position and years unverified."
+   "notes": "Scorer 2025; position and years unverified. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   }
  ],
  "playerYears": [
@@ -1741,9 +1797,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Conflicting year range between sources."
+   "notes": "Conflicting year range between sources. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-m-kozulj",
@@ -1784,9 +1842,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Clue coverage thin; review."
+   "notes": "Clue coverage thin; review. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   }
  ],
  "stadiums": [
@@ -1804,9 +1864,11 @@
     "r26-club"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Opening 1958 from two sources; capacity conflicts (7,255 / 9,000 / 4,875+2,380) so left null."
+   "notes": "Opening 1958 from two sources; capacity conflicts (7,255 / 9,000 / 4,875+2,380) so left null. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   }
  ],
  "trophies": [
@@ -1901,9 +1963,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only."
+   "notes": "Wikipedia only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-bih-cup",
@@ -1937,9 +2001,11 @@
     "r26-nfs"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "League finish from Wikipedia; UECL league phase 23rd, then knockout play-off lost to Crystal Palace."
+   "notes": "League finish from Wikipedia; UECL league phase 23rd, then knockout play-off lost to Crystal Palace. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-s-2024–25",
@@ -1970,9 +2036,11 @@
     "r26-wiki"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-10-06",
-   "notes": "Wikipedia only."
+   "notes": "Wikipedia only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-s-2022–23",
