@@ -29,5 +29,5 @@ describe('pack validation',()=>{
 })
 describe('tenant resolution',()=>{
  it('host wins over path selection',()=>{expect(resolveClubId('olympiacos.fanlife.dubelteam.com','zrinjski-mostar',true)).toBeNull();expect(resolveClubId('olympiacos.fanlife.dubelteam.com','olympiacos',true)).toBe('olympiacos');expect(resolveClubId('olympiacos.fanlife.dubelteam.com')).toBe('olympiacos')})
- it('unknown subdomains stay neutral; path previews need evaluation',()=>{expect(resolveClubId('unknown.fanlife.dubelteam.com','hapoel-tel-aviv',true)).toBeNull();expect(resolveClubId('localhost:3000','olympiacos',false)).toBeNull();expect(resolveClubId('localhost:3000','olympiacos',true)).toBe('olympiacos')})
+ it('unknown subdomains stay neutral; a club path resolves for registry clubs only',()=>{expect(resolveClubId('unknown.fanlife.dubelteam.com','hapoel-tel-aviv',true)).toBeNull();expect(resolveClubId('localhost:3000','olympiacos',false)).toBe('olympiacos');expect(resolveClubId('localhost:3000','not-a-club',false)).toBeNull();expect(resolveClubId('localhost:3000','olympiacos',true)).toBe('olympiacos')})
 })
