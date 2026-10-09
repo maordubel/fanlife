@@ -1,0 +1,51 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2001_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:57:07.551558+00:00",
+    "contentHash": "99b9d4545dc4a3d82a86ca3e2aae4e01eeb08139ad64ea9d9ff59b3ded98ea85",
+    "bytes": 65139,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:16561",
+        "nameAsReported": "Smajić, Sulejman",
+        "profileUrl": "https://www.national-football-teams.com/player/16561/Sulejman_Smajic.html",
+        "season": "2001/02",
+        "birthDate": "1984-08-13",
+        "positionAsReported": "Right Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2001_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:72518",
+        "nameAsReported": "Jurić, Nedeljko",
+        "profileUrl": "https://www.national-football-teams.com/player/72518/Nedeljko_Juric.html",
+        "season": "2001/02",
+        "birthDate": "1978-07-18",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2001_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:26689",
+        "nameAsReported": "Terkeš, Želimir",
+        "profileUrl": "https://www.national-football-teams.com/player/26689/Zelimir_Terkes.html",
+        "season": "2001/02",
+        "birthDate": "1981-01-08",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2001_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

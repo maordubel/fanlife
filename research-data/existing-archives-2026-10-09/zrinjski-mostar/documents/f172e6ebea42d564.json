@@ -1,0 +1,139 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:26.172192+00:00",
+    "contentHash": "1d4d08174d3266ededca7c96bdbc13e90fb2a5ec8fbc8ea950efe4842aea8baa",
+    "bytes": 74117,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:82096",
+        "nameAsReported": "Vasilj, Nikola",
+        "profileUrl": "https://www.national-football-teams.com/player/82096/Nikola_Vasilj.html",
+        "season": "2015/16",
+        "birthDate": "1995-12-02",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:63647",
+        "nameAsReported": "Graovac, Daniel",
+        "profileUrl": "https://www.national-football-teams.com/player/63647/Daniel_Graovac.html",
+        "season": "2015/16",
+        "birthDate": "1993-08-08",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:46899",
+        "nameAsReported": "Čolić, Benjamin",
+        "profileUrl": "https://www.national-football-teams.com/player/46899/Benjamin_Colic.html",
+        "season": "2015/16",
+        "birthDate": "1991-07-23",
+        "positionAsReported": "Right Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:94848",
+        "nameAsReported": "Radeljić, Stjepan",
+        "profileUrl": "https://www.national-football-teams.com/player/94848/Stjepan_Radeljic.html",
+        "season": "2015/16",
+        "birthDate": "1997-09-05",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:70072",
+        "nameAsReported": "Tomić, Tomislav",
+        "profileUrl": "https://www.national-football-teams.com/player/70072/Tomislav_Tomic.html",
+        "season": "2015/16",
+        "birthDate": "1990-11-16",
+        "positionAsReported": "Centre Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:70069",
+        "nameAsReported": "Todorović, Ognjen",
+        "profileUrl": "https://www.national-football-teams.com/player/70069/Ognjen_Todorovic.html",
+        "season": "2015/16",
+        "birthDate": "1989-03-24",
+        "positionAsReported": "Left Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:64695",
+        "nameAsReported": "Arežina, Filip",
+        "profileUrl": "https://www.national-football-teams.com/player/64695/Filip_Arezina.html",
+        "season": "2015/16",
+        "birthDate": "1992-11-08",
+        "positionAsReported": "Centre Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:46915",
+        "nameAsReported": "Mešanović, Jasmin",
+        "profileUrl": "https://www.national-football-teams.com/player/46915/Jasmin_Mesanovic.html",
+        "season": "2015/16",
+        "birthDate": "1992-06-21",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:56806",
+        "nameAsReported": "Zakarić, Goran",
+        "profileUrl": "https://www.national-football-teams.com/player/56806/Goran_Zakaric.html",
+        "season": "2015/16",
+        "birthDate": "1992-11-07",
+        "positionAsReported": "Right Winger",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:24768",
+        "nameAsReported": "Nikolić, Stevo",
+        "profileUrl": "https://www.national-football-teams.com/player/24768/Stevo_Nikolic.html",
+        "season": "2015/16",
+        "birthDate": "1984-12-04",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:70071",
+        "nameAsReported": "Bilbija, Nemanja",
+        "profileUrl": "https://www.national-football-teams.com/player/70071/Nemanja_Bilbija.html",
+        "season": "2015/16",
+        "birthDate": "1990-11-02",
+        "positionAsReported": "Secondary striker",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

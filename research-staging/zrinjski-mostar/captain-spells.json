@@ -1,0 +1,1057 @@
+[
+  {
+    "id": "ea-claim-162f74be9a517c76",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "01/02",
+    "valueAsReported": "Slaven Musa",
+    "category": "captain-spells",
+    "season": "2001/02",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2001/02"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Slaven Musa"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-1854d39ba781dd95",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "98/99",
+    "valueAsReported": "Slaven Musa",
+    "category": "captain-spells",
+    "season": "1998/99",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:1998/99"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Slaven Musa"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-1ff48932381fa87c",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "04/05",
+    "valueAsReported": "Ivica Džidić",
+    "category": "captain-spells",
+    "season": "2004/05",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2004/05"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Ivica Džidić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-2049b35551c123e8",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "17/18",
+    "valueAsReported": "Pero Stojkić",
+    "category": "captain-spells",
+    "season": "2017/18",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2017/18"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Pero Stojkić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-3284b96dba2653f8",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "25/26",
+    "valueAsReported": "Nemanja Bilbija",
+    "category": "captain-spells",
+    "season": "2025/26",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2025/26"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Nemanja Bilbija"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-3bb2e6441e05d27e",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "96/97",
+    "valueAsReported": "Dalibor Cvitanović",
+    "category": "captain-spells",
+    "season": "1996/97",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:1996/97"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Dalibor Cvitanović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-3ddd4cb4b23640e0",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "13/14",
+    "valueAsReported": "Marin Aničić, Pero Stojkić",
+    "category": "captain-spells",
+    "season": "2013/14",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2013/14"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Marin Aničić",
+      "Pero Stojkić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-3f7581de2d2212be",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "99/00",
+    "valueAsReported": "Slaven Musa",
+    "category": "captain-spells",
+    "season": "1999/00",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:1999/00"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Slaven Musa"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-431434fe5552b66e",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "22/23",
+    "valueAsReported": "Nemanja Bilbija",
+    "category": "captain-spells",
+    "season": "2022/23",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2022/23"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Nemanja Bilbija"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-45e11752c4895b9b",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "95/96",
+    "valueAsReported": "Denis Hrkać, Dalibor Cvitanović",
+    "category": "captain-spells",
+    "season": "1995/96",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:1995/96"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Denis Hrkać",
+      "Dalibor Cvitanović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-4ad558ad1174470f",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "16/17",
+    "valueAsReported": "Pero Stojkić",
+    "category": "captain-spells",
+    "season": "2016/17",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2016/17"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Pero Stojkić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-4e1e4ce0560d6df7",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "24/25",
+    "valueAsReported": "Nemanja Bilbija",
+    "category": "captain-spells",
+    "season": "2024/25",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2024/25"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Nemanja Bilbija"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-58df211b70c45157",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "14/15",
+    "valueAsReported": "Pero Stojkić",
+    "category": "captain-spells",
+    "season": "2014/15",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2014/15"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Pero Stojkić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-6318fdc4e9400170",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "00/01",
+    "valueAsReported": "Slaven Musa",
+    "category": "captain-spells",
+    "season": "2000/01",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2000/01"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Slaven Musa"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-6810bc29b99587d5",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "18/19",
+    "valueAsReported": "Pero Stojkić",
+    "category": "captain-spells",
+    "season": "2018/19",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2018/19"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Pero Stojkić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-749cf7ff9245790e",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "11/12",
+    "valueAsReported": "Igor Melher",
+    "category": "captain-spells",
+    "season": "2011/12",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2011/12"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Igor Melher"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-80fbb1f370b0d7a2",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "23/24",
+    "valueAsReported": "Nemanja Bilbija",
+    "category": "captain-spells",
+    "season": "2023/24",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2023/24"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Nemanja Bilbija"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-84a9cea823a46a1a",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "97/98",
+    "valueAsReported": "Blaž Slišković, Slaven Musa",
+    "category": "captain-spells",
+    "season": "1997/98",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:1997/98"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Blaž Slišković",
+      "Slaven Musa"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-8656a45aa4e55a45",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "05/06",
+    "valueAsReported": "Ivica Džidić",
+    "category": "captain-spells",
+    "season": "2005/06",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2005/06"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Ivica Džidić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-88ad1a7028b5998e",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "21/22",
+    "valueAsReported": "Nemanja Bilbija",
+    "category": "captain-spells",
+    "season": "2021/22",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2021/22"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Nemanja Bilbija"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-a5210412b8e89fe7",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "08/09",
+    "valueAsReported": "Mario Ivanković",
+    "category": "captain-spells",
+    "season": "2008/09",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2008/09"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Mario Ivanković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-acd0888958032083",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "20/21",
+    "valueAsReported": "Pero Stojkić, Nemanja Bilbija",
+    "category": "captain-spells",
+    "season": "2020/21",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2020/21"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Pero Stojkić",
+      "Nemanja Bilbija"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-af9b7728f5ebe056",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "02/03",
+    "valueAsReported": "Teo Krešić",
+    "category": "captain-spells",
+    "season": "2002/03",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2002/03"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Teo Krešić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-b37c21c60a5a09e0",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "10/11",
+    "valueAsReported": "Mario Ivanković",
+    "category": "captain-spells",
+    "season": "2010/11",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2010/11"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Mario Ivanković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-b9165c27cb5bd980",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "03/04",
+    "valueAsReported": "Ivica Džidić",
+    "category": "captain-spells",
+    "season": "2003/04",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2003/04"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Ivica Džidić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-c02a69ab242613b3",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "07/08",
+    "valueAsReported": "Ivica Džidić",
+    "category": "captain-spells",
+    "season": "2007/08",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2007/08"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Ivica Džidić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-c2532ec21b14b1b8",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "94/95",
+    "valueAsReported": "Dalibor Pušić, Berislav Markotić",
+    "category": "captain-spells",
+    "season": "1994/95",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:1994/95"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Dalibor Pušić",
+      "Berislav Markotić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-c35555d26394733d",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "06/07",
+    "valueAsReported": "Ivica Džidić",
+    "category": "captain-spells",
+    "season": "2006/07",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2006/07"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Ivica Džidić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-c4d3aa25141d84cc",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "26/27",
+    "valueAsReported": "Nemanja Bilbija",
+    "category": "captain-spells",
+    "season": "2026/27",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2026/27"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Nemanja Bilbija"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-c629d6d3bd6d156e",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "93/94",
+    "valueAsReported": "Blaž Slišković",
+    "category": "captain-spells",
+    "season": "1993/94",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:1993/94"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Blaž Slišković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-d91573f4c1d80517",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "19/20",
+    "valueAsReported": "Pero Stojkić",
+    "category": "captain-spells",
+    "season": "2019/20",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2019/20"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Pero Stojkić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-df1fadf1d496bb76",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "92/93",
+    "valueAsReported": "Slaven Musa",
+    "category": "captain-spells",
+    "season": "1992/93",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:1992/93"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Slaven Musa"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-e751b96890b201f2",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "12/13",
+    "valueAsReported": "Igor Melher",
+    "category": "captain-spells",
+    "season": "2012/13",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2012/13"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Igor Melher"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-f24fa6660f6af28b",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "09/10",
+    "valueAsReported": "Mario Ivanković",
+    "category": "captain-spells",
+    "season": "2009/10",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2009/10"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Mario Ivanković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-fab96ad9cdd5e068",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "15/16",
+    "valueAsReported": "Pero Stojkić",
+    "category": "captain-spells",
+    "season": "2015/16",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 3,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:captain-spells",
+      "season:2015/16"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Pero Stojkić"
+    ],
+    "personIds": null
+  }
+]

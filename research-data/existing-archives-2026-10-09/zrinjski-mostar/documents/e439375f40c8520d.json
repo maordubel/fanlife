@@ -1,0 +1,443 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/zrinjski-u-kupu-bih/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:52:30.297717+00:00",
+    "contentHash": "1e3ea4278ce364e2ded0f64259ebb429cb0b4c6b1b792b3dc6d08a5f669d2906",
+    "bytes": 176525,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [
+      {
+        "tabIndex": 1,
+        "rows": [
+          {
+            "keyAsReported": "24/25",
+            "valueAsReported": "Četvrtfinale"
+          },
+          {
+            "keyAsReported": "23/24",
+            "valueAsReported": "Pobjednik"
+          },
+          {
+            "keyAsReported": "22/23",
+            "valueAsReported": "Pobjednik"
+          },
+          {
+            "keyAsReported": "21/22",
+            "valueAsReported": "Osmina finala"
+          },
+          {
+            "keyAsReported": "20/21",
+            "valueAsReported": "Četvrtfinale"
+          },
+          {
+            "keyAsReported": "19/20",
+            "valueAsReported": "Polufinale"
+          },
+          {
+            "keyAsReported": "18/19",
+            "valueAsReported": "Četvrtfinale"
+          },
+          {
+            "keyAsReported": "17/18",
+            "valueAsReported": "Šesnaestina finala"
+          },
+          {
+            "keyAsReported": "16/17",
+            "valueAsReported": "Četvrtfinale"
+          },
+          {
+            "keyAsReported": "15/16",
+            "valueAsReported": "Šesnaestina finala"
+          },
+          {
+            "keyAsReported": "14/15",
+            "valueAsReported": "Polufinale"
+          },
+          {
+            "keyAsReported": "13/14",
+            "valueAsReported": "Polufinale"
+          },
+          {
+            "keyAsReported": "12/13",
+            "valueAsReported": "Polufinale"
+          },
+          {
+            "keyAsReported": "11/12",
+            "valueAsReported": "Osmina finala"
+          },
+          {
+            "keyAsReported": "10/11",
+            "valueAsReported": "Četvrtfinale"
+          },
+          {
+            "keyAsReported": "09/10",
+            "valueAsReported": "Polufinale"
+          },
+          {
+            "keyAsReported": "08/09",
+            "valueAsReported": "Polufinale"
+          },
+          {
+            "keyAsReported": "07/08",
+            "valueAsReported": "Pobjednik"
+          },
+          {
+            "keyAsReported": "06/07",
+            "valueAsReported": "Šesnaestina finala"
+          },
+          {
+            "keyAsReported": "05/06",
+            "valueAsReported": "Osmina finala"
+          },
+          {
+            "keyAsReported": "04/05",
+            "valueAsReported": "Polufinale"
+          },
+          {
+            "keyAsReported": "03/04",
+            "valueAsReported": "Šesnaestina finala"
+          },
+          {
+            "keyAsReported": "02/03",
+            "valueAsReported": "Polufinale"
+          },
+          {
+            "keyAsReported": "01/02",
+            "valueAsReported": "Šesnaestina finala"
+          },
+          {
+            "keyAsReported": "00/01",
+            "valueAsReported": "Osmina finala"
+          }
+        ]
+      },
+      {
+        "tabIndex": 2,
+        "rows": [
+          {
+            "keyAsReported": "31",
+            "valueAsReported": "Marin Aničić"
+          },
+          {
+            "keyAsReported": "28",
+            "valueAsReported": "Krešimir Kordić"
+          },
+          {
+            "keyAsReported": "28",
+            "valueAsReported": "Igor Žuržinov"
+          },
+          {
+            "keyAsReported": "27",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "26",
+            "valueAsReported": "Slobodan Jakovljević"
+          },
+          {
+            "keyAsReported": "26",
+            "valueAsReported": "Kerim Memija"
+          },
+          {
+            "keyAsReported": "24",
+            "valueAsReported": "Toni Šunjić"
+          },
+          {
+            "keyAsReported": "23",
+            "valueAsReported": "Velibor Đurić"
+          },
+          {
+            "keyAsReported": "22",
+            "valueAsReported": "Mile Pehar"
+          },
+          {
+            "keyAsReported": "22",
+            "valueAsReported": "Mladen Žižović"
+          },
+          {
+            "keyAsReported": "22",
+            "valueAsReported": "Vernes Selimović"
+          }
+        ]
+      },
+      {
+        "tabIndex": 3,
+        "rows": [
+          {
+            "keyAsReported": "20",
+            "valueAsReported": "Krešimir Kordić"
+          },
+          {
+            "keyAsReported": "11",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "Igor Aničić"
+          },
+          {
+            "keyAsReported": "7",
+            "valueAsReported": "Ivan Lendrić"
+          },
+          {
+            "keyAsReported": "7",
+            "valueAsReported": "Anes Mašić"
+          },
+          {
+            "keyAsReported": "7",
+            "valueAsReported": "Mario Ćuže"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "Mladen Žižović"
+          },
+          {
+            "keyAsReported": "5",
+            "valueAsReported": "Tomislav Kiš"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Mladen Žižović"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Anto Radeljić"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Vlado Zadro"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Staniša Nikolić"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Matija Matko"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Želimir Terkeš"
+          }
+        ]
+      },
+      {
+        "tabIndex": 4,
+        "rows": [
+          {
+            "keyAsReported": "23",
+            "valueAsReported": "Dragan Jović"
+          },
+          {
+            "keyAsReported": "11",
+            "valueAsReported": "Branko Karačić"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "Franjo Džidić"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "Blaž Slišković"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "Igor Štimac"
+          },
+          {
+            "keyAsReported": "7",
+            "valueAsReported": "Dragan Perić"
+          },
+          {
+            "keyAsReported": "7",
+            "valueAsReported": "Krunoslav Rendulić"
+          },
+          {
+            "keyAsReported": "7",
+            "valueAsReported": "Željko Petrović"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "Ivica Barbarić"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "Vinko Marinović"
+          }
+        ]
+      },
+      {
+        "tabIndex": 5,
+        "rows": [
+          {
+            "keyAsReported": "14",
+            "valueAsReported": "FK Sarajevo (1-5-8)"
+          },
+          {
+            "keyAsReported": "9",
+            "valueAsReported": "FK Slavija (6-0-3)"
+          },
+          {
+            "keyAsReported": "9",
+            "valueAsReported": "FK Velež (5-2-2)"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "FK Borac (5-1-2)"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "FK Radnik Bijeljina (5-2-1)"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "NK Široki Brijeg (2-0-4)"
+          },
+          {
+            "keyAsReported": "5",
+            "valueAsReported": "FK Sloboda (3-0-2)"
+          },
+          {
+            "keyAsReported": "5",
+            "valueAsReported": "NK Čelik (3-0-2)"
+          },
+          {
+            "keyAsReported": "5",
+            "valueAsReported": "FK Tuzla City (4-0-1)"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "FK Sloga (3-1-0)"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "FK Željezničar (1-2-1)"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "FK Rudar Kakanj (2-0-1)"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "FK Sutjeska (3-0-0)"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "NK Zvijezda (2-0-1)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "FK Leotar (1-0-1)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "NK SAŠK Napredak (1-1-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "FK Kozara (2-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "FK Modriča (1-0-1)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "HŠK Posušje (2-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "FK Proleter (1-0-1)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "FK Rudar Priejdor (2-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "FK Mladost VO (2-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "NK Sloga Ljubuški (2-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "FK Olimpic (0-1-1)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "NK Jedinstvo (2-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "NK Žepče (1-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "NK GOŠK (2-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK Drina (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "NK Mladost DS (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK Budućnost (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "NK Napredak (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK Krupa (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK Tekstilac (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "NK Svatovac (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK Zvijezda 09 (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK Laktaši (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK Igman (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK Romanija (1-0-0)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "NK Stupčanica (1-0-0)"
+          }
+        ]
+      }
+    ],
+    "fanAwards": [],
+    "trophyCoaches": [],
+    "sourceUrl": "https://hskzrinjski.ba/zrinjski-u-kupu-bih/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

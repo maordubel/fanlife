@@ -1,0 +1,447 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/brojke/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:53:00.872322+00:00",
+    "contentHash": "ee9705a853bd9136c329d2802b0479cb7aa629abc7aaf350d7b49f8e905372e0",
+    "bytes": 176611,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [
+      {
+        "tabIndex": 0,
+        "rows": [
+          {
+            "keyAsReported": "338",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "298",
+            "valueAsReported": "Slobodan Jakovljević"
+          },
+          {
+            "keyAsReported": "267",
+            "valueAsReported": "Hrvoje Barišić"
+          },
+          {
+            "keyAsReported": "257",
+            "valueAsReported": "Pero Stojkić"
+          },
+          {
+            "keyAsReported": "210",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "202",
+            "valueAsReported": "Velibor Đurić"
+          },
+          {
+            "keyAsReported": "189",
+            "valueAsReported": "Krešimir Kordić"
+          },
+          {
+            "keyAsReported": "184",
+            "valueAsReported": "Marin Aničić"
+          },
+          {
+            "keyAsReported": "183",
+            "valueAsReported": "Kerim Memija"
+          },
+          {
+            "keyAsReported": "182",
+            "valueAsReported": "Igor Žuržinov"
+          }
+        ]
+      },
+      {
+        "tabIndex": 1,
+        "rows": [
+          {
+            "keyAsReported": "203",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "75",
+            "valueAsReported": "Krešimir Kordić"
+          },
+          {
+            "keyAsReported": "56",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "40",
+            "valueAsReported": "Miloš Filipović"
+          },
+          {
+            "keyAsReported": "39",
+            "valueAsReported": "Mario Ćuže"
+          },
+          {
+            "keyAsReported": "33",
+            "valueAsReported": "Mladen Žižović"
+          },
+          {
+            "keyAsReported": "32",
+            "valueAsReported": "Zoran Rajović"
+          },
+          {
+            "keyAsReported": "31",
+            "valueAsReported": "Tomislav Kiš"
+          },
+          {
+            "keyAsReported": "29",
+            "valueAsReported": "Velibor Đurić"
+          },
+          {
+            "keyAsReported": "28",
+            "valueAsReported": "Ognjen Todorović"
+          }
+        ]
+      },
+      {
+        "tabIndex": 2,
+        "rows": [
+          {
+            "keyAsReported": "26/27",
+            "valueAsReported": "Simon Rožman"
+          },
+          {
+            "keyAsReported": "25/26",
+            "valueAsReported": "Mario Ivanković, Igor Štimac"
+          },
+          {
+            "keyAsReported": "24/25",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "23/24",
+            "valueAsReported": "Krunoslav Rendulić, Mario Ivanković, Željko Petrović"
+          },
+          {
+            "keyAsReported": "22/23",
+            "valueAsReported": "Sergej Jakirović, Krunoslav Rendulić"
+          },
+          {
+            "keyAsReported": "21/22",
+            "valueAsReported": "Sergej Jakirović"
+          },
+          {
+            "keyAsReported": "20/21",
+            "valueAsReported": "Mladen Žižović, Sergej Jakirović"
+          },
+          {
+            "keyAsReported": "19/20",
+            "valueAsReported": "Hari Vukas, Nenad Gagro, Mladen Žižović"
+          },
+          {
+            "keyAsReported": "18/19",
+            "valueAsReported": "Ante Miše, Blaž Slišković"
+          },
+          {
+            "keyAsReported": "17/18",
+            "valueAsReported": "Blaž Slišković"
+          },
+          {
+            "keyAsReported": "16/17",
+            "valueAsReported": "Vinko Marinović, Ivica Barbarić, Blaž Slišković"
+          },
+          {
+            "keyAsReported": "15/16",
+            "valueAsReported": "Vinko Marinović"
+          },
+          {
+            "keyAsReported": "14/15",
+            "valueAsReported": "Branko Karačić, Mišo Krstičević, Dalibor Cvitanović, Vinko Marinović"
+          },
+          {
+            "keyAsReported": "13/14",
+            "valueAsReported": "Branko Karačić"
+          },
+          {
+            "keyAsReported": "12/13",
+            "valueAsReported": "Dragan Perić, Branko Karačić"
+          },
+          {
+            "keyAsReported": "11/12",
+            "valueAsReported": "Slaven Musa, Draženko Bogdan, Dragan Perić"
+          },
+          {
+            "keyAsReported": "10/11",
+            "valueAsReported": "Dragan Jović, Dragan Perić, Marijan Bloudek, Slaven Musa"
+          },
+          {
+            "keyAsReported": "09/10",
+            "valueAsReported": "Dragan Jović"
+          },
+          {
+            "keyAsReported": "08/09",
+            "valueAsReported": "Dragan Jović"
+          },
+          {
+            "keyAsReported": "07/08",
+            "valueAsReported": "Blaž Slišković, Dragan Jović"
+          },
+          {
+            "keyAsReported": "06/07",
+            "valueAsReported": "Blaž Slišković"
+          },
+          {
+            "keyAsReported": "05/06",
+            "valueAsReported": "Franjo Džidić, Blaž Slišković"
+          },
+          {
+            "keyAsReported": "04/05",
+            "valueAsReported": "Franjo Džidić"
+          },
+          {
+            "keyAsReported": "03/04",
+            "valueAsReported": "Franjo Džidić, Slaven Musa, Stjepan Deverić"
+          },
+          {
+            "keyAsReported": "02/03",
+            "valueAsReported": "Dalibor Cvitanović, Stjepan Čordaš, Ivica Barbarić, Franjo Džidić"
+          },
+          {
+            "keyAsReported": "01/02",
+            "valueAsReported": "Vjeran Simunić, Dalibor Cvitanović, Ivica Barbarić"
+          },
+          {
+            "keyAsReported": "00/01",
+            "valueAsReported": "Vladimir Skočajić, Ronald Hrkać, Žarko Barbarić, Vjeran Simunić"
+          },
+          {
+            "keyAsReported": "99/00",
+            "valueAsReported": "Dalibor Cvitanović, Vladimir Skočajić"
+          },
+          {
+            "keyAsReported": "98/99",
+            "valueAsReported": "Blaž Slišković, Dalibor Cvitanović"
+          },
+          {
+            "keyAsReported": "97/98",
+            "valueAsReported": "Franjo Džidić"
+          },
+          {
+            "keyAsReported": "96/97",
+            "valueAsReported": "Miroslav Kordić, Žarko Barbarić"
+          },
+          {
+            "keyAsReported": "95/96",
+            "valueAsReported": "Mirko Gašić, Franjo Vladić"
+          },
+          {
+            "keyAsReported": "94/95",
+            "valueAsReported": "Miroslav Kordić, Jozo Zelenika"
+          },
+          {
+            "keyAsReported": "93/94",
+            "valueAsReported": "Miroslav Kordić"
+          }
+        ]
+      },
+      {
+        "tabIndex": 3,
+        "rows": [
+          {
+            "keyAsReported": "26/27",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "25/26",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "24/25",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "23/24",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "22/23",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "21/22",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "20/21",
+            "valueAsReported": "Pero Stojkić, Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "19/20",
+            "valueAsReported": "Pero Stojkić"
+          },
+          {
+            "keyAsReported": "18/19",
+            "valueAsReported": "Pero Stojkić"
+          },
+          {
+            "keyAsReported": "17/18",
+            "valueAsReported": "Pero Stojkić"
+          },
+          {
+            "keyAsReported": "16/17",
+            "valueAsReported": "Pero Stojkić"
+          },
+          {
+            "keyAsReported": "15/16",
+            "valueAsReported": "Pero Stojkić"
+          },
+          {
+            "keyAsReported": "14/15",
+            "valueAsReported": "Pero Stojkić"
+          },
+          {
+            "keyAsReported": "13/14",
+            "valueAsReported": "Marin Aničić, Pero Stojkić"
+          },
+          {
+            "keyAsReported": "12/13",
+            "valueAsReported": "Igor Melher"
+          },
+          {
+            "keyAsReported": "11/12",
+            "valueAsReported": "Igor Melher"
+          },
+          {
+            "keyAsReported": "10/11",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "09/10",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "08/09",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "07/08",
+            "valueAsReported": "Ivica Džidić"
+          },
+          {
+            "keyAsReported": "06/07",
+            "valueAsReported": "Ivica Džidić"
+          },
+          {
+            "keyAsReported": "05/06",
+            "valueAsReported": "Ivica Džidić"
+          },
+          {
+            "keyAsReported": "04/05",
+            "valueAsReported": "Ivica Džidić"
+          },
+          {
+            "keyAsReported": "03/04",
+            "valueAsReported": "Ivica Džidić"
+          },
+          {
+            "keyAsReported": "02/03",
+            "valueAsReported": "Teo Krešić"
+          },
+          {
+            "keyAsReported": "01/02",
+            "valueAsReported": "Slaven Musa"
+          },
+          {
+            "keyAsReported": "00/01",
+            "valueAsReported": "Slaven Musa"
+          },
+          {
+            "keyAsReported": "99/00",
+            "valueAsReported": "Slaven Musa"
+          },
+          {
+            "keyAsReported": "98/99",
+            "valueAsReported": "Slaven Musa"
+          },
+          {
+            "keyAsReported": "97/98",
+            "valueAsReported": "Blaž Slišković, Slaven Musa"
+          },
+          {
+            "keyAsReported": "96/97",
+            "valueAsReported": "Dalibor Cvitanović"
+          },
+          {
+            "keyAsReported": "95/96",
+            "valueAsReported": "Denis Hrkać, Dalibor Cvitanović"
+          },
+          {
+            "keyAsReported": "94/95",
+            "valueAsReported": "Dalibor Pušić, Berislav Markotić"
+          },
+          {
+            "keyAsReported": "93/94",
+            "valueAsReported": "Blaž Slišković"
+          },
+          {
+            "keyAsReported": "92/93",
+            "valueAsReported": "Slaven Musa"
+          }
+        ]
+      },
+      {
+        "tabIndex": 4,
+        "rows": [
+          {
+            "keyAsReported": "1.",
+            "valueAsReported": "Jadranko Topić (1992 - 1996)"
+          },
+          {
+            "keyAsReported": "2.",
+            "valueAsReported": "Ivan Mandić (1996 - 1997)"
+          },
+          {
+            "keyAsReported": "3.",
+            "valueAsReported": "Dinko Slezak (1997 - 1999)"
+          },
+          {
+            "keyAsReported": "4.",
+            "valueAsReported": "Željko Džidić (1999 - 2000)"
+          },
+          {
+            "keyAsReported": "5.",
+            "valueAsReported": "Miroslav Ćorić (2000 - 2003)"
+          },
+          {
+            "keyAsReported": "6.",
+            "valueAsReported": "Marijan Kvesić (2003)"
+          },
+          {
+            "keyAsReported": "7.",
+            "valueAsReported": "Milenko Mandžo (2003 - 2006)"
+          },
+          {
+            "keyAsReported": "8.",
+            "valueAsReported": "Ivan Beus (2006 - 2010)"
+          },
+          {
+            "keyAsReported": "9.",
+            "valueAsReported": "Ante Vidačak (2010 - 2012)"
+          },
+          {
+            "keyAsReported": "10.",
+            "valueAsReported": "Marin Raspudić (2012 - 2016)"
+          },
+          {
+            "keyAsReported": "11.",
+            "valueAsReported": "Denis Lasić (2016 - trenutno)"
+          }
+        ]
+      }
+    ],
+    "fanAwards": [],
+    "trophyCoaches": [],
+    "sourceUrl": "https://hskzrinjski.ba/brojke/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

@@ -1,0 +1,21 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/stadion/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:53:11.187841+00:00",
+    "contentHash": "93e2c8fdccaff1fe919751f725c848e1fa4abbe135716f41f7abee9d5e6b3b9c",
+    "bytes": 101115,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [],
+    "fanAwards": [],
+    "trophyCoaches": [],
+    "sourceUrl": "https://hskzrinjski.ba/stadion/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

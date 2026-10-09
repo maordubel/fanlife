@@ -1,0 +1,231 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/zrinjski-u-ligi-hrvatske-republike-herceg-bosne/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:52:50.564801+00:00",
+    "contentHash": "741b1358dc4c14035c7bbf2de2a02b7c84bac40df906d3e013fc34afdce06684",
+    "bytes": 136387,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [
+      {
+        "tabIndex": 1,
+        "rows": [
+          {
+            "keyAsReported": "99/00",
+            "valueAsReported": "6. I Liga 14"
+          },
+          {
+            "keyAsReported": "98/99",
+            "valueAsReported": "3. I Liga 14"
+          },
+          {
+            "keyAsReported": "97/98",
+            "valueAsReported": "2. I Liga 16"
+          },
+          {
+            "keyAsReported": "96/97",
+            "valueAsReported": "4. I Liga 16"
+          },
+          {
+            "keyAsReported": "95/96",
+            "valueAsReported": "Četvrtfinale doigravanja"
+          },
+          {
+            "keyAsReported": "94/95",
+            "valueAsReported": "9. I Skupina Jug"
+          },
+          {
+            "keyAsReported": "93/94",
+            "valueAsReported": "2. I Završnica doigravanja"
+          }
+        ]
+      },
+      {
+        "tabIndex": 2,
+        "rows": [
+          {
+            "keyAsReported": "370",
+            "valueAsReported": "NK Široki Brijeg"
+          },
+          {
+            "keyAsReported": "280",
+            "valueAsReported": "HŠK Zrinjski"
+          },
+          {
+            "keyAsReported": "251",
+            "valueAsReported": "NK Kiseljak"
+          },
+          {
+            "keyAsReported": "244",
+            "valueAsReported": "HŠK Posušje"
+          },
+          {
+            "keyAsReported": "236",
+            "valueAsReported": "NK Ljubuški"
+          },
+          {
+            "keyAsReported": "224",
+            "valueAsReported": "NK Troglav"
+          },
+          {
+            "keyAsReported": "210",
+            "valueAsReported": "HNK Brotnjo"
+          },
+          {
+            "keyAsReported": "197",
+            "valueAsReported": "NK GOŠK Gabela"
+          },
+          {
+            "keyAsReported": "192",
+            "valueAsReported": "HNK Orašje"
+          },
+          {
+            "keyAsReported": "186",
+            "valueAsReported": "NK Vitez"
+          }
+        ]
+      },
+      {
+        "tabIndex": 3,
+        "rows": [
+          {
+            "keyAsReported": "98",
+            "valueAsReported": "Ante Marijanović"
+          },
+          {
+            "keyAsReported": "92",
+            "valueAsReported": "Tihomir Skoko"
+          },
+          {
+            "keyAsReported": "67",
+            "valueAsReported": "Nikola Marić"
+          },
+          {
+            "keyAsReported": "67",
+            "valueAsReported": "Slaven Musa"
+          },
+          {
+            "keyAsReported": "66",
+            "valueAsReported": "Josip Jurković"
+          },
+          {
+            "keyAsReported": "64",
+            "valueAsReported": "Tihomir Bogdan"
+          },
+          {
+            "keyAsReported": "57",
+            "valueAsReported": "Branimir Lauš"
+          },
+          {
+            "keyAsReported": "53",
+            "valueAsReported": "Ivica Ravlić"
+          },
+          {
+            "keyAsReported": "53",
+            "valueAsReported": "Teo Krešić"
+          },
+          {
+            "keyAsReported": "51",
+            "valueAsReported": "Nenad Gagro"
+          }
+        ]
+      },
+      {
+        "tabIndex": 4,
+        "rows": [
+          {
+            "keyAsReported": "27",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "17",
+            "valueAsReported": "Tihomir Bogdan"
+          },
+          {
+            "keyAsReported": "16",
+            "valueAsReported": "Josip Jurković"
+          },
+          {
+            "keyAsReported": "15",
+            "valueAsReported": "Slaven Musa"
+          },
+          {
+            "keyAsReported": "14",
+            "valueAsReported": "Zoran Prskalo"
+          },
+          {
+            "keyAsReported": "12",
+            "valueAsReported": "Tihomir Skoko"
+          },
+          {
+            "keyAsReported": "10",
+            "valueAsReported": "Elvis Ćorić"
+          },
+          {
+            "keyAsReported": "10",
+            "valueAsReported": "Vjekoslav Sušac"
+          },
+          {
+            "keyAsReported": "9",
+            "valueAsReported": "Ivica Ravlić"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "Blaž Slišković"
+          }
+        ]
+      },
+      {
+        "tabIndex": 5,
+        "rows": [
+          {
+            "keyAsReported": "37",
+            "valueAsReported": "Dalibor Cvitanović"
+          },
+          {
+            "keyAsReported": "31",
+            "valueAsReported": "Miroslav Kordić"
+          },
+          {
+            "keyAsReported": "30",
+            "valueAsReported": "Franjo Džidić"
+          },
+          {
+            "keyAsReported": "15",
+            "valueAsReported": "Žarko Barbarić"
+          },
+          {
+            "keyAsReported": "13",
+            "valueAsReported": "Jozo Zelenika"
+          },
+          {
+            "keyAsReported": "13",
+            "valueAsReported": "Blaž Slišković"
+          },
+          {
+            "keyAsReported": "10",
+            "valueAsReported": "Mirko Gašić"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "Franjo Vladić"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "Vladimir Skočajić"
+          }
+        ]
+      }
+    ],
+    "fanAwards": [],
+    "trophyCoaches": [],
+    "sourceUrl": "https://hskzrinjski.ba/zrinjski-u-ligi-hrvatske-republike-herceg-bosne/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

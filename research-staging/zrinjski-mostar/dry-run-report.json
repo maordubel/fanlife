@@ -1,0 +1,152 @@
+{
+ "club": "zrinjski-mostar",
+ "snapshotAsOf": "2026-10-09",
+ "approvedForProduction": 0,
+ "sources": {
+  "total": 49,
+  "families": {
+   "hsk-zrinjski": 9,
+   "national-football-teams": 39,
+   "nfsbih": 1
+  },
+  "imagesUsableInApp": 0,
+  "sourcesWithHash": 49
+ },
+ "records": {
+  "archive-players": 70,
+  "backlog": 5,
+  "captain-spells": 35,
+  "coach-spells": 34,
+  "conflicts": 6,
+  "early-tables": 7,
+  "euro-ties": 54,
+  "fan-awards": 25,
+  "goal-claims": 0,
+  "honours": 15,
+  "lineups": 0,
+  "matches": 36,
+  "president-spells": 11,
+  "quarantined": 0,
+  "records": 315,
+  "season-summary": 56,
+  "sources": 49,
+  "squad-memberships": 203,
+  "stadium-components": 2,
+  "timeline": 36,
+  "trophy-coaches": 10
+ },
+ "identity": {
+  "archivePlayers": {
+   "total": 70,
+   "matched": 0,
+   "unmatched": 70
+  },
+  "squad": {
+   "total": 0,
+   "matched": 0,
+   "unmatched": 0
+  },
+  "rule": "verified provider id only; names are leads"
+ },
+ "matches": {
+  "total": 36,
+  "quarantined": [],
+  "futureDated": [],
+  "seasonMismatch": [],
+  "neutralFinals": 0,
+  "homeAway": {
+   "neutral": 0,
+   "unassigned": 0
+  },
+  "resultKinds": {
+   "displayed_unqualified": 36
+  },
+  "assertionsNotMatches": 61
+ },
+ "lineups": {
+  "total": 0,
+  "xiCandidatesNeedIdentity": 0,
+  "blocked": []
+ },
+ "goals": {
+  "groups": 0,
+  "duplicates": 0,
+  "sideUnresolved": 0,
+  "ownGoals": 0,
+  "disputed": 0
+ },
+ "conflicts": [
+  {
+   "id": "ea-conflict-1e37ed1aa54527d0",
+   "topic": "Cup honour list cutoff differs from current history page",
+   "status": "open",
+   "rule": "Do not use this disputed field in production or games until independently resolved."
+  },
+  {
+   "id": "ea-conflict-2ba8f74a73695663",
+   "topic": "Cup goals: Mladen Žižović appears twice",
+   "status": "open",
+   "rule": "Do not use this disputed field in production or games until independently resolved."
+  },
+  {
+   "id": "ea-conflict-576c2efecd694adc",
+   "topic": "2013/14 Botev away score",
+   "status": "open",
+   "rule": "Do not use this disputed field in production or games until independently resolved."
+  },
+  {
+   "id": "ea-conflict-649109d992fce20a",
+   "topic": "2023/24 Slovan away score",
+   "status": "open",
+   "rule": "Do not use this disputed field in production or games until independently resolved."
+  },
+  {
+   "id": "ea-conflict-a7930ea2c0ae1dc2",
+   "topic": "2024/25 Bravo away score",
+   "status": "open",
+   "rule": "Do not use this disputed field in production or games until independently resolved."
+  },
+  {
+   "id": "ea-conflict-c533b9829f161f13",
+   "topic": "2014/15 Maribor away score",
+   "status": "open",
+   "rule": "Do not use this disputed field in production or games until independently resolved."
+  }
+ ],
+ "honoursWithTwoFamilies": 0,
+ "seasonTokenIssues": [],
+ "sensitiveClaims": 0,
+ "gates": {
+  "timeline": "LOCKED",
+  "trivia": "LOCKED",
+  "xi": "LOCKED",
+  "lineup": "LOCKED",
+  "archive": "LOCKED",
+  "memory": "LOCKED",
+  "goal": "LOCKED",
+  "note": "review material is never playable; gates unlock only from approved, sourced, conflict-free facts"
+ },
+ "fingerprints": {
+  "archive-players": "f515ee8313c35fe6",
+  "backlog": "6d35b94a91609557",
+  "captain-spells": "3d6f7311bd150909",
+  "coach-spells": "a0b8a8936991c4c4",
+  "conflicts": "5016529d1b8aebf5",
+  "early-tables": "237592e6901c1931",
+  "euro-ties": "0bafe2004d4cc8b5",
+  "fan-awards": "258fa03644b67696",
+  "goal-claims": "218e20f735d77d01",
+  "honours": "a4a1f09feee6e12b",
+  "lineups": "3661178766e76205",
+  "matches": "c326f498b6f37738",
+  "president-spells": "ba3ec87e36edc98a",
+  "quarantined": "63d4754fb21e8e0d",
+  "records": "51e124e408d92567",
+  "season-summary": "811d640524cc89c9",
+  "sources": "5fb07f37cd3c555c",
+  "squad-memberships": "8a6555b2bf37767f",
+  "stadium-components": "bdc3f7b59ec91c55",
+  "timeline": "0af4f439263d022a",
+  "trophy-coaches": "4736c528c113fa6c"
+ }
+}

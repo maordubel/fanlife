@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "clubId": "st-pauli",
+  "sport": "football",
+  "researchVersion": "existing-archive-completion-2026-10-09",
+  "snapshotAsOf": "2026-10-09",
+  "approvedForProduction": 0,
+  "completeArchiveClaim": false,
+  "scope": "Extend an existing archive; no registry or new club pack created.",
+  "identityRule": "Provider IDs are candidates, not verified canonical FAN LIFE IDs.",
+  "counts": {
+    "sources": 43,
+    "matches": 1454,
+    "squad-memberships": 1273,
+    "archive-players": 481,
+    "season-summary": 43,
+    "timeline": 1454,
+    "backlog": 5,
+    "coverage-gaps": 10,
+    "lineups": 0,
+    "goal-claims": 0,
+    "honours": 0,
+    "conflicts": 0,
+    "quarantined": 0
+  }
+}

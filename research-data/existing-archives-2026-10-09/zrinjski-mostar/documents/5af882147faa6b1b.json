@@ -1,0 +1,537 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/zrinjski-u-wwin-ligi/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:52:20.086167+00:00",
+    "contentHash": "1f9ba6e6b13400637c3578abf0b701ba5a59989a0ba375cb7b7cc0c71ae24227",
+    "bytes": 197114,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [
+      {
+        "tabIndex": 1,
+        "rows": [
+          {
+            "keyAsReported": "25/26",
+            "valueAsReported": "2. I Liga 10"
+          },
+          {
+            "keyAsReported": "24/25",
+            "valueAsReported": "1. I Liga 12"
+          },
+          {
+            "keyAsReported": "23/24",
+            "valueAsReported": "2. I Liga 12"
+          },
+          {
+            "keyAsReported": "22/23",
+            "valueAsReported": "1. I Liga 12"
+          },
+          {
+            "keyAsReported": "21/22",
+            "valueAsReported": "1. I Liga 12"
+          },
+          {
+            "keyAsReported": "20/21",
+            "valueAsReported": "5. I Liga 12"
+          },
+          {
+            "keyAsReported": "19/20",
+            "valueAsReported": "3. I Liga 12"
+          },
+          {
+            "keyAsReported": "18/19",
+            "valueAsReported": "2. I Liga 12"
+          },
+          {
+            "keyAsReported": "17/18",
+            "valueAsReported": "1. I Liga 12"
+          },
+          {
+            "keyAsReported": "16/17",
+            "valueAsReported": "1. I Liga 12"
+          },
+          {
+            "keyAsReported": "15/16",
+            "valueAsReported": "1. I Liga 16"
+          },
+          {
+            "keyAsReported": "14/15",
+            "valueAsReported": "3. I Liga 16"
+          },
+          {
+            "keyAsReported": "13/14",
+            "valueAsReported": "1. I Liga 16"
+          },
+          {
+            "keyAsReported": "12/13",
+            "valueAsReported": "9. I Liga 16"
+          },
+          {
+            "keyAsReported": "11/12",
+            "valueAsReported": "6. I Liga 16"
+          },
+          {
+            "keyAsReported": "10/11",
+            "valueAsReported": "7. I Liga 16"
+          },
+          {
+            "keyAsReported": "09/10",
+            "valueAsReported": "4. I Liga 16"
+          },
+          {
+            "keyAsReported": "08/09",
+            "valueAsReported": "1. I Liga 16"
+          },
+          {
+            "keyAsReported": "07/08",
+            "valueAsReported": "4. I Liga 16"
+          },
+          {
+            "keyAsReported": "06/07",
+            "valueAsReported": "2. I Liga 16"
+          },
+          {
+            "keyAsReported": "05/06",
+            "valueAsReported": "3. I Liga 16"
+          },
+          {
+            "keyAsReported": "04/05",
+            "valueAsReported": "1. I Liga 16"
+          },
+          {
+            "keyAsReported": "03/04",
+            "valueAsReported": "11. I Liga 16"
+          },
+          {
+            "keyAsReported": "02/03",
+            "valueAsReported": "11. Liga 20"
+          }
+        ]
+      },
+      {
+        "tabIndex": 2,
+        "rows": [
+          {
+            "keyAsReported": "1439",
+            "valueAsReported": "HŠK Zrinjski"
+          },
+          {
+            "keyAsReported": "1375",
+            "valueAsReported": "FK Sarajevo"
+          },
+          {
+            "keyAsReported": "1311",
+            "valueAsReported": "FK Željezničar"
+          },
+          {
+            "keyAsReported": "1234",
+            "valueAsReported": "NK Široki Brijeg"
+          },
+          {
+            "keyAsReported": "1091",
+            "valueAsReported": "FK Borac"
+          },
+          {
+            "keyAsReported": "782",
+            "valueAsReported": "FK Sloboda"
+          },
+          {
+            "keyAsReported": "757",
+            "valueAsReported": "FK Velež"
+          },
+          {
+            "keyAsReported": "724",
+            "valueAsReported": "NK Čelik"
+          },
+          {
+            "keyAsReported": "566",
+            "valueAsReported": "FK Leotar"
+          },
+          {
+            "keyAsReported": "504",
+            "valueAsReported": "FK Radnik"
+          }
+        ]
+      },
+      {
+        "tabIndex": 3,
+        "rows": [
+          {
+            "keyAsReported": "265",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "232",
+            "valueAsReported": "Slobodan Jakovljević"
+          },
+          {
+            "keyAsReported": "220",
+            "valueAsReported": "Pero Stojkić"
+          },
+          {
+            "keyAsReported": "211",
+            "valueAsReported": "Hrvoje Barišić"
+          },
+          {
+            "keyAsReported": "161",
+            "valueAsReported": "Velibor Đurić"
+          },
+          {
+            "keyAsReported": "144",
+            "valueAsReported": "Igor Žuržinov"
+          },
+          {
+            "keyAsReported": "143",
+            "valueAsReported": "Ognjen Todorović"
+          },
+          {
+            "keyAsReported": "141",
+            "valueAsReported": "Marin Aničić"
+          },
+          {
+            "keyAsReported": "137",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "132",
+            "valueAsReported": "Josip Ćorluka"
+          }
+        ]
+      },
+      {
+        "tabIndex": 4,
+        "rows": [
+          {
+            "keyAsReported": "169",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "39",
+            "valueAsReported": "Krešimir Kordić"
+          },
+          {
+            "keyAsReported": "36",
+            "valueAsReported": "Miloš Filipović"
+          },
+          {
+            "keyAsReported": "30",
+            "valueAsReported": "Zoran Rajović"
+          },
+          {
+            "keyAsReported": "28",
+            "valueAsReported": "Mario Ćuže"
+          },
+          {
+            "keyAsReported": "25",
+            "valueAsReported": "Stevo Nikolić"
+          },
+          {
+            "keyAsReported": "24",
+            "valueAsReported": "Ognjen Todorović"
+          },
+          {
+            "keyAsReported": "23",
+            "valueAsReported": "Mladen Žižović"
+          },
+          {
+            "keyAsReported": "23",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "22",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "22",
+            "valueAsReported": "Jasmin Mešanović"
+          },
+          {
+            "keyAsReported": "22",
+            "valueAsReported": "Matija Malekinušić"
+          }
+        ]
+      },
+      {
+        "tabIndex": 5,
+        "rows": [
+          {
+            "keyAsReported": "139",
+            "valueAsReported": "Blaž Slišković"
+          },
+          {
+            "keyAsReported": "87",
+            "valueAsReported": "Dragan Jović"
+          },
+          {
+            "keyAsReported": "64",
+            "valueAsReported": "Sergej Jakirović"
+          },
+          {
+            "keyAsReported": "60",
+            "valueAsReported": "Vinko Marinović"
+          },
+          {
+            "keyAsReported": "56",
+            "valueAsReported": "Branko Karačić"
+          },
+          {
+            "keyAsReported": "47",
+            "valueAsReported": "Franjo Džidić"
+          },
+          {
+            "keyAsReported": "42",
+            "valueAsReported": "Slaven Musa"
+          },
+          {
+            "keyAsReported": "41",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "35",
+            "valueAsReported": "Igor Štimac"
+          },
+          {
+            "keyAsReported": "28",
+            "valueAsReported": "Krunoslav Rendulić"
+          }
+        ]
+      },
+      {
+        "tabIndex": 6,
+        "rows": [
+          {
+            "keyAsReported": "61",
+            "valueAsReported": "FK Sarajevo (24-14-23)"
+          },
+          {
+            "keyAsReported": "61",
+            "valueAsReported": "FK Željezničar (27-14-20)"
+          },
+          {
+            "keyAsReported": "59",
+            "valueAsReported": "NK Široki Brijeg (24-18-17)"
+          },
+          {
+            "keyAsReported": "47",
+            "valueAsReported": "FK Sloboda (33-6-8)"
+          },
+          {
+            "keyAsReported": "48",
+            "valueAsReported": "FK Borac (23-8-17)"
+          },
+          {
+            "keyAsReported": "44",
+            "valueAsReported": "FK Velež (28-7-9)"
+          },
+          {
+            "keyAsReported": "39",
+            "valueAsReported": "FK Radnik (26-8-5)"
+          },
+          {
+            "keyAsReported": "38",
+            "valueAsReported": "NK Čelik (19-9-10)"
+          },
+          {
+            "keyAsReported": "30",
+            "valueAsReported": "FK Leotar (21-2-7)"
+          },
+          {
+            "keyAsReported": "30",
+            "valueAsReported": "HŠK Posušje (15-7-8)"
+          },
+          {
+            "keyAsReported": "24",
+            "valueAsReported": "NK Travnik (15-5-4)"
+          },
+          {
+            "keyAsReported": "24",
+            "valueAsReported": "FK Slavija (15-4-5)"
+          },
+          {
+            "keyAsReported": "19",
+            "valueAsReported": "FK Olimpic (11-2-6)"
+          },
+          {
+            "keyAsReported": "19",
+            "valueAsReported": "FK Rudar Prijedor (11-4-4)"
+          },
+          {
+            "keyAsReported": "17",
+            "valueAsReported": "FK Tuzla City (12-3-2)"
+          },
+          {
+            "keyAsReported": "15",
+            "valueAsReported": "NK GOŠK (12-1-2)"
+          },
+          {
+            "keyAsReported": "14",
+            "valueAsReported": "HNK Orašje (9-1-4)"
+          },
+          {
+            "keyAsReported": "14",
+            "valueAsReported": "FK Modriča (7-2-5)"
+          },
+          {
+            "keyAsReported": "14",
+            "valueAsReported": "NK Zvijezda (6-2-6)"
+          },
+          {
+            "keyAsReported": "14",
+            "valueAsReported": "FK Mladost DK (10-4-0)"
+          },
+          {
+            "keyAsReported": "14",
+            "valueAsReported": "FK Krupa (11-2-1)"
+          },
+          {
+            "keyAsReported": "13",
+            "valueAsReported": "FK Sloga (11-1-1)"
+          },
+          {
+            "keyAsReported": "12",
+            "valueAsReported": "NK Žepče (7-0-5)"
+          },
+          {
+            "keyAsReported": "10",
+            "valueAsReported": "NK Vitez (8-1-1)"
+          },
+          {
+            "keyAsReported": "9",
+            "valueAsReported": "FK Igman (9-0-0)"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "FK Budućnost (4-1-3)"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "NK Jedinstvo (5-1-2)"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "FK Zvijezda 09 (4-1-3)"
+          },
+          {
+            "keyAsReported": "7",
+            "valueAsReported": "FK Rudar Ugljevik (5-1-1)"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "FK Drina (4-1-1)"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "FK Laktaši (5-0-1)"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "FK Kozara (1-1-2)"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "HNK Brotnjo (3-0-1)"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "FK Mladost VO (3-1-0)"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "FK Glasinac (1-1-2)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "OFK Gradina (2-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "NK Bosna (2-0-0)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "FK Mladost Gacko (1-0-1)"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "NK Metalleghe (1-0-1)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "FK BSK (1-0-0)"
+          }
+        ]
+      },
+      {
+        "tabIndex": 7,
+        "rows": [
+          {
+            "keyAsReported": "14",
+            "valueAsReported": "Najduži niz pobjeda (rekord WWin Lige)"
+          },
+          {
+            "keyAsReported": "27",
+            "valueAsReported": "Najduži niz bez poraza (rekord WWin Lige)"
+          },
+          {
+            "keyAsReported": "20",
+            "valueAsReported": "Najduži niz pobjeda na domaćem terenu"
+          },
+          {
+            "keyAsReported": "55",
+            "valueAsReported": "Najduži niz bez domaćeg poraza (rekord WWin Lige)"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "Najduži niz bez primljenog pogotka"
+          },
+          {
+            "keyAsReported": "13",
+            "valueAsReported": "Najduži niz gostujućih pobjeda (rekord WWin Lige)"
+          },
+          {
+            "keyAsReported": "16",
+            "valueAsReported": "Najduži niz bez gostujućeg poraza"
+          },
+          {
+            "keyAsReported": "7:1",
+            "valueAsReported": "Najuvjerljivija domaća pobjeda (HŠK Zrinjski - FK Igman)"
+          },
+          {
+            "keyAsReported": "6:0",
+            "valueAsReported": "Najuvjerljivija gostujuća pobjeda (FK Sloboda - HŠK Zrinjski)"
+          },
+          {
+            "keyAsReported": "84",
+            "valueAsReported": "Najviše osvojenih bodova (84,8%) u jednoj sezoni (rekord WWin Lige)"
+          },
+          {
+            "keyAsReported": "26",
+            "valueAsReported": "Najviše pobjeda (78,7%) u jednoj sezoni (rekord WWin Lige)"
+          },
+          {
+            "keyAsReported": "1",
+            "valueAsReported": "Najmanje poraza (3,03%) u jednoj sezoni (rekord WWin Lige)"
+          },
+          {
+            "keyAsReported": "12",
+            "valueAsReported": "Najviše gostujućih pobjeda (75%) u jednoj sezoni (rekord WWin Lige)"
+          },
+          {
+            "keyAsReported": "33",
+            "valueAsReported": "Najviše pogodaka u sezoni (Nemanja Bilbija, 2021/2022)"
+          }
+        ]
+      }
+    ],
+    "fanAwards": [],
+    "trophyCoaches": [],
+    "sourceUrl": "https://hskzrinjski.ba/zrinjski-u-wwin-ligi/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

@@ -1,0 +1,122 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/navijaci/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:53:21.555369+00:00",
+    "contentHash": "8c86602f61a238103fca6fd681b08e2baee44cf2191ebe6bac234a7f9fa751d1",
+    "bytes": 149273,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [],
+    "fanAwards": [
+      {
+        "year": 2026,
+        "nameAsReported": "Karlo Abramović"
+      },
+      {
+        "year": 2025,
+        "nameAsReported": "Antonio Ivančić"
+      },
+      {
+        "year": 2024,
+        "nameAsReported": "Marko Marić"
+      },
+      {
+        "year": 2023,
+        "nameAsReported": "Mario Tičinović"
+      },
+      {
+        "year": 2022,
+        "nameAsReported": "Josip Ćorluka"
+      },
+      {
+        "year": 2021,
+        "nameAsReported": "Nemanja Bilbija"
+      },
+      {
+        "year": 2020,
+        "nameAsReported": "Bez laureata"
+      },
+      {
+        "year": 2019,
+        "nameAsReported": "Marin Galić"
+      },
+      {
+        "year": 2018,
+        "nameAsReported": "Ognjen Todorović"
+      },
+      {
+        "year": 2017,
+        "nameAsReported": "Slobodan Jakovljević"
+      },
+      {
+        "year": 2016,
+        "nameAsReported": "Daniel Graovac"
+      },
+      {
+        "year": 2015,
+        "nameAsReported": "Vučina Šćepanović"
+      },
+      {
+        "year": 2014,
+        "nameAsReported": "Anto Radeljić"
+      },
+      {
+        "year": 2013,
+        "nameAsReported": "Pero Stojkić"
+      },
+      {
+        "year": 2012,
+        "nameAsReported": "Igor Melher"
+      },
+      {
+        "year": 2011,
+        "nameAsReported": "Marin Aničić"
+      },
+      {
+        "year": 2009,
+        "nameAsReported": "Krešimir Kordić"
+      },
+      {
+        "year": 2008,
+        "nameAsReported": "Mario Ivanković"
+      },
+      {
+        "year": 2007,
+        "nameAsReported": "Sulejman Smajić"
+      },
+      {
+        "year": 2006,
+        "nameAsReported": "Ivica Džidić"
+      },
+      {
+        "year": 2005,
+        "nameAsReported": "Zoran Rajović"
+      },
+      {
+        "year": 2004,
+        "nameAsReported": "Luka Modrić"
+      },
+      {
+        "year": 2003,
+        "nameAsReported": "Armando Marenzi"
+      },
+      {
+        "year": 2002,
+        "nameAsReported": "Ivica Matas"
+      },
+      {
+        "year": 2001,
+        "nameAsReported": "Slaven Musa"
+      }
+    ],
+    "trophyCoaches": [],
+    "sourceUrl": "https://hskzrinjski.ba/navijaci/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

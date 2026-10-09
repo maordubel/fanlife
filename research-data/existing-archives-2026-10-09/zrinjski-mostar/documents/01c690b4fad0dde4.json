@@ -1,0 +1,406 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/zrinjski-u-europi/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:52:40.477265+00:00",
+    "contentHash": "d984670b453131d27407e9b2fe395855776a9fc1d2bcf8d51bb0327bdaa5baaa",
+    "bytes": 173485,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [
+      {
+        "tabIndex": 1,
+        "rows": [
+          {
+            "keyAsReported": "26/27",
+            "valueAsReported": "UECL I Valur FC 0:1, 2:2"
+          },
+          {
+            "keyAsReported": "25/26",
+            "valueAsReported": "UCL I AC Virtus 2:0, 2:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UCL I ŠK Slovan 0:4, 2:2"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I Breidablik 1:1, 2:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I FC Utrecht 0:2, 0:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I Lincoln Red Imps 5:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I 1. FSV Mainz 05 0:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I FK Dinamo Kijev 0:6"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I BK Häcken 2:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I RKS Rakow 0:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I SK Rapid 1:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I Crystal Palace FC 1:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I Crystal Palace FC 0:2"
+          },
+          {
+            "keyAsReported": "24/25",
+            "valueAsReported": "UECL I NK Bravo 0:1, 3:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I PFK Botev 1:2, 2:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I Vitória 0:3, 0:4"
+          },
+          {
+            "keyAsReported": "23/24",
+            "valueAsReported": "UCL I FC Urartu 1:0, 1:2"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UCL I ŠK Slovan 0:1, 2:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I Breidablik 6:2, 0:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I LASK 1:2, 1:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I AZ Alkmaar 4:3, 0:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I Aston Villa FC 0:1, 1:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I Legia Warszawa 1:2, 0:2"
+          },
+          {
+            "keyAsReported": "22/23",
+            "valueAsReported": "UCL I FC Sheriff 0:0, 0:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I KF Tirana 1:0, 3:2"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I FC Tobol 1:0, 1:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UECL I ŠK Slovan 1:0, 1:2"
+          },
+          {
+            "keyAsReported": "20/21",
+            "valueAsReported": "UEL I FC Differdange 3:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I NK Olimpija 3:2"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I APOEL FC 2:2"
+          },
+          {
+            "keyAsReported": "19/20",
+            "valueAsReported": "UEL I Akademija Pandev 3:0, 3:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I FC Utrecht 1:1, 2:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I Malmö FF 0:3, 1:0"
+          },
+          {
+            "keyAsReported": "18/19",
+            "valueAsReported": "UCL I FC Spartak 0:1, 1:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I Valletta FC 1:1, 2:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I PFK Ludogorets 0:1, 1:1"
+          },
+          {
+            "keyAsReported": "17/18",
+            "valueAsReported": "UCL I NK Maribor 1:2, 1:1"
+          },
+          {
+            "keyAsReported": "16/17",
+            "valueAsReported": "UCL I Legia Warszawa 1:1, 0:2"
+          },
+          {
+            "keyAsReported": "15/16",
+            "valueAsReported": "UEL I Shirak SC 0:2, 2:1"
+          },
+          {
+            "keyAsReported": "14/15",
+            "valueAsReported": "UCL I NK Maribor 0:0, 1:2"
+          },
+          {
+            "keyAsReported": "13/14",
+            "valueAsReported": "UEL I UE Santa Coloma 3:1, 1:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I PFK Botev 1:1, 0:0"
+          },
+          {
+            "keyAsReported": "10/11",
+            "valueAsReported": "UEL I FC Tobol 2:1, 2:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I SP Tre Penne 4:1, 9:2"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "UEL I Odense BK 3:5, 0:0"
+          },
+          {
+            "keyAsReported": "09/10",
+            "valueAsReported": "UCL I ŠK Slovan 1:0, 0:4"
+          },
+          {
+            "keyAsReported": "08/09",
+            "valueAsReported": "KU I FC Vaduz 2:1, 3:0"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "KU I SC Braga 0:1, 0:2"
+          },
+          {
+            "keyAsReported": "07/08",
+            "valueAsReported": "KU I FK Partizan 1:6, 0:5"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "KU I FK Rabotnički 0:0, 1:2"
+          },
+          {
+            "keyAsReported": "06/07",
+            "valueAsReported": "IK I Marsaxlokk FC 3:0, 1:1"
+          },
+          {
+            "keyAsReported": "",
+            "valueAsReported": "IK I Maccabi PT 1:1, 1:3"
+          },
+          {
+            "keyAsReported": "05/06",
+            "valueAsReported": "UCL I F91 Dudelange 1:0, 0:4"
+          },
+          {
+            "keyAsReported": "00/01",
+            "valueAsReported": "IK I Västra Frölunda 0:1, 2:1"
+          }
+        ]
+      },
+      {
+        "tabIndex": 2,
+        "rows": [
+          {
+            "keyAsReported": "50",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "39",
+            "valueAsReported": "Kerim Memija"
+          },
+          {
+            "keyAsReported": "38",
+            "valueAsReported": "Slobodan Jakovljević"
+          },
+          {
+            "keyAsReported": "36",
+            "valueAsReported": "Mario Ćuže"
+          },
+          {
+            "keyAsReported": "35",
+            "valueAsReported": "Hrvoje Barišić"
+          },
+          {
+            "keyAsReported": "35",
+            "valueAsReported": "Antonio Ivančić"
+          },
+          {
+            "keyAsReported": "29",
+            "valueAsReported": "Mario Tičinović"
+          },
+          {
+            "keyAsReported": "27",
+            "valueAsReported": "Josip Ćorluka"
+          },
+          {
+            "keyAsReported": "27",
+            "valueAsReported": "Igor Savić"
+          },
+          {
+            "keyAsReported": "25",
+            "valueAsReported": "Tomislav Kiš"
+          }
+        ]
+      },
+      {
+        "tabIndex": 3,
+        "rows": [
+          {
+            "keyAsReported": "22",
+            "valueAsReported": "Nemanja Bilbija"
+          },
+          {
+            "keyAsReported": "5",
+            "valueAsReported": "Velibor Đurić"
+          },
+          {
+            "keyAsReported": "5",
+            "valueAsReported": "Vlado Zadro"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Mladen Žižović"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Tomislav Kiš"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Mario Ćuže"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "Ognjen Todorović"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "Staniša Mandić"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "Miljan Govedarica"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "Miloš Filipović"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "Josip Ivančić"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "Matija Malekinušić"
+          }
+        ]
+      },
+      {
+        "tabIndex": 4,
+        "rows": [
+          {
+            "keyAsReported": "12",
+            "valueAsReported": "Dragan Jović"
+          },
+          {
+            "keyAsReported": "12",
+            "valueAsReported": "Krunoslav Rendulić"
+          },
+          {
+            "keyAsReported": "12",
+            "valueAsReported": "Mario Ivanković"
+          },
+          {
+            "keyAsReported": "12",
+            "valueAsReported": "Igor Štimac"
+          },
+          {
+            "keyAsReported": "11",
+            "valueAsReported": "Blaž Slišković"
+          },
+          {
+            "keyAsReported": "8",
+            "valueAsReported": "Sergej Jakirović"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "Branko Karačić"
+          },
+          {
+            "keyAsReported": "6",
+            "valueAsReported": "Hari Vukas"
+          },
+          {
+            "keyAsReported": "5",
+            "valueAsReported": "Ante Miše"
+          },
+          {
+            "keyAsReported": "4",
+            "valueAsReported": "Vinko Marinović"
+          },
+          {
+            "keyAsReported": "3",
+            "valueAsReported": "Mladen Žižović"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "Vladimir Skočajić"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "Franjo Džidić"
+          },
+          {
+            "keyAsReported": "2",
+            "valueAsReported": "Simon Rožman"
+          }
+        ]
+      }
+    ],
+    "fanAwards": [],
+    "trophyCoaches": [],
+    "sourceUrl": "https://hskzrinjski.ba/zrinjski-u-europi/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

@@ -1,0 +1,62 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2014_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:26.149334+00:00",
+    "contentHash": "99aec5fd0dc8a983dfbfe1c56df84531bc77d327c298f86bc8e6e25b8243460a",
+    "bytes": 66143,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:63647",
+        "nameAsReported": "Graovac, Daniel",
+        "profileUrl": "https://www.national-football-teams.com/player/63647/Daniel_Graovac.html",
+        "season": "2014/15",
+        "birthDate": "1993-08-08",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2014_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:31711",
+        "nameAsReported": "Đurić, Velibor",
+        "profileUrl": "https://www.national-football-teams.com/player/31711/Velibor_Duric.html",
+        "season": "2014/15",
+        "birthDate": "1982-05-05",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2014_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:70069",
+        "nameAsReported": "Todorović, Ognjen",
+        "profileUrl": "https://www.national-football-teams.com/player/70069/Ognjen_Todorovic.html",
+        "season": "2014/15",
+        "birthDate": "1989-03-24",
+        "positionAsReported": "Left Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2014_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:24768",
+        "nameAsReported": "Nikolić, Stevo",
+        "profileUrl": "https://www.national-football-teams.com/player/24768/Stevo_Nikolic.html",
+        "season": "2014/15",
+        "birthDate": "1984-12-04",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2014_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

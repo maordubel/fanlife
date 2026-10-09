@@ -1,0 +1,87 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/povijest/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:51:34.848224+00:00",
+    "contentHash": "72a4f4d3ca52ded85257ba028b1f83b9cf19ce9966babee5fde613ea0ad9f414",
+    "bytes": 125943,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [
+      {
+        "tabIndex": 5,
+        "rows": [
+          {
+            "keyAsReported": "2005.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2008.",
+            "valueAsReported": "Kup Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2009.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2014.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2016.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2017.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2018.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2022.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2023.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2023.",
+            "valueAsReported": "Kup Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2024.",
+            "valueAsReported": "Kup Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2024.",
+            "valueAsReported": "Superkup Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2025.",
+            "valueAsReported": "Premijer liga Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2025.",
+            "valueAsReported": "Superkup Bosne i Hercegovine"
+          },
+          {
+            "keyAsReported": "2026.",
+            "valueAsReported": "Kup Bosne i Hercegovine"
+          }
+        ]
+      }
+    ],
+    "fanAwards": [],
+    "trophyCoaches": [],
+    "sourceUrl": "https://hskzrinjski.ba/povijest/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

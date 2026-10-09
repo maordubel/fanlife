@@ -1,0 +1,29 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/1997_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:57:19.636486+00:00",
+    "contentHash": "5ee3c38756a11097c7061ddd7fe82f17c8f25aae3e1e2b96e5f617b6f4d1741e",
+    "bytes": 62796,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:19975",
+        "nameAsReported": "Slišković, Blaž",
+        "profileUrl": "https://www.national-football-teams.com/player/19975/Blaz_Sliskovic.html",
+        "season": "1997/98",
+        "birthDate": "1959-05-30",
+        "positionAsReported": "Centre Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/1997_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

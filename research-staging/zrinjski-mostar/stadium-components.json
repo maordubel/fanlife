@@ -1,0 +1,48 @@
+[
+  {
+    "id": "ea-stadium-2382d4a5b269e82e",
+    "clubId": "zrinjski-mostar",
+    "stadiumNameAsReported": "Stadion HŠK Zrinjski",
+    "component": "west-lower",
+    "seatsAsReported": 4875,
+    "sourceIds": [
+      "ea-src-d1b218f0c22e1772"
+    ],
+    "asOfDate": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:stadium"
+    ],
+    "note": "Component capacity only. Do not sum into a current whole-stadium capacity; east stand under construction.",
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-stadium-e8fd19f2ec0e1cc0",
+    "clubId": "zrinjski-mostar",
+    "stadiumNameAsReported": "Stadion HŠK Zrinjski",
+    "component": "west-upper",
+    "seatsAsReported": 2380,
+    "sourceIds": [
+      "ea-src-d1b218f0c22e1772"
+    ],
+    "asOfDate": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:stadium"
+    ],
+    "note": "Component capacity only. Do not sum into a current whole-stadium capacity; east stand under construction.",
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:45.271929+00:00",
+    "contentHash": "280d8288f6ea61e3714ed2b15f8277c25d1149e21b2ac931bb5126d3b1b5d661",
+    "bytes": 68323,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:7441",
+        "nameAsReported": "Melher, Igor",
+        "profileUrl": "https://www.national-football-teams.com/player/7441/Igor_Melher.html",
+        "season": "2009/10",
+        "birthDate": "1979-11-01",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:46898",
+        "nameAsReported": "Hadžić, Adnan",
+        "profileUrl": "https://www.national-football-teams.com/player/46898/Adnan_Hadzic.html",
+        "season": "2009/10",
+        "birthDate": "1988-01-15",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:48337",
+        "nameAsReported": "Šunjić, Toni",
+        "profileUrl": "https://www.national-football-teams.com/player/48337/Toni_Sunjic.html",
+        "season": "2009/10",
+        "birthDate": "1988-12-15",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:63566",
+        "nameAsReported": "Sušić, Mateo",
+        "profileUrl": "https://www.national-football-teams.com/player/63566/Mateo_Susic.html",
+        "season": "2009/10",
+        "birthDate": "1990-11-18",
+        "positionAsReported": "Right Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:63564",
+        "nameAsReported": "Aničić, Marin",
+        "profileUrl": "https://www.national-football-teams.com/player/63564/Marin_Anicic.html",
+        "season": "2009/10",
+        "birthDate": "1989-08-17",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:24764",
+        "nameAsReported": "Žižović, Mladen",
+        "profileUrl": "https://www.national-football-teams.com/player/24764/Mladen_Zizovic.html",
+        "season": "2009/10",
+        "birthDate": "1980-12-27",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

@@ -1,0 +1,128 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:05.724338+00:00",
+    "contentHash": "a3a5744ad6c3b8a80f67001b29a0e6aba12edecf632d97753cccff85b57dcc89",
+    "bytes": 73004,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:80409",
+        "nameAsReported": "Ćorluka, Josip",
+        "profileUrl": "https://www.national-football-teams.com/player/80409/Josip_Corluka.html",
+        "season": "2021/22",
+        "birthDate": "1995-03-03",
+        "positionAsReported": "Right Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:85001",
+        "nameAsReported": "Barišić, Hrvoje",
+        "profileUrl": "https://www.national-football-teams.com/player/85001/Hrvoje_Barisic.html",
+        "season": "2021/22",
+        "birthDate": "1991-02-03",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:64697",
+        "nameAsReported": "Bekić, Almir",
+        "profileUrl": "https://www.national-football-teams.com/player/64697/Almir_Bekic.html",
+        "season": "2021/22",
+        "birthDate": "1989-06-01",
+        "positionAsReported": "Left Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:65841",
+        "nameAsReported": "Trajkovski, Dejan",
+        "profileUrl": "https://www.national-football-teams.com/player/65841/Dejan_Trajkovski.html",
+        "season": "2021/22",
+        "birthDate": "1992-04-14",
+        "positionAsReported": "Left Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:85003",
+        "nameAsReported": "Savić, Igor",
+        "profileUrl": "https://www.national-football-teams.com/player/85003/Igor_Savic.html",
+        "season": "2021/22",
+        "birthDate": "2000-10-08",
+        "positionAsReported": "Defensive Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:93033",
+        "nameAsReported": "Bašić, Ivan",
+        "profileUrl": "https://www.national-football-teams.com/player/93033/Ivan_Basic.html",
+        "season": "2021/22",
+        "birthDate": "2002-04-30",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:95117",
+        "nameAsReported": "Šošić, Madžid",
+        "profileUrl": "https://www.national-football-teams.com/player/95117/Madzid_Sosic.html",
+        "season": "2021/22",
+        "birthDate": "2002-08-12",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:95592",
+        "nameAsReported": "Sučić, Petar",
+        "profileUrl": "https://www.national-football-teams.com/player/95592/Petar_Sucic.html",
+        "season": "2021/22",
+        "birthDate": "2003-10-25",
+        "positionAsReported": "Defensive Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:70071",
+        "nameAsReported": "Bilbija, Nemanja",
+        "profileUrl": "https://www.national-football-teams.com/player/70071/Nemanja_Bilbija.html",
+        "season": "2021/22",
+        "birthDate": "1990-11-02",
+        "positionAsReported": "Secondary striker",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:80411",
+        "nameAsReported": "Hadžić, Irfan",
+        "profileUrl": "https://www.national-football-teams.com/player/80411/Irfan_Hadzic.html",
+        "season": "2021/22",
+        "birthDate": "1993-06-15",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

@@ -1,0 +1,97 @@
+{
+ "club": "st-pauli",
+ "snapshotAsOf": "2026-10-09",
+ "approvedForProduction": 0,
+ "sources": {
+  "total": 43,
+  "families": {
+   "dfb": 43
+  },
+  "imagesUsableInApp": 0,
+  "sourcesWithHash": 43
+ },
+ "records": {
+  "archive-players": 481,
+  "backlog": 5,
+  "conflicts": 0,
+  "coverage-gaps": 10,
+  "goal-claims": 0,
+  "honours": 0,
+  "lineups": 0,
+  "matches": 1454,
+  "quarantined": 0,
+  "season-summary": 43,
+  "sources": 43,
+  "squad-memberships": 1273,
+  "timeline": 1454
+ },
+ "identity": {
+  "archivePlayers": {
+   "total": 481,
+   "matched": 0,
+   "unmatched": 481
+  },
+  "squad": {
+   "total": 0,
+   "matched": 0,
+   "unmatched": 0
+  },
+  "rule": "verified provider id only; names are leads"
+ },
+ "matches": {
+  "total": 1454,
+  "quarantined": [],
+  "futureDated": [],
+  "seasonMismatch": [],
+  "neutralFinals": 0,
+  "homeAway": {
+   "neutral": 0,
+   "unassigned": 0
+  },
+  "resultKinds": {
+   "displayed_unqualified": 1454
+  },
+  "assertionsNotMatches": 0
+ },
+ "lineups": {
+  "total": 0,
+  "xiCandidatesNeedIdentity": 0,
+  "blocked": []
+ },
+ "goals": {
+  "groups": 0,
+  "duplicates": 0,
+  "sideUnresolved": 0,
+  "ownGoals": 0,
+  "disputed": 0
+ },
+ "conflicts": [],
+ "honoursWithTwoFamilies": 0,
+ "seasonTokenIssues": [],
+ "sensitiveClaims": 0,
+ "gates": {
+  "timeline": "LOCKED",
+  "trivia": "LOCKED",
+  "xi": "LOCKED",
+  "lineup": "LOCKED",
+  "archive": "LOCKED",
+  "memory": "LOCKED",
+  "goal": "LOCKED",
+  "note": "review material is never playable; gates unlock only from approved, sourced, conflict-free facts"
+ },
+ "fingerprints": {
+  "archive-players": "6a8d93010ee67194",
+  "backlog": "f058541101729d79",
+  "conflicts": "59b271af8c10de9a",
+  "coverage-gaps": "3059877fbf1c4e58",
+  "goal-claims": "218e20f735d77d01",
+  "honours": "fcaff4e1481b3911",
+  "lineups": "3661178766e76205",
+  "matches": "760e4d6dd0df0d66",
+  "quarantined": "63d4754fb21e8e0d",
+  "season-summary": "aac67de8ceb37cf1",
+  "sources": "9297262d46899106",
+  "squad-memberships": "fdf7d4cbcd4e1b1b",
+  "timeline": "7a70798f192ee60b"
+ }
+}

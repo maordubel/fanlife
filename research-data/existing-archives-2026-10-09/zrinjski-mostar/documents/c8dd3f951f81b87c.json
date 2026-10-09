@@ -1,0 +1,40 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2000_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:57:13.314042+00:00",
+    "contentHash": "46294c90be90bc09bd8ec1b4f5d65f706d40f88dbe01f51ec915f2135e518495",
+    "bytes": 63910,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:7441",
+        "nameAsReported": "Melher, Igor",
+        "profileUrl": "https://www.national-football-teams.com/player/7441/Igor_Melher.html",
+        "season": "2000/01",
+        "birthDate": "1979-11-01",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2000_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:26689",
+        "nameAsReported": "Terkeš, Želimir",
+        "profileUrl": "https://www.national-football-teams.com/player/26689/Zelimir_Terkes.html",
+        "season": "2000/01",
+        "birthDate": "1981-01-08",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2000_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}
