@@ -14,6 +14,7 @@ import type {
   ConnectionSummary,
   Currency,
   Fail,
+  IdentityMode,
   ItemPatch,
   LotBrief,
   LotState,
@@ -44,11 +45,17 @@ type RpcClient = {
     from: (bucket: string) => {
       upload: (path: string, body: Blob, options?: Record<string, unknown>) => PromiseLike<{ error: { message: string } | null }>
       remove: (paths: string[]) => PromiseLike<{ error: { message: string } | null }>
+      download: (path: string) => PromiseLike<{ data: Blob | null; error: { message: string } | null }>
     }
   }
 }
 
+/** the closed bucket of old, owner-folder photos — read only by their owner, until they are migrated */
 export const PHOTO_BUCKET = 'worker-collector'
+/** the public bucket of opaque photos: `p/<random>.<ext>`, no owner id anywhere in the path */
+export const PHOTO_BUCKET_PUB = 'worker-collector-pub'
+const isOpaquePath = (path: string) => /^p\/[0-9a-f]{32}\.(webp|jpg|png)$/.test(path)
+const bucketFor = (path: string) => (isOpaquePath(path) ? PHOTO_BUCKET_PUB : PHOTO_BUCKET)
 
 function client(): RpcClient {
   return createClient() as unknown as RpcClient
@@ -90,7 +97,7 @@ async function read<T>(fn: string, args: Record<string, unknown> | undefined, fa
 export function photoUrl(path: string): string {
   if (evaluationMode()) return `/api/evaluation/files?path=${encodeURIComponent(path)}`
   const base = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? '').replace(/\/$/, '')
-  return `${base}/storage/v1/object/public/${PHOTO_BUCKET}/${path.split('/').map(encodeURIComponent).join('/')}`
+  return `${base}/storage/v1/object/public/${bucketFor(path)}/${path.split('/').map(encodeURIComponent).join('/')}`
 }
 
 // ---------------------------------------------------------------- the archive side
@@ -123,6 +130,15 @@ export const itemUpdate = (itemId: string, patch: ItemPatch) =>
   call<{ item: OwnerItem }>('worker_collector_item_update', { p_item: itemId, p_patch: patch })
 export const settings = (patch: { visibility?: 'public' | 'link_only' | 'private'; showNickname?: boolean; rotateToken?: boolean }) =>
   call<{ visibility: string; showNickname: boolean; shareToken: string }>('worker_collector_settings', { p_patch: patch })
+/** One atomic change of how I appear. Anonymous also closes the closet — the first call answers `confirm_private` until `confirm` is true. */
+export const identitySet = (mode: IdentityMode, nickname: string | null = null, confirm = false) =>
+  call<{ identityMode: IdentityMode; nickname: string | null; visibility: string; shareToken: string; label: CollectorLabel }>(
+    'worker_collector_identity_set',
+    { p_mode: mode, p_nickname: nickname, p_confirm: confirm },
+  )
+/** Put copies in, or take them out of, the closet's display selection. */
+export const displaySet = (itemIds: readonly string[], on: boolean) =>
+  call<{ changed: number; on: boolean }>('worker_collector_display_set', { p_items: [...itemIds], p_on: on })
 
 /**
  * A photo, shrunk on the device to at most 1400px and ~0.8 quality WebP (JPEG where the
@@ -130,42 +146,72 @@ export const settings = (patch: { visibility?: 'public' | 'link_only' | 'private
  * The bucket refuses anything over 2MB or outside WebP/JPEG/PNG, and a path outside
  * `<you>/<item>/` — the database checks the same three things again.
  */
-export async function photoUpload(userId: string, itemId: string, file: File): Promise<Result<{ photos: string[] }>> {
-  if (!portalConfigured()) return fail('off')
-  const blob = await shrink(file)
-  if (!blob) return fail('image_unreadable')
-  const ext = blob.type === 'image/webp' ? 'webp' : blob.type === 'image/png' ? 'png' : 'jpg'
-  const path = `${userId}/${itemId}/${crypto.randomUUID()}.${ext}`
-  try {
-    const { error } = await client().storage.from(PHOTO_BUCKET).upload(path, blob, { contentType: blob.type, upsert: false })
-    if (error) return fail('upload_failed')
-  } catch {
-    return fail('upload_failed')
-  }
-  return call<{ photos: string[] }>('worker_collector_photo_add', { p_item: itemId, p_path: path })
+export async function photoUpload(_userId: string, itemId: string, file: File): Promise<Result<{ photos: string[] }>> {
+  const put = await photoStore(_userId, itemId, file)
+  if (!put.ok) return put
+  return call<{ photos: string[] }>('worker_collector_photo_add', { p_item: itemId, p_path: put.path })
 }
 
-/** A photo that belongs to no copy — the same shrink and the same folder rule (`<you>/<id>/<file>`); the caller registers the path. */
-export async function photoStore(userId: string, folderId: string, file: File): Promise<Result<{ path: string }>> {
+/** A photo that belongs to no copy yet: shrunk and stripped on the device, uploaded to an opaque slot (`p/<random>`, no owner id); the caller registers the path. */
+export async function photoStore(_userId: string, _folderId: string, file: File): Promise<Result<{ path: string }>> {
   if (!portalConfigured()) return fail('off')
   const blob = await shrink(file)
   if (!blob) return fail('image_unreadable')
   const ext = blob.type === 'image/webp' ? 'webp' : blob.type === 'image/png' ? 'png' : 'jpg'
-  const path = `${userId}/${folderId}/${crypto.randomUUID()}.${ext}`
+  const slot = await call<{ path: string }>('worker_photo_slot', { p_ext: ext })
+  if (!slot.ok) return slot
   try {
-    const { error } = await client().storage.from(PHOTO_BUCKET).upload(path, blob, { contentType: blob.type, upsert: false })
+    const { error } = await client().storage.from(PHOTO_BUCKET_PUB).upload(slot.path, blob, { contentType: blob.type, upsert: false })
     if (error) return fail('upload_failed')
   } catch {
     return fail('upload_failed')
   }
-  return { ok: true, path }
+  return { ok: true, path: slot.path }
+}
+
+/**
+ * Old photos lived in `<you>/<item>/<file>` — an owner id in a public URL. This moves each of
+ * mine to an opaque slot, re-encoded (which also drops every metadata block), repoints the row,
+ * and only then removes the old file. Safe to run again; a failure leaves the old photo in place.
+ */
+export async function migrateLegacyPhotos(): Promise<{ moved: number; left: number }> {
+  if (!portalConfigured()) return { moved: 0, left: 0 }
+  const list = await call<{ photos: { itemId: string; path: string }[] }>('worker_photo_legacy')
+  if (!list.ok) return { moved: 0, left: 0 }
+  let moved = 0
+  let left = 0
+  for (const { path: old } of list.photos) {
+    try {
+      const got = await client().storage.from(PHOTO_BUCKET).download(old)
+      if (got.error || !got.data) {
+        left++
+        continue
+      }
+      const file = new File([got.data], 'p.' + (old.split('.').pop() ?? 'webp'), { type: got.data.type || 'image/webp' })
+      const put = await photoStore('', '', file)
+      if (!put.ok) {
+        left++
+        continue
+      }
+      const done = await call<{ path: string }>('worker_collector_photo_migrate', { p_old: old, p_new: put.path })
+      if (!done.ok) {
+        left++
+        continue
+      }
+      moved++
+      await client().storage.from(PHOTO_BUCKET).remove([old])
+    } catch {
+      left++
+    }
+  }
+  return { moved, left }
 }
 
 export async function photoRemove(path: string): Promise<Result<{ path: string; photos: string[] }>> {
   const out = await call<{ path: string; photos: string[] }>('worker_collector_photo_remove', { p_path: path })
   if (out.ok) {
     try {
-      await client().storage.from(PHOTO_BUCKET).remove([path])
+      await client().storage.from(bucketFor(path)).remove([path])
     } catch {
       // the row is gone; an orphaned file costs storage, not correctness
     }
@@ -226,7 +272,15 @@ export const step = (connectionId: string, which: 'agreed' | 'done' | 'cancel') 
   call<{ status: string; kind?: 'buy' | 'trade'; waitingForOther?: boolean }>('worker_connection_step', { p_conn: connectionId, p_step: which })
 export const myConnections = () => call<{ connections: ConnectionSummary[] }>('worker_my_connections')
 export const thread = (connectionId: string) => call<Thread>('worker_connection_thread', { p_conn: connectionId })
-export const block = (handle: number, on: boolean) => call<{ blocked: boolean }>('worker_block_set', { p_handle: handle, p_on: on })
+/** Block by handle, or — when the other side is anonymous — from the thing they sent: a conversation, a listing or a lot. */
+export const block = (handle: number | null, on: boolean, target: { connectionId?: string | null; itemId?: string | null; lotId?: string | null } = {}) =>
+  call<{ blocked: boolean }>('worker_block_set', {
+    p_handle: handle,
+    p_on: on,
+    p_connection: target.connectionId ?? null,
+    p_item: target.itemId ?? null,
+    p_lot: target.lotId ?? null,
+  })
 export const report = (args: {
   reason: 'scam' | 'fake' | 'abuse' | 'spam' | 'other'
   details?: string

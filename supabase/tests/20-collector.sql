@@ -63,7 +63,7 @@ select pg_temp.ok('guest market is a list', jsonb_typeof(pg_temp.call(null, 'sel
 -- 3. an anonymous JWT (DUBID's anonymous sign-in) is refused by every market write
 select pg_temp.ok('anonymous jwt cannot "have"', (pg_temp.call('55555555-5555-5555-5555-555555555555', $q$select public.worker_collector_have('vp-1985-away')$q$, true)) ->> 'error' = 'auth_required');
 select pg_temp.ok('anonymous jwt cannot bid', (pg_temp.call('55555555-5555-5555-5555-555555555555', $q$select public.worker_auction_bid(gen_random_uuid(), 100)$q$, true)) ->> 'error' = 'auth_required');
-select pg_temp.ok('anonymous jwt cannot upload', pg_temp.denied('55555555-5555-5555-5555-555555555555', $q$with ins as (insert into storage.objects (bucket_id, name) values ('worker-collector', '55555555-5555-5555-5555-555555555555/x/y.webp') returning 1) select to_jsonb(count(*)) from ins$q$, true));
+select pg_temp.ok('anonymous jwt cannot upload', pg_temp.denied('55555555-5555-5555-5555-555555555555', $q$with ins as (insert into storage.objects (bucket_id, name) values ('worker-collector-pub', 'p/55555555555555555555555555555555.webp') returning 1) select to_jsonb(count(*)) from ins$q$, true));
 
 -- 4. have / want / open
 select pg_temp.ok('B wants 1985 away', (pg_temp.call('22222222-2222-2222-2222-222222222222', $q$select public.worker_collector_want_set('vp-1985-away', true)$q$)) ->> 'wanting' = 'true');
@@ -106,12 +106,18 @@ select pg_temp.call('33333333-3333-3333-3333-333333333333', format($q$select pub
 select pg_temp.ok('A sees a perfect swap', jsonb_array_length((pg_temp.call('11111111-1111-1111-1111-111111111111', 'select public.worker_market_matches()')) -> 'perfectSwaps') = 1);
 
 -- 7. photos and the bucket
-insert into ctx values ('pathA', '11111111-1111-1111-1111-111111111111/' || (select v from ctx where k='itemAX') || '/' || gen_random_uuid() || '.webp');
-select pg_temp.ok('A uploads into his own folder', not pg_temp.denied('11111111-1111-1111-1111-111111111111', format($q$with ins as (insert into storage.objects (bucket_id, name) values ('worker-collector', %L) returning 1) select to_jsonb(count(*)) from ins$q$, (select v from ctx where k='pathA'))));
-select pg_temp.ok('A cannot upload into C''s folder', pg_temp.denied('11111111-1111-1111-1111-111111111111', format($q$with ins as (insert into storage.objects (bucket_id, name) values ('worker-collector', %L) returning 1) select to_jsonb(count(*)) from ins$q$, '33333333-3333-3333-3333-333333333333/x/y.webp')));
+insert into ctx values ('slotA', (pg_temp.call('11111111-1111-1111-1111-111111111111', $q$select public.worker_photo_slot('webp')$q$)) ->> 'path');
+select pg_temp.ok('a slot is an opaque name', (select v from ctx where k='slotA') ~ '^p/[0-9a-f]{32}\.webp$');
+select pg_temp.ok('A uploads into the slot he reserved', not pg_temp.denied('11111111-1111-1111-1111-111111111111', format($q$with ins as (insert into storage.objects (bucket_id, name) values ('worker-collector-pub', %L) returning 1) select to_jsonb(count(*)) from ins$q$, (select v from ctx where k='slotA'))));
+select pg_temp.ok('A cannot upload to a name nobody reserved', pg_temp.denied('11111111-1111-1111-1111-111111111111', $q$with ins as (insert into storage.objects (bucket_id, name) values ('worker-collector-pub', 'p/00000000000000000000000000000000.webp') returning 1) select to_jsonb(count(*)) from ins$q$));
+select pg_temp.ok('C cannot upload into A''s slot', pg_temp.denied('33333333-3333-3333-3333-333333333333', format($q$with ins as (insert into storage.objects (bucket_id, name) values ('worker-collector-pub', %L) returning 1) select to_jsonb(count(*)) from ins$q$, (select v from ctx where k='slotA'))));
+select pg_temp.ok('the old bucket takes no uploads any more', pg_temp.denied('11111111-1111-1111-1111-111111111111', $q$with ins as (insert into storage.objects (bucket_id, name) values ('worker-collector', '11111111-1111-1111-1111-111111111111/x/y.webp') returning 1) select to_jsonb(count(*)) from ins$q$));
 select pg_temp.ok('our policies do not open DUBID''s bucket', pg_temp.denied('11111111-1111-1111-1111-111111111111', $q$with ins as (insert into storage.objects (bucket_id, name) values ('dubid-avatars', '11111111-1111-1111-1111-111111111111/a.png') returning 1) select to_jsonb(count(*)) from ins$q$));
-select pg_temp.ok('photo registered', jsonb_array_length((pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select public.worker_collector_photo_add(%L, %L)$q$, (select v from ctx where k='itemAX'), (select v from ctx where k='pathA')))) -> 'photos') = 1);
-select pg_temp.ok('a photo that was never uploaded is refused', (pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select public.worker_collector_photo_add(%L, %L)$q$, (select v from ctx where k='itemAX'), '11111111-1111-1111-1111-111111111111/' || (select v from ctx where k='itemAX') || '/' || gen_random_uuid() || '.webp'))) ->> 'error' = 'not_uploaded');
+select pg_temp.ok('photo registered', jsonb_array_length((pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select public.worker_collector_photo_add(%L, %L)$q$, (select v from ctx where k='itemAX'), (select v from ctx where k='slotA')))) -> 'photos') = 1);
+select pg_temp.ok('the registered path names no owner and no item', (select v from ctx where k='slotA') !~ '11111111-1111-1111-1111-111111111111' and (select v from ctx where k='slotA') !~ (select v from ctx where k='itemAX'));
+select pg_temp.ok('a slot that was never uploaded is refused', (pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select public.worker_collector_photo_add(%L, %L)$q$, (select v from ctx where k='itemAX'), (pg_temp.call('11111111-1111-1111-1111-111111111111', $q$select public.worker_photo_slot('webp')$q$)) ->> 'path'))) ->> 'error' = 'not_uploaded');
+select pg_temp.ok('an old-style path is refused', (pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select public.worker_collector_photo_add(%L, %L)$q$, (select v from ctx where k='itemAX'), '11111111-1111-1111-1111-111111111111/' || (select v from ctx where k='itemAX') || '/' || gen_random_uuid() || '.webp'))) ->> 'error' = 'bad_path');
+select pg_temp.ok('C cannot register A''s slot', (pg_temp.call('33333333-3333-3333-3333-333333333333', format($q$select public.worker_collector_photo_add(%L, %L)$q$, (select v from ctx where k='itemCY'), (select v from ctx where k='slotA')))) ->> 'error' = 'bad_path');
 
 -- 8. privacy of the closet
 select pg_temp.ok('private closet is not found for a stranger', (pg_temp.call('33333333-3333-3333-3333-333333333333', format('select public.worker_closet_view(%s)', (select handle_no from public.worker_collector_profile where user_id='11111111-1111-1111-1111-111111111111')))) ->> 'error' = 'not_found');
@@ -145,8 +151,8 @@ select pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select pub
 select pg_temp.ok('auction needs two photos', (pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select public.worker_auction_submit(%L, 'חולצת 1986', 'חולצת משחק מהעונה של האליפות, עם כל התוויות.', 100, 400)$q$, (select v from ctx where k='itemAZ')))) ->> 'error' = 'photos_required');
 do $$ declare p text; i int; begin
   for i in 1..2 loop
-    p := '11111111-1111-1111-1111-111111111111/' || (select ctx.v from ctx where k='itemAZ') || '/' || gen_random_uuid() || '.webp';
-    insert into storage.objects (bucket_id, name) values ('worker-collector', p);
+    p := (pg_temp.call('11111111-1111-1111-1111-111111111111', $q$select public.worker_photo_slot('webp')$q$)) ->> 'path';
+    insert into storage.objects (bucket_id, name) values ('worker-collector-pub', p);
     perform pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select public.worker_collector_photo_add(%L, %L)$q$, (select ctx.v from ctx where k='itemAZ'), p));
   end loop; end $$;
 insert into ctx select 'lot', (pg_temp.call('11111111-1111-1111-1111-111111111111', format($q$select public.worker_auction_submit(%L, 'חולצת 1986', 'חולצת משחק מהעונה של האליפות, עם כל התוויות.', 100, 400, 'ILS', 24, 10)$q$, (select v from ctx where k='itemAZ')))) ->> 'lotId';

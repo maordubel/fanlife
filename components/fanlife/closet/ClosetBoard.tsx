@@ -25,6 +25,7 @@ import type {
 } from '@/lib/collector/types'
 import { t, type MessageKey } from '@/lib/fanlife/i18n'
 import { archiveForCloset } from '@/lib/fanlife/scope'
+import { PhotoMigration } from '@/components/fanlife/closet/PhotoMigration'
 
 import type { ClosetApi } from '@/components/fanlife/closet/api'
 import { ClosetMetrics } from '@/components/fanlife/closet/ClosetMetrics'
@@ -119,6 +120,14 @@ export function ClosetBoard({
   const current = editing ? (items.find((item) => item.id === editing) ?? null) : null
   const sharePath = closetPath(closet.profile) ?? '/closet'
   const unread = notices && typeof notices === 'object' && 'unread' in notices ? notices.unread : closet.unread
+
+  async function reloadCloset() {
+    const out = await api.reload()
+    if (out.ok) {
+      const { ok: _ok, ...next } = out
+      setCloset(next)
+    }
+  }
 
   function replace(next: OwnerItem) {
     setCloset((state) => ({ ...state, items: state.items.map((item) => (item.id === next.id ? next : item)) }))
@@ -330,6 +339,7 @@ export function ClosetBoard({
 
         {/* ── the side column: what the closet says, the share, the privacy ── */}
         <aside className="mt-stack space-y-4 lg:sticky lg:top-4 lg:mt-0">
+          <PhotoMigration onMoved={reloadCloset} />
           <ClosetMetrics items={items} shirts={shirts} archive={archiveForCloset(archive, items, shirts)} shareRoute={sharePath} />
           <ClosetShare closet={closet} held={held} shirts={shirts} summary={summary} route={sharePath} />
           <PrivacyPanel closet={closet} api={api} onChange={(profile) => setCloset((state) => ({ ...state, profile }))} />

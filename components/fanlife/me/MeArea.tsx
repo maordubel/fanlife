@@ -8,6 +8,7 @@ import { closetMine } from '@/lib/collector/api'
 import type { Closet } from '@/lib/collector/types'
 import { wearLivery } from '@/lib/club-livery'
 import { fl } from '@/lib/fanlife/copy'
+import { handleLabel } from '@/lib/fanlife/collector/labels'
 import { beenList, readBeen, type BeenRow } from '@/lib/fanlife/been'
 import { BEGAN, barsOf, NAME_MAX, rankOf, readCard, writeCard, type MeCard } from '@/lib/fanlife/me'
 import { saveKey } from '@/lib/life/universal/engine'
@@ -104,6 +105,12 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
       <section className="fl-me-section fl-me-closet" aria-labelledby="me-closet">
         <h2 id="me-closet">{fl('me.closet.title')}</h2>
         <p>{closet && (closet.items.length || closet.wants.length) ? fl('me.closet.body', { have: closet.items.filter((i) => i.state === 'held' || i.state === 'reserved').length, want: closet.wants.length }) : fl('me.closet.empty')}</p>
+        {closet ? (
+          <p className="fl-me-identity">
+            {closet.profile.identityMode === 'anonymous' ? fl('me.closet.identity.anon') : fl('me.closet.identity', { who: handleLabel(closet.label) })}{' '}
+            <Link href="/closet#identity-title">{fl('me.closet.identity.change')}</Link>
+          </p>
+        ) : null}
         <Link className="mag-cta red" href="/closet">{fl('me.closet.open')} →</Link>
       </section>
     </div>

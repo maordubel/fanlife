@@ -95,7 +95,7 @@ function fixtures(shirts: Record<string, CollectorShirt>) {
     { id: uuid(103), archiveSlug: at(5).slug, kitId: at(5).kitId, preferredSize: null, notes: null, createdAt: ago(1900), available: 1 },
   ]
   const closet: Closet = {
-    profile: { handle: 1842, showNickname: false, visibility: 'link_only', shareToken: '5f0c2a9e41d34b7c9a1e0f6b2d8c7a31' },
+    profile: { handle: 1842, identityMode: 'number', nickname: null, showNickname: false, visibility: 'link_only', shareToken: '5f0c2a9e41d34b7c9a1e0f6b2d8c7a31' },
     label: LABEL,
     items,
     wants,

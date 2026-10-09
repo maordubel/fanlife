@@ -60,7 +60,7 @@
   "me.story.closet": "First shirt in the closet",
   "me.story.empty": "Nothing recorded yet. Play a gate, start a LIFE or hang a shirt in your closet.",
   "me.form.name": "Nickname",
-  "me.form.nameHint": "Up to 18 characters — what fits on a shirt.",
+  "me.form.nameHint": "Up to 18 characters — what fits on a shirt. Only on your own card; other collectors never see it.",
   "me.form.club": "My club",
   "me.form.pick": "Choose a club",
   "me.form.year": "Fan since",
@@ -139,5 +139,9 @@
   "account.signedIn": "Signed in. Your card is saved to your account.",
   "account.signOut": "Sign out",
   "account.syncing": "Saving your card…",
-  "account.failed": "Signed in, but saving did not finish. Your card on this device is untouched."
+  "account.failed": "Signed in, but saving did not finish. Your card on this device is untouched.",
+  "me.closet.identity": "You appear to other collectors as {who}.",
+  "me.closet.identity.anon": "You're anonymous: your closet is private and has no link.",
+  "me.closet.identity.change": "Change how I appear",
+  "account.retry": "Try saving again"
 }

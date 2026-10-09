@@ -22,6 +22,7 @@ import {
 } from '@/lib/collector/types'
 import { t, type MessageKey } from '@/lib/fanlife/i18n'
 import { worldHave } from '@/lib/fanlife/hub/api'
+import { ItemPrivacy } from '@/components/fanlife/closet/ItemPrivacy'
 
 import type { ClosetApi } from '@/components/fanlife/closet/api'
 
@@ -294,6 +295,7 @@ export function ItemEditor({
                 </div>
               ) : null}
               <p className="mt-2 font-body text-[11.5px] leading-snug text-muted">{t('collector.editor.noFee')}</p>
+              <ItemPrivacy item={item} api={api} publishing={draft.forSale || draft.forTrade} editable={editable} />
             </section>
 
             <Group title={t('collector.editor.size')} bad={missing.has('size')}>

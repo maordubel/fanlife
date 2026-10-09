@@ -57,7 +57,7 @@ export function SafetySheet({
             itemId: target.connectionId ? undefined : target.itemId,
             lotId: target.connectionId || target.itemId ? undefined : target.lotId,
           })
-        : await block(who.handle, true)
+        : await block(who.handle, true, target)
     setBusy(false)
     if (!out.ok) {
       setError(errorLabel(out.error))
