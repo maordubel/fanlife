@@ -22,6 +22,7 @@ export default function ExchangeAdminPage() {
         <hr className="mag-rule" />
         <div className="mag-head"><div><p className="mag-kicker">{fl('exchange.kicker')}</p><h1 className="mag-h2">{fl('exchange.title')}</h1><p className="mag-fine">{fl('exchange.sub')}</p></div></div>
         <div className="fl-worker" dir="ltr" lang="en"><AdminGate /></div>
+        <p className="mt-6"><a className="mag-fine underline" href="/master/contributions">{fl('contrib.admin.link')} ↗</a></p>
       </main>
     </Shell>
   )

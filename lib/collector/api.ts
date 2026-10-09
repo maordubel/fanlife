@@ -405,3 +405,24 @@ export const adminAudit = (limit = 100, entity: string | null = null) =>
   call<{ entries: AuditEntry[] }>('worker_admin_audit', { p_limit: limit, p_entity: entity })
 
 export type { CollectorLabel }
+
+// ---------------------------------------------------------------- contributions (privacy stage C)
+export type CreditChoice = 'none' | 'anonymous' | 'nickname'
+export type ReviewState = 'none' | 'pending' | 'approved' | 'rejected'
+export type Contribution = {
+  id: string; path: string; itemId: string; club: string; season: string | null
+  archiveUse: boolean; marketingUse: boolean; credit: CreditChoice; review: ReviewState; decidedAt: string | null
+}
+export type QueuedPhoto = {
+  id: string; path: string; club: string; season: string | null; variant: string | null
+  marketingUse: boolean; credit: string | null; note: string | null; decidedAt: string
+}
+/** Per photo: may the editors reuse it in the club archive, may it be used to promote the hub, and how to credit it. No row means no. */
+export const consentSet = (photoId: string, archive: boolean, marketing: boolean, credit: CreditChoice) =>
+  call<{ review: ReviewState }>('worker_photo_consent_set', { p_photo: photoId, p_archive: archive, p_marketing: marketing, p_credit: credit })
+export const contributionsMine = () => call<{ photos: Contribution[] }>('worker_contributions_mine')
+export const adminContributionQueue = (status: 'pending' | 'approved' | 'rejected' = 'pending') =>
+  call<{ items: QueuedPhoto[] }>('worker_admin_contribution_queue', { p_status: status })
+export const adminContributionReview = (photoId: string, status: 'approved' | 'rejected' | 'pending', note?: string) =>
+  call<Ok>('worker_admin_contribution_review', { p_photo: photoId, p_status: status, p_note: note ?? null })
+export const adminClubMerge = (from: string, to: string) => call<{ moved: number }>('worker_admin_club_merge', { p_from: from, p_to: to })
