@@ -11,6 +11,7 @@ import stPauliDeep from '@/club-packs/st-pauli/wave-deep-history-2026-10-08.json
 import stPauliCof from '@/club-packs/st-pauli/wave-kits-cof-2026-10-09.json'
 import celticCore from '@/club-packs/celtic/core.json'
 import celticDeep from '@/club-packs/celtic/wave-deep-history-2026-10-08.json'
+import olympiacosCof from '@/club-packs/olympiacos/wave-kits-cof-2026-10-09.json'
 import celticCof from '@/club-packs/celtic/wave-kits-cof-2026-10-09.json'
 import paoCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-09.json'
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
@@ -27,6 +28,7 @@ const CLUBS=[
  {id:'zrinjski-mostar',kits:19,file:'content/manual/kit-archive-zrinjski-mostar.json',wave:zrinjskiCof},
  {id:'hapoel-petah-tikva',kits:6,file:'content/manual/kit-archive-hapoel-petah-tikva.json',wave:null},
  {id:'celtic',kits:75,file:'content/manual/kit-archive-celtic.json',wave:celticCof},
+ {id:'olympiacos',kits:71,file:'content/manual/kit-archive-olympiacos.json',wave:olympiacosCof},
  {id:'aek-athens',kits:99,file:'content/manual/kit-aek-athens.json',wave:null},
 ]
 const DESIGNS=['plain','stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','contrasting sleeves','gradient','graphic']
@@ -72,15 +74,16 @@ describe('the hub, the URLs and the credits',()=>{
   for(const c of CLUBS){
    const m=read<{sources:{key:string;title:string;url:string}[]}>(`content/manual/kit-cof-${c.id}.json`)
    expect(m.sources.map(s=>s.key)).toEqual(['cof','logo'])
-   expect(m.sources[0]!.url).toMatch(/^https:\/\/www\.colours-of-football\.com\//);expect(m.sources[1]!.url).toMatch(/^https:\/\/football-logos\.cc\//)
+   expect(m.sources[0]!.url).toMatch(/^https:\/\/www\.colours-of-football\.com\//);expect(m.sources[1]!.url).toMatch(/^https:\/\/(football-logos\.cc|www\.colours-of-football\.com)\//)
   }
  })
 })
 
 describe.each(CLUBS.filter(c=>c.wave))('$id: the catalogue wave',({id,wave,file})=>{
  const w=wave as unknown as {sources:{id:string}[];kits:{id:string;status:string;confidence:number;sources:string[];value:{season:string;type:string;construction:{colors:string};shorts:{colour:string};socks:{colour:string}}}[]}
- it('is a review delivery: nothing approved, no approver claimed',()=>{
-  for(const k of w.kits){expect(k.status).toBe('review');expect(k.confidence).toBe(1);expect(k).not.toHaveProperty('approvedBy')}
+ it('is approved by the owner in his words ("מאשר הכל", 2026-10-09), every kit stamped — Olympiacos, ingested after those words, waits in review',()=>{
+  if(id==='olympiacos'){for(const k of w.kits){expect(k.status).toBe('review');expect(k.confidence).toBe(1);expect(k).not.toHaveProperty('approvedBy')};return}
+  for(const k of w.kits){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect((k as unknown as {approvedBy:string}).approvedBy).toMatch(/Maor Harel/);expect((k as unknown as {notes:string}).notes).toContain('מאשר הכל')}
  })
  it('has unique ids, cites only its own sources, and never repeats a kit the pack already holds',()=>{
   expect(new Set(w.kits.map(k=>k.id)).size).toBe(w.kits.length)
