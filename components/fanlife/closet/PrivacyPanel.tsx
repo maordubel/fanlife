@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { errorLabel, handleLabel } from '@/lib/fanlife/collector/labels'
 import type { Closet, CollectorError, IdentityMode, Visibility } from '@/lib/collector/types'
 import { SITE_URL } from '@/lib/brand'
+import { fl } from '@/lib/fanlife/copy'
 import { t, type MessageKey } from '@/lib/fanlife/i18n'
 
 import type { ClosetApi } from '@/components/fanlife/closet/api'
@@ -350,6 +351,9 @@ export function PrivacyPanel({
           </div>
         </div>
       ) : null}
+      <a href="/closet/contributions" className="mt-4 inline-flex min-h-tap items-center font-body text-step--1 font-extrabold text-sign underline underline-offset-4">
+        {fl('contrib.me')} — {fl('contrib.me.hint')}
+      </a>
     </div>
   )
 }
