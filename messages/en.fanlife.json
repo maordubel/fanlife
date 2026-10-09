@@ -131,5 +131,12 @@
   "share3.storyTip": "Instagram: save the image, post it as a Story and add a link sticker.",
   "share3.blocked": "This card can’t be shared yet: {why}",
   "share3.failed": "The card couldn’t be printed here. Try again.",
-  "share3.deviceNote": "Your result as recorded on this device."
+  "share3.deviceNote": "Your result as recorded on this device.",
+  "account.title": "Keep your card across devices",
+  "account.body": "Sign in with one Google account and your card, closet and journey follow you from phone to laptop. No form, no password. The archive stays open to everyone.",
+  "account.signIn": "Sign in with Google",
+  "account.signedIn": "Signed in. Your card is saved to your account.",
+  "account.signOut": "Sign out",
+  "account.syncing": "Saving your card…",
+  "account.failed": "Signed in, but saving did not finish. Your card on this device is untouched."
 }
