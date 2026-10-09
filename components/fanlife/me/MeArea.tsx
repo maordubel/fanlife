@@ -14,6 +14,8 @@ import { saveKey } from '@/lib/life/universal/engine'
 
 import type { MeClub } from '@/app/me/data'
 
+import { GoogleAccount } from './GoogleAccount'
+
 /**
  * "Me" — The Worker's personal area (app/tik: the card, the oath, the story, the editor, the
  * standing, the closet door) for a hub of clubs. Everything is read from this device after mount,
@@ -67,6 +69,7 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
 
   return (
     <div className="fl-me">
+      <GoogleAccount />
       <div className="fl-me-tabs" role="tablist" aria-label={fl('me.title')}>
         {(['card', 'oath', 'story', 'details'] as const).map((id) => (
           <button key={id} type="button" role="tab" aria-selected={tab === id} className="min-h-tap" onClick={() => setTab(id)}>{fl(`me.tab.${id}`)}</button>

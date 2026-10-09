@@ -43,6 +43,15 @@ describe('durable control state',()=>{
   expect(after.clubs[0]!.gaps).toEqual(['b'])
   expect(after.clubs[1]!.gaps).toEqual(['from the other instance'])
  })
+ it('keeps trying through a burst of collisions instead of saying "busy" after five (owner, 9.10.2026)',async()=>{
+  const store=memoryStore();useDurableStore(store)
+  await mutate(()=>true)
+  const realWrite=store.write.bind(store);let lost=0
+  store.write=async(name,text,etag)=>{if(name==='control.json'&&lost<6){lost++;const cur=await store.read(name);await realWrite(name,cur!.text,cur!.etag);return false}return realWrite(name,text,etag)}
+  await expect(mutate(s=>{s.clubs[0]!.gaps=['after the burst'];return true})).resolves.toBe(true)
+  expect(lost).toBe(6)
+  expect((await readState()).clubs[0]!.gaps).toEqual(['after the burst'])
+ },20000)
  it('a rotation that loses the race does not archive the same entries twice (release review, reproduced)',async()=>{
   const store=memoryStore();useDurableStore(store)
   const old=Array.from({length:AUDIT_KEEP+3},(_,i)=>({at:`2026-01-01T00:00:${String(i%60).padStart(2,'0')}.${String(i).padStart(6,'0')}Z`,action:'seed',target:`t${i}`,detail:'',actor:'system',role:'system'}))
