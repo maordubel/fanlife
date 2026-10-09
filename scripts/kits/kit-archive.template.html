@@ -88,6 +88,7 @@ dd{margin:0;min-width:0;overflow-wrap:anywhere}
 .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
 .btn{font:800 14px var(--body);background:var(--gold);color:#111;border:0;padding:10px 18px;cursor:pointer}
 .btn.ghost{background:transparent;color:var(--paper);border:1px solid var(--line-2)}
+a.btn{text-decoration:none;display:inline-block}
 a{color:var(--gold)}
 textarea.cp{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px}
 @media(max-width:780px){.season{grid-template-columns:1fr}.sn{position:static;display:flex;align-items:baseline;gap:12px}header.top{grid-template-columns:1fr}.dlg{grid-template-columns:1fr}.dstage{min-height:300px}.count{margin-inline-start:0;width:100%}}
@@ -196,7 +197,7 @@ function show(k){
   ${k.conflicts.map(x=>`<p class="warn">${note(x)}</p>`).join('')}
   ${k.notes.map(x=>`<p class="warn">${note(x)}</p>`).join('')}
   <p class="warn ${k.verified?'ok':''}">${k.verified?'העונה, הסוג והיצרן מאומתים מנתוני המועדון. שאר הפרטים נמדדו מהציורים.':'ממתין לאישור הבעלים. הצבעים נמדדו מהציורים; העונה והסוג מכותרת הקטלוג'+(k.origin==='drawing'?' או משם הקובץ':'')+'.'}</p>
-  <div class="acts"><button class="btn" id="cpy" type="button">העתק קוד SVG</button><button class="btn ghost" id="cls" type="button">סגור</button></div></div>`;
+  <div class="acts"><a class="btn" href="/clubs/${DATA.club.id}/kit-archive" data-own-link>יש לי · הוסף לארון</a><button class="btn" id="cpy" type="button">העתק קוד SVG</button><button class="btn ghost" id="cls" type="button">סגור</button></div></div>`;
   $('#cls').onclick=()=>$('#dlg').close();
   $('#cpy').onclick=async e=>{const tx=draw(k,DATA.club.name+' '+capEn(k)),btn=e.currentTarget;try{await navigator.clipboard.writeText(tx)}catch(_){const cp=$('#cp');cp.value=tx;cp.select();try{document.execCommand('copy')}catch(__){}}btn.textContent='הועתק';setTimeout(()=>btn.textContent='העתק קוד SVG',1600)};
   $('#dlg').showModal();

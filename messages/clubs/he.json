@@ -350,5 +350,13 @@
   "kitCfsTitle": "עוד תצלומי חולצות · {n}",
   "kitCfsCredit": "תצלומים מארכיון",
   "kitHfkType_special": "מיוחדת",
-  "kitHfkType_fourth": "רביעית"
+  "kitHfkType_fourth": "רביעית",
+  "kitOwnHave": "יש לי",
+  "kitOwnHaveOn": "בארון שלך",
+  "kitOwnWant": "מחפש",
+  "kitOwnWantOn": "מחפש ✓",
+  "kitOwnCloset": "לארון שלי ←",
+  "kitOwnMarket": "{n} בשוק ←",
+  "kitOwnSaved": "נשמר.",
+  "kitOwnLabel": "הארון שלך"
 }

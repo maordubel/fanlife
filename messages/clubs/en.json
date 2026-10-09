@@ -350,5 +350,13 @@
   "kitCfsTitle": "More shirt photographs · {n}",
   "kitCfsCredit": "Photographs from the archive of",
   "kitHfkType_special": "Special",
-  "kitHfkType_fourth": "Fourth"
+  "kitHfkType_fourth": "Fourth",
+  "kitOwnHave": "I have it",
+  "kitOwnHaveOn": "In your closet",
+  "kitOwnWant": "Looking for it",
+  "kitOwnWantOn": "Looking ✓",
+  "kitOwnCloset": "To my closet →",
+  "kitOwnMarket": "{n} in the market →",
+  "kitOwnSaved": "Saved.",
+  "kitOwnLabel": "Your closet"
 }

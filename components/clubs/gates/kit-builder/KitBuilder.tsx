@@ -17,6 +17,7 @@ import {saveBuilt} from '@/lib/clubs/kit-studio'
 import {gradeKitShirt,hintKitShirt,type Fail,type Graded} from './actions'
 import {KitCloth} from './KitCloth'
 import css from './kit-builder.module.css'
+import {KitOwnBar,KitOwnProvider} from '@/components/clubs/KitOwn'
 
 type Phase='intro'|'play'|'reveal'|'summary'
 type Placed=Partial<Record<Step,string>>
@@ -195,6 +196,7 @@ export function KitBuilder(props:KitBuilderProps){
      {v.unknown.length>0&&<p data-testid="kb-unknown">{say('kb.reveal.unknown',{parts:v.unknown.map(f=>say(`kb.field.${f}`)).join(', ')})}</p>}
      <p>{say('kb.reveal.recon')}</p>
      {g.sources.length>0&&<p className={css.sources}>{say('kb.reveal.sources')}: {g.sources.map((s,i)=><span key={i}>{s.url?<a href={s.url} target="_blank" rel="noreferrer noopener"><bdi>{s.title}</bdi></a>:<bdi>{s.title}</bdi>}{i<g.sources.length-1?' · ':''}</span>)}</p>}
+     {g.shirtSlug&&<KitOwnProvider slugs={[g.shirtSlug]}><KitOwnBar slug={g.shirtSlug} copy={{have:say('kb.own.have'),haveOn:say('kb.own.haveOn'),want:say('kb.own.want'),wantOn:say('kb.own.wantOn'),closet:say('kb.own.closet'),market:say('kb.own.market'),saved:say('kb.own.saved'),label:say('kb.own.label')}}/></KitOwnProvider>}
      {g.unlock&&<p><Link href={`${base}/kits?lang=${locale}&kit=${encodeURIComponent(g.unlock.kitId)}`}>{say('kb.reveal.unlocked')}</Link></p>}
     </div>
     <div className={css.dockFixed}><button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={advance} data-testid="kb-next"><b>{last?say('kb.cert.see'):say('kb.next')}</b><span aria-hidden="true">{locale==='he'?'←':'→'}</span></button></div>

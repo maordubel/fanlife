@@ -2,6 +2,7 @@
 import {requestClub} from '@/lib/clubs/request'
 import {eligibleKits,dealKitRun,gradePuzzle,strikeFor,KIT_ROUND,HINT_LIMIT,RULES,STEP_ORDER,type HintReceipt,type KitGame,type Step,type Verdict} from '@/lib/clubs/kit-run'
 import {signHint,signUnlock,verifyHint} from '@/lib/clubs/kit-unlock'
+import {shirtSlugFor} from '@/lib/fanlife/catalog'
 
 /**
  * Gate 4 server side. The client holds public puzzles only; the right card is recomputed here from the seed on every grade
@@ -15,7 +16,7 @@ import {signHint,signUnlock,verifyHint} from '@/lib/clubs/kit-unlock'
  */
 export type Fail={ok:false;error:'invalid'|'stale'|'locked'}
 export type Unlock={kitId:string;token:string;f:number;o:number;r:string}
-export type Graded={ok:true;verdict:Verdict;sources:{title:string;url:string|null}[];unlock:Unlock|null}
+export type Graded={ok:true;verdict:Verdict;sources:{title:string;url:string|null}[];unlock:Unlock|null;/** the closet's slug of the shirt just revealed, for "I have it" */shirtSlug:string|null}
 export type Struck={ok:true;optionId:string|null;receipt:HintReceipt|null}
 type RunGame=Exclude<KitGame,'recognition'>
 
@@ -49,7 +50,8 @@ export async function gradeKitShirt(slug:string,version:string,seed:number,curso
  if(!verdict)return {ok:false,error:'invalid'}
  const sources=verdict.sources.map(id=>r.club.sources.find(s=>s.id===id)).filter((s):s is NonNullable<typeof s>=>!!s).slice(0,4).map(s=>({title:s.title,url:s.url}))
  const out={f:verdict.fieldPoints,o:verdict.scored,r:RULES}
- return {ok:true,verdict,sources,unlock:verdict.dna?{kitId:verdict.kitId,token:signUnlock(slug,verdict.kitId,out),...out}:null}
+ const shirtSlug=await shirtSlugFor(slug,{id:verdict.kitId,season:verdict.seasonLabel,type:verdict.variant})
+ return {ok:true,verdict,sources,shirtSlug,unlock:verdict.dna?{kitId:verdict.kitId,token:signUnlock(slug,verdict.kitId,out),...out}:null}
 }
 
 /** A paid hint: one wrong card to strike on the open step. `nth` = how many were already struck on that step. */

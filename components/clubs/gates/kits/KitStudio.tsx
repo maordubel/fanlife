@@ -1,4 +1,5 @@
 'use client'
+import {KitOwnBar,KitOwnProvider} from '@/components/clubs/KitOwn'
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react'
 import Link from 'next/link'
 import {SlideSheet} from '@/components/stage/SlideSheet'
@@ -24,11 +25,11 @@ type Tool='body'|'trim'|'design'|'collar'|'sleeves'|'maker'|'sponsor'|'crest'|'b
 type Sheet=null|{k:'shirt';id:string}|{k:'save'}|{k:'designs'}|{k:'brief'}|{k:'score'}|{k:'start'}|{k:'help'}
 const TRIM_PREFERENCE:ColourKey[]=['white','cream','black','navy','red','blue','green','grey','purple']
 
-export type KitStudioProps={club:string;clubName:string;locale:UiLocale;contentLocale:string;copy:GameCopy;monogram:string;limits:StudioLimits;identity:StudioIdentity;rows:CollectionRow[];gate4:boolean;focusKit:string|null;/** a fan design in the link, still to be validated here against this club's palette */sharedDesign:string|null;/** cut-out archive photos by kit id, only for shirts that are open */photos?:Record<string,string>}
+export type KitStudioProps={club:string;clubName:string;locale:UiLocale;contentLocale:string;copy:GameCopy;monogram:string;limits:StudioLimits;identity:StudioIdentity;rows:CollectionRow[];gate4:boolean;focusKit:string|null;/** a fan design in the link, still to be validated here against this club's palette */sharedDesign:string|null;/** the closet's catalogue slug by kit id, for the "I have it" bar on an open shirt */slugs?:Record<string,string>;/** cut-out archive photos by kit id, only for shirts that are open */photos?:Record<string,string>}
 
 /** Gate 5 · The Kit Studio — the club's documented shirts as a collection, and a free designer for your own FAN DESIGN. */
 export function KitStudio(props:KitStudioProps){
- const {club,clubName,locale,contentLocale,copy,monogram,limits,identity,rows,gate4,focusKit,sharedDesign,photos={}}=props
+ const {club,clubName,locale,contentLocale,copy,monogram,limits,identity,rows,gate4,focusKit,sharedDesign,photos={},slugs={}}=props
  const say=useCallback((k:string,v?:Record<string,string|number>)=>tr(copy,k,v),[copy])
  const [tab,setTab]=useState<Tab>(focusKit?'collection':'studio')
  const [hist,setHist]=useState(()=>startHistory()),[tool,setTool]=useState<Tool>('body'),[view,setView]=useState<'front'|'back'>('front')
@@ -244,6 +245,7 @@ export function KitStudio(props:KitStudioProps){
       <div><dt>{say('ks.fact.shelf')}</dt><dd>{rows.find(r=>r.id===sheetOpen.id)?.open?say('ks.own.shelf'):say('ks.own.earned')}</dd></div>
       {built[sheetOpen.id]&&<div><dt>{say('ks.fact.built')}</dt><dd>{say('ks.fact.builtAcc',{f:built[sheetOpen.id]!.f})} · {built[sheetOpen.id]!.p?say('ks.fact.builtPerfect'):say('ks.fact.builtBest',{n:built[sheetOpen.id]!.s})}</dd></div>}
      </dl>
+     {slugs[sheetOpen.id]&&rows.find(r=>r.id===sheetOpen.id)?.open&&<KitOwnProvider slugs={[slugs[sheetOpen.id]!]}><KitOwnBar slug={slugs[sheetOpen.id]!} copy={{have:say('ks.own.have'),haveOn:say('ks.own.haveOn'),want:say('ks.own.want'),wantOn:say('ks.own.wantOn'),closet:say('ks.own.closet'),market:say('ks.own.market'),saved:say('ks.own.saved'),label:say('ks.own.label')}}/></KitOwnProvider>}
      {sheetOpen.cloth&&<p className={css.fine}>{say('ks.card.recon')}</p>}
      {sheetOpen.sources.length>0&&<p className={css.fine}>{say('ks.card.sources')}: {sheetOpen.sources.map((s,i)=><span key={i}>{s.url?<a href={s.url} target="_blank" rel="noreferrer noopener"><bdi>{s.title}</bdi></a>:<bdi>{s.title}</bdi>}{i<sheetOpen.sources.length-1?' · ':''}</span>)}</p>}
      {sheetOpen.cloth&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>startFrom(sheetOpen)} data-testid="ks-design-from"><b>{say('ks.card.designFrom')}</b></button>}
