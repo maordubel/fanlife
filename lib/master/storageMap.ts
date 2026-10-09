@@ -22,7 +22,7 @@ export function storageMap():StorageRow[]{
   {what:'Activity archive (older than the newest 5,000 entries)',where,durable:shared,note:'Each entry is archived once, even when a write loses a race.'},
   {what:'Research runs, raw documents, staging (web-triggered)',where:tmp?`${root} (this instance only)`:root,durable:tmp?'no':'yes',note:'Runs started from this desk on Vercel are temporary. The committed record is the GitHub “Archive collect” run, which commits research-data/.'},
   {what:'Research data from scheduled runs',where:'GitHub repository · research-data/',durable:'committed',note:'Public repository: only public source material and checkpoints are committed.'},
-  {what:'Evaluation database — closet, market, local stats',where:tmp?`${root}/postgres (this instance only)`:`${root}/postgres`,durable:tmp?'no':'yes',note:evaluationMode()?'Evaluation mode is on: shirts, listings and stats reset when the instance restarts until Supabase is connected.':'Not used: evaluation mode is off.'},
+  {what:'Evaluation database — closet, market, local stats',where:tmp?`${root}/postgres (this instance only)`:`${root}/postgres`,durable:tmp?'no':'yes',note:evaluationMode()?'Preview mode: shirts, listings and stats reset when the instance restarts. It switches to the real database by itself once Supabase (URL + publishable key) is connected.':'Not used: evaluation mode is off.'},
   {what:'Compiled club packs',where:'Repository · club-packs/ (shipped with each deploy)',durable:'committed',note:'Changed only by a reviewed build and a deploy.'},
  ]
 }
