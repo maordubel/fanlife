@@ -99,3 +99,18 @@ describe('AEK kits reach the gates, the shelf and the market',()=>{
   expect(renderToStaticMarkup(createElement(KitPlate,{kit:bare,label:false}))).toContain('viewBox="0 0 340 320"')
  })
 })
+
+import kbEn from '@/messages/games/gates/kit-builder.en.json'
+import kbHe from '@/messages/games/gates/kit-builder.he.json'
+import {COLOUR_KEYS} from '@/lib/clubs/kit-model'
+describe('every paintable colour has a label in both languages (rule 10)',()=>{
+ it.each(COLOUR_KEYS)('%s',k=>{expect((kbEn as Record<string,string>)[`kb.colour.${k}`]).toBeTruthy();expect((kbHe as Record<string,string>)[`kb.colour.${k}`]).toBeTruthy()})
+})
+
+import {variantOf} from '@/lib/clubs/kit-model'
+describe('a kit filed as neither home, away nor third is not relabelled Home',()=>{
+ it('keeps special as its own variant, with a label in both languages',()=>{
+  expect(variantOf('special')).toBe('special');expect(variantOf(undefined)).toBe('home');expect(variantOf('away')).toBe('away')
+  expect((kbEn as Record<string,string>)['kb.variant.special']).toBeTruthy();expect((kbHe as Record<string,string>)['kb.variant.special']).toBeTruthy()
+ })
+})

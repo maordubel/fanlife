@@ -43,8 +43,9 @@ export type Ink='base'|'trim'
 export type ClothSpec={base:ColourKey|null;trim:ColourKey|null;pattern:PatternId;collar:CollarId;collarInk:Ink;sleeveInk:Ink;maker:string|null;sponsor:string|null;crest:boolean;name:string|null;number:number|null}
 export const BLANK:ClothSpec=Object.freeze({base:null,trim:null,pattern:'solid',collar:'round',collarInk:'base',sleeveInk:'base',maker:null,sponsor:null,crest:false,name:null,number:null})
 
-export type Variant='home'|'away'|'third'
-export const variantOf=(type:string|undefined):Variant=>{const t=(type||'home').toLowerCase();return t==='away'||t==='third'?t:'home'}
+/** 'special' is a kit a source files as neither home, away nor third (AEK's 1924 recreation, an unconfirmed other kit): it is shown as such, never relabelled Home */
+export type Variant='home'|'away'|'third'|'special'
+export const variantOf=(type:string|undefined):Variant=>{const t=(type||'home').toLowerCase();return t==='away'||t==='third'||t==='special'?t:'home'}
 
 /** "red/cream" → red body, cream second colour. Any colour the archive names that cannot be painted safely makes the shirt undrawable. */
 export function paintOf(colours:string[],forbidden:(hex:string)=>boolean):{base:ColourKey;trim:ColourKey|null}|null{
