@@ -105,11 +105,15 @@ export async function currentAccount(): Promise<Account | null> {
 export async function signInWithGoogle(next = '/tik'): Promise<void> {
   if (!portalConfigured() || typeof window === 'undefined') return
   try {
+    // `next` travels in a short-lived cookie, NOT in redirectTo: Supabase matches redirectTo
+    // against its allow-list exactly, a query string never matches the plain `/auth/callback`
+    // entry, and an unmatched address falls back to the project's Site URL — which in the
+    // shared project belongs to DUBID. A bare callback URL always matches, so every app
+    // comes home to itself.
+    document.cookie = `fl_next=${encodeURIComponent(next)}; path=/; max-age=600; samesite=lax`
     await createClient().auth.signInWithOAuth({
       provider: 'google',
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
-      },
+      options: { redirectTo: `${window.location.origin}/auth/callback` },
     })
   } catch {
     // the button simply does nothing rather than throwing on the personal area

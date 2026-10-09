@@ -5,6 +5,7 @@ import {MASTER_PRIMARY} from '@/lib/master/theme'
 import {clubTheme,rivalBans,themeStyle,type ClubTheme} from '@/lib/clubs/theme'
 import {localeDirection,type UiLocale} from '@/lib/clubs/locale'
 import {TabBar} from './TabBar'
+import {evaluationMode} from '@/lib/master/mode'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 
@@ -22,7 +23,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
    <Link href="/" className="mag-logo" aria-label="FAN LIFE"><img className="mag-seal-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-96.png'} alt="" width={40} height={40}/>FAN<b>LIFE</b></Link>
    <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/#life">{copy.tabLife}</Link><Link href="/market">{copy.tabMarket}</Link><Link href="/me">{copy.corner}</Link></nav>
   </div></div>
-  <div className="mag-stop">{stop===undefined?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:stop}</div>
+  {stop!==undefined?<div className="mag-stop">{stop}</div>:evaluationMode()?<div className="mag-stop"><div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div></div>:null}
   {children}
   <footer className="mag-foot"><div className="mag-printbar" aria-hidden="true"><i/><i/><i/><i/><i/><i/><u>+</u></div><div className="mag-foot-in">
    <div className="mag-mono">FAN LIFE · {copy.issue}<br/>{copy.footer}<br/>{copy.printed}</div>

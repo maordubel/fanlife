@@ -34,7 +34,8 @@ export const dynamic = 'force-dynamic'
 
 export async function GET(request: Request) {
   const url = new URL(request.url)
-  const back = safePath(url.searchParams.get('next'))
+  const cookieNext = /(?:^|;\s*)fl_next=([^;]*)/.exec(request.headers.get('cookie') ?? '')?.[1]
+  const back = safePath(url.searchParams.get('next') ?? (cookieNext ? decode(cookieNext) : null))
 
   if (evaluationMode() || !portalConfigured()) return NextResponse.redirect(new URL(back, url.origin))
 
@@ -42,7 +43,7 @@ export async function GET(request: Request) {
   if (code !== null) {
     try {
       const { error } = await createClient().auth.exchangeCodeForSession(code)
-      if (!error) return NextResponse.redirect(new URL(back, url.origin))
+      if (!error) return clear(NextResponse.redirect(new URL(back, url.origin)))
     } catch {
       // fall through to the same place with the failure marked
     }
@@ -52,6 +53,15 @@ export async function GET(request: Request) {
   // card is still there, still readable, still playable. Signing in is an addition to it
   // and a failed addition must not take the screen away.
   return NextResponse.redirect(new URL(`${back}${back.includes('?') ? '&' : '?'}auth=failed`, url.origin))
+}
+
+function decode(v: string): string | null {
+  try { return decodeURIComponent(v) } catch { return null }
+}
+
+function clear(response: NextResponse): NextResponse {
+  response.cookies.set('fl_next', '', { path: '/', maxAge: 0 })
+  return response
 }
 
 function safePath(value: string | null): string {
