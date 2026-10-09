@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 
 import { groupListings, shirtName } from '@/lib/fanlife/collector/market'
 import type { CollectorShirt } from '@/lib/collector/types'
-import { reasonsFor } from '@/lib/fanlife/hub/reasons'
+import { reasonsFor, routeWords } from '@/lib/fanlife/hub/reasons'
 import type { HubItem, MyWant } from '@/lib/fanlife/hub/types'
 import { h, type HubKey } from '@/lib/fanlife/hub/copy'
 import { t } from '@/lib/fanlife/i18n'
@@ -19,6 +19,14 @@ const REASON: Record<string, HubKey> = {
   budget: 'hub.reason.budget',
   swap: 'hub.reason.swap',
   justListed: 'hub.reason.justListed',
+}
+const ROUTE: Record<string, HubKey> = {
+  sameCity: 'hub.route.sameCity',
+  sameCountry: 'hub.route.sameCountry',
+  crossBorder: 'hub.route.crossBorder',
+  ships: 'hub.route.ships',
+  noShip: 'hub.route.noShip',
+  meetOnly: 'hub.route.meetOnly',
 }
 const DELIVERY: Record<string, HubKey> = { ship: 'hub.delivery.shipOnly', local: 'hub.delivery.localOnly' }
 
@@ -78,16 +86,20 @@ export function HubListings({
               <ul className="flex-1">
                 {shown.map((item) => {
                   const reasons = reasonsFor(item, wants)
-                  const travel = item.delivery ? DELIVERY[item.delivery] : undefined
+                  const route = routeWords(item.route)
+                  const travel = item.delivery && !route.length ? DELIVERY[item.delivery] : undefined
                   return (
                     <li key={item.id}>
                       <CopyTicket item={item} shirt={shirt} />
-                      {reasons.length || travel ? (
+                      {reasons.length || travel || route.length ? (
                         <p className="flex flex-wrap gap-1 px-3 pb-2 pt-0.5" data-hub-reasons="">
                           {reasons.map((r) => (
                             <span key={r} className="border-hair border-red px-1.5 py-0.5 font-body text-[10.5px] font-extrabold text-red">
                               {h(REASON[r]!)}
                             </span>
+                          ))}
+                          {route.map((r) => (
+                            <span key={r} className="border-hair border-sign px-1.5 py-0.5 font-body text-[10.5px] font-bold text-sign">{h(ROUTE[r]!)}</span>
                           ))}
                           {travel ? <span className="border-hair border-ink/40 px-1.5 py-0.5 font-body text-[10.5px] font-bold text-muted">{h(travel)}</span> : null}
                         </p>

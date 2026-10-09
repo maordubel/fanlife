@@ -25,3 +25,21 @@ export function reasonsFor(item: HubItem, wants: readonly MyWant[], now: number 
   if (item.openedAt && now - Date.parse(item.openedAt) < 72 * HOURS && now >= Date.parse(item.openedAt)) out.push('justListed')
   return out.slice(0, 3)
 }
+
+/**
+ * How a copy reaches this collector, in words — facts about two places both of which chose to be shown, plus the
+ * seller's own shipping setting. Never a distance, never a score. Empty when the server sent no route.
+ */
+export type RouteWord = 'sameCity' | 'sameCountry' | 'crossBorder' | 'ships' | 'noShip' | 'meetOnly'
+
+export function routeWords(route: HubItem['route']): RouteWord[] {
+  if (!route) return []
+  const out: RouteWord[] = []
+  if (route.sameCity) out.push('sameCity')
+  else if (route.sameCountry) out.push('sameCountry')
+  else if (route.crossBorder) out.push('crossBorder')
+  if (route.delivery === 'local') out.push('meetOnly')
+  else if (route.reaches === true) out.push('ships')
+  else if (route.reaches === false) out.push('noShip')
+  return out
+}

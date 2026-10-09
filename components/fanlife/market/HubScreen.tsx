@@ -5,6 +5,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { BackToAll, HubListings } from '@/components/fanlife/market/HubListings'
 import { HubFilters } from '@/components/fanlife/market/HubFilters'
+import { CirclesPanel } from '@/components/fanlife/market/CirclesPanel'
+import { PipePanel } from '@/components/fanlife/market/PipePanel'
 import { ForYouPanel } from '@/components/fanlife/market/ForYouPanel'
 import { MarketSignIn } from '@/components/fanlife/market/MarketSignIn'
 import type { MatchesState } from '@/components/fanlife/market/MatchesPanel'
@@ -15,13 +17,13 @@ import { matches as matchesCall } from '@/lib/collector/api'
 import type { CollectorShirt } from '@/lib/collector/types'
 import { errorLabel } from '@/lib/fanlife/collector/labels'
 import {
-  marketSearch, searchDelete, searchList, searchNotifySet, searchSave, wantedList, wantPublicSet, wantsMine,
+  marketSearch, placeMine, searchDelete, searchList, searchNotifySet, searchSave, wantedList, wantPublicSet, wantsMine,
 } from '@/lib/fanlife/hub/api'
 import {
   EMPTY_FILTERS, activeCount, autoName, filtersFromQuery, filtersFromSearch, filtersToSearch, slugsFor, toQuery, viewFromSearch,
   type HubFilters as Filters, type HubView,
 } from '@/lib/fanlife/hub/query'
-import type { Cursor, HubFacets, HubItem, MyWant, SavedSearch, WantedRow } from '@/lib/fanlife/hub/types'
+import type { Cursor, HubFacets, HubItem, MyWant, Place, SavedSearch, WantedRow } from '@/lib/fanlife/hub/types'
 import { h } from '@/lib/fanlife/hub/copy'
 import { t } from '@/lib/fanlife/i18n'
 import { portalConfigured } from '@/lib/portal/env'
@@ -47,6 +49,8 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
   const [sheet, setSheet] = useState<{ slug: string | null } | null>(null)
   const [saving, setSaving] = useState<{ name: string } | null>(null)
   const [note, setNote] = useState<string | null>(null)
+  const [place, setPlace] = useState<Place | null>(null)
+  const [pipeVersion, setPipeVersion] = useState(0)
   const run = useRef(0)
   const signedIn = match.state === 'ready' ? true : match.state === 'guest' ? false : null
 
@@ -125,7 +129,8 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
 
   // ---- the collector's own side
   const loadMine = useCallback(() => {
-    void wantsMine().then((out) => out.ok && setWants(out.wants))
+    void wantsMine().then((out) => { if (out.ok) { setWants(out.wants); setPipeVersion((v) => v + 1) } })
+    void placeMine().then((out) => out.ok && setPlace(out))
     void searchList().then((out) => out.ok && setSearches(out.searches))
   }, [])
   useEffect(() => {
@@ -182,7 +187,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
       </nav>
 
       <div role="tablist" aria-label={h('hub.tabs.title')} className="mt-3 flex gap-1 border-b-rule border-ink">
-        {([['market', 'hub.tabs.market'], ['wanted', 'hub.tabs.wanted'], ['foryou', 'hub.tabs.foryou']] as const).map(([id, key]) => (
+        {([['market', 'hub.tabs.market'], ['wanted', 'hub.tabs.wanted'], ['foryou', 'hub.tabs.foryou'], ['circles', 'hub.tabs.circles']] as const).map(([id, key]) => (
           <button
             key={id}
             role="tab"
@@ -201,7 +206,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
       {view === 'market' ? (
         <section role="tabpanel" aria-label={h('hub.tabs.market')}>
           {focus ? <BackToAll shirt={focus} onClear={() => setFilters((f) => ({ ...f, slug: null }))} /> : null}
-          <HubFilters filters={filters} onChange={setFilters} shirts={shirts} facets={facets} />
+          <HubFilters filters={filters} onChange={setFilters} shirts={shirts} facets={facets} myCountry={place?.country ?? null} />
 
           {narrowed && market.state === 'ready' ? (
             saving ? (
@@ -303,6 +308,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
 
       {view === 'foryou' ? (
         <section role="tabpanel" aria-label={h('hub.tabs.foryou')}>
+          <PipePanel signedIn={signedIn} signIn={signIn} shirts={shirts} wants={wants} onFocus={(slug) => { setFilters((f) => ({ ...f, slug })); go('market') }} version={pipeVersion} />
           <ForYouPanel
             matches={match}
             searches={searches}
@@ -316,6 +322,12 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
             onEditWant={(slug) => setSheet({ slug })}
             onNewRequest={() => setSheet({ slug: null })}
           />
+        </section>
+      ) : null}
+
+      {view === 'circles' ? (
+        <section role="tabpanel" aria-label={h('hub.tabs.circles')} className="mt-3">
+          <CirclesPanel shirts={shirts} signedIn={signedIn} signIn={signIn} place={place} onPlace={setPlace} />
         </section>
       ) : null}
 

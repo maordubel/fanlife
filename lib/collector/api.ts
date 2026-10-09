@@ -137,6 +137,22 @@ export async function photoUpload(userId: string, itemId: string, file: File): P
   return call<{ photos: string[] }>('worker_collector_photo_add', { p_item: itemId, p_path: path })
 }
 
+/** A photo that belongs to no copy — the same shrink and the same folder rule (`<you>/<id>/<file>`); the caller registers the path. */
+export async function photoStore(userId: string, folderId: string, file: File): Promise<Result<{ path: string }>> {
+  if (!portalConfigured()) return fail('off')
+  const blob = await shrink(file)
+  if (!blob) return fail('image_unreadable')
+  const ext = blob.type === 'image/webp' ? 'webp' : blob.type === 'image/png' ? 'png' : 'jpg'
+  const path = `${userId}/${folderId}/${crypto.randomUUID()}.${ext}`
+  try {
+    const { error } = await client().storage.from(PHOTO_BUCKET).upload(path, blob, { contentType: blob.type, upsert: false })
+    if (error) return fail('upload_failed')
+  } catch {
+    return fail('upload_failed')
+  }
+  return { ok: true, path }
+}
+
 export async function photoRemove(path: string): Promise<Result<{ path: string; photos: string[] }>> {
   const out = await call<{ path: string; photos: string[] }>('worker_collector_photo_remove', { p_path: path })
   if (out.ok) {

@@ -309,5 +309,7 @@
   "todayPick": "Today’s round",
   "wallFeatureShirt": "Design your {club} shirt",
   "awayName": "AWAY DAYS",
-  "awayNote": "Every ground abroad, as a journey."
+  "awayNote": "Every ground abroad, as a journey.",
+  "marketName": "Shirt market",
+  "marketNote": "Shirts from this club, passed between supporters"
 }

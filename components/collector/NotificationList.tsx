@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 import { shirtDateText } from '@/lib/collector/cards'
 import { formatPrice, handleLabel } from '@/lib/collector/labels'
-import { NOTIFICATION_TEXT, notificationHref } from '@/lib/collector/notify'
+import { EVENT_TEXT, NOTIFICATION_TEXT, notificationHref } from '@/lib/collector/notify'
 import type { CollectorNotification, CollectorShirt, Currency } from '@/lib/collector/types'
 import { t, type MessageKey } from '@/lib/i18n'
 
@@ -79,7 +79,8 @@ export function NotificationList({
 
 function sentence(note: CollectorNotification): MessageKey {
   if (note.kind === 'COLLECTOR_OFFER_RECEIVED' && note.payload.kind === 'trade') return 'collector.notify.COLLECTOR_OFFER_RECEIVED.trade'
-  return NOTIFICATION_TEXT[note.kind]
+  const event = note.kind === 'COLLECTOR_MESSAGE' && note.payload.event ? EVENT_TEXT[note.payload.event] : undefined
+  return event ?? NOTIFICATION_TEXT[note.kind]
 }
 
 /** the second line — only what the payload actually carries */

@@ -10,6 +10,35 @@
 --  5. worker_wanted_list / worker_want_request / worker_want_respond / worker_wants_mine
 -- =====================================================================
 
+-- ---------------------------------------------------------------- 0. place, reach, and which club a shirt belongs to
+-- A collector may say which country (and city) they are in. It is OPT-IN: until show_place is true the
+-- country is used for nothing — not a filter, not a facet, not a label.
+alter table public.worker_collector_profile add column if not exists country text;
+alter table public.worker_collector_profile add column if not exists city text;
+alter table public.worker_collector_profile add column if not exists city_key text;
+alter table public.worker_collector_profile add column if not exists show_place boolean not null default false;
+do $$ begin
+  if not exists (select 1 from pg_constraint where conname = 'worker_collector_profile_place_chk') then
+    alter table public.worker_collector_profile add constraint worker_collector_profile_place_chk check (
+      (country is null or country ~ '^[A-Z]{2}$') and (city is null or char_length(city) between 1 and 40)
+      and (city_key is null or city_key ~ '^[a-z0-9-]{1,40}$'));
+  end if;
+end $$;
+-- how far a copy will travel: inside the seller's own country, or anywhere
+alter table public.worker_collector_item add column if not exists ship_scope text not null default 'country';
+do $$ begin
+  if not exists (select 1 from pg_constraint where conname = 'worker_collector_item_scope_chk') then
+    alter table public.worker_collector_item add constraint worker_collector_item_scope_chk check (ship_scope in ('country', 'world'));
+  end if;
+end $$;
+
+/* A shirt's club is the prefix of its catalogue slug: `olympiacos--1998-away` -> olympiacos.
+   Hapoel Tel Aviv's photographed archive has plain slugs and no prefix. */
+create or replace function public.worker_slug_club(p_slug text) returns text
+language sql immutable as $$
+  select case when position('--' in p_slug) > 1 then split_part(p_slug, '--', 1) else 'hapoeltelaviv' end
+$$;
+
 -- ---------------------------------------------------------------- 1. delivery
 alter table public.worker_collector_item
   add column if not exists delivery text not null default 'both';
@@ -43,11 +72,36 @@ language sql stable security definer set search_path = public as $$
     'currency', p_item.currency,
     'openToOffers', p_item.open_to_offers,
     'delivery', p_item.delivery,
+    'shipScope', p_item.ship_scope,
     'state', p_item.state,
     'photos', public.worker_item_photos(p_item.id),
     'openedAt', p_item.opened_at,
     'seller', public.worker_collector_label(p_item.user_id)
   )
+$$;
+
+
+/* the public face of a collector: a number, a nickname if they chose one, their record — and a place, only if they opted in */
+create or replace function public.worker_collector_label(p_user uuid) returns jsonb
+language sql stable security definer set search_path = public as $$
+  select jsonb_build_object(
+    'handle', c.handle_no,
+    'nickname', case when c.show_nickname then nullif(trim(p.display_name), '') end,
+    'since', extract(year from p.since)::int,
+    'completed', (select count(*) from public.worker_collector_connection k
+                   where k.status = 'completed' and (k.initiator_id = p_user or k.recipient_id = p_user)),
+    'trades', (select count(*) from public.worker_collector_connection k
+                where k.status = 'completed' and k.kind = 'trade' and (k.initiator_id = p_user or k.recipient_id = p_user)),
+    'sales', (select count(*) from public.worker_collector_connection k
+               where k.status = 'completed' and k.kind = 'buy' and k.recipient_id = p_user),
+    'items', (select count(*) from public.worker_collector_item i
+               where i.user_id = p_user and i.state in ('held', 'reserved')),
+    'place', case when c.show_place and c.country is not null
+                  then jsonb_build_object('country', c.country, 'city', c.city) end
+  )
+  from public.worker_collector_profile c
+  join public.worker_profile p on p.id = c.user_id
+  where c.user_id = p_user
 $$;
 
 create or replace function public.worker_item_delivery_set(p_item uuid, p_delivery text) returns jsonb
@@ -61,6 +115,27 @@ begin
   if not found then return public.worker_fail('not_found'); end if;
   return jsonb_build_object('ok', true, 'delivery', p_delivery);
 end $$;
+
+create or replace function public.worker_item_reach_set(p_item uuid, p_scope text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+declare v_me uuid := public.worker_market_uid();
+begin
+  if v_me is null then return public.worker_fail('auth_required'); end if;
+  if p_scope is null or p_scope not in ('country', 'world') then return public.worker_fail('bad_value'); end if;
+  update public.worker_collector_item set ship_scope = p_scope, updated_at = now()
+   where id = p_item and user_id = v_me and state in ('held', 'reserved');
+  if not found then return public.worker_fail('not_found'); end if;
+  return jsonb_build_object('ok', true, 'shipScope', p_scope);
+end $$;
+
+/* may this copy travel to a buyer in p_country — the seller must ship, and either ship worldwide or share the buyer's country (only if the seller shows their place) */
+create or replace function public.worker_item_reaches(i public.worker_collector_item, p_country text) returns boolean
+language sql stable security definer set search_path = public as $$
+  select i.delivery in ('ship', 'both')
+     and (i.ship_scope = 'world'
+          or exists (select 1 from public.worker_collector_profile c
+                      where c.user_id = i.user_id and c.show_place and c.country = p_country))
+$$;
 
 -- ---------------------------------------------------------------- 2. requests
 alter table public.worker_collector_want add column if not exists mode text not null default 'any';
@@ -116,6 +191,13 @@ begin
   if p is null or jsonb_typeof(p) <> 'object' then return r; end if;
   v := public.worker_q_arr(p, 'slugs', '^[a-z0-9][a-z0-9-]{2,63}$', 400);
   if array_length(v, 1) > 0 then r := r || jsonb_build_object('slugs', to_jsonb(v)); end if;
+  v := public.worker_q_arr(p, 'clubs', '^[a-z0-9]{2,30}$', 40);
+  if array_length(v, 1) > 0 then r := r || jsonb_build_object('clubs', to_jsonb(v)); end if;
+  v := public.worker_q_arr(p, 'countries', '^[A-Z]{2}$', 12);
+  if array_length(v, 1) > 0 then r := r || jsonb_build_object('countries', to_jsonb(v)); end if;
+  v := public.worker_q_arr(p, 'cities', '^[a-z0-9-]{1,40}$', 12);
+  if array_length(v, 1) > 0 then r := r || jsonb_build_object('cities', to_jsonb(v)); end if;
+  if p ->> 'reach' ~ '^[A-Z]{2}$' then r := r || jsonb_build_object('reach', p ->> 'reach'); end if;
   v := public.worker_q_arr(p, 'kinds', '^(sale|trade)$', 2);
   if array_length(v, 1) > 0 then r := r || jsonb_build_object('kinds', to_jsonb(v)); end if;
   v := public.worker_q_arr(p, 'sizes', '^(kids|xs|s|m|l|xl|xxl|xxxl)$', 8);
@@ -141,8 +223,15 @@ $$;
 
 /* does a copy fit a (cleaned) query — the ONE predicate search, facets and saved-search alerts share */
 create or replace function public.worker_item_matches(i public.worker_collector_item, q jsonb) returns boolean
-language sql stable set search_path = public as $$
+language sql stable security definer set search_path = public as $$
   select (not q ? 'slugs' or i.archive_slug in (select jsonb_array_elements_text(q -> 'slugs')))
+     and (not q ? 'clubs' or public.worker_slug_club(i.archive_slug) in (select jsonb_array_elements_text(q -> 'clubs')))
+     -- a place is only ever matched for collectors who chose to show it
+     and (not q ? 'countries' or exists (select 1 from public.worker_collector_profile c
+            where c.user_id = i.user_id and c.show_place and c.country in (select jsonb_array_elements_text(q -> 'countries'))))
+     and (not q ? 'cities' or exists (select 1 from public.worker_collector_profile c
+            where c.user_id = i.user_id and c.show_place and c.city_key in (select jsonb_array_elements_text(q -> 'cities'))))
+     and (not q ? 'reach' or public.worker_item_reaches(i, q ->> 'reach'))
      and (not q ? 'kinds' or ((q -> 'kinds') ? 'sale' and i.for_sale) or ((q -> 'kinds') ? 'trade' and i.for_trade))
      and (not q ? 'sizes' or i.size in (select jsonb_array_elements_text(q -> 'sizes')))
      and (not q ? 'conditions' or i.condition in (select jsonb_array_elements_text(q -> 'conditions')))
@@ -227,6 +316,17 @@ begin
                  select i.item_type, count(*) c from public.worker_collector_item i
                   where public.worker_item_visible(i, auth.uid()) and public.worker_item_matches(i, v_q - 'itemTypes')
                   group by i.item_type) s), '{}'::jsonb),
+      'clubs', coalesce((select jsonb_object_agg(s.club, s.c) from (
+                 select public.worker_slug_club(i.archive_slug) club, count(*) c from public.worker_collector_item i
+                  where public.worker_item_visible(i, auth.uid()) and public.worker_item_matches(i, v_q - 'clubs')
+                  group by 1) s), '{}'::jsonb),
+      'countries', coalesce((select jsonb_object_agg(s.country, s.c) from (
+                 select c.country, count(*) c from public.worker_collector_item i
+                  join public.worker_collector_profile c on c.user_id = i.user_id and c.show_place and c.country is not null
+                  where public.worker_item_visible(i, auth.uid()) and public.worker_item_matches(i, v_q - 'countries')
+                  group by c.country) s), '{}'::jsonb),
+      'reachable', (select count(*) from public.worker_collector_item i
+                     where v_q ? 'reach' and public.worker_item_visible(i, auth.uid()) and public.worker_item_matches(i, v_q)),
       'slugs', coalesce((select jsonb_object_agg(s.archive_slug, s.c) from (
                  select i.archive_slug, count(*) c from public.worker_collector_item i
                   where public.worker_item_visible(i, auth.uid()) and public.worker_item_matches(i, v_q - 'slugs')
@@ -395,14 +495,18 @@ begin
 end $$;
 
 /* the wanted board: public requests only, without budget and without any user id */
+-- (the signature grew a trailing p_clubs: drop the old one so the two never coexist as an overload)
+drop function if exists public.worker_wanted_list(jsonb, integer, timestamptz, uuid);
 create or replace function public.worker_wanted_list(
-  p_slugs jsonb default null, p_limit integer default 24, p_after_at timestamptz default null, p_after_id uuid default null
+  p_slugs jsonb default null, p_limit integer default 24, p_after_at timestamptz default null, p_after_id uuid default null,
+  p_clubs jsonb default null
 ) returns jsonb
 language plpgsql stable security definer set search_path = public as $$
 declare
   v_me uuid := public.worker_market_uid();
   v_limit integer := least(greatest(coalesce(p_limit, 24), 1), 60);
   v_slugs jsonb := public.worker_market_q(jsonb_build_object('slugs', p_slugs)) -> 'slugs';
+  v_clubs jsonb := public.worker_market_q(jsonb_build_object('clubs', p_clubs)) -> 'clubs';
   v_rows jsonb;
   v_n integer;
   v_last record;
@@ -430,6 +534,7 @@ begin
      where w.public_request
        and (v_me is null or not public.worker_blocked(v_me, w.user_id))
        and (v_slugs is null or w.archive_slug in (select jsonb_array_elements_text(v_slugs)))
+       and (v_clubs is null or public.worker_slug_club(w.archive_slug) in (select jsonb_array_elements_text(v_clubs)))
        and (p_after_id is null or (w.created_at, w.id) < (coalesce(p_after_at, 'epoch'::timestamptz), p_after_id))
      order by w.created_at desc, w.id desc
      limit v_limit + 1) q;
@@ -441,12 +546,14 @@ begin
         select w.created_at, w.id from public.worker_collector_want w
          where w.public_request and (v_me is null or not public.worker_blocked(v_me, w.user_id))
            and (v_slugs is null or w.archive_slug in (select jsonb_array_elements_text(v_slugs)))
+           and (v_clubs is null or public.worker_slug_club(w.archive_slug) in (select jsonb_array_elements_text(v_clubs)))
            and (p_after_id is null or (w.created_at, w.id) < (coalesce(p_after_at, 'epoch'::timestamptz), p_after_id))
          order by w.created_at desc, w.id desc limit v_limit) x
        order by x.created_at asc, x.id asc limit 1) else null end,
     'total', (select count(*) from public.worker_collector_want w
                where w.public_request and (v_me is null or not public.worker_blocked(v_me, w.user_id))
-                 and (v_slugs is null or w.archive_slug in (select jsonb_array_elements_text(v_slugs))))
+                 and (v_slugs is null or w.archive_slug in (select jsonb_array_elements_text(v_slugs)))
+                 and (v_clubs is null or public.worker_slug_club(w.archive_slug) in (select jsonb_array_elements_text(v_clubs))))
   );
 end $$;
 
@@ -479,7 +586,7 @@ do $grants$
 declare
   v_fn record;
   v_public text[] := array['worker_market_search', 'worker_wanted_list'];
-  v_member text[] := array['worker_item_delivery_set', 'worker_search_save', 'worker_search_list', 'worker_search_delete',
+  v_member text[] := array['worker_item_delivery_set', 'worker_item_reach_set', 'worker_search_save', 'worker_search_list', 'worker_search_delete',
                            'worker_search_notify_set', 'worker_want_request', 'worker_want_public_set', 'worker_wants_mine',
                            'worker_want_respond'];
 begin
@@ -499,7 +606,7 @@ begin
   for v_fn in
     select p.oid::regprocedure::text as sig from pg_proc p join pg_namespace n on n.oid = p.pronamespace
      where n.nspname = 'public' and p.proname in ('worker_q_arr', 'worker_market_q', 'worker_item_visible',
-                                                  'worker_item_matches', 'worker_search_alert')
+                                                  'worker_item_matches', 'worker_search_alert', 'worker_slug_club', 'worker_item_reaches')
   loop
     execute format('revoke all on function %s from public, anon, authenticated', v_fn.sig);
   end loop;

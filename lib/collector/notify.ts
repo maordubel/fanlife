@@ -36,6 +36,14 @@ export const NOTIFICATION_TEXT: Record<NotificationKind, MessageKey> = {
   REPORT_RECEIVED: 'collector.notify.REPORT_RECEIVED',
 }
 
+/** COLLECTOR_MESSAGE can carry an `event`: the same kind, a more precise sentence (each key written out in full — rule 32). */
+export const EVENT_TEXT: Record<string, MessageKey> = {
+  handover: 'collector.notify.event.handover',
+  sent: 'collector.notify.event.sent',
+  id_proposal: 'collector.notify.event.id_proposal',
+  id_solved: 'collector.notify.event.id_solved',
+}
+
 /** The kinds only an administrator is ever sent. */
 export const ADMIN_KINDS: ReadonlySet<NotificationKind> = new Set<NotificationKind>(['AUCTION_SUBMITTED', 'REPORT_RECEIVED'])
 
@@ -44,6 +52,8 @@ const safe = (id: string | undefined): string | null => (id && UUID.test(id) ? i
 
 export function notificationHref(note: Pick<CollectorNotification, 'kind' | 'payload'>): string | null {
   if (ADMIN_KINDS.has(note.kind)) return '/kits/admin'
+  const request = safe(note.payload.reqId)
+  if (request) return `/kits/market/help?req=${request}`
   const connection = safe(note.payload.connectionId)
   const lot = safe(note.payload.lotId)
   // a won or sold lot opens on the lot — the amount and the way into the conversation are there

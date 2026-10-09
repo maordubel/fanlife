@@ -79,6 +79,8 @@ export type CollectorLabel = {
   trades: number
   sales: number
   items: number
+  /** only when the collector chose to show where they are */
+  place?: { country: string; city: string | null } | null
 }
 
 export type PublicItem = {
@@ -348,6 +350,9 @@ export type CollectorNotification = {
     reason?: string
     reportId?: string
     from?: number
+    /** COLLECTOR_MESSAGE: what the message is about — a handover, a shipment, a shirt identified */
+    event?: string
+    reqId?: string
     /** COLLECTOR_WANT_MATCHED: how the copy that appeared is open */
     forSale?: boolean
     forTrade?: boolean

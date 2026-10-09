@@ -17,3 +17,12 @@ Market / Wanted / For you at `/market` (`components/fanlife/market/HubScreen.tsx
 - Feedback: `worker_feedback_give` (good / fine / not good, after completion, once each). `worker_feedback_summary` is public and returns counts only; the note is read only by the person it is about.
 - UI: `components/fanlife/market/DealPanels.tsx`, rendered under the thread at `/market/c/[id]`.
 - Errors: a missing database function now answers a distinct `setup` error ("The market is not switched on for this site yet") and logs the real message to the console, instead of "couldn't reach the server".
+
+## Wave 3 — place, circles, the pipe, identification help (9.10.2026)
+
+- **Migration `20261009150000_worker_circles_wave3.sql`** (after wave 2; tests `supabase/tests/72-circles-wave3.sql`). The wave-1 search migration was also extended in place (place columns, `ship_scope`, reach queries) — re-run both, in order, after any re-run of the collector file.
+- **Place is opt-in.** Country/city are shown on a collector's copies only if they switch `show_place` on. A copy's `ship_scope` (country/world) plus the buyer's country answers "ships to me".
+- **Circles** are a club, a country or a city seen as a slice of the market (`/circles/<kind>/<key>`, Circles tab). Never a chat room.
+- **The pipe** (`worker_pipe`, top of For you): shirts that match your list, public requests your copies would answer, news from followed clubs — each with its reason, no score.
+- **"What shirt is this?"** (`/market/help`): photos + note + club hint; others suggest an archive shirt; the asker picks. Notifications reuse COLLECTOR_MESSAGE with `event`.
+- Every club page links to `/market?club=<id>`.

@@ -8,6 +8,7 @@ import type { Condition, Currency, ItemType, Size } from '@/lib/collector/types'
 import { activeCount, type HubFilters as Filters, type HubShirt } from '@/lib/fanlife/hub/query'
 import type { HubFacets } from '@/lib/fanlife/hub/types'
 import { h } from '@/lib/fanlife/hub/copy'
+import { countryFlag, countryName } from '@/lib/fanlife/hub/places'
 import { t } from '@/lib/fanlife/i18n'
 
 import { Chip, Rail, buttonPlain } from './HubParts'
@@ -26,6 +27,7 @@ export function HubFilters({
   shirts,
   facets,
   showCopyRails = true,
+  myCountry = null,
 }: {
   filters: Filters
   onChange: (next: Filters) => void
@@ -33,6 +35,8 @@ export function HubFilters({
   facets: HubFacets | null
   /** the wanted board filters by shirt only; size / condition / price rails are for copies */
   showCopyRails?: boolean
+  /** the collector's own country, when they have told us: powers "ships to me" */
+  myCountry?: string | null
 }) {
   const [open, setOpen] = useState(false)
   const set = (patch: Partial<Filters>) => onChange({ ...filters, slug: null, ...patch })
@@ -60,7 +64,7 @@ export function HubFilters({
         </button>
         <h3 className="hidden font-body text-[11px] font-extrabold uppercase tracking-wide text-muted md:block">{h('hub.filters.title')}</h3>
         {count ? (
-          <button type="button" onClick={() => onChange({ ...filters, slug: null, club: null, decade: null, variant: null, kind: null, sizes: [], conditions: [], types: [], delivery: null, maxPrice: null })} className="min-h-tap px-2 font-body text-[12px] font-extrabold text-sign underline underline-offset-4">
+          <button type="button" onClick={() => onChange({ ...filters, slug: null, club: null, decade: null, variant: null, kind: null, sizes: [], conditions: [], types: [], delivery: null, maxPrice: null, country: null, city: null, reach: null })} className="min-h-tap px-2 font-body text-[12px] font-extrabold text-sign underline underline-offset-4">
             {h('hub.filters.clear')}
           </button>
         ) : null}
@@ -114,6 +118,17 @@ export function HubFilters({
                 <Chip key={x} on={filters.types.includes(x)} onClick={() => set({ types: toggle(filters.types, x) })} label={typeLabel(x)} count={facets?.itemTypes[x]} disabled={!filters.types.includes(x) && facets !== null && !facets.itemTypes[x]} />
               ))}
             </Rail>
+            {(myCountry || Object.keys(facets?.countries ?? {}).length > 1 || filters.country) ? (
+              <Rail label={h('hub.rail.where')}>
+                <Chip on={!filters.country && !filters.reach} onClick={() => set({ country: null, city: null, reach: null })} label={h('hub.all')} />
+                {myCountry ? (
+                  <Chip on={filters.reach === myCountry} onClick={() => set({ reach: filters.reach === myCountry ? null : myCountry, country: null, city: null })} label={h('hub.filters.shipsToMe')} />
+                ) : null}
+                {Object.entries(facets?.countries ?? {}).sort((a, b) => b[1] - a[1]).map(([cc, n]) => (
+                  <Chip key={cc} on={filters.country === cc} onClick={() => set({ country: filters.country === cc ? null : cc, city: null, reach: null })} label={`${countryFlag(cc)} ${countryName(cc)}`} count={n} />
+                ))}
+              </Rail>
+            ) : null}
             <Rail label={h('hub.rail.delivery')}>
               <Chip on={!filters.delivery} onClick={() => set({ delivery: null })} label={h('hub.all')} />
               <Chip on={filters.delivery === 'ship'} onClick={() => set({ delivery: filters.delivery === 'ship' ? null : 'ship' })} label={h('hub.delivery.ship')} />
