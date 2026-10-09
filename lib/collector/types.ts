@@ -13,6 +13,7 @@ export type AuthenticityClaim = 'original' | 'match_worn' | 'unsure' | 'replica'
 export type ItemState = 'held' | 'reserved' | 'sold' | 'traded' | 'removed' | 'suspended'
 export type Currency = 'ILS' | 'EUR' | 'USD'
 export type Visibility = 'public' | 'link_only' | 'private'
+export type IdentityMode = 'number' | 'nickname' | 'anonymous'
 
 export const SIZES: readonly Size[] = ['kids', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl']
 export const CONDITIONS: readonly Condition[] = ['mint', 'excellent', 'good', 'worn', 'damaged']
@@ -66,13 +67,22 @@ export type CollectorError =
   | 'note_required'
   | 'not_reported'
   | 'upload_failed'
+  | 'nick_short'
+  | 'nick_long'
+  | 'nick_chars'
+  | 'nick_reserved'
+  | 'nick_taken'
+  | 'confirm_private'
+  | 'anonymous_requires_private'
   | 'image_unreadable'
 
 export type Fail = { ok: false; error: CollectorError; missing?: string[]; minNext?: number; yourMax?: number; key?: string }
 export type Result<T> = ({ ok: true } & T) | Fail
 
 export type CollectorLabel = {
-  handle: number
+  /** null when the collector is anonymous: no number exists to show or to link on */
+  handle: number | null
+  anonymous?: boolean
   nickname: string | null
   since: number | null
   completed: number
@@ -114,6 +124,8 @@ export type OwnerItem = Omit<PublicItem, 'seller'> & {
   suspendedReason: string | null
   createdAt: string
   openConnections: number
+  /** shown in the public closet — chosen, never automatic */
+  inDisplay?: boolean
   lot: { id: string; status: string } | null
   wanters: number
 }
@@ -130,7 +142,15 @@ export type Want = {
 }
 
 export type Closet = {
-  profile: { handle: number; showNickname: boolean; visibility: Visibility; shareToken: string }
+  profile: {
+    handle: number
+    identityMode: IdentityMode
+    /** the public nickname — never the account name */
+    nickname: string | null
+    showNickname: boolean
+    visibility: Visibility
+    shareToken: string
+  }
   label: CollectorLabel
   items: OwnerItem[]
   wants: Want[]

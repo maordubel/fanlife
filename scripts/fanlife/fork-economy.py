@@ -81,6 +81,22 @@ def fork(src):
 
 # FAN LIFE-only edits applied after the rewrite: (file, old, new). Each must match exactly once.
 PATCHES = [
+    # stage A privacy (9.10.2026): the display switch + the publish reminder, and the one-time move of older photos
+    ('components/fanlife/closet/ItemEditor.tsx',
+     "import { t, type MessageKey } from '@/lib/fanlife/i18n'",
+     "import { t, type MessageKey } from '@/lib/fanlife/i18n'\nimport { ItemPrivacy } from '@/components/fanlife/closet/ItemPrivacy'"),
+    ('components/fanlife/closet/ItemEditor.tsx',
+     "              <p className=\"mt-2 font-body text-[11.5px] leading-snug text-muted\">{t('collector.editor.noFee')}</p>",
+     "              <p className=\"mt-2 font-body text-[11.5px] leading-snug text-muted\">{t('collector.editor.noFee')}</p>\n              <ItemPrivacy item={item} api={api} publishing={draft.forSale || draft.forTrade} editable={editable} />"),
+    ('components/fanlife/closet/ClosetBoard.tsx',
+     "import { t, type MessageKey } from '@/lib/fanlife/i18n'",
+     "import { t, type MessageKey } from '@/lib/fanlife/i18n'\nimport { PhotoMigration } from '@/components/fanlife/closet/PhotoMigration'"),
+    ('components/fanlife/closet/ClosetBoard.tsx',
+     "        <aside className=\"mt-stack space-y-4 lg:sticky lg:top-4 lg:mt-0\">",
+     "        <aside className=\"mt-stack space-y-4 lg:sticky lg:top-4 lg:mt-0\">\n          <PhotoMigration onMoved={reloadCloset} />"),
+    ('components/fanlife/closet/ClosetBoard.tsx',
+     "  function replace(next: OwnerItem) {",
+     "  async function reloadCloset() {\n    const out = await api.reload()\n    if (out.ok) {\n      const { ok: _ok, ...next } = out\n      setCloset(next)\n    }\n  }\n\n  function replace(next: OwnerItem) {"),
     # rest of the world (9.10.2026): a copy from a club outside the archive has no archive slug to "have" again — it is re-listed from what the seller said
     ('components/fanlife/closet/ItemEditor.tsx',
      "import { t, type MessageKey } from '@/lib/fanlife/i18n'",
@@ -187,7 +203,12 @@ def patched(dst, text):
     return text
 
 # written by hand for FAN LIFE — never regenerated, never compared (the market redesign, 9.10.2026)
-HAND = {os.path.normpath(p) for p in ['components/fanlife/market/ListingView.tsx']}
+HAND = {os.path.normpath(p) for p in [
+    'components/fanlife/market/ListingView.tsx',
+    # stage A privacy (9.10.2026): how I appear, collection privacy, the opaque-photo migration — English, hand-written
+    'components/fanlife/closet/PrivacyPanel.tsx',
+    'components/fanlife/closet/api.ts',
+]}
 
 check = '--check' in sys.argv
 stale = []

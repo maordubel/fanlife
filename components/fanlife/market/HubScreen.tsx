@@ -12,7 +12,6 @@ import { PressPhoto } from '@/components/master/Poster'
 import { MarketCurtain } from './MarketCurtain'
 import { MarketSignIn } from '@/components/fanlife/market/MarketSignIn'
 import type { MatchesState } from '@/components/fanlife/market/MatchesPanel'
-import { WorldBand } from '@/components/fanlife/market/WorldBand'
 import { WorldHaveSheet } from '@/components/fanlife/market/WorldHaveSheet'
 import { RequestSheet } from '@/components/fanlife/market/RequestSheet'
 import { WantedBoard } from '@/components/fanlife/market/WantedBoard'
@@ -235,12 +234,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
             ))}
           </div>
           {filters.scope !== 'game' ? (
-            <WorldBand
-              count={facets?.scope?.world ?? null}
-              browsing={filters.scope === 'world'}
-              onList={() => setWizard(true)}
-              onBrowse={() => setFilters((f) => ({ ...f, scope: 'world', slug: null, club: null, decade: null, variant: null }))}
-            />
+            <button type="button" className="fl-world-link min-h-tap" onClick={() => setWizard(true)}>{h('hub.world.list')} <span aria-hidden="true">›</span></button>
           ) : null}
           {focus ? <BackToAll shirt={focus} onClear={() => setFilters((f) => ({ ...f, slug: null }))} /> : null}
           <div className="fl-mk-chips" role="group" aria-label={h('hub.rail.deal')}>

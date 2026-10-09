@@ -50,6 +50,14 @@ const ERROR: Partial<Record<CollectorError, MessageKey>> = {
   not_available: 'collector.error.not_available',
   busy: 'collector.error.busy',
   closed: 'collector.error.closed',
+  nick_short: 'collector.error.nick_short',
+  nick_long: 'collector.error.nick_long',
+  nick_chars: 'collector.error.nick_chars',
+  nick_reserved: 'collector.error.nick_reserved',
+  nick_taken: 'collector.error.nick_taken',
+  anonymous_requires_private: 'collector.error.anonymous_requires_private',
+  upload_failed: 'collector.error.upload_failed',
+  image_unreadable: 'collector.error.image_unreadable',
 }
 
 export const sizeLabel = (size: Size) => t(SIZE[size])
@@ -62,8 +70,10 @@ export const errorLabel = (error: CollectorError) => t(ERROR[error] ?? 'collecto
 /** A replica or fan reproduction is never shown without saying so (spec §24). */
 export const isReproduction = (type: ItemType) => type === 'replica' || type === 'fan_reproduction'
 
-export function handleLabel(label: Pick<CollectorLabel, 'handle' | 'nickname'>): string {
-  return label.nickname ?? t('collector.handle', { n: String(label.handle) })
+export function handleLabel(label: Pick<CollectorLabel, 'handle' | 'nickname'> & { anonymous?: boolean }): string {
+  if (label.nickname) return label.nickname
+  if (label.anonymous || label.handle === null) return t('collector.anonymous')
+  return t('collector.handle', { n: String(label.handle) })
 }
 
 export function formatPrice(amount: number, currency: Currency): string {

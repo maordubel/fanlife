@@ -95,11 +95,13 @@ select pg_temp.ok('nor in each other''s circles', (pg_temp.call(:C, $q$select pu
 
 -- ---- identification help
 insert into ctx3 select 'rq', gen_random_uuid()::text;
-insert into storage.objects (bucket_id, name) values ('worker-collector', 'f2222222-2222-2222-2222-222222222222/' || (select v from ctx3 where k='rq') || '/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa.webp') on conflict do nothing;
-select pg_temp.ok('a photo that was never uploaded is refused', (pg_temp.call(:B, format($q$select public.worker_idreq_open(%L, array[%L], 'old red shirt')$q$, (select v from ctx3 where k='rq'), 'f2222222-2222-2222-2222-222222222222/' || (select v from ctx3 where k='rq') || '/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb.webp'))) ->> 'error' = 'not_uploaded');
+insert into ctx3 select 'sl1', (pg_temp.call(:B, $q$select public.worker_photo_slot('webp')$q$)) ->> 'path';
+insert into ctx3 select 'sl2', (pg_temp.call(:B, $q$select public.worker_photo_slot('webp')$q$)) ->> 'path';
+insert into storage.objects (bucket_id, name) values ('worker-collector-pub', (select v from ctx3 where k='sl1')) on conflict do nothing;
+select pg_temp.ok('a photo that was never uploaded is refused', (pg_temp.call(:B, format($q$select public.worker_idreq_open(%L, array[%L], 'old red shirt')$q$, (select v from ctx3 where k='rq'), (select v from ctx3 where k='sl2')))) ->> 'error' = 'not_uploaded');
 select pg_temp.ok('a path in someone else''s folder is refused', (pg_temp.call(:B, format($q$select public.worker_idreq_open(%L, array[%L], 'x')$q$, (select v from ctx3 where k='rq'), 'f1111111-1111-1111-1111-111111111111/' || (select v from ctx3 where k='rq') || '/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa.webp'))) ->> 'error' = 'bad_path');
-select pg_temp.ok('B asks what shirt this is', (pg_temp.call(:B, format($q$select public.worker_idreq_open(%L, array[%L], 'old red shirt', 'olympiacos')$q$, (select v from ctx3 where k='rq'), 'f2222222-2222-2222-2222-222222222222/' || (select v from ctx3 where k='rq') || '/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa.webp'))) ->> 'ok' = 'true');
-select pg_temp.ok('the same id cannot be opened twice', (pg_temp.call(:B, format($q$select public.worker_idreq_open(%L, array[%L], 'again')$q$, (select v from ctx3 where k='rq'), 'f2222222-2222-2222-2222-222222222222/' || (select v from ctx3 where k='rq') || '/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa.webp'))) ->> 'error' = 'exists');
+select pg_temp.ok('B asks what shirt this is', (pg_temp.call(:B, format($q$select public.worker_idreq_open(%L, array[%L], 'old red shirt', 'olympiacos')$q$, (select v from ctx3 where k='rq'), (select v from ctx3 where k='sl1')))) ->> 'ok' = 'true');
+select pg_temp.ok('the same id cannot be opened twice', (pg_temp.call(:B, format($q$select public.worker_idreq_open(%L, array[%L], 'again')$q$, (select v from ctx3 where k='rq'), (select v from ctx3 where k='sl1')))) ->> 'error' = 'exists');
 select pg_temp.ok('anyone may read the open list', jsonb_array_length((pg_temp.call(null, $q$select public.worker_idreq_list(20)$q$)) -> 'requests') = 1);
 select pg_temp.ok('the list says it is not mine to A', ((pg_temp.call(:A, $q$select public.worker_idreq_list(20)$q$)) -> 'requests' -> 0 ->> 'mine') = 'false');
 select pg_temp.ok('A''s pipe counts one open question', ((pg_temp.call(:A, $q$select public.worker_pipe()$q$)) ->> 'help')::int = 1);

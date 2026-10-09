@@ -1036,6 +1036,8 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .fl-me-clubs small { color: var(--mag-muted); font-size: 13px; }
 .fl-me-closet { border: 3px solid var(--mag-ink); background: var(--mag-paper); padding: 16px; justify-items: start; }
 .fl-me-closet p { margin: 0; }
+.fl-me-identity { font-size: 13px; line-height: 1.4; color: var(--mag-muted, var(--mag-ink)); }
+.fl-me-identity a { color: var(--mag-ink); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; display: inline-flex; min-block-size: 44px; align-items: center; }
 .fl-file-xis { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
 @media (min-width: 760px) { .fl-file-xis { grid-template-columns: 1fr 1fr; } }
 .fl-file-xis > li { display: grid; gap: 10px; border: 2px solid var(--mag-ink); background: var(--mag-card); padding: 12px; box-shadow: 4px 4px 0 var(--club-primary); justify-items: start; }
@@ -1542,22 +1544,10 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .fl-scope button small { display: block; margin-top: 3px; font-family: var(--mag-mono); font-size: 10px; letter-spacing: 1px; opacity: .75; }
 .fl-scope button[aria-pressed='true'] { background: var(--mag-ink); color: var(--mag-paper); }
 .fl-scope button[data-world][aria-pressed='true'] { background: var(--mag-vermilion); color: var(--mag-white); }
-.fl-world { position: relative; margin-top: 14px; border: 2px solid var(--mag-ink); background: var(--mag-ink); color: var(--mag-paper); background-image: var(--mag-grain); overflow: hidden; box-shadow: var(--mag-shadow); }
-.fl-world > .mag-torn { display: flex; block-size: 10px; }
-.fl-world-in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 36%); gap: 6px; align-items: end; padding: 14px 14px 0; }
-.fl-world-kicker { margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--mag-salmon); }
-.fl-world-title { margin: 6px 0 0; font-family: var(--mag-condensed); font-weight: 700; font-size: clamp(25px, 6.6vw, 40px); line-height: .98; text-transform: uppercase; color: var(--mag-paper); text-wrap: balance; }
-.fl-world-sub { margin: 8px 0 0; font-size: 14px; line-height: 1.35; color: var(--mag-paper); opacity: .85; max-inline-size: 46ch; }
-.fl-world-cta { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
 .fl-world-go { min-height: 48px; padding-inline: 18px; border: 2px solid var(--mag-paper); background: var(--mag-vermilion); color: var(--mag-white); font-family: var(--mag-condensed); font-weight: 700; font-size: 18px; letter-spacing: .5px; text-transform: uppercase; cursor: pointer; box-shadow: 3px 3px 0 var(--mag-paper); transition: transform .12s ease; }
 .fl-world-go:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--mag-paper); }
 .fl-world-go:disabled { opacity: .6; }
-.fl-world-alt { min-height: 48px; padding-inline: 14px; border: 2px solid rgb(239 230 212 / .55); background: transparent; color: var(--mag-paper); font-family: var(--mag-body); font-weight: 700; font-size: 14px; cursor: pointer; }
-.fl-world-art { position: relative; align-self: end; min-block-size: 150px; }
-.fl-world-a { position: absolute; inset-inline-end: 0; inset-block-end: 0; inline-size: 78%; block-size: auto; transform: rotate(4deg); }
-.fl-world-b { position: absolute; inset-inline-start: -6%; inset-block-end: 0; inline-size: 66%; block-size: auto; transform: rotate(-5deg); }
-@media (max-width: 420px) { .fl-world-in { grid-template-columns: minmax(0, 1fr); } .fl-world-art { display: none; } }
-@media (min-width: 900px) { .fl-world-in { padding: 22px 26px 0; grid-template-columns: minmax(0, 1fr) 320px; } }
+.fl-world-link { display: block; inline-size: 100%; margin-top: 8px; padding: 0 12px; border: 2px dashed var(--mag-ink); background: transparent; color: var(--mag-ink); font-family: var(--mag-body); font-weight: 800; font-size: 14px; text-align: start; cursor: pointer; }
 .fl-world-chip { display: inline-block; padding: 2px 8px; background: var(--mag-navy); color: var(--mag-white); font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
 .fl-thumb-world { position: relative; display: grid; place-items: center; aspect-ratio: 1 / 1; inline-size: 100%; background: var(--mag-card); color: var(--mag-ink); }
 .fl-thumb-world svg { position: absolute; inset: 8%; inline-size: 84%; block-size: 84%; }

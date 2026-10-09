@@ -15,6 +15,12 @@ export function GoogleAccount() {
   const [who, setWho] = useState<Account | null>(null)
   const [state, setState] = useState<'loading' | 'out' | 'syncing' | 'synced' | 'failed'>('loading')
 
+  async function sync() {
+    setState('syncing')
+    const r = await syncProfile()
+    setState(r.state === 'synced' ? 'synced' : 'failed')
+  }
+
   useEffect(() => {
     if (!portalConfigured()) return
     let live = true
@@ -42,6 +48,7 @@ export function GoogleAccount() {
       ) : (
         <>
           <p className="mag-fine" role="status">{state === 'syncing' ? fl('account.syncing') : state === 'failed' ? fl('account.failed') : fl('account.signedIn')}</p>
+          {state === 'failed' ? <button type="button" className="mag-card-cta min-h-tap" onClick={() => void sync()}>{fl('account.retry')}</button> : null}
           <button type="button" className="mag-card-cta min-h-tap" onClick={() => void signOut().then(() => { setWho(null); setState('out') })}>{fl('account.signOut')}</button>
         </>
       )}

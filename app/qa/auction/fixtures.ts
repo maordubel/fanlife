@@ -407,7 +407,7 @@ export function fixtureApi(view: QaView): Partial<AuctionApi> {
     closetMine: () =>
       later({
         ok: true as const,
-        profile: { handle: 1842, showNickname: true, visibility: 'public' as const, shareToken: 'qa' },
+        profile: { handle: 1842, identityMode: 'number' as const, nickname: null, showNickname: true, visibility: 'public' as const, shareToken: 'qa' },
         label: label(1842),
         items: [OWNER],
         wants: [],
