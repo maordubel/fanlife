@@ -2967,3 +2967,8 @@ Owner (8.10.2026): every club page is "a world of its own", with its own bottom 
 3. **A club without a world file gets `worldFor()`'s neutral fallback** — its name and place, nothing invented. Five clubs are researched today (Hapoel Tel Aviv, Hapoel Petah Tikva, Zrinjski Mostar, Olympiacos, Panathinaikos).
 4. **Club-voice strings come only from `world.json`**; UI words stay in `messages/clubs/*.json` (en/he key parity).
 5. **Per-club PWA:** `manifest.webmanifest` and `icon` routes under the club, colours from the club's own livery; the hub shows a "Back to <last club>" chip.
+
+## 101 · A club page is personal by rule, not by hand (8.10.2026)
+
+Maor: each club entrance is a full The Worker experience for that club, with its own loved gate emphasised. The rules are `docs/fanlife/42-club-personalisation-rules.md`; the code is `lib/clubs/beloved.ts` (terrace gate number read from the sourced `world.json`, the shirt game behind it), `lib/clubs/today.ts` (the club's own dated moment, real date, never invented), `components/clubs/ClubGateWall.tsx`, `ClubEntrance.tsx`, `ClubToday.tsx`, `SupporterCard.tsx`. A new club is not done until the setup checklist in that doc is true. Terrace gate numbers are never typed in code.
+
