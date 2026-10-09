@@ -138,6 +138,13 @@ PATCHES = [
           else failed.add(intent.slug)
         }
         clearIntents(waiting.map((intent) => intent.slug).filter((slug) => !failed.has(slug)))"""),
+    # the conversation and the deal panels under it are one deal: each tells the other when it has fresh news
+    ('components/fanlife/screens/ThreadScreen.tsx',
+     "      quiet.current = settled(out.connection.status)\n      setLoad({ state: 'ready', thread: out })\n      return",
+     "      quiet.current = settled(out.connection.status)\n      setLoad({ state: 'ready', thread: out })\n      window.dispatchEvent(new Event('fanlife:thread-fresh'))\n      return"),
+    ('components/fanlife/screens/ThreadScreen.tsx',
+     "    if (!document.hidden) start()\n    document.addEventListener('visibilitychange', onVisibility)\n    return () => {\n      live.current = false",
+     "    if (!document.hidden) start()\n    document.addEventListener('visibilitychange', onVisibility)\n    const onDealAct = () => void refresh()\n    window.addEventListener('fanlife:deal-act', onDealAct)\n    return () => {\n      window.removeEventListener('fanlife:deal-act', onDealAct)\n      live.current = false"),
     # a club without archive photographs: the drawn kit, as everywhere else in FAN LIFE
     ('components/fanlife/market/ShirtBits.tsx',
      "export function ArchivePhoto({ shirt, className = '', eager = false }: { shirt: CollectorShirt; className?: string; eager?: boolean }) {\n  return (",

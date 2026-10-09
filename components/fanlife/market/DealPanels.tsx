@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 import { Num } from '@/components/ui/Num'
 import { type CollectorShirt, type Currency, type Result } from '@/lib/collector/types'
+import { refreshAlerts } from '@/lib/fanlife/alerts'
 import { errorLabel } from '@/lib/fanlife/collector/labels'
 import { currencySymbol, shirtName } from '@/lib/fanlife/collector/market'
 import { bundleOffer, dealExtras, feedbackGive, handoverSent, handoverSet } from '@/lib/fanlife/hub/api'
@@ -30,8 +31,14 @@ export function DealPanels({ id, shirts }: { id: string; shirts: Record<string, 
   }, [id])
   useEffect(() => {
     void load()
-    const t = window.setInterval(() => void load(), 15000)
-    return () => window.clearInterval(t)
+    // the thread above reads the same deal: when it has fresh news so do we, and while the tab is hidden nobody polls
+    const onFresh = () => void load()
+    const t = window.setInterval(() => document.visibilityState === 'visible' && void load(), 15000)
+    window.addEventListener('fanlife:thread-fresh', onFresh)
+    return () => {
+      window.clearInterval(t)
+      window.removeEventListener('fanlife:thread-fresh', onFresh)
+    }
   }, [load])
 
   const run = async (fn: () => Promise<Result<unknown>>, ok?: string) => {
@@ -40,6 +47,8 @@ export function DealPanels({ id, shirts }: { id: string; shirts: Record<string, 
     if (!out.ok) setErr(h('hub.deal.error', { why: errorLabel(out.error) }))
     else if (ok) setNote(ok)
     await load()
+    window.dispatchEvent(new Event('fanlife:deal-act'))
+    refreshAlerts()
   }
 
   if (!x) return null
