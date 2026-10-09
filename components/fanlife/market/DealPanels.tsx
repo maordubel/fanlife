@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import { Num } from '@/components/ui/Num'
-import { CURRENCIES, type CollectorShirt, type Currency, type Result } from '@/lib/collector/types'
+import { type CollectorShirt, type Currency, type Result } from '@/lib/collector/types'
 import { errorLabel } from '@/lib/fanlife/collector/labels'
 import { currencySymbol, shirtName } from '@/lib/fanlife/collector/market'
 import { bundleOffer, dealExtras, feedbackGive, handoverSent, handoverSet } from '@/lib/fanlife/hub/api'
@@ -69,7 +69,7 @@ export function DealPanels({ id, shirts }: { id: string; shirts: Record<string, 
 function Bundle({ x, shirts, onSend }: { x: DealExtras; shirts: Record<string, CollectorShirt>; onSend: (amount: number, cur: Currency, items: string[]) => void }) {
   const [picked, setPicked] = useState<string[]>([])
   const [price, setPrice] = useState('')
-  const [cur, setCur] = useState<Currency>(x.bundleItems[0]?.currency ?? 'EUR')
+  const [cur, setCur] = useState<Currency>('EUR')
   const amount = Number(price.replace(',', '.'))
   const ready = picked.length >= 1 && Number.isFinite(amount) && amount > 0
   return (
@@ -104,7 +104,7 @@ function Bundle({ x, shirts, onSend }: { x: DealExtras; shirts: Record<string, C
               <input inputMode="decimal" value={price} onChange={(e) => setPrice(e.target.value)} className="mt-1 block min-h-tap w-32 border-rule border-ink bg-paper px-3 font-body text-[14px] text-ink" />
             </label>
             <select aria-label="Currency" value={cur} onChange={(e) => setCur(e.target.value as Currency)} className="min-h-tap border-rule border-ink bg-paper px-2 font-body text-[13px] text-ink">
-              {CURRENCIES.map((c) => <option key={c} value={c}>{c}</option>)}
+              <option value="EUR">EUR</option>
             </select>
             <button type="button" disabled={!ready} onClick={() => onSend(amount, cur, picked)} className={`${buttonPrimary} min-h-tap`}>
               {h('hub.deal.bundleSend')}

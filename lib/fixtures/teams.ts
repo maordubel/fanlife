@@ -7,7 +7,7 @@ import type {FixtureTeam} from './types'
  * normalisation) AND its country matches: "Olympiacos" the Greek club, not a namesake.
  */
 export const FIXTURE_TEAMS: readonly FixtureTeam[] = [
-  {clubId: 'hapoel-tel-aviv', search: 'Hapoel Tel Aviv', names: ['hapoel tel aviv', 'hapoel tel aviv fc'], countries: ['israel']},
+  {clubId: 'hapoel-tel-aviv', search: 'Hapoel Tel Aviv', searchAlso: ['Hapoel Tel Aviv FC', 'Hapoel Tel-Aviv', 'Hapoel Tel-Aviv FC', 'Hapoel Tel Aviv Football'], names: ['hapoel tel aviv', 'hapoel tel aviv fc'], countries: ['israel']},
   {clubId: 'hapoel-petah-tikva', search: 'Hapoel Petah Tikva', names: ['hapoel petah tikva', 'hapoel petach tikva', 'hapoel petah tikvah'], countries: ['israel']},
   {clubId: 'olympiacos', search: 'Olympiacos', names: ['olympiacos', 'olympiacos fc', 'olympiakos', 'olympiakos piraeus', 'olympiacos piraeus'], countries: ['greece']},
   // 7.10.2026 — every club in the portal (owner: "all our clubs must appear"); exact names + country still decide

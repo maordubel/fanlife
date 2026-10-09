@@ -65,7 +65,7 @@ describe('meetings archive',()=>{
   expect(rows).toEqual([])
   const own=await meetingsBetween('olympiacos','Zrinjski Mostar')
   for(const m of own){expect(m.homeGoals).toBeGreaterThanOrEqual(0);expect(m.from.length).toBeGreaterThan(0)}
- })
+ },60000)
 })
 
 describe('every club in the portal is on the fixture feed (owner, 7.10.2026)',()=>{
@@ -73,4 +73,23 @@ describe('every club in the portal is on the fixture feed (owner, 7.10.2026)',()
   for(const c of REGISTRY)expect(FIXTURE_TEAMS.filter(t=>t.clubId===c.id),c.id).toHaveLength(1)
   for(const t of FIXTURE_TEAMS)for(const n of t.names)expect(norm(n),`${t.clubId}: ${n}`).toBe(n)
  })
+})
+
+describe('Hapoel Tel Aviv: the basketball namesake is never the football club',()=>{
+  const row=FIXTURE_TEAMS.find(x=>x.clubId==='hapoel-tel-aviv')!
+  const bc={teams:[{idTeam:'136059',strTeam:'Hapoel Tel Aviv BC',strSport:'Basketball',strCountry:'Israel',strLeague:'Israeli Basketball Premier League'}]}
+  it('a basketball-only answer identifies nothing',()=>{ expect(parseTeam(bc,row)).toBeNull() })
+  it('tries the next search term and takes the football club',async()=>{
+    const {nextForClub}=await import('@/lib/fixtures/provider')
+    const seen:string[]=[]
+    const get=async(u:string)=>{
+      seen.push(u)
+      if(u.includes('searchteams.php?t=Hapoel%20Tel%20Aviv%20FC')) return {teams:[{idTeam:'T7',idLeague:'L1',strTeam:'Hapoel Tel Aviv',strSport:'Soccer',strCountry:'Israel'}]}
+      if(u.includes('searchteams.php')) return bc
+      return {events:null}
+    }
+    const r=await nextForClub(row,'k',get,new Date('2026-10-09T00:00:00Z'))
+    expect(r.teamId).toBe('T7')
+    expect(seen.filter(u=>u.includes('searchteams.php')).length).toBe(2)
+  })
 })

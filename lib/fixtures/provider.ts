@@ -82,7 +82,12 @@ export function chooseNext(clubId: string, teamId: string, events: readonly Prov
 export type Fetcher = (url: string) => Promise<unknown>
 /** The provider calls for one club. Throws on a network/HTTP failure so the caller can say "unavailable". */
 export async function nextForClub(team: FixtureTeam, key: string, get: Fetcher, now: Date) {
-  const found = parseTeam(await get(providerUrl(key, `searchteams.php?t=${encodeURIComponent(team.search)}`)), team)
+  // The first search term that identifies exactly one right football club wins; a namesake in another sport never does.
+  let found: ReturnType<typeof parseTeam> = null
+  for (const term of [team.search, ...(team.searchAlso ?? [])]) {
+    found = parseTeam(await get(providerUrl(key, `searchteams.php?t=${encodeURIComponent(term)}`)), team)
+    if (found) break
+  }
   if (!found) return {fixture: null, teamId: null, eventsNext: 0, leagueNext: 0, note: 'provider team not identified exactly'}
   const own = parseEvents(await get(providerUrl(key, `eventsnext.php?id=${found.teamId}`)))
   const league = found.leagueId ? parseEvents(await get(providerUrl(key, `eventsnextleague.php?id=${found.leagueId}`))) : []
