@@ -23,7 +23,7 @@ export function HubDock({clubs,openIds,locale,copy}:{clubs:{id:string;name:strin
   <Link className="mag-dock-link min-h-tap" href="/me/file">{copy.file}{s.rounds>0&&<small className="tabular-nums">{copy.rounds.replace('{n}',String(s.rounds))}</small>}</Link>
   <Link className="mag-dock-link min-h-tap" href="/stand">{copy.stand}</Link>
   <Link className="mag-dock-link min-h-tap" href="/market">{copy.market}</Link>
-  <a className="mag-dock-link min-h-tap" href="#vote">{s.voted?copy.voted:copy.vote}</a>
+  <a className="mag-dock-link min-h-tap" href="#clubs">{s.voted?copy.voted:copy.vote}</a>
   <Link className="mag-dock-link min-h-tap" href="/sources">{copy.sources}</Link>
  </nav>
 }

@@ -1288,39 +1288,7 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .mag-tile.is-open { box-shadow: var(--mag-shadow), 0 0 0 0 transparent, 0 0 34px -4px color-mix(in srgb, var(--club-primary, var(--mag-vermilion)) 55%, transparent); }
 .mag-tile.is-open:hover { box-shadow: 6px 6px 0 var(--club-primary, var(--mag-ink)), 6px 6px 0 3px var(--mag-ink), 0 0 44px 0 color-mix(in srgb, var(--club-primary, var(--mag-vermilion)) 60%, transparent); }
 .mag-tile-state { position: absolute; inset-block-start: -11px; inset-inline-start: 12px; z-index: 1; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 6px; background: var(--mag-ink); color: var(--mag-paper); }
-.mag-tile.is-shop { box-shadow: none; border-style: dashed; background-color: var(--mag-paper); color: var(--mag-muted); min-height: 96px; transform: none; }
-.mag-tile.is-shop::before, .mag-tile.is-shop::after { display: none; }
-.mag-tile.is-shop .mag-tile-body { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; filter: grayscale(1) contrast(.85); opacity: .72; }
-.mag-tile.is-shop b { border-top-color: var(--mag-muted); color: var(--mag-muted); font-size: 18px; }
-.mag-tile.is-shop .mag-tile-state { background: var(--mag-paper); color: var(--mag-muted); border: 1px solid var(--mag-muted); }
-a.mag-tile.is-shop:hover { transform: none; box-shadow: none; border-style: solid; }
-.mag-tiles-shop { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
-.mag-shop { display: grid; gap: 6px; }
-.mag-shop-vote { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 12px; border: 3px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
-.mag-shop-vote small { font-size: 10px; letter-spacing: .5px; color: var(--mag-muted); }
-.mag-shop-vote:hover { background: var(--mag-ink); color: var(--mag-paper); }
-.mag-shop-vote:hover small { color: var(--mag-paper); }
 /* the ballot */
-.mag-vote-band { position: relative; }
-.mag-vote { display: grid; gap: 20px; border: 4px solid var(--mag-ink); background: var(--mag-card); box-shadow: 8px 8px 0 var(--mag-ink); padding: 18px 16px; }
-.mag-vote-head > p { max-width: 56ch; }
-.mag-vote-count { font-family: var(--mag-mono); font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
-.mag-vote-count b { font-family: var(--mag-display); font-size: 34px; letter-spacing: 0; margin-inline-end: 4px; }
-.mag-vote-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-height: 520px; overflow-y: auto; }
-.mag-vote-row { display: grid; grid-template-columns: 30px minmax(0, 1fr) 34px auto; align-items: center; gap: 10px; padding: 6px 8px; border: 2px solid var(--mag-ink); background: var(--mag-paper); }
-.mag-vote-row.is-lead { border-width: 3px; background: color-mix(in srgb, var(--mag-salmon) 38%, var(--mag-paper)); }
-.mag-vote-row.is-mine { outline: 3px solid var(--mag-ink); outline-offset: 2px; }
-.mag-vote-rank { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; color: var(--mag-muted); }
-.mag-vote-name { display: grid; gap: 2px; min-inline-size: 0; }
-.mag-vote-name b { font-family: var(--mag-display); font-weight: 400; font-size: 15px; text-transform: uppercase; line-height: 1.05; }
-.mag-vote-name small { font-family: var(--mag-mono); font-size: 10px; letter-spacing: 1px; color: var(--mag-muted); text-transform: uppercase; }
-.mag-vote-bar { display: block; block-size: 8px; background: color-mix(in srgb, var(--mag-ink) 14%, transparent); }
-.mag-vote-bar i { display: block; block-size: 100%; background: var(--mag-ink); }
-.mag-vote-row.is-lead .mag-vote-bar i { background: var(--mag-vermilion); }
-.mag-vote-n { font-family: var(--mag-display); font-size: 20px; text-align: end; }
-.mag-vote-btn { min-inline-size: 76px; justify-content: center; }
-.mag-vote-btn[aria-pressed='true'] { background: var(--mag-ink); color: var(--mag-paper); }
-@media (min-width: 900px) { .mag-vote { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); padding: 26px; gap: 32px; } .mag-vote-list { max-height: 460px; } }
 /* the dock: the hub's way into the rest of the app */
 .mag-dock { display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px; scrollbar-width: none; border-block: 3px solid var(--mag-ink); background: var(--mag-paper); }
 .mag-dock::-webkit-scrollbar { display: none; }
@@ -1334,10 +1302,46 @@ a.mag-tile.is-shop:hover { transform: none; box-shadow: none; border-style: soli
 .mag-clubsrow::before { content: ''; position: absolute; inset: -40px -10% auto; block-size: 420px; z-index: -1; pointer-events: none; background: radial-gradient(40% 60% at 20% 30%, color-mix(in srgb, var(--mag-vermilion) 20%, transparent), transparent 70%), radial-gradient(34% 50% at 70% 20%, color-mix(in srgb, var(--mag-green) 18%, transparent), transparent 70%), radial-gradient(30% 50% at 90% 60%, color-mix(in srgb, var(--mag-navy) 16%, transparent), transparent 70%); animation: mag-aura 14s ease-in-out infinite alternate; }
 @keyframes mag-aura { from { transform: translateY(0) scale(1); opacity: .85; } to { transform: translateY(16px) scale(1.06); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .mag-clubsrow::before { animation: none; } }
-@media (max-width: 599px) { .mag-vote-row { grid-template-columns: 22px minmax(0, 1fr) 26px auto; gap: 8px; } .mag-vote-btn { min-inline-size: 62px; padding-inline: 8px; } .mag-tiles-shop { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .mag-hubnav a { font-size: 10px; letter-spacing: 1px; padding-inline: 2px; text-align: center; line-height: 1.1; } }
-.mag-tiles-open { grid-template-columns: repeat(auto-fill, minmax(240px, 340px)); }
-.mag-vote-lead { display: flex; align-items: center; gap: 14px; padding: 12px; border: 3px solid var(--mag-ink); background: color-mix(in srgb, var(--mag-salmon) 38%, var(--mag-paper)); }
-.mag-vote-lead .mag-badge { flex: none; }
-.mag-vote-lead small { display: block; font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--mag-vermilion); }
-.mag-vote-lead b { font-family: var(--mag-condensed); font-size: 26px; text-transform: uppercase; line-height: 1; }
+
+/* ───────── HUB, COMPACT (8.10.2026) — one grid, two squares to a row on a phone; the vote lives inside each workshop tile ───────── */
+.mag-tiles-hub { align-items: stretch; }
+.mag-shop-label { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; margin-block-start: 10px; padding-block-start: 10px; border-block-start: 3px double var(--mag-ink); }
+.mag-shop-label p { margin: 0; }
+.mag-shop-count { font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+.mag-shop-count b { font-family: var(--mag-display); font-size: 22px; letter-spacing: 0; margin-inline-end: 4px; }
+.mag-shop-label .mag-fine { flex-basis: 100%; font-size: 11px; }
+.mag-shop { position: relative; display: grid; grid-template-rows: 1fr auto; border: 3px dashed var(--mag-muted); background: var(--mag-paper); min-inline-size: 0; }
+.mag-shop .mag-tile.is-shop { transform: none; border: 0; box-shadow: none; background-color: transparent; min-height: 0; padding: 12px 10px 10px; flex-direction: row; justify-content: flex-start; align-items: center; gap: 10px; color: var(--mag-muted); filter: grayscale(1) contrast(.85); opacity: .78; }
+.mag-shop .mag-tile.is-shop::before, .mag-shop .mag-tile.is-shop::after { display: none; }
+.mag-shop .mag-tile.is-shop b { border: 0; padding: 0; font-size: 15px; line-height: 1.05; color: var(--mag-ink); overflow-wrap: anywhere; }
+.mag-shop .mag-tile.is-shop small { display: block; margin-block-start: 3px; font-size: 9px; letter-spacing: .5px; }
+.mag-shop .mag-badge { flex: none; }
+.mag-shop-name { min-inline-size: 0; }
+a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
+.mag-shop-vote { display: flex; align-items: center; justify-content: space-between; gap: 8px; inline-size: 100%; padding: 0 10px; border: 0; border-block-start: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+.mag-shop-vote b { font-family: var(--mag-display); font-weight: 400; font-size: 18px; letter-spacing: 0; }
+.mag-shop-vote:hover, .mag-shop.is-mine .mag-shop-vote { background: var(--mag-ink); color: var(--mag-paper); }
+.mag-shop.is-mine { border-style: solid; border-color: var(--mag-ink); }
+.mag-shop.is-lead { border-style: solid; border-color: var(--mag-vermilion); box-shadow: 4px 4px 0 var(--mag-vermilion); }
+.mag-shop.is-lead .mag-shop-vote b { color: var(--mag-vermilion); }
+.mag-shop.is-lead.is-mine .mag-shop-vote b, .mag-shop-vote:hover b { color: var(--mag-paper); }
+.mag-lead-flag { background: var(--mag-vermilion); }
+.mag-more { display: none; grid-column: 1 / -1; align-items: center; justify-content: center; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
+@media (max-width: 599px) {
+  .mag-tiles-hub { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .mag-tiles-hub .mag-tile.is-open { min-height: 104px; padding: 10px; }
+  .mag-tiles-hub .mag-tile.is-open b { font-size: 18px; }
+  .mag-tiles-hub .mag-tile-shirt { display: none; }
+  .mag-shop.is-more { display: none; }
+  .mag-more { display: flex; }
+}
+@media (max-width: 899px) {
+  .mag-clubsrow .mag-editor { display: none; }
+  .mag-feature-been .mag-feature-art { display: none; }
+}
+@media (max-width: 599px) {
+  .mag-tiles-hub .mag-tile.is-open.is-wide { grid-column: 1 / -1; min-height: 92px; flex-direction: row; align-items: center; justify-content: flex-start; gap: 14px; padding-inline-end: 56px; }
+  .mag-tiles-hub .mag-tile.is-open.is-wide .mag-tile-shirt { display: block; inset-block-start: 14px; inset-inline-end: 14px; inline-size: 40px; width: 40px; }
+  .mag-game-art { block-size: 170px; }
+}

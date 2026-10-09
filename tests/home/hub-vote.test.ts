@@ -1,3 +1,4 @@
+import {readFileSync} from 'node:fs'
 import {describe,expect,it} from 'vitest'
 import {REGISTRY} from '@/lib/master/registry'
 import {DEMO_VOTES,SEED_TOTAL,rank,seedVotes} from '@/lib/home/vote'
@@ -20,5 +21,18 @@ describe('hub ballot seed',()=>{
   expect(isOpenClub(undefined)).toBe(false)
   expect(isOpenClub({id:'x',name:'x',city:'x',gates:{xi:{key:'xi',href:null,state:'LOCKED'}}})).toBe(false)
   expect(isOpenClub({id:'x',name:'x',city:'x',gates:{xi:{key:'xi',href:'/clubs/x/xi',state:'OPEN'}}})).toBe(true)
+ })
+})
+
+describe('the vote lives inside the workshop tiles (owner, 8.10.2026)',()=>{
+ const page=readFileSync('app/page.tsx','utf8'),grid=readFileSync('components/home/WorkshopGrid.tsx','utf8')
+ it('has no separate ballot section and no vote nav link',()=>{
+  expect(page).not.toMatch(/id="vote"/)
+  expect(page).not.toMatch(/href="#vote"/)
+  expect(page).toContain('<WorkshopGrid')
+ })
+ it('every workshop tile carries its own vote button of tap size',()=>{
+  expect(grid).toMatch(/className="mag-shop-vote min-h-tap"/)
+  expect(grid).toContain('VOTE_KEY')
  })
 })
