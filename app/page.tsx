@@ -69,7 +69,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <p className="mag-cover-bottom">{copy.coverBottom}</p>
    <p className="mag-plus"><b>{copy.plusK}</b><span>{copy.plus1}<br/>{copy.plus2}</span></p>
   </div></section>
-  <nav className="mag-hubnav" aria-label={copy.primaryNav}><a href="#life">{copy.navLife}</a><a href="#next">{copy.navNext}</a><a href="#clubs">{copy.navClubs}</a><a href="#been">{copy.navBeen}</a></nav>
+  <nav className="mag-hubnav" aria-label={copy.primaryNav}><a href="#life">{copy.navLife}</a><a href="#next">{copy.navNext}</a><a href="#clubs">{copy.navClubs}</a><a href="#market">{copy.navMarket}</a></nav>
   <HubDock clubs={open.map(c=>({id:c.id,name:c.name}))} openIds={live.map(c=>c.id)} locale={locale} copy={{title:copy.dockTitle,cont:copy.dockContinue,rounds:copy.dockRounds,file:copy.dockFile,stand:copy.dockStand,market:copy.dockMarket,sources:copy.dockSources,voted:copy.dockVoted,vote:copy.dockVote}}/>
 
   {/* THE GAME: the app's central feature, right under the cover (owner, 7.10.2026 — "the hub first, but this is the heart"). */}
@@ -77,7 +77,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <div className="mag-game-art" aria-hidden="true"><TornBlocks seed="life" inks={['var(--mag-green)','var(--mag-navy)','var(--mag-vermilion)']}/><PressPhoto art="father-son" className="mag-game-photo"/></div>
    <div className="mag-game-text">
     <p className="mag-kicker">{copy.lifeEntryTitle}</p>
-    <h2 className="mag-game-title" id="life-h"><span className="mag-game-stamp">{copy.lifeGame}</span><span dir="ltr">LIFE</span></h2>
+    <h2 className="mag-game-title" id="life-h"><span dir="ltr">LIFE</span><span className="mag-game-stamp">{copy.lifeGameSub}</span></h2>
     <p>{copy.lifeEntryNote}</p>
     <GateChooser gate="life" clubs={model} life={Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))} copy={chooser} className="mag-cta red">{copy.lifeEntryCta} →</GateChooser>
    </div>
@@ -117,16 +117,15 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    </aside>
   </section>
 
-  <section className="mag-section mag-feature mag-feature-been" id="been" aria-labelledby="been-h">
-   <div className="mag-feature-art" aria-hidden="true"><TornBlocks seed="been" inks={['var(--mag-navy)','var(--mag-salmon)']}/><PressPhoto art="fans-group" className="mag-feature-main"/><PressPhoto art="memorabilia" className="mag-feature-side"/></div>
-   <div className="mag-feature-text"><p className="mag-kicker">{copy.beenKicker}</p><h2 className="mag-h2" id="been-h">{copy.beenTitle}</h2><p>{copy.beenBody}</p>
-    <div className="mag-feature-ctas"><Link className="mag-cta red" href="/me/file#been">{copy.beenCta} →</Link><GateChooser gate="archive" clubs={model} copy={chooser} className="mag-cta ghost">{copy.beenPick}</GateChooser></div></div>
-  </section>
-
-  {/* A poster band after Maor's matchday posters: two players swap shirts on torn blocks of colour. Desktop only —
-      on a phone it was one more long screen with nothing new to do. */}
-  <section className="mag-section mag-posterband mag-desk-only" aria-labelledby="swap-h">
-   <div className="mag-posterband-in"><p className="mag-kicker">{copy.swapKicker}</p><h2 className="mag-h2" id="swap-h">{copy.swapTitle}</h2><p>{copy.swapBody}</p><a className="mag-cta red" href="#clubs">{copy.chooseClub} →</a></div>
-   <div className="mag-homestage mag-swapstage" aria-hidden="true"><TornBlocks seed="swap" inks={['var(--mag-green)','var(--mag-vermilion)','var(--mag-navy)']}/><PressPhoto art="shirt-swap" className="mag-swap"/></div>
+  {/* THE MARKET: the shirt swap is the market's mark, repeated here, on the market page and at its door (owner, 9.10.2026). */}
+  <section className="mag-section mag-market-band" id="market" aria-labelledby="market-h">
+   <div className="mag-market-text">
+    <p className="mag-kicker">{copy.marketKicker}</p>
+    <h2 className="mag-market-title" id="market-h">{copy.marketTitle}</h2>
+    <p>{copy.marketBody}</p>
+    <ul className="mag-market-points"><li>{copy.marketPoint1}</li><li>{copy.marketPoint2}</li><li>{copy.marketPoint3}</li></ul>
+    <div className="mag-feature-ctas"><Link className="mag-cta red" href="/market">{copy.marketCta} →</Link><Link className="mag-cta ghost" href="/market?view=wanted">{copy.marketWanted}</Link></div>
+   </div>
+   <div className="mag-market-art" aria-hidden="true"><TornBlocks seed="market" inks={['var(--mag-vermilion)','var(--mag-navy)','var(--mag-green)']}/><PressPhoto art="shirt-swap" className="mag-swap"/></div>
   </section>
  </main></Shell>}

@@ -8,6 +8,8 @@ import { HubFilters } from '@/components/fanlife/market/HubFilters'
 import { CirclesPanel } from '@/components/fanlife/market/CirclesPanel'
 import { PipePanel } from '@/components/fanlife/market/PipePanel'
 import { ForYouPanel } from '@/components/fanlife/market/ForYouPanel'
+import { PressPhoto } from '@/components/master/Poster'
+import { MarketCurtain } from './MarketCurtain'
 import { MarketSignIn } from '@/components/fanlife/market/MarketSignIn'
 import type { MatchesState } from '@/components/fanlife/market/MatchesPanel'
 import { RequestSheet } from '@/components/fanlife/market/RequestSheet'
@@ -178,10 +180,14 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
 
   return (
     <div className="mt-stack" data-hub="root">
+      <MarketCurtain label={h('hub.hero.kicker')} />
       <header className="fl-mk-hero">
-        <p className="fl-mk-kicker"><span>{h('hub.hero.kicker')}</span></p>
-        <h1 className="fl-mk-title">{h('hub.hero.title')}</h1>
-        <p className="fl-mk-sub">{h('hub.hero.sub')}</p>
+        <div className="fl-mk-hero-text">
+          <p className="fl-mk-kicker"><span>{h('hub.hero.kicker')}</span></p>
+          <h1 className="fl-mk-title">{h('hub.hero.title')}</h1>
+          <p className="fl-mk-sub">{h('hub.hero.sub')}</p>
+        </div>
+        <PressPhoto art="shirt-swap" className="fl-mk-hero-art" />
       </header>
 
       <div className="fl-mk-searchrow" role="search">
