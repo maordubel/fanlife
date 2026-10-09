@@ -29,6 +29,10 @@ ab=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/50-away-been.sql 2>&1) |
 echo "$ab" | grep -c PASS | xargs -I{} echo "db verify: {} away-days \"הייתי שם\" (worker_away_been) assertions — clean"
 tx=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/41-events-taxonomy.sql 2>&1) || { echo "$tx" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$tx" | grep -c PASS | xargs -I{} echo "db verify: {} event taxonomy (ONE RED WORLD §37) assertions — clean"
+sx=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/70-market-search.sql 2>&1) || { echo "$sx" | grep -E "FAIL|ERROR"; exit 1; }
+echo "$sx" | grep -c PASS | xargs -I{} echo "db verify: {} shirt hub (search, saved searches, wanted board) assertions — clean"
+dx=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/71-deal-wave2.sql 2>&1) || { echo "$dx" | grep -E "FAIL|ERROR"; exit 1; }
+echo "$dx" | grep -c PASS | xargs -I{} echo "db verify: {} shirt hub wave 2 (bundle, handover, feedback) assertions — clean"
 st=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/60-stand.sql 2>&1) || { echo "$st" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$st" | grep -c PASS | xargs -I{} echo "db verify: {} \"היציע שלי\" (worker_stand_*) attack and flow assertions — clean"
 pi=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/60-public-identity.sql 2>&1) || { echo "$pi" | grep -E "FAIL|ERROR"; exit 1; }

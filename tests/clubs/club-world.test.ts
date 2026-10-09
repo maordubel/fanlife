@@ -11,7 +11,7 @@ describe('club world data',()=>{
    expect(validateWorld(clubWorld(c.id)??{},c.id),c.id).toEqual([])
    expect(clubWorld(c.id),c.id).not.toBeNull()
   }
-  expect(WORLD_IDS.length).toBe(5)
+  expect(WORLD_IDS.length).toBe(8)
  })
  it('rejects a line with one publisher, a low confidence, http, a long tab and a forbidden word',()=>{
   const base=clubWorld('olympiacos')!
@@ -34,7 +34,7 @@ describe('club world data',()=>{
   expect(clubWorld('hapoel-tel-aviv')!.founded!.line).not.toMatch(/\b19\d\d\b/)
  })
  it('terrace tabs fit a tab bar',()=>{
-  for(const id of WORLD_IDS)expect(clubWorld(id)!.terrace!.tab.length).toBeLessThanOrEqual(TAB_MAX)
+  for(const id of WORLD_IDS){const t=clubWorld(id)!.terrace;if(t)expect(t.tab.length).toBeLessThanOrEqual(TAB_MAX)}
  })
  it('a club without a world gets its name and place, nothing invented',()=>{
   const club=REGISTRY.find(c=>c.id==='maccabi-haifa')!

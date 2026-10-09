@@ -61,7 +61,11 @@ async function call<T>(fn: string, args?: Record<string, unknown>): Promise<Resu
     const { data, error } = await client().rpc(fn, args)
     if (error) {
       // "permission denied for function" is what a guest gets from a member-only function
-      return fail(/permission denied/i.test(error.message) ? 'auth_required' : 'network')
+      // keep the real cause visible: a missing function is a deploy problem, not a network one
+      if (typeof console !== 'undefined') console.error('[collector]', fn, error.message)
+      if (/permission denied/i.test(error.message)) return fail('auth_required')
+      if (/could not find the function|schema cache|does not exist|PGRST20\d/i.test(error.message)) return fail('setup')
+      return fail('network')
     }
     if (data && typeof data === 'object' && 'ok' in (data as Record<string, unknown>)) return data as Result<T>
     return fail('network')

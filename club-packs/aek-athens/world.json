@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "clubId": "aek-athens",
+  "review": "cross-source-2026-10-09",
+  "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the colours line (the sources all name the colours with a word the house word list forbids, and the nickname is kept in its Greek form only); the exact founding day (one publisher); any crest history (the 1982 redesign is a single source); the other supporters' groups and anything about them beyond the name of the gate; any motto (none found).",
+  "voice": {
+    "welcome": "Welcome to the Union's house.",
+    "kicker": "Athens · The double-headed eagle"
+  },
+  "nicknames": [
+    {
+      "text": "The Double-Headed Eagle",
+      "local": "Δικέφαλος",
+      "script": "el",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/AEK_Athens_F.C."},
+        {"publisher": "Greek City Times", "url": "https://greekcitytimes.com/2022/09/30/the-byzantine-eagle-has-landed/"}
+      ]
+    },
+    {
+      "text": "The Union",
+      "local": "Ένωση",
+      "script": "el",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/AEK_Athens_F.C."},
+        {"publisher": "Football History", "url": "https://footballhistory.org/club/aek.html"}
+      ]
+    }
+  ],
+  "ground": {
+    "name": "Agia Sophia Stadium",
+    "line": "Opened in September 2022 in Nea Filadelfeia and known to supporters as Hagia Sophia.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/AEK_Athens_F.C."},
+      {"publisher": "Greek City Times", "url": "https://greekcitytimes.com/2022/09/30/the-byzantine-eagle-has-landed/"},
+      {"publisher": "Football History", "url": "https://footballhistory.org/club/aek.html"}
+    ]
+  },
+  "founded": {
+    "line": "Founded in 1924 in Athens by refugees from Constantinople. The name means Athletic Union of Constantinople.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/AEK_Athens_F.C."},
+      {"publisher": "Greek City Times", "url": "https://greekcitytimes.com/2022/09/30/the-byzantine-eagle-has-landed/"},
+      {"publisher": "Brighton & Hove Albion", "url": "https://www.brightonandhovealbion.com/news/3691282/who-are-aek-athens"}
+    ]
+  },
+  "emblem": {
+    "line": "A Byzantine double-headed eagle, chosen to recall the empire whose capital the founders came from.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Greek City Times", "url": "https://greekcitytimes.com/2022/09/30/the-byzantine-eagle-has-landed/"},
+      {"publisher": "Football History", "url": "https://footballhistory.org/club/aek.html"},
+      {"publisher": "Brighton & Hove Albion", "url": "https://www.brightonandhovealbion.com/news/3691282/who-are-aek-athens"}
+    ]
+  },
+  "terrace": {
+    "name": "Gate 21",
+    "local": "Θύρα 21",
+    "script": "el",
+    "tab": "Gate 21",
+    "line": "Gate 21 is the home end of the club's best-known supporters' group, Original 21.",
+    "confidence": 2,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Original_21"},
+      {"publisher": "Greek City Times", "url": "https://greekcitytimes.com/2023/04/27/american-youtuber-aek-atmosphere/amp/?p=248085"},
+      {"publisher": "AS Roma fan site", "url": "https://www.asromaultras.org/presentazioneaek.html"}
+    ]
+  },
+  "facts": [
+    {
+      "id": "goumas",
+      "line": "From 1930 until 2003 the club's long-time home was the Nikos Goumas Stadium in Nea Filadelfeia.",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Nikos_Goumas_Stadium"},
+        {"publisher": "Football History", "url": "https://footballhistory.org/club/aek.html"}
+      ]
+    },
+    {
+      "id": "olympic",
+      "line": "Between 2003 and 2022 the club played at the Athens Olympic Stadium.",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Nikos_Goumas_Stadium"},
+        {"publisher": "Football History", "url": "https://footballhistory.org/club/aek.html"}
+      ]
+    }
+  ]
+}

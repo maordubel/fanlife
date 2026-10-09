@@ -24,6 +24,7 @@ export const CURRENCIES: readonly Currency[] = ['ILS', 'EUR', 'USD']
 export type CollectorError =
   | 'off' // no Supabase keys in this build
   | 'network'
+  | 'setup' // the database answered, but the function is not there (migration not applied / schema cache)
   | 'auth_required'
   | 'forbidden'
   | 'not_found'

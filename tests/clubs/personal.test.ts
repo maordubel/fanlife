@@ -23,3 +23,14 @@ describe('today at the club',()=>{
  it('shows nothing rather than inventing',()=>{expect(momentFor({timeline:[tl('c','1950-03-01')]} as never,now)).toBeNull()})
  it('crosses New Year',()=>{expect(momentFor({timeline:[tl('n','1999-01-02')]} as never,new Date(Date.UTC(2026,11,28)))?.offset).toBe(5)})
 })
+import {wallNumbers} from '@/lib/clubs/beloved'
+describe('wall numbers',()=>{
+ const all=['kit-builder','kits','archive','trivia','polls','timeline'] as never[]
+ it('Hapoel: the shirt collection already is gate 5',()=>{const b=belovedOf({name:'Gate 5'},all);expect(b?.feature).toBe('kits');const n=wallNumbers(b);expect(n.kits).toBe(5);expect(n['kit-builder']).toBe(4)})
+ it('Olympiacos: the shirt designer becomes 7 and the vote takes 4 — no number twice',()=>{
+  const n=wallNumbers(belovedOf({name:'Gate 7'},all));expect(n['kit-builder']).toBe(7);expect(n.polls).toBe(4)
+  expect(new Set(Object.values(n)).size).toBe(13);expect(Math.min(...Object.values(n))).toBe(1);expect(Math.max(...Object.values(n))).toBe(13)
+ })
+ it('Panathinaikos: 13',()=>{const n=wallNumbers(belovedOf({name:'Gate 13'},all));expect(n['kit-builder']).toBe(13);expect(n.timeline).toBe(4)})
+ it('no terrace number: the wall is untouched',()=>{expect(wallNumbers(belovedOf({name:'The Blue'},all))['kit-builder']).toBe(4)})
+})
