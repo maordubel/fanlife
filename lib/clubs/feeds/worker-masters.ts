@@ -9,6 +9,10 @@ import {actorKindOf} from '@/lib/game/replay/actors'
 import type {Entity,Fact,Source} from '../contract'
 
 /**
+ * THE WORKER FEED — the one place FAN LIFE reads The Worker's masters (Match, Line-up, Kit, goal replay).
+ * It returns neutral club facts (data only); nothing here knows how a LIFE, a card or a page looks, and no
+ * presentation module imports a master directly. See docs/fanlife/worker-feed-contract.md.
+ *
  * Hapoel Tel Aviv's wave-C sections (gates 3, 4, 5, 8, 11) read from the SAME masters The Worker plays
  * from — Line-up Master, Kit Master, Match Master, the goal replay archive — so the hub's shared engines
  * open on exactly the material the native gates already use. Nothing here is re-researched or re-approved:

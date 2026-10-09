@@ -45,7 +45,7 @@ type Result = 'good' | 'ok' | 'slip'
 type Transit = 'idle' | 'leaving' | 'entering'
 type Delta = {id: number; text: string; tone: 'up' | 'down'}
 type Overlay = {k: 'card'; card: CardDef} | {k: 'game'; d: Extract<Directive, {d: 'play'}>} | null
-type Props = {pack: LifePack; locale: 'en' | 'he'; copy: Copy; hubHref: string; langHref: {en: string; he: string}; legacyHref: string | null}
+type Props = {pack: LifePack; locale: 'en' | 'he'; copy: Copy; hubHref: string; langHref: {en: string; he: string}}
 
 /* where the room sits on the glass: on a phone it takes the upper part and lifts clear of the page while somebody is speaking */
 const FRAME = {phone: {top: 0.8, bottom: -0.4}, talk: {top: 0.8, bottom: -0.06}, wide: {top: 0.86, bottom: -0.78}}
@@ -85,7 +85,7 @@ function browserStore(): LifeStore {
 
 const pad2 = (n: number) => String(n).padStart(2, '0')
 
-export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Props) {
+export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
   const [state, setState] = useState<LifeState | null>(null)
   const [phase, setPhase] = useState<Phase>('boot')
   const [cardAt, setCardAt] = useState(0)
@@ -866,7 +866,6 @@ export function LifeGame({pack, locale, copy, hubHref, langHref, legacyHref}: Pr
             <nav className={styles.links} aria-label={copy.language}>
               <Link className="min-h-tap" href={hubHref}>{copy.backToClub}</Link>
                             {ENABLED_LOCALES.length>1&&<Link className="min-h-tap" href={langHref.he} hrefLang="he" lang="he">{copy.hebrew}</Link>}
-              {legacyHref && <Link className="min-h-tap" href={legacyHref}>{copy.hubLegacy}</Link>}
             </nav>
             <a className={`${styles.credit} min-h-tap`} href="https://DubelTeam.com" target="_blank" rel="noopener noreferrer" aria-label={copy.creditAria}>{copy.credit}</a>
           </div>

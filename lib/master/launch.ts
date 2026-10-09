@@ -2,6 +2,7 @@ import 'server-only'
 import {SHARED_GATES} from '@/lib/clubs/gates'
 import {GATE_METHOD} from '@/lib/club-research/plan'
 import {loadClub,hasStaticPack} from '@/lib/clubs/resolver'
+import {clubLife} from '@/lib/clubs/life/pack'
 import {readDeskPack,usable} from './deskPack'
 import {isPending} from './researchMerge'
 import type {ClubSummary} from './summary'
@@ -35,7 +36,7 @@ export async function launchView(c:Club,s:ClubSummary):Promise<LaunchView>{
  const pack:LaunchView['pack']=hasStaticPack(c.id)?{kind:'repository',builtAt:null,players:0,stale:false}:desk?{kind:'desk',builtAt:desk.builtAt,players:desk.players.length,stale:ready.some(id=>!desk.findingIds.includes(id))||desk.findingIds.some(id=>!ready.includes(id))}:{kind:'none',builtAt:null,players:0,stale:ready.length>0}
  const gates:LaunchGate[]=SHARED_GATES.map(g=>{const d=s.data?.gates.find(x=>x.number===g.number);return {number:g.number,name:g.name,state:d?.state||'LOCKED',eligible:d?.eligible||0,target:d?.target||0,playable:!!d?.dataPlayable,openNow:c.status==='live'&&c.gates.includes(g.number)&&!!d?.dataPlayable,missing:d?(d.full?null:d.reason):g.requirement,how:GATE_METHOD[g.key].what}})
  const canOpen=gates.filter(g=>g.playable&&!g.openNow).map(g=>g.number)
- const loaded=await loadClub(c.id).catch(()=>null),lifeOn=loaded?.data.life.state==='legacy'
+ const loaded=await loadClub(c.id).catch(()=>null),lifeOn=!!loaded&&clubLife(loaded.data).readiness.playable
  const report=c.gaps.filter(g=>g.startsWith('REPORT')).map(g=>g.replace(/^REPORT · /,''))
  return {clubId:c.id,name:c.name,version:c.version,status:c.status,
   research:{lastRun:s.archive.lastRun,documents:s.archive.documents,needsParser:s.archive.needsParser,sources:s.archive.sources,report},
