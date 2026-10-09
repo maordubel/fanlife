@@ -4,7 +4,8 @@ import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs'
 const club=process.argv[2];if(!club){console.error('usage: export-kit-svgs.mjs <club> [data.json]');process.exit(1)}
 const data=JSON.parse(readFileSync(process.argv[3]||`content/manual/kit-archive-${club}.json`,'utf8'))
 const SPONSOR_TYPE=readFileSync('content/manual/sponsor-type.json','utf8')
-const {kitSVG}=new Function('const SPONSOR_TYPE='+SPONSOR_TYPE+';'+readFileSync('scripts/kits/kit-render.js','utf8')+';return {kitSVG}')()
+const MARKS=readFileSync('content/manual/maker-marks.json','utf8')
+const {kitSVG}=new Function('const SPONSOR_TYPE='+SPONSOR_TYPE+';const MARKS='+MARKS+';'+readFileSync('scripts/kits/kit-render.js','utf8')+';return {kitSVG}')()
 const crestFile=`public/club-kits/${club}/crest-96.png`
 const crest=existsSync(crestFile)?'data:image/png;base64,'+readFileSync(crestFile).toString('base64'):null
 mkdirSync(`public/club-kits/${club}/svg`,{recursive:true})

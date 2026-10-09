@@ -23,7 +23,7 @@ def fold(kits):
             base.setdefault('moreImages',[])
             if k.get('image')and k['image']!=base.get('image'):base['moreImages'].append(k['image'])
     return out
-tpl=open('scripts/kits/kit-archive.template.html',encoding='utf8').read().replace('/*__RENDERER__*/','const SPONSOR_TYPE='+open('content/manual/sponsor-type.json',encoding='utf8').read()+';\n'+open('scripts/kits/kit-render.js',encoding='utf8').read())
+tpl=open('scripts/kits/kit-archive.template.html',encoding='utf8').read().replace('/*__RENDERER__*/','const SPONSOR_TYPE='+open('content/manual/sponsor-type.json',encoding='utf8').read()+';\nconst MARKS='+open('content/manual/maker-marks.json',encoding='utf8').read()+';\n'+open('scripts/kits/kit-render.js',encoding='utf8').read())
 hub=[]
 for c in CLUBS:
     j=json.load(open(c['data']));man=json.load(open(c['man']))

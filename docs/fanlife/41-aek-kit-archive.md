@@ -92,3 +92,7 @@ Counts: St. Pauli 46, Panathinaikos 61, Zrinjski 19, Hapoel Petah Tikva 6, Celti
 - Gate 4 body question: a card that is the correct pair of colours swapped is no longer offered as a distractor (rule 15).
 - Sponsor lettering: `content/manual/sponsor-type.json` styles each of the 34 sponsors (family, weight, case, tracking, line breaks; the real lettering colour only on the static archive drawings). `lib/clubs/sponsor-type.ts` reads the same table for gates 4/5 with neutral ink.
 - Club Football Shirts: 100 shirt photographs (`kit-cfs-<club>.json`, `public/club-kits/<club>/cfs/`) for seven clubs; matched by season and type onto the archive cards and the gate 5 shelf, the rest in a gallery. Hapoel Petah Tikva has no page on that site.
+
+## 10.10.2026 — logos
+
+- `content/manual/maker-marks.json`: real vector marks for Nike, adidas, Puma, New Balance, Under Armour, Fila, Reebok (simple-icons, CC0 data) and Umbro (the Worker's diamond); sponsors Vodafone (glyph before the lettering), Siemens and LG (the mark replaces the lettering). Printed on the archive drawings (the mark's own colour only where it holds against the shirt) and on the gate 4/5 cloth (`lib/clubs/marks.ts`, contrast ink — rule 95). Any other maker or sponsor stays lettered. Kappa, Lotto, hummel, Macron, Zeus, Capelli, DIIY have no free mark and are lettered.
