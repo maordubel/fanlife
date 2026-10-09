@@ -724,10 +724,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Held for review: Wikipedia gives 16 May 1924 as the founding and 10 March 1925 as official recognition, while To Vima dates the founding to March 1925 (10 March) and the club celebrates 10 March as its anniversary. See r26-founding-1925 for the date that two publishers agree on.",
+   "conflictFree": true,
+   "notes": "Held for review: Wikipedia gives 16 May 1924 as the founding and 10 March 1925 as official recognition, while To Vima dates the founding to March 1925 (10 March) and the club celebrates 10 March as its anniversary. See r26-founding-1925 for the date that two publishers agree on. Owner 2026-10-09: Wikipedia is the tiebreak, so 16 May 1924 is the founding date.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-founding-1925",
@@ -992,7 +994,7 @@
   {
    "id": "r26-eu-anderlecht-13",
    "value": {
-    "name": "Olympiacos beat Anderlecht in the final Champions League group match to reach the last 16",
+    "name": "Olympiacos beat Anderlecht 3-1 in the final Champions League group match to reach the last 16",
     "on": "2013-12-10",
     "precision": "day",
     "hint": "Javier Saviola scored twice as Olympiacos finished second in the group.",
@@ -1006,10 +1008,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Date 10 December 2013 and the last-16 qualification agree. Bangkok Post and Neos Kosmos give 3-1; a read of the Wikipedia season page gave 3-0. Score left out of the name and held for review.",
+   "conflictFree": true,
+   "notes": "Date 10 December 2013 and the last-16 qualification agree. Bangkok Post and Neos Kosmos give 3-1; a read of the Wikipedia season page gave 3-0. Score left out of the name and held for review. Owner 2026-10-09: Wikipedia is the tiebreak; its group table gives 3-1, matching Bangkok Post and Neos Kosmos.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   }
  ],
  "players": [
