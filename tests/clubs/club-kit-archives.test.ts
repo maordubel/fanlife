@@ -110,3 +110,15 @@ describe('approved in memory, the new kits reach the gates (the wave itself stay
   expect(waveCReadiness(d).kits!.playable).toBe(true);expect(SWATCH.brown).toMatch(/^#[0-9a-f]{6}$/i)
  })
 })
+
+describe('Celtic · Historical Football Kits drawings (owner: non-commercial use, 10.10.2026)',()=>{
+ const h=read<{count:number;source:{publisher:string;licence:string;homePage:string};kits:{id:string;type:string;period:string;maker:string|null;image:string;page:string}[]}>('content/manual/kit-hfk-celtic.json')
+ it('holds 151 drawings, each a real file, each with a period the page printed',()=>{
+  expect(h.count).toBe(151);expect(h.kits).toHaveLength(151);expect(new Set(h.kits.map(k=>k.id)).size).toBe(151)
+  for(const k of h.kits){expect(existsSync(`public${k.image}`),k.id).toBe(true);expect(k.period).toMatch(/\d{4}/);expect(['home','away','third','change']).toContain(k.type)}
+ })
+ it('carries the acknowledgement and the licence words, and the archive pages show it',()=>{
+  expect(h.source.publisher).toContain('Historical Football Kits');expect(h.source.licence).toMatch(/non-commercial/i)
+  expect(readFileSync('public/kit-archive/celtic/index.html','utf8')).toContain('Historical Football Kits')
+ })
+})

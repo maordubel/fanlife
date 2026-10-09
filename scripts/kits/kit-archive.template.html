@@ -92,6 +92,9 @@ a{color:var(--gold)}
 textarea.cp{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px}
 @media(max-width:780px){.season{grid-template-columns:1fr}.sn{position:static;display:flex;align-items:baseline;gap:12px}header.top{grid-template-columns:1fr}.dlg{grid-template-columns:1fr}.dstage{min-height:300px}.count{margin-inline-start:0;width:100%}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.hfk{padding-block:34px;border-top:1px solid var(--line)}.hfk h2{font:600 24px var(--body);margin:0 0 6px}.hfk .cr{color:var(--mute);font-size:14px;margin:0 0 18px;max-width:70ch}.hfk .cr a{color:var(--gold)}
+.hfk .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(132px,100%),1fr));gap:14px}.hfk figure{margin:0;background:var(--plate);border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center}
+.hfk img{width:100%;height:auto;max-width:150px;image-rendering:auto}.hfk figcaption{font:600 12px var(--mono);color:var(--paper);margin-top:6px;letter-spacing:.04em}.hfk figcaption small{display:block;color:var(--mute);font-weight:400}
 </style>
 </head>
 <body>
@@ -121,6 +124,8 @@ textarea.cp{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px
 </div>
 
 <main id="main"></main>
+
+<section class="hfk" id="hfk" aria-labelledby="hfkT" hidden></section>
 
 <section class="notes" aria-label="על הארכיון">
   <div class="note"><h3>מה מדוד ומה לא</h3><p>הצבעים הם הערך המדויק השכיח בכל ציור, בנפרד לחולצה, למכנסיים ולגרביים. ספירת הפסים נמדדת מהפיקסלים. הדגם נקרא בעין ונבדק מול המדידה.</p><p>יצרן וספונסר מוזנים רק כשציור בקטלוג מראה אותם. לחולצות שיש להן רק ציור מקומונס אין יצרן או ספונסר.</p></div>
@@ -207,6 +212,9 @@ $('#fDesign').onchange=e=>{F.design=e.target.value;render()};$('#fMaker').onchan
 $('#fQ').oninput=e=>{F.q=e.target.value.trim();render()};
 document.querySelectorAll('[data-art]').forEach(b=>b.onclick=()=>{F.art=b.dataset.art;document.querySelectorAll('[data-art]').forEach(c=>c.setAttribute('aria-pressed',c===b));render()});
 render();
+
+(function(){const H=DATA.hfk;if(!H)return;const el=document.getElementById('hfk');el.hidden=false;const T={home:'בית',away:'חוץ',third:'שלישית',change:'חילוף'};
+el.innerHTML=`<h2 id="hfkT">ציורים היסטוריים · ${H.count} מערכות</h2><p class="cr">ציורי המדים של Historical Football Kits ‏(David Moor), ${H.from}–${H.to}. מקור: <a href="${H.source.homePage}" target="_blank" rel="noopener">עמוד הבית</a> · <a href="${H.source.changePage}" target="_blank" rel="noopener">מדי חילוף</a>. השימוש לא מסחרי, בציון המקור. תקופה, יצרן וסימוני המקור כפי שהאתר מדפיס; מה שלא הודפס לא נוסף.</p><div class="g">${H.kits.map(k=>`<figure><img src="${k.image}" alt="${esc(k.period)}" loading="lazy" width="150" height="263"><figcaption><bdi dir="ltr">${esc(k.period)}</bdi> · ${T[k.type]||k.type}<small>${k.maker?esc(k.maker):''}</small></figcaption></figure>`).join('')}</div>`})();
 </script>
 </body>
 </html>

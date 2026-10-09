@@ -340,5 +340,11 @@
   "marketPoint1": "No fee",
   "marketPoint2": "Swap or sell",
   "marketPoint3": "Prices in euros",
-  "lifeGameSub": "The Game"
+  "lifeGameSub": "The Game",
+  "kitHfkTitle": "Historical drawings · {n} kits",
+  "kitHfkCredit": "Drawings from",
+  "kitHfkType_home": "Home",
+  "kitHfkType_away": "Away",
+  "kitHfkType_third": "Third",
+  "kitHfkType_change": "Change"
 }

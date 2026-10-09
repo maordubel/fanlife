@@ -14,6 +14,7 @@ import {kitViews} from '@/lib/clubs/gate-content'
 import {variantOf} from '@/lib/clubs/kit-model'
 import {kitArt} from '@/lib/clubs/kit-sources'
 import {clubKitPhoto} from '@/lib/clubs/kitArchive'
+import {hfkFor} from '@/lib/clubs/kit-hfk'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
@@ -39,6 +40,7 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
  const seasons=[...new Set(kits.map(k=>k.season))]
  const label=(t:string)=>copy[`kitType_${variantOf(t)}` as keyof typeof copy] as string
  const present=TYPES.filter(t=>all.some(k=>variantOf(k.type)===t))
+ const hfk=hfkFor(id)
  const src=(ids:string[])=>ids.map(s=>core?.data.sources.find(x=>x.id===s)).filter((s):s is NonNullable<typeof s>=>!!s)
  return <ClubSurface theme={theme} clubId={id} locale={locale}><main id="main" className="mag-home kit-archive">
   <section className="mag-section"><div className="mag-head mag-homehead"><div><p className="mag-kicker">{copy.kitArchiveKicker}</p><h1 className="mag-h2">{c.name}</h1><p className="mag-fine">{copy.kitArchiveLede.replace('{n}',String(all.length))}</p></div></div>
@@ -57,6 +59,9 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
       {k.shorts&&<><dt>{copy.kitArchiveShorts}</dt><dd>{[k.shorts.colour,k.shorts.trim].filter(Boolean).join(' / ')}</dd></>}{k.socks&&<><dt>{copy.kitArchiveSocks}</dt><dd>{[k.socks.colour,k.socks.trim].filter(Boolean).join(' / ')}</dd></>}
       <dt>{copy.kitArchiveSources}</dt><dd>{src(k.sources).map(x=><a key={x.id} href={x.url??undefined} target="_blank" rel="noopener noreferrer">{x.publisher}</a>).reduce<React.ReactNode[]>((a,x,i)=>i?[...a,' · ',x]:[x],[])}</dd></dl></details>
     </li>)}</ul></div>)}
+   {hfk&&type==='all'&&<section className="kit-hfk" data-testid="kit-hfk" aria-labelledby="hfk-h"><h2 id="hfk-h" className="kit-archive-year">{copy.kitHfkTitle.replace('{n}',String(hfk.count))}</h2>
+    <p className="mag-fine">{copy.kitHfkCredit} <a href={hfk.source.homePage} target="_blank" rel="noopener noreferrer">{hfk.source.publisher}</a></p>
+    <ul className="kit-hfk-grid">{hfk.kits.map(k=><li key={k.id} className="kit-archive-card"><img className="kit-archive-img" src={k.image} alt={`${k.period} ${k.type}`} width={150} height={263} loading="lazy" decoding="async"/><p className="kit-archive-type"><bdi>{k.period}</bdi> · {copy[`kitHfkType_${k.type}` as keyof typeof copy] as string}</p>{k.maker&&<p className="kit-archive-facts"><span>{k.maker}</span></p>}</li>)}</ul></section>}
    </>}
   </section>
  </main></ClubSurface>
