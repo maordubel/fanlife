@@ -18,10 +18,10 @@ import {rotationOrder} from '@/lib/fixtures/rotation'
 import {livery,wearLivery} from '@/lib/club-livery'
 import {clubWorld} from '@/lib/clubs/world'
 import {BackToClub} from '@/components/clubs/BackToClub'
-import {NextClubVote} from '@/components/home/NextClubVote'
+import {WorkshopGrid} from '@/components/home/WorkshopGrid'
 import {HubDock} from '@/components/home/HubDock'
 import {isOpenClub} from '@/lib/home/hub-open'
-import {seedVotes,rank,SEED_TOTAL} from '@/lib/home/vote'
+import {seedVotes,rank} from '@/lib/home/vote'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
@@ -40,7 +40,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const isOpen=(id:string)=>isOpenClub(strict.find(x=>x.id===id))
  const live=open.filter(c=>isOpen(c.id)),shop=open.filter(c=>!isOpen(c.id))
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
- const voteClubs=shop.map(c=>{const l=livery(c.id);return {id:c.id,name:c.name,city:c.city,initials:l?.initials??c.initials,pattern:l?.pattern??'',seed:seed[c.id]??0}})
+ const shopClubs=order2.map(id=>{const c=shop.find(x=>x.id===id)!,l=livery(id);return {id,name:c.name,city:c.city,initials:l?.initials??c.initials,pattern:l?.pattern??'',seed:seed[id]??0,href:preview?`/clubs/${id}?lang=${locale}`:null}})
  const chooser={title:copy.chooseClub,search:copy.chooserSearch,close:copy.chooserClose,none:copy.chooserNone,workshop:copy.chooserWorkshop,partial:''}
  const feed=await getFixtureFeed(now).catch(()=>null)
  const order=feed?rotationOrder(feed.fixtures,now):[]
@@ -69,7 +69,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <p className="mag-cover-bottom">{copy.coverBottom}</p>
    <p className="mag-plus"><b>{copy.plusK}</b><span>{copy.plus1}<br/>{copy.plus2}</span></p>
   </div></section>
-  <nav className="mag-hubnav" aria-label={copy.primaryNav}><a href="#life">{copy.navLife}</a><a href="#next">{copy.navNext}</a><a href="#clubs">{copy.navClubs}</a>{shop.length>0&&<a href="#vote">{copy.navVote}</a>}<a href="#been">{copy.navBeen}</a></nav>
+  <nav className="mag-hubnav" aria-label={copy.primaryNav}><a href="#life">{copy.navLife}</a><a href="#next">{copy.navNext}</a><a href="#clubs">{copy.navClubs}</a><a href="#been">{copy.navBeen}</a></nav>
   <HubDock clubs={open.map(c=>({id:c.id,name:c.name}))} openIds={live.map(c=>c.id)} locale={locale} copy={{title:copy.dockTitle,cont:copy.dockContinue,rounds:copy.dockRounds,file:copy.dockFile,stand:copy.dockStand,market:copy.dockMarket,sources:copy.dockSources,voted:copy.dockVoted,vote:copy.dockVote}}/>
 
   {/* THE GAME: the app's central feature, right under the cover (owner, 7.10.2026 — "the hub first, but this is the heart"). */}
@@ -93,26 +93,17 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <div className="mag-clubsmain">
     <hr className="mag-rule"/>
     <div className="mag-head"><div><p className="mag-kicker">{copy.clubs}</p><h2 className="mag-h2">{copy.pickClub}</h2></div><BackToClub clubs={open.map(c=>({id:c.id,name:c.name}))} locale={locale} label={copy.backTo}/></div>
-    {live.length>0&&<><div className="mag-group-head"><p className="mag-kicker">{copy.hubOpenKicker}</p><p className="mag-fine">{copy.hubOpenNote}</p></div>
-    <div className="mag-tiles mag-tiles-open">{live.map((c,n)=>{
-     const l=livery(c.id)
-     return <Link key={c.id} className="mag-tile is-open" data-club={c.id} href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}>
+    <div className="mag-tiles mag-tiles-hub">
+     {live.map((c,n)=>{
+      const l=livery(c.id)
+      return <Link key={c.id} className={`mag-tile is-open${live.length%2===1&&n===live.length-1?' is-wide':''}`} data-club={c.id} href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}>
        <span className="no" aria-label={`${copy.collectorNo} ${n+1}`}>{String(n+1).padStart(2,'0')}</span>
        {l&&<span className="mag-badge" data-livery={l.pattern} aria-hidden="true">{l.initials}</span>}
        <span><b>{c.name}</b><small>{c.city}{nick(c.id)?` · ${nick(c.id)}`:''}</small></span>{l&&<Dye art="shirt" soft className="mag-tile-shirt"/>}
        <span className="mag-tile-state">{copy.tileOpen}</span>
-      </Link>})}</div></>}
-    {shop.length>0&&<><div className="mag-group-head"><p className="mag-kicker">{copy.hubWorkshopKicker}</p><p className="mag-fine">{copy.hubWorkshopNote}</p></div>
-    <div className="mag-tiles mag-tiles-shop">{shop.map(c=>{
-     const l=livery(c.id),r=order2.indexOf(c.id)+1
-     const body=<><span className="mag-tile-body">
-       {l&&<span className="mag-badge" data-livery={l.pattern} aria-hidden="true">{l.initials}</span>}
-       <span><b>{c.name}</b><small>{c.city}</small></span></span>
-       <span className="mag-tile-state">{preview?copy.tilePreview:copy.tileWorkshop}</span></>
-     return <div key={c.id} className="mag-shop" data-club={c.id}>
-      {preview?<Link className="mag-tile is-shop" href={`/clubs/${c.id}?lang=${locale}`}>{body}</Link>:<div className="mag-tile is-shop" role="group" aria-label={`${c.name} — ${copy.tileWorkshop}`}>{body}</div>}
-      <a className="mag-shop-vote min-h-tap" href="#vote"><span>{copy.tileVote}</span><small className="tabular-nums">{copy.tileRank.replace('{n}',String(r))}</small></a>
-     </div>})}</div></>}
+      </Link>})}
+     {shop.length>0&&<WorkshopGrid clubs={shopClubs} copy={{kicker:copy.hubWorkshopKicker,count:copy.voteCount,demo:copy.voteDemo,vote:copy.voteCta,voted:copy.voteVoted,leading:copy.tileLeading,preview:copy.tilePreview,shop:copy.tileWorkshop,more:copy.tileMore,less:copy.tileLess}}/>}
+    </div>
    </div>
    <aside className="mag-editor" aria-labelledby="editor-h">
     <p className="mag-editor-stamp" aria-hidden="true">{copy.letterStamp}</p>
@@ -125,10 +116,6 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
     <p className="mag-sign">{copy.editor}</p>
    </aside>
   </section>
-
-  {shop.length>0&&<section className="mag-section mag-vote-band" id="vote" aria-labelledby="vote-h">
-   <NextClubVote clubs={voteClubs} total={SEED_TOTAL} copy={{kicker:copy.voteKicker,title:copy.voteTitle,note:copy.voteNote,count:copy.voteCount,leading:copy.voteLeading,you:copy.voteYou,cta:copy.voteCta,change:copy.voteChange,voted:copy.voteVoted,demo:copy.voteDemo}}/>
-  </section>}
 
   <section className="mag-section mag-feature mag-feature-been" id="been" aria-labelledby="been-h">
    <div className="mag-feature-art" aria-hidden="true"><TornBlocks seed="been" inks={['var(--mag-navy)','var(--mag-salmon)']}/><PressPhoto art="fans-group" className="mag-feature-main"/><PressPhoto art="memorabilia" className="mag-feature-side"/></div>
