@@ -1,0 +1,2061 @@
+{
+ "source": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html",
+ "publisher": "colours-of-football.com (Mikhail Sipovich)",
+ "retrieved": "2026-10-09",
+ "count": 57,
+ "method": "Season/type from captions; maker mark and printed sponsor read by eye from the drawings; colours measured from pixels in fixed regions (shirt, shorts, socks) with the transparent background excluded.",
+ "records": [
+  {
+   "i": 1,
+   "caption": "home kit 2002-2003",
+   "page": "aek_1.html",
+   "image": "gre_aek_1_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffe300",
+     "trim": "#282828"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Alpha Digital",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#ffe300"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffe300",
+    "trim": "black",
+    "trimHex": "#282828",
+    "bands": true
+   }
+  },
+  {
+   "i": 2,
+   "caption": "away kit 2002-2003",
+   "page": "aek_1.html",
+   "image": "gre_aek_2_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "skyblue",
+    "trim": "white",
+    "hex": {
+     "body": "#0095da",
+     "trim": "#aed1db"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Alpha Digital",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "skyblue",
+    "hex": "#0095da",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 3,
+   "caption": "home kit 2003-2004",
+   "page": "aek_1.html",
+   "image": "gre_aek_1_0304.png",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffe300",
+     "trim": "#282828"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Piraeus Bank",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#ffe300"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffe300",
+    "trim": "black",
+    "trimHex": "#282828",
+    "bands": true
+   }
+  },
+  {
+   "i": 4,
+   "caption": "away kit 2003-2004",
+   "page": "aek_1.html",
+   "image": "gre_aek_2_0304.png",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "skyblue",
+    "trim": "white",
+    "hex": {
+     "body": "#77bae2",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Piraeus Bank",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 5,
+   "caption": "home kit 2004-2005",
+   "page": "aek_1.html",
+   "image": "gre_aek_1_0405.png",
+   "season": "2004/05",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#fff200",
+     "trim": "#282828"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#fff200",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 6,
+   "caption": "away kit 2004-2005",
+   "page": "aek_1.html",
+   "image": "gre_aek_2_0405.png",
+   "season": "2004/05",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "skyblue",
+    "trim": "white",
+    "hex": {
+     "body": "#68afd8",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 7,
+   "caption": "home kit 2005-2006",
+   "page": "aek_1.html",
+   "image": "gre_aek_1_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffe300",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "adidas",
+   "sponsor": "TIM",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#ffe300"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffe300",
+    "trim": "black",
+    "trimHex": "#ffe300",
+    "bands": true
+   }
+  },
+  {
+   "i": 8,
+   "caption": "away kit 2005-2006",
+   "page": "aek_1.html",
+   "image": "gre_aek_2_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#282828",
+     "trim": "#ffe300"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "adidas",
+   "sponsor": "TIM",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#ffe300"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#4d4d4c",
+    "bands": true
+   }
+  },
+  {
+   "i": 9,
+   "caption": "third kit 2005-2006",
+   "page": "aek_1.html",
+   "image": "gre_aek_3_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "skyblue",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#8fd0e1"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "adidas",
+   "sponsor": "TIM",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "grey",
+    "trimHex": "#4d4b4c"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "black",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 10,
+   "caption": "home euro kit 2005-06",
+   "page": "aek_1.html",
+   "image": "gre_aek_1e_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": true,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#282828",
+     "trim": "#fff200"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "adidas",
+   "sponsor": "TIM",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#fff200"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#4d4d4c",
+    "bands": true
+   }
+  },
+  {
+   "i": 11,
+   "caption": "away euro kit 2005-06",
+   "page": "aek_1.html",
+   "image": "gre_aek_2e_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": true,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffe300",
+     "trim": "#282828"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "adidas",
+   "sponsor": "TIM",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffe300",
+    "trim": "black",
+    "trimHex": "#2d373a"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffe300",
+    "trim": "black",
+    "trimHex": "#ffe300",
+    "bands": true
+   }
+  },
+  {
+   "i": 12,
+   "caption": "home kit 2006-2007",
+   "page": "aek_1.html",
+   "image": "gre_aek_1_0607.gif",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#fff200",
+     "trim": "#231f20"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "adidas",
+   "sponsor": "LG",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#fff200",
+    "trim": "black",
+    "trimHex": "#231f20"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#fff200",
+    "trim": "black",
+    "trimHex": "#231f20",
+    "bands": true
+   }
+  },
+  {
+   "i": 13,
+   "caption": "away kit 2006-2007",
+   "page": "aek_1.html",
+   "image": "gre_aek_2_0607.gif",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#231f20",
+     "trim": "#fff200"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "adidas",
+   "sponsor": "LG",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": "yellow",
+    "trimHex": "#fff200"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": "yellow",
+    "trimHex": "#fff200",
+    "bands": true
+   }
+  },
+  {
+   "i": 14,
+   "caption": "home kit 2007-2008",
+   "page": "aek_1.html",
+   "image": "gre_aek_1_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffe500",
+     "trim": "#231f20"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": "LG",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffe500",
+    "trim": "black",
+    "trimHex": "#231f20"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 15,
+   "caption": "away kit 2007-2008",
+   "page": "aek_1.html",
+   "image": "gre_aek_2_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#231f20",
+     "trim": "#fff200"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": "LG",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": "yellow",
+    "trimHex": "#fff200"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 16,
+   "caption": "third kit 2007-2008",
+   "page": "aek_1.html",
+   "image": "gre_aek_3_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "black",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#231f20"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": "LG",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 17,
+   "caption": "home kit 2008-2009",
+   "page": "aek_2.html",
+   "image": "gre_aek_1_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#231f20",
+     "trim": "#ffd900"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": "LG",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#22211f",
+    "trim": "yellow",
+    "trimHex": "#ffd900",
+    "bands": true
+   }
+  },
+  {
+   "i": 18,
+   "caption": "away kit 2008-2009",
+   "page": "aek_2.html",
+   "image": "gre_aek_2_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd900",
+     "trim": "#231f20"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": "LG",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": "black",
+    "trimHex": "#353435",
+    "bands": true
+   }
+  },
+  {
+   "i": 19,
+   "caption": "third kit 2008-2009",
+   "page": "aek_2.html",
+   "image": "gre_aek_3_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "maroon",
+    "trim": "cream",
+    "hex": {
+     "body": "#6c4348",
+     "trim": "#f9cbdf"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": "LG",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "maroon",
+    "hex": "#6c4348",
+    "trim": "cream",
+    "trimHex": "#6c4348"
+   },
+   "socks": {
+    "colour": "maroon",
+    "hex": "#6c4348",
+    "trim": "cream",
+    "trimHex": "#6c4348",
+    "bands": true
+   }
+  },
+  {
+   "i": 20,
+   "caption": "home kit 2009-2010",
+   "page": "aek_2.html",
+   "image": "gre_aek_1_0910.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd900",
+     "trim": "#31302e"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": "black",
+    "trimHex": "#363534",
+    "bands": true
+   }
+  },
+  {
+   "i": 21,
+   "caption": "away kit 2009-2010",
+   "page": "aek_2.html",
+   "image": "gre_aek_2_0910.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "yellow",
+    "hex": {
+     "body": "#14152a",
+     "trim": "#ffe21a"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#14152a",
+    "trim": "yellow",
+    "trimHex": "#ffe21a"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#14152a",
+    "trim": "yellow",
+    "trimHex": "#ffd900",
+    "bands": true
+   }
+  },
+  {
+   "i": 22,
+   "caption": "third kit 2009-2010",
+   "page": "aek_2.html",
+   "image": "gre_aek_3_0910.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "grey",
+    "trim": "yellow",
+    "hex": {
+     "body": "#797b7e",
+     "trim": "#ffe21a"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#797b7e",
+    "trim": "yellow",
+    "trimHex": "#ffe21a"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#797b7e",
+    "trim": "yellow",
+    "trimHex": "#ffd900",
+    "bands": true
+   }
+  },
+  {
+   "i": 23,
+   "caption": "home kit 2010-2011",
+   "page": "aek_2.html",
+   "image": "gre_aek_1_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#272727",
+     "trim": "#ffe100"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#272727",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#272727",
+    "trim": "yellow",
+    "trimHex": "#ffe300",
+    "bands": true
+   }
+  },
+  {
+   "i": 24,
+   "caption": "away kit 2010-2011",
+   "page": "aek_2.html",
+   "image": "gre_aek_2_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd900",
+     "trim": "#312f2e"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": "black",
+    "trimHex": "#191817"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": "black",
+    "trimHex": "#363433",
+    "bands": true
+   }
+  },
+  {
+   "i": 25,
+   "caption": "third kit 2010-2011",
+   "page": "aek_2.html",
+   "image": "gre_aek_3_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "blue",
+    "trim": "orange",
+    "hex": {
+     "body": "#4175a0",
+     "trim": "#f68a46"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "skyblue",
+    "hex": "#457daa",
+    "trim": "orange",
+    "trimHex": "#f68a46"
+   },
+   "socks": {
+    "colour": "skyblue",
+    "hex": "#457daa",
+    "trim": "orange",
+    "trimHex": "#f68a46",
+    "bands": true
+   }
+  },
+  {
+   "i": 26,
+   "caption": "home kit 2011-2012",
+   "page": "aek_2.html",
+   "image": "gre_aek_1_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffcb05",
+     "trim": "#373637"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": "Kino",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffcb05",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffcb05",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 27,
+   "caption": "away kit 2011-2012",
+   "page": "aek_2.html",
+   "image": "gre_aek_2_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#282828",
+     "trim": "#ffd400"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Puma",
+   "sponsor": "Kino",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#ffd400",
+    "bands": true
+   }
+  },
+  {
+   "i": 28,
+   "caption": "home kit 2016-2017",
+   "page": "aek_2.html",
+   "image": "gre_aek_1_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#333333",
+     "trim": "#ffc20e"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 29,
+   "caption": "away kit 2016-2017",
+   "page": "aek_2.html",
+   "image": "gre_aek_2_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "pink",
+    "trim": "white",
+    "hex": {
+     "body": "#f1627d",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 30,
+   "caption": "third kit 2016-2017",
+   "page": "aek_2.html",
+   "image": "gre_aek_3_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffc20e",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffc20e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 31,
+   "caption": "home kit 2017-2018",
+   "page": "aek_2.html",
+   "image": "gre_aek_athens_1_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd200",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 32,
+   "caption": "away kit 2017-2018",
+   "page": "aek_2.html",
+   "image": "gre_aek_athens_2_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "grey",
+    "trim": "black",
+    "hex": {
+     "body": "#86818d",
+     "trim": "#86818d"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffd100",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd100",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 33,
+   "caption": "third kit 2017-2018",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_3_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#333333",
+     "trim": "#414040"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffd100",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 34,
+   "caption": "home kit 2018-2019",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_1_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd900",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Capelli Sport",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 35,
+   "caption": "away kit 2018-2019",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_2_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#333333",
+     "trim": "#ffd900"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Capelli Sport",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 36,
+   "caption": "third kit 2018-2020",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_3_1819.png",
+   "season": "2018–20",
+   "seasonKind": "range",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "blue",
+    "trim": "yellow",
+    "hex": {
+     "body": "#034ea2",
+     "trim": "#ffd900"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Capelli Sport",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "blue",
+    "hex": "#034ea2",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#034ea2",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 37,
+   "caption": "home kit 2019-2020",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_1_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "diagonal",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd900",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Capelli Sport",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 38,
+   "caption": "third kit 2019-2020",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_3_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#333333",
+     "trim": "#ffe300"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Capelli Sport",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 39,
+   "caption": "home kit 2020-2021",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_1_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "half-and-half",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd900",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Capelli Sport",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd900",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 40,
+   "caption": "away kit 2020-2021",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_2_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#333333",
+     "trim": "#585455"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Capelli Sport",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "yellow",
+    "trimHex": "#333333",
+    "bands": true
+   }
+  },
+  {
+   "i": 41,
+   "caption": "third kit 2020-2021",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_3_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "cream",
+    "trim": "grey",
+    "hex": {
+     "body": "#e9e4d0",
+     "trim": "#44595e"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Capelli Sport",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "grey",
+    "hex": "#b0b1b7",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#b0b1b7",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 42,
+   "caption": "home kit 2021-2022",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_1_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd400",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffd400",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd400",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 43,
+   "caption": "away kit 2021-2022",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_2_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#333333",
+     "trim": "#474546"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 44,
+   "caption": "third kit 2021-2022",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_3_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "blue",
+    "trim": "skyblue",
+    "hex": {
+     "body": "#00529b",
+     "trim": "#bdc3dc"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": "LG",
+   "shorts": {
+    "colour": "blue",
+    "hex": "#00529b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#00529b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 45,
+   "caption": "home kit 2022-2023",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_1_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffe400",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#2c2c2d",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffe400",
+    "trim": "black",
+    "trimHex": "#2c2c2d",
+    "bands": true
+   }
+  },
+  {
+   "i": 46,
+   "caption": "away kit 2022-2023",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_2_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "yellow",
+    "hex": {
+     "body": "#ffe44f",
+     "trim": "#ffe44f"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffe44f",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffe44f",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 47,
+   "caption": "third kit 2022-2023",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_3_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "maroon",
+    "trim": "maroon",
+    "hex": {
+     "body": "#892533",
+     "trim": "#892533"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "maroon",
+    "hex": "#892533",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "maroon",
+    "hex": "#892533",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 48,
+   "caption": "home kit 2023-2024",
+   "page": "aek_athens_3.html",
+   "image": "gre_aek_athens_1_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#f0e223",
+     "trim": "#1e1e1e"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "black",
+    "trimHex": "#1e1e1e",
+    "bands": true
+   }
+  },
+  {
+   "i": 49,
+   "caption": "away kit 2023-2024",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_athens_2_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "orange",
+    "trim": "orange",
+    "hex": {
+     "body": "#ff5e03",
+     "trim": "#ff5e03"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "orange",
+    "hex": "#ff5e03",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "orange",
+    "hex": "#ff5e03",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 50,
+   "caption": "third kit 2023-2024",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_athens_3_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#1e1e1e",
+     "trim": "#ababab"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 51,
+   "caption": "home kit 2024-2025",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_athens_1_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#f5e837",
+     "trim": "#1e1e1e"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "black",
+    "trimHex": "#1e1e1e",
+    "bands": true
+   }
+  },
+  {
+   "i": 52,
+   "caption": "away kit 2024-2025",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_athens_2_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "white",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 53,
+   "caption": "third kit 2024-2025",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_athens_3_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#1e1e1e",
+     "trim": "#f5e837"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 54,
+   "caption": "home kit 2025-2026",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_1_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffe900",
+     "trim": "#1e1e1e"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 55,
+   "caption": "home kit 2025-2026",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_1_2526_2.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffe900",
+     "trim": "#1e1e1e"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffe900",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffe900",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 56,
+   "caption": "away kit 2025-2026",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_2_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "skyblue",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#bce5f4"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 57,
+   "caption": "third kit 2025-2026",
+   "page": "aek_athens_4.html",
+   "image": "gre_aek_3_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#1e1e1e",
+     "trim": "#ffe900"
+    },
+    "bodyMeasured": true
+   },
+   "maker": "Nike",
+   "sponsor": "Pame Stoixima",
+   "shortsSponsor": null,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  }
+ ]
+}

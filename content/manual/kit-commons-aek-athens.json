@@ -1,0 +1,5027 @@
+{
+ "source": "https://commons.wikimedia.org/wiki/Category:Football_kit_body/AEK_Athens",
+ "retrieved": "2026-10-09",
+ "count": 133,
+ "method": "38x59 drawings extracted from the owner-exported category page; palette = most frequent exact pixel colour per colour family; stripes/hoops = counted runs; design read by eye.",
+ "records": [
+  {
+   "file": "Kit body aek0001.png",
+   "code": "aek0001",
+   "series": "aek",
+   "season": "2000/01",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "sponsorText": "MARFIN",
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek0002.png",
+   "code": "aek0002",
+   "series": "aek",
+   "season": "2000–02",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek0002B.png",
+   "code": "aek0002B",
+   "series": "aek",
+   "season": "2000–02",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek0102.png",
+   "code": "aek0102",
+   "series": "aek",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "sponsorText": "ALPHA DIGITAL",
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek0204.png",
+   "code": "aek0204",
+   "series": "aek",
+   "season": "2002–04",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek0204a.png",
+   "code": "aek0204a",
+   "series": "aek",
+   "season": "2002–04",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek0204B.png",
+   "code": "aek0204B",
+   "series": "aek",
+   "season": "2002–04",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "maroon",
+    "black"
+   ],
+   "hex": {
+    "maroon": "#560319",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek04.png",
+   "code": "aek04",
+   "series": "aek",
+   "season": "2004",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffde00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek04a.png",
+   "code": "aek04a",
+   "series": "aek",
+   "season": "2004",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffde00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek0506.png",
+   "code": "aek0506",
+   "series": "aek",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#b5b7b6",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   }
+  },
+  {
+   "file": "Kit body aek05C.png",
+   "code": "aek05C",
+   "series": "aek",
+   "season": "2005",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "third",
+   "typeSource": "twin-series-inference",
+   "design": "stripes",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#6e93be",
+    "white": "#ffffff"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {
+    "makerMark": "triangle"
+   }
+  },
+  {
+   "file": "Kit body aek0607a.png",
+   "code": "aek0607a",
+   "series": "aek",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffe000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   }
+  },
+  {
+   "file": "Kit body aek0607b.png",
+   "code": "aek0607b",
+   "series": "aek",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   }
+  },
+  {
+   "file": "Kit body aek0607h.png",
+   "code": "aek0607h",
+   "series": "aek",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe000",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   }
+  },
+  {
+   "file": "Kit body aek0607t.png",
+   "code": "aek0607t",
+   "series": "aek",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#81c0ff",
+    "white": "#f9f9f9"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   }
+  },
+  {
+   "file": "Kit body aek0708a.png",
+   "code": "aek0708a",
+   "series": "aek",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0708A.png",
+   "code": "aek0708A",
+   "series": "aek",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0708h.png",
+   "code": "aek0708h",
+   "series": "aek",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0708t.png",
+   "code": "aek0708t",
+   "series": "aek",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark",
+    "sponsorText": "LG"
+   }
+  },
+  {
+   "file": "Kit body aek0708T.png",
+   "code": "aek0708T",
+   "series": "aek",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0809a.png",
+   "code": "aek0809a",
+   "series": "aek",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffff00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0809h.png",
+   "code": "aek0809h",
+   "series": "aek",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0809t.png",
+   "code": "aek0809t",
+   "series": "aek",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "maroon",
+    "cream"
+   ],
+   "hex": {
+    "maroon": "#60002c",
+    "cream": "#eed8b3"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0910a.png",
+   "code": "aek0910a",
+   "series": "aek",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#dfc400"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0910h.png",
+   "code": "aek0910h",
+   "series": "aek",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek0910t.png",
+   "code": "aek0910t",
+   "series": "aek",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "grey",
+    "yellow"
+   ],
+   "hex": {
+    "grey": "#c1c1c1",
+    "yellow": "#ffff00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek100995h.png",
+   "code": "aek100995h",
+   "series": "aek",
+   "season": null,
+   "seasonKind": "unknown",
+   "seasonAmbiguous": true,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aek1011a.png",
+   "code": "aek1011a",
+   "series": "aek",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark",
+    "sponsorText": "KINO"
+   }
+  },
+  {
+   "file": "Kit body aek1011g4.png",
+   "code": "aek1011g4",
+   "series": "aek",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "goalkeeper",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "blue",
+    "black"
+   ],
+   "hex": {
+    "blue": "#0040ff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "sponsorText": "KINO"
+   }
+  },
+  {
+   "file": "Kit body aek1011h.png",
+   "code": "aek1011h",
+   "series": "aek",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#1f1f1f"
+   },
+   "measured": {
+    "stripes": 2
+   },
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1011t.png",
+   "code": "aek1011t",
+   "series": "aek",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "skyblue",
+    "orange"
+   ],
+   "hex": {
+    "skyblue": "#0080aa",
+    "orange": "#ff6000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark",
+    "sponsorText": "KINO"
+   }
+  },
+  {
+   "file": "Kit body aek1011T.png",
+   "code": "aek1011T",
+   "series": "aek",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "contrasting sleeves",
+   "colours": [
+    "skyblue",
+    "orange"
+   ],
+   "hex": {
+    "skyblue": "#0080aa",
+    "orange": "#ff6000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1112h.png",
+   "code": "aek1112h",
+   "series": "aek",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1112t.png",
+   "code": "aek1112t",
+   "series": "aek",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark",
+    "sponsorText": "KINO"
+   }
+  },
+  {
+   "file": "Kit body aek1213a.png",
+   "code": "aek1213a",
+   "series": "aek",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#fdde25"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1213g1.png",
+   "code": "aek1213g1",
+   "series": "aek",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "goalkeeper",
+   "typeSource": "filename-suffix",
+   "design": "chest band",
+   "colours": [
+    "orange",
+    "black"
+   ],
+   "hex": {
+    "orange": "#f77100",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "sponsorText": "KINO"
+   }
+  },
+  {
+   "file": "Kit body aek1213h.png",
+   "code": "aek1213h",
+   "series": "aek",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "chest band",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffd600",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1213H.png",
+   "code": "aek1213H",
+   "series": "aek",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "chest band",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1213t.png",
+   "code": "aek1213t",
+   "series": "aek",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1314a.png",
+   "code": "aek1314a",
+   "series": "aek",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1314h.png",
+   "code": "aek1314h",
+   "series": "aek",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   }
+  },
+  {
+   "file": "Kit body aek1516.png",
+   "code": "aek1516",
+   "series": "aek",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1516a.png",
+   "code": "aek1516a",
+   "series": "aek",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1516B.png",
+   "code": "aek1516B",
+   "series": "aek",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1516C.png",
+   "code": "aek1516C",
+   "series": "aek",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "plain",
+   "colours": [
+    "maroon",
+    "black"
+   ],
+   "hex": {
+    "maroon": "#7b0920",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1516h.png",
+   "code": "aek1516h",
+   "series": "aek",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1617a.png",
+   "code": "aek1617a",
+   "series": "aek",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "pink",
+    "white"
+   ],
+   "hex": {
+    "pink": "#fa5783",
+    "white": "#ffffff"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1617h.png",
+   "code": "aek1617h",
+   "series": "aek",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffe000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1718a.png",
+   "code": "aek1718a",
+   "series": "aek",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#898989",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1718c.png",
+   "code": "aek1718c",
+   "series": "aek",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "graphic",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "hex": {
+    "black": "#161616",
+    "grey": "#454545"
+   },
+   "measured": {},
+   "observed": {
+    "note": "dark tone-on-tone double-headed eagle print"
+   }
+  },
+  {
+   "file": "Kit body aek1718f.png",
+   "code": "aek1718f",
+   "series": "aek",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1718h.png",
+   "code": "aek1718h",
+   "series": "aek",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe000",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1819a.png",
+   "code": "aek1819a",
+   "series": "aek",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#fbdd00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1819h.png",
+   "code": "aek1819h",
+   "series": "aek",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe000",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 3
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1819t.png",
+   "code": "aek1819t",
+   "series": "aek",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "blue",
+    "yellow"
+   ],
+   "hex": {
+    "blue": "#001cff",
+    "yellow": "#fbdd00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1920a.png",
+   "code": "aek1920a",
+   "series": "aek",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffe000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek1920h.png",
+   "code": "aek1920h",
+   "series": "aek",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "diagonal",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe000",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body AEK1924.png",
+   "code": "AEK1924",
+   "series": "aek",
+   "season": "1924",
+   "seasonKind": "year",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffd700",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "note": "historic recreation, white collar"
+   }
+  },
+  {
+   "file": "Kit body aek1924.png",
+   "code": "aek1924",
+   "series": "aek",
+   "season": "1924",
+   "seasonKind": "year",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffd700",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "note": "historic recreation, white collar"
+   }
+  },
+  {
+   "file": "Kit body AEK1925.png",
+   "code": "AEK1925",
+   "series": "aek",
+   "season": "1925",
+   "seasonKind": "year",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffd700",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "note": "historic recreation, white collar"
+   }
+  },
+  {
+   "file": "Kit body AEK1931.png",
+   "code": "AEK1931",
+   "series": "aek",
+   "season": "1931",
+   "seasonKind": "year",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "hoops",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "hoops": 3
+   },
+   "observed": {
+    "note": "historic recreation, collared"
+   }
+  },
+  {
+   "file": "Kit body aek1931.png",
+   "code": "aek1931",
+   "series": "aek",
+   "season": "1931",
+   "seasonKind": "year",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "hoops",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "hoops": 3
+   },
+   "observed": {
+    "note": "historic recreation, collared"
+   }
+  },
+  {
+   "file": "Kit body aek2021a.png",
+   "code": "aek2021a",
+   "series": "aek",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "hoops",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "hex": {
+    "black": "#000000",
+    "grey": "#5d5d5d"
+   },
+   "measured": {
+    "hoops": 4
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek2021h.png",
+   "code": "aek2021h",
+   "series": "aek",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "half-and-half",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek2021t.png",
+   "code": "aek2021t",
+   "series": "aek",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "cream",
+    "grey"
+   ],
+   "hex": {
+    "cream": "#eeeedd",
+    "grey": "#888888"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aek2223h.png",
+   "code": "aek2223h",
+   "series": "aek",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#fff200",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh",
+    "note": "tiger-stripe print"
+   }
+  },
+  {
+   "file": "Kit body aek2324h v2.png",
+   "code": "aek2324h_v2",
+   "series": "aek",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "hoops",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff01",
+    "black": "#000000"
+   },
+   "measured": {
+    "hoops": 2
+   },
+   "observed": {
+    "makerMark": "swoosh",
+    "sponsorText": "(sponsor band)"
+   }
+  },
+  {
+   "file": "Kit body aek2324h.png",
+   "code": "aek2324h",
+   "series": "aek",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#fff200",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek2425a.png",
+   "code": "aek2425a",
+   "series": "aek",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#fff200"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek2425h.png",
+   "code": "aek2425h",
+   "series": "aek",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#fff200",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek2627a.png",
+   "code": "aek2627a",
+   "series": "aek",
+   "season": "2026/27",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "hex": {
+    "black": "#000000",
+    "grey": "#272727"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek2627h.png",
+   "code": "aek2627h",
+   "series": "aek",
+   "season": "2026/27",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe200",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek2627t.png",
+   "code": "aek2627t",
+   "series": "aek",
+   "season": "2026/27",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "black"
+   ],
+   "hex": {
+    "skyblue": "#77bbff",
+    "black": "#191919"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   }
+  },
+  {
+   "file": "Kit body aek8889(2).png",
+   "code": "aek8889(2)",
+   "series": "aek",
+   "season": "1988/89",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdd53",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "dotted print"
+   }
+  },
+  {
+   "file": "Kit body aek8889.png",
+   "code": "aek8889",
+   "series": "aek",
+   "season": "1988/89",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffc90e",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "dotted print"
+   }
+  },
+  {
+   "file": "Kit body aek9192.png",
+   "code": "aek9192",
+   "series": "aek",
+   "season": "1991/92",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffc90e",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "white print on yellow"
+   }
+  },
+  {
+   "file": "Kit body aek9395a.png",
+   "code": "aek9395a",
+   "series": "aek",
+   "season": "1993–95",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#7f7f7f",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "eagle silhouette print"
+   }
+  },
+  {
+   "file": "Kit body aek9496h.png",
+   "code": "aek9496h",
+   "series": "aek",
+   "season": "1994–96",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe320",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "large crest print on chest"
+   }
+  },
+  {
+   "file": "Kit body aek9900.png",
+   "code": "aek9900",
+   "series": "aek",
+   "season": "1999/00",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aek9900a.png",
+   "code": "aek9900a",
+   "series": "aek",
+   "season": "1999/00",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#ceccce",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aek9900h.png",
+   "code": "aek9900h",
+   "series": "aek",
+   "season": "1999/00",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0001a.png",
+   "code": "aekfc0001a",
+   "series": "aekfc",
+   "season": "2000/01",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0001h.png",
+   "code": "aekfc0001h",
+   "series": "aekfc",
+   "season": "2000/01",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0001t.png",
+   "code": "aekfc0001t",
+   "series": "aekfc",
+   "season": "2000/01",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "black"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0102t.png",
+   "code": "aekfc0102t",
+   "series": "aekfc",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "black"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0203a.png",
+   "code": "aekfc0203a",
+   "series": "aekfc",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "maroon",
+    "yellow"
+   ],
+   "hex": {
+    "maroon": "#880028",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0203h.png",
+   "code": "aekfc0203h",
+   "series": "aekfc",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0203t.png",
+   "code": "aekfc0203t",
+   "series": "aekfc",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "gradient",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "white": "#ffffff"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0304t.png",
+   "code": "aekfc0304t",
+   "series": "aekfc",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "white": "#ffffff"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc04a.png",
+   "code": "aekfc04a",
+   "series": "aekfc",
+   "season": "2004",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "white": "#ffffff"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc04h.png",
+   "code": "aekfc04h",
+   "series": "aekfc",
+   "season": "2004",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc04t.png",
+   "code": "aekfc04t",
+   "series": "aekfc",
+   "season": "2004",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "yellow"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0506a.png",
+   "code": "aekfc0506a",
+   "series": "aekfc",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0506h.png",
+   "code": "aekfc0506h",
+   "series": "aekfc",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0506t.png",
+   "code": "aekfc0506t",
+   "series": "aekfc",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#b5b7b6",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc05a.png",
+   "code": "aekfc05a",
+   "series": "aekfc",
+   "season": "2005",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc05h.png",
+   "code": "aekfc05h",
+   "series": "aekfc",
+   "season": "2005",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc05t.png",
+   "code": "aekfc05t",
+   "series": "aekfc",
+   "season": "2005",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#84b5ff",
+    "white": "#ffffff"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0607a.png",
+   "code": "aekfc0607a",
+   "series": "aekfc",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffe00b"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0607h.png",
+   "code": "aekfc0607h",
+   "series": "aekfc",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0607t.png",
+   "code": "aekfc0607t",
+   "series": "aekfc",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#b5cfff",
+    "white": "#f9f9f9"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0708a.png",
+   "code": "aekfc0708a",
+   "series": "aekfc",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0708h.png",
+   "code": "aekfc0708h",
+   "series": "aekfc",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0708t.png",
+   "code": "aekfc0708t",
+   "series": "aekfc",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0809a.png",
+   "code": "aekfc0809a",
+   "series": "aekfc",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0809h.png",
+   "code": "aekfc0809h",
+   "series": "aekfc",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0809t.png",
+   "code": "aekfc0809t",
+   "series": "aekfc",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "maroon",
+    "cream"
+   ],
+   "hex": {
+    "maroon": "#4b051e",
+    "cream": "#e2d5a9"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0910a.png",
+   "code": "aekfc0910a",
+   "series": "aekfc",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#dfc400"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc0910t.png",
+   "code": "aekfc0910t",
+   "series": "aekfc",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "grey",
+    "yellow"
+   ],
+   "hex": {
+    "grey": "#bcbcbc",
+    "yellow": "#ffff00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1011a.png",
+   "code": "aekfc1011a",
+   "series": "aekfc",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1011h.png",
+   "code": "aekfc1011h",
+   "series": "aekfc",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#1f1f1f"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1011t.png",
+   "code": "aekfc1011t",
+   "series": "aekfc",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "skyblue",
+    "orange"
+   ],
+   "hex": {
+    "skyblue": "#408fbf",
+    "orange": "#ff6000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1112h.png",
+   "code": "aekfc1112h",
+   "series": "aekfc",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1112t.png",
+   "code": "aekfc1112t",
+   "series": "aekfc",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1213a.png",
+   "code": "aekfc1213a",
+   "series": "aekfc",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1213h.png",
+   "code": "aekfc1213h",
+   "series": "aekfc",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "chest band",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#fdde25",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1213t.png",
+   "code": "aekfc1213t",
+   "series": "aekfc",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1314a.png",
+   "code": "aekfc1314a",
+   "series": "aekfc",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1314h.png",
+   "code": "aekfc1314h",
+   "series": "aekfc",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1415h.png",
+   "code": "aekfc1415h",
+   "series": "aekfc",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#fff03c",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 3
+   },
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1516a.png",
+   "code": "aekfc1516a",
+   "series": "aekfc",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1516h.png",
+   "code": "aekfc1516h",
+   "series": "aekfc",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffde00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc15f.png",
+   "code": "aekfc15f",
+   "series": "aekfc",
+   "season": "2015",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "sash",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffc700",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1718a.png",
+   "code": "aekfc1718a",
+   "series": "aekfc",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#b5b5bb",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1718c.png",
+   "code": "aekfc1718c",
+   "series": "aekfc",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "graphic",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "hex": {
+    "black": "#161616",
+    "grey": "#454545"
+   },
+   "measured": {},
+   "observed": {
+    "note": "dark tone-on-tone double-headed eagle print"
+   }
+  },
+  {
+   "file": "Kit body aekfc1718h.png",
+   "code": "aekfc1718h",
+   "series": "aekfc",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffde00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1819a.png",
+   "code": "aekfc1819a",
+   "series": "aekfc",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#f4d200"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc1819h.png",
+   "code": "aekfc1819h",
+   "series": "aekfc",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#f4d200",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 3
+   },
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc2526a.png",
+   "code": "aekfc2526a",
+   "series": "aekfc",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdd00"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc2526h.png",
+   "code": "aekfc2526h",
+   "series": "aekfc",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe200",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc2526t.png",
+   "code": "aekfc2526t",
+   "series": "aekfc",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "white",
+    "skyblue"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "skyblue": "#8acff6"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc7981.png",
+   "code": "aekfc7981",
+   "series": "aekfc",
+   "season": "1979–81",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  },
+  {
+   "file": "Kit body aekfc9900h.png",
+   "code": "aekfc9900h",
+   "series": "aekfc",
+   "season": "1999/00",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {}
+  }
+ ],
+ "kits": [
+  {
+   "code": "AEK1924",
+   "file": "Kit body AEK1924.png",
+   "season": "1924",
+   "seasonKind": "year",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffd700",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "note": "historic recreation, white collar"
+   },
+   "alts": [
+    "Kit body aek1924.png"
+   ]
+  },
+  {
+   "code": "AEK1925",
+   "file": "Kit body AEK1925.png",
+   "season": "1925",
+   "seasonKind": "year",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffd700",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "note": "historic recreation, white collar"
+   },
+   "alts": []
+  },
+  {
+   "code": "AEK1931",
+   "file": "Kit body AEK1931.png",
+   "season": "1931",
+   "seasonKind": "year",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "hoops",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "hoops": 3
+   },
+   "observed": {
+    "note": "historic recreation, collared"
+   },
+   "alts": [
+    "Kit body aek1931.png"
+   ]
+  },
+  {
+   "code": "aekfc7981",
+   "file": "Kit body aekfc7981.png",
+   "season": "1979–81",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek8889",
+   "file": "Kit body aek8889.png",
+   "season": "1988/89",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffc90e",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "dotted print"
+   },
+   "alts": [
+    "Kit body aek8889(2).png"
+   ]
+  },
+  {
+   "code": "aek9192",
+   "file": "Kit body aek9192.png",
+   "season": "1991/92",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "no-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffc90e",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "white print on yellow"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek9395a",
+   "file": "Kit body aek9395a.png",
+   "season": "1993–95",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#7f7f7f",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "eagle silhouette print"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek9496h",
+   "file": "Kit body aek9496h.png",
+   "season": "1994–96",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe320",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "note": "large crest print on chest"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek9900a",
+   "file": "Kit body aek9900a.png",
+   "season": "1999/00",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#ceccce",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek9900",
+   "file": "Kit body aek9900.png",
+   "season": "1999/00",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": [
+    "Kit body aek9900h.png",
+    "Kit body aekfc9900h.png"
+   ]
+  },
+  {
+   "code": "aekfc0001a",
+   "file": "Kit body aekfc0001a.png",
+   "season": "2000/01",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek0001",
+   "file": "Kit body aek0001.png",
+   "season": "2000/01",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "sponsorText": "MARFIN",
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aekfc0001h.png"
+   ]
+  },
+  {
+   "code": "aekfc0001t",
+   "file": "Kit body aekfc0001t.png",
+   "season": "2000/01",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "black"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek0002B",
+   "file": "Kit body aek0002B.png",
+   "season": "2000–02",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek0002",
+   "file": "Kit body aek0002.png",
+   "season": "2000–02",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek0102",
+   "file": "Kit body aek0102.png",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "sponsorText": "ALPHA DIGITAL",
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aekfc0102t",
+   "file": "Kit body aekfc0102t.png",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "black"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc0203a",
+   "file": "Kit body aekfc0203a.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "maroon",
+    "yellow"
+   ],
+   "hex": {
+    "maroon": "#880028",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc0203h",
+   "file": "Kit body aekfc0203h.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc0203t",
+   "file": "Kit body aekfc0203t.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "gradient",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "white": "#ffffff"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek0204a",
+   "file": "Kit body aek0204a.png",
+   "season": "2002–04",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aek0204B.png"
+   ]
+  },
+  {
+   "code": "aek0204",
+   "file": "Kit body aek0204.png",
+   "season": "2002–04",
+   "seasonKind": "range",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aekfc0304t",
+   "file": "Kit body aekfc0304t.png",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#84beff",
+    "white": "#ffffff"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek04a",
+   "file": "Kit body aek04a.png",
+   "season": "2004",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffde00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aekfc04a.png"
+   ]
+  },
+  {
+   "code": "aek04",
+   "file": "Kit body aek04.png",
+   "season": "2004",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffde00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aekfc04h.png"
+   ]
+  },
+  {
+   "code": "aekfc04t",
+   "file": "Kit body aekfc04t.png",
+   "season": "2004",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "yellow"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc05a",
+   "file": "Kit body aekfc05a.png",
+   "season": "2005",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc05h",
+   "file": "Kit body aekfc05h.png",
+   "season": "2005",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffef00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc05t",
+   "file": "Kit body aekfc05t.png",
+   "season": "2005",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#84b5ff",
+    "white": "#ffffff"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {},
+   "alts": [
+    "Kit body aek05C.png"
+   ]
+  },
+  {
+   "code": "aekfc0506a",
+   "file": "Kit body aekfc0506a.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc0506h",
+   "file": "Kit body aekfc0506h.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek0506",
+   "file": "Kit body aek0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "twin-series-inference",
+   "design": "plain",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#b5b7b6",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   },
+   "alts": [
+    "Kit body aekfc0506t.png"
+   ]
+  },
+  {
+   "code": "aek0607a",
+   "file": "Kit body aek0607a.png",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffe000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   },
+   "alts": [
+    "Kit body aekfc0607a.png"
+   ]
+  },
+  {
+   "code": "aek0607h",
+   "file": "Kit body aek0607h.png",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe000",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   },
+   "alts": [
+    "Kit body aekfc0607h.png"
+   ]
+  },
+  {
+   "code": "aek0607b",
+   "file": "Kit body aek0607b.png",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffef00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek0607t",
+   "file": "Kit body aek0607t.png",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "white"
+   ],
+   "hex": {
+    "skyblue": "#81c0ff",
+    "white": "#f9f9f9"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "triangle"
+   },
+   "alts": [
+    "Kit body aekfc0607t.png"
+   ]
+  },
+  {
+   "code": "aek0708a",
+   "file": "Kit body aek0708a.png",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc0708a.png"
+   ]
+  },
+  {
+   "code": "aek0708h",
+   "file": "Kit body aek0708h.png",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aek0708A.png",
+    "Kit body aekfc0708h.png"
+   ]
+  },
+  {
+   "code": "aek0708t",
+   "file": "Kit body aek0708t.png",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark",
+    "sponsorText": "LG"
+   },
+   "alts": [
+    "Kit body aek0708T.png",
+    "Kit body aekfc0708t.png"
+   ]
+  },
+  {
+   "code": "aek0809a",
+   "file": "Kit body aek0809a.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffff00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc0809a.png"
+   ]
+  },
+  {
+   "code": "aek0809h",
+   "file": "Kit body aek0809h.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc0809h.png"
+   ]
+  },
+  {
+   "code": "aek0809t",
+   "file": "Kit body aek0809t.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "maroon",
+    "cream"
+   ],
+   "hex": {
+    "maroon": "#60002c",
+    "cream": "#eed8b3"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc0809t.png"
+   ]
+  },
+  {
+   "code": "aek0910a",
+   "file": "Kit body aek0910a.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#dfc400"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc0910a.png"
+   ]
+  },
+  {
+   "code": "aek0910h",
+   "file": "Kit body aek0910h.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek0910t",
+   "file": "Kit body aek0910t.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "grey",
+    "yellow"
+   ],
+   "hex": {
+    "grey": "#c1c1c1",
+    "yellow": "#ffff00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc0910t.png"
+   ]
+  },
+  {
+   "code": "aek1011a",
+   "file": "Kit body aek1011a.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark",
+    "sponsorText": "KINO"
+   },
+   "alts": [
+    "Kit body aekfc1011a.png"
+   ]
+  },
+  {
+   "code": "aek1011h",
+   "file": "Kit body aek1011h.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#1f1f1f"
+   },
+   "measured": {
+    "stripes": 2
+   },
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc1011h.png"
+   ]
+  },
+  {
+   "code": "aek1011t",
+   "file": "Kit body aek1011t.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "skyblue",
+    "orange"
+   ],
+   "hex": {
+    "skyblue": "#0080aa",
+    "orange": "#ff6000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark",
+    "sponsorText": "KINO"
+   },
+   "alts": [
+    "Kit body aek1011T.png",
+    "Kit body aekfc1011t.png"
+   ]
+  },
+  {
+   "code": "aek1112h",
+   "file": "Kit body aek1112h.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc1112h.png"
+   ]
+  },
+  {
+   "code": "aek1112t",
+   "file": "Kit body aek1112t.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark",
+    "sponsorText": "KINO"
+   },
+   "alts": [
+    "Kit body aekfc1112t.png"
+   ]
+  },
+  {
+   "code": "aek1213a",
+   "file": "Kit body aek1213a.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#fdde25"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc1213a.png"
+   ]
+  },
+  {
+   "code": "aek1213h",
+   "file": "Kit body aek1213h.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "chest band",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffd600",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aek1213H.png",
+    "Kit body aekfc1213h.png"
+   ]
+  },
+  {
+   "code": "aek1213t",
+   "file": "Kit body aek1213t.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc1213t.png"
+   ]
+  },
+  {
+   "code": "aek1314a",
+   "file": "Kit body aek1314a.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdf00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc1314a.png"
+   ]
+  },
+  {
+   "code": "aek1314h",
+   "file": "Kit body aek1314h.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "N-mark"
+   },
+   "alts": [
+    "Kit body aekfc1314h.png"
+   ]
+  },
+  {
+   "code": "aekfc1415h",
+   "file": "Kit body aekfc1415h.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#fff03c",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 3
+   },
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc15f",
+   "file": "Kit body aekfc15f.png",
+   "season": "2015",
+   "seasonKind": "year",
+   "seasonAmbiguous": true,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "sash",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffc700",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek1516a",
+   "file": "Kit body aek1516a.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "sash",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aek1516B.png",
+    "Kit body aekfc1516a.png"
+   ]
+  },
+  {
+   "code": "aek1516",
+   "file": "Kit body aek1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "twin-series-inference",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aek1516h.png",
+    "Kit body aekfc1516h.png"
+   ]
+  },
+  {
+   "code": "aek1516C",
+   "file": "Kit body aek1516C.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "plain",
+   "colours": [
+    "maroon",
+    "black"
+   ],
+   "hex": {
+    "maroon": "#7b0920",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek1617a",
+   "file": "Kit body aek1617a.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "pink",
+    "white"
+   ],
+   "hex": {
+    "pink": "#fa5783",
+    "white": "#ffffff"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek1617h",
+   "file": "Kit body aek1617h.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffe000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek1718a",
+   "file": "Kit body aek1718a.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "grey",
+    "black"
+   ],
+   "hex": {
+    "grey": "#898989",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aekfc1718a.png"
+   ]
+  },
+  {
+   "code": "aek1718h",
+   "file": "Kit body aek1718h.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe000",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aekfc1718h.png"
+   ]
+  },
+  {
+   "code": "aek1718c",
+   "file": "Kit body aek1718c.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "graphic",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "hex": {
+    "black": "#161616",
+    "grey": "#454545"
+   },
+   "measured": {},
+   "observed": {
+    "note": "dark tone-on-tone double-headed eagle print"
+   },
+   "alts": [
+    "Kit body aekfc1718c.png"
+   ]
+  },
+  {
+   "code": "aek1718f",
+   "file": "Kit body aek1718f.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "special",
+   "typeSource": "filename-suffix-unrecognised",
+   "design": "plain",
+   "colours": [
+    "white",
+    "black"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek1819a",
+   "file": "Kit body aek1819a.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#fbdd00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aekfc1819a.png"
+   ]
+  },
+  {
+   "code": "aek1819h",
+   "file": "Kit body aek1819h.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe000",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 3
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": [
+    "Kit body aekfc1819h.png"
+   ]
+  },
+  {
+   "code": "aek1819t",
+   "file": "Kit body aek1819t.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "blue",
+    "yellow"
+   ],
+   "hex": {
+    "blue": "#001cff",
+    "yellow": "#fbdd00"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek1920a",
+   "file": "Kit body aek1920a.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffe000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek1920h",
+   "file": "Kit body aek1920h.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "diagonal",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe000",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek2021a",
+   "file": "Kit body aek2021a.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "hoops",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "hex": {
+    "black": "#000000",
+    "grey": "#5d5d5d"
+   },
+   "measured": {
+    "hoops": 4
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek2021h",
+   "file": "Kit body aek2021h.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "half-and-half",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffdf00",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek2021t",
+   "file": "Kit body aek2021t.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "cream",
+    "grey"
+   ],
+   "hex": {
+    "cream": "#eeeedd",
+    "grey": "#888888"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek2223h",
+   "file": "Kit body aek2223h.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#fff200",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh",
+    "note": "tiger-stripe print"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek2324h_v2",
+   "file": "Kit body aek2324h v2.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "hoops",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffff01",
+    "black": "#000000"
+   },
+   "measured": {
+    "hoops": 2
+   },
+   "observed": {
+    "makerMark": "swoosh",
+    "sponsorText": "(sponsor band)"
+   },
+   "alts": [
+    "Kit body aek2324h.png"
+   ]
+  },
+  {
+   "code": "aek2425a",
+   "file": "Kit body aek2425a.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#fff200"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek2425h",
+   "file": "Kit body aek2425h.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "contrasting sleeves",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#fff200",
+    "black": "#000000"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aekfc2526a",
+   "file": "Kit body aekfc2526a.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "black",
+    "yellow"
+   ],
+   "hex": {
+    "black": "#000000",
+    "yellow": "#ffdd00"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc2526h",
+   "file": "Kit body aekfc2526h.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe200",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 5
+   },
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aekfc2526t",
+   "file": "Kit body aekfc2526t.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "graphic",
+   "colours": [
+    "white",
+    "skyblue"
+   ],
+   "hex": {
+    "white": "#ffffff",
+    "skyblue": "#8acff6"
+   },
+   "measured": {},
+   "observed": {},
+   "alts": []
+  },
+  {
+   "code": "aek2627a",
+   "file": "Kit body aek2627a.png",
+   "season": "2026/27",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "away",
+   "typeSource": "filename-suffix",
+   "design": "pinstripes",
+   "colours": [
+    "black",
+    "grey"
+   ],
+   "hex": {
+    "black": "#000000",
+    "grey": "#272727"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek2627h",
+   "file": "Kit body aek2627h.png",
+   "season": "2026/27",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "home",
+   "typeSource": "filename-suffix",
+   "design": "stripes",
+   "colours": [
+    "yellow",
+    "black"
+   ],
+   "hex": {
+    "yellow": "#ffe200",
+    "black": "#000000"
+   },
+   "measured": {
+    "stripes": 4
+   },
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  },
+  {
+   "code": "aek2627t",
+   "file": "Kit body aek2627t.png",
+   "season": "2026/27",
+   "seasonKind": "season",
+   "seasonAmbiguous": false,
+   "type": "third",
+   "typeSource": "filename-suffix",
+   "design": "plain",
+   "colours": [
+    "skyblue",
+    "black"
+   ],
+   "hex": {
+    "skyblue": "#77bbff",
+    "black": "#191919"
+   },
+   "measured": {},
+   "observed": {
+    "makerMark": "swoosh"
+   },
+   "alts": []
+  }
+ ],
+ "kitCount": 84
+}

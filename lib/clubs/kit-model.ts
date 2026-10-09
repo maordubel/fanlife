@@ -10,8 +10,8 @@ import {SWATCH} from './rumble-kit'
  * Colours are the club-safe swatches of `rumble-kit` (rule 95): the very hex the colour policy judged is the hex painted.
  * This file is pure and client-safe — no theme import, no data access.
  */
-export type ColourKey='red'|'white'|'cream'|'blue'|'navy'|'green'|'black'|'purple'|'grey'
-export const COLOUR_KEYS:readonly ColourKey[]=['red','white','cream','blue','navy','green','black','purple','grey']
+export type ColourKey='red'|'white'|'cream'|'blue'|'navy'|'green'|'black'|'purple'|'grey'|'yellow'|'maroon'|'skyblue'|'pink'|'orange'
+export const COLOUR_KEYS:readonly ColourKey[]=['red','white','cream','blue','navy','green','black','purple','grey','yellow','maroon','skyblue','pink','orange']
 /** the data says "gray" in places; there is one grey */
 export const colourKey=(raw:string):ColourKey|null=>{const k=raw.trim().toLowerCase().replace('gray','grey');return (COLOUR_KEYS as readonly string[]).includes(k)?k as ColourKey:null}
 export const colourHex=(k:ColourKey)=>SWATCH[k]!

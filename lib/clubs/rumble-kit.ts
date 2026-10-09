@@ -12,8 +12,12 @@ export type RumbleKit={id:string;season:string;design:string|null;colours:string
 export type RumbleWardrobe={home:RumbleKit[];away:RumbleKit[]}
 export type Worn={source:'archive';kit:RumbleKit}|{source:'livery';variant:'home'|'away'}
 
-/** The colours KitPlate can paint (its token map), each with a representative swatch so the club's own colour policy can judge it. */
-export const SWATCH:Readonly<Record<string,string>>={red:'#C8102E',white:'#FFFFFF',cream:'#EFE6D4',blue:'#1F4E9E',navy:'#1B2A5E',green:'#1F6B3B',black:'#141210',purple:'#4B2A7A',grey:'#8A8A8A',gray:'#8A8A8A'}
+/** The colours KitPlate can paint (its token map), each with a representative swatch so the club's own colour policy can judge it.
+ * yellow, maroon, skyblue, pink and orange joined on 9.10.2026 for AEK Athens, whose own colour is yellow. The owner said "מותר צהוב"
+ * ("yellow is allowed") while the AEK kit archive was being built. Whether a club may SHOW a colour is still decided per club by
+ * `forbiddenColor` (Hapoel Tel Aviv's legacy yellow rule keeps dropping it); rule 8 and the brand scan of app/ and components/ are untouched,
+ * because no yellow hex is written in either — it lives here, in lib. */
+export const SWATCH:Readonly<Record<string,string>>={red:'#C8102E',white:'#FFFFFF',cream:'#EFE6D4',blue:'#1F4E9E',navy:'#1B2A5E',green:'#1F6B3B',black:'#141210',purple:'#4B2A7A',grey:'#8A8A8A',gray:'#8A8A8A',yellow:'#F3C613',maroon:'#6B1E2E',skyblue:'#7FB6E6',pink:'#F0668E',orange:'#E8731A'}
 
 /** keep only paintable colours the club page is allowed to show */
 export function allowedColours(colours:string[],forbidden:(hex:string)=>boolean):string[]{
