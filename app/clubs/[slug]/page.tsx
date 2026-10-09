@@ -12,7 +12,6 @@ import {momentFor} from '@/lib/clubs/today'
 import {belovedOf} from '@/lib/clubs/beloved'
 import {ClubEntrance} from '@/components/clubs/ClubEntrance'
 import {FixtureCard} from '@/components/clubs/FixtureCard'
-import {ClubRounds} from '@/components/clubs/ClubRounds'
 import {Dye} from '@/components/master/Dye'
 import {Seal,TornBlocks,Cutout} from '@/components/master/Poster'
 import {readState} from '@/lib/master/store'
@@ -65,7 +64,6 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     <h1 id="club-h" style={{['--len' as string]:Math.max(6,...c.name.split(/\s+/).map(w=>w.length))}}>{c.name}</h1>
     <p className="mag-homeplace">{place.map((p,i)=><span key={p}>{i>0&&<i aria-hidden="true">|</i>}{p}</span>)}</p>
     {world.nicknames.length>0&&<p className="club-aka" data-testid="club-aka">{world.nicknames.map(n=><span key={n.text}>{n.text}{n.local&&<> <bdi lang={n.script} dir="auto">{n.local}</bdi></>}</span>)}</p>}
-    <p className="mag-homelead">{fill(copy.homeLead)}</p>
     {core&&open.length>0&&<div className="mag-homeshare"><ShareComposer draft={coverShare(c.id,states.filter(x=>x.allowed&&x.playable).map(x=>SHARED_GATES.find(g=>g.key===x.key)!.name))} label={copy.homeShare}/></div>}
    </div>
    <div className="mag-homestage" aria-hidden="true"><TornBlocks seed={c.id} pattern={lv?.pattern}/><Cutout art="kicker" className="mag-homekick"/></div>
@@ -74,26 +72,10 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {fx&&lv?<FixtureCard clubId={id} clubName={c.name} fx={fx} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta}}/>
   :world.ground&&<section className="mag-section club-matchday" aria-labelledby="md-h"><article className="mag-homecard"><div><p className="mag-kicker">{copy.homeVoice}</p><h2 id="md-h">{world.ground.name}{world.ground.local&&<> <bdi className="club-local" lang={world.ground.script} dir="auto">{world.ground.local}</bdi></>}</h2><p>{world.ground.line}</p></div></article></section>}
   {core&&<ClubToday clubId={id} clubName={c.name} moment={momentFor(core.data,new Date())} pick={pickGate?{key:pickGate.key,name:games[`gate.${pickGate.key}`]}:null} locale={locale} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/>}
-  {core&&<section className="mag-section" id="gates" aria-labelledby="gates-h"><hr className="mag-rule"/><div className="mag-head"><div><p className="mag-kicker">{copy.wallKicker}</p><h2 className="mag-h2" id="gates-h">{copy.wallTitle}</h2><p className="mag-fine">{fill(copy.wallLead)}</p></div></div>
-   <ClubGateWall clubId={id} states={states} locale={locale} games={games} soon={copy.wallSoon} gateWord={copy.wallGate} beloved={belovedOf(world.terrace,open)} featuredWord={copy.wallFeatured} featureTitle={fill(copy.wallFeatureShirt)} terraceLine={world.terrace?.line}/></section>}
+  <section className="mag-section club-lifebar" id="life-block"><div className="club-lifebar-in" id="life" data-life-entry={life.state}><Dye art="face" className="club-lifebar-face"/><div className="club-lifebar-text"><p className="mag-kicker">LIFE</p><h2>{copy.lifeTitle}</h2><p>{life.href?copy.lifeOpen:copy.lifeWorkshop}</p></div>{life.href&&<Link className="mag-cta red min-h-tap" href={life.href}>{copy.life}</Link>}</div></section>
+  {core&&<section className="mag-section" id="gates" aria-labelledby="gates-h"><hr className="mag-rule"/><div className="mag-head"><div><p className="mag-kicker">{copy.wallKicker}</p><h2 className="mag-h2" id="gates-h">{copy.wallTitle}</h2></div></div>
+   <ClubGateWall clubId={id} states={states} locale={locale} games={games} soon={copy.wallSoon} gateWord={copy.wallGate} beloved={belovedOf(world.terrace,open)} featuredWord={copy.wallFeatured} featureTitle={fill(copy.wallFeatureShirt)} terraceLine={world.terrace?.line} away={{open:id==='hapoel-tel-aviv',href:'/away-days',name:copy.awayName,note:copy.awayNote}}/></section>}
   {core&&<section className="mag-section" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
-  {core&&<section className="mag-section club-rounds-sec" aria-labelledby="rounds-h"><hr className="mag-rule"/><div className="mag-head"><div><p className="mag-kicker">{copy.homeRounds}</p><h2 className="mag-h2" id="rounds-h">{games.gamesTitle}</h2></div><Link className="mag-chip" href={clubHref(id,'play',locale)}>{copy.homePlayCta} →</Link></div>
-   <ClubRounds clubId={id} locale={locale} names={names} none={copy.homeRoundsNone}/>
-
-  </section>}
-  <section className="mag-section" id="life-block">
-   <article className="mag-homecard ink" id="life" data-life-entry={life.state}><Dye art="face" className="mag-homeface"/><div><p className="mag-kicker">LIFE</p><h2>{copy.lifeTitle}</h2>{life.href?<><p>{copy.lifeOpen}</p><Link className="mag-cta red" href={life.href}>{copy.life}</Link></>:<p>{copy.lifeWorkshop}</p>}</div></article>
-  </section>
-  {core&&<section className="mag-section" id="shirts">
-   <hr className="mag-rule"/>
-   <div className="mag-head"><div><p className="mag-kicker">{copy.shirtsKicker}</p><h2 className="mag-h2">{copy.shirtsTitle}</h2><p className="mag-fine">{fill(copy.shirtsLead)}</p></div></div>
-   <div className="mag-shirtdoors">
-    <Link className="mag-homecard min-h-tap" href={`/shirts?club=${c.id}`}><div><h3>{copy.shirtsArchive}</h3><p>{copy.shirtsArchiveNote}</p></div></Link>
-    <Link className="mag-homecard min-h-tap" href="/closet"><div><h3>{copy.shirtsOwn}</h3><p>{copy.shirtsOwnNote}</p></div></Link>
-    <Link className="mag-homecard min-h-tap" href="/market"><div><h3>{copy.shirtsSell}</h3><p>{copy.shirtsSellNote}</p></div></Link>
-    <Link className="mag-homecard min-h-tap" href="/auction"><div><h3>{copy.shirtsAuction}</h3><p>{copy.shirtsAuctionNote}</p></div></Link>
-   </div>
-  </section>}
   {core&&<section className="mag-section" id="terrace"><hr className="mag-rule"/><div className="mag-hometerrace"><Dye art="terrace-scarf" className="mag-homescarf"/><div className="mag-head"><div><p className="mag-kicker">{copy.homeTerrace}</p><h2 className="mag-h2">{world.terrace?.name??copy.homeTerraceTitle}</h2></div><Link className="mag-chip" href={clubHref(id,'terrace',locale)}>{world.terraceTab} →</Link></div></div>{world.terrace&&<p className="club-terrace-line">{world.terrace.line}</p>}</section>}
  </main></ClubSurface>
 }

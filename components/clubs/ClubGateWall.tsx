@@ -12,7 +12,7 @@ import {wallNumbers,type Beloved} from '@/lib/clubs/beloved'
  * gate's name. All thirteen hang on the wall; a gate the club's archive cannot fill yet wears a SOON stamp and is not a link.
  * Gate 11 is the away end: no club colour at all.
  */
-export function ClubGateWall({clubId,states,locale,games,soon,gateWord,beloved,featuredWord,featureTitle,terraceLine}:{clubId:string;states:readonly GateState[];locale:UiLocale;games:ReturnType<typeof gameCopy>;soon:string;gateWord:string;beloved?:Beloved|null;featuredWord?:string;featureTitle?:string;terraceLine?:string}) {
+export function ClubGateWall({clubId,states,locale,games,soon,gateWord,beloved,featuredWord,featureTitle,terraceLine,away}:{clubId:string;states:readonly GateState[];locale:UiLocale;games:ReturnType<typeof gameCopy>;soon:string;gateWord:string;beloved?:Beloved|null;featuredWord?:string;featureTitle?:string;terraceLine?:string;away?:{open:boolean;href:string;name:string;note:string}}) {
  const on=(k:string)=>{const x=states.find(s=>s.key===k);return x?.allowed&&x.playable?1:0}
  const num=wallNumbers(beloved ?? null),big=beloved?SHARED_GATES.find(g=>g.key===beloved.feature):null
  return <ol className="gatewall" data-testid="gate-wall">{beloved&&big&&<li className="gp-cell gp-feature"><Link className="gp gp-big min-h-tap" data-gate={big.key} data-beloved={beloved.number??'shirt'} href={clubHref(clubId,big.key,locale)}>
@@ -29,5 +29,14 @@ export function ClubGateWall({clubId,states,locale,games,soon,gateWord,beloved,f
   </>
   return <li key={g.key} className="gp-cell">{open
    ?<Link className="gp min-h-tap" data-gate={g.key} data-away={away||undefined} href={clubHref(clubId,g.key,locale)}>{inner}</Link>
-   :<div className="gp gp-off" data-gate={g.key} data-away={away||undefined} aria-disabled="true">{inner}</div>}</li>})}</ol>
+   :<div className="gp gp-off" data-gate={g.key} data-away={away||undefined} aria-disabled="true">{inner}</div>}</li>})}{away&&<li className="gp-cell">{away.open?<Link className="gp gp-away min-h-tap" data-gate="away-days" href={away.href}>{awayInner(away,gateWord,soon,true)}</Link>:<div className="gp gp-away gp-off" data-gate="away-days" aria-disabled="true">{awayInner(away,gateWord,soon,false)}</div>}</li>}</ol>
+}
+
+function awayInner(a:{name:string;note:string},_g:string,soon:string,open:boolean){
+ return <>
+  <span className="gp-head"><b>AWAY</b><i dir="ltr">✈</i></span>
+  <span className="gp-well" aria-hidden="true"><span className="gp-num gp-shift">✈</span><span className="gp-num gp-top">✈</span></span>
+  <span className="gp-foot"><b>{a.name}</b><small>{a.note}</small></span>
+  {!open&&<span className="gp-soon" aria-hidden="true">{soon}</span>}
+ </>
 }

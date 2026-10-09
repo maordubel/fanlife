@@ -56,3 +56,6 @@ thing that matters most to *its* supporters emphasised.
 - **Numbers are per club (owner, 8.10.2026).** The wall's printed numbers start as The Worker's, then `wallNumbers()` gives the featured game the club's own terrace number and the game that held it takes the vacated one (Olympiacos: shirt designer 7, terrace vote 4). Still 1–13, each once; display only — links, access and data go by gate key. If the club's number is already a shirt gate's (Hapoel: 5 = the shirt collection) nothing moves.
 - Greek clubs' terrace research beyond Gate 7 / Gate 13 (AEK, etc.) needs a sourced `world.json` before a number can be shown.
 - Shirt closet/market/auction are account-backed; the card counts only this device until sign-in.
+
+## Compact club-home standard (9.10.2026)
+Every club home (new clubs inherit it, no per-club work) is in this order: small hero → slim next-match card → slim "Today at the club" → narrow LIFE band → the gate wall (beloved gate first) with the AWAY DAYS square last (open for Hapoel Tel Aviv, SOON stamp elsewhere until a club has its own away data) → supporter card → terrace. No "The games" or "Shirt corner" sections; the shirt game lives in the beloved gate. Styles: the "compact standard" block at the end of `app/club-app.css`.
