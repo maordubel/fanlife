@@ -7,7 +7,7 @@ export type ClubTab=typeof CLUB_TABS[number]
 /** Which tab a path segment under /clubs/<id>/ belongs to. No segment is the home page. */
 const SEGMENT_TAB:Record<string,ClubTab>={
  play:'play',life:'life',history:'history',terrace:'terrace',
- archive:'history',timeline:'history',derby:'history',kits:'history',
+ archive:'history',timeline:'history',derby:'history',kits:'history','kit-archive':'history',
  polls:'terrace',meetings:'terrace',
 }
 export function tabOfSegment(segment:string|null|undefined):ClubTab{
