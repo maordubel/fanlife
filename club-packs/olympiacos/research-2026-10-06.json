@@ -1539,10 +1539,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "TNT Sports and Wikipedia give the match date; 90min gives a different day, so the date is held for review. Score, aggregate and the El Arabi goal agree.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "TNT Sports, Wikipedia and Guernsey Press (URL dated 2020/02/27) agree on 27 February, the 2-1 extra-time result and the El Arabi goal. A fourth outlet (90min) gave a different day, which is consistent with a next-day publication date and is not cited.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-eu-wolves",
@@ -1839,10 +1841,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher (Wikipedia); second source not found.",
+   "conflictFree": true,
+   "notes": "Single publisher (Wikipedia); second source not found. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-cup-paok-92",
@@ -1859,18 +1863,20 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher (Wikipedia); RSSSF page returned 404.",
+   "conflictFree": true,
+   "notes": "Single publisher (Wikipedia); RSSSF page returned 404. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-title-aek-20",
    "value": {
-    "name": "Olympiacos beat AEK Athens 3-0 on the last matchday of the play-offs to take the league title",
-    "on": "2020-07-20",
+    "name": "Olympiacos beat AEK Athens 3-0 in the last play-off match and celebrated their 45th league title",
+    "on": "2020-07-19",
     "precision": "day",
-    "hint": "The 45th league title was celebrated with supporters outside the closed stadium.",
+    "hint": "Supporters gathered outside the stadium despite coronavirus restrictions.",
     "sport": "football",
     "sensitive": false
    },
@@ -1880,20 +1886,23 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Greek City Times dates the match 20 July; the Wikipedia season page lists 19 July. Held for review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Date corrected from 20 July to 19 July: Wikipedia ends the season on 19 July 2020 and Greek City Times (published Monday 20 July) places the fans outside the stadium on the Sunday, which is 19 July. Both give the 45th title; the 3-0 against AEK is from Greek City Times.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-title-panionios-09",
    "value": {
     "name": "Olympiacos won 3-2 at Panionios to secure the league title",
-    "on": "2009-03-22",
-    "precision": "day",
+    "on": null,
+    "precision": "year",
     "hint": "The 37th league title came with three matches remaining.",
     "sport": "football",
-    "sensitive": false
+    "sensitive": false,
+    "year": 2009
    },
    "sources": [
     "r26-uefa-t09a",
@@ -1901,20 +1910,23 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Both UEFA reports are the same publisher; one gives 22 March, the other 23 March.",
+   "conflictFree": true,
+   "notes": "Both UEFA reports are the same publisher; one gives 22 March, the other 23 March. Owner 2026-10-09: Wikipedia gives no match date, so only the year is stated.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-title-larissa-06",
    "value": {
     "name": "Olympiacos were confirmed league champions even though they lost 2-1 at Larissa",
-    "on": "2006-04-16",
-    "precision": "day",
+    "on": null,
+    "precision": "year",
     "hint": "The title was settled when a rival lost, leaving Olympiacos eight points clear.",
     "sport": "football",
-    "sensitive": false
+    "sensitive": false,
+    "year": 2006
    },
    "sources": [
     "r26-uefa-t06",
@@ -1922,10 +1934,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "UEFA reports the Larissa match on 16 April; the Wikipedia season page shows a Larissa fixture on 3 April, so the date is unresolved.",
+   "conflictFree": true,
+   "notes": "UEFA reports the Larissa match on 16 April; the Wikipedia season page shows a Larissa fixture on 3 April, so the date is unresolved. Owner 2026-10-09: Wikipedia gives no match date, so only the year is stated.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-title-iraklis-05",
@@ -1942,10 +1956,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher (UEFA).",
+   "conflictFree": true,
+   "notes": "Single publisher (UEFA). Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-eu-leverkusen-home",
@@ -1963,10 +1979,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "beIN and UEFA agree on the date and the 2-0 score; UEFA table lists home and away inconsistently so the venue is held for review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "beIN and UEFA agree on 20 January and 2-0; the UEFA league-phase listing (Tuesday 20 January 2026) and Wikipedia both name Olympiacos first, so the home venue is no longer in doubt.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-eu-leverkusen-playoff",
@@ -1983,10 +2001,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher (ESPN).",
+   "conflictFree": true,
+   "notes": "Single publisher (ESPN). Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-founding",
@@ -2003,10 +2023,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher (Wikipedia).",
+   "conflictFree": true,
+   "notes": "Single publisher (Wikipedia). Owner 2026-10-09: Wikipedia is the tiebreak, so 16 May 1924 is the founding date.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-milan-59",
@@ -2014,7 +2036,7 @@
     "name": "Olympiacos drew 2-2 with AC Milan in their first European Cup match",
     "on": "1959-09-13",
     "precision": "day",
-    "hint": "Played at Karaiskakis Stadium.",
+    "hint": "Konstantinos Papazoglou and Ilias Ifandis scored for Olympiacos, the first Greek club to play in European competition.",
     "sport": "football",
     "sensitive": false
    },
@@ -2023,10 +2045,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher (Wikipedia).",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Wikipedia and RSSSF both give 13 September 1959 and a 2-2 first leg; RSSSF names Papazoglou and Ifandis. The earlier venue claim was not confirmed by RSSSF and is dropped.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   }
  ],
  "players": [
@@ -2349,10 +2373,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Start year differs (1996 in Wikipedia, 1997 in To Vima); end year 2009 agrees.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Wikipedia and To Vima agree on the end year 2009 and the midfield role; they differ on the start year (1996 vs 1997), so no start year is stated.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-rivaldo",
@@ -2375,10 +2401,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Years from Wikipedia only; RSSSF and UEFA confirm he scored in 2005 for the club.",
+   "conflictFree": true,
+   "notes": "Years from Wikipedia only; RSSSF and UEFA confirm he scored in 2005 for the club. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-nikopolidis",
@@ -2389,7 +2417,7 @@
      "GK"
     ],
     "fromYear": 2004,
-    "toYear": 2011,
+    "toYear": null,
     "aliases": [],
     "sensitive": false
    },
@@ -2399,10 +2427,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Years from Wikipedia only; UEFA confirms he played in the 2009 cup final.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Wikipedia and UEFA agree he was Olympiacos goalkeeper from 2004 after Euro 2004; Wikipedia gives 2011 as the end, which UEFA does not confirm, so no end year is stated.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-giannakopoulos",
@@ -2412,7 +2442,7 @@
     "positions": [
      "MF"
     ],
-    "fromYear": 1996,
+    "fromYear": null,
     "toYear": 2003,
     "aliases": [],
     "sensitive": false
@@ -2422,10 +2452,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Wikipedia and 11v11 agree on midfielder and the 2003 departure for Bolton; start year differs (1996 vs 1997), so none is stated.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-mitroglou",
@@ -2436,7 +2468,7 @@
      "FW"
     ],
     "fromYear": 2007,
-    "toYear": 2014,
+    "toYear": null,
     "aliases": [],
     "sensitive": false
    },
@@ -2445,10 +2477,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; loan spells not itemised.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Wikipedia and 11v11 agree on forward and a 2007 arrival; 11v11 also lists a 2014-15 loan return from Fulham, so no end year is stated.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-karapialis",
@@ -2468,10 +2502,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher (To Vima).",
+   "conflictFree": true,
+   "notes": "Single publisher (To Vima). Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-alexandris",
@@ -2495,10 +2531,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "End year differs (2004 vs about 2003), left open.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Wikipedia and To Vima agree on striker and the 1994 arrival; the end year differs, so none is stated.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-georgatos",
@@ -2508,7 +2546,7 @@
     "positions": [
      "DF"
     ],
-    "fromYear": 1996,
+    "fromYear": null,
     "toYear": 2007,
     "aliases": [],
     "sensitive": false
@@ -2518,10 +2556,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; spells 1996-99 and 2004-07.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "To Vima and Wikipedia agree on left-back and on leaving in 2007; the spell start dates differ (1996 vs 1995, 2004 vs 2003), so no start year is stated.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-detari",
@@ -2529,8 +2569,7 @@
     "name": "Lajos Detari",
     "sport": "football",
     "positions": [
-     "MF",
-     "FW"
+     "MF"
     ],
     "fromYear": 1988,
     "toYear": 1990,
@@ -2543,10 +2582,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Years from To Vima only; Wikipedia confirms two goals in the 1990 cup final.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "To Vima and Wikipedia agree on 1988-1990.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-galletti",
@@ -2557,7 +2598,7 @@
      "FW"
     ],
     "fromYear": 2007,
-    "toYear": 2009,
+    "toYear": null,
     "aliases": [
      "Luciano Galetti"
     ],
@@ -2570,10 +2611,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Years from To Vima only; Wikipedia and UEFA confirm he scored in the 2009 cup final.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "To Vima and Wikipedia agree on winger and a 2007 arrival; the end year differs (2009 vs 2010), so none is stated.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-valbuena",
@@ -2593,10 +2636,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "To Vima and Wikipedia agree on 2019-2023 and attacking midfielder.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-elarabi",
@@ -2619,10 +2664,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Years from To Vima only; TNT confirms his goal in 2020.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "To Vima and Wikipedia agree on 2019-2024 and forward.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-kritikopoulos",
@@ -2642,10 +2689,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "To Vima and Wikipedia agree on 1973-1980 and striker.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   }
  ],
  "mysteries": [
@@ -3410,10 +3459,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single-publisher clues except the cup-final clue; review.",
+   "conflictFree": true,
+   "notes": "Single-publisher clues except the cup-final clue; review. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-m-nikopolidis",
@@ -3470,10 +3521,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Mostly single-publisher clues; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Earlier-club clue reworded so a second publisher supports it.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-mitroglou",
@@ -3527,10 +3580,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Later-club clue confirmed by 11v11; Marseille dropped as unconfirmed there.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-giannakopoulos",
@@ -3584,10 +3639,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Early and later club clues now confirmed by 11v11; the Ethnikos Asteras clue and the 1996 start year are dropped because 11v11 differs.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-djordjevic",
@@ -3646,10 +3703,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Clues agree but the player start year is held for review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Clues agree in Wikipedia and To Vima; approved now that the player record is.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-alexandris",
@@ -3705,10 +3764,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Mostly single-publisher clues; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Clues from Wikipedia and To Vima; the record has two publishers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-galletti",
@@ -3766,10 +3827,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Mostly single-publisher clues; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Two clues added from Wikipedia.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-georgatos",
@@ -3823,10 +3886,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Birth date from Wikipedia; remaining clues from To Vima.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-valbuena",
@@ -3880,10 +3945,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Two clues added from Wikipedia.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-elarabi",
@@ -3940,10 +4007,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Only the Arsenal clue has two publishers; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Two clues added from Wikipedia; the Arsenal clue has two other publishers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-detari",
@@ -3998,10 +4067,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Mostly single-publisher clues; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Clues from To Vima and Wikipedia.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   },
   {
    "id": "r26-m-karapialis",
@@ -4055,10 +4126,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; review.",
+   "conflictFree": true,
+   "notes": "Single publisher; review. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-m-kritikopoulos",
@@ -4112,10 +4185,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; review.",
-   "confidence": 2,
-   "status": "review"
+   "conflictFree": true,
+   "notes": "Birth date confirmed by Wikipedia.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-06",
+   "approvedBy": "automated:cross-source-review-olympiacos"
   }
  ],
  "stadiums": [
@@ -4134,10 +4209,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Capacity and role from Wikipedia only; the stadium as match venue is confirmed by many reports. Opening year not sourced.",
+   "conflictFree": true,
+   "notes": "Capacity and role from Wikipedia only; the stadium as match venue is confirmed by many reports. Opening year not sourced. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-st-phaliron",
@@ -4153,10 +4230,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher; Wikipedia lists it as the previous ground.",
+   "conflictFree": true,
+   "notes": "Single publisher; Wikipedia lists it as the previous ground. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   }
  ],
  "trophies": [
@@ -4485,10 +4564,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher.",
+   "conflictFree": true,
+   "notes": "Single publisher. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-se-1819",
@@ -4503,10 +4584,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher.",
+   "conflictFree": true,
+   "notes": "Single publisher. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-se-1920",
@@ -4585,10 +4668,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "Single publisher.",
+   "conflictFree": true,
+   "notes": "Single publisher. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-se-2324",
@@ -4605,10 +4690,12 @@
    ],
    "researchedAt": "2026-10-06",
    "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "League finish from Wikipedia only; the Conference League win is confirmed by UEFA.",
+   "conflictFree": true,
+   "notes": "League finish from Wikipedia only; the Conference League win is confirmed by UEFA. Owner 2026-10-09: approved on owner knowledge.",
    "confidence": 2,
-   "status": "review"
+   "status": "approved",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
   },
   {
    "id": "r26-se-2425",
