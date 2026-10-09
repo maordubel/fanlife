@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "clubId": "st-pauli",
+  "review": "cross-source-2026-10-09",
+  "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the founding line (Wikipedia gives 15 May 1910, the club's own history page gives 1924 as the split from the gymnastics club, so the sources disagree), the nicknames 'Freibeuter der Liga' and 'Boys in Brown' (one publisher each), the goal-celebration music (lyrics/chant rule), the fan scene's politics, and the stand names Südtribüne/Südkurve (sources disagree on the name and none ties it to a supporters' group by two publishers). The Gegengerade line says only what two publishers support: the stand and its 2013 completion.",
+  "voice": {
+    "welcome": "Welcome to the Kiez.",
+    "kicker": "Hamburg · Brown and white"
+  },
+  "nicknames": [
+    {
+      "text": "The Kiezkicker",
+      "local": "Die Kiezkicker",
+      "script": "de",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/FC_St._Pauli"},
+        {"publisher": "Bundesliga", "url": "https://www.bundesliga.com/en/bundesliga/news/st-pauli-hamburg-cult-club-explained-max-kruse-reeperbahn-song-2-millerntor-2896-1471"},
+        {"publisher": "FC St. Pauli", "url": "https://www.fcstpauli.com/en/club/history/"}
+      ]
+    }
+  ],
+  "ground": {
+    "name": "Millerntor-Stadion",
+    "line": "Beside the Heiligengeistfeld, close to the Reeperbahn. Once named the Wilhelm-Koch-Stadion, it was rebuilt stand by stand from 2006.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/FC_St._Pauli"},
+      {"publisher": "Hamburg Magazin", "url": "https://www.hamburg-magazin.de/artikel/millerntor-stadion"},
+      {"publisher": "Bundesliga", "url": "https://www.bundesliga.com/en/bundesliga/news/st-pauli-hamburg-cult-club-explained-max-kruse-reeperbahn-song-2-millerntor-2896-1471"}
+    ]
+  },
+  "emblem": {
+    "line": "The skull and crossbones, brought to the Millerntor by fans in the mid-1980s, became the club's emblem and a mark of the underdog.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/FC_St._Pauli"},
+      {"publisher": "FC St. Pauli", "url": "https://www.fcstpauli.com/en/club/history/"},
+      {"publisher": "Bundesliga", "url": "https://www.bundesliga.com/en/bundesliga/news/st-pauli-hamburg-cult-club-explained-max-kruse-reeperbahn-song-2-millerntor-2896-1471"}
+    ]
+  },
+  "colours": {
+    "line": "Brown and white, settled in 1909.",
+    "confidence": 3,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/FC_St._Pauli"},
+      {"publisher": "FC St. Pauli", "url": "https://www.fcstpauli.com/en/club/history/"},
+      {"publisher": "NSS Sports", "url": "https://www.nss-sports.com/en/lifestyle/36655/st-pauli-mesh-color-history"}
+    ]
+  },
+  "terrace": {
+    "name": "Gegengerade",
+    "tab": "Gegen",
+    "line": "The Gegengerade stand at the Millerntor was rebuilt and completed in early 2013.",
+    "confidence": 2,
+    "sources": [
+      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Millerntor-Stadion"},
+      {"publisher": "Hamburg Magazin", "url": "https://www.hamburg-magazin.de/artikel/millerntor-stadion"}
+    ]
+  },
+  "facts": [
+    {
+      "id": "capacity",
+      "line": "The Millerntor is permitted for 29,546 spectators, and more than half of them, 16,940, stand.",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/FC_St._Pauli"},
+        {"publisher": "Hamburg Magazin", "url": "https://www.hamburg-magazin.de/artikel/millerntor-stadion"}
+      ]
+    },
+    {
+      "id": "first-match",
+      "line": "The club's footballers played their first match in 1907, three years before the 1910 in the club's name.",
+      "confidence": 3,
+      "sources": [
+        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/FC_St._Pauli"},
+        {"publisher": "Bundesliga", "url": "https://www.bundesliga.com/en/bundesliga/news/st-pauli-hamburg-cult-club-explained-max-kruse-reeperbahn-song-2-millerntor-2896-1471"},
+        {"publisher": "FC St. Pauli", "url": "https://www.fcstpauli.com/en/club/history/"}
+      ]
+    }
+  ]
+}

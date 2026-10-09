@@ -3,6 +3,9 @@ import hapoelPetahTikva from '@/club-packs/hapoel-petah-tikva/world.json'
 import zrinjski from '@/club-packs/zrinjski-mostar/world.json'
 import olympiacos from '@/club-packs/olympiacos/world.json'
 import panathinaikos from '@/club-packs/panathinaikos/world.json'
+import aekAthens from '@/club-packs/aek-athens/world.json'
+import celtic from '@/club-packs/celtic/world.json'
+import stPauli from '@/club-packs/st-pauli/world.json'
 import type {RegistryClub} from '@/lib/master/registry'
 
 /** A club's own flavour for its app: nicknames, ground, terrace, a few facts. Every sourced line carries its sources. */
@@ -29,7 +32,7 @@ export const VOICE_MAX=64
 /** Words that must never reach a fan: politics, violence, slurs, lyrics markers and machinery. Checked on every string. */
 export const FORBIDDEN=['ultras','hooligan','riot','clash','fascis','nazi','antifa','communis','zionis','nationalis','terror','massacre','killed','died','tragedy','disaster','yellow','lyrics','chant','song','http','evidence','confidence']
 
-const raw:Record<string,unknown>={'hapoel-tel-aviv':hapoelTelAviv,'hapoel-petah-tikva':hapoelPetahTikva,'zrinjski-mostar':zrinjski,olympiacos,panathinaikos}
+const raw:Record<string,unknown>={'hapoel-tel-aviv':hapoelTelAviv,'hapoel-petah-tikva':hapoelPetahTikva,'zrinjski-mostar':zrinjski,olympiacos,panathinaikos,'aek-athens':aekAthens,celtic,'st-pauli':stPauli}
 const isRec=(v:unknown):v is Record<string,unknown>=>typeof v==='object'&&v!==null&&!Array.isArray(v)
 const SECOND=new Set(['co','com','org','gov','ac','net'])
 /** Registrable host: en.wikipedia.org → wikipedia.org, www.israelhayom.co.il → israelhayom.co.il. */
