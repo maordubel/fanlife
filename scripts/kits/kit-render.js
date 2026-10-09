@@ -14,6 +14,23 @@ const BODY='M110 30C128 46 150 56 170 56S212 46 230 30L276 46 324 120 278 148 25
 const SL_L='M64 46L16 120 62 148 82 120V66Z',SL_R='M276 46L324 120 278 148 258 120V66Z';
 const SHORTS='M8 0H192L200 112Q200 128 184 130L114 130Q104 130 100 114Q96 130 86 130L16 130Q0 128 0 112Z';
 const SOCK='M0 0H34L36 112Q36 140 54 150Q72 160 66 182Q40 190 12 184Q-4 176 0 150Z';
+
+/* Chest sponsor, lettered (rule 25: never a redrawn logo): weight, case, family, tracking and — on the archive drawings only — the colour the real
+   lettering is printed in, from content/manual/sponsor-type.json (injected as SPONSOR_TYPE). Falls back to the plain condensed capitals. */
+const FAM={heavy:"'Archivo Black','Arial Black',Impact,sans-serif",cond:"'Bebas Neue','Arial Narrow',Impact,sans-serif",round:"Nunito,'Varela Round','Arial Rounded MT Bold','Trebuchet MS',sans-serif",serif:"Georgia,'Times New Roman',serif"};
+const contrast=(a,b)=>{const L=h=>{const n=parseInt(h.slice(1),16),f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(n>>16&255)+.7152*f(n>>8&255)+.0722*f(n&255)};const x=L(a),y=L(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+function sponsorSVG(name,base,opt){
+  const T=typeof SPONSOR_TYPE!=='undefined'?SPONSOR_TYPE:{default:{},styles:{}},st=T.styles[name]||T.styles[String(name).toLowerCase()]||{},d=T.default||{};
+  const light=lum(base)>150,auto=light?'#111':'#fff',halo=light?'#fff':'#000',useBrand=!(opt&&opt.neutral);
+  const lines=st.lines||[{t:name,...st}],W=150,H=46,cx=170,top=164,n=lines.length;
+  const base1=n>1?22:34,sizes=lines.map(l=>base1*(l.scale||1));let y=top+(n>1?-1:2);
+  return lines.map((l,i)=>{
+    const f=Object.assign({},d,st,l),cs=f.case==='lower'?'toLowerCase':f.case==='asis'?null:'toUpperCase',tx=cs?String(l.t||name)[cs]():String(l.t||name);
+    const ink=useBrand&&f.brand&&contrast(f.brand,base)>=3.2?f.brand:auto;
+    let sz=sizes[i];const est=tx.length*sz*(f.fam==='cond'?.42:.58)+tx.length*sz*(f.track||0);if(est>W)sz=sz*W/est;
+    const yy=y+sz*.8;y+=sizes[i]*(n>1?.98:1);
+    return `<text x="${cx}" y="${n>1?yy:top+30}" text-anchor="middle" font-family="${FAM[f.fam]||FAM.cond}" font-weight="${f.weight||700}" ${f.italic?'font-style="italic" ':''}font-size="${sz.toFixed(1)}" letter-spacing="${((f.track||0)*sz).toFixed(2)}" fill="${ink}" stroke="${halo}" stroke-opacity=".55" stroke-width="2.4" paint-order="stroke" stroke-linejoin="round"${est>W&&n===1?` textLength="${W}" lengthAdjust="spacingAndGlyphs"`:''}>${esc(tx)}</text>`}).join('');
+}
 function shirtG(k,id){
   const b=hex(k,0),t=k.shirt.colours.length>1?hex(k,1):shade(hex(k,0),-.14),m=k.shirt.measured||{},d=k.shirt.design;
   let pat='',sleeveInk=b;
@@ -29,7 +46,7 @@ function shirtG(k,id){
   else if(d==='graphic'){pat=`<g fill="${t}" opacity=".18">${Array.from({length:60},(_,i)=>`<circle cx="${96+(i%10)*17+(Math.floor(i/10)%2)*8}" cy="${96+Math.floor(i/10)*30}" r="3.2"/>`).join('')}</g>`}
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
   const collar=d==='contrasting sleeves'?b:t;
-  const sp=k.sponsor?`<text x="170" y="196" text-anchor="middle" font-family="Bebas Neue,Impact,sans-serif" font-size="${k.sponsor.length>9?25:36}" letter-spacing="1.5" fill="${ink}" stroke="${light?'#fff':'#000'}" stroke-opacity=".55" stroke-width="2.2" paint-order="stroke" stroke-linejoin="round" ${k.sponsor.length>9?'textLength="140" lengthAdjust="spacingAndGlyphs"':''}>${esc(k.sponsor.toUpperCase())}</text>`:'';
+  const sp=k.sponsor?sponsorSVG(k.sponsor,b,k.neutralSponsor?{neutral:true}:null):'';
   const mk=k.maker?`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`:'';
   return `<defs><clipPath id="${id}c"><path d="${BODY}"/></clipPath>
 <pattern id="${id}p" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5H3M.5 0V3" stroke="#000" stroke-opacity=".5" stroke-width=".5"/></pattern>

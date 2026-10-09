@@ -128,10 +128,12 @@
    "shirt": {
     "design": "graphic",
     "colours": [
-     "black"
+     "black",
+     "grey"
     ],
     "hex": {
-     "black": "#252525"
+     "black": "#252525",
+     "grey": "#a0a0a0"
     },
     "measured": {}
    },
@@ -230,7 +232,7 @@
    "type": "away",
    "euro": false,
    "shirt": {
-    "design": "diagonal",
+    "design": "sash",
     "colours": [
      "white",
      "brown"
@@ -921,11 +923,11 @@
    "shirt": {
     "design": "plain",
     "colours": [
-     "navy",
+     "grey",
      "white"
     ],
     "hex": {
-     "navy": "#424950",
+     "grey": "#424950",
      "white": "#ffffff"
     },
     "measured": {}
@@ -1028,11 +1030,11 @@
     "design": "graphic",
     "colours": [
      "white",
-     "grey"
+     "brown"
     ],
     "hex": {
      "white": "#ffffff",
-     "grey": "#e8e8e8"
+     "brown": "#53392e"
     },
     "measured": {}
    },
@@ -1080,10 +1082,12 @@
    "shirt": {
     "design": "plain",
     "colours": [
-     "black"
+     "black",
+     "red"
     ],
     "hex": {
-     "black": "#333333"
+     "black": "#333333",
+     "red": "#e61e2a"
     },
     "measured": {}
    },
@@ -2399,11 +2403,11 @@
    "shirt": {
     "design": "plain",
     "colours": [
-     "green",
+     "brown",
      "white"
     ],
     "hex": {
-     "green": "#4a4834",
+     "brown": "#685a3d",
      "white": "#ffffff"
     },
     "measured": {}

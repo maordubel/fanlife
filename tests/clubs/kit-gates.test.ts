@@ -81,6 +81,17 @@ describe('gate 4 · the deal',()=>{
    for(const k of studioLimits(d).colours)expect(forbiddenColor(d.theme,colourHex(k))).toBe(false)
   }
  },60000)
+ it('never offers the right colours twice: no body option is the correct pair swapped (rule 15)',async()=>{
+  for(const id of ['celtic','olympiacos','st-pauli']){
+   const list=eligibleKits(await club(id))
+   for(let seed=1;seed<=12;seed++)for(const d of dealKitRun(list,seed,0,5,'practice')){
+    const body=d.puzzle.steps.find(r=>r.step==='body');if(!body)continue
+    const set=(o:{patch:{base?:string;trim?:string|null}})=>[o.patch.base,o.patch.trim].filter(Boolean).sort().join('|')
+    const right=body.options.find(o=>o.id===d.correct.body)!,sets=body.options.map(set)
+    expect(sets.filter(x=>x===set(right)),`${id} seed ${seed} ${d.puzzle.seasonLabel}`).toHaveLength(1)
+   }
+  }
+ },60000)
  it('a club with too few drawable kits has no run, and its gate is not playable',async()=>{
   const full=await club('celtic'),z={...full,kits:(full.kits as unknown[]).slice(0,2),gates:{...full.gates,'kit-builder':{...full.gates['kit-builder'],playable:false}}} as typeof full
   expect(canRun(eligibleKits(z))).toBe(false);expect(dealKitRun(eligibleKits(z),1,0)).toEqual([]);expect(gate4Playable(z)).toBe(false)

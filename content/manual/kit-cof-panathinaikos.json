@@ -113,7 +113,7 @@
    "type": "home",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "contrasting sleeves",
     "body": "green",
     "trim": "white",
     "hex": {
@@ -1225,7 +1225,7 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "graphic",
+    "design": "gradient",
     "body": "black",
     "trim": "blue",
     "hex": {
@@ -1449,10 +1449,10 @@
    "shirt": {
     "design": "plain",
     "body": "white",
-    "trim": "yellow",
+    "trim": "brown",
     "hex": {
      "body": "#ffffff",
-     "trim": "#b18740"
+     "trim": "#816333"
     },
     "bodyMeasured": true,
     "measured": {}

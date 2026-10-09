@@ -254,7 +254,7 @@
 },
 {
 "i": 24,
-"design": "graphic",
+"design": "hoops",
 "body": "yellow",
 "trim": "black",
 "maker": "Nike",
@@ -322,7 +322,7 @@
 "i": 30,
 "design": "chest band",
 "body": "white",
-"trim": "orange",
+"trim": "yellow",
 "maker": "Nike",
 "sponsor": "Magners",
 "shorts_trim": "green",
@@ -408,7 +408,7 @@
 },
 {
 "i": 38,
-"design": "hoops",
+"design": "plain",
 "body": "red",
 "trim": "black",
 "maker": "New Balance",

@@ -913,7 +913,7 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "graphic",
+    "design": "hoops",
     "body": "yellow",
     "trim": "black",
     "hex": {
@@ -921,7 +921,9 @@
      "trim": "#282828"
     },
     "bodyMeasured": true,
-    "measured": {}
+    "measured": {
+     "hoops": 4
+    }
    },
    "maker": "Nike",
    "sponsor": "Tennent's",
@@ -1143,10 +1145,10 @@
    "shirt": {
     "design": "chest band",
     "body": "white",
-    "trim": "orange",
+    "trim": "yellow",
     "hex": {
      "body": "#ffffff",
-     "trim": "#ffffff"
+     "trim": "#f99f1c"
     },
     "bodyMeasured": true,
     "measured": {}
@@ -1445,7 +1447,7 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "hoops",
+    "design": "plain",
     "body": "red",
     "trim": "black",
     "hex": {
@@ -1453,9 +1455,7 @@
      "trim": "#333333"
     },
     "bodyMeasured": true,
-    "measured": {
-     "hoops": 0
-    }
+    "measured": {}
    },
    "maker": "New Balance",
    "sponsor": "dafabet",

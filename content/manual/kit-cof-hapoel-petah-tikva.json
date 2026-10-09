@@ -223,7 +223,7 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "hoops",
+    "design": "plain",
     "body": "black",
     "trim": "skyblue",
     "hex": {
@@ -231,9 +231,7 @@
      "trim": "#7685a0"
     },
     "bodyMeasured": true,
-    "measured": {
-     "hoops": 0
-    }
+    "measured": {}
    },
    "maker": "Lotto",
    "sponsor": "MIVNE",

@@ -56,9 +56,9 @@
 },
 {
 "i": 6,
-"design": "plain",
+"design": "hoops",
 "body": "navy",
-"trim": "white",
+"trim": "grey",
 "maker": "Umbro",
 "sponsor": "Siemens mobile",
 "shorts_trim": "red",
@@ -168,7 +168,7 @@
 "i": 16,
 "design": "plain",
 "body": "cream",
-"trim": "black",
+"trim": "white",
 "maker": "Puma",
 "sponsor": "vodafone",
 "shorts_trim": null,
@@ -518,9 +518,9 @@
 },
 {
 "i": 48,
-"design": "plain",
+"design": "graphic",
 "body": "navy",
-"trim": "white",
+"trim": "blue",
 "maker": "adidas",
 "sponsor": "Stoiximan",
 "shorts_trim": "white",
@@ -551,9 +551,9 @@
 },
 {
 "i": 51,
-"design": "plain",
+"design": "graphic",
 "body": "blue",
-"trim": "white",
+"trim": "navy",
 "maker": "adidas",
 "sponsor": "Stoiximan",
 "shorts_trim": "white",
@@ -771,13 +771,13 @@
 },
 {
 "i": 71,
-"design": "plain",
-"body": "navy",
+"design": "stripes",
+"body": "grey",
 "trim": "red",
 "maker": "adidas",
 "sponsor": "Stoiximan",
-"shorts_trim": null,
-"socks_trim": null,
+"shorts_trim": "red",
+"socks_trim": "red",
 "unsure": true
 }
 ]

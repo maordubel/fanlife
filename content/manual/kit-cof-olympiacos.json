@@ -9,8 +9,8 @@
   },
   {
    "key": "logo",
-   "title": "colours-of-football.com — Olympiacos club logo (football-logos.cc answered 403 on this run; not circumvented)",
-   "url": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+   "title": "football-logos.cc — Olympiacos logo",
+   "url": "https://football-logos.cc/greece/olympiacos/",
    "readOn": "2026-10-09",
    "kits": 0
   }
@@ -229,15 +229,17 @@
    "type": "away",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "hoops",
     "body": "navy",
-    "trim": "white",
+    "trim": "grey",
     "hex": {
      "body": "#212d38",
-     "trim": "#ffffff"
+     "trim": "#364349"
     },
     "bodyMeasured": true,
-    "measured": {}
+    "measured": {
+     "hoops": 3
+    }
    },
    "maker": "Umbro",
    "sponsor": "Siemens mobile",
@@ -609,10 +611,10 @@
    "shirt": {
     "design": "plain",
     "body": "cream",
-    "trim": "black",
+    "trim": "white",
     "hex": {
      "body": "#f2ebdd",
-     "trim": "#231f20"
+     "trim": "#ffffff"
     },
     "bodyMeasured": true,
     "measured": {}
@@ -1815,12 +1817,12 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "graphic",
     "body": "navy",
-    "trim": "white",
+    "trim": "blue",
     "hex": {
      "body": "#1d355f",
-     "trim": "#ffffff"
+     "trim": "#394d7a"
     },
     "bodyMeasured": true,
     "measured": {}
@@ -1928,12 +1930,12 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "graphic",
     "body": "blue",
-    "trim": "white",
+    "trim": "navy",
     "hex": {
      "body": "#264a93",
-     "trim": "#ffffff"
+     "trim": "#263b65"
     },
     "bodyMeasured": true,
     "measured": {}
@@ -2684,15 +2686,17 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "plain",
-    "body": "navy",
+    "design": "stripes",
+    "body": "grey",
     "trim": "red",
     "hex": {
-     "body": "#515771",
+     "body": "#54576d",
      "trim": "#f40711"
     },
     "bodyMeasured": true,
-    "measured": {}
+    "measured": {
+     "stripes": 3
+    }
    },
    "maker": "adidas",
    "sponsor": "Stoiximan",
@@ -2700,15 +2704,15 @@
    "shorts": {
     "colour": "grey",
     "hex": "#54576d",
-    "trim": null,
-    "trimHex": null
+    "trim": "red",
+    "trimHex": "#f40711"
    },
    "socks": {
     "colour": "grey",
     "hex": "#54576d",
-    "trim": null,
-    "trimHex": null,
-    "bands": false
+    "trim": "red",
+    "trimHex": "#54576d",
+    "bands": true
    }
   }
  ]

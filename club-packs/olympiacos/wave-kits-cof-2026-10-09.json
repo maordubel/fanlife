@@ -81,8 +81,8 @@
     "type": "third",
     "manufacturer": "adidas",
     "construction": {
-     "design": "plain",
-     "colors": "blue/white"
+     "design": "graphic",
+     "colors": "blue/navy"
     },
     "sponsor": "Stoiximan",
     "shorts": {
@@ -143,8 +143,8 @@
     "type": "third",
     "manufacturer": "adidas",
     "construction": {
-     "design": "plain",
-     "colors": "navy/white"
+     "design": "graphic",
+     "colors": "navy/blue"
     },
     "sponsor": "Stoiximan",
     "shorts": {
@@ -887,8 +887,8 @@
     "type": "away",
     "manufacturer": "Umbro",
     "construction": {
-     "design": "plain",
-     "colors": "navy/white"
+     "design": "hoops",
+     "colors": "navy/grey"
     },
     "sponsor": "Siemens mobile",
     "shorts": {
