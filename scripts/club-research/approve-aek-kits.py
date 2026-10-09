@@ -1,7 +1,6 @@
 #!/usr/bin/env python3 -I
-"""Owner approval of the AEK Athens kit wave (catalogue + Commons) (review -> approved, confidence 2). NOT RUN BY THE AUTHOR.
-Run only after the owner says so, with his words in --quote. Idempotent. Skips a kit when the club pack already holds an approved
-kit for the same season+type (the two 2016/17 and 2023/24 home kits approved from aekfc.gr stay the source of truth for their maker).
+"""Owner approval of the AEK Athens kit wave (catalogue + Commons) (review -> approved, confidence 2). Run on 2026-10-09 after the owner's "מאשר".
+Run only after the owner says so, with his words in --quote. Idempotent. Kits that share season+type with an approved core kit are approved too and say so in their notes.
 Usage: approve-aek-commons.py --day YYYY-MM-DD --quote "<owner's words>" """
 import argparse,glob,json
 ap=argparse.ArgumentParser();ap.add_argument('--day',required=True);ap.add_argument('--quote',required=True);a=ap.parse_args()
@@ -16,7 +15,7 @@ for g in glob.glob('club-packs/aek-athens/*.json'):
 n=skip=0
 for k in d['kits']:
     if k['status']=='approved':continue
-    if (k['value']['season'],k['value']['type']) in have:skip+=1;continue
+    if (k['value']['season'],k['value']['type']) in have:k['notes']='Same season and type as a kit core.json already approved (aekfc.gr, access unknown, held back by the compiler). '+k['notes']
     k.update(status='approved',confidence=2,approvedAt=a.day,approvedBy=OWNER,notes=f'Approved by the owner in chat on {a.day} ("{a.quote}"). '+k['notes'])
     n+=1
 json.dump(d,open(f,'w'),ensure_ascii=False,indent=1);open(f,'a').write('\n')

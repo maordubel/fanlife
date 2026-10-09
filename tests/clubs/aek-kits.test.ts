@@ -22,8 +22,8 @@ describe('AEK Athens kits: catalogue + Commons drawings',()=>{
   for(const k of joined.kits)if(k.origin==='drawing')expect(k.maker).toBeNull()
  })
  it('measures all 133 drawings in the category',()=>{expect(manifest.count).toBe(133);expect(manifest.records).toHaveLength(133)})
- it('is a review delivery: nothing approved, nothing above confidence 1, no approver claimed',()=>{
-  for(const k of kits){expect(k.status).toBe('review');expect(k.confidence).toBe(1);expect(k).not.toHaveProperty('approvedBy')}
+ it('every kit carries the owner\'s approval of 9.10.2026 ("מאשר"), at confidence 2',()=>{
+  for(const k of kits as unknown as (K&{approvedBy:string;approvedAt:string;notes:string})[]){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect(k.approvedBy).toBe('Maor Harel (owner, chat)');expect(k.approvedAt).toBe('2026-10-09');expect(k.notes).toContain('מאשר')}
  })
  it('names a maker or sponsor only where a catalogue drawing shows one (rule 11)',()=>{
   const drawn=new Set(joined.kits.filter(k=>k.origin==='catalogue').map(k=>k.id))
@@ -51,7 +51,7 @@ describe('AEK Athens kits: catalogue + Commons drawings',()=>{
  it('the swatch carries AEK\'s own colour',()=>{expect(SWATCH.yellow).toMatch(/^#[0-9a-f]{6}$/i)})
 })
 
-/* ---- wiring: what the features see once the owner approves (approval applied in memory only, never on disk) ---- */
+/* ---- wiring: what the features see approved, and (reversed in memory) while in review ---- */
 import {compilePack} from '@/lib/clubs/compiler'
 import {mergeWave} from '@/lib/clubs/waves'
 import {REGISTRY} from '@/lib/master/registry'
@@ -65,8 +65,8 @@ import {renderToStaticMarkup} from 'react-dom/server'
 import {KitPlate} from '@/components/clubs/games/KitPlate'
 
 const aek=REGISTRY.find(c=>c.id==='aek-athens')!
-const approvedWave=()=>{const w=structuredClone(wave) as unknown as {kits:Record<string,unknown>[]};for(const k of w.kits)Object.assign(k,{status:'approved',confidence:2,approvedAt:'2026-10-09',approvedBy:'Maor Harel (owner, chat)'});return w}
-const build=(approve:boolean)=>compilePack(mergeWave(structuredClone(core) as never,(approve?approvedWave():structuredClone(wave)) as never),aek)
+const reviewWave=()=>{const w=structuredClone(wave) as unknown as {kits:Record<string,unknown>[]};for(const k of w.kits){k.status='review';k.confidence=1;delete k.approvedBy;delete k.approvedAt}return w}
+const build=(approved:boolean)=>compilePack(mergeWave(structuredClone(core) as never,(approved?structuredClone(wave):reviewWave()) as never),aek)
 
 describe('AEK kits reach the gates, the shelf and the market',()=>{
  it('while the wave is in review nothing reaches a gate (the two kits already in core cite aekfc.gr, whose access is "unknown", so they are held back too)',()=>{

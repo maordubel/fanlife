@@ -16,7 +16,7 @@ Neither publisher's drawings are committed (the catalogue is copyrighted; the li
 Maker and sponsor are filled **only** where a catalogue drawing shows them (Nike 2002–05 and 2016–18 and 2021 onward, adidas 2005–07, Puma 2007–12, Capelli 2018–21; sponsors Alpha Digital, Piraeus Bank, TIM, LG, Kino, Pame Stoixima). They are reading of a drawing, so status stays `review`. Commons-only kits name neither. The two kits the club pack already approved from aekfc.gr (2016/17 and 2023/24 home, Nike) agree with the catalogue.
 
 ## Wave and approval
-`club-packs/aek-athens/wave-kits-aek-2026-10-09.json`: 99 kits, status `review`, confidence 1, no approver. `mergeWave` takes it in; `compileEntities` drops anything not approved, so nothing reaches a gate yet. `scripts/club-research/approve-aek-kits.py --day 2026-10-09 --quote "<owner's words>"` approves them when the owner says so (it skips twins of the two already approved).
+`club-packs/aek-athens/wave-kits-aek-2026-10-09.json`: 99 kits, status `approved`, confidence 2, approver "Maor Harel (owner, chat)", 9.10.2026 ("מאשר"). `mergeWave` takes it in; `compileEntities` drops anything not approved, so nothing reaches a gate yet. `scripts/club-research/approve-aek-kits.py --day 2026-10-09 --quote "<owner's words>"` approves them when the owner says so (it skips twins of the two already approved).
 
 ## How it is wired to the features (all read one list)
 Every FAN LIFE kit feature reads `kitViews(pack.data)`, the club's approved kits. AEK now feeds that list with the 99 kits, so nothing is wired separately:
@@ -38,7 +38,7 @@ AEK's own colour is yellow and the shared shirt painter refused it by test. The 
 `public/aek-kit-archive/index.html`, built by `scripts/kits/build-aek-archive-page.py` from the joined archive, so nothing is typed by hand. One row per season, one complete kit per slot (home / away / third / other), the catalogue's own caption under each ("home kit 2002/03"). Filters: type, design, maker, source, season. A card opens the kit with every measured colour, maker and sponsor as drawn, both sources with links, and every disagreement. Sponsors are lettered on the fabric (rule 25), never drawn as logos; the crest slot is empty.
 
 ## Open
-- Owner approval of the 99 kits (then the shared Kits and Kit-builder gates read them).
+- (Done 9.10.2026: the owner approved all 99 with "מאשר"; the gates and the market read them.)
 - Makers for 1924–2002 and 2012–2016: nothing shown; needs a source per season.
 - Shorts/socks for the drawing-only kits.
 - A licensed crest file for the empty slot; printed logos where a rights grant exists.
