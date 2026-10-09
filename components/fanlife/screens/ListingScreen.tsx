@@ -107,7 +107,7 @@ export function ListingScreen({ id, shirts }: { id: string; shirts: Record<strin
       connect={{ busy, error }}
       onConnect={(kind, body) => void onConnect(kind, body)}
       signIn={<SignInPrompt next={`/market/item/${encodeURIComponent(item.id)}`} />}
-      shops={<MerchantOffers slug={item.archiveSlug} kitId={item.kitId} season={shirt?.seasonLabel ?? null} />}
+      shops={item.world ? null : <MerchantOffers slug={item.archiveSlug} kitId={item.kitId} season={shirt?.seasonLabel ?? null} />}
       onBlocked={() => router.push('/market')}
     />
   )

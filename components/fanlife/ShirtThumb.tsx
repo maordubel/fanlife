@@ -15,6 +15,17 @@ type Drawn = { kit?: { id: string; design: string | null; colours: string[]; sea
 export function ShirtThumb({ shirt, className = '' }: { shirt: (CollectorShirt & Drawn) | undefined; shielded?: boolean; onUncover?: () => void; className?: string }) {
   if (!shirt) return <span className={`fl-thumb-empty block aspect-square w-full ${className}`} />
   const alt = `${shirt.variantHe} · ${shirtDateText(shirt)}`
+  if (!shirt.src && !shirt.kit && (shirt as { world?: unknown }).world) {
+    // a club outside the archive and no photograph yet: a printed shirt-shaped tag with the club's name, never a guess at its colours
+    return (
+      <span className={`fl-thumb-world ${className}`} role="img" aria-label={alt} data-world-thumb="">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <path d="M30 10 L10 24 L19 40 L27 35 L27 90 L73 90 L73 35 L81 40 L90 24 L70 10 Q50 24 30 10 Z" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round" strokeDasharray="5 3" />
+        </svg>
+        <b>{shirt.clubName}</b>
+      </span>
+    )
+  }
   if (!shirt.src && shirt.kit) {
     return (
       <span className={`fl-thumb-drawn block aspect-square w-full ${className}`} role="img" aria-label={alt}>

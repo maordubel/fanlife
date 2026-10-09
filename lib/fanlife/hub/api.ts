@@ -1,6 +1,7 @@
 'use client'
 
 import { portalConfigured } from '@/lib/portal/env'
+import { normaliseWorld } from '@/lib/fanlife/world'
 import { createClient } from '@/lib/supabase/client'
 import type { CollectorError, Fail, Result } from '@/lib/collector/types'
 
@@ -46,7 +47,7 @@ async function call<T>(fn: string, args?: Record<string, unknown>): Promise<Resu
       if (/could not find the function|schema cache|does not exist|PGRST20\d/i.test(error.message)) return fail('setup')
       return fail('network')
     }
-    if (data && typeof data === 'object' && 'ok' in (data as Record<string, unknown>)) return data as Result<T>
+    if (data && typeof data === 'object' && 'ok' in (data as Record<string, unknown>)) return normaliseWorld(data) as Result<T>
     return fail('network')
   } catch {
     return fail('network')
@@ -132,3 +133,13 @@ export const idreqOpen = (id: string, photos: string[], note: string, club: stri
 export const idreqPropose = (id: string, slug: string, note: string) =>
   call<object>('worker_idreq_propose', { p_id: id, p_slug: slug, p_kit: null, p_note: note.trim() || null })
 export const idreqResolve = (id: string, proposalId: string | null) => call<{ status: string; archiveSlug?: string }>('worker_idreq_resolve', { p_id: id, p_prop: proposalId })
+
+// ------------------------------------------------------------------ rest of the world (9.10.2026)
+
+export type LibraryClub = { key: string; name: string; country: string | null; checked: boolean }
+export const clubSearch = (q: string, limit = 8) => call<{ clubs: LibraryClub[] }>('worker_club_search', { p_q: q, p_limit: limit })
+export type WorldHaveInput = { clubKey: string | null; clubName: string; country: string | null; season: string | null; variant: string | null; maker: string | null }
+export const worldHave = (i: WorldHaveInput) =>
+  call<{ created: boolean; item: import('@/lib/collector/types').OwnerItem }>('worker_world_have', {
+    p_club_key: i.clubKey, p_club_name: i.clubName, p_country: i.country, p_season: i.season, p_variant: i.variant, p_maker: i.maker,
+  })

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { AdoptShirts } from '@/components/fanlife/AdoptShirts'
 import { FanPage } from '@/components/fanlife/FanPage'
 import { HelpScreen } from '@/components/fanlife/market/HelpScreen'
 import { fanShirtMap } from '@/lib/fanlife/catalog'
@@ -11,9 +12,11 @@ export const dynamic = 'force-dynamic'
 
 /** "What shirt is this?" — collectors identify each other's finds against the archive. */
 export default async function HelpPage() {
+  const shirts = await fanShirtMap()
   return (
     <FanPage market active="market" title={h('hub.help.title')} sub={t('market.sub')}>
-      <HelpScreen shirts={await fanShirtMap()} />
+      <AdoptShirts shirts={shirts} />
+      <HelpScreen shirts={shirts} />
     </FanPage>
   )
 }

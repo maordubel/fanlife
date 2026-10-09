@@ -489,6 +489,8 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261009120000_worker_deal_wave2.sql', // wave 2: bundle, handover, feedback (supabase/tests/71-deal-wave2.sql)
       '20261009150000_worker_circles_wave3.sql', // wave 3: place, circles, the pipe, identification help (supabase/tests/72-circles-wave3.sql)
       '20261009180000_worker_game_origin.sql', // one closet, two apps: game-built shirts (supabase/tests/73-game-origin.sql)
+      '20261009210000_worker_market_text_search.sql', // search by words (supabase/tests/70-market-search.sql)
+      '20261009240000_worker_rest_of_world.sql', // any club, any shirt (supabase/tests/74-world.sql)
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue

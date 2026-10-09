@@ -106,6 +106,8 @@ export type PublicItem = {
   openedAt: string | null
   seller?: CollectorLabel
   mine?: boolean
+  /** a copy from a club outside the game's archive: archiveSlug is then a view key (`world~<id>`), see lib/fanlife/world.ts */
+  world?: import('@/lib/fanlife/world').WorldInfo | null
 }
 
 export type OwnerItem = Omit<PublicItem, 'seller'> & {

@@ -81,6 +81,16 @@ def fork(src):
 
 # FAN LIFE-only edits applied after the rewrite: (file, old, new). Each must match exactly once.
 PATCHES = [
+    # rest of the world (9.10.2026): a copy from a club outside the archive has no archive slug to "have" again — it is re-listed from what the seller said
+    ('components/fanlife/closet/ItemEditor.tsx',
+     "import { t, type MessageKey } from '@/lib/fanlife/i18n'",
+     "import { t, type MessageKey } from '@/lib/fanlife/i18n'\nimport { worldHave } from '@/lib/fanlife/hub/api'"),
+    ('components/fanlife/closet/ItemEditor.tsx',
+     "    const out = await api.have(item.archiveSlug, item.kitId, true)",
+     "    const w = item.world\n    const out = w\n      ? await worldHave({ clubKey: w.clubKey, clubName: w.club, country: w.country, season: w.season, variant: w.variant, maker: w.maker })\n      : await api.have(item.archiveSlug, item.kitId, true)"),
+    ('components/fanlife/screens/ListingScreen.tsx',
+     "      shops={<MerchantOffers slug={item.archiveSlug} kitId={item.kitId} season={shirt?.seasonLabel ?? null} />}",
+     "      shops={item.world ? null : <MerchantOffers slug={item.archiveSlug} kitId={item.kitId} season={shirt?.seasonLabel ?? null} />}"),
     # the market redesign (9.10.2026): the thread wears the magazine's "The Conversation" — hooks for app/magazine.css (.fl-mk-*)
     ('components/fanlife/market/ThreadView.tsx',
      """    <div className="mt-stack">

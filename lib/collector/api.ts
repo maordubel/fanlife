@@ -1,5 +1,6 @@
 'use client'
 import { evaluationMode } from '@/lib/master/mode'
+import { normaliseWorld } from '@/lib/fanlife/world'
 
 import { portalConfigured } from '@/lib/portal/env'
 import { createClient } from '@/lib/supabase/client'
@@ -67,7 +68,7 @@ async function call<T>(fn: string, args?: Record<string, unknown>): Promise<Resu
       if (/could not find the function|schema cache|does not exist|PGRST20\d/i.test(error.message)) return fail('setup')
       return fail('network')
     }
-    if (data && typeof data === 'object' && 'ok' in (data as Record<string, unknown>)) return data as Result<T>
+    if (data && typeof data === 'object' && 'ok' in (data as Record<string, unknown>)) return normaliseWorld(data) as Result<T>
     return fail('network')
   } catch {
     return fail('network')
@@ -79,7 +80,7 @@ async function read<T>(fn: string, args: Record<string, unknown> | undefined, fa
   if (!portalConfigured()) return fallback
   try {
     const { data, error } = await client().rpc(fn, args)
-    return error || data === null || data === undefined ? fallback : (data as T)
+    return error || data === null || data === undefined ? fallback : normaliseWorld(data as T)
   } catch {
     return fallback
   }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { AdoptShirts } from '@/components/fanlife/AdoptShirts'
 import { FanPage } from '@/components/fanlife/FanPage'
 import { ListingScreen } from '@/components/fanlife/screens/ListingScreen'
 import { fanShirtMap } from '@/lib/fanlife/catalog'
@@ -9,9 +10,11 @@ export const metadata: Metadata = { title: t('market.item.title'), description: 
 export const dynamic = 'force-dynamic'
 
 export default async function MarketItemPage({ params }: { params: { id: string } }) {
+  const shirts = await fanShirtMap()
   return (
     <FanPage market active="market" title={t('market.item.title')} sub={t('market.item.sub')}>
-      <ListingScreen id={params.id} shirts={await fanShirtMap()} />
+      <AdoptShirts shirts={shirts} />
+      <ListingScreen id={params.id} shirts={shirts} />
     </FanPage>
   )
 }

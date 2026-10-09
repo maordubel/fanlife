@@ -21,6 +21,7 @@ import {
   type OwnerItem,
 } from '@/lib/collector/types'
 import { t, type MessageKey } from '@/lib/fanlife/i18n'
+import { worldHave } from '@/lib/fanlife/hub/api'
 
 import type { ClosetApi } from '@/components/fanlife/closet/api'
 
@@ -180,7 +181,10 @@ export function ItemEditor({
   }
 
   async function copy() {
-    const out = await api.have(item.archiveSlug, item.kitId, true)
+    const w = item.world
+    const out = w
+      ? await worldHave({ clubKey: w.clubKey, clubName: w.club, country: w.country, season: w.season, variant: w.variant, maker: w.maker })
+      : await api.have(item.archiveSlug, item.kitId, true)
     if (out.ok) {
       setNote('collector.editor.copyAdded')
       onCopy(out.item)
