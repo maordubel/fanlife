@@ -44,4 +44,6 @@ echo "$go" | grep -c PASS | xargs -I{} echo "db verify: {} one-closet (game-buil
 wo=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/74-world.sql 2>&1) || { echo "$wo" | grep -E "FAIL|ERROR"; exit 1; }
 pv=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/75-privacy.sql 2>&1) || { echo "$pv" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$pv" | grep -c PASS | xargs -I{} echo "db verify: {} shirt hub privacy (identity, anonymous, display, opaque photos) assertions — clean"
+ct=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/76-contributions.sql 2>&1) || { echo "$ct" | grep -E "FAIL|ERROR"; exit 1; }
+echo "$ct" | grep -c PASS | xargs -I{} echo "db verify: {} contributions (consent, review, merge) assertions — clean"
 echo "$wo" | grep -c PASS | xargs -I{} echo "db verify: {} rest-of-the-world (any club, any shirt) assertions — clean"

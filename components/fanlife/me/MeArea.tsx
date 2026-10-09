@@ -109,6 +109,7 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
           <p className="fl-me-identity">
             {closet.profile.identityMode === 'anonymous' ? fl('me.closet.identity.anon') : fl('me.closet.identity', { who: handleLabel(closet.label) })}{' '}
             <Link href="/closet#identity-title">{fl('me.closet.identity.change')}</Link>
+            <Link href="/closet/contributions">{fl('contrib.me')}</Link>
           </p>
         ) : null}
         <Link className="mag-cta red" href="/closet">{fl('me.closet.open')} →</Link>
