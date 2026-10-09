@@ -1348,7 +1348,7 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 
 /* ───────── THE MARKET — "From fan to fan" (9.10.2026) ─────────
    The shirt hub, the shirt page and the conversation, drawn as the owner's mobile model: flat paper, hairlines,
-   a condensed headline, a red action. Colour is `--mag-*` only; no yellow, gold or amber anywhere in here. */
+   a condensed headline, a red action. Colour is `--mag-*` only; no warm-family colour anywhere in here. */
 .fl-market .fl-worker { max-width: 1080px; margin-inline: auto; }
 .fl-market .fl-worker :where(.border-plate, .border-rule) { border-width: 1px; }
 .fl-market .fl-worker :where(button, a).bg-ink { box-shadow: none; }
