@@ -171,8 +171,8 @@ export function ListingView({
             ) : (
               <>
                 <div className="fl-mk-actions">
-                  <button type="button" className="fl-mk-btn fl-mk-btn-red min-h-tap" aria-expanded={composer} onClick={() => setComposer((v) => !v)}>
-                    {h('hub.item.makeOffer')}
+                  <button type="button" className="fl-mk-btn fl-mk-btn-red min-h-tap" aria-expanded={composer} onClick={() => setComposer(true)}>
+                    {item.forSale && item.forTrade ? h('hub.item.request') : item.forTrade ? h('hub.item.swapIt') : h('hub.item.buy')}
                   </button>
                   <button type="button" className="fl-mk-btn fl-mk-btn-ink min-h-tap" onClick={() => setComposer(true)}>
                     {h('hub.item.ask')}
