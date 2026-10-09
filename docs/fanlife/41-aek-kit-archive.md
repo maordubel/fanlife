@@ -18,6 +18,16 @@ Maker and sponsor are filled **only** where a catalogue drawing shows them (Nike
 ## Wave and approval
 `club-packs/aek-athens/wave-kits-aek-2026-10-09.json`: 99 kits, status `review`, confidence 1, no approver. `mergeWave` takes it in; `compileEntities` drops anything not approved, so nothing reaches a gate yet. `scripts/club-research/approve-aek-kits.py --day 2026-10-09 --quote "<owner's words>"` approves them when the owner says so (it skips twins of the two already approved).
 
+## How it is wired to the features (all read one list)
+Every FAN LIFE kit feature reads `kitViews(pack.data)`, the club's approved kits. AEK now feeds that list with the 99 kits, so nothing is wired separately:
+- **Gate 4 (kit-builder)**: a kit is a puzzle when it names maker and design and can be drawn: 57 name both, **46 are drawable** (plain, stripes, pinstripes, hoops, half-and-half, sash, chest band, diagonal). `contrasting sleeves`, `graphic` and `gradient` are not drawable (as for every club) and sit on the shelf as documented, undrawn kits. Target 5, so the gate is READY.
+- **Gate 5 (kits, the shelf and studio)** and the club's kit archive area: all 99 on the shelf, the studio palette now includes AEK yellow, makers and sponsors come from the data.
+- **Market, closet, auction, shirts**: `lib/fanlife/catalog.ts` lists the same kits for every core club; AEK shirts appear with slug `aekathens--<kit id>`.
+- **Royal Rumble**: wardrobe by season from the same list (`rumbleWardrobe`), now able to dress AEK players in yellow.
+- **Whole kit**: the catalogue's shorts and socks travel as `value.shorts` / `value.socks` (`{colour, trim}`), through `kitViews` into `KitPlate`, which draws the complete kit (taller frame) only when they exist. Other clubs are untouched.
+- `tests/clubs/aek-kits.test.ts` applies the approval **in memory** and asserts all of this (99 kits, gate 4 and 5 READY, yellow stripes drawable, full-kit drawing); with the wave in review nothing reaches a gate.
+- The two kits already in `core.json` (2016/17 and 2023/24 home, Nike) cite aekfc.gr, whose access is recorded as `unknown`, so the compiler holds them back today. Re-checking that source is the cheapest way to make the two maker claims count.
+
 ## Decision: yellow is allowed for kits (owner, 9.10.2026: "מותר צהוב")
 AEK's own colour is yellow and the shared shirt painter refused it by test. The swatch now includes yellow, maroon, skyblue, pink and orange (`lib/clubs/rumble-kit.ts`, `lib/clubs/kit-model.ts`, `components/clubs/games/KitPlate.tsx`). Scope:
 - Whether a club may *show* a colour is still decided per club by `forbiddenColor`: Hapoel Tel Aviv's legacy yellow rule keeps dropping it (asserted in `tests/clubs/rumble-show.test.ts`).

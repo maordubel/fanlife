@@ -1,4 +1,4 @@
-import type {KitView} from '@/lib/clubs/gate-content'
+import type {KitPart,KitView} from '@/lib/clubs/gate-content'
 import {SWATCH} from '@/lib/clubs/rumble-kit'
 /** Colour names the club archive may carry → magazine tokens. Anything unmapped is NOT painted (never guessed). The five club-only colours (yellow, maroon, skyblue, pink, orange) come from the lib swatch, not from a token. */
 const TOKEN:Record<string,string>={red:'--mag-vermilion',white:'--mag-white',cream:'--mag-paper',blue:'--mag-navy',navy:'--mag-navy',green:'--mag-green',black:'--mag-ink',purple:'--mag-purple',grey:'--mag-muted',gray:'--mag-muted'}
@@ -10,10 +10,16 @@ const BODY='M82 18 L120 6 Q170 28 220 6 L258 18 L312 74 L282 110 L252 92 L252 30
  * `paints` lets a caller dress it in CSS variables instead (the club livery, when the archive documents no kit);
  * `decorative` hides it from assistive tech where the name beside it already says who wears it.
  */
-export function KitPlate({kit,label=true,paints,decorative=false,className='kit-plate'}:{kit:Pick<KitView,'id'|'design'|'colours'|'season'>;label?:boolean;paints?:{a:string;b?:string|null};decorative?:boolean;className?:string}) {
+/** shorts and socks, drawn only when the archive documents them (AEK, 9.10.2026): the same board, a taller frame */
+const SHORTS='M10 0H190L200 120Q200 132 186 133L118 133L100 54L82 133L14 133Q0 132 0 120Z',SOCK='M0 0H34V118Q34 148 58 158Q72 168 64 184Q38 190 10 186Q-6 180 2 150Z'
+function Shorts({p,id}:{p:KitPart;id:string}){const a=paint(p.colour);if(!a)return null;const t=p.trim?paint(p.trim):null
+ return <g transform="translate(70 318)"><clipPath id={`${id}s`}><path d={SHORTS}/></clipPath><g clipPath={`url(#${id}s)`}><rect width="200" height="140" fill={a}/>{t&&<><polygon points="0,0 30,0 26,140 0,140" fill={t}/><polygon points="200,0 170,0 174,140 200,140" fill={t}/></>}<rect width="200" height="12" fill="var(--mag-ink)" opacity=".16"/></g><path d={SHORTS} fill="none" stroke="var(--mag-ink)" strokeWidth="5" strokeLinejoin="round"/></g>}
+function Socks({p,id}:{p:KitPart;id:string}){const a=paint(p.colour);if(!a)return null;const t=p.trim?paint(p.trim):null
+ return <g transform="translate(336 128)">{[0,24].map(dx=><g key={dx} transform={`translate(${dx} 0)`}><clipPath id={`${id}k${dx}`}><path d={SOCK}/></clipPath><g clipPath={`url(#${id}k${dx})`}><rect x="-10" width="60" height="200" fill={a}/>{t&&<><rect x="-8" y="12" width="52" height="12" fill={t}/><rect x="-8" y="34" width="52" height="12" fill={t}/></>}</g><path d={SOCK} fill="none" stroke="var(--mag-ink)" strokeWidth="5"/></g>)}</g>}
+export function KitPlate({kit,label=true,paints,decorative=false,className='kit-plate'}:{kit:Pick<KitView,'id'|'design'|'colours'|'season'>&Partial<Pick<KitView,'shorts'|'socks'>>;label?:boolean;paints?:{a:string;b?:string|null};decorative?:boolean;className?:string}) {
  const a=paints?.a??paint(kit.colours[0]),b=(paints?paints.b:paint(kit.colours[1]))||a,id=`kp-${kit.id.replace(/[^a-z0-9]/gi,'')}`,design=(kit.design||'').toLowerCase()
- const painted=!!a
- return <svg viewBox="0 0 340 320" role={decorative?undefined:'img'} aria-hidden={decorative||undefined} aria-label={decorative?undefined:`${kit.season} ${kit.design||''} ${kit.colours.join('/')}`.trim()} className={className} data-painted={painted}>
+ const painted=!!a,whole=painted&&!!(kit.shorts||kit.socks)
+ return <svg viewBox={whole?'0 0 430 470':'0 0 340 320'} role={decorative?undefined:'img'} aria-hidden={decorative||undefined} aria-label={decorative?undefined:`${kit.season} ${kit.design||''} ${kit.colours.join('/')}`.trim()} className={className} data-painted={painted}>
   <defs><clipPath id={id}><path d={BODY}/></clipPath></defs>
   <g clipPath={`url(#${id})`}>
    <rect width="340" height="320" fill={a||'var(--mag-card)'}/>
@@ -31,6 +37,8 @@ export function KitPlate({kit,label=true,paints,decorative=false,className='kit-
   </g>
   <path d={BODY} fill="none" stroke="var(--mag-ink)" strokeWidth="5" strokeLinejoin="round"/>
   <path d="M120 6 Q170 40 220 6" fill="none" stroke="var(--mag-ink)" strokeWidth="5"/>
+  {whole&&kit.shorts&&<Shorts p={kit.shorts} id={id}/>}
+  {whole&&kit.socks&&<Socks p={kit.socks} id={id}/>}
   {label&&<text x="170" y="170" textAnchor="middle" fontFamily="var(--mag-mono)" fontSize="22" fontWeight="700" fill={painted?'var(--mag-ink)':'var(--mag-muted)'} stroke={painted?'var(--mag-white)':'none'} strokeWidth="5" paintOrder="stroke">{kit.season}</text>}
  </svg>
 }

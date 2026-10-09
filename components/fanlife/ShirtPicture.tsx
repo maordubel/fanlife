@@ -4,7 +4,7 @@ import { Num } from '@/components/ui/Num'
 import { shirtSeason, type AuctionShirt } from '@/lib/fanlife/collector/auction'
 import { t } from '@/lib/fanlife/i18n'
 
-type Drawn = { kit?: { id: string; design: string | null; colours: string[]; season: string } | null }
+type Drawn = { kit?: { id: string; design: string | null; colours: string[]; season: string; shorts?: { colour: string; trim: string | null } | null; socks?: { colour: string; trim: string | null } | null } | null }
 
 /** A lot's picture: the seller's photo, else the archive photograph, else the drawn kit (FAN LIFE). */
 export function ShirtPicture({ photo, shirt, className = '', aspect = 'aspect-square' }: { photo: string | null; shirt: (AuctionShirt & Drawn) | undefined; className?: string; aspect?: string }) {

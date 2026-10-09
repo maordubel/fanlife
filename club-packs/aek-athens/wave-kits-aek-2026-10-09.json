@@ -122,7 +122,15 @@
      "design": "stripes",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p4",
@@ -146,7 +154,15 @@
      "design": "stripes",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p4",
@@ -170,7 +186,15 @@
      "design": "graphic",
      "colors": "white/skyblue"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p4",
@@ -194,7 +218,15 @@
      "design": "graphic",
      "colors": "black/yellow"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p4"
@@ -240,7 +272,15 @@
      "design": "contrasting sleeves",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p4",
@@ -264,7 +304,15 @@
      "design": "plain",
      "colors": "white"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p4"
@@ -287,7 +335,15 @@
      "design": "contrasting sleeves",
      "colors": "black/yellow"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p4",
@@ -311,7 +367,15 @@
      "design": "plain",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p3"
@@ -334,7 +398,15 @@
      "design": "plain",
      "colors": "orange"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "orange",
+     "trim": null
+    },
+    "socks": {
+     "colour": "orange",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p4"
@@ -357,7 +429,15 @@
      "design": "plain",
      "colors": "black/grey"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p4"
@@ -403,7 +483,15 @@
      "design": "graphic",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p3",
@@ -427,7 +515,15 @@
      "design": "plain",
      "colors": "yellow"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3"
@@ -450,7 +546,15 @@
      "design": "plain",
      "colors": "maroon"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "maroon",
+     "trim": null
+    },
+    "socks": {
+     "colour": "maroon",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3"
@@ -473,7 +577,15 @@
      "design": "stripes",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3"
@@ -496,7 +608,15 @@
      "design": "plain",
      "colors": "black/grey"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3"
@@ -519,7 +639,15 @@
      "design": "plain",
      "colors": "blue/skyblue"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "blue",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3"
@@ -542,7 +670,15 @@
      "design": "half-and-half",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3",
@@ -566,7 +702,15 @@
      "design": "hoops",
      "colors": "black/grey"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p3",
@@ -590,7 +734,15 @@
      "design": "plain",
      "colors": "cream/grey"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3",
@@ -614,7 +766,15 @@
      "design": "diagonal",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3",
@@ -661,7 +821,15 @@
      "design": "chest band",
      "colors": "black/yellow"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3"
@@ -684,7 +852,15 @@
      "design": "stripes",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3",
@@ -708,7 +884,15 @@
      "design": "plain",
      "colors": "black/yellow"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3",
@@ -732,7 +916,15 @@
      "design": "plain",
      "colors": "blue/yellow"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "blue",
+     "trim": null
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3",
@@ -756,7 +948,15 @@
      "design": "stripes",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -780,7 +980,15 @@
      "design": "plain",
      "colors": "grey/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -804,7 +1012,15 @@
      "design": "plain",
      "colors": "black/grey"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p3"
@@ -873,7 +1089,15 @@
      "design": "pinstripes",
      "colors": "black/yellow"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -897,7 +1121,15 @@
      "design": "plain",
      "colors": "pink/white"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -921,7 +1153,15 @@
      "design": "stripes",
      "colors": "yellow/black"
     },
-    "sponsor": "Pame Stoixima"
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p2"
@@ -1174,7 +1414,15 @@
      "design": "plain",
      "colors": "yellow/black"
     },
-    "sponsor": "Kino"
+    "sponsor": "Kino",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -1198,7 +1446,15 @@
      "design": "stripes",
      "colors": "black/yellow"
     },
-    "sponsor": "Kino"
+    "sponsor": "Kino",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p2"
@@ -1244,7 +1500,15 @@
      "design": "stripes",
      "colors": "black/yellow"
     },
-    "sponsor": null
+    "sponsor": null,
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -1268,7 +1532,15 @@
      "design": "plain",
      "colors": "yellow/black"
     },
-    "sponsor": null
+    "sponsor": null,
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p2"
@@ -1291,7 +1563,15 @@
      "design": "plain",
      "colors": "blue/orange"
     },
-    "sponsor": null
+    "sponsor": null,
+    "shorts": {
+     "colour": "skyblue",
+     "trim": "orange"
+    },
+    "socks": {
+     "colour": "skyblue",
+     "trim": "orange"
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -1338,7 +1618,15 @@
      "design": "plain",
      "colors": "yellow/black"
     },
-    "sponsor": null
+    "sponsor": null,
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p2"
@@ -1361,7 +1649,15 @@
      "design": "plain",
      "colors": "navy/yellow"
     },
-    "sponsor": null
+    "sponsor": null,
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -1385,7 +1681,15 @@
      "design": "plain",
      "colors": "grey/yellow"
     },
-    "sponsor": null
+    "sponsor": null,
+    "shorts": {
+     "colour": "grey",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -1432,7 +1736,15 @@
      "design": "plain",
      "colors": "black/yellow"
     },
-    "sponsor": "LG"
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -1456,7 +1768,15 @@
      "design": "plain",
      "colors": "yellow/black"
     },
-    "sponsor": "LG"
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -1480,7 +1800,15 @@
      "design": "plain",
      "colors": "maroon/cream"
     },
-    "sponsor": "LG"
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "maroon",
+     "trim": "cream"
+    },
+    "socks": {
+     "colour": "maroon",
+     "trim": "cream"
+    }
    },
    "sources": [
     "cof-aek-p2",
@@ -1504,7 +1832,15 @@
      "design": "plain",
      "colors": "yellow/black"
     },
-    "sponsor": "LG"
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1528,7 +1864,15 @@
      "design": "plain",
      "colors": "black/yellow"
     },
-    "sponsor": "LG"
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1552,7 +1896,15 @@
      "design": "plain",
      "colors": "white/black"
     },
-    "sponsor": "LG"
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1576,7 +1928,15 @@
      "design": "contrasting sleeves",
      "colors": "yellow/black"
     },
-    "sponsor": "LG"
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1600,7 +1960,15 @@
      "design": "contrasting sleeves",
      "colors": "black/yellow"
     },
-    "sponsor": "LG"
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1647,7 +2015,15 @@
      "design": "plain",
      "colors": "yellow/black"
     },
-    "sponsor": "TIM"
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1671,7 +2047,15 @@
      "design": "contrasting sleeves",
      "colors": "black/yellow"
     },
-    "sponsor": "TIM"
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p1"
@@ -1694,7 +2078,15 @@
      "design": "contrasting sleeves",
      "colors": "black/yellow"
     },
-    "sponsor": "TIM"
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1718,7 +2110,15 @@
      "design": "contrasting sleeves",
      "colors": "yellow/black"
     },
-    "sponsor": "TIM"
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p1"
@@ -1741,7 +2141,15 @@
      "design": "stripes",
      "colors": "white/skyblue"
     },
-    "sponsor": "TIM"
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "white",
+     "trim": "grey"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1788,7 +2196,15 @@
      "design": "plain",
      "colors": "yellow/black"
     },
-    "sponsor": null
+    "sponsor": null,
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1812,7 +2228,15 @@
      "design": "plain",
      "colors": "skyblue/white"
     },
-    "sponsor": null
+    "sponsor": null,
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p1"
@@ -1858,7 +2282,15 @@
      "design": "stripes",
      "colors": "yellow/black"
     },
-    "sponsor": "Piraeus Bank"
+    "sponsor": "Piraeus Bank",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1882,7 +2314,15 @@
      "design": "sash",
      "colors": "skyblue/white"
     },
-    "sponsor": "Piraeus Bank"
+    "sponsor": "Piraeus Bank",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1906,7 +2346,15 @@
      "design": "stripes",
      "colors": "yellow/black"
     },
-    "sponsor": "Alpha Digital"
+    "sponsor": "Alpha Digital",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
    },
    "sources": [
     "cof-aek-p1",
@@ -1930,7 +2378,15 @@
      "design": "gradient",
      "colors": "skyblue/white"
     },
-    "sponsor": "Alpha Digital"
+    "sponsor": "Alpha Digital",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "skyblue",
+     "trim": "white"
+    }
    },
    "sources": [
     "cof-aek-p1",

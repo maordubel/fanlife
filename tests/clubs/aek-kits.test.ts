@@ -50,3 +50,52 @@ describe('AEK Athens kits: catalogue + Commons drawings',()=>{
  })
  it('the swatch carries AEK\'s own colour',()=>{expect(SWATCH.yellow).toMatch(/^#[0-9a-f]{6}$/i)})
 })
+
+/* ---- wiring: what the features see once the owner approves (approval applied in memory only, never on disk) ---- */
+import {compilePack} from '@/lib/clubs/compiler'
+import {mergeWave} from '@/lib/clubs/waves'
+import {REGISTRY} from '@/lib/master/registry'
+import {kitViews,buildableKits,waveCReadiness} from '@/lib/clubs/gate-content'
+import {collectionOf,isBuildable} from '@/lib/clubs/kit-collection'
+import {documentedCloth} from '@/lib/clubs/kit-model'
+import {forbiddenColor} from '@/lib/clubs/theme'
+import React,{createElement} from 'react'
+;(globalThis as {React?:unknown}).React=React
+import {renderToStaticMarkup} from 'react-dom/server'
+import {KitPlate} from '@/components/clubs/games/KitPlate'
+
+const aek=REGISTRY.find(c=>c.id==='aek-athens')!
+const approvedWave=()=>{const w=structuredClone(wave) as unknown as {kits:Record<string,unknown>[]};for(const k of w.kits)Object.assign(k,{status:'approved',confidence:2,approvedAt:'2026-10-09',approvedBy:'Maor Harel (owner, chat)'});return w}
+const build=(approve:boolean)=>compilePack(mergeWave(structuredClone(core) as never,(approve?approvedWave():structuredClone(wave)) as never),aek)
+
+describe('AEK kits reach the gates, the shelf and the market',()=>{
+ it('while the wave is in review nothing reaches a gate (the two kits already in core cite aekfc.gr, whose access is "unknown", so they are held back too)',()=>{
+  expect(kitViews(build(false).data)).toHaveLength(0)
+ })
+ const data=build(true).data
+ it('once approved, every kit is a row of the club\'s archive (the market and closet read this same list)',()=>{
+  const views=kitViews(data);expect(views.length).toBeGreaterThanOrEqual(90)
+  expect(new Set(views.map(v=>v.id)).size).toBe(views.length)
+  expect(collectionOf(data)).toHaveLength(views.length)
+ })
+ it('gate 4 (build the kit) has a full round and gate 5 (shirt collection) a full shelf',()=>{
+  const r=waveCReadiness(data);expect(buildableKits(data).length).toBeGreaterThanOrEqual(5)
+  expect(r['kit-builder']!.playable).toBe(true);expect(r.kits!.playable).toBe(true)
+  expect(r['kit-builder']!.state).toBe('READY');expect(r.kits!.state).toBe('READY')
+ })
+ it('AEK yellow is paintable under AEK\'s own colour policy, so its yellow kits are real gate-4 puzzles',()=>{
+  const forbidden=(h:string)=>forbiddenColor(data.theme,h)
+  const yellow=kitViews(data).filter(k=>k.colours.includes('yellow')&&k.design==='stripes'&&k.maker)
+  expect(yellow.length).toBeGreaterThan(3)
+  for(const k of yellow){expect(documentedCloth(k,forbidden),k.id).not.toBeNull();expect(isBuildable(data,k)).toBe(true)}
+ })
+ it('shorts and socks travel with the kit, and only for kits a catalogue drew whole',()=>{
+  const views=kitViews(data),whole=views.filter(v=>v.shorts&&v.socks)
+  expect(whole).toHaveLength(57);expect(views.filter(v=>!v.shorts&&!v.socks).length).toBe(views.length-57)
+ })
+ it('KitPlate draws the whole kit (taller frame) when shorts and socks are documented, the shirt alone otherwise',()=>{
+  const v=kitViews(data),full=v.find(k=>k.shorts&&k.socks&&k.colours.length&&k.season==='2025/26'&&k.design==='stripes')!,bare=v.find(k=>!k.shorts)!
+  expect(renderToStaticMarkup(createElement(KitPlate,{kit:full,label:false}))).toContain('viewBox="0 0 430 470"')
+  expect(renderToStaticMarkup(createElement(KitPlate,{kit:bare,label:false}))).toContain('viewBox="0 0 340 320"')
+ })
+})

@@ -22,7 +22,7 @@ import { REGISTRY } from '@/lib/master/registry'
  *   away shirt") — so a shirt is never shown without its club. The field name is The Worker's.
  * - Nothing is a spoiler in FAN LIFE: the gate-4 shield belongs to The Worker's Hebrew game.
  */
-export type FanShirt = CollectorShirt & { club: string; clubName: string; kit: Pick<KitView, 'id' | 'design' | 'colours' | 'season'> | null }
+export type FanShirt = CollectorShirt & { club: string; clubName: string; kit: (Pick<KitView, 'id' | 'design' | 'colours' | 'season'> & Partial<Pick<KitView, 'shorts' | 'socks'>>) | null }
 export type FanAuctionShirt = AuctionShirt & { club: string; clubName: string; kit: FanShirt['kit'] }
 
 const VARIANT: Record<string, string> = { home: 'Home', away: 'Away', third: 'Third', fourth: 'Fourth', gk: 'Goalkeeper', special: 'Special' }
@@ -69,7 +69,7 @@ export function fanShirts(): Promise<FanShirt[]> {
           spoiler: null,
           club: club.id,
           clubName: club.name,
-          kit: { id: kit.id, design: kit.design, colours: kit.colours, season: kit.season },
+          kit: { id: kit.id, design: kit.design, colours: kit.colours, season: kit.season, shorts: kit.shorts ?? null, socks: kit.socks ?? null },
         })
       }
     }

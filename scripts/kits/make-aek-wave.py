@@ -90,6 +90,8 @@ out=[]
 for k in kits:
     cols=k['shirt']['colours'];colors='/'.join(cols)
     v=dict(name=f"AEK Athens {k['season']} {k['type']}{' (European)' if k['euro'] else ''}",season=k['season'],type=k['type'],manufacturer=k['maker'],construction=dict(design=k['shirt']['design'],colors=colors),sponsor=k['sponsor'])
+    if k['shorts']:v['shorts']=dict(colour=k['shorts']['colour'],trim=k['shorts']['trim'])
+    if k['socks']:v['socks']=dict(colour=k['socks']['colour'],trim=k['socks']['trim'])
     n=[]
     if k['origin']=='catalogue':n.append(f"Catalogue: {k['evidence'][0]['ref']}. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).")
     else:n.append(f"Drawing only: {k['evidence'][0]['ref']} (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.")
