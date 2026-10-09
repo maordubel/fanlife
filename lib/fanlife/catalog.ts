@@ -7,7 +7,7 @@ import { kitViews, type KitView } from '@/lib/clubs/gate-content'
 import { CORE_CLUB_IDS, loadClub } from '@/lib/clubs/resolver'
 import { REGISTRY } from '@/lib/master/registry'
 import { cfsFor, cfsPhoto } from '@/lib/clubs/kit-cfs'
-import { clubKitPhoto } from '@/lib/clubs/kitArchive'
+import { clubKitPhotoOf } from '@/lib/clubs/kitArchive'
 import { variantOf } from '@/lib/clubs/kit-model'
 
 /**
@@ -62,7 +62,7 @@ export function fanShirts(): Promise<FanShirt[]> {
         if (year === null) continue
         out.push({
           slug: fanSlug(club.sub, kit.id),
-          src: clubKitPhoto(club.id, kit.id) ?? cfsPhoto(club.id, kit.season, kit.type) ?? '',
+          src: clubKitPhotoOf(club.id, kit) ?? cfsPhoto(club.id, kit.season, kit.type) ?? '',
           seasonLabel: kit.season,
           yearRaw: year,
           seasonAmbiguous: false,
