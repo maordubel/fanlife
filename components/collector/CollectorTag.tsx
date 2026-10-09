@@ -10,6 +10,10 @@ export function CollectorTag({ label, compact = false }: { label: CollectorLabel
   return (
     <span className="inline-flex flex-wrap items-baseline gap-x-2 gap-y-0.5 font-body text-step--1 text-ink">
       <bdi className="font-extrabold">{handleLabel(label)}</bdi>
+      {/* only present when the collector chose to show where they are */}
+      {label.place ? (
+        <bdi className="text-muted">{compact || !label.place.city ? label.place.country : `${label.place.city}, ${label.place.country}`}</bdi>
+      ) : null}
       {!compact && label.completed > 0 ? (
         <span className="text-muted">{t('collector.stats.completed', { n: String(label.completed) })}</span>
       ) : null}

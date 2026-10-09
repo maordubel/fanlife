@@ -33,6 +33,8 @@ sx=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/70-market-search.sql 2>&
 echo "$sx" | grep -c PASS | xargs -I{} echo "db verify: {} shirt hub (search, saved searches, wanted board) assertions — clean"
 dx=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/71-deal-wave2.sql 2>&1) || { echo "$dx" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$dx" | grep -c PASS | xargs -I{} echo "db verify: {} shirt hub wave 2 (bundle, handover, feedback) assertions — clean"
+cx=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/72-circles-wave3.sql 2>&1) || { echo "$cx" | grep -E "FAIL|ERROR"; exit 1; }
+echo "$cx" | grep -c PASS | xargs -I{} echo "db verify: {} shirt hub wave 3 (place, circles, pipe, identification help) assertions — clean"
 st=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/60-stand.sql 2>&1) || { echo "$st" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$st" | grep -c PASS | xargs -I{} echo "db verify: {} \"היציע שלי\" (worker_stand_*) attack and flow assertions — clean"
 pi=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/60-public-identity.sql 2>&1) || { echo "$pi" | grep -E "FAIL|ERROR"; exit 1; }

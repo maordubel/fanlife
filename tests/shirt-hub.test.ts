@@ -6,7 +6,7 @@ import {
   EMPTY_FILTERS, MAX_SLUGS, NO_SHIRT, activeCount, autoName, filtersFromQuery, filtersFromSearch, filtersToSearch, slugsFor, toQuery, viewFromSearch,
   type HubShirt,
 } from '@/lib/fanlife/hub/query'
-import { reasonsFor } from '@/lib/fanlife/hub/reasons'
+import { reasonsFor, routeWords } from '@/lib/fanlife/hub/reasons'
 import type { HubItem, MyWant } from '@/lib/fanlife/hub/types'
 import hub from '@/messages/en.hub.json'
 
@@ -97,6 +97,32 @@ describe('match reasons — words, never a score', () => {
   it('never explains your own copy by your own wishlist', () => expect(reasonsFor(item({ mine: true }), [want()], now)).not.toContain('wishlist'))
   it('prints no percentage anywhere in the hub copy', () => {
     expect(Object.values(hub).filter((v) => /%|percent|match score/i.test(v))).toEqual([])
+  })
+})
+
+describe('wave 3 — place, reach, circles', () => {
+  it('country, city and reach round-trip through the address', () => {
+    const f = { ...EMPTY_FILTERS, country: 'DE', city: 'berlin', reach: 'IL' }
+    expect(filtersFromSearch(filtersToSearch(f, 'market'), shirts)).toEqual(f)
+    expect(toQuery(f, shirts)).toMatchObject({ countries: ['DE'], cities: ['berlin'], reach: 'IL' })
+    expect(activeCount(f)).toBe(3)
+  })
+  it('a made-up country or city is ignored', () => {
+    const f = filtersFromSearch('?country=germany&city=Ber%20lin!&reach=x', shirts)
+    expect([f.country, f.city, f.reach]).toEqual([null, null, null])
+  })
+  it('the circles tab lives in the address', () => expect(viewFromSearch('?view=circles')).toBe('circles'))
+  it('says how a copy travels in words, and nothing when the viewer has no place', () => {
+    expect(routeWords({ sameCity: false, sameCountry: false, crossBorder: true, reaches: true, delivery: 'ship' })).toEqual(['crossBorder', 'ships'])
+    expect(routeWords({ sameCity: true, sameCountry: true, crossBorder: false, reaches: null, delivery: 'local' })).toEqual(['sameCity', 'meetOnly'])
+    expect(routeWords(undefined)).toEqual([])
+  })
+  it('the circles migration is worker_-only, never on auth, and the public views leak no user id', () => {
+    const sql = readFileSync(join(ROOT, 'supabase/migrations/20261009150000_worker_circles_wave3.sql'), 'utf8')
+    expect(sql).not.toMatch(/\bon\s+auth\.|from\s+auth\.users|alter\s+table\s+auth\./i)
+    for (const m of sql.matchAll(/create\s+(?:or\s+replace\s+)?(?:function|table(?:\s+if\s+not\s+exists)?|trigger)\s+(?:public\.)?([a-z_0-9]+)/gi)) expect(m[1]).toMatch(/^worker_/)
+    const overview = sql.slice(sql.indexOf('function public.worker_circle_overview'), sql.indexOf('function public.worker_item_route'))
+    expect(overview).not.toMatch(/user_id\s+as|'user'/)
   })
 })
 

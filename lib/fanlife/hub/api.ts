@@ -9,10 +9,18 @@ import type {
   DealExtras,
   FeedbackRating,
   HandoverMethod,
+  CircleKind,
+  CircleOverview,
+  CircleRef,
   Delivery,
   HubQuery,
+  IdProposal,
+  IdRequest,
   MyWant,
+  Pipe,
+  Place,
   SavedSearch,
+  ShipScope,
   SearchPage,
   WantedPage,
   WantInput,
@@ -55,9 +63,10 @@ export const marketSearch = (query: HubQuery, after?: Cursor | null, limit = PAG
     p_after_id: after?.id ?? null,
   })
 
-export const wantedList = (slugs: string[] | null, after?: Cursor | null, limit = PAGE_SIZE) =>
+export const wantedList = (slugs: string[] | null, after?: Cursor | null, limit = PAGE_SIZE, clubs?: string[] | null) =>
   call<WantedPage>('worker_wanted_list', {
     p_slugs: slugs && slugs.length ? slugs : null,
+    p_clubs: clubs && clubs.length ? clubs : null,
     p_limit: limit,
     p_after_at: after?.at ?? null,
     p_after_id: after?.id ?? null,
@@ -99,3 +108,27 @@ export const handoverSet = (conn: string, method: HandoverMethod, note: string) 
 export const handoverSent = (conn: string) => call<object>('worker_handover_sent', { p_conn: conn })
 export const feedbackGive = (conn: string, rating: FeedbackRating, note: string) =>
   call<object>('worker_feedback_give', { p_conn: conn, p_rating: rating, p_note: note.trim() || null })
+
+// ------------------------------------------------------------------ wave 3 — place, circles, the pipe, identification help
+
+export const itemReachSet = (itemId: string, scope: ShipScope) => call<{ shipScope: ShipScope }>('worker_item_reach_set', { p_item: itemId, p_scope: scope })
+
+export const placeMine = () => call<Place>('worker_place_mine')
+export const placeSet = (country: string | null, city: string | null, show: boolean) =>
+  call<Place>('worker_place_set', { p_country: country, p_city: city, p_show: show })
+
+export const circlesMine = () => call<{ circles: CircleRef[] }>('worker_circles_mine')
+export const circleSet = (kind: CircleKind, key: string, on: boolean) => call<{ circles: CircleRef[] }>('worker_circle_set', { p_kind: kind, p_key: key, p_on: on })
+export const circleOverview = (kind: CircleKind, key: string) => call<CircleOverview>('worker_circle_overview', { p_kind: kind, p_key: key })
+
+export const pipe = () => call<Pipe>('worker_pipe')
+
+export const idreqList = (after?: Cursor | null, limit = 20) =>
+  call<{ requests: IdRequest[]; next: Cursor | null }>('worker_idreq_list', { p_limit: limit, p_after_at: after?.at ?? null, p_after_id: after?.id ?? null })
+export const idreqMine = () => call<{ requests: IdRequest[] }>('worker_idreq_mine')
+export const idreqGet = (id: string) => call<{ request: IdRequest; proposals: IdProposal[] }>('worker_idreq_get', { p_id: id })
+export const idreqOpen = (id: string, photos: string[], note: string, club: string | null) =>
+  call<{ id: string }>('worker_idreq_open', { p_id: id, p_photos: photos, p_note: note.trim() || null, p_club: club })
+export const idreqPropose = (id: string, slug: string, note: string) =>
+  call<object>('worker_idreq_propose', { p_id: id, p_slug: slug, p_kit: null, p_note: note.trim() || null })
+export const idreqResolve = (id: string, proposalId: string | null) => call<{ status: string; archiveSlug?: string }>('worker_idreq_resolve', { p_id: id, p_prop: proposalId })
