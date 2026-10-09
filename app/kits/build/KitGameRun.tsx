@@ -244,7 +244,7 @@ export function KitGameRun({
       hintsUsed: answer.hintsUsed,
       token: answer.unlock.token,
       dna: answer.unlock.dna,
-    })
+    }).then(() => window.dispatchEvent(new Event('worker:kit-built')))
   }
 
   function next() {

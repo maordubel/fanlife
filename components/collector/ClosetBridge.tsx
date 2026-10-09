@@ -1,0 +1,29 @@
+'use client'
+
+import { useEffect } from 'react'
+
+import { syncBuiltToCloset } from '@/lib/portal/closet-sync'
+import { portalConfigured } from '@/lib/portal/env'
+import { createClient } from '@/lib/supabase/client'
+
+/** Mounted once in the root layout: carries game-built shirts into the closet on load and on every sign-in. */
+export function ClosetBridge() {
+  useEffect(() => {
+    if (!portalConfigured()) return
+    void syncBuiltToCloset()
+    try {
+      const { data } = createClient().auth.onAuthStateChange((event) => {
+        if (event === 'SIGNED_IN') void syncBuiltToCloset()
+      })
+      const onBuilt = () => void syncBuiltToCloset()
+      window.addEventListener('worker:kit-built', onBuilt)
+      return () => {
+        data.subscription.unsubscribe()
+        window.removeEventListener('worker:kit-built', onBuilt)
+      }
+    } catch {
+      return undefined
+    }
+  }, [])
+  return null
+}

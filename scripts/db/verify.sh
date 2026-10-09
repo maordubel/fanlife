@@ -39,3 +39,5 @@ st=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/60-stand.sql 2>&1) || { 
 echo "$st" | grep -c PASS | xargs -I{} echo "db verify: {} \"היציע שלי\" (worker_stand_*) attack and flow assertions — clean"
 pi=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/60-public-identity.sql 2>&1) || { echo "$pi" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$pi" | grep -c PASS | xargs -I{} echo "db verify: {} public identity (אדום #N, ONE RED WORLD §35) assertions — clean"
+go=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/73-game-origin.sql 2>&1) || { echo "$go" | grep -E "FAIL|ERROR"; exit 1; }
+echo "$go" | grep -c PASS | xargs -I{} echo "db verify: {} one-closet (game-built shirts) assertions — clean"

@@ -349,5 +349,8 @@
   "collector.editor.error.too_many_photos": "יש כבר 8 תמונות. הסר אחת כדי להוסיף.",
   "collector.editor.error.not_uploaded": "התמונה לא הגיעה לשרת. נסה שוב.",
   "collector.editor.error.suspended": "העותק מושעה ואי אפשר לשנות אותו.",
-  "collector.editor.error.not_found": "העותק כבר לא בארון."
+  "collector.editor.error.not_found": "העותק כבר לא בארון.",
+  "collector.game.title": "הורכבה במשחק",
+  "collector.game.body": "החולצה הזאת נכנסה לארון כי הרכבת אותה במשחק. אפשר להציע אותה למכירה או להחלפה רק אחרי שמאשרים שיש לך חולצה כזאת באמת.",
+  "collector.game.confirm": "יש לי חולצה כזאת באמת"
 }

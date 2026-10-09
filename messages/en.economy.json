@@ -799,5 +799,8 @@
   "screen.auctionLot.title": "The auction",
   "screen.auctionSubmit.sub": "From your closet to the event — after approval",
   "screen.auctionSubmit.title": "Put up for auction",
-  "share.failed": "That didn't work. Try again or copy the link."
+  "share.failed": "That didn't work. Try again or copy the link.",
+  "collector.game.title": "Built in the game",
+  "collector.game.body": "This shirt is in your closet because you assembled it in a game. You can offer it for sale or trade only after you confirm you really own one.",
+  "collector.game.confirm": "I really own this shirt"
 }
