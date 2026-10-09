@@ -98,7 +98,9 @@ const KIND = new Set([
 ])
 // 25.9.2026 — `free-licence`: a photograph published under CC BY / CC BY-SA / PD (Wikimedia
 // Commons), fetched from its file page; author, licence and page URL live in away-media.json.
-const ORIGIN = new Set(['maor-upload', 'archive-scan', 'original-artwork', 'procedural', 'free-licence', 'unknown'])
+const ORIGIN = new Set(['maor-upload', 'archive-scan', 'original-artwork', 'procedural', 'free-licence', 'third-party-archive', 'unknown'])
+// 9.10.2026 — `third-party-archive`: product photographs from a public kit catalogue (footballkitarchive.com),
+// the photographer credited in sourceTitle; the rights are NOT settled, and the records say so at confidence 1.
 /** every physical thing done to a file between his hard drive and a player's browser */
 const TREATMENT = new Set([
   'resize', // Controlled resizing recorded by the upstream asset import.

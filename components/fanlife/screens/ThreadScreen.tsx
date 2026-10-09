@@ -49,6 +49,7 @@ export function ThreadScreen({ id, shirts }: { id: string; shirts: Record<string
     if (out.ok) {
       quiet.current = settled(out.connection.status)
       setLoad({ state: 'ready', thread: out })
+      window.dispatchEvent(new Event('fanlife:thread-fresh'))
       return
     }
     // a poll that fails after the conversation loaded keeps what is on screen
@@ -87,7 +88,10 @@ export function ThreadScreen({ id, shirts }: { id: string; shirts: Record<string
     }
     if (!document.hidden) start()
     document.addEventListener('visibilitychange', onVisibility)
+    const onDealAct = () => void refresh()
+    window.addEventListener('fanlife:deal-act', onDealAct)
     return () => {
+      window.removeEventListener('fanlife:deal-act', onDealAct)
       live.current = false
       stop()
       document.removeEventListener('visibilitychange', onVisibility)
