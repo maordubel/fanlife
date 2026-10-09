@@ -57,3 +57,12 @@ export function clubKitPhoto(club: string, kitId: string): string | null {
   const r = (ARCHIVES[club]?.records ?? []).find((x) => x.usableInApp && x.sourcePage.replace(/\/$/, '').endsWith(`-${id}`))
   return r ? `/kits/${club}/${r.file.split('/').pop()}` : null
 }
+
+/** the cut-out photograph of a shirt under any of the ids its folded records carry (`kitViews` merges the same shirt's records, `also`) */
+export function clubKitPhotoOf(club: string, kit: { id: string; also?: string[] }): string | null {
+  for (const id of [kit.id, ...(kit.also ?? [])]) {
+    const p = clubKitPhoto(club, id)
+    if (p) return p
+  }
+  return null
+}

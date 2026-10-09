@@ -11,12 +11,25 @@ CLUBS=[
  dict(id='olympiacos',name='Olympiacos',accent='#e5484d',data='content/manual/kit-archive-olympiacos.json',man='content/manual/kit-cof-olympiacos.json'),
  dict(id='hapoel-petah-tikva',name='Hapoel Petah Tikva',accent='#4c8dff',data='content/manual/kit-archive-hapoel-petah-tikva.json',man='content/manual/kit-cof-hapoel-petah-tikva.json'),
 ]
+def fold(kits):
+    # one shirt is one card: the catalogue's second image of the same shirt ("-v2") and records with the same season, type, design, colours and maker are folded; the extra images ride along
+    seen={};out=[]
+    for k in kits:
+        sh=k['shirt'];key=(k['season'],k['type'],sh['design'],tuple(sorted(sh['colours'])),(k.get('maker') or '').lower())
+        base=seen.get(key)
+        if base is None:
+            seen[key]=k;out.append(k)
+        else:
+            base.setdefault('moreImages',[])
+            if k.get('image')and k['image']!=base.get('image'):base['moreImages'].append(k['image'])
+    return out
 tpl=open('scripts/kits/kit-archive.template.html',encoding='utf8').read().replace('/*__RENDERER__*/','const SPONSOR_TYPE='+open('content/manual/sponsor-type.json',encoding='utf8').read()+';\n'+open('scripts/kits/kit-render.js',encoding='utf8').read())
 hub=[]
 for c in CLUBS:
     j=json.load(open(c['data']));man=json.load(open(c['man']))
+    j['kits']=fold(j['kits']);j['kitCount']=len(j['kits'])
     pages=man.get('pages') or {k:'https://www.colours-of-football.com/colours03/gre/aek/'+k for k in ['aek_1.html','aek_2.html','aek_athens_3.html','aek_athens_4.html']}
-    data=dict(retrieved=j['retrieved'],club=dict(id=c['id'],name=c['name']),crest=f"/club-kits/{c['id']}/crest.png",catalogueUrls=list(pages.values()),sources=dict(catalogue=j['sources']['catalogue']),total=j['kitCount'],catalogue=j['catalogueKits'],drawingOnly=j['drawingOnlyKits'],crossChecked=j['crossChecked'],conflicts=j['typeConflicts'],kits=j['kits'])
+    data=dict(retrieved=j['retrieved'],club=dict(id=c['id'],name=c['name']),crest=f"/club-kits/{c['id']}/crest.png",catalogueUrls=list(pages.values()),sources=dict(catalogue=j['sources']['catalogue']),total=j['kitCount'],catalogue=sum(1 for k in j['kits'] if k.get('origin')=='catalogue'),drawingOnly=sum(1 for k in j['kits'] if k.get('origin')!='catalogue'),crossChecked=sum(1 for k in j['kits'] if k.get('verified') or len(k.get('sources') or [])>1),conflicts=j['typeConflicts'],kits=j['kits'])
     hp=f"content/manual/kit-hfk-{c['id']}.json"
     if os.path.exists(hp):
         h=json.load(open(hp));fy=[k['from'] for k in h['kits'] if k['from']];ty=[k['to'] for k in h['kits'] if k['to']];data['hfk']=dict(count=h['count'],source=h['source'],kits=h['kits'],**{'from':min(fy),'to':max(ty)})

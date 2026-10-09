@@ -12,7 +12,7 @@ import {GATE_THRESHOLDS as T} from './thresholds'
 export type LineupMatch={id:string;name:string;on:string|null;competition:string;score:string|null;starters:string[];bench:string[];decoys:string[];sources:string[]}
 /** the rest of the kit, when a source documents it: shorts and socks as a colour name and an optional second colour */
 export type KitPart={colour:string;trim:string|null}
-export type KitView={id:string;season:string;type:string;maker:string|null;design:string|null;sponsor?:string|null;colours:string[];shorts?:KitPart|null;socks?:KitPart|null;sources:string[]}
+export type KitView={id:string;season:string;type:string;maker:string|null;design:string|null;sponsor?:string|null;colours:string[];shorts?:KitPart|null;socks?:KitPart|null;sources:string[];/** the ids of the same shirt's other records, folded into this one (the catalogue's second image, a source's twin) */also?:string[]}
 const str=(v:unknown)=>typeof v==='string'&&v.trim()?v.trim():null
 const strs=(v:unknown)=>Array.isArray(v)?v.filter((x):x is string=>typeof x==='string'&&!!x.trim()).map(x=>x.trim()):[]
 const obj=(v:unknown):Record<string,unknown>=>v&&typeof v==='object'&&!Array.isArray(v)?v as Record<string,unknown>:{}
@@ -34,14 +34,61 @@ export function lineupPool(data:ClubData,m:LineupMatch):string[] {
  return [...new Set([...m.starters,...decoys])].sort((a,b)=>a.localeCompare(b))
 }
 export function kitViews(data:ClubData):KitView[] {
- return (data.kits||[]).flatMap(f=>{
+ return dedupeKits((data.kits||[]).flatMap(f=>{
   const v=obj(f.value),c=obj(v.construction),season=str(v.season)
   if(!season)return []
   const colours=(str(c.colors)||str(v.colors)||'').split(/[\/,]/).map(x=>x.trim().toLowerCase()).filter(Boolean)
   const part=(x:unknown):KitPart|null=>{const o=obj(x),colour=str(o.colour)?.toLowerCase();return colour?{colour,trim:str(o.trim)?.toLowerCase()??null}:null}
   return [{id:f.id,season,type:str(v.type)||'home',maker:str(v.manufacturer),design:str(c.design)||str(v.design),sponsor:str(v.sponsor),colours,shorts:part(v.shorts),socks:part(v.socks),sources:f.sources}]
- })
+ }))
 }
+
+const COLOUR_WORD:Record<string,string>={gray:'grey','sky blue':'skyblue','light blue':'skyblue'}
+const norm=(c:string)=>COLOUR_WORD[c]??c
+const STRIPES=new Set(['stripes','pinstripes'])
+const SASHES=new Set(['sash','diagonal'])
+const PLAINISH=new Set(['plain','solid'])
+const designOk=(a:string|null,b:string|null)=>{
+ const x=a&&PLAINISH.has(a)?'plain':a,y=b&&PLAINISH.has(b)?'plain':b
+ return x===y||x===null||y===null||x==='graphic'||y==='graphic'||(STRIPES.has(x)&&STRIPES.has(y))||(SASHES.has(x)&&SASHES.has(y))
+}
+const subset=(a:string[],b:string[])=>a.every(c=>b.includes(c))
+const coloursOk=(a:string[],b:string[])=>!a.length||!b.length||subset(a,b)||subset(b,a)
+const makerOk=(a:string|null,b:string|null)=>!a||!b||a.toLowerCase()===b.toLowerCase()
+const typeKey=(t:string)=>{const v=t.toLowerCase();return v==='gk'||v==='goalkeeper'?'gk':v}
+const score=(k:KitView)=>(k.maker?3:0)+(k.sponsor?3:0)+(k.shorts?2:0)+(k.socks?2:0)+(k.design&&k.design!=='graphic'?1:0)+Math.min(k.colours.length,3)+Math.min(k.sources.length,3)*0.1-(/-v\d+$/.test(k.id)?5:0)-(/uefa-/.test(k.id)?4:0)
+/**
+ * One shirt is one card. A season and type the archive records more than once is folded when the records can be the SAME shirt:
+ * compatible colours (equal, or one a subset of the other, order ignored — sources disagree on base and trim), compatible design
+ * (a "graphic" or missing design says nothing; stripes and pinstripes are one family) and a maker that is not contradicted.
+ * Two shirts that differ in design or maker (AEK 2005/06 home: plain vs contrasting sleeves) stay two. The richest record leads and
+ * lends what it lacks; the others' ids ride along in `also` so a photograph keyed to any of them still finds the card.
+ */
+export function dedupeKits(list:KitView[]):KitView[]{
+ const norm1=list.map(k=>({...k,colours:[...new Set(k.colours.map(norm))]}))
+ const groups=new Map<string,KitView[]>()
+ for(const k of norm1){const key=`${k.season}|${typeKey(k.type)}`;groups.set(key,[...(groups.get(key)??[]),k])}
+ const out:KitView[]=[]
+ for(const members of groups.values()){
+  const sorted=[...members].sort((a,b)=>score(b)-score(a)||a.id.localeCompare(b.id)),clusters:KitView[][]=[]
+  for(const k of sorted){
+   const stub=k.design===null&&k.colours.length<=1 // a source's bare twin (UEFA's FKA record: no design, one colour) says only that the shirt exists
+   const home=clusters.find(c=>{const lead=c[0]!;return makerOk(lead.maker,k.maker)&&(stub||(coloursOk(lead.colours,k.colours)&&designOk(lead.design,k.design)))})
+   if(home)home.push(k);else clusters.push([k])
+  }
+  for(const c of clusters){
+   const [lead,...rest]=c
+   if(!rest.length){out.push(lead!);continue}
+   const fill=<T,>(get:(k:KitView)=>T|null|undefined)=>get(lead!)??rest.map(get).find(v=>v!=null)??null
+   const widest=[lead!,...rest].reduce((a,b)=>b.colours.length>a.colours.length&&subset(a.colours,b.colours)?b:a)
+   out.push({...lead!,maker:fill(k=>k.maker),design:lead!.design&&lead!.design!=='graphic'?lead!.design:fill(k=>k.design&&k.design!=='graphic'?k.design:null)??lead!.design,sponsor:fill(k=>k.sponsor),shorts:fill(k=>k.shorts),socks:fill(k=>k.socks),colours:widest.colours,sources:[...new Set(c.flatMap(k=>k.sources))],also:rest.map(k=>k.id)})
+  }
+ }
+ // keep the archive's own order: the order the records first appeared in
+ const order=new Map(list.map((k,i)=>[k.id,i]))
+ return out.sort((a,b)=>(order.get(a.id)??0)-(order.get(b.id)??0))
+}
+
 export function rivalsOf(data:ClubData){return (data.rivals||[]).filter(r=>r.status==='approved'&&r.confidence>=2)}
 
 /** A kit is only a puzzle when it names enough to ask about: season + maker + design. */

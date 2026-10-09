@@ -13,7 +13,7 @@ import {clubHref} from '@/lib/clubs/club-href'
 import {kitViews} from '@/lib/clubs/gate-content'
 import {variantOf} from '@/lib/clubs/kit-model'
 import {kitArt} from '@/lib/clubs/kit-sources'
-import {clubKitPhoto} from '@/lib/clubs/kitArchive'
+import {clubKitPhotoOf} from '@/lib/clubs/kitArchive'
 import {hfkFor} from '@/lib/clubs/kit-hfk'
 import {cfsFor,cfsPhoto} from '@/lib/clubs/kit-cfs'
 import {cfsShirtSlug,shirtSlugFor} from '@/lib/fanlife/catalog'
@@ -57,7 +57,7 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
    </nav>
    {seasons.map(s=><div key={s} className="kit-archive-season" data-testid="kit-archive-season"><h2 className="kit-archive-year"><bdi>{s}</bdi></h2>
     <ul className="kit-archive-row">{kits.filter(k=>k.season===s).map(k=><li key={k.id} className="kit-archive-card" data-testid="kit-archive-kit">
-     {(()=>{const photo=clubKitPhoto(id,k.id)??cfsPhoto(id,k.season,k.type),a=kitArt(id,k.id,k.season,k.type),src=photo??a?.image
+     {(()=>{const photo=clubKitPhotoOf(id,k)??cfsPhoto(id,k.season,k.type),a=kitArt(id,k.id,k.season,k.type),src=photo??a?.image
       return src?<img className="kit-archive-img" data-archive-photo={photo?'':undefined} src={src} alt={`${k.season} ${label(k.type)}`} width={160} height={215} loading="lazy" decoding="async"/>:<KitPlate kit={k} label={false}/>})()}
      <p className="kit-archive-type">{label(k.type)}{(()=>{const a=kitArt(id,k.id,k.season,k.type);return a?<> · <a href={a.svg} target="_blank" rel="noopener noreferrer">{copy.kitArchiveSvg}</a></>:null})()}</p>
      <p className="kit-archive-facts"><span>{k.maker??copy.kitArchiveNoMaker}</span>{k.sponsor&&<span> · {k.sponsor}</span>}</p>
