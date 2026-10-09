@@ -20,6 +20,14 @@ const nextConfig = {
       '/api/track': EVALUATION_FILES,
     },
   },
+  // The static kit archives live in public/kit-archive/<club>/index.html; Next serves exact file paths only, so the folder URLs are rewritten to their index.
+  async rewrites() {
+    return [
+      { source: '/kit-archive', destination: '/kit-archive/index.html' },
+      { source: '/kit-archive/:club', destination: '/kit-archive/:club/index.html' },
+      { source: '/aek-kit-archive', destination: '/aek-kit-archive/index.html' },
+    ]
+  },
   poweredByHeader: false,
   images: { formats: ['image/avif', 'image/webp'] },
 

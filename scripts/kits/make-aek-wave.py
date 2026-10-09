@@ -83,6 +83,7 @@ EN={'suffix':lambda f,t,ct:f"Commons files the matching drawing ({f}) as {t} (fi
  'second':lambda:'The catalogue lists a second version of this kit (different shorts and socks).',
  'maker':lambda m,v:f"Catalogue drawing shows {m}; the club pack (aekfc.gr) says {v}."}
 en=lambda n:EN[n[0]](*n[1:])
+# NOTE: re-running this rewrites the wave as `review`; run scripts/club-research/approve-aek-kits.py again afterwards. content/manual/kit-aek-athens.json also carries `image` (set by hand from the catalogue copies in public/kits/aek-athens/cof).
 # ---- wave
 src=[dict(id=f'cof-aek-p{i}',title=f'AEK Athens kits, catalogue page {i} — colours-of-football.com',url='https://www.colours-of-football.com/colours03/gre/aek/'+p,publisher='colours-of-football.com',access='available',checkedAt=a.day) for i,p in enumerate(['aek_1.html','aek_2.html','aek_athens_3.html','aek_athens_4.html'],1)]
 src.append(dict(id='commons-aek-kit-body',title='Category:Football kit body/AEK Athens — Wikimedia Commons',url=com['source'],publisher='Wikimedia Commons',access='available',checkedAt=a.day))

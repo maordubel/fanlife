@@ -1,0 +1,2371 @@
+{
+ "sources": [
+  {
+   "id": "cof-celtic-p1",
+   "title": "celtic kits, catalogue page 1 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-celtic-p2",
+   "title": "celtic kits, catalogue page 2 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_2.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-celtic-p3",
+   "title": "celtic kits, catalogue page 3 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_3.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-celtic-p4",
+   "title": "celtic kits, catalogue page 4 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_4.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-celtic-p5",
+   "title": "celtic kits, catalogue page 5 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_5.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  }
+ ],
+ "kits": [
+  {
+   "id": "cof-k-71",
+   "value": {
+    "name": "celtic 2025/26 home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-72-v2",
+   "value": {
+    "name": "celtic 2025/26 home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "green",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-73",
+   "value": {
+    "name": "celtic 2025/26 away",
+    "season": "2025/26",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "black/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-74",
+   "value": {
+    "name": "celtic 2025/26 third",
+    "season": "2025/26",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "graphic",
+     "colors": "cream/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "green",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "green",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-75-v2",
+   "value": {
+    "name": "celtic 2025/26 third",
+    "season": "2025/26",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "graphic",
+     "colors": "cream/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "orange"
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-67",
+   "value": {
+    "name": "celtic 2024/25 home",
+    "season": "2024/25",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-68",
+   "value": {
+    "name": "celtic 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "navy",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-69-v2",
+   "value": {
+    "name": "celtic 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "yellow",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-70",
+   "value": {
+    "name": "celtic 2024/25 third",
+    "season": "2024/25",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "graphic",
+     "colors": "grey/black"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-63",
+   "value": {
+    "name": "celtic 2023/24 home",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-64",
+   "value": {
+    "name": "celtic 2023/24 away",
+    "season": "2023/24",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "black/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-65",
+   "value": {
+    "name": "celtic 2023/24 third",
+    "season": "2023/24",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "graphic",
+     "colors": "green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-66-v2",
+   "value": {
+    "name": "celtic 2023/24 third",
+    "season": "2023/24",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "graphic",
+     "colors": "green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "navy",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p5"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-59",
+   "value": {
+    "name": "celtic 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-60",
+   "value": {
+    "name": "celtic 2022/23 away",
+    "season": "2022/23",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "black/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-61",
+   "value": {
+    "name": "celtic 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "grey/yellow"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-62-v2",
+   "value": {
+    "name": "celtic 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "grey/yellow"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "grey",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-55",
+   "value": {
+    "name": "celtic 2021/22 home",
+    "season": "2021/22",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-56",
+   "value": {
+    "name": "celtic 2021/22 away",
+    "season": "2021/22",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "green/cream"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "navy",
+     "trim": "cream"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": "cream"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-57-v2",
+   "value": {
+    "name": "celtic 2021/22 away",
+    "season": "2021/22",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "green/cream"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "green",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": "cream"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-58",
+   "value": {
+    "name": "celtic 2021/22 third",
+    "season": "2021/22",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "pinstripes",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "pink"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "pink"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-52",
+   "value": {
+    "name": "celtic 2020/21 home",
+    "season": "2020/21",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-53",
+   "value": {
+    "name": "celtic 2020/21 away",
+    "season": "2020/21",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "green",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-54",
+   "value": {
+    "name": "celtic 2020/21 third",
+    "season": "2020/21",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "black"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-49",
+   "value": {
+    "name": "celtic 2019/20 home",
+    "season": "2019/20",
+    "type": "home",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-50",
+   "value": {
+    "name": "celtic 2019/20 away",
+    "season": "2019/20",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "navy",
+     "trim": null
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-51",
+   "value": {
+    "name": "celtic 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "plain",
+     "colors": "grey/pink"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "pink"
+    }
+   },
+   "sources": [
+    "cof-celtic-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-43",
+   "value": {
+    "name": "celtic 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-44-v2",
+   "value": {
+    "name": "celtic 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-45",
+   "value": {
+    "name": "celtic 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "plain",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "navy",
+     "trim": null
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-46-v2",
+   "value": {
+    "name": "celtic 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "plain",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-47",
+   "value": {
+    "name": "celtic 2018/19 third",
+    "season": "2018/19",
+    "type": "third",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "gradient",
+     "colors": "yellow/black"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-48-v2",
+   "value": {
+    "name": "celtic 2018/19 third",
+    "season": "2018/19",
+    "type": "third",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "gradient",
+     "colors": "yellow/black"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-39",
+   "value": {
+    "name": "celtic 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": "brown"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-40",
+   "value": {
+    "name": "celtic 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "navy",
+     "trim": null
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-41",
+   "value": {
+    "name": "celtic 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "plain",
+     "colors": "green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-42-v2",
+   "value": {
+    "name": "celtic 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "plain",
+     "colors": "green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-35",
+   "value": {
+    "name": "celtic 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-36",
+   "value": {
+    "name": "celtic 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "plain",
+     "colors": "black/brown"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": "brown"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-37-v2",
+   "value": {
+    "name": "celtic 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "plain",
+     "colors": "black/brown"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-38",
+   "value": {
+    "name": "celtic 2016/17 third",
+    "season": "2016/17",
+    "type": "third",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "red/black"
+    },
+    "sponsor": "dafabet",
+    "shorts": {
+     "colour": "black",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "maroon",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-31",
+   "value": {
+    "name": "celtic 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Magners",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-32",
+   "value": {
+    "name": "celtic 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Magners",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-33-v2",
+   "value": {
+    "name": "celtic 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "hoops",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Magners",
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-34",
+   "value": {
+    "name": "celtic 2015/16 third",
+    "season": "2015/16",
+    "type": "third",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": "pinstripes",
+     "colors": "green/white"
+    },
+    "sponsor": "Magners",
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-29",
+   "value": {
+    "name": "celtic 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "graphic",
+     "colors": "green/yellow"
+    },
+    "sponsor": "Magners",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-30",
+   "value": {
+    "name": "celtic 2014/15 third",
+    "season": "2014/15",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "chest band",
+     "colors": "white/orange"
+    },
+    "sponsor": "Magners",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-27",
+   "value": {
+    "name": "celtic 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Magners",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2013-2014. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-28",
+   "value": {
+    "name": "celtic 2013/14 away",
+    "season": "2013/14",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "chest band",
+     "colors": "yellow/green"
+    },
+    "sponsor": "Magners",
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2013-2014. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-25",
+   "value": {
+    "name": "celtic 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Tennent's",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2012-2013. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-26",
+   "value": {
+    "name": "celtic 2012/13 away",
+    "season": "2012/13",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "black/grey"
+    },
+    "sponsor": "Tennent's",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "orange"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2012-2013. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-23",
+   "value": {
+    "name": "celtic 2011/12 away",
+    "season": "2011/12",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "cream/green"
+    },
+    "sponsor": "Tennent's",
+    "shorts": {
+     "colour": "green",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-24",
+   "value": {
+    "name": "celtic 2011/12 third",
+    "season": "2011/12",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "graphic",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Tennent's",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-20",
+   "value": {
+    "name": "celtic 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Tennent's",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-21",
+   "value": {
+    "name": "celtic 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "green/navy"
+    },
+    "sponsor": "Tennent's",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-22",
+   "value": {
+    "name": "celtic 2010/11 third",
+    "season": "2010/11",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Tennent's",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-18",
+   "value": {
+    "name": "celtic 2009/10 away",
+    "season": "2009/10",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2009-2010. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-19",
+   "value": {
+    "name": "celtic 2009/10 third",
+    "season": "2009/10",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "white/grey"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "grey"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2009-2010. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-16",
+   "value": {
+    "name": "celtic 2008–10 home",
+    "season": "2008–10",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2008-2010. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-17",
+   "value": {
+    "name": "celtic 2008/09 away",
+    "season": "2008/09",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "green",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2008-2009. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-14",
+   "value": {
+    "name": "celtic 2007/08 home",
+    "season": "2007/08",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2007-2008. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-15",
+   "value": {
+    "name": "celtic 2007/08 away",
+    "season": "2007/08",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "black",
+     "trim": "grey"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2007-2008. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-12",
+   "value": {
+    "name": "celtic 2006/07 away",
+    "season": "2006/07",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "black/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "black",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2006-2007. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-13",
+   "value": {
+    "name": "celtic 2006/07 third",
+    "season": "2006/07",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2006-2007. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-10",
+   "value": {
+    "name": "celtic 2005–07 home",
+    "season": "2005–07",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2005-2007. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-11",
+   "value": {
+    "name": "celtic 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "green/white"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "green",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "green",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2005-2006. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-08",
+   "value": {
+    "name": "celtic 2004/05 home",
+    "season": "2004/05",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2004-2005. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-09",
+   "value": {
+    "name": "celtic 2004/05 away",
+    "season": "2004/05",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "green/white"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "grey",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2004-2005. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-05",
+   "value": {
+    "name": "celtic 2003/04 home",
+    "season": "2003/04",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2003-2004. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-06",
+   "value": {
+    "name": "celtic 2003/04 away",
+    "season": "2003/04",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/green"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "navy",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2003-2004. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-07",
+   "value": {
+    "name": "celtic 2003/04 third",
+    "season": "2003/04",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Carling",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2003-2004. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-03",
+   "value": {
+    "name": "celtic 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/green"
+    },
+    "sponsor": "ntl:home Digital TV",
+    "shorts": {
+     "colour": "navy",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-04",
+   "value": {
+    "name": "celtic 2002/03 third",
+    "season": "2002/03",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "white/green"
+    },
+    "sponsor": "ntl:",
+    "shorts": {
+     "colour": "black",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-01",
+   "value": {
+    "name": "celtic 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "hoops",
+     "colors": "white/green"
+    },
+    "sponsor": "ntl:",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2001-2002. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-02",
+   "value": {
+    "name": "celtic 2001/02 away",
+    "season": "2001/02",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/navy"
+    },
+    "sponsor": "ntl:",
+    "shorts": {
+     "colour": "navy",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-celtic-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2001-2002. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  }
+ ]
+}

@@ -94,8 +94,8 @@ describe('rumble kits — every club, never a rival colour',()=>{
   expect(allowedColours(['red','green','white'],h=>forbiddenColor(pao,h))).toEqual(['green','white'])
   expect(allowedColours(['red','cream','black'],h=>forbiddenColor(hta,h))).toEqual(['red','cream','black'])
  })
- it('paints only colours it has a swatch for (gold and brown still have none); yellow is paintable since the owner allowed it for AEK, 9.10.2026',()=>{
-  expect(allowedColours(['yellow','gold','orange','red','brown'],()=>false)).toEqual(['yellow','orange','red'])
+ it('paints only colours it has a swatch for (gold and teal still have none); yellow is paintable since the owner allowed it for AEK, 9.10.2026',()=>{
+  expect(allowedColours(['yellow','gold','orange','red','teal'],()=>false)).toEqual(['yellow','orange','red'])
   expect(Object.keys(SWATCH)).toContain('yellow')
  })
  it('yellow stays banned wherever a club policy forbids it: Hapoel Tel Aviv drops it, AEK keeps it',()=>{

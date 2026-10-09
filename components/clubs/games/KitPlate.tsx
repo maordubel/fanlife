@@ -2,7 +2,7 @@ import type {KitPart,KitView} from '@/lib/clubs/gate-content'
 import {SWATCH} from '@/lib/clubs/rumble-kit'
 /** Colour names the club archive may carry → magazine tokens. Anything unmapped is NOT painted (never guessed). The five club-only colours (yellow, maroon, skyblue, pink, orange) come from the lib swatch, not from a token. */
 const TOKEN:Record<string,string>={red:'--mag-vermilion',white:'--mag-white',cream:'--mag-paper',blue:'--mag-navy',navy:'--mag-navy',green:'--mag-green',black:'--mag-ink',purple:'--mag-purple',grey:'--mag-muted',gray:'--mag-muted'}
-const CLUB_ONLY=['yellow','maroon','skyblue','pink','orange']
+const CLUB_ONLY=['yellow','maroon','skyblue','pink','orange','brown']
 export const paint=(name:string|undefined)=>name&&TOKEN[name]?`var(${TOKEN[name]})`:name&&CLUB_ONLY.includes(name)?SWATCH[name]!:null
 const BODY='M82 18 L120 6 Q170 28 220 6 L258 18 L312 74 L282 110 L252 92 L252 300 L88 300 L88 92 L58 110 L28 74 Z'
 /**

@@ -253,3 +253,4 @@ a.gp:active { transform: scale(.98); }
 .kit-archive-facts{margin:0;font-size:14px}
 .kit-archive-dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:8px 0 0;font-size:13px}
 .kit-archive-dl dt{font-weight:700}.kit-archive-dl dd{margin:0;overflow-wrap:anywhere}
+.kit-archive-img{width:100%;height:auto;aspect-ratio:160/215;object-fit:contain;background:var(--mag-white)}

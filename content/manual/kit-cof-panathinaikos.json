@@ -1,0 +1,2302 @@
+{
+ "sources": [
+  {
+   "key": "cof",
+   "title": "colours-of-football.com — Panathinaikos kit catalogue (© Mikhail Sipovich)",
+   "url": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html",
+   "readOn": "2026-10-09",
+   "kits": 61
+  },
+  {
+   "key": "logo",
+   "title": "football-logos.cc — Panathinaikos logo",
+   "url": "https://football-logos.cc/greece/panathinaikos/",
+   "readOn": "2026-10-09",
+   "kits": 0
+  }
+ ],
+ "source": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html",
+ "publisher": "colours-of-football.com (Mikhail Sipovich)",
+ "retrieved": "2026-10-09",
+ "count": 61,
+ "pages": {
+  "panathinaikos_1.html": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html",
+  "panathinaikos_2.html": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_2.html",
+  "panathinaikos_3.html": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_3.html",
+  "panathinaikos_4.html": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_4.html"
+ },
+ "method": "Season/type from the catalogue captions; design, maker, printed sponsor and trims transcribed by eye from the drawings (readUnsure marks the doubtful ones); colours measured from pixels in fixed regions (shirt, shorts, socks), transparent background excluded.",
+ "records": [
+  {
+   "i": 1,
+   "caption": "home kit 2001-2002",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_1_0102.png",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "green",
+    "trim": "blue",
+    "hex": {
+     "body": "#54a275",
+     "trim": "#034ea2"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#54a275",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#54a275",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 2,
+   "caption": "away kit 2001-2002",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_2_0102.png",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#54a275"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#54a275"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 3,
+   "caption": "home kit 2002-2003",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_1_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#00854a",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "green",
+    "hex": "#00854a",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#00854a",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 4,
+   "caption": "away kit 2002-2003",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_2_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#367b59",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#367b59",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#367b59",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 5,
+   "caption": "third kit 2002-2003",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_3_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#367b59"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#367b59"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 6,
+   "caption": "home kit 2003-2004",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_1_0304.png",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#367b59",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#367b59",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#367b59",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 7,
+   "caption": "away kit 2003-2004",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_2_0304.png",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#367b59"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#367b59"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#416552",
+    "bands": true
+   }
+  },
+  {
+   "i": 8,
+   "caption": "home kit 2004-2005",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_1_0405.png",
+   "season": "2004/05",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#367b59",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#367b59",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#367b59",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 9,
+   "caption": "away kit 2004-2005",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_2_0405.png",
+   "season": "2004/05",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#367b59"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "OTE",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#367b59"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#468061",
+    "bands": true
+   }
+  },
+  {
+   "i": 10,
+   "caption": "home kit 2005-2006",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_1_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#658971",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#4d7d61"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#317151",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 11,
+   "caption": "away kit 2005-2006",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_2_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#009659"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#317151",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 12,
+   "caption": "home kit 2006-2007",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_1_0607.gif",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#5f8069",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#396f53"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 13,
+   "caption": "away kit 2006-2007",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_2_0607.gif",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#2ea846"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#296a4b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#296a4b",
+    "trim": "white",
+    "trimHex": "#f1f1f1",
+    "bands": true
+   }
+  },
+  {
+   "i": 14,
+   "caption": "home kit 2007-2008",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_1_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#386d51",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#286849",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#286849",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 15,
+   "caption": "away kit 2007-2008",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_2_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#2ea846"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#386d51"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#286849",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 16,
+   "caption": "home kit 2008-2009",
+   "page": "panathinaikos_1.html",
+   "image": "gre_panath_1_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#2e7554",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#2e7554"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#2e7554",
+    "trim": "white",
+    "trimHex": "#f1f1f2",
+    "bands": true
+   }
+  },
+  {
+   "i": 17,
+   "caption": "away kit 2008-2009",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panath_2_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#2e7554"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#2e7554",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 18,
+   "caption": "home kit 2009-2010",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panath_1_0910.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#009f6a",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#009f6a",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#009f6a",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 19,
+   "caption": "away kit 2009-2010",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panath_2_0910.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#009974"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#007b3b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#608672",
+    "bands": true
+   }
+  },
+  {
+   "i": 20,
+   "caption": "home kit 2010-2012",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panath_1_1011.png",
+   "season": "2010–12",
+   "seasonKind": "range",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#009974",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#009974",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#009974",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 21,
+   "caption": "away kit 2010-2012",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panath_2_1011.png",
+   "season": "2010–12",
+   "seasonKind": "range",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#009974"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Cosmote",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#009974"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 22,
+   "caption": "home kit 2012-2013",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_1_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#00875a",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "οπαπ",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#14625a",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#14625a",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 23,
+   "caption": "away kit 2012-2013",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_2_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "green",
+    "hex": {
+     "body": "#1f2d43",
+     "trim": "#b9d771"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "οπαπ",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#1f2d43",
+    "trim": "green",
+    "trimHex": "#b9d771"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#1f2d43",
+    "trim": "green",
+    "trimHex": "#1f2d43",
+    "bands": true
+   }
+  },
+  {
+   "i": 24,
+   "caption": "third kit 2012-2013",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_3_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00875a"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "οπαπ",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 25,
+   "caption": "home kit 2014-2015",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_1_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "cream",
+    "hex": {
+     "body": "#0e7b60",
+     "trim": "#ece1d4"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#0e7b60",
+    "trim": "cream",
+    "trimHex": "#eee7df"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#0e7b60",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 26,
+   "caption": "away kit 2014-2015",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_2_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "blue",
+    "trim": "green",
+    "hex": {
+     "body": "#505eaa",
+     "trim": "#6ab745"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#505eaa",
+    "trim": "green",
+    "trimHex": "#6ab745"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#505eaa",
+    "trim": "green",
+    "trimHex": "#6ab745",
+    "bands": true
+   }
+  },
+  {
+   "i": 27,
+   "caption": "third kit 2014-2015",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_3_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "blue",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#034ea2"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "blue",
+    "trimHex": "#034ea2"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "blue",
+    "trimHex": "#354c76",
+    "bands": true
+   }
+  },
+  {
+   "i": 28,
+   "caption": "home kit 2015-2016",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_1_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#197a4d",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#197a4d",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#197a4d",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 29,
+   "caption": "away kit 2015-2016",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_2_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "blue",
+    "trim": "green",
+    "hex": {
+     "body": "#375a9e",
+     "trim": "#1a7a4c"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "green",
+    "trimHex": "#1a7a4c"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 30,
+   "caption": "third kit 2015-2016",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_3_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#f5f6f6",
+     "trim": "#1a7a4c"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#1a7a4c"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 31,
+   "caption": "home kit 2016-2017",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_1_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#007947",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 1
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#007947",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#007947",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 32,
+   "caption": "away kit 2016-2017",
+   "page": "panathinaikos_2.html",
+   "image": "gre_panathinaikos_2_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#007947"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#007947"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#007947",
+    "bands": true
+   }
+  },
+  {
+   "i": 33,
+   "caption": "third kit 2016-2017",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_3_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "black",
+    "trim": "blue",
+    "hex": {
+     "body": "#333333",
+     "trim": "#405daa"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#405daa",
+    "trim": "green",
+    "trimHex": "#00834e"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 34,
+   "caption": "home kit 2017-2018",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_1_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#058c4f",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#009562",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#009562",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 35,
+   "caption": "away kit 2017-2018",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_2_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "green",
+    "hex": {
+     "body": "#333333",
+     "trim": "#008d54"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 36,
+   "caption": "third kit 2017-2018",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_3_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#2e8b5a"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 37,
+   "caption": "home kit 2018-2019",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_1_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#00854d",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "green",
+    "hex": "#00854d",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#00854d",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 38,
+   "caption": "away kit 2018-2019",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_2_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "purple",
+    "trim": "white",
+    "hex": {
+     "body": "#4c3990",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": false,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "stoixima",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#4c3990",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#4c3990",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 39,
+   "caption": "third kit 2018-2019",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_3_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "yellow",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#b18740"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 40,
+   "caption": "home kit 2019-2020",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_1_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#1a9263",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "green",
+    "hex": "#178a5d",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#178a5d",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 41,
+   "caption": "home kit 2019-2020",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_1_1920_2.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#178a5d",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "Kappa",
+   "sponsor": "stoixima",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#178a5d",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#178a5d",
+    "trim": "white",
+    "trimHex": "#178a5d",
+    "bands": true
+   }
+  },
+  {
+   "i": 42,
+   "caption": "away kit 2019-2020",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_2_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "green",
+    "hex": {
+     "body": "#373637",
+     "trim": "#009564"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "stoixima",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "green",
+    "trimHex": "#009564"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "green",
+    "trimHex": "#333333",
+    "bands": true
+   }
+  },
+  {
+   "i": 43,
+   "caption": "third kit 2019-2020",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_3_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#009564"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#009564"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 44,
+   "caption": "home kit 2020-2021",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_1_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#247f4b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "20 stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "green",
+    "hex": "#247f4b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#247f4b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 45,
+   "caption": "away kit 2020-2021",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_2_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#95b69d"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "20 stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#247f4b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 46,
+   "caption": "third kit 2020-2021",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_3_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "grey",
+    "trim": "green",
+    "hex": {
+     "body": "#a7a8b3",
+     "trim": "#247f4b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "20 stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#a7a8b3",
+    "trim": "green",
+    "trimHex": "#247f4b"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#a7a8b3",
+    "trim": "green",
+    "trimHex": "#a7a8b3",
+    "bands": true
+   }
+  },
+  {
+   "i": 47,
+   "caption": "home kit 2021-2022",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_1_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#2e7956"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Kappa",
+   "sponsor": "stoixima",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#296e4d",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#296e4d",
+    "trim": "white",
+    "trimHex": "#296e4d",
+    "bands": true
+   }
+  },
+  {
+   "i": 48,
+   "caption": "away kit 2021-2022",
+   "page": "panathinaikos_3.html",
+   "image": "gre_panathinaikos_2_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "green",
+    "hex": {
+     "body": "#2f2f2f",
+     "trim": "#3b594e"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#2f2f2f",
+    "trim": "green",
+    "trimHex": "#318e71"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#2f2f2f",
+    "trim": "green",
+    "trimHex": "#2f2f2f",
+    "bands": true
+   }
+  },
+  {
+   "i": 49,
+   "caption": "third kit 2021-2022",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_3_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "cream",
+    "trim": "white",
+    "hex": {
+     "body": "#dcd3cb",
+     "trim": "#f5f6f6"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "Kappa",
+   "sponsor": "stoixima",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#318e71"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 50,
+   "caption": "home kit 2022-2023",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_1_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#488268",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Kappa",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#276e4e",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#276e4e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 51,
+   "caption": "away kit 2022-2023",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_2_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#98bcaf"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#3c7c5f"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 52,
+   "caption": "third kit 2022-2023",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_3_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "navy",
+    "trim": "green",
+    "hex": {
+     "body": "#173659",
+     "trim": "#97f000"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": null,
+   "readUnsure": true,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#183b62",
+    "trim": "green",
+    "trimHex": "#97f000"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#183b62",
+    "trim": "green",
+    "trimHex": "#6caf18",
+    "bands": true
+   }
+  },
+  {
+   "i": 53,
+   "caption": "home kit 2023-2024",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_1_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#457469",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#19423a",
+    "trim": "white",
+    "trimHex": "#fefefe"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#19423a",
+    "trim": "white",
+    "trimHex": "#19423a",
+    "bands": true
+   }
+  },
+  {
+   "i": 54,
+   "caption": "away kit 2023-2024",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_2_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#b2d2c1"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#177a45"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 55,
+   "caption": "third kit 2023-2024",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_3_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "green",
+    "hex": {
+     "body": "#18332c",
+     "trim": "#00b568"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "green",
+    "trimHex": "#086d5f"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "green",
+    "trimHex": "#1e1e1e",
+    "bands": true
+   }
+  },
+  {
+   "i": 56,
+   "caption": "home kit 2024-2025",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_1_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#2c8a66",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 2
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#05504b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#05504b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 57,
+   "caption": "away kit 2024-2025",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_2_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 58,
+   "caption": "third kit 2024-2025",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panathinaikos_3_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "purple",
+    "trim": "green",
+    "hex": {
+     "body": "#402873",
+     "trim": "#0b9669"
+    },
+    "bodyMeasured": false,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#3e276f",
+    "trim": "green",
+    "trimHex": "#0b9669"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#3c256c",
+    "trim": "green",
+    "trimHex": "#402873",
+    "bands": true
+   }
+  },
+  {
+   "i": 59,
+   "caption": "home kit 2025-2026",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panath_1_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#0b5a69",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": false,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "A Little Shelter",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#0b5a69",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#0b5a69",
+    "trim": "white",
+    "trimHex": "#0b5a69",
+    "bands": true
+   }
+  },
+  {
+   "i": 60,
+   "caption": "away kit 2025-2026",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panath_2_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#4f8277"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "A Little Shelter",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#53857a"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 61,
+   "caption": "third kit 2025-2026",
+   "page": "panathinaikos_4.html",
+   "image": "gre_panath_3_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "navy",
+    "trim": "pink",
+    "hex": {
+     "body": "#1e3760",
+     "trim": "#1e3760"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "A Little Shelter",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#1c3054",
+    "trim": "pink",
+    "trimHex": "#1c3054"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#1c3054",
+    "trim": "green",
+    "trimHex": "#1c3054",
+    "bands": true
+   }
+  }
+ ]
+}

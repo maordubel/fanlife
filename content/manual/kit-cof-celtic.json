@@ -1,0 +1,2873 @@
+{
+ "sources": [
+  {
+   "key": "cof",
+   "title": "colours-of-football.com — Celtic kit catalogue (© Mikhail Sipovich)",
+   "url": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html",
+   "readOn": "2026-10-09",
+   "kits": 75
+  },
+  {
+   "key": "logo",
+   "title": "football-logos.cc — Celtic logo",
+   "url": "https://football-logos.cc/scotland/celtic/",
+   "readOn": "2026-10-09",
+   "kits": 0
+  }
+ ],
+ "source": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html",
+ "publisher": "colours-of-football.com (Mikhail Sipovich)",
+ "retrieved": "2026-10-09",
+ "count": 75,
+ "pages": {
+  "celtic_1.html": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html",
+  "celtic_2.html": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_2.html",
+  "celtic_3.html": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_3.html",
+  "celtic_4.html": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_4.html",
+  "celtic_5.html": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_5.html"
+ },
+ "method": "Season/type from the catalogue captions; design, maker, printed sponsor and trims transcribed by eye from the drawings (readUnsure marks the doubtful ones); colours measured from pixels in fixed regions (shirt, shorts, socks), transparent background excluded.",
+ "records": [
+  {
+   "i": 1,
+   "caption": "home kit 2001-2002",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_1_0102.gif",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00a651"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "Umbro",
+   "sponsor": "ntl:",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 2,
+   "caption": "away kit 2001-2002",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_2_0102.gif",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "navy",
+    "hex": {
+     "body": "#ffcb2a",
+     "trim": "#15395b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "ntl:",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#15395b",
+    "trim": "yellow",
+    "trimHex": "#ffcb2a"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#15395b",
+    "trim": "yellow",
+    "trimHex": "#15395b",
+    "bands": true
+   }
+  },
+  {
+   "i": 3,
+   "caption": "away kit 2002-2003",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_2_0203.gif",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "green",
+    "hex": {
+     "body": "#ffdf5e",
+     "trim": "#5a7e61"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "ntl:home Digital TV",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#22675b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffdf5e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 4,
+   "caption": "third kit 2002-2003",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_3_0203.gif",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00a651"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "ntl:",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#242126",
+    "trim": "green",
+    "trimHex": "#00a651"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#242126",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 5,
+   "caption": "home kit 2003-2004",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_1_0304.gif",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00965c"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "Umbro",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#00964f"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 6,
+   "caption": "away kit 2003-2004",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_2_0304.gif",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "green",
+    "hex": {
+     "body": "#ffdf5e",
+     "trim": "#5a7e62"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#22675b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffdf5e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 7,
+   "caption": "third kit 2003-2004",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_3_0304.gif",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#242126",
+     "trim": "#ffcb05"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#242126",
+    "trim": "yellow",
+    "trimHex": "#ffd900"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#242126",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 8,
+   "caption": "home kit 2004-2005",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_1_0405.gif",
+   "season": "2004/05",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00a651"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "Umbro",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#00a651"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 9,
+   "caption": "away kit 2004-2005",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_2_0405.gif",
+   "season": "2004/05",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#43766b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#e6e7e8",
+    "trim": "white",
+    "trimHex": "#f1f6f5"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#266b5f",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 10,
+   "caption": "home kit 2005-2007",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_1_0506.gif",
+   "season": "2005–07",
+   "seasonKind": "range",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00a651"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#bfe2ca"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#00a651",
+    "bands": true
+   }
+  },
+  {
+   "i": 11,
+   "caption": "away kit 2005-2006",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_2_0506.gif",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#00a651",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#00a651",
+    "trim": "yellow",
+    "trimHex": "#ffcb05"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#00a651",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 12,
+   "caption": "away kit 2006-2007",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_2_0607.gif",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "black",
+    "trim": "green",
+    "hex": {
+     "body": "#231f20",
+     "trim": "#1f7a4f"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": "green",
+    "trimHex": "#1f7a4f"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 13,
+   "caption": "third kit 2006-2007",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_3_0607.gif",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#009c4c"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 5
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#00a651"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#bfe2ca",
+    "bands": true
+   }
+  },
+  {
+   "i": 14,
+   "caption": "home kit 2007-2008",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_1_0708_2.png",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00a651"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#00a651"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 15,
+   "caption": "away kit 2007-2008",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_2_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "green",
+    "hex": {
+     "body": "#00a651",
+     "trim": "#00a651"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1a3c35",
+    "trim": "grey",
+    "trimHex": "#485f5c"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1a3c35",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 16,
+   "caption": "home kit 2008-2010",
+   "page": "celtic_1.html",
+   "image": "sco_celtic_1_0809.gif",
+   "season": "2008–10",
+   "seasonKind": "range",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00974a"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#60bf88"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 17,
+   "caption": "away kit 2008-2009",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_2_0809.gif",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "green",
+    "hex": {
+     "body": "#f3ba4a",
+     "trim": "#00a651"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "green",
+    "hex": "#00a651",
+    "trim": "yellow",
+    "trimHex": "#f3ba4a"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#fbad18",
+    "trim": "green",
+    "trimHex": "#00964a",
+    "bands": true
+   }
+  },
+  {
+   "i": 18,
+   "caption": "away kit 2009-2010",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_2_0910.gif",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#24252e",
+     "trim": "#dae24c"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#24252e",
+    "trim": "yellow",
+    "trimHex": "#dae24c"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#24252e",
+    "trim": "yellow",
+    "trimHex": "#dae24c",
+    "bands": true
+   }
+  },
+  {
+   "i": 19,
+   "caption": "third kit 2009-2010",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_3_0910.gif",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "grey",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#506159"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#374438",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "grey",
+    "trimHex": "#a6a4a4",
+    "bands": true
+   }
+  },
+  {
+   "i": 20,
+   "caption": "home kit 2010-2011",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_1_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#008842"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Tennent's",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#59a479"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#008842",
+    "bands": true
+   }
+  },
+  {
+   "i": 21,
+   "caption": "away kit 2010-2011",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_2_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "navy",
+    "hex": {
+     "body": "#83c58d",
+     "trim": "#202c40"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Tennent's",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#141b37",
+    "trim": "yellow",
+    "trimHex": "#fdc709"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#8fcc94",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 22,
+   "caption": "third kit 2010-2011",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_3_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#23242d",
+     "trim": "#dae24c"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Tennent's",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#23242d",
+    "trim": "yellow",
+    "trimHex": "#dae24c"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#23242d",
+    "trim": "yellow",
+    "trimHex": "#dae24c",
+    "bands": true
+   }
+  },
+  {
+   "i": 23,
+   "caption": "away kit 2011-2012",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_2_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "cream",
+    "trim": "green",
+    "hex": {
+     "body": "#ebe7da",
+     "trim": "#008c44"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 1
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Tennent's",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#008c44",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#007b3b",
+    "bands": true
+   }
+  },
+  {
+   "i": 24,
+   "caption": "third kit 2011-2012",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_3_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#ffd400",
+     "trim": "#282828"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Tennent's",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#ffd400"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffd400",
+    "trim": "black",
+    "trimHex": "#17161f",
+    "bands": true
+   }
+  },
+  {
+   "i": 25,
+   "caption": "home kit 2012-2013",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_1_1213_2.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00a651"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Tennent's",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 26,
+   "caption": "away kit 2012-2013",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_2_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#282828",
+     "trim": "#4e4949"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 1
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Tennent's",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "orange",
+    "trimHex": "#4d4d4c",
+    "bands": true
+   }
+  },
+  {
+   "i": 27,
+   "caption": "home kit 2013-2014",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_1_1314.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00945e"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 1
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Magners",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#94bea2",
+    "bands": true
+   }
+  },
+  {
+   "i": 28,
+   "caption": "away kit 2013-2014",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_2_1314.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "yellow",
+    "trim": "green",
+    "hex": {
+     "body": "#fabd25",
+     "trim": "#2b8353"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Magners",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "green",
+    "hex": "#2b8353",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#fabd25",
+    "trim": "green",
+    "trimHex": "#6c8f4d",
+    "bands": true
+   }
+  },
+  {
+   "i": 29,
+   "caption": "away kit 2014-2015",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_2_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "green",
+    "trim": "yellow",
+    "hex": {
+     "body": "#00a652",
+     "trim": "#d6ae59"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Magners",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#2f373a",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#51605f",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 30,
+   "caption": "third kit 2014-2015",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_3_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "white",
+    "trim": "orange",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Magners",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#00a651"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 31,
+   "caption": "home kit 2015-2016",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_1_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#008b52"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "Magners",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#008b52"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#4b996b",
+    "bands": true
+   }
+  },
+  {
+   "i": 32,
+   "caption": "away kit 2015-2016",
+   "page": "celtic_2.html",
+   "image": "sco_celtic_2_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#cfdd35",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 1
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "Magners",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#cedd48"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "yellow",
+    "trimHex": "#cedd48",
+    "bands": true
+   }
+  },
+  {
+   "i": 33,
+   "caption": "away kit 2015-2016",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_2_1516_2.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#cfdd35",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 1
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "Magners",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#cedd48",
+    "trim": "black",
+    "trimHex": "#282828"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#cedd48",
+    "trim": "black",
+    "trimHex": "#282828",
+    "bands": true
+   }
+  },
+  {
+   "i": 34,
+   "caption": "third kit 2015-2016",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_3_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#008e55",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "Magners",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#008e55",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#008650",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 35,
+   "caption": "home kit 2016-2017",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_1_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#2b8745"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#145b30",
+    "bands": true
+   }
+  },
+  {
+   "i": 36,
+   "caption": "away kit 2016-2017",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_2_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "brown",
+    "hex": {
+     "body": "#333333",
+     "trim": "#77624c"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "brown",
+    "trimHex": "#655644"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 37,
+   "caption": "away kit 2016-2017",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_2_1617_2.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "brown",
+    "hex": {
+     "body": "#333333",
+     "trim": "#77624c"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#d3a464",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#d3a464",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 38,
+   "caption": "third kit 2016-2017",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_3_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "red",
+    "trim": "black",
+    "hex": {
+     "body": "#b00c3d",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 0
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "red",
+    "trimHex": "#e41a52"
+   },
+   "socks": {
+    "colour": "maroon",
+    "hex": "#931939",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 39,
+   "caption": "home kit 2017-2018",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_1_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#247645"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 40,
+   "caption": "away kit 2017-2018",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_2_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "green",
+    "trim": "green",
+    "hex": {
+     "body": "#008b61",
+     "trim": "#008b61"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#00512d",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#00512d",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 41,
+   "caption": "third kit 2017-2018",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_3_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "green",
+    "hex": {
+     "body": "#81c88e",
+     "trim": "#81c88e"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#81c88e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 42,
+   "caption": "third kit 2017-2018",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_3_1718_2.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "green",
+    "hex": {
+     "body": "#81c88e",
+     "trim": "#81c88e"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#81c88e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#81c88e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 43,
+   "caption": "home kit 2018-2019",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_1_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00854f"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#00854f",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 44,
+   "caption": "home kit 2018-2019",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_1_1819_2.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00854f"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#00854f",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#00854f",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 45,
+   "caption": "away kit 2018-2019",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_2_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#f8f8f9",
+     "trim": "#1d7f52"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#005030",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#005030",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 46,
+   "caption": "away kit 2018-2019",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_2_1819_2.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#f8f8f9",
+     "trim": "#1d7f52"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#005030",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 47,
+   "caption": "third kit 2018-2019",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_3_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#e7e757",
+     "trim": "#333918"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#e7e757",
+    "trim": "black",
+    "trimHex": "#343231",
+    "bands": true
+   }
+  },
+  {
+   "i": 48,
+   "caption": "third kit 2018-2019",
+   "page": "celtic_3.html",
+   "image": "sco_celtic_3_1819_2.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "yellow",
+    "trim": "black",
+    "hex": {
+     "body": "#e7e757",
+     "trim": "#333918"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#e7e757",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#e7e757",
+    "trim": "black",
+    "trimHex": "#343231",
+    "bands": true
+   }
+  },
+  {
+   "i": 49,
+   "caption": "home kit 2019-2020",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_1_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00854f"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 50,
+   "caption": "away kit 2019-2020",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_2_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "green",
+    "hex": {
+     "body": "#ffc624",
+     "trim": "#ffc624"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#035964",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#035964",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 51,
+   "caption": "third kit 2019-2020",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_3_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "grey",
+    "trim": "pink",
+    "hex": {
+     "body": "#c2bdc4",
+     "trim": "#f38465"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#c2bdc4",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#c2bdc4",
+    "trim": "pink",
+    "trimHex": "#c2bdc4",
+    "bands": true
+   }
+  },
+  {
+   "i": 52,
+   "caption": "home kit 2020-2021",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_1_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#3e9d69"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#3e9d69"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#2e6745",
+    "bands": true
+   }
+  },
+  {
+   "i": 53,
+   "caption": "away kit 2020-2021",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_2_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "green",
+    "hex": {
+     "body": "#c6e3bf",
+     "trim": "#c6e3bf"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#559658",
+    "trim": "green",
+    "trimHex": "#559658"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#c6e3bf",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 54,
+   "caption": "third kit 2020-2021",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_3_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "black",
+    "hex": {
+     "body": "#393838",
+     "trim": "#393838"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#393838",
+    "trim": "green",
+    "trimHex": "#b7ddbb"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#393838",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 55,
+   "caption": "home kit 2021-2022",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_1_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#34a16a"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#57a97a"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#416f52",
+    "bands": true
+   }
+  },
+  {
+   "i": 56,
+   "caption": "away kit 2021-2022",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_2_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "cream",
+    "hex": {
+     "body": "#538c75",
+     "trim": "#006b50"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#006b50",
+    "trim": "cream",
+    "trimHex": "#006b50"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#006b50",
+    "trim": "cream",
+    "trimHex": "#006b50",
+    "bands": true
+   }
+  },
+  {
+   "i": 57,
+   "caption": "away kit 2021-2022",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_2_2122_2.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "cream",
+    "hex": {
+     "body": "#538c75",
+     "trim": "#006b50"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#387455",
+    "trim": "green",
+    "trimHex": "#387455"
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#796b4b",
+    "trim": "cream",
+    "trimHex": "#beac74",
+    "bands": true
+   }
+  },
+  {
+   "i": 58,
+   "caption": "third kit 2021-2022",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_3_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#0d7d57"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "pink",
+    "trimHex": "#d85b8a"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "pink",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 59,
+   "caption": "home kit 2022-2023",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_1_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#007948"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#018650"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#018650",
+    "bands": true
+   }
+  },
+  {
+   "i": 60,
+   "caption": "away kit 2022-2023",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_2_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "black",
+    "trim": "green",
+    "hex": {
+     "body": "#2d3330",
+     "trim": "#85c9ae"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 11
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#2d3330",
+    "trim": "green",
+    "trimHex": "#52a283"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#2d3330",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 61,
+   "caption": "third kit 2022-2023",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_3_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "grey",
+    "trim": "yellow",
+    "hex": {
+     "body": "#959aa1",
+     "trim": "#ffff96"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#2e2c2e",
+    "trim": "yellow",
+    "trimHex": "#eaec8d"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#959aa1",
+    "trim": "yellow",
+    "trimHex": "#959aa1",
+    "bands": true
+   }
+  },
+  {
+   "i": 62,
+   "caption": "third kit 2022-2023",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_3_2223_2.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "grey",
+    "trim": "yellow",
+    "hex": {
+     "body": "#959aa1",
+     "trim": "#ffff96"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#959aa1",
+    "trim": "yellow",
+    "trimHex": "#f8fa93"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#959aa1",
+    "trim": "yellow",
+    "trimHex": "#959aa1",
+    "bands": true
+   }
+  },
+  {
+   "i": 63,
+   "caption": "home kit 2023-2024",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_1_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#5dc098"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "black",
+    "trimHex": "#1e1e1e"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "black",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 64,
+   "caption": "away kit 2023-2024",
+   "page": "celtic_4.html",
+   "image": "sco_celtic_2_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "green",
+    "hex": {
+     "body": "#1e1e1e",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "green",
+    "trimHex": "#2c5757"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "green",
+    "trimHex": "#8f8f8f",
+    "bands": true
+   }
+  },
+  {
+   "i": 65,
+   "caption": "third kit 2023-2024",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_3_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "green",
+    "trim": "green",
+    "hex": {
+     "body": "#66988c",
+     "trim": "#66988c"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "green",
+    "hex": "#66988c",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#66988c",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 66,
+   "caption": "third kit 2023-2024",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_3_2324_2.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "green",
+    "trim": "green",
+    "hex": {
+     "body": "#66988c",
+     "trim": "#66988c"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#254646",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#66988c",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 67,
+   "caption": "home kit 2024-2025",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_1_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#00874f"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#019344"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "green",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 68,
+   "caption": "away kit 2024-2025",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_2_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "green",
+    "hex": {
+     "body": "#ffec28",
+     "trim": "#afce38"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#165846",
+    "trim": "yellow",
+    "trimHex": "#ffec28"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffec28",
+    "trim": "green",
+    "trimHex": "#35643a",
+    "bands": true
+   }
+  },
+  {
+   "i": 69,
+   "caption": "away kit 2024-2025",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_2_2425_2.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "yellow",
+    "trim": "green",
+    "hex": {
+     "body": "#ffec28",
+     "trim": "#afce38"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "yellow",
+    "hex": "#ffec28",
+    "trim": "yellow",
+    "trimHex": "#ffec28"
+   },
+   "socks": {
+    "colour": "yellow",
+    "hex": "#ffec28",
+    "trim": "green",
+    "trimHex": "#35643a",
+    "bands": true
+   }
+  },
+  {
+   "i": 70,
+   "caption": "third kit 2024-2025",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_3_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "grey",
+    "trim": "black",
+    "hex": {
+     "body": "#484b43",
+     "trim": "#393c33"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#484b43",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#484b43",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 71,
+   "caption": "home kit 2025-2026",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_1_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#008057"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 1
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "black",
+    "trimHex": "#1e1e1e"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "black",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 72,
+   "caption": "home kit 2025-2026",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_1_2526_2.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "white",
+    "trim": "green",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#008057"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 1
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "green",
+    "hex": "#008057",
+    "trim": "green",
+    "trimHex": "#008057"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "black",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 73,
+   "caption": "away kit 2025-2026",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_2_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "green",
+    "hex": {
+     "body": "#1e1e1e",
+     "trim": "#8cff69"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "green",
+    "trimHex": "#8cff69"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "green",
+    "trimHex": "#8cff69",
+    "bands": true
+   }
+  },
+  {
+   "i": 74,
+   "caption": "third kit 2025-2026",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_3_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "cream",
+    "trim": "green",
+    "hex": {
+     "body": "#f8f8ea",
+     "trim": "#aee8ae"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "green",
+    "hex": "#95cf95",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "green",
+    "hex": "#95cf95",
+    "trim": "green",
+    "trimHex": "#95cf95",
+    "bands": true
+   }
+  },
+  {
+   "i": 75,
+   "caption": "third kit 2025-2026",
+   "page": "celtic_5.html",
+   "image": "sco_celtic_3_2526_2.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "cream",
+    "trim": "green",
+    "hex": {
+     "body": "#f8f8ea",
+     "trim": "#aee8ae"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "dafabet",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#fffff0",
+    "trim": "white",
+    "trimHex": "#fffff0"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#fffff0",
+    "trim": "orange",
+    "trimHex": "#fffff0",
+    "bands": true
+   }
+  }
+ ]
+}
