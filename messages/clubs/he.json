@@ -307,5 +307,7 @@
   "todayNear": "השבוע בהיסטוריה · לפני {n} שנים",
   "todayOpen": "לציר הזמן",
   "todayPick": "הסבב של היום",
-  "wallFeatureShirt": "עצבו את חולצת {club}"
+  "wallFeatureShirt": "עצבו את חולצת {club}",
+  "awayName": "AWAY DAYS",
+  "awayNote": "כל מגרש בחו״ל, כמסע."
 }
