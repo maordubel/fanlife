@@ -75,7 +75,12 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
     }
   }, [ready, filters, view])
 
-  const query = useMemo(() => toQuery(filters, shirts), [filters, shirts])
+  const [qSent, setQSent] = useState('')
+  useEffect(() => {
+    const id = window.setTimeout(() => setQSent(q.trim().length >= 2 ? q.trim() : ''), 300)
+    return () => window.clearTimeout(id)
+  }, [q])
+  const query = useMemo(() => ({ ...toQuery(filters, shirts), ...(qSent ? { text: qSent } : {}) }), [filters, shirts, qSent])
   const queryKey = JSON.stringify(query)
   const queryRef = useRef(queryKey)
   queryRef.current = queryKey
@@ -259,8 +264,8 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
           ) : market.state === 'loading' ? (
             <p className="mt-stack border-rule border-dashed border-ink/50 p-4 font-body text-step--1 text-muted" role="status">{t('market.loading')}</p>
           ) : market.rows.length === 0 ? (
-            narrowed ? (
-              <Notice title={h('hub.empty.title')} body={h('hub.empty.body')}>
+            narrowed || qSent ? (
+              <Notice title={h('hub.empty.title')} body={qSent && !narrowed ? h('hub.search.empty', { q: qSent }) : h('hub.empty.body')}>
                 <button type="button" onClick={() => setSheet({ slug: filters.slug })} className={buttonPrimary}>{h('hub.actions.look')}</button>
               </Notice>
             ) : (
@@ -274,7 +279,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
               <p className="fl-mk-count" data-hub="count">
                 {facets ? h('hub.count', { n: String(facets.total) }) : null}
               </p>
-              <HubListings items={market.rows} shirts={shirts} wants={wants} focused={Boolean(focus)} query={q} onFocus={(slug) => setFilters((f) => ({ ...f, slug }))} />
+              <HubListings items={market.rows} shirts={shirts} wants={wants} focused={Boolean(focus)} onFocus={(slug) => setFilters((f) => ({ ...f, slug }))} />
               {market.next ? (
                 <button type="button" onClick={moreMarket} disabled={market.more} className="mt-stack flex min-h-tap w-full items-center justify-center border-rule border-dashed border-ink bg-paper font-body text-step--1 font-extrabold text-ink disabled:opacity-60">
                   {t('market.table.more')}
@@ -338,7 +343,7 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
             wants={wants}
             shirts={shirts}
             signIn={signIn}
-            onRunSearch={(s) => { setFilters({ ...filtersFromQuery(s.query) }); go('market') }}
+            onRunSearch={(s) => { setFilters({ ...filtersFromQuery(s.query) }); setQ(s.query.text ?? ''); go('market') }}
             onDeleteSearch={(id) => void searchDelete(id).then(loadMine)}
             onToggleAlert={(id, on) => void searchNotifySet(id, on).then(loadMine)}
             onTogglePublic={(id, on) => void wantPublicSet(id, on).then((o) => { if (o.ok) loadMine(); else flash(errorLabel(o.error)) })}
