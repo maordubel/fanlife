@@ -1,6 +1,9 @@
 /** Research files the control room reads with fs; the admin page and its API must ship the same dataset. */
 export const RESEARCH_FILES = ['./research-data/**/*', './research-profiles/**/*', './research-staging/**/*']
 
+/** Evaluation mode boots an in-process Postgres at runtime from these files (fs, not imports). */
+export const EVALUATION_FILES = ['./scripts/master/local-bootstrap.sql', './supabase/migrations/*.sql']
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -12,6 +15,9 @@ const nextConfig = {
     outputFileTracingIncludes: {
       '/master/admin': RESEARCH_FILES,
       '/api/master/\\[...action\\]': RESEARCH_FILES,
+      '/api/evaluation/db': EVALUATION_FILES,
+      '/api/evaluation/files': EVALUATION_FILES,
+      '/api/track': EVALUATION_FILES,
     },
   },
   poweredByHeader: false,
