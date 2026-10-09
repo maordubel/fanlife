@@ -1,0 +1,734 @@
+{
+ "sources": [
+  {
+   "key": "cof",
+   "title": "colours-of-football.com — Zrinjski Mostar kit catalogue (© Mikhail Sipovich)",
+   "url": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_1.html",
+   "readOn": "2026-10-09",
+   "kits": 19
+  },
+  {
+   "key": "logo",
+   "title": "football-logos.cc — Zrinjski Mostar logo",
+   "url": "https://football-logos.cc/bosnia-and-herzegovina/zrinjski/",
+   "readOn": "2026-10-09",
+   "kits": 0
+  }
+ ],
+ "source": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_1.html",
+ "publisher": "colours-of-football.com (Mikhail Sipovich)",
+ "retrieved": "2026-10-09",
+ "count": 19,
+ "pages": {
+  "Zrinjski_Mostar_1.html": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_1.html",
+  "Zrinjski_Mostar_2.html": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_2.html"
+ },
+ "method": "Season/type from the catalogue captions; design, maker, printed sponsor and trims transcribed by eye from the drawings (readUnsure marks the doubtful ones); colours measured from pixels in fixed regions (shirt, shorts, socks), transparent background excluded.",
+ "records": [
+  {
+   "i": 1,
+   "caption": "home kit 2005-2006",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_1_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": null,
+   "sponsor": "ALUMINIJ",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ee362b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 2,
+   "caption": "away kit 2005-2006",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_2_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": null,
+   "sponsor": "ALUMINIJ",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 3,
+   "caption": "home kit 2010-2011",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_1_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": "ALUMINIJ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 4,
+   "caption": "away kit 2010-2011",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_2_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#ed1c24",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": "ALUMINIJ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 5,
+   "caption": "home kit 2013-2015",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_1_1315.png",
+   "season": "2013–15",
+   "seasonKind": "range",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": "INTERAGENT",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 6,
+   "caption": "away kit 2013-2014",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_2_1314.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#ed1c24",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": null,
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 7,
+   "caption": "away kit 2014-2015",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_2_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "black",
+    "trim": "red",
+    "hex": {
+     "body": "#282828",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": "INTERAGENT",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 8,
+   "caption": "home kit 2015-2016",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_1_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": "INTERAGENT",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 9,
+   "caption": "home kit 2016-2017",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_1_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": "PPD",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 10,
+   "caption": "away kit 2016-2017",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_2_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": "PPD",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 11,
+   "caption": "third kit 2016-2017",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_3_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "black",
+    "trim": "red",
+    "hex": {
+     "body": "#333333",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Zeus",
+   "sponsor": "PPD",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 12,
+   "caption": "home kit 2018-2019",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_1_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "PPD",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 13,
+   "caption": "away kit 2018-2019",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_2_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 2
+    }
+   },
+   "maker": "Macron",
+   "sponsor": "PPD",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#034ea2",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#034ea2",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 14,
+   "caption": "third kit 2018-2019",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_3_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#313350",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "PPD",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#313350",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#313350",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 15,
+   "caption": "home kit 2020-2021",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_1_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "PPD",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 16,
+   "caption": "away kit 2020-2021",
+   "page": "Zrinjski_Mostar_1.html",
+   "image": "bih_zrinjski_mostar_2_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#313350",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "PPD",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#313350",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#313350",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 17,
+   "caption": "home kit 2022-2023",
+   "page": "Zrinjski_Mostar_2.html",
+   "image": "bih_zrinjski_mostar_1_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ff0000"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "MtA",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ff0000"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 18,
+   "caption": "away kit 2022-2023",
+   "page": "Zrinjski_Mostar_2.html",
+   "image": "bih_zrinjski_mostar_2_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "black",
+    "trim": "yellow",
+    "hex": {
+     "body": "#212121",
+     "trim": "#fffc00"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "MtA",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#212121",
+    "trim": "yellow",
+    "trimHex": "#ccab7c"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#212121",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 19,
+   "caption": "third kit 2022-2023",
+   "page": "Zrinjski_Mostar_2.html",
+   "image": "bih_zrinjski_mostar_3_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "grey",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#c8c8c8"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "MtA",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#b4b4b4",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#b4b4b4",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  }
+ ]
+}

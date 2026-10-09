@@ -1,0 +1,1744 @@
+{
+ "sources": [
+  {
+   "key": "cof",
+   "title": "colours-of-football.com — FC St. Pauli kit catalogue (© Mikhail Sipovich)",
+   "url": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html",
+   "readOn": "2026-10-09",
+   "kits": 46
+  },
+  {
+   "key": "logo",
+   "title": "football-logos.cc — FC St. Pauli logo",
+   "url": "https://football-logos.cc/germany/st-pauli/",
+   "readOn": "2026-10-09",
+   "kits": 0
+  }
+ ],
+ "source": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html",
+ "publisher": "colours-of-football.com (Mikhail Sipovich)",
+ "retrieved": "2026-10-09",
+ "count": 46,
+ "pages": {
+  "st_pauli_1.html": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html",
+  "st_pauli_2.html": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+  "st_pauli_3.html": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_3.html"
+ },
+ "method": "Season/type from the catalogue captions; design, maker, printed sponsor and trims transcribed by eye from the drawings (readUnsure marks the doubtful ones); colours measured from pixels in fixed regions (shirt, shorts, socks), transparent background excluded.",
+ "records": [
+  {
+   "i": 1,
+   "caption": "home kit 2002-2003",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_1_0203.gif",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "white",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "securvita",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 2,
+   "caption": "away kit 2002-2003",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_2_0203.gif",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "green",
+    "trim": "white",
+    "hex": {
+     "body": "#4a4834",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": false,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "securvita",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#4a4834",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#4a4834",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 3,
+   "caption": "home kit 2007-2008",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_1_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "brown",
+    "trim": "brown",
+    "hex": {
+     "body": "#673f2d",
+     "trim": "#673f2d"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": null,
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#673f2d",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#673f2d",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 4,
+   "caption": "away kit 2007-2008",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_2_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "white",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": null,
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 5,
+   "caption": "home kit 2010-2011",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_1_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "brown",
+    "trim": "brown",
+    "hex": {
+     "body": "#a24f38",
+     "trim": "#a24f38"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": null,
+   "sponsor": "Ein Platz an der Sonne",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#673f2c",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#673f2c",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 6,
+   "caption": "away kit 2010-2011",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_2_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "white",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": null,
+   "sponsor": "Ein Platz an der Sonne",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 7,
+   "caption": "third kit 2010-2011",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_3_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#ed1b23",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 4
+    }
+   },
+   "maker": null,
+   "sponsor": "Ein Platz an der Sonne",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1b23",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1b23",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 8,
+   "caption": "home kit 2011-2012",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_1_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "brown",
+    "trim": "white",
+    "hex": {
+     "body": "#975a53",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 4
+    }
+   },
+   "maker": null,
+   "sponsor": "Ein Platz an der Sonne",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 9,
+   "caption": "away kit 2011-2012",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_2_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "brown",
+    "trim": "brown",
+    "hex": {
+     "body": "#965a53",
+     "trim": "#965a53"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 0
+    }
+   },
+   "maker": null,
+   "sponsor": "Ein Platz an der Sonne",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "maroon",
+    "hex": "#694946",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "maroon",
+    "hex": "#694946",
+    "trim": "brown",
+    "trimHex": "#694946",
+    "bands": true
+   }
+  },
+  {
+   "i": 10,
+   "caption": "third kit 2011-2012",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_3_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "red",
+    "trim": "black",
+    "hex": {
+     "body": "#db1a21",
+     "trim": "#301c1a"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 0
+    }
+   },
+   "maker": null,
+   "sponsor": "Ein Platz an der Sonne",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#db1a21",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#db1a21",
+    "trim": "black",
+    "trimHex": "#db1a21",
+    "bands": true
+   }
+  },
+  {
+   "i": 11,
+   "caption": "home kit 2014-2015",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_1_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "brown",
+    "trim": "white",
+    "hex": {
+     "body": "#4a362a",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Hummel",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#4a362a",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#4a362a",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 12,
+   "caption": "away kit 2014-2015",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_2_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "brown",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#4f3629"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Hummel",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#4f3629"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 13,
+   "caption": "third kit 2014-2015",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_3_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "black",
+    "trim": "skyblue",
+    "hex": {
+     "body": "#2d2d2d",
+     "trim": "#afd8d2"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Hummel",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "skyblue",
+    "trimHex": "#afd8d2"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 14,
+   "caption": "home kit 2015-2016",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_1_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "brown",
+    "trim": "brown",
+    "hex": {
+     "body": "#644637",
+     "trim": "#644637"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Hummel",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#2f2926",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#2f2926",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 15,
+   "caption": "away kit 2015-2016",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_2_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "brown",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#4f3629"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Hummel",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#4f3629"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 16,
+   "caption": "third kit 2015-2016",
+   "page": "st_pauli_1.html",
+   "image": "ger_st_pauli_3_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "brown",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#644637"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Hummel",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#2f2926",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#2f2926",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 17,
+   "caption": "home kit 2016-2017",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_1_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "brown",
+    "trim": "red",
+    "hex": {
+     "body": "#4a362a",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#4a362a",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#4a362a",
+    "trim": "red",
+    "trimHex": "#e31f2b",
+    "bands": true
+   }
+  },
+  {
+   "i": 18,
+   "caption": "away kit 2016-2017",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_2_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b",
+    "bands": true
+   }
+  },
+  {
+   "i": 19,
+   "caption": "third kit 2016-2017",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_3_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#22252e",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1d2029",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1d2029",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 20,
+   "caption": "home kit 2017-2018",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_1_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "brown",
+    "trim": "white",
+    "hex": {
+     "body": "#843a34",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#40322f",
+    "trim": "red",
+    "trimHex": "#d92132"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#40322f",
+    "trim": "red",
+    "trimHex": "#40322f",
+    "bands": true
+   }
+  },
+  {
+   "i": 21,
+   "caption": "away kit 2017-2018",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_2_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#da2032"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#cb1f2f"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 22,
+   "caption": "third kit 2017-2018",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_3_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#252729",
+     "trim": "#4a4747"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 23,
+   "caption": "home kit 2018-2019",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_1_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "brown",
+    "trim": "red",
+    "hex": {
+     "body": "#634f45",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#634f45",
+    "trim": "red",
+    "trimHex": "#bf3a32"
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#634f45",
+    "trim": "red",
+    "trimHex": "#634f45",
+    "bands": true
+   }
+  },
+  {
+   "i": 24,
+   "caption": "away kit 2018-2019",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_2_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "brown",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#634f45"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#634f45",
+    "bands": true
+   }
+  },
+  {
+   "i": 25,
+   "caption": "third kit 2018-2019",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_3_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#333333",
+     "trim": "#414040"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 26,
+   "caption": "home kit 2019-2020",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_1_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "brown",
+    "trim": "white",
+    "hex": {
+     "body": "#53392e",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#53392e",
+    "trim": "white",
+    "trimHex": "#53392e",
+    "bands": true
+   }
+  },
+  {
+   "i": 27,
+   "caption": "away kit 2019-2020",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_2_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "grey",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e8e8e8"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#53392e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 28,
+   "caption": "third kit 2019-2020",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_3_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "black",
+    "hex": {
+     "body": "#333333",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 29,
+   "caption": "home kit 2020-2021",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_1_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "brown",
+    "trim": "white",
+    "hex": {
+     "body": "#53392e",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "cream",
+    "hex": "#ede0d4",
+    "trim": "brown",
+    "trimHex": "#53392e"
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#53392e",
+    "trim": "yellow",
+    "trimHex": "#53392e",
+    "bands": true
+   }
+  },
+  {
+   "i": 30,
+   "caption": "away kit 2020-2021",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_2_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "cream",
+    "trim": "brown",
+    "hex": {
+     "body": "#ede0d4",
+     "trim": "#53392e"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#53392e",
+    "trim": "cream",
+    "trimHex": "#ede0d4"
+   },
+   "socks": {
+    "colour": "cream",
+    "hex": "#ede0d4",
+    "trim": "brown",
+    "trimHex": "#ede0d4",
+    "bands": true
+   }
+  },
+  {
+   "i": 31,
+   "caption": "third kit 2020-2021",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_3_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "white",
+    "hex": {
+     "body": "#424950",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Under Armour",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "white",
+    "trimHex": "#333333",
+    "bands": true
+   }
+  },
+  {
+   "i": 32,
+   "caption": "home kit 2021-2022",
+   "page": "st_pauli_2.html",
+   "image": "ger_st_pauli_1_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "brown",
+    "trim": "red",
+    "hex": {
+     "body": "#5b433b",
+     "trim": "#e71e27"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#4d3b2e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#4d3b2e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 33,
+   "caption": "away kit 2021-2022",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_2_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e61e26"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#d1323f"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 34,
+   "caption": "third kit 2021-2022",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_3_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "grey",
+    "trim": "black",
+    "hex": {
+     "body": "#b1b7c0",
+     "trim": "#333333"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#b1b7c0",
+    "trim": "black",
+    "trimHex": "#3a3939"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#b1b7c0",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 35,
+   "caption": "home kit 2022-2023",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_1_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "brown",
+    "trim": "brown",
+    "hex": {
+     "body": "#79614e",
+     "trim": "#79614e"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#53403b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#53403b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 36,
+   "caption": "away kit 2022-2023",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_2_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ff0000"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#715845"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 37,
+   "caption": "third kit 2022-2023",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_3_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "black",
+    "trim": "pink",
+    "hex": {
+     "body": "#333333",
+     "trim": "#f98383"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#212121",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#212121",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 38,
+   "caption": "home kit 2023-2024",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_1_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "brown",
+    "trim": "maroon",
+    "hex": {
+     "body": "#53403b",
+     "trim": "#71312f"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#53403b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#53403b",
+    "trim": "white",
+    "trimHex": "#53403b",
+    "bands": true
+   }
+  },
+  {
+   "i": 39,
+   "caption": "away kit 2023-2024",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_2_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "pink",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#eb8b98"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 40,
+   "caption": "third kit 2023-2024",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_3_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "blue",
+    "trim": "pink",
+    "hex": {
+     "body": "#306587",
+     "trim": "#f18990"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#306587",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#306587",
+    "trim": "pink",
+    "trimHex": "#306587",
+    "bands": true
+   }
+  },
+  {
+   "i": 41,
+   "caption": "home kit 2024-2025",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_1_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "half-and-half",
+    "body": "brown",
+    "trim": "brown",
+    "hex": {
+     "body": "#493225",
+     "trim": "#493225"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#493225",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#493225",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 42,
+   "caption": "away kit 2024-2025",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_2_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "diagonal",
+    "body": "white",
+    "trim": "brown",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#504033"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#504033"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#504033",
+    "bands": true
+   }
+  },
+  {
+   "i": 43,
+   "caption": "third kit 2024-2025",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_3_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "black",
+    "trim": "purple",
+    "hex": {
+     "body": "#1e1e1e",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "purple",
+    "trimHex": "#9643b4",
+    "bands": true
+   }
+  },
+  {
+   "i": 44,
+   "caption": "home kit 2025-2026",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_1_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "brown",
+    "trim": "white",
+    "hex": {
+     "body": "#583f30",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "brown",
+    "hex": "#493225",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "brown",
+    "hex": "#583f30",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 45,
+   "caption": "away kit 2025-2026",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_2_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#f40711"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "congstar",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "brown",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 46,
+   "caption": "third kit 2025-2026",
+   "page": "st_pauli_3.html",
+   "image": "ger_st_pauli_3_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "black",
+    "trim": "black",
+    "hex": {
+     "body": "#252525",
+     "trim": "#252525"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "congstar",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "green",
+    "trimHex": "#1e1e1e",
+    "bands": true
+   }
+  }
+ ]
+}

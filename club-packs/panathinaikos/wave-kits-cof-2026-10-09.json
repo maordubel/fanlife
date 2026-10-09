@@ -1,0 +1,162 @@
+{
+ "sources": [
+  {
+   "id": "cof-panathinaikos-p1",
+   "title": "panathinaikos kits, catalogue page 1 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-panathinaikos-p2",
+   "title": "panathinaikos kits, catalogue page 2 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_2.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-panathinaikos-p3",
+   "title": "panathinaikos kits, catalogue page 3 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_3.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-panathinaikos-p4",
+   "title": "panathinaikos kits, catalogue page 4 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_4.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  }
+ ],
+ "kits": [
+  {
+   "id": "cof-k-37",
+   "value": {
+    "name": "panathinaikos 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "green/white"
+    },
+    "sponsor": "stoixima",
+    "shorts": {
+     "colour": "green",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-panathinaikos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-20",
+   "value": {
+    "name": "panathinaikos 2010–12 home",
+    "season": "2010–12",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "green/white"
+    },
+    "sponsor": "Cosmote",
+    "shorts": {
+     "colour": "green",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "green",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-panathinaikos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2010-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-21",
+   "value": {
+    "name": "panathinaikos 2010–12 away",
+    "season": "2010–12",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "white/green"
+    },
+    "sponsor": "Cosmote",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-panathinaikos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2010-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-05",
+   "value": {
+    "name": "panathinaikos 2002/03 third",
+    "season": "2002/03",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "white/green"
+    },
+    "sponsor": "OTE",
+    "shorts": {
+     "colour": "white",
+     "trim": "green"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-panathinaikos-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  }
+ ]
+}

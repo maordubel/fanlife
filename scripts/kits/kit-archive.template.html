@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>/*__TITLE__*/</title>
+<meta name="description" content="/*__DESC__*/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;800&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a museum wardrobe. Decades are rails, kits hang on them with a season tag; a matrix view lays seasons against home/away/third. */
+:root{
+  --ink:#0a0a0b;--plate:#141415;--plate-2:#1c1c1e;--line:#2b2b2e;--line-2:#3a3a3e;
+  --gold:/*__ACCENT__*/;--gold-dim:/*__ACCENT__*/33;--paper:#f4f0e6;--mute:#a09b8f;
+  --ok:#72d39b;--rev:#e8955a;
+  --display:'Secular One','Assistant',system-ui,sans-serif;--num:'Bebas Neue','Secular One',Impact,sans-serif;--body:'Assistant',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font:400 16px/1.55 var(--body);padding-inline:clamp(16px,4vw,56px);padding-block:0 72px;
+  background-image:radial-gradient(900px 420px at 90% -8%,#f3c61320,transparent 62%),radial-gradient(700px 400px at 0% 30%,#ffffff08,transparent 60%)}
+.wrap{max-width:1320px;margin-inline:auto}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+header.top{padding-block:clamp(28px,6vw,72px) 30px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;border-bottom:1px solid var(--line)}
+.kick{font:600 12px var(--mono);letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin:0 0 12px}
+h1{font:400 clamp(44px,9vw,108px)/.92 var(--display);margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--gold)}
+h1.club{display:flex;align-items:center;gap:20px}h1.club img{width:clamp(56px,9vw,96px);height:auto;flex:none}h1.club small{display:block;font:600 14px var(--mono);letter-spacing:.16em;color:var(--mute);margin-top:10px;text-transform:uppercase}
+.lede{max-width:56ch;color:var(--mute);margin:18px 0 0}
+.stats{display:grid;grid-template-columns:repeat(2,auto);gap:10px 34px}
+.stats div{display:flex;flex-direction:column}
+.stats b{font:400 52px/1 var(--num);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.stats span{font:600 11px var(--mono);letter-spacing:.14em;color:var(--mute);text-transform:uppercase}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:#0a0a0bf2;backdrop-filter:blur(10px);display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.grp>label,.grp>span.l{font:600 11px var(--mono);letter-spacing:.14em;color:var(--mute);margin-inline-end:4px;text-transform:uppercase}
+.chip{font:600 14px var(--body);color:var(--paper);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:5px 14px;cursor:pointer}
+.chip:hover{border-color:var(--mute)}
+.chip[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#111}
+input[type=search],select{font:400 15px var(--body);background:var(--plate);color:var(--paper);border:1px solid var(--line-2);padding:6px 12px;border-radius:6px;min-width:0}
+input[type=search]{width:min(180px,100%)}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:999px;overflow:hidden}
+.seg .chip{border:0;border-radius:0}
+.count{margin-inline-start:auto;font:600 12px var(--mono);color:var(--mute);letter-spacing:.1em}
+/* seasons: one row per season, one complete kit per slot (home / away / third / other) */
+.season{display:grid;grid-template-columns:176px minmax(0,1fr);gap:8px 22px;padding-block:26px;border-bottom:1px solid var(--line);align-items:start}
+.sn{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);align-self:start}
+.sn b{display:block;font:400 clamp(38px,4.4vw,54px)/.9 var(--num);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.sn span{font:600 11px var(--mono);letter-spacing:.12em;color:var(--mute)}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:14px}
+.item{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 8px 12px;background:var(--plate);border:1px solid var(--line);transition:border-color .2s,transform .25s;min-width:0}
+.item:hover,.item:focus-visible{border-color:var(--gold);transform:translateY(-3px)}
+.item:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.kitbox{width:100%;aspect-ratio:430/470;display:grid;place-items:center;align-content:center}
+.kitbox svg{width:100%;height:auto;filter:drop-shadow(0 10px 8px #0009)}
+.tag{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+.tag .t{font:600 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.tag .m{font-size:13px;color:var(--mute)}
+.tag .cap{font:400 11px var(--mono);color:var(--line-2);letter-spacing:.04em}
+.pip{width:7px;height:7px;border-radius:50%;display:inline-block;margin-inline-end:5px;background:var(--rev)}
+.pip.two{background:#e8d27a}.pip.ok{background:var(--ok)}
+.empty{padding:70px 0;text-align:center;color:var(--mute)}
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;margin-top:56px}
+.note{border:1px solid var(--line);padding:22px;background:var(--plate);min-width:0}
+.note h3{font:400 22px var(--display);margin:0 0 8px}
+.note p{margin:0;color:var(--mute);font-size:15px}
+.note p+p{margin-top:8px}
+/* dialog */
+dialog{border:1px solid var(--gold);background:var(--ink);color:var(--paper);padding:0;width:min(1020px,calc(100vw - 20px));max-height:calc(100dvh - 20px);overflow:auto}
+dialog::backdrop{background:#000d}
+.dlg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+.dstage{display:grid;place-items:center;padding:24px;min-height:440px;background:radial-gradient(70% 60% at 50% 40%,#2c2c30,var(--plate) 78%);position:relative}
+.srcfig{margin:0;position:absolute;inset-block-end:12px;inset-inline-start:12px;background:#fff;padding:6px 6px 2px;border:1px solid var(--line-2);width:104px}.srcfig img{width:100%;height:auto;display:block}.srcfig figcaption{font:600 10px var(--mono);letter-spacing:.1em;color:#444;text-align:center}
+.kitbox img{width:100%;height:auto;max-height:100%;object-fit:contain;background:#fff;padding:6px}
+.dstage svg{width:100%;max-width:470px;height:auto;filter:drop-shadow(0 22px 16px #000c)}
+.info{padding:28px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.info h2{font:400 clamp(54px,7vw,92px)/.85 var(--num);margin:0;letter-spacing:.02em}
+.badge{display:inline-block;font:600 11px var(--mono);letter-spacing:.12em;padding:3px 9px;border:1px solid;text-transform:uppercase;align-self:flex-start}
+.badge.ok{color:var(--ok);border-color:var(--ok)}.badge.rev{color:var(--rev);border-color:var(--rev)}
+dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px 18px;margin:0}
+dt{color:var(--mute);font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding-top:5px}
+dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.sw{display:inline-flex;align-items:center;gap:7px;margin-inline-end:12px;font:400 13px var(--mono)}
+.sw i{width:22px;height:22px;border:1px solid #fff5;display:inline-block}
+.warn{border-inline-start:3px solid var(--rev);padding:8px 14px;background:#e8955a14;font-size:15px}
+.warn.ok{border-color:var(--ok);background:#72d39b14}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.btn{font:800 14px var(--body);background:var(--gold);color:#111;border:0;padding:10px 18px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--paper);border:1px solid var(--line-2)}
+a{color:var(--gold)}
+textarea.cp{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px}
+@media(max-width:780px){.season{grid-template-columns:1fr}.sn{position:static;display:flex;align-items:baseline;gap:12px}header.top{grid-template-columns:1fr}.dlg{grid-template-columns:1fr}.dstage{min-height:300px}.count{margin-inline-start:0;width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div>
+    <p class="kick" id="kick"></p>
+    <h1 class="club"><img id="crest" alt="" width="84" height="84"><span>ארכיון <em>המדים</em><small id="clubname"></small></span></h1>
+    <p class="lede">כל עונה כמערכת שלמה: חולצה, מכנסיים וגרביים. הצבעים נמדדים מפיקסלים של שני מקורות בלתי תלויים, לא מנוחשים. מה שאף מקור לא מראה נשאר ריק ומסומן.</p>
+  </div>
+  <div class="stats" aria-label="סיכום">
+    <div><b id="sKits">0</b><span>מערכות</span></div>
+    <div><b id="sSeasons">0</b><span>עונות</span></div>
+    <div><b id="sCat">0</b><span>מערכות מלאות</span></div>
+    <div><b id="sX">0</b><span>נבדקו בשני מקורות</span></div>
+  </div>
+</header>
+
+<div class="bar" role="toolbar" aria-label="סינון ותצוגה">
+    <div class="grp"><span class="seg" role="group" aria-label="תצוגה"><button class="chip" type="button" data-art="svg" aria-pressed="true">ציור</button><button class="chip" type="button" data-art="src" aria-pressed="false">תמונת מקור</button></span></div>
+  <div class="grp" id="fType"><span class="l">סוג</span></div>
+  <div class="grp"><label for="fDesign">דגם</label><select id="fDesign"><option value="all">הכול</option></select></div>
+  <div class="grp"><label for="fMaker">יצרן</label><select id="fMaker"><option value="all">הכול</option></select></div>
+  <div class="grp" id="fSrc"><span class="l">מקור</span></div>
+  <div class="grp"><label for="fQ">עונה</label><input id="fQ" type="search" placeholder="למשל 2016" inputmode="numeric" autocomplete="off"></div>
+  <span class="count" id="count" aria-live="polite"></span>
+</div>
+
+<main id="main"></main>
+
+<section class="notes" aria-label="על הארכיון">
+  <div class="note"><h3>מה מדוד ומה לא</h3><p>הצבעים הם הערך המדויק השכיח בכל ציור, בנפרד לחולצה, למכנסיים ולגרביים. ספירת הפסים נמדדת מהפיקסלים. הדגם נקרא בעין ונבדק מול המדידה.</p><p>יצרן וספונסר מוזנים רק כשציור בקטלוג מראה אותם. לחולצות שיש להן רק ציור מקומונס אין יצרן או ספונסר.</p></div>
+  <div class="note"><h3>עונה וסוג</h3><p>בקטלוג העונה והסוג הם כותרת המקור. בקבצי קומונס הם נגזרים משם הקובץ (<bdi dir="ltr">h / a / t</bdi>), מוסכמה ולא הצהרת מועדון. כשהמקורות חולקים, הכותרת קובעת וההבדל מוצג בכרטיס.</p></div>
+  <div class="note"><h3>הסמל והדפסים</h3><p>סמל המועדון מודפס מקובץ מקור ולא מצויר, ולכן משבצת הסמל ריקה עד שיועלה קובץ מורשה. חולצות עם הדפס גרפי מוצגות בצבע הבסיס עם סימון, כי ההדפס לא מצויר.</p></div>
+  <div class="note"><h3>סטטוס</h3><p><span class="pip ok"></span>יצרן מאומת מנתוני המועדון. <span class="pip two"></span>שני מקורות מתאימים. <span class="pip"></span>מקור יחיד. הכול ממתין לאישור הבעלים וייכנס למשחקים רק אחריו.</p></div>
+</section>
+</div>
+
+<dialog id="dlg" aria-labelledby="dTitle"><div class="dlg" id="dBody"></div></dialog>
+<textarea class="cp" id="cp" aria-hidden="true" tabindex="-1"></textarea>
+
+<script>
+const DATA=/*__DATA__*/null;
+const K=DATA.kits;
+const TYPE={home:'בית',away:'חוץ',third:'שלישית',special:'אחר'};
+const DESIGN={plain:'חלקה',stripes:'פסים אנכיים',hoops:'חישוקים',pinstripes:'פסים דקים','half-and-half':'חצי-חצי',sash:'אלכסון (סאש)','chest band':'פס חזה',diagonal:'פסים באלכסון','contrasting sleeves':'שרוולים בצבע שונה',gradient:'גרדיאנט',graphic:'הדפס גרפי'};
+const COL={brown:'חום',red:'אדום',green:'ירוק',yellow:'צהוב',black:'שחור',white:'לבן',grey:'אפור',maroon:'בורדו',skyblue:'תכלת',pink:'ורוד',blue:'כחול',navy:'כחול כהה',orange:'כתום',cream:'שמנת'};
+const OBS_MAKER={swoosh:'סווש',triangle:'משולש',"N-mark":'סימן בצורת N'};
+const startYear=k=>+(k.season.match(/\d{4}/)||[0])[0];
+const $=s=>document.querySelector(s);
+/*__RENDERER__*/
+const HE={suffix:(f,t,ct)=>`בקומונס הציור התואם (${f}) מסווג כ"${TYPE[t]||t}" לפי סיומת שם הקובץ. הקטלוג מכנה את המערכת "${TYPE[ct]||ct}", וכותרת הקטלוג קובעת.`,
+ range:(f,kind,se)=>`ציור הקומונס ${f} הוא קובץ של ${kind==='range'?'טווח עונות':'שנה בודדת'} (${se}) והותאם לעונה הזו לפי צבע ודגם.`,
+ clash:(t,se)=>`בקומונס הציור מסווג כ"${TYPE[t]||t}", אבל מערכת ה"${TYPE[t]||t}" של ${se} בקטלוג היא חולצה אחרת. הציור נשמר כמערכת אחרת שלא אומתה.`,
+ label:(code,kind)=>`העונה נקראה משם הקובץ (${code}) והיא ${kind==='range'?'טווח עונות':'לא חד-משמעית'}.`,
+ second:()=>'הקטלוג מציג גרסה שנייה של המערכת הזו, עם מכנסיים וגרביים אחרים.',
+ maker:(m,v)=>`הציור בקטלוג מראה ${m}, ונתוני המועדון (aekfc.gr) אומרים ${v}.`};
+const note=n=>esc(HE[n[0]](...n.slice(1)));
+const capEn=k=>`${k.type}${k.euro?' euro':''} kit ${k.season}`;
+const label=k=>`${TYPE[k.type]}${k.euro?' אירופי':''} ${k.season}`;
+const srcBadge=k=>k.verified?['ok','יצרן מאומת']:k.sources.length>1?['two','שני מקורות']:['','מקור יחיד'];
+
+/* controls */
+const F={type:'all',design:'all',maker:'all',src:'all',q:'',art:'svg'};
+const draw=(k,l)=>kitSVG({...k,crest:DATA.crest},l);
+const art=(k,l)=>F.art==='src'&&k.image?`<img src="${k.image}" alt="${esc(l)}" loading="lazy" width="160" height="215">`:draw(k,l);
+const ORDER=['home','away','third','special'];
+function list(){return K.filter(k=>(F.type==='all'||k.type===F.type)&&(F.design==='all'||k.shirt.design===F.design)&&(F.maker==='all'||(k.maker||'—')===F.maker)&&(F.src==='all'||(F.src==='full'&&k.origin==='catalogue')||(F.src==='two'&&k.sources.length>1)||(F.src==='drawing'&&k.origin==='drawing'))&&(!F.q||k.season.includes(F.q)))}
+function render(){
+  const L=list(),main=$('#main'),seasons=[...new Set(L.map(k=>k.season))].sort((a,b)=>(+b.match(/\d{4}/)[0])-(+a.match(/\d{4}/)[0])||b.localeCompare(a));
+  $('#count').textContent=`${L.length} מערכות · ${seasons.length} עונות`;
+  if(!L.length){main.innerHTML='<p class="empty">אין מערכות שמתאימות לסינון.</p>';return}
+  main.innerHTML=seasons.map(s=>{const a=L.filter(k=>k.season===s).sort((x,y)=>ORDER.indexOf(x.type)-ORDER.indexOf(y.type)||(+x.euro)-(+y.euro));
+    return `<section class="season" aria-label="${s}"><div class="sn"><b>${s}</b><span>${a.length} ${a.length===1?'מערכת':'מערכות'}</span></div><div class="slots">${a.map(k=>{const [c,t]=srcBadge(k);return `<button class="item" type="button" data-id="${k.id}" aria-label="${esc(label(k))}"><span class="kitbox">${art(k,label(k))}</span><span class="tag"><span class="t"><span class="pip ${c}"></span>${TYPE[k.type]}${k.euro?' · אירופי':''}</span><span class="m">${esc(k.maker||'יצרן לא מתועד')}${k.sponsor?' · '+esc(k.sponsor):''}</span><span class="cap" dir="ltr">${capEn(k)}</span></span></button>`}).join('')}</div></section>`}).join('');
+  main.querySelectorAll('.item').forEach(b=>b.onclick=()=>show(K.find(k=>k.id===b.dataset.id)));
+}
+const catUrl=k=>{const id=k.sources.find(x=>x.startsWith('cof'));const n=id?+id.slice(id.lastIndexOf('p')+1):1;return DATA.catalogueUrls[n-1]||DATA.catalogueUrls[0]};
+const fileUrl=f=>'https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(f.replace(/ /g,'_'));
+const sw=(name,h)=>h?`<span class="sw"><i style="background:${h}"></i>${COL[name]||name||''} <bdi dir="ltr">${h}</bdi></span>`:'';
+function show(k){
+  const m=k.shirt.measured||{},meas=m.stripes?` · ${m.stripes} פסים`:m.hoops?` · ${m.hoops} חישוקים`:'';
+  const [c,t]=srcBadge(k),cat=k.evidence.find(e=>e.publisher==='colours-of-football.com'),pg=DATA.sources.catalogue;
+  const obs=[...new Set(k.drawings.flatMap(d=>[d.observed&&d.observed.makerMark&&k.origin==='drawing'?`סימן יצרן בציור: ${OBS_MAKER[d.observed.makerMark]||d.observed.makerMark}`:'',d.observed&&d.observed.note||'']).filter(Boolean))];
+  const drawings=k.drawings.map(d=>`<a href="${fileUrl(d.file)}" target="_blank" rel="noopener"><bdi dir="ltr">${d.file.replace('Kit body ','')}</bdi></a>`).join(' · ');
+  $('#dBody').innerHTML=`<div class="dstage">${draw(k,label(k))}${k.image?`<figure class="srcfig"><img src="${k.image}" alt="${esc(label(k))}" loading="lazy"><figcaption>תמונת מקור</figcaption></figure>`:''}</div>
+  <div class="info"><span class="badge ${k.verified?'ok':'rev'}">${t}</span>
+  <h2 id="dTitle">${k.season}</h2><p style="margin:-8px 0 0;color:var(--gold);font:600 12px var(--mono);letter-spacing:.12em" dir="ltr">${capEn(k).toUpperCase()}</p>
+  <dl><dt>חולצה</dt><dd>${DESIGN[k.shirt.design]||k.shirt.design}${meas}${k.shirt.design==='graphic'?' · ההדפס לא מצויר':''}<br>${k.shirt.colours.map(n=>sw(n,k.shirt.hex[n])).join('')}</dd>
+  ${k.shorts?`<dt>מכנסיים</dt><dd>${sw(k.shorts.colour,k.shorts.hex)}${k.shorts.trim?sw(k.shorts.trim,k.shorts.trimHex):''}</dd>`:''}
+  ${k.socks?`<dt>גרביים</dt><dd>${sw(k.socks.colour,k.socks.hex)}${k.socks.bands?sw(k.socks.trim,k.socks.trimHex)+' · פסים בראש הגרב':''}</dd>`:''}
+  <dt>יצרן</dt><dd>${k.verified?`${esc(k.verified.maker)} <small><a href="${k.verified.url}" target="_blank" rel="noopener">${esc(k.verified.source)}</a></small>`:k.maker?`${esc(k.maker)} <small style="color:var(--mute)">(כפי שמצויר בקטלוג)</small>`:'לא מתועד'}</dd>
+  <dt>ספונסר</dt><dd>${k.sponsor?`${esc(k.sponsor)} <small style="color:var(--mute)">(כפי שמודפס בציור)</small>`:'לא מתועד'}${k.shortsSponsor?` · על המכנסיים: ${esc(k.shortsSponsor)}`:''}</dd>
+  <dt>סמל</dt><dd>משבצת ריקה עד שיועלה קובץ מורשה</dd>
+  ${obs.length?`<dt>נראה בציור</dt><dd>${obs.map(esc).join(' · ')}</dd>`:''}
+  <dt>מקורות</dt><dd>${cat?`קטלוג colours-of-football.com: <a href="${catUrl(k)}" target="_blank" rel="noopener"><bdi dir="ltr">${esc(cat.ref)}</bdi></a><br>`:''}${drawings?`ציורי ויקימדיה קומונס: ${drawings}<br>`:(k.origin==='catalogue'&&DATA.club.id==='aek-athens'?'<small style="color:var(--mute)">אין ציור תואם בקומונס</small><br>':'')}<a href="/club-kits/${DATA.club.id}/svg/${k.id}.svg" target="_blank" rel="noopener">קובץ SVG</a></dd></dl>
+  ${k.conflicts.map(x=>`<p class="warn">${note(x)}</p>`).join('')}
+  ${k.notes.map(x=>`<p class="warn">${note(x)}</p>`).join('')}
+  <p class="warn ${k.verified?'ok':''}">${k.verified?'העונה, הסוג והיצרן מאומתים מנתוני המועדון. שאר הפרטים נמדדו מהציורים.':'ממתין לאישור הבעלים. הצבעים נמדדו מהציורים; העונה והסוג מכותרת הקטלוג'+(k.origin==='drawing'?' או משם הקובץ':'')+'.'}</p>
+  <div class="acts"><button class="btn" id="cpy" type="button">העתק קוד SVG</button><button class="btn ghost" id="cls" type="button">סגור</button></div></div>`;
+  $('#cls').onclick=()=>$('#dlg').close();
+  $('#cpy').onclick=async e=>{const tx=draw(k,DATA.club.name+' '+capEn(k)),btn=e.currentTarget;try{await navigator.clipboard.writeText(tx)}catch(_){const cp=$('#cp');cp.value=tx;cp.select();try{document.execCommand('copy')}catch(__){}}btn.textContent='הועתק';setTimeout(()=>btn.textContent='העתק קוד SVG',1600)};
+  $('#dlg').showModal();
+}
+$('#dlg').addEventListener('click',e=>{if(e.target.id==='dlg')e.target.close()});
+document.getElementById('crest').src=DATA.crest;document.getElementById('clubname').textContent=DATA.club.name;{const ys=K.map(k=>startYear(k)).filter(Boolean);document.getElementById('kick').textContent=`${DATA.club.name} · Kit Archive · ${Math.min(...ys)} — ${Math.max(...K.map(k=>k.season)).toString().length?K.slice().sort((a,b)=>startYear(b)-startYear(a))[0].season:''}`}
+$('#sKits').textContent=K.length;$('#sSeasons').textContent=new Set(K.map(k=>k.season)).size;$('#sCat').textContent=DATA.catalogue;$('#sX').textContent=DATA.crossChecked;
+function chips(el,key,items){items.forEach(([v,l])=>{const b=document.createElement('button');b.className='chip';b.type='button';b.textContent=l;b.dataset.v=v;b.setAttribute('aria-pressed',v==='all');b.onclick=()=>{F[key]=v;el.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.v===v));render()};el.append(b)})}
+chips($('#fType'),'type',[['all','הכול'],['home','בית'],['away','חוץ'],['third','שלישית'],['special','אחר']]);
+chips($('#fSrc'),'src',[['all','הכול'],['full','מערכת מלאה'],['two','שני מקורות'],['drawing','חולצה בלבד']]);
+[...new Set(K.map(k=>k.shirt.design))].sort().forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=DESIGN[d]||d;$('#fDesign').append(o)});
+[...new Set(K.map(k=>k.maker||'—'))].sort().forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=d==='—'?'לא מתועד':d;$('#fMaker').append(o)});
+$('#fDesign').onchange=e=>{F.design=e.target.value;render()};$('#fMaker').onchange=e=>{F.maker=e.target.value;render()};
+$('#fQ').oninput=e=>{F.q=e.target.value.trim();render()};
+document.querySelectorAll('[data-art]').forEach(b=>b.onclick=()=>{F.art=b.dataset.art;document.querySelectorAll('[data-art]').forEach(c=>c.setAttribute('aria-pressed',c===b));render()});
+render();
+</script>
+</body>
+</html>

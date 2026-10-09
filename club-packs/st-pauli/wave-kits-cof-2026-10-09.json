@@ -1,0 +1,1394 @@
+{
+ "sources": [
+  {
+   "id": "cof-st-pauli-p1",
+   "title": "st-pauli kits, catalogue page 1 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-st-pauli-p2",
+   "title": "st-pauli kits, catalogue page 2 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_2.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-st-pauli-p3",
+   "title": "st-pauli kits, catalogue page 3 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_3.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  }
+ ],
+ "kits": [
+  {
+   "id": "cof-k-44",
+   "value": {
+    "name": "st-pauli 2025/26 home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "brown/white"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "brown",
+     "trim": null
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-45",
+   "value": {
+    "name": "st-pauli 2025/26 away",
+    "season": "2025/26",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "chest band",
+     "colors": "white/red"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-46",
+   "value": {
+    "name": "st-pauli 2025/26 third",
+    "season": "2025/26",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "graphic",
+     "colors": "black"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "green"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-42",
+   "value": {
+    "name": "st-pauli 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "diagonal",
+     "colors": "white/brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": "brown"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-43",
+   "value": {
+    "name": "st-pauli 2024/25 third",
+    "season": "2024/25",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "graphic",
+     "colors": "black/purple"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "purple"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-38",
+   "value": {
+    "name": "st-pauli 2023/24 home",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": "gradient",
+     "colors": "brown/maroon"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-39",
+   "value": {
+    "name": "st-pauli 2023/24 away",
+    "season": "2023/24",
+    "type": "away",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": "graphic",
+     "colors": "white/pink"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-40",
+   "value": {
+    "name": "st-pauli 2023/24 third",
+    "season": "2023/24",
+    "type": "third",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": "graphic",
+     "colors": "blue/pink"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "blue",
+     "trim": null
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": "pink"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-35",
+   "value": {
+    "name": "st-pauli 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": "plain",
+     "colors": "brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-36",
+   "value": {
+    "name": "st-pauli 2022/23 away",
+    "season": "2022/23",
+    "type": "away",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": "brown"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-37",
+   "value": {
+    "name": "st-pauli 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": "graphic",
+     "colors": "black/pink"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-33",
+   "value": {
+    "name": "st-pauli 2021/22 away",
+    "season": "2021/22",
+    "type": "away",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-34",
+   "value": {
+    "name": "st-pauli 2021/22 third",
+    "season": "2021/22",
+    "type": "third",
+    "manufacturer": "DIIY",
+    "construction": {
+     "design": "graphic",
+     "colors": "grey/black"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "grey",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-29",
+   "value": {
+    "name": "st-pauli 2020/21 home",
+    "season": "2020/21",
+    "type": "home",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "plain",
+     "colors": "brown/white"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "cream",
+     "trim": "brown"
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-30",
+   "value": {
+    "name": "st-pauli 2020/21 away",
+    "season": "2020/21",
+    "type": "away",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "plain",
+     "colors": "cream/brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "brown",
+     "trim": "cream"
+    },
+    "socks": {
+     "colour": "cream",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-31",
+   "value": {
+    "name": "st-pauli 2020/21 third",
+    "season": "2020/21",
+    "type": "third",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/white"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-26",
+   "value": {
+    "name": "st-pauli 2019/20 home",
+    "season": "2019/20",
+    "type": "home",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "plain",
+     "colors": "brown/white"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-27",
+   "value": {
+    "name": "st-pauli 2019/20 away",
+    "season": "2019/20",
+    "type": "away",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "graphic",
+     "colors": "white/grey"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "brown",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-28",
+   "value": {
+    "name": "st-pauli 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "plain",
+     "colors": "black"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-23",
+   "value": {
+    "name": "st-pauli 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "chest band",
+     "colors": "brown/red"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "brown",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-24",
+   "value": {
+    "name": "st-pauli 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-25",
+   "value": {
+    "name": "st-pauli 2018/19 third",
+    "season": "2018/19",
+    "type": "third",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "plain",
+     "colors": "black/grey"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-20",
+   "value": {
+    "name": "st-pauli 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "chest band",
+     "colors": "brown/white"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "grey",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-21",
+   "value": {
+    "name": "st-pauli 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "chest band",
+     "colors": "white/red"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-22",
+   "value": {
+    "name": "st-pauli 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "graphic",
+     "colors": "black/grey"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-17",
+   "value": {
+    "name": "st-pauli 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "plain",
+     "colors": "brown/red"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "brown",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-18",
+   "value": {
+    "name": "st-pauli 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "sash",
+     "colors": "white/red"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-19",
+   "value": {
+    "name": "st-pauli 2016/17 third",
+    "season": "2016/17",
+    "type": "third",
+    "manufacturer": "Under Armour",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/red"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-14",
+   "value": {
+    "name": "st-pauli 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "manufacturer": "Hummel",
+    "construction": {
+     "design": "plain",
+     "colors": "brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-15",
+   "value": {
+    "name": "st-pauli 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "manufacturer": "Hummel",
+    "construction": {
+     "design": "graphic",
+     "colors": "white/brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": "brown"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-16",
+   "value": {
+    "name": "st-pauli 2015/16 third",
+    "season": "2015/16",
+    "type": "third",
+    "manufacturer": "Hummel",
+    "construction": {
+     "design": "plain",
+     "colors": "white/brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-11",
+   "value": {
+    "name": "st-pauli 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "manufacturer": "Hummel",
+    "construction": {
+     "design": "plain",
+     "colors": "brown/white"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "brown",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-12",
+   "value": {
+    "name": "st-pauli 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "manufacturer": "Hummel",
+    "construction": {
+     "design": "plain",
+     "colors": "white/brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": "brown"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-13",
+   "value": {
+    "name": "st-pauli 2014/15 third",
+    "season": "2014/15",
+    "type": "third",
+    "manufacturer": "Hummel",
+    "construction": {
+     "design": "graphic",
+     "colors": "black/skyblue"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "black",
+     "trim": "skyblue"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-08",
+   "value": {
+    "name": "st-pauli 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "brown/white"
+    },
+    "sponsor": "Ein Platz an der Sonne",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-09",
+   "value": {
+    "name": "st-pauli 2011/12 away",
+    "season": "2011/12",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "brown"
+    },
+    "sponsor": "Ein Platz an der Sonne",
+    "shorts": {
+     "colour": "maroon",
+     "trim": null
+    },
+    "socks": {
+     "colour": "maroon",
+     "trim": "brown"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-10",
+   "value": {
+    "name": "st-pauli 2011/12 third",
+    "season": "2011/12",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "red/black"
+    },
+    "sponsor": "Ein Platz an der Sonne",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-05",
+   "value": {
+    "name": "st-pauli 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "brown"
+    },
+    "sponsor": "Ein Platz an der Sonne",
+    "shorts": {
+     "colour": "brown",
+     "trim": null
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-06",
+   "value": {
+    "name": "st-pauli 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "white"
+    },
+    "sponsor": "Ein Platz an der Sonne",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-07",
+   "value": {
+    "name": "st-pauli 2010/11 third",
+    "season": "2010/11",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "red/white"
+    },
+    "sponsor": "Ein Platz an der Sonne",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-03",
+   "value": {
+    "name": "st-pauli 2007/08 home",
+    "season": "2007/08",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "brown"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "brown",
+     "trim": null
+    },
+    "socks": {
+     "colour": "brown",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2007-2008. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-04",
+   "value": {
+    "name": "st-pauli 2007/08 away",
+    "season": "2007/08",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "white"
+    },
+    "sponsor": "congstar",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2007-2008. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-01",
+   "value": {
+    "name": "st-pauli 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "construction": {
+     "design": "plain",
+     "colors": "white"
+    },
+    "sponsor": "securvita",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-02",
+   "value": {
+    "name": "st-pauli 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "construction": {
+     "design": "plain",
+     "colors": "green/white"
+    },
+    "sponsor": "securvita",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-st-pauli-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  }
+ ]
+}

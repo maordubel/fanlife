@@ -2057,5 +2057,21 @@
     "bands": false
    }
   }
+ ],
+ "sources": [
+  {
+   "key": "cof",
+   "title": "colours-of-football.com — AEK Athens kit catalogue (© Mikhail Sipovich)",
+   "url": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html",
+   "readOn": "2026-10-09",
+   "kits": 57
+  },
+  {
+   "key": "logo",
+   "title": "football-logos.cc — AEK Athens logo",
+   "url": "https://football-logos.cc/greece/aek-athens/",
+   "readOn": "2026-10-09",
+   "kits": 0
+  }
  ]
 }

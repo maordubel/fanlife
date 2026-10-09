@@ -1,0 +1,256 @@
+{
+ "sources": [
+  {
+   "key": "cof",
+   "title": "colours-of-football.com — Hapoel Petah Tikva kit catalogue (© Mikhail Sipovich)",
+   "url": "https://www.colours-of-football.com/colours03/israel/hapoel_petah_tikva/hapoel_petah_tikva_1.html",
+   "readOn": "2026-10-09",
+   "kits": 6
+  },
+  {
+   "key": "logo",
+   "title": "football-logos.cc — Hapoel Petah Tikva logo",
+   "url": "https://football-logos.cc/israel/hapoel-petah-tikva/",
+   "readOn": "2026-10-09",
+   "kits": 0
+  }
+ ],
+ "source": "https://www.colours-of-football.com/colours03/israel/hapoel_petah_tikva/hapoel_petah_tikva_1.html",
+ "publisher": "colours-of-football.com (Mikhail Sipovich)",
+ "retrieved": "2026-10-09",
+ "count": 6,
+ "pages": {
+  "hapoel_petah_tikva_1.html": "https://www.colours-of-football.com/colours03/israel/hapoel_petah_tikva/hapoel_petah_tikva_1.html"
+ },
+ "method": "Season/type from the catalogue captions; design, maker, printed sponsor and trims transcribed by eye from the drawings (readUnsure marks the doubtful ones); colours measured from pixels in fixed regions (shirt, shorts, socks), transparent background excluded.",
+ "records": [
+  {
+   "i": 1,
+   "caption": "home kit 2016-2017",
+   "page": "hapoel_petah_tikva_1.html",
+   "image": "isr_hapoel_petah_tikva_1_1516.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "blue",
+    "trim": "white",
+    "hex": {
+     "body": "#1a55a6",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Lotto",
+   "sponsor": "דיל טוב",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#1a55a6",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#1a55a6",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 2,
+   "caption": "away kit 2016-2017",
+   "page": "hapoel_petah_tikva_1.html",
+   "image": "isr_hapoel_petah_tikva_2_1516.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "white",
+    "trim": "blue",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#5972b7"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Lotto",
+   "sponsor": "דיל טוב",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "blue",
+    "trimHex": "#1a55a6"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 3,
+   "caption": "third kit 2016-2017",
+   "page": "hapoel_petah_tikva_1.html",
+   "image": "isr_hapoel_petah_tikva_3_1516.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "black",
+    "trim": "white",
+    "hex": {
+     "body": "#333333",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Lotto",
+   "sponsor": "דיל טוב",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 4,
+   "caption": "home kit 2025-2026",
+   "page": "hapoel_petah_tikva_1.html",
+   "image": "isr_hpt_1_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "blue",
+    "trim": "black",
+    "hex": {
+     "body": "#063cb4",
+     "trim": "#1e1e1e"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 1
+    }
+   },
+   "maker": "Lotto",
+   "sponsor": "MIVNE",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#0b46c8",
+    "trim": "black",
+    "trimHex": "#1e1e1e"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#0b46c8",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 5,
+   "caption": "away kit 2025-2026",
+   "page": "hapoel_petah_tikva_1.html",
+   "image": "isr_hpt_2_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "black",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#1e1e1e"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 1
+    }
+   },
+   "maker": "Lotto",
+   "sponsor": "MIVNE",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "blue",
+    "trimHex": "#0b46c8"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 6,
+   "caption": "third kit 2025-2026",
+   "page": "hapoel_petah_tikva_1.html",
+   "image": "isr_hpt_3_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "black",
+    "trim": "skyblue",
+    "hex": {
+     "body": "#1e1e1e",
+     "trim": "#7685a0"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 0
+    }
+   },
+   "maker": "Lotto",
+   "sponsor": "MIVNE",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": "blue",
+    "trimHex": "#0b46c8"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  }
+ ]
+}

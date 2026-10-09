@@ -5023,5 +5023,14 @@
    "alts": []
   }
  ],
- "kitCount": 84
+ "kitCount": 84,
+ "sources": [
+  {
+   "key": "commons",
+   "title": "Wikimedia Commons — Category:Football kit body/AEK Athens",
+   "url": "https://commons.wikimedia.org/wiki/Category:Football_kit_body/AEK_Athens",
+   "readOn": "2026-10-09",
+   "kits": 133
+  }
+ ]
 }

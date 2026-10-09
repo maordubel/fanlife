@@ -43,3 +43,45 @@ AEK's own colour is yellow and the shared shirt painter refused it by test. The 
 - Shorts/socks for the drawing-only kits.
 - A licensed crest file for the empty slot; printed logos where a rights grant exists.
 - Drawings with a graphic print (1988–96, 2017/18 eagle, 2022/23 tiger, 2025/26 away and third) show the base colour with the print flagged as not drawn.
+
+---
+
+# Six-club kit archives: images, SVG, icons, crests (9.10.2026)
+
+## Where the files live
+`public/club-kits/`, **not** `public/kits/`: that folder is the yellow-exempt one for the archive photographs, and `tests/kit-assets.test.ts` demands a zero-yellow ledger row for anything else put there. These are drawings of kits (AEK's and Celtic's are mostly yellow or green, and the crests carry their colours), so they sit outside the exempt folder rather than widening the exemption.
+
+## The grant
+Owner, 9.10.2026: *"יש לך אישור להשתמש בכל החומרים הגרפים המצורפים, בכל הלוגואים. בכל הסמלים. נא לייצר ארכיון מדים שלם, של SVG ושל תמונות מקור"* — about the five colours-of-football.com catalogues, the three GitHub repositories and their logos. The drawings, logos and symbols are third-party material used under that grant; it is recorded here and on `/credits` (the manifests carry `sources`), and it does not make anyone else's licence ours.
+
+## What was built, per club (AEK Athens, Celtic, Panathinaikos, FC St. Pauli, Zrinjski Mostar, Hapoel Petah Tikva)
+| Asset | Where | Made by |
+|---|---|---|
+| Source images (the catalogue's drawings, unchanged) | `public/club-kits/<club>/cof/` | `scripts/kits/make-club-kits.py` |
+| One SVG per kit, crest embedded | `public/club-kits/<club>/svg/<id>.svg` | `scripts/kits/export-kit-svgs.mjs` (renderer: `kit-render.js`) |
+| One small icon per kit (CC0 outlines, measured colours) | `public/club-kits/<club>/icons/<id>.svg` | `scripts/kits/export-kit-icons.mjs` |
+| Club crest, 256 px and 96 px | `public/club-kits/<club>/crest*.png` | football-logos.cc PNG, resized |
+| Measurements and the by-eye transcription | `content/manual/kit-cof-<club>.json`, `kit-reads/<club>.json` | the script above |
+| Joined archive (pages, SVGs, the in-app page read this) | `content/manual/kit-archive-<club>.json` (AEK: `kit-aek-athens.json`) | the script above |
+| A static page per club and a hub | `/kit-archive`, `/kit-archive/<club>` | `scripts/kits/build-kit-archive-pages.py` |
+
+Counts: St. Pauli 46, Panathinaikos 61, Zrinjski 19, Hapoel Petah Tikva 6, Celtic 75, AEK 99 (57 from the catalogue, 42 shirt-only drawings from Commons).
+
+## How it is read
+- **Season and type** are the catalogue's captions. **Colours** are measured from pixels (shirt, shorts and socks in fixed regions). **Design, maker, printed sponsor and trims** are a by-eye transcription of 160×215 px drawings, done by one reader per club from 2× contact sheets; a mark that could not be read stayed `null`, and `readUnsure` marks the doubtful kits (St. Pauli 17, Panathinaikos 19, Zrinjski 8, Hapoel Petah Tikva 6, Celtic 12). Nothing was filled from memory about the club.
+- **Cross-check against the packs.** Panathinaikos: 57 of its 61 kits already exist in the pack (from Football Kit Archive) with the same season and type; for all of them the transcribed maker agrees with the pack's (0 conflicts). Zrinjski 13 of 19, Hapoel Petah Tikva 6 of 6, St. Pauli 2 of 46, Celtic none.
+- **Waves.** A catalogue kit the pack already holds for that season and type is *not* added again (it is a twin; the archive page shows both). The rest go to `club-packs/<club>/wave-kits-cof-2026-10-09.json` as `review`, confidence 1: St. Pauli 44, Panathinaikos 4, Zrinjski 6, Celtic 75. They are wired into the resolver but reach no gate until the owner approves; `tests/clubs/club-kit-archives.test.ts` approves them in memory and asserts Celtic's and St. Pauli's gates 4 and 5 would then be playable.
+- **In-app page** `/clubs/<club>/kit-archive` shows, per approved kit, the pack's own cut-out photograph if there is one, else the catalogue's source image, else the drawn plate, with a link to the SVG.
+
+## What was not used, and why
+- **fkapi** is a scraper for footballkitarchive.com; that site answers automated reads with 403 (a bot challenge, not circumvented), and the repository holds code, not data. Nothing was taken from it.
+- **football-logos (GitHub)** holds only the 231 country banner collages; the individual club logos come from football-logos.cc (700 px PNG; its SVG download link answered 404 from here, so the crest is a PNG).
+- **football-kit-icons** (CC0) supplied the shirt outlines for the icons.
+
+## Colours
+`brown` joins the paintable swatch for St. Pauli (same grant and same per-club policy as yellow).
+
+## Still open
+- The owner's approval of the new waves (St. Pauli 44, Panathinaikos 4, Zrinjski 6, Celtic 75) and a decision about the transcriptions flagged `readUnsure`.
+- SVG logos (football-logos.cc), and printed maker/sponsor logos on the drawings (the grant covers them; none is drawn yet).
+- Seasons the catalogues do not cover (the catalogues start around 2001; earlier kits stay with the packs' photographs).

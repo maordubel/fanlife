@@ -1,0 +1,208 @@
+{
+ "sources": [
+  {
+   "id": "cof-zrinjski-mostar-p1",
+   "title": "zrinjski-mostar kits, catalogue page 1 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_1.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-zrinjski-mostar-p2",
+   "title": "zrinjski-mostar kits, catalogue page 2 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_2.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  }
+ ],
+ "kits": [
+  {
+   "id": "cof-k-19",
+   "value": {
+    "name": "zrinjski-mostar 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "graphic",
+     "colors": "white/grey"
+    },
+    "sponsor": "MtA",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-zrinjski-mostar-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-11",
+   "value": {
+    "name": "zrinjski-mostar 2016/17 third",
+    "season": "2016/17",
+    "type": "third",
+    "manufacturer": "Zeus",
+    "construction": {
+     "design": "sash",
+     "colors": "black/red"
+    },
+    "sponsor": "PPD",
+    "shorts": {
+     "colour": "black",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-zrinjski-mostar-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-05",
+   "value": {
+    "name": "zrinjski-mostar 2013–15 home",
+    "season": "2013–15",
+    "type": "home",
+    "manufacturer": "Zeus",
+    "construction": {
+     "design": "sash",
+     "colors": "white/red"
+    },
+    "sponsor": "INTERAGENT",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-zrinjski-mostar-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2013-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-03",
+   "value": {
+    "name": "zrinjski-mostar 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "manufacturer": "Zeus",
+    "construction": {
+     "design": "sash",
+     "colors": "white/red"
+    },
+    "sponsor": "ALUMINIJ",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-zrinjski-mostar-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-04",
+   "value": {
+    "name": "zrinjski-mostar 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "Zeus",
+    "construction": {
+     "design": "sash",
+     "colors": "red/white"
+    },
+    "sponsor": "ALUMINIJ",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-zrinjski-mostar-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-02",
+   "value": {
+    "name": "zrinjski-mostar 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "sash",
+     "colors": "red/white"
+    },
+    "sponsor": "ALUMINIJ",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-zrinjski-mostar-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2005-2006. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  }
+ ]
+}
