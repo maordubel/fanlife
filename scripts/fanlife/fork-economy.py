@@ -122,6 +122,22 @@ PATCHES = [
     ('components/fanlife/closet/ClosetBoard.tsx',
      "import { t, type MessageKey } from '@/lib/fanlife/i18n'",
      "import { t, type MessageKey } from '@/lib/fanlife/i18n'\nimport { archiveForCloset } from '@/lib/fanlife/scope'"),
+    # a guest's saved intents are cleared only for the shirts that were really saved; a failure stays for the next visit
+    ('components/fanlife/closet/ClosetScreen.tsx',
+     """        let saved = 0
+        for (const intent of waiting) {
+          const done = intent.action === 'have' ? await liveApi.have(intent.slug, intent.kitId) : await liveApi.wantSet(intent.slug, true, { kitId: intent.kitId })
+          if (done.ok) saved += 1
+        }
+        clearIntents(waiting.map((intent) => intent.slug))""",
+     """        let saved = 0
+        const failed = new Set<string>()
+        for (const intent of waiting) {
+          const done = intent.action === 'have' ? await liveApi.have(intent.slug, intent.kitId) : await liveApi.wantSet(intent.slug, true, { kitId: intent.kitId })
+          if (done.ok) saved += 1
+          else failed.add(intent.slug)
+        }
+        clearIntents(waiting.map((intent) => intent.slug).filter((slug) => !failed.has(slug)))"""),
     # a club without archive photographs: the drawn kit, as everywhere else in FAN LIFE
     ('components/fanlife/market/ShirtBits.tsx',
      "export function ArchivePhoto({ shirt, className = '', eager = false }: { shirt: CollectorShirt; className?: string; eager?: boolean }) {\n  return (",

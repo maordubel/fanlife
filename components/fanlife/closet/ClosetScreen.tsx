@@ -44,11 +44,13 @@ export function ClosetScreen({ shirts, archive }: { shirts: Record<string, Colle
       const waiting = pendingIntents()
       if (waiting.length > 0) {
         let saved = 0
+        const failed = new Set<string>()
         for (const intent of waiting) {
           const done = intent.action === 'have' ? await liveApi.have(intent.slug, intent.kitId) : await liveApi.wantSet(intent.slug, true, { kitId: intent.kitId })
           if (done.ok) saved += 1
+          else failed.add(intent.slug)
         }
-        clearIntents(waiting.map((intent) => intent.slug))
+        clearIntents(waiting.map((intent) => intent.slug).filter((slug) => !failed.has(slug)))
         if (saved > 0) {
           flash = saved === 1 ? t('collector.closet.pendingSavedOne') : t('collector.closet.pendingSaved', { n: String(saved) })
           const again = await liveApi.reload()
