@@ -20,7 +20,23 @@ const TABS: { key: CornerTab; href: string; label: Parameters<typeof fl>[0] }[] 
  * the magazine Shell, a kicker + headline, the corner's tabs, and `.fl-worker` — the surface that
  * re-inks The Worker's components (their Tailwind tokens) in the magazine's paper and inks.
  */
-export function FanPage({ active, title, sub, children }: { active?: CornerTab; title: string; sub?: string; children: ReactNode }) {
+export function FanPage({ active, title, sub, children, market = false }: { active?: CornerTab; title: string; sub?: string; children: ReactNode; /** the market's own frame: the page draws its headline, the corner's tabs sit below the content */ market?: boolean }) {
+  const tabs = (
+    <nav className="fl-corner-tabs" aria-label={fl('corner.nav')}>
+      {TABS.map((tab) => <Link key={tab.key} href={tab.href} aria-current={tab.key === active ? 'page' : undefined}>{fl(tab.label)}</Link>)}
+    </nav>
+  )
+  if (market) {
+    return (
+      <Shell locale="en">
+        <main id="main" className="mag-section fl-corner fl-market">
+          {evaluationMode() ? <p className="fl-corner-note">{fl('corner.preview')}</p> : null}
+          <div className="fl-worker" dir="ltr" lang="en">{children}</div>
+          {tabs}
+        </main>
+      </Shell>
+    )
+  }
   return (
     <Shell locale="en">
       <main id="main" className="mag-section fl-corner">

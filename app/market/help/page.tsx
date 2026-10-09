@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic'
 /** "What shirt is this?" — collectors identify each other's finds against the archive. */
 export default async function HelpPage() {
   return (
-    <FanPage active="market" title={h('hub.help.title')} sub={t('market.sub')}>
+    <FanPage market active="market" title={h('hub.help.title')} sub={t('market.sub')}>
       <HelpScreen shirts={await fanShirtMap()} />
     </FanPage>
   )

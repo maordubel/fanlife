@@ -28,6 +28,7 @@ export function HubFilters({
   facets,
   showCopyRails = true,
   myCountry = null,
+  panelOpen,
 }: {
   filters: Filters
   onChange: (next: Filters) => void
@@ -37,8 +38,12 @@ export function HubFilters({
   showCopyRails?: boolean
   /** the collector's own country, when they have told us: powers "ships to me" */
   myCountry?: string | null
+  /** when the page owns the Filters button (the market hero), it says whether the rails are open */
+  panelOpen?: boolean
 }) {
-  const [open, setOpen] = useState(false)
+  const [own, setOpen] = useState(false)
+  const external = panelOpen !== undefined
+  const open = external ? panelOpen : own
   const set = (patch: Partial<Filters>) => onChange({ ...filters, slug: null, ...patch })
   const clubs = useMemo(() => {
     const m = new Map<string, string>()
@@ -55,9 +60,9 @@ export function HubFilters({
   useEffect(() => setPrice(filters.maxPrice ? String(filters.maxPrice) : ''), [filters.maxPrice])
 
   return (
-    <section aria-label={h('hub.filters.title')} className="mt-3 border-rule border-ink bg-sheet p-2.5">
+    <section aria-label={h('hub.filters.title')} className={external ? `fl-mk-filters ${open ? '' : 'hidden'}` : 'mt-3 border-rule border-ink bg-sheet p-2.5'} data-hub="filters">
       <div className="flex items-center gap-2">
-        <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className={`${buttonPlain} flex-1 md:hidden`}>
+        <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className={`${buttonPlain} flex-1 md:hidden ${external ? 'hidden' : ''}`}>
           {h('hub.filters.title')}
           {count ? ` · ${count}` : ''}
           <span aria-hidden="true" className="ms-2">{open ? '▴' : '▾'}</span>
@@ -70,7 +75,7 @@ export function HubFilters({
         ) : null}
       </div>
 
-      <div className={`${open ? 'block' : 'hidden'} md:block`}>
+      <div className={external ? 'block' : `${open ? 'block' : 'hidden'} md:block`}>
         {clubs.length > 1 ? (
           <Rail label={h('hub.rail.club')}>
             <Chip on={!filters.club} onClick={() => set({ club: null, decade: null })} label={h('hub.all')} />

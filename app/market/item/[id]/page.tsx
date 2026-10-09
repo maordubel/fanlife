@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 
 export default async function MarketItemPage({ params }: { params: { id: string } }) {
   return (
-    <FanPage active="market" title={t('market.item.title')} sub={t('market.item.sub')}>
+    <FanPage market active="market" title={t('market.item.title')} sub={t('market.item.sub')}>
       <ListingScreen id={params.id} shirts={await fanShirtMap()} />
     </FanPage>
   )

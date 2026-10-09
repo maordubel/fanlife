@@ -38,6 +38,8 @@ type Feed<Row> = { state: 'loading' } | { state: 'off' } | { state: 'error'; mes
  */
 export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> }) {
   const [ready, setReady] = useState(false)
+  const [q, setQ] = useState('')
+  const [filtersOpen, setFiltersOpen] = useState(false)
   const [view, setView] = useState<HubView>('market')
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS)
   const [market, setMarket] = useState<Feed<HubItem>>({ state: 'loading' })
@@ -176,26 +178,26 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
 
   return (
     <div className="mt-stack" data-hub="root">
-      <p className="max-w-prose font-body text-step--1 leading-relaxed text-ink">{t('market.lede')}</p>
+      <header className="fl-mk-hero">
+        <p className="fl-mk-kicker"><span>{h('hub.hero.kicker')}</span></p>
+        <h1 className="fl-mk-title">{h('hub.hero.title')}</h1>
+        <p className="fl-mk-sub">{h('hub.hero.sub')}</p>
+      </header>
 
-      {/* what do you want to do — the four doors */}
-      <nav aria-label={h('hub.actions.title')} className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
-        <button type="button" onClick={() => go('market', { kind: 'sale' })} className={buttonPrimary}>{h('hub.actions.buy')}</button>
-        <button type="button" onClick={() => go('market', { kind: 'trade' })} className={buttonPlain}>{h('hub.actions.swap')}</button>
-        <button type="button" onClick={() => setSheet({ slug: filters.slug })} className={buttonPlain}>{h('hub.actions.look')}</button>
-        <Link href="/closet" className={buttonPlain}>{h('hub.actions.sell')}</Link>
-      </nav>
+      <div className="fl-mk-searchrow" role="search">
+        <label className="fl-mk-search">
+          <span aria-hidden="true" className="fl-mk-search-ico">⌕</span>
+          <span className="sr-only">{h('hub.search.label')}</span>
+          <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={h('hub.search.placeholder')} enterKeyHint="search" />
+        </label>
+        <button type="button" onClick={() => setFiltersOpen((v) => !v)} aria-expanded={filtersOpen} className="fl-mk-filterbtn">
+          <span aria-hidden="true">⚲</span> {h('hub.filters.title')}{activeCount(filters) ? ` · ${activeCount(filters)}` : ''}
+        </button>
+      </div>
 
-      <div role="tablist" aria-label={h('hub.tabs.title')} className="mt-3 flex gap-1 border-b-rule border-ink">
+      <div role="tablist" aria-label={h('hub.tabs.title')} className="fl-mk-tabs">
         {([['market', 'hub.tabs.market'], ['wanted', 'hub.tabs.wanted'], ['foryou', 'hub.tabs.foryou'], ['circles', 'hub.tabs.circles']] as const).map(([id, key]) => (
-          <button
-            key={id}
-            role="tab"
-            type="button"
-            aria-selected={view === id}
-            onClick={() => go(id)}
-            className={`min-h-tap flex-1 px-2 font-body text-[13px] font-extrabold ${view === id ? 'border-x-hair border-t-rule border-ink bg-ink text-paper' : 'text-ink'}`}
-          >
+          <button key={id} role="tab" type="button" aria-selected={view === id} onClick={() => go(id)}>
             {h(key)}
           </button>
         ))}
@@ -206,7 +208,14 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
       {view === 'market' ? (
         <section role="tabpanel" aria-label={h('hub.tabs.market')}>
           {focus ? <BackToAll shirt={focus} onClear={() => setFilters((f) => ({ ...f, slug: null }))} /> : null}
-          <HubFilters filters={filters} onChange={setFilters} shirts={shirts} facets={facets} myCountry={place?.country ?? null} />
+          <div className="fl-mk-chips" role="group" aria-label={h('hub.rail.deal')}>
+            {([[null, 'hub.kind.all'], ['sale', 'hub.kind.sale'], ['trade', 'hub.kind.swap']] as const).map(([kind, key]) => (
+              <button key={key} type="button" aria-pressed={filters.kind === kind} onClick={() => setFilters((f) => ({ ...f, slug: null, kind }))}>
+                {h(key)}
+              </button>
+            ))}
+          </div>
+          <HubFilters filters={filters} onChange={setFilters} shirts={shirts} facets={facets} myCountry={place?.country ?? null} panelOpen={filtersOpen} />
 
           {narrowed && market.state === 'ready' ? (
             saving ? (
@@ -253,10 +262,10 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
             )
           ) : (
             <>
-              <p className="mt-3 font-poster text-[20px] leading-none text-ink" data-hub="count">
+              <p className="fl-mk-count" data-hub="count">
                 {facets ? h('hub.count', { n: String(facets.total) }) : null}
               </p>
-              <HubListings items={market.rows} shirts={shirts} wants={wants} focused={Boolean(focus)} onFocus={(slug) => setFilters((f) => ({ ...f, slug }))} />
+              <HubListings items={market.rows} shirts={shirts} wants={wants} focused={Boolean(focus)} query={q} onFocus={(slug) => setFilters((f) => ({ ...f, slug }))} />
               {market.next ? (
                 <button type="button" onClick={moreMarket} disabled={market.more} className="mt-stack flex min-h-tap w-full items-center justify-center border-rule border-dashed border-ink bg-paper font-body text-step--1 font-extrabold text-ink disabled:opacity-60">
                   {t('market.table.more')}
@@ -264,6 +273,11 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
               ) : null}
             </>
           )}
+          <button type="button" className="fl-mk-wanted" onClick={() => go('wanted')}>
+            <span className="fl-mk-wanted-pic" aria-hidden="true">⚑</span>
+            <span><b>{h('hub.wantedStrip.title')}</b><small>{h('hub.wantedStrip.sub')}</small></span>
+            <span aria-hidden="true" className="fl-mk-wanted-go">›</span>
+          </button>
         </section>
       ) : null}
 
@@ -330,6 +344,10 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
           <CirclesPanel shirts={shirts} signedIn={signedIn} signIn={signIn} place={place} onPlace={setPlace} />
         </section>
       ) : null}
+
+      <div className="fl-mk-sticky">
+        <Link href="/closet" className="fl-mk-list">{h('hub.list.cta')}</Link>
+      </div>
 
       {sheet && signedIn === false ? (
         <div className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/60 sm:items-center" role="dialog" aria-modal="true" aria-label={h('hub.request.title')}>

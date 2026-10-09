@@ -81,6 +81,41 @@ def fork(src):
 
 # FAN LIFE-only edits applied after the rewrite: (file, old, new). Each must match exactly once.
 PATCHES = [
+    # the market redesign (9.10.2026): the thread wears the magazine's "The Conversation" — hooks for app/magazine.css (.fl-mk-*)
+    ('components/fanlife/market/ThreadView.tsx',
+     """    <div className="mt-stack">
+      <Link
+        href={item ? itemHref(item.id) : '/market'}
+        className="inline-flex min-h-tap items-center font-body text-step--1 font-extrabold text-red underline underline-offset-4"
+      >
+        ← {item ? shirtName(shirt) : t('market.toMarket')}
+      </Link>
+""",
+     """    <div className="fl-mk-thread">
+      <Link href={item ? itemHref(item.id) : '/market'} className="fl-mk-back">
+        <span aria-hidden="true">←</span> {item ? shirtName(shirt) : t('market.toMarket')}
+      </Link>
+      <h1 className="fl-mk-itemtitle">{handleLabel(other)}</h1>
+"""),
+    ('components/fanlife/market/ThreadView.tsx',
+     '<aside className="flex flex-col gap-3 lg:sticky lg:top-4">',
+     '<aside className="fl-mk-aside flex flex-col gap-3 lg:sticky lg:top-4">'),
+    ('components/fanlife/market/ThreadView.tsx',
+     """        className={`whitespace-pre-line break-words border-rule px-3 py-2 font-body text-step--1 leading-relaxed ${
+          mine ? 'border-ink bg-ink text-paper' : 'border-ink bg-sheet text-ink'
+        }`}""",
+     """        className={`fl-mk-bubble whitespace-pre-line break-words font-body text-step--1 leading-relaxed ${mine ? 'fl-mk-bubble-mine' : ''}`}"""),
+    ('components/fanlife/market/ThreadView.tsx',
+     'className="flex items-end gap-2 border-rule border-ink bg-sheet p-2"',
+     'className="fl-mk-composer"'),
+    ('components/fanlife/market/ThreadView.tsx',
+     """        className="min-h-tap shrink-0 border-rule border-ink bg-ink px-4 font-body text-step--1 font-extrabold text-paper disabled:opacity-50"
+      >
+        {t('market.compose.send')}""",
+     """        className="fl-mk-send min-h-tap"
+      >
+        <span aria-hidden="true">➤</span>
+        <span className="sr-only">{t('market.compose.send')}</span>"""),
     ('components/fanlife/closet/ClosetBoard.tsx',
      '<ClosetMetrics items={items} shirts={shirts} archive={archive} shareRoute={sharePath} />',
      '<ClosetMetrics items={items} shirts={shirts} archive={archiveForCloset(archive, items, shirts)} shareRoute={sharePath} />'),
@@ -118,9 +153,13 @@ def patched(dst, text):
         text = text.replace(old, new)
     return text
 
+# written by hand for FAN LIFE — never regenerated, never compared (the market redesign, 9.10.2026)
+HAND = {os.path.normpath(p) for p in ['components/fanlife/market/ListingView.tsx']}
+
 check = '--check' in sys.argv
 stale = []
 for src, dst in MAP.items():
+    if dst in HAND: continue
     out = patched(dst, fork(src))
     if check:
         if not os.path.isfile(dst) or open(dst, encoding='utf8').read() != out: stale.append(dst)

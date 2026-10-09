@@ -100,16 +100,14 @@ export function ThreadView({
   )
 
   return (
-    <div className="mt-stack">
-      <Link
-        href={item ? itemHref(item.id) : '/market'}
-        className="inline-flex min-h-tap items-center font-body text-step--1 font-extrabold text-red underline underline-offset-4"
-      >
-        ← {item ? shirtName(shirt) : t('market.toMarket')}
+    <div className="fl-mk-thread">
+      <Link href={item ? itemHref(item.id) : '/market'} className="fl-mk-back">
+        <span aria-hidden="true">←</span> {item ? shirtName(shirt) : t('market.toMarket')}
       </Link>
+      <h1 className="fl-mk-itemtitle">{handleLabel(other)}</h1>
 
       <div className="mt-3 lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:items-start lg:gap-6 xl:grid-cols-[340px_minmax(0,1fr)]">
-        <aside className="flex flex-col gap-3 lg:sticky lg:top-4">
+        <aside className="fl-mk-aside flex flex-col gap-3 lg:sticky lg:top-4">
           <section className="border-plate border-ink bg-sheet" aria-labelledby="thread-about">
             <header className="flex items-center justify-between gap-2 bg-ink px-3 py-2 text-paper">
               <Kicker tone="paper">{thread.connection.kind === 'buy' ? t('market.thread.kind.buy') : t('market.thread.kind.trade')}</Kicker>
@@ -297,9 +295,7 @@ function Message({
         </span>
       </span>
       <p
-        className={`whitespace-pre-line break-words border-rule px-3 py-2 font-body text-step--1 leading-relaxed ${
-          mine ? 'border-ink bg-ink text-paper' : 'border-ink bg-sheet text-ink'
-        }`}
+        className={`fl-mk-bubble whitespace-pre-line break-words font-body text-step--1 leading-relaxed ${mine ? 'fl-mk-bubble-mine' : ''}`}
       >
         <bdi>{message.body}</bdi>
       </p>
@@ -630,7 +626,7 @@ function Composer({ busy, onSend }: { busy: boolean; onSend: (body: string) => P
   const [body, setBody] = useState('')
   return (
     <form
-      className="flex items-end gap-2 border-rule border-ink bg-sheet p-2"
+      className="fl-mk-composer"
       onSubmit={(event) => {
         event.preventDefault()
         const text = body.trim()
@@ -652,9 +648,10 @@ function Composer({ busy, onSend }: { busy: boolean; onSend: (body: string) => P
       <button
         type="submit"
         disabled={busy || body.trim() === ''}
-        className="min-h-tap shrink-0 border-rule border-ink bg-ink px-4 font-body text-step--1 font-extrabold text-paper disabled:opacity-50"
+        className="fl-mk-send min-h-tap"
       >
-        {t('market.compose.send')}
+        <span aria-hidden="true">➤</span>
+        <span className="sr-only">{t('market.compose.send')}</span>
       </button>
     </form>
   )
