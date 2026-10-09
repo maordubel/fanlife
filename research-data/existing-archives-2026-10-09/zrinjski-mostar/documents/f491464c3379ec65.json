@@ -1,0 +1,117 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:32.567500+00:00",
+    "contentHash": "a4a780be3b8f196a8dcf5458877cb6dd4a592c6f00e88051ce72ced26c080bfd",
+    "bytes": 71648,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:82096",
+        "nameAsReported": "Vasilj, Nikola",
+        "profileUrl": "https://www.national-football-teams.com/player/82096/Nikola_Vasilj.html",
+        "season": "2013/14",
+        "birthDate": "1995-12-02",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:7441",
+        "nameAsReported": "Melher, Igor",
+        "profileUrl": "https://www.national-football-teams.com/player/7441/Igor_Melher.html",
+        "season": "2013/14",
+        "birthDate": "1979-11-01",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:85001",
+        "nameAsReported": "Barišić, Hrvoje",
+        "profileUrl": "https://www.national-football-teams.com/player/85001/Hrvoje_Barisic.html",
+        "season": "2013/14",
+        "birthDate": "1991-02-03",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:86983",
+        "nameAsReported": "Miličević, Hrvoje",
+        "profileUrl": "https://www.national-football-teams.com/player/86983/Hrvoje_Milicevic.html",
+        "season": "2013/14",
+        "birthDate": "1993-04-30",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:63564",
+        "nameAsReported": "Aničić, Marin",
+        "profileUrl": "https://www.national-football-teams.com/player/63564/Marin_Anicic.html",
+        "season": "2013/14",
+        "birthDate": "1989-08-17",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:63647",
+        "nameAsReported": "Graovac, Daniel",
+        "profileUrl": "https://www.national-football-teams.com/player/63647/Daniel_Graovac.html",
+        "season": "2013/14",
+        "birthDate": "1993-08-08",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:31711",
+        "nameAsReported": "Đurić, Velibor",
+        "profileUrl": "https://www.national-football-teams.com/player/31711/Velibor_Duric.html",
+        "season": "2013/14",
+        "birthDate": "1982-05-05",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:46913",
+        "nameAsReported": "Bekić, Amer",
+        "profileUrl": "https://www.national-football-teams.com/player/46913/Amer_Bekic.html",
+        "season": "2013/14",
+        "birthDate": "1992-08-05",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:24768",
+        "nameAsReported": "Nikolić, Stevo",
+        "profileUrl": "https://www.national-football-teams.com/player/24768/Stevo_Nikolic.html",
+        "season": "2013/14",
+        "birthDate": "1984-12-04",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

@@ -1,0 +1,92 @@
+{
+  "provider": "club-tabs",
+  "source": {
+    "url": "https://hskzrinjski.ba/trofejni-treneri/",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:49:43.257433+00:00",
+    "contentHash": "a5ec140965b3d41fcfa577df1491ec7da1bf6e09a49a17811d3211065f1cf048",
+    "bytes": 130918,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "tabs": [],
+    "fanAwards": [],
+    "trophyCoaches": [
+      {
+        "nameAsReported": "FRANJO DŽIDIĆ",
+        "matchesAsReported": 92,
+        "winsAsReported": 53,
+        "drawsAsReported": 13,
+        "lossesAsReported": 26
+      },
+      {
+        "nameAsReported": "DRAGAN JOVIĆ",
+        "matchesAsReported": 122,
+        "winsAsReported": 69,
+        "drawsAsReported": 16,
+        "lossesAsReported": 37
+      },
+      {
+        "nameAsReported": "BRANKO KARAČIĆ",
+        "matchesAsReported": 73,
+        "winsAsReported": 37,
+        "drawsAsReported": 20,
+        "lossesAsReported": 16
+      },
+      {
+        "nameAsReported": "VINKO MARINOVIĆ",
+        "matchesAsReported": 70,
+        "winsAsReported": 42,
+        "drawsAsReported": 18,
+        "lossesAsReported": 10
+      },
+      {
+        "nameAsReported": "BLAŽ SLIŠKOVIĆ",
+        "matchesAsReported": 172,
+        "winsAsReported": 93,
+        "drawsAsReported": 37,
+        "lossesAsReported": 42
+      },
+      {
+        "nameAsReported": "SERGEJ JAKIROVIĆ",
+        "matchesAsReported": null,
+        "winsAsReported": null,
+        "drawsAsReported": null,
+        "lossesAsReported": null
+      },
+      {
+        "nameAsReported": "KRUNOSLAV RENDULIĆ",
+        "matchesAsReported": null,
+        "winsAsReported": null,
+        "drawsAsReported": null,
+        "lossesAsReported": null
+      },
+      {
+        "nameAsReported": "ŽELJKO PETROVIĆ",
+        "matchesAsReported": null,
+        "winsAsReported": null,
+        "drawsAsReported": null,
+        "lossesAsReported": null
+      },
+      {
+        "nameAsReported": "MARIO IVANKOVIĆ",
+        "matchesAsReported": 59,
+        "winsAsReported": 38,
+        "drawsAsReported": 7,
+        "lossesAsReported": 14
+      },
+      {
+        "nameAsReported": "IGOR ŠTIMAC",
+        "matchesAsReported": null,
+        "winsAsReported": null,
+        "drawsAsReported": null,
+        "lossesAsReported": null
+      }
+    ],
+    "sourceUrl": "https://hskzrinjski.ba/trofejni-treneri/",
+    "completeArchiveClaim": false,
+    "scopeNote": "Keep season/cup/European/overall scopes separate. Page publication is not statistics cut-off."
+  },
+  "approvedForProduction": 0
+}

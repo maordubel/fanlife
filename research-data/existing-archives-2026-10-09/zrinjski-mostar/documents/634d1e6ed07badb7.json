@@ -1,0 +1,95 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:49:41.245529+00:00",
+    "contentHash": "4d6c26cb58bf0f32e861559f7a1a30c3988261c4bec0b88a470f6809aa26a684",
+    "bytes": 69434,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:85001",
+        "nameAsReported": "Barišić, Hrvoje",
+        "profileUrl": "https://www.national-football-teams.com/player/85001/Hrvoje_Barisic.html",
+        "season": "2024/25",
+        "birthDate": "1991-02-03",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:80409",
+        "nameAsReported": "Ćorluka, Josip",
+        "profileUrl": "https://www.national-football-teams.com/player/80409/Josip_Corluka.html",
+        "season": "2024/25",
+        "birthDate": "1995-03-03",
+        "positionAsReported": "Right Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:48337",
+        "nameAsReported": "Šunjić, Toni",
+        "profileUrl": "https://www.national-football-teams.com/player/48337/Toni_Sunjic.html",
+        "season": "2024/25",
+        "birthDate": "1988-12-15",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:85003",
+        "nameAsReported": "Savić, Igor",
+        "profileUrl": "https://www.national-football-teams.com/player/85003/Igor_Savic.html",
+        "season": "2024/25",
+        "birthDate": "2000-10-08",
+        "positionAsReported": "Defensive Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:70073",
+        "nameAsReported": "Ćavar, Marijan",
+        "profileUrl": "https://www.national-football-teams.com/player/70073/Marijan_Cavar.html",
+        "season": "2024/25",
+        "birthDate": "1998-02-02",
+        "positionAsReported": "Centre Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:70071",
+        "nameAsReported": "Bilbija, Nemanja",
+        "profileUrl": "https://www.national-football-teams.com/player/70071/Nemanja_Bilbija.html",
+        "season": "2024/25",
+        "birthDate": "1990-11-02",
+        "positionAsReported": "Secondary striker",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:55473",
+        "nameAsReported": "Abdurahimi, Besart",
+        "profileUrl": "https://www.national-football-teams.com/player/55473/Besart_Abdurahimi.html",
+        "season": "2024/25",
+        "birthDate": "1990-07-31",
+        "positionAsReported": "Left Winger",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

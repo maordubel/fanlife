@@ -1,0 +1,3832 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "contentLocale": "en",
+  "sources": [
+    {
+      "id": "ea-src-005a577f5db24ce7",
+      "title": "HŠK Zrinjski Mostar · /zrinjski-u-ligi-hrvatske-republike-herceg-bosne/",
+      "url": "https://hskzrinjski.ba/zrinjski-u-ligi-hrvatske-republike-herceg-bosne/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:52:50.564801+00:00",
+      "sha256": "741b1358dc4c14035c7bbf2de2a02b7c84bac40df906d3e013fc34afdce06684",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-01c690b4fad0dde4",
+      "title": "HŠK Zrinjski Mostar · /zrinjski-u-europi/",
+      "url": "https://hskzrinjski.ba/zrinjski-u-europi/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:52:40.477265+00:00",
+      "sha256": "d984670b453131d27407e9b2fe395855776a9fc1d2bcf8d51bb0327bdaa5baaa",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-0b141a0854104981",
+      "title": "National Football Teams · /club/3207/2025_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2025_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:55:54.756049+00:00",
+      "sha256": "8e1da23048ee5ed49461552b8d46108dc19a99c26d917b856e699547dfb34688",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-0e28c280e193ddbd",
+      "title": "HŠK Zrinjski Mostar · /brojke/",
+      "url": "https://hskzrinjski.ba/brojke/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:53:00.872322+00:00",
+      "sha256": "ee9705a853bd9136c329d2802b0479cb7aa629abc7aaf350d7b49f8e905372e0",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-11b0da70efc02c8f",
+      "title": "HŠK Zrinjski Mostar · /navijaci/",
+      "url": "https://hskzrinjski.ba/navijaci/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:53:21.555369+00:00",
+      "sha256": "8c86602f61a238103fca6fd681b08e2baee44cf2191ebe6bac234a7f9fa751d1",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-2c40a2a04d993e2a",
+      "title": "National Football Teams · /club/3207/2020_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2020_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:05.858519+00:00",
+      "sha256": "f12ad64d5b7e549b60cd00ec8e7d1e59b89ee730c6334b4f078ecef916ac264d",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-346fe7485c23877a",
+      "title": "National Football Teams · /club/3207/2006_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2006_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:51.853852+00:00",
+      "sha256": "a7430865e54f60c46865bc579d0495af7821b22de804da07a6ad5da09cc53c98",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-37a9fa859e874f36",
+      "title": "National Football Teams · /club/3207/2016_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2016_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:19.954049+00:00",
+      "sha256": "76c779f35c91901c87536d9cfe06b67f000e02ca8a3f4915d7f504107e28e38b",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-38f158b8bb92ae88",
+      "title": "National Football Teams · /club/3207/1993_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1993_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:31.324134+00:00",
+      "sha256": "234da72e2fd09ac9cadecfb7ec052afe73b2d7760bc96c9e225f4aed9a2fd0e5",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-3944bf40f4304ed5",
+      "title": "National Football Teams · /club/3207/1999_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1999_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:13.538127+00:00",
+      "sha256": "74e198cb97c6656cf686a45a3dd95ca0372911c788b740d0f1ea439378408453",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-3a523e1833d1f058",
+      "title": "National Football Teams · /club/3207/1944_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1944_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:38.746910+00:00",
+      "sha256": "a9d932b63096589b3fb8dbbf6e7d65e514ce9f7b4c53c503b000cc7b5a8d415d",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-3d50a9bb0d122dfa",
+      "title": "National Football Teams · /club/3207/1995_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1995_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:26.858126+00:00",
+      "sha256": "b6aa5e634daf75a0f9ff4568996c5925b204c2af7434afdfdc4829795768b201",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-491e0fd99097ce6a",
+      "title": "National Football Teams · /club/3207/2007_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2007_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:51.783840+00:00",
+      "sha256": "79112bf4c0d8bf5fd13f22a99f2322210069da352d51af645cda8bf1e3cf5add",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-4ac130f8fd089874",
+      "title": "National Football Teams · /club/3207/2017_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2017_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:19.832818+00:00",
+      "sha256": "c5ffb1d0c0d9c5123f81f01fe54b8dd7e020216b2f77ea7c939a4556acd29321",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-516a028d7190c16c",
+      "title": "National Football Teams · /club/3207/2004_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2004_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:58.995930+00:00",
+      "sha256": "1dadaca83a4105f8c2fbf32483706f10413079ab855cf273513bd0d54fd6aa6a",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-541e1131e164bb07",
+      "title": "National Football Teams · /club/3207/2018_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2018_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:13.676470+00:00",
+      "sha256": "04c6a619a7889aa1ec40be9e85eea5176d91d66f828700afa7b14e3861295015",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-55759dc1ac2fd37a",
+      "title": "National Football Teams · /club/3207/2002_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2002_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:07.376107+00:00",
+      "sha256": "eec31951f207e2f8d9bf6a8b008c94aa0509c7a3a379827c86f886965eb4ebd0",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-56ec006a6ad63750",
+      "title": "National Football Teams · /club/3207/2010_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2010_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:39.014355+00:00",
+      "sha256": "82c45a71d25c0894950e09ddf76aaa62079adc7ecc93a3766a3768a482eeb005",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-5837502cac43c494",
+      "title": "National Football Teams · /club/3207/2014_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2014_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:26.149334+00:00",
+      "sha256": "99aec5fd0dc8a983dfbfe1c56df84531bc77d327c298f86bc8e6e25b8243460a",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-5a3d4f11e8c219fe",
+      "title": "Football Federation of Bosnia and Herzegovina · 2025/26",
+      "url": "https://www.nfsbih.ba/en/component/stats/team/46565761/517-hsk-zrinjski/",
+      "publisher": "Football Federation of Bosnia and Herzegovina",
+      "sourceFamilyId": "nfsbih",
+      "providerId": "nfs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:52:02.630957+00:00",
+      "sha256": "9a3f2b6be27ec26851fe557bf4c6fea6cbf78fb653418691e8934f40460ad9b8",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-5af882147faa6b1b",
+      "title": "HŠK Zrinjski Mostar · /zrinjski-u-wwin-ligi/",
+      "url": "https://hskzrinjski.ba/zrinjski-u-wwin-ligi/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:52:20.086167+00:00",
+      "sha256": "1f9ba6e6b13400637c3578abf0b701ba5a59989a0ba375cb7b7cc0c71ae24227",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-634d1e6ed07badb7",
+      "title": "National Football Teams · /club/3207/2024_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2024_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:49:41.245529+00:00",
+      "sha256": "4d6c26cb58bf0f32e861559f7a1a30c3988261c4bec0b88a470f6809aa26a684",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-69ea0c18b16aa393",
+      "title": "National Football Teams · /club/3207/1996_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1996_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:26.521955+00:00",
+      "sha256": "a9742cd929e2a38f020e5af2527eaf0031791bd995928e869986b1dabc7fde61",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-7ccb8676e3f41f74",
+      "title": "National Football Teams · /club/3207/2011_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2011_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:38.834600+00:00",
+      "sha256": "20cef339783ca0e7482f604af18e0a3050c90760d3d17bec29519f686c19239a",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-7d4a03281db020e4",
+      "title": "HŠK Zrinjski Mostar · /povijest/",
+      "url": "https://hskzrinjski.ba/povijest/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:51:34.848224+00:00",
+      "sha256": "72a4f4d3ca52ded85257ba028b1f83b9cf19ce9966babee5fde613ea0ad9f414",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-7f2510798f1d093d",
+      "title": "National Football Teams · /club/3207/2003_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2003_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:59.378869+00:00",
+      "sha256": "906dc511b88d16061132ff124775a00888ef0d8e2939e5c3fc752ba97e2e2739",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-80198b2d3b1147a6",
+      "title": "National Football Teams · /club/3207/2008_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:45.344826+00:00",
+      "sha256": "0268b4442cd2d1b55fb520e684264e18f36ae9776df021c6359087fcfeafa912",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-91b075c8e1e16689",
+      "title": "National Football Teams · /club/3207/1998_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1998_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:19.614599+00:00",
+      "sha256": "0d4acca9790e919fe1a65348530918b3da2ed7d36534d35b42f4824d12f16ede",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-b09b3ad31c988723",
+      "title": "National Football Teams · /club/3207/1997_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1997_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:19.636486+00:00",
+      "sha256": "5ee3c38756a11097c7061ddd7fe82f17c8f25aae3e1e2b96e5f617b6f4d1741e",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-b3cbfebe900f5281",
+      "title": "National Football Teams · /club/3207/2019_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2019_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:13.479824+00:00",
+      "sha256": "c2ffc127a715a9f6c75aac60ac54ebc84b48e91ed01ee9c895ffdd903a235224",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-c8dd3f951f81b87c",
+      "title": "National Football Teams · /club/3207/2000_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2000_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:13.314042+00:00",
+      "sha256": "46294c90be90bc09bd8ec1b4f5d65f706d40f88dbe01f51ec915f2135e518495",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-cdead616683a0094",
+      "title": "National Football Teams · /club/3207/2005_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:55.481190+00:00",
+      "sha256": "d3c53ea5134f7dab1104de7f9a733d82a146278e401900e2caa602b40cda0df9",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-d1b218f0c22e1772",
+      "title": "HŠK Zrinjski Mostar · /stadion/",
+      "url": "https://hskzrinjski.ba/stadion/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:53:11.187841+00:00",
+      "sha256": "93e2c8fdccaff1fe919751f725c848e1fa4abbe135716f41f7abee9d5e6b3b9c",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-d4edbcfe00000114",
+      "title": "National Football Teams · /club/3207/2021_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:05.724338+00:00",
+      "sha256": "a3a5744ad6c3b8a80f67001b29a0e6aba12edecf632d97753cccff85b57dcc89",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-d74629dc0c4cfb62",
+      "title": "National Football Teams · /club/3207/1942_2/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1942_2/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:44.918772+00:00",
+      "sha256": "56260af13ee3c1ac2ebfab066687d83792ce3bb63582a5878f20a49390732a4a",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-e19c288a9a08ae8c",
+      "title": "HŠK Zrinjski Mostar · /trofejni-treneri/",
+      "url": "https://hskzrinjski.ba/trofejni-treneri/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:49:43.257433+00:00",
+      "sha256": "a5ec140965b3d41fcfa577df1491ec7da1bf6e09a49a17811d3211065f1cf048",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-e2076903c763573a",
+      "title": "National Football Teams · /club/3207/2022_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2022_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:00.704537+00:00",
+      "sha256": "c09332f95ea786c8610f727bb4ba287675ed1f2effa74ca7a85db2b367ccc6ba",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-e3345f3a7dbbbb03",
+      "title": "National Football Teams · /club/3207/2001_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2001_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:07.551558+00:00",
+      "sha256": "99b9d4545dc4a3d82a86ca3e2aae4e01eeb08139ad64ea9d9ff59b3ded98ea85",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-e3ba5cca3133a6d4",
+      "title": "National Football Teams · /club/3207/1941_2/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1941_2/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:51.150315+00:00",
+      "sha256": "f8d746f630018b5246f7827168990c0fbf2409a9e00fb6bfe7e52c404ec557a6",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-e439375f40c8520d",
+      "title": "HŠK Zrinjski Mostar · /zrinjski-u-kupu-bih/",
+      "url": "https://hskzrinjski.ba/zrinjski-u-kupu-bih/",
+      "publisher": "HŠK Zrinjski Mostar",
+      "sourceFamilyId": "hsk-zrinjski",
+      "providerId": "club-tabs",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:52:30.297717+00:00",
+      "sha256": "1e3ea4278ce364e2ded0f64259ebb429cb0b4c6b1b792b3dc6d08a5f669d2906",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-e837ff605f231a24",
+      "title": "National Football Teams · /club/3207/2012_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2012_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:32.533630+00:00",
+      "sha256": "ff79932c9be65f04459540b10d1353b8c94fc3d54c16243ad7d553602f252803",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-f172e6ebea42d564",
+      "title": "National Football Teams · /club/3207/2015_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:26.172192+00:00",
+      "sha256": "1d4d08174d3266ededca7c96bdbc13e90fb2a5ec8fbc8ea950efe4842aea8baa",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-f4656b422fc7d5a0",
+      "title": "National Football Teams · /club/3207/1994_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1994_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:31.270373+00:00",
+      "sha256": "b182fa091b33ad671fdbc30734df3d127e1720df15cbbeb3d2fb17bf3542f954",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-f491464c3379ec65",
+      "title": "National Football Teams · /club/3207/2013_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2013_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:32.567500+00:00",
+      "sha256": "a4a780be3b8f196a8dcf5458877cb6dd4a592c6f00e88051ce72ced26c080bfd",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-f4d3753b90733d5f",
+      "title": "National Football Teams · /club/3207/2023_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2023_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:00.691145+00:00",
+      "sha256": "2be6e426596e685aa7fddf06e8c9fca246fe5ba0e20b291682c785727be57f10",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-f62e584516fe6445",
+      "title": "National Football Teams · /club/3207/1943_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1943_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:39.054093+00:00",
+      "sha256": "660c0fcd81e4b7701f8f8ef4ef6506e11224c3def1a323d61835a7f8f96a683f",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-f8d36b961e528ec1",
+      "title": "National Football Teams · /club/3207/2009_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:56:45.271929+00:00",
+      "sha256": "280d8288f6ea61e3714ed2b15f8277c25d1149e21b2ac931bb5126d3b1b5d661",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-f981d01996e66f8f",
+      "title": "National Football Teams · /club/3207/1942_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/1942_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:57:45.095482+00:00",
+      "sha256": "4b6a8f940acac3e9e4e99a6ce9a46e75c13e624b1960a030898762f7ef40b80a",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    },
+    {
+      "id": "ea-src-fbcf097d03e3f6b4",
+      "title": "National Football Teams · /club/3207/2026_1/Zrinjski_Mostar.html",
+      "url": "https://www.national-football-teams.com/club/3207/2026_1/Zrinjski_Mostar.html",
+      "publisher": "National Football Teams",
+      "sourceFamilyId": "national-football-teams",
+      "providerId": "nft",
+      "access": "available",
+      "checkedAt": "2026-10-09",
+      "retrievedAt": "2026-10-09T06:55:54.938734+00:00",
+      "sha256": "d095e13e72d959aa596646088f51c4a6411d517f9aed0865e1ba89a360485c43",
+      "scope": "record_specific",
+      "imagesUsableInApp": false,
+      "parseError": null
+    }
+  ],
+  "archive": [
+    {
+      "id": "ea-fan-award-158a323a7ba44870",
+      "value": {
+        "name": "Supporter award · Karlo Abramović",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2026,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-b2b2f104d32c6389",
+      "value": {
+        "name": "Supporter award · Antonio Ivančić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2025,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-6557739a67283a8d",
+      "value": {
+        "name": "Supporter award · Marko Marić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2024,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-d398b29d3dbbb9bf",
+      "value": {
+        "name": "Supporter award · Mario Tičinović",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2023,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-b1ab1e892617f210",
+      "value": {
+        "name": "Supporter award · Josip Ćorluka",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2022,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-1bea20e1df19b120",
+      "value": {
+        "name": "Supporter award · Nemanja Bilbija",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2021,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-73a2af8864fc500f",
+      "value": {
+        "name": "Supporter award · Bez laureata",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2020,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-023e33504ab909cf",
+      "value": {
+        "name": "Supporter award · Marin Galić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2019,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-152e69cf3c8e76c8",
+      "value": {
+        "name": "Supporter award · Ognjen Todorović",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2018,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-46e67c525617663b",
+      "value": {
+        "name": "Supporter award · Slobodan Jakovljević",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2017,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-da6e2f539726fabd",
+      "value": {
+        "name": "Supporter award · Daniel Graovac",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2016,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-a85e9db4851f7cd3",
+      "value": {
+        "name": "Supporter award · Vučina Šćepanović",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2015,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-96da37e95d5cc34f",
+      "value": {
+        "name": "Supporter award · Anto Radeljić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2014,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-7931aa2a1bed8554",
+      "value": {
+        "name": "Supporter award · Pero Stojkić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2013,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-4b9a7f50c0bb198c",
+      "value": {
+        "name": "Supporter award · Igor Melher",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2012,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-72d1b5da6eeaf178",
+      "value": {
+        "name": "Supporter award · Marin Aničić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2011,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-f37f3f2b0dc57a86",
+      "value": {
+        "name": "Supporter award · Krešimir Kordić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2009,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-e5e53c784d5d49de",
+      "value": {
+        "name": "Supporter award · Mario Ivanković",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2008,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-f1cfa5ebb149e809",
+      "value": {
+        "name": "Supporter award · Sulejman Smajić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2007,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-6f6a4e56098cfd9a",
+      "value": {
+        "name": "Supporter award · Ivica Džidić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2006,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-a20a2b7bb0842d5c",
+      "value": {
+        "name": "Supporter award · Zoran Rajović",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2005,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-483029d526219f81",
+      "value": {
+        "name": "Supporter award · Luka Modrić",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2004,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-77459b9b941bcb47",
+      "value": {
+        "name": "Supporter award · Armando Marenzi",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2003,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-6c94e35ccc352d4e",
+      "value": {
+        "name": "Supporter award · Ivica Matas",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2002,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-fan-award-85d6385b945c0d60",
+      "value": {
+        "name": "Supporter award · Slaven Musa",
+        "sport": "football",
+        "on": null,
+        "precision": "year",
+        "year": 2001,
+        "sensitive": false,
+        "hint": "Filip Šunjić Pipa supporter award"
+      },
+      "sources": [
+        "ea-src-11b0da70efc02c8f"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-61443de75a3d7ae0",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-0 FK SARAJEVO",
+        "sport": "football",
+        "on": "2025-09-10",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-70672650466c29b0",
+      "value": {
+        "name": "HŠK ZRINJSKI 3-0 FK SLOGA DOBOJ",
+        "sport": "football",
+        "on": "2025-09-17",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-e6250846cd93354a",
+      "value": {
+        "name": "FK BORAC 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-12-21",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-7afaba5e5a1383bc",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-0 NK ŠIROKI BRIJEG",
+        "sport": "football",
+        "on": "2025-08-17",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-7647169363aeecab",
+      "value": {
+        "name": "FK ŽELJEZNIČAR 2-0 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-08-24",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-33ca4e3c3748c08a",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-0 FK RADNIK",
+        "sport": "football",
+        "on": "2025-09-01",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-96bb8ebcd310020f",
+      "value": {
+        "name": "HŠK POSUŠJE 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-09-14",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-a9dab16805136802",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-0 FK RUDAR PRIJEDOR",
+        "sport": "football",
+        "on": "2025-09-21",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-8f1fcf010dc42a98",
+      "value": {
+        "name": "FK VELEŽ 1-3 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-09-27",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-7866f58093f5dbf2",
+      "value": {
+        "name": "FK SARAJEVO 1-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-10-06",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-55ce4a53a5cf3751",
+      "value": {
+        "name": "FK SLOGA DOBOJ 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-10-18",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-793a8e7d4c5da215",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-1 FK BORAC",
+        "sport": "football",
+        "on": "2025-10-27",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-8387612b2508e601",
+      "value": {
+        "name": "NK ŠIROKI BRIJEG 1-2 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-11-01",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-8c9d168320601707",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-1 FK ŽELJEZNIČAR",
+        "sport": "football",
+        "on": "2025-11-09",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-1c5873d67105b6ae",
+      "value": {
+        "name": "FK RADNIK 0-2 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-11-21",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-c229cc7d2c4de0e7",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-2 HŠK POSUŠJE",
+        "sport": "football",
+        "on": "2025-11-30",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-9304c6f98f46385d",
+      "value": {
+        "name": "FK RUDAR PRIJEDOR 0-2 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-12-03",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-73fbdfe6930d3197",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-1 FK VELEŽ",
+        "sport": "football",
+        "on": "2025-12-07",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-c9da2a85b14f218f",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-1 FK SARAJEVO",
+        "sport": "football",
+        "on": "2025-12-14",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-5f423330d4ee89cb",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-0 FK SLOGA DOBOJ",
+        "sport": "football",
+        "on": "2026-02-06",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-3bf47634f4c2ba20",
+      "value": {
+        "name": "FK BORAC 3-0 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-02-14",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-3d8c01a33ec2c064",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-1 NK ŠIROKI BRIJEG",
+        "sport": "football",
+        "on": "2026-02-22",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-2e36331df70e44c3",
+      "value": {
+        "name": "FK ŽELJEZNIČAR 1-3 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-03-02",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-97d4c452fe6a5f65",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-1 FK RADNIK",
+        "sport": "football",
+        "on": "2026-03-08",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-bbe7fc90c66fc9c6",
+      "value": {
+        "name": "HŠK POSUŠJE 1-0 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-03-15",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-50f9f0a7d54dc943",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-0 FK RUDAR PRIJEDOR",
+        "sport": "football",
+        "on": "2026-03-22",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-84841242fff871f0",
+      "value": {
+        "name": "FK VELEŽ 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-04-03",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-49357ca2f0b70ae7",
+      "value": {
+        "name": "FK SARAJEVO 2-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-04-11",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-115e4a991893d58c",
+      "value": {
+        "name": "FK SLOGA DOBOJ 0-3 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-04-18",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-9584a6b6444056bf",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-1 FK BORAC",
+        "sport": "football",
+        "on": "2026-04-22",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-4070beb48658719b",
+      "value": {
+        "name": "NK ŠIROKI BRIJEG 2-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-04-26",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-abe95f0c15dcc7ae",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-0 FK ŽELJEZNIČAR",
+        "sport": "football",
+        "on": "2026-05-01",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-aac8e60645822b71",
+      "value": {
+        "name": "FK RADNIK 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-05-09",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-9a5093d8200f8c31",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-0 HŠK POSUŠJE",
+        "sport": "football",
+        "on": "2026-05-16",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-baa651ccb65963f1",
+      "value": {
+        "name": "FK RUDAR PRIJEDOR 2-2 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-05-22",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-event-9da2a7b8f7adee84",
+      "value": {
+        "name": "HŠK ZRINJSKI 3-0 FK VELEŽ",
+        "sport": "football",
+        "on": "2026-05-26",
+        "precision": "day",
+        "sensitive": false,
+        "hint": "wwin-liga-bih"
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    }
+  ],
+  "matches": [
+    {
+      "id": "ea-match-61443de75a3d7ae0",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-0 FK SARAJEVO",
+        "sport": "football",
+        "on": "2025-09-10",
+        "competition": "wwin-liga-bih",
+        "score": "2-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-70672650466c29b0",
+      "value": {
+        "name": "HŠK ZRINJSKI 3-0 FK SLOGA DOBOJ",
+        "sport": "football",
+        "on": "2025-09-17",
+        "competition": "wwin-liga-bih",
+        "score": "3-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-e6250846cd93354a",
+      "value": {
+        "name": "FK BORAC 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-12-21",
+        "competition": "wwin-liga-bih",
+        "score": "0-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-7afaba5e5a1383bc",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-0 NK ŠIROKI BRIJEG",
+        "sport": "football",
+        "on": "2025-08-17",
+        "competition": "wwin-liga-bih",
+        "score": "0-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-7647169363aeecab",
+      "value": {
+        "name": "FK ŽELJEZNIČAR 2-0 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-08-24",
+        "competition": "wwin-liga-bih",
+        "score": "2-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-33ca4e3c3748c08a",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-0 FK RADNIK",
+        "sport": "football",
+        "on": "2025-09-01",
+        "competition": "wwin-liga-bih",
+        "score": "2-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-96bb8ebcd310020f",
+      "value": {
+        "name": "HŠK POSUŠJE 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-09-14",
+        "competition": "wwin-liga-bih",
+        "score": "0-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-a9dab16805136802",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-0 FK RUDAR PRIJEDOR",
+        "sport": "football",
+        "on": "2025-09-21",
+        "competition": "wwin-liga-bih",
+        "score": "0-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-8f1fcf010dc42a98",
+      "value": {
+        "name": "FK VELEŽ 1-3 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-09-27",
+        "competition": "wwin-liga-bih",
+        "score": "1-3",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-7866f58093f5dbf2",
+      "value": {
+        "name": "FK SARAJEVO 1-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-10-06",
+        "competition": "wwin-liga-bih",
+        "score": "1-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-55ce4a53a5cf3751",
+      "value": {
+        "name": "FK SLOGA DOBOJ 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-10-18",
+        "competition": "wwin-liga-bih",
+        "score": "0-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-793a8e7d4c5da215",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-1 FK BORAC",
+        "sport": "football",
+        "on": "2025-10-27",
+        "competition": "wwin-liga-bih",
+        "score": "2-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-8387612b2508e601",
+      "value": {
+        "name": "NK ŠIROKI BRIJEG 1-2 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-11-01",
+        "competition": "wwin-liga-bih",
+        "score": "1-2",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-8c9d168320601707",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-1 FK ŽELJEZNIČAR",
+        "sport": "football",
+        "on": "2025-11-09",
+        "competition": "wwin-liga-bih",
+        "score": "2-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-1c5873d67105b6ae",
+      "value": {
+        "name": "FK RADNIK 0-2 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-11-21",
+        "competition": "wwin-liga-bih",
+        "score": "0-2",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-c229cc7d2c4de0e7",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-2 HŠK POSUŠJE",
+        "sport": "football",
+        "on": "2025-11-30",
+        "competition": "wwin-liga-bih",
+        "score": "0-2",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-9304c6f98f46385d",
+      "value": {
+        "name": "FK RUDAR PRIJEDOR 0-2 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2025-12-03",
+        "competition": "wwin-liga-bih",
+        "score": "0-2",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-73fbdfe6930d3197",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-1 FK VELEŽ",
+        "sport": "football",
+        "on": "2025-12-07",
+        "competition": "wwin-liga-bih",
+        "score": "1-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-c9da2a85b14f218f",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-1 FK SARAJEVO",
+        "sport": "football",
+        "on": "2025-12-14",
+        "competition": "wwin-liga-bih",
+        "score": "0-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-5f423330d4ee89cb",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-0 FK SLOGA DOBOJ",
+        "sport": "football",
+        "on": "2026-02-06",
+        "competition": "wwin-liga-bih",
+        "score": "1-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-3bf47634f4c2ba20",
+      "value": {
+        "name": "FK BORAC 3-0 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-02-14",
+        "competition": "wwin-liga-bih",
+        "score": "3-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-3d8c01a33ec2c064",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-1 NK ŠIROKI BRIJEG",
+        "sport": "football",
+        "on": "2026-02-22",
+        "competition": "wwin-liga-bih",
+        "score": "1-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-2e36331df70e44c3",
+      "value": {
+        "name": "FK ŽELJEZNIČAR 1-3 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-03-02",
+        "competition": "wwin-liga-bih",
+        "score": "1-3",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-97d4c452fe6a5f65",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-1 FK RADNIK",
+        "sport": "football",
+        "on": "2026-03-08",
+        "competition": "wwin-liga-bih",
+        "score": "2-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-bbe7fc90c66fc9c6",
+      "value": {
+        "name": "HŠK POSUŠJE 1-0 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-03-15",
+        "competition": "wwin-liga-bih",
+        "score": "1-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-50f9f0a7d54dc943",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-0 FK RUDAR PRIJEDOR",
+        "sport": "football",
+        "on": "2026-03-22",
+        "competition": "wwin-liga-bih",
+        "score": "1-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-84841242fff871f0",
+      "value": {
+        "name": "FK VELEŽ 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-04-03",
+        "competition": "wwin-liga-bih",
+        "score": "0-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-49357ca2f0b70ae7",
+      "value": {
+        "name": "FK SARAJEVO 2-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-04-11",
+        "competition": "wwin-liga-bih",
+        "score": "2-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-115e4a991893d58c",
+      "value": {
+        "name": "FK SLOGA DOBOJ 0-3 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-04-18",
+        "competition": "wwin-liga-bih",
+        "score": "0-3",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-9584a6b6444056bf",
+      "value": {
+        "name": "HŠK ZRINJSKI 1-1 FK BORAC",
+        "sport": "football",
+        "on": "2026-04-22",
+        "competition": "wwin-liga-bih",
+        "score": "1-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-4070beb48658719b",
+      "value": {
+        "name": "NK ŠIROKI BRIJEG 2-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-04-26",
+        "competition": "wwin-liga-bih",
+        "score": "2-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-abe95f0c15dcc7ae",
+      "value": {
+        "name": "HŠK ZRINJSKI 2-0 FK ŽELJEZNIČAR",
+        "sport": "football",
+        "on": "2026-05-01",
+        "competition": "wwin-liga-bih",
+        "score": "2-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-aac8e60645822b71",
+      "value": {
+        "name": "FK RADNIK 0-1 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-05-09",
+        "competition": "wwin-liga-bih",
+        "score": "0-1",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-9a5093d8200f8c31",
+      "value": {
+        "name": "HŠK ZRINJSKI 0-0 HŠK POSUŠJE",
+        "sport": "football",
+        "on": "2026-05-16",
+        "competition": "wwin-liga-bih",
+        "score": "0-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-baa651ccb65963f1",
+      "value": {
+        "name": "FK RUDAR PRIJEDOR 2-2 HŠK ZRINJSKI",
+        "sport": "football",
+        "on": "2026-05-22",
+        "competition": "wwin-liga-bih",
+        "score": "2-2",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-match-9da2a7b8f7adee84",
+      "value": {
+        "name": "HŠK ZRINJSKI 3-0 FK VELEŽ",
+        "sport": "football",
+        "on": "2026-05-26",
+        "competition": "wwin-liga-bih",
+        "score": "3-0",
+        "venue": null,
+        "lineup": [],
+        "bench": [],
+        "scorers": []
+      },
+      "sources": [
+        "ea-src-5a3d4f11e8c219fe"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    }
+  ],
+  "seasons": [
+    {
+      "id": "ea-claim-5af64f15dbfdc1f1",
+      "value": {
+        "name": "1999/00 · herceg-bosna-league",
+        "sport": "football",
+        "season": "1999/00",
+        "competition": "herceg-bosna-league"
+      },
+      "sources": [
+        "ea-src-005a577f5db24ce7"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-229bce57cf8b173f",
+      "value": {
+        "name": "1998/99 · herceg-bosna-league",
+        "sport": "football",
+        "season": "1998/99",
+        "competition": "herceg-bosna-league"
+      },
+      "sources": [
+        "ea-src-005a577f5db24ce7"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-dfdf70dbe5885f0e",
+      "value": {
+        "name": "1997/98 · herceg-bosna-league",
+        "sport": "football",
+        "season": "1997/98",
+        "competition": "herceg-bosna-league"
+      },
+      "sources": [
+        "ea-src-005a577f5db24ce7"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-cacb8f40a5bb5278",
+      "value": {
+        "name": "1996/97 · herceg-bosna-league",
+        "sport": "football",
+        "season": "1996/97",
+        "competition": "herceg-bosna-league"
+      },
+      "sources": [
+        "ea-src-005a577f5db24ce7"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-6939ba7da726daff",
+      "value": {
+        "name": "1995/96 · herceg-bosna-league",
+        "sport": "football",
+        "season": "1995/96",
+        "competition": "herceg-bosna-league"
+      },
+      "sources": [
+        "ea-src-005a577f5db24ce7"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-1d1a92211397ab86",
+      "value": {
+        "name": "1994/95 · herceg-bosna-league",
+        "sport": "football",
+        "season": "1994/95",
+        "competition": "herceg-bosna-league"
+      },
+      "sources": [
+        "ea-src-005a577f5db24ce7"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-ee9847784936ec0d",
+      "value": {
+        "name": "1993/94 · herceg-bosna-league",
+        "sport": "football",
+        "season": "1993/94",
+        "competition": "herceg-bosna-league"
+      },
+      "sources": [
+        "ea-src-005a577f5db24ce7"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-a3dc7ea79653ef57",
+      "value": {
+        "name": "2025/26 · premier-league-bih",
+        "sport": "football",
+        "season": "2025/26",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-13783aa591a8a70d",
+      "value": {
+        "name": "2024/25 · premier-league-bih",
+        "sport": "football",
+        "season": "2024/25",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-cebf918df4ad8cf1",
+      "value": {
+        "name": "2023/24 · premier-league-bih",
+        "sport": "football",
+        "season": "2023/24",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-3018da31fa761c9d",
+      "value": {
+        "name": "2022/23 · premier-league-bih",
+        "sport": "football",
+        "season": "2022/23",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-4913b3b572c5bbe4",
+      "value": {
+        "name": "2021/22 · premier-league-bih",
+        "sport": "football",
+        "season": "2021/22",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-6b950d8e18ac20d7",
+      "value": {
+        "name": "2020/21 · premier-league-bih",
+        "sport": "football",
+        "season": "2020/21",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-99a11c10d94320b3",
+      "value": {
+        "name": "2019/20 · premier-league-bih",
+        "sport": "football",
+        "season": "2019/20",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-325ebd2f7fc9968e",
+      "value": {
+        "name": "2018/19 · premier-league-bih",
+        "sport": "football",
+        "season": "2018/19",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-3778fc517f77d13b",
+      "value": {
+        "name": "2017/18 · premier-league-bih",
+        "sport": "football",
+        "season": "2017/18",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-557d29e3fc1445f2",
+      "value": {
+        "name": "2016/17 · premier-league-bih",
+        "sport": "football",
+        "season": "2016/17",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-5bc600e2f5c35e5c",
+      "value": {
+        "name": "2015/16 · premier-league-bih",
+        "sport": "football",
+        "season": "2015/16",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-dd18a7cb43804ffb",
+      "value": {
+        "name": "2014/15 · premier-league-bih",
+        "sport": "football",
+        "season": "2014/15",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-33523e713cedbced",
+      "value": {
+        "name": "2013/14 · premier-league-bih",
+        "sport": "football",
+        "season": "2013/14",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-e7143e0793e738da",
+      "value": {
+        "name": "2012/13 · premier-league-bih",
+        "sport": "football",
+        "season": "2012/13",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-c9c8c7051045e3b3",
+      "value": {
+        "name": "2011/12 · premier-league-bih",
+        "sport": "football",
+        "season": "2011/12",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-e75c0b06883bfd48",
+      "value": {
+        "name": "2010/11 · premier-league-bih",
+        "sport": "football",
+        "season": "2010/11",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-da2e561877183943",
+      "value": {
+        "name": "2009/10 · premier-league-bih",
+        "sport": "football",
+        "season": "2009/10",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-4265c26f183e845f",
+      "value": {
+        "name": "2008/09 · premier-league-bih",
+        "sport": "football",
+        "season": "2008/09",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-d9c8af39d6f73216",
+      "value": {
+        "name": "2007/08 · premier-league-bih",
+        "sport": "football",
+        "season": "2007/08",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-947e9d7a8a74c6a4",
+      "value": {
+        "name": "2006/07 · premier-league-bih",
+        "sport": "football",
+        "season": "2006/07",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-33260bab8f7116ed",
+      "value": {
+        "name": "2005/06 · premier-league-bih",
+        "sport": "football",
+        "season": "2005/06",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-0e5760a50c4e63c4",
+      "value": {
+        "name": "2004/05 · premier-league-bih",
+        "sport": "football",
+        "season": "2004/05",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-356649a16291257d",
+      "value": {
+        "name": "2003/04 · premier-league-bih",
+        "sport": "football",
+        "season": "2003/04",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-218aa2385230375b",
+      "value": {
+        "name": "2002/03 · premier-league-bih",
+        "sport": "football",
+        "season": "2002/03",
+        "competition": "premier-league-bih"
+      },
+      "sources": [
+        "ea-src-5af882147faa6b1b"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-4fb13af75d0d2763",
+      "value": {
+        "name": "2024/25 · bosnian-cup",
+        "sport": "football",
+        "season": "2024/25",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-24a2e093880d2bda",
+      "value": {
+        "name": "2023/24 · bosnian-cup",
+        "sport": "football",
+        "season": "2023/24",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-313e7c63c62e6f1c",
+      "value": {
+        "name": "2022/23 · bosnian-cup",
+        "sport": "football",
+        "season": "2022/23",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-576cee2e80758190",
+      "value": {
+        "name": "2021/22 · bosnian-cup",
+        "sport": "football",
+        "season": "2021/22",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-6a52a8f63de4702b",
+      "value": {
+        "name": "2020/21 · bosnian-cup",
+        "sport": "football",
+        "season": "2020/21",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-07f5e2ec5acd8684",
+      "value": {
+        "name": "2019/20 · bosnian-cup",
+        "sport": "football",
+        "season": "2019/20",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-95720cdd345580c3",
+      "value": {
+        "name": "2018/19 · bosnian-cup",
+        "sport": "football",
+        "season": "2018/19",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-f842b1ba0dbe76d7",
+      "value": {
+        "name": "2017/18 · bosnian-cup",
+        "sport": "football",
+        "season": "2017/18",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-b0478a104d39400b",
+      "value": {
+        "name": "2016/17 · bosnian-cup",
+        "sport": "football",
+        "season": "2016/17",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-38316e591bbc2db3",
+      "value": {
+        "name": "2015/16 · bosnian-cup",
+        "sport": "football",
+        "season": "2015/16",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-33f5bbd6498ed5d3",
+      "value": {
+        "name": "2014/15 · bosnian-cup",
+        "sport": "football",
+        "season": "2014/15",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-514fcbdba4f20c1b",
+      "value": {
+        "name": "2013/14 · bosnian-cup",
+        "sport": "football",
+        "season": "2013/14",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-9bec7eaac7dc9414",
+      "value": {
+        "name": "2012/13 · bosnian-cup",
+        "sport": "football",
+        "season": "2012/13",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-5c601a2b068240c7",
+      "value": {
+        "name": "2011/12 · bosnian-cup",
+        "sport": "football",
+        "season": "2011/12",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-a33f59ebf147de51",
+      "value": {
+        "name": "2010/11 · bosnian-cup",
+        "sport": "football",
+        "season": "2010/11",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-3e8184f22f50340d",
+      "value": {
+        "name": "2009/10 · bosnian-cup",
+        "sport": "football",
+        "season": "2009/10",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-43a8d947871c25fb",
+      "value": {
+        "name": "2008/09 · bosnian-cup",
+        "sport": "football",
+        "season": "2008/09",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-775b5c0ced14d82c",
+      "value": {
+        "name": "2007/08 · bosnian-cup",
+        "sport": "football",
+        "season": "2007/08",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-7f36704feb7c8b5a",
+      "value": {
+        "name": "2006/07 · bosnian-cup",
+        "sport": "football",
+        "season": "2006/07",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-536f15325be66092",
+      "value": {
+        "name": "2005/06 · bosnian-cup",
+        "sport": "football",
+        "season": "2005/06",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-a816aed698337d24",
+      "value": {
+        "name": "2004/05 · bosnian-cup",
+        "sport": "football",
+        "season": "2004/05",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-21be207949c5f75e",
+      "value": {
+        "name": "2003/04 · bosnian-cup",
+        "sport": "football",
+        "season": "2003/04",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-81bc216201a2bc85",
+      "value": {
+        "name": "2002/03 · bosnian-cup",
+        "sport": "football",
+        "season": "2002/03",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-fc6cb8678548ac24",
+      "value": {
+        "name": "2001/02 · bosnian-cup",
+        "sport": "football",
+        "season": "2001/02",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    },
+    {
+      "id": "ea-claim-c117e81921f08f6f",
+      "value": {
+        "name": "2000/01 · bosnian-cup",
+        "sport": "football",
+        "season": "2000/01",
+        "competition": "bosnian-cup"
+      },
+      "sources": [
+        "ea-src-e439375f40c8520d"
+      ],
+      "status": "review",
+      "confidence": 2,
+      "researchedAt": "2026-10-09",
+      "approvedAt": null,
+      "approvedBy": null,
+      "notes": "Existing-archive completion. Source-reported facts staged for review; no approval inferred."
+    }
+  ],
+  "players": [],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
+}

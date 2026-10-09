@@ -1,0 +1,84 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2004_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:58.995930+00:00",
+    "contentHash": "1dadaca83a4105f8c2fbf32483706f10413079ab855cf273513bd0d54fd6aa6a",
+    "bytes": 68767,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:14595",
+        "nameAsReported": "Mitrović, Romeo",
+        "profileUrl": "https://www.national-football-teams.com/player/14595/Romeo_Mitrovic.html",
+        "season": "2004/05",
+        "birthDate": "1979-07-12",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2004_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:11491",
+        "nameAsReported": "Vidić, Velimir",
+        "profileUrl": "https://www.national-football-teams.com/player/11491/Velimir_Vidic.html",
+        "season": "2004/05",
+        "birthDate": "1979-04-12",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2004_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:7444",
+        "nameAsReported": "Šimić, Predrag",
+        "profileUrl": "https://www.national-football-teams.com/player/7444/Predrag_Simic.html",
+        "season": "2004/05",
+        "birthDate": "1979-06-26",
+        "positionAsReported": "Right Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2004_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:16561",
+        "nameAsReported": "Smajić, Sulejman",
+        "profileUrl": "https://www.national-football-teams.com/player/16561/Sulejman_Smajic.html",
+        "season": "2004/05",
+        "birthDate": "1984-08-13",
+        "positionAsReported": "Right Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2004_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:926",
+        "nameAsReported": "Kerkez, Dušan",
+        "profileUrl": "https://www.national-football-teams.com/player/926/Dusan_Kerkez.html",
+        "season": "2004/05",
+        "birthDate": "1976-05-01",
+        "positionAsReported": "Centre Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2004_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:12041",
+        "nameAsReported": "Zeba, Zajko",
+        "profileUrl": "https://www.national-football-teams.com/player/12041/Zajko_Zeba.html",
+        "season": "2004/05",
+        "birthDate": "1983-05-22",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2004_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

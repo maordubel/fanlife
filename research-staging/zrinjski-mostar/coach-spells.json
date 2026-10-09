@@ -1,0 +1,1058 @@
+[
+  {
+    "id": "ea-claim-00ad671ab6c6c15b",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "20/21",
+    "valueAsReported": "Mladen Žižović, Sergej Jakirović",
+    "category": "coach-spells",
+    "season": "2020/21",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2020/21"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Mladen Žižović",
+      "Sergej Jakirović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-13bcacf0fe19d5c8",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "03/04",
+    "valueAsReported": "Franjo Džidić, Slaven Musa, Stjepan Deverić",
+    "category": "coach-spells",
+    "season": "2003/04",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2003/04"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Franjo Džidić",
+      "Slaven Musa",
+      "Stjepan Deverić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-1aa925e1b18f896a",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "16/17",
+    "valueAsReported": "Vinko Marinović, Ivica Barbarić, Blaž Slišković",
+    "category": "coach-spells",
+    "season": "2016/17",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2016/17"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Vinko Marinović",
+      "Ivica Barbarić",
+      "Blaž Slišković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-2b47171e8e733132",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "18/19",
+    "valueAsReported": "Ante Miše, Blaž Slišković",
+    "category": "coach-spells",
+    "season": "2018/19",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2018/19"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Ante Miše",
+      "Blaž Slišković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-413c99382277e47f",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "99/00",
+    "valueAsReported": "Dalibor Cvitanović, Vladimir Skočajić",
+    "category": "coach-spells",
+    "season": "1999/00",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:1999/00"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Dalibor Cvitanović",
+      "Vladimir Skočajić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-45b94b3765c5469f",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "10/11",
+    "valueAsReported": "Dragan Jović, Dragan Perić, Marijan Bloudek, Slaven Musa",
+    "category": "coach-spells",
+    "season": "2010/11",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2010/11"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Dragan Jović",
+      "Dragan Perić",
+      "Marijan Bloudek",
+      "Slaven Musa"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-4ee6d02564537227",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "25/26",
+    "valueAsReported": "Mario Ivanković, Igor Štimac",
+    "category": "coach-spells",
+    "season": "2025/26",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2025/26"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Mario Ivanković",
+      "Igor Štimac"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-526154c8942cae27",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "94/95",
+    "valueAsReported": "Miroslav Kordić, Jozo Zelenika",
+    "category": "coach-spells",
+    "season": "1994/95",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:1994/95"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Miroslav Kordić",
+      "Jozo Zelenika"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-58bc022b820d46c8",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "09/10",
+    "valueAsReported": "Dragan Jović",
+    "category": "coach-spells",
+    "season": "2009/10",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2009/10"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Dragan Jović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-5a2bc90a4a1445e5",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "08/09",
+    "valueAsReported": "Dragan Jović",
+    "category": "coach-spells",
+    "season": "2008/09",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2008/09"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Dragan Jović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-5c7704301dcea3e8",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "21/22",
+    "valueAsReported": "Sergej Jakirović",
+    "category": "coach-spells",
+    "season": "2021/22",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2021/22"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Sergej Jakirović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-5d350c37d9e2a25c",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "98/99",
+    "valueAsReported": "Blaž Slišković, Dalibor Cvitanović",
+    "category": "coach-spells",
+    "season": "1998/99",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:1998/99"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Blaž Slišković",
+      "Dalibor Cvitanović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-5dfb2123b7b4c6e0",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "24/25",
+    "valueAsReported": "Mario Ivanković",
+    "category": "coach-spells",
+    "season": "2024/25",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2024/25"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Mario Ivanković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-64a97e54721865d2",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "13/14",
+    "valueAsReported": "Branko Karačić",
+    "category": "coach-spells",
+    "season": "2013/14",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2013/14"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Branko Karačić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-7231da1d8f04bed2",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "01/02",
+    "valueAsReported": "Vjeran Simunić, Dalibor Cvitanović, Ivica Barbarić",
+    "category": "coach-spells",
+    "season": "2001/02",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2001/02"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Vjeran Simunić",
+      "Dalibor Cvitanović",
+      "Ivica Barbarić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-7e7de3755855eefe",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "22/23",
+    "valueAsReported": "Sergej Jakirović, Krunoslav Rendulić",
+    "category": "coach-spells",
+    "season": "2022/23",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2022/23"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Sergej Jakirović",
+      "Krunoslav Rendulić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-7fa04f3ee7aa2a8f",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "02/03",
+    "valueAsReported": "Dalibor Cvitanović, Stjepan Čordaš, Ivica Barbarić, Franjo Džidić",
+    "category": "coach-spells",
+    "season": "2002/03",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2002/03"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Dalibor Cvitanović",
+      "Stjepan Čordaš",
+      "Ivica Barbarić",
+      "Franjo Džidić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-8ee1cb5fd71e8c06",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "07/08",
+    "valueAsReported": "Blaž Slišković, Dragan Jović",
+    "category": "coach-spells",
+    "season": "2007/08",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2007/08"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Blaž Slišković",
+      "Dragan Jović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-9004deaf17c4e9f2",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "00/01",
+    "valueAsReported": "Vladimir Skočajić, Ronald Hrkać, Žarko Barbarić, Vjeran Simunić",
+    "category": "coach-spells",
+    "season": "2000/01",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2000/01"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Vladimir Skočajić",
+      "Ronald Hrkać",
+      "Žarko Barbarić",
+      "Vjeran Simunić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-9d0745cd7a93b427",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "26/27",
+    "valueAsReported": "Simon Rožman",
+    "category": "coach-spells",
+    "season": "2026/27",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2026/27"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Simon Rožman"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-9dbd2b2e1e077c9e",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "15/16",
+    "valueAsReported": "Vinko Marinović",
+    "category": "coach-spells",
+    "season": "2015/16",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2015/16"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Vinko Marinović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-c1a2dca8093ffafd",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "04/05",
+    "valueAsReported": "Franjo Džidić",
+    "category": "coach-spells",
+    "season": "2004/05",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2004/05"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Franjo Džidić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-c6b1ac3f7e57351a",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "19/20",
+    "valueAsReported": "Hari Vukas, Nenad Gagro, Mladen Žižović",
+    "category": "coach-spells",
+    "season": "2019/20",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2019/20"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Hari Vukas",
+      "Nenad Gagro",
+      "Mladen Žižović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-cbfb6b248aeb2b1a",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "97/98",
+    "valueAsReported": "Franjo Džidić",
+    "category": "coach-spells",
+    "season": "1997/98",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:1997/98"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Franjo Džidić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-cd2d435ac32df03e",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "17/18",
+    "valueAsReported": "Blaž Slišković",
+    "category": "coach-spells",
+    "season": "2017/18",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2017/18"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Blaž Slišković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-d15b3ccea010c90a",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "06/07",
+    "valueAsReported": "Blaž Slišković",
+    "category": "coach-spells",
+    "season": "2006/07",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2006/07"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Blaž Slišković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-d2179f72a8a1766d",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "11/12",
+    "valueAsReported": "Slaven Musa, Draženko Bogdan, Dragan Perić",
+    "category": "coach-spells",
+    "season": "2011/12",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2011/12"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Slaven Musa",
+      "Draženko Bogdan",
+      "Dragan Perić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-d2991e4815310a4c",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "14/15",
+    "valueAsReported": "Branko Karačić, Mišo Krstičević, Dalibor Cvitanović, Vinko Marinović",
+    "category": "coach-spells",
+    "season": "2014/15",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2014/15"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Branko Karačić",
+      "Mišo Krstičević",
+      "Dalibor Cvitanović",
+      "Vinko Marinović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-d73c53c78ad649ae",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "95/96",
+    "valueAsReported": "Mirko Gašić, Franjo Vladić",
+    "category": "coach-spells",
+    "season": "1995/96",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:1995/96"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Mirko Gašić",
+      "Franjo Vladić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-e013badff752cce3",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "23/24",
+    "valueAsReported": "Krunoslav Rendulić, Mario Ivanković, Željko Petrović",
+    "category": "coach-spells",
+    "season": "2023/24",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2023/24"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Krunoslav Rendulić",
+      "Mario Ivanković",
+      "Željko Petrović"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-ea6661bb2bbe13c1",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "05/06",
+    "valueAsReported": "Franjo Džidić, Blaž Slišković",
+    "category": "coach-spells",
+    "season": "2005/06",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2005/06"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Franjo Džidić",
+      "Blaž Slišković"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-eae7328be87bf874",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "96/97",
+    "valueAsReported": "Miroslav Kordić, Žarko Barbarić",
+    "category": "coach-spells",
+    "season": "1996/97",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:1996/97"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Miroslav Kordić",
+      "Žarko Barbarić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-f203e9f0ceaae02c",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "12/13",
+    "valueAsReported": "Dragan Perić, Branko Karačić",
+    "category": "coach-spells",
+    "season": "2012/13",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:2012/13"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Dragan Perić",
+      "Branko Karačić"
+    ],
+    "personIds": null
+  },
+  {
+    "id": "ea-claim-f2f8631e5532e0a7",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "93/94",
+    "valueAsReported": "Miroslav Kordić",
+    "category": "coach-spells",
+    "season": "1993/94",
+    "sourceIds": [
+      "ea-src-0e28c280e193ddbd"
+    ],
+    "tabIndex": 2,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:coach-spells",
+      "season:1993/94"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null,
+    "namesAsReported": [
+      "Miroslav Kordić"
+    ],
+    "personIds": null
+  }
+]

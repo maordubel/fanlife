@@ -1,0 +1,117 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:55.481190+00:00",
+    "contentHash": "d3c53ea5134f7dab1104de7f9a733d82a146278e401900e2caa602b40cda0df9",
+    "bytes": 72060,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:14595",
+        "nameAsReported": "Mitrović, Romeo",
+        "profileUrl": "https://www.national-football-teams.com/player/14595/Romeo_Mitrovic.html",
+        "season": "2005/06",
+        "birthDate": "1979-07-12",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:11491",
+        "nameAsReported": "Vidić, Velimir",
+        "profileUrl": "https://www.national-football-teams.com/player/11491/Velimir_Vidic.html",
+        "season": "2005/06",
+        "birthDate": "1979-04-12",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:934",
+        "nameAsReported": "Biščević, Bulend",
+        "profileUrl": "https://www.national-football-teams.com/player/934/Bulend_Biscevic.html",
+        "season": "2005/06",
+        "birthDate": "1975-03-10",
+        "positionAsReported": "Defender",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:31709",
+        "nameAsReported": "Prodanović, Ilija",
+        "profileUrl": "https://www.national-football-teams.com/player/31709/Ilija_Prodanovic.html",
+        "season": "2005/06",
+        "birthDate": "1979-10-16",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:24764",
+        "nameAsReported": "Žižović, Mladen",
+        "profileUrl": "https://www.national-football-teams.com/player/24764/Mladen_Zizovic.html",
+        "season": "2005/06",
+        "birthDate": "1980-12-27",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:16561",
+        "nameAsReported": "Smajić, Sulejman",
+        "profileUrl": "https://www.national-football-teams.com/player/16561/Sulejman_Smajic.html",
+        "season": "2005/06",
+        "birthDate": "1984-08-13",
+        "positionAsReported": "Right Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:31711",
+        "nameAsReported": "Đurić, Velibor",
+        "profileUrl": "https://www.national-football-teams.com/player/31711/Velibor_Duric.html",
+        "season": "2005/06",
+        "birthDate": "1982-05-05",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:927",
+        "nameAsReported": "Mulina, Siniša",
+        "profileUrl": "https://www.national-football-teams.com/player/927/Sinisa_Mulina.html",
+        "season": "2005/06",
+        "birthDate": "1973-02-07",
+        "positionAsReported": "Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:34782",
+        "nameAsReported": "Diarra, Lamine",
+        "profileUrl": "https://www.national-football-teams.com/player/34782/Lamine_Diarra.html",
+        "season": "2005/06",
+        "birthDate": "1983-12-20",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2005_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

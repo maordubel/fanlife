@@ -1,0 +1,32 @@
+{
+  "snapshotAsOf": "2026-10-09",
+  "clubs": [
+    {
+      "club": "st-pauli",
+      "sources": 43,
+      "matches": 1454,
+      "players": 451,
+      "coaches": 30,
+      "memberships": 1273,
+      "seasonRows": 43,
+      "conflicts": 0,
+      "records": 4763,
+      "approvedNewFacts": 0,
+      "completeArchiveClaim": false
+    },
+    {
+      "club": "zrinjski-mostar",
+      "sources": 49,
+      "matches": 36,
+      "players": 70,
+      "coaches": 0,
+      "memberships": 203,
+      "seasonRows": 56,
+      "conflicts": 6,
+      "records": 969,
+      "approvedNewFacts": 0,
+      "completeArchiveClaim": false
+    }
+  ],
+  "newClubs": 0
+}

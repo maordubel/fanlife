@@ -3,6 +3,17 @@ vi.mock('server-only',()=>({}))
 import {mergeWave} from '@/lib/clubs/waves'
 const p=(id:string,positions:string[],extra:object={})=>({id,value:{name:id,positions},status:'approved',approvedBy:'automated:x',...extra})
 describe('wave merge',()=>{
+ it('retains researched seasons, trophies, stadiums and culture through repeated imports without replacing core decisions',()=>{
+  const sections=['competitions','seasons','trophies','stadiums','places','culture']
+  const core=Object.fromEntries(sections.map(k=>[k,[{id:`${k}-core`,status:'approved',value:{name:'curated'}}]]))
+  const wave=Object.fromEntries(sections.map(k=>[k,[{id:`${k}-core`,value:{name:'incoming'}},{id:`${k}-new`,status:'review'}]]))
+  const merged=mergeWave(core,wave)
+  for(const k of sections){
+   expect(merged[k]).toEqual([core[k]![0],wave[k]![1]])
+   expect(mergeWave(merged,wave)[k]).toEqual(merged[k])
+  }
+  expect(core.trophies).toHaveLength(1)
+ })
  it('adds new records in every section and never overwrites an existing id',()=>{
   const out=mergeWave({sources:[{id:'a'}],archive:[{id:'e1',value:{name:'core'}}]},{sources:[{id:'a'},{id:'b'}],archive:[{id:'e1',value:{name:'wave'}},{id:'e2'}],goals:[{id:'g1'}]}) as Record<string,{id:string;value?:{name:string}}[]>
   expect(out.sources!.map(s=>s.id)).toEqual(['a','b']);expect(out.archive!.map(s=>s.id)).toEqual(['e1','e2']);expect(out.archive![0]!.value!.name).toBe('core');expect(out.goals!.map(g=>g.id)).toEqual(['g1'])

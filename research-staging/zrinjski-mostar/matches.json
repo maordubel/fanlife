@@ -1,0 +1,1334 @@
+[
+  {
+    "id": "ea-match-115e4a991893d58c",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565958",
+    "playedOn": "2026-04-18",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK SLOGA DOBOJ",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 3
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565958-fk-sloga-doboj-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-1c5873d67105b6ae",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565886",
+    "playedOn": "2025-11-21",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK RADNIK",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 2
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565886-fk-radnik-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-2e36331df70e44c3",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565926",
+    "playedOn": "2026-03-02",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK ŽELJEZNIČAR",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 3
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565926-fk-zeljeznicar-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-33ca4e3c3748c08a",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565841",
+    "playedOn": "2025-09-01",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK RADNIK",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565841-hsk-zrinjski-fk-radnik/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-3bf47634f4c2ba20",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565915",
+    "playedOn": "2026-02-14",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK BORAC",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 3,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565915-fk-borac-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-3d8c01a33ec2c064",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565922",
+    "playedOn": "2026-02-22",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "NK ŠIROKI BRIJEG",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565922-hsk-zrinjski-nk-siroki-brijeg/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-4070beb48658719b",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565967",
+    "playedOn": "2026-04-26",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "NK ŠIROKI BRIJEG",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565967-nk-siroki-brijeg-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-49357ca2f0b70ae7",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565949",
+    "playedOn": "2026-04-11",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK SARAJEVO",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565949-fk-sarajevo-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-50f9f0a7d54dc943",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565940",
+    "playedOn": "2026-03-22",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK RUDAR PRIJEDOR",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565940-hsk-zrinjski-fk-rudar-prijedor/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-55ce4a53a5cf3751",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565868",
+    "playedOn": "2025-10-18",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK SLOGA DOBOJ",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565868-fk-sloga-doboj-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-5f423330d4ee89cb",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565913",
+    "playedOn": "2026-02-06",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK SLOGA DOBOJ",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565913-hsk-zrinjski-fk-sloga-doboj/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-61443de75a3d7ae0",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565814",
+    "playedOn": "2025-09-10",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK SARAJEVO",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565814-hsk-zrinjski-fk-sarajevo/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-70672650466c29b0",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565823",
+    "playedOn": "2025-09-17",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK SLOGA DOBOJ",
+    "scoreAsReported": {
+      "home": 3,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565823-hsk-zrinjski-fk-sloga-doboj/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-73fbdfe6930d3197",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565903",
+    "playedOn": "2025-12-07",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK VELEŽ",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565903-hsk-zrinjski-fk-velez/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-7647169363aeecab",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565836",
+    "playedOn": "2025-08-24",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK ŽELJEZNIČAR",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565836-fk-zeljeznicar-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-7866f58093f5dbf2",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565859",
+    "playedOn": "2025-10-06",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK SARAJEVO",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565859-fk-sarajevo-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-793a8e7d4c5da215",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565870",
+    "playedOn": "2025-10-27",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK BORAC",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565870-hsk-zrinjski-fk-borac/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-7afaba5e5a1383bc",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565832",
+    "playedOn": "2025-08-17",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "NK ŠIROKI BRIJEG",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565832-hsk-zrinjski-nk-siroki-brijeg/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-8387612b2508e601",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565877",
+    "playedOn": "2025-11-01",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "NK ŠIROKI BRIJEG",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 2
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565877-nk-siroki-brijeg-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-84841242fff871f0",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565948",
+    "playedOn": "2026-04-03",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK VELEŽ",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565948-fk-velez-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-8c9d168320601707",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565881",
+    "playedOn": "2025-11-09",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK ŽELJEZNIČAR",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565881-hsk-zrinjski-fk-zeljeznicar/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-8f1fcf010dc42a98",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565858",
+    "playedOn": "2025-09-27",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK VELEŽ",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 3
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565858-fk-velez-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-9304c6f98f46385d",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565895",
+    "playedOn": "2025-12-03",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK RUDAR PRIJEDOR",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 2
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565895-fk-rudar-prijedor-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-9584a6b6444056bf",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565960",
+    "playedOn": "2026-04-22",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK BORAC",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565960-hsk-zrinjski-fk-borac/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-96bb8ebcd310020f",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565847",
+    "playedOn": "2025-09-14",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK POSUŠJE",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565847-hsk-posusje-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-97d4c452fe6a5f65",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565931",
+    "playedOn": "2026-03-08",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK RADNIK",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565931-hsk-zrinjski-fk-radnik/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-9a5093d8200f8c31",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565982",
+    "playedOn": "2026-05-16",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "HŠK POSUŠJE",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565982-hsk-zrinjski-hsk-posusje/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-9da2a7b8f7adee84",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565993",
+    "playedOn": "2026-05-26",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK VELEŽ",
+    "scoreAsReported": {
+      "home": 3,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565993-hsk-zrinjski-fk-velez/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-a9dab16805136802",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565850",
+    "playedOn": "2025-09-21",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK RUDAR PRIJEDOR",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565850-hsk-zrinjski-fk-rudar-prijedor/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-aac8e60645822b71",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565976",
+    "playedOn": "2026-05-09",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK RADNIK",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565976-fk-radnik-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-abe95f0c15dcc7ae",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565971",
+    "playedOn": "2026-05-01",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK ŽELJEZNIČAR",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565971-hsk-zrinjski-fk-zeljeznicar/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-baa651ccb65963f1",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565985",
+    "playedOn": "2026-05-22",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK RUDAR PRIJEDOR",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 2,
+      "away": 2
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565985-fk-rudar-prijedor-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-bbe7fc90c66fc9c6",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565937",
+    "playedOn": "2026-03-15",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK POSUŠJE",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 1,
+      "away": 0
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565937-hsk-posusje-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-c229cc7d2c4de0e7",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565892",
+    "playedOn": "2025-11-30",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "HŠK POSUŠJE",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 2
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565892-hsk-zrinjski-hsk-posusje/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-c9da2a85b14f218f",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565904",
+    "playedOn": "2025-12-14",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "HŠK ZRINJSKI",
+    "awayTeamAsReported": "FK SARAJEVO",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565904-hsk-zrinjski-fk-sarajevo/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-match-e6250846cd93354a",
+    "clubId": "zrinjski-mostar",
+    "sport": "football",
+    "providerMatchId": "nfs:46565825",
+    "playedOn": "2025-12-21",
+    "season": "2025/26",
+    "competition": "wwin-liga-bih",
+    "homeTeamAsReported": "FK BORAC",
+    "awayTeamAsReported": "HŠK ZRINJSKI",
+    "scoreAsReported": {
+      "home": 0,
+      "away": 1
+    },
+    "scoreType": "regulation-full-time",
+    "homeAwayInterpretation": "explicit_home_away_on_source",
+    "sourceMatchUrl": "https://www.nfsbih.ba/en/stats/match/46565825-fk-borac-hsk-zrinjski/",
+    "sourceIds": [
+      "ea-src-5a3d4f11e8c219fe"
+    ],
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:match",
+      "season:2025/26",
+      "competition:wwin-liga-bih"
+    ],
+    "lineupCoverage": "not_collected",
+    "goalCoverage": "not_collected",
+    "venue": null,
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/1999_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:57:13.538127+00:00",
+    "contentHash": "74e198cb97c6656cf686a45a3dd95ca0372911c788b740d0f1ea439378408453",
+    "bytes": 61713,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

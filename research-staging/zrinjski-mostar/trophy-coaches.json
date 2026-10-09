@@ -1,0 +1,252 @@
+[
+  {
+    "id": "ea-trophy-coach-0c0475f59b9a5cdf",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "DRAGAN JOVIĆ",
+    "matchesAsReported": 122,
+    "winsAsReported": 69,
+    "drawsAsReported": 16,
+    "lossesAsReported": 37,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-0f03cf9c71781673",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "KRUNOSLAV RENDULIĆ",
+    "matchesAsReported": null,
+    "winsAsReported": null,
+    "drawsAsReported": null,
+    "lossesAsReported": null,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-47a1332f9f2c32e6",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "ŽELJKO PETROVIĆ",
+    "matchesAsReported": null,
+    "winsAsReported": null,
+    "drawsAsReported": null,
+    "lossesAsReported": null,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-86b832de61669538",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "FRANJO DŽIDIĆ",
+    "matchesAsReported": 92,
+    "winsAsReported": 53,
+    "drawsAsReported": 13,
+    "lossesAsReported": 26,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-8a8f7780be5f39ca",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "VINKO MARINOVIĆ",
+    "matchesAsReported": 70,
+    "winsAsReported": 42,
+    "drawsAsReported": 18,
+    "lossesAsReported": 10,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-9736ff771310cc5b",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "IGOR ŠTIMAC",
+    "matchesAsReported": null,
+    "winsAsReported": null,
+    "drawsAsReported": null,
+    "lossesAsReported": null,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-97afdc26d90a7db3",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "BLAŽ SLIŠKOVIĆ",
+    "matchesAsReported": 172,
+    "winsAsReported": 93,
+    "drawsAsReported": 37,
+    "lossesAsReported": 42,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-9801cff98ff86225",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "BRANKO KARAČIĆ",
+    "matchesAsReported": 73,
+    "winsAsReported": 37,
+    "drawsAsReported": 20,
+    "lossesAsReported": 16,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-c691de88c8cb33ef",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "MARIO IVANKOVIĆ",
+    "matchesAsReported": 59,
+    "winsAsReported": 38,
+    "drawsAsReported": 7,
+    "lossesAsReported": 14,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-trophy-coach-d976b945e7e94f1c",
+    "clubId": "zrinjski-mostar",
+    "nameAsReported": "SERGEJ JAKIROVIĆ",
+    "matchesAsReported": null,
+    "winsAsReported": null,
+    "drawsAsReported": null,
+    "lossesAsReported": null,
+    "sourceIds": [
+      "ea-src-e19c288a9a08ae8c"
+    ],
+    "personId": null,
+    "statisticsCutoff": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:trophy-coach"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  }
+]

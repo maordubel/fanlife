@@ -1,0 +1,29 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/1998_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:57:19.614599+00:00",
+    "contentHash": "0d4acca9790e919fe1a65348530918b3da2ed7d36534d35b42f4824d12f16ede",
+    "bytes": 62822,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:14600",
+        "nameAsReported": "Šilić, Dalibor",
+        "profileUrl": "https://www.national-football-teams.com/player/14600/Dalibor_Silic.html",
+        "season": "1998/99",
+        "birthDate": "1979-01-23",
+        "positionAsReported": "Left Winger",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/1998_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

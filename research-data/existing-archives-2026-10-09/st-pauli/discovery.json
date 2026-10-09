@@ -1,0 +1,226 @@
+{
+  "source": {
+    "url": "https://datencenter.dfb.de/clubs/fc-st-pauli-von-1910-e-v",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:51:35.424199+00:00",
+    "contentHash": "ebd9acfd11b4b0106375237439ec07181a9bf4145f02604a4cf8730041b32104",
+    "bytes": 62824,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "seasons": [
+    {
+      "seasonAsReported": "1974 / 1975 Nord",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1974-1975-nord/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1975 / 1976 Nord",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1975-1976-nord/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1976 / 1977 Nord",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1976-1977-nord/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1977 / 1978",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1977-1978/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1978 / 1979 Nord",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1978-1979-nord/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1979 / 1980",
+      "url": null
+    },
+    {
+      "seasonAsReported": "1980 / 1981",
+      "url": null
+    },
+    {
+      "seasonAsReported": "1981 / 1982",
+      "url": null
+    },
+    {
+      "seasonAsReported": "1982 / 1983",
+      "url": null
+    },
+    {
+      "seasonAsReported": "1983 / 1984",
+      "url": null
+    },
+    {
+      "seasonAsReported": "1984 / 1985",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1984-1985/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1985 / 1986",
+      "url": null
+    },
+    {
+      "seasonAsReported": "1986 / 1987",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1986-1987/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1987 / 1988",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1987-1988/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1988 / 1989",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1988-1989/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1989 / 1990",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1989-1990/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1990 / 1991",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1990-1991/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1991 / 1992 Nord Aufstieg",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1991-1992-nord-aufstieg/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1992 / 1993",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1992-1993/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1993 / 1994",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1993-1994/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1994 / 1995",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1994-1995/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1995 / 1996",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1995-1996/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1996 / 1997",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1996-1997/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1997 / 1998",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1997-1998/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1998 / 1999",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1998-1999/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "1999 / 2000",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1999-2000/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2000 / 2001",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2000-2001/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2001 / 2002",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2001-2002/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2002 / 2003",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2002-2003/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2003 / 2004",
+      "url": null
+    },
+    {
+      "seasonAsReported": "2004 / 2005",
+      "url": null
+    },
+    {
+      "seasonAsReported": "2005 / 2006",
+      "url": null
+    },
+    {
+      "seasonAsReported": "2006 / 2007",
+      "url": null
+    },
+    {
+      "seasonAsReported": "2007 / 2008",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2007-2008/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2008 / 2009",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2008-2009/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2009 / 2010",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2009-2010/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2010 / 2011",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2010-2011/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2011 / 2012",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2011-2012/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2012 / 2013",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2012-2013/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2013 / 2014",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2013-2014/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2014 / 2015",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2014-2015/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2015 / 2016",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2015-2016/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2016 / 2017",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2016-2017/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2017 / 2018",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2017-2018/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2018 / 2019",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2018-2019/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2019 / 2020",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2019-20/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2020 / 2021",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2020-21/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2021 / 2022",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2021-22/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2022 / 2023",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2022-23/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2023 / 2024",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2023-24/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2024 / 2025",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2024-2025/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2025 / 2026",
+      "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2025-2026/teams/fc-st-pauli"
+    },
+    {
+      "seasonAsReported": "2026 / 2027",
+      "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2026-2027/teams/fc-st-pauli"
+    }
+  ],
+  "completeArchiveClaim": false
+}

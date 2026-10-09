@@ -1,0 +1,17 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/1943_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:57:39.054093+00:00",
+    "contentHash": "660c0fcd81e4b7701f8f8ef4ef6506e11224c3def1a323d61835a7f8f96a683f",
+    "bytes": 61106,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

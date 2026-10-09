@@ -1,0 +1,95 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:45.344826+00:00",
+    "contentHash": "0268b4442cd2d1b55fb520e684264e18f36ae9776df021c6359087fcfeafa912",
+    "bytes": 69776,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:7441",
+        "nameAsReported": "Melher, Igor",
+        "profileUrl": "https://www.national-football-teams.com/player/7441/Igor_Melher.html",
+        "season": "2008/09",
+        "birthDate": "1979-11-01",
+        "positionAsReported": "Goalkeeper",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:63564",
+        "nameAsReported": "Aničić, Marin",
+        "profileUrl": "https://www.national-football-teams.com/player/63564/Marin_Anicic.html",
+        "season": "2008/09",
+        "birthDate": "1989-08-17",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:48337",
+        "nameAsReported": "Šunjić, Toni",
+        "profileUrl": "https://www.national-football-teams.com/player/48337/Toni_Sunjic.html",
+        "season": "2008/09",
+        "birthDate": "1988-12-15",
+        "positionAsReported": "Centre Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:63566",
+        "nameAsReported": "Sušić, Mateo",
+        "profileUrl": "https://www.national-football-teams.com/player/63566/Mateo_Susic.html",
+        "season": "2008/09",
+        "birthDate": "1990-11-18",
+        "positionAsReported": "Right Back",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:24762",
+        "nameAsReported": "Nikolić, Staniša",
+        "profileUrl": "https://www.national-football-teams.com/player/24762/Stanisa_Nikolic.html",
+        "season": "2008/09",
+        "birthDate": "1980-11-28",
+        "positionAsReported": "Defensive Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:31711",
+        "nameAsReported": "Đurić, Velibor",
+        "profileUrl": "https://www.national-football-teams.com/player/31711/Velibor_Duric.html",
+        "season": "2008/09",
+        "birthDate": "1982-05-05",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:24764",
+        "nameAsReported": "Žižović, Mladen",
+        "profileUrl": "https://www.national-football-teams.com/player/24764/Mladen_Zizovic.html",
+        "season": "2008/09",
+        "birthDate": "1980-12-27",
+        "positionAsReported": "Attacking Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2008_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}

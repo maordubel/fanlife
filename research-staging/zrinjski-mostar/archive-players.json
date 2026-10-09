@@ -1,0 +1,3068 @@
+[
+  {
+    "id": "ea-person-076cc1f36fc77fd6",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "70072"
+    },
+    "providerPersonId": "nft:70072",
+    "nameAsReported": "Tomić, Tomislav",
+    "namesAsReported": [
+      "Tomić, Tomislav"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/70072/Tomislav_Tomic.html",
+    "sourceIds": [
+      "ea-src-37a9fa859e874f36",
+      "ea-src-f172e6ebea42d564"
+    ],
+    "seasonsAsReported": "2015/16, 2016/17",
+    "birthDatesAsReported": [
+      "1990-11-16"
+    ],
+    "positionsAsReported": [
+      "Centre Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-95332b12614030c1",
+      "ea-membership-16fed80a36f5b799"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-07c0398e44c5b59d",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "934"
+    },
+    "providerPersonId": "nft:934",
+    "nameAsReported": "Biščević, Bulend",
+    "namesAsReported": [
+      "Biščević, Bulend"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/934/Bulend_Biscevic.html",
+    "sourceIds": [
+      "ea-src-cdead616683a0094"
+    ],
+    "seasonsAsReported": "2005/06",
+    "birthDatesAsReported": [
+      "1975-03-10"
+    ],
+    "positionsAsReported": [
+      "Defender"
+    ],
+    "membershipIds": [
+      "ea-membership-628b48f0b331c792"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-07e24f721fba9c5b",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "14595"
+    },
+    "providerPersonId": "nft:14595",
+    "nameAsReported": "Mitrović, Romeo",
+    "namesAsReported": [
+      "Mitrović, Romeo"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/14595/Romeo_Mitrovic.html",
+    "sourceIds": [
+      "ea-src-346fe7485c23877a",
+      "ea-src-491e0fd99097ce6a",
+      "ea-src-516a028d7190c16c",
+      "ea-src-cdead616683a0094"
+    ],
+    "seasonsAsReported": "2004/05, 2005/06, 2006/07, 2007/08",
+    "birthDatesAsReported": [
+      "1979-07-12"
+    ],
+    "positionsAsReported": [
+      "Goalkeeper"
+    ],
+    "membershipIds": [
+      "ea-membership-ec3013f605c80714",
+      "ea-membership-a184e4f801904ebd",
+      "ea-membership-b3fa6209865946c8",
+      "ea-membership-54a9b807d1b6ec66"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-0925d66cd87ce161",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "46913"
+    },
+    "providerPersonId": "nft:46913",
+    "nameAsReported": "Bekić, Amer",
+    "namesAsReported": [
+      "Bekić, Amer"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/46913/Amer_Bekic.html",
+    "sourceIds": [
+      "ea-src-541e1131e164bb07",
+      "ea-src-7ccb8676e3f41f74",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f491464c3379ec65"
+    ],
+    "seasonsAsReported": "2011/12, 2012/13, 2013/14, 2018/19",
+    "birthDatesAsReported": [
+      "1992-08-05"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-bbd0b78fdcf29c52",
+      "ea-membership-2f833fb236fe18c9",
+      "ea-membership-fb541dd5ad13c840",
+      "ea-membership-07b2dc8ed4aa82fa"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-0b1208b9824e3e39",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "63564"
+    },
+    "providerPersonId": "nft:63564",
+    "nameAsReported": "Aničić, Marin",
+    "namesAsReported": [
+      "Aničić, Marin"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/63564/Marin_Anicic.html",
+    "sourceIds": [
+      "ea-src-491e0fd99097ce6a",
+      "ea-src-56ec006a6ad63750",
+      "ea-src-7ccb8676e3f41f74",
+      "ea-src-80198b2d3b1147a6",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f491464c3379ec65",
+      "ea-src-f8d36b961e528ec1"
+    ],
+    "seasonsAsReported": "2007/08, 2008/09, 2009/10, 2010/11, 2011/12, 2012/13, 2013/14",
+    "birthDatesAsReported": [
+      "1989-08-17"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-959c97997bf42973",
+      "ea-membership-70baa2a7502b0e34",
+      "ea-membership-0dca73c52d70f62f",
+      "ea-membership-3b96db39ce5e9f75",
+      "ea-membership-8e1f987c56874f43",
+      "ea-membership-76ae4eb842670053",
+      "ea-membership-001b0434d4916127"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-138ee0fb3df23fd9",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "48337"
+    },
+    "providerPersonId": "nft:48337",
+    "nameAsReported": "Šunjić, Toni",
+    "namesAsReported": [
+      "Šunjić, Toni"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/48337/Toni_Sunjic.html",
+    "sourceIds": [
+      "ea-src-491e0fd99097ce6a",
+      "ea-src-56ec006a6ad63750",
+      "ea-src-634d1e6ed07badb7",
+      "ea-src-7ccb8676e3f41f74",
+      "ea-src-80198b2d3b1147a6",
+      "ea-src-f4d3753b90733d5f",
+      "ea-src-f8d36b961e528ec1"
+    ],
+    "seasonsAsReported": "2007/08, 2008/09, 2009/10, 2010/11, 2011/12, 2023/24, 2024/25",
+    "birthDatesAsReported": [
+      "1988-12-15"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-74e7b355d535bb02",
+      "ea-membership-fcb54a19d20082d2",
+      "ea-membership-2a16d01f6ba9bb37",
+      "ea-membership-26a9fa6c7914d2fb",
+      "ea-membership-5f80edc0a4b4fa37",
+      "ea-membership-ae2fa6edb20e1706",
+      "ea-membership-bdf7f886c8fe6cf2"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-2992c57e37fe0905",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "82647"
+    },
+    "providerPersonId": "nft:82647",
+    "nameAsReported": "Nalić, Adi",
+    "namesAsReported": [
+      "Nalić, Adi"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/82647/Adi_Nalic.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981"
+    ],
+    "seasonsAsReported": "2025/26",
+    "birthDatesAsReported": [
+      "1997-12-01"
+    ],
+    "positionsAsReported": [
+      "Attacking Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-6d64bf3ee1fe63e1"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-2c9f53542cc64589",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "64694"
+    },
+    "providerPersonId": "nft:64694",
+    "nameAsReported": "Kožulj, Zvonimir",
+    "namesAsReported": [
+      "Kožulj, Zvonimir"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/64694/Zvonimir_Kozulj.html",
+    "sourceIds": [
+      "ea-src-f4d3753b90733d5f"
+    ],
+    "seasonsAsReported": "2023/24",
+    "birthDatesAsReported": [
+      "1993-11-15"
+    ],
+    "positionsAsReported": [
+      "Centre Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-29c50d9f1115cb4a"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-2ca6f20832509340",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "95592"
+    },
+    "providerPersonId": "nft:95592",
+    "nameAsReported": "Sučić, Petar",
+    "namesAsReported": [
+      "Sučić, Petar"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/95592/Petar_Sucic.html",
+    "sourceIds": [
+      "ea-src-d4edbcfe00000114",
+      "ea-src-e2076903c763573a"
+    ],
+    "seasonsAsReported": "2021/22, 2022/23",
+    "birthDatesAsReported": [
+      "2003-10-25"
+    ],
+    "positionsAsReported": [
+      "Defensive Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-8d4a27b4e00fe0da",
+      "ea-membership-15316f6e037e757f"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-33c4eefea3cf5618",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "52998"
+    },
+    "providerPersonId": "nft:52998",
+    "nameAsReported": "Jurić, Tomi",
+    "namesAsReported": [
+      "Jurić, Tomi"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/52998/Tomi_Juric.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981",
+      "ea-src-fbcf097d03e3f6b4"
+    ],
+    "seasonsAsReported": "2025/26, 2026/27",
+    "birthDatesAsReported": [
+      "1991-07-22"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-2dfb9b58789c192f",
+      "ea-membership-0a026f38657d1b64"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-35cf7c226401e7df",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "65954"
+    },
+    "providerPersonId": "nft:65954",
+    "nameAsReported": "Bradarić, Filip",
+    "namesAsReported": [
+      "Bradarić, Filip"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/65954/Filip_Bradaric.html",
+    "sourceIds": [
+      "ea-src-f4d3753b90733d5f"
+    ],
+    "seasonsAsReported": "2023/24",
+    "birthDatesAsReported": [
+      "1992-01-11"
+    ],
+    "positionsAsReported": [
+      "Defensive Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-29c7d23261f549e0"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-3da23ef212b52d66",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "70073"
+    },
+    "providerPersonId": "nft:70073",
+    "nameAsReported": "Ćavar, Marijan",
+    "namesAsReported": [
+      "Ćavar, Marijan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/70073/Marijan_Cavar.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981",
+      "ea-src-37a9fa859e874f36",
+      "ea-src-4ac130f8fd089874",
+      "ea-src-634d1e6ed07badb7",
+      "ea-src-fbcf097d03e3f6b4"
+    ],
+    "seasonsAsReported": "2016/17, 2017/18, 2024/25, 2025/26, 2026/27",
+    "birthDatesAsReported": [
+      "1998-02-02"
+    ],
+    "positionsAsReported": [
+      "Centre Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-d530dadf51f08561",
+      "ea-membership-8fbd1ff694512186",
+      "ea-membership-d745cefae9f4add9",
+      "ea-membership-d1568c4b5d0e5973",
+      "ea-membership-706cae640c9e8cfa"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-4167330e9e3452cf",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "70046"
+    },
+    "providerPersonId": "nft:70046",
+    "nameAsReported": "Damașcan, Vitalie",
+    "namesAsReported": [
+      "Damașcan, Vitalie"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/70046/Vitalie_Damascan.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981"
+    ],
+    "seasonsAsReported": "2025/26",
+    "birthDatesAsReported": [
+      "1999-01-24"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-fd33d2d24454fb26"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-434a819484234fca",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "14600"
+    },
+    "providerPersonId": "nft:14600",
+    "nameAsReported": "Šilić, Dalibor",
+    "namesAsReported": [
+      "Šilić, Dalibor"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/14600/Dalibor_Silic.html",
+    "sourceIds": [
+      "ea-src-91b075c8e1e16689"
+    ],
+    "seasonsAsReported": "1998/99",
+    "birthDatesAsReported": [
+      "1979-01-23"
+    ],
+    "positionsAsReported": [
+      "Left Winger"
+    ],
+    "membershipIds": [
+      "ea-membership-9b64ca73ea11e409"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-47a9d91e81227717",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "85001"
+    },
+    "providerPersonId": "nft:85001",
+    "nameAsReported": "Barišić, Hrvoje",
+    "namesAsReported": [
+      "Barišić, Hrvoje"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/85001/Hrvoje_Barisic.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981",
+      "ea-src-4ac130f8fd089874",
+      "ea-src-541e1131e164bb07",
+      "ea-src-634d1e6ed07badb7",
+      "ea-src-d4edbcfe00000114",
+      "ea-src-e2076903c763573a",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f491464c3379ec65",
+      "ea-src-f4d3753b90733d5f",
+      "ea-src-fbcf097d03e3f6b4"
+    ],
+    "seasonsAsReported": "2012/13, 2013/14, 2017/18, 2018/19, 2021/22, 2022/23, 2023/24, 2024/25, 2025/26, 2026/27",
+    "birthDatesAsReported": [
+      "1991-02-03"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-80c978299e40a989",
+      "ea-membership-581289fee10764f5",
+      "ea-membership-61624f8ad9efb78c",
+      "ea-membership-e2408319898ce9d1",
+      "ea-membership-60d8b524449e282f",
+      "ea-membership-4a53658a32353842",
+      "ea-membership-74bbb12c4578035f",
+      "ea-membership-ea23829ef67973dc",
+      "ea-membership-010f6690ee705cbe",
+      "ea-membership-1be026604c7fdf1a"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-4d758d9500a95f94",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "95117"
+    },
+    "providerPersonId": "nft:95117",
+    "nameAsReported": "Šošić, Madžid",
+    "namesAsReported": [
+      "Šošić, Madžid"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/95117/Madzid_Sosic.html",
+    "sourceIds": [
+      "ea-src-d4edbcfe00000114"
+    ],
+    "seasonsAsReported": "2021/22",
+    "birthDatesAsReported": [
+      "2002-08-12"
+    ],
+    "positionsAsReported": [
+      "Attacking Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-044c1b68587b89ae"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-4f3629b63eaeb9c9",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "95967"
+    },
+    "providerPersonId": "nft:95967",
+    "nameAsReported": "Vukotić, Milan",
+    "namesAsReported": [
+      "Vukotić, Milan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/95967/Milan_Vukotic.html",
+    "sourceIds": [
+      "ea-src-e2076903c763573a"
+    ],
+    "seasonsAsReported": "2022/23",
+    "birthDatesAsReported": [
+      "2002-10-05"
+    ],
+    "positionsAsReported": [
+      "Attacking Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-b5db2d8a9a63db1f"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-5185691fc201841e",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "31712"
+    },
+    "providerPersonId": "nft:31712",
+    "nameAsReported": "Kajkut, Saša",
+    "namesAsReported": [
+      "Kajkut, Saša"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/31712/Sasa_Kajkut.html",
+    "sourceIds": [
+      "ea-src-37a9fa859e874f36"
+    ],
+    "seasonsAsReported": "2016/17",
+    "birthDatesAsReported": [
+      "1984-07-07"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-030325a6651c6671"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-53308c3768ee298a",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "24764"
+    },
+    "providerPersonId": "nft:24764",
+    "nameAsReported": "Žižović, Mladen",
+    "namesAsReported": [
+      "Žižović, Mladen"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/24764/Mladen_Zizovic.html",
+    "sourceIds": [
+      "ea-src-346fe7485c23877a",
+      "ea-src-491e0fd99097ce6a",
+      "ea-src-56ec006a6ad63750",
+      "ea-src-7ccb8676e3f41f74",
+      "ea-src-80198b2d3b1147a6",
+      "ea-src-cdead616683a0094",
+      "ea-src-f8d36b961e528ec1"
+    ],
+    "seasonsAsReported": "2005/06, 2006/07, 2007/08, 2008/09, 2009/10, 2010/11, 2011/12",
+    "birthDatesAsReported": [
+      "1980-12-27"
+    ],
+    "positionsAsReported": [
+      "Attacking Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-0ce3417830943aa2",
+      "ea-membership-42c4c4e23da2a9bd",
+      "ea-membership-0cc645c9eb8bf2c9",
+      "ea-membership-56edc0dee76fc9e3",
+      "ea-membership-723d299ea544c4fd",
+      "ea-membership-997347a1626cfd4d",
+      "ea-membership-dfe171319bbf608d"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-5500447904df4817",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "16561"
+    },
+    "providerPersonId": "nft:16561",
+    "nameAsReported": "Smajić, Sulejman",
+    "namesAsReported": [
+      "Smajić, Sulejman"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/16561/Sulejman_Smajic.html",
+    "sourceIds": [
+      "ea-src-346fe7485c23877a",
+      "ea-src-491e0fd99097ce6a",
+      "ea-src-516a028d7190c16c",
+      "ea-src-55759dc1ac2fd37a",
+      "ea-src-cdead616683a0094",
+      "ea-src-e3345f3a7dbbbb03"
+    ],
+    "seasonsAsReported": "2001/02, 2002/03, 2004/05, 2005/06, 2006/07, 2007/08",
+    "birthDatesAsReported": [
+      "1984-08-13"
+    ],
+    "positionsAsReported": [
+      "Right Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-2e4584a25230b3ec",
+      "ea-membership-ac86e72f978096cc",
+      "ea-membership-b524af74567e811a",
+      "ea-membership-8e0f2361cc59a2d1",
+      "ea-membership-93ff41033847d415",
+      "ea-membership-d010fbc0da390f61"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-57ec0524edb8be97",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "24762"
+    },
+    "providerPersonId": "nft:24762",
+    "nameAsReported": "Nikolić, Staniša",
+    "namesAsReported": [
+      "Nikolić, Staniša"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/24762/Stanisa_Nikolic.html",
+    "sourceIds": [
+      "ea-src-346fe7485c23877a",
+      "ea-src-491e0fd99097ce6a",
+      "ea-src-80198b2d3b1147a6"
+    ],
+    "seasonsAsReported": "2006/07, 2007/08, 2008/09",
+    "birthDatesAsReported": [
+      "1980-11-28"
+    ],
+    "positionsAsReported": [
+      "Defensive Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-30df34ceb9e1966e",
+      "ea-membership-d91bd380b3c1857c",
+      "ea-membership-02c96cb41afe9402"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-5826bf067e6d10ba",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "79204"
+    },
+    "providerPersonId": "nft:79204",
+    "nameAsReported": "Marandici, Denis",
+    "namesAsReported": [
+      "Marandici, Denis"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/79204/Denis_Marandici.html",
+    "sourceIds": [
+      "ea-src-e2076903c763573a"
+    ],
+    "seasonsAsReported": "2022/23",
+    "birthDatesAsReported": [
+      "1996-09-18"
+    ],
+    "positionsAsReported": [
+      "Left Back"
+    ],
+    "membershipIds": [
+      "ea-membership-bce74786dd6474e2"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-596d8209c855e364",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "86983"
+    },
+    "providerPersonId": "nft:86983",
+    "nameAsReported": "Miličević, Hrvoje",
+    "namesAsReported": [
+      "Miličević, Hrvoje"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/86983/Hrvoje_Milicevic.html",
+    "sourceIds": [
+      "ea-src-56ec006a6ad63750",
+      "ea-src-7ccb8676e3f41f74",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f491464c3379ec65"
+    ],
+    "seasonsAsReported": "2010/11, 2011/12, 2012/13, 2013/14",
+    "birthDatesAsReported": [
+      "1993-04-30"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-0610a74a5b7e8153",
+      "ea-membership-0ac89ecb45183ca9",
+      "ea-membership-873c0b50fc07c80d",
+      "ea-membership-e6af7ad58c8a842e"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-5a7ded6777e8ee17",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "60477"
+    },
+    "providerPersonId": "nft:60477",
+    "nameAsReported": "Mandić, Staniša",
+    "namesAsReported": [
+      "Mandić, Staniša"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/60477/Stanisa_Mandic.html",
+    "sourceIds": [
+      "ea-src-541e1131e164bb07",
+      "ea-src-b3cbfebe900f5281"
+    ],
+    "seasonsAsReported": "2018/19, 2019/20",
+    "birthDatesAsReported": [
+      "1995-01-27"
+    ],
+    "positionsAsReported": [
+      "Left Winger"
+    ],
+    "membershipIds": [
+      "ea-membership-acc4b7c91234799e",
+      "ea-membership-981bba93c052ebc9"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-61c3bdd4a41d12c1",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "34782"
+    },
+    "providerPersonId": "nft:34782",
+    "nameAsReported": "Diarra, Lamine",
+    "namesAsReported": [
+      "Diarra, Lamine"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/34782/Lamine_Diarra.html",
+    "sourceIds": [
+      "ea-src-346fe7485c23877a",
+      "ea-src-cdead616683a0094"
+    ],
+    "seasonsAsReported": "2005/06, 2006/07",
+    "birthDatesAsReported": [
+      "1983-12-20"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-eeb76e0fe2a3915d",
+      "ea-membership-2899a62d19f3b2c3"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-66f06c8309ebd3ac",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "70069"
+    },
+    "providerPersonId": "nft:70069",
+    "nameAsReported": "Todorović, Ognjen",
+    "namesAsReported": [
+      "Todorović, Ognjen"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/70069/Ognjen_Todorovic.html",
+    "sourceIds": [
+      "ea-src-2c40a2a04d993e2a",
+      "ea-src-37a9fa859e874f36",
+      "ea-src-4ac130f8fd089874",
+      "ea-src-541e1131e164bb07",
+      "ea-src-5837502cac43c494",
+      "ea-src-f172e6ebea42d564"
+    ],
+    "seasonsAsReported": "2014/15, 2015/16, 2016/17, 2017/18, 2018/19, 2020/21",
+    "birthDatesAsReported": [
+      "1989-03-24"
+    ],
+    "positionsAsReported": [
+      "Left Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-974b362af14c28ac",
+      "ea-membership-f22bd5f93e05c0b5",
+      "ea-membership-7e4841a44dcfc14c",
+      "ea-membership-915dab58e7001f51",
+      "ea-membership-f6d1a3fc0beb346d",
+      "ea-membership-b8f60dac294c0685"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-6cd7c75c10f3f564",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "34663"
+    },
+    "providerPersonId": "nft:34663",
+    "nameAsReported": "Gligorov, Gligor",
+    "namesAsReported": [
+      "Gligorov, Gligor"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/34663/Gligor_Gligorov.html",
+    "sourceIds": [
+      "ea-src-e837ff605f231a24"
+    ],
+    "seasonsAsReported": "2012/13",
+    "birthDatesAsReported": [
+      "1987-03-05"
+    ],
+    "positionsAsReported": [
+      "Right Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-fb451a6563f8deae"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-6cdd47e5a5834aaf",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "63647"
+    },
+    "providerPersonId": "nft:63647",
+    "nameAsReported": "Graovac, Daniel",
+    "namesAsReported": [
+      "Graovac, Daniel"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/63647/Daniel_Graovac.html",
+    "sourceIds": [
+      "ea-src-37a9fa859e874f36",
+      "ea-src-5837502cac43c494",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f172e6ebea42d564",
+      "ea-src-f491464c3379ec65"
+    ],
+    "seasonsAsReported": "2012/13, 2013/14, 2014/15, 2015/16, 2016/17",
+    "birthDatesAsReported": [
+      "1993-08-08"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-3e3a14eb5b152b40",
+      "ea-membership-69b7691a835fc531",
+      "ea-membership-b005259684c6cdf7",
+      "ea-membership-51754f2629988e69",
+      "ea-membership-bbc1c963c7b28fd4"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-6ec2d6846a1b19cd",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "31714"
+    },
+    "providerPersonId": "nft:31714",
+    "nameAsReported": "Bekrić, Samir",
+    "namesAsReported": [
+      "Bekrić, Samir"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/31714/Samir_Bekric.html",
+    "sourceIds": [
+      "ea-src-4ac130f8fd089874",
+      "ea-src-541e1131e164bb07"
+    ],
+    "seasonsAsReported": "2017/18, 2018/19",
+    "birthDatesAsReported": [
+      "1984-10-20"
+    ],
+    "positionsAsReported": [
+      "Attacking Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-cfed70e89945b670",
+      "ea-membership-6e03cc12f323a99b"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-6faaff13e306b38f",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "11491"
+    },
+    "providerPersonId": "nft:11491",
+    "nameAsReported": "Vidić, Velimir",
+    "namesAsReported": [
+      "Vidić, Velimir"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/11491/Velimir_Vidic.html",
+    "sourceIds": [
+      "ea-src-346fe7485c23877a",
+      "ea-src-516a028d7190c16c",
+      "ea-src-cdead616683a0094"
+    ],
+    "seasonsAsReported": "2004/05, 2005/06, 2006/07",
+    "birthDatesAsReported": [
+      "1979-04-12"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-3fcf28f4d9137cb5",
+      "ea-membership-2ac66d19f6232c5a",
+      "ea-membership-1d24370f910b6a33"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-71f979b46aae668a",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "57799"
+    },
+    "providerPersonId": "nft:57799",
+    "nameAsReported": "So, Hyon-Uk",
+    "namesAsReported": [
+      "So, Hyon-Uk"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/57799/Hyon_Uk_So.html",
+    "sourceIds": [
+      "ea-src-4ac130f8fd089874"
+    ],
+    "seasonsAsReported": "2017/18",
+    "birthDatesAsReported": [
+      "1992-04-17"
+    ],
+    "positionsAsReported": [
+      "Right Winger"
+    ],
+    "membershipIds": [
+      "ea-membership-e882d7309b07da2b"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-76dc7bf8bcb9296b",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "31711"
+    },
+    "providerPersonId": "nft:31711",
+    "nameAsReported": "Đurić, Velibor",
+    "namesAsReported": [
+      "Đurić, Velibor"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/31711/Velibor_Duric.html",
+    "sourceIds": [
+      "ea-src-346fe7485c23877a",
+      "ea-src-491e0fd99097ce6a",
+      "ea-src-5837502cac43c494",
+      "ea-src-80198b2d3b1147a6",
+      "ea-src-cdead616683a0094",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f491464c3379ec65"
+    ],
+    "seasonsAsReported": "2005/06, 2006/07, 2007/08, 2008/09, 2012/13, 2013/14, 2014/15",
+    "birthDatesAsReported": [
+      "1982-05-05"
+    ],
+    "positionsAsReported": [
+      "Attacking Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-5d0adffbe01ac91e",
+      "ea-membership-80e16be04ec6ed5c",
+      "ea-membership-30efea849d2d0c70",
+      "ea-membership-8dd9cbe1dddfdf77",
+      "ea-membership-3756edc27b38a433",
+      "ea-membership-c31e4f0c862d2967",
+      "ea-membership-72f358b2edc71e31"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-7987da191bcd530c",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "80411"
+    },
+    "providerPersonId": "nft:80411",
+    "nameAsReported": "Hadžić, Irfan",
+    "namesAsReported": [
+      "Hadžić, Irfan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/80411/Irfan_Hadzic.html",
+    "sourceIds": [
+      "ea-src-b3cbfebe900f5281",
+      "ea-src-d4edbcfe00000114",
+      "ea-src-e2076903c763573a"
+    ],
+    "seasonsAsReported": "2019/20, 2021/22, 2022/23",
+    "birthDatesAsReported": [
+      "1993-06-15"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-c9aa155eec15cdd2",
+      "ea-membership-0930bd469c8aeaf9",
+      "ea-membership-e66262f6884b62f2"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-799d87ec87384008",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "31709"
+    },
+    "providerPersonId": "nft:31709",
+    "nameAsReported": "Prodanović, Ilija",
+    "namesAsReported": [
+      "Prodanović, Ilija"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/31709/Ilija_Prodanovic.html",
+    "sourceIds": [
+      "ea-src-346fe7485c23877a",
+      "ea-src-cdead616683a0094"
+    ],
+    "seasonsAsReported": "2005/06, 2006/07",
+    "birthDatesAsReported": [
+      "1979-10-16"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-24e08742a32cca32",
+      "ea-membership-963a282081a9dd29"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-7c107adce5b19133",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "927"
+    },
+    "providerPersonId": "nft:927",
+    "nameAsReported": "Mulina, Siniša",
+    "namesAsReported": [
+      "Mulina, Siniša"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/927/Sinisa_Mulina.html",
+    "sourceIds": [
+      "ea-src-cdead616683a0094"
+    ],
+    "seasonsAsReported": "2005/06",
+    "birthDatesAsReported": [
+      "1973-02-07"
+    ],
+    "positionsAsReported": [
+      "Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-41a99ae99e2dc5f4"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-85f16f2064d55668",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "46915"
+    },
+    "providerPersonId": "nft:46915",
+    "nameAsReported": "Mešanović, Jasmin",
+    "namesAsReported": [
+      "Mešanović, Jasmin"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/46915/Jasmin_Mesanovic.html",
+    "sourceIds": [
+      "ea-src-37a9fa859e874f36",
+      "ea-src-f172e6ebea42d564"
+    ],
+    "seasonsAsReported": "2015/16, 2016/17",
+    "birthDatesAsReported": [
+      "1992-06-21"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-1e905b2be0f8d716",
+      "ea-membership-c3fe7ebfac0d38c3"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-86485db84fce5ff1",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "24767"
+    },
+    "providerPersonId": "nft:24767",
+    "nameAsReported": "Salčinović, Fenan",
+    "namesAsReported": [
+      "Salčinović, Fenan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/24767/Fenan_Salcinovic.html",
+    "sourceIds": [
+      "ea-src-56ec006a6ad63750"
+    ],
+    "seasonsAsReported": "2010/11",
+    "birthDatesAsReported": [
+      "1987-06-26"
+    ],
+    "positionsAsReported": [
+      "Right Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-eb64270a54731f02"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-8922e9bf4b691821",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "72518"
+    },
+    "providerPersonId": "nft:72518",
+    "nameAsReported": "Jurić, Nedeljko",
+    "namesAsReported": [
+      "Jurić, Nedeljko"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/72518/Nedeljko_Juric.html",
+    "sourceIds": [
+      "ea-src-55759dc1ac2fd37a",
+      "ea-src-7f2510798f1d093d",
+      "ea-src-e3345f3a7dbbbb03"
+    ],
+    "seasonsAsReported": "2001/02, 2002/03, 2003/04",
+    "birthDatesAsReported": [
+      "1978-07-18"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-528638bbca977e80",
+      "ea-membership-5c2f4ad7f8117a00",
+      "ea-membership-9a7789ed6b362bd1"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-89f7cdc803b67b4e",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "46899"
+    },
+    "providerPersonId": "nft:46899",
+    "nameAsReported": "Čolić, Benjamin",
+    "namesAsReported": [
+      "Čolić, Benjamin"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/46899/Benjamin_Colic.html",
+    "sourceIds": [
+      "ea-src-37a9fa859e874f36",
+      "ea-src-f172e6ebea42d564"
+    ],
+    "seasonsAsReported": "2015/16, 2016/17",
+    "birthDatesAsReported": [
+      "1991-07-23"
+    ],
+    "positionsAsReported": [
+      "Right Back"
+    ],
+    "membershipIds": [
+      "ea-membership-bdb015b1db0cb203",
+      "ea-membership-770e117a85e5f64c"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-920b46967a5b94df",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "64697"
+    },
+    "providerPersonId": "nft:64697",
+    "nameAsReported": "Bekić, Almir",
+    "namesAsReported": [
+      "Bekić, Almir"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/64697/Almir_Bekic.html",
+    "sourceIds": [
+      "ea-src-2c40a2a04d993e2a",
+      "ea-src-d4edbcfe00000114",
+      "ea-src-e2076903c763573a"
+    ],
+    "seasonsAsReported": "2020/21, 2021/22, 2022/23",
+    "birthDatesAsReported": [
+      "1989-06-01"
+    ],
+    "positionsAsReported": [
+      "Left Back"
+    ],
+    "membershipIds": [
+      "ea-membership-2f95a14eedc27c2f",
+      "ea-membership-8733ca791333516f",
+      "ea-membership-55d45525ae258932"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-9d74d75ebc90f8a7",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "24563"
+    },
+    "providerPersonId": "nft:24563",
+    "nameAsReported": "Handžić, Haris",
+    "namesAsReported": [
+      "Handžić, Haris"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/24563/Haris_Handzic.html",
+    "sourceIds": [
+      "ea-src-4ac130f8fd089874"
+    ],
+    "seasonsAsReported": "2017/18",
+    "birthDatesAsReported": [
+      "1990-02-22"
+    ],
+    "positionsAsReported": [
+      "Secondary striker"
+    ],
+    "membershipIds": [
+      "ea-membership-637afd75f8a12521"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-a0afe2afc861b673",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "80409"
+    },
+    "providerPersonId": "nft:80409",
+    "nameAsReported": "Ćorluka, Josip",
+    "namesAsReported": [
+      "Ćorluka, Josip"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/80409/Josip_Corluka.html",
+    "sourceIds": [
+      "ea-src-2c40a2a04d993e2a",
+      "ea-src-634d1e6ed07badb7",
+      "ea-src-b3cbfebe900f5281",
+      "ea-src-d4edbcfe00000114",
+      "ea-src-e2076903c763573a",
+      "ea-src-f4d3753b90733d5f"
+    ],
+    "seasonsAsReported": "2019/20, 2020/21, 2021/22, 2022/23, 2023/24, 2024/25",
+    "birthDatesAsReported": [
+      "1995-03-03"
+    ],
+    "positionsAsReported": [
+      "Right Back"
+    ],
+    "membershipIds": [
+      "ea-membership-f5dfc34d9a3bc868",
+      "ea-membership-18823ea97141bd81",
+      "ea-membership-03e747a7b5f99c27",
+      "ea-membership-cd8620dd90e5ecee",
+      "ea-membership-a2fafeae895d0e31",
+      "ea-membership-99dca80def2b410e"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-a506256577a2440d",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "46898"
+    },
+    "providerPersonId": "nft:46898",
+    "nameAsReported": "Hadžić, Adnan",
+    "namesAsReported": [
+      "Hadžić, Adnan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/46898/Adnan_Hadzic.html",
+    "sourceIds": [
+      "ea-src-56ec006a6ad63750",
+      "ea-src-7ccb8676e3f41f74",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f8d36b961e528ec1"
+    ],
+    "seasonsAsReported": "2009/10, 2010/11, 2011/12, 2012/13",
+    "birthDatesAsReported": [
+      "1988-01-15"
+    ],
+    "positionsAsReported": [
+      "Goalkeeper"
+    ],
+    "membershipIds": [
+      "ea-membership-b3a6e28083b78f2d",
+      "ea-membership-225bfb2f4a738e2e",
+      "ea-membership-0c6852575fa44aac",
+      "ea-membership-08beb4ac69131973"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-a77aaf66dec52563",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "926"
+    },
+    "providerPersonId": "nft:926",
+    "nameAsReported": "Kerkez, Dušan",
+    "namesAsReported": [
+      "Kerkez, Dušan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/926/Dusan_Kerkez.html",
+    "sourceIds": [
+      "ea-src-516a028d7190c16c"
+    ],
+    "seasonsAsReported": "2004/05",
+    "birthDatesAsReported": [
+      "1976-05-01"
+    ],
+    "positionsAsReported": [
+      "Centre Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-9d7404005cffc1d4"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-aacca999b9504ef2",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "56806"
+    },
+    "providerPersonId": "nft:56806",
+    "nameAsReported": "Zakarić, Goran",
+    "namesAsReported": [
+      "Zakarić, Goran"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/56806/Goran_Zakaric.html",
+    "sourceIds": [
+      "ea-src-f172e6ebea42d564"
+    ],
+    "seasonsAsReported": "2015/16",
+    "birthDatesAsReported": [
+      "1992-11-07"
+    ],
+    "positionsAsReported": [
+      "Right Winger"
+    ],
+    "membershipIds": [
+      "ea-membership-9a37baca18c3174b"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-ae05e9a0f758812e",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "26689"
+    },
+    "providerPersonId": "nft:26689",
+    "nameAsReported": "Terkeš, Želimir",
+    "namesAsReported": [
+      "Terkeš, Želimir"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/26689/Zelimir_Terkes.html",
+    "sourceIds": [
+      "ea-src-55759dc1ac2fd37a",
+      "ea-src-c8dd3f951f81b87c",
+      "ea-src-e3345f3a7dbbbb03"
+    ],
+    "seasonsAsReported": "2000/01, 2001/02, 2002/03",
+    "birthDatesAsReported": [
+      "1981-01-08"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-22eb7d0265ca9de6",
+      "ea-membership-474a9d4b610f5a38",
+      "ea-membership-f73db1b3d439095c"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-b5551922e7c9f951",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "93033"
+    },
+    "providerPersonId": "nft:93033",
+    "nameAsReported": "Bašić, Ivan",
+    "namesAsReported": [
+      "Bašić, Ivan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/93033/Ivan_Basic.html",
+    "sourceIds": [
+      "ea-src-2c40a2a04d993e2a",
+      "ea-src-d4edbcfe00000114"
+    ],
+    "seasonsAsReported": "2020/21, 2021/22",
+    "birthDatesAsReported": [
+      "2002-04-30"
+    ],
+    "positionsAsReported": [
+      "Attacking Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-6a15e0d94d22b1f2",
+      "ea-membership-7556444671482e29"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-b5819c41cfb5b2a3",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "64695"
+    },
+    "providerPersonId": "nft:64695",
+    "nameAsReported": "Arežina, Filip",
+    "namesAsReported": [
+      "Arežina, Filip"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/64695/Filip_Arezina.html",
+    "sourceIds": [
+      "ea-src-2c40a2a04d993e2a",
+      "ea-src-56ec006a6ad63750",
+      "ea-src-7ccb8676e3f41f74",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f172e6ebea42d564"
+    ],
+    "seasonsAsReported": "2010/11, 2011/12, 2012/13, 2015/16, 2020/21",
+    "birthDatesAsReported": [
+      "1992-11-08"
+    ],
+    "positionsAsReported": [
+      "Centre Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-d3b164de5efa8543",
+      "ea-membership-5678ef976c9168d9",
+      "ea-membership-bb87f5bed9ba1db3",
+      "ea-membership-91368a55cb661297",
+      "ea-membership-73a29c05e6fe3660"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-b9f14ed40cf710e0",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "12041"
+    },
+    "providerPersonId": "nft:12041",
+    "nameAsReported": "Zeba, Zajko",
+    "namesAsReported": [
+      "Zeba, Zajko"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/12041/Zajko_Zeba.html",
+    "sourceIds": [
+      "ea-src-516a028d7190c16c"
+    ],
+    "seasonsAsReported": "2004/05",
+    "birthDatesAsReported": [
+      "1983-05-22"
+    ],
+    "positionsAsReported": [
+      "Attacking Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-9f9241f9389263b6"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-bde9c19bc36f0b38",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "7444"
+    },
+    "providerPersonId": "nft:7444",
+    "nameAsReported": "Šimić, Predrag",
+    "namesAsReported": [
+      "Šimić, Predrag"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/7444/Predrag_Simic.html",
+    "sourceIds": [
+      "ea-src-516a028d7190c16c"
+    ],
+    "seasonsAsReported": "2004/05",
+    "birthDatesAsReported": [
+      "1979-06-26"
+    ],
+    "positionsAsReported": [
+      "Right Back"
+    ],
+    "membershipIds": [
+      "ea-membership-e9b73ab6e754bce2"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-c6441099bfa8b5df",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "46909"
+    },
+    "providerPersonId": "nft:46909",
+    "nameAsReported": "Stanić, Srđan",
+    "namesAsReported": [
+      "Stanić, Srđan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/46909/Srdan_Stanic.html",
+    "sourceIds": [
+      "ea-src-4ac130f8fd089874",
+      "ea-src-541e1131e164bb07"
+    ],
+    "seasonsAsReported": "2017/18, 2018/19",
+    "birthDatesAsReported": [
+      "1989-07-06"
+    ],
+    "positionsAsReported": [
+      "Left Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-04cfdbd8ffad4075",
+      "ea-membership-1b6d1f226444c145"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-c926d444b5198f49",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "92611"
+    },
+    "providerPersonId": "nft:92611",
+    "nameAsReported": "Gojković, Renato",
+    "namesAsReported": [
+      "Gojković, Renato"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/92611/Renato_Gojkovic.html",
+    "sourceIds": [
+      "ea-src-541e1131e164bb07",
+      "ea-src-b3cbfebe900f5281"
+    ],
+    "seasonsAsReported": "2018/19, 2019/20",
+    "birthDatesAsReported": [
+      "1995-09-10"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-3a9d9b0e2ecb43ad",
+      "ea-membership-c931798768515a24"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-cd049745c604d207",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "24768"
+    },
+    "providerPersonId": "nft:24768",
+    "nameAsReported": "Nikolić, Stevo",
+    "namesAsReported": [
+      "Nikolić, Stevo"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/24768/Stevo_Nikolic.html",
+    "sourceIds": [
+      "ea-src-5837502cac43c494",
+      "ea-src-f172e6ebea42d564",
+      "ea-src-f491464c3379ec65"
+    ],
+    "seasonsAsReported": "2013/14, 2014/15, 2015/16",
+    "birthDatesAsReported": [
+      "1984-12-04"
+    ],
+    "positionsAsReported": [
+      "Centre Forward"
+    ],
+    "membershipIds": [
+      "ea-membership-b42b7aa9314b62f7",
+      "ea-membership-35f6baf69eb5b73d",
+      "ea-membership-3129966724b898c4"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-cd083a6f4a8dfb2f",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "7441"
+    },
+    "providerPersonId": "nft:7441",
+    "nameAsReported": "Melher, Igor",
+    "namesAsReported": [
+      "Melher, Igor"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/7441/Igor_Melher.html",
+    "sourceIds": [
+      "ea-src-56ec006a6ad63750",
+      "ea-src-7ccb8676e3f41f74",
+      "ea-src-80198b2d3b1147a6",
+      "ea-src-c8dd3f951f81b87c",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f491464c3379ec65",
+      "ea-src-f8d36b961e528ec1"
+    ],
+    "seasonsAsReported": "2000/01, 2008/09, 2009/10, 2010/11, 2011/12, 2012/13, 2013/14",
+    "birthDatesAsReported": [
+      "1979-11-01"
+    ],
+    "positionsAsReported": [
+      "Goalkeeper"
+    ],
+    "membershipIds": [
+      "ea-membership-9ed8291c11319210",
+      "ea-membership-9d16a483f7204f05",
+      "ea-membership-add04eee053536e1",
+      "ea-membership-265b6a6b2eaddaca",
+      "ea-membership-c17f4996e1311a1d",
+      "ea-membership-a8c3f769307f8768",
+      "ea-membership-84e7b50b0aceacda"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-cd103b6aba3d03c3",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "911"
+    },
+    "providerPersonId": "nft:911",
+    "nameAsReported": "Duro, Samir",
+    "namesAsReported": [
+      "Duro, Samir"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/911/Samir_Duro.html",
+    "sourceIds": [
+      "ea-src-56ec006a6ad63750",
+      "ea-src-7ccb8676e3f41f74"
+    ],
+    "seasonsAsReported": "2010/11, 2011/12",
+    "birthDatesAsReported": [
+      "1977-10-18"
+    ],
+    "positionsAsReported": [
+      "Defensive Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-45937471a1d3bf93",
+      "ea-membership-3691f08016118b96"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-ce9ff2f8b3ad553d",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "19975"
+    },
+    "providerPersonId": "nft:19975",
+    "nameAsReported": "Slišković, Blaž",
+    "namesAsReported": [
+      "Slišković, Blaž"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/19975/Blaz_Sliskovic.html",
+    "sourceIds": [
+      "ea-src-69ea0c18b16aa393",
+      "ea-src-b09b3ad31c988723"
+    ],
+    "seasonsAsReported": "1996/97, 1997/98",
+    "birthDatesAsReported": [
+      "1959-05-30"
+    ],
+    "positionsAsReported": [
+      "Centre Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-3a430b8e81af76a5",
+      "ea-membership-ad01f1a49a7fb38d"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-d3c986dfa8de07a0",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "56120"
+    },
+    "providerPersonId": "nft:56120",
+    "nameAsReported": "Velkovski, Darko",
+    "namesAsReported": [
+      "Velkovski, Darko"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/56120/Darko_Velkovski.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981"
+    ],
+    "seasonsAsReported": "2025/26",
+    "birthDatesAsReported": [
+      "1995-06-21"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-3413b00c4de1d40e"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-d4e5866a0e2b6051",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "55473"
+    },
+    "providerPersonId": "nft:55473",
+    "nameAsReported": "Abdurahimi, Besart",
+    "namesAsReported": [
+      "Abdurahimi, Besart"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/55473/Besart_Abdurahimi.html",
+    "sourceIds": [
+      "ea-src-634d1e6ed07badb7",
+      "ea-src-f4d3753b90733d5f"
+    ],
+    "seasonsAsReported": "2023/24, 2024/25",
+    "birthDatesAsReported": [
+      "1990-07-31"
+    ],
+    "positionsAsReported": [
+      "Left Winger"
+    ],
+    "membershipIds": [
+      "ea-membership-b77fc7f3bd53cd56",
+      "ea-membership-6528e57d47a56a20"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-d9fbe8a17787a40b",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "63566"
+    },
+    "providerPersonId": "nft:63566",
+    "nameAsReported": "Sušić, Mateo",
+    "namesAsReported": [
+      "Sušić, Mateo"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/63566/Mateo_Susic.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981",
+      "ea-src-80198b2d3b1147a6",
+      "ea-src-f8d36b961e528ec1",
+      "ea-src-fbcf097d03e3f6b4"
+    ],
+    "seasonsAsReported": "2008/09, 2009/10, 2025/26, 2026/27",
+    "birthDatesAsReported": [
+      "1990-11-18"
+    ],
+    "positionsAsReported": [
+      "Right Back"
+    ],
+    "membershipIds": [
+      "ea-membership-c551bb9a14e682ae",
+      "ea-membership-4409e9f0396b57d8",
+      "ea-membership-6b4d3a8155e77302",
+      "ea-membership-a118137944b95d21"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-dade7e2765d3aaab",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "94848"
+    },
+    "providerPersonId": "nft:94848",
+    "nameAsReported": "Radeljić, Stjepan",
+    "namesAsReported": [
+      "Radeljić, Stjepan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/94848/Stjepan_Radeljic.html",
+    "sourceIds": [
+      "ea-src-f172e6ebea42d564"
+    ],
+    "seasonsAsReported": "2015/16",
+    "birthDatesAsReported": [
+      "1997-09-05"
+    ],
+    "positionsAsReported": [
+      "Centre Back"
+    ],
+    "membershipIds": [
+      "ea-membership-18f860e1114d42fe"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-df87a5180fb9565b",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "70071"
+    },
+    "providerPersonId": "nft:70071",
+    "nameAsReported": "Bilbija, Nemanja",
+    "namesAsReported": [
+      "Bilbija, Nemanja"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/70071/Nemanja_Bilbija.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981",
+      "ea-src-2c40a2a04d993e2a",
+      "ea-src-37a9fa859e874f36",
+      "ea-src-4ac130f8fd089874",
+      "ea-src-541e1131e164bb07",
+      "ea-src-634d1e6ed07badb7",
+      "ea-src-b3cbfebe900f5281",
+      "ea-src-d4edbcfe00000114",
+      "ea-src-e2076903c763573a",
+      "ea-src-f172e6ebea42d564",
+      "ea-src-f4d3753b90733d5f",
+      "ea-src-fbcf097d03e3f6b4"
+    ],
+    "seasonsAsReported": "2015/16, 2016/17, 2017/18, 2018/19, 2019/20, 2020/21, 2021/22, 2022/23, 2023/24, 2024/25, 2025/26, 2026/27",
+    "birthDatesAsReported": [
+      "1990-11-02"
+    ],
+    "positionsAsReported": [
+      "Secondary striker"
+    ],
+    "membershipIds": [
+      "ea-membership-60780cba62208f9a",
+      "ea-membership-2b83a9aa16a80aec",
+      "ea-membership-944c5998ab9bc156",
+      "ea-membership-4b638cc373d8f94c",
+      "ea-membership-50068120ff66afc7",
+      "ea-membership-17cfba0d5c31aae9",
+      "ea-membership-b3cdf07cf69c4e45",
+      "ea-membership-4fd9dd2cb0187643",
+      "ea-membership-a45832292fe32a1d",
+      "ea-membership-21c0922f6bb32ecd",
+      "ea-membership-a607e99375e6c2d3",
+      "ea-membership-b2982e2634b7a6b4"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-e0f6076da483cc94",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "79833"
+    },
+    "providerPersonId": "nft:79833",
+    "nameAsReported": "Kadušić, Advan",
+    "namesAsReported": [
+      "Kadušić, Advan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/79833/Advan_Kadusic.html",
+    "sourceIds": [
+      "ea-src-4ac130f8fd089874",
+      "ea-src-541e1131e164bb07",
+      "ea-src-b3cbfebe900f5281"
+    ],
+    "seasonsAsReported": "2017/18, 2018/19, 2019/20",
+    "birthDatesAsReported": [
+      "1997-10-14"
+    ],
+    "positionsAsReported": [
+      "Right Back"
+    ],
+    "membershipIds": [
+      "ea-membership-081155f673e2493e",
+      "ea-membership-9d84797c4abd162a",
+      "ea-membership-2aa7abbf647f5b6f"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-e8161d7014de646f",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "65841"
+    },
+    "providerPersonId": "nft:65841",
+    "nameAsReported": "Trajkovski, Dejan",
+    "namesAsReported": [
+      "Trajkovski, Dejan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/65841/Dejan_Trajkovski.html",
+    "sourceIds": [
+      "ea-src-d4edbcfe00000114"
+    ],
+    "seasonsAsReported": "2021/22",
+    "birthDatesAsReported": [
+      "1992-04-14"
+    ],
+    "positionsAsReported": [
+      "Left Back"
+    ],
+    "membershipIds": [
+      "ea-membership-9d58b68a0ea9f70d"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-e8475735d544fc17",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "80273"
+    },
+    "providerPersonId": "nft:80273",
+    "nameAsReported": "Ismajlgeci, Marsel",
+    "namesAsReported": [
+      "Ismajlgeci, Marsel"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/80273/Marsel_Ismajlgeci.html",
+    "sourceIds": [
+      "ea-src-e2076903c763573a"
+    ],
+    "seasonsAsReported": "2022/23",
+    "birthDatesAsReported": [
+      "2000-03-14"
+    ],
+    "positionsAsReported": [
+      "Centre Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-80925316f8e0872b"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-ec778f395e1cbed0",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "87099"
+    },
+    "providerPersonId": "nft:87099",
+    "nameAsReported": "Janjić, Nikola",
+    "namesAsReported": [
+      "Janjić, Nikola"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/87099/Nikola_Janjic.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981"
+    ],
+    "seasonsAsReported": "2025/26",
+    "birthDatesAsReported": [
+      "2002-07-14"
+    ],
+    "positionsAsReported": [
+      "Left Back"
+    ],
+    "membershipIds": [
+      "ea-membership-4586216880d180ba"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-edae60bfbb187895",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "69344"
+    },
+    "providerPersonId": "nft:69344",
+    "nameAsReported": "Sahiti, Suad",
+    "namesAsReported": [
+      "Sahiti, Suad"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/69344/Suad_Sahiti.html",
+    "sourceIds": [
+      "ea-src-2c40a2a04d993e2a"
+    ],
+    "seasonsAsReported": "2020/21",
+    "birthDatesAsReported": [
+      "1995-02-06"
+    ],
+    "positionsAsReported": [
+      "Right Winger"
+    ],
+    "membershipIds": [
+      "ea-membership-725511b4549b1656"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-ee950279d9128c6a",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "13117"
+    },
+    "providerPersonId": "nft:13117",
+    "nameAsReported": "Modrić, Luka",
+    "namesAsReported": [
+      "Modrić, Luka"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/13117/Luka_Modric.html",
+    "sourceIds": [
+      "ea-src-7f2510798f1d093d"
+    ],
+    "seasonsAsReported": "2003/04",
+    "birthDatesAsReported": [
+      "1985-09-09"
+    ],
+    "positionsAsReported": [
+      "Centre Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-5a6014bf25cb7025"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-fa5126837f0b4b5f",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "70110"
+    },
+    "providerPersonId": "nft:70110",
+    "nameAsReported": "Pirić, Kenan",
+    "namesAsReported": [
+      "Pirić, Kenan"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/70110/Kenan_Piric.html",
+    "sourceIds": [
+      "ea-src-37a9fa859e874f36",
+      "ea-src-4ac130f8fd089874"
+    ],
+    "seasonsAsReported": "2016/17, 2017/18",
+    "birthDatesAsReported": [
+      "1994-07-07"
+    ],
+    "positionsAsReported": [
+      "Goalkeeper"
+    ],
+    "membershipIds": [
+      "ea-membership-4ea117cbccd3a5cc",
+      "ea-membership-37a0f7d82b12ea94"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-fd3b6b32497216a2",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "82096"
+    },
+    "providerPersonId": "nft:82096",
+    "nameAsReported": "Vasilj, Nikola",
+    "namesAsReported": [
+      "Vasilj, Nikola"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/82096/Nikola_Vasilj.html",
+    "sourceIds": [
+      "ea-src-37a9fa859e874f36",
+      "ea-src-e837ff605f231a24",
+      "ea-src-f172e6ebea42d564",
+      "ea-src-f491464c3379ec65"
+    ],
+    "seasonsAsReported": "2012/13, 2013/14, 2015/16, 2016/17",
+    "birthDatesAsReported": [
+      "1995-12-02"
+    ],
+    "positionsAsReported": [
+      "Goalkeeper"
+    ],
+    "membershipIds": [
+      "ea-membership-427f45219c334088",
+      "ea-membership-37e11394d98a1963",
+      "ea-membership-e237e0534bbace2a",
+      "ea-membership-700b2847b5b2f275"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-person-febbb172f2c5d2a1",
+    "clubId": "zrinjski-mostar",
+    "role": "player",
+    "providerIds": {
+      "nft": "85003"
+    },
+    "providerPersonId": "nft:85003",
+    "nameAsReported": "Savić, Igor",
+    "namesAsReported": [
+      "Savić, Igor"
+    ],
+    "sourceUrl": "https://www.national-football-teams.com/player/85003/Igor_Savic.html",
+    "sourceIds": [
+      "ea-src-0b141a0854104981",
+      "ea-src-541e1131e164bb07",
+      "ea-src-634d1e6ed07badb7",
+      "ea-src-d4edbcfe00000114",
+      "ea-src-e2076903c763573a",
+      "ea-src-f4d3753b90733d5f",
+      "ea-src-fbcf097d03e3f6b4"
+    ],
+    "seasonsAsReported": "2018/19, 2021/22, 2022/23, 2023/24, 2024/25, 2025/26, 2026/27",
+    "birthDatesAsReported": [
+      "2000-10-08"
+    ],
+    "positionsAsReported": [
+      "Defensive Midfielder"
+    ],
+    "membershipIds": [
+      "ea-membership-d95c97eb4d5de39f",
+      "ea-membership-0ef2846e39348bc7",
+      "ea-membership-3be7d1fd4380dc97",
+      "ea-membership-2b81d6a152171023",
+      "ea-membership-de05d48ff90910fa",
+      "ea-membership-b63407e7f0d4dcb3",
+      "ea-membership-7183559c52d2d175"
+    ],
+    "identityState": "unresolved",
+    "personId": null,
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:player"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  }
+]

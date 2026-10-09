@@ -1,0 +1,184 @@
+[
+  {
+    "id": "ea-claim-1d1a92211397ab86",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "94/95",
+    "valueAsReported": "9. I Skupina Jug",
+    "category": "early-league-finishes",
+    "season": "1994/95",
+    "sourceIds": [
+      "ea-src-005a577f5db24ce7"
+    ],
+    "tabIndex": 1,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:early-league-finishes",
+      "season:1994/95"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-claim-229bce57cf8b173f",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "98/99",
+    "valueAsReported": "3. I Liga 14",
+    "category": "early-league-finishes",
+    "season": "1998/99",
+    "sourceIds": [
+      "ea-src-005a577f5db24ce7"
+    ],
+    "tabIndex": 1,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:early-league-finishes",
+      "season:1998/99"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-claim-5af64f15dbfdc1f1",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "99/00",
+    "valueAsReported": "6. I Liga 14",
+    "category": "early-league-finishes",
+    "season": "1999/00",
+    "sourceIds": [
+      "ea-src-005a577f5db24ce7"
+    ],
+    "tabIndex": 1,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:early-league-finishes",
+      "season:1999/00"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-claim-6939ba7da726daff",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "95/96",
+    "valueAsReported": "Četvrtfinale doigravanja",
+    "category": "early-league-finishes",
+    "season": "1995/96",
+    "sourceIds": [
+      "ea-src-005a577f5db24ce7"
+    ],
+    "tabIndex": 1,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:early-league-finishes",
+      "season:1995/96"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-claim-cacb8f40a5bb5278",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "96/97",
+    "valueAsReported": "4. I Liga 16",
+    "category": "early-league-finishes",
+    "season": "1996/97",
+    "sourceIds": [
+      "ea-src-005a577f5db24ce7"
+    ],
+    "tabIndex": 1,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:early-league-finishes",
+      "season:1996/97"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-claim-dfdf70dbe5885f0e",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "97/98",
+    "valueAsReported": "2. I Liga 16",
+    "category": "early-league-finishes",
+    "season": "1997/98",
+    "sourceIds": [
+      "ea-src-005a577f5db24ce7"
+    ],
+    "tabIndex": 1,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:early-league-finishes",
+      "season:1997/98"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  },
+  {
+    "id": "ea-claim-ee9847784936ec0d",
+    "clubId": "zrinjski-mostar",
+    "keyAsReported": "93/94",
+    "valueAsReported": "2. I Završnica doigravanja",
+    "category": "early-league-finishes",
+    "season": "1993/94",
+    "sourceIds": [
+      "ea-src-005a577f5db24ce7"
+    ],
+    "tabIndex": 1,
+    "statisticsCutoff": null,
+    "scope": "as reported in this table; never combine competition scopes",
+    "tags": [
+      "club:zrinjski-mostar",
+      "sport:football",
+      "category:early-league-finishes",
+      "season:1993/94"
+    ],
+    "status": "review",
+    "confidence": 2,
+    "researchedAt": "2026-10-09",
+    "approvedAt": null,
+    "approvedBy": null,
+    "productionId": null
+  }
+]

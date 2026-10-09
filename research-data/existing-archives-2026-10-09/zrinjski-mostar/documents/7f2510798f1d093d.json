@@ -1,0 +1,40 @@
+{
+  "provider": "nft",
+  "source": {
+    "url": "https://www.national-football-teams.com/club/3207/2003_1/Zrinjski_Mostar.html",
+    "status": 200,
+    "retrievedAt": "2026-10-09T06:56:59.378869+00:00",
+    "contentHash": "906dc511b88d16061132ff124775a00888ef0d8e2939e5c3fc752ba97e2e2739",
+    "bytes": 63868,
+    "transport": "curl via environment proxy",
+    "error": null
+  },
+  "observations": {
+    "memberships": [
+      {
+        "providerPersonId": "nft:13117",
+        "nameAsReported": "Modrić, Luka",
+        "profileUrl": "https://www.national-football-teams.com/player/13117/Luka_Modric.html",
+        "season": "2003/04",
+        "birthDate": "1985-09-09",
+        "positionAsReported": "Centre Midfielder",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2003_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      },
+      {
+        "providerPersonId": "nft:72518",
+        "nameAsReported": "Jurić, Nedeljko",
+        "profileUrl": "https://www.national-football-teams.com/player/72518/Nedeljko_Juric.html",
+        "season": "2003/04",
+        "birthDate": "1978-07-18",
+        "positionAsReported": "Centre Forward",
+        "sourceUrl": "https://www.national-football-teams.com/club/3207/2003_1/Zrinjski_Mostar.html",
+        "identityState": "unresolved",
+        "scope": "partial national-player directory, not a full squad"
+      }
+    ],
+    "completeArchiveClaim": false
+  },
+  "approvedForProduction": 0
+}
