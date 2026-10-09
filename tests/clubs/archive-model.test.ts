@@ -121,6 +121,6 @@ describe('gate 12 · Mine (saved, device-local)',()=>{
  })
  it('merges two devices: the later change wins, and on a tie "saved" wins',()=>{
   const m=mergeSaved({a:{b:true,at:'2026-10-01'},b:{b:true,at:'2026-10-03'},c:{b:false,at:'2026-10-02'}},{a:{b:false,at:'2026-10-02'},b:{b:false,at:'2026-10-03'},c:{b:true,at:'2026-10-02'}})
-  expect(m.a.b).toBe(false);expect(m.b.b).toBe(true);expect(m.c.b).toBe(true)
+  expect(m.a?.b).toBe(false);expect(m.b?.b).toBe(true);expect(m.c?.b).toBe(true)
  })
 })

@@ -13,5 +13,5 @@ describe('club signatures',()=>{
   for(const p of PATTERNS.filter(p=>p!=='solid'))expect(css).toContain(`.mag-band[data-livery='${p}']`)
   for(const l of LAYOUTS)expect(css).toContain(`[data-sig-layout='${l}'] .mag-sig`)
  })
- it('the signature block carries no colour of its own',()=>{const block=css.slice(css.indexOf('club signature: pattern'));expect(block).not.toMatch(/#[0-9a-f]{3,8}\b/i);expect(block).not.toMatch(/\b(?:yellow|gold|amber|orange)\b/i);expect(block).not.toMatch(/\b(?:left|right)\s*:/)})
+ it('the signature block carries no colour of its own',()=>{const block=css.slice(css.indexOf('club signature: pattern')).replace(/\/\*[\s\S]*?\*\//g,'');expect(block).not.toMatch(/#[0-9a-f]{3,8}\b/i);expect(block).not.toMatch(/\b(?:yellow|gold|amber|orange)\b/i);expect(block).not.toMatch(/\b(?:left|right)\s*:/)})
 })

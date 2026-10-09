@@ -127,7 +127,7 @@ export function ListingView({
             <summary>
               <span>{h('hub.item.details')}</span>
               {shirt ? (
-                <Link href={`/market?slug=${encodeURIComponent(shirt.slug)}`} onClick={(e) => e.stopPropagation()} className="fl-mk-history">
+                <Link href={`/shirts?shirt=${encodeURIComponent(shirt.slug)}`} onClick={(e) => e.stopPropagation()} className="fl-mk-history">
                   {h('hub.item.history')} →
                 </Link>
               ) : null}

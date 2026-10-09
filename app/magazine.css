@@ -1153,21 +1153,45 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 /* THE GAME — the app's central feature, a full band under the cover */
 .mag-game-band { display: grid; gap: 0; background: var(--mag-navy); background-image: var(--mag-grain); color: var(--mag-paper); border: 4px solid var(--mag-ink); box-shadow: 6px 6px 0 var(--mag-ink); overflow: hidden; padding: 0; margin-block-start: 24px; }
 .mag-game-band .mag-kicker { color: var(--mag-salmon); }
-.mag-game-art { position: relative; block-size: 230px; }
+.mag-game-art { position: relative; block-size: 170px; }
 .mag-game-art .mag-torn { position: absolute; inset: auto 0 0 0; block-size: 70%; display: flex; }
 .mag-game-photo { position: absolute; z-index: 1; inset-block-end: 0; inset-inline-start: 50%; block-size: 104%; inline-size: auto; transform: translateX(-50%); }
 [dir='rtl'] .mag-game-photo { transform: translateX(50%); }
-.mag-game-text { display: grid; gap: 10px; justify-items: start; padding: 18px 16px 24px; }
+.mag-game-text { display: grid; gap: 8px; justify-items: start; padding: 14px 16px 18px; }
 .mag-game-text > p:not(.mag-kicker) { margin: 0; font-size: 16px; line-height: 1.45; max-inline-size: 520px; }
-.mag-game-title { margin: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mag-display); font-weight: 400; font-size: clamp(64px, 19vw, 132px); line-height: .85; transform: skewX(-6deg); color: var(--mag-paper); -webkit-text-stroke: 2px var(--mag-ink); text-shadow: 4px 4px 0 var(--mag-vermilion); }
-.mag-game-stamp { order: -1; flex-basis: 100%; font-size: clamp(18px, 4.6vw, 26px); letter-spacing: 3px; -webkit-text-stroke: 0; text-shadow: none; }
-.mag-game-stamp::before { content: ''; display: inline-block; inline-size: 34px; block-size: 6px; background: var(--mag-vermilion); margin-inline-end: 10px; vertical-align: middle; }
+.mag-game-title { margin: 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; font-family: var(--mag-display); font-weight: 400; font-size: clamp(54px, 15vw, 104px); line-height: .85; transform: skewX(-6deg); color: var(--mag-paper); -webkit-text-stroke: 2px var(--mag-ink); text-shadow: 4px 4px 0 var(--mag-vermilion); }
+.mag-game-stamp { font-size: clamp(16px, 4.2vw, 24px); letter-spacing: 3px; -webkit-text-stroke: 0; text-shadow: none; }
+.mag-game-stamp::before { content: ''; display: inline-block; inline-size: 26px; block-size: 5px; background: var(--mag-vermilion); margin-inline-end: 8px; vertical-align: middle; }
 .mag-game-band .mag-cta { margin-top: 6px; font-size: 17px; }
-@media (min-width: 760px) {
-  .mag-game-band { grid-template-columns: 1fr 1fr; align-items: center; }
-  .mag-game-art { block-size: 420px; order: 2; }
-  .mag-game-text { padding: 34px 30px; }
+/* a phone keeps text and picture side by side: the box stays short */
+@media (max-width: 759px) {
+  .mag-game-band { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: stretch; }
+  .mag-game-art { order: 2; block-size: auto; min-block-size: 210px; }
+  .mag-game-photo { block-size: 100%; }
+  .mag-game-text > p:not(.mag-kicker) { font-size: 14px; }
+  .mag-game-band .mag-cta { font-size: 15px; }
 }
+@media (min-width: 760px) {
+  .mag-game-band { grid-template-columns: 1.1fr 1fr; align-items: center; }
+  .mag-game-art { block-size: 300px; order: 2; }
+  .mag-game-text { padding: 26px 30px; }
+}
+
+/* THE MARKET box — vermilion, the shirt swap as its mark */
+.mag-market-band { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: stretch; background: var(--mag-vermilion); background-image: var(--mag-grain); color: var(--mag-paper); border: 4px solid var(--mag-ink); box-shadow: 6px 6px 0 var(--mag-ink); overflow: hidden; padding: 0; margin-block: 24px; }
+.mag-market-band .mag-kicker { color: var(--mag-paper); opacity: .9; }
+.mag-market-text { display: grid; gap: 8px; justify-items: start; align-content: center; padding: 16px; }
+.mag-market-text > p:not(.mag-kicker) { margin: 0; font-size: 14px; line-height: 1.45; max-inline-size: 460px; }
+.mag-market-title { margin: 0; font-family: var(--mag-condensed); font-weight: 700; font-size: clamp(40px, 11vw, 84px); line-height: .85; text-transform: uppercase; transform: skewX(-6deg); text-shadow: 3px 3px 0 var(--mag-ink); }
+.mag-market-points { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.mag-market-points li { border: 2px solid var(--mag-paper); padding: 1px 8px; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.mag-market-band .mag-cta.red { background: var(--mag-ink); color: var(--mag-paper); border-color: var(--mag-ink); }
+.mag-market-band .mag-cta.ghost { color: var(--mag-paper); border-color: var(--mag-paper); background: transparent; }
+.mag-market-art { position: relative; min-block-size: 220px; background: var(--mag-navy); }
+.mag-market-art .mag-torn { position: absolute; inset: auto 0 0 0; block-size: 70%; display: flex; }
+.mag-market-art .mag-swap { position: absolute; z-index: 1; inset-block-end: 6px; inset-inline: -14%; inline-size: 128%; max-inline-size: none; }
+@media (max-width: 759px) { .mag-market-band { grid-template-columns: 1fr; } .mag-market-art { order: -1; min-block-size: 190px; } .mag-market-art .mag-swap { inset-inline: 8%; inline-size: 84%; } .mag-market-band .mag-feature-ctas .mag-cta { min-block-size: 44px; font-size: 14px; padding-inline: 12px; } }
+@media (min-width: 760px) { .mag-market-art { min-block-size: 340px; } .mag-market-text { padding: 30px; } .mag-market-text > p:not(.mag-kicker) { font-size: 17px; } }
 
 /* Next up — one slim ticket with arrows, not a wall of chips */
 .mag-next-section { padding-block: 16px 4px; }
@@ -1354,9 +1378,18 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .fl-market .fl-worker :where(button, a).bg-ink { box-shadow: none; }
 .fl-market .fl-corner-note { margin-top: 0; }
 .fl-market > .fl-corner-tabs { margin-top: 28px; }
-.fl-mk-hero { padding-top: 10px; }
+.fl-mk-hero { padding-top: 6px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 40%); align-items: end; gap: 6px; border-bottom: 3px solid var(--mag-ink); padding-bottom: 8px; }
+.fl-mk-hero .fl-mk-kicker { justify-content: flex-start; }
+.fl-mk-hero-art { inline-size: 100%; block-size: auto; justify-self: end; transform: rotate(3deg); }
+.fl-mk-curtain { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: var(--mag-vermilion); background-image: var(--mag-grain); color: var(--mag-paper); animation: flMkCurtain 1.5s cubic-bezier(.7, 0, .3, 1) both; cursor: pointer; }
+.fl-mk-curtain-in { display: grid; justify-items: center; gap: 4px; padding: 16px; animation: flMkCurtainIn .55s ease-out both; }
+.fl-mk-curtain-art { inline-size: min(78vw, 420px); block-size: auto; }
+.fl-mk-curtain p { margin: 0; font-family: var(--mag-condensed); font-weight: 700; font-size: clamp(34px, 10vw, 64px); letter-spacing: 2px; text-transform: uppercase; text-shadow: 3px 3px 0 var(--mag-ink); }
+@keyframes flMkCurtain { 0%, 62% { clip-path: inset(0 0 0 0); } 100% { clip-path: inset(0 0 100% 0); visibility: hidden; } }
+@keyframes flMkCurtainIn { from { transform: translateY(24px) scale(.94); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .fl-mk-curtain { display: none; } }
 .fl-mk-kicker { display: flex; align-items: center; gap: 12px; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; border-top: 2px solid var(--mag-ink); padding-top: 6px; justify-content: center; }
-.fl-mk-title { margin: 6px 0 0; font-family: var(--mag-condensed); font-weight: 700; font-size: clamp(60px, 17vw, 112px); line-height: .82; text-transform: uppercase; letter-spacing: 0; color: var(--mag-ink); }
+.fl-mk-title { margin: 6px 0 0; font-family: var(--mag-condensed); font-weight: 700; font-size: clamp(54px, 15vw, 100px); line-height: .82; text-transform: uppercase; letter-spacing: 0; color: var(--mag-ink); }
 .fl-mk-sub { margin: 4px 0 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(20px, 5.2vw, 28px); color: var(--mag-ink); }
 .fl-mk-searchrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: 16px; }
 .fl-mk-search { display: flex; align-items: center; gap: 8px; min-height: 48px; padding-inline: 12px; border: 1.5px solid var(--mag-ink); background: var(--mag-card); }
@@ -1454,7 +1487,8 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .fl-mk-aside > section > div:first-of-type > span { width: 72px; border: 1px solid rgb(20 18 16 / .3); background: var(--mag-card); }
 .fl-mk-aside > section > div + div { border: 0; padding: 0; }
 .fl-mk-aside [data-deal-rail] { border: 0; background: transparent; padding: 4px 0; border-block: 1px solid rgb(20 18 16 / .3); }
-.fl-mk-aside [data-deal-rail] > p { display: none; }
+.fl-mk-aside [data-deal-rail]:has(ol) > p { display: none; }
+.fl-mk-ref-tag { position: absolute; inset-block-end: 6px; inset-inline-start: 6px; padding: 1px 6px; background: var(--mag-paper); border: 1.5px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: .5px; text-transform: uppercase; }
 .fl-mk-aside [data-deal-rail] ol { position: relative; margin-top: 10px; }
 .fl-mk-aside [data-deal-rail] ol::before { content: ''; position: absolute; inset-inline: 12%; inset-block-start: 7px; height: 1px; background: var(--mag-ink); }
 .fl-mk-aside [data-deal-rail] li > span[aria-hidden] { position: relative; width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--mag-ink) !important; background: var(--mag-paper) !important; }
@@ -1474,3 +1508,12 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .fl-mk-send:disabled { opacity: .45; }
 .fl-mk-thread [data-thread-notes] { border: 0; background: transparent; padding: 0; text-align: center; }
 .fl-mk-gallery [data-market-gallery] > div > div { max-height: 62vh; }
+
+/* the market strip on a club page: the swap mark, a line, an arrow */
+.mag-market-strip { display: flex; align-items: center; gap: 12px; padding: 8px 14px; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 4px 4px 0 var(--mag-ink); border-inline-start: 10px solid var(--mag-vermilion); }
+.mag-market-strip-art { inline-size: 72px; block-size: auto; flex: none; transform: rotate(-3deg); }
+.mag-market-strip span { display: grid; min-inline-size: 0; }
+.mag-market-strip b { font-family: var(--mag-condensed); font-weight: 700; font-size: 24px; line-height: 1; text-transform: uppercase; }
+.mag-market-strip small { font-size: 13px; }
+.mag-market-strip i { margin-inline-start: auto; font-style: normal; font-family: var(--mag-display); font-size: 22px; }
+[dir='rtl'] .mag-market-strip i { transform: scaleX(-1); }
