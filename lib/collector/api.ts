@@ -102,6 +102,13 @@ export const closetView = (handle: number, token?: string | null) =>
   call<ClosetView>('worker_closet_view', { p_handle: handle, p_token: token ?? null })
 export const have = (slug: string, kitId?: string | null, newCopy = false) =>
   call<{ created: boolean; item: OwnerItem }>('worker_collector_have', { p_slug: slug, p_kit: kitId ?? null, p_new_copy: newCopy })
+/** a shirt assembled in a game — a closet item tagged "game", not yet offerable (`worker_collector_have_game`) */
+export const haveGame = (slug: string, kitId?: string | null) =>
+  call<{ created: boolean; item: OwnerItem }>('worker_collector_have_game', { p_slug: slug, p_kit: kitId ?? null })
+/** "I own a real one" — lifts the game tag so the item can be offered */
+export const confirmOwned = (itemId: string) => call<Ok>('worker_collector_confirm_owned', { p_item: itemId })
+/** which of my items are game-built */
+export const gameItems = () => call<{ items: string[] }>('worker_game_items_mine')
 export const unhave = (itemId: string) => call<Ok>('worker_collector_unhave', { p_item: itemId })
 export const wantSet = (slug: string, on: boolean, opts: { kitId?: string | null; size?: string | null; notes?: string | null } = {}) =>
   call<{ wanting: boolean }>('worker_collector_want_set', {

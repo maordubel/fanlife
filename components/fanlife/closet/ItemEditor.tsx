@@ -3,6 +3,7 @@
 
 import { useRef, useState } from 'react'
 
+import { GameShirtNote } from '@/components/fanlife/collector/GameShirtNote'
 import { ShirtThumb } from '@/components/fanlife/ShirtThumb'
 import { UserPhoto } from '@/components/fanlife/collector/UserPhoto'
 import { Num } from '@/components/ui/Num'
@@ -232,6 +233,7 @@ export function ItemEditor({
 
         {/* body */}
         <div className="overflow-y-auto overscroll-contain px-3 pb-6 pt-3">
+          <GameShirtNote itemId={item.id} />
           {item.state === 'suspended' ? (
             <p role="status" className="border-s-plate border-red bg-sheet py-2 pe-2 ps-3 font-body text-step--1 leading-relaxed text-ink">
               {t('collector.editor.suspended')}
