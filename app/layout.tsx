@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 
 import { Analytics } from '@/components/ads/Analytics'
+import { MarketAlerts } from '@/components/fanlife/market/MarketAlerts'
 import { ClosetBridge } from '@/components/collector/ClosetBridge'
 import { GateMeter } from '@/components/meter/GateMeter'
 import { ADSENSE_CLIENT } from '@/lib/ads'
@@ -145,6 +146,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* first-party measurement: views, starts, finishes, where people leave (lib/analytics) */}
         <GateMeter />
         <ClosetBridge />
+        <MarketAlerts />
       </body>
     </html>
   )

@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
+import {useMarketAlerts} from '@/lib/fanlife/alerts'
 import type {UiLocale} from '@/lib/clubs/locale'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
@@ -12,7 +13,7 @@ const ICON={fill:'none',stroke:'currentColor',strokeWidth:2.5,'aria-hidden':true
  * "a fixed bottom menu, on all pages, on mobile"). Five doors, every one a real page or a real anchor.
  */
 export function TabBar({locale='en'}:{locale?:UiLocale}) {
- const copy=locale==='he'?he:en,path=usePathname()||'/'
+ const copy=locale==='he'?he:en,path=usePathname()||'/',{unread}=useMarketAlerts()
  const at=(p:string)=>p==='/'?path==='/':path===p||path.startsWith(p+'/')
  const tabs:[string,string,JSX.Element,boolean][]=[
   ['/',copy.home,<svg key="h" {...ICON}><path d="M3 11l9-7 9 7v9H3z"/></svg>,at('/')],
@@ -22,6 +23,6 @@ export function TabBar({locale='en'}:{locale?:UiLocale}) {
   ['/me',copy.tabCorner,<svg key="u" {...ICON}><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>,at('/me')],
  ]
  return <nav className="mag-tabbar" aria-label={copy.primaryNav}>
-  {tabs.map(([href,label,icon,on])=><Link key={href} href={href} aria-current={on?'page':undefined}>{icon}{label}</Link>)}
+  {tabs.map(([href,label,icon,on])=><Link key={href} href={href} aria-current={on?'page':undefined} aria-label={href==='/market'&&unread>0?`${label} — ${unread}`:undefined}>{href==='/market'&&unread>0?<span className="mag-tab-ico">{icon}<b className="mag-tab-dot" data-market-badge="">{unread>9?'9+':unread}</b></span>:icon}{label}</Link>)}
  </nav>
 }

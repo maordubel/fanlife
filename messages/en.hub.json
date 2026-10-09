@@ -270,5 +270,9 @@
   "hub.item.history": "Shirt history",
   "hub.item.signInToAct": "Sign in to make an offer or ask a question.",
   "hub.item.save": "Save this shirt",
-  "hub.item.from": "Seller"
+  "hub.item.from": "Seller",
+  "hub.alert.kicker": "Market",
+  "hub.alert.more": "{n} more",
+  "hub.alert.dismiss": "Dismiss",
+  "hub.alert.badge": "{n} new in the market"
 }
