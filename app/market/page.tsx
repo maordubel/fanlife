@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic'
 /** The Shirt Hub — a market you can search, a wanted board and saved searches; swap, buy and sell between supporters, no fee (The Worker's collector database, every club). */
 export default async function MarketPage() {
   return (
-    <FanPage active="market" title={t('market.title')} sub={t('market.sub')}>
+    <FanPage market active="market" title={t('market.title')} sub={t('market.sub')}>
       <HubScreen shirts={await fanShirtMap()} />
     </FanPage>
   )

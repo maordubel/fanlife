@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic'
 export default async function MarketThreadPage({ params }: { params: { id: string } }) {
   const shirts = await fanShirtMap()
   return (
-    <FanPage active="market" title={t('market.thread.title')} sub={t('market.thread.sub')}>
+    <FanPage market active="market" title={t('market.thread.title')} sub={t('market.thread.sub')}>
       <ThreadScreen id={params.id} shirts={shirts} />
       <DealPanels id={params.id} shirts={shirts} />
     </FanPage>
