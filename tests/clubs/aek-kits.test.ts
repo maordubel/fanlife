@@ -114,3 +114,12 @@ describe('a kit filed as neither home, away nor third is not relabelled Home',()
   expect((kbEn as Record<string,string>)['kb.variant.special']).toBeTruthy();expect((kbHe as Record<string,string>)['kb.variant.special']).toBeTruthy()
  })
 })
+
+import launch from '@/lib/master/launch-defaults.json'
+describe('the gates the launch defaults open for AEK',()=>{
+ it('include gates 4 and 5, and only gates whose data is playable are added for them',()=>{
+  const gates=(launch as Record<string,number[]>)['aek-athens']!
+  expect(gates).toContain(4);expect(gates).toContain(5)
+  const r=waveCReadiness(build(true).data);expect(r['kit-builder']!.playable).toBe(true);expect(r.kits!.playable).toBe(true)
+ })
+})
