@@ -1521,3 +1521,16 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .mag-market-strip small { font-size: 13px; }
 .mag-market-strip i { margin-inline-start: auto; font-style: normal; font-family: var(--mag-display); font-size: 22px; }
 [dir='rtl'] .mag-market-strip i { transform: scaleX(-1); }
+
+/* market alerts: the badge on the Market tab and the popup card */
+.mag-tab-ico { position: relative; display: inline-flex; }
+.mag-tab-dot { position: absolute; inset-block-start: -6px; inset-inline-end: -10px; min-width: 18px; height: 18px; padding: 0 4px; display: inline-flex; align-items: center; justify-content: center; background: var(--mag-vermilion); color: var(--mag-paper); border: 2px solid var(--mag-ink); border-radius: 9px; font: 700 11px/1 var(--mag-mono); letter-spacing: 0; animation: flAlertPulse 2.4s ease-in-out infinite; }
+.fl-alert { position: fixed; z-index: 55; inset-inline: 12px; inset-block-end: calc(76px + env(safe-area-inset-bottom)); display: flex; align-items: stretch; background: var(--mag-ink); color: var(--mag-paper); border: 2px solid var(--mag-paper); box-shadow: 4px 4px 0 var(--mag-vermilion); animation: flAlertIn .35s cubic-bezier(.2,.9,.3,1.2); }
+.fl-alert-body { flex: 1; display: grid; gap: 2px; padding: 10px 12px; color: inherit; text-decoration: none; min-width: 0; }
+.fl-alert-kicker { font: 700 11px/1 var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; color: var(--mag-paper); opacity: .75; }
+.fl-alert-text { font: 700 15px/1.3 var(--mag-body, inherit); }
+.fl-alert-x { min-width: 44px; background: transparent; color: inherit; border: 0; border-inline-start: 1px solid rgb(255 255 255 / .25); font-size: 22px; }
+@media (min-width: 760px) { .fl-alert { inset-inline-start: auto; inset-inline-end: 24px; inset-block-end: 24px; max-width: 380px; } }
+@keyframes flAlertIn { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes flAlertPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+@media (prefers-reduced-motion: reduce) { .fl-alert, .mag-tab-dot { animation: none; } }
