@@ -120,4 +120,11 @@ describe('hub copy and database', () => {
     const board = sql.slice(sql.indexOf('function public.worker_wanted_list'), sql.indexOf('function public.worker_want_respond'))
     expect(board).not.toMatch(/max_price/)
   })
+  it('the deal migration is worker_-only, never on auth, and never exposes a feedback note publicly', () => {
+    const sql = readFileSync(join(ROOT, 'supabase/migrations/20261009120000_worker_deal_wave2.sql'), 'utf8')
+    expect(sql).not.toMatch(/\bon\s+auth\.|from\s+auth\.users|alter\s+table\s+auth\./i)
+    for (const m of sql.matchAll(/create\s+(?:or\s+replace\s+)?(?:function|table(?:\s+if\s+not\s+exists)?|trigger)\s+(?:public\.)?([a-z_0-9]+)/gi)) expect(m[1]).toMatch(/^worker_/)
+    const summary = sql.slice(sql.indexOf('function public.worker_feedback_summary'), sql.indexOf('do $grants$'))
+    expect(summary).not.toMatch(/\bnote\b/)
+  })
 })

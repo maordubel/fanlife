@@ -136,12 +136,14 @@ const SYSTEM: Record<string, MessageKey> = {
   offer_declined: 'market.system.offer_declined',
   agreed: 'market.system.agreed',
   half_done: 'market.system.half_done',
+  handover_set: 'market.system.handover_set',
+  handover_sent: 'market.system.handover_sent',
   completed: 'market.system.completed',
   cancelled: 'market.system.cancelled',
   auction_won: 'market.system.auction_won',
 }
 
-/** The nine codes the database writes into a system message, each as the sentence a person reads. */
+/** The codes the database writes into a system message, each as the sentence a person reads. */
 export const SYSTEM_CODES = Object.keys(SYSTEM) as readonly string[]
 
 export function systemSentence(code: string | null): string {

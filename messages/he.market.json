@@ -152,6 +152,8 @@
   "market.system.offer_declined": "ההצעה נדחתה.",
   "market.system.agreed": "סומן שסוכם. העותק שמור לעסקה.",
   "market.system.half_done": "צד אחד סימן שהעסקה הושלמה. מחכים לצד השני.",
+  "market.system.handover_set": "נקבעה שיטת מסירה — ראו בלוח למטה.",
+  "market.system.handover_sent": "צד אחד מסמן שהחלק שלו נמסר או נשלח.",
   "market.system.completed": "✓ העסקה הושלמה",
   "market.system.cancelled": "לא הסתדר. החיבור נסגר.",
   "market.system.auction_won": "המכירה הפומבית נסגרה בזכייה. כאן מתאמים תשלום ומסירה — וכששניכם מסמנים שהושלם, הלוט נסגר.",

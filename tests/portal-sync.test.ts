@@ -486,6 +486,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20260928130000_worker_public_identity.sql',
       // 9.10.2026: shirt hub — search, wanted board, saved searches (tests/shirt-hub.test.ts)
       '20261009090000_worker_market_search.sql',
+      '20261009120000_worker_deal_wave2.sql', // wave 2: bundle, handover, feedback (supabase/tests/71-deal-wave2.sql)
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue

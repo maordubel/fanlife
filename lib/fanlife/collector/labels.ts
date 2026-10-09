@@ -40,6 +40,7 @@ const CLAIM: Record<AuthenticityClaim, MessageKey> = {
 const ERROR: Partial<Record<CollectorError, MessageKey>> = {
   auth_required: 'collector.error.auth_required',
   network: 'collector.error.network',
+  setup: 'collector.error.setup',
   off: 'collector.error.off',
   slow_down: 'collector.error.slow_down',
   details_required: 'collector.error.details_required',

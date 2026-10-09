@@ -6,6 +6,9 @@ import type { CollectorError, Fail, Result } from '@/lib/collector/types'
 
 import type {
   Cursor,
+  DealExtras,
+  FeedbackRating,
+  HandoverMethod,
   Delivery,
   HubQuery,
   MyWant,
@@ -28,7 +31,13 @@ async function call<T>(fn: string, args?: Record<string, unknown>): Promise<Resu
   if (!portalConfigured()) return fail('off')
   try {
     const { data, error } = await (createClient() as unknown as Rpc).rpc(fn, args)
-    if (error) return fail(/permission denied/i.test(error.message) ? 'auth_required' : 'network')
+    if (error) {
+      // keep the real cause visible: a missing function is a deploy problem, not a network one
+      if (typeof console !== 'undefined') console.error('[hub]', fn, error.message)
+      if (/permission denied/i.test(error.message)) return fail('auth_required')
+      if (/could not find the function|schema cache|does not exist|PGRST20\d/i.test(error.message)) return fail('setup')
+      return fail('network')
+    }
     if (data && typeof data === 'object' && 'ok' in (data as Record<string, unknown>)) return data as Result<T>
     return fail('network')
   } catch {
@@ -79,3 +88,14 @@ export const searchDelete = (id: string) => call<object>('worker_search_delete',
 export const searchNotifySet = (id: string, on: boolean) => call<object>('worker_search_notify_set', { p_id: id, p_notify: on })
 
 export const itemDeliverySet = (itemId: string, delivery: Delivery) => call<{ delivery: Delivery }>('worker_item_delivery_set', { p_item: itemId, p_delivery: delivery })
+
+// ------------------------------------------------------------------ wave 2 — the deal
+
+export const dealExtras = (conn: string) => call<DealExtras>('worker_deal_extras', { p_conn: conn })
+export const bundleOffer = (conn: string, amount: number, currency: string, items: string[]) =>
+  call<{ offerId: string }>('worker_bundle_offer', { p_conn: conn, p_amount: amount, p_currency: currency, p_items: items })
+export const handoverSet = (conn: string, method: HandoverMethod, note: string) =>
+  call<{ method: string }>('worker_handover_set', { p_conn: conn, p_method: method, p_note: note.trim() || null })
+export const handoverSent = (conn: string) => call<object>('worker_handover_sent', { p_conn: conn })
+export const feedbackGive = (conn: string, rating: FeedbackRating, note: string) =>
+  call<object>('worker_feedback_give', { p_conn: conn, p_rating: rating, p_note: note.trim() || null })

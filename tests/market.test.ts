@@ -95,9 +95,9 @@ const copy = (id: string, archiveSlug: string, openedAt: string, patch: Partial<
 })
 
 describe('הודעות מערכת — every code the database writes is a Hebrew sentence', () => {
-  it('names the nine codes of worker_system_message and nothing else', () => {
+  it('names the codes of worker_system_message and nothing else', () => {
     expect([...SYSTEM_CODES].sort()).toEqual(
-      ['accepted', 'agreed', 'auction_won', 'cancelled', 'completed', 'declined', 'half_done', 'offer_accepted', 'offer_declined'].sort(),
+      ['accepted', 'agreed', 'auction_won', 'cancelled', 'completed', 'declined', 'half_done', 'handover_sent', 'handover_set', 'offer_accepted', 'offer_declined'].sort(),
     )
     // the SQL is the source: every code it passes to worker_system_message is mapped
     const sql = read('supabase/migrations/20260922120000_worker_collector_market.sql')
