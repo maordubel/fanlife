@@ -13,6 +13,8 @@ export type HubItem = PublicItem & { delivery?: Delivery; shipScope?: ShipScope;
 
 /** the server's cleaned query — only keys the market understands */
 export type HubQuery = {
+  /** free text, matched on the server against slug, player, notes and description */
+  text?: string
   slugs?: string[]
   kinds?: ('sale' | 'trade')[]
   sizes?: Size[]
