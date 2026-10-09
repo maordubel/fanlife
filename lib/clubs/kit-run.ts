@@ -81,9 +81,11 @@ export function dealKits(list:Eligible[],seed:number,cursor:number,count=KIT_ROU
 
 function optionsFor(e:Eligible,step:Step,index:number,seed:number,pools:Map<Step,Pool>,puzzleId:string):{options:Option[];correctId:string}{
  const pool=pools.get(step)!,correctKey=keyOf(step,e.cloth),id=(k:string)=>hash(`${puzzleId}|${step}|${k}`)
- const want=Math.min(OPTION_RAMP[Math.min(index,OPTION_RAMP.length-1)]!,pool.size)
+ // the body question asks for the shirt's colours, so a card with the same two colours swapped (cream/green vs green/cream) is a second right answer, not a distractor (rule 15)
+ const setOf=(k:string)=>k.split('|').filter(Boolean).sort().join('|')
+ const others=[...pool.keys()].filter(k=>k!==correctKey&&(step!=='body'||setOf(k)!==setOf(correctKey))).sort()
+ const want=Math.min(OPTION_RAMP[Math.min(index,OPTION_RAMP.length-1)]!,others.length+1)
  // plausible first: a value that kit-type has worn; a value from the other variants only tops up
- const others=[...pool.keys()].filter(k=>k!==correctKey).sort()
  const same=others.filter(k=>pool.get(k)!.variants.has(e.variant)),rest=others.filter(k=>!same.includes(k))
  const salt=Number.parseInt(hash(`${e.kit.id}|${step}`),36)
  const chosen=[...shuffled(same,seed^salt),...shuffled(rest,(seed^salt)+1)].slice(0,want-1)

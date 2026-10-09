@@ -126,6 +126,7 @@ textarea.cp{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px
 <main id="main"></main>
 
 <section class="hfk" id="hfk" aria-labelledby="hfkT" hidden></section>
+<section class="hfk" id="cfs" hidden></section>
 
 <section class="notes" aria-label="על הארכיון">
   <div class="note"><h3>מה מדוד ומה לא</h3><p>הצבעים הם הערך המדויק השכיח בכל ציור, בנפרד לחולצה, למכנסיים ולגרביים. ספירת הפסים נמדדת מהפיקסלים. הדגם נקרא בעין ונבדק מול המדידה.</p><p>יצרן וספונסר מוזנים רק כשציור בקטלוג מראה אותם. לחולצות שיש להן רק ציור מקומונס אין יצרן או ספונסר.</p></div>
@@ -162,7 +163,7 @@ const srcBadge=k=>k.verified?['ok','יצרן מאומת']:k.sources.length>1?['t
 /* controls */
 const F={type:'all',design:'all',maker:'all',src:'all',q:'',art:'svg'};
 const draw=(k,l)=>kitSVG({...k,crest:DATA.crest},l);
-const art=(k,l)=>F.art==='src'&&k.image?`<img src="${k.image}" alt="${esc(l)}" loading="lazy" width="160" height="215">`:draw(k,l);
+const art=(k,l)=>F.art==='src'&&(k.photo||k.image)?`<img src="${k.photo||k.image}" alt="${esc(l)}" loading="lazy" ${k.photo?'data-archive-photo="cfs" style="object-fit:contain"':''} width="160" height="215">`:draw(k,l);
 const ORDER=['home','away','third','special'];
 function list(){return K.filter(k=>(F.type==='all'||k.type===F.type)&&(F.design==='all'||k.shirt.design===F.design)&&(F.maker==='all'||(k.maker||'—')===F.maker)&&(F.src==='all'||(F.src==='full'&&k.origin==='catalogue')||(F.src==='two'&&k.sources.length>1)||(F.src==='drawing'&&k.origin==='drawing'))&&(!F.q||k.season.includes(F.q)))}
 function render(){
@@ -181,7 +182,7 @@ function show(k){
   const [c,t]=srcBadge(k),cat=k.evidence.find(e=>e.publisher==='colours-of-football.com'),pg=DATA.sources.catalogue;
   const obs=[...new Set(k.drawings.flatMap(d=>[d.observed&&d.observed.makerMark&&k.origin==='drawing'?`סימן יצרן בציור: ${OBS_MAKER[d.observed.makerMark]||d.observed.makerMark}`:'',d.observed&&d.observed.note||'']).filter(Boolean))];
   const drawings=k.drawings.map(d=>`<a href="${fileUrl(d.file)}" target="_blank" rel="noopener"><bdi dir="ltr">${d.file.replace('Kit body ','')}</bdi></a>`).join(' · ');
-  $('#dBody').innerHTML=`<div class="dstage">${draw(k,label(k))}${k.image?`<figure class="srcfig"><img src="${k.image}" alt="${esc(label(k))}" loading="lazy"><figcaption>תמונת מקור</figcaption></figure>`:''}</div>
+  $('#dBody').innerHTML=`<div class="dstage">${draw(k,label(k))}${k.image?`<figure class="srcfig"><img src="${k.image}" alt="${esc(label(k))}" loading="lazy"><figcaption>תמונת מקור</figcaption></figure>`:''}${k.photo?`<figure class="srcfig"><img src="${k.photo}" alt="${esc(label(k))}" data-archive-photo="cfs" loading="lazy" style="object-fit:contain"><figcaption>תצלום חולצה · Club Football Shirts</figcaption></figure>`:''}</div>
   <div class="info"><span class="badge ${k.verified?'ok':'rev'}">${t}</span>
   <h2 id="dTitle">${k.season}</h2><p style="margin:-8px 0 0;color:var(--gold);font:600 12px var(--mono);letter-spacing:.12em" dir="ltr">${capEn(k).toUpperCase()}</p>
   <dl><dt>חולצה</dt><dd>${DESIGN[k.shirt.design]||k.shirt.design}${meas}${k.shirt.design==='graphic'?' · ההדפס לא מצויר':''}<br>${k.shirt.colours.map(n=>sw(n,k.shirt.hex[n])).join('')}</dd>
@@ -215,6 +216,9 @@ render();
 
 (function(){const H=DATA.hfk;if(!H)return;const el=document.getElementById('hfk');el.hidden=false;const T={home:'בית',away:'חוץ',third:'שלישית',change:'חילוף'};
 el.innerHTML=`<h2 id="hfkT">ציורים היסטוריים · ${H.count} מערכות</h2><p class="cr">ציורי המדים של Historical Football Kits ‏(David Moor), ${H.from}–${H.to}. מקור: <a href="${H.source.homePage}" target="_blank" rel="noopener">עמוד הבית</a> · <a href="${H.source.changePage}" target="_blank" rel="noopener">מדי חילוף</a>. השימוש לא מסחרי, בציון המקור. תקופה, יצרן וסימוני המקור כפי שהאתר מדפיס; מה שלא הודפס לא נוסף.</p><div class="g">${H.kits.map(k=>`<figure><img src="${k.image}" alt="${esc(k.period)}" loading="lazy" width="150" height="263"><figcaption><bdi dir="ltr">${esc(k.period)}</bdi> · ${T[k.type]||k.type}<small>${k.maker?esc(k.maker):''}</small></figcaption></figure>`).join('')}</div>`})();
+
+(function(){const C=DATA.cfs;if(!C)return;const el=document.getElementById('cfs');el.hidden=false;const T={home:'בית',away:'חוץ',third:'שלישית',fourth:'רביעית',goalkeeper:'שוער',special:'מיוחדת'};
+el.innerHTML=`<h2>תצלומי חולצות · ${C.count}</h2><p class="cr">תצלומים של חולצות מארכיון <a href="${C.source.archivePage}" target="_blank" rel="noopener">Club Football Shirts</a>, בשימוש באישור הבעלים. הסוג והעונה כפי ששם הקובץ במקור מצהיר; יצרן וספונסר לא נקראים מתצלום.</p><div class="g">${C.kits.map(k=>`<figure><img src="${k.image}" data-archive-photo="cfs" alt="${esc(k.season)}" loading="lazy" width="${k.width}" height="${k.height}" style="object-fit:contain"><figcaption><bdi dir="ltr">${esc(k.season)}</bdi> · ${T[k.type]||k.type}</figcaption></figure>`).join('')}</div>`})();
 </script>
 </body>
 </html>

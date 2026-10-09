@@ -2196,7 +2196,7 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "hoops",
+    "design": "plain",
     "colours": [
      "red",
      "black"
@@ -2205,9 +2205,7 @@
      "red": "#b00c3d",
      "black": "#333333"
     },
-    "measured": {
-     "hoops": 0
-    }
+    "measured": {}
    },
    "shorts": {
     "colour": "black",
@@ -2529,11 +2527,11 @@
     "design": "chest band",
     "colours": [
      "white",
-     "orange"
+     "yellow"
     ],
     "hex": {
      "white": "#ffffff",
-     "orange": "#ffffff"
+     "yellow": "#f99f1c"
     },
     "measured": {}
    },
@@ -2852,7 +2850,7 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "graphic",
+    "design": "hoops",
     "colours": [
      "yellow",
      "black"
@@ -2861,7 +2859,9 @@
      "yellow": "#ffd400",
      "black": "#282828"
     },
-    "measured": {}
+    "measured": {
+     "hoops": 4
+    }
    },
    "shorts": {
     "colour": "black",

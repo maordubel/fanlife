@@ -101,7 +101,7 @@
     "manufacturer": "Puma",
     "construction": {
      "design": "graphic",
-     "colors": "black"
+     "colors": "black/grey"
     },
     "sponsor": "congstar",
     "shorts": {
@@ -133,7 +133,7 @@
     "type": "away",
     "manufacturer": "Puma",
     "construction": {
-     "design": "diagonal",
+     "design": "sash",
      "colors": "white/brown"
     },
     "sponsor": "congstar",
@@ -530,7 +530,7 @@
     "manufacturer": "Under Armour",
     "construction": {
      "design": "plain",
-     "colors": "navy/white"
+     "colors": "grey/white"
     },
     "sponsor": "congstar",
     "shorts": {
@@ -596,7 +596,7 @@
     "manufacturer": "Under Armour",
     "construction": {
      "design": "graphic",
-     "colors": "white/grey"
+     "colors": "white/brown"
     },
     "sponsor": "congstar",
     "shorts": {
@@ -629,7 +629,7 @@
     "manufacturer": "Under Armour",
     "construction": {
      "design": "plain",
-     "colors": "black"
+     "colors": "black/red"
     },
     "sponsor": "congstar",
     "shorts": {
@@ -1454,7 +1454,7 @@
     "manufacturer": "Kappa",
     "construction": {
      "design": "plain",
-     "colors": "green/white"
+     "colors": "brown/white"
     },
     "sponsor": "securvita",
     "shorts": {

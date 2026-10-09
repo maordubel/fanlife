@@ -1,8 +1,68 @@
 [
-{"i":1,"design":"gradient","body":"blue","trim":"white","maker":"Lotto","sponsor":"דיל טוב","shorts_trim":"white","socks_trim":null,"unsure":true},
-{"i":2,"design":"gradient","body":"white","trim":"blue","maker":"Lotto","sponsor":"דיל טוב","shorts_trim":"blue","socks_trim":null,"unsure":true},
-{"i":3,"design":"gradient","body":"black","trim":"white","maker":"Lotto","sponsor":"דיל טוב","shorts_trim":"white","socks_trim":null,"unsure":true},
-{"i":4,"design":"stripes","body":"blue","trim":"black","maker":"Lotto","sponsor":"MIVNE","shorts_trim":"black","socks_trim":null,"unsure":true},
-{"i":5,"design":"stripes","body":"white","trim":"black","maker":"Lotto","sponsor":"MIVNE","shorts_trim":"blue","socks_trim":null,"unsure":true},
-{"i":6,"design":"hoops","body":"black","trim":"skyblue","maker":"Lotto","sponsor":"MIVNE","shorts_trim":"blue","socks_trim":null,"unsure":true}
+{
+"i": 1,
+"design": "gradient",
+"body": "blue",
+"trim": "white",
+"maker": "Lotto",
+"sponsor": "דיל טוב",
+"shorts_trim": "white",
+"socks_trim": null,
+"unsure": true
+},
+{
+"i": 2,
+"design": "gradient",
+"body": "white",
+"trim": "blue",
+"maker": "Lotto",
+"sponsor": "דיל טוב",
+"shorts_trim": "blue",
+"socks_trim": null,
+"unsure": true
+},
+{
+"i": 3,
+"design": "gradient",
+"body": "black",
+"trim": "white",
+"maker": "Lotto",
+"sponsor": "דיל טוב",
+"shorts_trim": "white",
+"socks_trim": null,
+"unsure": true
+},
+{
+"i": 4,
+"design": "stripes",
+"body": "blue",
+"trim": "black",
+"maker": "Lotto",
+"sponsor": "MIVNE",
+"shorts_trim": "black",
+"socks_trim": null,
+"unsure": true
+},
+{
+"i": 5,
+"design": "stripes",
+"body": "white",
+"trim": "black",
+"maker": "Lotto",
+"sponsor": "MIVNE",
+"shorts_trim": "blue",
+"socks_trim": null,
+"unsure": true
+},
+{
+"i": 6,
+"design": "plain",
+"body": "black",
+"trim": "skyblue",
+"maker": "Lotto",
+"sponsor": "MIVNE",
+"shorts_trim": "blue",
+"socks_trim": null,
+"unsure": true
+}
 ]

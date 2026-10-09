@@ -85,3 +85,10 @@ Counts: St. Pauli 46, Panathinaikos 61, Zrinjski 19, Hapoel Petah Tikva 6, Celti
 - The owner's approval of the new waves (St. Pauli 44, Panathinaikos 4, Zrinjski 6, Celtic 75) and a decision about the transcriptions flagged `readUnsure`.
 - SVG logos (football-logos.cc), and printed maker/sponsor logos on the drawings (the grant covers them; none is drawn yet).
 - Seasons the catalogues do not cover (the catalogues start around 2001; earlier kits stay with the packs' photographs).
+
+## 10.10.2026 — polish pass
+
+- Second independent reading of all 75 flagged transcriptions; 40 disagreements adjudicated by eye, the reads files corrected and the catalogue waves rebuilt (re-approved with the owner's words where they had been).
+- Gate 4 body question: a card that is the correct pair of colours swapped is no longer offered as a distractor (rule 15).
+- Sponsor lettering: `content/manual/sponsor-type.json` styles each of the 34 sponsors (family, weight, case, tracking, line breaks; the real lettering colour only on the static archive drawings). `lib/clubs/sponsor-type.ts` reads the same table for gates 4/5 with neutral ink.
+- Club Football Shirts: 100 shirt photographs (`kit-cfs-<club>.json`, `public/club-kits/<club>/cfs/`) for seven clubs; matched by season and type onto the archive cards and the gate 5 shelf, the rest in a gallery. Hapoel Petah Tikva has no page on that site.

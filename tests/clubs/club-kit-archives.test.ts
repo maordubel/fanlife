@@ -122,3 +122,29 @@ describe('Celtic · Historical Football Kits drawings (owner: non-commercial use
   expect(readFileSync('public/kit-archive/celtic/index.html','utf8')).toContain('Historical Football Kits')
  })
 })
+
+describe('Club Football Shirts photographs (owner approval, 10.10.2026)',()=>{
+ const clubs=['aek-athens','celtic','hapoel-tel-aviv','olympiacos','panathinaikos','st-pauli','zrinjski-mostar']
+ it('holds 100 photographs, each a real file with a type and season from its file name, credited to the publisher',()=>{
+  let n=0
+  for(const c of clubs){
+   const j=read<{source:{publisher:string;archivePage:string};count:number;kits:{id:string;type:string;season:string;image:string}[]}>(`content/manual/kit-cfs-${c}.json`)
+   expect(j.source.publisher).toBe('Club Football Shirts');expect(j.source.archivePage).toMatch(/^https:\/\/www\.clubfootballshirts\.com\//)
+   expect(new Set(j.kits.map(k=>k.id)).size).toBe(j.kits.length);n+=j.kits.length
+   for(const k of j.kits){expect(existsSync(`public${k.image}`),k.id).toBe(true);expect(k.season).toMatch(/^\d{4}\/\d{2}$/)}
+  }
+  expect(n).toBe(100)
+ })
+ it('shows the photographs and their credit on the archive page',()=>{
+  const h=readFileSync('public/kit-archive/olympiacos/index.html','utf8');expect(h).toContain('Club Football Shirts');expect(h).toContain('data-archive-photo')
+ })
+})
+
+describe('sponsor lettering',()=>{
+ it('has a typographic style for every sponsor the archives print, and no brand colour reaches a club page',()=>{
+  const t=read<{styles:Record<string,unknown>}>('content/manual/sponsor-type.json'),have=new Set(Object.keys(t.styles).map(x=>x.toLowerCase()))
+  for(const f of ['celtic','hapoel-petah-tikva','olympiacos','panathinaikos','st-pauli','zrinjski-mostar'].map(c=>`content/manual/kit-archive-${c}.json`).concat('content/manual/kit-aek-athens.json'))
+   for(const k of read<Joined>(f).kits)if(k.sponsor)expect(have.has(k.sponsor.toLowerCase()),`${f} ${k.sponsor}`).toBe(true)
+  expect(readFileSync('lib/clubs/sponsor-type.ts','utf8')).not.toMatch(/brand/i.source.length?/\.brand\b/:/x/)
+ })
+})

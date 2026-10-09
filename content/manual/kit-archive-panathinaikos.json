@@ -1368,11 +1368,11 @@
     "design": "plain",
     "colours": [
      "white",
-     "yellow"
+     "brown"
     ],
     "hex": {
      "white": "#ffffff",
-     "yellow": "#b18740"
+     "brown": "#816333"
     },
     "measured": {}
    },
@@ -1699,7 +1699,7 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "graphic",
+    "design": "gradient",
     "colours": [
      "black",
      "blue"
@@ -3134,7 +3134,7 @@
    "type": "home",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "contrasting sleeves",
     "colours": [
      "green",
      "white"

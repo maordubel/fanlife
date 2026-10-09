@@ -346,5 +346,9 @@
   "kitHfkType_home": "בית",
   "kitHfkType_away": "חוץ",
   "kitHfkType_third": "שלישית",
-  "kitHfkType_change": "חילוף"
+  "kitHfkType_change": "חילוף",
+  "kitCfsTitle": "עוד תצלומי חולצות · {n}",
+  "kitCfsCredit": "תצלומים מארכיון",
+  "kitHfkType_special": "מיוחדת",
+  "kitHfkType_fourth": "רביעית"
 }

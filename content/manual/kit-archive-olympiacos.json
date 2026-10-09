@@ -131,29 +131,31 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "stripes",
     "colours": [
-     "navy",
+     "grey",
      "red"
     ],
     "hex": {
-     "navy": "#515771",
+     "grey": "#54576d",
      "red": "#f40711"
     },
-    "measured": {}
+    "measured": {
+     "stripes": 3
+    }
    },
    "shorts": {
     "colour": "grey",
     "hex": "#54576d",
-    "trim": null,
-    "trimHex": null
+    "trim": "red",
+    "trimHex": "#f40711"
    },
    "socks": {
     "colour": "grey",
     "hex": "#54576d",
-    "trim": null,
-    "trimHex": null,
-    "bands": false
+    "trim": "red",
+    "trimHex": "#54576d",
+    "bands": true
    },
    "maker": "adidas",
    "sponsor": "Stoiximan",
@@ -1267,14 +1269,14 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "graphic",
     "colours": [
      "blue",
-     "white"
+     "navy"
     ],
     "hex": {
      "blue": "#264a93",
-     "white": "#ffffff"
+     "navy": "#263b65"
     },
     "measured": {}
    },
@@ -1430,14 +1432,14 @@
    "type": "third",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "graphic",
     "colours": [
      "navy",
-     "white"
+     "blue"
     ],
     "hex": {
      "navy": "#1d355f",
-     "white": "#ffffff"
+     "blue": "#394d7a"
     },
     "measured": {}
    },
@@ -3183,11 +3185,11 @@
     "design": "plain",
     "colours": [
      "cream",
-     "black"
+     "white"
     ],
     "hex": {
      "cream": "#f2ebdd",
-     "black": "#231f20"
+     "white": "#ffffff"
     },
     "measured": {}
    },
@@ -3679,16 +3681,18 @@
    "type": "away",
    "euro": false,
    "shirt": {
-    "design": "plain",
+    "design": "hoops",
     "colours": [
      "navy",
-     "white"
+     "grey"
     ],
     "hex": {
      "navy": "#212d38",
-     "white": "#ffffff"
+     "grey": "#364349"
     },
-    "measured": {}
+    "measured": {
+     "hoops": 3
+    }
    },
    "shorts": {
     "colour": "black",

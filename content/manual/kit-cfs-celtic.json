@@ -1,0 +1,45 @@
+{
+ "source": {
+  "publisher": "Club Football Shirts",
+  "url": "https://www.clubfootballshirts.com/",
+  "archivePage": "https://www.clubfootballshirts.com/celtic-fc.html",
+  "licence": "Photographs of shirts from the publisher's archive pages, used with the owner's approval (chat, 2026-10-10). Credit travels with every photograph.",
+  "readOn": "2026-10-10"
+ },
+ "count": 3,
+ "kits": [
+  {
+   "id": "cfs-away-2025-26",
+   "type": "away",
+   "season": "2025/26",
+   "image": "/club-kits/celtic/cfs/away-2025-26.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/celtic-fc.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/celtic-f-c-away-2025-2026-football-shirt-archive_orig.jpg"
+  },
+  {
+   "id": "cfs-home-2025-26",
+   "type": "home",
+   "season": "2025/26",
+   "image": "/club-kits/celtic/cfs/home-2025-26.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0007,
+   "page": "https://www.clubfootballshirts.com/celtic-fc.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/celtic-f-c-home-2025-2026-football-shirt-archive_orig.jpg"
+  },
+  {
+   "id": "cfs-third-2025-26",
+   "type": "third",
+   "season": "2025/26",
+   "image": "/club-kits/celtic/cfs/third-2025-26.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.003,
+   "page": "https://www.clubfootballshirts.com/celtic-fc.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/celtic-f-c-third-2025-2026-football-shirt-archive_orig.jpg"
+  }
+ ]
+}

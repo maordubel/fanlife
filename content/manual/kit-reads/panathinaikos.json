@@ -23,7 +23,7 @@
 },
 {
 "i": 3,
-"design": "plain",
+"design": "contrasting sleeves",
 "body": "green",
 "trim": "white",
 "maker": "adidas",
@@ -353,7 +353,7 @@
 },
 {
 "i": 33,
-"design": "graphic",
+"design": "gradient",
 "body": "black",
 "trim": "blue",
 "maker": "Puma",
@@ -421,7 +421,7 @@
 "i": 39,
 "design": "plain",
 "body": "white",
-"trim": "yellow",
+"trim": "brown",
 "maker": "Nike",
 "sponsor": "stoixima",
 "shorts_trim": null,

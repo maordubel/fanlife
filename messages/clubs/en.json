@@ -346,5 +346,9 @@
   "kitHfkType_home": "Home",
   "kitHfkType_away": "Away",
   "kitHfkType_third": "Third",
-  "kitHfkType_change": "Change"
+  "kitHfkType_change": "Change",
+  "kitCfsTitle": "More shirt photographs · {n}",
+  "kitCfsCredit": "Photographs from the archive of",
+  "kitHfkType_special": "Special",
+  "kitHfkType_fourth": "Fourth"
 }

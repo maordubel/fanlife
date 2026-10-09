@@ -1,0 +1,177 @@
+{
+ "source": {
+  "publisher": "Club Football Shirts",
+  "url": "https://www.clubfootballshirts.com/",
+  "archivePage": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+  "licence": "Photographs of shirts from the publisher's archive pages, used with the owner's approval (chat, 2026-10-10). Credit travels with every photograph.",
+  "readOn": "2026-10-10"
+ },
+ "count": 15,
+ "kits": [
+  {
+   "id": "cfs-away-2018-19",
+   "type": "away",
+   "season": "2018/19",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/away-2018-19.webp",
+   "width": 420,
+   "height": 420,
+   "yellowShare": 0.0001,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2018-2019-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-home-2018-19",
+   "type": "home",
+   "season": "2018/19",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/home-2018-19.webp",
+   "width": 420,
+   "height": 420,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2018-2019-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-third-2018-19",
+   "type": "third",
+   "season": "2018/19",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/third-2018-19.webp",
+   "width": 420,
+   "height": 420,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2018-2019-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-away-2020-21",
+   "type": "away",
+   "season": "2020/21",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/away-2020-21.webp",
+   "width": 414,
+   "height": 414,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2020-2021-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-home-2020-21",
+   "type": "home",
+   "season": "2020/21",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/home-2020-21.webp",
+   "width": 414,
+   "height": 414,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2020-2021-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-third-2020-21",
+   "type": "third",
+   "season": "2020/21",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/third-2020-21.webp",
+   "width": 414,
+   "height": 414,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2020-2021-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-away-2021-22",
+   "type": "away",
+   "season": "2021/22",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/away-2021-22.webp",
+   "width": 420,
+   "height": 420,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2021-2022-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-home-2021-22",
+   "type": "home",
+   "season": "2021/22",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/home-2021-22.webp",
+   "width": 420,
+   "height": 420,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2021-2022-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-third-2021-22",
+   "type": "third",
+   "season": "2021/22",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/third-2021-22.webp",
+   "width": 420,
+   "height": 420,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2021-2022-football-shirt-archive_orig.png"
+  },
+  {
+   "id": "cfs-away-2022-23",
+   "type": "away",
+   "season": "2022/23",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/away-2022-23.webp",
+   "width": 576,
+   "height": 576,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2022-2023-football-shirt-archive_orig.jpeg"
+  },
+  {
+   "id": "cfs-home-2022-23",
+   "type": "home",
+   "season": "2022/23",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/home-2022-23.webp",
+   "width": 577,
+   "height": 577,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2022-2023-football-shirt-archive_orig.jpeg"
+  },
+  {
+   "id": "cfs-third-2022-23",
+   "type": "third",
+   "season": "2022/23",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/third-2022-23.webp",
+   "width": 576,
+   "height": 576,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2022-2023-football-shirt-archive_orig.jpeg"
+  },
+  {
+   "id": "cfs-away-2023-24",
+   "type": "away",
+   "season": "2023/24",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/away-2023-24.webp",
+   "width": 711,
+   "height": 711,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2023-2024-football-shirt-archive_orig.jpg"
+  },
+  {
+   "id": "cfs-home-2023-24",
+   "type": "home",
+   "season": "2023/24",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/home-2023-24.webp",
+   "width": 711,
+   "height": 711,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2023-2024-football-shirt-archive_orig.jpg"
+  },
+  {
+   "id": "cfs-third-2023-24",
+   "type": "third",
+   "season": "2023/24",
+   "image": "/club-kits/hapoel-tel-aviv/cfs/third-2023-24.webp",
+   "width": 715,
+   "height": 715,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2023-2024-football-shirt-archive_orig.jpg"
+  }
+ ]
+}

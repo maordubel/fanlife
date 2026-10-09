@@ -11,7 +11,7 @@ CLUBS=[
  dict(id='olympiacos',name='Olympiacos',accent='#e5484d',data='content/manual/kit-archive-olympiacos.json',man='content/manual/kit-cof-olympiacos.json'),
  dict(id='hapoel-petah-tikva',name='Hapoel Petah Tikva',accent='#4c8dff',data='content/manual/kit-archive-hapoel-petah-tikva.json',man='content/manual/kit-cof-hapoel-petah-tikva.json'),
 ]
-tpl=open('scripts/kits/kit-archive.template.html',encoding='utf8').read().replace('/*__RENDERER__*/',open('scripts/kits/kit-render.js',encoding='utf8').read())
+tpl=open('scripts/kits/kit-archive.template.html',encoding='utf8').read().replace('/*__RENDERER__*/','const SPONSOR_TYPE='+open('content/manual/sponsor-type.json',encoding='utf8').read()+';\n'+open('scripts/kits/kit-render.js',encoding='utf8').read())
 hub=[]
 for c in CLUBS:
     j=json.load(open(c['data']));man=json.load(open(c['man']))
@@ -20,6 +20,14 @@ for c in CLUBS:
     hp=f"content/manual/kit-hfk-{c['id']}.json"
     if os.path.exists(hp):
         h=json.load(open(hp));fy=[k['from'] for k in h['kits'] if k['from']];ty=[k['to'] for k in h['kits'] if k['to']];data['hfk']=dict(count=h['count'],source=h['source'],kits=h['kits'],**{'from':min(fy),'to':max(ty)})
+    cp=f"content/manual/kit-cfs-{c['id']}.json"
+    if os.path.exists(cp):
+        cf=json.load(open(cp));data['cfs']=cf
+        ph={}
+        for q in cf['kits']:ph.setdefault((q['season'],q['type']),q['image'])
+        for k in data['kits']:
+            u=ph.get((k['season'],k['type']))
+            if u:k['photo']=u
     out=(tpl.replace('/*__TITLE__*/',f"ארכיון מדים {c['name']}").replace('/*__DESC__*/',f"ארכיון המדים של {c['name']}: {j['kitCount']} מערכות, ציורי SVG ותמונות מקור, עם כל המקורות.").replace('/*__ACCENT__*/',c['accent']).replace('/*__DATA__*/null',json.dumps(data,ensure_ascii=False,separators=(',',':'))))
     os.makedirs(f"public/kit-archive/{c['id']}",exist_ok=True);open(f"public/kit-archive/{c['id']}/index.html",'w',encoding='utf8').write(out)
     hub.append((c,j['kitCount'],len({k['season'] for k in j['kits']})));print(c['id'],j['kitCount'],len(out))
