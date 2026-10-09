@@ -10,6 +10,7 @@ import type { HubFacets } from '@/lib/fanlife/hub/types'
 import { h } from '@/lib/fanlife/hub/copy'
 import { countryFlag, countryName } from '@/lib/fanlife/hub/places'
 import { t } from '@/lib/fanlife/i18n'
+import { isWorldSlug, worldClubs } from '@/lib/fanlife/world'
 
 import { Chip, Rail, buttonPlain } from './HubParts'
 
@@ -47,14 +48,14 @@ export function HubFilters({
   const set = (patch: Partial<Filters>) => onChange({ ...filters, slug: null, ...patch })
   const clubs = useMemo(() => {
     const m = new Map<string, string>()
-    for (const s of Object.values(shirts)) if (s.club && s.clubName) m.set(s.club, s.clubName)
+    for (const s of Object.values(shirts)) if (s.club && s.clubName && !isWorldSlug(s.slug)) m.set(s.club, s.clubName)
     return [...m].sort((a, b) => a[1].localeCompare(b[1]))
   }, [shirts])
   const decades = useMemo(() => {
-    const pool = Object.values(shirts).filter((s) => !filters.club || s.club === filters.club)
+    const pool = Object.values(shirts).filter((s) => !isWorldSlug(s.slug) && (!filters.club || s.club === filters.club))
     return [...new Set(pool.map((s) => s.decade))].sort((a, b) => a - b)
   }, [shirts, filters.club])
-  const variants = useMemo(() => [...new Set(Object.values(shirts).map((s) => s.variant))].filter((v) => VARIANT_LABEL[v]), [shirts])
+  const variants = useMemo(() => [...new Set(Object.values(shirts).filter((s) => !isWorldSlug(s.slug)).map((s) => s.variant))].filter((v) => VARIANT_LABEL[v]), [shirts])
   const count = activeCount(filters)
   const [price, setPrice] = useState(filters.maxPrice ? String(filters.maxPrice) : '')
   useEffect(() => setPrice(filters.maxPrice ? String(filters.maxPrice) : ''), [filters.maxPrice])
@@ -69,14 +70,22 @@ export function HubFilters({
         </button>
         <h3 className="hidden font-body text-[11px] font-extrabold uppercase tracking-wide text-muted md:block">{h('hub.filters.title')}</h3>
         {count ? (
-          <button type="button" onClick={() => onChange({ ...filters, slug: null, club: null, decade: null, variant: null, kind: null, sizes: [], conditions: [], types: [], delivery: null, maxPrice: null, country: null, city: null, reach: null })} className="min-h-tap px-2 font-body text-[12px] font-extrabold text-sign underline underline-offset-4">
+          <button type="button" onClick={() => onChange({ ...filters, scope: 'all', slug: null, club: null, decade: null, variant: null, kind: null, sizes: [], conditions: [], types: [], delivery: null, maxPrice: null, country: null, city: null, reach: null })} className="min-h-tap px-2 font-body text-[12px] font-extrabold text-sign underline underline-offset-4">
             {h('hub.filters.clear')}
           </button>
         ) : null}
       </div>
 
       <div className={external ? 'block' : `${open ? 'block' : 'hidden'} md:block`}>
-        {clubs.length > 1 ? (
+        {filters.scope === 'world' ? (
+          <Rail label={h('hub.world.clubs')}>
+            <Chip on={!filters.club} onClick={() => set({ club: null })} label={h('hub.all')} />
+            {Object.entries(facets?.clubs ?? {}).sort((a, b) => b[1] - a[1]).map(([key, n]) => (
+              <Chip key={key} on={filters.club === key} onClick={() => set({ club: filters.club === key ? null : key })} label={worldClubs().get(key) ?? key} count={n} />
+            ))}
+          </Rail>
+        ) : null}
+        {filters.scope !== 'world' && clubs.length > 1 ? (
           <Rail label={h('hub.rail.club')}>
             <Chip on={!filters.club} onClick={() => set({ club: null, decade: null })} label={h('hub.all')} />
             {clubs.map(([id, name]) => (
@@ -84,7 +93,7 @@ export function HubFilters({
             ))}
           </Rail>
         ) : null}
-        {decades.length > 1 ? (
+        {filters.scope !== 'world' && decades.length > 1 ? (
           <Rail label={h('hub.rail.decade')}>
             <Chip on={!filters.decade} onClick={() => set({ decade: null })} label={h('hub.all')} />
             {decades.map((d) => (
@@ -92,7 +101,7 @@ export function HubFilters({
             ))}
           </Rail>
         ) : null}
-        {variants.length > 1 ? (
+        {filters.scope !== 'world' && variants.length > 1 ? (
           <Rail label={h('hub.rail.kit')}>
             <Chip on={!filters.variant} onClick={() => set({ variant: null })} label={h('hub.all')} />
             {variants.map((v) => (

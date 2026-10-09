@@ -729,8 +729,8 @@ describe('חוק הצהוב — התצלומים התיעודיים, והמדי�
     const rows = manifest.records.filter((row) => row.folder === 'public/kits')
     expect(rows.length).toBeGreaterThan(0)
     for (const row of rows) {
-      expect(row.origin).toBe('archive-scan')
-      expect(row.confidence).toBe(2)
+      expect(['archive-scan', 'third-party-archive']).toContain(row.origin)
+      expect(row.confidence).toBeGreaterThanOrEqual(1)
     }
   })
 })

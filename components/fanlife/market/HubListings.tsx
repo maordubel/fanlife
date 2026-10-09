@@ -9,6 +9,7 @@ import { reasonsFor } from '@/lib/fanlife/hub/reasons'
 import type { HubItem, MyWant } from '@/lib/fanlife/hub/types'
 import { h, type HubKey } from '@/lib/fanlife/hub/copy'
 import { t } from '@/lib/fanlife/i18n'
+import { isWorldSlug } from '@/lib/fanlife/world'
 
 import { UserPhoto } from '@/components/fanlife/collector/UserPhoto'
 import { CopyTicket, itemHref } from '@/components/fanlife/market/CopyTicket'
@@ -73,8 +74,9 @@ export function HubListings({
             <article className="fl-mk-card">
               <Link href={itemHref(first.id)} aria-label={t('market.copy.aria', { shirt: shirtName(shirt) })} className="fl-mk-card-link" data-market-copy="">
                 <span className="fl-mk-card-pic">
-                  {first.photos[0] ? <UserPhoto path={first.photos[0]} /> : <><ArchivePhoto shirt={shirt} /><span className="fl-mk-ref-tag">{h('hub.card.archive')}</span></>}
+                  {first.photos[0] ? <UserPhoto path={first.photos[0]} /> : <><ArchivePhoto shirt={shirt} />{isWorldSlug(shirt.slug) ? null : <span className="fl-mk-ref-tag">{h('hub.card.archive')}</span>}</>}
                   {first.forTrade ? <span className="fl-mk-swap-tag">{h('hub.card.swap')}</span> : null}
+                  {isWorldSlug(shirt.slug) ? <span className="fl-world-chip fl-mk-world-tag">{h('hub.world.tag')}</span> : null}
                 </span>
                 <span className="fl-mk-card-name">{(shirt as CollectorShirt & { clubName?: string }).clubName ?? shirtName(shirt)}</span>
                 <span className="fl-mk-card-meta">

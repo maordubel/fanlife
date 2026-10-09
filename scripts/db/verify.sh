@@ -41,3 +41,5 @@ pi=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/60-public-identity.sql 2
 echo "$pi" | grep -c PASS | xargs -I{} echo "db verify: {} public identity (אדום #N, ONE RED WORLD §35) assertions — clean"
 go=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/73-game-origin.sql 2>&1) || { echo "$go" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$go" | grep -c PASS | xargs -I{} echo "db verify: {} one-closet (game-built shirts) assertions — clean"
+wo=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/74-world.sql 2>&1) || { echo "$wo" | grep -E "FAIL|ERROR"; exit 1; }
+echo "$wo" | grep -c PASS | xargs -I{} echo "db verify: {} rest-of-the-world (any club, any shirt) assertions — clean"

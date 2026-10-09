@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { AdoptShirts } from '@/components/fanlife/AdoptShirts'
 import { FanPage } from '@/components/fanlife/FanPage'
 import { DealPanels } from '@/components/fanlife/market/DealPanels'
 import { ThreadScreen } from '@/components/fanlife/screens/ThreadScreen'
@@ -13,6 +14,7 @@ export default async function MarketThreadPage({ params }: { params: { id: strin
   const shirts = await fanShirtMap()
   return (
     <FanPage market active="market" title={t('market.thread.title')} sub={t('market.thread.sub')}>
+      <AdoptShirts shirts={shirts} />
       <ThreadScreen id={params.id} shirts={shirts} />
       <DealPanels id={params.id} shirts={shirts} />
     </FanPage>

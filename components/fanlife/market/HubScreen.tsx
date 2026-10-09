@@ -12,6 +12,8 @@ import { PressPhoto } from '@/components/master/Poster'
 import { MarketCurtain } from './MarketCurtain'
 import { MarketSignIn } from '@/components/fanlife/market/MarketSignIn'
 import type { MatchesState } from '@/components/fanlife/market/MatchesPanel'
+import { WorldBand } from '@/components/fanlife/market/WorldBand'
+import { WorldHaveSheet } from '@/components/fanlife/market/WorldHaveSheet'
 import { RequestSheet } from '@/components/fanlife/market/RequestSheet'
 import { WantedBoard } from '@/components/fanlife/market/WantedBoard'
 import { Kicker, Notice, buttonPlain, buttonPrimary } from '@/components/fanlife/market/HubParts'
@@ -29,6 +31,7 @@ import type { Cursor, HubFacets, HubItem, MyWant, Place, SavedSearch, WantedRow 
 import { h } from '@/lib/fanlife/hub/copy'
 import { t } from '@/lib/fanlife/i18n'
 import { portalConfigured } from '@/lib/portal/env'
+import { adoptShirts } from '@/lib/fanlife/world'
 
 type Shirt = CollectorShirt & { club?: string; clubName?: string }
 type Feed<Row> = { state: 'loading' } | { state: 'off' } | { state: 'error'; message: string } | { state: 'ready'; rows: Row[]; next: Cursor | null; more?: boolean }
@@ -39,6 +42,8 @@ type Feed<Row> = { state: 'loading' } | { state: 'off' } | { state: 'error'; mes
  * page is always a page of matches. The address bar carries the whole state: any search is a link.
  */
 export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> }) {
+  adoptShirts(shirts)
+  const [wizard, setWizard] = useState(false)
   const [ready, setReady] = useState(false)
   const [q, setQ] = useState('')
   const [filtersOpen, setFiltersOpen] = useState(false)
@@ -221,6 +226,22 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
 
       {view === 'market' ? (
         <section role="tabpanel" aria-label={h('hub.tabs.market')}>
+          <div className="fl-scope" role="group" aria-label={h('hub.scope.title')}>
+            {([['all', 'hub.scope.all', facets ? facets.total : null], ['game', 'hub.scope.game', facets?.scope?.game ?? null], ['world', 'hub.scope.world', facets?.scope?.world ?? null]] as const).map(([id, key, n]) => (
+              <button key={id} type="button" data-world={id === 'world' ? '' : undefined} aria-pressed={filters.scope === id} onClick={() => setFilters((f) => ({ ...f, scope: id, slug: null, club: null, decade: null, variant: null }))}>
+                {h(key)}
+                {n !== null ? <small>{n}</small> : null}
+              </button>
+            ))}
+          </div>
+          {filters.scope !== 'game' ? (
+            <WorldBand
+              count={facets?.scope?.world ?? null}
+              browsing={filters.scope === 'world'}
+              onList={() => setWizard(true)}
+              onBrowse={() => setFilters((f) => ({ ...f, scope: 'world', slug: null, club: null, decade: null, variant: null }))}
+            />
+          ) : null}
           {focus ? <BackToAll shirt={focus} onClear={() => setFilters((f) => ({ ...f, slug: null }))} /> : null}
           <div className="fl-mk-chips" role="group" aria-label={h('hub.rail.deal')}>
             {([[null, 'hub.kind.all'], ['sale', 'hub.kind.sale'], ['trade', 'hub.kind.swap']] as const).map(([kind, key]) => (
@@ -264,7 +285,11 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
           ) : market.state === 'loading' ? (
             <p className="mt-stack border-rule border-dashed border-ink/50 p-4 font-body text-step--1 text-muted" role="status">{t('market.loading')}</p>
           ) : market.rows.length === 0 ? (
-            narrowed || qSent ? (
+            filters.scope === 'world' && !qSent && activeCount(filters) === 1 ? (
+              <Notice title={h('hub.world.empty.title')} body={h('hub.world.empty.body')}>
+                <button type="button" onClick={() => setWizard(true)} className={buttonPrimary}>{h('hub.world.list')}</button>
+              </Notice>
+            ) : narrowed || qSent ? (
               <Notice title={h('hub.empty.title')} body={qSent && !narrowed ? h('hub.search.empty', { q: qSent }) : h('hub.empty.body')}>
                 <button type="button" onClick={() => setSheet({ slug: filters.slug })} className={buttonPrimary}>{h('hub.actions.look')}</button>
               </Notice>
@@ -362,6 +387,15 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
       <div className="fl-mk-sticky">
         <Link href="/closet" className="fl-mk-list">{h('hub.list.cta')}</Link>
       </div>
+
+      {wizard ? (
+        <WorldHaveSheet
+          signedIn={signedIn}
+          signIn={signIn}
+          onClose={() => setWizard(false)}
+          onDone={() => { window.location.assign('/closet') }}
+        />
+      ) : null}
 
       {sheet && signedIn === false ? (
         <div className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/60 sm:items-center" role="dialog" aria-modal="true" aria-label={h('hub.request.title')}>

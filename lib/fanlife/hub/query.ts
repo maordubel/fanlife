@@ -1,6 +1,8 @@
 import { CONDITIONS, ITEM_TYPES, SIZES } from '@/lib/collector/types'
 import type { CollectorShirt, Condition, Currency, ItemType, Size } from '@/lib/collector/types'
 
+import { isWorldSlug } from '@/lib/fanlife/world'
+
 import type { HubQuery } from './types'
 
 /**
@@ -12,9 +14,12 @@ import type { HubQuery } from './types'
  * client turns those three into a `slugs` list from the catalogue it already holds.
  */
 export type HubView = 'market' | 'wanted' | 'foryou' | 'circles'
+export type HubScope = 'all' | 'game' | 'world'
 export type HubShirt = Pick<CollectorShirt, 'slug' | 'decade' | 'variant'> & { club?: string; clubName?: string }
 
 export type HubFilters = {
+  /** which side of the market: the archive's clubs, the rest of the world, or both */
+  scope: HubScope
   slug: string | null
   club: string | null
   decade: number | null
@@ -34,6 +39,7 @@ export type HubFilters = {
 }
 
 export const EMPTY_FILTERS: HubFilters = {
+  scope: 'all',
   slug: null, club: null, decade: null, variant: null, kind: null,
   sizes: [], conditions: [], types: [], delivery: null, maxPrice: null, currency: 'EUR',
   country: null, city: null, reach: null,
@@ -61,7 +67,9 @@ export function filtersFromSearch(search: string, shirts: Readonly<Record<string
   const decade = Number(p.get('decade'))
   const max = Number(p.get('max'))
   const currency = p.get('cur') as Currency | null
+  const scope = p.get('scope')
   return {
+    scope: scope === 'game' || scope === 'world' ? scope : 'all',
     slug: slug && shirts[slug] ? slug : null,
     club: p.get('club') || null,
     decade: Number.isInteger(decade) && decade >= 1900 && decade <= 2090 ? decade : null,
@@ -82,6 +90,7 @@ export function filtersFromSearch(search: string, shirts: Readonly<Record<string
 export function filtersToSearch(f: HubFilters, view: HubView): string {
   const p = new URLSearchParams()
   if (view !== 'market') p.set('view', view)
+  if (f.scope !== 'all') p.set('scope', f.scope)
   if (f.slug) p.set('slug', f.slug)
   if (f.club) p.set('club', f.club)
   if (f.decade) p.set('decade', String(f.decade))
@@ -107,6 +116,7 @@ export function slugsFor(f: Pick<HubFilters, 'slug' | 'club' | 'decade' | 'varia
   if (f.slug) return [f.slug]
   if (!f.club && !f.decade && !f.variant) return null
   const out = Object.values(shirts)
+    .filter((s) => !isWorldSlug(s.slug))
     .filter((s) => (!f.club || s.club === f.club) && (!f.decade || s.decade === f.decade) && (!f.variant || s.variant === f.variant))
     .map((s) => s.slug)
   return out.length ? out.slice(0, MAX_SLUGS) : [NO_SHIRT]
@@ -114,7 +124,10 @@ export function slugsFor(f: Pick<HubFilters, 'slug' | 'club' | 'decade' | 'varia
 
 export function toQuery(f: HubFilters, shirts: Readonly<Record<string, HubShirt>>): HubQuery {
   const q: HubQuery = {}
-  const slugs = slugsFor(f, shirts)
+  if (f.scope !== 'all') q.scope = f.scope
+  // a world club is a library key; a game club is a set of archive slugs — they never mix
+  const slugs = f.scope === 'world' ? null : slugsFor(f, shirts)
+  if (f.scope === 'world' && f.club) q.clubs = [f.club]
   if (slugs) q.slugs = slugs
   if (f.kind) q.kinds = [f.kind]
   if (f.sizes.length) q.sizes = f.sizes
@@ -133,7 +146,7 @@ export function toQuery(f: HubFilters, shirts: Readonly<Record<string, HubShirt>
 
 /** How many separate narrowings are on — the number on the "Clear" chip. A saved search needs at least one. */
 export function activeCount(f: HubFilters): number {
-  return [f.slug, f.club, f.decade, f.variant, f.kind, f.delivery, f.maxPrice, f.country, f.city, f.reach].filter(Boolean).length + f.sizes.length + f.conditions.length + f.types.length
+  return [f.slug, f.club, f.decade, f.variant, f.kind, f.delivery, f.maxPrice, f.country, f.city, f.reach, f.scope !== 'all' ? f.scope : null].filter(Boolean).length + f.sizes.length + f.conditions.length + f.types.length
 }
 
 const TYPE_WORD: Record<ItemType, string> = {
@@ -144,6 +157,7 @@ const SIZE_WORD = (s: Size) => (s === 'kids' ? 'Kids' : s.toUpperCase())
 /** A name for a search nobody named: "Olympiacos · 1990s · away · L". Short, built from what is set. */
 export function autoName(f: HubFilters, shirts: Readonly<Record<string, HubShirt>>): string {
   const parts: string[] = []
+  if (f.scope === 'world') parts.push('Rest of the world')
   if (f.slug) parts.push(shirts[f.slug]?.clubName ?? 'One shirt')
   else if (f.club) parts.push(Object.values(shirts).find((s) => s.club === f.club)?.clubName ?? f.club)
   if (f.decade) parts.push(`${f.decade}s`)
@@ -161,6 +175,8 @@ export function autoName(f: HubFilters, shirts: Readonly<Record<string, HubShirt
 export function filtersFromQuery(q: HubQuery): HubFilters {
   return {
     ...EMPTY_FILTERS,
+    scope: q.scope ?? 'all',
+    club: q.scope === 'world' && q.clubs && q.clubs.length === 1 ? q.clubs[0]! : null,
     slug: q.slugs && q.slugs.length === 1 && q.slugs[0] !== NO_SHIRT ? q.slugs[0]! : null,
     kind: q.kinds && q.kinds.length === 1 ? q.kinds[0]! : null,
     sizes: q.sizes ?? [],

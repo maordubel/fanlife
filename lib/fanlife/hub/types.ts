@@ -22,6 +22,8 @@ export type HubQuery = {
   itemTypes?: ItemType[]
   delivery?: 'local' | 'ship'
   clubs?: string[]
+  /** game = shirts from the archive's clubs; world = shirts from any other club */
+  scope?: 'game' | 'world'
   countries?: string[]
   cities?: string[]
   /** a buyer's country: only copies whose seller ships there */
@@ -41,6 +43,7 @@ export type HubFacets = {
   itemTypes: Partial<Record<ItemType, number>>
   slugs: Record<string, number>
   clubs?: Record<string, number>
+  scope?: { game: number; world: number }
   countries?: Record<string, number>
   reachable?: number
 }
