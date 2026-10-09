@@ -149,3 +149,13 @@ describe('sponsor lettering',()=>{
   expect(readFileSync('lib/clubs/sponsor-type.ts','utf8')).not.toMatch(/brand/i.source.length?/\.brand\b/:/x/)
  })
 })
+
+describe('real maker and sponsor marks',()=>{
+ const m=read<{makers:Record<string,{viewBox:string;d:string;kind:string}>;sponsors:Record<string,{viewBox:string;d:string;kind:string}>}>('content/manual/maker-marks.json')
+ it('holds a fitted vector for each mark, credited in the file, and the drawings and pages print them',()=>{
+  for(const g of [...Object.entries(m.makers),...Object.entries(m.sponsors)]){expect(g[1].d.length,g[0]).toBeGreaterThan(20);expect(g[1].viewBox.split(' ')).toHaveLength(4)}
+  expect(m.makers.nike).toBeTruthy();expect(m.makers.adidas).toBeTruthy();expect(m.sponsors.vodafone).toBeTruthy()
+  const svg=readFileSync('public/club-kits/olympiacos/svg/cof-k-12.svg','utf8');expect(svg).toContain('<path d="M')
+  expect(readFileSync('public/kit-archive/celtic/index.html','utf8')).toContain('"makers"')
+ })
+})

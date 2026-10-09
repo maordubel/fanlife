@@ -31,3 +31,17 @@ describe('shirt catalogue × Club Football Shirts × "I have it"',()=>{
   expect(readFileSync('public/kit-archive/celtic/index.html','utf8')).toContain('data-own-link')
  })
 })
+
+import {renderToStaticMarkup} from 'react-dom/server'
+import {createElement} from 'react'
+import {KitCloth} from '@/components/clubs/gates/kit-builder/KitCloth'
+import {BLANK} from '@/lib/clubs/kit-model'
+describe('real marks on the gate cloth',()=>{
+ it('prints a known maker and the Siemens/LG sponsor as their mark, and lettering for the rest',()=>{
+  ;(globalThis as {React?:unknown}).React=(globalThis as {React?:unknown}).React??require('react')
+  const html=renderToStaticMarkup(createElement(KitCloth,{spec:{...BLANK,base:'white',trim:'red',pattern:'solid',maker:'Nike',sponsor:'Siemens'},texture:false}))
+  expect(html).toContain('data-logo="nike"');expect(html).toContain('data-logo="siemens"')
+  const plain=renderToStaticMarkup(createElement(KitCloth,{spec:{...BLANK,base:'white',maker:'Kappa',sponsor:'Carling'},texture:false}))
+  expect(plain).not.toContain('data-logo');expect(plain).toContain('KAPPA');expect(plain).toContain('CARLING')
+ })
+})

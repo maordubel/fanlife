@@ -1,6 +1,7 @@
 'use client'
 import {useId} from 'react'
 import {sponsorLines,SPONSOR_FONT} from '@/lib/clubs/sponsor-type'
+import {fitMark,makerMark,sponsorMark} from '@/lib/clubs/marks'
 import {SLOTS,colourHex,darken,lightCloth,wordmark,type ClothSpec,type CollarId,type PatternId,type SlotKey} from '@/lib/clubs/kit-model'
 
 /**
@@ -73,12 +74,18 @@ function Word({slot,text,ink,halo,size}:{slot:SlotKey;text:string|null;ink:strin
  const b=SLOTS[slot]
  // the sponsor slot takes the documented lettering (weight, case, tracking, line breaks); the maker stays plain capitals
  if(slot==='sponsor'){
+  const sm=sponsorMark(text)
+  if(sm&&['siemens','lg'].includes(text.toLowerCase().trim())){const f=fitMark(sm,b.x+b.w/2,b.y+b.h/2,text.toLowerCase().trim()==='lg'?34:b.w-6,26);return <g data-mark="sponsor" data-logo={text.toLowerCase()} transform={f.transform}><path d={sm.d} fill={halo} fillOpacity="0.5" stroke={halo} strokeOpacity="0.5" strokeWidth={2/f.k} strokeLinejoin="round"/><path d={sm.d} fill={ink}/></g>}
   const ls=sponsorLines(text),n=ls.length,cx=b.x+b.w/2,sz0=n>1?size*0.86:size*1.1
   let y=b.y+(n>1?-1:b.h/2+sz0*0.34)+(n>1?sz0*0.8:0)
   return <g data-mark={slot}>{ls.map((l,i)=>{
    let sz=sz0*l.scale;const est=l.t.length*sz*(l.fam==='cond'?0.42:0.6)*(1+l.track),over=est>b.w
    const yy=y;y+=sz0*l.scale*0.98
    return <text key={i} x={cx} y={yy} textAnchor="middle" fill={ink} stroke={halo} strokeWidth="4" strokeLinejoin="round" paintOrder="stroke" textLength={over?b.w:undefined} lengthAdjust="spacingAndGlyphs" fontStyle={l.italic?'italic':undefined} style={{fontFamily:SPONSOR_FONT[l.fam],fontWeight:l.weight,fontSize:sz,letterSpacing:over?0:l.track*sz}} data-w={Math.round(Math.min(est,b.w))}>{l.t}</text>})}</g>
+ }
+ if(slot==='maker'){
+  const m=makerMark(text)
+  if(m){const f=fitMark(m,b.x+b.w/2,b.y+b.h/2,m.kind==='stroke'?30:26,16);return <g data-mark="maker" data-logo={text.toLowerCase()} transform={f.transform}>{m.kind==='stroke'?<><path d={m.d} fill="none" stroke={halo} strokeOpacity="0.5" strokeWidth={(m.strokeWidth??8)+5} strokeLinejoin="round"/><path d={m.d} fill="none" stroke={ink} strokeWidth={m.strokeWidth} strokeLinejoin="round"/></>:<><path d={m.d} fill={halo} fillOpacity="0.5" stroke={halo} strokeOpacity="0.5" strokeWidth={1.6/f.k} strokeLinejoin="round"/><path d={m.d} fill={ink}/></>}</g>}
  }
  const s=wordmark(text),est=s.length*size*0.66,w=Math.min(est,b.w)
  return <text x={b.x+b.w/2} y={b.y+b.h/2+size*0.36} textAnchor="middle" fill={ink} stroke={halo} strokeWidth="4" strokeLinejoin="round" paintOrder="stroke" textLength={est>b.w?b.w:undefined} lengthAdjust="spacingAndGlyphs" style={{fontFamily:'var(--mag-body)',fontWeight:800,fontSize:size,letterSpacing:est>b.w?0:1}} data-mark={slot} data-w={Math.round(w)}>{s}</text>

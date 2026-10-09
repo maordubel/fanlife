@@ -19,6 +19,15 @@ const SOCK='M0 0H34L36 112Q36 140 54 150Q72 160 66 182Q40 190 12 184Q-4 176 0 15
    lettering is printed in, from content/manual/sponsor-type.json (injected as SPONSOR_TYPE). Falls back to the plain condensed capitals. */
 const FAM={heavy:"'Archivo Black','Arial Black',Impact,sans-serif",cond:"'Bebas Neue','Arial Narrow',Impact,sans-serif",round:"Nunito,'Varela Round','Arial Rounded MT Bold','Trebuchet MS',sans-serif",serif:"Georgia,'Times New Roman',serif"};
 const contrast=(a,b)=>{const L=h=>{const n=parseInt(h.slice(1),16),f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(n>>16&255)+.7152*f(n>>8&255)+.0722*f(n&255)};const x=L(a),y=L(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+
+/* Real marks (content/manual/maker-marks.json, injected as MARKS): the maker's mark on the chest, a sponsor's mark where one exists. A name with no mark is lettered. */
+function markG(m,cx,cy,w,h,fill,halo){
+  const [x0,y0,vw,vh]=m.viewBox.split(' ').map(Number),k=Math.min(w/vw,h/vh),tx=cx-(x0+vw/2)*k,ty=cy-(y0+vh/2)*k;
+  const body=m.kind==='stroke'?`<path d="${m.d}" fill="none" stroke="${fill}" stroke-width="${m.strokeWidth}" stroke-linejoin="round"/>`:`<path d="${m.d}" fill="${fill}"/>`;
+  const back=m.kind==='stroke'?`<path d="${m.d}" fill="none" stroke="${halo}" stroke-opacity=".5" stroke-width="${m.strokeWidth+5}" stroke-linejoin="round"/>`:`<path d="${m.d}" fill="${halo}" fill-opacity=".5" stroke="${halo}" stroke-opacity=".5" stroke-width="${1.6/k}" stroke-linejoin="round"/>`;
+  return `<g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(4)})">${back}${body}</g>`;
+}
+const markOf=(group,name)=>{const M=typeof MARKS!=='undefined'?MARKS:null;return M&&M[group]?M[group][String(name||'').toLowerCase().trim()]||null:null};
 function sponsorSVG(name,base,opt){
   const T=typeof SPONSOR_TYPE!=='undefined'?SPONSOR_TYPE:{default:{},styles:{}},st=T.styles[name]||T.styles[String(name).toLowerCase()]||{},d=T.default||{};
   const light=lum(base)>150,auto=light?'#111':'#fff',halo=light?'#fff':'#000',useBrand=!(opt&&opt.neutral);
@@ -29,7 +38,10 @@ function sponsorSVG(name,base,opt){
     const wc=opt&&opt.patterned&&opt.trim?Math.min(contrast(f.brand||'#000000',base),contrast(f.brand||'#000000',opt.trim)):f.brand?contrast(f.brand,base):0,ink=useBrand&&f.brand&&wc>=3.2?f.brand:auto;
     let sz=sizes[i];const est=tx.length*sz*(f.fam==='cond'?.42:.58)+tx.length*sz*(f.track||0);if(est>W)sz=sz*W/est;
     const yy=y+sz*.8;y+=sizes[i]*(n>1?.98:1);
-    return `<text x="${cx}" y="${n>1?yy:top+30}" text-anchor="middle" font-family="${FAM[f.fam]||FAM.cond}" font-weight="${f.weight||700}" ${f.italic?'font-style="italic" ':''}font-size="${sz.toFixed(1)}" letter-spacing="${((f.track||0)*sz).toFixed(2)}" fill="${ink}" stroke="${halo}" stroke-opacity="${opt&&opt.patterned?.92:.55}" stroke-width="${opt&&opt.patterned?5.2:2.4}" paint-order="stroke" stroke-linejoin="round"${est>W&&n===1?` textLength="${W}" lengthAdjust="spacingAndGlyphs"`:''}>${esc(tx)}</text>`}).join('');
+    const sm=markOf('sponsors',String(l.t||name));if(sm&&(String(l.t||name).toLowerCase()==='siemens'||String(l.t||name).toLowerCase()==='lg')){const mh=n>1?15:22,my=(n>1?yy-mh*.35:top+22),mc=useBrand&&f.brand&&wc>=3.2?f.brand:auto;return markG(sm,cx,my,String(l.t).toLowerCase()==='lg'?mh*1.25:mh*5.2,mh,mc,halo)}
+    const vf=tx.toLowerCase()==='vodafone'?markOf('sponsors','vodafone'):null,gh=sz*.95,tcx=vf?cx+gh*.55:cx;
+    const glyph=vf?markG(vf,tcx-est*.5-gh*.45,(n>1?yy:top+30)-sz*.3,gh,gh,useBrand&&wc>=3.2?'#e60000':auto,halo):'';
+    return glyph+`<text x="${tcx}" y="${n>1?yy:top+30}" text-anchor="middle" font-family="${FAM[f.fam]||FAM.cond}" font-weight="${f.weight||700}" ${f.italic?'font-style="italic" ':''}font-size="${sz.toFixed(1)}" letter-spacing="${((f.track||0)*sz).toFixed(2)}" fill="${ink}" stroke="${halo}" stroke-opacity="${opt&&opt.patterned?.92:.55}" stroke-width="${opt&&opt.patterned?5.2:2.4}" paint-order="stroke" stroke-linejoin="round"${est>W&&n===1?` textLength="${W}" lengthAdjust="spacingAndGlyphs"`:''}>${esc(tx)}</text>`}).join('');
 }
 function shirtG(k,id){
   const b=hex(k,0),t=k.shirt.colours.length>1?hex(k,1):shade(hex(k,0),-.14),m=k.shirt.measured||{},d=k.shirt.design;
@@ -47,7 +59,8 @@ function shirtG(k,id){
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
   const collar=d==='contrasting sleeves'?b:t;
   const sp=k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
-  const mk=k.maker?`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`:'';
+  const mm=k.maker?markOf('makers',k.maker):null;
+  const mk=k.maker?(mm?markG(mm,132,95,mm.kind==='stroke'?30:24,mm.kind==='stroke'?17:15,ink,light?'#fff':'#000'):`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
   return `<defs><clipPath id="${id}c"><path d="${BODY}"/></clipPath>
 <pattern id="${id}p" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5H3M.5 0V3" stroke="#000" stroke-opacity=".5" stroke-width=".5"/></pattern>
 <filter id="${id}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
