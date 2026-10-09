@@ -8,6 +8,7 @@ CLUBS=[
  dict(id='panathinaikos',name='Panathinaikos',accent='#3fbf6e',data='content/manual/kit-archive-panathinaikos.json',man='content/manual/kit-cof-panathinaikos.json'),
  dict(id='st-pauli',name='FC St. Pauli',accent='#d29a64',data='content/manual/kit-archive-st-pauli.json',man='content/manual/kit-cof-st-pauli.json'),
  dict(id='zrinjski-mostar',name='Zrinjski Mostar',accent='#e5484d',data='content/manual/kit-archive-zrinjski-mostar.json',man='content/manual/kit-cof-zrinjski-mostar.json'),
+ dict(id='olympiacos',name='Olympiacos',accent='#e5484d',data='content/manual/kit-archive-olympiacos.json',man='content/manual/kit-cof-olympiacos.json'),
  dict(id='hapoel-petah-tikva',name='Hapoel Petah Tikva',accent='#4c8dff',data='content/manual/kit-archive-hapoel-petah-tikva.json',man='content/manual/kit-cof-hapoel-petah-tikva.json'),
 ]
 tpl=open('scripts/kits/kit-archive.template.html',encoding='utf8').read().replace('/*__RENDERER__*/',open('scripts/kits/kit-render.js',encoding='utf8').read())

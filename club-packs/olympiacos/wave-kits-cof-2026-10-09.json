@@ -1,0 +1,1038 @@
+{
+ "sources": [
+  {
+   "id": "cof-olympiacos-p1",
+   "title": "olympiacos kits, catalogue page 1 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-olympiacos-p2",
+   "title": "olympiacos kits, catalogue page 2 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_2.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-olympiacos-p3",
+   "title": "olympiacos kits, catalogue page 3 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_3.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-olympiacos-p4",
+   "title": "olympiacos kits, catalogue page 4 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_4.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-olympiacos-p5",
+   "title": "olympiacos kits, catalogue page 5 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_5.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  }
+ ],
+ "kits": [
+  {
+   "id": "cof-k-55",
+   "value": {
+    "name": "olympiacos 2020/21 third",
+    "season": "2020/21",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/white"
+    },
+    "sponsor": "Stoiximan",
+    "shorts": {
+     "colour": "navy",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-51",
+   "value": {
+    "name": "olympiacos 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "blue/white"
+    },
+    "sponsor": "Stoiximan",
+    "shorts": {
+     "colour": "blue",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-47",
+   "value": {
+    "name": "olympiacos 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "graphic",
+     "colors": "white/red"
+    },
+    "sponsor": "Stoiximan",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-48",
+   "value": {
+    "name": "olympiacos 2018/19 third",
+    "season": "2018/19",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/white"
+    },
+    "sponsor": "Stoiximan",
+    "shorts": {
+     "colour": "navy",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-45",
+   "value": {
+    "name": "olympiacos 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "Stoiximan",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-41",
+   "value": {
+    "name": "olympiacos 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "grey/red"
+    },
+    "sponsor": "Stoiximan",
+    "shorts": {
+     "colour": "grey",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-42",
+   "value": {
+    "name": "olympiacos 2016/17 third",
+    "season": "2016/17",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "Stoiximan",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "grey"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-39",
+   "value": {
+    "name": "olympiacos 2015/16 third",
+    "season": "2015/16",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "Stoiximan",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-35",
+   "value": {
+    "name": "olympiacos 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "unicef",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-36",
+   "value": {
+    "name": "olympiacos 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/red"
+    },
+    "sponsor": "unicef",
+    "shorts": {
+     "colour": "navy",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-34",
+   "value": {
+    "name": "olympiacos 2014/15 third",
+    "season": "2014/15",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "graphic",
+     "colors": "white/red"
+    },
+    "sponsor": "unicef",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-29",
+   "value": {
+    "name": "olympiacos 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "ΣΤΟΙΧΗΜΑ",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2013-2014. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-32-v2",
+   "value": {
+    "name": "olympiacos 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "unicef",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2013-2014. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-30",
+   "value": {
+    "name": "olympiacos 2013/14 away",
+    "season": "2013/14",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/red"
+    },
+    "sponsor": "ΣΤΟΙΧΗΜΑ",
+    "shorts": {
+     "colour": "navy",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2013-2014. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-33-v2",
+   "value": {
+    "name": "olympiacos 2013/14 away",
+    "season": "2013/14",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/red"
+    },
+    "sponsor": "unicef",
+    "shorts": {
+     "colour": "navy",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2013-2014. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-26",
+   "value": {
+    "name": "olympiacos 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "ΣΤΟΙΧΗΜΑ",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2012-2013. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-27",
+   "value": {
+    "name": "olympiacos 2012/13 away",
+    "season": "2012/13",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "chest band",
+     "colors": "white/red"
+    },
+    "sponsor": "ΣΤΟΙΧΗΜΑ",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2012-2013. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-28",
+   "value": {
+    "name": "olympiacos 2012/13 third",
+    "season": "2012/13",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/red"
+    },
+    "sponsor": "ΣΤΟΙΧΗΜΑ",
+    "shorts": {
+     "colour": "navy",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2012-2013. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-24",
+   "value": {
+    "name": "olympiacos 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "ΣΤΟΙΧΗΜΑ",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-25",
+   "value": {
+    "name": "olympiacos 2011/12 away",
+    "season": "2011/12",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "sash",
+     "colors": "white/red"
+    },
+    "sponsor": "ΣΤΟΙΧΗΜΑ",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-22",
+   "value": {
+    "name": "olympiacos 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-23",
+   "value": {
+    "name": "olympiacos 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "black/red"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "black",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-19",
+   "value": {
+    "name": "olympiacos 2009/10 home",
+    "season": "2009/10",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "citibank",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2009-2010. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-20",
+   "value": {
+    "name": "olympiacos 2009/10 away",
+    "season": "2009/10",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/red"
+    },
+    "sponsor": "citibank",
+    "shorts": {
+     "colour": "black",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2009-2010. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-21",
+   "value": {
+    "name": "olympiacos 2009/10 third",
+    "season": "2009/10",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "grey/red"
+    },
+    "sponsor": "citibank",
+    "shorts": {
+     "colour": "grey",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: third kit 2009-2010. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-08",
+   "value": {
+    "name": "olympiacos 2004/05 away",
+    "season": "2004/05",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "black/red"
+    },
+    "sponsor": "Siemens mobile",
+    "shorts": {
+     "colour": "black",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2004-2005. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-05",
+   "value": {
+    "name": "olympiacos 2003/04 home",
+    "season": "2003/04",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "Siemens mobile",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2003-2004. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-06",
+   "value": {
+    "name": "olympiacos 2003/04 away",
+    "season": "2003/04",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/white"
+    },
+    "sponsor": "Siemens mobile",
+    "shorts": {
+     "colour": "black",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2003-2004. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+  },
+  {
+   "id": "cof-k-03",
+   "value": {
+    "name": "olympiacos 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "Siemens mobile",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-04",
+   "value": {
+    "name": "olympiacos 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "black/red"
+    },
+    "sponsor": "Siemens mobile",
+    "shorts": {
+     "colour": "black",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-01",
+   "value": {
+    "name": "olympiacos 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "Siemens mobile",
+    "shorts": {
+     "colour": "white",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: home kit 2001-2002. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  },
+  {
+   "id": "cof-k-02",
+   "value": {
+    "name": "olympiacos 2001/02 away",
+    "season": "2001/02",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "Siemens mobile",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-olympiacos-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 1,
+   "status": "review",
+   "notes": "Catalogue: away kit 2001-2002. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+  }
+ ]
+}

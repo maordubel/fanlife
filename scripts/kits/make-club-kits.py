@@ -15,7 +15,7 @@ Usage: make-club-kits.py --club ID --rows rows.json --images DIR --reads read.js
 import argparse,collections,datetime,glob,json,os,re,shutil
 from PIL import Image
 PAGE_BASE='https://www.colours-of-football.com/colours03/'
-NAMES={'st-pauli':('FC St. Pauli','germany/st-pauli'),'panathinaikos':('Panathinaikos','greece/panathinaikos'),'zrinjski-mostar':('Zrinjski Mostar','bosnia-and-herzegovina/zrinjski'),'hapoel-petah-tikva':('Hapoel Petah Tikva','israel/hapoel-petah-tikva'),'celtic':('Celtic','scotland/celtic'),'aek-athens':('AEK Athens','greece/aek-athens')}
+NAMES={'st-pauli':('FC St. Pauli','germany/st-pauli'),'panathinaikos':('Panathinaikos','greece/panathinaikos'),'zrinjski-mostar':('Zrinjski Mostar','bosnia-and-herzegovina/zrinjski'),'hapoel-petah-tikva':('Hapoel Petah Tikva','israel/hapoel-petah-tikva'),'celtic':('Celtic','scotland/celtic'),'aek-athens':('AEK Athens','greece/aek-athens'),'olympiacos':('Olympiacos','greece/olympiacos')}
 def classify(c):
     r,g,b=c;mx,mn=max(c),min(c)
     if mx<64:return 'black'

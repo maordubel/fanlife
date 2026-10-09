@@ -1,0 +1,2715 @@
+{
+ "sources": [
+  {
+   "key": "cof",
+   "title": "colours-of-football.com — Olympiacos kit catalogue (© Mikhail Sipovich)",
+   "url": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+   "readOn": "2026-10-09",
+   "kits": 71
+  },
+  {
+   "key": "logo",
+   "title": "colours-of-football.com — Olympiacos club logo (football-logos.cc answered 403 on this run; not circumvented)",
+   "url": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+   "readOn": "2026-10-09",
+   "kits": 0
+  }
+ ],
+ "source": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+ "publisher": "colours-of-football.com (Mikhail Sipovich)",
+ "retrieved": "2026-10-09",
+ "count": 71,
+ "pages": {
+  "olympiakos_1.html": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+  "olympiakos_2.html": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_2.html",
+  "olympiakos_3.html": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_3.html",
+  "olympiakos_4.html": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_4.html",
+  "olympiakos_5.html": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_5.html"
+ },
+ "method": "Season/type from the catalogue captions; design, maker, printed sponsor and trims transcribed by eye from the drawings (readUnsure marks the doubtful ones); colours measured from pixels in fixed regions (shirt, shorts, socks), transparent background excluded.",
+ "records": [
+  {
+   "i": 1,
+   "caption": "home kit 2001-2002",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_1_0102.png",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "black",
+    "trimHex": "#313030"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 2,
+   "caption": "away kit 2001-2002",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_2_0102.png",
+   "season": "2001/02",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#c71941"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 3,
+   "caption": "home kit 2002-2003",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_1_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 5
+    }
+   },
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 4,
+   "caption": "away kit 2002-2003",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_2_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "red",
+    "hex": {
+     "body": "#282828",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "red",
+    "trimHex": "#bf2724"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 5,
+   "caption": "home kit 2003-2004",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_1_0304.png",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 8
+    }
+   },
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 6,
+   "caption": "away kit 2003-2004",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_2_0304.png",
+   "season": "2003/04",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "white",
+    "hex": {
+     "body": "#212d38",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#212d38",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#212d38",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 7,
+   "caption": "home kit 2004-2005",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_1_0405.png",
+   "season": "2004/05",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 8,
+   "caption": "away kit 2004-2005",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_2_0405.png",
+   "season": "2004/05",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "red",
+    "hex": {
+     "body": "#282828",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "red",
+    "trimHex": "#b03129"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "red",
+    "trimHex": "#be2724",
+    "bands": true
+   }
+  },
+  {
+   "i": 9,
+   "caption": "home kit 2005-2006",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_1_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "Siemens",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 10,
+   "caption": "away kit 2005-2006",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_2_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#282828",
+     "trim": "#434345"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "Siemens",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 11,
+   "caption": "third kit 2005-2006",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_3_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "Siemens",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 12,
+   "caption": "home kit 2006-2007",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_1_0607.gif",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "vodafone",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 13,
+   "caption": "away kit 2006-2007",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_2_0607.gif",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "vodafone",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 14,
+   "caption": "home kit 2007-2008",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_1_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 5
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "vodafone",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 15,
+   "caption": "away kit 2007-2008",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_2_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "vodafone",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 16,
+   "caption": "third kit 2007-2008",
+   "page": "olympiakos_1.html",
+   "image": "gre_olympiakos_3_0708.gif",
+   "season": "2007/08",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "cream",
+    "trim": "black",
+    "hex": {
+     "body": "#f2ebdd",
+     "trim": "#231f20"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "vodafone",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#aeaaa4",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#a09786",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 17,
+   "caption": "home kit 2008-2009",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_1_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "vodafone",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 18,
+   "caption": "away kit 2008-2009",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_2_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "red",
+    "hex": {
+     "body": "#231f20",
+     "trim": "#ea1d2a"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "vodafone",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#231f20",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 19,
+   "caption": "home kit 2009-2010",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_1_0910.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "citibank",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 20,
+   "caption": "away kit 2009-2010",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_2_0910.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#3c3d48",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "citibank",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#24252e",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#24252e",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 21,
+   "caption": "third kit 2009-2010",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_3_0910.png",
+   "season": "2009/10",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "grey",
+    "trim": "red",
+    "hex": {
+     "body": "#767b7f",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "citibank",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#767b7f",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#767b7f",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 22,
+   "caption": "home kit 2010-2011",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_1_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1b23"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1b23",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1b23",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 23,
+   "caption": "away kit 2010-2011",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_2_1011.png",
+   "season": "2010/11",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "red",
+    "hex": {
+     "body": "#272727",
+     "trim": "#ed1b23"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": null,
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#272727",
+    "trim": "red",
+    "trimHex": "#ed1b23"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#272727",
+    "trim": "red",
+    "trimHex": "#ed1b23",
+    "bands": true
+   }
+  },
+  {
+   "i": 24,
+   "caption": "home kit 2011-2012",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_1_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 8
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 25,
+   "caption": "away kit 2011-2012",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_2_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 26,
+   "caption": "home kit 2012-2013",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiacos_1_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 27,
+   "caption": "away kit 2012-2013",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiacos_2_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 28,
+   "caption": "third kit 2012-2013",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiacos_3_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#343d60",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#343d60",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#343d60",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 29,
+   "caption": "home kit 2013-2014",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_1_1314.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 30,
+   "caption": "away kit 2013-2014",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_2_1314.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#3a456b",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#3a456b",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#3a456b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 31,
+   "caption": "third kit 2013-2014",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_3_1314.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "ΣΤΟΙΧΗΜΑ",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 32,
+   "caption": "home kit 2013-2014",
+   "page": "olympiakos_2.html",
+   "image": "gre_olympiakos_1_1314_2.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "unicef",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#efefef",
+    "bands": true
+   }
+  },
+  {
+   "i": 33,
+   "caption": "away kit 2013-2014",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiakos_2_1314_2.png",
+   "season": "2013/14",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#3a456b",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "unicef",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#3a456b",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#3a456b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 34,
+   "caption": "third kit 2014-2015",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_3_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "unicef",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24",
+    "bands": true
+   }
+  },
+  {
+   "i": 35,
+   "caption": "home kit 2014-2015",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_1_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "Puma",
+   "sponsor": "unicef",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 36,
+   "caption": "away kit 2014-2015",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_2_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#3a456b",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "unicef",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#3a456b",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#3a456b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 37,
+   "caption": "home kit 2015-2016",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_1_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 2
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#db1a21"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#b21a1f",
+    "bands": true
+   }
+  },
+  {
+   "i": 38,
+   "caption": "away kit 2015-2016",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_2_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "blue",
+    "trim": "red",
+    "hex": {
+     "body": "#184998",
+     "trim": "#ba1f28"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#184998",
+    "trim": "red",
+    "trimHex": "#db1a21"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#184998",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 39,
+   "caption": "third kit 2015-2016",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_3_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#db1a21",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#db1a21",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#db1a21",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 40,
+   "caption": "home kit 2016-2017",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_1_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 4
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "white",
+    "trimHex": "#e31f2b",
+    "bands": true
+   }
+  },
+  {
+   "i": 41,
+   "caption": "away kit 2016-2017",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_2_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "grey",
+    "trim": "red",
+    "hex": {
+     "body": "#546066",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#58626e",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#58626e",
+    "trim": "red",
+    "trimHex": "#aa1c21",
+    "bands": true
+   }
+  },
+  {
+   "i": 42,
+   "caption": "third kit 2016-2017",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_3_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "grey",
+    "trimHex": "#98918f",
+    "bands": true
+   }
+  },
+  {
+   "i": 43,
+   "caption": "home kit 2017-2018",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_1_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "cream",
+    "trimHex": "#eee0cb"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 44,
+   "caption": "away kit 2017-2018",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_2_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "orange",
+    "trim": "navy",
+    "hex": {
+     "body": "#f04e23",
+     "trim": "#35394e"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#35394e",
+    "trim": "orange",
+    "trimHex": "#f04e23"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#35394e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 45,
+   "caption": "third kit 2017-2018",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_3_1718.png",
+   "season": "2017/18",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#c71c27",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#c71c27",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#c71c27",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 46,
+   "caption": "home kit 2018-2019",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_1_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "cream",
+    "trimHex": "#fdd9cd"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "cream",
+    "trimHex": "#e31f2b",
+    "bands": true
+   }
+  },
+  {
+   "i": 47,
+   "caption": "away kit 2018-2019",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_2_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#dc2032"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#dc2032"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 48,
+   "caption": "third kit 2018-2019",
+   "page": "olympiakos_3.html",
+   "image": "gre_olympiacos_3_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "white",
+    "hex": {
+     "body": "#1d355f",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#1d355f",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#1d355f",
+    "trim": "white",
+    "trimHex": "#1d355f",
+    "bands": true
+   }
+  },
+  {
+   "i": 49,
+   "caption": "home kit 2019-2020",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_1_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 3
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 50,
+   "caption": "away kit 2019-2020",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_2_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "grey",
+    "trim": "white",
+    "hex": {
+     "body": "#b8bfc5",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#cfd2d6",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 51,
+   "caption": "third kit 2019-2020",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_3_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "blue",
+    "trim": "white",
+    "hex": {
+     "body": "#264a93",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#264a93",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#264a93",
+    "trim": "white",
+    "trimHex": "#264a93",
+    "bands": true
+   }
+  },
+  {
+   "i": 52,
+   "caption": "home kit 2020-2021",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_1_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 8
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 53,
+   "caption": "home kit 2020-2021",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_1_2021_2.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 8
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 54,
+   "caption": "away kit 2020-2021",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_2_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "skyblue",
+    "trim": "blue",
+    "hex": {
+     "body": "#0092c6",
+     "trim": "#396093"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "skyblue",
+    "hex": "#0092c6",
+    "trim": "orange",
+    "trimHex": "#e67f2b"
+   },
+   "socks": {
+    "colour": "skyblue",
+    "hex": "#0092c6",
+    "trim": "orange",
+    "trimHex": "#0092c6",
+    "bands": true
+   }
+  },
+  {
+   "i": 55,
+   "caption": "third kit 2020-2021",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_3_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "white",
+    "hex": {
+     "body": "#2e3657",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#2e3657",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "navy",
+    "hex": "#2e3657",
+    "trim": "white",
+    "trimHex": "#2e3657",
+    "bands": true
+   }
+  },
+  {
+   "i": 56,
+   "caption": "home kit 2021-2022",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_1_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 8
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 57,
+   "caption": "home kit 2021-2022",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_1_2122_2.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 8
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ef4431"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 58,
+   "caption": "away kit 2021-2022",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_2_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "blue",
+    "trim": "white",
+    "hex": {
+     "body": "#134b9c",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#1a55a6",
+    "trim": "white",
+    "trimHex": "#ececf7"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#1a55a6",
+    "trim": "white",
+    "trimHex": "#1a55a6",
+    "bands": true
+   }
+  },
+  {
+   "i": 59,
+   "caption": "third kit 2021-2022",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_3_2122.png",
+   "season": "2021/22",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "grey",
+    "trim": "white",
+    "hex": {
+     "body": "#b5b4ba",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#b5b4ba",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#8d868b",
+    "trim": "grey",
+    "trimHex": "#8d868b",
+    "bands": true
+   }
+  },
+  {
+   "i": 60,
+   "caption": "home kit 2022-2023",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_1_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e41e2c"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e41e2c",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e41e2c",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 61,
+   "caption": "away kit 2022-2023",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_2_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "blue",
+    "trim": "navy",
+    "hex": {
+     "body": "#394d9a",
+     "trim": "#2c3851"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "navy",
+    "hex": "#2c3851",
+    "trim": "red",
+    "trimHex": "#d84329"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#394d9a",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 62,
+   "caption": "third kit 2022-2023",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_3_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "grey",
+    "trim": "white",
+    "hex": {
+     "body": "#bfbfc3",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#bfbfc3",
+    "trim": "white",
+    "trimHex": "#f5f5f6"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#bfbfc3",
+    "trim": "white",
+    "trimHex": "#bfbfc3",
+    "bands": true
+   }
+  },
+  {
+   "i": 63,
+   "caption": "home kit 2023-2024",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_1_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#df1928"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 10
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#df1928",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#df1928",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 64,
+   "caption": "away kit 2023-2024",
+   "page": "olympiakos_4.html",
+   "image": "gre_olympiacos_2_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "skyblue",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#8bbde0"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "skyblue",
+    "trimHex": "#8bbde0"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 65,
+   "caption": "third kit 2023-2024",
+   "page": "olympiakos_5.html",
+   "image": "gre_olympiacos_3_2324.png",
+   "season": "2023/24",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "grey",
+    "trim": "orange",
+    "hex": {
+     "body": "#666878",
+     "trim": "#ff6600"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#666878",
+    "trim": "orange",
+    "trimHex": "#ff6600"
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#666878",
+    "trim": "orange",
+    "trimHex": "#666878",
+    "bands": true
+   }
+  },
+  {
+   "i": 66,
+   "caption": "home kit 2024-2025",
+   "page": "olympiakos_5.html",
+   "image": "gre_olympiacos_1_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#c81928"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 7
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#c81928",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#c81928",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 67,
+   "caption": "away kit 2024-2025",
+   "page": "olympiakos_5.html",
+   "image": "gre_olympiacos_2_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "pinstripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#d21928"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#d21928"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#d21928",
+    "bands": true
+   }
+  },
+  {
+   "i": 68,
+   "caption": "third kit 2024-2025",
+   "page": "olympiakos_5.html",
+   "image": "gre_olympiacos_3_2425.png",
+   "season": "2024/25",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "blue",
+    "trim": "navy",
+    "hex": {
+     "body": "#0032be",
+     "trim": "#1e2d50"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "blue",
+    "hex": "#0032be",
+    "trim": "navy",
+    "trimHex": "#1e2d50"
+   },
+   "socks": {
+    "colour": "blue",
+    "hex": "#0032be",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 69,
+   "caption": "home kit 2025-2026",
+   "page": "olympiakos_5.html",
+   "image": "gre_olympiacos_1_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#f40711"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 6
+    }
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#f40711",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#f40711",
+    "trim": "white",
+    "trimHex": "#f40711",
+    "bands": true
+   }
+  },
+  {
+   "i": 70,
+   "caption": "away kit 2025-2026",
+   "page": "olympiakos_5.html",
+   "image": "gre_olympiacos_2_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#f40711"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#f40711"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 71,
+   "caption": "third kit 2025-2026",
+   "page": "olympiakos_5.html",
+   "image": "gre_olympiacos_3_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "navy",
+    "trim": "red",
+    "hex": {
+     "body": "#515771",
+     "trim": "#f40711"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "Stoiximan",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "grey",
+    "hex": "#54576d",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "grey",
+    "hex": "#54576d",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  }
+ ]
+}

@@ -45,9 +45,11 @@
    "researchedAt": "2026-10-09",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Catalogue: third kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר הכל\"). Catalogue: third kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
   },
   {
    "id": "cof-k-11",
@@ -76,9 +78,11 @@
    "researchedAt": "2026-10-09",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Catalogue: third kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר הכל\"). Catalogue: third kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
   },
   {
    "id": "cof-k-05",
@@ -107,9 +111,11 @@
    "researchedAt": "2026-10-09",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Catalogue: home kit 2013-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר הכל\"). Catalogue: home kit 2013-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
   },
   {
    "id": "cof-k-03",
@@ -138,9 +144,11 @@
    "researchedAt": "2026-10-09",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Catalogue: home kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר הכל\"). Catalogue: home kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
   },
   {
    "id": "cof-k-04",
@@ -169,9 +177,11 @@
    "researchedAt": "2026-10-09",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Catalogue: away kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher)."
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר הכל\"). Catalogue: away kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
   },
   {
    "id": "cof-k-02",
@@ -200,9 +210,11 @@
    "researchedAt": "2026-10-09",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "confidence": 1,
-   "status": "review",
-   "notes": "Catalogue: away kit 2005-2006. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain."
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר הכל\"). Catalogue: away kit 2005-2006. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
   }
  ]
 }
