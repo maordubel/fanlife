@@ -1,0 +1,3015 @@
+{
+ "sources": [
+  {
+   "id": "cof-aek-p1",
+   "title": "AEK Athens kits, catalogue page 1 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-aek-p2",
+   "title": "AEK Athens kits, catalogue page 2 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/aek/aek_2.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-aek-p3",
+   "title": "AEK Athens kits, catalogue page 3 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/aek/aek_athens_3.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "cof-aek-p4",
+   "title": "AEK Athens kits, catalogue page 4 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/gre/aek/aek_athens_4.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "commons-aek-kit-body",
+   "title": "Category:Football kit body/AEK Athens — Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/Category:Football_kit_body/AEK_Athens",
+   "publisher": "Wikimedia Commons",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  }
+ ],
+ "kits": [
+  {
+   "id": "commons-k-aek2627h",
+   "value": {
+    "name": "AEK Athens 2026/27 home",
+    "season": "2026/27",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek2627h.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek2627a",
+   "value": {
+    "name": "AEK Athens 2026/27 away",
+    "season": "2026/27",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "pinstripes",
+     "colors": "black/grey"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek2627a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek2627t",
+   "value": {
+    "name": "AEK Athens 2026/27 third",
+    "season": "2026/27",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "skyblue/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek2627t.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-54",
+   "value": {
+    "name": "AEK Athens 2025/26 home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p4",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-55-v2",
+   "value": {
+    "name": "AEK Athens 2025/26 home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p4",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. The catalogue lists a second version of this kit (different shorts and socks).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-56",
+   "value": {
+    "name": "AEK Athens 2025/26 away",
+    "season": "2025/26",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "graphic",
+     "colors": "white/skyblue"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p4",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aekfc2526t.png) as third (file-name suffix); the catalogue captions this kit away. The caption is used.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-57",
+   "value": {
+    "name": "AEK Athens 2025/26 third",
+    "season": "2025/26",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "graphic",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc2526a",
+   "value": {
+    "name": "AEK Athens 2025/26 special",
+    "season": "2025/26",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "pinstripes",
+     "colors": "black/yellow"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc2526a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Commons files this drawing as away (file-name suffix) but the catalogue's away kit for 2025/26 is a different shirt, so it is kept as an unconfirmed other kit.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-51",
+   "value": {
+    "name": "AEK Athens 2024/25 home",
+    "season": "2024/25",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p4",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-52",
+   "value": {
+    "name": "AEK Athens 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "white"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-53",
+   "value": {
+    "name": "AEK Athens 2024/25 third",
+    "season": "2024/25",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p4",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2024-2025. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aek2425a.png) as away (file-name suffix); the catalogue captions this kit third. The caption is used.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-48",
+   "value": {
+    "name": "AEK Athens 2023/24 home",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Same season and type as a kit core.json already approved (aekfc.gr, access unknown, held back by the compiler). Catalogue: home kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-49",
+   "value": {
+    "name": "AEK Athens 2023/24 away",
+    "season": "2023/24",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "orange"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "orange",
+     "trim": null
+    },
+    "socks": {
+     "colour": "orange",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-50",
+   "value": {
+    "name": "AEK Athens 2023/24 third",
+    "season": "2023/24",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "black/grey"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p4"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2023-2024. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek2324h-v2",
+   "value": {
+    "name": "AEK Athens 2023/24 special",
+    "season": "2023/24",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "hoops",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek2324h v2.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Commons files this drawing as home (file-name suffix) but the catalogue's home kit for 2023/24 is a different shirt, so it is kept as an unconfirmed other kit.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-45",
+   "value": {
+    "name": "AEK Athens 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "graphic",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p3",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-46",
+   "value": {
+    "name": "AEK Athens 2022/23 away",
+    "season": "2022/23",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-47",
+   "value": {
+    "name": "AEK Athens 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "maroon"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "maroon",
+     "trim": null
+    },
+    "socks": {
+     "colour": "maroon",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-42",
+   "value": {
+    "name": "AEK Athens 2021/22 home",
+    "season": "2021/22",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-43",
+   "value": {
+    "name": "AEK Athens 2021/22 away",
+    "season": "2021/22",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "black/grey"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-44",
+   "value": {
+    "name": "AEK Athens 2021/22 third",
+    "season": "2021/22",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "blue/skyblue"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "blue",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2021-2022. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-39",
+   "value": {
+    "name": "AEK Athens 2020/21 home",
+    "season": "2020/21",
+    "type": "home",
+    "manufacturer": "Capelli Sport",
+    "construction": {
+     "design": "half-and-half",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-40",
+   "value": {
+    "name": "AEK Athens 2020/21 away",
+    "season": "2020/21",
+    "type": "away",
+    "manufacturer": "Capelli Sport",
+    "construction": {
+     "design": "hoops",
+     "colors": "black/grey"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p3",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-41",
+   "value": {
+    "name": "AEK Athens 2020/21 third",
+    "season": "2020/21",
+    "type": "third",
+    "manufacturer": "Capelli Sport",
+    "construction": {
+     "design": "plain",
+     "colors": "cream/grey"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "grey",
+     "trim": null
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-37",
+   "value": {
+    "name": "AEK Athens 2019/20 home",
+    "season": "2019/20",
+    "type": "home",
+    "manufacturer": "Capelli Sport",
+    "construction": {
+     "design": "diagonal",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1920a",
+   "value": {
+    "name": "AEK Athens 2019/20 away",
+    "season": "2019/20",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "graphic",
+     "colors": "black/yellow"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1920a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-38",
+   "value": {
+    "name": "AEK Athens 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "manufacturer": "Capelli Sport",
+    "construction": {
+     "design": "chest band",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-34",
+   "value": {
+    "name": "AEK Athens 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Capelli Sport",
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-35",
+   "value": {
+    "name": "AEK Athens 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "Capelli Sport",
+    "construction": {
+     "design": "plain",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-36",
+   "value": {
+    "name": "AEK Athens 2018–20 third",
+    "season": "2018–20",
+    "type": "third",
+    "manufacturer": "Capelli Sport",
+    "construction": {
+     "design": "plain",
+     "colors": "blue/yellow"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "blue",
+     "trim": null
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2018-2020. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-31",
+   "value": {
+    "name": "AEK Athens 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-32",
+   "value": {
+    "name": "AEK Athens 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "grey/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-33",
+   "value": {
+    "name": "AEK Athens 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "black/grey"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p3"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2017-2018. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1718c",
+   "value": {
+    "name": "AEK Athens 2017/18 special",
+    "season": "2017/18",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "graphic",
+     "colors": "black/grey"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1718c.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1718f",
+   "value": {
+    "name": "AEK Athens 2017/18 special",
+    "season": "2017/18",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "white/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1718f.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-28",
+   "value": {
+    "name": "AEK Athens 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "pinstripes",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Same season and type as a kit core.json already approved (aekfc.gr, access unknown, held back by the compiler). Catalogue: home kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-29",
+   "value": {
+    "name": "AEK Athens 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "pink/white"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-30",
+   "value": {
+    "name": "AEK Athens 2016/17 third",
+    "season": "2016/17",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Pame Stoixima",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1516",
+   "value": {
+    "name": "AEK Athens 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1516.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1516a",
+   "value": {
+    "name": "AEK Athens 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "sash",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1516a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1516c",
+   "value": {
+    "name": "AEK Athens 2015/16 special",
+    "season": "2015/16",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "maroon/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1516C.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc15f",
+   "value": {
+    "name": "AEK Athens 2015 special",
+    "season": "2015",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "sash",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc15f.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (aekfc15f) and is ambiguous.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc1415h",
+   "value": {
+    "name": "AEK Athens 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc1415h.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1314h",
+   "value": {
+    "name": "AEK Athens 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "sash",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1314h.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1314a",
+   "value": {
+    "name": "AEK Athens 2013/14 away",
+    "season": "2013/14",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "sash",
+     "colors": "black/yellow"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1314a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1213h",
+   "value": {
+    "name": "AEK Athens 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "chest band",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1213h.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1213a",
+   "value": {
+    "name": "AEK Athens 2012/13 away",
+    "season": "2012/13",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "sash",
+     "colors": "black/yellow"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1213a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1213t",
+   "value": {
+    "name": "AEK Athens 2012/13 third",
+    "season": "2012/13",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "white/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1213t.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-26",
+   "value": {
+    "name": "AEK Athens 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Kino",
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-27",
+   "value": {
+    "name": "AEK Athens 2011/12 away",
+    "season": "2011/12",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "black/yellow"
+    },
+    "sponsor": "Kino",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1112t",
+   "value": {
+    "name": "AEK Athens 2011/12 third",
+    "season": "2011/12",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "sash",
+     "colors": "white/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1112t.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-23",
+   "value": {
+    "name": "AEK Athens 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "stripes",
+     "colors": "black/yellow"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-24",
+   "value": {
+    "name": "AEK Athens 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-25",
+   "value": {
+    "name": "AEK Athens 2010/11 third",
+    "season": "2010/11",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "blue/orange"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "skyblue",
+     "trim": "orange"
+    },
+    "socks": {
+     "colour": "skyblue",
+     "trim": "orange"
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2010-2011. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1011a",
+   "value": {
+    "name": "AEK Athens 2010/11 special",
+    "season": "2010/11",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "pinstripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek1011a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Commons files this drawing as away (file-name suffix) but the catalogue's away kit for 2010/11 is a different shirt, so it is kept as an unconfirmed other kit.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-20",
+   "value": {
+    "name": "AEK Athens 2009/10 home",
+    "season": "2009/10",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "yellow",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p2"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2009-2010. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-21",
+   "value": {
+    "name": "AEK Athens 2009/10 away",
+    "season": "2009/10",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "navy/yellow"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2009-2010. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-22",
+   "value": {
+    "name": "AEK Athens 2009/10 third",
+    "season": "2009/10",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "grey/yellow"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "grey",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "grey",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2009-2010. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek0910h",
+   "value": {
+    "name": "AEK Athens 2009/10 special",
+    "season": "2009/10",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "pinstripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek0910h.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Commons files this drawing as home (file-name suffix) but the catalogue's home kit for 2009/10 is a different shirt, so it is kept as an unconfirmed other kit.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-17",
+   "value": {
+    "name": "AEK Athens 2008/09 home",
+    "season": "2008/09",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "black/yellow"
+    },
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2008-2009. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aek0809a.png) as away (file-name suffix); the catalogue captions this kit home. The caption is used.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-18",
+   "value": {
+    "name": "AEK Athens 2008/09 away",
+    "season": "2008/09",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2008-2009. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aek0809h.png) as home (file-name suffix); the catalogue captions this kit away. The caption is used.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-19",
+   "value": {
+    "name": "AEK Athens 2008/09 third",
+    "season": "2008/09",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "maroon/cream"
+    },
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "maroon",
+     "trim": "cream"
+    },
+    "socks": {
+     "colour": "maroon",
+     "trim": "cream"
+    }
+   },
+   "sources": [
+    "cof-aek-p2",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2008-2009. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-14",
+   "value": {
+    "name": "AEK Athens 2007/08 home",
+    "season": "2007/08",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2007-2008. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-15",
+   "value": {
+    "name": "AEK Athens 2007/08 away",
+    "season": "2007/08",
+    "type": "away",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "black/yellow"
+    },
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2007-2008. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-16",
+   "value": {
+    "name": "AEK Athens 2007/08 third",
+    "season": "2007/08",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "white/black"
+    },
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2007-2008. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-12",
+   "value": {
+    "name": "AEK Athens 2006/07 home",
+    "season": "2006/07",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "yellow/black"
+    },
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2006-2007. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-13",
+   "value": {
+    "name": "AEK Athens 2006/07 away",
+    "season": "2006/07",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "black/yellow"
+    },
+    "sponsor": "LG",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2006-2007. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aek0607b.png) as special (file-name suffix); the catalogue captions this kit away. The caption is used.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek0607t",
+   "value": {
+    "name": "AEK Athens 2006/07 third",
+    "season": "2006/07",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "skyblue/white"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek0607t.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-07",
+   "value": {
+    "name": "AEK Athens 2005/06 home",
+    "season": "2005/06",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2005-2006. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons drawing Kit body aekfc05h.png is a single-year file (2005) matched to this season by colour and design.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-10",
+   "value": {
+    "name": "AEK Athens 2005/06 home (European)",
+    "season": "2005/06",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "black/yellow"
+    },
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home euro kit 2005-06. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-08",
+   "value": {
+    "name": "AEK Athens 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "black/yellow"
+    },
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": "yellow"
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2005-2006. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons drawing Kit body aekfc05a.png is a single-year file (2005) matched to this season by colour and design.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-11",
+   "value": {
+    "name": "AEK Athens 2005/06 away (European)",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "yellow/black"
+    },
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "yellow",
+     "trim": "black"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away euro kit 2005-06. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-09",
+   "value": {
+    "name": "AEK Athens 2005/06 third",
+    "season": "2005/06",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/skyblue"
+    },
+    "sponsor": "TIM",
+    "shorts": {
+     "colour": "white",
+     "trim": "grey"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: third kit 2005-2006. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons drawing Kit body aekfc05t.png is a single-year file (2005) matched to this season by colour and design.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek0506",
+   "value": {
+    "name": "AEK Athens 2005/06 special",
+    "season": "2005/06",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "grey/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek0506.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Commons files this drawing as third (file-name suffix) but the catalogue's third kit for 2005/06 is a different shirt, so it is kept as an unconfirmed other kit.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-05",
+   "value": {
+    "name": "AEK Athens 2004/05 home",
+    "season": "2004/05",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2004-2005. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aek04a.png) as away (file-name suffix); the catalogue captions this kit home. The caption is used. Commons drawing Kit body aek04.png is a single-year file (2004) matched to this season by colour and design. Commons drawing Kit body aekfc05h.png is a single-year file (2005) matched to this season by colour and design.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-06",
+   "value": {
+    "name": "AEK Athens 2004/05 away",
+    "season": "2004/05",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "skyblue/white"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p1"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2004-2005. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher).",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc04t",
+   "value": {
+    "name": "AEK Athens 2004 third",
+    "season": "2004",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "white/yellow"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc04t.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (aekfc04t) and is ambiguous.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-03",
+   "value": {
+    "name": "AEK Athens 2003/04 home",
+    "season": "2003/04",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Piraeus Bank",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2003-2004. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aek0204a.png) as away (file-name suffix); the catalogue captions this kit home. The caption is used. Commons drawing Kit body aek0204.png is a range file (2002–04) matched to this season by colour and design.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-04",
+   "value": {
+    "name": "AEK Athens 2003/04 away",
+    "season": "2003/04",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "sash",
+     "colors": "skyblue/white"
+    },
+    "sponsor": "Piraeus Bank",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2003-2004. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aekfc0304t.png) as third (file-name suffix); the catalogue captions this kit away. The caption is used.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-01",
+   "value": {
+    "name": "AEK Athens 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": "Alpha Digital",
+    "shorts": {
+     "colour": "black",
+     "trim": "yellow"
+    },
+    "socks": {
+     "colour": "yellow",
+     "trim": "black"
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: home kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aek0204a.png) as away (file-name suffix); the catalogue captions this kit home. The caption is used. Commons drawing Kit body aek0204.png is a range file (2002–04) matched to this season by colour and design.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-02",
+   "value": {
+    "name": "AEK Athens 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "gradient",
+     "colors": "skyblue/white"
+    },
+    "sponsor": "Alpha Digital",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "skyblue",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-aek-p1",
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Catalogue: away kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; maker and the printed sponsor are read from the drawing (single publisher). Cross-checked: a Commons drawing of the same colours and design exists. Commons files the matching drawing (Kit body aekfc0203t.png) as third (file-name suffix); the catalogue captions this kit away. The caption is used.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc0203a",
+   "value": {
+    "name": "AEK Athens 2002/03 special",
+    "season": "2002/03",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "maroon/yellow"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc0203a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Commons files this drawing as away (file-name suffix) but the catalogue's away kit for 2002/03 is a different shirt, so it is kept as an unconfirmed other kit.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek0102",
+   "value": {
+    "name": "AEK Athens 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek0102.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc0102t",
+   "value": {
+    "name": "AEK Athens 2001/02 third",
+    "season": "2001/02",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "skyblue/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc0102t.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek0001",
+   "value": {
+    "name": "AEK Athens 2000/01 home",
+    "season": "2000/01",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek0001.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek0002",
+   "value": {
+    "name": "AEK Athens 2000–02 home",
+    "season": "2000–02",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek0002.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (aek0002) and is a range.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek0002b",
+   "value": {
+    "name": "AEK Athens 2000–02 away",
+    "season": "2000–02",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "black/yellow"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek0002B.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (aek0002B) and is a range.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc0001a",
+   "value": {
+    "name": "AEK Athens 2000/01 away",
+    "season": "2000/01",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "black/yellow"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc0001a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc0001t",
+   "value": {
+    "name": "AEK Athens 2000/01 third",
+    "season": "2000/01",
+    "type": "third",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "skyblue/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc0001t.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek9900",
+   "value": {
+    "name": "AEK Athens 1999/00 home",
+    "season": "1999/00",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek9900.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek9900a",
+   "value": {
+    "name": "AEK Athens 1999/00 away",
+    "season": "1999/00",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "grey/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek9900a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek9496h",
+   "value": {
+    "name": "AEK Athens 1994–96 home",
+    "season": "1994–96",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": "graphic",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek9496h.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (aek9496h) and is a range.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek9395a",
+   "value": {
+    "name": "AEK Athens 1993–95 away",
+    "season": "1993–95",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": "graphic",
+     "colors": "grey/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek9395a.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (aek9395a) and is a range.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek9192",
+   "value": {
+    "name": "AEK Athens 1991/92 special",
+    "season": "1991/92",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "graphic",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek9192.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek8889",
+   "value": {
+    "name": "AEK Athens 1988/89 special",
+    "season": "1988/89",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "graphic",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aek8889.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aekfc7981",
+   "value": {
+    "name": "AEK Athens 1979–81 special",
+    "season": "1979–81",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "plain",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body aekfc7981.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (aekfc7981) and is a range.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1931",
+   "value": {
+    "name": "AEK Athens 1931 special",
+    "season": "1931",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "hoops",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body AEK1931.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (AEK1931) and is ambiguous.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1925",
+   "value": {
+    "name": "AEK Athens 1925 special",
+    "season": "1925",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body AEK1925.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (AEK1925) and is ambiguous.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "commons-k-aek1924",
+   "value": {
+    "name": "AEK Athens 1924 special",
+    "season": "1924",
+    "type": "special",
+    "manufacturer": null,
+    "construction": {
+     "design": "stripes",
+     "colors": "yellow/black"
+    },
+    "sponsor": null
+   },
+   "sources": [
+    "commons-aek-kit-body"
+   ],
+   "researchedAt": "2026-10-09",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-09 (\"מאשר\"). Drawing only: Kit body AEK1924.png (Commons). Colours and design are what the drawing shows; maker and sponsor are not stated and stay empty. Type is the file-name suffix convention (h/a/t), not a club statement. Season label read from the file name (AEK1924) and is ambiguous.",
+   "approvedAt": "2026-10-09",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ]
+}

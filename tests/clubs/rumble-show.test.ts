@@ -94,12 +94,17 @@ describe('rumble kits — every club, never a rival colour',()=>{
   expect(allowedColours(['red','green','white'],h=>forbiddenColor(pao,h))).toEqual(['green','white'])
   expect(allowedColours(['red','cream','black'],h=>forbiddenColor(hta,h))).toEqual(['red','cream','black'])
  })
- it('never paints a colour the magazine cannot (yellow and gold included)',()=>{
-  expect(allowedColours(['yellow','gold','orange','red'],()=>false)).toEqual(['red'])
-  expect(Object.keys(SWATCH)).not.toContain('yellow')
+ it('paints only colours it has a swatch for (gold and brown still have none); yellow is paintable since the owner allowed it for AEK, 9.10.2026',()=>{
+  expect(allowedColours(['yellow','gold','orange','red','brown'],()=>false)).toEqual(['yellow','orange','red'])
+  expect(Object.keys(SWATCH)).toContain('yellow')
+ })
+ it('yellow stays banned wherever a club policy forbids it: Hapoel Tel Aviv drops it, AEK keeps it',()=>{
+  const hta=clubTheme({id:'hapoel-tel-aviv',primary:'#B02D10'}),aek=clubTheme({id:'aek-athens',primary:'#F3C613'})
+  expect(allowedColours(['yellow','red'],h=>forbiddenColor(hta,h))).toEqual(['red'])
+  expect(allowedColours(['yellow','black'],h=>forbiddenColor(aek,h))).toEqual(['yellow','black'])
  })
  it('dresses each side in the documented kit nearest the man\'s years, home for yours and away for theirs',()=>{
-  const w=rumbleWardrobe([kit('h1','1995/96','home',['red','white']),kit('h2','2015/16','home',['red','white']),kit('a1','2016/17','away',['navy','red']),kit('x','2010/11','home',['yellow'])],()=>false)
+  const w=rumbleWardrobe([kit('h1','1995/96','home',['red','white']),kit('h2','2015/16','home',['red','white']),kit('a1','2016/17','away',['navy','red']),kit('x','2010/11','home',['gold'])],()=>false)
   expect(w.home.map(k=>k.id)).toEqual(['h1','h2'])
   expect(kitFor({fromYear:1993,toYear:1998},'us',w)).toEqual({source:'archive',kit:w.home[0]})
   expect(kitFor({fromYear:2012,toYear:2020},'us',w)).toEqual({source:'archive',kit:w.home[1]})

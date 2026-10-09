@@ -10,7 +10,9 @@ import {GATE_THRESHOLDS as T} from './thresholds'
  * a gate opens when the data supports it, and says exactly what is missing when it does not.
  */
 export type LineupMatch={id:string;name:string;on:string|null;competition:string;score:string|null;starters:string[];bench:string[];decoys:string[];sources:string[]}
-export type KitView={id:string;season:string;type:string;maker:string|null;design:string|null;sponsor?:string|null;colours:string[];sources:string[]}
+/** the rest of the kit, when a source documents it: shorts and socks as a colour name and an optional second colour */
+export type KitPart={colour:string;trim:string|null}
+export type KitView={id:string;season:string;type:string;maker:string|null;design:string|null;sponsor?:string|null;colours:string[];shorts?:KitPart|null;socks?:KitPart|null;sources:string[]}
 const str=(v:unknown)=>typeof v==='string'&&v.trim()?v.trim():null
 const strs=(v:unknown)=>Array.isArray(v)?v.filter((x):x is string=>typeof x==='string'&&!!x.trim()).map(x=>x.trim()):[]
 const obj=(v:unknown):Record<string,unknown>=>v&&typeof v==='object'&&!Array.isArray(v)?v as Record<string,unknown>:{}
@@ -36,7 +38,8 @@ export function kitViews(data:ClubData):KitView[] {
   const v=obj(f.value),c=obj(v.construction),season=str(v.season)
   if(!season)return []
   const colours=(str(c.colors)||str(v.colors)||'').split(/[\/,]/).map(x=>x.trim().toLowerCase()).filter(Boolean)
-  return [{id:f.id,season,type:str(v.type)||'home',maker:str(v.manufacturer),design:str(c.design)||str(v.design),sponsor:str(v.sponsor),colours,sources:f.sources}]
+  const part=(x:unknown):KitPart|null=>{const o=obj(x),colour=str(o.colour)?.toLowerCase();return colour?{colour,trim:str(o.trim)?.toLowerCase()??null}:null}
+  return [{id:f.id,season,type:str(v.type)||'home',maker:str(v.manufacturer),design:str(c.design)||str(v.design),sponsor:str(v.sponsor),colours,shorts:part(v.shorts),socks:part(v.socks),sources:f.sources}]
  })
 }
 export function rivalsOf(data:ClubData){return (data.rivals||[]).filter(r=>r.status==='approved'&&r.confidence>=2)}

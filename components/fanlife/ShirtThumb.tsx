@@ -4,7 +4,7 @@ import { KitPlate } from '@/components/clubs/games/KitPlate'
 import type { CollectorShirt } from '@/lib/collector/types'
 import { shirtDateText } from '@/lib/fanlife/collector/cards'
 
-type Drawn = { kit?: { id: string; design: string | null; colours: string[]; season: string } | null; clubName?: string }
+type Drawn = { kit?: { id: string; design: string | null; colours: string[]; season: string; shorts?: { colour: string; trim: string | null } | null; socks?: { colour: string; trim: string | null } | null } | null; clubName?: string }
 
 /**
  * A shirt in FAN LIFE's closet, market and auction: the archive's photograph where the club has
