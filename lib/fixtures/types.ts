@@ -3,6 +3,8 @@ export type FixtureTeam = {
   clubId: string
   /** what the provider is searched for; the answer must still match `names` exactly */
   search: string
+  /** further search terms, tried in order when `search` does not identify the club exactly (never fuzzy: the answer must still match `names`) */
+  searchAlso?: readonly string[]
   /** every normalised spelling the provider may use for this club (rule 7: aliases, never fuzzy) */
   names: readonly string[]
   /** normalised provider country names that identify the right club of that name */
