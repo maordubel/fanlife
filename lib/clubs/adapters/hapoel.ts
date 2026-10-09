@@ -10,7 +10,7 @@ import {pickablePlayers} from '@/lib/archive/player-master'
 import {allQuestions,poolValues} from '@/lib/game/question-master'
 import {memoryCandidates} from '@/lib/game/memory'
 import {BANK} from '@/lib/game/blind-cow/bank'
-import {sourceAdder,hapoelMatches,hapoelKits,hapoelGoals,hapoelRivals} from './hapoel-wave-c'
+import {sourceAdder,hapoelMatches,hapoelKits,hapoelGoals,hapoelRivals} from '../feeds/worker-masters'
 let cached:ClubData|undefined
 /** Finer evidence the Player Master states: a centre-back term in the club's own fine-position list, and the club's foreign-slot record (not a passport). */
 function playerDetail(p:{positions:{fine?:{terms:string[]}};foreignSlot:{status:'israeli'|'foreign'|'unknown'}}){
@@ -40,5 +40,5 @@ export function getHapoelData():ClubData {
  const add=sourceAdder(sources),matches=hapoelMatches(add),kits=hapoelKits(add),goals=hapoelGoals(add),rivals=hapoelRivals(add)
  const readiness=timelineReadiness(timeline.length)
  const theme=clubTheme(club)
- return cached={schemaVersion:1,version:createHash('sha256').update(JSON.stringify({timeline,theme,players,trivia,memory,mysteries,matches,kits,goals,rivals})).digest('hex').slice(0,16),identity:{id:club.id,name:club.name,city:club.city,country:club.country,sport:'football'},locales:{ui:'en',content:'he',supported:['he','en'],direction:'ltr'},theme,...missingSections,players,matches,kits,goals,rivals,trivia,memory,mysteries,archive:[],timeline,gates:{timeline:readiness,...gates},readiness,life:{state:'legacy',reason:'Original hand-authored Hapoel LIFE — the full The Worker game, played as it was written.',href:'/life'},sources:[...sources.values()]}
+ return cached={schemaVersion:1,version:createHash('sha256').update(JSON.stringify({timeline,theme,players,trivia,memory,mysteries,matches,kits,goals,rivals})).digest('hex').slice(0,16),identity:{id:club.id,name:club.name,city:club.city,country:club.country,sport:'football'},locales:{ui:'en',content:'he',supported:['he','en'],direction:'ltr'},theme,...missingSections,players,matches,kits,goals,rivals,trivia,memory,mysteries,archive:[],timeline,gates:{timeline:readiness,...gates},readiness,life:{state:'unavailable',reason:'LIFE is composed by the universal engine from the club pack, the same as every club. The original hand-authored game lives in The Worker.'},sources:[...sources.values()]}
 }
