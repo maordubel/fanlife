@@ -52,10 +52,11 @@ export function invalidateClub(id:string){cache.delete(id)}
 export async function engineClubIds():Promise<string[]>{const desk=(await deskPackIds().catch(()=>[])).filter(id=>REGISTRY.some(c=>c.id===id)&&!CORE_CLUB_IDS.includes(id));return [...CORE_CLUB_IDS,...desk]}
 export const hasStaticPack=(id:string)=>Object.hasOwn(providers,id)
 /** Host is authority. Neutral-portal path selection is available only in evaluation. */
-export function resolveClubId(host:string|null,pathId?:string,preview=false):string|null {
+export function resolveClubId(host:string|null,pathId?:string,_preview=false):string|null {
  const tenant=clubFromHost(host)
  if(tenant)return !pathId||pathId===tenant?tenant:null
  const h=host?.toLowerCase().split(':')[0]||''
  if((h.endsWith('.'+PORTAL_HOST_ROOT)&&h!=='www.'+PORTAL_HOST_ROOT)||(h.endsWith('.localhost')&&h!=='www.localhost'))return null
- return preview&&pathId&&REGISTRY.some(c=>c.id===pathId)?pathId:null
+ /* the hub links to /clubs/<id>: the path resolves in the real product too (it 404'd every club once evaluation went off, 9.10.2026); gates are still gated by gateAccess */
+ return pathId&&REGISTRY.some(c=>c.id===pathId)?pathId:null
 }
