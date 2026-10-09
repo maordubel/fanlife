@@ -298,7 +298,7 @@ export function HelpScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>>
   return (
     <div className="mt-stack" data-hub="help">
       <p><Link href="/market?view=circles" className="min-h-tap inline-flex items-center font-body text-step--1 font-extrabold text-sign underline underline-offset-4">← {h('hub.help.back')}</Link></p>
-      <Kicker>{h('hub.help.title')}</Kicker>
+      <h1 className="font-display text-step-2 leading-tight text-ink">{h('hub.help.title')}</h1>
       <p className="mt-1 max-w-prose font-body text-step--1 leading-relaxed text-ink">{h('hub.help.lede')}</p>
       <div className="mt-3">
         {signedIn ? <button type="button" onClick={() => setAsking(true)} className={buttonPrimary}>{h('hub.help.ask')}</button> : <MarketSignIn next="/market/help" />}

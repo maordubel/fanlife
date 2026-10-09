@@ -1487,7 +1487,8 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .fl-mk-aside > section > div:first-of-type > span { width: 72px; border: 1px solid rgb(20 18 16 / .3); background: var(--mag-card); }
 .fl-mk-aside > section > div + div { border: 0; padding: 0; }
 .fl-mk-aside [data-deal-rail] { border: 0; background: transparent; padding: 4px 0; border-block: 1px solid rgb(20 18 16 / .3); }
-.fl-mk-aside [data-deal-rail] > p { display: none; }
+.fl-mk-aside [data-deal-rail]:has(ol) > p { display: none; }
+.fl-mk-ref-tag { position: absolute; inset-block-end: 6px; inset-inline-start: 6px; padding: 1px 6px; background: var(--mag-paper); border: 1.5px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 10px; letter-spacing: .5px; text-transform: uppercase; }
 .fl-mk-aside [data-deal-rail] ol { position: relative; margin-top: 10px; }
 .fl-mk-aside [data-deal-rail] ol::before { content: ''; position: absolute; inset-inline: 12%; inset-block-start: 7px; height: 1px; background: var(--mag-ink); }
 .fl-mk-aside [data-deal-rail] li > span[aria-hidden] { position: relative; width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--mag-ink) !important; background: var(--mag-paper) !important; }

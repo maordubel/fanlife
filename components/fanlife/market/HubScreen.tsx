@@ -77,6 +77,8 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
 
   const query = useMemo(() => toQuery(filters, shirts), [filters, shirts])
   const queryKey = JSON.stringify(query)
+  const queryRef = useRef(queryKey)
+  queryRef.current = queryKey
 
   // ---- the market, searched on the server
   useEffect(() => {
@@ -103,14 +105,15 @@ export function HubScreen({ shirts }: { shirts: Readonly<Record<string, Shirt>> 
   const moreMarket = useCallback(() => {
     if (market.state !== 'ready' || !market.next || market.more) return
     setMarket({ ...market, more: true })
+    const asked = queryKey
     void marketSearch(query, market.next).then((out) => {
-      setMarket((now) =>
-        now.state !== 'ready' || !out.ok
-          ? now
-          : { state: 'ready', rows: [...now.rows, ...out.items.filter((i) => !now.rows.some((h) => h.id === i.id))], next: out.next },
-      )
+      setMarket((now) => {
+        if (now.state !== 'ready' || asked !== queryRef.current) return now
+        if (!out.ok) return { ...now, more: false }
+        return { state: 'ready', rows: [...now.rows, ...out.items.filter((i) => !now.rows.some((h) => h.id === i.id))], next: out.next }
+      })
     })
-  }, [market, query])
+  }, [market, query, queryKey])
 
   // ---- the wanted board
   const wantedSlugs = useMemo(() => slugsFor(filters, shirts), [filters, shirts])

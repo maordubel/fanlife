@@ -67,13 +67,13 @@ export function HubListings({
         const visible = focused ? copies : []
         const terms = copyTerms(first)
         const why = reasonsFor(first, wants)[0]
-        const travel = first.delivery === 'local' ? h('hub.card.meet') : h('hub.card.ships')
+        const travel = first.delivery === 'local' ? h('hub.card.meet') : first.delivery === 'ship' ? h('hub.card.ships') : null
         return (
           <li key={shirt.slug} className="min-w-0" data-market-shirt={shirt.slug}>
             <article className="fl-mk-card">
               <Link href={itemHref(first.id)} aria-label={t('market.copy.aria', { shirt: shirtName(shirt) })} className="fl-mk-card-link" data-market-copy="">
                 <span className="fl-mk-card-pic">
-                  {first.photos[0] ? <UserPhoto path={first.photos[0]} /> : <ArchivePhoto shirt={shirt} />}
+                  {first.photos[0] ? <UserPhoto path={first.photos[0]} /> : <><ArchivePhoto shirt={shirt} /><span className="fl-mk-ref-tag">{h('hub.card.archive')}</span></>}
                   {first.forTrade ? <span className="fl-mk-swap-tag">{h('hub.card.swap')}</span> : null}
                 </span>
                 <span className="fl-mk-card-name">{(shirt as CollectorShirt & { clubName?: string }).clubName ?? shirtName(shirt)}</span>
@@ -86,7 +86,7 @@ export function HubListings({
                     {[first.size ? sizeLabel(first.size) : null, first.condition ? conditionLabel(first.condition) : null].filter(Boolean).join(' · ')}
                   </small>
                 </span>
-                <span className="fl-mk-card-where">● {travel}</span>
+                {travel ? <span className="fl-mk-card-where">● {travel}</span> : null}
                 {why ? <span className="fl-mk-why">{h(REASON[why]!)}</span> : null}
               </Link>
               {copies.length > 1 && !focused ? (
