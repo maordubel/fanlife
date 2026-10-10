@@ -85,7 +85,10 @@ async function applyV2(){
   const tenure=(pid:string)=>{const p=by.get(pid);return p&&p.fromYear!==null&&p.toYear!==null?Math.max(0,p.toYear-p.fromYear):0}
   const keep=entries.filter(([,e])=>e.priceM===5);if(keep.length>q.counts[5])throw new Error(id+': more €5M men than the ladder allows')
   for(const [pid] of keep)sel.set(pid,5)
-  const rest=entries.filter(([pid])=>!sel.has(pid)).sort((a,b)=>b[1].priceM-a[1].priceM||(by.get(b[0])?.rating??50)-(by.get(a[0])?.rating??50)||tenure(b[0])-tenure(a[0])||a[0].localeCompare(b[0]))
+  // a price must MEAN strength or the game is a lottery: the club's hidden rating leads, and the old (editorial) rung adds two rating points per step, so a man the
+  // owner's file or the fans rate highly keeps an edge without a name alone buying a rung
+  const key=(pid:string,e:{priceM:number})=>(by.get(pid)?.rating??55)+2*(e.priceM-1)
+  const rest=entries.filter(([pid])=>!sel.has(pid)).sort((a,b)=>key(b[0],b[1])-key(a[0],a[1])||tenure(b[0])-tenure(a[0])||a[0].localeCompare(b[0]))
   let at=0;for(const p of [5,4,3,2,1] as const){const take=q.counts[p]-(p===5?keep.length:0);for(let i=0;i<take;i++)sel.set(rest[at++]![0],p)}
   if(at!==rest.length)throw new Error(id+': incomplete')
   let moved=0;for(const [pid,e] of entries){const pr=sel.get(pid)!;if(pr!==e.priceM){moved++;cur.players[pid]={...e,priceM:pr,priceTier:TIER[pr],assignment:'owner-pinned' as const,rationale:`economy v2 (approved 2026-10-10): was €${e.priceM}M. ${e.rationale}`.slice(0,300),reviewedAt:today}}else cur.players[pid]={...e,priceTier:TIER[pr]}}

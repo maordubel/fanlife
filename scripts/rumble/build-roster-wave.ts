@@ -46,7 +46,15 @@ async function main(){
     const before=players.length
     mk(name,t!==name?[t]:[],[],null,null,'src-wp-roster-'+id,`Listed in the club's Wikipedia player category (${j.fetchedAt}). One source, unreviewed: no years or position taken from it.`)
     if(players.length>before)nWp++}}
+  // 3. what the man's own Wikipedia infobox says about HIS time at this club (scripts/rumble/enrich-wave-from-wikipedia.mjs): years, caps, goals, position family
+  const ib=`research-data/wp-infobox/${id}.json`;let nFacts=0
+  if(existsSync(ib)){const facts=JSON.parse(readFileSync(ib,'utf8')) as Record<string,{from?:number|null;to?:number|null;caps?:number;goals?:number;pos?:string|null;title?:string;rev?:number}>
+   for(const p of players){const f=facts[p.id];if(!f||f.from===undefined)continue
+    if(f.from!==null&&f.from>1850){p.value.fromYear=f.from;p.value.toYear=f.to??null}
+    if(f.pos)p.value.positions=[f.pos]
+    if(f.caps||f.goals)p.value.career={apps:f.caps||null,goals:f.goals||null,basis:'Wikipedia infobox: league caps and goals at this club'}
+    p.notes+=` Years${f.pos?', position':''}${f.caps||f.goals?' and league caps/goals':''} from the man's own Wikipedia infobox (revision ${f.rev}), for this club only.`;nFacts++}}
   writeFileSync(`club-packs/${id}/wave-roster-2026-10-10.json`,JSON.stringify({sources,players},null,0)+'\n')
-  console.log(id,'archive',ids.size,'+owner file',nCsv,'+wikipedia',nWp,'skipped',JSON.stringify(skipped))}
+  console.log(id,'archive',ids.size,'+owner file',nCsv,'+wikipedia',nWp,'with infobox facts',nFacts,'skipped',JSON.stringify(skipped))}
 }
 main()
