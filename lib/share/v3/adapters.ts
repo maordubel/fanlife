@@ -82,6 +82,10 @@ export function goalShare(clubId:string,r:{seed:number;points:number;max:number;
 export function rumbleShare(clubId:string,x:{seed:number;us:number;them:number;five:{position:string;name:string}[];bill:string}){
  return draft('10-rumble-five',clubId,'rumble','same-run',{main:`${x.us}–${x.them}`,rows:x.five.map(p=>`${p.position} · ${p.name}`),detail:`My bill: ${x.bill} · a simulated match`,statement:'These are my five.',link:clubUrl(clubId,`/clubs/${clubId}/royal-rumble`,{seed:x.seed,lang:'en'})},{origin:'server-verified'})
 }
+/** 10 — an eleven-a-side round: the shape, the rival, the score and the bill; the link replays the same match (same seed, clubs and shape) */
+export function rumbleXIShare(clubId:string,x:{seed:number;us:number;them:number;formation:string;rival:string;rivalName:string;bill:string}){
+ return draft('10-rumble-five',clubId,'rumble','same-run',{main:`${x.us}–${x.them}`,rows:[`${x.formation} · VS ${x.rivalName.toUpperCase()}`,`MY XI · ${x.bill}`,'ELEVEN A SIDE'],detail:`My bill: ${x.bill} of €35M · a simulated match`,statement:'This is my eleven.',link:clubUrl(clubId,`/clubs/${clubId}/royal-rumble`,{mode:'xi',f:x.formation,vs:x.rival,seed:x.seed,lang:'en'})},{origin:'server-verified'})
+}
 /** 12 — the wall: the final holder, how many rounds, whether the one revenge was spent. A fan preference, never a score. */
 export function wallShare(clubId:string,x:{holder:string;rounds:number;revenge:boolean}){
  return draft('12-derby-file',clubId,'hate','prompt',{main:'MY WALL',rows:[x.holder,`${x.rounds} ROUNDS`,x.revenge?'ONE REVENGE USED':'NO REVENGE USED'],detail:'My choices, not a vote.',statement:`The one I kept on the wall: ${x.holder}.`,link:clubUrl(clubId,`/clubs/${clubId}/derby`,{mode:'wall',lang:'en'})})

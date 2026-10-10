@@ -4,6 +4,12 @@ import {ratedPool,dealDraft,play,rumbleReadiness} from '@/lib/clubs/rumble'
 import {opponentFor} from '@/lib/clubs/rumble-opponent'
 import {stageMatch} from '@/lib/clubs/rumble-show'
 import {lineupMatches,buildableKits,kitViews} from '@/lib/clubs/gate-content'
+import {loadSides} from '@/lib/clubs/rumble-xi/server'
+import {playXI} from '@/lib/clubs/rumble-xi/simulator'
+import {stageXI} from '@/lib/clubs/rumble-xi/presentation'
+import {canRival,xiReadiness} from '@/lib/clubs/rumble-xi/readiness'
+import {isFormation} from '@/lib/clubs/rumble-xi/formations'
+import {slotsOf} from '@/lib/clubs/rumble-xi/formations'
 import {clubGoals,goalPool,cleanTouches,judgeGoal} from '@/lib/clubs/goal'
 /** Answers never ship to the client: tenant, gate switch, content version are checked here on every grade. */
 export async function gradeLineup(slug:string,version:string,matchId:string,picks:string[]){
@@ -38,6 +44,17 @@ export async function playRumble(slug:string,version:string,seed:number,picks:st
  if(!opponent)return null
  const r=play(pool,seed,picks,opponent)
  return r?{verdict:r.verdict,goals:r.goals,script:stageMatch(r,seed),rivalClub:opponent.kind==='locked'?opponent.club:opponent.kind==='club'?vs:slug}:null
+}
+/**
+ * Gate 9, eleven a side (€35M). Everything is rebuilt here from the page's own parameters: the club's men, the opponent's club and his
+ * committed eleven, the board the seed deals, one man per slot, once, inside the budget. The browser never names a price or a rating.
+ */
+export async function playRumbleXI(slug:string,version:string,seed:number,picks:string[],formation:string,rival:string){
+ if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||!Number.isSafeInteger(seed)||!isFormation(formation)||typeof rival!=='string'||rival.length>100||!Array.isArray(picks)||picks.length!==slotsOf(formation).length||picks.some(p=>typeof p!=='string'||p.length>200))return null
+ const sides=await loadSides(slug,rival)
+ if(!sides||sides.homeVersion!==version||!xiReadiness(sides.home,formation).ready||!canRival(sides.away,formation))return null
+ const r=playXI(sides.home,sides.away,formation,seed,sides.same,picks,sides.same?slug:rival)
+ return r?{verdict:r.verdict,goals:r.goals,script:stageXI(r,seed,formation),rivalClub:sides.same?slug:rival}:null
 }
 export const rumbleDeal=async(slug:string,seed:number,vs?:string,duel?:string)=>{const r=await requestClub(slug,9);if(!r||!Number.isSafeInteger(seed))return null;const pool=ratedPool(r.data);if(!rumbleReadiness(pool).playable)return null;const o=await opponentFor(slug,pool,vs,duel);return o?dealDraft(pool,seed,o):null}
 /** Gate 8 — the touches are graded here; the cast, verbs, order and count never left the server before this. */
