@@ -59,6 +59,41 @@
    "keep": "aek-athens:p-dh-cc50e0056344",
    "drop": "aek-athens:p-98114ba26cc840",
    "why": "\"Λιβάι Γκαρσία\" and \"Levi Garcia\": one man, written twice in the archive (same English name \"levi garcia\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-a547073cd48ca4",
+   "drop": "aek-athens:wv-abcd6a86e0",
+   "why": "\"Ζίνι\" and \"Zini\": one man, written twice in the archive (same English name \"zini\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:wv-28438deae4",
+   "drop": "aek-athens:p-dh-2983bfa4c633",
+   "why": "\"Θωμάς Strakosha\" and \"Thomas Strakosha\": one man, written twice in the archive (same English name \"thomas strakosha\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:wv-89ebfec264",
+   "drop": "aek-athens:p-dh-50478233ceaf",
+   "why": "\"Σπύρος Χριστακόπουλος\" and \"Spyros Christakopoulos\": one man, written twice in the archive (same English name \"spyros christakopoulos\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:wv-9660ec2ac2",
+   "drop": "aek-athens:p-dh-15ce70043d88",
+   "why": "\"Χρήστος Αλεξίου\" and \"Christos Alexiou\": one man, written twice in the archive (same English name \"christos alexiou\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:wv-9799f3a636",
+   "drop": "aek-athens:p-dh-c44bba74a09f",
+   "why": "\"Μάριος Μπαλαμώτης\" and \"Marios Balamotis\": one man, written twice in the archive (same English name \"marios balamotis\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:wv-5e175d6530",
+   "drop": "aek-athens:p-dh-b65d5f644e9f",
+   "why": "\"Ζώης Καραργύρης\" and \"Zois Karargyris\": one man, written twice in the archive (same English name \"zois karargyris\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:wv-6d833f2ebc",
+   "drop": "aek-athens:p-dh-02dcd7fead1a",
+   "why": "\"Αργύρης Αργυρίου\" and \"Argyris Argyriou\": one man, written twice in the archive (same English name \"argyris argyriou\", years compatible)"
   }
  ],
  "celtic": [

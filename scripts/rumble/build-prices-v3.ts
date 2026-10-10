@@ -50,7 +50,9 @@ async function standing(data:Awaited<ReturnType<typeof loadClub>>){
 }
 async function freeze(id:string){
  const data=await loadClub(id);if(!data)return
- const pool=rawPool(data.data,{extra:extraPositions(id)}),goals=goalsByPlayer(data.data),stand=await standing(data)
+ // men added from the Wikipedia player categories join at €1M through `migrate`, never reshuffling the list (rulebook: a new man does not reprice the others)
+ const wp=new Set(data.data.players!.filter(p=>p.sources.some(x=>x.startsWith('src-wp-roster-'))).map(p=>p.value.id))
+ const pool=rawPool(data.data,{extra:extraPositions(id)}).filter(p=>!wp.has(p.id)),goals=goalsByPlayer(data.data),stand=await standing(data)
  if(id==='hapoel-tel-aviv'&&!pins[id]){pins[id]=await pinsForHapoel(data);writeFileSync(PINS,JSON.stringify(pins,null,1)+'\n')}
  const span=(p:{fromYear:number|null;toYear:number|null})=>p.fromYear!==null&&p.toYear!==null?p.toYear-p.fromYear+1:null
  const sp=pool.map(p=>span(p)),sorted=(xs:(number|null)[])=>xs.filter((x):x is number=>x!==null)

@@ -18,6 +18,7 @@ import celticCof from '@/club-packs/celtic/wave-kits-cof-2026-10-09.json'
 import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-09.json'
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
 import {withEuro} from './euro-wave'
+import {withRosterWave} from './roster-wave'
 const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>compilePackBase(withEuro(pack,club.id) as never,club)
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
 /** The colours-of-football catalogue kits the club pack has no (season, type) for: status `review`, so they reach no gate until the owner approves them. */
@@ -59,7 +60,7 @@ export function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnosti
  if(!isStatic&&!REGISTRY.some(c=>c.id===id))return Promise.resolve(null)
  const hit=cache.get(id)
  if(hit&&(!hit.desk||Date.now()-hit.at<DESK_TTL_MS))return hit.p
- const p=(isStatic?providers[id]!():deskProvider(id)).then(r=>r?finish(r):null).catch(e=>{cache.delete(id);throw e})
+ const p=(isStatic?providers[id]!():deskProvider(id)).then(r=>r?finish(isStatic?{...r,data:withRosterWave(id,r.data)}:r):null).catch(e=>{cache.delete(id);throw e})
  cache.set(id,{at:Date.now(),desk:!isStatic,p})
  return p
 }
