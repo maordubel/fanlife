@@ -1,22 +1,38 @@
 /**
- * The ladder for a club of N men — ECONOMY V2 (owner-approved 10.10.2026).
- * N ≥ 130: exactly ten at €5M; at least max(20, 8% N) at €4M; max(40, 20% N) at €3M; max(60, 35% N) at €2M; everyone else €1M.
- *   When the minimums exceed N they are cut from the lowest rung first.
- * N < 130: weights 10 / 10 / 22 / 32 / 26 % for €5 / 4 / 3 / 2 / 1 by largest remainder (ties to the dearer rung), at least one €5M.
- * The ladder is a rule for the club's list at the moment a version is published; a price is never recomputed on load.
+ * Royal Rumble economy V2 — club-size-aware bands.
+ * Exactly ten €5M cards for full clubs; broader €4M/€3M/€2M tiers.
+ * Small clubs use one-time proportional allocation with €1M cards preserved.
+ * These numbers are targets for an explicit migration, NEVER live repricing.
  */
-export type Rung=1|2|3|4|5
-export function quotaFor(n:number):{mode:'full'|'proportional';counts:Record<Rung,number>}{
- const counts={1:0,2:0,3:0,4:0,5:0} as Record<Rung,number>
+export type PriceBand = 1|2|3|4|5
+export type Quota = {mode:'full'|'proportional';counts:Record<PriceBand,number>}
+export function quotaFor(n:number):Quota{
+ if(!Number.isSafeInteger(n)||n<0)throw new Error('invalid club player count')
+ const counts:Record<PriceBand,number>={1:0,2:0,3:0,4:0,5:0}
+ if(n===0)return {mode:'proportional',counts}
  if(n>=130){
-  counts[5]=10;counts[4]=Math.max(20,Math.round(n*.08));counts[3]=Math.max(40,Math.round(n*.20));counts[2]=Math.max(60,Math.round(n*.35))
-  let over=counts[5]+counts[4]+counts[3]+counts[2]-n
-  for(const k of [2,3,4] as const){if(over<=0)break;const cut=Math.min(counts[k],over);counts[k]-=cut;over-=cut}
-  counts[1]=n-counts[5]-counts[4]-counts[3]-counts[2];return {mode:'full',counts}}
- const weights:[Rung,number][]=[[5,.10],[4,.10],[3,.22],[2,.32],[1,.26]],parts=weights.map(([price,w])=>({price,x:n*w,whole:Math.floor(n*w)}))
- for(const p of parts)counts[p.price]=p.whole
- const left=n-parts.reduce((s,p)=>s+p.whole,0),order=[...parts].sort((a,b)=>(b.x-b.whole)-(a.x-a.whole)||b.price-a.price)
- for(let i=0;i<left;i++)counts[order[i]!.price]+=1
- if(n>=1&&counts[5]===0){const donor=([1,2,3,4] as const).find(k=>counts[k]>0);if(donor){counts[donor]-=1;counts[5]+=1}}
+  counts[5]=10
+  counts[4]=Math.max(20,Math.round(n*.08))
+  counts[3]=Math.max(40,Math.round(n*.20))
+  counts[2]=Math.max(60,Math.round(n*.35))
+  // At N=130..small N the minima may exceed capacity: trim from €2, then €3, then €4.
+  for(const k of [2,3,4] as const){
+   const excess=Math.max(0,counts[5]+counts[4]+counts[3]+counts[2]-n)
+   counts[k]=Math.max(0,counts[k]-excess)
+  }
+  counts[1]=n-counts[5]-counts[4]-counts[3]-counts[2]
+  return {mode:'full',counts}
+ }
+ // Initial small-club targets, not re-applied automatically when N grows.
+ const weighted:[PriceBand,number][]=[[5,.10],[4,.10],[3,.22],[2,.32],[1,.26]]
+ const floor=weighted.map(([p,w])=>({p,exact:n*w,base:Math.floor(n*w)}))
+ for(const x of floor)counts[x.p]=x.base
+ let remaining=n-floor.reduce((s,x)=>s+x.base,0)
+ floor.sort((a,b)=>(b.exact-b.base)-(a.exact-a.base)||b.p-a.p)
+ for(let i=0;i<remaining;i++)counts[floor[i]!.p]++
+ if(counts[5]===0){
+  const donor=([1,2,3,4] as const).find(p=>counts[p]>0)
+  if(donor!==undefined){counts[donor]--;counts[5]++}
+ }
  return {mode:'proportional',counts}
 }
