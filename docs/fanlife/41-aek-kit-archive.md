@@ -104,3 +104,6 @@ Counts: St. Pauli 46, Panathinaikos 61, Zrinjski 19, Hapoel Petah Tikva 6, Celti
 - Era crests (`scripts/kits/hta-crests.ts` → `kit-crests-hapoel-tel-aviv.json`): each shirt prints the crest of its own era from the club's timeline and the variant that follows the cloth; the 2022/23 centenary year has no artwork and prints none (rule 25).
 - The Worker's real sponsor artwork (Subaru, Fujitsu, Arkia) and Macron join the mark library as raster marks; Keter, Umbro, Fujicom, IBI, הכשרה and במחיר have typographic styles.
 - The in-app archive shows the Worker's 168-shirt photographed archive (the part no card already uses) with "I have it", and the static page carries the same gallery.
+
+## Retail photographs (10.10.2026)
+`scripts/kits/harvest-shops.py` + `make-shop-photos.py` read the public `/products.json` feeds of four shirt retailers (footballshirtcollective, cultkits, shortyfootballshirts, vintagefootballshirts) → `content/manual/kit-shop-<club>.json` (183 photographs, credit per photo with the product page). Season/type/maker are the product title's words. Blocked and not circumvented: Wikimedia (429), footballkitarchive, classicfootballshirts, kitbag, toffs (403).

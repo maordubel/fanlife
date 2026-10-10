@@ -1,0 +1,2440 @@
+{
+ "source": {
+  "note": "Retail product photographs of real shirts, from four shops' public product feeds; used with the owner's approval (chat, 2026-10-10). Season, type and maker are the product title's words.",
+  "stores": [
+   {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/"
+   },
+   {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/"
+   },
+   {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/"
+   },
+   {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/"
+   }
+  ],
+  "readOn": "2026-10-10"
+ },
+ "count": 127,
+ "kits": [
+  {
+   "id": "shop-cultkits-1986-89-celtic-third-shirt-l-umbro",
+   "type": "third",
+   "season": "1986/87",
+   "spans": "1986-89",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1986/89 Celtic Third Shirt (L) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1986-89-celtic-third-shirt-l-umbro.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1986-89-celtic-third-shirt-l-umbro"
+   }
+  },
+  {
+   "id": "shop-cultkits-1987-89-celtic-home-shirt-m-umbro12441",
+   "type": "home",
+   "season": "1987/88",
+   "spans": "1987-89",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1987/89 Celtic Home Shirt (M) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1987-89-celtic-home-shirt-m-umbro12441.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1987-89-celtic-home-shirt-m-umbro12441"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1987-89-celtic-umbro-centenary-home-shirt-m-1",
+   "type": "home",
+   "season": "1987/88",
+   "spans": "1987-89",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1987-89 Celtic Umbro Centenary Home Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1987-89-celtic-umbro-centenary-home-shirt-m-1.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1987-89-celtic-umbro-centenary-home-shirt-m-1"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1989-91-celtic-vintage-umbro-away-football-shirt-m",
+   "type": "away",
+   "season": "1989/90",
+   "spans": "1989-91",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1989/91 CELTIC Vintage Umbro Away Football Shirt (M)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1989-91-celtic-vintage-umbro-away-football-shirt-m.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0158,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1989-91-celtic-vintage-umbro-away-football-shirt-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-1989-91-celtic-away-shirt-xl-umbro-nqovo25g",
+   "type": "away",
+   "season": "1989/90",
+   "spans": "1989-91",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1989/91 Celtic Away Shirt (XL) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1989-91-celtic-away-shirt-xl-umbro-nqovo25g.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.2281,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1989-91-celtic-away-shirt-xl-umbro-nqovo25g"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1989-91-celtic-vintage-umbro-home-football-shirt-m",
+   "type": "home",
+   "season": "1989/90",
+   "spans": "1989-91",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1989/91 CELTIC Vintage Umbro Home Football Shirt (M)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1989-91-celtic-vintage-umbro-home-football-shirt-m.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1989-91-celtic-vintage-umbro-home-football-shirt-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-1989-91-celtic-home-shirt-m-umbro4636",
+   "type": "home",
+   "season": "1989/90",
+   "spans": "1989-91",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1989/91 Celtic Home Shirt (M) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1989-91-celtic-home-shirt-m-umbro4636.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1989-91-celtic-home-shirt-m-umbro4636"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1991-92-celtic-vintage-umbro-away-football-shirt-xl",
+   "type": "away",
+   "season": "1991/92",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1991/92 Celtic Vintage Umbro Away Football Shirt (XL)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1991-92-celtic-vintage-umbro-away-football-shirt-xl.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1991-92-celtic-vintage-umbro-away-football-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-1991-92-celtic-away-shirt-xl-umbro24",
+   "type": "away",
+   "season": "1991/92",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1991/92 Celtic Away Shirt (XL) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1991-92-celtic-away-shirt-xl-umbro24.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1991-92-celtic-away-shirt-xl-umbro24"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1991-92-celtic-vintage-umbro-home-football-shirt-xl",
+   "type": "home",
+   "season": "1991/92",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1991/92 Celtic Vintage Umbro Home Football Shirt (XL)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1991-92-celtic-vintage-umbro-home-football-shirt-xl.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1991-92-celtic-vintage-umbro-home-football-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-1991-92-celtic-home-shirt-xl-umbro5675",
+   "type": "home",
+   "season": "1991/92",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1991/92 Celtic Home Shirt (XL) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1991-92-celtic-home-shirt-xl-umbro5675.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1991-92-celtic-home-shirt-xl-umbro5675"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1992-93-celtic-vintage-umbro-away-football-shirt-jersey-xl",
+   "type": "away",
+   "season": "1992/93",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1992/93 Celtic Vintage Umbro Away Football Shirt Jersey (XL)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1992-93-celtic-vintage-umbro-away-football-shirt-jersey-xl.webp",
+   "width": 900,
+   "height": 848,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1992-93-celtic-vintage-umbro-away-football-shirt-jersey-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-1992-93-celtic-away-shirt-xl-umbro133",
+   "type": "away",
+   "season": "1992/93",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1992/93 Celtic Away Shirt (XL) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1992-93-celtic-away-shirt-xl-umbro133.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1992-93-celtic-away-shirt-xl-umbro133"
+   }
+  },
+  {
+   "id": "shop-cultkits-1993-95-celtic-home-shirt-l-umbro235",
+   "type": "home",
+   "season": "1993/94",
+   "spans": "1993-95",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1993/95 CELTIC HOME SHIRT (L) UMBRO",
+   "image": "/club-kits/celtic/shop/cultkits-1993-95-celtic-home-shirt-l-umbro235.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1993-95-celtic-home-shirt-l-umbro235"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1993-95-celtic-umbro-home-shirt-m",
+   "type": "home",
+   "season": "1993/94",
+   "spans": "1993-95",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1993-95 Celtic Umbro Home Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1993-95-celtic-umbro-home-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0002,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1993-95-celtic-umbro-home-shirt-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-1994-95-celtic-away-shirt-m-umbro342",
+   "type": "away",
+   "season": "1994/95",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1994/95 CELTIC AWAY SHIRT (M) UMBRO",
+   "image": "/club-kits/celtic/shop/cultkits-1994-95-celtic-away-shirt-m-umbro342.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1994-95-celtic-away-shirt-m-umbro342"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1994-96-van-hooijdonk-9-celtic-vintage-umbro-away-football-shirt-l",
+   "type": "away",
+   "season": "1994/95",
+   "spans": "1994-96",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1994/96 Van Hooijdonk #9 Celtic Vintage Umbro Away Football Shirt (L)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1994-96-van-hooijdonk-9-celtic-vintage-umbro-away-football-shirt-l.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1994-96-van-hooijdonk-9-celtic-vintage-umbro-away-football-shirt-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-1994-95-celtic-third-shirt-m-umbro346",
+   "type": "third",
+   "season": "1994/95",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1994/95 Celtic Third Shirt (M) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1994-95-celtic-third-shirt-m-umbro346.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0589,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1994-95-celtic-third-shirt-m-umbro346"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1994-95-celtic-umbro-third-shirt-xxl",
+   "type": "third",
+   "season": "1994/95",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1994-95 Celtic Umbro Third Shirt XXL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1994-95-celtic-umbro-third-shirt-xxl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.051,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1994-95-celtic-umbro-third-shirt-xxl"
+   }
+  },
+  {
+   "id": "shop-cultkits-1995-97-celtic-home-shirt-l-umbro7963",
+   "type": "home",
+   "season": "1995/96",
+   "spans": "1995-97",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1995/97 Celtic Home Shirt (L) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1995-97-celtic-home-shirt-l-umbro7963.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1995-97-celtic-home-shirt-l-umbro7963"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1995-97-celtic-umbro-home-shirt-l",
+   "type": "home",
+   "season": "1995/96",
+   "spans": "1995-97",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1995-97 Celtic Umbro Home Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1995-97-celtic-umbro-home-shirt-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1995-97-celtic-umbro-home-shirt-l"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1996-97-celtic-away-football-shirt-xl",
+   "type": "away",
+   "season": "1996/97",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "1996-97 Celtic away football shirt XL",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1996-97-celtic-away-football-shirt-xl.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0058,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1996-97-celtic-away-football-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-1996-97-celtic-away-shirt-m-umbro7568",
+   "type": "away",
+   "season": "1996/97",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1996/97 Celtic Away Shirt (M) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-1996-97-celtic-away-shirt-m-umbro7568.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0273,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1996-97-celtic-away-shirt-m-umbro7568"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1997-99-celtic-umbro-home-shirt-m",
+   "type": "home",
+   "season": "1997/98",
+   "spans": "1997-99",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1997-99 Celtic Umbro Home Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1997-99-celtic-umbro-home-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1997-99-celtic-umbro-home-shirt-m"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1997-99-larsson-7-celtic-vintage-umbro-home-football-shirt-l",
+   "type": "home",
+   "season": "1997/98",
+   "spans": "1997-99",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1997/99 Larsson #7 Celtic Vintage Umbro Home Football Shirt (L)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1997-99-larsson-7-celtic-vintage-umbro-home-football-shirt-l.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1997-99-larsson-7-celtic-vintage-umbro-home-football-shirt-l"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1997-99-celtic-umbro-player-issue-signed-home-shirt-l-s-viduka-36-xl",
+   "type": "home",
+   "season": "1997/98",
+   "spans": "1997-99",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Umbro",
+   "title": "1997-99 Celtic Umbro Player Issue Signed Home Shirt L/S Viduka #36 XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1997-99-celtic-umbro-player-issue-signed-home-shirt-l-s-viduka-36-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1997-99-celtic-umbro-player-issue-signed-home-shirt-l-s-viduka-36-xl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1998-99-celtic-umbro-away-shirt-l",
+   "type": "away",
+   "season": "1998/99",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1998-99 Celtic Umbro Away Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1998-99-celtic-umbro-away-shirt-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1998-99-celtic-umbro-away-shirt-l"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1998-99-larsson-7-celtic-vintage-umbro-away-football-shirt-l-1",
+   "type": "away",
+   "season": "1998/99",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1998/99 Larsson #7 Celtic Vintage Umbro Away Football Shirt (L)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1998-99-larsson-7-celtic-vintage-umbro-away-football-shirt-l-1.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1998-99-larsson-7-celtic-vintage-umbro-away-football-shirt-l-1"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1998-99-celtic-umbro-away-shirt-l-s-xxl",
+   "type": "away",
+   "season": "1998/99",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Umbro",
+   "title": "1998-99 Celtic Umbro Away Shirt L/S XXL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1998-99-celtic-umbro-away-shirt-l-s-xxl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1998-99-celtic-umbro-away-shirt-l-s-xxl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1999-00-celtic-umbro-away-shirt-l-copy",
+   "type": "away",
+   "season": "1999/00",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1999-00 Celtic Umbro Away Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1999-00-celtic-umbro-away-shirt-l-copy.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0007,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1999-00-celtic-umbro-away-shirt-l-copy"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-1999-00-viduka-36-celtic-vintage-umbro-away-football-shirt-xl",
+   "type": "away",
+   "season": "1999/00",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1999/00 Viduka #36 Celtic Vintage Umbro Away Football Shirt (XL)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1999-00-viduka-36-celtic-vintage-umbro-away-football-shirt-xl.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/1999-00-viduka-36-celtic-vintage-umbro-away-football-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-1999-01-celtic-home-shirt-l-umbro676",
+   "type": "home",
+   "season": "1999/00",
+   "spans": "1999-01",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1999/01 CELTIC HOME SHIRT (L) UMBRO",
+   "image": "/club-kits/celtic/shop/cultkits-1999-01-celtic-home-shirt-l-umbro676.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1999-01-celtic-home-shirt-l-umbro676"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1999-01-celtic-umbro-home-shirt-l",
+   "type": "home",
+   "season": "1999/00",
+   "spans": "1999-01",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1999-01 Celtic Umbro Home Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1999-01-celtic-umbro-home-shirt-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1999-01-celtic-umbro-home-shirt-l"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2000-02-celtic-umbro-away-shirt-l",
+   "type": "away",
+   "season": "2000/01",
+   "spans": "2000-02",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2000-02 Celtic Umbro Away Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2000-02-celtic-umbro-away-shirt-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.4384,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2000-02-celtic-umbro-away-shirt-l"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2000-01-larsson-7-celtic-vintage-umbro-away-football-shirt-l-swede",
+   "type": "away",
+   "season": "2000/01",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2000/01 LARSSON #7 Celtic Vintage Umbro Away Football Shirt (L) Sweden",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2000-01-larsson-7-celtic-vintage-umbro-away-football-shirt-l-swede.webp",
+   "width": 900,
+   "height": 852,
+   "yellowShare": 0.2306,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2000-01-larsson-7-celtic-vintage-umbro-away-football-shirt-l-sweden"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2000-01-celtic-vintage-umbro-gk-football-shirt-jersey-y-s-douglas-",
+   "type": "gk",
+   "season": "2000/01",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2000/01 CELTIC Vintage Umbro GK Football Shirt Jersey (S) Douglas Gould",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2000-01-celtic-vintage-umbro-gk-football-shirt-jersey-y-s-douglas-.webp",
+   "width": 900,
+   "height": 853,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2000-01-celtic-vintage-umbro-gk-football-shirt-jersey-y-s-douglas-gould"
+   }
+  },
+  {
+   "id": "shop-cultkits-2000-01-celtic-home-shirt-l-umbro6747",
+   "type": "home",
+   "season": "2000/01",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2000/01 Celtic Home Shirt (L) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-2000-01-celtic-home-shirt-l-umbro6747.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2000-01-celtic-home-shirt-l-umbro6747"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2000-02-lambert-4-scotland-vintage-fila-home-football-shirt-xl-cel",
+   "type": "home",
+   "season": "2000/01",
+   "spans": "2000-02",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Fila",
+   "title": "2000/02 LAMBERT #4 Scotland Vintage FILA Home Football Shirt (XL) Celtic",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2000-02-lambert-4-scotland-vintage-fila-home-football-shirt-xl-cel.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2000-02-lambert-4-scotland-vintage-fila-home-football-shirt-xl-celtic"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2001-larsson-7-celtic-umbro-home-football-shirt-l-tom-boyd-testimo",
+   "type": "home",
+   "season": "2001",
+   "spans": null,
+   "seasonAmbiguous": true,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2001 LARSSON #7 Celtic Umbro Home Football Shirt (L) TOM BOYD TESTIMONIAL",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2001-larsson-7-celtic-umbro-home-football-shirt-l-tom-boyd-testimo.webp",
+   "width": 900,
+   "height": 882,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2001-larsson-7-celtic-umbro-home-football-shirt-l-tom-boyd-testimonial"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2001-cis-cup-final-celtic-vintage-umbro-football-shirt-l-bnwt-samp",
+   "type": "special",
+   "season": "2001",
+   "spans": null,
+   "seasonAmbiguous": true,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2001 CELTIC Vintage Umbro CIS Cup Final Football Shirt (L) BNWT Sample/Prototype",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2001-cis-cup-final-celtic-vintage-umbro-football-shirt-l-bnwt-samp.webp",
+   "width": 900,
+   "height": 853,
+   "yellowShare": 0.2193,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2001-cis-cup-final-celtic-vintage-umbro-football-shirt-l-bnwt-sample-prototype"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2001-02-celtic-umbro-away-shirt-m-53279",
+   "type": "away",
+   "season": "2001/02",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2001-02 Celtic Umbro Away Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2001-02-celtic-umbro-away-shirt-m-53279.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2001-02-celtic-umbro-away-shirt-m-53279"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2001-02-larsson-7-celtic-vintage-umbro-away-football-shirt-m",
+   "type": "away",
+   "season": "2001/02",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2001/02 Larsson #7 Celtic Vintage Umbro Away Football Shirt (M)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2001-02-larsson-7-celtic-vintage-umbro-away-football-shirt-m.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2001-02-larsson-7-celtic-vintage-umbro-away-football-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2001-03-celtic-umbro-home-shirt-l-1",
+   "type": "home",
+   "season": "2001/02",
+   "spans": "2001-03",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2001-03 Celtic Umbro Home Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2001-03-celtic-umbro-home-shirt-l-1.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2001-03-celtic-umbro-home-shirt-l-1"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2001-larsson-7-celtic-vintage-umbro-home-football-shirt-s",
+   "type": "home",
+   "season": "2001/02",
+   "spans": "2001-03",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2001/03 Larsson #7 Celtic Vintage Umbro Home Football Shirt (S)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2001-larsson-7-celtic-vintage-umbro-home-football-shirt-s.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2001-larsson-7-celtic-vintage-umbro-home-football-shirt-s"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2002-03-celtic-umbro-away-shirt-xl",
+   "type": "away",
+   "season": "2002/03",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2002-03 Celtic Umbro Away Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2002-03-celtic-umbro-away-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.423,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2002-03-celtic-umbro-away-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2002-03-larsson-7-celtic-vintage-umbro-away-football-shirt-l",
+   "type": "away",
+   "season": "2002/03",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2002/03 Larsson #7 Celtic Vintage Umbro Away Football Shirt (L)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2002-03-larsson-7-celtic-vintage-umbro-away-football-shirt-l.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.1221,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2002-03-larsson-7-celtic-vintage-umbro-away-football-shirt-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-2002-03-celtic-petrov-19-l-s-away-shirt-m-umbro567",
+   "type": "away",
+   "season": "2002/03",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Umbro",
+   "title": "2002/03 CELTIC PETROV #19 L/S AWAY SHIRT (M) UMBRO",
+   "image": "/club-kits/celtic/shop/cultkits-2002-03-celtic-petrov-19-l-s-away-shirt-m-umbro567.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.3798,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2002-03-celtic-petrov-19-l-s-away-shirt-m-umbro567"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2003-04-celtic-umbro-away-shirt-l",
+   "type": "away",
+   "season": "2003/04",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2003-04 Celtic Umbro Away Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2003-04-celtic-umbro-away-shirt-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0007,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2003-04-celtic-umbro-away-shirt-l"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2003-04-larsson-7-celtic-vintage-umbro-european-away-football-shir",
+   "type": "away",
+   "season": "2003/04",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2003/04 Larsson #7 Celtic Vintage Umbro European Away Football Shirt (L)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2003-04-larsson-7-celtic-vintage-umbro-european-away-football-shir.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2003-04-larsson-7-celtic-vintage-umbro-european-away-football-shirt-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-2003-04-celtic-larsson-7-l-s-away-shirt-xxl-umbro457",
+   "type": "away",
+   "season": "2003/04",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Umbro",
+   "title": "2003/04 CELTIC LARSSON #7 L/S AWAY SHIRT (XXL) UMBRO",
+   "image": "/club-kits/celtic/shop/cultkits-2003-04-celtic-larsson-7-l-s-away-shirt-xxl-umbro457.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0618,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2003-04-celtic-larsson-7-l-s-away-shirt-xxl-umbro457"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2003-04-celtic-umbro-home-shirt-l",
+   "type": "home",
+   "season": "2003/04",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2003-04 Celtic Umbro Home Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2003-04-celtic-umbro-home-shirt-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2003-04-celtic-umbro-home-shirt-l"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2003-04-larsson-7-celtic-vintage-umbro-european-home-football-shir",
+   "type": "home",
+   "season": "2003/04",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2003/04 Larsson #7 Celtic Vintage Umbro European Home Football Shirt (M)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2003-04-larsson-7-celtic-vintage-umbro-european-home-football-shir.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2003-04-larsson-7-celtic-vintage-umbro-european-home-football-shirt-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-2003-04-celtic-hartson-10-l-s-home-shirt-xxl-umbro56785",
+   "type": "home",
+   "season": "2003/04",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Umbro",
+   "title": "2003/04 Celtic Hartson #10 L/S Home Shirt (XXL) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-2003-04-celtic-hartson-10-l-s-home-shirt-xxl-umbro56785.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2003-04-celtic-hartson-10-l-s-home-shirt-xxl-umbro56785"
+   }
+  },
+  {
+   "id": "shop-cultkits-2004-05-celtic-away-shirt-m-umbro2325",
+   "type": "away",
+   "season": "2004/05",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2004/05 CELTIC AWAY SHIRT (M) UMBRO",
+   "image": "/club-kits/celtic/shop/cultkits-2004-05-celtic-away-shirt-m-umbro2325.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2004-05-celtic-away-shirt-m-umbro2325"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2004-05-celtic-umbro-champions-away-shirt-xl",
+   "type": "away",
+   "season": "2004/05",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2004-05 Celtic Umbro 'Champions' Away Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2004-05-celtic-umbro-champions-away-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2004-05-celtic-umbro-champions-away-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2004-05-celtic-larsson-7-l-s-away-shirt-xl-umbro467",
+   "type": "away",
+   "season": "2004/05",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Umbro",
+   "title": "2004/05 CELTIC LARSSON #7 L/S AWAY SHIRT (XL) UMBRO",
+   "image": "/club-kits/celtic/shop/cultkits-2004-05-celtic-larsson-7-l-s-away-shirt-xl-umbro467.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2004-05-celtic-larsson-7-l-s-away-shirt-xl-umbro467"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2004-05-celtic-vintage-umbro-home-football-shirt-l",
+   "type": "home",
+   "season": "2004/05",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2004/05 Celtic Vintage Umbro Home Football Shirt (L)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2004-05-celtic-vintage-umbro-home-football-shirt-l.webp",
+   "width": 900,
+   "height": 848,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2004-05-celtic-vintage-umbro-home-football-shirt-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-2004-05-celtic-home-shirt-l-umbro",
+   "type": "home",
+   "season": "2004/05",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2004/05 Celtic Home Shirt (L) Umbro",
+   "image": "/club-kits/celtic/shop/cultkits-2004-05-celtic-home-shirt-l-umbro.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2004-05-celtic-home-shirt-l-umbro"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2004-05-petrov-19-celtic-vintage-umbro-european-football-shirt-xl-",
+   "type": "special",
+   "season": "2004/05",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2004/05 PETROV #19 Celtic Vintage Umbro European Football Shirt (XL) Bulgaria",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2004-05-petrov-19-celtic-vintage-umbro-european-football-shirt-xl-.webp",
+   "width": 900,
+   "height": 853,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2004-05-petrov-19-celtic-vintage-umbro-european-football-shirt-xl-bulgaria"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2005-castleknock-celtic-nike-home-shirt-l-s-m",
+   "type": "home",
+   "season": "2005",
+   "spans": null,
+   "seasonAmbiguous": true,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2005 Castleknock Celtic Nike Home Shirt L/S M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2005-castleknock-celtic-nike-home-shirt-l-s-m.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0003,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2005-castleknock-celtic-nike-home-shirt-l-s-m"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2005-06-celtic-vintage-nike-away-football-shirt-xl",
+   "type": "away",
+   "season": "2005/06",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2005/06 CELTIC Vintage Nike Away Football Shirt (XL)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2005-06-celtic-vintage-nike-away-football-shirt-xl.webp",
+   "width": 900,
+   "height": 848,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2005-06-celtic-vintage-nike-away-football-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2005-06-celtic-away-shirt-l-nike5685",
+   "type": "away",
+   "season": "2005/06",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2005/06 CELTIC AWAY SHIRT (L) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2005-06-celtic-away-shirt-l-nike5685.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0001,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2005-06-celtic-away-shirt-l-nike5685"
+   }
+  },
+  {
+   "id": "shop-cultkits-2005-06-celtic-nakamura-25-l-s-away-shirt-xl-nike345",
+   "type": "away",
+   "season": "2005/06",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2005/06 CELTIC NAKAMURA #25 L/S AWAY SHIRT (XL) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2005-06-celtic-nakamura-25-l-s-away-shirt-xl-nike345.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.1109,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2005-06-celtic-nakamura-25-l-s-away-shirt-xl-nike345"
+   }
+  },
+  {
+   "id": "shop-cultkits-2005-07-celtic-home-shirt-s-nike5678",
+   "type": "home",
+   "season": "2005/06",
+   "spans": "2005-07",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2005/07 CELTIC HOME SHIRT (S) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2005-07-celtic-home-shirt-s-nike5678.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2005-07-celtic-home-shirt-s-nike5678"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2005-07-celtic-nike-home-shirt-nakamura-25-xl-b",
+   "type": "home",
+   "season": "2005/06",
+   "spans": "2005-07",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2005-07 Celtic Nike Home Shirt Nakamura #25 XL.B",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2005-07-celtic-nike-home-shirt-nakamura-25-xl-b.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2005-07-celtic-nike-home-shirt-nakamura-25-xl-b"
+   }
+  },
+  {
+   "id": "shop-cultkits-2005-07-celtic-nakamura-25-l-s-home-shirt-xl-nike2525",
+   "type": "home",
+   "season": "2005/06",
+   "spans": "2005-07",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2005/07 Celtic Nakamura #25 L/S Home Shirt (XL) Nike",
+   "image": "/club-kits/celtic/shop/cultkits-2005-07-celtic-nakamura-25-l-s-home-shirt-xl-nike2525.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2005-07-celtic-nakamura-25-l-s-home-shirt-xl-nike2525"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2005-07-celtic-nike-home-shirt-keane-16-l-s-m",
+   "type": "home",
+   "season": "2005/06",
+   "spans": "2005-07",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2005-07 Celtic Nike Home Shirt Keane #16 L/S M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2005-07-celtic-nike-home-shirt-keane-16-l-s-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2005-07-celtic-nike-home-shirt-keane-16-l-s-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-2006-08-celtic-l-s-away-shirt-l-nike436",
+   "type": "away",
+   "season": "2006/07",
+   "spans": "2006-08",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2006/08 CELTIC L/S AWAY SHIRT (L) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2006-08-celtic-l-s-away-shirt-l-nike436.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2006-08-celtic-l-s-away-shirt-l-nike436"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2006-08-nakamura-25-celtic-vintage-nike-european-4th-football-shir",
+   "type": "fourth",
+   "season": "2006/07",
+   "spans": "2006-08",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2006/08 Nakamura #25 Celtic Vintage Nike European 4th Football Shirt (M)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2006-08-nakamura-25-celtic-vintage-nike-european-4th-football-shir.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0022,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2006-08-nakamura-25-celtic-vintage-nike-european-4th-football-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2006-08-celtic-nike-player-issue-european-shirt-l-s-xl",
+   "type": "special",
+   "season": "2006/07",
+   "spans": "2006-08",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2006-08 Celtic Nike Player Issue European Shirt L/S XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2006-08-celtic-nike-player-issue-european-shirt-l-s-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0127,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2006-08-celtic-nike-player-issue-european-shirt-l-s-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2007-08-celtic-away-shirt-xl-nike554",
+   "type": "away",
+   "season": "2007/08",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2007/08 Celtic Away Shirt (XL) Nike",
+   "image": "/club-kits/celtic/shop/cultkits-2007-08-celtic-away-shirt-xl-nike554.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2007-08-celtic-away-shirt-xl-nike554"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2007-08-celtic-nike-away-shirt-s",
+   "type": "away",
+   "season": "2007/08",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2007-08 Celtic Nike Away Shirt S",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2007-08-celtic-nike-away-shirt-s.webp",
+   "width": 900,
+   "height": 800,
+   "yellowShare": 0.0001,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2007-08-celtic-nike-away-shirt-s"
+   }
+  },
+  {
+   "id": "shop-cultkits-2007-08-celtic-nakamura-25-l-s-away-shirt-l-nike879",
+   "type": "away",
+   "season": "2007/08",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2007/08 CELTIC NAKAMURA #25 L/S AWAY SHIRT (L) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2007-08-celtic-nakamura-25-l-s-away-shirt-l-nike879.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2007-08-celtic-nakamura-25-l-s-away-shirt-l-nike879"
+   }
+  },
+  {
+   "id": "shop-cultkits-2007-08-celtic-home-shirt-s-nike988",
+   "type": "home",
+   "season": "2007/08",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2007/08 CELTIC HOME SHIRT (S) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2007-08-celtic-home-shirt-s-nike988.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2007-08-celtic-home-shirt-s-nike988"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2007-08-celtic-fc-home-shirt-vennegoor-of-hesselink-10-xl",
+   "type": "home",
+   "season": "2007/08",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "2007-08 Celtic FC Home Shirt VENNEGOOR OF HESSELINK #10 XL",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2007-08-celtic-fc-home-shirt-vennegoor-of-hesselink-10-xl.webp",
+   "width": 774,
+   "height": 774,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2007-08-celtic-fc-home-shirt-vennegoor-of-hesselink-10-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2007-08-celtic-l-s-home-shirt-m-nike56856",
+   "type": "home",
+   "season": "2007/08",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2007/08 CELTIC L/S HOME SHIRT (M) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2007-08-celtic-l-s-home-shirt-m-nike56856.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0001,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2007-08-celtic-l-s-home-shirt-m-nike56856"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2008-09-celtic-nike-home-shirt-w-tags-xl-64607",
+   "type": "home",
+   "season": "2008/09",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2008-09 Celtic Nike Home Shirt *w/tags* XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2008-09-celtic-nike-home-shirt-w-tags-xl-64607.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0027,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2008-09-celtic-nike-home-shirt-w-tags-xl-64607"
+   }
+  },
+  {
+   "id": "shop-cultkits-2008-10-celtic-fox-11-home-shirt-s-nike5685",
+   "type": "home",
+   "season": "2008/09",
+   "spans": "2008-10",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2008/10 CELTIC FOX #11 HOME SHIRT (S) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2008-10-celtic-fox-11-home-shirt-s-nike5685.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0032,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2008-10-celtic-fox-11-home-shirt-s-nike5685"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2008-10-celtic-nike-home-shirt-l-s-m",
+   "type": "home",
+   "season": "2008/09",
+   "spans": "2008-10",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2008-10 Celtic Nike Home Shirt L/S M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2008-10-celtic-nike-home-shirt-l-s-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0025,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2008-10-celtic-nike-home-shirt-l-s-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-2008-10-celtic-nakamura-25-l-s-c-l-home-shirt-xl-nike",
+   "type": "home",
+   "season": "2008/09",
+   "spans": "2008-10",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2008/10 CELTIC NAKAMURA #25 L/S C/L HOME SHIRT (XL) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2008-10-celtic-nakamura-25-l-s-c-l-home-shirt-xl-nike.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0023,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2008-10-celtic-nakamura-25-l-s-c-l-home-shirt-xl-nike"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2009-11-celtic-vintage-nike-away-football-shirt-l",
+   "type": "away",
+   "season": "2009/10",
+   "spans": "2009-11",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2009/11 CELTIC Vintage Nike Away Football Shirt (L)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2009-11-celtic-vintage-nike-away-football-shirt-l.webp",
+   "width": 900,
+   "height": 805,
+   "yellowShare": 0.0001,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2009-11-celtic-vintage-nike-away-football-shirt-l"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2009-11-celtic-nike-away-shirt-m",
+   "type": "away",
+   "season": "2009/10",
+   "spans": "2009-11",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2009-11 Celtic Nike Away Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2009-11-celtic-nike-away-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.2064,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2009-11-celtic-nike-away-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2009-11-celtic-away-shirt-l-s-m-19457",
+   "type": "away",
+   "season": "2009/10",
+   "spans": "2009-11",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": null,
+   "title": "2009-11 Celtic Away Shirt L/S M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2009-11-celtic-away-shirt-l-s-m-19457.webp",
+   "width": 450,
+   "height": 600,
+   "yellowShare": 0.0924,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2009-11-celtic-away-shirt-l-s-m-19457"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2010-11-celtic-vintage-nike-away-football-shirt-jersey-s",
+   "type": "away",
+   "season": "2010/11",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2010/11 CELTIC Vintage Nike Away Football Shirt Jersey (S)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2010-11-celtic-vintage-nike-away-football-shirt-jersey-s.webp",
+   "width": 900,
+   "height": 882,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2010-11-celtic-vintage-nike-away-football-shirt-jersey-s"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2010-11-celtic-nike-away-shirt-xl",
+   "type": "away",
+   "season": "2010/11",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2010-11 Celtic Nike Away Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2010-11-celtic-nike-away-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0002,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2010-11-celtic-nike-away-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2010-11-celtic-vintage-nike-goalkeeper-football-shirt-jersey-m-gk",
+   "type": "gk",
+   "season": "2010/11",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2010/11 CELTIC Vintage Nike Goalkeeper Football Shirt Jersey (M) GK",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2010-11-celtic-vintage-nike-goalkeeper-football-shirt-jersey-m-gk.webp",
+   "width": 900,
+   "height": 870,
+   "yellowShare": 0.0001,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2010-11-celtic-vintage-nike-goalkeeper-football-shirt-jersey-m-gk"
+   }
+  },
+  {
+   "id": "shop-cultkits-2010-12-celtic-home-shirt-l-nike636",
+   "type": "home",
+   "season": "2010/11",
+   "spans": "2010-12",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2010/12 CELTIC HOME SHIRT (L) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2010-12-celtic-home-shirt-l-nike636.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2010-12-celtic-home-shirt-l-nike636"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2010-12-celtic-nike-home-shirt-xl",
+   "type": "home",
+   "season": "2010/11",
+   "spans": "2010-12",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2010-12 Celtic Nike Home Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2010-12-celtic-nike-home-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2010-12-celtic-nike-home-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2010-12-celtic-l-s-home-shirt-m-nike112",
+   "type": "home",
+   "season": "2010/11",
+   "spans": "2010-12",
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2010/12 Celtic L/S Home Shirt (M) Nike",
+   "image": "/club-kits/celtic/shop/cultkits-2010-12-celtic-l-s-home-shirt-m-nike112.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2010-12-celtic-l-s-home-shirt-m-nike112"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2011-12-celtic-nike-away-shirt-mulgrew-21-m-68187",
+   "type": "away",
+   "season": "2011/12",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2011-12 Celtic Nike Away Shirt Mulgrew #21 M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2011-12-celtic-nike-away-shirt-mulgrew-21-m-68187.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2011-12-celtic-nike-away-shirt-mulgrew-21-m-68187"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2011-12-celtic-nike-away-shirt-l-s-m",
+   "type": "away",
+   "season": "2011/12",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2011-12 Celtic Nike Away Shirt L/S M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2011-12-celtic-nike-away-shirt-l-s-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2011-12-celtic-nike-away-shirt-l-s-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-2011-12-celtic-9-l-s-away-shirt-xl-nike",
+   "type": "away",
+   "season": "2011/12",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2011/12 Celtic #9 L/S Away Shirt (XL) Nike",
+   "image": "/club-kits/celtic/shop/cultkits-2011-12-celtic-9-l-s-away-shirt-xl-nike.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2011-12-celtic-9-l-s-away-shirt-xl-nike"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2011-12-celtic-vintage-nike-third-football-shirt-m-l",
+   "type": "third",
+   "season": "2011/12",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2011/12 CELTIC Vintage Nike Third Football Shirt (M/L)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2011-12-celtic-vintage-nike-third-football-shirt-m-l.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.1246,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2011-12-celtic-vintage-nike-third-football-shirt-m-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-2011-2012-celtic-ledley-16-third-shirt-m-nike",
+   "type": "third",
+   "season": "2011/12",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2011/12 Celtic Ledley #16 Third Shirt (M) Nike",
+   "image": "/club-kits/celtic/shop/cultkits-2011-2012-celtic-ledley-16-third-shirt-m-nike.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.2274,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2011-2012-celtic-ledley-16-third-shirt-m-nike"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2012-13-celtic-nike-player-issue-away-shirt-mint-xxl",
+   "type": "away",
+   "season": "2012/13",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2012-13 Celtic Nike Player Issue Away Shirt *Mint* XXL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2012-13-celtic-nike-player-issue-away-shirt-mint-xxl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2012-13-celtic-nike-player-issue-away-shirt-mint-xxl"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2012-13-celtic-vintage-nike-125th-anniversary-home-football-shirt-",
+   "type": "home",
+   "season": "2012/13",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2012/13 CELTIC Vintage Nike 125th Anniversary Home Football Shirt (M)",
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2012-13-celtic-vintage-nike-125th-anniversary-home-football-shirt-.webp",
+   "width": 900,
+   "height": 872,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2012-13-celtic-vintage-nike-125th-anniversary-home-football-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2012-13-celtic-nike-125th-anniversary-home-shirt-xl",
+   "type": "home",
+   "season": "2012/13",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2012-13 Celtic Nike '125th Anniversary' Home Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2012-13-celtic-nike-125th-anniversary-home-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2012-13-celtic-nike-125th-anniversary-home-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2012-13-celtic-nike-125th-anniversary-home-shirt-commons-15-l-s-l",
+   "type": "home",
+   "season": "2012/13",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Nike",
+   "title": "2012-13 Celtic Nike '125th Anniversary' Player Issue Home Shirt Commons #15 L/S L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2012-13-celtic-nike-125th-anniversary-home-shirt-commons-15-l-s-l.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0008,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2012-13-celtic-nike-125th-anniversary-home-shirt-commons-15-l-s-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-2013-14-celtic-player-issue-away-shirt-l-nike573",
+   "type": "away",
+   "season": "2013/14",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2013/14 CELTIC *PLAYER ISSUE* AWAY SHIRT (L) NIKE",
+   "image": "/club-kits/celtic/shop/cultkits-2013-14-celtic-player-issue-away-shirt-l-nike573.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.2463,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2013-14-celtic-player-issue-away-shirt-l-nike573"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2013-14-celtic-nike-away-shirt-xl",
+   "type": "away",
+   "season": "2013/14",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2013-14 Celtic Nike Away Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2013-14-celtic-nike-away-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.4917,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2013-14-celtic-nike-away-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2013-15-celtic-home-shirt-s-nike2421",
+   "type": "home",
+   "season": "2013/14",
+   "spans": "2013-15",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2013/15 Celtic Home Shirt (S) Nike",
+   "image": "/club-kits/celtic/shop/cultkits-2013-15-celtic-home-shirt-s-nike2421.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2013-15-celtic-home-shirt-s-nike2421"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2013-15-celtic-nike-home-shirt-xl",
+   "type": "home",
+   "season": "2013/14",
+   "spans": "2013-15",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2013-15 Celtic Nike Home Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2013-15-celtic-nike-home-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2013-15-celtic-nike-home-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2014-15-celtic-nike-third-shirt-m",
+   "type": "third",
+   "season": "2014/15",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2014-15 Celtic Nike European Third Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2014-15-celtic-nike-third-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0173,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2014-15-celtic-nike-third-shirt-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-2014-15-celtic-virgil-5-bnwt-european-third-shirt-xl-nike346",
+   "type": "third",
+   "season": "2014/15",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2014/15 Celtic Virgil #5 *BNWT* European Third Shirt (XL) Nike",
+   "image": "/club-kits/celtic/shop/cultkits-2014-15-celtic-virgil-5-bnwt-european-third-shirt-xl-nike346.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0125,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2014-15-celtic-virgil-5-bnwt-european-third-shirt-xl-nike346"
+   }
+  },
+  {
+   "id": "shop-cultkits-2015-16-celtic-l-s-home-shirt-m-new-balance568",
+   "type": "home",
+   "season": "2015/16",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "New Balance",
+   "title": "2015/16 CELTIC L/S HOME SHIRT (M) NEW BALANCE",
+   "image": "/club-kits/celtic/shop/cultkits-2015-16-celtic-l-s-home-shirt-m-new-balance568.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2015-16-celtic-l-s-home-shirt-m-new-balance568"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2016-17-celtic-new-balance-home-shirt-m",
+   "type": "home",
+   "season": "2016/17",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "New Balance",
+   "title": "2016-17 Celtic New Balance Home Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2016-17-celtic-new-balance-home-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2016-17-celtic-new-balance-home-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2017-18-celtic-new-balance-fourth-shirt-m",
+   "type": "fourth",
+   "season": "2017/18",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "New Balance",
+   "title": "2017-18 Celtic New Balance Fourth Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2017-18-celtic-new-balance-fourth-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2017-18-celtic-new-balance-fourth-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2017-18-celtic-new-balance-home-shirt-xl",
+   "type": "home",
+   "season": "2017/18",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "New Balance",
+   "title": "2017-18 Celtic New Balance Lisbon Lions 50th Home Shirt XL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2017-18-celtic-new-balance-home-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2017-18-celtic-new-balance-home-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2017-18-celtic-new-balance-lisbon-lions-50th-third-shirt-xxl",
+   "type": "third",
+   "season": "2017/18",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "New Balance",
+   "title": "2017-18 Celtic New Balance Third Shirt XXL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2017-18-celtic-new-balance-lisbon-lions-50th-third-shirt-xxl.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2017-18-celtic-new-balance-lisbon-lions-50th-third-shirt-xxl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2018-19-celtic-new-balance-away-shirt-xxl",
+   "type": "away",
+   "season": "2018/19",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "New Balance",
+   "title": "2018-19 Celtic New Balance Away Shirt XXL",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2018-19-celtic-new-balance-away-shirt-xxl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2018-19-celtic-new-balance-away-shirt-xxl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2019-20-celtic-new-balance-home-shirt-l",
+   "type": "home",
+   "season": "2019/20",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "New Balance",
+   "title": "2019-20 Celtic New Balance Home Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2019-20-celtic-new-balance-home-shirt-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0021,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2019-20-celtic-new-balance-home-shirt-l"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2020-21-celtic-adidas-away-shirt-m",
+   "type": "away",
+   "season": "2020/21",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2020-21 Celtic adidas Away Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2020-21-celtic-adidas-away-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0001,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2020-21-celtic-adidas-away-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2020-21-celtic-adidas-home-shirt-m",
+   "type": "home",
+   "season": "2020/21",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2020-21 Celtic adidas Home Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2020-21-celtic-adidas-home-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0102,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2020-21-celtic-adidas-home-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2020-21-celtic-adidas-third-shirt-m",
+   "type": "third",
+   "season": "2020/21",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2020-21 Celtic adidas Third Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2020-21-celtic-adidas-third-shirt-m.webp",
+   "width": 900,
+   "height": 891,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2020-21-celtic-adidas-third-shirt-m"
+   }
+  },
+  {
+   "id": "shop-shortyfootballshirts-celtic-2021-22-original-home-shirt-size-s",
+   "type": "home",
+   "season": "2021/22",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "Celtic 2021/22 Original Home Shirt Size S",
+   "image": "/club-kits/celtic/shop/shortyfootballshirts-celtic-2021-22-original-home-shirt-size-s.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/",
+    "page": "https://shortyfootballshirts.com/products/celtic-2021-22-original-home-shirt-size-s"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2021-22-celtic-adidas-home-shirt-w-tags-59142",
+   "type": "home",
+   "season": "2021/22",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2021-22 Celtic adidas Home Shirt *w/tags*",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2021-22-celtic-adidas-home-shirt-w-tags-59142.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0024,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2021-22-celtic-adidas-home-shirt-w-tags-59142"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2021-22-celtic-adidas-home-shirt-l-s-bnib-60482",
+   "type": "home",
+   "season": "2021/22",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "adidas",
+   "title": "2021-22 Celtic adidas Home Shirt L/S *BNIB*",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2021-22-celtic-adidas-home-shirt-l-s-bnib-60482.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.002,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2021-22-celtic-adidas-home-shirt-l-s-bnib-60482"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2021-22-celtic-adidas-third-shirt-m-1",
+   "type": "third",
+   "season": "2021/22",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2021-22 Celtic adidas Third Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2021-22-celtic-adidas-third-shirt-m-1.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2021-22-celtic-adidas-third-shirt-m-1"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2022-23-celtic-adidas-third-shirt-m",
+   "type": "third",
+   "season": "2022/23",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2022-23 Celtic adidas Third Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2022-23-celtic-adidas-third-shirt-m.webp",
+   "width": 900,
+   "height": 872,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2022-23-celtic-adidas-third-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2023-24-celtic-adidas-away-shirt-l",
+   "type": "away",
+   "season": "2023/24",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2023-24 Celtic adidas Away Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2023-24-celtic-adidas-away-shirt-l.webp",
+   "width": 900,
+   "height": 869,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2023-24-celtic-adidas-away-shirt-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-2023-24-celtic-johnston-2-bnwt-away-shirt-xxl-adidas22",
+   "type": "away",
+   "season": "2023/24",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2023/24 CELTIC JOHNSTON #2 *BNWT* AWAY SHIRT (XXL) ADIDAS",
+   "image": "/club-kits/celtic/shop/cultkits-2023-24-celtic-johnston-2-bnwt-away-shirt-xxl-adidas22.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2023-24-celtic-johnston-2-bnwt-away-shirt-xxl-adidas22"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2023-24-celtic-adidas-home-shirt-m",
+   "type": "home",
+   "season": "2023/24",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2023-24 Celtic adidas Home Shirt M",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2023-24-celtic-adidas-home-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0023,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2023-24-celtic-adidas-home-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2023-24-celtic-adidas-third-shirt-l",
+   "type": "third",
+   "season": "2023/24",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2023-24 Celtic adidas Third Shirt L",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2023-24-celtic-adidas-third-shirt-l.webp",
+   "width": 900,
+   "height": 806,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2023-24-celtic-adidas-third-shirt-l"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2024-25-celtic-adidas-away-shirt-w-tags",
+   "type": "away",
+   "season": "2024/25",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2024-25 Celtic adidas Away Shirt *w/tags*",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2024-25-celtic-adidas-away-shirt-w-tags.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.4017,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2024-25-celtic-adidas-away-shirt-w-tags"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2024-25-celtic-adidas-home-shirt-w-tags",
+   "type": "home",
+   "season": "2024/25",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2024-25 Celtic adidas Home Shirt *w/tags*",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2024-25-celtic-adidas-home-shirt-w-tags.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0021,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2024-25-celtic-adidas-home-shirt-w-tags"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2024-25-celtic-adidas-home-shirt-l-s-w-tags",
+   "type": "home",
+   "season": "2024/25",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "adidas",
+   "title": "2024-25 Celtic adidas Home Shirt L/S *w/tags*",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2024-25-celtic-adidas-home-shirt-l-s-w-tags.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0017,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2024-25-celtic-adidas-home-shirt-l-s-w-tags"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2025-26-celtic-adidas-away-shirt-bnib",
+   "type": "away",
+   "season": "2025/26",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2025-26 Celtic adidas Away Shirt *BNIB*",
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2025-26-celtic-adidas-away-shirt-bnib.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2025-26-celtic-adidas-away-shirt-bnib"
+   }
+  }
+ ]
+}

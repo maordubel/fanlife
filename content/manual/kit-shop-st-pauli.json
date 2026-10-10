@@ -1,0 +1,350 @@
+{
+ "source": {
+  "note": "Retail product photographs of real shirts, from four shops' public product feeds; used with the owner's approval (chat, 2026-10-10). Season, type and maker are the product title's words.",
+  "stores": [
+   {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/"
+   },
+   {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/"
+   },
+   {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/"
+   },
+   {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/"
+   }
+  ],
+  "readOn": "2026-10-10"
+ },
+ "count": 17,
+ "kits": [
+  {
+   "id": "shop-vintagefootballshirts-1992-93-fc-st-pauli-patrick-home-shirt-bnib",
+   "type": "home",
+   "season": "1992/93",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": null,
+   "title": "1992-93 FC St. Pauli Patrick Home Shirt L/S *BNIB* L",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-1992-93-fc-st-pauli-patrick-home-shirt-bnib.webp",
+   "width": 900,
+   "height": 821,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1992-93-fc-st-pauli-patrick-home-shirt-bnib"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1996-97-fc-st-pauli-away-shirt-m-l",
+   "type": "away",
+   "season": "1996/97",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "1996-97 FC St. Pauli Away Shirt M/L",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-1996-97-fc-st-pauli-away-shirt-m-l.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1996-97-fc-st-pauli-away-shirt-m-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-1996-97-st-pauli-l-s-away-shirt-xl-xxl-reusch57",
+   "type": "away",
+   "season": "1996/97",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": null,
+   "title": "1996/97 ST PAULI L/S AWAY SHIRT (XL/XXL) REUSCH",
+   "image": "/club-kits/st-pauli/shop/cultkits-1996-97-st-pauli-l-s-away-shirt-xl-xxl-reusch57.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1996-97-st-pauli-l-s-away-shirt-xl-xxl-reusch57"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1997-99-fc-st-pauli-puma-signed-home-shirt-m",
+   "type": "home",
+   "season": "1997/98",
+   "spans": "1997-99",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "1997-99 FC St. Pauli Puma 'Signed' Home Shirt M",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-1997-99-fc-st-pauli-puma-signed-home-shirt-m.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1997-99-fc-st-pauli-puma-signed-home-shirt-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-1999-00-st-pauli-reissue-away-shirt-l-puma-stp99reissue",
+   "type": "away",
+   "season": "1999/00",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "1999/00 St Pauli *Reissue* Away Shirt (L) Puma",
+   "image": "/club-kits/st-pauli/shop/cultkits-1999-00-st-pauli-reissue-away-shirt-l-puma-stp99reissue.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0006,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1999-00-st-pauli-reissue-away-shirt-l-puma-stp99reissue"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2000-01-st-pauli-vintage-kappa-home-football-shirt-xl",
+   "type": "home",
+   "season": "2000/01",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Kappa",
+   "title": "2000/01 ST PAULI Vintage Kappa Home Football Shirt (XL)",
+   "image": "/club-kits/st-pauli/shop/footballshirtcollective-2000-01-st-pauli-vintage-kappa-home-football-shirt-xl.webp",
+   "width": 900,
+   "height": 805,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2000-01-st-pauli-vintage-kappa-home-football-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2005-06-fc-st-pauli-home-shirt-l-s-mint-l",
+   "type": "home",
+   "season": "2005/06",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": null,
+   "title": "2005-06 FC St. Pauli Home Shirt L/S *Mint* L",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2005-06-fc-st-pauli-home-shirt-l-s-mint-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2005-06-fc-st-pauli-home-shirt-l-s-mint-l"
+   }
+  },
+  {
+   "id": "shop-cultkits-2010-11-st-pauli-oczipka-6-match-issued-home-shirt-xl-do-you-football",
+   "type": "home",
+   "season": "2010/11",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "2010/11 St Pauli Oczipka #6 *Match Issued* Home Shirt (XL) Do You Football",
+   "image": "/club-kits/st-pauli/shop/cultkits-2010-11-st-pauli-oczipka-6-match-issued-home-shirt-xl-do-you-football.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2010-11-st-pauli-oczipka-6-match-issued-home-shirt-xl-do-you-football"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2014-15-fc-st-pauli-hummel-third-shirt-m",
+   "type": "third",
+   "season": "2014/15",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Hummel",
+   "title": "2014-15 FC St. Pauli Hummel Third Shirt M",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2014-15-fc-st-pauli-hummel-third-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2014-15-fc-st-pauli-hummel-third-shirt-m"
+   }
+  },
+  {
+   "id": "shop-cultkits-2015-16-st-pauli-home-shirt-m-hummel47547",
+   "type": "home",
+   "season": "2015/16",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Hummel",
+   "title": "2015/16 St Pauli Home Shirt (M) Hummel",
+   "image": "/club-kits/st-pauli/shop/cultkits-2015-16-st-pauli-home-shirt-m-hummel47547.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2015-16-st-pauli-home-shirt-m-hummel47547"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2015-16-st-pauli-hummel-home-shirt-bnib-60577",
+   "type": "home",
+   "season": "2015/16",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Hummel",
+   "title": "2015-16 St. Pauli Hummel Home Shirt *BNIB*",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2015-16-st-pauli-hummel-home-shirt-bnib-60577.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2015-16-st-pauli-hummel-home-shirt-bnib-60577"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2018-19-fc-st-pauli-under-armour-home-shirt-as-new-s",
+   "type": "home",
+   "season": "2018/19",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Under Armour",
+   "title": "2018-19 FC St. Pauli Under Armour Home Shirt *As New* S",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2018-19-fc-st-pauli-under-armour-home-shirt-as-new-s.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2018-19-fc-st-pauli-under-armour-home-shirt-as-new-s"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2018-19-fc-st-pauli-under-armour-third-shirt-mint-xxl",
+   "type": "third",
+   "season": "2018/19",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Under Armour",
+   "title": "2018-19 FC St. Pauli Under Armour Third Shirt *Mint* XXL",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2018-19-fc-st-pauli-under-armour-third-shirt-mint-xxl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2018-19-fc-st-pauli-under-armour-third-shirt-mint-xxl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2020-21-fc-st-pauli-under-armour-third-shirt-xxl",
+   "type": "third",
+   "season": "2020/21",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Under Armour",
+   "title": "2020-21 FC St. Pauli Under Armour Third Shirt XXL",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2020-21-fc-st-pauli-under-armour-third-shirt-xxl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0006,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2020-21-fc-st-pauli-under-armour-third-shirt-xxl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2023-24-fc-st-pauli-puma-away-shirt-bnib",
+   "type": "away",
+   "season": "2024/25",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2024-25 FC St. Pauli Puma Away Shirt *BNIB*",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2023-24-fc-st-pauli-puma-away-shirt-bnib.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0003,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2023-24-fc-st-pauli-puma-away-shirt-bnib"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2024-25-fc-st-pauli-puma-home-shirt-mint-m",
+   "type": "home",
+   "season": "2024/25",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2024-25 FC St. Pauli Puma Home Shirt *Mint* M",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2024-25-fc-st-pauli-puma-home-shirt-mint-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2024-25-fc-st-pauli-puma-home-shirt-mint-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2023-24-fc-st-pauli-puma-third-shirt-bnib",
+   "type": "third",
+   "season": "2024/25",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2024-25 FC St. Pauli Puma Third Shirt *BNIB*",
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2023-24-fc-st-pauli-puma-third-shirt-bnib.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0025,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2023-24-fc-st-pauli-puma-third-shirt-bnib"
+   }
+  }
+ ]
+}

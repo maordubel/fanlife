@@ -128,7 +128,7 @@ describe('Celtic · Historical Football Kits drawings (owner: non-commercial use
 
 describe('Club Football Shirts photographs (owner approval, 10.10.2026)',()=>{
  const clubs=['aek-athens','celtic','hapoel-tel-aviv','olympiacos','panathinaikos','st-pauli','zrinjski-mostar']
- it('holds 100 photographs, each a real file with a type and season from its file name, credited to the publisher',()=>{
+ it('holds 112 photographs, each a real file with a type and season from its file name, credited to the publisher',()=>{
   let n=0
   for(const c of clubs){
    const j=read<{source:{publisher:string;archivePage:string};count:number;kits:{id:string;type:string;season:string;image:string}[]}>(`content/manual/kit-cfs-${c}.json`)
@@ -136,7 +136,7 @@ describe('Club Football Shirts photographs (owner approval, 10.10.2026)',()=>{
    expect(new Set(j.kits.map(k=>k.id)).size).toBe(j.kits.length);n+=j.kits.length
    for(const k of j.kits){expect(existsSync(`public${k.image}`),k.id).toBe(true);expect(k.season).toMatch(/^\d{4}\/\d{2}$/)}
   }
-  expect(n).toBe(100)
+  expect(n).toBe(112)
  })
  it('shows the photographs and their credit on the archive page',()=>{
   const h=readFileSync('public/kit-archive/olympiacos/index.html','utf8');expect(h).toContain('Club Football Shirts');expect(h).toContain('data-archive-photo')
@@ -174,5 +174,18 @@ describe('Hapoel Tel Aviv: era crests and the Worker\'s own data',()=>{
   let same=0,both=0
   for(const k of cof){const m=km.find(x=>x.seasonLabel===k.season&&x.variant===k.type);if(!m?.fields.maker.value)continue;both++;if(m.fields.maker.value.name.toLowerCase()===(k.maker??'').toLowerCase())same++}
   expect(both).toBeGreaterThan(20);expect(same/both).toBeGreaterThan(0.95)
+ })
+})
+
+describe('retail shirt photographs (four shops\' public feeds, owner approval 10.10.2026)',()=>{
+ const clubs=['aek-athens','celtic','hapoel-tel-aviv','hapoel-petah-tikva','olympiacos','panathinaikos','st-pauli','zrinjski-mostar']
+ it('every photograph is a real file with a season, a type, the shop and its product page',()=>{
+  let n=0
+  for(const c of clubs){
+   const j=read<{count:number;kits:{id:string;type:string;season:string;image:string;title:string;credit:{publisher:string;url:string;page:string}}[]}>(`content/manual/kit-shop-${c}.json`)
+   expect(j.count).toBe(j.kits.length);expect(new Set(j.kits.map(k=>k.id)).size).toBe(j.kits.length);n+=j.kits.length
+   for(const k of j.kits){expect(existsSync(`public${k.image}`),k.id).toBe(true);expect(k.season).toMatch(/^\d{4}(\/\d{2})?$/);expect(['home','away','third','fourth','gk','special']).toContain(k.type);expect(k.credit.publisher.length).toBeGreaterThan(3);expect(k.credit.page).toMatch(/^https:\/\//)}
+  }
+  expect(n).toBeGreaterThan(150)
  })
 })

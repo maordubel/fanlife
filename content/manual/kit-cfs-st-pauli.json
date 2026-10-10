@@ -6,13 +6,13 @@
   "licence": "Photographs of shirts from the publisher's archive pages, used with the owner's approval (chat, 2026-10-10). Credit travels with every photograph.",
   "readOn": "2026-10-10"
  },
- "count": 18,
+ "count": 21,
  "kits": [
   {
-   "id": "cfs-away-2018-19",
+   "id": "cfs-away-2018-19-1",
    "type": "away",
    "season": "2018/19",
-   "image": "/club-kits/st-pauli/cfs/away-2018-19.webp",
+   "image": "/club-kits/st-pauli/cfs/away-2018-19-1.webp",
    "width": 498,
    "height": 498,
    "yellowShare": 0.0,
@@ -20,10 +20,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-away-2018-2019-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-home-2018-19",
+   "id": "cfs-home-2018-19-0",
    "type": "home",
    "season": "2018/19",
-   "image": "/club-kits/st-pauli/cfs/home-2018-19.webp",
+   "image": "/club-kits/st-pauli/cfs/home-2018-19-0.webp",
    "width": 497,
    "height": 497,
    "yellowShare": 0.0,
@@ -31,10 +31,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-home-2018-2019-football-shirt-archive_orig.png"
   },
   {
-   "id": "cfs-third-2018-19",
+   "id": "cfs-third-2018-19-2",
    "type": "third",
    "season": "2018/19",
-   "image": "/club-kits/st-pauli/cfs/third-2018-19.webp",
+   "image": "/club-kits/st-pauli/cfs/third-2018-19-2.webp",
    "width": 495,
    "height": 495,
    "yellowShare": 0.0,
@@ -42,10 +42,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-third-2018-2019-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-away-2019-20",
+   "id": "cfs-away-2019-20-4",
    "type": "away",
    "season": "2019/20",
-   "image": "/club-kits/st-pauli/cfs/away-2019-20.webp",
+   "image": "/club-kits/st-pauli/cfs/away-2019-20-4.webp",
    "width": 815,
    "height": 815,
    "yellowShare": 0.0,
@@ -53,10 +53,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-away-2019-2020-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-home-2019-20",
+   "id": "cfs-home-2019-20-3",
    "type": "home",
    "season": "2019/20",
-   "image": "/club-kits/st-pauli/cfs/home-2019-20.webp",
+   "image": "/club-kits/st-pauli/cfs/home-2019-20-3.webp",
    "width": 775,
    "height": 775,
    "yellowShare": 0.0,
@@ -64,10 +64,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-home-2019-2020-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-third-2019-20",
+   "id": "cfs-third-2019-20-5",
    "type": "third",
    "season": "2019/20",
-   "image": "/club-kits/st-pauli/cfs/third-2019-20.webp",
+   "image": "/club-kits/st-pauli/cfs/third-2019-20-5.webp",
    "width": 811,
    "height": 811,
    "yellowShare": 0.0002,
@@ -75,10 +75,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-third-2019-2020-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-away-2020-21",
+   "id": "cfs-away-2020-21-7",
    "type": "away",
    "season": "2020/21",
-   "image": "/club-kits/st-pauli/cfs/away-2020-21.webp",
+   "image": "/club-kits/st-pauli/cfs/away-2020-21-7.webp",
    "width": 841,
    "height": 841,
    "yellowShare": 0.0,
@@ -86,10 +86,21 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-away-2020-2021-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-home-2020-21",
+   "id": "cfs-away-2020-21-19",
+   "type": "away",
+   "season": "2020/21",
+   "image": "/club-kits/st-pauli/cfs/away-2020-21-19.webp",
+   "width": 705,
+   "height": 841,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/fc-st-pauli-20202021-football-shirts.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-away-2020-2021-front_orig.jpg"
+  },
+  {
+   "id": "cfs-home-2020-21-6",
    "type": "home",
    "season": "2020/21",
-   "image": "/club-kits/st-pauli/cfs/home-2020-21.webp",
+   "image": "/club-kits/st-pauli/cfs/home-2020-21-6.webp",
    "width": 841,
    "height": 841,
    "yellowShare": 0.0,
@@ -97,10 +108,21 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-home-2020-2021-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-third-2020-21",
+   "id": "cfs-home-2020-21-18",
+   "type": "home",
+   "season": "2020/21",
+   "image": "/club-kits/st-pauli/cfs/home-2020-21-18.webp",
+   "width": 705,
+   "height": 841,
+   "yellowShare": 0.0,
+   "page": "https://www.clubfootballshirts.com/fc-st-pauli-20202021-football-shirts.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-home-2020-2021-front_orig.jpg"
+  },
+  {
+   "id": "cfs-third-2020-21-8",
    "type": "third",
    "season": "2020/21",
-   "image": "/club-kits/st-pauli/cfs/third-2020-21.webp",
+   "image": "/club-kits/st-pauli/cfs/third-2020-21-8.webp",
    "width": 811,
    "height": 811,
    "yellowShare": 0.0001,
@@ -108,10 +130,21 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-third-2020-2021-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-away-2021-22",
+   "id": "cfs-third-2020-21-20",
+   "type": "third",
+   "season": "2020/21",
+   "image": "/club-kits/st-pauli/cfs/third-2020-21-20.webp",
+   "width": 705,
+   "height": 841,
+   "yellowShare": 0.0001,
+   "page": "https://www.clubfootballshirts.com/fc-st-pauli-20202021-football-shirts.html",
+   "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-third-2020-2021-front_orig.jpg"
+  },
+  {
+   "id": "cfs-away-2021-22-10",
    "type": "away",
    "season": "2021/22",
-   "image": "/club-kits/st-pauli/cfs/away-2021-22.webp",
+   "image": "/club-kits/st-pauli/cfs/away-2021-22-10.webp",
    "width": 665,
    "height": 665,
    "yellowShare": 0.0,
@@ -119,10 +152,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-away-2021-2022-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-home-2021-22",
+   "id": "cfs-home-2021-22-9",
    "type": "home",
    "season": "2021/22",
-   "image": "/club-kits/st-pauli/cfs/home-2021-22.webp",
+   "image": "/club-kits/st-pauli/cfs/home-2021-22-9.webp",
    "width": 697,
    "height": 697,
    "yellowShare": 0.0,
@@ -130,10 +163,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-home-2021-2022-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-third-2021-22",
+   "id": "cfs-third-2021-22-11",
    "type": "third",
    "season": "2021/22",
-   "image": "/club-kits/st-pauli/cfs/third-2021-22.webp",
+   "image": "/club-kits/st-pauli/cfs/third-2021-22-11.webp",
    "width": 707,
    "height": 707,
    "yellowShare": 0.0,
@@ -141,10 +174,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-third-2021-2022-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-away-2022-23",
+   "id": "cfs-away-2022-23-13",
    "type": "away",
    "season": "2022/23",
-   "image": "/club-kits/st-pauli/cfs/away-2022-23.webp",
+   "image": "/club-kits/st-pauli/cfs/away-2022-23-13.webp",
    "width": 705,
    "height": 705,
    "yellowShare": 0.0,
@@ -152,10 +185,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-away-2022-2023-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-home-2022-23",
+   "id": "cfs-home-2022-23-12",
    "type": "home",
    "season": "2022/23",
-   "image": "/club-kits/st-pauli/cfs/home-2022-23.webp",
+   "image": "/club-kits/st-pauli/cfs/home-2022-23-12.webp",
    "width": 707,
    "height": 707,
    "yellowShare": 0.0,
@@ -163,10 +196,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-home-2022-2023-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-special-2022-23",
+   "id": "cfs-special-2022-23-16",
    "type": "special",
    "season": "2022/23",
-   "image": "/club-kits/st-pauli/cfs/special-2022-23.webp",
+   "image": "/club-kits/st-pauli/cfs/special-2022-23-16.webp",
    "width": 800,
    "height": 800,
    "yellowShare": 0.0,
@@ -174,10 +207,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-cup-2022-2023-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-away-2023-24",
+   "id": "cfs-away-2023-24-15",
    "type": "away",
    "season": "2023/24",
-   "image": "/club-kits/st-pauli/cfs/away-2023-24.webp",
+   "image": "/club-kits/st-pauli/cfs/away-2023-24-15.webp",
    "width": 714,
    "height": 714,
    "yellowShare": 0.0,
@@ -185,10 +218,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-away-2023-2024-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-home-2023-24",
+   "id": "cfs-home-2023-24-14",
    "type": "home",
    "season": "2023/24",
-   "image": "/club-kits/st-pauli/cfs/home-2023-24.webp",
+   "image": "/club-kits/st-pauli/cfs/home-2023-24-14.webp",
    "width": 716,
    "height": 716,
    "yellowShare": 0.0,
@@ -196,10 +229,10 @@
    "original": "https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/fc-st-pauli-home-2023-2024-football-shirt-archive_orig.jpg"
   },
   {
-   "id": "cfs-special-2023-24",
+   "id": "cfs-special-2023-24-17",
    "type": "special",
    "season": "2023/24",
-   "image": "/club-kits/st-pauli/cfs/special-2023-24.webp",
+   "image": "/club-kits/st-pauli/cfs/special-2023-24-17.webp",
    "width": 800,
    "height": 800,
    "yellowShare": 0.0,

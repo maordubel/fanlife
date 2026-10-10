@@ -37,11 +37,17 @@ for c in CLUBS:
     if c['id']=='hapoel-tel-aviv':
         wp=json.load(open('content/manual/kit-photos.json'));recs=[r for r in wp['records'] if r.get('file')]
         data['worker']=dict(count=len(recs),source=dict(publisher='The Worker — ארכיון החולצות הצילומי (ויקיפועל, באדיבות ישי צבי · Football Kit Archive)',url='/shirts'),kits=[dict(file='/kits/'+r['file'],season=r.get('seasonLabel'),year=r.get('yearRaw'),variant=r.get('variantHe') or r.get('variant'),type=r.get('variant'),ambiguous=bool(r.get('seasonAmbiguous')),source=r.get('source')) for r in sorted(recs,key=lambda r:(r.get('yearRaw') or 0,r.get('variant') or ''))])
-    cp=f"content/manual/kit-cfs-{c['id']}.json"
-    if os.path.exists(cp):
-        cf=json.load(open(cp));data['cfs']=cf
+    cp=f"content/manual/kit-cfs-{c['id']}.json";sp=f"content/manual/kit-shop-{c['id']}.json"
+    cf=json.load(open(cp)) if os.path.exists(cp) else None
+    shop=json.load(open(sp)) if os.path.exists(sp) else None
+    if shop and shop['kits']:
+        base=cf or dict(source=dict(publisher='Retail shirt photographs',url='',archivePage=''),kits=[])
+        cf=dict(source=base['source'],count=len(base['kits'])+len(shop['kits']),kits=base['kits']+[dict(k,page=k['credit'].get('page')) for k in shop['kits']])
+    if cf:
+        data['cfs']=cf
         ph={}
-        for q in cf['kits']:ph.setdefault((q['season'],q['type']),q['image'])
+        for q in cf['kits']:
+            if not q.get('longSleeve'):ph.setdefault((q['season'],q['type']),q['image'])
         for k in data['kits']:
             u=ph.get((k['season'],k['type']))
             if u:k['photo']=u
