@@ -1,0 +1,4406 @@
+{
+ "schemaVersion": 1,
+ "clubId": "zrinjski-mostar",
+ "source": "UEFA match API (match.uefa.com/v5), public JSON",
+ "uefaTeamId": "73390",
+ "clubName": "HŠK Zrinjski",
+ "homeCountry": "BIH",
+ "origin": "uefa-73397",
+ "counts": {
+  "matches": 97,
+  "abroad": 49,
+  "grounds": 42,
+  "countries": 26,
+  "unplaced": 0
+ },
+ "stadiums": [
+  {
+   "id": "uefa-250000015",
+   "name": "Hlíðarendi",
+   "city": "Reykjavik",
+   "countryCode": "ISL",
+   "lat": 64.1435944,
+   "lng": -21.8789861,
+   "capacity": 1201,
+   "opened": 2008
+  },
+  {
+   "id": "uefa-250000302",
+   "name": "Malmö New Stadium",
+   "city": "Malmö",
+   "countryCode": "SWE",
+   "lat": 55.5860944,
+   "lng": 12.9892472,
+   "capacity": 20400,
+   "opened": 2009
+  },
+  {
+   "id": "uefa-250001140",
+   "name": "Stadion Stožice",
+   "city": "Ljubljana",
+   "countryCode": "SVN",
+   "lat": 46.080641,
+   "lng": 14.52444,
+   "capacity": 15796,
+   "opened": 2010
+  },
+  {
+   "id": "uefa-250001299",
+   "name": "Mainz Arena",
+   "city": "Mainz",
+   "countryCode": "GER",
+   "lat": 49.987987,
+   "lng": 8.224955,
+   "capacity": 19562,
+   "opened": 2011
+  },
+  {
+   "id": "uefa-250001569",
+   "name": "Ludogorets Arena",
+   "city": "Razgrad",
+   "countryCode": "BUL",
+   "lat": 43.534722,
+   "lng": 26.527222,
+   "capacity": 10423,
+   "opened": 1959
+  },
+  {
+   "id": "uefa-250003216",
+   "name": "Urartu Stadium",
+   "city": "Yerevan",
+   "countryCode": "ARM",
+   "lat": 40.170653,
+   "lng": 44.451427,
+   "capacity": 4860,
+   "opened": 2008
+  },
+  {
+   "id": "uefa-250003271",
+   "name": "Arena Lublin",
+   "city": "Lublin",
+   "countryCode": "POL",
+   "lat": 51.233372,
+   "lng": 22.557541,
+   "capacity": 15205,
+   "opened": 2014
+  },
+  {
+   "id": "uefa-250003855",
+   "name": "Národný futbalový štadión",
+   "city": "Bratislava",
+   "countryCode": "SVK",
+   "lat": 48.17758,
+   "lng": 17.154043,
+   "capacity": 22750,
+   "opened": 2019
+  },
+  {
+   "id": "uefa-250003909",
+   "name": "Arena Kombëtare",
+   "city": "Tirana",
+   "countryCode": "ALB",
+   "lat": 41.3184028,
+   "lng": 19.8239528,
+   "capacity": 21160,
+   "opened": 2019
+  },
+  {
+   "id": "uefa-250005080",
+   "name": "Oberösterreich Arena",
+   "city": "Linz",
+   "countryCode": "AUT",
+   "lat": 48.292726,
+   "lng": 14.275684,
+   "capacity": 12662,
+   "opened": 2023
+  },
+  {
+   "id": "uefa-250005200",
+   "name": "Zagłębiowski Park Sportowy",
+   "city": "Sosnowiec",
+   "countryCode": "POL",
+   "lat": 50.286557,
+   "lng": 19.174314,
+   "capacity": 11547,
+   "opened": 2022
+  },
+  {
+   "id": "uefa-53108",
+   "name": "Villa Park",
+   "city": "Birmingham",
+   "countryCode": "ENG",
+   "lat": 52.5091278,
+   "lng": -1.8848306,
+   "capacity": 28462,
+   "opened": 1897
+  },
+  {
+   "id": "uefa-53482",
+   "name": "Odense Stadion",
+   "city": "Odense",
+   "countryCode": "DEN",
+   "lat": 55.397775,
+   "lng": 10.3500361,
+   "capacity": 14014,
+   "opened": 1941
+  },
+  {
+   "id": "uefa-53487",
+   "name": "Estádio D. Afonso Henriques",
+   "city": "Guimarães",
+   "countryCode": "POR",
+   "lat": 41.4458917,
+   "lng": -8.3012,
+   "capacity": 29531,
+   "opened": 2003
+  },
+  {
+   "id": "uefa-62265",
+   "name": "San Marino Stadium",
+   "city": "Serravalle",
+   "countryCode": "SMR",
+   "lat": 43.9712528,
+   "lng": 12.4769694,
+   "capacity": 4564,
+   "opened": 1968
+  },
+  {
+   "id": "uefa-62308",
+   "name": "Štadión Antona Malatinského",
+   "city": "Trnava",
+   "countryCode": "SVK",
+   "lat": 48.3738444,
+   "lng": 17.5916278,
+   "capacity": 18100,
+   "opened": 1920
+  },
+  {
+   "id": "uefa-62389",
+   "name": "Tehelné Pole (old stadium)",
+   "city": "Bratislava",
+   "countryCode": "SVK",
+   "lat": 48.163625,
+   "lng": 17.1367333,
+   "capacity": 29887,
+   "opened": null
+  },
+  {
+   "id": "uefa-62398",
+   "name": "Stadion FK Partizan",
+   "city": "Belgrade",
+   "countryCode": "SRB",
+   "lat": 44.7888528,
+   "lng": 20.4591,
+   "capacity": 29662,
+   "opened": 1949
+  },
+  {
+   "id": "uefa-62692",
+   "name": "Stadion Galgenwaard",
+   "city": "Utrecht",
+   "countryCode": "NED",
+   "lat": 52.0783694,
+   "lng": 5.1457889,
+   "capacity": 23750,
+   "opened": 1982
+  },
+  {
+   "id": "uefa-62710",
+   "name": "Stadion Legii (Piłsudski)",
+   "city": "Warsaw",
+   "countryCode": "POL",
+   "lat": 52.2205889,
+   "lng": 21.0404194,
+   "capacity": 30900,
+   "opened": 2011
+  },
+  {
+   "id": "uefa-62726",
+   "name": "GSP",
+   "city": "Nicosia",
+   "countryCode": "CYP",
+   "lat": 35.1145611,
+   "lng": 33.3628472,
+   "capacity": 22709,
+   "opened": 1999
+  },
+  {
+   "id": "uefa-63031",
+   "name": "Hristo Botev Stadium",
+   "city": "Plovdiv",
+   "countryCode": "BUL",
+   "lat": 42.1399056,
+   "lng": 24.7643833,
+   "capacity": 18562,
+   "opened": 2023
+  },
+  {
+   "id": "uefa-63047",
+   "name": "Stadion Lazur",
+   "city": "Burgas",
+   "countryCode": "BUL",
+   "lat": 42.5125,
+   "lng": 27.470278,
+   "capacity": 19004,
+   "opened": 1997
+  },
+  {
+   "id": "uefa-63243",
+   "name": "Estadi Comunal",
+   "city": "Andorra la Vella",
+   "countryCode": "AND",
+   "lat": 42.501276,
+   "lng": 1.513925,
+   "capacity": 1288,
+   "opened": 1983
+  },
+  {
+   "id": "uefa-63340",
+   "name": "Selhurst Park",
+   "city": "London",
+   "countryCode": "ENG",
+   "lat": 51.3983222,
+   "lng": -0.0854806,
+   "capacity": 25486,
+   "opened": 1924
+  },
+  {
+   "id": "uefa-63487",
+   "name": "Herzeliya Municipal",
+   "city": "Herzliya",
+   "countryCode": "ISR",
+   "lat": 32.1678972,
+   "lng": 34.8250417,
+   "capacity": 8300,
+   "opened": null
+  },
+  {
+   "id": "uefa-63494",
+   "name": "Stade Jos Nosbaum",
+   "city": "Dudelange",
+   "countryCode": "LUX",
+   "lat": 49.4723861,
+   "lng": 6.0847472,
+   "capacity": 1546,
+   "opened": 1930
+  },
+  {
+   "id": "uefa-63799",
+   "name": "National Arena Todor Proeski",
+   "city": "Skopje",
+   "countryCode": "MKD",
+   "lat": 42.0057639,
+   "lng": 21.4255889,
+   "capacity": 32483,
+   "opened": 1946
+  },
+  {
+   "id": "uefa-63801",
+   "name": "Stadion Ljudski vrt",
+   "city": "Maribor",
+   "countryCode": "SVN",
+   "lat": 46.5625972,
+   "lng": 15.6405667,
+   "capacity": 11709,
+   "opened": 1961
+  },
+  {
+   "id": "uefa-66333",
+   "name": "Tony Bezzina Stadium",
+   "city": "Corradino",
+   "countryCode": "MLT",
+   "lat": 35.8829194,
+   "lng": 14.5131028,
+   "capacity": 3050,
+   "opened": 1986
+  },
+  {
+   "id": "uefa-67683",
+   "name": "Športni Park Ljubljana-Šiška",
+   "city": "Ljubljana",
+   "countryCode": "SVN",
+   "lat": 46.0692472,
+   "lng": 14.5086444,
+   "capacity": 2285,
+   "opened": 1986
+  },
+  {
+   "id": "uefa-67787",
+   "name": "Kópavogsvöllur",
+   "city": "Kopavogur",
+   "countryCode": "ISL",
+   "lat": 64.1041472,
+   "lng": -21.8968306,
+   "capacity": 1709,
+   "opened": 1975
+  },
+  {
+   "id": "uefa-68222",
+   "name": "Ruddalen",
+   "city": "Gothenburg",
+   "countryCode": "SWE",
+   "lat": 57.6645528,
+   "lng": 11.9092583,
+   "capacity": 1200,
+   "opened": null
+  },
+  {
+   "id": "uefa-70078",
+   "name": "Rheinpark Stadion",
+   "city": "Vaduz",
+   "countryCode": "LIE",
+   "lat": 47.140081,
+   "lng": 9.510255,
+   "capacity": 5749,
+   "opened": 1998
+  },
+  {
+   "id": "uefa-73392",
+   "name": "Pecara Stadium",
+   "city": "Siroki Brijeg",
+   "countryCode": "BIH",
+   "lat": 43.3787528,
+   "lng": 17.597975,
+   "capacity": 5977,
+   "opened": 1953
+  },
+  {
+   "id": "uefa-73397",
+   "name": "Stadium of HŠK Zrinjski",
+   "city": "Mostar",
+   "countryCode": "BIH",
+   "lat": 43.3456639,
+   "lng": 17.7952833,
+   "capacity": 8131,
+   "opened": 1958
+  },
+  {
+   "id": "uefa-77338",
+   "name": "Centenary Stadium",
+   "city": "Ta' Qali",
+   "countryCode": "MLT",
+   "lat": 35.8948111,
+   "lng": 14.4151611,
+   "capacity": 1732,
+   "opened": 1999
+  },
+  {
+   "id": "uefa-80412",
+   "name": "Mehdi Huseynzade Stadium",
+   "city": "Gyumri",
+   "countryCode": "ARM",
+   "lat": 40.7858083,
+   "lng": 43.8335722,
+   "capacity": 3000,
+   "opened": 1995
+  },
+  {
+   "id": "uefa-83441",
+   "name": "Tsentralniy",
+   "city": "Kostanay",
+   "countryCode": "KAZ",
+   "lat": 53.2259556,
+   "lng": 63.6365861,
+   "capacity": 8420,
+   "opened": 1967
+  },
+  {
+   "id": "uefa-85534",
+   "name": "Estádio Municipal de Braga",
+   "city": "Braga",
+   "countryCode": "POR",
+   "lat": 41.5625056,
+   "lng": -8.4297861,
+   "capacity": 30007,
+   "opened": 2003
+  },
+  {
+   "id": "uefa-88142",
+   "name": "Stadionul Zimbru",
+   "city": "Chisinau",
+   "countryCode": "MDA",
+   "lat": 46.9803278,
+   "lng": 28.8680861,
+   "capacity": 10104,
+   "opened": 2006
+  },
+  {
+   "id": "uefa-92804",
+   "name": "AZ Stadion",
+   "city": "Alkmaar",
+   "countryCode": "NED",
+   "lat": 52.6127972,
+   "lng": 4.7422361,
+   "capacity": 19000,
+   "opened": 2005
+  }
+ ],
+ "visits": [
+  {
+   "id": "zrinjski-mostar:64932",
+   "uefaId": "64932",
+   "playedOn": "2000-06-18",
+   "competition": "UEFA Intertoto Cup",
+   "season": "2001",
+   "stage": "First round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Västra Frölunda",
+   "opponentCountry": "SWE",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 247,
+   "scorers": [
+    {
+     "name": "Dorde Uzelac",
+     "minute": 75,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-68222",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:64933",
+   "uefaId": "64933",
+   "playedOn": "2000-06-25",
+   "competition": "UEFA Intertoto Cup",
+   "season": "2001",
+   "stage": "First round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Västra Frölunda",
+   "opponentCountry": "SWE",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 5000,
+   "scorers": [
+    {
+     "name": "Berislav Milos",
+     "minute": 43,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Leon Buhic",
+     "minute": 96,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Niclas Johansson",
+     "minute": 105,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:81188",
+   "uefaId": "81188",
+   "playedOn": "2005-07-13",
+   "competition": "UEFA Champions League",
+   "season": "2005",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Diddeleng",
+   "opponentCountry": "LUX",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 1308,
+   "scorers": [
+    {
+     "name": "Boris Marić",
+     "minute": 15,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63494",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:81189",
+   "uefaId": "81189",
+   "playedOn": "2005-07-20",
+   "competition": "UEFA Champions League",
+   "season": "2005",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Diddeleng",
+   "opponentCountry": "LUX",
+   "scoreFor": 0,
+   "scoreAgainst": 4,
+   "result": "L",
+   "penalties": null,
+   "attendance": 3600,
+   "scorers": [
+    {
+     "name": "Thomas Gruszczyński",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Joris Di Gregorio",
+     "minute": 96,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Thomas Gruszczyński",
+     "minute": 105,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Gaël Hug",
+     "minute": 112,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:84146",
+   "uefaId": "84146",
+   "playedOn": "2006-06-17",
+   "competition": "UEFA Intertoto Cup",
+   "season": "2007",
+   "stage": "First Round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Marsaxlokk",
+   "opponentCountry": "MLT",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 2000,
+   "scorers": [
+    {
+     "name": "Mladen Žižović",
+     "minute": 18,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Velibor Djurić",
+     "minute": 26,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Krešimir Kordić",
+     "minute": 44,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:84147",
+   "uefaId": "84147",
+   "playedOn": "2006-06-25",
+   "competition": "UEFA Intertoto Cup",
+   "season": "2007",
+   "stage": "First Round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Marsaxlokk",
+   "opponentCountry": "MLT",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 250,
+   "scorers": [
+    {
+     "name": "André Schembri",
+     "minute": 34,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Sulejman Smajić",
+     "minute": 81,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-66333",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:84314",
+   "uefaId": "84314",
+   "playedOn": "2006-07-01",
+   "competition": "UEFA Intertoto Cup",
+   "season": "2007",
+   "stage": "Second Round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "M. Petah Tikva",
+   "opponentCountry": "ISR",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 450,
+   "scorers": [
+    {
+     "name": "Shay Banay",
+     "minute": 54,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": true
+    },
+    {
+     "name": "Emanuel Ebiede",
+     "minute": 67,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63487",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:84315",
+   "uefaId": "84315",
+   "playedOn": "2006-07-08",
+   "competition": "UEFA Intertoto Cup",
+   "season": "2007",
+   "stage": "Second Round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "M. Petah Tikva",
+   "opponentCountry": "ISR",
+   "scoreFor": 1,
+   "scoreAgainst": 3,
+   "result": "L",
+   "penalties": null,
+   "attendance": 1500,
+   "scorers": [
+    {
+     "name": "Lamine Diarra",
+     "minute": 17,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Rubel Sarsour",
+     "minute": 19,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Dovev Gabbay",
+     "minute": 57,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Naor Peser",
+     "minute": 73,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:300948",
+   "uefaId": "300948",
+   "playedOn": "2007-07-19",
+   "competition": "UEFA Europa League",
+   "season": "2008",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Partizan",
+   "opponentCountry": "SRB",
+   "scoreFor": 1,
+   "scoreAgainst": 6,
+   "result": "L",
+   "penalties": null,
+   "attendance": 7920,
+   "scorers": [
+    {
+     "name": "Lamine Diarra",
+     "minute": 32,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Darko Maletić",
+     "minute": 40,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Stevan Jovetić",
+     "minute": 48,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Lamine Diarra",
+     "minute": 60,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Lamine Diarra",
+     "minute": 63,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Matija Matko",
+     "minute": 68,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Žarko Lazetić",
+     "minute": 80,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:300985",
+   "uefaId": "300985",
+   "playedOn": "2007-08-02",
+   "competition": "UEFA Europa League",
+   "season": "2008",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Partizan",
+   "opponentCountry": "SRB",
+   "scoreFor": 0,
+   "scoreAgainst": 5,
+   "result": "L",
+   "penalties": null,
+   "attendance": 10300,
+   "scorers": [
+    {
+     "name": "Darko Maletić",
+     "minute": 4,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Almami Moreira",
+     "minute": 32,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Stevan Jovetić",
+     "minute": 37,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Stevan Jovetić",
+     "minute": 51,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Stevan Jovetić",
+     "minute": 71,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62398",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:301289",
+   "uefaId": "301289",
+   "playedOn": "2007-08-16",
+   "competition": "UEFA Europa League",
+   "season": "2008",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Rabotnicki",
+   "opponentCountry": "MKD",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "result": "D",
+   "penalties": null,
+   "attendance": 5500,
+   "scorers": [],
+   "venueId": "uefa-63799",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:301321",
+   "uefaId": "301321",
+   "playedOn": "2007-08-30",
+   "competition": "UEFA Europa League",
+   "season": "2008",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Rabotnicki",
+   "opponentCountry": "MKD",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 1500,
+   "scorers": [
+    {
+     "name": "Nemanja Milisavljević",
+     "minute": 33,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mario Ivanković",
+     "minute": 36,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Lazar Stanisić",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:303526",
+   "uefaId": "303526",
+   "playedOn": "2008-07-17",
+   "competition": "UEFA Europa League",
+   "season": "2009",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Vaduz",
+   "opponentCountry": "LIE",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 720,
+   "scorers": [
+    {
+     "name": "Velibor Djurić",
+     "minute": 23,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Benjamin Fischer",
+     "minute": 32,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Stefan Iten",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": true
+    }
+   ],
+   "venueId": "uefa-70078",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:303563",
+   "uefaId": "303563",
+   "playedOn": "2008-07-31",
+   "competition": "UEFA Europa League",
+   "season": "2009",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Vaduz",
+   "opponentCountry": "LIE",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 2500,
+   "scorers": [
+    {
+     "name": "Velibor Djurić",
+     "minute": 7,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Toni Šunjić",
+     "minute": 26,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Matija Matko",
+     "minute": 77,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:303845",
+   "uefaId": "303845",
+   "playedOn": "2008-08-14",
+   "competition": "UEFA Europa League",
+   "season": "2009",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Braga",
+   "opponentCountry": "POR",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 10032,
+   "scorers": [
+    {
+     "name": "Roland Linz",
+     "minute": 68,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-85534",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:303877",
+   "uefaId": "303877",
+   "playedOn": "2008-08-28",
+   "competition": "UEFA Europa League",
+   "season": "2009",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Braga",
+   "opponentCountry": "POR",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 2800,
+   "scorers": [
+    {
+     "name": "César Peixoto",
+     "minute": 56,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Matheus",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2000291",
+   "uefaId": "2000291",
+   "playedOn": "2009-07-15",
+   "competition": "UEFA Champions League",
+   "season": "2010",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "S. Bratislava",
+   "opponentCountry": "SVK",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 8000,
+   "scorers": [
+    {
+     "name": "Krešimir Kordić",
+     "minute": 48,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2000308",
+   "uefaId": "2000308",
+   "playedOn": "2009-07-21",
+   "competition": "UEFA Champions League",
+   "season": "2010",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "S. Bratislava",
+   "opponentCountry": "SVK",
+   "scoreFor": 0,
+   "scoreAgainst": 4,
+   "result": "L",
+   "penalties": null,
+   "attendance": 13850,
+   "scorers": [
+    {
+     "name": "Juraj Halenár",
+     "minute": 13,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Gaucho",
+     "minute": 19,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Juraj Halenár",
+     "minute": 60,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Jakub Sylvestr",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62389",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2002455",
+   "uefaId": "2002455",
+   "playedOn": "2010-07-01",
+   "competition": "UEFA Europa League",
+   "season": "2011",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Tobol",
+   "opponentCountry": "KAZ",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 6500,
+   "scorers": [
+    {
+     "name": "Nurbol Zhumaskaliyev",
+     "minute": 16,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mate Dragičević",
+     "minute": 52,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mate Dragičević",
+     "minute": 82,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-83441",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2002480",
+   "uefaId": "2002480",
+   "playedOn": "2010-07-08",
+   "competition": "UEFA Europa League",
+   "season": "2011",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Tobol",
+   "opponentCountry": "KAZ",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 5000,
+   "scorers": [
+    {
+     "name": "Damir Džidić",
+     "minute": 10,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nurbol Zhumaskaliyev",
+     "minute": 57,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mile Pehar",
+     "minute": 72,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2002536",
+   "uefaId": "2002536",
+   "playedOn": "2010-07-15",
+   "competition": "UEFA Europa League",
+   "season": "2011",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Tre Penne",
+   "opponentCountry": "SMR",
+   "scoreFor": 4,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 3500,
+   "scorers": [
+    {
+     "name": "Mario Ivanković",
+     "minute": 1,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mario Ivanković",
+     "minute": 20,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Pavle Sušić",
+     "minute": 32,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Damir Džidić",
+     "minute": 35,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": true
+    },
+    {
+     "name": "Vlado Zadro",
+     "minute": 37,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2002576",
+   "uefaId": "2002576",
+   "playedOn": "2010-07-22",
+   "competition": "UEFA Europa League",
+   "season": "2011",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Tre Penne",
+   "opponentCountry": "SMR",
+   "scoreFor": 9,
+   "scoreAgainst": 2,
+   "result": "W",
+   "penalties": null,
+   "attendance": 571,
+   "scorers": [
+    {
+     "name": "Vernes Selimović",
+     "minute": 3,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Pavle Sušić",
+     "minute": 7,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mladen Žižović",
+     "minute": 10,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Vernes Selimović",
+     "minute": 27,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mirko Palazzi",
+     "minute": 28,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Vlado Zadro",
+     "minute": 52,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mladen Žižović",
+     "minute": 55,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Vlado Zadro",
+     "minute": 65,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mile Pehar",
+     "minute": 69,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mirko Palazzi",
+     "minute": 81,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Toni Šunjić",
+     "minute": 87,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62265",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2002746",
+   "uefaId": "2002746",
+   "playedOn": "2010-07-29",
+   "competition": "UEFA Europa League",
+   "season": "2011",
+   "stage": "Third qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "OB",
+   "opponentCountry": "DEN",
+   "scoreFor": 3,
+   "scoreAgainst": 5,
+   "result": "L",
+   "penalties": null,
+   "attendance": 4302,
+   "scorers": [
+    {
+     "name": "Vlado Zadro",
+     "minute": 15,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Rúrik Gíslason",
+     "minute": 16,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Johan Absalonsen",
+     "minute": 23,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Peter Utaka",
+     "minute": 31,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Hans Henrik Andreasen",
+     "minute": 37,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Peter Utaka",
+     "minute": 60,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mladen Žižović",
+     "minute": 65,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Vlado Zadro",
+     "minute": 71,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-53482",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2002781",
+   "uefaId": "2002781",
+   "playedOn": "2010-08-05",
+   "competition": "UEFA Europa League",
+   "season": "2011",
+   "stage": "Third qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "OB",
+   "opponentCountry": "DEN",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "result": "D",
+   "penalties": null,
+   "attendance": 6000,
+   "scorers": [],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2012215",
+   "uefaId": "2012215",
+   "playedOn": "2013-07-04",
+   "competition": "UEFA Europa League",
+   "season": "2014",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "UE Santa Coloma",
+   "opponentCountry": "AND",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 215,
+   "scorers": [
+    {
+     "name": "Víctor Bernat",
+     "minute": 45,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Ivan Crnov",
+     "minute": 63,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nebojša Popović",
+     "minute": 66,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Velibor Djurić",
+     "minute": 77,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63243",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2012254",
+   "uefaId": "2012254",
+   "playedOn": "2013-07-11",
+   "competition": "UEFA Europa League",
+   "season": "2014",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "UE Santa Coloma",
+   "opponentCountry": "AND",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 2000,
+   "scorers": [
+    {
+     "name": "Velibor Djurić",
+     "minute": 76,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2012306",
+   "uefaId": "2012306",
+   "playedOn": "2013-07-18",
+   "competition": "UEFA Europa League",
+   "season": "2014",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Botev Plovdiv",
+   "opponentCountry": "BUL",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 6500,
+   "scorers": [
+    {
+     "name": "Deni Simeunović",
+     "minute": 21,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Romario Kortzorg",
+     "minute": 48,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2012346",
+   "uefaId": "2012346",
+   "playedOn": "2013-07-25",
+   "competition": "UEFA Europa League",
+   "season": "2014",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Botev Plovdiv",
+   "opponentCountry": "BUL",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 8000,
+   "scorers": [
+    {
+     "name": "Marian Ognyanov",
+     "minute": 80,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Todor Nedelev",
+     "minute": 88,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63047",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2014136",
+   "uefaId": "2014136",
+   "playedOn": "2014-07-15",
+   "competition": "UEFA Champions League",
+   "season": "2015",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Maribor",
+   "opponentCountry": "SVN",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "result": "D",
+   "penalties": null,
+   "attendance": 5100,
+   "scorers": [],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2014153",
+   "uefaId": "2014153",
+   "playedOn": "2014-07-23",
+   "competition": "UEFA Champions League",
+   "season": "2015",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Maribor",
+   "opponentCountry": "SVN",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 7500,
+   "scorers": [
+    {
+     "name": "Dare Vršič",
+     "minute": 45,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Agim Ibraimi",
+     "minute": 57,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63801",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2017101",
+   "uefaId": "2017101",
+   "playedOn": "2015-07-02",
+   "competition": "UEFA Europa League",
+   "season": "2016",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Shirak",
+   "opponentCountry": "ARM",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 2774,
+   "scorers": [
+    {
+     "name": "Jean-Jacques Bougouhi",
+     "minute": 18,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Jean-Jacques Bougouhi",
+     "minute": 67,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-80412",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2017152",
+   "uefaId": "2017152",
+   "playedOn": "2015-07-09",
+   "competition": "UEFA Europa League",
+   "season": "2016",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Shirak",
+   "opponentCountry": "ARM",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 4800,
+   "scorers": [
+    {
+     "name": "Jasmin Mešanović",
+     "minute": 80,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Miloš Filipović",
+     "minute": 86,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Jean-Jacques Bougouhi",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2020156",
+   "uefaId": "2020156",
+   "playedOn": "2016-07-12",
+   "competition": "UEFA Champions League",
+   "season": "2017",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Legia Warszawa",
+   "opponentCountry": "POL",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 5500,
+   "scorers": [
+    {
+     "name": "Nemanja Nikolić",
+     "minute": 49,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Matija Katanec",
+     "minute": 57,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2020173",
+   "uefaId": "2020173",
+   "playedOn": "2016-07-19",
+   "competition": "UEFA Champions League",
+   "season": "2017",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Legia Warszawa",
+   "opponentCountry": "POL",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 12784,
+   "scorers": [
+    {
+     "name": "Nemanja Nikolić",
+     "minute": 28,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Nikolić",
+     "minute": 62,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62710",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2021515",
+   "uefaId": "2021515",
+   "playedOn": "2017-07-12",
+   "competition": "UEFA Champions League",
+   "season": "2018",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Maribor",
+   "opponentCountry": "SVN",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 7000,
+   "scorers": [
+    {
+     "name": "Luka Zahović",
+     "minute": 43,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Ognjen Todorović",
+     "minute": 89,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Marcos Tavares",
+     "minute": 90,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2021532",
+   "uefaId": "2021532",
+   "playedOn": "2017-07-19",
+   "competition": "UEFA Champions League",
+   "season": "2018",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Maribor",
+   "opponentCountry": "SVN",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 9266,
+   "scorers": [
+    {
+     "name": "Ognjen Todorović",
+     "minute": 7,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mitja Viler",
+     "minute": 27,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63801",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2024607",
+   "uefaId": "2024607",
+   "playedOn": "2018-07-11",
+   "competition": "UEFA Champions League",
+   "season": "2019",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Spartak Trnava",
+   "opponentCountry": "SVK",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": null,
+   "scorers": [
+    {
+     "name": "Erik Jirka",
+     "minute": 79,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62308",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2024623",
+   "uefaId": "2024623",
+   "playedOn": "2018-07-18",
+   "competition": "UEFA Champions League",
+   "season": "2019",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Spartak Trnava",
+   "opponentCountry": "SVK",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 5100,
+   "scorers": [
+    {
+     "name": "Boris Godál",
+     "minute": 15,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Ognjen Todorović",
+     "minute": 58,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2024836",
+   "uefaId": "2024836",
+   "playedOn": "2018-07-26",
+   "competition": "UEFA Europa League",
+   "season": "2019",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Valletta",
+   "opponentCountry": "MLT",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 3100,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 51,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mario Fontanella",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2024882",
+   "uefaId": "2024882",
+   "playedOn": "2018-08-02",
+   "competition": "UEFA Europa League",
+   "season": "2019",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Valletta",
+   "opponentCountry": "MLT",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 1310,
+   "scorers": [
+    {
+     "name": "Hrvoje Barišić",
+     "minute": 31,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Steve Borg",
+     "minute": 56,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Miloš Filipović",
+     "minute": 66,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-77338",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2025353",
+   "uefaId": "2025353",
+   "playedOn": "2018-08-09",
+   "competition": "UEFA Europa League",
+   "season": "2019",
+   "stage": "Third qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Ludogorets",
+   "opponentCountry": "BUL",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 3574,
+   "scorers": [
+    {
+     "name": "Cosmin Moţi",
+     "minute": 16,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250001569",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2025389",
+   "uefaId": "2025389",
+   "playedOn": "2018-08-16",
+   "competition": "UEFA Europa League",
+   "season": "2019",
+   "stage": "Third qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Ludogorets",
+   "opponentCountry": "BUL",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 3500,
+   "scorers": [
+    {
+     "name": "Claudiu Keșerü",
+     "minute": 24,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 90,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73392",
+   "side": "DOMESTIC",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2027552",
+   "uefaId": "2027552",
+   "playedOn": "2019-07-11",
+   "competition": "UEFA Europa League",
+   "season": "2020",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Brera Strumica",
+   "opponentCountry": "MKD",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 1562,
+   "scorers": [
+    {
+     "name": "Irfan Hadžić",
+     "minute": 12,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Staniša Mandić",
+     "minute": 28,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Miljan Govedarica",
+     "minute": 55,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63799",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2027599",
+   "uefaId": "2027599",
+   "playedOn": "2019-07-18",
+   "competition": "UEFA Europa League",
+   "season": "2020",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Brera Strumica",
+   "opponentCountry": "MKD",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 2500,
+   "scorers": [
+    {
+     "name": "Staniša Mandić",
+     "minute": 50,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Miljan Govedarica",
+     "minute": 79,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Renato Gojković",
+     "minute": 90,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2027633",
+   "uefaId": "2027633",
+   "playedOn": "2019-07-25",
+   "competition": "UEFA Europa League",
+   "season": "2020",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Utrecht",
+   "opponentCountry": "NED",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 17221,
+   "scorers": [
+    {
+     "name": "Miljan Govedarica",
+     "minute": 34,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Gyrano Kerk",
+     "minute": 61,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62692",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2027679",
+   "uefaId": "2027679",
+   "playedOn": "2019-08-01",
+   "competition": "UEFA Europa League",
+   "season": "2020",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Utrecht",
+   "opponentCountry": "NED",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 5984,
+   "scorers": [
+    {
+     "name": "Simon Gustafson",
+     "minute": 45,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Irfan Hadžić",
+     "minute": 65,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Staniša Mandić",
+     "minute": 111,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2028051",
+   "uefaId": "2028051",
+   "playedOn": "2019-08-08",
+   "competition": "UEFA Europa League",
+   "season": "2020",
+   "stage": "Third qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Malmö",
+   "opponentCountry": "SWE",
+   "scoreFor": 0,
+   "scoreAgainst": 3,
+   "result": "L",
+   "penalties": null,
+   "attendance": 14103,
+   "scorers": [
+    {
+     "name": "Rasmus Bengtsson",
+     "minute": 36,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Anders Christiansen",
+     "minute": 66,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Søren Rieks",
+     "minute": 74,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250000302",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2028087",
+   "uefaId": "2028087",
+   "playedOn": "2019-08-15",
+   "competition": "UEFA Europa League",
+   "season": "2020",
+   "stage": "Third qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Malmö",
+   "opponentCountry": "SWE",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 4509,
+   "scorers": [
+    {
+     "name": "Damir Šovšić",
+     "minute": 90,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73392",
+   "side": "DOMESTIC",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2030262",
+   "uefaId": "2030262",
+   "playedOn": "2020-08-27",
+   "competition": "UEFA Europa League",
+   "season": "2021",
+   "stage": "First qualifying round",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "Differdange",
+   "opponentCountry": "LUX",
+   "scoreFor": 3,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 20,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 37,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Miloš Filipović",
+     "minute": 40,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Josip Ivančić",
+     "minute": 80,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2030355",
+   "uefaId": "2030355",
+   "playedOn": "2020-09-17",
+   "competition": "UEFA Europa League",
+   "season": "2021",
+   "stage": "Second qualifying round",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "Olimpija",
+   "opponentCountry": "SVN",
+   "scoreFor": 3,
+   "scoreAgainst": 2,
+   "result": "W",
+   "penalties": null,
+   "attendance": null,
+   "scorers": [
+    {
+     "name": "Đorđe Ivanović",
+     "minute": 19,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 51,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Andres Vombergar",
+     "minute": 81,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 84,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Josip Ivančić",
+     "minute": 92,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250001140",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2030397",
+   "uefaId": "2030397",
+   "playedOn": "2020-09-24",
+   "competition": "UEFA Europa League",
+   "season": "2021",
+   "stage": "Third qualifying round",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "APOEL",
+   "opponentCountry": "CYP",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "result": "D",
+   "penalties": {
+    "for": 2,
+    "against": 4
+   },
+   "attendance": null,
+   "scorers": [
+    {
+     "name": "Josip Ivančić",
+     "minute": 11,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Omer Atzili",
+     "minute": 14,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Atdhe Nuhiu",
+     "minute": 26,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 69,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62726",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2034959",
+   "uefaId": "2034959",
+   "playedOn": "2022-07-06",
+   "competition": "UEFA Champions League",
+   "season": "2023",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Sheriff",
+   "opponentCountry": "MDA",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "result": "D",
+   "penalties": null,
+   "attendance": 5400,
+   "scorers": [],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2034974",
+   "uefaId": "2034974",
+   "playedOn": "2022-07-12",
+   "competition": "UEFA Champions League",
+   "season": "2023",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Sheriff",
+   "opponentCountry": "MDA",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 4242,
+   "scorers": [
+    {
+     "name": "Igor Savić",
+     "minute": 22,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": true
+    }
+   ],
+   "venueId": "uefa-88142",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2035064",
+   "uefaId": "2035064",
+   "playedOn": "2022-07-19",
+   "competition": "UEFA Conference League",
+   "season": "2023",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Tirana",
+   "opponentCountry": "ALB",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 4136,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 12,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250003909",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2035117",
+   "uefaId": "2035117",
+   "playedOn": "2022-07-28",
+   "competition": "UEFA Conference League",
+   "season": "2023",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Tirana",
+   "opponentCountry": "ALB",
+   "scoreFor": 3,
+   "scoreAgainst": 2,
+   "result": "W",
+   "penalties": null,
+   "attendance": 5000,
+   "scorers": [
+    {
+     "name": "Niko Janković",
+     "minute": 25,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mario Tičinović",
+     "minute": 36,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Marsel Ismajlgeci",
+     "minute": 51,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mario Ćuže",
+     "minute": 80,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Redon Xhixha",
+     "minute": 83,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2035397",
+   "uefaId": "2035397",
+   "playedOn": "2022-08-04",
+   "competition": "UEFA Conference League",
+   "season": "2023",
+   "stage": "Third qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Tobol",
+   "opponentCountry": "KAZ",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 4754,
+   "scorers": [
+    {
+     "name": "Niko Janković",
+     "minute": 76,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2035428",
+   "uefaId": "2035428",
+   "playedOn": "2022-08-11",
+   "competition": "UEFA Conference League",
+   "season": "2023",
+   "stage": "Third qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Tobol",
+   "opponentCountry": "KAZ",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 6000,
+   "scorers": [
+    {
+     "name": "Mario Ćuže",
+     "minute": 34,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Serge Déblé",
+     "minute": 53,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-83441",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2035516",
+   "uefaId": "2035516",
+   "playedOn": "2022-08-18",
+   "competition": "UEFA Conference League",
+   "season": "2023",
+   "stage": "Play-Offs",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "S. Bratislava",
+   "opponentCountry": "SVK",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 5100,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 89,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2035538",
+   "uefaId": "2035538",
+   "playedOn": "2022-08-25",
+   "competition": "UEFA Conference League",
+   "season": "2023",
+   "stage": "Play-Offs",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "S. Bratislava",
+   "opponentCountry": "SVK",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": {
+    "for": 5,
+    "against": 6
+   },
+   "attendance": 14333,
+   "scorers": [
+    {
+     "name": "Eric Ramírez",
+     "minute": 67,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Igor Savić",
+     "minute": 103,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Eric Ramírez",
+     "minute": 120,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250003855",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2038369",
+   "uefaId": "2038369",
+   "playedOn": "2023-07-11",
+   "competition": "UEFA Champions League",
+   "season": "2024",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Urartu",
+   "opponentCountry": "ARM",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 3900,
+   "scorers": [
+    {
+     "name": "Matej Senić",
+     "minute": 89,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250003216",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2038384",
+   "uefaId": "2038384",
+   "playedOn": "2023-07-18",
+   "competition": "UEFA Champions League",
+   "season": "2024",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Urartu",
+   "opponentCountry": "ARM",
+   "scoreFor": 2,
+   "scoreAgainst": 3,
+   "result": "L",
+   "penalties": {
+    "for": 4,
+    "against": 3
+   },
+   "attendance": 5000,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 27,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Narek Grigoryan",
+     "minute": 74,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Narek Grigoryan",
+     "minute": 90,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Tomislav Kiš",
+     "minute": 94,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Artem Maksimenko",
+     "minute": 105,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2038604",
+   "uefaId": "2038604",
+   "playedOn": "2023-07-25",
+   "competition": "UEFA Champions League",
+   "season": "2024",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "S. Bratislava",
+   "opponentCountry": "SVK",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 4900,
+   "scorers": [
+    {
+     "name": "Sharani Zuberu",
+     "minute": 53,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2038616",
+   "uefaId": "2038616",
+   "playedOn": "2023-08-01",
+   "competition": "UEFA Champions League",
+   "season": "2024",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "S. Bratislava",
+   "opponentCountry": "SVK",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "result": "D",
+   "penalties": null,
+   "attendance": 20498,
+   "scorers": [
+    {
+     "name": "Aleksandar Čavrić",
+     "minute": 5,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Sharani Zuberu",
+     "minute": 66,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Hrvoje Barišić",
+     "minute": 75,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Antonio Ivančić",
+     "minute": 90,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250003855",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2038920",
+   "uefaId": "2038920",
+   "playedOn": "2023-08-10",
+   "competition": "UEFA Europa League",
+   "season": "2024",
+   "stage": "Third qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Breiðablik",
+   "opponentCountry": "ISL",
+   "scoreFor": 6,
+   "scoreAgainst": 2,
+   "result": "W",
+   "penalties": null,
+   "attendance": 6200,
+   "scorers": [
+    {
+     "name": "Tomislav Kiš",
+     "minute": 2,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Matija Malekinušić",
+     "minute": 22,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Tomislav Kiš",
+     "minute": 30,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 33,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Matija Malekinušić",
+     "minute": 40,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Antonio Ivančić",
+     "minute": 55,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Anton Logi Lúðvíksson",
+     "minute": 64,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Gísli Eyjólfsson",
+     "minute": 74,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2038927",
+   "uefaId": "2038927",
+   "playedOn": "2023-08-17",
+   "competition": "UEFA Europa League",
+   "season": "2024",
+   "stage": "Third qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Breiðablik",
+   "opponentCountry": "ISL",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 673,
+   "scorers": [
+    {
+     "name": "Slobodan Jakovljević",
+     "minute": 56,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": true
+    }
+   ],
+   "venueId": "uefa-67787",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2039028",
+   "uefaId": "2039028",
+   "playedOn": "2023-08-24",
+   "competition": "UEFA Europa League",
+   "season": "2024",
+   "stage": "Play-Offs",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "LASK",
+   "opponentCountry": "AUT",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 8300,
+   "scorers": [
+    {
+     "name": "Robert Žulj",
+     "minute": 4,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Robert Žulj",
+     "minute": 12,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 71,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250005080",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2039038",
+   "uefaId": "2039038",
+   "playedOn": "2023-08-31",
+   "competition": "UEFA Europa League",
+   "season": "2024",
+   "stage": "Play-Offs",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "LASK",
+   "opponentCountry": "AUT",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 6520,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 38,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Branko Jovičić",
+     "minute": 52,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2039291",
+   "uefaId": "2039291",
+   "playedOn": "2023-09-21",
+   "competition": "UEFA Conference League",
+   "season": "2024",
+   "stage": "Group stage",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "AZ Alkmaar",
+   "opponentCountry": "NED",
+   "scoreFor": 4,
+   "scoreAgainst": 3,
+   "result": "W",
+   "penalties": null,
+   "attendance": 5100,
+   "scorers": [
+    {
+     "name": "Myron van Brederode",
+     "minute": 10,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Sven Mijnans",
+     "minute": 32,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Dani de Wit",
+     "minute": 44,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Zvonimir Kožulj",
+     "minute": 48,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Josip Ćorluka",
+     "minute": 68,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Aldin Hrvanović",
+     "minute": 71,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Zvonimir Kožulj",
+     "minute": 81,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2039315",
+   "uefaId": "2039315",
+   "playedOn": "2023-10-05",
+   "competition": "UEFA Conference League",
+   "season": "2024",
+   "stage": "Group stage",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "Aston Villa",
+   "opponentCountry": "ENG",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 37327,
+   "scorers": [
+    {
+     "name": "John McGinn",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-53108",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2039332",
+   "uefaId": "2039332",
+   "playedOn": "2023-10-26",
+   "competition": "UEFA Conference League",
+   "season": "2024",
+   "stage": "Group stage",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "Legia Warszawa",
+   "opponentCountry": "POL",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 6300,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 30,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Slobodan Jakovljević",
+     "minute": 32,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": true
+    },
+    {
+     "name": "Blaž Kramer",
+     "minute": 62,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2039341",
+   "uefaId": "2039341",
+   "playedOn": "2023-11-09",
+   "competition": "UEFA Conference League",
+   "season": "2024",
+   "stage": "Group stage",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "Legia Warszawa",
+   "opponentCountry": "POL",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 24616,
+   "scorers": [
+    {
+     "name": "Rafał Augustyniak",
+     "minute": 14,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Josué",
+     "minute": 30,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62710",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2039361",
+   "uefaId": "2039361",
+   "playedOn": "2023-11-30",
+   "competition": "UEFA Conference League",
+   "season": "2024",
+   "stage": "Group stage",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "AZ Alkmaar",
+   "opponentCountry": "NED",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 17132,
+   "scorers": [
+    {
+     "name": "Vangelis Pavlidis",
+     "minute": 59,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-92804",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2039371",
+   "uefaId": "2039371",
+   "playedOn": "2023-12-14",
+   "competition": "UEFA Conference League",
+   "season": "2024",
+   "stage": "Group stage",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "Aston Villa",
+   "opponentCountry": "ENG",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 6610,
+   "scorers": [
+    {
+     "name": "Nicolò Zaniolo",
+     "minute": 61,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Matija Malekinušić",
+     "minute": 87,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2041133",
+   "uefaId": "2041133",
+   "playedOn": "2024-07-25",
+   "competition": "UEFA Conference League",
+   "season": "2025",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Bravo",
+   "opponentCountry": "SVN",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 5500,
+   "scorers": [
+    {
+     "name": "Matic Ivanšek",
+     "minute": 16,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2041182",
+   "uefaId": "2041182",
+   "playedOn": "2024-08-01",
+   "competition": "UEFA Conference League",
+   "season": "2025",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Bravo",
+   "opponentCountry": "SVN",
+   "scoreFor": 3,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 1800,
+   "scorers": [
+    {
+     "name": "Nardin Mulahusejnović",
+     "minute": 16,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Milan Tučić",
+     "minute": 21,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Slobodan Jakovljević",
+     "minute": 66,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Frano Mlinar",
+     "minute": 80,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-67683",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2041751",
+   "uefaId": "2041751",
+   "playedOn": "2024-08-08",
+   "competition": "UEFA Conference League",
+   "season": "2025",
+   "stage": "Third qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Botev Plovdiv",
+   "opponentCountry": "BUL",
+   "scoreFor": 1,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 9515,
+   "scorers": [
+    {
+     "name": "Samuel Akere",
+     "minute": 35,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mario Ćuže",
+     "minute": 77,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Aleksa Maraš",
+     "minute": 79,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63031",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2041781",
+   "uefaId": "2041781",
+   "playedOn": "2024-08-15",
+   "competition": "UEFA Conference League",
+   "season": "2025",
+   "stage": "Third qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Botev Plovdiv",
+   "opponentCountry": "BUL",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 5300,
+   "scorers": [
+    {
+     "name": "Nardin Mulahusejnović",
+     "minute": 39,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Tomislav Kiš",
+     "minute": 83,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2041888",
+   "uefaId": "2041888",
+   "playedOn": "2024-08-21",
+   "competition": "UEFA Conference League",
+   "season": "2025",
+   "stage": "Play-Offs",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Vitória SC",
+   "opponentCountry": "POR",
+   "scoreFor": 0,
+   "scoreAgainst": 3,
+   "result": "L",
+   "penalties": null,
+   "attendance": 16007,
+   "scorers": [
+    {
+     "name": "Ricardo Mangas",
+     "minute": 46,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Toni Borevković",
+     "minute": 51,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "João Saraiva",
+     "minute": 88,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-53487",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2041912",
+   "uefaId": "2041912",
+   "playedOn": "2024-08-29",
+   "competition": "UEFA Conference League",
+   "season": "2025",
+   "stage": "Play-Offs",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Vitória SC",
+   "opponentCountry": "POR",
+   "scoreFor": 0,
+   "scoreAgainst": 4,
+   "result": "L",
+   "penalties": null,
+   "attendance": 4500,
+   "scorers": [
+    {
+     "name": "Manuel Silva",
+     "minute": 32,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Nuno Santos",
+     "minute": 42,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nélson Oliveira",
+     "minute": 45,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Gustavo Da Silva Cunha",
+     "minute": 71,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2045285",
+   "uefaId": "2045285",
+   "playedOn": "2025-07-08",
+   "competition": "UEFA Champions League",
+   "season": "2026",
+   "stage": "First qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Virtus",
+   "opponentCountry": "SMR",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 864,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 45,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 79,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62265",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2045299",
+   "uefaId": "2045299",
+   "playedOn": "2025-07-15",
+   "competition": "UEFA Champions League",
+   "season": "2026",
+   "stage": "First qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Virtus",
+   "opponentCountry": "SMR",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 4600,
+   "scorers": [
+    {
+     "name": "Petar Mamić",
+     "minute": 40,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 75,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Stefano Scappini",
+     "minute": 90,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2045376",
+   "uefaId": "2045376",
+   "playedOn": "2025-07-22",
+   "competition": "UEFA Champions League",
+   "season": "2026",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "S. Bratislava",
+   "opponentCountry": "SVK",
+   "scoreFor": 0,
+   "scoreAgainst": 4,
+   "result": "L",
+   "penalties": null,
+   "attendance": 18257,
+   "scorers": [
+    {
+     "name": "Tigran Barseghyan",
+     "minute": 40,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "David Strelec",
+     "minute": 42,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Marko Tolić",
+     "minute": 62,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mykola Kukharevych",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250003855",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2045391",
+   "uefaId": "2045391",
+   "playedOn": "2025-07-29",
+   "competition": "UEFA Champions League",
+   "season": "2026",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "S. Bratislava",
+   "opponentCountry": "SVK",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "result": "D",
+   "penalties": null,
+   "attendance": 4100,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 72,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Jakov Pranjić",
+     "minute": 76,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "David Strelec",
+     "minute": 80,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "David Strelec",
+     "minute": 87,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2045727",
+   "uefaId": "2045727",
+   "playedOn": "2025-08-07",
+   "competition": "UEFA Europa League",
+   "season": "2026",
+   "stage": "Third qualifying round",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Breiðablik",
+   "opponentCountry": "ISL",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 5600,
+   "scorers": [
+    {
+     "name": "Tobias Thomsen",
+     "minute": 18,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 72,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2045740",
+   "uefaId": "2045740",
+   "playedOn": "2025-08-14",
+   "competition": "UEFA Europa League",
+   "season": "2026",
+   "stage": "Third qualifying round",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Breiðablik",
+   "opponentCountry": "ISL",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 1252,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 7,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Valgeir Valgeirsson",
+     "minute": 47,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": true
+    },
+    {
+     "name": "Höskuldur Gunnlaugsson",
+     "minute": 61,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-67787",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2045834",
+   "uefaId": "2045834",
+   "playedOn": "2025-08-21",
+   "competition": "UEFA Europa League",
+   "season": "2026",
+   "stage": "Play-Offs",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Utrecht",
+   "opponentCountry": "NED",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 4400,
+   "scorers": [
+    {
+     "name": "David Min",
+     "minute": 39,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Victor Jensen",
+     "minute": 85,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2045846",
+   "uefaId": "2045846",
+   "playedOn": "2025-08-28",
+   "competition": "UEFA Europa League",
+   "season": "2026",
+   "stage": "Play-Offs",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Utrecht",
+   "opponentCountry": "NED",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "result": "D",
+   "penalties": null,
+   "attendance": 21594,
+   "scorers": [],
+   "venueId": "uefa-62692",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2046309",
+   "uefaId": "2046309",
+   "playedOn": "2025-10-02",
+   "competition": "UEFA Conference League",
+   "season": "2026",
+   "stage": "League Phase",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "L. Red Imps",
+   "opponentCountry": "GIB",
+   "scoreFor": 5,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 4200,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 12,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Duje Dujmović",
+     "minute": 22,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Slobodan Jakovljević",
+     "minute": 40,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Vitalie Damașcan",
+     "minute": 69,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Leo Mikić",
+     "minute": 85,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2046322",
+   "uefaId": "2046322",
+   "playedOn": "2025-10-23",
+   "competition": "UEFA Conference League",
+   "season": "2026",
+   "stage": "League Phase",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "Mainz",
+   "opponentCountry": "GER",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 30200,
+   "scorers": [
+    {
+     "name": "Nelson Weiper",
+     "minute": 24,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250001299",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2046338",
+   "uefaId": "2046338",
+   "playedOn": "2025-11-06",
+   "competition": "UEFA Conference League",
+   "season": "2026",
+   "stage": "League Phase",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "Dynamo Kyiv",
+   "opponentCountry": "UKR",
+   "scoreFor": 0,
+   "scoreAgainst": 6,
+   "result": "L",
+   "penalties": null,
+   "attendance": 1576,
+   "scorers": [
+    {
+     "name": "Denys Popov",
+     "minute": 21,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Eduardo Guerrero",
+     "minute": 56,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Vladyslav Kabaiev",
+     "minute": 59,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Vitaliy Buialskyi",
+     "minute": 67,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Andriy Yarmolenko",
+     "minute": 78,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Vladislav Blănuță",
+     "minute": 83,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250003271",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2046363",
+   "uefaId": "2046363",
+   "playedOn": "2025-11-27",
+   "competition": "UEFA Conference League",
+   "season": "2026",
+   "stage": "League Phase",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "Häcken",
+   "opponentCountry": "SWE",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 3100,
+   "scorers": [
+    {
+     "name": "Silas Andersen",
+     "minute": 40,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mario Ćuže",
+     "minute": 78,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 82,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2046382",
+   "uefaId": "2046382",
+   "playedOn": "2025-12-11",
+   "competition": "UEFA Conference League",
+   "season": "2026",
+   "stage": "League Phase",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "Raków",
+   "opponentCountry": "POL",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 7254,
+   "scorers": [
+    {
+     "name": "Jonatan Braut Brunes",
+     "minute": 45,
+     "forClub": false,
+     "penalty": true,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250005200",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2046402",
+   "uefaId": "2046402",
+   "playedOn": "2025-12-18",
+   "competition": "UEFA Conference League",
+   "season": "2026",
+   "stage": "League Phase",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "SK Rapid",
+   "opponentCountry": "AUT",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 5601,
+   "scorers": [
+    {
+     "name": "Louis Schaub",
+     "minute": 11,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Nenad Cvetković",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": true
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2047728",
+   "uefaId": "2047728",
+   "playedOn": "2026-02-19",
+   "competition": "UEFA Conference League",
+   "season": "2026",
+   "stage": "Knockout play-off",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Crystal Palace",
+   "opponentCountry": "ENG",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 7152,
+   "scorers": [
+    {
+     "name": "Ismaïla Sarr",
+     "minute": 43,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Karlo Abramović",
+     "minute": 55,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "zrinjski-mostar:2047736",
+   "uefaId": "2047736",
+   "playedOn": "2026-02-26",
+   "competition": "UEFA Conference League",
+   "season": "2026",
+   "stage": "Knockout play-off",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Crystal Palace",
+   "opponentCountry": "ENG",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": 18049,
+   "scorers": [
+    {
+     "name": "Maxence Lacroix",
+     "minute": 36,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Evann Guessand",
+     "minute": 90,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63340",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2048834",
+   "uefaId": "2048834",
+   "playedOn": "2026-07-23",
+   "competition": "UEFA Conference League",
+   "season": "2027",
+   "stage": "Second qualifying round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Valur",
+   "opponentCountry": "ISL",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 310,
+   "scorers": [
+    {
+     "name": "Tryggvi Hrafn Haraldsson",
+     "minute": 64,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-250000015",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "zrinjski-mostar:2048785",
+   "uefaId": "2048785",
+   "playedOn": "2026-07-30",
+   "competition": "UEFA Conference League",
+   "season": "2027",
+   "stage": "Second qualifying round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Valur",
+   "opponentCountry": "ISL",
+   "scoreFor": 2,
+   "scoreAgainst": 2,
+   "result": "D",
+   "penalties": null,
+   "attendance": 5107,
+   "scorers": [
+    {
+     "name": "Nemanja Bilbija",
+     "minute": 11,
+     "forClub": true,
+     "penalty": true,
+     "ownGoal": false
+    },
+    {
+     "name": "Tryggvi Hrafn Haraldsson",
+     "minute": 44,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Tryggvi Hrafn Haraldsson",
+     "minute": 45,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Matej Šakota",
+     "minute": 76,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-73397",
+   "side": "HOME",
+   "physicallyAbroad": false
+  }
+ ],
+ "unplaced": []
+}
