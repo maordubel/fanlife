@@ -38,6 +38,9 @@ export function useReducedMotion():boolean{
  * nearest his years, or the club livery — never an empty box, never a rival's colour (lib/clubs/rumble-kit).
  */
 export function RumbleShirt({card,side,wardrobe,className}:{card:Pick<RumbleCard,'id'|'fromYear'|'toYear'>;side:'us'|'them';wardrobe:RumbleWardrobe;className?:string}){
+ const photo=side==='us'?wardrobe.photos?.[card.id]:undefined
+  // eslint-disable-next-line @next/next/no-img-element -- the measured bytes are the shipped bytes (rule 69)
+ if(photo)return <img src={photo.src} alt="" data-archive-photo="" data-shirt="photo" title={photo.label} loading="lazy" decoding="async" draggable={false} className={className} style={{objectFit:'contain'}}/>
  const worn=kitFor(card,side,wardrobe)
  if(worn.source==='archive')return <KitPlate kit={{...worn.kit,id:`${worn.kit.id}-${side}`}} label={false} decorative className={className}/>
  const home=worn.variant==='home'

@@ -18,6 +18,7 @@ import {DEFAULT_FORMATION,isFormation} from '@/lib/clubs/rumble-xi/formations'
 import {xiPool} from '@/lib/clubs/rumble-xi/pool'
 import {dealXI} from '@/lib/clubs/rumble-xi/deal'
 import {pickRandomRival,rivalChoices,formationReadiness} from '@/lib/clubs/rumble-xi/server'
+import {hapoelPhotos} from '@/lib/clubs/rumble-xi/photos'
 import type {GateView,GateViewProps} from '../types'
 
 const nameOf=(id:string)=>REGISTRY.find(c=>c.id===id)?.name??id
@@ -25,7 +26,7 @@ const nameOf=(id:string)=>REGISTRY.find(c=>c.id===id)?.name??id
 function apart(own:RumbleWardrobe,rival:RumbleWardrobe):RumbleWardrobe{
  const mine=own.home[own.home.length-1]?.colours[0],theirs=rival.home[rival.home.length-1]?.colours[0]
  const clash=!!mine&&mine===theirs&&rival.away.length>0
- return {home:own.home,away:clash?rival.away:(rival.home.length?rival.home:rival.away)}
+ return {home:own.home,away:clash?rival.away:(rival.home.length?rival.home:rival.away),photos:own.photos}
 }
 
 /**
@@ -43,9 +44,9 @@ export const view:GateView=async props=>{
  const valid=token&&opponent.kind==='locked'?token.c:opponent.kind==='club'?vsParam:null
  const clubs:RumbleClub[]=(await Promise.all(CORE_CLUB_IDS.map(async cid=>{const r=await requestClub(cid,9);return r&&r.data.gates['royal-rumble']?.playable?{id:cid,name:nameOf(cid)}:null}))).filter((c):c is RumbleClub=>!!c).sort((a,b)=>a.name.localeCompare(b.name))
  const deal=(s:number)=>dealDraft(pool,s,opponent),a=affordableSeed(deal,round.seed),b=affordableSeed(deal,shuffleSeed(a))
- const own=rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex))
+ const own={...rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex)),photos:hapoelPhotos(club,pool)}
  // the rival's side wears HIS club's home shirts (filtered by this page's colour policy), not ours
- let wardrobe=own
+ let wardrobe:RumbleWardrobe=own
  if(valid&&valid!==id){const r=await requestClub(valid,9);if(r)wardrobe=apart(own,rumbleWardrobe(kitViews(r.data),hex=>forbiddenColor(club.theme,hex)))}
  const again=new URLSearchParams({lang:locale,seed:String(round.seed+1)});if(token&&duel)again.set('duel',duel);else if(vsParam&&opponent.kind==='club')again.set('vs',vsParam)
  const rivalId=valid&&valid!==id?valid:id
@@ -77,8 +78,8 @@ async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
  const main=dealXI(pool,awayPool,f,round.seed,same,id)
  const shuf=main?dealXI(pool,awayPool,f,shuffleSeed(round.seed),same,id):null
  if(!main||!shuf)return stop(say('rr.xi.noRival'))
- const ownW=rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex))
- const wardrobe=same?{home:ownW.home,away:ownW.away.length?ownW.away:ownW.home}:apart(ownW,rumbleWardrobe(kitViews(away),hex=>forbiddenColor(club.theme,hex)))
+ const ownW={...rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex)),photos:hapoelPhotos(club,pool)}
+ const wardrobe=same?{home:ownW.home,away:ownW.away.length?ownW.away:ownW.home,photos:ownW.photos}:apart(ownW,rumbleWardrobe(kitViews(away),hex=>forbiddenColor(club.theme,hex)))
  const again=new URLSearchParams({lang:locale,mode:'xi',f,vs:same?'same':rivalId,seed:String(round.seed+1)})
  return <>
   {head(sp==='random'?'random':same?'same':rivalId)}
