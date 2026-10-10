@@ -1,98 +1,226 @@
 {
-  "schemaVersion": 1,
-  "clubId": "hapoel-tel-aviv",
-  "review": "cross-source-2026-10-08",
-  "note": "Display flavour for the club's own app: nicknames, ground, terrace, a few facts. Every sourced line needs two independent publishers (Wikipedia and Wikidata count as one). No lyrics, no politics, no rivals, no incidents. Founding year is deliberately not printed: sources give 1923, 1926 and 1927.",
-  "voice": {
-    "welcome": "The Worker's club. Red from the first whistle.",
-    "kicker": "Tel Aviv · Jaffa"
-  },
-  "nicknames": [
+ "schemaVersion": 1,
+ "clubId": "hapoel-tel-aviv",
+ "review": "cross-source-2026-10-08",
+ "note": "Display flavour for the club's own app: nicknames, ground, terrace, a few facts. Every sourced line needs two independent publishers (Wikipedia and Wikidata count as one). No lyrics, no politics, no rivals, no incidents. Founding year is deliberately not printed: sources give 1923, 1926 and 1927.",
+ "voice": {
+  "welcome": "The Worker's club. Red from the first whistle.",
+  "kicker": "Tel Aviv · Jaffa"
+ },
+ "nicknames": [
+  {
+   "text": "The Reds",
+   "local": "האדומים",
+   "script": "he",
+   "confidence": 3,
+   "sources": [
     {
-      "text": "The Reds",
-      "local": "האדומים",
-      "script": "he",
-      "confidence": 3,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."},
-        {"publisher": "UEFA.com", "url": "https://www.uefa.com/uefaeuropaleague/news/01f2-0e7546c63edb-9ffb918e1a27-1000--club-facts-hapoel-tel-aviv"},
-        {"publisher": "Tablet Magazine", "url": "https://www.tabletmag.com/scroll/44361/hapoelim-of-the-world-unite/"}
-      ]
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."
     },
     {
-      "text": "The Worker",
-      "local": "הפועל",
-      "script": "he",
-      "confidence": 3,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."},
-        {"publisher": "Soccerway", "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"},
-        {"publisher": "Tablet Magazine", "url": "https://www.tabletmag.com/scroll/44361/hapoelim-of-the-world-unite/"}
-      ]
-    }
-  ],
-  "ground": {
-    "name": "Bloomfield Stadium",
-    "local": "אצטדיון בלומפילד",
-    "script": "he",
-    "line": "Home is Bloomfield, in the south of Tel Aviv-Jaffa, near the old port of Jaffa.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Bloomfield_Stadium"},
-      {"publisher": "Bein Harim Tours", "url": "https://www.beinharimtours.com/bloomfield-stadium/"},
-      {"publisher": "My Sports Tourist", "url": "https://mysportstourist.com/venue-guides/football-stadiums/israel-football-stadiums/bloomfield-stadium-tel-aviv"}
-    ]
-  },
-  "founded": {
-    "line": "Born in the labour sports movement of the 1920s, a workers' club before it was anything else.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."},
-      {"publisher": "Soccerway", "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"},
-      {"publisher": "Times of Israel (blog)", "url": "https://blogs.timesofisrael.com/israeli-soccer-a-guide-to-the-2012-13-season/"}
-    ]
-  },
-  "emblem": {
-    "line": "The badge carries the hammer and sickle of the labour movement the club grew out of.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."},
-      {"publisher": "Soccerway", "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"},
-      {"publisher": "Flags of the World", "url": "https://www.fotw.info/FLAGS/il@hapta.html"}
-    ]
-  },
-  "colours": {
-    "line": "Red shirt, red badge: the Reds.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Soccerway", "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"},
-      {"publisher": "Flags of the World", "url": "https://www.fotw.info/FLAGS/il@hapta.html"},
-      {"publisher": "Tablet Magazine", "url": "https://www.tabletmag.com/scroll/44361/hapoelim-of-the-world-unite/"}
-    ]
-  },
-  "terrace": {
-    "name": "Gate 5",
-    "local": "שער 5",
-    "script": "he",
-    "tab": "Gate 5",
-    "line": "Gate 5, the Bloomfield end where the loudest supporters stand.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Bloomfield_Stadium"},
-      {"publisher": "Maariv Sport1", "url": "https://sport1.maariv.co.il/?p=1712367"},
-      {"publisher": "Kan", "url": "https://www.kan.org.il/content/kan-news/local/977463/"}
-    ]
-  },
-  "facts": [
+     "publisher": "UEFA.com",
+     "url": "https://www.uefa.com/uefaeuropaleague/news/01f2-0e7546c63edb-9ffb918e1a27-1000--club-facts-hapoel-tel-aviv"
+    },
     {
-      "id": "owned-by-the-union",
-      "line": "For about seven decades the club belonged to the Histadrut labour federation, until private owners arrived in the 1990s.",
-      "confidence": 3,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."},
-        {"publisher": "Soccerway", "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"},
-        {"publisher": "Times of Israel (blog)", "url": "https://blogs.timesofisrael.com/israeli-soccer-a-guide-to-the-2012-13-season/"}
-      ]
+     "publisher": "Tablet Magazine",
+     "url": "https://www.tabletmag.com/scroll/44361/hapoelim-of-the-world-unite/"
     }
+   ]
+  },
+  {
+   "text": "The Worker",
+   "local": "הפועל",
+   "script": "he",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."
+    },
+    {
+     "publisher": "Soccerway",
+     "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"
+    },
+    {
+     "publisher": "Tablet Magazine",
+     "url": "https://www.tabletmag.com/scroll/44361/hapoelim-of-the-world-unite/"
+    }
+   ]
+  }
+ ],
+ "ground": {
+  "name": "Bloomfield Stadium",
+  "local": "אצטדיון בלומפילד",
+  "script": "he",
+  "line": "Home is Bloomfield, in the south of Tel Aviv-Jaffa, near the old port of Jaffa.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Bloomfield_Stadium"
+   },
+   {
+    "publisher": "Bein Harim Tours",
+    "url": "https://www.beinharimtours.com/bloomfield-stadium/"
+   },
+   {
+    "publisher": "My Sports Tourist",
+    "url": "https://mysportstourist.com/venue-guides/football-stadiums/israel-football-stadiums/bloomfield-stadium-tel-aviv"
+   }
   ]
+ },
+ "founded": {
+  "line": "Born in the labour sports movement of the 1920s, a workers' club before it was anything else.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."
+   },
+   {
+    "publisher": "Soccerway",
+    "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"
+   },
+   {
+    "publisher": "Times of Israel (blog)",
+    "url": "https://blogs.timesofisrael.com/israeli-soccer-a-guide-to-the-2012-13-season/"
+   }
+  ]
+ },
+ "emblem": {
+  "line": "The badge carries the hammer and sickle of the labour movement the club grew out of.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."
+   },
+   {
+    "publisher": "Soccerway",
+    "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"
+   },
+   {
+    "publisher": "Flags of the World",
+    "url": "https://www.fotw.info/FLAGS/il@hapta.html"
+   }
+  ]
+ },
+ "colours": {
+  "line": "Red shirt, red badge: the Reds.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Soccerway",
+    "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"
+   },
+   {
+    "publisher": "Flags of the World",
+    "url": "https://www.fotw.info/FLAGS/il@hapta.html"
+   },
+   {
+    "publisher": "Tablet Magazine",
+    "url": "https://www.tabletmag.com/scroll/44361/hapoelim-of-the-world-unite/"
+   }
+  ]
+ },
+ "terrace": {
+  "name": "Gate 5",
+  "local": "שער 5",
+  "script": "he",
+  "tab": "Gate 5",
+  "line": "Gate 5, the Bloomfield end where the loudest supporters stand.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Bloomfield_Stadium"
+   },
+   {
+    "publisher": "Maariv Sport1",
+    "url": "https://sport1.maariv.co.il/?p=1712367"
+   },
+   {
+    "publisher": "Kan",
+    "url": "https://www.kan.org.il/content/kan-news/local/977463/"
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "owned-by-the-union",
+   "line": "For about seven decades the club belonged to the Histadrut labour federation, until private owners arrived in the 1990s.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Hapoel_Tel_Aviv_F.C."
+    },
+    {
+     "publisher": "Soccerway",
+     "url": "https://www.soccerway.com/news/soccer-ligat-ha-al-derby-week-two-icons-of-israeli-sport-and-two-worlds-collide-in-tel-aviv/WOJjh5rT"
+    },
+    {
+     "publisher": "Times of Israel (blog)",
+     "url": "https://blogs.timesofisrael.com/israeli-soccer-a-guide-to-the-2012-13-season/"
+    }
+   ]
+  }
+ ],
+ "flavour": [
+  {
+   "id": "bloomfield",
+   "kind": "place",
+   "line": "Bloomfield, in east Jaffa, was built from 1960 on the very ground of the old Basa stadium, Hapoel's home since 1950.",
+   "local": "בלומפילד",
+   "script": "he",
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Bloomfield_Stadium"
+    },
+    {
+     "publisher": "Sport Palaces Tel Aviv-Yafo",
+     "url": "https://www.sportpalace.co.il/en/bloomfield/history/"
+    },
+    {
+     "publisher": "The Stadium Guide",
+     "url": "https://www.stadiumguide.com/bloomfield-stadium/"
+    }
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "brothers",
+   "kind": "heritage",
+   "line": "The ground is named for the brothers Bernard and Lewis Bloomfield, whose family foundation helped pay for it.",
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Bloomfield_Stadium"
+    },
+    {
+     "publisher": "The Stadium Guide",
+     "url": "https://www.stadiumguide.com/bloomfield-stadium/"
+    }
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "twente",
+   "kind": "moment",
+   "line": "The new Bloomfield opened in December 1962 with a friendly against Twente, which ended 1–1.",
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Bloomfield_Stadium"
+    },
+    {
+     "publisher": "The Stadium Guide",
+     "url": "https://www.stadiumguide.com/bloomfield-stadium/"
+    }
+   ],
+   "confidence": 2
+  }
+ ]
 }

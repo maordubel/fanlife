@@ -1,88 +1,185 @@
 {
-  "schemaVersion": 1,
-  "clubId": "hapoel-petah-tikva",
-  "review": "cross-source-2026-10-08",
-  "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: any motto (none found), the crest (single source), the origin of 'Malabs' (unconfirmed), the old fan groups (owner-era, status unknown).",
-  "voice": {
-    "welcome": "Blue, and run by the people who stand on its terraces.",
-    "kicker": "Petah Tikva · Mother of the Moshavot"
-  },
-  "nicknames": [
+ "schemaVersion": 1,
+ "clubId": "hapoel-petah-tikva",
+ "review": "cross-source-2026-10-08",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: any motto (none found), the crest (single source), the origin of 'Malabs' (unconfirmed), the old fan groups (owner-era, status unknown).",
+ "voice": {
+  "welcome": "Blue, and run by the people who stand on its terraces.",
+  "kicker": "Petah Tikva · Mother of the Moshavot"
+ },
+ "nicknames": [
+  {
+   "text": "The Malabs",
+   "local": "המלאבסים",
+   "script": "he",
+   "confidence": 2,
+   "sources": [
     {
-      "text": "The Malabs",
-      "local": "המלאבסים",
-      "script": "he",
-      "confidence": 2,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."},
-        {"publisher": "Sport5", "url": "https://www.sport5.co.il/Tags/הפועל פתח תקווה?Page=74"},
-        {"publisher": "Maariv Sport1", "url": "https://sport1.maariv.co.il/?p=1745412"}
-      ]
-    }
-  ],
-  "ground": {
-    "name": "HaMoshava Stadium",
-    "local": "אצטדיון המושבה",
-    "script": "he",
-    "line": "HaMoshava has been home since 2011. Before that came the old municipal ground, known as The Stable.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/HaMoshava_Stadium"},
-      {"publisher": "Maariv Sport1", "url": "https://sport1.maariv.co.il/?p=41433"},
-      {"publisher": "Calcalist", "url": "https://www.calcalist.co.il/articles/0,7340,L-3559858,00.html"}
-    ]
-  },
-  "founded": {
-    "line": "Football in Petah Tikva since 1934, in the town that calls itself the Mother of the Moshavot.",
-    "confidence": 2,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."},
-      {"publisher": "Maariv Sport1", "url": "https://sport1.maariv.co.il/?p=101063"},
-      {"publisher": "Flags of the World", "url": "https://crwflags.com/FOTW/FLAGS/il@footb.html"}
-    ]
-  },
-  "colours": {
-    "line": "Blue.",
-    "confidence": 2,
-    "sources": [
-      {"publisher": "Jerusalem Post", "url": "https://m.jpost.com/sports/local-soccer-hap-petah-tikva-the-fall-of-an-empire"},
-      {"publisher": "Flags of the World", "url": "https://crwflags.com/FOTW/FLAGS/il@footb.html"},
-      {"publisher": "Israel Hayom", "url": "https://www.israelhayom.co.il/article/632749?amp=1"}
-    ]
-  },
-  "terrace": {
-    "name": "The Blue",
-    "local": "הכחולה",
-    "script": "he",
-    "tab": "The Blue",
-    "line": "Since 2019 the club has been run by its supporters, through the fan association HaKehula, The Blue.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Israel Hayom", "url": "https://www.israelhayom.co.il/article/632749?amp=1"},
-      {"publisher": "Arutz Sheva", "url": "https://www.inn.co.il/news/600796"},
-      {"publisher": "ICE", "url": "https://www.ice.co.il/sport_news/news/article/962123"}
-    ]
-  },
-  "facts": [
-    {
-      "id": "five-in-a-row",
-      "line": "Five league titles in a row, from 1959 to 1963. The first came in 1955; six in all.",
-      "confidence": 3,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."},
-        {"publisher": "Maariv Sport1", "url": "https://sport1.maariv.co.il/israeli-soccer/ligat-haal/article/1532311/"},
-        {"publisher": "Jerusalem Post", "url": "https://m.jpost.com/sports/local-soccer-hap-petah-tikva-the-fall-of-an-empire"}
-      ]
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."
     },
     {
-      "id": "state-cups",
-      "line": "State Cup winners in 1957 and again in 1992.",
-      "confidence": 2,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."},
-        {"publisher": "Maariv Sport1", "url": "https://sport1.maariv.co.il/israeli-soccer/article/1305884/"},
-        {"publisher": "Jerusalem Post", "url": "https://m.jpost.com/sports/local-soccer-hap-petah-tikva-the-fall-of-an-empire"}
-      ]
+     "publisher": "Sport5",
+     "url": "https://www.sport5.co.il/Tags/הפועל פתח תקווה?Page=74"
+    },
+    {
+     "publisher": "Maariv Sport1",
+     "url": "https://sport1.maariv.co.il/?p=1745412"
     }
+   ]
+  }
+ ],
+ "ground": {
+  "name": "HaMoshava Stadium",
+  "local": "אצטדיון המושבה",
+  "script": "he",
+  "line": "HaMoshava has been home since 2011. Before that came the old municipal ground, known as The Stable.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/HaMoshava_Stadium"
+   },
+   {
+    "publisher": "Maariv Sport1",
+    "url": "https://sport1.maariv.co.il/?p=41433"
+   },
+   {
+    "publisher": "Calcalist",
+    "url": "https://www.calcalist.co.il/articles/0,7340,L-3559858,00.html"
+   }
   ]
+ },
+ "founded": {
+  "line": "Football in Petah Tikva since 1934, in the town that calls itself the Mother of the Moshavot.",
+  "confidence": 2,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."
+   },
+   {
+    "publisher": "Maariv Sport1",
+    "url": "https://sport1.maariv.co.il/?p=101063"
+   },
+   {
+    "publisher": "Flags of the World",
+    "url": "https://crwflags.com/FOTW/FLAGS/il@footb.html"
+   }
+  ]
+ },
+ "colours": {
+  "line": "Blue.",
+  "confidence": 2,
+  "sources": [
+   {
+    "publisher": "Jerusalem Post",
+    "url": "https://m.jpost.com/sports/local-soccer-hap-petah-tikva-the-fall-of-an-empire"
+   },
+   {
+    "publisher": "Flags of the World",
+    "url": "https://crwflags.com/FOTW/FLAGS/il@footb.html"
+   },
+   {
+    "publisher": "Israel Hayom",
+    "url": "https://www.israelhayom.co.il/article/632749?amp=1"
+   }
+  ]
+ },
+ "terrace": {
+  "name": "The Blue",
+  "local": "הכחולה",
+  "script": "he",
+  "tab": "The Blue",
+  "line": "Since 2019 the club has been run by its supporters, through the fan association HaKehula, The Blue.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Israel Hayom",
+    "url": "https://www.israelhayom.co.il/article/632749?amp=1"
+   },
+   {
+    "publisher": "Arutz Sheva",
+    "url": "https://www.inn.co.il/news/600796"
+   },
+   {
+    "publisher": "ICE",
+    "url": "https://www.ice.co.il/sport_news/news/article/962123"
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "five-in-a-row",
+   "line": "Five league titles in a row, from 1959 to 1963. The first came in 1955; six in all.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."
+    },
+    {
+     "publisher": "Maariv Sport1",
+     "url": "https://sport1.maariv.co.il/israeli-soccer/ligat-haal/article/1532311/"
+    },
+    {
+     "publisher": "Jerusalem Post",
+     "url": "https://m.jpost.com/sports/local-soccer-hap-petah-tikva-the-fall-of-an-empire"
+    }
+   ]
+  },
+  {
+   "id": "state-cups",
+   "line": "State Cup winners in 1957 and again in 1992.",
+   "confidence": 2,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."
+    },
+    {
+     "publisher": "Maariv Sport1",
+     "url": "https://sport1.maariv.co.il/israeli-soccer/article/1305884/"
+    },
+    {
+     "publisher": "Jerusalem Post",
+     "url": "https://m.jpost.com/sports/local-soccer-hap-petah-tikva-the-fall-of-an-empire"
+    }
+   ]
+  }
+ ],
+ "flavour": [
+  {
+   "id": "five-in-a-row",
+   "kind": "moment",
+   "line": "Between 1959 and 1963 Hapoel won five league titles in a row, a record in Israeli football that still stands.",
+   "sources": [
+    {
+     "publisher": "Hebrew Wikipedia",
+     "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)"
+    },
+    {
+     "publisher": "Hapoel Petah Tikva",
+     "url": "https://www.hapoelpt.com/history"
+    }
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "first-title",
+   "kind": "heritage",
+   "line": "The first championship came in 1954/55 — the first of six.",
+   "sources": [
+    {
+     "publisher": "Hebrew Wikipedia",
+     "url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%95%D7%A2%D7%9C_%D7%A4%D7%AA%D7%97_%D7%AA%D7%A7%D7%95%D7%95%D7%94_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)"
+    },
+    {
+     "publisher": "Hapoel Petah Tikva",
+     "url": "https://www.hapoelpt.com/history"
+    }
+   ],
+   "confidence": 2
+  }
+ ]
 }
