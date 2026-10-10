@@ -1,6 +1,7 @@
 'use server'
 import {requestClub} from '@/lib/clubs/request'
 import {ratedPool,dealDraft,play,rumbleReadiness} from '@/lib/clubs/rumble'
+import {opponentFor} from '@/lib/clubs/rumble-opponent'
 import {stageMatch} from '@/lib/clubs/rumble-show'
 import {lineupMatches,buildableKits,kitViews} from '@/lib/clubs/gate-content'
 import {clubGoals,goalPool,cleanTouches,judgeGoal} from '@/lib/clubs/goal'
@@ -29,14 +30,16 @@ export const kitCount=async(slug:string)=>{const r=await requestClub(slug,5);ret
  * Gate 9 — the five are checked against the board the seed deals, the score is decided from hidden
  * ratings, and the match is staged HERE (`stageMatch`). Only public cards and the finished script leave.
  */
-export async function playRumble(slug:string,version:string,seed:number,picks:string[]){
- if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||!Number.isSafeInteger(seed)||!Array.isArray(picks)||picks.length!==5||picks.some(p=>typeof p!=='string'||p.length>200))return null
+export async function playRumble(slug:string,version:string,seed:number,picks:string[],vs?:string,duel?:string){
+ if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||!Number.isSafeInteger(seed)||!Array.isArray(picks)||picks.length!==5||picks.some(p=>typeof p!=='string'||p.length>200)||(vs!==undefined&&(typeof vs!=='string'||vs.length>100))||(duel!==undefined&&typeof duel!=='string'))return null
  const resolved=await requestClub(slug,9)
  if(!resolved||resolved.data.version!==version||!resolved.data.gates['royal-rumble']?.playable)return null
- const r=play(ratedPool(resolved.data),seed,picks)
- return r?{verdict:r.verdict,goals:r.goals,script:stageMatch(r,seed)}:null
+ const pool=ratedPool(resolved.data),opponent=await opponentFor(slug,pool,vs,duel)
+ if(!opponent)return null
+ const r=play(pool,seed,picks,opponent)
+ return r?{verdict:r.verdict,goals:r.goals,script:stageMatch(r,seed),rivalClub:opponent.kind==='locked'?opponent.club:opponent.kind==='club'?vs:slug}:null
 }
-export const rumbleDeal=async(slug:string,seed:number)=>{const r=await requestClub(slug,9);return r&&Number.isSafeInteger(seed)&&rumbleReadiness(ratedPool(r.data)).playable?dealDraft(ratedPool(r.data),seed):null}
+export const rumbleDeal=async(slug:string,seed:number,vs?:string,duel?:string)=>{const r=await requestClub(slug,9);if(!r||!Number.isSafeInteger(seed))return null;const pool=ratedPool(r.data);if(!rumbleReadiness(pool).playable)return null;const o=await opponentFor(slug,pool,vs,duel);return o?dealDraft(pool,seed,o):null}
 /** Gate 8 — the touches are graded here; the cast, verbs, order and count never left the server before this. */
 export async function gradeClubGoal(slug:string,version:string,goalId:string,seed:number,touches:unknown){
  if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||typeof goalId!=='string'||goalId.length>200||!Number.isSafeInteger(seed))return null

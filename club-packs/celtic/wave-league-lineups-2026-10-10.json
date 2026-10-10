@@ -1,0 +1,2675 @@
+{
+ "sources": [
+  {
+   "id": "s365-4741650",
+   "title": "365Scores: Celtic 0-1 Rangers, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4741650",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1792811",
+   "title": "LiveScore: Celtic 0-1 Rangers, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1792811",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4815919",
+   "title": "365Scores: Rangers 3-0 Celtic, 2026-09-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4815919",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1871818",
+   "title": "LiveScore: Rangers 3-0 Celtic, 2026-09-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1871818",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4741674",
+   "title": "365Scores: St. Johnstone 0-1 Celtic, 2026-09-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4741674",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1792804",
+   "title": "LiveScore: St. Johnstone 0-1 Celtic, 2026-09-09 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1792804",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4741656",
+   "title": "365Scores: St. Mirren 1-2 Celtic, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4741656",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1792799",
+   "title": "LiveScore: St. Mirren 1-2 Celtic, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1792799",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4741667",
+   "title": "365Scores: Celtic 3-0 Aberdeen, 2026-09-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4741667",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1792787",
+   "title": "LiveScore: Celtic 3-0 Aberdeen, 2026-09-02 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1792787",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4741672",
+   "title": "365Scores: Celtic 2-1 Falkirk, 2026-08-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4741672",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1792806",
+   "title": "LiveScore: Celtic 2-1 Falkirk, 2026-08-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1792806",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4741681",
+   "title": "365Scores: Kilmarnock 1-5 Celtic, 2026-08-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4741681",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1792779",
+   "title": "LiveScore: Kilmarnock 1-5 Celtic, 2026-08-09 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1792779",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4741686",
+   "title": "365Scores: Celtic 1-0 Dundee, 2026-08-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4741686",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1792777",
+   "title": "LiveScore: Celtic 1-0 Dundee, 2026-08-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1792777",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4769000",
+   "title": "365Scores: Celtic 2-2 AC Milan, 2026-07-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4769000",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1821708",
+   "title": "LiveScore: Celtic 2-2 AC Milan, 2026-07-25 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821708",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4704260",
+   "title": "365Scores: Celtic 3-1 Dunfermline, 2026-05-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4704260",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4699975",
+   "title": "365Scores: Celtic 3-1 Hearts, 2026-05-16",
+   "url": "https://webws.365scores.com/web/game/?gameId=4699975",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1765480",
+   "title": "LiveScore: Celtic 3-1 Hearts, 2026-05-16 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1765480",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4699965",
+   "title": "365Scores: Motherwell 2-3 Celtic, 2026-05-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4699965",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1765474",
+   "title": "LiveScore: Motherwell 2-3 Celtic, 2026-05-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1765474",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4699960",
+   "title": "365Scores: Celtic 3-1 Rangers, 2026-05-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4699960",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1765478",
+   "title": "LiveScore: Celtic 3-1 Rangers, 2026-05-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1765478",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4699980",
+   "title": "365Scores: Hibernian 1-2 Celtic, 2026-05-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4699980",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1765485",
+   "title": "LiveScore: Hibernian 1-2 Celtic, 2026-05-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1765485",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4699951",
+   "title": "365Scores: Celtic 3-1 Falkirk, 2026-04-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4699951",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1765488",
+   "title": "LiveScore: Celtic 3-1 Falkirk, 2026-04-25 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1765488",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4684820",
+   "title": "365Scores: Celtic 6-2 St. Mirren, 2026-04-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4684820",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4455977",
+   "title": "365Scores: Celtic 1-0 St. Mirren, 2026-04-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4455977",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4455999",
+   "title": "365Scores: Celtic 3-1 Motherwell, 2026-03-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4455999",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4455994",
+   "title": "365Scores: Dundee United 2-0 Celtic, 2026-03-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4455994",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4455988",
+   "title": "365Scores: Dundee 1-2 Celtic, 2026-04-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4455988",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456015",
+   "title": "365Scores: Kilmarnock 2-3 Celtic, 2026-02-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456015",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456011",
+   "title": "365Scores: Celtic 1-2 Hibernian, 2026-02-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456011",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456001",
+   "title": "365Scores: Rangers 2-2 Celtic, 2026-03-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456001",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456030",
+   "title": "365Scores: Aberdeen 1-2 Celtic, 2026-03-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456030",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4670001",
+   "title": "365Scores: Rangers 0-0 Celtic, 2026-03-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4670001",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4625195",
+   "title": "365Scores: Auchinleck Talbot 0-2 Celtic, 2026-01-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4625195",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456039",
+   "title": "365Scores: Hearts 2-2 Celtic, 2026-01-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456039",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456036",
+   "title": "365Scores: Celtic 2-0 Falkirk, 2026-02-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456036",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4657322",
+   "title": "365Scores: Celtic 2-1 Dundee, 2026-02-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4657322",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456024",
+   "title": "365Scores: Celtic 2-1 Livingston, 2026-02-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456024",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456072",
+   "title": "365Scores: Celtic 3-1 Aberdeen, 2025-12-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456072",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456063",
+   "title": "365Scores: Livingston 2-4 Celtic, 2025-12-27",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456063",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456056",
+   "title": "365Scores: Motherwell 2-0 Celtic, 2025-12-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456056",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456054",
+   "title": "365Scores: Celtic 1-3 Rangers, 2026-01-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456054",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456047",
+   "title": "365Scores: Celtic 4-0 Dundee United, 2026-01-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456047",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456074",
+   "title": "365Scores: Falkirk 0-1 Celtic, 2026-01-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456074",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456097",
+   "title": "365Scores: St. Mirren 0-1 Celtic, 2025-11-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456097",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456095",
+   "title": "365Scores: Hibernian 1-2 Celtic, 2025-11-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456095",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456089",
+   "title": "365Scores: Celtic 1-0 Dundee, 2025-12-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456089",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456084",
+   "title": "365Scores: Celtic 1-2 Hearts, 2025-12-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456084",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4609959",
+   "title": "365Scores: St. Mirren 3-1 Celtic, 2025-12-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4609959",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456114",
+   "title": "365Scores: Dundee United 2-1 Celtic, 2025-12-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456114",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456123",
+   "title": "365Scores: Hearts 3-1 Celtic, 2025-10-26",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456123",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456120",
+   "title": "365Scores: Celtic 4-0 Falkirk, 2025-10-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456120",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4558445",
+   "title": "365Scores: Celtic 3-1 Rangers, 2025-11-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4558445",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456107",
+   "title": "365Scores: Celtic 4-0 Kilmarnock, 2025-11-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456107",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4456132",
+   "title": "365Scores: Dundee 2-0 Celtic, 2025-10-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4456132",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-09-20-celtic-rangers",
+   "value": {
+    "name": "Celtic 0-1 Rangers",
+    "on": "2026-09-20",
+    "competition": "Scottish Premiership",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Liam Scales",
+     "Auston Trusty",
+     "Cameron Carter-Vickers",
+     "Kieran Tierney",
+     "Mika Baur",
+     "Callum McGregor",
+     "Colby Donovan",
+     "Benjamin Nygren",
+     "Luke McCowan",
+     "Camilo Duran"
+    ],
+    "bench": [
+     "James Forrest",
+     "Haissem Hassan",
+     "Sebastian Tounekti",
+     "Shumaira Mheuka",
+     "Kasper Hogh",
+     "Sam Johnstone",
+     "Dane Murray",
+     "Anthony Ralston",
+     "Alex Oxlade-Chamberlain"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4741650",
+    "ls-lu-1792811"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-09-13-rangers-celtic",
+   "value": {
+    "name": "Rangers 3-0 Celtic",
+    "on": "2026-09-13",
+    "competition": "League Cup - Quarter Finals",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Sam Johnstone",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Cameron Carter-Vickers",
+     "Colby Donovan",
+     "Mika Baur",
+     "Callum McGregor",
+     "Benjamin Nygren",
+     "Sebastian Tounekti",
+     "Kasper Hogh",
+     "Camilo Duran"
+    ],
+    "bench": [
+     "Jordan Lotomba",
+     "Alex Oxlade-Chamberlain",
+     "James Forrest",
+     "Haissem Hassan",
+     "Shumaira Mheuka",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Auston Trusty",
+     "Oliver Sorensen"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4815919",
+    "ls-lu-1871818"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-09-09-st-johnstone-celtic",
+   "value": {
+    "name": "St. Johnstone 0-1 Celtic",
+    "on": "2026-09-09",
+    "competition": "Scottish Premiership",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Sam Johnstone",
+     "Liam Scales",
+     "Auston Trusty",
+     "Dane Murray",
+     "Colby Donovan",
+     "Mika Baur",
+     "Callum McGregor",
+     "Sebastian Tounekti",
+     "Oliver Sorensen",
+     "Haissem Hassan",
+     "Kasper Hogh"
+    ],
+    "bench": [
+     "Kieran Tierney",
+     "Benjamin Nygren",
+     "James Forrest",
+     "Camilo Duran",
+     "Shumaira Mheuka",
+     "Viljami Sinisalo",
+     "Jordan Lotomba",
+     "Alex Oxlade-Chamberlain",
+     "Joel van den Berg"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4741674",
+    "ls-lu-1792804"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-09-05-st-mirren-celtic",
+   "value": {
+    "name": "St. Mirren 1-2 Celtic",
+    "on": "2026-09-05",
+    "competition": "Scottish Premiership",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Liam Scales",
+     "Auston Trusty",
+     "Cameron Carter-Vickers",
+     "Colby Donovan",
+     "Mika Baur",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Benjamin Nygren",
+     "Haissem Hassan",
+     "Camilo Duran"
+    ],
+    "bench": [
+     "Dane Murray",
+     "Oliver Sorensen",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Shumaira Mheuka",
+     "Sam Johnstone",
+     "Jordan Lotomba",
+     "Alex Oxlade-Chamberlain",
+     "Joel van den Berg"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4741656",
+    "ls-lu-1792799"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-09-02-celtic-aberdeen",
+   "value": {
+    "name": "Celtic 3-0 Aberdeen",
+    "on": "2026-09-02",
+    "competition": "Scottish Premiership",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Liam Scales",
+     "Auston Trusty",
+     "Cameron Carter-Vickers",
+     "Colby Donovan",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Alex Oxlade-Chamberlain",
+     "Benjamin Nygren",
+     "Haissem Hassan",
+     "Camilo Duran"
+    ],
+    "bench": [
+     "Mika Baur",
+     "Oliver Sorensen",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Shumaira Mheuka",
+     "Sam Johnstone",
+     "Dane Murray",
+     "Anthony Ralston",
+     "Luke McCowan"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4741667",
+    "ls-lu-1792787"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-08-29-celtic-falkirk",
+   "value": {
+    "name": "Celtic 2-1 Falkirk",
+    "on": "2026-08-29",
+    "competition": "Scottish Premiership",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Cameron Carter-Vickers",
+     "Colby Donovan",
+     "Alex Oxlade-Chamberlain",
+     "Mika Baur",
+     "Hyun-jun Yang",
+     "Benjamin Nygren",
+     "Haissem Hassan",
+     "Camilo Duran"
+    ],
+    "bench": [
+     "Auston Trusty",
+     "Luke McCowan",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Callum Osmand",
+     "Ross Doohan",
+     "Dane Murray",
+     "Liam Kennedy",
+     "Johnny Kenny"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4741672",
+    "ls-lu-1792806"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-08-09-kilmarnock-celtic",
+   "value": {
+    "name": "Kilmarnock 1-5 Celtic",
+    "on": "2026-08-09",
+    "competition": "Scottish Premiership",
+    "score": "1-5",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Auston Trusty",
+     "Cameron Carter-Vickers",
+     "Alistair Johnston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Benjamin Nygren",
+     "Camilo Duran",
+     "Kasper Hogh"
+    ],
+    "bench": [
+     "Colby Donovan",
+     "Luke McCowan",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Callum Osmand",
+     "Ross Doohan",
+     "Dane Murray",
+     "Reo Hatate",
+     "Alex Oxlade-Chamberlain"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4741681",
+    "ls-lu-1792779"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-08-03-celtic-dundee",
+   "value": {
+    "name": "Celtic 1-0 Dundee",
+    "on": "2026-08-03",
+    "competition": "Scottish Premiership",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Auston Trusty",
+     "Cameron Carter-Vickers",
+     "Alistair Johnston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Benjamin Nygren",
+     "Camilo Duran",
+     "Kasper Hogh"
+    ],
+    "bench": [
+     "Colby Donovan",
+     "Luke McCowan",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Ross Doohan",
+     "Dane Murray",
+     "Reo Hatate",
+     "Alex Oxlade-Chamberlain",
+     "Callum Osmand"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4741686",
+    "ls-lu-1792777"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-07-25-celtic-ac-milan",
+   "value": {
+    "name": "Celtic 2-2 AC Milan",
+    "on": "2026-07-25",
+    "competition": "Club Friendlies",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Dane Murray",
+     "Cameron Carter-Vickers",
+     "Colby Donovan",
+     "Arne Engels",
+     "Luke McCowan",
+     "Callum McGregor",
+     "Sebastian Tounekti",
+     "Camilo Duran",
+     "James Forrest"
+    ],
+    "bench": [
+     "Rory McArdle",
+     "Liam Scales",
+     "Anthony Ralston",
+     "Adam Montgomery",
+     "Paulo Bernardo",
+     "Reo Hatate",
+     "Alex Oxlade-Chamberlain",
+     "Thomas Hatton",
+     "Callum Osmand",
+     "Ross Doohan",
+     "Francis Turley",
+     "Michel-Ange Balikwisha",
+     "Marcus Gill"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4769000",
+    "ls-lu-1821708"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-05-23-celtic-dunfermline",
+   "value": {
+    "name": "Celtic 3-1 Dunfermline",
+    "on": "2026-05-23",
+    "competition": "FA Cup - Final - Final",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Alistair Johnston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Benjamin Nygren",
+     "James Forrest",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Marcelo Saracchi",
+     "Alex Oxlade-Chamberlain",
+     "Sebastian Tounekti",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Dane Murray",
+     "Anthony Ralston",
+     "Luke McCowan",
+     "Callum Osmand"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4704260"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-16-celtic-hearts",
+   "value": {
+    "name": "Celtic 3-1 Hearts",
+    "on": "2026-05-16",
+    "competition": "Scottish Premiership - Playoffs - Championship Group",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Alistair Johnston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Sebastian Tounekti",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Dane Murray",
+     "Marcelo Saracchi",
+     "James Forrest",
+     "Callum Osmand",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Anthony Ralston",
+     "Luke McCowan",
+     "Alex Oxlade-Chamberlain"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4699975",
+    "ls-lu-1765480"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-05-13-motherwell-celtic",
+   "value": {
+    "name": "Motherwell 2-3 Celtic",
+    "on": "2026-05-13",
+    "competition": "Scottish Premiership - Playoffs - Championship Group",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Alistair Johnston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Sebastian Tounekti",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Anthony Ralston",
+     "Marcelo Saracchi",
+     "Reo Hatate",
+     "James Forrest",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Dane Murray",
+     "Luke McCowan",
+     "Alex Oxlade-Chamberlain"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4699965",
+    "ls-lu-1765474"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-05-10-celtic-rangers",
+   "value": {
+    "name": "Celtic 3-1 Rangers",
+    "on": "2026-05-10",
+    "competition": "Scottish Premiership - Playoffs - Championship Group",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Alistair Johnston",
+     "Callum McGregor",
+     "Arne Engels",
+     "Hyun-jun Yang",
+     "Benjamin Nygren",
+     "Luke McCowan",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Anthony Ralston",
+     "Marcelo Saracchi",
+     "Reo Hatate",
+     "Sebastian Tounekti",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Dane Murray",
+     "Alex Oxlade-Chamberlain",
+     "James Forrest"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4699960",
+    "ls-lu-1765478"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-05-03-hibernian-celtic",
+   "value": {
+    "name": "Hibernian 1-2 Celtic",
+    "on": "2026-05-03",
+    "competition": "Scottish Premiership - Playoffs - Championship Group",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Alistair Johnston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Sebastian Tounekti",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Anthony Ralston",
+     "Luke McCowan",
+     "James Forrest",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Dane Murray",
+     "Marcelo Saracchi",
+     "Reo Hatate",
+     "Alex Oxlade-Chamberlain"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4699980",
+    "ls-lu-1765485"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-04-25-celtic-falkirk",
+   "value": {
+    "name": "Celtic 3-1 Falkirk",
+    "on": "2026-04-25",
+    "competition": "Scottish Premiership - Playoffs - Championship Group",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Benjamin Nygren",
+     "James Forrest",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Alistair Johnston",
+     "Marcelo Saracchi",
+     "Alex Oxlade-Chamberlain",
+     "Sebastian Tounekti",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Dane Murray",
+     "Reo Hatate",
+     "Luke McCowan"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4699951",
+    "ls-lu-1765488"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
+  {
+   "id": "a-m-2026-04-19-celtic-st-mirren",
+   "value": {
+    "name": "Celtic 6-2 St. Mirren",
+    "on": "2026-04-19",
+    "competition": "FA Cup - Semi Finals",
+    "score": "6-2",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Auston Trusty",
+     "Benjamin Arthur",
+     "Anthony Ralston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Sebastian Tounekti",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Dane Murray",
+     "Marcelo Saracchi",
+     "Luke McCowan",
+     "Alex Oxlade-Chamberlain",
+     "James Forrest",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Reo Hatate",
+     "Junior Adamu"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4684820"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-11-celtic-st-mirren",
+   "value": {
+    "name": "Celtic 1-0 St. Mirren",
+    "on": "2026-04-11",
+    "competition": "Scottish Premiership",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Alex Oxlade-Chamberlain",
+     "Callum McGregor",
+     "Daizen Maeda",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Tomas Cvancara"
+    ],
+    "bench": [
+     "Arne Engels",
+     "Reo Hatate",
+     "Luke McCowan",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Benjamin Arthur",
+     "Marcelo Saracchi",
+     "James Forrest",
+     "Sebastian Tounekti"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4455977"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-05-dundee-celtic",
+   "value": {
+    "name": "Dundee 1-2 Celtic",
+    "on": "2026-04-05",
+    "competition": "Scottish Premiership",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Colby Donovan",
+     "Alex Oxlade-Chamberlain",
+     "Callum McGregor",
+     "Daizen Maeda",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Tomas Cvancara"
+    ],
+    "bench": [
+     "Anthony Ralston",
+     "Marcelo Saracchi",
+     "Luke McCowan",
+     "James Forrest",
+     "Kelechi Iheanacho",
+     "Ross Doohan",
+     "Benjamin Arthur",
+     "Reo Hatate",
+     "Sebastian Tounekti"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4455988"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-22-dundee-united-celtic",
+   "value": {
+    "name": "Dundee United 2-0 Celtic",
+    "on": "2026-03-22",
+    "competition": "Scottish Premiership",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Benjamin Arthur",
+     "Colby Donovan",
+     "Callum McGregor",
+     "Reo Hatate",
+     "Daizen Maeda",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Kelechi Iheanacho"
+    ],
+    "bench": [
+     "Luke McCowan",
+     "Alex Oxlade-Chamberlain",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Junior Adamu",
+     "Ross Doohan",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Marcelo Saracchi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4455994"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-14-celtic-motherwell",
+   "value": {
+    "name": "Celtic 3-1 Motherwell",
+    "on": "2026-03-14",
+    "competition": "Scottish Premiership",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Benjamin Arthur",
+     "Colby Donovan",
+     "Reo Hatate",
+     "Alex Oxlade-Chamberlain",
+     "Sebastian Tounekti",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Anthony Ralston",
+     "Marcelo Saracchi",
+     "Paulo Bernardo",
+     "Luke McCowan",
+     "Tomas Cvancara",
+     "Ross Doohan",
+     "Dane Murray",
+     "James Forrest",
+     "Kelechi Iheanacho"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4455999"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-08-rangers-celtic",
+   "value": {
+    "name": "Rangers 0-0 Celtic",
+    "on": "2026-03-08",
+    "competition": "FA Cup - Quarter Finals",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Liam Scales",
+     "Auston Trusty",
+     "Benjamin Arthur",
+     "Julian Araujo",
+     "Reo Hatate",
+     "Luke McCowan",
+     "Benjamin Nygren",
+     "Sebastian Tounekti",
+     "Daizen Maeda",
+     "Hyun-jun Yang"
+    ],
+    "bench": [
+     "Dane Murray",
+     "Paulo Bernardo",
+     "Alex Oxlade-Chamberlain",
+     "James Forrest",
+     "Joel Mvuka",
+     "Tomas Cvancara",
+     "Ross Doohan",
+     "Colby Donovan",
+     "Marcelo Saracchi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4670001"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-04-aberdeen-celtic",
+   "value": {
+    "name": "Aberdeen 1-2 Celtic",
+    "on": "2026-03-04",
+    "competition": "Scottish Premiership",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Benjamin Arthur",
+     "Julian Araujo",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Sebastian Tounekti",
+     "Luke McCowan",
+     "Hyun-jun Yang",
+     "Tomas Cvancara"
+    ],
+    "bench": [
+     "Colby Donovan",
+     "Marcelo Saracchi",
+     "Benjamin Nygren",
+     "James Forrest",
+     "Daizen Maeda",
+     "Ross Doohan",
+     "Alex Oxlade-Chamberlain",
+     "Junior Adamu"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456030"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-01-rangers-celtic",
+   "value": {
+    "name": "Rangers 2-2 Celtic",
+    "on": "2026-03-01",
+    "competition": "Scottish Premiership",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Dane Murray",
+     "Julian Araujo",
+     "Alex Oxlade-Chamberlain",
+     "Callum McGregor",
+     "Benjamin Nygren",
+     "Daizen Maeda",
+     "Junior Adamu",
+     "Hyun-jun Yang"
+    ],
+    "bench": [
+     "Marcelo Saracchi",
+     "Reo Hatate",
+     "Luke McCowan",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Ross Doohan",
+     "Benjamin Arthur",
+     "Colby Donovan",
+     "Tomas Cvancara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456001"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-22-celtic-hibernian",
+   "value": {
+    "name": "Celtic 1-2 Hibernian",
+    "on": "2026-02-22",
+    "competition": "Scottish Premiership",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Julian Araujo",
+     "Alex Oxlade-Chamberlain",
+     "Callum McGregor",
+     "Sebastian Tounekti",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Tomas Cvancara"
+    ],
+    "bench": [
+     "Benjamin Arthur",
+     "Marcelo Saracchi",
+     "Reo Hatate",
+     "James Forrest",
+     "Daizen Maeda",
+     "Viljami Sinisalo",
+     "Colby Donovan",
+     "Luke McCowan",
+     "Junior Adamu"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456011"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-15-kilmarnock-celtic",
+   "value": {
+    "name": "Kilmarnock 2-3 Celtic",
+    "on": "2026-02-15",
+    "competition": "Scottish Premiership",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Julian Araujo",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Benjamin Nygren",
+     "Daizen Maeda",
+     "Junior Adamu",
+     "Hyun-jun Yang"
+    ],
+    "bench": [
+     "Marcelo Saracchi",
+     "Alex Oxlade-Chamberlain",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Tomas Cvancara",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Colby Donovan",
+     "Luke McCowan"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456015"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-11-celtic-livingston",
+   "value": {
+    "name": "Celtic 2-1 Livingston",
+    "on": "2026-02-11",
+    "competition": "Scottish Premiership",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Marcelo Saracchi",
+     "Liam Scales",
+     "Auston Trusty",
+     "Julian Araujo",
+     "Benjamin Nygren",
+     "Callum McGregor",
+     "Arne Engels",
+     "Daizen Maeda",
+     "Tomas Cvancara",
+     "Sebastian Tounekti"
+    ],
+    "bench": [
+     "Kieran Tierney",
+     "Reo Hatate",
+     "Alex Oxlade-Chamberlain",
+     "James Forrest",
+     "Junior Adamu",
+     "Viljami Sinisalo",
+     "Benjamin Arthur",
+     "Colby Donovan",
+     "Hyun-jun Yang"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456024"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-07-celtic-dundee",
+   "value": {
+    "name": "Celtic 2-1 Dundee",
+    "on": "2026-02-07",
+    "competition": "FA Cup - 5th Round",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Julian Araujo",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Paulo Bernardo",
+     "Joel Mvuka",
+     "Tomas Cvancara",
+     "Hyun-jun Yang"
+    ],
+    "bench": [
+     "Colby Donovan",
+     "Marcelo Saracchi",
+     "Luke McCowan",
+     "Benjamin Nygren",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Junior Adamu",
+     "Ross Doohan",
+     "Dane Murray"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4657322"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-01-celtic-falkirk",
+   "value": {
+    "name": "Celtic 2-0 Falkirk",
+    "on": "2026-02-01",
+    "competition": "Scottish Premiership",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Dane Murray",
+     "Julian Araujo",
+     "Daizen Maeda",
+     "Callum McGregor",
+     "Arne Engels",
+     "Hyun-jun Yang",
+     "Benjamin Nygren",
+     "Tomas Cvancara"
+    ],
+    "bench": [
+     "Stephen Welsh",
+     "Reo Hatate",
+     "James Forrest",
+     "Sebastian Tounekti",
+     "Kelechi Iheanacho",
+     "Viljami Sinisalo",
+     "Colby Donovan",
+     "Paulo Bernardo",
+     "Luke McCowan"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456036"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-25-hearts-celtic",
+   "value": {
+    "name": "Hearts 2-2 Celtic",
+    "on": "2026-01-25",
+    "competition": "Scottish Premiership",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Julian Araujo",
+     "Benjamin Nygren",
+     "Callum McGregor",
+     "Arne Engels",
+     "Daizen Maeda",
+     "Tomas Cvancara",
+     "Hyun-jun Yang"
+    ],
+    "bench": [
+     "Dane Murray",
+     "Anthony Ralston",
+     "Sebastian Tounekti",
+     "Viljami Sinisalo",
+     "Colby Donovan",
+     "Paulo Bernardo",
+     "Reo Hatate",
+     "Luke McCowan",
+     "James Forrest"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456039"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-18-auchinleck-talbot-celtic",
+   "value": {
+    "name": "Auchinleck Talbot 0-2 Celtic",
+    "on": "2026-01-18",
+    "competition": "FA Cup - 4th Round",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Colby Donovan",
+     "Stephen Welsh",
+     "Dane Murray",
+     "Anthony Ralston",
+     "Michel-Ange Balikwisha",
+     "Callum McGregor",
+     "Paulo Bernardo",
+     "James Forrest",
+     "Johnny Kenny",
+     "Luke McCowan"
+    ],
+    "bench": [
+     "Liam Scales",
+     "Reo Hatate",
+     "Benjamin Nygren",
+     "Sebastian Tounekti",
+     "Shin Yamada",
+     "Kasper Schmeichel",
+     "Hyun-jun Yang",
+     "Daizen Maeda",
+     "Joseph Haney"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4625195"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-14-falkirk-celtic",
+   "value": {
+    "name": "Falkirk 0-1 Celtic",
+    "on": "2026-01-14",
+    "competition": "Scottish Premiership",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Julian Araujo",
+     "Benjamin Nygren",
+     "Callum McGregor",
+     "Arne Engels",
+     "Sebastian Tounekti",
+     "Daizen Maeda",
+     "Hyun-jun Yang"
+    ],
+    "bench": [
+     "Reo Hatate",
+     "Luke McCowan",
+     "Johnny Kenny",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Colby Donovan",
+     "Anthony Ralston",
+     "Paulo Bernardo",
+     "James Forrest"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456074"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-10-celtic-dundee-united",
+   "value": {
+    "name": "Celtic 4-0 Dundee United",
+    "on": "2026-01-10",
+    "competition": "Scottish Premiership",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Julian Araujo",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Arne Engels",
+     "Sebastian Tounekti",
+     "Daizen Maeda",
+     "Hyun-jun Yang"
+    ],
+    "bench": [
+     "Colby Donovan",
+     "Luke McCowan",
+     "Benjamin Nygren",
+     "James Forrest",
+     "Johnny Kenny",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Anthony Ralston",
+     "Paulo Bernardo"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456047"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-03-celtic-rangers",
+   "value": {
+    "name": "Celtic 1-3 Rangers",
+    "on": "2026-01-03",
+    "competition": "Scottish Premiership",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Luke McCowan",
+     "Callum McGregor",
+     "Arne Engels",
+     "Hyun-jun Yang",
+     "Daizen Maeda",
+     "Benjamin Nygren",
+     "Johnny Kenny"
+    ],
+    "bench": [
+     "Liam Scales",
+     "Julian Araujo",
+     "Reo Hatate",
+     "James Forrest",
+     "Shin Yamada",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Colby Donovan",
+     "Paulo Bernardo"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456054"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-30-motherwell-celtic",
+   "value": {
+    "name": "Motherwell 2-0 Celtic",
+    "on": "2025-12-30",
+    "competition": "Scottish Premiership",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Liam Scales",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Kieran Tierney",
+     "Paulo Bernardo",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Reo Hatate",
+     "Daizen Maeda",
+     "Benjamin Nygren"
+    ],
+    "bench": [
+     "Colby Donovan",
+     "Arne Engels",
+     "Luke McCowan",
+     "James Forrest",
+     "Shin Yamada",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Jahmai Simpson-Pusey",
+     "Johnny Kenny"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456056"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-27-livingston-celtic",
+   "value": {
+    "name": "Livingston 2-4 Celtic",
+    "on": "2025-12-27",
+    "competition": "Scottish Premiership",
+    "score": "2-4",
+    "venue": null,
+    "lineup": [
+     "Viljami Sinisalo",
+     "Kieran Tierney",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Luke McCowan",
+     "Callum McGregor",
+     "Arne Engels",
+     "Hyun-jun Yang",
+     "Daizen Maeda",
+     "Benjamin Nygren",
+     "Johnny Kenny"
+    ],
+    "bench": [
+     "Colby Donovan",
+     "Paulo Bernardo",
+     "Reo Hatate",
+     "Ross Doohan",
+     "Dane Murray",
+     "Liam Scales",
+     "Jahmai Simpson-Pusey",
+     "James Forrest",
+     "Shin Yamada"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456063"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-21-celtic-aberdeen",
+   "value": {
+    "name": "Celtic 3-1 Aberdeen",
+    "on": "2025-12-21",
+    "competition": "Scottish Premiership",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Luke McCowan",
+     "Callum McGregor",
+     "Arne Engels",
+     "Hyun-jun Yang",
+     "Daizen Maeda",
+     "Benjamin Nygren",
+     "Johnny Kenny"
+    ],
+    "bench": [
+     "Liam Scales",
+     "Colby Donovan",
+     "James Forrest",
+     "Shin Yamada",
+     "Viljami Sinisalo",
+     "Hayato Inamura",
+     "Dane Murray",
+     "Jahmai Simpson-Pusey",
+     "Paulo Bernardo"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456072"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-17-dundee-united-celtic",
+   "value": {
+    "name": "Dundee United 2-1 Celtic",
+    "on": "2025-12-17",
+    "competition": "Scottish Premiership",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Luke McCowan",
+     "Paulo Bernardo",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Daizen Maeda",
+     "Johnny Kenny",
+     "Reo Hatate"
+    ],
+    "bench": [
+     "Liam Scales",
+     "Arne Engels",
+     "Benjamin Nygren",
+     "James Forrest",
+     "Shin Yamada",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Jahmai Simpson-Pusey",
+     "Colby Donovan"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456114"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-14-st-mirren-celtic",
+   "value": {
+    "name": "St. Mirren 3-1 Celtic",
+    "on": "2025-12-14",
+    "competition": "League Cup - Final",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Arne Engels",
+     "Callum McGregor",
+     "Reo Hatate",
+     "Daizen Maeda",
+     "Kelechi Iheanacho",
+     "Sebastian Tounekti"
+    ],
+    "bench": [
+     "Colby Donovan",
+     "Luke McCowan",
+     "James Forrest",
+     "Hyun-jun Yang",
+     "Johnny Kenny",
+     "Viljami Sinisalo",
+     "Paulo Bernardo",
+     "Benjamin Nygren",
+     "Michel-Ange Balikwisha"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4609959"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-07-celtic-hearts",
+   "value": {
+    "name": "Celtic 1-2 Hearts",
+    "on": "2025-12-07",
+    "competition": "Scottish Premiership",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Sebastian Tounekti",
+     "Arne Engels",
+     "Callum McGregor",
+     "Hyun-jun Yang",
+     "Reo Hatate",
+     "Benjamin Nygren",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Luke McCowan",
+     "Johnny Kenny",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Colby Donovan",
+     "Anthony Ralston",
+     "Paulo Bernardo",
+     "Michel-Ange Balikwisha",
+     "Kelechi Iheanacho"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456084"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-03-celtic-dundee",
+   "value": {
+    "name": "Celtic 1-0 Dundee",
+    "on": "2025-12-03",
+    "competition": "Scottish Premiership",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Marcelo Saracchi",
+     "Liam Scales",
+     "Auston Trusty",
+     "Colby Donovan",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Arne Engels",
+     "Hyun-jun Yang",
+     "Daizen Maeda",
+     "Luke McCowan"
+    ],
+    "bench": [
+     "Anthony Ralston",
+     "Kieran Tierney",
+     "Paulo Bernardo",
+     "Benjamin Nygren",
+     "Sebastian Tounekti",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Michel-Ange Balikwisha",
+     "Johnny Kenny"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456089"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-30-hibernian-celtic",
+   "value": {
+    "name": "Hibernian 1-2 Celtic",
+    "on": "2025-11-30",
+    "competition": "Scottish Premiership",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Marcelo Saracchi",
+     "Liam Scales",
+     "Auston Trusty",
+     "Colby Donovan",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Arne Engels",
+     "Hyun-jun Yang",
+     "Daizen Maeda",
+     "Luke McCowan"
+    ],
+    "bench": [
+     "Anthony Ralston",
+     "Kieran Tierney",
+     "Paulo Bernardo",
+     "Benjamin Nygren",
+     "Sebastian Tounekti",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Michel-Ange Balikwisha",
+     "Johnny Kenny"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456095"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-22-st-mirren-celtic",
+   "value": {
+    "name": "St. Mirren 0-1 Celtic",
+    "on": "2025-11-22",
+    "competition": "Scottish Premiership",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Arne Engels",
+     "Sebastian Tounekti",
+     "Johnny Kenny",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Dane Murray",
+     "Colby Donovan",
+     "Luke McCowan",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Viljami Sinisalo",
+     "Paulo Bernardo",
+     "Michel-Ange Balikwisha",
+     "Shin Yamada"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456097"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-09-celtic-kilmarnock",
+   "value": {
+    "name": "Celtic 4-0 Kilmarnock",
+    "on": "2025-11-09",
+    "competition": "Scottish Premiership",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Marcelo Saracchi",
+     "Liam Scales",
+     "Auston Trusty",
+     "Jahmai Simpson-Pusey",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Luke McCowan",
+     "Sebastian Tounekti",
+     "Johnny Kenny",
+     "Daizen Maeda"
+    ],
+    "bench": [
+     "Anthony Ralston",
+     "Kieran Tierney",
+     "Arne Engels",
+     "Benjamin Nygren",
+     "Hyun-jun Yang",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Michel-Ange Balikwisha",
+     "Shin Yamada"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456107"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-02-celtic-rangers",
+   "value": {
+    "name": "Celtic 3-1 Rangers",
+    "on": "2025-11-02",
+    "competition": "League Cup - Semi Finals",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Marcelo Saracchi",
+     "Liam Scales",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Callum McGregor",
+     "Arne Engels",
+     "Sebastian Tounekti",
+     "Benjamin Nygren",
+     "Daizen Maeda",
+     "Johnny Kenny"
+    ],
+    "bench": [
+     "Kieran Tierney",
+     "Reo Hatate",
+     "James Forrest",
+     "Michel-Ange Balikwisha",
+     "Callum Osmand",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Luke McCowan",
+     "Hyun-jun Yang"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4558445"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-29-celtic-falkirk",
+   "value": {
+    "name": "Celtic 4-0 Falkirk",
+    "on": "2025-10-29",
+    "competition": "Scottish Premiership",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Marcelo Saracchi",
+     "Liam Scales",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Callum McGregor",
+     "Arne Engels",
+     "Sebastian Tounekti",
+     "Benjamin Nygren",
+     "James Forrest",
+     "Johnny Kenny"
+    ],
+    "bench": [
+     "Reo Hatate",
+     "Luke McCowan",
+     "Michel-Ange Balikwisha",
+     "Daizen Maeda",
+     "Callum Osmand",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Colby Donovan",
+     "Paulo Bernardo"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456120"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-26-hearts-celtic",
+   "value": {
+    "name": "Hearts 3-1 Celtic",
+    "on": "2025-10-26",
+    "competition": "Scottish Premiership",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Dane Murray",
+     "Colby Donovan",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Arne Engels",
+     "Sebastian Tounekti",
+     "Johnny Kenny",
+     "Benjamin Nygren"
+    ],
+    "bench": [
+     "Luke McCowan",
+     "James Forrest",
+     "Michel-Ange Balikwisha",
+     "Shin Yamada",
+     "Viljami Sinisalo",
+     "Auston Trusty",
+     "Anthony Ralston",
+     "Marcelo Saracchi",
+     "Paulo Bernardo"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456123"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-19-dundee-celtic",
+   "value": {
+    "name": "Dundee 2-0 Celtic",
+    "on": "2025-10-19",
+    "competition": "Scottish Premiership",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Kasper Schmeichel",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Cameron Carter-Vickers",
+     "Anthony Ralston",
+     "Reo Hatate",
+     "Callum McGregor",
+     "Benjamin Nygren",
+     "Sebastian Tounekti",
+     "Kelechi Iheanacho",
+     "Hyun-jun Yang"
+    ],
+    "bench": [
+     "Arne Engels",
+     "Luke McCowan",
+     "James Forrest",
+     "Michel-Ange Balikwisha",
+     "Johnny Kenny",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Colby Donovan",
+     "Marcelo Saracchi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4456132"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}

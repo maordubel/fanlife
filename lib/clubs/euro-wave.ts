@@ -13,10 +13,20 @@ import olympiacosMys from '@/club-packs/olympiacos/wave-mysteries-2026-10-10.jso
 import panathinaikosMys from '@/club-packs/panathinaikos/wave-mysteries-2026-10-10.json'
 import petahMys from '@/club-packs/hapoel-petah-tikva/wave-mysteries-2026-10-10.json'
 
+import htaLeague from '@/club-packs/hapoel-tel-aviv/wave-league-lineups-2026-10-10.json'
+import zrinjskiLeague from '@/club-packs/zrinjski-mostar/wave-league-lineups-2026-10-10.json'
+import aekLeague from '@/club-packs/aek-athens/wave-league-lineups-2026-10-10.json'
+import celticLeague from '@/club-packs/celtic/wave-league-lineups-2026-10-10.json'
+import olympiacosLeague from '@/club-packs/olympiacos/wave-league-lineups-2026-10-10.json'
+import panathinaikosLeague from '@/club-packs/panathinaikos/wave-league-lineups-2026-10-10.json'
+import petahLeague from '@/club-packs/hapoel-petah-tikva/wave-league-lineups-2026-10-10.json'
+import stPauliLeague from '@/club-packs/st-pauli/wave-league-lineups-2026-10-10.json'
+
 type Raw=Record<string,unknown>
 const arr=(v:unknown):Raw[]=>Array.isArray(v)?v as Raw[]:[]
 const obj=(v:unknown):Raw=>v&&typeof v==='object'&&!Array.isArray(v)?v as Raw:{}
 const AUTO:Record<string,unknown>={'zrinjski-mostar':zrinjskiAuto,'aek-athens':aekAuto,celtic:celticAuto,olympiacos:olympiacosAuto,panathinaikos:panathinaikosAuto,'hapoel-petah-tikva':petahAuto}
+const LEAGUE:Record<string,unknown>={'hapoel-tel-aviv':htaLeague,'zrinjski-mostar':zrinjskiLeague,'aek-athens':aekLeague,celtic:celticLeague,olympiacos:olympiacosLeague,panathinaikos:panathinaikosLeague,'hapoel-petah-tikva':petahLeague,'st-pauli':stPauliLeague}
 const MYS:Record<string,unknown>={'zrinjski-mostar':zrinjskiMys,'aek-athens':aekMys,celtic:celticMys,olympiacos:olympiacosMys,panathinaikos:panathinaikosMys,'hapoel-petah-tikva':petahMys}
 
 /**
@@ -24,10 +34,12 @@ const MYS:Record<string,unknown>={'zrinjski-mostar':zrinjskiMys,'aek-athens':aek
  * A club plays one match a day, so a UEFA match is the same match as a pack match on the same date: where the pack's record has no
  * eleven, UEFA's is filled in (and its source added); where the pack has none at all, UEFA's record is added. A pack record that
  * already states an eleven is never overwritten. Blind Cow mysteries from the same line-ups are added by id.
+ * `wave-league-lineups` (365Scores × LiveScore, approved only where the two agree) rides the same rule for league and cup matches.
  */
 export function withEuro<T extends Raw>(pack:T,clubId:string):T{
- const auto=obj(AUTO[clubId]),mys=obj(MYS[clubId])
- if(!Object.keys(auto).length&&!Object.keys(mys).length)return pack
+ const euro=obj(AUTO[clubId]),league=obj(LEAGUE[clubId]),mys=obj(MYS[clubId])
+ if(!Object.keys(euro).length&&!Object.keys(league).length&&!Object.keys(mys).length)return pack
+ const auto={sources:[...arr(euro.sources),...arr(league.sources)],matches:[...arr(euro.matches),...arr(league.matches)]}
  const sourced=mergeWave(mergeWave(pack,{sources:[...arr(auto.sources),...arr(mys.sources)]} as Raw),mys)
  const byDay=new Map(arr(sourced.matches).map(f=>[String(obj(f.value).on),f]))
  const fill=new Map<string,Raw>(),add:Raw[]=[]

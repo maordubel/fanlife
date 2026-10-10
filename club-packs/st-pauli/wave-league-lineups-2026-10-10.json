@@ -1,0 +1,2382 @@
+{
+ "sources": [
+  {
+   "id": "s365-4757665",
+   "title": "365Scores: Energie Cottbus 1-1 St. Pauli, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4757665",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1813344",
+   "title": "LiveScore: Energie Cottbus 1-1 St. Pauli, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1813344",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4757682",
+   "title": "365Scores: St. Pauli 1-0 Wolfsburg, 2026-09-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4757682",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1813329",
+   "title": "LiveScore: St. Pauli 1-0 Wolfsburg, 2026-09-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1813329",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4757685",
+   "title": "365Scores: Arminia Bielefeld 2-2 St. Pauli, 2026-09-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4757685",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1813332",
+   "title": "LiveScore: Arminia Bielefeld 2-2 St. Pauli, 2026-09-04 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1813332",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4757700",
+   "title": "365Scores: St. Pauli 1-2 FC Kaiserslautern, 2026-08-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4757700",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1813319",
+   "title": "LiveScore: St. Pauli 1-2 FC Kaiserslautern, 2026-08-30 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1813319",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4733046",
+   "title": "365Scores: Rot-Weiss Essen 2-0 St. Pauli, 2026-08-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4733046",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1785751",
+   "title": "LiveScore: Rot-Weiss Essen 2-0 St. Pauli, 2026-08-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785751",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4757705",
+   "title": "365Scores: Holstein Kiel 2-2 St. Pauli, 2026-08-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4757705",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1813315",
+   "title": "LiveScore: Holstein Kiel 2-2 St. Pauli, 2026-08-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1813315",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4757070",
+   "title": "365Scores: St. Pauli 1-1 Greuther Fürth, 2026-08-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4757070",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1813301",
+   "title": "LiveScore: St. Pauli 1-1 Greuther Fürth, 2026-08-09 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1813301",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464615",
+   "title": "365Scores: St. Pauli 1-3 Wolfsburg, 2026-05-16",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464615",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541183",
+   "title": "LiveScore: St. Pauli 1-3 Wolfsburg, 2026-05-16 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541183",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464628",
+   "title": "365Scores: RB Leipzig 2-1 St. Pauli, 2026-05-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464628",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541175",
+   "title": "LiveScore: RB Leipzig 2-1 St. Pauli, 2026-05-09 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541175",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464633",
+   "title": "365Scores: St. Pauli 1-2 Mainz 05, 2026-05-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464633",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541140",
+   "title": "LiveScore: St. Pauli 1-2 Mainz 05, 2026-05-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541140",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464642",
+   "title": "365Scores: FC Heidenheim 2-0 St. Pauli, 2026-04-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464642",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541190",
+   "title": "LiveScore: FC Heidenheim 2-0 St. Pauli, 2026-04-25 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541190",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464650",
+   "title": "365Scores: St. Pauli 1-1 1. FC Köln, 2026-04-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464650",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464660",
+   "title": "365Scores: St. Pauli 0-5 Bayern Munich, 2026-04-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464660",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541112",
+   "title": "LiveScore: St. Pauli 0-5 Bayern Munich, 2026-04-11 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541112",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464687",
+   "title": "365Scores: Borussia Mönchengladbach 2-0 St. Pauli, 2026-03-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464687",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541025",
+   "title": "LiveScore: Borussia Mönchengladbach 2-0 St. Pauli, 2026-03-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541025",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464678",
+   "title": "365Scores: St. Pauli 1-2 Freiburg, 2026-03-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464678",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541067",
+   "title": "LiveScore: St. Pauli 1-2 Freiburg, 2026-03-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541067",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464669",
+   "title": "365Scores: Union Berlin 1-1 St. Pauli, 2026-04-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464669",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541093",
+   "title": "LiveScore: Union Berlin 1-1 St. Pauli, 2026-04-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541093",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464730",
+   "title": "365Scores: Bayer Leverkusen 4-0 St. Pauli, 2026-02-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464730",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540741",
+   "title": "LiveScore: Bayer Leverkusen 4-0 St. Pauli, 2026-02-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540741",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464714",
+   "title": "365Scores: St. Pauli 2-1 Werder Bremen, 2026-02-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464714",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540718",
+   "title": "LiveScore: St. Pauli 2-1 Werder Bremen, 2026-02-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540718",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464709",
+   "title": "365Scores: Hoffenheim 0-1 St. Pauli, 2026-02-28",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464709",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541057",
+   "title": "LiveScore: Hoffenheim 0-1 St. Pauli, 2026-02-28 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541057",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464697",
+   "title": "365Scores: St. Pauli 0-0 Eintracht Frankfurt, 2026-03-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464697",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1541048",
+   "title": "LiveScore: St. Pauli 0-0 Eintracht Frankfurt, 2026-03-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541048",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464771",
+   "title": "365Scores: Wolfsburg 2-1 St. Pauli, 2026-01-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464771",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540638",
+   "title": "LiveScore: Wolfsburg 2-1 St. Pauli, 2026-01-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540638",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464765",
+   "title": "365Scores: Borussia Dortmund 3-2 St. Pauli, 2026-01-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464765",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540660",
+   "title": "LiveScore: Borussia Dortmund 3-2 St. Pauli, 2026-01-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540660",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464750",
+   "title": "365Scores: St. Pauli 0-0 Hamburger SV, 2026-01-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464750",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540729",
+   "title": "LiveScore: St. Pauli 0-0 Hamburger SV, 2026-01-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540729",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464776",
+   "title": "365Scores: St. Pauli 1-1 RB Leipzig, 2026-01-27",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464776",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540645",
+   "title": "LiveScore: St. Pauli 1-1 RB Leipzig, 2026-01-27 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540645",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464742",
+   "title": "365Scores: FC Augsburg 2-1 St. Pauli, 2026-01-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464742",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540748",
+   "title": "LiveScore: FC Augsburg 2-1 St. Pauli, 2026-01-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540748",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4628709",
+   "title": "365Scores: Bayer Leverkusen 3-0 St. Pauli, 2026-02-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4628709",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1702957",
+   "title": "LiveScore: Bayer Leverkusen 3-0 St. Pauli, 2026-02-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1702957",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464732",
+   "title": "365Scores: St. Pauli 2-1 Stuttgart, 2026-02-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464732",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540736",
+   "title": "LiveScore: St. Pauli 2-1 Stuttgart, 2026-02-07 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540736",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464790",
+   "title": "365Scores: Mainz 05 0-0 St. Pauli, 2025-12-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464790",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540625",
+   "title": "LiveScore: Mainz 05 0-0 St. Pauli, 2025-12-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540625",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464822",
+   "title": "365Scores: St. Pauli 0-1 Union Berlin, 2025-11-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464822",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540505",
+   "title": "LiveScore: St. Pauli 0-1 Union Berlin, 2025-11-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540505",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464819",
+   "title": "365Scores: Bayern Munich 3-1 St. Pauli, 2025-11-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464819",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540620",
+   "title": "LiveScore: Bayern Munich 3-1 St. Pauli, 2025-11-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540620",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4609939",
+   "title": "365Scores: Borussia Mönchengladbach 1-2 St. Pauli, 2025-12-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4609939",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1687379",
+   "title": "LiveScore: Borussia Mönchengladbach 1-2 St. Pauli, 2025-12-02 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1687379",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464803",
+   "title": "365Scores: 1. FC Köln 1-1 St. Pauli, 2025-12-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464803",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464793",
+   "title": "365Scores: St. Pauli 2-1 FC Heidenheim, 2025-12-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464793",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540598",
+   "title": "LiveScore: St. Pauli 2-1 FC Heidenheim, 2025-12-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540598",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464854",
+   "title": "365Scores: Eintracht Frankfurt 2-0 St. Pauli, 2025-10-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464854",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540472",
+   "title": "LiveScore: Eintracht Frankfurt 2-0 St. Pauli, 2025-10-25 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540472",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4539843",
+   "title": "365Scores: St. Pauli 2-2 Hoffenheim, 2025-10-28",
+   "url": "https://webws.365scores.com/web/game/?gameId=4539843",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1642578",
+   "title": "LiveScore: St. Pauli 2-2 Hoffenheim, 2025-10-28 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1642578",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464840",
+   "title": "365Scores: St. Pauli 0-4 Borussia Mönchengladbach, 2025-11-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464840",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540547",
+   "title": "LiveScore: St. Pauli 0-4 Borussia Mönchengladbach, 2025-11-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540547",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464835",
+   "title": "365Scores: Freiburg 2-1 St. Pauli, 2025-11-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464835",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540526",
+   "title": "LiveScore: Freiburg 2-1 St. Pauli, 2025-11-09 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540526",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4464858",
+   "title": "365Scores: St. Pauli 0-3 Hoffenheim, 2025-10-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4464858",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1540486",
+   "title": "LiveScore: St. Pauli 0-3 Hoffenheim, 2025-10-19 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540486",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-09-20-energie-cottbus-st-pauli",
+   "value": {
+    "name": "Energie Cottbus 1-1 St. Pauli",
+    "on": "2026-09-20",
+    "competition": "Bundesliga 2",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Louis Oppie",
+     "Tomoya Ando",
+     "David Nemeth",
+     "Arkadiusz Pyrka",
+     "Eric Smith",
+     "Joel Chima Fujita",
+     "Matias Rasmussen",
+     "Youssoupha Niang",
+     "Connor Metcalfe",
+     "Abdoulie Ceesay"
+    ],
+    "bench": [
+     "Lars Ritzka",
+     "Taichi Hara",
+     "Ricky-Jade Jones",
+     "Martijn Kaars",
+     "Dimitar Mitov",
+     "Adam Dzwigala",
+     "Marcus Mathisen",
+     "Erik Ahlstrand",
+     "Sam Klein"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4757665",
+    "ls-lu-1813344"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-09-12-st-pauli-wolfsburg",
+   "value": {
+    "name": "St. Pauli 1-0 Wolfsburg",
+    "on": "2026-09-12",
+    "competition": "Bundesliga 2",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Louis Oppie",
+     "Lars Ritzka",
+     "David Nemeth",
+     "Arkadiusz Pyrka",
+     "Eric Smith",
+     "Joel Chima Fujita",
+     "Matias Rasmussen",
+     "Youssoupha Niang",
+     "Abdoulie Ceesay",
+     "Connor Metcalfe"
+    ],
+    "bench": [
+     "Adam Dzwigala",
+     "Sam Klein",
+     "Taichi Hara",
+     "Martijn Kaars",
+     "Dimitar Mitov",
+     "Jannik Westphal",
+     "Erik Ahlstrand",
+     "Scott Banks",
+     "Ricky-Jade Jones"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4757682",
+    "ls-lu-1813329"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-09-04-arminia-bielefeld-st-pauli",
+   "value": {
+    "name": "Arminia Bielefeld 2-2 St. Pauli",
+    "on": "2026-09-04",
+    "competition": "Bundesliga 2",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Tomoya Ando",
+     "Marcus Mathisen",
+     "David Nemeth",
+     "Louis Oppie",
+     "Eric Smith",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Taichi Hara",
+     "Branimir Hrgota",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Sam Klein",
+     "Connor Metcalfe",
+     "Youssoupha Niang",
+     "Abdoulie Ceesay",
+     "Dimitar Mitov",
+     "Adam Dzwigala",
+     "Lars Ritzka",
+     "Erik Ahlstrand",
+     "Joel Chima Fujita"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4757685",
+    "ls-lu-1813332"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-08-30-st-pauli-fc-kaiserslautern",
+   "value": {
+    "name": "St. Pauli 1-2 FC Kaiserslautern",
+    "on": "2026-08-30",
+    "competition": "Bundesliga 2",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Tomoya Ando",
+     "Marcus Mathisen",
+     "David Nemeth",
+     "Louis Oppie",
+     "Matias Rasmussen",
+     "Eric Smith",
+     "Arkadiusz Pyrka",
+     "Branimir Hrgota",
+     "Taichi Hara",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Connor Metcalfe",
+     "Youssoupha Niang",
+     "Abdoulie Ceesay",
+     "Dimitar Mitov",
+     "Adam Dzwigala",
+     "Lars Ritzka",
+     "Erik Ahlstrand",
+     "Joel Chima Fujita",
+     "Sam Klein"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4757700",
+    "ls-lu-1813319"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-08-23-rot-weiss-essen-st-pauli",
+   "value": {
+    "name": "Rot-Weiss Essen 2-0 St. Pauli",
+    "on": "2026-08-23",
+    "competition": "DFB-Pokal - 1st Round",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Tomoya Ando",
+     "Marcus Mathisen",
+     "David Nemeth",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Branimir Hrgota",
+     "Taichi Hara",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Eric Smith",
+     "Erik Ahlstrand",
+     "Connor Metcalfe",
+     "Scott Banks",
+     "Ricky-Jade Jones",
+     "Dimitar Mitov",
+     "Adam Dzwigala",
+     "Lars Ritzka",
+     "Sam Klein"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4733046",
+    "ls-lu-1785751"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-08-14-holstein-kiel-st-pauli",
+   "value": {
+    "name": "Holstein Kiel 2-2 St. Pauli",
+    "on": "2026-08-14",
+    "competition": "Bundesliga 2",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Tomoya Ando",
+     "Marcus Mathisen",
+     "David Nemeth",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Branimir Hrgota",
+     "Taichi Hara",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Eric Smith",
+     "Sam Klein",
+     "Scott Banks",
+     "Ricky-Jade Jones",
+     "Dimitar Mitov",
+     "Adam Dzwigala",
+     "Rony Jansson",
+     "Lars Ritzka",
+     "Erik Ahlstrand"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4757705",
+    "ls-lu-1813315"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-08-09-st-pauli-greuther-furth",
+   "value": {
+    "name": "St. Pauli 1-1 Greuther Fürth",
+    "on": "2026-08-09",
+    "competition": "Bundesliga 2",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Tomoya Ando",
+     "Marcus Mathisen",
+     "David Nemeth",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Branimir Hrgota",
+     "Taichi Hara",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Eric Smith",
+     "Rony Jansson",
+     "Erik Ahlstrand",
+     "Ricky-Jade Jones",
+     "Simon Spari",
+     "Adam Dzwigala",
+     "Lars Ritzka",
+     "Scott Banks",
+     "Haron Sabah"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4757070",
+    "ls-lu-1813301"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-05-16-st-pauli-wolfsburg",
+   "value": {
+    "name": "St. Pauli 1-3 Wolfsburg",
+    "on": "2026-05-16",
+    "competition": "Bundesliga",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Tomoya Ando",
+     "Hauke Wahl",
+     "Adam Dzwigala",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "Jackson Irvine",
+     "Arkadiusz Pyrka",
+     "Connor Metcalfe",
+     "Andréas Hountondji",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Matias Rasmussen",
+     "Abdoulie Ceesay",
+     "Taichi Hara",
+     "Ricky-Jade Jones",
+     "Ben Voll",
+     "Karol Mets",
+     "Fin Stevens",
+     "Lars Ritzka",
+     "Danel Sinani"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464615",
+    "ls-lu-1541183"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-05-09-rb-leipzig-st-pauli",
+   "value": {
+    "name": "RB Leipzig 2-1 St. Pauli",
+    "on": "2026-05-09",
+    "competition": "Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Lars Ritzka",
+     "Eric Smith",
+     "Tomoya Ando",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "Jackson Irvine",
+     "Connor Metcalfe",
+     "Arkadiusz Pyrka",
+     "Andréas Hountondji",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Hauke Wahl",
+     "Fin Stevens",
+     "Matias Rasmussen",
+     "Danel Sinani",
+     "Abdoulie Ceesay",
+     "Ben Voll",
+     "Taichi Hara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464628",
+    "ls-lu-1541175"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-05-03-st-pauli-mainz-05",
+   "value": {
+    "name": "St. Pauli 1-2 Mainz 05",
+    "on": "2026-05-03",
+    "competition": "Bundesliga",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Tomoya Ando",
+     "Lars Ritzka",
+     "Eric Smith",
+     "Jackson Irvine",
+     "Arkadiusz Pyrka",
+     "Joel Chima Fujita",
+     "Danel Sinani",
+     "Andréas Hountondji"
+    ],
+    "bench": [
+     "Adam Dzwigala",
+     "Matias Rasmussen",
+     "Connor Metcalfe",
+     "Abdoulie Ceesay",
+     "Martijn Kaars",
+     "Ben Voll",
+     "David Nemeth",
+     "Louis Oppie",
+     "Taichi Hara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464633",
+    "ls-lu-1541140"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-04-25-fc-heidenheim-st-pauli",
+   "value": {
+    "name": "FC Heidenheim 2-0 St. Pauli",
+    "on": "2026-04-25",
+    "competition": "Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Tomoya Ando",
+     "Arkadiusz Pyrka",
+     "Jackson Irvine",
+     "Matias Rasmussen",
+     "Manolis Saliakas",
+     "Joel Chima Fujita",
+     "Danel Sinani",
+     "Andréas Hountondji"
+    ],
+    "bench": [
+     "Eric Smith",
+     "Lars Ritzka",
+     "Connor Metcalfe",
+     "Abdoulie Ceesay",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "Louis Oppie",
+     "Taichi Hara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464642",
+    "ls-lu-1541190"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-04-17-st-pauli-1-fc-koln",
+   "value": {
+    "name": "St. Pauli 1-1 1. FC Köln",
+    "on": "2026-04-17",
+    "competition": "Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Tomoya Ando",
+     "Lars Ritzka",
+     "Jackson Irvine",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Danel Sinani",
+     "Andréas Hountondji"
+    ],
+    "bench": [
+     "Manolis Saliakas",
+     "Connor Metcalfe",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "David Nemeth",
+     "Louis Oppie",
+     "Abdoulie Ceesay",
+     "Taichi Hara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464650"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-11-st-pauli-bayern-munich",
+   "value": {
+    "name": "St. Pauli 0-5 Bayern Munich",
+    "on": "2026-04-11",
+    "competition": "Bundesliga",
+    "score": "0-5",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Tomoya Ando",
+     "Lars Ritzka",
+     "Joel Chima Fujita",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Danel Sinani",
+     "Andréas Hountondji"
+    ],
+    "bench": [
+     "Louis Oppie",
+     "Connor Metcalfe",
+     "Taichi Hara",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "David Nemeth",
+     "Jannik Robatsch",
+     "Abdoulie Ceesay"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464660",
+    "ls-lu-1541112"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-04-05-union-berlin-st-pauli",
+   "value": {
+    "name": "Union Berlin 1-1 St. Pauli",
+    "on": "2026-04-05",
+    "competition": "Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Adam Dzwigala",
+     "Mathias Lage",
+     "Jackson Irvine",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Joel Chima Fujita",
+     "Danel Sinani",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Connor Metcalfe",
+     "Abdoulie Ceesay",
+     "Andréas Hountondji",
+     "Ben Voll",
+     "David Nemeth",
+     "Jannik Robatsch",
+     "Louis Oppie",
+     "Lars Ritzka",
+     "Taichi Hara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464669",
+    "ls-lu-1541093"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-03-22-st-pauli-freiburg",
+   "value": {
+    "name": "St. Pauli 1-2 Freiburg",
+    "on": "2026-03-22",
+    "competition": "Bundesliga",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Tomoya Ando",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Lars Ritzka",
+     "Jackson Irvine",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Joel Chima Fujita",
+     "Danel Sinani"
+    ],
+    "bench": [
+     "Louis Oppie",
+     "Connor Metcalfe",
+     "Andréas Hountondji",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "David Nemeth",
+     "Abdoulie Ceesay",
+     "Taichi Hara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464678",
+    "ls-lu-1541067"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-03-13-borussia-monchengladbach-st-pauli",
+   "value": {
+    "name": "Borussia Mönchengladbach 2-0 St. Pauli",
+    "on": "2026-03-13",
+    "competition": "Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Tomoya Ando",
+     "Hauke Wahl",
+     "Adam Dzwigala",
+     "Lars Ritzka",
+     "Jackson Irvine",
+     "Eric Smith",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Joel Chima Fujita",
+     "Danel Sinani"
+    ],
+    "bench": [
+     "Louis Oppie",
+     "Connor Metcalfe",
+     "Andréas Hountondji",
+     "Martijn Kaars",
+     "Ben Voll",
+     "David Nemeth",
+     "Matias Rasmussen",
+     "Abdoulie Ceesay",
+     "Taichi Hara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464687",
+    "ls-lu-1541025"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-03-08-st-pauli-eintracht-frankfurt",
+   "value": {
+    "name": "St. Pauli 0-0 Eintracht Frankfurt",
+    "on": "2026-03-08",
+    "competition": "Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Tomoya Ando",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Arkadiusz Pyrka",
+     "Jackson Irvine",
+     "James Sands",
+     "Manolis Saliakas",
+     "Mathias Lage",
+     "Joel Chima Fujita",
+     "Danel Sinani"
+    ],
+    "bench": [
+     "Adam Dzwigala",
+     "Lars Ritzka",
+     "Connor Metcalfe",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Louis Oppie",
+     "Abdoulie Ceesay",
+     "Taichi Hara",
+     "Martijn Kaars"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464697",
+    "ls-lu-1541048"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-02-28-hoffenheim-st-pauli",
+   "value": {
+    "name": "Hoffenheim 0-1 St. Pauli",
+    "on": "2026-02-28",
+    "competition": "Bundesliga",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Arkadiusz Pyrka",
+     "Jackson Irvine",
+     "James Sands",
+     "Manolis Saliakas",
+     "Mathias Lage",
+     "Joel Chima Fujita",
+     "Danel Sinani"
+    ],
+    "bench": [
+     "Lars Ritzka",
+     "Connor Metcalfe",
+     "Abdoulie Ceesay",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "Jannik Robatsch",
+     "Louis Oppie",
+     "Taichi Hara",
+     "Martijn Kaars"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464709",
+    "ls-lu-1541057"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-02-22-st-pauli-werder-bremen",
+   "value": {
+    "name": "St. Pauli 2-1 Werder Bremen",
+    "on": "2026-02-22",
+    "competition": "Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Tomoya Ando",
+     "Arkadiusz Pyrka",
+     "Jackson Irvine",
+     "Eric Smith",
+     "Manolis Saliakas",
+     "Joel Chima Fujita",
+     "Danel Sinani",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "James Sands",
+     "Matias Rasmussen",
+     "Mathias Lage",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "Louis Oppie",
+     "Lars Ritzka",
+     "Abdoulie Ceesay",
+     "Taichi Hara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464714",
+    "ls-lu-1540718"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-02-14-bayer-leverkusen-st-pauli",
+   "value": {
+    "name": "Bayer Leverkusen 4-0 St. Pauli",
+    "on": "2026-02-14",
+    "competition": "Bundesliga",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Tomoya Ando",
+     "Adam Dzwigala",
+     "Arkadiusz Pyrka",
+     "Jackson Irvine",
+     "James Sands",
+     "Manolis Saliakas",
+     "Matias Rasmussen",
+     "Danel Sinani",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Lars Ritzka",
+     "Joel Chima Fujita",
+     "Abdoulie Ceesay",
+     "Taichi Hara",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Fin Stevens",
+     "Louis Oppie",
+     "Romeo Aigbekaen"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464730",
+    "ls-lu-1540741"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-02-07-st-pauli-stuttgart",
+   "value": {
+    "name": "St. Pauli 2-1 Stuttgart",
+    "on": "2026-02-07",
+    "competition": "Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Tomoya Ando",
+     "Adam Dzwigala",
+     "Arkadiusz Pyrka",
+     "Jackson Irvine",
+     "James Sands",
+     "Manolis Saliakas",
+     "Matias Rasmussen",
+     "Danel Sinani",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Lars Ritzka",
+     "Taichi Hara",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Fin Stevens",
+     "Louis Oppie",
+     "Nick Schmidt",
+     "Romeo Aigbekaen",
+     "Abdoulie Ceesay"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464732",
+    "ls-lu-1540736"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-02-03-bayer-leverkusen-st-pauli",
+   "value": {
+    "name": "Bayer Leverkusen 3-0 St. Pauli",
+    "on": "2026-02-03",
+    "competition": "DFB-Pokal - Quarter Finals",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Karol Mets",
+     "James Sands",
+     "Tomoya Ando",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "Matias Rasmussen",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Danel Sinani",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Manolis Saliakas",
+     "Jackson Irvine",
+     "Abdoulie Ceesay",
+     "Taichi Hara",
+     "Ricky-Jade Jones",
+     "Nikola Vasilj",
+     "Adam Dzwigala",
+     "Jannik Robatsch",
+     "Lars Ritzka"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4628709",
+    "ls-lu-1702957"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-01-31-fc-augsburg-st-pauli",
+   "value": {
+    "name": "FC Augsburg 2-1 St. Pauli",
+    "on": "2026-01-31",
+    "competition": "Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Tomoya Ando",
+     "Arkadiusz Pyrka",
+     "James Sands",
+     "Matias Rasmussen",
+     "Manolis Saliakas",
+     "Joel Chima Fujita",
+     "Danel Sinani",
+     "Ricky-Jade Jones"
+    ],
+    "bench": [
+     "Jackson Irvine",
+     "Mathias Lage",
+     "Abdoulie Ceesay",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Fin Stevens",
+     "Louis Oppie",
+     "Lars Ritzka"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464742",
+    "ls-lu-1540748"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-01-27-st-pauli-rb-leipzig",
+   "value": {
+    "name": "St. Pauli 1-1 RB Leipzig",
+    "on": "2026-01-27",
+    "competition": "Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Tomoya Ando",
+     "Arkadiusz Pyrka",
+     "Eric Smith",
+     "James Sands",
+     "Manolis Saliakas",
+     "Joel Chima Fujita",
+     "Danel Sinani",
+     "Ricky-Jade Jones"
+    ],
+    "bench": [
+     "Jackson Irvine",
+     "Matias Rasmussen",
+     "Mathias Lage",
+     "Abdoulie Ceesay",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Louis Oppie",
+     "Lars Ritzka"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464776",
+    "ls-lu-1540645"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-01-23-st-pauli-hamburger-sv",
+   "value": {
+    "name": "St. Pauli 0-0 Hamburger SV",
+    "on": "2026-01-23",
+    "competition": "Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Adam Dzwigala",
+     "Louis Oppie",
+     "Eric Smith",
+     "James Sands",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Martijn Kaars",
+     "Joel Chima Fujita"
+    ],
+    "bench": [
+     "Jackson Irvine",
+     "Danel Sinani",
+     "Ricky-Jade Jones",
+     "Ben Voll",
+     "Tomoya Ando",
+     "Jannik Robatsch",
+     "Manolis Saliakas",
+     "Lars Ritzka",
+     "Abdoulie Ceesay"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464750",
+    "ls-lu-1540729"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-01-17-borussia-dortmund-st-pauli",
+   "value": {
+    "name": "Borussia Dortmund 3-2 St. Pauli",
+    "on": "2026-01-17",
+    "competition": "Bundesliga",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Adam Dzwigala",
+     "Lars Ritzka",
+     "Eric Smith",
+     "James Sands",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Joel Chima Fujita",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Tomoya Ando",
+     "Louis Oppie",
+     "Ricky-Jade Jones",
+     "Emil Gazdov",
+     "Jannik Robatsch",
+     "Manolis Saliakas",
+     "Fin Stevens",
+     "Oladapo Afolayan",
+     "Abdoulie Ceesay"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464765",
+    "ls-lu-1540660"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2026-01-14-wolfsburg-st-pauli",
+   "value": {
+    "name": "Wolfsburg 2-1 St. Pauli",
+    "on": "2026-01-14",
+    "competition": "Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Adam Dzwigala",
+     "Lars Ritzka",
+     "Eric Smith",
+     "James Sands",
+     "Arkadiusz Pyrka",
+     "Joel Chima Fujita",
+     "Mathias Lage",
+     "Ricky-Jade Jones"
+    ],
+    "bench": [
+     "Louis Oppie",
+     "Abdoulie Ceesay",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Tomoya Ando",
+     "Jannik Robatsch",
+     "Manolis Saliakas",
+     "Fin Stevens",
+     "Oladapo Afolayan"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464771",
+    "ls-lu-1540638"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-12-21-mainz-05-st-pauli",
+   "value": {
+    "name": "Mainz 05 0-0 St. Pauli",
+    "on": "2025-12-21",
+    "competition": "Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Hauke Wahl",
+     "Adam Dzwigala",
+     "Louis Oppie",
+     "Jackson Irvine",
+     "James Sands",
+     "Arkadiusz Pyrka",
+     "Joel Chima Fujita",
+     "Mathias Lage",
+     "Andréas Hountondji"
+    ],
+    "bench": [
+     "Lars Ritzka",
+     "Danel Sinani",
+     "Ricky-Jade Jones",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Manolis Saliakas",
+     "Erik Ahlstrand",
+     "Connor Metcalfe",
+     "Abdoulie Ceesay"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464790",
+    "ls-lu-1540625"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-12-13-st-pauli-fc-heidenheim",
+   "value": {
+    "name": "St. Pauli 2-1 FC Heidenheim",
+    "on": "2025-12-13",
+    "competition": "Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Louis Oppie",
+     "Jackson Irvine",
+     "James Sands",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Joel Chima Fujita",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Adam Dzwigala",
+     "Connor Metcalfe",
+     "Ricky-Jade Jones",
+     "Ben Voll",
+     "Manolis Saliakas",
+     "Lars Ritzka",
+     "Erik Ahlstrand",
+     "Danel Sinani",
+     "Abdoulie Ceesay"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464793",
+    "ls-lu-1540598"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-12-06-1-fc-koln-st-pauli",
+   "value": {
+    "name": "1. FC Köln 1-1 St. Pauli",
+    "on": "2025-12-06",
+    "competition": "Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Louis Oppie",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Jackson Irvine",
+     "James Sands",
+     "Joel Chima Fujita",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Adam Dzwigala",
+     "Connor Metcalfe",
+     "Danel Sinani",
+     "Abdoulie Ceesay",
+     "Ricky-Jade Jones",
+     "Ben Voll",
+     "Manolis Saliakas",
+     "Lars Ritzka",
+     "Erik Ahlstrand"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464803"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-02-borussia-monchengladbach-st-pauli",
+   "value": {
+    "name": "Borussia Mönchengladbach 1-2 St. Pauli",
+    "on": "2025-12-02",
+    "competition": "DFB-Pokal - Round of 16",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Louis Oppie",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Jackson Irvine",
+     "James Sands",
+     "Joel Chima Fujita",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Lars Ritzka",
+     "Connor Metcalfe",
+     "Danel Sinani",
+     "Abdoulie Ceesay",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "Manolis Saliakas",
+     "Erik Ahlstrand",
+     "Ricky-Jade Jones"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4609939",
+    "ls-lu-1687379"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-11-29-bayern-munich-st-pauli",
+   "value": {
+    "name": "Bayern Munich 3-1 St. Pauli",
+    "on": "2025-11-29",
+    "competition": "Bundesliga",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Lars Ritzka",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Jackson Irvine",
+     "James Sands",
+     "Joel Chima Fujita",
+     "Andréas Hountondji"
+    ],
+    "bench": [
+     "Louis Oppie",
+     "Connor Metcalfe",
+     "Danel Sinani",
+     "Abdoulie Ceesay",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "Manolis Saliakas",
+     "Ricky-Jade Jones",
+     "Martijn Kaars"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464819",
+    "ls-lu-1540620"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-11-23-st-pauli-union-berlin",
+   "value": {
+    "name": "St. Pauli 0-1 Union Berlin",
+    "on": "2025-11-23",
+    "competition": "Bundesliga",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Louis Oppie",
+     "Jackson Irvine",
+     "James Sands",
+     "Joel Chima Fujita",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Andréas Hountondji"
+    ],
+    "bench": [
+     "Connor Metcalfe",
+     "Danel Sinani",
+     "Abdoulie Ceesay",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Fin Stevens",
+     "Lars Ritzka",
+     "Ricky-Jade Jones"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464822",
+    "ls-lu-1540505"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-11-09-freiburg-st-pauli",
+   "value": {
+    "name": "Freiburg 2-1 St. Pauli",
+    "on": "2025-11-09",
+    "competition": "Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "James Sands",
+     "Arkadiusz Pyrka",
+     "Mathias Lage",
+     "Martijn Kaars",
+     "Connor Metcalfe"
+    ],
+    "bench": [
+     "Jackson Irvine",
+     "Danel Sinani",
+     "Abdoulie Ceesay",
+     "Andréas Hountondji",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Fin Stevens",
+     "Lars Ritzka",
+     "Oladapo Afolayan"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464835",
+    "ls-lu-1540526"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-11-01-st-pauli-borussia-monchengladbach",
+   "value": {
+    "name": "St. Pauli 0-4 Borussia Mönchengladbach",
+    "on": "2025-11-01",
+    "competition": "Bundesliga",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "James Sands",
+     "Manolis Saliakas",
+     "Oladapo Afolayan",
+     "Mathias Lage",
+     "Danel Sinani"
+    ],
+    "bench": [
+     "Jackson Irvine",
+     "Connor Metcalfe",
+     "Abdoulie Ceesay",
+     "Andréas Hountondji",
+     "Martijn Kaars",
+     "Ben Voll",
+     "Jannik Robatsch",
+     "Fin Stevens",
+     "Lars Ritzka"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464840",
+    "ls-lu-1540547"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-10-28-st-pauli-hoffenheim",
+   "value": {
+    "name": "St. Pauli 2-2 Hoffenheim",
+    "on": "2025-10-28",
+    "competition": "DFB-Pokal - 2nd Round",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "James Sands",
+     "Arkadiusz Pyrka",
+     "Oladapo Afolayan",
+     "Connor Metcalfe",
+     "Andréas Hountondji"
+    ],
+    "bench": [
+     "Manolis Saliakas",
+     "Lars Ritzka",
+     "Mathias Lage",
+     "Abdoulie Ceesay",
+     "Martijn Kaars",
+     "Nikola Vasilj",
+     "Adam Dzwigala",
+     "Jackson Irvine",
+     "Danel Sinani"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4539843",
+    "ls-lu-1642578"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-10-25-eintracht-frankfurt-st-pauli",
+   "value": {
+    "name": "Eintracht Frankfurt 2-0 St. Pauli",
+    "on": "2025-10-25",
+    "competition": "Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Karol Mets",
+     "Eric Smith",
+     "Hauke Wahl",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "Danel Sinani",
+     "Manolis Saliakas",
+     "Mathias Lage",
+     "Andréas Hountondji",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Jackson Irvine",
+     "Connor Metcalfe",
+     "Oladapo Afolayan",
+     "Abdoulie Ceesay",
+     "Ben Voll",
+     "Adam Dzwigala",
+     "Arkadiusz Pyrka",
+     "Lars Ritzka",
+     "Erik Ahlstrand"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464854",
+    "ls-lu-1540472"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
+  {
+   "id": "a-m-2025-10-19-st-pauli-hoffenheim",
+   "value": {
+    "name": "St. Pauli 0-3 Hoffenheim",
+    "on": "2025-10-19",
+    "competition": "Bundesliga",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Nikola Vasilj",
+     "Lars Ritzka",
+     "Eric Smith",
+     "Adam Dzwigala",
+     "Louis Oppie",
+     "Joel Chima Fujita",
+     "James Sands",
+     "Arkadiusz Pyrka",
+     "Danel Sinani",
+     "Mathias Lage",
+     "Martijn Kaars"
+    ],
+    "bench": [
+     "Karol Mets",
+     "Connor Metcalfe",
+     "Oladapo Afolayan",
+     "Abdoulie Ceesay",
+     "Andréas Hountondji",
+     "Ben Voll",
+     "Manolis Saliakas",
+     "Erik Ahlstrand",
+     "Jackson Irvine"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4464858",
+    "ls-lu-1540486"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}

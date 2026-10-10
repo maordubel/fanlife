@@ -1,0 +1,2133 @@
+{
+ "sources": [
+  {
+   "id": "s365-4776101",
+   "title": "365Scores: Volos NFC 1-2 AEK Athens, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776101",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836569",
+   "title": "LiveScore: Volos NFC 1-2 AEK Athens, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836569",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4823816",
+   "title": "365Scores: AEK Athens 8-1 Panserraikos, 2026-09-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823816",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1882211",
+   "title": "LiveScore: AEK Athens 8-1 Panserraikos, 2026-09-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882211",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776110",
+   "title": "365Scores: Asteras Aktor 1-1 AEK Athens, 2026-09-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776110",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836558",
+   "title": "LiveScore: Asteras Aktor 1-1 AEK Athens, 2026-09-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836558",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776117",
+   "title": "365Scores: AEK Athens 5-0 Aris Salonica, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776117",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836550",
+   "title": "LiveScore: AEK Athens 5-0 Aris Salonica, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836550",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4823817",
+   "title": "365Scores: Nestos Chrisoupolis 0-2 AEK Athens, 2026-09-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823817",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1882214",
+   "title": "LiveScore: Nestos Chrisoupolis 0-2 AEK Athens, 2026-09-02 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882214",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776120",
+   "title": "365Scores: Kifisia 1-1 AEK Athens, 2026-08-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776120",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836548",
+   "title": "LiveScore: Kifisia 1-1 AEK Athens, 2026-08-30 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836548",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776131",
+   "title": "365Scores: AEK Athens 4-0 Iraklis, 2026-08-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776131",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836537",
+   "title": "LiveScore: AEK Athens 4-0 Iraklis, 2026-08-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836537",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4730040",
+   "title": "365Scores: AEK Athens 2-2 OFI Crete, 2026-08-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4730040",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1795567",
+   "title": "LiveScore: AEK Athens 2-2 OFI Crete, 2026-08-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1795567",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694791",
+   "title": "365Scores: AEK Athens 1-1 Olympiacos, 2026-05-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694791",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759025",
+   "title": "LiveScore: AEK Athens 1-1 Olympiacos, 2026-05-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759025",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694798",
+   "title": "365Scores: PAOK 1-1 AEK Athens, 2026-05-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694798",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759021",
+   "title": "LiveScore: PAOK 1-1 AEK Athens, 2026-05-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759021",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694804",
+   "title": "365Scores: AEK Athens 2-1 Panathinaikos, 2026-05-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694804",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759022",
+   "title": "LiveScore: AEK Athens 2-1 Panathinaikos, 2026-05-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759022",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694811",
+   "title": "365Scores: Panathinaikos 0-0 AEK Athens, 2026-05-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694811",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759024",
+   "title": "LiveScore: Panathinaikos 0-0 AEK Athens, 2026-05-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759024",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694822",
+   "title": "365Scores: AEK Athens 3-0 PAOK, 2026-04-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694822",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759019",
+   "title": "LiveScore: AEK Athens 3-0 PAOK, 2026-04-19 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759019",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482260",
+   "title": "365Scores: AEK Athens 3-0 Kifisia, 2026-03-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482260",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694829",
+   "title": "365Scores: Olympiacos 0-1 AEK Athens, 2026-04-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694829",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759016",
+   "title": "LiveScore: Olympiacos 0-1 AEK Athens, 2026-04-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759016",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480915",
+   "title": "365Scores: AEK Athens 4-0 Levadiakos, 2026-02-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480915",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480909",
+   "title": "365Scores: Volos NFC 2-2 AEK Athens, 2026-03-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480909",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482264",
+   "title": "365Scores: AEK Athens 1-0 AE Larissa, 2026-03-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482264",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480899",
+   "title": "365Scores: Atromitos Athinon 2-2 AEK Athens, 2026-03-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480899",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480935",
+   "title": "365Scores: Asteras Aktor 0-1 AEK Athens, 2026-01-24",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480935",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480930",
+   "title": "365Scores: AEK Athens 1-1 Olympiacos, 2026-02-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480930",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480921",
+   "title": "365Scores: Panserraikos 0-4 AEK Athens, 2026-02-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480921",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480916",
+   "title": "365Scores: PAOK 0-0 AEK Athens, 2026-02-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480916",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480946",
+   "title": "365Scores: Aris Salonica 1-1 AEK Athens, 2026-01-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480946",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4648890",
+   "title": "365Scores: AEK Athens 0-1 OFI Crete, 2026-01-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4648890",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1707896",
+   "title": "LiveScore: AEK Athens 0-1 OFI Crete, 2026-01-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1707896",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480940",
+   "title": "365Scores: AEK Athens 4-0 Panathinaikos, 2026-01-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480940",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480952",
+   "title": "365Scores: Panetolikos 0-5 AEK Athens, 2025-12-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480952",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480951",
+   "title": "365Scores: AEK Athens 2-1 OFI Crete, 2025-12-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480951",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480971",
+   "title": "365Scores: AEK Athens 1-0 Aris Salonica, 2025-11-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480971",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480964",
+   "title": "365Scores: Panathinaikos 2-3 AEK Athens, 2025-11-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480964",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480961",
+   "title": "365Scores: AEK Athens 4-1 Atromitos Athinon, 2025-12-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480961",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480985",
+   "title": "365Scores: Olympiacos 2-0 AEK Athens, 2025-10-26",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480985",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480981",
+   "title": "365Scores: AEK Athens 1-0 Panetolikos, 2025-11-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480981",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480973",
+   "title": "365Scores: OFI Crete 0-1 AEK Athens, 2025-11-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480973",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480991",
+   "title": "365Scores: AEK Athens 0-2 PAOK, 2025-10-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480991",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-09-20-volos-nfc-aek-athens",
+   "value": {
+    "name": "Volos NFC 1-2 AEK Athens",
+    "on": "2026-09-20",
+    "competition": "Super League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Alberto Brignoli",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Mijat Gaćinović",
+     "Petros Mantalos",
+     "Razvan Marin",
+     "Milán Vitális",
+     "Lovro Majer",
+     "Luka Jović",
+     "Aboubakary Koita"
+    ],
+    "bench": [
+     "Kervin Arriaga",
+     "João Mário",
+     "Oleksandr Zubkov",
+     "Derek Kutesa",
+     "Zini",
+     "Marios Balamotis",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Spyros Christakopoulos",
+     "Charalampos Lykogiannis",
+     "Kaan Kairinen",
+     "Dimitrios Kaloskamis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776101",
+    "ls-lu-1836569"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-09-17-aek-athens-panserraikos",
+   "value": {
+    "name": "AEK Athens 8-1 Panserraikos",
+    "on": "2026-09-17",
+    "competition": "Greece Cup - League Phase",
+    "score": "8-1",
+    "venue": null,
+    "lineup": [
+     "Marios Balamotis",
+     "Charalampos Lykogiannis",
+     "Christos Alexiou",
+     "Domagoj Vida",
+     "Martin Georgiev",
+     "Milán Vitális",
+     "Kaan Kairinen",
+     "João Mário",
+     "Petros Mantalos",
+     "Oleksandr Zubkov",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Spyros Christakopoulos",
+     "Dimitrios Kaloskamis",
+     "Derek Kutesa",
+     "Zini",
+     "Argyris Argyriou",
+     "Alberto Brignoli",
+     "Filipe Relvas",
+     "Stavros Pilios",
+     "Kervin Arriaga",
+     "Hakim Sahabo",
+     "Mijat Gaćinović",
+     "Georgios Sarakasidis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4823816",
+    "ls-lu-1882211"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-09-13-asteras-aktor-aek-athens",
+   "value": {
+    "name": "Asteras Aktor 1-1 AEK Athens",
+    "on": "2026-09-13",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Alberto Brignoli",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Mijat Gaćinović",
+     "Razvan Marin",
+     "Kervin Arriaga",
+     "Lovro Majer",
+     "Luka Jović",
+     "Zini"
+    ],
+    "bench": [
+     "Petros Mantalos",
+     "Aboubakary Koita",
+     "Barnabas Varga",
+     "Marios Balamotis",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Charalampos Lykogiannis",
+     "Milán Vitális",
+     "Kaan Kairinen",
+     "Dimitrios Kaloskamis",
+     "João Mário",
+     "Oleksandr Zubkov"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776110",
+    "ls-lu-1836558"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-09-05-aek-athens-aris-salonica",
+   "value": {
+    "name": "AEK Athens 5-0 Aris Salonica",
+    "on": "2026-09-05",
+    "competition": "Super League",
+    "score": "5-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Mijat Gaćinović",
+     "Razvan Marin",
+     "Milán Vitális",
+     "Lovro Majer",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Kervin Arriaga",
+     "Petros Mantalos",
+     "Oleksandr Zubkov",
+     "Aboubakary Koita",
+     "Zini",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Charalampos Lykogiannis",
+     "Kaan Kairinen",
+     "Dimitrios Kaloskamis",
+     "João Mário"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776117",
+    "ls-lu-1836550"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-09-02-nestos-chrisoupolis-aek-athens",
+   "value": {
+    "name": "Nestos Chrisoupolis 0-2 AEK Athens",
+    "on": "2026-09-02",
+    "competition": "Greece Cup - League Phase",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Alberto Brignoli",
+     "Charalampos Lykogiannis",
+     "Christos Alexiou",
+     "Domagoj Vida",
+     "Martin Georgiev",
+     "Petros Mantalos",
+     "Kaan Kairinen",
+     "Kervin Arriaga",
+     "Dimitrios Kaloskamis",
+     "Zini",
+     "Mijat Gaćinović"
+    ],
+    "bench": [
+     "Spyros Christakopoulos",
+     "Stavros Pilios",
+     "Lovro Majer",
+     "Oleksandr Zubkov",
+     "Argyris Argyriou",
+     "Marios Balamotis",
+     "Filipe Relvas",
+     "Hakim Sahabo",
+     "Milán Vitális"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4823817",
+    "ls-lu-1882214"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-08-30-kifisia-aek-athens",
+   "value": {
+    "name": "Kifisia 1-1 AEK Athens",
+    "on": "2026-08-30",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Aboubakary Koita",
+     "Razvan Marin",
+     "Milán Vitális",
+     "Lovro Majer",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Kaan Kairinen",
+     "Petros Mantalos",
+     "Oleksandr Zubkov",
+     "Zini",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Charalampos Lykogiannis",
+     "Kervin Arriaga",
+     "Mijat Gaćinović",
+     "Dimitrios Kaloskamis",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776120",
+    "ls-lu-1836548"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-08-22-aek-athens-iraklis",
+   "value": {
+    "name": "AEK Athens 4-0 Iraklis",
+    "on": "2026-08-22",
+    "competition": "Super League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Mijat Gaćinović",
+     "Razvan Marin",
+     "Milán Vitális",
+     "Oleksandr Zubkov",
+     "Barnabas Varga",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Kaan Kairinen",
+     "Lovro Majer",
+     "Petros Mantalos",
+     "Derek Kutesa",
+     "Zini",
+     "Marios Balamotis",
+     "Alberto Brignoli",
+     "Christos Alexiou",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Kervin Arriaga",
+     "Dimitrios Kaloskamis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776131",
+    "ls-lu-1836537"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-08-12-aek-athens-ofi-crete",
+   "value": {
+    "name": "AEK Athens 2-2 OFI Crete",
+    "on": "2026-08-12",
+    "competition": "Super Cup - Final",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Marios Balamotis",
+     "Lazaros Rota",
+     "Harold Moukoudi",
+     "Filipe Relvas",
+     "Stavros Pilios",
+     "Dimitrios Kaloskamis",
+     "Razvan Marin",
+     "Kaan Kairinen",
+     "Aboubakary Koita",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Thomas Strakosha",
+     "Alberto Brignoli",
+     "Christos Alexiou",
+     "Domagoj Vida",
+     "Spyros Christakopoulos",
+     "James Penrice",
+     "Milán Vitális",
+     "Lovro Majer",
+     "Petros Mantalos",
+     "Oleksandr Zubkov",
+     "Zini"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4730040",
+    "ls-lu-1795567"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-05-17-aek-athens-olympiacos",
+   "value": {
+    "name": "AEK Athens 1-1 Olympiacos",
+    "on": "2026-05-17",
+    "competition": "Super League - Championship Group",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Alberto Brignoli",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Roberto Pereyra",
+     "Orbelin Pineda",
+     "Razvan Marin",
+     "Aboubakary Koita",
+     "Zini",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Robert Ljubicic",
+     "João Mário",
+     "Derek Kutesa",
+     "Barnabas Varga",
+     "Angelos Angelopoulos",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "James Penrice",
+     "Marko Grujić",
+     "Hakim Sahabo",
+     "Niclas Eliasson",
+     "Petros Mantalos"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694791",
+    "ls-lu-1759025"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-05-13-paok-aek-athens",
+   "value": {
+    "name": "PAOK 1-1 AEK Athens",
+    "on": "2026-05-13",
+    "competition": "Super League - Championship Group",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Alberto Brignoli",
+     "James Penrice",
+     "Filipe Relvas",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "João Mário",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "Aboubakary Koita",
+     "Zini",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Robert Ljubicic",
+     "Petros Mantalos",
+     "Derek Kutesa",
+     "Luka Jović",
+     "Angelos Angelopoulos",
+     "Harold Moukoudi",
+     "Martin Georgiev",
+     "Stavros Pilios",
+     "Marko Grujić",
+     "Hakim Sahabo",
+     "Roberto Pereyra",
+     "Niclas Eliasson"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694798",
+    "ls-lu-1759021"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-05-10-aek-athens-panathinaikos",
+   "value": {
+    "name": "AEK Athens 2-1 Panathinaikos",
+    "on": "2026-05-10",
+    "competition": "Super League - Championship Group",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Roberto Pereyra",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "Aboubakary Koita",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Robert Ljubicic",
+     "Petros Mantalos",
+     "João Mário",
+     "Zini",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "James Penrice",
+     "Marko Grujić",
+     "Niclas Eliasson",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694804",
+    "ls-lu-1759022"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-05-03-panathinaikos-aek-athens",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2026-05-03",
+    "competition": "Super League - Championship Group",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Roberto Pereyra",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "Aboubakary Koita",
+     "Zini",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "James Penrice",
+     "Niclas Eliasson",
+     "João Mário",
+     "Luka Jović",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Marko Grujić",
+     "Robert Ljubicic",
+     "Mijat Gaćinović",
+     "Petros Mantalos",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694811",
+    "ls-lu-1759024"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-04-19-aek-athens-paok",
+   "value": {
+    "name": "AEK Athens 3-0 PAOK",
+    "on": "2026-04-19",
+    "competition": "Super League - Championship Group",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Roberto Pereyra",
+     "Orbelin Pineda",
+     "Razvan Marin",
+     "Mijat Gaćinović",
+     "Barnabas Varga",
+     "Zini"
+    ],
+    "bench": [
+     "Stavros Pilios",
+     "João Mário",
+     "Derek Kutesa",
+     "Aboubakary Koita",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Marko Grujić",
+     "Hakim Sahabo",
+     "Robert Ljubicic",
+     "Dimitrios Kaloskamis",
+     "Luka Jović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694822",
+    "ls-lu-1759019"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-04-05-olympiacos-aek-athens",
+   "value": {
+    "name": "Olympiacos 0-1 AEK Athens",
+    "on": "2026-04-05",
+    "competition": "Super League - Championship Group",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "Roberto Pereyra",
+     "Aboubakary Koita",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Mijat Gaćinović",
+     "Petros Mantalos",
+     "João Mário",
+     "Zini",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Marko Grujić",
+     "Robert Ljubicic",
+     "Niclas Eliasson",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694829",
+    "ls-lu-1759016"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-03-22-aek-athens-kifisia",
+   "value": {
+    "name": "AEK Athens 3-0 Kifisia",
+    "on": "2026-03-22",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "Petros Mantalos",
+     "Orbelin Pineda",
+     "Roberto Pereyra",
+     "Aboubakary Koita",
+     "Barnabas Varga",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Marko Grujić",
+     "Hakim Sahabo",
+     "Niclas Eliasson",
+     "Mijat Gaćinović",
+     "Zini",
+     "Alberto Brignoli",
+     "Harold Moukoudi",
+     "Martin Georgiev",
+     "Robert Ljubicic",
+     "Dimitrios Kaloskamis",
+     "João Mário",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482260"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-15-atromitos-athinon-aek-athens",
+   "value": {
+    "name": "Atromitos Athinon 2-2 AEK Athens",
+    "on": "2026-03-15",
+    "competition": "Super League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Razvan Marin",
+     "Petros Mantalos",
+     "Aboubakary Koita",
+     "Robert Ljubicic",
+     "Barnabas Varga",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Stavros Pilios",
+     "Orbelin Pineda",
+     "Niclas Eliasson",
+     "João Mário",
+     "Derek Kutesa",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Marko Grujić",
+     "Roberto Pereyra",
+     "Mijat Gaćinović",
+     "Zini"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480899"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-07-aek-athens-ae-larissa",
+   "value": {
+    "name": "AEK Athens 1-0 AE Larissa",
+    "on": "2026-03-07",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Orbelin Pineda",
+     "Razvan Marin",
+     "Aboubakary Koita",
+     "Niclas Eliasson",
+     "Barnabas Varga",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Roberto Pereyra",
+     "Mijat Gaćinović",
+     "Petros Mantalos",
+     "Zini",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Stavros Pilios",
+     "Marko Grujić",
+     "Robert Ljubicic",
+     "João Mário",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482264"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-01-volos-nfc-aek-athens",
+   "value": {
+    "name": "Volos NFC 2-2 AEK Athens",
+    "on": "2026-03-01",
+    "competition": "Super League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "Orbelin Pineda",
+     "Razvan Marin",
+     "Petros Mantalos",
+     "Robert Ljubicic",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Niclas Eliasson",
+     "Mijat Gaćinović",
+     "João Mário",
+     "Aboubakary Koita",
+     "Zini",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "James Penrice",
+     "Marko Grujić",
+     "Hakim Sahabo",
+     "Roberto Pereyra",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480909"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-22-aek-athens-levadiakos",
+   "value": {
+    "name": "AEK Athens 4-0 Levadiakos",
+    "on": "2026-02-22",
+    "competition": "Super League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Martin Georgiev",
+     "Razvan Marin",
+     "Petros Mantalos",
+     "Orbelin Pineda",
+     "Robert Ljubicic",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Roberto Pereyra",
+     "Niclas Eliasson",
+     "Mijat Gaćinović",
+     "João Mário",
+     "Zini",
+     "Alberto Brignoli",
+     "Domagoj Vida",
+     "James Penrice",
+     "Marko Grujić",
+     "Hakim Sahabo",
+     "Dimitrios Kaloskamis",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480915"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-15-paok-aek-athens",
+   "value": {
+    "name": "PAOK 0-0 AEK Athens",
+    "on": "2026-02-15",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Razvan Marin",
+     "Aboubakary Koita",
+     "Orbelin Pineda",
+     "Mijat Gaćinović",
+     "Barnabas Varga",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Domagoj Vida",
+     "James Penrice",
+     "Robert Ljubicic",
+     "Derek Kutesa",
+     "Zini",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Marko Grujić",
+     "Roberto Pereyra",
+     "Dimitrios Kaloskamis",
+     "Petros Mantalos",
+     "João Mário"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480916"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-08-panserraikos-aek-athens",
+   "value": {
+    "name": "Panserraikos 0-4 AEK Athens",
+    "on": "2026-02-08",
+    "competition": "Super League",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Harold Moukoudi",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "Aboubakary Koita",
+     "Orbelin Pineda",
+     "Razvan Marin",
+     "Niclas Eliasson",
+     "Barnabas Varga",
+     "Zini"
+    ],
+    "bench": [
+     "Stavros Pilios",
+     "Marko Grujić",
+     "Mijat Gaćinović",
+     "Petros Mantalos",
+     "João Mário",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Robert Ljubicic",
+     "Roberto Pereyra",
+     "Dimitrios Kaloskamis",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480921"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-01-aek-athens-olympiacos",
+   "value": {
+    "name": "AEK Athens 1-1 Olympiacos",
+    "on": "2026-02-01",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Mijat Gaćinović",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "Robert Ljubicic",
+     "Zini",
+     "Luka Jović"
+    ],
+    "bench": [
+     "João Mário",
+     "Derek Kutesa",
+     "Aboubakary Koita",
+     "Barnabas Varga",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "James Penrice",
+     "Marko Grujić",
+     "Niclas Eliasson",
+     "Petros Mantalos"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480930"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-24-asteras-aktor-aek-athens",
+   "value": {
+    "name": "Asteras Aktor 0-1 AEK Athens",
+    "on": "2026-01-24",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Aboubakary Koita",
+     "Petros Mantalos",
+     "Orbelin Pineda",
+     "Robert Ljubicic",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Razvan Marin",
+     "Niclas Eliasson",
+     "Dimitrios Kaloskamis",
+     "João Mário",
+     "Zini",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "James Penrice",
+     "Marko Grujić",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480935"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-18-aek-athens-panathinaikos",
+   "value": {
+    "name": "AEK Athens 4-0 Panathinaikos",
+    "on": "2026-01-18",
+    "competition": "Super League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Mijat Gaćinović",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "Robert Ljubicic",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Martin Georgiev",
+     "Petros Mantalos",
+     "João Mário",
+     "Aboubakary Koita",
+     "Zini",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Domagoj Vida",
+     "James Penrice",
+     "Marko Grujić",
+     "Niclas Eliasson",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480940"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-14-aek-athens-ofi-crete",
+   "value": {
+    "name": "AEK Athens 0-1 OFI Crete",
+    "on": "2026-01-14",
+    "competition": "Greece Cup - Quarter Finals",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Alberto Brignoli",
+     "James Penrice",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Petros Mantalos",
+     "Orbelin Pineda",
+     "Derek Kutesa",
+     "Dimitrios Kaloskamis",
+     "Niclas Eliasson",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Razvan Marin",
+     "João Mário",
+     "Aboubakary Koita",
+     "Barnabas Varga",
+     "Marios Balamotis",
+     "Thomas Strakosha",
+     "Christos Kosidis",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Stavros Pilios",
+     "Robert Ljubicic",
+     "Mijat Gaćinović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4648890",
+    "ls-lu-1707896"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
+  {
+   "id": "a-m-2026-01-11-aris-salonica-aek-athens",
+   "value": {
+    "name": "Aris Salonica 1-1 AEK Athens",
+    "on": "2026-01-11",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Moses Odubajo",
+     "João Mário",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "Robert Ljubicic",
+     "Aboubakary Koita",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Niclas Eliasson",
+     "Petros Mantalos",
+     "Derek Kutesa",
+     "Barnabas Varga",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "James Penrice",
+     "Marko Grujić",
+     "Mijat Gaćinović",
+     "Dimitrios Kaloskamis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480946"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-21-aek-athens-ofi-crete",
+   "value": {
+    "name": "AEK Athens 2-1 OFI Crete",
+    "on": "2025-12-21",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "Razvan Marin",
+     "Marko Grujić",
+     "João Mário",
+     "Dimitrios Kaloskamis",
+     "Robert Ljubicic",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Stavros Pilios",
+     "Niclas Eliasson",
+     "Petros Mantalos",
+     "Derek Kutesa",
+     "Aboubakary Koita",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Konstantinos Chrysopoulos",
+     "Christos Kosidis",
+     "Harold Moukoudi",
+     "Moses Odubajo"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480951"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-14-panetolikos-aek-athens",
+   "value": {
+    "name": "Panetolikos 0-5 AEK Athens",
+    "on": "2025-12-14",
+    "competition": "Super League",
+    "score": "0-5",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "João Mário",
+     "Orbelin Pineda",
+     "Razvan Marin",
+     "Robert Ljubicic",
+     "Dimitrios Kaloskamis",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Konstantinos Chrysopoulos",
+     "Stavros Pilios",
+     "Marko Grujić",
+     "Niclas Eliasson",
+     "Aboubakary Koita",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Christos Kosidis",
+     "Moses Odubajo",
+     "Roberto Pereyra",
+     "Petros Mantalos",
+     "Derek Kutesa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480952"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-07-aek-athens-atromitos-athinon",
+   "value": {
+    "name": "AEK Athens 4-1 Atromitos Athinon",
+    "on": "2025-12-07",
+    "competition": "Super League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Razvan Marin",
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Orbelin Pineda",
+     "João Mário",
+     "Mijat Gaćinović",
+     "Dimitrios Kaloskamis",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Marko Grujić",
+     "Robert Ljubicic",
+     "Roberto Pereyra",
+     "Aboubakary Koita",
+     "Zois Karargyris",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Konstantinos Chrysopoulos",
+     "Christos Kosidis",
+     "Domagoj Vida",
+     "Niclas Eliasson",
+     "Petros Mantalos"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480961"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-30-panathinaikos-aek-athens",
+   "value": {
+    "name": "Panathinaikos 2-3 AEK Athens",
+    "on": "2025-11-30",
+    "competition": "Super League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Orbelin Pineda",
+     "Petros Mantalos",
+     "João Mário",
+     "Mijat Gaćinović",
+     "Dimitrios Kaloskamis",
+     "Luka Jović"
+    ],
+    "bench": [
+     "James Penrice",
+     "Marko Grujić",
+     "Razvan Marin",
+     "Roberto Pereyra",
+     "Aboubakary Koita",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Konstantinos Chrysopoulos",
+     "Christos Kosidis",
+     "Domagoj Vida",
+     "Moses Odubajo",
+     "Robert Ljubicic"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480964"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-23-aek-athens-aris-salonica",
+   "value": {
+    "name": "AEK Athens 1-0 Aris Salonica",
+    "on": "2025-11-23",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Orbelin Pineda",
+     "Petros Mantalos",
+     "João Mário",
+     "Dimitrios Kaloskamis",
+     "Zini",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Stavros Pilios",
+     "Marko Grujić",
+     "Razvan Marin",
+     "Mijat Gaćinović",
+     "Aboubakary Koita",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Konstantinos Chrysopoulos",
+     "Domagoj Vida",
+     "Moses Odubajo",
+     "Robert Ljubicic",
+     "Roberto Pereyra"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480971"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-09-ofi-crete-aek-athens",
+   "value": {
+    "name": "OFI Crete 0-1 AEK Athens",
+    "on": "2025-11-09",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Mijat Gaćinović",
+     "Orbelin Pineda",
+     "Razvan Marin",
+     "João Mário",
+     "Dimitrios Kaloskamis",
+     "Aboubakary Koita",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Marko Grujić",
+     "Robert Ljubicic",
+     "Petros Mantalos",
+     "Frantzdy Pierrot",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Konstantinos Chrysopoulos",
+     "Christos Kosidis",
+     "Moses Odubajo",
+     "Stavros Pilios",
+     "Jens Jónsson",
+     "Roberto Pereyra"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480973"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-02-aek-athens-panetolikos",
+   "value": {
+    "name": "AEK Athens 1-0 Panetolikos",
+    "on": "2025-11-02",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "João Mário",
+     "Aboubakary Koita",
+     "Dimitrios Kaloskamis",
+     "Frantzdy Pierrot"
+    ],
+    "bench": [
+     "Marko Grujić",
+     "Mijat Gaćinović",
+     "Derek Kutesa",
+     "Luka Jović",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Konstantinos Chrysopoulos",
+     "Christos Kosidis",
+     "Harold Moukoudi",
+     "Stavros Pilios",
+     "Robert Ljubicic",
+     "Roberto Pereyra"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480981"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-26-olympiacos-aek-athens",
+   "value": {
+    "name": "Olympiacos 2-0 AEK Athens",
+    "on": "2025-10-26",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "James Penrice",
+     "Filipe Relvas",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "Razvan Marin",
+     "Orbelin Pineda",
+     "Aboubakary Koita",
+     "Petros Mantalos",
+     "Dimitrios Kaloskamis",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Stavros Pilios",
+     "Mijat Gaćinović",
+     "João Mário",
+     "Derek Kutesa",
+     "Frantzdy Pierrot",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Konstantinos Chrysopoulos",
+     "Christos Kosidis",
+     "Marko Grujić",
+     "Jens Jónsson",
+     "Robert Ljubicic"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480985"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-19-aek-athens-paok",
+   "value": {
+    "name": "AEK Athens 0-2 PAOK",
+    "on": "2025-10-19",
+    "competition": "Super League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Harold Moukoudi",
+     "Domagoj Vida",
+     "Lazaros Rota",
+     "Razvan Marin",
+     "Marko Grujić",
+     "Derek Kutesa",
+     "João Mário",
+     "Aboubakary Koita",
+     "Luka Jović"
+    ],
+    "bench": [
+     "Orbelin Pineda",
+     "Niclas Eliasson",
+     "Dimitrios Kaloskamis",
+     "Petros Mantalos",
+     "Frantzdy Pierrot",
+     "Angelos Angelopoulos",
+     "Alberto Brignoli",
+     "Konstantinos Chrysopoulos",
+     "Moses Odubajo",
+     "James Penrice",
+     "Jens Jónsson",
+     "Robert Ljubicic"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480991"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}
