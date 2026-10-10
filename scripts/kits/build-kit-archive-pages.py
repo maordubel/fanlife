@@ -9,6 +9,7 @@ CLUBS=[
  dict(id='st-pauli',name='FC St. Pauli',accent='#d29a64',data='content/manual/kit-archive-st-pauli.json',man='content/manual/kit-cof-st-pauli.json'),
  dict(id='zrinjski-mostar',name='Zrinjski Mostar',accent='#e5484d',data='content/manual/kit-archive-zrinjski-mostar.json',man='content/manual/kit-cof-zrinjski-mostar.json'),
  dict(id='olympiacos',name='Olympiacos',accent='#e5484d',data='content/manual/kit-archive-olympiacos.json',man='content/manual/kit-cof-olympiacos.json'),
+ dict(id='hapoel-tel-aviv',name='Hapoel Tel Aviv',accent='#e5484d',data='content/manual/kit-archive-hapoel-tel-aviv.json',man='content/manual/kit-cof-hapoel-tel-aviv.json'),
  dict(id='hapoel-petah-tikva',name='Hapoel Petah Tikva',accent='#4c8dff',data='content/manual/kit-archive-hapoel-petah-tikva.json',man='content/manual/kit-cof-hapoel-petah-tikva.json'),
 ]
 def fold(kits):
@@ -23,7 +24,7 @@ def fold(kits):
             base.setdefault('moreImages',[])
             if k.get('image')and k['image']!=base.get('image'):base['moreImages'].append(k['image'])
     return out
-tpl=open('scripts/kits/kit-archive.template.html',encoding='utf8').read().replace('/*__RENDERER__*/','const SPONSOR_TYPE='+open('content/manual/sponsor-type.json',encoding='utf8').read()+';\nconst MARKS='+open('content/manual/maker-marks.json',encoding='utf8').read()+';\n'+open('scripts/kits/kit-render.js',encoding='utf8').read())
+tpl=open('scripts/kits/kit-archive.template.html',encoding='utf8').read().replace('/*__RENDERER__*/','const RESOLVE=s=>s;\nconst SPONSOR_TYPE='+open('content/manual/sponsor-type.json',encoding='utf8').read()+';\nconst MARKS='+open('content/manual/maker-marks.json',encoding='utf8').read()+';\n'+open('scripts/kits/kit-render.js',encoding='utf8').read())
 hub=[]
 for c in CLUBS:
     j=json.load(open(c['data']));man=json.load(open(c['man']))
@@ -33,6 +34,9 @@ for c in CLUBS:
     hp=f"content/manual/kit-hfk-{c['id']}.json"
     if os.path.exists(hp):
         h=json.load(open(hp));fy=[k['from'] for k in h['kits'] if k['from']];ty=[k['to'] for k in h['kits'] if k['to']];data['hfk']=dict(count=h['count'],source=h['source'],kits=h['kits'],**{'from':min(fy),'to':max(ty)})
+    if c['id']=='hapoel-tel-aviv':
+        wp=json.load(open('content/manual/kit-photos.json'));recs=[r for r in wp['records'] if r.get('file')]
+        data['worker']=dict(count=len(recs),source=dict(publisher='The Worker — ארכיון החולצות הצילומי (ויקיפועל, באדיבות ישי צבי · Football Kit Archive)',url='/shirts'),kits=[dict(file='/kits/'+r['file'],season=r.get('seasonLabel'),year=r.get('yearRaw'),variant=r.get('variantHe') or r.get('variant'),type=r.get('variant'),ambiguous=bool(r.get('seasonAmbiguous')),source=r.get('source')) for r in sorted(recs,key=lambda r:(r.get('yearRaw') or 0,r.get('variant') or ''))])
     cp=f"content/manual/kit-cfs-{c['id']}.json"
     if os.path.exists(cp):
         cf=json.load(open(cp));data['cfs']=cf

@@ -6,6 +6,7 @@ import panathinaikos from '@/content/manual/kit-archive-panathinaikos.json'
 import stPauli from '@/content/manual/kit-archive-st-pauli.json'
 import zrinjski from '@/content/manual/kit-archive-zrinjski-mostar.json'
 import olympiacos from '@/content/manual/kit-archive-olympiacos.json'
+import hta from '@/content/manual/kit-archive-hapoel-tel-aviv.json'
 import hapoelPetahTikva from '@/content/manual/kit-archive-hapoel-petah-tikva.json'
 
 /**
@@ -18,7 +19,7 @@ type Row={id:string;season:string;type:string;euro:boolean;image?:string|null}
 type Art={image:string|null;svg:string;icon:string}
 const FILES:Record<string,Row[]>={
  'aek-athens':aek.kits as Row[],celtic:celtic.kits as Row[],panathinaikos:panathinaikos.kits as Row[],'st-pauli':stPauli.kits as Row[],
- 'zrinjski-mostar':zrinjski.kits as Row[],'hapoel-petah-tikva':hapoelPetahTikva.kits as Row[],olympiacos:olympiacos.kits as Row[],
+ 'zrinjski-mostar':zrinjski.kits as Row[],'hapoel-petah-tikva':hapoelPetahTikva.kits as Row[],olympiacos:olympiacos.kits as Row[],'hapoel-tel-aviv':hta.kits as Row[],
 }
 const art=(club:string,r:Row):Art=>({image:r.image??null,svg:`/club-kits/${club}/svg/${r.id}.svg`,icon:`/club-kits/${club}/icons/${r.id}.svg`})
 export function kitArt(club:string,kitId:string,season:string,type:string):Art|null{

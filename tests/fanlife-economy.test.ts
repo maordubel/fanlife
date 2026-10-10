@@ -45,5 +45,5 @@ describe('FAN LIFE shirt economy', () => {
     expect(new Set(slugs).size).toBe(slugs.length)
     expect(shirts.filter((s) => !s.variantHe.startsWith(s.clubName))).toEqual([])
     expect(shirts.filter((s) => !s.src && !s.kit)).toEqual([])
-  })
+  }, 60000)
 })

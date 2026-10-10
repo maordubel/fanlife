@@ -358,5 +358,8 @@
   "kitOwnCloset": "לארון שלי ←",
   "kitOwnMarket": "{n} בשוק ←",
   "kitOwnSaved": "נשמר.",
-  "kitOwnLabel": "הארון שלך"
+  "kitOwnLabel": "הארון שלך",
+  "kitWorkerTitle": "הארכיון הצילומי · {n} חולצות נוספות",
+  "kitWorkerCredit": "תצלומים חתוכים מהארכיון של The Worker (ויקיפועל, באדיבות ישי צבי · Football Kit Archive).",
+  "kitWorkerLink": "לכל החולצות ולשוק ←"
 }

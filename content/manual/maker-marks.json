@@ -1,5 +1,5 @@
 {
- "_note": "Real maker and sponsor marks, printed on the archive drawings and on the gate 4/5 cloth. Vector paths from simple-icons 13.21.0 (CC0 data; the marks are trademarks of their owners, used with the owner's approval, chat 10.10.2026: 'שימוש נכון בלוגואים'). Umbro: the Worker's own two-diamond mark (public/kits/assembly/2009-10/parts/maker-umbro.svg). A maker with no mark here is lettered.",
+ "_note": "Real maker and sponsor marks, printed on the archive drawings and on the gate 4/5 cloth. Vector paths from simple-icons 13.21.0 (CC0 data; the marks are trademarks of their owners, used with the owner's approval, chat 10.10.2026: '\u05e9\u05d9\u05de\u05d5\u05e9 \u05e0\u05db\u05d5\u05df \u05d1\u05dc\u05d5\u05d2\u05d5\u05d0\u05d9\u05dd'). Umbro: the Worker's own two-diamond mark (public/kits/assembly/2009-10/parts/maker-umbro.svg). A maker with no mark here is lettered. Raster marks (kind 'raster') are the Worker's own approved artwork under public/kits: 'mono' ones are white shapes printed through a mask in the cloth's ink, 'colour' ones as they are.",
  "makers": {
   "nike": {
    "viewBox": "0 7.8 24 8.4",
@@ -49,6 +49,13 @@
    "kind": "stroke",
    "strokeWidth": 8,
    "source": "The Worker (public/kits/assembly/2009-10/parts/maker-umbro.svg)"
+  },
+  "macron": {
+   "viewBox": "0 0 640 77",
+   "kind": "raster",
+   "src": "/kits/marks/maker-macron.webp",
+   "print": "mono",
+   "source": "The Worker (public/kits/marks)"
   }
  },
  "sponsors": {
@@ -62,13 +69,40 @@
    "viewBox": "0 10.02 24 3.97",
    "d": "M1.478 10.016c.24 0 .59.046 1.046.14v.726a2.465 2.465 0 0 0-.946-.213c-.41 0-.615.118-.615.354 0 .088.041.16.124.216.069.045.258.14.568.286.446.208.743.388.89.541.176.182.264.417.264.705 0 .415-.172.73-.516.949-.279.176-.64.264-1.085.264-.375 0-.753-.046-1.133-.139v-.755c.41.135.774.203 1.09.203.437 0 .655-.121.655-.362a.302.302 0 0 0-.095-.227c-.065-.065-.232-.155-.5-.27-.481-.208-.795-.384-.94-.53a.999.999 0 0 1-.284-.73c0-.377.137-.666.413-.864.272-.196.626-.294 1.064-.294zm21.19 0c.246 0 .565.04.956.123l.09.016v.727a2.471 2.471 0 0 0-.948-.213c-.409 0-.612.118-.612.354 0 .088.04.16.123.216.066.043.256.139.57.286.443.208.74.388.889.541.176.182.264.417.264.705 0 .415-.172.73-.514.949-.28.176-.643.264-1.087.264-.376 0-.754-.046-1.134-.139v-.755c.407.135.77.203 1.09.203.437 0 .655-.121.655-.362 0-.09-.03-.166-.092-.227-.066-.065-.233-.155-.503-.27-.48-.206-.793-.382-.94-.53a.997.997 0 0 1-.284-.732c0-.376.137-.664.413-.862.272-.196.627-.294 1.064-.294zm-12.674.066l.92 2.444.942-2.444h1.257v3.825h-.968v-2.708l-1.072 2.747h-.632l-1.052-2.747v2.708H8.67v-3.825zm-5.587 0v3.825H3.386v-3.825zm3.554 0v.692H6.327v.864H7.75v.63H6.327v.908h1.677v.73h-2.66v-3.824zm8.707 0v.692h-1.634v.864h1.422v.63h-1.422v.908h1.677v.73H14.05v-3.824zm1.898 0l1.255 2.56v-2.56h.719v3.825h-1.15l-1.288-2.595v2.595h-.72v-3.825z",
    "kind": "fill",
-   "source": "simple-icons 13.21.0 (CC0)"
+   "source": "simple-icons 13.21.0 (CC0)",
+   "replace": true
   },
   "lg": {
    "viewBox": "0 6.71 24 10.58",
    "d": "M14.522 14.078h3.27v1.33h-4.847v-6.83h1.577v5.5zm6.74-1.274h1.284v1.195c-.236.09-.698.18-1.137.18-1.42 0-1.893-.721-1.893-2.186 0-1.398.45-2.221 1.869-2.221.791 0 1.24.248 1.612.722l.982-.903c-.6-.855-1.646-1.114-2.629-1.114-2.208 0-3.368 1.205-3.368 3.504 0 2.288 1.047 3.528 3.358 3.528 1.06 0 2.096-.27 2.66-.665V11.53h-2.739v1.274zM5.291 6.709a5.29 5.29 0 1 1 0 10.582 5.291 5.291 0 1 1 0-10.582m3.16 8.457a4.445 4.445 0 0 0 1.31-3.161v-.242l-.22.001H6.596v.494h2.662l-.001.015a3.985 3.985 0 0 1-3.965 3.708 3.95 3.95 0 0 1-2.811-1.165 3.952 3.952 0 0 1-1.164-2.811c0-1.061.414-2.059 1.164-2.81a3.951 3.951 0 0 1 2.81-1.164l.252.003v-.495l-.251-.003a4.475 4.475 0 0 0-4.47 4.469c0 1.194.465 2.316 1.309 3.161a4.444 4.444 0 0 0 3.16 1.31 4.444 4.444 0 0 0 3.162-1.31m-2.91-1.297V9.644H5.04v4.72h1.556v-.495H5.543zm-1.265-3.552a.676.676 0 1 0-.675.674.676.676 0 0 0 .675-.674",
    "kind": "fill",
-   "source": "simple-icons 13.21.0 (CC0)"
+   "source": "simple-icons 13.21.0 (CC0)",
+   "replace": true
+  },
+  "fujitsu": {
+   "viewBox": "0 0 640 435",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-fujitsu.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "The Worker (public/kits)"
+  },
+  "arkia": {
+   "viewBox": "0 0 640 437",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-arkia.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "The Worker (public/kits)",
+   "plate": true
+  },
+  "subaru": {
+   "viewBox": "0 0 360 180",
+   "kind": "raster",
+   "src": "/kits/assembly/2009-10/parts/sponsor-subaru.svg",
+   "print": "colour",
+   "replace": true,
+   "source": "The Worker (public/kits)"
   }
  }
 }

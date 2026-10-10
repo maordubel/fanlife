@@ -128,6 +128,7 @@ textarea.cp{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px
 
 <section class="hfk" id="hfk" aria-labelledby="hfkT" hidden></section>
 <section class="hfk" id="cfs" hidden></section>
+<section class="hfk" id="wk" hidden></section>
 
 <section class="notes" aria-label="על הארכיון">
   <div class="note"><h3>מה מדוד ומה לא</h3><p>הצבעים הם הערך המדויק השכיח בכל ציור, בנפרד לחולצה, למכנסיים ולגרביים. ספירת הפסים נמדדת מהפיקסלים. הדגם נקרא בעין ונבדק מול המדידה.</p><p>יצרן וספונסר מוזנים רק כשציור בקטלוג מראה אותם. לחולצות שיש להן רק ציור מקומונס אין יצרן או ספונסר.</p></div>
@@ -220,6 +221,9 @@ el.innerHTML=`<h2 id="hfkT">ציורים היסטוריים · ${H.count} מער
 
 (function(){const C=DATA.cfs;if(!C)return;const el=document.getElementById('cfs');el.hidden=false;const T={home:'בית',away:'חוץ',third:'שלישית',fourth:'רביעית',goalkeeper:'שוער',special:'מיוחדת'};
 el.innerHTML=`<h2>תצלומי חולצות · ${C.count}</h2><p class="cr">תצלומים של חולצות מארכיון <a href="${C.source.archivePage}" target="_blank" rel="noopener">Club Football Shirts</a>, בשימוש באישור הבעלים. הסוג והעונה כפי ששם הקובץ במקור מצהיר; יצרן וספונסר לא נקראים מתצלום.</p><div class="g">${C.kits.map(k=>`<figure><img src="${k.image}" data-archive-photo="cfs" alt="${esc(k.season)}" loading="lazy" width="${k.width}" height="${k.height}" style="object-fit:contain"><figcaption><bdi dir="ltr">${esc(k.season)}</bdi> · ${T[k.type]||k.type}</figcaption></figure>`).join('')}</div>`})();
+
+(function(){const Wk=DATA.worker;if(!Wk)return;const el=document.getElementById('wk');el.hidden=false;
+el.innerHTML=`<h2>הארכיון הצילומי · ${Wk.count} חולצות</h2><p class="cr">${esc(Wk.source.publisher)}. התצלומים נחתכו מהרקע וצבעם נמדד; שנה בערך מסומנת "בערך" ולא נוחשת. <a href="${Wk.source.url}">לכל החולצות והארון</a></p><div class="g">${Wk.kits.map(k=>`<figure><img src="${k.file}" data-archive-photo="worker" alt="${esc((k.season||k.year||'')+' '+(k.variant||''))}" loading="lazy" width="150" height="150" style="object-fit:contain"><figcaption><bdi dir="ltr">${esc(k.season||(k.year?k.year+' בערך':''))}</bdi> · ${esc(k.variant||'')}</figcaption></figure>`).join('')}</div>`})();
 </script>
 </body>
 </html>

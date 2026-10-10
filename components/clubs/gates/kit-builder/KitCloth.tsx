@@ -1,7 +1,7 @@
 'use client'
 import {useId} from 'react'
 import {sponsorLines,SPONSOR_FONT} from '@/lib/clubs/sponsor-type'
-import {fitMark,makerMark,sponsorMark} from '@/lib/clubs/marks'
+import {fitMark,makerMark,sponsorMark,type Mark} from '@/lib/clubs/marks'
 import {SLOTS,colourHex,darken,lightCloth,wordmark,type ClothSpec,type CollarId,type PatternId,type SlotKey} from '@/lib/clubs/kit-model'
 
 /**
@@ -68,6 +68,17 @@ export function KitCloth({spec,view='front',missing=[],texture=true,title,classN
 
 function Gap({slot}:{slot:SlotKey}){const b=SLOTS[slot];return <rect x={b.x} y={b.y} width={b.w} height={b.h} fill="var(--mag-navy)" fillOpacity="0.1" stroke="var(--mag-navy)" strokeWidth="2" strokeDasharray="5 4" data-gap={slot}/>}
 
+/** a real mark in the cloth's contrast ink (vectors and mono rasters) or as it is (colour rasters); `halo` cuts it out of a pattern */
+function MarkArt({mark,cx,cy,w,h,ink,halo,id,logo,slot}:{mark:Mark;cx:number;cy:number;w:number;h:number;ink:string;halo:string;id:string;logo:string;slot:string}){
+ const f=fitMark(mark,cx,cy,w,h),[x0,y0,vw,vh]=mark.viewBox.split(' ').map(Number) as [number,number,number,number]
+ if(mark.kind==='raster'){
+  const img=<image href={mark.src} x={x0} y={y0} width={vw} height={vh} preserveAspectRatio="xMidYMid meet"/>
+  return <g data-mark={slot} data-logo={logo} transform={f.transform}>{mark.print==='mono'?<><mask id={id} maskUnits="userSpaceOnUse" x={x0} y={y0} width={vw} height={vh}>{img}</mask><rect x={x0} y={y0} width={vw} height={vh} fill={ink} mask={`url(#${id})`}/></>:img}</g>
+ }
+ const d=mark.d??''
+ return <g data-mark={slot} data-logo={logo} transform={f.transform}>{mark.kind==='stroke'?<><path d={d} fill="none" stroke={halo} strokeOpacity="0.5" strokeWidth={(mark.strokeWidth??8)+5} strokeLinejoin="round"/><path d={d} fill="none" stroke={ink} strokeWidth={mark.strokeWidth} strokeLinejoin="round"/></>:<><path d={d} fill={halo} fillOpacity="0.5" stroke={halo} strokeOpacity="0.5" strokeWidth={1.6/f.k} strokeLinejoin="round"/><path d={d} fill={ink}/></>}</g>
+}
+
 /** a documented name, lettered on the cloth and condensed (never overflowing) into its slot; a halo cuts it out of any pattern */
 function Word({slot,text,ink,halo,size}:{slot:SlotKey;text:string|null;ink:string;halo:string;size:number}){
  if(!text)return null
@@ -75,7 +86,7 @@ function Word({slot,text,ink,halo,size}:{slot:SlotKey;text:string|null;ink:strin
  // the sponsor slot takes the documented lettering (weight, case, tracking, line breaks); the maker stays plain capitals
  if(slot==='sponsor'){
   const sm=sponsorMark(text)
-  if(sm&&['siemens','lg'].includes(text.toLowerCase().trim())){const f=fitMark(sm,b.x+b.w/2,b.y+b.h/2,text.toLowerCase().trim()==='lg'?34:b.w-6,26);return <g data-mark="sponsor" data-logo={text.toLowerCase()} transform={f.transform}><path d={sm.d} fill={halo} fillOpacity="0.5" stroke={halo} strokeOpacity="0.5" strokeWidth={2/f.k} strokeLinejoin="round"/><path d={sm.d} fill={ink}/></g>}
+  if(sm?.replace){const ar=(q=>q[2]!/q[3]!)(sm.viewBox.split(' ').map(Number));return <MarkArt mark={sm} cx={b.x+b.w/2} cy={b.y+b.h/2} w={Math.min(b.w-6,26*ar)} h={26} ink={ink} halo={halo} id={`mk-sp-${text.toLowerCase().replace(/\W/g,'')}`} logo={text.toLowerCase()} slot="sponsor"/>}
   const ls=sponsorLines(text),n=ls.length,cx=b.x+b.w/2,sz0=n>1?size*0.86:size*1.1
   let y=b.y+(n>1?-1:b.h/2+sz0*0.34)+(n>1?sz0*0.8:0)
   return <g data-mark={slot}>{ls.map((l,i)=>{
@@ -85,7 +96,7 @@ function Word({slot,text,ink,halo,size}:{slot:SlotKey;text:string|null;ink:strin
  }
  if(slot==='maker'){
   const m=makerMark(text)
-  if(m){const f=fitMark(m,b.x+b.w/2,b.y+b.h/2,m.kind==='stroke'?30:26,16);return <g data-mark="maker" data-logo={text.toLowerCase()} transform={f.transform}>{m.kind==='stroke'?<><path d={m.d} fill="none" stroke={halo} strokeOpacity="0.5" strokeWidth={(m.strokeWidth??8)+5} strokeLinejoin="round"/><path d={m.d} fill="none" stroke={ink} strokeWidth={m.strokeWidth} strokeLinejoin="round"/></>:<><path d={m.d} fill={halo} fillOpacity="0.5" stroke={halo} strokeOpacity="0.5" strokeWidth={1.6/f.k} strokeLinejoin="round"/><path d={m.d} fill={ink}/></>}</g>}
+  if(m){const ar=(q=>q[2]!/q[3]!)(m.viewBox.split(' ').map(Number));return <MarkArt mark={m} cx={b.x+b.w/2} cy={b.y+b.h/2} w={ar>3?36:(m.kind==='stroke'?30:26)} h={ar>3?10:16} ink={ink} halo={halo} id={`mk-${slot}-${text.toLowerCase().replace(/\W/g,'')}`} logo={text.toLowerCase()} slot="maker"/>}
  }
  const s=wordmark(text),est=s.length*size*0.66,w=Math.min(est,b.w)
  return <text x={b.x+b.w/2} y={b.y+b.h/2+size*0.36} textAnchor="middle" fill={ink} stroke={halo} strokeWidth="4" strokeLinejoin="round" paintOrder="stroke" textLength={est>b.w?b.w:undefined} lengthAdjust="spacingAndGlyphs" style={{fontFamily:'var(--mag-body)',fontWeight:800,fontSize:size,letterSpacing:est>b.w?0:1}} data-mark={slot} data-w={Math.round(w)}>{s}</text>

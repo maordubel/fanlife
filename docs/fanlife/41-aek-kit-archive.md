@@ -96,3 +96,11 @@ Counts: St. Pauli 46, Panathinaikos 61, Zrinjski 19, Hapoel Petah Tikva 6, Celti
 ## 10.10.2026 — logos
 
 - `content/manual/maker-marks.json`: real vector marks for Nike, adidas, Puma, New Balance, Under Armour, Fila, Reebok (simple-icons, CC0 data) and Umbro (the Worker's diamond); sponsors Vodafone (glyph before the lettering), Siemens and LG (the mark replaces the lettering). Printed on the archive drawings (the mark's own colour only where it holds against the shirt) and on the gate 4/5 cloth (`lib/clubs/marks.ts`, contrast ink — rule 95). Any other maker or sponsor stays lettered. Kappa, Lotto, hummel, Macron, Zeus, Capelli, DIIY have no free mark and are lettered.
+
+## 10.10.2026 — Hapoel Tel Aviv, and the Olympiacos crest
+
+- Olympiacos: the owner's crest file (with the four stars) replaces the 100px catalogue logo (`public/club-kits/olympiacos/crest*.png`).
+- Hapoel Tel Aviv joins the catalogue pipeline: 33 drawings (`kit-archive-hapoel-tel-aviv.json`, SVGs, icons, static page). Maker and sponsor readings were cross-checked against the Worker's Kit Master — makers agree on every shirt both describe, sponsors on all but 2011/12 (read from the drawing as "בוני התיכון", the Kit Master says "במחיר"; the Kit Master's word is used). The wave is approved with the owner's words of 10.10.2026 and `kitViews` folds each shirt both sources describe into one card.
+- Era crests (`scripts/kits/hta-crests.ts` → `kit-crests-hapoel-tel-aviv.json`): each shirt prints the crest of its own era from the club's timeline and the variant that follows the cloth; the 2022/23 centenary year has no artwork and prints none (rule 25).
+- The Worker's real sponsor artwork (Subaru, Fujitsu, Arkia) and Macron join the mark library as raster marks; Keter, Umbro, Fujicom, IBI, הכשרה and במחיר have typographic styles.
+- The in-app archive shows the Worker's 168-shirt photographed archive (the part no card already uses) with "I have it", and the static page carries the same gallery.

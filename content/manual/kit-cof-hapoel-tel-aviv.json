@@ -1,0 +1,1261 @@
+{
+ "sources": [
+  {
+   "key": "cof",
+   "title": "colours-of-football.com — Hapoel Tel Aviv kit catalogue (© Mikhail Sipovich)",
+   "url": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html",
+   "readOn": "2026-10-10",
+   "kits": 33
+  },
+  {
+   "key": "logo",
+   "title": "football-logos.cc — Hapoel Tel Aviv logo",
+   "url": "https://football-logos.cc/israel/hapoel-tel-aviv/",
+   "readOn": "2026-10-10",
+   "kits": 0
+  }
+ ],
+ "source": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html",
+ "publisher": "colours-of-football.com (Mikhail Sipovich)",
+ "retrieved": "2026-10-10",
+ "count": 33,
+ "pages": {
+  "hapoel_tel-aviv_1.html": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html",
+  "hapoel_tel-aviv_2.html": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_2.html",
+  "hapoel_tel-aviv_3.html": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_3.html"
+ },
+ "method": "Season/type from the catalogue captions; design, maker, printed sponsor and trims transcribed by eye from the drawings (readUnsure marks the doubtful ones); colours measured from pixels in fixed regions (shirt, shorts, socks), transparent background excluded.",
+ "records": [
+  {
+   "i": 1,
+   "caption": "home kit 2002-2003",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Diadora",
+   "sponsor": "Keter",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 2,
+   "caption": "away kit 2002-2003",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_2_0203.png",
+   "season": "2002/03",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Diadora",
+   "sponsor": "Keter",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 3,
+   "caption": "home kit 2005-2006",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_0506.png",
+   "season": "2005/06",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "Subaru",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 4,
+   "caption": "home kit 2006-2007",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_0607.png",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Subaru",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 5,
+   "caption": "away kit 2006-2007",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_2_0607.png",
+   "season": "2006/07",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Subaru",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 6,
+   "caption": "home kit 2008-2009",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#ed1c24",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Umbro",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 7,
+   "caption": "away kit 2008-2009",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_2_0809.png",
+   "season": "2008/09",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "black",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Umbro",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 8,
+   "caption": "home kit 2011-2012",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#ed1c24",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "במחיר",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 9,
+   "caption": "away kit 2011-2012",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_2_1112.png",
+   "season": "2011/12",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#ed1c24"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": "במחיר",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 10,
+   "caption": "home kit 2012-2013",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#ed1c24",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": null,
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 11,
+   "caption": "away kit 2012-2013",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_2_1213.png",
+   "season": "2012/13",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "grey",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#bfc5cd"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Kappa",
+   "sponsor": null,
+   "readUnsure": true,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "grey",
+    "trimHex": "#bfc5cd"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 12,
+   "caption": "home kit 2014-2015",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#db1a21",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Fujicom",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 13,
+   "caption": "away kit 2014-2015",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_2_1415.png",
+   "season": "2014/15",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "white",
+    "hex": {
+     "body": "#282828",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Umbro",
+   "sponsor": "Fujicom",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 14,
+   "caption": "home kit 2015-2016",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_1516.png",
+   "season": "2015/16",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e61e2a",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Puma",
+   "sponsor": "Fujitsu",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 15,
+   "caption": "home kit 2016-2017",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Fujicom",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 16,
+   "caption": "home kit 2016-2017",
+   "page": "hapoel_tel-aviv_1.html",
+   "image": "isr_hapoel_tel-aviv_1_1617_2.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "Fujicom",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 17,
+   "caption": "away kit 2016-2017",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_2_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 4
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Fujicom",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 18,
+   "caption": "third kit 2016-2017",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_3_1617.png",
+   "season": "2016/17",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#212121",
+     "trim": "#4a4949"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 2
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "Fujicom",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#212121",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#212121",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 19,
+   "caption": "home kit 2018-2019",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_1_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "red",
+    "trim": "maroon",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#7c191e"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 0
+    }
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 20,
+   "caption": "away kit 2018-2019",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_2_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#333333",
+     "trim": "#4f4b4b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 21,
+   "caption": "away kit 2018-2019",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_2_1819_2.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 22,
+   "caption": "third kit 2018-2019",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_3_1819.png",
+   "season": "2018/19",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {
+     "stripes": 4
+    }
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 23,
+   "caption": "home kit 2019-2020",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_1_1920.png",
+   "season": "2019/20",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "readUnsure": true,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 24,
+   "caption": "home kit 2020-2021",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_1_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e31f2b",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 25,
+   "caption": "away kit 2020-2021",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_2_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "red",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#e31f2b"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 26,
+   "caption": "third kit 2020-2021",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_3_2021.png",
+   "season": "2020/21",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "grey",
+    "hex": {
+     "body": "#333333",
+     "trim": "#666160"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 27,
+   "caption": "home kit 2022-2023",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_1_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e41e2c",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#e41e2c",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e41e2c",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 28,
+   "caption": "home kit 2022-2023",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_1_2223_2.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#ed1c24",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 29,
+   "caption": "away kit 2022-2023",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_2_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "white",
+    "hex": {
+     "body": "#2c2c2d",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#2c2c2d",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#2c2c2d",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 30,
+   "caption": "third kit 2022-2023",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tel-aviv_3_2223.png",
+   "season": "2022/23",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "black",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#3e3d3e"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "grey",
+    "trimHex": "#d2d2d2"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 31,
+   "caption": "home kit 2025-2026",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tlv_1_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "red",
+    "trim": "white",
+    "hex": {
+     "body": "#e90711",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "IBI",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   }
+  },
+  {
+   "i": 32,
+   "caption": "away kit 2025-2026",
+   "page": "hapoel_tel-aviv_2.html",
+   "image": "isr_hapoel_tlv_2_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "white",
+    "trim": "black",
+    "hex": {
+     "body": "#ffffff",
+     "trim": "#1e1e1e"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "IBI",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  },
+  {
+   "i": 33,
+   "caption": "third kit 2025-2026",
+   "page": "hapoel_tel-aviv_3.html",
+   "image": "isr_hapoel_tlv_3_2526.png",
+   "season": "2025/26",
+   "seasonKind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "body": "black",
+    "trim": "white",
+    "hex": {
+     "body": "#1e1e1e",
+     "trim": "#ffffff"
+    },
+    "bodyMeasured": true,
+    "measured": {}
+   },
+   "maker": "Nike",
+   "sponsor": "IBI",
+   "readUnsure": false,
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   }
+  }
+ ]
+}

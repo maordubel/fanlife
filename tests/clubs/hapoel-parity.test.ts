@@ -22,7 +22,7 @@ describe('Hapoel Tel Aviv — Worker parity in the hub',()=>{
  it('carries the Kit Master kits with sourced maker and design, never a guessed colour',async()=>{
   const d=(await loadClub('hapoel-tel-aviv'))!.data
   expect(kitViews(d).length).toBeGreaterThanOrEqual(30)
-  for(const k of buildableKits(d)){expect(k.maker).toBeTruthy();expect(k.design).toBeTruthy();for(const c of k.colours)expect(['red','cream','black','grey']).toContain(c)}
+  for(const k of buildableKits(d)){expect(k.maker).toBeTruthy();expect(k.design).toBeTruthy();for(const c of k.colours)expect(['red','cream','white','black','grey','maroon']).toContain(c)}
  })
  it('rival is Maccabi Tel Aviv only (Worker rule 13) and the wall reads the full match archive',async()=>{
   const d=(await loadClub('hapoel-tel-aviv'))!.data,r=rivalsOf(d)

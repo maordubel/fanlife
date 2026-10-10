@@ -48,12 +48,15 @@ const norm=(c:string)=>COLOUR_WORD[c]??c
 const STRIPES=new Set(['stripes','pinstripes'])
 const SASHES=new Set(['sash','diagonal'])
 const PLAINISH=new Set(['plain','solid'])
-const designOk=(a:string|null,b:string|null)=>{
- const x=a&&PLAINISH.has(a)?'plain':a,y=b&&PLAINISH.has(b)?'plain':b
+const designOk=(a0:string|null,b0:string|null)=>{
+ const a=a0?.toLowerCase()??null,b=b0?.toLowerCase()??null,x=a&&PLAINISH.has(a)?'plain':a,y=b&&PLAINISH.has(b)?'plain':b
  return x===y||x===null||y===null||x==='graphic'||y==='graphic'||(STRIPES.has(x)&&STRIPES.has(y))||(SASHES.has(x)&&SASHES.has(y))
 }
 const subset=(a:string[],b:string[])=>a.every(c=>b.includes(c))
-const coloursOk=(a:string[],b:string[])=>!a.length||!b.length||subset(a,b)||subset(b,a)
+/** for comparison only: the Kit Master says cream and ink where a catalogue says white and black */
+const SAME_COLOUR:Record<string,string>={cream:'white',ink:'black'}
+const cmpColours=(c:string[])=>[...new Set(c.map(x=>SAME_COLOUR[x]??x))]
+const coloursOk=(a0:string[],b0:string[])=>{const a=cmpColours(a0),b=cmpColours(b0);return !a.length||!b.length||subset(a,b)||subset(b,a)}
 const makerOk=(a:string|null,b:string|null)=>!a||!b||a.toLowerCase()===b.toLowerCase()
 const typeKey=(t:string)=>{const v=t.toLowerCase();return v==='gk'||v==='goalkeeper'?'gk':v}
 const score=(k:KitView)=>(k.maker?3:0)+(k.sponsor?3:0)+(k.shorts?2:0)+(k.socks?2:0)+(k.design&&k.design!=='graphic'?1:0)+Math.min(k.colours.length,3)+Math.min(k.sources.length,3)*0.1-(/-v\d+$/.test(k.id)?5:0)-(/uefa-/.test(k.id)?4:0)

@@ -1,0 +1,1119 @@
+{
+ "sources": [
+  {
+   "id": "cof-hapoel-tel-aviv-p1",
+   "title": "hapoel-tel-aviv kits, catalogue page 1 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "cof-hapoel-tel-aviv-p2",
+   "title": "hapoel-tel-aviv kits, catalogue page 2 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_2.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "cof-hapoel-tel-aviv-p3",
+   "title": "hapoel-tel-aviv kits, catalogue page 3 — colours-of-football.com",
+   "url": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_3.html",
+   "publisher": "colours-of-football.com",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "kits": [
+  {
+   "id": "cof-k-31",
+   "value": {
+    "name": "hapoel-tel-aviv 2025/26 home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "IBI",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "white"
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-32",
+   "value": {
+    "name": "hapoel-tel-aviv 2025/26 away",
+    "season": "2025/26",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "white/black"
+    },
+    "sponsor": "IBI",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-33",
+   "value": {
+    "name": "hapoel-tel-aviv 2025/26 third",
+    "season": "2025/26",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "black/white"
+    },
+    "sponsor": "IBI",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p3"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: third kit 2025-2026. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-27",
+   "value": {
+    "name": "hapoel-tel-aviv 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "הכשרה",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-28-v2",
+   "value": {
+    "name": "hapoel-tel-aviv 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "הכשרה",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-29",
+   "value": {
+    "name": "hapoel-tel-aviv 2022/23 away",
+    "season": "2022/23",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "black/white"
+    },
+    "sponsor": "הכשרה",
+    "shorts": {
+     "colour": "black",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-30",
+   "value": {
+    "name": "hapoel-tel-aviv 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "white/black"
+    },
+    "sponsor": "הכשרה",
+    "shorts": {
+     "colour": "white",
+     "trim": "grey"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: third kit 2022-2023. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-24",
+   "value": {
+    "name": "hapoel-tel-aviv 2020/21 home",
+    "season": "2020/21",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "הכשרה",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-25",
+   "value": {
+    "name": "hapoel-tel-aviv 2020/21 away",
+    "season": "2020/21",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "הכשרה",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-26",
+   "value": {
+    "name": "hapoel-tel-aviv 2020/21 third",
+    "season": "2020/21",
+    "type": "third",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "plain",
+     "colors": "black/grey"
+    },
+    "sponsor": "הכשרה",
+    "shorts": {
+     "colour": "black",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: third kit 2020-2021. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-23",
+   "value": {
+    "name": "hapoel-tel-aviv 2019/20 home",
+    "season": "2019/20",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "Arkia",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2019-2020. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-19",
+   "value": {
+    "name": "hapoel-tel-aviv 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "hoops",
+     "colors": "red/maroon"
+    },
+    "sponsor": "Arkia",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-20",
+   "value": {
+    "name": "hapoel-tel-aviv 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "hoops",
+     "colors": "black/grey"
+    },
+    "sponsor": "Arkia",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-21-v2",
+   "value": {
+    "name": "hapoel-tel-aviv 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "Arkia",
+    "shorts": {
+     "colour": "white",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-22",
+   "value": {
+    "name": "hapoel-tel-aviv 2018/19 third",
+    "season": "2018/19",
+    "type": "third",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "Arkia",
+    "shorts": {
+     "colour": "white",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: third kit 2018-2019. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-15",
+   "value": {
+    "name": "hapoel-tel-aviv 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "Fujicom",
+    "shorts": {
+     "colour": "white",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-16-v2",
+   "value": {
+    "name": "hapoel-tel-aviv 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "gradient",
+     "colors": "red/white"
+    },
+    "sponsor": "Fujicom",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-17",
+   "value": {
+    "name": "hapoel-tel-aviv 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "white/red"
+    },
+    "sponsor": "Fujicom",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-18",
+   "value": {
+    "name": "hapoel-tel-aviv 2016/17 third",
+    "season": "2016/17",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes",
+     "colors": "black/grey"
+    },
+    "sponsor": "Fujicom",
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: third kit 2016-2017. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-14",
+   "value": {
+    "name": "hapoel-tel-aviv 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "Fujitsu",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2015-2016. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-12",
+   "value": {
+    "name": "hapoel-tel-aviv 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "sash",
+     "colors": "red/white"
+    },
+    "sponsor": "Fujicom",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-13",
+   "value": {
+    "name": "hapoel-tel-aviv 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "black/white"
+    },
+    "sponsor": "Fujicom",
+    "shorts": {
+     "colour": "black",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2014-2015. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-10",
+   "value": {
+    "name": "hapoel-tel-aviv 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2012-2013. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-11",
+   "value": {
+    "name": "hapoel-tel-aviv 2012/13 away",
+    "season": "2012/13",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "construction": {
+     "design": "plain",
+     "colors": "white/grey"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": "white",
+     "trim": "grey"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2012-2013. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-08",
+   "value": {
+    "name": "hapoel-tel-aviv 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "במחיר",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-09",
+   "value": {
+    "name": "hapoel-tel-aviv 2011/12 away",
+    "season": "2011/12",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "במחיר",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2011-2012. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher). The transcription of this drawing was flagged uncertain.",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-06",
+   "value": {
+    "name": "hapoel-tel-aviv 2008/09 home",
+    "season": "2008/09",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "Umbro",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2008-2009. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-07",
+   "value": {
+    "name": "hapoel-tel-aviv 2008/09 away",
+    "season": "2008/09",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "white/black"
+    },
+    "sponsor": "Umbro",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2008-2009. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-04",
+   "value": {
+    "name": "hapoel-tel-aviv 2006/07 home",
+    "season": "2006/07",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "Subaru",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2006-2007. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-05",
+   "value": {
+    "name": "hapoel-tel-aviv 2006/07 away",
+    "season": "2006/07",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "Subaru",
+    "shorts": {
+     "colour": "white",
+     "trim": "red"
+    },
+    "socks": {
+     "colour": "white",
+     "trim": "red"
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2006-2007. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-03",
+   "value": {
+    "name": "hapoel-tel-aviv 2005/06 home",
+    "season": "2005/06",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "construction": {
+     "design": "plain",
+     "colors": "red/white"
+    },
+    "sponsor": "Subaru",
+    "shorts": {
+     "colour": "red",
+     "trim": "white"
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2005-2006. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-01",
+   "value": {
+    "name": "hapoel-tel-aviv 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "manufacturer": "Diadora",
+    "construction": {
+     "design": "chest band",
+     "colors": "red/white"
+    },
+    "sponsor": "Keter",
+    "shorts": {
+     "colour": "red",
+     "trim": null
+    },
+    "socks": {
+     "colour": "red",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: home kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  },
+  {
+   "id": "cof-k-02",
+   "value": {
+    "name": "hapoel-tel-aviv 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "manufacturer": "Diadora",
+    "construction": {
+     "design": "chest band",
+     "colors": "white/red"
+    },
+    "sponsor": "Keter",
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "notes": "Approved by the owner in chat on 2026-10-10 (\"הכל מאושר לשימוש · תכין הכל כמו שצריך\"). Catalogue: away kit 2002-2003. Season and type are the publisher's caption; colours are measured from its drawing; design, maker and the printed sponsor are transcribed from the drawing (single publisher).",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat)"
+  }
+ ]
+}

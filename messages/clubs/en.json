@@ -358,5 +358,8 @@
   "kitOwnCloset": "To my closet →",
   "kitOwnMarket": "{n} in the market →",
   "kitOwnSaved": "Saved.",
-  "kitOwnLabel": "Your closet"
+  "kitOwnLabel": "Your closet",
+  "kitWorkerTitle": "The photographed archive · {n} more shirts",
+  "kitWorkerCredit": "Cut-out photographs from The Worker's archive (Vikipoel, courtesy of Yishai Zvi · Football Kit Archive).",
+  "kitWorkerLink": "All shirts and the market →"
 }
