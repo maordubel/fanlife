@@ -297,3 +297,50 @@ a.gp:active { transform: scale(.98); }
 .cad-page { padding-inline: 16px; }
 @media (min-width: 760px) { .cad-page { padding-inline: 24px; } }
 .cad-head .mag-chip { justify-self: start; }
+
+/* AWAY DAYS · the journey */
+.cad-modes { display: flex; gap: 6px; margin-bottom: 12px; }
+.cad-jbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+.cad-prog { margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+.cad-jbtns { display: flex; gap: 6px; }
+.cad-chip:disabled { opacity: .4; cursor: default; }
+.cad-cap { position: absolute; inset-inline-start: 8px; top: 8px; background: var(--mag-ink); color: var(--mag-paper, #fff); padding: 6px 10px; display: grid; gap: 2px; animation: cad-pop .45s cubic-bezier(.2,1.4,.4,1) both; max-width: calc(100% - 16px); pointer-events: none; }
+.cad-cap b { font-family: var(--mag-mono); font-size: 12px; letter-spacing: 1.5px; }
+.cad-cap span { font-size: 12px; opacity: .8; }
+.cad-run { position: absolute; inset-inline-end: 8px; bottom: 8px; display: flex; align-items: baseline; gap: 4px; background: var(--mag-ink); color: var(--mag-paper, #fff); padding: 4px 10px; pointer-events: none; }
+.cad-run b { font-family: var(--mag-condensed, inherit); font-size: 20px; margin-inline-start: 8px; }
+.cad-run b:first-child { margin-inline-start: 0; }
+.cad-run small { font-family: var(--mag-mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.cad-dock { margin-top: 12px; touch-action: pan-y; min-height: 210px; }
+.cad-card { border: 2px solid var(--mag-ink); padding: 12px 14px; display: grid; gap: 6px; animation: cad-slide .5s cubic-bezier(.2,1,.3,1) both; border-inline-start-width: 8px; }
+.cad-card[data-result='W'] { border-inline-start-color: var(--club-primary, var(--mag-ink)); }
+.cad-card small { font-family: var(--mag-mono); font-size: 11.5px; letter-spacing: .6px; text-transform: uppercase; }
+.cad-card h2 { margin: 0; font-family: var(--mag-condensed, inherit); font-size: 28px; line-height: 1.1; }
+.cad-big { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.cad-bigopp { font-weight: 900; font-size: clamp(22px, 6vw, 34px); line-height: 1.05; }
+.cad-bigscore { font-family: var(--mag-condensed, inherit); font-size: clamp(40px, 12vw, 64px); line-height: 1; display: inline-flex; }
+.cad-bigscore i { font-style: normal; display: inline-block; animation: cad-count .6s cubic-bezier(.2,1.5,.4,1) both; }
+.cad-bigscore i:last-child { animation-delay: .18s; }
+.cad-verdict { margin: 0; font-weight: 800; font-family: var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; font-size: 13px; }
+.cad-verdict[data-result='W'] { color: var(--club-type, var(--mag-ink)); }
+.cad-tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.cad-tags li { border: 1.5px solid var(--mag-ink); padding: 2px 8px; font-family: var(--mag-mono); font-size: 11px; letter-spacing: .6px; text-transform: uppercase; animation: cad-pop .5s .25s cubic-bezier(.2,1.4,.4,1) both; }
+.cad-dots { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 12px; }
+.cad-dots i { width: 9px; height: 9px; border: 1.5px solid var(--mag-ink); transition: transform .3s; }
+.cad-dots i[data-done] { background: var(--mag-ink); }
+.cad-dots i[data-done][data-r='W'] { background: var(--club-primary, var(--mag-ink)); border-color: var(--club-primary, var(--mag-ink)); }
+.cad-dots i[data-on] { transform: scale(1.7); background: var(--club-primary, var(--mag-ink)); }
+@keyframes cad-slide { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: none; } }
+@keyframes cad-pop { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+@keyframes cad-count { from { opacity: 0; transform: translateY(.5em) scale(.6); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .cad-card, .cad-cap, .cad-bigscore i, .cad-tags li { animation: none; } .cad-dots i { transition: none; } }
+.cad-journey .cad-map { height: min(56vh, 480px); }
+@media (max-width: 759px) {
+  .cad-head { gap: 4px; margin-bottom: 8px; }
+  .cad-head .cad-lede, .cad-head .mag-chip { display: none; }
+  .cad-head h1 { font-size: 30px; }
+  .cad-modes { margin-bottom: 8px; }
+  .cad-journey .cad-map { height: 34vh; min-height: 220px; }
+  .cad-jbar { margin-bottom: 8px; }
+  .cad-chip { padding: 6px 10px; }
+}
