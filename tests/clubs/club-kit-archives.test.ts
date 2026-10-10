@@ -11,6 +11,7 @@ import stPauliDeep from '@/club-packs/st-pauli/wave-deep-history-2026-10-08.json
 import stPauliCof from '@/club-packs/st-pauli/wave-kits-cof-2026-10-09.json'
 import celticCore from '@/club-packs/celtic/core.json'
 import celticDeep from '@/club-packs/celtic/wave-deep-history-2026-10-08.json'
+import htaCof from '@/club-packs/hapoel-tel-aviv/wave-kits-cof-2026-10-10.json'
 import olympiacosCof from '@/club-packs/olympiacos/wave-kits-cof-2026-10-09.json'
 import celticCof from '@/club-packs/celtic/wave-kits-cof-2026-10-09.json'
 import paoCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-09.json'
@@ -28,6 +29,7 @@ const CLUBS=[
  {id:'zrinjski-mostar',kits:19,file:'content/manual/kit-archive-zrinjski-mostar.json',wave:zrinjskiCof},
  {id:'hapoel-petah-tikva',kits:6,file:'content/manual/kit-archive-hapoel-petah-tikva.json',wave:null},
  {id:'celtic',kits:75,file:'content/manual/kit-archive-celtic.json',wave:celticCof},
+ {id:'hapoel-tel-aviv',kits:33,file:'content/manual/kit-archive-hapoel-tel-aviv.json',wave:htaCof},
  {id:'olympiacos',kits:71,file:'content/manual/kit-archive-olympiacos.json',wave:olympiacosCof},
  {id:'aek-athens',kits:99,file:'content/manual/kit-aek-athens.json',wave:null},
 ]
@@ -84,7 +86,7 @@ describe.each(CLUBS.filter(c=>c.wave))('$id: the catalogue wave',({id,wave,file}
  const w=wave as unknown as {sources:{id:string}[];kits:{id:string;status:string;confidence:number;sources:string[];value:{season:string;type:string;construction:{colors:string};shorts:{colour:string};socks:{colour:string}}}[]}
  it('is approved by the owner in his words ("מאשר הכל", 2026-10-09), every kit stamped — Olympiacos, ingested after those words, waits in review',()=>{
   if(id==='olympiacos'){for(const k of w.kits){expect(k.status).toBe('review');expect(k.confidence).toBe(1);expect(k).not.toHaveProperty('approvedBy')};return}
-  for(const k of w.kits){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect((k as unknown as {approvedBy:string}).approvedBy).toMatch(/Maor Harel/);expect((k as unknown as {notes:string}).notes).toContain('מאשר הכל')}
+  for(const k of w.kits){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect((k as unknown as {approvedBy:string}).approvedBy).toMatch(/Maor Harel/);expect((k as unknown as {notes:string}).notes).toMatch(id==='hapoel-tel-aviv'?/הכל מאושר לשימוש/:/מאשר הכל/)}
  })
  it('has unique ids, cites only its own sources, and never repeats a kit the pack already holds',()=>{
   expect(new Set(w.kits.map(k=>k.id)).size).toBe(w.kits.length)
@@ -153,9 +155,24 @@ describe('sponsor lettering',()=>{
 describe('real maker and sponsor marks',()=>{
  const m=read<{makers:Record<string,{viewBox:string;d:string;kind:string}>;sponsors:Record<string,{viewBox:string;d:string;kind:string}>}>('content/manual/maker-marks.json')
  it('holds a fitted vector for each mark, credited in the file, and the drawings and pages print them',()=>{
-  for(const g of [...Object.entries(m.makers),...Object.entries(m.sponsors)]){expect(g[1].d.length,g[0]).toBeGreaterThan(20);expect(g[1].viewBox.split(' ')).toHaveLength(4)}
+  for(const g of [...Object.entries(m.makers),...Object.entries(m.sponsors)]){if(g[1].kind==='raster')expect(existsSync(`public${(g[1] as unknown as {src:string}).src}`),g[0]).toBe(true);else expect(g[1].d.length,g[0]).toBeGreaterThan(20);expect(g[1].viewBox.split(' ')).toHaveLength(4)}
   expect(m.makers.nike).toBeTruthy();expect(m.makers.adidas).toBeTruthy();expect(m.sponsors.vodafone).toBeTruthy()
   const svg=readFileSync('public/club-kits/olympiacos/svg/cof-k-12.svg','utf8');expect(svg).toContain('<path d="M')
   expect(readFileSync('public/kit-archive/celtic/index.html','utf8')).toContain('"makers"')
+ })
+})
+
+describe('Hapoel Tel Aviv: era crests and the Worker\'s own data',()=>{
+ it('prints the crest of each shirt\'s era (none where the archive has no artwork), from the club\'s own timeline',()=>{
+  const m=read<Record<string,string|null>>('content/manual/kit-crests-hapoel-tel-aviv.json')
+  expect(m['2002/03|home']).toMatch(/keter-ball/);expect(m['2008/09|home']).toMatch(/circle-1927/);expect(m['2025/26|home']).toMatch(/circle-1923/);expect(m['2022/23|home']).toBeNull()
+  for(const v of Object.values(m))if(v)expect(existsSync(`public/club-kits/hapoel-tel-aviv/crests/${v.split('/').pop()}`),String(v)).toBe(true)
+ })
+ it('agrees with the Kit Master on maker and sponsor wherever both describe the same shirt',()=>{
+  const km=read<{kits:{seasonLabel:string;variant:string;fields:{maker:{value:{name:string}|null};sponsor:{value:{name:string}|null}}}[]}>('content/generated/kit-master.json').kits
+  const cof=read<Joined>('content/manual/kit-archive-hapoel-tel-aviv.json').kits
+  let same=0,both=0
+  for(const k of cof){const m=km.find(x=>x.seasonLabel===k.season&&x.variant===k.type);if(!m?.fields.maker.value)continue;both++;if(m.fields.maker.value.name.toLowerCase()===(k.maker??'').toLowerCase())same++}
+  expect(both).toBeGreaterThan(20);expect(same/both).toBeGreaterThan(0.95)
  })
 })

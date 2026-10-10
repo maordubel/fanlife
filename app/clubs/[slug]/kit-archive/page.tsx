@@ -16,7 +16,8 @@ import {kitArt} from '@/lib/clubs/kit-sources'
 import {clubKitPhotoOf} from '@/lib/clubs/kitArchive'
 import {hfkFor} from '@/lib/clubs/kit-hfk'
 import {cfsFor,cfsPhoto} from '@/lib/clubs/kit-cfs'
-import {cfsShirtSlug,shirtSlugFor} from '@/lib/fanlife/catalog'
+import {cfsShirtSlug,fanShirts,shirtSlugFor} from '@/lib/fanlife/catalog'
+import {shirtDateText} from '@/lib/fanlife/collector/cards'
 import {KitOwnBar,KitOwnProvider,type OwnCopy} from '@/components/clubs/KitOwn'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
@@ -45,8 +46,12 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
  const present=TYPES.filter(t=>all.some(k=>variantOf(k.type)===t))
  const slugOf=Object.fromEntries(await Promise.all(kits.map(async k=>[k.id,await shirtSlugFor(id,k)] as const)))
  const photoSlug=Object.fromEntries(await Promise.all((cfsFor(id)?.kits??[]).map(async k=>[k.image,await cfsShirtSlug(id,k.image)] as const)))
+ const catalogue=await fanShirts(),catSrc:Record<string,string>={}
+ for(const k of kits){const sl=slugOf[k.id];const sh=sl?catalogue.find(x=>x.slug===sl):null;if(sh?.src&&sh.src.startsWith('/kits/'))catSrc[k.id]=sh.src}
+ const usedSrc=new Set(Object.values(catSrc))
+ const workerExtras=id==='hapoel-tel-aviv'?catalogue.filter(x=>x.club===id&&x.src.startsWith('/kits/')&&!usedSrc.has(x.src)).sort((a,b)=>b.year-a.year||a.variant.localeCompare(b.variant)):[]
  const own:OwnCopy={have:copy.kitOwnHave,haveOn:copy.kitOwnHaveOn,want:copy.kitOwnWant,wantOn:copy.kitOwnWantOn,closet:copy.kitOwnCloset,market:copy.kitOwnMarket,saved:copy.kitOwnSaved,label:copy.kitOwnLabel}
- const ownSlugs=[...new Set([...Object.values(slugOf),...Object.values(photoSlug)].filter((x):x is string=>!!x))]
+ const ownSlugs=[...new Set([...Object.values(slugOf),...Object.values(photoSlug),...workerExtras.map(x=>x.slug)].filter((x):x is string=>!!x))]
  const hfk=hfkFor(id),cfs=cfsFor(id),shown=new Set(all.map(k=>`${k.season}|${variantOf(k.type)}`)),morePhotos=cfs?.kits.filter(k=>!shown.has(`${k.season}|${variantOf(k.type)}`))??[]
  const src=(ids:string[])=>ids.map(s=>core?.data.sources.find(x=>x.id===s)).filter((s):s is NonNullable<typeof s>=>!!s)
  return <ClubSurface theme={theme} clubId={id} locale={locale}><main id="main" className="mag-home kit-archive">
@@ -57,7 +62,7 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
    </nav>
    {seasons.map(s=><div key={s} className="kit-archive-season" data-testid="kit-archive-season"><h2 className="kit-archive-year"><bdi>{s}</bdi></h2>
     <ul className="kit-archive-row">{kits.filter(k=>k.season===s).map(k=><li key={k.id} className="kit-archive-card" data-testid="kit-archive-kit">
-     {(()=>{const photo=clubKitPhotoOf(id,k)??cfsPhoto(id,k.season,k.type),a=kitArt(id,k.id,k.season,k.type),src=photo??a?.image
+     {(()=>{const photo=clubKitPhotoOf(id,k)??catSrc[k.id]??cfsPhoto(id,k.season,k.type),a=kitArt(id,k.id,k.season,k.type),src=photo??a?.image
       return src?<img className="kit-archive-img" data-archive-photo={photo?'':undefined} src={src} alt={`${k.season} ${label(k.type)}`} width={160} height={215} loading="lazy" decoding="async"/>:<KitPlate kit={k} label={false}/>})()}
      <p className="kit-archive-type">{label(k.type)}{(()=>{const a=kitArt(id,k.id,k.season,k.type);return a?<> · <a href={a.svg} target="_blank" rel="noopener noreferrer">{copy.kitArchiveSvg}</a></>:null})()}</p>
      <p className="kit-archive-facts"><span>{k.maker??copy.kitArchiveNoMaker}</span>{k.sponsor&&<span> · {k.sponsor}</span>}</p>
@@ -70,6 +75,9 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
    {cfs&&morePhotos.length>0&&type==='all'&&<section className="kit-hfk" data-testid="kit-cfs" aria-labelledby="cfs-h"><h2 id="cfs-h" className="kit-archive-year">{copy.kitCfsTitle.replace('{n}',String(morePhotos.length))}</h2>
     <p className="mag-fine">{copy.kitCfsCredit} <a href={cfs.source.archivePage} target="_blank" rel="noopener noreferrer">{cfs.source.publisher}</a></p>
     <ul className="kit-hfk-grid">{morePhotos.map(k=><li key={k.id} className="kit-archive-card"><img className="kit-archive-img" data-archive-photo="" src={k.image} alt={`${k.season} ${k.type}`} width={k.width} height={k.height} loading="lazy" decoding="async"/><p className="kit-archive-type"><bdi>{k.season}</bdi> · {copy[`kitHfkType_${k.type}` as keyof typeof copy]??k.type}</p>{photoSlug[k.image]&&<KitOwnBar slug={photoSlug[k.image]!} copy={own}/>}</li>)}</ul></section>}
+   {workerExtras.length>0&&type==='all'&&<section className="kit-hfk" data-testid="kit-worker" aria-labelledby="wk-h"><h2 id="wk-h" className="kit-archive-year">{copy.kitWorkerTitle.replace('{n}',String(workerExtras.length))}</h2>
+    <p className="mag-fine">{copy.kitWorkerCredit} <a href="/shirts?club=hapoel-tel-aviv">{copy.kitWorkerLink}</a></p>
+    <ul className="kit-hfk-grid">{workerExtras.map(x=><li key={x.slug} className="kit-archive-card"><img className="kit-archive-img" data-archive-photo="" src={x.src} alt={`${shirtDateText(x)} ${x.variantHe}`} width={150} height={150} loading="lazy" decoding="async"/><p className="kit-archive-type"><bdi>{shirtDateText(x)}</bdi> · {x.variantHe}</p><KitOwnBar slug={x.slug} kitId={x.kitId} copy={own}/></li>)}</ul></section>}
    {hfk&&type==='all'&&<section className="kit-hfk" data-testid="kit-hfk" aria-labelledby="hfk-h"><h2 id="hfk-h" className="kit-archive-year">{copy.kitHfkTitle.replace('{n}',String(hfk.count))}</h2>
     <p className="mag-fine">{copy.kitHfkCredit} <a href={hfk.source.homePage} target="_blank" rel="noopener noreferrer">{hfk.source.publisher}</a></p>
     <ul className="kit-hfk-grid">{hfk.kits.map(k=><li key={k.id} className="kit-archive-card"><img className="kit-archive-img" src={k.image} alt={`${k.period} ${k.type}`} width={150} height={263} loading="lazy" decoding="async"/><p className="kit-archive-type"><bdi>{k.period}</bdi> · {copy[`kitHfkType_${k.type}` as keyof typeof copy] as string}</p>{k.maker&&<p className="kit-archive-facts"><span>{k.maker}</span></p>}</li>)}</ul></section>}

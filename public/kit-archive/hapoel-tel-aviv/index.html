@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ארכיון מדים Hapoel Tel Aviv</title>
+<meta name="description" content="ארכיון המדים של Hapoel Tel Aviv: 32 מערכות, ציורי SVG ותמונות מקור, עם כל המקורות.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;800&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a museum wardrobe. Decades are rails, kits hang on them with a season tag; a matrix view lays seasons against home/away/third. */
+:root{
+  --ink:#0a0a0b;--plate:#141415;--plate-2:#1c1c1e;--line:#2b2b2e;--line-2:#3a3a3e;
+  --gold:#e5484d;--gold-dim:#e5484d33;--paper:#f4f0e6;--mute:#a09b8f;
+  --ok:#72d39b;--rev:#e8955a;
+  --display:'Secular One','Assistant',system-ui,sans-serif;--num:'Bebas Neue','Secular One',Impact,sans-serif;--body:'Assistant',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font:400 16px/1.55 var(--body);padding-inline:clamp(16px,4vw,56px);padding-block:0 72px;
+  background-image:radial-gradient(900px 420px at 90% -8%,#f3c61320,transparent 62%),radial-gradient(700px 400px at 0% 30%,#ffffff08,transparent 60%)}
+.wrap{max-width:1320px;margin-inline:auto}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+header.top{padding-block:clamp(28px,6vw,72px) 30px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;border-bottom:1px solid var(--line)}
+.kick{font:600 12px var(--mono);letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin:0 0 12px}
+h1{font:400 clamp(44px,9vw,108px)/.92 var(--display);margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--gold)}
+h1.club{display:flex;align-items:center;gap:20px}h1.club img{width:clamp(56px,9vw,96px);height:auto;flex:none}h1.club small{display:block;font:600 14px var(--mono);letter-spacing:.16em;color:var(--mute);margin-top:10px;text-transform:uppercase}
+.lede{max-width:56ch;color:var(--mute);margin:18px 0 0}
+.stats{display:grid;grid-template-columns:repeat(2,auto);gap:10px 34px}
+.stats div{display:flex;flex-direction:column}
+.stats b{font:400 52px/1 var(--num);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.stats span{font:600 11px var(--mono);letter-spacing:.14em;color:var(--mute);text-transform:uppercase}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:#0a0a0bf2;backdrop-filter:blur(10px);display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.grp>label,.grp>span.l{font:600 11px var(--mono);letter-spacing:.14em;color:var(--mute);margin-inline-end:4px;text-transform:uppercase}
+.chip{font:600 14px var(--body);color:var(--paper);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:5px 14px;cursor:pointer}
+.chip:hover{border-color:var(--mute)}
+.chip[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#111}
+input[type=search],select{font:400 15px var(--body);background:var(--plate);color:var(--paper);border:1px solid var(--line-2);padding:6px 12px;border-radius:6px;min-width:0}
+input[type=search]{width:min(180px,100%)}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:999px;overflow:hidden}
+.seg .chip{border:0;border-radius:0}
+.count{margin-inline-start:auto;font:600 12px var(--mono);color:var(--mute);letter-spacing:.1em}
+/* seasons: one row per season, one complete kit per slot (home / away / third / other) */
+.season{display:grid;grid-template-columns:176px minmax(0,1fr);gap:8px 22px;padding-block:26px;border-bottom:1px solid var(--line);align-items:start}
+.sn{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);align-self:start}
+.sn b{display:block;font:400 clamp(38px,4.4vw,54px)/.9 var(--num);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.sn span{font:600 11px var(--mono);letter-spacing:.12em;color:var(--mute)}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:14px}
+.item{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 8px 12px;background:var(--plate);border:1px solid var(--line);transition:border-color .2s,transform .25s;min-width:0}
+.item:hover,.item:focus-visible{border-color:var(--gold);transform:translateY(-3px)}
+.item:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.kitbox{width:100%;aspect-ratio:430/470;display:grid;place-items:center;align-content:center}
+.kitbox svg{width:100%;height:auto;filter:drop-shadow(0 10px 8px #0009)}
+.tag{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+.tag .t{font:600 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.tag .m{font-size:13px;color:var(--mute)}
+.tag .cap{font:400 11px var(--mono);color:var(--line-2);letter-spacing:.04em}
+.pip{width:7px;height:7px;border-radius:50%;display:inline-block;margin-inline-end:5px;background:var(--rev)}
+.pip.two{background:#e8d27a}.pip.ok{background:var(--ok)}
+.empty{padding:70px 0;text-align:center;color:var(--mute)}
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;margin-top:56px}
+.note{border:1px solid var(--line);padding:22px;background:var(--plate);min-width:0}
+.note h3{font:400 22px var(--display);margin:0 0 8px}
+.note p{margin:0;color:var(--mute);font-size:15px}
+.note p+p{margin-top:8px}
+/* dialog */
+dialog{border:1px solid var(--gold);background:var(--ink);color:var(--paper);padding:0;width:min(1020px,calc(100vw - 20px));max-height:calc(100dvh - 20px);overflow:auto}
+dialog::backdrop{background:#000d}
+.dlg{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+.dstage{display:grid;place-items:center;padding:24px;min-height:440px;background:radial-gradient(70% 60% at 50% 40%,#2c2c30,var(--plate) 78%);position:relative}
+.srcfig{margin:0;position:absolute;inset-block-end:12px;inset-inline-start:12px;background:#fff;padding:6px 6px 2px;border:1px solid var(--line-2);width:104px}.srcfig img{width:100%;height:auto;display:block}.srcfig figcaption{font:600 10px var(--mono);letter-spacing:.1em;color:#444;text-align:center}
+.kitbox img{width:100%;height:auto;max-height:100%;object-fit:contain;background:#fff;padding:6px}
+.dstage svg{width:100%;max-width:470px;height:auto;filter:drop-shadow(0 22px 16px #000c)}
+.info{padding:28px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.info h2{font:400 clamp(54px,7vw,92px)/.85 var(--num);margin:0;letter-spacing:.02em}
+.badge{display:inline-block;font:600 11px var(--mono);letter-spacing:.12em;padding:3px 9px;border:1px solid;text-transform:uppercase;align-self:flex-start}
+.badge.ok{color:var(--ok);border-color:var(--ok)}.badge.rev{color:var(--rev);border-color:var(--rev)}
+dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:9px 18px;margin:0}
+dt{color:var(--mute);font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding-top:5px}
+dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.sw{display:inline-flex;align-items:center;gap:7px;margin-inline-end:12px;font:400 13px var(--mono)}
+.sw i{width:22px;height:22px;border:1px solid #fff5;display:inline-block}
+.warn{border-inline-start:3px solid var(--rev);padding:8px 14px;background:#e8955a14;font-size:15px}
+.warn.ok{border-color:var(--ok);background:#72d39b14}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.btn{font:800 14px var(--body);background:var(--gold);color:#111;border:0;padding:10px 18px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--paper);border:1px solid var(--line-2)}
+a.btn{text-decoration:none;display:inline-block}
+a{color:var(--gold)}
+textarea.cp{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px}
+@media(max-width:780px){.season{grid-template-columns:1fr}.sn{position:static;display:flex;align-items:baseline;gap:12px}header.top{grid-template-columns:1fr}.dlg{grid-template-columns:1fr}.dstage{min-height:300px}.count{margin-inline-start:0;width:100%}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.hfk{padding-block:34px;border-top:1px solid var(--line)}.hfk h2{font:600 24px var(--body);margin:0 0 6px}.hfk .cr{color:var(--mute);font-size:14px;margin:0 0 18px;max-width:70ch}.hfk .cr a{color:var(--gold)}
+.hfk .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(132px,100%),1fr));gap:14px}.hfk figure{margin:0;background:var(--plate);border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center}
+.hfk img{width:100%;height:auto;max-width:150px;image-rendering:auto}.hfk figcaption{font:600 12px var(--mono);color:var(--paper);margin-top:6px;letter-spacing:.04em}.hfk figcaption small{display:block;color:var(--mute);font-weight:400}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div>
+    <p class="kick" id="kick"></p>
+    <h1 class="club"><img id="crest" alt="" width="84" height="84"><span>ארכיון <em>המדים</em><small id="clubname"></small></span></h1>
+    <p class="lede">כל עונה כמערכת שלמה: חולצה, מכנסיים וגרביים. הצבעים נמדדים מפיקסלים של שני מקורות בלתי תלויים, לא מנוחשים. מה שאף מקור לא מראה נשאר ריק ומסומן.</p>
+  </div>
+  <div class="stats" aria-label="סיכום">
+    <div><b id="sKits">0</b><span>מערכות</span></div>
+    <div><b id="sSeasons">0</b><span>עונות</span></div>
+    <div><b id="sCat">0</b><span>מערכות מלאות</span></div>
+    <div><b id="sX">0</b><span>נבדקו בשני מקורות</span></div>
+  </div>
+</header>
+
+<div class="bar" role="toolbar" aria-label="סינון ותצוגה">
+    <div class="grp"><span class="seg" role="group" aria-label="תצוגה"><button class="chip" type="button" data-art="svg" aria-pressed="true">ציור</button><button class="chip" type="button" data-art="src" aria-pressed="false">תמונת מקור</button></span></div>
+  <div class="grp" id="fType"><span class="l">סוג</span></div>
+  <div class="grp"><label for="fDesign">דגם</label><select id="fDesign"><option value="all">הכול</option></select></div>
+  <div class="grp"><label for="fMaker">יצרן</label><select id="fMaker"><option value="all">הכול</option></select></div>
+  <div class="grp" id="fSrc"><span class="l">מקור</span></div>
+  <div class="grp"><label for="fQ">עונה</label><input id="fQ" type="search" placeholder="למשל 2016" inputmode="numeric" autocomplete="off"></div>
+  <span class="count" id="count" aria-live="polite"></span>
+</div>
+
+<main id="main"></main>
+
+<section class="hfk" id="hfk" aria-labelledby="hfkT" hidden></section>
+<section class="hfk" id="cfs" hidden></section>
+<section class="hfk" id="wk" hidden></section>
+
+<section class="notes" aria-label="על הארכיון">
+  <div class="note"><h3>מה מדוד ומה לא</h3><p>הצבעים הם הערך המדויק השכיח בכל ציור, בנפרד לחולצה, למכנסיים ולגרביים. ספירת הפסים נמדדת מהפיקסלים. הדגם נקרא בעין ונבדק מול המדידה.</p><p>יצרן וספונסר מוזנים רק כשציור בקטלוג מראה אותם. לחולצות שיש להן רק ציור מקומונס אין יצרן או ספונסר.</p></div>
+  <div class="note"><h3>עונה וסוג</h3><p>בקטלוג העונה והסוג הם כותרת המקור. בקבצי קומונס הם נגזרים משם הקובץ (<bdi dir="ltr">h / a / t</bdi>), מוסכמה ולא הצהרת מועדון. כשהמקורות חולקים, הכותרת קובעת וההבדל מוצג בכרטיס.</p></div>
+  <div class="note"><h3>הסמל והדפסים</h3><p>סמל המועדון מודפס מקובץ מקור ולא מצויר, ולכן משבצת הסמל ריקה עד שיועלה קובץ מורשה. חולצות עם הדפס גרפי מוצגות בצבע הבסיס עם סימון, כי ההדפס לא מצויר.</p></div>
+  <div class="note"><h3>סטטוס</h3><p><span class="pip ok"></span>יצרן מאומת מנתוני המועדון. <span class="pip two"></span>שני מקורות מתאימים. <span class="pip"></span>מקור יחיד. הכול ממתין לאישור הבעלים וייכנס למשחקים רק אחריו.</p></div>
+</section>
+</div>
+
+<dialog id="dlg" aria-labelledby="dTitle"><div class="dlg" id="dBody"></div></dialog>
+<textarea class="cp" id="cp" aria-hidden="true" tabindex="-1"></textarea>
+
+<script>
+const DATA={"retrieved":"2026-10-10","club":{"id":"hapoel-tel-aviv","name":"Hapoel Tel Aviv"},"crest":"/club-kits/hapoel-tel-aviv/crest.png","catalogueUrls":["https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html","https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_2.html","https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_3.html"],"sources":{"catalogue":"https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html"},"total":32,"catalogue":32,"drawingOnly":0,"crossChecked":0,"conflicts":0,"kits":[{"id":"cof-k-31","origin":"catalogue","season":"2025/26","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#e90711","white":"#ffffff"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null},"socks":{"colour":"white","hex":"#ffffff","trim":"white","trimHex":"#ffffff","bands":true},"maker":"Nike","sponsor":"IBI","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2025-2026","image":"isr_hapoel_tlv_1_2526.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tlv_1_2526.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-32","origin":"catalogue","season":"2025/26","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["white","black"],"hex":{"white":"#ffffff","black":"#1e1e1e"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Nike","sponsor":"IBI","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2025-2026","image":"isr_hapoel_tlv_2_2526.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tlv_2_2526.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-33","origin":"catalogue","season":"2025/26","kind":"season","type":"third","euro":false,"shirt":{"design":"plain","colours":["black","white"],"hex":{"black":"#1e1e1e","white":"#ffffff"},"measured":{}},"shorts":{"colour":"black","hex":"#1e1e1e","trim":null,"trimHex":null},"socks":{"colour":"black","hex":"#1e1e1e","trim":null,"trimHex":null,"bands":false},"maker":"Nike","sponsor":"IBI","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p3"],"evidence":[{"publisher":"colours-of-football.com","ref":"third kit 2025-2026","image":"isr_hapoel_tlv_3_2526.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tlv_3_2526.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-27","origin":"catalogue","season":"2022/23","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#e41e2c","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#e41e2c","trim":null,"trimHex":null},"socks":{"colour":"red","hex":"#e41e2c","trim":null,"trimHex":null,"bands":false},"maker":"adidas","sponsor":"הכשרה","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2022-2023","image":"isr_hapoel_tel-aviv_1_2223.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_2223.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[],"moreImages":["/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_2223_2.png"],"photo":"/club-kits/hapoel-tel-aviv/cfs/home-2022-23.webp"},{"id":"cof-k-29","origin":"catalogue","season":"2022/23","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["black","white"],"hex":{"black":"#2c2c2d","white":"#ffffff"},"measured":{}},"shorts":{"colour":"black","hex":"#2c2c2d","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"black","hex":"#2c2c2d","trim":null,"trimHex":null,"bands":false},"maker":"adidas","sponsor":"הכשרה","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2022-2023","image":"isr_hapoel_tel-aviv_2_2223.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_2223.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/away-2022-23.webp"},{"id":"cof-k-30","origin":"catalogue","season":"2022/23","kind":"season","type":"third","euro":false,"shirt":{"design":"plain","colours":["white","black"],"hex":{"white":"#ffffff","black":"#3e3d3e"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":"grey","trimHex":"#d2d2d2"},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"adidas","sponsor":"הכשרה","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"third kit 2022-2023","image":"isr_hapoel_tel-aviv_3_2223.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_3_2223.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/third-2022-23.webp"},{"id":"cof-k-24","origin":"catalogue","season":"2020/21","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#e31f2b","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null},"socks":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null,"bands":false},"maker":"Macron","sponsor":"הכשרה","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2020-2021","image":"isr_hapoel_tel-aviv_1_2021.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_2021.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/home-2020-21.webp"},{"id":"cof-k-25","origin":"catalogue","season":"2020/21","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["white","red"],"hex":{"white":"#ffffff","red":"#e31f2b"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":"red","trimHex":"#e31f2b"},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Macron","sponsor":"הכשרה","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2020-2021","image":"isr_hapoel_tel-aviv_2_2021.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_2021.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/away-2020-21.webp"},{"id":"cof-k-26","origin":"catalogue","season":"2020/21","kind":"season","type":"third","euro":false,"shirt":{"design":"plain","colours":["black","grey"],"hex":{"black":"#333333","grey":"#666160"},"measured":{}},"shorts":{"colour":"black","hex":"#333333","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"black","hex":"#333333","trim":null,"trimHex":null,"bands":false},"maker":"Macron","sponsor":"הכשרה","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"third kit 2020-2021","image":"isr_hapoel_tel-aviv_3_2021.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_3_2021.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/third-2020-21.webp"},{"id":"cof-k-23","origin":"catalogue","season":"2019/20","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#e31f2b","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null},"socks":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null,"bands":false},"maker":"Macron","sponsor":"Arkia","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2019-2020","image":"isr_hapoel_tel-aviv_1_1920.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1920.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[]},{"id":"cof-k-19","origin":"catalogue","season":"2018/19","kind":"season","type":"home","euro":false,"shirt":{"design":"hoops","colours":["red","maroon"],"hex":{"red":"#e31f2b","maroon":"#7c191e"},"measured":{"hoops":0}},"shorts":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null},"socks":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null,"bands":false},"maker":"Macron","sponsor":"Arkia","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2018-2019","image":"isr_hapoel_tel-aviv_1_1819.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1819.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/home-2018-19.webp"},{"id":"cof-k-20","origin":"catalogue","season":"2018/19","kind":"season","type":"away","euro":false,"shirt":{"design":"hoops","colours":["black","grey"],"hex":{"black":"#333333","grey":"#4f4b4b"},"measured":{"hoops":3}},"shorts":{"colour":"black","hex":"#333333","trim":null,"trimHex":null},"socks":{"colour":"black","hex":"#333333","trim":null,"trimHex":null,"bands":false},"maker":"Macron","sponsor":"Arkia","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2018-2019","image":"isr_hapoel_tel-aviv_2_1819.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1819.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/away-2018-19.webp"},{"id":"cof-k-21-v2","origin":"catalogue","season":"2018/19","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["white","red"],"hex":{"white":"#ffffff","red":"#e31f2b"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Macron","sponsor":"Arkia","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2018-2019","image":"isr_hapoel_tel-aviv_2_1819_2.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1819_2.png","drawings":[],"conflicts":[],"notes":[["second"]],"verified":null,"readUnsure":false,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/away-2018-19.webp"},{"id":"cof-k-22","origin":"catalogue","season":"2018/19","kind":"season","type":"third","euro":false,"shirt":{"design":"stripes","colours":["white","red"],"hex":{"white":"#ffffff","red":"#e31f2b"},"measured":{"stripes":4}},"shorts":{"colour":"white","hex":"#ffffff","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Macron","sponsor":"Arkia","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"third kit 2018-2019","image":"isr_hapoel_tel-aviv_3_1819.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_3_1819.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[],"photo":"/club-kits/hapoel-tel-aviv/cfs/third-2018-19.webp"},{"id":"cof-k-15","origin":"catalogue","season":"2016/17","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#e31f2b","white":"#ffffff"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Nike","sponsor":"Fujicom","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2016-2017","image":"isr_hapoel_tel-aviv_1_1617.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1617.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-16-v2","origin":"catalogue","season":"2016/17","kind":"season","type":"home","euro":false,"shirt":{"design":"gradient","colours":["red","white"],"hex":{"red":"#e31f2b","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#ed1c24","trim":null,"trimHex":null},"socks":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null,"bands":false},"maker":"Nike","sponsor":"Fujicom","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2016-2017","image":"isr_hapoel_tel-aviv_1_1617_2.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1617_2.png","drawings":[],"conflicts":[],"notes":[["second"]],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-17","origin":"catalogue","season":"2016/17","kind":"season","type":"away","euro":false,"shirt":{"design":"stripes","colours":["white","red"],"hex":{"white":"#ffffff","red":"#e31f2b"},"measured":{"stripes":4}},"shorts":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null},"socks":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null,"bands":false},"maker":"Nike","sponsor":"Fujicom","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2016-2017","image":"isr_hapoel_tel-aviv_2_1617.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1617.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[]},{"id":"cof-k-18","origin":"catalogue","season":"2016/17","kind":"season","type":"third","euro":false,"shirt":{"design":"stripes","colours":["black","grey"],"hex":{"black":"#212121","grey":"#4a4949"},"measured":{"stripes":2}},"shorts":{"colour":"black","hex":"#212121","trim":null,"trimHex":null},"socks":{"colour":"black","hex":"#212121","trim":null,"trimHex":null,"bands":false},"maker":"Nike","sponsor":"Fujicom","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p2"],"evidence":[{"publisher":"colours-of-football.com","ref":"third kit 2016-2017","image":"isr_hapoel_tel-aviv_3_1617.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_3_1617.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[]},{"id":"cof-k-14","origin":"catalogue","season":"2015/16","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#e61e2a","white":"#ffffff"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null},"socks":{"colour":"white","hex":"#ffffff","trim":"red","trimHex":"#ffffff","bands":true},"maker":"Puma","sponsor":"Fujitsu","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2015-2016","image":"isr_hapoel_tel-aviv_1_1516.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1516.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-12","origin":"catalogue","season":"2014/15","kind":"season","type":"home","euro":false,"shirt":{"design":"sash","colours":["red","white"],"hex":{"red":"#db1a21","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#ed1c24","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"red","hex":"#ed1c24","trim":null,"trimHex":null,"bands":false},"maker":"Umbro","sponsor":"Fujicom","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2014-2015","image":"isr_hapoel_tel-aviv_1_1415.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1415.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-13","origin":"catalogue","season":"2014/15","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["black","white"],"hex":{"black":"#282828","white":"#ffffff"},"measured":{}},"shorts":{"colour":"black","hex":"#282828","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"black","hex":"#282828","trim":null,"trimHex":null,"bands":false},"maker":"Umbro","sponsor":"Fujicom","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2014-2015","image":"isr_hapoel_tel-aviv_2_1415.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1415.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-10","origin":"catalogue","season":"2012/13","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#ed1c24","white":"#ffffff"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Kappa","sponsor":null,"shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2012-2013","image":"isr_hapoel_tel-aviv_1_1213.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1213.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[]},{"id":"cof-k-11","origin":"catalogue","season":"2012/13","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["white","grey"],"hex":{"white":"#ffffff","grey":"#bfc5cd"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":"grey","trimHex":"#bfc5cd"},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Kappa","sponsor":null,"shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2012-2013","image":"isr_hapoel_tel-aviv_2_1213.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1213.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[]},{"id":"cof-k-08","origin":"catalogue","season":"2011/12","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#ed1c24","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#ed1c24","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"red","hex":"#ed1c24","trim":null,"trimHex":null,"bands":false},"maker":"Kappa","sponsor":"במחיר","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2011-2012","image":"isr_hapoel_tel-aviv_1_1112.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1112.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[]},{"id":"cof-k-09","origin":"catalogue","season":"2011/12","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["white","red"],"hex":{"white":"#ffffff","red":"#ed1c24"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":"red","trimHex":"#ed1c24"},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Kappa","sponsor":"במחיר","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2011-2012","image":"isr_hapoel_tel-aviv_2_1112.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1112.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":true,"twin":[]},{"id":"cof-k-06","origin":"catalogue","season":"2008/09","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#ed1c24","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#ed1c24","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"red","hex":"#ed1c24","trim":null,"trimHex":null,"bands":false},"maker":"Umbro","sponsor":"Umbro","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2008-2009","image":"isr_hapoel_tel-aviv_1_0809.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_0809.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-07","origin":"catalogue","season":"2008/09","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["white","black"],"hex":{"white":"#ffffff","black":"#ffffff"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":"red","trimHex":"#ed1c24"},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Umbro","sponsor":"Umbro","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2008-2009","image":"isr_hapoel_tel-aviv_2_0809.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_0809.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-04","origin":"catalogue","season":"2006/07","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#e31f2b","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#e31f2b","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null,"bands":false},"maker":"Umbro","sponsor":"Subaru","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2006-2007","image":"isr_hapoel_tel-aviv_1_0607.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_0607.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-05","origin":"catalogue","season":"2006/07","kind":"season","type":"away","euro":false,"shirt":{"design":"plain","colours":["white","red"],"hex":{"white":"#ffffff","red":"#e31f2b"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":"red","trimHex":"#e31f2b"},"socks":{"colour":"white","hex":"#ffffff","trim":"red","trimHex":"#ffffff","bands":true},"maker":"Umbro","sponsor":"Subaru","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2006-2007","image":"isr_hapoel_tel-aviv_2_0607.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_0607.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-03","origin":"catalogue","season":"2005/06","kind":"season","type":"home","euro":false,"shirt":{"design":"plain","colours":["red","white"],"hex":{"red":"#e31f2b","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#e31f2b","trim":"white","trimHex":"#ffffff"},"socks":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null,"bands":false},"maker":"Kappa","sponsor":"Subaru","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2005-2006","image":"isr_hapoel_tel-aviv_1_0506.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_0506.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-01","origin":"catalogue","season":"2002/03","kind":"season","type":"home","euro":false,"shirt":{"design":"chest band","colours":["red","white"],"hex":{"red":"#e31f2b","white":"#ffffff"},"measured":{}},"shorts":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null},"socks":{"colour":"red","hex":"#e31f2b","trim":null,"trimHex":null,"bands":false},"maker":"Diadora","sponsor":"Keter","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"home kit 2002-2003","image":"isr_hapoel_tel-aviv_1_0203.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_0203.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]},{"id":"cof-k-02","origin":"catalogue","season":"2002/03","kind":"season","type":"away","euro":false,"shirt":{"design":"chest band","colours":["white","red"],"hex":{"white":"#ffffff","red":"#e31f2b"},"measured":{}},"shorts":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null},"socks":{"colour":"white","hex":"#ffffff","trim":null,"trimHex":null,"bands":false},"maker":"Diadora","sponsor":"Keter","shortsSponsor":null,"sources":["cof-hapoel-tel-aviv-p1"],"evidence":[{"publisher":"colours-of-football.com","ref":"away kit 2002-2003","image":"isr_hapoel_tel-aviv_2_0203.png"}],"image":"/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_0203.png","drawings":[],"conflicts":[],"notes":[],"verified":null,"readUnsure":false,"twin":[]}],"worker":{"count":168,"source":{"publisher":"The Worker — ארכיון החולצות הצילומי (ויקיפועל, באדיבות ישי צבי · Football Kit Archive)","url":"/shirts"},"kits":[{"file":"/kits/fka-2017-18-away.webp","season":"2017/18","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2018-19-away.webp","season":"2018/19","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2019-20-away.webp","season":"2019/20","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2020-21-away.webp","season":"2020/21","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2021-22-away.webp","season":"2021/22","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2022-23-away.webp","season":"2022/23","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2023-24-away.webp","season":"2023/24","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2024-25-away.webp","season":"2024/25","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2025-26-away.webp","season":"2025/26","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2026-27-away.webp","season":"2026/27","year":null,"variant":"חוץ","type":"away","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2018-19-fourth.webp","season":"2018/19","year":null,"variant":"רביעית","type":"fourth","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2022-23-gk.webp","season":"2022/23","year":null,"variant":"שוער","type":"gk","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2022-23-gk-2.webp","season":"2022/23","year":null,"variant":"שוער","type":"gk","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2022-23-gk-3.webp","season":"2022/23","year":null,"variant":"שוער","type":"gk","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2024-25-gk-1.webp","season":"2024/25","year":null,"variant":"שוער","type":"gk","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2024-25-gk-2.webp","season":"2024/25","year":null,"variant":"שוער","type":"gk","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2024-25-gk-3.webp","season":"2024/25","year":null,"variant":"שוער","type":"gk","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2025-26-gk-1.webp","season":"2025/26","year":null,"variant":"שוער","type":"gk","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1949-50-home.webp","season":"1949/50","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1951-52-home.webp","season":"1951/52","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1952-53-home.webp","season":"1952/53","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1957-58-home.webp","season":"1957/58","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1958-59-home.webp","season":"1958/59","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1959-60-home.webp","season":"1959/60","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1962-63-home.webp","season":"1962/63","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1965-66-home.webp","season":"1965/66","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1974-75-home.webp","season":"1974/75","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-1975-76-home.webp","season":"1975/76","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2006-07-home.webp","season":"2006/07","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2014-15-home.webp","season":"2014/15","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2016-17-home.webp","season":"2016/17","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2018-19-home.webp","season":"2018/19","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2020-21-home.webp","season":"2020/21","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2021-22-home.webp","season":"2021/22","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2022-23-home.webp","season":"2022/23","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2022-23-home-2.webp","season":"2022/23","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2023-24-home.webp","season":"2023/24","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2023-24-pre-season-home.webp","season":"2023/24","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2024-25-home.webp","season":"2024/25","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2025-26-home.webp","season":"2025/26","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2026-27-home.webp","season":"2026/27","year":null,"variant":"בית","type":"home","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2022-23-pink-october.webp","season":"2022/23","year":null,"variant":"מיוחדת","type":"special","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2023-24-special.webp","season":"2023/24","year":null,"variant":"מיוחדת","type":"special","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2024-25-pink-october.webp","season":"2024/25","year":null,"variant":"מיוחדת","type":"special","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2025-26-pink-october.webp","season":"2025/26","year":null,"variant":"מיוחדת","type":"special","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2015-16-third.webp","season":"2015/16","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2017-18-third.webp","season":"2017/18","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2018-19-third.webp","season":"2018/19","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2020-21-third.webp","season":"2020/21","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2021-22-third.webp","season":"2021/22","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2022-23-third.webp","season":"2022/23","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2023-24-third.webp","season":"2023/24","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2024-25-third.webp","season":"2024/25","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/fka-2025-26-third.webp","season":"2025/26","year":null,"variant":"שלישית","type":"third","ambiguous":false,"source":"fka"},{"file":"/kits/vp-1985-away.webp","season":null,"year":1985,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1986-home.webp","season":null,"year":1986,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1988-home.webp","season":null,"year":1988,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1991-home.webp","season":null,"year":1991,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1992-home.webp","season":null,"year":1992,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1992-home-2.webp","season":null,"year":1992,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1993-home.webp","season":null,"year":1993,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1994-away.webp","season":null,"year":1994,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1994-home.webp","season":null,"year":1994,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1997-away.webp","season":null,"year":1997,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1997-home.webp","season":null,"year":1997,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1998-away.webp","season":null,"year":1998,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1998-away-match-worn.webp","season":null,"year":1998,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1998-home.webp","season":null,"year":1998,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1998-home-b.webp","season":null,"year":1998,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1999-home.webp","season":null,"year":1999,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1999-home-b.webp","season":null,"year":1999,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-1999-home-fan.webp","season":null,"year":1999,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2000-home.webp","season":null,"year":2000,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2001-away.webp","season":null,"year":2001,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2001-home.webp","season":null,"year":2001,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2001-home-2.webp","season":null,"year":2001,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2001-home-league.webp","season":null,"year":2001,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2001-home-league-2.webp","season":null,"year":2001,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2002-away.webp","season":null,"year":2002,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2002-away-europe.webp","season":null,"year":2002,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2002-home.webp","season":null,"year":2002,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2003-away.webp","season":null,"year":2003,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2003-home.webp","season":null,"year":2003,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2004-away.webp","season":null,"year":2004,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2004-home.webp","season":null,"year":2004,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2005-away.webp","season":null,"year":2005,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2005-away-2.webp","season":null,"year":2005,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2006-away.webp","season":null,"year":2006,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2006-home.webp","season":null,"year":2006,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2007-away-europe.webp","season":null,"year":2007,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2007-away-europe-b.webp","season":null,"year":2007,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2007-gk.webp","season":null,"year":2007,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2007-home-europe.webp","season":null,"year":2007,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2008-away.webp","season":null,"year":2008,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2008-home.webp","season":null,"year":2008,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2008-home-2.webp","season":null,"year":2008,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2008-home-europe.webp","season":null,"year":2008,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2009-away.webp","season":null,"year":2009,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2009-away-europe.webp","season":null,"year":2009,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2010-away.webp","season":null,"year":2010,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2010-away-b.webp","season":null,"year":2010,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2010-away-europe.webp","season":null,"year":2010,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2010-home.webp","season":null,"year":2010,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2010-home-europe.webp","season":null,"year":2010,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2011-away-europe.webp","season":null,"year":2011,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2011-home.webp","season":null,"year":2011,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2011-home-europe.webp","season":null,"year":2011,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2012-away-europe.webp","season":null,"year":2012,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2012-away-europe-b.webp","season":null,"year":2012,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2012-gk.webp","season":null,"year":2012,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2012-home.webp","season":null,"year":2012,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2013-away-europe.webp","season":null,"year":2013,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2013-gk.webp","season":null,"year":2013,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2013-home-europe-2.webp","season":null,"year":2013,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2014-away.webp","season":null,"year":2014,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2014-home.webp","season":null,"year":2014,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2015-away.webp","season":null,"year":2015,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2015-away-2.webp","season":null,"year":2015,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2015-gk.webp","season":null,"year":2015,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2016-away.webp","season":null,"year":2016,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2016-away-2.webp","season":null,"year":2016,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2016-gk.webp","season":null,"year":2016,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2016-home.webp","season":null,"year":2016,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2016-home-2.webp","season":null,"year":2016,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2017-away.webp","season":null,"year":2017,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2017-away-2.webp","season":null,"year":2017,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2017-away-2-b.webp","season":null,"year":2017,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2017-gk.webp","season":null,"year":2017,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2017-home.webp","season":null,"year":2017,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2017-home-b.webp","season":null,"year":2017,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2018-away.webp","season":null,"year":2018,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2018-home.webp","season":null,"year":2018,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2018-home-b.webp","season":null,"year":2018,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2019-away.webp","season":null,"year":2019,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2019-gk.webp","season":null,"year":2019,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2019-gk-b.webp","season":null,"year":2019,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2019-gk-c.webp","season":null,"year":2019,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2019-home.webp","season":null,"year":2019,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2020-away.webp","season":null,"year":2020,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2020-gk-2.webp","season":null,"year":2020,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2020-gk-corona.webp","season":null,"year":2020,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2021-away.webp","season":null,"year":2021,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2021-special-cup-final.webp","season":null,"year":2021,"variant":"מיוחדת","type":"special","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2022-away.webp","season":null,"year":2022,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2022-away-2.webp","season":null,"year":2022,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2022-home.webp","season":null,"year":2022,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2022-special-pink-october.webp","season":null,"year":2022,"variant":"מיוחדת","type":"special","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2023-away.webp","season":null,"year":2023,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2023-away-2.webp","season":null,"year":2023,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2023-gk.webp","season":null,"year":2023,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2023-gk-2.webp","season":null,"year":2023,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2023-home.webp","season":null,"year":2023,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2023-home-trom.webp","season":null,"year":2023,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2023-special-pink-october.webp","season":null,"year":2023,"variant":"מיוחדת","type":"special","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2024-away.webp","season":null,"year":2024,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2024-home.webp","season":null,"year":2024,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2024-home-army.webp","season":null,"year":2024,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-away.webp","season":null,"year":2025,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-away-b.webp","season":null,"year":2025,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-away-match-worn.webp","season":null,"year":2025,"variant":"חוץ","type":"away","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-gk.webp","season":null,"year":2025,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-gk-2.webp","season":null,"year":2025,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-gk-b.webp","season":null,"year":2025,"variant":"שוער","type":"gk","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-home.webp","season":null,"year":2025,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-home-b.webp","season":null,"year":2025,"variant":"בית","type":"home","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-special.webp","season":null,"year":2025,"variant":"מיוחדת","type":"special","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-special-pink-october.webp","season":null,"year":2025,"variant":"מיוחדת","type":"special","ambiguous":true,"source":"vikipoel"},{"file":"/kits/vp-2025-third.webp","season":null,"year":2025,"variant":"שלישית","type":"third","ambiguous":true,"source":"vikipoel"}]},"cfs":{"source":{"publisher":"Club Football Shirts","url":"https://www.clubfootballshirts.com/","archivePage":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","licence":"Photographs of shirts from the publisher's archive pages, used with the owner's approval (chat, 2026-10-10). Credit travels with every photograph.","readOn":"2026-10-10"},"count":15,"kits":[{"id":"cfs-away-2018-19","type":"away","season":"2018/19","image":"/club-kits/hapoel-tel-aviv/cfs/away-2018-19.webp","width":420,"height":420,"yellowShare":0.0001,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2018-2019-football-shirt-archive_orig.png"},{"id":"cfs-home-2018-19","type":"home","season":"2018/19","image":"/club-kits/hapoel-tel-aviv/cfs/home-2018-19.webp","width":420,"height":420,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2018-2019-football-shirt-archive_orig.png"},{"id":"cfs-third-2018-19","type":"third","season":"2018/19","image":"/club-kits/hapoel-tel-aviv/cfs/third-2018-19.webp","width":420,"height":420,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2018-2019-football-shirt-archive_orig.png"},{"id":"cfs-away-2020-21","type":"away","season":"2020/21","image":"/club-kits/hapoel-tel-aviv/cfs/away-2020-21.webp","width":414,"height":414,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2020-2021-football-shirt-archive_orig.png"},{"id":"cfs-home-2020-21","type":"home","season":"2020/21","image":"/club-kits/hapoel-tel-aviv/cfs/home-2020-21.webp","width":414,"height":414,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2020-2021-football-shirt-archive_orig.png"},{"id":"cfs-third-2020-21","type":"third","season":"2020/21","image":"/club-kits/hapoel-tel-aviv/cfs/third-2020-21.webp","width":414,"height":414,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2020-2021-football-shirt-archive_orig.png"},{"id":"cfs-away-2021-22","type":"away","season":"2021/22","image":"/club-kits/hapoel-tel-aviv/cfs/away-2021-22.webp","width":420,"height":420,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2021-2022-football-shirt-archive_orig.png"},{"id":"cfs-home-2021-22","type":"home","season":"2021/22","image":"/club-kits/hapoel-tel-aviv/cfs/home-2021-22.webp","width":420,"height":420,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2021-2022-football-shirt-archive_orig.png"},{"id":"cfs-third-2021-22","type":"third","season":"2021/22","image":"/club-kits/hapoel-tel-aviv/cfs/third-2021-22.webp","width":420,"height":420,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2021-2022-football-shirt-archive_orig.png"},{"id":"cfs-away-2022-23","type":"away","season":"2022/23","image":"/club-kits/hapoel-tel-aviv/cfs/away-2022-23.webp","width":576,"height":576,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2022-2023-football-shirt-archive_orig.jpeg"},{"id":"cfs-home-2022-23","type":"home","season":"2022/23","image":"/club-kits/hapoel-tel-aviv/cfs/home-2022-23.webp","width":577,"height":577,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2022-2023-football-shirt-archive_orig.jpeg"},{"id":"cfs-third-2022-23","type":"third","season":"2022/23","image":"/club-kits/hapoel-tel-aviv/cfs/third-2022-23.webp","width":576,"height":576,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2022-2023-football-shirt-archive_orig.jpeg"},{"id":"cfs-away-2023-24","type":"away","season":"2023/24","image":"/club-kits/hapoel-tel-aviv/cfs/away-2023-24.webp","width":711,"height":711,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-away-2023-2024-football-shirt-archive_orig.jpg"},{"id":"cfs-home-2023-24","type":"home","season":"2023/24","image":"/club-kits/hapoel-tel-aviv/cfs/home-2023-24.webp","width":711,"height":711,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-home-2023-2024-football-shirt-archive_orig.jpg"},{"id":"cfs-third-2023-24","type":"third","season":"2023/24","image":"/club-kits/hapoel-tel-aviv/cfs/third-2023-24.webp","width":715,"height":715,"yellowShare":0.0,"page":"https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html","original":"https://www.clubfootballshirts.com/uploads/6/9/5/1/69518371/hapoel-tel-aviv-f-c-third-2023-2024-football-shirt-archive_orig.jpg"}]}};
+const K=DATA.kits;
+const TYPE={home:'בית',away:'חוץ',third:'שלישית',special:'אחר'};
+const DESIGN={plain:'חלקה',stripes:'פסים אנכיים',hoops:'חישוקים',pinstripes:'פסים דקים','half-and-half':'חצי-חצי',sash:'אלכסון (סאש)','chest band':'פס חזה',diagonal:'פסים באלכסון','contrasting sleeves':'שרוולים בצבע שונה',gradient:'גרדיאנט',graphic:'הדפס גרפי'};
+const COL={brown:'חום',red:'אדום',green:'ירוק',yellow:'צהוב',black:'שחור',white:'לבן',grey:'אפור',maroon:'בורדו',skyblue:'תכלת',pink:'ורוד',blue:'כחול',navy:'כחול כהה',orange:'כתום',cream:'שמנת'};
+const OBS_MAKER={swoosh:'סווש',triangle:'משולש',"N-mark":'סימן בצורת N'};
+const startYear=k=>+(k.season.match(/\d{4}/)||[0])[0];
+const $=s=>document.querySelector(s);
+const RESOLVE=s=>s;
+const SPONSOR_TYPE={
+ "_note": "Typographic treatment of chest sponsors (35 distinct names in the archives). A sponsor is LETTERED on the cloth, never a redrawn logo (rule 25). fam: heavy | cond | round | serif. brand: the colour the real lettering is printed in, used only on the static archive drawings (a club page paints neutral ink — rule 95). lines: the wordmark broken onto several lines when the real one is.",
+ "default": {
+  "fam": "cond",
+  "weight": 700,
+  "italic": false,
+  "case": "upper",
+  "track": 0.03
+ },
+ "styles": {
+  "stoiximan": {
+   "fam": "heavy",
+   "weight": 900,
+   "italic": true,
+   "case": "upper",
+   "track": 0.0,
+   "brand": "#d9232a"
+  },
+  "pame stoixima": {
+   "fam": "cond",
+   "weight": 800,
+   "italic": true,
+   "case": "upper",
+   "track": 0.04
+  },
+  "20 stoixima": {
+   "fam": "cond",
+   "weight": 800,
+   "italic": true,
+   "case": "upper",
+   "track": 0.04
+  },
+  "stoixima": {
+   "fam": "heavy",
+   "weight": 900,
+   "italic": true,
+   "case": "upper",
+   "track": 0.0
+  },
+  "ΣΤΟΙΧΗΜΑ": {
+   "fam": "heavy",
+   "weight": 900,
+   "italic": true,
+   "case": "asis",
+   "track": 0.02
+  },
+  "οπαπ": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.1
+  },
+  "dafabet": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": -0.01
+  },
+  "congstar": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": -0.01,
+   "brand": "#f26b21"
+  },
+  "carling": {
+   "fam": "serif",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.1
+  },
+  "cosmote": {
+   "fam": "round",
+   "weight": 700,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#00a651"
+  },
+  "ote": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.16,
+   "brand": "#0067b1"
+  },
+  "ppd": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.12
+  },
+  "siemens mobile": {
+   "lines": [
+    {
+     "t": "SIEMENS",
+     "fam": "heavy",
+     "weight": 900,
+     "track": 0.04,
+     "brand": "#009999"
+    },
+    {
+     "t": "mobile",
+     "fam": "round",
+     "weight": 800,
+     "case": "lower",
+     "scale": 0.62,
+     "brand": "#e2001a"
+    }
+   ]
+  },
+  "siemens": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.04,
+   "brand": "#009999"
+  },
+  "magners": {
+   "fam": "serif",
+   "weight": 800,
+   "italic": true,
+   "case": "lower",
+   "track": 0.02
+  },
+  "lg": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.14,
+   "brand": "#a50034"
+  },
+  "vodafone": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#e60000"
+  },
+  "tennent's": {
+   "fam": "serif",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.06,
+   "brand": "#c8102e"
+  },
+  "ein platz an der sonne": {
+   "lines": [
+    {
+     "t": "EIN PLATZ",
+     "fam": "cond",
+     "weight": 800,
+     "track": 0.08
+    },
+    {
+     "t": "AN DER SONNE",
+     "fam": "cond",
+     "weight": 700,
+     "track": 0.08,
+     "scale": 0.8
+    }
+   ]
+  },
+  "unicef": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#1cabe2"
+  },
+  "tim": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.12,
+   "brand": "#004691"
+  },
+  "aluminij": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.06
+  },
+  "a little shelter": {
+   "lines": [
+    {
+     "t": "A LITTLE",
+     "fam": "round",
+     "weight": 800,
+     "track": 0.06,
+     "scale": 0.8
+    },
+    {
+     "t": "SHELTER",
+     "fam": "round",
+     "weight": 800,
+     "track": 0.06
+    }
+   ]
+  },
+  "mta": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "asis",
+   "track": 0.04
+  },
+  "interagent": {
+   "fam": "cond",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.08
+  },
+  "citibank": {
+   "fam": "round",
+   "weight": 700,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#056dae"
+  },
+  "ntl:": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#1d3c8f"
+  },
+  "ntl:home digital tv": {
+   "lines": [
+    {
+     "t": "ntl:",
+     "fam": "round",
+     "weight": 800,
+     "case": "lower",
+     "brand": "#1d3c8f"
+    },
+    {
+     "t": "home digital tv",
+     "fam": "round",
+     "weight": 600,
+     "case": "lower",
+     "scale": 0.5
+    }
+   ]
+  },
+  "mivne": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.14
+  },
+  "דיל טוב": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "asis",
+   "track": 0.0
+  },
+  "securvita": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#d2232a"
+  },
+  "kino": {
+   "fam": "cond",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.12
+  },
+  "piraeus bank": {
+   "lines": [
+    {
+     "t": "PIRAEUS",
+     "fam": "serif",
+     "weight": 800,
+     "track": 0.1
+    },
+    {
+     "t": "BANK",
+     "fam": "serif",
+     "weight": 700,
+     "track": 0.3,
+     "scale": 0.62
+    }
+   ]
+  },
+  "alpha digital": {
+   "lines": [
+    {
+     "t": "ALPHA",
+     "fam": "cond",
+     "weight": 800,
+     "track": 0.1
+    },
+    {
+     "t": "DIGITAL",
+     "fam": "cond",
+     "weight": 600,
+     "track": 0.2,
+     "scale": 0.7
+    }
+   ]
+  },
+  "keter": {
+   "fam": "round",
+   "weight": 900,
+   "case": "lower",
+   "track": 0.02,
+   "brand": "#c8102e"
+  },
+  "subaru": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.1,
+   "brand": "#173f8a"
+  },
+  "umbro": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.16
+  },
+  "fujicom": {
+   "fam": "round",
+   "weight": 800,
+   "case": "asis",
+   "track": 0.0
+  },
+  "fujitsu": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.04,
+   "brand": "#c8102e"
+  },
+  "arkia": {
+   "fam": "round",
+   "weight": 900,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#00a651"
+  },
+  "ibi": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.12
+  },
+  "הכשרה": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "asis",
+   "track": 0.0,
+   "brand": "#c8102e"
+  },
+  "במחיר": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "asis",
+   "track": 0.0
+  }
+ }
+};
+const MARKS={
+ "_note": "Real maker and sponsor marks, printed on the archive drawings and on the gate 4/5 cloth. Vector paths from simple-icons 13.21.0 (CC0 data; the marks are trademarks of their owners, used with the owner's approval, chat 10.10.2026: '\u05e9\u05d9\u05de\u05d5\u05e9 \u05e0\u05db\u05d5\u05df \u05d1\u05dc\u05d5\u05d2\u05d5\u05d0\u05d9\u05dd'). Umbro: the Worker's own two-diamond mark (public/kits/assembly/2009-10/parts/maker-umbro.svg). A maker with no mark here is lettered. Raster marks (kind 'raster') are the Worker's own approved artwork under public/kits: 'mono' ones are white shapes printed through a mask in the cloth's ink, 'colour' ones as they are.",
+ "makers": {
+  "nike": {
+   "viewBox": "0 7.8 24 8.4",
+   "d": "M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.232-1.643 2.297-2.8a6.122 6.122 0 00-.784 1.848c-.28 1.195-.028 2.072.756 2.632.373.261.886.392 1.54.392.522 0 1.11-.084 1.764-.252L24 7.8z",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)"
+  },
+  "adidas": {
+   "viewBox": "0 4.47 24 15.07",
+   "d": "m24 19.535-8.697-15.07-4.659 2.687 7.145 12.383Zm-8.287 0L9.969 9.59 5.31 12.277l4.192 7.258ZM4.658 14.723l2.776 4.812H1.223L0 17.41Z",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)"
+  },
+  "puma": {
+   "viewBox": "0 2.75 24 18.5",
+   "d": "M23.845 3.008c-.417-.533-1.146-.106-1.467.08-2.284 1.346-2.621 3.716-3.417 5.077-.626 1.09-1.652 1.89-2.58 1.952-.686.049-1.43-.084-2.168-.405-1.807-.781-2.78-1.792-3.017-1.97-.487-.37-4.23-4.015-7.28-4.164 0 0-.372-.75-.465-.763-.222-.025-.45.451-.616.501-.15.053-.413-.512-.565-.487-.153.02-.302.586-.6.877-.22.213-.486.2-.637.463-.052.096-.034.265-.093.42-.127.32-.551.354-.555.697 0 .381.357.454.669.72.248.212.265.362.554.461.258.088.632-.187.964-.088.277.081.543.14.602.423.054.256 0 .658-.34.613-.112-.015-.598-.174-1.198-.11-.725.077-1.553.309-1.634 1.11-.041.447.514.97 1.055.866.371-.071.196-.506.399-.716.267-.27 1.772.944 3.172.944.593 0 1.031-.15 1.467-.605.04-.029.093-.102.155-.11a.632.632 0 01.195.088c1.131.897 1.984 2.7 6.13 2.721.582.007 1.25.279 1.796.777.48.433.764 1.125 1.037 1.825.418 1.053 1.161 2.069 2.292 3.203.06.068.99.78 1.06.833.012.01.084.167.053.255-.02.69-.123 2.67 1.365 2.753.366.02.275-.231.275-.41-.005-.341-.065-.685.113-1.04.253-.478-.526-.709-.509-1.756.019-.784-.645-.651-.984-1.25-.19-.343-.368-.532-.35-.946.073-2.38-.517-3.948-.805-4.327-.227-.294-.423-.403-.207-.54 1.24-.815 1.525-1.574 1.525-1.574.66-1.541 1.256-2.945 2.075-3.57.166-.12.589-.44.852-.56.763-.362 1.173-.578 1.388-.788.356-.337.635-1.053.294-1.48z",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)"
+  },
+  "new balance": {
+   "viewBox": "0 6.23 24 11.54",
+   "d": "M12.169 10.306l1.111-1.937 3.774-.242.132-.236-3.488-.242.82-1.414h6.47c1.99 0 3.46.715 2.887 2.8-.17.638-.979 2.233-3.356 2.899.507.06 1.76.616 1.54 2.057-.384 2.558-3.69 3.774-5.533 3.774l-7.641.006-.38-1.48 4.005-.28.137-.237-4.346-.264-.467-1.755 6.178-.363.137-.231-11.096-.693.534-.925 11.948-.775.138-.231-3.504-.231m5 .385l1.1-.006c.738-.005 1.502-.34 1.783-1.018.259-.632-.088-1.171-.55-1.166h-1.067l-1.266 2.19zm-1.27 2.195l-1.326 2.305h1.265c.589 0 1.64-.292 1.964-1.128.302-.781-.253-1.177-.638-1.177h-1.266zM6.26 16.445l-.77 1.315L0 17.77l.534-.923 5.726-.402zm.385-10.216l4.417.006.336 1.248-5.276-.33.523-.924zm5 2.245l.484 1.832-7.542-.495.528-.92 6.53-.417zm-3.84 5.281l-.957 1.661-5.32-.302.534-.924 5.743-.435z",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)"
+  },
+  "under armour": {
+   "viewBox": "0 4.93 24 14.13",
+   "d": "M15.954 12c-.089.066-.195.142-.324.233-.826.585-2.023.985-3.58.985h-.104c-1.556 0-2.755-.4-3.58-.985A36.43 36.43 0 018.042 12c.09-.067.196-.143.324-.234.825-.584 2.024-.985 3.58-.985h.104c1.557 0 2.756.401 3.58.985.129.09.235.167.325.234M24 7.181s-.709-.541-2.95-1.365c-1.968-.721-3.452-.883-3.452-.883l.006 4.243c0 .598-.162 1.143-.618 1.765-1.672-.61-3.254-.985-4.981-.985-1.728 0-3.308.375-4.98.985-.457-.619-.62-1.168-.62-1.765l.007-4.243s-1.494.16-3.463.883C.709 6.642 0 7.181 0 7.181c.093 1.926 1.78 3.638 4.435 4.82C1.777 13.18.09 14.887 0 16.818c0 0 .709.54 2.949 1.365 1.968.721 3.453.883 3.453.883l-.007-4.244c0-.597.164-1.143.619-1.764 1.672.61 3.252.983 4.98.983 1.727 0 3.309-.374 4.98-.983.457.62.62 1.167.62 1.764l-.006 4.244s1.484-.16 3.452-.883c2.241-.826 2.95-1.365 2.95-1.365-.093-1.927-1.78-3.64-4.435-4.819 2.657-1.182 4.343-2.888 4.435-4.82",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)"
+  },
+  "fila": {
+   "viewBox": "0 8.03 24 7.95",
+   "d": "M8.814 8.027c-.614 0-1.113.498-1.113 1.113v5.72a1.113 1.113 0 0 0 2.226 0V9.14c0-.614-.498-1.113-1.113-1.113m-2.849.078H1.113a1.113 1.113 0 0 0 0 2.226h4.852a1.113 1.113 0 0 0 0-2.226m17.411 4.417L21.03 8.705c-.275-.444-.65-.658-1.125-.658-.488 0-.904.229-1.162.658l-2.715 4.5c-.186.308-.4.436-.753.436h-2.019a.275.275 0 0 1-.285-.284V9.102c0-.613-.497-1.075-1.11-1.075-.614 0-1.11.463-1.11 1.076v5.215c0 .784.774 1.544 1.544 1.544h4.064c.576 0 .963-.42 1.292-.996l2.114-3.627c.018-.04.053-.091.093-.091.043 0 .07.051.091.088l1.384 2.22c.058.094.069.141.032.225-.033.077-.108.093-.23.093h-1.943a1.044 1.044 0 1 0 0 2.088h3.17c.77 0 1.638-.734 1.638-1.693 0-.608-.117-.822-.624-1.647M5.431 10.954H1.113c-.615 0-1.113.498-1.113 1.113v2.715a1.113 1.113 0 1 0 2.226 0v-1.268c0-.185.15-.334.334-.334h2.87a1.113 1.113 0 0 0 0-2.226",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)"
+  },
+  "reebok": {
+   "viewBox": "0 8.64 24 6.72",
+   "d": "M14.991 11.48C17.744 10.38 19.458 9.748 24 8.64c-2.467.163-7.922.537-11.682 1.271l2.673 1.57m-8.56 3.651h3.6c.713-1.08 1.422-1.606 2.248-2.191a71.382 71.382 0 00-1.892-.701c-2.297 1.014-3.575 2.375-3.953 2.892m.709-3.928c-3.21 1.147-4.994 2.393-6.199 3.928h3.975c.387-.539 1.862-2.093 4.633-3.174a57.092 57.092 0 00-2.41-.754M8.79 8.788H0c8.862 1.6 13.133 3.66 20 6.572-.587-.439-10.051-6.013-11.209-6.572",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)"
+  },
+  "umbro": {
+   "viewBox": "1 0 108 60",
+   "d": "M55 4L105 30L55 56L5 30Z M55 17L80 30L55 43L30 30Z",
+   "kind": "stroke",
+   "strokeWidth": 8,
+   "source": "The Worker (public/kits/assembly/2009-10/parts/maker-umbro.svg)"
+  },
+  "macron": {
+   "viewBox": "0 0 640 77",
+   "kind": "raster",
+   "src": "/kits/marks/maker-macron.webp",
+   "print": "mono",
+   "source": "The Worker (public/kits/marks)"
+  }
+ },
+ "sponsors": {
+  "vodafone": {
+   "viewBox": "0 0 24 24",
+   "d": "M12 0A12 12 0 0 0 0 12A12 12 0 0 0 12 24A12 12 0 0 0 24 12A12 12 0 0 0 12 0M16.25 1.12C16.57 1.12 16.9 1.15 17.11 1.22C14.94 1.67 13.21 3.69 13.22 6C13.22 6.05 13.22 6.11 13.23 6.17C16.87 7.06 18.5 9.25 18.5 12.28C18.54 15.31 16.14 18.64 12.09 18.65C8.82 18.66 5.41 15.86 5.39 11.37C5.38 8.4 7 5.54 9.04 3.85C11.04 2.19 13.77 1.13 16.25 1.12Z",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)"
+  },
+  "siemens": {
+   "viewBox": "0 10.02 24 3.97",
+   "d": "M1.478 10.016c.24 0 .59.046 1.046.14v.726a2.465 2.465 0 0 0-.946-.213c-.41 0-.615.118-.615.354 0 .088.041.16.124.216.069.045.258.14.568.286.446.208.743.388.89.541.176.182.264.417.264.705 0 .415-.172.73-.516.949-.279.176-.64.264-1.085.264-.375 0-.753-.046-1.133-.139v-.755c.41.135.774.203 1.09.203.437 0 .655-.121.655-.362a.302.302 0 0 0-.095-.227c-.065-.065-.232-.155-.5-.27-.481-.208-.795-.384-.94-.53a.999.999 0 0 1-.284-.73c0-.377.137-.666.413-.864.272-.196.626-.294 1.064-.294zm21.19 0c.246 0 .565.04.956.123l.09.016v.727a2.471 2.471 0 0 0-.948-.213c-.409 0-.612.118-.612.354 0 .088.04.16.123.216.066.043.256.139.57.286.443.208.74.388.889.541.176.182.264.417.264.705 0 .415-.172.73-.514.949-.28.176-.643.264-1.087.264-.376 0-.754-.046-1.134-.139v-.755c.407.135.77.203 1.09.203.437 0 .655-.121.655-.362 0-.09-.03-.166-.092-.227-.066-.065-.233-.155-.503-.27-.48-.206-.793-.382-.94-.53a.997.997 0 0 1-.284-.732c0-.376.137-.664.413-.862.272-.196.627-.294 1.064-.294zm-12.674.066l.92 2.444.942-2.444h1.257v3.825h-.968v-2.708l-1.072 2.747h-.632l-1.052-2.747v2.708H8.67v-3.825zm-5.587 0v3.825H3.386v-3.825zm3.554 0v.692H6.327v.864H7.75v.63H6.327v.908h1.677v.73h-2.66v-3.824zm8.707 0v.692h-1.634v.864h1.422v.63h-1.422v.908h1.677v.73H14.05v-3.824zm1.898 0l1.255 2.56v-2.56h.719v3.825h-1.15l-1.288-2.595v2.595h-.72v-3.825z",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)",
+   "replace": true
+  },
+  "lg": {
+   "viewBox": "0 6.71 24 10.58",
+   "d": "M14.522 14.078h3.27v1.33h-4.847v-6.83h1.577v5.5zm6.74-1.274h1.284v1.195c-.236.09-.698.18-1.137.18-1.42 0-1.893-.721-1.893-2.186 0-1.398.45-2.221 1.869-2.221.791 0 1.24.248 1.612.722l.982-.903c-.6-.855-1.646-1.114-2.629-1.114-2.208 0-3.368 1.205-3.368 3.504 0 2.288 1.047 3.528 3.358 3.528 1.06 0 2.096-.27 2.66-.665V11.53h-2.739v1.274zM5.291 6.709a5.29 5.29 0 1 1 0 10.582 5.291 5.291 0 1 1 0-10.582m3.16 8.457a4.445 4.445 0 0 0 1.31-3.161v-.242l-.22.001H6.596v.494h2.662l-.001.015a3.985 3.985 0 0 1-3.965 3.708 3.95 3.95 0 0 1-2.811-1.165 3.952 3.952 0 0 1-1.164-2.811c0-1.061.414-2.059 1.164-2.81a3.951 3.951 0 0 1 2.81-1.164l.252.003v-.495l-.251-.003a4.475 4.475 0 0 0-4.47 4.469c0 1.194.465 2.316 1.309 3.161a4.444 4.444 0 0 0 3.16 1.31 4.444 4.444 0 0 0 3.162-1.31m-2.91-1.297V9.644H5.04v4.72h1.556v-.495H5.543zm-1.265-3.552a.676.676 0 1 0-.675.674.676.676 0 0 0 .675-.674",
+   "kind": "fill",
+   "source": "simple-icons 13.21.0 (CC0)",
+   "replace": true
+  },
+  "fujitsu": {
+   "viewBox": "0 0 640 435",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-fujitsu.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "The Worker (public/kits)"
+  },
+  "arkia": {
+   "viewBox": "0 0 640 437",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-arkia.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "The Worker (public/kits)",
+   "plate": true
+  },
+  "subaru": {
+   "viewBox": "0 0 360 180",
+   "kind": "raster",
+   "src": "/kits/assembly/2009-10/parts/sponsor-subaru.svg",
+   "print": "colour",
+   "replace": true,
+   "source": "The Worker (public/kits)"
+  }
+ }
+};
+/* Kit renderer: one complete kit (shirt, shorts, socks) from measured layers, as an SVG string. Plain JS, no imports: the archive page inlines this file,
+   and scripts/kits/export-kit-svgs.mjs runs it in Node. A kit is {shirt:{design,colours,hex,measured},shorts,socks,sponsor,crest}. */
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const hex=(k,i)=>k.shirt.hex[k.shirt.colours[i]]||'#101010';
+const lum=h=>{const n=parseInt(h.slice(1),16);return .3*(n>>16&255)+.59*(n>>8&255)+.11*(n&255)};
+const shade=(h,f)=>{const n=parseInt(h.slice(1),16),c=v=>Math.max(0,Math.min(255,Math.round(v*(1+f)))).toString(16).padStart(2,'0');return '#'+c(n>>16&255)+c(n>>8&255)+c(n&255)};
+let uid=0;
+
+
+/* One complete kit on a 430x470 board: shirt (340x320), shorts below, socks to the right. Drawn from the measured layers only.
+   Realism pass (10.10.2026): soft fold shading under the arms and along the armhole seams, ribbed collar with the dark inside of the neck,
+   cuff bands cut to the sleeve, hem and waist ribs, drawstring, a finer weave and a ground shadow. Geometry of the board is unchanged. */
+const BODY='M110 30C128 46 150 56 170 56S212 46 230 30L276 46 324 120 278 148 258 120V292C222 304 118 304 82 292V120L62 148 16 120 64 46Z';
+const SL_L='M64 46L16 120 62 148 82 120V66Z',SL_R='M276 46L324 120 278 148 258 120V66Z';
+const SHORTS='M8 0H192L200 112Q200 128 184 130L114 130Q104 130 100 114Q96 130 86 130L16 130Q0 128 0 112Z';
+const SOCK='M0 0H34L36 112Q36 140 54 150Q72 160 66 182Q40 190 12 184Q-4 176 0 150Z';
+
+/* Chest sponsor, lettered (rule 25: never a redrawn logo): weight, case, family, tracking and — on the archive drawings only — the colour the real
+   lettering is printed in, from content/manual/sponsor-type.json (injected as SPONSOR_TYPE). Falls back to the plain condensed capitals. */
+const FAM={heavy:"'Archivo Black','Arial Black',Impact,sans-serif",cond:"'Bebas Neue','Arial Narrow',Impact,sans-serif",round:"Nunito,'Varela Round','Arial Rounded MT Bold','Trebuchet MS',sans-serif",serif:"Georgia,'Times New Roman',serif"};
+const contrast=(a,b)=>{const L=h=>{const n=parseInt(h.slice(1),16),f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(n>>16&255)+.7152*f(n>>8&255)+.0722*f(n&255)};const x=L(a),y=L(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+
+/* Real marks (content/manual/maker-marks.json, injected as MARKS): the maker's mark on the chest, a sponsor's mark where one exists. A name with no mark is lettered. */
+let markUid=0;
+function markG(m,cx,cy,w,h,fill,halo){
+  const [x0,y0,vw,vh]=m.viewBox.split(' ').map(Number),k=Math.min(w/vw,h/vh),tx=cx-(x0+vw/2)*k,ty=cy-(y0+vh/2)*k;
+  if(m.kind==='raster'){
+    const src=typeof RESOLVE==='function'?RESOLVE(m.src):m.src,id='mk'+(++markUid);
+    const img=`<image href="${src}" x="${x0}" y="${y0}" width="${vw}" height="${vh}" preserveAspectRatio="xMidYMid meet"/>`;
+    return m.print==='mono'?`<g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(4)})"><mask id="${id}" maskUnits="userSpaceOnUse" x="${x0}" y="${y0}" width="${vw}" height="${vh}">${img}</mask><rect x="${x0}" y="${y0}" width="${vw}" height="${vh}" fill="${halo}" fill-opacity=".0" mask="url(#${id})"/><rect x="${x0}" y="${y0}" width="${vw}" height="${vh}" fill="${fill}" mask="url(#${id})"/></g>`:`<g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(4)})">${img}</g>`;
+  }
+  const body=m.kind==='stroke'?`<path d="${m.d}" fill="none" stroke="${fill}" stroke-width="${m.strokeWidth}" stroke-linejoin="round"/>`:`<path d="${m.d}" fill="${fill}"/>`;
+  const back=m.kind==='stroke'?`<path d="${m.d}" fill="none" stroke="${halo}" stroke-opacity=".5" stroke-width="${m.strokeWidth+5}" stroke-linejoin="round"/>`:`<path d="${m.d}" fill="${halo}" fill-opacity=".5" stroke="${halo}" stroke-opacity=".5" stroke-width="${1.6/k}" stroke-linejoin="round"/>`;
+  return `<g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(4)})">${back}${body}</g>`;
+}
+const markOf=(group,name)=>{const M=typeof MARKS!=='undefined'?MARKS:null;return M&&M[group]?M[group][String(name||'').toLowerCase().trim()]||null:null};
+function sponsorSVG(name,base,opt){
+  const T=typeof SPONSOR_TYPE!=='undefined'?SPONSOR_TYPE:{default:{},styles:{}},st=T.styles[name]||T.styles[String(name).toLowerCase()]||{},d=T.default||{};
+  const light=lum(base)>150,auto=light?'#111':'#fff',halo=light?'#fff':'#000',useBrand=!(opt&&opt.neutral);
+  const lines=st.lines||[{t:name,...st}],W=150,H=46,cx=170,top=164,n=lines.length;
+  const base1=n>1?22:34,sizes=lines.map(l=>base1*(l.scale||1));let y=top+(n>1?-1:2);
+  return lines.map((l,i)=>{
+    const f=Object.assign({},d,st,l),cs=f.case==='lower'?'toLowerCase':f.case==='asis'?null:'toUpperCase',tx=cs?String(l.t||name)[cs]():String(l.t||name);
+    const wc=opt&&opt.patterned&&opt.trim?Math.min(contrast(f.brand||'#000000',base),contrast(f.brand||'#000000',opt.trim)):f.brand?contrast(f.brand,base):0,ink=useBrand&&f.brand&&wc>=3.2?f.brand:auto;
+    let sz=sizes[i];const est=tx.length*sz*(f.fam==='cond'?.42:.58)+tx.length*sz*(f.track||0);if(est>W)sz=sz*W/est;
+    const yy=y+sz*.8;y+=sizes[i]*(n>1?.98:1);
+    const sm=markOf('sponsors',String(l.t||name));if(sm&&sm.replace){const mh=n>1?15:36,ar=(()=>{const q=sm.viewBox.split(' ').map(Number);return q[2]/q[3]})(),my=(n>1?yy-mh*.35:top+22),mc=useBrand&&f.brand&&wc>=3.2?f.brand:auto,mw=Math.min(W-14,mh*ar),plate=sm.plate&&(lum(base)<190||(opt&&opt.patterned))?`<rect x="${(cx-mw/2-6).toFixed(1)}" y="${(my-mh/2-4).toFixed(1)}" width="${(mw+12).toFixed(1)}" height="${(mh+8).toFixed(1)}" rx="5" fill="#f4f0e6" fill-opacity=".94"/>`:'';return plate+markG(sm,cx,my,mw,mh,mc,halo)}
+    const vf=tx.toLowerCase()==='vodafone'?markOf('sponsors','vodafone'):null,gh=sz*.95,tcx=vf?cx+gh*.55:cx;
+    const glyph=vf?markG(vf,tcx-est*.5-gh*.45,(n>1?yy:top+30)-sz*.3,gh,gh,useBrand&&wc>=3.2?'#e60000':auto,halo):'';
+    return glyph+`<text x="${tcx}" y="${n>1?yy:top+30}" text-anchor="middle" font-family="${FAM[f.fam]||FAM.cond}" font-weight="${f.weight||700}" ${f.italic?'font-style="italic" ':''}font-size="${sz.toFixed(1)}" letter-spacing="${((f.track||0)*sz).toFixed(2)}" fill="${ink}" stroke="${halo}" stroke-opacity="${opt&&opt.patterned?.92:.55}" stroke-width="${opt&&opt.patterned?5.2:2.4}" paint-order="stroke" stroke-linejoin="round"${est>W&&n===1?` textLength="${W}" lengthAdjust="spacingAndGlyphs"`:''}>${esc(tx)}</text>`}).join('');
+}
+function shirtG(k,id){
+  const b=hex(k,0),t=k.shirt.colours.length>1?hex(k,1):shade(hex(k,0),-.14),m=k.shirt.measured||{},d=k.shirt.design;
+  let pat='',sleeveInk=b;
+  if(d==='stripes'){const n=Math.max(1,m.stripes||4),w=176/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="${82+w*(2*i+1)}" y="20" width="${w}" height="290" fill="${t}"/>`}
+  else if(d==='hoops'){const n=Math.max(1,m.hoops||3),h=240/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="0" y="${64+h*(2*i+1)}" width="340" height="${h}" fill="${t}"/>`}
+  else if(d==='pinstripes'){for(let x=94;x<258;x+=17)pat+=`<rect x="${x}" y="20" width="3.5" height="290" fill="${t}" opacity=".9"/>`}
+  else if(d==='half-and-half'){pat=`<rect x="0" y="20" width="170" height="290" fill="${t}"/>`}
+  else if(d==='sash'){pat=`<polygon points="82,66 128,52 258,236 258,292 216,292 82,126" fill="${t}"/>`}
+  else if(d==='chest band'){pat=`<rect x="0" y="126" width="340" height="44" fill="${t}"/>`}
+  else if(d==='diagonal'){let g='';for(let i=-4;i<8;i++)g+=`<rect x="${i*72}" y="-120" width="36" height="520" fill="${t}"/>`;pat=`<g transform="rotate(-38 170 170)">${g}</g>`}
+  else if(d==='contrasting sleeves'){sleeveInk=t}
+  else if(d==='gradient'){pat=`<rect width="340" height="320" fill="url(#${id}g)"/>`}
+  else if(d==='graphic'){pat=`<g fill="${t}" opacity=".18">${Array.from({length:60},(_,i)=>`<circle cx="${96+(i%10)*17+(Math.floor(i/10)%2)*8}" cy="${96+Math.floor(i/10)*30}" r="3.2"/>`).join('')}</g>`}
+  const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
+  const collar=d==='contrasting sleeves'?b:t;
+  const sp=k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
+  const mm=k.maker?markOf('makers',k.maker):null,mAr=mm?(q=>q[2]/q[3])(mm.viewBox.split(' ').map(Number)):1;
+  const mk=k.maker?(mm?markG(mm,132,95,mAr>3?34:(mm.kind==='stroke'?30:24),mAr>3?9:(mm.kind==='stroke'?17:15),ink,light?'#fff':'#000'):`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
+  return `<defs><clipPath id="${id}c"><path d="${BODY}"/></clipPath>
+<pattern id="${id}p" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5H3M.5 0V3" stroke="#000" stroke-opacity=".5" stroke-width=".5"/></pattern>
+<filter id="${id}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+<filter id="${id}b2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2"/></filter>
+<linearGradient id="${id}f" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".30"/><stop offset=".2" stop-color="#fff" stop-opacity=".06"/><stop offset=".45" stop-color="#fff" stop-opacity=".14"/><stop offset=".78" stop-color="#000" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".34"/></linearGradient>
+<linearGradient id="${id}v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+<linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset=".2" stop-color="${b}"/><stop offset="1" stop-color="${t}"/></linearGradient></defs>
+<ellipse cx="170" cy="304" rx="104" ry="9" fill="#000" opacity=".16" filter="url(#${id}b)"/>
+<g clip-path="url(#${id}c)"><rect width="340" height="320" fill="${b}"/>${pat}
+<path d="${SL_L}" fill="${sleeveInk}"/><path d="${SL_R}" fill="${sleeveInk}"/>
+<path d="M16 120 62 148 76 124 30 98Z M324 120 278 148 264 124 310 98Z" fill="${d==='contrasting sleeves'?b:t}" opacity=".96"/>
+<path d="M30 98 76 124M310 98 264 124" stroke="#000" stroke-opacity=".28" stroke-width="1"/>
+<rect width="340" height="320" fill="url(#${id}f)"/><rect width="340" height="320" fill="url(#${id}v)"/>
+<g filter="url(#${id}b)" fill="none" stroke="#000" stroke-linecap="round"><path d="M84 128C80 150 82 176 86 200" stroke-opacity=".11" stroke-width="10"/><path d="M256 128C260 150 258 176 254 200" stroke-opacity=".11" stroke-width="10"/><path d="M64 52L84 124M276 52L256 124" stroke-opacity=".14" stroke-width="7"/></g>
+<g filter="url(#${id}b2)" fill="none" stroke-linecap="round"><path d="M104 160C122 190 118 236 106 288" stroke="#000" stroke-opacity=".07" stroke-width="6"/><path d="M236 160C218 190 222 236 234 288" stroke="#000" stroke-opacity=".07" stroke-width="6"/><path d="M142 200C160 214 186 214 204 200" stroke="#000" stroke-opacity=".07" stroke-width="5"/><path d="M130 100C150 90 190 90 210 100" stroke="#fff" stroke-opacity=".16" stroke-width="8"/></g>
+<rect width="340" height="320" fill="url(#${id}p)" opacity=".05"/>
+<path d="M88 276C130 286 210 286 252 276L252 292C216 304 124 304 88 292Z" fill="#000" opacity=".1"/>
+<path d="M82 282C124 296 216 296 258 282" stroke="${t}" stroke-width="5" stroke-opacity=".5" fill="none"/></g>
+<path d="M110 30C128 46 150 56 170 56S212 46 230 30L226 26C210 38 190 46 170 46S130 38 114 26Z" fill="#000" opacity=".55"/>
+<path d="M110 30C128 46 150 56 170 56S212 46 230 30L220 22C204 36 188 42 170 42S136 36 120 22Z" fill="${collar}"/>
+<path d="M120 22C136 36 154 42 170 42S204 36 220 22" stroke="#000" stroke-opacity=".3" stroke-width="1.2" fill="none"/><path d="M112 30C130 47 150 55 170 55S210 47 228 30" stroke="#fff" stroke-opacity=".22" stroke-width="1" fill="none"/>
+<path d="${BODY}" fill="none" stroke="${edge}" stroke-width="2" stroke-linejoin="round"/>
+<path d="M82 120V290M258 120V290M64 46L82 120M276 46L258 120" stroke="#000" stroke-opacity=".3" stroke-width="1.1" stroke-dasharray="4 3" fill="none"/>
+${k.crest?`<image href="${k.crest}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:''}${mk}${sp}`;
+}
+function shortsG(sh,id){
+  const b=sh.hex,t=sh.trimHex||shade(b,-.2),light=lum(b)>150;
+  return `<defs><clipPath id="${id}q"><path d="${SHORTS}"/></clipPath><filter id="${id}sb" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter></defs>
+<ellipse cx="100" cy="136" rx="86" ry="6" fill="#000" opacity=".15" filter="url(#${id}sb)"/>
+<g clip-path="url(#${id}q)"><rect width="200" height="140" fill="${b}"/>
+${sh.trim?`<polygon points="0,0 30,0 26,140 0,140" fill="${t}"/><polygon points="200,0 170,0 174,140 200,140" fill="${t}"/>`:''}
+<rect width="200" height="140" fill="#fff" opacity=".05"/>
+<rect width="200" height="16" fill="${sh.trim?t:shade(b,-.14)}"/><rect width="200" height="16" fill="#000" opacity=".12"/>
+<path d="M0 8H200" stroke="#000" stroke-opacity=".22" stroke-width="1"/><path d="M0 5H200M0 11H200" stroke="#fff" stroke-opacity=".07" stroke-width="1"/>
+<g filter="url(#${id}sb)" fill="none" stroke="#000" stroke-linecap="round"><path d="M100 20C102 60 100 100 100 118" stroke-opacity=".3" stroke-width="7"/><path d="M52 22C62 62 60 100 50 128" stroke-opacity=".16" stroke-width="7"/><path d="M148 22C138 62 140 100 150 128" stroke-opacity=".16" stroke-width="7"/></g>
+<path d="M0 118H200" stroke="#000" stroke-opacity=".14" stroke-width="4"/>
+<path d="M92 16Q86 40 88 52M108 16Q114 40 112 52" stroke="${light?'#000':'#fff'}" stroke-opacity=".55" stroke-width="1.6" fill="none" stroke-linecap="round"/></g>
+<path d="${SHORTS}" fill="none" stroke="${shade(b,-.55)}" stroke-width="2" stroke-linejoin="round"/>
+<g fill="none" stroke="${light?'#000':'#fff'}" stroke-opacity=".4" stroke-width="1.2" stroke-dasharray="3 3"><rect x="22" y="86" width="26" height="30" rx="3"/></g>`;
+}
+function sockG(so,dx){
+  const b=so.hex,t=so.trimHex||shade(b,-.25),n=++uid,bands=so.bands?`<rect x="-8" y="14" width="52" height="11" fill="${t}"/><rect x="-8" y="34" width="52" height="11" fill="${t}"/>`:'';
+  return `<g transform="translate(${dx} 0)"><clipPath id="sk${n}"><path d="${SOCK}"/></clipPath><filter id="skb${n}"><feGaussianBlur stdDeviation="2"/></filter><g clip-path="url(#sk${n})"><rect x="-10" width="60" height="200" fill="${b}"/>${bands}
+<rect x="-10" width="60" height="9" fill="#000" opacity=".16"/><path d="M-4 9H44" stroke="#000" stroke-opacity=".2"/>
+<g filter="url(#skb${n})"><rect x="-10" width="20" height="200" fill="#000" opacity=".2"/><rect x="26" width="12" height="200" fill="#fff" opacity=".12"/><path d="M0 150Q20 140 50 160" stroke="#000" stroke-opacity=".2" stroke-width="6" fill="none"/></g>
+<path d="M4 176Q36 186 64 178" stroke="#000" stroke-opacity=".25" stroke-width="2" fill="none"/></g><path d="${SOCK}" fill="none" stroke="${shade(b,-.55)}" stroke-width="2" stroke-linejoin="round"/></g>`;
+}
+function kitSVG(k,label){
+  const id='k'+(++uid);
+  return `<svg viewBox="${k.shorts||k.socks?'0 0 430 470':'0 20 340 300'}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(label||'')}">${shirtG(k,id)}`
+   .replace('</svg>','')+(k.shorts?`<g transform="translate(70 318)">${shortsG(k.shorts,id)}</g>`:'')+(k.socks?`<g transform="translate(336 128)">${sockG(k.socks,0)}${sockG(k.socks,24)}</g>`:'')+'</svg>';
+}
+
+const HE={suffix:(f,t,ct)=>`בקומונס הציור התואם (${f}) מסווג כ"${TYPE[t]||t}" לפי סיומת שם הקובץ. הקטלוג מכנה את המערכת "${TYPE[ct]||ct}", וכותרת הקטלוג קובעת.`,
+ range:(f,kind,se)=>`ציור הקומונס ${f} הוא קובץ של ${kind==='range'?'טווח עונות':'שנה בודדת'} (${se}) והותאם לעונה הזו לפי צבע ודגם.`,
+ clash:(t,se)=>`בקומונס הציור מסווג כ"${TYPE[t]||t}", אבל מערכת ה"${TYPE[t]||t}" של ${se} בקטלוג היא חולצה אחרת. הציור נשמר כמערכת אחרת שלא אומתה.`,
+ label:(code,kind)=>`העונה נקראה משם הקובץ (${code}) והיא ${kind==='range'?'טווח עונות':'לא חד-משמעית'}.`,
+ second:()=>'הקטלוג מציג גרסה שנייה של המערכת הזו, עם מכנסיים וגרביים אחרים.',
+ maker:(m,v)=>`הציור בקטלוג מראה ${m}, ונתוני המועדון (aekfc.gr) אומרים ${v}.`};
+const note=n=>esc(HE[n[0]](...n.slice(1)));
+const capEn=k=>`${k.type}${k.euro?' euro':''} kit ${k.season}`;
+const label=k=>`${TYPE[k.type]}${k.euro?' אירופי':''} ${k.season}`;
+const srcBadge=k=>k.verified?['ok','יצרן מאומת']:k.sources.length>1?['two','שני מקורות']:['','מקור יחיד'];
+
+/* controls */
+const F={type:'all',design:'all',maker:'all',src:'all',q:'',art:'svg'};
+const draw=(k,l)=>kitSVG({...k,crest:DATA.crest},l);
+const art=(k,l)=>F.art==='src'&&(k.photo||k.image)?`<img src="${k.photo||k.image}" alt="${esc(l)}" loading="lazy" ${k.photo?'data-archive-photo="cfs" style="object-fit:contain"':''} width="160" height="215">`:draw(k,l);
+const ORDER=['home','away','third','special'];
+function list(){return K.filter(k=>(F.type==='all'||k.type===F.type)&&(F.design==='all'||k.shirt.design===F.design)&&(F.maker==='all'||(k.maker||'—')===F.maker)&&(F.src==='all'||(F.src==='full'&&k.origin==='catalogue')||(F.src==='two'&&k.sources.length>1)||(F.src==='drawing'&&k.origin==='drawing'))&&(!F.q||k.season.includes(F.q)))}
+function render(){
+  const L=list(),main=$('#main'),seasons=[...new Set(L.map(k=>k.season))].sort((a,b)=>(+b.match(/\d{4}/)[0])-(+a.match(/\d{4}/)[0])||b.localeCompare(a));
+  $('#count').textContent=`${L.length} מערכות · ${seasons.length} עונות`;
+  if(!L.length){main.innerHTML='<p class="empty">אין מערכות שמתאימות לסינון.</p>';return}
+  main.innerHTML=seasons.map(s=>{const a=L.filter(k=>k.season===s).sort((x,y)=>ORDER.indexOf(x.type)-ORDER.indexOf(y.type)||(+x.euro)-(+y.euro));
+    return `<section class="season" aria-label="${s}"><div class="sn"><b>${s}</b><span>${a.length} ${a.length===1?'מערכת':'מערכות'}</span></div><div class="slots">${a.map(k=>{const [c,t]=srcBadge(k);return `<button class="item" type="button" data-id="${k.id}" aria-label="${esc(label(k))}"><span class="kitbox">${art(k,label(k))}</span><span class="tag"><span class="t"><span class="pip ${c}"></span>${TYPE[k.type]}${k.euro?' · אירופי':''}</span><span class="m">${esc(k.maker||'יצרן לא מתועד')}${k.sponsor?' · '+esc(k.sponsor):''}</span><span class="cap" dir="ltr">${capEn(k)}</span></span></button>`}).join('')}</div></section>`}).join('');
+  main.querySelectorAll('.item').forEach(b=>b.onclick=()=>show(K.find(k=>k.id===b.dataset.id)));
+}
+const catUrl=k=>{const id=k.sources.find(x=>x.startsWith('cof'));const n=id?+id.slice(id.lastIndexOf('p')+1):1;return DATA.catalogueUrls[n-1]||DATA.catalogueUrls[0]};
+const fileUrl=f=>'https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(f.replace(/ /g,'_'));
+const sw=(name,h)=>h?`<span class="sw"><i style="background:${h}"></i>${COL[name]||name||''} <bdi dir="ltr">${h}</bdi></span>`:'';
+function show(k){
+  const m=k.shirt.measured||{},meas=m.stripes?` · ${m.stripes} פסים`:m.hoops?` · ${m.hoops} חישוקים`:'';
+  const [c,t]=srcBadge(k),cat=k.evidence.find(e=>e.publisher==='colours-of-football.com'),pg=DATA.sources.catalogue;
+  const obs=[...new Set(k.drawings.flatMap(d=>[d.observed&&d.observed.makerMark&&k.origin==='drawing'?`סימן יצרן בציור: ${OBS_MAKER[d.observed.makerMark]||d.observed.makerMark}`:'',d.observed&&d.observed.note||'']).filter(Boolean))];
+  const drawings=k.drawings.map(d=>`<a href="${fileUrl(d.file)}" target="_blank" rel="noopener"><bdi dir="ltr">${d.file.replace('Kit body ','')}</bdi></a>`).join(' · ');
+  $('#dBody').innerHTML=`<div class="dstage">${draw(k,label(k))}${k.image?`<figure class="srcfig"><img src="${k.image}" alt="${esc(label(k))}" loading="lazy"><figcaption>תמונת מקור</figcaption></figure>`:''}${k.photo?`<figure class="srcfig"><img src="${k.photo}" alt="${esc(label(k))}" data-archive-photo="cfs" loading="lazy" style="object-fit:contain"><figcaption>תצלום חולצה · Club Football Shirts</figcaption></figure>`:''}</div>
+  <div class="info"><span class="badge ${k.verified?'ok':'rev'}">${t}</span>
+  <h2 id="dTitle">${k.season}</h2><p style="margin:-8px 0 0;color:var(--gold);font:600 12px var(--mono);letter-spacing:.12em" dir="ltr">${capEn(k).toUpperCase()}</p>
+  <dl><dt>חולצה</dt><dd>${DESIGN[k.shirt.design]||k.shirt.design}${meas}${k.shirt.design==='graphic'?' · ההדפס לא מצויר':''}<br>${k.shirt.colours.map(n=>sw(n,k.shirt.hex[n])).join('')}</dd>
+  ${k.shorts?`<dt>מכנסיים</dt><dd>${sw(k.shorts.colour,k.shorts.hex)}${k.shorts.trim?sw(k.shorts.trim,k.shorts.trimHex):''}</dd>`:''}
+  ${k.socks?`<dt>גרביים</dt><dd>${sw(k.socks.colour,k.socks.hex)}${k.socks.bands?sw(k.socks.trim,k.socks.trimHex)+' · פסים בראש הגרב':''}</dd>`:''}
+  <dt>יצרן</dt><dd>${k.verified?`${esc(k.verified.maker)} <small><a href="${k.verified.url}" target="_blank" rel="noopener">${esc(k.verified.source)}</a></small>`:k.maker?`${esc(k.maker)} <small style="color:var(--mute)">(כפי שמצויר בקטלוג)</small>`:'לא מתועד'}</dd>
+  <dt>ספונסר</dt><dd>${k.sponsor?`${esc(k.sponsor)} <small style="color:var(--mute)">(כפי שמודפס בציור)</small>`:'לא מתועד'}${k.shortsSponsor?` · על המכנסיים: ${esc(k.shortsSponsor)}`:''}</dd>
+  <dt>סמל</dt><dd>משבצת ריקה עד שיועלה קובץ מורשה</dd>
+  ${obs.length?`<dt>נראה בציור</dt><dd>${obs.map(esc).join(' · ')}</dd>`:''}
+  <dt>מקורות</dt><dd>${cat?`קטלוג colours-of-football.com: <a href="${catUrl(k)}" target="_blank" rel="noopener"><bdi dir="ltr">${esc(cat.ref)}</bdi></a><br>`:''}${drawings?`ציורי ויקימדיה קומונס: ${drawings}<br>`:(k.origin==='catalogue'&&DATA.club.id==='aek-athens'?'<small style="color:var(--mute)">אין ציור תואם בקומונס</small><br>':'')}<a href="/club-kits/${DATA.club.id}/svg/${k.id}.svg" target="_blank" rel="noopener">קובץ SVG</a></dd></dl>
+  ${k.conflicts.map(x=>`<p class="warn">${note(x)}</p>`).join('')}
+  ${k.notes.map(x=>`<p class="warn">${note(x)}</p>`).join('')}
+  <p class="warn ${k.verified?'ok':''}">${k.verified?'העונה, הסוג והיצרן מאומתים מנתוני המועדון. שאר הפרטים נמדדו מהציורים.':'ממתין לאישור הבעלים. הצבעים נמדדו מהציורים; העונה והסוג מכותרת הקטלוג'+(k.origin==='drawing'?' או משם הקובץ':'')+'.'}</p>
+  <div class="acts"><a class="btn" href="/clubs/${DATA.club.id}/kit-archive" data-own-link>יש לי · הוסף לארון</a><button class="btn" id="cpy" type="button">העתק קוד SVG</button><button class="btn ghost" id="cls" type="button">סגור</button></div></div>`;
+  $('#cls').onclick=()=>$('#dlg').close();
+  $('#cpy').onclick=async e=>{const tx=draw(k,DATA.club.name+' '+capEn(k)),btn=e.currentTarget;try{await navigator.clipboard.writeText(tx)}catch(_){const cp=$('#cp');cp.value=tx;cp.select();try{document.execCommand('copy')}catch(__){}}btn.textContent='הועתק';setTimeout(()=>btn.textContent='העתק קוד SVG',1600)};
+  $('#dlg').showModal();
+}
+$('#dlg').addEventListener('click',e=>{if(e.target.id==='dlg')e.target.close()});
+document.getElementById('crest').src=DATA.crest;document.getElementById('clubname').textContent=DATA.club.name;{const ys=K.map(k=>startYear(k)).filter(Boolean);document.getElementById('kick').textContent=`${DATA.club.name} · Kit Archive · ${Math.min(...ys)} — ${Math.max(...K.map(k=>k.season)).toString().length?K.slice().sort((a,b)=>startYear(b)-startYear(a))[0].season:''}`}
+$('#sKits').textContent=K.length;$('#sSeasons').textContent=new Set(K.map(k=>k.season)).size;$('#sCat').textContent=DATA.catalogue;$('#sX').textContent=DATA.crossChecked;
+function chips(el,key,items){items.forEach(([v,l])=>{const b=document.createElement('button');b.className='chip';b.type='button';b.textContent=l;b.dataset.v=v;b.setAttribute('aria-pressed',v==='all');b.onclick=()=>{F[key]=v;el.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.v===v));render()};el.append(b)})}
+chips($('#fType'),'type',[['all','הכול'],['home','בית'],['away','חוץ'],['third','שלישית'],['special','אחר']]);
+chips($('#fSrc'),'src',[['all','הכול'],['full','מערכת מלאה'],['two','שני מקורות'],['drawing','חולצה בלבד']]);
+[...new Set(K.map(k=>k.shirt.design))].sort().forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=DESIGN[d]||d;$('#fDesign').append(o)});
+[...new Set(K.map(k=>k.maker||'—'))].sort().forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=d==='—'?'לא מתועד':d;$('#fMaker').append(o)});
+$('#fDesign').onchange=e=>{F.design=e.target.value;render()};$('#fMaker').onchange=e=>{F.maker=e.target.value;render()};
+$('#fQ').oninput=e=>{F.q=e.target.value.trim();render()};
+document.querySelectorAll('[data-art]').forEach(b=>b.onclick=()=>{F.art=b.dataset.art;document.querySelectorAll('[data-art]').forEach(c=>c.setAttribute('aria-pressed',c===b));render()});
+render();
+
+(function(){const H=DATA.hfk;if(!H)return;const el=document.getElementById('hfk');el.hidden=false;const T={home:'בית',away:'חוץ',third:'שלישית',change:'חילוף'};
+el.innerHTML=`<h2 id="hfkT">ציורים היסטוריים · ${H.count} מערכות</h2><p class="cr">ציורי המדים של Historical Football Kits ‏(David Moor), ${H.from}–${H.to}. מקור: <a href="${H.source.homePage}" target="_blank" rel="noopener">עמוד הבית</a> · <a href="${H.source.changePage}" target="_blank" rel="noopener">מדי חילוף</a>. השימוש לא מסחרי, בציון המקור. תקופה, יצרן וסימוני המקור כפי שהאתר מדפיס; מה שלא הודפס לא נוסף.</p><div class="g">${H.kits.map(k=>`<figure><img src="${k.image}" alt="${esc(k.period)}" loading="lazy" width="150" height="263"><figcaption><bdi dir="ltr">${esc(k.period)}</bdi> · ${T[k.type]||k.type}<small>${k.maker?esc(k.maker):''}</small></figcaption></figure>`).join('')}</div>`})();
+
+(function(){const C=DATA.cfs;if(!C)return;const el=document.getElementById('cfs');el.hidden=false;const T={home:'בית',away:'חוץ',third:'שלישית',fourth:'רביעית',goalkeeper:'שוער',special:'מיוחדת'};
+el.innerHTML=`<h2>תצלומי חולצות · ${C.count}</h2><p class="cr">תצלומים של חולצות מארכיון <a href="${C.source.archivePage}" target="_blank" rel="noopener">Club Football Shirts</a>, בשימוש באישור הבעלים. הסוג והעונה כפי ששם הקובץ במקור מצהיר; יצרן וספונסר לא נקראים מתצלום.</p><div class="g">${C.kits.map(k=>`<figure><img src="${k.image}" data-archive-photo="cfs" alt="${esc(k.season)}" loading="lazy" width="${k.width}" height="${k.height}" style="object-fit:contain"><figcaption><bdi dir="ltr">${esc(k.season)}</bdi> · ${T[k.type]||k.type}</figcaption></figure>`).join('')}</div>`})();
+
+(function(){const Wk=DATA.worker;if(!Wk)return;const el=document.getElementById('wk');el.hidden=false;
+el.innerHTML=`<h2>הארכיון הצילומי · ${Wk.count} חולצות</h2><p class="cr">${esc(Wk.source.publisher)}. התצלומים נחתכו מהרקע וצבעם נמדד; שנה בערך מסומנת "בערך" ולא נוחשת. <a href="${Wk.source.url}">לכל החולצות והארון</a></p><div class="g">${Wk.kits.map(k=>`<figure><img src="${k.file}" data-archive-photo="worker" alt="${esc((k.season||k.year||'')+' '+(k.variant||''))}" loading="lazy" width="150" height="150" style="object-fit:contain"><figcaption><bdi dir="ltr">${esc(k.season||(k.year?k.year+' בערך':''))}</bdi> · ${esc(k.variant||'')}</figcaption></figure>`).join('')}</div>`})();
+</script>
+</body>
+</html>

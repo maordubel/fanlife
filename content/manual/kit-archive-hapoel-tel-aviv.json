@@ -1,0 +1,1785 @@
+{
+ "club": "hapoel-tel-aviv",
+ "retrieved": "2026-10-10",
+ "sources": {
+  "catalogue": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html"
+ },
+ "kitCount": 33,
+ "catalogueKits": 33,
+ "drawingOnlyKits": 0,
+ "crossChecked": 0,
+ "typeConflicts": 0,
+ "kits": [
+  {
+   "id": "cof-k-31",
+   "origin": "catalogue",
+   "season": "2025/26",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e90711",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff",
+    "bands": true
+   },
+   "maker": "Nike",
+   "sponsor": "IBI",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2025-2026",
+     "image": "isr_hapoel_tlv_1_2526.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tlv_1_2526.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-32",
+   "origin": "catalogue",
+   "season": "2025/26",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#1e1e1e"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Nike",
+   "sponsor": "IBI",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2025-2026",
+     "image": "isr_hapoel_tlv_2_2526.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tlv_2_2526.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-33",
+   "origin": "catalogue",
+   "season": "2025/26",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "white"
+    ],
+    "hex": {
+     "black": "#1e1e1e",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#1e1e1e",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Nike",
+   "sponsor": "IBI",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p3"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "third kit 2025-2026",
+     "image": "isr_hapoel_tlv_3_2526.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tlv_3_2526.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-27",
+   "origin": "catalogue",
+   "season": "2022/23",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e41e2c",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#e41e2c",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e41e2c",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2022-2023",
+     "image": "isr_hapoel_tel-aviv_1_2223.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_2223.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-28-v2",
+   "origin": "catalogue",
+   "season": "2022/23",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#ed1c24",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2022-2023",
+     "image": "isr_hapoel_tel-aviv_1_2223_2.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_2223_2.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [
+    [
+     "second"
+    ]
+   ],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-29",
+   "origin": "catalogue",
+   "season": "2022/23",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "white"
+    ],
+    "hex": {
+     "black": "#2c2c2d",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "black",
+    "hex": "#2c2c2d",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#2c2c2d",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2022-2023",
+     "image": "isr_hapoel_tel-aviv_2_2223.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_2223.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-30",
+   "origin": "catalogue",
+   "season": "2022/23",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#3e3d3e"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "grey",
+    "trimHex": "#d2d2d2"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "third kit 2022-2023",
+     "image": "isr_hapoel_tel-aviv_3_2223.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_3_2223.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-24",
+   "origin": "catalogue",
+   "season": "2020/21",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e31f2b",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2020-2021",
+     "image": "isr_hapoel_tel-aviv_1_2021.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_2021.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-25",
+   "origin": "catalogue",
+   "season": "2020/21",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#e31f2b"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2020-2021",
+     "image": "isr_hapoel_tel-aviv_2_2021.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_2021.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-26",
+   "origin": "catalogue",
+   "season": "2020/21",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "grey"
+    ],
+    "hex": {
+     "black": "#333333",
+     "grey": "#666160"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "third kit 2020-2021",
+     "image": "isr_hapoel_tel-aviv_3_2021.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_3_2021.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-23",
+   "origin": "catalogue",
+   "season": "2019/20",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e31f2b",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2019-2020",
+     "image": "isr_hapoel_tel-aviv_1_1920.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1920.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-19",
+   "origin": "catalogue",
+   "season": "2018/19",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "red",
+     "maroon"
+    ],
+    "hex": {
+     "red": "#e31f2b",
+     "maroon": "#7c191e"
+    },
+    "measured": {
+     "hoops": 0
+    }
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2018-2019",
+     "image": "isr_hapoel_tel-aviv_1_1819.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1819.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-20",
+   "origin": "catalogue",
+   "season": "2018/19",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "black",
+     "grey"
+    ],
+    "hex": {
+     "black": "#333333",
+     "grey": "#4f4b4b"
+    },
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "shorts": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#333333",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2018-2019",
+     "image": "isr_hapoel_tel-aviv_2_1819.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1819.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-21-v2",
+   "origin": "catalogue",
+   "season": "2018/19",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#e31f2b"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2018-2019",
+     "image": "isr_hapoel_tel-aviv_2_1819_2.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1819_2.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [
+    [
+     "second"
+    ]
+   ],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-22",
+   "origin": "catalogue",
+   "season": "2018/19",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#e31f2b"
+    },
+    "measured": {
+     "stripes": 4
+    }
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Macron",
+   "sponsor": "Arkia",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "third kit 2018-2019",
+     "image": "isr_hapoel_tel-aviv_3_1819.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_3_1819.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-15",
+   "origin": "catalogue",
+   "season": "2016/17",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e31f2b",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Nike",
+   "sponsor": "Fujicom",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2016-2017",
+     "image": "isr_hapoel_tel-aviv_1_1617.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1617.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-16-v2",
+   "origin": "catalogue",
+   "season": "2016/17",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "gradient",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e31f2b",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Nike",
+   "sponsor": "Fujicom",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2016-2017",
+     "image": "isr_hapoel_tel-aviv_1_1617_2.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1617_2.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [
+    [
+     "second"
+    ]
+   ],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-17",
+   "origin": "catalogue",
+   "season": "2016/17",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#e31f2b"
+    },
+    "measured": {
+     "stripes": 4
+    }
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Nike",
+   "sponsor": "Fujicom",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2016-2017",
+     "image": "isr_hapoel_tel-aviv_2_1617.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1617.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-18",
+   "origin": "catalogue",
+   "season": "2016/17",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "black",
+     "grey"
+    ],
+    "hex": {
+     "black": "#212121",
+     "grey": "#4a4949"
+    },
+    "measured": {
+     "stripes": 2
+    }
+   },
+   "shorts": {
+    "colour": "black",
+    "hex": "#212121",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#212121",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Nike",
+   "sponsor": "Fujicom",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p2"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "third kit 2016-2017",
+     "image": "isr_hapoel_tel-aviv_3_1617.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_3_1617.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-14",
+   "origin": "catalogue",
+   "season": "2015/16",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e61e2a",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   },
+   "maker": "Puma",
+   "sponsor": "Fujitsu",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2015-2016",
+     "image": "isr_hapoel_tel-aviv_1_1516.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1516.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-12",
+   "origin": "catalogue",
+   "season": "2014/15",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#db1a21",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Umbro",
+   "sponsor": "Fujicom",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2014-2015",
+     "image": "isr_hapoel_tel-aviv_1_1415.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1415.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-13",
+   "origin": "catalogue",
+   "season": "2014/15",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "white"
+    ],
+    "hex": {
+     "black": "#282828",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "black",
+    "hex": "#282828",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Umbro",
+   "sponsor": "Fujicom",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2014-2015",
+     "image": "isr_hapoel_tel-aviv_2_1415.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1415.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-10",
+   "origin": "catalogue",
+   "season": "2012/13",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#ed1c24",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Kappa",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2012-2013",
+     "image": "isr_hapoel_tel-aviv_1_1213.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1213.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-11",
+   "origin": "catalogue",
+   "season": "2012/13",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "grey"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "grey": "#bfc5cd"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "grey",
+    "trimHex": "#bfc5cd"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Kappa",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2012-2013",
+     "image": "isr_hapoel_tel-aviv_2_1213.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1213.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-08",
+   "origin": "catalogue",
+   "season": "2011/12",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#ed1c24",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Kappa",
+   "sponsor": "במחיר",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2011-2012",
+     "image": "isr_hapoel_tel-aviv_1_1112.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_1112.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-09",
+   "origin": "catalogue",
+   "season": "2011/12",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#ed1c24"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Kappa",
+   "sponsor": "במחיר",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2011-2012",
+     "image": "isr_hapoel_tel-aviv_2_1112.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_1112.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "cof-k-06",
+   "origin": "catalogue",
+   "season": "2008/09",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#ed1c24",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#ed1c24",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Umbro",
+   "sponsor": "Umbro",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2008-2009",
+     "image": "isr_hapoel_tel-aviv_1_0809.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_0809.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-07",
+   "origin": "catalogue",
+   "season": "2008/09",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ed1c24"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Umbro",
+   "sponsor": "Umbro",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2008-2009",
+     "image": "isr_hapoel_tel-aviv_2_0809.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_0809.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-04",
+   "origin": "catalogue",
+   "season": "2006/07",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e31f2b",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Umbro",
+   "sponsor": "Subaru",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2006-2007",
+     "image": "isr_hapoel_tel-aviv_1_0607.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_0607.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-05",
+   "origin": "catalogue",
+   "season": "2006/07",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#e31f2b"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#e31f2b"
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": "red",
+    "trimHex": "#ffffff",
+    "bands": true
+   },
+   "maker": "Umbro",
+   "sponsor": "Subaru",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2006-2007",
+     "image": "isr_hapoel_tel-aviv_2_0607.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_0607.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-03",
+   "origin": "catalogue",
+   "season": "2005/06",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e31f2b",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": "white",
+    "trimHex": "#ffffff"
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Kappa",
+   "sponsor": "Subaru",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2005-2006",
+     "image": "isr_hapoel_tel-aviv_1_0506.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_0506.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-01",
+   "origin": "catalogue",
+   "season": "2002/03",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e31f2b",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "red",
+    "hex": "#e31f2b",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Diadora",
+   "sponsor": "Keter",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "home kit 2002-2003",
+     "image": "isr_hapoel_tel-aviv_1_0203.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_1_0203.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  },
+  {
+   "id": "cof-k-02",
+   "origin": "catalogue",
+   "season": "2002/03",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "chest band",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#e31f2b"
+    },
+    "measured": {}
+   },
+   "shorts": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null
+   },
+   "socks": {
+    "colour": "white",
+    "hex": "#ffffff",
+    "trim": null,
+    "trimHex": null,
+    "bands": false
+   },
+   "maker": "Diadora",
+   "sponsor": "Keter",
+   "shortsSponsor": null,
+   "sources": [
+    "cof-hapoel-tel-aviv-p1"
+   ],
+   "evidence": [
+    {
+     "publisher": "colours-of-football.com",
+     "ref": "away kit 2002-2003",
+     "image": "isr_hapoel_tel-aviv_2_0203.png"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cof/isr_hapoel_tel-aviv_2_0203.png",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": false,
+   "twin": []
+  }
+ ]
+}

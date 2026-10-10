@@ -128,6 +128,7 @@ textarea.cp{position:absolute;opacity:0;pointer-events:none;height:1px;width:1px
 
 <section class="hfk" id="hfk" aria-labelledby="hfkT" hidden></section>
 <section class="hfk" id="cfs" hidden></section>
+<section class="hfk" id="wk" hidden></section>
 
 <section class="notes" aria-label="על הארכיון">
   <div class="note"><h3>מה מדוד ומה לא</h3><p>הצבעים הם הערך המדויק השכיח בכל ציור, בנפרד לחולצה, למכנסיים ולגרביים. ספירת הפסים נמדדת מהפיקסלים. הדגם נקרא בעין ונבדק מול המדידה.</p><p>יצרן וספונסר מוזנים רק כשציור בקטלוג מראה אותם. לחולצות שיש להן רק ציור מקומונס אין יצרן או ספונסר.</p></div>
@@ -149,49 +150,372 @@ const COL={brown:'חום',red:'אדום',green:'ירוק',yellow:'צהוב',blac
 const OBS_MAKER={swoosh:'סווש',triangle:'משולש',"N-mark":'סימן בצורת N'};
 const startYear=k=>+(k.season.match(/\d{4}/)||[0])[0];
 const $=s=>document.querySelector(s);
+const RESOLVE=s=>s;
 const SPONSOR_TYPE={
  "_note": "Typographic treatment of chest sponsors (35 distinct names in the archives). A sponsor is LETTERED on the cloth, never a redrawn logo (rule 25). fam: heavy | cond | round | serif. brand: the colour the real lettering is printed in, used only on the static archive drawings (a club page paints neutral ink — rule 95). lines: the wordmark broken onto several lines when the real one is.",
- "default": {"fam": "cond", "weight": 700, "italic": false, "case": "upper", "track": 0.03},
+ "default": {
+  "fam": "cond",
+  "weight": 700,
+  "italic": false,
+  "case": "upper",
+  "track": 0.03
+ },
  "styles": {
-  "stoiximan": {"fam": "heavy", "weight": 900, "italic": true, "case": "upper", "track": 0.0, "brand": "#d9232a"},
-  "pame stoixima": {"fam": "cond", "weight": 800, "italic": true, "case": "upper", "track": 0.04},
-  "20 stoixima": {"fam": "cond", "weight": 800, "italic": true, "case": "upper", "track": 0.04},
-  "stoixima": {"fam": "heavy", "weight": 900, "italic": true, "case": "upper", "track": 0.0},
-  "ΣΤΟΙΧΗΜΑ": {"fam": "heavy", "weight": 900, "italic": true, "case": "asis", "track": 0.02},
-  "οπαπ": {"fam": "heavy", "weight": 900, "case": "upper", "track": 0.1},
-  "dafabet": {"fam": "round", "weight": 800, "case": "lower", "track": -0.01},
-  "congstar": {"fam": "round", "weight": 800, "case": "lower", "track": -0.01, "brand": "#f26b21"},
-  "carling": {"fam": "serif", "weight": 800, "case": "upper", "track": 0.1},
-  "cosmote": {"fam": "round", "weight": 700, "case": "lower", "track": 0.0, "brand": "#00a651"},
-  "ote": {"fam": "heavy", "weight": 900, "case": "upper", "track": 0.16, "brand": "#0067b1"},
-  "ppd": {"fam": "heavy", "weight": 900, "case": "upper", "track": 0.12},
-  "siemens mobile": {"lines": [{"t": "SIEMENS", "fam": "heavy", "weight": 900, "track": 0.04, "brand": "#009999"}, {"t": "mobile", "fam": "round", "weight": 800, "case": "lower", "scale": 0.62, "brand": "#e2001a"}]},
-  "siemens": {"fam": "heavy", "weight": 900, "case": "upper", "track": 0.04, "brand": "#009999"},
-  "magners": {"fam": "serif", "weight": 800, "italic": true, "case": "lower", "track": 0.02},
-  "lg": {"fam": "heavy", "weight": 900, "case": "upper", "track": 0.14, "brand": "#a50034"},
-  "vodafone": {"fam": "round", "weight": 800, "case": "lower", "track": 0.0, "brand": "#e60000"},
-  "tennent's": {"fam": "serif", "weight": 800, "case": "upper", "track": 0.06, "brand": "#c8102e"},
-  "ein platz an der sonne": {"lines": [{"t": "EIN PLATZ", "fam": "cond", "weight": 800, "track": 0.08}, {"t": "AN DER SONNE", "fam": "cond", "weight": 700, "track": 0.08, "scale": 0.8}]},
-  "unicef": {"fam": "round", "weight": 800, "case": "lower", "track": 0.0, "brand": "#1cabe2"},
-  "tim": {"fam": "heavy", "weight": 900, "case": "upper", "track": 0.12, "brand": "#004691"},
-  "aluminij": {"fam": "heavy", "weight": 900, "case": "upper", "track": 0.06},
-  "a little shelter": {"lines": [{"t": "A LITTLE", "fam": "round", "weight": 800, "track": 0.06, "scale": 0.8}, {"t": "SHELTER", "fam": "round", "weight": 800, "track": 0.06}]},
-  "mta": {"fam": "heavy", "weight": 900, "case": "asis", "track": 0.04},
-  "interagent": {"fam": "cond", "weight": 800, "case": "upper", "track": 0.08},
-  "citibank": {"fam": "round", "weight": 700, "case": "lower", "track": 0.0, "brand": "#056dae"},
-  "ntl:": {"fam": "round", "weight": 800, "case": "lower", "track": 0.0, "brand": "#1d3c8f"},
-  "ntl:home digital tv": {"lines": [{"t": "ntl:", "fam": "round", "weight": 800, "case": "lower", "brand": "#1d3c8f"}, {"t": "home digital tv", "fam": "round", "weight": 600, "case": "lower", "scale": 0.5}]},
-  "mivne": {"fam": "heavy", "weight": 900, "case": "upper", "track": 0.14},
-  "דיל טוב": {"fam": "heavy", "weight": 900, "case": "asis", "track": 0.0},
-  "securvita": {"fam": "round", "weight": 800, "case": "lower", "track": 0.0, "brand": "#d2232a"},
-  "kino": {"fam": "cond", "weight": 800, "case": "upper", "track": 0.12},
-  "piraeus bank": {"lines": [{"t": "PIRAEUS", "fam": "serif", "weight": 800, "track": 0.1}, {"t": "BANK", "fam": "serif", "weight": 700, "track": 0.3, "scale": 0.62}]},
-  "alpha digital": {"lines": [{"t": "ALPHA", "fam": "cond", "weight": 800, "track": 0.1}, {"t": "DIGITAL", "fam": "cond", "weight": 600, "track": 0.2, "scale": 0.7}]}
+  "stoiximan": {
+   "fam": "heavy",
+   "weight": 900,
+   "italic": true,
+   "case": "upper",
+   "track": 0.0,
+   "brand": "#d9232a"
+  },
+  "pame stoixima": {
+   "fam": "cond",
+   "weight": 800,
+   "italic": true,
+   "case": "upper",
+   "track": 0.04
+  },
+  "20 stoixima": {
+   "fam": "cond",
+   "weight": 800,
+   "italic": true,
+   "case": "upper",
+   "track": 0.04
+  },
+  "stoixima": {
+   "fam": "heavy",
+   "weight": 900,
+   "italic": true,
+   "case": "upper",
+   "track": 0.0
+  },
+  "ΣΤΟΙΧΗΜΑ": {
+   "fam": "heavy",
+   "weight": 900,
+   "italic": true,
+   "case": "asis",
+   "track": 0.02
+  },
+  "οπαπ": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.1
+  },
+  "dafabet": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": -0.01
+  },
+  "congstar": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": -0.01,
+   "brand": "#f26b21"
+  },
+  "carling": {
+   "fam": "serif",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.1
+  },
+  "cosmote": {
+   "fam": "round",
+   "weight": 700,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#00a651"
+  },
+  "ote": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.16,
+   "brand": "#0067b1"
+  },
+  "ppd": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.12
+  },
+  "siemens mobile": {
+   "lines": [
+    {
+     "t": "SIEMENS",
+     "fam": "heavy",
+     "weight": 900,
+     "track": 0.04,
+     "brand": "#009999"
+    },
+    {
+     "t": "mobile",
+     "fam": "round",
+     "weight": 800,
+     "case": "lower",
+     "scale": 0.62,
+     "brand": "#e2001a"
+    }
+   ]
+  },
+  "siemens": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.04,
+   "brand": "#009999"
+  },
+  "magners": {
+   "fam": "serif",
+   "weight": 800,
+   "italic": true,
+   "case": "lower",
+   "track": 0.02
+  },
+  "lg": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.14,
+   "brand": "#a50034"
+  },
+  "vodafone": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#e60000"
+  },
+  "tennent's": {
+   "fam": "serif",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.06,
+   "brand": "#c8102e"
+  },
+  "ein platz an der sonne": {
+   "lines": [
+    {
+     "t": "EIN PLATZ",
+     "fam": "cond",
+     "weight": 800,
+     "track": 0.08
+    },
+    {
+     "t": "AN DER SONNE",
+     "fam": "cond",
+     "weight": 700,
+     "track": 0.08,
+     "scale": 0.8
+    }
+   ]
+  },
+  "unicef": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#1cabe2"
+  },
+  "tim": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.12,
+   "brand": "#004691"
+  },
+  "aluminij": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.06
+  },
+  "a little shelter": {
+   "lines": [
+    {
+     "t": "A LITTLE",
+     "fam": "round",
+     "weight": 800,
+     "track": 0.06,
+     "scale": 0.8
+    },
+    {
+     "t": "SHELTER",
+     "fam": "round",
+     "weight": 800,
+     "track": 0.06
+    }
+   ]
+  },
+  "mta": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "asis",
+   "track": 0.04
+  },
+  "interagent": {
+   "fam": "cond",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.08
+  },
+  "citibank": {
+   "fam": "round",
+   "weight": 700,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#056dae"
+  },
+  "ntl:": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#1d3c8f"
+  },
+  "ntl:home digital tv": {
+   "lines": [
+    {
+     "t": "ntl:",
+     "fam": "round",
+     "weight": 800,
+     "case": "lower",
+     "brand": "#1d3c8f"
+    },
+    {
+     "t": "home digital tv",
+     "fam": "round",
+     "weight": 600,
+     "case": "lower",
+     "scale": 0.5
+    }
+   ]
+  },
+  "mivne": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.14
+  },
+  "דיל טוב": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "asis",
+   "track": 0.0
+  },
+  "securvita": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#d2232a"
+  },
+  "kino": {
+   "fam": "cond",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.12
+  },
+  "piraeus bank": {
+   "lines": [
+    {
+     "t": "PIRAEUS",
+     "fam": "serif",
+     "weight": 800,
+     "track": 0.1
+    },
+    {
+     "t": "BANK",
+     "fam": "serif",
+     "weight": 700,
+     "track": 0.3,
+     "scale": 0.62
+    }
+   ]
+  },
+  "alpha digital": {
+   "lines": [
+    {
+     "t": "ALPHA",
+     "fam": "cond",
+     "weight": 800,
+     "track": 0.1
+    },
+    {
+     "t": "DIGITAL",
+     "fam": "cond",
+     "weight": 600,
+     "track": 0.2,
+     "scale": 0.7
+    }
+   ]
+  },
+  "keter": {
+   "fam": "round",
+   "weight": 900,
+   "case": "lower",
+   "track": 0.02,
+   "brand": "#c8102e"
+  },
+  "subaru": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.1,
+   "brand": "#173f8a"
+  },
+  "umbro": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.16
+  },
+  "fujicom": {
+   "fam": "round",
+   "weight": 800,
+   "case": "asis",
+   "track": 0.0
+  },
+  "fujitsu": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.04,
+   "brand": "#c8102e"
+  },
+  "arkia": {
+   "fam": "round",
+   "weight": 900,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#00a651"
+  },
+  "ibi": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "upper",
+   "track": 0.12
+  },
+  "הכשרה": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "asis",
+   "track": 0.0,
+   "brand": "#c8102e"
+  },
+  "במחיר": {
+   "fam": "heavy",
+   "weight": 900,
+   "case": "asis",
+   "track": 0.0
+  }
  }
-}
-;
+};
 const MARKS={
- "_note": "Real maker and sponsor marks, printed on the archive drawings and on the gate 4/5 cloth. Vector paths from simple-icons 13.21.0 (CC0 data; the marks are trademarks of their owners, used with the owner's approval, chat 10.10.2026: 'שימוש נכון בלוגואים'). Umbro: the Worker's own two-diamond mark (public/kits/assembly/2009-10/parts/maker-umbro.svg). A maker with no mark here is lettered.",
+ "_note": "Real maker and sponsor marks, printed on the archive drawings and on the gate 4/5 cloth. Vector paths from simple-icons 13.21.0 (CC0 data; the marks are trademarks of their owners, used with the owner's approval, chat 10.10.2026: '\u05e9\u05d9\u05de\u05d5\u05e9 \u05e0\u05db\u05d5\u05df \u05d1\u05dc\u05d5\u05d2\u05d5\u05d0\u05d9\u05dd'). Umbro: the Worker's own two-diamond mark (public/kits/assembly/2009-10/parts/maker-umbro.svg). A maker with no mark here is lettered. Raster marks (kind 'raster') are the Worker's own approved artwork under public/kits: 'mono' ones are white shapes printed through a mask in the cloth's ink, 'colour' ones as they are.",
  "makers": {
   "nike": {
    "viewBox": "0 7.8 24 8.4",
@@ -241,6 +565,13 @@ const MARKS={
    "kind": "stroke",
    "strokeWidth": 8,
    "source": "The Worker (public/kits/assembly/2009-10/parts/maker-umbro.svg)"
+  },
+  "macron": {
+   "viewBox": "0 0 640 77",
+   "kind": "raster",
+   "src": "/kits/marks/maker-macron.webp",
+   "print": "mono",
+   "source": "The Worker (public/kits/marks)"
   }
  },
  "sponsors": {
@@ -254,13 +585,40 @@ const MARKS={
    "viewBox": "0 10.02 24 3.97",
    "d": "M1.478 10.016c.24 0 .59.046 1.046.14v.726a2.465 2.465 0 0 0-.946-.213c-.41 0-.615.118-.615.354 0 .088.041.16.124.216.069.045.258.14.568.286.446.208.743.388.89.541.176.182.264.417.264.705 0 .415-.172.73-.516.949-.279.176-.64.264-1.085.264-.375 0-.753-.046-1.133-.139v-.755c.41.135.774.203 1.09.203.437 0 .655-.121.655-.362a.302.302 0 0 0-.095-.227c-.065-.065-.232-.155-.5-.27-.481-.208-.795-.384-.94-.53a.999.999 0 0 1-.284-.73c0-.377.137-.666.413-.864.272-.196.626-.294 1.064-.294zm21.19 0c.246 0 .565.04.956.123l.09.016v.727a2.471 2.471 0 0 0-.948-.213c-.409 0-.612.118-.612.354 0 .088.04.16.123.216.066.043.256.139.57.286.443.208.74.388.889.541.176.182.264.417.264.705 0 .415-.172.73-.514.949-.28.176-.643.264-1.087.264-.376 0-.754-.046-1.134-.139v-.755c.407.135.77.203 1.09.203.437 0 .655-.121.655-.362 0-.09-.03-.166-.092-.227-.066-.065-.233-.155-.503-.27-.48-.206-.793-.382-.94-.53a.997.997 0 0 1-.284-.732c0-.376.137-.664.413-.862.272-.196.627-.294 1.064-.294zm-12.674.066l.92 2.444.942-2.444h1.257v3.825h-.968v-2.708l-1.072 2.747h-.632l-1.052-2.747v2.708H8.67v-3.825zm-5.587 0v3.825H3.386v-3.825zm3.554 0v.692H6.327v.864H7.75v.63H6.327v.908h1.677v.73h-2.66v-3.824zm8.707 0v.692h-1.634v.864h1.422v.63h-1.422v.908h1.677v.73H14.05v-3.824zm1.898 0l1.255 2.56v-2.56h.719v3.825h-1.15l-1.288-2.595v2.595h-.72v-3.825z",
    "kind": "fill",
-   "source": "simple-icons 13.21.0 (CC0)"
+   "source": "simple-icons 13.21.0 (CC0)",
+   "replace": true
   },
   "lg": {
    "viewBox": "0 6.71 24 10.58",
    "d": "M14.522 14.078h3.27v1.33h-4.847v-6.83h1.577v5.5zm6.74-1.274h1.284v1.195c-.236.09-.698.18-1.137.18-1.42 0-1.893-.721-1.893-2.186 0-1.398.45-2.221 1.869-2.221.791 0 1.24.248 1.612.722l.982-.903c-.6-.855-1.646-1.114-2.629-1.114-2.208 0-3.368 1.205-3.368 3.504 0 2.288 1.047 3.528 3.358 3.528 1.06 0 2.096-.27 2.66-.665V11.53h-2.739v1.274zM5.291 6.709a5.29 5.29 0 1 1 0 10.582 5.291 5.291 0 1 1 0-10.582m3.16 8.457a4.445 4.445 0 0 0 1.31-3.161v-.242l-.22.001H6.596v.494h2.662l-.001.015a3.985 3.985 0 0 1-3.965 3.708 3.95 3.95 0 0 1-2.811-1.165 3.952 3.952 0 0 1-1.164-2.811c0-1.061.414-2.059 1.164-2.81a3.951 3.951 0 0 1 2.81-1.164l.252.003v-.495l-.251-.003a4.475 4.475 0 0 0-4.47 4.469c0 1.194.465 2.316 1.309 3.161a4.444 4.444 0 0 0 3.16 1.31 4.444 4.444 0 0 0 3.162-1.31m-2.91-1.297V9.644H5.04v4.72h1.556v-.495H5.543zm-1.265-3.552a.676.676 0 1 0-.675.674.676.676 0 0 0 .675-.674",
    "kind": "fill",
-   "source": "simple-icons 13.21.0 (CC0)"
+   "source": "simple-icons 13.21.0 (CC0)",
+   "replace": true
+  },
+  "fujitsu": {
+   "viewBox": "0 0 640 435",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-fujitsu.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "The Worker (public/kits)"
+  },
+  "arkia": {
+   "viewBox": "0 0 640 437",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-arkia.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "The Worker (public/kits)",
+   "plate": true
+  },
+  "subaru": {
+   "viewBox": "0 0 360 180",
+   "kind": "raster",
+   "src": "/kits/assembly/2009-10/parts/sponsor-subaru.svg",
+   "print": "colour",
+   "replace": true,
+   "source": "The Worker (public/kits)"
   }
  }
 };
@@ -287,8 +645,14 @@ const FAM={heavy:"'Archivo Black','Arial Black',Impact,sans-serif",cond:"'Bebas 
 const contrast=(a,b)=>{const L=h=>{const n=parseInt(h.slice(1),16),f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};return .2126*f(n>>16&255)+.7152*f(n>>8&255)+.0722*f(n&255)};const x=L(a),y=L(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
 
 /* Real marks (content/manual/maker-marks.json, injected as MARKS): the maker's mark on the chest, a sponsor's mark where one exists. A name with no mark is lettered. */
+let markUid=0;
 function markG(m,cx,cy,w,h,fill,halo){
   const [x0,y0,vw,vh]=m.viewBox.split(' ').map(Number),k=Math.min(w/vw,h/vh),tx=cx-(x0+vw/2)*k,ty=cy-(y0+vh/2)*k;
+  if(m.kind==='raster'){
+    const src=typeof RESOLVE==='function'?RESOLVE(m.src):m.src,id='mk'+(++markUid);
+    const img=`<image href="${src}" x="${x0}" y="${y0}" width="${vw}" height="${vh}" preserveAspectRatio="xMidYMid meet"/>`;
+    return m.print==='mono'?`<g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(4)})"><mask id="${id}" maskUnits="userSpaceOnUse" x="${x0}" y="${y0}" width="${vw}" height="${vh}">${img}</mask><rect x="${x0}" y="${y0}" width="${vw}" height="${vh}" fill="${halo}" fill-opacity=".0" mask="url(#${id})"/><rect x="${x0}" y="${y0}" width="${vw}" height="${vh}" fill="${fill}" mask="url(#${id})"/></g>`:`<g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(4)})">${img}</g>`;
+  }
   const body=m.kind==='stroke'?`<path d="${m.d}" fill="none" stroke="${fill}" stroke-width="${m.strokeWidth}" stroke-linejoin="round"/>`:`<path d="${m.d}" fill="${fill}"/>`;
   const back=m.kind==='stroke'?`<path d="${m.d}" fill="none" stroke="${halo}" stroke-opacity=".5" stroke-width="${m.strokeWidth+5}" stroke-linejoin="round"/>`:`<path d="${m.d}" fill="${halo}" fill-opacity=".5" stroke="${halo}" stroke-opacity=".5" stroke-width="${1.6/k}" stroke-linejoin="round"/>`;
   return `<g transform="translate(${tx.toFixed(2)} ${ty.toFixed(2)}) scale(${k.toFixed(4)})">${back}${body}</g>`;
@@ -304,7 +668,7 @@ function sponsorSVG(name,base,opt){
     const wc=opt&&opt.patterned&&opt.trim?Math.min(contrast(f.brand||'#000000',base),contrast(f.brand||'#000000',opt.trim)):f.brand?contrast(f.brand,base):0,ink=useBrand&&f.brand&&wc>=3.2?f.brand:auto;
     let sz=sizes[i];const est=tx.length*sz*(f.fam==='cond'?.42:.58)+tx.length*sz*(f.track||0);if(est>W)sz=sz*W/est;
     const yy=y+sz*.8;y+=sizes[i]*(n>1?.98:1);
-    const sm=markOf('sponsors',String(l.t||name));if(sm&&(String(l.t||name).toLowerCase()==='siemens'||String(l.t||name).toLowerCase()==='lg')){const mh=n>1?15:22,my=(n>1?yy-mh*.35:top+22),mc=useBrand&&f.brand&&wc>=3.2?f.brand:auto;return markG(sm,cx,my,String(l.t).toLowerCase()==='lg'?mh*1.25:mh*5.2,mh,mc,halo)}
+    const sm=markOf('sponsors',String(l.t||name));if(sm&&sm.replace){const mh=n>1?15:36,ar=(()=>{const q=sm.viewBox.split(' ').map(Number);return q[2]/q[3]})(),my=(n>1?yy-mh*.35:top+22),mc=useBrand&&f.brand&&wc>=3.2?f.brand:auto,mw=Math.min(W-14,mh*ar),plate=sm.plate&&(lum(base)<190||(opt&&opt.patterned))?`<rect x="${(cx-mw/2-6).toFixed(1)}" y="${(my-mh/2-4).toFixed(1)}" width="${(mw+12).toFixed(1)}" height="${(mh+8).toFixed(1)}" rx="5" fill="#f4f0e6" fill-opacity=".94"/>`:'';return plate+markG(sm,cx,my,mw,mh,mc,halo)}
     const vf=tx.toLowerCase()==='vodafone'?markOf('sponsors','vodafone'):null,gh=sz*.95,tcx=vf?cx+gh*.55:cx;
     const glyph=vf?markG(vf,tcx-est*.5-gh*.45,(n>1?yy:top+30)-sz*.3,gh,gh,useBrand&&wc>=3.2?'#e60000':auto,halo):'';
     return glyph+`<text x="${tcx}" y="${n>1?yy:top+30}" text-anchor="middle" font-family="${FAM[f.fam]||FAM.cond}" font-weight="${f.weight||700}" ${f.italic?'font-style="italic" ':''}font-size="${sz.toFixed(1)}" letter-spacing="${((f.track||0)*sz).toFixed(2)}" fill="${ink}" stroke="${halo}" stroke-opacity="${opt&&opt.patterned?.92:.55}" stroke-width="${opt&&opt.patterned?5.2:2.4}" paint-order="stroke" stroke-linejoin="round"${est>W&&n===1?` textLength="${W}" lengthAdjust="spacingAndGlyphs"`:''}>${esc(tx)}</text>`}).join('');
@@ -325,8 +689,8 @@ function shirtG(k,id){
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
   const collar=d==='contrasting sleeves'?b:t;
   const sp=k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
-  const mm=k.maker?markOf('makers',k.maker):null;
-  const mk=k.maker?(mm?markG(mm,132,95,mm.kind==='stroke'?30:24,mm.kind==='stroke'?17:15,ink,light?'#fff':'#000'):`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
+  const mm=k.maker?markOf('makers',k.maker):null,mAr=mm?(q=>q[2]/q[3])(mm.viewBox.split(' ').map(Number)):1;
+  const mk=k.maker?(mm?markG(mm,132,95,mAr>3?34:(mm.kind==='stroke'?30:24),mAr>3?9:(mm.kind==='stroke'?17:15),ink,light?'#fff':'#000'):`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
   return `<defs><clipPath id="${id}c"><path d="${BODY}"/></clipPath>
 <pattern id="${id}p" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5H3M.5 0V3" stroke="#000" stroke-opacity=".5" stroke-width=".5"/></pattern>
 <filter id="${id}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
@@ -450,6 +814,9 @@ el.innerHTML=`<h2 id="hfkT">ציורים היסטוריים · ${H.count} מער
 
 (function(){const C=DATA.cfs;if(!C)return;const el=document.getElementById('cfs');el.hidden=false;const T={home:'בית',away:'חוץ',third:'שלישית',fourth:'רביעית',goalkeeper:'שוער',special:'מיוחדת'};
 el.innerHTML=`<h2>תצלומי חולצות · ${C.count}</h2><p class="cr">תצלומים של חולצות מארכיון <a href="${C.source.archivePage}" target="_blank" rel="noopener">Club Football Shirts</a>, בשימוש באישור הבעלים. הסוג והעונה כפי ששם הקובץ במקור מצהיר; יצרן וספונסר לא נקראים מתצלום.</p><div class="g">${C.kits.map(k=>`<figure><img src="${k.image}" data-archive-photo="cfs" alt="${esc(k.season)}" loading="lazy" width="${k.width}" height="${k.height}" style="object-fit:contain"><figcaption><bdi dir="ltr">${esc(k.season)}</bdi> · ${T[k.type]||k.type}</figcaption></figure>`).join('')}</div>`})();
+
+(function(){const Wk=DATA.worker;if(!Wk)return;const el=document.getElementById('wk');el.hidden=false;
+el.innerHTML=`<h2>הארכיון הצילומי · ${Wk.count} חולצות</h2><p class="cr">${esc(Wk.source.publisher)}. התצלומים נחתכו מהרקע וצבעם נמדד; שנה בערך מסומנת "בערך" ולא נוחשת. <a href="${Wk.source.url}">לכל החולצות והארון</a></p><div class="g">${Wk.kits.map(k=>`<figure><img src="${k.file}" data-archive-photo="worker" alt="${esc((k.season||k.year||'')+' '+(k.variant||''))}" loading="lazy" width="150" height="150" style="object-fit:contain"><figcaption><bdi dir="ltr">${esc(k.season||(k.year?k.year+' בערך':''))}</bdi> · ${esc(k.variant||'')}</figcaption></figure>`).join('')}</div>`})();
 </script>
 </body>
 </html>
