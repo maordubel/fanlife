@@ -1,0 +1,2192 @@
+{
+ "sources": [
+  {
+   "id": "s365-4776100",
+   "title": "365Scores: Kalamata 0-1 Panathinaikos, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776100",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836566",
+   "title": "LiveScore: Kalamata 0-1 Panathinaikos, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836566",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4823810",
+   "title": "365Scores: Kifisia 0-2 Panathinaikos, 2026-09-16",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823810",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1882220",
+   "title": "LiveScore: Kifisia 0-2 Panathinaikos, 2026-09-16 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882220",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776106",
+   "title": "365Scores: Panathinaikos 3-0 Panetolikos, 2026-09-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776106",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836546",
+   "title": "LiveScore: Panathinaikos 3-0 Panetolikos, 2026-09-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836546",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776127",
+   "title": "365Scores: Panathinaikos 3-1 Kifisia, 2026-09-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776127",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836540",
+   "title": "LiveScore: Panathinaikos 3-1 Kifisia, 2026-09-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836540",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776112",
+   "title": "365Scores: Panathinaikos 3-1 PAOK, 2026-09-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776112",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836553",
+   "title": "LiveScore: Panathinaikos 3-1 PAOK, 2026-09-06 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836553",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4823823",
+   "title": "365Scores: Panathinaikos 1-0 Niki Volos, 2026-09-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823823",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1882224",
+   "title": "LiveScore: Panathinaikos 1-0 Niki Volos, 2026-09-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882224",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776119",
+   "title": "365Scores: Levadiakos 0-2 Panathinaikos, 2026-08-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776119",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836557",
+   "title": "LiveScore: Levadiakos 0-2 Panathinaikos, 2026-08-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836557",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4759260",
+   "title": "365Scores: Ajax 1-3 Panathinaikos, 2026-07-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4759260",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694788",
+   "title": "365Scores: Panathinaikos 2-2 PAOK, 2026-05-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694788",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759026",
+   "title": "LiveScore: Panathinaikos 2-2 PAOK, 2026-05-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759026",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694796",
+   "title": "365Scores: Olympiacos 1-0 Panathinaikos, 2026-05-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694796",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759020",
+   "title": "LiveScore: Olympiacos 1-0 Panathinaikos, 2026-05-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759020",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694804",
+   "title": "365Scores: AEK Athens 2-1 Panathinaikos, 2026-05-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694804",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759022",
+   "title": "LiveScore: AEK Athens 2-1 Panathinaikos, 2026-05-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759022",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694811",
+   "title": "365Scores: Panathinaikos 0-0 AEK Athens, 2026-05-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694811",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759024",
+   "title": "LiveScore: Panathinaikos 0-0 AEK Athens, 2026-05-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759024",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694820",
+   "title": "365Scores: Panathinaikos 0-2 Olympiacos, 2026-04-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694820",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759018",
+   "title": "LiveScore: Panathinaikos 0-2 Olympiacos, 2026-04-19 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759018",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480895",
+   "title": "365Scores: Asteras Aktor 1-2 Panathinaikos, 2026-03-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480895",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694828",
+   "title": "365Scores: PAOK 0-0 Panathinaikos, 2026-04-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694828",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759017",
+   "title": "LiveScore: PAOK 0-0 Panathinaikos, 2026-04-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759017",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480912",
+   "title": "365Scores: OFI Crete 0-2 Panathinaikos, 2026-02-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480912",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480908",
+   "title": "365Scores: Panathinaikos 3-1 Aris Salonica, 2026-03-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480908",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4481019",
+   "title": "365Scores: Panathinaikos 4-1 OFI Crete, 2026-03-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4481019",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480902",
+   "title": "365Scores: Levadiakos 1-4 Panathinaikos, 2026-03-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480902",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480900",
+   "title": "365Scores: Panathinaikos 0-0 Panetolikos, 2026-03-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480900",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480932",
+   "title": "365Scores: Atromitos Athinon 0-0 Panathinaikos, 2026-01-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480932",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482273",
+   "title": "365Scores: Panathinaikos 3-0 Kifisia, 2026-02-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482273",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4653338",
+   "title": "365Scores: Panathinaikos 0-1 PAOK, 2026-02-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4653338",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1707900",
+   "title": "LiveScore: Panathinaikos 0-1 PAOK, 2026-02-04 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1707900",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480923",
+   "title": "365Scores: Olympiacos 0-1 Panathinaikos, 2026-02-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480923",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482269",
+   "title": "365Scores: Panathinaikos 1-1 AE Larissa, 2026-02-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482269",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480942",
+   "title": "365Scores: Panathinaikos 3-0 Panserraikos, 2026-01-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480942",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4648605",
+   "title": "365Scores: Panathinaikos 3-0 Aris Salonica, 2026-01-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4648605",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1707897",
+   "title": "LiveScore: Panathinaikos 3-0 Aris Salonica, 2026-01-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1707897",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480940",
+   "title": "365Scores: AEK Athens 4-0 Panathinaikos, 2026-01-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480940",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480953",
+   "title": "365Scores: Panathinaikos 2-1 Volos NFC, 2025-12-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480953",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480947",
+   "title": "365Scores: PAOK 2-0 Panathinaikos, 2025-12-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480947",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480967",
+   "title": "365Scores: Panserraikos 0-3 Panathinaikos, 2025-11-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480967",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480964",
+   "title": "365Scores: Panathinaikos 2-3 AEK Athens, 2025-11-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480964",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482284",
+   "title": "365Scores: AE Larissa 2-2 Panathinaikos, 2025-12-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482284",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480983",
+   "title": "365Scores: Panathinaikos 2-0 Asteras Aktor, 2025-10-26",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480983",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480979",
+   "title": "365Scores: Volos NFC 1-0 Panathinaikos, 2025-11-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480979",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480990",
+   "title": "365Scores: Aris Salonica 1-1 Panathinaikos, 2025-10-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480990",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-09-20-kalamata-panathinaikos",
+   "value": {
+    "name": "Kalamata 0-1 Panathinaikos",
+    "on": "2026-09-20",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Georgios Kyriakopoulos",
+     "Rick van Drongelen",
+     "Stefan de Vrij",
+     "Davide Calabria",
+     "Etienne Camara",
+     "Santino Andino",
+     "Azzedine Ounahi",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Cyriel Dessers",
+     "Triantafyllos Tsapras",
+     "Imran Louza",
+     "Elmin Rastoder",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Erik Palmer-Brown",
+     "Anass Salah-Eddine",
+     "Pedro Chirivella",
+     "Sotiris Kontouris",
+     "Adriano Jagusic",
+     "Facundo Pellistri"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776100",
+    "ls-lu-1836566"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-09-16-kifisia-panathinaikos",
+   "value": {
+    "name": "Kifisia 0-2 Panathinaikos",
+    "on": "2026-09-16",
+    "competition": "Greece Cup - League Phase",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Anass Salah-Eddine",
+     "Stefan de Vrij",
+     "Erik Palmer-Brown",
+     "Triantafyllos Tsapras",
+     "Kings Kangwa",
+     "Sotiris Kontouris",
+     "Facundo Pellistri",
+     "Adriano Jagusic",
+     "Panagiotis Biniaris",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Georgios Katris",
+     "Etienne Camara",
+     "Azzedine Ounahi",
+     "Santino Andino",
+     "Cyriel Dessers",
+     "Christos Gitonas",
+     "Konstantinos Kotsaris",
+     "Vasilios Lavdas",
+     "Davide Calabria",
+     "Georgios Kyriakopoulos",
+     "Iason Nempis",
+     "Elmin Rastoder"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4823810",
+    "ls-lu-1882220"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-09-13-panathinaikos-panetolikos",
+   "value": {
+    "name": "Panathinaikos 3-0 Panetolikos",
+    "on": "2026-09-13",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Etienne Camara",
+     "Cyriel Dessers",
+     "Inaki Pena",
+     "Georgios Kyriakopoulos",
+     "Rick van Drongelen",
+     "Stefan de Vrij",
+     "Davide Calabria",
+     "Imran Louza",
+     "Santino Andino",
+     "Azzedine Ounahi",
+     "Vicente Taborda"
+    ],
+    "bench": [
+     "Triantafyllos Tsapras",
+     "Kings Kangwa",
+     "Facundo Pellistri",
+     "Levi Garcia",
+     "Andrews Tetteh",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Georgios Katris",
+     "Erik Palmer-Brown",
+     "Sotiris Kontouris",
+     "Adriano Jagusic",
+     "Elmin Rastoder"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776106",
+    "ls-lu-1836546"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-09-10-panathinaikos-kifisia",
+   "value": {
+    "name": "Panathinaikos 3-1 Kifisia",
+    "on": "2026-09-10",
+    "competition": "Super League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Georgios Kyriakopoulos",
+     "Rick van Drongelen",
+     "Stefan de Vrij",
+     "Davide Calabria",
+     "Kings Kangwa",
+     "Etienne Camara",
+     "Santino Andino",
+     "Levi Garcia",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Georgios Katris",
+     "Panagiotis Biniaris",
+     "Imran Louza",
+     "Azzedine Ounahi",
+     "Elmin Rastoder",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Erik Palmer-Brown",
+     "Sotiris Kontouris",
+     "Adriano Jagusic",
+     "Georgios Kyriopoulos",
+     "Facundo Pellistri"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776127",
+    "ls-lu-1836540"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-09-06-panathinaikos-paok",
+   "value": {
+    "name": "Panathinaikos 3-1 PAOK",
+    "on": "2026-09-06",
+    "competition": "Super League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Georgios Kyriakopoulos",
+     "Rick van Drongelen",
+     "Stefan de Vrij",
+     "Davide Calabria",
+     "Kings Kangwa",
+     "Etienne Camara",
+     "Santino Andino",
+     "Levi Garcia",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Panagiotis Biniaris",
+     "Imran Louza",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Georgios Katris",
+     "Erik Palmer-Brown",
+     "Sotiris Kontouris",
+     "Adriano Jagusic",
+     "Facundo Pellistri"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776112",
+    "ls-lu-1836553"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-09-03-panathinaikos-niki-volos",
+   "value": {
+    "name": "Panathinaikos 1-0 Niki Volos",
+    "on": "2026-09-03",
+    "competition": "Greece Cup - League Phase",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Georgios Kyriakopoulos",
+     "Rick van Drongelen",
+     "Erik Palmer-Brown",
+     "Georgios Katris",
+     "Facundo Pellistri",
+     "Kings Kangwa",
+     "Sotiris Kontouris",
+     "Adriano Jagusic",
+     "Cyriel Dessers",
+     "Elmin Rastoder"
+    ],
+    "bench": [
+     "Stefan de Vrij",
+     "Panagiotis Biniaris",
+     "Imran Louza",
+     "Vicente Taborda",
+     "Levi Garcia",
+     "Christos Gitonas",
+     "Konstantinos Kotsaris",
+     "Vasilios Lavdas",
+     "Davide Calabria",
+     "Georgios Kyriopoulos",
+     "Santino Andino",
+     "Andrews Tetteh"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4823823",
+    "ls-lu-1882224"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-08-31-levadiakos-panathinaikos",
+   "value": {
+    "name": "Levadiakos 0-2 Panathinaikos",
+    "on": "2026-08-31",
+    "competition": "Super League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Georgios Kyriakopoulos",
+     "Rick van Drongelen",
+     "Stefan de Vrij",
+     "Davide Calabria",
+     "Santino Andino",
+     "Kings Kangwa",
+     "Etienne Camara",
+     "Vicente Taborda",
+     "Andrews Tetteh",
+     "Levi Garcia"
+    ],
+    "bench": [
+     "Sotiris Kontouris",
+     "Imran Louza",
+     "Facundo Pellistri",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Georgios Katris",
+     "Erik Palmer-Brown",
+     "Panagiotis Biniaris",
+     "Adriano Jagusic",
+     "Georgios Kyriopoulos"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776119",
+    "ls-lu-1836557"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-07-04-ajax-panathinaikos",
+   "value": {
+    "name": "Ajax 1-3 Panathinaikos",
+    "on": "2026-07-04",
+    "competition": "Club Friendlies",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Georgios Kyriakopoulos",
+     "Ahmed Touba",
+     "Sverrir Ingason",
+     "Davide Calabria",
+     "Adam Čerin",
+     "Etienne Camara",
+     "Santino Andino",
+     "Adriano Jagusic",
+     "Anass Zaroury",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Georgios Katris",
+     "Vasilios Lavdas",
+     "Triantafyllos Tsapras",
+     "Pedro Chirivella",
+     "Manolis Siopis",
+     "Panagiotis Biniaris",
+     "Sotiris Kontouris",
+     "Vicente Taborda",
+     "Pavlos Pantelidis",
+     "Elmin Rastoder",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4759260"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-17-panathinaikos-paok",
+   "value": {
+    "name": "Panathinaikos 2-2 PAOK",
+    "on": "2026-05-17",
+    "competition": "Super League - Championship Group",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Georgios Kyriakopoulos",
+     "Ahmed Touba",
+     "Erik Palmer-Brown",
+     "Davide Calabria",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Anass Zaroury",
+     "Vicente Taborda",
+     "Santino Andino",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Javier Hernandez Carrera",
+     "Renato Sanches",
+     "Miloš Pantović",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Giannis Kotsiras",
+     "Pedro Chirivella",
+     "Manolis Siopis",
+     "Tonny Vilhena",
+     "Adriano Jagusic",
+     "Filip Djuricic",
+     "Pavlos Pantelidis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694788",
+    "ls-lu-1759026"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-05-13-olympiacos-panathinaikos",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2026-05-13",
+    "competition": "Super League - Championship Group",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Georgios Kyriakopoulos",
+     "Ahmed Touba",
+     "Erik Palmer-Brown",
+     "Davide Calabria",
+     "Santino Andino",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Vicente Taborda",
+     "Andrews Tetteh",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Pedro Chirivella",
+     "Manolis Siopis",
+     "Adriano Jagusic",
+     "Filip Djuricic",
+     "Anass Zaroury",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Giannis Kotsiras",
+     "Javier Hernandez Carrera",
+     "Tonny Vilhena",
+     "Pavlos Pantelidis",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694796",
+    "ls-lu-1759020"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-05-10-aek-athens-panathinaikos",
+   "value": {
+    "name": "AEK Athens 2-1 Panathinaikos",
+    "on": "2026-05-10",
+    "competition": "Super League - Championship Group",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Georgios Kyriakopoulos",
+     "Ahmed Touba",
+     "Erik Palmer-Brown",
+     "Davide Calabria",
+     "Santino Andino",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Pavlos Pantelidis",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Manolis Siopis",
+     "Adriano Jagusic",
+     "Filip Djuricic",
+     "Anass Zaroury",
+     "Miloš Pantović",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Giannis Kotsiras",
+     "Pedro Chirivella",
+     "Tonny Vilhena",
+     "Karol Swiderski"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694804",
+    "ls-lu-1759022"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-05-03-panathinaikos-aek-athens",
+   "value": {
+    "name": "Panathinaikos 0-0 AEK Athens",
+    "on": "2026-05-03",
+    "competition": "Super League - Championship Group",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Javier Hernandez Carrera",
+     "Sverrir Ingason",
+     "Erik Palmer-Brown",
+     "Georgios Kyriakopoulos",
+     "Davide Calabria",
+     "Santino Andino",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Anastasios Bakasetas",
+     "Facundo Pellistri",
+     "Anass Zaroury",
+     "Miloš Pantović",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Ahmed Touba",
+     "Pedro Chirivella",
+     "Adriano Jagusic",
+     "Pavlos Pantelidis",
+     "Karol Swiderski"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694811",
+    "ls-lu-1759024"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-04-19-panathinaikos-olympiacos",
+   "value": {
+    "name": "Panathinaikos 0-2 Olympiacos",
+    "on": "2026-04-19",
+    "competition": "Super League - Championship Group",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Javier Hernandez Carrera",
+     "Sverrir Ingason",
+     "Tin Jedvaj",
+     "Georgios Kyriakopoulos",
+     "Davide Calabria",
+     "Santino Andino",
+     "Renato Sanches",
+     "Pedro Chirivella",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Manolis Siopis",
+     "Anastasios Bakasetas",
+     "Facundo Pellistri",
+     "Miloš Pantović",
+     "Karol Swiderski",
+     "Konstantinos Kotsaris",
+     "Ahmed Touba",
+     "Giannis Kotsiras",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Adriano Jagusic",
+     "Pavlos Pantelidis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694820",
+    "ls-lu-1759018"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-04-05-paok-panathinaikos",
+   "value": {
+    "name": "PAOK 0-0 Panathinaikos",
+    "on": "2026-04-05",
+    "competition": "Super League - Championship Group",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Javier Hernandez Carrera",
+     "Sverrir Ingason",
+     "Tin Jedvaj",
+     "Georgios Kyriakopoulos",
+     "Davide Calabria",
+     "Vicente Taborda",
+     "Anastasios Bakasetas",
+     "Pedro Chirivella",
+     "Facundo Pellistri",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Adam Čerin",
+     "Renato Sanches",
+     "Santino Andino",
+     "Anass Zaroury",
+     "Karol Swiderski",
+     "Konstantinos Kotsaris",
+     "Ahmed Touba",
+     "Giannis Kotsiras",
+     "Manolis Siopis",
+     "Adriano Jagusic",
+     "Pavlos Pantelidis",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694828",
+    "ls-lu-1759017"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-03-22-asteras-aktor-panathinaikos",
+   "value": {
+    "name": "Asteras Aktor 1-2 Panathinaikos",
+    "on": "2026-03-22",
+    "competition": "Super League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Ahmed Touba",
+     "Javier Hernandez Carrera",
+     "Sverrir Ingason",
+     "Georgios Kyriakopoulos",
+     "Manolis Siopis",
+     "Pedro Chirivella",
+     "Giannis Kotsiras",
+     "Santino Andino",
+     "Anass Zaroury",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Adam Čerin",
+     "Adriano Jagusic",
+     "Filip Djuricic",
+     "Pavlos Pantelidis",
+     "Miloš Pantović",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Davide Calabria",
+     "Renato Sanches",
+     "Anastasios Bakasetas",
+     "Vicente Taborda",
+     "Karol Swiderski"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480895"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-15-panathinaikos-panetolikos",
+   "value": {
+    "name": "Panathinaikos 0-0 Panetolikos",
+    "on": "2026-03-15",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Kotsaris",
+     "Ahmed Touba",
+     "Javier Hernandez Carrera",
+     "Georgios Katris",
+     "Anass Zaroury",
+     "Sotiris Kontouris",
+     "Moussa Sissoko",
+     "Pavlos Pantelidis",
+     "Santino Andino",
+     "Filip Djuricic",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Pedro Chirivella",
+     "Manolis Siopis",
+     "Tonny Vilhena",
+     "Adriano Jagusic",
+     "Miloš Pantović",
+     "Lucas Chaves",
+     "Alban Lafont",
+     "Davide Calabria",
+     "Adam Čerin",
+     "Anastasios Bakasetas",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480900"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-08-levadiakos-panathinaikos",
+   "value": {
+    "name": "Levadiakos 1-4 Panathinaikos",
+    "on": "2026-03-08",
+    "competition": "Super League",
+    "score": "1-4",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Javier Hernandez Carrera",
+     "Tin Jedvaj",
+     "Georgios Katris",
+     "Georgios Kyriakopoulos",
+     "Anastasios Bakasetas",
+     "Sotiris Kontouris",
+     "Davide Calabria",
+     "Anass Zaroury",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Adam Čerin",
+     "Moussa Sissoko",
+     "Facundo Pellistri",
+     "Santino Andino",
+     "Karol Swiderski",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Ahmed Touba",
+     "Adriano Jagusic",
+     "Filip Djuricic",
+     "Pavlos Pantelidis",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480902"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-04-panathinaikos-ofi-crete",
+   "value": {
+    "name": "Panathinaikos 4-1 OFI Crete",
+    "on": "2026-03-04",
+    "competition": "Super League",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Javier Hernandez Carrera",
+     "Sverrir Ingason",
+     "Tin Jedvaj",
+     "Georgios Kyriakopoulos",
+     "Anastasios Bakasetas",
+     "Renato Sanches",
+     "Georgios Katris",
+     "Santino Andino",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Moussa Sissoko",
+     "Filip Djuricic",
+     "Facundo Pellistri",
+     "Anass Zaroury",
+     "Miloš Pantović",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Ahmed Touba",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Adriano Jagusic",
+     "Pavlos Pantelidis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4481019"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-01-panathinaikos-aris-salonica",
+   "value": {
+    "name": "Panathinaikos 3-1 Aris Salonica",
+    "on": "2026-03-01",
+    "competition": "Super League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Javier Hernandez Carrera",
+     "Tin Jedvaj",
+     "Georgios Katris",
+     "Georgios Kyriakopoulos",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Davide Calabria",
+     "Santino Andino",
+     "Pavlos Pantelidis",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Moussa Sissoko",
+     "Anastasios Bakasetas",
+     "Vicente Taborda",
+     "Filip Djuricic",
+     "Andrews Tetteh",
+     "Konstantinos Kotsaris",
+     "Ahmed Touba",
+     "Renato Sanches",
+     "Adriano Jagusic",
+     "Facundo Pellistri",
+     "Anass Zaroury",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480908"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-22-ofi-crete-panathinaikos",
+   "value": {
+    "name": "OFI Crete 0-2 Panathinaikos",
+    "on": "2026-02-22",
+    "competition": "Super League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Javier Hernandez Carrera",
+     "Sverrir Ingason",
+     "Tin Jedvaj",
+     "Georgios Kyriakopoulos",
+     "Sotiris Kontouris",
+     "Manolis Siopis",
+     "Davide Calabria",
+     "Santino Andino",
+     "Pavlos Pantelidis",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Georgios Katris",
+     "Adam Čerin",
+     "Vicente Taborda",
+     "Anass Zaroury",
+     "Karol Swiderski",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Renato Sanches",
+     "Anastasios Bakasetas",
+     "Adriano Jagusic",
+     "Filip Djuricic",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480912"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-15-panathinaikos-ae-larissa",
+   "value": {
+    "name": "Panathinaikos 1-1 AE Larissa",
+    "on": "2026-02-15",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Davide Calabria",
+     "Alban Lafont",
+     "Ahmed Touba",
+     "Tin Jedvaj",
+     "Georgios Katris",
+     "Javier Hernandez Carrera",
+     "Anastasios Bakasetas",
+     "Adam Čerin",
+     "Santino Andino",
+     "Vicente Taborda",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Adriano Jagusic",
+     "Anass Zaroury",
+     "Miloš Pantović",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Erik Palmer-Brown",
+     "Manolis Siopis",
+     "Sotiris Kontouris",
+     "Renato Sanches",
+     "Tonny Vilhena",
+     "Giannis Bokos",
+     "Pavlos Pantelidis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482269"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-08-olympiacos-panathinaikos",
+   "value": {
+    "name": "Olympiacos 0-1 Panathinaikos",
+    "on": "2026-02-08",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Sverrir Ingason",
+     "Erik Palmer-Brown",
+     "Tin Jedvaj",
+     "Georgios Kyriakopoulos",
+     "Manolis Siopis",
+     "Sotiris Kontouris",
+     "Davide Calabria",
+     "Santino Andino",
+     "Vicente Taborda",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Giannis Kotsiras",
+     "Tonny Vilhena",
+     "Pavlos Pantelidis",
+     "Anass Zaroury",
+     "Karol Swiderski",
+     "Konstantinos Kotsaris",
+     "Georgios Katris",
+     "Javier Hernandez Carrera",
+     "Anastasios Bakasetas",
+     "Adriano Jagusic",
+     "Giannis Bokos",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480923"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-04-panathinaikos-paok",
+   "value": {
+    "name": "Panathinaikos 0-1 PAOK",
+    "on": "2026-02-04",
+    "competition": "Greece Cup - Semi Finals",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Georgios Kyriakopoulos",
+     "Tin Jedvaj",
+     "Sverrir Ingason",
+     "Davide Calabria",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Santino Andino",
+     "Anastasios Bakasetas",
+     "Anass Zaroury",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Georgios Katris",
+     "Vicente Taborda",
+     "Pavlos Pantelidis",
+     "Karol Swiderski",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Erik Palmer-Brown",
+     "Javier Hernandez Carrera",
+     "Manolis Siopis",
+     "Renato Sanches",
+     "Giannis Bokos",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4653338",
+    "ls-lu-1707900"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-02-01-panathinaikos-kifisia",
+   "value": {
+    "name": "Panathinaikos 3-0 Kifisia",
+    "on": "2026-02-01",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Georgios Kyriakopoulos",
+     "Tin Jedvaj",
+     "Sverrir Ingason",
+     "Davide Calabria",
+     "Sotiris Kontouris",
+     "Santino Andino",
+     "Renato Sanches",
+     "Manolis Siopis",
+     "Pavlos Pantelidis",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Adam Čerin",
+     "Anastasios Bakasetas",
+     "Vicente Taborda",
+     "Anass Zaroury",
+     "Karol Swiderski",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Georgios Katris",
+     "Erik Palmer-Brown",
+     "Tonny Vilhena",
+     "Giannis Bokos",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482273"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-25-atromitos-athinon-panathinaikos",
+   "value": {
+    "name": "Atromitos Athinon 0-0 Panathinaikos",
+    "on": "2026-01-25",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Georgios Kyriakopoulos",
+     "Ahmed Touba",
+     "Sverrir Ingason",
+     "Giannis Kotsiras",
+     "Anass Zaroury",
+     "Anastasios Bakasetas",
+     "Manolis Siopis",
+     "Giannis Bokos",
+     "Miloš Pantović",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Pedro Chirivella",
+     "Adam Čerin",
+     "Renato Sanches",
+     "Karol Swiderski",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Tin Jedvaj",
+     "Georgios Katris",
+     "Erik Palmer-Brown",
+     "Vicente Taborda",
+     "Pavlos Pantelidis",
+     "Facundo Pellistri"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480932"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-18-aek-athens-panathinaikos",
+   "value": {
+    "name": "AEK Athens 4-0 Panathinaikos",
+    "on": "2026-01-18",
+    "competition": "Super League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Giannis Kotsiras",
+     "Ahmed Touba",
+     "Tin Jedvaj",
+     "Davide Calabria",
+     "Anass Zaroury",
+     "Adam Čerin",
+     "Pedro Chirivella",
+     "Facundo Pellistri",
+     "Andrews Tetteh",
+     "Anastasios Bakasetas"
+    ],
+    "bench": [
+     "Erik Palmer-Brown",
+     "Georgios Kyriakopoulos",
+     "Renato Sanches",
+     "Pavlos Pantelidis",
+     "Karol Swiderski",
+     "Lucas Chaves",
+     "Konstantinos Kotsaris",
+     "Sverrir Ingason",
+     "Georgios Katris",
+     "Manolis Siopis",
+     "Giannis Bokos",
+     "Miloš Pantović"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480940"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-14-panathinaikos-aris-salonica",
+   "value": {
+    "name": "Panathinaikos 3-0 Aris Salonica",
+    "on": "2026-01-14",
+    "competition": "Greece Cup - Quarter Finals",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Giannis Kotsiras",
+     "Ahmed Touba",
+     "Sverrir Ingason",
+     "Davide Calabria",
+     "Anastasios Bakasetas",
+     "Pedro Chirivella",
+     "Giannis Bokos",
+     "Karol Swiderski",
+     "Pavlos Pantelidis",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Georgios Kyriakopoulos",
+     "Renato Sanches",
+     "Anass Zaroury",
+     "Iason Nempis",
+     "Miloš Pantović",
+     "Konstantinos Kotsaris",
+     "Tin Jedvaj",
+     "Erik Palmer-Brown",
+     "Manolis Siopis",
+     "Adam Čerin",
+     "Sotiris Kontouris",
+     "Facundo Pellistri"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4648605",
+    "ls-lu-1707897"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos"
+  },
+  {
+   "id": "a-m-2026-01-11-panathinaikos-panserraikos",
+   "value": {
+    "name": "Panathinaikos 3-0 Panserraikos",
+    "on": "2026-01-11",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Kotsaris",
+     "Giannis Kotsiras",
+     "Ahmed Touba",
+     "Tin Jedvaj",
+     "Davide Calabria",
+     "Pedro Chirivella",
+     "Adam Čerin",
+     "Anass Zaroury",
+     "Filip Djuricic",
+     "Facundo Pellistri",
+     "Andrews Tetteh"
+    ],
+    "bench": [
+     "Sverrir Ingason",
+     "Georgios Kyriakopoulos",
+     "Manolis Siopis",
+     "Renato Sanches",
+     "Giannis Bokos",
+     "Lucas Chaves",
+     "Christos Gitonas",
+     "Filip Mladenovic",
+     "Sotiris Kontouris",
+     "Tonny Vilhena",
+     "Vicente Taborda",
+     "Karol Swiderski"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480942"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-21-paok-panathinaikos",
+   "value": {
+    "name": "PAOK 2-0 Panathinaikos",
+    "on": "2025-12-21",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Kotsaris",
+     "Davide Calabria",
+     "Ahmed Touba",
+     "Erik Palmer-Brown",
+     "Tin Jedvaj",
+     "Pedro Chirivella",
+     "Manolis Siopis",
+     "Anass Zaroury",
+     "Anastasios Bakasetas",
+     "Tetê",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Giannis Kotsiras",
+     "Adam Čerin",
+     "Vicente Taborda",
+     "Filip Djuricic",
+     "Miloš Pantović",
+     "Bartlomiej Drągowski",
+     "Loukas Stamellos",
+     "Sverrir Ingason",
+     "Filip Mladenovic",
+     "Georgios Nikas",
+     "Tonny Vilhena",
+     "Daniel Mancini"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480947"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-14-panathinaikos-volos-nfc",
+   "value": {
+    "name": "Panathinaikos 2-1 Volos NFC",
+    "on": "2025-12-14",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Davide Calabria",
+     "Ahmed Touba",
+     "Erik Palmer-Brown",
+     "Giannis Kotsiras",
+     "Pedro Chirivella",
+     "Manolis Siopis",
+     "Anass Zaroury",
+     "Anastasios Bakasetas",
+     "Tetê",
+     "Cyriel Dessers"
+    ],
+    "bench": [
+     "Tin Jedvaj",
+     "Georgios Nikas",
+     "Filip Djuricic",
+     "Miloš Pantović",
+     "Bartlomiej Drągowski",
+     "Konstantinos Kotsaris",
+     "Sverrir Ingason",
+     "Adriano Bregou",
+     "Vicente Taborda",
+     "Giannis Bokos",
+     "Daniel Mancini",
+     "Karol Swiderski"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480953"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-07-ae-larissa-panathinaikos",
+   "value": {
+    "name": "AE Larissa 2-2 Panathinaikos",
+    "on": "2025-12-07",
+    "competition": "Super League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Kotsaris",
+     "Filip Mladenovic",
+     "Ahmed Touba",
+     "Erik Palmer-Brown",
+     "Davide Calabria",
+     "Manolis Siopis",
+     "Adam Čerin",
+     "Anass Zaroury",
+     "Anastasios Bakasetas",
+     "Tetê",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Tin Jedvaj",
+     "Filip Djuricic",
+     "Cyriel Dessers",
+     "Miloš Pantović",
+     "Bartlomiej Drągowski",
+     "Alban Lafont",
+     "Sverrir Ingason",
+     "Giannis Kotsiras",
+     "Georgios Nikas",
+     "Vicente Taborda",
+     "Giannis Bokos",
+     "Daniel Mancini"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482284"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-30-panathinaikos-aek-athens",
+   "value": {
+    "name": "Panathinaikos 2-3 AEK Athens",
+    "on": "2025-11-30",
+    "competition": "Super League",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Bartlomiej Drągowski",
+     "Ahmed Touba",
+     "Erik Palmer-Brown",
+     "Tin Jedvaj",
+     "Anass Zaroury",
+     "Manolis Siopis",
+     "Pedro Chirivella",
+     "Davide Calabria",
+     "Anastasios Bakasetas",
+     "Karol Swiderski",
+     "Tetê"
+    ],
+    "bench": [
+     "Giannis Kotsiras",
+     "Adam Čerin",
+     "Filip Djuricic",
+     "Cyriel Dessers",
+     "Miloš Pantović",
+     "Konstantinos Kotsaris",
+     "Sverrir Ingason",
+     "Elton Fikaj",
+     "Filip Mladenovic",
+     "Georgios Nikas",
+     "Giannis Bokos",
+     "Daniel Mancini"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480964"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-23-panserraikos-panathinaikos",
+   "value": {
+    "name": "Panserraikos 0-3 Panathinaikos",
+    "on": "2025-11-23",
+    "competition": "Super League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Alban Lafont",
+     "Filip Mladenovic",
+     "Ahmed Touba",
+     "Erik Palmer-Brown",
+     "Tin Jedvaj",
+     "Manolis Siopis",
+     "Pedro Chirivella",
+     "Anass Zaroury",
+     "Tetê",
+     "Miloš Pantović",
+     "Anastasios Bakasetas"
+    ],
+    "bench": [
+     "Konstantinos Kotsaris",
+     "Adam Čerin",
+     "Giannis Bokos",
+     "Daniel Mancini",
+     "Karol Swiderski",
+     "Loukas Stamellos",
+     "Sverrir Ingason",
+     "Elton Fikaj",
+     "Georgios Nikas",
+     "Tonny Vilhena",
+     "Vicente Taborda"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480967"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-01-volos-nfc-panathinaikos",
+   "value": {
+    "name": "Volos NFC 1-0 Panathinaikos",
+    "on": "2025-11-01",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Bartlomiej Drągowski",
+     "Georgios Kyriakopoulos",
+     "Ahmed Touba",
+     "Sverrir Ingason",
+     "Giannis Kotsiras",
+     "Adam Čerin",
+     "Pedro Chirivella",
+     "Anass Zaroury",
+     "Filip Djuricic",
+     "Tetê",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Tin Jedvaj",
+     "Erik Palmer-Brown",
+     "Manolis Siopis",
+     "Alexander Jeremejeff",
+     "Miloš Pantović",
+     "Alban Lafont",
+     "Elton Fikaj",
+     "Filip Mladenovic",
+     "Georgios Nikas",
+     "Adriano Bregou",
+     "Vicente Taborda",
+     "Daniel Mancini"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480979"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-26-panathinaikos-asteras-aktor",
+   "value": {
+    "name": "Panathinaikos 2-0 Asteras Aktor",
+    "on": "2025-10-26",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Bartlomiej Drągowski",
+     "Georgios Kyriakopoulos",
+     "Ahmed Touba",
+     "Sverrir Ingason",
+     "Davide Calabria",
+     "Anass Zaroury",
+     "Adam Čerin",
+     "Pedro Chirivella",
+     "Filip Djuricic",
+     "Tetê",
+     "Karol Swiderski"
+    ],
+    "bench": [
+     "Giannis Kotsiras",
+     "Filip Mladenovic",
+     "Manolis Siopis",
+     "Renato Sanches",
+     "Miloš Pantović",
+     "Konstantinos Kotsaris",
+     "Alban Lafont",
+     "Erik Palmer-Brown",
+     "Elton Fikaj",
+     "Vicente Taborda",
+     "Daniel Mancini",
+     "Alexander Jeremejeff"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480983"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-19-aris-salonica-panathinaikos",
+   "value": {
+    "name": "Aris Salonica 1-1 Panathinaikos",
+    "on": "2025-10-19",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Bartlomiej Drągowski",
+     "Georgios Kyriakopoulos",
+     "Ahmed Touba",
+     "Sverrir Ingason",
+     "Davide Calabria",
+     "Pedro Chirivella",
+     "Anass Zaroury",
+     "Tetê",
+     "Adam Čerin",
+     "Karol Swiderski",
+     "Anastasios Bakasetas"
+    ],
+    "bench": [
+     "Filip Mladenovic",
+     "Manolis Siopis",
+     "Filip Djuricic",
+     "Alexander Jeremejeff",
+     "Miloš Pantović",
+     "Konstantinos Kotsaris",
+     "Alban Lafont",
+     "Erik Palmer-Brown",
+     "Giannis Kotsiras",
+     "Georgios Nikas",
+     "Vicente Taborda",
+     "Daniel Mancini"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480990"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}

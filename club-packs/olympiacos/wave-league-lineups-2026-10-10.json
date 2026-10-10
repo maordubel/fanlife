@@ -1,0 +1,2212 @@
+{
+ "sources": [
+  {
+   "id": "s365-4776099",
+   "title": "365Scores: Levadiakos 0-1 Olympiacos, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776099",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836573",
+   "title": "LiveScore: Levadiakos 0-1 Olympiacos, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836573",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776107",
+   "title": "365Scores: Olympiacos 0-1 OFI Crete, 2026-09-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776107",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836563",
+   "title": "LiveScore: Olympiacos 0-1 OFI Crete, 2026-09-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836563",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4823815",
+   "title": "365Scores: Olympiacos 3-2 Volos NFC, 2026-09-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823815",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1882222",
+   "title": "LiveScore: Olympiacos 3-2 Volos NFC, 2026-09-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882222",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776115",
+   "title": "365Scores: Volos NFC 1-1 Olympiacos, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776115",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836561",
+   "title": "LiveScore: Volos NFC 1-1 Olympiacos, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836561",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4823821",
+   "title": "365Scores: AE Larissa 0-4 Olympiacos, 2026-09-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823821",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1882225",
+   "title": "LiveScore: AE Larissa 0-4 Olympiacos, 2026-09-02 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882225",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776124",
+   "title": "365Scores: Asteras Aktor 0-1 Olympiacos, 2026-08-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776124",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836562",
+   "title": "LiveScore: Asteras Aktor 0-1 Olympiacos, 2026-08-30 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836562",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4776129",
+   "title": "365Scores: Olympiacos 1-0 Atromitos Athinon, 2026-08-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776129",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1836560",
+   "title": "LiveScore: Olympiacos 1-0 Atromitos Athinon, 2026-08-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836560",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4764860",
+   "title": "365Scores: Ajax 1-0 Olympiacos, 2026-07-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764860",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694791",
+   "title": "365Scores: AEK Athens 1-1 Olympiacos, 2026-05-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694791",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759025",
+   "title": "LiveScore: AEK Athens 1-1 Olympiacos, 2026-05-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759025",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694796",
+   "title": "365Scores: Olympiacos 1-0 Panathinaikos, 2026-05-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694796",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759020",
+   "title": "LiveScore: Olympiacos 1-0 Panathinaikos, 2026-05-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759020",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694803",
+   "title": "365Scores: Olympiacos 1-1 PAOK, 2026-05-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694803",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759027",
+   "title": "LiveScore: Olympiacos 1-1 PAOK, 2026-05-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759027",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694810",
+   "title": "365Scores: PAOK 3-1 Olympiacos, 2026-05-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694810",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759023",
+   "title": "LiveScore: PAOK 3-1 Olympiacos, 2026-05-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759023",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694820",
+   "title": "365Scores: Panathinaikos 0-2 Olympiacos, 2026-04-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694820",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759018",
+   "title": "LiveScore: Panathinaikos 0-2 Olympiacos, 2026-04-19 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759018",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482259",
+   "title": "365Scores: Olympiacos 0-0 AE Larissa, 2026-03-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482259",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4694829",
+   "title": "365Scores: Olympiacos 0-1 AEK Athens, 2026-04-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4694829",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1759016",
+   "title": "LiveScore: Olympiacos 0-1 AEK Athens, 2026-04-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1759016",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480907",
+   "title": "365Scores: Panserraikos 1-2 Olympiacos, 2026-03-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480907",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480901",
+   "title": "365Scores: Olympiacos 0-0 PAOK, 2026-03-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480901",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480897",
+   "title": "365Scores: OFI Crete 0-3 Olympiacos, 2026-03-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480897",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480933",
+   "title": "365Scores: Olympiacos 1-0 Volos NFC, 2026-01-24",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480933",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480930",
+   "title": "365Scores: AEK Athens 1-1 Olympiacos, 2026-02-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480930",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480939",
+   "title": "365Scores: Asteras Aktor 0-3 Olympiacos, 2026-02-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480939",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480923",
+   "title": "365Scores: Olympiacos 0-1 Panathinaikos, 2026-02-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480923",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480918",
+   "title": "365Scores: Levadiakos 0-0 Olympiacos, 2026-02-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480918",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480913",
+   "title": "365Scores: Olympiacos 2-0 Panetolikos, 2026-02-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480913",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4647666",
+   "title": "365Scores: Olympiacos 3-0 OFI Crete, 2026-01-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4647666",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480945",
+   "title": "365Scores: Atromitos Athinon 0-2 Olympiacos, 2026-01-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480945",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4648649",
+   "title": "365Scores: Olympiacos 0-2 PAOK, 2026-01-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4648649",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "ls-lu-1707894",
+   "title": "LiveScore: Olympiacos 0-2 PAOK, 2026-01-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1707894",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4543529",
+   "title": "365Scores: Ellas Syros 2-5 Olympiacos, 2025-12-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4543529",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480959",
+   "title": "365Scores: Olympiacos 3-0 OFI Crete, 2025-12-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480959",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480956",
+   "title": "365Scores: Aris Salonica 0-0 Olympiacos, 2025-12-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480956",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482280",
+   "title": "365Scores: Olympiacos 1-1 Kifisia, 2025-12-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482280",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482291",
+   "title": "365Scores: Kifisia 1-3 Olympiacos, 2025-11-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482291",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480968",
+   "title": "365Scores: Olympiacos 3-0 Atromitos Athinon, 2025-11-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480968",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480962",
+   "title": "365Scores: Panetolikos 0-1 Olympiacos, 2025-11-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480962",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4482296",
+   "title": "365Scores: AE Larissa 0-2 Olympiacos, 2025-10-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4482296",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480985",
+   "title": "365Scores: Olympiacos 2-0 AEK Athens, 2025-10-26",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480985",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4480978",
+   "title": "365Scores: Olympiacos 2-1 Aris Salonica, 2025-11-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4480978",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-09-20-levadiakos-olympiacos",
+   "value": {
+    "name": "Levadiakos 0-1 Olympiacos",
+    "on": "2026-09-20",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Stefan Ortega",
+     "Nayair Tiknizyan",
+     "David Carmo",
+     "Panagiotis Retsos",
+     "Marcus Pedersen",
+     "Remo Freuler",
+     "Gustavo Puerta",
+     "Konstantinos Fortounis",
+     "Chiquinho",
+     "Jota Silva",
+     "Roman Yaremchuk"
+    ],
+    "bench": [
+     "Manolis Saliakas",
+     "Gelson Martins",
+     "Joel Roca",
+     "Armando Gonzalez",
+     "Marius Mouandilmadji",
+     "Balsa Popovic",
+     "Lorenzo Pirola",
+     "Zinedin Smajlović",
+     "Bruno Onyemaechi",
+     "Santiago Hezze",
+     "Lorenzo Scipioni",
+     "Clayton"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776099",
+    "ls-lu-1836573"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-09-12-olympiacos-ofi-crete",
+   "value": {
+    "name": "Olympiacos 0-1 OFI Crete",
+    "on": "2026-09-12",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Stefan Ortega",
+     "Nayair Tiknizyan",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Marcus Pedersen",
+     "Remo Freuler",
+     "Gustavo Puerta",
+     "Konstantinos Fortounis",
+     "Chiquinho",
+     "Jota Silva",
+     "Armando Gonzalez"
+    ],
+    "bench": [
+     "Santiago Hezze",
+     "Gustavo Sá",
+     "Leon Bailey",
+     "Gelson Martins",
+     "Roman Yaremchuk",
+     "Balsa Popovic",
+     "David Carmo",
+     "Zinedin Smajlović",
+     "Manolis Saliakas",
+     "Bruno Onyemaechi",
+     "Dani Garcia",
+     "Clayton"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776107",
+    "ls-lu-1836563"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-09-08-olympiacos-volos-nfc",
+   "value": {
+    "name": "Olympiacos 3-2 Volos NFC",
+    "on": "2026-09-08",
+    "competition": "Greece Cup - League Phase",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Balsa Popovic",
+     "Nayair Tiknizyan",
+     "David Carmo",
+     "Zinedin Smajlović",
+     "Marcus Pedersen",
+     "Gustavo Puerta",
+     "Christos Filis",
+     "Konstantinos Fortounis",
+     "Gustavo Sá",
+     "Athanasios Koutsogoulas",
+     "Armando Gonzalez"
+    ],
+    "bench": [
+     "Panagiotis Retsos",
+     "Remo Freuler",
+     "Lorenzo Scipioni",
+     "Gelson Martins",
+     "Roman Yaremchuk",
+     "Dimitrios Stournaras",
+     "Alexandros Tsompanidis",
+     "Manolis Saliakas",
+     "Bruno Onyemaechi",
+     "Theofanis Bakoulas",
+     "Chiquinho",
+     "Jota Silva"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4823815",
+    "ls-lu-1882222"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-09-05-volos-nfc-olympiacos",
+   "value": {
+    "name": "Volos NFC 1-1 Olympiacos",
+    "on": "2026-09-05",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Stefan Ortega",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Manolis Saliakas",
+     "Santiago Hezze",
+     "Dani Garcia",
+     "Joel Roca",
+     "Jota Silva",
+     "Chiquinho",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "David Carmo",
+     "Remo Freuler",
+     "Gustavo Sá",
+     "Gelson Martins",
+     "Armando Gonzalez",
+     "Balsa Popovic",
+     "Zinedin Smajlović",
+     "Marcus Pedersen",
+     "Nayair Tiknizyan",
+     "Gustavo Puerta",
+     "Lorenzo Scipioni",
+     "Konstantinos Fortounis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776115",
+    "ls-lu-1836561"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-09-02-ae-larissa-olympiacos",
+   "value": {
+    "name": "AE Larissa 0-4 Olympiacos",
+    "on": "2026-09-02",
+    "competition": "Greece Cup - League Phase",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Balsa Popovic",
+     "Bruno Onyemaechi",
+     "David Carmo",
+     "Zinedin Smajlović",
+     "Athanasios Koutsogoulas",
+     "Christos Filis",
+     "Remo Freuler",
+     "Konstantinos Fortounis",
+     "Gustavo Sá",
+     "Gelson Martins",
+     "Armando Gonzalez"
+    ],
+    "bench": [
+     "Marcus Pedersen",
+     "Nayair Tiknizyan",
+     "Theofanis Bakoulas",
+     "Jota Silva",
+     "Joel Roca",
+     "Dimitrios Stournaras",
+     "Alexandros Tsompanidis",
+     "Panagiotis Retsos",
+     "Manolis Saliakas",
+     "Dani Garcia",
+     "Chiquinho",
+     "Clayton"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4823821",
+    "ls-lu-1882225"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-08-30-asteras-aktor-olympiacos",
+   "value": {
+    "name": "Asteras Aktor 0-1 Olympiacos",
+    "on": "2026-08-30",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Stefan Ortega",
+     "Nayair Tiknizyan",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Manolis Saliakas",
+     "Lorenzo Scipioni",
+     "Santiago Hezze",
+     "Joel Roca",
+     "Chiquinho",
+     "Jota Silva",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Zinedin Smajlović",
+     "Remo Freuler",
+     "Gustavo Sá",
+     "Gelson Martins",
+     "Armando Gonzalez",
+     "Balsa Popovic",
+     "David Carmo",
+     "Bruno Onyemaechi",
+     "Dani Garcia",
+     "Christos Mouzakitis",
+     "Konstantinos Fortounis",
+     "Clayton"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776124",
+    "ls-lu-1836562"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-08-22-olympiacos-atromitos-athinon",
+   "value": {
+    "name": "Olympiacos 1-0 Atromitos Athinon",
+    "on": "2026-08-22",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Stefan Ortega",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Zinedin Smajlović",
+     "Rodinei",
+     "Christos Mouzakitis",
+     "Santiago Hezze",
+     "Gelson Martins",
+     "Gustavo Sá",
+     "Konstantinos Fortounis",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "David Carmo",
+     "Nayair Tiknizyan",
+     "Lorenzo Scipioni",
+     "Jota Silva",
+     "Joel Roca",
+     "Balsa Popovic",
+     "Dimitrios Stournaras",
+     "Panagiotis Retsos",
+     "Manolis Saliakas",
+     "Dani Garcia",
+     "Chiquinho",
+     "Clayton"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4776129",
+    "ls-lu-1836560"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-07-18-ajax-olympiacos",
+   "value": {
+    "name": "Ajax 1-0 Olympiacos",
+    "on": "2026-07-18",
+    "competition": "Club Friendlies",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Balsa Popovic",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Zinedin Smajlović",
+     "Pablo Maffeo",
+     "Dani Garcia",
+     "Santiago Hezze",
+     "Konstantinos Fortounis",
+     "Chiquinho",
+     "Rodinei",
+     "Roman Yaremchuk"
+    ],
+    "bench": [
+     "Isidoros Koutsidis",
+     "Christos Filis",
+     "Georgios Masouras",
+     "Joel Roca",
+     "Konstantinos Tzolakis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4764860"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-17-aek-athens-olympiacos",
+   "value": {
+    "name": "AEK Athens 1-1 Olympiacos",
+    "on": "2026-05-17",
+    "competition": "Super League - Championship Group",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Dani Garcia",
+     "Lorenzo Scipioni",
+     "Daniel Podence",
+     "Chiquinho",
+     "Rodinei",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Giulian Biancone",
+     "Santiago Hezze",
+     "Gelson Martins",
+     "André Luiz",
+     "Mehdi Taremi",
+     "Georgios Kouraklis",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Argyrios Liatsikouras",
+     "Christos Mouzakitis",
+     "Diogo Nascimento"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694791",
+    "ls-lu-1759025"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-05-13-olympiacos-panathinaikos",
+   "value": {
+    "name": "Olympiacos 1-0 Panathinaikos",
+    "on": "2026-05-13",
+    "competition": "Super League - Championship Group",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Dani Garcia",
+     "Santiago Hezze",
+     "Gelson Martins",
+     "Chiquinho",
+     "Rodinei",
+     "Mehdi Taremi"
+    ],
+    "bench": [
+     "Lorenzo Scipioni",
+     "André Luiz",
+     "Ayoub El Kaabi",
+     "Georgios Kouraklis",
+     "Alexandros Paschalakis",
+     "Giulian Biancone",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Argyrios Liatsikouras",
+     "Christos Mouzakitis",
+     "Diogo Nascimento"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694796",
+    "ls-lu-1759020"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-05-10-olympiacos-paok",
+   "value": {
+    "name": "Olympiacos 1-1 PAOK",
+    "on": "2026-05-10",
+    "competition": "Super League - Championship Group",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Dani Garcia",
+     "Santiago Hezze",
+     "Daniel Podence",
+     "Chiquinho",
+     "Rodinei",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Giulian Biancone",
+     "Christos Mouzakitis",
+     "Gelson Martins",
+     "Mehdi Taremi",
+     "Georgios Kouraklis",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Argyrios Liatsikouras",
+     "Diogo Nascimento",
+     "Lorenzo Scipioni",
+     "André Luiz"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694803",
+    "ls-lu-1759027"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-05-03-paok-olympiacos",
+   "value": {
+    "name": "PAOK 3-1 Olympiacos",
+    "on": "2026-05-03",
+    "competition": "Super League - Championship Group",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Santiago Hezze",
+     "Dani Garcia",
+     "Gelson Martins",
+     "Chiquinho",
+     "Rodinei",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Giulian Biancone",
+     "Christos Mouzakitis",
+     "André Luiz",
+     "Daniel Podence",
+     "Mehdi Taremi",
+     "Georgios Kouraklis",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Diogo Nascimento",
+     "Lorenzo Scipioni",
+     "Yusuf Yazıcı"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694810",
+    "ls-lu-1759023"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-04-19-panathinaikos-olympiacos",
+   "value": {
+    "name": "Panathinaikos 0-2 Olympiacos",
+    "on": "2026-04-19",
+    "competition": "Super League - Championship Group",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Dani Garcia",
+     "Santiago Hezze",
+     "Gelson Martins",
+     "Chiquinho",
+     "Rodinei",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Giulian Biancone",
+     "Christos Mouzakitis",
+     "Lorenzo Scipioni",
+     "Georgios Kouraklis",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Diogo Nascimento",
+     "Yusuf Yazıcı",
+     "André Luiz",
+     "Daniel Podence",
+     "Mehdi Taremi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694820",
+    "ls-lu-1759018"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-04-05-olympiacos-aek-athens",
+   "value": {
+    "name": "Olympiacos 0-1 AEK Athens",
+    "on": "2026-04-05",
+    "competition": "Super League - Championship Group",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Rodinei",
+     "Dani Garcia",
+     "Santiago Hezze",
+     "Daniel Podence",
+     "Mehdi Taremi",
+     "Gelson Martins",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Christos Mouzakitis",
+     "Diogo Nascimento",
+     "Chiquinho",
+     "Yusuf Yazıcı",
+     "Clayton",
+     "Alexandros Paschalakis",
+     "Giulian Biancone",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Costinha",
+     "Argyrios Liatsikouras",
+     "Lorenzo Scipioni"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4694829",
+    "ls-lu-1759016"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-03-22-olympiacos-ae-larissa",
+   "value": {
+    "name": "Olympiacos 0-0 AE Larissa",
+    "on": "2026-03-22",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Giulian Biancone",
+     "Costinha",
+     "Christos Mouzakitis",
+     "Lorenzo Scipioni",
+     "Daniel Podence",
+     "Chiquinho",
+     "Gelson Martins",
+     "Mehdi Taremi"
+    ],
+    "bench": [
+     "Rodinei",
+     "Diogo Nascimento",
+     "Yusuf Yazıcı",
+     "Ayoub El Kaabi",
+     "Clayton",
+     "Nikolaos Botis",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Dani Garcia"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482259"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-14-ofi-crete-olympiacos",
+   "value": {
+    "name": "OFI Crete 0-3 Olympiacos",
+    "on": "2026-03-14",
+    "competition": "Super League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Rodinei",
+     "Diogo Nascimento",
+     "Dani Garcia",
+     "Daniel Podence",
+     "Mehdi Taremi",
+     "Gelson Martins",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Costinha",
+     "Christos Mouzakitis",
+     "Lorenzo Scipioni",
+     "Chiquinho",
+     "Clayton",
+     "Nikolaos Botis",
+     "Giulian Biancone",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Yusuf Yazıcı"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480897"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-08-olympiacos-paok",
+   "value": {
+    "name": "Olympiacos 0-0 PAOK",
+    "on": "2026-03-08",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Rodinei",
+     "Dani Garcia",
+     "Santiago Hezze",
+     "Diogo Nascimento",
+     "Chiquinho",
+     "Gelson Martins",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Christos Mouzakitis",
+     "Lorenzo Scipioni",
+     "Daniel Podence",
+     "Mehdi Taremi",
+     "Alexandros Paschalakis",
+     "Giulian Biancone",
+     "Alexios Kalogeropoulos",
+     "Costinha",
+     "Francisco Ortega",
+     "Yusuf Yazıcı"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480901"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-01-panserraikos-olympiacos",
+   "value": {
+    "name": "Panserraikos 1-2 Olympiacos",
+    "on": "2026-03-01",
+    "competition": "Super League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Diogo Nascimento",
+     "Lorenzo Scipioni",
+     "Gelson Martins",
+     "Chiquinho",
+     "André Luiz",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Giulian Biancone",
+     "Rodinei",
+     "Christos Mouzakitis",
+     "Yusuf Yazıcı",
+     "Mehdi Taremi",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Santiago Hezze",
+     "Dani Garcia"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480907"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-21-olympiacos-panetolikos",
+   "value": {
+    "name": "Olympiacos 2-0 Panetolikos",
+    "on": "2026-02-21",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Alexios Kalogeropoulos",
+     "Costinha",
+     "Dani Garcia",
+     "Lorenzo Scipioni",
+     "Diogo Nascimento",
+     "Chiquinho",
+     "André Luiz",
+     "Mehdi Taremi"
+    ],
+    "bench": [
+     "Francisco Ortega",
+     "Yusuf Yazıcı",
+     "Ayoub El Kaabi",
+     "Alexandros Paschalakis",
+     "Giulian Biancone",
+     "Panagiotis Retsos",
+     "Santiago Hezze",
+     "Christos Mouzakitis",
+     "Gelson Martins"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480913"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-14-levadiakos-olympiacos",
+   "value": {
+    "name": "Levadiakos 0-0 Olympiacos",
+    "on": "2026-02-14",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Panagiotis Retsos",
+     "Giulian Biancone",
+     "Rodinei",
+     "Christos Mouzakitis",
+     "Santiago Hezze",
+     "Gelson Martins",
+     "Chiquinho",
+     "André Luiz",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Costinha",
+     "Diogo Nascimento",
+     "Yusuf Yazıcı",
+     "Clayton",
+     "Nikolaos Botis",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Lorenzo Pirola",
+     "Dani Garcia",
+     "Lorenzo Scipioni"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480918"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-08-olympiacos-panathinaikos",
+   "value": {
+    "name": "Olympiacos 0-1 Panathinaikos",
+    "on": "2026-02-08",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Ayoub El Kaabi",
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Giulian Biancone",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Santiago Hezze",
+     "Lorenzo Scipioni",
+     "Daniel Podence",
+     "Mehdi Taremi",
+     "Rodinei"
+    ],
+    "bench": [
+     "Christos Mouzakitis",
+     "Chiquinho",
+     "Yusuf Yazıcı",
+     "Gelson Martins",
+     "Clayton",
+     "Nikolaos Botis",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Dani Garcia",
+     "Diogo Nascimento"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480923"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-04-asteras-aktor-olympiacos",
+   "value": {
+    "name": "Asteras Aktor 0-3 Olympiacos",
+    "on": "2026-02-04",
+    "competition": "Super League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Giulian Biancone",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Dani Garcia",
+     "Santiago Hezze",
+     "Daniel Podence",
+     "Diogo Nascimento",
+     "Gelson Martins",
+     "Mehdi Taremi"
+    ],
+    "bench": [
+     "Alexios Kalogeropoulos",
+     "Christos Mouzakitis",
+     "Yusuf Yazıcı",
+     "André Luiz",
+     "Clayton",
+     "Nikolaos Botis",
+     "Alexandros Paschalakis",
+     "Ruben Vezo",
+     "Francisco Ortega",
+     "Lorenzo Scipioni",
+     "Chiquinho",
+     "Stavros Pnevmonidis"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480939"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-01-aek-athens-olympiacos",
+   "value": {
+    "name": "AEK Athens 1-1 Olympiacos",
+    "on": "2026-02-01",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Giulian Biancone",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Santiago Hezze",
+     "Lorenzo Scipioni",
+     "Daniel Podence",
+     "Chiquinho",
+     "Rodinei",
+     "Mehdi Taremi"
+    ],
+    "bench": [
+     "Bruno Onyemaechi",
+     "Christos Mouzakitis",
+     "Yusuf Yazıcı",
+     "Gelson Martins",
+     "André Luiz",
+     "Nikolaos Botis",
+     "Alexandros Paschalakis",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Dani Garcia",
+     "Diogo Nascimento"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480930"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-24-olympiacos-volos-nfc",
+   "value": {
+    "name": "Olympiacos 1-0 Volos NFC",
+    "on": "2026-01-24",
+    "competition": "Super League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Gustavo Mancha",
+     "Giulian Biancone",
+     "Alexios Kalogeropoulos",
+     "Dani Garcia",
+     "Lorenzo Scipioni",
+     "Daniel Podence",
+     "Diogo Nascimento",
+     "Gabriel Strefezza",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Rodinei",
+     "Santiago Hezze",
+     "Chiquinho",
+     "Yusuf Yazıcı",
+     "Roman Yaremchuk",
+     "Nikolaos Botis",
+     "Ruben Vezo",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Christos Mouzakitis",
+     "Gelson Martins",
+     "Mehdi Taremi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480933"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-14-olympiacos-paok",
+   "value": {
+    "name": "Olympiacos 0-2 PAOK",
+    "on": "2026-01-14",
+    "competition": "Greece Cup - Quarter Finals",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Giulian Biancone",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Dani Garcia",
+     "Christos Mouzakitis",
+     "Gelson Martins",
+     "Chiquinho",
+     "Yusuf Yazıcı",
+     "Mehdi Taremi"
+    ],
+    "bench": [
+     "Alexios Kalogeropoulos",
+     "Rodinei",
+     "Santiago Hezze",
+     "Daniel Podence",
+     "Roman Yaremchuk",
+     "Nikolaos Botis",
+     "Ruben Vezo",
+     "Gustavo Mancha",
+     "Argyrios Liatsikouras",
+     "Diogo Nascimento",
+     "Lorenzo Scipioni",
+     "Gabriel Strefezza"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4648649",
+    "ls-lu-1707894"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:cross-source-review-league-lineups-olympiacos"
+  },
+  {
+   "id": "a-m-2026-01-10-atromitos-athinon-olympiacos",
+   "value": {
+    "name": "Atromitos Athinon 0-2 Olympiacos",
+    "on": "2026-01-10",
+    "competition": "Super League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Giulian Biancone",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Santiago Hezze",
+     "Dani Garcia",
+     "Gelson Martins",
+     "Chiquinho",
+     "Yusuf Yazıcı",
+     "Mehdi Taremi"
+    ],
+    "bench": [
+     "Alexios Kalogeropoulos",
+     "Christos Mouzakitis",
+     "Diogo Nascimento",
+     "Gabriel Strefezza",
+     "Roman Yaremchuk",
+     "Nikolaos Botis",
+     "Ruben Vezo",
+     "Gustavo Mancha",
+     "Lorenzo Scipioni"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480945"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-03-olympiacos-ofi-crete",
+   "value": {
+    "name": "Olympiacos 3-0 OFI Crete",
+    "on": "2026-01-03",
+    "competition": "Super Cup - Final",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Francisco Ortega",
+     "Konstantinos Tzolakis",
+     "Santiago Hezze",
+     "Christos Mouzakitis",
+     "Chiquinho",
+     "Rodinei",
+     "Daniel Podence",
+     "Gelson Martins",
+     "Mehdi Taremi",
+     "Panagiotis Retsos",
+     "Giulian Biancone"
+    ],
+    "bench": [
+     "Nikolaos Botis",
+     "Alexios Kalogeropoulos",
+     "Gustavo Mancha",
+     "Costinha",
+     "Argyrios Liatsikouras",
+     "Lorenzo Scipioni",
+     "Diogo Nascimento",
+     "Dani Garcia",
+     "Stavros Pnevmonidis",
+     "Yusuf Yazıcı",
+     "Gabriel Strefezza",
+     "Roman Yaremchuk"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4647666"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-20-olympiacos-kifisia",
+   "value": {
+    "name": "Olympiacos 1-1 Kifisia",
+    "on": "2025-12-20",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Rodinei",
+     "Christos Mouzakitis",
+     "Santiago Hezze",
+     "Gabriel Strefezza",
+     "Mehdi Taremi",
+     "Chiquinho",
+     "Roman Yaremchuk"
+    ],
+    "bench": [
+     "Giulian Biancone",
+     "Diogo Nascimento",
+     "Yusuf Yazıcı",
+     "Gelson Martins",
+     "Nikolaos Botis",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Gustavo Mancha",
+     "Costinha",
+     "Dani Garcia",
+     "Lorenzo Scipioni"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482280"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-14-aris-salonica-olympiacos",
+   "value": {
+    "name": "Aris Salonica 0-0 Olympiacos",
+    "on": "2025-12-14",
+    "competition": "Super League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Alexios Kalogeropoulos",
+     "Costinha",
+     "Christos Mouzakitis",
+     "Dani Garcia",
+     "Gabriel Strefezza",
+     "Mehdi Taremi",
+     "Gelson Martins",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Francisco Ortega",
+     "Santiago Hezze",
+     "Chiquinho",
+     "Daniel Podence",
+     "Roman Yaremchuk",
+     "Nikolaos Botis",
+     "Ruben Vezo",
+     "Gustavo Mancha",
+     "Diogo Nascimento",
+     "Lorenzo Scipioni",
+     "Remy Cabella",
+     "Yusuf Yazıcı"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480956"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-06-olympiacos-ofi-crete",
+   "value": {
+    "name": "Olympiacos 3-0 OFI Crete",
+    "on": "2025-12-06",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Lorenzo Pirola",
+     "Giulian Biancone",
+     "Rodinei",
+     "Christos Mouzakitis",
+     "Santiago Hezze",
+     "Gabriel Strefezza",
+     "Mehdi Taremi",
+     "Gelson Martins",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Alexios Kalogeropoulos",
+     "Dani Garcia",
+     "Chiquinho",
+     "Yusuf Yazıcı",
+     "Roman Yaremchuk",
+     "Nikolaos Botis",
+     "Gustavo Mancha",
+     "Costinha",
+     "Diogo Nascimento",
+     "Lorenzo Scipioni",
+     "Remy Cabella",
+     "Daniel Podence"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480959"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-03-ellas-syros-olympiacos",
+   "value": {
+    "name": "Ellas Syros 2-5 Olympiacos",
+    "on": "2025-12-03",
+    "competition": "Greece Cup - League Phase",
+    "score": "2-5",
+    "venue": null,
+    "lineup": [
+     "Mehdi Taremi",
+     "Nikolaos Botis",
+     "Remy Cabella",
+     "Alexios Kalogeropoulos",
+     "Costinha",
+     "Bruno Onyemaechi",
+     "Diogo Nascimento",
+     "Lorenzo Scipioni",
+     "Gustavo Mancha",
+     "Roman Yaremchuk",
+     "Yusuf Yazıcı"
+    ],
+    "bench": [
+     "Ruben Vezo",
+     "Rodinei",
+     "Dani Garcia",
+     "Gabriel Strefezza",
+     "Ayoub El Kaabi",
+     "Giulian Biancone",
+     "Georgios Kouraklis",
+     "Lorenzo Pirola",
+     "Gelson Martins"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4543529"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-30-panetolikos-olympiacos",
+   "value": {
+    "name": "Panetolikos 0-1 Olympiacos",
+    "on": "2025-11-30",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Gustavo Mancha",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Gabriel Strefezza",
+     "Diogo Nascimento",
+     "Santiago Hezze",
+     "Gelson Martins",
+     "Ayoub El Kaabi",
+     "Roman Yaremchuk"
+    ],
+    "bench": [
+     "Alexios Kalogeropoulos",
+     "Rodinei",
+     "Dani Garcia",
+     "Christos Mouzakitis",
+     "Yusuf Yazıcı",
+     "Nikolaos Botis",
+     "Georgios Kouraklis",
+     "Ruben Vezo",
+     "Lorenzo Pirola",
+     "Francisco Ortega",
+     "Lorenzo Scipioni",
+     "Remy Cabella"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480962"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-22-olympiacos-atromitos-athinon",
+   "value": {
+    "name": "Olympiacos 3-0 Atromitos Athinon",
+    "on": "2025-11-22",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Rodinei",
+     "Diogo Nascimento",
+     "Santiago Hezze",
+     "Daniel Podence",
+     "Chiquinho",
+     "Gelson Martins",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Christos Mouzakitis",
+     "Yusuf Yazıcı",
+     "Gabriel Strefezza",
+     "Mehdi Taremi",
+     "Roman Yaremchuk",
+     "Nikolaos Botis",
+     "Giulian Biancone",
+     "Gustavo Mancha",
+     "Costinha",
+     "Dani Garcia",
+     "Lorenzo Scipioni",
+     "Remy Cabella"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480968"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-09-kifisia-olympiacos",
+   "value": {
+    "name": "Kifisia 1-3 Olympiacos",
+    "on": "2025-11-09",
+    "competition": "Super League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Rodinei",
+     "Diogo Nascimento",
+     "Christos Mouzakitis",
+     "Daniel Podence",
+     "Chiquinho",
+     "Gelson Martins",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Lorenzo Scipioni",
+     "Remy Cabella",
+     "Yusuf Yazıcı",
+     "Gabriel Strefezza",
+     "Roman Yaremchuk",
+     "Alexandros Paschalakis",
+     "Giulian Biancone",
+     "Alexios Kalogeropoulos",
+     "Costinha",
+     "Bruno Onyemaechi",
+     "Argyrios Liatsikouras",
+     "Mehdi Taremi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482291"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-01-olympiacos-aris-salonica",
+   "value": {
+    "name": "Olympiacos 2-1 Aris Salonica",
+    "on": "2025-11-01",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Gustavo Mancha",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Christos Mouzakitis",
+     "Dani Garcia",
+     "Daniel Podence",
+     "Mehdi Taremi",
+     "Chiquinho",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Lorenzo Pirola",
+     "Rodinei",
+     "Diogo Nascimento",
+     "Lorenzo Scipioni",
+     "Gelson Martins",
+     "Alexandros Paschalakis",
+     "Giulian Biancone",
+     "Remy Cabella",
+     "Stavros Pnevmonidis",
+     "Yusuf Yazıcı",
+     "Gabriel Strefezza",
+     "Roman Yaremchuk"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480978"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-26-olympiacos-aek-athens",
+   "value": {
+    "name": "Olympiacos 2-0 AEK Athens",
+    "on": "2025-10-26",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Bruno Onyemaechi",
+     "Lorenzo Pirola",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Dani Garcia",
+     "Santiago Hezze",
+     "Daniel Podence",
+     "Mehdi Taremi",
+     "Remy Cabella",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Rodinei",
+     "Lorenzo Scipioni",
+     "Chiquinho",
+     "Gabriel Strefezza",
+     "Roman Yaremchuk",
+     "Alexandros Paschalakis",
+     "Giulian Biancone",
+     "Gustavo Mancha",
+     "Christos Mouzakitis",
+     "Diogo Nascimento",
+     "Stavros Pnevmonidis",
+     "Yusuf Yazıcı"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4480985"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-10-18-ae-larissa-olympiacos",
+   "value": {
+    "name": "AE Larissa 0-2 Olympiacos",
+    "on": "2025-10-18",
+    "competition": "Super League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Konstantinos Tzolakis",
+     "Francisco Ortega",
+     "Gustavo Mancha",
+     "Panagiotis Retsos",
+     "Costinha",
+     "Santiago Hezze",
+     "Lorenzo Scipioni",
+     "Daniel Podence",
+     "Chiquinho",
+     "Yusuf Yazıcı",
+     "Ayoub El Kaabi"
+    ],
+    "bench": [
+     "Bruno Onyemaechi",
+     "Christos Mouzakitis",
+     "Diogo Nascimento",
+     "Remy Cabella",
+     "Roman Yaremchuk",
+     "Alexandros Paschalakis",
+     "Giulian Biancone",
+     "Alexios Kalogeropoulos",
+     "Ruben Vezo",
+     "Lorenzo Pirola",
+     "Dani Garcia",
+     "Gelson Martins"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4482296"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}
