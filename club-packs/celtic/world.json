@@ -1,74 +1,160 @@
 {
-  "schemaVersion": 1,
-  "clubId": "celtic",
-  "review": "cross-source-2026-10-09",
-  "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the terrace section (every source found for the supporters' groups at Celtic Park was about disputes, none was a neutral description of the stand, so no terrace entry); 'The Celts' (kept to the two most-used names); the exact founding year (sources split between 1887 and 1888, so the line cites the 6 November 1887 meeting); the 92,000 record crowd (one source); any motto, political or religious framing, and anything about rivalries.",
-  "voice": {
-    "welcome": "Welcome to Paradise.",
-    "kicker": "Glasgow · Green and white"
-  },
-  "nicknames": [
+ "schemaVersion": 1,
+ "clubId": "celtic",
+ "review": "cross-source-2026-10-09",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the terrace section (every source found for the supporters' groups at Celtic Park was about disputes, none was a neutral description of the stand, so no terrace entry); 'The Celts' (kept to the two most-used names); the exact founding year (sources split between 1887 and 1888, so the line cites the 6 November 1887 meeting); the 92,000 record crowd (one source); any motto, political or religious framing, and anything about rivalries.",
+ "voice": {
+  "welcome": "Welcome to Paradise.",
+  "kicker": "Glasgow · Green and white"
+ },
+ "nicknames": [
+  {
+   "text": "The Bhoys",
+   "confidence": 3,
+   "sources": [
     {
-      "text": "The Bhoys",
-      "confidence": 3,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Celtic_F.C."},
-        {"publisher": "Football Fanbase", "url": "https://www.footballfanbase.com/celtic-football-club/"}
-      ]
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Celtic_F.C."
     },
     {
-      "text": "The Hoops",
-      "confidence": 3,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Celtic_F.C."},
-        {"publisher": "Football Fanbase", "url": "https://www.footballfanbase.com/celtic-football-club/"}
-      ]
+     "publisher": "Football Fanbase",
+     "url": "https://www.footballfanbase.com/celtic-football-club/"
     }
-  ],
-  "ground": {
-    "name": "Celtic Park",
-    "line": "In Parkhead, in Glasgow's east end, with room for 60,411. Fans call it Paradise.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Celtic_Park"},
-      {"publisher": "The Celtic Wiki", "url": "https://www.thecelticwiki.com/celtic-park"},
-      {"publisher": "Scottish Places", "url": "https://www.scottish-places.info/features/featurefirst1270.html"}
-    ]
+   ]
   },
-  "founded": {
-    "line": "Born from a meeting on 6 November 1887 in St Mary's church hall, Calton, led by Brother Walfrid to raise money for meals for poor children.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Celtic_F.C."},
-      {"publisher": "The Celtic Wiki", "url": "https://www.thecelticwiki.com/?p=53232"},
-      {"publisher": "Independent Catholic News", "url": "https://www.indcatholicnews.com/news/49103"}
-    ]
-  },
-  "emblem": {
-    "line": "The first crest was a Celtic cross. A four-leaf clover became the club's badge in the late 1930s.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Celtic_F.C."},
-      {"publisher": "The Celtic Wiki", "url": "https://www.thecelticwiki.com/?p=5857"}
-    ]
-  },
-  "colours": {
-    "line": "Green and white hoops, worn since 1903.",
-    "confidence": 3,
-    "sources": [
-      {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Celtic_F.C."},
-      {"publisher": "The Celtic Wiki", "url": "https://www.thecelticwiki.com/?p=5857"}
-    ]
-  },
-  "facts": [
+  {
+   "text": "The Hoops",
+   "confidence": 3,
+   "sources": [
     {
-      "id": "lisbon-1967",
-      "line": "On 25 May 1967 in Lisbon, Celtic beat Inter 2-1 and became the first British club to win the European Cup.",
-      "confidence": 3,
-      "sources": [
-        {"publisher": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Lisbon_Lions"},
-        {"publisher": "Scottish Football Museum", "url": "https://www.scottishfootballmuseum.org.uk/exhibitions/hall-of-fame/lisbon-lions/"}
-      ]
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Celtic_F.C."
+    },
+    {
+     "publisher": "Football Fanbase",
+     "url": "https://www.footballfanbase.com/celtic-football-club/"
     }
+   ]
+  }
+ ],
+ "ground": {
+  "name": "Celtic Park",
+  "line": "In Parkhead, in Glasgow's east end, with room for 60,411. Fans call it Paradise.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Celtic_Park"
+   },
+   {
+    "publisher": "The Celtic Wiki",
+    "url": "https://www.thecelticwiki.com/celtic-park"
+   },
+   {
+    "publisher": "Scottish Places",
+    "url": "https://www.scottish-places.info/features/featurefirst1270.html"
+   }
   ]
+ },
+ "founded": {
+  "line": "Born from a meeting on 6 November 1887 in St Mary's church hall, Calton, led by Brother Walfrid to raise money for meals for poor children.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Celtic_F.C."
+   },
+   {
+    "publisher": "The Celtic Wiki",
+    "url": "https://www.thecelticwiki.com/?p=53232"
+   },
+   {
+    "publisher": "Independent Catholic News",
+    "url": "https://www.indcatholicnews.com/news/49103"
+   }
+  ]
+ },
+ "emblem": {
+  "line": "The first crest was a Celtic cross. A four-leaf clover became the club's badge in the late 1930s.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Celtic_F.C."
+   },
+   {
+    "publisher": "The Celtic Wiki",
+    "url": "https://www.thecelticwiki.com/?p=5857"
+   }
+  ]
+ },
+ "colours": {
+  "line": "Green and white hoops, worn since 1903.",
+  "confidence": 3,
+  "sources": [
+   {
+    "publisher": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Celtic_F.C."
+   },
+   {
+    "publisher": "The Celtic Wiki",
+    "url": "https://www.thecelticwiki.com/?p=5857"
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "lisbon-1967",
+   "line": "On 25 May 1967 in Lisbon, Celtic beat Inter 2-1 and became the first British club to win the European Cup.",
+   "confidence": 3,
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Lisbon_Lions"
+    },
+    {
+     "publisher": "Scottish Football Museum",
+     "url": "https://www.scottishfootballmuseum.org.uk/exhibitions/hall-of-fame/lisbon-lions/"
+    }
+   ]
+  }
+ ],
+ "flavour": [
+  {
+   "id": "walfrid",
+   "kind": "heritage",
+   "line": "Celtic was founded on 6 November 1887 in St Mary's church hall, Calton, by Brother Walfrid, to feed poor children of the East End.",
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Celtic_F.C."
+    },
+    {
+     "publisher": "Glasgow City Heritage Trust",
+     "url": "https://www.glasgowheritage.org.uk/wp-content/uploads/GCHT_Parkhead_Trail_GW.pdf"
+    }
+   ],
+   "confidence": 2
+  },
+  {
+   "id": "paradise",
+   "kind": "language",
+   "line": "Fans call Celtic Park 'Paradise' — the story goes it began as a joke about leaving the old ground behind.",
+   "sources": [
+    {
+     "publisher": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/Celtic_Park"
+    },
+    {
+     "publisher": "Wikipedia (1888–1892 ground)",
+     "url": "https://en.wikipedia.org/wiki/Celtic_Park_(1888%E2%80%931892)"
+    },
+    {
+     "publisher": "Irish Jewelry Company",
+     "url": "https://www.theirishjewelrycompany.com/blog/post/celtic-football-club-history"
+    }
+   ],
+   "confidence": 2
+  }
+ ]
 }

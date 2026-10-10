@@ -1,6 +1,6 @@
 import {describe,expect,it} from 'vitest'
 import {REGISTRY} from '@/lib/master/registry'
-import {clubWorld,validateWorld,worldFor,worldPublishers,WORLD_IDS,TAB_MAX} from '@/lib/clubs/world'
+import {clubWorld,validateWorld,worldFor,worldPublishers,WORLD_IDS,TAB_MAX,flavourFor} from '@/lib/clubs/world'
 import {existsSync} from 'node:fs'
 import {join} from 'node:path'
 
@@ -46,5 +46,18 @@ describe('club world data',()=>{
  })
  it('lists publishers for the credit line',()=>{
   expect(worldPublishers(clubWorld('olympiacos')!).length).toBeGreaterThan(3)
+ })
+})
+
+describe('club flavour',()=>{
+ it('rotates by day, never repeats within a page, and every line is sourced',()=>{
+  for(const id of WORLD_IDS){
+   const w=clubWorld(id)!
+   for(const f of w.flavour??[])expect(new Set(f.sources.map(s=>s.publisher)).size).toBeGreaterThanOrEqual(2)
+   if(w.flavour?.length){
+    const seen=new Set(Array.from({length:w.flavour.length},(_,d)=>flavourFor(w,d)!.id))
+    expect(seen.size).toBe(w.flavour.length)
+   }
+  }
  })
 })
