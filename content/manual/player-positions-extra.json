@@ -1,0 +1,1433 @@
+{
+ "generatedAt": "2026-10-10",
+ "source": "Wikipedia (English, Hebrew, Greek) football-biography infoboxes, position field — CC BY-SA 4.0",
+ "rule": "accepted only on an exact title, a footballer page that names this club; nothing matched by surname",
+ "positions": {
+  "hapoel-tel-aviv": {},
+  "zrinjski-mostar": {
+   "zrinjski-mostar:dario-canadija": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Dario Čanađija",
+    "rev": 1320094690
+   },
+   "zrinjski-mostar:andrija-balic": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Andrija Balić",
+    "rev": 1373615083
+   },
+   "zrinjski-mostar:stipe-radic": {
+    "pos": "DF",
+    "raw": "Centre-back",
+    "title": "Stipe Radić",
+    "rev": 1363229750
+   },
+   "zrinjski-mostar:kerim-memija": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)#Full-back",
+    "title": "Kerim Memija",
+    "rev": 1373528453
+   },
+   "zrinjski-mostar:petar-misic": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Wide midfielder",
+    "title": "Petar Mišić (footballer)",
+    "rev": 1359710079
+   },
+   "zrinjski-mostar:tarik-ramic": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Attacking midfielder",
+    "title": "Tarik Ramić",
+    "rev": 1376530347
+   },
+   "zrinjski-mostar:besart-abdurahimi": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Besart Abdurahimi",
+    "rev": 1367058234
+   }
+  },
+  "hapoel-petah-tikva": {
+   "hapoel-petah-tikva:or-israelov": {
+    "pos": "DF",
+    "raw": "[[בלם (כדורגל)",
+    "title": "אור ישראלוב",
+    "rev": 43934527,
+    "lang": "he"
+   },
+   "hapoel-petah-tikva:r26-nahum-stelmach": {
+    "pos": "FW",
+    "raw": "[[חלוץ (כדורגל)",
+    "title": "נחום סטלמך",
+    "rev": 42470230,
+    "lang": "he"
+   },
+   "hapoel-petah-tikva:r26-eli-abarbanel": {
+    "pos": "MF",
+    "raw": "[[קשר (כדורגל)",
+    "title": "אלי אברבנל",
+    "rev": 37409311,
+    "lang": "he"
+   },
+   "hapoel-petah-tikva:r26-manor-hassan": {
+    "pos": "MF",
+    "raw": "[[קשר (כדורגל)",
+    "title": "מנור חסן",
+    "rev": 42289504,
+    "lang": "he"
+   },
+   "hapoel-petah-tikva:r26-yaniv-luzon": {
+    "pos": "MF",
+    "raw": "[[קשר (כדורגל)",
+    "title": "יניב לוזון",
+    "rev": 43879618,
+    "lang": "he"
+   }
+  },
+  "panathinaikos": {},
+  "aek-athens": {
+   "aek-athens:p-bc8a5032677b79": {
+    "pos": "FW",
+    "raw": "Επιθετικός",
+    "title": "Μίμης Παπαϊωάννου",
+    "rev": 11759269,
+    "lang": "el"
+   }
+  },
+  "celtic": {
+   "celtic:p-e39a9358fda03f": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Sandy McMahon",
+    "rev": 1365696332
+   },
+   "celtic:p-e45aacbbcefc8e": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "Willie Orr",
+    "rev": 1279615142
+   },
+   "celtic:p-dd29a4fbf1d1e3": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "Alec McNair",
+    "rev": 1355830132
+   },
+   "celtic:p-e8f8f626fab4a2": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "William Cringan",
+    "rev": 1266919325
+   },
+   "celtic:p-ab1ccd28bd02a1": {
+    "pos": "DF",
+    "raw": "Midfielder/Defender",
+    "title": "Bobby Hogg (soccer, born 1947)",
+    "rev": 1359770861
+   },
+   "celtic:p-c333695877fdd5": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)#Centre back",
+    "title": "Willie Lyon",
+    "rev": 1266919606
+   },
+   "celtic:p-7d609d07e5e8f5": {
+    "pos": "DF",
+    "raw": "Centre-back",
+    "title": "Jock Stein",
+    "rev": 1378163188
+   },
+   "celtic:p-b50e44c5597870": {
+    "pos": "DF",
+    "raw": "[[Defender (football)",
+    "title": "Bertie Peacock",
+    "rev": 1311411492
+   },
+   "celtic:p-a572cf73ebe8ee": {
+    "pos": "DF",
+    "raw": "[[Defender (football)",
+    "title": "Duncan MacKay (footballer)",
+    "rev": 1307390944
+   },
+   "celtic:p-7c8e42098bcce3": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Kenny Dalglish",
+    "rev": 1379163603
+   },
+   "celtic:p-4972b535d25054": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "Roy Aitken",
+    "rev": 1372795225
+   },
+   "celtic:p-7eee804db954f9": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Paul Lambert",
+    "rev": 1346890413
+   },
+   "celtic:p-63d9aa69709df0": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Neil Lennon",
+    "rev": 1373792480
+   },
+   "celtic:p-b6036e28231e5e": {
+    "pos": "DF",
+    "raw": "Centre-back",
+    "title": "Stephen McManus",
+    "rev": 1309642557
+   },
+   "celtic:p-dh-fb9e67adcc8a": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Inside forward",
+    "title": "James Blessington",
+    "rev": 1368551573
+   },
+   "celtic:p-dh-7b998aad9538": {
+    "pos": "FW",
+    "raw": "Inside forward",
+    "title": "Alec Brady",
+    "rev": 1270213684
+   },
+   "celtic:p-dh-e166aa409a7d": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)#Centre-back",
+    "title": "Marvin Compper",
+    "rev": 1370362301
+   },
+   "celtic:p-dh-928259ccf12f": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Alfie Conn Jr.",
+    "rev": 1351235024
+   },
+   "celtic:p-dh-742ae7b8dc37": {
+    "pos": "FW",
+    "raw": "Outside right",
+    "title": "Patsy Corcoran",
+    "rev": 1304715201
+   },
+   "celtic:p-dh-9207b95daddd": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Inside forward",
+    "title": "Peter Scarff",
+    "rev": 1255234919
+   },
+   "celtic:p-dh-0a796f6afd37": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Winger",
+    "title": "Malcolm Slater",
+    "rev": 1197429134
+   },
+   "celtic:p-dh-d882bd7f016a": {
+    "pos": "FW",
+    "raw": "Outside right",
+    "title": "Patrick Slavin",
+    "rev": 1306390871
+   },
+   "celtic:p-dh-b0f939dcfdb6": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Inside forward",
+    "title": "Peter Somers",
+    "rev": 1305974133
+   },
+   "celtic:p-dh-955acad6953e": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Thomas Towie",
+    "rev": 1286394465
+   },
+   "celtic:p-dh-8d28ab2e2048": {
+    "pos": "FW",
+    "raw": "[[Wing half",
+    "title": "Peter Dowds",
+    "rev": 1365341575
+   },
+   "celtic:p-dh-bda6700e3b3c": {
+    "pos": "FW",
+    "raw": "[[Inside forward",
+    "title": "Michael Dunbar",
+    "rev": 1365694934
+   },
+   "celtic:p-dh-19bb5fa6b8c7": {
+    "pos": "FW",
+    "raw": "Outside left",
+    "title": "Robert Findlay (footballer)",
+    "rev": 1257683438
+   },
+   "celtic:p-dh-29d95e595b00": {
+    "pos": "FW",
+    "raw": "Outside-forward",
+    "title": "George Hazlett",
+    "rev": 1307249371
+   },
+   "celtic:p-dh-32b0d872e946": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Adam Henderson (footballer)",
+    "rev": 1223157139
+   },
+   "celtic:p-dh-46fe4d6261e9": {
+    "pos": "FW",
+    "raw": "[[Winger (association football)",
+    "title": "Konrad Kapler",
+    "rev": 1359776764
+   },
+   "celtic:p-dh-f51b5ba6054d": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Wing half",
+    "title": "Alexander King (footballer)",
+    "rev": 1268685261
+   },
+   "celtic:p-dh-4f98df2e7dd0": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Lou Macari",
+    "rev": 1379142102
+   },
+   "celtic:p-dh-cc2dc3b5f693": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Sean McArdle (footballer)",
+    "rev": 1378112992
+   },
+   "celtic:p-dh-70151aa35577": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Bill McCafferty",
+    "rev": 1164306880
+   },
+   "celtic:p-dh-0f4f26fc0b38": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "Mick McCarthy",
+    "rev": 1379161821
+   },
+   "celtic:p-dh-fdc3f3eda274": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Ralph McElhaney",
+    "rev": 1265364202
+   },
+   "celtic:p-dh-a5b16637953e": {
+    "pos": "FW",
+    "raw": "[[Forward (Association football)",
+    "title": "James McGhee",
+    "rev": 1345827674
+   },
+   "celtic:p-dh-6bd6dade73c5": {
+    "pos": "FW",
+    "raw": "[[Outside forward",
+    "title": "Charlie McGillivray",
+    "rev": 1255209847
+   },
+   "celtic:p-dh-f08dd8e3e23b": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "James McGinn",
+    "rev": 1257683124
+   },
+   "celtic:p-dh-36c7717aad90": {
+    "pos": "FW",
+    "raw": "Outside Right",
+    "title": "Thomas McGunnigle",
+    "rev": 1317599215
+   },
+   "celtic:p-dh-b26e4a201e8e": {
+    "pos": "FW",
+    "raw": "Inside forward",
+    "title": "John McKay (footballer, born 1898)",
+    "rev": 1317596886
+   },
+   "celtic:p-dh-af1c2dc87d16": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Inside forward",
+    "title": "John McMenemy",
+    "rev": 1259378873
+   },
+   "celtic:p-dh-84cf5a617c40": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "William McNair (footballer)",
+    "rev": 1269323676
+   },
+   "celtic:p-dh-899acc9c687c": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Outside forward",
+    "title": "Andrew Miller (footballer)",
+    "rev": 1317597058
+   },
+   "celtic:p-dh-31e3da069404": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Wing half",
+    "title": "John Millsopp",
+    "rev": 1365924538
+   },
+   "celtic:p-dh-988052f1a110": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Outside forward",
+    "title": "Martin Moran (footballer)",
+    "rev": 1323327320
+   },
+   "celtic:p-dh-094d6d140704": {
+    "pos": "FW",
+    "raw": "Wing half",
+    "title": "David Nelson (footballer)",
+    "rev": 1282182395
+   },
+   "celtic:p-8e37c19671bfaf": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "Dan Doyle (footballer)",
+    "rev": 1365695521,
+    "lang": "en"
+   },
+   "celtic:p-3c33b71f5137e0": {
+    "pos": "GK",
+    "raw": "[[Goalkeeper (association football)",
+    "title": "Charlie Shaw (footballer, born 1885)",
+    "rev": 1323731486,
+    "lang": "en"
+   },
+   "celtic:p-3a33b5ac68f9ba": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "Tom Boyd (Scottish footballer)",
+    "rev": 1350473590,
+    "lang": "en"
+   },
+   "celtic:p-dh-bb84df5d1bc2": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Winger",
+    "title": "Alex Byrne (footballer, born 1933)",
+    "rev": 1361299921,
+    "lang": "en"
+   },
+   "celtic:p-dh-c50a020be21c": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Bobby Carroll",
+    "rev": 1332773392,
+    "lang": "en"
+   },
+   "celtic:p-dh-0dfbf5b6a1a9": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Joe Cassidy (footballer, born 1872)",
+    "rev": 1370031599,
+    "lang": "en"
+   },
+   "celtic:p-dh-ac3a135ec6a6": {
+    "pos": "FW",
+    "raw": "Outside right",
+    "title": "Tom Curley (footballer)",
+    "rev": 1164296242,
+    "lang": "en"
+   },
+   "celtic:p-dh-385f3bfacdbf": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Jimmy Drummond",
+    "rev": 1257692663,
+    "lang": "en"
+   },
+   "celtic:p-dh-4740fd25c664": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Outside forward",
+    "title": "Willie Ferguson (footballer, fl. 1895–1900)",
+    "rev": 1353490150,
+    "lang": "en"
+   },
+   "celtic:p-dh-1f38ab566c0d": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Tommy Kiernan",
+    "rev": 1335331084,
+    "lang": "en"
+   },
+   "celtic:p-dh-7f6c6f29479f": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Outside forward",
+    "title": "Neil McCallum (footballer, born 1868)",
+    "rev": 1269473138,
+    "lang": "en"
+   },
+   "celtic:p-dh-88db1ce6a846": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Wing half",
+    "title": "John McFarlane (footballer, born 1899)",
+    "rev": 1275028503,
+    "lang": "en"
+   },
+   "celtic:p-dh-8830854885d8": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Jimmy McGowan (footballer, born 1924)",
+    "rev": 1360021615,
+    "lang": "en"
+   },
+   "celtic:p-dh-2af61c0619d8": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "Billy McNeill",
+    "rev": 1379415798,
+    "lang": "en"
+   },
+   "celtic:p-dh-1f202b2fc820": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Wing-half",
+    "title": "Billy Morrison (footballer)",
+    "rev": 1328906575,
+    "lang": "en"
+   },
+   "celtic:p-dh-5ef70e4bf240": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Outside forward",
+    "title": "Bobby Muir",
+    "rev": 1257682947,
+    "lang": "en"
+   }
+  },
+  "st-pauli": {
+   "st-pauli:p-43903a30f67409": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Sami Allagui",
+    "rev": 1354514998
+   },
+   "st-pauli:p-f641a065cc0865": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Etienne Amenyido",
+    "rev": 1368527402
+   },
+   "st-pauli:p-eeb4c1f68f0556": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Afeez Aremu",
+    "rev": 1372387159
+   },
+   "st-pauli:p-268bb4fdec12aa": {
+    "pos": "DF",
+    "raw": "Centre-back",
+    "title": "Christopher Avevor",
+    "rev": 1324889401
+   },
+   "st-pauli:p-0bf161cdab3829": {
+    "pos": "MF",
+    "raw": "Attacking midfielder, [[Winger (association football)",
+    "title": "Scott Banks",
+    "rev": 1374350597
+   },
+   "st-pauli:p-e4f731beb883c8": {
+    "pos": "MF",
+    "raw": "Midfielder, [[striker (association football)",
+    "title": "Fin Bartels",
+    "rev": 1269245554
+   },
+   "st-pauli:p-7080ec52dcea06": {
+    "pos": "DF",
+    "raw": "Central midfielder, right-back",
+    "title": "Finn Ole Becker",
+    "rev": 1376655543
+   },
+   "st-pauli:p-7f47e7de7d8c73": {
+    "pos": "MF",
+    "raw": "Midfielder",
+    "title": "Fabian Boll",
+    "rev": 1325472175
+   },
+   "st-pauli:p-3e24d9d639d2f7": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)",
+    "title": "Daniel Buballa",
+    "rev": 1273238610
+   },
+   "st-pauli:p-e56d7f7323696d": {
+    "pos": "MF",
+    "raw": "Attacking midfielder",
+    "title": "Christopher Buchtmann",
+    "rev": 1367055229
+   },
+   "st-pauli:p-e695b1e16dd0ca": {
+    "pos": "GK",
+    "raw": "[[Goalkeeper (association football)",
+    "title": "Sascha Burchert",
+    "rev": 1375428533
+   },
+   "st-pauli:p-644de8b27db6f3": {
+    "pos": "FW",
+    "raw": "[[Striker (association football)",
+    "title": "Guido Burgstaller",
+    "rev": 1351576533
+   },
+   "st-pauli:p-f158c822565fed": {
+    "pos": "MF",
+    "raw": "Central midfielder",
+    "title": "Jackson Irvine",
+    "rev": 1376299888
+   },
+   "st-pauli:p-22fd0b5b8428d2": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Daniel-Kofi Kyereh",
+    "rev": 1368792673
+   },
+   "st-pauli:p-f49afe97691e26": {
+    "pos": "DF",
+    "raw": "Centre-back, defensive midfielder",
+    "title": "Karol Mets",
+    "rev": 1378308198
+   },
+   "st-pauli:p-61cce1815f9c76": {
+    "pos": "DF",
+    "raw": "Left-back",
+    "title": "Leart Paqarada",
+    "rev": 1377424277
+   },
+   "st-pauli:p-002fabbfd6ecd9": {
+    "pos": "GK",
+    "raw": "[[Goalkeeper (association football)",
+    "title": "Ben Voll",
+    "rev": 1376470354
+   },
+   "st-pauli:p-dh-f6b33639e3df": {
+    "pos": "DF",
+    "raw": "[[Sweeper (association football)",
+    "title": "Holger Hieronymus",
+    "rev": 1361275332
+   },
+   "st-pauli:p-386020d119ac0f": {
+    "pos": "DF",
+    "raw": "[[Centre-back (association football)",
+    "title": "Eric Smith (Swedish footballer)",
+    "rev": 1378883545,
+    "lang": "en"
+   }
+  },
+  "olympiacos": {}
+ },
+ "unplaced": {
+  "hapoel-tel-aviv": [
+   {
+    "id": "p_6fa23a3cdc",
+    "name": "אבי אדרי",
+    "why": "he: not a football biography"
+   },
+   {
+    "id": "p_a9f3874b86",
+    "name": "אברהם פרידריך",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_5f8d21fbb0",
+    "name": "אמרה יעקבי",
+    "why": "he: infobox states no position"
+   },
+   {
+    "id": "p_6780090f07",
+    "name": "בן ציון ריידר",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_81af211a4f",
+    "name": "בני גולדשטיין",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_a605ffbd7f",
+    "name": "יהושע זילברשטיין",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_df55a90930",
+    "name": "יונה פוקס",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_45cd55bc49",
+    "name": "ליאונרדו בוארב",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_72181cf8a0",
+    "name": "מאיר ברנר",
+    "why": "he: not a football biography"
+   },
+   {
+    "id": "p_90d21ac295",
+    "name": "מוניה גושן",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_d2cf8ead07",
+    "name": "משה מוסטרל",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_abff31f026",
+    "name": "משה פיימן",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_e50849c7c4",
+    "name": "משה רסקין",
+    "why": "he: not a football biography"
+   },
+   {
+    "id": "p_3761a4caa2",
+    "name": "נסים חלפון",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_82db47f9fa",
+    "name": "נפתלי שוואלב",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_f73e868810",
+    "name": "עומאר גאריבה",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_67db828630",
+    "name": "עמי אדמוני",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_c5d2cb22a6",
+    "name": "שמחה חינקיס",
+    "why": "he: not a football biography"
+   },
+   {
+    "id": "p_3768acb435",
+    "name": "שמעון בנודיס",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "p_1ddc859543",
+    "name": "שמעון צימרמן",
+    "why": "he: no page with that exact title"
+   }
+  ],
+  "zrinjski-mostar": [
+   {
+    "id": "zrinjski-mostar:luka-marin",
+    "name": "Luka Marin",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "zrinjski-mostar:aldin-hrvanovic",
+    "name": "Aldin Hrvanović",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "zrinjski-mostar:matej-senic",
+    "name": "Matej Senić",
+    "why": "en: no page with that exact title"
+   }
+  ],
+  "hapoel-petah-tikva": [
+   {
+    "id": "hapoel-petah-tikva:eric-billa",
+    "name": "אריק בילה",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "hapoel-petah-tikva:roei-levi",
+    "name": "רועי לוי",
+    "why": "he: page does not name this club"
+   },
+   {
+    "id": "hapoel-petah-tikva:hamidou-keita",
+    "name": "חמידו קייטה",
+    "why": "he: no page with that exact title"
+   },
+   {
+    "id": "hapoel-petah-tikva:r26-noam-keysi",
+    "name": "נועם קייסי",
+    "why": "he: no page with that exact title"
+   }
+  ],
+  "panathinaikos": [],
+  "aek-athens": [],
+  "celtic": [
+   {
+    "id": "celtic:p-dh-007aad1bae9b",
+    "name": "Andrews, Ian",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-dh-8f4feb5b7744",
+    "name": "Ciftci, Nadir",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-dh-6adc0ace1105",
+    "name": "James Trainer, Rowan",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-dh-127202c68ce9",
+    "name": "Charles Patrick TullyImage: Tully, Charlie - Pic†wikifoundryimages.s3.amazonaws.com",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-dh-a093c0fb7640",
+    "name": "James Henry Davidson*",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-dh-1d552be07da0",
+    "name": "Matthew Flannagan or Michael Joseph Flannagan [see notes below & CGS Forum†www.celticgraves.com ]",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-dh-0673cf3f376b",
+    "name": "John Betram Jackson*",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-dh-1303d5635c4d",
+    "name": "Hugh O’Donnell",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-dh-65ecac5a339c",
+    "name": "Patrick O’Sullivan",
+    "why": "name is not in Latin script; no exact English title"
+   },
+   {
+    "id": "celtic:p-19eb23b47cb8a7",
+    "name": "James Kelly",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-1a16aad70e8bb9",
+    "name": "James Hay",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-914ba9df56e7f1",
+    "name": "Sunny Jim Young",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-d465e660b274c0",
+    "name": "Willie McStay",
+    "why": "en: several footballers of this name played for this club"
+   },
+   {
+    "id": "celtic:p-4f989af5d43250",
+    "name": "Jimmy McStay",
+    "why": "en: position \"{{ublist\" is not one of the four families"
+   },
+   {
+    "id": "celtic:p-15c62872b3a4ee",
+    "name": "John McPhail",
+    "why": "en: position \"{{ublist\" is not one of the four families"
+   },
+   {
+    "id": "celtic:p-20d5eb0534f3df",
+    "name": "Sean Fallon",
+    "why": "en: infobox states no position"
+   },
+   {
+    "id": "celtic:p-d6c650cdd609b6",
+    "name": "Bobby Evans",
+    "why": "en: position \"{{ublist\" is not one of the four families"
+   },
+   {
+    "id": "celtic:p-3da89d4ff70bde",
+    "name": "Jackie McNamara (Jnr)",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-9d183880722f",
+    "name": "Oliver Anderson",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-4f3dfb1b24da",
+    "name": "William Angus",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-4071a73a6667",
+    "name": "Dr John Atkinson",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-b06aa3e17db9",
+    "name": "James Birrell",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-4d5e1397d450",
+    "name": "John Wilson Blair",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-9bd3ab502bff",
+    "name": "Thomas Bogan",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-2dfc01840a1c",
+    "name": "William Boland",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-22304ef4bf4f",
+    "name": "James Boyle",
+    "why": "en: several footballers of this name played for this club"
+   },
+   {
+    "id": "celtic:p-dh-ea23140b8f6f",
+    "name": "John Brodie",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-53a8f9864b51",
+    "name": "Francis Brogan",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-43e741e2978d",
+    "name": "John Brown",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-ad42fa15337b",
+    "name": "William Brown",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-c50c4af573f6",
+    "name": "John Browning",
+    "why": "en: several footballers of this name played for this club"
+   },
+   {
+    "id": "celtic:p-dh-9d648f255d72",
+    "name": "John Burns",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-cab1ec6cf639",
+    "name": "James Scott Cameron",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-76ec9d02e51b",
+    "name": "Bernard Cannon",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-0137f16eff42",
+    "name": "James Carlin",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-56e36e8edf12",
+    "name": "Joseph James Clark",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-603f0a0d29f1",
+    "name": "John Coleman",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-11be242160f6",
+    "name": "John Conway",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-fb8e1daf8c69",
+    "name": "Edward Corrigan",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-3935eb93d7d3",
+    "name": "William Paul Craig",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-ea470d9de455",
+    "name": "Alexander Crawford",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-6ecd8a0735c2",
+    "name": "James Paterson Lyle Crozier",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-2e857d5ec206",
+    "name": "John Cunningham",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-30fc794097c5",
+    "name": "John Aloysius Paton",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-b4cc9d0ee047",
+    "name": "Robert Paton",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-88fb73817370",
+    "name": "David Pratt",
+    "why": "en: position \"{{ublist\" is not one of the four families"
+   },
+   {
+    "id": "celtic:p-dh-980738cda00e",
+    "name": "Francis Quinn",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-fac41d1d0af4",
+    "name": "William James Rennet",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-a753cdc5b890",
+    "name": "William Ribchester",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-20d927deef41",
+    "name": "John Lochery Riley",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-1cae0919034a",
+    "name": "William Smith Robertson",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-fca571a519ee",
+    "name": "Patrick Edward Rodgers",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-900d4e9f169c",
+    "name": "Andrew Ross",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-8bdd07a618ff",
+    "name": "Robert Sanderson",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-29f8521e669f",
+    "name": "William Semple",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-e32f071c2cdb",
+    "name": "Hugh Crawford Shaw",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-0f92c9d99670",
+    "name": "Daniel Harold Shea",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-db03a72696c3",
+    "name": "Jerome Solis",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-6edb89443c19",
+    "name": "William Taylor",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-b2c7fc209341",
+    "name": "Cornelius Tierney",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-084ffa46f0f8",
+    "name": "Patrick Turner",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-45df01080e38",
+    "name": "James Walls",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-2a294c8a1a75",
+    "name": "Charles Watson",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-fc66ba5a4277",
+    "name": "Thomas John Black Whitney",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-6b1a332fad35",
+    "name": "John Young",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-8672d6f8c414",
+    "name": "James Devlin",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-7259cd5bbf27",
+    "name": "John Devlin",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-d17673391d10",
+    "name": "John Patrick Divers",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-9ba820f15047",
+    "name": "Hugh Doherty",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-fd4ca79bc131",
+    "name": "Andrew Clark Donaldson",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-5acbb7c97de5",
+    "name": "Adam Scott Mathieson Duncan",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-549ba7d27b34",
+    "name": "David Miller Duncan",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-03f123f104db",
+    "name": "James B Duncan",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-1035a32aff60",
+    "name": "Isaac English",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-41f5522e49cd",
+    "name": "Albert James Fisher",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-df36866bc935",
+    "name": "John Thomas Fitzsimons",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-35540a68416c",
+    "name": "Thomas Fitzsimmons",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-fb0f5d5c7d72",
+    "name": "William Patrick Gallacher",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-98b50cd5ba4f",
+    "name": "William Brownie Garden",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-cc40581512d5",
+    "name": "George Gillan",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-e2cc675fd1c9",
+    "name": "Hugh Gilmartin",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-46b86f575382",
+    "name": "Charles Gorevin",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-b22a60946054",
+    "name": "John Daniel Gould",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-659378bc491d",
+    "name": "John Lang Graham",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-b51256e1e289",
+    "name": "Alexander Gray",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-50ebe1c30280",
+    "name": "Francis Haffey",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-9cca29b24832",
+    "name": "David Hamilton",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-545a2a818a29",
+    "name": "John Hastie",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-c7970c539bc4",
+    "name": "Joseph Haverty",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-571e0aefa969",
+    "name": "James Healy",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-77e90b5c6118",
+    "name": "Anthony Hepburn",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-89b5c18d14b0",
+    "name": "John Higgins",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-35d0532769f7",
+    "name": "Dennis Aloysius Hill",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-5bde0b40e503",
+    "name": "John Hill",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-754521e27cff",
+    "name": "John McGeachie Hodge",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-aef284d73e5f",
+    "name": "William Hughes",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-c86d0acde46e",
+    "name": "Michael Jackson",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-2de83570e61e",
+    "name": "Robert Jeffrey",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-2909121336eb",
+    "name": "Peter Joseph Kavanagh",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-c093cb35c5c1",
+    "name": "Francis David Kelly",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-839dd11ad0d8",
+    "name": "John Carmichael Kelly",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-3107192c6e85",
+    "name": "Alexander Anderson Kiddie",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-34ec662ed52c",
+    "name": "William Fulton Kivlichan",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-9b4f6b860792",
+    "name": "William Smith Leitch",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-6c66709f5e86",
+    "name": "Hugh Bradley Long",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-66c9c399f665",
+    "name": "Allan Lynch",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-bdaad02eda57",
+    "name": "James Macdonald",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-3ec764b9765a",
+    "name": "Malcolm MacDonald",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-086ca8cac99f",
+    "name": "Thomas Joseph Mackle",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-7e1bcc059fd0",
+    "name": "Thomas Edward Maley",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-b948b15da7dc",
+    "name": "William Henry B. Malloy",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-6889ccd8a6b0",
+    "name": "John McArdle",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-2a2d5ce2e84a",
+    "name": "Anthony McAtee",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-1826f9938976",
+    "name": "Patrick McCabe",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-783af6942929",
+    "name": "Denis McCallum",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-ab98bb9626d4",
+    "name": "Daniel McCann",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-d1c1d7ff31da",
+    "name": "Edward McCann",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-8d4629494aff",
+    "name": "Henry McCormick",
+    "why": "en: not a football biography"
+   },
+   {
+    "id": "celtic:p-dh-226b583efa7b",
+    "name": "Alexander McGregor",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-45a4aca69211",
+    "name": "John McIlhatton",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-d4df1083bdb3",
+    "name": "Finlay McLean",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-6918426236bc",
+    "name": "Thomas McMillan",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-571f6f0031c7",
+    "name": "Matthew McVittie",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-f7c418ad63ba",
+    "name": "Robert McMilan McWilliam",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-bfb97ac0bfab",
+    "name": "James Ronald Mitchell",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-ed92eb9c29d4",
+    "name": "William Mitchell",
+    "why": "en: page does not name this club"
+   },
+   {
+    "id": "celtic:p-dh-2ace8be2b650",
+    "name": "Thomas Morrison",
+    "why": "en: several footballers of this name played for this club"
+   },
+   {
+    "id": "celtic:p-dh-7c114abb257f",
+    "name": "Michael Mulvey",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-24e5c04f7c90",
+    "name": "Donald Munro",
+    "why": "en: disambiguation page"
+   },
+   {
+    "id": "celtic:p-dh-05d40733d326",
+    "name": "Charles Edward Napier",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-0f90fa913f44",
+    "name": "William A Naughton",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-c7e1e69aa4d4",
+    "name": "James Park Nelson",
+    "why": "en: no page with that exact title"
+   },
+   {
+    "id": "celtic:p-dh-636c584dec19",
+    "name": "Lassad Hassen Nouioui",
+    "why": "en: no page with that exact title"
+   }
+  ],
+  "st-pauli": [
+   {
+    "id": "st-pauli:p-3f82457c62e546",
+    "name": "Sören Ahlers",
+    "why": "en: no page with that exact title"
+   }
+  ],
+  "olympiacos": []
+ }
+}

@@ -29,7 +29,7 @@ export function RumbleXIEntry({club,clubName,locale,formation,vs,rivals,own,same
  return <section className={s.vsBar} aria-label={tr(copy,'rr.xi.rivalKicker')} data-testid="rumble-xi-entry">
   <p className={`${s.mono} ${s.vsHead}`}>{tr(copy,'rr.xi.rivalKicker')}</p>
   <div className={s.vsChips} role="group" aria-label={tr(copy,'rr.xi.rivalKicker')}>
-   {sameOk?<Link className={`${s.chip} min-h-tap`} aria-current={vs==='same'?'true':undefined} href={q({vs:'same'})}>{tr(copy,'rr.xi.rival.same')}</Link>:<span className={`${s.chip} ${s.chipOff}`} aria-disabled="true">{tr(copy,'rr.xi.rival.same')} — {tr(copy,'rr.xi.unavailable',{reason:own[formation].reasons[0]??'—'})}</span>}
+   {sameOk?<Link className={`${s.chip} min-h-tap`} aria-current={vs==='same'?'true':undefined} href={q({vs:'same'})}>{tr(copy,'rr.xi.rival.same')}</Link>:<span className={`${s.chip} ${s.chipOff}`} aria-disabled="true">{tr(copy,'rr.xi.rival.same')} — {tr(copy,'rr.xi.unavailable',{reason:own[formation].reasons[0]??tr(copy,'rr.xi.noSecond')})}</span>}
    {rivals.filter(r=>r.id!==club).map(r=>r.ok
     ?<Link key={r.id} className={`${s.chip} min-h-tap`} aria-current={vs===r.id?'true':undefined} href={q({vs:r.id})}><Badge club={{id:r.id}} className={s.chipBadge}/> {r.name}</Link>
     :<span key={r.id} className={`${s.chip} ${s.chipOff}`} aria-disabled="true"><Badge club={{id:r.id}} className={s.chipBadge}/> {r.name} — {tr(copy,'rr.xi.unavailable',{reason:r.reason??'—'})}</span>)}

@@ -5,7 +5,7 @@ import type {FormationId} from './types'
 
 /** eleven men on the pitch: each card stands where his slot is, in the formation both sides play */
 export function lineUpXI(cards:readonly Rated[],side:'us'|'them',f:FormationId):ShowPlayer[]{
- return slotsOf(f).map((slot,i)=>({...strip(cards[i]!),side,x:slot.x,y:slot.y,slot:slot.fine}))
+ return slotsOf(f).map((slot,i)=>({...strip(cards[i]!),position:slot.family,side,x:slot.x,y:slot.y,slot:slot.fine}))
 }
 /** The server tells the eleven-a-side match: scorers by line and hidden rating, a fuller night of events, and the football around them. */
 export function stageXI(result:RumbleResult,seed:number,f:FormationId):ShowScript{

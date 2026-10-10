@@ -1,15 +1,15 @@
 'use client'
 import {useEffect,useMemo,useRef,useState,type MouseEvent} from 'react'
-import {playRumbleXI} from '@/app/clubs/[slug]/[gate]/gate-actions'
+import {playRumbleXI,scoutXI} from '@/app/clubs/[slug]/[gate]/gate-actions'
 import {gameCopy,xiCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
 import type {RumbleCard} from '@/lib/clubs/rumble'
-import {canAfford,type ShowScript} from '@/lib/clubs/rumble-show'
+import {type ShowScript} from '@/lib/clubs/rumble-show'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {slotsOf} from '@/lib/clubs/rumble-xi/formations'
-import {XI_BUDGET,type FormationId} from '@/lib/clubs/rumble-xi/types'
+import {XI_BUDGET,SCOUT_FEE,MAX_SCOUTS,type FormationId} from '@/lib/clubs/rumble-xi/types'
 import {firePickFxAt} from '@/components/stage/PickFx'
-import {Crown,RumbleShirt,money,shortName,tr,useReducedMotion,useRumbleSound} from './shared'
+import {Crown,RumbleShirt,money,shortName,tr,years,useReducedMotion,useRumbleSound} from './shared'
 import {RumbleSlotMachine} from './RumbleSlotMachine'
 import {RumbleReveal,type RevealStep} from './RumbleStage'
 import {RumbleMatchCentre,type ClubFace} from './RumbleMatchCentre'
@@ -27,26 +27,37 @@ const left_=(slotY:number)=>8+((slotY-20)/64)*84
  * that family, the pick flies to its place. The board is dealt on the server from the round seed; the eleven is checked, the match
  * decided and staged on the server (`playRumbleXI`). This screen only shows what it is handed.
  */
-export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,wardrobe,faces,againHref,playerCount,roundSeed}:{roundSeed:number;club:string;version:string;locale:UiLocale;main:Board;shuffle:Board;formation:FormationId;rival:string;wardrobe:RumbleWardrobe;faces:{us:ClubFace;them:ClubFace};againHref:string;playerCount:number}){
+export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,wardrobe,faces,againHref,playerCount,roundSeed,budget}:{budget:number;roundSeed:number;club:string;version:string;locale:UiLocale;main:Board;shuffle:Board;formation:FormationId;rival:string;wardrobe:RumbleWardrobe;faces:{us:ClubFace;them:ClubFace};againHref:string;playerCount:number}){
  const copy=xiCopy(gameCopy(locale)),reduced=useReducedMotion(),sound=useRumbleSound(),slots=useMemo(()=>slotsOf(formation),[formation])
  const [board,setBoard]=useState<Board>(main),[shuffled,setShuffled]=useState(false),[fresh,setFresh]=useState(false)
  const [picks,setPicks]=useState<(string|null)[]>(()=>main.draft.map(()=>null)),[slot,setSlot]=useState(0)
  const [phase,setPhase]=useState<Phase>('draft'),[step,setStep]=useState<RevealStep>('entrance')
  const [script,setScript]=useState<ShowScript|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState<string|null>(null)
  const [rules,setRules]=useState(false),[recent,setRecent]=useState<RecentRound[]>([])
+ const [scouted,setScouted]=useState<Record<string,RumbleCard>>({}),[scoutOpen,setScoutOpen]=useState(false),[q,setQ]=useState(''),[found,setFound]=useState<RumbleCard[]|null>(null),[searching,setSearching]=useState(false)
  const root=useRef<HTMLDivElement>(null),machine=useRef<HTMLDivElement>(null)
  const historyKey=`fan-life:club:${club}:rumble:xi:${formation}:${rival}:recent:v1`
 
- const chosen=picks.map((id,i)=>id?board.draft[i]!.find(c=>c.id===id)??null:null)
- const spent=chosen.reduce((t,c)=>t+(c?.price||0),0),left=XI_BUDGET-spent,count=chosen.filter(Boolean).length,complete=count===slots.length
+ const chosen=picks.map((id,i)=>id?board.draft[i]!.find(c=>c.id===id)??scouted[id]??null:null)
+ const scoutedIn=(list:(string|null)[])=>list.filter((id):id is string=>!!id&&!!scouted[id]&&!board.draft.some(d=>d.some(c=>c.id===id))).length
+ const used=scoutedIn(picks)
+ const spent=chosen.reduce((t,c)=>t+(c?.price||0),0)+used*SCOUT_FEE,left=budget-spent,count=chosen.filter(Boolean).length,complete=count===slots.length
  const shuffleOpen=!shuffled&&count===0&&phase==='draft'&&!busy
  const perSlot=count<slots.length?Math.round((left/(slots.length-count))*10)/10:0
 
  useEffect(()=>{if(phase!=='draft')root.current?.scrollIntoView({block:'start',behavior:reduced?'auto':'smooth'})},[phase,reduced])
  useEffect(()=>{if(!rules)return;const k=(e:KeyboardEvent)=>{if(e.key==='Escape')setRules(false)};window.addEventListener('keydown',k);return()=>window.removeEventListener('keydown',k)},[rules])
 
+ /** can this card be signed now and still leave every empty slot fillable with its cheapest offer? (a scouted man adds the fee) */
+ function afford(card:RumbleCard,scout:boolean):boolean{
+  let paid=0,floor=0
+  picks.forEach((id,i)=>{if(i===slot)return;const c=id?chosen[i]:null;if(c)paid+=c.price;else floor+=Math.min(...board.draft[i]!.map(x=>x.price))})
+  const others=picks.filter((_,i)=>i!==slot)
+  const fees=(scoutedIn(others)+(scout?1:0))*SCOUT_FEE
+  return paid+card.price+floor+fees<=budget&&(!scout||scoutedIn(others)<MAX_SCOUTS)
+ }
  function pick(card:RumbleCard,e:MouseEvent<HTMLButtonElement>){
-  if(phase!=='draft'||!canAfford(board.draft,picks,slot,card,XI_BUDGET))return
+  if(phase!=='draft'||!afford(card,false))return
   setError(null)
   const next=picks.map((x,i)=>i===slot?card.id:x)
   setPicks(next)
@@ -57,8 +68,21 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
  }
  function doShuffle(e:MouseEvent<HTMLButtonElement>){
   if(!shuffleOpen)return
-  setBoard(shuffle);setPicks(shuffle.draft.map(()=>null));setSlot(0);setShuffled(true);setFresh(true);setError(null)
+  setBoard(shuffle);setScouted({});setPicks(shuffle.draft.map(()=>null));setSlot(0);setShuffled(true);setFresh(true);setError(null)
   firePickFxAt(e.currentTarget,{tone:'ink',haptic:'tap'});window.setTimeout(()=>setFresh(false),1100)
+ }
+
+ useEffect(()=>{
+  if(!scoutOpen)return
+  let live=true;setSearching(true)
+  const t=window.setTimeout(()=>{void scoutXI(club,version,board.seed,formation,rival,slot,q).then(r=>{if(live){setFound(r);setSearching(false)}}).catch(()=>{if(live){setFound([]);setSearching(false)}})},q?260:0)
+  return()=>{live=false;window.clearTimeout(t)}
+ },[scoutOpen,q,slot,club,version,board.seed,formation,rival])
+ function signScout(card:RumbleCard){
+  if(!afford(card,true))return
+  setScouted(m=>({...m,[card.id]:card}))
+  const next=picks.map((x,i)=>i===slot?card.id:x);setPicks(next);setScoutOpen(false);setQ('')
+  const to=next.findIndex(x=>x===null);if(to>=0)setSlot(to)
  }
  async function lock(e:MouseEvent<HTMLButtonElement>){
   if(!complete||left<0||busy)return
@@ -85,12 +109,12 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
    <div className={s.hudCopy}>
     <p className={`${s.mono} ${s.hudKicker}`}>{tr(copy,'rr.kicker')} · {formation}</p>
     <p className={`${s.hudIntro} ${s.hudIntroXI}`}>{tr(copy,'rr.xi.vs',{home:faces.us.name,away:faces.them.name})}</p>
-    <p className={s.hudBody}>{tr(copy,'rr.xi.general')}</p>
+    <p className={s.hudBody}>{budget>XI_BUDGET?tr(copy,'rr.xi.legends',{budget}):tr(copy,'rr.xi.general')}</p>
    </div>
    <div className={s.money} data-testid="rumble-money">
     <div className={`${s.mono} ${s.moneyTop}`}><span>{tr(copy,'rr.moneyLeft')}</span><Crown className={s.crown}/></div>
     <p className={s.moneyValue} data-short={left<0} dir="ltr" aria-live="polite">{money(left)}</p>
-    <p className={`${s.mono} ${s.trail}`} dir="ltr">{count<slots.length?tr(copy,'rr.xi.leftPerSlot',{n:money(perSlot)}):money(spent)+' / '+money(XI_BUDGET)}</p>
+    <p className={`${s.mono} ${s.trail}`} dir="ltr">{count<slots.length?tr(copy,'rr.xi.leftPerSlot',{n:money(perSlot)}):money(spent)+' / '+money(budget)}</p>
     <div className={s.progress}><i style={{width:`${(count/slots.length)*100}%`}}/></div>
     <p className={`${s.mono} ${s.trail}`}>{tr(copy,'rr.xi.picked',{n:count,total:slots.length})} · {tr(copy,'rr.archiveCount',{n:playerCount})}</p>
    </div>
@@ -109,8 +133,9 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
    <button type="button" className={`${s.chip} ${s.rules} min-h-tap`} onClick={()=>setRules(true)}>{tr(copy,'rr.rules')}</button>
   </div>
 
-  <div ref={machine}>{current&&<RumbleSlotMachine board={board.draft} slot={slot} seed={board.seed} picks={picks} canPick={c=>canAfford(board.draft,picks,slot,c,XI_BUDGET)} onPick={pick} copy={copy} wardrobe={wardrobe} reduced={reduced} signature={`${board.seed}-${slot}`}/>}</div>
+  <div ref={machine}>{current&&<RumbleSlotMachine board={board.draft} slot={slot} seed={board.seed} picks={picks} canPick={c=>afford(c,false)} onPick={pick} copy={copy} wardrobe={wardrobe} reduced={reduced} signature={`${board.seed}-${slot}`}/>}</div>
 
+  <div className={s.scoutRow}><button type="button" className={`${s.chip} min-h-tap`} onClick={()=>{setScoutOpen(true);setFound(null)}} disabled={phase!=='draft'||(used>=MAX_SCOUTS&&!(picks[slot]&&scouted[picks[slot]!]))} data-testid="rumble-scout"><span>{tr(copy,'rr.xi.scout')}</span><b>{tr(copy,'rr.xi.scoutSub',{fee:SCOUT_FEE,n:MAX_SCOUTS-used})}</b></button></div>
   {error&&<p className={s.error} role="alert">{error}</p>}
 
   <button type="button" className={`${s.lock} min-h-tap`} disabled={!complete||left<0||busy} onClick={e=>void lock(e)} data-ready={complete&&left>=0} data-testid="rumble-lock">
@@ -120,11 +145,21 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
 
   {phase==='jackpot'&&<div className={s.jackpot} role="status" data-testid="rumble-jackpot"><div className={s.jackpotPlate}><b>{tr(copy,'rr.jackpot')}</b><small className={s.mono}>{tr(copy,'rr.xi.yourEleven')} · {money(spent)}</small></div></div>}
 
+  {scoutOpen&&<div className={s.sheetBack} onClick={()=>setScoutOpen(false)}>
+   <div className={`${s.sheet} relative z-[60]`} role="dialog" aria-modal="true" aria-labelledby="rr-scout" onClick={e=>e.stopPropagation()}>
+    <div className={s.sheetHead}><h2 id="rr-scout">{tr(copy,'rr.xi.scoutTitle')}</h2><button type="button" className={`${s.closeBtn} min-h-tap`} onClick={()=>setScoutOpen(false)}>{tr(copy,'rr.close')}</button></div>
+    <p className={s.sheetNote}>{tr(copy,'rr.xi.scoutHint',{position:slots[slot]?tr(copy,`rr.pos.${slots[slot]!.family}`):''})}</p>
+    <input className={s.scoutInput} value={q} onChange={e=>setQ(e.target.value)} placeholder={tr(copy,'rr.xi.scoutSearch')} aria-label={tr(copy,'rr.xi.scoutSearch')} autoFocus data-testid="rumble-scout-q"/>
+    <ul className={s.scoutList}>{searching&&!found?<li>{tr(copy,'rr.xi.scoutBusy')}</li>:(found??[]).length===0?<li>{tr(copy,'rr.xi.scoutNone')}</li>:(found??[]).map(c=>{const ok=afford(c,true)&&!picks.includes(c.id);return <li key={c.id}><button type="button" className={`${s.scoutPick} min-h-tap`} disabled={!ok} onClick={()=>signScout(c)}><span className={s.scoutShirt}><RumbleShirt card={c} side="us" wardrobe={wardrobe}/></span><span dir="auto"><b>{c.name}</b><small className={s.mono} dir="ltr">{years(copy,c)}</small>{c.free&&<small>{tr(copy,'rr.xi.noPos')}</small>}</span><span className={s.mono} dir="ltr">{tr(copy,'rr.xi.scoutCost',{price:money(c.price),fee:money(SCOUT_FEE)})}</span></button></li>})}</ul>
+   </div>
+  </div>}
+
   {rules&&<div className={s.sheetBack} onClick={()=>setRules(false)}>
    <div className={`${s.sheet} relative z-[60]`} role="dialog" aria-modal="true" aria-labelledby="rr-rules" onClick={e=>e.stopPropagation()}>
     <div className={s.sheetHead}><h2 id="rr-rules">{tr(copy,'rr.rulesTitle')}</h2><button type="button" className={`${s.closeBtn} min-h-tap`} onClick={()=>setRules(false)} autoFocus>{tr(copy,'rr.close')}</button></div>
-    <ul>{[1,2,3,4,5].map(n=><li key={n}>{tr(copy,`rr.xi.rule${n}`)}</li>)}</ul>
+    <ul>{[1,2,3,4,5].map(n=><li key={n}>{tr(copy,`rr.xi.rule${n}`,{budget})}</li>)}</ul>
     <p className={s.sheetNote}>{tr(copy,'rr.ratingNever')}</p>
+    <p className={s.sheetNote}>{tr(copy,'rr.xi.scoutRules')}</p>
     <p className={s.sheetNote}>{tr(copy,'rr.xi.general')}</p>
    </div>
   </div>}
