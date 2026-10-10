@@ -63,6 +63,7 @@
     "trivia:master": "tsx scripts/trivia/build-question-master.ts",
     "archive:graph": "tsx scripts/archive/build-graph.ts",
     "away-days:build": "tsx scripts/away-days/build-master.ts",
+    "away-days:club": "node scripts/away-days/build-euro-club.mjs",
     "away-days:validate": "tsx scripts/away-days/validate-master.ts",
     "away-days:report": "tsx scripts/away-days/research-report.ts",
     "blind-cow:prices": "tsx scripts/blind-cow/build-prices.ts",

@@ -1,9 +1,10 @@
 import {describe,expect,it} from 'vitest'
 import {clubAwayData,bySeason,countryName,hasClubAway} from '@/lib/away-days/club'
+import {readFileSync} from 'node:fs'
 
 describe('club AWAY DAYS (Zrinjski, from UEFA)',()=>{
  const d=clubAwayData('zrinjski-mostar')!
- it('is built and only for clubs that have a build',()=>{expect(d).toBeTruthy();expect(hasClubAway('celtic')).toBe(false)})
+ it('is built and only for clubs that have a build',()=>{expect(d).toBeTruthy();expect(hasClubAway('st-pauli')).toBe(false)})
  it('every visit has a ground with coordinates and a result that matches its score',()=>{
   const st=new Map(d.stadiums.map(s=>[s.id,s]))
   expect(d.visits.length).toBe(d.counts.matches)
@@ -23,4 +24,14 @@ describe('club AWAY DAYS (Zrinjski, from UEFA)',()=>{
   const g=bySeason(d.visits);expect(g[0]!.season>g[g.length-1]!.season).toBe(true)
  })
  it('names countries in both languages',()=>{expect(countryName('ENG','en')).toBe('England');expect(countryName('SWE','he').length).toBeGreaterThan(2)})
+})
+
+describe('every club with a UEFA id has its journey',()=>{
+ const ids:Record<string,string>={'aek-athens':'50129',celtic:'50050',olympiacos:'2610',panathinaikos:'50084','zrinjski-mostar':'73390','hapoel-petah-tikva':'57478'}
+ for(const [club,id] of Object.entries(ids))it(`${club}: id kept in ingest.json, data built from it`,()=>{
+  expect(JSON.parse(readFileSync(`club-packs/${club}/ingest.json`,'utf8')).uefaTeamId).toBe(id)
+  const d=clubAwayData(club)!;expect(d.uefaTeamId).toBe(id)
+  expect(d.origin).toBeTruthy();expect(d.counts.abroad).toBeGreaterThan(0)
+  const st=new Set(d.stadiums.map(s=>s.id));for(const v of d.visits)expect(st.has(v.venueId)).toBe(true)
+ })
 })

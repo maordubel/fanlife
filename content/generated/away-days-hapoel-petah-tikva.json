@@ -1,0 +1,643 @@
+{
+ "schemaVersion": 1,
+ "clubId": "hapoel-petah-tikva",
+ "source": "UEFA match API (match.uefa.com/v5), public JSON",
+ "uefaTeamId": "57478",
+ "clubName": "H. Petah Tikva",
+ "homeCountry": "ISR",
+ "origin": "uefa-63484",
+ "counts": {
+  "matches": 12,
+  "abroad": 6,
+  "grounds": 9,
+  "countries": 6,
+  "unplaced": 4
+ },
+ "stadiums": [
+  {
+   "id": "uefa-52851",
+   "name": "Stadion Feijenoord 'De Kuip'",
+   "city": "Rotterdam",
+   "countryCode": "NED",
+   "lat": 51.8939056,
+   "lng": 4.5232,
+   "capacity": 48100,
+   "opened": 1937
+  },
+  {
+   "id": "uefa-55211",
+   "name": "Ramat Gan National Stadium",
+   "city": "Tel Aviv",
+   "countryCode": "ISR",
+   "lat": 32.1002833,
+   "lng": 34.8241611,
+   "capacity": 11000,
+   "opened": null
+  },
+  {
+   "id": "uefa-62086",
+   "name": "Gerhard Hanappi Stadion",
+   "city": "Vienna",
+   "countryCode": "AUT",
+   "lat": 48.1980306,
+   "lng": 16.2659111,
+   "capacity": 17400,
+   "opened": 1977
+  },
+  {
+   "id": "uefa-62099",
+   "name": "Kadrioru staadion",
+   "city": "Tallinn",
+   "countryCode": "EST",
+   "lat": 59.4347111,
+   "lng": 24.7833361,
+   "capacity": 5000,
+   "opened": 1926
+  },
+  {
+   "id": "uefa-62256",
+   "name": "Marienlyst",
+   "city": "Drammen",
+   "countryCode": "NOR",
+   "lat": 59.7344111,
+   "lng": 10.2013194,
+   "capacity": 6545,
+   "opened": 1924
+  },
+  {
+   "id": "uefa-63155",
+   "name": "Vejle Stadion",
+   "city": "Vejle",
+   "countryCode": "DEN",
+   "lat": 55.714855,
+   "lng": 9.558706,
+   "capacity": 8007,
+   "opened": 2008
+  },
+  {
+   "id": "uefa-63409",
+   "name": "Stadion der Stadt Linz",
+   "city": "Linz",
+   "countryCode": "AUT",
+   "lat": 48.2933361,
+   "lng": 14.2763861,
+   "capacity": 13842,
+   "opened": 1952
+  },
+  {
+   "id": "uefa-63483",
+   "name": "Haberfeld Stadium",
+   "city": "Rishon Le-Zion",
+   "countryCode": "ISR",
+   "lat": 31.9750389,
+   "lng": 34.7527611,
+   "capacity": 6000,
+   "opened": null
+  },
+  {
+   "id": "uefa-63484",
+   "name": "Hapoel",
+   "city": "Petach-tikva",
+   "countryCode": "ISR",
+   "lat": 32.0978306,
+   "lng": 34.8731806,
+   "capacity": 7950,
+   "opened": null
+  }
+ ],
+ "visits": [
+  {
+   "id": "hapoel-petah-tikva:6190",
+   "uefaId": "6190",
+   "playedOn": "1992-08-19",
+   "competition": "European Cup Winners' Cup",
+   "season": "1993",
+   "stage": "Preliminary round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Strømsgodset",
+   "opponentCountry": "NOR",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 1933,
+   "scorers": [
+    {
+     "name": "Menache Basson",
+     "minute": 68,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62256",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "hapoel-petah-tikva:6189",
+   "uefaId": "6189",
+   "playedOn": "1992-09-02",
+   "competition": "European Cup Winners' Cup",
+   "season": "1993",
+   "stage": "Preliminary round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Strømsgodset",
+   "opponentCountry": "NOR",
+   "scoreFor": 2,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 1200,
+   "scorers": [
+    {
+     "name": "Menache Basson",
+     "minute": 68,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63484",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "hapoel-petah-tikva:6574",
+   "uefaId": "6574",
+   "playedOn": "1992-09-16",
+   "competition": "European Cup Winners' Cup",
+   "season": "1993",
+   "stage": "First round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "Feyenoord",
+   "opponentCountry": "NED",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 20231,
+   "scorers": [
+    {
+     "name": "József Kiprich",
+     "minute": 89,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-52851",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "hapoel-petah-tikva:6575",
+   "uefaId": "6575",
+   "playedOn": "1992-09-30",
+   "competition": "European Cup Winners' Cup",
+   "season": "1993",
+   "stage": "First round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "Feyenoord",
+   "opponentCountry": "NED",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 7000,
+   "scorers": [
+    {
+     "name": "Ner Levin",
+     "minute": 3,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mordachy Kakon",
+     "minute": 48,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Henk Fräser",
+     "minute": 59,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-55211",
+   "side": "DOMESTIC",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "hapoel-petah-tikva:54172",
+   "uefaId": "54172",
+   "playedOn": "1997-07-23",
+   "competition": "UEFA Europa League",
+   "season": "1997",
+   "stage": "First qualifying phase",
+   "leg": 1,
+   "drawnHome": true,
+   "opponent": "Flora Tallinn",
+   "opponentCountry": "EST",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 750,
+   "scorers": [
+    {
+     "name": "Gábor Márton",
+     "minute": 88,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63483",
+   "side": "DOMESTIC",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "hapoel-petah-tikva:54173",
+   "uefaId": "54173",
+   "playedOn": "1997-07-30",
+   "competition": "UEFA Europa League",
+   "season": "1997",
+   "stage": "First qualifying phase",
+   "leg": 2,
+   "drawnHome": false,
+   "opponent": "Flora Tallinn",
+   "opponentCountry": "EST",
+   "scoreFor": 2,
+   "scoreAgainst": 1,
+   "result": "W",
+   "penalties": null,
+   "attendance": 900,
+   "scorers": [
+    {
+     "name": "Andres Oper",
+     "minute": 16,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Yaniv Ofri",
+     "minute": 46,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Mordachy Kakon",
+     "minute": 62,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62099",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "hapoel-petah-tikva:54257",
+   "uefaId": "54257",
+   "playedOn": "1997-08-12",
+   "competition": "UEFA Europa League",
+   "season": "1997",
+   "stage": "Second qualifying phase",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "VB",
+   "opponentCountry": "DEN",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "result": "D",
+   "penalties": null,
+   "attendance": 3070,
+   "scorers": [],
+   "venueId": "uefa-63155",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "hapoel-petah-tikva:54258",
+   "uefaId": "54258",
+   "playedOn": "1997-08-26",
+   "competition": "UEFA Europa League",
+   "season": "1997",
+   "stage": "Second qualifying phase",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "VB",
+   "opponentCountry": "DEN",
+   "scoreFor": 1,
+   "scoreAgainst": 0,
+   "result": "W",
+   "penalties": null,
+   "attendance": 6000,
+   "scorers": [
+    {
+     "name": "Mordachy Kakon",
+     "minute": 33,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63484",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "hapoel-petah-tikva:54338",
+   "uefaId": "54338",
+   "playedOn": "1997-09-16",
+   "competition": "UEFA Europa League",
+   "season": "1997",
+   "stage": "First round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "SK Rapid",
+   "opponentCountry": "AUT",
+   "scoreFor": 0,
+   "scoreAgainst": 1,
+   "result": "L",
+   "penalties": null,
+   "attendance": 10000,
+   "scorers": [
+    {
+     "name": "Oliver Freund",
+     "minute": 37,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-62086",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "hapoel-petah-tikva:54339",
+   "uefaId": "54339",
+   "playedOn": "1997-09-30",
+   "competition": "UEFA Europa League",
+   "season": "1997",
+   "stage": "First round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "SK Rapid",
+   "opponentCountry": "AUT",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 6000,
+   "scorers": [
+    {
+     "name": "Mordachy Kakon",
+     "minute": 34,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Marek Penska",
+     "minute": 72,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63484",
+   "side": "HOME",
+   "physicallyAbroad": false
+  },
+  {
+   "id": "hapoel-petah-tikva:64922",
+   "uefaId": "64922",
+   "playedOn": "2000-06-18",
+   "competition": "UEFA Intertoto Cup",
+   "season": "2001",
+   "stage": "First round",
+   "leg": 1,
+   "drawnHome": false,
+   "opponent": "LASK",
+   "opponentCountry": "AUT",
+   "scoreFor": 0,
+   "scoreAgainst": 3,
+   "result": "L",
+   "penalties": null,
+   "attendance": 470,
+   "scorers": [
+    {
+     "name": "Pascal Ortner",
+     "minute": 40,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Eidan Hillel",
+     "minute": 45,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Almir Memic",
+     "minute": 84,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63409",
+   "side": "AWAY",
+   "physicallyAbroad": true
+  },
+  {
+   "id": "hapoel-petah-tikva:64923",
+   "uefaId": "64923",
+   "playedOn": "2000-06-24",
+   "competition": "UEFA Intertoto Cup",
+   "season": "2001",
+   "stage": "First round",
+   "leg": 2,
+   "drawnHome": true,
+   "opponent": "LASK",
+   "opponentCountry": "AUT",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": 336,
+   "scorers": [
+    {
+     "name": "Pascal Ortner",
+     "minute": 5,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Eliezer Abarbanel",
+     "minute": 76,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "venueId": "uefa-63484",
+   "side": "HOME",
+   "physicallyAbroad": false
+  }
+ ],
+ "unplaced": [
+  {
+   "id": "hapoel-petah-tikva:51815",
+   "uefaId": "51815",
+   "playedOn": "1995-06-25",
+   "competition": "UEFA Intertoto Cup",
+   "season": "1996",
+   "stage": "Group matches",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "Gençlerbirliği",
+   "opponentCountry": "TUR",
+   "scoreFor": 0,
+   "scoreAgainst": 4,
+   "result": "L",
+   "penalties": null,
+   "attendance": null,
+   "scorers": [
+    {
+     "name": "Metìn Dìyadìn",
+     "minute": 41,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Engin Özdemir",
+     "minute": 46,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Sìnan Ertan",
+     "minute": 52,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Ilker Dalcicek",
+     "minute": 75,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "reason": "UEFA records no ground with coordinates for this match"
+  },
+  {
+   "id": "hapoel-petah-tikva:51817",
+   "uefaId": "51817",
+   "playedOn": "1995-07-01",
+   "competition": "UEFA Intertoto Cup",
+   "season": "1996",
+   "stage": "Group matches",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "Floriana",
+   "opponentCountry": "MLT",
+   "scoreFor": 1,
+   "scoreAgainst": 1,
+   "result": "D",
+   "penalties": null,
+   "attendance": null,
+   "scorers": [
+    {
+     "name": "Richard Buhagiar",
+     "minute": 24,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Alon Maya",
+     "minute": 47,
+     "forClub": true,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "reason": "UEFA records no ground with coordinates for this match"
+  },
+  {
+   "id": "hapoel-petah-tikva:51819",
+   "uefaId": "51819",
+   "playedOn": "1995-07-08",
+   "competition": "UEFA Intertoto Cup",
+   "season": "1996",
+   "stage": "Group matches",
+   "leg": null,
+   "drawnHome": false,
+   "opponent": "Wacker",
+   "opponentCountry": "AUT",
+   "scoreFor": 0,
+   "scoreAgainst": 2,
+   "result": "L",
+   "penalties": null,
+   "attendance": null,
+   "scorers": [
+    {
+     "name": "Michael Streiter",
+     "minute": 35,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    },
+    {
+     "name": "Harald Cerny",
+     "minute": 57,
+     "forClub": false,
+     "penalty": false,
+     "ownGoal": false
+    }
+   ],
+   "reason": "UEFA records no ground with coordinates for this match"
+  },
+  {
+   "id": "hapoel-petah-tikva:51822",
+   "uefaId": "51822",
+   "playedOn": "1995-07-22",
+   "competition": "UEFA Intertoto Cup",
+   "season": "1996",
+   "stage": "Group matches",
+   "leg": null,
+   "drawnHome": true,
+   "opponent": "Strasbourg",
+   "opponentCountry": "FRA",
+   "scoreFor": 0,
+   "scoreAgainst": 0,
+   "result": "D",
+   "penalties": null,
+   "attendance": null,
+   "scorers": [],
+   "reason": "UEFA records no ground with coordinates for this match"
+  }
+ ]
+}

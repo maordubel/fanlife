@@ -1,5 +1,5 @@
 /**
- * npm run away-days:club -- zrinjski-mostar 73390 [HŠK Zrinjski]
+ * npm run away-days:club -- zrinjski-mostar            (UEFA id from club-packs/zrinjski-mostar/ingest.json)
  *
  * A club's European journey straight from UEFA's public match API (match.uefa.com/v5):
  * every finished match the team played, each with the ground UEFA records (name, city,
@@ -11,11 +11,19 @@
  * never by which side was drawn at home (a "home" tie played abroad is an away day).
  */
 import {execFileSync} from 'node:child_process'
-import {writeFileSync} from 'node:fs'
+import {existsSync,readFileSync,writeFileSync} from 'node:fs'
 
-const [,, clubId, teamId, ...rest] = process.argv
-if (!clubId || !teamId) { console.error('usage: build-euro-club.mjs <clubId> <uefaTeamId>'); process.exit(1) }
-const get = (url) => JSON.parse(execFileSync('curl', ['-s', '-m', '40', url], {encoding: 'utf8', maxBuffer: 64 << 20}))
+const [,, clubId, argTeam, ...rest] = process.argv
+// the id lives in club-packs/<club>/ingest.json (uefaTeamId); a second argument overrides it
+const cfg = clubId && existsSync(`club-packs/${clubId}/ingest.json`) ? JSON.parse(readFileSync(`club-packs/${clubId}/ingest.json`, 'utf8')) : {}
+const teamId = argTeam ?? cfg.uefaTeamId
+if (!clubId || !teamId) { console.error('usage: build-euro-club.mjs <clubId> [uefaTeamId]  (id otherwise from club-packs/<club>/ingest.json)'); process.exit(1) }
+const get = (url) => {
+  for (let i = 0; ; i++) {
+    try { return JSON.parse(execFileSync('curl', ['-s', '-m', '40', url], {encoding: 'utf8', maxBuffer: 64 << 20})) }
+    catch (e) { if (i >= 4) throw e; execFileSync('sleep', [String(1 + i * 2)]) }
+  }
+}
 const one = (x) => (Array.isArray(x) ? x[0] : x)
 const list = []
 for (let off = 0; ; off += 50) {
@@ -58,10 +66,8 @@ for (const m of matches) {
 }
 visits.sort((a, b) => a.playedOn.localeCompare(b.playedOn) || a.uefaId.localeCompare(b.uefaId))
 const homeCountry = club?.countryCode ?? null
-// the club's own ground = the ground most often hosting its drawn-home matches in its own country
-const tally = {}
-for (const v of visits) if (v.drawnHome && stadiums[v.venueId].countryCode === homeCountry) tally[v.venueId] = (tally[v.venueId] ?? 0) + 1
-const origin = Object.entries(tally).sort((a, b) => b[1] - a[1])[0]?.[0] ?? null
+// the club's own ground = where it last played a drawn-home match in its own country (grounds change; "home" is where it lives now)
+const origin = [...visits].reverse().find((v) => v.drawnHome && stadiums[v.venueId].countryCode === homeCountry)?.venueId ?? null
 for (const v of visits) {
   const c = stadiums[v.venueId].countryCode
   v.side = v.venueId === origin ? 'HOME' : c === homeCountry ? 'DOMESTIC' : v.drawnHome ? 'NEUTRAL' : 'AWAY'

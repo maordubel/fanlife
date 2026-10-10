@@ -8,8 +8,8 @@ import type {Camera,MapMarker} from '@/components/away-days/AwayDaysMap'
 import type {VenueLite} from '@/lib/away-days/journey'
 import {bySeason,countryName,totalKm,visitKey,type ClubAwayData,type ClubStadium,type ClubVisit} from '@/lib/away-days/club'
 
-const Map=dynamic(()=>import('@/components/away-days/AwayDaysMap'),{ssr:false,loading:()=><div className="cad-map-load" role="status"/>})
-type Copy={kicker:string;title:string;lede:string;back:string;matches:string;abroad:string;grounds:string;countries:string;km:string;all:string;onlyAbroad:string;home:string;away:string;neutral:string;domestic:string;been:string;beenOn:string;attendance:string;leg:string;pens:string;selected:string;clear:string;mapLabel:string;youVisited:string;scorers:string;source:string;modeJourney:string;modeExplore:string;start:string;startLine:string;next:string;prev:string;play:string;pause:string;end:string;endLine:string;first:string;again:string;farthest:string;bigWin:string;heavy:string;progress:string;winWord:string;drawWord:string;lossWord:string;totalKm:string;fromTo:string}
+const Globe=dynamic(()=>import('@/components/away-days/AwayDaysMap'),{ssr:false,loading:()=><div className="cad-map-load" role="status"/>})
+type Copy={kicker:string;title:string;lede:string;back:string;matches:string;abroad:string;grounds:string;countries:string;km:string;all:string;onlyAbroad:string;home:string;away:string;neutral:string;domestic:string;been:string;beenOn:string;attendance:string;leg:string;pens:string;selected:string;clear:string;mapLabel:string;youVisited:string;scorers:string;source:string;modeJourney:string;modeExplore:string;start:string;startLine:string;next:string;prev:string;play:string;pause:string;end:string;endLine:string;first:string;again:string;farthest:string;bigWin:string;heavy:string;progress:string;winWord:string;drawWord:string;lossWord:string;totalKm:string;fromTo:string;chapter:string;speed:string;jump:string;unplaced:string}
 const lite=(s:ClubStadium,locale:'en'|'he'):VenueLite=>({id:s.id,nameHe:s.name,nameLatin:s.name,cityHe:s.city??'',cityLatin:s.city,countryHe:countryName(s.countryCode,locale),countryCode:s.countryCode,lat:s.lat,lng:s.lng})
 
 /** AWAY DAYS for one club — the globe, the grounds it has played on in Europe, and every tie by season. */
@@ -35,7 +35,7 @@ function Explore({data,locale,copy}:{data:ClubAwayData;locale:'en'|'he';copy:Cop
    <li><b dir="ltr">{num(totalKm(data))}</b><small>{copy.km}</small></li>
   </ul>
   <div className="cad-map" role="group" aria-label={copy.mapLabel}>
-   <Map markers={markers} route={[]} leg={null} focus={focus} interactive onMarker={id=>setSel(s=>s===id?null:id)}/>
+   <Globe markers={markers} route={[]} leg={null} focus={focus} interactive onMarker={id=>setSel(s=>s===id?null:id)}/>
   </div>
   <div className="cad-bar">
    <div role="group" aria-label={copy.title} className="cad-chips">
@@ -65,14 +65,14 @@ function Explore({data,locale,copy}:{data:ClubAwayData;locale:'en'|'he';copy:Cop
 const zoomFor=(km:number)=>km>4000?1.35:km>1800?1.8:km>600?2.4:3
 type LL=[number,number]
 
-/** The story: Mostar, then every ground abroad in the order it happened — the camera flies, the road draws itself, the card tells the night. */
+/** The story: the home ground, then every ground abroad in the order it happened — the camera flies, the road draws itself, the card tells the night. */
 function Journey({data,locale,copy}:{data:ClubAwayData;locale:'en'|'he';copy:Copy}) {
  const {ledger,toggle}=useBeen()
  const st=useMemo(()=>Object.fromEntries(data.stadiums.map(s=>[s.id,s])),[data])
  const trip=useMemo(()=>data.visits.filter(v=>v.physicallyAbroad),[data])
  const total=trip.length
  const origin=st[data.origin]!
- const [index,setIndex]=useState(-1),[arrived,setArrived]=useState(-1),[playing,setPlaying]=useState(false)
+ const [index,setIndex]=useState(-1),[arrived,setArrived]=useState(-1),[playing,setPlaying]=useState(false),[fast,setFast]=useState(1)
  const card=useRef<HTMLDivElement>(null)
  const go=useCallback((n:number)=>setIndex(Math.max(-1,Math.min(total,n))),[total])
  const at=(s:ClubStadium):LL=>[s.lng,s.lat]
@@ -86,7 +86,7 @@ function Journey({data,locale,copy}:{data:ClubAwayData;locale:'en'|'he';copy:Cop
  const onArrive=useCallback(()=>setArrived(index),[index])
  useEffect(()=>{if(arrived<0||arrived>=total||!card.current)return;firePickFxAt(card.current,{label:to.city??'',tone:'red',big:arrived===0||arrived===total-1,haptic:'tap'})},[arrived,total,to.city])
  // autoplay: after a stop has been read for a few seconds, fly on
- useEffect(()=>{if(!playing||arrived!==index)return;if(index>=total){setPlaying(false);return};const t=setTimeout(()=>go(index+1),index<0?1800:4200);return()=>clearTimeout(t)},[playing,arrived,index,total,go])
+ useEffect(()=>{if(!playing||arrived!==index)return;if(index>=total){setPlaying(false);return};const t=setTimeout(()=>go(index+1),(index<0?1800:4200)/fast);return()=>clearTimeout(t)},[playing,arrived,index,total,go,fast])
  useEffect(()=>{const k=(e:KeyboardEvent)=>{const t=e.target as HTMLElement|null;if(t&&/^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(t.tagName))return;if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();go(index+(locale==='he'?-1:1))}else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();go(index+(locale==='he'?1:-1))}};window.addEventListener('keydown',k);return()=>window.removeEventListener('keydown',k)},[index,go,locale])
  const sw=useRef<number|null>(null)
  // running totals as the road grows
@@ -100,6 +100,8 @@ function Journey({data,locale,copy}:{data:ClubAwayData;locale:'en'|'he';copy:Cop
  const tags=cur?[index===0?copy.first:null,visitNo>1?copy.again.replace('{n}',String(visitNo)):null,cur.id===far.id?copy.farthest:null,cur.id===bigWin?.id?copy.bigWin:null,margin(cur)<=-4?copy.heavy:null].filter(Boolean) as string[]:[]
  const word=cur?(cur.result==='W'?copy.winWord:cur.result==='D'?copy.drawWord:copy.lossWord):''
  const year=cur?Number(cur.playedOn.slice(0,4)):0
+ const decades=useMemo(()=>{const m=new Map<number,{decade:number;first:number;n:number}>();trip.forEach((v,i)=>{const d=Math.floor(Number(v.playedOn.slice(0,4))/10)*10;const x=m.get(d);if(x)x.n++;else m.set(d,{decade:d,first:i,n:1})});return [...m.values()]},[trip])
+ const chapter=cur&&(index===0||Math.floor(Number(trip[index-1]!.playedOn.slice(0,4))/10)!==Math.floor(year/10))?`${Math.floor(year/10)*10}s`:null
  return <div className="cad cad-journey">
   <div className="cad-jbar">
    <p className="cad-prog" aria-live="polite">{index<0?copy.start:index>=total?copy.end:copy.progress.replace('{n}',String(index+1)).replace('{t}',String(total))}</p>
@@ -109,14 +111,19 @@ function Journey({data,locale,copy}:{data:ClubAwayData;locale:'en'|'he';copy:Cop
     <button type="button" className="cad-chip min-h-tap" disabled={index>=total} onClick={()=>{setPlaying(false);go(index+1)}}>{copy.next}</button>
    </div>
   </div>
+  {total>30&&<div className="cad-jump">
+   <div className="cad-decades" role="group" aria-label={copy.jump}>{decades.map(d=><button key={d.decade} type="button" className="cad-chip min-h-tap" aria-pressed={cur?Math.floor(Number(cur.playedOn.slice(0,4))/10)*10===d.decade:false} onClick={()=>{setPlaying(false);go(d.first)}}>{d.decade}s<small>{d.n}</small></button>)}</div>
+   <button type="button" className="cad-chip min-h-tap" aria-label={copy.speed} onClick={()=>setFast(f=>f===1?2:f===2?4:1)}>{fast}×</button>
+  </div>}
   <div className="cad-map" role="group" aria-label={copy.mapLabel}>
-   <Map markers={markers} route={route} leg={cur&&!same?[at(from),at(to)]:null} focus={focus} interactive={false} onArrive={onArrive}/>
+   <Globe markers={markers} route={route} leg={cur&&!same?[at(from),at(to)]:null} focus={focus} interactive={false} onArrive={onArrive}/>
    {cur&&<div key={index} className="cad-cap" aria-hidden="true"><b dir="ltr">{year} · {same?to.city:`${from.city} → ${to.city}`}{!same&&` · ${num(Math.round(legKm/10)*10)} KM`}</b><span>{to.name}</span></div>}
    <div className="cad-run" aria-hidden="true"><b dir="ltr">{num(sofar.km)}</b><small>KM</small><b dir="ltr">{sofar.countries}</b><small>{copy.countries}</small></div>
   </div>
   <div ref={card} className="cad-dock" onPointerDown={e=>{sw.current=e.clientX}} onPointerUp={e=>{const s=sw.current;sw.current=null;if(s==null)return;const dx=e.clientX-s;if(Math.abs(dx)>48){setPlaying(false);go(index+((dx>0)===(locale==='he')?1:-1))}}} aria-live="polite">
    {index<0&&<div className="cad-card cad-intro"><small>{origin.city} · {origin.name}</small><h2>{copy.startLine.replace('{n}',String(total)).replace('{y}',String(new Date(trip[0]!.playedOn).getFullYear()))}</h2><p>{copy.first}: <bdi>{st[trip[0]!.venueId]!.city}</bdi>, {trip[0]!.playedOn.slice(0,4)}</p></div>}
    {cur&&<div key={cur.id} className="cad-card cad-stop" data-result={cur.result}>
+    {chapter&&<p className="cad-chapter">{copy.chapter.replace('{d}',chapter)}</p>}
     <small>{[cur.competition,cur.stage,cur.leg?copy.leg.replace('{n}',String(cur.leg)):null].filter(Boolean).join(' · ')} · <bdi dir="ltr">{cur.playedOn}</bdi></small>
     <div className="cad-big"><span className="cad-bigopp"><bdi>{cur.opponent}</bdi></span><b className="cad-bigscore" dir="ltr"><i>{cur.scoreFor}</i>–<i>{cur.scoreAgainst}</i></b></div>
     <p className="cad-verdict" data-result={cur.result}>{word}{cur.penalties?` · ${copy.pens.replace('{a}',String(cur.penalties.for)).replace('{b}',String(cur.penalties.against))}`:''}</p>
@@ -127,7 +134,8 @@ function Journey({data,locale,copy}:{data:ClubAwayData;locale:'en'|'he';copy:Cop
    </div>}
    {index>=total&&<div className="cad-card cad-intro"><small>{copy.end}</small><h2>{copy.endLine.replace('{k}',num(totalKm(data))).replace('{c}',String(new Set(trip.map(v=>st[v.venueId]!.countryCode)).size)).replace('{n}',String(total))}</h2><p>{copy.totalKm.replace('{w}',String(trip.filter(v=>v.result==='W').length))}</p></div>}
   </div>
-  <div className="cad-dots" aria-hidden="true">{trip.map((v,i)=><i key={v.id} data-r={v.result} data-on={i===index||undefined} data-done={i<index||undefined}/>)}</div>
+  {total>60?<input className="cad-scrub" type="range" min={-1} max={total} value={index} aria-label={copy.progress.replace('{n}',String(index+1)).replace('{t}',String(total))} onChange={e=>{setPlaying(false);go(Number(e.target.value))}}/>:<div className="cad-dots" aria-hidden="true">{trip.map((v,i)=><i key={v.id} data-r={v.result} data-on={i===index||undefined} data-done={i<index||undefined}/>)}</div>}
+  <p className="cad-source">{copy.unplaced.replace('{n}',String(data.counts.unplaced))}</p>
  </div>
 }
 
