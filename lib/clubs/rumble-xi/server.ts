@@ -3,13 +3,12 @@ import {requestClub} from '../request'
 import {CORE_CLUB_IDS} from '../resolver'
 import {REGISTRY} from '@/lib/master/registry'
 import type {Rated} from '../rumble'
-import {xiPool,xiFree} from './pool'
-import {budgetOf,canRival,rivalReason,xiReadiness} from './readiness'
+import {xiPool} from './pool'
+import {canRival,rivalReason,xiReadiness} from './readiness'
 import {FORMATION_IDS} from './formations'
 import type {FormationId,XIReadiness} from './types'
 
 export type RivalChoice={id:string;name:string;ok:boolean;reason:string|null}
-export type XIHome={ready:XIReadiness;byFormation:Record<FormationId,XIReadiness>}
 
 /** Which clubs can be the rival in this shape, and — for those that cannot — exactly why (never a silent omission). */
 export async function rivalChoices(f:FormationId):Promise<RivalChoice[]>{
@@ -27,12 +26,10 @@ export function pickRandomRival(choices:readonly RivalChoice[],home:string,seed:
  const ok=choices.filter(c=>c.ok&&c.id!==home);if(!ok.length)return null
  return ok[Math.abs(seed)%ok.length]!.id
 }
-export async function loadSides(slug:string,rival:string):Promise<{home:Rated[];away:Rated[];free:Rated[];same:boolean;homeVersion:string}|null>{
+export async function loadSides(slug:string,rival:string):Promise<{home:Rated[];away:Rated[];same:boolean;homeVersion:string}|null>{
  const h=await requestClub(slug,9);if(!h||!h.data.gates['royal-rumble']?.playable)return null
  const same=rival==='same'||rival===h.data.identity.id
  const a=same?h:await requestClub(rival,9);if(!a||!a.data.gates['royal-rumble']?.playable)return null
- return {home:xiPool(h.data),free:xiFree(h.data),away:xiPool(a.data),same,homeVersion:h.data.version}
+ return {home:xiPool(h.data),away:xiPool(a.data),same,homeVersion:h.data.version}
 }
 export const formationReadiness=(pool:readonly Rated[])=>Object.fromEntries(FORMATION_IDS.map(f=>[f,xiReadiness(pool,f)])) as Record<FormationId,XIReadiness>
-
-export {budgetOf}

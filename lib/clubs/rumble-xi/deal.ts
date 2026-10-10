@@ -1,73 +1,76 @@
-import type {Pos,Rated,RumbleCard} from '../rumble'
-import {strip} from '../rumble'
+import {fits,strip,type Pos,type Rated,type RumbleCard} from '../rumble'
+import {floorOf,withFeatured} from '../rumble-economy'
+import {hash,rng} from '../rumble-rng'
 import {countFamily,slotsOf} from './formations'
-import {offersByFamily} from './readiness'
-import {XI_BUDGET,type FormationId,type XIBoard} from './types'
+import {PRICE_SCHEME,XI_BUDGET,XI_OFFERS,type FormationId} from './types'
 
-const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^(seed>>>15),1|seed);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}
-const shuffle=<T,>(a:readonly T[],r:()=>number)=>{const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[x[i],x[j]]=[x[j]!,x[i]!]}return x}
+const FAMILIES:Pos[]=['GK','DF','MF','FW']
+const shuffled=<T,>(a:readonly T[],r:()=>number)=>{const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[x[i],x[j]]=[x[j]!,x[i]!]}return x}
 
 /**
- * The opponent is COMMITTED from his own pool, the seed and the rules alone — never from what the player picks. Per slot: the strongest
- * of three seeded men that still leaves the remaining slots fillable inside €35M. (Slots of different families draw on disjoint
- * sets, and a family's slots never share a man, so "cheapest remaining men" is an exact floor — no search is needed.)
+ * The deck of a family: a FIXED order of every man who can stand there (positioned men, and the "free" men of no recorded position, each
+ * given to one outfield family by his id). A board reads the deck from where the round points, so consecutive rounds walk through the
+ * whole archive without repeating a man until the deck has been round — every man gets his turn, and the same round is the same board.
+ */
+export function decksOf(pool:readonly Rated[],key:string):Record<Pos,Rated[]>{
+ const by={GK:[],DF:[],MF:[],FW:[]} as Record<Pos,Rated[]>
+ for(const x of [...pool].sort((a,b)=>a.id.localeCompare(b.id)))by[x.free?(['DF','MF','FW'] as const)[hash(x.id)%3]!:x.position].push(x)
+ for(const p of FAMILIES)by[p]=shuffled(by[p],rng(hash(`deck|${key}|${p}|${PRICE_SCHEME}`)))
+ return by
+}
+
+/**
+ * The opponent is COMMITTED from his own pool, the seed and the rules alone — never from what the player picks. Per slot: the strongest of
+ * three seeded men that still leaves the other slots fillable inside the budget. His prices are his club's; his budget is €35M, like yours.
  */
 export function dealRivalXI(pool:readonly Rated[],f:FormationId,seed:number,budget:number=XI_BUDGET):Rated[]|null{
- const r=mulberry(seed^0x9e3779b9),taken=new Set<string>(),out:Rated[]=[],slots=slotsOf(f)
+ const r=rng(seed>>>0),taken=new Set<string>(),out:Rated[]=[],slots=slotsOf(f)
  let money=budget
  for(let i=0;i<slots.length;i++){
-  const pos=slots[i]!.family,left=pool.filter(x=>x.position===pos&&!taken.has(x.id)),options=shuffle(left,r).slice(0,3)
+  const pos=slots[i]!.family,left=pool.filter(x=>fits(x,pos)&&!taken.has(x.id)),options=shuffled(left,r).slice(0,3)
   if(!options.length)return null
-  const floor=slots.slice(i+1).reduce((t,s,j,rest)=>{const free=pool.filter(x=>x.position===s.family&&!taken.has(x.id)).map(x=>x.price).sort((a,b)=>a-b);return t+(free[rest.slice(0,j).filter(q=>q.family===s.family).length]??1)},0)
-  const fits=options.filter(o=>o.price+floor<=money).sort((a,b)=>b.rating-a.rating||a.price-b.price)
-  const best=fits[0]??[...left].sort((a,b)=>a.price-b.price||b.rating-a.rating)[0]!
+  const floor=slots.slice(i+1).reduce((t,s,j,rest)=>{const free=pool.filter(x=>fits(x,s.family)&&!taken.has(x.id)).map(x=>x.price).sort((a,b)=>a-b);return t+(free[rest.slice(0,j).filter(q=>q.family===s.family).length]??1)},0)
+  const ok=options.filter(o=>o.price+floor<=money).sort((a,b)=>b.rating-a.rating||a.price-b.price)
+  const best=ok[0]??[...left].sort((a,b)=>a.price-b.price||b.rating-a.rating)[0]!
   taken.add(best.id);out.push(best);money-=best.price
  }
  return out
 }
 
-export const cheapestBoard=(draft:readonly (readonly RumbleCard[])[])=>draft.reduce((t,cards)=>t+(cards.length?Math.min(...cards.map(c=>c.price)):Infinity),0)
-
-/**
- * The draft: per slot, `offers` cards of that slot's family, never repeating a man, never a man the rival fields (own-club rival).
- * Returns null when a slot cannot be offered — the caller reports the club as not ready instead of showing a broken board.
- */
-export function dealDraftXI(pool:readonly Rated[],f:FormationId,seed:number,rival:readonly Rated[],same:boolean,budget:number=XI_BUDGET):RumbleCard[][]|null{
- const r=mulberry(seed),used=new Set(same?rival.map(c=>c.id):[])
- const by=offersByFamily(pool,f,same)
- const out:RumbleCard[][]=[]
- for(const slot of slotsOf(f)){
-  const offers=by[slot.family]
-  if(offers<1)return null
-  const cards=shuffle(pool.filter(x=>x.position===slot.family&&!used.has(x.id)),r).slice(0,offers)
-  if(cards.length<offers)return null
-  cards.forEach(c=>used.add(c.id));out.push(cards.map(strip))
+/** per slot, up to three men of its family read from the deck at the round's place, never repeating a man, never one the rival fields (own-club rival) */
+export function dealDraftXI(pool:readonly Rated[],f:FormationId,roundSeed:number,rival:readonly Rated[],same:boolean,key:string,attempt=0):RumbleCard[][]|null{
+ const decks=decksOf(pool,key),banned=same?new Set(rival.map(c=>c.id)):new Set<string>(),slots=slotsOf(f),taken=new Set<string>()
+ const used:Record<Pos,number>={GK:0,DF:0,MF:0,FW:0}
+ const board:RumbleCard[][]=slots.map(()=>[])
+ for(const p of FAMILIES){
+  const n=countFamily(f,p);if(!n)continue
+  const avail=decks[p].filter(x=>!banned.has(x.id))
+  const per=Math.min(XI_OFFERS,Math.floor(avail.length/n));if(per<1)return null
+  const start=(((roundSeed>>>0)%1000003)*n*XI_OFFERS+attempt*n*XI_OFFERS)%avail.length
+  const take:Rated[]=[]
+  for(let k=0;take.length<per*n&&k<avail.length;k++){const x=avail[(start+k)%avail.length]!;if(!taken.has(x.id)){taken.add(x.id);take.push(x)}}
+  if(take.length<per*n)return null
+  slots.forEach((sl,i)=>{if(sl.family===p){const j=used[p]++;board[i]=take.slice(j*per,(j+1)*per).map(strip)}})
  }
- // a board nobody can finish is not a round: lower the dearest slot's cheapest card by swapping in the cheapest man of that family still unused
- for(let guard=0;guard<40&&cheapestBoard(out)>budget;guard++){
-  const order=out.map((cards,i)=>({i,min:Math.min(...cards.map(c=>c.price))})).sort((a,b)=>b.min-a.min||a.i-b.i)
-  let fixed=false
-  for(const {i,min} of order){
-   const fam=slotsOf(f)[i]!.family,inBoard=new Set(out.flat().map(c=>c.id))
-   const cheaper=pool.filter(x=>x.position===fam&&!used.has(x.id)&&!inBoard.has(x.id)&&x.price<min).sort((a,b)=>a.price-b.price||a.id.localeCompare(b.id))[0]
-   if(!cheaper)continue
-   const priciest=[...out[i]!].sort((a,b)=>b.price-a.price)[0]!
-   out[i]=out[i]!.map(c=>c.id===priciest.id?strip(cheaper):c);fixed=true;break
-  }
-  if(!fixed)break
- }
- return out
+ return board
 }
 
-/** the first seed in the shuffle chain whose board a player can finish (cheapest eleven ≤ €35M) — bounded, deterministic */
-export function dealXI(homePool:readonly Rated[],awayPool:readonly Rated[],f:FormationId,seed:number,same:boolean,budget:number=XI_BUDGET,tries=24):{seed:number;rival:Rated[];draft:RumbleCard[][]}|null{
- let s=seed
- for(let i=0;i<tries;i++){
-  const rival=dealRivalXI(awayPool,f,s,budget)
-  if(rival){const draft=dealDraftXI(homePool,f,s,rival,same,budget);if(draft&&cheapestBoard(draft)<=budget)return {seed:s,rival,draft}}
-  s=(((s*48271)>>>0)%2147483646)+1
+/**
+ * The round: the rival first (independent of the player), then a board read from the decks, then the rulebook's guarantee — one €5M man
+ * the player can really buy, with a complete squad still possible inside €35M around him. If a try fails the next try reads further
+ * along the deck; if none works the club is NOT READY (null) — prices and the budget are never touched.
+ */
+export function dealXI(homePool:readonly Rated[],awayPool:readonly Rated[],f:FormationId,roundSeed:number,same:boolean,key='club',tries=40):{seed:number;rival:Rated[];draft:RumbleCard[][];attempt:number}|null{
+ const rival=dealRivalXI(awayPool,f,hash(`${key}|${roundSeed}|${f}|rival`));if(!rival)return null
+ const banned=same?new Set(rival.map(c=>c.id)):new Set<string>(),icons=homePool.filter(x=>x.price===5&&!banned.has(x.id)).sort((a,b)=>a.id.localeCompare(b.id))
+ for(let attempt=0;attempt<tries;attempt++){
+  const draft=dealDraftXI(homePool,f,roundSeed,rival,same,key,attempt);if(!draft)return null
+  const inBoard=new Set(draft.flat().map(c=>c.id)),r=rng(hash(`${key}|${roundSeed}|${attempt}|icon`))
+  const k=icons.length?((roundSeed>>>0)+attempt)%icons.length:0,rotated=[...icons.slice(k),...icons.slice(0,k)].filter(x=>!inBoard.has(x.id))
+  const cards=homePool.filter(x=>!inBoard.has(x.id)&&!banned.has(x.id))
+  const pick=withFeatured(draft,[...rotated,...cards.filter(c=>c.price!==5)],(c,i)=>fits(c,slots(f)[i]!.family),r,XI_BUDGET,true)
+  if(pick&&floorOf(pick)<=XI_BUDGET)return {seed:roundSeed,rival,draft:pick,attempt}
  }
  return null
 }
-export const slotFamilies=(f:FormationId):Pos[]=>slotsOf(f).map(s=>s.family)
-export {countFamily}
+const slots=(f:FormationId)=>slotsOf(f)

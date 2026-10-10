@@ -2976,3 +2976,13 @@ Maor: each club entrance is a full The Worker experience for that club, with its
 ## 102 · UEFA is sufficient for UEFA's own competitions (10.10.2026)
 
 Owner decision: a European tie's date, teams, score, scorers and starting elevens are approved on UEFA's match record alone (`approvedBy` quotes the decision). It applies to European matches only. `lib/clubs/euro-wave.ts` merges them, `scripts/ingest/clubs/uefa-mysteries.ts` makes Blind Cow targets from them, and each club's UEFA team id lives in `club-packs/<club>/ingest.json`. Details and what is still closed: `docs/fanlife/45-gates-uefa-2026-10-10.md`.
+
+## 103 · Royal Rumble economy: a frozen list, hard budgets, every man dealt (10.10.2026)
+
+Owner's rulebook `docs/fanlife/48-rumble-rulebook-v1.md`; what is built: `docs/fanlife/47-rumble-xi.md`.
+1. **A price is read, never computed.** `content/generated/rumble-prices-v3.json`, per club: 10/20/40/60 at €5/4/3/2, the rest €1M (proportional once for archives under 130). Same price in five a side and in the eleven. Changing one is a PR with a diff, never a build side effect.
+2. **Budgets are hard: €15M and €35M.** Nothing raises them. A club that cannot field a legal board is reported not ready, with the reason.
+3. **Every board holds a buyable €5M man** (`lib/clubs/rumble-economy.ts`).
+4. **Every man in the archive is dealt**: merged records are one card, a man with no recorded position is dealt into any outfield slot, never in goal, and the decks rotate through everyone.
+5. The owner does not want a search-and-sign feature: the system chooses, shuffles and rotates.
+
