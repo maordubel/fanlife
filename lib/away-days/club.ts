@@ -1,4 +1,9 @@
 import zrinjski from '@/content/generated/away-days-zrinjski-mostar.json'
+import aek from '@/content/generated/away-days-aek-athens.json'
+import celtic from '@/content/generated/away-days-celtic.json'
+import olympiacos from '@/content/generated/away-days-olympiacos.json'
+import panathinaikos from '@/content/generated/away-days-panathinaikos.json'
+import petah from '@/content/generated/away-days-hapoel-petah-tikva.json'
 import {haversineKm} from './distance'
 
 /** A club's European journey, straight from UEFA's match API (scripts/away-days/build-euro-club.mjs). */
@@ -10,9 +15,9 @@ export type ClubVisit={
  penalties:{for:number;against:number}|null;attendance:number|null;scorers:ClubScorer[];venueId:string
  side:'HOME'|'AWAY'|'NEUTRAL'|'DOMESTIC';physicallyAbroad:boolean
 }
-export type ClubAwayData={schemaVersion:1;clubId:string;clubName:string;homeCountry:string;origin:string;counts:{matches:number;abroad:number;grounds:number;countries:number;unplaced:number};stadiums:ClubStadium[];visits:ClubVisit[]}
+export type ClubAwayData={schemaVersion:1;clubId:string;uefaTeamId:string;clubName:string;homeCountry:string;origin:string;counts:{matches:number;abroad:number;grounds:number;countries:number;unplaced:number};stadiums:ClubStadium[];visits:ClubVisit[]}
 
-const DATA:Record<string,ClubAwayData>={'zrinjski-mostar':zrinjski as unknown as ClubAwayData}
+const DATA:Record<string,ClubAwayData>={'zrinjski-mostar':zrinjski,'aek-athens':aek,celtic,olympiacos,panathinaikos,'hapoel-petah-tikva':petah} as unknown as Record<string,ClubAwayData>
 /** Only a club whose journey has been built has this door. */
 export const clubAwayData=(clubId:string):ClubAwayData|null=>DATA[clubId]??null
 export const hasClubAway=(clubId:string)=>clubId in DATA

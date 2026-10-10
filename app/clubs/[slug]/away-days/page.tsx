@@ -31,8 +31,8 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   <main id="main" className="mag-home club-home cad-page">
    <header className="cad-head">
     <p className="mag-kicker">{copy.kicker}</p>
-    <h1 className="mag-h2">{copy.title.replace('{club}',data.clubName)}</h1>
-    <p className="cad-lede">{copy.lede}</p>
+    <h1 className="mag-h2">{copy.title.replace('{club}',c.name)}</h1>
+    <p className="cad-lede">{copy.lede.replace('{a}',data.visits[0]!.playedOn.slice(0,4)).replace('{b}',data.visits[data.visits.length-1]!.playedOn.slice(0,4))}</p>
     <Link className="mag-chip min-h-tap" href={clubHref(id,'history',locale)}>← {copy.back}</Link>
    </header>
    <ClubAwayDays data={data} locale={locale} copy={copy}/>
