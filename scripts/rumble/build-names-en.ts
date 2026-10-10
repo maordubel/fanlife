@@ -34,7 +34,7 @@ async function main(){
    const lat=[...new Set([...p.aliases.filter(isLatinName),...(masterLatin.get(key)||[])])]
    if(lat.length===1){res[p.id]={name:cleanLatin(lat[0]!),how:'alias-latin'};continue}
    const t=isGreek(p.name)?greekToEnglish(p.name):hebrewToEnglish(p.name)
-   res[p.id]={name:t,how:'transliterated'}
+   res[p.id]={name:t.replace(/[^\x20-\x7e\u00c0-\u024f.'’-]/g,'').trim(),how:'transliterated'}
    if(isHebrew(p.name))(todo[id]??=[]).push(p.name)}
   // two men with one English name stay two cards: the years tell them apart
   const seen=new Map<string,string[]>();for(const [pid,e] of Object.entries(res))seen.set(e.name.toLowerCase(),[...(seen.get(e.name.toLowerCase())||[]),pid])

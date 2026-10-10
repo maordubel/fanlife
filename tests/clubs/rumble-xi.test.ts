@@ -33,17 +33,19 @@ describe('shapes',()=>{
  })
 })
 
-describe('the price ladder (rulebook rumble-economy-v1)',()=>{
- it('a club of 130+ men has exactly 10 at €5M, 20 at €4M, 40 at €3M, 60 at €2M and the rest at €1M',()=>{
-  for(const n of [130,131,255,1041]){const q=quotaFor(n);expect(q.mode).toBe('full');expect([q.counts[5],q.counts[4],q.counts[3],q.counts[2]]).toEqual([10,20,40,60]);expect(q.counts[1]).toBe(n-130)}
+describe('the price ladder (rulebook rumble-economy-v2)',()=>{
+ it('a club of 130+ men has exactly 10 at €5M, at least 20 / 40 / 60 (or 8 / 20 / 35 %) at €4 / €3 / €2M and the rest at €1M',()=>{
+  for(const n of [130,131,255,1041]){const q=quotaFor(n);expect(q.mode).toBe('full');expect(q.counts[5]).toBe(10);expect(q.counts[4]).toBeGreaterThanOrEqual(Math.min(20,n-10));expect(q.counts[3]).toBeGreaterThanOrEqual(Math.min(40,Math.max(0,n-30)))
+   expect(q.counts[4]).toBe(Math.max(20,Math.round(n*.08)));expect(q.counts[1]).toBeGreaterThanOrEqual(0);expect(Object.values(q.counts).reduce((t,x)=>t+x,0)).toBe(n)}
+  expect(quotaFor(130).counts).toEqual({5:10,4:20,3:40,2:60,1:0}) // the minimums exactly fill 130
  })
- it('a smaller archive gets the same ladder in proportion, once, with at least one €5M man and everyone priced',()=>{
-  for(const n of [1,2,3,7,33,52,87,129]){const q=quotaFor(n),sum=Object.values(q.counts).reduce((t,x)=>t+x,0);expect(q.mode).toBe('proportional');expect(sum,`N=${n}`).toBe(n);expect(q.counts[5]).toBeGreaterThanOrEqual(1);expect(q.counts[1]).toBe(0)
+ it('a smaller archive (N<130) gets the 10/10/22/32/26 % weights by largest remainder, once, with at least one €5M man',()=>{
+  for(const n of [1,2,3,7,33,52,87,129]){const q=quotaFor(n),sum=Object.values(q.counts).reduce((t,x)=>t+x,0);expect(q.mode).toBe('proportional');expect(sum,`N=${n}`).toBe(n);expect(q.counts[5]).toBeGreaterThanOrEqual(1)
    for(const p of [2,3,4,5] as const)expect(q.counts[p]).toBeGreaterThanOrEqual(0)}
-  expect(quotaFor(52).counts).toEqual({1:0,2:24,3:16,4:8,5:4})
+  expect(quotaFor(52).counts).toEqual({1:14,2:17,3:11,4:5,5:5}) // 5.2/5.2/11.44/16.64/13.52 → 5/5/11/17/14 by largest remainder
  })
  it('every club\'s frozen list holds each man exactly once, in whole millions, with its ladder, and one price in five a side and in the eleven',async()=>{
-  expect(PRICE_VERSION).toBe('rumble-economy-v1')
+  expect(PRICE_VERSION).toBe('rumble-economy-v2')
   for(const id of CORE_CLUB_IDS){const d=(await loadClub(id))!.data,list=priceTable.clubs[id]!,dropped=new Set(mergesFor(id).map(m=>m.drop))
    const members=d.players.filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)).map(p=>p.value.id)
    expect(Object.keys(list.players).sort()).toEqual([...members].sort())

@@ -50,7 +50,9 @@ async function standing(data:Awaited<ReturnType<typeof loadClub>>){
 }
 async function freeze(id:string){
  const data=await loadClub(id);if(!data)return
- const pool=rawPool(data.data,{extra:extraPositions(id)}),goals=goalsByPlayer(data.data),stand=await standing(data)
+ // men added from the Wikipedia player categories join at €1M through `migrate`, never reshuffling the list (rulebook: a new man does not reprice the others)
+ const wp=new Set(data.data.players!.filter(p=>p.sources.some(x=>x.startsWith('src-wp-roster-'))).map(p=>p.value.id))
+ const pool=rawPool(data.data,{extra:extraPositions(id)}).filter(p=>!wp.has(p.id)),goals=goalsByPlayer(data.data),stand=await standing(data)
  if(id==='hapoel-tel-aviv'&&!pins[id]){pins[id]=await pinsForHapoel(data);writeFileSync(PINS,JSON.stringify(pins,null,1)+'\n')}
  const span=(p:{fromYear:number|null;toYear:number|null})=>p.fromYear!==null&&p.toYear!==null?p.toYear-p.fromYear+1:null
  const sp=pool.map(p=>span(p)),sorted=(xs:(number|null)[])=>xs.filter((x):x is number=>x!==null)
@@ -74,7 +76,29 @@ async function freeze(id:string){
   left[tier]-=1}
  doc.clubs[id]={quotaMode:q.mode,size:pool.length,quota:Object.fromEntries(Object.entries(q.counts)),players}
 }
+async function applyV2(){
+ // owner approval 10.10.2026: constitution V2, locked records may move, prices tightened for competition. The V1 list is kept beside as a snapshot.
+ writeFileSync('content/generated/rumble-prices-v1.snapshot.json',JSON.stringify(JSON.parse(readFileSync(FILE,'utf8')),null,1)+'\n')
+ for(const id of CORE_CLUB_IDS){const data=await loadClub(id);if(!data)continue
+  const pool=rawPool(data.data,{extra:extraPositions(id)}),by=new Map(pool.map(p=>[p.id,p])),cur=doc.clubs[id]!
+  const entries=Object.entries(cur.players),q=quotaFor(entries.length),sel=new Map<string,Price>()
+  const tenure=(pid:string)=>{const p=by.get(pid);return p&&p.fromYear!==null&&p.toYear!==null?Math.max(0,p.toYear-p.fromYear):0}
+  const keep=entries.filter(([,e])=>e.priceM===5);if(keep.length>q.counts[5])throw new Error(id+': more €5M men than the ladder allows')
+  for(const [pid] of keep)sel.set(pid,5)
+  // a price must MEAN strength or the game is a lottery: the club's hidden rating leads, and the old (editorial) rung adds two rating points per step, so a man the
+  // owner's file or the fans rate highly keeps an edge without a name alone buying a rung
+  const key=(pid:string,e:{priceM:number})=>(by.get(pid)?.rating??55)+2*(e.priceM-1)
+  const rest=entries.filter(([pid])=>!sel.has(pid)).sort((a,b)=>key(b[0],b[1])-key(a[0],a[1])||tenure(b[0])-tenure(a[0])||a[0].localeCompare(b[0]))
+  let at=0;for(const p of [5,4,3,2,1] as const){const take=q.counts[p]-(p===5?keep.length:0);for(let i=0;i<take;i++)sel.set(rest[at++]![0],p)}
+  if(at!==rest.length)throw new Error(id+': incomplete')
+  let moved=0;for(const [pid,e] of entries){const pr=sel.get(pid)!;if(pr!==e.priceM){moved++;cur.players[pid]={...e,priceM:pr,priceTier:TIER[pr],assignment:'owner-pinned' as const,rationale:`economy v2 (approved 2026-10-10): was €${e.priceM}M. ${e.rationale}`.slice(0,300),reviewedAt:today}}else cur.players[pid]={...e,priceTier:TIER[pr]}}
+  cur.quotaMode=q.mode;cur.size=entries.length;cur.quota=Object.fromEntries(Object.entries(q.counts)) as never;delete (cur as {temporaryQuota?:boolean}).temporaryQuota
+  for(const e of Object.values(cur.players))delete e.temporaryQuota
+  console.log(id,q.mode,entries.length,'moved',moved)}
+ doc.version='rumble-economy-v2';writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
+}
 async function main(){
+ if(cmd==='apply-v2')await applyV2()
  if(cmd==='freeze'){for(const id of CORE_CLUB_IDS)if(!doc.clubs[id])await freeze(id);writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')}
  if(cmd==='migrate'){for(const id of CORE_CLUB_IDS){const d=await loadClub(id);if(!d||!doc.clubs[id])continue;let n=0
   for(const p of d.data.players)if(isMan(p.value.name)&&!new Set(mergesFor(id).map(m=>m.drop)).has(p.value.id)&&!doc.clubs[id]!.players[p.value.id]){doc.clubs[id]!.players[p.value.id]={priceM:1,priceTier:'REST',locked:false,assignment:'new-member',rationale:'joined the archive after the list was frozen',reviewedAt:today};n++}
@@ -88,8 +112,8 @@ async function main(){
   const n=Object.keys(c.players).length,have={1:0,2:0,3:0,4:0,5:0} as Record<number,number>
   for(const e of Object.values(c.players)){if(![1,2,3,4,5].includes(e.priceM))fail(`${id}: price ${e.priceM}`);have[e.priceM]!+=1}
   console.log(id,c.quotaMode,n,JSON.stringify(have))
-  if(c.quotaMode==='full'){for(const [p,t] of [[5,10],[4,20],[3,40],[2,60]] as const)if(have[p]!==t)fail(`${id}: ${have[p]} at €${p}, rulebook says ${t}`)}
-  else if((have[5]??0)<1)fail(`${id}: no €5M man`)}
+  const want=quotaFor(n).counts;for(const p of [5,4,3,2,1] as const)if(have[p]!==want[p])fail(`${id}: ${have[p]} at €${p}, economy v2 says ${want[p]}`)
+  if((have[5]??0)<1)fail(`${id}: no €5M man`)}
  if(bad)process.exit(1)
 }
 main()

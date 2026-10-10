@@ -68,7 +68,12 @@ export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}
  const out:Rated[]=[]
  for(const [pos,ps] of by){
   const spans=ps.map(span),gs=ps.map(p=>goals.has(p.id)?goals.get(p.id)!:null)
-  const scores=ps.map((p,i)=>pos==='GK'?pct(spans[i]!,spans):0.5*pct(spans[i]!,spans)+0.5*pct(gs[i]!,gs))
+  // a man's weight at the club: his years, or the league caps a named source states (whichever places him higher); his scoring: goals from the club's approved
+  // matches, or the career goals a named source states — each measured against his own kind, so the two scales are never mixed
+  const caps=ps.map(p=>p.career?.apps??null),cg=ps.map(p=>p.career?.goals??null)
+  const tenure=(i:number)=>Math.max(pct(spans[i]!,spans),caps[i]!==null?pct(caps[i]!,caps):0)
+  const scoring=(i:number)=>Math.max(gs[i]!==null?pct(gs[i]!,gs):0.4,cg[i]!==null?pct(cg[i]!,cg):0)
+  const scores=ps.map((p,i)=>pos==='GK'?tenure(i):0.5*tenure(i)+0.5*scoring(i))
   const given=ps.map(p=>workbookRating(club,[p.name,...p.aliases]))
   const base:Pos=pos==='free'?'MF':pos
   ps.forEach((p,i)=>{

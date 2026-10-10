@@ -60,6 +60,26 @@
    "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
    "decidedOn": "2026-10-10"
   },
+  "p_wv-94b7d868ad": {
+   "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
+   "decidedOn": "2026-10-10"
+  },
+  "p_wv-8fea373aaf": {
+   "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
+   "decidedOn": "2026-10-10"
+  },
+  "p_wv-26d49ed3f7": {
+   "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
+   "decidedOn": "2026-10-10"
+  },
+  "p_wv-1044dfc641": {
+   "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
+   "decidedOn": "2026-10-10"
+  },
   "p_22f2ce2f73": {
    "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
@@ -71,6 +91,11 @@
    "decidedOn": "2026-10-10"
   },
   "p_d20e3a28f6": {
+   "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
+   "decidedOn": "2026-10-10"
+  },
+  "p_wv-89b7edc63b": {
    "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
    "decidedOn": "2026-10-10"
@@ -616,27 +641,12 @@
    "decidedOn": "2026-10-10"
   },
   "p_5a936c84ba": {
-   "priceM": 4,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
    "decidedOn": "2026-10-10"
   },
   "p_5984733f88": {
-   "priceM": 4,
-   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
-   "decidedOn": "2026-10-10"
-  },
-  "p_fd415ce669": {
-   "priceM": 4,
-   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
-   "decidedOn": "2026-10-10"
-  },
-  "p_9064e7e906": {
-   "priceM": 4,
-   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
-   "decidedOn": "2026-10-10"
-  },
-  "p_4d893fb570": {
-   "priceM": 4,
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
    "decidedOn": "2026-10-10"
   }
@@ -904,8 +914,18 @@
   }
  },
  "hapoel-petah-tikva": {
+  "hapoel-petah-tikva:wv-b871c7ebc6": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:avishay-cohen": {
    "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-d82ee507e5": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -929,6 +949,16 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:wv-9db5c19e36": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-5067b6f08d": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:r26-amadou-soukouna": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -939,12 +969,27 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:wv-7ba2108e85": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:or-israelov": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:eric-billa": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-f4fbf9206d": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-e6ed9cdeae": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -984,13 +1029,43 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:wv-4201cf88d4": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:r26-eitan-bodenyuk": {
    "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:wv-379e4a9300": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:r26-eli-mahpud": {
    "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-9add7f8520": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-a6430cad47": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-0d896d742d": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-cde1598fd2": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -1005,6 +1080,16 @@
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:guy-badash": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-19c69126f4": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-e4af962106": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -1029,6 +1114,16 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:wv-4b67113783": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-49434846bd": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:r26-yehiel-salem": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -1044,6 +1139,11 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:wv-bd837e19c9": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:itay-ehud": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -1051,6 +1151,11 @@
   },
   "hapoel-petah-tikva:yazan-nassar": {
    "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-f65ea01d0d": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -1069,8 +1174,23 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:wv-0ec7dad323": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-3b5cfcb3f8": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:r26-meni-basson": {
    "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-94ef87aac7": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -1080,12 +1200,12 @@
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:r26-moshe-varon": {
-   "priceM": 3,
+   "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:r26-moshe-shvaytzer": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -1095,7 +1215,7 @@
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:noam-cohen": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -1105,6 +1225,11 @@
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:r26-noam-keysi": {
+   "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-c27a4d3590": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -1114,12 +1239,22 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
-  "hapoel-petah-tikva:orel-dgani": {
+  "hapoel-petah-tikva:wv-e6796ed224": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:orel-dgani": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:r26-rafi-cohen-gk": {
+   "priceM": 5,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-ff6c18f27a": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -1130,17 +1265,22 @@
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:roei-levi": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:r26-roei-zikri": {
+   "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-a9725e184b": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:r26-ronen-hillel": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -1150,27 +1290,32 @@
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:shavit-mazal": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:r26-shlomo-nahari": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:r26-shmuel-rosenthal": {
+   "priceM": 5,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "hapoel-petah-tikva:wv-32d76dc5ef": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:stav-israeli": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "hapoel-petah-tikva:tomer-altman": {
-   "priceM": 2,
+   "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -1179,13 +1324,18 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
-  "hapoel-petah-tikva:r26-itzhak-vissoker": {
+  "hapoel-petah-tikva:wv-7c49e67254": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "hapoel-petah-tikva:r26-itzhak-vissoker": {
+   "priceM": 5,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "hapoel-petah-tikva:r26-zecharia-ratzabi": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   }
@@ -2092,6 +2242,16 @@
    "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
    "decidedOn": "2026-10-10"
+  },
+  "aek-athens:wv-1d93abd073": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
+   "decidedOn": "2026-10-10"
+  },
+  "aek-athens:wv-689b2a0e44": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (full ladder)",
+   "decidedOn": "2026-10-10"
   }
  },
  "celtic": {
@@ -2102,6 +2262,11 @@
   },
   "celtic:p-dh-2cd56c8a87e7": {
    "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-198c256f7c": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2155,12 +2320,22 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "celtic:wv-1e03de0084": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "celtic:p-dh-3f6fb96bbd40": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "celtic:p-dh-fdbf81b4e643": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-d4929ca0a8": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2180,12 +2355,32 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "celtic:wv-99e4941728": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-2ddae9cc82": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "celtic:p-a572cf73ebe8ee": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "celtic:wv-df487ec420": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "celtic:p-dh-e5cf9441409b": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-edd4cf9510": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2197,6 +2392,11 @@
   },
   "celtic:p-f9f9d9206e0593": {
    "priceM": 5,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-56796f2aed": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2245,6 +2445,11 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "celtic:wv-19a852e4eb": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "celtic:p-171971a49cab0e": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -2260,8 +2465,28 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "celtic:wv-56a57bd00c": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-0cd589247c": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "celtic:p-dh-606455c2c27a": {
    "priceM": 5,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-05d545a1d6": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-4507e3cf71": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2282,6 +2507,11 @@
   },
   "celtic:p-dh-2febe2603ad9": {
    "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-35db62610a": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2320,8 +2550,18 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "celtic:wv-cf83927359": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "celtic:p-dh-e8bb32c9cd85": {
    "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-4bcbf2dc20": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2335,6 +2575,11 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "celtic:wv-14bd21575f": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "celtic:p-b6036e28231e5e": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -2342,6 +2587,11 @@
   },
   "celtic:p-d12cd9fa46644a": {
    "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-0b4e42b9a6": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2365,8 +2615,18 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "celtic:wv-e7da4fce4d": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "celtic:p-e8f8f626fab4a2": {
    "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "celtic:wv-6cfb849fea": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2412,12 +2672,22 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-a9159dea4d": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-76ae62abf668f9": {
    "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "st-pauli:p-dh-61b78fdda663": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-f7ae3c033b": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2432,7 +2702,22 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-4979f131fa": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-45032d3b4b": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-8e988b3ce043": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-1dd607d985": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2462,7 +2747,32 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-c7a832d5a1": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-4a465604b5": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-0ba4a00886": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-6dbe7454861d": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-45b02fd564": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-70ab1bfeed": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2502,7 +2812,17 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-d2345d9853": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-099931076e14": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-03d8000f43": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2514,6 +2834,11 @@
   },
   "st-pauli:p-644de8b27db6f3": {
    "priceM": 5,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-cab0cffecb": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2532,7 +2857,17 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-34f41fd84c": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-f7a8f77990b0": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-7a5b9e52c3": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2547,6 +2882,16 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-cace7408e3": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-caabdda5f9": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-4a108c728a63": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -2557,7 +2902,42 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-ac8172aa32": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-2bf5e7d623f3": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-c44cb63288": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-6707c5c612": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-9e29abb69f": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-040c732d7a": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-9deccc8dd7": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-e92fcfd752": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2567,13 +2947,33 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-fbf62f1a42": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-f979d7317a35": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-2ebbe4ecf6": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "st-pauli:p-61cce1815f9c76": {
    "priceM": 5,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-c202e13ec6": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-a00d8a18b8": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2587,7 +2987,22 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-a84f4414bd": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-014cca6dc098": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-0f4b71561e": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-c42def737d": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2597,13 +3012,58 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-2ca252fba4": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-540a4f04b5": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-731c1cd112": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-e12239632d": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-d36b7d8dc6": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-3cb1a0f659": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-4e249d45218a": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-eae1a47c37": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-929952b477": {
+   "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-a1cff203a197": {
    "priceM": 5,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-8b540794b8": {
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2622,7 +3082,27 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-74596b2fa6": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-27ac954092": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-d6951b98b9": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-6eda6e01323b": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-b1f61e8897": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2637,6 +3117,11 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-48d59f1d60": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-e695b1e16dd0ca": {
    "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
@@ -2644,6 +3129,11 @@
   },
   "st-pauli:p-dh-b26c76c3a055": {
    "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-0fe7d9fb49": {
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2657,12 +3147,27 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-a1822d8637": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-a762b85f09": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-b11cfd4e7910": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "st-pauli:p-dh-a87a0553e26c": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-2b4e29cd20": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2687,12 +3192,22 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "st-pauli:wv-52d126ced5": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "st-pauli:p-dh-334ce1360ef8": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "st-pauli:p-dh-da9175a46201": {
+   "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "st-pauli:wv-a224e29882": {
    "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2711,6 +3226,16 @@
   },
   "olympiacos:r26-alexandris": {
    "priceM": 3,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "olympiacos:wv-225bbdd197": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "olympiacos:wv-132506804a": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2734,8 +3259,18 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "olympiacos:wv-e33bfe7e8e": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "olympiacos:r26-karembeu": {
    "priceM": 4,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "olympiacos:wv-6241149883": {
+   "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2759,12 +3294,27 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "olympiacos:wv-65d10c48ba": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "olympiacos:r26-georgatos": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "olympiacos:wv-c51c6d9bcb": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "olympiacos:r26-losada": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
+  "olympiacos:wv-633f9efbe0": {
    "priceM": 2,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
@@ -2814,8 +3364,13 @@
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
+  "olympiacos:wv-189ebe17b6": {
+   "priceM": 2,
+   "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
+   "decidedOn": "2026-10-10"
+  },
   "olympiacos:r26-anastopoulos": {
-   "priceM": 3,
+   "priceM": 4,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2845,7 +3400,7 @@
    "decidedOn": "2026-10-10"
   },
   "olympiacos:r26-kousoulakis": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
@@ -2855,17 +3410,17 @@
    "decidedOn": "2026-10-10"
   },
   "olympiacos:r26-karapialis": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "olympiacos:r26-torosidis": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   },
   "olympiacos:r26-elarabi": {
-   "priceM": 2,
+   "priceM": 3,
    "reason": "owner pricing review (8-club consolidated CSV) (proportional)",
    "decidedOn": "2026-10-10"
   }
