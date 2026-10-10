@@ -23,7 +23,7 @@ Source: owner handoff `FANLIFE_RUMBLE_V2_CLAUDE_HANDOFF` (constitution + generat
 | AEK Athens | 1181 | 723 | 100 | 10 | 94 | 236 | 413 | 428 |
 
 ## What needs a decision before anything is applied
-1. **Locked records move.** 401 locked men change price in the proposal (most are €2→€3 rises for Hapoel Tel Aviv and the small clubs). The rule says: no automatic change to locked records — approve the diff (the CSV has "Was locked" and the change per man) or exclude them.
+1. **Locked records move.** 501 locked men change price in the proposal (most are €2→€3 rises for Hapoel Tel Aviv and the small clubs). The rule says: no automatic change to locked records — approve the diff (the CSV has "Was locked" and the change per man) or exclude them.
 2. **€5M count is raised to 10 everywhere** (it was 3–7 in the small clubs). The new €5M men are chosen by the old price, then rating, then tenure — the ordering is mechanical, so the ten-per-club list needs an owner look (e.g. Olympiacos: Manolas €3→€5, Valbuena, Karembeu, El Kaabi €4→€5).
 3. **Men with no recorded data** (about 4,000 including the roster wave) are ranked by a derived rating; absence of data is not evidence of low ability, so the lowest rung should be reviewed for known legends before publishing.
 4. The roster wave men (Wikipedia categories) enter at €1M and stay there; they only take a higher rung if the owner names them.
