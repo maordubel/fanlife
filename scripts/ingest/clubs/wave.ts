@@ -18,12 +18,15 @@ export function toWaveFact(m:ProviderMatch,clubNames:string[],second:Corroborati
  const id=`a-m-${m.on}-${slug(m.home)}-${slug(m.away)}`
  const src:WaveSource[]=[{id:`a-src-${m.provider}-${m.providerId}`,title:`${m.publisher}: ${m.home} ${m.score.home}-${m.score.away} ${m.away}, ${m.on}`,url:m.url,publisher:m.publisher,access:'available',checkedAt:today}]
  if(second)src.push({id:`a-src-tsdb-${slug(second.url.split('/').pop()||'')}`,title:second.title,url:second.url,publisher:second.publisher,access:'available',checkedAt:today})
- const approved=src.length>=2&&new Set(src.map(s=>s.publisher.toLowerCase())).size>=2
+ const second2=src.length>=2&&new Set(src.map(s=>s.publisher.toLowerCase())).size>=2
+ // Owner decision, chat 2026-10-10: UEFA is sufficient for its own competitions — date, teams, score, scorers and elevens.
+ const ownerUefa=m.provider==='uefa'&&!second2
+ const approved=second2||ownerUefa
  const ours=m.goals.filter(g=>g.team===side&&!g.own).map(g=>({name:g.name,minute:g.minute}))
  // Approval is per FIELD (audit A04): the second publisher confirms date, teams and score only. The eleven and the
  // scorers come from the primary report alone, so they travel as `primaryOnly` claims the gates never read —
  // a corroborated result is not a corroborated line-up.
- return {sources:src,fact:{id,value:{name:`${m.home} ${m.score.home}-${m.score.away} ${m.away}`,on:m.on,competition:m.competition,score:`${m.score.home}-${m.score.away}`,venue:m.venue,primaryOnly:{source:src[0]!.id,scorers:ours,lineup,bench}},sources:src.map(s=>s.id),researchedAt:today,parserCertainty:'high' as const,conflictFree:true,notes:approved?'Date, teams and score agree across two publishers. Line-up and scorers are held as primary-only claims until a second publisher states them.':'One publisher only; awaiting corroboration.',confidence:approved?3:2,status:approved?'approved' as const:'review' as const,approvedAt:approved?today:null,approvedBy:approved?`automated:cross-source-review-${clubId}-auto`:null}}
+ return {sources:src,fact:{id,value:{name:`${m.home} ${m.score.home}-${m.score.away} ${m.away}`,on:m.on,competition:m.competition,score:`${m.score.home}-${m.score.away}`,venue:m.venue,...(ownerUefa?{lineup,bench,scorers:ours}:{}),primaryOnly:{source:src[0]!.id,scorers:ours,lineup,bench}},sources:src.map(s=>s.id),researchedAt:today,parserCertainty:'high' as const,conflictFree:true,notes:ownerUefa?'UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.':approved?'Date, teams and score agree across two publishers. Line-up and scorers are held as primary-only claims until a second publisher states them.':'One publisher only; awaiting corroboration.',confidence:second2?3:2,status:approved?'approved' as const:'review' as const,approvedAt:approved?today:null,approvedBy:ownerUefa?'Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)':approved?`automated:cross-source-review-${clubId}-auto`:null}}
 }
 export function buildWave(rows:{m:ProviderMatch;second:Corroboration|null}[],clubNames:string[],clubId:string,today:string){
  const sources=new Map<string,WaveSource>(),matches:NonNullable<ReturnType<typeof toWaveFact>>['fact'][]=[]

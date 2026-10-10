@@ -1,1 +1,1222 @@
-{"sources":[],"matches":[],"kits":[],"rivals":[]}
+{
+ "sources": [
+  {
+   "id": "a-src-uefa-64923",
+   "title": "UEFA: H. Petah Tikva 1-1 LASK, 2000-06-24",
+   "url": "https://www.uefa.com/uefachampionsleague/match/64923--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-64922",
+   "title": "UEFA: LASK 3-0 H. Petah Tikva, 2000-06-18",
+   "url": "https://www.uefa.com/uefachampionsleague/match/64922--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-54339",
+   "title": "UEFA: H. Petah Tikva 1-1 SK Rapid, 1997-09-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54339--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-54338",
+   "title": "UEFA: SK Rapid 1-0 H. Petah Tikva, 1997-09-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54338--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-54258",
+   "title": "UEFA: H. Petah Tikva 1-0 VB, 1997-08-26",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54258--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-54257",
+   "title": "UEFA: VB 0-0 H. Petah Tikva, 1997-08-12",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54257--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-54173",
+   "title": "UEFA: Flora Tallinn 1-2 H. Petah Tikva, 1997-07-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54173--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-54172",
+   "title": "UEFA: H. Petah Tikva 1-0 Flora Tallinn, 1997-07-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54172--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-51822",
+   "title": "UEFA: H. Petah Tikva 0-0 Strasbourg, 1995-07-22",
+   "url": "https://www.uefa.com/uefachampionsleague/match/51822--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-51819",
+   "title": "UEFA: Wacker 2-0 H. Petah Tikva, 1995-07-08",
+   "url": "https://www.uefa.com/uefachampionsleague/match/51819--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-51817",
+   "title": "UEFA: H. Petah Tikva 1-1 Floriana, 1995-07-01",
+   "url": "https://www.uefa.com/uefachampionsleague/match/51817--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-51815",
+   "title": "UEFA: Gençlerbirliği 4-0 H. Petah Tikva, 1995-06-25",
+   "url": "https://www.uefa.com/uefachampionsleague/match/51815--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-6575",
+   "title": "UEFA: H. Petah Tikva 2-1 Feyenoord, 1992-09-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/6575--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-6574",
+   "title": "UEFA: Feyenoord 1-0 H. Petah Tikva, 1992-09-16",
+   "url": "https://www.uefa.com/uefachampionsleague/match/6574--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-6189",
+   "title": "UEFA: H. Petah Tikva 2-0 Strømsgodset, 1992-09-02",
+   "url": "https://www.uefa.com/uefachampionsleague/match/6189--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "a-src-uefa-6190",
+   "title": "UEFA: Strømsgodset 0-2 H. Petah Tikva, 1992-08-19",
+   "url": "https://www.uefa.com/uefachampionsleague/match/6190--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2000-06-24-h-petah-tikva-lask",
+   "value": {
+    "name": "H. Petah Tikva 1-1 LASK",
+    "on": "2000-06-24",
+    "competition": "UEFA Intertoto Cup",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Eyal Abramov",
+     "Avraham Fletcher",
+     "Yaniv Hermesh",
+     "Alon Maya",
+     "Roi Sabag",
+     "David Fadlon",
+     "Yossef Rosen",
+     "Guy Shamir",
+     "Eliezer Abarbanel",
+     "Michael Zandberg",
+     "Eidan Hillel"
+    ],
+    "bench": [
+     "Israel Pilosof",
+     "Yaniv Luzon",
+     "Yossi Shivhon",
+     "David Razabi",
+     "Sharon Gamliel",
+     "Eran Cohen",
+     "Yaniv David"
+    ],
+    "scorers": [
+     {
+      "name": "Eliezer Abarbanel",
+      "minute": 76
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-64923",
+     "scorers": [
+      {
+       "name": "Eliezer Abarbanel",
+       "minute": 76
+      }
+     ],
+     "lineup": [
+      "Eyal Abramov",
+      "Avraham Fletcher",
+      "Yaniv Hermesh",
+      "Alon Maya",
+      "Roi Sabag",
+      "David Fadlon",
+      "Yossef Rosen",
+      "Guy Shamir",
+      "Eliezer Abarbanel",
+      "Michael Zandberg",
+      "Eidan Hillel"
+     ],
+     "bench": [
+      "Israel Pilosof",
+      "Yaniv Luzon",
+      "Yossi Shivhon",
+      "David Razabi",
+      "Sharon Gamliel",
+      "Eran Cohen",
+      "Yaniv David"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-64923"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-2000-06-18-lask-h-petah-tikva",
+   "value": {
+    "name": "LASK 3-0 H. Petah Tikva",
+    "on": "2000-06-18",
+    "competition": "UEFA Intertoto Cup",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Eyal Abramov",
+     "Rami Amar",
+     "Alon Maya",
+     "Roi Sabag",
+     "Yaniv Hermesh",
+     "David Fadlon",
+     "Guy Shamir",
+     "Yossef Rosen",
+     "Eliezer Abarbanel",
+     "Eidan Hillel",
+     "Michael Zandberg"
+    ],
+    "bench": [
+     "Israel Pilosof",
+     "Eran Cohen",
+     "Sharon Gamliel",
+     "Yaniv Luzon",
+     "Yaniv David"
+    ],
+    "scorers": [
+     {
+      "name": "Eidan Hillel",
+      "minute": 45
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-64922",
+     "scorers": [
+      {
+       "name": "Eidan Hillel",
+       "minute": 45
+      }
+     ],
+     "lineup": [
+      "Eyal Abramov",
+      "Rami Amar",
+      "Alon Maya",
+      "Roi Sabag",
+      "Yaniv Hermesh",
+      "David Fadlon",
+      "Guy Shamir",
+      "Yossef Rosen",
+      "Eliezer Abarbanel",
+      "Eidan Hillel",
+      "Michael Zandberg"
+     ],
+     "bench": [
+      "Israel Pilosof",
+      "Eran Cohen",
+      "Sharon Gamliel",
+      "Yaniv Luzon",
+      "Yaniv David"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-64922"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1997-09-30-h-petah-tikva-sk-rapid",
+   "value": {
+    "name": "H. Petah Tikva 1-1 SK Rapid",
+    "on": "1997-09-30",
+    "competition": "UEFA Europa League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Shay Hass",
+     "Yaniv Hermesh",
+     "Avraham Fletcher",
+     "Walid Badier",
+     "Ilan Buaron",
+     "Shlomi Benhamo",
+     "Ondrej Kristofik",
+     "Manor Hasan",
+     "Eliezer Abarbanel",
+     "Yaniv Ofri",
+     "Mordachy Kakon"
+    ],
+    "bench": [
+     "Eyal Abramov",
+     "Guy Shamir",
+     "Eyal Sofer",
+     "Avraham Krouse",
+     "Lior Larido",
+     "Dor Gerchovitz",
+     "Uzi Azulay"
+    ],
+    "scorers": [
+     {
+      "name": "Mordachy Kakon",
+      "minute": 34
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-54339",
+     "scorers": [
+      {
+       "name": "Mordachy Kakon",
+       "minute": 34
+      }
+     ],
+     "lineup": [
+      "Shay Hass",
+      "Yaniv Hermesh",
+      "Avraham Fletcher",
+      "Walid Badier",
+      "Ilan Buaron",
+      "Shlomi Benhamo",
+      "Ondrej Kristofik",
+      "Manor Hasan",
+      "Eliezer Abarbanel",
+      "Yaniv Ofri",
+      "Mordachy Kakon"
+     ],
+     "bench": [
+      "Eyal Abramov",
+      "Guy Shamir",
+      "Eyal Sofer",
+      "Avraham Krouse",
+      "Lior Larido",
+      "Dor Gerchovitz",
+      "Uzi Azulay"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-54339"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1997-09-16-sk-rapid-h-petah-tikva",
+   "value": {
+    "name": "SK Rapid 1-0 H. Petah Tikva",
+    "on": "1997-09-16",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Shay Hass",
+     "Avraham Fletcher",
+     "Walid Badier",
+     "Gábor Márton",
+     "Yaniv Ofri",
+     "Mordachy Kakon",
+     "Eliezer Abarbanel",
+     "Yaniv Hermesh",
+     "Shlomi Benhamo",
+     "Manor Hasan",
+     "Ilan Buaron"
+    ],
+    "bench": [
+     "Daniel Abas",
+     "Dor Gerchovitz",
+     "Uzi Azulay",
+     "Lior Larido",
+     "Guy Shamir",
+     "Eyal Abramov",
+     "Eyal Sofer"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-54338",
+     "scorers": [],
+     "lineup": [
+      "Shay Hass",
+      "Avraham Fletcher",
+      "Walid Badier",
+      "Gábor Márton",
+      "Yaniv Ofri",
+      "Mordachy Kakon",
+      "Eliezer Abarbanel",
+      "Yaniv Hermesh",
+      "Shlomi Benhamo",
+      "Manor Hasan",
+      "Ilan Buaron"
+     ],
+     "bench": [
+      "Daniel Abas",
+      "Dor Gerchovitz",
+      "Uzi Azulay",
+      "Lior Larido",
+      "Guy Shamir",
+      "Eyal Abramov",
+      "Eyal Sofer"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-54338"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1997-08-26-h-petah-tikva-vb",
+   "value": {
+    "name": "H. Petah Tikva 1-0 VB",
+    "on": "1997-08-26",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Shay Hass",
+     "Bingamen Koziashvili",
+     "Gábor Márton",
+     "Walid Badier",
+     "Ilan Buaron",
+     "Avraham Fletcher",
+     "Shlomi Benhamo",
+     "Ondrej Kristofik",
+     "Eliezer Abarbanel",
+     "Manor Hasan",
+     "Mordachy Kakon"
+    ],
+    "bench": [
+     "Eyal Abramov",
+     "Yaniv Ofri",
+     "Daniel Abas",
+     "Uzi Azulay",
+     "Dor Gerchovitz",
+     "Yaniv Hermesh",
+     "Guy Shamir"
+    ],
+    "scorers": [
+     {
+      "name": "Mordachy Kakon",
+      "minute": 33
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-54258",
+     "scorers": [
+      {
+       "name": "Mordachy Kakon",
+       "minute": 33
+      }
+     ],
+     "lineup": [
+      "Shay Hass",
+      "Bingamen Koziashvili",
+      "Gábor Márton",
+      "Walid Badier",
+      "Ilan Buaron",
+      "Avraham Fletcher",
+      "Shlomi Benhamo",
+      "Ondrej Kristofik",
+      "Eliezer Abarbanel",
+      "Manor Hasan",
+      "Mordachy Kakon"
+     ],
+     "bench": [
+      "Eyal Abramov",
+      "Yaniv Ofri",
+      "Daniel Abas",
+      "Uzi Azulay",
+      "Dor Gerchovitz",
+      "Yaniv Hermesh",
+      "Guy Shamir"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-54258"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1997-08-12-vb-h-petah-tikva",
+   "value": {
+    "name": "VB 0-0 H. Petah Tikva",
+    "on": "1997-08-12",
+    "competition": "UEFA Europa League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Shay Hass",
+     "Bingamen Koziashvili",
+     "Avraham Fletcher",
+     "Walid Badier",
+     "Gábor Márton",
+     "Yaniv Ofri",
+     "Ondrej Kristofik",
+     "Mordachy Kakon",
+     "Shlomi Benhamo",
+     "Manor Hasan",
+     "Ilan Buaron"
+    ],
+    "bench": [
+     "Eyal Abramov",
+     "Efraim Bason",
+     "Guy Shamir",
+     "Alon Cohen",
+     "Uzi Azulay",
+     "Yaniv Hermesh",
+     "Daniel Abas"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-54257",
+     "scorers": [],
+     "lineup": [
+      "Shay Hass",
+      "Bingamen Koziashvili",
+      "Avraham Fletcher",
+      "Walid Badier",
+      "Gábor Márton",
+      "Yaniv Ofri",
+      "Ondrej Kristofik",
+      "Mordachy Kakon",
+      "Shlomi Benhamo",
+      "Manor Hasan",
+      "Ilan Buaron"
+     ],
+     "bench": [
+      "Eyal Abramov",
+      "Efraim Bason",
+      "Guy Shamir",
+      "Alon Cohen",
+      "Uzi Azulay",
+      "Yaniv Hermesh",
+      "Daniel Abas"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-54257"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1997-07-30-flora-tallinn-h-petah-tikva",
+   "value": {
+    "name": "Flora Tallinn 1-2 H. Petah Tikva",
+    "on": "1997-07-30",
+    "competition": "UEFA Europa League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Shay Hass",
+     "Bingamen Koziashvili",
+     "Alon Cohen",
+     "Walid Badier",
+     "Gábor Márton",
+     "Yaniv Ofri",
+     "Mordachy Kakon",
+     "Shlomi Benhamo",
+     "Manor Hasan",
+     "Ondrej Kristofik",
+     "Ilan Buaron"
+    ],
+    "bench": [
+     "Avraham Fletcher",
+     "Uzi Azulay",
+     "Guy Shamir",
+     "Efraim Bason",
+     "Dor Gerchovitz",
+     "Yaniv Hermesh"
+    ],
+    "scorers": [
+     {
+      "name": "Yaniv Ofri",
+      "minute": 46
+     },
+     {
+      "name": "Mordachy Kakon",
+      "minute": 62
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-54173",
+     "scorers": [
+      {
+       "name": "Yaniv Ofri",
+       "minute": 46
+      },
+      {
+       "name": "Mordachy Kakon",
+       "minute": 62
+      }
+     ],
+     "lineup": [
+      "Shay Hass",
+      "Bingamen Koziashvili",
+      "Alon Cohen",
+      "Walid Badier",
+      "Gábor Márton",
+      "Yaniv Ofri",
+      "Mordachy Kakon",
+      "Shlomi Benhamo",
+      "Manor Hasan",
+      "Ondrej Kristofik",
+      "Ilan Buaron"
+     ],
+     "bench": [
+      "Avraham Fletcher",
+      "Uzi Azulay",
+      "Guy Shamir",
+      "Efraim Bason",
+      "Dor Gerchovitz",
+      "Yaniv Hermesh"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-54173"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1997-07-23-h-petah-tikva-flora-tallinn",
+   "value": {
+    "name": "H. Petah Tikva 1-0 Flora Tallinn",
+    "on": "1997-07-23",
+    "competition": "UEFA Europa League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Shay Hass",
+     "Bingamen Koziashvili",
+     "Alon Cohen",
+     "Walid Badier",
+     "Gábor Márton",
+     "Yaniv Ofri",
+     "Mordachy Kakon",
+     "Shlomi Benhamo",
+     "Manor Hasan",
+     "Ilan Buaron",
+     "Daniel Abas"
+    ],
+    "bench": [
+     "Avraham Fletcher",
+     "Uzi Azulay",
+     "Efraim Bason",
+     "Dor Gerchovitz",
+     "Yaniv Hermesh",
+     "Guy Shamir"
+    ],
+    "scorers": [
+     {
+      "name": "Gábor Márton",
+      "minute": 88
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-54172",
+     "scorers": [
+      {
+       "name": "Gábor Márton",
+       "minute": 88
+      }
+     ],
+     "lineup": [
+      "Shay Hass",
+      "Bingamen Koziashvili",
+      "Alon Cohen",
+      "Walid Badier",
+      "Gábor Márton",
+      "Yaniv Ofri",
+      "Mordachy Kakon",
+      "Shlomi Benhamo",
+      "Manor Hasan",
+      "Ilan Buaron",
+      "Daniel Abas"
+     ],
+     "bench": [
+      "Avraham Fletcher",
+      "Uzi Azulay",
+      "Efraim Bason",
+      "Dor Gerchovitz",
+      "Yaniv Hermesh",
+      "Guy Shamir"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-54172"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1995-07-22-h-petah-tikva-strasbourg",
+   "value": {
+    "name": "H. Petah Tikva 0-0 Strasbourg",
+    "on": "1995-07-22",
+    "competition": "UEFA Intertoto Cup",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Yaniv Nahom",
+     "Bingamen Koziashvili",
+     "Giy Sofer",
+     "Manor Hasan",
+     "Peter Kargil",
+     "Yoaav Hersko",
+     "Tomasz Cebula",
+     "Ofir Kopel",
+     "Jaroslaw Araszkiewicz",
+     "Eliezer Abarbanel",
+     "Alon Maya"
+    ],
+    "bench": [
+     "Adi Fox",
+     "Mordachy Kakon",
+     "Menache Basson",
+     "Efraim Bason",
+     "Nir Arbiv"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-51822",
+     "scorers": [],
+     "lineup": [
+      "Yaniv Nahom",
+      "Bingamen Koziashvili",
+      "Giy Sofer",
+      "Manor Hasan",
+      "Peter Kargil",
+      "Yoaav Hersko",
+      "Tomasz Cebula",
+      "Ofir Kopel",
+      "Jaroslaw Araszkiewicz",
+      "Eliezer Abarbanel",
+      "Alon Maya"
+     ],
+     "bench": [
+      "Adi Fox",
+      "Mordachy Kakon",
+      "Menache Basson",
+      "Efraim Bason",
+      "Nir Arbiv"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-51822"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1995-07-08-wacker-h-petah-tikva",
+   "value": {
+    "name": "Wacker 2-0 H. Petah Tikva",
+    "on": "1995-07-08",
+    "competition": "UEFA Intertoto Cup",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Yaniv Nahom",
+     "Bingamen Koziashvili",
+     "Ilan Buaron",
+     "Avraham Fletcher",
+     "Peter Kargil",
+     "Adoram Keise",
+     "Eliezer Abarbanel",
+     "Ofir Kopel",
+     "Israel Cohan",
+     "Tomasz Cebula",
+     "Alon Maya"
+    ],
+    "bench": [
+     "Amir Gooze",
+     "Yoaav Hersko",
+     "Nir Arbiv",
+     "Oren Moharer",
+     "Efraim Bason"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-51819",
+     "scorers": [],
+     "lineup": [
+      "Yaniv Nahom",
+      "Bingamen Koziashvili",
+      "Ilan Buaron",
+      "Avraham Fletcher",
+      "Peter Kargil",
+      "Adoram Keise",
+      "Eliezer Abarbanel",
+      "Ofir Kopel",
+      "Israel Cohan",
+      "Tomasz Cebula",
+      "Alon Maya"
+     ],
+     "bench": [
+      "Amir Gooze",
+      "Yoaav Hersko",
+      "Nir Arbiv",
+      "Oren Moharer",
+      "Efraim Bason"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-51819"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1995-07-01-h-petah-tikva-floriana",
+   "value": {
+    "name": "H. Petah Tikva 1-1 Floriana",
+    "on": "1995-07-01",
+    "competition": "UEFA Intertoto Cup",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Yaniv Nahom",
+     "Yoaav Hersko",
+     "Giy Sofer",
+     "Avraham Fletcher",
+     "Peter Kargil",
+     "Adoram Keise",
+     "Eliezer Abarbanel",
+     "Ofir Kopel",
+     "Piotr Prabucki",
+     "Tomasz Cebula",
+     "Manor Hasan"
+    ],
+    "bench": [
+     "Nir Arbiv",
+     "Efraim Bason",
+     "Amir Gooze",
+     "Alon Maya"
+    ],
+    "scorers": [
+     {
+      "name": "Alon Maya",
+      "minute": 47
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-51817",
+     "scorers": [
+      {
+       "name": "Alon Maya",
+       "minute": 47
+      }
+     ],
+     "lineup": [
+      "Yaniv Nahom",
+      "Yoaav Hersko",
+      "Giy Sofer",
+      "Avraham Fletcher",
+      "Peter Kargil",
+      "Adoram Keise",
+      "Eliezer Abarbanel",
+      "Ofir Kopel",
+      "Piotr Prabucki",
+      "Tomasz Cebula",
+      "Manor Hasan"
+     ],
+     "bench": [
+      "Nir Arbiv",
+      "Efraim Bason",
+      "Amir Gooze",
+      "Alon Maya"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-51817"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1995-06-25-genclerbirligi-h-petah-tikva",
+   "value": {
+    "name": "Gençlerbirliği 4-0 H. Petah Tikva",
+    "on": "1995-06-25",
+    "competition": "UEFA Intertoto Cup",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Yaniv Nahom",
+     "Israel Cohan",
+     "David Pizanti",
+     "Avraham Fletcher",
+     "Peter Kargil",
+     "Adoram Keise",
+     "Eliezer Abarbanel",
+     "Ofir Kopel",
+     "Piotr Prabucki",
+     "Tomasz Cebula",
+     "Jaroslaw Araszkiewicz"
+    ],
+    "bench": [
+     "Amir Gooze",
+     "Gay Gat",
+     "Manor Hasan",
+     "Efraim Bason",
+     "Yoaav Hersko"
+    ],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-51815",
+     "scorers": [],
+     "lineup": [
+      "Yaniv Nahom",
+      "Israel Cohan",
+      "David Pizanti",
+      "Avraham Fletcher",
+      "Peter Kargil",
+      "Adoram Keise",
+      "Eliezer Abarbanel",
+      "Ofir Kopel",
+      "Piotr Prabucki",
+      "Tomasz Cebula",
+      "Jaroslaw Araszkiewicz"
+     ],
+     "bench": [
+      "Amir Gooze",
+      "Gay Gat",
+      "Manor Hasan",
+      "Efraim Bason",
+      "Yoaav Hersko"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-51815"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1992-09-30-h-petah-tikva-feyenoord",
+   "value": {
+    "name": "H. Petah Tikva 2-1 Feyenoord",
+    "on": "1992-09-30",
+    "competition": "European Cup Winners' Cup",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Refael Cohen",
+     "Bingamen Koziashvili",
+     "Avinonam Keysi",
+     "Uda Bahagat",
+     "Karios Olarn",
+     "Adoram Keise",
+     "Mordachy Kakon",
+     "Menache Basson",
+     "Ner Levin",
+     "Uzi Hoaion",
+     "Oz Elia"
+    ],
+    "bench": [
+     "Shay Hass",
+     "Yosef Levi",
+     "Eliyu Mahapud",
+     "Morad Abukishak",
+     "Ofir Kopel"
+    ],
+    "scorers": [
+     {
+      "name": "Ner Levin",
+      "minute": 3
+     },
+     {
+      "name": "Mordachy Kakon",
+      "minute": 48
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-6575",
+     "scorers": [
+      {
+       "name": "Ner Levin",
+       "minute": 3
+      },
+      {
+       "name": "Mordachy Kakon",
+       "minute": 48
+      }
+     ],
+     "lineup": [
+      "Refael Cohen",
+      "Bingamen Koziashvili",
+      "Avinonam Keysi",
+      "Uda Bahagat",
+      "Karios Olarn",
+      "Adoram Keise",
+      "Mordachy Kakon",
+      "Menache Basson",
+      "Ner Levin",
+      "Uzi Hoaion",
+      "Oz Elia"
+     ],
+     "bench": [
+      "Shay Hass",
+      "Yosef Levi",
+      "Eliyu Mahapud",
+      "Morad Abukishak",
+      "Ofir Kopel"
+     ]
+    }
+   },
+   "sources": [
+    "a-src-uefa-6575"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1992-09-16-feyenoord-h-petah-tikva",
+   "value": {
+    "name": "Feyenoord 1-0 H. Petah Tikva",
+    "on": "1992-09-16",
+    "competition": "European Cup Winners' Cup",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [],
+    "bench": [],
+    "scorers": [],
+    "primaryOnly": {
+     "source": "a-src-uefa-6574",
+     "scorers": [],
+     "lineup": [],
+     "bench": []
+    }
+   },
+   "sources": [
+    "a-src-uefa-6574"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1992-09-02-h-petah-tikva-str-msgodset",
+   "value": {
+    "name": "H. Petah Tikva 2-0 Strømsgodset",
+    "on": "1992-09-02",
+    "competition": "European Cup Winners' Cup",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [],
+    "bench": [],
+    "scorers": [
+     {
+      "name": "Menache Basson",
+      "minute": 68
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-6189",
+     "scorers": [
+      {
+       "name": "Menache Basson",
+       "minute": 68
+      }
+     ],
+     "lineup": [],
+     "bench": []
+    }
+   },
+   "sources": [
+    "a-src-uefa-6189"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  },
+  {
+   "id": "a-m-1992-08-19-str-msgodset-h-petah-tikva",
+   "value": {
+    "name": "Strømsgodset 0-2 H. Petah Tikva",
+    "on": "1992-08-19",
+    "competition": "European Cup Winners' Cup",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [],
+    "bench": [],
+    "scorers": [
+     {
+      "name": "Menache Basson",
+      "minute": 68
+     }
+    ],
+    "primaryOnly": {
+     "source": "a-src-uefa-6190",
+     "scorers": [
+      {
+       "name": "Menache Basson",
+       "minute": 68
+      }
+     ],
+     "lineup": [],
+     "bench": []
+    }
+   },
+   "sources": [
+    "a-src-uefa-6190"
+   ],
+   "researchedAt": "2026-10-10",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}
