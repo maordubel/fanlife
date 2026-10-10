@@ -9,7 +9,8 @@ import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {Crown,RumbleShirt,money,posShort,tr,useReducedMotion,useRumbleSound} from './shared'
 import {RumbleSlotMachine} from './RumbleSlotMachine'
-import {RumbleMatch,RumbleReveal,type RevealStep} from './RumbleStage'
+import {RumbleReveal,type RevealStep} from './RumbleStage'
+import {RumbleMatchCentre,type ClubFace} from './RumbleMatchCentre'
 import {RumbleFullTime,type RecentRound} from './RumbleFullTime'
 import {RecordRun} from '../games/RecordRun'
 import {RumbleChallenge} from './RumbleChallenge'
@@ -25,7 +26,7 @@ const HISTORY_MAX=8
  * The boards are dealt on the server from the round seed; the five is checked, the score decided and the
  * match staged on the server (`playRumble`). This screen only shows what it is handed.
  */
-export function RumbleGame({club,version,locale,main,shuffle,wardrobe,playerCount,againHref,vs,duel}:{club:string;version:string;locale:UiLocale;main:Board;shuffle:Board;wardrobe:RumbleWardrobe;playerCount:number;againHref:string;vs?:string;duel?:string}){
+export function RumbleGame({club,version,locale,main,shuffle,wardrobe,playerCount,againHref,vs,duel,faces}:{faces:{us:ClubFace;them:ClubFace};club:string;version:string;locale:UiLocale;main:Board;shuffle:Board;wardrobe:RumbleWardrobe;playerCount:number;againHref:string;vs?:string;duel?:string}){
  const copy=gameCopy(locale),reduced=useReducedMotion(),sound=useRumbleSound()
  const [board,setBoard]=useState<Board>(main),[shuffled,setShuffled]=useState(false),[fresh,setFresh]=useState(false)
  const [picks,setPicks]=useState<(string|null)[]>(()=>main.draft.map(()=>null)),[slot,setSlot]=useState(0)
@@ -75,7 +76,7 @@ export function RumbleGame({club,version,locale,main,shuffle,wardrobe,playerCoun
  if(phase==='result'&&script)return <div ref={root}><RecordRun club={club} gate="royal-rumble" run={`royal-rumble:${version}:${board.seed}:${picks.join(',')}`} score={script.final.us}/><RumbleFullTime script={script} copy={copy} wardrobe={wardrobe} againHref={againHref} recent={recent} club={club} seed={board.seed}/><RumbleChallenge club={club} seed={board.seed} picks={picks as string[]} locale={locale}/></div>
  if((phase==='reveal'||phase==='match')&&script)return <div ref={root} className={s.game} data-phase="show">
   {phase==='reveal'?<RumbleReveal script={script} step={step} onStep={setStep} onDone={()=>setPhase('match')} wardrobe={wardrobe} copy={copy} reduced={reduced}/>
-   :<RumbleMatch script={script} wardrobe={wardrobe} copy={copy} reduced={reduced} sound={sound.play} soundOn={sound.on} onSound={sound.toggle} onDone={()=>setPhase('result')}/>}
+   :<RumbleMatchCentre script={script} wardrobe={wardrobe} copy={copy} reduced={reduced} sound={sound.play} soundOn={sound.on} onSound={sound.toggle} onDone={()=>setPhase('result')} usClub={faces.us} themClub={faces.them}/>}
  </div>
 
  const current=board.draft[slot]?.[0]

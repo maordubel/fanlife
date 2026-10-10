@@ -1,3 +1,4 @@
+import {buildPlay} from './rumble-play'
 import {SLOTS,BUDGET,type Pos,type Rated,type RumbleCard,type RumbleResult} from './rumble'
 /**
  * Gate 9 as a SHOW — the presentation layer of the club Royal Rumble, ported from The Worker's
@@ -11,13 +12,12 @@ import {SLOTS,BUDGET,type Pos,type Rated,type RumbleCard,type RumbleResult} from
  * the client renders it through the club game copy (English UI, no Worker strings).
  */
 export type Side='us'|'them'
-export type ShowPlayer=RumbleCard&{side:Side;x:number;y:number}
+export type ShowPlayer=RumbleCard&{side:Side;x:number;y:number;/** where he stands (LB, DM, ST …) in an eleven; absent in the classic five */slot?:string}
 export type ShowEvent={id:string;type:'goal'|'save'|'chance'|'miss'|'block';minute:number;side:Side;player:string;assist?:string;keeper?:string;other?:string;scoreAfter:{us:number;them:number};variant:number}
-export type ShowScript={us:ShowPlayer[];them:ShowPlayer[];events:ShowEvent[];final:{us:number;them:number;winner:Side|'draw'};motm:{id:string;side:Side;goals:number;assists:number;saves:number};bills:{us:number;them:number}}
+export type ShowScript={us:ShowPlayer[];them:ShowPlayer[];events:ShowEvent[];/** the football itself — build-ups, tackles, corners, cards — from `rumble-play` */play?:import('./rumble-play').PlayLog;format?:'five'|'eleven';formation?:string;final:{us:number;them:number;winner:Side|'draw'};motm:{id:string;side:Side;goals:number;assists:number;saves:number};bills:{us:number;them:number}}
 
-/** 0–1 generator, the same mulberry32 the Worker show uses */
-export function rng(seed:number):()=>number{let a=seed>>>0;return()=>{a=(a+0x6d2b79f5)>>>0;let t=a;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296}}
-export function hash(text:string):number{let h=2166136261;for(let i=0;i<text.length;i+=1)h=Math.imul(h^text.charCodeAt(i),16777619);return h>>>0}
+export {rng,hash} from './rumble-rng'
+import {rng,hash} from './rumble-rng'
 
 /** The one reshuffle a player gets before the first pick: a second deal, its own seed, still fair and replayable. */
 export const shuffleSeed=(seed:number)=>(hash(`rumble-shuffle:${seed}`)%2147483647)+1
@@ -74,6 +74,9 @@ export function lineUp(cards:RumbleCard[],side:Side):ShowPlayer[]{
 }
 /** where a man stands on screen: ours attack up from the bottom half, theirs down from the top */
 export function screenPos(p:Pick<ShowPlayer,'x'|'y'|'side'>):{x:number;y:number}{const x=50+(p.x-50)*1.5,depth=45+p.y*0.56;return p.side==='us'?{x,y:depth}:{x:100-x,y:100-depth}}
+/** eleven a side: the same idea, spread so twenty-two fit a half-pitch each — a little narrower, a deeper half */
+export function screenPosXI(p:Pick<ShowPlayer,'x'|'y'|'side'>):{x:number;y:number}{const x=50+(p.x-50)*0.92,depth=54+(p.y-20)*0.62;return p.side==='us'?{x,y:depth}:{x:100-x,y:100-depth}}
+export const screenPosFor=(p:Pick<ShowPlayer,'x'|'y'|'side'>,eleven:boolean)=>eleven?screenPosXI(p):screenPos(p)
 export const goalPos=(side:Side)=>side==='us'?{x:50,y:1.5}:{x:50,y:98.5}
 
 const SCORE_WEIGHT:Record<Pos,number>={FW:5,MF:3,DF:1.2,GK:0}
@@ -85,9 +88,14 @@ export const VARIANTS=3
  * (hidden) rating from the side that scored; nobody but an outfield player ever scores; minutes are
  * strictly increasing and never on top of each other; goal events equal the score exactly.
  */
+export type StageCfg={us:ShowPlayer[];them:ShowPlayer[];/** how many events (goals included) the match shows */total:(goals:number)=>number;gap:number;format:'five'|'eleven';formation?:string}
 export function stageMatch(result:RumbleResult,seed:number):ShowScript{
  const usCards=result.you.cards,themCards=result.rival.cards
- const us=lineUp(usCards.map(strip),'us'),them=lineUp(themCards.map(strip),'them')
+ return stageWith(result,seed,{us:lineUp(usCards.map(strip),'us'),them:lineUp(themCards.map(strip),'them'),total:g=>Math.max(5,Math.min(9,g+3)),gap:5,format:'five'})
+}
+/** The scoreline `result` decided, told as a match, for any shape: scorers weighted by line and hidden rating, minutes strictly increasing, goal events equal the score. */
+export function stageWith(result:RumbleResult,seed:number,cfg:StageCfg):ShowScript{
+ const usCards=result.you.cards,themCards=result.rival.cards,{us,them}=cfg
  const r=rng((seed^hash([...usCards,...themCards].map(c=>c.id).join('|')+result.goals.join(':')))>>>0)
  const rating=(side:Side,id:string)=>(side==='us'?usCards:themCards).find(c=>c.id===id)?.rating??50
  const pickWeighted=(side:Side,exclude?:string)=>{const pool=(side==='us'?us:them).filter(p=>p.position!=='GK'&&p.id!==exclude);const w=pool.map(p=>SCORE_WEIGHT[p.position]*(0.5+rating(side,p.id)/100));const total=w.reduce((s,x)=>s+x,0);let t=r()*total;for(let i=0;i<pool.length;i++){t-=w[i]!;if(t<=0)return pool[i]!}return pool[pool.length-1]!}
@@ -100,8 +108,8 @@ export function stageMatch(result:RumbleResult,seed:number):ShowScript{
  const goalMinutes=goals.map(()=>freeMinute(3)).sort((a,b)=>a-b)
  goals.forEach((g,i)=>{g.minute=goalMinutes[i]!})
  const kinds:ShowEvent['type'][]=['save','chance','miss','block','save']
- const total=Math.max(5,Math.min(9,goals.length+3)),drafts:Draft[]=[...goals]
- while(drafts.length<total)drafts.push({minute:freeMinute(5),side:r()<0.5?'us':'them',type:kinds[Math.floor(r()*kinds.length)]!})
+ const total=cfg.total(goals.length),drafts:Draft[]=[...goals]
+ while(drafts.length<total)drafts.push({minute:freeMinute(cfg.gap),side:r()<0.5?'us':'them',type:kinds[Math.floor(r()*kinds.length)]!})
  drafts.sort((a,b)=>a.minute-b.minute)
  const score={us:0,them:0},goalsBy=new Map<string,number>(),assistsBy=new Map<string,number>(),saves=new Map<string,number>()
  const bump=(m:Map<string,number>,k:string)=>m.set(k,(m.get(k)||0)+1)
@@ -120,6 +128,7 @@ export function stageMatch(result:RumbleResult,seed:number):ShowScript{
  const merit=(p:ShowPlayer)=>(goalsBy.get(p.side+p.id)||0)*3+(assistsBy.get(p.side+p.id)||0)*1.5+(saves.get(p.side+p.id)||0)*1.2
  const pool=[...us,...them].filter(p=>final.winner==='draw'||p.side===final.winner)
  const mvp=[...pool].sort((a,b)=>merit(b)-merit(a)||hash(a.id+seed)-hash(b.id+seed))[0]!
- return {us,them,events,final,motm:{id:mvp.id,side:mvp.side,goals:goalsBy.get(mvp.side+mvp.id)||0,assists:assistsBy.get(mvp.side+mvp.id)||0,saves:saves.get(mvp.side+mvp.id)||0},bills:{us:result.you.cost,them:themCards.reduce((s,c)=>s+c.price,0)}}
+ const script:ShowScript={us,them,events,format:cfg.format,...(cfg.formation?{formation:cfg.formation}:{}),final,motm:{id:mvp.id,side:mvp.side,goals:goalsBy.get(mvp.side+mvp.id)||0,assists:assistsBy.get(mvp.side+mvp.id)||0,saves:saves.get(mvp.side+mvp.id)||0},bills:{us:result.you.cost,them:themCards.reduce((s,c)=>s+c.price,0)}}
+ return {...script,play:buildPlay(script,usCards,themCards,seed)}
 }
 export const SLOT_COUNT=SLOTS.length

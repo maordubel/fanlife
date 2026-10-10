@@ -38,3 +38,6 @@ const HE:Record<string,string>[]=[xi_he,trivia_he,lineup_he,kit_builder_he,kits_
 const enAll=Object.assign({},en,...EN) as GameCopy,heAll=Object.assign({},he,...HE) as GameCopy
 export function gameCopy(locale:UiLocale):GameCopy{return locale==='he'?heAll:enAll}
 export const GATE_CATALOGS={en:EN,he:HE,base:{en:en as Record<string,string>,he:he as Record<string,string>}}
+
+/** The eleven-a-side game reads the same copy with its own wording laid over the classic's (`rr.xi.o.<key>` replaces `rr.<key>`). */
+export function xiCopy(copy:GameCopy):GameCopy{const out={...copy} as Record<string,string>;for(const [k,v] of Object.entries(copy))if(k.startsWith('rr.xi.o.'))out['rr.'+k.slice(8)]=v as string;return out as GameCopy}

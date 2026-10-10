@@ -23,7 +23,7 @@ export const SLOTS:readonly Pos[]=FIVE.slots
 export const BUDGET=FIVE.budget,OFFERS=FIVE.offers
 /** a goal's worth of rating: ratings sit in a narrow band (about 60–95), so the gap is stretched before it becomes goals */
 export const POWER_SCALE=3.5
-export type RumbleCard={id:string;name:string;position:Pos;price:1|2|3|4|5;fromYear:number|null;toYear:number|null}
+export type RumbleCard={id:string;name:string;position:Pos;/** classic: 1–5 whole; XI: €0.5M steps from 1 to 5 */price:number;fromYear:number|null;toYear:number|null}
 export type Rated=RumbleCard&{rating:number;basis?:RatingBasis}
 const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^(seed>>>15),1|seed);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}
 const shuffle=<T,>(a:T[],r:()=>number)=>{const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[x[i],x[j]]=[x[j]!,x[i]!]}return x}
@@ -58,7 +58,7 @@ export function ratedPool(data:ClubData):Rated[]{
   const idx=ps.map((_,i)=>i).sort((a,b)=>ratings[a]!-ratings[b]!||scores[a]!-scores[b]!||ps[a]!.id.localeCompare(ps[b]!.id)),place=new Map(idx.map((i,k)=>[i,k] as const))
   ps.forEach((p,i)=>{
    const rank=place.get(i)!/Math.max(1,ps.length-1)
-   const index=Math.round(9+90*rank),price=(index>=80?5:index>=62?4:index>=45?3:index>=28?2:1) as 1|2|3|4|5
+   const index=Math.round(9+90*rank),price=index>=80?5:index>=62?4:index>=45?3:index>=28?2:1
    out.push({id:p.id,name:p.name,position:pos,price,rating:ratings[i]!,basis:given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear})})
  }
  return out.sort((a,b)=>a.id.localeCompare(b.id))
