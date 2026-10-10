@@ -1,3 +1,4 @@
+import { crestFor } from '@/lib/clubs/crest'
 import type {CSSProperties} from 'react'
 import {Dye,type DyeArt} from './Dye'
 
@@ -15,7 +16,8 @@ export function tornEdge(seed:string,points=22,depth=7):string{
  return `polygon(${top.join(',')},100% 100%,0% 100%)`
 }
 
-export function Seal({name,city,initials,pattern}:{name:string;city:string;initials:string;pattern?:string}){
+export function Seal({name,city,initials,pattern,clubId}:{name:string;city:string;initials:string;pattern?:string;clubId?:string}){
+ const crest=crestFor(clubId)
  const id=`seal-${hash(name).toString(36)}`
  return <span className="mag-seal" aria-hidden="true">
   <svg viewBox="0 0 200 200" role="presentation">
@@ -23,7 +25,7 @@ export function Seal({name,city,initials,pattern}:{name:string;city:string;initi
    <circle cx="100" cy="100" r="96" className="ring-out"/><circle cx="100" cy="100" r="88" className="ring"/><circle cx="100" cy="100" r="60" className="ring-in"/>
    <text className="ring-text"><textPath href={`#${id}`} startOffset="0">{`${name} · ${city} · `.toUpperCase().repeat(2)}</textPath></text>
   </svg>
-  <span className="mag-band mag-seal-core" data-livery={pattern}><b>{initials}</b></span>
+  {crest?<span className="mag-seal-core mag-seal-crest"><img src={crest} alt="" width={139} height={181} decoding="async"/></span>:<span className="mag-band mag-seal-core" data-livery={pattern}><b>{initials}</b></span>}
  </span>
 }
 

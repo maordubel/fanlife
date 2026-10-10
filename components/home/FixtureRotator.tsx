@@ -4,6 +4,7 @@ import {useEffect, useRef, useState} from 'react'
 import type {CSSProperties} from 'react'
 import type {LiveryPattern} from '@/lib/club-livery'
 import {dwellMs} from '@/lib/fixtures/rotation'
+import { Badge } from '@/components/clubs/Badge'
 
 /** One card of the rotation, fully resolved on the server: the client formats time and nothing else. */
 export type RotatorItem = {
@@ -64,7 +65,7 @@ export function FixtureRotator({items, copy, locale}: {items: RotatorItem[]; cop
     <div ref={box} className="mag-next" onMouseEnter={() => setHeld(true)} onMouseLeave={() => setHeld(false)} onFocus={() => setHeld(true)} onBlur={() => setHeld(false)} onTouchStart={() => setHeld(true)}>
       {items.length > 1 && <button type="button" className="mag-next-step min-h-tap" aria-label={copy.prev} onClick={() => step(-1)}><span aria-hidden="true">‹</span></button>}
       <Link className="mag-next-card" href={f.href} style={wear(f)} aria-live={pinned || held ? 'off' : 'polite'}>
-        <span className="mag-badge" data-livery={f.pattern} aria-hidden="true">{f.initials}</span>
+        <Badge club={f}/>
         <span className="mag-next-txt">
           <small>{tagWord}{f.tag === 'tbc' ? null : <> · {f.clubSide === 'home' ? copy.home : copy.away}</>}</small>
           {f.tag === 'tbc'

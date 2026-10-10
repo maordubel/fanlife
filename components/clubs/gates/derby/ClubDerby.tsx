@@ -10,6 +10,7 @@ import {RecordPanel} from './RecordPanel'
 import {WallPanel} from './WallPanel'
 import {dateText,makeT,resKey,type Shared} from './ui'
 import css from './derby.module.css'
+import { Badge } from '@/components/clubs/Badge'
 
 type Tab='wall'|'call'|'record'
 export type ClubDerbyProps={club:string;clubName:string;rival:string;rivalNote:string|null;meetings:WallMeeting[];version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;initialTab:Tab;autoStart:boolean}
@@ -39,7 +40,7 @@ export function ClubDerby(p:ClubDerbyProps){
   <div className={css.layout}>
    <div className={css.head}>
     <div className={css.versus} role="group" aria-label={`${clubName} ${t('derby.vs')} ${rival}`}>
-     <div className={`${css.side} ${css.sideClub}`}>{lv&&<span className="mag-badge" data-livery={lv.pattern} aria-hidden="true">{lv.initials}</span>}<b><bdi>{clubName}</bdi></b></div>
+     <div className={`${css.side} ${css.sideClub}`}>{lv&&<Badge club={lv}/>}<b><bdi>{clubName}</bdi></b></div>
      <span className={css.vs} aria-hidden="true">{t('derby.vs')}</span>
      <div className={`${css.side} ${css.sideRival}`}><b><bdi>{rival}</bdi></b></div>
     </div>

@@ -1578,3 +1578,12 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .fl-wiz-back { padding-inline: 14px; border: 2px solid var(--mag-ink); background: transparent; font-weight: 700; color: var(--mag-ink); cursor: pointer; }
 .fl-wiz .fl-world-go { box-shadow: 3px 3px 0 var(--mag-ink); border-color: var(--mag-ink); }
 .fl-mk-world-tag { position: absolute; inset-block-start: auto !important; inset-block-end: 6px; inset-inline-start: 6px; width: auto !important; height: auto !important; }
+
+/* Club crests (lib/clubs/crest.ts): the club's own mark keeps the badge's box and drops the circle. */
+.mag-badge--crest { background: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; overflow: visible; }
+.mag-badge--crest img { inline-size: 100%; block-size: 100%; object-fit: contain; display: block; }
+.mag-seal-crest { background: var(--mag-paper); border: 3px solid var(--mag-ink); padding: 10px; box-sizing: border-box; }
+.mag-seal-crest img { inline-size: 100%; block-size: 100%; object-fit: contain; display: block; }
+.fl-me > .mag-card { padding: 16px; display: grid; gap: 4px; justify-items: start; }
+.fl-me > .mag-card .mag-fine { margin-top: 4px; max-inline-size: 60ch; }
+.fl-me > .mag-card .mag-card-cta { inline-size: auto; min-height: 44px; margin-top: 8px; }

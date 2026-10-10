@@ -18,6 +18,7 @@ import {gradeKitShirt,hintKitShirt,type Fail,type Graded} from './actions'
 import {KitCloth} from './KitCloth'
 import css from './kit-builder.module.css'
 import {KitOwnBar,KitOwnProvider} from '@/components/clubs/KitOwn'
+import { crestFor } from '@/lib/clubs/crest'
 
 type Phase='intro'|'play'|'reveal'|'summary'
 type Placed=Partial<Record<Step,string>>
@@ -125,7 +126,7 @@ export function KitBuilder(props:KitBuilderProps){
   const start=(m:KitMode)=>()=>{setMode(m);setPhase('play')}
   return <section className={css.stage} data-testid="kit-builder" data-phase="intro">
    <div className={css.intro}>
-    <div className={css.introShirt}><KitCloth spec={BLANK} missing={['maker','sponsor']} texture={false} monogram={monogram}/></div>
+    <div className={css.introShirt}><KitCloth spec={BLANK} missing={['maker','sponsor']} texture={false} monogram={monogram} crestSrc={crestFor(club)}/></div>
     <div className={css.introText}>
      <p className={css.kicker}>{clubName} · {say(`kb.game.${game}`)}</p>
      <h2 className={css.introTitle}>{say('kb.intro.title')}</h2>
@@ -154,7 +155,7 @@ export function KitBuilder(props:KitBuilderProps){
    <div className={css.cert} data-testid="kb-certificate">
     <header className={css.certHead}><p className={css.kicker}>{clubName} · {say(`kb.game.${game}`)}</p><h2>{say('kb.cert.title')}</h2><p className={css.certScore}><b>{total}</b><span>{say('kb.cert.pts')}</span></p></header>
     <ul className={css.certRows}>{verdicts.map(v=><li key={v.index}>
-     <span className={css.certShirt}><KitCloth spec={v.answer} texture={false} monogram={monogram} title={`${v.seasonLabel} ${say(`kb.variant.${v.variant}`)}`}/></span>
+     <span className={css.certShirt}><KitCloth spec={v.answer} texture={false} monogram={monogram} crestSrc={crestFor(club)} title={`${v.seasonLabel} ${say(`kb.variant.${v.variant}`)}`}/></span>
      <span className={css.certName}><b><bdi>{v.seasonLabel}</bdi></b><small>{say(`kb.variant.${v.variant}`)} · {say('kb.cert.field',{f:v.fieldPoints})}{v.dna?` · ${say('kb.cert.dna')}`:''}</small></span>
      <span className={css.certPts} data-perfect={v.perfect}>{v.score}{v.perfect&&<i aria-label={say('kb.cert.perfect')}> ★</i>}</span></li>)}</ul>
     <p className={css.fine}>{say('kb.cert.fine',{perfect,n:verdicts.length,dna:DNA_THRESHOLD})}</p>
@@ -181,8 +182,8 @@ export function KitBuilder(props:KitBuilderProps){
      <p className={css.fine} data-testid="kb-field-accuracy">{say('kb.reveal.field',{f:v.fieldPoints})}</p>
     </header>
     <div className={css.pair}>
-     <figure><figcaption>{say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}</figcaption><div className={css.pairShirt}><KitCloth spec={v.answer} monogram={monogram} title={say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}/></div></figure>
-     <figure><figcaption>{say('kb.reveal.mine')}</figcaption><div className={css.pairShirt}><KitCloth spec={cloth} monogram={monogram} title={say('kb.reveal.mine')}/></div></figure>
+     <figure><figcaption>{say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}</figcaption><div className={css.pairShirt}><KitCloth spec={v.answer} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}/></div></figure>
+     <figure><figcaption>{say('kb.reveal.mine')}</figcaption><div className={css.pairShirt}><KitCloth spec={cloth} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.reveal.mine')}/></div></figure>
     </div>
     <ul className={css.verdicts}>{v.steps.map(r=><li key={r.step} data-ok={r.ok}>
      <span className={css.mark} aria-hidden="true">{r.ok?'✓':'✕'}</span>
@@ -219,7 +220,7 @@ export function KitBuilder(props:KitBuilderProps){
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({kind:'rules'})} aria-label={say('kb.rules.open')}><span aria-hidden="true">i</span></button>
     </div>
     <div className={css.garment} ref={garmentRef} {...dropZone('kit-shirt')} data-testid="kb-garment">
-     <KitCloth spec={cloth} missing={missing} monogram={monogram} title={say('kb.garment.aria',{season:puzzle.seasonLabel,variant:variantName,done:progress,n:steps.length})}/>
+     <KitCloth spec={cloth} missing={missing} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.garment.aria',{season:puzzle.seasonLabel,variant:variantName,done:progress,n:steps.length})}/>
     </div>
    </div>
    <div className={css.right}>

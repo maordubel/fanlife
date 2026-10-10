@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import {useEffect,useState} from 'react'
 import {VOTE_KEY,SEED_TOTAL} from '@/lib/home/vote'
+import { Badge } from '@/components/clubs/Badge'
 
 export type ShopClub={id:string;name:string;city:string;initials:string;pattern:string;seed:number;href:string|null}
 export type ShopCopy={kicker:string;count:string;demo:string;vote:string;voted:string;leading:string;preview:string;shop:string;more:string;less:string}
@@ -30,7 +31,7 @@ export function WorkshopGrid({clubs,copy}:{clubs:ShopClub[];copy:ShopCopy}){
   {clubs.map((c,i)=>{
    const on=mine===c.id,lead=top.id===c.id
    const body=<>
-    <span className="mag-badge" data-livery={c.pattern} aria-hidden="true">{c.initials}</span>
+    <Badge club={c}/>
     <span className="mag-shop-name"><b><bdi>{c.name}</bdi></b><small><bdi>{c.city}</bdi></small></span></>
    return <div key={c.id} className={`mag-shop${lead?' is-lead':''}${on?' is-mine':''}${i>=PHONE_FIRST&&!all?' is-more':''}`} data-club={c.id}>
     {lead&&<span className="mag-tile-state mag-lead-flag">{copy.leading}</span>}

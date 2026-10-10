@@ -2,6 +2,7 @@ import {ImageResponse} from 'next/og'
 import {NextResponse} from 'next/server'
 import {clubApp} from '@/lib/clubs/pwa'
 import {BRAND} from '@/lib/brand'
+import {crestFor} from '@/lib/clubs/crest'
 export const dynamic='force-dynamic'
 
 /** The club's app icon: its colour worn the way its shirt wears it, its initials in the ink that reads on it. */
@@ -15,8 +16,8 @@ export function GET(req:Request,{params}:{params:{slug:string}}) {
   :pattern==='sash'?`linear-gradient(135deg, ${primary} 0%, ${primary} 36%, ${paper} 36%, ${paper} 64%, ${primary} 64%, ${primary} 100%)`
   :pattern==='halves'?`linear-gradient(90deg, ${primary} 0%, ${primary} 50%, ${paper} 50%, ${paper} 100%)`
   :primary
- const plated=pattern!=='solid'
+ const plated=pattern!=='solid',crest=crestFor(app.reg.id)
  return new ImageResponse(<div style={{width:s,height:s,display:'flex',alignItems:'center',justifyContent:'center',background:bg}}>
-  <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:s*0.62,height:s*0.62,borderRadius:s,border:`${Math.round(s/40)}px solid ${BRAND.ink}`,background:plated?paper:primary,color:plated?BRAND.ink:on,fontSize:s*0.26,fontWeight:900,letterSpacing:-s/80}}>{app.reg.initials}</div>
+  <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:s*0.62,height:s*0.62,borderRadius:s,border:`${Math.round(s/40)}px solid ${BRAND.ink}`,background:crest?paper:plated?paper:primary,color:plated?BRAND.ink:on,fontSize:s*0.26,fontWeight:900,letterSpacing:-s/80}}>{crest?<img src={new URL(crest,req.url).toString()} width={Math.round(s*0.38)} height={Math.round(s*0.5)} alt=""/>:app.reg.initials}</div>
  </div>,{width:s,height:s,headers:{'Cache-Control':'public, max-age=3600'}})
 }

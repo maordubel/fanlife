@@ -93,7 +93,8 @@ export function AccountPlate() {
             <button
               type="button"
               onClick={() => {
-                void signOut().then(() => {
+                void signOut().then((ok) => {
+                  if (!ok) return setState('failed')
                   setAccount(null)
                   setState('out')
                 })

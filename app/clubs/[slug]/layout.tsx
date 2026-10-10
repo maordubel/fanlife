@@ -19,6 +19,7 @@ import {clubHref} from '@/lib/clubs/club-href'
 import {clubApp,iconHref,manifestHref} from '@/lib/clubs/pwa'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
+import { Badge } from '@/components/clubs/Badge'
 
 /** Each club installs as its own app (manifest + icon), with its own colour in the browser bar. */
 export function generateMetadata({params}:{params:{slug:string}}):Metadata{
@@ -54,7 +55,7 @@ export default async function ClubLayout({children,params}:{children:ReactNode;p
   <header className="club-masthead">
    <div className="club-masthead-in">
     <Link className="club-who" href={clubHref(id,'',locale)} aria-label={`${c.name} — ${copy.clubTabHome}`}>
-     <span className="mag-badge" data-livery={lv?.pattern} aria-hidden="true">{c.initials}</span>
+     <Badge club={{id:c.id,pattern:lv?.pattern,initials:c.initials,name:c.name}}/>
      <span style={{minWidth:0}}><span className="club-who-kicker">{world.voice.kicker}</span><span className="club-who-name">{c.name}</span></span>
     </Link>
     <ClubSwitcher current={id} clubs={clubs} locale={locale} copy={{switch:copy.clubSwitch,title:copy.clubSwitchTitle,note:copy.clubSwitchNote,here:copy.clubSwitchHere,close:copy.clubSwitchClose,market:copy.clubSwitchMarket,me:copy.clubSwitchMe,hub:copy.clubSwitchHub}}/>
