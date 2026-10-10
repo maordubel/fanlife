@@ -1,9 +1,66 @@
 {
- "hapoel-tel-aviv": [],
+ "hapoel-tel-aviv": [
+  {
+   "keep": "p_78adb477be",
+   "drop": "p_706a75168c",
+   "why": "\"מאיר אהרן מליקה\" and \"מאיר מליקה (חלוץ)\": one man, written twice in the archive (same English name \"meir melika\", years compatible)"
+  }
+ ],
  "zrinjski-mostar": [],
  "hapoel-petah-tikva": [],
  "panathinaikos": [],
- "aek-athens": [],
+ "aek-athens": [
+  {
+   "keep": "aek-athens:p-dh-05c691cabd29",
+   "drop": "aek-athens:p-19469ce22f4409",
+   "why": "\"Θανάσης Τσαγγάρης\" and \"Θανάσης Τσαγκάρης\": one man, written twice in the archive (same English name \"thanasis tsangaris\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-02871549e34a",
+   "drop": "aek-athens:p-712d5e93709c42",
+   "why": "\"Μίχελ Κρέεκ\" and \"Michel Kreek\": one man, written twice in the archive (same English name \"michel kreek\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-17f03e35ee08",
+   "drop": "aek-athens:p-f733cc15b910cf",
+   "why": "\"Έρικ Μοράν\" and \"Erik Moran\": one man, written twice in the archive (same English name \"erik moran\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-ee78cdfe9739",
+   "drop": "aek-athens:p-dd924b41357ae0",
+   "why": "\"Παναγιώτης Κονέ\" and \"Παναγιώτης Kone\": one man, written twice in the archive (same English name \"panagiotis kone\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-e0a4fa0e4199",
+   "drop": "aek-athens:p-b811ad7dba3e33",
+   "why": "\"Σέρχιο Αραούχο\" and \"Sergio Araujo\": one man, written twice in the archive (same English name \"sergio araujo\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-154f86c63b79",
+   "drop": "aek-athens:p-92340fad365ce3",
+   "why": "\"Μάρκο Λιβάγια\" and \"Marko Livaja\": one man, written twice in the archive (same English name \"marko livaja\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-1330fec2d2d4",
+   "drop": "aek-athens:p-dc3725a24202b1",
+   "why": "\"Δημήτρης Μελικιώτης\" and \"Δημήτρης Μεληκιώτης\": one man, written twice in the archive (same English name \"dimitris melikiotis\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-35df78a4fc40",
+   "drop": "aek-athens:p-35701552e3f5e7",
+   "why": "\"Λάζαρος Ρότα\" and \"Λάζαρος Rota\": one man, written twice in the archive (same English name \"lazaros rota\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-6757046f3f4a",
+   "drop": "aek-athens:p-91dd66bdbc6e29",
+   "why": "\"Ορμπελίν Πινέδα\" and \"Orbelin Pineda\": one man, written twice in the archive (same English name \"orbelin pineda\", years compatible)"
+  },
+  {
+   "keep": "aek-athens:p-dh-cc50e0056344",
+   "drop": "aek-athens:p-98114ba26cc840",
+   "why": "\"Λιβάι Γκαρσία\" and \"Levi Garcia\": one man, written twice in the archive (same English name \"levi garcia\", years compatible)"
+  }
+ ],
  "celtic": [
   {
    "keep": "celtic:p-bba452e5216b39",

@@ -1,5 +1,6 @@
 import type {ClubData,ClubPlayer} from './contract'
 import {norm} from '@/lib/fixtures/names'
+import {englishName,isMan} from '@/lib/clubs/rumble-xi/names'
 import {derivedRating,workbookRating,type RatingBasis} from './ratings'
 import {withFeatured} from './rumble-economy'
 import {priceFor} from './rumble-xi/prices'
@@ -51,7 +52,7 @@ export function goalsByPlayer(data:ClubData):Map<string,number>{
 export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}={}):Rated[]{
  const goals=goalsByPlayer(data),club=data.identity?.id??''
  const posOf=(p:ClubPlayer):Pos|null=>first(p)??workbookRating(club,[p.name,...p.aliases])?.pos??opts.extra?.[p.id]??null
- const all=(data.players||[]).map(f=>f.value).filter(p=>p.name),byId=new Map(all.map(p=>[p.id,p]))
+ const all=(data.players||[]).map(f=>f.value).filter(p=>isMan(p.name)),byId=new Map(all.map(p=>[p.id,p]))
  // one man, one card: a record that is the same man as another (rumble-merges.json) is folded into the one kept — his names, years and goals travel along
  const dropped=new Set<string>(),everyone:ClubPlayer[]=[]
  for(const m of mergesFor(club)){const d=byId.get(m.drop),k=byId.get(m.keep);if(d&&k&&!dropped.has(k.id))dropped.add(d.id)}
@@ -72,7 +73,7 @@ export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}
   const base:Pos=pos==='free'?'MF':pos
   ps.forEach((p,i)=>{
    const rating=given[i]?.score??derivedRating(club,base,scores[i]!)
-   out.push({id:p.id,name:p.name,position:base,price:1,rating,basis:given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear,...(pos==='free'?{free:true}:{})})})
+   out.push({id:p.id,name:englishName(club,p.id,p.name),position:base,price:1,rating,basis:given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear,...(pos==='free'?{free:true}:{})})})
  }
  return out.sort((a,b)=>a.id.localeCompare(b.id))
 }

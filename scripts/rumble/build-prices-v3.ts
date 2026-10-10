@@ -1,3 +1,4 @@
+import {isMan} from '@/lib/clubs/rumble-xi/names'
 import {loadClub,CORE_CLUB_IDS} from '@/lib/clubs/resolver'
 import {rawPool,goalsByPlayer} from '@/lib/clubs/rumble'
 import {extraPositions} from '@/lib/clubs/rumble-xi/positions'
@@ -76,12 +77,12 @@ async function freeze(id:string){
 async function main(){
  if(cmd==='freeze'){for(const id of CORE_CLUB_IDS)if(!doc.clubs[id])await freeze(id);writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')}
  if(cmd==='migrate'){for(const id of CORE_CLUB_IDS){const d=await loadClub(id);if(!d||!doc.clubs[id])continue;let n=0
-  for(const p of d.data.players)if(p.value.name&&!new Set(mergesFor(id).map(m=>m.drop)).has(p.value.id)&&!doc.clubs[id]!.players[p.value.id]){doc.clubs[id]!.players[p.value.id]={priceM:1,priceTier:'REST',locked:false,assignment:'new-member',rationale:'joined the archive after the list was frozen',reviewedAt:today};n++}
+  for(const p of d.data.players)if(isMan(p.value.name)&&!new Set(mergesFor(id).map(m=>m.drop)).has(p.value.id)&&!doc.clubs[id]!.players[p.value.id]){doc.clubs[id]!.players[p.value.id]={priceM:1,priceTier:'REST',locked:false,assignment:'new-member',rationale:'joined the archive after the list was frozen',reviewedAt:today};n++}
   if(n)console.log(id,'+',n)}writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')}
  // validate
  let bad=0;const fail=(m:string)=>{bad++;console.log('FAIL',m)}
  for(const id of CORE_CLUB_IDS){const d=await loadClub(id);const c=doc.clubs[id];if(!d||!c){fail(`${id}: no price list`);continue}
-  const dropped=new Set(mergesFor(id).map(m=>m.drop)),names=d.data.players.filter(p=>p.value.name&&!dropped.has(p.value.id)),ids=new Set(names.map(p=>p.value.id))
+  const dropped=new Set(mergesFor(id).map(m=>m.drop)),names=d.data.players.filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)),ids=new Set(names.map(p=>p.value.id))
   for(const p of names)if(!c.players[p.value.id])fail(`${id}: ${p.value.name} has no price`)
   for(const pid of Object.keys(c.players))if(!ids.has(pid))fail(`${id}: ${pid} is not in the archive`)
   const n=Object.keys(c.players).length,have={1:0,2:0,3:0,4:0,5:0} as Record<number,number>

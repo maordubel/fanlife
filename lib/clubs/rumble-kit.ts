@@ -9,7 +9,7 @@ import type {RumbleCard} from './rumble'
  * cannot paint) is dropped before anything is drawn; a kit left with no colour is not worn.
  */
 export type RumbleKit={id:string;season:string;design:string|null;colours:string[]}
-export type RumbleWardrobe={home:RumbleKit[];away:RumbleKit[]}
+export type RumbleWardrobe={home:RumbleKit[];away:RumbleKit[];/** a photograph of the man's own shirt of his period (Hapoel Tel Aviv, from the kit archive), by card id — worn by the side that is his club's */photos?:Record<string,{src:string;label:string}>}
 export type Worn={source:'archive';kit:RumbleKit}|{source:'livery';variant:'home'|'away'}
 
 /** The colours KitPlate can paint (its token map), each with a representative swatch so the club's own colour policy can judge it.

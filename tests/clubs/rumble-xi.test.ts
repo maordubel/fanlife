@@ -1,3 +1,4 @@
+import {isMan} from '@/lib/clubs/rumble-xi/names'
 import {describe,it,expect,vi} from 'vitest'
 vi.setConfig({testTimeout:300_000})
 import {readFileSync} from 'node:fs'
@@ -44,7 +45,7 @@ describe('the price ladder (rulebook rumble-economy-v1)',()=>{
  it('every club\'s frozen list holds each man exactly once, in whole millions, with its ladder, and one price in five a side and in the eleven',async()=>{
   expect(PRICE_VERSION).toBe('rumble-economy-v1')
   for(const id of CORE_CLUB_IDS){const d=(await loadClub(id))!.data,list=priceTable.clubs[id]!,dropped=new Set(mergesFor(id).map(m=>m.drop))
-   const members=d.players.filter(p=>p.value.name&&!dropped.has(p.value.id)).map(p=>p.value.id)
+   const members=d.players.filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)).map(p=>p.value.id)
    expect(Object.keys(list.players).sort()).toEqual([...members].sort())
    const have={1:0,2:0,3:0,4:0,5:0} as Record<number,number>;for(const e of Object.values(list.players)){expect([1,2,3,4,5]).toContain(e.priceM);have[e.priceM]!+=1}
    const q=quotaFor(members.length);expect(list.quotaMode).toBe(q.mode);for(const p of [1,2,3,4,5] as const)expect(have[p],`${id} €${p}`).toBe(q.counts[p])
@@ -69,7 +70,7 @@ describe('one man, one card — and every man is dealt',()=>{
  })
  it('nobody is left out of the pool: the men of no recorded position are dealt into outfield slots, never in goal',async()=>{
   for(const id of CORE_CLUB_IDS){const d=(await loadClub(id))!.data,dropped=new Set(mergesFor(id).map(m=>m.drop)),pool=xiPool(d),ids=new Set(pool.map(c=>c.id))
-   for(const p of d.players)if(p.value.name&&!dropped.has(p.value.id))expect(ids.has(p.value.id),`${id} ${p.value.name}`).toBe(true)
+   for(const p of d.players)if(isMan(p.value.name)&&!dropped.has(p.value.id))expect(ids.has(p.value.id),`${id} ${p.value.name}`).toBe(true)
    for(const c of pool.filter(x=>x.free)){expect(fits(c,'GK')).toBe(false);expect(fits(c,'MF')).toBe(true)}}
  })
  it('rotation: consecutive rounds walk the whole archive — every man gets dealt, and the same round is the same board',async()=>{
