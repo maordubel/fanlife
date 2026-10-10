@@ -17,7 +17,7 @@ import {DEFAULT_FORMATION,isFormation} from '@/lib/clubs/rumble-xi/formations'
 import {xiPool} from '@/lib/clubs/rumble-xi/pool'
 import {dealXI} from '@/lib/clubs/rumble-xi/deal'
 import {xiSeed} from '@/lib/clubs/rumble-xi/seed'
-import {pickRandomRival,rivalChoices,formationReadiness} from '@/lib/clubs/rumble-xi/server'
+import {pickRandomRival,rivalChoices,formationReadiness,budgetOf} from '@/lib/clubs/rumble-xi/server'
 import type {GateView,GateViewProps} from '../types'
 
 const nameOf=(id:string)=>REGISTRY.find(c=>c.id===id)?.name??id
@@ -74,14 +74,14 @@ async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
  const away=same?club:(await requestClub(rivalId,9))?.data
  if(!away)return stop(say('rr.xi.noRival'))
  const awayPool=same?pool:xiPool(away)
- const base=xiSeed(round.seed,id,rivalId,f),main=dealXI(pool,awayPool,f,base,same)
- const shuf=main?dealXI(pool,awayPool,f,shuffleSeed(main.seed),same):null
+ const budget=budgetOf(pool,awayPool,f),base=xiSeed(round.seed,id,rivalId,f),main=dealXI(pool,awayPool,f,base,same,budget)
+ const shuf=main?dealXI(pool,awayPool,f,shuffleSeed(main.seed),same,budget):null
  if(!main||!shuf)return stop(say('rr.xi.noRival'))
  const ownW=rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex))
  const wardrobe=same?{home:ownW.home,away:ownW.away.length?ownW.away:ownW.home}:apart(ownW,rumbleWardrobe(kitViews(away),hex=>forbiddenColor(club.theme,hex)))
  const again=new URLSearchParams({lang:locale,mode:'xi',f,vs:same?'same':rivalId,seed:String(round.seed+1)})
  return <>
   {head(sp==='random'?'random':same?'same':rivalId)}
-  <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} main={{seed:main.seed,draft:main.draft}} shuffle={{seed:shuf.seed,draft:shuf.draft}} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed}/>
+  <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} main={{seed:main.seed,draft:main.draft}} shuffle={{seed:shuf.seed,draft:shuf.draft}} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed} budget={budget}/>
  </>
 }

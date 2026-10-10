@@ -23,7 +23,7 @@ export const SLOTS:readonly Pos[]=FIVE.slots
 export const BUDGET=FIVE.budget,OFFERS=FIVE.offers
 /** a goal's worth of rating: ratings sit in a narrow band (about 60–95), so the gap is stretched before it becomes goals */
 export const POWER_SCALE=3.5
-export type RumbleCard={id:string;name:string;position:Pos;/** classic: 1–5 whole; XI: €0.5M steps from 1 to 5 */price:number;fromYear:number|null;toYear:number|null}
+export type RumbleCard={id:string;name:string;position:Pos;/** a man whose position no source states: only ever signed by a scout, into any outfield slot */free?:boolean;/** classic: 1–5 whole; XI: €0.5M steps from 1 to 5 */price:number;fromYear:number|null;toYear:number|null}
 export type Rated=RumbleCard&{rating:number;basis?:RatingBasis}
 const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^(seed>>>15),1|seed);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}
 const shuffle=<T,>(a:T[],r:()=>number)=>{const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[x[i],x[j]]=[x[j]!,x[i]!]}return x}
@@ -38,10 +38,11 @@ export function goalsByPlayer(data:ClubData):Map<string,number>{
   for(const s of Array.isArray(sc)?sc:[]){const id=s.name?names.get(norm(s.name)):undefined;if(id)out.set(id,(out.get(id)||0)+1)}}
  return out
 }
-export function ratedPool(data:ClubData):Rated[]{
+/** `extra` carries positions read from a named public source for men the archive and the workbook leave unplaced (XI only; the classic pool is unchanged) */
+export function ratedPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}={}):Rated[]{
  const goals=goalsByPlayer(data),club=data.identity?.id??''
  // his position is the archive's; where the archive documents none, the workbook's own position for him (never a guess)
- const posOf=(p:ClubPlayer):Pos|null=>first(p)??workbookRating(club,[p.name,...p.aliases])?.pos??null
+ const posOf=(p:ClubPlayer):Pos|null=>first(p)??workbookRating(club,[p.name,...p.aliases])?.pos??opts.extra?.[p.id]??null
  const people=(data.players||[]).map(f=>f.value).filter(p=>posOf(p)!==null)
  const by=new Map<Pos,ClubPlayer[]>()
  for(const p of people)by.set(posOf(p)!,[...(by.get(posOf(p)!)||[]),p])
@@ -63,7 +64,7 @@ export function ratedPool(data:ClubData):Rated[]{
  }
  return out.sort((a,b)=>a.id.localeCompare(b.id))
 }
-export const strip=(r:Rated):RumbleCard=>({id:r.id,name:r.name,position:r.position,price:r.price,fromYear:r.fromYear,toYear:r.toYear})
+export const strip=(r:Rated):RumbleCard=>({id:r.id,name:r.name,position:r.position,price:r.price,fromYear:r.fromYear,toYear:r.toYear,...(r.free?{free:true}:{})})
 const count=(f:Format,p:Pos)=>f.slots.filter(x=>x===p).length
 /** how many of each position a club needs before the gate can deal (offers + an opponent who is not the same men): twice the slots, and a full pool at three times */
 export function rumbleReadiness(pool:Rated[],format:Format=FIVE){

@@ -1,11 +1,11 @@
 'use server'
 import {requestClub} from '@/lib/clubs/request'
-import {ratedPool,dealDraft,play,rumbleReadiness} from '@/lib/clubs/rumble'
+import {ratedPool,dealDraft,play,rumbleReadiness,strip} from '@/lib/clubs/rumble'
 import {opponentFor} from '@/lib/clubs/rumble-opponent'
 import {stageMatch} from '@/lib/clubs/rumble-show'
 import {lineupMatches,buildableKits,kitViews} from '@/lib/clubs/gate-content'
-import {loadSides} from '@/lib/clubs/rumble-xi/server'
-import {playXI} from '@/lib/clubs/rumble-xi/simulator'
+import {loadSides,budgetOf} from '@/lib/clubs/rumble-xi/server'
+import {playXI,scoutSearch} from '@/lib/clubs/rumble-xi/simulator'
 import {stageXI} from '@/lib/clubs/rumble-xi/presentation'
 import {canRival,xiReadiness} from '@/lib/clubs/rumble-xi/readiness'
 import {isFormation} from '@/lib/clubs/rumble-xi/formations'
@@ -53,8 +53,15 @@ export async function playRumbleXI(slug:string,version:string,seed:number,picks:
  if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||!Number.isSafeInteger(seed)||!isFormation(formation)||typeof rival!=='string'||rival.length>100||!Array.isArray(picks)||picks.length!==slotsOf(formation).length||picks.some(p=>typeof p!=='string'||p.length>200))return null
  const sides=await loadSides(slug,rival)
  if(!sides||sides.homeVersion!==version||!xiReadiness(sides.home,formation).ready||!canRival(sides.away,formation))return null
- const r=playXI(sides.home,sides.away,formation,seed,sides.same,picks,sides.same?slug:rival)
+ const r=playXI(sides.home,sides.away,formation,seed,sides.same,picks,sides.same?slug:rival,sides.free,budgetOf(sides.home,sides.away,formation))
  return r?{verdict:r.verdict,goals:r.goals,script:stageXI(r,seed,formation),rivalClub:sides.same?slug:rival}:null
+}
+/** Scouting (XI): public cards only — name, family, years and what he would cost (price + the fee). Never a rating. */
+export async function scoutXI(slug:string,version:string,seed:number,formation:string,rival:string,slot:number,query:string){
+ if(typeof slug!=='string'||slug.length>100||typeof version!=='string'||!Number.isSafeInteger(seed)||!isFormation(formation)||typeof rival!=='string'||rival.length>100||!Number.isInteger(slot)||slot<0||slot>10||typeof query!=='string'||query.length>60)return null
+ const sides=await loadSides(slug,rival)
+ if(!sides||sides.homeVersion!==version||!xiReadiness(sides.home,formation).ready)return null
+ return scoutSearch(sides.home,sides.away,formation,seed,sides.same,slot,query,12,sides.free,budgetOf(sides.home,sides.away,formation)).map(strip)
 }
 export const rumbleDeal=async(slug:string,seed:number,vs?:string,duel?:string)=>{const r=await requestClub(slug,9);if(!r||!Number.isSafeInteger(seed))return null;const pool=ratedPool(r.data);if(!rumbleReadiness(pool).playable)return null;const o=await opponentFor(slug,pool,vs,duel);return o?dealDraft(pool,seed,o):null}
 /** Gate 8 — the touches are graded here; the cast, verbs, order and count never left the server before this. */

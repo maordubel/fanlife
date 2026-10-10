@@ -1,6 +1,6 @@
 import type {Pos,Rated,RumbleResult} from '../rumble'
 import {rng} from '../rumble-show'
-import {XI_BUDGET,type FormationId} from './types'
+import {XI_BUDGET,SCOUT_FEE,MAX_SCOUTS,type FormationId} from './types'
 import {slotsOf} from './formations'
 import {cost} from './pool'
 import {dealDraftXI,dealRivalXI} from './deal'
@@ -41,14 +41,35 @@ export function settleXI(you:readonly Rated[],rival:readonly Rated[],f:Formation
  return {you:{cards:[...you],power:power(you),cost:cost(you)},rival:{cards:[...rival],power:power(rival),...(rivalClub?{club:rivalClub}:{})},verdict:goals[0]>goals[1]?'win':goals[0]<goals[1]?'loss':'draw',goals}
 }
 
-/** Everything the server checks before a ball is kicked: the board the seed deals, one man per slot, one man once, €35M. */
-export function playXI(home:readonly Rated[],away:readonly Rated[],f:FormationId,seed:number,same:boolean,picks:readonly string[],rivalClub?:string):RumbleResult|null{
+/**
+ * Everything the server checks before a ball is kicked: the board the seed deals, one man per slot, one man once, €35M — and a man not
+ * on the board is a SCOUTED signing: he must be of the slot's family, in this club's pool, never one of the rival's eleven, at most
+ * twice, each at his price plus the scouting fee.
+ */
+export function playXI(home:readonly Rated[],away:readonly Rated[],f:FormationId,seed:number,same:boolean,picks:readonly string[],rivalClub?:string,free:readonly Rated[]=[],budget:number=XI_BUDGET):RumbleResult|null{
  const slots=slotsOf(f)
  if(picks.length!==slots.length||new Set(picks).size!==picks.length)return null
- const rival=dealRivalXI(away,f,seed);if(!rival)return null
- const draft=dealDraftXI(home,f,seed,rival,same);if(!draft)return null
- const chosen:Rated[]=[]
- for(let i=0;i<slots.length;i++){const offered=draft[i]!.find(c=>c.id===picks[i]);const full=offered&&home.find(x=>x.id===offered.id);if(!full)return null;chosen.push(full)}
- if(cost(chosen)>XI_BUDGET)return null
- return settleXI(chosen,rival,f,seed,rivalClub)
+ const rival=dealRivalXI(away,f,seed,budget);if(!rival)return null
+ const draft=dealDraftXI(home,f,seed,rival,same,budget);if(!draft)return null
+ const banned=same?new Set(rival.map(c=>c.id)):new Set<string>()
+ const chosen:Rated[]=[];let scouts=0
+ for(let i=0;i<slots.length;i++){
+  const offered=draft[i]!.find(c=>c.id===picks[i]);const full=home.find(x=>x.id===picks[i])??free.find(x=>x.id===picks[i])
+  if(!full)return null
+  if(!offered){const fam=slots[i]!.family;if(banned.has(full.id)||(full.free?fam==='GK':full.position!==fam))return null;scouts+=1}
+  chosen.push(full)
+ }
+ if(scouts>MAX_SCOUTS)return null
+ const total=cost(chosen)+scouts*SCOUT_FEE
+ if(total>budget)return null
+ const r=settleXI(chosen,rival,f,seed,rivalClub)
+ return {...r,you:{...r.you,cost:total}}
+}
+/** The men a scout may sign for one slot: his family, name containing the query, not the rival's, cheapest-first by relevance. */
+export function scoutSearch(home:readonly Rated[],away:readonly Rated[],f:FormationId,seed:number,same:boolean,slot:number,query:string,limit=12,free:readonly Rated[]=[],budget:number=XI_BUDGET):Rated[]{
+ const fam=slotsOf(f)[slot]?.family;if(!fam)return []
+ const rival=same?new Set((dealRivalXI(away,f,seed,budget)??[]).map(c=>c.id)):new Set<string>()
+ const q=query.trim().toLowerCase()
+ const list=[...home.filter(x=>x.position===fam),...(fam==='GK'?[]:free)].filter(x=>!rival.has(x.id)&&(q===''||x.name.toLowerCase().includes(q)))
+ return list.sort((a,b)=>(a.name.toLowerCase().startsWith(q)?0:1)-(b.name.toLowerCase().startsWith(q)?0:1)||a.name.localeCompare(b.name)).slice(0,limit)
 }

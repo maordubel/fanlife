@@ -84,7 +84,9 @@
     "research:run": "tsx scripts/research/cli.ts run",
     "research:status": "tsx scripts/research/cli.ts status",
     "research:collect": "tsx scripts/research/cli.ts collect",
-    "research:export": "tsx scripts/research/cli.ts export"
+    "research:export": "tsx scripts/research/cli.ts export",
+    "rumble:prices": "node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/build-price-table.ts",
+    "rumble:positions": "NODE_USE_ENV_PROXY=1 node scripts/rumble/fill-positions.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "0.5.8",

@@ -1,7 +1,7 @@
 import type {Pos,Rated,RumbleCard} from '../rumble'
 import {strip} from '../rumble'
 import {countFamily,slotsOf} from './formations'
-import {offersFor} from './readiness'
+import {offersByFamily} from './readiness'
 import {XI_BUDGET,type FormationId,type XIBoard} from './types'
 
 const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^(seed>>>15),1|seed);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}
@@ -12,9 +12,9 @@ const shuffle=<T,>(a:readonly T[],r:()=>number)=>{const x=[...a];for(let i=x.len
  * of three seeded men that still leaves the remaining slots fillable inside €35M. (Slots of different families draw on disjoint
  * sets, and a family's slots never share a man, so "cheapest remaining men" is an exact floor — no search is needed.)
  */
-export function dealRivalXI(pool:readonly Rated[],f:FormationId,seed:number):Rated[]|null{
+export function dealRivalXI(pool:readonly Rated[],f:FormationId,seed:number,budget:number=XI_BUDGET):Rated[]|null{
  const r=mulberry(seed^0x9e3779b9),taken=new Set<string>(),out:Rated[]=[],slots=slotsOf(f)
- let money=XI_BUDGET
+ let money=budget
  for(let i=0;i<slots.length;i++){
   const pos=slots[i]!.family,left=pool.filter(x=>x.position===pos&&!taken.has(x.id)),options=shuffle(left,r).slice(0,3)
   if(!options.length)return null
@@ -32,25 +32,39 @@ export const cheapestBoard=(draft:readonly (readonly RumbleCard[])[])=>draft.red
  * The draft: per slot, `offers` cards of that slot's family, never repeating a man, never a man the rival fields (own-club rival).
  * Returns null when a slot cannot be offered — the caller reports the club as not ready instead of showing a broken board.
  */
-export function dealDraftXI(pool:readonly Rated[],f:FormationId,seed:number,rival:readonly Rated[],same:boolean):RumbleCard[][]|null{
+export function dealDraftXI(pool:readonly Rated[],f:FormationId,seed:number,rival:readonly Rated[],same:boolean,budget:number=XI_BUDGET):RumbleCard[][]|null{
  const r=mulberry(seed),used=new Set(same?rival.map(c=>c.id):[])
- const offers=Math.min(3,offersFor(pool,f,same))
- if(offers<1)return null
+ const by=offersByFamily(pool,f,same)
  const out:RumbleCard[][]=[]
  for(const slot of slotsOf(f)){
+  const offers=by[slot.family]
+  if(offers<1)return null
   const cards=shuffle(pool.filter(x=>x.position===slot.family&&!used.has(x.id)),r).slice(0,offers)
   if(cards.length<offers)return null
   cards.forEach(c=>used.add(c.id));out.push(cards.map(strip))
+ }
+ // a board nobody can finish is not a round: lower the dearest slot's cheapest card by swapping in the cheapest man of that family still unused
+ for(let guard=0;guard<40&&cheapestBoard(out)>budget;guard++){
+  const order=out.map((cards,i)=>({i,min:Math.min(...cards.map(c=>c.price))})).sort((a,b)=>b.min-a.min||a.i-b.i)
+  let fixed=false
+  for(const {i,min} of order){
+   const fam=slotsOf(f)[i]!.family,inBoard=new Set(out.flat().map(c=>c.id))
+   const cheaper=pool.filter(x=>x.position===fam&&!used.has(x.id)&&!inBoard.has(x.id)&&x.price<min).sort((a,b)=>a.price-b.price||a.id.localeCompare(b.id))[0]
+   if(!cheaper)continue
+   const priciest=[...out[i]!].sort((a,b)=>b.price-a.price)[0]!
+   out[i]=out[i]!.map(c=>c.id===priciest.id?strip(cheaper):c);fixed=true;break
+  }
+  if(!fixed)break
  }
  return out
 }
 
 /** the first seed in the shuffle chain whose board a player can finish (cheapest eleven ≤ €35M) — bounded, deterministic */
-export function dealXI(homePool:readonly Rated[],awayPool:readonly Rated[],f:FormationId,seed:number,same:boolean,tries=24):{seed:number;rival:Rated[];draft:RumbleCard[][]}|null{
+export function dealXI(homePool:readonly Rated[],awayPool:readonly Rated[],f:FormationId,seed:number,same:boolean,budget:number=XI_BUDGET,tries=24):{seed:number;rival:Rated[];draft:RumbleCard[][]}|null{
  let s=seed
  for(let i=0;i<tries;i++){
-  const rival=dealRivalXI(awayPool,f,s)
-  if(rival){const draft=dealDraftXI(homePool,f,s,rival,same);if(draft&&cheapestBoard(draft)<=XI_BUDGET)return {seed:s,rival,draft}}
+  const rival=dealRivalXI(awayPool,f,s,budget)
+  if(rival){const draft=dealDraftXI(homePool,f,s,rival,same,budget);if(draft&&cheapestBoard(draft)<=budget)return {seed:s,rival,draft}}
   s=(((s*48271)>>>0)%2147483646)+1
  }
  return null

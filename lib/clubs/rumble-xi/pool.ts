@@ -1,24 +1,25 @@
 import type {ClubData} from '../contract'
 import {ratedPool,type Rated} from '../rumble'
-import {countFamily} from './formations'
-import type {FormationId} from './types'
+import {derivedRating,workbookRating} from '../ratings'
+
+import {priceOf} from './prices'
+import {extraPositions} from './positions'
+
+/** the club's dealable men with their hidden ratings, before pricing (the price table is built from these) */
+export const xiPoolRaw=(data:ClubData):Rated[]=>ratedPool(data,{extra:extraPositions(data.identity.id)})
+/** The club's men priced on the global table (the classic pool's rank prices are replaced; ratings are untouched). */
+export const xiPool=(data:ClubData):Rated[]=>xiPoolRaw(data).map(r=>({...r,price:priceOf(r.rating,r.position)}))
+export const cost=(cards:readonly {price:number}[])=>Math.round(cards.reduce((t,c)=>t+c.price,0)*2)/2
 
 /**
- * ONE price table for every club, on the one rating scale the workbook uses (about 67–95), so a card costs the same wherever it
- * is drawn and a mid man of a small club can never look like another club's legend. It is game money — not a transfer value,
- * not an official rating. Steps of €0.5M, €1M to €5M.
+ * Everyone in the club's archive the pool cannot deal because NO source names a position. They are not hidden and not guessed into a
+ * position: a scout may sign them into any OUTFIELD slot, rated at what the workbook says of him or at his club's ordinary midfielder,
+ * and the card says "position not recorded".
  */
-export function priceOf(rating:number):number{
- if(rating>=85)return 5
- if(rating>=82)return 4.5
- if(rating>=80)return 4
- if(rating>=78)return 3.5
- if(rating>=76)return 3
- if(rating>=74)return 2.5
- if(rating>=72)return 2
- if(rating>=70)return 1.5
- return 1
+export function xiFree(data:ClubData):Rated[]{
+ const club=data.identity.id,dealt=new Set(xiPoolRaw(data).map(r=>r.id))
+ return (data.players||[]).map(f=>f.value).filter(p=>!dealt.has(p.id)&&p.name).map(p=>{
+  const wb=workbookRating(club,[p.name,...p.aliases]),rating=wb?.score??derivedRating(club,'MF',0.5)
+  return {id:p.id,name:p.name,position:'MF' as const,free:true,price:priceOf(rating,'MF'),rating,basis:wb?.basis??'derived' as const,fromYear:p.fromYear,toYear:p.toYear}
+ })
 }
-/** The club's men priced on the global table (the classic pool's rank prices are replaced; ratings are untouched). */
-export const xiPool=(data:ClubData):Rated[]=>ratedPool(data).map(r=>({...r,price:priceOf(r.rating)}))
-export const cost=(cards:readonly {price:number}[])=>Math.round(cards.reduce((t,c)=>t+c.price,0)*2)/2
