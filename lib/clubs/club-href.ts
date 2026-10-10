@@ -8,7 +8,7 @@ export type ClubTab=typeof CLUB_TABS[number]
 const SEGMENT_TAB:Record<string,ClubTab>={
  play:'play',life:'life',history:'history',terrace:'terrace',
  archive:'history',timeline:'history',derby:'history',kits:'history','kit-archive':'history',
- polls:'terrace',meetings:'terrace',
+ polls:'terrace',meetings:'terrace','away-days':'history',
 }
 export function tabOfSegment(segment:string|null|undefined):ClubTab{
  if(!segment)return 'home'

@@ -262,3 +262,38 @@ a.gp:active { transform: scale(.98); }
 .club-flavour p { margin: 2px 0 0; font-size: 15px; line-height: 1.45; }
 .club-flavour[data-variant='terrace'] { margin-inline: 0; margin-top: 14px; }
 @media (min-width: 760px) { .club-flavour[data-variant='hero'] { margin-inline: 0; } }
+
+/* AWAY DAYS inside a club — the globe, the grounds, every tie by season */
+.cad-page { padding-bottom: 32px; }
+.cad-head { display: grid; gap: 8px; margin-bottom: 14px; }
+.cad-lede { max-width: 62ch; margin: 0; }
+.cad-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; list-style: none; margin: 0 0 12px; padding: 0; }
+.cad-stats li { border: 1.5px solid var(--mag-ink); padding: 8px 6px; text-align: center; background: var(--mag-paper, transparent); }
+.cad-stats b { display: block; font-family: var(--mag-condensed, inherit); font-size: 26px; line-height: 1; }
+.cad-stats small { font-size: 10.5px; letter-spacing: .5px; text-transform: uppercase; }
+@media (max-width: 559px) { .cad-stats { grid-template-columns: repeat(3, 1fr); } }
+.cad-map { height: min(62vh, 520px); min-height: 300px; border: 1.5px solid var(--mag-ink); background: var(--mag-ink); position: relative; overflow: hidden; }
+.cad-map-load { height: 100%; }
+.cad-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+.cad-chips { display: flex; gap: 6px; }
+.cad-chip, .cad-been { border: 1.5px solid var(--mag-ink); background: transparent; color: var(--mag-ink); padding: 6px 12px; font: inherit; font-weight: 700; font-size: 13px; cursor: pointer; }
+.cad-chip[aria-pressed='true'], .cad-been[aria-pressed='true'] { background: var(--club-primary, var(--mag-ink)); color: var(--club-on-primary, var(--mag-paper, #fff)); border-color: var(--club-primary, var(--mag-ink)); }
+.cad-mine { margin: 0; font-weight: 700; }
+.cad-season h2 { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 22px 0 8px; font-family: var(--mag-condensed, inherit); font-size: 28px; border-bottom: 2px solid var(--mag-ink); }
+.cad-season h2 small { font-size: 13px; font-family: var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; }
+.cad-season ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.cad-visit { border: 1.5px solid var(--mag-ink); padding: 10px 12px; display: grid; gap: 4px; border-inline-start-width: 6px; }
+.cad-visit[data-result='W'] { border-inline-start-color: var(--club-primary, var(--mag-ink)); }
+.cad-vhead { display: flex; justify-content: space-between; gap: 8px; font-family: var(--mag-mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .5px; }
+.cad-vmain { display: flex; align-items: baseline; gap: 10px; }
+.cad-opp { flex: 1; font-weight: 800; font-size: 18px; }
+.cad-score { font-family: var(--mag-condensed, inherit); font-size: 28px; }
+.cad-res { font-family: var(--mag-mono); font-weight: 700; }
+.cad-ground { text-align: start; background: none; border: 0; padding: 2px 0; font: inherit; font-size: 13.5px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; color: inherit; }
+.cad-ground span { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; }
+.cad-note { margin: 0; font-size: 13px; }
+.cad-been { justify-self: start; margin-top: 4px; }
+.cad-source { margin-top: 22px; font-size: 12.5px; max-width: 70ch; }
+.cad-page { padding-inline: 16px; }
+@media (min-width: 760px) { .cad-page { padding-inline: 24px; } }
+.cad-head .mag-chip { justify-self: start; }
