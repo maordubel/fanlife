@@ -1,0 +1,68 @@
+{
+  "note": "Club crests. Owner approved their use everywhere a club mark appears (10.10.2026). Trademarks of their clubs, shown as identification. Zrinjski is not in the source; it keeps its initials badge. Modern marks only: AWAY DAYS opponents are historical clubs and are not given today's crest.",
+  "crests": [
+    {
+      "club": "aek-athens",
+      "file": "public/crests/aek-athens.png",
+      "sha256": "4b72023cc40806239119d1a125f5483bf1c8de70e1d5fe1a17798f384205ff90",
+      "bytes": 17023,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "logos/Greece - Super League 1/AEK Athens.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "celtic",
+      "file": "public/crests/celtic.png",
+      "sha256": "c817daa24e843f6d1d3c5fa24021d143989c62fc75569641fd03ae74828f7440",
+      "bytes": 29577,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "logos/Scotland - Scottish Premiership/Celtic FC.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "olympiacos",
+      "file": "public/crests/olympiacos.png",
+      "sha256": "9e77956cb30201e497b4a49ff12f62d961b3c26bc81c273478001a77e3573e10",
+      "bytes": 46378,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "logos/Greece - Super League 1/Olympiacos Piraeus.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "panathinaikos",
+      "file": "public/crests/panathinaikos.png",
+      "sha256": "90f20c7655fd8329daeac4b4cae28b6feecd88839e50730cdbb6bc4b9cbf09bc",
+      "bytes": 23822,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "logos/Greece - Super League 1/Panathinaikos.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "st-pauli",
+      "file": "public/crests/st-pauli.png",
+      "sha256": "a5a07e5cdc6101d8d01c02fbbddac51887ae014aad444dae633f67e5a2de9809",
+      "bytes": 22390,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "history/2025-26/Germany - Bundesliga/FC St. Pauli.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "hapoel-petah-tikva",
+      "file": "public/crests/hapoel-petah-tikva.png",
+      "sha256": "3dc1bd3c841fd6cd448f4bf10033463e95786d809e3c5952f3ac0e09c0cd2b6a",
+      "bytes": 16820,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "logos/Israel - Ligat ha'Al/Hapoel Petah Tikva.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "hapoel-tel-aviv",
+      "file": "public/crests/hapoel-tel-aviv.png",
+      "sha256": "c4d763f4422185ef9f069e489c7017e3fa102a05da3c8a5c586fccf4c0177aeb",
+      "bytes": 30472,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "logos/Israel - Ligat ha'Al/Hapoel Tel Aviv.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    }
+  ]
+}

@@ -19,6 +19,7 @@ import {KitCloth} from '../kit-builder/KitCloth'
 import {colourLabel} from '../kit-builder/KitBuilder'
 import {openBuiltKits} from './actions'
 import css from './kits.module.css'
+import { crestFor } from '@/lib/clubs/crest'
 
 type Tab='studio'|'collection'
 type Tool='body'|'trim'|'design'|'collar'|'sleeves'|'maker'|'sponsor'|'crest'|'back'
@@ -162,7 +163,7 @@ export function KitStudio(props:KitStudioProps){
     <div className={css.garment} ref={garmentRef} data-testid="ks-garment">
      <span className={css.stamp} data-testid="ks-stamp">{say('ks.stamp')}</span>
      {designName&&<span className={css.designName}><bdi>{designName}</bdi></span>}
-     <KitCloth spec={spec} view={view} monogram={monogram} title={hasDesign?say('ks.garment.aria',{view:view==='front'?say('ks.view.front'):say('ks.view.back')}):say('ks.garment.blank')}/>
+     <KitCloth spec={spec} view={view} monogram={monogram} crestSrc={crestFor(club)} title={hasDesign?say('ks.garment.aria',{view:view==='front'?say('ks.view.front'):say('ks.view.back')}):say('ks.garment.blank')}/>
     </div>
    </div>
 
@@ -221,7 +222,7 @@ export function KitStudio(props:KitStudioProps){
     {shown.map(r=>{
      const k=opened[r.id],b=built[r.id]
      return <li key={r.id}><button type="button" className={css.kcard} data-open={!!k} data-testid="ks-card" onClick={openSheet({k:'shirt',id:r.id})} aria-label={k?say('ks.card.open',{season:r.season,variant:variantName(r.variant)}):say('ks.card.locked',{season:r.season,variant:variantName(r.variant)})}>
-      <span className={css.kcardArt}>{k?(photos[k.id]?<img src={photos[k.id]} alt={`${k.season} ${variantName(k.variant)}`} width={160} height={160} loading="lazy" data-archive-photo/>:k.cloth?<KitCloth spec={k.cloth} texture={false} monogram={monogram} viewBox="24 30 292 270"/>:<span className={css.textOnly}><bdi>{k.design||variantName(k.variant)}</bdi></span>):<span className={css.locked}><KitCloth spec={BLANK} texture={false} viewBox="24 30 292 270"/></span>}</span>
+      <span className={css.kcardArt}>{k?(photos[k.id]?<img src={photos[k.id]} alt={`${k.season} ${variantName(k.variant)}`} width={160} height={160} loading="lazy" data-archive-photo/>:k.cloth?<KitCloth spec={k.cloth} texture={false} monogram={monogram} crestSrc={crestFor(club)} viewBox="24 30 292 270"/>:<span className={css.textOnly}><bdi>{k.design||variantName(k.variant)}</bdi></span>):<span className={css.locked}><KitCloth spec={BLANK} texture={false} viewBox="24 30 292 270"/></span>}</span>
       <span className={css.kcardText}><b><bdi>{r.season}</bdi></b><small>{variantName(r.variant)}{b?.p&&<i aria-label={say('ks.card.perfect')}> ★</i>}</small></span>
       {!k&&<span className={css.lockTag}>{say('ks.card.tag')}</span>}
       {k&&<span className={css.ownTag} data-ownership={r.open?'shelf':'earned'}>{r.open?say('ks.own.shelf'):say('ks.own.earned')}</span>}
@@ -234,7 +235,7 @@ export function KitStudio(props:KitStudioProps){
   <SlideSheet open={sheet?.k==='shirt'} onClose={closeSheet} title={sheetKit?`${sheetKit.season} · ${variantName(sheetKit.variant)}`:''} closeLabel={copy['play.close']}>
    {sheetKit&&<div className={css.sheetBody} data-testid="ks-shirt-card">
     {sheetOpen?<>
-     {photos[sheetOpen.id]?<div className={css.bigShirt}><img src={photos[sheetOpen.id]} alt={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`} width={320} height={320} data-archive-photo/></div>:sheetOpen.cloth?<div className={css.bigShirt}><KitCloth spec={sheetOpen.cloth} monogram={monogram} title={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`}/></div>:<p className={css.note}>{say('ks.card.undrawn')}</p>}
+     {photos[sheetOpen.id]?<div className={css.bigShirt}><img src={photos[sheetOpen.id]} alt={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`} width={320} height={320} data-archive-photo/></div>:sheetOpen.cloth?<div className={css.bigShirt}><KitCloth spec={sheetOpen.cloth} monogram={monogram} crestSrc={crestFor(club)} title={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`}/></div>:<p className={css.note}>{say('ks.card.undrawn')}</p>}
      <dl className={css.facts}>
       <div><dt>{say('ks.fact.season')}</dt><dd><bdi>{sheetOpen.season}</bdi></dd></div>
       <div><dt>{say('ks.fact.strip')}</dt><dd>{variantName(sheetOpen.variant)}</dd></div>
@@ -261,7 +262,7 @@ export function KitStudio(props:KitStudioProps){
   {/* ---- save */}
   <SlideSheet open={sheet?.k==='save'} onClose={closeSheet} title={say('ks.save.title')} closeLabel={copy['play.close']}>
    <form className={css.sheetBody} onSubmit={e=>{e.preventDefault();save(false)}}>
-    <div className={css.saveShirt}><KitCloth spec={spec} monogram={monogram} texture={false} title={say('ks.stamp')}/></div>
+    <div className={css.saveShirt}><KitCloth spec={spec} monogram={monogram} crestSrc={crestFor(club)} texture={false} title={say('ks.stamp')}/></div>
     <label className={css.field}>{say('ks.save.name')}<input type="text" value={saveName} maxLength={32} dir="auto" onChange={e=>setSaveName(e.target.value)} autoFocus data-testid="ks-save-name"/></label>
     <p className={css.fine}>{say('ks.save.fine',{max:DESIGN_MAX})}</p>
     <div className={css.sheetActions}>
@@ -273,13 +274,13 @@ export function KitStudio(props:KitStudioProps){
   {/* ---- my designs */}
   <SlideSheet open={sheet?.k==='designs'} onClose={()=>{setConfirmDel(null);closeSheet()}} title={say('ks.designs.title')} closeLabel={copy['play.close']}>
    <div className={css.sheetBody}>{designs.length===0?<p>{say('ks.designs.empty')}</p>:<ul className={css.designList} data-testid="ks-design-list">{designs.map(d=><li key={d.id}>
-    <button type="button" className={css.designRow} onClick={()=>load(d)} data-testid="ks-design-open"><span className={css.rowShirt}><KitCloth spec={d.spec} texture={false} monogram={monogram} viewBox="24 30 292 270"/></span><span className={css.rowText}><b><bdi>{d.name||say('ks.untitled')}</bdi></b><small>{say('ks.stamp')}{d.updated&&` · ${new Date(d.updated).toLocaleDateString(locale==='he'?'he-IL':'en-GB')}`}</small></span></button>
+    <button type="button" className={css.designRow} onClick={()=>load(d)} data-testid="ks-design-open"><span className={css.rowShirt}><KitCloth spec={d.spec} texture={false} monogram={monogram} crestSrc={crestFor(club)} viewBox="24 30 292 270"/></span><span className={css.rowText}><b><bdi>{d.name||say('ks.untitled')}</bdi></b><small>{say('ks.stamp')}{d.updated&&` · ${new Date(d.updated).toLocaleDateString(locale==='he'?'he-IL':'en-GB')}`}</small></span></button>
     <button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>remove(d.id)} aria-label={say('ks.designs.delete',{name:d.name})} data-testid="ks-design-delete">{confirmDel===d.id?say('ks.designs.sure'):'×'}</button></li>)}</ul>}</div>
   </SlideSheet>
 
   {/* ---- start from an archive shirt */}
   <SlideSheet open={sheet?.k==='start'} onClose={closeSheet} title={say('ks.startFrom.title')} closeLabel={copy['play.close']}>
-   <div className={css.sheetBody}><p>{say('ks.startFrom.body')}</p><ul className={css.designList}>{startable.map(k=><li key={k.id}><button type="button" className={css.designRow} onClick={()=>startFrom(k)} data-testid="ks-start-row"><span className={css.rowShirt}><KitCloth spec={k.cloth!} texture={false} monogram={monogram} viewBox="24 30 292 270"/></span><span className={css.rowText}><b><bdi>{k.season}</bdi></b><small>{variantName(k.variant)}</small></span></button></li>)}</ul></div>
+   <div className={css.sheetBody}><p>{say('ks.startFrom.body')}</p><ul className={css.designList}>{startable.map(k=><li key={k.id}><button type="button" className={css.designRow} onClick={()=>startFrom(k)} data-testid="ks-start-row"><span className={css.rowShirt}><KitCloth spec={k.cloth!} texture={false} monogram={monogram} crestSrc={crestFor(club)} viewBox="24 30 292 270"/></span><span className={css.rowText}><b><bdi>{k.season}</bdi></b><small>{variantName(k.variant)}</small></span></button></li>)}</ul></div>
   </SlideSheet>
 
   {/* ---- briefs: parameterised by this club; the memory brief only when an opened shirt exists */}

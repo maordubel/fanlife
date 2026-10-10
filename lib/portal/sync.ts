@@ -25,6 +25,7 @@
  *    an empty remote profile and merges to exactly what their device already held.
  */
 
+import { evaluationMode } from '@/lib/master/mode'
 import { storedBook, writeBook, type SupporterRecord } from '@/lib/game/member'
 import { readProfile, updateProfile } from '@/lib/profile/store'
 import { createClient } from '@/lib/supabase/client'
@@ -120,12 +121,31 @@ export async function signInWithGoogle(next = '/tik'): Promise<void> {
   }
 }
 
-export async function signOut(): Promise<void> {
-  if (!portalConfigured()) return
+/**
+ * Ends THIS browser's session only (`scope: 'local'`: the global default would also sign the person out of their
+ * phone, and out of DUBID in the shared project). Answers whether it worked, so the screen never says "signed out"
+ * while a session is still live.
+ */
+export async function signOut(): Promise<boolean> {
+  if (!portalConfigured()) return true
   try {
-    await createClient().auth.signOut()
+    const { error } = await createClient().auth.signOut({ scope: 'local' })
+    return !error
   } catch {
-    // already gone, or offline. Either way the next `currentAccount()` answers null.
+    return false
+  }
+}
+
+/** Tells the caller when the session appears or goes (another tab, token expiry). Returns the unsubscribe. */
+export function watchAccount(onChange: () => void): () => void {
+  if (!portalConfigured() || evaluationMode()) return () => {}
+  try {
+    const { data } = createClient().auth.onAuthStateChange((event) => {
+      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'USER_UPDATED') onChange()
+    })
+    return () => data.subscription.unsubscribe()
+  } catch {
+    return () => {}
   }
 }
 

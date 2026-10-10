@@ -62,7 +62,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
    {layout==='split'&&<span className="mag-band club-halfpane" data-livery={lv?.pattern} aria-hidden="true"/>}
    {layout==='ground'&&<span className="club-markings" aria-hidden="true"/>}
    <div className="mag-homehero-in">
-    <Seal name={c.name} city={c.city} initials={c.initials} pattern={lv?.pattern}/>
+    <Seal name={c.name} city={c.city} initials={c.initials} pattern={lv?.pattern} clubId={id}/>
     <p className="mag-homewelcome">{world.voice.welcome}</p>
     <h1 id="club-h" style={{['--len' as string]:Math.max(6,...c.name.split(/\s+/).map(w=>w.length))}}>{c.name}</h1>
     <p className="mag-homeplace">{place.map((p,i)=><span key={p}>{i>0&&<i aria-hidden="true">|</i>}{p}</span>)}</p>

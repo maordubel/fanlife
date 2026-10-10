@@ -5,6 +5,7 @@ import { ShirtShelf } from '@/components/fanlife/ShirtShelf'
 import { fl } from '@/lib/fanlife/copy'
 import { fanShirts } from '@/lib/fanlife/catalog'
 import { livery, wearLivery } from '@/lib/club-livery'
+import { Badge } from '@/components/clubs/Badge'
 
 export const metadata: Metadata = { title: fl('shirts.title'), description: fl('shirts.sub') }
 export const dynamic = 'force-dynamic'
@@ -26,7 +27,7 @@ export default async function ShirtsPage({ searchParams }: { searchParams: { shi
           const l = livery(club)
           return (
             <details key={club} className="panel" open={!focus ? (searchParams.club ? club === searchParams.club : clubs[0] === club) : rows.some((r) => r.slug === focus)} style={wearLivery(l)}>
-              <summary><span className="mag-badge" data-livery={l?.pattern} aria-hidden="true">{l?.initials}</span> <b>{rows[0]!.clubName}</b> · {fl('shirts.count', { n: rows.length })} · {rows[0]!.src ? fl('shirts.photo') : fl('shirts.drawn')}</summary>
+              <summary><Badge club={l}/> <b>{rows[0]!.clubName}</b> · {fl('shirts.count', { n: rows.length })} · {rows[0]!.src ? fl('shirts.photo') : fl('shirts.drawn')}</summary>
               <ShirtShelf shirts={rows} focus={focus} />
             </details>
           )

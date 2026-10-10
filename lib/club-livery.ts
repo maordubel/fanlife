@@ -9,11 +9,11 @@ import {signatureFor,type Pattern,type Layout} from '@/lib/club-signature'
  */
 export type LiveryPattern = Pattern
 
-export function livery(clubId: string): {primary: string; on: string; type: string; pattern: LiveryPattern; layout: Layout; initials: string; name: string} | null {
+export function livery(clubId: string): {id: string; primary: string; on: string; type: string; pattern: LiveryPattern; layout: Layout; initials: string; name: string} | null {
   const club = REGISTRY.find(c => c.id === clubId)
   if (!club) return null
   const theme = clubTheme(club)
-  return {primary: theme.primary, on: theme.onPrimary, type: typeOnPaper(theme.primary), ...signatureFor(clubId), initials: club.initials, name: club.name}
+  return {id: clubId, primary: theme.primary, on: theme.onPrimary, type: typeOnPaper(theme.primary), ...signatureFor(clubId), initials: club.initials, name: club.name}
 }
 
 /** The two custom properties a club's colour travels as: the colour and the ink that reads on it

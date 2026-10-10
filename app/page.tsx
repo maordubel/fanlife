@@ -24,6 +24,7 @@ import {isOpenClub} from '@/lib/home/hub-open'
 import {seedVotes,rank} from '@/lib/home/vote'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
+import { Badge } from '@/components/clubs/Badge'
 export const dynamic='force-dynamic'
 
 
@@ -98,7 +99,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
       const l=livery(c.id)
       return <Link key={c.id} className={`mag-tile is-open${live.length%2===1&&n===live.length-1?' is-wide':''}`} data-club={c.id} href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}>
        <span className="no" aria-label={`${copy.collectorNo} ${n+1}`}>{String(n+1).padStart(2,'0')}</span>
-       {l&&<span className="mag-badge" data-livery={l.pattern} aria-hidden="true">{l.initials}</span>}
+       {l&&<Badge club={l}/>}
        <span><b>{c.name}</b><small>{c.city}{nick(c.id)?` · ${nick(c.id)}`:''}</small></span>{l&&<Dye art="shirt" soft className="mag-tile-shirt"/>}
        <span className="mag-tile-state">{copy.tileOpen}</span>
       </Link>})}

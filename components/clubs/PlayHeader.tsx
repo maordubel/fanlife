@@ -4,6 +4,7 @@ import Link from 'next/link'
 import {SlideSheet} from '@/components/stage/SlideSheet'
 import {livery} from '@/lib/club-livery'
 import {ENABLED_LOCALES} from '@/lib/clubs/locale'
+import { Badge } from '@/components/clubs/Badge'
 
 export type PlayHeaderProps={
  clubId:string;clubName:string;title:string;locale:string
@@ -25,7 +26,7 @@ export function PlayHeader({clubId,clubName,title,locale,help,copy,langLinks,asi
  const [open,setOpen]=useState(false),lv=livery(clubId),langs=langLinks.filter(x=>ENABLED_LOCALES.includes(x.l as 'en'))
  return <header className="mag-playhead" data-testid="play-header">
   <Link className="mag-playhead-back" href={`/clubs/${clubId}?lang=${locale}`} aria-label={`${copy.back}: ${clubName}`}><span aria-hidden="true">{locale==='he'?'→':'←'}</span><span className="mag-playhead-backtext">{copy.back}</span></Link>
-  <div className="mag-playhead-title">{lv&&<span className="mag-badge" data-livery={lv.pattern} aria-hidden="true">{lv.initials}</span>}<div><p className="mag-playhead-kicker"><bdi>{clubName}</bdi></p><h1><bdi>{title}</bdi></h1></div></div>
+  <div className="mag-playhead-title">{lv&&<Badge club={lv}/>}<div><p className="mag-playhead-kicker"><bdi>{clubName}</bdi></p><h1><bdi>{title}</bdi></h1></div></div>
   {aside&&<div className="mag-playhead-aside">{aside}</div>}
   <Link className="mag-playhead-mark" href="/" aria-label={copy.fanlife}>{/* eslint-disable-next-line @next/next/no-img-element -- 28px mark, shipped as measured */}<img src="/brand/fanlife/logo-mono.webp" alt="" width={28} height={28}/></Link>
   <button type="button" className="mag-playhead-help" aria-haspopup="dialog" aria-expanded={open} onClick={()=>setOpen(true)}><span aria-hidden="true">?</span><span className="sr-only">{copy.help}</span></button>

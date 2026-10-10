@@ -4,6 +4,7 @@ import Link from 'next/link'
 import {SlideSheet} from '@/components/stage/SlideSheet'
 import {clubHref} from '@/lib/clubs/club-href'
 import type {UiLocale} from '@/lib/clubs/locale'
+import { Badge } from '@/components/clubs/Badge'
 
 export type SwitchClub={id:string;name:string;city:string;initials:string;pattern:string;style:Record<string,string>|undefined}
 
@@ -20,7 +21,7 @@ export function ClubSwitcher({current,clubs,locale,copy}:{current:string;clubs:S
    <ul className="club-switch-list">
     {clubs.map(c=><li key={c.id}>
      <Link href={clubHref(c.id,'',locale)} className="club-switch-row" aria-current={c.id===current?'true':undefined} onClick={()=>setOpen(false)}>
-      <span className="mag-badge" data-livery={c.pattern} style={c.style} aria-hidden="true">{c.initials}</span>
+      <Badge club={c} style={c.style}/>
       <span><b>{c.name}</b><small>{c.id===current?copy.here:c.city}</small></span>
      </Link>
     </li>)}

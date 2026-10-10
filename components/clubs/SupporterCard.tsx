@@ -5,6 +5,7 @@ import {readActivity,RUN_GATES} from '@/lib/clubs/activity'
 import {readBeen} from '@/lib/fanlife/been'
 import {clubHref} from '@/lib/clubs/club-href'
 import type {UiLocale} from '@/lib/clubs/locale'
+import { Badge } from '@/components/clubs/Badge'
 
 type Copy={kicker:string;title:string;gates:string;rounds:string;been:string;since:string;empty:string;next:string}
 type Mine={walked:string[];rounds:number;been:number;since:string}
@@ -24,7 +25,7 @@ export function SupporterCard({clubId,clubName,initials,pattern,locale,open,name
  const next=open.find(k=>!m.walked.includes(k))
  const fresh=m.rounds===0&&m.been===0
  return <article className="sc-card" data-testid="supporter-card">
-  <header className="mag-band" data-livery={pattern}><span className="mag-badge" data-livery={pattern} aria-hidden="true">{initials}</span><div><p>{copy.kicker}</p><h3>{copy.title.replace('{club}',clubName)}</h3></div><small>{copy.since} <bdi>{m.since}</bdi></small></header>
+  <header className="mag-band" data-livery={pattern}><Badge club={{id:clubId,pattern,initials,name:clubName}}/><div><p>{copy.kicker}</p><h3>{copy.title.replace('{club}',clubName)}</h3></div><small>{copy.since} <bdi>{m.since}</bdi></small></header>
   {fresh?<p className="sc-empty">{copy.empty}</p>:<dl className="sc-stats"><div><dt>{copy.gates}</dt><dd><bdi>{m.walked.length}/{total}</bdi></dd></div><div><dt>{copy.rounds}</dt><dd><bdi>{m.rounds}</bdi></dd></div><div><dt>{copy.been}</dt><dd><bdi>{m.been}</bdi></dd></div></dl>}
   {next&&<Link className="sc-next min-h-tap" href={clubHref(clubId,next,locale)}>{copy.next} <b>{names[next]??next}</b> →</Link>}
  </article>

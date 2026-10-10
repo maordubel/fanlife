@@ -18,9 +18,9 @@ const NECK='M136 48C142 70 178 70 184 48'
 const NECK_BACK='M136 48C142 58 178 58 184 48'
 const CUFFS='M52 125C60 137 70 147 85 152M268 125C260 137 250 147 235 152'
 
-export type ClothProps={spec:ClothSpec;view?:'front'|'back';/** slots still to be filled, drawn as a dashed frame */missing?:SlotKey[];texture?:boolean;title?:string;className?:string;/** letters printed in the crest slot when `spec.crest` is on */monogram?:string;viewBox?:string}
+export type ClothProps={spec:ClothSpec;view?:'front'|'back';/** slots still to be filled, drawn as a dashed frame */missing?:SlotKey[];texture?:boolean;title?:string;className?:string;/** letters printed in the crest slot when `spec.crest` is on */monogram?:string;/** the club's own crest, printed in the crest slot instead of the monogram */crestSrc?:string|null;viewBox?:string}
 
-export function KitCloth({spec,view='front',missing=[],texture=true,title,className,monogram='',viewBox='20 30 300 285'}:ClothProps){
+export function KitCloth({spec,view='front',missing=[],texture=true,title,className,monogram='',crestSrc=null,viewBox='20 30 300 285'}:ClothProps){
  const uid=useId().replace(/:/g,''),id=(n:string)=>`${n}-${uid}`
  const baseHex=spec.base?colourHex(spec.base):null,trimHex=spec.trim?colourHex(spec.trim):null
  const baseFill=baseHex??'var(--mag-card)'
@@ -60,7 +60,7 @@ export function KitCloth({spec,view='front',missing=[],texture=true,title,classN
   <path d={CUFFS} fill="none" stroke="var(--mag-ink)" strokeWidth="1.2" opacity="0.7"/>
   {back?<Back name={spec.name} number={spec.number} ink={text} halo={baseFill}/>:<g clipPath={`url(#${id('cut')})`}>
    {gone.has('maker')?<Gap slot="maker"/>:<Word slot="maker" text={spec.maker} ink={text} halo={baseFill} size={12}/>}
-   {gone.has('crest')?<Gap slot="crest"/>:spec.crest?<Crest letters={monogram} ink={lightCloth(spec.trim??spec.base)?'var(--mag-ink)':'var(--mag-white)'} fill={trimHex??baseFill} halo={baseFill}/>:null}
+   {gone.has('crest')?<Gap slot="crest"/>:spec.crest?<Crest letters={monogram} src={crestSrc} ink={lightCloth(spec.trim??spec.base)?'var(--mag-ink)':'var(--mag-white)'} fill={trimHex??baseFill} halo={baseFill}/>:null}
    {gone.has('sponsor')?<Gap slot="sponsor"/>:<Word slot="sponsor" text={spec.sponsor} ink={text} halo={baseFill} size={26}/>}
   </g>}
  </svg>
@@ -101,8 +101,9 @@ function Word({slot,text,ink,halo,size}:{slot:SlotKey;text:string|null;ink:strin
  const s=wordmark(text),est=s.length*size*0.66,w=Math.min(est,b.w)
  return <text x={b.x+b.w/2} y={b.y+b.h/2+size*0.36} textAnchor="middle" fill={ink} stroke={halo} strokeWidth="4" strokeLinejoin="round" paintOrder="stroke" textLength={est>b.w?b.w:undefined} lengthAdjust="spacingAndGlyphs" style={{fontFamily:'var(--mag-body)',fontWeight:800,fontSize:size,letterSpacing:est>b.w?0:1}} data-mark={slot} data-w={Math.round(w)}>{s}</text>
 }
-function Crest({letters,ink,fill,halo}:{letters:string;ink:string;fill:string;halo:string}){
+function Crest({letters,ink,fill,halo,src}:{letters:string;ink:string;fill:string;halo:string;src?:string|null}){
  const b=SLOTS.crest,cx=b.x+b.w/2,cy=b.y+b.h/2
+ if(src)return <image data-mark="crest" href={src} x={cx-16} y={b.y-1} width={32} height={42} preserveAspectRatio="xMidYMid meet"/>
  return <g data-mark="crest"><circle cx={cx} cy={cy} r={19} fill={fill} stroke={halo} strokeWidth="3" paintOrder="stroke"/><circle cx={cx} cy={cy} r={19} fill="none" stroke={ink} strokeWidth="1.5"/><text x={cx} y={cy+5} textAnchor="middle" fill={ink} style={{fontFamily:'var(--mag-display)',fontSize:14,fontWeight:700}}>{letters.slice(0,3)}</text></g>
 }
 function Back({name,number,ink,halo}:{name:string|null;number:number|null;ink:string;halo:string}){

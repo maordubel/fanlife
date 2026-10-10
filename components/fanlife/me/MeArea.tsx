@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { activityKey, readActivity, xiKey } from '@/lib/clubs/activity'
 import { closetMine } from '@/lib/collector/api'
@@ -16,6 +16,8 @@ import { saveKey } from '@/lib/life/universal/engine'
 import type { MeClub } from '@/app/me/data'
 
 import { GoogleAccount } from './GoogleAccount'
+import { crestFor } from '@/lib/clubs/crest'
+import { Badge } from '@/components/clubs/Badge'
 
 /**
  * "Me" — The Worker's personal area (app/tik: the card, the oath, the story, the editor, the
@@ -55,13 +57,14 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
   const [closet, setCloset] = useState<Closet | null>(null)
   const [been, setBeen] = useState<BeenRow[]>([])
   const [tab, setTab] = useState<Tab>('card')
-  useEffect(() => {
+  const reread = useCallback(() => {
     setCard(readCard())
     const days = beenList(readBeen())
     setBeen(days)
     setRows(played(clubs, days))
-    void closetMine().then((r) => { if (r.ok) setCloset(r) })
+    void closetMine().then((r) => setCloset(r.ok ? r : null))
   }, [clubs])
+  useEffect(reread, [reread])
 
   const club = clubs.find((c) => c.id === card?.club) ?? null
   const total = rows.reduce((n, r) => n + r.rounds, 0)
@@ -70,7 +73,7 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
 
   return (
     <div className="fl-me">
-      <GoogleAccount />
+      <GoogleAccount onChange={reread} />
       <div className="fl-me-tabs" role="tablist" aria-label={fl('me.title')}>
         {(['card', 'oath', 'story', 'details'] as const).map((id) => (
           <button key={id} type="button" role="tab" aria-selected={tab === id} className="min-h-tap" onClick={() => setTab(id)}>{fl(`me.tab.${id}`)}</button>
@@ -89,7 +92,7 @@ export function MeArea({ clubs }: { clubs: MeClub[] }) {
         <ul className="fl-me-clubs">
           {(active.length ? active : rows.filter((r) => r.club.core)).map((r) => (
             <li key={r.club.id} style={wearLivery(r.club)}>
-              <span className="mag-badge" data-livery={r.club.pattern} aria-hidden="true">{r.club.initials}</span>
+              <Badge club={r.club}/>
               <div>
                 <b>{r.club.name}</b>
                 {r.rounds || r.xi || r.life || r.been ? (
@@ -126,7 +129,7 @@ function Card({ card, club, rank }: { card: MeCard | null; club: MeClub | null; 
       <header className="fl-card-head"><span>{fl('me.card.kicker')}</span><span>{fl('me.card.member')} <b>{card?.memberNo ?? '—'}</b></span></header>
       <div className="fl-card-body">
         <div className="fl-card-who">
-          {club ? <span className="mag-band fl-card-badge" data-livery={club.pattern} aria-hidden="true"><b>{club.initials}</b></span> : null}
+          {club ? (crestFor(club.id) ? <Badge club={club} className="fl-card-badge"/> : <span className="mag-band fl-card-badge" data-livery={club.pattern} aria-hidden="true"><b>{club.initials}</b></span>) : null}
           <h2>{card?.name || fl('me.card.anon')}</h2>
           <p className="fl-card-club">{club ? club.name : fl('me.card.noClub')}</p>
           <p className="fl-card-rank">{fl(`me.rank.${rank}` as 'me.rank.0')}</p>
