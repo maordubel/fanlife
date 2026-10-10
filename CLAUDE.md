@@ -2972,3 +2972,7 @@ Owner (8.10.2026): every club page is "a world of its own", with its own bottom 
 
 Maor: each club entrance is a full The Worker experience for that club, with its own loved gate emphasised. The rules are `docs/fanlife/42-club-personalisation-rules.md`; the code is `lib/clubs/beloved.ts` (terrace gate number read from the sourced `world.json`, the shirt game behind it), `lib/clubs/today.ts` (the club's own dated moment, real date, never invented), `components/clubs/ClubGateWall.tsx`, `ClubEntrance.tsx`, `ClubToday.tsx`, `SupporterCard.tsx`. A new club is not done until the setup checklist in that doc is true. Terrace gate numbers are never typed in code.
 
+
+## 102 · UEFA is sufficient for UEFA's own competitions (10.10.2026)
+
+Owner decision: a European tie's date, teams, score, scorers and starting elevens are approved on UEFA's match record alone (`approvedBy` quotes the decision). It applies to European matches only. `lib/clubs/euro-wave.ts` merges them, `scripts/ingest/clubs/uefa-mysteries.ts` makes Blind Cow targets from them, and each club's UEFA team id lives in `club-packs/<club>/ingest.json`. Details and what is still closed: `docs/fanlife/45-gates-uefa-2026-10-10.md`.

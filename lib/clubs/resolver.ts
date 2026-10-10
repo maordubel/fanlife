@@ -1,6 +1,6 @@
 import 'server-only'
 import {REGISTRY,clubFromHost,PORTAL_HOST_ROOT,type RegistryClub} from '@/lib/master/registry'
-import {compilePack} from './compiler'
+import {compilePack as compilePackBase} from './compiler'
 import type {ClubData,Diagnostic} from './contract'
 import {clubMystery} from './mystery'
 import {clubPolls} from './polls'
@@ -17,13 +17,15 @@ import olympiacosCof from '@/club-packs/olympiacos/wave-kits-cof-2026-10-09.json
 import celticCof from '@/club-packs/celtic/wave-kits-cof-2026-10-09.json'
 import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-09.json'
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
+import {withEuro} from './euro-wave'
+const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>compilePackBase(withEuro(pack,club.id) as never,club)
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
 /** The colours-of-football catalogue kits the club pack has no (season, type) for: status `review`, so they reach no gate until the owner approves them. */
 const CATALOGUE_KITS:Record<string,unknown>={'st-pauli':stPauliCof,celtic:celticCof,panathinaikos:panathinaikosCof,'zrinjski-mostar':zrinjskiCof,olympiacos:olympiacosCof}
 const withCatalogue=(pack:Record<string,unknown>,club:RegistryClub)=>mergeWave(pack,CATALOGUE_KITS[club.id] as never)
 function compileExistingArchive(pack:Record<string,unknown>,club:RegistryClub){
  const wave=club.id==='st-pauli'?stPauliArchive:zrinjskiArchive
- return compilePack(withCatalogue(mergeWave(pack,wave),club),club)
+ return compilePackEuro(withCatalogue(mergeWave(pack,wave),club),club)
 }
 const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[]}>>={
  'hapoel-tel-aviv':async()=>{
@@ -34,12 +36,12 @@ const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[
   return {data:{...base,kits:[...(base.kits||[]),...kits],sources:[...base.sources,...wave.sources.filter(x=>!have.has(x.id))]},diagnostics:[]}
  },
  'zrinjski-mostar':async()=>compileExistingArchive(mergeWave(mergeWave(mergeWave(mergeWave((await import('./adapters/zrinjski')).zrinjskiPack(),(await import('@/club-packs/zrinjski-mostar/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/zrinjski-mostar/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/zrinjski-mostar/wave-auto.json')).default as never)),(await import('@/club-packs/zrinjski-mostar/wave-kits-photos-2026-10-08.json')).default as never),(await import('@/club-packs/zrinjski-mostar/wave-uefa-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='zrinjski-mostar')!),
- 'hapoel-petah-tikva':async()=>compilePack(mergeWave(mergeWave(mergeWave(mergeWave((await import('@/club-packs/hapoel-petah-tikva/core.json')).default,(await import('@/club-packs/hapoel-petah-tikva/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/hapoel-petah-tikva/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/hapoel-petah-tikva/wave-auto.json')).default as never)),(await import('@/club-packs/hapoel-petah-tikva/wave-kits-photos-2026-10-08.json')).default as never),(await import('@/club-packs/hapoel-petah-tikva/wave-uefa-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='hapoel-petah-tikva')!),
- panathinaikos:async()=>compilePack(withCatalogue(mergeWave(mergeWave(mergeWave(mergeWave((await import('@/club-packs/panathinaikos/core.json')).default,(await import('@/club-packs/panathinaikos/wave-parity-2026-10-06.json')).default as never),(await import('@/club-packs/panathinaikos/wave-kits-photos-2026-10-08.json')).default as never),(await import('@/club-packs/panathinaikos/wave-uefa-2026-10-08.json')).default as never),(await import('@/club-packs/panathinaikos/wave-four-clubs-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='panathinaikos')!),REGISTRY.find(c=>c.id==='panathinaikos')!),
- 'aek-athens':async()=>compilePack(mergeWave(mergeWave((await import('@/club-packs/aek-athens/core.json')).default as never,(await import('@/club-packs/aek-athens/wave-deep-history-2026-10-08.json')).default as never),(await import('@/club-packs/aek-athens/wave-kits-aek-2026-10-09.json')).default as never),REGISTRY.find(c=>c.id==='aek-athens')!),
- 'celtic':async()=>{const club=REGISTRY.find(c=>c.id==='celtic')!;return compilePack(withCatalogue(mergeWave((await import('@/club-packs/celtic/core.json')).default as never,(await import('@/club-packs/celtic/wave-deep-history-2026-10-08.json')).default as never),club),club)},
+ 'hapoel-petah-tikva':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave(mergeWave((await import('@/club-packs/hapoel-petah-tikva/core.json')).default,(await import('@/club-packs/hapoel-petah-tikva/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/hapoel-petah-tikva/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/hapoel-petah-tikva/wave-auto.json')).default as never)),(await import('@/club-packs/hapoel-petah-tikva/wave-kits-photos-2026-10-08.json')).default as never),(await import('@/club-packs/hapoel-petah-tikva/wave-uefa-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='hapoel-petah-tikva')!),
+ panathinaikos:async()=>compilePackEuro(withCatalogue(mergeWave(mergeWave(mergeWave(mergeWave((await import('@/club-packs/panathinaikos/core.json')).default,(await import('@/club-packs/panathinaikos/wave-parity-2026-10-06.json')).default as never),(await import('@/club-packs/panathinaikos/wave-kits-photos-2026-10-08.json')).default as never),(await import('@/club-packs/panathinaikos/wave-uefa-2026-10-08.json')).default as never),(await import('@/club-packs/panathinaikos/wave-four-clubs-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='panathinaikos')!),REGISTRY.find(c=>c.id==='panathinaikos')!),
+ 'aek-athens':async()=>compilePackEuro(mergeWave(mergeWave((await import('@/club-packs/aek-athens/core.json')).default as never,(await import('@/club-packs/aek-athens/wave-deep-history-2026-10-08.json')).default as never),(await import('@/club-packs/aek-athens/wave-kits-aek-2026-10-09.json')).default as never),REGISTRY.find(c=>c.id==='aek-athens')!),
+ 'celtic':async()=>{const club=REGISTRY.find(c=>c.id==='celtic')!;return compilePackEuro(withCatalogue(mergeWave((await import('@/club-packs/celtic/core.json')).default as never,(await import('@/club-packs/celtic/wave-deep-history-2026-10-08.json')).default as never),club),club)},
  'st-pauli':async()=>compileExistingArchive(mergeWave((await import('@/club-packs/st-pauli/core.json')).default as never,(await import('@/club-packs/st-pauli/wave-deep-history-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='st-pauli')!),
- olympiacos:async()=>compilePack(withCatalogue(mergeWave(mergeWave(mergeWave((await import('@/club-packs/olympiacos/core.json')).default,(await import('@/club-packs/olympiacos/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/olympiacos/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/olympiacos/wave-auto.json')).default as never)),(await import('@/club-packs/olympiacos/wave-kits-photos-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='olympiacos')!),REGISTRY.find(c=>c.id==='olympiacos')!),
+ olympiacos:async()=>compilePackEuro(withCatalogue(mergeWave(mergeWave(mergeWave((await import('@/club-packs/olympiacos/core.json')).default,(await import('@/club-packs/olympiacos/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/olympiacos/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/olympiacos/wave-auto.json')).default as never)),(await import('@/club-packs/olympiacos/wave-kits-photos-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='olympiacos')!),REGISTRY.find(c=>c.id==='olympiacos')!),
 }
 /** Review-only clubs: material staged, nothing approved — loadable (gates show LOCKED), never in the playable set. */
 export const REVIEW_CLUB_IDS:string[]=[]
@@ -50,7 +52,7 @@ function finish(result:{data:ClubData;diagnostics:Diagnostic[]}){result.data.gat
 /** A club with no repository pack is played from its DESK PACK — built in the control room from the owner's approvals,
  * compiled by the same compiler. It can change at any time, so it is re-read after a minute (and at once after a build). */
 const DESK_TTL_MS=60_000
-async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null;const pack=await readDeskPack(id).catch(()=>null);return pack?compilePack(pack,reg):null}
+async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null;const pack=await readDeskPack(id).catch(()=>null);return pack?compilePackEuro(pack,reg):null}
 /** Static packs are immutable within a deployment; content versions travel with each run. */
 export function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null> {
  const isStatic=Object.hasOwn(providers,id)

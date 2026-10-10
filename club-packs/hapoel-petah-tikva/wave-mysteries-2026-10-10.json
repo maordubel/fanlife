@@ -1,0 +1,158 @@
+{
+ "sources": [
+  {
+   "id": "uefa-lu-64923",
+   "title": "UEFA match centre — official line-ups, match 64923",
+   "url": "https://match.uefa.com/v5/matches/64923/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "uefa-lu-54339",
+   "title": "UEFA match centre — official line-ups, match 54339",
+   "url": "https://match.uefa.com/v5/matches/54339/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "mysteries": [
+  {
+   "id": "uefa2-m-r26-yaniv-luzon",
+   "value": {
+    "targetPlayerId": "r26-yaniv-luzon",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Israel.",
+      "sources": [
+       "uefa-lu-64923"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-64923"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Intertoto Cup tie in the 2000/01 season.",
+      "sources": [
+       "uefa-lu-64923"
+      ],
+      "scope": {
+       "season": "2000/01",
+       "competition": "UEFA Intertoto Cup"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in August 1981.",
+      "sources": [
+       "uefa-lu-64923"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 8 in the 2000/01 season.",
+      "sources": [
+       "uefa-lu-64923"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2000/01",
+       "competition": "UEFA Intertoto Cup"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-64923"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-r26-manor-hassan",
+   "value": {
+    "targetPlayerId": "r26-manor-hassan",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Israel.",
+      "sources": [
+       "uefa-lu-54339"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-54339"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Europa League tie in the 1996/97 season.",
+      "sources": [
+       "uefa-lu-54339"
+      ],
+      "scope": {
+       "season": "1996/97",
+       "competition": "UEFA Europa League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in August 1976.",
+      "sources": [
+       "uefa-lu-54339"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 18 in the 1996/97 season.",
+      "sources": [
+       "uefa-lu-54339"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1996/97",
+       "competition": "UEFA Europa League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-54339"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  }
+ ]
+}

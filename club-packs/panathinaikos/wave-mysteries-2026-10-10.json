@@ -1,0 +1,1750 @@
+{
+ "sources": [
+  {
+   "id": "uefa-lu-2049281",
+   "title": "UEFA match centre — official line-ups, match 2049281",
+   "url": "https://match.uefa.com/v5/matches/2049281/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "uefa-lu-2049257",
+   "title": "UEFA match centre — official line-ups, match 2049257",
+   "url": "https://match.uefa.com/v5/matches/2049257/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "uefa-lu-2048796",
+   "title": "UEFA match centre — official line-ups, match 2048796",
+   "url": "https://match.uefa.com/v5/matches/2048796/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "uefa-lu-2048128",
+   "title": "UEFA match centre — official line-ups, match 2048128",
+   "url": "https://match.uefa.com/v5/matches/2048128/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "uefa-lu-2039277",
+   "title": "UEFA match centre — official line-ups, match 2039277",
+   "url": "https://match.uefa.com/v5/matches/2039277/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "uefa-lu-2021988",
+   "title": "UEFA match centre — official line-ups, match 2021988",
+   "url": "https://match.uefa.com/v5/matches/2021988/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "uefa-lu-2019511",
+   "title": "UEFA match centre — official line-ups, match 2019511",
+   "url": "https://match.uefa.com/v5/matches/2019511/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "uefa-lu-2018061",
+   "title": "UEFA match centre — official line-ups, match 2018061",
+   "url": "https://match.uefa.com/v5/matches/2018061/lineups",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-10-10"
+  }
+ ],
+ "mysteries": [
+  {
+   "id": "uefa2-m-inaki-pena",
+   "value": {
+    "targetPlayerId": "inaki-pena",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Spain.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in March 1999.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 1 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-pedro-chirivella",
+   "value": {
+    "targetPlayerId": "pedro-chirivella",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Spain.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in May 1997.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 4 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-andreas-tetteh",
+   "value": {
+    "targetPlayerId": "andreas-tetteh",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Greece.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in May 2001.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 7 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-vicente-taborda",
+   "value": {
+    "targetPlayerId": "vicente-taborda",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Italy.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in June 2001.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 20 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-etienne-camara",
+   "value": {
+    "targetPlayerId": "etienne-camara",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "France.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in March 2003.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 22 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-rick-van-drongelen",
+   "value": {
+    "targetPlayerId": "rick-van-drongelen",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Netherlands.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in December 1998.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 55 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-giorgos-kyriakopoulos",
+   "value": {
+    "targetPlayerId": "giorgos-kyriakopoulos",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Greece.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in February 1996.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 77 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-levi-garcia",
+   "value": {
+    "targetPlayerId": "levi-garcia",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Trinidad and Tobago.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in November 1997.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Height",
+      "value": "Stands 176 cm.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c6",
+      "label": "Shirt number",
+      "value": "Wore number 99 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-lucas-chaves",
+   "value": {
+    "targetPlayerId": "lucas-chaves",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Argentina.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in August 1995.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 12 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-konstantinos-kotsaris",
+   "value": {
+    "targetPlayerId": "konstantinos-kotsaris",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Greece.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in July 1996.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Height",
+      "value": "Stands 185 cm.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c6",
+      "label": "Shirt number",
+      "value": "Wore number 70 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-davide-calabria",
+   "value": {
+    "targetPlayerId": "davide-calabria",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Italy.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in December 1996.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 2 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-adriano-jagusic",
+   "value": {
+    "targetPlayerId": "adriano-jagusic",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Croatia.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in September 2005.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 8 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-cyriel-dessers",
+   "value": {
+    "targetPlayerId": "cyriel-dessers",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Nigeria.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in December 1994.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Height",
+      "value": "Stands 185 cm.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c6",
+      "label": "Shirt number",
+      "value": "Wore number 9 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-santino-andino",
+   "value": {
+    "targetPlayerId": "santino-andino",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Italy.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in October 2005.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 10 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-erik-palmer-brown",
+   "value": {
+    "targetPlayerId": "erik-palmer-brown",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "USA.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in April 1997.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 14 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-elmin-rastoder",
+   "value": {
+    "targetPlayerId": "elmin-rastoder",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "North Macedonia.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in October 2001.",
+      "sources": [
+       "uefa-lu-2049281"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 74 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049281"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049281"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-triantafyllos-tsapras",
+   "value": {
+    "targetPlayerId": "triantafyllos-tsapras",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Greece.",
+      "sources": [
+       "uefa-lu-2049257"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "uefa-lu-2049257"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049257"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in October 2001.",
+      "sources": [
+       "uefa-lu-2049257"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 19 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2049257"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2049257"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-pavlos-pantelidis",
+   "value": {
+    "targetPlayerId": "pavlos-pantelidis",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Greece.",
+      "sources": [
+       "uefa-lu-2048796"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "uefa-lu-2048796"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Conference League tie in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2048796"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in September 2002.",
+      "sources": [
+       "uefa-lu-2048796"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 17 in the 2026/27 season.",
+      "sources": [
+       "uefa-lu-2048796"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "UEFA Conference League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2048796"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-christos-geitonas",
+   "value": {
+    "targetPlayerId": "christos-geitonas",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Greece.",
+      "sources": [
+       "uefa-lu-2048128"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "uefa-lu-2048128"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Europa League tie in the 2025/26 season.",
+      "sources": [
+       "uefa-lu-2048128"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "UEFA Europa League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in September 2009.",
+      "sources": [
+       "uefa-lu-2048128"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 71 in the 2025/26 season.",
+      "sources": [
+       "uefa-lu-2048128"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "UEFA Europa League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2048128"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-aitor-cantalapiedra",
+   "value": {
+    "targetPlayerId": "aitor-cantalapiedra",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Spain.",
+      "sources": [
+       "uefa-lu-2039277"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-2039277"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Europa League tie in the 2023/24 season.",
+      "sources": [
+       "uefa-lu-2039277"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "UEFA Europa League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in February 1996.",
+      "sources": [
+       "uefa-lu-2039277"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 22 in the 2023/24 season.",
+      "sources": [
+       "uefa-lu-2039277"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2023/24",
+       "competition": "UEFA Europa League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2039277"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-omri-altman",
+   "value": {
+    "targetPlayerId": "omri-altman",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Israel.",
+      "sources": [
+       "uefa-lu-2021988"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "uefa-lu-2021988"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Europa League tie in the 2017/18 season.",
+      "sources": [
+       "uefa-lu-2021988"
+      ],
+      "scope": {
+       "season": "2017/18",
+       "competition": "UEFA Europa League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in March 1994.",
+      "sources": [
+       "uefa-lu-2021988"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 7 in the 2017/18 season.",
+      "sources": [
+       "uefa-lu-2021988"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2017/18",
+       "competition": "UEFA Europa League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2021988"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-lautaro-rinaldi",
+   "value": {
+    "targetPlayerId": "lautaro-rinaldi",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Italy.",
+      "sources": [
+       "uefa-lu-2019511"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "uefa-lu-2019511"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Europa League tie in the 2016/17 season.",
+      "sources": [
+       "uefa-lu-2019511"
+      ],
+      "scope": {
+       "season": "2016/17",
+       "competition": "UEFA Europa League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in December 1993.",
+      "sources": [
+       "uefa-lu-2019511"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Height",
+      "value": "Stands 181 cm.",
+      "sources": [
+       "uefa-lu-2019511"
+      ]
+     },
+     {
+      "id": "c6",
+      "label": "Shirt number",
+      "value": "Wore number 20 in the 2016/17 season.",
+      "sources": [
+       "uefa-lu-2019511"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2016/17",
+       "competition": "UEFA Europa League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2019511"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-sebastian-leto",
+   "value": {
+    "targetPlayerId": "sebastian-leto",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Italy.",
+      "sources": [
+       "uefa-lu-2019511"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "uefa-lu-2019511"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Europa League tie in the 2016/17 season.",
+      "sources": [
+       "uefa-lu-2019511"
+      ],
+      "scope": {
+       "season": "2016/17",
+       "competition": "UEFA Europa League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in August 1986.",
+      "sources": [
+       "uefa-lu-2019511"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Height",
+      "value": "Stands 188 cm.",
+      "sources": [
+       "uefa-lu-2019511"
+      ]
+     },
+     {
+      "id": "c6",
+      "label": "Shirt number",
+      "value": "Wore number 11 in the 2016/17 season.",
+      "sources": [
+       "uefa-lu-2019511"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2016/17",
+       "competition": "UEFA Europa League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2019511"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  },
+  {
+   "id": "uefa2-m-mladen-petric",
+   "value": {
+    "targetPlayerId": "mladen-petric",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Nationality",
+      "value": "Switzerland.",
+      "sources": [
+       "uefa-lu-2018061"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "uefa-lu-2018061"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "In Europe",
+      "value": "In the matchday squad for a UEFA Europa League tie in the 2015/16 season.",
+      "sources": [
+       "uefa-lu-2018061"
+      ],
+      "scope": {
+       "season": "2015/16",
+       "competition": "UEFA Europa League"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Born",
+      "value": "Born in January 1981.",
+      "sources": [
+       "uefa-lu-2018061"
+      ]
+     },
+     {
+      "id": "c5",
+      "label": "Height",
+      "value": "Stands 184 cm.",
+      "sources": [
+       "uefa-lu-2018061"
+      ]
+     },
+     {
+      "id": "c6",
+      "label": "Shirt number",
+      "value": "Wore number 33 in the 2015/16 season.",
+      "sources": [
+       "uefa-lu-2018061"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2015/16",
+       "competition": "UEFA Europa League"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "uefa-lu-2018061"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by UEFA's official line-up record of one European tie; the target is mapped to the pack player by exact normalised name."
+  }
+ ]
+}
