@@ -10,14 +10,14 @@ import {decodeDuel} from '@/lib/clubs/rumble-duel'
 import {requestClub} from '@/lib/clubs/request'
 import {CORE_CLUB_IDS} from '@/lib/clubs/resolver'
 import {REGISTRY} from '@/lib/master/registry'
+import {livery} from '@/lib/club-livery'
 import {forbiddenColor} from '@/lib/clubs/theme'
 import {kitViews} from '@/lib/clubs/gate-content'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import {DEFAULT_FORMATION,isFormation} from '@/lib/clubs/rumble-xi/formations'
 import {xiPool} from '@/lib/clubs/rumble-xi/pool'
 import {dealXI} from '@/lib/clubs/rumble-xi/deal'
-import {xiSeed} from '@/lib/clubs/rumble-xi/seed'
-import {pickRandomRival,rivalChoices,formationReadiness,budgetOf} from '@/lib/clubs/rumble-xi/server'
+import {pickRandomRival,rivalChoices,formationReadiness} from '@/lib/clubs/rumble-xi/server'
 import type {GateView,GateViewProps} from '../types'
 
 const nameOf=(id:string)=>REGISTRY.find(c=>c.id===id)?.name??id
@@ -51,7 +51,7 @@ export const view:GateView=async props=>{
  const rivalId=valid&&valid!==id?valid:id
  return <>
   <RumbleModeBar club={id} clubName={club.identity.name} locale={locale} mode="five"/>
-  <RumbleOpponentBar club={id} clubs={clubs} vs={opponent.kind==='club'?vsParam:null} duel={token&&opponent.kind==='locked'?duel:null} from={token&&opponent.kind==='locked'?token.c:null} locale={locale}/>
+  <RumbleOpponentBar club={id} clubs={clubs} vs={opponent.kind==='club'?vsParam:null} duel={token&&opponent.kind==='locked'?duel:null} from={token&&opponent.kind==='locked'?token.c:null} locale={locale} me={{id,name:club.identity.name,pattern:livery(id)?.pattern,initials:livery(id)?.initials}}/>
   <RumbleGame key={`${gameKey}:${valid??'self'}`} club={id} version={club.version} locale={locale} main={{seed:a,draft:deal(a)}} shuffle={{seed:b,draft:deal(b)}} wardrobe={wardrobe} playerCount={pool.length} vs={opponent.kind==='club'&&vsParam?vsParam:undefined} duel={token&&opponent.kind==='locked'&&duel?duel:undefined} againHref={`?${again}`} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:nameOf(rivalId)}}}/>
  </>
 }
@@ -65,7 +65,7 @@ async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
  if(rival==='same'&&!ready.sameClub22)rival=pickRandomRival(rivals,id,round.seed)
  const head=(vs:string)=><>
   <RumbleModeBar club={id} clubName={club.identity.name} locale={locale} mode="xi"/>
-  <RumbleXIEntry club={id} clubName={club.identity.name} locale={locale} formation={f} vs={vs} rivals={rivals} own={own} sameOk={ready.sameClub22}/>
+  <RumbleXIEntry club={id} clubName={club.identity.name} locale={locale} formation={f} vs={vs} rivals={rivals} own={own} sameOk={ready.sameClub22} me={{id,name:club.identity.name,pattern:livery(id)?.pattern,initials:livery(id)?.initials}}/>
  </>
  const stop=(msg:string)=><>{head(sp)}<p role="alert" data-testid="rumble-xi-stop" style={{margin:'12px 0',fontWeight:700}}>{msg}</p></>
  if(!ready.ready)return stop(say('rr.xi.notReady').replace('{formation}',f).replace('{reason}',ready.reasons[0]??'—'))
@@ -74,14 +74,14 @@ async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
  const away=same?club:(await requestClub(rivalId,9))?.data
  if(!away)return stop(say('rr.xi.noRival'))
  const awayPool=same?pool:xiPool(away)
- const budget=budgetOf(pool,awayPool,f),base=xiSeed(round.seed,id,rivalId,f),main=dealXI(pool,awayPool,f,base,same,budget)
- const shuf=main?dealXI(pool,awayPool,f,shuffleSeed(main.seed),same,budget):null
+ const main=dealXI(pool,awayPool,f,round.seed,same,id)
+ const shuf=main?dealXI(pool,awayPool,f,shuffleSeed(round.seed),same,id):null
  if(!main||!shuf)return stop(say('rr.xi.noRival'))
  const ownW=rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex))
  const wardrobe=same?{home:ownW.home,away:ownW.away.length?ownW.away:ownW.home}:apart(ownW,rumbleWardrobe(kitViews(away),hex=>forbiddenColor(club.theme,hex)))
  const again=new URLSearchParams({lang:locale,mode:'xi',f,vs:same?'same':rivalId,seed:String(round.seed+1)})
  return <>
   {head(sp==='random'?'random':same?'same':rivalId)}
-  <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} main={{seed:main.seed,draft:main.draft}} shuffle={{seed:shuf.seed,draft:shuf.draft}} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed} budget={budget}/>
+  <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} main={{seed:main.seed,draft:main.draft}} shuffle={{seed:shuf.seed,draft:shuf.draft}} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed}/>
  </>
 }

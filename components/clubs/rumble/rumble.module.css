@@ -455,13 +455,47 @@
 .mcNoteDark { margin: 4px 0 0; font-size: 11.5px; opacity: .7; }
 .hudIntroXI { font-size: clamp(22px, 6vw, 34px); line-height: 1; overflow-wrap: anywhere; }
 .game { scroll-margin-top: 72px; }
-.scoutRow { margin: 8px 0 0; }
-.scoutInput { inline-size: 100%; min-block-size: 44px; padding: 0 12px; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); font: inherit; }
-.scoutList { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; max-block-size: 50vh; overflow-y: auto; }
-.scoutList > li:not(:has(button)) { padding: 10px 4px; opacity: .7; }
-.scoutPick { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; align-items: center; gap: 10px; inline-size: 100%; min-block-size: 52px; padding: 6px 10px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); text-align: start; cursor: pointer; }
-.scoutPick:disabled { opacity: .45; cursor: default; }
-.scoutPick b { display: block; font-size: 14px; }
-.scoutPick small { display: block; font-size: 10px; opacity: .7; }
-.scoutShirt { inline-size: 32px; block-size: 31px; display: block; }
-.scoutShirt svg { inline-size: 100%; block-size: 100%; }
+
+/* the rival drop-down: two crests across a VS, a panel of club cards that drops open */
+.rp { position: relative; margin: 0 0 14px; }
+.rpBar { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) 24px; align-items: center; gap: 8px; inline-size: 100%; padding: 10px 12px; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); cursor: pointer; text-align: start; }
+.rpBar:focus-visible { outline: 3px solid var(--club-primary, var(--mag-ink)); outline-offset: 3px; }
+.rpSide { display: flex; align-items: center; gap: 10px; min-inline-size: 0; }
+.rpSide b { font-family: var(--mag-condensed, var(--mag-display)); font-size: 17px; line-height: 1.05; text-transform: uppercase; overflow-wrap: anywhere; }
+.rpSide:nth-of-type(2) { justify-content: flex-start; }
+.rpCrest { inline-size: 40px; block-size: 40px; flex: none; }
+.rpVs { font-family: var(--mag-display); font-size: 22px; padding: 2px 8px; background: var(--mag-ink); color: var(--mag-paper); transform: rotate(-4deg); }
+.rpChev { transition: transform .25s ease; font-size: 18px; }
+.rp[data-open] .rpChev { transform: rotate(180deg); }
+.rpPanel { position: absolute; inset-inline: 0; inset-block-start: calc(100% + 8px); z-index: 30; padding: 12px; border: 3px solid var(--mag-ink); background: var(--mag-paper); box-shadow: 8px 8px 0 var(--mag-ink); transform-origin: top; animation: rpDrop .28s cubic-bezier(.2, 1.2, .4, 1) 1; max-block-size: 70vh; overflow-y: auto; }
+.rpPanel[hidden] { display: none; }
+.rpPanel ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.rpCard { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; inline-size: 100%; block-size: 100%; padding: 14px 8px 10px; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); text-align: center; text-decoration: none; overflow: hidden; transition: transform .15s ease, box-shadow .15s ease; }
+.rpCard::before { content: ''; position: absolute; inset-inline: 0; inset-block-start: 0; block-size: 8px; background: var(--club-primary, var(--mag-ink)); }
+a.rpCard:hover, a.rpCard:focus-visible { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--mag-ink); outline: none; }
+a.rpCard[aria-selected='true'] { background: var(--club-primary, var(--mag-ink)); color: var(--club-on-primary, var(--mag-paper)); }
+.rpCard b { font-family: var(--mag-condensed, var(--mag-display)); font-size: 16px; line-height: 1.05; text-transform: uppercase; }
+.rpCard small { font-family: var(--mag-mono); font-size: 9.5px; letter-spacing: .6px; text-transform: uppercase; opacity: .8; }
+.rpFace { display: grid; place-items: center; inline-size: 58px; block-size: 64px; }
+.rpFace .rpCrest { inline-size: 56px; block-size: 56px; }
+.rpDice { display: grid; place-items: center; inline-size: 40px; block-size: 40px; }
+.rpFace .rpDice { inline-size: 54px; block-size: 54px; }
+.rpDice svg { inline-size: 100%; block-size: 100%; }
+.rpOff { opacity: .5; border-style: dashed; cursor: not-allowed; }
+.rpCard[data-kind='random'], .rpCard[data-kind='same'] { background: var(--mag-ink); color: var(--mag-paper); }
+.rpCard[data-kind='random']::before, .rpCard[data-kind='same']::before { background: var(--mag-salmon); }
+.rpClose { margin-block-start: 10px; inline-size: 100%; border: 2px solid var(--mag-ink); background: transparent; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+@keyframes rpDrop { from { transform: scaleY(.6) translateY(-10px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (min-width: 768px) { .rpPanel ul { grid-template-columns: repeat(4, minmax(0, 1fr)); } .rpSide b { font-size: 22px; } .rpCrest { inline-size: 52px; block-size: 52px; } }
+@media (prefers-reduced-motion: reduce) { .rpPanel { animation: none; } .rpChev, .rpCard { transition: none; } }
+/* formation: a tiny pitch with the eleven as dots */
+.fmRow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.fmCard { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 6px; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); text-decoration: none; text-align: center; }
+.fmCard b { font-family: var(--mag-display); font-size: 18px; line-height: 1; }
+.fmCard small { font-family: var(--mag-mono); font-size: 9px; letter-spacing: .6px; text-transform: uppercase; opacity: .75; }
+.fmCard[aria-current='true'] { background: var(--club-primary, var(--mag-ink)); color: var(--club-on-primary, var(--mag-paper)); }
+.fmCard[aria-disabled='true'] { opacity: .5; border-style: dashed; cursor: not-allowed; }
+.fmPitch { inline-size: 62px; block-size: 76px; border: 2px solid currentColor; border-radius: 3px; opacity: .9; }
+.fmPitch circle { fill: currentColor; }
+.fmPitch line, .fmPitch rect { stroke: currentColor; fill: none; stroke-width: 1; opacity: .5; }
+.legendTag { align-self: flex-start; padding: 1px 6px; background: var(--rr-lit); color: var(--rr-on); font-size: 9px; letter-spacing: 1px; }

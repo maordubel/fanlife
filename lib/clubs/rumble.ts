@@ -1,6 +1,10 @@
 import type {ClubData,ClubPlayer} from './contract'
 import {norm} from '@/lib/fixtures/names'
 import {derivedRating,workbookRating,type RatingBasis} from './ratings'
+import {withFeatured} from './rumble-economy'
+import {priceFor} from './rumble-xi/prices'
+import {extraPositions} from './rumble-xi/positions'
+import {mergesFor} from './rumble-xi/merges'
 /**
  * Royal Rumble for any club (gate 9). Five slots (GK · DF · MF · MF · FW), three cards each, a budget of 15.
  * STRENGTH is read only from what the club's own approved archive documents:
@@ -38,37 +42,52 @@ export function goalsByPlayer(data:ClubData):Map<string,number>{
   for(const s of Array.isArray(sc)?sc:[]){const id=s.name?names.get(norm(s.name)):undefined;if(id)out.set(id,(out.get(id)||0)+1)}}
  return out
 }
-/** `extra` carries positions read from a named public source for men the archive and the workbook leave unplaced (XI only; the classic pool is unchanged) */
-export function ratedPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}={}):Rated[]{
+/**
+ * The club's men with their HIDDEN ratings and no price yet (the price is the club's frozen list, `lib/clubs/rumble-xi/prices.ts`; the build
+ * script that makes the list reads this). A man whose position no source names is `free`: he may be dealt into any OUTFIELD slot, rated
+ * by the workbook or by his club's ordinary midfielder moved by his own record — never guessed into a position, never left out.
+ * `extra` carries positions read from a named public source for men the archive and the workbook leave unplaced.
+ */
+export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}={}):Rated[]{
  const goals=goalsByPlayer(data),club=data.identity?.id??''
- // his position is the archive's; where the archive documents none, the workbook's own position for him (never a guess)
  const posOf=(p:ClubPlayer):Pos|null=>first(p)??workbookRating(club,[p.name,...p.aliases])?.pos??opts.extra?.[p.id]??null
- const people=(data.players||[]).map(f=>f.value).filter(p=>posOf(p)!==null)
- const by=new Map<Pos,ClubPlayer[]>()
- for(const p of people)by.set(posOf(p)!,[...(by.get(posOf(p)!)||[]),p])
+ const all=(data.players||[]).map(f=>f.value).filter(p=>p.name),byId=new Map(all.map(p=>[p.id,p]))
+ // one man, one card: a record that is the same man as another (rumble-merges.json) is folded into the one kept — his names, years and goals travel along
+ const dropped=new Set<string>(),everyone:ClubPlayer[]=[]
+ for(const m of mergesFor(club)){const d=byId.get(m.drop),k=byId.get(m.keep);if(d&&k&&!dropped.has(k.id))dropped.add(d.id)}
+ for(const p of all){if(dropped.has(p.id))continue
+  const mine=mergesFor(club).filter(m=>m.keep===p.id).map(m=>byId.get(m.drop)).filter((x):x is ClubPlayer=>!!x)
+  if(!mine.length){everyone.push(p);continue}
+  const names=[p.name,...mine.map(x=>x.name)].sort((a,b)=>a.length-b.length)
+  for(const d of mine)goals.set(p.id,(goals.get(p.id)||0)+(goals.get(d.id)||0))
+  everyone.push({...p,name:names[0]!,aliases:[...new Set([p.name,...mine.map(x=>x.name),...p.aliases,...mine.flatMap(x=>x.aliases)])],fromYear:p.fromYear??mine.find(x=>x.fromYear!==null)?.fromYear??null,toYear:p.toYear??mine.find(x=>x.toYear!==null)?.toYear??null})}
+ const span=(p:ClubPlayer)=>p.fromYear!==null&&p.toYear!==null?p.toYear-p.fromYear+1:null
+ const by=new Map<Pos|'free',ClubPlayer[]>()
+ for(const p of everyone){const k=posOf(p)??'free';by.set(k,[...(by.get(k)||[]),p])}
  const out:Rated[]=[]
  for(const [pos,ps] of by){
-  const span=(p:ClubPlayer)=>p.fromYear!==null&&p.toYear!==null?p.toYear-p.fromYear+1:null
   const spans=ps.map(span),gs=ps.map(p=>goals.has(p.id)?goals.get(p.id)!:null)
   const scores=ps.map((p,i)=>pos==='GK'?pct(spans[i]!,spans):0.5*pct(spans[i]!,spans)+0.5*pct(gs[i]!,gs))
-  // the rating is the workbook's where it lists him, else the club-and-position baseline moved by his own record
   const given=ps.map(p=>workbookRating(club,[p.name,...p.aliases]))
-  const ratings=ps.map((_,i)=>given[i]?.score??derivedRating(club,pos,scores[i]!))
-  // the PRICE is the draft economy, so it follows his standing inside this club's own position group (the same bands as before)
-  // ties (a club baseline is one number) break on his own record, then on his id, so a price band is never a lottery of equals
-  const idx=ps.map((_,i)=>i).sort((a,b)=>ratings[a]!-ratings[b]!||scores[a]!-scores[b]!||ps[a]!.id.localeCompare(ps[b]!.id)),place=new Map(idx.map((i,k)=>[i,k] as const))
+  const base:Pos=pos==='free'?'MF':pos
   ps.forEach((p,i)=>{
-   const rank=place.get(i)!/Math.max(1,ps.length-1)
-   const index=Math.round(9+90*rank),price=index>=80?5:index>=62?4:index>=45?3:index>=28?2:1
-   out.push({id:p.id,name:p.name,position:pos,price,rating:ratings[i]!,basis:given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear})})
+   const rating=given[i]?.score??derivedRating(club,base,scores[i]!)
+   out.push({id:p.id,name:p.name,position:base,price:1,rating,basis:given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear,...(pos==='free'?{free:true}:{})})})
  }
  return out.sort((a,b)=>a.id.localeCompare(b.id))
 }
+/** the pool a game deals from: every man of the club, on the club's one frozen price list (the same price in five a side and in the eleven) */
+export function ratedPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}={}):Rated[]{
+ const club=data.identity?.id??'',extra=opts.extra??extraPositions(club)
+ return rawPool(data,{extra}).map(r=>({...r,price:priceFor(club,r.id)}))
+}
+/** can this man fill a slot of this position? a free man (no recorded position) fits any outfield slot */
+export const fits=(x:{position:Pos;free?:boolean},pos:Pos)=>x.free?pos!=='GK':x.position===pos
 export const strip=(r:Rated):RumbleCard=>({id:r.id,name:r.name,position:r.position,price:r.price,fromYear:r.fromYear,toYear:r.toYear,...(r.free?{free:true}:{})})
 const count=(f:Format,p:Pos)=>f.slots.filter(x=>x===p).length
 /** how many of each position a club needs before the gate can deal (offers + an opponent who is not the same men): twice the slots, and a full pool at three times */
 export function rumbleReadiness(pool:Rated[],format:Format=FIVE){
- const n=(p:Pos)=>pool.filter(x=>x.position===p).length,all=['GK','DF','MF','FW'] as Pos[]
+ const n=(p:Pos)=>pool.filter(x=>fits(x,p)).length,all=['GK','DF','MF','FW'] as Pos[]
  const need=Object.fromEntries(all.map(p=>[p,2*count(format,p)])) as Record<Pos,number>
  const short=all.filter(p=>count(format,p)>0&&n(p)<need[p])
  return {playable:short.length===0,full:all.every(p=>count(format,p)===0||n(p)>=3*count(format,p)),short:short.map(p=>`${need[p]-n(p)} more ${p}`)}
@@ -85,11 +104,11 @@ export function dealRival(pool:Rated[],seed:number,format:Format=FIVE):Rated[]|n
  const r=mulberry(seed^0x9e3779b9),taken=new Set<string>(),rival:Rated[]=[],slots=format.slots
  let money=format.budget
  for(let i=0;i<slots.length;i++){
-  const pos=slots[i]!,left=pool.filter(x=>x.position===pos&&!taken.has(x.id)),options=shuffle(left,r).slice(0,format.offers)
+  const pos=slots[i]!,left=pool.filter(x=>fits(x,pos)&&!taken.has(x.id)),options=shuffle(left,r).slice(0,format.offers)
   if(!options.length)return null
-  const floor=slots.slice(i+1).reduce((t,p,j,rest)=>{const free=pool.filter(x=>x.position===p&&!taken.has(x.id)).map(x=>x.price).sort((a,b)=>a-b);return t+(free[rest.slice(0,j).filter(q=>q===p).length]??1)},0)
-  const fits=options.filter(o=>o.price+floor<=money).sort((a,b)=>b.rating-a.rating||a.price-b.price)
-  const best=fits[0]??[...left].sort((a,b)=>a.price-b.price||b.rating-a.rating)[0]!
+  const floor=slots.slice(i+1).reduce((t,p,j,rest)=>{const free=pool.filter(x=>fits(x,p)&&!taken.has(x.id)).map(x=>x.price).sort((a,b)=>a-b);return t+(free[rest.slice(0,j).filter(q=>q===p).length]??1)},0)
+  const affordable=options.filter(o=>o.price+floor<=money).sort((a,b)=>b.rating-a.rating||a.price-b.price)
+  const best=affordable[0]??[...left].sort((a,b)=>a.price-b.price||b.rating-a.rating)[0]!
   taken.add(best.id);rival.push(best);money-=best.price
  }
  return rival
@@ -103,17 +122,21 @@ export function rivalFor(pool:Rated[],seed:number,vs:Opponent=SELF,format:Format
 }
 /** The deal: per slot, up to `offers` cards of that position, never repeating a man across slots and never a man the opponent fields (only possible when both sides draw on one pool). Deterministic in the seed. */
 export function dealDraft(pool:Rated[],seed:number,vs:Opponent=SELF,format:Format=FIVE):RumbleCard[][]{
- const r=mulberry(seed),used=new Set<string>(vs.kind==='self'?(dealRival(pool,seed,format)||[]).map(c=>c.id):vs.kind==='locked'?vs.cards.map(c=>c.id):[])
- return format.slots.map(pos=>{
-  const cards=shuffle(pool.filter(x=>x.position===pos&&!used.has(x.id)),r).slice(0,format.offers)
-  cards.forEach(c=>used.add(c.id));return cards.map(strip)
+ const r=mulberry(seed),used=new Set<string>(vs.kind==='self'?(dealRival(pool,seed,format)||[]).map(c=>c.id):vs.kind==='locked'?vs.cards.map(c=>c.id):[]),rivalIds=new Set(used)
+ const board=format.slots.map(pos=>{
+  const cards=shuffle(pool.filter(x=>fits(x,pos)&&!used.has(x.id)),r).slice(0,format.offers)
+  cards.forEach(c=>used.add(c.id));return cards
  })
+ // the rulebook: at least one €5M man in every board, and one who can really be bought inside the budget
+ const free=pool.filter(x=>!board.flat().some(c=>c.id===x.id)&&!rivalIds.has(x.id))
+ const featured=withFeatured(board,free,(c,i)=>fits(c,format.slots[i]!),mulberry(seed^0x5bd1e995),format.budget)
+ return (featured??board).map(cards=>cards.map(strip))
 }
 export type RumbleResult={you:{cards:Rated[];power:number;cost:number};rival:{cards:Rated[];power:number;club?:string};verdict:'win'|'draw'|'loss';goals:[number,number]}
 /** The five a player would field are checked against the board the seed deals, the budget and the slots — shared by `play` and the duel-link validator. */
 export function checkFive(pool:Rated[],ids:string[],format:Format=FIVE):Rated[]|null{
  if(ids.length!==format.slots.length||new Set(ids).size!==ids.length)return null
- const chosen=ids.map(id=>pool.find(x=>x.id===id)).map((c,i)=>c&&c.position===format.slots[i]?c:null)
+ const chosen=ids.map(id=>pool.find(x=>x.id===id)).map((c,i)=>c&&fits(c,format.slots[i]!)?c:null)
  if(chosen.some(c=>!c))return null
  const cards=chosen as Rated[]
  return cards.reduce((s,c)=>s+c.price,0)<=format.budget?cards:null

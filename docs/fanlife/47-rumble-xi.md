@@ -1,21 +1,25 @@
-# Royal Rumble XI — eleven a side, prices, reach
+# Royal Rumble — what is built (rumble-economy-v1)
 
-**Where:** gate 9, `?mode=xi` (`lib/clubs/rumble-xi/*`, `lib/clubs/rumble-play.ts`, `components/clubs/rumble/*`). The classic five-a-side game is untouched.
+The rulebook is `48-rumble-rulebook-v1.md`; this is how the code keeps it. Gate 9: five a side (€15M) and eleven a side (`?mode=xi`, €35M). Both budgets are HARD — no code raises one; a club that cannot field a legal board is *not ready*, with the reason on screen.
 
-## Rules in one screen
-- €35M for eleven; 4-3-3, 4-4-2 or 3-5-2; the rival is a different eleven of your own club, any other club that can field one, or a draw (fixed by the round's seed).
-- Three cards per slot where the pool allows (one or two where a club's archive is small: the club is then marked *limited*, never hidden).
-- Positions are the archive's four families; where a man stands in the shape is an estimate and the screen says so.
+## Prices — `content/generated/rumble-prices-v3.json`
+Per club, frozen, read never computed: 10 men at €5M, 20 at €4M, 40 at €3M, 60 at €2M, everyone else €1M; an archive under 130 men gets the same ladder in proportion once (largest remainder, at least one €5M, `lib/clubs/rumble-xi/quota.ts`). Whole millions only. The same price in five a side and in the eleven (`ratedPool` and `xiPool` both read `priceFor(club, id)`).
+Ordering at freeze (one time): pinned men first (`content/manual/rumble-pins.json` — Hapoel Tel Aviv's ten are THE WORKER's canonical ten), then one score: 55% playing strength · 20% years at the club · 15% goals · 10% terrace standing (Hapoel: THE WORKER's own price). A part nobody wrote down is left out of the score and the rest renormalised. Weights are the rulebook's proposal; **the top ten of every other club is automatic until the owner pins it** — add lines to `rumble-pins.json`, delete that club from the price file, `npm run rumble:prices -- freeze`.
+Commands: `npm run rumble:prices -- freeze | migrate | validate`. A man who joins later is added at €1M by `migrate`; no price ever moves.
 
-## Prices (`content/generated/rumble-prices.json`)
-A man's price is where his rating stands among **all** the men of his family across the eight clubs — not among his own club's. Nine quantile cut points per family give €1M…€5M in half-million steps (about one man in thirty-three at the maximum, one in fourteen at the minimum). Game money, not a transfer value, not an official rating.
-`npm run rumble:prices` rebuilds the table; `tests/clubs/rumble-xi.test.ts` fails when the file is not what a fresh build produces.
+## One man, one card
+`content/manual/rumble-merges.json` (found by `scripts/rumble/find-merges.ts`, editable) folds records of one club that are the same man (same last word, same or nickname first name, years not contradicting, exactly one counterpart each). Surname-only and nickname-ambiguous records are left alone.
 
-## Reach — every man is signable
-1. **Pool.** `ratedPool` takes a man only if some source names his position: the archive, the owner workbook, or `content/manual/player-positions-extra.json`.
-2. **Extra positions.** `scripts/rumble/fill-positions.mjs` reads the football-biography infobox of English / Hebrew / Greek Wikipedia (CC BY-SA) for the men the archive leaves unplaced. Accepted only on an exact title, a footballer page naming *this* club; a disambiguation page is followed only when exactly one candidate qualifies. Everyone else is listed under `unplaced` with the reason — never matched by surname.
-3. **Scouting.** Twice a round a player may sign **any** man of the slot's family by name (his price + €1M). The server re-checks family, pool, the rival's eleven and the cap. So even a man who is never dealt is one search away.
-4. `tests/clubs/rumble-xi.test.ts` asserts nobody drops silently (pool or listed) and every pooled man is findable.
+## Every man is dealt
+- Positions come from the archive, the owner workbook, then `content/manual/player-positions-extra.json` (Wikipedia infoboxes read by `scripts/rumble/fill-positions.mjs`: exact title, a footballer page naming *this* club).
+- A man with no recorded position anywhere is `free`: he is dealt into any **outfield** slot (never in goal), rated by the workbook or the club's ordinary midfielder, and is a regular member of the deck.
+- **Decks** (`rumble-xi/deal.ts`): per family a fixed order of the whole archive; a board reads the deck at the round's place, so consecutive rounds walk through everyone before any man repeats. The same round is the same board (seed + club + opponent + shape).
 
-## Football
-`lib/clubs/rumble-play.ts` tells what happens around the decided score: build-ups between named players, tackles, interceptions, corners, offsides, fouls, cards; stats and match ratings. Goals come only from the staged events.
+## The €5M guarantee
+`lib/clubs/rumble-economy.ts`: every board holds at least one €5M man in a legal slot who can be bought with a complete squad still possible inside the budget around him (`withFeatured`; five a side and eleven). If no such board can be dealt in 40 tries the club is NOT READY — prices, budget and roles are never touched.
+
+## The rival
+Committed first, from his own club's list and his own €35M, independent of the player. Own club: a different eleven (the board excludes his men).
+
+## The match and the screens
+`lib/clubs/rumble-play.ts` tells the football around the decided score; `components/clubs/rumble/*` is the match centre (commentary, stats, teams, half time, speed). The rival is chosen in a drop-down of club cards (`RivalPicker`), the shape on three little pitches.

@@ -40,6 +40,7 @@ export function RumbleCardButton({card,index,selected,disabled,blocked,flip,onPi
     <span><span className={`${s.mono} ${s.cardEntry}`} style={{display:'block'}}>{tr(copy,'rr.entry',{n:String(index+1).padStart(2,'0')})}</span><span className={`${s.mono} ${s.cardPos}`}>{posShort(copy,card.position)}</span></span>
     <span className={s.price} dir="ltr">{money(card.price)}</span>
    </span>
+   {card.price===5&&<span className={`${s.mono} ${s.legendTag}`}>{tr(copy,'rr.legend')}</span>}
    <span className={s.cardShirt}><RumbleShirt card={card} side="us" wardrobe={wardrobe}/></span>
    <span className={s.cardName} dir="auto">{card.name}</span>
    <span><span className={s.cardYearsLabel}>{tr(copy,'rr.years')}</span><span className={`${s.mono} ${s.cardYears}`} dir="ltr">{years(copy,card)}</span></span>
