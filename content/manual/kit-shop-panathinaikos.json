@@ -1,0 +1,217 @@
+{
+ "source": {
+  "note": "Retail product photographs of real shirts, from four shops' public product feeds; used with the owner's approval (chat, 2026-10-10). Season, type and maker are the product title's words.",
+  "stores": [
+   {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/"
+   },
+   {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/"
+   },
+   {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/"
+   },
+   {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/"
+   }
+  ],
+  "readOn": "2026-10-10"
+ },
+ "count": 10,
+ "kits": [
+  {
+   "id": "shop-cultkits-1996-97-panathinaikos-l-s-home-shirt-l-adidas-5m7tga1a",
+   "type": "home",
+   "season": "1996/97",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "adidas",
+   "title": "1996/97 Panathinaikos L/S Home Shirt (L) Adidas",
+   "image": "/club-kits/panathinaikos/shop/cultkits-1996-97-panathinaikos-l-s-home-shirt-l-adidas-5m7tga1a.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/1996-97-panathinaikos-l-s-home-shirt-l-adidas-5m7tga1a"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1999-00-panathinaikos-adidas-home-shirt-sigurdsson-11-xl",
+   "type": "home",
+   "season": "1999/00",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "1999-00 Panathinaikos adidas Home Shirt Sigurdsson #11 XL",
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-1999-00-panathinaikos-adidas-home-shirt-sigurdsson-11-xl.webp",
+   "width": 900,
+   "height": 749,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1999-00-panathinaikos-adidas-home-shirt-sigurdsson-11-xl"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2000-01-panathinaikos-adidas-player-issue-away-shirt-w-tags-xl",
+   "type": "away",
+   "season": "2000/01",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "adidas",
+   "title": "2000-01 Panathinaikos adidas Player Issue Away Shirt L/S *w/tags* XL",
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-2000-01-panathinaikos-adidas-player-issue-away-shirt-w-tags-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2000-01-panathinaikos-adidas-player-issue-away-shirt-w-tags-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2001-02-panathinaikos-19-home-shirt-m-adidas",
+   "type": "home",
+   "season": "2001/02",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2001/02 PANATHINAIKOS #19 HOME SHIRT (M) ADIDAS",
+   "image": "/club-kits/panathinaikos/shop/cultkits-2001-02-panathinaikos-19-home-shirt-m-adidas.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2001-02-panathinaikos-19-home-shirt-m-adidas"
+   }
+  },
+  {
+   "id": "shop-cultkits-2003-04-panathinaikos-zutautas-14-match-worn-vs-home-shirt-xl-adidas6786",
+   "type": "home",
+   "season": "2003/04",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2003/04 PANATHINAIKOS ZUTAUTAS #14 *MATCH WORN VS MANCHESTER UNITED* HOME SHIRT (XL) ADIDAS",
+   "image": "/club-kits/panathinaikos/shop/cultkits-2003-04-panathinaikos-zutautas-14-match-worn-vs-home-shirt-xl-adidas6786.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2003-04-panathinaikos-zutautas-14-match-worn-vs-home-shirt-xl-adidas6786"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2006-07-panathinaikos-adidas-away-shirt-xl",
+   "type": "away",
+   "season": "2006/07",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2006-07 Panathinaikos adidas Away Shirt XL",
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-2006-07-panathinaikos-adidas-away-shirt-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2006-07-panathinaikos-adidas-away-shirt-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2008-09-panathinaikos-home-shirt-l-adidas4563",
+   "type": "home",
+   "season": "2008/09",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2008/09 PANATHINAIKOS HOME SHIRT (L) ADIDAS",
+   "image": "/club-kits/panathinaikos/shop/cultkits-2008-09-panathinaikos-home-shirt-l-adidas4563.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2008-09-panathinaikos-home-shirt-l-adidas4563"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2008-09-panathinaikos-adidas-centenary-home-shirt-m-42260",
+   "type": "home",
+   "season": "2008/09",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2008-09 Panathinaikos adidas Centenary Home Shirt XL",
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-2008-09-panathinaikos-adidas-centenary-home-shirt-m-42260.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2008-09-panathinaikos-adidas-centenary-home-shirt-m-42260"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2019-20-panathinaikos-kappa-kombat-home-shirt-bnib-34319",
+   "type": "home",
+   "season": "2019/20",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Kappa",
+   "title": "2019-20 Panathinaikos Kappa Kombat Home Shirt *BNIB*",
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-2019-20-panathinaikos-kappa-kombat-home-shirt-bnib-34319.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2019-20-panathinaikos-kappa-kombat-home-shirt-bnib-34319"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2021-22-panathinaikos-kappa-kombat-pro-goalkeeper-shirt-xxl",
+   "type": "gk",
+   "season": "2021/22",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Kappa",
+   "title": "2021-22 Panathinaikos Kappa Kombat Pro Goalkeeper Shirt XXL",
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-2021-22-panathinaikos-kappa-kombat-pro-goalkeeper-shirt-xxl.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2021-22-panathinaikos-kappa-kombat-pro-goalkeeper-shirt-xxl"
+   }
+  }
+ ]
+}

@@ -1,0 +1,160 @@
+{
+ "source": {
+  "note": "Retail product photographs of real shirts, from four shops' public product feeds; used with the owner's approval (chat, 2026-10-10). Season, type and maker are the product title's words.",
+  "stores": [
+   {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/"
+   },
+   {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/"
+   },
+   {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/"
+   },
+   {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/"
+   }
+  ],
+  "readOn": "2026-10-10"
+ },
+ "count": 7,
+ "kits": [
+  {
+   "id": "shop-vintagefootballshirts-1993-94-aek-athens-home-shirt-xl-24331",
+   "type": "home",
+   "season": "1993/94",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "1993-94 AEK Athens Home Shirt L",
+   "image": "/club-kits/aek-athens/shop/vintagefootballshirts-1993-94-aek-athens-home-shirt-xl-24331.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.3879,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1993-94-aek-athens-home-shirt-xl-24331"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-1994-95-aek-athens-champions-league-home-shirt-s",
+   "type": "home",
+   "season": "1994/95",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "1994-95 AEK Athens Champions League Home Shirt S",
+   "image": "/club-kits/aek-athens/shop/vintagefootballshirts-1994-95-aek-athens-champions-league-home-shirt-s.webp",
+   "width": 900,
+   "height": 788,
+   "yellowShare": 0.1065,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1994-95-aek-athens-champions-league-home-shirt-s"
+   }
+  },
+  {
+   "id": "shop-cultkits-2002-04-aek-athens-home-shirt-xxl-nike7474",
+   "type": "home",
+   "season": "2002/03",
+   "spans": "2002-04",
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2002/04 AEK ATHENS HOME SHIRT (XXL) NIKE",
+   "image": "/club-kits/aek-athens/shop/cultkits-2002-04-aek-athens-home-shirt-xxl-nike7474.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0838,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2002-04-aek-athens-home-shirt-xxl-nike7474"
+   }
+  },
+  {
+   "id": "shop-cultkits-2007-08-aek-athens-home-shirt-l-puma424",
+   "type": "home",
+   "season": "2007/08",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2007/08 AEK ATHENS HOME SHIRT (L) PUMA",
+   "image": "/club-kits/aek-athens/shop/cultkits-2007-08-aek-athens-home-shirt-l-puma424.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.2238,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2007-08-aek-athens-home-shirt-l-puma424"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2007-08-aek-athens-puma-home-shirt-m",
+   "type": "home",
+   "season": "2007/08",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2007-08 AEK Athens Puma Home Shirt M",
+   "image": "/club-kits/aek-athens/shop/vintagefootballshirts-2007-08-aek-athens-puma-home-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.5039,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2007-08-aek-athens-puma-home-shirt-m"
+   }
+  },
+  {
+   "id": "shop-shortyfootballshirts-aek-2018-19-original-third-shirt-svarnas-24-size-s",
+   "type": "third",
+   "season": "2018/19",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "AEK 2018/19 Original Third Shirt Svarnas #24 Size S",
+   "image": "/club-kits/aek-athens/shop/shortyfootballshirts-aek-2018-19-original-third-shirt-svarnas-24-size-s.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0315,
+   "credit": {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/",
+    "page": "https://shortyfootballshirts.com/products/aek-2018-19-original-third-shirt-svarnas-24-size-s"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2025-26-aek-athens-nike-home-shirt-xl",
+   "type": "home",
+   "season": "2025/26",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Nike",
+   "title": "2025-26 AEK Athens Nike Home Shirt XL",
+   "image": "/club-kits/aek-athens/shop/vintagefootballshirts-2025-26-aek-athens-nike-home-shirt-xl.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.2522,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2025-26-aek-athens-nike-home-shirt-xl"
+   }
+  }
+ ]
+}

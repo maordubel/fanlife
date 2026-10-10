@@ -1,0 +1,445 @@
+{
+ "source": {
+  "note": "Retail product photographs of real shirts, from four shops' public product feeds; used with the owner's approval (chat, 2026-10-10). Season, type and maker are the product title's words.",
+  "stores": [
+   {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/"
+   },
+   {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/"
+   },
+   {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/"
+   },
+   {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/"
+   }
+  ],
+  "readOn": "2026-10-10"
+ },
+ "count": 22,
+ "kits": [
+  {
+   "id": "shop-vintagefootballshirts-1992-93-olympiakos-umbro-home-shirt-l",
+   "type": "home",
+   "season": "1992/93",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "1992-93 Olympiakos Umbro Home Shirt L",
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-1992-93-olympiakos-umbro-home-shirt-l.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0005,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/1992-93-olympiakos-umbro-home-shirt-l"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2000-01-olympiakos-umbro-75th-anniversary-home-shirt-y",
+   "type": "home",
+   "season": "2000/01",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2000-01 Olympiakos Umbro '75th Anniversary' Home Shirt Y",
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-2000-01-olympiakos-umbro-75th-anniversary-home-shirt-y.webp",
+   "width": 900,
+   "height": 776,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2000-01-olympiakos-umbro-75th-anniversary-home-shirt-y"
+   }
+  },
+  {
+   "id": "shop-cultkits-2001-02-olympiakos-home-shirt-xl-umbro6574",
+   "type": "home",
+   "season": "2001/02",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2001/02 OLYMPIAKOS HOME SHIRT (XL) UMBRO",
+   "image": "/club-kits/olympiacos/shop/cultkits-2001-02-olympiakos-home-shirt-xl-umbro6574.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2001-02-olympiakos-home-shirt-xl-umbro6574"
+   }
+  },
+  {
+   "id": "shop-cultkits-2002-03-olympiakos-patsatzoglu-2-c-l-match-worn-vs-manchester-united-away-shirt-x",
+   "type": "away",
+   "season": "2002/03",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2002/03 OLYMPIAKOS PATSATZOGLU #2 C/L *MATCH WORN vs MANCHESTER UNITED* AWAY SHIRT (XL) UMBRO",
+   "image": "/club-kits/olympiacos/shop/cultkits-2002-03-olympiakos-patsatzoglu-2-c-l-match-worn-vs-manchester-united-away-shirt-x.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2002-03-olympiakos-patsatzoglu-2-c-l-match-worn-vs-manchester-united-away-shirt-xl-umbro"
+   }
+  },
+  {
+   "id": "shop-cultkits-2001-02-olympiakos-home-shirt-l-umbro246",
+   "type": "home",
+   "season": "2002/03",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2002/03 OLYMPIAKOS HOME SHIRT (L) UMBRO",
+   "image": "/club-kits/olympiacos/shop/cultkits-2001-02-olympiakos-home-shirt-l-umbro246.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2001-02-olympiakos-home-shirt-l-umbro246"
+   }
+  },
+  {
+   "id": "shop-cultkits-2003-04-olympiacos-djordevic-11-home-shirt-xl-umbro46356",
+   "type": "home",
+   "season": "2003/04",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2003/04 OLYMPIACOS DJORDEVIC #11 HOME SHIRT (XL) UMBRO",
+   "image": "/club-kits/olympiacos/shop/cultkits-2003-04-olympiacos-djordevic-11-home-shirt-xl-umbro46356.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2003-04-olympiacos-djordevic-11-home-shirt-xl-umbro46356"
+   }
+  },
+  {
+   "id": "shop-cultkits-2004-05-olympiakos-bnwt-gk-shirt-m-umbro",
+   "type": "gk",
+   "season": "2004/05",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Umbro",
+   "title": "2004/05 OLYMPIAKOS *BNWT* GK SHIRT (M) UMBRO",
+   "image": "/club-kits/olympiacos/shop/cultkits-2004-05-olympiakos-bnwt-gk-shirt-m-umbro.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2004-05-olympiakos-bnwt-gk-shirt-m-umbro"
+   }
+  },
+  {
+   "id": "shop-footballshirtcollective-2005-06-olympiacos-puma-home-shirt-very-good-xl",
+   "type": "home",
+   "season": "2005/06",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2005-06 Olympiacos Puma Home Shirt Very Good XL",
+   "image": "/club-kits/olympiacos/shop/footballshirtcollective-2005-06-olympiacos-puma-home-shirt-very-good-xl.webp",
+   "width": 810,
+   "height": 810,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Football Shirt Collective",
+    "url": "https://footballshirtcollective.com/",
+    "page": "https://footballshirtcollective.com/products/2005-06-olympiacos-puma-home-shirt-very-good-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2005-06-olympiakos-rivaldo-10-home-shirt-xxl-puma",
+   "type": "home",
+   "season": "2005/06",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2005/06 OLYMPIAKOS RIVALDO #10 HOME SHIRT (XXL) PUMA",
+   "image": "/club-kits/olympiacos/shop/cultkits-2005-06-olympiakos-rivaldo-10-home-shirt-xxl-puma.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2005-06-olympiakos-rivaldo-10-home-shirt-xxl-puma"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2005-06-olympiakos-puma-third-shirt-s",
+   "type": "third",
+   "season": "2005/06",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2005-06 Olympiakos Puma Third Shirt S",
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-2005-06-olympiakos-puma-third-shirt-s.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0001,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2005-06-olympiakos-puma-third-shirt-s"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2006-07-olympiakos-puma-fourth-shirt-m",
+   "type": "fourth",
+   "season": "2006/07",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2006-07 Olympiakos Puma Fourth Shirt M",
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-2006-07-olympiakos-puma-fourth-shirt-m.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0001,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2006-07-olympiakos-puma-fourth-shirt-m"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2006-07-olympiakos-puma-home-shirt-s-1",
+   "type": "home",
+   "season": "2006/07",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2006-07 Olympiakos Puma Home Shirt S",
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-2006-07-olympiakos-puma-home-shirt-s-1.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2006-07-olympiakos-puma-home-shirt-s-1"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2006-07-olympiakos-puma-home-shirt-l-s-xl",
+   "type": "home",
+   "season": "2006/07",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Puma",
+   "title": "2006-07 Olympiakos Puma Home Shirt L/S XL",
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-2006-07-olympiakos-puma-home-shirt-l-s-xl.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2006-07-olympiakos-puma-home-shirt-l-s-xl"
+   }
+  },
+  {
+   "id": "shop-cultkits-2008-09-olympiakos-mitroglu-22-home-shirt-l-puma768",
+   "type": "home",
+   "season": "2008/09",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2008/09 OLYMPIAKOS MITROGLU #22 HOME SHIRT (L) PUMA",
+   "image": "/club-kits/olympiacos/shop/cultkits-2008-09-olympiakos-mitroglu-22-home-shirt-l-puma768.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2008-09-olympiakos-mitroglu-22-home-shirt-l-puma768"
+   }
+  },
+  {
+   "id": "shop-shortyfootballshirts-olympiakos-2009-10-original-home-shirt-size-s",
+   "type": "home",
+   "season": "2009/10",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "Olympiakos 2009/10 Original Home Shirt Size S",
+   "image": "/club-kits/olympiacos/shop/shortyfootballshirts-olympiakos-2009-10-original-home-shirt-size-s.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/",
+    "page": "https://shortyfootballshirts.com/products/olympiakos-2009-10-original-home-shirt-size-s"
+   }
+  },
+  {
+   "id": "shop-cultkits-2011-12-olympiakos-bnwt-fourth-shirt-l-puma567",
+   "type": "fourth",
+   "season": "2011/12",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2011/12 OLYMPIAKOS *BNWT* FOURTH SHIRT (L) PUMA",
+   "image": "/club-kits/olympiacos/shop/cultkits-2011-12-olympiakos-bnwt-fourth-shirt-l-puma567.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2011-12-olympiakos-bnwt-fourth-shirt-l-puma567"
+   }
+  },
+  {
+   "id": "shop-cultkits-2011-12-olympiakos-bnwt-home-shirt-m-puma4565346",
+   "type": "home",
+   "season": "2011/12",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2011/12 OLYMPIAKOS *BNWT* HOME SHIRT (M) PUMA",
+   "image": "/club-kits/olympiacos/shop/cultkits-2011-12-olympiakos-bnwt-home-shirt-m-puma4565346.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2011-12-olympiakos-bnwt-home-shirt-m-puma4565346"
+   }
+  },
+  {
+   "id": "shop-cultkits-2012-13-olympiakos-saviola-9-home-shirt-l-puma888",
+   "type": "home",
+   "season": "2012/13",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2012/13 Olympiakos Saviola #9 Home Shirt (L) Puma",
+   "image": "/club-kits/olympiacos/shop/cultkits-2012-13-olympiakos-saviola-9-home-shirt-l-puma888.webp",
+   "width": 900,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2012-13-olympiakos-saviola-9-home-shirt-l-puma888"
+   }
+  },
+  {
+   "id": "shop-cultkits-2012-13-olympiakos-l-s-third-shirt-xl-puma578",
+   "type": "third",
+   "season": "2012/13",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": true,
+   "maker": "Puma",
+   "title": "2012/13 OLYMPIAKOS L/S THIRD SHIRT (XL) PUMA",
+   "image": "/club-kits/olympiacos/shop/cultkits-2012-13-olympiakos-l-s-third-shirt-xl-puma578.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2012-13-olympiakos-l-s-third-shirt-xl-puma578"
+   }
+  },
+  {
+   "id": "shop-cultkits-2013-14-olympiakos-away-shirt-xl-puma6769",
+   "type": "away",
+   "season": "2013/14",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "Puma",
+   "title": "2013/14 OLYMPIAKOS AWAY SHIRT (XL) PUMA",
+   "image": "/club-kits/olympiacos/shop/cultkits-2013-14-olympiakos-away-shirt-xl-puma6769.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Cult Kits",
+    "url": "https://www.cultkits.com/",
+    "page": "https://www.cultkits.com/products/2013-14-olympiakos-away-shirt-xl-puma6769"
+   }
+  },
+  {
+   "id": "shop-shortyfootballshirts-olympiakos-2013-14-original-home-shirt-mitroglou-7-size-s",
+   "type": "home",
+   "season": "2013/14",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": null,
+   "title": "Olympiakos 2013/14 Original Home Shirt Mitroglou #7 Size S",
+   "image": "/club-kits/olympiacos/shop/shortyfootballshirts-olympiakos-2013-14-original-home-shirt-mitroglou-7-size-s.webp",
+   "width": 675,
+   "height": 900,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Shorty Football Shirts",
+    "url": "https://shortyfootballshirts.com/",
+    "page": "https://shortyfootballshirts.com/products/olympiakos-2013-14-original-home-shirt-mitroglou-7-size-s"
+   }
+  },
+  {
+   "id": "shop-vintagefootballshirts-2016-17-olympiakos-adidas-away-shirt-w-tags-xs-64909",
+   "type": "away",
+   "season": "2016/17",
+   "spans": null,
+   "seasonAmbiguous": false,
+   "longSleeve": false,
+   "maker": "adidas",
+   "title": "2016-17 Olympiakos adidas Away Shirt *w/tags* XS",
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-2016-17-olympiakos-adidas-away-shirt-w-tags-xs-64909.webp",
+   "width": 800,
+   "height": 800,
+   "yellowShare": 0.0,
+   "credit": {
+    "publisher": "Vintage Football Shirts",
+    "url": "https://www.vintagefootballshirts.com/",
+    "page": "https://www.vintagefootballshirts.com/products/2016-17-olympiakos-adidas-away-shirt-w-tags-xs-64909"
+   }
+  }
+ ]
+}
