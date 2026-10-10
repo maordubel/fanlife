@@ -28,7 +28,8 @@ import {gameCopy} from '@/lib/clubs/game-copy'
 import {lifeEntry} from '@/lib/clubs/life/entry'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {livery} from '@/lib/club-livery'
-import {worldFor,nicknameLine} from '@/lib/clubs/world'
+import {ClubFlavour} from '@/components/clubs/ClubFlavour'
+import {worldFor,nicknameLine,flavourFor} from '@/lib/clubs/world'
 import {clubHref} from '@/lib/clubs/club-href'
 import {todaysPick} from '@/lib/clubs/play-groups'
 import {todayInIsrael} from '@/lib/date/israel'
@@ -49,6 +50,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
  const open=states.filter(s=>s.allowed&&s.playable).map(s=>s.key as GateKey)
  const pick=todaysPick(id,open,todayInIsrael()),pickGate=pick?SHARED_GATES.find(g=>g.key===pick)!:null
  const fill=(t:string)=>t.replaceAll('{club}',c.name).replaceAll('{city}',c.city)
+ const dayIdx=Math.floor(Date.now()/86400000),flav=flavourFor(world,dayIdx),flav2=flavourFor(world,dayIdx,1)
  const layout=lv?.layout??'poster',place=world.voice.kicker.split(' · ')
  const names=Object.fromEntries(SHARED_GATES.map(g=>[g.key,games[`gate.${g.key}`]]))
  return <ClubSurface theme={theme} clubId={c.id} locale={locale}><main id="main" className="mag-home club-home" data-hero={layout}>
@@ -64,6 +66,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     <h1 id="club-h" style={{['--len' as string]:Math.max(6,...c.name.split(/\s+/).map(w=>w.length))}}>{c.name}</h1>
     <p className="mag-homeplace">{place.map((p,i)=><span key={p}>{i>0&&<i aria-hidden="true">|</i>}{p}</span>)}</p>
     {world.nicknames.length>0&&<p className="club-aka" data-testid="club-aka">{world.nicknames.map(n=><span key={n.text}>{n.text}{n.local&&<> <bdi lang={n.script} dir="auto">{n.local}</bdi></>}</span>)}</p>}
+    <ClubFlavour item={flav} kicker={copy.flavourKicker} variant="hero"/>
     {core&&open.length>0&&<div className="mag-homeshare"><ShareComposer draft={coverShare(c.id,states.filter(x=>x.allowed&&x.playable).map(x=>SHARED_GATES.find(g=>g.key===x.key)!.name))} label={copy.homeShare}/></div>}
    </div>
    <div className="mag-homestage" aria-hidden="true"><TornBlocks seed={c.id} pattern={lv?.pattern}/><Cutout art="kicker" className="mag-homekick"/></div>
@@ -77,6 +80,6 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
    <ClubGateWall clubId={id} states={states} locale={locale} games={games} soon={copy.wallSoon} gateWord={copy.wallGate} beloved={belovedOf(world.terrace,open)} featuredWord={copy.wallFeatured} featureTitle={fill(copy.wallFeatureShirt)} terraceLine={world.terrace?.line} away={{open:id==='hapoel-tel-aviv',href:'/away-days',name:copy.awayName,note:copy.awayNote}}/></section>}
   {core&&<section className="mag-section" id="club-market"><Link className="mag-market-strip min-h-tap" href={`/market?club=${id}`}><PressPhoto art="shirt-swap" className="mag-market-strip-art"/><span><b>{copy.marketName}</b><small>{copy.marketNote}</small></span><i aria-hidden="true">→</i></Link></section>}
   {core&&<section className="mag-section" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
-  {core&&<section className="mag-section" id="terrace"><hr className="mag-rule"/><div className="mag-hometerrace"><Dye art="terrace-scarf" className="mag-homescarf"/><div className="mag-head"><div><p className="mag-kicker">{copy.homeTerrace}</p><h2 className="mag-h2">{world.terrace?.name??copy.homeTerraceTitle}</h2></div><Link className="mag-chip" href={clubHref(id,'terrace',locale)}>{world.terraceTab} →</Link></div></div>{world.terrace&&<p className="club-terrace-line">{world.terrace.line}</p>}</section>}
+  {core&&<section className="mag-section" id="terrace"><hr className="mag-rule"/><div className="mag-hometerrace"><Dye art="terrace-scarf" className="mag-homescarf"/><div className="mag-head"><div><p className="mag-kicker">{copy.homeTerrace}</p><h2 className="mag-h2">{world.terrace?.name??copy.homeTerraceTitle}</h2></div><Link className="mag-chip" href={clubHref(id,'terrace',locale)}>{world.terraceTab} →</Link></div></div>{world.terrace&&<p className="club-terrace-line">{world.terrace.line}</p>}{flav2&&flav2.id!==flav?.id&&<ClubFlavour item={flav2} kicker={copy.flavourKicker2} variant="terrace"/>}</section>}
  </main></ClubSurface>
 }

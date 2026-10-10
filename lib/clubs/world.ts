@@ -15,6 +15,8 @@ export type WorldNickname=Sourced&{text:string;local?:string;script?:string}
 export type WorldLine=Sourced&{line:string}
 export type WorldGround=WorldLine&{name:string;local?:string;script?:string}
 export type WorldTerrace=WorldLine&{name:string;local?:string;script?:string;tab:string}
+export type FlavourKind='place'|'heritage'|'language'|'moment'
+export type WorldFlavour=WorldLine&{id:string;kind:FlavourKind;local?:string;script?:string}
 export type WorldFact=WorldLine&{id:string;local?:string;script?:string}
 export type ClubWorld={
  schemaVersion:1;clubId:string;review:string;note:string
@@ -22,6 +24,8 @@ export type ClubWorld={
  nicknames:WorldNickname[]
  ground?:WorldGround;founded?:WorldLine;emblem?:WorldLine;colours?:WorldLine;terrace?:WorldTerrace
  facts:WorldFact[]
+ /** Small local touches the club page rotates through — place, heritage, speech, a moment. Extra seasoning, never the main content. */
+ flavour?:WorldFlavour[]
 }
 /** What the app shows for a club that has no researched world yet: its name and place, nothing invented. */
 export type ResolvedWorld=ClubWorld&{researched:boolean;terraceTab:string}
@@ -93,6 +97,16 @@ export function validateWorld(w:unknown,clubId?:string):string[]{
    if(isRec(f)){textIssues(`${l}.line`,f.line,LINE_MAX,out);if(typeof f.id!=='string'||ids.has(f.id))out.push(`${l}: id missing or repeated`);else ids.add(f.id)}
   })
  }
+ if(w.flavour!==undefined){
+  if(!Array.isArray(w.flavour))out.push('flavour must be a list')
+  else{
+   const ids=new Set<string>()
+   ;(w.flavour as unknown[]).forEach((f,i)=>{
+    const l=`flavour[${i}]`;sourcedIssues(l,f,2,out)
+    if(isRec(f)){textIssues(`${l}.line`,f.line,LINE_MAX,out);if(!['place','heritage','language','moment'].includes(f.kind as string))out.push(`${l}: kind`);if(typeof f.id!=='string'||ids.has(f.id))out.push(`${l}: id missing or repeated`);else ids.add(f.id)}
+   })
+  }
+ }
  return out
 }
 
@@ -117,6 +131,12 @@ export function worldFor(club:Pick<RegistryClub,'id'|'name'|'city'|'country'>):R
 export const nicknameLine=(w:ClubWorld):string=>w.nicknames.map(n=>n.text).join(' · ')
 /** Every distinct publisher behind what a club's History page shows, for the small "Sources" credit. */
 export function worldPublishers(w:ClubWorld):string[]{
- const blocks:Sourced[]=[...w.nicknames,...[w.ground,w.founded,w.emblem,w.colours,w.terrace].filter((x):x is NonNullable<typeof x>=>Boolean(x)),...w.facts]
+ const blocks:Sourced[]=[...w.nicknames,...[w.ground,w.founded,w.emblem,w.colours,w.terrace].filter((x):x is NonNullable<typeof x>=>Boolean(x)),...w.facts,...(w.flavour??[])]
  return [...new Set(blocks.flatMap(b=>b.sources.map(s=>s.publisher)))].sort()
+}
+
+/** The flavour line for a given day, rotating through the list; `offset` picks a different one for a second spot on the same page. Deterministic, so server and client agree. */
+export function flavourFor(w:ClubWorld,dayIndex:number,offset=0):WorldFlavour|null{
+ const f=w.flavour??[]
+ return f.length?f[((dayIndex+offset)%f.length+f.length)%f.length]!:null
 }

@@ -257,3 +257,8 @@ a.gp:active { transform: scale(.98); }
 .kit-archive-img{width:100%;height:auto;aspect-ratio:160/215;object-fit:contain;background:var(--mag-white)}
 .kit-own{margin-block-start:.6rem;display:grid;gap:.35rem}.kit-own-row{display:grid;grid-template-columns:1fr;gap:.4rem}.kit-own-btn{min-height:48px;justify-content:center;padding-inline:.5rem;font-size:.74rem;letter-spacing:.04em;line-height:1.15;text-align:center;white-space:normal}
 .kit-own-note{margin:0;font-size:.78rem}.kit-own-note a{text-decoration:underline}.kit-own-err{color:var(--mag-red,#b02d10);font-weight:700}
+.club-flavour { max-width: 52ch; margin: 10px auto 0; padding: 8px 12px; border-inline-start: 3px solid var(--club-type, var(--mag-ink)); text-align: start; }
+.club-flavour small { display: block; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--club-type, var(--mag-ink)); }
+.club-flavour p { margin: 2px 0 0; font-size: 15px; line-height: 1.45; }
+.club-flavour[data-variant='terrace'] { margin-inline: 0; margin-top: 14px; }
+@media (min-width: 760px) { .club-flavour[data-variant='hero'] { margin-inline: 0; } }
