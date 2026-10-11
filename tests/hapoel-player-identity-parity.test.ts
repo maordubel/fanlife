@@ -2,12 +2,18 @@ import {describe,it,expect} from 'vitest'
 import names from '@/content/manual/player-names-en-overrides.json'
 import merges from '@/content/manual/rumble-merges.json'
 import prices from '@/content/generated/player-prices.json'
+import {englishName,nameHow} from '@/lib/clubs/rumble-xi/names'
 
 describe('Hapoel player identity safeguards',()=>{
  const en=names['hapoel-tel-aviv'] as Record<string,string>
  it('keeps verified Latin spelling',()=>{
   expect(en['אביחי ידין']).toBe('Avihai Yadin')
   expect(en["מאוויס צ'יבוטה"]).toBe('Mavis Tchibota')
+ })
+ it('resolves latest verified spelling on the live display path',()=>{
+  expect(englishName('hapoel-tel-aviv','p_4a4c618031','אביחי ידין')).toBe('Avihai Yadin')
+  expect(englishName('hapoel-tel-aviv','p_unknown',"מאוויס צ'יבוטה")).toBe('Mavis Tchibota')
+  expect(nameHow('hapoel-tel-aviv','p_4a4c618031','אביחי ידין')).toBe('editor-override')
  })
  it('never declares a player merged into himself, or reuses a drop id',()=>{
   const rows=merges['hapoel-tel-aviv']
