@@ -64,7 +64,8 @@ export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>;
   if(!mine.length){everyone.push(p);continue}
   const names=[p.name,...mine.map(x=>x.name)].sort((a,b)=>a.length-b.length)
   for(const d of mine)goals.set(p.id,(goals.get(p.id)||0)+(goals.get(d.id)||0))
-  everyone.push({...p,name:names[0]!,aliases:[...new Set([p.name,...mine.map(x=>x.name),...p.aliases,...mine.flatMap(x=>x.aliases)])],fromYear:p.fromYear??mine.find(x=>x.fromYear!==null)?.fromYear??null,toYear:p.toYear??mine.find(x=>x.toYear!==null)?.toYear??null})}
+  const allRecords=[p,...mine],yearsFrom=allRecords.map(x=>x.fromYear).filter((x):x is number=>x!==null),yearsTo=allRecords.map(x=>x.toYear).filter((x):x is number=>x!==null)
+  everyone.push({...p,name:names[0]!,aliases:[...new Set([p.name,...mine.map(x=>x.name),...p.aliases,...mine.flatMap(x=>x.aliases)])],positions:[...new Set(allRecords.flatMap(x=>x.positions))],fromYear:yearsFrom.length?Math.min(...yearsFrom):null,toYear:yearsTo.length?Math.max(...yearsTo):null,career:p.career??mine.find(x=>x.career)?.career})}
  const span=(p:ClubPlayer)=>p.fromYear!==null&&p.toYear!==null?p.toYear-p.fromYear+1:null
  const by=new Map<Pos|'free',ClubPlayer[]>()
  for(const p of everyone){const k=posOf(p)??'free';by.set(k,[...(by.get(k)||[]),p])}

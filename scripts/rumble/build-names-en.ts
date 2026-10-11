@@ -43,6 +43,6 @@ async function main(){
   out[id]=res}
  writeFileSync(OUT,JSON.stringify(out,null,0)+'\n')
  for(const [id,r] of Object.entries(out)){const c:Record<string,number>={};for(const e of Object.values(r))c[e.how]=(c[e.how]||0)+1;console.log(id,Object.keys(r).length,JSON.stringify(c))}
- writeFileSync('/tmp/claude-0/-home-user/b27fa958-23a9-5953-8334-9c5fdfd94dc8/scratchpad/heb-todo.json',JSON.stringify(todo))
+ // Keep review counts visible without depending on a developer-specific absolute temp path.\n for(const [club,names] of Object.entries(todo))console.log('English names for review',club,names.length)
 }
 main()
