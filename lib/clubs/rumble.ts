@@ -16,18 +16,9 @@ import {mergesFor} from './rumble-xi/merges'
  * (the Worker's V3 principle). Ratings are percentile ranks inside the player's own position, spread
  * 9–99, so a goalkeeper is never measured on goals. Price (1–5) is the draft economy and follows rating.
  */
-export type Pos='GK'|'DF'|'MF'|'FW'
-/**
- * A FORMAT is the shape of a draft: which slots, what budget, how many offers per slot. `five` is the game today; `eleven` is the
- * 11-v-11 version the owner announced (10.10.2026) — a 4-3-3 with a budget at the same average price. Every function below takes a
- * format and defaults to `five`, so the engine, the readiness test and the duel are already shaped for eleven; only the stage is not.
- */
-export type Format={id:'five'|'eleven';slots:readonly Pos[];budget:number;offers:number}
-export const FIVE:Format={id:'five',slots:['GK','DF','MF','MF','FW'],budget:15,offers:3}
-// Generic engine format only (kept for the head-to-head tests). The eleven players actually play lives in rumble-xi and its budget ROTATES 33/34/35 by round (budgetFor) — 11.10.2026.
-export const ELEVEN:Format={id:'eleven',slots:['GK','DF','DF','DF','DF','MF','MF','MF','FW','FW','FW'],budget:33,offers:3}
-export const SLOTS:readonly Pos[]=FIVE.slots
-export const BUDGET=FIVE.budget,OFFERS=FIVE.offers
+// the formats and their constants live in a dependency-free module so the client can read them without the price table (performance audit, 11.10.2026)
+export {FIVE,ELEVEN,SLOTS,BUDGET,OFFERS,type Pos,type Format} from './rumble-format'
+import {FIVE,type Pos,type Format} from './rumble-format'
 /** a goal's worth of rating: ratings sit in a narrow band (about 60–95), so the gap is stretched before it becomes goals */
 export const POWER_SCALE=3.5
 export type RumbleCard={id:string;name:string;position:Pos;/** a man whose position no source states: only ever signed by a scout, into any outfield slot */free?:boolean;/** other position families he has played (a man who played in several): he fits a slot of any of them */alt?:Pos[];/** classic: 1–5 whole; XI: €0.5M steps from 1 to 5 */price:number;fromYear:number|null;toYear:number|null}

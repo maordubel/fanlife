@@ -5,6 +5,8 @@ import { Analytics } from '@/components/ads/Analytics'
 import { MarketAlerts } from '@/components/fanlife/market/MarketAlerts'
 import { ClosetBridge } from '@/components/collector/ClosetBridge'
 import { GateMeter } from '@/components/meter/GateMeter'
+import { NavPulse } from '@/components/ui/NavPulse'
+import { Suspense } from 'react'
 import { ADSENSE_CLIENT } from '@/lib/ads'
 import { BRAND, SITE_URL } from '@/lib/brand'
 import { DIRECTION, LOCALE, t } from '@/lib/i18n'
@@ -145,6 +147,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Analytics />
         {/* first-party measurement: views, starts, finishes, where people leave (lib/analytics) */}
         <GateMeter />
+        <Suspense fallback={null}><NavPulse /></Suspense>
         <ClosetBridge />
         <MarketAlerts />
       </body>

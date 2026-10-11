@@ -75,7 +75,7 @@
 @media (min-width: 901px) {
   .card { padding: 24px; max-width: 680px; }
   .main { grid-template-columns: minmax(280px, 380px) minmax(0, 1fr); column-gap: 28px; align-items: start; }
-  .routeCol { position: sticky; inset-block-start: 8px; }
+  .routeCol { position: sticky; inset-block-start: calc(var(--club-stick, 0px) + 8px); }
   .hand { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .tools { max-width: 520px; }
   .actions { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 560px; }

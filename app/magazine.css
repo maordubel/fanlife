@@ -64,6 +64,7 @@
 .mag-nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
 .mag-nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
 .mag-stop { background: var(--mag-vermilion); color: var(--mag-paper); }
+.mag-stop:empty { display: none; } /* the hub's strip streams in; no fixture = no strip */
 .mag-stop-in { display: flex; align-items: stretch; gap: 12px; width: min(1240px, 100% - 20px); margin-inline: auto; min-height: 36px; }
 .mag-stop b { font-family: var(--mag-display); font-size: 13px; letter-spacing: 1px; background: var(--mag-ink); padding: 0 12px; display: flex; align-items: center; transform: skewX(-6deg); }
 .mag-stop span { font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; display: flex; align-items: center; padding-block: 6px; }
@@ -131,7 +132,7 @@
 .mag-cta { margin-top: 12px; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 14px; background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; border: 3px solid var(--mag-ink); }
 .mag-cta.red { background: var(--mag-vermilion); }
 .mag-cta:hover { transform: translate(-2px, -2px); box-shadow: 3px 3px 0 var(--mag-ink); }
-.mag-fine { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; line-height: 1.5; letter-spacing: 1px; color: var(--mag-muted); text-transform: uppercase; margin-top: 10px; }
+.mag-fine { font-family: var(--mag-mono); font-weight: 700; font-size: 12px; line-height: 1.5; letter-spacing: 1px; color: var(--mag-muted); text-transform: uppercase; margin-top: 10px; }
 .mag-fixture.empty { border-style: dashed; box-shadow: none; }
 
 /* ───────── cards: match of the archive, editor's letter, coupon ───────── */
@@ -476,7 +477,7 @@
 .mag-skin button, .mag-skin a, .mag-skin label, .mag-skin select { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .mag-skin .game-option:active:not(:disabled), .mag-skin .memory-card:active:not(:disabled), .mag-skin .xi-slot:active, .mag-skin .game-button:active:not(:disabled), .mag-skin .mag-cta:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--mag-ink); }
 @media (max-width: 900px) {
-  .mag-skin .game-hud { position: sticky; inset-block-start: 6px; z-index: 6; }
+  .mag-skin .game-hud { position: sticky; inset-block-start: calc(var(--club-stick, 0px) + 6px); z-index: 6; }
   .mag-skin .mag-cta { position: sticky; inset-block-end: calc(10px + env(safe-area-inset-bottom)); z-index: 6; box-shadow: 4px 4px 0 var(--mag-vermilion); }
   .mag-skin .game-option { min-height: 56px; }
   .mag-skin .mag-game { padding-bottom: 96px; }
@@ -815,6 +816,8 @@
 .mag-homeprop { width: 150px; transform: rotate(-6deg); justify-self: end; margin-block-end: -40px; position: relative; z-index: 1; }
 .mag-homepair { display: grid; grid-template-columns: 1fr; gap: 26px; }
 .mag-homecard { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: center; border: 3px solid var(--mag-ink); background: var(--mag-card); box-shadow: 6px 6px 0 var(--club-primary, var(--mag-ink)); padding: 20px; position: relative; overflow: hidden; }
+/* a card with no art column (the club's ground line) takes the whole width — on desktop its text was squeezed into the 200px art column */
+.mag-homecard > :only-child { grid-column: 1 / -1; max-width: 72ch; }
 .mag-homecard.ink { background: var(--mag-ink); color: var(--mag-paper); }
 .mag-homecard.ink .mag-kicker { color: var(--mag-salmon); }
 .mag-homecard.ink .mag-kicker::before { color: var(--mag-paper); }
@@ -952,7 +955,7 @@
 .fl-corner-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .fl-corner-tabs a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 14px; border: 3px solid var(--mag-ink); background: var(--mag-card); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; box-shadow: 3px 3px 0 var(--mag-ink); }
 .fl-corner-tabs a[aria-current='page'] { background: var(--mag-ink); color: var(--mag-paper); box-shadow: 3px 3px 0 var(--mag-vermilion); }
-.fl-corner-note { margin-top: 12px; font-family: var(--mag-mono); font-size: 12px; color: var(--mag-muted); max-width: 70ch; border-inline-start: 4px solid var(--mag-vermilion); padding-inline-start: 10px; }
+.fl-corner-note { margin-top: 12px; font-family: var(--mag-mono); font-size: 13px; color: var(--mag-muted); max-width: 70ch; border-inline-start: 4px solid var(--mag-vermilion); padding-inline-start: 10px; }
 .fl-shirts { display: grid; gap: 18px; }
 .fl-shirts summary { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .fl-shirt-grid { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; }
@@ -1587,3 +1590,12 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .fl-me > .mag-card { padding: 16px; display: grid; gap: 4px; justify-items: start; }
 .fl-me > .mag-card .mag-fine { margin-top: 4px; max-inline-size: 60ch; }
 .fl-me > .mag-card .mag-card-cta { inline-size: auto; min-height: 44px; margin-top: 8px; }
+
+/* NavPulse (components/ui/NavPulse.tsx): the tap answers in the same frame — a thin bar at the top edge while the next page renders.
+   The club's own colour inside a club, vermilion on the hub, the Worker's red on its pages. */
+.nav-pulse { position: fixed; inset-block-start: 0; inset-inline: 0; block-size: 3px; z-index: 80; pointer-events: none; opacity: 0;
+  background: var(--club-primary, var(--mag-vermilion, rgb(var(--red)))); transform-origin: 0 50%; transform: scaleX(0); }
+:root[dir='rtl'] .nav-pulse, [dir='rtl'] .nav-pulse { transform-origin: 100% 50%; }
+.nav-pulse[data-busy='true'] { opacity: 1; animation: nav-pulse-run 2.4s cubic-bezier(.1,.7,.2,1) forwards; }
+@keyframes nav-pulse-run { 0% { transform: scaleX(.08); } 100% { transform: scaleX(.92); } }
+@media (prefers-reduced-motion: reduce) { .nav-pulse[data-busy='true'] { animation: none; transform: scaleX(1); opacity: .9; } }

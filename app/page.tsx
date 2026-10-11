@@ -4,17 +4,16 @@ import {redirect} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
 import {Dye} from '@/components/master/Dye'
 import {TornBlocks,PressPhoto} from '@/components/master/Poster'
-import {FixtureRotator,type RotatorItem} from '@/components/home/FixtureRotator'
+import {Suspense} from 'react'
+import {HubStop,HubNextUp,HubNextUpWaiting} from '@/components/home/HubFixtures'
 import {readState} from '@/lib/master/store'
 import Image from 'next/image'
 import {SHARED_GATES} from '@/lib/clubs/gates'
-import {hubModel} from '@/lib/home/hub-model'
+import {hubModels} from '@/lib/home/hub-model'
 import {lifeEntries} from '@/lib/clubs/life/entry'
 import {GateChooser} from '@/components/home/MagazineHubControls'
 import {evaluationMode} from '@/lib/master/mode'
 import {uiLocale} from '@/lib/clubs/locale'
-import {getFixtureFeed} from '@/lib/fixtures/service'
-import {rotationOrder} from '@/lib/fixtures/rotation'
 import {livery,wearLivery} from '@/lib/club-livery'
 import {clubWorld} from '@/lib/clubs/world'
 import {BackToClub} from '@/components/clubs/BackToClub'
@@ -35,26 +34,17 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const {clubs}=await readState()
  const open=clubs.filter(c=>c.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name))
   const nick=(id:string)=>clubWorld(id)?.nicknames[0]?.text
- const now=new Date()
- const model=await hubModel(open,locale),strict=await hubModel(open,locale,false),preview=evaluationMode()
- const life=await lifeEntries(open,preview)
+ const now=new Date(),preview=evaluationMode()
+ // one pass for both readings, and the LIFE doors alongside it (performance audit, 11.10.2026)
+ const [{model,strict},life]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview)])
  const isOpen=(id:string)=>isOpenClub(strict.find(x=>x.id===id))
  const live=open.filter(c=>isOpen(c.id)),shop=open.filter(c=>!isOpen(c.id))
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
  const shopClubs=order2.map(id=>{const c=shop.find(x=>x.id===id)!,l=livery(id);return {id,name:c.name,city:c.city,initials:l?.initials??c.initials,pattern:l?.pattern??'',seed:seed[id]??0,href:preview?`/clubs/${id}?lang=${locale}`:null}})
  const chooser={title:copy.chooseClub,search:copy.chooserSearch,close:copy.chooserClose,none:copy.chooserNone,workshop:copy.chooserWorkshop,partial:''}
- const feed=await getFixtureFeed(now).catch(()=>null)
- const order=feed?rotationOrder(feed.fixtures,now):[]
- const items:RotatorItem[]=order.flatMap(f=>{
-  const l=livery(f.clubId)
-  if(!l)return []
-  return [{clubId:f.clubId,club:l.name,opponent:f.opponent,initials:l.initials,primary:l.primary,on:l.on,type:l.type,pattern:l.pattern,kickoff:f.kickoff,dateOnly:f.dateOnly,clubSide:f.clubSide,competition:f.competition,venue:f.venue,href:`/clubs/${f.clubId}/meetings?vs=${encodeURIComponent(f.opponent)}&lang=${locale}`,tag:f.phase}]
- })
- // every club is on the roll (owner, 7.10.2026): a club with no confirmed match says so, nothing is guessed
- for(const c of open)if(!items.some(x=>x.clubId===c.id)){const l=livery(c.id);if(l)items.push({clubId:c.id,club:l.name,opponent:'',initials:l.initials,primary:l.primary,on:l.on,type:l.type,pattern:l.pattern,kickoff:'',dateOnly:true,clubSide:'home',competition:null,venue:null,href:`/clubs/${c.id}?lang=${locale}`,tag:'tbc'})}
- const first=items.find(x=>x.tag!=='tbc')
  const date=new Intl.DateTimeFormat(locale,{dateStyle:'full',timeZone:'UTC'}).format(now)
- const stop=first?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{first.club} {copy.vs} {first.opponent}</span></div>:undefined
+ // the provider never holds the first byte: the strip and the match card stream in when the feed answers
+ const stop=<Suspense fallback={null}><HubStop open={open} locale={locale} stopPress={copy.stopPress} vs={copy.vs} none={preview?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:null}/></Suspense>
  const rotatorCopy={next:copy.nextUp,cta:copy.nextCta,home:copy.homeSide,away:copy.awaySide,vs:copy.vs,pause:copy.pause,play:copy.resume,live:copy.tagLive,today:copy.tagToday,soon:copy.tagSoon,later:copy.tagLater,tbc:copy.tagTbc,tbcLine:copy.tbcLine,tbcCta:copy.tbcCta,of:copy.nextMore,prev:copy.nextPrev,fwd:copy.nextNext}
  return <Shell locale={locale} stop={stop}><main id="main">
   <section className="mag-cover mag-cover-poster" aria-labelledby="cover-h"><div className="mag-cover-in">
@@ -84,10 +74,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    </div>
   </section>
 
-  {items.length>0&&<section className="mag-section mag-next-section" id="next" aria-labelledby="next-h">
-   <h2 className="mag-kicker" id="next-h">{copy.nextUp}</h2>
-   <FixtureRotator items={items} copy={rotatorCopy} locale={locale}/>
-  </section>}
+  <Suspense fallback={<HubNextUpWaiting title={copy.nextUp}/>}><HubNextUp open={open} locale={locale} copy={rotatorCopy} title={copy.nextUp}/></Suspense>
 
   {/* The clubs, with the editor's letter as a side column — the old football weekly's "from the editor" box (owner, 7.10.2026). */}
   <section className="mag-section mag-editorial mag-clubsrow" id="clubs">

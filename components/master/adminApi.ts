@@ -1,5 +1,10 @@
 'use client'
-import {useCallback,useState} from 'react'
+import {useCallback,useEffect,useState} from 'react'
+import {useRouter} from 'next/navigation'
+/** Saves reach every screen (performance audit, 11.10.2026): after a successful save the server-rendered parts of this page re-read
+ *  the state (router.refresh), and every other open control-room tab is told to do the same. */
+const CHANNEL='fanlife-admin-saved'
+const announce=()=>{try{const c=new BroadcastChannel(CHANNEL);c.postMessage(Date.now());c.close()}catch{/* no BroadcastChannel: this tab still refreshes */}}
 /**
  * The platform answers a crashed or timed-out function with a plain-text page, not JSON (owner, 7.10.2026:
  * "Unexpected token 'A', "An error o"… is not valid JSON"). Read the text first and say what happened.
@@ -14,15 +19,16 @@ async function body(r:Response):Promise<{error?:string}&Record<string,unknown>>{
 }
 /** One way to call the control-room API from every admin screen: busy flag, error and notice that name the operation. */
 export function useAdminApi(){
- const [busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState('')
+ const [busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState(''),router=useRouter()
+ useEffect(()=>{let c:BroadcastChannel|null=null;try{c=new BroadcastChannel(CHANNEL);c.onmessage=()=>router.refresh()}catch{c=null}return ()=>c?.close()},[router])
  const post=useCallback(async<T=unknown>(action:string,data:unknown={},message='Saved.'):Promise<T|null>=>{
   setBusy(true);setError('');setNotice('')
   try{const r=await fetch(`/api/master/${action}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const out=await body(r)
    if(!r.ok)throw new Error(r.status===409?`${out.error} (409 — someone else saved first)`:out.error||'Operation failed')
-   setNotice(message);return out as T}
+   setNotice(message);router.refresh();announce();return out as T}
   catch(e){setError(e instanceof Error?e.message:'Operation failed');return null}
   finally{setBusy(false)}
- },[])
+ },[router])
  const get=useCallback(async<T=unknown>(path:string):Promise<T|null>=>{try{const r=await fetch(`/api/master/${path}`,{cache:'no-store'});const out=await body(r);if(!r.ok)throw new Error(out.error||'Could not load');return out as T}catch(e){setError(e instanceof Error?e.message:'Could not load');return null}},[])
  return {busy,error,notice,post,get,setNotice,setError}
 }

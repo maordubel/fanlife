@@ -4,12 +4,12 @@
  "clubs": {
   "hapoel-tel-aviv": {
    "quotaMode": "full",
-   "size": 700,
+   "size": 652,
    "quota": {
-    "1": 249,
-    "2": 245,
-    "3": 140,
-    "4": 56,
+    "1": 232,
+    "2": 228,
+    "3": 130,
+    "4": 52,
     "5": 10
    },
    "players": {
@@ -109,38 +109,6 @@
      "rationale": "owner pricing review (8-club consolidated CSV) (full ladder)",
      "reviewedAt": "2026-10-10"
     },
-    "p_wv-94b7d868ad": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €4M. owner pricing review (8-club consolidated CSV) (full ladder)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-8fea373aaf": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €4M. owner pricing review (8-club consolidated CSV) (full ladder)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-26d49ed3f7": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (full ladder)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-1044dfc641": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (full ladder)",
-     "reviewedAt": "2026-10-10"
-    },
     "p_22f2ce2f73": {
      "priceM": 4,
      "priceTier": "STAR",
@@ -158,14 +126,6 @@
      "reviewedAt": "2026-10-10"
     },
     "p_d20e3a28f6": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": true,
-     "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (full ladder)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-89b7edc63b": {
      "priceM": 4,
      "priceTier": "STAR",
      "locked": true,
@@ -1198,12 +1158,12 @@
      "reviewedAt": "2026-10-10"
     },
     "p_0619566adc": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.907 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 48 men left the archive (2026-10-11): was €3M. economy v2 (approved 2026-10-10): was €1M. score 0.907 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-11"
     },
     "p_ef5486a68a": {
      "priceM": 3,
@@ -1262,12 +1222,12 @@
      "reviewedAt": "2026-10-10"
     },
     "p_1114e68a4b": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.882 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 48 men left the archive (2026-10-11): was €3M. economy v2 (approved 2026-10-10): was €1M. score 0.882 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-11"
     },
     "p_ae7a31aab2": {
      "priceM": 3,
@@ -2374,12 +2334,12 @@
      "reviewedAt": "2026-10-10"
     },
     "p_0088d3232b": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.635 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 48 men left the archive (2026-10-11): was €2M. economy v2 (approved 2026-10-10): was €1M. score 0.635 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-11"
     },
     "p_290edd1f8b": {
      "priceM": 2,
@@ -2798,46 +2758,6 @@
      "reviewedAt": "2026-10-10"
     },
     "p_f73e868810": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.510 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-69683bc290": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.510 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-6fff22ca33": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.510 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-9b2a77af0b": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.510 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-ba0c960b03": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.510 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-fbcbd4226b": {
      "priceM": 2,
      "priceTier": "REGULAR",
      "locked": false,
@@ -3438,12 +3358,12 @@
      "reviewedAt": "2026-10-10"
     },
     "p_5858cf2f9c": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.298 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after 48 men left the archive (2026-10-11): was €1M. score 0.298 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-11"
     },
     "p_60ddf1c806": {
      "priceM": 1,
@@ -3694,28 +3614,28 @@
      "reviewedAt": "2026-10-10"
     },
     "p_57acf4edb3": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.274 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after 48 men left the archive (2026-10-11): was €1M. score 0.274 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-11"
     },
     "p_5c4fb419a1": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.274 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after 48 men left the archive (2026-10-11): was €1M. score 0.274 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-11"
     },
     "p_6036557ed5": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.274 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after 48 men left the archive (2026-10-11): was €1M. score 0.274 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-11"
     },
     "p_714585313e": {
      "priceM": 1,
@@ -5307,310 +5227,6 @@
      "locked": false,
      "assignment": "auto",
      "rationale": "score 0.110 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-f96f6d51ab": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-0ccce60a0a": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-0c3a804ff4": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-f8d62d2928": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-b15b34947a": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-ce86079f6d": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-e9ff7d25a2": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-b69d973def": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-466939f1f6": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-d122002e1b": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-9cb12f7986": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-28a9f328c9": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-410acb4cef": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-58411026da": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-a1cf0475a0": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-107ed7c70c": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-e40a455f1f": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-e45eb00a25": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-4393deb60d": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-4bdfb41cde": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-f0e10a759d": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-81f0bb521d": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-5d4684df75": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-f8478395d1": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-3623c6bafd": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-4fe05bf231": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-0ce511368c": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-1b5a510f03": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-5ea38e3eb1": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-fe35920827": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-b83e2fa1f0": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-858e716d2a": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-ef83202ead": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-89a9b3fe3b": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-67b3322118": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-7ce65bdc06": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-5fac092f20": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "p_wv-407079c910": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
     }
    }

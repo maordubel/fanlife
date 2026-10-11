@@ -26,6 +26,7 @@ export const RUNTIME_READ = [
   /^research-staging\//,
   /^research-profiles\//,
   /^research-data\//,
+  /^scripts\/clubs\//, // the build's first step (npm run clubs:precompile)
 ]
 
 /** Paths the running site never reads. Everything else builds. */

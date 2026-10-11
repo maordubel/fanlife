@@ -28,7 +28,8 @@ async function playMemoryWall(page){
  const flash=page.getByTestId('memory-skip');if(await flash.count())await flash.click().catch(()=>{})
  await page.waitForFunction(()=>document.querySelector('[data-testid="memory-run"]')?.getAttribute('data-phase')==='play')
  const total=await page.locator('[data-testid="memory-board"] button').count()/2
- const found=async()=>Number((await page.getByTestId('memory-pairs').innerText()).split('/')[0])
+ // the wall can end before every pair is turned (the clock, or the last pair): the result screen replaces the counter, and that is a finished wall
+ const found=async()=>{await page.getByTestId('memory-pairs').or(page.getByTestId('memory-result')).first().waitFor();if(await page.getByTestId('memory-result').count())return total;return Number((await page.getByTestId('memory-pairs').innerText()).split('/')[0])}
  const closed=()=>page.locator('[data-testid="memory-board"] button[data-state="closed"]')
  while(await found()<total){
   const before=await found(),first=(await closed().first().getAttribute('data-card-id'))
@@ -213,7 +214,7 @@ try {
   {const resultText=await page.getByTestId('trivia-result').innerText();assert(resultText.toLowerCase().includes(String(`Correct: ${answers}/${answers}`).toLowerCase()),`${slug} result text: ${JSON.stringify(resultText.slice(0,200))}`)}
   assert.equal(new URL(page.url()).pathname,`/clubs/${slug}/trivia`)
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-trivia.png`)
-  await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('trivia-start').click();await page.getByTestId('trivia-question').waitFor();assert.equal(new URL(page.url()).searchParams.get('r'),'1')
+  await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');/* Play again carries go=1 and starts the run by itself; the start card may flash first */await page.getByTestId('trivia-start').or(page.getByTestId('trivia-question')).first().waitFor();if(!(await page.getByTestId('trivia-question').count()))await page.getByTestId('trivia-start').click().catch(()=>{});await page.getByTestId('trivia-question').waitFor();assert.equal(new URL(page.url()).searchParams.get('r'),'1')
   await page.goto(`${base}/clubs/${slug}/memory?seed=42`)
   const pairs=await playMemoryWall(page)
   assert(pairs>=2)
@@ -230,10 +231,16 @@ try {
   assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>0)
   await page.keyboard.press('Escape');await page.getByTestId('archive-detail').waitFor({state:'detached'});await page.waitForFunction(()=>!location.search.includes('event='))
   // the five tabs are one keyboard-reachable tablist
-  for(const tab of ['Time','Dig','Search','Mine','Today']){await page.getByRole('tab',{name:tab,exact:true}).click();await page.getByRole('tabpanel').waitFor()}
-  await page.goto(`${base}/clubs/${slug}`)
+  for(const tab of ['Time','Dig','Search','Mine','Today']){await page.getByRole('tab',{name:tab,exact:true}).click()
+   // the panel that tab controls, by id — and on a miss, say what the screen held instead of a bare timeout
+   const panel=page.locator(`#ar-panel-${tab.toLowerCase()}`)
+   await panel.waitFor({timeout:30000}).catch(async e=>{const seen=await page.evaluate(()=>({url:location.href,panels:[...document.querySelectorAll('[role=tabpanel]')].map(x=>[x.id,x.getBoundingClientRect().height]),selected:[...document.querySelectorAll('[role=tab][aria-selected=true]')].map(x=>x.id),dialogs:document.querySelectorAll('[role=dialog]').length}));throw new Error(`${slug} archive tab ${tab}: ${JSON.stringify(seen)} — ${e.message.split('\n')[0]}`)})}
+  // the club shell (8.10.2026) moved the season card to Terrace and the thirteen tickets to Play
+  await page.goto(`${base}/clubs/${slug}/terrace`)
   await page.getByTestId('club-activity').waitFor()
-  assert.equal(await page.getByTestId('shared-gates').locator('[data-gate]').count(),13)
+  await page.goto(`${base}/clubs/${slug}/play`)
+  await page.getByTestId('shared-gates').first().waitFor()
+  assert.equal(await page.locator('[data-testid="shared-gates"] [data-gate]').count(),13)
   const activity=await page.evaluate(club=>JSON.parse(localStorage.getItem(`fan-life:club:${club}:activity:v1`)),slug)
   assert.equal(activity.trivia.completed,1);assert.equal(activity.memory.completed,1)
   sharedGames.push({club:slug,triviaAnswers:answers,memoryPairs:pairs.length,archive:'passed',activity:'passed'})
@@ -273,18 +280,25 @@ try {
  await page.goto(`${base}/clubs/olympiacos/archive?lang=he`)
  await page.getByTestId('archive-entry').first().waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
  await page.goto(`${base}/clubs/olympiacos/trivia?seed=42&hard=1`)
- await page.getByTestId('trivia-empty').waitFor();assert.equal(await page.getByTestId('trivia-question').count(),0)
+ // a legacy hard link opens the start card (or the honest empty panel when the club fields no run at all) — never a dealt question
+ await page.getByTestId('trivia-start').or(page.getByTestId('trivia-empty')).first().waitFor();assert.equal(await page.getByTestId('trivia-question').count(),0)
  assert.deepEqual(errors,[]);assert.deepEqual(external,[])
  const nextGates=[]
  for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']){
   await page.goto(`${base}/clubs/${slug}/polls?seed=42&lang=en`);await page.getByTestId('polls-board').waitFor()
-  const selects=page.getByTestId('polls-board').locator('select'),count=await selects.count()
-  assert(count>=3&&count<=5)
-  for(let i=0;i<count;i++){const value=await selects.nth(i).locator('option').nth(1).getAttribute('value');assert(value);await selects.nth(i).selectOption(value)}
-  await page.getByTestId('polls-result').waitFor();await page.getByRole('status').filter({hasText:'Your choices are saved'}).waitFor()
-  const votes=await page.evaluate(club=>JSON.parse(localStorage.getItem(`fan-life:club:${club}:polls:v1`)),slug)
-  await page.reload();await page.getByTestId('polls-result').waitFor()
-  for(let i=0;i<count;i++)assert.equal(await selects.nth(i).inputValue(),votes[await selects.nth(i).evaluate(el=>el.closest('fieldset').dataset.pollId)])
+  // gate 7 is a ballot slip since 9.10.2026: a line opens a picker sheet, a pick fills the line, and the slip lives on the device
+  await page.waitForFunction(()=>document.querySelector('[data-testid="polls-board"]')?.getAttribute('data-loading')!=='true')
+  const lines=page.locator('[data-testid^="polls-line-"]'),count=await lines.count()
+  assert(count>=3,`${slug}: the ballot has ${count} lines`)
+  const first=lines.first(),q=(await first.getAttribute('data-testid')).replace('polls-line-','')
+  await first.click()
+  const option=page.locator('[data-testid="polls-players"] button[data-player-id], [data-testid="polls-choices"] button[data-choice-id], [data-testid="polls-numbers"] button, [data-testid="polls-positions"] button').first()
+  await option.waitFor();await option.click()
+  const row=page.locator(`li[data-q="${q}"]`)
+  await page.waitForFunction(id=>document.querySelector(`li[data-q="${id}"]`)?.getAttribute('data-done')==='true',q)
+  await page.reload();await page.getByTestId('polls-board').waitFor()
+  await page.waitForFunction(id=>document.querySelector(`li[data-q="${id}"]`)?.getAttribute('data-done')==='true',q,{timeout:15000}).catch(()=>{throw new Error(`${slug}: the ballot line ${q} was lost on reload`)})
+  assert.equal(await row.getAttribute('data-done'),'true')
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`Polls mobile overflow: ${slug}`)
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-polls.png`)
   await page.goto(`${base}/clubs/${slug}/polls?seed=42&lang=he`);await page.getByTestId('polls-board').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'))
@@ -300,23 +314,27 @@ try {
  assert.equal(await hit('1955').locator('time').count(),0)
  await page.goto(`${base}/clubs/hapoel-petah-tikva/archive?q=${encodeURIComponent('עומר כץ')}`);await hit('עומר כץ').waitFor()
  await hit('עומר כץ').getByRole('button',{name:/^Open:/}).click();await page.getByTestId('archive-detail').waitFor();assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>=1)
- const mysteryBank=JSON.parse(readFileSync('content/generated/blind-cow-bank.json','utf8'))
- await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=en`);await page.getByTestId('mystery-board').waitFor();await page.getByRole('button',{name:'Start or resume',exact:true}).click();await page.locator('[data-clue-n="1"]').waitFor()
- let clues=await page.locator('[data-clue-n] p').allTextContents(),candidates=mysteryBank.questions.filter(q=>q.eligibleModes.includes('solo')&&q.remaining[q.remaining.length-1]===1&&q.clueIds.every(id=>(mysteryBank.clues[id]?.confidence||0)>=2)&&clues.every((value,i)=>mysteryBank.clues[q.clueIds[i]]?.valueHe===value))
- const initial=clues[0];await page.reload();await page.getByRole('button',{name:'Start or resume',exact:true}).click();await page.locator('[data-clue-n="1"]').waitFor();assert.equal(await page.locator('[data-clue-n="1"] p').innerText(),initial)
+ // gate 10 since the 9.10.2026 rebuild: entry cards, a clue stack, a guess drawer and a two-tap give-up. The answer never reaches the page
+ // before the result: the run resumes from the server's sealed cookie, a wrong pick strikes the name, giving up reveals the man.
+ await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=en`);await page.getByTestId('mystery-board').waitFor()
+ const enter=async()=>{await page.getByTestId('mystery-resume').or(page.getByTestId('mystery-start')).first().click();await page.locator('[data-clue-n="1"]').waitFor()}
+ await enter()
+ const clue=n=>page.locator(`[data-clue-n="${n}"] [dir="auto"]`).first().innerText()
+ const initial=await clue(1)
+ await page.reload();await page.getByTestId('mystery-board').waitFor();await enter()
+ assert.equal(await clue(1),initial,'Blind Cow did not resume the same man after a reload')
  assert.equal(await page.getByTestId('mystery-result').count(),0)
- for(let i=0;candidates.length>1&&i<20;i++){
-  const before=clues.length;await page.getByRole('button',{name:'Reveal next clue',exact:true}).click();await page.waitForFunction(n=>document.querySelectorAll('[data-clue-n]').length>n,before)
-  clues=await page.locator('[data-clue-n] p').allTextContents();candidates=candidates.filter(q=>clues.every((value,i)=>mysteryBank.clues[q.clueIds[i]]?.valueHe===value))
+ if(await page.getByTestId('mystery-reveal').count()){const before=await page.locator('[data-clue-n]').count();await page.getByTestId('mystery-reveal').click();await page.waitForFunction(n=>document.querySelectorAll('[data-clue-n]').length>n,before)}
+ await page.getByTestId('mystery-guess').click();await page.getByTestId('mystery-players').waitFor()
+ const pickRow=page.locator('[data-testid="mystery-players"] button[data-player-id]:not([disabled])').first()
+ const picked=await pickRow.getAttribute('data-player-id');await pickRow.click()
+ await page.locator(`[data-testid="mystery-players"] button[data-player-id="${picked}"][data-struck="true"]`).or(page.getByTestId('mystery-result')).first().waitFor()
+ if(!(await page.getByTestId('mystery-result').count())){
+  await page.keyboard.press('Escape').catch(()=>{})
+  await page.getByTestId('mystery-giveup').click();await page.getByTestId('mystery-giveup').click() // the second tap confirms
+  await page.getByTestId('mystery-result').waitFor()
  }
- assert.equal(candidates.length,1,'Opened mystery clues must identify a documented bank question')
- const target=candidates[0].targetPlayerId,nativePlayers=JSON.parse(readFileSync('content/generated/player-master.json','utf8')).players,targetRow=nativePlayers.find(p=>p.id===target);assert(targetRow)
- const wrong=await page.getByTestId('mystery-players').locator('button').evaluateAll((nodes,target)=>nodes.find(n=>n.dataset.playerId!==target)?.dataset.playerId,target);assert(wrong)
- await page.locator(`[data-player-id="${wrong}"]`).click();await page.getByText('Wrong guesses: 1',{exact:true}).waitFor();assert.equal(await page.getByTestId('mystery-result').count(),0)
- await page.getByRole('searchbox',{name:'Search names or history',exact:true}).fill(targetRow.displayName)
- await page.locator(`[data-player-id="${target}"]`).click();await page.getByTestId('mystery-result').waitFor();assert((await page.getByTestId('mystery-result').innerText()).toLowerCase().includes(String(targetRow.displayName).toLowerCase()))
  await identityCheck(page,'hapoel-tel-aviv','.club-surface','/tmp/fanlife-m1-browser/hapoel-mystery.png')
- await page.getByRole('button',{name:'Play again',exact:true}).click();await page.getByRole('button',{name:'Give up and reveal',exact:true}).waitFor();await page.getByRole('button',{name:'Give up and reveal',exact:true}).click();await page.getByTestId('mystery-result').waitFor();assert((await page.getByTestId('mystery-result').innerText()).toLowerCase().includes(String('Answer revealed').toLowerCase()))
  await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=he`);await page.getByTestId('mystery-board').waitFor();(HEBREW_ENABLED&&assert.equal(await page.locator('html').getAttribute('dir'),'rtl'));assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))
  for(const slug of ['zrinjski-mostar','olympiacos','hapoel-petah-tikva'])await expectGate(page,`${base}/clubs/${slug}/blind-cow`,slug,'blind-cow','mystery-board')
  const hostPage=await context.newPage()
@@ -333,13 +351,13 @@ try {
  assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())),'Cross-tenant content leaked into mismatched host')
 
  for(const [entry,testId] of [['trivia','trivia-start'],['memory','memory-start'],['archive','archive-entry'],['polls','polls-board']]){
-  await hostPage.goto(`http://olympiacos.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/olympiacos/${entry}`)
+  await hostPage.goto(`http://olympiacos.localhost:${port}/${entry}?seed=42`);if(testId==='timeline-hand')await timelineReady(hostPage);else await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/olympiacos/${entry}`)
   await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())))
  }
  await expectGate(hostPage,`http://olympiacos.localhost:${port}/blind-cow?lang=he`,'olympiacos','blind-cow','mystery-board');assert.equal(new URL(hostPage.url()).pathname,'/clubs/olympiacos/blind-cow')
  await hostPage.goto(`http://olympiacos.localhost:${port}/clubs/hapoel-tel-aviv/blind-cow`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId('mystery-board').count(),0)
  for(const [entry,testId] of [['timeline','timeline-hand'],['trivia','trivia-start'],['memory','memory-start'],['archive','archive-entry'],['xi','xi-builder'],['polls','polls-board']]){
-  await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/${entry}?seed=42`);await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/hapoel-petah-tikva/${entry}`)
+  await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/${entry}?seed=42`);if(entry==='timeline')await timelineReady(hostPage);else await hostPage.getByTestId(testId).first().waitFor();assert.equal(new URL(hostPage.url()).pathname,`/clubs/hapoel-petah-tikva/${entry}`)
   await hostPage.goto(`http://hapoelpetahtikva.localhost:${port}/clubs/zrinjski-mostar/${entry}`);await hostPage.waitForLoadState('networkidle');assert.equal(await hostPage.getByTestId(testId).count(),0);assert(!((await hostPage.locator('body').innerText()).toLowerCase().includes(String('Zrinjski Mostar').toLowerCase())))
  }
  await page.goto(`${base}/master/core?club=olympiacos`)

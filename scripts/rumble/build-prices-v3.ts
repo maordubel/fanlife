@@ -13,6 +13,7 @@ import {readFileSync,writeFileSync,existsSync} from 'node:fs'
 /**
  * freeze   — price every club that has no list yet (never touches a club that has one)
  * migrate  — add men the archive gained since: €1M, 'new-member', nothing else changes
+ * prune    — drop men no longer in the archive and restore the ladder with the fewest moves
  * validate — quotas, whole-million prices, no stranger, no gap (exit 1 on a fault)
  * The ladder (rulebook rumble-economy-v1): 10×€5 · 20×€4 · 40×€3 · 60×€2 · rest €1M; a small archive gets it in proportion, once.
  * Order of a club's men: pinned first (content/manual/rumble-pins.json), then one score — 55% playing strength (the owner workbook, or the club's
@@ -97,8 +98,27 @@ async function applyV2(){
   console.log(id,q.mode,entries.length,'moved',moved)}
  doc.version='rumble-economy-v2';writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
 }
+// prune — drop men the archive no longer holds for a club (e.g. Hapoel Tel Aviv's unapproved roster wave, removed 11.10.2026), then restore the
+// ladder with the fewest moves: tiers are walked top-down and a gap is filled by the strongest man of the rung below (rating + 2 per rung, as apply-v2),
+// a surplus pushes its weakest man down. Nobody whose rung is already right moves.
+async function prune(){
+ for(const id of CORE_CLUB_IDS){const d=await loadClub(id),cur=doc.clubs[id];if(!d||!cur)continue
+  const dropped=new Set(mergesFor(id).map(m=>m.drop)),ids=new Set((d.data.players??[]).filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)).map(p=>p.value.id))
+  const gone=Object.keys(cur.players).filter(pid=>!ids.has(pid));if(!gone.length)continue
+  for(const pid of gone)delete cur.players[pid]
+  const by=new Map(rawPool(d.data,{extra:extraPositions(id)}).map(p=>[p.id,p.rating])),key=(pid:string)=>(by.get(pid)??55)+2*(cur.players[pid]!.priceM-1)
+  const want=quotaFor(Object.keys(cur.players).length).counts,at=(p:Price)=>Object.keys(cur.players).filter(pid=>cur.players[pid]!.priceM===p)
+  let moved=0;const move=(pid:string,to:Price)=>{const e=cur.players[pid]!;cur.players[pid]={...e,priceM:to,priceTier:TIER[to],assignment:'owner-pinned',rationale:`ladder restored after ${gone.length} men left the archive (${today}): was €${e.priceM}M. ${e.rationale}`.slice(0,300),reviewedAt:today};moved++}
+  for(const p of [5,4,3,2] as const){
+   while(at(p).length<want[p]){const below=at((p-1) as Price).sort((a,b)=>key(b)-key(a)||a.localeCompare(b));move(below[0]!,p)}
+   while(at(p).length>want[p]){const here=at(p).filter(pid=>!(p===5&&cur.players[pid]!.locked)).sort((a,b)=>key(a)-key(b)||a.localeCompare(b));move(here[0]!,(p-1) as Price)}}
+  cur.size=Object.keys(cur.players).length;cur.quotaMode=quotaFor(cur.size).mode;cur.quota=Object.fromEntries(Object.entries(want)) as never
+  console.log(id,'removed',gone.length,'moved',moved)}
+ writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
+}
 async function main(){
  if(cmd==='apply-v2')await applyV2()
+ if(cmd==='prune')await prune()
  if(cmd==='freeze'){for(const id of CORE_CLUB_IDS)if(!doc.clubs[id])await freeze(id);writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')}
  if(cmd==='migrate'){for(const id of CORE_CLUB_IDS){const d=await loadClub(id);if(!d||!doc.clubs[id])continue;let n=0
   for(const p of (d.data.players??[]))if(isMan(p.value.name)&&!new Set(mergesFor(id).map(m=>m.drop)).has(p.value.id)&&!doc.clubs[id]!.players[p.value.id]){doc.clubs[id]!.players[p.value.id]={priceM:1,priceTier:'REST',locked:false,assignment:'new-member',rationale:'joined the archive after the list was frozen',reviewedAt:today};n++}

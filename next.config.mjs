@@ -18,6 +18,8 @@ const nextConfig = {
       '/api/evaluation/db': EVALUATION_FILES,
       '/api/evaluation/files': EVALUATION_FILES,
       '/api/track': EVALUATION_FILES,
+      // pre-compiled club packs (lib/clubs/precompiled.ts): every route that may load a club reads them with fs
+      '/**': ['./content/compiled/*.json'],
     },
   },
   // The static kit archives live in public/kit-archive/<club>/index.html; Next serves exact file paths only, so the folder URLs are rewritten to their index.
