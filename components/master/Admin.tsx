@@ -58,8 +58,10 @@ export function Admin({initial,summaries,adapters,runs,display,storage,section,v
   {status}
   {section==='overview'&&<>
    <header className="desk-head"><p className="desk-kicker">Overview</p><h1 className="desk-h1">What needs your attention</h1></header>
+   <nav className="desk-quick" aria-label="Quick actions">{([['Players','Edit, merge duplicates, publish',deskHref('data',{view:'players'})],['Publish gates','Choose and switch on gates',deskHref('clubs')],['Archive & sources','Collect, review, parse',deskHref('data')],['Marketplace','Shirts, offers, auctions','/master/exchange'],['Contributions','Fan submissions to review','/master/contributions']] as const).map(([t,d,h])=><Link key={t} href={h} className="min-h-tap"><b>{t}</b><small>{d}</small></Link>)}</nav>
    {attention.length===0?<div className="desk-state" data-state="ok"><b>Nothing waiting.</b> No blocker, decision, failed run or storage problem.</div>:
-   <ol className="desk-inbox">{attention.map(a=><li key={a.id} data-priority={a.priority}><span className="desk-stamp">{a.priority===1?'Blocking':a.priority===2?'To decide':'Worth a look'}</span><div><p className="desk-inbox-club">{a.clubName?<bdi>{a.clubName}</bdi>:'Whole application'}</p><h2>{a.title}</h2><p>{a.reason}</p></div><Link className="desk-btn" href={a.href}>{a.cta} →</Link></li>)}</ol>}
+   <ol className="desk-inbox">{attention.slice(0,5).map(a=><li key={a.id} data-priority={a.priority}><span className="desk-stamp">{a.priority===1?'Blocking':a.priority===2?'To decide':'Worth a look'}</span><div><p className="desk-inbox-club">{a.clubName?<bdi>{a.clubName}</bdi>:'Whole application'}</p><h2>{a.title}</h2><p>{a.reason}</p></div><Link className="desk-btn" href={a.href}>{a.cta} →</Link></li>)}</ol>}
+   {attention.length>5&&<details className="desk-more"><summary className="min-h-tap">{attention.length-5} more waiting</summary><ol className="desk-inbox">{attention.slice(5).map(a=><li key={a.id} data-priority={a.priority}><span className="desk-stamp">{a.priority===1?'Blocking':a.priority===2?'To decide':'Worth a look'}</span><div><p className="desk-inbox-club">{a.clubName?<bdi>{a.clubName}</bdi>:'Whole application'}</p><h2>{a.title}</h2><p>{a.reason}</p></div><Link className="desk-btn" href={a.href}>{a.cta} →</Link></li>)}</ol></details>}
    <section className="desk-sub" aria-labelledby="layers-h"><h2 id="layers-h">Clubs by layer</h2>
     <dl className="desk-stats">
      <div><dt>Data ready</dt><dd>{layer.dataReady}</dd><small>at least one gate playable from compiled data</small></div>
@@ -74,12 +76,13 @@ export function Admin({initial,summaries,adapters,runs,display,storage,section,v
   {section==='clubs'&&view==='new'&&<AddClub api={api} onMade={async id=>{await refresh();go({section:'data',club:id,view:null})}}/>}
   {section==='clubs'&&view!=='new'&&!summary&&<>
    <header className="desk-head"><p className="desk-kicker">Clubs</p><h1 className="desk-h1">Every club, every layer</h1><p className="desk-actions"><Link className="desk-btn" href={deskHref('clubs',{view:'new'})}>+ Add a club</Link></p></header>
-   <ul className="desk-clubs">{sums.map(s=><li key={s.id}><Link href={deskHref('clubs',{club:s.id})} style={{['--club-primary' as string]:s.primary}}><Mark club={{...state.clubs.find(c=>c.id===s.id)!,sources:[],findings:[]} as Club}/><span><b><bdi>{s.name}</bdi></b><small>{s.city} · {s.data?`${s.data.dataPlayable}/13 playable`:'no compiled pack'} · {s.control.gatesOn.length} switched on · {s.publication.openNow} open now</small><small data-publish={s.publication.state}>{s.publication.label}{s.research.findingsPending?` · ${s.research.findingsPending} to decide`:''}</small></span><b aria-hidden="true">→</b></Link></li>)}</ul>
+   <ClubList sums={sums} render={s=><Link href={deskHref('clubs',{club:s.id})} style={{['--club-primary' as string]:s.primary}}><Mark club={{...state.clubs.find(c=>c.id===s.id)!,sources:[],findings:[]} as Club}/><span><b><bdi>{s.name}</bdi></b><small>{s.city} · {s.data?`${s.data.dataPlayable}/13 playable`:'no compiled pack'} · {s.control.gatesOn.length} switched on · {s.publication.openNow} open now</small><small data-publish={s.publication.state}>{s.publication.label}{s.research.findingsPending?` · ${s.research.findingsPending} to decide`:''}</small></span><b aria-hidden="true">→</b></Link>}/>
    {gaps}
   </>}
   {section==='clubs'&&summary&&club&&<>
    <header className="desk-head"><p className="desk-kicker">Club workspace</p><h1 className="desk-h1"><bdi>{summary.name}</bdi></h1>
     <p className="cr-layers"><span data-layer="research">Research · {summary.research.reviewedSources}/{summary.research.sources} sources · {summary.research.findingsPending} to decide</span><span data-layer="data">Data · {summary.data?`${summary.data.dataPlayable}/13 playable`:'no pack'}</span><span data-layer="publication">Publication · {summary.publication.label} · {summary.publication.openNow} open now</span></p>
+    <p className="desk-actions"><button type="button" className="min-h-tap desk-btn" onClick={()=>go({view:'readiness'})}>Publish gates →</button></p>
     {summary.next[0]&&<p className="desk-next"><b>Next:</b> {summary.next[0]}</p>}
    </header>
    <nav className="desk-tabs" aria-label="Club workspace">{CLUB_VIEWS.map(([k,l])=>{const v=VIEW_IN[view||'launch']||'launch';return <button key={k} type="button" className="min-h-tap" aria-current={v===k?'page':undefined} onClick={()=>go({view:VIEW_OUT[k]})}>{l}{k==='decisions'&&summary.research.findingsPending?` (${summary.research.findingsPending})`:''}</button>})}</nav>
@@ -92,7 +95,7 @@ export function Admin({initial,summaries,adapters,runs,display,storage,section,v
    <header className="desk-head"><p className="desk-kicker">Data</p><h1 className="desk-h1">{summary?<>Sources for <bdi>{summary.name}</bdi></>:'Sources and collection'}</h1>
     <label className="desk-picker">Club<select value={scope||''} onChange={e=>go({club:e.target.value||null})}><option value="">Choose a club…</option>{sums.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label>
    </header>
-   <p className="desk-state" style={{display:'flex',flexWrap:'wrap',gap:12,alignItems:'center',justifyContent:'space-between'}}><span><b>Player Control Center</b> — edit every player’s positions, price and manager score, remove mistakes, bulk-edit by CSV.</span><Link className="desk-btn" href={deskHref('data',{view:'players'})}>Open the players →</Link></p>
+   <nav className="desk-tabs" aria-label="Data tools"><button type="button" className="min-h-tap" aria-current="page">Sources</button>{([['','Players'],['reports','Reports'],['merge','Merge duplicates'],['bulk','Bulk edit (CSV)']] as const).map(([t,l])=><Link key={l} className="min-h-tap" href={deskHref('data',{view:'players',...(t?{tab:t}:{})})}>{l}</Link>)}<Link className="min-h-tap" href="/master/contributions">Contributions ↗</Link></nav>
    {summary?<DataCenter key={scope} runs={runs} selected={scope!} summary={summary} api={api} onChange={refresh}/>:
     <ul className="desk-clubs">{sums.map(s=><li key={s.id}><Link href={deskHref('data',{club:s.id})}><span><b><bdi>{s.name}</bdi></b><small>{s.archive.sources} archive sources · {s.archive.documents} documents · {s.archive.needsParser} need a parser · {s.archive.blocked} refused{s.archive.lastRun?` · last run ${s.archive.lastRun.state} ${s.archive.lastRun.at.slice(0,10)}`:' · never collected here'}</small></span><b aria-hidden="true">→</b></Link></li>)}</ul>}
    <Autopilot api={api} onRan={refresh}/>
@@ -118,6 +121,18 @@ export function Admin({initial,summaries,adapters,runs,display,storage,section,v
   </>}
   {api.busy?<div className="busy" role="status">Working…</div>:null}
  </div>
+}
+
+function ClubList({sums,render}:{sums:ClubSummary[];render:(s:ClubSummary)=>React.ReactNode}){
+ const [q,setQ]=useState('')
+ const f=sums.filter(s=>!q.trim()||(s.name+' '+s.city).toLowerCase().includes(q.trim().toLowerCase()))
+ const live=f.filter(s=>s.data),reg=f.filter(s=>!s.data)
+ return <>
+  <label className="desk-picker">Find a club<input type="search" value={q} onChange={e=>setQ(e.target.value)} placeholder="Name or city"/></label>
+  <h2 className="desk-sub-h">With a compiled pack ({live.length})</h2>
+  <ul className="desk-clubs">{live.map(s=><li key={s.id}>{render(s)}</li>)}</ul>
+  {reg.length>0&&<details className="desk-more"><summary className="min-h-tap">Registered only — no pack yet ({reg.length})</summary><ul className="desk-clubs">{reg.map(s=><li key={s.id}>{render(s)}</li>)}</ul></details>}
+ </>
 }
 
 function AddClub({api,onMade}:{api:ReturnType<typeof useAdminApi>;onMade:(id:string)=>Promise<void>}){

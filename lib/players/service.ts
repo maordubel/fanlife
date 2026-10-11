@@ -22,7 +22,7 @@ export type Row={
  club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases:string[];decade:string;fromYear:number|null;toYear:number|null
  basePositions:Pos[];positions:Pos[];positionState:'archive'|'public-source'|'workbook'|'owner'|'unknown'
  basePrice:number;price:number;priceSource:'frozen-list'|'fallback'|'owner';baseRating:number;rating:number;ratingBasis:string
- locked:boolean;lockReason:string;removed:boolean;overridden:string[];draft:boolean;wave:boolean;confidence:number;rev:number;updatedAt:string|null;updatedBy:string|null;note:string
+ locked:boolean;lockReason:string;removed:boolean;mergedInto:string|null;overridden:string[];draft:boolean;wave:boolean;confidence:number;rev:number;updatedAt:string|null;updatedBy:string|null;note:string
 }
 export const decadeOf=(from:number|null,to:number|null):string=>{const y=from!==null&&to!==null?Math.round((from+to)/2):from??to;return y===null||y<1850?'unknown':`${Math.floor(y/10)*10}s`}
 const clubName=(id:string)=>REGISTRY.find(c=>c.id===id)?.name??id
@@ -53,8 +53,8 @@ function effective(b:Base,drafts:Record<string,Draft>):Row{
  return {club:r.club,clubName:r.clubName,id:r.id,name:r.name,nameOriginal:r.nameOriginal,aliases:r.aliases,decade:r.decade,fromYear:r.fromYear,toYear:r.toYear,
   basePositions:r.basePositions,positions:o?.positions??r.basePositions,positionState:o?.positions?'owner':r.basePositionState,
   basePrice:r.basePrice,price:o?.price??r.basePrice,priceSource:o?.price!==undefined?'owner':r.hasList?'frozen-list':'fallback',
-  baseRating:r.baseRating,rating:o?.rating??r.baseRating,ratingBasis:o?.rating!==undefined?'owner':r.ratingBasis,locked:r.locked,lockReason:r.lockReason,removed:!!o?.removed,
-  overridden:o?(['price','positions','rating','removed','note'] as const).filter(k=>k in o):[],draft:!!drafts[b.key],wave:r.wave,confidence:r.confidence,rev:o?.rev??0,updatedAt:o?.at??null,updatedBy:o?.by??null,note:o?.note??''}
+  baseRating:r.baseRating,rating:o?.rating??r.baseRating,ratingBasis:o?.rating!==undefined?'owner':r.ratingBasis,locked:r.locked,lockReason:r.lockReason,removed:!!o?.removed,mergedInto:o?.mergedInto??null,
+  overridden:o?(['price','positions','rating','removed','mergedInto','note'] as const).filter(k=>k in o):[],draft:!!drafts[b.key],wave:r.wave,confidence:r.confidence,rev:o?.rev??0,updatedAt:o?.at??null,updatedBy:o?.by??null,note:o?.note??''}
 }
 let draftsCache:{at:number;v:Record<string,Draft>}|null=null
 async function drafts(fresh=false){if(!fresh&&draftsCache&&Date.now()-draftsCache.at<2000)return draftsCache.v;const v=(await readJson<{drafts:Record<string,Draft>}>('drafts.json',{drafts:{}})).drafts;draftsCache={at:Date.now(),v};return v}
@@ -70,9 +70,10 @@ export async function listPlayers(q:Query):Promise<Listing>{
   if(q.positions?.length){const want=new Set(q.positions);if(!(r.positions.length?r.positions.some(p=>want.has(p)):want.has('unknown')))return false}
   if(q.prices?.length&&!q.prices.includes(r.price))return false
   if(q.decade&&r.decade!==q.decade)return false
-  switch(q.status){case 'missing-position':if(r.positions.length)return false;break;case 'overridden':if(!r.overridden.length)return false;break;case 'draft':if(!r.draft)return false;break;case 'removed':if(!r.removed)return false;break
+  switch(q.status){case 'missing-position':if(r.positions.length)return false;break;case 'overridden':if(!r.overridden.length)return false;break;case 'draft':if(!r.draft)return false;break;case 'removed':if(!r.removed)return false;break;case 'merged':if(!r.mergedInto)return false;break
    case 'fallback-price':if(r.priceSource!=='fallback')return false;break;case 'locked':if(!r.locked)return false;break;case 'wave':if(!r.wave)return false;break;case 'archive':if(r.wave)return false;break}
   if(q.status!=='removed'&&r.removed&&q.status!=='overridden')return false
+  if(q.status!=='merged'&&r.mergedInto&&q.status!=='overridden')return false
   if(term){const hay=[r.name,r.nameOriginal,r.id,...r.aliases].map(strip).join(' | ');if(!hay.includes(term))return false}
   return true}
  const rows=all.filter(pass)
@@ -80,7 +81,7 @@ export async function listPlayers(q:Query):Promise<Listing>{
  const val=(r:Row):string|number=>by==='name'?r.name.toLowerCase():by==='price'?r.price:by==='rating'?r.rating:by==='years'?(r.fromYear??9999):by==='updated'?(r.updatedAt??''):0
  rows.sort((a,b)=>{const g=by==='club'?0:(val(a)<val(b)?-1:val(a)>val(b)?1:0)*dir;return g||a.clubName.localeCompare(b.clubName)||a.decade.localeCompare(b.decade)||a.name.localeCompare(b.name)||a.id.localeCompare(b.id)})
  const limit=Math.min(200,Math.max(10,q.limit??60)),pages=Math.max(1,Math.ceil(rows.length/limit)),page=Math.min(Math.max(1,q.page??1),pages)
- const counts={total:all.length,shown:rows.length,missingPosition:all.filter(r=>!r.positions.length&&!r.removed).length,fallbackPrice:all.filter(r=>r.priceSource==='fallback').length,overridden:all.filter(r=>r.overridden.length).length,drafts:all.filter(r=>r.draft).length,removed:all.filter(r=>r.removed).length,locked:all.filter(r=>r.locked).length}
+ const counts={total:all.length,shown:rows.length,missingPosition:all.filter(r=>!r.positions.length&&!r.removed&&!r.mergedInto).length,fallbackPrice:all.filter(r=>r.priceSource==='fallback').length,overridden:all.filter(r=>r.overridden.length).length,drafts:all.filter(r=>r.draft).length,removed:all.filter(r=>r.removed).length,merged:all.filter(r=>r.mergedInto).length,locked:all.filter(r=>r.locked).length}
  return {rows:rows.slice((page-1)*limit,page*limit),total:rows.length,page,pages,revision:getSnapshot().revision,counts,decades:[...new Set(all.map(r=>r.decade))].sort(),storage:{...playersStorage(),error:lastError()}}
 }
 export async function findBase(club:string,id:string):Promise<Base|null>{if(!CORE_CLUB_IDS.includes(club))return null;return (await baseOf(club)).find(b=>b.row.id===id)??null}
@@ -113,8 +114,8 @@ export async function impactOf(club:string,id:string,patch:Patch):Promise<Impact
  for(const p of [5,4,3,2,1])if(after.have[p]!==want[p])violations.push(`€${p}M: ${after.have[p]} men, the ladder says ${want[p]}`)
  const effPrice=(next?.price??b.row.basePrice),curPrice=(cur?.price??b.row.basePrice)
  const eq=(a:unknown,b:unknown)=>JSON.stringify(a)===JSON.stringify(b)
- const moved=(k:'price'|'positions'|'rating'|'removed')=>!eq(cur?.[k],next?.[k])
- const consumers=[...(moved('price')||moved('rating')?['Royal Rumble five-a-side','Royal Rumble XI']:[]),...(moved('positions')?['Royal Rumble slots (five and XI)','Polls','Blind Cow candidates']:[]),...(moved('removed')?['Every game','Archive pages']:[])]
+ const moved=(k:'price'|'positions'|'rating'|'removed'|'mergedInto')=>!eq(cur?.[k],next?.[k])
+ const consumers=[...(moved('price')||moved('rating')?['Royal Rumble five-a-side','Royal Rumble XI']:[]),...(moved('positions')?['Royal Rumble slots (five and XI)','Polls','Blind Cow candidates']:[]),...(moved('removed')||moved('mergedInto')?['Every game','Archive pages']:[])]
  return {quota:{ok:!violations.length,want,have:after.have,violations},readiness:{before:before.bad,after:after.bad,broke:after.bad.filter(x=>!before.bad.includes(x))},consumers:[...new Set(consumers)],
   lockedChange:b.row.locked&&patch.price!==undefined&&effPrice!==curPrice,iconChange:b.row.locked&&b.row.basePrice===5&&patch.price!==undefined&&effPrice!==curPrice}
 }

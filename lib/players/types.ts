@@ -11,9 +11,9 @@ export type Pos='GK'|'DF'|'MF'|'FW'
 export const POSITIONS:readonly Pos[]=['GK','DF','MF','FW']
 export type Price=1|2|3|4|5
 export const RATING_MIN=40,RATING_MAX=99
-export type Override={price?:Price;positions?:Pos[];rating?:number;removed?:true;note?:string;rev:number;by:string;at:string;reason:string}
+export type Override={price?:Price;positions?:Pos[];rating?:number;removed?:true;/** this man IS the same man as `mergedInto` (a duplicate record): he leaves the squad and his names, years and positions travel to that man */mergedInto?:string;note?:string;rev:number;by:string;at:string;reason:string}
 /** what an editor sends: `null` clears the field (back to the archive), a value sets it, absent leaves it alone */
-export type Patch={price?:Price|null;positions?:Pos[]|null;rating?:number|null;removed?:boolean|null;note?:string|null}
+export type Patch={price?:Price|null;positions?:Pos[]|null;rating?:number|null;removed?:boolean|null;/** only `null` (undo a merge) is accepted through a patch; a merge itself goes through `mergePlayers` */mergedInto?:string|null;note?:string|null}
 export type Snapshot={revision:number;updatedAt:string;overrides:Record<string,Override>}
 export const EMPTY_SNAPSHOT:Snapshot={revision:0,updatedAt:'',overrides:{}}
 export const keyOf=(club:string,id:string)=>`${club}|${id}`

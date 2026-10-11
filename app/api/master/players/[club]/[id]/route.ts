@@ -1,5 +1,6 @@
 import {guard,json,fail} from '../../_http'
 import {playerDetail,saveDraft,discardDraft,publish,revert,impactOf} from '@/lib/players/service'
+import {mergePreview,mergePlayers,unmerge} from '@/lib/players/merge'
 import {parsePatch} from '@/lib/players/validate'
 export const dynamic='force-dynamic'
 type Ctx={params:{club:string;id:string}}
@@ -18,6 +19,9 @@ export async function POST(r:Request,c:Ctx){
    case 'discard':await discardDraft(club,pid,who);return json({ok:true})
    case 'publish':return json(await publish(club,pid,{reason:String(b.reason??''),confirmQuota:b.confirmQuota===true,ownerException:b.ownerException===true,...(b.patch!==undefined?{patch:b.patch,expectedRev:Number(b.expectedRev??0)}:{})},who))
    case 'revert':return json(await revert(club,pid,String(b.eventId??''),String(b.reason??''),who))
+   case 'merge-preview':return json({preview:await mergePreview(club,pid,String(b.dropId??''))})
+   case 'merge':return json(await mergePlayers(club,pid,String(b.dropId??''),{reason:String(b.reason??''),price:b.price as 'keep'|'drop'|'higher'|undefined,confirmQuota:b.confirmQuota===true,ownerException:b.ownerException===true},who))
+   case 'unmerge':return json(await unmerge(club,pid,String(b.reason??''),who))
    default:return json({error:'Unknown action.'},400)
   }
  }catch(e){return fail(e)}

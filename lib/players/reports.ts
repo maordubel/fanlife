@@ -15,7 +15,7 @@ export type Twins={club:string;clubName:string;key:string;members:Brief[]}
 export type Distribution={club:string;clubName:string;n:number;have:Record<number,number>;want:Record<number,number>}
 export type Reports={missing:Brief[];missingTotal:number;outliers:Outlier[];twins:Twins[];distribution:Distribution[]}
 export async function playerReports(clubs:string[]=CORE_CLUB_IDS,limit=150):Promise<Reports>{
- const all=(await everyRow(clubs)).filter(r=>!r.removed)
+ const all=(await everyRow(clubs)).filter(r=>!r.removed&&!r.mergedInto)
  const missing=all.filter(r=>!r.positions.length).sort((a,b)=>b.rating-a.rating||a.name.localeCompare(b.name))
  const outliers:Outlier[]=[],twins:Twins[]=[],distribution:Distribution[]=[]
  for(const club of clubs.filter(c=>CORE_CLUB_IDS.includes(c))){

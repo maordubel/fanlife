@@ -62,3 +62,41 @@ export function BulkPanel(){
   </div>}
  </section>
 }
+
+type Pr={keep:Brief&Record<string,unknown>;drop:Brief&Record<string,unknown>;result:{name:string;aliases:string[];years:string;positions:string[];price:number;rating:number};warnings:string[];priceChoices:{keep:number;drop:number};quota:{ok:boolean;violations:string[]};readiness:{broke:string[]};canMerge:boolean;blocker:string|null}
+type Cand={club:string;clubName:string;a:Brief&{positions?:string[];aliases?:string[]};b:Brief&{positions?:string[];aliases?:string[]};likeness:{score:number;confidence:string;reasons:string[]};suggest:{keep:string;drop:string;why:string}}
+export function MergePanel({club}:{club:string|null}){
+ const [d,setD]=useState<{candidates:Cand[];total:number}|null>(null),[err,setErr]=useState<string|null>(null),[done,setDone]=useState<string|null>(null),[open,setOpen]=useState<{c:Cand;keep:string;drop:string}|null>(null),[shown,setShown]=useState(20)
+ const [pv,setPv]=useState<Pr|null>(null),[reason,setReason]=useState(''),[price,setPrice]=useState<'keep'|'drop'|'higher'>('keep'),[okQ,setOkQ]=useState(false),[okO,setOkO]=useState(false),[busy,setBusy]=useState(false)
+ const load=()=>{setD(null);fetch('/api/master/players/duplicates'+(club?`?club=${club}`:''),{cache:'no-store'}).then(async x=>{const j=await x.json();x.ok?setD(j):setErr(j.error||'Could not load.')}).catch(()=>setErr('No connection.'))}
+ useEffect(load,[club]) // eslint-disable-line react-hooks/exhaustive-deps
+ const url=(c:string,id:string)=>`/api/master/players/${encodeURIComponent(c)}/${encodeURIComponent(id)}`
+ const pick=async(c:Cand,keep:string,drop:string)=>{setOpen({c,keep,drop});setPv(null);setErr(null);setReason('');setPrice('keep');setOkQ(false);setOkO(false)
+  const r=await post<{preview:Pr}>(url(c.club,keep),{action:'merge-preview',dropId:drop});r.ok?setPv(r.data.preview):setErr(r.data.error||'Failed.')}
+ const go=async()=>{if(!open)return;setBusy(true);const r=await post<{revision:number}>(url(open.c.club,open.keep),{action:'merge',dropId:open.drop,reason,price,confirmQuota:okQ,ownerException:okO});setBusy(false)
+  if(!r.ok){setErr(r.data.error||'Failed.');return}setDone(`Merged — published as revision ${r.data.revision}. Every game now sees one man.`);setOpen(null);setPv(null);load()}
+ return <section className="pcc-tool pcc-merge" aria-label="Merge duplicates">
+  <p className="pcc-lede">Likely duplicates, found by family name, given name and years — never merged automatically. Pick which record to keep: the other leaves the squad, and his name, years, positions and sources are carried onto the one you keep, so old records still resolve. Every merge can be undone.</p>
+  {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}{done&&<p role="status" className="desk-state">{done}</p>}
+  {!d&&!err&&<p className="desk-state" role="status">Looking for duplicates…</p>}
+  {d&&<p className="pcc-hint">{d.total} candidate pair(s){d.total>d.candidates.length?`, showing the ${d.candidates.length} most likely`:''}.</p>}
+  {d?.candidates.slice(0,shown).map(c=>{const sel=open?.c===c;return <div key={c.club+c.a.id+c.b.id} className="pcc-pair">
+   <div className="cols">{[c.a,c.b].map(m=><div key={m.id}><b dir="auto">{m.name}</b><small> {m.nameOriginal!==m.name?m.nameOriginal:''}</small><div><code>{m.id}</code> · {m.years} · €{m.price}M · {m.rating}{m.wave?' · roster-wave':''}</div></div>)}</div>
+   <p className="pcc-hint">{c.clubName} · {c.likeness.confidence} match — {c.likeness.reasons.join('; ')}. Suggested: keep <b dir="auto">{(c.suggest.keep===c.a.id?c.a:c.b).name}</b> ({c.suggest.why}).</p>
+   <p className="pcc-actions"><button type="button" className="min-h-tap desk-btn" onClick={()=>pick(c,c.suggest.keep,c.suggest.drop)}>Review merge</button><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>pick(c,c.suggest.drop,c.suggest.keep)}>Keep the other one</button></p>
+   {sel&&pv&&<div aria-live="polite">
+    <p><b>Result:</b> <span dir="auto">{pv.result.name}</span> · {pv.result.years} · {pv.result.positions.join('/')||'no position'} · also known as {pv.result.aliases.join(', ')||'—'}</p>
+    {pv.warnings.map(w=><p key={w} className="pcc-hint">⚠ {w}</p>)}
+    {pv.blocker&&<p role="alert" className="desk-state" data-state="error">{pv.blocker}</p>}
+    {pv.readiness.broke.length>0&&<p role="alert" className="desk-state" data-state="error">Would stop: {pv.readiness.broke.join(', ')}.</p>}
+    {pv.priceChoices.keep!==pv.priceChoices.drop&&<label className="pcc-field"><span>Price the merged man keeps</span><select value={price} onChange={e=>setPrice(e.target.value as 'keep')}><option value="keep">€{pv.priceChoices.keep}M (the record kept)</option><option value="drop">€{pv.priceChoices.drop}M (the other record)</option><option value="higher">€{Math.max(pv.priceChoices.keep,pv.priceChoices.drop)}M (the higher)</option></select></label>}
+    {!pv.quota.ok&&<label className="pcc-remove"><input type="checkbox" checked={okQ} onChange={e=>setOkQ(e.target.checked)}/> <span>Publish as an exception to the price ladder ({pv.quota.violations.join('; ')})</span></label>}
+    <label className="pcc-remove"><input type="checkbox" checked={okO} onChange={e=>setOkO(e.target.checked)}/> <span>Owner exception (only if a locked price changes)</span></label>
+    <label className="pcc-field"><span>Reason (kept in the history)</span><input type="text" value={reason} onChange={e=>setReason(e.target.value)} placeholder="e.g. same man, two spellings"/></label>
+    <p className="pcc-actions"><button type="button" className="min-h-tap desk-btn" disabled={busy||!pv.canMerge||reason.trim().length<3||(!pv.quota.ok&&!okQ)} onClick={go}>Merge and publish</button><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>{setOpen(null);setPv(null)}}>Cancel</button></p>
+   </div>}
+  </div>})}
+  {d&&d.candidates.length>shown&&<p><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>setShown(shown+20)}>Show 20 more</button></p>}
+  {d&&!d.candidates.length&&<p className="desk-state">No likely duplicates.</p>}
+ </section>
+}
