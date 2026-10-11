@@ -26,9 +26,11 @@ describe('the Dubel top ad',()=>{
  it('no other ad network is wired anywhere in the app',()=>{
   const walk=(d:string):string[]=>readdirSync(d).flatMap(n=>{const f=path.join(d,n);return statSync(f).isDirectory()?(n==='node_modules'?[]:walk(f)):[f]})
   const files=['app','components','lib','public'].flatMap(walk).filter(f=>/\.(tsx?|js|mjs|html)$/.test(f)&&!f.startsWith('public/life/')&&!f.startsWith('public/kit-archive'))
-  for(const f of files){const s=readFileSync(f,'utf8');expect(/monetag|n6wxm|popunder|propellerads|adsterra/i.test(s)&&f!=='public/dubel-top-ad.js'&&f!=='lib/top-ad.ts'&&f!=='components/master/TopAdControl.tsx',f).toBe(false)}
+  for(const f of files){const s=readFileSync(f,'utf8');expect(/monetag|n6wxm|popunder|propellerads|adsterra/i.test(s)&&f!=='public/dubel-top-ad.js'&&f!=='lib/top-ad.ts'&&f!=='components/master/TopAdControl.tsx'&&f!=='app/layout.tsx',f).toBe(false)}
   const layout=readFileSync('app/layout.tsx','utf8')
   expect(layout).toContain('<script src={TOP_AD_SRC} defer />')
   expect(layout).toContain('data-no-ads={topAd?undefined:""}')
+  expect(layout.match(/other: \{ monetag: MONETAG_SITE_VERIFICATION \}/g)).toHaveLength(2) // both hosts
+  expect(layout.replace(/MONETAG_SITE_VERIFICATION|other: \{ monetag:/g,'')).not.toMatch(/monetag|n6wxm|popunder/i)
  })
 })

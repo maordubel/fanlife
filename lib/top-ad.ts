@@ -30,3 +30,6 @@ export function topAdAllowedOn(path: string | null | undefined): boolean {
 export type TopAdSetting = { topAd: boolean; updatedAt: string | null }
 /** On by default: the owner asked for it; the admin switch and the file switch turn it off. */
 export const DEFAULT_TOP_AD: TopAdSetting = { topAd: true, updatedAt: null }
+
+// Site ownership check the ad network asked for (owner, 11.10.2026): one meta tag in <head>, on every host.
+export const MONETAG_SITE_VERIFICATION = '8c3dd993bbe05dffb1f2244701825c92'
