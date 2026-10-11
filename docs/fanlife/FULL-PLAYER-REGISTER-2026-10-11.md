@@ -5686,3 +5686,6 @@
 - `docs/fanlife/49-rumble-economy-v2-review.md` (rules)
 
 **Caution:** Unverified is not a claim of absence from all club archives. This audit is complete for the 5,608 V3 IDs and their actual prices; position/name enrichment remains incomplete until every historic club-pack source is reconciled.
+
+### Additional source enrichment
+Updated from `core.json` and `wave-auto.json` for AEK Athens, Celtic, Panathinaikos, and Olympiacos. The summary table above remains the **initial snapshot**; flags in the individual tables were refined in this pass. Position is still marked unverified unless documented.
