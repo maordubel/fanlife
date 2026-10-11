@@ -107,7 +107,7 @@ export function extractCandidates(input:ExtractInput):Candidate[]{
    steps.push({step:steps.length+1,actorHe:actor,action,zone:pos.zone,positionHe:pos.phrase,noteHe:sentence.slice(0,160),evidence:{...evidence,locator:`p${index+1}/s${steps.length+1}`,quote:sentence.slice(0,300)}})
   }
   // identity survives enrichment and re-fetch: club + date + minute + scorer, never the body hash
-  const id=`ga_${sha([input.clubId,input.playedOn??'',minute,(scorer??'').toLowerCase()].join('|')).slice(0,16)}`
+  const id=`ga-${sha([input.clubId,input.playedOn??'',minute,(scorer??'').toLowerCase()].join('|')).slice(0,16)}`
   out.push({id,clubId:input.clubId,sourceIds:[input.sourceId],playedOn:input.playedOn??null,opponentHe:input.opponentHe??null,minute,scorerAlias:scorer,ownGoal:isOwnGoal(para),evidence:[evidence],steps,status:steps.length>=2?'sequence_candidate':'candidate',issues:[],extractorVersion:EXTRACTOR_VERSION,pipelineVersion:PIPELINE_VERSION,createdAt:input.fetchedAt,updatedAt:input.fetchedAt})
  })
  return out

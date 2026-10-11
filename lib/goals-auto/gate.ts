@@ -3,7 +3,9 @@ import goalsFile from '@/content/manual/goals.json'
 import {readTruth,type GoalSourceRecord} from '@/lib/game/replay/truth'
 import {replayHeld} from '@/lib/game/replay/holds'
 import {MAX_TOUCHES} from '@/lib/game/goal-zones'
-import type {Candidate,IssueCode,Policy} from './types'
+import {existsSync,readFileSync} from 'node:fs'
+import path from 'node:path'
+import {WORKER_ROUTE_CLUB,type Candidate,type IssueCode,type Policy} from './types'
 
 /**
  * The only door a candidate walks through to become a playable goal. Confidence never appears here: a candidate is
@@ -15,8 +17,22 @@ const US='הפועל-תל-אביב'
 export type Fixture={playedOn:string;opponentHe:string;competitionHe:string;scoreHe:string;homeAway:'home'|'away'}
 
 /** The fixtures a candidate may attach to. Only Hapoel Tel Aviv has a match archive in the Worker data today. */
+type PackMatch={date:string;competition?:string;home:string;away:string;score?:string}
+/** Any other club's fixtures: its own pack's match list (date, both sides, score) — one match on that date or none. */
+function packFixture(clubId:string,playedOn:string):{fixture:Fixture|null;conflict:boolean}{
+ if(!/^[a-z][a-z0-9-]{1,60}$/.test(clubId))return {fixture:null,conflict:false}
+ const file=path.join(process.cwd(),'club-packs',clubId,'matches.json')
+ if(!existsSync(file))return {fixture:null,conflict:false}
+ let rows:PackMatch[];try{rows=JSON.parse(readFileSync(file,'utf8')) as PackMatch[]}catch{return {fixture:null,conflict:false}}
+ const hits=rows.filter(r=>r.date===playedOn)
+ if(hits.length===0)return {fixture:null,conflict:false}
+ if(hits.length>1)return {fixture:null,conflict:true}
+ const r=hits[0]!
+ return {conflict:false,fixture:{playedOn,opponentHe:`${r.home} – ${r.away}`,competitionHe:r.competition??'',scoreHe:(r.score??'').replace('-',':'),homeAway:'home'}}
+}
 export function findFixture(clubId:string,playedOn:string|null):{fixture:Fixture|null;conflict:boolean}{
- if(clubId!=='hapoel-tel-aviv'||!playedOn)return {fixture:null,conflict:false}
+ if(!playedOn)return {fixture:null,conflict:false}
+ if(clubId!==WORKER_ROUTE_CLUB)return packFixture(clubId,playedOn)
  const rows=(matchesFile as unknown as {records:MatchRow[]}).records.filter(r=>r.playedOn===playedOn&&(r.homeClubSlug===US||r.awayClubSlug===US)&&r.status!=='cancelled')
  if(rows.length===0)return {fixture:null,conflict:false}
  if(rows.length>1)return {fixture:null,conflict:true}
@@ -33,7 +49,7 @@ export type GateContext={policy:Policy;durable:boolean;sourceLanguageHe?:boolean
 export type GateResult={status:Candidate['status'];issues:IssueCode[];record:GoalSourceRecord|null}
 
 /** Issues that stop a record from ever being played. The rest only keep it from publishing itself. */
-const SOFT:ReadonlySet<IssueCode>=new Set(['AUTO_PUBLISH_OFF','SOURCE_NOT_CERTIFIED','STORAGE_NOT_DURABLE'])
+const SOFT:ReadonlySet<IssueCode>=new Set(['AUTO_PUBLISH_OFF','SOURCE_NOT_CERTIFIED','STORAGE_NOT_DURABLE','NO_GOAL_ROUTE'])
 
 export function toRecord(c:Candidate,f:Fixture,lang:string):GoalSourceRecord{
  const last=c.steps[c.steps.length-1]!
@@ -69,5 +85,6 @@ export function evaluate(c:Candidate,ctx:GateContext):GateResult{
  if(!src.every(s=>s?.certified))add('SOURCE_NOT_CERTIFIED')
  if(!(ctx.policy.autoPublish&&!ctx.policy.paused&&ctx.policy.clubs[c.clubId]?.autoPublish&&src.every(s=>s?.enabled&&s.autoPublish)))add('AUTO_PUBLISH_OFF')
  if(!ctx.durable)add('STORAGE_NOT_DURABLE')
+ if(c.clubId!==WORKER_ROUTE_CLUB)add('NO_GOAL_ROUTE')
  return {status:issues.length===0?'auto_publishable':'ready_for_review',issues,record}
 }

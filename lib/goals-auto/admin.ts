@@ -1,6 +1,5 @@
 import 'server-only'
-import {profiledClubs} from '@/lib/research/profiles'
-import {goalsPass,readCandidates,readPassState} from './pipeline'
+import {goalClubs,goalsPass,readCandidates,readPassState} from './pipeline'
 import {publishCandidate,readPolicy,readPublished,rollbackGoal,savePolicy} from './published'
 import {evaluate} from './gate'
 import {isDurable,updateDoc} from './storage'
@@ -18,7 +17,7 @@ export const ISSUE_TEXT:Record<string,string>={
 }
 
 export async function goalsStatus(){
- const [policy,published,state,clubs]=await Promise.all([readPolicy(),readPublished(),readPassState(),profiledClubs().catch(()=>[] as string[])])
+ const [policy,published,state,clubs]=await Promise.all([readPolicy(),readPublished(),readPassState(),goalClubs()])
  const perClub:Record<string,Record<string,number>>={},rows:Array<Pick<Candidate,'id'|'clubId'|'status'|'issues'|'minute'|'scorerAlias'|'playedOn'>&{quote:string;url:string;steps:number}>=[]
  for(const club of clubs){
   const cs=await readCandidates(club).catch(()=>[] as Candidate[]);perClub[club]={}
@@ -36,7 +35,7 @@ export async function goalsAction(b:Body,actor:string):Promise<{ok:boolean;error
   case 'club':if(!b.club)return {ok:false,error:'club required'};await savePolicy((p:Policy)=>({...p,clubs:{...p.clubs,[b.club!]:{autoPublish:on}}}));return {ok:true}
   case 'source':{if(!b.source)return {ok:false,error:'source required'}
    await savePolicy(p=>{const old=p.sources[b.source!]??{sourceId:b.source!,enabled:false,certified:false,autoPublish:false};return {...p,sources:{...p.sources,[b.source!]:{...old,...(b.id==='certified'?{certified:on}:b.id==='enabled'?{enabled:on}:{autoPublish:on})}}}});return {ok:true}}
-  case 'run':{const clubs=b.club?[b.club]:await profiledClubs();const r=await goalsPass({clubs});return {ok:true,run:r}}
+  case 'run':{const clubs=b.club?[b.club]:await goalClubs();const r=await goalsPass({clubs});return {ok:true,run:r}}
   case 'approve':case 'hold':case 'rollback':{
    if(b.op==='rollback'){if(!b.id)return {ok:false,error:'id required'};return rollbackGoal(b.id,actor,b.reason||'owner rollback')}
    if(!b.club||!b.id)return {ok:false,error:'club and id required'}

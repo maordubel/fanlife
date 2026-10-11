@@ -41,3 +41,21 @@ describe('publication adapter',()=>{
  })
  it('the default policy is everything off',()=>{expect(DEFAULT_POLICY).toEqual({autoPublish:false,paused:false,sources:{},clubs:{}})})
 })
+
+describe('a published goal reaches the archive card and the share links',()=>{
+ it('hangs on the match of its day: door on the match card, pin by id, card query',async()=>{
+  const {goalIdsOfMatch,matchOfGoal,playableGoalHref,linksForEntity}=await import('@/lib/links')
+  const {pinnedGoal}=await import('@/lib/game/goal')
+  const {matchIdOnDate}=await import('@/lib/goals-auto/published')
+  const matchId=matchIdOnDate('2001-11-20');expect(matchId).toMatch(/^m_/)
+  useDurableStore({...memoryStore(),kind:'vercel-blob'});await enable()
+  expect(goalIdsOfMatch(matchId)).toEqual([])
+  const r=await publishCandidate(cand(),'auto');expect(r.ok).toBe(true);await primePublishedGoals()
+  const id=(await readPublished()).rows[0]!.record.goalId
+  expect(goalIdsOfMatch(matchId)).toContain(id);expect(matchOfGoal(id)).toBe(matchId)
+  expect(playableGoalHref(id)).toBe(`/goal?g=${encodeURIComponent(id)}`);expect(pinnedGoal(id)).toBeTruthy()
+  expect(linksForEntity(matchId!).some(l=>l.href.includes(encodeURIComponent(id)))).toBe(true)
+  await rollbackGoal(id,'admin','t');resetPublishedCache();await primePublishedGoals()
+  expect(goalIdsOfMatch(matchId)).not.toContain(id);expect(pinnedGoal(id)).toBeFalsy()
+ },30000)
+})

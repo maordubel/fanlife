@@ -5,6 +5,8 @@ import type {GoalStepRecord} from '@/lib/game/replay/truth'
  * approved, published — and confidence alone never moves a candidate past a failed hard check (`./gate.ts`).
  */
 export const PIPELINE_VERSION='goals-auto-1' as const
+/** The Worker's own goal route belongs to this club; other clubs' goals never enter it. */
+export const WORKER_ROUTE_CLUB='hapoel-tel-aviv'
 export const EXTRACTOR_VERSION='goals-text-1' as const
 
 export type CandidateStatus='candidate'|'sequence_candidate'|'ready_for_review'|'auto_publishable'|'held'|'published'|'rolled_back'
@@ -27,6 +29,7 @@ export type IssueCode=
  |'AUTO_PUBLISH_OFF'
  |'STORAGE_NOT_DURABLE'
  |'DUPLICATE_OF_BUNDLED'
+ |'NO_GOAL_ROUTE'          // a grounded goal of a club whose goal gate does not exist yet: kept as data, never published
 
 export type Evidence={
  sourceId:string;url:string;/** paragraph index or selector */locator:string;/** verbatim span */quote:string

@@ -9,6 +9,7 @@ import { lineupYears } from '@/lib/game/lineup'
 import { GATES, isOpen } from '@/lib/gates'
 import type { OpenClue } from '@/lib/game/blind-cow/types'
 import { goalYears } from '@/lib/game/goal'
+import { publishedMatchOf, publishedSignature } from '@/lib/goals-auto/published'
 
 import { KIT_COLLECTION_HREF, type CrossLink, type CrossLinkKind } from './types'
 
@@ -36,15 +37,26 @@ const MAX = 5
 const visitByMatch = new Map(awayDaysMaster.visits.map((visit) => [visit.matchId, visit]))
 const venueIds = new Set(awayDaysMaster.venues.map((venue) => venue.id))
 
+let goalIndexKey = ''
 let goalIndex: { byMatch: Map<string, string[]>; byScorer: Map<string, string[]>; matchOf: Map<string, string> } | null = null
 function goals() {
-  if (goalIndex) return goalIndex
+  // rebuilt when the set of published goals changes; with none published the key is constant and this is the old cache
+  const key = publishedSignature()
+  if (goalIndex && key === goalIndexKey) return goalIndex
   const byMatch = new Map<string, string[]>()
   const byScorer = new Map<string, string[]>()
   const matchOf = new Map<string, string>()
   for (const { id } of goalYears()) {
     const moment = momentForGoal(id)
-    if (!moment) continue
+    if (!moment) {
+      // a goal the pipeline published has no moment in the master yet: it hangs on the match of its day
+      const matchId = publishedMatchOf(id)
+      if (matchId) {
+        byMatch.set(matchId, [...(byMatch.get(matchId) ?? []), id])
+        matchOf.set(id, matchId)
+      }
+      continue
+    }
     if (moment.matchId) {
       byMatch.set(moment.matchId, [...(byMatch.get(moment.matchId) ?? []), id])
       matchOf.set(id, moment.matchId)
@@ -53,6 +65,7 @@ function goals() {
     if (scorer) byScorer.set(scorer, [...(byScorer.get(scorer) ?? []), id])
   }
   goalIndex = { byMatch, byScorer, matchOf }
+  goalIndexKey = key
   return goalIndex
 }
 

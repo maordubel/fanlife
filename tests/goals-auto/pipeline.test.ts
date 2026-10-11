@@ -64,4 +64,8 @@ describe('the publication gate',()=>{
   const c=one('בדקה 89 שמעון גרשון כבש. בן לוז כדרר באגף ימין. בן לוז הרים מאחורי ההגנה. שמעון גרשון בעט בנקודת הפנדל.',{playedOn:'2001-10-18'})
   expect(evaluate(c,{policy:on,durable:true}).issues).toContain('DUPLICATE_OF_BUNDLED')
  })
+ it('another club\'s grounded goal is kept as data and can never publish into the Worker route',()=>{
+  const c=extractCandidates({...base,clubId:'zrinjski-mostar',body:THREE,playedOn:'2000-06-25'})[0]!
+  const r=evaluate(c,{policy:on,durable:true});expect(r.issues).toContain('NO_GOAL_ROUTE');expect(r.status).not.toBe('auto_publishable')
+ })
 })
