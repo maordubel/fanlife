@@ -189,7 +189,7 @@ try {
    const id=await board.getAttribute('data-question-id'),type=await board.getAttribute('data-question-type')
    let answer
    if(slug==='hapoel-tel-aviv'){assert(nativeQuestions.has(id),`Unknown native question ${id}`);answer=nativeQuestions.get(id).answer}
-   else {const prompt=(await board.locator('h2').textContent()).trim() /* textContent: the magazine prints headings in capitals (rule 91) */;const fact=truthDates.find(f=>prompt.startsWith(f.value.name+' — '));assert(fact,`Question lacks its club fact: ${prompt}`);answer=prompt.includes(' — '+fact.value.on+'.')?'true':'false'}
+   else {const prompt=(await board.locator('h2').textContent()).trim() /* textContent: the magazine prints headings in capitals (rule 91) */;const facts=truthDates.filter(f=>prompt.startsWith(f.value.name+' — '));assert(facts.length,`Question lacks its club fact: ${prompt}`);answer=facts.some(f=>prompt.includes(' — '+f.value.on+'.'))?'true':'false' /* several fixtures can share a name: the claim is true when ANY of them carries the stated date */}
    interactions.add(type)
    const values=Array.isArray(answer)?answer:[answer]
    if(type==='match'){ // pairs are tapped: the first unmatched left item is active, so the right-hand answers go in order
