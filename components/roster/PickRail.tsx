@@ -276,7 +276,7 @@ export function PickRail({
                 type="button"
                 onClick={chip.onClick}
                 aria-pressed={chip.pressed}
-                className={`flex min-h-[36px] shrink-0 items-center border-hair px-2.5 font-body text-[11.5px] font-extrabold leading-none transition-transform duration-press ease-stamp active:scale-[.95] motion-reduce:transition-none ${
+                className={`flex min-h-tap shrink-0 items-center border-hair px-2.5 font-body text-[11.5px] font-extrabold leading-none transition-transform duration-press ease-stamp active:scale-[.95] motion-reduce:transition-none ${
                   chip.pressed ? 'border-ink bg-ink text-paper' : 'border-ink/40 bg-paper text-ink'
                 }`}
               >

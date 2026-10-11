@@ -47,7 +47,7 @@
 .token[data-active='true'] .empty { border-style: solid; background: var(--xi-lit); color: var(--xi-on); animation: xiPulse 1.1s ease-in-out infinite; }
 .token[data-active='true'] .shirt { animation: xiNudge .9s ease-in-out infinite; }
 .token[data-active='true'] .plate { background: var(--xi-lit); color: var(--xi-on); border-block-end-color: var(--xi-ink); }
-.chair { --w: 17cqw; inset-inline-start: auto; inset-inline-end: 3cqw; margin-inline-start: 0; inset-block-end: 3%; transform: none; z-index: 3; }
+.chair { --w: max(17cqw, 44px); inset-inline-start: auto; inset-inline-end: 3cqw; margin-inline-start: 0; inset-block-end: 3%; transform: none; z-index: 3; }
 .chair .empty { border-radius: 4px; }
 .chairTag { font-family: var(--mag-mono); font-weight: 700; font-size: clamp(7px, 2.6cqw, 10px); letter-spacing: .5px; text-transform: uppercase; color: var(--xi-ink); background: var(--mag-card); padding: 0 3px; }
 @keyframes xiPop { 0% { transform: scale(.4) translateY(-16px); opacity: 0; } 100% { transform: none; opacity: 1; } }
