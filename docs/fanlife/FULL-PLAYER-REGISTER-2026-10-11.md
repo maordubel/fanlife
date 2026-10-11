@@ -5687,5 +5687,5 @@
 
 **Caution:** Unverified is not a claim of absence from all club archives. This audit is complete for the 5,608 V3 IDs and their actual prices; position/name enrichment remains incomplete until every historic club-pack source is reconciled.
 
-### Additional source enrichment
-Updated from `core.json` and `wave-auto.json` for AEK Athens, Celtic, Panathinaikos, and Olympiacos. The summary table above remains the **initial snapshot**; flags in the individual tables were refined in this pass. Position is still marked unverified unless documented.
+### Remaining source reconciliation
+The historical `core.json` and `wave-auto.json` packages require a subsequent identity-aware join. No name or role was inferred from them in this export. The summary and row flags are based on the master and 2026-10-10 roster wave only; unresolved records must be researched before being treated as complete.
