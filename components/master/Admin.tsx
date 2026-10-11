@@ -92,6 +92,7 @@ export function Admin({initial,summaries,adapters,runs,display,storage,section,v
    <header className="desk-head"><p className="desk-kicker">Data</p><h1 className="desk-h1">{summary?<>Sources for <bdi>{summary.name}</bdi></>:'Sources and collection'}</h1>
     <label className="desk-picker">Club<select value={scope||''} onChange={e=>go({club:e.target.value||null})}><option value="">Choose a club…</option>{sums.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label>
    </header>
+   <p className="desk-state" style={{display:'flex',flexWrap:'wrap',gap:12,alignItems:'center',justifyContent:'space-between'}}><span><b>Player Control Center</b> — edit every player’s positions, price and manager score, remove mistakes, bulk-edit by CSV.</span><Link className="desk-btn" href={deskHref('data',{view:'players'})}>Open the players →</Link></p>
    {summary?<DataCenter key={scope} runs={runs} selected={scope!} summary={summary} api={api} onChange={refresh}/>:
     <ul className="desk-clubs">{sums.map(s=><li key={s.id}><Link href={deskHref('data',{club:s.id})}><span><b><bdi>{s.name}</bdi></b><small>{s.archive.sources} archive sources · {s.archive.documents} documents · {s.archive.needsParser} need a parser · {s.archive.blocked} refused{s.archive.lastRun?` · last run ${s.archive.lastRun.state} ${s.archive.lastRun.at.slice(0,10)}`:' · never collected here'}</small></span><b aria-hidden="true">→</b></Link></li>)}</ul>}
    <Autopilot api={api} onRan={refresh}/>
