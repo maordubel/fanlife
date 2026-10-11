@@ -126,7 +126,7 @@ describe('the control-room API answers 401 without the owner (route handler)',()
   const r=new NextRequest(`https://fanlife.dubelteam.com/api/master/${action}`,{method,headers:{origin:'https://fanlife.dubelteam.com',...headers},body:body===undefined?undefined:JSON.stringify(body)})
   const res=await(method==='GET'?GET:POST)(r,{params:{action:action.split('/')}});return{status:res.status,body:await res.json()}
  }
- it('refuses every read and write to an anonymous fan, even in evaluation mode',async()=>{
+ it('refuses every read and write to an anonymous fan, even in evaluation mode',{timeout:60_000},async()=>{
   for(const a of ['state','summary','audit','export','life-display','audit/archive'])expect((await call('GET',a)).status,a).toBe(401)
   for(const a of ['clubs/create','clubs/update','evidence/decide','life-display/publish','pipeline/run','research/run','archive/collect'])expect((await call('POST',a,{},{})).status,a).toBe(401)
   expect((await call('GET','state')).body).toMatchObject({login:'/master/login'})

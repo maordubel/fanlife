@@ -19,6 +19,9 @@ import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-0
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
 import {withEuro} from './euro-wave'
 import {withRosterWave} from './roster-wave'
+import {withPlayerOverrides} from '@/lib/players/apply'
+import {refreshSnapshot} from '@/lib/players/snapshot'
+import {getSnapshot} from '@/lib/players/effective'
 const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>compilePackBase(withEuro(pack,club.id) as never,club)
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
 /** The colours-of-football catalogue kits the club pack has no (season, type) for: status `review`, so they reach no gate until the owner approves them. */
@@ -47,7 +50,15 @@ const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diagnostic[
 /** Review-only clubs: material staged, nothing approved — loadable (gates show LOCKED), never in the playable set. */
 export const REVIEW_CLUB_IDS:string[]=[]
 export const CORE_CLUB_IDS=Object.keys(providers).filter(id=>!REVIEW_CLUB_IDS.includes(id))
-const cache=new Map<string,{at:number;desk:boolean;p:Promise<{data:ClubData;diagnostics:Diagnostic[]}|null>}>()
+const cache=new Map<string,{at:number;desk:boolean;rev:number;p:Promise<{data:ClubData;diagnostics:Diagnostic[]}|null>}>()
+/** the archive as the repository holds it: provider + roster wave, BEFORE the owner's overrides and the readiness pass (the Player Control Center reads this to show base values and removed men) */
+const baseCache=new Map<string,Promise<{data:ClubData;diagnostics:Diagnostic[]}|null>>()
+export function loadClubBase(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null>{
+ if(!Object.hasOwn(providers,id))return Promise.resolve(null)
+ let p=baseCache.get(id)
+ if(!p){p=providers[id]!().then(r=>r?{...r,data:withRosterWave(id,r.data)}:r).catch(e=>{baseCache.delete(id);throw e});baseCache.set(id,p)}
+ return p
+}
 function freeze<T>(v:T):T {if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.freeze(v);for(const item of Object.values(v))freeze(item)}return v}
 function finish(result:{data:ClubData;diagnostics:Diagnostic[]}){result.data.gates.polls=gateReadiness(clubPolls(result.data,'en').length,T.polls.target,T.polls.minimum,T.polls.unit);result.data.gates['blind-cow']=gateReadiness(clubMystery(result.data).poolSize,T['blind-cow'].target,T['blind-cow'].minimum,T['blind-cow'].unit);for(const [k,r] of Object.entries(waveCReadiness(result.data)))(result.data.gates as Record<string,unknown>)[k]=r;return freeze(result)}
 /** A club with no repository pack is played from its DESK PACK — built in the control room from the owner's approvals,
@@ -55,13 +66,16 @@ function finish(result:{data:ClubData;diagnostics:Diagnostic[]}){result.data.gat
 const DESK_TTL_MS=60_000
 async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null;const pack=await readDeskPack(id).catch(()=>null);return pack?compilePackEuro(pack,reg):null}
 /** Static packs are immutable within a deployment; content versions travel with each run. */
-export function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null> {
+export async function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null> {
  const isStatic=Object.hasOwn(providers,id)
- if(!isStatic&&!REGISTRY.some(c=>c.id===id))return Promise.resolve(null)
+ if(!isStatic&&!REGISTRY.some(c=>c.id===id))return null
+ // the owner's published overrides (Player Control Center): refreshed at most every few seconds; a new revision rebuilds this club
+ if(isStatic)await refreshSnapshot().catch(()=>undefined)
+ const rev=isStatic?getSnapshot().revision:0
  const hit=cache.get(id)
- if(hit&&(!hit.desk||Date.now()-hit.at<DESK_TTL_MS))return hit.p
- const p=(isStatic?providers[id]!():deskProvider(id)).then(r=>r?finish(isStatic?{...r,data:withRosterWave(id,r.data)}:r):null).catch(e=>{cache.delete(id);throw e})
- cache.set(id,{at:Date.now(),desk:!isStatic,p})
+ if(hit&&hit.rev===rev&&(!hit.desk||Date.now()-hit.at<DESK_TTL_MS))return hit.p
+ const p=(isStatic?loadClubBase(id):deskProvider(id)).then(r=>r?finish(isStatic?{...r,data:withPlayerOverrides(id,r.data)}:r):null).catch(e=>{cache.delete(id);throw e})
+ cache.set(id,{at:Date.now(),desk:!isStatic,rev,p})
  return p
 }
 /** After a desk build: the next read compiles the new pack on this instance. */

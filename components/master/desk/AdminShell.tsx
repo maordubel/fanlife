@@ -28,7 +28,7 @@ const ICON:Record<string,ReactNode>={
 }
 const Icon=({k}:{k:string})=><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden="true">{ICON[k]}</svg>
 
-export function AdminShell({section,club,clubName,owner,children}:{section:Section;club:string|null;clubName:string|null;owner:boolean;children:ReactNode}){
+export function AdminShell({section,club,clubName,owner,children,playersView=false}:{section:Section;club:string|null;clubName:string|null;owner:boolean;children:ReactNode;playersView?:boolean}){
  const keep=(s:string)=>s==='clubs'||s==='data'||s==='audience'?{club:club||undefined}:{}
  return <div className="fl mag desk" lang="en" dir="ltr">
   <a className="desk-skip" href="#desk-main">Skip to the desk</a>
@@ -40,7 +40,7 @@ export function AdminShell({section,club,clubName,owner,children}:{section:Secti
   <div className="desk-body">
    <nav className="desk-side" aria-label="Control room">
     <ol>{SECTIONS.map((s,i)=><li key={s.key}><Link href={deskHref(s.key,keep(s.key))} aria-current={section===s.key?'page':undefined}><span className="desk-no">{String(i+1).padStart(2,'0')}</span><span><b>{s.label}</b><small>{s.hint}</small></span></Link></li>)}</ol>
-    <p className="desk-side-foot"><Link href="/master/test-lab">Test lab ↗</Link><Link href="/master/core">Club data ↗</Link><Link href="/master/exchange">Shirt economy ↗</Link></p>
+    <p className="desk-side-foot"><Link href="/master/admin?section=data&view=players" aria-current={section==='data'&&playersView?'page':undefined}>Player Control Center</Link><Link href="/master/test-lab">Test lab ↗</Link><Link href="/master/core">Club data ↗</Link><Link href="/master/exchange">Shirt economy ↗</Link></p>
    </nav>
    <main id="desk-main" className="desk-main" tabIndex={-1}>{children}</main>
   </div>
