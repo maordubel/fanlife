@@ -43,7 +43,7 @@ export function buildDeskPack(c:Pick<Club,'id'|'sources'|'findings'>,builtBy:str
 
 export async function readDeskPack(id:string):Promise<DeskPack|null>{
  const d=durable()
- if(d){const r=await d.read(KEY(id));return r?JSON.parse(r.text) as DeskPack:null}
+ if(d){const r=await d.read(KEY(id),{shared:true});return r?JSON.parse(r.text) as DeskPack:null}
  try{return JSON.parse(await readFile(FILE(id),'utf8')) as DeskPack}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return null;throw e}
 }
 export async function writeDeskPack(p:DeskPack){
@@ -54,6 +54,6 @@ export async function writeDeskPack(p:DeskPack){
 /** Clubs that have a desk pack — read once per call; small. */
 export async function deskPackIds():Promise<string[]>{
  const d=durable()
- if(d)return (await d.list('desk-packs/')).map(n=>n.split('/').pop()!).filter(n=>n.endsWith('.json')).map(n=>n.slice(0,-5))
+ if(d)return (await d.list('desk-packs/',{shared:true})).map(n=>n.split('/').pop()!).filter(n=>n.endsWith('.json')).map(n=>n.slice(0,-5))
  try{return (await readdir(path.join(dataRoot(),'desk-packs'))).filter(n=>n.endsWith('.json')).map(n=>n.slice(0,-5))}catch{return []}
 }
