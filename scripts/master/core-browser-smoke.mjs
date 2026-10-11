@@ -188,7 +188,7 @@ try {
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
    else for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true})
    if(['match','order','multi'].includes(type))await board.getByRole('button',{name:'Confirm answer',exact:true}).click({force:true})
-   await board.getByRole('status').waitFor();assert((await board.getByRole('status').innerText()).toLowerCase().startsWith('correct')) /* innerText follows text-transform: the magazine prints capitals (rule 91) */
+   await board.locator('[role=status][data-right]').waitFor();{const st=await board.locator('[role=status][data-right]').innerText();assert((await board.locator('[role=status][data-right]').getAttribute('data-right'))==='true'&&st.toLowerCase().includes('correct'),`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)} -> ${JSON.stringify(st.slice(0,120))}`)} /* innerText follows text-transform: the magazine prints capitals (rule 91) */
    answers++
    await page.waitForFunction(old=>document.querySelector('[data-testid="trivia-result"]')||document.querySelector('[data-testid="trivia-question"]')?.getAttribute('data-question-id')!==old,id)
   }
