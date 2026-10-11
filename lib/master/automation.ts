@@ -1,4 +1,5 @@
 import 'server-only'
+import {goalsPass} from '@/lib/goals-auto/pipeline'
 import {randomUUID} from 'node:crypto'
 import {existsSync,readFileSync} from 'node:fs'
 import {join} from 'node:path'
@@ -64,7 +65,10 @@ export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_
  if(lastWorked)await writeCursor(lastWorked).catch(()=>undefined)
  // queued adapters make their own requests: start one only with time to finish it (A03)
  const processed=[];for(let i=0;Date.now()<deadline-15000&&i<Math.max(1,steps.filter(s=>s.queued).length);i++){const r=await runResearch();processed.push(r);if(!('ran' in r)||!r.ran)break}
- return {at:new Date().toISOString(),steps,processed:processed.length,stopsAt:'review — sources and findings wait for the owner; packs and publishing are never automatic'}
+ // 6 — goals: read what step 2 already stored (no request of its own; default policy publishes nothing)
+ let goals:{state:string;counts:Record<string,number>;note:string}|{error:string}|null=null
+ if(Date.now()<deadline-5000){try{const r=await goalsPass({clubs:order});goals={state:r.state,counts:r.counts,note:r.note}}catch(e){goals={error:e instanceof Error?e.message:'failed'}}}
+ return {at:new Date().toISOString(),steps,goals,processed:processed.length,stopsAt:'review — sources and findings wait for the owner; packs and publishing are never automatic'}
 }
 
 /** Queue the package adapter for a club unless research is already queued or running. Returns whether it queued. */
