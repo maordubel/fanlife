@@ -177,6 +177,8 @@ try {
   await page.getByTestId('trivia-start').click()
   while(await page.getByTestId('trivia-result').count()===0){
    const board=page.getByTestId('trivia-question');await board.waitFor()
+   // the stage card (between stages) covers the answers and the question clock is already running: a player taps it away, so does the flow
+   await page.getByTestId('trivia-stage').click({timeout:800}).catch(()=>{})
    const id=await board.getAttribute('data-question-id'),type=await board.getAttribute('data-question-type')
    let answer
    if(slug==='hapoel-tel-aviv'){assert(nativeQuestions.has(id),`Unknown native question ${id}`);answer=nativeQuestions.get(id).answer}
