@@ -169,7 +169,9 @@ try {
  const questionMaster=JSON.parse(readFileSync('content/generated/question-master.json','utf8'))
  const nativeQuestions=new Map(questionMaster.questions.map(q=>[q.id,q]))
  const interactions=new Set()
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']) {
+ // the four clubs are independent: each plays on its own page, at the same time (the serial run took longer than everything else in CI together)
+ await Promise.all(['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva'].map(async slug=>{
+  const page=await context.newPage();await page.setViewportSize({width:390,height:844})
   const response=await page.goto(`${base}/clubs/${slug}/trivia?seed=42&lang=en`)
   assert.equal(response.status(),200)
   const truthDates=slug==='hapoel-tel-aviv'?null:(await loadClub(slug)).data.archive // compiled (pack + waves), as the page deals it
@@ -235,7 +237,9 @@ try {
   const activity=await page.evaluate(club=>JSON.parse(localStorage.getItem(`fan-life:club:${club}:activity:v1`)),slug)
   assert.equal(activity.trivia.completed,1);assert.equal(activity.memory.completed,1)
   sharedGames.push({club:slug,triviaAnswers:answers,memoryPairs:pairs.length,archive:'passed',activity:'passed'})
- }
+  await page.close()
+ }))
+ sharedGames.sort((x,y)=>x.club.localeCompare(y.club))
  // All six existing interactions are preserved in native QA; this mixed browser round
  // exercises the interaction types actually dealt, without forcing a handpicked fork.
  assert(interactions.has('mcq')&&interactions.size>=2)
