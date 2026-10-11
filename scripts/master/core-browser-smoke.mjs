@@ -139,6 +139,8 @@ try {
  for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']){
   // magazine home: shared paper tile, club colour only on the badge (livery) — see CLAUDE.md rule 91
   const tile=page.locator(`.mag-tile[data-club="${slug}"]`)
+  // A club is either open (its own tile) or still in the workshop (a vote tile) — the owner's publication decides which (rule 91/100)
+  if(await tile.count()===0){assert.equal(await page.locator(`.mag-shop[data-club="${slug}"]`).count(),1,`${slug} neither open nor in the workshop`);continue}
   assert.equal(await tile.count(),1,`${slug} tile`)
   assert((await tile.getAttribute('href')).startsWith(`/clubs/${slug}`),`${slug} href`)
   const badge=tile.locator('.mag-badge')
@@ -186,13 +188,13 @@ try {
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
    else for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true})
    if(['match','order','multi'].includes(type))await board.getByRole('button',{name:'Confirm answer',exact:true}).click({force:true})
-   await board.getByRole('status').waitFor();assert((await board.getByRole('status').innerText()).startsWith('Correct'))
+   await board.getByRole('status').waitFor();assert((await board.getByRole('status').innerText()).toLowerCase().startsWith('correct')) /* innerText follows text-transform: the magazine prints capitals (rule 91) */
    answers++
    await page.waitForFunction(old=>document.querySelector('[data-testid="trivia-result"]')||document.querySelector('[data-testid="trivia-question"]')?.getAttribute('data-question-id')!==old,id)
   }
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`Shared trivia mobile overflow: ${slug}`)
   assert(answers>=3&&answers<=12)
-  assert((await page.getByTestId('trivia-result').innerText()).toLowerCase().includes(String(`Correct: ${answers}/${answers}`).toLowerCase()))
+  {const resultText=await page.getByTestId('trivia-result').innerText();assert(resultText.toLowerCase().includes(String(`Correct: ${answers}/${answers}`).toLowerCase()),`${slug} result text: ${JSON.stringify(resultText.slice(0,200))}`)}
   assert.equal(new URL(page.url()).pathname,`/clubs/${slug}/trivia`)
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-trivia.png`)
   await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('trivia-start').click();await page.getByTestId('trivia-question').waitFor();assert.equal(new URL(page.url()).searchParams.get('r'),'1')
