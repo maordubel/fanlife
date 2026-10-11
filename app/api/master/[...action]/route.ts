@@ -2,6 +2,7 @@ import {NextRequest,NextResponse} from 'next/server'
 import {randomUUID} from 'node:crypto'
 import {audit,mutate,readState,auditArchiveMonths,readAuditArchive} from '@/lib/master/store'
 import {sameOrigin,cronAuthorized,text,slug,color} from '@/lib/master/request'
+import {blobAuthReport} from '@/lib/master/durable'
 import {adminFromRequest} from '@/lib/master/admin'
 import {actorOf} from '@/lib/master/audit-log'
 import {runResearch} from '@/lib/master/research'
@@ -56,7 +57,7 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  if(a==='audit/archive'){const m=q.get('month');return json(m?{month:m,rows:await readAuditArchive(m)}:{months:await auditArchiveMonths()})}
  if(a==='life-display')return json((await readState()).lifeDisplay||emptyDisplay())
  if(a==='export')return new NextResponse(JSON.stringify(await readState(),null,2),{headers:{'Content-Type':'application/json','Content-Disposition':'attachment; filename="fan-life-control.json"','Cache-Control':'no-store'}})
- return json({error:'Not found'},404)}catch(e){return json({error:e instanceof Error?e.message:'Operation failed'},400)}}
+ return json({error:'Not found'},404)}catch(e){const m=e instanceof Error?e.message:'Operation failed';/* a storage refusal says which credentials are configured and which one answered — booleans only, never a value */return json(/blob/i.test(m)?{error:m,storage:blobAuthReport()}:{error:m},400)}}
 export async function POST(r:NextRequest,{params}:{params:{action:string[]}}){try{const who=adminFromRequest(r);if(!who)return unauthorized();sameOrigin(r);const by=actorOf(who),a=params.action.join('/');if(a==='upstream/check')return json(await checkUpstream(by));const raw=await r.text();if(raw.length>250000)throw new Error('Request too large.');const b=raw?JSON.parse(raw):{}
 // F15: run the job the caller queued (by id); without an id, the first runnable job (the scheduler's behaviour)
 if(a==='goals'){const out=await goalsAction(b,by.actor);await mutate(st=>{audit(st,'goals.'+String(b.op),String(b.club||b.id||'-'),JSON.stringify(out).slice(0,200),by)});return json(out,out.ok?200:400)}
