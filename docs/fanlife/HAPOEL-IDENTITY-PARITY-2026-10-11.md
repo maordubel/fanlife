@@ -38,3 +38,12 @@ The GitHub file connector truncates the large generated player, price and roster
 
 ## Exhaustive 700-entry generated-name census
 See `docs/fanlife/HAPOEL-700-IDENTITY-LEDGER-2026-10-11.md` for all 700 IDs, display names, English provenance, known additional roles, manual price pins, and merge status. 652 generated entries have canonical-style p_ IDs, 48 are wave p_wv- IDs, of which one (Tchibota) is explicitly merged. The canonical owner roster contains **654 names**, NOT a verified 653 unique player count. Confirming exactly 653 needs reviewing canonical eligibility and identity evidence, not trimming an arbitrary number.
+
+## 2026-10-11 owner English spellings + manager correction
+- The owner authorized best-evidence English spellings. Nine corrupt transliterated wave aliases were corrected in the wave file, editor overrides and the generated display table (Avraham Binyamin; Eli Dasa; Eli Cohen; Emmanuel Boateng; Amnon Harlap; Omri Kende; Omer Peretz; Douglas da Silva; Shlomi Azulay).
+- Eli Guttman (`אלי גוטמן`) is a coach, **not** a Hapoel Tel Aviv player. His imported wave-player record `p_wv-8fea373aaf` and generated player name were excluded. Coach history preserved in `HAPOEL-COACH-CLASSIFICATION-ELI-GUTTMAN.md`.
+- Player-name table now has **699 entries**, including the already merged wave Tchibota ID. This is a **row count**, not the unique playable person count or a verified 653.
+- The original 700-ID ledger remains a dated baseline, capturing the now excluded coach ID for auditability.
+- The original `rumble-prices-v3.json` may retain a frozen entry for the now excluded coach; do not assume the pricing table is clean until that exact-ID check is performed.
+- All roles/identities of ambiguous homonyms remain for manual/source verification; the nine spelling repairs are **not** authorization to merge unrelated players.
+- Additional regression tests exist but full tests/build are not confirmed executed.
