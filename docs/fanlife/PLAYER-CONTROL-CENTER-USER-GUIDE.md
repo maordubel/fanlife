@@ -21,3 +21,16 @@ The second publish is refused with *"changed by someone else"* — reopen the pl
 
 ## Storage
 If the page says *Changes here will not survive a restart*, no durable store is connected (Vercel Blob). Connect it before using the desk for real work.
+
+## Reports (tab *Reports*)
+![reports](pcc-shots/desktop-reports.png)
+* **No position** — men with nothing on record, strongest first; each has an *Edit* that opens his drawer.
+* **Price vs strength** — a price two or more rungs away from where the club's own ranking by score would put him, with the suggested price and why. Suggestions are never applied for you.
+* **Possible twins** — two ids at one club that share a name or alias. They are candidates for the merge file only; nothing is merged by name.
+* **Price ladders** — each club's count at €5/4/3/2/1 against what the ladder says (a red cell is off).
+
+## Bulk edit (tab *Bulk edit (CSV)*)
+![bulk](pcc-shots/desktop-bulk.png)
+1. *Download template* (or *Export every player* and edit that). Columns: `club_id, player_id, proposed_price_m, primary_position, secondary_positions, rating_override, removed, reason, expected_revision`. Rows are matched by ids, never names. Blank = leave alone; `inherit` = clear the override; `unknown` as a primary position = unknown; secondary positions are separated by `/`.
+2. Choose the file and press *Preview*. Nothing is written. Every row is shown with its fate and each club's price ladder after the whole batch.
+3. If any row is invalid, missing or stale, nothing can be published — fix the file and preview again. Otherwise give one reason for the batch, tick the exception boxes the page asks for, and *Publish*. The batch is one revision; pressing twice cannot write twice.

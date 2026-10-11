@@ -21,8 +21,13 @@ whitelist + null/empty semantics · every club listed with decades · search by 
 Desktop 1440 and mobile 390: list, drawer, preview impact → exception → publish → edited row → revert; no horizontal overflow, no page errors. Screenshots in `docs/fanlife/pcc-shots/`. Found and fixed: the drawer sat under the top bar and tab bar (the desk body is its own stacking layer) → it is portalled to the desk root.
 
 ## Not covered / risks
-* CSV import, bulk commit, duplicate finder, recommendations, what-if simulator (spec phase 4) are not built.
+* What-if simulator, evidence queue with sources, and "apply recommendation" buttons are not built (recommendations are read-only by design).
 * Storage is the control room's durable store (Blob), not Supabase tables — see the architecture note. Without Blob connected, edits are per-instance and not durable; the desk says so.
 * Other instances see a new revision within ~8 s (per-instance refresh); the instance that published sees it at once.
 * The XI budget: `ELEVEN.budget` in `lib/clubs/rumble.ts` is 33 while `XI_BUDGET` (`lib/clubs/rumble-xi/types.ts`) is 35 and is what the eleven uses; readiness here uses `xiReadiness` (35). Left as found — flagged for the owner.
 * A man given a secondary position is counted for slots (`fits`) but `offersByFamily` still counts primaries only, so readiness for a small club is slightly conservative.
+
+## Phase 4 tests (`tests/players/bulk-reports.test.ts`, 10 tests)
+CSV reader (BOM, CRLF, quotes) · every row fate by id only, a name never matches · missing id column / oversize / too many rows refused · token mismatch 409 · off-ladder batch needs confirmation · one revision, per-man audit lines, idempotent replay writes nothing twice · one bad row refuses the whole file · locked price needs owner exception, key and reason required · `inherit` / `unknown` / `removed` and their reversal · export re-imports as 10 of 10 unchanged · reports contract. Existing 19 tests unchanged; test isolation fixed (club cache invalidated between tests, because revisions restart at 0).
+Browser: reports and bulk preview on desktop 1440, reports on mobile 390 — no overflow, no page errors.
+Finding surfaced by the reports: some archive original names carry scraped captions ("…Image: Tully, Charlie - Pic†wikifoundryimages…"); the English display name is clean, the original is not — worth a clean-up pass.
