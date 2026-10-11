@@ -8,7 +8,7 @@ import {useRouter,useSearchParams,usePathname} from 'next/navigation'
  * the server answers with the impact of a change (price ladder, game readiness, locks) and this screen shows it before anything is published.
  */
 type Pos='GK'|'DF'|'MF'|'FW'
-type Row={club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases:string[];decade:string;fromYear:number|null;toYear:number|null;basePositions:Pos[];positions:Pos[];positionState:string;basePrice:number;price:number;priceSource:string;baseRating:number;rating:number;ratingBasis:string;locked:boolean;lockReason:string;removed:boolean;overridden:string[];draft:boolean;wave:boolean;confidence:number;rev:number;updatedAt:string|null;updatedBy:string|null;note:string}
+type Row={mergedInto?:string|null;club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases:string[];decade:string;fromYear:number|null;toYear:number|null;basePositions:Pos[];positions:Pos[];positionState:string;basePrice:number;price:number;priceSource:string;baseRating:number;rating:number;ratingBasis:string;locked:boolean;lockReason:string;removed:boolean;overridden:string[];draft:boolean;wave:boolean;confidence:number;rev:number;updatedAt:string|null;updatedBy:string|null;note:string}
 type Listing={rows:Row[];total:number;page:number;pages:number;revision:number;counts:Record<string,number>;decades:string[];storage:{kind:string;durable:boolean;error:string|null}}
 type Impact={quota:{ok:boolean;want:Record<number,number>;have:Record<number,number>;violations:string[]};readiness:{before:string[];after:string[];broke:string[]};consumers:string[];lockedChange:boolean;iconChange:boolean}
 type AuditEvent={id:string;at:string;actor:string;action:string;reason:string;before:Record<string,unknown>|null;after:Record<string,unknown>|null;revision:number}
@@ -16,14 +16,14 @@ type BaseInfo={basePrice:number;basePositions:Pos[];baseRating:number;ratingBasi
 type Detail={row:Row;base:BaseInfo;override:{rev:number}|null;draft:{patch:Record<string,unknown>;by:string;at:string}|null;audit:AuditEvent[]}
 const POS:Pos[]=['GK','DF','MF','FW']
 const CLUBS:(readonly [string,string])[]=[['celtic','Celtic'],['aek-athens','AEK Athens'],['olympiacos','Olympiacos'],['panathinaikos','Panathinaikos'],['st-pauli','FC St. Pauli'],['zrinjski-mostar','Zrinjski Mostar'],['hapoel-petah-tikva','Hapoel Petah Tikva'],['hapoel-tel-aviv','Hapoel Tel Aviv']]
-const STATUS:(readonly [string,string])[]=[['','Every man'],['missing-position','No position'],['fallback-price','Price not in the frozen list'],['overridden','Edited by you'],['draft','Has a draft'],['removed','Removed from the squad'],['locked','Locked / pinned'],['wave','Roster-wave (unreviewed)'],['archive','Archive proper']]
+const STATUS:(readonly [string,string])[]=[['','Every man'],['missing-position','No position'],['fallback-price','Price not in the frozen list'],['overridden','Edited by you'],['draft','Has a draft'],['removed','Removed from the squad'],['merged','Merged into another record'],['locked','Locked / pinned'],['wave','Roster-wave (unreviewed)'],['archive','Archive proper']]
 const same=(a:readonly string[],b:readonly string[])=>a.length===b.length&&a.every((x,i)=>x===b[i])
 async function call<T>(url:string,init?:RequestInit):Promise<{ok:boolean;status:number;data:T&{error?:string;detail?:unknown}}>{
  try{const r=await fetch(url,{...init,headers:{'Content-Type':'application/json',...(init?.headers||{})},cache:'no-store'});return {ok:r.ok,status:r.status,data:await r.json().catch(()=>({})) as never}}
  catch{return {ok:false,status:0,data:{error:'No connection. Nothing was saved.'} as never}}
 }
 
-import {ReportsPanel,BulkPanel} from './PlayersTools'
+import {ReportsPanel,BulkPanel,MergePanel} from './PlayersTools'
 export function PlayersDesk(){
  const router=useRouter(),path=usePathname(),sp=useSearchParams()
  const [data,setData]=useState<Listing|null>(null),[err,setErr]=useState<string|null>(null),[busy,setBusy]=useState(false),[open,setOpen]=useState<{club:string;id:string}|null>(null)
@@ -41,13 +41,13 @@ export function PlayersDesk(){
  return <div className="pcc">
   <header className="desk-head"><p className="desk-kicker">Data · Player Control Center</p><h1 className="desk-h1">Every player, every club</h1>
    <p className="pcc-lede">Edit a man’s positions, price, manager score — or remove him from the squad. A draft changes nothing; a published change reaches every game, and the archive’s own value stays on file and one click away.</p></header>
-  <nav className="pcc-tabs" aria-label="Player Control Center">{([['','Players'],['reports','Reports'],['bulk','Bulk edit (CSV)']] as const).map(([k,l])=><button key={k} type="button" className="pcc-chip" aria-pressed={(sp.get('tab')||'')===k} onClick={()=>set('tab',k||null)}>{l}</button>)}</nav>
-  {tab==='reports'?<ReportsPanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='bulk'?<BulkPanel/>:<>
+  <nav className="pcc-tabs" aria-label="Player Control Center">{([['','Players'],['reports','Reports'],['merge','Merge duplicates'],['bulk','Bulk edit (CSV)']] as const).map(([k,l])=><button key={k} type="button" className="pcc-chip" aria-pressed={(sp.get('tab')||'')===k} onClick={()=>set('tab',k||null)}>{l}</button>)}</nav>
+  {tab==='reports'?<ReportsPanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='merge'?<MergePanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='bulk'?<BulkPanel/>:<>
   {data&&!data.storage.durable&&<p role="alert" className="desk-state" data-state="error"><b>Changes here will not survive a restart.</b> The control room has no durable store connected ({data.storage.kind}). Connect the Blob store before relying on it.</p>}
   {data?.storage.error&&<p role="alert" className="desk-state" data-state="error">The player files are unreachable ({data.storage.error}). The games keep the last published values.</p>}
   {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}
   {c&&<ul className="pcc-stats" aria-label="Where the archive stands">
-   {([['All players',c.total,''],['No position',c.missingPosition,'missing-position'],['Price not in the list',c.fallbackPrice,'fallback-price'],['Edited',c.overridden,'overridden'],['Drafts',c.drafts,'draft'],['Removed',c.removed,'removed']] as const).map(([l,n,s])=><li key={l}><button type="button" className="min-h-tap" aria-pressed={(sp.get('status')||'')===s} onClick={()=>set('status',s||null)}><b>{(n??0).toLocaleString('en')}</b><span>{l}</span></button></li>)}
+   {([['All players',c.total,''],['No position',c.missingPosition,'missing-position'],['Price not in the list',c.fallbackPrice,'fallback-price'],['Edited',c.overridden,'overridden'],['Drafts',c.drafts,'draft'],['Removed',c.removed,'removed'],['Merged',c.merged??0,'merged']] as const).map(([l,n,s])=><li key={l}><button type="button" className="min-h-tap" aria-pressed={(sp.get('status')||'')===s} onClick={()=>set('status',s||null)}><b>{(n??0).toLocaleString('en')}</b><span>{l}</span></button></li>)}
    <li className="pcc-rev"><span>Published revision</span><b>{data!.revision}</b></li>
   </ul>}
   <section className="pcc-filters" aria-label="Filters">
@@ -147,7 +147,9 @@ function Drawer({club,id,onClose,onChanged}:{club:string;id:string;onClose:()=>v
      {impact.lockedChange&&<label><input type="checkbox" checked={okOwner} onChange={ev=>setOkOwner(ev.target.checked)}/> {impact.iconChange?'Owner exception: change a pinned €5M icon':'Owner exception: change a locked price'}</label>}
     </section>}
     <label className="pcc-field"><span>Reason <small>(required to publish; kept in the history)</small></span><input type="text" value={reason} onChange={ev=>setReason(ev.target.value)} placeholder="e.g. played in midfield for three seasons — Celtic Wiki"/></label>
-    <div className="pcc-actions"><button type="button" className="desk-btn ghost" disabled={working||!dirty} onClick={preview}>Preview impact</button><button type="button" className="desk-btn ghost" disabled={working||!dirty} onClick={saveDraft}>Save draft</button><button type="button" className="desk-btn" disabled={working||(!dirty&&!d.draft)||reason.trim().length<3} onClick={publish}>Publish</button>{d.draft&&<button type="button" className="desk-btn ghost" disabled={working} onClick={discard}>Discard draft</button>}</div>
+    <p className="pcc-hint" role="status">{reason.trim().length<3?(dirty||d.draft?'To publish: write a short reason above. Publishing sends this change to every game.':'Change a field to enable Publish.'):'Ready — Publish sends this change to every game now.'}</p>
+    <div className="pcc-actions pcc-sticky"><button type="button" className="desk-btn ghost" disabled={working||!dirty} onClick={preview}>Preview impact</button><button type="button" className="desk-btn ghost" disabled={working||!dirty} onClick={saveDraft}>Save draft</button><button type="button" className="min-h-tap desk-btn" disabled={working||(!dirty&&!d.draft)||reason.trim().length<3} onClick={publish}>Publish</button>{d.draft&&<button type="button" className="desk-btn ghost" disabled={working} onClick={discard}>Discard draft</button>}</div>
+    {d.row.mergedInto&&<p className="pcc-hint">Merged into <code>{d.row.mergedInto}</code> — he no longer appears in any game. <button type="button" className="min-h-tap pcc-link" disabled={working||reason.trim().length<3} onClick={async()=>{const r=await act('unmerge',{reason});if(r.ok){setNote('Merge undone — he is back in the squad.');await load();onChanged()}else setErr(r.data.error||'Failed.')}}>Undo merge (needs a reason above)</button></p>}
     {d.draft&&<p className="pcc-hint">A draft by {d.draft.by} is waiting — invisible to the games until published.</p>}
     <section className="pcc-history"><h3>History</h3>{d.audit.length?<ol>{d.audit.map(a=><li key={a.id}><b>{a.action}</b> · {a.actor} · <time dateTime={a.at}>{a.at.slice(0,16).replace('T',' ')}</time><small>{a.reason}</small>{a.action==='publish'&&<button type="button" className="pcc-link" disabled={working} onClick={()=>revert(a.id)}>Revert this change</button>}</li>)}</ol>:<p className="pcc-hint">No changes yet — every value is the archive’s.</p>}</section>
    </>}

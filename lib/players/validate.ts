@@ -1,6 +1,6 @@
 import {POSITIONS,RATING_MAX,RATING_MIN,type Patch,type Pos,type Price} from './types'
 /** The whitelist: unknown keys are refused by name, never ignored and never applied. */
-const KEYS=new Set(['price','positions','rating','removed','note'])
+const KEYS=new Set(['price','positions','rating','removed','mergedInto','note'])
 export type Parsed={ok:true;patch:Patch}|{ok:false;error:string}
 export function parsePatch(input:unknown):Parsed{
  if(!input||typeof input!=='object'||Array.isArray(input))return {ok:false,error:'patch must be an object'}
@@ -10,6 +10,7 @@ export function parsePatch(input:unknown):Parsed{
  if('positions' in o){const v=o.positions;if(v===null)out.positions=null;else if(Array.isArray(v)&&v.length<=4&&v.every(x=>POSITIONS.includes(x as Pos))&&new Set(v).size===v.length)out.positions=v as Pos[];else return {ok:false,error:'positions must be a list of distinct GK / DF / MF / FW'}}
  if('rating' in o){const v=o.rating;if(v===null)out.rating=null;else if(Number.isInteger(v)&&(v as number)>=RATING_MIN&&(v as number)<=RATING_MAX)out.rating=v as number;else return {ok:false,error:`rating must be a whole number from ${RATING_MIN} to ${RATING_MAX}`}}
  if('removed' in o){const v=o.removed;if(v===null||typeof v==='boolean')out.removed=v;else return {ok:false,error:'removed must be true, false or null'}}
+ if('mergedInto' in o){if(o.mergedInto===null)out.mergedInto=null;else return {ok:false,error:'a merge is made with the merge action, not by editing a field'}}
  if('note' in o){const v=o.note;if(v===null)out.note=null;else if(typeof v==='string'&&v.length<=500)out.note=v;else return {ok:false,error:'note must be text of at most 500 characters'}}
  if(!Object.keys(out).length)return {ok:false,error:'nothing to change'}
  return {ok:true,patch:out}

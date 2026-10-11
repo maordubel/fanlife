@@ -252,3 +252,8 @@
 .pcc-brow[data-status='invalid'], .pcc-brow[data-status='missing'], .pcc-brow[data-status='conflict'] { border-inline-start: 6px solid var(--mag-vermilion); } .pcc-brow[data-status='unchanged'] { opacity: .65; }
 .pcc-commit { margin-block-start: 14px; display: grid; gap: 8px; }
 @media (max-width: 860px) { .pcc-list li, .pcc-twin li, .pcc-brow { grid-template-columns: 1fr; gap: 2px; } }
+.pcc-sticky{position:sticky;bottom:0;background:var(--sheet,var(--paper));padding-block:.5rem;border-top:1px solid var(--ink);z-index:2}
+.pcc-merge{display:grid;gap:.75rem}
+.pcc-pair{border:1px solid var(--ink);padding:.75rem;display:grid;gap:.5rem}
+.pcc-pair .cols{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+@media (max-width:640px){.pcc-pair .cols{grid-template-columns:1fr}}
