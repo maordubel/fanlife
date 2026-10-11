@@ -1,6 +1,7 @@
 import type {ClubData,ClubPlayer} from './contract'
 import {norm} from '@/lib/fixtures/names'
 import {englishName,isMan} from '@/lib/clubs/rumble-xi/names'
+import {overrideOf} from '@/lib/players/effective'
 import {derivedRating,workbookRating,type RatingBasis} from './ratings'
 import {withFeatured} from './rumble-economy'
 import {priceFor} from './rumble-xi/prices'
@@ -28,7 +29,7 @@ export const SLOTS:readonly Pos[]=FIVE.slots
 export const BUDGET=FIVE.budget,OFFERS=FIVE.offers
 /** a goal's worth of rating: ratings sit in a narrow band (about 60–95), so the gap is stretched before it becomes goals */
 export const POWER_SCALE=3.5
-export type RumbleCard={id:string;name:string;position:Pos;/** a man whose position no source states: only ever signed by a scout, into any outfield slot */free?:boolean;/** classic: 1–5 whole; XI: €0.5M steps from 1 to 5 */price:number;fromYear:number|null;toYear:number|null}
+export type RumbleCard={id:string;name:string;position:Pos;/** a man whose position no source states: only ever signed by a scout, into any outfield slot */free?:boolean;/** other position families he has played (a man who played in several): he fits a slot of any of them */alt?:Pos[];/** classic: 1–5 whole; XI: €0.5M steps from 1 to 5 */price:number;fromYear:number|null;toYear:number|null}
 export type Rated=RumbleCard&{rating:number;basis?:RatingBasis}
 const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^(seed>>>15),1|seed);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}
 const shuffle=<T,>(a:T[],r:()=>number)=>{const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[x[i],x[j]]=[x[j]!,x[i]!]}return x}
@@ -49,9 +50,11 @@ export function goalsByPlayer(data:ClubData):Map<string,number>{
  * by the workbook or by his club's ordinary midfielder moved by his own record — never guessed into a position, never left out.
  * `extra` carries positions read from a named public source for men the archive and the workbook leave unplaced.
  */
-export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}={}):Rated[]{
+export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>;/** read the archive alone, ignoring the owner's published overrides (the Player Control Center's "base" view) */base?:boolean}={}):Rated[]{
  const goals=goalsByPlayer(data),club=data.identity?.id??''
- const posOf=(p:ClubPlayer):Pos|null=>first(p)??workbookRating(club,[p.name,...p.aliases])?.pos??opts.extra?.[p.id]??null
+ const ov=(id:string)=>opts.base?undefined:overrideOf(club,id)
+ // an explicit owner position list (even an empty one = unknown) beats every fallback; otherwise archive → workbook → named public source
+ const posOf=(p:ClubPlayer):Pos|null=>ov(p.id)?.positions?(ov(p.id)!.positions![0]??null):first(p)??workbookRating(club,[p.name,...p.aliases])?.pos??opts.extra?.[p.id]??null
  const all=(data.players||[]).map(f=>f.value).filter(p=>isMan(p.name)),byId=new Map(all.map(p=>[p.id,p]))
  // one man, one card: a record that is the same man as another (rumble-merges.json) is folded into the one kept — his names, years and goals travel along
  const dropped=new Set<string>(),everyone:ClubPlayer[]=[]
@@ -78,18 +81,20 @@ export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}
   const base:Pos=pos==='free'?'MF':pos
   ps.forEach((p,i)=>{
    const rating=given[i]?.score??derivedRating(club,base,scores[i]!)
-   out.push({id:p.id,name:englishName(club,p.id,p.name),position:base,price:1,rating,basis:given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear,...(pos==='free'?{free:true}:{})})})
+   const alts=[...new Set([...(ov(p.id)?.positions??p.positions)])].filter(x=>x!==base&&pos!=='free') as Pos[]
+   const given2=ov(p.id)?.rating
+   out.push({id:p.id,name:englishName(club,p.id,p.name),position:base,price:1,rating:given2??rating,basis:given2!==undefined?'individual':given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear,...(alts.length?{alt:alts}:{}),...(pos==='free'?{free:true}:{})})})
  }
  return out.sort((a,b)=>a.id.localeCompare(b.id))
 }
 /** the pool a game deals from: every man of the club, on the club's one frozen price list (the same price in five a side and in the eleven) */
-export function ratedPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>}={}):Rated[]{
+export function ratedPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>;base?:boolean}={}):Rated[]{
  const club=data.identity?.id??'',extra=opts.extra??extraPositions(club)
- return rawPool(data,{extra}).map(r=>({...r,price:priceFor(club,r.id)}))
+ return rawPool(data,{extra,base:opts.base}).map(r=>({...r,price:(opts.base?undefined:overrideOf(club,r.id)?.price)??priceFor(club,r.id)}))
 }
 /** can this man fill a slot of this position? a free man (no recorded position) fits any outfield slot */
-export const fits=(x:{position:Pos;free?:boolean},pos:Pos)=>x.free?pos!=='GK':x.position===pos
-export const strip=(r:Rated):RumbleCard=>({id:r.id,name:r.name,position:r.position,price:r.price,fromYear:r.fromYear,toYear:r.toYear,...(r.free?{free:true}:{})})
+export const fits=(x:{position:Pos;free?:boolean;alt?:readonly Pos[]},pos:Pos)=>x.free?pos!=='GK':x.position===pos||!!x.alt?.includes(pos)
+export const strip=(r:Rated):RumbleCard=>({id:r.id,name:r.name,position:r.position,price:r.price,fromYear:r.fromYear,toYear:r.toYear,...(r.alt?{alt:r.alt}:{}),...(r.free?{free:true}:{})})
 const count=(f:Format,p:Pos)=>f.slots.filter(x=>x===p).length
 /** how many of each position a club needs before the gate can deal (offers + an opponent who is not the same men): twice the slots, and a full pool at three times */
 export function rumbleReadiness(pool:Rated[],format:Format=FIVE){

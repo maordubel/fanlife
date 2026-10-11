@@ -3,6 +3,7 @@ import {ClubGaps} from '@/components/master/ClubGaps'
 import {Admin,type AdapterInfo,type DeskSection} from '@/components/master/Admin'
 import {AdminShell,MoreMenu,type Section} from '@/components/master/desk/AdminShell'
 import {AudienceDesk} from '@/components/master/desk/AudienceDesk'
+import {PlayersDesk} from '@/components/master/desk/PlayersDesk'
 import {lightState} from '@/lib/master/lightState'
 import {readState,storageInfo} from '@/lib/master/store'
 import {requireAdmin} from '@/lib/master/admin'
@@ -36,8 +37,8 @@ export default async function Page({searchParams}:{searchParams:{section?:string
  const inbox=attention(summaries,state.jobs,{storage,measurement,runnerPinned:process.env.CRON_SECRET?null:false})
  const clubName=club?summaries.find(s=>s.id===club)!.name:null
  const owner=session.role==='owner'
- return <AdminShell section={section} club={club} clubName={clubName} owner={owner}>
-  {section==='more'?<MoreMenu owner={owner}/>:
+ return <AdminShell section={section} club={club} clubName={clubName} owner={owner} playersView={view==='players'}>
+  {section==='more'?<MoreMenu owner={owner}/>:section==='data'&&view==='players'?<Suspense fallback={<p className="desk-state" role="status">Loading players…</p>}><PlayersDesk/></Suspense>:
   <Suspense fallback={<p className="desk-state" role="status">Loading the desk…</p>}>
    <Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()} storage={storage}
     section={section} view={view} club={club} attention={inbox}
