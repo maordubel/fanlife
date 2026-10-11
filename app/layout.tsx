@@ -6,7 +6,7 @@ import { MarketAlerts } from '@/components/fanlife/market/MarketAlerts'
 import { ClosetBridge } from '@/components/collector/ClosetBridge'
 import { GateMeter } from '@/components/meter/GateMeter'
 import { NavPulse } from '@/components/ui/NavPulse'
-import { TOP_AD_SRC, topAdAllowedOn, DEFAULT_TOP_AD } from '@/lib/top-ad'
+import { TOP_AD_SRC, topAdAllowedOn, DEFAULT_TOP_AD, MONETAG_SITE_VERIFICATION } from '@/lib/top-ad'
 import { Suspense } from 'react'
 import { ADSENSE_CLIENT } from '@/lib/ads'
 import { BRAND, SITE_URL } from '@/lib/brand'
@@ -75,6 +75,7 @@ const workerMetadata: Metadata = {
   // file-convention route that would otherwise compete with this field for the tab —
   // see the comment in `app/icon.svg` itself for why its content now IS the badge
   // rather than the two sources disagreeing about what a reader sees.
+  other: { monetag: MONETAG_SITE_VERIFICATION },
   icons: {
     icon: [{ url: '/brand/logo-192.png', type: 'image/png' }],
     apple: '/brand/logo-192.png',
@@ -93,6 +94,7 @@ const fanLifeMetadata: Metadata = {
   applicationName: 'FAN LIFE',
   openGraph: { title: 'FAN LIFE', description: 'Football. Forever. Every club, a world.', siteName: 'FAN LIFE', locale: 'en_GB', type: 'website', images: [{ url: '/brand/fanlife/og.png', width: 1200, height: 630, alt: 'FAN LIFE — Football. Forever.' }] },
   twitter: { card: 'summary_large_image', title: 'FAN LIFE', description: 'Football. Forever. Every club, a world.', images: ['/brand/fanlife/og.png'] },
+  other: { monetag: MONETAG_SITE_VERIFICATION },
   icons: {
     icon: [{ url: '/brand/fanlife/mark-32.png', sizes: '32x32', type: 'image/png' }, { url: '/brand/fanlife/mark-64.png', sizes: '64x64', type: 'image/png' }, { url: '/brand/fanlife/logo-192.png', sizes: '192x192', type: 'image/png' }],
     apple: '/brand/fanlife/logo-180.png',
