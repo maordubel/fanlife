@@ -26,21 +26,10 @@ describe('Hapoel player identity safeguards',()=>{
   expect(wave.players.some(row=>row.value.name==='אלי גוטמן')).toBe(false)
   expect(Object.hasOwn(generated['hapoel-tel-aviv'],'p_wv-8fea373aaf')).toBe(false)
  })
- it('protects all corrected Hebrew-wave English names from regressions',()=>{
-  const expected:Record<string,string>={
-   'אברהם בנימין':'Avraham Binyamin','אלי דסה':'Eli Dasa',
-   'אלי כהן':'Eli Cohen','עמנואל בואטנג':'Emmanuel Boateng',
-   'אמנון חרלפ':'Amnon Harlap','עמרי קנדה':'Omri Kende',
-   'עומר פרץ':'Omer Peretz','דגלאס דה סילבה':'Douglas da Silva',
-   'שלומי אזולאי':'Shlomi Azulay'
-  }
-  for(const row of wave.players){
-   const want=expected[row.value.name]
-   if(!want)continue
-   expect(englishName('hapoel-tel-aviv',row.id,row.value.name)).toBe(want)
-   expect(row.value.aliases).toContain(want)
-   expect(generated['hapoel-tel-aviv'][row.id]?.name).toBe(want)
-  }
+ it('rejects noncanonical Hapoel wave imports',()=>{
+  expect(wave.players).toHaveLength(0)
+  expect(Object.keys(generated['hapoel-tel-aviv'])).toHaveLength(652)
+  expect(Object.keys(generated['hapoel-tel-aviv']).some(id=>id.startsWith('p_wv-'))).toBe(false)
  })
  it('never declares a player merged into himself, or reuses a drop id',()=>{
   const rows=merges['hapoel-tel-aviv']
