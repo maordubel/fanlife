@@ -445,7 +445,7 @@ export const ADULTHOOD = [
         ],
         callbacks: [{group: 'place', when: is('life:march:place', 'front'), lines: [s('elder', 'You came off the front pole already? Then you are the one who can still run.', 'ירדת כבר מהמוט הקדמי? אז אתה זה שעוד יכול לרוץ.')]}, {group: 'place', when: is('life:march:place', 'drum'), lines: [s('elder', 'Your drum is two hundred metres ahead. It sounds guilty.', 'התוף שלך מאתיים מטר קדימה. הוא נשמע אשם.')]}],
         task: t('Choose your pace', 'לבחור את הקצב'),
-        action: [s(null, 'The road is longer when you choose it. The ground is on the horizon, and not any nearer.', 'הדרך ארוכה יותר כשבוחרים אותה. המגרש באופק, ולא קרוב יותר.')],
+        action: [s(null, 'On {route} the walk is longer when you choose it. The ground is on the horizon, and not any nearer.', 'על {route} ההליכה ארוכה יותר כשבוחרים אותה. המגרש באופק, ולא קרוב יותר.')],
         options: [
           o('fast', t('Run ahead with the young ones', 'לרוץ קדימה עם הצעירים'), s('elder', 'Go. Save me a place near the wall.', 'לך. תשמור לי מקום ליד הקיר.'), [flag('life:march:pace', 'fast'), energy(-25), heart(3), standing(2)]),
           o('slow', t('Stay beside him, step for step', 'להישאר לידו, צעד צעד'), s('elder', 'I will tell you who sat where in nineteen-something. You will pretend to be surprised.', 'אספר לך מי ישב איפה בשנה כלשהי. אתה תעמיד פנים שאתה מופתע.'), [flag('life:march:pace', 'slow'), energy(-5), bond('elder', 6), heart(2)]),

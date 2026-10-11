@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "clubId": "zrinjski-mostar",
+  "status": "proposed",
+  "note": "Only the slots a sourced world.json line supports are filled. Food, chant, entry, media and kin stay empty until a source is read; the club is not READY until they are. No real person is named.",
+  "slots": {
+    "route": {
+      "text": "the way to Bijeli Brijeg",
+      "source": "https://en.wikipedia.org/wiki/Stadion_pod_Bijelim_Brijegom"
+    }
+  }
+}

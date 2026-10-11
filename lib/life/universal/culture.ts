@@ -13,7 +13,7 @@
 export const CULTURE_SLOTS = ['food', 'chant', 'route', 'entry', 'media', 'kin'] as const
 export type CultureSlot = typeof CULTURE_SLOTS[number]
 
-export type CultureEntry = {text: string; source?: string; needsReview?: boolean}
+export type CultureEntry = {text: string; /** the same slot in Hebrew, for a life told in Hebrew; absent → the neutral Hebrew phrase */ he?: string; source?: string; needsReview?: boolean}
 export type CultureManifest = {schemaVersion: 1; clubId: string; status: string; note?: string; slots: Partial<Record<CultureSlot, CultureEntry>>}
 
 /** What a sentence says when the pack has nothing for the slot — true for every club, belonging to none. */
@@ -30,7 +30,7 @@ export function cultureVars(manifest: CultureManifest | null, clubId: string, lo
   const own = manifest && manifest.clubId === clubId ? manifest.slots : {}
   const out = {} as Record<CultureSlot, string>
   for (const s of CULTURE_SLOTS) {
-    const t = own[s]?.text
+    const t = locale === 'he' ? own[s]?.he : own[s]?.text
     out[s] = typeof t === 'string' && clean(t) ? clean(t).slice(0, MAX) : CULTURE_NEUTRAL[locale][s]
   }
   return out

@@ -24,6 +24,8 @@ import zrinjskiMatches from '@/club-packs/zrinjski-mostar/matches.json'
 import zrinjskiAnchors from '@/club-packs/zrinjski-mostar/life/anchors.json'
 import olympiacosSkin from '@/club-packs/olympiacos/life/skin.json'
 import olympiacosCast from '@/club-packs/olympiacos/life/cast.json'
+import olympiacosCulture from '@/club-packs/olympiacos/life/culture.json'
+import zrinjskiCulture from '@/club-packs/zrinjski-mostar/life/culture.json'
 import aekSkin from '@/club-packs/aek-athens/life/skin.json'
 import petahTikvaSkin from '@/club-packs/hapoel-petah-tikva/life/skin.json'
 import petahTikvaCast from '@/club-packs/hapoel-petah-tikva/life/cast.json'
@@ -44,7 +46,10 @@ export const LIFE_CAST: Record<string, CastManifest> = {
 }
 
 /** Culture DNA per club. A club absent here has no slots filled: every chapter says the neutral phrase and the club is not READY. */
-export const LIFE_CULTURE: Record<string, CultureManifest> = {}
+export const LIFE_CULTURE: Record<string, CultureManifest> = {
+  olympiacos: olympiacosCulture as CultureManifest,
+  'zrinjski-mostar': zrinjskiCulture as CultureManifest,
+}
 
 export const LIFE_TIMELINE: Record<string, TimelineManifest> = {
   'hapoel-tel-aviv': hapoelTimeline as TimelineManifest,
