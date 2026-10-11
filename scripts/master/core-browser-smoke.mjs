@@ -190,7 +190,8 @@ try {
    else {const prompt=(await board.locator('h2').textContent()).trim() /* textContent: the magazine prints headings in capitals (rule 91) */;const fact=truthDates.find(f=>prompt.startsWith(f.value.name+' — '));assert(fact,`Question lacks its club fact: ${prompt}`);answer=prompt.includes(' — '+fact.value.on+'.')?'true':'false'}
    interactions.add(type)
    const values=Array.isArray(answer)?answer:[answer]
-   if(type==='match'){const question=nativeQuestions.get(id);for(let i=0;i<question.left.length;i++)await board.getByLabel(question.left[i],{exact:true}).selectOption(values[i])}
+   if(type==='match'){ // pairs are tapped: the first unmatched left item is active, so the right-hand answers go in order
+    const question=nativeQuestions.get(id);for(let i=0;i<question.left.length;i++)await board.locator('[data-kind="match"] ul').nth(1).getByRole('button',{name:values[i],exact:true}).click({force:true})}
    // option buttons: Playwright's stability heuristic does not settle on the magazine's game buttons in headless Chromium
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
    else for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true})
