@@ -236,3 +236,19 @@
  .pcc-row > :nth-child(1) { grid-area: name; } .pcc-row > :nth-child(2) { grid-area: years; } .pcc-row > :nth-child(3) { grid-area: pos; } .pcc-row > :nth-child(4) { grid-area: price; justify-self: end; text-align: end; } .pcc-row > :nth-child(5) { grid-area: score; justify-self: end; } .pcc-row > :nth-child(6) { grid-area: badges; } .pcc-row > :nth-child(7) { grid-area: edit; }
  .pcc-drawer { inline-size: 100%; border-inline-start: 0; padding-inline: 14px; } .pcc-id { grid-template-columns: 1fr; }
 }
+
+/* Player Control Center — tabs, reports, bulk */
+.pcc-tabs, .pcc-subtabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+.pcc-tool { display: grid; gap: 4px; }
+.pcc .pcc-sub { font-size: 24px !important; margin: 14px 0 6px; }
+.pcc-list { list-style: none; margin: 0; padding: 0; border: 2px solid var(--mag-ink); background: var(--mag-card); }
+.pcc-list li { display: grid; grid-template-columns: minmax(180px, 2fr) 90px minmax(200px, 3fr) 76px; gap: 10px; align-items: center; padding: 8px 12px; border-block-end: 1px solid var(--desk-rule); min-block-size: 56px; }
+.pcc-why { font-size: 13px; } .pcc-list .pcc-name small { font-size: 12px; }
+.pcc-twin { border: 2px solid var(--mag-ink); background: var(--mag-card); padding: 8px 12px; margin: 0 0 8px; } .pcc-twin ul { list-style: none; margin: 6px 0 0; padding: 0; } .pcc-twin li { display: grid; grid-template-columns: minmax(160px, 2fr) minmax(160px, 2fr) minmax(120px, 1fr) 60px; gap: 8px; padding: 4px 0; font-size: 13px; align-items: center; } .pcc-twin code { overflow-wrap: anywhere; font-size: 12px; }
+.desk-table td[data-off] { color: var(--mag-vermilion); font-weight: 700; }
+.pcc-statline { display: grid; gap: 2px; padding: 10px 14px; } .pcc-statline b { font-family: var(--mag-condensed); font-size: 28px; line-height: 1; } .pcc-statline span { font-family: var(--mag-mono); font-size: 12px; }
+.pcc-clubline { margin: 4px 0; padding: 6px 10px; border-inline-start: 6px solid var(--mag-ink); background: var(--mag-card); font-size: 14px; } .pcc-clubline[data-warn] { border-inline-start-color: var(--mag-vermilion); }
+.pcc-brow { display: grid; grid-template-columns: 56px minmax(180px, 2fr) minmax(160px, 2fr) minmax(200px, 3fr); gap: 10px; padding: 6px 12px; border-block-end: 1px solid var(--desk-rule); font-size: 13px; align-items: start; } .pcc-brow small { display: block; font-size: 11px; overflow-wrap: anywhere; }
+.pcc-brow[data-status='invalid'], .pcc-brow[data-status='missing'], .pcc-brow[data-status='conflict'] { border-inline-start: 6px solid var(--mag-vermilion); } .pcc-brow[data-status='unchanged'] { opacity: .65; }
+.pcc-commit { margin-block-start: 14px; display: grid; gap: 8px; }
+@media (max-width: 860px) { .pcc-list li, .pcc-twin li, .pcc-brow { grid-template-columns: 1fr; gap: 2px; } }

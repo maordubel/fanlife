@@ -83,12 +83,12 @@ export async function listPlayers(q:Query):Promise<Listing>{
  const counts={total:all.length,shown:rows.length,missingPosition:all.filter(r=>!r.positions.length&&!r.removed).length,fallbackPrice:all.filter(r=>r.priceSource==='fallback').length,overridden:all.filter(r=>r.overridden.length).length,drafts:all.filter(r=>r.draft).length,removed:all.filter(r=>r.removed).length,locked:all.filter(r=>r.locked).length}
  return {rows:rows.slice((page-1)*limit,page*limit),total:rows.length,page,pages,revision:getSnapshot().revision,counts,decades:[...new Set(all.map(r=>r.decade))].sort(),storage:{...playersStorage(),error:lastError()}}
 }
-async function find(club:string,id:string):Promise<Base|null>{if(!CORE_CLUB_IDS.includes(club))return null;return (await baseOf(club)).find(b=>b.row.id===id)??null}
+export async function findBase(club:string,id:string):Promise<Base|null>{if(!CORE_CLUB_IDS.includes(club))return null;return (await baseOf(club)).find(b=>b.row.id===id)??null}
 
 /* ─────────────── detail, audit ─────────────── */
-const readAudit=()=>readJson<AuditEvent[]>('audit.json',[])
+export const readAudit=()=>readJson<AuditEvent[]>('audit.json',[])
 export async function playerDetail(club:string,id:string){
- await refreshSnapshot();const b=await find(club,id);if(!b)return null
+ await refreshSnapshot();const b=await findBase(club,id);if(!b)return null
  const dr=await drafts(true),d=dr[b.key]
  return {row:effective(b,dr),base:b.row,override:overrideOf(club,id)??null,draft:d??null,audit:(await readAudit()).filter(e=>e.club===club&&e.player===id).slice(-40).reverse(),
   consumers:['Royal Rumble five-a-side','Royal Rumble XI','Blind Cow','Polls','Archive pages']}
@@ -96,10 +96,10 @@ export async function playerDetail(club:string,id:string){
 export async function auditLog(limit=100){return (await readAudit()).slice(-limit).reverse()}
 
 /* ─────────────── what a change would do ─────────────── */
-function withHypothetical<T>(snap:Snapshot,fn:()=>T):T{const prev=getSnapshot();setSnapshot(snap);try{return fn()}finally{setSnapshot(prev)}}
+export function withHypothetical<T>(snap:Snapshot,fn:()=>T):T{const prev=getSnapshot();setSnapshot(snap);try{return fn()}finally{setSnapshot(prev)}}
 export type Impact={quota:{ok:boolean;want:Record<number,number>;have:Record<number,number>;violations:string[]};readiness:{before:string[];after:string[];broke:string[]};consumers:string[];lockedChange:boolean;iconChange:boolean}
 export async function impactOf(club:string,id:string,patch:Patch):Promise<Impact|null>{
- const b=await find(club,id);if(!b)return null
+ const b=await findBase(club,id);if(!b)return null
  const raw=await loadClubBase(club);if(!raw)return null
  const cur=overrideOf(club,id)??null,next=mergePatch(cur,patch,{by:'preview',at:'',reason:''})
  const snapOf=(o:Override|null):Snapshot=>{const ov={...getSnapshot().overrides};if(o)ov[keyOf(club,id)]=o;else delete ov[keyOf(club,id)];return {...getSnapshot(),overrides:ov}}
@@ -121,10 +121,10 @@ export async function impactOf(club:string,id:string,patch:Patch):Promise<Impact
 
 /* ─────────────── writes ─────────────── */
 export class Refusal extends Error{constructor(public status:400|403|404|409|422|503,message:string,public detail?:unknown){super(message)}}
-type Actor={actor:string;role:string}
+export type Actor={actor:string;role:string}
 const newId=()=>'a-'+createHash('sha256').update(String(Math.random())+Date.now()).digest('hex').slice(0,14)
 export async function saveDraft(club:string,id:string,raw:unknown,expectedRev:number,who:Actor){
- const b=await find(club,id);if(!b)throw new Refusal(404,'No such player at this club.')
+ const b=await findBase(club,id);if(!b)throw new Refusal(404,'No such player at this club.')
  const p=parsePatch(raw);if(!p.ok)throw new Refusal(400,p.error)
  await refreshSnapshot(true);const rev=overrideOf(club,id)?.rev??0
  if(rev!==expectedRev)throw new Refusal(409,'This player was changed by someone else since you opened it.',{currentRev:rev})
@@ -136,10 +136,11 @@ export async function discardDraft(club:string,id:string,who:Actor){
  await update<{drafts:Record<string,Draft>}>('drafts.json',{drafts:{}},c=>{const n={...c.drafts};delete n[keyOf(club,id)];return {drafts:n}});draftsCache=null
  await appendAudit({action:'discard',club,player:id,before:null,after:null,reason:'draft discarded',revision:getSnapshot().revision},who)
 }
+export async function appendAuditMany(es:Omit<AuditEvent,'id'|'at'|'actor'|'role'>[],who:Actor){await update<AuditEvent[]>('audit.json',[],c=>[...c,...es.map(e=>({id:newId(),at:new Date().toISOString(),actor:who.actor,role:who.role,...e}))])}
 async function appendAudit(e:Omit<AuditEvent,'id'|'at'|'actor'|'role'>,who:Actor){await update<AuditEvent[]>('audit.json',[],c=>[...c,{id:newId(),at:new Date().toISOString(),actor:who.actor,role:who.role,...e}])}
 export type PublishOpts={reason:string;confirmQuota?:boolean;ownerException?:boolean;patch?:unknown;expectedRev?:number}
 export async function publish(club:string,id:string,opts:PublishOpts,who:Actor){
- const b=await find(club,id);if(!b)throw new Refusal(404,'No such player at this club.')
+ const b=await findBase(club,id);if(!b)throw new Refusal(404,'No such player at this club.')
  if(!opts.reason||opts.reason.trim().length<3)throw new Refusal(400,'A reason is required to publish.')
  await refreshSnapshot(true)
  const d=(await drafts(true))[b.key]
@@ -182,3 +183,7 @@ export async function exportCsv(q:Query):Promise<string>{
  return '﻿'+out.join('\n')+'\n'
 }
 void ([] as GPos[])
+
+/** every man of the chosen clubs as an effective row — the reports and the bulk preview read this, never the files */
+export async function everyRow(clubs:string[]=CORE_CLUB_IDS):Promise<Row[]>{await refreshSnapshot();const dr=await drafts(),out:Row[]=[];for(const c of clubs.filter(x=>CORE_CLUB_IDS.includes(x)))for(const b of await baseOf(c))out.push(effective(b,dr));return out}
+export {strip as foldName}

@@ -1,6 +1,6 @@
 import {afterEach,beforeEach,describe,expect,it,vi} from 'vitest'
 import {useDurableStore,memoryStore} from '@/lib/master/durable'
-import {loadClub} from '@/lib/clubs/resolver'
+import {loadClub,invalidateClub} from '@/lib/clubs/resolver'
 import {ratedPool,fits} from '@/lib/clubs/rumble'
 import {listPlayers,playerDetail,saveDraft,publish,revert,impactOf,exportCsv,Refusal} from '@/lib/players/service'
 import {setSnapshot} from '@/lib/players/effective'
@@ -12,7 +12,7 @@ import {ADMIN_COOKIE,issueToken} from '@/lib/master/admin-token'
 
 const who={actor:'tester',role:'owner'}
 const CLUB='celtic'
-beforeEach(()=>{useDurableStore(memoryStore());setSnapshot(EMPTY_SNAPSHOT)})
+beforeEach(()=>{useDurableStore(memoryStore());setSnapshot(EMPTY_SNAPSHOT);invalidateClub(CLUB)}) // revisions restart at 0 in every test, so a club built at an earlier test's revision 1 must not be reused
 afterEach(()=>{useDurableStore(null);setSnapshot(EMPTY_SNAPSHOT);vi.unstubAllEnvs()})
 const pick=async(f:(r:Awaited<ReturnType<typeof listPlayers>>['rows'][number])=>boolean)=>{const l=await listPlayers({clubs:[CLUB],limit:200,page:1});for(let p=1;p<=l.pages;p++){const rows=p===1?l.rows:(await listPlayers({clubs:[CLUB],limit:200,page:p})).rows;const r=rows.find(f);if(r)return r}throw new Error('no candidate')}
 const poolMan=async(id:string)=>ratedPool((await loadClub(CLUB))!.data).find(c=>c.id===id)

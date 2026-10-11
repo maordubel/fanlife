@@ -34,5 +34,8 @@ The spec proposes Supabase tables. The control room already keeps its state in t
 ## Consumers touched
 `rawPool`/`ratedPool` (price, rating, `alt`), `fits` (a man fits every family he has played), `loadClub` (removal, positions), the desk page and shell. `alt` also benefits every man the archive already lists with several positions.
 
-## Not done (second phase of the spec)
-CSV **import** with preview and bulk commit, duplicate-candidate finder, price recommendations, research queue, what-if simulator; Supabase tables. Phase 0–3 and CSV export are in.
+## Phase 4 (added 11.10.2026, second delivery)
+* **Bulk CSV** (`lib/players/bulk.ts`, `POST /api/master/players/bulk`): rows are named by `club_id` + `player_id` only. PREVIEW writes nothing — each row is changed / unchanged / missing / invalid / conflict, the whole batch is laid over the snapshot and every touched club is judged once (price ladder, five-a-side and every formation), and a token binds the preview to the data. COMMIT needs the token, an idempotency key and a reason; one invalid, missing or stale row refuses the whole file (no partial writes); a locked or pinned price needs the owner's exception; a batch that would stop a game is refused; a ladder exception must be confirmed; the write is a single compare-and-swap revision with one audit line per man (`batch <key>`); replaying the key writes nothing twice. A value equal to the archive's is not stored as an override. CSV hygiene: 1 MB / 2,000 rows, BOM and CRLF, quoted cells, exported formula-looking cells are prefixed with `'` and restored on import.
+* **Reports** (`lib/players/reports.ts`): no-position research queue (strongest first), price-vs-strength outliers with a non-binding recommendation (the club's ladder re-dealt by rating), exact-name/alias twins (candidates for the merge file — never merged by this code), and per-club price ladders.
+## Still not done
+Price recommendation *apply* buttons (suggestions are read-only on purpose), what-if simulator against the published snapshot, research-evidence queue with sources, Supabase tables.

@@ -23,6 +23,7 @@ async function call<T>(url:string,init?:RequestInit):Promise<{ok:boolean;status:
  catch{return {ok:false,status:0,data:{error:'No connection. Nothing was saved.'} as never}}
 }
 
+import {ReportsPanel,BulkPanel} from './PlayersTools'
 export function PlayersDesk(){
  const router=useRouter(),path=usePathname(),sp=useSearchParams()
  const [data,setData]=useState<Listing|null>(null),[err,setErr]=useState<string|null>(null),[busy,setBusy]=useState(false),[open,setOpen]=useState<{club:string;id:string}|null>(null)
@@ -36,10 +37,12 @@ export function PlayersDesk(){
  const active=(k:string,v:string)=>(sp.get(k)||'').split(',').includes(v)
  const searchRef=useRef<HTMLInputElement>(null)
  const groups=useMemo(()=>{const out:{key:string;title:string;rows:Row[]}[]=[];for(const r of data?.rows||[]){const key=r.club+'|'+r.decade,last=out[out.length-1];if(last&&last.key===key)last.rows.push(r);else out.push({key,title:`${r.clubName} · ${r.decade==='unknown'?'years not recorded':r.decade}`,rows:[r]})}return out},[data])
- const c=data?.counts
+ const c=data?.counts,tab=sp.get('tab')||''
  return <div className="pcc">
   <header className="desk-head"><p className="desk-kicker">Data · Player Control Center</p><h1 className="desk-h1">Every player, every club</h1>
    <p className="pcc-lede">Edit a man’s positions, price, manager score — or remove him from the squad. A draft changes nothing; a published change reaches every game, and the archive’s own value stays on file and one click away.</p></header>
+  <nav className="pcc-tabs" aria-label="Player Control Center">{([['','Players'],['reports','Reports'],['bulk','Bulk edit (CSV)']] as const).map(([k,l])=><button key={k} type="button" className="pcc-chip" aria-pressed={(sp.get('tab')||'')===k} onClick={()=>set('tab',k||null)}>{l}</button>)}</nav>
+  {tab==='reports'?<ReportsPanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='bulk'?<BulkPanel/>:<>
   {data&&!data.storage.durable&&<p role="alert" className="desk-state" data-state="error"><b>Changes here will not survive a restart.</b> The control room has no durable store connected ({data.storage.kind}). Connect the Blob store before relying on it.</p>}
   {data?.storage.error&&<p role="alert" className="desk-state" data-state="error">The player files are unreachable ({data.storage.error}). The games keep the last published values.</p>}
   {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}
@@ -65,6 +68,7 @@ export function PlayersDesk(){
    {groups.map(g=><div key={g.key} role="rowgroup"><h2 className="pcc-group">{g.title}</h2>{g.rows.map(r=><Line key={r.club+r.id} r={r} onOpen={()=>setOpen({club:r.club,id:r.id})}/>)}</div>)}
   </div>
   {data&&data.pages>1&&<nav className="pcc-pages" aria-label="Pages"><button type="button" className="desk-btn ghost" disabled={data.page<=1} onClick={()=>set('page',String(data.page-1))}>← Previous</button><span>Page {data.page} / {data.pages}</span><button type="button" className="desk-btn ghost" disabled={data.page>=data.pages} onClick={()=>set('page',String(data.page+1))}>Next →</button></nav>}
+  </>}
   {open&&<Drawer key={open.club+open.id} club={open.club} id={open.id} onClose={()=>setOpen(null)} onChanged={load}/>}
  </div>
 }
