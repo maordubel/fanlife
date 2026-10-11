@@ -23,7 +23,7 @@ describe('Hapoel player identity safeguards',()=>{
   }))
  })
  it('excludes manager Eli Guttman from the playable roster',()=>{
-  expect(wave.players.some(row=>row.value.name==='אלי גוטמן')).toBe(false)
+  expect((wave.players as {value:{name:string}}[]).some(row=>row.value.name==='אלי גוטמן')).toBe(false) // the roster wave is empty now, so its element type is `never`
   expect(Object.hasOwn(generated['hapoel-tel-aviv'],'p_wv-8fea373aaf')).toBe(false)
  })
  it('rejects noncanonical Hapoel wave imports',()=>{
