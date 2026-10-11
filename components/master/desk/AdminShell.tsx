@@ -55,6 +55,7 @@ export function AdminShell({section,club,clubName,owner,children,playersView=fal
 export function MoreMenu({owner}:{owner:boolean}){
  return <section className="desk-panel" aria-labelledby="more-h"><h1 id="more-h" className="desk-h1">More</h1>
   <ul className="desk-list">
+   <li><Link href={deskHref('data',{view:'players'})}><b>Player Control Center</b><small>Edit players: positions, price, manager score, remove, bulk CSV</small></Link></li>
    <li><Link href={deskHref('operations')}><b>Operations</b><small>Runs, storage, schedules, activity</small></Link></li>
    <li><Link href={deskHref('settings')}><b>Settings</b><small>LIFE display, access</small></Link></li>
    <li><Link href="/master/test-lab"><b>Test lab ↗</b><small>Verification tools</small></Link></li>
