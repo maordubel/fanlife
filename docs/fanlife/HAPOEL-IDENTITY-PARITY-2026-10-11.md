@@ -35,3 +35,6 @@ Authority: `maordubel/The-Worker` for historical persons, roles and prices; Fan 
 
 ## Current limits
 The GitHub file connector truncates the large generated player, price and roster JSON payloads; this branch therefore contains **confirmed small spelling corrections and a protective regression test**, not a full per-player exhaustive repair. Exhaustive unplaced count, duplicate count and true effective Fan Life prices cannot be certified without reading all source rows plus the current published owner snapshot. Do not present proposals as applied corrections.
+
+## Exhaustive 700-entry generated-name census
+See `docs/fanlife/HAPOEL-700-IDENTITY-LEDGER-2026-10-11.md` for all 700 IDs, display names, English provenance, known additional roles, manual price pins, and merge status. 652 generated entries have canonical-style p_ IDs, 48 are wave p_wv- IDs, of which one (Tchibota) is explicitly merged. The canonical owner roster contains **654 names**, NOT a verified 653 unique player count. Confirming exactly 653 needs reviewing canonical eligibility and identity evidence, not trimming an arbitrary number.
