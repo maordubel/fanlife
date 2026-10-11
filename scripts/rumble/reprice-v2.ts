@@ -50,9 +50,9 @@ for(const id of CORE_CLUB_IDS){
  const count={1:0,2:0,3:0,4:0,5:0} as Record<number,number>
  for(const [pid,v] of people){
   const p=next.get(pid)!
-  count[p]++
+  count[p]=(count[p]??0)+1
   if(v.priceM!==p)report.push([id,pid,JSON.stringify(byId.get(pid)?.name??''),v.priceM,p,v.assignment].join(','))
-  if(cmd==='apply'&&v.priceM!==p){v.priceM=p;v.priceTier=TIER[p];v.rationale+=' | economy-v2 approved rebalance 2026-10-10'}
+  if(cmd==='apply'&&v.priceM!==p){v.priceM=p;v.priceTier=TIER[p]??'';v.rationale+=' | economy-v2 approved rebalance 2026-10-10'}
  }
  for(const cost of [1,2,3,4,5] as const)if(count[cost]!==quota.counts[cost])throw Error(id+': quota mismatch €'+cost)
  if(cmd==='apply'){c.quotaMode=quota.mode;c.quota=Object.fromEntries(Object.entries(quota.counts));c.size=people.length}

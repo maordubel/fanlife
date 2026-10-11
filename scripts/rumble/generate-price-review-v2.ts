@@ -9,7 +9,7 @@ import {rawPool} from '@/lib/clubs/rumble'
 import {extraPositions} from '@/lib/clubs/rumble-xi/positions'
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs'
 async function main(){
-const old=JSON.parse(readFileSync('content/generated/rumble-prices-v3.json','utf8')) as {version:string;clubs:Record<string,{players:Record<string,{priceM:number;locked?:boolean;assignment?:string;rationale?:string;reviewedAt?:string}>}>}
+const old=JSON.parse(readFileSync('content/generated/rumble-prices-v3.json','utf8')) as {version:string;clubs:Record<string,{players:Record<string,{priceM:number;priceTier?:string;locked?:boolean;assignment?:string;rationale?:string;reviewedAt?:string}>}>}
 const outDir='.delivery/rumble-pricing-v2-review';mkdirSync(outDir,{recursive:true})
 type Tier=1|2|3|4|5
 function quota(n:number):Record<Tier,number>{
@@ -22,7 +22,7 @@ function quota(n:number):Record<Tier,number>{
  if(q[5]===0){const donor=([1,2,3,4] as const).find(k=>q[k]>0);if(donor){q[donor]--;q[5]++}}return q
 }
 const esc=(v:unknown)=>'"'+String(v??'').replaceAll('"','""')+'"'
-const lines=[['Club ID','Player ID','English name','Position','From year','To year','CA estimate / rating','Current €M','Proposed €M','Change €M','Was locked','Prior assignment','Reason','Evidence status']]
+const lines:(string|number)[][]=[['Club ID','Player ID','English name','Position','From year','To year','CA estimate / rating','Current €M','Proposed €M','Change €M','Was locked','Prior assignment','Reason','Evidence status']]
 const table=structuredClone(old);table.version='rumble-economy-v2-REVIEW-ONLY'
 const summaries:string[]=[]
 for(const id of CORE_CLUB_IDS){

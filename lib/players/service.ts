@@ -92,7 +92,9 @@ export async function playerDetail(club:string,id:string){
  await refreshSnapshot();const b=await findBase(club,id);if(!b)return null
  const dr=await drafts(true),d=dr[b.key]
  return {row:effective(b,dr),base:b.row,override:overrideOf(club,id)??null,draft:d??null,audit:(await readAudit()).filter(e=>e.club===club&&e.player===id).slice(-40).reverse(),
-  consumers:['Royal Rumble five-a-side','Royal Rumble XI','Blind Cow','Polls','Archive pages']}
+  consumers:['Royal Rumble five-a-side','Royal Rumble XI','Blind Cow','Polls','Archive pages'],
+  /** the men whose records were folded into this one — still on file, one click from being restored */
+  absorbed:(await everyRow([club])).filter(r=>r.mergedInto===id).map(r=>({id:r.id,name:r.name,years:`${r.fromYear??'—'}${r.toYear&&r.toYear!==r.fromYear?'–'+r.toYear:''}`}))}
 }
 export async function auditLog(limit=100){return (await readAudit()).slice(-limit).reverse()}
 

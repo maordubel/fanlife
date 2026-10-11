@@ -26,7 +26,7 @@ async function main(){
  for(const id of CORE_CLUB_IDS){const d=await loadClub(id);if(!d)continue
   const dropped=new Set(mergesFor(id).map(m=>m.drop)),res:Record<string,E>={}
   const cur=new Map(rev.filter(r=>r.club===id&&(r.enStatus==='curated'||r.enStatus==='sourced EN')).map(r=>[norm(r.original),r.nameEn]))
-  for(const {value:p} of d.data.players){if(!isMan(p.name)||dropped.has(p.id))continue
+  for(const {value:p} of (d.data.players??[])){if(!isMan(p.name)||dropped.has(p.id))continue
    const key=norm(p.name),ov=over[id]?.[p.name]
    if(ov){res[p.id]={name:ov,how:'editor-override'};continue}
    if(cur.has(key)){res[p.id]={name:cleanLatin(cur.get(key)!),how:'owner-curated'};continue}
@@ -38,7 +38,7 @@ async function main(){
    if(isHebrew(p.name))(todo[id]??=[]).push(p.name)}
   // two men with one English name stay two cards: the years tell them apart
   const seen=new Map<string,string[]>();for(const [pid,e] of Object.entries(res))seen.set(e.name.toLowerCase(),[...(seen.get(e.name.toLowerCase())||[]),pid])
-  const years=new Map(d.data.players.map(f=>[f.value.id,f.value.fromYear]))
+  const years=new Map((d.data.players??[]).map(f=>[f.value.id,f.value.fromYear]))
   for(const ids of seen.values())if(ids.length>1){const ys=ids.map(pid=>years.get(pid)),useYears=ys.every(y=>y)&&new Set(ys).size===ys.length;ids.sort().forEach((pid,i)=>{res[pid]!.name+=useYears?` (${years.get(pid)})`:` ${['I','II','III','IV'][i]??i+1}`})}
   out[id]=res}
  writeFileSync(OUT,JSON.stringify(out,null,0)+'\n')

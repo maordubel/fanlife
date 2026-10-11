@@ -7,6 +7,7 @@ import { goalFromHash } from '@/lib/challenges/runs'
 import { dealRun, hasGoals, pinnedGoal } from '@/lib/game/goal'
 import { wardrobe } from '@/lib/kit/playerShirt'
 import { goalLinks } from '@/lib/links'
+import { primePublishedGoals } from '@/lib/goals-auto/published'
 import { withCard } from '@/lib/og/meta'
 import { goalCardQuery, parseGoalCard } from '@/lib/og/params'
 import { roundFrom } from '@/lib/rotation/round'
@@ -33,11 +34,12 @@ export function generateMetadata({ searchParams }: { searchParams: Record<string
   return withCard(base, `/api/card/goal?${goalCardQuery(card)}`, `${card.avg}% · ${t('screen.goal.title')}`, t('connect.card.goal.cta'))
 }
 
-export default function GoalPage({
+export default async function GoalPage({
   searchParams,
 }: {
   searchParams: { seed?: string; r?: string; g?: string | string[]; gh?: string | string[] }
 }) {
+  await primePublishedGoals() // goals the autonomous pipeline published; nothing published = the bundled goals only
   const round = roundFrom(searchParams)
   // a challenge pins its goal as a HASH (the id names the scorer, §44); `g` stays the plain pin
   const pin =

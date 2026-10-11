@@ -14,6 +14,7 @@ import {useAdminApi} from './adminApi'
 import {ClubFile,type ClubFileView} from './ClubFile'
 import {DataCenter,type RunsRow} from './DataCenter'
 import {DisplayControl} from './DisplayControl'
+import {GoalsAutomation} from './GoalsAutomation'
 import {deskHref,type AttentionItem} from '@/lib/master/attention'
 import type {StorageRow,Integration} from '@/lib/master/storageMap'
 import {SCHEDULES,githubActions} from '@/lib/master/schedules'
@@ -99,6 +100,7 @@ export function Admin({initial,summaries,adapters,runs,display,storage,section,v
    {summary?<DataCenter key={scope} runs={runs} selected={scope!} summary={summary} api={api} onChange={refresh}/>:
     <ul className="desk-clubs">{sums.map(s=><li key={s.id}><Link href={deskHref('data',{club:s.id})}><span><b><bdi>{s.name}</bdi></b><small>{s.archive.sources} archive sources · {s.archive.documents} documents · {s.archive.needsParser} need a parser · {s.archive.blocked} refused{s.archive.lastRun?` · last run ${s.archive.lastRun.state} ${s.archive.lastRun.at.slice(0,10)}`:' · never collected here'}</small></span><b aria-hidden="true">→</b></Link></li>)}</ul>}
    <Autopilot api={api} onRan={refresh}/>
+   <GoalsAutomation/>
   </>}
 
   {section==='audience'&&audience}

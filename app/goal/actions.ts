@@ -11,6 +11,7 @@ import {
 import type { Envelope, UserTouch } from '@/lib/game/replay/envelope'
 import { chaptersOfEntity } from '@/lib/life/bridge'
 import { matchOfGoal } from '@/lib/links'
+import { primePublishedGoals } from '@/lib/goals-auto/published'
 import { recommend, type NextAction, type ResultContext } from '@/lib/results/context'
 
 /**
@@ -34,6 +35,7 @@ export async function submitGoal(
   cursor = 0,
   pin: string | null = null,
 ): Promise<GoalVerdict | null> {
+  await primePublishedGoals()
   // A round is addressed by seed AND cursor once rotation is on; grading has to
   // re-derive with both or it grades a different deal than the one on screen.
   return gradeGoal(seed, goalIndex, touches, cursor, pin)
@@ -52,6 +54,7 @@ export async function askGoalHint(
   cursor = 0,
   pin: string | null = null,
 ): Promise<string | null> {
+  await primePublishedGoals()
   return goalHint(seed, goalIndex, which, cursor, pin)
 }
 
@@ -66,6 +69,7 @@ export async function askReceptionHint(
   cursor = 0,
   pin: string | null = null,
 ): Promise<Envelope | null> {
+  await primePublishedGoals()
   return receptionHint(seed, goalIndex, touchIndex, cursor, pin)
 }
 

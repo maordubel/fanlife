@@ -3,6 +3,9 @@ import {appendFile,mkdir} from 'node:fs/promises'
 import path from 'node:path'
 import {politeFetch,type FetchLike} from './fetcher'
 import {dir,readJson,saveSnapshot,writeJson} from './store'
+import {extractCandidates} from '@/lib/goals-auto/extract'
+import {documentDate,htmlToText} from '@/lib/goals-auto/text'
+import type {Candidate} from '@/lib/goals-auto/types'
 import {archiveParserFor,type ArchiveObservation} from './parsers'
 import {canonicalJson} from './canonical'
 import {RESEARCH_SCHEMA,type ArchiveCheckpoint,type ArchiveDiagnostic,type ArchiveDoc,type ArchiveRun,type ArchiveSource,type EndpointStatus,type SourceProfile} from './contract'
@@ -41,7 +44,7 @@ const asFetchSource=(src:ArchiveSource):SourceProfile=>({providerId:src.provider
 export const allowedPath=(src:ArchiveSource,p:string)=>src.allowedPathPrefixes.some(a=>p.startsWith(a))
 const decode=(s:string)=>s.replace(/<[^>]*>/g,'').replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number(n))).replace(/&#x([0-9a-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16))).replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#039;|&apos;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim()
 
-type Ctx={deadline?:number;byDoc?:Map<string,Set<string>>;club:string;runId:string;now:()=>Date;fetchImpl?:FetchLike;budget:number;requests:number;diag:ArchiveDiagnostic[];resources:unknown[];docs:Record<string,ArchiveDoc>;cps:Record<string,ArchiveCheckpoint>;eps:Record<string,EndpointStatus>;counts:ArchiveRun['counts'];obs:Record<string,StoredObservation>;newObs:ArchiveObservation[];tax:Record<string,Record<string,string>>}
+type Ctx={deadline?:number;byDoc?:Map<string,Set<string>>;club:string;runId:string;now:()=>Date;fetchImpl?:FetchLike;budget:number;requests:number;diag:ArchiveDiagnostic[];resources:unknown[];docs:Record<string,ArchiveDoc>;cps:Record<string,ArchiveCheckpoint>;eps:Record<string,EndpointStatus>;counts:ArchiveRun['counts'];obs:Record<string,StoredObservation>;newObs:ArchiveObservation[];goalCands?:Candidate[];tax:Record<string,Record<string,string>>}
 function endpoint(ctx:Ctx,src:ArchiveSource,ep:string,state:EndpointStatus['state'],status:number,reason:string|null){ctx.eps[`${src.providerId}:${ep}`]={endpoint:ep,providerId:src.providerId,state,status,reason,checkedAt:ctx.now().toISOString()}}
 type Meta={slug:string|null;categories:number[];parent:number|null}
 async function keep(ctx:Ctx,src:ArchiveSource,collection:string,id:string,url:string,title:string|null,content:string,published:string|null,modified:string|null,raw:Buffer|null,meta:Meta={slug:null,categories:[],parent:null}){
@@ -50,6 +53,11 @@ async function keep(ctx:Ctx,src:ArchiveSource,collection:string,id:string,url:st
  if(raw&&src.retention.rawBody==='private-copy'){const m=await saveSnapshot(ctx.club,{hash:sha(raw),url,fetchedAt:at,status:200,contentType:null,bytes:raw.length,etag:null,lastModified:null},raw);snapshot=m.hash}
  // parse while the body is in memory (retention may be metadata-only): only with a registered parser, and only when
  // the taxonomy it classifies by was readable — otherwise the document waits, unparsed, for the next run
+ // goals: read the paragraph while the body is in memory (metadata-only retention stays true — only short quoted spans
+ // with their locator are kept). Only a new or changed document is read, so a second pass adds nothing.
+ if(ctx.goalCands&&(!prev||prev.contentHash!==hash)){
+  try{const text=htmlToText(content);if(text.length>40)ctx.goalCands.push(...extractCandidates({clubId:ctx.club,sourceId:src.providerId,url,body:text,fetchedAt:at,playedOn:documentDate(text),opponentHe:null}))}catch{/* a page that cannot be read as text is not a goal source */}
+ }
  const parser=archiveParserFor(src.parserId),tax=ctx.tax[src.providerId]
  let parse:ArchiveDoc['parse']='needs-parser'
  if(parser&&(!parser.needsTaxonomy||tax)){
@@ -156,7 +164,7 @@ export async function collectArchive(clubId:string,sources:ArchiveSource[],{maxR
  if(providerId&&!chosen.length)throw new Error(`No archive source "${providerId}" in this club's profile.`)
  return serialRun(clubId,async()=>{
   const f=files(clubId),runId=`${now().toISOString().replace(/[:.]/g,'-')}-${randomUUID().slice(0,6)}`,startedAt=now().toISOString()
-  const ctx:Ctx={deadline,club:clubId,runId,now,fetchImpl,budget:Math.max(1,Math.min(200,maxRequests)),requests:0,diag:[],resources:[],docs:await readArchiveDocs(clubId),cps:await readCheckpoints(clubId),eps:await readEndpoints(clubId),counts:{requests:0,documentsRead:0,newDocuments:0,changedDocuments:0,unchangedDocuments:0,recordsExtracted:0,blockedEndpoints:0,budgetLeft:0},obs:await readObservations(clubId),newObs:[],tax:await readTaxonomy(clubId)}
+  const ctx:Ctx={goalCands:[],deadline,club:clubId,runId,now,fetchImpl,budget:Math.max(1,Math.min(200,maxRequests)),requests:0,diag:[],resources:[],docs:await readArchiveDocs(clubId),cps:await readCheckpoints(clubId),eps:await readEndpoints(clubId),counts:{requests:0,documentsRead:0,newDocuments:0,changedDocuments:0,unchangedDocuments:0,recordsExtracted:0,blockedEndpoints:0,budgetLeft:0},obs:await readObservations(clubId),newObs:[],tax:await readTaxonomy(clubId)}
   // share the budget fairly: every listing gets a turn, and no source exceeds its own per-run cap
   const total=ctx.budget,tasks=chosen.flatMap(src=>src.reader==='wordpress-rest'?(src.collections||[]).map(c=>({src,c:c as 'posts'|'pages'|'html'})):[{src,c:'html' as const}])
   const per=Math.max(1,Math.floor(total/Math.max(1,tasks.length)))
@@ -169,6 +177,8 @@ export async function collectArchive(clubId:string,sources:ArchiveSource[],{maxR
   if(states.some(s=>s==='partial_budget'))ctx.diag.push({code:'BUDGET_EXHAUSTED',providerId:'*',url:null,message:'Budget used; the next run resumes from the checkpoint.'})
   const run:ArchiveRun={schemaVersion:RESEARCH_SCHEMA,id:runId,clubId,startedAt,finishedAt:now().toISOString(),providers:chosen.map(s=>s.providerId),state,counts:ctx.counts,diagnostics:ctx.diag,completeArchiveClaim:false,approvedForProduction:0}
   // durable order: documents first, then checkpoints, then the run record — a crash in between re-reads, never skips
+  // candidates found in this run join the club's goal-candidates file (idempotent by goal id; the daily pass judges them)
+  if(ctx.goalCands?.length){const gf=path.join(dir(clubId),'goal-candidates.json'),have=await readJson<Candidate[]>(gf,[]),by=new Map(have.map(c=>[c.id,c]));for(const c of ctx.goalCands){const old=by.get(c.id);if(!old||old.steps.length<c.steps.length||old.evidence[0]?.bodyHash!==c.evidence[0]?.bodyHash)by.set(c.id,old?{...c,sourceIds:[...new Set([...old.sourceIds,...c.sourceIds])],evidence:[...old.evidence.filter(e=>!c.evidence.some(x=>x.url===e.url&&x.bodyHash===e.bodyHash)),...c.evidence].slice(-8)}:c)}await writeJson(gf,[...by.values()])}
   await writeJson(f.docs,ctx.docs);await writeJson(f.obs,ctx.obs);await writeJson(f.tax,ctx.tax);await writeJson(f.cps,ctx.cps);await writeJson(f.eps,ctx.eps)
   const rd=path.join(dir(clubId),'runs',runId);await mkdir(rd,{recursive:true})
   await writeJson(path.join(rd,'run.json'),run)

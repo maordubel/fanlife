@@ -18,6 +18,7 @@ import {exportOverlays,loadClubProfile,validateArchiveSource,saveArchiveSource,r
 import {exportArchiveStaging} from '@/lib/research/staging'
 import {isReadOnlyError,READ_ONLY_HINT} from '@/lib/research/paths'
 import {runPipeline,recordPipeline,lastPipelineRuns,AUTOMATION_ACTOR} from '@/lib/master/automation'
+import {goalsStatus,goalsAction} from '@/lib/goals-auto/admin'
 import type {Club} from '@/lib/master/types'
 import {launchView} from '@/lib/master/launch'
 import {buildDeskPack,writeDeskPack} from '@/lib/master/deskPack'
@@ -37,6 +38,7 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  if(a==='research/profiles-export'){if(!cronAuthorized(r)&&!adminFromRequest(r))return json({error:'Invalid scheduler authorization'},401);return json(await exportOverlays())}
  if(!adminFromRequest(r))return unauthorized()
  if(a==='pipeline/runs')return json(await lastPipelineRuns(10))
+ if(a==='goals/status')return json(await goalsStatus())
  if(a==='archive/profile'){const p=await loadClubProfile(slug(q.get('club')));return p?json(p):json({error:'No research profile for this club.'},404)}
  if(a==='state')return json(await readState())
  // F21: what the admin refreshes — no evidence arrays, last 100 audit rows
@@ -57,6 +59,7 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  return json({error:'Not found'},404)}catch(e){return json({error:e instanceof Error?e.message:'Operation failed'},400)}}
 export async function POST(r:NextRequest,{params}:{params:{action:string[]}}){try{const who=adminFromRequest(r);if(!who)return unauthorized();sameOrigin(r);const by=actorOf(who),a=params.action.join('/');if(a==='upstream/check')return json(await checkUpstream(by));const raw=await r.text();if(raw.length>250000)throw new Error('Request too large.');const b=raw?JSON.parse(raw):{}
 // F15: run the job the caller queued (by id); without an id, the first runnable job (the scheduler's behaviour)
+if(a==='goals'){const out=await goalsAction(b,by.actor);await mutate(st=>{audit(st,'goals.'+String(b.op),String(b.club||b.id||'-'),JSON.stringify(out).slice(0,200),by)});return json(out,out.ok?200:400)}
 if(a==='research/run')return json(await runResearch(typeof b.id==='string'&&b.id?b.id.slice(0,64):undefined))
 if(a==='clubs/create'){const created=await mutate(s=>{const id=slug(b.id);if(s.clubs.some(c=>c.id===id))throw new Error('Club already exists.');if(s.clubs.length>=100)throw new Error('Registry limit reached.');const c:Club={id,name:text(b.name,'Name'),city:text(b.city,'City'),country:text(b.country,'Country'),initials:text(b.initials,'Initials',4),primary:color(b.primary),secondary:color(b.secondary),status:'research',version:1,gates:[],sources:[],findings:[],gaps:['Research file created. Engine connection missing: register the club and build a first pack.']};s.clubs.push(c);audit(s,'club.created',id,'Research file only — no registry entry or data provider yet.',by);return c});await ensureProfile(created.id);return json(created,201)}
 // one bounded archive pass + staging export, from the Data tab

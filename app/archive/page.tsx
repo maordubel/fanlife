@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { primePublishedGoals } from '@/lib/goals-auto/published'
 import { ArchiveApp } from '@/components/archive/ArchiveApp'
 import { ReportLink } from '@/components/ui/ReportLink'
 import { SongLine } from '@/components/voice/SongLine'
@@ -28,11 +29,12 @@ import { gateMetadata } from '@/lib/seo'
  */
 export const metadata: Metadata = gateMetadata('archive')
 
-export default function ArchivePage({
+export default async function ArchivePage({
   searchParams,
 }: {
   searchParams: { seed?: string; r?: string; at?: string; show?: string }
 }) {
+  await primePublishedGoals() // a goal the pipeline published shows on its match card
   const round = roundFrom(searchParams)
   // the day it is in Tel Aviv, not in UTC — from midnight to 02:00 UTC is still yesterday (§21)
   const today = todayInIsrael()

@@ -7,7 +7,7 @@ import type {RumbleCard} from '@/lib/clubs/rumble'
 import {type ShowScript} from '@/lib/clubs/rumble-show'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {slotsOf} from '@/lib/clubs/rumble-xi/formations'
-import {XI_BUDGET,type FormationId} from '@/lib/clubs/rumble-xi/types'
+import {type FormationId} from '@/lib/clubs/rumble-xi/types'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {Crown,RumbleShirt,money,shortName,tr,useReducedMotion,useRumbleSound} from './shared'
 import {RumbleSlotMachine} from './RumbleSlotMachine'
@@ -17,7 +17,7 @@ import {RumbleFullTime,type RecentRound} from './RumbleFullTime'
 import {RecordRun} from '../games/RecordRun'
 import s from './rumble.module.css'
 
-type Board={seed:number;draft:RumbleCard[][]}
+type Board={seed:number;budget:number;draft:RumbleCard[][]}
 type Phase='draft'|'jackpot'|'reveal'|'match'|'result'
 const HISTORY_MAX=8
 const left_=(slotY:number)=>8+((slotY-20)/64)*84
@@ -38,7 +38,7 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
  const historyKey=`fan-life:club:${club}:rumble:xi:${formation}:${rival}:recent:v1`
 
  const chosen=picks.map((id,i)=>id?board.draft[i]!.find(c=>c.id===id)??null:null)
- const spent=chosen.reduce((t,c)=>t+(c?.price||0),0),left=XI_BUDGET-spent,count=chosen.filter(Boolean).length,complete=count===slots.length
+ const spent=chosen.reduce((t,c)=>t+(c?.price||0),0),left=board.budget-spent,count=chosen.filter(Boolean).length,complete=count===slots.length
  const shuffleOpen=!shuffled&&count===0&&phase==='draft'&&!busy
  const perSlot=count<slots.length?Math.round((left/(slots.length-count))*10)/10:0
 
@@ -49,7 +49,7 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
  function afford(card:RumbleCard):boolean{
   let paid=0,floor=0
   picks.forEach((id,i)=>{if(i===slot)return;const c=id?chosen[i]:null;if(c)paid+=c.price;else floor+=Math.min(...board.draft[i]!.map(x=>x.price))})
-  return paid+card.price+floor<=XI_BUDGET
+  return paid+card.price+floor<=board.budget
  }
  function pick(card:RumbleCard,e:MouseEvent<HTMLButtonElement>){
   if(phase!=='draft'||!afford(card))return
@@ -97,7 +97,7 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
    <div className={s.money} data-testid="rumble-money">
     <div className={`${s.mono} ${s.moneyTop}`}><span>{tr(copy,'rr.moneyLeft')}</span><Crown className={s.crown}/></div>
     <p className={s.moneyValue} data-short={left<0} dir="ltr" aria-live="polite">{money(left)}</p>
-    <p className={`${s.mono} ${s.trail}`} dir="ltr">{count<slots.length?tr(copy,'rr.xi.leftPerSlot',{n:money(perSlot)}):money(spent)+' / '+money(XI_BUDGET)}</p>
+    <p className={`${s.mono} ${s.trail}`} dir="ltr">{count<slots.length?tr(copy,'rr.xi.leftPerSlot',{n:money(perSlot)}):money(spent)+' / '+money(board.budget)}</p>
     <div className={s.progress}><i style={{width:`${(count/slots.length)*100}%`}}/></div>
     <p className={`${s.mono} ${s.trail}`}>{tr(copy,'rr.xi.picked',{n:count,total:slots.length})} · {tr(copy,'rr.archiveCount',{n:playerCount})}</p>
    </div>
@@ -130,7 +130,7 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
   {rules&&<div className={s.sheetBack} onClick={()=>setRules(false)}>
    <div className={`${s.sheet} relative z-[60]`} role="dialog" aria-modal="true" aria-labelledby="rr-rules" onClick={e=>e.stopPropagation()}>
     <div className={s.sheetHead}><h2 id="rr-rules">{tr(copy,'rr.rulesTitle')}</h2><button type="button" className={`${s.closeBtn} min-h-tap`} onClick={()=>setRules(false)} autoFocus>{tr(copy,'rr.close')}</button></div>
-    <ul>{[1,2,3,4,5].map(n=><li key={n}>{tr(copy,`rr.xi.rule${n}`,{budget:XI_BUDGET})}</li>)}</ul>
+    <ul>{[1,2,3,4,5].map(n=><li key={n}>{tr(copy,`rr.xi.rule${n}`,{budget:board.budget})}</li>)}</ul>
     <p className={s.sheetNote}>{tr(copy,'rr.ratingNever')}</p>
     <p className={s.sheetNote}>{tr(copy,'rr.xi.general')}</p>
    </div>

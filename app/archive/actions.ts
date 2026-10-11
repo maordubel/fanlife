@@ -1,6 +1,7 @@
 'use server'
 
 import { describe } from '@/lib/archive/graph'
+import { primePublishedGoals } from '@/lib/goals-auto/published'
 import { ENTITY_TYPES, type ArchiveCard, type EntityDetail, type EntityType } from '@/lib/archive/graph-types'
 import { archiveIdentity, boxDeal, detailOf, rabbitDetail, searchCards, seasonCards, type ArchiveIdentity } from '@/lib/archive/wing'
 
@@ -15,10 +16,12 @@ const clampInt = (n: unknown, max = 0x7fffffff): number =>
   typeof n === 'number' && Number.isFinite(n) ? Math.max(0, Math.min(max, Math.floor(n))) : 0
 
 export async function openEntity(id: string): Promise<EntityDetail | null> {
+  await primePublishedGoals()
   return detailOf(clampId(id))
 }
 
 export async function rabbit(fromId: string, seed: number, depth: number, trail: string[]): Promise<EntityDetail | null> {
+  await primePublishedGoals()
   const safeTrail = Array.isArray(trail) ? trail.slice(-40).map(clampId) : []
   return rabbitDetail(clampId(fromId), clampInt(seed), clampInt(depth, 999), safeTrail)
 }

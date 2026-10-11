@@ -69,7 +69,7 @@ async function main(){
     const side=(lu?.Lu||[]).find((x:J)=>x.Tnb===(Number(home.id)===Number(id)?1:2))
     const ls=(side?.Ps||[]).filter((p:J)=>p.Pon!=='COACH'&&p.Fp).map((p:J)=>fold(`${p.Fn||''} ${p.Ln||''}`))
     if(ls.length===11){
-     const hit=starters.filter(n=>ls.some(l=>l.split(' ').includes(surname(n))||l.endsWith(surname(n)))).length
+     const hit=starters.filter(n=>ls.some((l:string)=>l.split(' ').includes(surname(n))||l.endsWith(surname(n)))).length
      agree=hit>=10;why=agree?'':`LiveScore's eleven differs (${hit}/11 surnames agree)`
      lsSrc={id:`ls-lu-${ev.Eid}`,title:`LiveScore: ${home.name} ${sh}-${sa} ${away.name}, ${on} (line-ups)`,url:`${LS}/lineups/soccer/${ev.Eid}`,publisher:'LiveScore',access:'available',checkedAt:today}
     }else why='LiveScore has no full eleven for this match'

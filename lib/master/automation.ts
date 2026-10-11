@@ -1,4 +1,5 @@
 import 'server-only'
+import {goalClubs,goalsPass} from '@/lib/goals-auto/pipeline'
 import {randomUUID} from 'node:crypto'
 import {existsSync,readFileSync} from 'node:fs'
 import {join} from 'node:path'
@@ -29,8 +30,8 @@ type ClubStep={clubId:string;collected?:{state:string;requests:number;documents:
 const manifestStamp=(clubId:string)=>stagingDirs(clubId).map(d=>{const p=join(d,'manifest.json');return existsSync(p)?readFileSync(p,'utf8'):''}).join('|')
 const lastStamp=new Map<string,string>()
 
-/** A web request has ~60s on Vercel; the pipeline stops starting new work at the budget and says which clubs wait. */
-export const PIPELINE_BUDGET_MS=40000
+/** A web request has ~60s on Vercel and the first scheduled run measured a 504 at 60s with a 40s budget (11.10.2026): single steps (a package queue, a worker pass of three fetches) are not interruptible, so the budget leaves their room. The pipeline stops starting new work at the budget and says which clubs wait. */
+export const PIPELINE_BUDGET_MS=25000
 /**
  * Fair turns (audit A04, 8.10.2026): each pass starts with the club after the last one that got work, remembered
  * durably (Blob when connected, the data dir otherwise), so a slow first club cannot defer the same later club forever.
@@ -56,7 +57,7 @@ export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_
     // 3 — a package that changed (or was never brought in on this server) goes to the club file as unreviewed rows
     if(after&&(after!==before||seen!==after)){step.queued=await queuePackage(clubId);lastStamp.set(clubId,after)}
    }
-   if(Date.now()<deadline&&profile?.sources.length){const jobs=await readJobs(clubId);if(jobs.some(j=>j.state==='planned'||j.state==='failed')){const r=await runWorker(profile,{max:3});step.fetched=r.counts.fetched}}
+   if(Date.now()<deadline-12000&&profile?.sources.length){const jobs=await readJobs(clubId);if(jobs.some(j=>j.state==='planned'||j.state==='failed')){const r=await runWorker(profile,{max:3});step.fetched=r.counts.fetched}}
   }catch(e){step.error=e instanceof Error?e.message:'failed'}
   steps.push(step)
  }
@@ -64,7 +65,10 @@ export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_
  if(lastWorked)await writeCursor(lastWorked).catch(()=>undefined)
  // queued adapters make their own requests: start one only with time to finish it (A03)
  const processed=[];for(let i=0;Date.now()<deadline-15000&&i<Math.max(1,steps.filter(s=>s.queued).length);i++){const r=await runResearch();processed.push(r);if(!('ran' in r)||!r.ran)break}
- return {at:new Date().toISOString(),steps,processed:processed.length,stopsAt:'review — sources and findings wait for the owner; packs and publishing are never automatic'}
+ // 6 — goals: read what step 2 already stored (no request of its own; default policy publishes nothing)
+ let goals:{state:string;counts:Record<string,number>;note:string}|{error:string}|null=null
+ if(Date.now()<deadline-5000){try{const r=await goalsPass({clubs:await goalClubs()});goals={state:r.state,counts:r.counts,note:r.note}}catch(e){goals={error:e instanceof Error?e.message:'failed'}}}
+ return {at:new Date().toISOString(),steps,goals,processed:processed.length,stopsAt:'review — sources and findings wait for the owner; packs and publishing are never automatic'}
 }
 
 /** Queue the package adapter for a club unless research is already queued or running. Returns whether it queued. */

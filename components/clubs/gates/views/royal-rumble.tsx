@@ -83,6 +83,6 @@ async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
  const again=new URLSearchParams({lang:locale,mode:'xi',f,vs:same?'same':rivalId,seed:String(round.seed+1)})
  return <>
   {head(sp==='random'?'random':same?'same':rivalId)}
-  <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} main={{seed:main.seed,draft:main.draft}} shuffle={{seed:shuf.seed,draft:shuf.draft}} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed}/>
+  <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} main={{seed:main.seed,budget:main.budget,draft:main.draft}} shuffle={{seed:shuf.seed,budget:shuf.budget,draft:shuf.draft}} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed}/>
  </>
 }

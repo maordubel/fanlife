@@ -15,6 +15,7 @@ import { REPLAY_HOLDS, replayHeld } from './replay/holds'
 import { readTruth, type GoalSourceRecord, type TruthRejection } from './replay/truth'
 import type { Envelope, TruthTouch, UserTouch } from './replay/envelope'
 import { isReplayAction } from './replay/vocab'
+import { publishedGoalRecords } from '@/lib/goals-auto/published'
 
 /**
  * שחזור השער — rebuild a real, sourced goal on the pitch, touch by touch.
@@ -44,7 +45,11 @@ const FLOOR = 2
  */
 function records(): GoalSourceRecord[] {
   const file = goalsFile as unknown as GoalFile
-  return file.records.filter(
+  // Bundled goals first and untouched; goals the autonomous pipeline published (this club's route only) follow,
+  // and a bundled id always wins. With nothing published this is exactly the old behaviour.
+  const bundled = new Set(file.records.map((r) => r.goalId))
+  const extra = publishedGoalRecords().filter((r) => !bundled.has(r.goalId))
+  return [...file.records, ...extra].filter(
     (record) =>
       (record.confidence ?? file.confidence) >= FLOOR &&
       !replayHeld(record.goalId) &&

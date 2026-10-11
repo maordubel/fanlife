@@ -1,7 +1,7 @@
 import {fits,type Pos,type Rated} from '../rumble'
 import {dealXI} from './deal'
 import {countFamily,FORMATION_IDS,slotsOf} from './formations'
-import {XI_BUDGET,XI_OFFERS,type FormationId,type XIReadiness} from './types'
+import {XI_BUDGET_MIN as XI_BUDGET,XI_OFFERS,type FormationId,type XIReadiness} from './types'
 
 const FAMILIES:Pos[]=['GK','DF','MF','FW']
 /** how many men could stand in a family's slots: his own, plus the free men for any outfield one */

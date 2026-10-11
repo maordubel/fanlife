@@ -120,7 +120,7 @@
  "rr.mc.end.card.1": "Yellow card for {by}.",
  "rr.mc.end.card.2": "The referee has seen enough — {by} is booked.",
  "rr.mc.header": "{name} gets his head to it!",
- "rr.xi.rule1": "Every card costs €1M to €5M, in half-million steps. Your eleven must fit €{budget}M.",
+ "rr.xi.rule1": "Every card costs €1M to €5M, in half-million steps. Your eleven must fit €{budget}M — the budget changes round to round (€33M, €34M or €35M).",
  "rr.xi.rule2": "Fill the shape: a keeper, then each line. Tap a slot on the pitch to go back to it.",
  "rr.xi.rule3": "A card that would leave you unable to fill the rest is faded and cannot be picked.",
  "rr.xi.rule4": "One shuffle, and only before the first pick.",

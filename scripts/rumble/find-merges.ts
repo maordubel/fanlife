@@ -17,7 +17,7 @@ const FILE='content/manual/rumble-merges.json'
 type M={keep:string;drop:string;why:string}
 const existing:Record<string,M[]>=existsSync(FILE)?JSON.parse(readFileSync(FILE,'utf8')):{}
 const run=async()=>{
- for(const id of CORE_CLUB_IDS){const d=(await loadClub(id))!.data,ps=d.players.filter(p=>p.value.name).map(p=>p.value)
+ for(const id of CORE_CLUB_IDS){const d=(await loadClub(id))!.data,ps=(d.players??[]).filter(p=>p.value.name).map(p=>p.value)
   const toks=(n:string)=>norm(n.replace(/Image:.*$/,'')).split(' ').filter(Boolean)
   const compat=(a:typeof ps[number],b:typeof ps[number])=>!(a.fromYear!==null&&b.fromYear!==null&&a.toYear!==null&&b.toYear!==null&&(a.toYear<b.fromYear-1||b.toYear<a.fromYear-1))
   const match=(a:typeof ps[number],b:typeof ps[number])=>{const ta=toks(a.name),tb=toks(b.name);if(ta.length<2||tb.length<2||ta.at(-1)!==tb.at(-1))return false

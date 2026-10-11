@@ -1,0 +1,262 @@
+[
+ {
+  "n": "desktop: no horizontal scroll · list",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: position dropdown narrows the list",
+  "pass": true,
+  "d": "1,373 players · page 1 of 23 → 136 players · page 1 of 3"
+ },
+ {
+  "n": "desktop: dropdown closes on Escape",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: Publish disabled with a visible reason when nothing changed",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: still disabled until a reason is written, and says so",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: preview shows what it reaches",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: draft saved and announced",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: draft is invisible to the games (row still old)",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: draft survives a reload",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: publish saved price, positions, score",
+  "pass": true,
+  "d": "[4,77,[\"DF\"]]"
+ },
+ {
+  "n": "desktop: draft cleared after publish",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: revert restores the archive value",
+  "pass": true,
+  "d": "[1,75]"
+ },
+ {
+  "n": "desktop: no horizontal scroll · drawer",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: no horizontal scroll · reports",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: report tabs open",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: no horizontal scroll · merge",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: merge suggestions listed with reasons",
+  "pass": true,
+  "d": "20"
+ },
+ {
+  "n": "desktop: merge published",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: merged man listed under Merged, with his keeper",
+  "pass": true,
+  "d": "celtic:p-dh-a6970a797f6d"
+ },
+ {
+  "n": "desktop: keeper shows who was folded into him",
+  "pass": true,
+  "d": "[{\"id\":\"celtic:p-dh-a6970a797f6d\",\"name\":\"Christopher Jullien\",\"years\":\"2019–2022\"}]"
+ },
+ {
+  "n": "desktop: unmerge works",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: unmerge restores him exactly (back in the squad, same price & positions)",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: no horizontal scroll · bulk",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: bulk preview shows each row’s fate",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: bulk published",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "desktop: no console errors",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: no horizontal scroll · list",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: position dropdown narrows the list",
+  "pass": true,
+  "d": "1,373 players · page 1 of 23 → 136 players · page 1 of 3"
+ },
+ {
+  "n": "mobile: dropdown closes on Escape",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: Publish disabled with a visible reason when nothing changed",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: still disabled until a reason is written, and says so",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: preview shows what it reaches",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: draft saved and announced",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: draft is invisible to the games (row still old)",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: draft survives a reload",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: publish saved price, positions, score",
+  "pass": true,
+  "d": "[4,77,[\"FW\",\"DF\",\"MF\"]]"
+ },
+ {
+  "n": "mobile: draft cleared after publish",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: revert restores the archive value",
+  "pass": true,
+  "d": "[1,74]"
+ },
+ {
+  "n": "mobile: no horizontal scroll · drawer",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: no horizontal scroll · reports",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: report tabs open",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: no horizontal scroll · merge",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: merge suggestions listed with reasons",
+  "pass": true,
+  "d": "20"
+ },
+ {
+  "n": "mobile: merge published",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: merged man listed under Merged, with his keeper",
+  "pass": true,
+  "d": "celtic:p-dh-a6970a797f6d"
+ },
+ {
+  "n": "mobile: keeper shows who was folded into him",
+  "pass": true,
+  "d": "[{\"id\":\"celtic:p-dh-a6970a797f6d\",\"name\":\"Christopher Jullien\",\"years\":\"2019–2022\"}]"
+ },
+ {
+  "n": "mobile: unmerge works",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: unmerge restores him exactly (back in the squad, same price & positions)",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: no horizontal scroll · bulk",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: bulk preview shows each row’s fate",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: bulk published",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "mobile: no console errors",
+  "pass": true,
+  "d": ""
+ }
+]

@@ -18,6 +18,11 @@ on:
   pull_request:
     branches: [main]
 
+# A new push to the same PR supersedes the run still going: three half-finished runs of one branch were what made a PR look stuck for 30 minutes.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   doctor:
     runs-on: ubuntu-latest

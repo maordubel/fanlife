@@ -86,7 +86,7 @@ describe('gate 4 · the deal',()=>{
    const list=eligibleKits(await club(id))
    for(let seed=1;seed<=12;seed++)for(const d of dealKitRun(list,seed,0,5,'practice')){
     const body=d.puzzle.steps.find(r=>r.step==='body');if(!body)continue
-    const set=(o:{patch:{base?:string;trim?:string|null}})=>[o.patch.base,o.patch.trim].filter(Boolean).sort().join('|')
+    const set=(o:{patch:{base?:string|null;trim?:string|null}})=>[o.patch.base,o.patch.trim].filter(Boolean).sort().join('|')
     const right=body.options.find(o=>o.id===d.correct.body)!,sets=body.options.map(set)
     expect(sets.filter(x=>x===set(right)),`${id} seed ${seed} ${d.puzzle.seasonLabel}`).toHaveLength(1)
    }

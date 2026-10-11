@@ -2,7 +2,7 @@ import {fits,strip,type Pos,type Rated,type RumbleCard} from '../rumble'
 import {floorOf,withFeatured} from '../rumble-economy'
 import {hash,rng} from '../rumble-rng'
 import {countFamily,slotsOf} from './formations'
-import {PRICE_SCHEME,XI_BUDGET,XI_OFFERS,type FormationId} from './types'
+import {PRICE_SCHEME,XI_BUDGET_MAX,budgetFor,XI_OFFERS,type FormationId} from './types'
 
 const FAMILIES:Pos[]=['GK','DF','MF','FW']
 const shuffled=<T,>(a:readonly T[],r:()=>number)=>{const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[x[i],x[j]]=[x[j]!,x[i]!]}return x}
@@ -23,7 +23,7 @@ export function decksOf(pool:readonly Rated[],key:string):Record<Pos,Rated[]>{
  * The opponent is COMMITTED from his own pool, the seed and the rules alone — never from what the player picks. Per slot: the strongest of
  * three seeded men that still leaves the other slots fillable inside the budget. His prices are his club's; his budget is €35M, like yours.
  */
-export function dealRivalXI(pool:readonly Rated[],f:FormationId,seed:number,budget:number=XI_BUDGET):Rated[]|null{
+export function dealRivalXI(pool:readonly Rated[],f:FormationId,seed:number,budget:number=XI_BUDGET_MAX):Rated[]|null{
  const r=rng(seed>>>0),taken=new Set<string>(),out:Rated[]=[],slots=slotsOf(f)
  let money=budget
  for(let i=0;i<slots.length;i++){
@@ -60,16 +60,16 @@ export function dealDraftXI(pool:readonly Rated[],f:FormationId,roundSeed:number
  * the player can really buy, with a complete squad still possible inside €35M around him. If a try fails the next try reads further
  * along the deck; if none works the club is NOT READY (null) — prices and the budget are never touched.
  */
-export function dealXI(homePool:readonly Rated[],awayPool:readonly Rated[],f:FormationId,roundSeed:number,same:boolean,key='club',tries=40):{seed:number;rival:Rated[];draft:RumbleCard[][];attempt:number}|null{
- const rival=dealRivalXI(awayPool,f,hash(`${key}|${roundSeed}|${f}|rival`));if(!rival)return null
+export function dealXI(homePool:readonly Rated[],awayPool:readonly Rated[],f:FormationId,roundSeed:number,same:boolean,key='club',tries=40):{seed:number;budget:number;rival:Rated[];draft:RumbleCard[][];attempt:number}|null{
+ const budget=budgetFor(roundSeed),rival=dealRivalXI(awayPool,f,hash(`${key}|${roundSeed}|${f}|rival`),budget);if(!rival)return null
  const banned=same?new Set(rival.map(c=>c.id)):new Set<string>(),icons=homePool.filter(x=>x.price===5&&!banned.has(x.id)).sort((a,b)=>a.id.localeCompare(b.id))
  for(let attempt=0;attempt<tries;attempt++){
   const draft=dealDraftXI(homePool,f,roundSeed,rival,same,key,attempt);if(!draft)return null
   const inBoard=new Set(draft.flat().map(c=>c.id)),r=rng(hash(`${key}|${roundSeed}|${attempt}|icon`))
   const k=icons.length?((roundSeed>>>0)+attempt)%icons.length:0,rotated=[...icons.slice(k),...icons.slice(0,k)].filter(x=>!inBoard.has(x.id))
   const cards=homePool.filter(x=>!inBoard.has(x.id)&&!banned.has(x.id))
-  const pick=withFeatured(draft,[...rotated,...cards.filter(c=>c.price!==5)],(c,i)=>fits(c,slots(f)[i]!.family),r,XI_BUDGET,true)
-  if(pick&&floorOf(pick)<=XI_BUDGET)return {seed:roundSeed,rival,draft:pick,attempt}
+  const pick=withFeatured(draft,[...rotated,...cards.filter(c=>c.price!==5)],(c,i)=>fits(c,slots(f)[i]!.family),r,budget,true)
+  if(pick&&floorOf(pick)<=budget)return {seed:roundSeed,budget,rival,draft:pick,attempt}
  }
  return null
 }

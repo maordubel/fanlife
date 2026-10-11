@@ -139,11 +139,14 @@ try {
  for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']){
   // magazine home: shared paper tile, club colour only on the badge (livery) — see CLAUDE.md rule 91
   const tile=page.locator(`.mag-tile[data-club="${slug}"]`)
+  // A club is either open (its own tile) or still in the workshop (a vote tile) — the owner's publication decides which (rule 91/100)
+  if(await tile.count()===0){assert.equal(await page.locator(`.mag-shop[data-club="${slug}"]`).count(),1,`${slug} neither open nor in the workshop`);continue}
   assert.equal(await tile.count(),1,`${slug} tile`)
   assert((await tile.getAttribute('href')).startsWith(`/clubs/${slug}`),`${slug} href`)
   const badge=tile.locator('.mag-badge')
   assert(await badge.getAttribute('data-livery'),`${slug} livery`)
-  assert((await badge.innerText()).trim().length>=1,`${slug} initials`)
+  // since #140 a club with a crest shows the crest (image), the others their initials — either is a mark
+  assert((await badge.innerText()).trim().length>=1||(await badge.locator('img,svg').count())>=1,`${slug} crest or initials`)
   assert((await badge.evaluate(e=>getComputedStyle(e).getPropertyValue('--club-primary')||getComputedStyle(e.parentElement).getPropertyValue('--club-primary'))).trim()||true)
   assert((await tile.locator('b').innerText()).trim()&&(await tile.locator('small').innerText()).trim(),`${slug} name/city`)
  }
@@ -166,32 +169,48 @@ try {
  const questionMaster=JSON.parse(readFileSync('content/generated/question-master.json','utf8'))
  const nativeQuestions=new Map(questionMaster.questions.map(q=>[q.id,q]))
  const interactions=new Set()
- for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']) {
+ // the four clubs are independent: each plays on its own page, at the same time (the serial run took longer than everything else in CI together)
+ await Promise.all(['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva'].map(async slug=>{
+  const page=await context.newPage();await page.setViewportSize({width:390,height:844})
   const response=await page.goto(`${base}/clubs/${slug}/trivia?seed=42&lang=en`)
   assert.equal(response.status(),200)
   const truthDates=slug==='hapoel-tel-aviv'?null:(await loadClub(slug)).data.archive // compiled (pack + waves), as the page deals it
   let answers=0
+  // This flow proves the shared run end to end; it is not a speed test. Practice mode has no question clock (server and screen), so a slow runner cannot turn a right answer into TIME'S UP.
+  await page.getByRole('button',{name:'Practice',exact:true}).click()
+  { // the verdict waits for a tap: a slow runner cannot miss it when it auto-advances (the pace is remembered across clubs, so only switch it on)
+   const tap=page.getByRole('button',{name:'Tap to go on',exact:true});if((await tap.getAttribute('aria-pressed'))!=='true')await tap.click()
+  }
   await page.getByTestId('trivia-start').click()
   while(await page.getByTestId('trivia-result').count()===0){
    const board=page.getByTestId('trivia-question');await board.waitFor()
+   // the stage card (between stages) covers the answers and the question clock is already running: a player taps it away, so does the flow
+   await page.getByTestId('trivia-stage').click({timeout:800}).catch(()=>{})
    const id=await board.getAttribute('data-question-id'),type=await board.getAttribute('data-question-type')
    let answer
    if(slug==='hapoel-tel-aviv'){assert(nativeQuestions.has(id),`Unknown native question ${id}`);answer=nativeQuestions.get(id).answer}
-   else {const prompt=(await board.locator('h2').textContent()).trim() /* textContent: the magazine prints headings in capitals (rule 91) */;const fact=truthDates.find(f=>prompt.startsWith(f.value.name+' — '));assert(fact,`Question lacks its club fact: ${prompt}`);answer=prompt.includes(' — '+fact.value.on+'.')?'true':'false'}
+   else {const prompt=(await board.locator('h2').textContent()).trim() /* textContent: the magazine prints headings in capitals (rule 91) */;const facts=truthDates.filter(f=>prompt.startsWith(f.value.name+' — '));assert(facts.length,`Question lacks its club fact: ${prompt}`);answer=facts.some(f=>prompt.includes(' — '+f.value.on+'.'))?'true':'false' /* several fixtures can share a name: the claim is true when ANY of them carries the stated date */}
    interactions.add(type)
    const values=Array.isArray(answer)?answer:[answer]
-   if(type==='match'){const question=nativeQuestions.get(id);for(let i=0;i<question.left.length;i++)await board.getByLabel(question.left[i],{exact:true}).selectOption(values[i])}
+   if(type==='match'){ // pairs are tapped: the first unmatched left item is active, so the right-hand answers go in order
+    const question=nativeQuestions.get(id);for(let i=0;i<question.left.length;i++)await board.locator('[data-kind="match"] ul').nth(1).getByRole('button',{name:values[i],exact:true}).click({force:true})}
    // option buttons: Playwright's stability heuristic does not settle on the magazine's game buttons in headless Chromium
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
-   else for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true})
+   else if(['order','multi'].includes(type)){ // these need a Confirm, and a placed item is itself a button that un-places on a second tap: tap once
+    for(const value of values)await board.getByRole('button',{name:value,exact:true}).first().click({force:true})}
+   else for(let attempt=0;attempt<4;attempt++){ // a stage card can land a beat after the board: tap it away and answer again until a verdict shows
+    for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true}).catch(()=>{})
+    if(await board.locator('[role=status][data-right]').waitFor({timeout:2500}).then(()=>true,()=>false))break
+    await page.getByTestId('trivia-stage').click({timeout:800}).catch(()=>{})}
    if(['match','order','multi'].includes(type))await board.getByRole('button',{name:'Confirm answer',exact:true}).click({force:true})
-   await board.getByRole('status').waitFor();assert((await board.getByRole('status').innerText()).startsWith('Correct'))
+   await board.locator('[role=status][data-right]').waitFor({timeout:20000}).catch(async()=>{throw new Error(`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)}: no verdict. Screen: ${JSON.stringify((await page.locator('main').innerText()).slice(0,400))}`)});{const st=await board.locator('[role=status][data-right]').innerText();assert((await board.locator('[role=status][data-right]').getAttribute('data-right'))==='true'&&st.toLowerCase().includes('correct'),`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)} -> ${JSON.stringify(st.slice(0,120))}`)} /* innerText follows text-transform: the magazine prints capitals (rule 91) */
+   await board.locator('[role=status][data-right]').click({position:{x:8,y:8},force:true}) // tap to go on
    answers++
    await page.waitForFunction(old=>document.querySelector('[data-testid="trivia-result"]')||document.querySelector('[data-testid="trivia-question"]')?.getAttribute('data-question-id')!==old,id)
   }
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`Shared trivia mobile overflow: ${slug}`)
   assert(answers>=3&&answers<=12)
-  assert((await page.getByTestId('trivia-result').innerText()).toLowerCase().includes(String(`Correct: ${answers}/${answers}`).toLowerCase()))
+  {const resultText=await page.getByTestId('trivia-result').innerText();assert(resultText.toLowerCase().includes(String(`Correct: ${answers}/${answers}`).toLowerCase()),`${slug} result text: ${JSON.stringify(resultText.slice(0,200))}`)}
   assert.equal(new URL(page.url()).pathname,`/clubs/${slug}/trivia`)
   await identityCheck(page,slug,'.club-surface',`/tmp/fanlife-m1-browser/${slug}-trivia.png`)
   await page.getByRole('link',{name:'Play again',exact:true}).click();await page.waitForURL(url=>url.searchParams.get('r')==='1');await page.getByTestId('trivia-start').click();await page.getByTestId('trivia-question').waitFor();assert.equal(new URL(page.url()).searchParams.get('r'),'1')
@@ -218,7 +237,9 @@ try {
   const activity=await page.evaluate(club=>JSON.parse(localStorage.getItem(`fan-life:club:${club}:activity:v1`)),slug)
   assert.equal(activity.trivia.completed,1);assert.equal(activity.memory.completed,1)
   sharedGames.push({club:slug,triviaAnswers:answers,memoryPairs:pairs.length,archive:'passed',activity:'passed'})
- }
+  await page.close()
+ }))
+ sharedGames.sort((x,y)=>x.club.localeCompare(y.club))
  // All six existing interactions are preserved in native QA; this mixed browser round
  // exercises the interaction types actually dealt, without forcing a handpicked fork.
  assert(interactions.has('mcq')&&interactions.size>=2)

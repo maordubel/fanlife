@@ -30,7 +30,7 @@ const midRank=(xs:number[])=>{const s=[...xs].sort((a,b)=>a-b);return xs.map(v=>
 async function pinsForHapoel(data:Awaited<ReturnType<typeof loadClub>>){
  // THE WORKER's ten €5M men, found in this archive by exact name (rule 7)
  const club=data!.data,byName=new Map<string,string[]>()
- for(const p of club.players)for(const n of [p.value.name,...p.value.aliases])byName.set(norm(n),[...(byName.get(norm(n))||[]),p.value.id])
+ for(const p of (club.players??[]))for(const n of [p.value.name,...p.value.aliases])byName.set(norm(n),[...(byName.get(norm(n))||[]),p.value.id])
  const out:Record<string,{priceM:Price;reason:string;decidedOn:string}>={}
  for(const f of ROYAL_RUMBLE_CANONICAL_FIVES){
   const m=allPlayers().find(x=>x.slug===f.slug);if(!m)continue
@@ -41,7 +41,7 @@ async function pinsForHapoel(data:Awaited<ReturnType<typeof loadClub>>){
 }
 async function standing(data:Awaited<ReturnType<typeof loadClub>>){
  const club=data!.data;if(club.identity.id!=='hapoel-tel-aviv')return new Map<string,number>()
- const byName=new Map<string,string>();for(const p of club.players)for(const n of [p.value.name,...p.value.aliases])byName.set(norm(n),p.value.id)
+ const byName=new Map<string,string>();for(const p of (club.players??[]))for(const n of [p.value.name,...p.value.aliases])byName.set(norm(n),p.value.id)
  const out=new Map<string,number>()
  for(const m of allPlayers()){if(m.kind!=='player')continue;const pr=priceForPlayer(m.slug);if(pr===null)continue
   const ids=[...new Set([m.displayName,...m.aliases.he,...m.aliases.latin].map(n=>byName.get(norm(n))).filter(Boolean))] as string[]
@@ -101,12 +101,12 @@ async function main(){
  if(cmd==='apply-v2')await applyV2()
  if(cmd==='freeze'){for(const id of CORE_CLUB_IDS)if(!doc.clubs[id])await freeze(id);writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')}
  if(cmd==='migrate'){for(const id of CORE_CLUB_IDS){const d=await loadClub(id);if(!d||!doc.clubs[id])continue;let n=0
-  for(const p of d.data.players)if(isMan(p.value.name)&&!new Set(mergesFor(id).map(m=>m.drop)).has(p.value.id)&&!doc.clubs[id]!.players[p.value.id]){doc.clubs[id]!.players[p.value.id]={priceM:1,priceTier:'REST',locked:false,assignment:'new-member',rationale:'joined the archive after the list was frozen',reviewedAt:today};n++}
+  for(const p of (d.data.players??[]))if(isMan(p.value.name)&&!new Set(mergesFor(id).map(m=>m.drop)).has(p.value.id)&&!doc.clubs[id]!.players[p.value.id]){doc.clubs[id]!.players[p.value.id]={priceM:1,priceTier:'REST',locked:false,assignment:'new-member',rationale:'joined the archive after the list was frozen',reviewedAt:today};n++}
   if(n)console.log(id,'+',n)}writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')}
  // validate
  let bad=0;const fail=(m:string)=>{bad++;console.log('FAIL',m)}
  for(const id of CORE_CLUB_IDS){const d=await loadClub(id);const c=doc.clubs[id];if(!d||!c){fail(`${id}: no price list`);continue}
-  const dropped=new Set(mergesFor(id).map(m=>m.drop)),names=d.data.players.filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)),ids=new Set(names.map(p=>p.value.id))
+  const dropped=new Set(mergesFor(id).map(m=>m.drop)),names=(d.data.players??[]).filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)),ids=new Set(names.map(p=>p.value.id))
   for(const p of names)if(!c.players[p.value.id])fail(`${id}: ${p.value.name} has no price`)
   for(const pid of Object.keys(c.players))if(!ids.has(pid))fail(`${id}: ${pid} is not in the archive`)
   const n=Object.keys(c.players).length,have={1:0,2:0,3:0,4:0,5:0} as Record<number,number>

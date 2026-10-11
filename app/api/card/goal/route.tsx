@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og'
 
+import { primePublishedGoals } from '@/lib/goals-auto/published'
 import { GoalCardArt } from '@/lib/og/cards'
 import { ogFonts } from '@/lib/og/fonts'
 import { goalArt } from '@/lib/og/goal-art'
@@ -13,6 +14,7 @@ export const runtime = 'nodejs'
 
 export async function GET(request: Request): Promise<Response> {
   const url = new URL(request.url)
+  await primePublishedGoals()
   const card = parseGoalCard(url.searchParams)
   if (!card) return new Response(null, { status: 404 })
   const art = await goalArt(card, url.origin)
