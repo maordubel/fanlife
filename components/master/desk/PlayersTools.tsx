@@ -66,7 +66,7 @@ export function BulkPanel(){
 type Pr={keep:Brief&Record<string,unknown>;drop:Brief&Record<string,unknown>;result:{name:string;aliases:string[];years:string;positions:string[];price:number;rating:number};warnings:string[];priceChoices:{keep:number;drop:number};quota:{ok:boolean;violations:string[]};readiness:{broke:string[]};canMerge:boolean;blocker:string|null}
 type Cand={club:string;clubName:string;a:Brief&{positions?:string[];aliases?:string[]};b:Brief&{positions?:string[];aliases?:string[]};likeness:{score:number;confidence:string;reasons:string[]};suggest:{keep:string;drop:string;why:string}}
 export function MergePanel({club}:{club:string|null}){
- const [d,setD]=useState<{candidates:Cand[];total:number}|null>(null),[err,setErr]=useState<string|null>(null),[done,setDone]=useState<string|null>(null),[open,setOpen]=useState<{c:Cand;keep:string;drop:string}|null>(null)
+ const [d,setD]=useState<{candidates:Cand[];total:number}|null>(null),[err,setErr]=useState<string|null>(null),[done,setDone]=useState<string|null>(null),[open,setOpen]=useState<{c:Cand;keep:string;drop:string}|null>(null),[shown,setShown]=useState(20)
  const [pv,setPv]=useState<Pr|null>(null),[reason,setReason]=useState(''),[price,setPrice]=useState<'keep'|'drop'|'higher'>('keep'),[okQ,setOkQ]=useState(false),[okO,setOkO]=useState(false),[busy,setBusy]=useState(false)
  const load=()=>{setD(null);fetch('/api/master/players/duplicates'+(club?`?club=${club}`:''),{cache:'no-store'}).then(async x=>{const j=await x.json();x.ok?setD(j):setErr(j.error||'Could not load.')}).catch(()=>setErr('No connection.'))}
  useEffect(load,[club]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -80,7 +80,7 @@ export function MergePanel({club}:{club:string|null}){
   {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}{done&&<p role="status" className="desk-state">{done}</p>}
   {!d&&!err&&<p className="desk-state" role="status">Looking for duplicates…</p>}
   {d&&<p className="pcc-hint">{d.total} candidate pair(s){d.total>d.candidates.length?`, showing the ${d.candidates.length} most likely`:''}.</p>}
-  {d?.candidates.map(c=>{const sel=open?.c===c;return <div key={c.club+c.a.id+c.b.id} className="pcc-pair">
+  {d?.candidates.slice(0,shown).map(c=>{const sel=open?.c===c;return <div key={c.club+c.a.id+c.b.id} className="pcc-pair">
    <div className="cols">{[c.a,c.b].map(m=><div key={m.id}><b dir="auto">{m.name}</b><small> {m.nameOriginal!==m.name?m.nameOriginal:''}</small><div><code>{m.id}</code> · {m.years} · €{m.price}M · {m.rating}{m.wave?' · roster-wave':''}</div></div>)}</div>
    <p className="pcc-hint">{c.clubName} · {c.likeness.confidence} match — {c.likeness.reasons.join('; ')}. Suggested: keep <b dir="auto">{(c.suggest.keep===c.a.id?c.a:c.b).name}</b> ({c.suggest.why}).</p>
    <p className="pcc-actions"><button type="button" className="min-h-tap desk-btn" onClick={()=>pick(c,c.suggest.keep,c.suggest.drop)}>Review merge</button><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>pick(c,c.suggest.drop,c.suggest.keep)}>Keep the other one</button></p>
@@ -96,6 +96,7 @@ export function MergePanel({club}:{club:string|null}){
     <p className="pcc-actions"><button type="button" className="min-h-tap desk-btn" disabled={busy||!pv.canMerge||reason.trim().length<3||(!pv.quota.ok&&!okQ)} onClick={go}>Merge and publish</button><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>{setOpen(null);setPv(null)}}>Cancel</button></p>
    </div>}
   </div>})}
+  {d&&d.candidates.length>shown&&<p><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>setShown(shown+20)}>Show 20 more</button></p>}
   {d&&!d.candidates.length&&<p className="desk-state">No likely duplicates.</p>}
  </section>
 }

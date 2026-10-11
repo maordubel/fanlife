@@ -44,7 +44,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
     section={section} view={view} club={club} attention={inbox}
     ops={{storage:storageMap(),integrations:integrations(),release:release()}}
     audience={section==='audience'?<AudienceDesk days={searchParams.days} club={club} clubNames={Object.fromEntries(summaries.map(s=>[s.id,s.name]))}/>:undefined}
-    gaps={section==='clubs'&&!club?<ClubGaps summaries={summaries}/>:undefined}/>
+    gaps={section==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">Club gaps — what each gate still needs</summary><ClubGaps summaries={summaries}/></details>:undefined}/>
   </Suspense>}
  </AdminShell>
 }
