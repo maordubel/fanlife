@@ -7,6 +7,13 @@ Authority: `maordubel/The-Worker` for historical persons, roles and prices; Fan 
 - `tests/hapoel-player-identity-parity.test.ts`: safeguards those overrides, uniqueness of explicitly merged IDs and the ten Worker canonical €5M icons in the shared historical price table.
 - No historical records permanently deleted; no player roles guessed from a name; no universal club pricing changed. Additional branch commits modify `lib/clubs/rumble-xi/names.ts` and `scripts/rumble/build-names-en.ts`, with live-path regression coverage.
 
+## Additional verified changes (same PR)
+- Regenerated name-table rows updated for `p_4a4c618031` (Avihai Yadin) and `p_27a81aefb1` (Mavis Tchibota); other clubs untouched.
+- Merged duplicate wave record `p_wv-5fac092f20` into historical canonical player `p_27a81aefb1` for Mavis Tchibota. Evidence: wave Wikipedia bio revision 1375542405 documents 2023–24, FW, 29 league apps, 5 goals.
+- `lib/clubs/rumble.ts` now retains positions, minimum start year, maximum end year and available career evidence across explicit merges.
+- English generated table has 700 Hapoel entries before ignoring merge drops; exact normalized Latin-name comparison on that table found only the Tchibota pair. This is not a reliable all-identity deduplication count.
+- Tests added to guard the wave-identity merge and live-name resolver. **Tests not executed in this connector session**.
+
 ## Critical architectural findings
 1. Both repositories' `content/generated/player-master.json` have the same Git blob SHA (`46ccb0c1c89dddc7d7ca1d8b459ccc9a1c851925`). The base master isn't the primary mismatch.
 2. Fan Life uses `content/generated/player-names-en.json` in `lib/clubs/rumble-xi/names.ts`. The runtime name resolver now honors exact archival-name overrides immediately, even before generation. Still regenerate and commit `content/generated/player-names-en.json` with `npm run rumble:names` to keep all consumers and the prebuilt artifact aligned. The generator's hardcoded temporary-path write was removed.
