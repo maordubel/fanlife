@@ -14,6 +14,8 @@ import {useAdminApi} from './adminApi'
 import {ClubFile,type ClubFileView} from './ClubFile'
 import {DataCenter,type RunsRow} from './DataCenter'
 import {DisplayControl} from './DisplayControl'
+import {TopAdControl} from './TopAdControl'
+import {DEFAULT_TOP_AD,type TopAdSetting} from '@/lib/top-ad'
 import {GoalsAutomation} from './GoalsAutomation'
 import {deskHref,type AttentionItem} from '@/lib/master/attention'
 import type {StorageRow,Integration} from '@/lib/master/storageMap'
@@ -35,7 +37,7 @@ const VIEW_OUT:Record<ClubView,string>={launch:'launch',summary:'summary',decisi
  * reload, a bookmark and Back keep the context; the old `?tab=` links are mapped on the server. Global sections show
  * all clubs; a club is a scope you enter and leave on purpose.
  */
-export function Admin({initial,summaries,adapters,runs,display,storage,section,view,club:scope,attention,ops,audience,gaps}:{initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string};section:DeskSection;view:string|null;club:string|null;attention:AttentionItem[];ops:DeskOps;audience?:ReactNode;gaps?:ReactNode}){
+export function Admin({ads,initial,summaries,adapters,runs,display,storage,section,view,club:scope,attention,ops,audience,gaps}:{ads?:TopAdSetting;initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string};section:DeskSection;view:string|null;club:string|null;attention:AttentionItem[];ops:DeskOps;audience?:ReactNode;gaps?:ReactNode}){
  const router=useRouter(),path=usePathname(),params=useSearchParams()
  const go=(next:Record<string,string|null>)=>{const q=new URLSearchParams(params.toString());q.delete('tab');for(const [k,v] of Object.entries(next)){if(v)q.set(k,v);else q.delete(k)}router.push(`${path}?${q}`,{scroll:false})}
  const api=useAdminApi(),[state,setState]=useState(initial),[sums,setSums]=useState(summaries)
@@ -118,6 +120,7 @@ export function Admin({initial,summaries,adapters,runs,display,storage,section,v
   {section==='settings'&&<>
    <header className="desk-head"><p className="desk-kicker">Settings</p><h1 className="desk-h1">What the application does</h1></header>
    <section className="desk-sub" aria-labelledby="gen-h"><h2 id="gen-h">General</h2><ul className="desk-rows"><li><span className="desk-stamp">Fixed</span><div><b>Control-room language</b><p>English. Evidence and names keep their original language and direction.</p></div></li><li><span className="desk-stamp">Fixed</span><div><b>Times</b><p>Stored and shown in UTC.</p></div></li><li><span className="desk-stamp">Per club</span><div><b>Gates and publication</b><p>Switched on in each club’s workspace → Readiness, behind the activation check.</p></div><Link className="desk-btn ghost" href={deskHref('clubs')}>Clubs →</Link></li></ul></section>
+   <TopAdControl initial={ads??DEFAULT_TOP_AD} api={api}/>
    <DisplayControl initial={display} api={api}/>
    <section className="desk-sub" aria-labelledby="acc-h"><h2 id="acc-h">Access</h2><p>One owner identity, signed in with the owner key. The session lasts 30 days on this browser; changing the key on Vercel signs everyone out.</p></section>
   </>}

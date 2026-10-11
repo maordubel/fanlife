@@ -6,6 +6,7 @@ import { MarketAlerts } from '@/components/fanlife/market/MarketAlerts'
 import { ClosetBridge } from '@/components/collector/ClosetBridge'
 import { GateMeter } from '@/components/meter/GateMeter'
 import { NavPulse } from '@/components/ui/NavPulse'
+import { TOP_AD_SRC, topAdAllowedOn, DEFAULT_TOP_AD } from '@/lib/top-ad'
 import { Suspense } from 'react'
 import { ADSENSE_CLIENT } from '@/lib/ads'
 import { BRAND, SITE_URL } from '@/lib/brand'
@@ -115,9 +116,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const tenant=clubFromHost(headers().get('host'))
   const otherTenant=Boolean(tenant&&tenant!==DEFAULT_CLUB)
   const closed=!master&&(otherTenant||(club?.status!=='live'||gate&&!club?.gates.includes(gate[0])))
+  // the Dubel top ad (lib/top-ad.ts): the control room's switch AND a page that may carry it; otherwise the body says data-no-ads
+  const topAd=topAdAllowedOn(pathname)&&!closed&&((await readState().catch(()=>null))?.ads??DEFAULT_TOP_AD).topAd
   return (
     <html lang={master||otherTenant?sharedLocale:LOCALE} dir={master||otherTenant?localeDirection(sharedLocale):DIRECTION}>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased" data-no-ads={topAd?undefined:""}>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:start-2 focus:z-50 focus:bg-red focus:px-4 focus:py-2 focus:text-sheet"
@@ -150,6 +153,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Suspense fallback={null}><NavPulse /></Suspense>
         <ClosetBridge />
         <MarketAlerts />
+        {topAd?<script src={TOP_AD_SRC} defer />:null}
       </body>
     </html>
   )

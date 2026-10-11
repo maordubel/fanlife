@@ -3,6 +3,7 @@ import {randomUUID} from 'node:crypto'
 import {audit,mutate,readState,auditArchiveMonths,readAuditArchive} from '@/lib/master/store'
 import {sameOrigin,cronAuthorized,text,slug,color} from '@/lib/master/request'
 import {blobAuthReport} from '@/lib/master/durable'
+import {DEFAULT_TOP_AD} from '@/lib/top-ad'
 import {adminFromRequest} from '@/lib/master/admin'
 import {actorOf} from '@/lib/master/audit-log'
 import {runResearch} from '@/lib/master/research'
@@ -101,6 +102,7 @@ if(a==='evidence/decide'||a==='evidence/approve')return json(await mutate(s=>{co
  const before=f.decision||'pending';f.decision=decision;f.approved=decision==='approved';f.decidedAt=new Date().toISOString();f.reason=reason||undefined;c.version++;audit(s,`evidence.finding.${decision}`,c.id,`${f.field} · ${f.id}`,{...by,before,after:decision,reason:reason||undefined});return c}));
 if(a==='research/plan')return json(await planClub(slug(b.clubId)));
 if(a==='research/fetch'){const p=loadProfile(slug(b.clubId));if(!p)throw new Error('No research profile for this club.');return json(await runWorker(p,{max:Math.min(5,Math.max(1,Number(b.max)||3))}))}
+if(a==='ads/top'){if(typeof b.enabled!=='boolean')throw new Error('enabled must be true or false.');return json(await mutate(s=>{const before=(s.ads??DEFAULT_TOP_AD).topAd;s.ads={topAd:b.enabled,updatedAt:new Date().toISOString()};audit(s,'ads.top',b.enabled?'on':'off',`Dubel top ad (in-page push) ${b.enabled?'on':'off'}`,{...by,before:String(before),after:String(b.enabled)});return s.ads}))}
 if(a.startsWith('life-display/')){const op=a.slice(13);return json(await mutate(s=>{const cur=s.lifeDisplay||emptyDisplay(),now=new Date().toISOString();let next=cur
  if(op==='save-draft'){const v=validateDisplay(b.patch,{partial:true});if(!v.ok)throw new Error(`Rejected: ${v.errors.map(e=>`${e.key} (${e.problem})`).join(', ')}`);next=saveDraft(cur,v.value)}
  else if(op==='publish')next=publish(cur,now);else if(op==='revert')next=revert(cur,now);else if(op==='reset')next=reset(cur,now);else throw new Error('Unknown display operation.')

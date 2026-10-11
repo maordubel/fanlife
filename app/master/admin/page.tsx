@@ -40,7 +40,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
  return <AdminShell section={section} club={club} clubName={clubName} owner={owner} playersView={view==='players'}>
   {section==='more'?<MoreMenu owner={owner}/>:section==='data'&&view==='players'?<Suspense fallback={<p className="desk-state" role="status">Loading players…</p>}><PlayersDesk/></Suspense>:
   <Suspense fallback={<p className="desk-state" role="status">Loading the desk…</p>}>
-   <Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()} storage={storage}
+   <Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()} ads={state.ads} storage={storage}
     section={section} view={view} club={club} attention={inbox}
     ops={{storage:storageMap(),integrations:integrations(),release:release()}}
     audience={section==='audience'?<AudienceDesk days={searchParams.days} club={club} clubNames={Object.fromEntries(summaries.map(s=>[s.id,s.name]))}/>:undefined}
