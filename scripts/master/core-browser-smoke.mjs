@@ -194,9 +194,10 @@ try {
     const question=nativeQuestions.get(id);for(let i=0;i<question.left.length;i++)await board.locator('[data-kind="match"] ul').nth(1).getByRole('button',{name:values[i],exact:true}).click({force:true})}
    // option buttons: Playwright's stability heuristic does not settle on the magazine's game buttons in headless Chromium
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
+   else if(['order','multi'].includes(type)){ // these need a Confirm, and a placed item is itself a button that un-places on a second tap: tap once
+    for(const value of values)await board.getByRole('button',{name:value,exact:true}).first().click({force:true})}
    else for(let attempt=0;attempt<4;attempt++){ // a stage card can land a beat after the board: tap it away and answer again until a verdict shows
     for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true}).catch(()=>{})
-    if(['multi'].includes(type))break
     if(await board.locator('[role=status][data-right]').waitFor({timeout:2500}).then(()=>true,()=>false))break
     await page.getByTestId('trivia-stage').click({timeout:800}).catch(()=>{})}
    if(['match','order','multi'].includes(type))await board.getByRole('button',{name:'Confirm answer',exact:true}).click({force:true})
