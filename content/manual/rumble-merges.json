@@ -1,254 +1,259 @@
 {
- "hapoel-tel-aviv": [
-  {
-   "keep": "p_78adb477be",
-   "drop": "p_706a75168c",
-   "why": "\"מאיר אהרן מליקה\" and \"מאיר מליקה (חלוץ)\": one man, written twice in the archive (same English name \"meir melika\", years compatible)"
-  }
- ],
- "zrinjski-mostar": [],
- "hapoel-petah-tikva": [],
- "panathinaikos": [],
- "aek-athens": [
-  {
-   "keep": "aek-athens:p-dh-05c691cabd29",
-   "drop": "aek-athens:p-19469ce22f4409",
-   "why": "\"Θανάσης Τσαγγάρης\" and \"Θανάσης Τσαγκάρης\": one man, written twice in the archive (same English name \"thanasis tsangaris\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-02871549e34a",
-   "drop": "aek-athens:p-712d5e93709c42",
-   "why": "\"Μίχελ Κρέεκ\" and \"Michel Kreek\": one man, written twice in the archive (same English name \"michel kreek\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-17f03e35ee08",
-   "drop": "aek-athens:p-f733cc15b910cf",
-   "why": "\"Έρικ Μοράν\" and \"Erik Moran\": one man, written twice in the archive (same English name \"erik moran\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-ee78cdfe9739",
-   "drop": "aek-athens:p-dd924b41357ae0",
-   "why": "\"Παναγιώτης Κονέ\" and \"Παναγιώτης Kone\": one man, written twice in the archive (same English name \"panagiotis kone\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-e0a4fa0e4199",
-   "drop": "aek-athens:p-b811ad7dba3e33",
-   "why": "\"Σέρχιο Αραούχο\" and \"Sergio Araujo\": one man, written twice in the archive (same English name \"sergio araujo\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-154f86c63b79",
-   "drop": "aek-athens:p-92340fad365ce3",
-   "why": "\"Μάρκο Λιβάγια\" and \"Marko Livaja\": one man, written twice in the archive (same English name \"marko livaja\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-1330fec2d2d4",
-   "drop": "aek-athens:p-dc3725a24202b1",
-   "why": "\"Δημήτρης Μελικιώτης\" and \"Δημήτρης Μεληκιώτης\": one man, written twice in the archive (same English name \"dimitris melikiotis\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-35df78a4fc40",
-   "drop": "aek-athens:p-35701552e3f5e7",
-   "why": "\"Λάζαρος Ρότα\" and \"Λάζαρος Rota\": one man, written twice in the archive (same English name \"lazaros rota\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-6757046f3f4a",
-   "drop": "aek-athens:p-91dd66bdbc6e29",
-   "why": "\"Ορμπελίν Πινέδα\" and \"Orbelin Pineda\": one man, written twice in the archive (same English name \"orbelin pineda\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-dh-cc50e0056344",
-   "drop": "aek-athens:p-98114ba26cc840",
-   "why": "\"Λιβάι Γκαρσία\" and \"Levi Garcia\": one man, written twice in the archive (same English name \"levi garcia\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:p-a547073cd48ca4",
-   "drop": "aek-athens:wv-abcd6a86e0",
-   "why": "\"Ζίνι\" and \"Zini\": one man, written twice in the archive (same English name \"zini\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:wv-28438deae4",
-   "drop": "aek-athens:p-dh-2983bfa4c633",
-   "why": "\"Θωμάς Strakosha\" and \"Thomas Strakosha\": one man, written twice in the archive (same English name \"thomas strakosha\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:wv-89ebfec264",
-   "drop": "aek-athens:p-dh-50478233ceaf",
-   "why": "\"Σπύρος Χριστακόπουλος\" and \"Spyros Christakopoulos\": one man, written twice in the archive (same English name \"spyros christakopoulos\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:wv-9660ec2ac2",
-   "drop": "aek-athens:p-dh-15ce70043d88",
-   "why": "\"Χρήστος Αλεξίου\" and \"Christos Alexiou\": one man, written twice in the archive (same English name \"christos alexiou\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:wv-9799f3a636",
-   "drop": "aek-athens:p-dh-c44bba74a09f",
-   "why": "\"Μάριος Μπαλαμώτης\" and \"Marios Balamotis\": one man, written twice in the archive (same English name \"marios balamotis\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:wv-5e175d6530",
-   "drop": "aek-athens:p-dh-b65d5f644e9f",
-   "why": "\"Ζώης Καραργύρης\" and \"Zois Karargyris\": one man, written twice in the archive (same English name \"zois karargyris\", years compatible)"
-  },
-  {
-   "keep": "aek-athens:wv-6d833f2ebc",
-   "drop": "aek-athens:p-dh-02dcd7fead1a",
-   "why": "\"Αργύρης Αργυρίου\" and \"Argyris Argyriou\": one man, written twice in the archive (same English name \"argyris argyriou\", years compatible)"
-  }
- ],
- "celtic": [
-  {
-   "keep": "celtic:p-bba452e5216b39",
-   "drop": "celtic:p-dh-2af61c0619d8",
-   "why": "\"William McNeill\" and \"Billy McNeill\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-4c519397e2cdbd",
-   "drop": "celtic:p-dh-09f5f17d2f49",
-   "why": "\"Daniel Fergus McGrain\" and \"Danny McGrain\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-120e626233c582",
-   "drop": "celtic:p-dh-ba82a4c3429c",
-   "why": "\"Callum William McGregor\" and \"Callum McGregor\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-301d3c83fe72",
-   "drop": "celtic:p-784d51044d5d15",
-   "why": "\"Pat Bonner\" and \"Patrick Joseph Bonner\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-8d12be1cd643",
-   "drop": "celtic:p-0bb0292f299871",
-   "why": "\"Jimmy Johnstone\" and \"James Connelly Johnstone\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-8566217ec75cbe",
-   "drop": "celtic:p-dh-eeec37f3fd7e",
-   "why": "\"Thomas Gemmell\" and \"Tommy Gemmell\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-c479d0222e08",
-   "drop": "celtic:p-9e54a0468bb89a",
-   "why": "\"Bobby Murdoch\" and \"Robert Murdoch\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-ff3d2a34fe21",
-   "drop": "celtic:p-d34031ba326350",
-   "why": "\"Jim Craig\" and \"James Philip Craig\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-a392d50e01b3",
-   "drop": "celtic:p-bb937b54ff7ef8",
-   "why": "\"Willie Wallace\" and \"William Semple Brown Wallace\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-ba8be2b64c314d",
-   "drop": "celtic:p-dh-a5ddeb6c3dc9",
-   "why": "\"Robert Auld\" and \"Bertie Auld\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-e8bb32c9cd85",
-   "drop": "celtic:p-e39a9358fda03f",
-   "why": "\"Sandy McMahon\" and \"Alexander McMahon\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-cf4748247edc",
-   "drop": "celtic:p-e45aacbbcefc8e",
-   "why": "\"Willie Orr\" and \"William Orr\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-2cd56c8a87e7",
-   "drop": "celtic:p-dd29a4fbf1d1e3",
-   "why": "\"Alec McNair\" and \"Alexander McNair\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-3f6fb96bbd40",
-   "drop": "celtic:p-3c33b71f5137e0",
-   "why": "\"Charlie Shaw\" and \"Charles Shaw\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-af4404c33dd9",
-   "drop": "celtic:p-4f989af5d43250",
-   "why": "\"Jimmy McStay\" and \"James Frederick McStay\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-3160748f45e7",
-   "drop": "celtic:p-ab1ccd28bd02a1",
-   "why": "\"Bobby Hogg\" and \"Robert Brown Hogg\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-79104670772b",
-   "drop": "celtic:p-c333695877fdd5",
-   "why": "\"Willie Lyon\" and \"William King Lyon\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-02ef9f185091",
-   "drop": "celtic:p-d6c650cdd609b6",
-   "why": "\"Bobby Evans\" and \"Robert Evans\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-606455c2c27a",
-   "drop": "celtic:p-7c8e42098bcce3",
-   "why": "\"Kenny Dalglish\" and \"Kenneth Mathieson Dalglish\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-17baffe25073",
-   "drop": "celtic:p-7eee804db954f9",
-   "why": "\"Paul Lambert\" and \"Paul Christopher Lambert\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-2febe2603ad9",
-   "drop": "celtic:p-63d9aa69709df0",
-   "why": "\"Neil Lennon\" and \"Neil Francis Lennon\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-5da42a6c8bf5",
-   "drop": "celtic:p-dh-cdce93e9f434",
-   "why": "\"John O’Connor\" and \"John Connor\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "celtic:p-dh-d17673391d10",
-   "drop": "celtic:p-dh-2801a3bcc418",
-   "why": "\"John Divers\" and \"John Patrick Divers\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  }
- ],
- "st-pauli": [
-  {
-   "keep": "st-pauli:p-dh-a1cff203a197",
-   "drop": "st-pauli:p-ed1042de6022ca",
-   "why": "\"Oladapo Afolayan\" and \"Oladapo Joshua Afolayan\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "st-pauli:p-dh-218c413555ec",
-   "drop": "st-pauli:p-268bb4fdec12aa",
-   "why": "\"Christopher Avevor\" and \"Christopher Salon Avevor\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "st-pauli:p-dh-b26c76c3a055",
-   "drop": "st-pauli:p-0bf161cdab3829",
-   "why": "\"Scott Banks\" and \"Scott Brian Banks\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "st-pauli:p-dh-d5ec96c47e28",
-   "drop": "st-pauli:p-dh-6afd3af0f406",
-   "why": "\"Erik Ahlstrand\" and \"Erik Melker Ahlstrand\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "st-pauli:p-dh-c9f1146fe75c",
-   "drop": "st-pauli:p-dh-97f76db1c31b",
-   "why": "\"Morten Berre\" and \"Morten Gladhaug Berre\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "st-pauli:p-dh-3b239841bb93",
-   "drop": "st-pauli:p-dh-974b31a311d3",
-   "why": "\"Luis Coordes\" and \"Luis Ángel Coordes\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  },
-  {
-   "keep": "st-pauli:p-dh-f3cf40bab74d",
-   "drop": "st-pauli:p-dh-334c51e182f8",
-   "why": "\"Joe Gyau\" and \"Joseph-Claude Agyeman Gyau\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
-  }
- ],
- "olympiacos": []
+  "hapoel-tel-aviv": [
+    {
+      "keep": "p_78adb477be",
+      "drop": "p_706a75168c",
+      "why": "\"מאיר אהרן מליקה\" and \"מאיר מליקה (חלוץ)\": one man, written twice in the archive (same English name \"meir melika\", years compatible)"
+    },
+    {
+      "keep": "p_27a81aefb1",
+      "drop": "p_wv-5fac092f20",
+      "why": "מאוויס צ'יבוטה / Mavis Tchibota: same named Hapoel Tel Aviv forward; old archive Hebrew person and Wikipedia infobox 2023–24 29 appearances and 5 goals (revision 1375542405). Retain canonical Worker archive ID and wave source as alias/evidence."
+    }
+  ],
+  "zrinjski-mostar": [],
+  "hapoel-petah-tikva": [],
+  "panathinaikos": [],
+  "aek-athens": [
+    {
+      "keep": "aek-athens:p-dh-05c691cabd29",
+      "drop": "aek-athens:p-19469ce22f4409",
+      "why": "\"Θανάσης Τσαγγάρης\" and \"Θανάσης Τσαγκάρης\": one man, written twice in the archive (same English name \"thanasis tsangaris\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-02871549e34a",
+      "drop": "aek-athens:p-712d5e93709c42",
+      "why": "\"Μίχελ Κρέεκ\" and \"Michel Kreek\": one man, written twice in the archive (same English name \"michel kreek\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-17f03e35ee08",
+      "drop": "aek-athens:p-f733cc15b910cf",
+      "why": "\"Έρικ Μοράν\" and \"Erik Moran\": one man, written twice in the archive (same English name \"erik moran\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-ee78cdfe9739",
+      "drop": "aek-athens:p-dd924b41357ae0",
+      "why": "\"Παναγιώτης Κονέ\" and \"Παναγιώτης Kone\": one man, written twice in the archive (same English name \"panagiotis kone\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-e0a4fa0e4199",
+      "drop": "aek-athens:p-b811ad7dba3e33",
+      "why": "\"Σέρχιο Αραούχο\" and \"Sergio Araujo\": one man, written twice in the archive (same English name \"sergio araujo\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-154f86c63b79",
+      "drop": "aek-athens:p-92340fad365ce3",
+      "why": "\"Μάρκο Λιβάγια\" and \"Marko Livaja\": one man, written twice in the archive (same English name \"marko livaja\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-1330fec2d2d4",
+      "drop": "aek-athens:p-dc3725a24202b1",
+      "why": "\"Δημήτρης Μελικιώτης\" and \"Δημήτρης Μεληκιώτης\": one man, written twice in the archive (same English name \"dimitris melikiotis\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-35df78a4fc40",
+      "drop": "aek-athens:p-35701552e3f5e7",
+      "why": "\"Λάζαρος Ρότα\" and \"Λάζαρος Rota\": one man, written twice in the archive (same English name \"lazaros rota\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-6757046f3f4a",
+      "drop": "aek-athens:p-91dd66bdbc6e29",
+      "why": "\"Ορμπελίν Πινέδα\" and \"Orbelin Pineda\": one man, written twice in the archive (same English name \"orbelin pineda\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-dh-cc50e0056344",
+      "drop": "aek-athens:p-98114ba26cc840",
+      "why": "\"Λιβάι Γκαρσία\" and \"Levi Garcia\": one man, written twice in the archive (same English name \"levi garcia\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:p-a547073cd48ca4",
+      "drop": "aek-athens:wv-abcd6a86e0",
+      "why": "\"Ζίνι\" and \"Zini\": one man, written twice in the archive (same English name \"zini\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:wv-28438deae4",
+      "drop": "aek-athens:p-dh-2983bfa4c633",
+      "why": "\"Θωμάς Strakosha\" and \"Thomas Strakosha\": one man, written twice in the archive (same English name \"thomas strakosha\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:wv-89ebfec264",
+      "drop": "aek-athens:p-dh-50478233ceaf",
+      "why": "\"Σπύρος Χριστακόπουλος\" and \"Spyros Christakopoulos\": one man, written twice in the archive (same English name \"spyros christakopoulos\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:wv-9660ec2ac2",
+      "drop": "aek-athens:p-dh-15ce70043d88",
+      "why": "\"Χρήστος Αλεξίου\" and \"Christos Alexiou\": one man, written twice in the archive (same English name \"christos alexiou\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:wv-9799f3a636",
+      "drop": "aek-athens:p-dh-c44bba74a09f",
+      "why": "\"Μάριος Μπαλαμώτης\" and \"Marios Balamotis\": one man, written twice in the archive (same English name \"marios balamotis\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:wv-5e175d6530",
+      "drop": "aek-athens:p-dh-b65d5f644e9f",
+      "why": "\"Ζώης Καραργύρης\" and \"Zois Karargyris\": one man, written twice in the archive (same English name \"zois karargyris\", years compatible)"
+    },
+    {
+      "keep": "aek-athens:wv-6d833f2ebc",
+      "drop": "aek-athens:p-dh-02dcd7fead1a",
+      "why": "\"Αργύρης Αργυρίου\" and \"Argyris Argyriou\": one man, written twice in the archive (same English name \"argyris argyriou\", years compatible)"
+    }
+  ],
+  "celtic": [
+    {
+      "keep": "celtic:p-bba452e5216b39",
+      "drop": "celtic:p-dh-2af61c0619d8",
+      "why": "\"William McNeill\" and \"Billy McNeill\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-4c519397e2cdbd",
+      "drop": "celtic:p-dh-09f5f17d2f49",
+      "why": "\"Daniel Fergus McGrain\" and \"Danny McGrain\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-120e626233c582",
+      "drop": "celtic:p-dh-ba82a4c3429c",
+      "why": "\"Callum William McGregor\" and \"Callum McGregor\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-301d3c83fe72",
+      "drop": "celtic:p-784d51044d5d15",
+      "why": "\"Pat Bonner\" and \"Patrick Joseph Bonner\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-8d12be1cd643",
+      "drop": "celtic:p-0bb0292f299871",
+      "why": "\"Jimmy Johnstone\" and \"James Connelly Johnstone\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-8566217ec75cbe",
+      "drop": "celtic:p-dh-eeec37f3fd7e",
+      "why": "\"Thomas Gemmell\" and \"Tommy Gemmell\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-c479d0222e08",
+      "drop": "celtic:p-9e54a0468bb89a",
+      "why": "\"Bobby Murdoch\" and \"Robert Murdoch\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-ff3d2a34fe21",
+      "drop": "celtic:p-d34031ba326350",
+      "why": "\"Jim Craig\" and \"James Philip Craig\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-a392d50e01b3",
+      "drop": "celtic:p-bb937b54ff7ef8",
+      "why": "\"Willie Wallace\" and \"William Semple Brown Wallace\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-ba8be2b64c314d",
+      "drop": "celtic:p-dh-a5ddeb6c3dc9",
+      "why": "\"Robert Auld\" and \"Bertie Auld\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-e8bb32c9cd85",
+      "drop": "celtic:p-e39a9358fda03f",
+      "why": "\"Sandy McMahon\" and \"Alexander McMahon\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-cf4748247edc",
+      "drop": "celtic:p-e45aacbbcefc8e",
+      "why": "\"Willie Orr\" and \"William Orr\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-2cd56c8a87e7",
+      "drop": "celtic:p-dd29a4fbf1d1e3",
+      "why": "\"Alec McNair\" and \"Alexander McNair\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-3f6fb96bbd40",
+      "drop": "celtic:p-3c33b71f5137e0",
+      "why": "\"Charlie Shaw\" and \"Charles Shaw\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-af4404c33dd9",
+      "drop": "celtic:p-4f989af5d43250",
+      "why": "\"Jimmy McStay\" and \"James Frederick McStay\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-3160748f45e7",
+      "drop": "celtic:p-ab1ccd28bd02a1",
+      "why": "\"Bobby Hogg\" and \"Robert Brown Hogg\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-79104670772b",
+      "drop": "celtic:p-c333695877fdd5",
+      "why": "\"Willie Lyon\" and \"William King Lyon\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-02ef9f185091",
+      "drop": "celtic:p-d6c650cdd609b6",
+      "why": "\"Bobby Evans\" and \"Robert Evans\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-606455c2c27a",
+      "drop": "celtic:p-7c8e42098bcce3",
+      "why": "\"Kenny Dalglish\" and \"Kenneth Mathieson Dalglish\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-17baffe25073",
+      "drop": "celtic:p-7eee804db954f9",
+      "why": "\"Paul Lambert\" and \"Paul Christopher Lambert\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-2febe2603ad9",
+      "drop": "celtic:p-63d9aa69709df0",
+      "why": "\"Neil Lennon\" and \"Neil Francis Lennon\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-5da42a6c8bf5",
+      "drop": "celtic:p-dh-cdce93e9f434",
+      "why": "\"John O’Connor\" and \"John Connor\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "celtic:p-dh-d17673391d10",
+      "drop": "celtic:p-dh-2801a3bcc418",
+      "why": "\"John Divers\" and \"John Patrick Divers\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    }
+  ],
+  "st-pauli": [
+    {
+      "keep": "st-pauli:p-dh-a1cff203a197",
+      "drop": "st-pauli:p-ed1042de6022ca",
+      "why": "\"Oladapo Afolayan\" and \"Oladapo Joshua Afolayan\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "st-pauli:p-dh-218c413555ec",
+      "drop": "st-pauli:p-268bb4fdec12aa",
+      "why": "\"Christopher Avevor\" and \"Christopher Salon Avevor\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "st-pauli:p-dh-b26c76c3a055",
+      "drop": "st-pauli:p-0bf161cdab3829",
+      "why": "\"Scott Banks\" and \"Scott Brian Banks\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "st-pauli:p-dh-d5ec96c47e28",
+      "drop": "st-pauli:p-dh-6afd3af0f406",
+      "why": "\"Erik Ahlstrand\" and \"Erik Melker Ahlstrand\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "st-pauli:p-dh-c9f1146fe75c",
+      "drop": "st-pauli:p-dh-97f76db1c31b",
+      "why": "\"Morten Berre\" and \"Morten Gladhaug Berre\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "st-pauli:p-dh-3b239841bb93",
+      "drop": "st-pauli:p-dh-974b31a311d3",
+      "why": "\"Luis Coordes\" and \"Luis Ángel Coordes\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    },
+    {
+      "keep": "st-pauli:p-dh-f3cf40bab74d",
+      "drop": "st-pauli:p-dh-334c51e182f8",
+      "why": "\"Joe Gyau\" and \"Joseph-Claude Agyeman Gyau\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
+    }
+  ],
+  "olympiacos": []
 }
