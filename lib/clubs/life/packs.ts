@@ -10,6 +10,7 @@
  */
 import type {CastManifest} from '@/lib/life/universal/cast'
 import type {AnchorSelection, TimelineManifest} from '@/lib/life/universal/compose'
+import type {CultureManifest} from '@/lib/life/universal/culture'
 import type {MatchDetail} from '@/lib/life/universal/types'
 import type {LifeSkinManifest} from '@/lib/life/universal/skin'
 import hapoelSkin from '@/club-packs/hapoel-tel-aviv/life/skin.json'
@@ -41,6 +42,9 @@ export const LIFE_CAST: Record<string, CastManifest> = {
   olympiacos: olympiacosCast as CastManifest,
   'hapoel-petah-tikva': petahTikvaCast as CastManifest,
 }
+
+/** Culture DNA per club. A club absent here has no slots filled: every chapter says the neutral phrase and the club is not READY. */
+export const LIFE_CULTURE: Record<string, CultureManifest> = {}
 
 export const LIFE_TIMELINE: Record<string, TimelineManifest> = {
   'hapoel-tel-aviv': hapoelTimeline as TimelineManifest,

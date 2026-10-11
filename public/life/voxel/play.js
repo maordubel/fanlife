@@ -169,7 +169,7 @@ function sync(n){
 
 /* ---------- enter a room ---------- */
 function enter(c){
- cfg=c;WHITE=null;actors={};exits=[];spots=[];marks=[];target=null;path=null;pending=null;focusId=null;frozen=!!c.frozen;axis.x=axis.y=0;lastExit=null;
+ cfg=c;exitGoal=null;WHITE=null;actors={};exits=[];spots=[];marks=[];target=null;path=null;pending=null;focusId=null;frozen=!!c.frozen;axis.x=axis.y=0;lastExit=null;
  var st=V.st;st.club=c.club&&V.SK[c.club]?c.club:st.club;st.scene=c.room;st.time=c.time==='night'?'night':'day';st.play=true;
  var stage=document.getElementById('stage');if(stage)stage.className='stage '+st.time;
  var f=c.frame||{};V.view.mode='follow';V.view.top=f.top==null?.86:f.top;V.view.bottom=f.bottom==null?-.8:f.bottom;V.view.side=.96;V.view.viewH=c.viewH||null;V.view.zoom=1;V.view.lift=2;
@@ -216,6 +216,7 @@ function faceEachOther(id){var a=actors[id];if(!a)return;player.wantYaw=Math.ata
 
 /* ---------- input ---------- */
 function goTo(kind,id,then){
+ exitGoal=null;
  var p=reachOf(kind,id);if(!p||frozen)return false;
  /* a door is walked INTO: whoever stands beside it must not take the press meant for it */
  if(kind==='exit'){var x=exitOf(id);if(!x)return false;if(x.locked){emit({type:'locked',id:id});return true}lastExit=null;path=route(player.x,player.z,p[0],p[1]);pending=null;exitGoal=path?x:null;if(path&&!path.length){path=null;exitGoal=null;leave(x)}return !!path||frozen}
@@ -223,7 +224,7 @@ function goTo(kind,id,then){
  var q=centre(c[0],c[1]);path=route(player.x,player.z,q[0],q[1]);pending=then===false?null:{kind:kind,id:id};
  if(!path){pending=null;return false}return true;
 }
-function walkTo(x,z){if(frozen)return false;var c=nearestFree(x,z,8);if(!c)return false;var q=freeAt(x,z)?[x,z]:centre(c[0],c[1]);path=route(player.x,player.z,q[0],q[1]);pending=null;return !!path}
+function walkTo(x,z){exitGoal=null;if(frozen)return false;var c=nearestFree(x,z,8);if(!c)return false;var q=freeAt(x,z)?[x,z]:centre(c[0],c[1]);path=route(player.x,player.z,q[0],q[1]);pending=null;return !!path}
 function pick(cx,cy){
  var cam=V.camera(),el=V.renderer().domElement,r=el.getBoundingClientRect(),best=null,bd=46*46,v=new THREE.Vector3();
  function near(x,y,z,kind,id,extra){v.set(x,y,z).project(cam);var sx=r.left+(v.x+1)/2*r.width,sy=r.top+(1-v.y)/2*r.height,d=(sx-cx)*(sx-cx)+(sy-cy)*(sy-cy);if(d<bd*(extra||1)){bd=d;best={kind:kind,id:id}}}
@@ -237,7 +238,7 @@ function pick(cx,cy){
 }
 function tap(cx,cy){
  if(V.display.mirror){var rr=canvas.getBoundingClientRect();cx=rr.left+rr.right-cx}
- if(frozen||!player)return;var t=pick(cx,cy);if(!t)return;
+ if(frozen||!player)return;var t=pick(cx,cy);if(!t)return;exitGoal=null;
  emit({type:'tap',kind:t.kind});
  if(t.kind==='ground'){walkTo(t.x,t.z);return}
  if(t.kind==='exit'){var e=exitOf(t.id).def;path=route(player.x,player.z,e.x+e.w/2,e.z+e.d/2);pending=null;exitGoal=path&&!exitOf(t.id).locked?exitOf(t.id):null;return}

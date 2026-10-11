@@ -21,6 +21,7 @@ import {ROOMS} from './rooms'
 import {sideLife} from './content/side'
 import type {VoxelSkin} from './skin'
 import {fillChapter, type Vars} from './text'
+import {cultureVars, type CultureManifest} from './culture'
 import type {ArchiveRef, CardDef, Chapter, LifePack, LifeReadiness, MatchDetail} from './types'
 import {validateChapter, lifeFlagsOf} from './validate'
 
@@ -36,6 +37,8 @@ export type ComposeInput = {
   skinIssues: string[]
   skinPending: string[]
   cast: CastManifest | null
+  /** Culture DNA (`life/culture.json`): the six slots a chapter's tokens read; empty slots print a neutral phrase */
+  culture?: CultureManifest | null
   timeline: TimelineManifest | null
   selection: AnchorSelection | null
   /** approved, sourced, confidence ≥ 2 — eligibility is decided by the club compiler, not here */
@@ -97,6 +100,7 @@ export function composeLife(input: ComposeInput): LifePack {
     ground: skin.stadium ?? (locale === 'he' ? 'המגרש' : 'the ground'),
     friend: cast.friend!.name, kiosk: cast.kiosk!.name, elder: cast.elder!.name, rival: cast.rival!.name, teacher: cast.teacher!.name,
     boss: cast.boss!.name, mate: cast.mate!.name, seller: cast.seller!.name, child: cast.child!.name,
+    ...cultureVars(input.culture ?? null, club.id, locale),
     dadName: given('dad', locale === 'he' ? 'אבא שלך' : 'your father'), mumName: given('mum', locale === 'he' ? 'אמא שלך' : 'your mother'),
   }
 

@@ -15,6 +15,7 @@ import {mkdirSync} from 'node:fs'
 const arg = (name: string, fallback = '') => (process.argv.find(a => a.startsWith(`--${name}=`)) || '').split('=')[1] || fallback
 const base = process.argv[2]?.startsWith('http') ? process.argv[2] : 'http://127.0.0.1:3200'
 const club = arg('club', 'olympiacos'), phone = process.argv.includes('--phone'), shots = arg('shots'), lang = arg('lang', 'en')
+const stallMs = Number(arg('stall', '4')) * 60000
 const maxChapters = Number(arg('chapters', '99')), pick = Number(arg('pick', '0'))
 const size = arg('size') ? arg('size').split('x').map(Number) as [number, number] : phone ? [390, 844] as [number, number] : [1440, 900] as [number, number]
 if (shots) mkdirSync(shots, {recursive: true})
@@ -71,7 +72,7 @@ async function main(): Promise<number> {
     const s = await snap(page)
     if (!s) { await page.waitForTimeout(300); continue }
     if (s.flags !== lastFlags) { lastFlags = s.flags; lastProgress = Date.now() }
-    if (Date.now() - lastProgress > 240000) { faults.push(`no progress for four minutes in ${s.chapter} · ${s.room} · objective ${s.plan?.objective}`); await shot(`stuck-${s.chapter}`); break }
+    if (Date.now() - lastProgress > stallMs) { const dbg = await page.evaluate(() => { const w = (document.querySelector('iframe') as HTMLIFrameElement | null)?.contentWindow as unknown as {__vxPlay?: {audit(): string[]; where(): unknown}} | null; return w?.__vxPlay ? {audit: w.__vxPlay.audit(), where: w.__vxPlay.where()} : null }).catch(() => null); faults.push(`no progress for ${Math.round(stallMs / 60000)} min in ${s.chapter} · ${s.room} · objective ${s.plan?.objective} · ${JSON.stringify(dbg)} · doors ${JSON.stringify(s.plan?.doors.filter(d => d.room === s.room))}`); await shot(`stuck-${s.chapter}`); break }
     const once = async (name: string) => { const k = `${s.chapter}-${name}`; if (!shotOnce.has(k)) { shotOnce.add(k); await page.waitForTimeout(500); await shot(`${String(chaptersDone + 1).padStart(2, '0')}-${s.chapter}-${name}`); await overflow(k) } }
 
     if (s.phase === 'finished') { await shot('99-finished'); break }
