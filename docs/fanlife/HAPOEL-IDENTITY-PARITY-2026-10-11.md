@@ -47,3 +47,8 @@ See `docs/fanlife/HAPOEL-700-IDENTITY-LEDGER-2026-10-11.md` for all 700 IDs, dis
 - The original `rumble-prices-v3.json` may retain a frozen entry for the now excluded coach; do not assume the pricing table is clean until that exact-ID check is performed.
 - All roles/identities of ambiguous homonyms remain for manual/source verification; the nine spelling repairs are **not** authorization to merge unrelated players.
 - Additional regression tests exist but full tests/build are not confirmed executed.
+
+## 2026-10-11 strict approved source gate
+User approved a maximum of 655 Hapoel players, but requires every player to come from the THE WORKER approved historical source. Therefore the imported roster wave is no longer eligible for Hapoel: 47 remaining wave rows were cleared after Eli Guttman was previously removed, and `withRosterWave` explicitly blocks all Hapoel wave additions. The generated English-name index was reduced from 699 to **652** canonical IDs. All 9 temporary English corrections solely referencing unapproved imported Hebrew names were reverted from the override table; genuine canonical name fixes (Avihai Yadin, Mavis Tchibota) remain. All other clubs remain unchanged. The former 700-ID census is an audit snapshot, not the active roster.
+
+There are 654 name rows in `content/manual/players-roster.json`, whereas current generated names represent 652 canonical IDs, due to canonical indexing/eligibility. An upper limit of 655 does not authorize fabricating 1-3 additional players. Any canonical additions require actual Worker identity and approval. The large frozen pricing table may still hold non-playable orphan IDs but the playable roster loader blocks them. Tests have not been executed in this connector session.
