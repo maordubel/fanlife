@@ -174,6 +174,8 @@ try {
   assert.equal(response.status(),200)
   const truthDates=slug==='hapoel-tel-aviv'?null:(await loadClub(slug)).data.archive // compiled (pack + waves), as the page deals it
   let answers=0
+  // This flow proves the shared run end to end; it is not a speed test. Practice mode has no question clock (server and screen), so a slow runner cannot turn a right answer into TIME'S UP.
+  await page.getByRole('button',{name:'Practice',exact:true}).click()
   await page.getByTestId('trivia-start').click()
   while(await page.getByTestId('trivia-result').count()===0){
    const board=page.getByTestId('trivia-question');await board.waitFor()
