@@ -2,7 +2,7 @@ import {afterEach,describe,expect,it,vi} from 'vitest'
 vi.mock('server-only',()=>({}))
 import {dataRoot,onServerless} from '@/lib/dataRoot'
 import {memoryStore,useDurableStore} from '@/lib/master/durable'
-import {mutate,readState,storageInfo,readAuditArchive,auditArchiveMonths} from '@/lib/master/store'
+import {mutate,readState,storageInfo,readAuditArchive,auditArchiveMonths,forgetFreshState} from '@/lib/master/store'
 import {AUDIT_KEEP} from '@/lib/master/audit-log'
 
 const env={...process.env}
@@ -64,7 +64,7 @@ describe('durable control state',()=>{
   const keys=rows.map(r=>JSON.stringify(r));expect(new Set(keys).size).toBe(keys.length);expect(rows.length).toBeGreaterThan(0)
  })
  it('a connected store that refuses: pages still read, the admin is told, a write is refused (owner, 7.10.2026)',async()=>{
-  const store=memoryStore();store.read=async()=>{throw new Error('No blob credentials found.')};useDurableStore(store)
+  const store=memoryStore();store.read=async()=>{throw new Error('No blob credentials found.')};useDurableStore(store);forgetFreshState()
   const st=await readState();expect(st.clubs.length).toBeGreaterThan(0)
   const info=storageInfo();expect(info.durable).toBe(false);expect(info.error).toContain('credentials')
   await expect(mutate(()=>true)).rejects.toThrow()

@@ -48,8 +48,13 @@ export {WORKER_ROUTE_CLUB}
 export const publishedGoalRecords=(clubId:string=WORKER_ROUTE_CLUB)=>(g.goalsPublished?.rows??[]).filter(r=>r.clubId===clubId&&playable(r)).map(r=>r.record)
 
 export async function readPublished():Promise<PublishedDoc>{return (await readDoc<PublishedDoc>('published',EMPTY)).value}
-export async function readPolicy():Promise<Policy>{return {...DEFAULT_POLICY,...(await readDoc<Policy>('policy',DEFAULT_POLICY)).value}}
-export const savePolicy=(change:(p:Policy)=>Policy)=>updateDoc<Policy>('policy',DEFAULT_POLICY,change)
+const gp=globalThis as typeof globalThis&{goalsPolicy?:{at:number;value:Policy}}
+/** The policy changes by hand, rarely: one storage read a minute per instance is plenty (storage operations are metered). */
+export async function readPolicy():Promise<Policy>{
+ if(gp.goalsPolicy&&Date.now()-gp.goalsPolicy.at<60_000)return gp.goalsPolicy.value
+ const value={...DEFAULT_POLICY,...(await readDoc<Policy>('policy',DEFAULT_POLICY)).value};gp.goalsPolicy={at:Date.now(),value};return value
+}
+export const savePolicy=async(change:(p:Policy)=>Policy)=>{const out=await updateDoc<Policy>('policy',DEFAULT_POLICY,change);gp.goalsPolicy={at:Date.now(),value:{...DEFAULT_POLICY,...out}};return out}
 
 export type PublishResult={ok:true;goalId:string;already:boolean}|{ok:false;error:string;issues?:string[]}
 

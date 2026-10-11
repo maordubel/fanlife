@@ -38,8 +38,20 @@ const upsert=(club:string,add:Candidate[])=>updateDoc<Candidate[]>(keyFile(club)
  return [...by.values()]
 })
 
-export async function goalsPass({now=new Date(),clubs,maxSnapshots=BATCH_SNAPSHOTS}:{now?:Date;clubs:string[];maxSnapshots?:number}):Promise<PassRun>{
- const policy=await readPolicy(),at=now.toISOString(),day=at.slice(0,10)
+export async function goalsPass({now=new Date(),clubs: allClubs,maxSnapshots=BATCH_SNAPSHOTS}:{now?:Date;clubs:string[];maxSnapshots?:number}):Promise<PassRun>{
+ let clubs=allClubs
+ const at=now.toISOString(),day=at.slice(0,10)
+ // Storage operations are metered (Vercel Blob). A pass with nothing to read must not touch the store at all: look at the
+ // local files first, and only then read the policy and the state documents.
+ const withWork:string[]=[]
+ for(const club of clubs){
+  const found=await readJson<Candidate[]>(path.join(dir(club),'goal-candidates.json'),[]).catch(()=>[] as Candidate[])
+  const snaps=Object.keys(await readSnapshots(club).catch(()=>({}))).length
+  if(found.length||snaps)withWork.push(club)
+ }
+ if(!withWork.length)return {at,clubs,state:'nothing-to-do',counts:{snapshots:0,candidates:0,withSequence:0,held:0,readyForReview:0,published:0,skippedUnreadable:0},issues:{},note:'No stored pages or collected candidates. A green status here means "checked, nothing new", not "found goals". (No storage operation was made.)'}
+ clubs=withWork
+ const policy=await readPolicy()
  const counts:Record<string,number>={snapshots:0,candidates:0,withSequence:0,held:0,readyForReview:0,published:0,skippedUnreadable:0},issues:Record<string,number>={}
  const finish=async(run:Omit<PassRun,'at'|'clubs'>):Promise<PassRun>=>{const r={at,clubs,...run};await updateDoc<PassState>('state',EMPTY,s=>({...s,runs:[...s.runs,r].slice(-60)}));return r}
  if(policy.paused)return finish({state:'paused',counts,issues,note:'Paused by the owner; nothing was read.'})

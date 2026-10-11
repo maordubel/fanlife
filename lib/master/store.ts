@@ -30,7 +30,12 @@ const health=globalThis as typeof globalThis & {fanStoreError?:string|null;fanLa
  * keeps serving a closed copy rather than a 500, and the admin says why; a WRITE never falls back (`mutate` reads with
  * `readWithTag`, which throws), so nothing is saved somewhere that will vanish.
  */
+/** Public pages read the control state on every request; storage operations are metered, so a copy this instance read a few seconds ago is served. A write (`mutate`) always reads fresh and refreshes this copy. */
+const FRESH_MS=5_000
+/** Forget the short-lived copy (a test that changes the store under the server; never needed in production). */
+export const forgetFreshState=()=>{health.fanLastGoodAt=0}
 export async function readState():Promise<State>{
+ if(durable()&&!health.fanStoreError&&health.fanLastGood&&Date.now()-(health.fanLastGoodAt||0)<FRESH_MS)return JSON.parse(health.fanLastGood) as State
  try{const r=(await readWithTag()).state;health.fanStoreError=null;remember(r);return r}
  catch(e){if(!durable())throw e;health.fanStoreError=String((e as Error)?.message||e).slice(0,300);console.error('[fan-life] durable store read failed:',health.fanStoreError)
   // fail CLOSED (audit A02, 8.10.2026): the last state this instance read, or — on a cold start — the seed with every
