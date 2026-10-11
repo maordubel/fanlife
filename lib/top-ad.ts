@@ -12,7 +12,7 @@
  */
 export const TOP_AD_SRC = '/dubel-top-ad.js'
 
-const NEVER_PREFIX = ['/master', '/kits/admin', '/qa', '/api', '/auth', '/life', '/city', '/c/']
+const NEVER_PREFIX = ['/master', '/qa', '/api', '/auth', '/life', '/city', '/c/']
 /** THE WORKER's gate routes (rule 24) and the club gates are game screens. */
 const WORKER_GAMES = ['/xi', '/trivia', '/lineup', '/kits/build', '/memory', '/polls', '/goal', '/blind-cow', '/derby', '/timeline', '/royal-rumble', '/away-days', '/tik']
 /** Doors inside a club that are reading pages, not runs. Anything else under /clubs/<id>/ is a gate or LIFE. */
@@ -20,6 +20,8 @@ const CLUB_READING = new Set(['', 'play', 'history', 'terrace', 'meetings'])
 
 export function topAdAllowedOn(path: string | null | undefined): boolean {
   const p = (path || '/').split('?')[0]!.replace(/\/+$/, '') || '/'
+  // Any admin screen, wherever it lives (the kit desk included) — matched by segment, not by naming its route.
+  if (p.split('/').includes('admin')) return false
   if (NEVER_PREFIX.some((x) => p === x.replace(/\/$/, '') || p.startsWith(x.endsWith('/') ? x : x + '/'))) return false
   if (WORKER_GAMES.some((x) => p === x || p.startsWith(x + '/'))) return false
   const club = /^\/clubs\/[^/]+(?:\/(.*))?$/.exec(p)
