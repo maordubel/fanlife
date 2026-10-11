@@ -13,9 +13,22 @@ async function get(url: string): Promise<unknown> {
   return res.json()
 }
 
-/** The next real match of every club the provider can identify. Cached in memory for six hours. */
+let inflight: Promise<FixtureFeed> | null = null
+
+/**
+ * The next real match of every club the provider can identify. Cached in memory for six hours.
+ * Stale-while-revalidate (performance audit, 11.10.2026): an expired feed is answered at once and refreshed in the
+ * background, and concurrent callers share ONE refresh — the hub's two readers (stop-press strip and Next up) never
+ * fan out 17 clubs × 3 provider requests twice, and no page waits on the provider once any feed exists.
+ */
 export async function getFixtureFeed(now = new Date()): Promise<FixtureFeed> {
   if (cache && now.getTime() - cache.at < cache.ttl) return cache.feed
+  const refresh = (inflight ??= fetchFeed(now).finally(() => { inflight = null }))
+  if (cache) { refresh.catch(() => undefined); return cache.feed }
+  return refresh
+}
+
+async function fetchFeed(now: Date): Promise<FixtureFeed> {
   const key = process.env.THESPORTSDB_KEY?.trim() || '123' // the provider's published free key
   const settled = await Promise.allSettled(FIXTURE_TEAMS.map(t => nextForClub(t, key, get, now)))
   const fixtures: Fixture[] = [], diagnostics: FixtureDiagnostic[] = []

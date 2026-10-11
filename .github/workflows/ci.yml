@@ -91,6 +91,10 @@ jobs:
       - name: Shared gates browser flow — four clubs, local activity and RTL
         run: npm run master:core-browser
 
+      # Every door a fan or the owner can land on, on the same build (CLAUDE.md rule 104).
+      - name: Route sweep — every club, every gate, login, market, progress, errors
+        run: npm run qa:routes
+
       - name: Browser evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -100,3 +104,4 @@ jobs:
           path: |
             /tmp/fanlife-m1-browser/
             /tmp/fanlife-m1-browser-server.log
+            /tmp/fanlife-route-sweep/

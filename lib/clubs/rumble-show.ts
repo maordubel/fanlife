@@ -1,5 +1,6 @@
 import {buildPlay} from './rumble-play'
-import {SLOTS,BUDGET,type Pos,type Rated,type RumbleCard,type RumbleResult} from './rumble'
+import {SLOTS,BUDGET,type Pos} from './rumble-format'
+import type {Rated,RumbleCard,RumbleResult} from './rumble'
 /**
  * Gate 9 as a SHOW — the presentation layer of the club Royal Rumble, ported from The Worker's
  * `lib/game/royal-rumble-presentation.ts` (delta 99) for every club.

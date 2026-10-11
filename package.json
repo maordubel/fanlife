@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run clubs:precompile && next build",
+    "clubs:precompile": "node --require ./scripts/master/server-only.cjs --import tsx scripts/clubs/precompile.ts",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit -p tsconfig.all.json",
@@ -79,6 +80,7 @@
     "master:local-db": "node scripts/master/check-local-db.mjs",
     "master:browser": "node scripts/master/browser-smoke.mjs",
     "master:identity": "node --import tsx scripts/master/club-colors.ts",
+    "qa:routes": "node --require ./scripts/master/server-only.cjs --import tsx scripts/qa/route-sweep.mjs",
     "master:core-browser": "node --require ./scripts/master/server-only.cjs --import tsx scripts/master/core-browser-smoke.mjs",
     "research:plan": "tsx scripts/research/cli.ts plan",
     "research:run": "tsx scripts/research/cli.ts run",

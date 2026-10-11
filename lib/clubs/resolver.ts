@@ -19,6 +19,7 @@ import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-0
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
 import {withEuro} from './euro-wave'
 import {withRosterWave} from './roster-wave'
+import {readPrecompiled} from './precompiled'
 import {withPlayerOverrides} from '@/lib/players/apply'
 import {refreshSnapshot} from '@/lib/players/snapshot'
 import {getSnapshot} from '@/lib/players/effective'
@@ -56,7 +57,8 @@ const baseCache=new Map<string,Promise<{data:ClubData;diagnostics:Diagnostic[]}|
 export function loadClubBase(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null>{
  if(!Object.hasOwn(providers,id))return Promise.resolve(null)
  let p=baseCache.get(id)
- if(!p){p=providers[id]!().then(r=>r?{...r,data:withRosterWave(id,r.data)}:r).catch(e=>{baseCache.delete(id);throw e});baseCache.set(id,p)}
+ // production reads the build's pre-compiled base (lib/clubs/precompiled.ts); anything missing or stale compiles as before
+ if(!p){p=readPrecompiled(id).then(pre=>pre??providers[id]!().then(r=>r?{...r,data:withRosterWave(id,r.data)}:r)).catch(e=>{baseCache.delete(id);throw e});baseCache.set(id,p)}
  return p
 }
 function freeze<T>(v:T):T {if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.freeze(v);for(const item of Object.values(v))freeze(item)}return v}

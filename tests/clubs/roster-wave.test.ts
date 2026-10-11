@@ -14,6 +14,8 @@ describe('roster wave (10.10.2026): researched men are in the archive and in the
    expect(seen.has(norm(p.value.name)),`${id} duplicate ${p.value.name}`).toBe(false);seen.add(norm(p.value.name))
    expect(pool.has(p.id)||folded.has(p.id),`${p.value.name} not dealt`).toBe(true)
    if(!p.value.positions.length)expect(p.value.fromYear===null||typeof p.value.fromYear==='number').toBe(true)}
-  expect(wave.length).toBeGreaterThan(0)
+  // Hapoel Tel Aviv reads THE WORKER's canonical player master only: the 47 unapproved wave men were removed (e7cafbb, 11.10.2026).
+  // The guard flips rather than goes: a wave man reappearing for Hapoel fails here (rule 65).
+  if(id==='hapoel-tel-aviv')expect(wave).toHaveLength(0);else expect(wave.length).toBeGreaterThan(0)
  })
 })

@@ -2990,3 +2990,14 @@ Owner's rulebook `docs/fanlife/48-rumble-rulebook-v1.md`, amended by Economy V2 
 6. **Every name is English** (`content/generated/player-names-en.json`, `npm run rumble:names`).
 7. The owner does not want a search-and-sign feature: the system chooses, shuffles and rotates.
 
+
+## 104 · Speed is a rule: the hub never waits on a provider, a club is compiled once per build, a save reaches every screen (11.10.2026)
+
+Owner's QA list (11.10.2026): CI red for three days, a slow portal, taps that "sometimes feel unresponsive".
+1. **The provider never holds the first byte.** The hub's fixture strip and Next up are `components/home/HubFixtures.tsx`, rendered in `<Suspense>`; `getFixtureFeed` answers a stale feed at once and refreshes in the background, one refresh shared by every caller. The hub builds its gate model ONCE (`hubModels`) and the LIFE doors alongside it.
+2. **A club is compiled once per build.** `npm run build` = `clubs:precompile` (writes `content/compiled/<club>.json`, gitignored) then `next build`; `loadClubBase` reads it in production only (`lib/clubs/precompiled.ts`), anything missing or from another build compiles as before. Overrides and readiness still apply per revision. Vercel's `buildCommand` is `npm run build`.
+3. **Store reads are conditional.** `durable().read` keeps the last copy + ETag per name, asks with If-None-Match (304 = no download) and shares concurrent reads; public pages may reuse a read from the last second, a save always re-reads. A successful admin save calls `router.refresh()` and tells every other open control-room tab (BroadcastChannel `fanlife-admin-saved`).
+4. **A client module never imports the price table.** `lib/clubs/rumble-format.ts` holds the formats with no imports; `rumble.ts` (which reads the 1.3 MB `rumble-prices-v3.json`) is server-side. Before: every gate page shipped it (3.4 MB of JS); after: 2.1 MB.
+5. **The tap answers in the same frame.** `components/ui/NavPulse.tsx` (root layout) raises a thin bar on any same-site link tap until the address changes.
+6. **Every door is swept in a browser:** `npm run qa:routes` (`scripts/qa/route-sweep.mjs`) — hub TTFB and streaming, every core club's five doors and thirteen gates (200, no page error, no horizontal scroll at 390), progress across a reload, market, the owner key (refused / wrong / right), the magazine 404 and the admin API's JSON 401. It runs in CI after `master:core-browser`.
+7. **Pruning a club's archive restores its price ladder with the fewest moves** (`npm run rumble:prices -- prune`). Hapoel Tel Aviv reads only The Worker's player master: its roster wave stays empty and `tests/clubs/roster-wave.test.ts` holds it there.

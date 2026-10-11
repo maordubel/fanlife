@@ -171,7 +171,7 @@
 @media (min-width: 901px) {
   .stage { height: auto; min-height: 0; padding-block-start: 0; }
   .layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); align-items: start; gap: 24px; flex: none; }
-  .head { position: sticky; inset-block-start: 12px; }
+  .head { position: sticky; inset-block-start: calc(var(--club-stick, 0px) + 12px); }
   .versus { grid-template-columns: 1fr; box-shadow: var(--mag-shadow); }
   .side { min-height: 56px; }
   .sideRival { justify-content: flex-start; text-align: start; }

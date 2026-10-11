@@ -4,6 +4,9 @@
    Club colour appears only on .mag-badge / .mag-band (rule 91); everything here is ink, paper and the magazine's inks.
    Logical properties only (rule 9). */
 .club-app { background-color: var(--mag-paper); color: var(--mag-ink); font-family: var(--mag-body); min-height: 100dvh; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'mast' 'body' 'foot'; grid-template-rows: auto 1fr auto; }
+/* --club-stick: the strip the sticky masthead holds at the top edge. Anything sticky inside a club page starts BELOW it — the archive's
+   tab dock used to slide under it, and a tap on "Time" landed on the masthead's home link (route sweep, 11.10.2026). */
+.club-app { --club-stick: 64px; }
 .club-masthead { grid-area: mast; position: sticky; inset-block-start: 0; z-index: 50; background: var(--mag-ink); color: var(--mag-paper); }
 .club-masthead-in { display: flex; align-items: center; gap: 10px; min-height: 56px; padding-inline: 12px; width: min(1240px, 100%); margin-inline: auto; }
 .club-who { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; color: var(--mag-paper); }
@@ -41,6 +44,7 @@
 
 /* desktop: a rail, a different design (not the phone bar stretched) */
 @media (min-width: 901px) {
+  .club-app { --club-stick: 72px; }
   .club-app { grid-template-columns: 104px minmax(0, 1fr); grid-template-areas: 'mast mast' 'rail body' 'rail foot'; grid-template-rows: auto 1fr auto; }
   .club-masthead-in { padding-inline: 20px; min-height: 64px; }
   .club-who-name { font-size: 30px; }
@@ -53,7 +57,7 @@
 }
 
 /* immersive pages (LIFE, a game in play mode) own the whole glass */
-.club-app:has([data-chrome='immersive']) { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'body'; grid-template-rows: 1fr; padding-bottom: 0; }
+.club-app:has([data-chrome='immersive']) { --club-stick: 0px; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'body'; grid-template-rows: 1fr; padding-bottom: 0; }
 .club-app:has([data-chrome='immersive']) .club-masthead,
 .club-app:has([data-chrome='immersive']) .club-tabbar,
 .club-app:has([data-chrome='immersive']) .club-foot { display: none; }

@@ -21,7 +21,10 @@ function withIds(s:State):State{for(const c of s.clubs)for(const f of c.findings
 const CONTROL='control.json'
 const parse=(text:string)=>withIds(withRegistry(JSON.parse(text)))
 /** The control state and, when a durable store is connected, the ETag it was read at (for a conditional write). */
-async function readWithTag():Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL);return r?{state:parse(r.text),etag:r.etag}:{state:seedState(),etag:null}}
+/** Public pages may share a read this instance made in the last second (one page render reads the state several times); a SAVE always
+ *  re-reads (`mutate` passes 0), and the store answers an unchanged file with 304, so even that costs no download. */
+const PAGE_READ_MS=1000
+async function readWithTag(maxAgeMs=0):Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL,{maxAgeMs});return r?{state:parse(r.text),etag:r.etag}:{state:seedState(),etag:null}}
  try{return{state:parse(await readFile(path.join(root(),CONTROL),'utf8')),etag:null}}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return{state:seedState(),etag:null};throw e}}
 /** The last error the durable store gave on a read, for the admin's storage line; null once a read succeeds. */
 const health=globalThis as typeof globalThis & {fanStoreError?:string|null;fanLastGood?:string;fanLastGoodAt?:number}
@@ -31,7 +34,7 @@ const health=globalThis as typeof globalThis & {fanStoreError?:string|null;fanLa
  * `readWithTag`, which throws), so nothing is saved somewhere that will vanish.
  */
 export async function readState():Promise<State>{
- try{const r=(await readWithTag()).state;health.fanStoreError=null;remember(r);return r}
+ try{const r=(await readWithTag(PAGE_READ_MS)).state;health.fanStoreError=null;remember(r);return r}
  catch(e){if(!durable())throw e;health.fanStoreError=String((e as Error)?.message||e).slice(0,300);console.error('[fan-life] durable store read failed:',health.fanStoreError)
   // fail CLOSED (audit A02, 8.10.2026): the last state this instance read, or — on a cold start — the seed with every
   // club paused and every gate off. Never the seed's own publication settings: an outage must not reopen a paused club.

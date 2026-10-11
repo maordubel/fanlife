@@ -164,11 +164,11 @@
  .run { flex: none; display: grid; grid-template-columns: minmax(0, 1fr) 280px; grid-template-areas: 'hud hud' 'rail rail' 'stack dock'; gap: 10px 24px; align-items: start; min-height: 520px; }
  .hud { grid-area: hud; } .rail { grid-area: rail; }
  .stack { grid-area: stack; overflow: visible; max-height: none; }
- .dock { grid-area: dock; position: sticky; inset-block-start: 16px; padding: 14px; border: 3px solid var(--bc-ink); background: var(--mag-card); box-shadow: 4px 4px 0 var(--bc-ink); }
+ .dock { grid-area: dock; position: sticky; inset-block-start: calc(var(--club-stick, 0px) + 16px); padding: 14px; border: 3px solid var(--bc-ink); background: var(--mag-card); box-shadow: 4px 4px 0 var(--bc-ink); }
  .cardNew .cardBody { font-size: 19px; }
  .result { flex: none; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
  .resultScroll { overflow: visible; }
- .resultDock { position: sticky; inset-block-start: 16px; padding: 14px; border: 3px solid var(--bc-ink); background: var(--mag-card); box-shadow: 4px 4px 0 var(--bc-ink); }
+ .resultDock { position: sticky; inset-block-start: calc(var(--club-stick, 0px) + 16px); padding: 14px; border: 3px solid var(--bc-ink); background: var(--mag-card); box-shadow: 4px 4px 0 var(--bc-ink); }
  .dockRow { grid-auto-flow: row; }
 }
 @media (max-height: 640px) and (max-width: 900px) { .stage { min-height: 480px; } .lede { display: none; } .stats { display: none; } .entry { min-height: 56px; } }

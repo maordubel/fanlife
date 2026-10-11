@@ -89,7 +89,7 @@
 @media (min-width: 901px) {
   .stage { height: auto; min-height: 560px; }
   .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; align-items: start; flex: none; }
-  .rail { position: sticky; inset-block-start: 8px; }
+  .rail { position: sticky; inset-block-start: calc(var(--club-stick, 0px) + 8px); }
   .decades { flex-direction: column; overflow: visible; padding-block-end: 2px; }
   .decade { flex-direction: row; justify-content: space-between; min-width: 0; padding-inline: 12px; }
   .knots { flex-wrap: wrap; overflow: visible; }
