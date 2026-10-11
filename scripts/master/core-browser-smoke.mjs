@@ -194,7 +194,11 @@ try {
     const question=nativeQuestions.get(id);for(let i=0;i<question.left.length;i++)await board.locator('[data-kind="match"] ul').nth(1).getByRole('button',{name:values[i],exact:true}).click({force:true})}
    // option buttons: Playwright's stability heuristic does not settle on the magazine's game buttons in headless Chromium
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
-   else for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true})
+   else for(let attempt=0;attempt<4;attempt++){ // a stage card can land a beat after the board: tap it away and answer again until a verdict shows
+    for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true}).catch(()=>{})
+    if(['multi'].includes(type))break
+    if(await board.locator('[role=status][data-right]').waitFor({timeout:2500}).then(()=>true,()=>false))break
+    await page.getByTestId('trivia-stage').click({timeout:800}).catch(()=>{})}
    if(['match','order','multi'].includes(type))await board.getByRole('button',{name:'Confirm answer',exact:true}).click({force:true})
    await board.locator('[role=status][data-right]').waitFor({timeout:20000}).catch(async()=>{throw new Error(`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)}: no verdict. Screen: ${JSON.stringify((await page.locator('main').innerText()).slice(0,400))}`)});{const st=await board.locator('[role=status][data-right]').innerText();assert((await board.locator('[role=status][data-right]').getAttribute('data-right'))==='true'&&st.toLowerCase().includes('correct'),`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)} -> ${JSON.stringify(st.slice(0,120))}`)} /* innerText follows text-transform: the magazine prints capitals (rule 91) */
    await board.locator('[role=status][data-right]').click({position:{x:8,y:8},force:true}) // tap to go on
