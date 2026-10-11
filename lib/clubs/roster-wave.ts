@@ -17,6 +17,7 @@ import {norm} from '@/lib/fixtures/names'
 type Wave={sources:Source[];players:Fact<ClubPlayer>[]}
 const WAVES:Record<string,Wave>={celtic:cel,'aek-athens':aek,olympiacos:oly,panathinaikos:pao,'st-pauli':stp,'zrinjski-mostar':zri,'hapoel-petah-tikva':hpt,'hapoel-tel-aviv':hta} as unknown as Record<string,Wave>
 export function withRosterWave(id:string,data:ClubData):ClubData{
+ if(id==='hapoel-tel-aviv')return data // Canonical Worker player master only; external waves require separate approval.
  const w=WAVES[id];if(process.env.ROSTER_WAVE_OFF||!w||!w.players.length||!data.players)return data
  const have=new Set<string>(),ids=new Set<string>()
  for(const p of data.players){ids.add(p.id);for(const n of [p.value.name,...p.value.aliases])have.add(norm(n))}
