@@ -143,7 +143,8 @@ try {
   assert((await tile.getAttribute('href')).startsWith(`/clubs/${slug}`),`${slug} href`)
   const badge=tile.locator('.mag-badge')
   assert(await badge.getAttribute('data-livery'),`${slug} livery`)
-  assert((await badge.innerText()).trim().length>=1,`${slug} initials`)
+  // since #140 a club with a crest shows the crest (image), the others their initials — either is a mark
+  assert((await badge.innerText()).trim().length>=1||(await badge.locator('img,svg').count())>=1,`${slug} crest or initials`)
   assert((await badge.evaluate(e=>getComputedStyle(e).getPropertyValue('--club-primary')||getComputedStyle(e.parentElement).getPropertyValue('--club-primary'))).trim()||true)
   assert((await tile.locator('b').innerText()).trim()&&(await tile.locator('small').innerText()).trim(),`${slug} name/city`)
  }
