@@ -176,6 +176,9 @@ try {
   let answers=0
   // This flow proves the shared run end to end; it is not a speed test. Practice mode has no question clock (server and screen), so a slow runner cannot turn a right answer into TIME'S UP.
   await page.getByRole('button',{name:'Practice',exact:true}).click()
+  { // the verdict waits for a tap: a slow runner cannot miss it when it auto-advances (the pace is remembered across clubs, so only switch it on)
+   const tap=page.getByRole('button',{name:'Tap to go on',exact:true});if((await tap.getAttribute('aria-pressed'))!=='true')await tap.click()
+  }
   await page.getByTestId('trivia-start').click()
   while(await page.getByTestId('trivia-result').count()===0){
    const board=page.getByTestId('trivia-question');await board.waitFor()
@@ -192,7 +195,8 @@ try {
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
    else for(const value of values)await board.getByRole('button',{name:type==='tf'?(value==='true'?'True':'False'):value,exact:true}).click({force:true})
    if(['match','order','multi'].includes(type))await board.getByRole('button',{name:'Confirm answer',exact:true}).click({force:true})
-   await board.locator('[role=status][data-right]').waitFor();{const st=await board.locator('[role=status][data-right]').innerText();assert((await board.locator('[role=status][data-right]').getAttribute('data-right'))==='true'&&st.toLowerCase().includes('correct'),`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)} -> ${JSON.stringify(st.slice(0,120))}`)} /* innerText follows text-transform: the magazine prints capitals (rule 91) */
+   await board.locator('[role=status][data-right]').waitFor({timeout:20000}).catch(async()=>{throw new Error(`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)}: no verdict. Screen: ${JSON.stringify((await page.locator('main').innerText()).slice(0,400))}`)});{const st=await board.locator('[role=status][data-right]').innerText();assert((await board.locator('[role=status][data-right]').getAttribute('data-right'))==='true'&&st.toLowerCase().includes('correct'),`${slug} q ${id} (${type}) answered ${JSON.stringify(answer)} -> ${JSON.stringify(st.slice(0,120))}`)} /* innerText follows text-transform: the magazine prints capitals (rule 91) */
+   await board.locator('[role=status][data-right]').click({position:{x:8,y:8},force:true}) // tap to go on
    answers++
    await page.waitForFunction(old=>document.querySelector('[data-testid="trivia-result"]')||document.querySelector('[data-testid="trivia-question"]')?.getAttribute('data-question-id')!==old,id)
   }
