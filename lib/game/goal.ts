@@ -48,7 +48,7 @@ function records(): GoalSourceRecord[] {
   // Bundled goals first and untouched; goals the autonomous pipeline published (this club's route only) follow,
   // and a bundled id always wins. With nothing published this is exactly the old behaviour.
   const bundled = new Set(file.records.map((r) => r.goalId))
-  const extra = publishedGoalRecords('hapoel-tel-aviv').filter((r) => !bundled.has(r.goalId))
+  const extra = publishedGoalRecords().filter((r) => !bundled.has(r.goalId))
   return [...file.records, ...extra].filter(
     (record) =>
       (record.confidence ?? file.confidence) >= FLOOR &&

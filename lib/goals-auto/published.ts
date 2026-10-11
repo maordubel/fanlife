@@ -33,7 +33,9 @@ export async function primePublishedGoals(now=Date.now()):Promise<void>{
 }
 export const resetPublishedCache=()=>{g.goalsPublished=undefined}
 /** Synchronous view for the game: published, playable, and only for the club whose route is asking. */
-export const publishedGoalRecords=(clubId:string)=>(g.goalsPublished?.rows??[]).filter(r=>r.clubId===clubId&&playable(r)).map(r=>r.record)
+/** The Worker's own goal route belongs to this club; other clubs' goals never enter it. */
+export const WORKER_ROUTE_CLUB='hapoel-tel-aviv'
+export const publishedGoalRecords=(clubId:string=WORKER_ROUTE_CLUB)=>(g.goalsPublished?.rows??[]).filter(r=>r.clubId===clubId&&playable(r)).map(r=>r.record)
 
 export async function readPublished():Promise<PublishedDoc>{return (await readDoc<PublishedDoc>('published',EMPTY)).value}
 export async function readPolicy():Promise<Policy>{return {...DEFAULT_POLICY,...(await readDoc<Policy>('policy',DEFAULT_POLICY)).value}}
