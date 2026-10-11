@@ -15,6 +15,11 @@ describe('Hapoel player identity safeguards',()=>{
   expect(englishName('hapoel-tel-aviv','p_unknown',"מאוויס צ'יבוטה")).toBe('Mavis Tchibota')
   expect(nameHow('hapoel-tel-aviv','p_4a4c618031','אביחי ידין')).toBe('editor-override')
  })
+ it('links the verified Wikipedia wave duplicate back to the historical player ID',()=>{
+  expect(merges['hapoel-tel-aviv']).toContainEqual(expect.objectContaining({
+   keep:'p_27a81aefb1',drop:'p_wv-5fac092f20'
+  }))
+ })
  it('never declares a player merged into himself, or reuses a drop id',()=>{
   const rows=merges['hapoel-tel-aviv']
   const dropped=new Set<string>()
