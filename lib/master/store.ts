@@ -50,13 +50,13 @@ async function rotateAudit(s:State){const {kept,archive}=splitAudit(s.audit);if(
  if(d){for(const [month,rows] of Object.entries(archive)){for(let i=0;i<10;i++){if(i)await pause(i);const cur=await d.read(`${AUDIT_ARCHIVE_DIR}/${month}.jsonl`);const add=newArchiveLines(cur?.text||'',rows);if(!add||await d.write(`${AUDIT_ARCHIVE_DIR}/${month}.jsonl`,(cur?.text||'')+add,cur?.etag??null))break;if(i===9)throw new Error('Audit archive is busy. Try again.')}}s.audit=kept;return}
  const dir=path.join(root(),AUDIT_ARCHIVE_DIR);await mkdir(dir,{recursive:true});for(const [month,rows] of Object.entries(archive)){const f=path.join(dir,`${month}.jsonl`);const add=newArchiveLines(await readFile(f,'utf8').catch(()=>''),rows);if(add)await appendFile(f,add,{mode:0o600})}s.audit=kept}
 /** Pause between retries: grows with the attempt and is jittered, so two writers that collided do not collide again in step. */
-const pause=(attempt:number)=>new Promise<void>(r=>setTimeout(r,Math.min(900,40*1.7**attempt)*(0.5+Math.random())))
+const pause=(attempt:number)=>new Promise<void>(r=>setTimeout(r,Math.min(1200,60*1.6**attempt)*(0.5+Math.random())))
 /** A change that loses the race re-reads and re-applies, up to this many times (owner, 9.10.2026: "the control room is busy" kept appearing at 5 immediate retries). */
-const WRITE_ATTEMPTS=14
+const WRITE_ATTEMPTS=24
 export function mutate<T>(fn:(s:State)=>T):Promise<T>{const op=(globals.fanWrites||Promise.resolve()).then(async()=>{const d=durable()
  if(d){// optimistic: read with its ETag, apply, write only if nobody wrote in between; otherwise wait a beat, re-read and re-apply
   for(let attempt=0;attempt<WRITE_ATTEMPTS;attempt++){if(attempt)await pause(attempt);const {state:s,etag}=await readWithTag();const result=fn(s);s.revision++;await rotateAudit(s);if(await d.write(CONTROL,JSON.stringify(s),etag)){remember(s);return result}}
-  throw new Error('The control room is busy (another change landed at the same moment). Try again.')}
+  throw new Error(`The control room is busy: ${WRITE_ATTEMPTS} attempts lost the race to other saves. Wait a few seconds and try again.`)}
  const s=await readState();const result=fn(s);s.revision++;await mkdir(root(),{recursive:true});await rotateAudit(s);const temp=path.join(root(),`${randomUUID()}.tmp`);await writeFile(temp,JSON.stringify(s),{mode:0o600});await rename(temp,path.join(root(),CONTROL));return result});globals.fanWrites=op.catch(()=>undefined);return op}
 /** Archived months, newest first, for the control room or an export. */
 export async function auditArchiveMonths():Promise<string[]>{const d=durable();if(d)return(await d.list(`${AUDIT_ARCHIVE_DIR}/`)).map(f=>f.split('/').pop()!).filter(f=>/^(\d{4}-\d{2}|undated)\.jsonl$/.test(f)).map(f=>f.slice(0,-6)).sort().reverse();try{return(await readdir(path.join(root(),AUDIT_ARCHIVE_DIR))).filter(f=>/^(\d{4}-\d{2}|undated)\.jsonl$/.test(f)).map(f=>f.slice(0,-6)).sort().reverse()}catch{return[]}}

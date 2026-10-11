@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto'
 import {mkdir,readFile,writeFile} from 'node:fs/promises'
 import path from 'node:path'
 import {durable,type DurableRead} from '@/lib/master/durable'
+import {inOrder,untilWon} from '@/lib/master/cas'
 /**
  * Where the Player Control Center keeps its files: the control room's own durable store (Vercel Blob, conditional writes on the ETag) when one
  * is connected, otherwise the local data directory. A write is compare-and-swap: it names the ETag it read, and the loser re-reads and re-applies.
@@ -25,12 +26,16 @@ export async function writeFileText(name:string,text:string,etag:string|null):Pr
  if(process.env.VERCEL){mem.set(name,text);return true}
  await mkdir(dir(),{recursive:true});await writeFile(path.join(dir(),name),text);return true
 }
-/** read–modify–write with retries on a lost race */
-export async function update<T>(name:string,fallback:T,fn:(cur:T)=>T|Promise<T>):Promise<T>{
- for(let i=0;i<6;i++){
-  const r=await readFileText(name),cur=r?JSON.parse(r.text) as T:fallback,next=await fn(cur)
-  if(await writeFileText(name,JSON.stringify(next),r?r.etag:null))return next
- }
- throw new Error('conflict: the player files changed too many times while saving')
+/** read–modify–write: ordered per file inside this instance, retried with back-off across instances, real errors thrown as themselves */
+export function update<T>(name:string,fallback:T,fn:(cur:T)=>T|Promise<T>):Promise<T>{
+ return inOrder('players/'+name,async()=>{
+  let result!:T
+  await untilWon(`The player file ${name}`,async()=>{
+   const r=await readFileText(name),cur=r?JSON.parse(r.text) as T:fallback,next=await fn(cur)
+   if(await writeFileText(name,JSON.stringify(next),r?r.etag:null)){result=next;return true}
+   return false
+  })
+  return result
+ })
 }
 export const readJson=async<T>(name:string,fallback:T):Promise<T>=>{const r=await readFileText(name);return r?JSON.parse(r.text) as T:fallback}

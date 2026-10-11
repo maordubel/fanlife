@@ -33,7 +33,7 @@ class Conflict extends Error{}
 export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try{const a=params.action.join('/'),q=r.nextUrl.searchParams
  // the scheduler runs the whole autopilot: collect → stage → bring in (unreviewed) → fetch planned pages → process jobs.
  // The GitHub workflow sends CRON_SECRET; the owner may also run it from a signed-in browser.
- if(a==='cron'){const owner=adminFromRequest(r);if(!cronAuthorized(r)&&!owner)return json({error:'Invalid scheduler authorization'},401);const report=await runPipeline();await recordPipeline(report,owner?actorOf(owner):{actor:AUTOMATION_ACTOR,role:'scheduler'});return json(report)}
+ if(a==='cron'){const owner=adminFromRequest(r);if(!cronAuthorized(r)&&!owner)return json({error:'Invalid scheduler authorization'},401);const report=await runPipeline();/* the audit line is a record of the run, not the run: a busy control room must not turn a finished pass into an error */let recorded:string|null=null;try{await recordPipeline(report,owner?actorOf(owner):{actor:AUTOMATION_ACTOR,role:'scheduler'})}catch(e){recorded=e instanceof Error?e.message:'not recorded'};return json(recorded?{...report,auditNotRecorded:recorded}:report)}
  // the archive runner pins the control room's source profiles before it collects (handoff: admin ⇄ runner)
  if(a==='research/profiles-export'){if(!cronAuthorized(r)&&!adminFromRequest(r))return json({error:'Invalid scheduler authorization'},401);return json(await exportOverlays())}
  if(!adminFromRequest(r))return unauthorized()

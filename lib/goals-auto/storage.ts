@@ -3,6 +3,7 @@ import {randomUUID} from 'node:crypto'
 import path from 'node:path'
 import {durable} from '@/lib/master/durable'
 import {dataRoot} from '@/lib/dataRoot'
+import {inOrder,untilWon} from '@/lib/master/cas'
 
 /**
  * One tiny JSON store for the goals pipeline, with optimistic concurrency.
@@ -27,11 +28,15 @@ export async function writeDoc(name:string,value:unknown,etag:string|null):Promi
  const file=local(name);await mkdir(path.dirname(file),{recursive:true});const tmp=`${file}.${randomUUID()}.tmp`;await writeFile(tmp,text);await rename(tmp,file);return true
 }
 
-/** Read-modify-write with retry on conflict (three tries, then the conflict is the answer). */
-export async function updateDoc<T>(name:string,fallback:T,change:(v:T)=>T|Promise<T>):Promise<T>{
- for(let i=0;i<3;i++){
-  const {value,etag}=await readDoc(name,fallback),next=await change(structuredClone(value))
-  if(await writeDoc(name,next,etag))return next
- }
- throw new Error(`goals storage: ${name} kept changing under us`)
+/** Read-modify-write: ordered per document in this instance, retried with back-off, real errors thrown as themselves. */
+export function updateDoc<T>(name:string,fallback:T,change:(v:T)=>T|Promise<T>):Promise<T>{
+ return inOrder(`goals/${name}`,async()=>{
+  let out!:T
+  await untilWon(`The goals document ${name}`,async()=>{
+   const {value,etag}=await readDoc(name,fallback),next=await change(structuredClone(value))
+   if(await writeDoc(name,next,etag)){out=next;return true}
+   return false
+  })
+  return out
+ })
 }

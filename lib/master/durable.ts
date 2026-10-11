@@ -27,7 +27,12 @@ export function durableConfigured(): boolean {
 
 function blobStore(): DurableStore {
   const sdk = import('@vercel/blob')
-  const conflict = (e: unknown) => /precondition|412|already exists|BlobPreconditionFailed/i.test(String((e as Error)?.message || e) + String((e as { name?: string })?.name || ''))
+  // a LOST RACE is a failed precondition (ifMatch) or, for a create-only write, "already exists" — nothing else. Any other
+  // failure (token, size, network) must reach the caller as itself; it used to be retried as a conflict and hidden.
+  const lostRace = (e: unknown, createOnly: boolean) => {
+    const text = String((e as Error)?.message || e) + ' ' + String((e as { name?: string })?.name || '')
+    return /BlobPreconditionFailed|precondition failed|\b412\b/i.test(text) || (createOnly && /already exists/i.test(text))
+  }
   return {
     kind: 'vercel-blob',
     async read(name) {
@@ -42,7 +47,7 @@ function blobStore(): DurableStore {
         await put(PREFIX + name, text, { access: 'private', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: etag !== null, ...(etag ? { ifMatch: etag } : {}) })
         return true
       } catch (e) {
-        if (e instanceof BlobPreconditionFailedError || conflict(e)) return false
+        if (e instanceof BlobPreconditionFailedError || lostRace(e, etag === null)) return false
         throw e
       }
     },
