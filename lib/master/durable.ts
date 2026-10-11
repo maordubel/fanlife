@@ -26,6 +26,43 @@ export function durableConfigured(): boolean {
   return !!(g.fanDurable || blobConnected())
 }
 
+/**
+ * Which credential the store answered to (hub outage 11.10.2026: every read was "Failed to fetch blob: 403 Forbidden", so the
+ * pages served every club closed and the hub was empty). The SDK prefers the deployment's OIDC token whenever BLOB_STORE_ID is
+ * set and only then the classic BLOB_READ_WRITE_TOKEN; when one of the two is refused, the other is tried, and the one that
+ * worked is used from then on. `blobAuthReport()` says which is configured and which answered — never a secret value.
+ */
+type AuthMode = 'default' | 'token'
+const auth = globalThis as typeof globalThis & { fanBlobAuth?: { prefer: AuthMode; lastOk: AuthMode | null; lastError: string | null; at: string | null } }
+const authState = () => (auth.fanBlobAuth ??= { prefer: 'default', lastOk: null, lastError: null, at: null })
+const refused = (e: unknown) => /\b(401|403)\b|forbidden|unauthori[sz]ed|access denied|invalid token|no blob credentials/i.test(String((e as Error)?.message || e))
+function modes(): AuthMode[] {
+  const rw = !!process.env.BLOB_READ_WRITE_TOKEN, first = authState().prefer
+  const all: AuthMode[] = rw ? ['default', 'token'] : ['default']
+  return [first, ...all.filter((m) => m !== first)].filter((m) => all.includes(m))
+}
+const optsFor = (m: AuthMode) => (m === 'token' ? { token: process.env.BLOB_READ_WRITE_TOKEN } : {})
+async function withAuth<T>(op: (extra: { token?: string }) => Promise<T>): Promise<T> {
+  let last: unknown
+  for (const m of modes()) {
+    try {
+      const out = await op(optsFor(m))
+      const st = authState(); st.prefer = m; st.lastOk = m; st.lastError = null; st.at = new Date().toISOString()
+      return out
+    } catch (e) {
+      last = e
+      if (!refused(e)) throw e // a lost race, a missing file or a network fault is not a credential question
+      const st = authState(); st.lastError = `${m}: ${String((e as Error)?.message || e).slice(0, 160)}`; st.at = new Date().toISOString()
+    }
+  }
+  throw last
+}
+/** For the admin's storage line and the cron's error: what is configured and what the store accepted. */
+export function blobAuthReport() {
+  const st = authState()
+  return { storeId: !!process.env.BLOB_STORE_ID, readWriteToken: !!process.env.BLOB_READ_WRITE_TOKEN, oidcEnv: !!process.env.VERCEL_OIDC_TOKEN, answeredTo: st.lastOk, lastRefusal: st.lastError, at: st.at }
+}
+
 function blobStore(): DurableStore {
   const sdk = import('@vercel/blob')
   const memo = new Map<string, { text: string; etag: string; at: number }>()
@@ -47,7 +84,7 @@ function blobStore(): DurableStore {
       if (!p) {
         p = (async () => {
           const { get, BlobNotFoundError } = await sdk
-          const r = await get(PREFIX + name, { access: 'private', useCache: false, ...(hit ? { ifNoneMatch: hit.etag } : {}) }).catch((e: unknown) => { if (e instanceof BlobNotFoundError) return null; throw e })
+          const r = await withAuth((a) => get(PREFIX + name, { access: 'private', useCache: false, ...a, ...(hit ? { ifNoneMatch: hit.etag } : {}) }).catch((e: unknown) => { if (e instanceof BlobNotFoundError) return null; throw e }))
           if (r && r.statusCode === 304 && hit) { hit.at = Date.now(); return { text: hit.text, etag: hit.etag } }
           if (!r || r.statusCode !== 200) { memo.delete(name); return null }
           const out = { text: await new Response(r.stream).text(), etag: r.blob.etag }
@@ -61,7 +98,7 @@ function blobStore(): DurableStore {
     async write(name, text, etag) {
       const { put, BlobPreconditionFailedError } = await sdk
       try {
-        const done = await put(PREFIX + name, text, { access: 'private', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: etag !== null, ...(etag ? { ifMatch: etag } : {}) })
+        const done = await withAuth((a) => put(PREFIX + name, text, { access: 'private', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: etag !== null, ...a, ...(etag ? { ifMatch: etag } : {}) }))
         // this instance's own save is the newest copy: its next read needs no download (and other instances revalidate by ETag)
         if (done?.etag) memo.set(name, { text, etag: done.etag, at: Date.now() }); else memo.delete(name)
         return true
@@ -76,7 +113,7 @@ function blobStore(): DurableStore {
       const out: string[] = []
       let cursor: string | undefined
       do {
-        const page = await list({ prefix: PREFIX + prefix, cursor })
+        const page = await withAuth((a) => list({ prefix: PREFIX + prefix, cursor, ...a }))
         out.push(...page.blobs.map((b) => b.pathname.slice(PREFIX.length)))
         cursor = page.hasMore ? page.cursor : undefined
       } while (cursor)

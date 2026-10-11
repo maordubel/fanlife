@@ -102,6 +102,42 @@ try{
  await page.waitForURL(u=>u.pathname==='/master/admin',{timeout:30000}).catch(()=>fail('admin','the right key did not open the control room'))
  errors.length=0;await page.waitForLoadState('load');if(errors.length)fail('admin',`page error: ${errors[0]}`)
 
+ // 5b · admin flow, end to end with the owner's cookie: save a draft → publish → players see it → revert → reset;
+ //      pause a club → the hub stops listing it → put it back live with the same gates → the hub lists it again
+ {// the owner's cookie is Secure: the browser sends it to the loopback host, Playwright's Node-side request client does not — so calls go from the page
+  await page.goto(base+'/master/admin',{waitUntil:'domcontentloaded'})
+  const call=(path,body)=>page.evaluate(async([u,b])=>{const r=await fetch(u,b===undefined?{cache:'no-store'}:{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b)});return {ok:r.ok,status:r.status,text:await r.text()}},[path,body])
+  const api=(path,body)=>call(`/api/master/${path}`,body??{})
+  const live=async()=>JSON.parse((await call('/life/voxel/display.json')).text||'{}')
+  const step=async(name,r)=>{if(!r.ok)fail('admin flow',`${name}: HTTP ${r.status} ${r.text.slice(0,140)}`);return r.ok}
+  if(await step('save draft',await api('life-display/save-draft',{patch:{zoom:1.4}}))&&await step('publish',await api('life-display/publish'))){
+   if((await live()).zoom!==1.4)fail('admin flow','a published display did not reach /life/voxel/display.json')
+   await step('revert',await api('life-display/revert'));if((await live()).zoom===1.4)fail('admin flow','revert left the published value live')
+   await step('reset',await api('life-display/reset'))}
+  const st=JSON.parse((await call('/api/master/state')).text||'{}'),club=(st.clubs||[]).find(c=>c.id==='olympiacos')
+  const onHub=async()=>{await page.goto(base+'/',{waitUntil:'domcontentloaded'});return page.locator('a.mag-tile.is-open[data-club="olympiacos"]').count()}
+  if(!club)fail('admin flow','olympiacos missing from the control state')
+  else if(await onHub()){
+   const body=(c,status)=>({id:c.id,version:c.version,status,gates:c.gates,name:c.name,city:c.city,primary:c.primary,secondary:c.secondary})
+   if(await step('pause',await api('clubs/update',body(club,'paused')))){
+    if(await onHub())fail('admin flow','a paused club still shows as open on the hub')
+    await page.goto(base+'/master/admin',{waitUntil:'domcontentloaded'});const again=JSON.parse((await call('/api/master/state')).text).clubs.find(c=>c.id==='olympiacos')
+    await page.goto(base+'/master/admin',{waitUntil:'domcontentloaded'});await step('restore',await api('clubs/update',body(again,'live')))
+    if(!(await onHub()))fail('admin flow','a club put back live is missing from the hub')}}}
+
+ // 5c · the Dubel top ad: one script, one zone, never on a game or the control room; the admin switch turns it off everywhere
+ {const adHits=[];const onReq=r=>{const u=r.url();if(/nap5k\.com|dubel-top-ad\.js/.test(u))adHits.push(u)};page.on('request',onReq)
+  const check=async(url,want)=>{adHits.length=0;await page.goto(base+url,{waitUntil:'load'});await page.waitForTimeout(400)
+   const tag=await page.evaluate(()=>{const s=document.getElementById('dubel-top-ad');return s?{src:s.getAttribute('src'),zone:s.getAttribute('data-zone')}:null})
+   const noAds=await page.evaluate(()=>document.body.hasAttribute('data-no-ads'))
+   if(want){if(!tag||tag.src!=='https://nap5k.com/tag.min.js'||tag.zone!=='11100824')fail('top ad',`${url}: expected the one Monetag tag, got ${JSON.stringify(tag)}`);if(noAds)fail('top ad',`${url}: body says data-no-ads`)}
+   else{if(tag||adHits.length)fail('top ad',`${url}: an ad loaded where none may (${adHits[0]||'tag'})`);if(!noAds)fail('top ad',`${url}: body lacks data-no-ads`)}
+   const other=adHits.filter(u=>!/nap5k\.com\/tag\.min\.js$|\/dubel-top-ad\.js$/.test(u));if(other.length)fail('top ad',`${url}: unexpected ad request ${other[0]}`)}
+  await check('/',true);await check('/clubs/olympiacos',true);await check('/clubs/olympiacos/trivia?seed=42',false);await check('/master/admin',false)
+  const flip=on=>page.evaluate(async e=>(await fetch('/api/master/ads/top',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({enabled:e})})).ok,on)
+  if(await flip(false)){await page.waitForTimeout(1200);await check('/',false);await flip(true);await page.waitForTimeout(1200);await check('/',true)}else fail('top ad','the admin switch refused')
+  page.off('request',onReq)}
+
  // 7 · mobile audit (reported, and failed only on a clear defect): a slow phone (CPU ×4), the narrowest phone (320px), tap targets
  {const cdp=await context.newCDPSession(page)
   await page.addInitScript(()=>{window.__lt=0;try{new PerformanceObserver(l=>{for(const e of l.getEntries())window.__lt+=Math.max(0,e.duration-50)}).observe({type:'longtask',buffered:true})}catch{}})
