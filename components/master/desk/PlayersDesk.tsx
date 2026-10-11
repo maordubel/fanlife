@@ -13,7 +13,7 @@ type Listing={rows:Row[];total:number;page:number;pages:number;revision:number;c
 type Impact={quota:{ok:boolean;want:Record<number,number>;have:Record<number,number>;violations:string[]};readiness:{before:string[];after:string[];broke:string[]};consumers:string[];lockedChange:boolean;iconChange:boolean}
 type AuditEvent={id:string;at:string;actor:string;action:string;reason:string;before:Record<string,unknown>|null;after:Record<string,unknown>|null;revision:number}
 type BaseInfo={basePrice:number;basePositions:Pos[];baseRating:number;ratingBasis:string;hasList:boolean}
-type Detail={row:Row;base:BaseInfo;override:{rev:number}|null;draft:{patch:Record<string,unknown>;by:string;at:string}|null;audit:AuditEvent[]}
+type Detail={row:Row;base:BaseInfo;override:{rev:number}|null;draft:{patch:Record<string,unknown>;by:string;at:string}|null;audit:AuditEvent[];absorbed?:{id:string;name:string;years:string}[]}
 const POS:Pos[]=['GK','DF','MF','FW']
 const CLUBS:(readonly [string,string])[]=[['celtic','Celtic'],['aek-athens','AEK Athens'],['olympiacos','Olympiacos'],['panathinaikos','Panathinaikos'],['st-pauli','FC St. Pauli'],['zrinjski-mostar','Zrinjski Mostar'],['hapoel-petah-tikva','Hapoel Petah Tikva'],['hapoel-tel-aviv','Hapoel Tel Aviv']]
 const STATUS:(readonly [string,string])[]=[['','Every man'],['missing-position','No position'],['fallback-price','Price not in the frozen list'],['overridden','Edited by you'],['draft','Has a draft'],['removed','Removed from the squad'],['merged','Merged into another record'],['locked','Locked / pinned'],['wave','Roster-wave (unreviewed)'],['archive','Archive proper']]
@@ -52,14 +52,15 @@ export function PlayersDesk(){
   </ul>}
   <section className="pcc-filters" aria-label="Filters">
    <label className="pcc-search"><span className="sr-only">Search</span><input ref={searchRef} type="search" placeholder="Search a name, original name, alias or id" defaultValue={sp.get('q')||''} onKeyDown={e=>{if(e.key==='Enter')set('q',(e.target as HTMLInputElement).value.trim()||null)}} onBlur={e=>{if((sp.get('q')||'')!==e.target.value.trim())set('q',e.target.value.trim()||null)}}/></label>
-   <fieldset><legend>Club</legend>{CLUBS.map(([id,n])=><button key={id} type="button" className="pcc-chip" aria-pressed={active('club',id)} onClick={()=>toggle('club',id)}>{n}</button>)}</fieldset>
-   <fieldset><legend>Position (any of)</legend>{[...POS,'unknown'].map(p=><button key={p} type="button" className="pcc-chip" aria-pressed={active('position',p)} onClick={()=>toggle('position',p)}>{p==='unknown'?'?':p}</button>)}</fieldset>
-   <fieldset><legend>Price</legend>{[1,2,3,4,5].map(p=><button key={p} type="button" className="pcc-chip" aria-pressed={active('price',String(p))} onClick={()=>toggle('price',String(p))}>€{p}M</button>)}</fieldset>
+   <Multi label="Club" options={CLUBS.map(([id,n])=>[id,n] as [string,string])} value={(sp.get('club')||'').split(',').filter(Boolean)} onToggle={v=>toggle('club',v)} onClear={()=>set('club',null)}/>
+   <Multi label="Position (any of)" options={[...POS,'unknown'].map(p=>[p,p==='unknown'?'Unknown':p] as [string,string])} value={(sp.get('position')||'').split(',').filter(Boolean)} onToggle={v=>toggle('position',v)} onClear={()=>set('position',null)}/>
+   <Multi label="Price" options={[1,2,3,4,5].map(p=>[String(p),`€${p}M`] as [string,string])} value={(sp.get('price')||'').split(',').filter(Boolean)} onToggle={v=>toggle('price',v)} onClear={()=>set('price',null)}/>
    <label>Decade<select value={sp.get('decade')||''} onChange={e=>set('decade',e.target.value||null)}><option value="">All decades</option>{(data?.decades||[]).map(d=><option key={d} value={d}>{d==='unknown'?'Years not recorded':d}</option>)}</select></label>
    <label>Show<select value={sp.get('status')||''} onChange={e=>set('status',e.target.value||null)}>{STATUS.map(([v,l])=><option key={v} value={v}>{l}</option>)}</select></label>
    <label>Sort<select value={`${sp.get('sort')||'club'}:${sp.get('dir')||'asc'}`} onChange={e=>{const [s,d]=e.target.value.split(':');const p=new URLSearchParams(qs.toString());p.set('sort',s!);p.set('dir',d!);p.delete('page');router.replace(path+'?'+p.toString(),{scroll:false})}}>
     {([['club:asc','Club · decade · name'],['name:asc','Name A–Z'],['price:desc','Price high → low'],['price:asc','Price low → high'],['rating:desc','Manager score high → low'],['years:asc','Earliest first'],['updated:desc','Recently edited']] as const).map(([v,l])=><option key={v} value={v}>{l}</option>)}</select></label>
-   <a className="desk-btn ghost" href={'/api/master/players/export?'+apiQs}>Export CSV</a>
+   {['club','position','price','decade','status','q'].some(k=>sp.get(k))&&<button type="button" className="min-h-tap desk-btn ghost" onClick={()=>{const p=new URLSearchParams(qs.toString());for(const k of ['club','position','price','decade','status','q','page'])p.delete(k);router.replace(path+'?'+p.toString(),{scroll:false})}}>Clear all filters</button>}
+   <a className="min-h-tap desk-btn ghost" href={'/api/master/players/export?'+apiQs}>Export CSV</a>
   </section>
   <p className="pcc-count" role="status">{busy?'Loading…':data?`${data.total.toLocaleString('en')} players · page ${data.page} of ${data.pages}`:''}</p>
   {data&&!data.rows.length&&!busy&&<p className="desk-state">No player matches. Clear a filter to widen the search.</p>}
@@ -71,6 +72,15 @@ export function PlayersDesk(){
   </>}
   {open&&<Drawer key={open.club+open.id} club={open.club} id={open.id} onClose={()=>setOpen(null)} onChanged={load}/>}
  </div>
+}
+
+/** a dropdown that holds a list of checkboxes — one tidy button instead of a wall of chips; closes on an outside click or Escape */
+function Multi({label,options,value,onToggle,onClear}:{label:string;options:[string,string][];value:string[];onToggle:(v:string)=>void;onClear:()=>void}){
+ const ref=useRef<HTMLDetailsElement>(null)
+ useEffect(()=>{const close=(e:Event)=>{const d=ref.current;if(!d?.open)return;if(e.type==='keydown'&&(e as KeyboardEvent).key!=='Escape')return;if(e.type==='click'&&d.contains(e.target as Node))return;d.open=false};document.addEventListener('click',close);document.addEventListener('keydown',close);return()=>{document.removeEventListener('click',close);document.removeEventListener('keydown',close)}},[])
+ const names=options.filter(([v])=>value.includes(v)).map(([,n])=>n)
+ return <details ref={ref} className="pcc-dd"><summary className="min-h-tap" data-on={value.length>0||undefined}><span>{label}</span><b>{value.length===0?'All':value.length<=2?names.join(', '):`${value.length} chosen`}</b></summary>
+  <div className="pcc-dd-menu">{options.map(([v,n])=><label key={v} className="min-h-tap"><input type="checkbox" checked={value.includes(v)} onChange={()=>onToggle(v)}/><span>{n}</span></label>)}{value.length>0&&<button type="button" className="min-h-tap pcc-link" onClick={onClear}>Clear</button>}</div></details>
 }
 
 function Line({r,onOpen}:{r:Row;onOpen:()=>void}){
@@ -149,6 +159,7 @@ function Drawer({club,id,onClose,onChanged}:{club:string;id:string;onClose:()=>v
     <label className="pcc-field"><span>Reason <small>(required to publish; kept in the history)</small></span><input type="text" value={reason} onChange={ev=>setReason(ev.target.value)} placeholder="e.g. played in midfield for three seasons — Celtic Wiki"/></label>
     <p className="pcc-hint" role="status">{reason.trim().length<3?(dirty||d.draft?'To publish: write a short reason above. Publishing sends this change to every game.':'Change a field to enable Publish.'):'Ready — Publish sends this change to every game now.'}</p>
     <div className="pcc-actions pcc-sticky"><button type="button" className="desk-btn ghost" disabled={working||!dirty} onClick={preview}>Preview impact</button><button type="button" className="desk-btn ghost" disabled={working||!dirty} onClick={saveDraft}>Save draft</button><button type="button" className="min-h-tap desk-btn" disabled={working||(!dirty&&!d.draft)||reason.trim().length<3} onClick={publish}>Publish</button>{d.draft&&<button type="button" className="desk-btn ghost" disabled={working} onClick={discard}>Discard draft</button>}</div>
+    {(d.absorbed?.length??0)>0&&<p className="pcc-hint" data-testid="absorbed">Also carries (merged in, still on file): {d.absorbed!.map(a=>`${a.name} (${a.years})`).join(' · ')}</p>}
     {d.row.mergedInto&&<p className="pcc-hint">Merged into <code>{d.row.mergedInto}</code> — he no longer appears in any game. <button type="button" className="min-h-tap pcc-link" disabled={working||reason.trim().length<3} onClick={async()=>{const r=await act('unmerge',{reason});if(r.ok){setNote('Merge undone — he is back in the squad.');await load();onChanged()}else setErr(r.data.error||'Failed.')}}>Undo merge (needs a reason above)</button></p>}
     {d.draft&&<p className="pcc-hint">A draft by {d.draft.by} is waiting — invisible to the games until published.</p>}
     <section className="pcc-history"><h3>History</h3>{d.audit.length?<ol>{d.audit.map(a=><li key={a.id}><b>{a.action}</b> · {a.actor} · <time dateTime={a.at}>{a.at.slice(0,16).replace('T',' ')}</time><small>{a.reason}</small>{a.action==='publish'&&<button type="button" className="pcc-link" disabled={working} onClick={()=>revert(a.id)}>Revert this change</button>}</li>)}</ol>:<p className="pcc-hint">No changes yet — every value is the archive’s.</p>}</section>

@@ -1,6 +1,6 @@
 import type {Pos,Rated,RumbleResult} from '../rumble'
 import {rng} from '../rumble-show'
-import {XI_BUDGET,type FormationId} from './types'
+import {type FormationId} from './types'
 import {slotsOf} from './formations'
 import {cost} from './pool'
 import {dealXI} from './deal'
@@ -55,6 +55,6 @@ export function playXI(home:readonly Rated[],away:readonly Rated[],f:FormationId
   const full=home.find(x=>x.id===picks[i]);if(!full)return null
   chosen.push(full)
  }
- if(cost(chosen)>XI_BUDGET)return null
+ if(cost(chosen)>deal.budget)return null
  return settleXI(chosen,deal.rival,f,seed,rivalClub)
 }

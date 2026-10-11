@@ -16,7 +16,7 @@ import {dealXI,dealRivalXI} from '@/lib/clubs/rumble-xi/deal'
 import {playXI} from '@/lib/clubs/rumble-xi/simulator'
 import {stageXI} from '@/lib/clubs/rumble-xi/presentation'
 import {statsAt} from '@/lib/clubs/rumble-play'
-import {XI_BUDGET} from '@/lib/clubs/rumble-xi/types'
+import {XI_BUDGET_MIN as XI_BUDGET,XI_BUDGET_MAX,XI_BUDGETS,budgetFor} from '@/lib/clubs/rumble-xi/types'
 import {norm} from '@/lib/fixtures/names'
 import {ROYAL_RUMBLE_CANONICAL_FIVES} from '@/lib/game/royal-rumble-prices'
 
@@ -47,7 +47,7 @@ describe('the price ladder (rulebook rumble-economy-v2)',()=>{
  it('every club\'s frozen list holds each man exactly once, in whole millions, with its ladder, and one price in five a side and in the eleven',async()=>{
   expect(PRICE_VERSION).toBe('rumble-economy-v2')
   for(const id of CORE_CLUB_IDS){const d=(await loadClub(id))!.data,list=priceTable.clubs[id]!,dropped=new Set(mergesFor(id).map(m=>m.drop))
-   const members=d.players.filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)).map(p=>p.value.id)
+   const members=(d.players??[]).filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)).map(p=>p.value.id)
    expect(Object.keys(list.players).sort()).toEqual([...members].sort())
    const have={1:0,2:0,3:0,4:0,5:0} as Record<number,number>;for(const e of Object.values(list.players)){expect([1,2,3,4,5]).toContain(e.priceM);have[e.priceM]!+=1}
    const q=quotaFor(members.length);expect(list.quotaMode).toBe(q.mode);for(const p of [1,2,3,4,5] as const)expect(have[p],`${id} €${p}`).toBe(q.counts[p])
@@ -72,7 +72,7 @@ describe('one man, one card — and every man is dealt',()=>{
  })
  it('nobody is left out of the pool: the men of no recorded position are dealt into outfield slots, never in goal',async()=>{
   for(const id of CORE_CLUB_IDS){const d=(await loadClub(id))!.data,dropped=new Set(mergesFor(id).map(m=>m.drop)),pool=xiPool(d),ids=new Set(pool.map(c=>c.id))
-   for(const p of d.players)if(isMan(p.value.name)&&!dropped.has(p.value.id))expect(ids.has(p.value.id),`${id} ${p.value.name}`).toBe(true)
+   for(const p of (d.players??[]))if(isMan(p.value.name)&&!dropped.has(p.value.id))expect(ids.has(p.value.id),`${id} ${p.value.name}`).toBe(true)
    for(const c of pool.filter(x=>x.free)){expect(fits(c,'GK')).toBe(false);expect(fits(c,'MF')).toBe(true)}}
  })
  it('rotation: consecutive rounds walk the whole archive — every man gets dealt, and the same round is the same board',async()=>{
@@ -91,7 +91,7 @@ describe('the board always holds a €5M man who can be bought',()=>{
   for(const id of CORE_CLUB_IDS)for(const f of FORMATION_IDS){const r=xiReadiness(P[id]!,f);if(!r.ready){expect(r.reasons.length).toBeGreaterThan(0);continue}
    for(const away of CORE_CLUB_IDS){if(!canRival(P[away]!,f))continue;const same=away===id;if(same&&!r.sameClub22)continue
     for(let s=1;s<=40;s++){const d=dealXI(P[id]!,P[away]!,f,s,same,id);expect(d,`${id} v ${away} ${f} ${s}`).not.toBeNull()
-     expect(hasBuyableIcon(d!.draft,XI_BUDGET),`${id} v ${away} ${f} ${s}`).toBe(true);expect(floorOf(d!.draft)).toBeLessThanOrEqual(XI_BUDGET);expect(d!.draft).toHaveLength(11)
+     expect(hasBuyableIcon(d!.draft,d!.budget),`${id} v ${away} ${f} ${s}`).toBe(true);expect(floorOf(d!.draft)).toBeLessThanOrEqual(d!.budget);expect(d!.draft).toHaveLength(11)
      const ids=d!.draft.flat().map(c=>c.id);expect(new Set(ids).size).toBe(ids.length)
      if(same){const rv=new Set(d!.rival.map(c=>c.id));for(const c of ids)expect(rv.has(c)).toBe(false)}}}}
  })
@@ -109,13 +109,17 @@ describe('the board always holds a €5M man who can be bought',()=>{
  it('a club that cannot field a legal board says so instead of raising the budget',async()=>{
   const P=await pools();for(const id of CORE_CLUB_IDS)for(const f of FORMATION_IDS){const r=xiReadiness(P[id]!,f);if(!r.ready)expect(r.reasons[0]).toMatch(/.+/)}
   expect(readFileSync('lib/clubs/rumble-xi/types.ts','utf8')).not.toMatch(/matchBudget/)
-  if(!canRival(P['olympiacos']!,'4-3-3'))expect(rivalReason(P['olympiacos']!,'4-3-3')).toMatch(/over €35M|needed on file/)
+  if(!canRival(P['olympiacos']!,'4-3-3'))expect(rivalReason(P['olympiacos']!,'4-3-3')).toMatch(/over €33M|needed on file/)
  })
 })
 
 describe('the server refuses a forged round',()=>{
+ it('the budget rotates 33 / 34 / 35 by round, the same seed always deals the same one, and every round is hard',()=>{
+  expect([1,2,3,4,5,6].map(budgetFor)).toEqual([34,35,33,34,35,33])
+  expect(new Set(XI_BUDGETS)).toEqual(new Set([33,34,35]));expect(budgetFor(1234567)).toBe(budgetFor(1234567))
+ })
  it('wrong count, repeats, men that were not offered, strangers, and an eleven over €35M',async()=>{
-  const P=await pools(),H=P['hapoel-tel-aviv']!,A=P['aek-athens']!,d=dealXI(H,A,'4-3-3',3,false,'hapoel-tel-aviv')!,good=spender(d.draft)
+  const P=await pools(),H=P['hapoel-tel-aviv']!,A=P['aek-athens']!,d=dealXI(H,A,'4-3-3',3,false,'hapoel-tel-aviv')!,good=spender(d.draft,d.budget)
   expect(playXI(H,A,'4-3-3',d.seed,false,good,undefined,'hapoel-tel-aviv')).not.toBeNull()
   expect(playXI(H,A,'4-3-3',d.seed,false,good.slice(1),undefined,'hapoel-tel-aviv')).toBeNull()
   expect(playXI(H,A,'4-3-3',d.seed,false,[good[0]!,...good.slice(0,10)],undefined,'hapoel-tel-aviv')).toBeNull()
@@ -125,7 +129,7 @@ describe('the server refuses a forged round',()=>{
  })
  it('the rival is committed from his own pool and the seed alone, at his club\'s prices, inside €35M',async()=>{
   const P=await pools();const a=dealRivalXI(P['aek-athens']!,'4-3-3',5)!,b=dealRivalXI(P['aek-athens']!,'4-3-3',5)!
-  expect(a.map(c=>c.id)).toEqual(b.map(c=>c.id));expect(cost(a)).toBeLessThanOrEqual(XI_BUDGET);for(const c of a)expect(c.price).toBe(priceFor('aek-athens',c.id))
+  expect(a.map(c=>c.id)).toEqual(b.map(c=>c.id));expect(cost(a)).toBeLessThanOrEqual(XI_BUDGET_MAX);for(const c of a)expect(c.price).toBe(priceFor('aek-athens',c.id))
  })
 })
 
@@ -159,8 +163,8 @@ describe('the match',()=>{
    for(const h of homes)for(const a of aways)for(let s=1;s<=Math.ceil(5000/(3*homes.length*aways.length));s++){
     const same=h===a;if(same&&!xiReadiness(P[h]!,f).sameClub22)continue
     const d=dealXI(P[h]!,P[a]!,f,s,same,h);expect(d,`${h} ${a} ${f} ${s}`).not.toBeNull()
-    const r=playXI(P[h]!,P[a]!,f,d!.seed,same,spender(d!.draft),undefined,h);expect(r).not.toBeNull()
-    expect(r!.you.cost).toBeLessThanOrEqual(XI_BUDGET);expect(cost(r!.rival.cards)).toBeLessThanOrEqual(XI_BUDGET);expect(r!.you.cards).toHaveLength(11);expect(r!.rival.cards).toHaveLength(11)
+    const r=playXI(P[h]!,P[a]!,f,d!.seed,same,spender(d!.draft,d!.budget),undefined,h);expect(r).not.toBeNull()
+    expect(r!.you.cost).toBeLessThanOrEqual(budgetFor(s));expect(cost(r!.rival.cards)).toBeLessThanOrEqual(budgetFor(s));expect(r!.you.cards).toHaveLength(11);expect(r!.rival.cards).toHaveLength(11)
     n++;goals+=r!.goals[0]+r!.goals[1];max=Math.max(max,...r!.goals);if(r!.verdict==='win')w++;else if(r!.verdict==='loss')l++}}
   expect(n).toBeGreaterThan(2500);expect(goals/n).toBeGreaterThan(1.8);expect(goals/n).toBeLessThan(3.4);expect(max).toBeLessThanOrEqual(7)
   expect(w/n).toBeGreaterThan(0.2);expect(w/n).toBeLessThan(0.65);expect(l/n).toBeGreaterThan(0.15)

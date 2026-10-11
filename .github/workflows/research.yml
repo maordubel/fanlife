@@ -14,5 +14,13 @@ jobs:
           URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
           CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
         run: |
-          test ${#CRON_SECRET} -ge 32
-          curl --fail --show-error --max-time 90 -H "Authorization: Bearer $CRON_SECRET" "$URL/api/master/cron"
+          if [ "${#CRON_SECRET}" -lt 32 ]; then
+            echo "::error title=Requested club research is not configured::The repository secret FAN_LIFE_CRON_SECRET is missing or shorter than 32 characters. Set it in GitHub → Settings → Secrets and variables → Actions, with the same value as CRON_SECRET on Vercel. Until then this job cannot call the control room."
+            exit 1
+          fi
+          code=$(curl --silent --show-error --max-time 90 -o /tmp/research.out -w '%{http_code}' -H "Authorization: Bearer $CRON_SECRET" "$URL/api/master/cron") || { echo "::error::Could not reach $URL"; exit 1; }
+          if [ "$code" != "200" ]; then
+            echo "::error title=Control room answered $code::$(head -c 300 /tmp/research.out)"
+            exit 1
+          fi
+          head -c 400 /tmp/research.out

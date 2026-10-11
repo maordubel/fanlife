@@ -18,7 +18,7 @@ const merges=JSON.parse(readFileSync(MERGES,'utf8')) as Record<string,{keep:stri
 const pins=JSON.parse(readFileSync(PINS,'utf8')) as Record<string,Record<string,{priceM:number;reason:string;decidedOn:string}>>
 async function main(){
  for(const id of CORE_CLUB_IDS){const d=await loadClub(id);if(!d)continue
-  const all=d.data.players.map(f=>f.value).filter(p=>isMan(p.name)),byId=new Map(all.map(p=>[p.id,p]))
+  const all=(d.data.players??[]).map(f=>f.value).filter(p=>isMan(p.name)),byId=new Map(all.map(p=>[p.id,p]))
   // 1. twins
   const taken=new Set(merges[id]!.flatMap(m=>[m.keep,m.drop])),groups=new Map<string,string[]>()
   for(const p of all){const n=(names[id]?.[p.id]?.name??'').replace(/ (I{1,3}|IV|\(\d{4}\))$/,'').toLowerCase();if(n&&!taken.has(p.id))groups.set(n,[...(groups.get(n)||[]),p.id])}
