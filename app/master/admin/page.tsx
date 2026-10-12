@@ -44,7 +44,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
  const shell=(children:React.ReactNode)=><AdminShell section={section} club={club} clubName={clubName} owner={owner} counts={counts}>{children}</AdminShell>
  if(section==='more')return shell(<MoreMenu owner={owner}/>)
  if(section==='players')return shell(<Suspense fallback={<p className="desk-state" role="status">Loading players…</p>}><PlayersDesk/></Suspense>)
- if(section==='games')return shell(view==='all-football'?<ExperienceDesk features={features} lab={(['trivia','timeline','memory'] as const).find(g=>g===searchParams.lab)??null}/>:<GamesDesk summaries={summaries} scope={club} gate={searchParams.gate||null} experiences={<ExperienceCard features={features}/>}/>)
+ if(section==='games')return shell(view==='all-football'?<ExperienceDesk features={features} lab={(['trivia','timeline','memory','league'] as const).find(g=>g===searchParams.lab)??null}/>:<GamesDesk summaries={summaries} scope={club} gate={searchParams.gate||null} experiences={<ExperienceCard features={features}/>}/>)
  if(section==='market')return shell(<MarketDesk/>)
  if(section==='community')return shell(<CommunityDesk/>)
  const runs=await readRuns()

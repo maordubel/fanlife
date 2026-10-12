@@ -7,7 +7,7 @@ const GATE_LABEL:Record<ExperienceGate,string>={trivia:'Gate 2 · Trivia',timeli
  * Control room → Settings → Features (ADR-fanlife-0012). Each switch opens a door for fans; while it is off only your
  * owner session can walk in ("owner preview"). Switching off never deletes a season, an invite or a pool.
  */
-export function FeatureControl({initial,api}:{initial:Features;api:{busy:boolean;post:<T>(action:string,data?:unknown,message?:string)=>Promise<T|null>}}){
+export function FeatureControl({initial,api,clubs=[]}:{initial:Features;clubs?:{id:string;name:string}[];api:{busy:boolean;post:<T>(action:string,data?:unknown,message?:string)=>Promise<T|null>}}){
  const [f,setF]=useState(initial)
  const save=async(patch:Partial<Features>,msg:string)=>{const r=await api.post<Features>('features',{patch},msg);if(r)setF(r)}
  const row=(k:'allFootball'|'fanLeague'|'friendlies',extra?:React.ReactNode)=><li key={k} data-durable={f[k]?'yes':'no'}><span className="desk-stamp">{f[k]?'On':'Off'}</span><div>
@@ -21,7 +21,7 @@ export function FeatureControl({initial,api}:{initial:Features;api:{busy:boolean
   <h2 id="feat-h">Features</h2>
   <ul className="desk-rows">
    {row('allFootball',<fieldset className="crm-gates"><legend>Gates in ALL FOOTBALL</legend>{EXPERIENCE_GATES.map(g=><label key={g} className="pcc-chip" data-on={f.allFootballGates.includes(g)||undefined}><input type="checkbox" className="sr-only" checked={f.allFootballGates.includes(g)} disabled={api.busy} onChange={()=>{const next=f.allFootballGates.includes(g)?f.allFootballGates.filter(x=>x!==g):[...f.allFootballGates,g];void save({allFootballGates:next},'Gates saved.')}}/>{GATE_LABEL[g]}</label>)}</fieldset>)}
-   {row('fanLeague')}
+   {row('fanLeague',clubs.length?<fieldset className="crm-gates"><legend>Clubs open for new careers</legend>{clubs.map(c=>{const on=!f.fanLeagueOff.includes(c.id);return <label key={c.id} className="pcc-chip" data-on={on||undefined}><input type="checkbox" className="sr-only" checked={on} disabled={api.busy} onChange={()=>{const next=on?[...f.fanLeagueOff,c.id]:f.fanLeagueOff.filter(x=>x!==c.id);void save({fanLeagueOff:next},`${c.name} ${on?'held out of':'back in'} new careers.`)}}/>{c.name}</label>})}<p className="desk-fine">A club held out cannot start a new career and is left out of new leagues. Careers already running keep it — nothing is deleted.</p></fieldset>:undefined)}
    {row('friendlies')}
   </ul>
  </section>

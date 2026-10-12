@@ -124,7 +124,7 @@ export function Admin({tasks,features,ads,initial,summaries,adapters,runs,displa
   {section==='settings'&&<>
    <header className="desk-head"><p className="desk-kicker">Settings</p><h1 className="desk-h1">What the application does</h1></header>
    <section className="desk-sub" aria-labelledby="gen-h"><h2 id="gen-h">General</h2><ul className="desk-rows"><li><span className="desk-stamp">Fixed</span><div><b>Control-room language</b><p>English. Evidence and names keep their original language and direction.</p></div></li><li><span className="desk-stamp">Fixed</span><div><b>Times</b><p>Stored and shown in UTC.</p></div></li><li><span className="desk-stamp">Per club</span><div><b>Gates and publication</b><p>Switched on in each club’s workspace → Readiness, behind the activation check.</p></div><Link className="desk-btn ghost" href={deskHref('clubs')}>Clubs →</Link></li></ul></section>
-   {features?<FeatureControl initial={features} api={api}/>:null}
+   {features?<FeatureControl initial={features} api={api} clubs={sums.map(x=>({id:x.id,name:x.name})).sort((a,b)=>a.name.localeCompare(b.name))}/>:null}
    <TopAdControl initial={ads??DEFAULT_TOP_AD} api={api}/>
    <DisplayControl initial={display} api={api}/>
    <section className="desk-sub" aria-labelledby="acc-h"><h2 id="acc-h">Access</h2><p>One owner identity, signed in with the owner key. The session lasts 30 days on this browser; changing the key on Vercel signs everyone out.</p></section>

@@ -5,6 +5,7 @@ import {Contributors,PreviewRibbon,modeQuery} from '@/components/experiences/AfF
 import {experienceDoor} from '@/lib/experiences/access'
 import {gateReport,membersFor,parseModeQuery,type GateReport,type Mode} from '@/lib/experiences/pool'
 import {ALL_FOOTBALL} from '@/lib/experiences/registry'
+import {door as featureDoor} from '@/lib/features-server'
 import './all-football.css'
 export const dynamic='force-dynamic'
 export const metadata={title:'ALL FOOTBALL',description:ALL_FOOTBALL.tagline}
@@ -20,7 +21,7 @@ const STORY={
  * gates over every published club's approved records. Off for fans until the owner switches it on; the owner previews.
  */
 export default async function Page({searchParams}:{searchParams:{mode?:string;a?:string;b?:string}}){
- const door=await experienceDoor()
+ const [door,fl]=await Promise.all([experienceDoor(),featureDoor('fanLeague')])
  if(!door.open)notFound()
  const mode=parseModeQuery(searchParams)
  const gates=ALL_FOOTBALL.gates.filter(g=>door.preview||door.features.allFootballGates.includes(g))
@@ -53,6 +54,7 @@ export default async function Page({searchParams}:{searchParams:{mode?:string;a?
    <section className="af-stories" aria-label="The gates">
     {reports.map(r=><Story key={r.gate} r={r} href={href(r.gate)}/>)}
    </section>
+   {fl.open?<Link className="af-league" href="/all-football/fan-league"><span className="af-kicker">The manager’s edition{fl.preview?' · owner preview':''}</span><b>FAN LEAGUE</b><small>One real club, only its own men, a whole season. Sign from other decades of the same club.</small><span aria-hidden="true">→</span></Link>:null}
    <p className="af-note">Every question, date and pair here was approved for its own club first. A club joins this page when its gate is open to fans; nothing is invented to fill a round.</p>
   </main>
  </Shell>
