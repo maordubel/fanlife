@@ -9,7 +9,7 @@
  */
 export type DurableRead = { text: string; etag: string } | null
 export type DurableStore = {
-  kind: 'vercel-blob' | 'memory'
+  kind: 'vercel-blob' | 'supabase' | 'memory'
   /**
    * Owner, 12.10.2026: "no feature may ever close because of a limit". So a read, by default, is answered from the deployment-wide
    * data cache (see `SHARED_S`) and, when the store refuses (an outage, credentials, a plan's operation cap), answers NULL — the
@@ -70,7 +70,108 @@ export const blobConnected = () => !!(process.env.BLOB_READ_WRITE_TOKEN || proce
 const g = globalThis as typeof globalThis & { fanDurable?: DurableStore | null }
 
 export function durableConfigured(): boolean {
-  return !!(g.fanDurable || blobConnected())
+  return !!(g.fanDurable || blobConnected() || supabaseConnected())
+}
+
+/**
+ * Supabase is the store (owner, 12.10.2026: "approved, Supabase" — "a permanent solution, no payment"). Vercel Blob on the Hobby
+ * plan has a monthly operation cap; when it ran out the hub went empty. Supabase, this project's database already, has no
+ * operation cap. One table, `worker_fanlife_files` (name, body, etag) — migration 20261012090000 — reached only by the server with
+ * the service-role key it already holds; a save is the same compare-and-swap as on Blob (`etag=eq.<read>`).
+ * Blob stays behind it for one job: a file Supabase does not hold yet is looked up there (at most once an hour while Blob refuses)
+ * and copied across, so whatever Blob still holds moves over by itself the first time it answers.
+ */
+const SB_TABLE = 'worker_fanlife_files'
+export const supabaseConnected = () => !!((process.env.FAN_LIFE_STORE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL) && process.env.SUPABASE_SERVICE_ROLE_KEY) && process.env.FAN_LIFE_STORE !== 'blob'
+class TableMissing extends Error {}
+const randomTag = () => `"${globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`}"`
+function supabaseStore(): DurableStore {
+  // FAN_LIFE_STORE_URL: the browser sweeps point the store at a local PostgREST stand-in (scripts/qa/files-rest-shim.mjs).
+  const base = () => `${(process.env.FAN_LIFE_STORE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL!).replace(/\/$/, '')}/rest/v1/${SB_TABLE}`
+  const headers = (extra: Record<string, string> = {}) => { const k = process.env.SUPABASE_SERVICE_ROLE_KEY!; return { apikey: k, Authorization: `Bearer ${k}`, 'Content-Type': 'application/json', ...extra } }
+  async function call(url: string, init: RequestInit = {}): Promise<unknown> {
+    const r = await fetch(url, { ...init, headers: { ...headers(), ...(init.headers as Record<string, string> | undefined) }, cache: 'no-store' })
+    const text = await r.text()
+    if (!r.ok) {
+      if (r.status === 404 || /PGRST205|42P01|does not exist|Could not find the table/i.test(text)) throw new TableMissing(`Supabase table ${SB_TABLE} is missing — run migration 20261012090000.`)
+      throw new Error(`Supabase store ${r.status}: ${text.slice(0, 200)}`)
+    }
+    return text ? JSON.parse(text) : null
+  }
+  const q = (v: string) => encodeURIComponent(v)
+  const rawRead = async (name: string): Promise<DurableRead> => {
+    const rows = (await call(`${base()}?name=eq.${q(name)}&select=body,etag`)) as { body: string; etag: string }[]
+    return rows[0] ? { text: rows[0].body, etag: rows[0].etag } : null
+  }
+  const rawList = async (prefix: string): Promise<string[]> => {
+    const rows = (await call(`${base()}?name=like.${q(prefix.replace(/[*%_\\]/g, ''))}*&select=name&order=name`)) as { name: string }[]
+    return rows.map((r) => r.name)
+  }
+  return {
+    kind: 'supabase',
+    async read(name, opts) {
+      if (opts?.fresh) return rawRead(name)
+      return soften(name, () => viaShared(['fan-sb', name], sharedTag(name), () => rawRead(name)), null, opts?.soft)
+    },
+    async write(name, text, etag) {
+      const next = randomTag()
+      const rows = (etag === null
+        ? await call(`${base()}?on_conflict=name`, { method: 'POST', headers: { Prefer: 'return=representation,resolution=ignore-duplicates' }, body: JSON.stringify({ name, body: text, etag: next }) })
+        : await call(`${base()}?name=eq.${q(name)}&etag=eq.${q(etag)}`, { method: 'PATCH', headers: { Prefer: 'return=representation' }, body: JSON.stringify({ body: text, etag: next, updated_at: new Date().toISOString() }) })) as unknown[]
+      await dropShared(name) // won or lost, the shared copy is no longer the newest
+      return !!rows?.length // empty = somebody else wrote (or created) it first
+    },
+    async list(prefix, opts) {
+      if (opts?.fresh) return rawList(prefix)
+      return soften(prefix, () => viaShared(['fan-sb-list', prefix], sharedListTag(prefix), () => rawList(prefix)), [] as string[], opts?.soft)
+    },
+  }
+}
+
+/** Supabase first. Blob only for a file Supabase has not got yet (copied across), or for everything while the table is missing. */
+function layeredStore(sb: DurableStore, blob: DurableStore | null): DurableStore {
+  const st = g as typeof g & { fanSbMissing?: number; fanBlobQuiet?: number }
+  const tableGone = () => !!st.fanSbMissing && Date.now() - st.fanSbMissing < 60_000
+  const viaBlob = <T>(e: unknown, fallback: (() => Promise<T>) | null): Promise<T> => {
+    if (e instanceof TableMissing && fallback) { st.fanSbMissing = Date.now(); console.error('[fan-life]', e.message, 'Using Blob meanwhile.'); return fallback() }
+    throw e
+  }
+  async function fromBlob(name: string): Promise<DurableRead> {
+    if (!blob || (st.fanBlobQuiet && Date.now() - st.fanBlobQuiet < 3_600_000)) return null
+    try {
+      const old = await blob.read(name, { fresh: true })
+      if (!old) return null
+      await sb.write(name, old.text, null) // create-only: never over a copy Supabase already holds
+      return sb.read(name, { fresh: true })
+    } catch { st.fanBlobQuiet = Date.now(); return null } // Blob refuses (its cap): leave it alone for an hour
+  }
+  return {
+    kind: 'supabase',
+    async read(name, opts) {
+      if (tableGone() && blob) return blob.read(name, opts)
+      try {
+        const hit = await sb.read(name, opts?.fresh ? opts : { ...opts, soft: false })
+        if (hit) return hit
+        return await fromBlob(name)
+      } catch (e) {
+        if (e instanceof TableMissing) return viaBlob(e, blob ? () => blob.read(name, opts) : null)
+        if (opts?.fresh || opts?.soft === false) throw e
+        return null // a page's read carries on (rule 105)
+      }
+    },
+    async write(name, text, etag) {
+      if (tableGone() && blob) return blob.write(name, text, etag)
+      try { return await sb.write(name, text, etag) } catch (e) { return viaBlob(e, blob ? () => blob.write(name, text, etag) : null) }
+    },
+    async list(prefix, opts) {
+      if (tableGone() && blob) return blob.list(prefix, opts)
+      try { return await sb.list(prefix, opts?.fresh ? opts : { ...opts, soft: false }) } catch (e) {
+        if (e instanceof TableMissing) return viaBlob(e, blob ? () => blob.list(prefix, opts) : null)
+        if (opts?.fresh || opts?.soft === false) throw e
+        return []
+      }
+    },
+  }
 }
 
 /**
@@ -176,7 +277,9 @@ function blobStore(): DurableStore {
 /** The store, or null when none is connected. Tests inject one through `useDurableStore`. */
 export function durable(): DurableStore | null {
   if (g.fanDurable !== undefined) return g.fanDurable
-  return blobConnected() ? (g.fanDurable = blobStore()) : null
+  const blob = blobConnected() ? blobStore() : null
+  if (supabaseConnected()) return (g.fanDurable = layeredStore(supabaseStore(), blob))
+  return (g.fanDurable = blob)
 }
 export function useDurableStore(store: DurableStore | null) { g.fanDurable = store }
 

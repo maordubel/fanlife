@@ -15,7 +15,7 @@ export type Integration={name:string;present:boolean;note:string}
 export function storageMap():StorageRow[]{
  const d=durable(),info=storageInfo(),tmp=onServerless(),root=dataRoot()
  const shared:StorageRow['durable']=d?(info.durable?'yes':'unknown'):(tmp?'no':'yes')
- const where=d?'Vercel Blob (private)':tmp?`${root} (this instance only)`:root
+ const where=d?(d.kind==='supabase'?'Supabase · worker_fanlife_files (server only)':'Vercel Blob (private)'):tmp?`${root} (this instance only)`:root
  return [
   {what:'Control state — clubs, gates, decisions, publication',where,durable:shared,note:info.error||info.note},
   {what:'Research profiles added in the control room',where,durable:shared,note:'The scheduled collector pins these when FAN_LIFE_RESEARCH_URL and FAN_LIFE_CRON_SECRET are set on GitHub.'},
@@ -30,9 +30,9 @@ const has=(k:string)=>!!(process.env[k]&&process.env[k]!.length)
 export function integrations():Integration[]{
  return [
   {name:'Owner key (FAN_LIFE_ADMIN_KEY)',present:has('FAN_LIFE_ADMIN_KEY'),note:'Required for this desk in production.'},
-  {name:'Blob store (BLOB_STORE_ID or BLOB_READ_WRITE_TOKEN)',present:has('BLOB_STORE_ID')||has('BLOB_READ_WRITE_TOKEN'),note:'Keeps control state across restarts.'},
+  {name:'Blob store (BLOB_STORE_ID or BLOB_READ_WRITE_TOKEN)',present:has('BLOB_STORE_ID')||has('BLOB_READ_WRITE_TOKEN'),note:'Legacy only: files Supabase does not hold yet are copied across from it once. Not needed.'},
   {name:'Scheduler secret (CRON_SECRET)',present:has('CRON_SECRET'),note:'Lets GitHub runs call the autopilot and pin profiles. Must equal the GitHub secret FAN_LIFE_CRON_SECRET.'},
-  {name:'Supabase (NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY)',present:has('NEXT_PUBLIC_SUPABASE_URL')&&has('SUPABASE_SERVICE_ROLE_KEY'),note:'Durable accounts, market and audience events outside evaluation mode.'},
+  {name:'Supabase (NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY)',present:has('NEXT_PUBLIC_SUPABASE_URL')&&has('SUPABASE_SERVICE_ROLE_KEY'),note:'Keeps control state, research and game data (worker_fanlife_files); durable accounts, market and audience events outside evaluation mode.'},
   {name:'Fixtures feed (THESPORTSDB_KEY)',present:has('THESPORTSDB_KEY'),note:'Next-up fixtures on the hub.'},
  ]
 }

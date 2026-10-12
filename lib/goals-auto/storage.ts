@@ -11,7 +11,7 @@ import {inOrder,untilWon} from '@/lib/master/cas'
  * works on local files — but `isDurable()` is false, and the gate then refuses automatic publication (fail closed,
  * spec §0 and §3): an unattended publish that a restart could erase is a false publication.
  */
-export const isDurable=()=>{const d=durable();return !!d&&d.kind==='vercel-blob'}
+export const isDurable=()=>{const d=durable();return !!d&&d.kind!=='memory'}
 const NAME=(n:string)=>`goals/${n}.json`
 const local=(n:string)=>path.join(dataRoot(),'goals',`${n}.json`)
 

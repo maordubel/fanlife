@@ -30,7 +30,7 @@ export function GoalsAutomation(){
   <ul className="desk-rows">
    <li><span className="desk-stamp">{last?last.state:'never run'}</span><div><b>Last pass</b><p>{last?`${last.at.slice(0,16).replace('T',' ')} · ${last.note}`:'No pass yet.'}</p></div></li>
    <li><span className="desk-stamp">{total('candidate')+total('sequence_candidate')+total('ready_for_review')+total('held')+total('auto_publishable')+total('published')}</span><div><b>Goals found</b><p>{total('ready_for_review')} ready for review · {total('held')} held · {total('published')} published · {total('candidate')} without a move</p></div></li>
-   <li data-durable={s.durable}><span className="desk-stamp">{s.durable?'Durable':'Not durable'}</span><div><b>Storage</b><p>{s.durable?'Published goals survive restarts.':'No durable store is connected, so nothing can publish itself. Connect Vercel Blob first.'}</p></div></li>
+   <li data-durable={s.durable}><span className="desk-stamp">{s.durable?'Durable':'Not durable'}</span><div><b>Storage</b><p>{s.durable?'Published goals survive restarts.':'No durable store is connected, so nothing can publish itself. Set SUPABASE_SERVICE_ROLE_KEY first.'}</p></div></li>
   </ul>
   <p className="desk-actions">
    <button type="button" className="desk-btn min-h-tap" disabled={api.busy} onClick={()=>act({op:'run'},'Pass finished.')}>Run one safe pass now</button>

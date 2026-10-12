@@ -20,6 +20,7 @@ import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {CORE_CLUB_IDS} from '../../lib/clubs/resolver.ts'
 import {SHARED_GATES} from '../../lib/clubs/gates.ts'
+import LAUNCH from '../../lib/master/launch-defaults.json' with {type:'json'}
 
 const port=process.env.SWEEP_PORT||'3219',base=`http://127.0.0.1:${port}`,ADMIN_KEY='sweep-owner-key-0123456789'
 const out=process.env.SWEEP_OUT||'/tmp/fanlife-route-sweep';mkdirSync(out,{recursive:true})
@@ -68,6 +69,8 @@ try{
   for(const door of ['','/play','/history','/terrace','/life'])await visit(`${id}${door||' home'}`,`/clubs/${id}${door}`)
   for(const g of SHARED_GATES){
    const url=g.key==='timeline'?`/clubs/${id}/timeline?seed=42`:`/clubs/${id}/${g.key}?seed=42`
+   // a gate the club's data cannot play yet is switched off in production (launch defaults) and answers 404 — the gate wall shows it as "In preparation"
+   if(LAUNCH[id]&&!LAUNCH[id].includes(g.number)){await visit(`${id} gate ${g.number} ${g.key} (not playable yet)`,url,{expect:404});continue}
    const r=await visit(`${id} gate ${g.number} ${g.key}`,url);if(!r)continue
    const main=page.locator('main#main');if(!(await main.count())){fail(`${id} ${g.key}`,'no main landmark');continue}
    const text=(await main.innerText()).trim()

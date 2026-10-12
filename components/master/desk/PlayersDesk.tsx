@@ -43,7 +43,7 @@ export function PlayersDesk(){
    <p className="pcc-lede">Edit a man’s positions, price, manager score — or remove him from the squad. A draft changes nothing; a published change reaches every game, and the archive’s own value stays on file and one click away.</p></header>
   <nav className="pcc-tabs" aria-label="Player Control Center">{([['','Players'],['reports','Reports'],['merge','Merge duplicates'],['bulk','Bulk edit (CSV)']] as const).map(([k,l])=><button key={k} type="button" className="pcc-chip" aria-pressed={(sp.get('tab')||'')===k} onClick={()=>set('tab',k||null)}>{l}</button>)}</nav>
   {tab==='reports'?<ReportsPanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='merge'?<MergePanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='bulk'?<BulkPanel/>:<>
-  {data&&!data.storage.durable&&<p role="alert" className="desk-state" data-state="error"><b>Changes here will not survive a restart.</b> The control room has no durable store connected ({data.storage.kind}). Connect the Blob store before relying on it.</p>}
+  {data&&!data.storage.durable&&<p role="alert" className="desk-state" data-state="error"><b>Changes here will not survive a restart.</b> The control room has no durable store connected ({data.storage.kind}). Set SUPABASE_SERVICE_ROLE_KEY before relying on it.</p>}
   {data?.storage.error&&<p role="alert" className="desk-state" data-state="error">The player files are unreachable ({data.storage.error}). The games keep the last published values.</p>}
   {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}
   {c&&<ul className="pcc-stats" aria-label="Where the archive stands">

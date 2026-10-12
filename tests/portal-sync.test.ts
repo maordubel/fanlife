@@ -493,6 +493,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261009240000_worker_rest_of_world.sql', // any club, any shirt (supabase/tests/74-world.sql)
       '20261009250000_worker_privacy.sql', // stage A privacy: identity, anonymous, display, opaque photos (supabase/tests/75-privacy.sql)
       '20261009260000_worker_contributions.sql', // stage C: per-photo consent, review queue, club merge (supabase/tests/76-contributions.sql)
+      '20261012090000_worker_fanlife_files.sql', // FAN LIFE's server store, off the Blob cap (supabase/tests/77-fanlife-files.sql)
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue
