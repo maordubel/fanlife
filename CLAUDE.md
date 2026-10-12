@@ -3016,3 +3016,7 @@ Owner: *"no feature may ever close because of a limit — every feature, the adm
    while the table is missing. Supabase's free plan has no operation cap; the shared data cache keeps its traffic to a few
    hundred reads a month. `vercel.json` deploys `main` only (`claude/*`, `dependabot/*` off) — CI builds every branch anyway,
    and each preview was ~300MB against the Hobby 10GB deployment-storage cap.
+6. **"Not found" ≠ "could not ask"** (owner's reliability plan, 12.10.2026). A file Supabase lacks while Blob refuses is
+   `MigrationPending`: page reads carry on (null → published lineup), a read-before-write throws, so no save is ever built on a seed
+   over a copy Blob may still hold (503 from the admin API). It clears when Blob answers (copied across) or when the owner presses
+   Operations → Move to Supabase → Retire Blob (`_store/blob-retired.json`). `tests/master/supabase-store.test.ts` holds it.
