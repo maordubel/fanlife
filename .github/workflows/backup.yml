@@ -1,0 +1,47 @@
+# Daily backup (owner's reliability plan, 12.10.2026). The control room's files and every worker_ table, read by the server with
+# the service role, ENCRYPTED HERE with the owner's passphrase before anything is stored. This repository is public, so a backup
+# that is not encrypted is never uploaded — no passphrase, no backup, and the run says so.
+# Restore: Actions → this run → download the artifact → decrypt with the passphrase (see docs/fanlife/49-backup-restore.md).
+name: Backup
+on:
+  schedule:
+    - cron: '41 2 * * *'
+  workflow_dispatch:
+permissions: {}
+jobs:
+  backup:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Read, check, encrypt
+        env:
+          URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+          CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+          PASS: ${{ secrets.FAN_LIFE_BACKUP_PASSPHRASE }}
+        run: |
+          set -euo pipefail
+          if [ "${#PASS}" -lt 20 ]; then
+            echo "::error title=Backup passphrase missing::Add FAN_LIFE_BACKUP_PASSPHRASE (20+ characters) in GitHub → Settings → Secrets and variables → Actions. Keep a copy somewhere safe: without it the backups cannot be opened. Nothing was stored."
+            exit 1
+          fi
+          if [ "${#CRON_SECRET}" -lt 32 ]; then echo "::error::FAN_LIFE_CRON_SECRET is missing."; exit 1; fi
+          code=$(curl --silent --show-error --max-time 300 -o backup.jsonl -w '%{http_code}' -H "Authorization: Bearer $CRON_SECRET" "$URL/api/master/backup")
+          if [ "$code" != "200" ]; then echo "::error title=Backup endpoint answered $code::$(head -c 300 backup.jsonl)"; rm -f backup.jsonl; exit 1; fi
+          # a backup is only kept when it is whole: it starts with the header, ends with the counts, and holds the control room's files
+          head -n1 backup.jsonl | grep -q '"kind":"fan-life-backup"' || { echo "::error::Backup has no header."; rm -f backup.jsonl; exit 1; }
+          tail -n1 backup.jsonl | grep -q '"kind":"end"' || { echo "::error::Backup was cut off before the end."; rm -f backup.jsonl; exit 1; }
+          grep -q '"name":"control.json"' backup.jsonl || echo "::warning::control.json is not in Supabase yet (Blob not migrated)."
+          tail -n1 backup.jsonl | head -c 2000; echo
+          name="fan-life-backup-$(date -u +%Y-%m-%d).jsonl.gz.enc"
+          gzip -9 -c backup.jsonl | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:PASS -out "$name"
+          # prove it opens before keeping it, then remove every plaintext copy
+          openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:PASS -in "$name" | gunzip | cmp - backup.jsonl
+          rm -f backup.jsonl
+          echo "NAME=$name" >> "$GITHUB_ENV"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.NAME }}
+          path: ${{ env.NAME }}
+          retention-days: 90
+          if-no-files-found: error
