@@ -2,7 +2,7 @@ import {slotsOf} from '@/lib/clubs/rumble-xi/formations'
 import {LEGENDS_RULES as R,QUOTA_POS,type QuotaPos} from './config'
 import {abilities,cardOf,catalogMap,isBye,me,nextFixture,pauseOf,table,windowOpen} from './career'
 import {available} from './discipline'
-import {cashLeft,confirmCheck,deficits,groups,minCostToFinish,type GroupInfo} from './draft'
+import {cashLeft,confirmCheck,deal,deficits,minCostToFinish,schedule} from './draft'
 import {ABILITIES,saleQuote} from './economy'
 import {fieldable,lineupError,quotaCount} from './squad'
 import {hash} from '@/lib/clubs/rumble-rng'
@@ -15,12 +15,12 @@ import type {Card,Career,Fixture,MatchEventRow,Tactics} from './types'
 export type CardView={id:string;name:string;pos:QuotaPos;alt?:QuotaPos[];price:number;stars:number;attrs:Record<string,number>;from:number|null;to:number|null;decades:number[]}
 export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;yellows:number;suspension:number;injury:number;injuryKind:string|null;fit:boolean;sale:{net:number;quoted:number;fees:number}|null}
 export type LogLine={minute:number;side:0|1|null;kind:MatchEventRow['kind'];text:string;mine:boolean}
-export type ResultView={id:string;round:number;home:string;away:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean}
+export type ResultView={id:string;round:number;home:string;away:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean;/** the highlights reel — attached on the server (`kits.ts`) to the manager's last result */reel?:import('@/lib/highlights/types').Reel}
 export type CareerView={
  id:string;revision:number;status:Career['status'];phase:Career['phase'];cutscene:Career['cutscene'];clubId:string;clubName:string;
  season:number;rounds:number;played:number;cash:number;reputation:number;abilities:{id:string;label:string;hint:string;at:number;open:boolean}[];
  settings:Career['settings'];rules:{minSquad:number;maxSquad:number;minimums:Record<QuotaPos,number>;maxSubs:number;stops:number};
- draft:null|{slot:number;required:number;optional:number;picks:(CardView&{slot:number})[];spent:number;left:number;minToFinish:number;rerollsLeft:number;group:QuotaPos|null;groups:GroupInfo[];offers:(CardView&{tier:string;locked:string|null})[];deficits:Record<QuotaPos,number>;canConfirm:string|null;optionalOpen:boolean};
+ draft:null|{slot:number;required:number;optional:number;picks:(CardView&{slot:number})[];spent:number;left:number;minToFinish:number;rerollsLeft:number;group:QuotaPos|null;upcoming:QuotaPos[];stuck:boolean;/** names of the same line that roll past the payline before the three land */strip:string[];offers:(CardView&{tier:string;locked:string|null})[];deficits:Record<QuotaPos,number>;canConfirm:string|null;optionalOpen:boolean};
  squad:SquadView[];quotas:Record<QuotaPos,number>;emergency:{id:string;name:string;pos:QuotaPos;games:number}[];
  lineup:{formation:string;xi:string[];bench:string[];tactics:Tactics;error:string|null;slots:{id:string;fine:string;family:string;x:number;y:number}[]};
  window:null|{which:'pre'|'mid';offers:CardView[];sold:string[]};
@@ -49,9 +49,10 @@ export function careerView(c:Career):CareerView{
  const squad:SquadView[]=t.squad.map(s=>{const card=by.get(s.id)!,st=t.status[s.id],q=win?saleQuote(card.price,s.paid,s.apps,card.stars,c.settings):null
   return {...cv(card),quota:s.quota,paid:s.paid,apps:s.apps,appsTotal:s.appsTotal,goals:s.goals,yellows:st?.yellows??0,suspension:st?.suspension??0,injury:st?.injury??0,injuryKind:st?.injuryKind??null,fit:available(st),sale:q?{net:q.net,quoted:q.quoted,fees:Math.round((q.fee+q.guard)*10)/10}:null}})
   .sort((a,b)=>QUOTA_POS.indexOf(a.quota)-QUOTA_POS.indexOf(b.quota)||b.stars-a.stars||a.name.localeCompare(b.name))
- const d=c.draft&&c.phase==='draft'?c.draft:null,seed=hash(`${c.id}:draft`)
+ const seed=hash(`${c.id}:draft`),d=c.draft&&c.phase==='draft'?deal(c.catalog.cards,c.draft,seed):null
  const draft=d?{slot:d.slot,required:R.initialDraftRequired,optional:R.initialDraftOptional,picks:d.picks.map(p=>({...cv(by.get(p.id)!),slot:p.slot})),spent:d.spent,left:cashLeft(d),minToFinish:minCostToFinish(c.catalog.cards,d),rerollsLeft:d.rerollsLeft,group:d.group,
-  groups:d.picks.length>=R.initialDraftRequired+R.initialDraftOptional||(d.picks.length>=R.initialDraftRequired&&d.optionalDone)?[]:groups(c.catalog.cards,d,seed),offers:d.offers.map(o=>({...cv(by.get(o.id)!),tier:o.tier,locked:o.locked})),deficits:deficits(d),canConfirm:confirmCheck(c.catalog.cards,{...d,optionalDone:true}),optionalOpen:d.picks.length>=R.initialDraftRequired&&!d.optionalDone}:null
+  upcoming:schedule(d),stuck:!d.group&&d.picks.length<R.initialDraftRequired,
+  strip:d.group?c.catalog.cards.filter(x=>x.pos===d.group&&!d.offers.some(o=>o.id===x.id)).sort((a,b)=>hash(`${seed}:${d.slot}:${a.id}`)-hash(`${seed}:${d.slot}:${b.id}`)).slice(0,16).map(x=>x.name):[],offers:d.offers.map(o=>({...cv(by.get(o.id)!),tier:o.tier,locked:o.locked})),deficits:deficits(d),canConfirm:confirmCheck(c.catalog.cards,{...d,optionalDone:true}),optionalOpen:d.picks.length>=R.initialDraftRequired&&!d.optionalDone}:null
  const fx=c.phase==='playoff'?c.season.playoff:nextFixture(c),ab=abilities(c)
  let next:CareerView['next']=null
  if(fx&&!fx.result&&(fx.home===c.clubId||fx.away===c.clubId)){

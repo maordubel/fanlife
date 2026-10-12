@@ -1,5 +1,5 @@
 'use client'
-import {useEffect,useMemo,useState,useTransition} from 'react'
+import {useEffect,useMemo,useRef,useState,useTransition} from 'react'
 import {legendsAction,legendsMarket} from '@/app/all-football/legends/actions'
 import type {CardView,CareerView,ResultView,SquadView} from '@/lib/legends/view'
 import {ATTR_LABEL,ROLE_ATTRS,type AttrKey} from '@/lib/legends/ratings'
@@ -7,6 +7,9 @@ import {Emblem,Stars} from './Brand'
 import {DraftRoom} from './DraftRoom'
 import {LegendCard,money,posName,years,GAME_VALUES} from './LegendCard'
 import {CareerFriendlies} from './Friendlies'
+import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
+import {Theatre,type TheatreSound} from '@/components/highlights/Theatre'
+import {useRumbleSound} from '@/components/clubs/rumble/shared'
 
 /**
  * One Legends career on one screen. Every change is ONE server action carrying the revision this screen saw and a fresh key; the
@@ -21,7 +24,9 @@ const TEMPO=[['slow','Patient'],['normal','Normal'],['fast','Fast']] as const
 const newKey=()=>(globalThis.crypto?.randomUUID?.()??`${Date.now()}${Math.random()}`).replace(/[^A-Za-z0-9]/g,'').slice(0,32).padEnd(12,'0')
 const ordinal=(n:number)=>`${n}${n%10===1&&n!==11?'st':n%10===2&&n!==12?'nd':n%10===3&&n!==13?'rd':'th'}`
 
-export function CareerApp({initial,friendlies=false,decades}:{initial:CareerView;friendlies?:boolean;decades:number[]}){
+export function CareerApp({initial,friendlies=false,decades,wardrobe}:{initial:CareerView;friendlies?:boolean;decades:number[];wardrobe:RumbleWardrobe}){
+ // a result that arrives while the screen is open plays its highlights by itself; one already there waits for a tap
+ const [seen]=useState(initial.last?.id??null),autoplayed=useRef(new Set<string>())
  const [v,setV]=useState(initial),[tab,setTab]=useState<Tab>('match'),[msg,setMsg]=useState<{kind:'ok'|'error';text:string}|null>(null),[busy,start]=useTransition()
  const send=(a:Record<string,unknown>,ok?:string)=>start(async()=>{
   const r=await legendsAction(v.id,{...a,key:newKey(),rev:v.revision})
@@ -42,9 +47,9 @@ export function CareerApp({initial,friendlies=false,decades}:{initial:CareerView
   <p className="lgm-live" role="status" aria-live="polite" data-kind={msg?.kind}>{msg?.text??''}</p>
   {v.cutscene?<Cutscene v={v} busy={busy} send={send}/>:null}
   {v.status==='archived'?<p className="lgm-error">This career is archived. Restore it from the Legends front page to play on.</p>:null}
-  {v.phase==='draft'?<DraftRoom v={v} busy={busy} send={send}/>:<>
+  {v.phase==='draft'?<DraftRoom v={v} busy={busy} send={send} wardrobe={wardrobe}/>:<>
    <nav className="lgm-tabs" aria-label="Career">{tabs.map(t=><button key={t.id} type="button" className="min-h-tap" aria-current={tab===t.id?'page':undefined} onClick={()=>{setTab(t.id);setMsg(null)}}>{t.label}{t.id==='market'&&v.window?<i aria-label="open"/>:null}</button>)}</nav>
-   {tab==='match'?<Matchday v={v} busy={busy} send={send} go={setTab}/>:null}
+   {tab==='match'?<Matchday v={v} busy={busy} send={send} go={setTab} fresh={!!v.last&&v.last.id!==seen&&!autoplayed.current.has(v.last.id)} played={id=>autoplayed.current.add(id)}/>:null}
    {tab==='squad'?<Squad v={v} busy={busy} send={send}/>:null}
    {tab==='market'?<Market v={v} busy={busy} send={send} decades={decades}/>:null}
    {tab==='league'?<League v={v}/>:null}
@@ -79,10 +84,11 @@ function Cutscene({v,busy,send}:{v:CareerView;busy:boolean;send:(a:Record<string
 }
 
 /* ───────── matchday ───────── */
-function Matchday({v,busy,send,go}:{v:CareerView;busy:boolean;send:(a:Record<string,unknown>,ok?:string)=>void;go:(t:Tab)=>void}){
+function Matchday({v,busy,send,go,fresh,played}:{v:CareerView;busy:boolean;send:(a:Record<string,unknown>,ok?:string)=>void;go:(t:Tab)=>void;fresh:boolean;played:(id:string)=>void}){
  if(v.live)return <LiveMatch v={v} busy={busy} send={send}/>
  const me=v.table.findIndex(r=>r.mine)
  return <div className="lgm-grid">
+  {v.last?.reel?<Highlights key={v.last.id} r={v.last} fresh={fresh} played={played}/>:null}
   {v.phase==='window'?<section className="lgm-panel lgm-window" aria-labelledby="lgm-win-h">
    <p className="lgm-kicker">{v.window?.which==='pre'?(v.season===1?'After the draft':`Pre-season · season ${v.season}`):'The halfway window'}</p>
    <h2 id="lgm-win-h">The transfer window is open</h2>
@@ -107,6 +113,17 @@ function Matchday({v,busy,send,go}:{v:CareerView;busy:boolean;send:(a:Record<str
   {v.last?<section className="lgm-panel"><p className="lgm-kicker">Last result · round {v.last.round}</p><Result r={v.last}/></section>:null}
   <section className="lgm-panel"><p className="lgm-kicker">The table</p><Table rows={v.table.slice(0,Math.max(4,me+1))}/></section>
  </div>
+}
+/** the last result as highlights — watch only (owner, 12.10.2026). A fresh result plays by itself; an old one waits for a tap */
+function Highlights({r,fresh,played}:{r:ResultView;fresh:boolean;played:(id:string)=>void}){
+ const [auto]=useState(fresh),[open,setOpen]=useState(fresh),snd=useRumbleSound()
+ useEffect(()=>{if(auto)played(r.id)},[auto,played,r.id])
+ const sound:TheatreSound=n=>snd.play(n==='whistle'?'kickoff':n==='save'?'roar':n,n==='save'?.35:.6)
+ return <section className="lgm-panel lgm-highlights" aria-labelledby="lgm-hl-h">
+  <p className="lgm-kicker" id="lgm-hl-h">Highlights · round {r.round}</p>
+  {open?<Theatre reel={r.reel!} sound={sound} autoStart={auto}/>:<p className="lgm-actions"><button type="button" className="lgm-go min-h-tap" onClick={()=>setOpen(true)}>Watch the highlights</button><span className="lgm-fine">{r.home} {r.goals[0]}–{r.goals[1]} {r.away}</span></p>}
+  {open?<p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={snd.toggle} aria-pressed={!snd.on}>{snd.on?'Sound on':'Sound off'}</button></p>:null}
+ </section>
 }
 function Result({r,full=false}:{r:ResultView;full?:boolean}){
  const lines=r.log.filter(l=>full?l.kind!=='kickoff':['goal','red','injury','penalties'].includes(l.kind))

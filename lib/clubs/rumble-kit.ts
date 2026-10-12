@@ -8,7 +8,7 @@ import type {RumbleCard} from './rumble'
  * Colour rule 95: a kit colour the club page may not show (the rival's family, or one the magazine
  * cannot paint) is dropped before anything is drawn; a kit left with no colour is not worn.
  */
-export type RumbleKit={id:string;season:string;design:string|null;colours:string[]}
+export type RumbleKit={id:string;season:string;design:string|null;colours:string[];/** shorts and socks when the record names them (the match highlights paint them) */shortsColour?:string|null;socksColour?:string|null}
 export type RumbleWardrobe={home:RumbleKit[];away:RumbleKit[];/** a photograph of the man's own shirt of his period (Hapoel Tel Aviv, from the kit archive), by card id — worn by the side that is his club's */photos?:Record<string,{src:string;label:string}>}
 export type Worn={source:'archive';kit:RumbleKit}|{source:'livery';variant:'home'|'away'}
 
@@ -26,7 +26,8 @@ export function allowedColours(colours:string[],forbidden:(hex:string)=>boolean)
 export const seasonYear=(season:string)=>{const m=/(\d{4})/.exec(season);return m?Number(m[1]):null}
 
 export function rumbleWardrobe(kits:KitView[],forbidden:(hex:string)=>boolean):RumbleWardrobe{
- const dress=(k:KitView):RumbleKit|null=>{const colours=allowedColours(k.colours,forbidden);return colours.length&&seasonYear(k.season)!==null?{id:k.id,season:k.season,design:k.design,colours}:null}
+ const part=(p:KitView['shorts'])=>p&&allowedColours([p.colour],forbidden).length?p.colour:null
+ const dress=(k:KitView):RumbleKit|null=>{const colours=allowedColours(k.colours,forbidden);return colours.length&&seasonYear(k.season)!==null?{id:k.id,season:k.season,design:k.design,colours,...(part(k.shorts)?{shortsColour:part(k.shorts)}:{}),...(part(k.socks)?{socksColour:part(k.socks)}:{})}:null}
  const by=(types:string[])=>kits.filter(k=>types.includes((k.type||'home').toLowerCase())).map(dress).filter((k):k is RumbleKit=>!!k).sort((a,b)=>seasonYear(a.season)!-seasonYear(b.season)!||a.id.localeCompare(b.id))
  return {home:by(['home']),away:by(['away','third'])}
 }

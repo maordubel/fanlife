@@ -15,7 +15,8 @@ import s from './rumble.module.css'
  */
 const STEP_MS=60
 
-function Reel({names,stopAt,landed,reduced,label}:{names:string[];stopAt:number;landed:boolean;reduced:boolean;label:string}){
+/** one reel: the names roll past the payline and the cover drops away when it lands — shared with LEGENDS MANAGER's draft */
+export function SlotReel({names,stopAt,landed,reduced,label}:{names:string[];stopAt:number;landed:boolean;reduced:boolean;label:string}){
  const [go,setGo]=useState(false)
  useEffect(()=>{if(reduced)return;const id=window.requestAnimationFrame(()=>setGo(true));return()=>window.cancelAnimationFrame(id)},[reduced])
  const travel=`translateY(calc(-${names.length-1} * var(--rr-row-h)))`
@@ -74,7 +75,7 @@ export function RumbleSlotMachine({board,slot,seed,picks,canPick,onPick,copy,war
   <p className="sr-only" aria-live="polite">{spinning?tr(copy,'rr.reels'):''}</p>
   <div className={s.reels} role="group" aria-label={card?tr(copy,'rr.question',{position:posName(copy,card.position)}):undefined}>
    {cards.map((c,i)=><div className={s.reel} key={`${signature}-${c.id}`}>
-    {!reduced&&<Reel names={strips[i]!} stopAt={stops[i]!} landed={!!landed[i]} reduced={reduced} label={landed[i]?tr(copy,'rr.landed'):tr(copy,'rr.spinning')}/>}
+    {!reduced&&<SlotReel names={strips[i]!} stopAt={stops[i]!} landed={!!landed[i]} reduced={reduced} label={landed[i]?tr(copy,'rr.landed'):tr(copy,'rr.spinning')}/>}
     <RumbleCardButton card={c} index={i} selected={picks[slot]===c.id} disabled={!canPick(c)||!landed[i]} blocked={!canPick(c)} flip={!!landed[i]&&!reduced} onPick={e=>onPick(c,e)} copy={copy} wardrobe={wardrobe}/>
    </div>)}
   </div>

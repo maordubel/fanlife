@@ -12,6 +12,8 @@ import {CORE_CLUB_IDS} from '@/lib/clubs/resolver'
 import {REGISTRY} from '@/lib/master/registry'
 import {livery} from '@/lib/club-livery'
 import {forbiddenColor} from '@/lib/clubs/theme'
+import {highlightsAllow} from '@/lib/highlights/page'
+import {door} from '@/lib/features-server'
 import {kitViews} from '@/lib/clubs/gate-content'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import {DEFAULT_FORMATION,isFormation} from '@/lib/clubs/rumble-xi/formations'
@@ -53,7 +55,7 @@ export const view:GateView=async props=>{
  return <>
   <RumbleModeBar club={id} clubName={club.identity.name} locale={locale} mode="five"/>
   <RumbleOpponentBar club={id} clubs={clubs} vs={opponent.kind==='club'?vsParam:null} duel={token&&opponent.kind==='locked'?duel:null} from={token&&opponent.kind==='locked'?token.c:null} locale={locale} me={{id,name:club.identity.name,pattern:livery(id)?.pattern,initials:livery(id)?.initials}}/>
-  <RumbleGame key={`${gameKey}:${valid??'self'}`} club={id} version={club.version} locale={locale} main={{seed:a,draft:deal(a)}} shuffle={{seed:b,draft:deal(b)}} wardrobe={wardrobe} playerCount={pool.length} vs={opponent.kind==='club'&&vsParam?vsParam:undefined} duel={token&&opponent.kind==='locked'&&duel?duel:undefined} againHref={`?${again}`} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:nameOf(rivalId)}}}/>
+  <RumbleGame key={`${gameKey}:${valid??'self'}`} club={id} version={club.version} locale={locale} main={{seed:a,draft:deal(a)}} shuffle={{seed:b,draft:deal(b)}} wardrobe={wardrobe} playerCount={pool.length} vs={opponent.kind==='club'&&vsParam?vsParam:undefined} duel={token&&opponent.kind==='locked'&&duel?duel:undefined} againHref={`?${again}`} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:nameOf(rivalId)}}} highlights={(await door('highlights')).open?highlightsAllow(hex=>forbiddenColor(club.theme,hex),{us:livery(id)?.primary,them:livery(rivalId)?.primary}):undefined}/>
  </>
 }
 
@@ -83,6 +85,6 @@ async function xiView({club,locale,round,gameKey,searchParams}:GateViewProps){
  const again=new URLSearchParams({lang:locale,mode:'xi',f,vs:same?'same':rivalId,seed:String(round.seed+1)})
  return <>
   {head(sp==='random'?'random':same?'same':rivalId)}
-  <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} main={{seed:main.seed,budget:main.budget,draft:main.draft}} shuffle={{seed:shuf.seed,budget:shuf.budget,draft:shuf.draft}} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed}/>
+  <RumbleXIGame key={`${gameKey}:${f}:${rivalId}`} club={id} version={club.version} locale={locale} main={{seed:main.seed,budget:main.budget,draft:main.draft}} shuffle={{seed:shuf.seed,budget:shuf.budget,draft:shuf.draft}} formation={f} rival={same?'same':rivalId} wardrobe={wardrobe} faces={{us:{id,name:club.identity.name},them:{id:rivalId,name:same?club.identity.name:nameOf(rivalId)}}} highlights={(await door('highlights')).open?highlightsAllow(hex=>forbiddenColor(club.theme,hex),{us:livery(id)?.primary,them:same?null:livery(rivalId)?.primary}):undefined} againHref={`?${again}`} playerCount={pool.length} roundSeed={round.seed}/>
  </>
 }

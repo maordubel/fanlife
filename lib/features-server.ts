@@ -7,7 +7,7 @@ import {featureDoor,featuresOf,type FeatureDoor,type Features} from '@/lib/featu
 export async function serverFeatures():Promise<Features>{return featuresOf(await readState().catch(()=>null))}
 /** the owner's verified cookie — never evaluation mode (rule 97) */
 export function isOwner():boolean{try{return adminSession()!==null}catch{return false}}
-export async function door(key:'allFootball'|'fanLeague'|'friendlies'):Promise<FeatureDoor&{features:Features}>{
+export async function door(key:import('./features').SwitchKey):Promise<FeatureDoor&{features:Features}>{
  const f=await serverFeatures()
  return {...featureDoor(f[key],isOwner()),features:f}
 }

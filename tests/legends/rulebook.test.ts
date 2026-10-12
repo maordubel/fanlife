@@ -4,7 +4,7 @@ import {DEFAULT_SETTINGS,LEGENDS_RULES as R,patchSettings,readSettings} from '@/
 import {eligible} from '@/lib/legends/catalog'
 import {applyAction,cashFromLedger,createCareer,isBye,me,pauseOf,type Action,type Intent} from '@/lib/legends/career'
 import {afterMatch,fresh} from '@/lib/legends/discipline'
-import {botDraft,draftMove,emptyDraft,groups,offersFor,TIER_PRICES} from '@/lib/legends/draft'
+import {botDraft,deal,DRAFT_ORDER,draftMove,emptyDraft,TIER_PRICES} from '@/lib/legends/draft'
 import {achievements,capBonuses,nextSeasonGrant,saleQuote} from '@/lib/legends/economy'
 import {run} from '@/lib/legends/engine'
 import {autopilot,matchLab} from '@/lib/legends/lab'
@@ -22,7 +22,7 @@ const ctx={now:NOW,catalogs:new Map(LEAGUE.map(c=>[c.club,c.cards]))}
 function newCareer(id='c0ffee0000000001'):Career{const r=createCareer({id,owner:'o'.repeat(32),now:NOW,own:LEAGUE[0]!,rivals:LEAGUE.slice(1),settings:DEFAULT_SETTINGS});if(!r.ok)throw new Error(r.error);return r.career}
 let n=0
 function act(c:Career,a:Intent){const r=applyAction(c,{...a,key:`k${n++}xxxxxxx`,rev:c.revision} as Action,ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
-function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})}return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
+function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})}return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
 
 describe('the draft (§1.2, D01–D07)',()=>{
  it('D01 · a club with one priced goalkeeper is not ready, and says why',()=>{
@@ -33,21 +33,32 @@ describe('the draft (§1.2, D01–D07)',()=>{
   const pool=poolOf('dry',120),e=eligible('dry',pool,new Set(pool.map(p=>p.id)),()=>false,new Map())
   expect(e.cards).toHaveLength(0);expect(e.excluded.noPrice).toBe(120);expect(readiness('dry','Dry FC',e).verdict).toBe('NOT_READY')
  })
- it('D03/D04 · three different men of the chosen line, one per tier; a pick that would strand the seventeen is locked',()=>{
-  const cat=LEAGUE[1]!;let d=emptyDraft()
+ it('D03/D04 · slots come up by themselves in the fixed line order; three different men, one per tier; nothing strands the seventeen',()=>{
+  const cat=LEAGUE[1]!;let d=deal(cat.cards,emptyDraft(),7);const lines:string[]=[]
   for(let s=0;s<17;s++){
-   const g=groups(cat.cards,d,7).find(x=>x.open)!;const o=offersFor(cat.cards,d,g.group,7)!
+   expect(d.group).not.toBeNull();lines.push(d.group!);const o=d.offers
    expect(new Set(o.map(x=>x.id)).size).toBe(3)
    const by=new Map(cat.cards.map(c=>[c.id,c]))
-   for(const x of o){expect(by.get(x.id)!.pos).toBe(g.group);expect(TIER_PRICES[x.tier as 'premium']).toContain(by.get(x.id)!.price)}
+   for(const x of o){expect(by.get(x.id)!.pos).toBe(d.group);expect(TIER_PRICES[x.tier as 'premium']).toContain(by.get(x.id)!.price)}
    expect(o.some(x=>!x.locked)).toBe(true)
-   d=(draftMove(cat.cards,{...d,group:g.group,offers:o},{kind:'pick',id:o.find(x=>!x.locked&&x.tier==='premium')?.id??o.find(x=>!x.locked)!.id},7) as {ok:true;draft:typeof d}).draft
+   d=(draftMove(cat.cards,d,{kind:'pick',id:o.find(x=>!x.locked&&x.tier==='premium')?.id??o.find(x=>!x.locked)!.id},7) as {ok:true;draft:typeof d}).draft
    expect(d.spent).toBeLessThanOrEqual(52)
   }
   expect(d.picks).toHaveLength(17)
+  expect(lines).toEqual(DRAFT_ORDER.slice(0,17))
+  // the optional eighteenth is dealt too when money is left (FW first), and can always be skipped
+  if(d.spent<=51)expect(d.group).not.toBeNull();else expect(d.group).toBeNull()
+  expect(draftMove(cat.cards,d,{kind:'skip'},7).ok).toBe(true)
+ })
+ it('D03b · an old save with no slot dealt deals the same three the view shows, and a pick of a man not dealt is refused',()=>{
+  const cat=LEAGUE[3]!,d=emptyDraft(),a=deal(cat.cards,d,11),b=deal(cat.cards,d,11)
+  expect(a.offers.map(o=>o.id)).toEqual(b.offers.map(o=>o.id));expect(a.group).toBe('GK')
+  const other=cat.cards.find(c=>!a.offers.some(o=>o.id===c.id))!
+  expect(draftMove(cat.cards,d,{kind:'pick',id:other.id},11).ok).toBe(false)
+  expect(draftMove(cat.cards,d,{kind:'pick',id:a.offers.find(o=>!o.locked)!.id},11).ok).toBe(true)
  })
  it('D05 · three rerolls and no fourth; picks and money are untouched',()=>{
-  const cat=LEAGUE[2]!;let d=emptyDraft();d=(draftMove(cat.cards,d,{kind:'group',group:'DF'},3) as {ok:true;draft:typeof d}).draft
+  const cat=LEAGUE[2]!;let d=deal(cat.cards,emptyDraft(),3)
   const first=d.offers.map(o=>o.id)
   for(let i=0;i<3;i++){const r=draftMove(cat.cards,d,{kind:'reroll'},3);expect(r.ok).toBe(true);if(r.ok){expect(r.draft.offers.map(o=>o.id).some(x=>first.includes(x))).toBe(false);d=r.draft}}
   const r=draftMove(cat.cards,d,{kind:'reroll'},3);expect(r.ok).toBe(false);expect(d.picks).toHaveLength(0);expect(d.spent).toBe(0)

@@ -42,7 +42,9 @@ export type MatchOutcome={goals:[number,number];pens:[number,number]|null;events
  injuries:[Record<string,{kind:'minor'|'moderate'|'severe';rounds:number}>,Record<string,{kind:'minor'|'moderate'|'severe';rounds:number}>];scorers:[Record<string,number>,Record<string,number>]}
 export type Live={fixture:string;mode:'fast'|'interactive';snapshot:MatchSnapshot;decisions:Decision[];startedAt:string}
 
-export type Fixture={id:string;round:number;home:string;away:string;result:{goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];seed:number}|null}
+/** who started, kept with the result so the highlights can name and dress them however the squads change later */
+export type FixtureSide={formation:string;xi:{id:string;name:string;pos:QuotaPos;from:number|null;to:number|null}[]}
+export type Fixture={id:string;round:number;home:string;away:string;result:{goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];seed:number;sides?:[FixtureSide,FixtureSide]}|null}
 export type LedgerEntry={key:string;season:number;kind:'draft-budget'|'draft-buy'|'board-grant'|'buy'|'sell'|'season-grant'|'bonus'|'emergency';amount:number;card?:string;note?:string;at:string}
 export type SeasonRecord={ordinal:number;place:number;of:number;points:number;w:number;d:number;l:number;gf:number;ga:number;champion:boolean;playoff:boolean;grant:number;bonus:number;cash:number;squad:string[];topScorer:{id:string;name:string;goals:number}|null}
 export type Season={ordinal:number;rounds:number;played:number;fixtures:Fixture[];windows:{pre:boolean;mid:boolean};bonusAwarded:number;playoff:Fixture|null;ended:boolean;ranks:string[]}

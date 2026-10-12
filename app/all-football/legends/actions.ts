@@ -7,6 +7,7 @@ import {viewer} from '@/lib/legends/owner'
 import {ctxFor,marketPage,startCareer} from '@/lib/legends/server'
 import {insertFriendly,mutateCareer,mutateFriendly,ownerIndex,readCareer,readFriendly,SaveUnavailable,setStatus} from '@/lib/legends/store'
 import {careerView,type CardView,type CareerView} from '@/lib/legends/view'
+import {withHighlights} from '@/lib/legends/kits'
 
 /**
  * LEGENDS MANAGER's server actions. The browser sends an intent with the revision it saw and a fresh key; the server reads who
@@ -42,7 +43,7 @@ export async function legendsAction(id:string,raw:unknown):Promise<{ok:true;view
   })
   if(!out)return {ok:false,error:'Career not found.',code:'missing'}
   if('error' in out)return out.error as Fail
-  return {ok:true,view:careerView(out.career),replay:out.replay,...(note?{note}:{})}
+  return {ok:true,view:await withHighlights(careerView(out.career),out.career),replay:out.replay,...(note?{note}:{})}
  }catch(e){return fail(e,'The move could not be saved. Try again.')}
 }
 
