@@ -19,7 +19,7 @@ export const metadata={title:'Legends Manager',description:'One club. Only the m
  * LEGENDS MANAGER — the front door (owner rulebook V1.0, 12.10.2026; replaces FAN LEAGUE behind the same switch). The owner
  * previews while it is off.
  */
-export default async function Page(){
+export default async function Page({searchParams}:{searchParams?:{club?:string}}){
  const d=await door('fanLeague');if(!d.open)notFound()
  const [owner,clubs,af]=await Promise.all([viewer(false),legendsClubs(),door('allFootball')])
  const idx=owner?await ownerIndex(owner):{v:1 as const,careers:[]}
@@ -39,7 +39,7 @@ export default async function Page(){
    </header>
    {!canSave()?<p className="lgm-error" role="status">Saving is not available on this server right now, so a career cannot be started. Nothing is lost.</p>:null}
    {rows.length?<Careers rows={rows} max={R.maxActiveCareers}/>:null}
-   <ClubRoll clubs={options} canStart={canSave()} full={activeCount(idx)>=R.maxActiveCareers}/>
+   <ClubRoll clubs={options} canStart={canSave()} full={activeCount(idx)>=R.maxActiveCareers} initial={typeof searchParams?.club==='string'?searchParams.club:null}/>
    <section className="lgm-code" aria-labelledby="lgm-code-h">
     <h2 id="lgm-code-h">The code of the legends</h2>
     <ol>

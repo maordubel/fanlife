@@ -162,3 +162,6 @@
 @media (prefers-reduced-motion: reduce) {
   .chip:active:not([data-off]) { transform: none; }
 }
+
+/* app mode on a phone (CLAUDE.md rule 115): the lobby is the screen, edge to edge, not a box floating on it */
+@media (max-width: 760px) { .ready { margin-inline: calc(var(--gutter, 16px) * -1); border-inline: 0; box-shadow: none; padding-inline: var(--gutter, 16px); } }

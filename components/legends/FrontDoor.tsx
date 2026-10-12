@@ -21,8 +21,9 @@ export function Careers({rows,max}:{rows:CareerRow[];max:number}){
   {err?<p className="lgm-error" role="alert">{err}</p>:null}
  </section>
 }
-export function ClubRoll({clubs,canStart,full}:{clubs:ClubOption[];canStart:boolean;full:boolean}){
- const [pick,setPick]=useState<string|null>(null),[err,setErr]=useState<string|null>(null),[busy,start]=useTransition(),router=useRouter()
+/** `initial`: a club's home sent the manager here with its club already chosen (the banner, 12.10.2026) — only an open club */
+export function ClubRoll({clubs,canStart,full,initial=null}:{clubs:ClubOption[];canStart:boolean;full:boolean;initial?:string|null}){
+ const [pick,setPick]=useState<string|null>(()=>clubs.some(c=>c.club===initial&&c.ready&&!c.held)?initial:null),[err,setErr]=useState<string|null>(null),[busy,start]=useTransition(),router=useRouter()
  const go=()=>{if(!pick)return;setErr(null);start(async()=>{const r=await createLegendsCareer(pick);if(r.ok)router.push(`/all-football/legends/career/${r.id}`);else setErr(r.error)})}
  const cur=clubs.find(c=>c.club===pick)
  return <section className="lgm-roll" aria-labelledby="lgm-roll-h">

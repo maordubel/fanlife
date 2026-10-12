@@ -394,3 +394,29 @@
 @media (prefers-reduced-motion: reduce) {
   .lgm-sheet, .lgm-sheet-card, .lgm-live, .lgm-break, .lgm-ft, .lgm-deal, .lgm-savebar, .lgm-break-bench, .lgm-turnstile span, .lgm-sold i, .lgm-wintitle i, .lgm-confetti span, .lgm-ticket-go .lgm-go, .lgm-onair { animation: none; }
 }
+
+/* the table on a phone (polish, 12.10.2026): a club's name takes what is left of the row and ends in an ellipsis instead of
+   breaking over two lines; the form guide steps out below 480px, where it pushed the points off the glass */
+.lgm-table th[scope='row'] { inline-size: 100%; max-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 700 16px/1.1 var(--mag-condensed); text-transform: uppercase; letter-spacing: .3px; }
+.lgm-table th[scope='row'] .lgm-rowbtn { display: block; max-inline-size: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: start; }
+.lgm-table td:first-child { inline-size: 1.6em; color: color-mix(in srgb, currentColor 70%, transparent); }
+@media (max-width: 480px) { .lgm-form, .lgm-form-h { display: none; } .lgm-table th, .lgm-table td { padding-inline: 4px; } }
+/* app mode (rule 115): a press answers at once */
+@media (max-width: 900px) { .lgm-res:active, .lgm-rowbtn:active, .lgm-x:active, .lgm-seg button:active { transform: scale(.965); } }
+/* app mode on a phone (rule 115): the hero and the code run edge to edge, the club roll is a list, and the one button rides
+   above the tab bar so a choice never needs a scroll back */
+@media (max-width: 760px) {
+  .lgm { padding-inline: 16px; }
+  .lgm-hero { margin-inline: -16px; margin-block-start: -18px; }
+  .lgm-code { margin-inline: -16px; border-inline: 0; }
+  .lgm-roll ul { gap: 0; margin-inline: -16px; border-block-start: 2px solid var(--lgm-night); }
+  .lgm-club { grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding: 14px 16px; border-width: 0 0 2px; box-shadow: none; }
+  .lgm-club::after { content: '\25CB'; grid-row: 1 / 3; grid-column: 2; font-size: 20px; }
+  .lgm-club[aria-pressed='true'] { box-shadow: inset 6px 0 0 var(--lgm-bronze); }
+  .lgm-club[aria-pressed='true']::after { content: '\25CF'; color: var(--lgm-bronze-hi); }
+  .lgm-club:disabled::after { content: none; }
+  .lgm-roll .lgm-actions { position: sticky; inset-block-end: calc(var(--app-bottom, 0px) + 10px); z-index: 5; margin-block-start: 14px; }
+  .lgm-roll .lgm-go-big { inline-size: 100%; }
+}
+/* app mode (rule 115): on a phone the save bar sits on top of the fixed tab bar, never over it */
+@media (max-width: 900px) { html:has(.mag-tabbar) .lgm-savebar { inset-block-end: calc(59px + env(safe-area-inset-bottom)); padding-block-end: 8px; } }

@@ -42,6 +42,12 @@ export async function legendsClubs():Promise<ClubChoice[]>{
  const [cats,f]=await Promise.all([allCatalogs(),serverFeatures()])
  return cats.map(({catalog,elig})=>{const k=catalog.digest;let r=ready.get(catalog.club);if(!r||r.key!==k){r={key:k,r:readiness(catalog.club,catalog.clubName,elig)};ready.set(catalog.club,r)}return {...r.r,held:f.fanLeagueOff.includes(catalog.club)}}).sort((a,b)=>a.name.localeCompare(b.name))
 }
+/** one club's verdict, for the banner on its home — its own catalog only (not the whole roll), sharing the readiness cache */
+export async function legendsReadyFor(club:string):Promise<ClubChoice|null>{
+ const [hit,f]=await Promise.all([catalogFor(club),serverFeatures()]);if(!hit)return null
+ const k=hit.catalog.digest;let r=ready.get(club);if(!r||r.key!==k){r={key:k,r:readiness(club,hit.catalog.clubName,hit.elig)};ready.set(club,r)}
+ return {...r.r,held:f.fanLeagueOff.includes(club)}
+}
 export async function startCareer(owner:string,club:string):Promise<{ok:true;id:string}|{ok:false;error:string}>{
  const [clubs,settings]=await Promise.all([legendsClubs(),readLegendsSettings()]),pick=clubs.find(c=>c.club===club)
  if(!pick||pick.held||pick.verdict!=='READY')return {ok:false,error:'That club is not open for a new career.'}
