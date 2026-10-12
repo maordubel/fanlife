@@ -18,7 +18,7 @@ if(!window.__vx||!window.__vx.THREE){vxBootFailed(new Error('The 3D engine did n
 var V=window.__vx,THREE=V.THREE,PI=Math.PI;
 var CELL=.5,RADIUS=.45,REACH=3.5,SPEED=5.6,RUN=1.55;
 var sink=function(){},cfg=null,grid=null,player=null,actors={},exits=[],spots=[],marks=[],target=null,frozen=false;
-var axis={x:0,y:0},running=false,path=null,pending=null,wPhase=0,graceUntil=0,lastExit=null,focusId=null,stepAcc=0,now=0;
+var axis={x:0,y:0},running=false,path=null,pending=null,exitGoal=null,wPhase=0,graceUntil=0,lastExit=null,focusId=null,stepAcc=0,now=0;
 var ray=new THREE.Raycaster(),ndc=new THREE.Vector2(),plane=new THREE.Plane(new THREE.Vector3(0,1,0),0),hit=new THREE.Vector3();
 function emit(e){try{sink(e)}catch(er){window.__err.push(String(er&&er.stack||er))}}
 
@@ -32,9 +32,9 @@ function buildGrid(){
  c.solids.forEach(function(s){if(s[4]<fy+3.2&&s[5]>fy+.75)block(s[0]-RADIUS,s[1]-RADIUS,s[0]+s[2]+RADIUS,s[1]+s[3]+RADIUS)});
  c.bodies.forEach(function(p){block(p[0]-p[2]-RADIUS*.6,p[1]-p[2]-RADIUS*.6,p[0]+p[2]+RADIUS*.6,p[1]+p[2]+RADIUS*.6)});
  (cfg.blocks||[]).forEach(function(r){block(r[0]-RADIUS,r[1]-RADIUS,r[2]+RADIUS,r[3]+RADIUS)});
- /* every exit mouth is a hole in the furniture round it, so a door can always be reached and walked into */
- (exits||[]).forEach(function(x){var e=x.def,i0=Math.max(0,Math.floor((e.x-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((e.x+e.w-w[0])/CELL)),j0=Math.max(0,Math.floor((e.z-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((e.z+e.d-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
  Object.keys(actors).forEach(function(id){var a=actors[id];if(a.def.ghost||a.def.follow)return;var r=a.def.sit?1.0:.7;block(a.x-r,a.z-r,a.x+r,a.z+r)});
+ /* every exit mouth is a hole in the furniture AND in the people round it (cleared after both), so a door can always be reached and walked into */
+ (exits||[]).forEach(function(x){var e=x.def,i0=Math.max(0,Math.floor((e.x-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((e.x+e.w-w[0])/CELL)),j0=Math.max(0,Math.floor((e.z-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((e.z+e.d-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
  /* a door is a hole in whatever stands in front of it */
  (cfg.clear||[]).forEach(function(r){var i0=Math.max(0,Math.floor((r[0]-w[0])/CELL)),i1=Math.min(nx-1,Math.floor((r[2]-w[0])/CELL)),j0=Math.max(0,Math.floor((r[1]-w[1])/CELL)),j1=Math.min(nz-1,Math.floor((r[3]-w[1])/CELL));for(var i=i0;i<=i1;i++)for(var j=j0;j<=j1;j++)b[j*nx+i]=0});
  grid={nx:nx,nz:nz,b:b,x0:w[0],z0:w[1]};
@@ -218,7 +218,7 @@ function faceEachOther(id){var a=actors[id];if(!a)return;player.wantYaw=Math.ata
 function goTo(kind,id,then){
  var p=reachOf(kind,id);if(!p||frozen)return false;
  /* a door is walked INTO: whoever stands beside it must not take the press meant for it */
- if(kind==='exit'){var x=exitOf(id);if(!x)return false;if(x.locked){emit({type:'locked',id:id});return true}lastExit=null;path=route(player.x,player.z,p[0],p[1]);pending=null;if(path&&!path.length){path=null;leave(x)}return !!path||frozen}
+ if(kind==='exit'){var x=exitOf(id);if(!x)return false;if(x.locked){emit({type:'locked',id:id});return true}lastExit=null;path=route(player.x,player.z,p[0],p[1]);pending=null;exitGoal=path?x:null;if(path&&!path.length){path=null;exitGoal=null;leave(x)}return !!path||frozen}
  var c=nearestFree(p[0]+(player.x>p[0]?1.2:-1.2),p[1]+1.3,5)||nearestFree(p[0],p[1],6);if(!c)return false;
  var q=centre(c[0],c[1]);path=route(player.x,player.z,q[0],q[1]);pending=then===false?null:{kind:kind,id:id};
  if(!path){pending=null;return false}return true;
@@ -240,7 +240,7 @@ function tap(cx,cy){
  if(frozen||!player)return;var t=pick(cx,cy);if(!t)return;
  emit({type:'tap',kind:t.kind});
  if(t.kind==='ground'){walkTo(t.x,t.z);return}
- if(t.kind==='exit'){var e=exitOf(t.id).def;path=route(player.x,player.z,e.x+e.w/2,e.z+e.d/2);pending=null;return}
+ if(t.kind==='exit'){var e=exitOf(t.id).def;path=route(player.x,player.z,e.x+e.w/2,e.z+e.d/2);pending=null;exitGoal=path&&!exitOf(t.id).locked?exitOf(t.id):null;return}
  if(target&&target.kind===t.kind&&target.id===t.id){act(t);return}
  goTo(t.kind,t.id);
 }
@@ -265,12 +265,13 @@ function frame(t,dt){
  if(!frozen){
   var ax=axis.x*(V.display.mirror?-1:1),ay=axis.y,mag=Math.hypot(ax,ay);
   if(mag>.12){
-   path=null;pending=null;if(mag>1){ax/=mag;ay/=mag;mag=1}
+   path=null;pending=null;exitGoal=null;if(mag>1){ax/=mag;ay/=mag;mag=1}
    /* the stick is the screen: right is along the room, up is into it */
    var sp=SPEED*(running?RUN:1)*Math.min(1,mag*1.15)*dt,dx=ax/mag*sp,dz=ay/mag*sp;
    var ox=player.x,oz=player.z;if(slide(player,dx,dz)){moved=Math.hypot(player.x-ox,player.z-oz);player.wantYaw=Math.atan2(player.x-ox,player.z-oz)}
   }else if(path){
    player.path=path;player.speed=SPEED*(running?RUN:1);moved=follow(player,dt);path=player.path;
+   if(!path&&exitGoal){var xg=exitGoal,e2=xg.def;exitGoal=null;/* walked to a door on purpose: arriving at its mouth is going through it */if(!frozen&&!xg.locked&&player.x>=e2.x-1.2&&player.x<=e2.x+e2.w+1.2&&player.z>=e2.z-1.2&&player.z<=e2.z+e2.d+1.2)leave(xg)}
    if(!path&&pending){var pd=pending;pending=null;retarget(true);var pr=reachOf(pd.kind,pd.id),pm=marks.filter(function(m){return m.kind===pd.kind&&m.id===pd.id})[0];/* walked there on purpose: a neighbour standing closer must not take the press */if(target&&target.kind===pd.kind&&target.id===pd.id)act(pd);else if(pr&&pm&&pm.on&&(pr[0]-player.x)*(pr[0]-player.x)+(pr[1]-player.z)*(pr[1]-player.z)<pm.reach*pm.reach)act(pd);else{faceEachOther(pd.id)}}
   }
  }
