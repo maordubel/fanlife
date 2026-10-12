@@ -1,0 +1,4085 @@
+{
+ "sources": [
+  {
+   "id": "src_0ee2465c0cee",
+   "title": "match-105571",
+   "url": "https://www.pao.gr/en/match/105571/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_0f8397b04615",
+   "title": "match-104671",
+   "url": "https://www.pao.gr/en/match/104671/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_1365db1ea6f8",
+   "title": "europe",
+   "url": "https://www.pao.gr/en/history/european-history/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_18434d231d71",
+   "title": "match-104672",
+   "url": "https://www.pao.gr/en/match/104672/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_1f154709cb9e",
+   "title": "match-103181",
+   "url": "https://www.pao.gr/en/match/103181/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_1fdf8bc79253",
+   "title": "match-106013",
+   "url": "https://www.pao.gr/en/match/106013/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_282cb62b04b7",
+   "title": "match-105233",
+   "url": "https://www.pao.gr/en/match/105233/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_358b01971c66",
+   "title": "match-103193",
+   "url": "https://www.pao.gr/en/match/103193/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_4b9a2c47f2a5",
+   "title": "match-105266",
+   "url": "https://www.pao.gr/en/match/105266/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_4d6759401d25",
+   "title": "greek-cups",
+   "url": "https://www.pao.gr/en/history/greek-cups/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_55a0623f5635",
+   "title": "match-103176",
+   "url": "https://www.pao.gr/en/match/103176/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_594a1c13196a",
+   "title": "results-2023-2024",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=season-2023-2024&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_862d05ee9f0a",
+   "title": "match-105327",
+   "url": "https://www.pao.gr/en/match/105327/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_890331218736",
+   "title": "match-106110",
+   "url": "https://www.pao.gr/en/match/106110/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_8df21df65b07",
+   "title": "results-2026-2027",
+   "url": "https://www.pao.gr/en/the-matches/results/?seasons=2026-2027&leagues=all",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_90fa180ad220",
+   "title": "match-103182",
+   "url": "https://www.pao.gr/en/match/103182/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_b935bec32648",
+   "title": "match-103175",
+   "url": "https://www.pao.gr/en/match/103175/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_c83ca7e42ca4",
+   "title": "match-103194",
+   "url": "https://www.pao.gr/en/match/103194/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_cd57512ef38c",
+   "title": "match-105103",
+   "url": "https://www.pao.gr/en/match/105103/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_e5b5e60ed125",
+   "title": "match-105267",
+   "url": "https://www.pao.gr/en/match/105267/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  },
+  {
+   "id": "src_e765c63050d2",
+   "title": "match-105102",
+   "url": "https://www.pao.gr/en/match/105102/",
+   "publisher": "Panathinaikos FC",
+   "access": "available",
+   "checkedAt": "2026-10-06"
+  }
+ ],
+ "matches": [
+  {
+   "id": "pl-021c8ac21097",
+   "value": {
+    "name": "Feyenoord 0-0 Panathinaikos",
+    "on": "1984-09-19",
+    "competition": "European Cup",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Laftsis",
+     "Dontas",
+     "Tarasssis",
+     "Kyrastas",
+     "Jaec",
+     "Vonortas",
+     "Saravakos",
+     "Antoniou",
+     "Mavridis",
+     "Rocha",
+     "Livathinos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Charalabidis",
+     "Charalambidis",
+     "Gerothodoros",
+     "Karoulias",
+     "Papavassiliou",
+     "Tarassis",
+     "Th. Dimopoulos",
+     "Th.Dimopoulos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-eb735b814a97",
+   "value": {
+    "name": "Panathinaikos 2-1 Feyenoord",
+    "on": "1984-10-03",
+    "competition": "European Cup",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Laftsis",
+     "Tarassis",
+     "Karoulias",
+     "Kyrastas",
+     "Jaec",
+     "Vonortas",
+     "Saravakos",
+     "Antoniou",
+     "Mavridis",
+     "Rocha",
+     "Livathinos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Charalabidis",
+     "Charalambidis",
+     "Dontas",
+     "Gerothodoros",
+     "Papavassiliou",
+     "Tarasssis",
+     "Th. Dimopoulos",
+     "Th.Dimopoulos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-dc846e9ea15d",
+   "value": {
+    "name": "Panathinaikos 2-1 Linfield",
+    "on": "1984-10-24",
+    "competition": "European Cup",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Laftsis",
+     "Tarassis",
+     "Karoulias",
+     "Kyrastas",
+     "Jaec",
+     "Livathinos",
+     "Mavridis",
+     "Antoniou",
+     "Charalabidis",
+     "Papavassiliou",
+     "Th. Dimopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Charalambidis",
+     "Dontas",
+     "Gerothodoros",
+     "Rocha",
+     "Saravakos",
+     "Tarasssis",
+     "Th.Dimopoulos",
+     "Vonortas"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-2b816fc7b338",
+   "value": {
+    "name": "Linfield 3-3 Panathinaikos",
+    "on": "1984-11-07",
+    "competition": "European Cup",
+    "score": "3-3",
+    "venue": null,
+    "lineup": [
+     "Laftsis",
+     "Tarassis",
+     "Karoulias",
+     "Kyrastas",
+     "Jaec",
+     "Livathinos",
+     "Saravakos",
+     "Antoniou",
+     "Mavridis",
+     "Rocha",
+     "Dontas"
+    ],
+    "bench": [],
+    "decoys": [
+     "Charalabidis",
+     "Charalambidis",
+     "Gerothodoros",
+     "Papavassiliou",
+     "Tarasssis",
+     "Th. Dimopoulos",
+     "Th.Dimopoulos",
+     "Vonortas"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-2b1b0aacfad2",
+   "value": {
+    "name": "Goteborg 0-1 Panathinaikos",
+    "on": "1985-03-06",
+    "competition": "European Cup",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Laftsis",
+     "Tarassis",
+     "Karoulias",
+     "Kyrastas",
+     "Jaec",
+     "Vonortas",
+     "Saravakos",
+     "Antoniou",
+     "Mavridis",
+     "Gerothodoros",
+     "Th. Dimopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Charalabidis",
+     "Charalambidis",
+     "Dontas",
+     "Livathinos",
+     "Papavassiliou",
+     "Rocha",
+     "Tarasssis",
+     "Th.Dimopoulos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-515d108ba19b",
+   "value": {
+    "name": "Panathinaikos 2-2 Goteborg",
+    "on": "1985-03-20",
+    "competition": "European Cup",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Laftsis",
+     "Livathinos",
+     "Karoulias",
+     "Kyrastas",
+     "Jaec",
+     "Vonortas",
+     "Saravakos",
+     "Antoniou",
+     "Mavridis",
+     "Gerothodoros",
+     "Th.Dimopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Charalabidis",
+     "Charalambidis",
+     "Dontas",
+     "Papavassiliou",
+     "Rocha",
+     "Tarassis",
+     "Tarasssis",
+     "Th. Dimopoulos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-f19a4a033302",
+   "value": {
+    "name": "Liverpool 4-0 Panathinaikos",
+    "on": "1985-04-10",
+    "competition": "European Cup",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Laftsis",
+     "Gerothodoros",
+     "Karoulias",
+     "Kyrastas",
+     "Jaec",
+     "Dontas",
+     "Saravakos",
+     "Antoniou",
+     "Mavridis",
+     "Rocha",
+     "Th. Dimopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Charalabidis",
+     "Charalambidis",
+     "Livathinos",
+     "Papavassiliou",
+     "Tarassis",
+     "Tarasssis",
+     "Th.Dimopoulos",
+     "Vonortas"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-4e74c26576a0",
+   "value": {
+    "name": "Panathinaikos 0-1 Liverpool",
+    "on": "1985-04-24",
+    "competition": "European Cup",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Laftsis",
+     "Tarassis",
+     "Karoulias",
+     "Kyrastas",
+     "Jaec",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Charalambidis",
+     "Rocha",
+     "Th. Dimopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Charalabidis",
+     "Dontas",
+     "Gerothodoros",
+     "Livathinos",
+     "Papavassiliou",
+     "Tarasssis",
+     "Th.Dimopoulos",
+     "Vonortas"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-2e1db084625e",
+   "value": {
+    "name": "Panathinaikos 2-0 Auxerres",
+    "on": "1987-09-17",
+    "competition": "UEFA Cup",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Minou",
+     "Vassiliou",
+     "Patsiavouras",
+     "Kalitzakis",
+     "Jaec",
+     "Mavridis",
+     "Saravakos",
+     "Georgamlis",
+     "Batsinilas",
+     "Vlachos",
+     "Chr. Dimopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Antoniou",
+     "Ch. Dimopoulos",
+     "Chatziathanasiou",
+     "Chatziathanassiou",
+     "Christodoulou",
+     "Georgakopoulos",
+     "Rocha",
+     "Sarganis",
+     "Vamvakoulas"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-5e732f7fa395",
+   "value": {
+    "name": "Auxerres 3-2 Panathinaikos",
+    "on": "1987-09-30",
+    "competition": "UEFA Cup",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Minou",
+     "Vassiliou",
+     "Patsiavouras",
+     "Kalitzakis",
+     "Jaec",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Chr. Dimopoulos",
+     "Vlachos",
+     "Georgamlis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Batsinilas",
+     "Ch. Dimopoulos",
+     "Chatziathanasiou",
+     "Chatziathanassiou",
+     "Christodoulou",
+     "Georgakopoulos",
+     "Rocha",
+     "Sarganis",
+     "Vamvakoulas"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-d42626ea1436",
+   "value": {
+    "name": "Panathinaikos 1-0 Juventus",
+    "on": "1987-10-21",
+    "competition": "UEFA Cup",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Minou",
+     "Vassiliou",
+     "Chatziathanassiou",
+     "Kalitzakis",
+     "Vamvakoulas",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Vlachos",
+     "Rocha",
+     "Chr. Dimopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Batsinilas",
+     "Ch. Dimopoulos",
+     "Chatziathanasiou",
+     "Christodoulou",
+     "Georgakopoulos",
+     "Georgamlis",
+     "Jaec",
+     "Patsiavouras",
+     "Sarganis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-d54ac2959ced",
+   "value": {
+    "name": "Juventus 3-2 Panathinaikos",
+    "on": "1987-11-04",
+    "competition": "UEFA Cup",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Minou",
+     "Vassiliou",
+     "Patsiavouras",
+     "Kalitzakis",
+     "Vamvakoulas",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Chr. Dimopoulos",
+     "Vlachos",
+     "Georgamlis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Batsinilas",
+     "Ch. Dimopoulos",
+     "Chatziathanasiou",
+     "Chatziathanassiou",
+     "Christodoulou",
+     "Georgakopoulos",
+     "Jaec",
+     "Rocha",
+     "Sarganis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-a270da820af6",
+   "value": {
+    "name": "Honvent 5-2 Panathinaikos",
+    "on": "1987-11-25",
+    "competition": "UEFA Cup",
+    "score": "5-2",
+    "venue": null,
+    "lineup": [
+     "Minou",
+     "Vassiliou",
+     "Patsiavouras",
+     "Vamvakoulas",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Chr. Dimopoulos",
+     "Vlachos",
+     "Georgamlis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Batsinilas",
+     "Ch. Dimopoulos",
+     "Chatziathanasiou",
+     "Chatziathanassiou",
+     "Christodoulou",
+     "Georgakopoulos",
+     "Jaec",
+     "Rocha",
+     "Sarganis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-0df48c717a6a",
+   "value": {
+    "name": "Panathinaikos 5-1 Honvent",
+    "on": "1987-12-09",
+    "competition": "UEFA Cup",
+    "score": "5-1",
+    "venue": null,
+    "lineup": [
+     "Sarganis",
+     "Chatziathanassiou",
+     "Patsiavouras",
+     "Vamvakoulas",
+     "Mavridis",
+     "Vlachos",
+     "Saravakos",
+     "Antoniou",
+     "Chr. Dimopoulos",
+     "Rocha",
+     "Georgakopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Batsinilas",
+     "Ch. Dimopoulos",
+     "Chatziathanasiou",
+     "Christodoulou",
+     "Georgamlis",
+     "Jaec",
+     "Kalitzakis",
+     "Minou",
+     "Vassiliou"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-8b2434673048",
+   "value": {
+    "name": "Panathinaikos 2-2 F.K. Bruge",
+    "on": "1988-03-02",
+    "competition": "UEFA Cup",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Minou",
+     "Vassiliou",
+     "Vamvakoulas",
+     "Georgamlis",
+     "Jaec",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Chr. Dimopoulos",
+     "Rocha",
+     "Batsinilas"
+    ],
+    "bench": [],
+    "decoys": [
+     "Ch. Dimopoulos",
+     "Chatziathanasiou",
+     "Chatziathanassiou",
+     "Christodoulou",
+     "Georgakopoulos",
+     "Kalitzakis",
+     "Patsiavouras",
+     "Sarganis",
+     "Vlachos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-a4de2f100244",
+   "value": {
+    "name": "F.K. Bruge 1-0 Panathinaikos",
+    "on": "1988-03-16",
+    "competition": "UEFA Cup",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Sarganis",
+     "Patsiavouras",
+     "Vamvakoulas",
+     "Batsinilas",
+     "Jaec",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Chr. Dimopoulos",
+     "Rocha",
+     "Georgamlis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Ch. Dimopoulos",
+     "Chatziathanasiou",
+     "Chatziathanassiou",
+     "Christodoulou",
+     "Georgakopoulos",
+     "Kalitzakis",
+     "Minou",
+     "Vassiliou",
+     "Vlachos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-244142991ea2",
+   "value": {
+    "name": "Panathinaikos 2-2 Olympiacos",
+    "on": "1988-05-08",
+    "competition": "Greek Cup",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Sarganis",
+     "Chatziathanasiou",
+     "Vamvakoulas",
+     "Kalitzakis",
+     "Mavridis",
+     "Jaec",
+     "Saravakos",
+     "Christodoulou",
+     "Ch. Dimopoulos",
+     "Rocha",
+     "Georgamlis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Antoniou",
+     "Batsinilas",
+     "Chatziathanassiou",
+     "Chr. Dimopoulos",
+     "Georgakopoulos",
+     "Minou",
+     "Patsiavouras",
+     "Vassiliou",
+     "Vlachos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_4d6759401d25"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-699c2604abc9",
+   "value": {
+    "name": "Fram 2-2 Panathinaikos",
+    "on": "1991-09-18",
+    "competition": "European Cup",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Karageorgiou",
+     "Donis",
+     "Athanassiadis",
+     "Maragkos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Antoniou",
+     "Athanassiadisς",
+     "Boreli",
+     "Frantzeskos",
+     "Georgakopoulos",
+     "Georgamlis",
+     "Kourbanas",
+     "Mavridisς",
+     "Warzycha"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-ceb3d273d3b1",
+   "value": {
+    "name": "Panathinaikos 0-0 Fram",
+    "on": "1991-10-02",
+    "competition": "European Cup",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Karageorgiou",
+     "Athanassiadis",
+     "Georgakopoulos",
+     "Maragkos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Antoniou",
+     "Athanassiadisς",
+     "Boreli",
+     "Donis",
+     "Frantzeskos",
+     "Georgamlis",
+     "Kourbanas",
+     "Mavridisς",
+     "Warzycha"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-54fb0747942a",
+   "value": {
+    "name": "Panathinaikos 2-0 Goteborg",
+    "on": "1991-10-23",
+    "competition": "European Cup",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Karageorgiou",
+     "Athanassiadis",
+     "Georgakopoulos",
+     "Maragkos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Antoniou",
+     "Athanassiadisς",
+     "Boreli",
+     "Donis",
+     "Frantzeskos",
+     "Georgamlis",
+     "Kourbanas",
+     "Mavridisς",
+     "Warzycha"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-54d7c8fed81c",
+   "value": {
+    "name": "Goteborg 2-2 Panathinaikos",
+    "on": "1991-11-06",
+    "competition": "European Cup",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Karageorgiou",
+     "Athanassiadis",
+     "Georgakopoulos",
+     "Maragkos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Antoniou",
+     "Athanassiadisς",
+     "Boreli",
+     "Donis",
+     "Frantzeskos",
+     "Georgamlis",
+     "Kourbanas",
+     "Mavridisς",
+     "Warzycha"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-775825e32262",
+   "value": {
+    "name": "Anderlecht 0-0 Panathinaikos",
+    "on": "1991-11-27",
+    "competition": "European Cup",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Athanassiadisς",
+     "Maragkos",
+     "Karageorgiou"
+    ],
+    "bench": [],
+    "decoys": [
+     "Athanassiadis",
+     "Boreli",
+     "Donis",
+     "Frantzeskos",
+     "Georgakopoulos",
+     "Georgamlis",
+     "Kourbanas",
+     "Mavridisς",
+     "Warzycha"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-afdcfd1cdc09",
+   "value": {
+    "name": "Panathinaikos 0-0 Sampdoria",
+    "on": "1991-12-11",
+    "competition": "European Cup",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Karageorgiou",
+     "Frantzeskos",
+     "Maragkos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Athanassiadis",
+     "Athanassiadisς",
+     "Boreli",
+     "Donis",
+     "Georgakopoulos",
+     "Georgamlis",
+     "Kourbanas",
+     "Mavridisς",
+     "Warzycha"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-8256db99bc43",
+   "value": {
+    "name": "Panathinaikos 0-2 Red Star",
+    "on": "1992-03-04",
+    "competition": "European Cup",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Warzycha",
+     "Karageorgiou",
+     "Maragkos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Athanassiadis",
+     "Athanassiadisς",
+     "Boreli",
+     "Donis",
+     "Frantzeskos",
+     "Georgakopoulos",
+     "Georgamlis",
+     "Kourbanas",
+     "Mavridisς"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-e2f5698c93bf",
+   "value": {
+    "name": "Red Star 1-0 Panathinaikos",
+    "on": "1992-03-18",
+    "competition": "European Cup",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kalitzakis",
+     "Mavridis",
+     "Saravakos",
+     "Antoniou",
+     "Warzycha",
+     "Karageorgiou",
+     "Maragkos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Athanassiadis",
+     "Athanassiadisς",
+     "Boreli",
+     "Donis",
+     "Frantzeskos",
+     "Georgakopoulos",
+     "Georgamlis",
+     "Kourbanas",
+     "Mavridisς"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-e54b1ec45aa2",
+   "value": {
+    "name": "Panathinaikos 0-0 Anderlecht",
+    "on": "1992-04-01",
+    "competition": "European Cup",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Georgamlis",
+     "Christodoulou",
+     "Kourbanas",
+     "Mavridisς",
+     "Saravakos",
+     "Antoniou",
+     "Warzycha",
+     "Boreli",
+     "Karageorgiou"
+    ],
+    "bench": [],
+    "decoys": [
+     "Athanassiadis",
+     "Athanassiadisς",
+     "Donis",
+     "Frantzeskos",
+     "Georgakopoulos",
+     "Kalatzis",
+     "Kalitzakis",
+     "Maragkos",
+     "Mavridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-3f893287a2c4",
+   "value": {
+    "name": "Sampdoria 1-1 Panathinaikos",
+    "on": "1992-04-15",
+    "competition": "European Cup",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Kalatzis",
+     "Christodoulou",
+     "Kourbanas",
+     "Mavridis",
+     "Saravakos",
+     "Karageorgiou",
+     "Warzycha",
+     "Maragkos",
+     "Donis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Antoniou",
+     "Athanassiadis",
+     "Athanassiadisς",
+     "Boreli",
+     "Frantzeskos",
+     "Georgakopoulos",
+     "Georgamlis",
+     "Kalitzakis",
+     "Mavridisς"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-14ebbf1b1731",
+   "value": {
+    "name": "Panathinaikos 3-1 Nantes",
+    "on": "1995-09-27",
+    "competition": "UEFA Champions League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Boreli",
+     "Ouzounidis",
+     "G. Ch. Georgiadis",
+     "Kalitzakis",
+     "G.S. Georgiadis",
+     "Markos",
+     "Alexoudis",
+     "Warzycha",
+     "Maragkos",
+     "Donis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Apostolakis",
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Christrodoulou",
+     "G",
+     "G. Ch.Georgiadis",
+     "G. S. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S.Georgiadis",
+     "Kapouranis",
+     "Kolitsidakis",
+     "Lagonikakis",
+     "Nikopolidis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-53d23961ff98",
+   "value": {
+    "name": "Porto 0-1 Panathinaikos",
+    "on": "1995-10-18",
+    "competition": "UEFA Champions League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Ouzounidis",
+     "G. Ch.Georgiadis",
+     "Kalitzakis",
+     "Boreli",
+     "Markos",
+     "G. S. Georgiadis",
+     "Warzycha",
+     "Alexoudis",
+     "Donis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Christrodoulou",
+     "G",
+     "G. Ch. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S. Georgiadis",
+     "G.S.Georgiadis",
+     "Kapouranis",
+     "Kolitsidakis",
+     "Lagonikakis",
+     "Maragkos",
+     "Nikopolidis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-791d48630644",
+   "value": {
+    "name": "Aalborg 2-1 Panathinaikos",
+    "on": "1995-10-25",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Ouzounidis",
+     "G. Ch. Georgiadis",
+     "Kalitzakis",
+     "Boreli",
+     "Kapouranis",
+     "G.S. Georgiadis",
+     "Warzycha",
+     "Markos",
+     "Donis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Alexoudis",
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Christrodoulou",
+     "G",
+     "G. Ch.Georgiadis",
+     "G. S. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S.Georgiadis",
+     "Kolitsidakis",
+     "Lagonikakis",
+     "Maragkos",
+     "Nikopolidis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-0906960c1a67",
+   "value": {
+    "name": "Panathinaikos 0-0 Porto",
+    "on": "1995-11-01",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Ouzounidis",
+     "G. Ch. Georgiadis",
+     "Kolitsidakis",
+     "G.S. Georgiadis",
+     "Boreli",
+     "Markos",
+     "Warzycha",
+     "Maragkos",
+     "Donis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Alexoudis",
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Christrodoulou",
+     "G",
+     "G. Ch.Georgiadis",
+     "G. S. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S.Georgiadis",
+     "Kalitzakis",
+     "Kapouranis",
+     "Lagonikakis",
+     "Nikopolidis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-7c741fe82cd0",
+   "value": {
+    "name": "Panathinaikos 2-0 Aalborg",
+    "on": "1995-11-22",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Ouzounidis",
+     "G. Ch. Georgiadis",
+     "G.S. Georgiadis",
+     "Markos",
+     "Boreli",
+     "Alexoudis",
+     "Warzycha",
+     "Maragkos",
+     "Donis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Christrodoulou",
+     "G",
+     "G. Ch.Georgiadis",
+     "G. S. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S.Georgiadis",
+     "Kalitzakis",
+     "Kapouranis",
+     "Kolitsidakis",
+     "Lagonikakis",
+     "Nikopolidis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-47169a440d8f",
+   "value": {
+    "name": "Nantes 0-0 Panathinaikos",
+    "on": "1995-12-06",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Ouzounidis",
+     "Christrodoulou",
+     "Kalitzakis",
+     "Markos",
+     "Boreli",
+     "G.S.Georgiadis",
+     "Lagonikakis",
+     "Maragkos",
+     "Kapouranis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Alexoudis",
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Donis",
+     "G",
+     "G. Ch. Georgiadis",
+     "G. Ch.Georgiadis",
+     "G. S. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S. Georgiadis",
+     "Kolitsidakis",
+     "Nikopolidis",
+     "Warzycha"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-f8e1ce7e5117",
+   "value": {
+    "name": "Legia 0-0 Panathinaikos",
+    "on": "1996-03-06",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Markos",
+     "G. Ch. Georgiadis",
+     "Kalitzakis",
+     "Kolitsidakis",
+     "Boreli",
+     "G.S. Georgiadis",
+     "Warzycha",
+     "Maragkos",
+     "Alexoudis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Christrodoulou",
+     "Donis",
+     "G",
+     "G. Ch.Georgiadis",
+     "G. S. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S.Georgiadis",
+     "Kapouranis",
+     "Lagonikakis",
+     "Nikopolidis",
+     "Ouzounidis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-ab0d201fc893",
+   "value": {
+    "name": "Panathinaikos 3-0 Legia",
+    "on": "1996-03-20",
+    "competition": "UEFA Champions League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Ouzounidis",
+     "G.S. Georgiadis",
+     "Kalitzakis",
+     "Kolitsidakis",
+     "Boreli",
+     "Kapouranis",
+     "Warzycha",
+     "Maragkos",
+     "Donis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Alexoudis",
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Christrodoulou",
+     "G",
+     "G. Ch. Georgiadis",
+     "G. Ch.Georgiadis",
+     "G. S. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S.Georgiadis",
+     "Lagonikakis",
+     "Markos",
+     "Nikopolidis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-babcdbca015a",
+   "value": {
+    "name": "Ajax 0-1 Panathinaikos",
+    "on": "1996-04-03",
+    "competition": "UEFA Champions League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Wanchik",
+     "Apostolakis",
+     "Ouzounidis",
+     "G.S. Georgiadis",
+     "Kalitzakis",
+     "Kolitsidakis",
+     "Boreli",
+     "Kapouranis",
+     "Warzycha",
+     "Maragkos",
+     "Donis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Alexoudis",
+     "Boreli Kapouranis",
+     "Ch. Georgiadis",
+     "Christrodoulou",
+     "G",
+     "G. Ch. Georgiadis",
+     "G. Ch.Georgiadis",
+     "G. S. Georgiadis",
+     "G.Ch. Georgiadis",
+     "G.S.Georgiadis",
+     "Lagonikakis",
+     "Markos",
+     "Nikopolidis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-f850aee9083a",
+   "value": {
+    "name": "Slavia Prague 1-2 Panathinaikos",
+    "on": "2001-08-08",
+    "competition": "UEFA Champions League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Kyriakos",
+     "Henriksen",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Kolka",
+     "Lyberopoulos",
+     "Konstantinou"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Goumas",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "NIkopolidis",
+     "Olisadebe",
+     "Pitsos",
+     "Saric",
+     "Souza",
+     "Vlaovic",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-bb199e3d4d4f",
+   "value": {
+    "name": "Panathinaikos 1-0 Slavia Prague",
+    "on": "2001-08-22",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Kyriakos",
+     "Henriksen",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Kolka",
+     "Lyberopoulos",
+     "Konstantinou"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Goumas",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "NIkopolidis",
+     "Olisadebe",
+     "Pitsos",
+     "Saric",
+     "Souza",
+     "Vlaovic",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-0f0cf9cc4b80",
+   "value": {
+    "name": "Schalke 0-2 Panathinaikos",
+    "on": "2001-09-11",
+    "competition": "UEFA Champions League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Kyriakos",
+     "Henriksen",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Souza",
+     "Kolka",
+     "Konstantinou"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Goumas",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Lyberopoulos",
+     "NIkopolidis",
+     "Olisadebe",
+     "Pitsos",
+     "Saric",
+     "Vlaovic",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-e127457a5581",
+   "value": {
+    "name": "Panathinaikos 2-0 Mallorca",
+    "on": "2001-09-19",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Kyriakos",
+     "Henriksen",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Souza",
+     "Vlaovic",
+     "Konstantinou"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Goumas",
+     "Kolka",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Lyberopoulos",
+     "NIkopolidis",
+     "Olisadebe",
+     "Pitsos",
+     "Saric",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-108565b8782e",
+   "value": {
+    "name": "Panathinaikos 1-0 Arsenal",
+    "on": "2001-09-26",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Fyssas",
+     "Kyriakos",
+     "Henriksen",
+     "Vokolos",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Souza",
+     "Vlaovic",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Goumas",
+     "Kolka",
+     "Konstantinou",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Lyberopoulos",
+     "NIkopolidis",
+     "Pitsos",
+     "Saric",
+     "Seitaridis",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-e1227565998a",
+   "value": {
+    "name": "Arsenal 2-1 Panathinaikos",
+    "on": "2001-10-16",
+    "competition": "UEFA Champions League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Fyssas",
+     "Kyriakos",
+     "Henriksen",
+     "Vokolos",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Souza",
+     "Konstantinou",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Goumas",
+     "Kolka",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Lyberopoulos",
+     "NIkopolidis",
+     "Pitsos",
+     "Saric",
+     "Seitaridis",
+     "Vlaovic",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-e7cb4dcf39af",
+   "value": {
+    "name": "Panathinaikos 2-0 Schalke",
+    "on": "2001-10-24",
+    "competition": "UEFA Champions League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Vokolos",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Souza",
+     "Konstantinou",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Goumas",
+     "Kolka",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Kyriakos",
+     "Lyberopoulos",
+     "NIkopolidis",
+     "Pitsos",
+     "Saric",
+     "Vlaovic",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-eec96be42e38",
+   "value": {
+    "name": "Mallorca 1-0 Panathinaikos",
+    "on": "2001-10-30",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Saric",
+     "Fyssas",
+     "Kyriakos",
+     "Vokolos",
+     "Kolka",
+     "Boateng",
+     "Karagounis",
+     "Goumas",
+     "Vlaovic",
+     "Lyberopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Bassinas",
+     "Galeto",
+     "Henriksen",
+     "Konstantinou",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Mikaelsen",
+     "NIkopolidis",
+     "Olisadebe",
+     "Pitsos",
+     "Seitaridis",
+     "Souza",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-0fdb02f73ad2",
+   "value": {
+    "name": "Panathinaikos 0-0 Porto",
+    "on": "2001-11-21",
+    "competition": "UEFA Champions League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Kyriakos",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Souza",
+     "Konstantinou",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Goumas",
+     "Kolka",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Lyberopoulos",
+     "NIkopolidis",
+     "Pitsos",
+     "Saric",
+     "Vlaovic",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-8e4e9ae7ffa1",
+   "value": {
+    "name": "Real Madrid 3-0 Panathinaikos",
+    "on": "2001-12-04",
+    "competition": "UEFA Champions League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Kyriakos",
+     "Goumas",
+     "Bassinas",
+     "Mikaelsen",
+     "Souza",
+     "Konstantinou",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Karagounis",
+     "Kolka",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Lyberopoulos",
+     "NIkopolidis",
+     "Pitsos",
+     "Saric",
+     "Seitaridis",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-eaa5b9d8540a",
+   "value": {
+    "name": "Sparta Prague 0-2 Panathinaikos",
+    "on": "2002-02-19",
+    "competition": "UEFA Champions League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Saric",
+     "Pitsos",
+     "Henriksen",
+     "Kyriakos",
+     "Goumas",
+     "Bassinas",
+     "Galeto",
+     "Karagounis",
+     "Konstantinou",
+     "Lyberopoulos"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Fyssas",
+     "Kolka",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Mikaelsen",
+     "NIkopolidis",
+     "Olisadebe",
+     "Seitaridis",
+     "Souza",
+     "Vlaovic",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-6d5f5681fa4a",
+   "value": {
+    "name": "Panathinaikos 2-2 Real Madrid",
+    "on": "2002-03-20",
+    "competition": "UEFA Champions League",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Fyssas",
+     "Seitaridis",
+     "Henriksen",
+     "Goumas",
+     "Mikaelsen",
+     "Galeto",
+     "Karagounis",
+     "Konstantinou",
+     "Lyberopoulos",
+     "Vlaovic"
+    ],
+    "bench": [],
+    "decoys": [
+     "Bassinas",
+     "Boateng",
+     "Kolka",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Kyriakos",
+     "NIkopolidis",
+     "Olisadebe",
+     "Pitsos",
+     "Saric",
+     "Souza",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-25e5d2b1550d",
+   "value": {
+    "name": "Panathinaikos 1-0 Barcelona",
+    "on": "2002-04-03",
+    "competition": "UEFA Champions League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "NIkopolidis",
+     "Fyssas",
+     "Saric",
+     "Henriksen",
+     "Goumas",
+     "Kyriakos",
+     "Bassinas",
+     "Kolka",
+     "Konstantinou",
+     "Lyberopoulos",
+     "Vlaovic"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Karagounis",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Mikaelsen",
+     "Nikopolidis",
+     "Olisadebe",
+     "Pitsos",
+     "Seitaridis",
+     "Souza",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-9a6d927d15d5",
+   "value": {
+    "name": "Barcelona 3-1 Panathinaikos",
+    "on": "2002-04-09",
+    "competition": "UEFA Champions League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Fyssas",
+     "Saric",
+     "Henriksen",
+     "Goumas",
+     "Kyriakos",
+     "Bassinas",
+     "Kolka",
+     "Konstantinou",
+     "Lyberopoulos",
+     "Karagounis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Boateng",
+     "Galeto",
+     "Konstantinou (82’Kolka, Lyberopoulos",
+     "Mikaelsen",
+     "NIkopolidis",
+     "Olisadebe",
+     "Pitsos",
+     "Seitaridis",
+     "Souza",
+     "Vlaovic",
+     "Vokolos",
+     "seitaridis"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-f0b8ca00d283",
+   "value": {
+    "name": "Panathinaikos 2-1 Litex Lovech",
+    "on": "2002-10-03",
+    "competition": "UEFA Cup",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Kyriakos",
+     "Bassinas",
+     "Chainho",
+     "Mikaelsen",
+     "Konstantinou",
+     "Karagounis",
+     "Kolka"
+    ],
+    "bench": [],
+    "decoys": [
+     "Goumas",
+     "Konstantinidis",
+     "Linkar",
+     "Lyberopoulos",
+     "Olisadebe",
+     "P. Konstantinidis",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-32d9b23a0a2e",
+   "value": {
+    "name": "Fenerbahce 1-1 Panathinaikos",
+    "on": "2002-10-31",
+    "competition": "UEFA Cup",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Kyriakos",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Konstantinou",
+     "Lyberopoulos",
+     "P. Konstantinidis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Chainho",
+     "Goumas",
+     "Kolka",
+     "Konstantinidis",
+     "Linkar",
+     "Olisadebe",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-21dca8344d29",
+   "value": {
+    "name": "Panathinaikos 4-1 Fenerbahce",
+    "on": "2002-11-14",
+    "competition": "UEFA Cup",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Kyriakos",
+     "Goumas",
+     "Mikaelsen",
+     "Bassinas",
+     "Lyberopoulos",
+     "Karagounis",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Chainho",
+     "Kolka",
+     "Konstantinidis",
+     "Konstantinou",
+     "Linkar",
+     "P. Konstantinidis",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-ec7d884f6503",
+   "value": {
+    "name": "Slovan Liberech (Czech Republic) 2-2 Panathinaikos",
+    "on": "2002-11-28",
+    "competition": "UEFA Cup",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Kyriakos",
+     "Goumas",
+     "Mikaelsen",
+     "Bassinas",
+     "Lyberopoulos",
+     "Karagounis",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Chainho",
+     "Kolka",
+     "Konstantinidis",
+     "Konstantinou",
+     "Linkar",
+     "P. Konstantinidis",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-511d39480d40",
+   "value": {
+    "name": "Panathinaikos 1-0 Slovan Liberech",
+    "on": "2002-12-12",
+    "competition": "UEFA Cup",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Kyriakos",
+     "Goumas",
+     "Mikaelsen",
+     "Bassinas",
+     "Lyberopoulos",
+     "Karagounis",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Chainho",
+     "Kolka",
+     "Konstantinidis",
+     "Konstantinou",
+     "Linkar",
+     "P. Konstantinidis",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-6b9d600392a0",
+   "value": {
+    "name": "Panathinaikos 3-0 Anderlecht",
+    "on": "2003-02-20",
+    "competition": "UEFA Cup",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Henriksen",
+     "Kyriakos",
+     "Bassinas",
+     "Mikaelsen",
+     "Karagounis",
+     "Olisadebe",
+     "Lyberopoulos",
+     "Kolka"
+    ],
+    "bench": [],
+    "decoys": [
+     "Chainho",
+     "Goumas",
+     "Konstantinidis",
+     "Konstantinou",
+     "Linkar",
+     "P. Konstantinidis",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-92ec578a3c44",
+   "value": {
+    "name": "Anderlecht 2-0 Panathinaikos",
+    "on": "2003-02-27",
+    "competition": "UEFA Cup",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Seitaridis",
+     "Fyssas",
+     "Goumas",
+     "Kyriakos",
+     "Vokolos",
+     "Mikaelsen",
+     "Bassinas",
+     "Lyberopoulos",
+     "Karagounis",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Chainho",
+     "Henriksen",
+     "Kolka",
+     "Konstantinidis",
+     "Konstantinou",
+     "Linkar",
+     "P. Konstantinidis",
+     "Vlaovic"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-bdbc080d51e9",
+   "value": {
+    "name": "Porto 0-1 Panathinaikos",
+    "on": "2003-03-13",
+    "competition": "UEFA Cup",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Henriksen",
+     "Seitaridis",
+     "Kyriakos",
+     "Fyssas",
+     "Mikaelsen",
+     "Bassinas",
+     "Karagounis",
+     "Lyberopoulos",
+     "Kolka",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Chainho",
+     "Goumas",
+     "Konstantinidis",
+     "Konstantinou",
+     "Linkar",
+     "P. Konstantinidis",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-80b15fc1e2e3",
+   "value": {
+    "name": "Panathinaikos 0-2 Porto",
+    "on": "2003-03-20",
+    "competition": "UEFA Cup",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Nikopolidis",
+     "Henriksen",
+     "Seitaridis",
+     "Fyssas",
+     "Kyriakos",
+     "Mikaelsen",
+     "Konstantinidis",
+     "Kolka",
+     "Karagounis",
+     "Lyberopoulos",
+     "Olisadebe"
+    ],
+    "bench": [],
+    "decoys": [
+     "Bassinas",
+     "Chainho",
+     "Goumas",
+     "Konstantinou",
+     "Linkar",
+     "P. Konstantinidis",
+     "Vlaovic",
+     "Vokolos"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1365db1ea6f8"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-5ace748eac33",
+   "value": {
+    "name": "Panathinaikos 1-0 Aris",
+    "on": "2024-05-25",
+    "competition": "Greek Cup",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Lodygin",
+     "Juankar",
+     "Jedvaj",
+     "Arao",
+     "Kotsiras",
+     "Ruben",
+     "Cerin",
+     "Bakasetas",
+     "Bernard",
+     "Mancini",
+     "Ioannidis"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Daniel Mancini",
+     "Fotis Ioannidis",
+     "Giannis Kotsiras",
+     "Ruben Perez",
+     "Tasos Bakasetas",
+     "Tin Jedvaj",
+     "Willian Arao",
+     "Yuri Lodygin"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_4d6759401d25",
+    "src_594a1c13196a"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-a02ba0c69c19",
+   "value": {
+    "name": "Helmond Sport 0-4 Panathinaikos",
+    "on": "2026-07-01",
+    "competition": "Friendly",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Ahmed Touba",
+     "Giorgos Katris",
+     "Davide Calabria",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Vicente Taborda",
+     "Anass Zaroury",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Anass Salah-eddine",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Etienne Camara",
+     "Facundo Pellistri",
+     "Giorgos Kyriakopoulos",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Rick Van Drongelen",
+     "Santino Andino",
+     "Sotiris Kontouris",
+     "Stefan De Vrij",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_b935bec32648",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-dbd47ffc3a84",
+   "value": {
+    "name": "Ajax 1-3 Panathinaikos",
+    "on": "2026-07-04",
+    "competition": "Friendly",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Giorgos Kyriakopoulos",
+     "Sverrir Ingi Ingason",
+     "Ahmed Touba",
+     "Davide Calabria",
+     "Etienne Camara",
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Santino Andino",
+     "Anass Zaroury",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Anass Salah-eddine",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Rick Van Drongelen",
+     "Sotiris Kontouris",
+     "Stefan De Vrij",
+     "Triantafyllos Tsapras",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_55a0623f5635",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-36993e148bbc",
+   "value": {
+    "name": "Panathinaikos 3-0 Grasshopper Club Zurich",
+    "on": "2026-07-11",
+    "competition": "Friendly",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Davide Calabria",
+     "Stefan De Vrij",
+     "Sverrir Ingi Ingason",
+     "Giorgos Kyriakopoulos",
+     "Pedro Chirivella",
+     "Anass Zaroury",
+     "Santino Andino",
+     "Sotiris Kontouris",
+     "Adriano Jagusic",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Etienne Camara",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Panagiotis Mpiniaris",
+     "Rick Van Drongelen",
+     "Triantafyllos Tsapras",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1f154709cb9e",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-1a72276eedfd",
+   "value": {
+    "name": "SK Rapid Wien 4-1 Panathinaikos",
+    "on": "2026-07-15",
+    "competition": "Friendly",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Giorgos Kyriakopoulos",
+     "Ahmed Touba",
+     "Stefan De Vrij",
+     "Triantafyllos Tsapras",
+     "Etienne Camara",
+     "Adam Gnezda Cerin",
+     "Anass Zaroury",
+     "Santino Andino",
+     "Vicente Taborda",
+     "Elmin Rastoder"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adriano Jagusic",
+     "Anass Salah-eddine",
+     "Andreas Tetteh",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Davide Calabria",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Rick Van Drongelen",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_90fa180ad220",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-b41e8f2858db",
+   "value": {
+    "name": "Paksi FC 1-2 Panathinaikos",
+    "on": "2026-07-23",
+    "competition": null,
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Triantafyllos Tsapras",
+     "Stefan De Vrij",
+     "Giorgos Kyriakopoulos",
+     "Ahmed Touba",
+     "Etienne Camara",
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Anass Zaroury",
+     "Santino Andino",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Anass Salah-eddine",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Davide Calabria",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Rick Van Drongelen",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_358b01971c66",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-2d3df4080d96",
+   "value": {
+    "name": "Panathinaikos 2-2 Paksi FC",
+    "on": "2026-07-30",
+    "competition": null,
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Ahmed Touba",
+     "Stefan De Vrij",
+     "Triantafyllos Tsapras",
+     "Giorgos Kyriakopoulos",
+     "Adriano Jagusic",
+     "Santino Andino",
+     "Anass Zaroury",
+     "Adam Gnezda Cerin",
+     "Etienne Camara",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Anass Salah-eddine",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Davide Calabria",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Rick Van Drongelen",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_c83ca7e42ca4",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-994e94ee923e",
+   "value": {
+    "name": "Panathinaikos 1-1 CSKA 1948",
+    "on": "2026-08-05",
+    "competition": null,
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Triantafyllos Tsapras",
+     "Giorgos Kyriakopoulos",
+     "Rick Van Drongelen",
+     "Stefan De Vrij",
+     "Pedro Chirivella",
+     "Etienne Camara",
+     "Adriano Jagusic",
+     "Facundo Pellistri",
+     "Santino Andino",
+     "Elmin Rastoder"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Andreas Tetteh",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Davide Calabria",
+     "Erik Palmer-brown",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Panagiotis Mpiniaris",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0f8397b04615",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-d86d83b81c64",
+   "value": {
+    "name": "CSKA 1948 1-2 Panathinaikos",
+    "on": "2026-08-11",
+    "competition": null,
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Giorgos Katris",
+     "Stefan De Vrij",
+     "Rick Van Drongelen",
+     "Giorgos Kyriakopoulos",
+     "Etienne Camara",
+     "Pedro Chirivella",
+     "Anass Zaroury",
+     "Santino Andino",
+     "Levi Garcia",
+     "Elmin Rastoder"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Andreas Tetteh",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Davide Calabria",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Panagiotis Mpiniaris",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_18434d231d71",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-6ac296cf0634",
+   "value": {
+    "name": "Panathinaikos 2-2 Hradec Kralove",
+    "on": "2026-08-20",
+    "competition": null,
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Triantafyllos Tsapras",
+     "Giorgos Kyriakopoulos",
+     "Stefan De Vrij",
+     "Rick Van Drongelen",
+     "Etienne Camara",
+     "Pedro Chirivella",
+     "Santino Andino",
+     "Vicente Taborda",
+     "Levi Garcia",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Davide Calabria",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Panagiotis Mpiniaris",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_e765c63050d2",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-48b3a7d46a1f",
+   "value": {
+    "name": "Hradec Kralove 1-2 Panathinaikos",
+    "on": "2026-08-27",
+    "competition": null,
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Giorgos Katris",
+     "Giorgos Kyriakopoulos",
+     "Stefan De Vrij",
+     "Rick Van Drongelen",
+     "Pedro Chirivella",
+     "Etienne Camara",
+     "Vicente Taborda",
+     "Facundo Pellistri",
+     "Levi Garcia",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Davide Calabria",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Imran Louza",
+     "Kings Kangwa",
+     "Panagiotis Mpiniaris",
+     "Santino Andino",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_cd57512ef38c",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-4250bc0402f7",
+   "value": {
+    "name": "Levadiakos 0-2 Panathinaikos",
+    "on": "2026-08-31",
+    "competition": "Super League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Davide Calabria",
+     "Giorgos Kyriakopoulos",
+     "Stefan De Vrij",
+     "Rick Van Drongelen",
+     "Etienne Camara",
+     "Kings Kangwa",
+     "Vicente Taborda",
+     "Santino Andino",
+     "Levi Garcia",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_282cb62b04b7",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-09b41e7c7bd7",
+   "value": {
+    "name": "Panathinaikos 1-0 Niki Volou",
+    "on": "2026-09-03",
+    "competition": "Greek Cup",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Giorgos Katris",
+     "Erik Palmer-brown",
+     "Rick Van Drongelen",
+     "Giorgos Kyriakopoulos",
+     "Adriano Jagusic",
+     "Sotiris Kontouris",
+     "Facundo Pellistri",
+     "Kings Kangwa",
+     "Cyriel Dessers",
+     "Elmin Rastoder"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Andreas Tetteh",
+     "Azzedine Ounahi",
+     "Davide Calabria",
+     "Etienne Camara",
+     "Imran Louza",
+     "Levi Garcia",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Santino Andino",
+     "Stefan De Vrij",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_862d05ee9f0a",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-99533347eb63",
+   "value": {
+    "name": "Panathinaikos 3-1 PAOK",
+    "on": "2026-09-06",
+    "competition": "Super League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Davide Calabria",
+     "Rick Van Drongelen",
+     "Giorgos Kyriakopoulos",
+     "Stefan De Vrij",
+     "Santino Andino",
+     "Vicente Taborda",
+     "Etienne Camara",
+     "Kings Kangwa",
+     "Andreas Tetteh",
+     "Levi Garcia"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_4b9a2c47f2a5",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-927dbf70a3ed",
+   "value": {
+    "name": "Panathinaikos 3-1 Kifissia",
+    "on": "2026-09-10",
+    "competition": "Super League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Davide Calabria",
+     "Giorgos Kyriakopoulos",
+     "Stefan De Vrij",
+     "Rick Van Drongelen",
+     "Kings Kangwa",
+     "Etienne Camara",
+     "Santino Andino",
+     "Vicente Taborda",
+     "Levi Garcia",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_0ee2465c0cee",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-6bf30668a293",
+   "value": {
+    "name": "Panathinaikos 3-0 Panetolikos",
+    "on": "2026-09-13",
+    "competition": "Super League",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Davide Calabria",
+     "Giorgos Kyriakopoulos",
+     "Rick Van Drongelen",
+     "Stefan De Vrij",
+     "Etienne Camara",
+     "Imran Louza",
+     "Vicente Taborda",
+     "Azzedine Ounahi",
+     "Santino Andino",
+     "Cyriel Dessers"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Andreas Tetteh",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Kings Kangwa",
+     "Levi Garcia",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_e5b5e60ed125",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-10f9a069936e",
+   "value": {
+    "name": "Kifissia 0-2 Panathinaikos",
+    "on": "2026-09-16",
+    "competition": "Greek Cup",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Anass Salah-eddine",
+     "Stefan De Vrij",
+     "Erik Palmer-brown",
+     "Triantafyllos Tsapras",
+     "Sotiris Kontouris",
+     "Kings Kangwa",
+     "Adriano Jagusic",
+     "Panagiotis Mpiniaris",
+     "Facundo Pellistri",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Ahmed Touba",
+     "Anass Zaroury",
+     "Azzedine Ounahi",
+     "Cyriel Dessers",
+     "Davide Calabria",
+     "Elmin Rastoder",
+     "Etienne Camara",
+     "Giorgos Katris",
+     "Giorgos Kyriakopoulos",
+     "Imran Louza",
+     "Levi Garcia",
+     "Pedro Chirivella",
+     "Rick Van Drongelen",
+     "Santino Andino",
+     "Sverrir Ingi Ingason",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_890331218736",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  },
+  {
+   "id": "pl-e0f76da72f41",
+   "value": {
+    "name": "Kalamata 0-1 Panathinaikos",
+    "on": "2026-09-20",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Inaki Pena",
+     "Davide Calabria",
+     "Stefan De Vrij",
+     "Rick Van Drongelen",
+     "Giorgos Kyriakopoulos",
+     "Etienne Camara",
+     "Kings Kangwa",
+     "Azzedine Ounahi",
+     "Santino Andino",
+     "Levi Garcia",
+     "Andreas Tetteh"
+    ],
+    "bench": [],
+    "decoys": [
+     "Adam Gnezda Cerin",
+     "Adriano Jagusic",
+     "Ahmed Touba",
+     "Anass Salah-eddine",
+     "Anass Zaroury",
+     "Cyriel Dessers",
+     "Elmin Rastoder",
+     "Erik Palmer-brown",
+     "Facundo Pellistri",
+     "Giorgos Katris",
+     "Imran Louza",
+     "Panagiotis Mpiniaris",
+     "Pedro Chirivella",
+     "Sotiris Kontouris",
+     "Sverrir Ingi Ingason",
+     "Triantafyllos Tsapras",
+     "Vicente Taborda"
+    ],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "src_1fdf8bc79253",
+    "src_8df21df65b07"
+   ],
+   "researchedAt": "2026-10-06",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "notes": "Panathinaikos' own team sheet (pao.gr), names as the club wrote them; decoys are the same source's other starters that season. Scorers not attached: the source leaves the credited side unresolved."
+  }
+ ]
+}

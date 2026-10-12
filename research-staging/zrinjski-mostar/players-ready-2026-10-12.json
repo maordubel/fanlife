@@ -1,0 +1,233 @@
+[
+ {
+  "id": "nft-46898",
+  "value": {
+   "name": "Adnan Hadžić",
+   "sport": "football",
+   "positions": [
+    "GK"
+   ],
+   "fromYear": 2009,
+   "toYear": 2013,
+   "aliases": []
+  },
+  "sources": [
+   "ea-src-56ec006a6ad63750",
+   "ea-src-7ccb8676e3f41f74",
+   "ea-src-e837ff605f231a24",
+   "ea-src-f8d36b961e528ec1"
+  ],
+  "confidence": 2,
+  "status": "approved",
+  "researchedAt": "2026-10-09",
+  "parserCertainty": "high",
+  "conflictFree": true,
+  "approvedAt": "2026-10-12",
+  "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+  "notes": "National Football Teams: a partial directory of national-team players by club season (a listing is not an appearance, and not a full squad). Seasons as listed: 2009/10, 2010/11, 2011/12, 2012/13. Provider id nft:46898.",
+  "sourceRecords": [
+   {
+    "id": "ea-src-56ec006a6ad63750",
+    "title": "National Football Teams · /club/3207/2010_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2010_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   },
+   {
+    "id": "ea-src-7ccb8676e3f41f74",
+    "title": "National Football Teams · /club/3207/2011_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2011_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   },
+   {
+    "id": "ea-src-e837ff605f231a24",
+    "title": "National Football Teams · /club/3207/2012_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2012_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   },
+   {
+    "id": "ea-src-f8d36b961e528ec1",
+    "title": "National Football Teams · /club/3207/2009_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2009_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   }
+  ]
+ },
+ {
+  "id": "nft-56120",
+  "value": {
+   "name": "Darko Velkovski",
+   "sport": "football",
+   "positions": [
+    "DF"
+   ],
+   "fromYear": 2025,
+   "toYear": 2026,
+   "aliases": []
+  },
+  "sources": [
+   "ea-src-0b141a0854104981"
+  ],
+  "confidence": 2,
+  "status": "approved",
+  "researchedAt": "2026-10-09",
+  "parserCertainty": "high",
+  "conflictFree": true,
+  "approvedAt": "2026-10-12",
+  "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+  "notes": "National Football Teams: a partial directory of national-team players by club season (a listing is not an appearance, and not a full squad). Seasons as listed: 2025/26. Provider id nft:56120.",
+  "sourceRecords": [
+   {
+    "id": "ea-src-0b141a0854104981",
+    "title": "National Football Teams · /club/3207/2025_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2025_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   }
+  ]
+ },
+ {
+  "id": "nft-57799",
+  "value": {
+   "name": "Hyon-Uk So",
+   "sport": "football",
+   "positions": [
+    "FW"
+   ],
+   "fromYear": 2017,
+   "toYear": 2018,
+   "aliases": []
+  },
+  "sources": [
+   "ea-src-4ac130f8fd089874"
+  ],
+  "confidence": 2,
+  "status": "approved",
+  "researchedAt": "2026-10-09",
+  "parserCertainty": "high",
+  "conflictFree": true,
+  "approvedAt": "2026-10-12",
+  "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+  "notes": "National Football Teams: a partial directory of national-team players by club season (a listing is not an appearance, and not a full squad). Seasons as listed: 2017/18. Provider id nft:57799.",
+  "sourceRecords": [
+   {
+    "id": "ea-src-4ac130f8fd089874",
+    "title": "National Football Teams · /club/3207/2017_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2017_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   }
+  ]
+ },
+ {
+  "id": "nft-80273",
+  "value": {
+   "name": "Marsel Ismajlgeci",
+   "sport": "football",
+   "positions": [
+    "MF"
+   ],
+   "fromYear": 2022,
+   "toYear": 2023,
+   "aliases": []
+  },
+  "sources": [
+   "ea-src-e2076903c763573a"
+  ],
+  "confidence": 2,
+  "status": "approved",
+  "researchedAt": "2026-10-09",
+  "parserCertainty": "high",
+  "conflictFree": true,
+  "approvedAt": "2026-10-12",
+  "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+  "notes": "National Football Teams: a partial directory of national-team players by club season (a listing is not an appearance, and not a full squad). Seasons as listed: 2022/23. Provider id nft:80273.",
+  "sourceRecords": [
+   {
+    "id": "ea-src-e2076903c763573a",
+    "title": "National Football Teams · /club/3207/2022_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2022_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   }
+  ]
+ },
+ {
+  "id": "nft-94848",
+  "value": {
+   "name": "Stjepan Radeljić",
+   "sport": "football",
+   "positions": [
+    "DF"
+   ],
+   "fromYear": 2015,
+   "toYear": 2016,
+   "aliases": []
+  },
+  "sources": [
+   "ea-src-f172e6ebea42d564"
+  ],
+  "confidence": 2,
+  "status": "approved",
+  "researchedAt": "2026-10-09",
+  "parserCertainty": "high",
+  "conflictFree": true,
+  "approvedAt": "2026-10-12",
+  "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+  "notes": "National Football Teams: a partial directory of national-team players by club season (a listing is not an appearance, and not a full squad). Seasons as listed: 2015/16. Provider id nft:94848.",
+  "sourceRecords": [
+   {
+    "id": "ea-src-f172e6ebea42d564",
+    "title": "National Football Teams · /club/3207/2015_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2015_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   }
+  ]
+ },
+ {
+  "id": "nft-95117",
+  "value": {
+   "name": "Madžid Šošić",
+   "sport": "football",
+   "positions": [
+    "MF"
+   ],
+   "fromYear": 2021,
+   "toYear": 2022,
+   "aliases": []
+  },
+  "sources": [
+   "ea-src-d4edbcfe00000114"
+  ],
+  "confidence": 2,
+  "status": "approved",
+  "researchedAt": "2026-10-09",
+  "parserCertainty": "high",
+  "conflictFree": true,
+  "approvedAt": "2026-10-12",
+  "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+  "notes": "National Football Teams: a partial directory of national-team players by club season (a listing is not an appearance, and not a full squad). Seasons as listed: 2021/22. Provider id nft:95117.",
+  "sourceRecords": [
+   {
+    "id": "ea-src-d4edbcfe00000114",
+    "title": "National Football Teams · /club/3207/2021_1/Zrinjski_Mostar.html",
+    "url": "https://www.national-football-teams.com/club/3207/2021_1/Zrinjski_Mostar.html",
+    "publisher": "National Football Teams",
+    "access": "available",
+    "checkedAt": "2026-10-09"
+   }
+  ]
+ }
+]

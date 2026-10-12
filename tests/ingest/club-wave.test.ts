@@ -1,7 +1,7 @@
 import {describe,it,expect} from 'vitest'
 import {parseMatch,parseLineups,teamsIn,matchesUrl,lineupUrl} from '@/scripts/ingest/clubs/uefa'
 import {corroborates} from '@/scripts/ingest/clubs/corroborate'
-import {toWaveFact,buildWave} from '@/scripts/ingest/clubs/wave'
+import {toWaveFact,buildWave,mergeAutoWave} from '@/scripts/ingest/clubs/wave'
 // Shapes copied from live match.uefa.com/v5 responses (2026-10-06).
 const raw={id:'2036196',homeTeam:{id:'50057',internationalName:'Olympiacos',countryCode:'GRE'},awayTeam:{id:'1',internationalName:'Other FC',countryCode:'ENG'},competition:{id:'14',metaData:{name:'UEFA Europa League'}},kickOffTime:{date:'2024-02-15',dateTime:'2024-02-15T19:00:00Z'},score:{regular:{home:2,away:1},total:{home:2,away:1}},stadium:{name:'Karaiskakis'},playerEvents:{scorers:[{goalType:'SCORED',player:{internationalName:'A Scorer'},teamId:'50057',time:{minute:10,second:3}},{goalType:'OWN_GOAL',player:{internationalName:'B Own'},teamId:'1',time:{minute:50}},{goalType:'SCORED',player:{internationalName:'C Visitor'},teamId:'1',time:{minute:70}}]}}
 const side=(n:number,p:string)=>({field:Array.from({length:n},(_,i)=>({player:{internationalName:`${p}${i}`}})),bench:[{player:{internationalName:`${p}-bench`}}]})
@@ -27,10 +27,30 @@ describe('wave building',()=>{
  })
  it('two publishers approve; one publisher stays in review; club side is never guessed',()=>{
   const ok=toWaveFact(m,['Olympiacos'],{publisher:'TheSportsDB',title:'t',url:'https://www.thesportsdb.com/event/9'},'2026-10-06','olympiacos')!
-  expect(ok.fact.status).toBe('approved');expect('lineup' in ok.fact.value).toBe(false);expect('scorers' in ok.fact.value).toBe(false);expect(ok.fact.value.primaryOnly.lineup).toHaveLength(11);expect(ok.fact.value.primaryOnly.scorers).toEqual([{name:'A Scorer',minute:10}]);expect(ok.fact.approvedBy).toMatch(/^automated:/)
+  expect(ok.fact.status).toBe('approved');expect(ok.fact.confidence).toBe(3)
+  // rule 102 (owner, 10.10.2026): UEFA's eleven and scorers are UEFA's own record — a second publisher confirming the result must not take them away (12.10.2026)
+  expect((ok.fact.value as {lineup?:string[]}).lineup).toHaveLength(11);expect((ok.fact.value as {scorers?:unknown[]}).scorers).toEqual([{name:'A Scorer',minute:10}])
+  // a non-UEFA primary with a second publisher: the result is corroborated, the eleven is not (audit A04)
+  const other=toWaveFact({...m,provider:'other' as never,publisher:'Some Site'},['Olympiacos'],{publisher:'TheSportsDB',title:'t',url:'https://www.thesportsdb.com/event/9'},'2026-10-06','olympiacos')!
+  expect(other.fact.status).toBe('approved');expect('lineup' in other.fact.value).toBe(false);expect('scorers' in other.fact.value).toBe(false)
+  expect(ok.fact.value.primaryOnly.lineup).toHaveLength(11);expect(ok.fact.value.primaryOnly.scorers).toEqual([{name:'A Scorer',minute:10}]);expect(ok.fact.approvedBy).toMatch(/^automated:/)
   const uefaAlone=toWaveFact(m,['Olympiacos'],null,'2026-10-06','olympiacos')!;expect(uefaAlone.fact.status).toBe('approved') // owner decision 10.10.2026 (rule 102): UEFA is sufficient for its own competitions
   const one=toWaveFact({...m,provider:'other' as never,publisher:'Some Site'},['Olympiacos'],null,'2026-10-06','olympiacos')!;expect(one.fact.status).toBe('review');expect(one.fact.confidence).toBe(2)
   expect(toWaveFact(m,['Somebody Else'],null,'2026-10-06','x')).toBeNull()
   expect(buildWave([{m,second:null}],['Olympiacos'],'olympiacos','2026-10-06').matches).toHaveLength(1)
+ })
+ it('a scheduled pull adds to the committed wave and never empties it (12.10.2026)',()=>{
+  const older={...m,on:'2019-07-09',providerId:'1999'},newer={...m,on:'2024-02-15'}
+  const prev=buildWave([{m:older,second:null},{m:newer,second:null}],['Olympiacos'],'olympiacos','2026-10-06')
+  // the fresh run reads only the newest match, and its line-up request was refused
+  const fresh=buildWave([{m:{...newer,lineup:null},second:null}],['Olympiacos'],'olympiacos','2026-10-12')
+  const merged=mergeAutoWave(prev,fresh)
+  expect(merged.matches).toHaveLength(2)
+  const kept=merged.matches.find(f=>f.value.on==='2024-02-15')!
+  expect((kept.value as {lineup?:string[]}).lineup).toHaveLength(11)
+  expect(merged.sources.every(s=>merged.matches.some(f=>f.sources.includes(s.id)))).toBe(true)
+  // a fresh read that lost its approval never replaces an approved one
+  const worse={...fresh,matches:fresh.matches.map(f=>({...f,status:'review' as const}))}
+  expect(mergeAutoWave(prev,worse).matches.find(f=>f.value.on==='2024-02-15')!.status).toBe('approved')
  })
 })

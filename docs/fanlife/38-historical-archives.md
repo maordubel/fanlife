@@ -21,7 +21,7 @@
 | Union Berlin | Immer Unioner (HTML) · official season archive (HTML) |
 
 ## Where it runs
-- **GitHub → Actions → Archive collect → Run workflow** (and automatically every Tuesday). It runs on GitHub's network,
+- **GitHub → Actions → Archive collect → Run workflow** (and automatically every Tuesday and Friday). It runs on GitHub's network,
   collects a polite batch per club, and commits only `research-data/`. The admin shows it after the next deploy.
 - On a writable server (local evaluation) the Data tab buttons collect directly. A read-only server answers with the
   GitHub instruction instead of failing.

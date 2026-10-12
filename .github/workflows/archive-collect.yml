@@ -1,6 +1,7 @@
 name: Archive collect
 # The historical-archive collector, on GitHub's network (the build sandbox cannot reach the sources).
-# Click "Run workflow" (Actions tab) — no terminal. Also runs every Tuesday.
+# Click "Run workflow" (Actions tab) — no terminal. Also runs every Tuesday and Friday (12.10.2026: weekly read AEKpedia's
+# 751 posts in ~3 months; twice a week halves that and stays polite — 12 requests per source per run).
 # Each run reads a small, polite batch per source (resuming from the committed checkpoints), re-exports the
 # staging catalogue, and commits ONLY research-data/. Nothing is approved; the club file shows it as unreviewed.
 on:
@@ -13,7 +14,7 @@ on:
         description: 'Requests per club this run (1–40)'
         default: '12'
   schedule:
-    - cron: '23 3 * * 2'
+    - cron: '23 3 * * 2,5'
 permissions:
   contents: write
 concurrency:

@@ -84,8 +84,13 @@ describe('the hub, the URLs and the credits',()=>{
 
 describe.each(CLUBS.filter(c=>c.wave))('$id: the catalogue wave',({id,wave,file})=>{
  const w=wave as unknown as {sources:{id:string}[];kits:{id:string;status:string;confidence:number;sources:string[];value:{season:string;type:string;construction:{colors:string};shorts:{colour:string};socks:{colour:string}}}[]}
- it('is approved by the owner in his words ("מאשר הכל", 2026-10-09), every kit stamped — Olympiacos, ingested after those words, waits in review',()=>{
-  if(id==='olympiacos'){for(const k of w.kits){expect(k.status).toBe('review');expect(k.confidence).toBe(1);expect(k).not.toHaveProperty('approvedBy')};return}
+ it('is approved by the owner in his words ("מאשר הכל", 2026-10-09), every kit stamped — Olympiacos, ingested after those words, by his words of 12.10.2026 except the drawings its reader flagged uncertain',()=>{
+  // rule 65: this guard used to say Olympiacos waits in review; the owner approved the collected research on 12.10.2026
+  // ("הכל מאושר", scripts/club-research/approve-owner-2026-10-12.py) — and a transcription the reader itself doubted stays out
+  if(id==='olympiacos'){for(const k of w.kits as unknown as {status:string;confidence:number;notes:string;approvedBy?:string}[]){
+   if(/flagged uncertain/.test(k.notes)){expect(k.status).toBe('review');expect(k.confidence).toBe(1);expect(k).not.toHaveProperty('approvedBy')}
+   else{expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect(k.approvedBy).toMatch(/^Maor \(owner, chat, 12\.10\.2026\): "להצמיד את המחקרים/)}}
+   expect(w.kits.filter(k=>k.status==='approved').length).toBe(25);return}
   for(const k of w.kits){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect((k as unknown as {approvedBy:string}).approvedBy).toMatch(/Maor Harel/);expect((k as unknown as {notes:string}).notes).toMatch(id==='hapoel-tel-aviv'?/הכל מאושר לשימוש/:/מאשר הכל/)}
  })
  it('has unique ids, cites only its own sources, and never repeats a kit the pack already holds',()=>{
