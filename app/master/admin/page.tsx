@@ -1,3 +1,4 @@
+import {ProviderCheck} from '@/components/master/desk/ProviderCheck'
 import {Suspense} from 'react'
 import {ClubGaps} from '@/components/master/ClubGaps'
 import {Admin,type AdapterInfo,type DeskSection} from '@/components/master/Admin'
@@ -57,6 +58,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
     tasks={admin==='overview'?<TaskDesk initial={desk.view} scope={club} players={desk.players}/>:undefined}
     ops={{storage:storageMap(),integrations:integrations(),release:release()}}
     audience={admin==='audience'?<AudienceDesk days={searchParams.days} club={club} clubNames={Object.fromEntries(summaries.map(s=>[s.id,s.name]))}/>:undefined}
-    gaps={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">Club gaps — what each gate still needs</summary><ClubGaps summaries={summaries}/></details>:undefined}/>
+    gaps={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">Club gaps — what each gate still needs</summary><ClubGaps summaries={summaries}/></details>:undefined}
+    provider={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">TheSportsDB check — grounds, founding years, badges and kits</summary><Suspense fallback={<p className="desk-state" role="status">Asking TheSportsDB…</p>}><ProviderCheck/></Suspense></details>:undefined}/>
   </Suspense>)
 }
