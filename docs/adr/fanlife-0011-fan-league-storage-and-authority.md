@@ -1,25 +1,27 @@
-# ADR-fanlife-0011: FAN LEAGUE — careers in Supabase, the server decides every result
+# ADR-fanlife-0011: FAN LEAGUE — careers in the durable store, the server decides every result
 
 ## Status
-Accepted (owner roadmap 12.10.2026)
+Accepted (owner roadmap 12.10.2026). **Revised the same day, before any code shipped:** documents in the existing
+server-only file table instead of three new tables — no SQL for the owner to run, nothing new to back up.
 
 ## Decision
-1. **Three tables, not thirteen.** `worker_fanleague_careers` (one row per career: owner, club, status, revision,
-   `state jsonb` holding squad, wallet, fixtures, table and the catalogue snapshot digest), `worker_fanleague_ledger`
-   (append-only: transfers, results, audit; unique idempotency key) and `worker_fanleague_friendlies` (invite, two locked
-   snapshots, one immutable result). A career is a document that changes as one unit, and compare-and-swap on `revision`
-   gives the atomicity a set of narrow tables would need a transaction for.
-2. **Authority.** A browser never sends a score, a balance or a squad. Server actions verify the user with
-   `createClient().auth.getUser()`, then read/compute/write with the service role under `revision = expected`. RLS is on,
-   owners may SELECT their own rows; there is no insert/update grant to anon/authenticated.
-3. **Same club, always.** Every signing, lineup and friendly side is re-checked on the server against the career's
-   frozen catalogue (`playerVersion.clubId === career.clubId`). A forged body cannot add a foreign player.
-4. **Snapshot.** A season freezes its catalogue (positions, rating, price, sources) at creation; admin edits reach only
-   new seasons.
-5. **Friendlies** read two locked snapshots and run the same pure engine once (unique on invite id); they write nothing to
-   either career.
-6. **Without Supabase** (evaluation, local dev) the same service runs on the durable file store, keyed by a device id —
-   playable, clearly marked "saved on this device".
+1. **One document per career, in `worker_fanlife_files`** (Supabase, service role only, RLS on, no grant — rule 105):
+   `fanleague/careers/<id>.json` holds the career whole — owner hash, club, revision, the frozen catalogue, squad, wallet,
+   the AI sides, fixtures with their event logs, and the transfer ledger. `fanleague/owners/<hash>.json` lists one owner's
+   careers. A career changes as one unit, so compare-and-swap on the document's etag is the transaction: two taps or two
+   tabs can never both apply; the loser re-reads and the action's own `rev` check refuses it (409-style "moved on").
+2. **Authority.** A browser never sends a score, a balance or a squad — only an intent (`buy <id>`, `play`) with the
+   revision it saw and an idempotency key (a repeat answers the state it already produced). The owner is read on the
+   server every time: a signed-in, non-anonymous account (`u:<id>`), else a signed httpOnly device cookie (`d:<random>`).
+   Only a sha256 of that key is stored.
+3. **Same club, always.** The career's catalogue IS its club: a man not in it cannot be signed or fielded, whatever the
+   request says. AI sides are frozen eighteen from their own clubs.
+4. **Snapshot.** A career freezes its catalogue (position, hidden rating, price, years) at kick-off; edits in the Player
+   Control Center reach new careers only. Hidden ratings never reach the browser — only the team lines.
+5. **Friendlies** (next PR) read two locked snapshots and run the same pure engine once; they write nothing to either career.
+6. **No false save.** Without a durable store (a serverless host on memory only) a save is refused with a message; a
+   page still opens.
 
 ## Consequences
-+ Small schema, backed up by prefix (`worker_*`). − Leaderboards across careers need a read model later.
++ No migration, no manual step; already inside the nightly `worker_*` backup. − Leaderboards across careers need a read
+model later; a career document is ~100 kB for the largest clubs (fine for one row, not for a scan).

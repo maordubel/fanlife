@@ -1,0 +1,105 @@
+/* ───────── FAN LEAGUE — the manager's edition (ADR-fanlife-0011) ─────────
+   ALL FOOTBALL's press, and in a career the club's own colour (`--club-primary` from its livery) on rules and stamps only.
+   Tokens only (rule 91). Mobile first: one column, tabs that scroll, every target ≥44px. */
+.flg { max-inline-size: 1180px; margin: 0 auto; padding: 18px var(--gutter, 16px) 72px; }
+.flg h2 { margin: 0 0 12px; font: 700 clamp(28px, 4vw, 40px)/.95 var(--mag-condensed); text-transform: uppercase; }
+.flg h2 span { border-block-end: 4px solid var(--club-primary); }
+.flg-mast { display: grid; grid-template-columns: minmax(0, 1fr); flex-direction: column; gap: 10px; padding-block: 16px 20px; border-block: 6px double var(--mag-ink); text-align: center; margin-block-end: 20px; }
+.flg-mast .af-edition { display: flex; justify-content: space-between; gap: 12px; font: 700 11px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; border-block-end: 1px solid var(--af-rule); padding-block-end: 8px; }
+.flg-mast h1 { margin: 0; font-family: var(--mag-display); font-size: clamp(52px, 12vw, 132px); line-height: .82; text-transform: uppercase; }
+.flg-mast h1 span { color: var(--mag-vermilion); }
+.flg-mast p { margin: 0 auto; max-inline-size: 58ch; font: 500 clamp(16px, 2.1vw, 19px)/1.4 var(--mag-body); }
+.af-back-row { margin: 0; } .flg-mast .af-back-row { text-align: start; }
+.flg-fine { margin: 6px 0; font-size: 13px; color: color-mix(in srgb, var(--mag-ink) 74%, transparent); }
+.flg-error { margin: 10px 0; padding: 10px 12px; border-inline-start: 5px solid var(--mag-vermilion); background: var(--mag-card); font-weight: 600; }
+.flg-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; }
+.flg-go, .flg-ghost { display: inline-flex; align-items: center; justify-content: center; min-block-size: 48px; padding: 0 18px; font: 700 13px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; border: 2px solid var(--mag-ink); cursor: pointer; }
+.flg-go { background: var(--mag-ink); color: var(--mag-paper); } .flg-ghost { background: transparent; color: var(--mag-ink); }
+.flg-go:disabled, .flg-ghost:disabled { opacity: .45; cursor: not-allowed; }
+.flg-link { background: none; border: 0; padding: 0; font: 700 13px var(--mag-mono); color: var(--mag-ink); text-decoration: underline; cursor: pointer; }
+/* the front door */
+.flg-mine ul, .flg-clubs, .flg-decades, .flg-men, .flg-ledger, .flg-fixtures { list-style: none; margin: 0; padding: 0; }
+.flg-mine li a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 12px 0; border-block-end: 1px solid var(--af-rule); color: var(--mag-ink); }
+.flg-mine li a b { font: 700 22px/1 var(--mag-condensed); text-transform: uppercase; } .flg-mine li a small { grid-column: 1; font-size: 13px; } .flg-mine li a span { grid-row: 1 / 3; grid-column: 2; align-self: center; font-size: 22px; }
+.flg-mine { margin-block-end: 26px; }
+.flg-new fieldset { border: 0; padding: 0; margin: 0 0 18px; }
+.flg-new legend { font: 700 12px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--mag-vermilion); margin-block-end: 8px; }
+.flg-clubs { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; }
+.flg-clubs button, .flg-decades button, .flg-rail button { display: grid; gap: 2px; inline-size: 100%; text-align: start; padding: 10px 12px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); cursor: pointer; }
+.flg-clubs b { font: 700 22px/1 var(--mag-condensed); text-transform: uppercase; } .flg-clubs small, .flg-decades small, .flg-rail small { font-size: 12px; }
+.flg-clubs button[aria-pressed='true'], .flg-decades button[aria-pressed='true'], .flg-rail button[aria-pressed='true'] { background: var(--mag-ink); color: var(--mag-paper); }
+.flg-clubs button:disabled { opacity: .5; border-style: dashed; cursor: not-allowed; }
+.flg-decades { display: flex; flex-wrap: wrap; gap: 8px; } .flg-decades button { inline-size: auto; min-inline-size: 104px; } .flg-decades b, .flg-rail b { font: 700 24px/1 var(--mag-condensed); }
+.flg-rules { margin-block-start: 30px; padding: 16px 18px; border: 3px solid var(--mag-ink); background: var(--mag-card); }
+.flg-rules ol { margin: 0; padding-inline-start: 22px; display: grid; gap: 8px; } .flg-rules li { line-height: 1.45; }
+/* the career */
+.flg-career { --af-rule: color-mix(in srgb, var(--mag-ink) 22%, transparent); }
+.flg-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; padding-block: 10px 12px; border-block-end: 6px solid var(--club-primary); }
+.flg-head h1 { margin: 2px 0 0; font: 700 clamp(36px, 7vw, 68px)/.9 var(--mag-condensed); text-transform: uppercase; }
+.flg-strip { display: flex; gap: 0; margin: 0; border: 2px solid var(--mag-ink); }
+.flg-strip div { padding: 6px 12px; border-inline-end: 1px solid var(--af-rule); } .flg-strip div:last-child { border: 0; }
+.flg-strip dt { font: 700 10px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; } .flg-strip dd { margin: 0; font: 700 26px/1 var(--mag-condensed); }
+.flg-strip dd small { font-size: 15px; } .flg-strip dd[data-open] { color: var(--club-type, var(--mag-vermilion)); }
+.flg-tabs { position: sticky; inset-block-start: 0; z-index: 5; display: flex; gap: 0; overflow-x: auto; background: var(--mag-paper); border-block-end: 3px solid var(--mag-ink); margin-block-end: 6px; }
+.flg-tabs button { flex: 1 0 auto; padding: 0 16px; background: none; border: 0; border-block-end: 5px solid transparent; font: 700 15px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--mag-ink); cursor: pointer; }
+.flg-tabs button[aria-current='page'] { border-block-end-color: var(--club-primary); }
+.flg-live { min-block-size: 22px; margin: 4px 0 8px; font-weight: 600; } .flg-live[data-kind='error'] { color: var(--mag-vermilion); }
+.flg-today, .flg-squad, .flg-league { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+.flg-card { padding: 14px 16px 16px; border: 2px solid var(--mag-ink); background: var(--mag-card); }
+.flg-banner { margin: 0 0 12px; padding: 10px 14px; border-inline-start: 6px solid var(--club-primary); background: var(--mag-card); }
+.flg-banner[data-shut] { border-inline-start-color: var(--mag-ink); }
+.flg-score-line { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 12px; margin: 8px 0; font: 700 clamp(22px, 4.4vw, 36px)/1 var(--mag-condensed); text-transform: uppercase; }
+.flg-score-line > span:last-child { text-align: end; } .flg-score-line b { font-size: 1.3em; padding: 0 10px; border: 3px solid var(--mag-ink); }
+.flg-goals { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; font-size: 14px; }
+.flg-goals li[data-side='1'] { text-align: end; } .flg-goals b { font-family: var(--mag-mono); }
+.flg-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-block-start: 10px; }
+.flg-lines { margin: 6px 0; display: grid; gap: 4px; } .flg-lines::before { content: attr(aria-label); font: 700 11px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; }
+.flg-lines div { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); align-items: center; gap: 8px; }
+.flg-lines dt { font: 700 11px var(--mag-mono); text-transform: uppercase; } .flg-lines dd { margin: 0; display: flex; align-items: center; gap: 6px; }
+.flg-lines dd span { display: block; block-size: 10px; background: var(--club-primary); border: 1px solid var(--mag-ink); } .flg-lines dd b { font: 700 13px var(--mag-mono); }
+.flg-table-wrap { overflow-x: auto; } .flg-table { inline-size: 100%; border-collapse: collapse; font-size: 14px; }
+.flg-table th, .flg-table td { padding: 8px 6px; border-block-end: 1px solid var(--af-rule); text-align: center; } .flg-table th[scope='row'] { text-align: start; font-weight: 700; }
+.flg-table thead th { font: 700 11px var(--mag-mono); letter-spacing: 1px; } .flg-table tr[data-mine] { background: color-mix(in srgb, var(--club-primary) 16%, transparent); }
+.flg-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; margin-block: 8px 12px; }
+.flg-controls label { display: grid; gap: 4px; font: 700 11px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; }
+.flg-controls select, .flg-controls input { min-block-size: 44px; border: 2px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); font: 600 15px var(--mag-body); padding: 0 8px; }
+.flg-search { flex: 1 1 200px; } .flg-search input { inline-size: 100%; }
+.flg-pitch { position: relative; list-style: none; margin: 8px 0 12px; padding: 0; aspect-ratio: 3 / 4; max-block-size: 640px; border: 3px solid var(--mag-ink);
+ background: repeating-linear-gradient(0deg, color-mix(in srgb, var(--mag-green) 82%, var(--mag-ink)) 0 12.5%, var(--mag-green) 12.5% 25%); }
+.flg-pitch::before { content: ''; position: absolute; inset: 50% 0 auto; border-block-start: 2px dashed var(--mag-white); }
+.flg-pitch li { position: absolute; transform: translate(-50%, -50%); inline-size: min(23%, 150px); }
+[dir='rtl'] .flg-pitch li { transform: translate(50%, -50%); }
+.flg-pitch label { display: grid; gap: 2px; justify-items: center; }
+.flg-slot { font: 700 11px var(--mag-mono); background: var(--mag-ink); color: var(--mag-paper); padding: 1px 6px; }
+.flg-pitch select { inline-size: 100%; min-block-size: 44px; border: 2px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); font: 700 13px var(--mag-body); padding: 0 4px; text-overflow: ellipsis; }
+.flg-men { display: grid; gap: 0; }
+.flg-man { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 4px 10px; align-items: center; padding: 8px 0; border-block-end: 1px solid var(--af-rule); }
+.flg-man > div { display: grid; } .flg-man b { font-weight: 700; } .flg-man small { font-size: 12px; } .flg-man em { font: 700 10px var(--mag-mono); font-style: normal; margin-inline-start: 6px; padding: 0 4px; border: 1px solid currentColor; }
+.flg-man > button { grid-column: 2 / -1; justify-self: end; min-block-size: 44px; }
+.flg-pos { display: grid; place-items: center; inline-size: 36px; block-size: 36px; font: 700 12px var(--mag-mono); border: 2px solid var(--mag-ink); }
+.flg-pos[data-pos='GK'] { background: var(--mag-ink); color: var(--mag-paper); }
+.flg-price { font: 700 18px/1 var(--mag-condensed); }
+.flg-rail { display: flex; gap: 8px; overflow-x: auto; padding-block-end: 6px; scroll-snap-type: x mandatory; }
+.flg-rail button { flex: 0 0 auto; inline-size: auto; min-inline-size: 96px; scroll-snap-align: start; }
+.flg-market { display: grid; gap: 8px; }
+.flg-ledger li { padding: 6px 0; border-block-end: 1px solid var(--af-rule); font-size: 14px; }
+.flg-league details { border-block-end: 1px solid var(--af-rule); } .flg-league summary { display: flex; align-items: center; font: 700 14px var(--mag-mono); cursor: pointer; }
+.flg-fixtures li { display: grid; grid-template-columns: minmax(0, 1fr) 4em minmax(0, 1fr); gap: 8px; padding: 6px 0; font-size: 14px; }
+.flg-fixtures li > span:last-child { text-align: end; } .flg-fixtures b { text-align: center; font-family: var(--mag-mono); } .flg-fixtures li[data-mine] { font-weight: 700; }
+.flg-final h2 { font-size: clamp(34px, 6vw, 60px); }
+@media (min-width: 900px) {
+ .flg-today { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } .flg-today .flg-banner, .flg-today .flg-next { grid-column: 1 / -1; }
+ .flg-squad { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+ .flg-man { grid-template-columns: 40px minmax(0, 1fr) auto auto; } .flg-man > button { grid-column: auto; }
+ .flg-pitch { aspect-ratio: 4 / 5; }
+}
+@media (max-width: 560px) { .flg-compare { grid-template-columns: minmax(0, 1fr); } .flg-mast .af-edition span:nth-child(2) { display: none; } .flg-strip dd { font-size: 22px; } }
+.flg-man b em { display: inline-block; vertical-align: middle; }
+/* a phone has no room for eleven selects on a drawn pitch: the slots stack as a team sheet, strikers first */
+@media (max-width: 699px) {
+ .flg-pitch { aspect-ratio: auto; max-block-size: none; display: flex; flex-direction: column-reverse; gap: 6px; padding: 10px; }
+ .flg-pitch::before { display: none; }
+ .flg-pitch li, [dir='rtl'] .flg-pitch li { position: static; transform: none; inline-size: auto; }
+ .flg-pitch label { grid-template-columns: 4.2em minmax(0, 1fr); align-items: center; justify-items: stretch; }
+ .flg-slot { text-align: center; padding-block: 12px; }
+}

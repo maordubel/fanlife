@@ -3042,3 +3042,13 @@ ADRs fanlife-0009/0010. `/all-football` (+ `/trivia`, `/timeline`, `/memory`), s
 3. **One engine.** `lib/clubs/trivia-run-core.ts` is the run (club actions and `app/all-football/actions.ts` both call it); `ClubTrivia`/`ClubMemory` take optional `actions`/`reveal`/`home`; the timeline is `SharedTimelineBoard` with its own `submit`. A memory reveal answers from the pair's OWN club (archive entry, source, page).
 4. **Attribution.** A prompt that does not name its club gets `<Club> · ` in front; a timeline card's hint and a reveal carry the club. Records stay in their source language (rule 94 §4).
 5. **Control room:** Games → ALL FOOTBALL workspace — members, exclusions with reasons, per-club counts, and the Round Lab (100 seeds per gate: unique ids, member clubs only, recorded answer grades correct, no foreign distractor).
+
+## 108 · FAN LEAGUE: one club per career, its own men only, the server plays every match (12.10.2026)
+
+Roadmap PR10–14, appendix B; ADR-fanlife-0011 (revised). `/all-football/fan-league`, behind `features.fanLeague` (owner preview while off); `features.fanLeagueOff` holds clubs out of NEW careers.
+1. **The catalogue is the club.** `lib/fan-league/catalog.ts` freezes a club's approved men from `ratedPool` (position, hidden rating, price, years) into the career at kick-off. A man not in it cannot be signed or fielded, whatever a request says. AI sides are frozen eighteens of their own clubs.
+2. **A decade is recorded years, never a season.** `eligibleDecades(from,to)`; a man with no years is in the Archive rail only. Screens say "recorded years touch the 1980s" and call a signing a time-machine fantasy.
+3. **Readiness from the catalogue, not the registry** (`readiness.ts`): BLOCK = no GK / under 18 men / no decade fields an eleven.
+4. **One engine** (`engine.ts`): the XI's `linesOf`, a flatter goal rate (season needs upsets), home edge, one tactic; goals are events with minute, scorer and assist from that eleven; the score is counted from the log. `npm run fan-league:lab` and Games → ALL FOOTBALL → Season Lab measure it (≈2.85 goals, ≈24% draws on today's data).
+5. **The career is a pure state machine** (`career.ts`): every action carries `rev` + an idempotency key; windows before round 1 and after ⌊R/2⌋; a sale refunds 80% rounded down; a man sold in a window cannot come back in it; squad 16–23.
+6. **Storage** (`store.ts`): `fanleague/careers/<id>.json` in the durable store, compare-and-swap, serialized per career; no durable store → the save is refused, never faked. Owner = account or signed device cookie (`owner.ts`), stored only as a hash. Hidden ratings never reach the browser — only team lines.
