@@ -10,7 +10,9 @@ import type {Decision,MatchEventRow,MatchOutcome,MatchSnapshot,SideSnapshot,Tact
  *  · morale moves strength by up to ±10%; fatigue is cosmetic (0.99–1.01)
  *  · every minute draws from its OWN stream (`seed:minute`), a fixed number of draws whatever happens — so a decision changes
  *    only what comes after it, and the quick sim and an interactive match with no interventions write the same log (M03)
- *  · an interactive match stops at most three times: at a goal, a red card or an injury, or else at half-time and on 75'
+ *  · a live match stops three times: half-time, 60′ and 75′ (engine 2; a match begun on engine 1 keeps its old stops —
+ *    at a goal, a red or an injury, or else at half-time and on 75′)
+ *  · the captain plays 3% above himself (engine 2) — never named on a screen
  *  · three substitutions, an automatic one for an injury included; a man sent off is not replaced
  *  · injuries: one draw per team per match at 5%; minor 70% (1–2 rounds) · moderate 25% (3–5) · severe 5% (6–10)
  * The goal and card rates are calibration constants (§2.5), measured in the Legends Lab, not derived from 80/15/5.
@@ -18,7 +20,7 @@ import type {Decision,MatchEventRow,MatchOutcome,MatchSnapshot,SideSnapshot,Tact
 export const RATES={chance:0.104,convert:0.14,yellow:1.7/90,red:0.03/90,rebooked:0.3,etFactor:0.8,penalty:0.76,spread:22,cap:0.9} as const
 type Man={id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>}
 type Pitch={slot:QuotaPos;man:Man;fresh:boolean}
-type SideState={snap:SideSnapshot;pitch:(Pitch|null)[];bench:Man[];used:Set<string>;off:Set<string>;subs:number;tactics:Tactics;yellow:Set<string>;played:Set<string>}
+type SideState={cap:number;snap:SideSnapshot;pitch:(Pitch|null)[];bench:Man[];used:Set<string>;off:Set<string>;subs:number;tactics:Tactics;yellow:Set<string>;played:Set<string>}
 export type PauseState={stop:number;minute:number;goals:[number,number];events:MatchEventRow[];pitch:[{slot:QuotaPos;id:string;name:string}[],{slot:QuotaPos;id:string;name:string}[]];bench:[{id:string;name:string;pos:QuotaPos}[],{id:string;name:string;pos:QuotaPos}[]];subsLeft:[number,number];tactics:[Tactics,Tactics]}
 export type RunResult={done:true;outcome:MatchOutcome}|{done:false;pause:PauseState}
 
@@ -27,10 +29,10 @@ const attr=(m:Man,k:string)=>m.attrs[k]??m.stars
 function strength(s:SideState,minute:number,home:boolean|null,opp:SideState):{S:number;A:number;D:number}{
  let q=0,nat=0,a=0,an=0,d=0,dn=0
  for(const p of s.pitch){if(!p)continue
-  const fat=p.fresh?1.01:1.01-0.02*Math.min(1,minute/90)
-  q+=qualityOf(p.man.stars)*fitOf(p.man,p.slot)*fat;if(fitOf(p.man,p.slot)===1)nat++
-  if(p.slot==='FW'||p.slot==='MF'){const w=p.slot==='FW'?2:1;a+=w*qualityOf((attr(p.man,'finishing')+attr(p.man,'shooting')+attr(p.man,'passing'))/3);an+=w}
-  if(p.slot==='DF'||p.slot==='GK'){const v=p.slot==='GK'?(attr(p.man,'reflexes')+attr(p.man,'handling'))/2:(attr(p.man,'tackling')+attr(p.man,'marking'))/2;d+=qualityOf(v);dn++}
+  const fat=p.fresh?1.01:1.01-0.02*Math.min(1,minute/90),k=p.man.id===s.snap.captain?s.cap:1
+  q+=qualityOf(p.man.stars)*fitOf(p.man,p.slot)*fat*k;if(fitOf(p.man,p.slot)===1)nat++
+  if(p.slot==='FW'||p.slot==='MF'){const w=p.slot==='FW'?2:1;a+=w*k*qualityOf((attr(p.man,'finishing')+attr(p.man,'shooting')+attr(p.man,'passing'))/3);an+=w}
+  if(p.slot==='DF'||p.slot==='GK'){const v=p.slot==='GK'?(attr(p.man,'reflexes')+attr(p.man,'handling'))/2:(attr(p.man,'tackling')+attr(p.man,'marking'))/2;d+=k*qualityOf(v);dn++}
  }
  const Q=q/11,mine=s.tactics,theirs=opp.tactics
  let T=50+30*clamp((nat/11-0.8)/0.2,-1,1)
@@ -46,9 +48,9 @@ const TEMPO={slow:0.88,normal:1,fast:1.12} as const
 const PRESS={low:0.8,medium:1,high:1.3} as const
 function pick<T>(xs:readonly T[],w:(x:T)=>number,r:number):T|null{const ws=xs.map(w),t=ws.reduce((a,b)=>a+b,0);if(t<=0)return null;let x=r*t;for(let i=0;i<xs.length;i++){x-=ws[i]!;if(x<0)return xs[i]!}return xs[xs.length-1]??null}
 
-function sideState(snap:SideSnapshot):SideState{
+function sideState(snap:SideSnapshot,cap:number):SideState{
  const slots=slotsOf(snap.formation)
- return {snap,pitch:snap.xi.map((m,i)=>({slot:slots[i]!.family,man:m,fresh:false})),bench:[...snap.bench],used:new Set(),off:new Set(),subs:0,tactics:{...snap.tactics},yellow:new Set(),played:new Set(snap.xi.map(m=>m.id))}
+ return {cap,snap,pitch:snap.xi.map((m,i)=>({slot:slots[i]!.family,man:m,fresh:false})),bench:[...snap.bench],used:new Set(),off:new Set(),subs:0,tactics:{...snap.tactics},yellow:new Set(),played:new Set(snap.xi.map(m=>m.id))}
 }
 /** the decision a manager may make at a stop, checked against the pitch as it stands */
 export function checkDecision(p:PauseState,side:0|1,d:Decision):string|null{
@@ -65,7 +67,8 @@ export function checkDecision(p:PauseState,side:0|1,d:Decision):string|null{
 }
 
 export function run(snap:MatchSnapshot,decisions:readonly Decision[],interactive:boolean,mySide:0|1=0):RunResult{
- const S:[SideState,SideState]=[sideState(snap.sides[0]),sideState(snap.sides[1])],events:MatchEventRow[]=[],goals:[number,number]=[0,0]
+ const v2=snap.engine!=='legends-engine-1',cap=v2?R.captainBoost:1
+ const S:[SideState,SideState]=[sideState(snap.sides[0],cap),sideState(snap.sides[1],cap)],events:MatchEventRow[]=[],goals:[number,number]=[0,0]
  const push=(e:Omit<MatchEventRow,'seq'>)=>events.push({...e,seq:events.length})
  const yellows:[Record<string,number>,Record<string,number>]=[{},{}],reds:MatchOutcome['reds']=[{},{}],injuries:MatchOutcome['injuries']=[{},{}],scorers:MatchOutcome['scorers']=[{},{}]
  push({minute:0,kind:'kickoff',side:null})
@@ -131,6 +134,7 @@ export function run(snap:MatchSnapshot,decisions:readonly Decision[],interactive
  }
  const stopAt=(m:number,significant:boolean)=>{
   if(!interactive||stops.length>=R.maxInterventionWindows||m>=90)return false
+  if(v2)return (R.touchlineStops as readonly number[]).includes(m)
   if(significant&&m-lastStop>=8)return true
   if(m===45&&!stops.some(s=>s>=35))return true
   if(m===75&&!stops.some(s=>s>=65))return true

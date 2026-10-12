@@ -69,8 +69,8 @@ describe('LEGENDS MANAGER results as reels',()=>{
  function played(id:string):Career{
   const r=createCareer({id,owner:'o'.repeat(32),now:NOW,own:LEAGUE[0]!,rivals:LEAGUE.slice(1),settings:DEFAULT_SETTINGS});if(!r.ok)throw new Error(r.error)
   let c=r.career;const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks)c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})
-  c=act(act(act(c,{kind:'draft-confirm'}),{kind:'ack'}),{kind:'close-window'})
-  for(let i=0;i<3;i++){if(isBye(c))c=act(c,{kind:'play-round'});else c=act(c,{kind:'match-start',mode:'fast'})}
+  c=act(act(c,{kind:'draft-confirm'}),{kind:'ack'})
+  for(let i=0;i<2;i++){if(isBye(c))c=act(c,{kind:'play-round'});else c=act(c,{kind:'match-start',mode:'fast'})}
   return c
  }
  it('two elevens as they kicked off, every goal named from the log, the score counted from the goals',()=>{

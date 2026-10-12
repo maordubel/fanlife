@@ -23,6 +23,8 @@ function newCareer(id='c0ffee0000000001'):Career{const r=createCareer({id,owner:
 let n=0
 function act(c:Career,a:Intent){const r=applyAction(c,{...a,key:`k${n++}xxxxxxx`,rev:c.revision} as Action,ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
 function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})}return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
+/** play on the quick sim until the transfer window opens (after round 2) */
+function toWindow(c:Career):Career{for(let i=0;i<6&&c.phase!=='window';i++)c=isBye(c)?act(c,{kind:'play-round'}):act(c,{kind:'match-start',mode:'fast'});return c}
 
 describe('the draft (§1.2, D01–D07)',()=>{
  it('D01 · a club with one priced goalkeeper is not ready, and says why',()=>{
@@ -72,7 +74,16 @@ describe('the draft (§1.2, D01–D07)',()=>{
   expect(me(c).squad.length).toBe(17);expect(me(c).cash).toBeCloseTo(52-spent+8,5);expect(cashFromLedger(c)).toBeCloseTo(me(c).cash,5)
   expect(c.ledger.filter(l=>l.key===`first-window-grant:${c.id}`)).toHaveLength(1)
   const again=applyAction(c,{kind:'draft-confirm',key:'k-confirm-again',rev:c.revision},ctx);expect(again.ok).toBe(false)
-  expect(c.phase).toBe('window');expect(spent).toBeLessThanOrEqual(52)
+  expect(c.phase).toBe('season');expect(spent).toBeLessThanOrEqual(52)
+ })
+ it('round 1 is played with the drafted squad; the window opens after round 2, and again at the halfway mark',()=>{
+  let c=drafted(newCareer('c0ffee00000000d1'))
+  expect(applyAction(c,{kind:'buy',card:c.catalog.cards[0]!.id,key:'k-early-buy',rev:c.revision},ctx).ok).toBe(false)
+  c=toWindow(c);expect(c.season.played).toBe(2);expect(c.phase).toBe('window')
+  c=act(c,{kind:'close-window'})
+  const half=Math.floor(c.season.rounds/2)
+  for(let i=0;i<20&&c.phase!=='window';i++)c=isBye(c)?act(c,{kind:'play-round'}):act(c,{kind:'match-start',mode:'fast'})
+  expect(c.season.played).toBe(half)
  })
 })
 
@@ -94,14 +105,14 @@ describe('money (§1.3, E01–E05)',()=>{
   expect(sum(once)).toBeLessThanOrEqual(5);expect(sum(once)+sum(twice)).toBeLessThanOrEqual(5);expect(capBonuses(a,5)).toHaveLength(0)
  })
  it('E05 · a sale that breaks 17 or a quota is refused; an atomic swap that restores it goes through',()=>{
-  const c=drafted(newCareer('c0ffee0000000002')),t=me(c),gk=t.squad.find(s=>s.quota==='GK')!
+  const c=toWindow(drafted(newCareer('c0ffee0000000002'))),t=me(c),gk=t.squad.find(s=>s.quota==='GK')!
   const sold=applyAction(c,{kind:'sell',card:gk.id,key:'k-sell-gk-1',rev:c.revision},ctx);expect(sold.ok).toBe(false)
   const other=c.catalog.cards.find(x=>x.pos==='GK'&&!t.squad.some(s=>s.id===x.id)&&x.price<=t.cash)!
   const sw=applyAction(c,{kind:'swap',sell:gk.id,buy:other.id,key:'k-swap-gk-1',rev:c.revision},ctx);expect(sw.ok).toBe(true)
   if(sw.ok){expect(me(sw.career).squad).toHaveLength(17);expect(cashFromLedger(sw.career)).toBeCloseTo(me(sw.career).cash,5)}
  })
  it('a man of another club can never be signed',()=>{
-  const c=drafted(newCareer('c0ffee0000000003')),stranger=LEAGUE[3]!.cards[0]!
+  const c=toWindow(drafted(newCareer('c0ffee0000000003'))),stranger=LEAGUE[3]!.cards[0]!
   const r=applyAction(c,{kind:'buy',card:stranger.id,key:'k-stranger-1',rev:c.revision},ctx);expect(r.ok).toBe(false)
  })
 })
@@ -159,11 +170,29 @@ describe('the match (§1.4, M01–M04)',()=>{
   expect(r.done&&r.outcome.events.filter(e=>e.kind==='sub'&&e.side===0).length).toBeLessThanOrEqual(3)
  })
  it('an interactive match stops three times at most, and a fourth decision is refused',()=>{
-  let c=drafted(newCareer('c0ffee0000000007'));c=act(c,{kind:'close-window'})
+  let c=drafted(newCareer('c0ffee0000000007'))
   if(isBye(c))c=act(c,{kind:'play-round'})
   c=act(c,{kind:'match-start',mode:'interactive'})
   let stops=0;while(c.live&&pauseOf(c)){c=act(c,{kind:'match-decide',decision:{}});stops++}
   expect(stops).toBeLessThanOrEqual(3);expect(c.live).toBeNull()
+ })
+ it('a live match stops at half-time, 60′ and 75′ — always those three — and "to the final whistle" plays the rest',()=>{
+  let c=drafted(newCareer('c0ffee00000000e1'));if(isBye(c))c=act(c,{kind:'play-round'})
+  c=act(c,{kind:'match-start',mode:'interactive'});const minutes:number[]=[]
+  for(let i=0;i<3&&c.live;i++){const p=pauseOf(c)!;minutes.push(p.minute);if(i<2)c=act(c,{kind:'match-decide',decision:{}})}
+  expect(minutes).toEqual([45,60,75])
+  c=act(c,{kind:'match-finish'});expect(c.live).toBeNull();expect(c.season.played).toBe(1)
+ })
+ it('the captain wears the armband on every snapshot; an engine-1 match ignores it, and no screen names the edge',()=>{
+  const c=drafted(newCareer('c0ffee00000000e2')),s0=snapOf(c),s={...s0,sides:[{...s0.sides[0],captain:me(c).lineup.captain},s0.sides[1]] as typeof s0.sides}
+  expect(me(c).lineup.captain).toBeTruthy();expect(s.sides[0].xi.some(m=>m.id===s.sides[0].captain)).toBe(true)
+  let differs=0
+  for(let k=0;k<30;k++){const base={...s,seed:k,engine:'legends-engine-2' as const},a=run(base,[],false),b=run({...base,sides:[{...base.sides[0],captain:undefined},base.sides[1]]},[],false),old=run({...base,engine:'legends-engine-1'},[],false),old2=run({...base,engine:'legends-engine-1',sides:[{...base.sides[0],captain:undefined},base.sides[1]]},[],false)
+   if(a.done&&b.done&&JSON.stringify(a.outcome.events)!==JSON.stringify(b.outcome.events))differs++
+   expect(old.done&&old2.done&&JSON.stringify(old.outcome.events)).toBe(old2.done&&JSON.stringify(old2.outcome.events))}
+  expect(differs).toBeGreaterThan(0)
+  const fs=require('node:fs') as typeof import('node:fs'),ui=['components/legends/CareerApp.tsx','components/legends/Live.tsx','components/legends/TeamSheet.tsx'].filter(f=>fs.existsSync(f)).map(f=>fs.readFileSync(f,'utf8')).join('\n')
+  expect(ui).not.toMatch(/3%|captainBoost|1\.03/)
  })
 })
 
@@ -202,7 +231,7 @@ describe('friendlies and saving (§1.7, F01–F04, S02, S05)',()=>{
   expect(acceptFriendly(f,'tok',{...sa},new Date(NOW)).ok).toBe(false) // nobody plays himself
  })
  it('S02 · the same key twice changes money and squad once',()=>{
-  const c=drafted(newCareer('c0ffee000000000b')),man=c.catalog.cards.find(x=>!me(c).squad.some(s=>s.id===x.id)&&x.price<=me(c).cash)!
+  const c=toWindow(drafted(newCareer('c0ffee000000000b'))),man=c.catalog.cards.find(x=>!me(c).squad.some(s=>s.id===x.id)&&x.price<=me(c).cash)!
   const a={kind:'buy' as const,card:man.id,key:'k-buy-twice',rev:c.revision},r1=applyAction(c,a,ctx);if(!r1.ok)throw new Error(r1.error)
   const r2=applyAction(r1.career,{...a,rev:r1.career.revision},ctx);expect(r2.ok&&r2.replay).toBe(true);expect(r2.ok&&me(r2.career).cash).toBe(me(r1.career).cash)
  })

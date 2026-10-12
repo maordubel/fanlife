@@ -3,7 +3,8 @@ import {kitViews} from '@/lib/clubs/gate-content'
 import {loadClub} from '@/lib/clubs/resolver'
 import {rumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {livery} from '@/lib/club-livery'
-import {legendsReel,type ClubKit} from './reel'
+import {legendsReel,liveReel,type ClubKit} from './reel'
+import {pixelKit} from '@/lib/highlights/kit'
 import type {Career} from './types'
 import type {CareerView} from './view'
 
@@ -22,10 +23,15 @@ export async function clubKit(club:string):Promise<ClubKit|undefined>{
 }
 /** the view, with the reel of the manager's last result attached — the theatre plays it */
 export async function withHighlights(v:CareerView,c:Career):Promise<CareerView>{
- if(!v.last)return v
- const f=[...c.season.fixtures,...(c.season.playoff?[c.season.playoff]:[])].find(x=>x.id===v.last!.id);if(!f?.result?.sides)return v
- const [h,a]=await Promise.all([clubKit(f.home),clubKit(f.away)])
+ const kits=Object.fromEntries(await Promise.all(c.teams.map(async t=>[t.club,await clubKit(t.club)] as const)))
+ // a chip per club: the shirt of its most recent documented home kit, or its livery
+ const colours=Object.fromEntries(c.teams.map(t=>{const k=kits[t.club],last=k?.wardrobe.home.at(-1),px=last?pixelKit(last):null
+  return [t.club,px?{shirt:px.shirt,second:px.second,pattern:px.pattern}:{shirt:k?.primary??'#1C2F93',second:null,pattern:'plain'}]}))
+ let out:CareerView={...v,colours}
+ if(v.live){const reel=liveReel(c,kits);if(reel)out={...out,live:{...v.live,reel}}}
+ if(!v.last)return out
+ const f=[...c.season.fixtures,...(c.season.playoff?[c.season.playoff]:[])].find(x=>x.id===v.last!.id);if(!f?.result?.sides)return out
  const champion=v.phase==='season-end'&&!!v.seasonEnd?.champion
- const reel=legendsReel(c,f,{[f.home]:h,[f.away]:a},{champion})
- return reel?{...v,last:{...v.last,reel}}:v
+ const reel=legendsReel(c,f,kits,{champion})
+ return reel?{...out,last:{...v.last,reel}}:out
 }

@@ -44,7 +44,13 @@ export function bestLineup(men:readonly Card[],prefer?:FormationId,tactics=DEFAU
  const best=prefer&&tries[0]!.f===prefer?tries[0]!:tries.sort((a,b)=>b.r!.value-a.r!.value)[0]!
  const inXi=new Set(best.r!.xi),rest=men.filter(c=>!inXi.has(c.id)).sort((a,b)=>b.stars-a.stars||a.id.localeCompare(b.id))
  const gk=rest.find(c=>c.pos==='GK'),bench=[...(gk?[gk]:[]),...rest.filter(c=>c!==gk)].slice(0,7).map(c=>c.id)
- return {formation:best.f,xi:best.r!.xi,bench,tactics:{...tactics}}
+ const lu:Lineup={formation:best.f,xi:best.r!.xi,bench,tactics:{...tactics}}
+ return {...lu,captain:captainOf(lu,id=>men.find(m=>m.id===id))}
+}
+/** the armband: the manager's man when he is in the eleven, else the eleven's most-starred man (ties by id, so it never flickers) */
+export function captainOf(l:Pick<Lineup,'xi'|'captain'>,card:(id:string)=>Pick<Card,'stars'>|undefined):string|undefined{
+ if(l.captain&&l.xi.includes(l.captain))return l.captain
+ return [...l.xi].sort((a,b)=>(card(b)?.stars??0)-(card(a)?.stars??0)||a.localeCompare(b))[0]
 }
 export function lineupError(l:Lineup,men:readonly Card[]):string|null{
  const ok=new Set(men.map(c=>c.id)),slots=slotsOf(l.formation)

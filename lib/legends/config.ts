@@ -7,7 +7,9 @@
  * already being played (S05).
  */
 export const RULE_VERSION='legends-1.0.0' as const
-export const ENGINE_VERSION='legends-engine-1' as const
+export const ENGINE_VERSION='legends-engine-2' as const
+/** every engine a stored match may name — a match started on an older engine keeps that engine's stops (rule 112) */
+export type EngineVersion='legends-engine-1'|typeof ENGINE_VERSION
 export const LEGENDS_RULES={
  ruleVersion:RULE_VERSION,
  initialDraftBudgetM:52,firstBoardGrantM:8,
@@ -15,6 +17,12 @@ export const LEGENDS_RULES={
  minimums:{GK:2,DF:6,MF:6,FW:3},
  offersPerSlot:3,rerollsPerDraft:3,
  maxSubs:3,maxInterventionWindows:3,
+ /** the three touchline windows of a live match (owner, 12.10.2026): half-time, 60′ and 75′ */
+ touchlineStops:[45,60,75],
+ /** the captain plays 3% above himself — a hidden edge the screens never name (owner, 12.10.2026) */
+ captainBoost:1.03,
+ /** round 1 is played with the squad of the draft; the first window opens after round 2, the second at the halfway mark */
+ earlyWindowAfterRound:2,
  matchWeights:{quality:0.8,tactics:0.15,conditions:0.05},
  moraleMin:0.9,moraleMax:1.1,
  injuryPerTeamMatch:0.05,
