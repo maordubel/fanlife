@@ -3001,3 +3001,11 @@ Owner's QA list (11.10.2026): CI red for three days, a slow portal, taps that "s
 5. **The tap answers in the same frame.** `components/ui/NavPulse.tsx` (root layout) raises a thin bar on any same-site link tap until the address changes.
 6. **Every door is swept in a browser:** `npm run qa:routes` (`scripts/qa/route-sweep.mjs`) — hub TTFB and streaming, every core club's five doors and thirteen gates (200, no page error, no horizontal scroll at 390), progress across a reload, market, the owner key (refused / wrong / right), the magazine 404 and the admin API's JSON 401. It runs in CI after `master:core-browser`.
 7. **Pruning a club's archive restores its price ladder with the fewest moves** (`npm run rumble:prices -- prune`). Hapoel Tel Aviv reads only The Worker's player master: its roster wave stays empty and `tests/clubs/roster-wave.test.ts` holds it there.
+
+## 105 · Nothing closes because of a limit (12.10.2026)
+
+Owner: *"no feature may ever close because of a limit — every feature, the admin and every game always available."* The 11.10 outage was the Blob store over the Hobby plan's operation cap: every read refused, the hub empty, every control-room screen an error page.
+1. **A read never takes a screen down.** `durable().read/list` answer from the deployment-wide data cache (one store request per file per day; a save drops it at once) and, when the store refuses, answer null/empty — the page carries on. Only the read a compare-and-swap save is built on is `{fresh:true}` and throws; the control state reads `{soft:false}` so it can fall back.
+2. **A cold outage serves the published lineup** (registry + launch defaults), never every club closed; a refusing store is left alone for a minute.
+3. **`npm run qa:outage`** (CI, after the route sweep) runs the build against a store that refuses everything and opens every public screen, every core club's doors and gates and every control-room section. A screen that errors fails the build.
+4. While the store refuses, a SAVE fails with a message (nothing is written somewhere that vanishes); everything else stays open.

@@ -20,7 +20,7 @@ describe('Blob credentials fall back when one is refused',()=>{
  it('a 403 on the default credential retries with the read-write token, and keeps using it',async()=>{
   const {durable,blobAuthReport}=await import('@/lib/master/durable')
   const d=durable()!
-  expect(await d.read('control.json')).toEqual({text:'{"ok":1}',etag:'"e1"'})
+  expect(await d.read('control.json',{fresh:true})).toEqual({text:'{"ok":1}',etag:'"e1"'})
   expect(calls.map(c=>!!c.token)).toEqual([false,true])
   expect(await d.write('x.json','{}','"e1"')).toBe(true)
   expect(calls.at(-1)!.token).toBeTruthy() // the credential that answered is tried first now
@@ -31,7 +31,8 @@ describe('Blob credentials fall back when one is refused',()=>{
  it('with no read-write token the refusal reaches the caller as itself',async()=>{
   delete process.env.BLOB_READ_WRITE_TOKEN
   const {durable,blobAuthReport}=await import('@/lib/master/durable')
-  await expect(durable()!.read('control.json')).rejects.toThrow(/403/)
+  await expect(durable()!.read('control.json',{fresh:true})).rejects.toThrow(/403/)
+  expect(await durable()!.read('control.json')).toBeNull() // a page's read carries on without it
   expect(blobAuthReport()).toMatchObject({readWriteToken:false,answeredTo:null,lastRefusal:expect.stringMatching(/^default: .*403/)})
  })
 })

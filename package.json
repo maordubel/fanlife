@@ -81,6 +81,7 @@
     "master:browser": "node scripts/master/browser-smoke.mjs",
     "master:identity": "node --import tsx scripts/master/club-colors.ts",
     "qa:routes": "node --require ./scripts/master/server-only.cjs --import tsx scripts/qa/route-sweep.mjs",
+    "qa:outage": "node --require ./scripts/master/server-only.cjs --import tsx scripts/qa/outage-sweep.mjs",
     "master:core-browser": "node --require ./scripts/master/server-only.cjs --import tsx scripts/master/core-browser-smoke.mjs",
     "research:plan": "tsx scripts/research/cli.ts plan",
     "research:run": "tsx scripts/research/cli.ts run",
