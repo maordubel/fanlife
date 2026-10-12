@@ -45,98 +45,65 @@ describe('sport guard', () => {
 })
 
 /**
- * מצבות — retired files that must always COMPILE.
+ * קבצים שפרשו — retired files, and what stops them coming back.
  *
- * Deltas reach the repo through GitHub's web upload, which adds and overwrites files
- * but never deletes them. A retired file that still contains a broken import therefore
- * keeps failing `next build` on the deploy long after the local tree is clean — which
- * is exactly what happened with `KitChallengeBoard.tsx`, twice. Asking for a delete
- * command was the wrong fix. The right one: **a retired file is replaced by an inert
- * tombstone, never left broken and never merely deleted.**
+ * Until 12.10.2026 deltas reached the repo through GitHub's web upload, which adds and
+ * overwrites but never deletes, so a retired file was kept as an inert tombstone (rule
+ * 26). Delivery is now a git pull request, which deletes. The tombstones were removed on
+ * 12.10.2026 and a retired file is now simply deleted.
  *
- * This test is what stops a tombstone being quietly revived with real code again.
+ * The guard flips rather than vanishes (rule 65): every deleted path is listed in
+ * `tests/fixtures/retired-paths.json`, and this test fails if one of them reappears — a
+ * file revived at a retired path is exactly what the tombstone test used to catch.
  */
-describe('retired files are tombstones', () => {
-  const ROOT = process.cwd()
-  const TOMBSTONES = [
-    'app/kits/build/KitChallengeBoard.tsx', // → KitGameRun.tsx
-    'app/kits/KitGallery.tsx', // → KitWing.tsx, when gate 5 became the collection
-    'app/trivia/summary/page.tsx', // → the run ends in place; this redirects
-    'app/trivia/summary/ShareCard.tsx', // → components/share/ShareRow.tsx
-    'components/press/StoryCard.tsx', // → lib/share/story.ts
-    'app/derby/BlackFile.tsx', // → app/derby/file/BlackFile.tsx
-    'app/derby/actions.ts', // → app/derby/file/actions.ts
-    'app/kits/build/KitRun.tsx', // → KitGameRun.tsx
-    'app/kits/build/KitBuildRun.tsx', // → KitGameRun.tsx, when gate 4 became the assembly game
-    'app/derby/HateBracket.tsx', // → HateHill.tsx
-    'app/goal/GoalBoard.tsx', // → GoalRun.tsx
-    'app/crest/CrestRun.tsx', // → cut by Maor; the crest DATA still dresses the kits
-    'app/crest/actions.ts',
-    'components/life/LifeEntry.tsx', // → components/life/TunnelPlate.tsx, when LIFE moved into the wall
-    'app/kits/build/KitGameRunV13.tsx', // → KitGameRun.tsx, the one engine and the server deal (21.9.2026)
-    'components/kit/LayeredKitRenderer.tsx', // → KitEngineShirt photo mode
-    'lib/kit/layered-assets.ts', // → content/generated/kit-master.json
-    'app/kits/build/KitGameRunV3.tsx', // → KitGameRun.tsx (21.9.2026)
-    'app/kits/build/KitGameRunV5.tsx', // → KitGameRun.tsx, V5's server deal on V14's layout
-    'app/kits/KitDesignerV3.tsx', // → KitDesignerV5.tsx
-    'components/kit/KitPhotoPart.tsx', // → nothing: no cropped real shirt is ever a builder part (brief §15)
-    'components/kit/KitAssemblyShirt.tsx', // → components/kit/KitShirt.tsx, the one entry point
-    'app/api/kits/reference/[token]/route.ts', // → the photograph appears only in the Reveal (rule 4)
-    'lib/game/replay/progress.ts', // → collect('goal', [goalId]) + RecordRun; no second store in a gate
-    'app/trivia/TopicWall.tsx', // → QuickPick.tsx, gate 2 v5 (21.9.2026)
-    'app/trivia/TriviaRound.tsx', // → TriviaRun.tsx; dead since the run moved onto one screen
-    'app/derby/HateHill.tsx', // → HateWall.tsx, gate 11 v3 (21.9.2026)
-    'components/ui/Standfirst.tsx', // → nothing: the home page prints no standfirst (29.9.2026)
-    'app/archive/ArchiveWing.tsx', // → components/archive/ArchiveApp.tsx, gate 12 v10 (21.9.2026)
-    'public/life/voxel/display-admin.html', // → /master/admin Display tab (6.10.2026)
-    'public/life/voxel/display-admin.js', // → components/master/DisplayControl.tsx + display-preview.js
-    'public/life/voxel/display-admin.css', // → magazine admin styles
-  ]
+const RETIRED: readonly string[] = (
+  JSON.parse(readFileSync(join(process.cwd(), 'tests/fixtures/retired-paths.json'), 'utf8')) as {
+    deleted: string[]
+  }
+).deleted
 
-  it('every retired path still exists and says it is retired', () => {
-    for (const path of TOMBSTONES) {
-      const full = join(ROOT, path)
-      expect(existsSync(full), `${path} is missing — a deleted tombstone is a red deploy`).toBe(
-        true,
-      )
-      expect(readFileSync(full, 'utf8'), path).toContain('TOMBSTONE')
-    }
+describe('retired files stay deleted', () => {
+  const ROOT = process.cwd()
+
+  it('remembers what was deleted', () => {
+    expect(RETIRED.length).toBeGreaterThan(50)
+    expect(new Set(RETIRED).size).toBe(RETIRED.length)
+    expect([...RETIRED].sort()).toEqual(RETIRED)
   })
 
-  it('no tombstone imports a local module', () => {
-    // The whole point is that these compile FOREVER. An earlier version of the gate 4
-    // tombstone re-exported the file that replaced it — and broke the moment that file
-    // was itself renamed. A tombstone that depends on a living module is not a
-    // tombstone. The only import any of them may carry is Next's own redirect.
-    for (const path of TOMBSTONES) {
+  it('no retired path has come back', () => {
+    const back = RETIRED.filter((path) => existsSync(join(ROOT, path)))
+    expect(back, `retired paths reappeared:\n  ${back.join('\n  ')}`).toEqual([])
+  })
+})
+
+/**
+ * Two retired ROUTES are kept, because they still do a job: links posted before the run
+ * screen existed land on `/trivia/summary`, and `/crest` was a gate. Each one only
+ * redirects — no local import, no server action — so it cannot break a build.
+ */
+describe('retired routes only redirect', () => {
+  const ROOT = process.cwd()
+  const REDIRECTS = ['app/crest/page.tsx', 'app/trivia/summary/page.tsx']
+
+  it('imports nothing but the redirect, and stays short', () => {
+    for (const path of REDIRECTS) {
       const text = readFileSync(join(ROOT, path), 'utf8')
       const imports = [...text.matchAll(/from\s+'([^']+)'/g)].map((match) => match[1] as string)
-      for (const source of imports) {
-        expect(source, `${path} imports ${source}`).toBe('next/navigation')
-      }
+      expect(imports, path).toEqual(['next/navigation'])
+      expect(text, path).toContain('redirect(')
       expect(text, `${path} must not declare a server action`).not.toContain("'use server'")
-    }
-  })
-
-  it('is short — a tombstone that grows is a file somebody revived', () => {
-    for (const path of TOMBSTONES) {
-      const lines = readFileSync(join(ROOT, path), 'utf8').split('\n').length
-      expect(lines, path).toBeLessThan(30)
+      expect(text.split('\n').length, path).toBeLessThan(30)
     }
   })
 })
 
 /**
- * המניפסט — every path this project has ever shipped, and none of them may vanish.
+ * המניפסט — every path this project has ever shipped.
  *
- * The tombstone rule only works if someone remembers to write the tombstone, and on
- * 1.9.2026 nobody did: gate 4's component was renamed, the old file was deleted, and
- * any tree still carrying it would import a server action that no longer existed. Third
- * time for the same class of bug.
- *
- * So remembering is a file now. `docs/shipped-paths.txt` is append-only, and this test
- * fails the moment a listed path is gone. The fix for a failure is a tombstone at that
- * path — never a shorter list.
+ * `docs/shipped-paths.txt` is append-only. A listed path may disappear only by being
+ * declared retired in `tests/fixtures/retired-paths.json` — so a deletion is a decision
+ * written down, never a file that quietly went missing.
  */
 describe('shipped paths', () => {
   const ROOT = process.cwd()
@@ -144,16 +111,17 @@ describe('shipped paths', () => {
     .split('\n')
     .map((line) => line.trim())
     .filter((line) => line !== '' && !line.startsWith('#'))
+  const retired = new Set(RETIRED)
 
   it('remembers a real number of paths', () => {
     expect(listed.length).toBeGreaterThan(80)
   })
 
-  it('every path it remembers still exists — tombstone it, do not delete it', () => {
-    const missing = listed.filter((path) => !existsSync(join(ROOT, path)))
+  it('every path it remembers still exists, or is declared retired', () => {
+    const missing = listed.filter((path) => !existsSync(join(ROOT, path)) && !retired.has(path))
     expect(
       missing,
-      `deleted without a tombstone — put an inert file back at each path:\n  ${missing.join('\n  ')}`,
+      `deleted without being declared — add each to tests/fixtures/retired-paths.json:\n  ${missing.join('\n  ')}`,
     ).toEqual([])
   })
 

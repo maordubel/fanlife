@@ -1038,11 +1038,9 @@ describe('לוח ההפעלה — the controls are a place on the screen, on eve
     expect(scenes).toContain('blockedHe')
   })
 
-  it('the retired console imports nothing, so the old file cannot break a deploy', () => {
+  it('the retired console stays deleted — ControlDeck is the only console (12.10.2026)', () => {
     for (const file of ['components/life/TouchPad.tsx', 'components/life/Prompt.tsx']) {
-      const text = readFileSync(join(ROOT, file), 'utf8')
-      expect(text.includes('import '), `${file} still imports`).toBe(false)
-      expect(text).toContain('REPLACED_BY')
+      expect(existsSync(join(ROOT, file)), `${file} came back`).toBe(false)
     }
   })
 

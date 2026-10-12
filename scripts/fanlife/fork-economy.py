@@ -31,6 +31,22 @@ for f in ['AdminAudit.tsx', 'AdminConsole.tsx', 'AdminGate.tsx', 'AdminLots.tsx'
 for f in ['auction.ts', 'cards.ts', 'labels.ts', 'market.ts', 'notify.ts']:
     add(f'lib/collector/{f}', f'lib/fanlife/collector/{f}')
 
+# Forks nothing in FAN LIFE imports: deleted on 12.10.2026 as dead code, and no longer written.
+# (MarketScreen + MarketBoard + useShield were a chain no page reached; the other four are
+# Worker-only pieces, or ones REPLACE swaps for a FAN LIFE file.) Add a path back here only
+# when a FAN LIFE screen imports it.
+NOT_FORKED = {
+    'components/fanlife/screens/MarketScreen.tsx',
+    'components/fanlife/market/MarketBoard.tsx',
+    'components/fanlife/market/useShield.ts',
+    'components/fanlife/auction/ShirtPicture.tsx',
+    'components/fanlife/collector/ClosetBridge.tsx',
+    'components/fanlife/collector/ClosetDoor.tsx',
+    'components/fanlife/collector/RealShirtAsk.tsx',
+    'components/fanlife/collector/ShirtThumb.tsx',
+}
+MAP = {src: dst for src, dst in MAP.items() if dst not in NOT_FORKED}
+
 # FAN LIFE replacements for Worker pieces the economy reaches into (written by hand, not forked)
 REPLACE = {
     'components/share/ShareRow.tsx': 'components/fanlife/ShareRow.tsx',
