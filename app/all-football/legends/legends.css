@@ -418,3 +418,5 @@
   .lgm-roll .lgm-actions { position: sticky; inset-block-end: calc(var(--app-bottom, 0px) + 10px); z-index: 5; margin-block-start: 14px; }
   .lgm-roll .lgm-go-big { inline-size: 100%; }
 }
+/* app mode (rule 115): on a phone the save bar sits on top of the fixed tab bar, never over it */
+@media (max-width: 900px) { html:has(.mag-tabbar) .lgm-savebar { inset-block-end: calc(59px + env(safe-area-inset-bottom)); padding-block-end: 8px; } }
