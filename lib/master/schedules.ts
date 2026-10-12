@@ -5,6 +5,7 @@
  */
 export type Schedule={workflow:string;name:string;cron:string;utc:string;what:string;needs:string|null}
 export const SCHEDULES:readonly Schedule[]=[
+ {workflow:'backup.yml',name:'Backup',cron:'41 2 * * *',utc:'Daily 02:41 UTC',what:'Every worker_ table and the control room\'s files, encrypted with your passphrase, kept 90 days as a download on the run.',needs:'Secret FAN_LIFE_BACKUP_PASSPHRASE (20+ characters, keep a copy) + the same variable and secret as research.'},
  {workflow:'archive-collect.yml',name:'Archive collect',cron:'23 3 * * 2',utc:'Tuesdays 03:23 UTC',what:'A small, polite batch from every archive source; commits research-data/ only. Never approves.',needs:'Variable FAN_LIFE_RESEARCH_URL + secret FAN_LIFE_CRON_SECRET to pin sources saved in this control room.'},
  {workflow:'club-ingest.yml',name:'club-ingest',cron:'17 4 * * 1',utc:'Mondays 04:17 UTC',what:'Fixture and club feeds for the hub.',needs:'Secret THESPORTSDB_KEY.'},
  {workflow:'research.yml',name:'Requested club research',cron:'*/15 * * * *',utc:'Every 15 minutes',what:'Calls this site’s autopilot: collect → stage → bring in unreviewed → process queued jobs.',needs:'Variable FAN_LIFE_RESEARCH_URL + secret FAN_LIFE_CRON_SECRET; the same value as CRON_SECRET on Vercel. Skipped while unset.'},
