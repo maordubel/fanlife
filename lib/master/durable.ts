@@ -97,6 +97,16 @@ const migG = globalThis as typeof globalThis & { fanMigration?: { pending: strin
 /** For the control room: the last name a save could not be built on because Blob could not be asked, or null. */
 export const migrationPending = () => (migG.fanMigration && Date.now() - migG.fanMigration.at < 3_600_000 ? migG.fanMigration.pending : null)
 export const blobRetired = () => !!migG.fanBlobRetired?.v
+/** Every server instance keeps its own memory: the control room asks the store itself before it reports the migration. */
+export async function refreshMigrationState(): Promise<void> {
+  const d = durable()
+  if (!d || d.kind !== 'supabase') return
+  try {
+    const v = !!(await d.read(BLOB_RETIRED, { fresh: true }))
+    migG.fanBlobRetired = { v, at: Date.now() }
+    if (v) migG.fanMigration = undefined
+  } catch { /* the store is down: keep what this instance knew */ }
+}
 /** The owner's two recovery buttons: ask Blob again now, or record that Blob is retired (missing in Supabase = missing). */
 export function retryBlobNow() { (globalThis as { fanBlobQuiet?: number }).fanBlobQuiet = 0; migG.fanMigration = undefined }
 export async function retireBlob(by: string): Promise<void> {
@@ -159,9 +169,10 @@ function layeredStore(sb: DurableStore, blob: DurableStore | null): DurableStore
   }
   async function retired(): Promise<boolean> {
     const c = migG.fanBlobRetired
-    if (c && Date.now() - c.at < 60_000) return c.v
+    if (c && (c.v || Date.now() - c.at < 15_000)) return c.v // once retired, always retired; "not yet" is re-asked every 15 s
     const v = !!(await sb.read(BLOB_RETIRED, { fresh: true }))
     migG.fanBlobRetired = { v, at: Date.now() }
+    if (v) migG.fanMigration = undefined
     return v
   }
   const pending = (name: string) => { migG.fanMigration = { pending: name, at: Date.now() }; return new MigrationPending(`${name} is not in Supabase yet and Vercel Blob, which may still hold it, is not answering — nothing was saved. It is copied across the first time Blob answers; or record in the control room (Operations → Storage) that Blob is retired.`) }
