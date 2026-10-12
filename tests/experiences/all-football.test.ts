@@ -8,7 +8,8 @@ import {aggregateFor,attribute,modeOf,parseModeQuery,slugOf,CAPS,gateReport,aggr
 import {runLab} from '@/lib/experiences/lab'
 import {splitKey} from '@/lib/master/crm/refs'
 import {REGISTRY} from '@/lib/master/registry'
-import {startTriviaRun,openTriviaQuestion,answerTriviaRun,placeCard,type RunView} from '@/app/all-football/actions'
+import {startTriviaRun,openTriviaQuestion,answerTriviaRun,placeCard} from '@/app/all-football/actions'
+import type {RunView} from '@/lib/clubs/trivia-run-core'
 
 beforeEach(()=>{ctx.status='live';ctx.gates=[2,6,13];ctx.features={allFootball:true,allFootballGates:['trivia','timeline','memory']};ctx.owner=false;ctx.values.clear()})
 
