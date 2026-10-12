@@ -10,14 +10,42 @@
 export type DurableRead = { text: string; etag: string } | null
 export type DurableStore = {
   kind: 'vercel-blob' | 'memory'
-  /** `maxAgeMs`: a copy this instance read or wrote that recently is answered without a request (0 = always ask the store). */
-  read(name: string, opts?: { maxAgeMs?: number }): Promise<DurableRead>
+  /** `maxAgeMs`: a copy this instance read or wrote that recently is answered without a request (0 = always ask the store).
+   *  `shared`: a public page's read, answered from the deployment-wide data cache (see `SHARED_S`); never for a read-before-write. */
+  read(name: string, opts?: { maxAgeMs?: number; shared?: boolean }): Promise<DurableRead>
   /** `etag` null = create only; returns false when someone else wrote first. */
   write(name: string, text: string, etag: string | null): Promise<boolean>
-  list(prefix: string): Promise<string[]>
+  list(prefix: string, opts?: { shared?: boolean }): Promise<string[]>
 }
 
 const PREFIX = 'fan-life/'
+
+/**
+ * Blob quota (owner's hub outage, 11.10.2026): the store showed "Limits Exceeded" — every page view on every cold server instance
+ * read control.json from Blob, and the Hobby plan's monthly operations ran out, so every read was refused and the hub served every
+ * club closed. A page's read now goes through Next's data cache, which every instance of the deployment shares: the store is asked
+ * at most once per SHARED_S per file, a save drops the cached copy at once (`revalidateTag`), and when the store refuses, the last
+ * copy that was read keeps being served (Next serves a stale entry and swallows a failed refresh) instead of a closed site.
+ */
+const SHARED_S = 300
+export const sharedTag = (name: string) => `fan-blob:${name}`
+export const sharedListTag = (prefix: string) => `fan-blob-list:${prefix.split('/')[0]}`
+const noCacheHere = (e: unknown) => /incrementalCache missing|static generation store missing|staticGenerationStore/i.test(String((e as Error)?.message || e))
+async function viaShared<T>(key: string[], tag: string, fn: () => Promise<T>): Promise<T> {
+  try {
+    const { unstable_cache } = await import('next/cache')
+    return await unstable_cache(fn, key, { revalidate: SHARED_S, tags: [tag] })()
+  } catch (e) {
+    if (noCacheHere(e)) return fn() // a script or a test: there is no deployment cache to share
+    throw e
+  }
+}
+async function dropShared(name: string) {
+  try {
+    const { revalidateTag } = await import('next/cache')
+    revalidateTag(sharedTag(name)); revalidateTag(sharedListTag(name))
+  } catch { /* outside a request (a script): nothing is cached to drop */ }
+}
 /** A Blob store is connected: a read-write token, or a store id the SDK pairs with the deployment's OIDC token. */
 export const blobConnected = () => !!(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID)
 const g = globalThis as typeof globalThis & { fanDurable?: DurableStore | null }
@@ -78,6 +106,7 @@ function blobStore(): DurableStore {
     // Reads are CONDITIONAL (performance audit, 11.10.2026): the last copy and its ETag are kept per name, the store is asked
     // with If-None-Match, and an unchanged file answers 304 with no body. Concurrent reads of one name share one request.
     async read(name, opts) {
+      if (opts?.shared) return viaShared(['fan-blob', name], sharedTag(name), () => this.read(name, { maxAgeMs: opts.maxAgeMs }))
       const hit = memo.get(name)
       if (hit && opts?.maxAgeMs && Date.now() - hit.at < opts.maxAgeMs) return { text: hit.text, etag: hit.etag }
       let p = inflight.get(name)
@@ -101,6 +130,7 @@ function blobStore(): DurableStore {
         const done = await withAuth((a) => put(PREFIX + name, text, { access: 'private', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: etag !== null, ...a, ...(etag ? { ifMatch: etag } : {}) }))
         // this instance's own save is the newest copy: its next read needs no download (and other instances revalidate by ETag)
         if (done?.etag) memo.set(name, { text, etag: done.etag, at: Date.now() }); else memo.delete(name)
+        await dropShared(name)
         return true
       } catch (e) {
         memo.delete(name) // whatever we held may be the copy that just lost
@@ -108,7 +138,8 @@ function blobStore(): DurableStore {
         throw e
       }
     },
-    async list(prefix) {
+    async list(prefix, opts) {
+      if (opts?.shared) return viaShared(['fan-blob-list', prefix], sharedListTag(prefix), () => this.list(prefix))
       const { list } = await sdk
       const out: string[] = []
       let cursor: string | undefined
