@@ -3,7 +3,8 @@ Append every source path that currently exists to the shipped-paths manifest.
 
 The manifest is APPEND-ONLY, like `match_event`. Its whole purpose is to remember paths
 that USED to exist, so `tests/guards.test.ts` can fail the moment one disappears without
-a tombstone in its place.
+being declared in `tests/fixtures/retired-paths.json` (rule 26: since 12.10.2026 a retired
+file is deleted, not tombstoned).
 
 Why this exists: on 1.9.2026 a delta renamed gate 4's component and its server action.
 The old file was deleted rather than tombstoned, which meant any tree that still carried
@@ -38,8 +39,8 @@ def main() -> int:
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     MANIFEST.write_text(
         "# Every source path this project has shipped. APPEND-ONLY — never remove a\n"
-        "# line. If a file here no longer exists, tests/guards.test.ts fails and the fix\n"
-        "# is a tombstone at that path, not a shorter list.\n"
+        "# line. A path here may stop existing only if it is declared in\n"
+        "# tests/fixtures/retired-paths.json (rule 26, 12.10.2026); otherwise tests/guards.test.ts fails.\n"
         + "\n".join(merged)
         + "\n"
     )

@@ -318,6 +318,9 @@ Read `docs/00-architecture.md` before changing anything structural.
     is clean. Every retired path keeps a valid, inert file that imports NOTHING (the one
     exception is `next/navigation` for a redirect). Enforced in `tests/guards.test.ts`:
     a tombstone that grows, gains an import, or disappears fails the suite.
+    **12.10.2026 — superseded:** delivery is now by git (a pull request), which deletes, so the
+    tombstones were removed and a retired file is simply deleted and listed in
+    `tests/fixtures/retired-paths.json`; `tests/guards.test.ts` fails if one comes back.
 
 27. **Lossy compression reinvents yellow. Ship artwork as a palette PNG.**
     Rule 8 has no exemption for artwork, and getting there took four attempts: JPEG at

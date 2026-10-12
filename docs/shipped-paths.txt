@@ -1,6 +1,6 @@
 # Every source path this project has shipped. APPEND-ONLY — never remove a
-# line. If a file here no longer exists, tests/guards.test.ts fails and the fix
-# is a tombstone at that path, not a shorter list.
+# line. A path here may stop existing only if it is declared in
+# tests/fixtures/retired-paths.json (rule 26, 12.10.2026); otherwise tests/guards.test.ts fails.
 app/api/kits/reference/[token]/route.ts
 app/archive/ArchiveWing.tsx
 app/archive/actions.ts

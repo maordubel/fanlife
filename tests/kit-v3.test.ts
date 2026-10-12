@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
@@ -25,11 +25,9 @@ describe('Kit System — the archive is evidence, not a part', () => {
     }
   })
 
-  it('retired the reference route to an inert 410', () => {
-    const route = readFileSync(join(ROOT, 'app/api/kits/reference/[token]/route.ts'), 'utf8')
-    expect(route).toContain('TOMBSTONE')
-    expect(route).toContain('410')
-    expect(route).not.toMatch(/from\s+'/)
+  it('the reference route stays deleted — the photograph appears only in the Reveal', () => {
+    // It was an inert 410 tombstone until 12.10.2026 (rule 26); now the route does not exist.
+    expect(existsSync(join(ROOT, 'app/api/kits/reference'))).toBe(false)
   })
 
   it('uses only exact-season photographs as reconstruction evidence', () => {

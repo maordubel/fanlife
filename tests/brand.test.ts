@@ -67,7 +67,6 @@ const LAMP_FILES = ['LampGrid.tsx', 'TabBar.tsx', 'Floodlights.tsx']
  * and a test that still covers every other file in the codebase.
  */
 const ARCADE_FILES = ['ControlDeck.tsx']
-const I18N_LEGACY_FILES = ['KitDesigner.tsx']
 
 /**
  * המגרש — the third named exemption, and the only one that replaces the heuristic with a
@@ -404,7 +403,6 @@ describe('brand acceptance — system rules', () => {
     for (const { path, text } of SOURCES) {
       if (path.endsWith('Stamp.tsx')) continue // the circumferential stamp text is artwork
       if (path.includes(QA_HARNESS)) continue // fixtures, and unreachable in production
-      if (I18N_LEGACY_FILES.some((file) => path.endsWith(file))) continue // pre-catalogue Kit UI; preserved during LIFE merge
       for (const line of withoutComments(text).split('\n')) {
         if (!hebrew.test(line)) continue
         const isTranslated = /\bt\(/.test(line) || /aria-label=\{/.test(line)
