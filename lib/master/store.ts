@@ -27,23 +27,33 @@ const PAGE_READ_MS=1000
 async function readWithTag(maxAgeMs=0,shared=false):Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL,{maxAgeMs,shared});return r?{state:parse(r.text),etag:r.etag}:{state:seedState(),etag:null}}
  try{return{state:parse(await readFile(path.join(root(),CONTROL),'utf8')),etag:null}}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return{state:seedState(),etag:null};throw e}}
 /** The last error the durable store gave on a read, for the admin's storage line; null once a read succeeds. */
-const health=globalThis as typeof globalThis & {fanStoreError?:string|null;fanLastGood?:string;fanLastGoodAt?:number}
+const health=globalThis as typeof globalThis & {fanStoreError?:string|null;fanLastGood?:string;fanLastGoodAt?:number;fanFailAt?:number}
 /**
- * Pages read through here. If the connected store refuses (credentials not active yet, an outage), the public site
- * keeps serving a closed copy rather than a 500, and the admin says why; a WRITE never falls back (`mutate` reads with
- * `readWithTag`, which throws), so nothing is saved somewhere that will vanish.
+ * Pages read through here. If the connected store refuses (credentials, an outage, a plan's operation cap), the public site keeps
+ * serving rather than a 500, and the admin says why; a WRITE never falls back (`mutate` reads with `readWithTag`, which throws),
+ * so nothing is saved somewhere that will vanish. After a refusal the store is left alone for a minute — asking again on every
+ * page view is what spends a capped plan's operations.
  */
 export async function readState():Promise<State>{
- try{const r=(await readWithTag(PAGE_READ_MS,true)).state;health.fanStoreError=null;remember(r);return r}
- catch(e){if(!durable())throw e;health.fanStoreError=String((e as Error)?.message||e).slice(0,300);console.error('[fan-life] durable store read failed:',health.fanStoreError)
-  // fail CLOSED (audit A02, 8.10.2026): the last state this instance read, or — on a cold start — the seed with every
-  // club paused and every gate off. Never the seed's own publication settings: an outage must not reopen a paused club.
-  return health.fanLastGood&&Date.now()-(health.fanLastGoodAt||0)<LAST_GOOD_MS?JSON.parse(health.fanLastGood) as State:closedSeed()}
+ if(durable()&&health.fanFailAt&&Date.now()-health.fanFailAt<RETRY_MS)return fallback()
+ try{const r=(await readWithTag(PAGE_READ_MS,true)).state;health.fanStoreError=null;health.fanFailAt=0;remember(r);return r}
+ catch(e){if(!durable())throw e;health.fanStoreError=String((e as Error)?.message||e).slice(0,300);health.fanFailAt=Date.now();console.error('[fan-life] durable store read failed:',health.fanStoreError)
+  return fallback()}
 }
-/** A copy another instance may have changed since is trusted only briefly; after that an outage serves every club closed. */
+const RETRY_MS=60_000
+/**
+ * A02 (audit 8.10.2026): the last state this instance read is trusted for a while — a paused club stays paused.
+ * Cold start with no copy anywhere (owner, 12.10.2026: the Blob store hit its plan cap and the hub went EMPTY — "an immediate
+ * solution, permanent"): the PUBLISHED lineup — the registry plus the owner's launch defaults (8.10.2026, "open everything that
+ * can open"), in which a club the registry pauses stays paused — instead of every club closed. Pages normally never reach this:
+ * the shared data cache keeps serving the last copy the store gave.
+ */
+function fallback():State{return health.fanLastGood&&Date.now()-(health.fanLastGoodAt||0)<LAST_GOOD_MS?JSON.parse(health.fanLastGood) as State:publishedSeed()}
+/** A copy another instance may have changed since is trusted only briefly. */
 const LAST_GOOD_MS=10*60_000
 function remember(s:State){health.fanLastGood=JSON.stringify(s);health.fanLastGoodAt=Date.now()}
 export function closedSeed():State{const s=seedState();for(const c of s.clubs){c.status='paused';c.gates=[]}return s}
+export function publishedSeed():State{return withLaunch(seedState())}
 /** True when the last read failed and pages are running on a fallback (last good or closed). */
 export const stateUnavailable=()=>!!health.fanStoreError
 /** Where the control room keeps its state, for the health line in the admin. */

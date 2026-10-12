@@ -27,7 +27,9 @@ const PREFIX = 'fan-life/'
  * at most once per SHARED_S per file, a save drops the cached copy at once (`revalidateTag`), and when the store refuses, the last
  * copy that was read keeps being served (Next serves a stale entry and swallows a failed refresh) instead of a closed site.
  */
-const SHARED_S = 300
+// A day: every save drops the copy at once (`dropShared`), so the only thing a short window bought was more store operations —
+// 5 minutes × a dozen files is ~100K a month, ten times the Hobby cap; a day is ~400.
+const SHARED_S = 86_400
 export const sharedTag = (name: string) => `fan-blob:${name}`
 export const sharedListTag = (prefix: string) => `fan-blob-list:${prefix.split('/')[0]}`
 const noCacheHere = (e: unknown) => /incrementalCache missing|static generation store missing|staticGenerationStore/i.test(String((e as Error)?.message || e))

@@ -27,12 +27,19 @@ it('A02: a storage outage never reopens a paused club',async()=>{
  expect(fallback.status).toBe('paused')
  expect(gateAccess(fallback,1,false).allowed).toBe(false)
 })
-it('A02: an outage before any good read serves every club closed',async()=>{
- const g=globalThis as {fanLastGood?:string};delete g.fanLastGood
- const store=memoryStore();store.read=async()=>{throw Error('simulated outage')};useDurableStore(store)
+// Flipped 12.10.2026 (rule 65): the cold-outage fallback was every club closed, and a Blob plan cap left the live hub EMPTY.
+// It is now the published lineup (registry + launch defaults); a club the registry pauses stays paused.
+it('A02: an outage before any good read serves the published lineup, never a club the registry pauses',async()=>{
+ const g=globalThis as {fanLastGood?:string;fanFailAt?:number};delete g.fanLastGood;delete g.fanFailAt
+ const store=memoryStore();let asked=0;store.read=async()=>{asked++;throw Error('simulated outage')};useDurableStore(store)
  vi.spyOn(console,'error').mockImplementation(()=>{})
+ const {publishedSeed}=await import('@/lib/master/store'),{seedState}=await import('@/lib/master/seed')
  const s=await readState()
- expect(s.clubs.every(c=>c.status==='paused'&&!c.gates.length)).toBe(true)
+ expect(s.clubs.map(c=>[c.id,c.status,c.gates])).toEqual(publishedSeed().clubs.map(c=>[c.id,c.status,c.gates]))
+ expect(s.clubs.some(c=>c.status==='live'&&c.gates.length)).toBe(true)
+ for(const c of seedState().clubs)if(c.status==='paused')expect(s.clubs.find(x=>x.id===c.id)!.status).toBe('paused')
+ await readState();expect(asked).toBe(1) // a refused store is left alone for a minute
+ delete g.fanFailAt
 })
 it('A07: a saved club round reports gate_finish, not only leave',async()=>{
  vi.stubEnv('NEXT_PUBLIC_FAN_LIFE_EVALUATION','true')
