@@ -3023,3 +3023,13 @@ Owner: *"no feature may ever close because of a limit — every feature, the adm
    `MigrationPending`: page reads carry on (null → published lineup), a read-before-write throws, so no save is ever built on a seed
    over a copy Blob may still hold (503 from the admin API). It clears when Blob answers (copied across) or when the owner presses
    Operations → Move to Supabase → Retire Blob (`_store/blob-retired.json`). `tests/master/supabase-store.test.ts` holds it.
+
+## 106 · The CRM desk: seven work areas, tasks that resolve themselves, switches that never delete (12.10.2026)
+
+Owner's roadmap `FAN-LIFE-END-TO-END-CRM-ALL-FOOTBALL-FAN-LEAGUE-MASTER-ROADMAP-2026-10-12`; audit `docs/crm/00-baseline.md`; ADRs fanlife-0009…0012.
+Owner decisions the same day: English only (the CRM included), fan pages English, Claude merges each PR when CI is green, every new feature ships switched OFF.
+1. **Areas:** Desk · Clubs · Players · Games · Market · Community · Performance, then Tools (Sources & research · Operations · Settings) — `lib/master/crm/areas.ts`. `?section=data&view=players` and every old `?tab=` still land (page `LEGACY`).
+2. **Tasks** (`lib/master/crm/tasks.ts`): detectors are `attention.ts` + Player Control Center reports, stateless. A person's decision (snooze until / set aside, reason required) lives in `crm/tasks.json` (`lib/master/files.ts` → `worker_fanlife_files`), never in the control state. A set-aside task returns when its evidence fingerprint changes; a task is resolved only when its check stops reporting it.
+3. **Market and Community** are the existing consoles inside the frame (`AdminGate`, `AdminContributions`) — the database (`worker_admin_whoami` + RLS) still decides; the desk adds no write path.
+4. **Search** (`lib/master/crm/search.ts`) reads the owners of each record (control state, player listing, gates, experiences) — no index, no copy.
+5. **Switches** (`lib/features.ts`, `state.features`, Settings → Features): `allFootball`, `allFootballGates`, `fanLeague`, `friendlies`; off = owner preview only. Turning one off never deletes what it made.

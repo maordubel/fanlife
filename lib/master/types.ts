@@ -19,7 +19,7 @@ export type FindingRecord={kind:'player';name:string;sourceUrl?:string;seasons?:
 export type ResearchStatus={state:'collected'|'needs-review';lastRunId:string;lastAdapter:string;at:string}
 export type Club={id:string;name:string;city:string;country:string;initials:string;primary:string;secondary:string;status:'research'|'review'|'live'|'paused';version:number;gates:number[];sources:Source[];findings:Finding[];gaps:string[];research?:ResearchStatus}
 export type Job={id:string;clubId:string;query:string;title?:string;adapter?:string;status:'queued'|'running'|'completed'|'failed';attempts:number;createdAt:string;startedAt?:string;error?:string;lease?:string;baseVersion?:number}
-export type State={schemaVersion:1;revision:number;clubs:Club[];jobs:Job[];audit:AuditEntry[];upstream:{installed:string;latest:string;behind:number;checkedAt:string;url:string}|null;lifeDisplay?:LifeDisplayState;ads?:import('@/lib/top-ad').TopAdSetting}
+export type State={schemaVersion:1;revision:number;clubs:Club[];jobs:Job[];audit:AuditEntry[];upstream:{installed:string;latest:string;behind:number;checkedAt:string;url:string}|null;lifeDisplay?:LifeDisplayState;ads?:import('@/lib/top-ad').TopAdSetting;features?:Partial<import('@/lib/features').Features>}
 /** Who did it (actor + role, audit F19), to what, the value before and after, and why (audit A12). Old entries carry only at/action/target/detail. */
 export type AuditEntry={at:string;action:string;target:string;detail:string;actor?:string;role?:string;before?:string;after?:string;reason?:string}
 export const GATES=[
