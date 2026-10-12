@@ -34,6 +34,8 @@ import {worldFor,nicknameLine,flavourFor} from '@/lib/clubs/world'
 import {clubHref} from '@/lib/clubs/club-href'
 import {todaysPick} from '@/lib/clubs/play-groups'
 import {todayInIsrael} from '@/lib/date/israel'
+import {Suspense} from 'react'
+import {LegendsBanner} from '@/components/legends/ClubBanner'
 export const dynamic='force-dynamic'
 export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?{title:`${c.name} — ${c.city}`,description:nicknameLine(worldFor(c))||undefined}:{}}
 
@@ -76,6 +78,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {fx&&lv?<FixtureCard clubId={id} clubName={c.name} fx={fx} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta}}/>
   :world.ground&&<section className="mag-section club-matchday" aria-labelledby="md-h"><article className="mag-homecard"><div><p className="mag-kicker">{copy.homeVoice}</p><h2 id="md-h">{world.ground.name}{world.ground.local&&<> <bdi className="club-local" lang={world.ground.script} dir="auto">{world.ground.local}</bdi></>}</h2><p>{world.ground.line}</p></div></article></section>}
   {core&&<ClubToday clubId={id} clubName={c.name} moment={momentFor(core.data,new Date())} pick={pickGate?{key:pickGate.key,name:games[`gate.${pickGate.key}`]}:null} locale={locale} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/>}
+  {core&&<Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense>}
   <section className="mag-section club-lifebar" id="life-block"><div className="club-lifebar-in" id="life" data-life-entry={life.state}><Dye art="face" className="club-lifebar-face"/><div className="club-lifebar-text"><p className="mag-kicker">LIFE</p><h2>{copy.lifeTitle}</h2><p>{life.href?copy.lifeOpen:copy.lifeWorkshop}</p></div>{life.href&&<Link className="mag-cta red min-h-tap" href={life.href}>{copy.life}</Link>}</div></section>
   {core&&<section className="mag-section" id="gates" aria-labelledby="gates-h"><hr className="mag-rule"/><div className="mag-head"><div><p className="mag-kicker">{copy.wallKicker}</p><h2 className="mag-h2" id="gates-h">{copy.wallTitle}</h2></div></div>
    <ClubGateWall clubId={id} states={states} locale={locale} games={games} soon={copy.wallSoon} gateWord={copy.wallGate} beloved={belovedOf(world.terrace,open)} featuredWord={copy.wallFeatured} featureTitle={fill(copy.wallFeatureShirt)} terraceLine={world.terrace?.line} away={id==='hapoel-tel-aviv'||hasClubAway(id)?{open:true,href:id==='hapoel-tel-aviv'?'/away-days':clubHref(id,'away-days',locale),name:copy.awayName,note:copy.awayNote}:undefined}/></section>}

@@ -3113,3 +3113,11 @@ Owner: *"להצמיד את המחקרים שכן נאספו למועדונים, 
 3. **A team sheet carries its own decoys** — the same source's starters that season — or it is held: surnames next to the roster's full names give gate 3 away.
 4. **A new man waits for the ladder.** Economy-v2 quotas are percentages of the club's size; adding men moves priced men, which only the owner decides (`research-staging/<club>/players-ready-*.json` are ready, not wired).
 5. **A scheduled pull merges, never replaces** (`mergeAutoWave`), and UEFA's eleven survives a second publisher confirming the score (rule 102).
+
+## 115 · On a phone FAN LIFE is an app (12.10.2026)
+
+Owner: *"on mobile, an app display — no floating screens, fixed screens; animations, movement"* · *"a dedicated banner for Legends Manager on every club page"*.
+1. **≤900px the masthead and the bottom bar are `position: fixed`** (`.mag > .mag-top/.mag-tabbar`, `.club-masthead/.club-tabbar`); the page pads itself by `--app-top/--app-bottom` (`--club-stick` in a club) incl. safe areas. Anything sticky starts below `--app-top`. Immersive pages still drop all chrome.
+2. **A screen arrives with `app-screen-in`** (opacity + a relative `inset-block-start`) — never a transform on a page wrapper, which would pin every fixed sheet inside it. Off under reduced motion. A press answers with a 60ms scale (`:active`).
+3. **≤760px nothing floats:** big cards, LIFE bars, lobbies (`.ready`), the Legends hero/code/roll run edge to edge with a 16px gutter and no offset shadow; a centred `<dialog>` becomes a bottom sheet. CSS lives in the `APP MODE` block of `app/magazine.css` and the feature's own CSS. Desktop is untouched.
+4. **The Legends banner** (`components/legends/ClubBanner.tsx`) streams in `<Suspense>` on the club home, shows only when `door('fanLeague')` is open (owner preview counts) and `legendsReadyFor(club)` says READY, links to `/all-football/legends?club=<id>` (the roll pre-selects it), and wears only what `bannerPaint(theme)` allows (rule 95). `tests/legends/club-banner.test.ts`.

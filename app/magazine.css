@@ -1605,3 +1605,58 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .mag-tile.af-tile b { color: var(--mag-paper); } .mag-tile.af-tile small { color: color-mix(in srgb, var(--mag-paper) 80%, transparent); }
 .mag-tile.af-tile .mag-tile-state { background: var(--mag-vermilion); color: var(--mag-white); }
 .mag-tile.af-tile[data-preview] { outline: 3px dashed var(--mag-salmon); outline-offset: -8px; }
+
+/* ───────── APP MODE — on a phone FAN LIFE is an app (owner, 12.10.2026; CLAUDE.md rule 115) ─────────
+   "No floating screens, fixed screens. A mobile-app atmosphere in every way, animations, movement."
+   ≤900px: the masthead and the bottom bar are FIXED to the glass (not sticky inside a long document); the content scrolls between
+   them, padded by the safe areas. Every screen arrives with a short rise (opacity + a relative offset — never a transform, which
+   would pin a fixed sheet inside the page to the page). A tap answers at once (press scale). ≤760px: no floating boxes — the big
+   cards go edge to edge, lose their offset shadow, and the gutter is 16px everywhere. A centred dialog becomes a bottom sheet.
+   Desktop keeps its own design: nothing in this block applies above 900px. Under reduced motion nothing moves. */
+@media (max-width: 900px) {
+  .mag:has(> .mag-tabbar) { --app-top: calc(59px + env(safe-area-inset-top)); --app-bottom: calc(59px + env(safe-area-inset-bottom)); --club-stick: var(--app-top); padding-block: var(--app-top) var(--app-bottom); min-block-size: 100dvh; }
+  .mag > .mag-top { position: fixed; inset-inline: 0; inset-block-start: 0; z-index: 50; padding-block-start: env(safe-area-inset-top); }
+  .mag > .mag-tabbar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 50; }
+  .mag > .mag-stop { position: relative; }
+  .mag-hubnav { inset-block-start: var(--app-top, 0px); }
+  .mag-section, #clubs, #gates, #archive, #life-entry, #next, #legends { scroll-margin-top: calc(var(--app-top, 59px) + 12px); }
+  html:has(.mag-tabbar, .club-tabbar) { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; }
+  .mag-tabbar a[aria-current='page'] { color: var(--mag-salmon); box-shadow: inset 0 3px 0 var(--mag-salmon); }
+  .mag-tabbar a svg, .club-tab svg { transition: transform .18s cubic-bezier(.2, .9, .3, 1.4); }
+  .mag-tabbar a[aria-current='page'] svg, .club-tab[aria-current='page']:not(.club-tab-centre) svg { transform: translateY(-2px) scale(1.08); }
+  /* press feedback: buttons, chips, tiles, tickets, the bars */
+  :is(.mag, .club-app) :is(a, button, summary):is(.mag-cta, .mag-chip, .mag-tile, .mag-card-cta, .mag-ticket, .mag-market-strip, .button, .club-tab, .club-switch, .club-switch-row, .lgm-go, .lgm-ghost, .lgm-club, .lgm-career, .lgm-banner, .share3-open, .af-card, .min-h-tap):active,
+  .mag-tabbar a:active { transform: scale(.965); transition: transform 60ms ease-out; }
+  :is(.mag, .club-app) :is(.mag-cta, .mag-chip, .mag-tile, .mag-card-cta, .mag-ticket, .mag-market-strip, .button, .club-tab, .lgm-go, .lgm-club, .lgm-banner, .min-h-tap) { transition: transform .16s ease-out, box-shadow .16s ease-out, background-color .16s ease-out; }
+  /* a centred <dialog> is a bottom sheet on a phone */
+  .mag-chooser[open] { inline-size: 100%; max-inline-size: 100%; max-block-size: 92dvh; margin: auto 0 0; border-inline: 0; border-block-end: 0; border-block-start-width: 6px; box-shadow: none; padding-block-end: env(safe-area-inset-bottom); animation: app-sheet-up .3s cubic-bezier(.2, .9, .3, 1.05) both; }
+  .mag-chooser[open]::backdrop { animation: app-fade .2s ease-out both; }
+}
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .mag > main, .mag > .af, .club-body > * { animation: app-screen-in .26s cubic-bezier(.2, .8, .3, 1) both; }
+}
+@keyframes app-screen-in { from { opacity: 0; inset-block-start: 14px; } to { opacity: 1; inset-block-start: 0; } }
+@keyframes app-sheet-up { from { translate: 0 40px; opacity: .3; } to { translate: 0 0; opacity: 1; } }
+@keyframes app-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 760px) {
+  .mag-section { width: calc(100% - 32px); }
+  .mag-section > :is(.mag-homecard, .mag-card, .panel, .mag-letter, .mag-editor, .mag-feature, .mag-pass), .mag-section > article.mag-homecard,
+  .fl.mag .panel, .mag-skin .game-panel { box-shadow: none; }
+  .mag-section > :is(.mag-homecard, .mag-letter, .mag-pass), .club-matchday > .mag-homecard, .mag-skin > .game-panel { margin-inline: -16px; border-inline: 0; }
+  .mag-tile { box-shadow: 3px 3px 0 var(--mag-ink); }
+  /* the hub's LIFE band and a club's LIFE bar run edge to edge; the title fits its half of the band */
+  .mag-section.mag-game-band { inline-size: 100%; border-inline: 0; box-shadow: none; }
+  .mag-game-title { font-size: clamp(42px, 13vw, 64px); }
+  .mag-game-band .mag-cta { font-size: 13px; letter-spacing: 1px; padding-inline: 12px; }
+  .club-lifebar-in { margin-inline: -16px; border-inline: 0; box-shadow: none; padding-inline: 16px; }
+  /* a page of cards becomes a list: edge to edge, a rule between, no offset shadow */
+  .mag-homecard, .mag-ticket { box-shadow: none; }
+  .club-facts { gap: 0; margin-inline: -16px; }
+  .club-facts > .mag-homecard { margin: 0; border-inline: 0; border-block-start-width: 0; }
+  .club-facts > .mag-homecard:first-child { border-block-start-width: 3px; }
+  .mag-tabbar a { font-size: 10.5px; letter-spacing: .6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mag-chooser[open], .mag-chooser[open]::backdrop, .mag > main, .club-body > * { animation: none; }
+  :is(.mag, .club-app) *:active { transform: none !important; }
+}

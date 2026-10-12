@@ -37,7 +37,10 @@
 .club-tab-centre .club-tab-label { margin-block-start: -2px; }
 
 @media (max-width: 900px) {
-  .club-app { padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
+  /* app mode (rule 115): the masthead is fixed to the glass like the bar, and the page scrolls between them */
+  .club-app { --club-stick: calc(64px + env(safe-area-inset-top)); padding-top: var(--club-stick); padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
+  .club-masthead { position: fixed; inset-inline: 0; inset-block-start: 0; padding-top: env(safe-area-inset-top); }
+  .club-body > * { position: relative; }
   .club-tabbar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 50; padding-bottom: env(safe-area-inset-bottom); }
   .club-foot { margin-top: 24px; }
 }
@@ -57,7 +60,7 @@
 }
 
 /* immersive pages (LIFE, a game in play mode) own the whole glass */
-.club-app:has([data-chrome='immersive']) { --club-stick: 0px; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'body'; grid-template-rows: 1fr; padding-bottom: 0; }
+.club-app:has([data-chrome='immersive']) { --club-stick: 0px; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'body'; grid-template-rows: 1fr; padding-top: 0; padding-bottom: 0; }
 .club-app:has([data-chrome='immersive']) .club-masthead,
 .club-app:has([data-chrome='immersive']) .club-tabbar,
 .club-app:has([data-chrome='immersive']) .club-foot { display: none; }
@@ -78,7 +81,8 @@
   @view-transition { navigation: auto; }
   .club-body { animation: club-settle .28s ease-out both; }
 }
-@keyframes club-settle { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* opacity only: a transform here would pin every fixed sheet inside a club page to the page while it settles */
+@keyframes club-settle { from { opacity: 0; } to { opacity: 1; } }
 .club-body .club-surface { min-height: 0; }
 
 /* your rounds: stamps that open the game again */
@@ -354,3 +358,54 @@ a.gp:active { transform: scale(.98); }
 .cad-chip small { font-family: var(--mag-mono); font-size: 10px; opacity: .7; }
 .cad-scrub { width: 100%; margin-top: 12px; accent-color: var(--club-primary, currentColor); min-height: 28px; }
 .cad-chapter { margin: 0; font-family: var(--mag-condensed, inherit); font-size: 30px; line-height: 1; border-bottom: 2px solid var(--mag-ink); padding-bottom: 4px; animation: cad-slide .6s cubic-bezier(.2,1,.3,1) both; }
+
+/* ───────── LEGENDS MANAGER on a club's home (components/legends/ClubBanner.tsx, 12.10.2026) ─────────
+   The feature's own paint: night navy, bronze laurels (hue 26–28°, never a yellow), one vermilion star. lib/legends/banner.ts
+   decides which of the three a club's page may wear (rule 95) and says it in data attributes; the colours stay here as tokens. */
+.lgm-banner { --b-night: var(--mag-navy); --b-bronze: #A35E2A; --b-bronze-hi: #C98A55; --b-bronze-lo: #6E3D1B; --b-star: var(--mag-vermilion);
+  position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: 'mark text' 'cta cta'; gap: 12px 16px; align-items: center;
+  padding: 18px 16px 16px; color: var(--mag-paper); text-decoration: none; text-align: start;
+  background: radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--b-bronze) 42%, transparent), transparent 58%), var(--b-night);
+  border-block: 6px double var(--b-bronze); }
+.lgm-banner[data-night='ink'] { --b-night: var(--mag-ink); }
+.lgm-banner[data-bronze='paper'] { --b-bronze: var(--mag-muted); --b-bronze-hi: var(--mag-paper); --b-bronze-lo: var(--mag-ink); }
+.lgm-banner[data-star='bronze'] { --b-star: var(--b-bronze-hi); } .lgm-banner[data-star='paper'] { --b-star: var(--mag-paper); }
+.lgm-banner::before { content: ''; position: absolute; z-index: -1; inset-block-start: 50%; inset-inline-start: 74px; inline-size: 520px; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%;
+  background: repeating-conic-gradient(color-mix(in srgb, var(--b-bronze-hi) 16%, transparent) 0 6deg, transparent 6deg 15deg); -webkit-mask: radial-gradient(closest-side, black 30%, transparent); mask: radial-gradient(closest-side, black 30%, transparent); }
+.lgm-banner::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(105deg, transparent 40%, color-mix(in srgb, var(--mag-paper) 13%, transparent) 50%, transparent 60%); translate: -120% 0; }
+.lgm-banner-mark { grid-area: mark; display: block; inline-size: 92px; }
+.lgm-banner-mark .lgm-emblem { inline-size: 100%; block-size: auto; filter: drop-shadow(0 3px 0 color-mix(in srgb, var(--mag-ink) 55%, transparent)); }
+.lgm-banner .lgm-e-disc { fill: var(--b-night); } .lgm-banner .lgm-e-ring { fill: none; stroke: var(--b-bronze-hi); stroke-width: 1.6; stroke-dasharray: 2 3; }
+.lgm-banner .lgm-e-stem { fill: none; stroke: var(--b-bronze); stroke-width: 3; stroke-linecap: round; }
+.lgm-banner .lgm-e-leaf { fill: var(--b-bronze); stroke: var(--b-bronze-lo); stroke-width: .8; }
+.lgm-banner .lgm-e-star { fill: var(--b-star); stroke: var(--b-bronze-lo); stroke-width: 1; }
+.lgm-banner .lgm-e-mono { fill: var(--mag-paper); font: 400 50px var(--mag-display); letter-spacing: 1px; }
+.lgm-banner .lgm-e-ribbon { fill: var(--b-bronze); stroke: var(--b-bronze-lo); stroke-width: 1.2; }
+.lgm-banner .lgm-e-word { fill: var(--mag-paper); font: 700 17px var(--mag-mono); letter-spacing: 5px; }
+.lgm-banner-text { grid-area: text; display: grid; gap: 4px; min-inline-size: 0; }
+.lgm-banner-kicker { font: 700 10.5px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--b-bronze-hi); }
+.lgm-banner-kicker i { font-style: normal; color: var(--mag-salmon); }
+.lgm-banner-title { display: block; font: 400 clamp(30px, 9vw, 64px)/.88 var(--mag-display); text-transform: uppercase; letter-spacing: .5px; }
+.lgm-banner-title span { display: block; color: var(--b-bronze-hi); }
+.lgm-banner-lede { font: 600 15px/1.35 var(--mag-body); max-inline-size: 46ch; }
+.lgm-banner-fine { font: 700 10.5px/1.5 var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; color: color-mix(in srgb, var(--mag-paper) 72%, transparent); }
+.lgm-banner-cta { grid-area: cta; display: flex; align-items: center; justify-content: space-between; gap: 10px; min-block-size: 50px; padding: 0 16px; background: var(--b-bronze); color: var(--mag-paper); border: 2px solid var(--b-bronze-hi); box-shadow: 4px 4px 0 var(--b-bronze-lo);
+  font: 700 13px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; }
+.lgm-banner-cta i { font-style: normal; font-size: 20px; transition: translate .2s ease-out; }
+.lgm-banner:hover .lgm-banner-cta i, .lgm-banner:focus-visible .lgm-banner-cta i { translate: 4px 0; }
+.lgm-banner:focus-visible { outline: 3px solid var(--mag-ink); outline-offset: 3px; }
+@media (max-width: 760px) { .lgm-banner-wrap .lgm-banner { margin-inline: -16px; } }
+@media (max-width: 359px) { .lgm-banner { grid-template-columns: 1fr; grid-template-areas: 'mark' 'text' 'cta'; } .lgm-banner-mark { inline-size: 76px; } }
+@media (min-width: 761px) {
+  .lgm-banner { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: 'mark text cta'; gap: 24px 32px; padding: 26px 30px; border: 3px solid var(--mag-ink); outline: 2px dashed var(--b-bronze-hi); outline-offset: -11px; box-shadow: 8px 8px 0 var(--b-bronze); }
+  .lgm-banner::before { inline-size: 760px; inset-inline-start: 120px; }
+  .lgm-banner-mark { inline-size: 168px; }
+  .lgm-banner-lede { font-size: 18px; }
+  .lgm-banner-cta { min-block-size: 58px; padding: 0 22px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .lgm-banner::after { animation: lgm-banner-shine 5.5s ease-in-out 1.2s infinite; }
+  .lgm-banner-mark .lgm-emblem { animation: lgm-banner-float 4s ease-in-out infinite alternate; }
+}
+@keyframes lgm-banner-shine { 0%, 70% { translate: -120% 0; } 100% { translate: 120% 0; } }
+@keyframes lgm-banner-float { from { translate: 0 0; } to { translate: 0 -4px; } }
