@@ -167,15 +167,14 @@ try {
 
  await page.setViewportSize({width:390,height:844})
  const sharedGames=[]
- const questionMaster=JSON.parse(readFileSync('content/generated/question-master.json','utf8'))
- const nativeQuestions=new Map(questionMaster.questions.map(q=>[q.id,q]))
  const interactions=new Set()
  // the four clubs are independent: each plays on its own page, at the same time (the serial run took longer than everything else in CI together)
  await Promise.all(['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva'].map(async slug=>{
   const page=await context.newPage();await page.setViewportSize({width:390,height:844})
   const response=await page.goto(`${base}/clubs/${slug}/trivia?seed=42&lang=en`)
   assert.equal(response.status(),200)
-  const truthDates=slug==='hapoel-tel-aviv'?null:(await loadClub(slug)).data.archive // compiled (pack + waves), as the page deals it
+  // the club's own compiled bank, as the page deals it: since rule 109 every club (Hapoel included) plays the forged English bank
+  const bank=new Map((await loadClub(slug)).data.trivia.questions.map(q=>[q.id,q]))
   let answers=0
   // This flow proves the shared run end to end; it is not a speed test. Practice mode has no question clock (server and screen), so a slow runner cannot turn a right answer into TIME'S UP.
   await page.getByRole('button',{name:'Practice',exact:true}).click()
@@ -189,12 +188,11 @@ try {
    await page.getByTestId('trivia-stage').click({timeout:800}).catch(()=>{})
    const id=await board.getAttribute('data-question-id'),type=await board.getAttribute('data-question-type')
    let answer
-   if(slug==='hapoel-tel-aviv'){assert(nativeQuestions.has(id),`Unknown native question ${id}`);answer=nativeQuestions.get(id).answer}
-   else {const prompt=(await board.locator('h2').textContent()).trim() /* textContent: the magazine prints headings in capitals (rule 91) */;const facts=truthDates.filter(f=>prompt.startsWith(f.value.name+' — '));assert(facts.length,`Question lacks its club fact: ${prompt}`);answer=facts.some(f=>prompt.includes(' — '+f.value.on+'.'))?'true':'false' /* several fixtures can share a name: the claim is true when ANY of them carries the stated date */}
+   assert(bank.has(id),`Unknown ${slug} question ${id}`);answer=bank.get(id).answer
    interactions.add(type)
    const values=Array.isArray(answer)?answer:[answer]
    if(type==='match'){ // pairs are tapped: the first unmatched left item is active, so the right-hand answers go in order
-    const question=nativeQuestions.get(id);for(let i=0;i<question.left.length;i++)await board.locator('[data-kind="match"] ul').nth(1).getByRole('button',{name:values[i],exact:true}).click({force:true})}
+    const question=bank.get(id);for(let i=0;i<question.left.length;i++)await board.locator('[data-kind="match"] ul').nth(1).getByRole('button',{name:values[i],exact:true}).click({force:true})}
    // option buttons: Playwright's stability heuristic does not settle on the magazine's game buttons in headless Chromium
    // (measured 6.10.2026: same node, same box across frames, no animations) — the click itself is real and graded below
    else if(['order','multi'].includes(type)){ // these need a Confirm, and a placed item is itself a button that un-places on a second tap: tap once
