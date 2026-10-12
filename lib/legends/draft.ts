@@ -4,8 +4,10 @@ import type {Card,DraftState,Offer,Price} from './types'
 
 /**
  * The opening draft (rulebook §1.2, §2.2). Pure and deterministic from the career's seed.
- *  · before every slot the manager picks a POSITION GROUP; the slot then shows exactly three different men of that group —
- *    premium (€4–5M), mid (€2–4M), budget (€1–2M)
+ *  · the slots come up ONE AFTER ANOTHER in a fixed line order (owner, 12.10.2026 — the Royal Rumble slot machine):
+ *    GK · DF · MF · FW · DF · MF · FW · MF · DF · GK · DF · MF · FW · DF · MF · DF · MF, and FW for the optional eighteenth.
+ *    Each slot is dealt on its own — three different men of that line: premium (€4–5M), mid (€2–4M), budget (€1–2M). When the
+ *    scheduled line cannot show a legal trio the next line still owed in the order comes forward, so the order bends, never breaks
  *  · seventeen are required, an eighteenth is optional; quotas GK 2 · DF 6 · MF 6 · FW 3; €52M
  *  · every offer is checked by the SOLVER before it is shown: a card that would leave no way to finish seventeen and the quotas
  *    inside the money left is shown LOCKED with the reason, and a group with no pickable card cannot be chosen (§1.2.10)
@@ -109,21 +111,38 @@ export function groups(cards:readonly Card[],d:DraftState,seed:number):GroupInfo
  })
 }
 
-export type DraftMove={kind:'group';group:QuotaPos}|{kind:'pick';id:string}|{kind:'reroll'}|{kind:'skip'}
+/** the fixed line order of the founding draft; the quotas are exactly GK 2 · DF 6 · MF 6 · FW 3, and the eighteenth is a FW */
+export const DRAFT_ORDER:readonly QuotaPos[]=['GK','DF','MF','FW','DF','MF','FW','MF','DF','GK','DF','MF','FW','DF','MF','DF','MF','FW']
+const draftDone=(d:DraftState)=>d.picks.length>=REQ+R.initialDraftOptional||(d.picks.length>=REQ&&d.optionalDone)
+/** the order still to come: DRAFT_ORDER less one entry per man already signed of that line */
+export function schedule(d:DraftState):QuotaPos[]{
+ const used:Record<QuotaPos,number>={GK:0,DF:0,MF:0,FW:0};for(const p of d.picks)used[p.quota]++
+ const out:QuotaPos[]=[];for(const p of DRAFT_ORDER){if(used[p]>0){used[p]--;continue}out.push(p)}
+ return out.slice(0,Math.max(0,REQ+R.initialDraftOptional-d.picks.length))
+}
+/** the line this slot deals: the scheduled one, or the next line still owed that can show a legal trio */
+export function nextGroup(cards:readonly Card[],d:DraftState,seed:number):QuotaPos|null{
+ if(d.confirmed||draftDone(d))return null
+ const sched=schedule(d),info=groups(cards,d,seed),open=new Set(info.filter(g=>g.open).map(g=>g.group))
+ const owed=d.picks.length<REQ?sched.slice(0,REQ-d.picks.length):[...sched,...QUOTA_POS]
+ for(const g of owed)if(open.has(g))return g
+ return null
+}
+/** deal the current slot if it is not dealt yet — deterministic, so the view and the move always see the same three */
+export function deal(cards:readonly Card[],d:DraftState,seed:number):DraftState{
+ if(d.confirmed||draftDone(d)||(d.group&&d.offers.length))return d
+ const g=nextGroup(cards,d,seed);if(!g)return d
+ return {...d,group:g,offers:offersFor(cards,d,g,seed)!}
+}
+export type DraftMove={kind:'pick';id:string}|{kind:'reroll'}|{kind:'skip'}
 export type DraftResult={ok:true;draft:DraftState;picked?:Card}|{ok:false;error:string}
-export function draftMove(cards:readonly Card[],d:DraftState,m:DraftMove,seed:number):DraftResult{
- if(d.confirmed)return {ok:false,error:'The draft is confirmed.'}
- const done=d.picks.length>=REQ+R.initialDraftOptional||(d.picks.length>=REQ&&d.optionalDone)
- if(done&&m.kind!=='skip')return {ok:false,error:'Your squad is drafted — confirm it.'}
+export function draftMove(cards:readonly Card[],d0:DraftState,m:DraftMove,seed:number):DraftResult{
+ if(d0.confirmed)return {ok:false,error:'The draft is confirmed.'}
+ if(draftDone(d0)&&m.kind!=='skip')return {ok:false,error:'Your squad is drafted — confirm it.'}
+ const d=deal(cards,d0,seed)
  switch(m.kind){
-  case 'group':{
-   const g=groups(cards,d,seed).find(x=>x.group===m.group)
-   if(!g)return {ok:false,error:'Unknown group.'}
-   if(!g.open)return {ok:false,error:g.reason??'That group cannot be chosen.'}
-   return {ok:true,draft:{...d,group:m.group,offers:offersFor(cards,d,m.group,seed)!}}
-  }
   case 'reroll':{
-   if(!d.group||!d.offers.length)return {ok:false,error:'Choose a position group first.'}
+   if(!d.group||!d.offers.length)return {ok:false,error:'No line can be dealt for this slot.'}
    if(d.rerollsLeft<=0)return {ok:false,error:'No rerolls left in this draft.'}
    const next={...d,shown:[...d.shown,...d.offers.map(o=>o.id)]},o=offersFor(cards,next,d.group,seed)
    // fewer than three new men: say so, and do not spend the reroll
@@ -137,7 +156,7 @@ export function draftMove(cards:readonly Card[],d:DraftState,m:DraftMove,seed:nu
    if(!okToPick(cards,d,c))return {ok:false,error:lockReason(cards,d,c)}
    const recent=[...d.recentDecades,...c.decades].slice(-6)
    const next:DraftState={...d,slot:d.slot+1,group:null,offers:[],shown:[],picks:[...d.picks,{id:c.id,quota:c.pos,price:c.price,slot:d.slot}],spent:d.spent+c.price,recentDecades:recent,optionalDone:d.picks.length+1>REQ}
-   return {ok:true,draft:next,picked:c}
+   return {ok:true,draft:deal(cards,next,seed),picked:c}
   }
   case 'skip':{
    if(d.picks.length<REQ)return {ok:false,error:`Seventeen are required — ${REQ-d.picks.length} to go.`}
@@ -162,14 +181,12 @@ export function confirmCheck(cards:readonly Card[],d:DraftState):string|null{
 export function botDraft(cards:readonly Card[],seed:number,style:'value'|'random'|'premium'|'budget'='value'):{draft:DraftState;error:string|null}{
  let d=emptyDraft()
  for(let guard=0;guard<80&&d.picks.length<REQ;guard++){
-  const open=groups(cards,d,seed).filter(g=>g.open)
-  if(!open.length)return {draft:d,error:`Dead end at slot ${d.slot}: no group can be chosen.`}
-  const need=deficits(d),g=style==='random'?open[hash(`${seed}:g:${d.slot}`)%open.length]!:[...open].sort((a,b)=>need[b.group]-need[a.group]||hash(`${seed}:${a.group}`)-hash(`${seed}:${b.group}`))[0]!
-  let r=draftMove(cards,d,{kind:'group',group:g.group},seed);if(!r.ok)return {draft:d,error:r.error};d=r.draft
+  d=deal(cards,d,seed)
+  if(!d.group)return {draft:d,error:`Dead end at slot ${d.slot}: no line can be dealt.`}
   const ok=d.offers.filter(o=>!o.locked),by=new Map(cards.map(c=>[c.id,c]))
   const pick=style==='random'?ok[hash(`${seed}:p:${d.slot}`)%ok.length]!:style==='premium'?ok[0]!:style==='budget'?ok[ok.length-1]!:[...ok].sort((a,b)=>(by.get(b.id)!.stars-0.55*by.get(b.id)!.price)-(by.get(a.id)!.stars-0.55*by.get(a.id)!.price))[0]!
-  r=draftMove(cards,d,{kind:'pick',id:pick.id},seed);if(!r.ok)return {draft:d,error:r.error};d=r.draft
+  const r=draftMove(cards,d,{kind:'pick',id:pick.id},seed);if(!r.ok)return {draft:d,error:r.error};d=r.draft
  }
  if(d.picks.length<REQ)return {draft:d,error:'The draft did not finish.'}
- return {draft:{...d,optionalDone:true},error:confirmCheck(cards,{...d,optionalDone:true})}
+ return {draft:{...d,group:null,offers:[],optionalDone:true},error:confirmCheck(cards,{...d,optionalDone:true})}
 }

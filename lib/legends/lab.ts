@@ -51,7 +51,7 @@ export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,s
  const go=(a:Intent)=>{const r=applyAction(c,{...a,key:`lab${seed}k${n++}`,rev:c.revision} as Action,{now:'2026-01-01T00:00:00Z',catalogs});if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);c=r.career}
  try{
   const d=botDraft(own.cards,hash(`${c.id}:draft`),'value');if(d.error)return {career:c,error:d.error}
-  for(const p of d.draft.picks){go({kind:'draft',move:{kind:'group',group:p.quota}});go({kind:'draft',move:{kind:'pick',id:p.id}})}
+  for(const p of d.draft.picks){go({kind:'draft',move:{kind:'pick',id:p.id}})}
   go({kind:'draft-confirm'});go({kind:'ack'})
   for(let s=0;s<seasons;s++){
    for(let guard=0;guard<200;guard++){

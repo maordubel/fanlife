@@ -8,7 +8,7 @@ import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScor
 import {checkDecision,run,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {bestLineup,fieldable,lineupError,quotaCount,squadError} from './squad'
-import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type Decision,type Fixture,type LedgerEntry,type Live,type MatchOutcome,type MatchSnapshot,type Pressing,type Season,type SideSnapshot,type Tactics,type Team,type Tempo} from './types'
+import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type Decision,type Fixture,type FixtureSide,type LedgerEntry,type Live,type MatchOutcome,type MatchSnapshot,type Pressing,type Season,type SideSnapshot,type Tactics,type Team,type Tempo} from './types'
 
 /**
  * A Legends career as a pure state machine (rulebook §1, §2.11). The server reads the stored career, applies ONE action here and
@@ -74,7 +74,6 @@ export function parseAction(raw:unknown):Action|null{
  const b={key:a.key,rev:a.rev as number},str=(v:unknown)=>typeof v==='string'&&v.length>0&&v.length<=200
  switch(a.kind){
   case 'draft':{const m=a.move as Record<string,unknown>;if(!m)return null
-   if(m.kind==='group'&&['GK','DF','MF','FW'].includes(m.group as string))return {...b,kind:'draft',move:{kind:'group',group:m.group as QuotaPos}}
    if(m.kind==='pick'&&str(m.id))return {...b,kind:'draft',move:{kind:'pick',id:m.id as string}}
    if(m.kind==='reroll'||m.kind==='skip')return {...b,kind:'draft',move:{kind:m.kind}}
    return null}
@@ -255,30 +254,30 @@ function snapshotFor(c:Career,f:Fixture,knockout:boolean):MatchSnapshot{
 function commitMine(c:Career,ctx:Ctx,note:string|null):ActionResult{
  const live=c.live!,fx=fixtureById(c,live.fixture)!,r=run(live.snapshot,live.decisions,live.mode==='interactive',mySide(c,fx))
  if(!r.done)return {ok:true,career:c}
- return commitRound({...c,live:null},{fixture:fx.id,outcome:r.outcome,seed:live.snapshot.seed},ctx,note)
+ return commitRound({...c,live:null},{fixture:fx.id,outcome:r.outcome,seed:live.snapshot.seed,snap:live.snapshot},ctx,note)
 }
 /** every other match of the round on the quick sim, then the books for everyone — one step, so a result is never half-applied */
-function commitRound(c0:Career,mine:{fixture:string;outcome:MatchOutcome;seed:number}|null,ctx:Ctx,note:string|null):ActionResult{
+function commitRound(c0:Career,mine:{fixture:string;outcome:MatchOutcome;seed:number;snap:MatchSnapshot}|null,ctx:Ctx,note:string|null):ActionResult{
  let c=c0
  if(c.phase==='playoff'){
   const fx=c.season.playoff!
   let out=mine
-  if(!out){const snap=snapshotFor(c,fx,true),r=run(snap,[],false);if(!r.done)return bad('The play-off could not finish.');out={fixture:fx.id,outcome:r.outcome,seed:snap.seed}}
+  if(!out){const snap=snapshotFor(c,fx,true),r=run(snap,[],false);if(!r.done)return bad('The play-off could not finish.');out={fixture:fx.id,outcome:r.outcome,seed:snap.seed,snap}}
   c=book(c,fx,out.outcome)
-  return finishSeason({...c,season:{...c.season,playoff:{...fx,result:{goals:out.outcome.goals,pens:out.outcome.pens,events:out.outcome.events,seed:out.seed}}}},ctx,note)
+  return finishSeason({...c,season:{...c.season,playoff:{...fx,result:{goals:out.outcome.goals,pens:out.outcome.pens,events:out.outcome.events,seed:out.seed,sides:sidesOf(c,out.snap)}}}},ctx,note)
  }
  const round=c.season.played+1,playing=new Set<string>()
  const fixtures=[...c.season.fixtures]
  for(let i=0;i<fixtures.length;i++){
   const f=fixtures[i]!;if(f.round!==round||f.result)continue
   playing.add(f.home);playing.add(f.away)
-  let outcome:MatchOutcome,seed:number
-  if(mine&&mine.fixture===f.id){outcome=mine.outcome;seed=mine.seed}
+  let outcome:MatchOutcome,seed:number,snapUsed:MatchSnapshot
+  if(mine&&mine.fixture===f.id){outcome=mine.outcome;seed=mine.seed;snapUsed=mine.snap}
   else{
    for(const club of [f.home,f.away]){const t=teamBy(c).get(club)!;const p=prepareSide(c,t,ctx);if('error' in p)return bad(`${t.name}: ${p.error}`);c=p.career}
-   const snap=snapshotFor(c,f,false),r=run(snap,[],false);if(!r.done)return bad('A match could not finish.');outcome=r.outcome;seed=snap.seed
+   const snap=snapshotFor(c,f,false),r=run(snap,[],false);if(!r.done)return bad('A match could not finish.');outcome=r.outcome;seed=snap.seed;snapUsed=snap
   }
-  fixtures[i]={...f,result:{goals:outcome.goals,pens:null,events:outcome.events,seed}}
+  fixtures[i]={...f,result:{goals:outcome.goals,pens:null,events:outcome.events,seed,sides:sidesOf(c,snapUsed)}}
   c=book({...c,season:{...c.season,fixtures}},f,outcome)
  }
  // a club that sat this round out: a BYE (a setting decides whether it serves an absence)
@@ -290,6 +289,11 @@ function commitRound(c0:Career,mine:{fixture:string;outcome:MatchOutcome;seed:nu
  return {ok:true,career:c,note:note??undefined}
 }
 /** cards, injuries, appearances, morale — for both clubs of one match */
+/** the two elevens as they started, with each man's years at his club (the highlights dress him in the shirt of his time) */
+function sidesOf(c:Career,snap:MatchSnapshot):[FixtureSide,FixtureSide]{
+ const by=teamBy(c)
+ return snap.sides.map(sd=>{const t=by.get(sd.club)!;return {formation:sd.formation,xi:sd.xi.map(m=>{const card=cardOf(c,t,m.id);return {id:m.id,name:m.name,pos:m.pos,from:card?.from??null,to:card?.to??null}})}}) as [FixtureSide,FixtureSide]
+}
 function book(c:Career,f:Fixture,o:MatchOutcome):Career{
  const res=o.goals,pensWin=o.pens?(o.pens[0]>o.pens[1]?0:1):null
  const teams=c.teams.map(t=>{

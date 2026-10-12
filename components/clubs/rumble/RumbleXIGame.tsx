@@ -13,6 +13,8 @@ import {Crown,RumbleShirt,money,shortName,tr,useReducedMotion,useRumbleSound} fr
 import {RumbleSlotMachine} from './RumbleSlotMachine'
 import {RumbleReveal,type RevealStep} from './RumbleStage'
 import {RumbleMatchCentre,type ClubFace} from './RumbleMatchCentre'
+import {RumbleHighlights} from './RumbleHighlights'
+import type {HighlightsAllow} from '@/lib/highlights/page'
 import {RumbleFullTime,type RecentRound} from './RumbleFullTime'
 import {RecordRun} from '../games/RecordRun'
 import s from './rumble.module.css'
@@ -27,7 +29,7 @@ const left_=(slotY:number)=>8+((slotY-20)/64)*84
  * that family, the pick flies to its place. The board is dealt on the server from the round seed; the eleven is checked, the match
  * decided and staged on the server (`playRumbleXI`). This screen only shows what it is handed.
  */
-export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,wardrobe,faces,againHref,playerCount,roundSeed}:{roundSeed:number;club:string;version:string;locale:UiLocale;main:Board;shuffle:Board;formation:FormationId;rival:string;wardrobe:RumbleWardrobe;faces:{us:ClubFace;them:ClubFace};againHref:string;playerCount:number}){
+export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,wardrobe,faces,highlights,againHref,playerCount,roundSeed}:{roundSeed:number;club:string;version:string;locale:UiLocale;main:Board;shuffle:Board;formation:FormationId;rival:string;wardrobe:RumbleWardrobe;faces:{us:ClubFace;them:ClubFace};highlights?:HighlightsAllow;againHref:string;playerCount:number}){
  const copy=xiCopy(gameCopy(locale)),reduced=useReducedMotion(),sound=useRumbleSound(),slots=useMemo(()=>slotsOf(formation),[formation])
  const [board,setBoard]=useState<Board>(main),[shuffled,setShuffled]=useState(false),[fresh,setFresh]=useState(false)
  const [picks,setPicks]=useState<(string|null)[]>(()=>main.draft.map(()=>null)),[slot,setSlot]=useState(0)
@@ -83,6 +85,7 @@ export function RumbleXIGame({club,version,locale,main,shuffle,formation,rival,w
  if(phase==='result'&&script)return <div ref={root}><RecordRun club={club} gate="royal-rumble" run={`royal-rumble:xi35-v1:${version}:${formation}:${rival}:${board.seed}:${picks.join(',')}`} score={script.final.us}/><RumbleFullTime script={script} copy={copy} wardrobe={wardrobe} againHref={againHref} recent={recent} club={club} seed={roundSeed} xi={{formation,rival,rivalName:faces.them.name}}/></div>
  if((phase==='reveal'||phase==='match')&&script)return <div ref={root} className={s.game} data-phase="show">
   {phase==='reveal'?<RumbleReveal script={script} step={step} onStep={setStep} onDone={()=>setPhase('match')} wardrobe={wardrobe} copy={copy} reduced={reduced}/>
+   :highlights?<RumbleHighlights script={script} wardrobe={wardrobe} copy={copy} reduced={reduced} sound={sound.play} soundOn={sound.on} onSound={sound.toggle} onDone={()=>setPhase('result')} usClub={faces.us} themClub={faces.them} allow={highlights} seed={roundSeed}/>
    :<RumbleMatchCentre script={script} wardrobe={wardrobe} copy={copy} reduced={reduced} sound={sound.play} soundOn={sound.on} onSound={sound.toggle} onDone={()=>setPhase('result')} usClub={faces.us} themClub={faces.them}/>}
  </div>
 
