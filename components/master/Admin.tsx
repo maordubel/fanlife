@@ -40,7 +40,7 @@ const VIEW_OUT:Record<ClubView,string>={launch:'launch',summary:'summary',decisi
  * reload, a bookmark and Back keep the context; the old `?tab=` links are mapped on the server. Global sections show
  * all clubs; a club is a scope you enter and leave on purpose.
  */
-export function Admin({tasks,features,ads,initial,summaries,adapters,runs,display,storage,section,view,club:scope,attention,ops,audience,gaps}:{ads?:TopAdSetting;initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string;migration?:{pending:string|null;blobRetired:boolean}};section:DeskSection;view:string|null;club:string|null;attention:AttentionItem[];ops:DeskOps;audience?:ReactNode;gaps?:ReactNode;tasks?:ReactNode;features?:Features}){
+export function Admin({tasks,features,ads,initial,summaries,adapters,runs,display,storage,section,view,club:scope,attention,ops,audience,gaps,provider}:{ads?:TopAdSetting;initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string;migration?:{pending:string|null;blobRetired:boolean}};section:DeskSection;view:string|null;club:string|null;attention:AttentionItem[];ops:DeskOps;audience?:ReactNode;gaps?:ReactNode;provider?:ReactNode;tasks?:ReactNode;features?:Features}){
  const router=useRouter(),path=usePathname(),params=useSearchParams()
  const go=(next:Record<string,string|null>)=>{const q=new URLSearchParams(params.toString());q.delete('tab');for(const [k,v] of Object.entries(next)){if(v)q.set(k,v);else q.delete(k)}router.push(`${path}?${q}`,{scroll:false})}
  const api=useAdminApi(),[state,setState]=useState(initial),[sums,setSums]=useState(summaries)
@@ -84,6 +84,7 @@ export function Admin({tasks,features,ads,initial,summaries,adapters,runs,displa
    <header className="desk-head"><p className="desk-kicker">Clubs</p><h1 className="desk-h1">Every club, every layer</h1><p className="desk-actions"><Link className="desk-btn" href={deskHref('clubs',{view:'new'})}>+ Add a club</Link></p></header>
    <ClubList sums={sums} render={s=><Link href={deskHref('clubs',{club:s.id})} style={{['--club-primary' as string]:s.primary}}><Mark club={{...state.clubs.find(c=>c.id===s.id)!,sources:[],findings:[]} as Club}/><span><b><bdi>{s.name}</bdi></b><small>{s.city} · {s.data?`${s.data.dataPlayable}/13 playable`:'no compiled pack'} · {s.control.gatesOn.length} switched on · {s.publication.openNow} open now</small><small data-publish={s.publication.state}>{s.publication.label}{s.research.findingsPending?` · ${s.research.findingsPending} to decide`:''}</small></span><b aria-hidden="true">→</b></Link>}/>
    {gaps}
+   {provider}
   </>}
   {section==='clubs'&&summary&&club&&<>
    <header className="desk-head"><p className="desk-kicker">Club workspace</p><h1 className="desk-h1"><bdi>{summary.name}</bdi></h1>

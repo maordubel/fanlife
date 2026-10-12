@@ -94,3 +94,31 @@ export async function nextForClub(team: FixtureTeam, key: string, get: Fetcher, 
   const fixture = chooseNext(team.clubId, found.teamId, [...own, ...league], now)
   return {fixture, teamId: found.teamId, eventsNext: own.length, leagueNext: league.length, note: fixture ? 'ok' : 'no upcoming match confirmed by the provider'}
 }
+
+/**
+ * The provider's TEAM CARD (owner, 12.10.2026: team and stadium metadata, badges and kit pictures). It is a SECOND READING for
+ * the control room to check the club file against — never a fact on a fan page by itself (rule 101: a club's voice needs two
+ * publishers), and its pictures are the rights holders' marks shown "as is" (TheSportsDB terms), previewed to the owner only.
+ * Both the old and the new field names are read (strTeamBadge → strBadge, strTeamJersey → strEquipment, strStadiumLocation → strLocation).
+ */
+export type TeamCard = {teamId: string; name: string; founded: number | null; stadium: string | null; capacity: number | null; location: string | null; website: string | null; league: string | null; badge: string | null; kit: string | null}
+const https = (v: unknown) => { const s = str(v); return s && /^https:\/\/[^\s]+$/.test(s) ? s : null }
+const intOf = (v: unknown, lo: number, hi: number) => { const n = Number(str(v) ?? v); return Number.isInteger(n) && n >= lo && n <= hi ? n : null }
+export function parseTeamCard(json: unknown, team: FixtureTeam): TeamCard | null {
+  const hit = parseTeam(json, team); if (!hit) return null
+  const t = list(json, 'teams').find(x => str(x.idTeam) === hit.teamId)!
+  const site = str(t.strWebsite)
+  return {
+    teamId: hit.teamId, name: str(t.strTeam) ?? team.search, founded: intOf(t.intFormedYear, 1850, 2100),
+    stadium: str(t.strStadium), capacity: intOf(t.intStadiumCapacity, 100, 200000), location: str(t.strLocation) ?? str(t.strStadiumLocation),
+    website: site ? (/^https?:\/\//.test(site) ? site : `https://${site}`).replace(/^http:/, 'https:') : null, league: str(t.strLeague),
+    badge: https(t.strBadge) ?? https(t.strTeamBadge), kit: https(t.strEquipment) ?? https(t.strTeamJersey),
+  }
+}
+export async function teamCardFor(team: FixtureTeam, key: string, get: Fetcher): Promise<TeamCard | null> {
+  for (const term of [team.search, ...(team.searchAlso ?? [])]) {
+    const card = parseTeamCard(await get(providerUrl(key, `searchteams.php?t=${encodeURIComponent(term)}`)), team)
+    if (card) return card
+  }
+  return null
+}
