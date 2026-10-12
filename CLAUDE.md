@@ -3094,3 +3094,12 @@ Owner: "click by click, less scrolling · round 1 with no transfers, a popup for
 4. **Live = the server's stop, never ahead of it:** `view.live.reel` (`kits.ts → liveReel`) holds the moments so far; `Theatre segment={from,to,outro}` plays only the part since `prevStop`; the final part plays from `last.reel`, then the full-time panel. The score, toasts and table stay hidden while watching.
 5. **Popups are `components/legends/Sheet.tsx`**, portalled to `<body>` with the career's tokens and livery copied (a transformed page wrapper would otherwise pin `position: fixed` to itself); the save bar is portalled too. Night sheets = club news, paper sheets = choices. Animated buttons animate box-shadow, never transform (a moving target is never "stable").
 6. **Other squads:** `view.clubs` (names, lines, stars, years, apps, goals, last XI) — never a hidden rating; the table and the ticket open `ClubSheet`.
+
+## 114 · Collected research reaches the club (12.10.2026)
+
+Owner: *"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר"*. Map: `docs/fanlife/50-research-attach-2026-10-12.md`.
+1. **A file the resolver does not read is not attached.** Staged material reaches a club only through a wave the resolver merges (`lib/clubs/resolver.ts`, `lib/clubs/euro-wave.ts`); `npm run research:census` shows the compiled result per club and gate. A staged package is not finished until its sheets, people and clues are either attached or listed as stranded with the reason.
+2. **An owner's blanket approval promotes records, not doubts** (`scripts/club-research/approve-owner-2026-10-12.py`): a real record with a checked source → approved at confidence 2 at most; `conflictFree:false`, a second publisher that *differs*, or a reader's own *flagged uncertain* stays in review.
+3. **A team sheet carries its own decoys** — the same source's starters that season — or it is held: surnames next to the roster's full names give gate 3 away.
+4. **A new man waits for the ladder.** Economy-v2 quotas are percentages of the club's size; adding men moves priced men, which only the owner decides (`research-staging/<club>/players-ready-*.json` are ready, not wired).
+5. **A scheduled pull merges, never replaces** (`mergeAutoWave`), and UEFA's eleven survives a second publisher confirming the score (rule 102).

@@ -1,0 +1,6167 @@
+{
+ "sources": [
+  {
+   "id": "ea-src-02fe8cdfab568cef",
+   "title": "Deutscher Fußball-Bund · 1991/92",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1991-1992-nord-aufstieg/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-0bf01539bfeafd13",
+   "title": "Deutscher Fußball-Bund · 1984/85",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1984-1985/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-109a8d7e4c4ffd02",
+   "title": "Deutscher Fußball-Bund · 2019/20",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2019-20/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-1da62d5e3e88e06b",
+   "title": "Deutscher Fußball-Bund · 1998/99",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1998-1999/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-2024ca03ef4375af",
+   "title": "Deutscher Fußball-Bund · 1995/96",
+   "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1995-1996/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-220e25886496ee19",
+   "title": "Deutscher Fußball-Bund · 2022/23",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2022-23/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-2bef820abde01d43",
+   "title": "Deutscher Fußball-Bund · 2017/18",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2017-2018/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-2e9756b6e13cdf7a",
+   "title": "Deutscher Fußball-Bund · 2014/15",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2014-2015/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-4360d67054eb8b09",
+   "title": "Deutscher Fußball-Bund · 2007/08",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2007-2008/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-492edb0ddca91d03",
+   "title": "Deutscher Fußball-Bund · 1996/97",
+   "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1996-1997/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-543c92e83dd7ef04",
+   "title": "Deutscher Fußball-Bund · 2010/11",
+   "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2010-2011/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-5a42abf9e7a12a99",
+   "title": "Deutscher Fußball-Bund · 2016/17",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2016-2017/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-5eec2a9a836e4d7c",
+   "title": "Deutscher Fußball-Bund · 1997/98",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1997-1998/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-7b1f6e77409b3162",
+   "title": "Deutscher Fußball-Bund · 2001/02",
+   "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2001-2002/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-7e58c7cf9aa3cda4",
+   "title": "Deutscher Fußball-Bund · 2009/10",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2009-2010/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-89488dc3e85a47fc",
+   "title": "Deutscher Fußball-Bund · 2008/09",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2008-2009/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-92a3c27e4ee15bac",
+   "title": "Deutscher Fußball-Bund · 2023/24",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2023-24/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-9d83b555a5176e45",
+   "title": "Deutscher Fußball-Bund · 2013/14",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2013-2014/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-a417d3fc1e497b08",
+   "title": "Deutscher Fußball-Bund · 2024/25",
+   "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2024-2025/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-a910a347c5f11859",
+   "title": "Deutscher Fußball-Bund · 2020/21",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2020-21/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-afdc3b0569a327f7",
+   "title": "Deutscher Fußball-Bund · 2025/26",
+   "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2025-2026/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-b2192d6d319455c1",
+   "title": "Deutscher Fußball-Bund · 2012/13",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2012-2013/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-b860cd2183a67872",
+   "title": "Deutscher Fußball-Bund · 1999/00",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1999-2000/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-c856b92600ae48c9",
+   "title": "Deutscher Fußball-Bund · 2000/01",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2000-2001/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-cbb0de124edd4ed3",
+   "title": "Deutscher Fußball-Bund · 2015/16",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2015-2016/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-daedff14cc32f8d5",
+   "title": "Deutscher Fußball-Bund · 2018/19",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2018-2019/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-ea6f776efa1d044e",
+   "title": "Deutscher Fußball-Bund · 2021/22",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2021-22/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-ed580728ea20d78a",
+   "title": "Deutscher Fußball-Bund · 1994/95",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1994-1995/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-f466a42d667f4b8f",
+   "title": "Deutscher Fußball-Bund · 2011/12",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2011-2012/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-faf562adb896c966",
+   "title": "Deutscher Fußball-Bund · 2026/27",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2026-2027/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  },
+  {
+   "id": "ea-src-fbcd5bc91b7f527c",
+   "title": "Deutscher Fußball-Bund · 2002/03",
+   "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/2002-2003/teams/fc-st-pauli",
+   "publisher": "Deutscher Fußball-Bund",
+   "access": "available",
+   "checkedAt": "2026-10-09"
+  }
+ ],
+ "mysteries": [
+  {
+   "id": "dfb-m-10226",
+   "value": {
+    "targetPlayerId": "p-dh-4a108c728a63",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-c856b92600ae48c9"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1980.",
+      "sources": [
+       "ea-src-5eec2a9a836e4d7c"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1997/98 season.",
+      "sources": [
+       "ea-src-5eec2a9a836e4d7c"
+      ],
+      "scope": {
+       "season": "1997/98",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2000/01 season.",
+      "sources": [
+       "ea-src-c856b92600ae48c9"
+      ],
+      "scope": {
+       "season": "2000/01",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 17 in the 2000/01 season.",
+      "sources": [
+       "ea-src-c856b92600ae48c9"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2000/01",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-5eec2a9a836e4d7c",
+    "ea-src-c856b92600ae48c9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-103978",
+   "value": {
+    "targetPlayerId": "p-dh-8629372f1cab",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in November 1987.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2014/15 season.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ],
+      "scope": {
+       "season": "2014/15",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 40 in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2e9756b6e13cdf7a",
+    "ea-src-cbb0de124edd4ed3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10445",
+   "value": {
+    "targetPlayerId": "p-dh-c895e38bafb2",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in August 1979.",
+      "sources": [
+       "ea-src-1da62d5e3e88e06b"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1998/99 season.",
+      "sources": [
+       "ea-src-1da62d5e3e88e06b"
+      ],
+      "scope": {
+       "season": "1998/99",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 15 in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-1da62d5e3e88e06b",
+    "ea-src-7b1f6e77409b3162"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10466",
+   "value": {
+    "targetPlayerId": "p-dh-d5d1e72c8d80",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-b2192d6d319455c1"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in July 1989.",
+      "sources": [
+       "ea-src-543c92e83dd7ef04"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2010/11 season.",
+      "sources": [
+       "ea-src-543c92e83dd7ef04"
+      ],
+      "scope": {
+       "season": "2010/11",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2012/13 season.",
+      "sources": [
+       "ea-src-b2192d6d319455c1"
+      ],
+      "scope": {
+       "season": "2012/13",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 5 in the 2012/13 season.",
+      "sources": [
+       "ea-src-b2192d6d319455c1"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2012/13",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-543c92e83dd7ef04",
+    "ea-src-b2192d6d319455c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10640",
+   "value": {
+    "targetPlayerId": "p-dh-78ecb75c64a3",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1979.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2007/08 season.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ],
+      "scope": {
+       "season": "2007/08",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2009/10 season.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ],
+      "scope": {
+       "season": "2009/10",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 1 in the 2009/10 season.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2009/10",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-4360d67054eb8b09",
+    "ea-src-7e58c7cf9aa3cda4"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10643",
+   "value": {
+    "targetPlayerId": "p-dh-fc6e2202b5bc",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1980.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2007/08 season.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ],
+      "scope": {
+       "season": "2007/08",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2009/10 season.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ],
+      "scope": {
+       "season": "2009/10",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 22 in the 2009/10 season.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2009/10",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-4360d67054eb8b09",
+    "ea-src-7e58c7cf9aa3cda4"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10644",
+   "value": {
+    "targetPlayerId": "p-dh-c508c760cab3",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-543c92e83dd7ef04"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1983.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2007/08 season.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ],
+      "scope": {
+       "season": "2007/08",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2010/11 season.",
+      "sources": [
+       "ea-src-543c92e83dd7ef04"
+      ],
+      "scope": {
+       "season": "2010/11",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 14 in the 2010/11 season.",
+      "sources": [
+       "ea-src-543c92e83dd7ef04"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2010/11",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-4360d67054eb8b09",
+    "ea-src-543c92e83dd7ef04"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10645",
+   "value": {
+    "targetPlayerId": "p-dh-72ffcf8cc418",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in April 1984.",
+      "sources": [
+       "ea-src-89488dc3e85a47fc"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2008/09 season.",
+      "sources": [
+       "ea-src-89488dc3e85a47fc"
+      ],
+      "scope": {
+       "season": "2008/09",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2009/10 season.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ],
+      "scope": {
+       "season": "2009/10",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 3 in the 2009/10 season.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2009/10",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7e58c7cf9aa3cda4",
+    "ea-src-89488dc3e85a47fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10646",
+   "value": {
+    "targetPlayerId": "p-dh-7e01828e4ed1",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1983.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2007/08 season.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ],
+      "scope": {
+       "season": "2007/08",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2011/12 season.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ],
+      "scope": {
+       "season": "2011/12",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 11 in the 2011/12 season.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2011/12",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-4360d67054eb8b09",
+    "ea-src-f466a42d667f4b8f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10649",
+   "value": {
+    "targetPlayerId": "p-7f47e7de7d8c73",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-9d83b555a5176e45"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in June 1979.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2007/08 season.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ],
+      "scope": {
+       "season": "2007/08",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2013/14 season.",
+      "sources": [
+       "ea-src-9d83b555a5176e45"
+      ],
+      "scope": {
+       "season": "2013/14",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 17 in the 2013/14 season.",
+      "sources": [
+       "ea-src-9d83b555a5176e45"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2013/14",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-4360d67054eb8b09",
+    "ea-src-9d83b555a5176e45"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-10651",
+   "value": {
+    "targetPlayerId": "p-dh-7f19e6f31a18",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-89488dc3e85a47fc"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in August 1980.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2007/08 season.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ],
+      "scope": {
+       "season": "2007/08",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2008/09 season.",
+      "sources": [
+       "ea-src-89488dc3e85a47fc"
+      ],
+      "scope": {
+       "season": "2008/09",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 5 in the 2008/09 season.",
+      "sources": [
+       "ea-src-89488dc3e85a47fc"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2008/09",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-4360d67054eb8b09",
+    "ea-src-89488dc3e85a47fc"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-107685",
+   "value": {
+    "targetPlayerId": "p-644de8b27db6f3",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in April 1989.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 9 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-a910a347c5f11859",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-11240",
+   "value": {
+    "targetPlayerId": "p-dh-8d78d55c2651",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in July 1977.",
+      "sources": [
+       "ea-src-b860cd2183a67872"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1999/00 season.",
+      "sources": [
+       "ea-src-b860cd2183a67872"
+      ],
+      "scope": {
+       "season": "1999/00",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 26 in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7b1f6e77409b3162",
+    "ea-src-b860cd2183a67872"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-12910",
+   "value": {
+    "targetPlayerId": "p-dh-10772b653142",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1987.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2016/17 season.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ],
+      "scope": {
+       "season": "2016/17",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2018/19 season.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ],
+      "scope": {
+       "season": "2018/19",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 9 in the 2018/19 season.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2018/19",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-5a42abf9e7a12a99",
+    "ea-src-daedff14cc32f8d5"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-129726",
+   "value": {
+    "targetPlayerId": "p-dh-dc636bbda6bf",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1991.",
+      "sources": [
+       "ea-src-9d83b555a5176e45"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2013/14 season.",
+      "sources": [
+       "ea-src-9d83b555a5176e45"
+      ],
+      "scope": {
+       "season": "2013/14",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 23 in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-9d83b555a5176e45",
+    "ea-src-cbb0de124edd4ed3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-129763",
+   "value": {
+    "targetPlayerId": "p-268bb4fdec12aa",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in February 1992.",
+      "sources": [
+       "ea-src-b2192d6d319455c1"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2012/13 season.",
+      "sources": [
+       "ea-src-b2192d6d319455c1"
+      ],
+      "scope": {
+       "season": "2012/13",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 6 in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-b2192d6d319455c1"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-14601",
+   "value": {
+    "targetPlayerId": "p-e4f731beb883c8",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-9d83b555a5176e45"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in February 1987.",
+      "sources": [
+       "ea-src-543c92e83dd7ef04"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2010/11 season.",
+      "sources": [
+       "ea-src-543c92e83dd7ef04"
+      ],
+      "scope": {
+       "season": "2010/11",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2013/14 season.",
+      "sources": [
+       "ea-src-9d83b555a5176e45"
+      ],
+      "scope": {
+       "season": "2013/14",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 22 in the 2013/14 season.",
+      "sources": [
+       "ea-src-9d83b555a5176e45"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2013/14",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-543c92e83dd7ef04",
+    "ea-src-9d83b555a5176e45"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-14606",
+   "value": {
+    "targetPlayerId": "p-dh-b2142c7c368f",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in June 1979.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 3 in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-492edb0ddca91d03",
+    "ea-src-7b1f6e77409b3162"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-14934",
+   "value": {
+    "targetPlayerId": "p-e695b1e16dd0ca",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in October 1989.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 30 in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-a417d3fc1e497b08"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-1512",
+   "value": {
+    "targetPlayerId": "p-dh-ee8982877d3e",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-b860cd2183a67872"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in October 1972.",
+      "sources": [
+       "ea-src-ed580728ea20d78a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1994/95 season.",
+      "sources": [
+       "ea-src-ed580728ea20d78a"
+      ],
+      "scope": {
+       "season": "1994/95",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 1999/00 season.",
+      "sources": [
+       "ea-src-b860cd2183a67872"
+      ],
+      "scope": {
+       "season": "1999/00",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 8 in the 1999/00 season.",
+      "sources": [
+       "ea-src-b860cd2183a67872"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1999/00",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-b860cd2183a67872",
+    "ea-src-ed580728ea20d78a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-1531",
+   "value": {
+    "targetPlayerId": "p-dh-779bedaa05f0",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in August 1966.",
+      "sources": [
+       "ea-src-02fe8cdfab568cef"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1991/92 season.",
+      "sources": [
+       "ea-src-02fe8cdfab568cef"
+      ],
+      "scope": {
+       "season": "1991/92",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 6 in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-02fe8cdfab568cef",
+    "ea-src-492edb0ddca91d03"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-158538",
+   "value": {
+    "targetPlayerId": "p-dh-cf5a0e4c4456",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in November 1990.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 16 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-a910a347c5f11859",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-164104",
+   "value": {
+    "targetPlayerId": "p-3e24d9d639d2f7",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in May 1990.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2014/15 season.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ],
+      "scope": {
+       "season": "2014/15",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 15 in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2e9756b6e13cdf7a",
+    "ea-src-a910a347c5f11859"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-166543",
+   "value": {
+    "targetPlayerId": "p-f158c822565fed",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1993.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 7 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-afdc3b0569a327f7",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-170911",
+   "value": {
+    "targetPlayerId": "p-e56d7f7323696d",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in April 1992.",
+      "sources": [
+       "ea-src-b2192d6d319455c1"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2012/13 season.",
+      "sources": [
+       "ea-src-b2192d6d319455c1"
+      ],
+      "scope": {
+       "season": "2012/13",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 10 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-b2192d6d319455c1",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-17371",
+   "value": {
+    "targetPlayerId": "p-dh-73fac52daedd",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in July 1991.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2014/15 season.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ],
+      "scope": {
+       "season": "2014/15",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 14 in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2e9756b6e13cdf7a",
+    "ea-src-cbb0de124edd4ed3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-19830",
+   "value": {
+    "targetPlayerId": "p-dh-3c500c7e11f7",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in November 1979.",
+      "sources": [
+       "ea-src-b860cd2183a67872"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1999/00 season.",
+      "sources": [
+       "ea-src-b860cd2183a67872"
+      ],
+      "scope": {
+       "season": "1999/00",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 7 in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-b860cd2183a67872",
+    "ea-src-fbcd5bc91b7f527c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-224052",
+   "value": {
+    "targetPlayerId": "p-dh-08079c9cc2b9",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in May 1987.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2014/15 season.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ],
+      "scope": {
+       "season": "2014/15",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 28 in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-109a8d7e4c4ffd02",
+    "ea-src-2e9756b6e13cdf7a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-22948",
+   "value": {
+    "targetPlayerId": "p-dh-d6549cfed512",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in December 1987.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2016/17 season.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ],
+      "scope": {
+       "season": "2016/17",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 23 in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-109a8d7e4c4ffd02",
+    "ea-src-5a42abf9e7a12a99"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-230411",
+   "value": {
+    "targetPlayerId": "p-dh-4b183f8c6704",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1992.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 26 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-109a8d7e4c4ffd02",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-23109",
+   "value": {
+    "targetPlayerId": "p-dh-7d78cef5efdc",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in December 1985.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2014/15 season.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ],
+      "scope": {
+       "season": "2014/15",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 19 in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2e9756b6e13cdf7a",
+    "ea-src-cbb0de124edd4ed3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-231542",
+   "value": {
+    "targetPlayerId": "p-dh-8f633caf58be",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in August 1995.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2018/19 season.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ],
+      "scope": {
+       "season": "2018/19",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 8 in the 2018/19 season.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2018/19",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-cbb0de124edd4ed3",
+    "ea-src-daedff14cc32f8d5"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-231556",
+   "value": {
+    "targetPlayerId": "p-dh-427565312275",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-2bef820abde01d43"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1994.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2016/17 season.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ],
+      "scope": {
+       "season": "2016/17",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2017/18 season.",
+      "sources": [
+       "ea-src-2bef820abde01d43"
+      ],
+      "scope": {
+       "season": "2017/18",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 34 in the 2016/17 season.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2016/17",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2bef820abde01d43",
+    "ea-src-5a42abf9e7a12a99"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-231979",
+   "value": {
+    "targetPlayerId": "p-1c73bd69f0c0d5",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in April 1994.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 5 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-92a3c27e4ee15bac",
+    "ea-src-afdc3b0569a327f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-239294",
+   "value": {
+    "targetPlayerId": "p-dh-ad0b88bd96a0",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in December 1992.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2015/16 season.",
+      "sources": [
+       "ea-src-cbb0de124edd4ed3"
+      ],
+      "scope": {
+       "season": "2015/16",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 12 in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-a910a347c5f11859",
+    "ea-src-cbb0de124edd4ed3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-242414",
+   "value": {
+    "targetPlayerId": "p-f49afe97691e26",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in May 1993.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 3 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-afdc3b0569a327f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-24750",
+   "value": {
+    "targetPlayerId": "p-dh-65a51462f7b8",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in November 1984.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2007/08 season.",
+      "sources": [
+       "ea-src-4360d67054eb8b09"
+      ],
+      "scope": {
+       "season": "2007/08",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2011/12 season.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ],
+      "scope": {
+       "season": "2011/12",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 10 in the 2011/12 season.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2011/12",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-4360d67054eb8b09",
+    "ea-src-f466a42d667f4b8f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-24752",
+   "value": {
+    "targetPlayerId": "p-43903a30f67409",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in May 1986.",
+      "sources": [
+       "ea-src-2bef820abde01d43"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2017/18 season.",
+      "sources": [
+       "ea-src-2bef820abde01d43"
+      ],
+      "scope": {
+       "season": "2017/18",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2018/19 season.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ],
+      "scope": {
+       "season": "2018/19",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 11 in the 2018/19 season.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2018/19",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2bef820abde01d43",
+    "ea-src-daedff14cc32f8d5"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-255671",
+   "value": {
+    "targetPlayerId": "p-dh-322723ec84e8",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1993.",
+      "sources": [
+       "ea-src-2bef820abde01d43"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2017/18 season.",
+      "sources": [
+       "ea-src-2bef820abde01d43"
+      ],
+      "scope": {
+       "season": "2017/18",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 18 in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-109a8d7e4c4ffd02",
+    "ea-src-2bef820abde01d43"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-264060",
+   "value": {
+    "targetPlayerId": "p-dh-357f3c46887d",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1996.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2014/15 season.",
+      "sources": [
+       "ea-src-2e9756b6e13cdf7a"
+      ],
+      "scope": {
+       "season": "2014/15",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2016/17 season.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ],
+      "scope": {
+       "season": "2016/17",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 24 in the 2016/17 season.",
+      "sources": [
+       "ea-src-5a42abf9e7a12a99"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2016/17",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2e9756b6e13cdf7a",
+    "ea-src-5a42abf9e7a12a99"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-28102",
+   "value": {
+    "targetPlayerId": "p-dh-ac7d1a009a47",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in May 1981.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 14 in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7b1f6e77409b3162",
+    "ea-src-fbcd5bc91b7f527c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-29226",
+   "value": {
+    "targetPlayerId": "p-dh-3e0ee30741e4",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1988.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2009/10 season.",
+      "sources": [
+       "ea-src-7e58c7cf9aa3cda4"
+      ],
+      "scope": {
+       "season": "2009/10",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2011/12 season.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ],
+      "scope": {
+       "season": "2011/12",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 18 in the 2011/12 season.",
+      "sources": [
+       "ea-src-f466a42d667f4b8f"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2011/12",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7e58c7cf9aa3cda4",
+    "ea-src-f466a42d667f4b8f"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-297478",
+   "value": {
+    "targetPlayerId": "p-fa0b9ca2de9ef6",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1996.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 10 in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-92a3c27e4ee15bac",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-319421",
+   "value": {
+    "targetPlayerId": "p-2b718ff36ab1ce",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in December 1995.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 22 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-afdc3b0569a327f7",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-324497",
+   "value": {
+    "targetPlayerId": "p-22fd0b5b8428d2",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1996.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 16 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-a910a347c5f11859",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-337567",
+   "value": {
+    "targetPlayerId": "p-f641a065cc0865",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1998.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 14 in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-92a3c27e4ee15bac",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-353115",
+   "value": {
+    "targetPlayerId": "p-dh-776b02d9c6c5",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in December 2000.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 23 in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-92a3c27e4ee15bac",
+    "ea-src-a417d3fc1e497b08"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-353606",
+   "value": {
+    "targetPlayerId": "p-dh-0f85126c2b16",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1999.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 22 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-109a8d7e4c4ffd02",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-354412",
+   "value": {
+    "targetPlayerId": "p-3eae01c86d6d31",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1996.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 2 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-afdc3b0569a327f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-358193",
+   "value": {
+    "targetPlayerId": "p-7080ec52dcea06",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in June 2000.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2018/19 season.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ],
+      "scope": {
+       "season": "2018/19",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 20 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-daedff14cc32f8d5",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-359311",
+   "value": {
+    "targetPlayerId": "p-3f82457c62e546",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1997.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 28 in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-a417d3fc1e497b08"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-366256",
+   "value": {
+    "targetPlayerId": "p-dh-3b239841bb93",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1999.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2018/19 season.",
+      "sources": [
+       "ea-src-daedff14cc32f8d5"
+      ],
+      "scope": {
+       "season": "2018/19",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 36 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-daedff14cc32f8d5",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-372131",
+   "value": {
+    "targetPlayerId": "p-002fabbfd6ecd9",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in December 2000.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 1 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-a417d3fc1e497b08",
+    "ea-src-afdc3b0569a327f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-378845",
+   "value": {
+    "targetPlayerId": "p-dh-1229df6cb509",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 2003.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 34 in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-a910a347c5f11859"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-379289",
+   "value": {
+    "targetPlayerId": "p-dh-2981d8a395fc",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in October 2002.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 15 in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-382257",
+   "value": {
+    "targetPlayerId": "p-dh-df4dbaac17d0",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in July 2000.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 6 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-a417d3fc1e497b08",
+    "ea-src-afdc3b0569a327f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-387539",
+   "value": {
+    "targetPlayerId": "p-dh-6825eedf9054",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in August 1992.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 3 in the 2021/22 season.",
+      "sources": [
+       "ea-src-ea6f776efa1d044e"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2021/22",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-109a8d7e4c4ffd02",
+    "ea-src-ea6f776efa1d044e"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-387594",
+   "value": {
+    "targetPlayerId": "p-dh-f7b404c01c3e",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in April 1997.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 10 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-92a3c27e4ee15bac",
+    "ea-src-afdc3b0569a327f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-391495",
+   "value": {
+    "targetPlayerId": "p-76ae62abf668f9",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in March 1990.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 19 in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-92a3c27e4ee15bac",
+    "ea-src-a417d3fc1e497b08"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-396813",
+   "value": {
+    "targetPlayerId": "p-eeb4c1f68f0556",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in October 1999.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 20 in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-92a3c27e4ee15bac",
+    "ea-src-a910a347c5f11859"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-399710",
+   "value": {
+    "targetPlayerId": "p-dh-5c76aaeb5960",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1995.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2019/20 season.",
+      "sources": [
+       "ea-src-109a8d7e4c4ffd02"
+      ],
+      "scope": {
+       "season": "2019/20",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 25 in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-109a8d7e4c4ffd02",
+    "ea-src-faf562adb896c966"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-399713",
+   "value": {
+    "targetPlayerId": "p-386020d119ac0f",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1997.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2020/21 season.",
+      "sources": [
+       "ea-src-a910a347c5f11859"
+      ],
+      "scope": {
+       "season": "2020/21",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 8 in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-a910a347c5f11859",
+    "ea-src-faf562adb896c966"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-400561",
+   "value": {
+    "targetPlayerId": "p-dh-302215fd092a",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in November 1999.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 24 in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-faf562adb896c966"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-40902",
+   "value": {
+    "targetPlayerId": "p-dh-bfb008c9e983",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1975.",
+      "sources": [
+       "ea-src-c856b92600ae48c9"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2000/01 season.",
+      "sources": [
+       "ea-src-c856b92600ae48c9"
+      ],
+      "scope": {
+       "season": "2000/01",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 5 in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-c856b92600ae48c9",
+    "ea-src-fbcd5bc91b7f527c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-40910",
+   "value": {
+    "targetPlayerId": "p-dh-adfd2c66c205",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in July 1974.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 1 in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7b1f6e77409b3162",
+    "ea-src-fbcd5bc91b7f527c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-41144",
+   "value": {
+    "targetPlayerId": "p-dh-0cbfbb1dff6a",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in December 1971.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 4 in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7b1f6e77409b3162",
+    "ea-src-fbcd5bc91b7f527c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-413319",
+   "value": {
+    "targetPlayerId": "p-ed1042de6022ca",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1997.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2022/23 season.",
+      "sources": [
+       "ea-src-220e25886496ee19"
+      ],
+      "scope": {
+       "season": "2022/23",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 17 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-220e25886496ee19",
+    "ea-src-afdc3b0569a327f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-41815",
+   "value": {
+    "targetPlayerId": "p-dh-5b70583e0a78",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in November 1979.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 15 in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7b1f6e77409b3162",
+    "ea-src-fbcd5bc91b7f527c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-421353",
+   "value": {
+    "targetPlayerId": "p-dh-61b78fdda663",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 2002.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 11 in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-afdc3b0569a327f7",
+    "ea-src-faf562adb896c966"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-422154",
+   "value": {
+    "targetPlayerId": "p-dh-6afd3af0f406",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in October 2001.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 2023/24 season.",
+      "sources": [
+       "ea-src-92a3c27e4ee15bac"
+      ],
+      "scope": {
+       "season": "2023/24",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 14 in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-92a3c27e4ee15bac",
+    "ea-src-faf562adb896c966"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-427307",
+   "value": {
+    "targetPlayerId": "p-dh-466b8ccbd0a4",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in April 2003.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2024/25 season.",
+      "sources": [
+       "ea-src-a417d3fc1e497b08"
+      ],
+      "scope": {
+       "season": "2024/25",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 14 in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-a417d3fc1e497b08",
+    "ea-src-afdc3b0569a327f7"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-437406",
+   "value": {
+    "targetPlayerId": "p-dh-b11cfd4e7910",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1999.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2025/26 season.",
+      "sources": [
+       "ea-src-afdc3b0569a327f7"
+      ],
+      "scope": {
+       "season": "2025/26",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 15 in the 2026/27 season.",
+      "sources": [
+       "ea-src-faf562adb896c966"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2026/27",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-afdc3b0569a327f7",
+    "ea-src-faf562adb896c966"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-45753",
+   "value": {
+    "targetPlayerId": "p-dh-f30ae6b39a58",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-1da62d5e3e88e06b"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1968.",
+      "sources": [
+       "ea-src-5eec2a9a836e4d7c"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1997/98 season.",
+      "sources": [
+       "ea-src-5eec2a9a836e4d7c"
+      ],
+      "scope": {
+       "season": "1997/98",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 1998/99 season.",
+      "sources": [
+       "ea-src-1da62d5e3e88e06b"
+      ],
+      "scope": {
+       "season": "1998/99",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 26 in the 1998/99 season.",
+      "sources": [
+       "ea-src-1da62d5e3e88e06b"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1998/99",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-1da62d5e3e88e06b",
+    "ea-src-5eec2a9a836e4d7c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-45865",
+   "value": {
+    "targetPlayerId": "p-dh-65e454ad5c8a",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in August 1962.",
+      "sources": [
+       "ea-src-0bf01539bfeafd13"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1984/85 season.",
+      "sources": [
+       "ea-src-0bf01539bfeafd13"
+      ],
+      "scope": {
+       "season": "1984/85",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 3 in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-0bf01539bfeafd13",
+    "ea-src-492edb0ddca91d03"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-46959",
+   "value": {
+    "targetPlayerId": "p-dh-6261ce8967aa",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A forward.",
+      "sources": [
+       "ea-src-1da62d5e3e88e06b"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in June 1971.",
+      "sources": [
+       "ea-src-5eec2a9a836e4d7c"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1997/98 season.",
+      "sources": [
+       "ea-src-5eec2a9a836e4d7c"
+      ],
+      "scope": {
+       "season": "1997/98",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 1998/99 season.",
+      "sources": [
+       "ea-src-1da62d5e3e88e06b"
+      ],
+      "scope": {
+       "season": "1998/99",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 7 in the 1998/99 season.",
+      "sources": [
+       "ea-src-1da62d5e3e88e06b"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1998/99",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-1da62d5e3e88e06b",
+    "ea-src-5eec2a9a836e4d7c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-47011",
+   "value": {
+    "targetPlayerId": "p-dh-099931076e14",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A goalkeeper.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in February 1969.",
+      "sources": [
+       "ea-src-ed580728ea20d78a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1994/95 season.",
+      "sources": [
+       "ea-src-ed580728ea20d78a"
+      ],
+      "scope": {
+       "season": "1994/95",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 12 in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-492edb0ddca91d03",
+    "ea-src-ed580728ea20d78a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-47012",
+   "value": {
+    "targetPlayerId": "p-dh-dfecb5e95f42",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in September 1969.",
+      "sources": [
+       "ea-src-2024ca03ef4375af"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 1995/96 season.",
+      "sources": [
+       "ea-src-2024ca03ef4375af"
+      ],
+      "scope": {
+       "season": "1995/96",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 24 in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2024ca03ef4375af",
+    "ea-src-492edb0ddca91d03"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-47014",
+   "value": {
+    "targetPlayerId": "p-dh-3066c1a4cb56",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A midfielder.",
+      "sources": [
+       "ea-src-2024ca03ef4375af"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in October 1970.",
+      "sources": [
+       "ea-src-ed580728ea20d78a"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a 2. Bundesliga squad of the club in the 1994/95 season.",
+      "sources": [
+       "ea-src-ed580728ea20d78a"
+      ],
+      "scope": {
+       "season": "1994/95",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a Bundesliga squad of the club in the 1995/96 season.",
+      "sources": [
+       "ea-src-2024ca03ef4375af"
+      ],
+      "scope": {
+       "season": "1995/96",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 7 in the 1995/96 season.",
+      "sources": [
+       "ea-src-2024ca03ef4375af"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "1995/96",
+       "competition": "Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-2024ca03ef4375af",
+    "ea-src-ed580728ea20d78a"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-47062",
+   "value": {
+    "targetPlayerId": "p-dh-a0f50c793430",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-c856b92600ae48c9"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in November 1977.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 1996/97 season.",
+      "sources": [
+       "ea-src-492edb0ddca91d03"
+      ],
+      "scope": {
+       "season": "1996/97",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2000/01 season.",
+      "sources": [
+       "ea-src-c856b92600ae48c9"
+      ],
+      "scope": {
+       "season": "2000/01",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 12 in the 2000/01 season.",
+      "sources": [
+       "ea-src-c856b92600ae48c9"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2000/01",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-492edb0ddca91d03",
+    "ea-src-c856b92600ae48c9"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-5604",
+   "value": {
+    "targetPlayerId": "p-dh-1553a7349ce3",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in January 1980.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 2 in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7b1f6e77409b3162",
+    "ea-src-fbcd5bc91b7f527c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  },
+  {
+   "id": "dfb-m-5729",
+   "value": {
+    "targetPlayerId": "p-dh-334ce1360ef8",
+    "clues": [
+     {
+      "id": "c1",
+      "label": "Position",
+      "value": "A defender.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ]
+     },
+     {
+      "id": "c2",
+      "label": "Born",
+      "value": "Born in October 1981.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ]
+     },
+     {
+      "id": "c3",
+      "label": "First squad",
+      "value": "First registered in a Bundesliga squad of the club in the 2001/02 season.",
+      "sources": [
+       "ea-src-7b1f6e77409b3162"
+      ],
+      "scope": {
+       "season": "2001/02",
+       "competition": "Bundesliga"
+      }
+     },
+     {
+      "id": "c4",
+      "label": "Last squad",
+      "value": "Last registered in a 2. Bundesliga squad of the club in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     },
+     {
+      "id": "c5",
+      "label": "Shirt number",
+      "value": "Wore number 12 in the 2002/03 season.",
+      "sources": [
+       "ea-src-fbcd5bc91b7f527c"
+      ],
+      "type": "shirt_number",
+      "scope": {
+       "season": "2002/03",
+       "competition": "2. Bundesliga"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "ea-src-7b1f6e77409b3162",
+    "ea-src-fbcd5bc91b7f527c"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-10-09",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\"",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Every clue is stated by the DFB data centre's St. Pauli squad registrations (a squad is not an appearance); the target is the one pack player with that exact name."
+  }
+ ]
+}

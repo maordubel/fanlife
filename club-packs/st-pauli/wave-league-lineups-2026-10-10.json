@@ -1149,11 +1149,11 @@
    "researchedAt": "2026-10-10",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). Approved by the owner in chat on 2026-10-12 (collected research attached to the clubs).",
    "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
   },
   {
    "id": "a-m-2026-04-11-st-pauli-bayern-munich",
@@ -1994,11 +1994,11 @@
    "researchedAt": "2026-10-10",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). Approved by the owner in chat on 2026-10-12 (collected research attached to the clubs).",
    "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "status": "approved",
+   "approvedAt": "2026-10-12",
+   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
   },
   {
    "id": "a-m-2025-12-02-borussia-monchengladbach-st-pauli",

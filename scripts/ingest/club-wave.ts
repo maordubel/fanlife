@@ -12,7 +12,7 @@ import {sameClub} from '../../lib/fixtures/names'
 import {RefusedError,type Fetcher} from './clubs/types'
 import {COMPETITIONS,teamsIn,uefaMatchesForTeam,withLineup,UEFA} from './clubs/uefa'
 import {corroborate} from './clubs/corroborate'
-import {buildWave} from './clubs/wave'
+import {buildWave,mergeAutoWave} from './clubs/wave'
 const arg=(k:string)=>{const i=process.argv.indexOf('--'+k);return i<0?null:process.argv[i+1]&&!process.argv[i+1]!.startsWith('--')?process.argv[i+1]!:'true'}
 const sleep=(ms:number)=>new Promise(r=>setTimeout(r,ms))
 const fetchJson:Fetcher=async url=>{
@@ -42,8 +42,10 @@ async function main(){
  console.log(`[${club}] UEFA team id ${teamId}`)
  const matches=(await uefaMatchesForTeam(fetchJson,teamId)).slice(0,max),rows=[]
  for(const m of matches){const full=await withLineup(fetchJson,m);rows.push({m:full,second:await corroborate(fetchJson,full,process.env.THESPORTSDB_KEY||'123')})}
- const wave=buildWave(rows,cfg.names,club,today),path=`club-packs/${club}/wave-auto.json`
- console.log(`[${club}] ${wave.matches.length} matches (${wave.matches.filter(f=>f.status==='approved').length} approved, ${wave.matches.filter(f=>f.value.primaryOnly.lineup.length===11).length} with a full eleven)`)
+ const fresh=buildWave(rows,cfg.names,club,today),path=`club-packs/${club}/wave-auto.json`
+ // merge, never replace: this run reads the newest --max matches only (see mergeAutoWave)
+ const wave=mergeAutoWave(existsSync(path)?JSON.parse(readFileSync(path,'utf8')):null,fresh)
+ console.log(`[${club}] read ${fresh.matches.length}; wave now ${wave.matches.length} matches (${wave.matches.filter(f=>f.status==='approved').length} approved, ${wave.matches.filter(f=>f.value.primaryOnly.lineup.length===11).length} with a full eleven)`)
  if(arg('dry-run')){console.log('dry run, nothing written');return}
  writeFileSync(path,JSON.stringify(wave,null,1)+'\n')
 }
