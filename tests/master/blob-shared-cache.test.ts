@@ -24,7 +24,7 @@ describe('public reads share one cached copy',()=>{
   const d=durable()!
   for(let i=0;i<100;i++)expect((await d.read('control.json',{shared:true}))!.text).toBe('{"v":1}')
   expect(ops).toEqual(['get'])
-  await d.read('control.json') // a write path: never the shared copy
+  await d.read('control.json',{fresh:true}) // a write path: never the shared copy
   expect(ops).toEqual(['get','get'])
   expect(await d.write('control.json','{"v":2}','"e1"')).toBe(true)
   expect(dropped).toContain('fan-blob:control.json')

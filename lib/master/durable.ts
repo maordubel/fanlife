@@ -10,12 +10,18 @@
 export type DurableRead = { text: string; etag: string } | null
 export type DurableStore = {
   kind: 'vercel-blob' | 'memory'
-  /** `maxAgeMs`: a copy this instance read or wrote that recently is answered without a request (0 = always ask the store).
-   *  `shared`: a public page's read, answered from the deployment-wide data cache (see `SHARED_S`); never for a read-before-write. */
-  read(name: string, opts?: { maxAgeMs?: number; shared?: boolean }): Promise<DurableRead>
+  /**
+   * Owner, 12.10.2026: "no feature may ever close because of a limit". So a read, by default, is answered from the deployment-wide
+   * data cache (see `SHARED_S`) and, when the store refuses (an outage, credentials, a plan's operation cap), answers NULL — the
+   * page carries on with what it has — instead of throwing a whole screen into an error page.
+   * `fresh`: ask the store itself and throw on refusal — for the read a compare-and-swap save is built on.
+   * `soft: false`: shared, but a refusal still throws (the control state needs to know, to fall back).
+   * `maxAgeMs`: a copy this instance read or wrote that recently is answered without a request.
+   */
+  read(name: string, opts?: { maxAgeMs?: number; fresh?: boolean; soft?: boolean; shared?: boolean }): Promise<DurableRead>
   /** `etag` null = create only; returns false when someone else wrote first. */
   write(name: string, text: string, etag: string | null): Promise<boolean>
-  list(prefix: string, opts?: { shared?: boolean }): Promise<string[]>
+  list(prefix: string, opts?: { fresh?: boolean; soft?: boolean; shared?: boolean }): Promise<string[]>
 }
 
 const PREFIX = 'fan-life/'
@@ -41,6 +47,17 @@ async function viaShared<T>(key: string[], tag: string, fn: () => Promise<T>): P
     if (noCacheHere(e)) return fn() // a script or a test: there is no deployment cache to share
     throw e
   }
+}
+/** The last read the store refused and that a page carried on without — for the control room's storage line. */
+const softG = globalThis as typeof globalThis & { fanStoreSoft?: { at: number; name: string; error: string } }
+export const storeSoftFailure = () => softG.fanStoreSoft ?? null
+function soften<T>(name: string, run: () => Promise<T>, empty: T, soft: boolean | undefined): Promise<T> {
+  if (soft === false) return run()
+  return run().catch((e: unknown) => {
+    softG.fanStoreSoft = { at: Date.now(), name, error: String((e as Error)?.message || e).slice(0, 200) }
+    console.error(`[fan-life] store refused ${name}; carrying on without it:`, softG.fanStoreSoft.error)
+    return empty
+  })
 }
 async function dropShared(name: string) {
   try {
@@ -108,7 +125,7 @@ function blobStore(): DurableStore {
     // Reads are CONDITIONAL (performance audit, 11.10.2026): the last copy and its ETag are kept per name, the store is asked
     // with If-None-Match, and an unchanged file answers 304 with no body. Concurrent reads of one name share one request.
     async read(name, opts) {
-      if (opts?.shared) return viaShared(['fan-blob', name], sharedTag(name), () => this.read(name, { maxAgeMs: opts.maxAgeMs }))
+      if (!opts?.fresh) return soften(name, () => viaShared(['fan-blob', name], sharedTag(name), () => this.read(name, { maxAgeMs: opts?.maxAgeMs, fresh: true })), null, opts?.soft)
       const hit = memo.get(name)
       if (hit && opts?.maxAgeMs && Date.now() - hit.at < opts.maxAgeMs) return { text: hit.text, etag: hit.etag }
       let p = inflight.get(name)
@@ -136,12 +153,13 @@ function blobStore(): DurableStore {
         return true
       } catch (e) {
         memo.delete(name) // whatever we held may be the copy that just lost
-        if (e instanceof BlobPreconditionFailedError || lostRace(e, etag === null)) return false
+        // lost the race: the shared copy is the stale one it was built on — drop it so the caller's retry reads the new one
+        if (e instanceof BlobPreconditionFailedError || lostRace(e, etag === null)) { await dropShared(name); return false }
         throw e
       }
     },
     async list(prefix, opts) {
-      if (opts?.shared) return viaShared(['fan-blob-list', prefix], sharedListTag(prefix), () => this.list(prefix))
+      if (!opts?.fresh) return soften(prefix, () => viaShared(['fan-blob-list', prefix], sharedListTag(prefix), () => this.list(prefix, { fresh: true })), [] as string[], opts?.soft)
       const { list } = await sdk
       const out: string[] = []
       let cursor: string | undefined

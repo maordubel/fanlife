@@ -8,7 +8,7 @@ import type {State,Finding,AuditEntry} from './types'
 import {seedState} from './seed'
 import LAUNCH from './launch-defaults.json'
 import {dataRoot,onServerless} from '@/lib/dataRoot'
-import {durable,blobAuthReport} from './durable'
+import {durable,blobAuthReport,storeSoftFailure} from './durable'
 const root=dataRoot
 const globals=globalThis as typeof globalThis & {fanWrites?:Promise<unknown>}
 /** Owner, 8.10.2026: "open everything that can open". A non-paused club with a compiled pack is live with all its playable gates (gates are only ever added; paused stays closed). */
@@ -24,7 +24,7 @@ const parse=(text:string)=>withIds(withRegistry(JSON.parse(text)))
 /** Public pages may share a read this instance made in the last second (one page render reads the state several times); a SAVE always
  *  re-reads (`mutate` passes 0), and the store answers an unchanged file with 304, so even that costs no download. */
 const PAGE_READ_MS=1000
-async function readWithTag(maxAgeMs=0,shared=false):Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL,{maxAgeMs,shared});return r?{state:parse(r.text),etag:r.etag}:{state:seedState(),etag:null}}
+async function readWithTag(maxAgeMs=0,shared=false):Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL,shared?{maxAgeMs,soft:false}:{fresh:true});return r?{state:parse(r.text),etag:r.etag}:{state:seedState(),etag:null}}
  try{return{state:parse(await readFile(path.join(root(),CONTROL),'utf8')),etag:null}}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return{state:seedState(),etag:null};throw e}}
 /** The last error the durable store gave on a read, for the admin's storage line; null once a read succeeds. */
 const health=globalThis as typeof globalThis & {fanStoreError?:string|null;fanLastGood?:string;fanLastGoodAt?:number;fanFailAt?:number}
@@ -57,7 +57,7 @@ export function publishedSeed():State{return withLaunch(seedState())}
 /** True when the last read failed and pages are running on a fallback (last good or closed). */
 export const stateUnavailable=()=>!!health.fanStoreError
 /** Where the control room keeps its state, for the health line in the admin. */
-export function storageInfo():{kind:'vercel-blob'|'memory'|'disk'|'temporary';durable:boolean;note:string;error?:string}{const d=durable();if(d)return health.fanStoreError?{kind:d.kind,durable:false,note:'A storage store is connected but refused the last read, so nothing can be saved until it answers.',error:`${health.fanStoreError} · ${JSON.stringify(blobAuthReport())}`}:{kind:d.kind,durable:true,note:'Saved to durable storage.'};if(onServerless())return{kind:'temporary',durable:false,note:'No storage connected: changes last until this server instance restarts. Connect a Vercel Blob store to keep them.'};return{kind:'disk',durable:true,note:`Saved on this machine (${root()}).`}}
+export function storageInfo():{kind:'vercel-blob'|'memory'|'disk'|'temporary';durable:boolean;note:string;error?:string}{const d=durable();const soft=storeSoftFailure();if(d&&!health.fanStoreError&&soft&&Date.now()-soft.at<10*60_000)return{kind:d.kind,durable:false,note:'The store refused a read in the last ten minutes; pages carried on with the copy they had, and a save may fail until it answers.',error:`${soft.name}: ${soft.error} · ${JSON.stringify(blobAuthReport())}`};if(d)return health.fanStoreError?{kind:d.kind,durable:false,note:'A storage store is connected but refused the last read, so nothing can be saved until it answers.',error:`${health.fanStoreError} · ${JSON.stringify(blobAuthReport())}`}:{kind:d.kind,durable:true,note:'Saved to durable storage.'};if(onServerless())return{kind:'temporary',durable:false,note:'No storage connected: changes last until this server instance restarts. Connect a Vercel Blob store to keep them.'};return{kind:'disk',durable:true,note:`Saved on this machine (${root()}).`}}
 /** F19: entries past AUDIT_KEEP are appended to their month's archive file BEFORE control.json drops them. */
 async function rotateAudit(s:State){const {kept,archive}=splitAudit(s.audit);if(kept===s.audit)return;const d=durable()
  if(d){for(const [month,rows] of Object.entries(archive)){for(let i=0;i<10;i++){if(i)await pause(i);const cur=await d.read(`${AUDIT_ARCHIVE_DIR}/${month}.jsonl`);const add=newArchiveLines(cur?.text||'',rows);if(!add||await d.write(`${AUDIT_ARCHIVE_DIR}/${month}.jsonl`,(cur?.text||'')+add,cur?.etag??null))break;if(i===9)throw new Error('Audit archive is busy. Try again.')}}s.audit=kept;return}
