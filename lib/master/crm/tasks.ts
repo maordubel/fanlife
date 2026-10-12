@@ -30,9 +30,9 @@ export function playerTasks(rows:readonly PlayerSignals[]):Task[]{
  const out:Task[]=[]
  const at=(club:string,q:Record<string,string>)=>deskHref('players',{pc:club,...q})
  for(const r of rows){
-  if(r.missing>0)out.push({key:`players:missing:${r.club}`,area:'players',priority:3,club:r.club,clubName:r.clubName,title:`${r.missing} player${r.missing===1?'':'s'} with no recorded position`,reason:'They are dealt into any outfield slot and never in goal. A sourced position makes the XI and the Rumble honest.',href:at(r.club,{status:'missing-position',club:r.club}),cta:'Open the list',evidence:fingerprint(r.missing)})
-  if(r.twins>0)out.push({key:`players:twins:${r.club}`,area:'players',priority:2,club:r.club,clubName:r.clubName,title:`${r.twins} possible duplicate${r.twins===1?'':'s'}`,reason:'Two records that may be one man. Compare years and sources, then merge by hand — never automatically.',href:at(r.club,{tab:'merge',club:r.club}),cta:'Compare',evidence:fingerprint(r.twins)})
-  if(r.outliers>0)out.push({key:`players:outliers:${r.club}`,area:'players',priority:3,club:r.club,clubName:r.clubName,title:`${r.outliers} price${r.outliers===1?'':'s'} out of line with strength`,reason:'The report suggests a price; nothing changes until you publish it with a reason.',href:at(r.club,{tab:'reports',club:r.club}),cta:'Review prices',evidence:fingerprint(r.outliers)})
+  if(r.missing>0)out.push({key:`players:missing:${r.club}`,area:'players',priority:3,club:r.club,clubName:r.clubName,title:`${r.missing} player${r.missing===1?' has':'s have'} no position`,reason:'Until you set one, they can play anywhere except in goal. Open a player, pick his position, save.',href:at(r.club,{status:'missing-position',club:r.club}),cta:'Fix now',evidence:fingerprint(r.missing)})
+  if(r.twins>0)out.push({key:`players:twins:${r.club}`,area:'players',priority:2,club:r.club,clubName:r.clubName,title:`Check ${r.twins} possible duplicate${r.twins===1?'':'s'}`,reason:'Two records that may be the same man. For each pair: merge them, or keep both.',href:at(r.club,{tab:'merge',club:r.club}),cta:'Check now',evidence:fingerprint(r.twins)})
+  if(r.outliers>0)out.push({key:`players:outliers:${r.club}`,area:'players',priority:3,club:r.club,clubName:r.clubName,title:`${r.outliers} price${r.outliers===1?' does':'s do'} not match the player’s strength`,reason:'Each one has a suggested price. Change it in the players table if you agree.',href:at(r.club,{tab:'reports',club:r.club}),cta:'Review prices',evidence:fingerprint(r.outliers)})
  }
  return out
 }

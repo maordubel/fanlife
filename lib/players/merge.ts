@@ -11,6 +11,7 @@ import {likeness,suggestKeeper,type Likeness,type Person} from './match'
 import {refreshSnapshot} from './snapshot'
 import {update} from './store'
 import {EMPTY_SNAPSHOT,keyOf,type Override,type Price,type Snapshot} from './types'
+import {pairKey,readDistinct} from './distinct'
 /**
  * "These two records are one man." The duplicate leaves the squad; his names become aliases of the man he is, his years widen, his positions join, his sources join
  * (lib/players/apply.ts). Nothing is deleted: the duplicate stays in the desk, marked, and one click undoes it. Chains are refused — a man is merged into a man who is himself kept.
@@ -21,7 +22,7 @@ export type Candidate={club:string;clubName:string;a:Row;b:Row;likeness:Likeness
 export async function duplicateCandidates(clubs:string[]=CORE_CLUB_IDS,limit=150):Promise<{candidates:Candidate[];total:number}>{
  const rows=(await everyRow(clubs)).filter(r=>!r.removed&&!r.mergedInto),byClub=new Map<string,Row[]>()
  for(const r of rows)byClub.set(r.club,[...(byClub.get(r.club)||[]),r])
- const out:Candidate[]=[]
+ const out:Candidate[]=[],distinct=await readDistinct()
  const {skeleton,fold}=await import('./match')
  for(const [club,list] of byClub){
   // block by family-name skeleton (and by exact folded name) so a club of 1,400 men is not compared pairwise
@@ -34,6 +35,7 @@ export async function duplicateCandidates(clubs:string[]=CORE_CLUB_IDS,limit=150
   const done=new Set<string>()
   for(const [,group] of blocks){if(group.length<2||group.length>40)continue
    for(let i=0;i<group.length;i++)for(let j=i+1;j<group.length;j++){const a=group[i]!,b=group[j]!,key=[a.id,b.id].sort().join('|');if(done.has(key))continue;done.add(key)
+    if(distinct.has(pairKey(club,a.id,b.id)))continue // the owner said: two different men, keep both
     const l=likeness(person(a),person(b));if(!l)continue
     const s=suggestKeeper(person(a),person(b));out.push({club,clubName:a.clubName,a,b,likeness:l,suggest:{keep:s.keep.id,drop:s.drop.id,why:s.why}})}}
  }

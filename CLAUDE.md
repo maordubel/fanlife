@@ -3095,6 +3095,16 @@ Owner: "click by click, less scrolling · round 1 with no transfers, a popup for
 5. **Popups are `components/legends/Sheet.tsx`**, portalled to `<body>` with the career's tokens and livery copied (a transformed page wrapper would otherwise pin `position: fixed` to itself); the save bar is portalled too. Night sheets = club news, paper sheets = choices. Animated buttons animate box-shadow, never transform (a moving target is never "stable").
 6. **Other squads:** `view.clubs` (names, lines, stars, years, apps, goals, last XI) — never a hidden rating; the table and the ticket open `ClubSheet`.
 
+
+## 113 · The control room is click by click (12.10.2026)
+
+Owner: "no reason, no popup — in the table itself · sort up and down · make it clear I can keep both · clear words, simple clicks".
+1. **Price and score are edited in the players table** (`Line` in `components/master/desk/PlayersDesk.tsx`): a select and a −/+ stepper that publish at once through `action:'quick'` → `quickEdit()` in `lib/players/service.ts`, which calls `publish()` with `QUICK_REASON` ("Quick edit in the table"). Locks (403), the ladder (422 → "Save anyway") and stale revisions (409) are judged exactly as in the full editor; only price and rating travel this way. The row answers in place: Saving… / Saved ✓ · Undo / the server's reason.
+2. **Every column name sorts both ways** (name, years, position, price, score, edited); a blank sorts last. Club grouping only when sorted by club.
+3. **Merge = three answers per pair** (`MergePanel` in `PlayersTools.tsx`): keep A · keep B · "two different men — keep both". Keep-both lives in `players/distinct.json` (`lib/players/distinct.ts`) and hides the pair from the merge list AND the twins report; "Suggest again" undoes it. A merge confirms once: "Merge X into Y? Yes / No".
+4. **Facts are questions** (`Decisions` in `components/master/ClubFile.tsx`): "Is this right?", the page under it, Yes / No / Later — No and Later carry a default reason (rule 92 still holds). `evidence/approve-source` = yes to every waiting fact that page alone backs; a changed page is refused. Adding a website is numbered steps (`AddSource` in `DataCenter.tsx`).
+5. **Task titles are short orders with one button** (`lib/master/attention.ts`, `crm/tasks.ts`): "3 players have no position — Fix now". Putting a task off is one preset click (`PRESETS` in `TaskDesk.tsx`). Tests: `tests/players/click-by-click.test.ts`, `tests/master/approve-source.test.ts`.
+
 ## 114 · Collected research reaches the club (12.10.2026)
 
 Owner: *"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר"*. Map: `docs/fanlife/50-research-attach-2026-10-12.md`.

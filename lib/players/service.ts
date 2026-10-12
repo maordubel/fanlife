@@ -23,6 +23,8 @@ export type Row={
  basePositions:Pos[];positions:Pos[];positionState:'archive'|'public-source'|'workbook'|'owner'|'unknown'
  basePrice:number;price:number;priceSource:'frozen-list'|'fallback'|'owner';baseRating:number;rating:number;ratingBasis:string
  locked:boolean;lockReason:string;removed:boolean;mergedInto:string|null;overridden:string[];draft:boolean;wave:boolean;confidence:number;rev:number;updatedAt:string|null;updatedBy:string|null;note:string
+ /** league games and goals at this club where a named source states them; null = not stated */
+ apps:number|null;goals:number|null
 }
 export const decadeOf=(from:number|null,to:number|null):string=>{const y=from!==null&&to!==null?Math.round((from+to)/2):from??to;return y===null||y<1850?'unknown':`${Math.floor(y/10)*10}s`}
 const clubName=(id:string)=>REGISTRY.find(c=>c.id===id)?.name??id
@@ -30,7 +32,7 @@ const strip=(s:string)=>norm(s).normalize('NFD').replace(/[̀-ͯ]/g,'')
 
 /* ─────────────── the archive's own values (immutable per deployment) ─────────────── */
 type BaseRow={club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases:string[];decade:string;fromYear:number|null;toYear:number|null
- basePositions:Pos[];basePositionState:Row['positionState'];basePrice:number;hasList:boolean;baseRating:number;ratingBasis:string;locked:boolean;lockReason:string;wave:boolean;confidence:number}
+ basePositions:Pos[];basePositionState:Row['positionState'];basePrice:number;hasList:boolean;baseRating:number;ratingBasis:string;locked:boolean;lockReason:string;wave:boolean;confidence:number;apps:number|null;goals:number|null}
 type Base={row:BaseRow;key:string}
 const baseCache=new Map<string,Base[]>()
 async function baseOf(club:string):Promise<Base[]>{
@@ -44,7 +46,7 @@ async function baseOf(club:string):Promise<Base[]>{
   const state:Row['positionState']=p.positions.length?'archive':extra[p.id]?'public-source':!r.free?'workbook':'unknown'
   out.push({key:keyOf(club,p.id),row:{club,clubName:clubName(club),id:p.id,name:r.name,nameOriginal:p.name,aliases:p.aliases.slice(0,6),decade:decadeOf(p.fromYear,p.toYear),fromYear:p.fromYear,toYear:p.toYear,
    basePositions:fam,basePositionState:state,basePrice:entry?.priceM??1,hasList:!!entry,baseRating:r.rating,ratingBasis:r.basis??'derived',locked:!!entry&&(entry.locked||entry.assignment==='owner-pinned'),
-   lockReason:entry?.assignment==='owner-pinned'?'owner-pinned: '+(entry.rationale||''):entry?.locked?'locked':'',wave:/[:_]wv-/.test(p.id),confidence:f.confidence}})}
+   lockReason:entry?.assignment==='owner-pinned'?'owner-pinned: '+(entry.rationale||''):entry?.locked?'locked':'',wave:/[:_]wv-/.test(p.id),confidence:f.confidence,apps:p.career?.apps??null,goals:p.career?.goals??null}})}
  baseCache.set(club,out);return out
 }
 /* ─────────────── effective rows ─────────────── */
@@ -54,7 +56,7 @@ function effective(b:Base,drafts:Record<string,Draft>):Row{
   basePositions:r.basePositions,positions:o?.positions??r.basePositions,positionState:o?.positions?'owner':r.basePositionState,
   basePrice:r.basePrice,price:o?.price??r.basePrice,priceSource:o?.price!==undefined?'owner':r.hasList?'frozen-list':'fallback',
   baseRating:r.baseRating,rating:o?.rating??r.baseRating,ratingBasis:o?.rating!==undefined?'owner':r.ratingBasis,locked:r.locked,lockReason:r.lockReason,removed:!!o?.removed,mergedInto:o?.mergedInto??null,
-  overridden:o?(['price','positions','rating','removed','mergedInto','note'] as const).filter(k=>k in o):[],draft:!!drafts[b.key],wave:r.wave,confidence:r.confidence,rev:o?.rev??0,updatedAt:o?.at??null,updatedBy:o?.by??null,note:o?.note??''}
+  overridden:o?(['price','positions','rating','removed','mergedInto','note'] as const).filter(k=>k in o):[],draft:!!drafts[b.key],wave:r.wave,confidence:r.confidence,rev:o?.rev??0,updatedAt:o?.at??null,updatedBy:o?.by??null,note:o?.note??'',apps:r.apps,goals:r.goals}
 }
 let draftsCache:{at:number;v:Record<string,Draft>}|null=null
 async function drafts(fresh=false){if(!fresh&&draftsCache&&Date.now()-draftsCache.at<2000)return draftsCache.v;const v=(await readJson<{drafts:Record<string,Draft>}>('drafts.json',{drafts:{}})).drafts;draftsCache={at:Date.now(),v};return v}
@@ -78,8 +80,10 @@ export async function listPlayers(q:Query):Promise<Listing>{
   return true}
  const rows=all.filter(pass)
  const dir=q.dir==='desc'?-1:1,by=q.sort??'club'
- const val=(r:Row):string|number=>by==='name'?r.name.toLowerCase():by==='price'?r.price:by==='rating'?r.rating:by==='years'?(r.fromYear??9999):by==='updated'?(r.updatedAt??''):0
- rows.sort((a,b)=>{const g=by==='club'?0:(val(a)<val(b)?-1:val(a)>val(b)?1:0)*dir;return g||a.clubName.localeCompare(b.clubName)||a.decade.localeCompare(b.decade)||a.name.localeCompare(b.name)||a.id.localeCompare(b.id)})
+ // a man with no value for the key (no years, never edited, no position) sorts LAST in both directions: "highest first" never opens on blanks
+ const POS_ORDER:Record<string,number>={GK:0,DF:1,MF:2,FW:3}
+ const val=(r:Row):string|number|null=>by==='name'?strip(r.name):by==='price'?r.price:by==='rating'?r.rating:by==='years'?(dir<0?(r.toYear??r.fromYear):(r.fromYear??r.toYear)):by==='updated'?r.updatedAt:by==='position'?(r.positions.length?POS_ORDER[r.positions[0]!]!:null):by==='club'?r.clubName:null
+ rows.sort((a,b)=>{const x=val(a),y=val(b);const g=x===null&&y===null?0:x===null?1:y===null?-1:(x<y?-1:x>y?1:0)*dir;return g||a.clubName.localeCompare(b.clubName)||a.decade.localeCompare(b.decade)||a.name.localeCompare(b.name)||a.id.localeCompare(b.id)})
  const limit=Math.min(200,Math.max(10,q.limit??60)),pages=Math.max(1,Math.ceil(rows.length/limit)),page=Math.min(Math.max(1,q.page??1),pages)
  const counts={total:all.length,shown:rows.length,missingPosition:all.filter(r=>!r.positions.length&&!r.removed&&!r.mergedInto).length,fallbackPrice:all.filter(r=>r.priceSource==='fallback').length,overridden:all.filter(r=>r.overridden.length).length,drafts:all.filter(r=>r.draft).length,removed:all.filter(r=>r.removed).length,merged:all.filter(r=>r.mergedInto).length,locked:all.filter(r=>r.locked).length}
  return {rows:rows.slice((page-1)*limit,page*limit),total:rows.length,page,pages,revision:getSnapshot().revision,counts,decades:[...new Set(all.map(r=>r.decade))].sort(),storage:{...playersStorage(),error:lastError()}}
@@ -165,6 +169,24 @@ export async function publish(club:string,id:string,opts:PublishOpts,who:Actor){
  await appendAudit({action:'publish',club,player:id,before:cur,after:next,reason:opts.reason.trim(),revision},who)
  await update<{drafts:Record<string,Draft>}>('drafts.json',{drafts:{}},c=>{const n={...c.drafts};delete n[b.key];return {drafts:n}});draftsCache=null
  return {revision,override:next,impact:imp}
+}
+/** the reason every quick edit carries in the history: the owner asked for no reason box in the table (12.10.2026) */
+export const QUICK_REASON='Quick edit in the table'
+/**
+ * Change a man's price or manager score straight from the table: no draft, no reason box. It publishes at once, THROUGH `publish`,
+ * so every lock, the price ladder and game readiness are judged exactly as in the full editor. Only price and rating travel this way.
+ * A value equal to the archive's own clears the override (back to the archive). Answers with the man's row as it now stands.
+ */
+export async function quickEdit(club:string,id:string,raw:unknown,o:{expectedRev:number;confirmQuota?:boolean},who:Actor){
+ if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Refusal(400,'Send a price or a score.')
+ if(Object.keys(raw).some(k=>k!=='price'&&k!=='rating'))throw new Refusal(400,'Only the price and the score can be changed from the table. Open the full editor for the rest.')
+ const b=await findBase(club,id);if(!b)throw new Refusal(404,'No such player at this club.')
+ const p=parsePatch(raw);if(!p.ok)throw new Refusal(400,p.error)
+ const patch:Patch={...p.patch}
+ if(patch.price!==undefined&&patch.price===b.row.basePrice)patch.price=null
+ if(patch.rating!==undefined&&patch.rating===b.row.baseRating)patch.rating=null
+ const res=await publish(club,id,{reason:QUICK_REASON,patch,expectedRev:o.expectedRev,confirmQuota:o.confirmQuota===true},who)
+ return {...res,row:effective(b,await drafts(true))}
 }
 /** put a man back to what an earlier event recorded as "before" — a new event, the old ones stay */
 export async function revert(club:string,id:string,eventId:string,reason:string,who:Actor){

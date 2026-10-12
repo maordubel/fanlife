@@ -29,7 +29,7 @@ export type AdapterInfo={id:string;label:string;needsQuery:boolean;capabilities:
 
 export type DeskSection='overview'|'clubs'|'data'|'audience'|'operations'|'settings'
 export type DeskOps={storage:StorageRow[];integrations:Integration[];release:{commit:string|null;branch:string|null;env:string;evaluation:boolean}}
-const CLUB_VIEWS=[['launch','Launch'],['summary','Summary'],['decisions','Evidence'],['research','Research'],['publish','Readiness'],['history','History']] as const
+const CLUB_VIEWS=[['launch','Launch'],['summary','Summary'],['decisions','Check facts'],['research','Research'],['publish','Readiness'],['history','History']] as const
 type ClubView=typeof CLUB_VIEWS[number][0]
 // the URL words (plan §3) ↔ the club file's own tab names
 const VIEW_IN:Record<string,ClubView>={launch:'launch',summary:'summary',evidence:'decisions',research:'research',readiness:'publish',history:'history'}

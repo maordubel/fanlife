@@ -2,6 +2,7 @@ import 'server-only'
 import {CORE_CLUB_IDS} from '@/lib/clubs/resolver'
 import {quotaFor} from '@/lib/clubs/rumble-xi/quota'
 import {everyRow,foldName,type Row} from './service'
+import {pairKey,readDistinct} from './distinct'
 /**
  * Three working lists for the owner (spec §9). None of them changes anything: a recommendation is a suggestion with its reason, never applied.
  *  missing   men with no position on record — the research queue, strongest first
@@ -15,7 +16,7 @@ export type Twins={club:string;clubName:string;key:string;members:Brief[]}
 export type Distribution={club:string;clubName:string;n:number;have:Record<number,number>;want:Record<number,number>}
 export type Reports={missing:Brief[];missingTotal:number;outliers:Outlier[];twins:Twins[];distribution:Distribution[]}
 export async function playerReports(clubs:string[]=CORE_CLUB_IDS,limit=150):Promise<Reports>{
- const all=(await everyRow(clubs)).filter(r=>!r.removed&&!r.mergedInto)
+ const all=(await everyRow(clubs)).filter(r=>!r.removed&&!r.mergedInto),distinct=await readDistinct()
  const missing=all.filter(r=>!r.positions.length).sort((a,b)=>b.rating-a.rating||a.name.localeCompare(b.name))
  const outliers:Outlier[]=[],twins:Twins[]=[],distribution:Distribution[]=[]
  for(const club of clubs.filter(c=>CORE_CLUB_IDS.includes(c))){
@@ -31,7 +32,7 @@ export async function playerReports(clubs:string[]=CORE_CLUB_IDS,limit=150):Prom
   const by=new Map<string,Row[]>()
   for(const r of rows)for(const n of new Set([r.name,r.nameOriginal,...r.aliases].map(foldName).filter(x=>x.length>=5)))by.set(n,[...(by.get(n)||[]),r])
   const seen=new Set<string>()
-  for(const [key,members] of by){const ids=[...new Set(members.map(m=>m.id))].sort();if(ids.length<2)continue;const sig=ids.join('|');if(seen.has(sig))continue;seen.add(sig);twins.push({club,clubName:rows[0]!.clubName,key,members:ids.map(i=>brief(members.find(m=>m.id===i)!))})}
+  for(const [key,members] of by){const ids=[...new Set(members.map(m=>m.id))].sort();if(ids.length<2)continue;if(ids.every((x,i)=>ids.slice(i+1).every(y=>distinct.has(pairKey(club,x,y)))))continue;const sig=ids.join('|');if(seen.has(sig))continue;seen.add(sig);twins.push({club,clubName:rows[0]!.clubName,key,members:ids.map(i=>brief(members.find(m=>m.id===i)!))})}
  }
  outliers.sort((a,b)=>Math.abs(b.recommended-b.price)-Math.abs(a.recommended-a.price)||b.rating-a.rating)
  return {missing:missing.slice(0,limit).map(brief),missingTotal:missing.length,outliers:outliers.slice(0,limit),twins:twins.slice(0,limit),distribution}

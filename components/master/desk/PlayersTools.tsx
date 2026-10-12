@@ -63,40 +63,67 @@ export function BulkPanel(){
  </section>
 }
 
-type Pr={keep:Brief&Record<string,unknown>;drop:Brief&Record<string,unknown>;result:{name:string;aliases:string[];years:string;positions:string[];price:number;rating:number};warnings:string[];priceChoices:{keep:number;drop:number};quota:{ok:boolean;violations:string[]};readiness:{broke:string[]};canMerge:boolean;blocker:string|null}
-type Cand={club:string;clubName:string;a:Brief&{positions?:string[];aliases?:string[]};b:Brief&{positions?:string[];aliases?:string[]};likeness:{score:number;confidence:string;reasons:string[]};suggest:{keep:string;drop:string;why:string}}
+type Man={club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases?:string[];fromYear?:number|null;toYear?:number|null;positions?:string[];price:number;rating:number;wave:boolean;locked:boolean;apps?:number|null;goals?:number|null}
+type Pr={keep:Man;drop:Man;result:{name:string;aliases:string[];years:string;positions:string[];price:number;rating:number};warnings:string[];priceChoices:{keep:number;drop:number};quota:{ok:boolean;violations:string[]};readiness:{broke:string[]};canMerge:boolean;blocker:string|null}
+type Cand={club:string;clubName:string;a:Man;b:Man;likeness:{score:number;confidence:string;reasons:string[]};suggest:{keep:string;drop:string;why:string}}
+type Kept={club:string;a:string;b:string;by:string;at:string}
+const yearsOf=(m:Man)=>m.fromYear?`${m.fromYear}${m.toYear&&m.toYear!==m.fromYear?'–'+m.toYear:''}`:'years not recorded'
+const pairId=(c:Cand)=>c.club+'|'+[c.a.id,c.b.id].sort().join('|')
+/** the default line every one-click merge carries in the history (owner, 12.10.2026: one click each, no reason box) */
+const MERGE_REASON='Same man — merged by the owner'
+/**
+ * Merge duplicates as three plain answers per pair (owner, 12.10.2026: "make it clear I can keep both"):
+ * keep A as the main record · keep B as the main record · they are two different men, keep both. A merge asks once — "Merge X into Y?
+ * Yes / No" — and "keep both" is remembered on the server, so the pair is never suggested again (one click brings it back).
+ */
 export function MergePanel({club}:{club:string|null}){
- const [d,setD]=useState<{candidates:Cand[];total:number}|null>(null),[err,setErr]=useState<string|null>(null),[done,setDone]=useState<string|null>(null),[open,setOpen]=useState<{c:Cand;keep:string;drop:string}|null>(null),[shown,setShown]=useState(20)
- const [pv,setPv]=useState<Pr|null>(null),[reason,setReason]=useState(''),[price,setPrice]=useState<'keep'|'drop'|'higher'>('keep'),[okQ,setOkQ]=useState(false),[okO,setOkO]=useState(false),[busy,setBusy]=useState(false)
- const load=()=>{setD(null);fetch('/api/master/players/duplicates'+(club?`?club=${club}`:''),{cache:'no-store'}).then(async x=>{const j=await x.json();x.ok?setD(j):setErr(j.error||'Could not load.')}).catch(()=>setErr('No connection.'))}
- useEffect(load,[club]) // eslint-disable-line react-hooks/exhaustive-deps
+ const [d,setD]=useState<{candidates:Cand[];total:number;kept?:Kept[]}|null>(null),[err,setErr]=useState<string|null>(null),[done,setDone]=useState<string|null>(null),[shown,setShown]=useState(20)
+ const [ask,setAsk]=useState<{c:Cand;keep:Man;drop:Man;pv:Pr|null;price:'keep'|'drop'|'higher'}|null>(null),[busy,setBusy]=useState(false),[gone,setGone]=useState<Set<string>>(new Set())
+ const load=()=>{fetch('/api/master/players/duplicates'+(club?`?club=${club}`:''),{cache:'no-store'}).then(async x=>{const j=await x.json();if(x.ok){setD(j);setGone(new Set())}else setErr(j.error||'Could not load.')}).catch(()=>setErr('No connection.'))}
+ useEffect(()=>{setD(null);load()},[club]) // eslint-disable-line react-hooks/exhaustive-deps
  const url=(c:string,id:string)=>`/api/master/players/${encodeURIComponent(c)}/${encodeURIComponent(id)}`
- const pick=async(c:Cand,keep:string,drop:string)=>{setOpen({c,keep,drop});setPv(null);setErr(null);setReason('');setPrice('keep');setOkQ(false);setOkO(false)
-  const r=await post<{preview:Pr}>(url(c.club,keep),{action:'merge-preview',dropId:drop});r.ok?setPv(r.data.preview):setErr(r.data.error||'Failed.')}
- const go=async()=>{if(!open)return;setBusy(true);const r=await post<{revision:number}>(url(open.c.club,open.keep),{action:'merge',dropId:open.drop,reason,price,confirmQuota:okQ,ownerException:okO});setBusy(false)
-  if(!r.ok){setErr(r.data.error||'Failed.');return}setDone(`Merged — published as revision ${r.data.revision}. Every game now sees one man.`);setOpen(null);setPv(null);load()}
+ const choose=async(c:Cand,keep:Man,drop:Man)=>{setErr(null);setDone(null);setAsk({c,keep,drop,pv:null,price:'keep'})
+  const r=await post<{preview:Pr}>(url(c.club,keep.id),{action:'merge-preview',dropId:drop.id});if(r.ok)setAsk(a=>a&&a.keep.id===keep.id?{...a,pv:r.data.preview}:a);else{setErr(r.data.error||'Could not check this merge.');setAsk(null)}}
+ const merge=async()=>{if(!ask?.pv)return;setBusy(true)
+  const r=await post<{revision:number}>(url(ask.c.club,ask.keep.id),{action:'merge',dropId:ask.drop.id,reason:MERGE_REASON,price:ask.price,confirmQuota:!ask.pv.quota.ok});setBusy(false)
+  if(!r.ok){setErr(r.data.error||'Not merged.');return}
+  setDone(`Merged: ${ask.drop.name} is now part of ${ask.keep.name}. Every game sees one man. Undo it any time from ${ask.keep.name}’s Edit page.`);setGone(g=>new Set(g).add(pairId(ask.c)));setAsk(null)}
+ const keepBoth=async(c:Cand)=>{setBusy(true);setErr(null);setDone(null);const r=await post<{key:string}>('/api/master/players/duplicates',{action:'keep-both',club:c.club,a:c.a.id,b:c.b.id});setBusy(false)
+  if(!r.ok){setErr(r.data.error||'Not saved.');return}
+  setDone(`Kept both: ${c.a.name} and ${c.b.name} stay two men. This pair will not be suggested again.`);setGone(g=>new Set(g).add(pairId(c)));setD(x=>x?{...x,kept:[{club:c.club,a:c.a.id,b:c.b.id,by:'you',at:new Date().toISOString()},...(x.kept||[])]}:x)}
+ const forget=async(k:Kept)=>{setBusy(true);const r=await post('/api/master/players/duplicates',{action:'forget',club:k.club,a:k.a,b:k.b});setBusy(false);if(r.ok){setDone('Done. The pair can be suggested again.');setD(null);load()}else setErr(r.data.error||'Not saved.')}
+ const list=(d?.candidates||[]).filter(c=>!gone.has(pairId(c)))
  return <section className="pcc-tool pcc-merge" aria-label="Merge duplicates">
-  <p className="pcc-lede">Likely duplicates, found by family name, given name and years — never merged automatically. Pick which record to keep: the other leaves the squad, and his name, years, positions and sources are carried onto the one you keep, so old records still resolve. Every merge can be undone.</p>
-  {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}{done&&<p role="status" className="desk-state">{done}</p>}
+  <p className="pcc-lede">These pairs <b>might</b> be the same man. For each pair, choose one of three answers. Nothing happens until you click, and every merge can be undone.</p>
+  {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}{done&&<p role="status" className="desk-state" data-state="ok">{done}</p>}
   {!d&&!err&&<p className="desk-state" role="status">Looking for duplicates…</p>}
-  {d&&<p className="pcc-hint">{d.total} candidate pair(s){d.total>d.candidates.length?`, showing the ${d.candidates.length} most likely`:''}.</p>}
-  {d?.candidates.slice(0,shown).map(c=>{const sel=open?.c===c;return <div key={c.club+c.a.id+c.b.id} className="pcc-pair">
-   <div className="cols">{[c.a,c.b].map(m=><div key={m.id}><b dir="auto">{m.name}</b><small> {m.nameOriginal!==m.name?m.nameOriginal:''}</small><div><code>{m.id}</code> · {m.years} · €{m.price}M · {m.rating}{m.wave?' · roster-wave':''}</div></div>)}</div>
-   <p className="pcc-hint">{c.clubName} · {c.likeness.confidence} match — {c.likeness.reasons.join('; ')}. Suggested: keep <b dir="auto">{(c.suggest.keep===c.a.id?c.a:c.b).name}</b> ({c.suggest.why}).</p>
-   <p className="pcc-actions"><button type="button" className="min-h-tap desk-btn" onClick={()=>pick(c,c.suggest.keep,c.suggest.drop)}>Review merge</button><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>pick(c,c.suggest.drop,c.suggest.keep)}>Keep the other one</button></p>
-   {sel&&pv&&<div aria-live="polite">
-    <p><b>Result:</b> <span dir="auto">{pv.result.name}</span> · {pv.result.years} · {pv.result.positions.join('/')||'no position'} · also known as {pv.result.aliases.join(', ')||'—'}</p>
-    {pv.warnings.map(w=><p key={w} className="pcc-hint">⚠ {w}</p>)}
-    {pv.blocker&&<p role="alert" className="desk-state" data-state="error">{pv.blocker}</p>}
-    {pv.readiness.broke.length>0&&<p role="alert" className="desk-state" data-state="error">Would stop: {pv.readiness.broke.join(', ')}.</p>}
-    {pv.priceChoices.keep!==pv.priceChoices.drop&&<label className="pcc-field"><span>Price the merged man keeps</span><select value={price} onChange={e=>setPrice(e.target.value as 'keep')}><option value="keep">€{pv.priceChoices.keep}M (the record kept)</option><option value="drop">€{pv.priceChoices.drop}M (the other record)</option><option value="higher">€{Math.max(pv.priceChoices.keep,pv.priceChoices.drop)}M (the higher)</option></select></label>}
-    {!pv.quota.ok&&<label className="pcc-remove"><input type="checkbox" checked={okQ} onChange={e=>setOkQ(e.target.checked)}/> <span>Publish as an exception to the price ladder ({pv.quota.violations.join('; ')})</span></label>}
-    <label className="pcc-remove"><input type="checkbox" checked={okO} onChange={e=>setOkO(e.target.checked)}/> <span>Owner exception (only if a locked price changes)</span></label>
-    <label className="pcc-field"><span>Reason (kept in the history)</span><input type="text" value={reason} onChange={e=>setReason(e.target.value)} placeholder="e.g. same man, two spellings"/></label>
-    <p className="pcc-actions"><button type="button" className="min-h-tap desk-btn" disabled={busy||!pv.canMerge||reason.trim().length<3||(!pv.quota.ok&&!okQ)} onClick={go}>Merge and publish</button><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>{setOpen(null);setPv(null)}}>Cancel</button></p>
-   </div>}
-  </div>})}
-  {d&&d.candidates.length>shown&&<p><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>setShown(shown+20)}>Show 20 more</button></p>}
-  {d&&!d.candidates.length&&<p className="desk-state">No likely duplicates.</p>}
+  {d&&<p className="pcc-hint">{list.length} pair{list.length===1?'':'s'} to check{d.total>d.candidates.length?` (showing the ${d.candidates.length} most likely of ${d.total})`:''}.</p>}
+  {list.slice(0,shown).map(c=>{const asking=ask&&pairId(ask.c)===pairId(c)?ask:null,sug=c.suggest.keep
+   return <article key={pairId(c)} className="pcc-pair">
+    <p className="pcc-pair-why"><b>{c.clubName}</b> · {c.likeness.reasons.join(' · ')}</p>
+    <div className="pcc-vs">{[['A',c.a],['B',c.b]].map(([tag,m])=>{const man=m as Man;return <div key={man.id} className="pcc-man" data-suggested={sug===man.id||undefined}>
+     <p className="pcc-man-tag">{tag as string}{sug===man.id&&<span> · suggested main record</span>}</p>
+     <h3 dir="auto">{man.name}</h3>{man.nameOriginal!==man.name&&<p dir="auto" className="pcc-hint">{man.nameOriginal}</p>}
+     <dl><div><dt>Years</dt><dd>{yearsOf(man)}</dd></div><div><dt>Positions</dt><dd>{man.positions?.length?man.positions.join(' / '):'unknown'}</dd></div><div><dt>Price</dt><dd>€{man.price}M{man.locked?' · locked':''}</dd></div><div><dt>Score</dt><dd>{man.rating}</dd></div>
+      {(man.apps!=null||man.goals!=null)&&<div><dt>Games / goals</dt><dd>{man.apps??'—'} / {man.goals??'—'}</dd></div>}<div><dt>Record</dt><dd>{man.wave?'roster wave (unreviewed)':'archive'}</dd></div></dl>
+     <button type="button" className="min-h-tap desk-btn" disabled={busy} onClick={()=>void choose(c,man,man.id===c.a.id?c.b:c.a)}>Keep {tag as string} as the main record</button>
+    </div>})}</div>
+    <p className="pcc-actions"><button type="button" className="min-h-tap desk-btn ghost" disabled={busy} onClick={()=>void keepBoth(c)}>They are two different men — keep both</button></p>
+    {asking&&<div className="pcc-confirm" role="group" aria-label="Confirm the merge">
+     {!asking.pv?<p role="status">Checking…</p>:<>
+      <p className="pcc-confirm-q">Merge <b dir="auto">{asking.drop.name}</b> into <b dir="auto">{asking.keep.name}</b>?</p>
+      <p className="pcc-hint">{asking.keep.name} stays. {asking.drop.name}’s name, years and positions move onto him: {asking.pv.result.years} · {asking.pv.result.positions.join('/')||'no position'}.</p>
+      {asking.pv.warnings.filter(w=>!/^Prices differ/.test(w)).map(w=><p key={w} className="pcc-hint">⚠ {w}</p>)}
+      {asking.pv.blocker&&<p role="alert" className="desk-state" data-state="error">{asking.pv.blocker}</p>}
+      {asking.pv.readiness.broke.length>0&&<p role="alert" className="desk-state" data-state="error">This merge would stop a game working ({asking.pv.readiness.broke.join(', ')}), so it cannot be done.</p>}
+      {asking.pv.priceChoices.keep!==asking.pv.priceChoices.drop&&<div className="pcc-seg" role="group" aria-label="Price after the merge">{([['keep',asking.pv.priceChoices.keep],['drop',asking.pv.priceChoices.drop]] as const).map(([k,v])=><button key={k} type="button" className="min-h-tap" aria-pressed={asking.price===k} onClick={()=>setAsk({...asking,price:k})}>Price €{v}M</button>)}</div>}
+      {!asking.pv.quota.ok&&<p className="pcc-hint">Note: this moves the club off its price ladder ({asking.pv.quota.violations.join('; ')}). “Yes” saves it anyway.</p>}
+      <p className="pcc-actions"><button type="button" className="min-h-tap desk-btn" disabled={busy||!asking.pv.canMerge} onClick={()=>void merge()}>{busy?'Merging…':'Yes, merge'}</button><button type="button" className="min-h-tap desk-btn ghost" disabled={busy} onClick={()=>setAsk(null)}>No</button></p>
+     </>}
+    </div>}
+   </article>})}
+  {d&&list.length>shown&&<p><button type="button" className="min-h-tap desk-btn ghost" onClick={()=>setShown(shown+20)}>Show 20 more</button></p>}
+  {d&&!list.length&&<p className="desk-state" data-state="ok">No pairs to check.</p>}
+  {(d?.kept?.length??0)>0&&<details className="pcc-kept"><summary className="min-h-tap">Pairs you kept as two men ({d!.kept!.length})</summary><ul>{d!.kept!.map(k=><li key={k.club+k.a+k.b}><span><code>{k.a}</code> and <code>{k.b}</code> · {k.club} · {k.at.slice(0,10)}</span><button type="button" className="min-h-tap pcc-link" disabled={busy} onClick={()=>void forget(k)}>Suggest again</button></li>)}</ul></details>}
  </section>
 }

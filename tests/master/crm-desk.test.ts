@@ -17,7 +17,7 @@ describe('the task desk (CRM 1 §7)',()=>{
  it('player reports become one task per club and kind, counted from the report',()=>{
   const t=playerTasks([{club:'olympiacos',clubName:'Olympiacos',missing:3,twins:0,outliers:1}])
   expect(t.map(x=>x.key)).toEqual(['players:missing:olympiacos','players:outliers:olympiacos'])
-  expect(t[0]!.title).toBe('3 players with no recorded position')
+  expect(t[0]!.title).toBe('3 players have no position')
   expect(t[0]!.href).toContain('section=players')
  })
  it('the same issue appears once, sorted blocking first',()=>{
