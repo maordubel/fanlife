@@ -233,7 +233,7 @@ a.gp:active { transform: scale(.98); }
 /* second pass: seal, ground card, gate headings and the feature plate take less height */
 .club-home .mag-seal { inline-size: 84px; }
 .club-home .mag-homeshare { margin: 0; }
-.club-home .mag-homeshare .mag-cta, .club-home .mag-homeshare button { min-height: 36px; padding-block: 4px; font-size: 12px; }
+.club-home .mag-homeshare .mag-cta, .club-home .mag-homeshare button { min-height: 44px; padding-block: 4px; font-size: 12px; }
 .club-home .club-matchday .mag-homecard { padding: 10px 12px; gap: 6px; box-shadow: 4px 4px 0 var(--club-primary, var(--mag-ink)); }
 .club-home .club-matchday h2 { font-size: clamp(20px, 5vw, 28px); margin: 2px 0 4px; }
 .club-home .club-matchday p { font-size: 13px; margin: 0; }

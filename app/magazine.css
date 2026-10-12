@@ -1218,8 +1218,8 @@ body:has([role='dialog'][aria-modal='true']) .mag-tabbar { display: none; }
 .mag-next-step { inline-size: 44px; block-size: 44px; display: grid; place-items: center; border: 3px solid var(--mag-ink); background: var(--mag-paper); font-family: var(--mag-display); font-size: 24px; line-height: 1; cursor: pointer; }
 .mag-next-step:hover { background: var(--mag-ink); color: var(--mag-paper); }
 .mag-next-count { grid-column: 2; margin: 2px 0 0; display: flex; justify-content: space-between; align-items: center; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 1px; }
-.mag-next-count button { min-block-size: 32px; padding: 0 8px; background: none; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: inherit; }
-@media (max-width: 420px) { .mag-next { grid-template-columns: 36px minmax(0, 1fr) 36px; gap: 6px; } .mag-next-step { inline-size: 36px; block-size: 44px; } .mag-next-card .mag-badge { display: none; } .mag-next-txt b { font-size: 19px; } }
+.mag-next-count button { min-block-size: 44px; padding: 0 8px; background: none; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; color: inherit; }
+@media (max-width: 420px) { .mag-next { grid-template-columns: 44px minmax(0, 1fr) 44px; gap: 4px; } .mag-next-step { inline-size: 44px; block-size: 44px; } .mag-next-card .mag-badge { display: none; } .mag-next-txt b { font-size: 19px; } }
 .fl.mag .mag-game-title { font-family: var(--mag-display); font-weight: 400; text-transform: uppercase; font-size: clamp(88px, 27vw, 168px); }
 .fl.mag .mag-game-title .mag-game-stamp { font-size: clamp(20px, 5.4vw, 28px); }
 .fl.mag[lang='he'] .mag-game-stamp { font-family: var(--mag-body); font-weight: 800; letter-spacing: 1px; }
