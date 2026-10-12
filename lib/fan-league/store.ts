@@ -2,6 +2,7 @@ import 'server-only'
 import {fileArea} from '@/lib/master/files'
 import {inOrder} from '@/lib/master/cas'
 import type {Career} from './types'
+import type {Friendly} from './friendly'
 
 /**
  * Where careers live (ADR-fanlife-0011, revised 12.10.2026): one JSON document per career in the durable store
@@ -10,7 +11,7 @@ import type {Career} from './types'
  * revision check refuses it. Without a durable store (a serverless host with memory only) a save is REFUSED, never faked.
  */
 const area=fileArea('fanleague')
-export type OwnerIndex={v:1;careers:{id:string;club:string;clubName:string;decade:number;createdAt:string;status:Career['status']}[]}
+export type OwnerIndex={v:1;careers:{id:string;club:string;clubName:string;decade:number;createdAt:string;status:Career['status']}[];friendlies?:{id:string;role:'inviter'|'invitee';at:string}[]}
 const EMPTY:OwnerIndex={v:1,careers:[]}
 export class SaveUnavailable extends Error{readonly code='unavailable' as const}
 export const canSave=()=>area.kind().durable
@@ -51,6 +52,34 @@ async function touchIndex(c:Career){
  await area.update<OwnerIndex>(`owners/${c.owner}.json`,EMPTY,cur=>{
   const row={id:c.id,club:c.clubId,clubName:c.clubName,decade:c.homeDecade,createdAt:c.createdAt,status:c.status}
   const rest=(cur?.v===1?cur.careers:[]).filter(x=>x.id!==c.id)
-  return {v:1,careers:[row,...rest].slice(0,50)}
+  return {...(cur?.v===1?cur:EMPTY),v:1,careers:[row,...rest].slice(0,50)}
  })
+}
+
+/* ───────── friendlies: one document each, the same compare-and-swap ───────── */
+export async function readFriendly(id:string,fresh=false):Promise<{friendly:Friendly;etag:string}|null>{
+ if(!idOk(id))return null
+ const r=await area.read(`friendlies/${id}.json`,fresh).catch(()=>null);if(!r)return null
+ try{const f=JSON.parse(r.text) as Friendly;return f?.v===1&&f.id===id?{friendly:f,etag:r.etag}:null}catch{return null}
+}
+export async function insertFriendly(f:Friendly):Promise<void>{
+ if(!canSave())throw new SaveUnavailable('Saving is not available right now — nothing was changed.')
+ if(!await area.write(`friendlies/${f.id}.json`,JSON.stringify(f),null))throw new Error('An invitation with this id already exists.')
+ await noteFriendly(f.inviter.owner,f.id,'inviter')
+}
+/** one answer to an invitation, compare-and-swap; a second answer sees the first and is refused */
+export async function mutateFriendly(id:string,fn:(f:Friendly)=>{ok:true;friendly:Friendly}|{ok:false;error:string}):Promise<{ok:true;friendly:Friendly}|{ok:false;error:string}|null>{
+ if(!canSave())throw new SaveUnavailable('Saving is not available right now — nothing was changed.')
+ return inOrder(`fanleague:friendly:${id}`,async()=>{
+  for(let i=0;i<5;i++){
+   const cur=await readFriendly(id,true);if(!cur)return null
+   const out=fn(cur.friendly);if(!out.ok)return out
+   if(await area.write(`friendlies/${id}.json`,JSON.stringify(out.friendly),cur.etag)){if(out.friendly.invitee)await noteFriendly(out.friendly.invitee.owner,id,'invitee').catch(()=>{});return out}
+  }
+  throw new Error('The invitation is busy — try again.')
+ })
+}
+async function noteFriendly(owner:string,id:string,role:'inviter'|'invitee'){
+ if(!ownerOk(owner))return
+ await area.update<OwnerIndex>(`owners/${owner}.json`,EMPTY,cur=>{const base=cur?.v===1?cur:EMPTY;return {...base,friendlies:[{id,role,at:new Date().toISOString()},...(base.friendlies??[]).filter(x=>x.id!==id)].slice(0,60)}})
 }
