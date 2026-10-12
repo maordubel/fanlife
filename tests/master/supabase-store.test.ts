@@ -71,3 +71,51 @@ describe('the Supabase store',()=>{
   for(const [url] of f.mock.calls)expect(new URL(String(url)).host).toBe('x.supabase.co')
  })
 })
+
+// Owner's reliability plan, 12.10.2026 (P0): "not found" ≠ "could not ask". A save must never be built on a seed while the real
+// copy may still be in Blob.
+describe('the migration guard',()=>{
+ const env={...process.env}
+ beforeEach(()=>{rows=new Map();tableExists=true;calls=[];blobFiles.clear();blobRefuses=false;vi.resetModules();vi.stubGlobal('fetch',vi.fn(fakeFetch))
+  process.env.NEXT_PUBLIC_SUPABASE_URL='https://x.supabase.co';process.env.SUPABASE_SERVICE_ROLE_KEY='service_x';process.env.BLOB_READ_WRITE_TOKEN='vercel_blob_rw_x_y'
+  const G=globalThis as Record<string,unknown>;for(const k of ['fanDurable','fanSbMissing','fanBlobQuiet','fanMigration','fanBlobRetired','fanStoreError','fanFailAt','fanLastGood','fanLastGoodAt'])delete G[k]})
+ afterEach(()=>{process.env={...env};vi.unstubAllGlobals()})
+ it('a read-before-write throws while Blob refuses; a page read carries on with null',async()=>{
+  blobRefuses=true;vi.spyOn(console,'error').mockImplementation(()=>{})
+  const {durable,MigrationPending,migrationPending}=await import('@/lib/master/durable');const d=durable()!
+  await expect(d.read('control.json',{fresh:true})).rejects.toBeInstanceOf(MigrationPending)
+  expect(migrationPending()).toBe('control.json')
+  expect(await d.read('control.json')).toBeNull()
+  // still pending within the quiet hour, without asking Blob again
+  calls=[];await expect(d.read('control.json',{fresh:true})).rejects.toBeInstanceOf(MigrationPending)
+  expect(calls.filter(c=>c.startsWith('blob'))).toEqual([])
+ })
+ it('mutate never writes the seed over a copy Blob may still hold',async()=>{
+  blobRefuses=true;vi.spyOn(console,'error').mockImplementation(()=>{})
+  const {mutate,readState}=await import('@/lib/master/store')
+  await expect(mutate(s=>{s.clubs[0]!.name='x';return true})).rejects.toThrow(/nothing was saved/)
+  expect(rows.has('control.json')).toBe(false)
+  expect((await readState()).clubs.length).toBeGreaterThan(0) // pages run on the published lineup
+ })
+ it('Blob confirming the file is absent is a real "not found"',async()=>{
+  const {durable}=await import('@/lib/master/durable')
+  expect(await durable()!.read('new-file.json',{fresh:true})).toBeNull()
+ })
+ it('when Blob answers again, the real copy moves across and the save goes on it',async()=>{
+  blobRefuses=true;vi.spyOn(console,'error').mockImplementation(()=>{})
+  const {durable,retryBlobNow,migrationPending}=await import('@/lib/master/durable');const d=durable()!
+  await expect(d.read('control.json',{fresh:true})).rejects.toThrow()
+  blobRefuses=false;blobFiles.set('control.json',{text:'{"real":1}',etag:'"b"'});retryBlobNow()
+  expect((await d.read('control.json',{fresh:true}))!.text).toBe('{"real":1}')
+  expect(migrationPending()).toBeNull()
+ })
+ it('the owner retiring Blob makes a missing file missing',async()=>{
+  blobRefuses=true;vi.spyOn(console,'error').mockImplementation(()=>{})
+  const {durable,retireBlob,MigrationPending}=await import('@/lib/master/durable');const d=durable()!
+  await expect(d.read('control.json',{fresh:true})).rejects.toBeInstanceOf(MigrationPending)
+  await retireBlob('owner')
+  expect(rows.has('_store/blob-retired.json')).toBe(true)
+  calls=[];expect(await d.read('control.json',{fresh:true})).toBeNull()
+  expect(calls.filter(c=>c.startsWith('blob'))).toEqual([])
+ })
+})

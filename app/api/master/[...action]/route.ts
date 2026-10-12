@@ -2,7 +2,7 @@ import {NextRequest,NextResponse} from 'next/server'
 import {randomUUID} from 'node:crypto'
 import {audit,mutate,readState,auditArchiveMonths,readAuditArchive} from '@/lib/master/store'
 import {sameOrigin,cronAuthorized,text,slug,color} from '@/lib/master/request'
-import {blobAuthReport} from '@/lib/master/durable'
+import {blobAuthReport,MigrationPending,retryBlobNow,retireBlob} from '@/lib/master/durable'
 import {DEFAULT_TOP_AD} from '@/lib/top-ad'
 import {adminFromRequest} from '@/lib/master/admin'
 import {actorOf} from '@/lib/master/audit-log'
@@ -62,6 +62,9 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
 export async function POST(r:NextRequest,{params}:{params:{action:string[]}}){try{const who=adminFromRequest(r);if(!who)return unauthorized();sameOrigin(r);const by=actorOf(who),a=params.action.join('/');if(a==='upstream/check')return json(await checkUpstream(by));const raw=await r.text();if(raw.length>250000)throw new Error('Request too large.');const b=raw?JSON.parse(raw):{}
 // F15: run the job the caller queued (by id); without an id, the first runnable job (the scheduler's behaviour)
 if(a==='goals'){const out=await goalsAction(b,by.actor);await mutate(st=>{audit(st,'goals.'+String(b.op),String(b.club||b.id||'-'),JSON.stringify(out).slice(0,200),by)});return json(out,out.ok?200:400)}
+// owner's recovery decision while control data is still only in Blob (reliability plan P0): ask Blob again, or retire it on purpose
+if(a==='storage/retry-blob'){retryBlobNow();return json({ok:true})}
+if(a==='storage/retire-blob'){if(b.confirm!=='RETIRE')throw new Error('Type RETIRE to confirm.');await retireBlob(by.actor||'owner');await mutate(s=>{audit(s,'storage.blob-retired','store','Blob retired by the owner: a file missing in Supabase is treated as missing.',by);return true});return json({ok:true})}
 if(a==='research/run')return json(await runResearch(typeof b.id==='string'&&b.id?b.id.slice(0,64):undefined))
 if(a==='clubs/create'){const created=await mutate(s=>{const id=slug(b.id);if(s.clubs.some(c=>c.id===id))throw new Error('Club already exists.');if(s.clubs.length>=100)throw new Error('Registry limit reached.');const c:Club={id,name:text(b.name,'Name'),city:text(b.city,'City'),country:text(b.country,'Country'),initials:text(b.initials,'Initials',4),primary:color(b.primary),secondary:color(b.secondary),status:'research',version:1,gates:[],sources:[],findings:[],gaps:['Research file created. Engine connection missing: register the club and build a first pack.']};s.clubs.push(c);audit(s,'club.created',id,'Research file only — no registry entry or data provider yet.',by);return c});await ensureProfile(created.id);return json(created,201)}
 // one bounded archive pass + staging export, from the Data tab
@@ -107,4 +110,4 @@ if(a.startsWith('life-display/')){const op=a.slice(13);return json(await mutate(
  if(op==='save-draft'){const v=validateDisplay(b.patch,{partial:true});if(!v.ok)throw new Error(`Rejected: ${v.errors.map(e=>`${e.key} (${e.problem})`).join(', ')}`);next=saveDraft(cur,v.value)}
  else if(op==='publish')next=publish(cur,now);else if(op==='revert')next=revert(cur,now);else if(op==='reset')next=reset(cur,now);else throw new Error('Unknown display operation.')
  const keys=op==='save-draft'?changedKeys(cur.draft||cur.live,next.draft!):changedKeys(cur.live,next.live);s.lifeDisplay=next;audit(s,`life-display.${op}`,'global',keys.join(', ')||'no change',{...by,before:JSON.stringify(op==='save-draft'?cur.draft||cur.live:cur.live),after:JSON.stringify(op==='save-draft'?next.draft:next.live)});return next}))}
-return json({error:'Unknown operation'},404)}catch(e){if(isReadOnlyError(e))return json({error:READ_ONLY_HINT},503);return json({error:e instanceof Error?e.message:'Operation failed'},e instanceof Conflict?409:400)}}
+return json({error:'Unknown operation'},404)}catch(e){if(isReadOnlyError(e))return json({error:READ_ONLY_HINT},503);return json({error:e instanceof Error?e.message:'Operation failed',...(e instanceof MigrationPending?{code:e.code}:{})},e instanceof Conflict?409:e instanceof MigrationPending?503:400)}}

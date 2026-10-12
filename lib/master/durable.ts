@@ -84,6 +84,27 @@ export function durableConfigured(): boolean {
 const SB_TABLE = 'worker_fanlife_files'
 export const supabaseConnected = () => !!((process.env.FAN_LIFE_STORE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL) && process.env.SUPABASE_SERVICE_ROLE_KEY) && process.env.FAN_LIFE_STORE !== 'blob'
 class TableMissing extends Error {}
+/**
+ * Owner's reliability plan, 12.10.2026 (P0): "not found" and "could not ask" are different answers. A file Supabase does not hold
+ * may still be in Blob, and while Blob refuses (its plan cap) the answer is UNKNOWN — a save built on it would create the file from
+ * a seed and bury the owner's real copy. So a read-before-write throws this instead of answering null; pages carry on (null), saves
+ * stop with this message, until Blob answers (the file is copied across) or the owner records that Blob is retired.
+ */
+export class MigrationPending extends Error { readonly code = 'migration-pending' as const }
+/** The owner's recovery decision, kept in Supabase itself: missing in Supabase means missing — Blob is not asked again. */
+export const BLOB_RETIRED = '_store/blob-retired.json'
+const migG = globalThis as typeof globalThis & { fanMigration?: { pending: string | null; at: number }; fanBlobRetired?: { v: boolean; at: number } }
+/** For the control room: the last name a save could not be built on because Blob could not be asked, or null. */
+export const migrationPending = () => (migG.fanMigration && Date.now() - migG.fanMigration.at < 3_600_000 ? migG.fanMigration.pending : null)
+export const blobRetired = () => !!migG.fanBlobRetired?.v
+/** The owner's two recovery buttons: ask Blob again now, or record that Blob is retired (missing in Supabase = missing). */
+export function retryBlobNow() { (globalThis as { fanBlobQuiet?: number }).fanBlobQuiet = 0; migG.fanMigration = undefined }
+export async function retireBlob(by: string): Promise<void> {
+  const d = durable()
+  if (!d || d.kind !== 'supabase') throw new Error('Supabase is not the store here — nothing to retire.')
+  await d.write(BLOB_RETIRED, JSON.stringify({ at: new Date().toISOString(), by }), null)
+  migG.fanBlobRetired = { v: true, at: Date.now() }; migG.fanMigration = undefined
+}
 const randomTag = () => `"${globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`}"`
 function supabaseStore(): DurableStore {
   // FAN_LIFE_STORE_URL: the browser sweeps point the store at a local PostgREST stand-in (scripts/qa/files-rest-shim.mjs).
@@ -136,14 +157,23 @@ function layeredStore(sb: DurableStore, blob: DurableStore | null): DurableStore
     if (e instanceof TableMissing && fallback) { st.fanSbMissing = Date.now(); console.error('[fan-life]', e.message, 'Using Blob meanwhile.'); return fallback() }
     throw e
   }
+  async function retired(): Promise<boolean> {
+    const c = migG.fanBlobRetired
+    if (c && Date.now() - c.at < 60_000) return c.v
+    const v = !!(await sb.read(BLOB_RETIRED, { fresh: true }))
+    migG.fanBlobRetired = { v, at: Date.now() }
+    return v
+  }
+  const pending = (name: string) => { migG.fanMigration = { pending: name, at: Date.now() }; return new MigrationPending(`${name} is not in Supabase yet and Vercel Blob, which may still hold it, is not answering — nothing was saved. It is copied across the first time Blob answers; or record in the control room (Operations → Storage) that Blob is retired.`) }
   async function fromBlob(name: string): Promise<DurableRead> {
-    if (!blob || (st.fanBlobQuiet && Date.now() - st.fanBlobQuiet < 3_600_000)) return null
-    try {
-      const old = await blob.read(name, { fresh: true })
-      if (!old) return null
-      await sb.write(name, old.text, null) // create-only: never over a copy Supabase already holds
-      return sb.read(name, { fresh: true })
-    } catch { st.fanBlobQuiet = Date.now(); return null } // Blob refuses (its cap): leave it alone for an hour
+    if (!blob || name === BLOB_RETIRED || (await retired())) return null
+    if (st.fanBlobQuiet && Date.now() - st.fanBlobQuiet < 3_600_000) throw pending(name)
+    let old: DurableRead
+    try { old = await blob.read(name, { fresh: true }) } catch { st.fanBlobQuiet = Date.now(); throw pending(name) } // Blob refuses (its cap): leave it alone for an hour
+    if (!old) return null // Blob confirms: there is no such file
+    await sb.write(name, old.text, null) // create-only: never over a copy Supabase already holds
+    if (migG.fanMigration?.pending === name) migG.fanMigration = undefined
+    return sb.read(name, { fresh: true })
   }
   return {
     kind: 'supabase',
