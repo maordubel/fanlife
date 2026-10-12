@@ -91,7 +91,7 @@
     "rumble:prices": "node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/build-prices-v3.ts",
     "rumble:names": "node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/build-names-en.ts",
     "rumble:positions": "NODE_USE_ENV_PROXY=1 node scripts/rumble/fill-positions.mjs",
-    "fan-league:lab": "node --require ./scripts/master/server-only.cjs --import tsx scripts/fan-league/season-lab.ts"
+    "legends:lab": "node --require ./scripts/master/server-only.cjs --import tsx scripts/legends/lab.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "0.5.8",

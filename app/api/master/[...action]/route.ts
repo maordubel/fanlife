@@ -28,6 +28,7 @@ import type {Club} from '@/lib/master/types'
 import {launchView} from '@/lib/master/launch'
 import {buildDeskPack,writeDeskPack} from '@/lib/master/deskPack'
 import {invalidateClub,hasStaticPack} from '@/lib/clubs/resolver'
+import {legendsAdminPost,legendsOverview,legendsPlayers} from '@/lib/legends/admin'
 export const dynamic='force-dynamic'
 export const maxDuration=60
 const json=(data:unknown,status=200)=>NextResponse.json(data,{status,headers:{'Cache-Control':'no-store'}})
@@ -43,6 +44,8 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  if(a==='research/profiles-export'){if(!cronAuthorized(r)&&!adminFromRequest(r))return json({error:'Invalid scheduler authorization'},401);return json(await exportOverlays())}
  if(!adminFromRequest(r))return unauthorized()
  if(a==='search')return json(await deskSearch(q.get('q')||'',q.get('club')||null))
+ if(a==='legends/players')return json(await legendsPlayers(slug(q.get('club')),(q.get('q')||'').slice(0,60)))
+ if(a==='legends/overview')return json(await legendsOverview())
  if(a==='pipeline/runs')return json(await lastPipelineRuns(10))
  if(a==='goals/status')return json(await goalsStatus())
  if(a==='archive/profile'){const p=await loadClubProfile(slug(q.get('club')));return p?json(p):json({error:'No research profile for this club.'},404)}
@@ -111,6 +114,7 @@ if(a==='research/plan')return json(await planClub(slug(b.clubId)));
 if(a==='research/fetch'){const p=loadProfile(slug(b.clubId));if(!p)throw new Error('No research profile for this club.');return json(await runWorker(p,{max:Math.min(5,Math.max(1,Number(b.max)||3))}))}
 if(a==='ads/top'){if(typeof b.enabled!=='boolean')throw new Error('enabled must be true or false.');return json(await mutate(s=>{const before=(s.ads??DEFAULT_TOP_AD).topAd;s.ads={topAd:b.enabled,updatedAt:new Date().toISOString()};audit(s,'ads.top',b.enabled?'on':'off',`Dubel top ad (in-page push) ${b.enabled?'on':'off'}`,{...by,before:String(before),after:String(b.enabled)});return s.ads}))}
 if(a==='crm/task')return json(await taskActionNow(b,by.actor||'owner'))
+if(a==='legends/settings'||a==='legends/ratings'){const out=await legendsAdminPost(a,b);await mutate(s=>{audit(s,out.audit.what,out.audit.target,out.audit.detail,{...by,before:out.audit.before,after:out.audit.after});return true});return json(out.result)}
 if(a==='features'){const v=validateFeaturePatch(b.patch);if(!v.ok)throw new Error(v.error);return json(await mutate(s=>{const cur=featuresOf(s),next=applyFeaturePatch(cur,v.patch,new Date().toISOString());s.features=next;audit(s,'features.updated','global',Object.keys(v.patch).join(', '),{...by,before:JSON.stringify(cur),after:JSON.stringify(next)});return next}))}
 if(a.startsWith('life-display/')){const op=a.slice(13);return json(await mutate(s=>{const cur=s.lifeDisplay||emptyDisplay(),now=new Date().toISOString();let next=cur
  if(op==='save-draft'){const v=validateDisplay(b.patch,{partial:true});if(!v.ok)throw new Error(`Rejected: ${v.errors.map(e=>`${e.key} (${e.problem})`).join(', ')}`);next=saveDraft(cur,v.value)}
