@@ -12,7 +12,7 @@ import type {RunMeta} from '@/app/clubs/[slug]/[gate]/trivia-run-actions'
 import {MIN_ROUND,nextChallenges,reportOf,roundQuery,type LogEntry} from '@/lib/clubs/trivia-model'
 import css from './trivia.module.css'
 
-type Props={
+type Props={home?:string;
  session:Session;log:LogEntry[];count:number;asked:number;meta:RunMeta;club:string;clubName:string;version:string
  locale:UiLocale;contentLocale:string;copy:GameCopy;available:QTopic[];hardOpen:boolean;topicLabel:(id:string)=>string;missedLeft:number
 }
@@ -45,7 +45,7 @@ export function TriviaReport(p:Props){
  const report=useMemo(()=>reportOf(log,p.count,session.lives),[log,p.count,session.lives])
  const category=practice?'practice':meta.category
  const next=nextChallenges({report,share:asked>0?right/asked:0,hard:meta.mode==='hard',topic:meta.topic||undefined,available:p.available,hardOpen:p.hardOpen&&meta.mode==='standard'})
- const draft=useMemo(()=>triviaDraft({club,meta,log,session}),[club,meta,log,session])
+ const draft=useMemo(()=>p.home?null:triviaDraft({club,meta,log,session}),[p.home,club,meta,log,session])
  const query=(extra:{mode?:string;topic?:string;era?:string;practice?:boolean;go?:boolean}={})=>`?${roundQuery({seed:meta.seed,cursor:meta.cursor+1,lang:locale,...extra})}`
  const again=meta.mode==='revenge'?query():query({mode:meta.mode,topic:meta.topic||undefined,era:meta.era||undefined,practice,go:true})
  const out=session.lives<=0
@@ -84,8 +84,8 @@ export function TriviaReport(p:Props){
    })}
    {missedLeft>=MIN_ROUND&&meta.mode!=='revenge'&&<Link className={css.cta} data-kind="plain" href={query()} data-testid="trivia-next-revenge"><span>{t('tq.report.nextRevenge',{n:missedLeft})}</span><span aria-hidden="true">→</span></Link>}
    {draft&&<ShareComposer label={t('tq.report.share')} draft={draft}/>}
-   <Link className={css.cta} data-kind="plain" href={`/clubs/${club}/archive?lang=${locale}`}><span>{t('tq.report.archive')}</span><span aria-hidden="true">→</span></Link>
-   <Link className={css.cta} data-kind="plain" href={`/clubs/${club}?lang=${locale}`}><span>{copy.backToClub}</span><span aria-hidden="true">→</span></Link>
+   {!p.home&&<Link className={css.cta} data-kind="plain" href={`/clubs/${club}/archive?lang=${locale}`}><span>{t('tq.report.archive')}</span><span aria-hidden="true">→</span></Link>}
+   {p.home?<Link className={css.cta} data-kind="plain" href={p.home}><span>Back to ALL FOOTBALL</span><span aria-hidden="true">→</span></Link>:<Link className={css.cta} data-kind="plain" href={`/clubs/${club}?lang=${locale}`}><span>{copy.backToClub}</span><span aria-hidden="true">→</span></Link>}
   </div>
  </section>
 }

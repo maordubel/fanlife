@@ -7,7 +7,7 @@ import {PlayersDesk} from '@/components/master/desk/PlayersDesk'
 import {TaskDesk} from '@/components/master/desk/TaskDesk'
 import {GamesDesk} from '@/components/master/desk/GamesDesk'
 import {MarketDesk,CommunityDesk} from '@/components/master/desk/MarketDesk'
-import {ExperienceDesk} from '@/components/master/desk/ExperienceDesk'
+import {ExperienceCard,ExperienceDesk} from '@/components/master/desk/ExperienceDesk'
 import {lightState} from '@/lib/master/lightState'
 import {refreshMigrationState} from '@/lib/master/durable'
 import {requireAdmin} from '@/lib/master/admin'
@@ -27,7 +27,7 @@ const LEGACY:Record<string,{section:Section;view?:string}>={overview:{section:'o
 /** sections the Admin component draws (the rest are the desk's own panels) */
 const ADMIN_SECTIONS=new Set<Section>(['overview','clubs','data','audience','operations','settings'])
 
-export default async function Page({searchParams}:{searchParams:{section?:string;tab?:string;club?:string;view?:string;days?:string;gate?:string;pc?:string}}){
+export default async function Page({searchParams}:{searchParams:{section?:string;tab?:string;club?:string;view?:string;days?:string;gate?:string;pc?:string;lab?:string}}){
  const session=requireAdmin('/master/admin')
  await refreshMigrationState()
  const {state,summaries,storage,items}=await attentionNow()
@@ -44,7 +44,7 @@ export default async function Page({searchParams}:{searchParams:{section?:string
  const shell=(children:React.ReactNode)=><AdminShell section={section} club={club} clubName={clubName} owner={owner} counts={counts}>{children}</AdminShell>
  if(section==='more')return shell(<MoreMenu owner={owner}/>)
  if(section==='players')return shell(<Suspense fallback={<p className="desk-state" role="status">Loading players…</p>}><PlayersDesk/></Suspense>)
- if(section==='games')return shell(view==='all-football'?<ExperienceDesk features={features}/>:<GamesDesk summaries={summaries} scope={club} gate={searchParams.gate||null} experiences={<ExperienceDesk features={features} compact/>}/>)
+ if(section==='games')return shell(view==='all-football'?<ExperienceDesk features={features} lab={(['trivia','timeline','memory'] as const).find(g=>g===searchParams.lab)??null}/>:<GamesDesk summaries={summaries} scope={club} gate={searchParams.gate||null} experiences={<ExperienceCard features={features}/>}/>)
  if(section==='market')return shell(<MarketDesk/>)
  if(section==='community')return shell(<CommunityDesk/>)
  const runs=await readRuns()

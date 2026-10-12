@@ -13,6 +13,8 @@
 export const TOP_AD_SRC = '/dubel-top-ad.js'
 
 const NEVER_PREFIX = ['/master', '/qa', '/api', '/auth', '/life', '/city', '/c/']
+/** ALL FOOTBALL and FAN LEAGUE: their front page is a reading page; every gate, career and match is a run (rule 28) */
+const EXPERIENCE_RUNS = /^\/all-football\/.+/
 /** THE WORKER's gate routes (rule 24) and the club gates are game screens. */
 const WORKER_GAMES = ['/xi', '/trivia', '/lineup', '/kits/build', '/memory', '/polls', '/goal', '/blind-cow', '/derby', '/timeline', '/royal-rumble', '/away-days', '/tik']
 /** Doors inside a club that are reading pages, not runs. Anything else under /clubs/<id>/ is a gate or LIFE. */
@@ -24,6 +26,7 @@ export function topAdAllowedOn(path: string | null | undefined): boolean {
   if (p.split('/').includes('admin')) return false
   if (NEVER_PREFIX.some((x) => p === x.replace(/\/$/, '') || p.startsWith(x.endsWith('/') ? x : x + '/'))) return false
   if (WORKER_GAMES.some((x) => p === x || p.startsWith(x + '/'))) return false
+  if (EXPERIENCE_RUNS.test(p)) return false
   const club = /^\/clubs\/[^/]+(?:\/(.*))?$/.exec(p)
   if (club) return CLUB_READING.has(club[1] ?? '')
   return true
