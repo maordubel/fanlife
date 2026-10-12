@@ -40,6 +40,29 @@ export type Aggregate={gate:PoolGate;mode:Mode;slug:string;members:Member[];vers
 const GATE_NO:Record<PoolGate,number>={trivia:sharedGate('trivia')!.number,timeline:sharedGate('timeline')!.number,memory:sharedGate('memory')!.number}
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex')
 /** a stable pick that does not depend on file order and changes only when a record or the version does */
+/**
+ * Trivia's cap is STRATIFIED: an ALL FOOTBALL deck must climb like a club deck does, so each club's share is cut level by
+ * level (Easy 25% · Medium 30% · Hard 25% · Expert 20%, by the forge's `level:` facet or the engine difficulty), and
+ * inside a level it rotates through templates so no one shape (a date check, a league scoreline) fills a club's share.
+ * A level a club cannot fill passes its seats to the next. Stable: the same hash order as `stableCap`.
+ */
+const LEVEL_SHARE=[0.25,0.30,0.25,0.20]
+const levelIdx=(q:{difficulty:number;facets?:string[]})=>{const f=q.facets?.find(x=>x.startsWith('level:'));const n=f?Number(f.slice(6)):q.difficulty-1;return Math.max(0,Math.min(3,(Number.isFinite(n)?n:1)-1))}
+export function stratifiedCap<T extends {id:string;difficulty:number;template:string;facets?:string[]}>(xs:readonly T[],cap:number,salt:string):T[]{
+ if(xs.length<=cap)return [...xs]
+ const lv:T[][]=[[],[],[],[]]
+ for(const x of [...xs].map(x=>({x,h:hash(`${salt}|${x.id}`)})).sort((a,b)=>a.h.localeCompare(b.h)).map(v=>v.x))lv[levelIdx(x)]!.push(x)
+ const out:T[]=[];let carry=0
+ for(let i=0;i<4;i++){
+  const want=(i===3?cap-out.length:Math.round(cap*LEVEL_SHARE[i]!)+carry),by=new Map<string,T[]>()
+  for(const x of lv[i]!)by.set(x.template,[...(by.get(x.template)??[]),x])
+  const lanes=[...by.values()],got:T[]=[]
+  for(let r=0;got.length<want&&lanes.some(l=>l.length>r);r++)for(const l of lanes){if(got.length>=want)break;if(l[r])got.push(l[r]!)}
+  out.push(...got);carry=Math.max(0,want-got.length)
+ }
+ if(out.length<cap){const have=new Set(out.map(x=>x.id));for(const l of lv)for(const x of l){if(out.length>=cap)break;if(!have.has(x.id))out.push(x)}}
+ return out
+}
 const stableCap=<T>(xs:readonly T[],id:(x:T)=>string,cap:number,salt:string)=>xs.length<=cap?[...xs]:[...xs].map(x=>({x,h:hash(`${salt}|${id(x)}`)})).sort((a,b)=>a.h.localeCompare(b.h)).slice(0,cap).map(v=>v.x)
 
 /** the slug the browser carries — the mode lives in it, so a cookie and a version are per mode */
@@ -108,7 +131,7 @@ export async function aggregateFor(gate:PoolGate,mode:Mode):Promise<Aggregate|nu
   if(gate==='trivia'){
    // only what the club's own bank already accepted (sanitised, sourced, confidence ≥ 2)
    const bank=clubBank(c)
-   for(const q of stableCap(bank.questions,q=>q.id,cap,version))questions.push(nsQuestion(c,q))
+   for(const q of stratifiedCap(bank.questions,cap,version))questions.push(nsQuestion(c,q))
    for(const [p,v] of Object.entries(c.trivia.pools))pools[nsKey(id,p)]=v
   }
   if(gate==='timeline'){

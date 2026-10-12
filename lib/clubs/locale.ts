@@ -10,7 +10,10 @@ export function uiLocale(requested?:string):UiLocale {
  return ENABLED_LOCALES.includes(requested as UiLocale)?requested as UiLocale:'en'
 }
 /** English reads day-month-year with a short month name ("2 May 2024"): unambiguous for every reader, unlike 05/02. */
+// one formatter per locale: building an Intl.DateTimeFormat is the slow part, and a trivia bank formats thousands of dates
+const fmts=new Map<string,Intl.DateTimeFormat>()
+const fmtOf=(locale:UiLocale)=>{let f=fmts.get(locale);if(!f){f=locale==='en'?new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}):new Intl.DateTimeFormat(locale,{day:'2-digit',month:'2-digit',year:'numeric',timeZone:'UTC'});fmts.set(locale,f)}return f}
 export function localizedDate(iso:string,locale:UiLocale):string {
  const date=new Date(`${iso}T00:00:00Z`)
- return Number.isFinite(date.getTime())?(locale==='en'?new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}):new Intl.DateTimeFormat(locale,{day:'2-digit',month:'2-digit',year:'numeric',timeZone:'UTC'})).format(date):iso
+ return Number.isFinite(date.getTime())?fmtOf(locale).format(date):iso
 }

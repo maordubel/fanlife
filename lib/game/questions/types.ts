@@ -93,6 +93,8 @@ export type MasterQuestion = {
   hint: { kind: HintKind; he?: string }
   factIds: string[]
   source: SourceRef
+  /** FAN LIFE's Question Forge tags (`club:`, `template:`, `level:`, `kind:`, `decade:` …) — read by club decks and ALL FOOTBALL's balancer, never shown */
+  facets?: string[]
 }
 
 /** what the client is dealt: no answer, no source, no key */
