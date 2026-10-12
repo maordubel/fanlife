@@ -12,7 +12,7 @@ import {inOrder,untilWon} from '@/lib/master/cas'
 const dir=()=>path.resolve(process.env.FAN_LIFE_DATA_DIR||path.join(process.cwd(),'.fan-life'),'players')
 const etagOf=(text:string)=>createHash('sha256').update(text).digest('hex').slice(0,24)
 const mem=(globalThis as typeof globalThis&{fanPlayerMem?:Map<string,string>}).fanPlayerMem??=new Map<string,string>()
-export const playersStorage=():{kind:'vercel-blob'|'disk'|'memory';durable:boolean}=>{const d=durable();return d?{kind:'vercel-blob',durable:true}:{kind:process.env.VERCEL?'memory':'disk',durable:false}}
+export const playersStorage=():{kind:'vercel-blob'|'supabase'|'disk'|'memory';durable:boolean}=>{const d=durable();return d?{kind:d.kind==='supabase'?'supabase':'vercel-blob',durable:true}:{kind:process.env.VERCEL?'memory':'disk',durable:false}}
 export async function readFileText(name:string):Promise<DurableRead>{
  const d=durable();if(d)return d.read('players/'+name)
  if(process.env.VERCEL){const t=mem.get(name);return t===undefined?null:{text:t,etag:etagOf(t)}}

@@ -3009,3 +3009,10 @@ Owner: *"no feature may ever close because of a limit — every feature, the adm
 2. **A cold outage serves the published lineup** (registry + launch defaults), never every club closed; a refusing store is left alone for a minute.
 3. **`npm run qa:outage`** (CI, after the route sweep) runs the build against a store that refuses everything and opens every public screen, every core club's doors and gates and every control-room section. A screen that errors fails the build.
 4. While the store refuses, a SAVE fails with a message (nothing is written somewhere that vanishes); everything else stays open.
+5. **The store is Supabase** (owner, 12.10.2026: "approved, Supabase"): `worker_fanlife_files` (name, body, etag), migration
+   `20261012090000_worker_fanlife_files.sql`, server only (service role, no grant to anon/authenticated, RLS on, no policy),
+   saves are compare-and-swap on the etag. `durable()` picks it whenever `NEXT_PUBLIC_SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`
+   are set; Blob is legacy — a file Supabase lacks is copied across once when Blob answers, and everything runs on Blob only
+   while the table is missing. Supabase's free plan has no operation cap; the shared data cache keeps its traffic to a few
+   hundred reads a month. `vercel.json` deploys `main` only (`claude/*`, `dependabot/*` off) — CI builds every branch anyway,
+   and each preview was ~300MB against the Hobby 10GB deployment-storage cap.

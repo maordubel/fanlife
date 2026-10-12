@@ -47,3 +47,5 @@ echo "$pv" | grep -c PASS | xargs -I{} echo "db verify: {} shirt hub privacy (id
 ct=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/76-contributions.sql 2>&1) || { echo "$ct" | grep -E "FAIL|ERROR"; exit 1; }
 echo "$ct" | grep -c PASS | xargs -I{} echo "db verify: {} contributions (consent, review, merge) assertions — clean"
 echo "$wo" | grep -c PASS | xargs -I{} echo "db verify: {} rest-of-the-world (any club, any shirt) assertions — clean"
+ff=$(psql -d "$DB" -v ON_ERROR_STOP=1 -f supabase/tests/77-fanlife-files.sql 2>&1) || { echo "$ff" | grep -E "FAIL|ERROR"; exit 1; }
+echo "$ff" | grep -c PASS | xargs -I{} echo "db verify: {} FAN LIFE files (server-only store) assertions — clean"
