@@ -388,3 +388,9 @@
   .crm-filters [role='tablist'] { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; inline-size: 100%; padding-block-end: 2px; }
 }
 .desk-quick-after { margin-block-start: 22px; }
+/* LEGENDS MANAGER controls (Games → ALL FOOTBALL): the stars the fans see, drawn in the desk's ink */
+.desk .lgm-stars { display: inline-block; inline-size: 70px; block-size: 14px; vertical-align: middle; }
+.desk .lgm-star-off { fill: color-mix(in srgb, var(--mag-ink) 16%, transparent); } .desk .lgm-star-on { fill: var(--mag-ink); }
+.desk .lgc-pin { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); margin-block-start: 8px; }
+.desk .lgc-pin label { display: grid; gap: 4px; font-size: 12px; } .desk .lgc-pin .desk-actions { grid-column: 1 / -1; }
+.desk .lgc h3 { margin: 0 0 6px; }

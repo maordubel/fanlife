@@ -12,7 +12,7 @@ export type Features={allFootball:boolean;allFootballGates:ExperienceGate[];fanL
 export const DEFAULT_FEATURES:Features={allFootball:false,allFootballGates:[...EXPERIENCE_GATES],fanLeague:false,fanLeagueOff:[],friendlies:false,updatedAt:null}
 export const FEATURE_TEXT:Record<'allFootball'|'fanLeague'|'friendlies',{label:string;hint:string}>={
  allFootball:{label:'ALL FOOTBALL',hint:'The cross-club space on the hub: trivia, timeline and memory drawn from every published club.'},
- fanLeague:{label:'FAN LEAGUE',hint:'The heritage manager: one real club, players only from its own history, a season against other clubs.'},
+ fanLeague:{label:'LEGENDS MANAGER',hint:'The heritage manager: one real club, a founding draft of its own legends, seasons against other clubs.'},
  friendlies:{label:'Friendlies',hint:'Two fans’ careers meet in one match. Nothing in either season changes.'},
 }
 

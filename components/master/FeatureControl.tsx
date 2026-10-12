@@ -15,7 +15,7 @@ export function FeatureControl({initial,api,clubs=[]}:{initial:Features;clubs?:{
   <p className="desk-fine">{f[k]?'Open to every visitor.':'Off for fans. Your owner session can already play it (marked “Owner preview”).'}{f.updatedAt?` Last change ${new Date(f.updatedAt).toLocaleString('en-GB')}.`:''}</p>
   {extra}
   <button type="button" className="min-h-tap button" role="switch" aria-checked={f[k]} disabled={api.busy||(k==='friendlies'&&!f.fanLeague&&!f.friendlies)} onClick={()=>save({[k]:!f[k]},`${FEATURE_TEXT[k].label} switched ${f[k]?'off':'on'}.`)}>{f[k]?`Turn ${FEATURE_TEXT[k].label} off`:`Turn ${FEATURE_TEXT[k].label} on`}</button>
-  {k==='friendlies'&&!f.fanLeague&&!f.friendlies?<p className="desk-fine">Friendlies need FAN LEAGUE on first — a friendly is two careers meeting.</p>:null}
+  {k==='friendlies'&&!f.fanLeague&&!f.friendlies?<p className="desk-fine">Friendlies need LEGENDS MANAGER on first — a friendly is two careers meeting.</p>:null}
  </div></li>
  return <section className="desk-sub" aria-labelledby="feat-h">
   <h2 id="feat-h">Features</h2>

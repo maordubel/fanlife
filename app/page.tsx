@@ -84,7 +84,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
     <div className="mag-head"><div><p className="mag-kicker">{copy.clubs}</p><h2 className="mag-h2">{copy.pickClub}</h2></div><BackToClub clubs={open.map(c=>({id:c.id,name:c.name}))} locale={locale} label={copy.backTo}/></div>
     <div className="mag-tiles mag-tiles-hub">
      {af.open&&<Link className="mag-tile is-open is-wide af-tile" href="/all-football" data-preview={af.preview||undefined}><span className="no" aria-hidden="true">∞</span><span><b>ALL FOOTBALL</b><small>Every club’s history in one room{af.preview?' · owner preview':''}</small></span><span className="mag-tile-state">Open</span></Link>}
-     {fl.open&&<Link className="mag-tile is-open is-wide af-tile" href="/all-football/fan-league" data-preview={fl.preview||undefined}><span className="no" aria-hidden="true">FL</span><span><b>FAN LEAGUE</b><small>Manage one club through a season — its own men only{fl.preview?' · owner preview':''}</small></span><span className="mag-tile-state">Open</span></Link>}
+     {fl.open&&<Link className="mag-tile is-open is-wide af-tile" href="/all-football/legends" data-preview={fl.preview||undefined}><span className="no" aria-hidden="true">LM</span><span><b>LEGENDS MANAGER</b><small>Draft one club’s immortals and build a dynasty, season after season{fl.preview?' · owner preview':''}</small></span><span className="mag-tile-state">Open</span></Link>}
      {live.map((c,n)=>{
       const l=livery(c.id)
       return <Link key={c.id} className={`mag-tile is-open${live.length%2===1&&n===live.length-1?' is-wide':''}`} data-club={c.id} href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}>

@@ -3063,3 +3063,14 @@ Owner: *"learn the Hapoel Hebrew questions… integrate everything into the one 
 4. **Tags:** every forged question carries `facets` (`club:`, `template:`, `level:`, `kind:`, `decade:`, `derby`, `final`, `kit`, `honour`, `player`…). ALL FOOTBALL's per-club cap is `stratifiedCap` — 25/30/25/20% by level, rotating templates.
 5. **Never quizzed:** a persecution, death, war or disaster on a timeline (`SOMBRE`) — remembered, not a question. A false true/false is false by the record (an honours list is only negated when complete).
 6. Spellings are canonical per normalised key (opponent = the most frequent spelling; makers/sponsors via `brand()`), so the sanitizer drops <1%.
+
+## 110 · LEGENDS MANAGER: the rulebook is the contract, stars are the only rating a fan sees (12.10.2026)
+
+Owner rulebook V1.0 (`FANLIFE-LEGENDS-MANAGER-RULEBOOK-V1.0-2026-10-12`); replaces FAN LEAGUE behind the same switch. ADR-fanlife-0011 rev. 3.
+1. **Pure core in `lib/legends/`** (config · catalog · ratings · draft · economy · discipline · engine · league · ai · squad · career · view · friendly · lab); server in `server.ts`/`store.ts`/`admin.ts`; UI in `components/legends/`, CSS prefix `lgm-` in `app/all-football/legends/legends.css` (bronze at hue 26–28°, never yellow).
+2. **Confirmed rules are constants (`LEGENDS_RULES`); [PROPOSED] ones are `LegendsSettings`** edited in Games → ALL FOOTBALL → Legends Manager. A career copies the settings at kick-off and never re-reads them.
+3. **Eligibility:** approved, `hasPrice` (or an owner price), a recorded quota position, price 1–5. `priceFor` alone is never trusted. A club opens only when bots of four temperaments finish the draft every time (`readiness.ts`).
+4. **The draft solver is exact because a man counts toward ONE quota:** cheapest d per short group + cheapest of the rest ≤ cash, plus a trio reserve; memoised by (group, price). An offer that breaks it is shown locked with the reason.
+5. **Stars, never numbers:** percentile inside the club's own pool → 1–5 in quarters (balance across clubs); attributes are derived GAME values (stars + role lean + recorded goals for finishing) and say so. Owner may shift a club ±1 star or pin a man (`ratings.json`). The catalog stores no hidden rating, and `careerView` is tested for it.
+6. **One engine:** per-minute RNG streams (`seed:minute`) with a fixed number of draws, so decisions change only the future and the quick result equals an untouched touchline. Calibrated on the real clubs (`npm run legends:lab`): ≈2.6 goals, ≈23% draws, injuries 5% (70/25/5).
+7. Discipline order is the rule (`discipline.ts`); emergency men come from the club's archive, never join the squad, three matches max, never the same man twice.

@@ -25,3 +25,15 @@ server-only file table instead of three new tables — no SQL for the owner to r
 ## Consequences
 + No migration, no manual step; already inside the nightly `worker_*` backup. − Leaderboards across careers need a read
 model later; a career document is ~100 kB for the largest clubs (fine for one row, not for a scan).
+
+## Revision 3 — LEGENDS MANAGER replaces FAN LEAGUE (12.10.2026)
+
+Owner's rulebook V1.0 ("מנג'ר האגדות"). Same switch (`features.fanLeague`, labelled LEGENDS MANAGER), same storage contract,
+a new area: `legends/` in `worker_fanlife_files` (careers, owner index, friendlies, `settings.json`, `ratings.json`). FAN LEAGUE's
+`fanleague/` test careers are no longer read (owner: clear them). Old URLs redirect to `/all-football/legends`.
+
+- One document per career, compare-and-swap per action, `rev` + idempotency key, refused without a durable store.
+- Three active careers per owner, checked inside the owner's lane on create and on restore (best effort across instances:
+  the store has no transaction; a race could at worst let a fourth through, never lose data).
+- The rulebook's [PROPOSED] values (§9) are settings the control room edits; a career freezes them at kick-off.
+- Supabase tables of §3 were NOT created: the document store already gives atomic per-career writes, and §3 is marked proposed.

@@ -54,7 +54,7 @@ export default async function Page({searchParams}:{searchParams:{mode?:string;a?
    <section className="af-stories" aria-label="The gates">
     {reports.map(r=><Story key={r.gate} r={r} href={href(r.gate)}/>)}
    </section>
-   {fl.open?<Link className="af-league" href="/all-football/fan-league"><span className="af-kicker">The manager’s edition{fl.preview?' · owner preview':''}</span><b>FAN LEAGUE</b><small>One real club, only its own men, a whole season. Sign from other decades of the same club.</small><span aria-hidden="true">→</span></Link>:null}
+   {fl.open?<Link className="af-league" href="/all-football/legends"><span className="af-kicker">The hall of fame edition{fl.preview?' · owner preview':''}</span><b>LEGENDS MANAGER</b><small>One real club. Only the men who wore its shirt. Draft seventeen legends and build a dynasty.</small><span aria-hidden="true">→</span></Link>:null}
    <p className="af-note">Every question, date and pair here was approved for its own club first. A club joins this page when its gate is open to fans; nothing is invented to fill a round.</p>
   </main>
  </Shell>

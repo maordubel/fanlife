@@ -6,6 +6,8 @@ export const EVALUATION_FILES = ['./scripts/master/local-bootstrap.sql', './supa
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // FAN LEAGUE became LEGENDS MANAGER (owner, 12.10.2026); its test careers were cleared, so every old link lands at the new door
+  async redirects() { return [{ source: '/all-football/fan-league/:path*', destination: '/all-football/legends', permanent: false }, { source: '/all-football/fan-league', destination: '/all-football/legends', permanent: false }] },
   reactStrictMode: true,
   experimental: {
     serverComponentsExternalPackages: ['@electric-sql/pglite'], cpus: 2,

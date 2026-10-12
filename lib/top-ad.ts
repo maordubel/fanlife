@@ -13,7 +13,7 @@
 export const TOP_AD_SRC = '/dubel-top-ad.js'
 
 const NEVER_PREFIX = ['/master', '/qa', '/api', '/auth', '/life', '/city', '/c/']
-/** ALL FOOTBALL and FAN LEAGUE: their front page is a reading page; every gate, career and match is a run (rule 28) */
+/** ALL FOOTBALL and LEGENDS MANAGER: their front page is a reading page; every gate, career and match is a run (rule 28) */
 const EXPERIENCE_RUNS = /^\/all-football\/.+/
 /** THE WORKER's gate routes (rule 24) and the club gates are game screens. */
 const WORKER_GAMES = ['/xi', '/trivia', '/lineup', '/kits/build', '/memory', '/polls', '/goal', '/blind-cow', '/derby', '/timeline', '/royal-rumble', '/away-days', '/tik']
