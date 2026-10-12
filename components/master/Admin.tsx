@@ -16,6 +16,8 @@ import {ClubFile,type ClubFileView} from './ClubFile'
 import {DataCenter,type RunsRow} from './DataCenter'
 import {DisplayControl} from './DisplayControl'
 import {TopAdControl} from './TopAdControl'
+import {FeatureControl} from './FeatureControl'
+import type {Features} from '@/lib/features'
 import {DEFAULT_TOP_AD,type TopAdSetting} from '@/lib/top-ad'
 import {GoalsAutomation} from './GoalsAutomation'
 import {deskHref,type AttentionItem} from '@/lib/master/attention'
@@ -38,7 +40,7 @@ const VIEW_OUT:Record<ClubView,string>={launch:'launch',summary:'summary',decisi
  * reload, a bookmark and Back keep the context; the old `?tab=` links are mapped on the server. Global sections show
  * all clubs; a club is a scope you enter and leave on purpose.
  */
-export function Admin({ads,initial,summaries,adapters,runs,display,storage,section,view,club:scope,attention,ops,audience,gaps}:{ads?:TopAdSetting;initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string;migration?:{pending:string|null;blobRetired:boolean}};section:DeskSection;view:string|null;club:string|null;attention:AttentionItem[];ops:DeskOps;audience?:ReactNode;gaps?:ReactNode}){
+export function Admin({tasks,features,ads,initial,summaries,adapters,runs,display,storage,section,view,club:scope,attention,ops,audience,gaps}:{ads?:TopAdSetting;initial:LightState;summaries:ClubSummary[];adapters:AdapterInfo[];runs:RunsRow[];display:LifeDisplayState;storage?:{kind:string;durable:boolean;note:string;error?:string;migration?:{pending:string|null;blobRetired:boolean}};section:DeskSection;view:string|null;club:string|null;attention:AttentionItem[];ops:DeskOps;audience?:ReactNode;gaps?:ReactNode;tasks?:ReactNode;features?:Features}){
  const router=useRouter(),path=usePathname(),params=useSearchParams()
  const go=(next:Record<string,string|null>)=>{const q=new URLSearchParams(params.toString());q.delete('tab');for(const [k,v] of Object.entries(next)){if(v)q.set(k,v);else q.delete(k)}router.push(`${path}?${q}`,{scroll:false})}
  const api=useAdminApi(),[state,setState]=useState(initial),[sums,setSums]=useState(summaries)
@@ -61,11 +63,11 @@ export function Admin({ads,initial,summaries,adapters,runs,display,storage,secti
  return <div className="admin cr desk-content">
   {status}
   {section==='overview'&&<>
-   <header className="desk-head"><p className="desk-kicker">Overview</p><h1 className="desk-h1">What needs your attention</h1></header>
-   <nav className="desk-quick" aria-label="Quick actions">{([['Players','Edit, merge duplicates, publish',deskHref('data',{view:'players'})],['Publish gates','Choose and switch on gates',deskHref('clubs')],['Archive & sources','Collect, review, parse',deskHref('data')],['Marketplace','Shirts, offers, auctions','/master/exchange'],['Contributions','Fan submissions to review','/master/contributions']] as const).map(([t,d,h])=><Link key={t} href={h} className="min-h-tap"><b>{t}</b><small>{d}</small></Link>)}</nav>
-   {attention.length===0?<div className="desk-state" data-state="ok"><b>Nothing waiting.</b> No blocker, decision, failed run or storage problem.</div>:
+   <header className="desk-head"><p className="desk-kicker">The desk</p><h1 className="desk-h1">What needs you now</h1></header>
+   {tasks??<>   {attention.length===0?<div className="desk-state" data-state="ok"><b>Nothing waiting.</b> No blocker, decision, failed run or storage problem.</div>:
    <ol className="desk-inbox">{attention.slice(0,5).map(a=><li key={a.id} data-priority={a.priority}><span className="desk-stamp">{a.priority===1?'Blocking':a.priority===2?'To decide':'Worth a look'}</span><div><p className="desk-inbox-club">{a.clubName?<bdi>{a.clubName}</bdi>:'Whole application'}</p><h2>{a.title}</h2><p>{a.reason}</p></div><Link className="desk-btn" href={a.href}>{a.cta} →</Link></li>)}</ol>}
-   {attention.length>5&&<details className="desk-more"><summary className="min-h-tap">{attention.length-5} more waiting</summary><ol className="desk-inbox">{attention.slice(5).map(a=><li key={a.id} data-priority={a.priority}><span className="desk-stamp">{a.priority===1?'Blocking':a.priority===2?'To decide':'Worth a look'}</span><div><p className="desk-inbox-club">{a.clubName?<bdi>{a.clubName}</bdi>:'Whole application'}</p><h2>{a.title}</h2><p>{a.reason}</p></div><Link className="desk-btn" href={a.href}>{a.cta} →</Link></li>)}</ol></details>}
+   {attention.length>5&&<details className="desk-more"><summary className="min-h-tap">{attention.length-5} more waiting</summary><ol className="desk-inbox">{attention.slice(5).map(a=><li key={a.id} data-priority={a.priority}><span className="desk-stamp">{a.priority===1?'Blocking':a.priority===2?'To decide':'Worth a look'}</span><div><p className="desk-inbox-club">{a.clubName?<bdi>{a.clubName}</bdi>:'Whole application'}</p><h2>{a.title}</h2><p>{a.reason}</p></div><Link className="desk-btn" href={a.href}>{a.cta} →</Link></li>)}</ol></details>}</>}
+   <nav className="desk-quick desk-quick-after" aria-label="Quick actions">{([['Players','Edit, merge duplicates, publish',deskHref('players')],['Publish gates','Choose and switch on gates',deskHref('clubs')],['Archive & sources','Collect, review, parse',deskHref('data')],['Market','Shirts, offers, auctions',deskHref('market')],['Community','Fan submissions to review',deskHref('community')],['Games','Every gate, every club',deskHref('games')]] as const).map(([t,d,h])=><Link key={t} href={h} className="min-h-tap"><b>{t}</b><small>{d}</small></Link>)}</nav>
    <section className="desk-sub" aria-labelledby="layers-h"><h2 id="layers-h">Clubs by layer</h2>
     <dl className="desk-stats">
      <div><dt>Data ready</dt><dd>{layer.dataReady}</dd><small>at least one gate playable from compiled data</small></div>
@@ -122,6 +124,7 @@ export function Admin({ads,initial,summaries,adapters,runs,display,storage,secti
   {section==='settings'&&<>
    <header className="desk-head"><p className="desk-kicker">Settings</p><h1 className="desk-h1">What the application does</h1></header>
    <section className="desk-sub" aria-labelledby="gen-h"><h2 id="gen-h">General</h2><ul className="desk-rows"><li><span className="desk-stamp">Fixed</span><div><b>Control-room language</b><p>English. Evidence and names keep their original language and direction.</p></div></li><li><span className="desk-stamp">Fixed</span><div><b>Times</b><p>Stored and shown in UTC.</p></div></li><li><span className="desk-stamp">Per club</span><div><b>Gates and publication</b><p>Switched on in each club’s workspace → Readiness, behind the activation check.</p></div><Link className="desk-btn ghost" href={deskHref('clubs')}>Clubs →</Link></li></ul></section>
+   {features?<FeatureControl initial={features} api={api}/>:null}
    <TopAdControl initial={ads??DEFAULT_TOP_AD} api={api}/>
    <DisplayControl initial={display} api={api}/>
    <section className="desk-sub" aria-labelledby="acc-h"><h2 id="acc-h">Access</h2><p>One owner identity, signed in with the owner key. The session lasts 30 days on this browser; changing the key on Vercel signs everyone out.</p></section>

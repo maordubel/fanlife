@@ -27,11 +27,12 @@ import {ReportsPanel,BulkPanel,MergePanel} from './PlayersTools'
 export function PlayersDesk(){
  const router=useRouter(),path=usePathname(),sp=useSearchParams()
  const [data,setData]=useState<Listing|null>(null),[err,setErr]=useState<string|null>(null),[busy,setBusy]=useState(false),[open,setOpen]=useState<{club:string;id:string}|null>(null)
- const qs=useMemo(()=>{const p=new URLSearchParams(sp.toString());p.set('section','data');p.set('view','players');return p},[sp])
+ const qs=useMemo(()=>{const p=new URLSearchParams(sp.toString());if(sp.get('section')==='data'){p.set('view','players')}else{p.set('section','players');p.delete('view')};return p},[sp])
  const apiQs=useMemo(()=>{const p=new URLSearchParams();for(const k of ['club','q','position','price','status','decade','sort','dir','page'])if(sp.get(k))p.set(k,sp.get(k)!);return p.toString()},[sp])
  const load=useCallback(async()=>{setBusy(true);const r=await call<Listing>('/api/master/players?'+apiQs);setBusy(false);if(r.ok){setData(r.data);setErr(null)}else setErr(r.status===401?'Your session ended — sign in again.':r.data.error||'The list could not be loaded.')},[apiQs])
  useEffect(()=>{void load()},[load])
- useEffect(()=>{const id=sp.get('player'),club=sp.get('pc');if(id&&club)setOpen({club,id})},[]) // eslint-disable-line react-hooks/exhaustive-deps
+ const deepId=sp.get('player'),deepClub=sp.get('pc')
+ useEffect(()=>{if(deepId&&deepClub)setOpen({club:deepClub,id:deepId})},[deepId,deepClub])
  const set=(k:string,v:string|null)=>{const p=new URLSearchParams(qs.toString());if(v)p.set(k,v);else p.delete(k);if(k!=='page')p.delete('page');router.replace(path+'?'+p.toString(),{scroll:false})}
  const toggle=(k:string,v:string)=>{const cur=(sp.get(k)||'').split(',').filter(Boolean);const next=cur.includes(v)?cur.filter(x=>x!==v):[...cur,v];set(k,next.join(',')||null)}
  const active=(k:string,v:string)=>(sp.get(k)||'').split(',').includes(v)
@@ -39,7 +40,7 @@ export function PlayersDesk(){
  const groups=useMemo(()=>{const out:{key:string;title:string;rows:Row[]}[]=[];for(const r of data?.rows||[]){const key=r.club+'|'+r.decade,last=out[out.length-1];if(last&&last.key===key)last.rows.push(r);else out.push({key,title:`${r.clubName} · ${r.decade==='unknown'?'years not recorded':r.decade}`,rows:[r]})}return out},[data])
  const c=data?.counts,tab=sp.get('tab')||''
  return <div className="pcc">
-  <header className="desk-head"><p className="desk-kicker">Data · Player Control Center</p><h1 className="desk-h1">Every player, every club</h1>
+  <header className="desk-head"><p className="desk-kicker">Players · Player Control Center</p><h1 className="desk-h1">Every player, every club</h1>
    <p className="pcc-lede">Edit a man’s positions, price, manager score — or remove him from the squad. A draft changes nothing; a published change reaches every game, and the archive’s own value stays on file and one click away.</p></header>
   <nav className="pcc-tabs" aria-label="Player Control Center">{([['','Players'],['reports','Reports'],['merge','Merge duplicates'],['bulk','Bulk edit (CSV)']] as const).map(([k,l])=><button key={k} type="button" className="pcc-chip" aria-pressed={(sp.get('tab')||'')===k} onClick={()=>set('tab',k||null)}>{l}</button>)}</nav>
   {tab==='reports'?<ReportsPanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='merge'?<MergePanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='bulk'?<BulkPanel/>:<>
@@ -104,7 +105,6 @@ function Drawer({club,id,onClose,onChanged}:{club:string;id:string;onClose:()=>v
   const x=r.data,eff=x.row,p=x.draft?.patch||{};setD(x)
   setPositions((p.positions as Pos[]|undefined)??eff.positions);setPrice((p.price as number|undefined)??eff.price);setRating((p.rating as number|undefined)??eff.rating);setRemoved((p.removed as boolean|undefined)??eff.removed);setComment((p.note as string|undefined)??eff.note);setImpact(null)},[club,id])
  useEffect(()=>{void load()},[load]); useEffect(()=>{if(ready)closeRef.current?.focus()},[ready])
- useEffect(()=>{const h=(e:KeyboardEvent)=>{if(e.key==='Escape')onClose()};window.addEventListener('keydown',h);return()=>window.removeEventListener('keydown',h)},[onClose])
  const patch=useMemo(()=>{
   if(!d)return {};const b=d.base,o:Record<string,unknown>={}
   o.price=price===b.basePrice?null:price
@@ -114,6 +114,12 @@ function Drawer({club,id,onClose,onChanged}:{club:string;id:string;onClose:()=>v
   o.note=comment.trim()?comment.trim():null
   return o},[d,price,positions,rating,removed,comment])
  const dirty=useMemo(()=>{if(!d)return false;const e=d.row;return !same(positions,e.positions)||price!==e.price||rating!==e.rating||removed!==e.removed||comment.trim()!==(e.note||'')},[d,positions,price,rating,removed,comment])
+ // CRM 1 §6: closing a dirty form asks first; Tab stays inside the dialog; focus returns to the row that opened it
+ const dialog=useRef<HTMLElement>(null),opener=useRef<Element|null>(typeof document!=='undefined'?document.activeElement:null)
+ const close=useCallback(()=>{if(dirty&&!window.confirm('You have changes that are not saved or published. Close and discard them?'))return;onClose();const o=opener.current as HTMLElement|null;if(o&&typeof o.focus==='function')requestAnimationFrame(()=>o.focus())},[dirty,onClose])
+ useEffect(()=>{const h=(e:KeyboardEvent)=>{if(e.key!=='Tab'||!dialog.current)return;const f=[...dialog.current.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])')].filter(x=>x.offsetParent!==null);if(!f.length)return;const first=f[0]!,last=f[f.length-1]!;if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}};document.addEventListener('keydown',h);return()=>document.removeEventListener('keydown',h)},[])
+ useEffect(()=>{const prev=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=prev}},[])
+ useEffect(()=>{const h=(e:KeyboardEvent)=>{if(e.key==='Escape')close()};window.addEventListener('keydown',h);return()=>window.removeEventListener('keydown',h)},[close])
  const togglePos=(p:Pos)=>setPositions(cur=>cur.includes(p)?cur.filter(x=>x!==p):[...cur,p])
  const makePrimary=(p:Pos)=>setPositions(cur=>[p,...cur.filter(x=>x!==p)])
  const act=async(action:string,extra:Record<string,unknown>={})=>{setWorking(true);setErr(null);setNote(null)
@@ -131,9 +137,9 @@ function Drawer({club,id,onClose,onChanged}:{club:string;id:string;onClose:()=>v
  // the desk body is its own stacking layer (z 1) beneath the top bar and the tab bar, so the drawer is lifted to the desk root, where a dialog belongs (rule 33)
  const host=typeof document!=='undefined'?(document.querySelector('.desk') as HTMLElement|null)??document.body:null
  if(!host)return null
- return createPortal(<div className="pcc-overlay" role="presentation" onMouseDown={ev=>{if(ev.target===ev.currentTarget)onClose()}}>
-  <aside className="pcc-drawer z-[60]" role="dialog" aria-modal="true" aria-label={e?`Edit ${e.name}`:'Edit player'}>
-   <header><div><p className="desk-kicker">{e?.clubName}</p><h2 dir="auto">{e?.name??'Loading…'}</h2>{e&&e.nameOriginal!==e.name&&<p dir="auto" className="pcc-orig">{e.nameOriginal}</p>}</div><button ref={closeRef} type="button" className="desk-btn ghost" onClick={onClose} aria-label="Close">Close ✕</button></header>
+ return createPortal(<div className="pcc-overlay" role="presentation" onMouseDown={ev=>{if(ev.target===ev.currentTarget)close()}}>
+  <aside ref={dialog} className="pcc-drawer z-[60]" role="dialog" aria-modal="true" aria-label={e?`Edit ${e.name}`:'Edit player'}>
+   <header><div><p className="desk-kicker">{e?.clubName}</p><h2 dir="auto">{e?.name??'Loading…'}</h2>{e&&e.nameOriginal!==e.name&&<p dir="auto" className="pcc-orig">{e.nameOriginal}</p>}</div><button ref={closeRef} type="button" className="desk-btn ghost" onClick={close} aria-label="Close">Close ✕</button></header>
    {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}{note&&<p role="status" className="desk-state">{note}</p>}
    {e&&d&&<>
     <dl className="pcc-id"><div><dt>Player id</dt><dd><code>{e.id}</code></dd></div><div><dt>Years</dt><dd>{e.fromYear??'—'}{e.toYear&&e.toYear!==e.fromYear?`–${e.toYear}`:''} · {e.decade==='unknown'?'not recorded':e.decade}</dd></div><div><dt>Source</dt><dd>{e.wave?'Roster wave — one source, unreviewed':'Archive'} · confidence {e.confidence}</dd></div><div><dt>Position on file</dt><dd>{e.basePositions.length?e.basePositions.join(' / '):'none'} <small>({e.positionState})</small></dd></div></dl>
