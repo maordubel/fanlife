@@ -207,7 +207,7 @@
 .pcc-chip[aria-pressed='true'], .pcc-seg button[aria-pressed='true'] { background: var(--mag-ink); color: var(--mag-paper); }
 .pcc-count { font-family: var(--mag-mono); font-size: 13px; margin: 0 0 8px; }
 .pcc-table { border: 2px solid var(--mag-ink); background: var(--mag-card); }
-.pcc-head, .pcc-row { display: grid; grid-template-columns: minmax(180px, 2.4fr) 92px minmax(120px, 1fr) 100px 80px minmax(130px, 1fr) 76px; gap: 10px; align-items: center; padding: 8px 12px; }
+.pcc-head, .pcc-row { display: grid; grid-template-columns: minmax(170px, 2.4fr) 92px minmax(100px, 1fr) 104px 156px minmax(110px, 1fr) 76px; gap: 10px; align-items: center; padding: 8px 12px; }
 .pcc-head { font-family: var(--mag-mono); font-size: 12px; font-weight: 700; border-block-end: 2px solid var(--mag-ink); position: sticky; inset-block-start: var(--desk-bar); background: var(--mag-card); z-index: 2; }
 .pcc .pcc-group, .desk .pcc-group { font-size: 20px !important; line-height: 1.1 !important; margin: 0; padding: 8px 12px; background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-condensed); font-size: 20px; text-transform: uppercase; letter-spacing: .4px; }
 .pcc-row { border-block-end: 1px solid var(--desk-rule); min-block-size: 56px; }
@@ -394,3 +394,40 @@
 .desk .lgc-pin { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); margin-block-start: 8px; }
 .desk .lgc-pin label { display: grid; gap: 4px; font-size: 12px; } .desk .lgc-pin .desk-actions { grid-column: 1 / -1; }
 .desk .lgc h3 { margin: 0 0 6px; }
+
+/* the table edits itself (rule 113): sortable column names, a price select and a score stepper in the row, and the row's own answer */
+.pcc-sort { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; min-block-size: 44px; font: inherit; text-transform: uppercase; letter-spacing: .5px; }
+.pcc-sort i { font-style: normal; font-size: 11px; opacity: .45; } .pcc-sort[data-on] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; } .pcc-sort[data-on] i { opacity: 1; color: var(--mag-vermilion); }
+.pcc-sort:focus-visible { outline: 3px solid var(--mag-vermilion); outline-offset: 2px; }
+.pcc-inline { font-family: var(--mag-mono); font-weight: 700; font-size: 14px; border: 2px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); min-block-size: 44px; padding: 0 6px; }
+select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disabled { opacity: .55; cursor: not-allowed; }
+.pcc-step { display: inline-flex; align-items: stretch; } .pcc-step input.pcc-inline { inline-size: 52px; text-align: center; border-inline: 0; -moz-appearance: textfield; } .pcc-step input::-webkit-inner-spin-button, .pcc-step input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.pcc-step button { inline-size: 44px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 18px; cursor: pointer; } .pcc-step button:hover:not(:disabled) { background: var(--mag-ink); color: var(--mag-paper); } .pcc-step button:disabled { opacity: .4; cursor: not-allowed; }
+.pcc-badges small { font-family: var(--mag-mono); font-size: 11px; color: var(--mag-muted); inline-size: 100%; }
+.pcc-qnote { grid-column: 1 / -1; margin: 0; padding: 6px 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 14px; border-inline-start: 6px solid var(--mag-ink); background: var(--mag-paper); }
+.pcc-qnote[data-state='saved'] { border-inline-start-color: var(--mag-green); } .pcc-qnote[data-state='error'] { border-inline-start-color: var(--mag-vermilion); font-weight: 700; }
+.pcc-qnote .pcc-link { display: inline-flex; align-items: center; min-block-size: 44px; font-weight: 700; }
+.pcc-row[data-q='saved'] { background: color-mix(in srgb, var(--mag-green) 8%, var(--mag-card)); }
+@media (max-width: 860px) { .pcc-row > .pcc-qnote { grid-column: 1 / -1; grid-area: auto; } }
+/* merge duplicates: two cards side by side, three answers, one short confirmation */
+.pcc-pair { background: var(--mag-card); border: 2px solid var(--mag-ink); }
+.pcc-pair-why { margin: 0; font-size: 14px; }
+.pcc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pcc-man { display: grid; gap: 6px; align-content: start; padding: 10px 12px; border: 1px solid var(--desk-rule); background: var(--mag-paper); }
+.pcc-man[data-suggested] { border: 2px solid var(--mag-navy); }
+.pcc-man h3 { margin: 0; font-family: var(--mag-condensed); font-size: 24px; line-height: 1.05; }
+.pcc-man-tag { margin: 0; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; } .pcc-man-tag span { color: var(--mag-navy); }
+.pcc-man dl { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; margin: 0; font-size: 13px; } .pcc-man dt { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; } .pcc-man dd { margin: 0; }
+.pcc-man .desk-btn { justify-self: start; white-space: normal; text-align: start; }
+.pcc-confirm { border: 3px solid var(--mag-ink); padding: 10px 12px; background: var(--mag-paper); display: grid; gap: 6px; }
+.pcc-confirm-q { margin: 0; font-size: 18px; }
+.pcc-kept ul { list-style: none; margin: 6px 0 0; padding: 0; } .pcc-kept li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; border-block-end: 1px solid var(--desk-rule); font-size: 13px; } .pcc-kept code { overflow-wrap: anywhere; }
+@media (max-width: 640px) { .pcc-vs { grid-template-columns: 1fr; } }
+/* checking facts: a plain question, the page that said it under it, Yes / No / Later */
+.desk .cr-q-ask { margin: 0; font-size: 17px; line-height: 1.35; } .desk .cr-q-ask .badge { margin-inline-end: 8px; }
+.desk .cr-q-from { margin: 4px 0 0; font-size: 13px; color: var(--mag-muted); } .desk .cr-q-from a { color: var(--mag-ink); }
+.desk .cr-q .cr-decide button { min-inline-size: 88px; }
+.desk .cr-toggle { display: inline-flex; } .desk .cr-toggle button { min-inline-size: 88px; padding: 0 14px; border: 2px solid var(--mag-ink); background: transparent; color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; cursor: pointer; } .desk .cr-toggle button[aria-pressed='true'] { background: var(--mag-ink); color: var(--mag-paper); }
+.desk .cr-allfrom { border: 2px dashed var(--mag-ink); padding: 8px 12px; margin-block-end: 12px; } .desk .cr-allfrom p { margin: 4px 0; }
+/* adding a source: numbered steps */
+.desk .cr-steps { display: grid; gap: 12px; } .desk .cr-step { border: 0; border-inline-start: 4px solid var(--mag-ink); margin: 0; padding: 4px 0 4px 12px; display: grid; gap: 8px; } .desk .cr-step legend { font-family: var(--mag-mono); font-weight: 700; font-size: 13px; letter-spacing: .5px; padding: 0; }

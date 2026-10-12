@@ -16,7 +16,7 @@ describe('the Editor’s Desk inbox (plan §4)',()=>{
   const items=attention([club({research:{...club().research,findingsPending:3}}),club({id:'live',name:'Live FC',control:{status:'live',version:1,gatesOn:[2]},activation:{allowed:false,reasons:['Gate 2 is switched on but its data is not playable (LOCKED).']}})],[],{...ok,storage:{durable:false,kind:'temporary'}})
   expect(items.map(i=>i.id)).toEqual(['storage','activation:live','findings:x-club'])
   expect(items[1]!.href).toBe(deskHref('clubs',{club:'live',view:'readiness'}))
-  expect(items[2]!.title).toBe('3 findings to decide')
+  expect(items[2]!.title).toBe('Check 3 new facts')
  })
  it('unconnected measurement is an item, not zero visitors',()=>{expect(attention([],[],{...ok,measurement:'not-connected'}).map(i=>i.id)).toEqual(['measurement'])})
 })

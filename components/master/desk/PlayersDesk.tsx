@@ -8,7 +8,7 @@ import {useRouter,useSearchParams,usePathname} from 'next/navigation'
  * the server answers with the impact of a change (price ladder, game readiness, locks) and this screen shows it before anything is published.
  */
 type Pos='GK'|'DF'|'MF'|'FW'
-type Row={mergedInto?:string|null;club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases:string[];decade:string;fromYear:number|null;toYear:number|null;basePositions:Pos[];positions:Pos[];positionState:string;basePrice:number;price:number;priceSource:string;baseRating:number;rating:number;ratingBasis:string;locked:boolean;lockReason:string;removed:boolean;overridden:string[];draft:boolean;wave:boolean;confidence:number;rev:number;updatedAt:string|null;updatedBy:string|null;note:string}
+type Row={mergedInto?:string|null;club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases:string[];decade:string;fromYear:number|null;toYear:number|null;basePositions:Pos[];positions:Pos[];positionState:string;basePrice:number;price:number;priceSource:string;baseRating:number;rating:number;ratingBasis:string;locked:boolean;lockReason:string;removed:boolean;overridden:string[];draft:boolean;wave:boolean;confidence:number;rev:number;updatedAt:string|null;updatedBy:string|null;note:string;apps?:number|null;goals?:number|null}
 type Listing={rows:Row[];total:number;page:number;pages:number;revision:number;counts:Record<string,number>;decades:string[];storage:{kind:string;durable:boolean;error:string|null}}
 type Impact={quota:{ok:boolean;want:Record<number,number>;have:Record<number,number>;violations:string[]};readiness:{before:string[];after:string[];broke:string[]};consumers:string[];lockedChange:boolean;iconChange:boolean}
 type AuditEvent={id:string;at:string;actor:string;action:string;reason:string;before:Record<string,unknown>|null;after:Record<string,unknown>|null;revision:number}
@@ -17,6 +17,10 @@ type Detail={row:Row;base:BaseInfo;override:{rev:number}|null;draft:{patch:Recor
 const POS:Pos[]=['GK','DF','MF','FW']
 const CLUBS:(readonly [string,string])[]=[['celtic','Celtic'],['aek-athens','AEK Athens'],['olympiacos','Olympiacos'],['panathinaikos','Panathinaikos'],['st-pauli','FC St. Pauli'],['zrinjski-mostar','Zrinjski Mostar'],['hapoel-petah-tikva','Hapoel Petah Tikva'],['hapoel-tel-aviv','Hapoel Tel Aviv']]
 const STATUS:(readonly [string,string])[]=[['','Every man'],['missing-position','No position'],['fallback-price','Price not in the frozen list'],['overridden','Edited by you'],['draft','Has a draft'],['removed','Removed from the squad'],['merged','Merged into another record'],['locked','Locked / pinned'],['wave','Roster-wave (unreviewed)'],['archive','Archive proper']]
+/** the sortable columns (null = not sortable), and which way a first click sorts: names and years from the start, numbers and edits from the top */
+const COLUMNS:(readonly [string|null,string])[]=[['name','Player'],['years','Years'],['position','Positions'],['price','Price'],['rating','Score'],['updated','Edited']]
+const FIRST_DIR:Record<string,'asc'|'desc'>={name:'asc',years:'asc',position:'asc',price:'desc',rating:'desc',updated:'desc'}
+const SORT_OPTIONS:(readonly [string,string])[]=[['club:asc','Club · decade · name'],['name:asc','Name A → Z'],['name:desc','Name Z → A'],['price:desc','Price high → low'],['price:asc','Price low → high'],['rating:desc','Score high → low'],['rating:asc','Score low → high'],['years:asc','Earliest first'],['years:desc','Latest first'],['position:asc','Position GK → FW'],['updated:desc','Recently edited']]
 const same=(a:readonly string[],b:readonly string[])=>a.length===b.length&&a.every((x,i)=>x===b[i])
 async function call<T>(url:string,init?:RequestInit):Promise<{ok:boolean;status:number;data:T&{error?:string;detail?:unknown}}>{
  try{const r=await fetch(url,{...init,headers:{'Content-Type':'application/json',...(init?.headers||{})},cache:'no-store'});return {ok:r.ok,status:r.status,data:await r.json().catch(()=>({})) as never}}
@@ -39,9 +43,12 @@ export function PlayersDesk(){
  const searchRef=useRef<HTMLInputElement>(null)
  const groups=useMemo(()=>{const out:{key:string;title:string;rows:Row[]}[]=[];for(const r of data?.rows||[]){const key=r.club+'|'+r.decade,last=out[out.length-1];if(last&&last.key===key)last.rows.push(r);else out.push({key,title:`${r.clubName} · ${r.decade==='unknown'?'years not recorded':r.decade}`,rows:[r]})}return out},[data])
  const c=data?.counts,tab=sp.get('tab')||''
+ // sorting: a click on a column name sorts by it; a second click turns the order round. Grouping by club and decade only when sorted by club.
+ const sort=sp.get('sort')||'club',dir=sp.get('dir')==='desc'?'desc':'asc',grouped=sort==='club'
+ const sortBy=(key:string)=>{const p=new URLSearchParams(qs.toString());const d=sort===key?(dir==='asc'?'desc':'asc'):FIRST_DIR[key]??'asc';p.set('sort',key);p.set('dir',d);p.delete('page');router.replace(path+'?'+p.toString(),{scroll:false})}
  return <div className="pcc">
   <header className="desk-head"><p className="desk-kicker">Players · Player Control Center</p><h1 className="desk-h1">Every player, every club</h1>
-   <p className="pcc-lede">Edit a man’s positions, price, manager score — or remove him from the squad. A draft changes nothing; a published change reaches every game, and the archive’s own value stays on file and one click away.</p></header>
+   <p className="pcc-lede">Change a price or a score right in the table — it saves at once and every game uses it. Click a column name to sort. <b>Edit</b> opens everything else: positions, a note, removing a man.</p></header>
   <nav className="pcc-tabs" aria-label="Player Control Center">{([['','Players'],['reports','Reports'],['merge','Merge duplicates'],['bulk','Bulk edit (CSV)']] as const).map(([k,l])=><button key={k} type="button" className="pcc-chip" aria-pressed={(sp.get('tab')||'')===k} onClick={()=>set('tab',k||null)}>{l}</button>)}</nav>
   {tab==='reports'?<ReportsPanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='merge'?<MergePanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='bulk'?<BulkPanel/>:<>
   {data&&!data.storage.durable&&<p role="alert" className="desk-state" data-state="error"><b>Changes here will not survive a restart.</b> The control room has no durable store connected ({data.storage.kind}). Set SUPABASE_SERVICE_ROLE_KEY before relying on it.</p>}
@@ -59,15 +66,16 @@ export function PlayersDesk(){
    <label>Decade<select value={sp.get('decade')||''} onChange={e=>set('decade',e.target.value||null)}><option value="">All decades</option>{(data?.decades||[]).map(d=><option key={d} value={d}>{d==='unknown'?'Years not recorded':d}</option>)}</select></label>
    <label>Show<select value={sp.get('status')||''} onChange={e=>set('status',e.target.value||null)}>{STATUS.map(([v,l])=><option key={v} value={v}>{l}</option>)}</select></label>
    <label>Sort<select value={`${sp.get('sort')||'club'}:${sp.get('dir')||'asc'}`} onChange={e=>{const [s,d]=e.target.value.split(':');const p=new URLSearchParams(qs.toString());p.set('sort',s!);p.set('dir',d!);p.delete('page');router.replace(path+'?'+p.toString(),{scroll:false})}}>
-    {([['club:asc','Club · decade · name'],['name:asc','Name A–Z'],['price:desc','Price high → low'],['price:asc','Price low → high'],['rating:desc','Manager score high → low'],['years:asc','Earliest first'],['updated:desc','Recently edited']] as const).map(([v,l])=><option key={v} value={v}>{l}</option>)}</select></label>
+    {SORT_OPTIONS.map(([v,l])=><option key={v} value={v}>{l}</option>)}</select></label>
    {['club','position','price','decade','status','q'].some(k=>sp.get(k))&&<button type="button" className="min-h-tap desk-btn ghost" onClick={()=>{const p=new URLSearchParams(qs.toString());for(const k of ['club','position','price','decade','status','q','page'])p.delete(k);router.replace(path+'?'+p.toString(),{scroll:false})}}>Clear all filters</button>}
    <a className="min-h-tap desk-btn ghost" href={'/api/master/players/export?'+apiQs}>Export CSV</a>
   </section>
   <p className="pcc-count" role="status">{busy?'Loading…':data?`${data.total.toLocaleString('en')} players · page ${data.page} of ${data.pages}`:''}</p>
   {data&&!data.rows.length&&!busy&&<p className="desk-state">No player matches. Clear a filter to widen the search.</p>}
   <div className="pcc-table" role="table" aria-label="Players">
-   <div className="pcc-head" role="row"><span role="columnheader">Player</span><span role="columnheader">Years</span><span role="columnheader">Positions</span><span role="columnheader">Price</span><span role="columnheader">Score</span><span role="columnheader">State</span><span role="columnheader"><span className="sr-only">Edit</span></span></div>
-   {groups.map(g=><div key={g.key} role="rowgroup"><h2 className="pcc-group">{g.title}</h2>{g.rows.map(r=><Line key={r.club+r.id} r={r} onOpen={()=>setOpen({club:r.club,id:r.id})}/>)}</div>)}
+   <div className="pcc-head" role="row">{COLUMNS.map(([key,label])=>{const on=sort===key;return <span key={label} role="columnheader" aria-sort={on?(dir==='asc'?'ascending':'descending'):'none'}>{key?<button type="button" className="min-h-tap pcc-sort" data-on={on||undefined} onClick={()=>sortBy(key)} title={`Sort by ${label.toLowerCase()}`}>{label}<i aria-hidden="true">{on?(dir==='asc'?'▲':'▼'):'↕'}</i></button>:label}</span>})}<span role="columnheader"><span className="sr-only">Edit</span></span></div>
+   {grouped?groups.map(g=><div key={g.key} role="rowgroup"><h2 className="pcc-group">{g.title}</h2>{g.rows.map(r=><Line key={r.club+r.id+r.rev} r={r} onOpen={()=>setOpen({club:r.club,id:r.id})}/>)}</div>)
+    :<div role="rowgroup">{(data?.rows||[]).map(r=><Line key={r.club+r.id+r.rev} r={r} showClub onOpen={()=>setOpen({club:r.club,id:r.id})}/>)}</div>}
   </div>
   {data&&data.pages>1&&<nav className="pcc-pages" aria-label="Pages"><button type="button" className="desk-btn ghost" disabled={data.page<=1} onClick={()=>set('page',String(data.page-1))}>← Previous</button><span>Page {data.page} / {data.pages}</span><button type="button" className="desk-btn ghost" disabled={data.page>=data.pages} onClick={()=>set('page',String(data.page+1))}>Next →</button></nav>}
   </>}
@@ -84,16 +92,56 @@ function Multi({label,options,value,onToggle,onClear}:{label:string;options:[str
   <div className="pcc-dd-menu">{options.map(([v,n])=><label key={v} className="min-h-tap"><input type="checkbox" checked={value.includes(v)} onChange={()=>onToggle(v)}/><span>{n}</span></label>)}{value.length>0&&<button type="button" className="min-h-tap pcc-link" onClick={onClear}>Clear</button>}</div></details>
 }
 
-function Line({r,onOpen}:{r:Row;onOpen:()=>void}){
- return <div className="pcc-row" role="row" data-removed={r.removed||undefined} data-wave={r.wave||undefined}>
-  <span role="cell" className="pcc-name"><b dir="auto">{r.name}</b>{r.nameOriginal!==r.name&&<small dir="auto">{r.nameOriginal}</small>}</span>
+/**
+ * One man, one row. Price and score are edited IN the row (owner, 12.10.2026: "no reason, no popup"): a change publishes at once through
+ * the `quick` action, which runs every server check the full editor runs. The row answers in place — "Saving…", "Saved ✓ · Undo", or the
+ * server's own reason with the one button that moves past it ("Save anyway" for the price ladder; the full editor for a locked price).
+ */
+type Quick={state:'idle'}|{state:'saving'}|{state:'saved';undo:{price:number;rating:number}|null}|{state:'error';msg:string;retry?:{price:number;rating:number}}
+function Line({r:initial,onOpen,showClub}:{r:Row;onOpen:()=>void;showClub?:boolean}){
+ const [r,setR]=useState(initial),[q,setQ]=useState<Quick>({state:'idle'}),[score,setScore]=useState(String(initial.rating))
+ const timer=useRef<ReturnType<typeof setTimeout>|null>(null)
+ useEffect(()=>()=>{if(timer.current)clearTimeout(timer.current)},[])
+ const frozen=r.removed||!!r.mergedInto
+ const save=async(next:{price:number;rating:number},o:{confirmQuota?:boolean;isUndo?:boolean}={})=>{
+  if(next.price===r.price&&next.rating===r.rating){setScore(String(r.rating));return}
+  const before={price:r.price,rating:r.rating},patch:Record<string,number>={};if(next.price!==r.price)patch.price=next.price;if(next.rating!==r.rating)patch.rating=next.rating
+  setQ({state:'saving'})
+  const res=await call<{row:Row}>(`/api/master/players/${encodeURIComponent(r.club)}/${encodeURIComponent(r.id)}`,{method:'POST',body:JSON.stringify({action:'quick',patch,expectedRev:r.rev,confirmQuota:o.confirmQuota===true})})
+  if(res.ok){setR(res.data.row);setScore(String(res.data.row.rating));setQ({state:'saved',undo:o.isUndo?null:before});return}
+  setScore(String(r.rating))
+  const msg=res.status===401?'Your session ended. Sign in again.':res.status===409?'Someone changed this player a moment ago. Reload the page and try again.':res.data.error||'Not saved.'
+  setQ({state:'error',msg:res.status===422&&/ladder/i.test(msg)?`${msg.replace(' Confirm to publish it as an exception.','')} ${ladderLine(res.data.detail)}`.trim():msg,retry:res.status===422&&/ladder/i.test(msg)?next:undefined})
+ }
+ const stepScore=(d:number)=>{const n=Math.min(99,Math.max(40,(Number(score)||r.rating)+d));setScore(String(n));if(timer.current)clearTimeout(timer.current);timer.current=setTimeout(()=>void save({price:r.price,rating:n}),700)}
+ const commitScore=()=>{if(timer.current){clearTimeout(timer.current);timer.current=null}const n=Math.round(Number(score));if(!Number.isFinite(n)||n<40||n>99){setScore(String(r.rating));setQ({state:'error',msg:'The score is a whole number from 40 to 99.'});return}void save({price:r.price,rating:n})}
+ return <div className="pcc-row" role="row" data-removed={r.removed||undefined} data-wave={r.wave||undefined} data-q={q.state}>
+  <span role="cell" className="pcc-name"><b dir="auto">{r.name}</b>{r.nameOriginal!==r.name&&<small dir="auto">{r.nameOriginal}</small>}{showClub&&<small>{r.clubName}</small>}</span>
   <span role="cell" className="pcc-years">{r.fromYear??'—'}{r.toYear&&r.toYear!==r.fromYear?`–${r.toYear}`:''}</span>
   <span role="cell" className="pcc-pos">{r.positions.length?r.positions.map((p,i)=><i key={p} data-primary={i===0}>{p}</i>):<em title="No position on record: dealt into any outfield slot">unknown</em>}</span>
-  <span role="cell" className="pcc-price"><b>€{r.price}M</b>{r.price!==r.basePrice&&<small>list €{r.basePrice}M</small>}{r.priceSource==='fallback'&&<small data-warn>not in list</small>}</span>
-  <span role="cell" className="pcc-score">{r.rating}{r.rating!==r.baseRating&&<small>was {r.baseRating}</small>}</span>
-  <span role="cell" className="pcc-badges">{r.removed&&<i data-k="removed">removed</i>}{r.locked&&<i data-k="locked" title={r.lockReason}>locked</i>}{r.draft&&<i data-k="draft">draft</i>}{r.overridden.length>0&&!r.removed&&<i data-k="edited">edited</i>}{r.wave&&<i data-k="wave">wave</i>}</span>
-  <span role="cell"><button type="button" className="desk-btn ghost pcc-edit" onClick={onOpen} aria-label={`Edit ${r.name}`}>Edit</button></span>
+  <span role="cell" className="pcc-price">
+   <select className="pcc-inline min-h-tap" aria-label={`Price of ${r.name}`} value={r.price} disabled={frozen||r.locked||q.state==='saving'} title={r.locked?`Locked (${r.lockReason||'pinned'}). Open Edit to change it.`:undefined} onChange={e=>void save({price:Number(e.target.value),rating:r.rating})}>{[1,2,3,4,5].map(p=><option key={p} value={p}>€{p}M</option>)}</select>
+   {r.locked?<small data-warn>locked</small>:r.price!==r.basePrice?<small>list €{r.basePrice}M</small>:r.priceSource==='fallback'?<small data-warn>not in list</small>:null}
+  </span>
+  <span role="cell" className="pcc-score">
+   <span className="pcc-step"><button type="button" className="min-h-tap" aria-label={`Lower the score of ${r.name}`} disabled={frozen||q.state==='saving'||Number(score)<=40} onClick={()=>stepScore(-1)}>−</button>
+    <input className="pcc-inline" type="number" inputMode="numeric" min={40} max={99} step={1} aria-label={`Score of ${r.name}`} value={score} disabled={frozen||q.state==='saving'} onChange={e=>setScore(e.target.value)} onBlur={commitScore} onKeyDown={e=>{if(e.key==='Enter')(e.target as HTMLInputElement).blur();if(e.key==='Escape'){setScore(String(r.rating));(e.target as HTMLInputElement).blur()}}}/>
+    <button type="button" className="min-h-tap" aria-label={`Raise the score of ${r.name}`} disabled={frozen||q.state==='saving'||Number(score)>=99} onClick={()=>stepScore(1)}>+</button></span>
+   {r.rating!==r.baseRating&&<small>was {r.baseRating}</small>}
+  </span>
+  <span role="cell" className="pcc-badges">{r.removed&&<i data-k="removed">removed</i>}{r.locked&&<i data-k="locked" title={r.lockReason}>locked</i>}{r.draft&&<i data-k="draft">draft</i>}{r.overridden.length>0&&!r.removed&&<i data-k="edited">edited</i>}{r.wave&&<i data-k="wave">wave</i>}{r.updatedAt&&<small>{r.updatedAt.slice(0,10)}</small>}</span>
+  <span role="cell"><button type="button" className="min-h-tap desk-btn ghost pcc-edit" onClick={onOpen} aria-label={`Edit ${r.name}`}>Edit</button></span>
+  {q.state!=='idle'&&<p className="pcc-qnote" role={q.state==='error'?'alert':'status'} data-state={q.state}>
+   {q.state==='saving'?'Saving…':q.state==='saved'?<>Saved ✓ — every game uses it now.{q.undo&&<button type="button" className="min-h-tap pcc-link" onClick={()=>void save(q.undo!,{isUndo:true})}>Undo</button>}<button type="button" className="min-h-tap pcc-link" onClick={()=>setQ({state:'idle'})}>OK</button></>
+    :<>{q.msg}{q.retry&&<button type="button" className="min-h-tap pcc-link" onClick={()=>void save(q.retry!,{confirmQuota:true})}>Save anyway</button>}{/locked|pinned/i.test(q.msg)&&<button type="button" className="min-h-tap pcc-link" onClick={onOpen}>Open the full editor</button>}<button type="button" className="min-h-tap pcc-link" onClick={()=>setQ({state:'idle'})}>Cancel</button></>}
+  </p>}
  </div>
+}
+/** the server's ladder detail, said in one line: "€3M would have 41 men; the ladder wants 40." */
+function ladderLine(detail:unknown):string{
+ const d=detail as Impact|undefined;if(!d||!d.quota)return ''
+ const off=[5,4,3,2,1].filter(p=>d.quota.have[p]!==d.quota.want[p]).map(p=>`€${p}M would have ${d.quota.have[p]} men (the ladder wants ${d.quota.want[p]})`)
+ return off.length?off.join('; ')+'.':''
 }
 
 function Drawer({club,id,onClose,onChanged}:{club:string;id:string;onClose:()=>void;onChanged:()=>void}){

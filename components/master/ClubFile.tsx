@@ -11,7 +11,7 @@ import type {AdapterInfo} from './Admin'
 
 type Api=ReturnType<typeof useAdminApi>
 type Page<T>={rows:T[];page:number;pages:number;total:number;version:number}
-const SUB=[['launch','Launch'],['summary','Summary'],['research','Research'],['decisions','Decisions'],['publish','Readiness & publish']] as const
+const SUB=[['launch','Launch'],['summary','Summary'],['research','Research'],['decisions','Check facts'],['publish','Readiness & publish']] as const
 
 /** One club, four layers kept apart: what research collected, what the pack compiles, what is published. */
 export type ClubFileView=typeof SUB[number][0]
@@ -33,7 +33,7 @@ function Summary({s,onGo}:{s:ClubSummary;onGo:(k:'research'|'decisions'|'publish
  const st=s.research.staging
  return <div className="cr-three">
   <article className="cr-wide"><p className="eyebrow">PIPELINE · WHERE THIS CLUB STANDS</p><Pipeline steps={s.pipeline}/></article>
-  <article><p className="eyebrow">1 · RESEARCH COLLECTED</p><ul><li>{s.research.reviewedSources} of {s.research.sources} sources reviewed{s.research.changedSources?` · ${s.research.changedSources} changed since review`:''}</li><li>{s.research.findingsPending} findings waiting · {s.research.findingsDecided} decided</li><li>Last job: {s.research.lastJob?`${s.research.lastJob.status} · ${s.research.lastJob.adapter} · ${s.research.lastJob.at.slice(0,16).replace('T',' ')}`:'none'}</li><li>Staged package: {st.present?`snapshot ${st.snapshotAsOf} · ${Object.entries(st.counts).map(([k,n])=>`${n} ${k}`).join(', ')} · ${st.approvedForProduction??0} approved`:'none'}</li></ul><button className="min-h-tap" onClick={()=>onGo('decisions')}>Decide evidence ↗</button></article>
+  <article><p className="eyebrow">1 · RESEARCH COLLECTED</p><ul><li>{s.research.reviewedSources} of {s.research.sources} sources reviewed{s.research.changedSources?` · ${s.research.changedSources} changed since review`:''}</li><li>{s.research.findingsPending} findings waiting · {s.research.findingsDecided} decided</li><li>Last job: {s.research.lastJob?`${s.research.lastJob.status} · ${s.research.lastJob.adapter} · ${s.research.lastJob.at.slice(0,16).replace('T',' ')}`:'none'}</li><li>Staged package: {st.present?`snapshot ${st.snapshotAsOf} · ${Object.entries(st.counts).map(([k,n])=>`${n} ${k}`).join(', ')} · ${st.approvedForProduction??0} approved`:'none'}</li></ul><button className="min-h-tap" onClick={()=>onGo('decisions')}>Check facts ↗</button></article>
   <article><p className="eyebrow">2 · PACK DATA (COMPILER)</p>{s.data?<ul><li>{s.data.full} gates READY · {s.data.dataPlayable} playable</li><li>{s.data.timelineEvents} eligible dated events</li><li>Compiler notes: {s.data.diagnostics.blocker} blocking · {s.data.diagnostics.review} to review · {s.data.diagnostics.info} kept out by design</li></ul>:<p>No compiled pack — the engine cannot load this club.</p>}<p className="muted">Approving a research finding does not change the pack; packs change through a reviewed build.</p></article>
   <article><p className="eyebrow">3 · PUBLISHED</p><ul><li>Status: <b>{s.control.status}</b> · {s.publication.preview?'evaluation preview':'production'}</li><li>{s.publication.openNow} gates open now · {s.control.gatesOn.length} switched on</li><li>Activation: {s.activation.allowed?'allowed':'blocked'}</li></ul>{!s.activation.allowed&&<ul className="muted">{s.activation.reasons.slice(0,4).map(r=><li key={r}>{r}</li>)}</ul>}<button className="min-h-tap" onClick={()=>onGo('publish')}>Readiness & publish ↗</button></article>
   {s.next.length>0&&<article className="cr-wide"><p className="eyebrow">NEXT</p><ol>{s.next.map(n=><li key={n}>{n}</li>)}</ol></article>}
@@ -54,23 +54,39 @@ function Research({club,adapters,jobs,api,onChange}:{club:Omit<Club,'sources'|'f
  </div>
 }
 
+type SourceInfo={title:string;url:string;reviewed:boolean;changed:boolean;waiting:number}|null
+type EvidencePage=Page<Finding|Source>&{sourceInfo?:Record<string,SourceInfo>}
+/** the reason a one-click "No" or "Later" carries (rule 92 keeps a reason on every rejection; the owner is not asked to type one) */
+const NO_REASON='Rejected by the owner',LATER_REASON='Left for later by the owner'
+/**
+ * Decisions, one plain question at a time (owner, 12.10.2026): "Is this right?" with the page that said it one line under it,
+ * and Yes / No / Later. "Yes to everything from this page" is one click per source — the server approves only the findings whose
+ * every cited page is checked and unchanged, and says how many it left.
+ */
 function Decisions({club,api,onChange}:{club:Omit<Club,'sources'|'findings'>;api:Api;onChange:()=>Promise<void>}){
- const [kind,setKind]=useState<'findings'|'sources'>('findings'),[state,setState]=useState('pending'),[page,setPage]=useState(1),[data,setData]=useState<Page<Finding|Source>|null>(null),[reason,setReason]=useState<Record<string,string>>({})
- const load=async()=>setData(await api.get<Page<Finding|Source>>(`evidence?club=${club.id}&kind=${kind}&state=${state}&page=${page}`))
+ const [kind,setKind]=useState<'findings'|'sources'>('findings'),[state,setState]=useState('pending'),[page,setPage]=useState(1),[data,setData]=useState<EvidencePage|null>(null)
+ const load=async()=>setData(await api.get<EvidencePage>(`evidence?club=${club.id}&kind=${kind}&state=${state}&page=${page}`))
  useEffect(()=>{void load()},[kind,state,page,club.id])// eslint-disable-line react-hooks/exhaustive-deps
- const decide=async(id:string,decision:'approved'|'rejected'|'deferred',k:'finding'|'source')=>{if(!data)return;const ok=await api.post('evidence/decide',{clubId:club.id,version:data.version,kind:k,id,decision,reason:reason[id]||''},`${k==='source'?'Source':'Finding'} ${decision}.`);if(ok){await load();await onChange()}}
- return <div>
-  <div className="cr-filters"><label>Show<select value={kind} onChange={e=>{setKind(e.target.value as 'findings');setPage(1)}}><option value="findings">Findings</option><option value="sources">Sources</option></select></label><label>State<select value={state} onChange={e=>{setState(e.target.value);setPage(1)}}><option value="pending">Waiting</option><option value="decided">Decided</option><option value="all">All</option></select></label><span className="muted">{data?`${data.total} rows`:'Loading…'}</span></div>
-  <p className="muted">A research decision records what you checked. It does not put a fact into a game — that needs a pack build that passes the compiler.</p>
-  {data?.rows.length===0&&<p className="empty">Nothing here.</p>}
-  {data?.rows.map(row=>'field' in row?<article className="source" key={row.id}>
-    <div><strong>{row.field}</strong><span className="badge">{row.decision||'waiting'}</span></div><p>{row.value}</p><small>Sources: {row.sources.join(', ')}</small>
-    {row.reason&&<p className="muted">Reason: {row.reason}</p>}
-    {!row.decision&&<div className="cr-decide"><input aria-label="Reason (needed to reject or defer)" placeholder="Reason (needed to reject or defer)" value={reason[row.id!]||''} onChange={e=>setReason({...reason,[row.id!]:e.target.value})}/><button className="min-h-tap" onClick={()=>decide(row.id!,'approved','finding')}>Approve</button><button className="min-h-tap" onClick={()=>decide(row.id!,'deferred','finding')}>Defer</button><button className="min-h-tap" onClick={()=>decide(row.id!,'rejected','finding')}>Reject</button></div>}
-   </article>:<article className="source" key={row.id}>
-    <div><a href={row.url} target="_blank" rel="noreferrer">{row.title} ↗</a><span className="badge">{row.incoming?'changed since review':row.reviewed?'reviewed':'unreviewed'}</span></div>
-    <details><summary>Read collected evidence</summary><p>{row.excerpt}</p>{row.incoming&&<><p className="eyebrow">NEW SNAPSHOT · {row.incoming.retrievedAt.slice(0,10)}</p><p>{row.incoming.excerpt}</p></>}</details>
-    {(!row.reviewed||row.incoming)&&<div className="cr-decide"><input aria-label="Reason (needed to reject)" placeholder="Reason (needed to reject)" value={reason[row.id]||''} onChange={e=>setReason({...reason,[row.id]:e.target.value})}/><button className="min-h-tap" onClick={()=>decide(row.id,'approved','source')}>{row.incoming?'Accept the new snapshot':'I reviewed this source'}</button><button className="min-h-tap" onClick={()=>decide(row.id,'rejected','source')}>Reject</button></div>}
+ const decide=async(id:string,decision:'approved'|'rejected'|'deferred',k:'finding'|'source')=>{if(!data)return;const reason=decision==='rejected'?NO_REASON:decision==='deferred'?LATER_REASON:''
+  const ok=await api.post('evidence/decide',{clubId:club.id,version:data.version,kind:k,id,decision,reason},decision==='approved'?(k==='source'?'Marked as checked.':'Approved.'):decision==='rejected'?'Rejected.':'Left for later.');if(ok){await load();await onChange()}}
+ const allFrom=async(sourceId:string,title:string)=>{if(!data)return;const r=await api.post<{approved:number;left:number}>('evidence/approve-source',{clubId:club.id,version:data.version,sourceId},'');if(r){api.setNotice(`Approved ${r.approved} from “${title}”.${r.left?` ${r.left} still wait: they also cite a page you have not checked.`:''}`);await load();await onChange()}}
+ const info=data?.sourceInfo||{}
+ const bySource=[...new Set((data?.rows||[]).flatMap(r=>'field' in r?r.sources:[]))].map(id=>[id,info[id]] as const).filter((x):x is readonly [string,NonNullable<SourceInfo>]=>!!x[1]&&!x[1].changed&&x[1].waiting>1)
+ return <div className="cr-decisions">
+  <div className="cr-filters"><div role="group" aria-label="What to check" className="cr-toggle">{([['findings','Facts'],['sources','Pages']] as const).map(([k,l])=><button key={k} type="button" className="min-h-tap" aria-pressed={kind===k} onClick={()=>{setKind(k);setPage(1)}}>{l}</button>)}</div>
+   <label>Show<select value={state} onChange={e=>{setState(e.target.value);setPage(1)}}><option value="pending">Waiting for you</option><option value="decided">Already decided</option><option value="all">Everything</option></select></label><span className="muted">{data?`${data.total} ${kind==='findings'?'fact':'page'}${data.total===1?'':'s'}`:'Loading…'}</span></div>
+  <p className="muted">{kind==='findings'?'Each fact was read from a public page. Say Yes if it is right. A Yes does not change a game by itself: the game data is rebuilt from approved facts on the Launch page.':'Open each page and check it is a real, reliable source. A fact can only be approved once every page it comes from is checked.'}</p>
+  {state==='pending'&&kind==='findings'&&bySource.length>0&&<div className="cr-allfrom"><p className="eyebrow">FASTER</p>{bySource.map(([id,s])=><p key={id}><button type="button" className="min-h-tap button secondary" disabled={api.busy} onClick={()=>void allFrom(id,s.title)}>Yes to all {s.waiting} from “{s.title}”</button>{!s.reviewed&&<small className="muted"> This also marks the page as checked. <a href={s.url} target="_blank" rel="noreferrer">Open it first ↗</a></small>}</p>)}</div>}
+  {data?.rows.length===0&&<p className="empty">{state==='pending'?'Nothing is waiting for you here.':'Nothing here.'}</p>}
+  {data?.rows.map(row=>'field' in row?<article className="source cr-q" key={row.id}>
+    <p className="cr-q-ask">{row.decision?<span className="badge">{row.decision==='approved'?'Yes':row.decision==='rejected'?'No':'Later'}</span>:null}Is this right? <b>{row.field}</b>: <span dir="auto">{row.value}</span></p>
+    <p className="cr-q-from">From: {row.sources.map((id,i)=>{const s=info[id];return <span key={id}>{i>0?' · ':''}{s?<><a href={s.url} target="_blank" rel="noreferrer">{s.title} ↗</a>{s.changed?' (changed — check the new copy under Pages)':s.reviewed?' (checked)':' (not checked yet)'}</>:<code>{id}</code>}</span>})}</p>
+    {row.reason&&row.decision!=='approved'&&<p className="muted">Note: {row.reason}</p>}
+    {!row.decision&&<div className="cr-decide"><button className="min-h-tap button" disabled={api.busy} onClick={()=>decide(row.id!,'approved','finding')}>Yes</button><button className="min-h-tap button secondary" disabled={api.busy} onClick={()=>decide(row.id!,'rejected','finding')}>No</button><button className="min-h-tap" disabled={api.busy} onClick={()=>decide(row.id!,'deferred','finding')}>Later</button></div>}
+   </article>:<article className="source cr-q" key={row.id}>
+    <p className="cr-q-ask">{row.incoming?'This page changed. Is the new copy still right?':row.reviewed?'Checked page':'Is this a good source?'} <a href={row.url} target="_blank" rel="noreferrer">{row.title} ↗</a></p>
+    <details><summary className="min-h-tap">Read what we collected</summary><p>{row.excerpt}</p>{row.incoming&&<><p className="eyebrow">NEW COPY · {row.incoming.retrievedAt.slice(0,10)}</p><p>{row.incoming.excerpt}</p></>}</details>
+    {(!row.reviewed||row.incoming)&&<div className="cr-decide"><button className="min-h-tap button" disabled={api.busy} onClick={()=>decide(row.id,'approved','source')}>{row.incoming?'Yes, use the new copy':'Yes, it is a good source'}</button><button className="min-h-tap button secondary" disabled={api.busy} onClick={()=>decide(row.id,'rejected','source')}>No, remove it</button></div>}
    </article>)}
   {data&&data.pages>1&&<nav className="cr-pager"><button className="min-h-tap" disabled={page<=1} onClick={()=>setPage(page-1)}>←</button><span>{page} / {data.pages}</span><button className="min-h-tap" disabled={page>=data.pages} onClick={()=>setPage(page+1)}>→</button></nav>}
  </div>

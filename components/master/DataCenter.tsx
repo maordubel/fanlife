@@ -56,7 +56,7 @@ export function DataCenter({runs,selected,summary,api,onChange}:{runs:RunsRow[];
    </article>)}</div>
    {arc.runs.length>0&&<details className="spaced"><summary>Last collection runs</summary><ol className="cr-log">{arc.runs.map(r=><li key={r.id}><b>{LISTING[r.state]||r.state}</b> <span className="muted">{when(r.finishedAt)} UTC · {r.providers.join(', ')}</span><p>{r.counts.requests} requests · {r.counts.documentsRead} documents read ({r.counts.newDocuments} new, {r.counts.changedDocuments} changed) · {r.counts.blockedEndpoints} refused · {r.counts.recordsExtracted} records extracted</p>{r.diagnostics.filter(d=>d.code!=='NEEDS_PARSER').slice(0,3).map((d,i)=><p key={i} className="muted">{d.code}: {d.message}</p>)}</li>)}</ol></details>}
   </>}
-  <div className="spaced">{adding?<AddSource club={selected} api={api} onDone={async()=>{setAdding(false);await refresh()}}/>:<button className="min-h-tap button secondary" onClick={()=>setAdding(true)}>+ Add a source for {selected}</button>}</div>
+  <div className="spaced">{adding?<AddSource club={selected} api={api} onDone={async()=>{setAdding(false);await refresh()}}/>:<button className="min-h-tap button secondary" onClick={()=>setAdding(true)}>+ Add a website to read for {selected}</button>}</div>
   <details className="spaced" open={!!row?.canPlan}><summary>Match pages (planned from a staged package)</summary>
    {row?.canPlan?<>
     <p className="muted">{row.jobs} jobs · {Object.entries(row.states).map(([k,n])=>`${n} ${STATE_TEXT[k]||k}`).join(' · ')||'no jobs yet'} · last: {row.runs[0]?`${row.runs[0].kind} · ${row.runs[0].state} · ${when(row.runs[0].createdAt)}`:'never'}</p>
@@ -76,23 +76,32 @@ function RemoveSource({club,id,api,onDone}:{club:string;id:string;api:ReturnType
  return <button className="min-h-tap" disabled={api.busy} onClick={async()=>{if(await api.post('archive/source/remove',{clubId:club,providerId:id},'Source removed from the control-room profile.'))await onDone()}}>Remove this source</button>
 }
 
-/** A new source is validated on the server (strict, field-named errors); images are never downloaded. */
+/** "www.the-celtic-wiki.com" → "the-celtic-wiki-com": a source id the owner never has to type (he can still change it under More settings) */
+const idFromSite=(origin:string)=>{try{return new URL(origin).hostname.replace(/^www\./,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').replace(/^([^a-z])/,'s-$1').slice(0,60)}catch{return ''}}
+/** A new source, step by step. It is validated on the server (strict, field-named errors); images are never downloaded. */
 function AddSource({club,api,onDone}:{club:string;api:ReturnType<typeof useAdminApi>;onDone:()=>Promise<void>}){
- const [reader,setReader]=useState<'wordpress-rest'|'html'>('wordpress-rest')
- return <form className="cr-form panel" onSubmit={async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.currentTarget)) as Record<string,string>
-  const source={providerId:f.providerId,familyId:f.familyId||f.providerId,publisher:f.publisher,reader,origin:f.origin,role:f.role,locale:f.locale||'en',collections:reader==='wordpress-rest'?[f.posts&&'posts',f.pages&&'pages'].filter(Boolean):undefined,seeds:f.seeds,follow:f.follow||undefined,allowedPathPrefixes:f.prefixes,parserId:f.parserId||null,budget:{maxRequests:Number(f.maxRequests)||10},knownLimits:f.limits}
-  if(await api.post('archive/source/save',{clubId:club,source},`Source saved for ${club}. Collect a first batch to check it.`))await onDone()}}>
-  <p className="eyebrow">NEW SOURCE · {club.toUpperCase()}</p>
-  <div className="cr-choice" role="radiogroup" aria-label="How the source is read"><label><input type="radio" checked={reader==='wordpress-rest'} onChange={()=>setReader('wordpress-rest')}/> WordPress site (public REST listing)</label><label><input type="radio" checked={reader==='html'} onChange={()=>setReader('html')}/> Web pages from approved index pages</label></div>
-  <div className="form-grid"><label>Publisher<input name="publisher" required maxLength={200} placeholder="The Celtic Wiki"/></label><label>Source id<input name="providerId" required pattern="[a-z][a-z0-9-]{1,60}" placeholder="thecelticwiki"/></label></div>
-  <div className="form-grid"><label>Site address<input name="origin" required placeholder="https://www.example.com" pattern="https://[^/]+"/></label><label>Source family (same owner = same family)<input name="familyId" pattern="[a-z][a-z0-9-]{1,60}" placeholder="thecelticwiki-editorial"/></label></div>
-  <div className="form-grid"><label>What it is good for<select name="role" defaultValue="mixed">{Object.entries(ROLE).map(([k,v])=><option key={k} value={k}>{v}</option>)}</select></label><label>Language<input name="locale" defaultValue="en" maxLength={20}/></label></div>
-  {reader==='wordpress-rest'?<div className="cr-choice"><label><input type="checkbox" name="posts" value="1"/> posts</label><label><input type="checkbox" name="pages" value="1" defaultChecked/> pages</label></div>
-   :<><label>Approved index pages (one path per line)<textarea name="seeds" required rows={3} placeholder={'/history/\n/seasons/'}/></label><label>Links that may be followed from them (pattern, optional)<input name="follow" placeholder="^/seasons/[0-9-]+/$"/></label></>}
-  <label>Allowed path prefixes (one per line; empty = the index pages)<textarea name="prefixes" rows={2}/></label>
-  <div className="form-grid"><label>Requests per batch<input name="maxRequests" type="number" min={1} max={200} defaultValue={10}/></label><label>Planned parser id (optional)<input name="parserId" placeholder="celticwiki-football-v1"/></label></div>
-  <label>Known limits (one per line)<textarea name="limits" rows={2}/></label>
-  <p className="muted">Public, free sources only. A source that refuses us stays refused. Images are never downloaded.</p>
-  <div className="dc-actions"><button className="min-h-tap button" disabled={api.busy}>Save source</button><button type="button" className="min-h-tap button secondary" onClick={()=>onDone()}>Cancel</button></div>
+ const [reader,setReader]=useState<'wordpress-rest'|'html'>('wordpress-rest'),[origin,setOrigin]=useState('')
+ return <form className="cr-form panel cr-steps" onSubmit={async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.currentTarget)) as Record<string,string>
+  const site=(f.origin||'').trim().replace(/\/+$/,''),providerId=(f.providerId||'').trim()||idFromSite(site)
+  const source={providerId,familyId:f.familyId||providerId,publisher:f.publisher,reader,origin:site,role:f.role,locale:f.locale||'en',collections:reader==='wordpress-rest'?[f.posts&&'posts',f.pages&&'pages'].filter(Boolean):undefined,seeds:f.seeds,follow:f.follow||undefined,allowedPathPrefixes:f.prefixes,parserId:f.parserId||null,budget:{maxRequests:Number(f.maxRequests)||10},knownLimits:f.limits}
+  if(await api.post('archive/source/save',{clubId:club,source},`Saved. Now press “Collect next batch” on the new source to test it.`))await onDone()}}>
+  <p className="eyebrow">ADD A SOURCE FOR {club.toUpperCase()}</p>
+  <fieldset className="cr-step"><legend>Step 1 · Which website?</legend>
+   <div className="form-grid"><label>Website address<input name="origin" required placeholder="https://www.example.com" pattern="https://[^/]+/?" value={origin} onChange={e=>setOrigin(e.target.value)}/></label><label>Its name<input name="publisher" required maxLength={200} placeholder="The Celtic Wiki"/></label></div></fieldset>
+  <fieldset className="cr-step"><legend>Step 2 · What kind of site is it?</legend>
+   <div className="cr-choice" role="radiogroup" aria-label="What kind of site"><label><input type="radio" checked={reader==='wordpress-rest'} onChange={()=>setReader('wordpress-rest')}/> A WordPress site (most blogs and club wikis)</label><label><input type="radio" checked={reader==='html'} onChange={()=>setReader('html')}/> Any other site: I will list the pages to start from</label></div></fieldset>
+  <fieldset className="cr-step"><legend>Step 3 · What should we read?</legend>
+   {reader==='wordpress-rest'?<div className="cr-choice"><label><input type="checkbox" name="pages" value="1" defaultChecked/> Its pages</label><label><input type="checkbox" name="posts" value="1"/> Its blog posts</label></div>
+    :<><label>Pages to start from (one per line)<textarea name="seeds" required rows={3} placeholder={'/history/\n/seasons/'}/></label><label>Links we may follow from them (optional)<input name="follow" placeholder="^/seasons/[0-9-]+/$"/></label></>}</fieldset>
+  <fieldset className="cr-step"><legend>Step 4 · What is it good for?</legend>
+   <div className="form-grid"><label>Mostly about<select name="role" defaultValue="mixed">{Object.entries(ROLE).map(([k,v])=><option key={k} value={k}>{v}</option>)}</select></label><label>Language<input name="locale" defaultValue="en" maxLength={20}/></label></div></fieldset>
+  <details><summary className="min-h-tap">More settings (optional)</summary>
+   <div className="form-grid"><label>Source id<input name="providerId" pattern="[a-z][a-z0-9-]{1,60}" placeholder={idFromSite(origin)||'made from the address'}/></label><label>Same owner as another source? Family id<input name="familyId" pattern="[a-z][a-z0-9-]{1,60}" placeholder="same as the source id"/></label></div>
+   <label>Only read paths starting with (one per line; empty = the start pages)<textarea name="prefixes" rows={2}/></label>
+   <div className="form-grid"><label>Pages per batch<input name="maxRequests" type="number" min={1} max={200} defaultValue={10}/></label><label>Parser id (if one is planned)<input name="parserId" placeholder="celticwiki-football-v1"/></label></div>
+   <label>What this source cannot tell us (one per line)<textarea name="limits" rows={2}/></label>
+  </details>
+  <p className="muted">Public, free websites only. If a site refuses us, we stop. Pictures are never downloaded.</p>
+  <div className="dc-actions"><button className="min-h-tap button" disabled={api.busy}>Step 5 · Save the source</button><button type="button" className="min-h-tap button secondary" onClick={()=>onDone()}>Cancel</button></div>
  </form>
 }
