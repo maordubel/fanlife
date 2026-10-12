@@ -19,7 +19,8 @@ import {MemoryBlocked,MemoryReady} from './MemoryReady'
 import {MemoryReport} from './MemoryReport'
 import css from './memory.module.css'
 
-export type ClubMemoryProps={plan:MemoryPlan;club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;autostart:boolean}
+/** `reveal`/`home`: an experience (ALL FOOTBALL) asks its own server for a pair and returns to its own home (ADR-fanlife-0010). */
+export type ClubMemoryProps={reveal?:typeof revealMemoryPair;home?:string;plan:MemoryPlan;club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;autostart:boolean}
 type Phase='ready'|'flash'|'play'|'done'
 
 /** Gate 6 · the Memory Wall: an explicit start, one look, then the pairs — every pair is two faces of one archive fact, revealed once you have it. */
@@ -100,7 +101,8 @@ function Wall(props:ClubMemoryProps&{deal:PublicDeal;t:T}){
   const at=ij.current[pairId],pair=pairById.get(pairId)
   if(!at||!pair)return
   setReveals(r=>({...r,[pairId]:{status:'loading'}}))
-  revealMemoryPair({slug:club,version,seed,cursor,size:deal.size,theme:deal.theme,i:at[0],j:at[1],lang:locale}).then(res=>{
+  const reveal=props.reveal??revealMemoryPair
+  reveal({slug:club,version,seed,cursor,size:deal.size,theme:deal.theme,i:at[0],j:at[1],lang:locale}).then(res=>{
    if(!mounted.current)return
    if(res.ok){setReveals(r=>({...r,[pairId]:{status:'ok',reveal:res.reveal}}));fileShelf(pair,res.reveal)}
    else setReveals(r=>({...r,[pairId]:{status:'failed'}}))
@@ -155,7 +157,7 @@ function Wall(props:ClubMemoryProps&{deal:PublicDeal;t:T}){
 
  return <section className={css.stage} data-testid="memory-run" data-phase={phase} data-lit={lit||undefined} data-reduced={reduced||undefined} data-size={deal.size}>
   <p className="sr-only" role="status" aria-live="polite">{announce}</p>
-  {phase==='done'&&result?<MemoryReport t={t} copy={copy} club={club} clubName={clubName} locale={locale} contentLocale={contentLocale} seed={seed} cursor={cursor} plan={plan} result={result} verdict={verdict(run,total)} label={deal.label}
+  {phase==='done'&&result?<MemoryReport home={props.home} t={t} copy={copy} club={club} clubName={clubName} locale={locale} contentLocale={contentLocale} seed={seed} cursor={cursor} plan={plan} result={result} verdict={verdict(run,total)} label={deal.label}
     pairs={foundPairs(pairs,run.done)} perfectIds={run.perfect} reveals={reveals} onRetry={askReveal} best={bests[result.category]} improved={improved} shelfCount={Object.keys(shelf).length} onShelf={()=>setShelfOpen(true)} peek={peekOn}/>
   :<div className={css.play}>
    <div className={css.hud} data-testid="memory-hud">

@@ -3033,3 +3033,12 @@ Owner decisions the same day: English only (the CRM included), fan pages English
 3. **Market and Community** are the existing consoles inside the frame (`AdminGate`, `AdminContributions`) — the database (`worker_admin_whoami` + RLS) still decides; the desk adds no write path.
 4. **Search** (`lib/master/crm/search.ts`) reads the owners of each record (control state, player listing, gates, experiences) — no index, no copy.
 5. **Switches** (`lib/features.ts`, `state.features`, Settings → Features): `allFootball`, `allFootballGates`, `fanLeague`, `friendlies`; off = owner preview only. Turning one off never deletes what it made.
+
+## 107 · ALL FOOTBALL: an experience over every club, never a club (12.10.2026)
+
+ADRs fanlife-0009/0010. `/all-football` (+ `/trivia`, `/timeline`, `/memory`), switched by `state.features` (owner preview while off).
+1. **Not in the registry.** `lib/experiences/registry.ts`; access = `experienceDoor()` (switch + gate list), never `gateAccess`/`requestClub` with an invented club (`tests/experiences/all-football.test.ts` reads the sources).
+2. **Derived pool** (`lib/experiences/pool.ts`): members = engine clubs whose real control row opens that gate to fans and whose compiled data plays it; ≥2 clubs or the gate is closed. Ids `<club>~<id>` (questions, pools, facts, cards, pairs), so a distractor is always the question's own club. Modes: balanced (caps per club: trivia 300, timeline 160, memory 90, picked by a stable hash), open draw, club duel. Version = hash of members + mode + algorithm.
+3. **One engine.** `lib/clubs/trivia-run-core.ts` is the run (club actions and `app/all-football/actions.ts` both call it); `ClubTrivia`/`ClubMemory` take optional `actions`/`reveal`/`home`; the timeline is `SharedTimelineBoard` with its own `submit`. A memory reveal answers from the pair's OWN club (archive entry, source, page).
+4. **Attribution.** A prompt that does not name its club gets `<Club> · ` in front; a timeline card's hint and a reveal carry the club. Records stay in their source language (rule 94 §4).
+5. **Control room:** Games → ALL FOOTBALL workspace — members, exclusions with reasons, per-club counts, and the Round Lab (100 seeds per gate: unique ids, member clubs only, recorded answer grades correct, no foreign distractor).

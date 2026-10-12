@@ -1599,3 +1599,9 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .nav-pulse[data-busy='true'] { opacity: 1; animation: nav-pulse-run 2.4s cubic-bezier(.1,.7,.2,1) forwards; }
 @keyframes nav-pulse-run { 0% { transform: scaleX(.08); } 100% { transform: scaleX(.92); } }
 @media (prefers-reduced-motion: reduce) { .nav-pulse[data-busy='true'] { animation: none; transform: scaleX(1); opacity: .9; } }
+/* ALL FOOTBALL / FAN LEAGUE on the hub roll (ADR-fanlife-0009): FAN LIFE's own ink, no club colour */
+.mag-tile.af-tile { background: var(--mag-ink); color: var(--mag-paper); background-image: repeating-linear-gradient(90deg, transparent 0 22px, color-mix(in srgb, var(--mag-paper) 7%, transparent) 22px 23px); }
+.mag-tile.af-tile .no { color: var(--mag-salmon); }
+.mag-tile.af-tile b { color: var(--mag-paper); } .mag-tile.af-tile small { color: color-mix(in srgb, var(--mag-paper) 80%, transparent); }
+.mag-tile.af-tile .mag-tile-state { background: var(--mag-vermilion); color: var(--mag-white); }
+.mag-tile.af-tile[data-preview] { outline: 3px dashed var(--mag-salmon); outline-offset: -8px; }

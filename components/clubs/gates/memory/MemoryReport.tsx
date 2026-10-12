@@ -34,7 +34,7 @@ export function memoryDraft(input:{club:string;seed:number;cursor:number;size:Me
   statement:`I found every pair. My best streak was ${result.bestStreak}.`,link:link.href}}
 }
 
-type Props={
+type Props={home?:string;
  t:T;copy:GameCopy;club:string;clubName:string;locale:UiLocale;contentLocale:string;seed:number;cursor:number
  plan:MemoryPlan;result:MemoryResult;verdict:MemoryVerdict;label:BoardLabel;pairs:PublicPair[];perfectIds:readonly string[]
  reveals:Record<string,RevealState>;onRetry:(pair:string)=>void;best:Best|undefined;improved:boolean;shelfCount:number;onShelf:()=>void;peek:boolean
@@ -44,7 +44,7 @@ type Props={
 export function MemoryReport(p:Props){
  const {t,copy,club,clubName,locale,contentLocale,seed,cursor,plan,result,verdict,label,pairs,perfectIds,reveals,best,improved}=p
  const size=plan.selected.size,theme=plan.selected.theme
- const draft=useMemo(()=>memoryDraft({club,seed,cursor,size,theme,result,perfect:pairs.map(x=>perfectIds.includes(x.id)),label}),[club,seed,cursor,size,theme,result,pairs,perfectIds,label])
+ const draft=useMemo(()=>p.home?null:memoryDraft({club,seed,cursor,size,theme,result,perfect:pairs.map(x=>perfectIds.includes(x.id)),label}),[p.home,club,seed,cursor,size,theme,result,pairs,perfectIds,label])
  const again=`?${memoryQuery({seed,cursor:cursor+1,lang:locale,go:true,size,theme,peek:p.peek})}`
  const other=(()=>{
   const open=plan.sizes.filter(s=>s.available&&s.size!==size).map(s=>s.size)
@@ -82,8 +82,8 @@ export function MemoryReport(p:Props){
    {other&&<Link className={css.cta} data-kind="plain" href={`?${memoryQuery({seed,cursor:cursor+1,lang:locale,go:true,size:other as MemSize,theme,peek:p.peek})}`}><span>{t('mem.result.trySize',{n:other})}</span><span aria-hidden="true">→</span></Link>}
    {draft&&<ShareComposer label={t('mem.result.share')} draft={draft}/>}
    <button type="button" className={`min-h-tap ${css.cta}`} data-kind="plain" onClick={p.onShelf}><span>{t('mem.result.shelf')}</span><span aria-hidden="true">→</span></button>
-   <Link className={css.cta} data-kind="plain" href={`/clubs/${club}/archive?lang=${locale}`}><span>{copy['gate.archive']}</span><span aria-hidden="true">→</span></Link>
-   <Link className={css.cta} data-kind="plain" href={`/clubs/${club}?lang=${locale}`}><span>{copy.backToClub}</span><span aria-hidden="true">→</span></Link>
+   {!p.home&&<Link className={css.cta} data-kind="plain" href={`/clubs/${club}/archive?lang=${locale}`}><span>{copy['gate.archive']}</span><span aria-hidden="true">→</span></Link>}
+   {p.home?<Link className={css.cta} data-kind="plain" href={p.home}><span>Back to ALL FOOTBALL</span><span aria-hidden="true">→</span></Link>:<Link className={css.cta} data-kind="plain" href={`/clubs/${club}?lang=${locale}`}><span>{copy.backToClub}</span><span aria-hidden="true">→</span></Link>}
   </div>
  </section>
 }

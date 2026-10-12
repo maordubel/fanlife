@@ -29,7 +29,10 @@ export type TriviaPlan={
  selected:{mode?:string;topic?:string;era?:string;category:string|null;size:number;banded:boolean;blocker?:BlockerView}
  asked?:{mode:string;blocker:BlockerView}
 }
-export type ClubTriviaProps={club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;plan:TriviaPlan;autostart:boolean;practice:boolean}
+export type TriviaActions={startTriviaRun:typeof startTriviaRun;resumeTriviaRun:typeof resumeTriviaRun;openTriviaQuestion:typeof openTriviaQuestion;answerTriviaRun:typeof answerTriviaRun;hintTriviaRun:typeof hintTriviaRun;reviewMissedQuestions:typeof reviewMissedQuestions}
+const CLUB_ACTIONS:TriviaActions={startTriviaRun,resumeTriviaRun,openTriviaQuestion,answerTriviaRun,hintTriviaRun,reviewMissedQuestions}
+/** `actions`/`home`: an experience (ALL FOOTBALL) plays the same run through its own server actions and returns to its own home (ADR-fanlife-0010); a club passes neither. */
+export type ClubTriviaProps={actions?:TriviaActions;home?:string;club:string;clubName:string;version:string;seed:number;cursor:number;locale:UiLocale;contentLocale:string;copy:GameCopy;plan:TriviaPlan;autostart:boolean;practice:boolean}
 type Shown={answer:AnswerView;reaction:Reaction;ms:number}
 type Hint={kind:'decade';decade:number}|{kind:'context';text:string}|{kind:'strike';strike:string[]}
 type Phase='ready'|'loading'|'play'|'over'
@@ -40,7 +43,7 @@ const failKey=(e:string)=>['BLOCKED','GATE_CLOSED','VERSION_RETIRED','RUN_MISMAT
 
 /** Gate 2 · the Quiz Stand: an explicit start, three stages on one screen with the server keeping the clock, a verdict you can read, a match report. */
 export function ClubTrivia(props:ClubTriviaProps){
- const {club,clubName,version,seed,cursor,locale,contentLocale,copy,plan}=props
+ const {club,clubName,version,seed,cursor,locale,contentLocale,copy,plan}=props,A=props.actions??CLUB_ACTIONS
  const t:T=useCallback((k,v)=>tr(copy,k,v),[copy])
  const reduced=useReducedMotion()
  const [phase,setPhase]=useState<Phase>('ready'),[practice,setPractice]=useState(props.practice)
@@ -61,9 +64,9 @@ export function ClubTrivia(props:ClubTriviaProps){
  // ---- on arrival: is there a run of mine in progress, and what has this device missed?
  useEffect(()=>{
   let live=true
-  resumeTriviaRun(club,version).then(r=>{if(!live)return;if(r.ok)setResume(r);else if(r.error==='VERSION_RETIRED')setRetired(true)}).catch(()=>{/* offline: no resume offer, the start card still works */})
+  A.resumeTriviaRun(club,version).then(r=>{if(!live)return;if(r.ok)setResume(r);else if(r.error==='VERSION_RETIRED')setRetired(true)}).catch(()=>{/* offline: no resume offer, the start card still works */})
   const m=readMissed(club);setMissed(m)
-  if(m.items.length>0)reviewMissedQuestions(club,version,idsOf(m)).then(r=>{if(live&&r.ok)setReview({playable:r.playable,retired:r.removed.retired,withdrawn:r.removed.withdrawn,merged:r.merged})}).catch(()=>{})
+  if(m.items.length>0)A.reviewMissedQuestions(club,version,idsOf(m)).then(r=>{if(live&&r.ok)setReview({playable:r.playable,retired:r.removed.retired,withdrawn:r.removed.withdrawn,merged:r.merged})}).catch(()=>{})
   return ()=>{live=false}
  },[club,version])
 
@@ -80,7 +83,7 @@ export function ClubTrivia(props:ClubTriviaProps){
   if(lock.current)return;lock.current=true;setPhase('loading');setStartError(null)
   haptic('lock')
   try{
-   const r=await startTriviaRun({slug:club,version,seed,cursor,mode:mode??plan.selected.mode,topic:mode?undefined:plan.selected.topic,era:mode?undefined:plan.selected.era,practice,...(mode==='revenge'?{missed:idsOf(missed)}:{})})
+   const r=await A.startTriviaRun({slug:club,version,seed,cursor,mode:mode??plan.selected.mode,topic:mode?undefined:plan.selected.topic,era:mode?undefined:plan.selected.era,practice,...(mode==='revenge'?{missed:idsOf(missed)}:{})})
    lock.current=false
    if(r.ok)begin(r,false);else{setPhase('ready');setStartError(failKey(r.error))}
   }catch{lock.current=false;setPhase('ready');setStartError('tq.offline.start')}
@@ -92,7 +95,7 @@ export function ClubTrivia(props:ClubTriviaProps){
   if(!run)return
   setOpening(true);setConn(null)
   try{
-   const r=await openTriviaQuestion(club,version,run.meta.run,index)
+   const r=await A.openTriviaQuestion(club,version,run.meta.run,index)
    if(r.ok){deadline.current=r.remainingMs===null?null:Date.now()+r.remainingMs;setSecondsLeft(r.remainingMs===null?0:r.remainingMs/1000)}
    else setFatal(failKey(r.error))
   }catch{setConn('open')}finally{setOpening(false)}
@@ -113,7 +116,7 @@ export function ClubTrivia(props:ClubTriviaProps){
   const p=pending.current;if(!p||!q||!run)return
   setBusy(true);setConn(null)
   try{
-   const r=await answerTriviaRun(club,version,run.meta.run,index,p.answer,p.timeout)
+   const r=await A.answerTriviaRun(club,version,run.meta.run,index,p.answer,p.timeout)
    if(!r.ok){
     if((r as Fail).error==='NOT_OPEN'){setConn('open');return}
     setFatal(failKey((r as Fail).error));return
@@ -174,7 +177,7 @@ export function ClubTrivia(props:ClubTriviaProps){
   if(!q||!run||locked||hinted||hintBusy||!q.hint)return
   setHintBusy(true);haptic('tap')
   try{
-   const r=await hintTriviaRun(club,version,run.meta.run,index)
+   const r=await A.hintTriviaRun(club,version,run.meta.run,index)
    if(r.ok){setHint(r.hint);setHinted(true)}else setHintNone(true)
   }catch{setHintNone(true)}finally{setHintBusy(false)}
  }
@@ -195,7 +198,7 @@ export function ClubTrivia(props:ClubTriviaProps){
 
  if(phase==='ready'||phase==='loading')return <Ready {...props} t={t} practice={practice} onPractice={setPractice} pace={pace} onPace={setPaceSaved} resume={resume} retired={retired} onResume={()=>resume&&begin(resume,true)}
   missed={missed} review={review} loading={phase==='loading'} error={startError} onStart={mode=>void start(mode)}/>
- if(over&&run)return <TriviaReport session={session} log={log} count={count} asked={asked} meta={run.meta} club={club} clubName={clubName} version={version} locale={locale} contentLocale={contentLocale} copy={copy} available={plan.topics.map(x=>x.id as QTopic)} hardOpen={plan.modes.some(m=>m.id==='hard'&&m.available)} topicLabel={topicLabel} missedLeft={idsOf(missed).length}/>
+ if(over&&run)return <TriviaReport home={props.home} session={session} log={log} count={count} asked={asked} meta={run.meta} club={club} clubName={clubName} version={version} locale={locale} contentLocale={contentLocale} copy={copy} available={plan.topics.map(x=>x.id as QTopic)} hardOpen={plan.modes.some(m=>m.id==='hard'&&m.available)} topicLabel={topicLabel} missedLeft={idsOf(missed).length}/>
  if(!q||!run)return null
 
  const struck=hint?.kind==='strike'?hint.strike:[],graded=shown?{correct:shown.answer.correct,correctAnswers:shown.answer.verdict.correctAnswers}:null
