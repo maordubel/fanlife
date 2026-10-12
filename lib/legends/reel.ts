@@ -2,8 +2,8 @@ import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {hash} from '@/lib/clubs/rumble-rng'
 import {clash,clubCode,keeperKit,kitOfMan,numberEleven} from '@/lib/highlights/kit'
 import type {Moment,MomentKind,PixelKit,Reel,ReelPlayer,ReelTeam,Shape} from '@/lib/highlights/types'
-import {cardOf} from './career'
-import type {Career,Fixture} from './types'
+import {cardOf,pauseOf} from './career'
+import type {Career,Fixture,FixtureSide,MatchEventRow} from './types'
 
 /**
  * A LEGENDS MANAGER result as a highlights reel (owner, 12.10.2026: "display only, the right kits, the line-ups shown properly").
@@ -21,6 +21,20 @@ const SHAPES:readonly Shape[]=['through','cross','cutback','long','dribble','com
 
 export function legendsReel(c:Career,f:Fixture,kits:Record<string,ClubKit|undefined>,opts:{champion?:boolean}={}):Reel|null{
  const res=f.result;if(!res?.sides)return null
+ return reelOf(c,{id:f.id,home:f.home,away:f.away,goals:res.goals,pens:res.pens,events:res.events,seed:res.seed,sides:res.sides},kits,opts)
+}
+/** the live match so far — the same reel, cut at the stop the manager is standing at; `final` is the score at that minute */
+export function liveReel(c:Career,kits:Record<string,ClubKit|undefined>):Reel|null{
+ const L=c.live;if(!L)return null
+ const fx=c.season.playoff?.id===L.fixture?c.season.playoff:c.season.fixtures.find(f=>f.id===L.fixture);if(!fx)return null
+ const p=pauseOf(c);if(!p)return null
+ const teams=new Map(c.teams.map(t=>[t.club,t]))
+ const sides=L.snapshot.sides.map(sd=>{const t=teams.get(sd.club);return {formation:sd.formation,xi:sd.xi.map(m=>{const k=t?cardOf(c,t,m.id):undefined;return {id:m.id,name:m.name,pos:m.pos,from:k?.from??null,to:k?.to??null}})}}) as [FixtureSide,FixtureSide]
+ return reelOf(c,{id:fx.id,home:fx.home,away:fx.away,goals:p.goals,pens:null,events:p.events,seed:L.snapshot.seed,sides},kits,{})
+}
+type Played={id:string;home:string;away:string;goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];seed:number;sides:[FixtureSide,FixtureSide]}
+function reelOf(c:Career,f:Played,kits:Record<string,ClubKit|undefined>,opts:{champion?:boolean}):Reel{
+ const res=f
  const teams=new Map(c.teams.map(t=>[t.club,t])),clubs=[f.home,f.away] as const
  const seed=hash(`legends-reel:${f.id}:${res.seed}`)
  const build=(side:0|1,home:PixelKit|null):ReelTeam=>{

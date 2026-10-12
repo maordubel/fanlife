@@ -7,7 +7,7 @@ import {botDraft,confirmCheck,draftMove,emptyDraft,type DraftMove} from './draft
 import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScore} from './economy'
 import {checkDecision,run,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
-import {bestLineup,fieldable,lineupError,quotaCount,squadError} from './squad'
+import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
 import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type Decision,type Fixture,type FixtureSide,type LedgerEntry,type Live,type MatchOutcome,type MatchSnapshot,type Pressing,type Season,type SideSnapshot,type Tactics,type Team,type Tempo} from './types'
 
 /**
@@ -16,7 +16,8 @@ import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type De
  * revision is refused, a repeated key answers the state it already produced (S02). Nothing here reads a clock or a random
  * source: every draw comes from `hash(career id : season : what)`.
  *
- * Phases: draft → (board grant) → window → season ⇄ window (halfway) → [title play-off] → season end → window (next season) …
+ * Phases: draft → (board grant: season tickets) → season — round 1 and 2 with the drafted squad → window (after round 2) → season
+ * → window (halfway) → season → [title play-off] → season end → season (next) … A live match stops at 45′, 60′ and 75′.
  */
 export const me=(c:Career):Team=>c.teams[0]!
 const maps=new WeakMap<Catalog,Map<string,Card>>()
@@ -34,7 +35,7 @@ export const isBye=(c:Career)=>c.phase==='season'&&c.season.played<c.season.roun
 function newSeasonOf(teams:readonly Team[],ordinal:number,salt:string):Season{
  const order=[...teams].map(t=>t.club).sort((a,b)=>hash(`${salt}:${ordinal}:${a}`)-hash(`${salt}:${ordinal}:${b}`))
  const fixtures=fixturesFor(order).map(f=>({...f,result:null}))
- return {ordinal,rounds:roundsFor(teams.length),played:0,fixtures,windows:{pre:true,mid:false},bonusAwarded:0,playoff:null,ended:false,ranks:[]}
+ return {ordinal,rounds:roundsFor(teams.length),played:0,fixtures,windows:{pre:false,mid:false,early:false},bonusAwarded:0,playoff:null,ended:false,ranks:[]}
 }
 
 /* ───────── creation (§1.1.3: a club opens only when a full legal draft is possible — the server checks readiness first) ───────── */
@@ -59,8 +60,8 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 
 /* ───────── actions ───────── */
 export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
- |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics}|{kind:'auto';formation?:string}|{kind:'close-window'}
- |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'play-round'}|{kind:'next-season'})&{key:string;rev:number}
+ |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string}|{kind:'auto';formation?:string}|{kind:'close-window'}
+ |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'play-round'}|{kind:'next-season'})&{key:string;rev:number}
 /** an action before the server stamps it with a key and a revision */
 export type Intent=Action extends infer A?A extends Action?Omit<A,'key'|'rev'>:never:never
 export type ActionResult={ok:true;career:Career;replay?:boolean;note?:string}|{ok:false;code:'stale'|'invalid'|'closed';error:string}
@@ -77,10 +78,10 @@ export function parseAction(raw:unknown):Action|null{
    if(m.kind==='pick'&&str(m.id))return {...b,kind:'draft',move:{kind:'pick',id:m.id as string}}
    if(m.kind==='reroll'||m.kind==='skip')return {...b,kind:'draft',move:{kind:m.kind}}
    return null}
-  case 'draft-confirm':case 'ack':case 'close-window':case 'play-round':case 'next-season':return {...b,kind:a.kind}
+  case 'draft-confirm':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
   case 'buy':case 'sell':return str(a.card)?{...b,kind:a.kind,card:a.card as string}:null
   case 'swap':return str(a.sell)&&str(a.buy)?{...b,kind:'swap',sell:a.sell as string,buy:a.buy as string}:null
-  case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t}:null}
+  case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{})}:null}
   case 'auto':return {...b,kind:'auto',...(typeof a.formation==='string'?{formation:a.formation}:{})}
   case 'match-start':return a.mode==='fast'||a.mode==='interactive'?{...b,kind:'match-start',mode:a.mode}:null
   case 'match-decide':{const d=(a.decision??{}) as Record<string,unknown>,t=d.tactics===undefined?undefined:tacticsOf(d.tactics)
@@ -119,7 +120,8 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const err=confirmCheck(cat,c.draft);if(err)return bad(err)
    const by=catalogMap(c),squad=c.draft.picks.map(p=>({id:p.id,quota:p.quota,paid:p.price,apps:0,appsTotal:0,goals:0,joined:1}))
    const lu=bestLineup(squad.map(s=>by.get(s.id)!))!
-   let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'window',cutscene:'board-grant'}
+   // no pre-season window: rounds 1 and 2 are played with the drafted squad, the window opens after round 2 (owner, 12.10.2026)
+   let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'season',cutscene:'board-grant'}
    next=pay(next,{key:`draft-budget:${c.id}`,kind:'draft-budget',amount:R.initialDraftBudgetM},ctx.now)
    for(const p of c.draft.picks)next=pay(next,{key:`draft-buy:${c.id}:${p.id}`,kind:'draft-buy',amount:-p.price,card:p.id},ctx.now)
    // the board's one-off grant (§1.2.12): ledger key first-window-grant:<career>, so it can never be paid twice
@@ -167,7 +169,8 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(c.phase==='draft')return bad('Finish the draft first.','closed')
    if(c.live)return bad('A match is being played — change it from the touchline.','closed')
    if(!isFormation(a.formation))return bad('Unknown formation.')
-   const lu={formation:a.formation,xi:a.xi,bench:a.bench,tactics:a.tactics},err=lineupError(lu,fieldable(t,id=>cardOf(c,t,id)));if(err)return bad(err)
+   if(a.captain&&!a.xi.includes(a.captain))return bad('The captain must be one of the eleven.')
+   const lu={formation:a.formation,xi:a.xi,bench:a.bench,tactics:a.tactics,...(a.captain?{captain:a.captain}:t.lineup.captain&&a.xi.includes(t.lineup.captain)?{captain:t.lineup.captain}:{})},err=lineupError(lu,fieldable(t,id=>cardOf(c,t,id)));if(err)return bad(err)
    return {ok:true,career:withMe(c,{...t,lineup:lu})}
   }
   case 'auto':{
@@ -175,7 +178,8 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(c.live)return bad('A match is being played.','closed')
    const f=a.formation&&isFormation(a.formation)?a.formation:t.lineup.formation,lu=bestLineup(fieldable(t,id=>cardOf(c,t,id)),f,t.lineup.tactics)
    if(!lu)return bad('Not enough fit men for an eleven.')
-   return {ok:true,career:withMe(c,{...t,lineup:lu})}
+   // the manager's armband stays on his man when he is still in the eleven
+   return {ok:true,career:withMe(c,{...t,lineup:{...lu,captain:captainOf({xi:lu.xi,captain:t.lineup.captain},id=>cardOf(c,t,id))}})}
   }
   case 'close-window':{
    if(!windowOpen(c))return bad('No window is open.','closed')
@@ -210,6 +214,13 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const r2=run(next.live.snapshot,next.live.decisions,true,side)
    return r2.done?commitMine(next,ctx,null):{ok:true,career:next}
   }
+  case 'match-finish':{
+   // "to the final whistle": every stop still ahead is passed with no change
+   if(!c.live||c.live.mode!=='interactive')return bad('No match is waiting for you.','closed')
+   const fx=fixtureById(c,c.live.fixture)!,side=mySide(c,fx);let live=c.live
+   for(let i=0;i<=R.maxInterventionWindows;i++){const r=run(live.snapshot,live.decisions,true,side);if(r.done)break;live={...live,decisions:[...live.decisions,{stop:r.pause.stop}]}}
+   return commitMine({...c,live},ctx,null)
+  }
   case 'play-round':{
    if(!isBye(c))return bad('Your club plays this round.','closed')
    return commitRound(c,null,ctx,null)
@@ -217,7 +228,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
   case 'next-season':{
    if(c.phase!=='season-end')return bad('The season is not over.','closed')
    const ord=c.season.ordinal+1,teams=c.teams.map(x=>({...x,morale:1,status:Object.fromEntries(Object.entries(x.status).map(([k,v])=>[k,newSeason(v,c.settings.yellowsResetEachSeason)])),squad:x.squad.map(s=>({...s}))}))
-   return {ok:true,career:{...c,teams,season:newSeasonOf(teams,ord,c.id),phase:'window',cutscene:null,soldThisWindow:[]}}
+   return {ok:true,career:{...c,teams,season:newSeasonOf(teams,ord,c.id),phase:'season',cutscene:null,soldThisWindow:[]}}
   }
  }
 }
@@ -245,7 +256,7 @@ function prepareSide(c:Career,t:Team,ctx:Ctx):{career:Career;note:string|null}|{
 }
 function sideSnap(c:Career,t:Team,home:boolean|null):SideSnapshot{
  const m=(id:string)=>{const x=cardOf(c,t,id)!;return {id:x.id,name:x.name,pos:x.pos,stars:x.stars,attrs:x.attrs}}
- return {club:t.club,name:t.name,formation:t.lineup.formation,tactics:{...t.lineup.tactics},xi:t.lineup.xi.map(m),bench:t.lineup.bench.map(m),morale:t.morale,home}
+ return {club:t.club,name:t.name,formation:t.lineup.formation,tactics:{...t.lineup.tactics},xi:t.lineup.xi.map(m),bench:t.lineup.bench.map(m),morale:t.morale,home,captain:captainOf(t.lineup,id=>cardOf(c,t,id))}
 }
 function snapshotFor(c:Career,f:Fixture,knockout:boolean):MatchSnapshot{
  const by=teamBy(c),h=by.get(f.home)!,aw=by.get(f.away)!
@@ -285,7 +296,10 @@ function commitRound(c0:Career,mine:{fixture:string;outcome:MatchOutcome;seed:nu
  const played=round,season={...c.season,fixtures,played}
  c={...c,season}
  if(played>=season.rounds)return finishSeason(c,ctx,note)
- if(played===Math.floor(season.rounds/2)&&!season.windows.mid)return {ok:true,career:{...c,phase:'window',season:{...season,windows:{...season.windows,mid:true}},soldThisWindow:[]},note:note??undefined}
+ const half=Math.floor(season.rounds/2)
+ // the first window after round 2 — unless the halfway window is the very next round (a four-club league), then that one serves
+ if(played===R.earlyWindowAfterRound&&half-R.earlyWindowAfterRound>=2&&!season.windows.early)return {ok:true,career:{...c,phase:'window',season:{...season,windows:{...season.windows,early:true}},soldThisWindow:[]},note:note??undefined}
+ if(played===half&&!season.windows.mid)return {ok:true,career:{...c,phase:'window',season:{...season,windows:{...season.windows,mid:true}},soldThisWindow:[]},note:note??undefined}
  return {ok:true,career:c,note:note??undefined}
 }
 /** cards, injuries, appearances, morale — for both clubs of one match */

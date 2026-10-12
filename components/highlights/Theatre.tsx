@@ -17,30 +17,35 @@ import css from './theatre.module.css'
  */
 // 256 × 160: the sixteen-bit screen, scaled up — a bigger pixel reads as a person on a phone
 const W=256,H=160,S=5.6,YS=.62
-type Phase={k:'lineups'}|{k:'title';i:number}|{k:'scene';i:number}|{k:'closing'}|{k:'done'}
+type Phase={k:'lineups'}|{k:'title';i:number}|{k:'scene';i:number}|{k:'quiet'}|{k:'break'}|{k:'closing'}|{k:'done'}
+/** a live match is watched in parts: the moments after `from` up to the stop at `to`; only the last part has the closing card */
+export type TheatreSegment={from:number;to:number;outro:boolean}
 export type TheatreSound=(n:'kick'|'goal'|'concede'|'whistle'|'final'|'save')=>void
 export type TheatreAllow={fx:Celebration[];yellowCard:boolean;/** the paint of this page (rule 95) — `paletteFor()` on the server */palette?:Palette}
 const ALL:TheatreAllow={fx:[...CELEBRATIONS],yellowCard:true}
 const LETTERS:Record<Celebration,string>={goal:'Goal!',hattrick:'Hat-trick!','fire-goal':'Goal!',win:'The win',champion:'Champions!',loss:'Beaten','game-over':'Game over'}
 
-export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false}:{reel:Reel;onDone?:()=>void;sound?:TheatreSound;allow?:TheatreAllow;max?:number;autoStart?:boolean}){
+export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segment}:{reel:Reel;onDone?:()=>void;sound?:TheatreSound;allow?:TheatreAllow;max?:number;autoStart?:boolean;segment?:TheatreSegment}){
  const pal=allow.palette??(BASE as unknown as Palette)
- const story=useMemo(()=>storyOf(reel,max),[reel,max])
+ const intro=!segment||segment.from===0,outro=!segment||segment.outro
+ const scoreAt=useCallback((minute:number):[number,number]=>{let s:[number,number]=[0,0];for(const m of reel.moments)if(m.minute<=minute)s=m.score;return s},[reel])
+ const story=useMemo(()=>segment?storyOf({...reel,moments:reel.moments.filter(m=>m.minute>segment.from&&m.minute<=(segment.outro?999:segment.to))},Math.min(max,6)):storyOf(reel,max),[reel,max,segment])
  const scenes=useMemo(()=>story.map((m,i)=>sceneFor(reel,m,i)),[reel,story])
- const [phase,setPhase]=useState<Phase>({k:'lineups'})
- const [speed,setSpeed]=useState<1|2>(1),[score,setScore]=useState<[number,number]>([0,0]),[fx,setFx]=useState<Celebration|null>(null),[letters,setLetters]=useState<string|null>(null)
+ const [phase,setPhase]=useState<Phase>(intro?{k:'lineups'}:{k:'title',i:0})
+ const [speed,setSpeed]=useState<1|2>(1),[score,setScore]=useState<[number,number]>(()=>segment?scoreAt(segment.from):[0,0]),[fx,setFx]=useState<Celebration|null>(null),[letters,setLetters]=useState<string|null>(null)
  const [caption,setCaption]=useState<string>(''),[tag,setTag]=useState<{x:number;y:number;text:string;side:0|1}|null>(null)
  const [reduced,setReduced]=useState(false)
  const canvas=useRef<HTMLCanvasElement>(null),raf=useRef(0),speedRef=useRef(1)
  speedRef.current=speed
  useEffect(()=>{setReduced(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false)},[])
  const closingAny=useMemo(()=>closingFor(reel),[reel]),closing=closingAny&&allow.fx.includes(closingAny)?closingAny:null
- const next=useCallback((i:number)=>{if(i+1<scenes.length)setPhase({k:'title',i:i+1});else setPhase({k:'closing'})},[scenes.length])
+ const end=useCallback(()=>setPhase(outro?{k:'closing'}:{k:'break'}),[outro])
+ const next=useCallback((i:number)=>{if(i+1<scenes.length)setPhase({k:'title',i:i+1});else end()},[scenes.length,end])
 
  // the title card between scenes: the minute and what is coming
  useEffect(()=>{
   if(phase.k!=='title')return
-  const m=scenes[phase.i]?.moment;if(!m){setPhase({k:'closing'});return}
+  const m=scenes[phase.i]?.moment;if(!m){setPhase(scenes.length||outro?(outro?{k:'closing'}:{k:'break'}):{k:'quiet'});return}
   setFx(null);setLetters(null);setTag(null);setCaption(`${m.label??`${m.minute}′`} · ${reel.teams[m.side]!.name}`)
   const id=window.setTimeout(()=>setPhase({k:'scene',i:phase.i}),reduced?700:900/speedRef.current);return()=>window.clearTimeout(id)
  },[phase,scenes,reel,reduced])
@@ -53,7 +58,10 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false}:{re
   const id=window.setTimeout(()=>setPhase({k:'done'}),closingAny?(closing?FX[closing].ms:1400)+1800:1800);return()=>window.clearTimeout(id)
   // eslint-disable-next-line react-hooks/exhaustive-deps
  },[phase])
- useEffect(()=>{if(phase.k==='done')onDone?.()},[phase,onDone])
+ useEffect(()=>{if(phase.k==='done'||phase.k==='break')onDone?.()},[phase,onDone])
+ // a part of a live match with nothing worth showing: the clock runs on to the stop
+ useEffect(()=>{if(phase.k!=='quiet'||!segment)return;setCaption(`${segment.from}′–${segment.to}′ · a quiet spell — nothing in the boxes`);const id=window.setTimeout(()=>setPhase({k:'break'}),reduced?900:1800/speedRef.current);return()=>window.clearTimeout(id)},[phase,segment,reduced])
+ useEffect(()=>{if(phase.k==='break'&&segment){setScore(scoreAt(segment.to));setTag(null);setFx(null);setLetters(null)}},[phase,segment,scoreAt])
  // autoStart: the line-ups hold for a few seconds, then the match kicks off by itself — nobody has to press anything to watch
  useEffect(()=>{if(!autoStart||phase.k!=='lineups')return;const id=window.setTimeout(()=>{sound?.('whistle');setPhase({k:'title',i:0})},reduced?2500:4200);return()=>window.clearTimeout(id)
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -79,7 +87,7 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false}:{re
    else window.setTimeout(()=>next(phase.i),reduced?2200:m.kind==='goal'?900:500)
   }
   const onCue=(s:Scene,q:Scene['cues'][number],_qi:number)=>{
-   if(q.kind==='goal'){setScore(m.score);const cel=celebrationFor(reel,m,s,story);const ok=cel&&allow.fx.includes(cel)?cel:null;setFx(ok);setLetters(cel&&!ok?LETTERS[cel]:null);sound?.(reel.mine===null||m.side===reel.mine?'goal':'concede')
+   if(q.kind==='goal'){setScore(m.score);const cel=celebrationFor(reel,m,s,reel.moments);const ok=cel&&allow.fx.includes(cel)?cel:null;setFx(ok);setLetters(cel&&!ok?LETTERS[cel]:null);sound?.(reel.mine===null||m.side===reel.mine?'goal':'concede')
     const who=reel.teams[m.side]!.lineup.find(p=>p.id===m.player),ast=reel.teams[m.side]!.lineup.find(p=>p.id===m.assist)
     setCaption(`GOAL · ${m.label??`${m.minute}′`} · ${who?`${who.no} ${who.name}`:reel.teams[m.side]!.name}${ast&&ast.id!==who?.id?` — assist ${ast.name}`:''}`)}
    else if(q.kind==='kick')sound?.('kick')
@@ -96,7 +104,7 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false}:{re
  },[phase,scenes,reduced])
 
  const skipScene=()=>{if(phase.k==='scene'||phase.k==='title')next(phase.i);else if(phase.k==='lineups')setPhase({k:'title',i:0})}
- const toEnd=()=>{cancelAnimationFrame(raf.current);setPhase({k:'closing'})}
+ const toEnd=()=>{cancelAnimationFrame(raf.current);end()}
  const again=()=>{setScore([0,0]);setFx(null);setPhase({k:'lineups'})}
  const T=reel.teams
  return <section className={css.theatre} data-testid="highlights" data-phase={phase.k} aria-label={`Highlights: ${T[0].name} v ${T[1].name}`}>
@@ -105,7 +113,7 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false}:{re
    <canvas ref={canvas} width={W} height={H} className={css.canvas} aria-hidden="true"/>
    <header className={css.hud} aria-live="off">
     <span className={css.team}><Chip t={T[0]}/><b>{T[0].code}</b></span>
-    <span className={css.score} data-testid="highlights-score"><b>{score[0]}</b><i>{phase.k==='scene'||phase.k==='title'?(scenes[(phase as {i:number}).i]?.moment.label??`${scenes[(phase as {i:number}).i]?.moment.minute??0}′`):phase.k==='closing'||phase.k==='done'?'FT':'KO'}</i><b>{score[1]}</b></span>
+    <span className={css.score} data-testid="highlights-score"><b>{score[0]}</b><i>{phase.k==='scene'||phase.k==='title'?(scenes[(phase as {i:number}).i]?.moment.label??`${scenes[(phase as {i:number}).i]?.moment.minute??0}′`):phase.k==='break'||phase.k==='quiet'?`${segment?.to??0}′`:phase.k==='closing'||phase.k==='done'?'FT':'KO'}</i><b>{score[1]}</b></span>
     <span className={css.team} data-right><b>{T[1].code}</b><Chip t={T[1]}/></span>
    </header>
    {tag&&phase.k==='scene'?<span className={css.tag} style={{insetInlineStart:`${tag.x}%`,insetBlockStart:`${tag.y}%`}} data-side={tag.side}>{tag.text}<i aria-hidden="true">▼</i></span>:null}
@@ -114,10 +122,10 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false}:{re
   </div>
   <p className={css.caption} role="status" aria-live="polite">{caption||' '}</p>
   <p className={css.controls}>
-   {phase.k==='done'?<button type="button" className={`${css.btn} min-h-tap`} onClick={again}>Watch again</button>:<>
+   {phase.k==='break'?null:phase.k==='done'?<button type="button" className={`${css.btn} min-h-tap`} onClick={again}>Watch again</button>:<>
     <button type="button" className={`${css.btn} min-h-tap`} onClick={skipScene}>{phase.k==='lineups'?'Kick off':'Next highlight'}</button>
     <button type="button" className={`${css.btn} min-h-tap`} aria-pressed={speed===2} onClick={()=>setSpeed(speed===1?2:1)}>{speed===1?'×2':'×1'}</button>
-    <button type="button" className={`${css.btn} ${css.ghost} min-h-tap`} onClick={toEnd}>Skip to full time</button></>}
+    <button type="button" className={`${css.btn} ${css.ghost} min-h-tap`} onClick={toEnd}>{outro?'Skip to full time':`Skip to ${segment!.to}′`}</button></>}
    <span className={css.count}>{scenes.length} highlight{scenes.length===1?'':'s'}</span>
   </p>
  </section>

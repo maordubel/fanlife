@@ -27,8 +27,8 @@
 .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; }
 .btn { display: inline-flex; align-items: center; justify-content: center; min-block-size: 44px; padding: 0 14px; font: 700 12px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; color: var(--hl-white); background: var(--hl-blue); border: 2px solid var(--hl-ink); box-shadow: 3px 3px 0 var(--hl-ink); cursor: pointer; }
 .btn[aria-pressed='true'] { background: var(--hl-ink); }
-.ghost { background: transparent; color: var(--mag-ink, var(--hl-ink)); }
-.count { margin-inline-start: auto; font: 700 11px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; }
+.ghost { background: transparent; color: var(--hl-ghost, var(--mag-ink, var(--hl-ink))); border-color: var(--hl-ghost, var(--hl-ink)); }
+.count { color: var(--hl-ghost, inherit);  margin-inline-start: auto; font: 700 11px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; }
 /* the broadcast line-up board */
 .lineups { display: grid; gap: 10px; padding: 10px; background: var(--hl-ink); border: 3px solid var(--hl-ink); }
 .screen[hidden] { display: none; }

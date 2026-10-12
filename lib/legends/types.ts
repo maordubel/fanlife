@@ -1,6 +1,6 @@
 import type {FormationId} from '@/lib/clubs/rumble-xi/types'
 import type {LegendsSettings,QuotaPos} from './config'
-import type {RULE_VERSION,ENGINE_VERSION} from './config'
+import type {RULE_VERSION,EngineVersion} from './config'
 
 /**
  * LEGENDS MANAGER — the shapes. One career = one real club and only men of THAT club (rulebook §1.1): `card.club` is never
@@ -16,7 +16,7 @@ export type Pressing='low'|'medium'|'high'
 export type Tempo='slow'|'normal'|'fast'
 export type Tactics={approach:Approach;pressing:Pressing;tempo:Tempo}
 export const DEFAULT_TACTICS:Tactics={approach:'balanced',pressing:'medium',tempo:'normal'}
-export type Lineup={formation:FormationId;xi:string[];bench:string[];tactics:Tactics}
+export type Lineup={formation:FormationId;xi:string[];bench:string[];tactics:Tactics;/** the armband — one of the eleven */captain?:string}
 
 /** a man's place in a career squad (§0 "career player") */
 export type SquadEntry={id:string;quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;joined:number}
@@ -33,9 +33,9 @@ export type DraftState={slot:number;group:QuotaPos|null;offers:Offer[];shown:str
 /* ───────── a match (§1.4, §2.5) ───────── */
 export type EventKind='kickoff'|'chance'|'goal'|'yellow'|'red'|'injury'|'sub'|'tactic'|'half-time'|'full-time'|'extra-time'|'penalties'|'stop'
 export type MatchEventRow={seq:number;minute:number;kind:EventKind;side:0|1|null;player?:string;other?:string;detail?:string;n?:number}
-export type SideSnapshot={club:string;name:string;formation:FormationId;tactics:Tactics;xi:{id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>}[];bench:{id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>}[];morale:number;home:boolean|null}
+export type SideSnapshot={club:string;name:string;formation:FormationId;tactics:Tactics;xi:{id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>}[];bench:{id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>}[];morale:number;home:boolean|null;captain?:string}
 export type Decision={stop:number;tactics?:Tactics;subs?:{out:string;in:string}[]}
-export type MatchSnapshot={id:string;seed:number;engine:typeof ENGINE_VERSION;rules:typeof RULE_VERSION;sides:[SideSnapshot,SideSnapshot];knockout:boolean;decider?:'extra-time-penalties'|'penalties'}
+export type MatchSnapshot={id:string;seed:number;engine:EngineVersion;rules:typeof RULE_VERSION;sides:[SideSnapshot,SideSnapshot];knockout:boolean;decider?:'extra-time-penalties'|'penalties'}
 export type MatchOutcome={goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];stops:number[];
  /** who stepped on the pitch, per side — an official appearance (§2.3) */
  played:[string[],string[]];yellows:[Record<string,number>,Record<string,number>];reds:[Record<string,{second:boolean;length:number}>,Record<string,{second:boolean;length:number}>];
@@ -47,11 +47,11 @@ export type FixtureSide={formation:string;xi:{id:string;name:string;pos:QuotaPos
 export type Fixture={id:string;round:number;home:string;away:string;result:{goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];seed:number;sides?:[FixtureSide,FixtureSide]}|null}
 export type LedgerEntry={key:string;season:number;kind:'draft-budget'|'draft-buy'|'board-grant'|'buy'|'sell'|'season-grant'|'bonus'|'emergency';amount:number;card?:string;note?:string;at:string}
 export type SeasonRecord={ordinal:number;place:number;of:number;points:number;w:number;d:number;l:number;gf:number;ga:number;champion:boolean;playoff:boolean;grant:number;bonus:number;cash:number;squad:string[];topScorer:{id:string;name:string;goals:number}|null}
-export type Season={ordinal:number;rounds:number;played:number;fixtures:Fixture[];windows:{pre:boolean;mid:boolean};bonusAwarded:number;playoff:Fixture|null;ended:boolean;ranks:string[]}
+export type Season={ordinal:number;rounds:number;played:number;fixtures:Fixture[];windows:{pre:boolean;mid:boolean;/** the window after round 2 */early?:boolean};bonusAwarded:number;playoff:Fixture|null;ended:boolean;ranks:string[]}
 export type Phase='draft'|'window'|'season'|'playoff'|'season-end'
 
 export type Career={
- v:2;id:string;rules:typeof RULE_VERSION;engine:typeof ENGINE_VERSION;owner:string;clubId:string;clubName:string;status:'active'|'archived';
+ v:2;id:string;rules:typeof RULE_VERSION;engine:EngineVersion;owner:string;clubId:string;clubName:string;status:'active'|'archived';
  settings:LegendsSettings;catalog:Catalog;teams:Team[];phase:Phase;draft:DraftState|null;season:Season;live:Live|null;
  cutscene:'board-grant'|'season-end'|null;soldThisWindow:string[];aiDone:string[];
  ledger:LedgerEntry[];reputation:{points:number;events:{key:string;season:number;points:number;why:string}[]};history:SeasonRecord[];

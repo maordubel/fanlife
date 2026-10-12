@@ -3,7 +3,7 @@ import {hash} from '@/lib/clubs/rumble-rng'
 import {ENGINE_VERSION,RULE_VERSION} from './config'
 import {cardOf,me} from './career'
 import {run} from './engine'
-import {fieldable,lineupError} from './squad'
+import {captainOf,fieldable,lineupError} from './squad'
 import type {Career,MatchEventRow,SideSnapshot} from './types'
 
 /**
@@ -17,13 +17,13 @@ import type {Career,MatchEventRow,SideSnapshot} from './types'
 export const FRIENDLY_TTL_MS=48*3600_000,MAX_OPEN=5
 export type LockedSide=SideSnapshot&{owner:string;careerId:string;lockedAt:string;digest:string}
 export type FriendlyStatus='sent'|'completed'|'declined'|'cancelled'|'expired'
-export type Friendly={v:2;id:string;tokenHash:string;status:FriendlyStatus;createdAt:string;expiresAt:string;inviter:LockedSide;invitee:LockedSide|null;result:{goals:[number,number];events:MatchEventRow[];seed:number;engine:typeof ENGINE_VERSION;rules:typeof RULE_VERSION}|null;closedAt:string|null}
+export type Friendly={v:2;id:string;tokenHash:string;status:FriendlyStatus;createdAt:string;expiresAt:string;inviter:LockedSide;invitee:LockedSide|null;result:{goals:[number,number];events:MatchEventRow[];seed:number;engine:import('./config').EngineVersion;rules:typeof RULE_VERSION}|null;closedAt:string|null}
 export const tokenHash=(t:string)=>createHash('sha256').update(`legends-friendly:${t}`).digest('hex')
 export function lockSide(c:Career,now:string):LockedSide|{error:string}{
  if(c.phase==='draft')return {error:'Finish your draft first.'}
  const t=me(c),men=fieldable(t,id=>cardOf(c,t,id)),err=lineupError(t.lineup,men);if(err)return {error:`Set your eleven first: ${err}`}
  const m=(id:string)=>{const x=cardOf(c,t,id)!;return {id:x.id,name:x.name,pos:x.pos,stars:x.stars,attrs:x.attrs}}
- const side:SideSnapshot={club:c.clubId,name:c.clubName,formation:t.lineup.formation,tactics:{...t.lineup.tactics},xi:t.lineup.xi.map(m),bench:t.lineup.bench.map(m),morale:1,home:null}
+ const side:SideSnapshot={club:c.clubId,name:c.clubName,formation:t.lineup.formation,tactics:{...t.lineup.tactics},xi:t.lineup.xi.map(m),bench:t.lineup.bench.map(m),morale:1,home:null,captain:captainOf(t.lineup,id=>cardOf(c,t,id))}
  const digest=createHash('sha256').update(JSON.stringify([c.id,c.catalog.digest,side.formation,side.tactics,t.lineup.xi,t.lineup.bench])).digest('hex').slice(0,16)
  return {...side,owner:c.owner,careerId:c.id,lockedAt:now,digest}
 }
