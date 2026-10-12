@@ -103,3 +103,8 @@
  .flg-pitch label { grid-template-columns: 4.2em minmax(0, 1fr); align-items: center; justify-items: stretch; }
  .flg-slot { text-align: center; padding-block: 12px; }
 }
+.flg-link-box { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin-block-start: 10px; }
+.flg-link-box label { flex: 1 1 260px; display: grid; gap: 4px; font: 700 11px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase; }
+.flg-link-box input { min-block-size: 44px; border: 2px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); font: 500 13px var(--mag-mono); padding: 0 8px; inline-size: 100%; }
+.flg-friendlies { list-style: none; margin: 0; padding: 0; } .flg-friendlies > li { padding: 10px 0; border-block-end: 1px solid var(--af-rule); }
+.flg-friendlies > li > p { margin: 0 0 4px; }

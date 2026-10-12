@@ -3,12 +3,13 @@ import {useEffect,useMemo,useRef,useState,useTransition} from 'react'
 import Link from 'next/link'
 import {careerAction,marketAction} from '@/app/all-football/fan-league/actions'
 import type {CardView,CareerView,FixtureView,Lines} from '@/lib/fan-league/server'
+import {CareerFriendlies} from './Friendlies'
 
 /**
  * One career on one screen: Today · Squad · Market · League. Every change is ONE server action carrying the revision this
  * screen saw and a fresh key; what comes back is the career as the server now holds it. Nothing is decided here.
  */
-type Tab='today'|'squad'|'market'|'league'
+type Tab='today'|'squad'|'market'|'league'|'friendlies'
 const TABS:{id:Tab;label:string}[]=[{id:'today',label:'Today'},{id:'squad',label:'Squad'},{id:'market',label:'Market'},{id:'league',label:'League'}]
 const FORMATIONS=['4-3-3','4-4-2','3-5-2'] as const
 const TACTIC_TEXT={balanced:'Balanced',attacking:'Attacking',defensive:'Defensive'} as const
@@ -17,7 +18,7 @@ const years=(c:{fromYear:number|null;toYear:number|null})=>c.fromYear&&c.toYear?
 const money=(m:number)=>`€${m%1?m.toFixed(1):m}M`
 const fits=(c:CardView,fam:string)=>c.free?fam!=='GK':c.position===fam||!!c.alt?.includes(fam as CardView['position'])
 
-export function CareerApp({initial}:{initial:CareerView}){
+export function CareerApp({initial,friendlies=false}:{initial:CareerView;friendlies?:boolean}){
  const [v,setV]=useState(initial),[tab,setTab]=useState<Tab>('today'),[msg,setMsg]=useState<{kind:'ok'|'error';text:string}|null>(null),[busy,start]=useTransition()
  const send=(a:Record<string,unknown>,ok?:string)=>start(async()=>{
   const r=await careerAction(v.id,{...a,key:newKey(),rev:v.revision})
@@ -32,12 +33,13 @@ export function CareerApp({initial}:{initial:CareerView}){
     <div><dt>Window</dt><dd data-open={v.window||undefined}>{v.window?'Open':'Shut'}</dd></div>
    </dl>
   </header>
-  <nav className="flg-tabs" aria-label="Career">{TABS.map(t=><button key={t.id} type="button" className="min-h-tap" aria-current={tab===t.id?'page':undefined} onClick={()=>{setTab(t.id);setMsg(null)}}>{t.label}</button>)}</nav>
+  <nav className="flg-tabs" aria-label="Career">{[...TABS,...(friendlies?[{id:'friendlies' as Tab,label:'Friendlies'}]:[])].map(t=><button key={t.id} type="button" className="min-h-tap" aria-current={tab===t.id?'page':undefined} onClick={()=>{setTab(t.id);setMsg(null)}}>{t.label}</button>)}</nav>
   <p className="flg-live" role="status" aria-live="polite" data-kind={msg?.kind}>{msg?.text??''}</p>
   {tab==='today'?<Today v={v} busy={busy} play={()=>send({kind:'play'},`Round ${v.played+1} played.`)} go={setTab}/>:null}
   {tab==='squad'?<Squad v={v} busy={busy} send={send}/>:null}
   {tab==='market'?<Market v={v} busy={busy} send={send}/>:null}
   {tab==='league'?<League v={v}/>:null}
+  {tab==='friendlies'&&friendlies?<CareerFriendlies careerId={v.id} xiError={v.xiError}/>:null}
  </div>
 }
 
