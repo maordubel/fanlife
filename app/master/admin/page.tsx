@@ -6,6 +6,7 @@ import {AudienceDesk} from '@/components/master/desk/AudienceDesk'
 import {PlayersDesk} from '@/components/master/desk/PlayersDesk'
 import {lightState} from '@/lib/master/lightState'
 import {readState,storageInfo} from '@/lib/master/store'
+import {refreshMigrationState} from '@/lib/master/durable'
 import {requireAdmin} from '@/lib/master/admin'
 import {allSummaries} from '@/lib/master/summary'
 import {ADAPTER_LIST,adapterAvailable} from '@/lib/master/adapters'
@@ -24,6 +25,7 @@ const LEGACY:Record<string,{section:DeskSection;view?:string}>={overview:{sectio
 
 export default async function Page({searchParams}:{searchParams:{section?:string;tab?:string;club?:string;view?:string;days?:string}}){
  const session=requireAdmin('/master/admin')
+ await refreshMigrationState()
  const state=await readState()
  const storage=storageInfo()
  const [summaries,runs]=await Promise.all([allSummaries(state),readRuns()])

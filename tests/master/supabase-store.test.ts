@@ -119,3 +119,21 @@ describe('the migration guard',()=>{
   expect(calls.filter(c=>c.startsWith('blob'))).toEqual([])
  })
 })
+
+describe('the retire decision on another server instance',()=>{
+ beforeEach(()=>{rows=new Map();tableExists=true;calls=[];blobFiles.clear();blobRefuses=true;vi.resetModules();vi.stubGlobal('fetch',vi.fn(fakeFetch))
+  process.env.NEXT_PUBLIC_SUPABASE_URL='https://x.supabase.co';process.env.SUPABASE_SERVICE_ROLE_KEY='service_x';process.env.BLOB_READ_WRITE_TOKEN='vercel_blob_rw_x_y'
+  const G=globalThis as Record<string,unknown>;for(const k of ['fanDurable','fanSbMissing','fanBlobQuiet','fanMigration','fanBlobRetired','fanStoreError','fanFailAt','fanLastGood','fanLastGoodAt'])delete G[k]})
+ afterEach(()=>{vi.unstubAllGlobals()})
+ it('an instance that still remembers "pending" reports retired once the control room asks the store',async()=>{
+  vi.spyOn(console,'error').mockImplementation(()=>{})
+  const {durable,MigrationPending,refreshMigrationState}=await import('@/lib/master/durable')
+  await expect(durable()!.read('profiles/a.json',{fresh:true})).rejects.toBeInstanceOf(MigrationPending)
+  rows.set('_store/blob-retired.json',{name:'_store/blob-retired.json',body:'{}',etag:'"r"'}) // written by another instance
+  const {storageInfo}=await import('@/lib/master/store')
+  expect(storageInfo().migration?.pending).toBe('profiles/a.json')
+  await refreshMigrationState()
+  expect(storageInfo().migration).toEqual({pending:null,blobRetired:true})
+  expect(await durable()!.read('profiles/a.json',{fresh:true})).toBeNull()
+ })
+})

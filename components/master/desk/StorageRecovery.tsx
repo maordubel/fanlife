@@ -9,7 +9,7 @@ import {useRouter} from 'next/navigation'
 export function StorageRecovery({pending,blobRetired}:{pending:string|null;blobRetired:boolean}){
  const router=useRouter()
  const [busy,setBusy]=useState(false),[msg,setMsg]=useState<string|null>(null),[confirm,setConfirm]=useState('')
- if(blobRetired&&!pending)return null
+ if(blobRetired&&!pending)return <section className="desk-sub" id="migration" aria-labelledby="mig-h"><h2 id="mig-h">Move to Supabase</h2><p className="desk-fine" role="status">Done: Vercel Blob is retired. Supabase is the only store.</p></section>
  async function run(action:'retry-blob'|'retire-blob'){
   setBusy(true);setMsg(null)
   try{const r=await fetch(`/api/master/storage/${action}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(action==='retire-blob'?{confirm}:{})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||'Could not save');setMsg(action==='retry-blob'?'Blob will be asked on the next read.':'Saved on server: Blob is retired.');router.refresh()}
