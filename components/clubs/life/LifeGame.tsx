@@ -127,7 +127,8 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
   const hudEl = useRef<HTMLElement | null>(null)
   const trans = useRef<Transit>('idle')
   const watch = useRef<number | null>(null)
-  const retried = useRef(false)
+  const retried = useRef(0)
+  const desyncFix = useRef(0)
   const lastRoom = useRef<string | null>(null)
   const armed = useRef(false)
   const prevStat = useRef<{chapter: string | null; coins: number; energy: number; standing: number; heart: number; bonds: Record<string, number>} | null>(null)
@@ -263,23 +264,29 @@ export function LifeGame({pack, locale, copy, hubHref, langHref}: Props) {
   const settled = useCallback(() => {
     clearWatch()
     trans.current = 'idle'
-    retried.current = false
+    retried.current = 0
     rt.current?.veil?.(false)
     syncFreeze()
-  }, [clearWatch, syncFreeze])
+    // the shell's room and the runtime's room must agree: if a slow build was abandoned, build it again rather than hand back the old room
+    const l = life.current, w = rt.current?.where?.()
+    if (l && w && l.state.room && w.room && w.room !== l.state.room && live.current.phase === 'play' && desyncFix.current < 3) {
+      desyncFix.current += 1
+      later(() => { if (trans.current === 'idle') void enterAndSettleRef.current() }, 250)
+    } else if (w && w.room === l?.state.room) desyncFix.current = 0
+  }, [clearWatch, later, syncFreeze])
   /** Enter the current room and play whatever waits in it; the only way a room is entered. */
   const enterAndSettle = useCallback(async (at?: {x: number; z: number; yaw?: number}) => {
     trans.current = 'entering'
     clearWatch()
     watch.current = window.setTimeout(() => {
-      // it hung: lift the veil, release the room, and — once — build it again
+      // it hung: lift the veil, release the room, and build it again — up to twice, longer each time (a slow device is not a dead room)
       watch.current = null
       if (trans.current === 'idle') return
       const done = entered.current; entered.current = null
       rt.current?.veil?.(false)
-      if (!retried.current && rt.current) { retried.current = true; done?.(); void enterAndSettleRef.current(at); return }
+      if (retried.current < 2 && rt.current) { retried.current += 1; done?.(); void enterAndSettleRef.current(at); return }
       done?.(); settled()
-    }, WATCHDOG_MS)
+    }, WATCHDOG_MS * (1 + retried.current))
     await enterRoom(at)
     if (trans.current === 'entering') { await settle(); settled() }
   }, [clearWatch, enterRoom, settle, settled])

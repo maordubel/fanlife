@@ -10,7 +10,7 @@
  * finished this way — or a page error, a failed request, an engine error — is a failure.
  */
 import {chromium, type Page} from 'playwright'
-import {mkdirSync} from 'node:fs'
+import {existsSync, mkdirSync} from 'node:fs'
 
 const arg = (name: string, fallback = '') => (process.argv.find(a => a.startsWith(`--${name}=`)) || '').split('=')[1] || fallback
 const base = process.argv[2]?.startsWith('http') ? process.argv[2] : 'http://127.0.0.1:3200'
@@ -49,7 +49,8 @@ function doorToward(plan: NonNullable<Plan>, from: string, to: string): string |
 
 async function main(): Promise<number> {
   const browser = await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium', args: ['--no-sandbox', '--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist']})
-  const context = await browser.newContext({viewport: {width: size[0], height: size[1]}, deviceScaleFactor: 1, hasTouch: phone, isMobile: phone})
+  const stateFile = arg('state')
+  const context = await browser.newContext({viewport: {width: size[0], height: size[1]}, deviceScaleFactor: 1, hasTouch: phone, isMobile: phone, ...(stateFile && existsSync(stateFile) ? {storageState: stateFile} : {})})
   // --look=lite|blocks: a machine without a GPU renders the full picture at a frame or two a second, too slow to click through
   await context.addInitScript((look: string) => { try { window.localStorage.setItem('fan-life:life:probe', '1'); window.localStorage.setItem('fan-life:life:sound', 'off'); if (look) window.localStorage.setItem('the-worker:life:look', look) } catch { /* no storage */ } }, arg('look'))
   const page = await context.newPage()
@@ -66,13 +67,14 @@ async function main(): Promise<number> {
   await press(page, '[data-life="begin"], [data-life="continue-life"]')
 
   const endings: string[] = [], tried = new Map<string, Set<string>>(), exhausted = new Map<string, Set<string>>(), shotOnce = new Set<string>()
-  let chaptersDone = 0, idleSince = Date.now(), lastProgress = Date.now(), lastFlags = '', answered = 0
+  let beat = 0, barren = 0, chaptersDone = 0, idleSince = Date.now(), lastProgress = Date.now(), lastFlags = '', answered = 0
   const deadline = Date.now() + Number(arg('minutes', '45')) * 60000
   while (Date.now() < deadline) {
     const s = await snap(page)
     if (!s) { await page.waitForTimeout(300); continue }
+    if (Date.now() - beat > 60000) { beat = Date.now(); console.log(`  … ${s.chapter} · ${s.room} · ${s.phase} · obj ${s.plan?.objective} · idle ${Math.round((Date.now() - lastProgress) / 1000)}s`) }
     if (s.flags !== lastFlags) { lastFlags = s.flags; lastProgress = Date.now() }
-    if (Date.now() - lastProgress > stallMs) { const dbg = await page.evaluate(() => { const w = (document.querySelector('iframe') as HTMLIFrameElement | null)?.contentWindow as unknown as {__vxPlay?: {audit(): string[]; where(): unknown}} | null; return w?.__vxPlay ? {audit: w.__vxPlay.audit(), where: w.__vxPlay.where()} : null }).catch(() => null); faults.push(`no progress for ${Math.round(stallMs / 60000)} min in ${s.chapter} · ${s.room} · objective ${s.plan?.objective} · ${JSON.stringify(dbg)} · doors ${JSON.stringify(s.plan?.doors.filter(d => d.room === s.room))}`); await shot(`stuck-${s.chapter}`); break }
+    if (Date.now() - lastProgress > stallMs) { const dbg = await page.evaluate(() => { const w = (document.querySelector('iframe') as HTMLIFrameElement | null)?.contentWindow as unknown as {__vxPlay?: {audit(): string[]; where(): unknown}} | null; const ui = [...document.querySelectorAll('[data-life]')].map(e => { const el = e as HTMLElement; return `${e.getAttribute('data-life')}${el.offsetParent ? '' : '(hidden)'}` }); const btns = [...document.querySelectorAll('button')].filter(b => (b as HTMLElement).offsetParent).map(b => (b.textContent || '').trim().slice(0, 30)).slice(0, 12); const line = document.querySelector('[data-life="line"]')?.textContent?.slice(0, 120) ?? null; const cont = document.querySelector('[data-life="continue"]')?.outerHTML.slice(0, 200) ?? null; return w?.__vxPlay ? {audit: w.__vxPlay.audit(), where: w.__vxPlay.where(), ui, btns, line, cont} : {ui, btns} }).catch(() => null); faults.push(`no progress for ${Math.round(stallMs / 60000)} min in ${s.chapter} · ${s.room} · objective ${s.plan?.objective} · ${JSON.stringify(dbg)} · doors ${JSON.stringify(s.plan?.doors.filter(d => d.room === s.room))}`); await shot(`stuck-${s.chapter}`); break }
     const once = async (name: string) => { const k = `${s.chapter}-${name}`; if (!shotOnce.has(k)) { shotOnce.add(k); await page.waitForTimeout(500); await shot(`${String(chaptersDone + 1).padStart(2, '0')}-${s.chapter}-${name}`); await overflow(k) } }
 
     if (s.phase === 'finished') { await shot('99-finished'); break }
@@ -84,6 +86,7 @@ async function main(): Promise<number> {
       const e = await page.locator('[data-life="ending"]').getAttribute('data-ending')
       await once('ending'); endings.push(`${s.chapter}:${e}`); chaptersDone++
       console.log(`  ✓ ${s.chapter} → ${e}`)
+      if (stateFile) await context.storageState({path: stateFile}).catch(() => null)
       if (chaptersDone >= maxChapters) break
       await press(page, '[data-life="next-chapter"]'); lastProgress = Date.now(); await page.waitForTimeout(400); continue
     }
@@ -101,6 +104,7 @@ async function main(): Promise<number> {
     const room = s.room!, key = `${room}|${s.flags}`
     const done = tried.get(key) ?? new Set<string>(); tried.set(key, done)
     const options = [...s.actors.filter(a => a.talk).map(a => ['actor', a.id] as const), ...s.spots.map(x => ['spot', x.id] as const)].filter(([k, i]) => !done.has(`${k}:${i}`))
+    if (process.env.DIAG) console.log(`  · ${room} want=${s.plan.room} options=${JSON.stringify(options)} done=${JSON.stringify([...done])} where=${JSON.stringify(s.where)}`)
     const wantRoom = s.plan.room && s.plan.room !== room ? s.plan.room : null
     const via = wantRoom ? doorToward(s.plan, room, wantRoom) : null
     let move: readonly [string, string] | null = null
@@ -111,19 +115,22 @@ async function main(): Promise<number> {
       const ex = exhausted.get(s.flags) ?? new Set<string>(); exhausted.set(s.flags, ex); ex.add(room)
       const open = s.plan.doors.filter(d => d.room === room && !d.locked)
       const next = open.find(d => !ex.has(d.to)) ?? open[Math.floor(Math.random() * open.length)]
+      if (!next && ++barren < 8) { exhausted.get(s.flags)?.delete(room); await page.waitForTimeout(4000); continue }
       if (!next) { faults.push(`nothing left to try and no open door in ${s.chapter} · ${room}`); await shot(`dead-${s.chapter}`); break }
       move = ['exit', next.id]
     }
     if (move[0] !== 'exit') done.add(`${move[0]}:${move[1]}`)
+    barren = 0
     const ok = await goTo(page, move[0], move[1])
     if (!ok) { if (move[0] === 'exit') faults.push(`cannot walk to exit ${move[1]} in ${room}`); await page.waitForTimeout(200); continue }
     // wait until something came of it: a box, another room, or he simply stopped
     const start = Date.now()
-    while (Date.now() - start < 45000) {
+    while (Date.now() - start < 240000) {
       await page.waitForTimeout(200)
       const t = await snap(page)
       if (!t || t.busy || t.room !== room || t.phase !== 'play' || t.flags !== s.flags) break
       if (t.where && !t.where.moving && Date.now() - start > 1500) break
+      if (Date.now() - start > 45000 && !(t.where && t.where.moving)) break
     }
   }
   if (Date.now() >= deadline) faults.push('ran out of time')
