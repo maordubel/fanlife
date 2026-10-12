@@ -93,7 +93,7 @@ describe('the migration guard',()=>{
  it('mutate never writes the seed over a copy Blob may still hold',async()=>{
   blobRefuses=true;vi.spyOn(console,'error').mockImplementation(()=>{})
   const {mutate,readState}=await import('@/lib/master/store')
-  await expect(mutate(s=>{s.clubs[0].name='x';return true})).rejects.toThrow(/nothing was saved/)
+  await expect(mutate(s=>{s.clubs[0]!.name='x';return true})).rejects.toThrow(/nothing was saved/)
   expect(rows.has('control.json')).toBe(false)
   expect((await readState()).clubs.length).toBeGreaterThan(0) // pages run on the published lineup
  })
