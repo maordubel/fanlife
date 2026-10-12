@@ -20,6 +20,7 @@ import {idsOf,readMissed,settleMissed,writeMissed,type Missed} from '@/lib/clubs
 import {Answers,type AnswerLabels} from './TriviaAnswers'
 import {TriviaReport} from './TriviaReport'
 import css from './trivia.module.css'
+import {levelOf} from '@/lib/trivia/levels'
 
 export type BlockerView={code:string;counts:number[];need:number}
 export type TriviaPlan={
@@ -220,7 +221,7 @@ export function ClubTrivia(props:ClubTriviaProps){
    </div>
    <div className={css.body}>
     <div className={css.qcard} key={q.id}>
-     <p className={css.pills}><span data-strong>{t(`tq.type.${q.type}`)}</span><span>{t('tq.difficulty',{d:q.difficulty})}</span><span>{topicLabel(q.topic)}</span></p>
+     <p className={css.pills}><span data-strong>{t(`tq.type.${q.type}`)}</span><span>{t(`tq.level.${levelOf(q.difficulty)}`)}</span><span>{topicLabel(q.topic)}</span></p>
      {q.quoteHe&&<blockquote lang={contentLocale} dir="auto" className={css.quote}>{q.quoteHe}{q.quoteByHe&&<cite> — {q.quoteByHe}</cite>}</blockquote>}
      <h2 lang={contentLocale} dir="auto" data-long={q.prompt.length>110||undefined}>{q.prompt}</h2>
      <p className={css.how}>{opening?t('tq.opening'):t(`tq.how.${q.type}`)}</p>

@@ -3,8 +3,10 @@ import {loadClub} from '@/lib/clubs/resolver'
 import {MIN_DECK,categoryOf,clubBank,dealMode,modeCatalog,reviewMissed,verifyDeck,type Bank} from '@/lib/clubs/trivia-deck'
 import {bandOf,factsOf,normKey} from '@/lib/clubs/trivia-bank'
 
-let hapoel:Bank,olympiacos:Bank
-beforeAll(async()=>{hapoel=clubBank((await loadClub('hapoel-tel-aviv'))!.data);olympiacos=clubBank((await loadClub('olympiacos'))!.data)},120000)
+let hapoel:Bank,olympiacos:Bank,full:Bank
+beforeAll(async()=>{hapoel=clubBank((await loadClub('hapoel-tel-aviv'))!.data);const od=(await loadClub('olympiacos'))!.data;full=clubBank(od)
+ // the thin-bank path, kept honest after the forge (rule 109) gave every club a full bank: Olympiacos's date checks alone
+ olympiacos=clubBank({...od,version:`${od.version}~date-only`,trivia:{questions:od.trivia.questions.filter(q=>q.template==='event-date-check'),pools:od.trivia.pools}})},120000)
 
 const ok=<D,>(d:D):Exclude<D,{blocked:unknown}>=>{if(typeof d==='object'&&d!==null&&'blocked' in d)throw new Error('blocked '+JSON.stringify(d));return d as Exclude<D,{blocked:unknown}>}
 
@@ -58,7 +60,7 @@ describe('Gate 2 · a thin bank gets a labelled narrow mode and a named blocker 
   const d=ok(dealMode(olympiacos,{mode:'history'},1,0)),tf=d.ids.map(id=>olympiacos.byId.get(id)!).filter(q=>q.type==='tf')
   if(tf.length===d.ids.length){const t=tf.filter(q=>q.answer==='true').length;expect(t).toBeGreaterThanOrEqual(Math.min(3,Math.floor(d.ids.length/3)));expect(d.ids.length-t).toBeGreaterThanOrEqual(Math.min(3,Math.floor(d.ids.length/3)))}
  })
- it('the bank report says it is date-only so the admin can see why',()=>{expect(olympiacos.report.dateOnly).toBe(true);expect(hapoel.report.dateOnly).toBe(false)})
+ it('the bank report says it is date-only so the admin can see why',()=>{expect(olympiacos.report.dateOnly).toBe(true);expect(hapoel.report.dateOnly).toBe(false);expect(full.report.dateOnly).toBe(false)})
 })
 
 describe('Gate 2 · revenge is exactly the questions this device missed (TR-R11)',()=>{

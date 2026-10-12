@@ -108,11 +108,12 @@ describe('Gate 2 · the run lives on the server (§17.4)',()=>{
   request.gates=[2];request.paused=true;expect(await startTriviaRun({slug:'hapoel-tel-aviv',version:data.version,seed:1,cursor:0})).toEqual({ok:false,error:'GATE_CLOSED'})
   request.paused=false;request.host='zrinjski.localhost';expect(await startTriviaRun({slug:'hapoel-tel-aviv',version:data.version,seed:1,cursor:0})).toEqual({ok:false,error:'GATE_CLOSED'})
  })
- it('a mode the bank cannot field is answered with the blocker, never a substitute run',async()=>{
+ it('a club the forge filled plays the standard climb, and its history mode still deals',async()=>{
   request.host='olympiacos.localhost'
   const od=(await loadClub('olympiacos'))!.data
   const r=await startTriviaRun({slug:'olympiacos',version:od.version,seed:1,cursor:0,mode:'standard'})
-  expect(r).toMatchObject({ok:false,error:'BLOCKED',blocker:{code:'TRIVIA_STAGE_POOL_SHORT',need:4}})
+  // since the Question Forge (rule 109) Olympiacos fields the full climb; the blocker path itself is held in trivia-deck.test.ts
+  expect(r).toMatchObject({ok:true,meta:{mode:'standard',banded:true}})
   const h=await startTriviaRun({slug:'olympiacos',version:od.version,seed:1,cursor:0,mode:'history'});expect(h).toMatchObject({ok:true,meta:{mode:'history',banded:false}})
  },60000)
  it('revenge deals only the ids this device missed, and says what it can no longer ask',async()=>{

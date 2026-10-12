@@ -23,6 +23,7 @@ import {readPrecompiled} from './precompiled'
 import {withPlayerOverrides} from '@/lib/players/apply'
 import {refreshSnapshot} from '@/lib/players/snapshot'
 import {getSnapshot} from '@/lib/players/effective'
+import {withForgedTrivia} from '@/lib/trivia/club'
 const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>compilePackBase(withEuro(pack,club.id) as never,club)
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
 /** The colours-of-football catalogue kits the club pack has no (season, type) for: status `review`, so they reach no gate until the owner approves them. */
@@ -58,7 +59,7 @@ export function loadClubBase(id:string):Promise<{data:ClubData;diagnostics:Diagn
  if(!Object.hasOwn(providers,id))return Promise.resolve(null)
  let p=baseCache.get(id)
  // production reads the build's pre-compiled base (lib/clubs/precompiled.ts); anything missing or stale compiles as before
- if(!p){p=readPrecompiled(id).then(pre=>pre??providers[id]!().then(r=>r?{...r,data:withRosterWave(id,r.data)}:r)).catch(e=>{baseCache.delete(id);throw e});baseCache.set(id,p)}
+ if(!p){p=readPrecompiled(id).then(pre=>pre??providers[id]!().then(r=>r?{...r,data:withForgedTrivia(withRosterWave(id,r.data))}:r)).catch(e=>{baseCache.delete(id);throw e});baseCache.set(id,p)}
  return p
 }
 function freeze<T>(v:T):T {if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.freeze(v);for(const item of Object.values(v))freeze(item)}return v}
@@ -66,7 +67,7 @@ function finish(result:{data:ClubData;diagnostics:Diagnostic[]}){result.data.gat
 /** A club with no repository pack is played from its DESK PACK — built in the control room from the owner's approvals,
  * compiled by the same compiler. It can change at any time, so it is re-read after a minute (and at once after a build). */
 const DESK_TTL_MS=60_000
-async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null;const pack=await readDeskPack(id).catch(()=>null);return pack?compilePackEuro(pack,reg):null}
+async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null;const pack=await readDeskPack(id).catch(()=>null);if(!pack)return null;const r=compilePackEuro(pack,reg);return {...r,data:withForgedTrivia(r.data)}}
 /** Static packs are immutable within a deployment; content versions travel with each run. */
 export async function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null> {
  const isStatic=Object.hasOwn(providers,id)

@@ -1,0 +1,42 @@
+{
+ "note": "English names for competitions as Hebrew and Greek sources write them (12.10.2026). Era-correct: the top flight named by its own name in its own years.",
+ "names": {
+  "ליגה לאומית": "Liga Leumit",
+  "ליגת העל": "Israeli Premier League",
+  "גביע המדינה": "Israel State Cup",
+  "גביע הטוטו": "Toto Cup",
+  "ליגה א'": "Liga Alef",
+  "ליגה ארצית": "Liga Artzit",
+  "גביע אופא": "UEFA Cup",
+  "גביע אופ\"א": "UEFA Cup",
+  "הליגה האירופית": "UEFA Europa League",
+  "גביע האינטרטוטו": "UEFA Intertoto Cup",
+  "גביע ארץ ישראל": "Palestine Cup",
+  "ליגת האלופות": "UEFA Champions League",
+  "גביע הטוטו לאומית": "Toto Cup Leumit",
+  "גביע אלוף האלופים": "Israel Super Cup",
+  "קונפרנס ליג": "UEFA Europa Conference League",
+  "גביע אסיה": "Asian Champion Club Tournament",
+  "גביע אלופות אסיה": "Asian Champion Club Tournament",
+  "גמר גביע המדינה": "Israel State Cup final",
+  "גביע אופ\"א - מוקדמות": "UEFA Cup qualifying",
+  "גביע אופ\"א - סיבוב ראשון": "UEFA Cup first round",
+  "גביע המנצחות - מוקדמות": "Cup Winners' Cup qualifying",
+  "גמר גביע הטוטו": "Toto Cup final",
+  "גמר גביע הטוטו לאומית": "Toto Cup Leumit final",
+  "גביע הטוטו ליגת העל - בית ב'": "Toto Cup group stage"
+ },
+ "latin": {
+  "2-bundesliga": "2. Bundesliga",
+  "bundesliga": "Bundesliga",
+  "wwin-liga-bih": "Premier League of Bosnia and Herzegovina",
+  "SP": "Scottish Premiership",
+  "SPL": "Scottish Premier League",
+  "ECWC": "European Cup Winners' Cup",
+  "PremierLeague": "Scottish Premier League",
+  "League": "Scottish league",
+  "Division 1": "Scottish Division One",
+  "Club Friendlies": "Friendly"
+ },
+ "latinNote": "Source spellings in Latin script that are slugs or abbreviations, written out (Celtic's 'League', 'SP', 'SPL' and 'PremierLeague' are the Scottish top flight in the club's own records)."
+}
