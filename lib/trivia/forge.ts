@@ -57,7 +57,7 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  const rivalNames=new Set((club.rivals??[]).flatMap(r=>[r.value.name,...((r.value as {aliases?:string[]}).aliases??[])]).map(x=>normKey(enClub(x)??x)))
  const drafts:Draft[]=[]
  const keys=new Set<string>(),add=(d:Draft)=>{if(keys.has(d.key))return;keys.add(d.key);drafts.push(d)}
- const when=(iso:string)=>localizedDate(iso,'en')
+ const dates=new Map<string,string>(),when=(iso:string)=>{let s=dates.get(iso);if(s===undefined){s=localizedDate(iso,'en');dates.set(iso,s)}return s}
 
  /* ───────── the club's men, English names, and how prominent each is in his own club's archive ───────── */
  type Man={id:string;name:string;positions:string[];from:number|null;to:number|null;fame:1|2|3|4;source:SourceRef}
