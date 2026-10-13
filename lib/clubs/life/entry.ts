@@ -13,15 +13,17 @@ export type LifeEntry = {state: 'universal' | 'workshop'; href: string | null}
 
 const WORKSHOP: LifeEntry = {state: 'workshop', href: null}
 
-export async function lifeEntry(clubId: string, opts: {evaluation: boolean; paused?: boolean; locale?: string}): Promise<LifeEntry> {
+export async function lifeEntry(clubId: string, opts: {evaluation: boolean; paused?: boolean; status?: string; locale?: string}): Promise<LifeEntry> {
   if (opts.paused) return WORKSHOP
-  if (!opts.evaluation || !CORE_CLUB_IDS.includes(clubId)) return WORKSHOP
+  if (!CORE_CLUB_IDS.includes(clubId)) return WORKSHOP
+  // Preview opens every club; the real site opens LIFE for a club the owner has published (live).
+  if (!opts.evaluation && opts.status !== 'live') return WORKSHOP
   const club = await loadClub(clubId)
   if (!club || !clubLife(club.data).readiness.playable) return WORKSHOP
   return {state: 'universal', href: `/clubs/${clubId}/life${opts.locale ? `?lang=${opts.locale}` : ''}`}
 }
 
 export async function lifeEntries(clubs: readonly {id: string; status: string}[], evaluation: boolean): Promise<Record<string, LifeEntry>> {
-  const rows = await Promise.all(clubs.map(async c => [c.id, await lifeEntry(c.id, {evaluation, paused: c.status === 'paused'})] as const))
+  const rows = await Promise.all(clubs.map(async c => [c.id, await lifeEntry(c.id, {evaluation, paused: c.status === 'paused', status: c.status})] as const))
   return Object.fromEntries(rows)
 }

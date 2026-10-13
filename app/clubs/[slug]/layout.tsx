@@ -46,7 +46,7 @@ export default async function ClubLayout({children,params}:{children:ReactNode;p
  if(!c)return <>{children}</>
  const locale=uiLocale(headers().get('x-fan-life-locale')||undefined),copy=locale==='he'?he:en
  const reg=REGISTRY.find(r=>r.id===id)||c,theme=core?.data.theme||clubTheme(reg),lv=livery(id)
- const life=await lifeEntry(id,{evaluation:preview,paused:c.status==='paused',locale}),world=worldFor(reg)
+ const life=await lifeEntry(id,{evaluation:preview,paused:c.status==='paused',status:c.status,locale}),world=worldFor(reg)
  const tenant=clubFromHost(host)
  const exitHref=tenant?`https://${PORTAL_HOST_ROOT}`:'/'
  const clubs:SwitchClub[]=state.clubs.filter(x=>x.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name)).map(x=>{const l=livery(x.id);return {id:x.id,name:x.name,city:x.city,initials:x.initials,pattern:l?.pattern??'solid',style:wearLivery(l)}})
