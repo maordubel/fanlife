@@ -149,7 +149,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           crossOrigin="anonymous"
           strategy="afterInteractive"
         /> : null}
-        <Analytics />
+        <Analytics off={master} />
         {/* first-party measurement: views, starts, finishes, where people leave (lib/analytics) */}
         <GateMeter />
         <Suspense fallback={null}><NavPulse /></Suspense>
