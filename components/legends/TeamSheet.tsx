@@ -111,7 +111,7 @@ export function TeamSheet({v,busy,send,wardrobe,marks,register=false,onDone}:{v:
    <header className="lgt-teamhead">
     <p className="lgm-kicker" id="lgt-team-h">{register?'Step 2 · your fixed eleven':'The team sheet'}</p>
     <div className="lgt-formations" role="radiogroup" aria-label="Formation">{FORMATIONS.map(x=><button key={x} type="button" role="radio" aria-checked={v.lineup.formation===x} className="min-h-tap" disabled={busy} onClick={()=>send({kind:'auto',formation:x},`${x} — the best fit eleven.`)}>{x}</button>)}</div>
-    <button type="button" className="lgt-auto min-h-tap" disabled={busy} onClick={()=>send({kind:'auto',formation:v.lineup.formation},'The best fit eleven.')} data-testid="legends-auto">★ Auto-pick the best eleven</button>
+    <button type="button" className="lgt-auto min-h-tap" disabled={busy} onClick={()=>send({kind:'auto',formation:v.lineup.formation},'The best fit eleven.')} data-testid="legends-auto">★ Auto-pick the best XI</button>
    </header>
    <div className="lgt-pitch" role="group" aria-label={`${v.lineup.formation} — tap a man, then where he goes`}>
     <i className="lgt-lines" aria-hidden="true"/>
@@ -123,7 +123,7 @@ export function TeamSheet({v,busy,send,wardrobe,marks,register=false,onDone}:{v:
       <small className="lgt-spot-pos">{s.fine}{fit==='off'||fit==='wrong'?<em aria-hidden="true"> · {m!.pos}</em>:null}</small>
      </button>})}
    </div>
-   <p className="lgt-hint" role="status" aria-live="polite">{note??(selMan?<><b>{selMan.name}</b> — tap a spot, a seat or a man to swap. {posName(selMan.pos)}.</>:register?'Tap a man, then tap where he goes. Pick a captain and a vice-captain.':'Tap a man, then tap where he goes. Drag works too.')}</p>
+   <p className="lgt-hint" role="status" aria-live="polite">{note??(selMan?<><b>{selMan.name}</b> — tap a spot, a seat or a man to swap. {posName(selMan.pos)}.</>:register?'Tap a man, then tap where he goes. Pick a captain and a vice-captain.':'Tap a man, then tap where he goes — or hold him and drag.')}</p>
    <div className="lgt-selbar" data-on={selMan?'':undefined}>
     {selMan?<>
      <button type="button" className="lgt-armbtn min-h-tap" data-k="c" aria-pressed={selMan.id===cap} onClick={()=>setArm('cap',selMan.id)} data-testid="legends-make-captain"><i className="lgt-arm" data-k="c" aria-hidden="true">C</i>Captain</button>
@@ -145,13 +145,13 @@ export function TeamSheet({v,busy,send,wardrobe,marks,register=false,onDone}:{v:
     </button></li>})}</ul>
   </section>
 
-  <section className="lgt-panel" aria-labelledby="lgt-res-h">
+  {reserves.length?<section className="lgt-panel" aria-labelledby="lgt-res-h">
    <p className="lgm-kicker" id="lgt-res-h">Not in the squad today · {reserves.length}</p>
-   {reserves.length?<ul className="lgt-seats lgt-reserves">{reserves.map(m=>{const loc:Loc={z:'res',id:m.id}
+   <ul className="lgt-seats lgt-reserves">{reserves.map(m=>{const loc:Loc={z:'res',id:m.id}
     return <li key={m.id}><button type="button" className="lgt-man" data-drop={enc(loc)} data-out={!m.fit||undefined} data-sel={same(sel,loc)||undefined} data-over={over===enc(loc)||undefined} onPointerDown={down(loc)} onClick={()=>tap(loc)} aria-pressed={same(sel,loc)} aria-label={`${m.name}, ${posName(m.pos)}${m.note?`, ${m.note}`:''}`}>
      <span className="lgt-man-shirt">{shirt(m)}{tag(m.id)}</span><b>{surname(m.name)}</b><small data-pos={m.pos}>{m.fit?m.pos:m.note}</small>
-    </button></li>})}</ul>:<p className="lgm-fine">Everyone is in the eleven or on the bench.</p>}
-  </section>
+    </button></li>})}</ul>
+  </section>:null}
 
   {register?null:<details className="lgt-panel lgt-plan"><summary className="min-h-tap">The plan · {APPROACH.find(a=>a[0]===t.approach)?.[1]} · {PRESS.find(a=>a[0]===t.pressing)?.[1]} · {TEMPO.find(a=>a[0]===t.tempo)?.[1]}</summary>
    {([['Approach',APPROACH,'approach'],['Pressing',PRESS,'pressing'],['Tempo',TEMPO,'tempo']] as const).map(([label,opts,k])=><div key={k} className="lgt-seg" role="radiogroup" aria-label={label}><span>{label}</span>{opts.map(([val,l])=><button key={val} type="button" role="radio" aria-checked={t[k]===val} className="min-h-tap" onClick={()=>setSt(s=>({...s,t:{...s.t,[k]:val} as Tactics}))}>{l}</button>)}</div>)}
@@ -159,8 +159,8 @@ export function TeamSheet({v,busy,send,wardrobe,marks,register=false,onDone}:{v:
   {v.lineup.error?<p className="lgm-error" role="alert">{v.lineup.error}</p>:null}
 
   {register?<Portal><div className="lgt-savebar lgt-savebar-register" role="region" aria-label="Register the eleven">
-   <span>{missing?'Choose a captain and a vice-captain':'Ready'}</span>
-   <button type="button" className="lgm-go min-h-tap" disabled={busy||missing} onClick={()=>{save();onDone?.()}} data-testid="legends-register">Confirm the eleven ✓</button>
+   <span>{missing?'C + V needed':'Ready'}</span>
+   <button type="button" className="lgm-go min-h-tap" disabled={busy||missing} onClick={()=>{save();onDone?.()}} data-testid="legends-register">Register XI ✓</button>
   </div></Portal>:dirty?<Portal><div className="lgt-savebar" data-above-nav="" role="region" aria-label="Unsaved team sheet"><span>Not saved</span><button type="button" className="lgm-link min-h-tap" onClick={()=>{setSt(init());setSel(null)}}>Undo</button><button type="button" className="lgm-go min-h-tap" disabled={busy} onClick={save} data-testid="legends-save-sheet">Save</button></div></Portal>:null}
 
   {ghost?<Portal><div className="lgt-ghost" style={{insetInlineStart:ghost.x,insetBlockStart:ghost.y}} aria-hidden="true">{ghost.name}</div></Portal>:null}
