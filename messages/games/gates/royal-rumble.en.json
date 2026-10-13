@@ -144,5 +144,17 @@
  "rr.legend": "Club legend",
  "rr.xi.shapeSub.4-3-3": "Three up top",
  "rr.xi.shapeSub.4-4-2": "Two strikers",
- "rr.xi.shapeSub.3-5-2": "Wing-backs"
+ "rr.xi.shapeSub.3-5-2": "Wing-backs",
+ "rr.draft.choose": "Choose the position you want to sign next.",
+ "rr.draft.places": "{n} left",
+ "rr.draft.reroll": "Reroll ({n} left)",
+ "rr.draft.rerollNone": "No rerolls left",
+ "rr.draft.keep": "Keep at least {n}",
+ "rr.draft.tier.premium": "Premium",
+ "rr.draft.tier.mid": "Mid",
+ "rr.draft.tier.budget": "Budget",
+ "rr.draft.meta": "Signing {n} of {total} · {position}",
+ "rr.draft.freeRule": "Open any position first. The game only blocks a signing that would make a full squad impossible inside your money.",
+ "rr.draft.ready": "Squad complete — lock it in.",
+ "rr.draft.nextPlace": "Next: {place}"
 }

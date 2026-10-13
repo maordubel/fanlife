@@ -11,8 +11,9 @@ export async function opponentFor(slug:string,own:Rated[],vs?:string,duel?:strin
  if(duel){
   const t=decodeDuel(duel);if(!t)return null
   const a=await requestClub(t.c,9);if(!a||!a.data.gates['royal-rumble']?.playable)return null
-  const pool=ratedPool(a.data),offered=new Set(dealDraft(pool,t.s).flat().map(c=>c.id))
-  if(!t.p.every(id=>offered.has(id)))return null
+  const pool=ratedPool(a.data)
+  // a five drafted group-first (v2) is checked by places and money in checkFive; an earlier link must also have been offered by its board
+  if(t.v!==2){const offered=new Set(dealDraft(pool,t.s).flat().map(c=>c.id));if(!t.p.every(id=>offered.has(id)))return null}
   const cards=checkFive(pool,t.p);return cards?{kind:'locked',cards,club:t.c}:null
  }
  if(vs&&vs!==slug){

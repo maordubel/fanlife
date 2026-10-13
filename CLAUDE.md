@@ -3177,3 +3177,13 @@ Owner: *"use the new logo everywhere relevant, give it a beautiful reveal — al
 
 1. **LIFE opens for a club the owner has published (`status: live`) and whose pack is playable** — in preview for every club, on the real site for live ones (`lib/clubs/life/entry.ts`, `app/clubs/[slug]/life/page.tsx`). It used to exist only in preview, so every real club showed "workshop".
 2. **Data → Research analysis** (`components/master/desk/ResearchAnalysis.tsx`, `lib/master/researchAnalysis.ts`): per club, progress = share of the thirteen gates' data targets met (a known universe, so a percentage is honest), the gates that can open now, the gate closest to opening, and "Merge new data" (queues and runs the package adapter; unreviewed rows only). "Open N gates" reuses `clubs/open-playable`.
+## 123 · One draft core: the fan chooses the line, the engine only guards completion (13.10.2026)
+
+Owner spec `FANLIFE-GATE-09-FINAL-DRAFT-SPEC-2026-10-13`. Royal Rumble (five and eleven) and LEGENDS MANAGER draft on the same rules; `lib/draft-core/` is the shared engine for gate 9.
+1. **Before every slot the fan chooses GK, DF, MF or FW freely** — there is no fixed order (`DRAFT_ORDER` is gone). The engine closes a line only when taking from it would make the squad or the budget impossible, and the card says why (`locked_budget` / `locked_completion` / `locked_identity`).
+2. **Three different men of one line from three price tiers** (`TIER_PRICES`: premium 4–5, mid 2–4, budget 1–2; a price may repeat across tiers, a man never). Archive prices are never changed to make a trio.
+3. **Three spins per whole draft**, each replacing only the current trio; the men it replaced are not shown again in that slot; a spin that cannot show three new men is not charged. Switching line without a pick is free and shows the same trio on return.
+4. **The XI is judged as an assignment** (Hungarian min-cost over the places still open, men with a second position or none counted once), never by a greedy count.
+5. **The server replays the log** (`open` / `reroll` / `pick`) from the start state on every call; the browser's state is never trusted, and no rating leaves the server. Duel links with `v:2` are validated by places and money; older links keep their board-offered check.
+6. **LEGENDS MANAGER keeps its own persisted draft state and one-quota solver**; it shares `TIER_PRICES` and the line-choice rule. Its bot picks its own lines, so the golden match digests in `match-flow.test.ts` were re-measured (engine files untouched).
+7. Gate 9 keeps its own rules: no seasons, transfers, injuries, €52M or 17–20 men.

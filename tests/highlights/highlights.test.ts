@@ -68,7 +68,7 @@ describe('LEGENDS MANAGER results as reels',()=>{
  const act=(c:Career,a:Intent):Career=>{if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,act);const r=applyAction(c,{...a,key:`h${n++}xxxxxxx`,rev:c.revision} as Action,ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
  function played(id:string):Career{
   const r=createCareer({id,owner:'o'.repeat(32),now:NOW,own:LEAGUE[0]!,rivals:LEAGUE.slice(1),settings:DEFAULT_SETTINGS});if(!r.ok)throw new Error(r.error)
-  let c=r.career;const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks)c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})
+  let c=r.career;const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})}
   c=act(act(c,{kind:'draft-confirm'}),{kind:'ack'})
   for(let i=0;i<2;i++){if(isBye(c))c=act(c,{kind:'play-round'});else c=act(c,{kind:'match-start',mode:'fast'})}
   return c

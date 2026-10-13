@@ -51,7 +51,7 @@ export function RumbleCardButton({card,index,selected,disabled,blocked,flip,onPi
  </button>
 }
 
-export function RumbleSlotMachine({board,slot,seed,picks,canPick,onPick,copy,wardrobe,reduced,signature}:{board:RumbleCard[][];slot:number;seed:number;picks:(string|null)[];canPick:(card:RumbleCard)=>boolean;onPick:(card:RumbleCard,e:MouseEvent<HTMLButtonElement>)=>void;copy:GameCopy;wardrobe:RumbleWardrobe;reduced:boolean;signature:string}){
+export function RumbleSlotMachine({board,slot,seed,picks,canPick,onPick,copy,wardrobe,reduced,signature,tiers,reasons,heading}:{board:RumbleCard[][];slot:number;seed:number;picks:(string|null)[];canPick:(card:RumbleCard)=>boolean;onPick:(card:RumbleCard,e:MouseEvent<HTMLButtonElement>)=>void;copy:GameCopy;wardrobe:RumbleWardrobe;reduced:boolean;signature:string;/** group-first draft: the tier of each card, the reason a locked card is locked, and the heading for the slot */tiers?:string[];reasons?:(string|null)[];heading?:{no:string;meta:string;question:string}}){
  const cards=useMemo(()=>board[slot]??[],[board,slot])
  const stops=useMemo(()=>reelStops(cards.length,reduced,420,180),[cards.length,reduced])
  const strips=useMemo(()=>cards.map((_,i)=>reelStrip(board,slot,i,seed,Math.max(6,Math.round((stops[i]||420)/STEP_MS/1.4)))),[board,slot,seed,cards,stops])
@@ -69,14 +69,16 @@ export function RumbleSlotMachine({board,slot,seed,picks,canPick,onPick,copy,war
  return <section className={s.cabinet} data-spinning={spinning} data-testid="rumble-machine" aria-busy={spinning}>
   <div className={s.marquee}><Bulbs n={9} className={s.bulbs}/><span className={s.marqueeTitle}>{tr(copy,'gate.royal-rumble')}</span><Bulbs n={9} className={s.bulbs}/></div>
   <div className={s.pickHead}>
-   <span className={s.pickNo} dir="ltr">{String(slot+1).padStart(2,'0')}</span>
-   <div className={s.pickText}><p className={`${s.mono} ${s.pickMeta}`}>{tr(copy,'rr.pick',{n:slot+1})} · {card?posShort(copy,card.position):''}</p><p className={s.pickQ}>{card?tr(copy,'rr.question',{position:posName(copy,card.position)}):''}</p></div>
+   <span className={s.pickNo} dir="ltr">{heading?.no??String(slot+1).padStart(2,'0')}</span>
+   <div className={s.pickText}><p className={`${s.mono} ${s.pickMeta}`}>{heading?.meta??`${tr(copy,'rr.pick',{n:slot+1})} · ${card?posShort(copy,card.position):''}`}</p><p className={s.pickQ}>{heading?.question??(card?tr(copy,'rr.question',{position:posName(copy,card.position)}):'')}</p></div>
   </div>
   <p className="sr-only" aria-live="polite">{spinning?tr(copy,'rr.reels'):''}</p>
   <div className={s.reels} role="group" aria-label={card?tr(copy,'rr.question',{position:posName(copy,card.position)}):undefined}>
    {cards.map((c,i)=><div className={s.reel} key={`${signature}-${c.id}`}>
+    {tiers?.[i]&&<span className={`${s.mono} ${s.tierTag}`} data-tier={i}>{tiers[i]}</span>}
     {!reduced&&<SlotReel names={strips[i]!} stopAt={stops[i]!} landed={!!landed[i]} reduced={reduced} label={landed[i]?tr(copy,'rr.landed'):tr(copy,'rr.spinning')}/>}
     <RumbleCardButton card={c} index={i} selected={picks[slot]===c.id} disabled={!canPick(c)||!landed[i]} blocked={!canPick(c)} flip={!!landed[i]&&!reduced} onPick={e=>onPick(c,e)} copy={copy} wardrobe={wardrobe}/>
+    {reasons?.[i]&&<p className={s.lockWhy} role="note">{reasons[i]}</p>}
    </div>)}
   </div>
  </section>

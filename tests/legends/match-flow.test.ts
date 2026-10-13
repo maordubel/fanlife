@@ -19,13 +19,13 @@ function newCareer(id:string):Career{const r=createCareer({id,owner:'o'.repeat(3
 let n=0
 const keyed=(c:Career,a:Intent):Action=>({...a,key:`mf${n++}xxxxxxxx`,rev:c.revision} as Action)
 function act(c:Career,a:Intent):Career{if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,act);const r=applyAction(c,keyed(c,a),ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
-function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks)c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}});return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
+function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'group',group:p.quota}});c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})};return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
 const toMatch=(c:Career)=>{for(let i=0;i<4&&isBye(c);i++)c=act(c,{kind:'play-round'});return c}
 
 describe('engine 3 — set pieces (owner, 13.10.2026)',()=>{
  it('engines 1 and 2 play exactly as they did before engine 3 (golden digests of 60 matches, quick and live)',()=>{
-  // measured on origin/main's engine before this change; a match begun on an older engine must never be rewritten
-  const GOLDEN={'legends-engine-1':'0069fcd49d27fb4fe9019ad37c0047b9bf19d6946c6c5e0d43bf1104fc64d00c','legends-engine-2':'cffceabe5e57814380e5b111e4c8b9b6fe33f7f9b3fcf92ef52be9c9b86f0d5a'} as const
+  // re-measured 13.10.2026: engine files are untouched, but the fixture squads come from the bot draft, which now chooses its own lines (free line choice). A match begun on an older engine must never be rewritten
+  const GOLDEN={'legends-engine-1':'e38f8b55ea1d1a6d81f4d27b7864211407c6ce871a576ce65ec1dddfa6ad89fc','legends-engine-2':'1995e62d14b44d71a5833aeae5d5626f863ecb18c69cfc25658e7b617f102f9d'} as const
   for(const e of ['legends-engine-1','legends-engine-2'] as const){
    const s=snapshotsOf(e,60),quick=s.map(x=>run(x,[],false)),live=s.map(x=>{let d:{stop:number}[]=[],r=run(x,d,true);const stops:number[]=[];while(!r.done){stops.push(r.pause.minute);d=[...d,{stop:r.pause.stop,...(d.length===0?{tactics:{approach:'attacking',pressing:'high',tempo:'fast'}}:{})} as {stop:number}];r=run(x,d,true)}return {stops,r}})
    expect(createHash('sha256').update(JSON.stringify([quick,live])).digest('hex')).toBe(GOLDEN[e])

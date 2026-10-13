@@ -10,7 +10,7 @@ import s from './rumble.module.css'
 export function RumbleChallenge({club,seed,picks,locale}:{club:string;seed:number;picks:string[];locale:UiLocale}){
  const copy=gameCopy(locale),[state,setState]=useState<'idle'|'copied'|'failed'>('idle'),[url,setUrl]=useState('')
  async function share(){
-  const link=`${window.location.origin}/clubs/${club}/royal-rumble?duel=${encodeDuel({c:club,s:seed,p:picks})}${locale==='en'?'':`&lang=${locale}`}`
+  const link=`${window.location.origin}/clubs/${club}/royal-rumble?duel=${encodeDuel({c:club,s:seed,p:picks,v:2})}${locale==='en'?'':`&lang=${locale}`}`
   setUrl(link)
   try{
    if(typeof navigator.share==='function'){await navigator.share({url:link,text:tr(copy,'rr.challenge')});setState('copied');return}

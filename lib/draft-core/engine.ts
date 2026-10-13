@@ -134,3 +134,8 @@ export function botDraft(rules:DraftRules,pool:readonly DCard[],seed:number,styl
  }
  return {state:s,log,error:isComplete(rules,s)?confirmCheck(rules,pool,s):'The draft did not finish.'}
 }
+
+/** the least the places still empty can cost — what the fan reads as "keep at least €N for the rest" */
+export function minToFinish(rules:DraftRules,pool:readonly DCard[],s:DraftState):number|null{
+ const picked=new Set(s.picks.map(p=>p.id));return minCompletion(listOf(remainingByGroup(rules,s)),pool.filter(c=>!picked.has(c.id)))
+}

@@ -1,6 +1,6 @@
 import {hash} from '@/lib/clubs/rumble-rng'
 import {isFormation} from '@/lib/clubs/rumble-xi/formations'
-import {ENGINE_VERSION,LEGENDS_RULES as R,RULE_VERSION,roundTenths,type LegendsSettings,type QuotaPos} from './config'
+import {ENGINE_VERSION,LEGENDS_RULES as R,RULE_VERSION,roundTenths,type LegendsSettings,QUOTA_POS,type QuotaPos} from './config'
 import {aiWindow,prepareEmergency} from './ai'
 import {afterBye,afterMatch,available,fresh,newSeason,type MatchBook} from './discipline'
 import {botDraft,confirmCheck,draftMove,emptyDraft,type DraftMove} from './draft'
@@ -81,6 +81,7 @@ export function parseAction(raw:unknown):Action|null{
  switch(a.kind){
   case 'draft':{const m=a.move as Record<string,unknown>;if(!m)return null
    if(m.kind==='pick'&&str(m.id))return {...b,kind:'draft',move:{kind:'pick',id:m.id as string}}
+   if(m.kind==='group'&&typeof m.group==='string'&&(QUOTA_POS as readonly string[]).includes(m.group))return {...b,kind:'draft',move:{kind:'group',group:m.group as QuotaPos}}
    if(m.kind==='reroll'||m.kind==='skip')return {...b,kind:'draft',move:{kind:m.kind}}
    return null}
   case 'draft-confirm':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
