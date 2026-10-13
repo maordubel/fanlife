@@ -3123,12 +3123,13 @@ Owner: *"on mobile, an app display — no floating screens, fixed screens; anima
 3. **≤760px nothing floats:** big cards, LIFE bars, lobbies (`.ready`), the Legends hero/code/roll run edge to edge with a 16px gutter and no offset shadow; a centred `<dialog>` becomes a bottom sheet. CSS lives in the `APP MODE` block of `app/magazine.css` and the feature's own CSS. Desktop is untouched.
 4. **The Legends banner** (`components/legends/ClubBanner.tsx`) streams in `<Suspense>` on the club home, shows only when `door('fanLeague')` is open (owner preview counts) and `legendsReadyFor(club)` says READY, links to `/all-football/legends?club=<id>` (the roll pre-selects it), and wears only what `bannerPaint(theme)` allows (rule 95). `tests/legends/club-banner.test.ts`.
 
-## 116 · The match flow: engine 3, the 65′/70′ question, and a talk that is never skipped (13.10.2026)
+## 116 · Nothing is locked to the admin; reputation joins the score; several men at once; the row edits positions and names (13.10.2026)
 
-Owner: "at 65′ and 70′ only ask 'a change? yes / no' · a dressing-room talk before and after, four answers that move the players' morale · penalties, free kicks, corners".
-1. **Engine 3** (`legends-engine-3`) adds set pieces as `goal`/`chance` rows with `detail: 'penalty'|'free-kick'|'corner'` (a saved penalty: `chance` + `other` = the keeper), drawn from a second per-minute stream with a fixed number of draws — engines 1–2 replay byte for byte (golden fingerprints) and an untouched live match is still the quick sim. Lab: 2.76 goals, 23.4% draws, 0.26 penalties a match.
-2. **Stops:** 45′ = the full touchline; 65′ and 70′ = "Make a change? Yes / No" (Yes opens the touchline). Engine-2 matches keep 45/60/75.
-3. **The dressing room** (`talk-pre`/`talk-post`, server-side, once per match and moment, `career.talks`): the server refuses kick-off, the next round and the next season while a talk waits. The bank is `lib/legends/talks.ts` (49 situations × 4 tones); mood is bounded (±2.5% team, ±2% a man, ×0.6 decay a match) and a fan sees only words. Tests that play on answer through `talkThrough()` in `tests/legends/fixtures.ts`.
+Owner: "nothing should be locked to the admin" · "a reputation score for every player; the stars read the combined score of ability and reputation" · "multiple selection and a bulk price" · "positions in quick edit" · "a name edit with Are you sure?".
+1. **No wall on a price.** A locked or pinned price (`lockedChange`, `iconChange`) is information in the response, never a 403: `publish`, bulk commit and merge no longer ask for an owner exception. The table shows "was locked — open to you"; the history records the change like any other.
+2. **Reputation** (`Override.reputation`, 40–99, hidden like the score): the base is derived for every man in `rawPool` from his years and league caps and his scoring (a keeper on tenure alone), each against his own club. The Legends stars are made from `combinedScore(ability, reputation)` = half and half (`REPUTATION_WEIGHT`, `lib/legends/ratings.ts`); five-a-side and the eleven still read the score alone.
+3. **Quick edit takes five fields** — price, score, reputation, positions (order = main first), name. A name needs `confirmName` (the row asks "Are you sure?"); the old spelling stays as an alias; a name equal to the archive's clears the override.
+4. **Several men at once** (`lib/players/many.ts`, `POST /api/master/players/many`): one price, or one more position, for up to 200 chosen men. Judged as a whole (stale row → 409, a game that would stop → 422, ladder → asks, "Save anyway"), written as one revision, one audit line per man.
 
 ## 117 · The highlights show the whole pitch, set pieces and every goal (13.10.2026)
 
@@ -3162,3 +3163,6 @@ Owner: complete the missing kit SVGs for every club — sponsor, maker, crest �
 2. **A missing maker or sponsor is filled only from another record of the same season and type** in the club's pack waves, and only when all agree (`scripts/kits/fill-from-sources.py`; the source is written in `filled`). No neighbouring-season guess.
 3. **Every SVG carries `data-club`, `data-kit`, `data-season`, `data-type`, `data-maker`, `data-sponsor`, `data-origin`, a `<title>`, and each club has `svg/index.json`.** `tests/clubs/kit-svg-tags.test.ts` holds it.
 4. Makers with no free mark (Kappa, Lotto, Diadora, Hummel, DIIY, Zeus, Naai) stay lettered — a trademark is not ours to redraw (rule 25).
+## 121 · One face per name: Oswald and Anton carry every Balkan letter (13.10.2026)
+
+Owner, shown seven faces (`font-options` sheet): **Oswald** for names and editorial heads (`--mag-condensed`, Karantina stays behind it for Hebrew), **Anton** for big headings (`--mag-display`). Karantina's and Bowlby One's Latin did not really carry Č/Ž/Ć/Đ, so the browser borrowed those letters from another face. Bowlby One stays the FAN LIFE wordmark only (`--mag-brand`: `.mag-logo`, `.mag-masthead`). Files are self-hosted latin + latin-ext woff2 in `public/fonts/`; a new display face must carry latin-ext before it ships. The Worker's Hebrew faces (`app/globals.css`, share cards) are untouched.

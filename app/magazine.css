@@ -25,6 +25,17 @@
   src: url('/fonts/bowlby-one-latin-400-normal.woff2') format('woff2');
 }
 
+/* Owner, 13.10.2026 (rule 121): names like Čondrić and Žuržinov set in ONE face. Oswald for names and editorial heads,
+   Anton for big headings; both carry latin-ext. Bowlby One (latin only) stays the FAN LIFE wordmark. */
+@font-face { font-family: 'Oswald'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/oswald-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Oswald'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/oswald-latin-ext-500-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Oswald'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/oswald-latin-600-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Oswald'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/oswald-latin-ext-600-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Oswald'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/oswald-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Oswald'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/oswald-latin-ext-700-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Anton'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/anton-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Anton'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/anton-latin-ext-400-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+
 :root {
   --mag-ink: #141210;
   --mag-paper: #efe6d4;
@@ -37,7 +48,8 @@
   --mag-lilac: #e7b8f0;
   --mag-green: #1f6b3b;
   --mag-muted: #5c5444;
-  --mag-display: 'Bowlby One', 'Archivo', 'Heebo', Impact, sans-serif;
+  --mag-brand: 'Bowlby One', 'Archivo', 'Heebo', Impact, sans-serif;
+  --mag-display: 'Anton', 'Archivo', 'Heebo', Impact, sans-serif;
   --mag-body: 'Archivo', 'Heebo', system-ui, sans-serif;
   --mag-mono: 'Courier Prime', ui-monospace, monospace;
   --mag-shadow: 4px 4px 0 var(--mag-ink);
@@ -58,7 +70,7 @@
 /* ───────── masthead bars ───────── */
 .mag-top { position: sticky; top: 0; z-index: 50; background: var(--mag-ink); color: var(--mag-paper); border-bottom: 3px solid var(--mag-vermilion); }
 .mag-top-in { display: flex; align-items: center; gap: 24px; min-height: 56px; width: min(1240px, 100% - 20px); margin-inline: auto; }
-.mag-logo { font-family: var(--mag-display); font-size: 22px; transform: skewX(-6deg); color: var(--mag-paper); white-space: nowrap; }
+.mag-logo { font-family: var(--mag-brand); font-size: 22px; transform: skewX(-6deg); color: var(--mag-paper); white-space: nowrap; }
 .mag-logo b { font-weight: 400; color: var(--mag-salmon); }
 .mag-nav { display: flex; gap: 6px; margin-inline-start: auto; }
 .mag-nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
@@ -74,7 +86,7 @@
 .mag-cover { position: relative; background-color: var(--mag-vermilion); color: var(--mag-paper); border-bottom: 5px solid var(--mag-ink); overflow: hidden; }
 .mag-cover-in { width: min(1240px, 100% - 28px); margin-inline: auto; padding: 22px 0 34px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 36px; align-items: center; }
 .mag-dateline { display: flex; justify-content: space-between; font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 2px; border-block: 2px solid var(--mag-paper); padding: 4px 0; grid-column: 1 / -1; }
-.mag-masthead { font-family: var(--mag-display); font-size: clamp(76px, 18vw, 168px); line-height: 0.84; color: var(--mag-paper); transform: skewX(-6deg); -webkit-text-stroke: 3px var(--mag-ink); text-shadow: 5px 5px 0 var(--mag-navy); margin: 0; text-transform: uppercase; }
+.mag-masthead { font-family: var(--mag-brand); font-size: clamp(76px, 18vw, 168px); line-height: 0.84; color: var(--mag-paper); transform: skewX(-6deg); -webkit-text-stroke: 3px var(--mag-ink); text-shadow: 5px 5px 0 var(--mag-navy); margin: 0; text-transform: uppercase; }
 .mag-sticker { display: inline-block; font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 2px; padding: 6px 10px; border: 3px solid var(--mag-ink); box-shadow: 3px 3px 0 var(--mag-ink); text-transform: uppercase; }
 .mag-sticker.paper { background: var(--mag-paper); color: var(--mag-ink); transform: rotate(-2deg); }
 .mag-sticker.green { background: var(--mag-green); color: var(--mag-paper); font-family: var(--mag-display); font-size: 17px; letter-spacing: 0; transform: rotate(-4deg); }
@@ -158,6 +170,7 @@
 .fl { --fl-ink: var(--mag-ink); --fl-paper: var(--mag-paper); --line: var(--mag-ink); background-color: var(--fl-paper); background-image: var(--mag-grain); font-family: var(--mag-body); }
 .fl.club-theme { background-color: var(--club-background); --fl-ink: var(--club-text); --fl-paper: var(--club-background); --line: rgb(var(--ink) / 0.55); }
 .fl h1:where(:not(.fl-worker, .fl-worker *)), .fl h2:where(:not(.fl-worker, .fl-worker *)) { font-family: var(--mag-display); font-weight: 400; letter-spacing: 0; text-transform: uppercase; line-height: 1; }
+.fl .mag-masthead, .club-surface .mag-masthead { font-family: var(--mag-brand); } /* the FAN LIFE wordmark stays Bowlby (rule 121) */
 .fl h3:where(:not(.fl-worker, .fl-worker *)) { font-weight: 800; letter-spacing: -0.01em; }
 .fl[lang='he'] h1, .fl[lang='he'] h2 { font-family: var(--mag-body); font-weight: 800; text-transform: none; }
 .fl .eyebrow { font-family: var(--mag-mono); font-weight: 700; letter-spacing: 2px; }
@@ -293,7 +306,7 @@
 /* ───────── MAGAZINE COVER v2 (6.10.2026) — printed poster cover, collage, teasers, PLUS strip ─────────
    Karantina 700 is for editorial headlines only (cover teasers, section names, club names, issue numbers);
    Bowlby stays the brand. Rotations and offsets are constant. No yellow anywhere. */
-:root { --mag-condensed: 'Karantina', 'Archivo', 'Heebo', Impact, sans-serif; }
+:root { --mag-condensed: 'Oswald', 'Karantina', 'Archivo', 'Heebo', Impact, sans-serif; }
 .mag-editorial .mag-h2, .mag-cover-poster .mag-tease b, .mag-tile b, .mag-cover-bottom, .mag-toc i { font-family: var(--mag-condensed); font-weight: 700; letter-spacing: 0.5px; }
 .mag-cover-poster .mag-cover-in { position: relative; display: block; width: min(850px, 100% - 28px); height: 530px; padding: 0; }
 .mag-cover-poster .mag-dateline { position: relative; z-index: 3; margin-top: 14px; }

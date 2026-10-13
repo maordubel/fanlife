@@ -29,6 +29,7 @@ export function withPlayerOverrides(id:string,data:ClubData):ClubData{
    sources=uniq([...sources,...drops.flatMap(d=>d.sources)]);confidence=Math.max(confidence,...drops.map(d=>d.confidence)) as typeof confidence
   }
   if(o?.positions)v={...v,positions:o.positions}
+  if(o?.name&&o.name!==v.name)v={...v,name:o.name,aliases:uniq([...v.aliases,v.name]).filter(a=>a!==o.name)}
   players.push(v===f.value&&sources===f.sources?f:{...f,value:v,sources,confidence})
  }
  return {...copy,players,version:`${data.version}+p${revisionOf()}`}

@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto'
 import {QUOTA_POS,type QuotaPos} from './config'
-import {rateClub,type RatingControl} from './ratings'
+import {rateClub,combinedScore,type RatingControl} from './ratings'
 import type {Card,Catalog,Price} from './types'
 
 /**
@@ -8,7 +8,7 @@ import type {Card,Catalog,Price} from './types'
  * the ids its archive APPROVED, which men the frozen price list KNOWS (`hasPrice`, never `priceFor` alone: it answers €1M for a
  * stranger), and their recorded goals. A man with no recorded position is not dealt — a quota needs a verified position (§2.2).
  */
-export type PoolRow={id:string;name:string;position:QuotaPos;alt?:QuotaPos[];free?:boolean;price:number;rating:number;fromYear:number|null;toYear:number|null}
+export type PoolRow={id:string;name:string;position:QuotaPos;alt?:QuotaPos[];free?:boolean;price:number;rating:number;reputation?:number;fromYear:number|null;toYear:number|null}
 export function decadesOf(from:number|null,to:number|null):number[]{
  if(from==null||to==null||from>to||from<1850||to>2100)return []
  const out:number[]=[];for(let d=Math.floor(from/10)*10;d<=Math.floor(to/10)*10;d+=10)out.push(d);return out
@@ -23,7 +23,7 @@ export function eligible(club:string,pool:readonly PoolRow[],approved:ReadonlySe
   if(!Number.isInteger(p.price)||p.price<1||p.price>5){excluded.badPrice++;continue}
   keep.push(p)
  }
- const rated=rateClub(club,keep.map(p=>({id:p.id,position:p.position,rating:p.rating,goals:goals.get(p.id)??0})),control)
+ const rated=rateClub(club,keep.map(p=>({id:p.id,position:p.position,rating:combinedScore(p.rating,p.reputation),goals:goals.get(p.id)??0})),control)
  const cards:Card[]=keep.map(p=>{const r=rated.get(p.id)!;return {id:p.id,name:p.name,pos:p.position,...(p.alt?.filter(a=>a!==p.position).length?{alt:p.alt.filter(a=>a!==p.position)}:{}),price:p.price as Price,stars:r.stars,attrs:r.attrs,from:p.fromYear,to:p.toYear,decades:decadesOf(p.fromYear,p.toYear)}}).sort((a,b)=>a.id.localeCompare(b.id))
  return {cards,excluded}
 }
