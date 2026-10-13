@@ -5,7 +5,10 @@
  * (tests/home/hub-vote.test.ts fails on purpose if the label is dropped while the seed is still in use).
  */
 export const DEMO_VOTES=true
-export const SEED_TOTAL=33
+/** Votes the owner added on top of the early count (13.10.2026: Fenerbahçe, 9). They are exact, not weighted, and they raise the total. */
+export const BONUS:Record<string,number>={fenerbahce:9}
+const BONUS_SUM=Object.values(BONUS).reduce((a,b)=>a+b,0)
+export const SEED_TOTAL=33+BONUS_SUM
 /** Relative appetite per club; only the order and rough shape matter. Unknown clubs weigh 1. */
 const WEIGHT:Record<string,number>={
  'maccabi-haifa':10,'olympiacos':6,'panathinaikos':5,'aek-athens':4,'dinamo-zagreb':3,'borussia-dortmund':3,'celtic':3,'st-pauli':3,
@@ -14,6 +17,14 @@ const WEIGHT:Record<string,number>={
 /** Splits exactly `total` votes over `ids` by weight (largest remainder), keeping Maccabi Haifa strictly first when it is on the ballot. */
 export function seedVotes(ids:readonly string[],total=SEED_TOTAL):Record<string,number>{
  if(!ids.length)return {}
+ // bonus clubs on this ballot keep their exact votes; everyone else shares the rest
+ const fixed=ids.filter(id=>BONUS[id]!==undefined),rest=ids.filter(id=>BONUS[id]===undefined)
+ if(fixed.length){
+  const out:Record<string,number>={}
+  for(const id of fixed)out[id]=BONUS[id]!
+  Object.assign(out,seedVotes(rest,total-fixed.reduce((a,id)=>a+BONUS[id]!,0)))
+  return out
+ }
  const w=ids.map(id=>WEIGHT[id]??1),sum=w.reduce((a,b)=>a+b,0)
  const raw=w.map(x=>x*total/sum),base=raw.map(Math.floor)
  let left=total-base.reduce((a,b)=>a+b,0)

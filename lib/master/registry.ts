@@ -23,6 +23,8 @@ export const REGISTRY: readonly RegistryClub[] = [
   c('celtic', 'celtic', 'Celtic', 'Glasgow', 'Scotland', 'CE', '#0B7A3B', 5),
   c('partizan-belgrade', 'partizan', 'Partizan Belgrade', 'Belgrade', 'Serbia', 'PB', '#1F1F1F', 5),
   c('union-berlin', 'unionberlin', '1. FC Union Berlin', 'Berlin', 'Germany', 'UB', '#C92D39', 5),
+  // 13.10.2026 — owner's request: a club we want to build. Research only, like the three above.
+  c('fenerbahce', 'fenerbahce', 'Fenerbahçe', 'Istanbul', 'Turkey', 'FB', '#1B2A5C', 5),
 ]
 /** The official address (owner, 7.10.2026): https://fanlife.dubelteam.com — a club's own host is `<sub>.fanlife.dubelteam.com`. */
 export const PORTAL_HOST_ROOT = process.env.FANLIFE_ROOT_DOMAIN || 'fanlife.dubelteam.com'

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "clubId": "fenerbahce",
+  "sport": "football",
+  "contentLocale": "en",
+  "snapshotAsOf": "2026-10-13",
+  "desiredGates": [],
+  "priorityMatchIds": [],
+  "sources": [],
+  "notes": "Historical archive collection only (6.10.2026 plan): public sources, no paid data, no AI, nothing activated in the game. Documents stay needs-parser until a parser is written against stored fixtures.",
+  "archive": [
+    {
+      "providerId": "fenerbahce-official",
+      "familyId": "fenerbahce-institutional",
+      "publisher": "Fenerbahçe SK",
+      "reader": "html",
+      "origin": "https://www.fenerbahce.org",
+      "role": "club-history",
+      "locale": "en",
+      "seeds": [
+        "/"
+      ],
+      "allowedPathPrefixes": [
+        "/"
+      ],
+      "parserId": null,
+      "budget": {
+        "perPage": 1,
+        "maxRequests": 8,
+        "minDelayMs": 4000,
+        "timeoutMs": 20000,
+        "maxResponseBytes": 5242880
+      },
+      "retention": {
+        "rawBody": "metadata-only",
+        "downloadImages": false
+      },
+      "knownLimits": [
+        "Owner request 13.10.2026. Only the official home page is seeded: no deeper path is assumed until it has been seen. A refusal is recorded as a gap, never worked around."
+      ]
+    }
+  ]
+}
