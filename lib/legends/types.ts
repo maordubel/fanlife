@@ -16,7 +16,7 @@ export type Pressing='low'|'medium'|'high'
 export type Tempo='slow'|'normal'|'fast'
 export type Tactics={approach:Approach;pressing:Pressing;tempo:Tempo}
 export const DEFAULT_TACTICS:Tactics={approach:'balanced',pressing:'medium',tempo:'normal'}
-export type Lineup={formation:FormationId;xi:string[];bench:string[];tactics:Tactics;/** the armband — one of the eleven */captain?:string}
+export type Lineup={formation:FormationId;xi:string[];bench:string[];tactics:Tactics;/** the armband — one of the eleven */captain?:string;/** the vice-captain — a squad man other than the captain; he wears the armband when the captain is not in the eleven */vice?:string}
 
 /** a man's place in a career squad (§0 "career player") */
 export type SquadEntry={id:string;quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;joined:number}
@@ -53,7 +53,7 @@ export type Phase='draft'|'window'|'season'|'playoff'|'season-end'
 export type Career={
  v:2;id:string;rules:typeof RULE_VERSION;engine:EngineVersion;owner:string;clubId:string;clubName:string;status:'active'|'archived';
  settings:LegendsSettings;catalog:Catalog;teams:Team[];phase:Phase;draft:DraftState|null;season:Season;live:Live|null;
- cutscene:'board-grant'|'season-end'|null;soldThisWindow:string[];aiDone:string[];
+ cutscene:'board-grant'|'meet-squad'|'season-end'|null;soldThisWindow:string[];aiDone:string[];
  ledger:LedgerEntry[];reputation:{points:number;events:{key:string;season:number;points:number;why:string}[]};history:SeasonRecord[];
  keys:string[];revision:number;createdAt:string;updatedAt:string
 }
