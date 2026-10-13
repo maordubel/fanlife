@@ -29,7 +29,7 @@
 export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || ''
 
 /** GA4 measurement ID. */
-export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-8YW4SSHHNL'
 
 /**
  * Where a slot may appear. The name is the ad unit's job, not its size — a slot that
