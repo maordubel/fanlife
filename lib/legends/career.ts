@@ -60,7 +60,7 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 
 /* ───────── actions ───────── */
 export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
- |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string}|{kind:'auto';formation?:string}|{kind:'close-window'}
+ |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string;vice?:string;/** the meet-your-squad page's confirm: the eleven is set and the season can start */meet?:boolean}|{kind:'auto';formation?:string}|{kind:'close-window'}
  |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'play-round'}|{kind:'next-season'})&{key:string;rev:number}
 /** an action before the server stamps it with a key and a revision */
 export type Intent=Action extends infer A?A extends Action?Omit<A,'key'|'rev'>:never:never
@@ -81,7 +81,7 @@ export function parseAction(raw:unknown):Action|null{
   case 'draft-confirm':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
   case 'buy':case 'sell':return str(a.card)?{...b,kind:a.kind,card:a.card as string}:null
   case 'swap':return str(a.sell)&&str(a.buy)?{...b,kind:'swap',sell:a.sell as string,buy:a.buy as string}:null
-  case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{})}:null}
+  case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))&&(a.vice===undefined||str(a.vice))&&(a.meet===undefined||a.meet===true)?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{}),...(typeof a.vice==='string'?{vice:a.vice}:{}),...(a.meet?{meet:true}:{})}:null}
   case 'auto':return {...b,kind:'auto',...(typeof a.formation==='string'?{formation:a.formation}:{})}
   case 'match-start':return a.mode==='fast'||a.mode==='interactive'?{...b,kind:'match-start',mode:a.mode}:null
   case 'match-decide':{const d=(a.decision??{}) as Record<string,unknown>,t=d.tactics===undefined?undefined:tacticsOf(d.tactics)
@@ -128,7 +128,8 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    next=pay(next,{key:`first-window-grant:${c.id}`,kind:'board-grant',amount:R.firstBoardGrantM,note:'Season-ticket holders, sponsors and the board'},ctx.now)
    return {ok:true,career:next}
   }
-  case 'ack':return {ok:true,career:{...c,cutscene:null}}
+  // the board's news is followed by the squad itself: meet the men, set the eleven, the captain and his vice (owner, 13.10.2026)
+  case 'ack':return {ok:true,career:{...c,cutscene:c.cutscene==='board-grant'&&c.season.played===0&&!c.live?'meet-squad':null}}
   case 'buy':{
    if(!windowOpen(c))return bad('The transfer window is shut.','closed')
    const card=catalogMap(c).get(a.card)
@@ -169,9 +170,17 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(c.phase==='draft')return bad('Finish the draft first.','closed')
    if(c.live)return bad('A match is being played — change it from the touchline.','closed')
    if(!isFormation(a.formation))return bad('Unknown formation.')
-   if(a.captain&&!a.xi.includes(a.captain))return bad('The captain must be one of the eleven.')
-   const lu={formation:a.formation,xi:a.xi,bench:a.bench,tactics:a.tactics,...(a.captain?{captain:a.captain}:t.lineup.captain&&a.xi.includes(t.lineup.captain)?{captain:t.lineup.captain}:{})},err=lineupError(lu,fieldable(t,id=>cardOf(c,t,id)));if(err)return bad(err)
-   return {ok:true,career:withMe(c,{...t,lineup:lu})}
+   if(a.meet&&c.cutscene!=='meet-squad')return bad('The squad has been met already.','closed')
+   // the captain is a squad man; when he is not in the eleven (benched, injured) his vice wears the armband (`captainOf`)
+   const inSquad=(id:string)=>t.squad.some(s=>s.id===id)
+   if(a.captain&&!inSquad(a.captain))return bad('The captain must be in your squad.')
+   const captain=a.captain??(t.lineup.captain&&inSquad(t.lineup.captain)?t.lineup.captain:undefined)
+   if(a.vice&&!inSquad(a.vice))return bad('The vice-captain must be in your squad.')
+   if(a.vice&&a.vice===captain)return bad('The vice-captain cannot be the captain.')
+   // a vice the request does not name stays, while he is still in the squad and not the new captain
+   const vice=a.vice??(t.lineup.vice&&inSquad(t.lineup.vice)&&t.lineup.vice!==captain?t.lineup.vice:undefined)
+   const lu={formation:a.formation,xi:a.xi,bench:a.bench,tactics:a.tactics,...(captain?{captain}:{}),...(vice?{vice}:{})},err=lineupError(lu,fieldable(t,id=>cardOf(c,t,id)));if(err)return bad(err)
+   return {ok:true,career:{...withMe(c,{...t,lineup:lu}),...(a.meet?{cutscene:null}:{})}}
   }
   case 'auto':{
    if(c.phase==='draft')return bad('Finish the draft first.','closed')
@@ -179,7 +188,9 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const f=a.formation&&isFormation(a.formation)?a.formation:t.lineup.formation,lu=bestLineup(fieldable(t,id=>cardOf(c,t,id)),f,t.lineup.tactics)
    if(!lu)return bad('Not enough fit men for an eleven.')
    // the manager's armband stays on his man when he is still in the eleven
-   return {ok:true,career:withMe(c,{...t,lineup:{...lu,captain:captainOf({xi:lu.xi,captain:t.lineup.captain},id=>cardOf(c,t,id))}})}
+   // the manager's captain and vice stay his while they are in the squad; the armband itself is worked out per match (`captainOf`)
+   const inSquad=(id?:string)=>!!id&&t.squad.some(s=>s.id===id),cap=inSquad(t.lineup.captain)?t.lineup.captain:lu.captain,vice=inSquad(t.lineup.vice)&&t.lineup.vice!==cap?t.lineup.vice:undefined
+   return {ok:true,career:withMe(c,{...t,lineup:{...lu,...(cap?{captain:cap}:{}),...(vice?{vice}:{})}})}
   }
   case 'close-window':{
    if(!windowOpen(c))return bad('No window is open.','closed')

@@ -13,7 +13,12 @@ import {useRumbleSound} from '@/components/clubs/rumble/shared'
 import {LiveMatch,type Watch} from './Live'
 import {TeamSheet} from './TeamSheet'
 import {BoardNews,ClubSheet,WindowSheet} from './Popups'
-import {KitChip,Sheet} from './Sheet'
+import {Sheet} from './Sheet'
+import {MeetSquad} from './MeetSquad'
+import {LeagueCentre,Table} from './Stats'
+import {CareerNav,type Tab} from './CareerNav'
+import {ClubMark,ShirtProvider} from './Shirts'
+import type {CareerShirt} from '@/lib/legends/shirts'
 
 /**
  * One Legends career on one screen, click by click (owner, 12.10.2026). Every change is ONE server action carrying the revision
@@ -21,12 +26,11 @@ import {KitChip,Sheet} from './Sheet'
  * popups — the board's news, the transfer window, the live match with its three touchline stops, full time — so the page itself
  * stays short: a match card, the next thing to press, the table.
  */
-type Tab='match'|'squad'|'market'|'league'|'club'|'friendlies'
 const newKey=()=>(globalThis.crypto?.randomUUID?.()??`${Date.now()}${Math.random()}`).replace(/[^A-Za-z0-9]/g,'').slice(0,32).padEnd(12,'0')
 const ordinal=(n:number)=>`${n}${n%10===1&&n!==11?'st':n%10===2&&n!==12?'nd':n%10===3&&n!==13?'rd':'th'}`
 type Send=(a:Record<string,unknown>,ok?:string)=>void
 
-export function CareerApp({initial,friendlies=false,decades,wardrobe}:{initial:CareerView;friendlies?:boolean;decades:number[];wardrobe:RumbleWardrobe}){
+export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:{initial:CareerView;friendlies?:boolean;decades:number[];wardrobe:RumbleWardrobe;/** the club's documented home kits, drawn on the cards and the team sheet */shirts?:CareerShirt[]}){
  const [v,setV]=useState(initial),[tab,setTab]=useState<Tab>('match'),[msg,setMsg]=useState<{kind:'ok'|'error';text:string}|null>(null),[busy,start]=useTransition()
  // the match being watched: opened by kick-off, kept open through the stops and the final part, closed at "Continue"
  const [watch,setWatch]=useState<Watch|null>(initial.live?{id:initial.live.fixture,from:initial.live.prevStop}:null)
@@ -38,12 +42,12 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe}:{initial:C
  // a window that opens (after round 2, at halfway) comes up by itself as soon as the match is over
  useEffect(()=>{if(v.phase==='window'&&!watch)setWinOpen(true)},[v.phase,watch])
  const kickoff=()=>{if(!v.next)return;setMsg(null);setWatch({id:v.next.id,from:0});send({kind:'match-start',mode:'interactive'})}
- const tabs:{id:Tab;label:string}[]=[{id:'match',label:v.phase==='window'?'Window':'Matchday'},{id:'squad',label:'Team'},{id:'market',label:'Market'},{id:'league',label:'League'},{id:'club',label:'Club'},...(friendlies?[{id:'friendlies' as Tab,label:'Friendlies'}]:[])]
  const watching=watch&&(v.live||v.last?.id===watch.id)
- return <div className="lgm-app">
+ const meet=v.cutscene==='meet-squad'&&v.phase!=='draft'
+ return <ShirtProvider value={{shirts,wardrobe,colours:v.colours??{}}}><div className="lgm-app tl-app" data-meet={meet||undefined}>
   <header className="lgm-head">
    <Emblem size={56}/>
-   <div><p className="lgm-kicker">Legends Manager · season {v.season}</p><h1><KitChip c={v.colours?.[v.clubId]} size={26}/> {v.clubName}</h1></div>
+   <div><p className="lgm-kicker">Legends Manager · season {v.season}</p><h1><ClubMark club={v.clubId} name={v.clubName} size={34}/> {v.clubName}</h1></div>
    <dl className="lgm-meter">
     <div><dt>{v.phase==='draft'?'Draft':'Round'}</dt><dd>{v.phase==='draft'?'Open':<>{Math.min(v.played+1,v.rounds)}<small>/{v.rounds}</small></>}</dd></div>
     <div><dt>Cash</dt><dd>{v.phase==='draft'?money(v.draft?.left??52):money(v.cash)}</dd></div>
@@ -53,19 +57,18 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe}:{initial:C
   <p className="lgm-live-msg" role="status" aria-live="polite" data-kind={msg?.kind}>{watching?'':msg?.text??''}</p>
   {v.cutscene==='board-grant'?<BoardNews v={v} busy={busy} send={send}/>:v.cutscene==='season-end'&&!watching?<SeasonEnd v={v} busy={busy} send={send}/>:null}
   {v.status==='archived'?<p className="lgm-error">This career is archived. Restore it from the Legends front page to play on.</p>:null}
-  {v.phase==='draft'?<DraftRoom v={v} busy={busy} send={send} wardrobe={wardrobe}/>:<>
-   <nav className="lgm-tabs" aria-label="Career">{tabs.map(t=><button key={t.id} type="button" className="min-h-tap" aria-current={tab===t.id?'page':undefined} onClick={()=>{setTab(t.id);setMsg(null)}}>{t.label}{t.id==='market'&&v.window?<i aria-label="open"/>:null}</button>)}</nav>
+  {v.phase==='draft'?<DraftRoom v={v} busy={busy} send={send} wardrobe={wardrobe}/>:meet?<MeetSquad v={v} busy={busy} send={send}/>:<>
+   <CareerNav tab={tab} setTab={t=>{setTab(t);setMsg(null)}} windowOpen={!!v.window} matchLabel={v.phase==='window'?'Window':'Match'}/>
    {tab==='match'?<Matchday v={v} busy={busy} send={send} go={setTab} kickoff={kickoff} resume={()=>v.live&&setWatch({id:v.live.fixture,from:v.live.prevStop})} openWindow={()=>setWinOpen(true)} openClub={setClub}/>:null}
    {tab==='squad'?<TeamSheet v={v} busy={busy} send={send}/>:null}
    {tab==='market'?<Market v={v} busy={busy} send={send} decades={decades}/>:null}
-   {tab==='league'?<League v={v} openClub={setClub}/>:null}
-   {tab==='club'?<Club v={v}/>:null}
-   {tab==='friendlies'&&friendlies?<CareerFriendlies careerId={v.id} ready={!v.lineup.error}/>:null}
+   {tab==='league'?<LeagueCentre v={v} openClub={setClub}/>:null}
+   {tab==='club'?<Club v={v} friendlies={friendlies?<CareerFriendlies careerId={v.id} ready={!v.lineup.error}/>:null}/>:null}
   </>}
   {watching?<LiveMatch v={v} busy={busy} send={send} watch={watch} setWatch={setWatch}/>:null}
   {!watching&&winOpen&&v.window&&!v.cutscene?<WindowSheet v={v} busy={busy} send={send} onMarket={()=>{setWinOpen(false);setTab('market')}} onClose={()=>setWinOpen(false)}/>:null}
   {club?<ClubSheet v={v} club={club} onClose={()=>setClub(null)}/>:null}
- </div>
+ </div></ShirtProvider>
 }
 
 /* ───────── the season's end ───────── */
@@ -84,7 +87,7 @@ function SeasonEnd({v,busy,send}:{v:CareerView;busy:boolean;send:Send}){
 
 /* ───────── matchday: one card, one button ───────── */
 function Matchday({v,busy,send,go,kickoff,resume,openWindow,openClub}:{v:CareerView;busy:boolean;send:Send;go:(t:Tab)=>void;kickoff:()=>void;resume:()=>void;openWindow:()=>void;openClub:(c:string)=>void}){
- const me=v.table.findIndex(r=>r.mine),[replay,setReplay]=useState(false),n=v.next,c=v.colours??{}
+ const me=v.table.findIndex(r=>r.mine),[replay,setReplay]=useState(false),n=v.next
  return <div className="lgm-grid lgm-matchday">
   {v.phase==='window'?<section className="lgm-panel lgm-window"><p className="lgm-kicker">The transfer window is open</p><p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" onClick={openWindow}>Open the window · {money(v.cash)}</button></p></section>:null}
   {v.phase==='season-end'?<section className="lgm-panel"><p className="lgm-kicker">Season {v.season} is over</p><h2>{v.history.at(-1)?.champion?'Champions':`${ordinal(v.history.at(-1)?.place??0)} place`}</h2><p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy} onClick={()=>send({kind:'next-season'},`Season ${v.season+1} begins.`)}>Start season {v.season+1}</button></p></section>:null}
@@ -92,9 +95,9 @@ function Matchday({v,busy,send,go,kickoff,resume,openWindow,openClub}:{v:CareerV
   :n&&v.phase!=='window'&&v.phase!=='season-end'?<section className="lgm-ticket" aria-labelledby="lgm-next-h">
    <p className="lgm-ticket-top" id="lgm-next-h"><span>{n.playoff?'Title play-off · neutral ground':`Round ${n.round} of ${v.rounds}`}</span><span>{n.playoff?'':n.atHome?'Home':'Away'}</span></p>
    <div className="lgm-ticket-vs">
-    <button type="button" className="lgm-ticket-side" onClick={()=>n.home===v.clubId?go('squad'):openClub(n.home)}><KitChip c={c[n.home]} size={40}/><b>{n.homeName}</b></button>
+    <button type="button" className="lgm-ticket-side" onClick={()=>n.home===v.clubId?go('squad'):openClub(n.home)}><ClubMark club={n.home} name={n.homeName} size={48}/><b>{n.homeName}</b></button>
     <span className="lgm-ticket-v">v</span>
-    <button type="button" className="lgm-ticket-side" onClick={()=>n.away===v.clubId?go('squad'):openClub(n.away)}><KitChip c={c[n.away]} size={40}/><b>{n.awayName}</b></button>
+    <button type="button" className="lgm-ticket-side" onClick={()=>n.away===v.clubId?go('squad'):openClub(n.away)}><ClubMark club={n.away} name={n.awayName} size={48}/><b>{n.awayName}</b></button>
    </div>
    <p className="lgm-fine">{n.opponent.name} · {n.opponent.formation} · their eleven <Stars value={n.opponent.stars} size="sm"/>{n.opponent.xi?` · scouted: ${n.opponent.xi.slice(0,4).join(', ')}…`:''}</p>
    {v.lineup.error?<p className="lgm-error" role="alert">{v.lineup.error} <button type="button" className="lgm-link min-h-tap" onClick={()=>send({kind:'auto'},'Best fit eleven picked.')}>Pick the best fit eleven</button></p>:null}
@@ -103,9 +106,9 @@ function Matchday({v,busy,send,go,kickoff,resume,openWindow,openClub}:{v:CareerV
   </section>:null}
   {v.bye?<section className="lgm-ticket"><p className="lgm-ticket-top"><span>Round {v.played+1}</span><span>Free week</span></p><p>{v.clubName} sit this round out. The others play.</p><p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy} onClick={()=>send({kind:'play-round'},'The round is played.')}>Play the round</button></p></section>:null}
   {v.last?<section className="lgm-panel lgm-lastres"><p className="lgm-kicker">Last result · round {v.last.round>v.rounds?'play-off':v.last.round}</p>
-   <button type="button" className="lgm-res lgm-res-big min-h-tap" onClick={()=>v.last?.reel&&setReplay(true)}><span>{v.last.home}</span><b>{v.last.goals[0]}–{v.last.goals[1]}</b><span>{v.last.away}</span></button>
+   <button type="button" className="lgm-res lgm-res-big min-h-tap" onClick={()=>v.last?.reel&&setReplay(true)}><span className="tl-res-side"><ClubMark club={v.last.homeClub} size={28}/><span>{v.last.home}</span></span><b>{v.last.goals[0]}–{v.last.goals[1]}</b><span className="tl-res-side" data-end><span>{v.last.away}</span><ClubMark club={v.last.awayClub} size={28}/></span></button>
    {v.last.reel?<p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={()=>setReplay(true)}>▶ Watch the highlights</button></p>:null}</section>:null}
-  <section className="lgm-panel"><p className="lgm-kicker">The table</p><Table rows={v.table.slice(0,Math.max(4,me+1))} openClub={openClub}/><p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={()=>go('league')}>Full table and results →</button>{v.nextWindow&&v.phase==='season'?<span className="lgm-fine">Window opens after round {v.nextWindow}.</span>:null}</p></section>
+  <section className="lgm-panel"><p className="lgm-kicker">The table</p><Table v={v} rows={v.table.slice(0,Math.max(4,me+1))} openClub={openClub}/><p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={()=>go('league')}>Full table and results →</button>{v.nextWindow&&v.phase==='season'?<span className="lgm-fine">Window opens after round {v.nextWindow}.</span>:null}</p></section>
   {replay&&v.last?.reel?<Replay r={v.last} onClose={()=>setReplay(false)}/>:null}
  </div>
 }
@@ -113,14 +116,6 @@ function Replay({r,onClose}:{r:ResultView;onClose:()=>void}){
  const snd=useRumbleSound(),sound:TheatreSound=n=>snd.play(n==='whistle'?'kickoff':n==='save'?'roar':n,n==='save'?.35:.6)
  return <Sheet id="lgm-replay" tone="night" wide kicker={`Highlights · round ${r.round}`} title={`${r.home} ${r.goals[0]}–${r.goals[1]} ${r.away}`} onClose={onClose}><Theatre reel={r.reel!} sound={sound}/></Sheet>
 }
-function Result({r,full=false}:{r:ResultView;full?:boolean}){
- const lines=r.log.filter(l=>full?l.kind!=='kickoff':['goal','red','injury','penalties'].includes(l.kind))
- return <div className="lgm-result">
-  <p className="lgm-fixture"><span>{r.home}</span><b>{r.goals[0]} – {r.goals[1]}{r.pens?<small> ({r.pens[0]}–{r.pens[1]} pens)</small>:null}</b><span>{r.away}</span></p>
-  {lines.length?<ol className="lgm-log">{lines.map((l,i)=><li key={i} data-side={l.side??undefined} data-kind={l.kind} data-mine={l.mine||undefined}><b>{l.minute}′</b> {l.text}</li>)}</ol>:<p className="lgm-fine">No goals.</p>}
- </div>
-}
-
 function Market({v,busy,send,decades}:{v:CareerView;busy:boolean;send:(a:Record<string,unknown>,ok?:string)=>void;decades:number[]}){
  const [pos,setPos]=useState(''),[dec,setDec]=useState(''),[price,setPrice]=useState(''),[q,setQ]=useState(''),[res,setRes]=useState<{cards:CardView[];total:number}|null>(null),[swapOut,setSwapOut]=useState(''),[loading,load]=useTransition()
  const search=()=>load(async()=>{const r=await legendsMarket(v.id,{pos:pos||null,decade:dec?Number(dec):null,price:price?Number(price):null,q:q||null});if(r.ok)setRes({cards:r.cards,total:r.total})})
@@ -128,7 +123,7 @@ function Market({v,busy,send,decades}:{v:CareerView;busy:boolean;send:(a:Record<
  if(!v.window)return <section className="lgm-panel"><p className="lgm-kicker">The market</p><h2>The window is shut</h2><p>Two windows a season: after round 2 and at the halfway mark. {v.nextWindow?`The next opens after round ${v.nextWindow}.`:'The next opens next season, after round 2.'}</p></section>
  const full=v.squad.length>=v.rules.maxSquad
  const buy=(c:CardView)=>full?(swapOut?send({kind:'swap',sell:swapOut,buy:c.id},`${c.name} in, ${v.squad.find(s=>s.id===swapOut)?.name} out.`):null):send({kind:'buy',card:c.id},`${c.name} signed for ${money(c.price)}.`)
- const row=(c:CardView,compact=false)=><LegendCard key={c.id} c={c} compact={compact}><p className="lgm-actions"><button type="button" className="lgm-sign min-h-tap" disabled={busy||c.price>v.cash+(full&&swapOut?v.squad.find(s=>s.id===swapOut)?.sale?.net??0:0)||(full&&!swapOut)} onClick={()=>buy(c)}>{full?'Swap him in':`Sign · ${money(c.price)}`}</button></p></LegendCard>
+ const row=(c:CardView,compact=false)=><LegendCard key={c.id} c={c} compact={compact} shirt><p className="lgm-actions"><button type="button" className="lgm-sign min-h-tap" disabled={busy||c.price>v.cash+(full&&swapOut?v.squad.find(s=>s.id===swapOut)?.sale?.net??0:0)||(full&&!swapOut)} onClick={()=>buy(c)}>{full?'Swap him in':`Sign · ${money(c.price)}`}</button></p></LegendCard>
  return <div className="lgm-market">
   <section className="lgm-panel" aria-labelledby="lgm-offers-h"><p className="lgm-kicker" id="lgm-offers-h">Special offers · {money(v.cash)} to spend</p>
    {full?<label className="lgm-select">Squad full — who makes way?<select className="min-h-tap" value={swapOut} onChange={e=>setSwapOut(e.target.value)}><option value="">Choose a man to sell</option>{v.squad.map(s=><option key={s.id} value={s.id}>{s.pos} · {s.name} · {money(s.sale?.net??0)}</option>)}</select></label>:null}
@@ -147,24 +142,10 @@ function Market({v,busy,send,decades}:{v:CareerView;busy:boolean;send:(a:Record<
  </div>
 }
 
-/* ───────── the league ───────── */
-function Table({rows,openClub}:{rows:CareerView['table'];openClub?:(c:string)=>void}){
- return <div className="lgm-table-wrap"><table className="lgm-table"><thead><tr><th scope="col">#</th><th scope="col">Club</th><th scope="col">P</th><th scope="col">W</th><th scope="col">D</th><th scope="col">L</th><th scope="col">GD</th><th scope="col">Pts</th><th scope="col" className="lgm-form-h">Form</th></tr></thead>
-  <tbody>{rows.map((r,i)=><tr key={r.club} data-mine={r.mine||undefined}><td>{i+1}</td><th scope="row">{openClub&&!r.mine?<button type="button" className="lgm-rowbtn min-h-tap" onClick={()=>openClub(r.club)}>{r.name}</button>:r.name}</th><td>{r.p}</td><td>{r.w}</td><td>{r.d}</td><td>{r.l}</td><td>{r.gd>0?`+${r.gd}`:r.gd}</td><td><b>{r.pts}</b></td><td className="lgm-form">{r.form.map((x,j)=><span key={j} data-r={x}>{x}</span>)}</td></tr>)}</tbody></table></div>
-}
-function League({v,openClub}:{v:CareerView;openClub:(c:string)=>void}){
- const rounds=[...new Set(v.results.map(r=>r.round))].sort((a,b)=>b-a),[open,setOpen]=useState<string|null>(null)
- return <div className="lgm-grid">
-  <section className="lgm-panel"><p className="lgm-kicker">Season {v.season} · the table</p><Table rows={v.table} openClub={openClub}/><p className="lgm-fine">Tap a club to see its squad. {v.tieNote} Points: win {v.settings.points.win}, draw {v.settings.points.draw}, loss {v.settings.points.loss}.</p></section>
-  <section className="lgm-panel"><p className="lgm-kicker">Results</p>
-   {rounds.length?rounds.map(rd=><div key={rd} className="lgm-round"><h3>{rd>v.rounds?'Play-off':`Round ${rd}`}</h3><ul>{v.results.filter(r=>r.round===rd).map(r=><li key={r.id} data-mine={r.mine||undefined}><button type="button" className="lgm-res min-h-tap" aria-expanded={open===r.id} onClick={()=>setOpen(open===r.id?null:r.id)}><span>{r.home}</span><b>{r.goals[0]}–{r.goals[1]}</b><span>{r.away}</span></button>{open===r.id?<Result r={r} full/>:null}</li>)}</ul></div>):<p className="lgm-fine">No round has been played yet.</p>}
-  </section>
- </div>
-}
-
 /* ───────── the club: honours, the ledger, the manager's standing ───────── */
-function Club({v}:{v:CareerView}){
+function Club({v,friendlies}:{v:CareerView;friendlies?:import('react').ReactNode}){
  return <div className="lgm-grid">
+  {friendlies??null}
   <section className="lgm-panel"><p className="lgm-kicker">The honours board</p>
    {v.history.length?<ol className="lgm-honours">{v.history.map(h=><li key={h.ordinal} data-champion={h.champion||undefined}><b>Season {h.ordinal}</b><span>{h.champion?'Champions':`${ordinal(h.place)} of ${h.of}`} · {h.points} pts · {h.w}-{h.d}-{h.l}</span>{h.topScorer?<small>Top scorer {h.topScorer.name} ({h.topScorer.goals})</small>:null}</li>)}</ol>:<p className="lgm-fine">The first season is still being written.</p>}
   </section>
