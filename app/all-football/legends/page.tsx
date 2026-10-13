@@ -3,6 +3,7 @@ import {notFound} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
 import {PreviewRibbon} from '@/components/experiences/AfFrame'
 import {Emblem} from '@/components/legends/Brand'
+import {LegendsReveal} from '@/components/legends/Reveal'
 import {Careers,ClubRoll,type ClubOption} from '@/components/legends/FrontDoor'
 import {GAME_VALUES} from '@/components/legends/LegendCard'
 import {door} from '@/lib/features-server'
@@ -13,7 +14,8 @@ import {activeCount,canSave,ownerIndex} from '@/lib/legends/store'
 import '../all-football.css'
 import './styles'
 export const dynamic='force-dynamic'
-export const metadata={title:'Legends Manager',description:'One club. Only the men who wore its shirt. Draft seventeen legends, run the club, and build a dynasty season after season.'}
+export const metadata={title:'Legends Manager',description:'One club. Only the men who wore its shirt. Draft seventeen legends, run the club, and build a dynasty season after season.',
+ openGraph:{title:'Legends Manager · FAN LIFE',images:[{url:'/legends/brand/og.png',width:1200,height:630,alt:'Legends Manager'}]},icons:{icon:'/legends/brand/logo-128.webp',apple:'/legends/brand/logo-256.webp'}}
 
 /**
  * LEGENDS MANAGER — the front door (owner rulebook V1.0, 12.10.2026; replaces FAN LEAGUE behind the same switch). The owner
@@ -28,11 +30,12 @@ export default async function Page({searchParams}:{searchParams?:{club?:string}}
  const openClubs=options.filter(o=>o.ready&&!o.held).length
  return <Shell locale="en">
   <PreviewRibbon on={d.preview}/>
+  <LegendsReveal/>
   <main id="main" className="af lgm">
    <header className="lgm-hero">
     <p className="lgm-edition"><span>ALL FOOTBALL presents</span><span>{openClubs} clubs · their immortals</span></p>
-    <Emblem size={176}/>
-    <h1><span>Legends</span> Manager</h1>
+    <Emblem size={340} eager/>
+    <h1 className="lgm-hero-name"><span>Legends</span> Manager</h1>
     <p className="lgm-motto">One club. Only the men who wore its shirt. Your dynasty.</p>
     <p className="lgm-lede">Draft seventeen legends from a single club’s whole history, take the board’s money, and run the side season after season — the windows, the team sheet, the touchline, the table.</p>
     {af.open?<p className="af-back-row"><Link className="af-back" href="/all-football">← ALL FOOTBALL</Link></p>:null}

@@ -373,8 +373,8 @@ a.gp:active { transform: scale(.98); }
 .lgm-banner::before { content: ''; position: absolute; z-index: -1; inset-block-start: 50%; inset-inline-start: 74px; inline-size: 520px; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%;
   background: repeating-conic-gradient(color-mix(in srgb, var(--b-bronze-hi) 16%, transparent) 0 6deg, transparent 6deg 15deg); -webkit-mask: radial-gradient(closest-side, black 30%, transparent); mask: radial-gradient(closest-side, black 30%, transparent); }
 .lgm-banner::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(105deg, transparent 40%, color-mix(in srgb, var(--mag-paper) 13%, transparent) 50%, transparent 60%); translate: -120% 0; }
-.lgm-banner-mark { grid-area: mark; display: block; inline-size: 92px; }
-.lgm-banner-mark .lgm-emblem { inline-size: 100%; block-size: auto; filter: drop-shadow(0 3px 0 color-mix(in srgb, var(--mag-ink) 55%, transparent)); }
+.lgm-banner-mark { grid-area: mark; display: block; inline-size: 118px; }
+.lgm-banner-mark .lgm-emblem { inline-size: 100%; block-size: auto; filter: brightness(1.18) contrast(1.12) drop-shadow(0 3px 0 color-mix(in srgb, var(--mag-ink) 55%, transparent)); }
 .lgm-banner .lgm-e-disc { fill: var(--b-night); } .lgm-banner .lgm-e-ring { fill: none; stroke: var(--b-bronze-hi); stroke-width: 1.6; stroke-dasharray: 2 3; }
 .lgm-banner .lgm-e-stem { fill: none; stroke: var(--b-bronze); stroke-width: 3; stroke-linecap: round; }
 .lgm-banner .lgm-e-leaf { fill: var(--b-bronze); stroke: var(--b-bronze-lo); stroke-width: .8; }

@@ -1,27 +1,16 @@
 import {useId} from 'react'
 
 /**
- * LEGENDS MANAGER's mark — drawn here, original, not a template: a bronze laurel closed round a night-blue disc, one vermilion
- * star at the crown, the LM monogram struck in the middle and a ribbon across the foot. Colours come from the feature's tokens
- * (`legends.css`), never a hex in a component.
+ * LEGENDS MANAGER's mark — Maor's badge (13.10.2026): crown, tactics board, the old leather ball, laurels and the FAN LIFE seal.
+ * Cut from its paper ground by `scripts/brand/legends-logo.py` (rule 122). `mono` is the greyscale cut for a club's own pages,
+ * where the badge's red, green, navy or gold may be a rival's colour (rule 95). Plain <img>: no re-encode of the measured bytes.
  */
-export function Emblem({size=148,label='LEGENDS MANAGER'}:{size?:number;label?:string}){
- const id=useId().replace(/:/g,'')
- const leaves=Array.from({length:9},(_,i)=>i)
- return <svg className="lgm-emblem" width={size} height={size} viewBox="0 0 200 200" role="img" aria-label={label}>
-  <defs><path id={`${id}-arc`} d="M40 150 Q100 182 160 150"/></defs>
-  <circle cx="100" cy="100" r="74" className="lgm-e-disc"/>
-  <circle cx="100" cy="100" r="66" className="lgm-e-ring"/>
-  {[-1,1].map(side=><g key={side} transform={`translate(100 100) scale(${side} 1)`}>
-   <path d="M-6 74 C-52 62 -78 22 -72 -30" className="lgm-e-stem"/>
-   {leaves.map(i=>{const a=(100+i*16)*Math.PI/180,r=78,x=Math.cos(a)*r,y=Math.sin(a)*r*0.98,rot=100+i*16+28
-    return <ellipse key={i} cx={x} cy={y} rx="5.2" ry="13" transform={`rotate(${rot} ${x} ${y})`} className="lgm-e-leaf"/>})}
-  </g>)}
-  <path d="M100 18 l6.5 13.4 14.7 2.1 -10.6 10.4 2.5 14.6 -13.1 -6.9 -13.1 6.9 2.5 -14.6 -10.6 -10.4 14.7 -2.1z" className="lgm-e-star"/>
-  <text x="100" y="117" textAnchor="middle" className="lgm-e-mono">LM</text>
-  <path d="M28 140 L172 140 L162 156 L172 172 L28 172 L38 156z" className="lgm-e-ribbon"/>
-  <text className="lgm-e-word"><textPath href={`#${id}-arc`} startOffset="50%" textAnchor="middle">LEGENDS</textPath></text>
- </svg>
+const SIZES=[128,256,512,1024] as const
+export function Emblem({size=148,label='LEGENDS MANAGER',mono=false,className,eager=false}:{size?:number;label?:string;mono?:boolean;className?:string;eager?:boolean}){
+ const sizes=mono?[256,512]:SIZES,file=(n:number)=>`/legends/brand/logo-${mono?'mono-':''}${n}.webp`
+ const best=sizes.find(n=>n>=size*2)??sizes[sizes.length-1]!
+ return <img className={`lgm-emblem${className?` ${className}`:''}`} src={file(best)} srcSet={sizes.map(n=>`${file(n)} ${n}w`).join(', ')} sizes={`${size}px`}
+  width={size} height={size} alt={label} loading={eager?'eager':'lazy'} decoding="async" draggable={false}/>
 }
 const frac=(n:number)=>{const w=Math.floor(n),f=Math.round((n-w)*4);return `${w}${['','¼','½','¾'][f]}`}
 export const starsText=(n:number)=>`${frac(n)} star${n===1?'':'s'}`

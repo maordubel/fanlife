@@ -17,7 +17,7 @@ export async function LegendsBanner({club,name,theme}:{club:string;name:string;t
  const p=bannerPaint(theme)
  return <section className="mag-section lgm-banner-wrap" id="legends" aria-labelledby="lgm-banner-h" lang="en" dir="ltr">
   <Link className="lgm-banner min-h-tap" href={legendsHref(club)} data-night={p.night} data-star={p.star} data-bronze={p.bronze} data-testid="legends-banner">
-   <span className="lgm-banner-mark" aria-hidden="true"><Emblem size={132} label="LEGENDS MANAGER"/></span>
+   <span className="lgm-banner-mark" aria-hidden="true"><Emblem size={168} label="LEGENDS MANAGER" mono/></span>
    <span className="lgm-banner-text">
     <span className="lgm-banner-kicker">ALL FOOTBALL presents{d.preview?<i> · Owner preview</i>:null}</span>
     <b className="lgm-banner-title" id="lgm-banner-h">Legends <span>Manager</span></b>

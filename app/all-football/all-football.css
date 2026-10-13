@@ -59,3 +59,9 @@
 .af-league .af-kicker { font: 700 11px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--mag-salmon); }
 .af-league b { font: 700 clamp(34px, 5vw, 56px)/.9 var(--mag-condensed); text-transform: uppercase; } .af-league small { font-size: 15px; }
 .af-league > span[aria-hidden] { grid-row: 1 / 4; grid-column: 2; align-self: center; font-size: 34px; }
+
+/* the Legends Manager badge on the ALL FOOTBALL card (rule 122) */
+.af-league .lgm-emblem { display: block; object-fit: contain; }
+.af-league { grid-template-columns: auto minmax(0, 1fr) auto; }
+.af-league .lgm-emblem { grid-row: 1 / 4; grid-column: 1; inline-size: 96px; block-size: 96px; align-self: center; }
+.af-league > span[aria-hidden] { grid-column: 3; }
