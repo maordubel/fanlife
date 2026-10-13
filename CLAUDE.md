@@ -3131,3 +3131,31 @@ Owner: "nothing should be locked to the admin" · "a reputation score for every 
 3. **Quick edit takes five fields** — price, score, reputation, positions (order = main first), name. A name needs `confirmName` (the row asks "Are you sure?"); the old spelling stays as an alias; a name equal to the archive's clears the override.
 4. **Several men at once** (`lib/players/many.ts`, `POST /api/master/players/many`): one price, or one more position, for up to 200 chosen men. Judged as a whole (stale row → 409, a game that would stop → 422, ladder → asks, "Save anyway"), written as one revision, one audit line per man.
 
+## 117 · The highlights show the whole pitch, set pieces and every goal (13.10.2026)
+
+1. **One pitch, two ends:** the camera pans the full length; the home side attacks right in the first half and left after it (extra time changes again at its interval), with a "teams change ends" card at 45′. Phones get a 192×160 frame, wide screens 256×160.
+2. **Set pieces come from the record:** `lib/legends/reel.ts` maps `detail` to `Shape` 'penalty'|'free-kick'|'corner'; an event without one keeps a seeded random shape, so old logs replay as before.
+3. **Every goal gets a card:** ours = the owner's film (`public/legends/fx`) or its lettering where rule 95 forbids the colours; theirs = a quieter card in their kit. Crests on the scoreboard and the board (chip fallback; Rumble reels carry none), real shirts via `KitCloth`.
+
+## 118 · A wait is a spin, not a pause (13.10.2026)
+
+In LEGENDS MANAGER's draft the reels start on the tap and land when the server answers; a draft move never loads another club's catalog (`LOCAL_ACTIONS` in `app/all-football/legends/actions.ts`), and the draft answer carries no league squads. A man who cannot be signed says why in a glance — lock, "€2M short" or "17 won't fit", budget bar. The spin counter reads `LEGENDS_RULES.rerollsPerDraft` ("2/3"). The board's news is a skippable six-beat story that ends on one button, drawn in code in the career's own livery (rule 95), and opens on its last beat under reduced motion.
+
+## 119 · LEGENDS MANAGER — the squad is set by hand, the doors are fixed, the numbers are counted (13.10.2026)
+
+1. **Armband:** captain → vice-captain → the eleven's most-starred man (`captainOf`); both are squad men, the boost is never named.
+2. **"Meet your squad"** (`components/legends/MeetSquad.tsx`, cutscene `meet-squad`) shows once, between the board's news and round 1, and ends in a registered eleven.
+3. **Team sheet:** tap a man, tap a place (drag too); position fit on every spot; no sideways scroll. Career doors = `CareerNav` (fixed on phones, above the site tab bar). A club is named with its crest (`Shirts.tsx` → `ClubMark`), its kit chip otherwise.
+4. **Leader boards are counts of stored match events** (`lib/legends/stats.ts`), kept per season — never a rating.
+
+## 120 · Parallel pull requests must not collide (13.10.2026)
+
+Owner: "set everything right and comfortable for future work". Four agents on one feature conflicted on the same three places every time.
+1. **`.gitattributes` merges the append-only files as a union:** `CLAUDE.md` and `app/all-football/legends/styles.ts`. A rule or a stylesheet added in two branches keeps both.
+2. **A legends page imports `styles.ts` only**; a feature adds ONE line there for its own CSS file (`tests/legends/team-league.test.ts` fails on a sheet the index misses).
+3. **An agent never numbers a rule in CLAUDE.md itself:** the rule text goes at the end of its PR description and the merger appends it in merge order.
+4. **Merge order = file overlap:** isolated PRs first (visuals, data), then the ones touching `career.ts`/`CareerApp.tsx`, each rebased on the new main and re-tested before the next. A test that fails after a rebase is read, not muted (rule 65).
+
+## 121 · One face per name: Oswald and Anton carry every Balkan letter (13.10.2026)
+
+Owner, shown seven faces (`font-options` sheet): **Oswald** for names and editorial heads (`--mag-condensed`, Karantina stays behind it for Hebrew), **Anton** for big headings (`--mag-display`). Karantina's and Bowlby One's Latin did not really carry Č/Ž/Ć/Đ, so the browser borrowed those letters from another face. Bowlby One stays the FAN LIFE wordmark only (`--mag-brand`: `.mag-logo`, `.mag-masthead`). Files are self-hosted latin + latin-ext woff2 in `public/fonts/`; a new display face must carry latin-ext before it ships. The Worker's Hebrew faces (`app/globals.css`, share cards) are untouched.
