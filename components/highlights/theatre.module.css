@@ -44,3 +44,35 @@
 .kick { justify-self: center; }
 @media (min-width: 620px) { .boards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (prefers-reduced-motion: reduce) { .fx, .fxText { animation: none; } }
+/* ── the full ground (13.10.2026): crests on the scoreboard, the attacking arrows, the goal cards ── */
+.hudCrest { inline-size: auto; block-size: 1.25em; filter: drop-shadow(1px 1px 0 var(--hl-ink)) drop-shadow(-1px -1px 0 var(--hl-ink)); }
+.dir { font-style: normal; font-size: .55em; opacity: .9; letter-spacing: 0; }
+.crest { flex: none; display: inline-grid; place-items: center; inline-size: 30px; block-size: 34px; }
+.crest img { inline-size: 100%; block-size: 100%; object-fit: contain; filter: drop-shadow(1px 1px 0 var(--hl-ink)); }
+.boardName { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.boardTag { margin-inline-start: auto; font: 700 10px var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; font-style: normal; opacity: .8; text-shadow: none; }
+.boardBody { display: grid; grid-template-columns: minmax(0, 1fr) clamp(76px, 24vw, 120px); align-items: start; gap: 8px; }
+.boardShirt { margin: 0; padding: 4px; aspect-ratio: 240 / 268; background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--hl-white) 22%, transparent), transparent 70%); }
+.shirtArt { display: block; inline-size: 100%; block-size: 100%; filter: drop-shadow(3px 3px 0 var(--hl-ink)); }
+/* after OUR goal: the scorer's shirt, back to camera, under the film */
+.scorer { position: absolute; inset-inline-start: 3%; inset-block-end: 6%; display: flex; align-items: center; gap: 6px; padding: 4px 10px 4px 4px; background: var(--hl-ink); border: 2px solid var(--hl-white); box-shadow: 3px 3px 0 var(--hl-ink); color: var(--hl-white); pointer-events: none; animation: hl-rise .45s .25s cubic-bezier(.2, 1.4, .5, 1) both; }
+.scorerShirt { inline-size: clamp(34px, 9vw, 58px); block-size: auto; aspect-ratio: 240 / 268; }
+.scorer span { display: grid; gap: 2px; } .scorer b { font: 400 clamp(13px, 3.2vw, 22px)/1 var(--mag-display); text-transform: uppercase; }
+.scorer i { font: 700 10px var(--mag-mono); letter-spacing: 2px; font-style: normal; opacity: .8; }
+@keyframes hl-rise { from { transform: translateY(30%); opacity: 0; } to { transform: none; opacity: 1; } }
+/* THEIR goal: no film — a muted, misprinted card in their colours, slid in from the end they attack */
+.against { position: absolute; inset-inline: 7%; inset-block-start: 50%; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 10px; padding: 8px 14px 8px 8px; pointer-events: none;
+  color: var(--hl-white); border: 3px solid var(--hl-ink); box-shadow: 5px 5px 0 var(--hl-ink);
+  background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--opp-2) 22%, transparent) 0 6px, transparent 6px 14px), color-mix(in srgb, var(--opp) 52%, var(--hl-ink));
+  filter: saturate(.6); transform: translateY(-50%) skewX(-7deg); animation: hl-slide-l .42s cubic-bezier(.2, 1.2, .5, 1) both; }
+.against[data-from='right'] { animation-name: hl-slide-r; }
+.againstShirt { inline-size: clamp(40px, 11vw, 74px); block-size: auto; aspect-ratio: 240 / 268; transform: skewX(7deg); }
+.againstText { display: grid; gap: 4px; min-inline-size: 0; }
+.againstText b { font: 400 clamp(30px, 9vw, 66px)/.9 var(--mag-display); text-transform: uppercase; letter-spacing: 2px; color: color-mix(in srgb, var(--hl-white) 86%, var(--opp)); -webkit-text-stroke: 1.5px var(--hl-ink); text-shadow: 3px 3px 0 var(--hl-ink); }
+.againstText i { font: 700 clamp(10px, 2.2vw, 13px)/1.2 var(--mag-mono); letter-spacing: 1.5px; font-style: normal; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@keyframes hl-slide-l { from { transform: translateY(-50%) translateX(-120%) skewX(-7deg); } to { transform: translateY(-50%) skewX(-7deg); } }
+@keyframes hl-slide-r { from { transform: translateY(-50%) translateX(120%) skewX(-7deg); } to { transform: translateY(-50%) skewX(-7deg); } }
+@media (min-width: 900px) { .boardBody { grid-template-columns: minmax(0, 1fr) 132px; } .against { inset-inline: 18%; } }
+@media (prefers-reduced-motion: reduce) { .scorer, .against { animation: none; } }
+/* the phone's own frame: squarer, so each pixel man is bigger and the camera does the travelling */
+.screen[data-frame='narrow'] { aspect-ratio: 192 / 160; }

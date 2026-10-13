@@ -1,5 +1,6 @@
 import type {Move} from '@/lib/clubs/rumble-play'
-import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
+import {kitFor,type RumbleKit,type RumbleWardrobe} from '@/lib/clubs/rumble-kit'
+import {documentedCloth,type ClothSpec} from '@/lib/clubs/kit-model'
 import type {ShowPlayer,ShowScript} from '@/lib/clubs/rumble-show'
 import {hash} from '@/lib/clubs/rumble-rng'
 import {clubCode,keeperKit,kitOfMan,numberEleven} from './kit'
@@ -8,8 +9,10 @@ import type {Moment,MomentKind,Reel,ReelTeam,Shape} from './types'
 /**
  * The club Royal Rumble's match as a reel: the server staged the football already (`rumble-play` — passes, crosses, dribbles,
  * and how each move ended); here each move that is worth watching becomes a moment, its build-up becomes the scene's shape, and
- * every man wears the shirt `kitFor` already gives him on the pitch. Nothing is decided here.
+ * every man wears the shirt `kitFor` already gives him on the pitch. Nothing is decided here. The line-up board draws a documented
+ * shirt as a garment when its colours and cut can be drawn (the wardrobe already holds only the colours this page may show).
  */
+const garment=(k:RumbleKit):ClothSpec|null=>documentedCloth({colours:k.colours,design:k.design,maker:null,sponsor:null},()=>false)
 const END:Partial<Record<Move['end'],MomentKind>>={goal:'goal',save:'save',miss:'miss',block:'block',post:'post',offside:'offside',card:'yellow'}
 function shapeOf(m:Move):Shape|undefined{
  const kinds=m.steps.map(s=>s.kind),last=kinds[kinds.length-1]
@@ -24,9 +27,9 @@ function shapeOf(m:Move):Shape|undefined{
 export function rumbleReel(script:ShowScript,wardrobe:RumbleWardrobe,faces:{us:{name:string;primary:string};them:{name:string;primary:string}},seed:number,keepers?:readonly string[]):Reel{
  const team=(side:'us'|'them',men:ShowPlayer[],face:{name:string;primary:string},other:ReelTeam|null):ReelTeam=>{
   const numbered=numberEleven(men.map(p=>({...p,pos:p.position})))
-  const lineup=numbered.map(p=>({id:p.id,no:p.no,name:p.name,pos:p.position,kit:kitOfMan(p,side,wardrobe,face.primary)}))
-  const kit=lineup.find(p=>p.pos!=='GK')?.kit??lineup[0]!.kit
-  return {name:face.name,code:clubCode(face.name),kit,keeper:keeperKit(kit,other?.kit??kit,side==='us'?0:3,keepers),lineup,...(script.formation?{formation:script.formation}:{})}
+  const lineup=numbered.map(p=>{const w=kitFor(p,side,wardrobe),g=w.source==='archive'?garment(w.kit):null;return {id:p.id,no:p.no,name:p.name,pos:p.position,kit:kitOfMan(p,side,wardrobe,face.primary),...(g?{cloth:g}:{})}})
+  const kit=lineup.find(p=>p.pos!=='GK')?.kit??lineup[0]!.kit,cloth=lineup.find(p=>p.pos!=='GK'&&p.cloth)?.cloth??null
+  return {name:face.name,code:clubCode(face.name),kit,keeper:keeperKit(kit,other?.kit??kit,side==='us'?0:3,keepers),lineup,cloth,...(script.formation?{formation:script.formation}:{})}
  }
  const us=team('us',script.us,faces.us,null),them=team('them',script.them,faces.them,us)
  us.keeper=keeperKit(us.kit,them.kit,0,keepers)
