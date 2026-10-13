@@ -80,7 +80,7 @@
    "publisher": "Deutscher Fußball-Bund",
    "reader": "html",
    "origin": "https://datencenter.dfb.de",
-   "role": "squad-by-season",
+   "role": "people",
    "locale": "en",
    "seeds": [
     "/en/clubs/1-fc-union-berlin"

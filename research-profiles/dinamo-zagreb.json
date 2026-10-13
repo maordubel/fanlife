@@ -113,7 +113,7 @@
    "publisher": "Wikipedia",
    "reader": "html",
    "origin": "https://en.wikipedia.org",
-   "role": "records",
+   "role": "results",
    "locale": "en",
    "seeds": [
     "/wiki/Dinamo_Zagreb_records_and_statistics"
@@ -143,7 +143,7 @@
    "publisher": "National Football Teams",
    "reader": "html",
    "origin": "https://www.national-football-teams.com",
-   "role": "squad-by-season",
+   "role": "people",
    "locale": "en",
    "seeds": [
     "/club/504/1953/Dinamo_Zagreb.html"

@@ -82,7 +82,7 @@
    "publisher": "Wikipedia",
    "reader": "html",
    "origin": "https://en.wikipedia.org",
-   "role": "records",
+   "role": "results",
    "locale": "en",
    "seeds": [
     "/wiki/HNK_Hajduk_Split_statistics_and_records"

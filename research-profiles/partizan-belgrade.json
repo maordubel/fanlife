@@ -107,7 +107,7 @@
    "publisher": "National Football Teams",
    "reader": "html",
    "origin": "https://www.national-football-teams.com",
-   "role": "squad-by-season",
+   "role": "people",
    "locale": "en",
    "seeds": [
     "/club/2156/1963/Partizan_Beograd.html"
