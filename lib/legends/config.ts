@@ -7,9 +7,9 @@
  * already being played (S05).
  */
 export const RULE_VERSION='legends-1.0.0' as const
-export const ENGINE_VERSION='legends-engine-2' as const
-/** every engine a stored match may name — a match started on an older engine keeps that engine's stops (rule 112) */
-export type EngineVersion='legends-engine-1'|typeof ENGINE_VERSION
+export const ENGINE_VERSION='legends-engine-3' as const
+/** every engine a stored match may name — a match started on an older engine keeps that engine's stops and rules (rule 112) */
+export type EngineVersion='legends-engine-1'|'legends-engine-2'|typeof ENGINE_VERSION
 export const LEGENDS_RULES={
  ruleVersion:RULE_VERSION,
  initialDraftBudgetM:52,firstBoardGrantM:8,
@@ -17,8 +17,17 @@ export const LEGENDS_RULES={
  minimums:{GK:2,DF:6,MF:6,FW:3},
  offersPerSlot:3,rerollsPerDraft:3,
  maxSubs:3,maxInterventionWindows:3,
- /** the three touchline windows of a live match (owner, 12.10.2026): half-time, 60′ and 75′ */
+ /** engine 2's three touchline windows (owner, 12.10.2026): half-time, 60′ and 75′ — kept for a match begun on engine 2 */
  touchlineStops:[45,60,75],
+ /** engine 3 (owner, 13.10.2026): half-time is the full touchline; on 65′ and 70′ the screen only asks "a change? yes / no" first */
+ touchlineStopsV3:[45,65,70],
+ /**
+  * The dressing-room talk (owner, 13.10.2026), engine 3 only. A talk moves the squad's mood (−1…+1) and single men's moods
+  * (−1…+1); the engine reads them as a SMALL, bounded edge: the team's strength × (1 + 0.025 × mood), a man's quality
+  * × (1 + 0.02 × his mood) — at most ±2.5% and ±2%. Mood drifts back toward neutral after every match (× 0.6). A screen shows
+  * words and faces, never these numbers.
+  */
+ talk:{teamEffect:0.025,manEffect:0.02,decay:0.6,min:-1,max:1,maxStep:0.5},
  /** the captain plays 3% above himself — a hidden edge the screens never name (owner, 12.10.2026) */
  captainBoost:1.03,
  /** round 1 is played with the squad of the draft; the first window opens after round 2, the second at the halfway mark */

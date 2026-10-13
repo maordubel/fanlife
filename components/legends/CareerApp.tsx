@@ -19,6 +19,7 @@ import {LeagueCentre,Table} from './Stats'
 import {CareerNav,type Tab} from './CareerNav'
 import {ClubMark,ShirtProvider} from './Shirts'
 import type {CareerShirt} from '@/lib/legends/shirts'
+ import {useDressingRoom} from './Talk'
 
 /**
  * One Legends career on one screen, click by click (owner, 12.10.2026). Every change is ONE server action carrying the revision
@@ -41,8 +42,10 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
  })
  // a window that opens (after round 2, at halfway) comes up by itself as soon as the match is over
  useEffect(()=>{if(v.phase==='window'&&!watch)setWinOpen(true)},[v.phase,watch])
- const kickoff=()=>{if(!v.next)return;setMsg(null);setWatch({id:v.next.id,from:0});send({kind:'match-start',mode:'interactive'})}
+ const kickoffNow=()=>{if(!v.next)return;setMsg(null);setWatch({id:v.next.id,from:0});send({kind:'match-start',mode:'interactive'})}
  const watching=watch&&(v.live||v.last?.id===watch.id)
+ // the dressing room: kick-off goes through the pre-match talk; the post-match talk follows full time (Talk.tsx)
+ const room=useDressingRoom(v,busy,send,!!watching,kickoffNow),kickoff=room.kickoff
  const meet=v.cutscene==='meet-squad'&&v.phase!=='draft'
  return <ShirtProvider value={{shirts,wardrobe,colours:v.colours??{}}}><div className="lgm-app tl-app" data-meet={meet||undefined}>
   <header className="lgm-head">
@@ -55,7 +58,7 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
    </dl>
   </header>
   <p className="lgm-live-msg" role="status" aria-live="polite" data-kind={msg?.kind}>{watching?'':msg?.text??''}</p>
-  {v.cutscene==='board-grant'?<BoardNews v={v} busy={busy} send={send}/>:v.cutscene==='season-end'&&!watching?<SeasonEnd v={v} busy={busy} send={send}/>:null}
+  {v.cutscene==='board-grant'?<BoardNews v={v} busy={busy} send={send}/>:v.cutscene==='season-end'&&!watching&&!room.open?<SeasonEnd v={v} busy={busy} send={send}/>:null}
   {v.status==='archived'?<p className="lgm-error">This career is archived. Restore it from the Legends front page to play on.</p>:null}
   {v.phase==='draft'?<DraftRoom v={v} busy={busy} send={send} wardrobe={wardrobe}/>:meet?<MeetSquad v={v} busy={busy} send={send}/>:<>
    <CareerNav tab={tab} setTab={t=>{setTab(t);setMsg(null)}} windowOpen={!!v.window} matchLabel={v.phase==='window'?'Window':'Match'}/>
@@ -66,7 +69,8 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
    {tab==='club'?<Club v={v} friendlies={friendlies?<CareerFriendlies careerId={v.id} ready={!v.lineup.error}/>:null}/>:null}
   </>}
   {watching?<LiveMatch v={v} busy={busy} send={send} watch={watch} setWatch={setWatch}/>:null}
-  {!watching&&winOpen&&v.window&&!v.cutscene?<WindowSheet v={v} busy={busy} send={send} onMarket={()=>{setWinOpen(false);setTab('market')}} onClose={()=>setWinOpen(false)}/>:null}
+  {room.sheet}
+  {!watching&&!room.open&&winOpen&&v.window&&!v.cutscene?<WindowSheet v={v} busy={busy} send={send} onMarket={()=>{setWinOpen(false);setTab('market')}} onClose={()=>setWinOpen(false)}/>:null}
   {club?<ClubSheet v={v} club={club} onClose={()=>setClub(null)}/>:null}
  </div></ShirtProvider>
 }
@@ -102,7 +106,7 @@ function Matchday({v,busy,send,go,kickoff,resume,openWindow,openClub}:{v:CareerV
    <p className="lgm-fine">{n.opponent.name} · {n.opponent.formation} · their eleven <Stars value={n.opponent.stars} size="sm"/>{n.opponent.xi?` · scouted: ${n.opponent.xi.slice(0,4).join(', ')}…`:''}</p>
    {v.lineup.error?<p className="lgm-error" role="alert">{v.lineup.error} <button type="button" className="lgm-link min-h-tap" onClick={()=>send({kind:'auto'},'Best fit eleven picked.')}>Pick the best fit eleven</button></p>:null}
    <p className="lgm-ticket-go"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy||!!v.lineup.error} onClick={kickoff} data-testid="legends-kickoff">▶ Kick off · watch live</button><button type="button" className="lgm-ghost min-h-tap" onClick={()=>go('squad')}>Team sheet</button></p>
-   <p className="lgm-fine">The match stops at half-time, on 60′ and on 75′ — three changes in all.</p>
+   <p className="lgm-fine">Before kick-off, the dressing room. The match stops at half-time, on 65′ and on 70′ — three changes in all.</p>
   </section>:null}
   {v.bye?<section className="lgm-ticket"><p className="lgm-ticket-top"><span>Round {v.played+1}</span><span>Free week</span></p><p>{v.clubName} sit this round out. The others play.</p><p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy} onClick={()=>send({kind:'play-round'},'The round is played.')}>Play the round</button></p></section>:null}
   {v.last?<section className="lgm-panel lgm-lastres"><p className="lgm-kicker">Last result · round {v.last.round>v.rounds?'play-off':v.last.round}</p>

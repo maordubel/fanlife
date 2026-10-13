@@ -1,0 +1,3 @@
+# Files every parallel pull request appends to: merge both sides instead of conflicting (rule 120).
+CLAUDE.md merge=union
+app/all-football/legends/styles.ts merge=union

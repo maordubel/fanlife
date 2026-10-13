@@ -1,6 +1,8 @@
 import {slotsOf} from '@/lib/clubs/rumble-xi/formations'
 import {LEGENDS_RULES as R,QUOTA_POS,type QuotaPos} from './config'
-import {abilities,cardOf,catalogMap,isBye,me,nextFixture,pauseOf,table,windowOpen} from './career'
+import {abilities,cardOf,catalogMap,isBye,me,nextFixture,pauseOf,situationById,table,talkOffers,windowOpen,type TalkOffer} from './career'
+import {manMood,MOOD_TEXT,moodScore,moodWord,type ManMood,type MoodWord} from './morale'
+import {fill,TONE_TEXT,type Tone} from './talks'
 import {available} from './discipline'
 import {cashLeft,confirmCheck,deal,deficits,minCostToFinish,schedule} from './draft'
 import {ABILITIES,saleQuote} from './economy'
@@ -41,7 +43,10 @@ export type CareerView={
  /** the season in numbers, from this career's own match logs */stats:SeasonStats;
  /** the champion of the season that has just ended, when the career knows it (a past season keeps only its own record) */lastChampion:string|null;
  history:Career['history'];ledger:{kind:string;amount:number;note:string|null;name:string|null;season:number}[]
+ /** the dressing room: the talk waiting before the next match and after the last one, the last talk given, and the mood — in WORDS */
+ talks:{pre:TalkView|null;post:TalkView|null;last:null|{fixture:string;when:'pre'|'post';tone:Tone;toneLabel:string;line:string;reaction:string};mood:{word:MoodWord;label:string;line:string};men:{id:string;name:string;mood:ManMood}[]}
 }
+export type TalkView={fixture:string;when:'pre'|'post';situation:string;kicker:string;prompt:string;opponent:string;answers:{tone:Tone;toneLabel:string;line:string}[]}
 const cv=(c:Card):CardView=>({id:c.id,name:c.name,pos:c.pos,...(c.alt?{alt:c.alt}:{}),price:c.price,stars:c.stars,attrs:c.attrs,from:c.from,to:c.to,decades:c.decades})
 function logOf(c:Career,events:readonly MatchEventRow[],f:Fixture,names:(side:0|1,id?:string)=>string):LogLine[]{
  const mine=f.home===c.clubId?0:f.away===c.clubId?1:-1
@@ -104,7 +109,7 @@ export function careerView(c:Career):CareerView{
   table:rows.map(r=>({club:r.club,name:r.name,p:r.p,w:r.w,d:r.d,l:r.l,gf:r.gf,ga:r.ga,gd:r.gd,pts:r.pts,form:r.form.slice(-5),mine:r.club===c.clubId})),
   tieNote:`Ties: points, goal difference, goals scored, head-to-head, then lots drawn at kick-off. A title level on everything but the lots goes to a play-off.`,
   seasonEnd,stats:seasonStats(c,nameIn),lastChampion:c.phase==='season-end'&&c.season.ranks[0]?teams.get(c.season.ranks[0])?.name??null:null,history:c.history,
-  ledger:[...c.ledger].reverse().slice(0,40).map(l=>({kind:l.kind,amount:l.amount,note:l.note??null,name:l.card?by.get(l.card)?.name??null:null,season:l.season}))}
+  ledger:[...c.ledger].reverse().slice(0,40).map(l=>({kind:l.kind,amount:l.amount,note:l.note??null,name:l.card?by.get(l.card)?.name??null:null,season:l.season})),talks:talksOf(c)}
 }
 export const cardView=cv
 /** the minute of the stop before the current one — the live screen plays the moments after it */
@@ -124,4 +129,13 @@ function clubsOf(c:Career):CareerView['clubs']{
  return c.teams.slice(1).map(t=>{const xi=new Set(t.lineup.xi),men=t.squad.map(s=>{const k=cardOf(c,t,s.id);return k?{id:k.id,name:k.name,pos:s.quota,stars:k.stars,from:k.from,to:k.to,apps:s.apps,goals:s.goals,xi:xi.has(k.id)}:null}).filter((x):x is NonNullable<typeof x>=>!!x)
   .sort((a,b)=>QUOTA_POS.indexOf(a.pos)-QUOTA_POS.indexOf(b.pos)||b.stars-a.stars||a.name.localeCompare(b.name))
   const top=men.filter(m=>m.xi);return {club:t.club,name:t.name,formation:t.lineup.formation,stars:Math.round(top.reduce((a,m)=>a+m.stars,0)/Math.max(1,top.length)*4)/4,squad:men}})
+}
+/** the talks as a fan may see them: the situation and the four lines, never the effect; the mood as a word */
+function talksOf(c:Career):CareerView['talks']{
+ const t=me(c),o=talkOffers(c),by=catalogMap(c)
+ const tv=(x:TalkOffer|null):TalkView|null=>x?{fixture:x.fixture,when:x.when,situation:x.situation.id,kicker:fill(x.situation.kicker,x.ctx),prompt:fill(x.situation.prompt,x.ctx),opponent:x.ctx.opp,answers:x.situation.answers.map(a=>({tone:a.tone,toneLabel:TONE_TEXT[a.tone],line:a.line}))}:null
+ const rec=c.talks?.at(-1),s=rec?situationById(rec.situation):null,a=s?.answers[rec!.answer]
+ const word=moodWord(moodScore(t))
+ const men=Object.entries(t.moodMen??{}).flatMap(([id,v])=>{const m=manMood(v),n=by.get(id)?.name;return m&&n?[{id,name:n,mood:m}]:[]}).sort((x,y)=>x.name.localeCompare(y.name))
+ return {pre:tv(o.pre),post:tv(o.post),last:rec&&a?{fixture:rec.fixture,when:rec.when,tone:a.tone,toneLabel:TONE_TEXT[a.tone],line:a.line,reaction:a.reaction}:null,mood:{word,...MOOD_TEXT[word]},men}
 }

@@ -3,7 +3,7 @@ data/life-shots/
 __pycache__/
 *.pyc
 *.log
-node_modules/
+/node_modules
 tsconfig.all.tsbuildinfo
 tsconfig.tsbuildinfo
 .deliver/

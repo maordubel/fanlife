@@ -10,7 +10,7 @@ import {clash,PALETTE,paletteFor} from '@/lib/highlights/kit'
 import {highlightsAllow} from '@/lib/highlights/page'
 import {CELEBRATIONS,type Moment,type PixelKit,type Reel,type ReelTeam} from '@/lib/highlights/types'
 import type {Career} from '@/lib/legends/types'
-import {LEAGUE} from '../legends/fixtures'
+import {LEAGUE,talkThrough,WAITS_FOR_TALK} from '../legends/fixtures'
 
 /* invented placeholder sides — no real people */
 const kit=(shirt:string,second:string|null=null):PixelKit=>({shirt,second,pattern:second?'stripes':'plain',shorts:'#FFFFFF',socks:shirt})
@@ -65,7 +65,7 @@ describe('a page’s paint (rule 95)',()=>{
 describe('LEGENDS MANAGER results as reels',()=>{
  const NOW='2026-10-12T10:00:00.000Z',ctx={now:NOW,catalogs:new Map(LEAGUE.map(c=>[c.club,c.cards]))}
  let n=0
- const act=(c:Career,a:Intent)=>{const r=applyAction(c,{...a,key:`h${n++}xxxxxxx`,rev:c.revision} as Action,ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
+ const act=(c:Career,a:Intent):Career=>{if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,act);const r=applyAction(c,{...a,key:`h${n++}xxxxxxx`,rev:c.revision} as Action,ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
  function played(id:string):Career{
   const r=createCareer({id,owner:'o'.repeat(32),now:NOW,own:LEAGUE[0]!,rivals:LEAGUE.slice(1),settings:DEFAULT_SETTINGS});if(!r.ok)throw new Error(r.error)
   let c=r.career;const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks)c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})

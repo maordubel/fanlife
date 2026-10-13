@@ -8,6 +8,8 @@ import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScor
 import {checkDecision,run,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
+import {applyTalk,decayMood} from './morale'
+import {pickSituation,situationById,type Result,type Situation,type TalkCtx} from './talks'
 import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type Decision,type Fixture,type FixtureSide,type LedgerEntry,type Live,type MatchOutcome,type MatchSnapshot,type Pressing,type Season,type SideSnapshot,type Tactics,type Team,type Tempo} from './types'
 
 /**
@@ -17,7 +19,9 @@ import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type De
  * source: every draw comes from `hash(career id : season : what)`.
  *
  * Phases: draft → (board grant: season tickets) → season — round 1 and 2 with the drafted squad → window (after round 2) → season
- * → window (halfway) → season → [title play-off] → season end → season (next) … A live match stops at 45′, 60′ and 75′.
+ * → window (halfway) → season → [title play-off] → season end → season (next) … A live match stops at 45′, 65′ and 70′
+ * (engine 3; a match begun on engine 2 keeps 45′, 60′, 75′). Before and after each of the manager's matches the dressing room
+ * waits for a talk (`talk-pre`, `talk-post`) — required (one tap), one per match and moment, its effect bounded by `morale.ts`.
  */
 export const me=(c:Career):Team=>c.teams[0]!
 const maps=new WeakMap<Catalog,Map<string,Card>>()
@@ -61,7 +65,8 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 /* ───────── actions ───────── */
 export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
  |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string;vice?:string;/** the meet-your-squad page's confirm: the eleven is set and the season can start */meet?:boolean}|{kind:'auto';formation?:string}|{kind:'close-window'}
- |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'play-round'}|{kind:'next-season'})&{key:string;rev:number}
+ |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'play-round'}|{kind:'next-season'}
+ |{kind:'talk-pre'|'talk-post';fixture:string;answer:number})&{key:string;rev:number}
 /** an action before the server stamps it with a key and a revision */
 export type Intent=Action extends infer A?A extends Action?Omit<A,'key'|'rev'>:never:never
 export type ActionResult={ok:true;career:Career;replay?:boolean;note?:string}|{ok:false;code:'stale'|'invalid'|'closed';error:string}
@@ -84,6 +89,7 @@ export function parseAction(raw:unknown):Action|null{
   case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))&&(a.vice===undefined||str(a.vice))&&(a.meet===undefined||a.meet===true)?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{}),...(typeof a.vice==='string'?{vice:a.vice}:{}),...(a.meet?{meet:true}:{})}:null}
   case 'auto':return {...b,kind:'auto',...(typeof a.formation==='string'?{formation:a.formation}:{})}
   case 'match-start':return a.mode==='fast'||a.mode==='interactive'?{...b,kind:'match-start',mode:a.mode}:null
+  case 'talk-pre':case 'talk-post':return str(a.fixture)&&Number.isInteger(a.answer)&&(a.answer as number)>=0&&(a.answer as number)<=3?{...b,kind:a.kind,fixture:a.fixture as string,answer:a.answer as number}:null
   case 'match-decide':{const d=(a.decision??{}) as Record<string,unknown>,t=d.tactics===undefined?undefined:tacticsOf(d.tactics)
    if(t===null)return null
    const subs=Array.isArray(d.subs)&&d.subs.length<=3&&d.subs.every(s=>s&&typeof s==='object'&&str((s as {out:unknown}).out)&&str((s as {in:unknown}).in))?(d.subs as {out:string;in:string}[]).map(s=>({out:s.out,in:s.in})):d.subs===undefined?undefined:null
@@ -202,6 +208,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
   case 'match-start':{
    if(c.phase!=='season'&&c.phase!=='playoff')return bad('There is no match to play now.','closed')
    if(c.live)return bad('This match has started.','closed')
+   {const w=talkWaiting(c,true);if(w)return bad(w,'closed')}
    const fx=c.phase==='playoff'?c.season.playoff:nextFixture(c)
    if(!fx||fx.result)return bad('Your club has no match this round.','closed')
    const prep=prepareSide(c,t,ctx);if('error' in prep)return bad(prep.error)
@@ -234,11 +241,20 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
   }
   case 'play-round':{
    if(!isBye(c))return bad('Your club plays this round.','closed')
+   {const w=talkWaiting(c,false);if(w)return bad(w,'closed')}
    return commitRound(c,null,ctx,null)
+  }
+  case 'talk-pre':case 'talk-post':{
+   const when=a.kind==='talk-pre'?'pre':'post',o=talkOffers(c)[when]
+   if(!o||o.fixture!==a.fixture)return bad(when==='pre'?'The dressing room has emptied — the teams are in the tunnel.':'That talk has passed.','closed')
+   const ans=o.situation.answers[a.answer]!,men=ans.men?talkTargets(c,o.fixture,when,ans.men.who).map(id=>({id,d:ans.men!.d})):[]
+   const rec={fixture:o.fixture,when,situation:o.situation.id,answer:a.answer,season:c.season.ordinal} as const
+   return {ok:true,career:{...withMe(c,applyTalk(t,{team:ans.team,men})),talks:[...(c.talks??[]),rec].slice(-40)}}
   }
   case 'next-season':{
    if(c.phase!=='season-end')return bad('The season is not over.','closed')
-   const ord=c.season.ordinal+1,teams=c.teams.map(x=>({...x,morale:1,status:Object.fromEntries(Object.entries(x.status).map(([k,v])=>[k,newSeason(v,c.settings.yellowsResetEachSeason)])),squad:x.squad.map(s=>({...s}))}))
+   {const w=talkWaiting(c,false);if(w)return bad(w,'closed')}
+   const ord=c.season.ordinal+1,teams=c.teams.map(x=>({...x,morale:1,...(x.mood!==undefined?{mood:0,moodMen:{}}:{}),status:Object.fromEntries(Object.entries(x.status).map(([k,v])=>[k,newSeason(v,c.settings.yellowsResetEachSeason)])),squad:x.squad.map(s=>({...s}))}))
    return {ok:true,career:{...c,teams,season:newSeasonOf(teams,ord,c.id),phase:'season',cutscene:null,soldThisWindow:[]}}
   }
  }
@@ -267,7 +283,8 @@ function prepareSide(c:Career,t:Team,ctx:Ctx):{career:Career;note:string|null}|{
 }
 function sideSnap(c:Career,t:Team,home:boolean|null):SideSnapshot{
  const m=(id:string)=>{const x=cardOf(c,t,id)!;return {id:x.id,name:x.name,pos:x.pos,stars:x.stars,attrs:x.attrs}}
- return {club:t.club,name:t.name,formation:t.lineup.formation,tactics:{...t.lineup.tactics},xi:t.lineup.xi.map(m),bench:t.lineup.bench.map(m),morale:t.morale,home,captain:captainOf(t.lineup,id=>cardOf(c,t,id))}
+ const m3=(id:string)=>{const x=m(id),v=t.moodMen?.[id];return v?{...x,mood:v}:x}
+ return {club:t.club,name:t.name,formation:t.lineup.formation,tactics:{...t.lineup.tactics},xi:t.lineup.xi.map(m3),bench:t.lineup.bench.map(m3),morale:t.morale,home,captain:captainOf(t.lineup,id=>cardOf(c,t,id)),...(t.mood?{mood:t.mood}:{})}
 }
 function snapshotFor(c:Career,f:Fixture,knockout:boolean):MatchSnapshot{
  const by=teamBy(c),h=by.get(f.home)!,aw=by.get(f.away)!
@@ -332,7 +349,7 @@ function book(c:Career,f:Fixture,o:MatchOutcome):Career{
   const won=res[s]>res[s?0:1]||pensWin===s,lost=res[s]<res[s?0:1]||(pensWin!==null&&pensWin!==s)
   const morale=Math.max(R.moraleMin,Math.min(R.moraleMax,roundTenths((1+(t.morale-1)*0.85+(won?0.03:lost?-0.03:0))*100)/100))
   const emergency=t.emergency.map(e=>({...e,games:e.games+1})).filter(e=>e.games<R.emergencyMaxMatches)
-  return {...t,status,squad,morale,emergency}
+  return decayMood({...t,status,squad,morale,emergency})
  })
  return {...c,teams}
 }
@@ -374,3 +391,65 @@ function finishSeason(c:Career,ctx:Ctx,note:string|null):ActionResult{
 export const abilities=(c:Career)=>abilitiesAt(c.reputation.points)
 export const quotas=(t:Team)=>quotaCount(t.squad)
 export const cashFromLedger=(c:Career)=>roundTenths(c.ledger.reduce((a,l)=>a+l.amount,0))
+
+/* ───────── the dressing room (owner, 13.10.2026) ───────── */
+const resultOf=(g:[number,number],pens:[number,number]|null,side:0|1):Result=>{const mine=g[side],them=g[side?0:1];if(mine!==them)return mine>them?'W':'L';if(pens)return pens[side]>pens[side?0:1]?'W':'L';return 'D'}
+const xiStars=(c:Career,t:Team,ids:readonly string[])=>ids.reduce((a,id)=>a+(cardOf(c,t,id)?.stars??0),0)/Math.max(1,ids.length)
+/** the manager's last played match this season (the play-off counts last) */
+export function lastMine(c:Career):Fixture|null{
+ if(c.season.playoff?.result&&(c.season.playoff.home===c.clubId||c.season.playoff.away===c.clubId))return c.season.playoff
+ return [...c.season.fixtures].filter(f=>f.result&&(f.home===c.clubId||f.away===c.clubId)).sort((a,b)=>b.round-a.round)[0]??null
+}
+/** what the room knows at one moment — read from the career and nothing else, so the same career always hears the same talk */
+export function talkContext(c:Career,fx:Fixture,when:'pre'|'post'):TalkCtx{
+ const side=mySide(c,fx),by=teamBy(c),mine=me(c),opp=by.get(side?fx.home:fx.away)!,playoff=fx.id===c.season.playoff?.id
+ const teams=c.teams.map(t=>({club:t.club,name:t.name})),earlier=c.season.fixtures.filter(f=>f.round<fx.round&&f.result)
+ const before=standings(teams,earlier,c.settings.points,seasonSalt(c)),now=when==='post'?table(c):before
+ const at=(rows:typeof now,club:string)=>rows.findIndex(r=>r.club===club)+1
+ const place=at(now,c.clubId),row=now[place-1]!,gapTop=now[0]!.pts-row.pts,lead=place===1&&now[1]?row.pts-now[1].pts:0
+ const form=(before.find(r=>r.club===c.clubId)?.form??[]) as Result[]
+ const prev=[...earlier].filter(f=>f.home===c.clubId||f.away===c.clubId).sort((a,b)=>b.round-a.round)[0],lastMargin=prev?.result?Math.abs(prev.result.goals[0]-prev.result.goals[1]):0
+ const sides=fx.result?.sides,starsGap=sides?xiStars(c,mine,sides[side].xi.map(x=>x.id))-xiStars(c,opp,sides[side?0:1].xi.map(x=>x.id)):xiStars(c,mine,mine.lineup.xi)-xiStars(c,opp,opp.lineup.xi)
+ const base:TalkCtx={when,club:c.clubName,opp:opp.name,home:playoff?null:fx.home===c.clubId,playoff,round:playoff?c.season.rounds+1:fx.round,rounds:c.season.rounds,place,of:now.length,oppPlace:at(now,opp.club),gapTop,lead,
+  starsGap:Math.round(starsGap*4)/4,form,lastMargin,result:null,margin:0,late:false,comeback:false,threw:false,reds:0,cleanSheet:false,moved:0}
+ if(when==='pre'||!fx.result)return base
+ const r=fx.result,res=resultOf(r.goals,r.pens,side),run:[number,number]=[0,0];let late=false,trailed=false,led=false
+ for(const e of r.events){
+  if(e.kind!=='goal'||e.side===null)continue
+  const behindOrLevel=run[side]<=run[side?0:1];run[e.side]++
+  if(e.side===side&&e.minute>=85&&behindOrLevel&&run[side]>=run[side?0:1])late=true
+  if(run[side]<run[side?0:1])trailed=true;if(run[side]>run[side?0:1])led=true
+ }
+ return {...base,result:res,margin:Math.abs(r.goals[0]-r.goals[1]),late,comeback:trailed&&res==='W',threw:led&&res!=='W',reds:r.events.filter(e=>e.kind==='red'&&e.side===side).length,cleanSheet:r.goals[side?0:1]===0,moved:at(before,c.clubId)-place}
+}
+export type TalkOffer={fixture:string;when:'pre'|'post';situation:Situation;ctx:TalkCtx}
+const talked=(c:Career,fixture:string,when:'pre'|'post')=>(c.talks??[]).some(x=>x.fixture===fixture&&x.when===when&&x.season===c.season.ordinal)
+/** the talks the room is waiting for right now: before the next match of the manager's club, after the last one */
+export function talkOffers(c:Career):{pre:TalkOffer|null;post:TalkOffer|null}{
+ if(c.status!=='active'||c.live||c.phase==='draft')return {pre:null,post:null}
+ const offer=(fx:Fixture,when:'pre'|'post'):TalkOffer=>{const ctx=talkContext(c,fx,when);return {fixture:fx.id,when,ctx,situation:pickSituation(ctx,`${c.id}:${c.season.ordinal}:${fx.id}:${when}`)}}
+ const nx=c.phase==='playoff'?c.season.playoff:c.phase==='season'?nextFixture(c):null
+ const pre=nx&&!nx.result&&(nx.home===c.clubId||nx.away===c.clubId)&&!talked(c,nx.id,'pre')?offer(nx,'pre'):null
+ const lm=lastMine(c),post=lm&&!talked(c,lm.id,'post')?offer(lm,'post'):null
+ return {pre,post}
+}
+/**
+ * A talk is not optional (owner, 13.10.2026): the post-match word must be given before the next round is played or the next
+ * season opens, and the pre-match word before kick-off. Answers the refusal, or null when the room is not waiting.
+ */
+export function talkWaiting(c:Career,kickoff:boolean):string|null{
+ const o=talkOffers(c)
+ if(o.post)return 'The dressing room is waiting for a word about the last match.'
+ if(kickoff&&o.pre)return 'The dressing room is waiting — talk to them before kick-off.'
+ return null
+}
+/** the men an answer speaks to */
+function talkTargets(c:Career,fixture:string,when:'pre'|'post',who:'xi'|'bench'|'scorers'|'reds'):string[]{
+ const t=me(c),own=new Set(t.squad.map(s=>s.id))
+ if(when==='pre')return (who==='xi'?t.lineup.xi:who==='bench'?t.lineup.bench:[]).filter(id=>own.has(id))
+ const fx=fixtureById(c,fixture),r=fx?.result;if(!fx||!r)return []
+ const side=mySide(c,fx),xi=r.sides?.[side].xi.map(x=>x.id)??t.lineup.xi
+ const ids=who==='xi'?xi:who==='bench'?t.squad.map(s=>s.id).filter(id=>!xi.includes(id)):r.events.filter(e=>e.side===side&&e.kind===(who==='scorers'?'goal':'red')&&e.player).map(e=>e.player!)
+ return [...new Set(ids)].filter(id=>own.has(id))
+}
+export {situationById}
