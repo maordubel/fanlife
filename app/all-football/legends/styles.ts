@@ -5,3 +5,4 @@
 import './legends.css'
 import './team-league.css'
 import './match-flow.css'
+import './draft.css'

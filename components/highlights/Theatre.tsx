@@ -142,7 +142,8 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
  },[phase,scenes,reduced,VW])
 
  const skipScene=()=>{if(phase.k==='ends')setPhase({k:'scene',i:phase.i});else if(phase.k==='scene'||phase.k==='title')next(phase.i);else if(phase.k==='lineups')setPhase({k:'title',i:0})}
- const toEnd=()=>{cancelAnimationFrame(raf.current);end()}
+ // a skip during the closing card ends it — a second tap must never restart the card's timer
+ const toEnd=()=>{cancelAnimationFrame(raf.current);if(phase.k==='closing')setPhase({k:'done'});else end()}
  const again=()=>{setScore([0,0]);clearGoal();setClock(0);setPhase({k:'lineups'})}
  const T=reel.teams,dir0=attackDir(clock,0),live=phase.k==='scene'||phase.k==='title'||phase.k==='ends'
  const minute=live?(scenes[(phase as {i:number}).i]?.moment.label??`${scenes[(phase as {i:number}).i]?.moment.minute??0}′`):phase.k==='break'||phase.k==='quiet'?`${segment?.to??0}′`:phase.k==='closing'||phase.k==='done'?'FT':'KO'

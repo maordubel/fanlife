@@ -1,0 +1,154 @@
+/* ───────── LEGENDS MANAGER · the draft and the board's story (owner, 13.10.2026) ─────────
+   Loaded after legends.css. Tokens only (legends.css and app/magazine.css declare them); the career's own colour is
+   `--club-primary` / `--club-on-primary`, which the career page wears and the popup portal copies (rule 95: a club's own colour is
+   never its rival's banned one). No vermilion and nothing yellow here — the coins are paper notes, not gold. */
+
+/* ── the reels: they start the moment a tap lands, and they land fast ── */
+.lgm-draft .lgm-reels [data-landed='true'] { animation-duration: .18s; }
+.lgm-draft .lgm-reels .mag-pick[data-flip='true'] { animation-duration: .24s; }
+.lgm-loop { pointer-events: none; }
+.lgm-loop-strip { animation: lgm-loop calc(var(--lgm-loop-rows, 6) * 70ms) linear infinite; }
+@keyframes lgm-loop { from { transform: translateY(0); } to { transform: translateY(calc(-1 * var(--lgm-loop-rows, 6) * var(--rr-row-h))); } }
+
+/* ── the card on the payline: nothing pokes out of it at 320px ── */
+.lgm-draft .lgm-reels .mag-pick { overflow: hidden; }
+.lgm-draft .lgm-reels .mag-pick > span { min-inline-size: 0; max-inline-size: 100%; }
+.lgm-draft .lgm-reels .mag-pick [class*='cardName'], .lgm-draft .lgm-reels .mag-pick [class*='cardYears'] { min-inline-size: 0; max-inline-size: 100%; overflow: hidden; text-overflow: ellipsis; }
+.lgm-draft .lgm-reels .mag-pick [class*='cardTop'] { flex-wrap: wrap; row-gap: 2px; min-inline-size: 0; }
+@media (max-width: 400px) { .lgm-draft .lgm-reels .mag-pick [class*='cardEntry'] { font-size: 7px; letter-spacing: .4px; } }
+.lgm-draft .lgm-reels .mag-pick[data-locked] { opacity: .55; filter: grayscale(.85); }
+
+/* ── spin again: how many are left, as pips and as 3/3 ── */
+.lgm-spin { flex: 1 1 auto; min-inline-size: 0; }
+.lgm-spin > span:first-child { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lgm-spin-count { display: inline-flex; align-items: center; gap: 8px; flex: none; }
+.lgm-spin-pips { display: inline-flex; gap: 3px; }
+.lgm-spin-pips i { inline-size: 9px; block-size: 9px; border-radius: 50%; background: var(--club-primary, var(--lgm-night)); box-shadow: 0 0 0 1.5px var(--mag-ink); }
+.lgm-spin-pips i[data-used] { background: transparent; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--mag-ink) 40%, transparent); }
+.lgm-spin-count b { font-size: 13px; letter-spacing: 1px; color: var(--mag-ink); }
+.lgm-spin:disabled .lgm-spin-pips i:not([data-used]) { opacity: .45; }
+.lgm-draft-chips { flex-wrap: wrap; }
+.lgm-draft-chips > button { min-inline-size: 0; }
+@media (max-width: 420px) { .lgm-draft-chips { flex-direction: column; } }
+
+/* ── a man you cannot sign: a lock, the shortfall, and your money against his price ── */
+.lgm-short { display: grid; gap: 4px; margin: 0; padding: 5px 6px; background: var(--mag-ink); color: var(--mag-paper); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mag-paper) 35%, transparent); min-inline-size: 0; }
+.lgm-short-chip { display: flex; align-items: center; justify-content: center; gap: 5px; min-inline-size: 0; font: 700 10px/1.1 var(--mag-mono); letter-spacing: .4px; text-transform: uppercase; text-align: center; }
+.lgm-short-chip b { min-inline-size: 0; overflow-wrap: anywhere; }
+.lgm-lockicon { inline-size: 10px; block-size: 12px; flex: none; }
+.lgm-short-bar { position: relative; display: block; block-size: 6px; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--mag-paper) 35%, transparent) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mag-paper) 55%, transparent); }
+.lgm-short-bar i { position: absolute; inset-block: 0; inset-inline-start: 0; background: var(--mag-paper); }
+@media (min-width: 900px) { .lgm-short-chip { font-size: 11px; } .lgm-short-bar { block-size: 8px; } }
+
+/* ── the register button: the label never runs out of its box ── */
+.lgm-register { min-inline-size: 0; }
+.lgm-register > span:first-child { min-inline-size: 0; }
+.lgm-draft .lgm-register strong { white-space: normal; font-size: clamp(18px, 5.6vw, 22px); line-height: 1; }
+
+/* ── the desk: its own composition (the Rumble's five-a-side grid does not fit a seventeen-man draft) ── */
+@media (min-width: 900px) {
+  .lgm .lgm-draft { grid-template-columns: minmax(0, 1fr) 340px; grid-template-areas: 'hud hud' 'five five' 'cab chips' 'cab confirm' 'cab board' 'err err' 'fine fine'; align-items: start; gap: 14px 18px; }
+  .lgm-draft > header { grid-area: hud; }
+  .lgm-draft > .lgm-rail { grid-area: five; }
+  .lgm-draft > [data-testid='legends-machine'] { grid-area: cab; grid-row: cab-start / board-end; }
+  .lgm-draft > .lgm-draft-chips { grid-area: chips; flex-direction: row; }
+  .lgm-draft > .lgm-confirm { grid-area: confirm; }
+  .lgm-draft > .lgm-board { grid-area: board; }
+  .lgm-draft > .lgm-error { grid-area: err; }
+  .lgm-draft > .lgm-fine { grid-area: fine; }
+  .lgm-draft .lgm-rail-slots { grid-auto-columns: minmax(64px, 1fr); }
+  .lgm-draft .lgm-rail-slots > li { flex-direction: column; justify-content: center; align-items: stretch; gap: 2px; min-block-size: 56px; padding: 4px 6px; text-align: center; min-inline-size: 0; }
+  .lgm-draft .lgm-rail-slots > li [class*='slotPos'] { flex: none; }
+  .lgm-draft .lgm-rail-slots > li [class*='slotName'] { flex: none; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .lgm-draft .lgm-board-line li { inline-size: 48px; }
+}
+
+/* ───────── the board's news: a story in five beats ───────── */
+#lgm-board-h .lgm-sold i { background: var(--club-primary, var(--lgm-bronze)); color: var(--club-on-primary, var(--lgm-ivory)); box-shadow: 0 0 0 2px var(--lgm-ivory); }
+.lgm-story { gap: 10px; }
+.lgm-story-stage { position: relative; block-size: clamp(190px, 52vw, 250px); overflow: hidden; cursor: pointer; border: 2px solid color-mix(in srgb, var(--lgm-bronze-hi) 55%, transparent);
+  background: radial-gradient(90% 70% at 50% 100%, color-mix(in srgb, var(--club-primary, var(--lgm-bronze)) 26%, transparent), transparent 70%), color-mix(in srgb, var(--mag-ink) 35%, var(--lgm-night)); }
+.lgm-story[data-end] .lgm-story-stage { cursor: default; block-size: clamp(150px, 40vw, 200px); }
+.lgm-scene { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility 0s .35s; }
+.lgm-scene[data-on] { opacity: 1; visibility: visible; transition: opacity .35s ease; }
+.lgm-story-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-block-size: 44px; }
+.lgm-story-dots { display: flex; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.lgm-story-dots li { inline-size: 22px; block-size: 4px; background: color-mix(in srgb, var(--lgm-ivory) 25%, transparent); transition: background .3s; }
+.lgm-story-dots li[data-on] { background: var(--club-primary, var(--lgm-bronze-hi)); box-shadow: 0 0 0 1px var(--lgm-ivory); }
+.lgm-story-skip { min-inline-size: 72px; padding: 0 14px; border: 2px solid var(--lgm-bronze-hi); background: transparent; color: var(--lgm-ivory); font: 700 12px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
+.lgm-story-cap { margin: 0; min-block-size: 2.6em; font: 700 clamp(17px, 4.6vw, 22px)/1.2 var(--mag-condensed, var(--mag-display)); text-transform: uppercase; letter-spacing: .4px; }
+.lgm-story-end { display: grid; gap: 10px; animation: lgm-fade .4s ease-out both; }
+.lgm-story-end .lgm-go-big { inline-size: 100%; }
+
+/* beat 1 — the gates */
+.lgm-gates { inline-size: 100%; block-size: 100%; }
+.lgm-g-stand { fill: color-mix(in srgb, var(--lgm-ivory) 10%, transparent); }
+.lgm-g-row { fill: color-mix(in srgb, var(--lgm-ivory) 22%, transparent); }
+.lgm-g-ground { fill: color-mix(in srgb, var(--mag-ink) 55%, transparent); }
+.lgm-g-post { fill: var(--lgm-bronze-hi); }
+.lgm-g-arms { fill: var(--lgm-ivory); transform-box: fill-box; transform-origin: center; }
+.lgm-g-hub { fill: var(--lgm-bronze-lo); stroke: var(--lgm-ivory); stroke-width: 1.5; }
+.lgm-gates[data-on] .lgm-g-arms { animation: lgm-turn .9s cubic-bezier(.5, 0, .3, 1) infinite; }
+.lgm-g-fan > g { fill: var(--club-primary, var(--lgm-bronze)); stroke: var(--lgm-ivory); stroke-width: 1.5; }
+.lgm-gates[data-on] .lgm-g-queue { animation: lgm-queue 1.5s linear both; }
+.lgm-gates[data-on] .lgm-g-fan > g { animation: lgm-bob .38s ease-in-out infinite alternate; }
+@keyframes lgm-turn { to { transform: rotate(90deg); } }
+@keyframes lgm-queue { from { transform: translateX(0); } to { transform: translateX(300px); } }
+@keyframes lgm-bob { to { transform: translateY(-3px); } }
+
+/* beats 2–3 — the counter and the stamp */
+.lgm-tix { display: grid; align-content: center; gap: 10px; padding: 12px 14px; }
+.lgm-tix-count { display: grid; gap: 4px; margin: 0; }
+.lgm-tix-count b { font: 400 clamp(46px, 14vw, 72px)/.9 var(--mag-display); font-variant-numeric: tabular-nums; min-inline-size: 3.2ch; }
+.lgm-tix-count span { font: 700 11px/1.3 var(--mag-mono); letter-spacing: 1.2px; text-transform: uppercase; color: var(--lgm-bronze-hi); }
+.lgm-tix-bar { display: block; block-size: 10px; background: color-mix(in srgb, var(--lgm-ivory) 18%, transparent); }
+.lgm-tix-bar i { display: block; block-size: 100%; background: var(--club-primary, var(--lgm-bronze-hi)); box-shadow: inset 0 0 0 1px var(--lgm-ivory); }
+.lgm-tix-stubs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.lgm-tix-stub { position: relative; display: grid; gap: 2px; padding: 8px 6px; background: var(--lgm-ivory); color: var(--mag-ink); border-inline-start: 3px dashed var(--lgm-night); text-align: center; min-inline-size: 0; }
+.lgm-tix[data-on] .lgm-tix-stub { animation: lgm-ticket-in .4s ease-out both; }
+.lgm-tix-stub small { font: 700 8px var(--mag-mono); letter-spacing: .5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; opacity: .7; }
+.lgm-tix-stub b { font: 400 clamp(11px, 3.2vw, 16px)/1 var(--mag-display); letter-spacing: 0; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lgm-tix-stub em { position: absolute; inset: 50% auto auto 50%; padding: 2px 6px; font: 700 clamp(10px, 2.8vw, 13px) var(--mag-mono); font-style: normal; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap;
+  color: var(--club-on-primary, var(--lgm-ivory)); background: var(--club-primary, var(--lgm-night)); border: 2px solid var(--club-on-primary, var(--lgm-ivory)); outline: 2px solid var(--club-primary, var(--lgm-night));
+  transform: translate(-50%, -50%) rotate(-9deg) scale(2.6); opacity: 0; }
+.lgm-tix-stub em[data-on] { animation: lgm-slam .42s cubic-bezier(.2, 1.6, .5, 1) both; }
+@keyframes lgm-slam { from { transform: translate(-50%, -50%) rotate(-9deg) scale(2.6); opacity: 0; } to { transform: translate(-50%, -50%) rotate(-9deg) scale(1); opacity: 1; } }
+
+/* beat 3 — the board signs */
+.lgm-sign-scene { display: grid; place-items: center; padding: 10px; }
+.lgm-paper { position: relative; display: grid; gap: 6px; inline-size: min(270px, 86%); padding: 12px 14px 10px; background: var(--lgm-ivory); color: var(--mag-ink); box-shadow: 6px 6px 0 color-mix(in srgb, var(--mag-ink) 50%, transparent); transform: rotate(-2deg); }
+.lgm-sign-scene[data-on] .lgm-paper { animation: lgm-paper-in .4s cubic-bezier(.2, 1.1, .4, 1) both; }
+.lgm-paper-h { margin: 0; font: 700 10px var(--mag-mono); letter-spacing: 1.5px; text-transform: uppercase; }
+.lgm-paper > i { display: block; block-size: 3px; background: color-mix(in srgb, var(--mag-ink) 22%, transparent); } .lgm-paper > i:nth-of-type(2) { inline-size: 82%; } .lgm-paper > i:nth-of-type(3) { inline-size: 64%; }
+.lgm-paper-sig { inline-size: 100%; block-size: 44px; }
+.lgm-paper-sig path { fill: none; stroke: var(--lgm-night); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 340; stroke-dashoffset: 340; }
+.lgm-sign-scene[data-on] .lgm-paper-sig path { animation: lgm-ink 1s .3s ease-in-out forwards; }
+.lgm-paper-seal { position: absolute; inset-block-end: -12px; inset-inline-end: -10px; display: grid; place-items: center; inline-size: 62px; block-size: 62px; border-radius: 50%; font: 700 9px var(--mag-mono); letter-spacing: 1px; text-transform: uppercase;
+  color: var(--club-on-primary, var(--lgm-ivory)); background: var(--club-primary, var(--lgm-bronze)); box-shadow: 0 0 0 3px var(--lgm-ivory), 0 0 0 5px var(--club-primary, var(--lgm-bronze)); transform: rotate(-14deg) scale(0); }
+.lgm-sign-scene[data-on] .lgm-paper-seal { animation: lgm-seal .45s 1.05s cubic-bezier(.2, 1.7, .5, 1) forwards; }
+@keyframes lgm-paper-in { from { transform: translateY(40px) rotate(4deg); opacity: 0; } to { transform: rotate(-2deg); opacity: 1; } }
+@keyframes lgm-ink { to { stroke-dashoffset: 0; } }
+@keyframes lgm-seal { to { transform: rotate(-14deg) scale(1); } }
+
+/* beats 4–5 — the money and the strongbox */
+.lgm-box-scene { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; justify-items: center; padding: 10px 12px 0; }
+.lgm-box-total { margin: 0; font: 400 clamp(44px, 13vw, 70px)/1 var(--mag-display); font-variant-numeric: tabular-nums; color: var(--lgm-ivory); text-shadow: 3px 3px 0 var(--club-primary, var(--lgm-bronze-lo)); }
+.lgm-story[data-end] .lgm-box-total { animation: lgm-pop .5s cubic-bezier(.2, 1.6, .5, 1) both; }
+.lgm-rain { position: absolute; inset: 0; pointer-events: none; }
+.lgm-rain span { position: absolute; inset-block-start: -30px; padding: 3px 7px; font: 700 10px var(--mag-mono); letter-spacing: .5px; color: var(--mag-ink); background: var(--lgm-ivory); border-inline-start: 6px solid var(--club-primary, var(--lgm-night)); opacity: 0; }
+.lgm-rain[data-on] span { animation: lgm-drop .9s cubic-bezier(.5, 0, .9, .6) both; }
+.lgm-box { inline-size: min(220px, 70%); block-size: auto; align-self: end; }
+.lgm-box-lid { fill: var(--lgm-bronze-lo); } .lgm-box-body { fill: var(--lgm-bronze); stroke: var(--lgm-bronze-lo); stroke-width: 2; }
+.lgm-box-band { fill: var(--club-primary, var(--lgm-night)); } .lgm-box-lock { fill: var(--lgm-night); stroke: var(--lgm-ivory); stroke-width: 2; }
+.lgm-rain[data-on] ~ .lgm-box { animation: lgm-thud .3s .55s ease-out 6 alternate; }
+@keyframes lgm-drop { 0% { transform: translateY(0) rotate(-14deg); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(clamp(150px, 42vw, 200px)) rotate(12deg); opacity: 0; } }
+@keyframes lgm-thud { to { transform: translateY(2px); } }
+@keyframes lgm-pop { from { transform: scale(.8); } to { transform: none; } }
+
+@media (min-width: 900px) { .lgm-story-stage { block-size: 250px; } }
+@media (prefers-reduced-motion: reduce) {
+  .lgm-loop-strip, .lgm-g-arms, .lgm-g-queue, .lgm-g-fan > g, .lgm-tix-stub, .lgm-tix-stub em[data-on], .lgm-paper, .lgm-paper-sig path, .lgm-paper-seal, .lgm-rain span, .lgm-box, .lgm-box-total, .lgm-story-end { animation: none !important; }
+  .lgm-tix-stub em[data-on] { transform: translate(-50%, -50%) rotate(-9deg); opacity: 1; }
+  .lgm-paper-sig path { stroke-dashoffset: 0; } .lgm-paper-seal { transform: rotate(-14deg); }
+  .lgm-scene { transition: none; }
+}
