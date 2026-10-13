@@ -12,8 +12,7 @@ import {clubKit,withHighlights} from '@/lib/legends/kits'
 import {careerShirts} from '@/lib/legends/shirts'
 import {livery,wearLivery} from '@/lib/club-livery'
 import '../../../all-football.css'
-import '../../legends.css'
-import '../../team-league.css'
+import '../../styles'
 export const dynamic='force-dynamic'
 export const metadata={title:'Legends Manager · career',robots:{index:false}}
 

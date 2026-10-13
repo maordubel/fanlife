@@ -7,7 +7,7 @@ import {botDraft} from '@/lib/legends/draft'
 import {captainOf} from '@/lib/legends/squad'
 import {careerView} from '@/lib/legends/view'
 import type {Career} from '@/lib/legends/types'
-import {LEAGUE} from './fixtures'
+import {LEAGUE,WAITS_FOR_TALK,talkThrough} from './fixtures'
 
 /** the team sheet, the registration step and the league centre (owner, 13.10.2026) */
 const NOW='2026-10-13T10:00:00.000Z'
@@ -15,7 +15,9 @@ const ctx={now:NOW,catalogs:new Map(LEAGUE.map(c=>[c.club,c.cards]))}
 function newCareer(id='c0ffee00000000a1'):Career{const r=createCareer({id,owner:'o'.repeat(32),now:NOW,own:LEAGUE[0]!,rivals:LEAGUE.slice(1),settings:DEFAULT_SETTINGS});if(!r.ok)throw new Error(r.error);return r.career}
 let n=0
 const tryAct=(c:Career,a:Intent)=>applyAction(c,{...a,key:`t${n++}xxxxxxxx`,rev:c.revision} as Action,ctx)
-function act(c:Career,a:Intent){const r=tryAct(c,a);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
+function raw(c:Career,a:Intent){const r=tryAct(c,a);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
+// the dressing room is answered first, as a player must (rule 116)
+function act(c:Career,a:Intent){if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,raw);const r=tryAct(c,a);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
 function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks)c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}});return act(c,{kind:'draft-confirm'})}
 const sheet=(c:Career,extra:Record<string,unknown>={})=>{const l=me(c).lineup;return {kind:'lineup',formation:l.formation,xi:l.xi,bench:l.bench,tactics:l.tactics,...extra} as Intent}
 const reload=(c:Career)=>JSON.parse(JSON.stringify(c)) as Career
@@ -115,9 +117,11 @@ describe('the screens',()=>{
   expect(nav).toMatch(/grid-template-columns: repeat\(5/);expect(nav).not.toMatch(/overflow-x/)
   expect(readFileSync('components/legends/CareerApp.tsx','utf8')).not.toMatch(/lgm-tabs/)
  })
- it('the new stylesheet travels with every page that loads legends.css',()=>{
+ it('every legends page loads the one style index, and the index carries every legends sheet (rule 120)',()=>{
   const pages=['app/all-football/legends/page.tsx','app/all-football/legends/career/[id]/page.tsx','app/all-football/legends/friendlies/[id]/page.tsx']
-  for(const p of pages){const s=readFileSync(p,'utf8');expect(s).toMatch(/legends\.css/);expect(s).toMatch(/team-league\.css/)}
+  for(const p of pages){const s=readFileSync(p,'utf8');expect(s).toMatch(/import '(\.\/|\.\.\/\.\.\/)styles'/);expect(s).not.toMatch(/legends\.css|team-league\.css/)}
+  const index=readFileSync('app/all-football/legends/styles.ts','utf8')
+  for(const f of readdirSync('app/all-football/legends').filter(f=>f.endsWith('.css')))expect(index).toContain(`'./${f}'`)
   expect(readdirSync('app/all-football/legends')).toContain('team-league.css')
  })
 })
