@@ -12,7 +12,7 @@ export const hasOverrides=(club:string)=>!process.env.PLAYER_OVERRIDES_OFF&&Obje
 export function mergePatch(cur:Override|null,patch:Patch,meta:{by:string;at:string;reason:string}):Override|null{
  const next:Record<string,unknown>={...(cur??{})}
  for(const [k,v] of Object.entries(patch)){if(v===null||v===undefined||(k==='removed'&&v===false))delete next[k];else next[k]=v}
- const fields=['price','positions','rating','removed','mergedInto','note'].filter(k=>k in next)
+ const fields=['price','positions','rating','reputation','name','removed','mergedInto','note'].filter(k=>k in next)
  if(!fields.length)return null
  return {...next,rev:(cur?.rev??0)+1,...meta} as Override
 }

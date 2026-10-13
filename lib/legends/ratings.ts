@@ -22,6 +22,9 @@ export type Attributes=Partial<Record<AttrKey,number>>
 export type RatingOverride={stars?:number;attrs?:Attributes;note?:string}
 export type RatingControl={v:1;clubs:Record<string,{offset:number}>;players:Record<string,RatingOverride>;updatedAt:string|null}
 export const EMPTY_CONTROL:RatingControl={v:1,clubs:{},players:{},updatedAt:null}
+/** how much a man's name weighs against his ability when stars are made (owner, 13.10.2026): half and half */
+export const REPUTATION_WEIGHT=0.5
+export const combinedScore=(ability:number,reputation?:number)=>reputation===undefined?ability:Math.round(ability*(1-REPUTATION_WEIGHT)+reputation*REPUTATION_WEIGHT)
 export const quarter=(x:number)=>clamp(Math.round(x*4)/4,1,5)
 /** quality on the shared 0–100 scale the match engine reads, from stars */
 export const qualityOf=(stars:number)=>45+(clamp(stars,1,5)-1)*12.5

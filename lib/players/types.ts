@@ -4,6 +4,8 @@
  *   price     1–5 whole millions (the Rumble price at THIS club)
  *   positions [primary, ...secondary]; [] means "explicitly unknown" (not "inherit")
  *   rating    the hidden strength the games use (the "manager score"), 40–99
+ *   reputation how well known he is, 40–99; stars blend it with the score
+ *   name      a corrected display name (changed only after an explicit "Are you sure?")
  *   removed   the man is taken out of the squad (a mistake in the archive) — reversible, audited, never a delete
  * Identity is `(clubId, playerId)`; a name is never a key.
  */
@@ -11,9 +13,9 @@ export type Pos='GK'|'DF'|'MF'|'FW'
 export const POSITIONS:readonly Pos[]=['GK','DF','MF','FW']
 export type Price=1|2|3|4|5
 export const RATING_MIN=40,RATING_MAX=99
-export type Override={price?:Price;positions?:Pos[];rating?:number;removed?:true;/** this man IS the same man as `mergedInto` (a duplicate record): he leaves the squad and his names, years and positions travel to that man */mergedInto?:string;note?:string;rev:number;by:string;at:string;reason:string}
+export type Override={price?:Price;positions?:Pos[];rating?:number;/** how well known he is, 40–99: the stars of the Legends Manager read ability and reputation together */reputation?:number;/** the name the games print (a correction of the archive's spelling) */name?:string;removed?:true;/** this man IS the same man as `mergedInto` (a duplicate record): he leaves the squad and his names, years and positions travel to that man */mergedInto?:string;note?:string;rev:number;by:string;at:string;reason:string}
 /** what an editor sends: `null` clears the field (back to the archive), a value sets it, absent leaves it alone */
-export type Patch={price?:Price|null;positions?:Pos[]|null;rating?:number|null;removed?:boolean|null;/** only `null` (undo a merge) is accepted through a patch; a merge itself goes through `mergePlayers` */mergedInto?:string|null;note?:string|null}
+export type Patch={price?:Price|null;positions?:Pos[]|null;rating?:number|null;reputation?:number|null;name?:string|null;removed?:boolean|null;/** only `null` (undo a merge) is accepted through a patch; a merge itself goes through `mergePlayers` */mergedInto?:string|null;note?:string|null}
 export type Snapshot={revision:number;updatedAt:string;overrides:Record<string,Override>}
 export const EMPTY_SNAPSHOT:Snapshot={revision:0,updatedAt:'',overrides:{}}
 export const keyOf=(club:string,id:string)=>`${club}|${id}`

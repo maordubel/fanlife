@@ -29,7 +29,7 @@ describe('a quick edit in the table',()=>{
   const back=await quickEdit(CLUB,m.id,{rating:m.baseRating},{expectedRev:res.row.rev},owner)
   expect(back.row.rating).toBe(m.baseRating);expect(back.row.overridden).not.toContain('rating')
  })
- it('keeps every server check: the ladder asks first, a locked price is refused, a stale row is refused, only price and score travel',async()=>{
+ it('keeps every server check: the ladder asks first, a locked price is open to the admin, a stale row is refused, only the quick fields travel',async()=>{
   const all=await rows(),free=all.find(r=>!r.locked&&r.price===1)!
   const off=await refusal(quickEdit(CLUB,free.id,{price:5},{expectedRev:free.rev},owner))
   expect(off.status).toBe(422);expect(off.message).toMatch(/ladder/)
@@ -37,8 +37,8 @@ describe('a quick edit in the table',()=>{
   expect(ok.row.price).toBe(5)
   const stale=await refusal(quickEdit(CLUB,free.id,{price:4},{expectedRev:free.rev,confirmQuota:true},owner));expect(stale.status).toBe(409)
   const locked=all.find(r=>r.locked)
-  if(locked){const l=await refusal(quickEdit(CLUB,locked.id,{price:locked.price===1?2:1},{expectedRev:locked.rev,confirmQuota:true},owner));expect(l.status).toBe(403)}
-  const pos=await refusal(quickEdit(CLUB,free.id,{positions:['GK']},{expectedRev:ok.row.rev},owner));expect(pos.status).toBe(400)
+  if(locked){const l=await quickEdit(CLUB,locked.id,{price:locked.price===1?2:1},{expectedRev:locked.rev,confirmQuota:true},owner);expect(l.row.price).toBe(locked.price===1?2:1)}
+  const pos=await refusal(quickEdit(CLUB,free.id,{removed:true},{expectedRev:ok.row.rev},owner));expect(pos.status).toBe(400)
   const bad=await refusal(quickEdit(CLUB,free.id,{rating:120},{expectedRev:ok.row.rev},owner));expect(bad.status).toBe(400)
  })
  it('the route takes the quick action from the owner only (the guard runs before it)',()=>{

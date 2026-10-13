@@ -431,3 +431,20 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .desk .cr-allfrom { border: 2px dashed var(--mag-ink); padding: 8px 12px; margin-block-end: 12px; } .desk .cr-allfrom p { margin: 4px 0; }
 /* adding a source: numbered steps */
 .desk .cr-steps { display: grid; gap: 12px; } .desk .cr-step { border: 0; border-inline-start: 4px solid var(--mag-ink); margin: 0; padding: 4px 0 4px 12px; display: grid; gap: 8px; } .desk .cr-step legend { font-family: var(--mag-mono); font-weight: 700; font-size: 13px; letter-spacing: .5px; padding: 0; }
+
+/* Players desk — choosing several men, reputation, positions and rename in the row (13.10.2026) */
+.pcc-many { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 8px 12px; border: 1px solid var(--desk-rule); background: var(--mag-card); margin-block: 8px; }
+.pcc-many[data-active] { border-color: var(--mag-ink); position: sticky; inset-block-start: calc(var(--desk-bar) + 4px); z-index: 3; }
+.pcc-many select { min-block-size: 40px; }
+.pcc-many p { flex-basis: 100%; margin: 0; }
+.pcc-many p[data-state='ok'] { color: var(--mag-green); }
+.pcc-many p[data-state='error'] { color: var(--mag-vermilion); }
+.pcc-pick { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.pcc-row[data-chosen] { background: color-mix(in srgb, var(--mag-ink) 6%, var(--mag-card)); }
+.pcc-pop { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 8px; margin-block-start: 4px; border: 1px solid var(--mag-ink); background: var(--mag-card); }
+.pcc-posrow { display: inline-flex; align-items: center; gap: 4px; }
+.pcc-nameinput { min-inline-size: 190px; min-block-size: 40px; }
+.pcc-sure { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.pcc-step-line { display: flex; align-items: center; gap: 6px; }
+.pcc-step-label { min-inline-size: 34px; }
+.pcc-score { display: grid; gap: 2px; }

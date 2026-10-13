@@ -87,11 +87,9 @@ describe('draft → publish → revert: the game only sees what is published',()
   const e=await publish(CLUB,r.id,{reason:'raise one man',patch:{price:2},expectedRev:0},who).catch(x=>x)
   expect(e).toBeInstanceOf(Refusal);expect((e as Refusal).status).toBe(422);expect(((e as Refusal).detail as {quota:{violations:string[]}}).quota.violations.length).toBeGreaterThan(0)
  })
- it('a pinned €5M icon cannot be changed without the owner’s explicit exception',async()=>{
+ it('a pinned €5M icon is open to the admin: no exception box, the history records it',async()=>{
   const icon=await pick(x=>x.price===5&&x.locked)
-  await expect(publish(CLUB,icon.id,{reason:'demote',confirmQuota:true,patch:{price:4},expectedRev:0},{actor:'x',role:'dev-open'})).rejects.toMatchObject({status:403})
-  await expect(publish(CLUB,icon.id,{reason:'demote',confirmQuota:true,patch:{price:4},expectedRev:0},who)).rejects.toMatchObject({status:403})   // still needs ownerException
-  const ok=await publish(CLUB,icon.id,{reason:'owner exception',confirmQuota:true,ownerException:true,patch:{price:4},expectedRev:0},who);expect(ok.revision).toBe(1)
+  const ok=await publish(CLUB,icon.id,{reason:'demote',confirmQuota:true,patch:{price:4},expectedRev:0},who);expect(ok.revision).toBe(1)
  })
  it('an unknown player or club is a 404, an unknown field a 400',async()=>{
   await expect(saveDraft(CLUB,'nobody',{price:2},0,who)).rejects.toMatchObject({status:404})
