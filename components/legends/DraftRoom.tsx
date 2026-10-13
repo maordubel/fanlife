@@ -3,6 +3,7 @@ import {useEffect,useMemo,useRef,useState,type MouseEvent} from 'react'
 import type {CardView,CareerView} from '@/lib/legends/view'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {reelStops} from '@/lib/clubs/rumble-show'
+import {LEGENDS_RULES} from '@/lib/legends/config'
 import {ATTR_LABEL,ROLE_ATTRS,type AttrKey} from '@/lib/legends/ratings'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {Bulbs,RumbleShirt,useReducedMotion} from '@/components/clubs/rumble/shared'
@@ -17,39 +18,67 @@ import {money,posName,years,GAME_VALUES} from './LegendCard'
  * Nothing is chosen but the man: the server deals the next line the moment a man is signed, the reels spin, and a TAP on a card
  * signs him (rule 24 — a tap places). The rail shows the whole order, the board below fills line by line, and a locked card
  * says why. Everything is decided on the server; this screen only sends the tap.
+ *
+ * Speed (owner, 13.10.2026: "it is very slow until each slot loads"): the reels start spinning THE MOMENT the tap lands, while
+ * the server is still answering, and land quickly once the next three arrive — the wait is the spin, not a pause before it. A
+ * tap on a spinning reel lands all three at once. Under reduced motion there are no reels at all.
  */
 type Send=(a:Record<string,unknown>,ok?:string)=>void
+type Offer=NonNullable<CareerView['draft']>['offers'][number]
 const SHORT:Record<string,string>={GK:'GK',DF:'DEF',MF:'MID',FW:'FWD'}
 const QUESTION:Record<string,string>={GK:'Who keeps goal?',DF:'Who holds the line?',MF:'Who runs the middle?',FW:'Who scores the goals?'}
 const TIER:Record<string,string>={premium:'Premium',mid:'Squad',budget:'Bargain'}
+const SPINS=LEGENDS_RULES.rerollsPerDraft
 const surname=(n:string)=>{const p=n.trim().split(/\s+/);return p.length>1?p[p.length-1]!:n}
 const asCard=(c:Pick<CardView,'id'|'from'|'to'>)=>({id:c.id,fromYear:c.from,toYear:c.to})
+const tenths=(n:number)=>Math.round(n*10)/10
 
 export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send:Send;wardrobe:RumbleWardrobe}){
  const d=v.draft!,done=d.picks.length>=d.required&&!d.optionalOpen,reduced=useReducedMotion()
  const offers=d.offers,signature=`${d.slot}:${d.group}:${offers.map(o=>o.id).join(',')}`
- const stops=useMemo(()=>reelStops(offers.length,reduced,520,220),[offers.length,reduced])
- const strips=useMemo(()=>offers.map((o,i)=>{const pool=d.strip.length?d.strip:offers.map(x=>x.name),n=Math.max(6,Math.round((stops[i]||520)/84));return [...Array.from({length:n},(_,k)=>pool[(k*3+i*5)%pool.length]!),o.name]}),[offers,d.strip,stops])
+ // a tap was sent and the next three are not here yet: the reels already spin
+ const [pending,setPending]=useState(false)
+ const seen=useRef(signature),warm=useRef(false)
+ if(seen.current!==signature){seen.current=signature;warm.current=true}
+ // the first deal of a visit lands at an easy pace; a deal the manager is waiting for lands fast — the reels have been turning
+ const stops=useMemo(()=>warm.current?reelStops(offers.length,reduced,240,120):reelStops(offers.length,reduced,420,150),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [signature,reduced])
+ const pool=d.strip.length?d.strip:offers.map(x=>x.name)
+ const strips=useMemo(()=>offers.map((o,i)=>{const n=Math.max(5,Math.round((stops[i]||300)/70));return [...Array.from({length:n},(_,k)=>pool[(k*3+i*5)%pool.length]!),o.name]}),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [signature,stops])
  const [landed,setLanded]=useState<boolean[]>(()=>offers.map(()=>reduced))
  useEffect(()=>{
+  setPending(false)
   if(reduced){setLanded(offers.map(()=>true));return}
   setLanded(offers.map(()=>false))
-  const t=stops.map((ms,i)=>window.setTimeout(()=>setLanded(p=>{const n=[...p];n[i]=true;return n}),ms+40))
+  const t=stops.map((ms,i)=>window.setTimeout(()=>setLanded(p=>{const n=[...p];n[i]=true;return n}),ms+30))
   return()=>t.forEach(x=>window.clearTimeout(x))
   // a new deal is a new spin
   // eslint-disable-next-line react-hooks/exhaustive-deps
  },[signature,reduced])
- const spinning=landed.some(l=>!l)
+ // the server refused (or answered with the same deal): stop spinning
+ useEffect(()=>{if(!busy)setPending(false)},[busy])
+ const spinning=pending||landed.some(l=>!l)
+ const landAll=()=>{if(!pending&&landed.some(l=>!l))setLanded(offers.map(()=>true))}
  // the rail: every slot of the order, signed ones by name, the current one lit
  const order=[...d.picks.map(p=>({pos:p.pos,name:surname(p.name),filled:true})),...d.upcoming.map(p=>({pos:p,name:'',filled:false}))]
  const current=d.picks.length
  const railRef=useRef<HTMLOListElement>(null)
  useEffect(()=>{railRef.current?.querySelector('[aria-current="step"]')?.scrollIntoView({block:'nearest',inline:'center',behavior:reduced?'auto':'smooth'})},[current,reduced])
- const sign=(o:typeof offers[number],e:MouseEvent<HTMLButtonElement>)=>{
+ const sign=(o:Offer,e:MouseEvent<HTMLButtonElement>)=>{
   firePickFxAt(e.currentTarget,{label:money(o.price),tone:'red',haptic:o.price>=5?'lock':'tap',big:o.price>=5})
+  if(!reduced)setPending(true)
   send({kind:'draft',move:{kind:'pick',id:o.id}},`${o.name} signed for ${money(o.price)}.`)
  }
+ const reroll=(e:MouseEvent<HTMLButtonElement>)=>{
+  firePickFxAt(e.currentTarget,{tone:'ink',haptic:'tap'})
+  if(!reduced)setPending(true)
+  send({kind:'draft',move:{kind:'reroll'}},'Three new men on the table.')
+ }
  const quota=(['GK','DF','MF','FW'] as const).map(p=>({p,have:d.picks.filter(x=>x.pos===p).length,need:v.rules.minimums[p]}))
+ const spent=SPINS-d.rerollsLeft
  return <section className={`${s.game} lgm-draft`} aria-labelledby="lgm-draft-h" data-testid="legends-draft">
   <header className={s.hud}>
    <div className={s.hudCopy}>
@@ -80,24 +109,28 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
     <div className={s.pickText}><p className={`${s.mono} ${s.pickMeta}`}>{d.optionalOpen?'The eighteenth · optional':`Pick ${d.slot} · ${posName(d.group)}`}</p><p className={s.pickQ}>{QUESTION[d.group]}</p></div>
    </div>
    <p className="sr-only" aria-live="polite">{spinning?'The reels are spinning.':`Three ${posName(d.group).toLowerCase()}s on the table.`}</p>
-   <div className={s.reels} role="group" aria-label={QUESTION[d.group]}>
+   <div className={`${s.reels} lgm-reels`} role="group" aria-label={QUESTION[d.group]} onClick={e=>{if((e.target as HTMLElement).closest('[data-landed="false"]'))landAll()}}>
     {offers.map((o,i)=><div className={s.reel} key={`${signature}-${o.id}`}>
-     {!reduced&&<SlotReel names={strips[i]!} stopAt={stops[i]!} landed={!!landed[i]} reduced={reduced} label={landed[i]?'Landed':'Spinning'}/>}
-     <OfferCard o={o} i={i} wardrobe={wardrobe} flip={!!landed[i]&&!reduced} disabled={busy||!!o.locked||!landed[i]} onPick={e=>sign(o,e)}/>
+     {pending?<LoopReel names={pool} i={i}/>:!reduced&&<SlotReel names={strips[i]!} stopAt={stops[i]!} landed={!!landed[i]} reduced={reduced} label={landed[i]?'Landed':'Spinning'}/>}
+     <OfferCard o={o} i={i} left={d.left} wardrobe={wardrobe} flip={!!landed[i]&&!reduced&&!pending} disabled={busy||pending||!!o.locked||!landed[i]} onPick={e=>sign(o,e)}/>
     </div>)}
    </div>
   </section>:null}
   {d.stuck?<p className="lgm-error" role="alert">No line can be dealt for this pick. The owner has been shown why in the control room.</p>:null}
 
-  {!done?<div className={s.chips}>
-   <button type="button" className={`${s.chip} min-h-tap`} disabled={busy||spinning||!d.group||d.rerollsLeft<=0} onClick={e=>{firePickFxAt(e.currentTarget,{tone:'ink',haptic:'tap'});send({kind:'draft',move:{kind:'reroll'}},'Three new men on the table.')}} data-testid="legends-reroll"><span>Spin again</span><b>×{d.rerollsLeft}</b></button>
+  {!done?<div className={`${s.chips} lgm-draft-chips`}>
+   <button type="button" className={`${s.chip} min-h-tap lgm-spin`} disabled={busy||spinning||!d.group||d.rerollsLeft<=0} onClick={reroll} data-testid="legends-reroll"
+    aria-label={`Spin again — ${d.rerollsLeft} of ${SPINS} spins left`}>
+    <span>Spin again</span>
+    <span className="lgm-spin-count"><span className="lgm-spin-pips" aria-hidden="true">{Array.from({length:SPINS},(_,k)=><i key={k} data-used={k<spent||undefined}/>)}</span><b dir="ltr">{d.rerollsLeft}/{SPINS}</b></span>
+   </button>
    {d.optionalOpen?<button type="button" className={`${s.chip} min-h-tap`} disabled={busy} onClick={()=>send({kind:'draft',move:{kind:'skip'}},'Seventeen it is.')}><span>Keep seventeen</span></button>:null}
   </div>:null}
 
   {done||d.optionalOpen?<div className="lgm-confirm">
-   <p><b>Spent {money(d.spent)} of €52M.</b> On confirming, the board adds a one-off <b>€8M</b>: your window starts with {money(52-d.spent+8)}.</p>
+   <p><b>Spent {money(d.spent)} of €{LEGENDS_RULES.initialDraftBudgetM}M.</b> On confirming, the board adds a one-off <b>€{LEGENDS_RULES.firstBoardGrantM}M</b>: your window starts with {money(tenths(LEGENDS_RULES.initialDraftBudgetM-d.spent+LEGENDS_RULES.firstBoardGrantM))}.</p>
    {d.canConfirm&&done?<p className="lgm-error" role="alert">{d.canConfirm}</p>:null}
-   <button type="button" className={`${s.lock} min-h-tap`} data-ready={!d.canConfirm} disabled={busy||!!d.canConfirm} onClick={e=>{firePickFxAt(e.currentTarget,{label:'Registered',tone:'red',big:true,haptic:'lock'});send({kind:'draft-confirm'},'The squad is registered.')}}><span><small>{d.picks.length} men · {money(d.spent)}</small><strong>Register the squad</strong></span><span aria-hidden="true">→</span></button>
+   <button type="button" className={`${s.lock} min-h-tap lgm-register`} data-ready={!d.canConfirm} disabled={busy||!!d.canConfirm} onClick={e=>{firePickFxAt(e.currentTarget,{label:'Registered',tone:'red',big:true,haptic:'lock'});send({kind:'draft-confirm'},'The squad is registered.')}}><span><small>{d.picks.length} men · {money(d.spent)}</small><strong>Register the squad</strong></span><span aria-hidden="true">→</span></button>
   </div>:null}
 
   <Board v={v} wardrobe={wardrobe}/>
@@ -105,11 +138,26 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
  </section>
 }
 
+/** while the server answers: the line's names roll past the payline, round and round, until the next three arrive */
+function LoopReel({names,i}:{names:string[];i:number}){
+ const rows=useMemo(()=>{const n=Math.min(8,Math.max(4,names.length)),pick=Array.from({length:n},(_,k)=>names[(k*5+i*3)%names.length]!);return [...pick,...pick]},[names,i])
+ return <div className={`${s.reelCover} lgm-loop`} aria-hidden="true">
+  <span className={`${s.mono} ${s.reelLabel}`}>Spinning</span>
+  <div className={s.reelWindow}>
+   <i className={s.reelPayline}/>
+   <div className={`${s.reelStrip} lgm-loop-strip`} style={{['--lgm-loop-rows' as string]:String(rows.length/2),animationDelay:`${-i*90}ms`}}>{rows.map((n,k)=><span key={k} dir="auto">{n}</span>)}</div>
+  </div>
+ </div>
+}
+
+/** a lock in eight strokes — drawn here, no icon font */
+const Lock=()=><svg className="lgm-lockicon" viewBox="0 0 12 14" aria-hidden="true"><path d="M3 6V4.2a3 3 0 0 1 6 0V6" fill="none" stroke="currentColor" strokeWidth="1.8"/><rect x="1" y="6" width="10" height="7.5" fill="currentColor"/></svg>
+
 /** one man on the payline, in the Royal Rumble card: shirt of his years, stars, his line's attributes, the price as bars */
-function OfferCard({o,i,wardrobe,flip,disabled,onPick}:{o:NonNullable<CareerView['draft']>['offers'][number];i:number;wardrobe:RumbleWardrobe;flip:boolean;disabled:boolean;onPick:(e:MouseEvent<HTMLButtonElement>)=>void}){
+function OfferCard({o,i,left,wardrobe,flip,disabled,onPick}:{o:Offer;i:number;left:number;wardrobe:RumbleWardrobe;flip:boolean;disabled:boolean;onPick:(e:MouseEvent<HTMLButtonElement>)=>void}){
  const attrs=(ROLE_ATTRS[o.pos]??[]).slice(0,3)
  return <div className="lgm-offer">
-  <button type="button" className={`${s.card} mag-pick min-h-tap`} data-flip={flip} disabled={disabled} onClick={onPick} data-testid="legends-card" data-tier={o.tier}
+  <button type="button" className={`${s.card} mag-pick min-h-tap`} data-flip={flip} disabled={disabled} onClick={onPick} data-testid="legends-card" data-tier={o.tier} data-locked={o.locked?'true':undefined}
    aria-label={o.locked?`${o.name}, ${money(o.price)} — locked: ${o.locked}`:`Sign ${o.name}, ${posName(o.pos)}, ${o.stars} stars, ${money(o.price)}`}>
    <i className={s.cardBand}/>
    <span className={s.cardGhost} aria-hidden="true">{i+1}</span>
@@ -123,8 +171,21 @@ function OfferCard({o,i,wardrobe,flip,disabled,onPick}:{o:NonNullable<CareerView
     <span className={s.bars} aria-hidden="true">{Array.from({length:5},(_,k)=><i key={k} data-on={k<Math.round(o.price)}/>)}</span>
    </span>
   </button>
-  {o.locked?<p className="lgm-card-lock" role="note">{o.locked}</p>:null}
+  {o.locked?<Short o={o} left={left}/>:null}
  </div>
+}
+/**
+ * Why a man cannot be signed, in a glance (owner, 13.10.2026: "graphically and briefly"): a lock, how far short you are, and
+ * a bar — the budget you have against his price. When the money is there but the seventeen would not fit, the chip says so in
+ * three words; the server's full reason stays the card's accessible name and the chip's title.
+ */
+function Short({o,left}:{o:Offer;left:number}){
+ const gap=tenths(o.price-left),money_=gap>0,pct=Math.max(0,Math.min(100,left/o.price*100))
+ return <p className="lgm-short" role="note" title={o.locked??undefined} data-kind={money_?'money':'quota'}>
+  <span className="lgm-short-chip"><Lock/><b dir="ltr">{money_?`${money(gap)} short`:'17 won’t fit'}</b></span>
+  {money_?<span className="lgm-short-bar" aria-hidden="true"><i style={{inlineSize:`${pct}%`}}/></span>:null}
+  <span className="sr-only">{o.locked}</span>
+ </p>
 }
 
 /** the squad board — four lines filling as the order runs; a dashed shirt is a quota still owed */

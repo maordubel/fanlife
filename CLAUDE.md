@@ -3136,6 +3136,10 @@ Owner: "at 65′ and 70′ only ask 'a change? yes / no' · a dressing-room talk
 2. **Set pieces come from the record:** `lib/legends/reel.ts` maps `detail` to `Shape` 'penalty'|'free-kick'|'corner'; an event without one keeps a seeded random shape, so old logs replay as before.
 3. **Every goal gets a card:** ours = the owner's film (`public/legends/fx`) or its lettering where rule 95 forbids the colours; theirs = a quieter card in their kit. Crests on the scoreboard and the board (chip fallback; Rumble reels carry none), real shirts via `KitCloth`.
 
+## 118 · A wait is a spin, not a pause (13.10.2026)
+
+In LEGENDS MANAGER's draft the reels start on the tap and land when the server answers; a draft move never loads another club's catalog (`LOCAL_ACTIONS` in `app/all-football/legends/actions.ts`), and the draft answer carries no league squads. A man who cannot be signed says why in a glance — lock, "€2M short" or "17 won't fit", budget bar. The spin counter reads `LEGENDS_RULES.rerollsPerDraft` ("2/3"). The board's news is a skippable six-beat story that ends on one button, drawn in code in the career's own livery (rule 95), and opens on its last beat under reduced motion.
+
 ## 119 · LEGENDS MANAGER — the squad is set by hand, the doors are fixed, the numbers are counted (13.10.2026)
 
 1. **Armband:** captain → vice-captain → the eleven's most-starred man (`captainOf`); both are squad men, the boost is never named.

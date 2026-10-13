@@ -27,13 +27,16 @@ export async function createLegendsCareer(club:string):Promise<{ok:true;id:strin
 }
 
 export async function legendsAction(id:string,raw:unknown):Promise<{ok:true;view:CareerView;replay?:boolean;note?:string}|Fail>{
- if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
- const owner=await viewer(false),action=parseAction(raw)
+ const [isOpen,owner]=await Promise.all([open(),viewer(false)]),action=parseAction(raw)
+ if(!isOpen)return {ok:false,error:'LEGENDS MANAGER is not open.'}
  if(!owner)return {ok:false,error:'This career is not yours.',code:'forbidden'}
  if(!action)return {ok:false,error:'That move is not understood.',code:'invalid'}
  try{
-  const cur=await readCareer(id);if(!cur||cur.career.owner!==owner)return {ok:false,error:'This career is not yours.',code:'forbidden'}
-  const ctx=await ctxFor(cur.career)
+  // a draft move never touches another club (draft.ts reads only the career's own catalog): no pre-read of the career and no
+  // load of every club's catalog — the one fresh read inside the compare-and-swap below checks the owner again anyway
+  const local=LOCAL_ACTIONS.has(action.kind)
+  const cur=local?null:await readCareer(id);if(!local&&(!cur||cur.career.owner!==owner))return {ok:false,error:'This career is not yours.',code:'forbidden'}
+  const ctx=cur?await ctxFor(cur.career):{now:new Date().toISOString(),catalogs:new Map()}
   let note:string|undefined
   const out=await mutateCareer(id,c=>{
    if(c.owner!==owner)return {error:{ok:false,error:'This career is not yours.',code:'forbidden'} satisfies Fail}
@@ -43,9 +46,13 @@ export async function legendsAction(id:string,raw:unknown):Promise<{ok:true;view
   })
   if(!out)return {ok:false,error:'Career not found.',code:'missing'}
   if('error' in out)return out.error as Fail
-  return {ok:true,view:await withHighlights(careerView(out.career),out.career),replay:out.replay,...(note?{note}:{})}
+  return {ok:true,view:await withHighlights(slim(careerView(out.career)),out.career),replay:out.replay,...(note?{note}:{})}
  }catch(e){return fail(e,'The move could not be saved. Try again.')}
 }
+/** actions that read only the career itself — the draft, its confirm and the board's news (career.ts: no `ctx.catalogs`) */
+const LOCAL_ACTIONS=new Set(['draft','draft-confirm','ack'])
+/** during the draft nobody can open another club's squad, so the answer to each spin does not carry the league's sixteen squads */
+const slim=(v:CareerView):CareerView=>v.phase==='draft'?{...v,clubs:[]}:v
 
 export async function legendsMarket(id:string,f:{pos?:string|null;decade?:number|null;price?:number|null;q?:string|null}):Promise<{ok:true;cards:CardView[];total:number}|Fail>{
  if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
