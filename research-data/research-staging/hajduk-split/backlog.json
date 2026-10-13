@@ -34,8 +34,8 @@
  {
   "id": "continue-torcida-posts",
   "priority": "P3",
-  "task": "Torcida Split posts: 4 page(s) read of 27; the scheduled task continues from the checkpoint.",
-  "taskHe": "Torcida Split posts: נקראו 4 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "Torcida Split posts: 2 page(s) read of 27; the scheduled task continues from the checkpoint.",
+  "taskHe": "Torcida Split posts: נקראו 2 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -44,6 +44,46 @@
   "priority": "P3",
   "task": "Fan-group history, not the club's match archive; results are never inferred from fan articles.",
   "taskHe": "Fan-group history, not the club's match archive; results are never inferred from fan articles.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-wikipedia-hajduk-records",
+  "priority": "P1",
+  "task": "Write and test the wikipedia-hajduk-records parser against stored fixtures (season, person, match pages) before anything is extracted from Wikipedia.",
+  "taskHe": "לכתוב parser ל-Wikipedia מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-wikipedia-hajduk-records-0",
+  "priority": "P3",
+  "task": "One Wikipedia page counts as one publisher.",
+  "taskHe": "One Wikipedia page counts as one publisher.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-hajduk-official-history-en",
+  "priority": "P1",
+  "task": "Write and test the hajduk-official-history-en parser against stored fixtures (season, person, match pages) before anything is extracted from HNK Hajduk.",
+  "taskHe": "לכתוב parser ל-HNK Hajduk מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "blocked-hajduk-official-history-en-/eng/history",
+  "priority": "P2",
+  "task": "HNK Hajduk: /eng/history answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "HNK Hajduk: /eng/history חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-hajduk-official-history-en-0",
+  "priority": "P3",
+  "task": "Institutional history: events and honours, not a player register.",
+  "taskHe": "Institutional history: events and honours, not a player register.",
   "status": "noted",
   "owner": null
  }

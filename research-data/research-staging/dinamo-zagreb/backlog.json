@@ -50,8 +50,8 @@
  {
   "id": "continue-bad-blue-boys-posts",
   "priority": "P3",
-  "task": "Bad Blue Boys posts: 3 page(s) read of 4; the scheduled task continues from the checkpoint.",
-  "taskHe": "Bad Blue Boys posts: נקראו 3 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "Bad Blue Boys posts: 2 page(s) read of 4; the scheduled task continues from the checkpoint.",
+  "taskHe": "Bad Blue Boys posts: נקראו 2 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -76,6 +76,38 @@
   "priority": "P3",
   "task": "Possible official results source; historical range and extraction path not yet verified.",
   "taskHe": "Possible official results source; historical range and extraction path not yet verified.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-wikipedia-dinamo-records",
+  "priority": "P1",
+  "task": "Write and test the wikipedia-dinamo-records parser against stored fixtures (season, person, match pages) before anything is extracted from Wikipedia.",
+  "taskHe": "לכתוב parser ל-Wikipedia מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-wikipedia-dinamo-records-0",
+  "priority": "P3",
+  "task": "One Wikipedia page counts as one publisher; a record needs a second family (NFT, club, press).",
+  "taskHe": "One Wikipedia page counts as one publisher; a record needs a second family (NFT, club, press).",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-nft-dinamo",
+  "priority": "P1",
+  "task": "Write and test the nft-dinamo parser against stored fixtures (season, person, match pages) before anything is extracted from National Football Teams.",
+  "taskHe": "לכתוב parser ל-National Football Teams מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-nft-dinamo-0",
+  "priority": "P3",
+  "task": "Lists national-team players by club season only: a listing is not an appearance and not a full squad.",
+  "taskHe": "Lists national-team players by club season only: a listing is not an appearance and not a full squad.",
   "status": "noted",
   "owner": null
  }

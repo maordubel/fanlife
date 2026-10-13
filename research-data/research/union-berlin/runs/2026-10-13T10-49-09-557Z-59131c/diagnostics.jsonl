@@ -1,0 +1,7 @@
+{"code":"FINGERPRINT_CHANGED","providerId":"immer-unioner","url":null,"message":"html: seeds or follow rule changed — starting again."}
+{"code":"FINGERPRINT_CHANGED","providerId":"union-official","url":null,"message":"html: seeds or follow rule changed — starting again."}
+{"code":"NEEDS_PARSER","providerId":"immer-unioner","url":null,"message":"No tested parser for Immer Unioner yet (immerunioner-v1 is planned): documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"union-official","url":null,"message":"No tested parser for 1. FC Union Berlin yet: documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"dfb-union","url":null,"message":"No tested parser for Deutscher Fußball-Bund yet: documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"footballhistory-union","url":null,"message":"No tested parser for footballhistory.org yet: documents are kept, nothing is extracted."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

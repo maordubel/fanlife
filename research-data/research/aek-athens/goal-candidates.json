@@ -1,0 +1,152 @@
+[
+ {
+  "id": "ga-17c930b9a0ebec8c",
+  "clubId": "aek-athens",
+  "sourceIds": [
+   "aekpedia"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "35",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "aekpedia",
+    "url": "https://www.aekpedia.com/dimitris-anastasiadis/",
+    "locator": "p4",
+    "quote": "Η ένταξη του στο δυναμικό της ΑΕΚ σήμανε παράλληλα και την αλλαγή θέσης για τον Αναστασιάδη, καθώς στελέχωσε την αμυντική γραμμή της Ένωσης και αποτέλεσε βασικό στέλεχος της Κιτρινόμαυρης άμυνας για περίπου μια επταετία. Στα Πρωταθλήματα της Α’ Εθνικής Κατηγορίας κατέγραψε με την Ένωση 27 συμμετοχές στην περίοδο 1959-60 , 14 συμμετοχές στην περίοδο 1960-61 , 22 συμμετοχές στην περίοδο 1961-62 και 2 συμμετοχές στην τελευταία του περίοδο 1963-64 . Στην διάρκεια της περιόδου 1962-63 δεν είχε επίσημη συμμετοχή στο Πρωτάθλημα ενώ στις 19 Μαρτίου 1961 σημείωσε το μοναδικό του γκολ, στο 35′ της εκτός",
+    "bodyHash": "9463290635f4dde672e0013fc6265e10e51417ff66b52af0086ba539d43a61a9",
+    "fetchedAt": "2026-10-13T10:47:21.183Z",
+    "language": "el"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:47:21.183Z",
+  "updatedAt": "2026-10-13T10:47:21.183Z"
+ },
+ {
+  "id": "ga-2a5b222831cf8a13",
+  "clubId": "aek-athens",
+  "sourceIds": [
+   "aekpedia"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "88",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "aekpedia",
+    "url": "https://www.aekpedia.com/dimitris-anastasiadis/",
+    "locator": "p5",
+    "quote": "Την ίδια περίοδο και συγκεκριμένα στις 9 Οκτωβρίου 1960, έγινε το “πρόσωπο του αγώνα” στο ματς απέναντι στον Παναθηναϊκό στο γήπεδο της Λεωφόρου Αλεξάνδρας. Στο 88′ του αγώνα και ενώ οι δύο ομάδες ήταν ισόπαλες με 2-2, ο Ανδρέου υπέπεσε σε καταφανέστατο πέναλτι γκρεμίζοντας εντός περιοχής τον Κώστα Νεστορίδη . Ο διαιτητής δεν υπέδειξε την παράβαση και ενώ το σύνολο των παικτών της ΑΕΚ διαμαρτύρονταν σε αυτόν, ο Πανάκης βρήκε την ευκαιρία στην αντεπίθεση, και με την Ενωσίτικη άμυνα πρακτικώς απούσα, να σκοράρει κάνοντας το 3-2. Ακολούθησε πανδαιμόνιο από τους παίκτες της ΑΕΚ προεξάρχοντος του Α",
+    "bodyHash": "9463290635f4dde672e0013fc6265e10e51417ff66b52af0086ba539d43a61a9",
+    "fetchedAt": "2026-10-13T10:47:21.183Z",
+    "language": "el"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:47:21.183Z",
+  "updatedAt": "2026-10-13T10:47:21.183Z"
+ },
+ {
+  "id": "ga-6140da35b54d55ec",
+  "clubId": "aek-athens",
+  "sourceIds": [
+   "aekpedia"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "1",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "aekpedia",
+    "url": "https://www.aekpedia.com/lefter-antoniadis/",
+    "locator": "p3",
+    "quote": "Μετά το τέλος της καριέρας του στη Φενέρ, ήρθε και στην ΑΕΚ το 1964 στην οποία αγωνίστηκε σε 5 ματς μιας και ήταν ήδη στην ηλικία των 39, ενώ η ΑΕΚ εκείνη τη σεζόν είχε στην επίθεσή της Παπαϊωάννου και Νεστορίδη . Πέτυχε 2 γκολ στο 1-7 εναντίον του Απόλλωνα στη Ριζούπολη στις 11 Οκτωβρίου και έγινε ο γηραιότερος σκόρερ της Ένωσης σε ηλικία 38 ετών και 233 ημερών. Μετά από έναν τραυματισμό του με τον Ηρακλή (1η Νοεμβρίου, 2-1 η ΑΕΚ) σταμάτησε την ποδοσφαιρική του καριέρα.",
+    "bodyHash": "efa9e990aedbe754296f89f4670d5d3dbd16466ba8be6e6125c0349b07b9b358",
+    "fetchedAt": "2026-10-13T10:47:21.189Z",
+    "language": "el"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:47:21.189Z",
+  "updatedAt": "2026-10-13T10:47:21.189Z"
+ },
+ {
+  "id": "ga-6a557c952ff303d4",
+  "clubId": "aek-athens",
+  "sourceIds": [
+   "aekpedia"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "6",
+  "scorerAlias": "πρωταθλήματος και",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "aekpedia",
+    "url": "https://www.aekpedia.com/tommy-langley/",
+    "locator": "p2",
+    "quote": "Γεννήθηκε στις 8 Φεβρουαρίου 1958 στο δυτικό Λονδίνο. Από το 1974 εντάχθηκε στο δυναμικό της Τσέλσι και αγωνιζόταν ως επιθετικός. Δύο διαδοχικές χρονιές (1978, 1979) αναδείχθηκε πρώτος σκόρερ της ομάδας του, ενώ τη δεύτερη απο αυτές ανακηρύχθηκε και κορυφαίος ποδοσφαιριστής της. Συνολικά με τη Τσέλσι αγωνίστηκε σε 142 αγώνες πρωταθλήματος και πέτυχε 40 τέρματα. Το 1980-81 αγωνίστηκε στην ΚΠΡ (25 αγώνες και 8 τέρματα) ενώ τη διετία 1981-83 ήταν μέλος της Κρίσταλ Πάλας (59 αγώνες και 8 τέρματα). Στις 11 Οκτωβρίου 1980 ο Λάνγκλεϊ πέτυχε γκολ στο 6ο μόλις δευτερολέπτο του ματς ΚΠΡ-Μπόλτον 3-1 για ",
+    "bodyHash": "a4c116a5768fc1754a921ea17e34eb12fda91a7930ff9f23709f5678bc6a14a6",
+    "fetchedAt": "2026-10-13T10:47:21.190Z",
+    "language": "el"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:47:21.190Z",
+  "updatedAt": "2026-10-13T10:47:21.190Z"
+ },
+ {
+  "id": "ga-38bfc0ff8af0d935",
+  "clubId": "aek-athens",
+  "sourceIds": [
+   "aekpedia"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "59",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "aekpedia",
+    "url": "https://www.aekpedia.com/takis-argyros/",
+    "locator": "p4",
+    "quote": "Είχε συνολικά 159 συμμετοχές στην Α’ Εθνική, 152 με την ομάδα της Καστοριάς και 7 με την ομάδα της ΑΕΚ. Κατέγραψε και μια Ευρωπαϊκή συμμετοχή με τη φανέλα της ΑΕΚ στις 19 Σεπτεμβρίου 1979 στο εκτός έδρας ματς απέναντι στην Ρουμανική Άρτζες Πιτέστι για το Κύπελλο Πρωταθλητριών της περιόδου 1979-80. Στο 59′ της αναμέτρησης αντικατέστησε τον Λάκη Νικολάου.",
+    "bodyHash": "9b68827047fc0c2ca834d8369b5cae3f5d29cde91e8ecd1ee5b79b34df2e884b",
+    "fetchedAt": "2026-10-13T10:47:21.191Z",
+    "language": "el"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:47:21.191Z",
+  "updatedAt": "2026-10-13T10:47:21.191Z"
+ }
+]

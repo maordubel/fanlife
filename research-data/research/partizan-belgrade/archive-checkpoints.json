@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "providerId": "partizanopedia",
   "collection": "html",
-  "queryFingerprint": "e4b8e3d52ec71666",
+  "queryFingerprint": "6719f1eb398e4cff",
   "parserVersion": "partizanopedia-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
@@ -11,6 +11,7 @@
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
+   "/osajtu.html",
    "/4647.html",
    "/4748.html",
    "/4849.html",
@@ -89,18 +90,17 @@
   ],
   "seen": [
    "/",
-   "/index.html",
-   "/osajtu.html"
+   "/index.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-10-07T04:53:32.425Z",
+  "updatedAt": "2026-10-13T10:48:37.788Z",
   "lastError": null
  },
  "crno-bela-nostalgija:posts": {
   "schemaVersion": 1,
   "providerId": "crno-bela-nostalgija",
   "collection": "posts",
-  "queryFingerprint": "5576f2fc9105ffe9",
+  "queryFingerprint": "13f2675021449dab",
   "parserVersion": "cbn-history-v1",
   "nextPage": 1,
   "lastCommittedPage": 0,
@@ -108,14 +108,14 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-10-07T04:53:32.537Z",
+  "updatedAt": "2026-10-13T10:48:37.908Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "crno-bela-nostalgija:pages": {
   "schemaVersion": 1,
   "providerId": "crno-bela-nostalgija",
   "collection": "pages",
-  "queryFingerprint": "54271828c6acb83e",
+  "queryFingerprint": "802301f5b060892d",
   "parserVersion": "cbn-history-v1",
   "nextPage": 2,
   "lastCommittedPage": 1,
@@ -123,14 +123,14 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-10-07T04:53:36.286Z",
+  "updatedAt": "2026-10-13T10:48:41.503Z",
   "lastError": null
  },
  "partizan-official:html": {
   "schemaVersion": 1,
   "providerId": "partizan-official",
   "collection": "html",
-  "queryFingerprint": "8c0dc8557b5f0a06",
+  "queryFingerprint": "d664bab0e94a4a21",
   "parserVersion": null,
   "nextPage": 0,
   "lastCommittedPage": 0,
@@ -142,7 +142,26 @@
    "/vesti/istorijat"
   ],
   "state": "listed",
-  "updatedAt": "2026-10-07T04:53:37.819Z",
+  "updatedAt": "2026-10-13T10:48:43.047Z",
+  "lastError": null
+ },
+ "nft-partizan:html": {
+  "schemaVersion": 1,
+  "providerId": "nft-partizan",
+  "collection": "html",
+  "queryFingerprint": "33376ddeba3bc9cb",
+  "parserVersion": null,
+  "nextPage": 0,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": 1,
+  "observedTotalPages": null,
+  "perPage": 1,
+  "queue": [],
+  "seen": [
+   "/club/2156/1963/Partizan_Beograd.html"
+  ],
+  "state": "listed",
+  "updatedAt": "2026-10-13T10:48:44.001Z",
   "lastError": null
  }
 }

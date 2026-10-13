@@ -1,0 +1,782 @@
+[
+ {
+  "id": "ga-2947e7b760e4cabe",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "101",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p877",
+    "quote": "Yugoslavia totals 101 '''34'''</span>\"}},\"i\":0}}]}'> 34",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-c5f153cbcb61339d",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "28",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p878",
+    "quote": "'''28'''</span>\"}},\"i\":0}}]}'> 28",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-7bb36a7a6c30f83d",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "39",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p879",
+    "quote": "'''39'''</span>\"}},\"i\":0}}]}'> 39",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-8b0b65f96b357eb6",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "109",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p898",
+    "quote": "Croatia totals 109 '''31'''</span>\"}},\"i\":0}}]}'> 31",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-1b90cd5cf306cba3",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "27",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p899",
+    "quote": "'''27'''</span>\"}},\"i\":0}}]}'> 27",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-5a61ce488aac0bf3",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "51",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p900",
+    "quote": "'''51'''</span>\"}},\"i\":0}}]}'> 51",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-4118ff92bd0a80fb",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "110",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p901",
+    "quote": "'''110'''</span>\"}},\"i\":0}}]}'> 110",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-fa7c74bcf743982d",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "47",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p905",
+    "quote": "'''47'''</span>\"}},\"i\":0}}]}'> 47",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-98d028302d67d1e1",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "70",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p906",
+    "quote": "'''70'''</span>\"}},\"i\":0}}]}'> 70",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-ae9fd4a4bc79aaeb",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "8",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p920",
+    "quote": "'''8'''</span>\"}},\"i\":0}}]}'> 8",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-55ed9e2db875b042",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "20",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p921",
+    "quote": "'''20'''</span>\"}},\"i\":0}}]}'> 20",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-463b6f9d8ff89cde",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "37",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p922",
+    "quote": "'''37'''</span>\"}},\"i\":0}}]}'> 37",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-9e80681a7044c01c",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "61",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p923",
+    "quote": "'''61'''</span>\"}},\"i\":0}}]}'> 61",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-73eefd96b2b18f7f",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "55",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p941",
+    "quote": "'''55'''</span>\"}},\"i\":0}}]}'> 55",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-c0aa6bbe2fa320ae",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "90",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p942",
+    "quote": "'''90'''</span>\"}},\"i\":0}}]}'> 90",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-8770d720efad0585",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "84",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1005",
+    "quote": "Croatia totals 84 '''31'''</span>\"}},\"i\":0}}]}'> 31",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-1b589fe93c28bf6b",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "24",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1006",
+    "quote": "'''24'''</span>\"}},\"i\":0}}]}'> 24",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-984c78bb76dc50d2",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "29",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1007",
+    "quote": "'''29'''</span>\"}},\"i\":0}}]}'> 29",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-bb0050bafc9914dd",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "105",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1009",
+    "quote": "'''105'''</span>\"}},\"i\":0}}]}'> 105",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-51404703d2260ddf",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "42",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1012",
+    "quote": "'''42'''</span>\"}},\"i\":0}}]}'> 42",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-37ecd80c869b0952",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "14",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1026",
+    "quote": "Cup 14 '''2'''</span>\"}},\"i\":0}}]}'> 2",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-0539d1480999c763",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "7",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1027",
+    "quote": "'''7'''</span>\"}},\"i\":0}}]}'> 7",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-7b49f14956de7408",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "5",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1028",
+    "quote": "'''5'''</span>\"}},\"i\":0}}]}'> 5",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-35f07d7a860c9282",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "12",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1029",
+    "quote": "'''12'''</span>\"}},\"i\":0}}]}'> 12",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-1d876d47a2406709",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "15",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1030",
+    "quote": "'''15'''</span>\"}},\"i\":0}}]}'> 15",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ },
+ {
+  "id": "ga-6bafe141011b48ba",
+  "clubId": "hajduk-split",
+  "sourceIds": [
+   "wikipedia-hajduk-records"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "49",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "wikipedia-hajduk-records",
+    "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+    "locator": "p1048",
+    "quote": "'''49'''</span>\"}},\"i\":0}}]}'> 49",
+    "bodyHash": "34b23a36343e86dc09aae551a053375e25e4236babe59bd3dd4a240b920dc00f",
+    "fetchedAt": "2026-10-13T10:48:05.914Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:05.914Z",
+  "updatedAt": "2026-10-13T10:48:05.914Z"
+ }
+]

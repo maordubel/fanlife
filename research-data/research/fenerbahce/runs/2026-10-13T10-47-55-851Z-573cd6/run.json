@@ -1,0 +1,37 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-10-13T10-47-55-851Z-573cd6",
+ "clubId": "fenerbahce",
+ "startedAt": "2026-10-13T10:47:55.851Z",
+ "finishedAt": "2026-10-13T10:47:56.103Z",
+ "providers": [
+  "fenerbahce-official"
+ ],
+ "state": "blocked",
+ "counts": {
+  "requests": 1,
+  "documentsRead": 0,
+  "newDocuments": 0,
+  "changedDocuments": 0,
+  "unchangedDocuments": 0,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 1,
+  "budgetLeft": 11
+ },
+ "diagnostics": [
+  {
+   "code": "SOURCE_BLOCKED",
+   "providerId": "fenerbahce-official",
+   "url": "https://www.fenerbahce.org/",
+   "message": "HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "fenerbahce-official",
+   "url": null,
+   "message": "No tested parser for Fenerbahçe SK yet: documents are kept, nothing is extracted."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

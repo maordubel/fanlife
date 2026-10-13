@@ -8,8 +8,8 @@
   "sourceFamilyId": "partizanopedia",
   "scope": "people",
   "access": "available",
-  "checkedAt": "2026-10-07",
-  "retrievedAt": "2026-10-07T04:53:37.823Z",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:48:44.008Z",
   "collected": {
    "documents": 3,
    "observedTotalDocuments": 78,
@@ -29,8 +29,8 @@
   "sourceFamilyId": "crnobela-nostalgija",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-10-07",
-  "retrievedAt": "2026-10-07T04:53:37.823Z",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:48:44.008Z",
   "collected": {
    "documents": 5,
    "observedTotalDocuments": 5,
@@ -50,8 +50,29 @@
   "sourceFamilyId": "partizan-institutional",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-10-07",
-  "retrievedAt": "2026-10-07T04:53:37.823Z",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:48:44.008Z",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
+   "state": "listed",
+   "parser": null
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "collector-nft-partizan-html",
+  "title": "National Football Teams — pages (people)",
+  "url": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "providerId": "nft-partizan",
+  "publisher": "National Football Teams",
+  "sourceFamilyId": "national-football-teams",
+  "scope": "people",
+  "access": "available",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:48:44.008Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,

@@ -1,0 +1,2 @@
+{"code":"SOURCE_BLOCKED","providerId":"fenerbahce-official","url":"https://www.fenerbahce.org/","message":"HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."}
+{"code":"NEEDS_PARSER","providerId":"fenerbahce-official","url":null,"message":"No tested parser for Fenerbahçe SK yet: documents are kept, nothing is extracted."}

@@ -1,0 +1,68 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-10-13T10-48-44-374Z-0b2a9f",
+ "clubId": "st-pauli",
+ "startedAt": "2026-10-13T10:48:44.374Z",
+ "finishedAt": "2026-10-13T10:49:09.185Z",
+ "providers": [
+  "millernton",
+  "fcstpauli-museum"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 8,
+  "documentsRead": 155,
+  "newDocuments": 0,
+  "changedDocuments": 18,
+  "unchangedDocuments": 137,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 0,
+  "budgetLeft": 4
+ },
+ "diagnostics": [
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "millernton",
+   "url": null,
+   "message": "posts: the listing definition changed — starting again from page 1."
+  },
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "millernton",
+   "url": null,
+   "message": "pages: the listing definition changed — starting again from page 1."
+  },
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "fcstpauli-museum",
+   "url": null,
+   "message": "posts: the listing definition changed — starting again from page 1."
+  },
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "fcstpauli-museum",
+   "url": null,
+   "message": "pages: the listing definition changed — starting again from page 1."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "millernton",
+   "url": null,
+   "message": "No tested parser for MillernTon yet (millernton-stats-v1 is planned): documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "fcstpauli-museum",
+   "url": null,
+   "message": "No tested parser for FC St. Pauli Museum yet (stpauli-museum-v1 is planned): documents are kept, nothing is extracted."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

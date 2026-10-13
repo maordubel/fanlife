@@ -1,0 +1,56 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-10-13T10-47-24-623Z-cb99a2",
+ "clubId": "celtic",
+ "startedAt": "2026-10-13T10:47:24.623Z",
+ "finishedAt": "2026-10-13T10:47:44.779Z",
+ "providers": [
+  "thecelticwiki",
+  "celtic-official"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 8,
+  "documentsRead": 152,
+  "newDocuments": 0,
+  "changedDocuments": 2,
+  "unchangedDocuments": 150,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 0,
+  "budgetLeft": 4
+ },
+ "diagnostics": [
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "thecelticwiki",
+   "url": null,
+   "message": "pages: the listing definition changed — starting again from page 1."
+  },
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "celtic-official",
+   "url": null,
+   "message": "html: seeds or follow rule changed — starting again."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "thecelticwiki",
+   "url": null,
+   "message": "No tested parser for The Celtic Wiki yet (celticwiki-football-v1 is planned): documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "celtic-official",
+   "url": null,
+   "message": "No tested parser for Celtic FC yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

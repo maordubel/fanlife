@@ -42,5 +42,67 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-10-13T10-47-11-016Z-03be69",
+  "clubId": "aek-athens",
+  "startedAt": "2026-10-13T10:47:11.016Z",
+  "finishedAt": "2026-10-13T10:47:24.228Z",
+  "providers": [
+   "aekpedia",
+   "aek-official-history"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 6,
+   "documentsRead": 105,
+   "newDocuments": 25,
+   "changedDocuments": 0,
+   "unchangedDocuments": 80,
+   "recordsExtracted": 100,
+   "blockedEndpoints": 1,
+   "budgetLeft": 6
+  },
+  "diagnostics": [
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "aekpedia",
+    "url": null,
+    "message": "posts: the listing definition changed — starting again from page 1."
+   },
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "aekpedia",
+    "url": null,
+    "message": "pages: the listing definition changed — starting again from page 1."
+   },
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "aek-official-history",
+    "url": null,
+    "message": "html: seeds or follow rule changed — starting again."
+   },
+   {
+    "code": "SOURCE_BLOCKED",
+    "providerId": "aek-official-history",
+    "url": "https://www.aekfc.gr/pages/history.aspx?lang=el",
+    "message": "HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "aek-official-history",
+    "url": null,
+    "message": "No tested parser for AEK FC yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]

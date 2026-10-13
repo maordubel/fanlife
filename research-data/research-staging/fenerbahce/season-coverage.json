@@ -1,0 +1,21 @@
+[
+ {
+  "providerId": "fenerbahce-official",
+  "role": "club-history",
+  "listings": [
+   {
+    "collection": "html",
+    "state": "blocked",
+    "pagesRead": 0,
+    "observedTotalDocuments": 1,
+    "observedTotalPages": null,
+    "queue": 0,
+    "lastError": "HTTP 403 — a refusal is an answer"
+   }
+  ],
+  "documents": 0,
+  "historicalRecordsExtracted": 0,
+  "seasonReviews": [],
+  "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
+ }
+]

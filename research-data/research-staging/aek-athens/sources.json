@@ -8,11 +8,11 @@
   "sourceFamilyId": "aekpedia-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-10-07",
-  "retrievedAt": "2026-10-07T04:52:06.272Z",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:47:24.235Z",
   "collected": {
-   "documents": 80,
-   "observedTotalDocuments": 751,
+   "documents": 105,
+   "observedTotalDocuments": 762,
    "state": "partial_budget",
    "parser": "aekpedia-football-v1"
   },
@@ -29,10 +29,10 @@
   "sourceFamilyId": "aekpedia-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-10-07",
-  "retrievedAt": "2026-10-07T04:52:06.272Z",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:47:24.235Z",
   "collected": {
-   "documents": 80,
+   "documents": 105,
    "observedTotalDocuments": 5,
    "state": "listed",
    "parser": "aekpedia-football-v1"

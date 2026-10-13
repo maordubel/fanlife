@@ -5,7 +5,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-07T04:54:06.051Z"
+  "checkedAt": "2026-10-13T10:49:11.958Z"
  },
  "immer-unioner:/trikotliste.php": {
   "endpoint": "/trikotliste.php",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-07T04:54:09.546Z"
+  "checkedAt": "2026-10-13T10:49:15.642Z"
  },
  "immer-unioner:/impressum.php": {
   "endpoint": "/impressum.php",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-07T04:54:12.503Z"
+  "checkedAt": "2026-10-13T10:49:18.753Z"
  },
  "immer-unioner:/spieler.php?getid=84": {
   "endpoint": "/spieler.php?getid=84",
@@ -53,6 +53,22 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-07T04:54:26.379Z"
+  "checkedAt": "2026-10-13T10:49:20.102Z"
+ },
+ "dfb-union:/en/clubs/1-fc-union-berlin": {
+  "endpoint": "/en/clubs/1-fc-union-berlin",
+  "providerId": "dfb-union",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-13T10:49:25.062Z"
+ },
+ "footballhistory-union:/club/union-berlin.html": {
+  "endpoint": "/club/union-berlin.html",
+  "providerId": "footballhistory-union",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-13T10:49:25.998Z"
  }
 }

@@ -8,8 +8,8 @@
   "sourceFamilyId": "torcida-split",
   "scope": "fan-culture",
   "access": "available",
-  "checkedAt": "2026-10-07",
-  "retrievedAt": "2026-10-07T04:52:57.190Z",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:48:05.981Z",
   "collected": {
    "documents": 117,
    "observedTotalDocuments": 657,
@@ -29,11 +29,32 @@
   "sourceFamilyId": "torcida-split",
   "scope": "fan-culture",
   "access": "available",
-  "checkedAt": "2026-10-07",
-  "retrievedAt": "2026-10-07T04:52:57.190Z",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:48:05.981Z",
   "collected": {
    "documents": 117,
    "observedTotalDocuments": 17,
+   "state": "listed",
+   "parser": null
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "collector-wikipedia-hajduk-records-html",
+  "title": "Wikipedia — pages (results)",
+  "url": "https://en.wikipedia.org/wiki/HNK_Hajduk_Split_statistics_and_records",
+  "providerId": "wikipedia-hajduk-records",
+  "publisher": "Wikipedia",
+  "sourceFamilyId": "wikimedia",
+  "scope": "results",
+  "access": "available",
+  "checkedAt": "2026-10-13",
+  "retrievedAt": "2026-10-13T10:48:05.981Z",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
    "state": "listed",
    "parser": null
   },

@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-07T04:52:04.059Z"
+  "checkedAt": "2026-10-13T10:47:21.181Z"
  },
  "aekpedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-07T04:52:05.970Z"
+  "checkedAt": "2026-10-13T10:47:23.798Z"
  },
  "aek-official-history:/pages/history.aspx?lang=el": {
   "endpoint": "/pages/history.aspx?lang=el",
@@ -29,6 +29,6 @@
   "state": "blocked",
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-10-07T04:52:06.267Z"
+  "checkedAt": "2026-10-13T10:47:24.228Z"
  }
 }

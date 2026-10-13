@@ -1,0 +1,26 @@
+[
+ {
+  "id": "parser-fenerbahce-official",
+  "priority": "P1",
+  "task": "Write and test the fenerbahce-official parser against stored fixtures (season, person, match pages) before anything is extracted from Fenerbahçe SK.",
+  "taskHe": "לכתוב parser ל-Fenerbahçe SK מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "blocked-fenerbahce-official-/",
+  "priority": "P2",
+  "task": "Fenerbahçe SK: / answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "Fenerbahçe SK: / חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-fenerbahce-official-0",
+  "priority": "P3",
+  "task": "Owner request 13.10.2026. Only the official home page is seeded: no deeper path is assumed until it has been seen. A refusal is recorded as a gap, never worked around.",
+  "taskHe": "Owner request 13.10.2026. Only the official home page is seeded: no deeper path is assumed until it has been seen. A refusal is recorded as a gap, never worked around.",
+  "status": "noted",
+  "owner": null
+ }
+]

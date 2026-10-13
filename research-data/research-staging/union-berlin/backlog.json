@@ -54,5 +54,37 @@
   "taskHe": "The current club, predecessors and historical names are separate entities until a source defines continuity.",
   "status": "noted",
   "owner": null
+ },
+ {
+  "id": "parser-dfb-union",
+  "priority": "P1",
+  "task": "Write and test the dfb-union parser against stored fixtures (season, person, match pages) before anything is extracted from Deutscher Fußball-Bund.",
+  "taskHe": "לכתוב parser ל-Deutscher Fußball-Bund מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-dfb-union-0",
+  "priority": "P3",
+  "task": "Same data centre that produced the St. Pauli squad rows: first-team competition squads; a squad is not an appearance.",
+  "taskHe": "Same data centre that produced the St. Pauli squad rows: first-team competition squads; a squad is not an appearance.",
+  "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "parser-footballhistory-union",
+  "priority": "P1",
+  "task": "Write and test the footballhistory-union parser against stored fixtures (season, person, match pages) before anything is extracted from footballhistory.org.",
+  "taskHe": "לכתוב parser ל-footballhistory.org מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "limit-footballhistory-union-0",
+  "priority": "P3",
+  "task": "Short club history page: cross-check for events only.",
+  "taskHe": "Short club history page: cross-check for events only.",
+  "status": "noted",
+  "owner": null
  }
 ]

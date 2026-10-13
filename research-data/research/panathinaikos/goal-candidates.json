@@ -1,0 +1,1232 @@
+[
+ {
+  "id": "ga-cb57b0907c362e07",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "4",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/championships/",
+    "locator": "p136",
+    "quote": "In 2004's Championship the following players participated: Chalkias, Nikopolidis, Kotsolis, Seitaridis, Minch, Vyntra, Kyrgiakos, Goumas, Morris, Henriksen, Kotsios, Papadopoulos, Zoutaoutas, Sanmartean, Konstantinou, Bassinas, Sapanis, Olisadebe, Fyssas, Konstantinidis, Maric, Gonzalez, Watzycha, Gittas, Vlaovic, Mikaelsen, Deba, Epale.",
+    "bodyHash": "f34785d5a0823c27eebd1cea4699d10abf63234a4a7d64970f5bd92219d84f26",
+    "fetchedAt": "2026-10-13T10:48:19.166Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:19.166Z",
+  "updatedAt": "2026-10-13T10:48:19.166Z"
+ },
+ {
+  "id": "ga-aeb255d144d308a4",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "10",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/championships/",
+    "locator": "p140",
+    "quote": "In 2010's Championship the following players participated: Galinovic, Karnezis, Tzorvas, Sariegui, Kante, Biarsmoir, Gabriel, Darlas, Marinos, Vyntra, Seitaridis, Spyropoulos, Ninis, Leto, Gilberto Silva, Christodoulopoulos, Simao, Karagounis, Katsouranis, Cisse, Tziolis, Cleiton, Rukavina, Salpigidis, Petropoulos, Mantzios, Fetsis.",
+    "bodyHash": "f34785d5a0823c27eebd1cea4699d10abf63234a4a7d64970f5bd92219d84f26",
+    "fetchedAt": "2026-10-13T10:48:19.166Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:19.166Z",
+  "updatedAt": "2026-10-13T10:48:19.166Z"
+ },
+ {
+  "id": "ga-5f13af4b08327eeb",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "15",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p62",
+    "quote": "Panathinaikos starts its victories in the field of domestic Cups, taking good \"care\" of Aris, at the final, in just four minutes time... How? By scoring three times before completing the first 15' of the match!",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-ccbf5fc33c85669d",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "9",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p67",
+    "quote": "Panathinaikos-Aris 3-1 (9′ Baltasis, 10′ Triantafyllis, 13′ Miyakis, 61′ Hatzinikolaou)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-aa1c0fd38deeee1d",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "16",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p76",
+    "quote": "Panathinaikos – ΑΕΚ 2-1 (16′, 49′ Simos / 20′ Maropoulos)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-bcfc7bf35e7c567f",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "24",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p85",
+    "quote": "Panathinaikos – PAOK 2-0 (24′ Kourtzidis, 31′ Panakis)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-9ae7645fe6355507",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "56",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p94",
+    "quote": "Panathinaikos – Panionios 1-0 (56′ Grammosς)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-44db106d8522314e",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "49",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p103",
+    "quote": "Panathinaikos – Olympiakos 1-1 (49′ Sideris / 56′ Domazos)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-cd206dc53c18f7bf",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "46",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p104",
+    "quote": "Panathinaikos: Ikonommopoulos, MItropoulos, Kamaras, Sourpis, Athanasopoulos, Dimitriou, Eleftherakis, Rokidis (46′ Frantzis), Domazos, Grammos, (106′ Gonios), Fylakouris.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-bef9131ffbf9b977",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "57",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p105",
+    "quote": "Olympiakos: Liadelis (57′ Xarchakos), Gaitatzis, Ayianian, Zanteroglou, Pavlidis, N. Sideris, Stoligas (67′ Michas), Vasiliou, G. Sideris, Koumarias, Botinos.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-4ffa457c2f3c6782",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "29",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p112",
+    "quote": "Panathinaikos – PAOK 2-1 (29′ Papadimitriou, 83′ Vakalis / 43′ Terzanidis)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-74181e3ee4c5c300",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "77",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p114",
+    "quote": "PAOK: MIlinis, Gounaris, Apostolidis, Pelios, Iosifidis, Terzanidis, Sarafis, Koudas, Anastasiadis, Damanakis, Guerino (77′ Orfanos).",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-39e3212fbb6b7673",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "78",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p119",
+    "quote": "Panathinaikos : Konstantinou, Kyrastas, Simaioforidis, Kovis, Kapsis, Livathinos, Nikolae, Κ ouropoulos (78′ Κ atsiakos), Charalambidis (88′ Anastasiadis), Doken, Galakos.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-84e8ae397dce3797",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "82",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p120",
+    "quote": "Larissa : Plitsis, Parafestas, Patsiavouras, Galitsios, Argyroulis, Dramalis (82′ Voutiritsas), Goutas (82′ Mitsibonas), Golandas, Valaoras, Androudis, Μ aloumidis.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-a4fff93ef0697916",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "18",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p125",
+    "quote": "Panathinaikos –  Larissa  2-0 (18′ Th. Dimopoulos, 38′ Antoniou)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-91b5e3a49a677e9b",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "83",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p126",
+    "quote": "Panathinaikos : Laftsis, Tarassis,Κaroulias,Κirastas,Κapsis, Papavassileiou,Μavridis, Antoniou, Charalambidis, (83′ Gerothodoros), Rocha, Th. Dimopoulos (88’Τassopoulos).",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-3179f9215c78a1e3",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "62",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p136",
+    "quote": "Panathinaikos: Minou, Tarasis, Patsiavouras, Mavridis, Kyrastas, Jaec, Vlachos, Gerothodoros (62′ Rocha), Saravakos, Batsinilas, Ch. Dimopoulos (84′ Antoniou).",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-b0838914a1e927ae",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "79",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p140",
+    "quote": "The “Greens” were playing from the 79th minute with one player less, after Kosta Batsinilas’ expulsion. At the 120th minute, the ball following a shoot by Dimitri Saravakos, went straight to the crossbar.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-212f21ccb2b565b5",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "31",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p147",
+    "quote": "Panathinaikos – Olympiakos 2-2 / 4-3 at penalties (31′ (pen.) Saravakos, 101′ Ch. Dimopoulos / 59′ (pen.)-96′ (pen.) Founes)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-affb90d8dfd90bb7",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "75",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p148",
+    "quote": "Panathinaikos: Sarganis, Chatziathanasiou, Vamvakoulas, Kalitzakis, Mavridis, Jaec (75′ Vlacho), Saravakos, Christodoulou (46’Batsinilas), Ch. Dimopoulos, Rocha, Georgamlis.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-031f5a5812cb1f10",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "8",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p156",
+    "quote": "Panathinaikos – Panionios: 3-1 (8′ Mavridis, 44′ (pen.) Ch. Dimopoulos, 46′ Saravakos / 35΄ Zakkas)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-f5d3459498097b89",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "51",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p158",
+    "quote": "Panionios: Papadopoulos, Chatzimoissiadis, Papoulidis, Koutropoulos, Togias, Kanarasάς (51′ Vasilakos), Michos, Aposporis (69′ Bersemi), Maragkos, Zakkas, Mavros.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-ae33c41a8c0f9ca2",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "70",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p165",
+    "quote": "Athinaikos – Panathinaikos 0-3 (70′ Kourbanas, 78′ Warzycha, 88′ Vlachos)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-851927c001c76db2",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "72",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p166",
+    "quote": "Athinaikos: Sarganis, Boutzoukas, Bassayianiis, Chatziaggelis, Theodorakos, Chatziraptis (72′ Bong), Zotalis, Tzalakostas, Kolev, (55′ Anastassiou), Tsavalias, Spiliotis.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-ef61a942dfaa72e1",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "60",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p167",
+    "quote": "Panathinaikos: Wanchik, apostolakis, Kalatzis, Christodoulou, Kalitzakis, Kourbanas, Frantzeskos (60′ Vlachos), Antoniou, Warzycha, Georgakopoulos (88′ Kalpakis), Maragkos.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-ad6f3b0a798fdce3",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "71",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p169",
+    "quote": "Panathinaikos – Athinaikos 2-1 (71′ Saravakos, 84′ Kourbanas / 45′ (πεν.) Zotalis)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-4a5e769dfb52089c",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "59",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p170",
+    "quote": "Panathinaikos: Wanchik, Apostolakis, kalatzis, Christodoulou, Kalitzakis, Kourbanas, Apostolakis, Kourbanas, Maragkos (59′ Saravakos), Antoniou, Warzycha, Vlachos (46′ Frantzeskos), Georgamlis.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-6a650dc7d41e523b",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "13",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p178",
+    "quote": "Panathinaikos – Olympiakos 1-0 (13′ Warzycha)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-88193ba13aeec052",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "90",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p179",
+    "quote": "Panathinaikos: Wanchik, Apostolakis, Kapouranis, Christodoulou, Kalitzakis, Mavridis, Ouzounidis, Antoniou, Warzycha (90′ Frantzeskos), Georgiadis (88′ Donis), Maragkos.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-1a46d53018517eee",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "67",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p190",
+    "quote": "Panathinaikos: Wanchik, Apostolakis, Ouzounidis, Christodoulou, Kalitzakis, Nioplias, Boreli (67′ Maragkos), Kolitsidakis, Warzycha (65′ Donis), G. Ch. Georgiadis, Markos.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-c65af308592368d1",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "118",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p198",
+    "quote": "Panathinaikos – ΑΕΚ 1-0 (118′ (pen.) Warzycha)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-76639fe3ba3086ab",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "64",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p199",
+    "quote": "Panathinaikos: Wanchik, Apostolakis, Ouzounidis (64′ Kolitsidakis), G. Ch. Georgiadis, Kalitzakis, Kapouranis, Boreli, Nioplias, Warzycha, Markos, Donis (73′ Alexoudis).",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-7d6ff7a2d00c3795",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "73",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p200",
+    "quote": "ΑΕΚ: Atmatzidis, Agoroyiannis, (73′ Kopitsis), Papadopoulos, Manolas, Sabanatzovic (117′ Borbokis), Vlachos, Saravakos, Savevski, Dimitriadis, Tsartas, Kasapis.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-b97933c6de2029f4",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "3",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p207",
+    "quote": "Panathinaikos – Olympiakos 3-1 (3′ Papadopoulos, 67′-81′ Konstantinou / 65′ Giovanni)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-4556c017d727c694",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "21",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p209",
+    "quote": "Olympiakos: Yiannou, Pantos, Venetidis, Anatolakis, Vallasς (21′ Mavroyennidis), Carembeu, Georgatos (15′ Choutos, 53′ Kouzba), Stoltidis, Georgevic, Castillo, Giovanni.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-61cd5f4aa161b9b9",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "63",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p216",
+    "quote": "Panathinaikos -Aris 1-0 (63′ Leto)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-dd182fbf408a75c3",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "65",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p217",
+    "quote": "Panathinaikos: Tzorvas, Kante, Katsouranis, Vyntra, Spyropoulos, Simao, Gilberto, Ninis (65′ Marinos), Salpigidis (62′ Karagounis), Leto (79′ Christodoulopoulos), Cisse.",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-0fce188dff53725f",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "34",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p235",
+    "quote": "Panathinaikos – PAOK 1-0 (34′ Aitor)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-395818dd8040758c",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "68",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p236",
+    "quote": "Panathinaikos : Brignoli, Kotsiras, Juankar, Schenkeveld, Velez, Ruben, Villafanes (68′ Kourbelis), Gacinovic (76′ Alexandropoulos), Aitor, Palacios (90’+4′ Sarlija), Ioannidis (76′ Carlitos).",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-30f53959a79baae1",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "90+7",
+  "scorerAlias": "Giorgos Vagiannidis",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p239",
+    "quote": "The Cup to Panathinaikos with a buzzer beater by Vagiannidis The Greens had a great run that was full of suspense but also great and unforgettable qualifiers on the way to the final and an epic finale at Panthessaliko Stadium. In the round of 16, Panathinaikos beat Olympiacos at Karaiskakis Stadium in the penalty shootout, while in the quarter finals, qualification came against Atromitos at Peristeri with a goal from Mladenovic in the final minutes. In the semi final, the Greens also beat PAOK on penalties after a thrilling game. And in the final, Giorgos Vagiannidis scored the winning goal in",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ },
+ {
+  "id": "ga-f87d8ff86a843452",
+  "clubId": "panathinaikos",
+  "sourceIds": [
+   "pao-official-history"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "90+7",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "pao-official-history",
+    "url": "https://www.pao.gr/en/history/greek-cups/",
+    "locator": "p243",
+    "quote": "Panathinaikos – Aris 1-0 (90+7′ Vagiannidis)",
+    "bodyHash": "b5855958a2b21cec0c0a393fa2ec70c65fc99b87328270333f2a006b03ff869a",
+    "fetchedAt": "2026-10-13T10:48:22.942Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-10-13T10:48:22.942Z",
+  "updatedAt": "2026-10-13T10:48:22.942Z"
+ }
+]

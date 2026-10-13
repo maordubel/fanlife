@@ -1,0 +1,10 @@
+{
+ "fenerbahce-official:/": {
+  "endpoint": "/",
+  "providerId": "fenerbahce-official",
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-10-13T10:47:56.103Z"
+ }
+}

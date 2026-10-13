@@ -5,7 +5,7 @@
   "state": "blocked",
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-10-07T04:52:41.964Z"
+  "checkedAt": "2026-10-13T10:47:57.083Z"
  },
  "torcida:/wp-json/wp/v2/posts": {
   "endpoint": "/wp-json/wp/v2/posts",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-07T04:52:53.769Z"
+  "checkedAt": "2026-10-13T10:48:02.043Z"
  },
  "torcida:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -21,6 +21,22 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-07T04:52:57.184Z"
+  "checkedAt": "2026-10-13T10:48:05.800Z"
+ },
+ "wikipedia-hajduk-records:/wiki/HNK_Hajduk_Split_statistics_and_records": {
+  "endpoint": "/wiki/HNK_Hajduk_Split_statistics_and_records",
+  "providerId": "wikipedia-hajduk-records",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-10-13T10:48:05.908Z"
+ },
+ "hajduk-official-history-en:/eng/history": {
+  "endpoint": "/eng/history",
+  "providerId": "hajduk-official-history-en",
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-10-13T10:48:05.973Z"
  }
 }

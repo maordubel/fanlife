@@ -1,0 +1,21 @@
+{
+ "fenerbahce-official:html": {
+  "schemaVersion": 1,
+  "providerId": "fenerbahce-official",
+  "collection": "html",
+  "queryFingerprint": "c14c8a20a4f6fb68",
+  "parserVersion": null,
+  "nextPage": 0,
+  "lastCommittedPage": 0,
+  "observedTotalDocuments": 1,
+  "observedTotalPages": null,
+  "perPage": 1,
+  "queue": [],
+  "seen": [
+   "/"
+  ],
+  "state": "blocked",
+  "updatedAt": "2026-10-13T10:47:56.103Z",
+  "lastError": "HTTP 403 — a refusal is an answer"
+ }
+}
