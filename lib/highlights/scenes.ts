@@ -1,5 +1,6 @@
 import {hash,rng} from '@/lib/clubs/rumble-rng'
-import type {Moment,MomentKind,PixelKit,Reel,ReelPlayer,Shape} from './types'
+import type {GoalGraphic,Moment,MomentKind,PixelKit,Reel,ReelPlayer,Shape} from './types'
+import {attackDir,type Dir} from './pitch'
 
 /**
  * The scene library (owner, 12.10.2026: "many possible scenes, so every match feels different — not the same action again").
@@ -10,14 +11,23 @@ import type {Moment,MomentKind,PixelKit,Reel,ReelPlayer,Shape} from './types'
  * one-two, corner, free kick, penalty, counter, rebound, lob, volley, deep free-kick header) × five endings (goal, save, miss,
  * post, block) × a mirror × randomised runs, plus foul / card / injury / offside scenes. A scene names the real men of the
  * night: the scorer, the provider, the keeper and the defenders around them come from the two elevens.
+ *
+ * The rest of both elevens stand where a football team would (13.10.2026, "both sides of the pitch"): the attacking side's back
+ * line on halfway and its keeper in his own goal, the defending side's midfield chasing back and its forwards waiting for the
+ * break — unnamed extras, never anybody twice. `dir` says which way the attack runs on the whole ground (`pitch.ts`): the teams
+ * change ends at half-time, so the same move after the 45th minute is played toward the other goal.
+ *
+ * Set pieces are scenes of their own, picked by `Moment.shape` (the engine's `detail`): a penalty (the spot, the arc, the run-up,
+ * the keeper on his line — scored, saved or missed), a free kick (struck over a wall paced at 9.15 m, or swung in from wide to
+ * a header) and a corner (to the penalty spot, or flicked on at the near post).
  */
 export type Pose='stand'|'run'|'kick'|'head'|'dive'|'slide'|'down'|'celebrate'|'card'|'flag'|'walk'|'catch'
 export type Key={t:number;x:number;y:number;pose:Pose}
-export type Actor={id:string;team:0|1|-1;role:'gk'|'out'|'ref'|'lino';no:number;name:string;kit:PixelKit|null;skin:number;hair:number;keys:Key[];dive?:-1|1}
+export type Actor={id:string;team:0|1|-1;role:'gk'|'out'|'ref'|'lino';no:number;name:string;kit:PixelKit|null;skin:number;hair:number;keys:Key[];dive?:-1|1;/** the reel player he is (none for the officials) */pid?:string;/** a man filling the ground, away from the move */extra?:true}
 export type BallKey={t:number;x:number;y:number;z:number;arc?:number}
 export type CueKind='tag'|'net'|'whistle'|'card-yellow'|'card-red'|'flag'|'goal'|'kick'|'post'|'save'|'caption'
 export type Cue={t:number;kind:CueKind;actor?:string;text?:string}
-export type Scene={id:string;variant:string;duration:number;attack:0|1;actors:Actor[];ball:BallKey[];cues:Cue[];outcome:MomentKind;moment:Moment;spectacular:boolean}
+export type Scene={id:string;variant:string;duration:number;attack:0|1;/** the way the attack runs on the whole ground */dir:Dir;actors:Actor[];ball:BallKey[];cues:Cue[];outcome:MomentKind;moment:Moment;spectacular:boolean}
 
 const GX=34,POST_L=30.34,POST_R=37.66
 const clamp=(v:number,a:number,b:number)=>Math.max(a,Math.min(b,v))
@@ -45,7 +55,7 @@ class Sb{
  actors=new Map<string,Actor>();ball:BallKey[]=[];cues:Cue[]=[];end=0
  constructor(readonly r:()=>number){}
  add(id:string,team:0|1|-1,role:Actor['role'],man:Man|null,x:number,y:number,pose:Pose='stand'){
-  this.actors.set(id,{id,team,role,no:man?.no??0,name:man?.name??'',kit:man?.kit??null,skin:Math.floor(this.r()*5),hair:Math.floor(this.r()*5),keys:[{t:0,x,y,pose}]});return id
+  this.actors.set(id,{id,team,role,no:man?.no??0,name:man?.name??'',kit:man?.kit??null,skin:Math.floor(this.r()*5),hair:Math.floor(this.r()*5),keys:[{t:0,x,y,pose}],...(man?{pid:man.id}:{})});return id
  }
  last(id:string){const k=this.actors.get(id)!.keys;return k[k.length-1]!}
  go(id:string,t:number,x:number,y:number,pose:Pose='run'){const a=this.actors.get(id);if(!a)return;const l=this.last(id);if(t<=l.t)t=l.t+.05;a.keys.push({t,x:clamp(x,-2,70),y:clamp(y,-3,62),pose});this.end=Math.max(this.end,t)}
@@ -63,7 +73,7 @@ class Sb{
 export type Roles={scorer:Man;assist:Man;mates:Man[];keeper:Man;defs:Man[];foes:Man[]}
 
 /* ───────── endings ───────── */
-type Finish={outcome:MomentKind;height:'low'|'high'|'head'|'chip';power:number}
+type Finish={outcome:MomentKind;height:'low'|'high'|'head'|'chip';power:number;/** a penalty the keeper guesses wrong: he dives the other way */wrong?:boolean}
 /** the shot and what follows it; returns the time the scene can end */
 function finish(s:Sb,shooter:string,t:number,f:Finish,gk:string,blocker?:string):number{
  const r=s.r,from=s.pos(shooter,t),side=r()<.5?-1:1,low=f.height==='low'
@@ -74,8 +84,8 @@ function finish(s:Sb,shooter:string,t:number,f:Finish,gk:string,blocker?:string)
  const gkAt=s.pos(gk,t)
  switch(f.outcome){
   case 'goal':{
-   const tx=GX+side*(2.3+r()*1.1)
-   s.b(t+fly,tx,-.4,z,arc);s.go(gk,t+fly*.85,clamp(lerp(gkAt.x,tx,.6),GX-3,GX+3),.9,'dive');s.actors.get(gk)!.dive=side as -1|1
+   const tx=GX+side*(2.3+r()*1.1),dv=(f.wrong?-side:side) as -1|1
+   s.b(t+fly,tx,-.4,z,arc);s.go(gk,t+fly*.85,f.wrong?GX+dv*2.6:clamp(lerp(gkAt.x,tx,.6),GX-3,GX+3),.9,'dive');s.actors.get(gk)!.dive=dv
    s.cue(t+fly,'net');s.cue(t+fly,'goal',shooter);s.b(t+fly+.35,tx-side*.4,-1.6,0);s.hold(gk,t+fly+1.4,'down')
    // the scorer wheels away to the corner flag; his mates follow him
    const flag=from.x<GX?3:65,end=t+fly+2.6
@@ -101,7 +111,8 @@ function finish(s:Sb,shooter:string,t:number,f:Finish,gk:string,blocker?:string)
   }
   default:{ // miss: wide or over
    const over=r()<.4,tx=over?GX+side*r()*3:GX+side*(4.6+r()*3)
-   s.b(t+fly,tx,-.2,over?2.9+r():z,arc+(over?.6:0));s.b(t+fly+.5,tx+side*1.5,-6,over?3:0);s.go(gk,t+fly,clamp(lerp(gkAt.x,tx,.35),GX-3,GX+3),1.1,'stand')
+   s.b(t+fly,tx,-.2,over?2.9+r():z,arc+(over?.6:0));s.b(t+fly+.5,tx+side*1.5,-6,over?3:0)
+   if(f.wrong!==undefined){s.go(gk,t+fly,GX-side*2.4,.9,'dive');s.actors.get(gk)!.dive=(-side) as -1|1}else s.go(gk,t+fly,clamp(lerp(gkAt.x,tx,.35),GX-3,GX+3),1.1,'stand')
    return t+fly+1.2
   }
  }
@@ -156,22 +167,54 @@ const BUILDS:Record<Shape,Build>={
   s.b(0,sx,29.4);s.carry(ids.sc,0,.6);s.cue(.1,'tag',ids.sc);s.b(1,GX-w*3,22.4,0);s.go(ids.sc,1.6,GX+w*1,17);s.go(ids.d1,1.6,GX+w*2,20)
   s.b(1.55,GX+w*.5,16.6,0);s.cue(1,'tag',ids.as);s.go(ids.as,1.8,GX-w*4,19,'stand');s.carry(ids.sc,1.6,2.2);s.go(ids.sc,2.2,GX+w*1.5,13);s.go(ids.d3,2.1,GX+w*2,10);s.keeper(ids.gk,0,2.2)
   return {end:finish(s,ids.sc,2.3,f,ids.gk,f.outcome==='block'?ids.d3:undefined),variant:'a one-two',spectacular:false}},
- corner:(s,R,f)=>{const r=s.r,w=W(r),cx=w<0?0:68
-  cast(s,R,s.att,{sc:[GX+w*3,15],as:[cx,0],m1:[GX-w*4,13],m2:[GX,10],d:[[GX+w*2,7],[GX-w*3,6],[GX,8],[GX+w*6,5]]})
-  s.b(0,cx-w*.4,.4);s.hold(ids.as,.7,'stand');s.cue(.1,'caption',undefined,'Corner');s.cue(.6,'tag',ids.as);s.hold(ids.as,.9,'kick');s.cue(.9,'kick',ids.as)
-  const hx=GX+w*(r()*4-2),hy=5.5+r()*3;s.go(ids.sc,2.1,hx,hy);s.go(ids.m1,2,GX-w*1,7);s.go(ids.m2,2,GX+w*1,4);s.go(ids.d1,2.1,hx+w*.6,hy-.6);s.go(ids.d2,2,GX-w*2,4);s.go(ids.d3,2,GX,6)
-  s.b(2.15,hx,hy,2.1,6);s.cue(1.2,'tag',ids.sc);s.keeper(ids.gk,0,2)
-  return {end:finish(s,ids.sc,2.15,{...f,height:'head',power:.7},ids.gk,f.outcome==='block'?ids.d1:undefined),variant:'from a corner',spectacular:false}},
- 'free-kick':(s,R,f)=>{const r=s.r,w=W(r),fx=GX+w*(2+r()*9),fy=21+r()*6
-  cast(s,R,s.att,{sc:[fx-w*1.2,fy+2],as:[fx+w*2,fy+1],m1:[GX+w*6,14],d:[[lerp(fx,GX,.4)-1,fy-9],[lerp(fx,GX,.4),fy-9.1],[lerp(fx,GX,.4)+1,fy-9],[lerp(fx,GX,.4)+2,fy-8.9]]})
-  s.b(0,fx,fy);s.cue(.1,'caption',undefined,'Free kick');s.cue(.3,'tag',ids.sc);s.go(ids.sc,1.2,fx-w*.3,fy+.3);s.keeper(ids.gk,0,1.2)
-  for(const d of [ids.d1,ids.d2,ids.d3,ids.d4])s.go(d,1.5,s.last(d).x,s.last(d).y,'head')
-  return {end:finish(s,ids.sc,1.3,{...f,height:'high',power:1.05},ids.gk,f.outcome==='block'?ids.d2:undefined),variant:'a free kick over the wall',spectacular:true}},
+ corner:(s,R,f)=>{const r=s.r,w=W(r),cx=w<0?0:68,flick=r()<.4&&R.mates.length>0
+  cast(s,R,s.att,{sc:flick?[GX-w*4,12]:[GX+w*3,15],as:[cx,0],m1:flick?[GX+w*1,9]:[GX-w*4,13],m2:[GX,10],d:[[GX+w*2,7],[GX-w*3,6],[GX,8],[GX+w*6,5]]})
+  s.add('ref',-1,'ref',null,GX-w*8,19)
+  s.b(0,cx-w*.4,.4);s.go(ids.as,.5,cx+w*1.6,-1.2,'walk');s.hold(ids.as,.8,'stand');s.cue(.1,'caption',undefined,'Corner');s.cue(.6,'tag',ids.as);s.cue(.8,'whistle')
+  s.go(ids.as,1.1,cx-w*.2,.2,'run');s.b(1.14,cx-w*.4,.4);s.hold(ids.as,1.15,'kick');s.cue(1.15,'kick',ids.as);s.keeper(ids.gk,0,1.2)
+  if(flick){
+   // the near post: the first man glances it on, the scorer arrives at the far post
+   const nx=GX+w*3.4,ny=4.2+r(),fx=GX-w*(2+r()*1.5),fy=3+r()*1.6
+   s.go(ids.m1,2,nx,ny);s.b(2.05,nx,ny,1.9,2.4);if(s.actors.has(ids.m1))s.hold(ids.m1,2.1,'head');s.cue(2.05,'kick',ids.m1);s.go(ids.d1,2,nx+w*.7,ny-.6)
+   s.go(ids.sc,2.65,fx,fy);s.go(ids.d2,2.6,fx-w*.8,fy-.5);s.go(ids.m2,2.4,GX,7);s.go(ids.d3,2.4,GX+w*.5,5);s.b(2.7,fx,fy,1.3,.8);s.cue(1.6,'tag',ids.sc);s.go(ids.gk,2.3,GX+w*2,1.1)
+   return {end:finish(s,ids.sc,2.7,{...f,height:'head',power:.6},ids.gk,f.outcome==='block'?ids.d2:undefined),variant:'a corner flicked on at the near post',spectacular:true}
+  }
+  const hx=GX+w*(r()*4-2),hy=5.5+r()*3;s.go(ids.sc,2.35,hx,hy);s.go(ids.m1,2.2,GX-w*1,7);s.go(ids.m2,2.2,GX+w*1,4);s.go(ids.d1,2.35,hx+w*.6,hy-.6);s.go(ids.d2,2.2,GX-w*2,4);s.go(ids.d3,2.2,GX,6)
+  s.b(2.4,hx,hy,2.1,6);s.cue(1.4,'tag',ids.sc);s.keeper(ids.gk,1.2,2.3)
+  return {end:finish(s,ids.sc,2.4,{...f,height:'head',power:.7},ids.gk,f.outcome==='block'?ids.d1:undefined),variant:'from a corner',spectacular:false}},
+ 'free-kick':(s,R,f)=>{const r=s.r,w=W(r)
+  // the wall is paced out at 9.15 m on the line from the ball to the middle of the goal
+  const wall=(bx:number,by:number,n:number)=>{const dx=GX-bx,dy=-by,d=Math.hypot(dx,dy)||1,ux=dx/d,uy=dy/d,cx=bx+ux*9.15,cy=by+uy*9.15;return Array.from({length:n},(_,i)=>[cx+(-uy)*(i-(n-1)/2)*.7,cy+ux*(i-(n-1)/2)*.7] as [number,number])}
+  if(r()<.42){
+   // swung in from wide
+   const fx=GX+w*(19+r()*8),fy=15+r()*10,wl=wall(fx,fy,2)
+   cast(s,R,s.att,{sc:[GX-w*1,15],as:[fx+w*1.5,fy+1.8],m1:[GX+w*4,13.5],m2:[GX-w*6,12],d:[[GX+w*.5,11],[GX+w*5,10],wl[0]!,wl[1]!]})
+   s.add('ref',-1,'ref',null,fx-w*3,fy+3)
+   s.b(0,fx,fy);s.cue(.1,'caption',undefined,'Free kick');s.cue(.3,'tag',ids.as);s.go('ref',.9,wl[0]![0]-w*1,wl[0]![1]+1,'walk');s.cue(1.1,'whistle')
+   s.go(ids.as,1.5,fx+w*.3,fy+.4,'run');s.b(1.54,fx,fy);s.hold(ids.as,1.55,'kick');s.cue(1.55,'kick',ids.as);s.keeper(ids.gk,0,1.6)
+   for(const d of [ids.d3,ids.d4])if(s.actors.has(d))s.go(d,1.7,s.last(d).x,s.last(d).y,'head')
+   const hx=GX+w*(r()*5-2),hy=6+r()*4;s.go(ids.sc,2.5,hx,hy);s.go(ids.d1,2.5,hx+w*.7,hy-.7);s.go(ids.m1,2.45,GX+w*3,6);s.go(ids.m2,2.45,GX-w*4,7);s.go(ids.d2,2.4,GX+w*2,5)
+   s.b(2.55,hx,hy,1.9,4.2);s.cue(1.8,'tag',ids.sc)
+   return {end:finish(s,ids.sc,2.55,{...f,height:'head',power:.72},ids.gk,f.outcome==='block'?ids.d1:undefined),variant:'a free kick swung into the box',spectacular:false}
+  }
+  const fx=GX+w*(2+r()*9),fy=20+r()*7,wl=wall(fx,fy,4)
+  cast(s,R,s.att,{sc:[fx-w*1.4,fy+2.6],as:[fx+w*2,fy+1],m1:[GX+w*7,14],d:wl})
+  s.add('ref',-1,'ref',null,fx+w*4,fy+2)
+  s.b(0,fx,fy);s.cue(.1,'caption',undefined,'Free kick');s.cue(.3,'tag',ids.sc);s.go('ref',.9,lerp(fx,wl[0]![0],.9)+w*1.6,lerp(fy,wl[0]![1],.9),'walk');s.go('ref',1.3,fx+w*5,fy-3,'walk');s.cue(1.3,'whistle')
+  s.hold(ids.sc,1.35,'stand');s.go(ids.sc,1.75,fx-w*.3,fy+.35,'run');s.b(1.79,fx,fy);s.go(ids.as,1.5,fx+w*1.2,fy+.6,'run');s.keeper(ids.gk,0,1.75)
+  for(const d of [ids.d1,ids.d2,ids.d3,ids.d4])if(s.actors.has(d))s.go(d,1.85,s.last(d).x,s.last(d).y,'head')
+  return {end:finish(s,ids.sc,1.8,{...f,height:'high',power:1.05},ids.gk,f.outcome==='block'?ids.d2:undefined),variant:'a free kick over the wall',spectacular:true}},
  penalty:(s,R,f)=>{const r=s.r
-  cast(s,R,s.att,{sc:[GX-1.5,14],as:[GX-10,19],m1:[GX+9,19],d:[[GX-6,19],[GX+5,20],[GX+12,18]]})
-  s.b(0,GX,11);s.cue(.1,'caption',undefined,'Penalty');s.cue(.4,'tag',ids.sc);s.go(ids.sc,1.6,GX-.4,11.6,'run');s.hold(ids.gk,1.5,'stand')
+  // the spot, the men outside the box and the arc, the keeper on his line
+  cast(s,R,s.att,{sc:[GX-1.2,13.2],as:[GX-9,18.6],m1:[GX+8,18.9],m2:[GX+3,19.7],d:[[GX-5,18.8],[GX+5.5,19.3],[GX+11,18.5],[GX-12,18.9]]})
+  s.add('ref',-1,'ref',null,GX+7,14)
+  s.b(0,GX,11);s.cue(.1,'caption',undefined,'Penalty');s.cue(.3,'tag',ids.sc)
+  s.go(ids.sc,.9,GX-1.7,15.4,'walk');s.hold(ids.sc,1.6,'stand')
+  for(let t=.35,k=0;t<=1.95;t+=.35,k++)s.go(ids.gk,t,GX+(k%2?.6:-.6),.5,'stand')
+  s.cue(1.7,'whistle');s.go(ids.sc,2.35,GX-.5,11.7,'run');s.b(2.39,GX,11)
+  for(const id of [ids.as,ids.m1,ids.m2,ids.d1,ids.d2,ids.d3,ids.d4])if(s.actors.has(id)){const l=s.last(id);s.go(id,2.7,l.x,l.y-2.4)}
   const out=f.outcome==='block'?'save':f.outcome
-  return {end:finish(s,ids.sc,1.65,{...f,outcome:out,height:r()<.3?'high':'low',power:1.1},ids.gk),variant:'from the penalty spot',spectacular:false}},
+  return {end:finish(s,ids.sc,2.4,{...f,outcome:out,height:r()<.25?'high':'low',power:1.15,wrong:out==='goal'?r()<.65:r()<.5},ids.gk),variant:'from the penalty spot',spectacular:false}},
  counter:(s,R,f)=>{const r=s.r,w=W(r)
   cast(s,R,s.att,{sc:[GX+w*8,52],as:[GX-w*2,54],m1:[GX-w*12,50],d:[[GX+w*2,38],[GX-w*6,36]]})
   s.b(0,GX-w*2,53.4);s.cue(.1,'caption',undefined,'On the break');s.cue(.2,'tag',ids.as)
@@ -224,6 +267,31 @@ function offsideScene(s:Sb,R:Roles):{end:number;variant:string}{
  return {end:3,variant:'offside'}
 }
 
+/* ───────── the rest of the ground ───────── */
+/**
+ * Everybody the move does not need, standing where his side would be: the attacking side's keeper in his own goal (y ≈ 101 is
+ * four metres off the far goal line), its back line around halfway, its midfield behind the ball; the defending side's midfield
+ * tracking back and its forwards on halfway waiting for the break. They jog a few metres with the play and are never named.
+ */
+function fillGround(s:Sb,reel:Reel,end:number){
+ const used=new Set([...s.actors.values()].map(a=>a.pid).filter((x):x is string=>!!x)),r=s.r
+ const b0=s.ball[0]??{x:GX,y:20},b1=s.ball[s.ball.length-1]??b0,att=s.att,def=(att?0:1) as 0|1
+ for(const team of [att,def] as const){
+  const t=reel.teams[team]!,men=t.lineup.filter(p=>!p.bench&&!used.has(p.id)&&!(team===def&&p.pos==='GK')).slice(0,7)
+  men.forEach((p,i)=>{
+   const lane=8+((i*17+(team?9:0))%52)+r()*4
+   let x=lane,y:number
+   if(p.pos==='GK'){x=GX+(r()-.5)*2;y=101}
+   else if(team===att)y=p.pos==='DF'?52+r()*10:clamp(b0.y+7+r()*12,10,70)
+   else y=p.pos==='FW'?40+r()*14:clamp(b0.y*.75+3+r()*7,6,44)
+   const id=`x${team}${i}`;used.add(p.id)
+   s.actors.set(id,{id,team,role:p.pos==='GK'?'gk':'out',no:p.no,name:'',kit:p.pos==='GK'?t.keeper:p.kit,skin:Math.floor(r()*5),hair:Math.floor(r()*5),pid:p.id,extra:true,
+    keys:p.pos==='GK'?[{t:0,x,y,pose:'stand'},{t:end,x:x+(b1.x-GX)*.04,y,pose:'stand'}]
+     :[{t:0,x,y,pose:'stand'},{t:end*.55,x:lerp(x,b1.x,.12),y:y-(team===att?2.6:1.8),pose:'stand'},{t:end,x:lerp(x,b1.x,.18),y:y-(team===att?3.4:2.2),pose:'stand'}]})
+  })
+ }
+}
+
 /* ───────── the reel → scenes ───────── */
 const pick=<T>(xs:readonly T[],r:()=>number)=>xs[Math.floor(r()*xs.length)]!
 function rolesFor(reel:Reel,m:Moment,r:()=>number):Roles{
@@ -256,9 +324,10 @@ export function sceneFor(reel:Reel,m:Moment,index:number):Scene{
   if(!m.shape&&!m.header){const total=GOAL_SHAPES.reduce((a,x)=>a+WEIGHTS[x],0);let x=r()*total;for(const g of GOAL_SHAPES){x-=WEIGHTS[g];if(x<0){shape=g;break}}}
   const o=BUILDS[shape](s,R,{outcome:m.kind,height:'low',power:1});end=o.end;variant=o.variant;spectacular=o.spectacular
  }
+ fillGround(s,reel,Math.max(end,s.end))
  // a mirror half the time: the same move down the other wing
  if(r()<.5){for(const a of s.actors.values())for(const k of a.keys)k.x=68-k.x;for(const b of s.ball)b.x=68-b.x;for(const a of s.actors.values())if(a.dive)a.dive=(-a.dive) as -1|1}
- return {id:`${reel.id}:${index}`,variant,duration:Math.max(end,s.end)+.4,attack:s.att,actors:[...s.actors.values()],ball:s.ball,cues:s.cues.sort((a,b)=>a.t-b.t),outcome:m.kind,moment:m,spectacular}
+ return {id:`${reel.id}:${index}`,variant,duration:Math.max(end,s.end)+.4,attack:s.att,dir:attackDir(m.minute,s.att),actors:[...s.actors.values()],ball:s.ball,cues:s.cues.sort((a,b)=>a.t-b.t),outcome:m.kind,moment:m,spectacular}
 }
 /** which moments a reel shows: every goal and red card, injuries, and a few chances and bookings so a 0-0 still has a story */
 export function storyOf(reel:Reel,max=10):Moment[]{
@@ -266,12 +335,16 @@ export function storyOf(reel:Reel,max=10):Moment[]{
  const r=rng(hash(`${reel.seed}:story`)),room=Math.max(2,max-must.length),extra=[...rest].sort((a,b)=>(a.kind==='yellow'?1:0)-(b.kind==='yellow'?1:0)||r()-.5).slice(0,room)
  return [...must,...extra].sort((a,b)=>a.minute-b.minute).slice(0,Math.max(max,must.length))
 }
-export function celebrationFor(reel:Reel,m:Moment,scene:Scene,all:readonly Moment[]):'goal'|'hattrick'|'fire-goal'|null{
+/** after EVERY goal something plays (owner, 13.10.2026): the film for the side whose match it is, the muted "against" card for the other side */
+export function goalGraphicFor(reel:Reel,m:Moment,scene:Scene,all:readonly Moment[]):GoalGraphic|null{
  if(m.kind!=='goal')return null
- if(reel.mine!==null&&m.side!==reel.mine)return null
- const mine=all.filter(x=>x.kind==='goal'&&x.side===m.side&&x.player&&x.player===m.player&&x.minute<=m.minute).length
- if(mine===3)return 'hattrick'
- return scene.spectacular?'fire-goal':'goal'
+ const third=!!m.player&&all.filter(x=>x.kind==='goal'&&x.side===m.side&&x.player===m.player&&x.minute<=m.minute).length===3
+ if(reel.mine!==null&&m.side!==reel.mine)return {kind:'against',hattrick:third}
+ return {kind:'film',film:third?'hattrick':scene.spectacular?'fire-goal':'goal'}
+}
+/** the film for a goal, when the goal is the watching side's (null for the other side's — they get the "against" card) */
+export function celebrationFor(reel:Reel,m:Moment,scene:Scene,all:readonly Moment[]):'goal'|'hattrick'|'fire-goal'|null{
+ const g=goalGraphicFor(reel,m,scene,all);return g?.kind==='film'?g.film as 'goal'|'hattrick'|'fire-goal':null
 }
 export function closingFor(reel:Reel):'win'|'loss'|'game-over'|'champion'|null{
  if(reel.mine===null)return null

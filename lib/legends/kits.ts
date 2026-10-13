@@ -3,6 +3,8 @@ import {kitViews} from '@/lib/clubs/gate-content'
 import {loadClub} from '@/lib/clubs/resolver'
 import {rumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {livery} from '@/lib/club-livery'
+import {documentedCloth,type ClothSpec} from '@/lib/clubs/kit-model'
+import {crestFor} from '@/lib/clubs/crest'
 import {legendsReel,liveReel,type ClubKit} from './reel'
 import {pixelKit} from '@/lib/highlights/kit'
 import type {Career} from './types'
@@ -18,7 +20,10 @@ const cache=g.legendsKits??=new Map()
 export async function clubKit(club:string):Promise<ClubKit|undefined>{
  const r=await loadClub(club).catch(()=>null);if(!r)return undefined
  const hit=cache.get(club);if(hit&&hit.key===r.data.version)return hit.kit
- const kit={wardrobe:rumbleWardrobe(kitViews(r.data),()=>false),primary:livery(club)?.primary??'#1C2F93'}
+ const views=kitViews(r.data),cloth:Record<string,ClothSpec>={}
+ // the garment renderer's spec of each documented kit it can draw faithfully: colours, cut, maker and sponsor; the crest when we hold one
+ for(const k of views){const c=documentedCloth(k,()=>false);if(c)cloth[k.id]={...c,crest:!!crestFor(club)}}
+ const kit={wardrobe:rumbleWardrobe(views,()=>false),primary:livery(club)?.primary??'#1C2F93',cloth}
  cache.set(club,{key:r.data.version,kit});return kit
 }
 /** the view, with the reel of the manager's last result attached — the theatre plays it */
