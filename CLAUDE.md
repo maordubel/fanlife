@@ -3154,3 +3154,7 @@ Owner: "set everything right and comfortable for future work". Four agents on on
 2. **A legends page imports `styles.ts` only**; a feature adds ONE line there for its own CSS file (`tests/legends/team-league.test.ts` fails on a sheet the index misses).
 3. **An agent never numbers a rule in CLAUDE.md itself:** the rule text goes at the end of its PR description and the merger appends it in merge order.
 4. **Merge order = file overlap:** isolated PRs first (visuals, data), then the ones touching `career.ts`/`CareerApp.tsx`, each rebased on the new main and re-tested before the next. A test that fails after a rebase is read, not muted (rule 65).
+
+## 121 · One face per name: Oswald and Anton carry every Balkan letter (13.10.2026)
+
+Owner, shown seven faces (`font-options` sheet): **Oswald** for names and editorial heads (`--mag-condensed`, Karantina stays behind it for Hebrew), **Anton** for big headings (`--mag-display`). Karantina's and Bowlby One's Latin did not really carry Č/Ž/Ć/Đ, so the browser borrowed those letters from another face. Bowlby One stays the FAN LIFE wordmark only (`--mag-brand`: `.mag-logo`, `.mag-masthead`). Files are self-hosted latin + latin-ext woff2 in `public/fonts/`; a new display face must carry latin-ext before it ships. The Worker's Hebrew faces (`app/globals.css`, share cards) are untouched.
