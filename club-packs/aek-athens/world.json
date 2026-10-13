@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "clubId": "aek-athens",
  "review": "cross-source-2026-10-09",
- "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the colours line (the sources all name the colours with a word the house word list forbids, and the nickname is kept in its Greek form only); the exact founding day (one publisher); any crest history (the 1982 redesign is a single source); the other supporters' groups and anything about them beyond the name of the gate; any motto (none found).",
+ "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the colours line (the sources all name the colours with a word the house word list forbids, and the nickname is kept in its Greek form only); the exact founding day (one publisher); any crest history (the 1982 redesign is a single source); the other supporters' groups and anything about them beyond the name of the gate; any motto (none found). Corrected 13.10.2026: a 2002 Roma-ultras match preview (never names Gate 21) and Brighton's match-preview article were dropped as sources; every line keeps two independent publishers.",
  "voice": {
   "welcome": "Welcome to the Union's house.",
   "kicker": "Athens · The double-headed eagle"
@@ -71,10 +71,6 @@
    {
     "publisher": "Greek City Times",
     "url": "https://greekcitytimes.com/2022/09/30/the-byzantine-eagle-has-landed/"
-   },
-   {
-    "publisher": "Brighton & Hove Albion",
-    "url": "https://www.brightonandhovealbion.com/news/3691282/who-are-aek-athens"
    }
   ]
  },
@@ -89,10 +85,6 @@
    {
     "publisher": "Football History",
     "url": "https://footballhistory.org/club/aek.html"
-   },
-   {
-    "publisher": "Brighton & Hove Albion",
-    "url": "https://www.brightonandhovealbion.com/news/3691282/who-are-aek-athens"
    }
   ]
  },
@@ -101,7 +93,7 @@
   "local": "Θύρα 21",
   "script": "el",
   "tab": "Gate 21",
-  "line": "Gate 21 is the home end of the club's best-known supporters' group, Original 21.",
+  "line": "Gate 21 is where Original 21, the club's best-known supporters' group, stands.",
   "confidence": 2,
   "sources": [
    {
@@ -111,10 +103,6 @@
    {
     "publisher": "Greek City Times",
     "url": "https://greekcitytimes.com/2023/04/27/american-youtuber-aek-atmosphere/amp/?p=248085"
-   },
-   {
-    "publisher": "AS Roma fan site",
-    "url": "https://www.asromaultras.org/presentazioneaek.html"
    }
   ]
  },

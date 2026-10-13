@@ -5233,11 +5233,11 @@
   },
   "zrinjski-mostar": {
    "quotaMode": "full",
-   "size": 249,
+   "size": 255,
    "quota": {
-    "1": 82,
-    "2": 87,
-    "3": 50,
+    "1": 85,
+    "2": 89,
+    "3": 51,
     "4": 20,
     "5": 10
    },
@@ -6291,12 +6291,12 @@
      "reviewedAt": "2026-10-10"
     },
     "zrinjski-mostar:wv-09242fd62c": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 255 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "zrinjski-mostar:wv-592705ddc9": {
      "priceM": 1,
@@ -6811,12 +6811,12 @@
      "reviewedAt": "2026-10-10"
     },
     "zrinjski-mostar:wv-0ff609046c": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "new-member",
-     "rationale": "joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 255 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "zrinjski-mostar:wv-c7d546f3ac": {
      "priceM": 1,
@@ -7233,6 +7233,54 @@
      "assignment": "owner-pinned",
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
+    },
+    "nft-46898": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 255 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "nft-56120": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "nft-57799": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 255 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "nft-80273": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "nft-94848": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "nft-95117": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     }
    }
   },
@@ -35002,12 +35050,12 @@
   },
   "st-pauli": {
    "quotaMode": "full",
-   "size": 523,
+   "size": 601,
    "quota": {
-    "1": 183,
-    "2": 183,
-    "3": 105,
-    "4": 42,
+    "1": 213,
+    "2": 210,
+    "3": 120,
+    "4": 48,
     "5": 10
    },
    "players": {
@@ -36236,12 +36284,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:p-dh-08079c9cc2b9": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.752 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. score 0.752 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:p-dh-8ee9dc1f04d6": {
      "priceM": 2,
@@ -36380,20 +36428,20 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:p-dh-0bb36c09c0ea": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.628 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. score 0.628 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:p-dh-18d9b2ab6a35": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. score 0.628 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. score 0.628 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:p-dh-3066c1a4cb56": {
      "priceM": 2,
@@ -36548,12 +36596,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:p-dh-0f0dc34072bd": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.508 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. score 0.508 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:p-dh-1229df6cb509": {
      "priceM": 1,
@@ -37412,12 +37460,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-499a40ee32": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-7c1f2db1e8": {
      "priceM": 3,
@@ -37436,20 +37484,20 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-f66b06402f": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-a04194c5b6": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-af33ebde41": {
      "priceM": 4,
@@ -37460,12 +37508,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-ea6003db28": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-9336805542": {
      "priceM": 3,
@@ -37476,12 +37524,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-64396d8147": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-8783435d4f": {
      "priceM": 2,
@@ -37604,12 +37652,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-331b4b34eb": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-9ab9bcaff8": {
      "priceM": 2,
@@ -37668,12 +37716,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-defebc0cb5": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-e6d22dc173": {
      "priceM": 3,
@@ -37740,20 +37788,20 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-49f62ce713": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
-    },
-    "st-pauli:wv-7dace7d8c7": {
      "priceM": 3,
      "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "st-pauli:wv-7dace7d8c7": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €3M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-631bc8080e": {
      "priceM": 2,
@@ -37780,12 +37828,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-1fd7154c5d": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-8454c7352d": {
      "priceM": 3,
@@ -37908,12 +37956,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-514fa4e882": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €3M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-a8d7dbbfe6": {
      "priceM": 1,
@@ -37948,12 +37996,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-84ea2daf5f": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-dfa8422d56": {
      "priceM": 3,
@@ -38012,12 +38060,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-18c5488d47": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-0bfc245282": {
      "priceM": 2,
@@ -38036,12 +38084,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-197f661d84": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €3M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-ce2700b162": {
      "priceM": 1,
@@ -38148,12 +38196,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-91af28639b": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-b298623e1e": {
      "priceM": 1,
@@ -38348,12 +38396,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-4a9b08fbb1": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-46340c4d0a": {
      "priceM": 1,
@@ -38428,12 +38476,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-8a21c77351": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-2a36c47697": {
      "priceM": 4,
@@ -38468,12 +38516,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-267d402df8": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-2256fd4d2c": {
      "priceM": 1,
@@ -38780,12 +38828,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-608e53af93": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €3M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-f4931f5e4e": {
      "priceM": 2,
@@ -38812,12 +38860,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-afeffd85b8": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-a25c11d905": {
      "priceM": 1,
@@ -38892,12 +38940,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-2b3aa662d5": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €3M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-52b612231c": {
      "priceM": 2,
@@ -38932,12 +38980,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-a93d7357cf": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-2c9dbf8faf": {
      "priceM": 3,
@@ -38948,12 +38996,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-1035e3b47b": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 4,
+     "priceTier": "STAR",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €3M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-8b99b569bd": {
      "priceM": 2,
@@ -39028,12 +39076,12 @@
      "reviewedAt": "2026-10-10"
     },
     "st-pauli:wv-446a7c8c0b": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 3,
+     "priceTier": "LEADING",
      "locked": false,
      "assignment": "owner-pinned",
-     "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €2M. economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     },
     "st-pauli:wv-2ef0b358a3": {
      "priceM": 3,
@@ -39194,6 +39242,630 @@
      "assignment": "new-member",
      "rationale": "joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
+    },
+    "dfb-10668": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-10684": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-12674": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-211368": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-216429": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-21864": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-224320": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-231484": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-232199": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-232220": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-262029": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-276786": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-316668": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-331298": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-346658": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-353466": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-358197": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-358198": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-358918": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-366460": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-385675": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-391463": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-3954": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-398235": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-40905": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-41143": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-419149": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-43298": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44029": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44287": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44317": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44363": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44512": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44869": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44871": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44873": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44874": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44875": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44877": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44878": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44880": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-44986": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-45596": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-45747": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-45862": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-45863": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-45866": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-45867": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-46088": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-46089": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-46578": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-46587": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-47063": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-47064": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-47065": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-47066": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-47067": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-47068": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-47575": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-55061": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-55062": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-55063": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-55065": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-56292": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-56296": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-57071": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-67841": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-67949": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-68736": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-69096": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-69151": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-69169": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-69171": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-69311": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-69457": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-71873": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-72378": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
+    },
+    "dfb-72434": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
+     "reviewedAt": "2026-10-13"
     }
    }
   },

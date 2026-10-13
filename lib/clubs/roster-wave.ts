@@ -6,6 +6,8 @@ import pao from '@/club-packs/panathinaikos/wave-roster-2026-10-10.json'
 import stp from '@/club-packs/st-pauli/wave-roster-2026-10-10.json'
 import zri from '@/club-packs/zrinjski-mostar/wave-roster-2026-10-10.json'
 import hpt from '@/club-packs/hapoel-petah-tikva/wave-roster-2026-10-10.json'
+import stpPeople from '@/club-packs/st-pauli/wave-squad-people-2026-10-12.json'
+import zriPeople from '@/club-packs/zrinjski-mostar/wave-squad-people-2026-10-12.json'
 import hta from '@/club-packs/hapoel-tel-aviv/wave-roster-2026-10-10.json'
 import {norm} from '@/lib/fixtures/names'
 /**
@@ -16,9 +18,15 @@ import {norm} from '@/lib/fixtures/names'
  */
 type Wave={sources:Source[];players:Fact<ClubPlayer>[]}
 const WAVES:Record<string,Wave>={celtic:cel,'aek-athens':aek,olympiacos:oly,panathinaikos:pao,'st-pauli':stp,'zrinjski-mostar':zri,'hapoel-petah-tikva':hpt,'hapoel-tel-aviv':hta} as unknown as Record<string,Wave>
+// Squad-people wave (12.10.2026, owner-approved): DFB (St. Pauli, 78) and National Football Teams (Zrinjski, 6) men the club did not hold. Confidence 2, wired 13.10.2026.
+const PEOPLE:Record<string,Wave>={'st-pauli':stpPeople,'zrinjski-mostar':zriPeople} as unknown as Record<string,Wave>
 export function withRosterWave(id:string,data:ClubData):ClubData{
  if(id==='hapoel-tel-aviv')return data // Canonical Worker player master only; external waves require separate approval.
- const w=WAVES[id];if(process.env.ROSTER_WAVE_OFF||!w||!w.players.length||!data.players)return data
+ const r=WAVES[id],pp=PEOPLE[id];if(process.env.ROSTER_WAVE_OFF||!data.players)return data
+ const names=(p:Fact<ClubPlayer>)=>[p.value.name,...p.value.aliases].map(norm),ppNames=new Set((pp?.players??[]).flatMap(names))
+ // a man in both waves is dealt once, from the squad-people wave (confidence 2)
+ const w:Wave|undefined=r&&pp?{sources:[...r.sources,...pp.sources],players:[...pp.players,...r.players.filter(p=>!names(p).some(n=>ppNames.has(n)))]}:r??pp
+ if(!w||!w.players.length)return data
  const have=new Set<string>(),ids=new Set<string>()
  for(const p of data.players){ids.add(p.id);for(const n of [p.value.name,...p.value.aliases])have.add(norm(n))}
  const add=w.players.filter(p=>!ids.has(p.id)&&![p.value.name,...p.value.aliases].some(n=>have.has(norm(n))))
