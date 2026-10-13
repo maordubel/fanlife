@@ -122,6 +122,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const topAd=topAdAllowedOn(pathname)&&!closed&&((await readState().catch(()=>null))?.ads??DEFAULT_TOP_AD).topAd
   return (
     <html lang={master||otherTenant?sharedLocale:LOCALE} dir={master||otherTenant?localeDirection(sharedLocale):DIRECTION}>
+      <head><Analytics off={pathname==='/master'||pathname.startsWith('/master/')} /></head>
       <body className="font-body antialiased" data-no-ads={topAd?undefined:""}>
         <a
           href="#main"
@@ -149,7 +150,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           crossOrigin="anonymous"
           strategy="afterInteractive"
         /> : null}
-        <Analytics off={master} />
         {/* first-party measurement: views, starts, finishes, where people leave (lib/analytics) */}
         <GateMeter />
         <Suspense fallback={null}><NavPulse /></Suspense>
