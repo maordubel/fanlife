@@ -2,9 +2,14 @@
  "club": "celtic",
  "retrieved": "2026-10-09",
  "sources": {
-  "catalogue": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html"
+  "catalogue": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html",
+  "photos": {
+   "title": "Shirt photographs (Club Football Shirts archive and four retail shops) read by eye for seasons the catalogue lacks",
+   "readOn": "2026-10-13",
+   "note": "Shorts and socks are not visible in a shirt photograph and are not drawn; every kit is readUnsure."
+  }
  },
- "kitCount": 75,
+ "kitCount": 101,
  "catalogueKits": 75,
  "drawingOnlyKits": 0,
  "crossChecked": 0,
@@ -4082,6 +4087,1161 @@
    "verified": null,
    "readUnsure": false,
    "twin": []
+  },
+  {
+   "id": "photo-k-01",
+   "origin": "photo",
+   "season": "1986/87",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#f5f3ef",
+     "green": "#2db06f"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1986/89 Celtic Third Shirt (L) Umbro",
+     "image": "cultkits-1986-89-celtic-third-shirt-l-umbro.webp",
+     "page": "https://www.cultkits.com/products/1986-89-celtic-third-shirt-l-umbro"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-1986-89-celtic-third-shirt-l-umbro.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-02",
+   "origin": "photo",
+   "season": "1987/88",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#fcfbfc",
+     "green": "#0b9552"
+    },
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1987/89 Celtic Home Shirt (M) Umbro",
+     "image": "cultkits-1987-89-celtic-home-shirt-m-umbro12441.webp",
+     "page": "https://www.cultkits.com/products/1987-89-celtic-home-shirt-m-umbro12441"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-1987-89-celtic-home-shirt-m-umbro12441.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-03",
+   "origin": "photo",
+   "season": "1989/90",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "yellow",
+     "green"
+    ],
+    "hex": {
+     "yellow": "#eed16b",
+     "green": "#528258"
+    },
+    "measured": {
+     "stripes": 9
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "1989/91 CELTIC Vintage Umbro Away Football Shirt (M)",
+     "image": "footballshirtcollective-1989-91-celtic-vintage-umbro-away-football-shirt-m.webp",
+     "page": "https://footballshirtcollective.com/products/1989-91-celtic-vintage-umbro-away-football-shirt-m"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1989-91-celtic-vintage-umbro-away-football-shirt-m.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-04",
+   "origin": "photo",
+   "season": "1989/90",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "green": "#429a68"
+    },
+    "measured": {
+     "hoops": 4
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "1989/91 CELTIC Vintage Umbro Home Football Shirt (M)",
+     "image": "footballshirtcollective-1989-91-celtic-vintage-umbro-home-football-shirt-m.webp",
+     "page": "https://footballshirtcollective.com/products/1989-91-celtic-vintage-umbro-home-football-shirt-m"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1989-91-celtic-vintage-umbro-home-football-shirt-m.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-05",
+   "origin": "photo",
+   "season": "1991/92",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "green",
+     "white"
+    ],
+    "hex": {
+     "green": "#94cf8d",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "People's Friend",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "1991/92 Celtic Vintage Umbro Away Football Shirt (XL)",
+     "image": "footballshirtcollective-1991-92-celtic-vintage-umbro-away-football-shirt-xl.webp",
+     "page": "https://footballshirtcollective.com/products/1991-92-celtic-vintage-umbro-away-football-shirt-xl"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1991-92-celtic-vintage-umbro-away-football-shirt-xl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-06",
+   "origin": "photo",
+   "season": "1991/92",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#edf1f2",
+     "green": "#2d8557"
+    },
+    "measured": {
+     "hoops": 4
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "People's Friend",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "1991/92 Celtic Vintage Umbro Home Football Shirt (XL)",
+     "image": "footballshirtcollective-1991-92-celtic-vintage-umbro-home-football-shirt-xl.webp",
+     "page": "https://footballshirtcollective.com/products/1991-92-celtic-vintage-umbro-home-football-shirt-xl"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1991-92-celtic-vintage-umbro-home-football-shirt-xl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-07",
+   "origin": "photo",
+   "season": "1992/93",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "navy",
+     "green"
+    ],
+    "hex": {
+     "navy": "#1f5862",
+     "green": "#9dcabf"
+    },
+    "measured": {
+     "stripes": 9
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "1992/93 Celtic Vintage Umbro Away Football Shirt Jersey (XL)",
+     "image": "footballshirtcollective-1992-93-celtic-vintage-umbro-away-football-shirt-jersey-xl.webp",
+     "page": "https://footballshirtcollective.com/products/1992-93-celtic-vintage-umbro-away-football-shirt-jersey-xl"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1992-93-celtic-vintage-umbro-away-football-shirt-jersey-xl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-08",
+   "origin": "photo",
+   "season": "1993/94",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#f3f7ee",
+     "green": "#1c532a"
+    },
+    "measured": {
+     "hoops": 6
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1993/95 CELTIC HOME SHIRT (L) UMBRO",
+     "image": "cultkits-1993-95-celtic-home-shirt-l-umbro235.webp",
+     "page": "https://www.cultkits.com/products/1993-95-celtic-home-shirt-l-umbro235"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-1993-95-celtic-home-shirt-l-umbro235.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-09",
+   "origin": "photo",
+   "season": "1994/95",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "black",
+     "grey"
+    ],
+    "hex": {
+     "black": "#111622",
+     "grey": "#dee0e0"
+    },
+    "measured": {
+     "stripes": 5
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1994/95 CELTIC AWAY SHIRT (M) UMBRO",
+     "image": "cultkits-1994-95-celtic-away-shirt-m-umbro342.webp",
+     "page": "https://www.cultkits.com/products/1994-95-celtic-away-shirt-m-umbro342"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-1994-95-celtic-away-shirt-m-umbro342.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-10",
+   "origin": "photo",
+   "season": "1994/95",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#fafbf8",
+     "green": "#0a7742"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1994/95 Celtic Third Shirt (M) Umbro",
+     "image": "cultkits-1994-95-celtic-third-shirt-m-umbro346.webp",
+     "page": "https://www.cultkits.com/products/1994-95-celtic-third-shirt-m-umbro346"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-1994-95-celtic-third-shirt-m-umbro346.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-11",
+   "origin": "photo",
+   "season": "1995/96",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#fdfdf9",
+     "green": "#50c38f"
+    },
+    "measured": {
+     "hoops": 15
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1995/97 Celtic Home Shirt (L) Umbro",
+     "image": "cultkits-1995-97-celtic-home-shirt-l-umbro7963.webp",
+     "page": "https://www.cultkits.com/products/1995-97-celtic-home-shirt-l-umbro7963"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-1995-97-celtic-home-shirt-l-umbro7963.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-12",
+   "origin": "photo",
+   "season": "1996/97",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "black",
+     "yellow"
+    ],
+    "hex": {
+     "black": "#251f26",
+     "yellow": "#e4f36d"
+    },
+    "measured": {
+     "stripes": 5
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": null,
+   "sponsor": "CR Smith",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "1996-97 Celtic away football shirt XL",
+     "image": "footballshirtcollective-1996-97-celtic-away-football-shirt-xl.webp",
+     "page": "https://footballshirtcollective.com/products/1996-97-celtic-away-football-shirt-xl"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-1996-97-celtic-away-football-shirt-xl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-13",
+   "origin": "photo",
+   "season": "1997/98",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#fbfefb",
+     "green": "#279a4a"
+    },
+    "measured": {
+     "hoops": 9
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1997-99 Celtic Umbro Home Shirt M",
+     "image": "vintagefootballshirts-1997-99-celtic-umbro-home-shirt-m.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1997-99-celtic-umbro-home-shirt-m"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1997-99-celtic-umbro-home-shirt-m.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-14",
+   "origin": "photo",
+   "season": "1998/99",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "black",
+     "green"
+    ],
+    "hex": {
+     "black": "#1f1f21",
+     "green": "#a7d43f"
+    },
+    "measured": {
+     "hoops": 5
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1998-99 Celtic Umbro Away Shirt L",
+     "image": "vintagefootballshirts-1998-99-celtic-umbro-away-shirt-l.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1998-99-celtic-umbro-away-shirt-l"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1998-99-celtic-umbro-away-shirt-l.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-15",
+   "origin": "photo",
+   "season": "1999/00",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "black",
+     "green"
+    ],
+    "hex": {
+     "black": "#252527",
+     "green": "#b0e43e"
+    },
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "ntl:",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1999-00 Celtic Umbro Away Shirt XL",
+     "image": "vintagefootballshirts-1999-00-celtic-umbro-away-shirt-l-copy.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1999-00-celtic-umbro-away-shirt-l-copy"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-1999-00-celtic-umbro-away-shirt-l-copy.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-16",
+   "origin": "photo",
+   "season": "1999/00",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#fcfaf6",
+     "green": "#51a965"
+    },
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "ntl:",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1999/01 CELTIC HOME SHIRT (L) UMBRO",
+     "image": "cultkits-1999-01-celtic-home-shirt-l-umbro676.webp",
+     "page": "https://www.cultkits.com/products/1999-01-celtic-home-shirt-l-umbro676"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-1999-01-celtic-home-shirt-l-umbro676.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-17",
+   "origin": "photo",
+   "season": "2000/01",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "yellow",
+     "green"
+    ],
+    "hex": {
+     "yellow": "#e5c237",
+     "green": "#3c5e53"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "ntl:",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2000-02 Celtic Umbro Away Shirt L",
+     "image": "vintagefootballshirts-2000-02-celtic-umbro-away-shirt-l.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2000-02-celtic-umbro-away-shirt-l"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2000-02-celtic-umbro-away-shirt-l.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-18",
+   "origin": "photo",
+   "season": "2000/01",
+   "kind": "season",
+   "type": "gk",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "purple",
+     "black"
+    ],
+    "hex": {
+     "purple": "#4b2a7a",
+     "black": "#25262a"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "ntl:",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "2000/01 CELTIC Vintage Umbro GK Football Shirt Jersey (S) Douglas Gould",
+     "image": "footballshirtcollective-2000-01-celtic-vintage-umbro-gk-football-shirt-jersey-y-s-douglas-.webp",
+     "page": "https://footballshirtcollective.com/products/2000-01-celtic-vintage-umbro-gk-football-shirt-jersey-y-s-douglas-gould"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2000-01-celtic-vintage-umbro-gk-football-shirt-jersey-y-s-douglas-.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-19",
+   "origin": "photo",
+   "season": "2000/01",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#fcfcf9",
+     "green": "#469352"
+    },
+    "measured": {
+     "hoops": 3
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "ntl:",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "2000/01 Celtic Home Shirt (L) Umbro",
+     "image": "cultkits-2000-01-celtic-home-shirt-l-umbro6747.webp",
+     "page": "https://www.cultkits.com/products/2000-01-celtic-home-shirt-l-umbro6747"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-2000-01-celtic-home-shirt-l-umbro6747.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-20",
+   "origin": "photo",
+   "season": "2004/05",
+   "kind": "season",
+   "type": "special",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#eef0f4",
+     "green": "#58bc94"
+    },
+    "measured": {
+     "hoops": 6
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "2004/05 PETROV #19 Celtic Vintage Umbro European Football Shirt (XL) Bulgaria",
+     "image": "footballshirtcollective-2004-05-petrov-19-celtic-vintage-umbro-european-football-shirt-xl-.webp",
+     "page": "https://footballshirtcollective.com/products/2004-05-petrov-19-celtic-vintage-umbro-european-football-shirt-xl-bulgaria"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2004-05-petrov-19-celtic-vintage-umbro-european-football-shirt-xl-.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-21",
+   "origin": "photo",
+   "season": "2005/06",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#f0f5f1",
+     "green": "#014e17"
+    },
+    "measured": {
+     "hoops": 7
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "2005/07 CELTIC HOME SHIRT (S) NIKE",
+     "image": "cultkits-2005-07-celtic-home-shirt-s-nike5678.webp",
+     "page": "https://www.cultkits.com/products/2005-07-celtic-home-shirt-s-nike5678"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/cultkits-2005-07-celtic-home-shirt-s-nike5678.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-22",
+   "origin": "photo",
+   "season": "2006/07",
+   "kind": "season",
+   "type": "fourth",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "green": "#2d7248"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "2006/08 Nakamura #25 Celtic Vintage Nike European 4th Football Shirt (M)",
+     "image": "footballshirtcollective-2006-08-nakamura-25-celtic-vintage-nike-european-4th-football-shir.webp",
+     "page": "https://footballshirtcollective.com/products/2006-08-nakamura-25-celtic-vintage-nike-european-4th-football-shirt-m"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2006-08-nakamura-25-celtic-vintage-nike-european-4th-football-shir.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-23",
+   "origin": "photo",
+   "season": "2006/07",
+   "kind": "season",
+   "type": "special",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#f9fffb",
+     "green": "#25a644"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2006-08 Celtic Nike Player Issue European Shirt L/S XL",
+     "image": "vintagefootballshirts-2006-08-celtic-nike-player-issue-european-shirt-l-s-xl.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2006-08-celtic-nike-player-issue-european-shirt-l-s-xl"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2006-08-celtic-nike-player-issue-european-shirt-l-s-xl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-24",
+   "origin": "photo",
+   "season": "2008/09",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "hoops",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#ececec",
+     "green": "#2f9840"
+    },
+    "measured": {
+     "hoops": 6
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Nike",
+   "sponsor": "Carling",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2008-09 Celtic Nike Home Shirt *w/tags* XL",
+     "image": "vintagefootballshirts-2008-09-celtic-nike-home-shirt-w-tags-xl-64607.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2008-09-celtic-nike-home-shirt-w-tags-xl-64607"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2008-09-celtic-nike-home-shirt-w-tags-xl-64607.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-25",
+   "origin": "photo",
+   "season": "2010/11",
+   "kind": "season",
+   "type": "gk",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "black",
+     "grey"
+    ],
+    "hex": {
+     "black": "#1a1c20",
+     "grey": "#b8bcc4"
+    },
+    "measured": {
+     "stripes": 2
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Nike",
+   "sponsor": "Tennent's",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "2010/11 CELTIC Vintage Nike Goalkeeper Football Shirt Jersey (M) GK",
+     "image": "footballshirtcollective-2010-11-celtic-vintage-nike-goalkeeper-football-shirt-jersey-m-gk.webp",
+     "page": "https://footballshirtcollective.com/products/2010-11-celtic-vintage-nike-goalkeeper-football-shirt-jersey-m-gk"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/footballshirtcollective-2010-11-celtic-vintage-nike-goalkeeper-football-shirt-jersey-m-gk.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-26",
+   "origin": "photo",
+   "season": "2017/18",
+   "kind": "season",
+   "type": "fourth",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "pink",
+     "black"
+    ],
+    "hex": {
+     "pink": "#ec1a63",
+     "black": "#2f2d2d"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "New Balance",
+   "sponsor": "dafabet",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2017-18 Celtic New Balance Fourth Shirt M",
+     "image": "vintagefootballshirts-2017-18-celtic-new-balance-fourth-shirt-m.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2017-18-celtic-new-balance-fourth-shirt-m"
+    }
+   ],
+   "image": "/club-kits/celtic/shop/vintagefootballshirts-2017-18-celtic-new-balance-fourth-shirt-m.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
   }
- ]
+ ],
+ "photoKits": 26
 }

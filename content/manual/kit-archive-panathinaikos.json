@@ -2,9 +2,14 @@
  "club": "panathinaikos",
  "retrieved": "2026-10-09",
  "sources": {
-  "catalogue": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html"
+  "catalogue": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html",
+  "photos": {
+   "title": "Shirt photographs (Club Football Shirts archive and four retail shops) read by eye for seasons the catalogue lacks",
+   "readOn": "2026-10-13",
+   "note": "Shorts and socks are not visible in a shirt photograph and are not drawn; every kit is readUnsure."
+  }
  },
- "kitCount": 61,
+ "kitCount": 65,
  "catalogueKits": 61,
  "drawingOnlyKits": 0,
  "crossChecked": 57,
@@ -664,7 +669,7 @@
     "bands": true
    },
    "maker": "Kappa",
-   "sponsor": null,
+   "sponsor": "Stoiximan",
    "shortsSponsor": null,
    "sources": [
     "cof-panathinaikos-p4"
@@ -685,7 +690,12 @@
    "twin": [
     "fka-k-180159",
     "fka-k-69457"
-   ]
+   ],
+   "filled": {
+    "sponsor": [
+     "wave-kits-photos-2026-10-08.json"
+    ]
+   }
   },
   {
    "id": "cof-k-47",
@@ -1779,7 +1789,7 @@
     "bands": false
    },
    "maker": "Puma",
-   "sponsor": null,
+   "sponsor": "Pame Stoixima",
    "shortsSponsor": null,
    "sources": [
     "cof-panathinaikos-p2"
@@ -1800,7 +1810,12 @@
    "twin": [
     "fka-k-21393",
     "uefa-fka-k-21393"
-   ]
+   ],
+   "filled": {
+    "sponsor": [
+     "wave-kits-photos-2026-10-08.json"
+    ]
+   }
   },
   {
    "id": "cof-k-29",
@@ -1835,7 +1850,7 @@
     "bands": false
    },
    "maker": "Puma",
-   "sponsor": null,
+   "sponsor": "Pame Stoixima",
    "shortsSponsor": null,
    "sources": [
     "cof-panathinaikos-p2"
@@ -1855,7 +1870,12 @@
    "readUnsure": false,
    "twin": [
     "fka-k-21392"
-   ]
+   ],
+   "filled": {
+    "sponsor": [
+     "wave-kits-photos-2026-10-08.json"
+    ]
+   }
   },
   {
    "id": "cof-k-30",
@@ -1890,7 +1910,7 @@
     "bands": true
    },
    "maker": "Puma",
-   "sponsor": null,
+   "sponsor": "Pame Stoixima",
    "shortsSponsor": null,
    "sources": [
     "cof-panathinaikos-p2"
@@ -1911,7 +1931,12 @@
    "twin": [
     "fka-k-21391",
     "uefa-fka-k-21391"
-   ]
+   ],
+   "filled": {
+    "sponsor": [
+     "wave-kits-photos-2026-10-08.json"
+    ]
+   }
   },
   {
    "id": "cof-k-25",
@@ -3402,6 +3427,189 @@
    "twin": [
     "fka-k-50403"
    ]
+  },
+  {
+   "id": "photo-k-01",
+   "origin": "photo",
+   "season": "1996/97",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "green",
+     "white"
+    ],
+    "hex": {
+     "green": "#197563",
+     "white": "#f3f5f5"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "adidas",
+   "sponsor": "Interamerican",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1996/97 Panathinaikos L/S Home Shirt (L) Adidas",
+     "image": "cultkits-1996-97-panathinaikos-l-s-home-shirt-l-adidas-5m7tga1a.webp",
+     "page": "https://www.cultkits.com/products/1996-97-panathinaikos-l-s-home-shirt-l-adidas-5m7tga1a"
+    }
+   ],
+   "image": "/club-kits/panathinaikos/shop/cultkits-1996-97-panathinaikos-l-s-home-shirt-l-adidas-5m7tga1a.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-02",
+   "origin": "photo",
+   "season": "1999/00",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "green",
+     "white"
+    ],
+    "hex": {
+     "green": "#1c7653",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "adidas",
+   "sponsor": "Motor Oil Hellas",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1999-00 Panathinaikos adidas Home Shirt Sigurdsson #11 XL",
+     "image": "vintagefootballshirts-1999-00-panathinaikos-adidas-home-shirt-sigurdsson-11-xl.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1999-00-panathinaikos-adidas-home-shirt-sigurdsson-11-xl"
+    }
+   ],
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-1999-00-panathinaikos-adidas-home-shirt-sigurdsson-11-xl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": [],
+   "filled": {
+    "sponsor": [
+     "wave-kits-photos-2026-10-08.json"
+    ]
+   }
+  },
+  {
+   "id": "photo-k-03",
+   "origin": "photo",
+   "season": "2000/01",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "colours": [
+     "white",
+     "green"
+    ],
+    "hex": {
+     "white": "#fbfefb",
+     "green": "#3e7457"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "adidas",
+   "sponsor": "Winbank",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2000-01 Panathinaikos adidas Player Issue Away Shirt L/S *w/tags* XL",
+     "image": "vintagefootballshirts-2000-01-panathinaikos-adidas-player-issue-away-shirt-w-tags-xl.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2000-01-panathinaikos-adidas-player-issue-away-shirt-w-tags-xl"
+    }
+   ],
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-2000-01-panathinaikos-adidas-player-issue-away-shirt-w-tags-xl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": [],
+   "filled": {
+    "sponsor": [
+     "wave-kits-photos-2026-10-08.json"
+    ]
+   }
+  },
+  {
+   "id": "photo-k-04",
+   "origin": "photo",
+   "season": "2021/22",
+   "kind": "season",
+   "type": "gk",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "green",
+     "black"
+    ],
+    "hex": {
+     "green": "#0b5a69",
+     "black": "#2b2b2b"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Kappa",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2021-22 Panathinaikos Kappa Kombat Pro Goalkeeper Shirt XXL",
+     "image": "vintagefootballshirts-2021-22-panathinaikos-kappa-kombat-pro-goalkeeper-shirt-xxl.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2021-22-panathinaikos-kappa-kombat-pro-goalkeeper-shirt-xxl"
+    }
+   ],
+   "image": "/club-kits/panathinaikos/shop/vintagefootballshirts-2021-22-panathinaikos-kappa-kombat-pro-goalkeeper-shirt-xxl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
   }
- ]
+ ],
+ "photoKits": 4
 }

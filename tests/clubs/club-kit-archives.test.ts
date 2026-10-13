@@ -38,8 +38,10 @@ const DESIGNS=['plain','stripes','hoops','pinstripes','half-and-half','sash','ch
 describe.each(CLUBS)('$id: the files',({id,kits,file})=>{
  const j=read<Joined>(file)
  it(`holds ${kits} kits, each with an SVG, an icon and (for the catalogue's) its source image`,()=>{
-  expect(j.kits).toHaveLength(kits);expect(j.kitCount).toBe(kits)
-  expect(new Set(j.kits.map(k=>k.id)).size).toBe(kits)
+  // the catalogue's kits, plus the ones read from shirt photographs for seasons the catalogue lacks (origin 'photo', 13.10.2026)
+  const cat=j.kits.filter(k=>k.origin!=='photo')
+  expect(cat).toHaveLength(kits);expect(j.kitCount).toBe(j.kits.length)
+  expect(new Set(j.kits.map(k=>k.id)).size).toBe(j.kits.length)
   for(const k of j.kits){
    expect(existsSync(`public/club-kits/${id}/svg/${k.id}.svg`),`${k.id} svg`).toBe(true)
    expect(existsSync(`public/club-kits/${id}/icons/${k.id}.svg`),`${k.id} icon`).toBe(true)
@@ -63,7 +65,7 @@ describe.each(CLUBS)('$id: the files',({id,kits,file})=>{
  it('has a built page with the same number of kits',()=>{
   const html=readFileSync(`public/kit-archive/${id}/index.html`,'utf8')
   expect(html).toContain(`"club":{"id":"${id}"`);const folded=new Set(read<Joined>(file).kits.map(k=>[k.season,k.type,k.shirt.design,[...k.shirt.colours].sort().join('+'),(k.maker??'').toLowerCase()].join('|'))).size // one shirt is one card: repeats of the same shirt are folded onto the page
-  expect(html.match(/"origin":"/g)).toHaveLength(folded);expect(folded).toBeLessThanOrEqual(kits);expect(folded).toBeGreaterThan(kits-15)
+  expect(html.match(/"origin":"/g)).toHaveLength(folded);expect(folded).toBeLessThanOrEqual(read<Joined>(file).kitCount);expect(folded).toBeGreaterThan(kits-15)
  })
 })
 
@@ -98,7 +100,7 @@ describe.each(CLUBS.filter(c=>c.wave))('$id: the catalogue wave',({id,wave,file}
   const ids=new Set(w.sources.map(s=>s.id));for(const k of w.kits)for(const s of k.sources)expect(ids.has(s)).toBe(true)
   const j=read<Joined>(file);const withTwin=new Set(j.kits.filter(k=>k.twin&&k.twin.length).map(k=>k.id))
   for(const k of w.kits)expect(withTwin.has(k.id),`${k.id} duplicates a pack kit`).toBe(false)
-  expect(w.kits.length).toBe(j.kits.filter(k=>!(k.twin&&k.twin.length)).length)
+  expect(w.kits.length).toBe(j.kits.filter(k=>k.origin!=='photo'&&!(k.twin&&k.twin.length)).length)
  })
  it('paints in colours the swatch has',()=>{for(const k of w.kits){for(const c of k.value.construction.colors.split('/'))expect(SWATCH[c],`${k.id} ${c}`).toBeTruthy()}})
 })

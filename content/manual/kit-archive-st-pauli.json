@@ -2,9 +2,14 @@
  "club": "st-pauli",
  "retrieved": "2026-10-09",
  "sources": {
-  "catalogue": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html"
+  "catalogue": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html",
+  "photos": {
+   "title": "Shirt photographs (Club Football Shirts archive and four retail shops) read by eye for seasons the catalogue lacks",
+   "readOn": "2026-10-13",
+   "note": "Shorts and socks are not visible in a shirt photograph and are not drawn; every kit is readUnsure."
+  }
  },
- "kitCount": 46,
+ "kitCount": 54,
  "catalogueKits": 46,
  "drawingOnlyKits": 0,
  "crossChecked": 2,
@@ -2445,6 +2450,355 @@
    "verified": null,
    "readUnsure": true,
    "twin": []
+  },
+  {
+   "id": "photo-k-01",
+   "origin": "photo",
+   "season": "2022/23",
+   "kind": "season",
+   "type": "special",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "black",
+     "pink"
+    ],
+    "hex": {
+     "black": "#1f2029",
+     "pink": "#dc88af"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "special 2022/23",
+     "image": "special-2022-23-16.webp",
+     "page": "https://www.clubfootballshirts.com/fc-st-pauli-484372.html"
+    }
+   ],
+   "image": "/club-kits/st-pauli/cfs/special-2022-23-16.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-02",
+   "origin": "photo",
+   "season": "2023/24",
+   "kind": "season",
+   "type": "special",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "skyblue",
+     "pink"
+    ],
+    "hex": {
+     "skyblue": "#4ba2cb",
+     "pink": "#da8aa9"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "DIIY",
+   "sponsor": "congstar",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "special 2023/24",
+     "image": "special-2023-24-17.webp",
+     "page": "https://www.clubfootballshirts.com/fc-st-pauli-484372.html"
+    }
+   ],
+   "image": "/club-kits/st-pauli/cfs/special-2023-24-17.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-03",
+   "origin": "photo",
+   "season": "1992/93",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "brown"
+    ],
+    "hex": {
+     "white": "#eeeeec",
+     "brown": "#4b332b"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Hummel",
+   "sponsor": "Deutscher Ring",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1992-93 FC St. Pauli Patrick Home Shirt L/S *BNIB* L",
+     "image": "vintagefootballshirts-1992-93-fc-st-pauli-patrick-home-shirt-bnib.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1992-93-fc-st-pauli-patrick-home-shirt-bnib"
+    }
+   ],
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-1992-93-fc-st-pauli-patrick-home-shirt-bnib.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-04",
+   "origin": "photo",
+   "season": "1996/97",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#3645d7",
+     "black": "#2b2c30"
+    },
+    "measured": {
+     "stripes": 2
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": null,
+   "sponsor": "Böklunder",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1996-97 FC St. Pauli Away Shirt M/L",
+     "image": "vintagefootballshirts-1996-97-fc-st-pauli-away-shirt-m-l.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1996-97-fc-st-pauli-away-shirt-m-l"
+    }
+   ],
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-1996-97-fc-st-pauli-away-shirt-m-l.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-05",
+   "origin": "photo",
+   "season": "1997/98",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "cream",
+     "brown"
+    ],
+    "hex": {
+     "cream": "#f1efd2",
+     "brown": "#483127"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Puma",
+   "sponsor": "Jack Daniel's",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1997-99 FC St. Pauli Puma 'Signed' Home Shirt M",
+     "image": "vintagefootballshirts-1997-99-fc-st-pauli-puma-signed-home-shirt-m.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1997-99-fc-st-pauli-puma-signed-home-shirt-m"
+    }
+   ],
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-1997-99-fc-st-pauli-puma-signed-home-shirt-m.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-06",
+   "origin": "photo",
+   "season": "1999/00",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "white"
+    ],
+    "hex": {
+     "black": "#191b1f",
+     "white": "#ffffff"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Puma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "1999/00 St Pauli *Reissue* Away Shirt (L) Puma",
+     "image": "cultkits-1999-00-st-pauli-reissue-away-shirt-l-puma-stp99reissue.webp",
+     "page": "https://www.cultkits.com/products/1999-00-st-pauli-reissue-away-shirt-l-puma-stp99reissue"
+    }
+   ],
+   "image": "/club-kits/st-pauli/shop/cultkits-1999-00-st-pauli-reissue-away-shirt-l-puma-stp99reissue.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-07",
+   "origin": "photo",
+   "season": "2000/01",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "white",
+     "brown"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "brown": "#51322c"
+    },
+    "measured": {
+     "stripes": 9
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Kappa",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Football Shirt Collective",
+     "ref": "2000/01 ST PAULI Vintage Kappa Home Football Shirt (XL)",
+     "image": "footballshirtcollective-2000-01-st-pauli-vintage-kappa-home-football-shirt-xl.webp",
+     "page": "https://footballshirtcollective.com/products/2000-01-st-pauli-vintage-kappa-home-football-shirt-xl"
+    }
+   ],
+   "image": "/club-kits/st-pauli/shop/footballshirtcollective-2000-01-st-pauli-vintage-kappa-home-football-shirt-xl.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-08",
+   "origin": "photo",
+   "season": "2005/06",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "cream",
+     "brown"
+    ],
+    "hex": {
+     "cream": "#e1e5cd",
+     "brown": "#5e5037"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": null,
+   "sponsor": "mobilcom",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2005-06 FC St. Pauli Home Shirt L/S *Mint* L",
+     "image": "vintagefootballshirts-2005-06-fc-st-pauli-home-shirt-l-s-mint-l.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2005-06-fc-st-pauli-home-shirt-l-s-mint-l"
+    }
+   ],
+   "image": "/club-kits/st-pauli/shop/vintagefootballshirts-2005-06-fc-st-pauli-home-shirt-l-s-mint-l.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
   }
- ]
+ ],
+ "photoKits": 8
 }

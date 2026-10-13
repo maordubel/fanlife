@@ -11,12 +11,17 @@ const {kitSVG}=new Function('const RESOLVE=globalThis.__resolve;const SPONSOR_TY
 const crestFile=`public/club-kits/${club}/crest-96.png`
 const crest=existsSync(crestFile)?'data:image/png;base64,'+readFileSync(crestFile).toString('base64'):null
 mkdirSync(`public/club-kits/${club}/svg`,{recursive:true})
-let n=0
+let n=0;const index=[]
 // a club with an era crest table (Hapoel Tel Aviv: kit-crests-<club>.json) prints the crest of each shirt's own era; an era with no artwork prints none (rule 25)
 const eraFile=`content/manual/kit-crests-${club}.json`,era=existsSync(eraFile)?JSON.parse(readFileSync(eraFile,'utf8')):null
 const eraCrest=p=>{if(!p)return null;const f=`public/club-kits/${club}/crests/${p.split('/').pop()}`;return existsSync(f)?'data:image/png;base64,'+readFileSync(f).toString('base64'):null}
 for(const k of data.kits){
-  const svg=kitSVG({...k,crest:era?eraCrest(era[`${k.season}|${k.type}`]):crest},`${club} ${k.type} ${k.season}`).replace('<svg ','<svg xmlns:xlink="http://www.w3.org/1999/xlink" ')
+  const label=`${club} ${k.type} ${k.season}`,attr=(n,v)=>v==null||v===''?'':` data-${n}="${String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}"`
+  // every drawing is tagged with its club, season, type, maker, sponsor and where it was read from, so a file can be found and filtered without the data
+  const tags=attr('club',club)+attr('kit',k.id)+attr('season',k.season)+attr('type',k.type)+attr('maker',k.maker)+attr('sponsor',k.sponsor)+attr('origin',k.origin)+attr('read-unsure',k.readUnsure?'true':'false')
+  const svg=kitSVG({...k,crest:era?eraCrest(era[`${k.season}|${k.type}`]):crest},label).replace('<svg ','<svg xmlns:xlink="http://www.w3.org/1999/xlink"'+tags+' ').replace(/(<svg [^>]*>)/,`$1<title>${label.replace(/[&<>]/g,'')}${k.sponsor?' · '+String(k.sponsor).replace(/[&<>]/g,''):''}</title>`)
+  index.push({id:k.id,season:k.season,type:k.type,maker:k.maker??null,sponsor:k.sponsor??null,origin:k.origin,readUnsure:!!k.readUnsure,crest:!!(era?eraCrest(era[`${k.season}|${k.type}`]):crest)})
   writeFileSync(`public/club-kits/${club}/svg/${k.id}.svg`,svg);n++
 }
+writeFileSync(`public/club-kits/${club}/svg/index.json`,JSON.stringify({club,count:n,kits:index})+'\n')
 console.log(club,n,'svgs',crest?'with crest':'no crest')

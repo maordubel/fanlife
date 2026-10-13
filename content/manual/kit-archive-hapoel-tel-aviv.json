@@ -2,9 +2,14 @@
  "club": "hapoel-tel-aviv",
  "retrieved": "2026-10-10",
  "sources": {
-  "catalogue": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html"
+  "catalogue": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html",
+  "photos": {
+   "title": "Shirt photographs (Club Football Shirts archive and four retail shops) read by eye for seasons the catalogue lacks",
+   "readOn": "2026-10-13",
+   "note": "Shorts and socks are not visible in a shirt photograph and are not drawn; every kit is readUnsure."
+  }
  },
- "kitCount": 33,
+ "kitCount": 39,
  "catalogueKits": 33,
  "drawingOnlyKits": 0,
  "crossChecked": 0,
@@ -1780,6 +1785,265 @@
    "verified": null,
    "readUnsure": false,
    "twin": []
+  },
+  {
+   "id": "photo-k-01",
+   "origin": "photo",
+   "season": "2021/22",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#fdfdfd",
+     "red": "#a2100f"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "away 2021/22",
+     "image": "away-2021-22-7.webp",
+     "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cfs/away-2021-22-7.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-02",
+   "origin": "photo",
+   "season": "2021/22",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#b31616",
+     "white": "#efefef"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "home 2021/22",
+     "image": "home-2021-22-6.webp",
+     "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cfs/home-2021-22-6.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-03",
+   "origin": "photo",
+   "season": "2021/22",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "black",
+     "grey"
+    ],
+    "hex": {
+     "black": "#181818",
+     "grey": "#83879c"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Macron",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "third 2021/22",
+     "image": "third-2021-22-8.webp",
+     "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cfs/third-2021-22-8.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-04",
+   "origin": "photo",
+   "season": "2023/24",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#ee080a"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "away 2023/24",
+     "image": "away-2023-24-13.webp",
+     "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cfs/away-2023-24-13.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-05",
+   "origin": "photo",
+   "season": "2023/24",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#d43f3b",
+     "white": "#fffbf3"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "home 2023/24",
+     "image": "home-2023-24-12.webp",
+     "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cfs/home-2023-24-12.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-06",
+   "origin": "photo",
+   "season": "2023/24",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "red"
+    ],
+    "hex": {
+     "black": "#302f34",
+     "red": "#e90711"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "adidas",
+   "sponsor": "הכשרה",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "third 2023/24",
+     "image": "third-2023-24-14.webp",
+     "page": "https://www.clubfootballshirts.com/hapoel-tel-aviv-fc-561188.html"
+    }
+   ],
+   "image": "/club-kits/hapoel-tel-aviv/cfs/third-2023-24-14.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
   }
- ]
+ ],
+ "photoKits": 6
 }
