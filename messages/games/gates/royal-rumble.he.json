@@ -144,5 +144,17 @@
  "rr.legend": "אגדת מועדון",
  "rr.xi.shapeSub.4-3-3": "שלושה בהתקפה",
  "rr.xi.shapeSub.4-4-2": "שני חלוצים",
- "rr.xi.shapeSub.3-5-2": "מגני־כנף"
+ "rr.xi.shapeSub.3-5-2": "מגני־כנף",
+ "rr.draft.choose": "בחרו באיזו עמדה לחתום הלאה.",
+ "rr.draft.places": "{n} נותרו",
+ "rr.draft.reroll": "רענון ({n} נותרו)",
+ "rr.draft.rerollNone": "נגמרו הרענונים",
+ "rr.draft.keep": "שמרו לפחות {n}",
+ "rr.draft.tier.premium": "פרימיום",
+ "rr.draft.tier.mid": "אמצע",
+ "rr.draft.tier.budget": "תקציבי",
+ "rr.draft.meta": "חתימה {n} מתוך {total} · {position}",
+ "rr.draft.freeRule": "פותחים כל עמדה קודם. המשחק חוסם רק חתימה שהופכת סגל מלא לבלתי אפשרי בכסף שנשאר.",
+ "rr.draft.ready": "הסגל מלא — נעלו אותו.",
+ "rr.draft.nextPlace": "הבא: {place}"
 }

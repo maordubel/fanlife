@@ -57,7 +57,7 @@ export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,s
  const talk=()=>{const o=talkOffers(c);if(o.post)go({kind:'talk-post',fixture:o.post.fixture,answer:0});const p=talkOffers(c).pre;if(p)go({kind:'talk-pre',fixture:p.fixture,answer:0})}
  try{
   const d=botDraft(own.cards,hash(`${c.id}:draft`),'value');if(d.error)return {career:c,error:d.error}
-  for(const p of d.draft.picks){go({kind:'draft',move:{kind:'pick',id:p.id}})}
+  for(const p of d.draft.picks){go({kind:'draft',move:{kind:'group',group:p.quota}});go({kind:'draft',move:{kind:'pick',id:p.id}})}
   go({kind:'draft-confirm'});go({kind:'ack'})
   for(let s=0;s<seasons;s++){
    for(let guard=0;guard<200;guard++){

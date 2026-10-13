@@ -499,3 +499,19 @@ a.rpCard[aria-selected='true'] { background: var(--club-primary, var(--mag-ink))
 .fmPitch circle { fill: currentColor; }
 .fmPitch line, .fmPitch rect { stroke: currentColor; fill: none; stroke-width: 1; opacity: .5; }
 .legendTag { align-self: flex-start; padding: 1px 6px; background: var(--rr-lit); color: var(--rr-on); font-size: 9px; letter-spacing: 1px; }
+
+/* DRAFT CORE (13.10.2026) — the group picker above the reels, the tier tag on a card, the reason a card is locked */
+.groups { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.groupBtn { position: relative; min-height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 4px 2px; border: 3px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+.groupBtn small { font-size: 10px; letter-spacing: .5px; opacity: .75; }
+.groupBtn[aria-pressed='true'] { background: var(--mag-ink); color: var(--mag-paper); box-shadow: 4px 4px 0 var(--rr-lit); }
+.groupBtn[aria-disabled='true'] { border-color: color-mix(in srgb, var(--mag-ink) 25%, transparent); color: color-mix(in srgb, var(--mag-ink) 45%, transparent); background: transparent; }
+.groupBtn[data-next='true']::after { content: ''; position: absolute; inset-inline-end: 4px; inset-block-start: 4px; width: 8px; height: 8px; background: var(--rr-lit); }
+.draftNote { margin: 0; min-height: 18px; font-size: 12px; line-height: 1.35; color: var(--mag-ink); }
+.draftTop { display: flex; gap: 6px; align-items: stretch; }
+.draftTop .chip { flex: 1 1 auto; }
+.tierTag { display: block; padding: 2px 6px; margin-block-end: 3px; font-size: 10px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; background: var(--mag-ink); color: var(--mag-paper); }
+.lockWhy { margin: 4px 0 0; font-size: 11px; line-height: 1.3; color: color-mix(in srgb, var(--mag-ink) 80%, transparent); }
+.xiSlot[data-next='true'] { outline: 3px solid var(--rr-lit); outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) { .xiSlot[data-next='true'] { animation: rrNextPulse 1.2s ease-in-out infinite; } }
+@keyframes rrNextPulse { 50% { outline-offset: 5px; } }

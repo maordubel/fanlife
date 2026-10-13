@@ -63,7 +63,8 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
  const spinning=pending||landed.some(l=>!l)
  const landAll=()=>{if(!pending&&landed.some(l=>!l))setLanded(offers.map(()=>true))}
  // the rail: every slot of the order, signed ones by name, the current one lit
- const order=[...d.picks.map(p=>({pos:p.pos,name:surname(p.name),filled:true})),...d.upcoming.map(p=>({pos:p,name:'',filled:false}))]
+ const total=d.required+(d.optionalOpen||d.picks.length>d.required?d.optional:0)
+ const order=[...d.picks.map(p=>({pos:p.pos,name:surname(p.name),filled:true})),...Array.from({length:Math.max(0,total-d.picks.length)},()=>({pos:'' as string,name:'',filled:false}))]
  const current=d.picks.length
  const railRef=useRef<HTMLOListElement>(null)
  useEffect(()=>{railRef.current?.querySelector('[aria-current="step"]')?.scrollIntoView({block:'nearest',inline:'center',behavior:reduced?'auto':'smooth'})},[current,reduced])
@@ -95,18 +96,26 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
   </header>
 
   <section className={`${s.rail} lgm-rail`} aria-label="The draft order">
-   <div className={`${s.mono} ${s.railHead}`}><span>The order · one line after another</span><span>{d.picks.length}/{d.required}{d.optional?` +${d.optional}`:''}</span></div>
+   <div className={`${s.mono} ${s.railHead}`}><span>Your squad · choose a line for every slot</span><span>{d.picks.length}/{d.required}{d.optional?` +${d.optional}`:''}</span></div>
    <ol ref={railRef} className="lgm-rail-slots">{order.map((o,i)=><li key={i} className={s.slot} data-filled={o.filled} aria-current={i===current&&!done?'step':undefined} data-optional={i>=d.required||undefined}>
-    <span className={`${s.mono} ${s.slotPos}`}>{String(i+1).padStart(2,'0')} · {SHORT[o.pos]}</span>
+    <span className={`${s.mono} ${s.slotPos}`}>{String(i+1).padStart(2,'0')}{o.pos?` · ${SHORT[o.pos]}`:''}</span>
     {o.filled?<span className={s.slotName} dir="auto">{o.name}</span>:<span className={s.slotEmpty} aria-hidden="true">{i>=d.required?'+':'?'}</span>}
    </li>)}</ol>
   </section>
+
+  {!done?<div className="lgm-lines" role="group" aria-label="Choose a line for this slot" data-testid="legends-lines">
+   {d.lines.map(g=><button key={g.group} type="button" className={`${s.chip} min-h-tap lgm-line`} data-testid={`legends-group-${g.group}`} aria-pressed={d.group===g.group} disabled={busy||!g.open}
+    title={g.reason??undefined} onClick={()=>send({kind:'draft',move:{kind:'group',group:g.group}})}>
+    <span>{posName(g.group)}</span><small dir="ltr">{g.need>0?`${g.need} to sign`:'extra'}</small></button>)}
+  </div>:null}
+  {!done&&!d.group&&!d.stuck?<p className={`${s.mono} lgm-lines-hint`}>Pick a line — GK, DEF, MID or FWD — and three men come up.</p>:null}
+  {d.lines.filter(g=>!g.open&&g.reason).length&&!done&&!d.stuck?<p className={`${s.mono} lgm-lines-why`} role="note">{d.lines.filter(g=>!g.open&&g.reason).map(g=>`${posName(g.group)}: ${g.reason}`)[0]}</p>:null}
 
   {!done&&d.group&&offers.length?<section className={s.cabinet} data-spinning={spinning} data-testid="legends-machine" aria-busy={spinning}>
    <div className={s.marquee}><Bulbs n={9} className={s.bulbs}/><span className={s.marqueeTitle}>Legends draft</span><Bulbs n={9} className={s.bulbs}/></div>
    <div className={s.pickHead}>
     <span className={s.pickNo} dir="ltr">{String(d.slot).padStart(2,'0')}</span>
-    <div className={s.pickText}><p className={`${s.mono} ${s.pickMeta}`}>{d.optionalOpen?'The eighteenth · optional':`Pick ${d.slot} · ${posName(d.group)}`}</p><p className={s.pickQ}>{QUESTION[d.group]}</p></div>
+    <div className={s.pickText}><p className={`${s.mono} ${s.pickMeta}`}>{d.optionalOpen?'The eighteenth · optional':`Pick ${Math.min(d.slot,d.required)} · ${posName(d.group)}`}</p><p className={s.pickQ}>{QUESTION[d.group]}</p></div>
    </div>
    <p className="sr-only" aria-live="polite">{spinning?'The reels are spinning.':`Three ${posName(d.group).toLowerCase()}s on the table.`}</p>
    <div className={`${s.reels} lgm-reels`} role="group" aria-label={QUESTION[d.group]} onClick={e=>{if((e.target as HTMLElement).closest('[data-landed="false"]'))landAll()}}>
@@ -116,7 +125,7 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
     </div>)}
    </div>
   </section>:null}
-  {d.stuck?<p className="lgm-error" role="alert">No line can be dealt for this pick. The owner has been shown why in the control room.</p>:null}
+  {d.stuck?<p className="lgm-error" role="alert">No line can be opened for this pick. The owner has been shown why in the control room.</p>:null}
 
   {!done?<div className={`${s.chips} lgm-draft-chips`}>
    <button type="button" className={`${s.chip} min-h-tap lgm-spin`} disabled={busy||spinning||!d.group||d.rerollsLeft<=0} onClick={reroll} data-testid="legends-reroll"

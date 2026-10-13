@@ -5,6 +5,7 @@ import {opponentFor} from '@/lib/clubs/rumble-opponent'
 import {stageMatch} from '@/lib/clubs/rumble-show'
 import {lineupMatches,buildableKits,kitViews} from '@/lib/clubs/gate-content'
 import {loadSides} from '@/lib/clubs/rumble-xi/server'
+import {draftPlay,draftStep,type DraftArgs} from '@/lib/clubs/rumble-draft-server'
 import {playXI} from '@/lib/clubs/rumble-xi/simulator'
 import {stageXI} from '@/lib/clubs/rumble-xi/presentation'
 import {canRival,xiReadiness} from '@/lib/clubs/rumble-xi/readiness'
@@ -56,6 +57,12 @@ export async function playRumbleXI(slug:string,version:string,seed:number,picks:
  const r=playXI(sides.home,sides.away,formation,seed,sides.same,picks,sides.same?slug:rival,slug)
  return r?{verdict:r.verdict,goals:r.goals,script:stageXI(r,seed,formation),rivalClub:sides.same?slug:rival}:null
 }
+/**
+ * Gate 9 on Draft Core (13.10.2026). The browser sends the LOG of what the fan did (open a group, reroll, pick); the server replays it
+ * from nothing, refuses the first illegal action and answers only what the fan may see. Rating, rival and verdicts never leave.
+ */
+export async function rumbleDraft(a:DraftArgs){return draftStep(a)}
+export async function rumbleLock(a:DraftArgs){return draftPlay(a)}
 export const rumbleDeal=async(slug:string,seed:number,vs?:string,duel?:string)=>{const r=await requestClub(slug,9);if(!r||!Number.isSafeInteger(seed))return null;const pool=ratedPool(r.data);if(!rumbleReadiness(pool).playable)return null;const o=await opponentFor(slug,pool,vs,duel);return o?dealDraft(pool,seed,o):null}
 /** Gate 8 — the touches are graded here; the cast, verbs, order and count never left the server before this. */
 export async function gradeClubGoal(slug:string,version:string,goalId:string,seed:number,touches:unknown){

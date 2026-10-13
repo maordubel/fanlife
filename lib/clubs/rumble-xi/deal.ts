@@ -60,8 +60,10 @@ export function dealDraftXI(pool:readonly Rated[],f:FormationId,roundSeed:number
  * the player can really buy, with a complete squad still possible inside €35M around him. If a try fails the next try reads further
  * along the deck; if none works the club is NOT READY (null) — prices and the budget are never touched.
  */
+/** the committed rival of a round — the one place his seed is made, so the board dealt to a fan and the draft he plays agree on him */
+export const rivalXI=(awayPool:readonly Rated[],f:FormationId,roundSeed:number,key:string)=>dealRivalXI(awayPool,f,hash(`${key}|${roundSeed}|${f}|rival`),budgetFor(roundSeed))
 export function dealXI(homePool:readonly Rated[],awayPool:readonly Rated[],f:FormationId,roundSeed:number,same:boolean,key='club',tries=40):{seed:number;budget:number;rival:Rated[];draft:RumbleCard[][];attempt:number}|null{
- const budget=budgetFor(roundSeed),rival=dealRivalXI(awayPool,f,hash(`${key}|${roundSeed}|${f}|rival`),budget);if(!rival)return null
+ const budget=budgetFor(roundSeed),rival=rivalXI(awayPool,f,roundSeed,key);if(!rival)return null
  const banned=same?new Set(rival.map(c=>c.id)):new Set<string>(),icons=homePool.filter(x=>x.price===5&&!banned.has(x.id)).sort((a,b)=>a.id.localeCompare(b.id))
  for(let attempt=0;attempt<tries;attempt++){
   const draft=dealDraftXI(homePool,f,roundSeed,rival,same,key,attempt);if(!draft)return null

@@ -3,7 +3,8 @@
  * and no name travels — ids are opaque, the server re-deals that board from the seed and refuses a five it did not offer, so a link
  * cannot be forged into a better team. Whoever opens it picks ANY club (the same one included) and plays his five against it.
  */
-export type DuelToken={c:string;s:number;p:string[]}
+/** `v:2` = a five drafted group-first (Draft Core): the server checks places and money, not a pre-dealt board. No `v` = the earlier board-dealt links, which keep working. */
+export type DuelToken={c:string;s:number;p:string[];v?:2}
 const b64=(s:string)=>typeof btoa==='function'?btoa(s):Buffer.from(s,'binary').toString('base64')
 const unb64=(s:string)=>typeof atob==='function'?atob(s):Buffer.from(s,'base64').toString('binary')
 export function encodeDuel(t:DuelToken):string{
@@ -16,6 +17,6 @@ export function decodeDuel(raw:unknown):DuelToken|null{
   const bin=unb64(raw.replace(/-/g,'+').replace(/_/g,'/')+'==='.slice((raw.length+3)%4)),json=decodeURIComponent(bin.split('').map(c=>'%'+c.charCodeAt(0).toString(16).padStart(2,'0')).join(''))
   const t=JSON.parse(json) as Partial<DuelToken>
   if(typeof t.c!=='string'||t.c.length>100||!Number.isSafeInteger(t.s)||!Array.isArray(t.p)||t.p.length>12||t.p.some(x=>typeof x!=='string'||x.length>200))return null
-  return {c:t.c,s:t.s as number,p:t.p as string[]}
+  return {c:t.c,s:t.s as number,p:t.p as string[],...(t.v===2?{v:2 as const}:{})}
  }catch{return null}
 }
