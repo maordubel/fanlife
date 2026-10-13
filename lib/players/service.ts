@@ -21,7 +21,7 @@ import {EMPTY_SNAPSHOT,keyOf,type AuditEvent,type Draft,type Override,type Patch
 export type Row={
  club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases:string[];decade:string;fromYear:number|null;toYear:number|null
  basePositions:Pos[];positions:Pos[];positionState:'archive'|'public-source'|'workbook'|'owner'|'unknown'
- basePrice:number;price:number;priceSource:'frozen-list'|'fallback'|'owner';baseRating:number;rating:number;ratingBasis:string
+ basePrice:number;price:number;priceSource:'frozen-list'|'fallback'|'owner';baseRating:number;rating:number;ratingBasis:string;baseReputation:number;reputation:number;baseName:string
  locked:boolean;lockReason:string;removed:boolean;mergedInto:string|null;overridden:string[];draft:boolean;wave:boolean;confidence:number;rev:number;updatedAt:string|null;updatedBy:string|null;note:string
  /** league games and goals at this club where a named source states them; null = not stated */
  apps:number|null;goals:number|null
@@ -32,7 +32,7 @@ const strip=(s:string)=>norm(s).normalize('NFD').replace(/[̀-ͯ]/g,'')
 
 /* ─────────────── the archive's own values (immutable per deployment) ─────────────── */
 type BaseRow={club:string;clubName:string;id:string;name:string;nameOriginal:string;aliases:string[];decade:string;fromYear:number|null;toYear:number|null
- basePositions:Pos[];basePositionState:Row['positionState'];basePrice:number;hasList:boolean;baseRating:number;ratingBasis:string;locked:boolean;lockReason:string;wave:boolean;confidence:number;apps:number|null;goals:number|null}
+ basePositions:Pos[];basePositionState:Row['positionState'];basePrice:number;hasList:boolean;baseRating:number;baseReputation:number;ratingBasis:string;locked:boolean;lockReason:string;wave:boolean;confidence:number;apps:number|null;goals:number|null}
 type Base={row:BaseRow;key:string}
 const baseCache=new Map<string,Base[]>()
 async function baseOf(club:string):Promise<Base[]>{
@@ -45,18 +45,18 @@ async function baseOf(club:string):Promise<Base[]>{
   const entry=list[p.id],fam:Pos[]=r.free?[]:[r.position,...(r.alt??[])]
   const state:Row['positionState']=p.positions.length?'archive':extra[p.id]?'public-source':!r.free?'workbook':'unknown'
   out.push({key:keyOf(club,p.id),row:{club,clubName:clubName(club),id:p.id,name:r.name,nameOriginal:p.name,aliases:p.aliases.slice(0,6),decade:decadeOf(p.fromYear,p.toYear),fromYear:p.fromYear,toYear:p.toYear,
-   basePositions:fam,basePositionState:state,basePrice:entry?.priceM??1,hasList:!!entry,baseRating:r.rating,ratingBasis:r.basis??'derived',locked:!!entry&&(entry.locked||entry.assignment==='owner-pinned'),
+   basePositions:fam,basePositionState:state,basePrice:entry?.priceM??1,hasList:!!entry,baseRating:r.rating,baseReputation:r.reputation??r.rating,ratingBasis:r.basis??'derived',locked:!!entry&&(entry.locked||entry.assignment==='owner-pinned'),
    lockReason:entry?.assignment==='owner-pinned'?'owner-pinned: '+(entry.rationale||''):entry?.locked?'locked':'',wave:/[:_]wv-/.test(p.id),confidence:f.confidence,apps:p.career?.apps??null,goals:p.career?.goals??null}})}
  baseCache.set(club,out);return out
 }
 /* ─────────────── effective rows ─────────────── */
 function effective(b:Base,drafts:Record<string,Draft>):Row{
  const r=b.row,o=overrideOf(r.club,r.id)
- return {club:r.club,clubName:r.clubName,id:r.id,name:r.name,nameOriginal:r.nameOriginal,aliases:r.aliases,decade:r.decade,fromYear:r.fromYear,toYear:r.toYear,
+ return {club:r.club,clubName:r.clubName,id:r.id,name:o?.name??r.name,nameOriginal:r.nameOriginal,aliases:r.aliases,decade:r.decade,fromYear:r.fromYear,toYear:r.toYear,
   basePositions:r.basePositions,positions:o?.positions??r.basePositions,positionState:o?.positions?'owner':r.basePositionState,
   basePrice:r.basePrice,price:o?.price??r.basePrice,priceSource:o?.price!==undefined?'owner':r.hasList?'frozen-list':'fallback',
-  baseRating:r.baseRating,rating:o?.rating??r.baseRating,ratingBasis:o?.rating!==undefined?'owner':r.ratingBasis,locked:r.locked,lockReason:r.lockReason,removed:!!o?.removed,mergedInto:o?.mergedInto??null,
-  overridden:o?(['price','positions','rating','removed','mergedInto','note'] as const).filter(k=>k in o):[],draft:!!drafts[b.key],wave:r.wave,confidence:r.confidence,rev:o?.rev??0,updatedAt:o?.at??null,updatedBy:o?.by??null,note:o?.note??'',apps:r.apps,goals:r.goals}
+  baseRating:r.baseRating,rating:o?.rating??r.baseRating,baseReputation:r.baseReputation,reputation:o?.reputation??r.baseReputation,baseName:r.name,ratingBasis:o?.rating!==undefined?'owner':r.ratingBasis,locked:r.locked,lockReason:r.lockReason,removed:!!o?.removed,mergedInto:o?.mergedInto??null,
+  overridden:o?(['price','positions','rating','reputation','name','removed','mergedInto','note'] as const).filter(k=>k in o):[],draft:!!drafts[b.key],wave:r.wave,confidence:r.confidence,rev:o?.rev??0,updatedAt:o?.at??null,updatedBy:o?.by??null,note:o?.note??'',apps:r.apps,goals:r.goals}
 }
 let draftsCache:{at:number;v:Record<string,Draft>}|null=null
 async function drafts(fresh=false){if(!fresh&&draftsCache&&Date.now()-draftsCache.at<2000)return draftsCache.v;const v=(await readJson<{drafts:Record<string,Draft>}>('drafts.json',{drafts:{}})).drafts;draftsCache={at:Date.now(),v};return v}
@@ -120,8 +120,8 @@ export async function impactOf(club:string,id:string,patch:Patch):Promise<Impact
  for(const p of [5,4,3,2,1])if(after.have[p]!==want[p])violations.push(`€${p}M: ${after.have[p]} men, the ladder says ${want[p]}`)
  const effPrice=(next?.price??b.row.basePrice),curPrice=(cur?.price??b.row.basePrice)
  const eq=(a:unknown,b:unknown)=>JSON.stringify(a)===JSON.stringify(b)
- const moved=(k:'price'|'positions'|'rating'|'removed'|'mergedInto')=>!eq(cur?.[k],next?.[k])
- const consumers=[...(moved('price')||moved('rating')?['Royal Rumble five-a-side','Royal Rumble XI']:[]),...(moved('positions')?['Royal Rumble slots (five and XI)','Polls','Blind Cow candidates']:[]),...(moved('removed')||moved('mergedInto')?['Every game','Archive pages']:[])]
+ const moved=(k:'price'|'positions'|'rating'|'reputation'|'name'|'removed'|'mergedInto')=>!eq(cur?.[k],next?.[k])
+ const consumers=[...(moved('price')||moved('rating')?['Royal Rumble five-a-side','Royal Rumble XI']:[]),...(moved('reputation')||moved('rating')?['Legends Manager stars']:[]),...(moved('name')?['Every game','Archive pages']:[]),...(moved('positions')?['Royal Rumble slots (five and XI)','Polls','Blind Cow candidates']:[]),...(moved('removed')||moved('mergedInto')?['Every game','Archive pages']:[])]
  return {quota:{ok:!violations.length,want,have:after.have,violations},readiness:{before:before.bad,after:after.bad,broke:after.bad.filter(x=>!before.bad.includes(x))},consumers:[...new Set(consumers)],
   lockedChange:b.row.locked&&patch.price!==undefined&&effPrice!==curPrice,iconChange:b.row.locked&&b.row.basePrice===5&&patch.price!==undefined&&effPrice!==curPrice}
 }
@@ -157,7 +157,7 @@ export async function publish(club:string,id:string,opts:PublishOpts,who:Actor){
  const cur=overrideOf(club,id)??null
  if((cur?.rev??0)!==baseRev)throw new Refusal(409,'This player was changed by someone else since the draft was made.',{currentRev:cur?.rev??0,current:cur})
  const imp=await impactOf(club,id,patch);if(!imp)throw new Refusal(404,'No such player at this club.')
- if(imp.lockedChange&&!(opts.ownerException&&who.role==='owner'))throw new Refusal(403,imp.iconChange?'This is a pinned €5M icon: changing it needs the owner’s explicit exception.':'This price is locked: changing it needs the owner’s explicit exception.',imp)
+ // a locked or pinned price is a note for the editor, never a wall: the admin may change anything (owner, 13.10.2026) — the change is audited like any other
  if(!imp.quota.ok&&!opts.confirmQuota)throw new Refusal(422,'This leaves the club off its price ladder. Confirm to publish it as an exception.',imp)
  const at=new Date().toISOString(),next=mergePatch(cur,patch,{by:who.actor,at,reason:opts.reason.trim()})
  let revision=0
@@ -177,17 +177,23 @@ export const QUICK_REASON='Quick edit in the table'
  * so every lock, the price ladder and game readiness are judged exactly as in the full editor. Only price and rating travel this way.
  * A value equal to the archive's own clears the override (back to the archive). Answers with the man's row as it now stands.
  */
-export async function quickEdit(club:string,id:string,raw:unknown,o:{expectedRev:number;confirmQuota?:boolean},who:Actor){
- if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Refusal(400,'Send a price or a score.')
- if(Object.keys(raw).some(k=>k!=='price'&&k!=='rating'))throw new Refusal(400,'Only the price and the score can be changed from the table. Open the full editor for the rest.')
+export async function quickEdit(club:string,id:string,raw:unknown,o:{expectedRev:number;confirmQuota?:boolean;confirmName?:boolean},who:Actor){
+ if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Refusal(400,'Send a price, a score, a reputation, positions or a name.')
+ if(Object.keys(raw).some(k=>!QUICK_KEYS.includes(k)))throw new Refusal(400,'Only price, score, reputation, positions and name can be changed from the table. Open the full editor for the rest.')
  const b=await findBase(club,id);if(!b)throw new Refusal(404,'No such player at this club.')
  const p=parsePatch(raw);if(!p.ok)throw new Refusal(400,p.error)
  const patch:Patch={...p.patch}
+ if(patch.name!==undefined&&patch.name!==null&&!o.confirmName)throw new Refusal(400,'Changing a name needs a second confirmation: “Are you sure?”.')
  if(patch.price!==undefined&&patch.price===b.row.basePrice)patch.price=null
  if(patch.rating!==undefined&&patch.rating===b.row.baseRating)patch.rating=null
- const res=await publish(club,id,{reason:QUICK_REASON,patch,expectedRev:o.expectedRev,confirmQuota:o.confirmQuota===true},who)
+ if(patch.reputation!==undefined&&patch.reputation===b.row.baseReputation)patch.reputation=null
+ if(patch.positions&&patch.positions.length===b.row.basePositions.length&&patch.positions.every((x,i)=>x===b.row.basePositions[i]))patch.positions=null
+ if(patch.name!==undefined&&patch.name===b.row.name)patch.name=null
+ const res=await publish(club,id,{reason:patch.name!==undefined?QUICK_NAME_REASON:QUICK_REASON,patch,expectedRev:o.expectedRev,confirmQuota:o.confirmQuota===true},who)
  return {...res,row:effective(b,await drafts(true))}
 }
+const QUICK_KEYS=['price','rating','reputation','positions','name']
+export const QUICK_NAME_REASON='Name corrected in the table (confirmed)'
 /** put a man back to what an earlier event recorded as "before" — a new event, the old ones stay */
 export async function revert(club:string,id:string,eventId:string,reason:string,who:Actor){
  const ev=(await readAudit()).find(e=>e.id===eventId&&e.club===club&&e.player===id&&e.action==='publish');if(!ev)throw new Refusal(404,'No such change to revert.')

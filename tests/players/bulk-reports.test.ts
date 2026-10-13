@@ -61,13 +61,12 @@ describe('bulk commit: one revision, all or nothing, once',()=>{
   await expect(bulkCommit(csv,{token:pv.token,idempotencyKey:'key-0002-bbbb',reason:'x y z',confirmQuota:true},owner)).rejects.toMatchObject({status:422})
   expect((await playerDetail(CLUB,a!.id))!.row.price).toBe(1)
  })
- it('a locked price needs the owner’s exception; a key and a reason are required',async()=>{
+ it('a locked price is open to the admin (13.10.2026); a key and a reason are still required',async()=>{
   const icon=(await free(1,r=>r.price===5&&r.locked))[0]!
   const csv=`${H}\n${CLUB},${icon.id},4,,,,,demote,`;const pv=await bulkPreview(csv);expect(pv.lockedRows).toBe(1)
-  await expect(bulkCommit(csv,{token:pv.token,idempotencyKey:'key-0003-cccc',reason:'demote',confirmQuota:true},owner)).rejects.toMatchObject({status:403})
   await expect(bulkCommit(csv,{token:pv.token,idempotencyKey:'',reason:'demote',confirmQuota:true,ownerException:true},owner)).rejects.toMatchObject({status:400})
   await expect(bulkCommit(csv,{token:pv.token,idempotencyKey:'key-0003-cccc',reason:'',confirmQuota:true,ownerException:true},owner)).rejects.toMatchObject({status:400})
-  expect((await bulkCommit(csv,{token:pv.token,idempotencyKey:'key-0003-cccc',reason:'demote',confirmQuota:true,ownerException:true},owner)).revision).toBe(1)
+  expect((await bulkCommit(csv,{token:pv.token,idempotencyKey:'key-0003-cccc',reason:'demote',confirmQuota:true},owner)).revision).toBe(1)
  })
  it('inherit clears an override, unknown makes a free man, removed takes him out',async()=>{
   const [a,b]=await free(2,r=>r.price===1&&!r.locked&&r.positions.length>0)

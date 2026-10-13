@@ -22,7 +22,7 @@ import {FIVE,type Pos,type Format} from './rumble-format'
 /** a goal's worth of rating: ratings sit in a narrow band (about 60–95), so the gap is stretched before it becomes goals */
 export const POWER_SCALE=3.5
 export type RumbleCard={id:string;name:string;position:Pos;/** a man whose position no source states: only ever signed by a scout, into any outfield slot */free?:boolean;/** other position families he has played (a man who played in several): he fits a slot of any of them */alt?:Pos[];/** classic: 1–5 whole; XI: €0.5M steps from 1 to 5 */price:number;fromYear:number|null;toYear:number|null}
-export type Rated=RumbleCard&{rating:number;basis?:RatingBasis}
+export type Rated=RumbleCard&{rating:number;/** how well known he is, 40–99 (hidden, like the rating): the Legends stars read the two together */reputation?:number;basis?:RatingBasis}
 const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^(seed>>>15),1|seed);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}
 const shuffle=<T,>(a:T[],r:()=>number)=>{const x=[...a];for(let i=x.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[x[i],x[j]]=[x[j]!,x[i]!]}return x}
 const pct=(v:number|null,all:(number|null)[])=>{if(v===null)return 0.4;const known=all.filter((x):x is number=>x!==null);if(known.length<2)return 0.5;return known.filter(x=>x<v).length/(known.length-1)}
@@ -61,6 +61,9 @@ export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>;
  const span=(p:ClubPlayer)=>p.fromYear!==null&&p.toYear!==null?p.toYear-p.fromYear+1:null
  const by=new Map<Pos|'free',ClubPlayer[]>()
  for(const p of everyone){const k=posOf(p)??'free';by.set(k,[...(by.get(k)||[]),p])}
+ /** reputation: how far his name carries inside his own club — years and league caps, and scoring (a keeper on tenure alone), each against everyone at the club */
+ const sp=everyone.map(span),ca=everyone.map(p=>p.career?.apps??null),cgl=everyone.map(p=>p.career?.goals??null),gl=everyone.map(p=>goals.has(p.id)?goals.get(p.id)!:null)
+ const fame=new Map(everyone.map((p,i)=>{const ten=Math.max(pct(sp[i]!,sp),ca[i]!==null?pct(ca[i]!,ca):0),sc=Math.max(gl[i]!==null?pct(gl[i]!,gl):0.4,cgl[i]!==null?pct(cgl[i]!,cgl):0);return [p.id,Math.round(45+50*(posOf(p)==='GK'?ten:0.6*ten+0.4*sc))] as const}))
  const out:Rated[]=[]
  for(const [pos,ps] of by){
   const spans=ps.map(span),gs=ps.map(p=>goals.has(p.id)?goals.get(p.id)!:null)
@@ -76,7 +79,7 @@ export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>;
    const rating=given[i]?.score??derivedRating(club,base,scores[i]!)
    const alts=[...new Set([...(ov(p.id)?.positions??p.positions)])].filter(x=>x!==base&&pos!=='free') as Pos[]
    const given2=ov(p.id)?.rating
-   out.push({id:p.id,name:englishName(club,p.id,p.name),position:base,price:1,rating:given2??rating,basis:given2!==undefined?'individual':given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear,...(alts.length?{alt:alts}:{}),...(pos==='free'?{free:true}:{})})})
+   out.push({id:p.id,name:ov(p.id)?.name??englishName(club,p.id,p.name),position:base,price:1,rating:given2??rating,reputation:ov(p.id)?.reputation??fame.get(p.id)!,basis:given2!==undefined?'individual':given[i]?.basis??'derived',fromYear:p.fromYear,toYear:p.toYear,...(alts.length?{alt:alts}:{}),...(pos==='free'?{free:true}:{})})})
  }
  return out.sort((a,b)=>a.id.localeCompare(b.id))
 }

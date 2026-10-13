@@ -18,7 +18,7 @@ export async function POST(r:Request,c:Ctx){
    case 'draft':return json({draft:await saveDraft(club,pid,b.patch,Number(b.expectedRev??0),who)})
    case 'discard':await discardDraft(club,pid,who);return json({ok:true})
    case 'publish':return json(await publish(club,pid,{reason:String(b.reason??''),confirmQuota:b.confirmQuota===true,ownerException:b.ownerException===true,...(b.patch!==undefined?{patch:b.patch,expectedRev:Number(b.expectedRev??0)}:{})},who))
-   case 'quick':return json(await quickEdit(club,pid,b.patch,{expectedRev:Number(b.expectedRev??0),confirmQuota:b.confirmQuota===true},who))
+   case 'quick':return json(await quickEdit(club,pid,b.patch,{expectedRev:Number(b.expectedRev??0),confirmQuota:b.confirmQuota===true,confirmName:b.confirmName===true},who))
    case 'revert':return json(await revert(club,pid,String(b.eventId??''),String(b.reason??''),who))
    case 'merge-preview':return json({preview:await mergePreview(club,pid,String(b.dropId??''))})
    case 'merge':return json(await mergePlayers(club,pid,String(b.dropId??''),{reason:String(b.reason??''),price:b.price as 'keep'|'drop'|'higher'|undefined,confirmQuota:b.confirmQuota===true,ownerException:b.ownerException===true},who))

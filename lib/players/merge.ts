@@ -81,7 +81,6 @@ export async function mergePlayers(club:string,keepId:string,dropId:string,o:Mer
  if(pv.readiness.broke.length)throw new Refusal(422,`This merge would stop a game working (${pv.readiness.broke.join(', ')}). Nothing was written.`,pv)
  const choice=o.price??'keep',price=(choice==='drop'?pv.priceChoices.drop:choice==='higher'?Math.max(pv.priceChoices.keep,pv.priceChoices.drop):pv.priceChoices.keep) as Price
  const priceMoves=price!==pv.keep.price
- if(priceMoves&&pv.keep.locked&&!(o.ownerException&&who.role==='owner'))throw new Refusal(403,'The man you keep has a locked or pinned price: changing it needs the owner’s exception.',pv)
  if(!pv.quota.ok&&!o.confirmQuota)throw new Refusal(422,'This leaves the club off its price ladder. Confirm to publish it as an exception.',pv)
  await refreshSnapshot(true)
  const at=new Date().toISOString(),reason=`merge ${dropId} into ${keepId}: ${o.reason.trim()}`,events:Parameters<typeof appendAuditMany>[0]=[]

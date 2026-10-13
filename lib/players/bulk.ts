@@ -69,7 +69,7 @@ export async function bulkPreview(text:string):Promise<BulkPreview>{
   const cur=getSnapshot().overrides[key]??null,merged=mergePatch(cur,t.patch,{by:'bulk',at:'',reason:''})
   if(sameOverride(cur,merged)){rows.push({...base,status:'unchanged',note:'Already so.',patch:t.patch});continue}
   const priceMoves=!eq(cur?.price,merged?.price)
-  rows.push({...base,status:'changed',note:priceMoves&&row.locked?'Locked price — needs the owner’s exception.':'',patch:t.patch});next.set(key,merged)
+  rows.push({...base,status:'changed',note:priceMoves&&row.locked?'Locked price — changed on the admin’s say-so.':'',patch:t.patch});next.set(key,merged)
  }
  const counts={changed:0,unchanged:0,invalid:0,missing:0,conflict:0} as Record<RowStatus,number>;for(const r of rows)counts[r.status]++
  // the whole batch laid over the published snapshot, then each touched club judged once
@@ -95,7 +95,6 @@ export async function bulkCommit(text:string,o:CommitOpts,who:Actor){
  if(pv.token!==o.token)throw new Refusal(409,'The data changed since the preview. Preview the file again.',{revision:pv.revision})
  const bad=pv.rows.filter(r=>['invalid','missing','conflict'].includes(r.status));if(bad.length)throw new Refusal(422,`${bad.length} row(s) cannot be applied; nothing was written. Fix the file and preview again.`,{rows:bad.slice(0,20)})
  const changed=pv.rows.filter(r=>r.status==='changed');if(!changed.length)throw new Refusal(400,'Nothing to change.')
- if(pv.lockedRows&&!(o.ownerException&&who.role==='owner'))throw new Refusal(403,`${pv.lockedRows} row(s) change a locked or pinned price: this needs the owner’s explicit exception.`,{lockedRows:pv.lockedRows})
  const off=pv.clubs.filter(c=>c.violations.length),broke=pv.clubs.filter(c=>c.broke.length)
  if(broke.length)throw new Refusal(422,`This batch would stop a game working (${broke.map(c=>c.club+': '+c.broke.join(', ')).join('; ')}). Nothing was written.`,{clubs:broke})
  if(off.length&&!o.confirmQuota)throw new Refusal(422,'This batch leaves clubs off their price ladder. Confirm to publish it as an exception.',{clubs:off})
