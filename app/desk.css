@@ -448,3 +448,16 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .pcc-step-line { display: flex; align-items: center; gap: 6px; }
 .pcc-step-label { min-inline-size: 34px; }
 .pcc-score { display: grid; gap: 2px; }
+
+/* RESEARCH ANALYSIS — per-club progress, openable gates, merge */
+.ra-list { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.ra-row { display: grid; gap: 8px; padding: 14px; border: 3px solid var(--mag-ink); background: var(--mag-card); min-inline-size: 0; }
+.ra-row header { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.ra-row h3 { margin: 0; }
+.ra-stage { font: 700 12px/1 var(--mag-mono, monospace); text-transform: uppercase; letter-spacing: .06em; }
+.ra-bar { block-size: 12px; border: 2px solid var(--mag-ink); background: transparent; }
+.ra-bar i { display: block; block-size: 100%; background: var(--mag-ink); }
+.ra-row[data-state="live"] .ra-bar i, .ra-row[data-state="ready"] .ra-bar i { background: var(--mag-vermilion); }
+.ra-num, .ra-open { margin: 0; }
+.ra-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 760px) { .ra-list { grid-template-columns: 1fr; } .ra-actions > * { flex: 1 1 100%; } }

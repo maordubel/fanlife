@@ -13,6 +13,7 @@ import {MASTER_PRIMARY,MASTER_SECONDARY} from '@/lib/master/theme'
 import {Mark} from './Shell'
 import {useAdminApi} from './adminApi'
 import {ClubFile,type ClubFileView} from './ClubFile'
+import {ResearchAnalysis} from './desk/ResearchAnalysis'
 import {DataCenter,type RunsRow} from './DataCenter'
 import {DisplayControl} from './DisplayControl'
 import {TopAdControl} from './TopAdControl'
@@ -104,7 +105,7 @@ export function Admin({tasks,features,ads,initial,summaries,adapters,runs,displa
    </header>
    <nav className="desk-tabs" aria-label="Data tools"><button type="button" className="min-h-tap" aria-current="page">Sources</button>{([['','Players'],['reports','Reports'],['merge','Merge duplicates'],['bulk','Bulk edit (CSV)']] as const).map(([t,l])=><Link key={l} className="min-h-tap" href={deskHref('data',{view:'players',...(t?{tab:t}:{})})}>{l}</Link>)}<Link className="min-h-tap" href="/master/contributions">Contributions ↗</Link></nav>
    {summary?<DataCenter key={scope} runs={runs} selected={scope!} summary={summary} api={api} onChange={refresh}/>:
-    <ul className="desk-clubs">{sums.map(s=><li key={s.id}><Link href={deskHref('data',{club:s.id})}><span><b><bdi>{s.name}</bdi></b><small>{s.archive.sources} archive sources · {s.archive.documents} documents · {s.archive.needsParser} need a parser · {s.archive.blocked} refused{s.archive.lastRun?` · last run ${s.archive.lastRun.state} ${s.archive.lastRun.at.slice(0,10)}`:' · never collected here'}</small></span><b aria-hidden="true">→</b></Link></li>)}</ul>}
+    <ResearchAnalysis sums={sums} api={api} href={id=>deskHref('data',{club:id})} onChange={refresh}/>}
    <Autopilot api={api} onRan={refresh}/>
    <GoalsAutomation/>
   </>}

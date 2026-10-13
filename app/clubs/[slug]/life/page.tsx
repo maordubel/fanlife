@@ -16,16 +16,17 @@ export const metadata: Metadata = {title: en.metaTitle, robots: {index: false, f
 
 /**
  * LIFE for any club: one engine and one set of universal chapters, composed with what this
- * club's pack holds. It is an evaluation build — the life says PARTIAL until the club's own
- * culture is written and approved — so outside evaluation the route does not exist.
+ * club's pack holds. The life says PARTIAL until the club's own
+ * culture is written and approved. Preview opens it for every club; the real site opens it for a published (live) club.
  */
 export default async function Page({params, searchParams}: {params: {slug: string}; searchParams: {lang?: string}}) {
   const preview = evaluationMode()
   const id = resolveClubId(headers().get('host'), params.slug, preview)
-  if (!id || !preview) notFound()
+  if (!id) notFound()
   const [state, club] = await Promise.all([readState(), loadClub(id)])
   const control = state.clubs.find(c => c.id === id)
   if (!club || !control || control.status === 'paused') notFound()
+  if (!preview && control.status !== 'live') notFound()
   const locale = uiLocale(searchParams.lang), base = `/clubs/${id}`, copy = locale === 'he' ? he : en
   const pack = clubLife(club.data, {locale})
   if (!pack.readiness.playable) notFound()

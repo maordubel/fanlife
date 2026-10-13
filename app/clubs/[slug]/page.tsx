@@ -48,7 +48,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
  if(!c)notFound()
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,reg=REGISTRY.find(r=>r.id===c.id)||c,theme=core?.data.theme||clubTheme(reg)
  const feed=await getFixtureFeed(new Date()).catch(()=>null),fx=feed?.fixtures.find(f=>f.clubId===id),lv=livery(id),world=worldFor(reg)
- const games=gameCopy(locale),life=await lifeEntry(id,{evaluation:evaluationMode(),paused:c.status==='paused',locale})
+ const games=gameCopy(locale),life=await lifeEntry(id,{evaluation:evaluationMode(),paused:c.status==='paused',status:c.status,locale})
  const states:GateState[]=core?SHARED_GATES.map(g=>({key:g.key,allowed:gateAccess(c,g.number,evaluationMode()).allowed,playable:gateAvailability(core.data,g.key).playable})):[]
  const open=states.filter(s=>s.allowed&&s.playable).map(s=>s.key as GateKey)
  const pick=todaysPick(id,open,todayInIsrael()),pickGate=pick?SHARED_GATES.find(g=>g.key===pick)!:null
