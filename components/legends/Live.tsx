@@ -7,7 +7,8 @@ import {useRumbleSound} from '@/components/clubs/rumble/shared'
 import {KitChip,Portal} from './Sheet'
 
 /**
- * The match, LIVE (owner, 12.10.2026: "a live experience — you don't know the result; changes at half-time, on 60′ and 75′").
+ * The match, LIVE (owner, 12.10.2026: "a live experience — you don't know the result"; 13.10.2026: "at 65 and 70 only pop a
+ * window — a substitution or a tactical change? Yes / No — and if Yes open the changes"). Half-time opens the touchline at once.
  * The server plays to the next stop and hands back the moments so far; this screen shows only the part since the last stop,
  * then the touchline: three changes in all, the approach, the press and the tempo. The final whistle comes when the server
  * says so — the score on the screen is never ahead of the pictures.
@@ -23,7 +24,7 @@ export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolea
  const snd=useRumbleSound(),L=v.live
  const sound:TheatreSound=n=>snd.play(n==='whistle'?'kickoff':n==='save'?'roar':n,n==='save'?.35:.6)
  const final=!L&&v.last?.id===watch.id?v.last:null
- const [stage,setStage]=useState<'watch'|'break'|'ft'>('watch')
+ const [stage,setStage]=useState<'watch'|'break'|'ft'>('watch'),[asked,setAsked]=useState<number|null>(null)
  // a new stop, or the final part, starts a new spell of watching
  useEffect(()=>{setStage('watch')},[L?.minute,final?.id])
  const segment=L?{from:L.prevStop,to:L.minute,outro:false}:{from:watch.from,to:999,outro:true}
@@ -38,12 +39,25 @@ export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolea
    </header>
    {stage!=='ft'&&reel?<Theatre key={`${watch.id}:${segment.from}:${segment.to}`} reel={reel} segment={segment} sound={sound} autoStart onDone={()=>setStage(L?'break':'ft')}/>
     :stage!=='ft'&&L?<FallbackLog L={L} onDone={()=>setStage('break')}/>:null}
-   {stage==='break'&&L?<Touchline key={L.minute} L={L} busy={busy} onPlay={d=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:d})}} onFinish={()=>{setWatch({...watch,from:L.minute});send({kind:'match-finish'})}}/>:null}
+   {stage==='break'&&L&&L.minute!==45&&asked!==L.minute?<ChangeAsk key={`ask${L.minute}`} L={L} busy={busy} onYes={()=>setAsked(L.minute)} onNo={()=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:{}})}}/>
+    :stage==='break'&&L?<Touchline key={L.minute} L={L} busy={busy} onPlay={d=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:d})}} onFinish={()=>{setWatch({...watch,from:L.minute});send({kind:'match-finish'})}}/>:null}
    {stage==='ft'&&final?<FullTime v={v} r={final} colours={colours} onClose={()=>setWatch(null)}/>:null}
    {stage==='ft'&&!final?<p className="lgm-fine">The result is in.</p>:null}
    <p className="lgm-live-foot"><button type="button" className="lgm-link min-h-tap" onClick={snd.toggle} aria-pressed={!snd.on}>{snd.on?'Sound on':'Sound off'}</button></p>
   </div>
  </div></Portal>
+}
+
+/** on 65′ and 70′ (engine 3) the touchline knocks first: a change, yes or no — No plays on at once */
+function ChangeAsk({L,busy,onYes,onNo}:{L:NonNullable<CareerView['live']>;busy:boolean;onYes:()=>void;onNo:()=>void}){
+ useEffect(()=>{document.getElementById('lgm-ask-h')?.scrollIntoView({block:'nearest',behavior:'smooth'})},[])
+ return <section className="lgm-ask" aria-labelledby="lgm-ask-h" data-testid="legends-ask">
+  <p className="lgm-ask-min" aria-hidden="true">{L.minute}′</p>
+  <p className="lgm-break-score"><span>{L.home}</span><b>{L.goals[0]} – {L.goals[1]}</b><span>{L.away}</span></p>
+  <h3 id="lgm-ask-h">Do you want to make a substitution or a tactical change?</h3>
+  <p className="lgm-fine">{L.subsLeft>0?`${L.subsLeft} change${L.subsLeft===1?'':'s'} left.`:'No changes left — the plan can still change.'}</p>
+  <p className="lgm-ask-go"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy} onClick={onYes} data-testid="legends-ask-yes">Yes</button><button type="button" className="lgm-ghost lgm-go-big min-h-tap" disabled={busy} onClick={onNo} data-testid="legends-ask-no">{busy?'…':'No · play on'}</button></p>
+ </section>
 }
 
 function FallbackLog({L,onDone}:{L:NonNullable<CareerView['live']>;onDone:()=>void}){

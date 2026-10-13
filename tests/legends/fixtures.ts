@@ -1,6 +1,9 @@
 import {hash,rng} from '@/lib/clubs/rumble-rng'
 import {buildCatalog,eligible,type PoolRow} from '@/lib/legends/catalog'
-import type {Catalog} from '@/lib/legends/types'
+import type {Catalog,MatchSnapshot} from '@/lib/legends/types'
+import type {EngineVersion} from '@/lib/legends/config'
+import {botDraft} from '@/lib/legends/draft'
+import {bestLineup} from '@/lib/legends/squad'
 
 /** invented clubs and invented men — never real people (house rule for fixtures) */
 export function poolOf(club:string,n:number,opts:{gk?:number;priceless?:number}={}):PoolRow[]{
@@ -21,3 +24,11 @@ export function catalogOf(club:string,n=220,opts:{gk?:number;priceless?:number}=
  return buildCatalog(club,`${club.toUpperCase()} FC`,e.cards,'test-prices')
 }
 export const LEAGUE=['alpha','bravo','charlie','delta','echo'].map((c,i)=>catalogOf(c,160+i*60))
+/** seeded match snapshots between bot-drafted invented sides — the engine golden tests (an old engine must play as it did) */
+export function snapshotsOf(engine:EngineVersion,n:number):MatchSnapshot[]{
+ const sides=LEAGUE.map(c=>{const r=botDraft(c.cards,hash(`${c.club}:golden`),'value'),by=new Map(c.cards.map(x=>[x.id,x])),lu=bestLineup(r.draft.picks.map(p=>by.get(p.id)!))!
+  const m=(id:string)=>{const x=by.get(id)!;return {id:x.id,name:x.name,pos:x.pos,stars:x.stars,attrs:x.attrs}}
+  return {club:c.club,name:c.clubName,formation:lu.formation,tactics:lu.tactics,xi:lu.xi.map(m),bench:lu.bench.map(m),morale:1,captain:lu.xi[3]}})
+ return Array.from({length:n},(_,i)=>{const a=sides[i%sides.length]!,b=sides[(i+1+(i>>2)%4)%sides.length]!,ko=i%9===0
+  return {id:`g${i}`,seed:hash(`golden:${i}`),engine,rules:'legends-1.0.0' as const,knockout:ko,...(ko?{decider:'extra-time-penalties' as const}:{}),sides:[{...a,home:ko?null:true},{...b,home:ko?null:false}] as MatchSnapshot['sides']}})
+}

@@ -10,6 +10,7 @@ import {ownerIndex,readFriendly} from '@/lib/legends/store'
 import '../../../all-football.css'
 import '../../legends.css'
 import '../../team-league.css'
+import '../../match-flow.css'
 export const dynamic='force-dynamic'
 export const metadata={title:'Legends Manager · friendly',robots:{index:false}}
 

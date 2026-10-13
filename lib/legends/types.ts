@@ -24,7 +24,8 @@ export type SquadEntry={id:string;quota:QuotaPos;paid:number;apps:number;appsTot
 export type Status={yellows:number;thresholds:number;suspension:number;injury:number;injuryKind:'minor'|'moderate'|'severe'|null}
 export type Emergency={id:string;card:Card;games:number;since:number}
 
-export type Team={club:string;name:string;ai:boolean;squad:SquadEntry[];cards:Record<string,Card>;lineup:Lineup;cash:number;status:Record<string,Status>;emergency:Emergency[];morale:number;usedEmergency:string[]}
+export type Team={club:string;name:string;ai:boolean;squad:SquadEntry[];cards:Record<string,Card>;lineup:Lineup;cash:number;status:Record<string,Status>;emergency:Emergency[];morale:number;usedEmergency:string[]
+ /** the dressing room's mood after the manager's talks, −1…+1 (engine 3; absent = neutral) */mood?:number;/** single men's moods, −1…+1 */moodMen?:Record<string,number>}
 
 /* ───────── the draft (§1.2, §2.2) ───────── */
 export type Offer={id:string;tier:'premium'|'mid'|'budget';locked:string|null}
@@ -32,8 +33,13 @@ export type DraftState={slot:number;group:QuotaPos|null;offers:Offer[];shown:str
 
 /* ───────── a match (§1.4, §2.5) ───────── */
 export type EventKind='kickoff'|'chance'|'goal'|'yellow'|'red'|'injury'|'sub'|'tactic'|'half-time'|'full-time'|'extra-time'|'penalties'|'stop'
+/**
+ * `detail` on a goal or a chance (engine 3): 'penalty' | 'free-kick' | 'corner' — a set piece; a penalty saved or missed is a
+ * 'chance' with detail 'penalty' (`other` = the keeper when he saved it). On a red: 'second-yellow'; on an injury: its kind.
+ */
 export type MatchEventRow={seq:number;minute:number;kind:EventKind;side:0|1|null;player?:string;other?:string;detail?:string;n?:number}
-export type SideSnapshot={club:string;name:string;formation:FormationId;tactics:Tactics;xi:{id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>}[];bench:{id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>}[];morale:number;home:boolean|null;captain?:string}
+export type SnapMan={id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>;/** engine 3: his mood from the talks */mood?:number}
+export type SideSnapshot={club:string;name:string;formation:FormationId;tactics:Tactics;xi:SnapMan[];bench:SnapMan[];morale:number;home:boolean|null;captain?:string;/** engine 3: the dressing room's mood */mood?:number}
 export type Decision={stop:number;tactics?:Tactics;subs?:{out:string;in:string}[]}
 export type MatchSnapshot={id:string;seed:number;engine:EngineVersion;rules:typeof RULE_VERSION;sides:[SideSnapshot,SideSnapshot];knockout:boolean;decider?:'extra-time-penalties'|'penalties'}
 export type MatchOutcome={goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];stops:number[];
@@ -48,6 +54,8 @@ export type Fixture={id:string;round:number;home:string;away:string;result:{goal
 export type LedgerEntry={key:string;season:number;kind:'draft-budget'|'draft-buy'|'board-grant'|'buy'|'sell'|'season-grant'|'bonus'|'emergency';amount:number;card?:string;note?:string;at:string}
 export type SeasonRecord={ordinal:number;place:number;of:number;points:number;w:number;d:number;l:number;gf:number;ga:number;champion:boolean;playoff:boolean;grant:number;bonus:number;cash:number;squad:string[];topScorer:{id:string;name:string;goals:number}|null}
 export type Season={ordinal:number;rounds:number;played:number;fixtures:Fixture[];windows:{pre:boolean;mid:boolean;/** the window after round 2 */early?:boolean};bonusAwarded:number;playoff:Fixture|null;ended:boolean;ranks:string[]}
+/** one dressing-room talk the manager gave (rule for CLAUDE.md: talks are server-side, one per match and moment) */
+export type TalkRecord={fixture:string;when:'pre'|'post';situation:string;answer:number;season:number}
 export type Phase='draft'|'window'|'season'|'playoff'|'season-end'
 
 export type Career={
@@ -56,4 +64,6 @@ export type Career={
  cutscene:'board-grant'|'meet-squad'|'season-end'|null;soldThisWindow:string[];aiDone:string[];
  ledger:LedgerEntry[];reputation:{points:number;events:{key:string;season:number;points:number;why:string}[]};history:SeasonRecord[];
  keys:string[];revision:number;createdAt:string;updatedAt:string
+ /** the dressing-room talks given, newest last (engine 3) */
+ talks?:TalkRecord[]
 }
