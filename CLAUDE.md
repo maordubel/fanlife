@@ -3122,3 +3122,31 @@ Owner: *"on mobile, an app display — no floating screens, fixed screens; anima
 2. **A screen arrives with `app-screen-in`** (opacity + a relative `inset-block-start`) — never a transform on a page wrapper, which would pin every fixed sheet inside it. Off under reduced motion. A press answers with a 60ms scale (`:active`).
 3. **≤760px nothing floats:** big cards, LIFE bars, lobbies (`.ready`), the Legends hero/code/roll run edge to edge with a 16px gutter and no offset shadow; a centred `<dialog>` becomes a bottom sheet. CSS lives in the `APP MODE` block of `app/magazine.css` and the feature's own CSS. Desktop is untouched.
 4. **The Legends banner** (`components/legends/ClubBanner.tsx`) streams in `<Suspense>` on the club home, shows only when `door('fanLeague')` is open (owner preview counts) and `legendsReadyFor(club)` says READY, links to `/all-football/legends?club=<id>` (the roll pre-selects it), and wears only what `bannerPaint(theme)` allows (rule 95). `tests/legends/club-banner.test.ts`.
+
+## 116 · The match flow: engine 3, the 65′/70′ question, and a talk that is never skipped (13.10.2026)
+
+Owner: "at 65′ and 70′ only ask 'a change? yes / no' · a dressing-room talk before and after, four answers that move the players' morale · penalties, free kicks, corners".
+1. **Engine 3** (`legends-engine-3`) adds set pieces as `goal`/`chance` rows with `detail: 'penalty'|'free-kick'|'corner'` (a saved penalty: `chance` + `other` = the keeper), drawn from a second per-minute stream with a fixed number of draws — engines 1–2 replay byte for byte (golden fingerprints) and an untouched live match is still the quick sim. Lab: 2.76 goals, 23.4% draws, 0.26 penalties a match.
+2. **Stops:** 45′ = the full touchline; 65′ and 70′ = "Make a change? Yes / No" (Yes opens the touchline). Engine-2 matches keep 45/60/75.
+3. **The dressing room** (`talk-pre`/`talk-post`, server-side, once per match and moment, `career.talks`): the server refuses kick-off, the next round and the next season while a talk waits. The bank is `lib/legends/talks.ts` (49 situations × 4 tones); mood is bounded (±2.5% team, ±2% a man, ×0.6 decay a match) and a fan sees only words. Tests that play on answer through `talkThrough()` in `tests/legends/fixtures.ts`.
+
+## 117 · The highlights show the whole pitch, set pieces and every goal (13.10.2026)
+
+1. **One pitch, two ends:** the camera pans the full length; the home side attacks right in the first half and left after it (extra time changes again at its interval), with a "teams change ends" card at 45′. Phones get a 192×160 frame, wide screens 256×160.
+2. **Set pieces come from the record:** `lib/legends/reel.ts` maps `detail` to `Shape` 'penalty'|'free-kick'|'corner'; an event without one keeps a seeded random shape, so old logs replay as before.
+3. **Every goal gets a card:** ours = the owner's film (`public/legends/fx`) or its lettering where rule 95 forbids the colours; theirs = a quieter card in their kit. Crests on the scoreboard and the board (chip fallback; Rumble reels carry none), real shirts via `KitCloth`.
+
+## 119 · LEGENDS MANAGER — the squad is set by hand, the doors are fixed, the numbers are counted (13.10.2026)
+
+1. **Armband:** captain → vice-captain → the eleven's most-starred man (`captainOf`); both are squad men, the boost is never named.
+2. **"Meet your squad"** (`components/legends/MeetSquad.tsx`, cutscene `meet-squad`) shows once, between the board's news and round 1, and ends in a registered eleven.
+3. **Team sheet:** tap a man, tap a place (drag too); position fit on every spot; no sideways scroll. Career doors = `CareerNav` (fixed on phones, above the site tab bar). A club is named with its crest (`Shirts.tsx` → `ClubMark`), its kit chip otherwise.
+4. **Leader boards are counts of stored match events** (`lib/legends/stats.ts`), kept per season — never a rating.
+
+## 120 · Parallel pull requests must not collide (13.10.2026)
+
+Owner: "set everything right and comfortable for future work". Four agents on one feature conflicted on the same three places every time.
+1. **`.gitattributes` merges the append-only files as a union:** `CLAUDE.md` and `app/all-football/legends/styles.ts`. A rule or a stylesheet added in two branches keeps both.
+2. **A legends page imports `styles.ts` only**; a feature adds ONE line there for its own CSS file (`tests/legends/team-league.test.ts` fails on a sheet the index misses).
+3. **An agent never numbers a rule in CLAUDE.md itself:** the rule text goes at the end of its PR description and the merger appends it in merge order.
+4. **Merge order = file overlap:** isolated PRs first (visuals, data), then the ones touching `career.ts`/`CareerApp.tsx`, each rebased on the new main and re-tested before the next. A test that fails after a rebase is read, not muted (rule 65).
