@@ -3156,6 +3156,13 @@ Owner: "set everything right and comfortable for future work". Four agents on on
 3. **An agent never numbers a rule in CLAUDE.md itself:** the rule text goes at the end of its PR description and the merger appends it in merge order.
 4. **Merge order = file overlap:** isolated PRs first (visuals, data), then the ones touching `career.ts`/`CareerApp.tsx`, each rebased on the new main and re-tested before the next. A test that fails after a rebase is read, not muted (rule 65).
 
+## 117 · Every shirt photograph gets a drawn kit, every drawing is tagged, and a gap is filled only from the same shirt (13.10.2026)
+
+Owner: complete the missing kit SVGs for every club — sponsor, maker, crest — tagged correctly by season.
+1. **A photograph with no drawn kit for its (season, type) is read and drawn** (`scripts/kits/add-photo-kits.py`, reads in `content/manual/kit-reads/photo-shirts.json`): origin `photo`, colours measured from the photo, design/sponsor read by eye, always `readUnsure`, no shorts or socks (not in a shirt photograph). 55 kits added (Celtic 26, St. Pauli 8, Hapoel TA 6, Olympiacos 5, AEK 3, Panathinaikos 4, Zrinjski 3). The maker is the product title's word.
+2. **A missing maker or sponsor is filled only from another record of the same season and type** in the club's pack waves, and only when all agree (`scripts/kits/fill-from-sources.py`; the source is written in `filled`). No neighbouring-season guess.
+3. **Every SVG carries `data-club`, `data-kit`, `data-season`, `data-type`, `data-maker`, `data-sponsor`, `data-origin`, a `<title>`, and each club has `svg/index.json`.** `tests/clubs/kit-svg-tags.test.ts` holds it.
+4. Makers with no free mark (Kappa, Lotto, Diadora, Hummel, DIIY, Zeus, Naai) stay lettered — a trademark is not ours to redraw (rule 25).
 ## 121 · One face per name: Oswald and Anton carry every Balkan letter (13.10.2026)
 
 Owner, shown seven faces (`font-options` sheet): **Oswald** for names and editorial heads (`--mag-condensed`, Karantina stays behind it for Hebrew), **Anton** for big headings (`--mag-display`). Karantina's and Bowlby One's Latin did not really carry Č/Ž/Ć/Đ, so the browser borrowed those letters from another face. Bowlby One stays the FAN LIFE wordmark only (`--mag-brand`: `.mag-logo`, `.mag-masthead`). Files are self-hosted latin + latin-ext woff2 in `public/fonts/`; a new display face must carry latin-ext before it ships. The Worker's Hebrew faces (`app/globals.css`, share cards) are untouched.

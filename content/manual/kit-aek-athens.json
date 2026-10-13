@@ -2,9 +2,14 @@
  "retrieved": "2026-10-09",
  "sources": {
   "catalogue": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html",
-  "commons": "https://commons.wikimedia.org/wiki/Category:Football_kit_body/AEK_Athens"
+  "commons": "https://commons.wikimedia.org/wiki/Category:Football_kit_body/AEK_Athens",
+  "photos": {
+   "title": "Shirt photographs (Club Football Shirts archive and four retail shops) read by eye for seasons the catalogue lacks",
+   "readOn": "2026-10-13",
+   "note": "Shorts and socks are not visible in a shirt photograph and are not drawn; every kit is readUnsure."
+  }
  },
- "kitCount": 99,
+ "kitCount": 102,
  "catalogueKits": 57,
  "drawingOnlyKits": 42,
  "crossChecked": 38,
@@ -5887,7 +5892,137 @@
    ],
    "verified": null,
    "image": null
+  },
+  {
+   "id": "photo-k-01",
+   "origin": "photo",
+   "season": "2018/19",
+   "kind": "season",
+   "type": "third",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "blue",
+     "yellow"
+    ],
+    "hex": {
+     "blue": "#0d50bb",
+     "yellow": "#ffe200"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Capelli Sport",
+   "sponsor": "stoixima",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "third 2018/19",
+     "image": "third-2018-19-2.webp",
+     "page": "https://www.clubfootballshirts.com/aek-athens-fc-981413.html"
+    }
+   ],
+   "image": "/club-kits/aek-athens/cfs/third-2018-19-2.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-02",
+   "origin": "photo",
+   "season": "1993/94",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "yellow",
+     "black"
+    ],
+    "hex": {
+     "yellow": "#ffe010",
+     "black": "#222220"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": null,
+   "sponsor": "Φοίνιξ Ασφάλειες",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1993-94 AEK Athens Home Shirt L",
+     "image": "vintagefootballshirts-1993-94-aek-athens-home-shirt-xl-24331.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1993-94-aek-athens-home-shirt-xl-24331"
+    }
+   ],
+   "image": "/club-kits/aek-athens/shop/vintagefootballshirts-1993-94-aek-athens-home-shirt-xl-24331.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-03",
+   "origin": "photo",
+   "season": "1994/95",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "contrasting sleeves",
+    "colours": [
+     "black",
+     "yellow"
+    ],
+    "hex": {
+     "black": "#1e1e1e",
+     "yellow": "#f9c016"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": null,
+   "sponsor": "Φοίνιξ Ασφάλειες",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1994-95 AEK Athens Champions League Home Shirt S",
+     "image": "vintagefootballshirts-1994-95-aek-athens-champions-league-home-shirt-s.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1994-95-aek-athens-champions-league-home-shirt-s"
+    }
+   ],
+   "image": "/club-kits/aek-athens/shop/vintagefootballshirts-1994-95-aek-athens-champions-league-home-shirt-s.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
   }
  ],
- "club": "aek-athens"
+ "club": "aek-athens",
+ "photoKits": 3
 }

@@ -17,7 +17,8 @@ describe('AEK Athens kits: catalogue + Commons drawings',()=>{
   expect(cof.count).toBe(57);expect(cof.records).toHaveLength(57)
   for(const r of cof.records){expect(r.shorts.hex).toMatch(/^#[0-9a-f]{6}$/);expect(r.socks.hex).toMatch(/^#[0-9a-f]{6}$/);expect(Object.values(r.shirt.hex).every(h=>/^#[0-9a-f]{6}$/.test(h))).toBe(true)}
  })
- it('the wave is the joined archive, one entry per kit',()=>{expect(kits).toHaveLength(joined.kitCount);expect(new Set(kits.map(k=>k.id))).toEqual(new Set(joined.kits.map(k=>k.id)))})
+ it('the wave is the joined archive, one entry per kit',()=>{const own=joined.kits.filter(k=>k.origin!=='photo') // kits read from shirt photographs (13.10.2026) are not part of the pack wave
+  expect(kits).toHaveLength(own.length);expect(new Set(kits.map(k=>k.id))).toEqual(new Set(own.map(k=>k.id)))})
  it('a maker is only ever named for a kit the catalogue drew; Commons-only kits name none',()=>{
   for(const k of joined.kits)if(k.origin==='drawing')expect(k.maker).toBeNull()
  })

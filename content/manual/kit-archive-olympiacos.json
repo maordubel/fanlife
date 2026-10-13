@@ -2,9 +2,14 @@
  "club": "olympiacos",
  "retrieved": "2026-10-09",
  "sources": {
-  "catalogue": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html"
+  "catalogue": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+  "photos": {
+   "title": "Shirt photographs (Club Football Shirts archive and four retail shops) read by eye for seasons the catalogue lacks",
+   "readOn": "2026-10-13",
+   "note": "Shorts and socks are not visible in a shirt photograph and are not drawn; every kit is readUnsure."
+  }
  },
- "kitCount": 71,
+ "kitCount": 76,
  "catalogueKits": 71,
  "drawingOnlyKits": 0,
  "crossChecked": 39,
@@ -3943,6 +3948,226 @@
    "verified": null,
    "readUnsure": false,
    "twin": []
+  },
+  {
+   "id": "photo-k-01",
+   "origin": "photo",
+   "season": "1992/93",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#f3f3f3",
+     "red": "#da1616"
+    },
+    "measured": {
+     "stripes": 4
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "1992-93 Olympiakos Umbro Home Shirt L",
+     "image": "vintagefootballshirts-1992-93-olympiakos-umbro-home-shirt-l.webp",
+     "page": "https://www.vintagefootballshirts.com/products/1992-93-olympiakos-umbro-home-shirt-l"
+    }
+   ],
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-1992-93-olympiakos-umbro-home-shirt-l.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-02",
+   "origin": "photo",
+   "season": "2000/01",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "red": "#cb1419"
+    },
+    "measured": {
+     "stripes": 2
+    }
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2000-01 Olympiakos Umbro '75th Anniversary' Home Shirt Y",
+     "image": "vintagefootballshirts-2000-01-olympiakos-umbro-75th-anniversary-home-shirt-y.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2000-01-olympiakos-umbro-75th-anniversary-home-shirt-y"
+    }
+   ],
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-2000-01-olympiakos-umbro-75th-anniversary-home-shirt-y.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-03",
+   "origin": "photo",
+   "season": "2004/05",
+   "kind": "season",
+   "type": "gk",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "black",
+     "red"
+    ],
+    "hex": {
+     "black": "#0c161e",
+     "red": "#9c2c3d"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Umbro",
+   "sponsor": "Siemens mobile",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "2004/05 OLYMPIAKOS *BNWT* GK SHIRT (M) UMBRO",
+     "image": "cultkits-2004-05-olympiakos-bnwt-gk-shirt-m-umbro.webp",
+     "page": "https://www.cultkits.com/products/2004-05-olympiakos-bnwt-gk-shirt-m-umbro"
+    }
+   ],
+   "image": "/club-kits/olympiacos/shop/cultkits-2004-05-olympiakos-bnwt-gk-shirt-m-umbro.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-04",
+   "origin": "photo",
+   "season": "2006/07",
+   "kind": "season",
+   "type": "fourth",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "red",
+     "white"
+    ],
+    "hex": {
+     "red": "#e91312",
+     "white": "#f7efed"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Puma",
+   "sponsor": "vodafone",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Vintage Football Shirts",
+     "ref": "2006-07 Olympiakos Puma Fourth Shirt M",
+     "image": "vintagefootballshirts-2006-07-olympiakos-puma-fourth-shirt-m.webp",
+     "page": "https://www.vintagefootballshirts.com/products/2006-07-olympiakos-puma-fourth-shirt-m"
+    }
+   ],
+   "image": "/club-kits/olympiacos/shop/vintagefootballshirts-2006-07-olympiakos-puma-fourth-shirt-m.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-05",
+   "origin": "photo",
+   "season": "2011/12",
+   "kind": "season",
+   "type": "fourth",
+   "euro": false,
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "black",
+     "red"
+    ],
+    "hex": {
+     "black": "#03070a",
+     "red": "#a3252d"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Puma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-shop"
+   ],
+   "evidence": [
+    {
+     "publisher": "Cult Kits",
+     "ref": "2011/12 OLYMPIAKOS *BNWT* FOURTH SHIRT (L) PUMA",
+     "image": "cultkits-2011-12-olympiakos-bnwt-fourth-shirt-l-puma567.webp",
+     "page": "https://www.cultkits.com/products/2011-12-olympiakos-bnwt-fourth-shirt-l-puma567"
+    }
+   ],
+   "image": "/club-kits/olympiacos/shop/cultkits-2011-12-olympiakos-bnwt-fourth-shirt-l-puma567.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
   }
- ]
+ ],
+ "photoKits": 5
 }

@@ -2,9 +2,14 @@
  "club": "zrinjski-mostar",
  "retrieved": "2026-10-09",
  "sources": {
-  "catalogue": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_1.html"
+  "catalogue": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_1.html",
+  "photos": {
+   "title": "Shirt photographs (Club Football Shirts archive and four retail shops) read by eye for seasons the catalogue lacks",
+   "readOn": "2026-10-13",
+   "note": "Shorts and socks are not visible in a shirt photograph and are not drawn; every kit is readUnsure."
+  }
  },
- "kitCount": 19,
+ "kitCount": 22,
  "catalogueKits": 19,
  "drawingOnlyKits": 0,
  "crossChecked": 13,
@@ -989,7 +994,7 @@
     "trimHex": null,
     "bands": false
    },
-   "maker": null,
+   "maker": "Naai",
    "sponsor": "ALUMINIJ",
    "shortsSponsor": null,
    "sources": [
@@ -1011,7 +1016,13 @@
    "twin": [
     "fka-k-154144",
     "fka-k-154144"
-   ]
+   ],
+   "filled": {
+    "maker": [
+     "wave-kits-fka-2026-10-06.json",
+     "wave-kits-photos-2026-10-08.json"
+    ]
+   }
   },
   {
    "id": "cof-k-02",
@@ -1065,6 +1076,136 @@
    "verified": null,
    "readUnsure": true,
    "twin": []
+  },
+  {
+   "id": "photo-k-01",
+   "origin": "photo",
+   "season": "2019/20",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "navy",
+     "red"
+    ],
+    "hex": {
+     "navy": "#152443",
+     "red": "#ff0000"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Macron",
+   "sponsor": "PPD",
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "away 2019/20",
+     "image": "away-2019-20-4.webp",
+     "page": "https://www.clubfootballshirts.com/hsk-zrinjski-mostar-880396.html"
+    }
+   ],
+   "image": "/club-kits/zrinjski-mostar/cfs/away-2019-20-4.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-02",
+   "origin": "photo",
+   "season": "2021/22",
+   "kind": "season",
+   "type": "away",
+   "euro": false,
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "grey"
+    ],
+    "hex": {
+     "white": "#f9f9f9",
+     "grey": "#e2e2e2"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Macron",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "away 2021/22",
+     "image": "away-2021-22-7.webp",
+     "page": "https://www.clubfootballshirts.com/hsk-zrinjski-mostar-880396.html"
+    }
+   ],
+   "image": "/club-kits/zrinjski-mostar/cfs/away-2021-22-7.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
+  },
+  {
+   "id": "photo-k-03",
+   "origin": "photo",
+   "season": "2021/22",
+   "kind": "season",
+   "type": "home",
+   "euro": false,
+   "shirt": {
+    "design": "sash",
+    "colours": [
+     "white",
+     "red"
+    ],
+    "hex": {
+     "white": "#fcfbfc",
+     "red": "#aa202c"
+    },
+    "measured": {}
+   },
+   "shorts": null,
+   "socks": null,
+   "maker": "Macron",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "photo-cfs"
+   ],
+   "evidence": [
+    {
+     "publisher": "Club Football Shirts",
+     "ref": "home 2021/22",
+     "image": "home-2021-22-6.webp",
+     "page": "https://www.clubfootballshirts.com/hsk-zrinjski-mostar-880396.html"
+    }
+   ],
+   "image": "/club-kits/zrinjski-mostar/cfs/home-2021-22-6.webp",
+   "drawings": [],
+   "conflicts": [],
+   "notes": [],
+   "verified": null,
+   "readUnsure": true,
+   "twin": []
   }
- ]
+ ],
+ "photoKits": 3
 }

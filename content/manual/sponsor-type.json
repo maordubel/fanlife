@@ -358,6 +358,86 @@
    "weight": 900,
    "case": "asis",
    "track": 0.0
+  },
+  "cr smith": {
+   "fam": "heavy",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.0,
+   "brand": "#1a1a1a"
+  },
+  "people's friend": {
+   "fam": "cond",
+   "weight": 700,
+   "case": "upper",
+   "track": 0.04,
+   "brand": "#c8102e"
+  },
+  "φοίνιξ ασφάλειες": {
+   "fam": "cond",
+   "weight": 700,
+   "case": "upper",
+   "track": 0.04,
+   "brand": "#1a1a1a"
+  },
+  "jack daniel's": {
+   "fam": "serif",
+   "weight": 700,
+   "case": "upper",
+   "track": 0.02,
+   "brand": "#1a1a1a"
+  },
+  "deutscher ring": {
+   "fam": "cond",
+   "weight": 700,
+   "case": "upper",
+   "track": 0.04,
+   "brand": "#1a1a1a"
+  },
+  "böklunder": {
+   "fam": "heavy",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.0,
+   "brand": "#d9232a"
+  },
+  "mobilcom": {
+   "fam": "heavy",
+   "weight": 800,
+   "case": "upper",
+   "track": 0.0,
+   "brand": "#1a1a1a"
+  },
+  "interamerican": {
+   "fam": "cond",
+   "weight": 700,
+   "case": "upper",
+   "track": 0.05,
+   "brand": "#1a1a1a"
+  },
+  "motor oil hellas": {
+   "fam": "cond",
+   "weight": 700,
+   "case": "upper",
+   "track": 0.04,
+   "brand": "#1a1a1a",
+   "lines": [
+    {
+     "t": "MOTOR OIL",
+     "scale": 1
+    },
+    {
+     "t": "HELLAS",
+     "scale": 0.8
+    }
+   ]
+  },
+  "winbank": {
+   "fam": "round",
+   "weight": 800,
+   "case": "lower",
+   "track": 0.0,
+   "brand": "#1a1a1a"
   }
  }
 }
