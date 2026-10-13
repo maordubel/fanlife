@@ -68,7 +68,7 @@ describe('set pieces are scenes of their own, from the engine’s detail',()=>{
  it('the scenes: a penalty from the spot with the keeper on his line, a free kick with a wall at 9.15 m, a corner from the flag',()=>{
   const r=reelOf([])
   for(let i=0;i<30;i++){
-   const pen=sceneFor({...r,seed:i},{minute:20,side:0,kind:(['goal','save','miss'] as const)[i%3],shape:'penalty',score:[0,0]},i)
+   const pen=sceneFor({...r,seed:i},{minute:20,side:0,kind:(['goal','save','miss'] as const)[i%3]!,shape:'penalty',score:[0,0]},i)
    expect(pen.variant).toBe('from the penalty spot');const b0=pen.ball[0]!;expect(Math.abs(b0.y-11)).toBeLessThan(.01);expect(Math.abs(Math.abs(b0.x-34))).toBeLessThan(.01)
    expect(pen.actors.some(a=>a.role==='ref')).toBe(true)
    // the ball waits on the spot (the quadrant, the free-kick mark) until it is struck
