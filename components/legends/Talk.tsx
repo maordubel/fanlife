@@ -7,7 +7,7 @@ import {Sheet} from './Sheet'
  * THE DRESSING ROOM (owner, 13.10.2026: "a talk before and after every match — four answers, and they change the morale").
  * The server picks the situation and keeps the effect; this sheet shows the room, the moment, four lines in four tones, and —
  * once the server has answered — how the room took it and the mood in a WORD. Never a number (tests/legends/match-flow.test.ts
- * reads this file for one). A talk is optional: "Say nothing" walks out and the match goes on.
+ * reads this file for one). A talk is never skipped (owner, 13.10.2026): one tap on one of the four, and the server refuses a kick-off while the room waits.
  */
 type Send=(a:Record<string,unknown>,ok?:string)=>void
 type Room=CareerView['talks']
@@ -47,7 +47,7 @@ export function Talk({talk,room,busy,send,onDone}:{talk:TalkView;room:Room;busy:
      <button type="button" className="lgm-dr-answer" data-tone={a.tone} aria-pressed={chosen===i} disabled={busy||(chosen!==null&&chosen!==i)} onClick={()=>say(i)} data-testid={`legends-talk-${i}`}>
       <small>{a.toneLabel}</small><span>{a.line}</span>
      </button></li>)}</ol>
-    <p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" disabled={busy&&chosen!==null} onClick={()=>onDone(false)} data-testid="legends-talk-skip">{stuck?'Walk out':pre?'Say nothing · to the tunnel':'Say nothing'}</button></p>
+    {stuck?<p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={()=>onDone(false)} data-testid="legends-talk-close">Close</button></p>:null}
    </>:<div className="lgm-dr-reaction" role="status" data-tone={done.tone}>
     <p className="lgm-dr-said"><small>{done.toneLabel}</small>{done.line}</p>
     <p className="lgm-dr-room">{done.reaction}</p>
@@ -64,13 +64,15 @@ export function Talk({talk,room,busy,send,onDone}:{talk:TalkView;room:Room;busy:
  * pre-match talk, the post-match talk comes up by itself once the full-time card is closed, and `open` holds the other sheets back.
  */
 export function useDressingRoom(v:CareerView,busy:boolean,send:Send,watching:boolean,kickoffNow:()=>void):{kickoff:()=>void;open:boolean;sheet:ReactNode}{
- const [talk,setTalk]=useState<TalkView|null>(null),seen=useRef(new Set<string>())
+ const [talk,setTalk]=useState<TalkView|null>(null),closed=useRef<string|null>(null)
  const post=v.talks?.post
+ // the post-match word comes up by itself once the full-time card is closed, and again on a reload until it is given
  useEffect(()=>{
-  if(talk||watching||!post||seen.current.has(`post:${post.fixture}`))return
-  seen.current.add(`post:${post.fixture}`);setTalk(post)
+  if(talk||watching||!post||closed.current===`post:${post.fixture}`)return
+  setTalk(post)
  },[post,talk,watching])
- const kickoff=useCallback(()=>{const pre=v.talks?.pre;if(pre&&!seen.current.has(`pre:${pre.fixture}`)){seen.current.add(`pre:${pre.fixture}`);setTalk(pre)}else kickoffNow()},[v.talks?.pre,kickoffNow])
- const sheet=talk&&v.talks?<Talk talk={talk} room={v.talks} busy={busy} send={send} onDone={()=>{const t=talk;setTalk(null);if(t.when==='pre')kickoffNow()}}/>:null
+ // a kick-off always goes through the pre-match word the server is waiting for
+ const kickoff=useCallback(()=>{const pre=v.talks?.pre,p=v.talks?.post;if(p){closed.current=null;setTalk(p)}else if(pre)setTalk(pre);else kickoffNow()},[v.talks?.pre,v.talks?.post,kickoffNow])
+ const sheet=talk&&v.talks?<Talk talk={talk} room={v.talks} busy={busy} send={send} onDone={spoke=>{const t=talk;setTalk(null);if(!spoke){closed.current=`${t.when}:${t.fixture}`;return}if(t.when==='pre')kickoffNow()}}/>:null
  return {kickoff,open:!!talk,sheet}
 }

@@ -1,6 +1,6 @@
 import {hash} from '@/lib/clubs/rumble-rng'
 import {DEFAULT_SETTINGS,ENGINE_VERSION,roundTenths,type EngineVersion,type LegendsSettings} from './config'
-import {applyAction,createCareer,isBye,type Action,type Intent} from './career'
+import {applyAction,createCareer,isBye,talkOffers,type Action,type Intent} from './career'
 import {botDraft} from './draft'
 import {run} from './engine'
 import {bestLineup} from './squad'
@@ -53,6 +53,8 @@ export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,s
  let c=made.career,n=0
  const catalogs=new Map(rivals.map(r=>[r.club,r.cards]))
  const go=(a:Intent)=>{const r=applyAction(c,{...a,key:`lab${seed}k${n++}`,rev:c.revision} as Action,{now:'2026-01-01T00:00:00Z',catalogs});if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);c=r.career}
+ // the dressing room is never skipped: the autopilot answers every talk with a calm word before it plays on
+ const talk=()=>{const o=talkOffers(c);if(o.post)go({kind:'talk-post',fixture:o.post.fixture,answer:0});const p=talkOffers(c).pre;if(p)go({kind:'talk-pre',fixture:p.fixture,answer:0})}
  try{
   const d=botDraft(own.cards,hash(`${c.id}:draft`),'value');if(d.error)return {career:c,error:d.error}
   for(const p of d.draft.picks){go({kind:'draft',move:{kind:'pick',id:p.id}})}
@@ -60,11 +62,11 @@ export function autopilot(own:Catalog,rivals:readonly Catalog[],seasons:number,s
   for(let s=0;s<seasons;s++){
    for(let guard=0;guard<200;guard++){
     if(c.phase==='window'){go({kind:'auto'});go({kind:'close-window'});continue}
-    if(c.phase==='season'){if(isBye(c))go({kind:'play-round'});else{go({kind:'auto'});go({kind:'match-start',mode:'fast'})}continue}
-    if(c.phase==='playoff'){go({kind:'match-start',mode:'fast'});continue}
+    if(c.phase==='season'){talk();if(isBye(c))go({kind:'play-round'});else{go({kind:'auto'});go({kind:'match-start',mode:'fast'})}continue}
+    if(c.phase==='playoff'){talk();go({kind:'match-start',mode:'fast'});continue}
     if(c.phase==='season-end')break
    }
-   if(s<seasons-1)go({kind:'next-season'})
+   if(s<seasons-1){talk();go({kind:'next-season'})}
   }
  }catch(e){return {career:c,error:(e as Error).message}}
  return {career:c,error:null}

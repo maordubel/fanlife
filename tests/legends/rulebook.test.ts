@@ -15,13 +15,13 @@ import {acceptFriendly,createFriendly,lockSide} from '@/lib/legends/friendly'
 import {careerView} from '@/lib/legends/view'
 import {aiWindow,prepareEmergency} from '@/lib/legends/ai'
 import type {Career,Fixture,MatchSnapshot} from '@/lib/legends/types'
-import {catalogOf,LEAGUE,poolOf} from './fixtures'
+import {catalogOf,LEAGUE,poolOf,talkThrough,WAITS_FOR_TALK} from './fixtures'
 
 const NOW='2026-10-12T10:00:00.000Z'
 const ctx={now:NOW,catalogs:new Map(LEAGUE.map(c=>[c.club,c.cards]))}
 function newCareer(id='c0ffee0000000001'):Career{const r=createCareer({id,owner:'o'.repeat(32),now:NOW,own:LEAGUE[0]!,rivals:LEAGUE.slice(1),settings:DEFAULT_SETTINGS});if(!r.ok)throw new Error(r.error);return r.career}
 let n=0
-function act(c:Career,a:Intent){const r=applyAction(c,{...a,key:`k${n++}xxxxxxx`,rev:c.revision} as Action,ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
+function act(c:Career,a:Intent):Career{if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,act);const r=applyAction(c,{...a,key:`k${n++}xxxxxxx`,rev:c.revision} as Action,ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
 function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks){c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}})}return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
 /** play on the quick sim until the transfer window opens (after round 2) */
 function toWindow(c:Career):Career{for(let i=0;i<6&&c.phase!=='window';i++)c=isBye(c)?act(c,{kind:'play-round'}):act(c,{kind:'match-start',mode:'fast'});return c}

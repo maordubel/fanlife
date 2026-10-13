@@ -1,6 +1,7 @@
 import {hash,rng} from '@/lib/clubs/rumble-rng'
 import {buildCatalog,eligible,type PoolRow} from '@/lib/legends/catalog'
-import type {Catalog,MatchSnapshot} from '@/lib/legends/types'
+import type {Career,Catalog,MatchSnapshot} from '@/lib/legends/types'
+import {talkOffers,type Intent} from '@/lib/legends/career'
 import type {EngineVersion} from '@/lib/legends/config'
 import {botDraft} from '@/lib/legends/draft'
 import {bestLineup} from '@/lib/legends/squad'
@@ -31,4 +32,13 @@ export function snapshotsOf(engine:EngineVersion,n:number):MatchSnapshot[]{
   return {club:c.club,name:c.clubName,formation:lu.formation,tactics:lu.tactics,xi:lu.xi.map(m),bench:lu.bench.map(m),morale:1,captain:lu.xi[3]}})
  return Array.from({length:n},(_,i)=>{const a=sides[i%sides.length]!,b=sides[(i+1+(i>>2)%4)%sides.length]!,ko=i%9===0
   return {id:`g${i}`,seed:hash(`golden:${i}`),engine,rules:'legends-1.0.0' as const,knockout:ko,...(ko?{decider:'extra-time-penalties' as const}:{}),sides:[{...a,home:ko?null:true},{...b,home:ko?null:false}] as MatchSnapshot['sides']}})
+}
+
+/** the kinds that wait for the dressing room (owner, 13.10.2026: a talk is answered, never skipped) */
+export const WAITS_FOR_TALK=new Set<string>(['match-start','play-round','next-season'])
+/** a test that plays on answers every waiting talk first — with the given tone, calm by default — through the server action */
+export function talkThrough(c:Career,apply:(c:Career,a:Intent)=>Career,answer=0):Career{
+ const o=talkOffers(c);if(o.post)c=apply(c,{kind:'talk-post',fixture:o.post.fixture,answer})
+ const p=talkOffers(c).pre;if(p)c=apply(c,{kind:'talk-pre',fixture:p.fixture,answer})
+ return c
 }

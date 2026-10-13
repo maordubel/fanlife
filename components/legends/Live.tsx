@@ -54,7 +54,7 @@ function ChangeAsk({L,busy,onYes,onNo}:{L:NonNullable<CareerView['live']>;busy:b
  return <section className="lgm-ask" aria-labelledby="lgm-ask-h" data-testid="legends-ask">
   <p className="lgm-ask-min" aria-hidden="true">{L.minute}′</p>
   <p className="lgm-break-score"><span>{L.home}</span><b>{L.goals[0]} – {L.goals[1]}</b><span>{L.away}</span></p>
-  <h3 id="lgm-ask-h">Do you want to make a substitution or a tactical change?</h3>
+  <h3 id="lgm-ask-h">Make a change?</h3>
   <p className="lgm-fine">{L.subsLeft>0?`${L.subsLeft} change${L.subsLeft===1?'':'s'} left.`:'No changes left — the plan can still change.'}</p>
   <p className="lgm-ask-go"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy} onClick={onYes} data-testid="legends-ask-yes">Yes</button><button type="button" className="lgm-ghost lgm-go-big min-h-tap" disabled={busy} onClick={onNo} data-testid="legends-ask-no">{busy?'…':'No · play on'}</button></p>
  </section>

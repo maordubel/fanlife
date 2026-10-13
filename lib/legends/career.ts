@@ -21,7 +21,7 @@ import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type De
  * Phases: draft → (board grant: season tickets) → season — round 1 and 2 with the drafted squad → window (after round 2) → season
  * → window (halfway) → season → [title play-off] → season end → season (next) … A live match stops at 45′, 65′ and 70′
  * (engine 3; a match begun on engine 2 keeps 45′, 60′, 75′). Before and after each of the manager's matches the dressing room
- * waits for a talk (`talk-pre`, `talk-post`) — optional, one per match and moment, its effect bounded by `morale.ts`.
+ * waits for a talk (`talk-pre`, `talk-post`) — required (one tap), one per match and moment, its effect bounded by `morale.ts`.
  */
 export const me=(c:Career):Team=>c.teams[0]!
 const maps=new WeakMap<Catalog,Map<string,Card>>()
@@ -208,6 +208,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
   case 'match-start':{
    if(c.phase!=='season'&&c.phase!=='playoff')return bad('There is no match to play now.','closed')
    if(c.live)return bad('This match has started.','closed')
+   {const w=talkWaiting(c,true);if(w)return bad(w,'closed')}
    const fx=c.phase==='playoff'?c.season.playoff:nextFixture(c)
    if(!fx||fx.result)return bad('Your club has no match this round.','closed')
    const prep=prepareSide(c,t,ctx);if('error' in prep)return bad(prep.error)
@@ -240,6 +241,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
   }
   case 'play-round':{
    if(!isBye(c))return bad('Your club plays this round.','closed')
+   {const w=talkWaiting(c,false);if(w)return bad(w,'closed')}
    return commitRound(c,null,ctx,null)
   }
   case 'talk-pre':case 'talk-post':{
@@ -251,6 +253,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
   }
   case 'next-season':{
    if(c.phase!=='season-end')return bad('The season is not over.','closed')
+   {const w=talkWaiting(c,false);if(w)return bad(w,'closed')}
    const ord=c.season.ordinal+1,teams=c.teams.map(x=>({...x,morale:1,...(x.mood!==undefined?{mood:0,moodMen:{}}:{}),status:Object.fromEntries(Object.entries(x.status).map(([k,v])=>[k,newSeason(v,c.settings.yellowsResetEachSeason)])),squad:x.squad.map(s=>({...s}))}))
    return {ok:true,career:{...c,teams,season:newSeasonOf(teams,ord,c.id),phase:'season',cutscene:null,soldThisWindow:[]}}
   }
@@ -429,6 +432,16 @@ export function talkOffers(c:Career):{pre:TalkOffer|null;post:TalkOffer|null}{
  const pre=nx&&!nx.result&&(nx.home===c.clubId||nx.away===c.clubId)&&!talked(c,nx.id,'pre')?offer(nx,'pre'):null
  const lm=lastMine(c),post=lm&&!talked(c,lm.id,'post')?offer(lm,'post'):null
  return {pre,post}
+}
+/**
+ * A talk is not optional (owner, 13.10.2026): the post-match word must be given before the next round is played or the next
+ * season opens, and the pre-match word before kick-off. Answers the refusal, or null when the room is not waiting.
+ */
+export function talkWaiting(c:Career,kickoff:boolean):string|null{
+ const o=talkOffers(c)
+ if(o.post)return 'The dressing room is waiting for a word about the last match.'
+ if(kickoff&&o.pre)return 'The dressing room is waiting — talk to them before kick-off.'
+ return null
 }
 /** the men an answer speaks to */
 function talkTargets(c:Career,fixture:string,when:'pre'|'post',who:'xi'|'bench'|'scorers'|'reds'):string[]{

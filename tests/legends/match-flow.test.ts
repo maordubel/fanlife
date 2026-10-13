@@ -11,14 +11,14 @@ import {applyTalk,decayMood,moodScore,moodWord} from '@/lib/legends/morale'
 import {BANK,pickSituation,TONES,type TalkCtx} from '@/lib/legends/talks'
 import {careerView} from '@/lib/legends/view'
 import type {Career,MatchSnapshot,Team} from '@/lib/legends/types'
-import {LEAGUE,snapshotsOf} from './fixtures'
+import {LEAGUE,snapshotsOf,talkThrough,WAITS_FOR_TALK} from './fixtures'
 
 const NOW='2026-10-13T10:00:00.000Z'
 const ctx={now:NOW,catalogs:new Map(LEAGUE.map(c=>[c.club,c.cards]))}
 function newCareer(id:string):Career{const r=createCareer({id,owner:'o'.repeat(32),now:NOW,own:LEAGUE[0]!,rivals:LEAGUE.slice(1),settings:DEFAULT_SETTINGS});if(!r.ok)throw new Error(r.error);return r.career}
 let n=0
 const keyed=(c:Career,a:Intent):Action=>({...a,key:`mf${n++}xxxxxxxx`,rev:c.revision} as Action)
-function act(c:Career,a:Intent){const r=applyAction(c,keyed(c,a),ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
+function act(c:Career,a:Intent):Career{if(WAITS_FOR_TALK.has(a.kind))c=talkThrough(c,act);const r=applyAction(c,keyed(c,a),ctx);if(!r.ok)throw new Error(`${a.kind}: ${r.error}`);return r.career}
 function drafted(c:Career):Career{const b=botDraft(c.catalog.cards,hash(`${c.id}:draft`),'value');for(const p of b.draft.picks)c=act(c,{kind:'draft',move:{kind:'pick',id:p.id}});return act(act(c,{kind:'draft-confirm'}),{kind:'ack'})}
 const toMatch=(c:Career)=>{for(let i=0;i<4&&isBye(c);i++)c=act(c,{kind:'play-round'});return c}
 
@@ -123,9 +123,14 @@ describe('the dressing room (owner, 13.10.2026)',()=>{
   c=act(c,{kind:'match-finish'});const post=talkOffers(c).post!;expect(post.fixture).toBe(lastMine(c)!.id)
   expect(post.ctx.result).not.toBeNull()
   c=act(c,{kind:'talk-post',fixture:post.fixture,answer:0});expect(talkOffers(c).post).toBeNull();expect(c.talks).toHaveLength(2)
-  // skipping is allowed: the next match starts with no talk at all
+  // a talk is never skipped (owner, 13.10.2026 — this line said "skipping is allowed" until the owner ruled it out): the next
+  // kick-off is refused while the room waits, and so is the round after a match with no word said
   c=toMatch(c);if(c.phase==='window')c=act(c,{kind:'close-window'});c=toMatch(c)
-  expect(talkOffers(c).pre).not.toBeNull();c=act(c,{kind:'match-start',mode:'fast'});expect(c.talks).toHaveLength(2)
+  const pre2=talkOffers(c).pre!;expect(pre2).not.toBeNull()
+  const refused=applyAction(c,keyed(c,{kind:'match-start',mode:'fast'}),ctx);expect(refused.ok).toBe(false);expect(!refused.ok&&refused.error).toMatch(/dressing room/i)
+  c=act(c,{kind:'talk-pre',fixture:pre2.fixture,answer:1});c=act(c,{kind:'match-start',mode:'fast'});expect(c.talks).toHaveLength(3)
+  expect(talkOffers(c).post).not.toBeNull()
+  for(const k of ['match-start','play-round','next-season'] as const){const r=applyAction(c,keyed(c,(k==='match-start'?{kind:k,mode:'fast'}:{kind:k}) as Intent),ctx);expect(r.ok).toBe(false)}
  })
  it('mood is bounded, each step is bounded, and the room drifts back toward neutral after every match',()=>{
   let t:Team={...me(newCareer('dd00000000000003')),morale:1}
