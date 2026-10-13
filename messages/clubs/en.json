@@ -414,5 +414,17 @@
   "awayd_chapter": "The {d}",
   "awayd_speed": "Speed",
   "awayd_jump": "Jump to a decade",
-  "awayd_unplaced": "{n} matches have no ground recorded by UEFA, so they are not on the map."
+  "awayd_unplaced": "{n} matches have no ground recorded by UEFA, so they are not on the map.",
+  "suggestKicker": "Your say",
+  "suggestTitle": "Suggest the next club",
+  "suggestNote": "Tell us which club you want on the ballot. Every suggestion goes straight to the editors.",
+  "suggestLabel": "Club name",
+  "suggestPlaceholder": "e.g. Galatasaray",
+  "suggestSend": "Send suggestion",
+  "suggestSending": "Sending…",
+  "suggestThanks": "Thank you. The editors will see it.",
+  "suggestAgain": "Suggest another",
+  "suggestTooShort": "Please type the club’s name.",
+  "suggestLimit": "That is enough for today. Please come back tomorrow.",
+  "suggestFailed": "Could not send it right now. Please try again."
 }

@@ -414,5 +414,17 @@
   "awayd_chapter": "שנות ה-{d}",
   "awayd_speed": "מהירות",
   "awayd_jump": "קפיצה לעשור",
-  "awayd_unplaced": "ל-{n} משחקים UEFA לא רשמה מגרש, ולכן הם לא על המפה."
+  "awayd_unplaced": "ל-{n} משחקים UEFA לא רשמה מגרש, ולכן הם לא על המפה.",
+  "suggestKicker": "הצד שלכם",
+  "suggestTitle": "הציעו את המועדון הבא",
+  "suggestNote": "כתבו לנו איזה מועדון תרצו לראות בהצבעה. כל הצעה מגיעה ישירות לעורכים.",
+  "suggestLabel": "שם המועדון",
+  "suggestPlaceholder": "למשל: גלאטסראיי",
+  "suggestSend": "שלחו הצעה",
+  "suggestSending": "שולח…",
+  "suggestThanks": "תודה. העורכים יראו אותה.",
+  "suggestAgain": "הציעו עוד אחד",
+  "suggestTooShort": "כתבו את שם המועדון.",
+  "suggestLimit": "זה מספיק להיום. אפשר לחזור מחר.",
+  "suggestFailed": "לא הצלחנו לשלוח כרגע. נסו שוב."
 }

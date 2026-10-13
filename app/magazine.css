@@ -1660,3 +1660,13 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
   .mag-chooser[open], .mag-chooser[open]::backdrop, .mag > main, .club-body > * { animation: none; }
   :is(.mag, .club-app) *:active { transform: none !important; }
 }
+
+/* ── Suggest the next club (owner, 13.10.2026) — tokens only, no yellow ── */
+.mag-suggest { border-block: 3px solid var(--mag-ink); padding-block: 22px; }
+.mag-suggest-form { display: grid; gap: 8px; max-width: 560px; }
+.mag-suggest-form label { font-family: var(--mag-mono); font-weight: 700; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+.mag-suggest-row { display: flex; gap: 8px; flex-wrap: wrap; position: relative; }
+.mag-suggest-row input[name="club"] { flex: 1 1 220px; border: 3px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); padding-inline: 12px; font: inherit; border-radius: 0; }
+.mag-suggest-row input[name="club"]:focus-visible { outline: 3px solid var(--mag-vermilion); outline-offset: 2px; }
+.mag-suggest-thanks { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+@media (max-width: 760px) { .mag-suggest-row > button { flex: 1 1 100%; } }

@@ -7,11 +7,12 @@ import en from '@/messages/clubs/en.json'
 
 const ids=REGISTRY.map(c=>c.id)
 describe('hub ballot seed',()=>{
- it('is exactly 33 votes and Maccabi Haifa leads, for the full ballot and for a smaller one',()=>{
+ it('is exactly 42 votes (33 + the owner’s 9 for Fenerbahçe); Maccabi Haifa leads the rest, for the full ballot and for a smaller one',()=>{
   for(const set of [ids,ids.filter(i=>i!=='hapoel-tel-aviv'),['maccabi-haifa','olympiacos'],['olympiacos','celtic','maccabi-haifa','paok']]){
    const v=seedVotes(set)
    expect(Object.values(v).reduce((a,b)=>a+b,0)).toBe(SEED_TOTAL)
-   expect(rank(v,set)[0]).toBe('maccabi-haifa')
+   expect(v.fenerbahce===undefined||v.fenerbahce===9).toBe(true)
+   expect(rank(Object.fromEntries(Object.entries(v).filter(([k])=>k!=='fenerbahce')),set.filter(i=>i!=='fenerbahce'))[0]).toBe('maccabi-haifa')
    expect(Object.values(v).every(n=>Number.isInteger(n)&&n>=0)).toBe(true)
   }
  })

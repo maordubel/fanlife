@@ -18,6 +18,7 @@ import {livery,wearLivery} from '@/lib/club-livery'
 import {clubWorld} from '@/lib/clubs/world'
 import {BackToClub} from '@/components/clubs/BackToClub'
 import {WorkshopGrid} from '@/components/home/WorkshopGrid'
+import {SuggestClub} from '@/components/home/SuggestClub'
 import {HubDock} from '@/components/home/HubDock'
 import {isOpenClub} from '@/lib/home/hub-open'
 import {seedVotes,rank} from '@/lib/home/vote'
@@ -107,6 +108,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
     <p className="mag-sign">{copy.editor}</p>
    </aside>
   </section>
+  <SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed}}/>
 
   {/* THE MARKET: the shirt swap is the market's mark, repeated here, on the market page and at its door (owner, 9.10.2026). */}
   <section className="mag-section mag-market-band" id="market" aria-labelledby="market-h">

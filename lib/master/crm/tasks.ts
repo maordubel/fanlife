@@ -18,7 +18,7 @@ export type DeskView={open:Task[];snoozed:(Task&{decision:Decision})[];dismissed
 export const EMPTY_FLOW:TaskFlow={v:1,decisions:{}}
 export const fingerprint=(...parts:(string|number|null|undefined)[])=>createHash('sha256').update(parts.map(p=>String(p??'')).join('|')).digest('hex').slice(0,16)
 
-const AREA_OF:Record<string,TaskArea>={storage:'system',measurement:'system',runner:'system',activation:'games',gates:'games',profile:'research',changed:'research',findings:'research',blocked:'research',parser:'research',job:'research'}
+const AREA_OF:Record<string,TaskArea>={storage:'system',measurement:'system',runner:'system',activation:'games',gates:'games',profile:'research',changed:'research',findings:'research',blocked:'research',parser:'research',job:'research',suggest:'community'}
 /** the overview's own rules become tasks; the reason text is the evidence (a changed count is a changed task) */
 export function fromAttention(items:readonly AttentionItem[]):Task[]{
  return items.map(a=>({key:a.id,area:AREA_OF[a.id.split(':')[0]!]??'system',priority:a.priority,club:a.club,clubName:a.clubName,title:a.title,reason:a.reason,href:a.href,cta:a.cta,evidence:fingerprint(a.title,a.reason)}))

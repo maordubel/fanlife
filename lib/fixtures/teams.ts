@@ -23,6 +23,7 @@ export const FIXTURE_TEAMS: readonly FixtureTeam[] = [
   {clubId: 'atalanta', search: 'Atalanta', names: ['atalanta', 'atalanta bc', 'atalanta bergamo'], countries: ['italy']},
   {clubId: 'celtic', search: 'Celtic', names: ['celtic', 'celtic fc', 'celtic glasgow'], countries: ['scotland']},
   {clubId: 'partizan-belgrade', search: 'Partizan Belgrade', names: ['partizan', 'partizan belgrade', 'fk partizan', 'partizan beograd'], countries: ['serbia']},
+  {clubId: 'fenerbahce', search: 'Fenerbahce', names: ['fenerbahce', 'fenerbahce sk', 'fenerbahce istanbul', 'fenerbahçe', 'fenerbahçe sk'], countries: ['turkey', 'turkiye', 'türkiye']},
   {clubId: 'union-berlin', search: 'Union Berlin', names: ['union berlin', 'fc union berlin', '1 fc union berlin'], countries: ['germany']},
   {clubId: 'zrinjski-mostar', search: 'Zrinjski Mostar', names: ['zrinjski mostar', 'hsk zrinjski mostar', 'hsk zrinjski', 'zrinjski'], countries: ['bosnia and herzegovina', 'bosnia herzegovina', 'bosnia']},
 ]
