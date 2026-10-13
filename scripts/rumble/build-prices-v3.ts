@@ -116,7 +116,23 @@ async function prune(){
   console.log(id,'removed',gone.length,'moved',moved)}
  writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
 }
+// rebalance — after `migrate` added men at €1M, restore the ladder to the quota for the new size with the fewest moves (same walk as prune: a gap is filled by the
+// strongest man of the rung below, rating + 2 per rung). Owner-approved 13.10.2026 ("כן, לחבר") for the St. Pauli + Zrinjski squad-people wave.
+async function rebalance(){
+ for(const id of CORE_CLUB_IDS){const d=await loadClub(id),cur=doc.clubs[id];if(!d||!cur)continue
+  const by=new Map(rawPool(d.data,{extra:extraPositions(id)}).map(p=>[p.id,p.rating])),key=(pid:string)=>(by.get(pid)??55)+2*(cur.players[pid]!.priceM-1)
+  const want=quotaFor(Object.keys(cur.players).length).counts,at=(p:Price)=>Object.keys(cur.players).filter(pid=>cur.players[pid]!.priceM===p)
+  if(([5,4,3,2,1] as const).every(p=>at(p).length===want[p]))continue
+  let moved=0;const move=(pid:string,to:Price)=>{const e=cur.players[pid]!;cur.players[pid]={...e,priceM:to,priceTier:TIER[to],assignment:'owner-pinned',rationale:`ladder restored after the archive grew to ${Object.keys(cur.players).length} (${today}): was €${e.priceM}M. ${e.rationale}`.slice(0,300),reviewedAt:today};moved++}
+  for(const p of [5,4,3,2] as const){
+   while(at(p).length<want[p]){const below=at((p-1) as Price).sort((a,b)=>key(b)-key(a)||a.localeCompare(b));move(below[0]!,p)}
+   while(at(p).length>want[p]){const here=at(p).filter(pid=>!(p===5&&cur.players[pid]!.locked)).sort((a,b)=>key(a)-key(b)||a.localeCompare(b));move(here[0]!,(p-1) as Price)}}
+  cur.size=Object.keys(cur.players).length;cur.quotaMode=quotaFor(cur.size).mode;cur.quota=Object.fromEntries(Object.entries(want)) as never
+  console.log(id,'rebalanced, moved',moved)}
+ writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
+}
 async function main(){
+ if(cmd==='rebalance')await rebalance()
  if(cmd==='apply-v2')await applyV2()
  if(cmd==='prune')await prune()
  if(cmd==='freeze'){for(const id of CORE_CLUB_IDS)if(!doc.clubs[id])await freeze(id);writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')}

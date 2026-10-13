@@ -1,0 +1,54 @@
+name: roster-complete
+# Click "Run workflow" (Actions tab): completes every open club's player archive from the public Wikipedia categories and infoboxes (all periods),
+# fills missing positions, adds the new men to the Rumble price list at €1M and restores the ladder with the fewest moves (rule 103).
+# Nothing here approves anything: new men stay confidence 1 (one publisher). The result is pushed to branch roster-complete/auto for review.
+on:
+  workflow_dispatch:
+    inputs:
+      club:
+        description: 'Club id, or "all"'
+        default: all
+permissions:
+  contents: write
+jobs:
+  complete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: npm}
+      - run: npm ci
+      - name: Wikipedia player categories (all periods)
+        env: {REFRESH: '1', CLUB: '${{ github.event.inputs.club || ''all'' }}'}
+        run: |
+          if [ "$CLUB" = "all" ]; then node scripts/rumble/research-wikipedia-rosters.mjs; else node scripts/rumble/research-wikipedia-rosters.mjs "$CLUB"; fi
+      - name: Build the roster wave (without its own previous wave)
+        env: {ROSTER_WAVE_OFF: '1'}
+        run: node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/build-roster-wave.ts
+      - name: Read each new man's own infobox (years, caps, goals, position)
+        run: |
+          if [ "${{ github.event.inputs.club || 'all' }}" = "all" ]; then node scripts/rumble/enrich-wave-from-wikipedia.mjs; else node scripts/rumble/enrich-wave-from-wikipedia.mjs "${{ github.event.inputs.club }}"; fi
+      - name: Rebuild the wave with the infobox facts
+        env: {ROSTER_WAVE_OFF: '1'}
+        run: node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/build-roster-wave.ts
+      - name: Fill positions nobody states (exact title, a footballer page naming this club)
+        run: |
+          node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/list-missing.ts "$RUNNER_TEMP/missing.json"
+          node scripts/rumble/fill-positions.mjs "$RUNNER_TEMP/missing.json" content/manual/player-positions-extra.json
+      - name: English names, new men at €1M, ladder restored
+        run: |
+          npm run rumble:names
+          npm run rumble:prices -- migrate
+          npm run rumble:prices -- rebalance
+          npm run rumble:prices -- validate
+      - name: Tests that guard the archive and the Rumble
+        run: npx vitest run tests/clubs/roster-wave.test.ts tests/clubs/rumble-names-en.test.ts tests/clubs/rumble-xi.test.ts tests/clubs/rumble.test.ts
+      - name: Push the result
+        run: |
+          git config user.name "fan-life-bot"; git config user.email "bot@users.noreply.github.com"
+          git checkout -B roster-complete/auto
+          git add -A club-packs research-data content
+          git diff --cached --quiet && { echo "nothing new"; exit 0; }
+          git commit -m "roster-complete: all-period rosters, positions, prices"
+          git push -f origin roster-complete/auto

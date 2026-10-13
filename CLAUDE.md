@@ -2992,6 +2992,7 @@ Owner's rulebook `docs/fanlife/48-rumble-rulebook-v1.md`, amended by Economy V2 
 5. **Every man in the archive is dealt**: merged records are one card, a man with no recorded position is dealt into any outfield slot, never in goal, and the decks rotate through everyone. The roster wave (`club-packs/<club>/wave-roster-2026-10-10.json`, built by `scripts/rumble/build-roster-wave.ts`; confidence 1, years / position / league caps and goals from each man's own Wikipedia infobox for that club) is part of the archive.
 6. **Every name is English** (`content/generated/player-names-en.json`, `npm run rumble:names`).
 7. The owner does not want a search-and-sign feature: the system chooses, shuffles and rotates.
+8. **13.10.2026 — squad-people wave wired** (owner: "כן, לחבר"): 78 St. Pauli men (DFB) and 6 Zrinjski men (NFT) from `research-staging/<club>/players-ready-2026-10-12.json` are `club-packs/<club>/wave-squad-people-2026-10-12.json`, merged by `lib/clubs/roster-wave.ts` (confidence 2, dealt once if the roster wave also names them). They entered at €1M (`migrate`) and the ladder was restored with the fewest moves (`build-prices-v3.ts rebalance`: St. Pauli 75 men moved, Zrinjski 4). `.github/workflows/roster-complete.yml` (Actions → Run workflow) completes every open club's archive from Wikipedia and runs the same migrate + rebalance.
 
 
 ## 104 · Speed is a rule: the hub never waits on a provider, a club is compiled once per build, a save reaches every screen (11.10.2026)
