@@ -47,9 +47,11 @@ export function bestLineup(men:readonly Card[],prefer?:FormationId,tactics=DEFAU
  const lu:Lineup={formation:best.f,xi:best.r!.xi,bench,tactics:{...tactics}}
  return {...lu,captain:captainOf(lu,id=>men.find(m=>m.id===id))}
 }
-/** the armband: the manager's man when he is in the eleven, else the eleven's most-starred man (ties by id, so it never flickers) */
-export function captainOf(l:Pick<Lineup,'xi'|'captain'>,card:(id:string)=>Pick<Card,'stars'>|undefined):string|undefined{
+/** the armband: the manager's captain when he starts, else his vice-captain when HE starts, else the eleven's most-starred man
+ * (ties by id, so it never flickers) */
+export function captainOf(l:Pick<Lineup,'xi'|'captain'|'vice'>,card:(id:string)=>Pick<Card,'stars'>|undefined):string|undefined{
  if(l.captain&&l.xi.includes(l.captain))return l.captain
+ if(l.vice&&l.xi.includes(l.vice))return l.vice
  return [...l.xi].sort((a,b)=>(card(b)?.stars??0)-(card(a)?.stars??0)||a.localeCompare(b))[0]
 }
 export function lineupError(l:Lineup,men:readonly Card[]):string|null{

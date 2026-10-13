@@ -9,6 +9,7 @@ import {viewer} from '@/lib/legends/owner'
 import {ownerIndex,readFriendly} from '@/lib/legends/store'
 import '../../../all-football.css'
 import '../../legends.css'
+import '../../team.css'
 export const dynamic='force-dynamic'
 export const metadata={title:'Legends Manager · friendly',robots:{index:false}}
 

@@ -12,6 +12,7 @@ import {legendsClubs} from '@/lib/legends/server'
 import {activeCount,canSave,ownerIndex} from '@/lib/legends/store'
 import '../all-football.css'
 import './legends.css'
+import './team.css'
 export const dynamic='force-dynamic'
 export const metadata={title:'Legends Manager',description:'One club. Only the men who wore its shirt. Draft seventeen legends, run the club, and build a dynasty season after season.'}
 

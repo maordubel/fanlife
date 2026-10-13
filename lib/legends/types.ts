@@ -16,7 +16,7 @@ export type Pressing='low'|'medium'|'high'
 export type Tempo='slow'|'normal'|'fast'
 export type Tactics={approach:Approach;pressing:Pressing;tempo:Tempo}
 export const DEFAULT_TACTICS:Tactics={approach:'balanced',pressing:'medium',tempo:'normal'}
-export type Lineup={formation:FormationId;xi:string[];bench:string[];tactics:Tactics;/** the armband — one of the eleven */captain?:string}
+export type Lineup={formation:FormationId;xi:string[];bench:string[];tactics:Tactics;/** the armband — one of the eleven */captain?:string;/** the vice-captain: wears the armband when the captain does not start */vice?:string}
 
 /** a man's place in a career squad (§0 "career player") */
 export type SquadEntry={id:string;quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;joined:number}
@@ -46,14 +46,17 @@ export type Live={fixture:string;mode:'fast'|'interactive';snapshot:MatchSnapsho
 export type FixtureSide={formation:string;xi:{id:string;name:string;pos:QuotaPos;from:number|null;to:number|null}[]}
 export type Fixture={id:string;round:number;home:string;away:string;result:{goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];seed:number;sides?:[FixtureSide,FixtureSide]}|null}
 export type LedgerEntry={key:string;season:number;kind:'draft-budget'|'draft-buy'|'board-grant'|'buy'|'sell'|'season-grant'|'bonus'|'emergency';amount:number;card?:string;note?:string;at:string}
-export type SeasonRecord={ordinal:number;place:number;of:number;points:number;w:number;d:number;l:number;gf:number;ga:number;champion:boolean;playoff:boolean;grant:number;bonus:number;cash:number;squad:string[];topScorer:{id:string;name:string;goals:number}|null}
+export type SeasonRecord={ordinal:number;place:number;of:number;points:number;w:number;d:number;l:number;gf:number;ga:number;champion:boolean;playoff:boolean;grant:number;bonus:number;cash:number;squad:string[];topScorer:{id:string;name:string;goals:number}|null;/** the season's player numbers, every club, read from the match logs at the final whistle (`stats.ts`) */stats?:StatRow[]}
+/** one man's season, counted from the stored match events — never a hidden rating */
+export type StatRow={id:string;name:string;club:string;pos:QuotaPos;apps:number;goals:number;assists:number;yellows:number;reds:number;cleanSheets:number}
 export type Season={ordinal:number;rounds:number;played:number;fixtures:Fixture[];windows:{pre:boolean;mid:boolean;/** the window after round 2 */early?:boolean};bonusAwarded:number;playoff:Fixture|null;ended:boolean;ranks:string[]}
 export type Phase='draft'|'window'|'season'|'playoff'|'season-end'
 
 export type Career={
  v:2;id:string;rules:typeof RULE_VERSION;engine:EngineVersion;owner:string;clubId:string;clubName:string;status:'active'|'archived';
  settings:LegendsSettings;catalog:Catalog;teams:Team[];phase:Phase;draft:DraftState|null;season:Season;live:Live|null;
- cutscene:'board-grant'|'season-end'|null;soldThisWindow:string[];aiDone:string[];
+ cutscene:'board-grant'|'season-end'|null;
+ /** the first-season squad presentation after the board's news: 'pending' until the manager confirms his eleven (absent on older careers) */meet?:'pending'|'done';soldThisWindow:string[];aiDone:string[];
  ledger:LedgerEntry[];reputation:{points:number;events:{key:string;season:number;points:number;why:string}[]};history:SeasonRecord[];
  keys:string[];revision:number;createdAt:string;updatedAt:string
 }

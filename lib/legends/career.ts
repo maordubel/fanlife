@@ -8,6 +8,7 @@ import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScor
 import {checkDecision,run,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
+import {seasonRows} from './stats'
 import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type Decision,type Fixture,type FixtureSide,type LedgerEntry,type Live,type MatchOutcome,type MatchSnapshot,type Pressing,type Season,type SideSnapshot,type Tactics,type Team,type Tempo} from './types'
 
 /**
@@ -60,7 +61,7 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 
 /* ───────── actions ───────── */
 export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
- |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string}|{kind:'auto';formation?:string}|{kind:'close-window'}
+ |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string;vice?:string;/** the squad presentation's confirm */meet?:boolean}|{kind:'auto';formation?:string}|{kind:'close-window'}
  |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'play-round'}|{kind:'next-season'})&{key:string;rev:number}
 /** an action before the server stamps it with a key and a revision */
 export type Intent=Action extends infer A?A extends Action?Omit<A,'key'|'rev'>:never:never
@@ -81,7 +82,7 @@ export function parseAction(raw:unknown):Action|null{
   case 'draft-confirm':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
   case 'buy':case 'sell':return str(a.card)?{...b,kind:a.kind,card:a.card as string}:null
   case 'swap':return str(a.sell)&&str(a.buy)?{...b,kind:'swap',sell:a.sell as string,buy:a.buy as string}:null
-  case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{})}:null}
+  case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))&&(a.vice===undefined||str(a.vice))&&(a.meet===undefined||typeof a.meet==='boolean')?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{}),...(typeof a.vice==='string'?{vice:a.vice}:{}),...(a.meet===true?{meet:true}:{})}:null}
   case 'auto':return {...b,kind:'auto',...(typeof a.formation==='string'?{formation:a.formation}:{})}
   case 'match-start':return a.mode==='fast'||a.mode==='interactive'?{...b,kind:'match-start',mode:a.mode}:null
   case 'match-decide':{const d=(a.decision??{}) as Record<string,unknown>,t=d.tactics===undefined?undefined:tacticsOf(d.tactics)
@@ -121,7 +122,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const by=catalogMap(c),squad=c.draft.picks.map(p=>({id:p.id,quota:p.quota,paid:p.price,apps:0,appsTotal:0,goals:0,joined:1}))
    const lu=bestLineup(squad.map(s=>by.get(s.id)!))!
    // no pre-season window: rounds 1 and 2 are played with the drafted squad, the window opens after round 2 (owner, 12.10.2026)
-   let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'season',cutscene:'board-grant'}
+   let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'season',cutscene:'board-grant',meet:'pending'}
    next=pay(next,{key:`draft-budget:${c.id}`,kind:'draft-budget',amount:R.initialDraftBudgetM},ctx.now)
    for(const p of c.draft.picks)next=pay(next,{key:`draft-buy:${c.id}:${p.id}`,kind:'draft-buy',amount:-p.price,card:p.id},ctx.now)
    // the board's one-off grant (§1.2.12): ledger key first-window-grant:<career>, so it can never be paid twice
@@ -169,9 +170,15 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(c.phase==='draft')return bad('Finish the draft first.','closed')
    if(c.live)return bad('A match is being played — change it from the touchline.','closed')
    if(!isFormation(a.formation))return bad('Unknown formation.')
-   if(a.captain&&!a.xi.includes(a.captain))return bad('The captain must be one of the eleven.')
-   const lu={formation:a.formation,xi:a.xi,bench:a.bench,tactics:a.tactics,...(a.captain?{captain:a.captain}:t.lineup.captain&&a.xi.includes(t.lineup.captain)?{captain:t.lineup.captain}:{})},err=lineupError(lu,fieldable(t,id=>cardOf(c,t,id)));if(err)return bad(err)
-   return {ok:true,career:withMe(c,{...t,lineup:lu})}
+   // the captain and the vice are squad men: a captain left out keeps his title, and the armband passes captain → vice → the
+   // eleven's most-starred man for as long as he does not start (owner, 13.10.2026)
+   const inSquad=(id:string)=>t.squad.some(s=>s.id===id)||t.emergency.some(e=>e.id===id)
+   if(a.captain&&!inSquad(a.captain))return bad('The captain must be one of your squad.')
+   if(a.vice&&!inSquad(a.vice))return bad('The vice-captain must be one of your squad.')
+   const cap=a.captain??(t.lineup.captain&&inSquad(t.lineup.captain)?t.lineup.captain:undefined),vice=a.vice??(t.lineup.vice&&inSquad(t.lineup.vice)?t.lineup.vice:undefined)
+   if(cap&&vice&&cap===vice)return bad('The captain and the vice-captain are two different men.')
+   const lu={formation:a.formation,xi:a.xi,bench:a.bench,tactics:a.tactics,...(cap?{captain:cap}:{}),...(vice?{vice}:{})},err=lineupError(lu,fieldable(t,id=>cardOf(c,t,id)));if(err)return bad(err)
+   return {ok:true,career:{...withMe(c,{...t,lineup:lu}),...(a.meet&&c.meet==='pending'?{meet:'done' as const}:{})}}
   }
   case 'auto':{
    if(c.phase==='draft')return bad('Finish the draft first.','closed')
@@ -179,7 +186,9 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const f=a.formation&&isFormation(a.formation)?a.formation:t.lineup.formation,lu=bestLineup(fieldable(t,id=>cardOf(c,t,id)),f,t.lineup.tactics)
    if(!lu)return bad('Not enough fit men for an eleven.')
    // the manager's armband stays on his man when he is still in the eleven
-   return {ok:true,career:withMe(c,{...t,lineup:{...lu,captain:captainOf({xi:lu.xi,captain:t.lineup.captain},id=>cardOf(c,t,id))}})}
+   // the manager's captain and vice keep their titles; the armband goes captain → vice → the eleven's most-starred man
+   const has=(id?:string)=>!!id&&t.squad.some(s=>s.id===id),vice=has(t.lineup.vice)?t.lineup.vice:undefined,cap=has(t.lineup.captain)?t.lineup.captain:vice?undefined:captainOf({xi:lu.xi},id=>cardOf(c,t,id))
+   return {ok:true,career:withMe(c,{...t,lineup:{formation:lu.formation,xi:lu.xi,bench:lu.bench,tactics:lu.tactics,...(cap?{captain:cap}:{}),...(vice?{vice}:{})}})}
   }
   case 'close-window':{
    if(!windowOpen(c))return bad('No window is open.','closed')
@@ -354,7 +363,7 @@ function finishSeason(c:Career,ctx:Ctx,note:string|null):ActionResult{
  const rep:{key:string;why:string;points:number}[]=[{key:'wins',why:`${mine.w} wins`,points:mine.w*3+mine.d},...(champion?[{key:'title',why:'Champions',points:25}]:place===2?[{key:'second',why:'Runners-up',points:10}]:place<=Math.ceil(n/2)?[{key:'top-half',why:'Top half',points:5}]:[]),...(run3>=3?[{key:'run',why:`${run3} wins in a row`,points:3}]:[])]
  const events=rep.map(e=>({...e,key:`rep:${c.season.ordinal}:${e.key}`,season:c.season.ordinal})).filter(e=>!next.reputation.events.some(x=>x.key===e.key))
  const scorer=[...me(next).squad].sort((a,b)=>b.goals-a.goals)[0]
- const record={ordinal:c.season.ordinal,place,of:n,points:mine.pts,w:mine.w,d:mine.d,l:mine.l,gf:mine.gf,ga:mine.ga,champion,playoff:!!c.season.playoff,grant,bonus,cash:me(next).cash,squad:me(next).squad.map(s=>s.id),topScorer:scorer&&scorer.goals>0?{id:scorer.id,name:catalogMap(c).get(scorer.id)?.name??'—',goals:scorer.goals}:null}
+ const record={ordinal:c.season.ordinal,place,of:n,points:mine.pts,w:mine.w,d:mine.d,l:mine.l,gf:mine.gf,ga:mine.ga,champion,playoff:!!c.season.playoff,grant,bonus,cash:me(next).cash,squad:me(next).squad.map(s=>s.id),topScorer:scorer&&scorer.goals>0?{id:scorer.id,name:catalogMap(c).get(scorer.id)?.name??'—',goals:scorer.goals}:null,stats:seasonRows(c)}
  // goals were a season tally on the squad entry; the record keeps them, the new season counts from zero
  next={...next,teams:next.teams.map(t=>({...t,squad:t.squad.map(s=>({...s,goals:0}))}))}
  return {ok:true,career:{...next,phase:'season-end',cutscene:'season-end',season:{...next.season,ended:true,bonusAwarded:roundTenths(c.season.bonusAwarded+bonus),ranks:ranked.map(r=>r.club)},
