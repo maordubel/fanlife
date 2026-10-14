@@ -15,7 +15,12 @@ export function yearOfOn(on:unknown):number|null{
  if(typeof on!=='string')return null
  const m=/(?:^|\D)(1[89]\d{2}|20\d{2})(?:\D|$)/.exec(on);return m?Number(m[1]):null
 }
-export const candidateOfPlayer=(p:ClubPlayer):DuelCandidate=>({id:p.id,kind:'player',title:p.name,yearFrom:p.fromYear,yearTo:p.toYear})
+/** reputation from what the archive records: league apps and goals at the club, then the years he wore the shirt */
+export const fameOf=(p:ClubPlayer):number=>{
+ const apps=p.career?.apps??0,goals=p.career?.goals??0,years=p.fromYear!=null&&p.toYear!=null?Math.max(0,p.toYear-p.fromYear):0
+ return apps+goals*2+years*6
+}
+export const candidateOfPlayer=(p:ClubPlayer):DuelCandidate=>({id:p.id,kind:'player',title:p.name,yearFrom:p.fromYear,yearTo:p.toYear,fame:fameOf(p)})
 export const candidateOfEvent=(c:{id:string;name:string;from?:number|null;to?:number|null}):DuelCandidate=>({id:c.id,kind:'event',title:c.name,yearFrom:c.from??null,yearTo:c.to??c.from??null})
 /** the players a ballot line may be answered by — `fits`/`choicesFor` already decide it (D7-08, D7-09); nobody is admitted to reach ten */
 export const poolOfQuestion=(players:readonly ClubPlayer[],q:Question):DuelCandidate[]=>choicesFor(players,q).map(candidateOfPlayer)

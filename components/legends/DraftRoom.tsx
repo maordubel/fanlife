@@ -49,6 +49,14 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
   // eslint-disable-next-line react-hooks/exhaustive-deps
   [signature,stops])
  const [landed,setLanded]=useState<boolean[]>(()=>offers.map(()=>reduced))
+ // a slot is always live: with no line chosen yet, the line owed the most men opens by itself (the manager can still switch)
+ const idle=!done&&!d.group&&!d.stuck&&!busy
+ useEffect(()=>{
+  if(!idle)return
+  const open=d.lines.filter(g=>g.open),pick=[...open].sort((x,y)=>y.need-x.need)[0]
+  if(pick)send({kind:'draft',move:{kind:'group',group:pick.group}})
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+ },[idle,d.slot])
  useEffect(()=>{
   setPending(false)
   if(reduced){setLanded(offers.map(()=>true));return}
@@ -106,7 +114,7 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
     title={g.reason??undefined} onClick={()=>send({kind:'draft',move:{kind:'group',group:g.group}})}>
     <span>{posName(g.group)}</span><small dir="ltr">{g.need>0?`${g.need} to sign`:'extra'}</small></button>)}
   </div>:null}
-  {!done&&!d.group&&!d.stuck?<p className={`${s.mono} lgm-lines-hint`}>Pick a line — GK, DEF, MID or FWD — and three men come up.</p>:null}
+  {!done&&!d.group&&!d.stuck?<p className={`${s.mono} lgm-lines-hint`}>Opening the next slot…</p>:null}
   {d.lines.filter(g=>!g.open&&g.reason).length&&!done&&!d.stuck?<p className={`${s.mono} lgm-lines-why`} role="note">{d.lines.filter(g=>!g.open&&g.reason).map(g=>`${posName(g.group)}: ${g.reason}`)[0]}</p>:null}
 
   {!done&&d.group&&offers.length?<section className={s.cabinet} data-spinning={spinning} data-testid="legends-machine" aria-busy={spinning}>

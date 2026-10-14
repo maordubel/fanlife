@@ -365,3 +365,14 @@
 .wk-plate::after { background: var(--plate-line) center / contain no-repeat; }
 .wk-plate.flip { transform: scaleX(-1); }
 .club-switch-row[data-rival] .mag-badge:not(.mag-badge--crest) { --club-primary: var(--mag-ink); background: var(--mag-ink); color: var(--mag-white); }
+
+/* HEADINGS AND CLUB NAMES — one line where it fits, wrapped at word gaps otherwise, never split mid-word (13.10.2026).
+ * `anywhere` lets a grid track shrink a name until it breaks inside the word; `break-word` keeps the word whole and only
+ * splits a single word that is wider than its whole box. */
+.wk-head, .wk-logo, h1, h2, h3 { text-wrap: balance; hyphens: manual; }
+.wk-crest b, .wkk-cover-name, .wkk-mast-name, .wkk-ticket-h, .wkk-card-head .wk-logo, .wkk-crow .wk-head, .wkk-startticket .wkk-ticket-stub .wk-head,
+.wkk-now-big .wk-head, .wkk-meet-h, .wkc-mast-h, .wkc-slim-h, .wkc-card-who .wk-logo, .wkc-card-who .wk-head, .wkc-posters .wk-head,
+.wkc-ad-club, .wkc-item-club, .wkc-swing b, .wkc-crestgrid b, .wkc-fclubs .wk-opt { overflow-wrap: break-word; word-break: normal; hyphens: none; }
+.wk-crest b { font-size: clamp(11px, 3.4vw, 15px); }
+.wkh-stk-nm b, .wkh-teaser b, .wkh-cont-t .wk-head { overflow-wrap: break-word; hyphens: none; }
+.wkh-stk-nm b { font-size: clamp(13px, 4.2vw, 19px); }

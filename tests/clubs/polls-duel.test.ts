@@ -195,3 +195,13 @@ describe('gate 7 · the gesture (D7-15, D7-16)',()=>{
   expect(intentOf(4,3)).toBeNull();expect(intentOf(2,20)).toBe('v');expect(intentOf(20,4)).toBe('h');expect(intentOf(14,12)).toBe('v')
  })
 })
+
+describe('gate 7 · the well-known names lead (owner, 14.10.2026)',()=>{
+ it('about 60% of the first forty names come from the best-known 40%, and the rest still appear',()=>{
+  const pool=cand(100).map((c,i)=>({...c,fame:i}))   // p99 is the best known
+  const top=new Set(pool.slice(60).map(c=>c.id));let hits=0,n=0
+  for(const seed of [1,2,3,4,5,6,7,8]){const o=orderOf(pool,seed).slice(0,40);hits+=o.filter(id=>top.has(id)).length;n+=o.length}
+  expect(hits/n).toBeGreaterThan(0.5);expect(hits/n).toBeLessThan(0.72)
+  expect(new Set(orderOf(pool,3)).size).toBe(100)
+ })
+})

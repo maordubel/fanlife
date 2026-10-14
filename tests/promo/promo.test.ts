@@ -75,3 +75,16 @@ describe('the control room\'s write path',()=>{
  it('clamps numbers into their range',()=>{const x=cleanBanner({...SEED_DOC.banners[0],weight:9999,fromHour:99,showSec:1});expect([x.weight,x.fromHour,x.showSec]).toEqual([100,23,2])})
  it('the outbound link says where it was seen',()=>{const u=new URL(outbound(SEED_DOC.banners[2]!,at('hapoel-tel-aviv','/c')));expect(u.hostname).toBe('dubid.dubelteam.com');expect(u.searchParams.get('utm_content')).toBe('hapoel-tel-aviv');expect(u.searchParams.get('utm_campaign')).toBe('dubid')})
 })
+
+import {SEED_DOC} from '@/lib/promo/seed'
+import {isOwn} from '@/lib/promo/rules'
+describe('own banners',()=>{
+ it('seeds Manager, Market, LIFE and the extra banner',()=>{
+  const by=Object.fromEntries(SEED_DOC.banners.map(b=>[b.id,b]))
+  expect(Object.keys(by)).toEqual(expect.arrayContaining(['manager','market','life','fuckyou']))
+  expect(by.manager!.href).toContain('/all-football/legends')
+  expect(by.fuckyou!.href).toBe('https://fuckyou.dubelteam.com')
+  expect(isOwn(by.market!)).toBe(true)
+  expect(isOwn(by.fuckyou!)).toBe(false)
+ })
+})

@@ -24,7 +24,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
  return <div className={`fl mag${identity?' club-theme':''}`} data-club={club?.id} data-pattern={identity?.pattern} data-rival-no={identity?rivalBans(identity).join(' ')||undefined:undefined} dir={localeDirection(locale)} lang={locale} style={identity?themeStyle(identity,locale):{'--club':MASTER_PRIMARY} as CSSProperties}>
   <div className="mag-top"><div className="mag-top-in">
    <Link href="/" className="mag-logo" aria-label="FAN LIFE"><img className="mag-seal-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-96.png'} alt="" width={40} height={40}/>Fan <b>Life</b></Link>
-   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/#life">{copy.tabLife}</Link><Link href="/market">{copy.tabMarket}</Link><Link href="/me">{copy.corner}</Link></nav>
+   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/our-games">{copy.tabOurGames}</Link><Link href="/market">{copy.tabMarket}</Link><Link href="/me">{copy.corner}</Link></nav>
    <HubMenu locale={locale} current={club?.id??null} theme={identity}/>
   </div></div>
   {stop!==undefined?<div className="mag-stop">{stop}</div>:evaluationMode()?<div className="mag-stop"><div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div></div>:null}
