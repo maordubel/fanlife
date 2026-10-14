@@ -7,9 +7,9 @@
  * already being played (S05).
  */
 export const RULE_VERSION='legends-1.0.0' as const
-export const ENGINE_VERSION='legends-engine-3' as const
+export const ENGINE_VERSION='legends-engine-4' as const
 /** every engine a stored match may name — a match started on an older engine keeps that engine's stops and rules (rule 112) */
-export type EngineVersion='legends-engine-1'|'legends-engine-2'|typeof ENGINE_VERSION
+export type EngineVersion='legends-engine-1'|'legends-engine-2'|'legends-engine-3'|typeof ENGINE_VERSION
 export const LEGENDS_RULES={
  ruleVersion:RULE_VERSION,
  initialDraftBudgetM:52,firstBoardGrantM:8,
@@ -21,6 +21,11 @@ export const LEGENDS_RULES={
  touchlineStops:[45,60,75],
  /** engine 3 (owner, 13.10.2026): half-time is the full touchline; on 65′ and 70′ the screen only asks "a change? yes / no" first */
  touchlineStopsV3:[45,65,70],
+ /**
+  * engine 4 (owner, 14.10.2026): no fixed stops for changes. Half-time is the only break, 89′ is a silent hand-over the screen passes by
+  * itself, and the manager's Tactics button pauses the match at the minute he is watching (`match-tactics`). At most this many stops.
+  */
+ touchlineStopsV4:[45,89],maxInterventionWindowsV4:8,
  /**
   * The dressing-room talk (owner, 13.10.2026), engine 3 only. A talk moves the squad's mood (−1…+1) and single men's moods
   * (−1…+1); the engine reads them as a SMALL, bounded edge: the team's strength × (1 + 0.025 × mood), a man's quality
@@ -44,7 +49,7 @@ export const LEGENDS_RULES={
  maxActiveCareers:3,
  emergencyMaxMatches:3,
  minEligibleClubs:4,
- maxLeagueClubs:8,
+ maxLeagueClubs:8,/** the most clubs a manager may set up in a league of his own (owner, 14.10.2026: default is everyone) */maxLeagueClubsSetup:16,
 } as const
 export type QuotaPos='GK'|'DF'|'MF'|'FW'
 export const QUOTA_POS:readonly QuotaPos[]=['GK','DF','MF','FW']

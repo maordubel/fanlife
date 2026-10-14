@@ -1,5 +1,5 @@
 'use client'
-import {useEffect,useMemo,useState} from 'react'
+import {useEffect,useMemo,useRef,useState} from 'react'
 import type {CareerView,ResultView} from '@/lib/legends/view'
 import type {Tactics} from '@/lib/legends/types'
 import {Theatre,type TheatreSound} from '@/components/highlights/Theatre'
@@ -25,8 +25,14 @@ export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolea
  const sound:TheatreSound=n=>snd.play(n==='whistle'?'kickoff':n==='save'?'roar':n,n==='save'?.35:.6)
  const final=!L&&v.last?.id===watch.id?v.last:null
  const [stage,setStage]=useState<'watch'|'break'|'ft'>('watch'),[asked,setAsked]=useState<number|null>(null)
+ // the picture's minute, for the Tactics button; `jump` is the minute the manager asked the touchline for — its part was already watched
+ const clock=useRef(0),jump=useRef<number|null>(null)
  // a new stop, or the final part, starts a new spell of watching
- useEffect(()=>{setStage('watch')},[L?.minute,final?.id])
+ useEffect(()=>{if(jump.current!==null&&jump.current===L?.minute){jump.current=null;setStage('break')}else setStage('watch')},[L?.minute,final?.id])
+ // engine 4: 89′ is a silent hand-over — the screen passes it by itself
+ useEffect(()=>{if(L?.engine4&&L.minute===89&&stage==='break'&&!busy){setWatch({...watch,from:89});send({kind:'match-decide',decision:{}})}},[L?.engine4,L?.minute,stage,busy]) // eslint-disable-line react-hooks/exhaustive-deps
+ const room=L?.engine4&&L.canTactics&&stage==='watch'&&!busy?Math.min(L.minute-1,Math.max(clock.current,L.prevStop+1)):0
+ const tactics=()=>{if(room<2||room<=L!.prevStop)return;jump.current=room;setWatch({...watch,from:room});send({kind:'match-tactics',minute:room})}
  const segment=L?{from:L.prevStop,to:L.minute,outro:false}:{from:watch.from,to:999,outro:true}
  const reel=L?.reel??final?.reel
  const colours=v.colours??{}
@@ -37,9 +43,10 @@ export function LiveMatch({v,busy,send,watch,setWatch}:{v:CareerView;busy:boolea
     <h2 id="lgm-live-h" className="sr-only">{L?`${L.home} v ${L.away}, live`:'Full time'}</h2>
     <button type="button" className="lgm-x min-h-tap" onClick={()=>setWatch(null)} aria-label={L?'Leave the match for now':'Close'}>×</button>
    </header>
-   {stage!=='ft'&&reel?<Theatre key={`${watch.id}:${segment.from}:${segment.to}`} reel={reel} segment={segment} sound={sound} autoStart onDone={()=>setStage(L?'break':'ft')}/>
+   {stage!=='ft'&&reel?<Theatre key={`${watch.id}:${segment.from}:${segment.to}`} reel={reel} segment={segment} sound={sound} autoStart onClock={m=>{clock.current=m}} onDone={()=>setStage(L?'break':'ft')}/>
     :stage!=='ft'&&L?<FallbackLog L={L} onDone={()=>setStage('break')}/>:null}
-   {stage==='break'&&L&&L.minute!==45&&asked!==L.minute?<ChangeAsk key={`ask${L.minute}`} L={L} busy={busy} onYes={()=>setAsked(L.minute)} onNo={()=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:{}})}}/>
+   {stage==='watch'&&L?.engine4&&L.canTactics&&L.minute-L.prevStop>=3?<p className="lgm-live-tactics"><button type="button" className="lgm-ghost min-h-tap" disabled={busy||room<2} onClick={tactics} data-testid="legends-tactics">Tactics</button></p>:null}
+   {stage==='break'&&L&&!L.engine4&&L.minute!==45&&asked!==L.minute?<ChangeAsk key={`ask${L.minute}`} L={L} busy={busy} onYes={()=>setAsked(L.minute)} onNo={()=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:{}})}}/>
     :stage==='break'&&L?<Touchline key={L.minute} L={L} busy={busy} onPlay={d=>{setWatch({...watch,from:L.minute});send({kind:'match-decide',decision:d})}} onFinish={()=>{setWatch({...watch,from:L.minute});send({kind:'match-finish'})}}/>:null}
    {stage==='ft'&&final?<FullTime v={v} r={final} colours={colours} onClose={()=>setWatch(null)}/>:null}
    {stage==='ft'&&!final?<p className="lgm-fine">The result is in.</p>:null}
@@ -71,7 +78,7 @@ function Touchline({L,busy,onPlay,onFinish}:{L:NonNullable<CareerView['live']>;b
  const used=new Set(subs.flatMap(s=>[s.out,s.in])),left=L.subsLeft-subs.length
  const dirty=subs.length>0||JSON.stringify(t)!==JSON.stringify(L.tactics)
  const name=(id:string)=>L.pitch.find(p=>p.id===id)?.name??L.bench.find(b=>b.id===id)?.name??'—'
- const title=L.minute===45?'Half-time':`${L.minute}′ · the touchline`
+ const title=L.minute===45?'Half-time':`${L.minute}′ · tactics`
  const last=L.stopsLeft<=1
  const lines=useMemo(()=>['GK','DF','MF','FW'].map(p=>({p,men:L.pitch.filter(m=>m.slot===p)})).filter(x=>x.men.length),[L.pitch])
  useEffect(()=>{document.getElementById('lgm-break-h')?.scrollIntoView({block:'start',behavior:'smooth'})},[])

@@ -29,7 +29,7 @@ export type Team={club:string;name:string;ai:boolean;squad:SquadEntry[];cards:Re
 
 /* ───────── the draft (§1.2, §2.2) ───────── */
 export type Offer={id:string;tier:'premium'|'mid'|'budget';locked:string|null}
-export type DraftState={slot:number;group:QuotaPos|null;offers:Offer[];shown:string[];picks:{id:string;quota:QuotaPos;price:Price;slot:number}[];rerollsLeft:number;spent:number;optionalDone:boolean;confirmed:boolean;recentDecades:number[]}
+export type DraftState={slot:number;group:QuotaPos|null;offers:Offer[];shown:string[];picks:{id:string;quota:QuotaPos;price:Price;slot:number}[];rerollsLeft:number;spent:number;optionalDone:boolean;confirmed:boolean;recentDecades:number[];/** the draft budget, drawn on the slot machine at the start (€50–52M); absent on older careers = the standard budget */budget?:number}
 
 /* ───────── a match (§1.4, §2.5) ───────── */
 export type EventKind='kickoff'|'chance'|'goal'|'yellow'|'red'|'injury'|'sub'|'tactic'|'half-time'|'full-time'|'extra-time'|'penalties'|'stop'
@@ -41,7 +41,7 @@ export type MatchEventRow={seq:number;minute:number;kind:EventKind;side:0|1|null
 export type SnapMan={id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>;/** engine 3: his mood from the talks */mood?:number}
 export type SideSnapshot={club:string;name:string;formation:FormationId;tactics:Tactics;xi:SnapMan[];bench:SnapMan[];morale:number;home:boolean|null;captain?:string;/** engine 3: the dressing room's mood */mood?:number}
 export type Decision={stop:number;tactics?:Tactics;subs?:{out:string;in:string}[]}
-export type MatchSnapshot={id:string;seed:number;engine:EngineVersion;rules:typeof RULE_VERSION;sides:[SideSnapshot,SideSnapshot];knockout:boolean;decider?:'extra-time-penalties'|'penalties'}
+export type MatchSnapshot={id:string;seed:number;engine:EngineVersion;rules:typeof RULE_VERSION;sides:[SideSnapshot,SideSnapshot];knockout:boolean;decider?:'extra-time-penalties'|'penalties';/** engine 4: minutes at which the manager asked for the touchline, besides half-time */stops?:number[]}
 export type MatchOutcome={goals:[number,number];pens:[number,number]|null;events:MatchEventRow[];stops:number[];
  /** who stepped on the pitch, per side — an official appearance (§2.3) */
  played:[string[],string[]];yellows:[Record<string,number>,Record<string,number>];reds:[Record<string,{second:boolean;length:number}>,Record<string,{second:boolean;length:number}>];

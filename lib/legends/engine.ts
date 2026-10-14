@@ -71,8 +71,12 @@ export function checkDecision(p:PauseState,side:0|1,d:Decision):string|null{
  return null
 }
 
+/** engine 4's stops, in order: half-time, the minutes the manager asked for, and the silent hand-over at 89′ */
+export const stopsV4=(snap:Pick<MatchSnapshot,'stops'>):number[]=>[...new Set([...R.touchlineStopsV4,...(snap.stops??[])])].sort((a,b)=>a-b)
+export const maxStopsOf=(snap:Pick<MatchSnapshot,'engine'>)=>snap.engine==='legends-engine-4'?R.maxInterventionWindowsV4:R.maxInterventionWindows
+
 export function run(snap:MatchSnapshot,decisions:readonly Decision[],interactive:boolean,mySide:0|1=0):RunResult{
- const v2=snap.engine!=='legends-engine-1',v3=snap.engine==='legends-engine-3',cap=v2?R.captainBoost:1,stopList:readonly number[]=v3?R.touchlineStopsV3:R.touchlineStops
+ const v2=snap.engine!=='legends-engine-1',v4=snap.engine==='legends-engine-4',v3=snap.engine==='legends-engine-3'||v4,cap=v2?R.captainBoost:1,stopList:readonly number[]=v4?stopsV4(snap):v3?R.touchlineStopsV3:R.touchlineStops,maxStops=v4?R.maxInterventionWindowsV4:R.maxInterventionWindows
  const S:[SideState,SideState]=[sideState(snap.sides[0],cap,v3),sideState(snap.sides[1],cap,v3)],events:MatchEventRow[]=[],goals:[number,number]=[0,0]
  const push=(e:Omit<MatchEventRow,'seq'>)=>events.push({...e,seq:events.length})
  const yellows:[Record<string,number>,Record<string,number>]=[{},{}],reds:MatchOutcome['reds']=[{},{}],injuries:MatchOutcome['injuries']=[{},{}],scorers:MatchOutcome['scorers']=[{},{}]
@@ -164,7 +168,7 @@ export function run(snap:MatchSnapshot,decisions:readonly Decision[],interactive
   return significant
  }
  const stopAt=(m:number,significant:boolean)=>{
-  if(!interactive||stops.length>=R.maxInterventionWindows||m>=90)return false
+  if(!interactive||stops.length>=maxStops||m>=90)return false
   if(v2)return stopList.includes(m)
   if(significant&&m-lastStop>=8)return true
   if(m===45&&!stops.some(s=>s>=35))return true

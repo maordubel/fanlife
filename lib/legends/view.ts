@@ -6,7 +6,7 @@ import {fill,TONE_TEXT,type Tone} from './talks'
 import {available} from './discipline'
 import {cashLeft,confirmCheck,deal,deficits,groups as draftGroups,minCostToFinish} from './draft'
 import {ABILITIES,saleQuote} from './economy'
-import {run} from './engine'
+import {maxStopsOf,run,stopsV4} from './engine'
 import {captainOf,fieldable,lineupError,quotaCount} from './squad'
 import {seasonStats,type SeasonStats} from './stats'
 import {hash} from '@/lib/clubs/rumble-rng'
@@ -24,7 +24,7 @@ export type CareerView={
  id:string;revision:number;status:Career['status'];phase:Career['phase'];cutscene:Career['cutscene'];clubId:string;clubName:string;
  season:number;rounds:number;played:number;cash:number;reputation:number;abilities:{id:string;label:string;hint:string;at:number;open:boolean}[];
  settings:Career['settings'];rules:{minSquad:number;maxSquad:number;minimums:Record<QuotaPos,number>;maxSubs:number;stops:number};
- draft:null|{slot:number;required:number;optional:number;picks:(CardView&{slot:number})[];spent:number;left:number;minToFinish:number;rerollsLeft:number;group:QuotaPos|null;lines:{group:QuotaPos;open:boolean;reason:string|null;need:number}[];stuck:boolean;/** names of the same line that roll past the payline before the three land */strip:string[];offers:(CardView&{tier:string;locked:string|null})[];deficits:Record<QuotaPos,number>;canConfirm:string|null;optionalOpen:boolean};
+ draft:null|{budget:number|null;slot:number;required:number;optional:number;picks:(CardView&{slot:number})[];spent:number;left:number;minToFinish:number;rerollsLeft:number;group:QuotaPos|null;lines:{group:QuotaPos;open:boolean;reason:string|null;need:number}[];stuck:boolean;/** names of the same line that roll past the payline before the three land */strip:string[];offers:(CardView&{tier:string;locked:string|null})[];deficits:Record<QuotaPos,number>;canConfirm:string|null;optionalOpen:boolean};
  squad:SquadView[];quotas:Record<QuotaPos,number>;emergency:{id:string;name:string;pos:QuotaPos;games:number}[];
  lineup:{formation:string;xi:string[];bench:string[];tactics:Tactics;/** the manager's captain */captain:string|null;/** his vice-captain */vice:string|null;/** who wears the armband today: the captain in the eleven, else the vice in it, else the eleven's most-starred man */armband:string|null;error:string|null;slots:{id:string;fine:string;family:string;x:number;y:number}[]};
  window:null|{which:'pre'|'early'|'mid';offers:CardView[];sold:string[]};
@@ -34,8 +34,10 @@ export type CareerView={
  clubs:{club:string;name:string;formation:string;stars:number;squad:{id:string;name:string;pos:QuotaPos;stars:number;from:number|null;to:number|null;apps:number;goals:number;xi:boolean}[]}[];
  /** the shirt colours of every club of the league, attached on the server (`kits.ts`) — for the chips beside a name */
  colours?:Record<string,{shirt:string;second:string|null;pattern:string}>;
+ /** each club's home ground, attached on the server (`kits.ts`) — stadium only where a sourced world file names it */
+ venues?:Record<string,{stadium:string|null;city:string;country:string}>;
  next:null|{id:string;round:number;home:string;away:string;homeName:string;awayName:string;atHome:boolean;opponent:{name:string;formation:string;stars:number;xi:string[]|null};playoff:boolean};
- bye:boolean;live:null|{mode:string;minute:number;goals:[number,number];log:LogLine[];pitch:{slot:string;id:string;name:string}[];bench:{id:string;name:string;pos:QuotaPos}[];subsLeft:number;tactics:Tactics;stopsLeft:number;home:string;away:string;fixture:string;homeClub:string;awayClub:string;mine:0|1;
+ bye:boolean;live:null|{mode:string;minute:number;goals:[number,number];log:LogLine[];pitch:{slot:string;id:string;name:string}[];bench:{id:string;name:string;pos:QuotaPos}[];subsLeft:number;tactics:Tactics;stopsLeft:number;engine4:boolean;canTactics:boolean;home:string;away:string;fixture:string;homeClub:string;awayClub:string;mine:0|1;
   /** the moments of the match so far as a reel, attached on the server (`kits.ts`); the screen plays the part since the last stop */reel?:import('@/lib/highlights/types').Reel;prevStop:number};
  last:ResultView|null;results:ResultView[];
  table:{club:string;name:string;p:number;w:number;d:number;l:number;gf:number;ga:number;gd:number;pts:number;form:string[];mine:boolean}[];tieNote:string;
@@ -66,7 +68,7 @@ export function careerView(c:Career):CareerView{
   return {...cv(card),quota:s.quota,paid:s.paid,apps:s.apps,appsTotal:s.appsTotal,goals:s.goals,yellows:st?.yellows??0,suspension:st?.suspension??0,injury:st?.injury??0,injuryKind:st?.injuryKind??null,fit:available(st),sale:q?{net:q.net,quoted:q.quoted,fees:Math.round((q.fee+q.guard)*10)/10}:null}})
   .sort((a,b)=>QUOTA_POS.indexOf(a.quota)-QUOTA_POS.indexOf(b.quota)||b.stars-a.stars||a.name.localeCompare(b.name))
  const seed=hash(`${c.id}:draft`),d=c.draft&&c.phase==='draft'?deal(c.catalog.cards,c.draft,seed):null
- const draft=d?{slot:d.slot,required:R.initialDraftRequired,optional:R.initialDraftOptional,picks:d.picks.map(p=>({...cv(by.get(p.id)!),slot:p.slot})),spent:d.spent,left:cashLeft(d),minToFinish:minCostToFinish(c.catalog.cards,d),rerollsLeft:d.rerollsLeft,group:d.group,
+ const draft=d?{budget:d.budget??null,slot:d.slot,required:R.initialDraftRequired,optional:R.initialDraftOptional,picks:d.picks.map(p=>({...cv(by.get(p.id)!),slot:p.slot})),spent:d.spent,left:cashLeft(d),minToFinish:minCostToFinish(c.catalog.cards,d),rerollsLeft:d.rerollsLeft,group:d.group,
   lines:draftGroups(c.catalog.cards,d,seed),stuck:!d.group&&d.picks.length<R.initialDraftRequired&&draftGroups(c.catalog.cards,d,seed).every(g=>!g.open),
   strip:d.group?c.catalog.cards.filter(x=>x.pos===d.group&&!d.offers.some(o=>o.id===x.id)).sort((a,b)=>hash(`${seed}:${d.slot}:${a.id}`)-hash(`${seed}:${d.slot}:${b.id}`)).slice(0,16).map(x=>x.name):[],offers:d.offers.map(o=>({...cv(by.get(o.id)!),tier:o.tier,locked:o.locked})),deficits:deficits(d),canConfirm:confirmCheck(c.catalog.cards,{...d,optionalDone:true}),optionalOpen:d.picks.length>=R.initialDraftRequired&&!d.optionalDone}:null
  const fx=c.phase==='playoff'?c.season.playoff:nextFixture(c),ab=abilities(c)
@@ -79,7 +81,7 @@ export function careerView(c:Career):CareerView{
  const pause=pauseOf(c),liveFx=c.live?(c.season.playoff?.id===c.live.fixture?c.season.playoff:c.season.fixtures.find(f=>f.id===c.live!.fixture)):null
  const snapNames=(side:0|1,id?:string)=>{const s=c.live?.snapshot.sides[side];return [...(s?.xi??[]),...(s?.bench??[])].find(x=>x.id===id)?.name??'—'}
  const mySide=liveFx?.home===c.clubId?0:1
- const live=c.live&&pause&&liveFx?{mode:c.live.mode,minute:pause.minute,goals:pause.goals,log:logOf(c,pause.events,liveFx,snapNames),pitch:pause.pitch[mySide],bench:pause.bench[mySide],subsLeft:pause.subsLeft[mySide],tactics:pause.tactics[mySide],stopsLeft:R.maxInterventionWindows-c.live.decisions.length,home:c.live.snapshot.sides[0].name,away:c.live.snapshot.sides[1].name,fixture:c.live.fixture,homeClub:c.live.snapshot.sides[0].club,awayClub:c.live.snapshot.sides[1].club,mine:mySide as 0|1,prevStop:prevStopOf(c)}:null
+ const live=c.live&&pause&&liveFx?{mode:c.live.mode,minute:pause.minute,goals:pause.goals,log:logOf(c,pause.events,liveFx,snapNames),pitch:pause.pitch[mySide],bench:pause.bench[mySide],subsLeft:pause.subsLeft[mySide],tactics:pause.tactics[mySide],stopsLeft:maxStopsOf(c.live.snapshot)-c.live.decisions.length-(c.live.snapshot.engine==='legends-engine-4'?1:0),engine4:c.live.snapshot.engine==='legends-engine-4',canTactics:c.live.snapshot.engine==='legends-engine-4'&&stopsV4(c.live.snapshot).length<maxStopsOf(c.live.snapshot),home:c.live.snapshot.sides[0].name,away:c.live.snapshot.sides[1].name,fixture:c.live.fixture,homeClub:c.live.snapshot.sides[0].club,awayClub:c.live.snapshot.sides[1].club,mine:mySide as 0|1,prevStop:prevStopOf(c)}:null
  const results:ResultView[]=[...c.season.fixtures,...(c.season.playoff?[c.season.playoff]:[])].filter(f=>f.result).map(f=>({id:f.id,round:f.round,home:teams.get(f.home)!.name,away:teams.get(f.away)!.name,homeClub:f.home,awayClub:f.away,goals:f.result!.goals,pens:f.result!.pens,mine:f.home===c.clubId||f.away===c.clubId,
   log:logOf(c,f.result!.events,f,(s,id)=>nameIn(s?f.away:f.home,id))}))
  const last=[...results].filter(r=>r.mine).sort((a,b)=>b.round-a.round)[0]??null

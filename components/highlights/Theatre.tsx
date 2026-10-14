@@ -40,7 +40,7 @@ const LETTERS:Record<Celebration,string>={goal:'Goal!',hattrick:'Hat-trick!','fi
 const ENDS:Record<Ends,string>={'half-time':'Half time · the teams change ends','extra-time':'Extra time · the teams change ends','extra-time-interval':'Extra time, second period · the teams change ends'}
 type Card={side:0|1;player:ReelPlayer|null;against:boolean;hattrick:boolean}
 
-export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segment}:{reel:Reel;onDone?:()=>void;sound?:TheatreSound;allow?:TheatreAllow;max?:number;autoStart?:boolean;segment?:TheatreSegment}){
+export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segment,onClock}:{reel:Reel;onDone?:()=>void;sound?:TheatreSound;allow?:TheatreAllow;max?:number;autoStart?:boolean;segment?:TheatreSegment;/** the minute the picture has reached — LEGENDS MANAGER's Tactics button pauses the match there */onClock?:(minute:number)=>void}){
  const pal=allow.palette??(BASE as unknown as Palette)
  const intro=!segment||segment.from===0,outro=!segment||segment.outro
  const scoreAt=useCallback((minute:number):[number,number]=>{let s:[number,number]=[0,0];for(const m of reel.moments)if(m.minute<=minute)s=m.score;return s},[reel])
@@ -53,6 +53,7 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
  const [reduced,setReduced]=useState(false),[narrow,setNarrow]=useState(false),VW=narrow?NARROW:WIDE
  // the minute the scoreboard's arrows read: which way each side is attacking now
  const [clock,setClock]=useState<number>(()=>segment?.from??0)
+ useEffect(()=>{onClock?.(clock)},[clock]) // eslint-disable-line react-hooks/exhaustive-deps
  const canvas=useRef<HTMLCanvasElement>(null),raf=useRef(0),speedRef=useRef(1)
  speedRef.current=speed
  useEffect(()=>{setReduced(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false);const q=window.matchMedia?.('(max-width: 619px)');if(!q)return;const on=()=>setNarrow(q.matches);on();q.addEventListener?.('change',on);return()=>q.removeEventListener?.('change',on)},[])

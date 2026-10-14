@@ -2,6 +2,7 @@
 import {useCallback,useEffect,useRef,useState,type ReactNode} from 'react'
 import type {CareerView,TalkView} from '@/lib/legends/view'
 import {Sheet} from './Sheet'
+import {LineupConfirm,VsCard} from './PreMatch'
 
 /**
  * THE DRESSING ROOM (owner, 13.10.2026: "a talk before and after every match — four answers, and they change the morale").
@@ -53,7 +54,7 @@ export function Talk({talk,room,busy,send,onDone}:{talk:TalkView;room:Room;busy:
     <p className="lgm-dr-room">{done.reaction}</p>
     <MoodMeter mood={room.mood}/>
     {room.men.length?<ul className="lgm-dr-men">{room.men.slice(0,6).map(m=><li key={m.id} data-mood={m.mood}><b>{m.name}</b> {m.mood==='lifted'?'lifted':'stung'}</li>)}</ul>:null}
-    <p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" onClick={()=>onDone(true)} data-testid="legends-talk-go">{pre?'▶ Out to the tunnel':'Continue'}</button></p>
+    <p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" onClick={()=>onDone(true)} data-testid="legends-talk-go">{pre?'To the tunnel':'Continue'}</button></p>
    </div>}
   </div>
  </Sheet>
@@ -63,16 +64,22 @@ export function Talk({talk,room,busy,send,onDone}:{talk:TalkView;room:Room;busy:
  * The room's place in the career screen, kept here so the screen only wires three lines: the kick-off goes through the
  * pre-match talk, the post-match talk comes up by itself once the full-time card is closed, and `open` holds the other sheets back.
  */
-export function useDressingRoom(v:CareerView,busy:boolean,send:Send,watching:boolean,kickoffNow:()=>void):{kickoff:()=>void;open:boolean;sheet:ReactNode}{
+export function useDressingRoom(v:CareerView,busy:boolean,send:Send,watching:boolean,kickoffNow:()=>void,editLineup:()=>void=()=>{}):{kickoff:()=>void;open:boolean;sheet:ReactNode}{
  const [talk,setTalk]=useState<TalkView|null>(null),closed=useRef<string|null>(null)
+ // kick-off is three screens in a row: the eleven to confirm, the dressing room, and the VS card with "Send them to the pitch!"
+ const [step,setStep]=useState<'lineup'|'vs'|null>(null)
  const post=v.talks?.post
  // the post-match word comes up by itself once the full-time card is closed, and again on a reload until it is given
  useEffect(()=>{
   if(talk||watching||!post||closed.current===`post:${post.fixture}`)return
   setTalk(post)
  },[post,talk,watching])
- // a kick-off always goes through the pre-match word the server is waiting for
- const kickoff=useCallback(()=>{const pre=v.talks?.pre,p=v.talks?.post;if(p){closed.current=null;setTalk(p)}else if(pre)setTalk(pre);else kickoffNow()},[v.talks?.pre,v.talks?.post,kickoffNow])
- const sheet=talk&&v.talks?<Talk talk={talk} room={v.talks} busy={busy} send={send} onDone={spoke=>{const t=talk;setTalk(null);if(!spoke){closed.current=`${t.when}:${t.fixture}`;return}if(t.when==='pre')kickoffNow()}}/>:null
- return {kickoff,open:!!talk,sheet}
+ const kickoff=useCallback(()=>{const p=v.talks?.post;if(p){closed.current=null;setTalk(p)}else setStep('lineup')},[v.talks?.post])
+ const afterLineup=()=>{const pre=v.talks?.pre;if(pre){setStep(null);setTalk(pre)}else setStep('vs')}
+ const sheet=<>
+  {step==='lineup'?<LineupConfirm v={v} onConfirm={afterLineup} onEdit={()=>{setStep(null);editLineup()}} onClose={()=>setStep(null)}/>:null}
+  {step==='vs'?<VsCard v={v} onGo={()=>{setStep(null);kickoffNow()}} onClose={()=>setStep(null)}/>:null}
+  {talk&&v.talks?<Talk talk={talk} room={v.talks} busy={busy} send={send} onDone={spoke=>{const t=talk;setTalk(null);if(!spoke){closed.current=`${t.when}:${t.fixture}`;return}if(t.when==='pre')setStep('vs')}}/>:null}
+ </>
+ return {kickoff,open:!!talk||step!==null,sheet}
 }

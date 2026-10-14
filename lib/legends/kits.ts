@@ -7,6 +7,8 @@ import {documentedCloth,type ClothSpec} from '@/lib/clubs/kit-model'
 import {crestFor} from '@/lib/clubs/crest'
 import {legendsReel,liveReel,type ClubKit} from './reel'
 import {pixelKit} from '@/lib/highlights/kit'
+import {REGISTRY} from '@/lib/master/registry'
+import {worldFor} from '@/lib/clubs/world'
 import type {Career} from './types'
 import type {CareerView} from './view'
 
@@ -32,7 +34,9 @@ export async function withHighlights(v:CareerView,c:Career):Promise<CareerView>{
  // a chip per club: the shirt of its most recent documented home kit, or its livery
  const colours=Object.fromEntries(c.teams.map(t=>{const k=kits[t.club],last=k?.wardrobe.home.at(-1),px=last?pixelKit(last):null
   return [t.club,px?{shirt:px.shirt,second:px.second,pattern:px.pattern}:{shirt:k?.primary??'#1C2F93',second:null,pattern:'plain'}]}))
- let out:CareerView={...v,colours}
+ // the home ground of every club: its sourced name where the club's world file has one, always its city and country (the VS card)
+ const venues=Object.fromEntries(c.teams.map(t=>{const r=REGISTRY.find(x=>x.id===t.club);return [t.club,{stadium:r?worldFor(r).ground?.name??null:null,city:r?.city??'',country:r?.country??''}]}))
+ let out:CareerView={...v,colours,venues}
  if(v.live){const reel=liveReel(c,kits);if(reel)out={...out,live:{...v.live,reel}}}
  if(!v.last)return out
  const f=[...c.season.fixtures,...(c.season.playoff?[c.season.playoff]:[])].find(x=>x.id===v.last!.id);if(!f?.result?.sides)return out

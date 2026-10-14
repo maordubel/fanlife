@@ -19,7 +19,8 @@ import type {Card,DraftState,Offer,Price} from './types'
 export const TIER_PRICES:Record<Offer['tier'],readonly Price[]>=DRAFT_TIER_PRICES as Record<Offer['tier'],readonly Price[]>
 export const emptyDraft=():DraftState=>({slot:1,group:null,offers:[],shown:[],picks:[],rerollsLeft:R.rerollsPerDraft,spent:0,optionalDone:false,confirmed:false,recentDecades:[]})
 const BUDGET=R.initialDraftBudgetM,REQ=R.initialDraftRequired
-export const cashLeft=(d:DraftState)=>BUDGET-d.spent
+export const budgetOf=(d:DraftState)=>d.budget??BUDGET
+export const cashLeft=(d:DraftState)=>budgetOf(d)-d.spent
 export function deficits(d:DraftState):Record<QuotaPos,number>{
  const have:Record<QuotaPos,number>={GK:0,DF:0,MF:0,FW:0};for(const p of d.picks)have[p.quota]++
  return {GK:Math.max(0,R.minimums.GK-have.GK),DF:Math.max(0,R.minimums.DF-have.DF),MF:Math.max(0,R.minimums.MF-have.MF),FW:Math.max(0,R.minimums.FW-have.FW)}
@@ -168,7 +169,7 @@ export function confirmCheck(cards:readonly Card[],d:DraftState):string|null{
  if(ids.length>REQ+R.initialDraftOptional)return 'Eighteen at most in the draft.'
  if(new Set(ids).size!==ids.length)return 'A man is in the draft twice.'
  if(ids.some(id=>!by.has(id)))return 'A man in the draft is not of this club.'
- const spent=d.picks.reduce((a,p)=>a+by.get(p.id)!.price,0);if(spent>BUDGET)return `The draft costs €${spent}M — €${BUDGET}M at most.`
+ const spent=d.picks.reduce((a,p)=>a+by.get(p.id)!.price,0);if(spent>budgetOf(d))return `The draft costs €${spent}M — €${budgetOf(d)}M at most.`
  const need=deficits(d);if(sumOf(need))return `Quotas not met: ${QUOTA_POS.filter(p=>need[p]).map(p=>`${need[p]} more ${p}`).join(', ')}.`
  return null
 }

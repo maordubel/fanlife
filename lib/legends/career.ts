@@ -3,9 +3,9 @@ import {isFormation} from '@/lib/clubs/rumble-xi/formations'
 import {ENGINE_VERSION,LEGENDS_RULES as R,RULE_VERSION,roundTenths,type LegendsSettings,QUOTA_POS,type QuotaPos} from './config'
 import {aiWindow,prepareEmergency} from './ai'
 import {afterBye,afterMatch,available,fresh,newSeason,type MatchBook} from './discipline'
-import {botDraft,confirmCheck,draftMove,emptyDraft,type DraftMove} from './draft'
+import {botDraft,budgetOf,confirmCheck,minCostToFinish,draftMove,emptyDraft,type DraftMove} from './draft'
 import {abilitiesAt,achievements,capBonuses,nextSeasonGrant,saleQuote,seasonScore} from './economy'
-import {checkDecision,run,type PauseState} from './engine'
+import {checkDecision,maxStopsOf,run,stopsV4,type PauseState} from './engine'
 import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
 import {applyTalk,decayMood} from './morale'
@@ -43,11 +43,11 @@ function newSeasonOf(teams:readonly Team[],ordinal:number,salt:string):Season{
 }
 
 /* ───────── creation (§1.1.3: a club opens only when a full legal draft is possible — the server checks readiness first) ───────── */
-export type CreateInput={id:string;owner:string;now:string;own:Catalog;rivals:Catalog[];settings:LegendsSettings}
+export type CreateInput={id:string;owner:string;now:string;own:Catalog;rivals:Catalog[];settings:LegendsSettings;/** league size set at the start; absent = the standard cap */limit?:number}
 export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;error:string}{
  const teams:Team[]=[{club:i.own.club,name:i.own.clubName,ai:false,squad:[],cards:{},lineup:{formation:'4-3-3',xi:[],bench:[],tactics:{...DEFAULT_TACTICS}},cash:0,status:{},emergency:[],morale:1,usedEmergency:[]}]
  for(const cat of [...i.rivals].sort((a,b)=>hash(`${i.id}:${a.club}`)-hash(`${i.id}:${b.club}`))){
-  if(teams.length>=R.maxLeagueClubs)break
+  if(teams.length>=(i.limit??R.maxLeagueClubs))break
   if(cat.club===i.own.club||teams.some(t=>t.club===cat.club))continue
   // the same draft, the same prices, the same quotas (§1.6.35) — a bot chooses
   const b=botDraft(cat.cards,hash(`${i.id}:ai:${cat.club}`),'value');if(b.error)continue
@@ -63,9 +63,9 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 }
 
 /* ───────── actions ───────── */
-export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
+export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'budget-draw'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'swap';sell:string;buy:string}
  |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string;vice?:string;/** the meet-your-squad page's confirm: the eleven is set and the season can start */meet?:boolean}|{kind:'auto';formation?:string}|{kind:'close-window'}
- |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'play-round'}|{kind:'next-season'}
+ |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'match-tactics';minute:number}|{kind:'play-round'}|{kind:'next-season'}
  |{kind:'talk-pre'|'talk-post';fixture:string;answer:number})&{key:string;rev:number}
 /** an action before the server stamps it with a key and a revision */
 export type Intent=Action extends infer A?A extends Action?Omit<A,'key'|'rev'>:never:never
@@ -84,12 +84,13 @@ export function parseAction(raw:unknown):Action|null{
    if(m.kind==='group'&&typeof m.group==='string'&&(QUOTA_POS as readonly string[]).includes(m.group))return {...b,kind:'draft',move:{kind:'group',group:m.group as QuotaPos}}
    if(m.kind==='reroll'||m.kind==='skip')return {...b,kind:'draft',move:{kind:m.kind}}
    return null}
-  case 'draft-confirm':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
+  case 'draft-confirm':case 'budget-draw':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
   case 'buy':case 'sell':return str(a.card)?{...b,kind:a.kind,card:a.card as string}:null
   case 'swap':return str(a.sell)&&str(a.buy)?{...b,kind:'swap',sell:a.sell as string,buy:a.buy as string}:null
   case 'lineup':{const xi=ids(a.xi,11),bench=ids(a.bench,7),t=tacticsOf(a.tactics);return typeof a.formation==='string'&&xi&&bench&&t&&(a.captain===undefined||str(a.captain))&&(a.vice===undefined||str(a.vice))&&(a.meet===undefined||a.meet===true)?{...b,kind:'lineup',formation:a.formation,xi,bench,tactics:t,...(typeof a.captain==='string'?{captain:a.captain}:{}),...(typeof a.vice==='string'?{vice:a.vice}:{}),...(a.meet?{meet:true}:{})}:null}
   case 'auto':return {...b,kind:'auto',...(typeof a.formation==='string'?{formation:a.formation}:{})}
   case 'match-start':return a.mode==='fast'||a.mode==='interactive'?{...b,kind:'match-start',mode:a.mode}:null
+  case 'match-tactics':return Number.isInteger(a.minute)&&(a.minute as number)>=2&&(a.minute as number)<=88?{...b,kind:'match-tactics',minute:a.minute as number}:null
   case 'talk-pre':case 'talk-post':return str(a.fixture)&&Number.isInteger(a.answer)&&(a.answer as number)>=0&&(a.answer as number)<=3?{...b,kind:a.kind,fixture:a.fixture as string,answer:a.answer as number}:null
   case 'match-decide':{const d=(a.decision??{}) as Record<string,unknown>,t=d.tactics===undefined?undefined:tacticsOf(d.tactics)
    if(t===null)return null
@@ -122,6 +123,14 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const r=draftMove(cat,c.draft,a.move,hash(`${c.id}:draft`));if(!r.ok)return bad(r.error)
    return {ok:true,career:{...c,draft:r.draft}}
   }
+  // the slot machine at the very start: the board's budget is drawn once, up to €2M under the standard one (owner, 14.10.2026).
+  // It never goes under what a full legal draft needs, so every club still finishes its seventeen.
+  case 'budget-draw':{
+   if(c.phase!=='draft'||!c.draft)return bad('The draft is over.','closed')
+   if(c.draft.budget!==undefined||c.draft.picks.length)return bad('The budget is already drawn.')
+   const floor=Math.ceil(minCostToFinish(cat,c.draft)*10)/10,drawn=roundTenths(R.initialDraftBudgetM-(hash(`${c.id}:budget`)%21)/10)
+   return {ok:true,career:{...c,draft:{...c.draft,budget:Math.max(drawn,floor)}}}
+  }
   case 'draft-confirm':{
    if(c.phase!=='draft'||!c.draft)return bad('The draft is over.','closed')
    const err=confirmCheck(cat,c.draft);if(err)return bad(err)
@@ -129,7 +138,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const lu=bestLineup(squad.map(s=>by.get(s.id)!))!
    // no pre-season window: rounds 1 and 2 are played with the drafted squad, the window opens after round 2 (owner, 12.10.2026)
    let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'season',cutscene:'board-grant'}
-   next=pay(next,{key:`draft-budget:${c.id}`,kind:'draft-budget',amount:R.initialDraftBudgetM},ctx.now)
+   next=pay(next,{key:`draft-budget:${c.id}`,kind:'draft-budget',amount:budgetOf(c.draft)},ctx.now)
    for(const p of c.draft.picks)next=pay(next,{key:`draft-buy:${c.id}:${p.id}`,kind:'draft-buy',amount:-p.price,card:p.id},ctx.now)
    // the board's one-off grant (§1.2.12): ledger key first-window-grant:<career>, so it can never be paid twice
    next=pay(next,{key:`first-window-grant:${c.id}`,kind:'board-grant',amount:R.firstBoardGrantM,note:'Season-ticket holders, sponsors and the board'},ctx.now)
@@ -227,17 +236,27 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    if(!c.live||c.live.mode!=='interactive')return bad('No match is waiting for you.','closed')
    const fx=fixtureById(c,c.live.fixture)!,side=mySide(c,fx),r=run(c.live.snapshot,c.live.decisions,true,side)
    if(r.done)return commitMine(c,ctx,null)
-   if(c.live.decisions.length>=R.maxInterventionWindows)return bad('Three stops a match — the rest plays out.')
+   if(c.live.decisions.length>=maxStopsOf(c.live.snapshot))return bad('No more stops this match — the rest plays out.')
    const d:Decision={stop:r.pause.stop,...a.decision},err=checkDecision(r.pause,side,d);if(err)return bad(err)
    const next={...c,live:{...c.live,decisions:[...c.live.decisions,d]}}
    const r2=run(next.live.snapshot,next.live.decisions,true,side)
    return r2.done?commitMine(next,ctx,null):{ok:true,career:next}
   }
+  // engine 4: the manager pressed Tactics at the minute he is watching — the match is paused THERE (owner, 14.10.2026).
+  // Only a minute between the last decided stop and the stop the match now waits at can be asked for, so nothing already decided moves.
+  case 'match-tactics':{
+   if(!c.live||c.live.mode!=='interactive'||c.live.snapshot.engine!=='legends-engine-4')return bad('No match is waiting for you.','closed')
+   const snap=c.live.snapshot,list=stopsV4(snap),done=c.live.decisions.length,last=list[done-1]??0,waiting=list[done]
+   if(waiting===undefined)return bad('The match has no stop left to move.')
+   if(list.length>=maxStopsOf(snap))return bad('No more stops this match — the rest plays out.')
+   if(!(a.minute>last&&a.minute<waiting)||a.minute<2)return bad('The touchline can only open between where you are and the next break.')
+   return {ok:true,career:{...c,live:{...c.live,snapshot:{...snap,stops:[...(snap.stops??[]),a.minute]}}}}
+  }
   case 'match-finish':{
    // "to the final whistle": every stop still ahead is passed with no change
    if(!c.live||c.live.mode!=='interactive')return bad('No match is waiting for you.','closed')
    const fx=fixtureById(c,c.live.fixture)!,side=mySide(c,fx);let live=c.live
-   for(let i=0;i<=R.maxInterventionWindows;i++){const r=run(live.snapshot,live.decisions,true,side);if(r.done)break;live={...live,decisions:[...live.decisions,{stop:r.pause.stop}]}}
+   for(let i=0;i<=maxStopsOf(live.snapshot);i++){const r=run(live.snapshot,live.decisions,true,side);if(r.done)break;live={...live,decisions:[...live.decisions,{stop:r.pause.stop}]}}
    return commitMine({...c,live},ctx,null)
   }
   case 'play-round':{

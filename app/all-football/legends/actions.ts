@@ -19,11 +19,12 @@ const UNAVAILABLE='Saving is not available right now — nothing was changed.'
 const open=async()=>(await door('fanLeague')).open
 const fail=(e:unknown,what:string):Fail=>({ok:false,error:e instanceof SaveUnavailable?UNAVAILABLE:what,code:'unavailable'})
 
-export async function createLegendsCareer(club:string):Promise<{ok:true;id:string}|Fail>{
+export async function createLegendsCareer(club:string,setup?:{size?:number;clubs?:string[]}):Promise<{ok:true;id:string}|Fail>{
  if(!await open())return {ok:false,error:'LEGENDS MANAGER is not open.'}
  if(typeof club!=='string'||!/^[a-z0-9-]{2,60}$/.test(club))return {ok:false,error:'Choose a club.'}
  const owner=await viewer(true);if(!owner)return {ok:false,error:UNAVAILABLE}
- try{return await startCareer(owner,club)}catch(e){return fail(e,'The career could not be saved. Try again.')}
+ const ok=setup&&typeof setup==='object'?{...(Number.isInteger(setup.size)?{size:setup.size}:{}),...(Array.isArray(setup.clubs)&&setup.clubs.length<=40&&setup.clubs.every(c=>typeof c==='string'&&/^[a-z0-9-]{2,60}$/.test(c))?{clubs:setup.clubs}:{})}:{}
+ try{return await startCareer(owner,club,ok)}catch(e){return fail(e,'The career could not be saved. Try again.')}
 }
 
 export async function legendsAction(id:string,raw:unknown):Promise<{ok:true;view:CareerView;replay?:boolean;note?:string}|Fail>{
