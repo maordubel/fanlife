@@ -11,6 +11,8 @@ import {digestOf,eligibleFor} from './pool'
 
 // ----------------------------------------------------------------- the deterministic order
 function rng(seed:number){let a=seed>>>0||1;return ()=>{a|=0;a=a+0x6d2b79f5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296}}
+/** the share of names dealt from the best-known 40% of a club's players */
+export const KNOWN_SHARE=0.6
 const decadeOf=(c:DuelCandidate)=>{const y=c.yearFrom??c.yearTo;return y==null?-1:Math.floor(y/10)*10}
 const cache=new Map<string,string[]>()
 /**
@@ -21,10 +23,26 @@ export function orderOf(pool:readonly DuelCandidate[],seed:number):string[]{
  const key=`${seed}|${digestOf(pool)}`;const hit=cache.get(key);if(hit)return hit
  const r=rng(seed),a=[...pool].sort((x,y)=>x.id<y.id?-1:1)
  for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j]!,a[i]!]}
- const buckets=new Map<number,DuelCandidate[]>()
- for(const c of a){const d=decadeOf(c);(buckets.get(d)??buckets.set(d,[]).get(d)!).push(c)}
- const lists=[...buckets.entries()].sort((x,y)=>y[1].length-x[1].length||x[0]-y[0]).map(e=>e[1]),out:string[]=[]
- for(let i=0;out.length<a.length;i++)for(const l of lists)if(i<l.length)out.push(l[i]!.id)
+ const spread=(list:DuelCandidate[]):string[]=>{
+  const buckets=new Map<number,DuelCandidate[]>()
+  for(const c of list){const d=decadeOf(c);(buckets.get(d)??buckets.set(d,[]).get(d)!).push(c)}
+  const lists=[...buckets.entries()].sort((x,y)=>y[1].length-x[1].length||x[0]-y[0]).map(e=>e[1]),o:string[]=[]
+  for(let i=0;o.length<list.length;i++)for(const l of lists)if(i<l.length)o.push(l[i]!.id)
+  return o
+ }
+ // the well-known names lead: 60% of the deal comes from the top of the club's reputation, 40% from the rest (owner, 14.10.2026)
+ const rated=a.filter(c=>c.fame!==undefined)
+ let out:string[]
+ if(rated.length<a.length||a.length<6)out=spread(a)
+ else{
+  const sorted=[...a].sort((x,y)=>(y.fame!-x.fame!)||(x.id<y.id?-1:1)),cut=Math.max(2,Math.ceil(a.length*0.4)),top=new Set(sorted.slice(0,cut).map(c=>c.id))
+  const known=spread(a.filter(c=>top.has(c.id))),rest=spread(a.filter(c=>!top.has(c.id)));out=[]
+  let i=0,j=0
+  while(i<known.length||j<rest.length){
+   const k=i<known.length&&(j>=rest.length||r()<KNOWN_SHARE)
+   out.push(k?known[i++]!:rest[j++]!)
+  }
+ }
  if(cache.size>40)cache.clear();cache.set(key,out);return out
 }
 

@@ -29,7 +29,7 @@ try {
   context.on('request', r => {if (/https?:\/\/[^/]*supabase\./.test(r.url())) report.supabaseRequests.push(r.url())})
   const page = await context.newPage()
   page.on('pageerror', e => report.pageErrors.push(e.message))
-  const routes = ['/', '/master/admin', '/master/test-lab', '/clubs/hapoel-tel-aviv', '/clubs/zrinjski-mostar', '/ground', '/xi', '/trivia', '/lineup', '/kits/build', '/kits', '/memory', '/polls', '/goal', '/royal-rumble', '/blind-cow', '/derby', '/archive', '/timeline', '/life', '/city', '/away-days', '/stand', '/tik', '/kits/closet', '/kits/market', '/kits/auction', '/kits/admin', '/qa/stats']
+  const routes = ['/', '/master/admin', '/master/test-lab', '/clubs/hapoel-tel-aviv', '/clubs/zrinjski-mostar', '/ground', '/our-games', '/xi', '/trivia', '/lineup', '/kits/build', '/kits', '/memory', '/polls', '/goal', '/royal-rumble', '/blind-cow', '/derby', '/archive', '/timeline', '/life', '/city', '/away-days', '/stand', '/tik', '/kits/closet', '/kits/market', '/kits/auction', '/kits/admin', '/qa/stats']
   for (const route of routes) {
     console.log(`Checking ${route}`)
     const response = await page.goto(origin + route, {waitUntil: 'networkidle', timeout: 60000})

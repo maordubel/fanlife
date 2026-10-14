@@ -62,7 +62,7 @@ export default async function ClubLayout({children,params}:{children:ReactNode;p
  const openKeys=states.filter(s=>s.allowed&&s.playable).map(s=>s.key)
  const t=menuCopy(locale),gates=contentsGates({clubId:id,locale,states,beloved:belovedOf(world.terrace,openKeys),copy:gameCopy(locale) as Record<string,string>})
  const away=id==='hapoel-tel-aviv'?'/away-days':hasClubAway(id)?clubHref(id,'away-days',locale):null
- const labels={home:copy.clubTabHome,play:copy.clubTabPlay,life:copy.clubTabLife,history:copy.clubTabHistory,terrace:locale==='en'?world.terraceTab:copy.clubTabTerrace}
+ const labels={home:copy.clubTabHome,play:copy.clubTabPlay,life:copy.tabOurGames,history:copy.clubTabHistory,terrace:locale==='en'?world.terraceTab:copy.clubTabTerrace}
  return <div className="club-app" data-club={id} data-pattern={theme.pattern} data-rival-no={rivalBans(theme).join(' ')||undefined} dir={localeDirection(locale)} lang={locale} style={themeStyle(theme,locale) as CSSProperties}>
   <header className="club-masthead">
    <div className="club-masthead-in">

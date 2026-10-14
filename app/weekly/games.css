@@ -1,0 +1,31 @@
+/* OUR GAMES: LIFE and LEGENDS MANAGER as two banners, and the door into every club */
+.wkg { display: flex; flex-direction: column; gap: 22px; padding: 18px 16px 40px; }
+.wkg-head { display: flex; flex-direction: column; gap: 6px; }
+.wkg-title { margin: 0; font-size: clamp(38px, 12vw, 64px); line-height: 1; white-space: nowrap; }
+.wkg-pair { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+.wkg-card, .wkg-world { position: relative; overflow: hidden; border: 3px solid var(--mag-ink); box-shadow: 6px 6px 0 var(--mag-ink); color: var(--mag-white); }
+.wkg-card { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; align-items: center; padding: 16px 14px; min-block-size: 220px; }
+.wkg-card .wk-speed, .wkg-world .wk-speed { --sx: 20%; --sy: 60%; --sc: rgb(255 251 242 / 0.2); }
+.wkg-art { position: relative; inline-size: 120px; block-size: 190px; filter: drop-shadow(3px 3px 0 var(--mag-ink)); }
+.wkg-emblem { inline-size: 120px; block-size: auto; position: relative; filter: drop-shadow(3px 3px 0 var(--mag-ink)); }
+.wkg-txt, .wkg-wtxt { position: relative; display: flex; flex-direction: column; gap: 8px; min-inline-size: 0; }
+.wkg-shout { margin: 0; font-size: 64px; line-height: .9; color: var(--mag-white); text-shadow: 3px 3px 0 var(--mag-ink); }
+.wkg-lmtitle { margin: 0; font-size: clamp(30px, 9vw, 44px); line-height: .98; color: var(--mag-white); text-shadow: 3px 3px 0 var(--mag-ink); }
+.wkg-line { margin: 0; font-size: 15px; line-height: 1.4; }
+.wkg-cta { align-self: flex-start; min-block-size: 48px; display: inline-flex; align-items: center; gap: 8px; }
+.wkg-cta .wkh-arrow { inline-size: 16px; block-size: 16px; }
+.wkg-world { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; align-items: center; padding: 16px 14px; }
+.wkg-crowd { position: relative; inline-size: 96px; block-size: 96px; filter: drop-shadow(3px 3px 0 var(--mag-ink)); }
+.wkg-wtitle { margin: 2px 0 6px; font-size: clamp(26px, 8vw, 46px); line-height: 1; color: var(--mag-white); text-shadow: 3px 3px 0 var(--mag-ink); }
+@media (min-width: 901px) {
+  .wkg { padding: 28px 40px 72px; max-inline-size: 1180px; margin-inline: auto; }
+  .wkg-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+  .wkg-card { grid-template-columns: 150px minmax(0, 1fr); min-block-size: 300px; padding: 26px; }
+  .wkg-art { inline-size: 150px; block-size: 250px; } .wkg-emblem { inline-size: 150px; }
+  .wkg-world { grid-template-columns: 220px minmax(0, 1fr); padding: 26px 32px; } .wkg-crowd { inline-size: 220px; block-size: 150px; }
+}
+
+/* the hub's bottom bar: OUR GAMES is the loud door */
+.mag-tabbar[data-ourgames] a[href='/our-games'] { background: var(--mag-vermilion); color: var(--mag-white); box-shadow: inset 0 3px 0 var(--mag-ink); }
+.mag-tabbar[data-ourgames] a[href='/our-games'][aria-current='page'] { background: var(--mag-white); color: var(--mag-vermilion); box-shadow: inset 0 3px 0 var(--mag-vermilion); }
+.mag-tabbar[data-ourgames] a[href='/our-games'] svg { inline-size: 26px; block-size: 26px; }

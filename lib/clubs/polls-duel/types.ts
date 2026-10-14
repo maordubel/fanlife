@@ -5,7 +5,7 @@
 export type Side='L'|'R'
 export type DuelKind='player'|'event'
 /** one name on the pitch: an id from the approved roster (or the approved timeline), never a label */
-export type DuelCandidate={id:string;kind:DuelKind;title:string;secondary?:string;yearFrom?:number|null;yearTo?:number|null}
+export type DuelCandidate={id:string;kind:DuelKind;title:string;secondary?:string;yearFrom?:number|null;yearTo?:number|null;/** how well known he is at his club (appearances, goals, years); absent for events — only ever orders the deal, never shown */fame?:number}
 /** the period a voter chose: everybody, since the year they were born, or one decade */
 export type DuelFilter={kind:'all'}|{kind:'since';year:number}|{kind:'decade';decade:number}
 export const ALL_TIME:DuelFilter={kind:'all'}
