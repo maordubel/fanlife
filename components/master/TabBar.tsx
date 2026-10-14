@@ -5,6 +5,7 @@ import {useMarketAlerts} from '@/lib/fanlife/alerts'
 import type {UiLocale} from '@/lib/clubs/locale'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
+import {ArcLabel} from '@/components/weekly/ArcLabel'
 
 const ICON={fill:'none',stroke:'currentColor',strokeWidth:2.5,'aria-hidden':true,width:22,height:22,viewBox:'0 0 24 24'} as const
 
@@ -23,6 +24,6 @@ export function TabBar({locale='en'}:{locale?:UiLocale}) {
   ['/me',copy.tabCorner,<svg key="u" {...ICON}><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>,at('/me')],
  ]
  return <nav className="mag-tabbar" data-ourgames="" aria-label={copy.primaryNav}>
-  {tabs.map(([href,label,icon,on])=><Link key={href} href={href} aria-current={on?'page':undefined} aria-label={href==='/market'&&unread>0?`${label} — ${unread}`:undefined}>{href==='/market'&&unread>0?<span className="mag-tab-ico">{icon}<b className="mag-tab-dot" data-market-badge="">{unread>9?'9+':unread}</b></span>:icon}{label}</Link>)}
+  {tabs.map(([href,label,icon,on])=><Link key={href} href={href} aria-current={on?'page':undefined} aria-label={href==='/market'&&unread>0?`${label} — ${unread}`:undefined}>{href==='/market'&&unread>0?<span className="mag-tab-ico">{icon}<b className="mag-tab-dot" data-market-badge="">{unread>9?'9+':unread}</b></span>:icon}{href==='/our-games'?<><span className="sr-only">{label}</span><ArcLabel id="tab-arc" text={label}/></>:label}</Link>)}
  </nav>
 }
