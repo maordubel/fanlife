@@ -10,6 +10,7 @@ import {fixturesFor,roundsFor,standings,titleTie} from './league'
 import {bestLineup,captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
 import {bidsFor,buySlots,windowKey} from './market'
 import {applyTalk,decayMood} from './morale'
+import {pressById,pressFor,type PressQ} from './press'
 import {pickSituation,situationById,type Result,type Situation,type TalkCtx} from './talks'
 import {DEFAULT_TACTICS,type Approach,type Card,type Career,type Catalog,type Decision,type Fixture,type FixtureSide,type LedgerEntry,type Live,type MatchOutcome,type MatchSnapshot,type Pressing,type Season,type SideSnapshot,type Tactics,type Team,type Tempo} from './types'
 
@@ -67,7 +68,7 @@ export function createCareer(i:CreateInput):{ok:true;career:Career}|{ok:false;er
 }
 
 /* ───────── actions ───────── */
-export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'budget-draw'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'list';card:string;listed:boolean}|{kind:'bid';card:string;accept:boolean}|{kind:'swap';sell:string;buy:string}
+export type Action=({kind:'draft';move:DraftMove}|{kind:'draft-confirm'}|{kind:'budget-draw'}|{kind:'ack'}|{kind:'buy';card:string}|{kind:'sell';card:string}|{kind:'list';card:string;listed:boolean}|{kind:'press';fixture:string;q:string;answer:number}|{kind:'bid';card:string;accept:boolean}|{kind:'swap';sell:string;buy:string}
  |{kind:'lineup';formation:string;xi:string[];bench:string[];tactics:Tactics;captain?:string;vice?:string;/** the meet-your-squad page's confirm: the eleven is set and the season can start */meet?:boolean}|{kind:'auto';formation?:string}|{kind:'close-window'}
  |{kind:'match-start';mode:'fast'|'interactive'}|{kind:'match-decide';decision:{tactics?:Tactics;subs?:{out:string;in:string}[]}}|{kind:'match-finish'}|{kind:'match-tactics';minute:number}|{kind:'play-round'}|{kind:'next-season'}
  |{kind:'talk-pre'|'talk-post';fixture:string;answer:number})&{key:string;rev:number}
@@ -90,6 +91,7 @@ export function parseAction(raw:unknown):Action|null{
    return null}
   case 'draft-confirm':case 'budget-draw':case 'ack':case 'close-window':case 'play-round':case 'next-season':case 'match-finish':return {...b,kind:a.kind}
   case 'buy':case 'sell':return str(a.card)?{...b,kind:a.kind,card:a.card as string}:null
+  case 'press':return str(a.fixture)&&str(a.q)&&Number.isInteger(a.answer)&&(a.answer as number)>=0&&(a.answer as number)<=4?{...b,kind:'press',fixture:a.fixture as string,q:a.q as string,answer:a.answer as number}:null
   case 'list':return str(a.card)&&typeof a.listed==='boolean'?{...b,kind:'list',card:a.card as string,listed:a.listed as boolean}:null
   case 'bid':return str(a.card)&&typeof a.accept==='boolean'?{...b,kind:'bid',card:a.card as string,accept:a.accept as boolean}:null
   case 'swap':return str(a.sell)&&str(a.buy)?{...b,kind:'swap',sell:a.sell as string,buy:a.buy as string}:null
@@ -143,7 +145,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const by=catalogMap(c),squad=c.draft.picks.map(p=>({id:p.id,quota:p.quota,paid:p.price,apps:0,appsTotal:0,goals:0,joined:1}))
    const lu=bestLineup(squad.map(s=>by.get(s.id)!))!
    // no pre-season window: rounds 1 and 2 are played with the drafted squad, the window opens after round 2 (owner, 12.10.2026)
-   let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'season',cutscene:'board-grant'}
+   let next:Career={...withMe(c,{...t,squad,lineup:lu,cash:0}),draft:{...c.draft,confirmed:true},phase:'season',cutscene:'meet-squad'}
    next=pay(next,{key:`draft-budget:${c.id}`,kind:'draft-budget',amount:budgetOf(c.draft)},ctx.now)
    for(const p of c.draft.picks)next=pay(next,{key:`draft-buy:${c.id}:${p.id}`,kind:'draft-buy',amount:-p.price,card:p.id},ctx.now)
    // the board's one-off grant (§1.2.12): ledger key first-window-grant:<career>, so it can never be paid twice
@@ -151,7 +153,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    return {ok:true,career:next}
   }
   // the board's news is followed by the squad itself: meet the men, set the eleven, the captain and his vice (owner, 13.10.2026)
-  case 'ack':return {ok:true,career:{...c,cutscene:c.cutscene==='board-grant'&&c.season.played===0&&!c.live?'meet-squad':null}}
+  case 'ack':return {ok:true,career:{...c,cutscene:c.cutscene==='meet-squad'?'meet-squad':c.cutscene==='camp'&&c.season.played===0&&!c.live?'board-grant':null}}
   case 'buy':{
    if(!windowOpen(c))return bad('The transfer window is shut.','closed')
    const card=catalogMap(c).get(a.card)
@@ -220,7 +222,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    // a vice the request does not name stays, while he is still in the squad and not the new captain
    const vice=a.vice??(t.lineup.vice&&inSquad(t.lineup.vice)&&t.lineup.vice!==captain?t.lineup.vice:undefined)
    const lu={formation:a.formation,xi:a.xi,bench:a.bench,tactics:a.tactics,...(captain?{captain}:{}),...(vice?{vice}:{})},err=lineupError(lu,fieldable(t,id=>cardOf(c,t,id)));if(err)return bad(err)
-   return {ok:true,career:{...withMe(c,{...t,lineup:lu}),...(a.meet?{cutscene:null}:{})}}
+   return {ok:true,career:{...withMe(c,{...t,lineup:lu}),...(a.meet?{cutscene:'camp' as const}:{})}}
   }
   case 'auto':{
    if(c.phase==='draft')return bad('Finish the draft first.','closed')
@@ -294,6 +296,12 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
    const ans=o.situation.answers[a.answer]!,men=ans.men?talkTargets(c,o.fixture,when,ans.men.who).map(id=>({id,d:ans.men!.d})):[]
    const rec={fixture:o.fixture,when,situation:o.situation.id,answer:a.answer,season:c.season.ordinal} as const
    return {ok:true,career:{...withMe(c,applyTalk(t,{team:ans.team,men})),talks:[...(c.talks??[]),rec].slice(-40)}}
+  }
+  case 'press':{
+   const o=pressOffer(c);if(!o||o.fixture!==a.fixture||o.q.id!==a.q)return bad('The reporters have gone.','closed')
+   const ans=a.answer<4?o.q.answers[a.answer]!:null,men=ans?.men?talkTargets(c,o.fixture,'post',ans.men.who).map(id=>({id,d:ans.men!.d})):[]
+   const rec={fixture:o.fixture,season:c.season.ordinal,q:o.q.id,answer:a.answer}
+   return {ok:true,career:{...(ans?withMe(c,applyTalk(t,{team:ans.team,men})):c),press:[...(c.press??[]),rec].slice(-40)}}
   }
   case 'next-season':{
    if(c.phase!=='season-end')return bad('The season is not over.','closed')
@@ -477,6 +485,14 @@ export function talkOffers(c:Career):{pre:TalkOffer|null;post:TalkOffer|null}{
  const lm=lastMine(c),post=lm&&!talked(c,lm.id,'post')?offer(lm,'post'):null
  return {pre,post}
 }
+/** a newspaper question after the dressing-room word, now and then (never blocks anything) */
+export function pressOffer(c:Career):{fixture:string;q:PressQ;ctx:TalkCtx}|null{
+ if(c.status!=='active'||c.live||c.phase==='draft'||c.cutscene)return null
+ const lm=lastMine(c);if(!lm||talkOffers(c).post||(c.press??[]).some(x=>x.fixture===lm.id&&x.season===c.season.ordinal))return null
+ const ctx=talkContext(c,lm,'post'),q=pressFor(ctx,`${c.id}:${c.season.ordinal}:${lm.id}:press`)
+ return q?{fixture:lm.id,q,ctx}:null
+}
+export {pressById}
 /**
  * A talk is not optional (owner, 13.10.2026): the post-match word must be given before the next round is played or the next
  * season opens, and the pre-match word before kick-off. Answers the refusal, or null when the room is not waiting.

@@ -1,6 +1,6 @@
 import {slotsOf} from '@/lib/clubs/rumble-xi/formations'
 import {LEGENDS_RULES as R,QUOTA_POS,type QuotaPos} from './config'
-import {abilities,bidsOf,slotsOf as marketSlots,cardOf,catalogMap,isBye,me,nextFixture,pauseOf,situationById,table,talkOffers,windowOpen,type TalkOffer} from './career'
+import {abilities,bidsOf,pressOffer,pressById,slotsOf as marketSlots,cardOf,catalogMap,isBye,lastMine,me,nextFixture,pauseOf,situationById,table,talkOffers,windowOpen,type TalkOffer} from './career'
 import {manMood,MOOD_TEXT,moodScore,moodWord,type ManMood,type MoodWord} from './morale'
 import {fill,TONE_TEXT,type Tone} from './talks'
 import {available} from './discipline'
@@ -27,6 +27,7 @@ export type CareerView={
  draft:null|{budget:number|null;slot:number;required:number;optional:number;picks:(CardView&{slot:number})[];spent:number;left:number;minToFinish:number;rerollsLeft:number;group:QuotaPos|null;lines:{group:QuotaPos;open:boolean;reason:string|null;need:number}[];stuck:boolean;/** names of the same line that roll past the payline before the three land */strip:string[];offers:(CardView&{tier:string;locked:string|null})[];deficits:Record<QuotaPos,number>;canConfirm:string|null;optionalOpen:boolean};
  squad:SquadView[];quotas:Record<QuotaPos,number>;emergency:{id:string;name:string;pos:QuotaPos;games:number}[];
  lineup:{formation:string;xi:string[];bench:string[];tactics:Tactics;/** the manager's captain */captain:string|null;/** his vice-captain */vice:string|null;/** who wears the armband today: the captain in the eleven, else the vice in it, else the eleven's most-starred man */armband:string|null;error:string|null;slots:{id:string;fine:string;family:string;x:number;y:number}[]};
+ /** a newspaper question waiting for an answer (answers are text only), and the reaction to the last one */press:null|{fixture:string;qid:string;paper:string;head:string;answers:string[]};pressLast:string|null;
  window:null|{which:'pre'|'early'|'mid';/** the five men on sale this window */offers:CardView[];sold:string[];/** bids for the manager's listed men */bids:{card:string;name:string;club:string;clubName:string;fee:number;quoted:number}[]};
  /** the round after which the next window opens, null when none is left this season */
  nextWindow:number|null;
@@ -92,7 +93,9 @@ export function careerView(c:Career):CareerView{
  // the market is five slots, the better-known names likelier (owner, 14.10.2026); bids come for the men on the transfer list
  const wOffers:CardView[]=win?marketSlots(c).map(cv):[]
  const wBids=win?bidsOf(c).map(b=>({...b,name:by.get(b.card)?.name??'—'})):[]
- return {id:c.id,revision:c.revision,status:c.status,phase:c.phase,cutscene:c.cutscene,clubId:c.clubId,clubName:c.clubName,season:c.season.ordinal,rounds:c.season.rounds,played:c.season.played,cash:t.cash,reputation:c.reputation.points,
+ const po=pressOffer(c),pl=(c.press??[]).slice(-1)[0],plq=pl&&pl.answer<4?pressById(pl.q)?.answers[pl.answer]:null
+ const press=po?{fixture:po.fixture,qid:po.q.id,paper:po.q.paper,head:po.q.head.replace(/\{club\}/g,c.clubName),answers:po.q.answers.map(x=>x.line)}:null
+ return {press,pressLast:plq&&pl?.fixture===lastMine(c)?.id?plq.reaction:null,id:c.id,revision:c.revision,status:c.status,phase:c.phase,cutscene:c.cutscene,clubId:c.clubId,clubName:c.clubName,season:c.season.ordinal,rounds:c.season.rounds,played:c.season.played,cash:t.cash,reputation:c.reputation.points,
   abilities:ABILITIES.map(a=>({id:a.id,label:a.label,hint:a.hint,at:a.at,open:c.reputation.points>=a.at})),settings:c.settings,
   rules:{minSquad:R.minSquad,maxSquad:R.maxSquad,minimums:{...R.minimums},maxSubs:R.maxSubs,stops:R.maxInterventionWindows},draft,squad,quotas:quotaCount(t.squad),
   emergency:t.emergency.map(e=>({id:e.id,name:e.card.name,pos:e.card.pos,games:e.games})),

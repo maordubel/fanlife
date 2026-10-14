@@ -71,3 +71,20 @@
 .lgm-bids li { display: grid; gap: 8px; }
 .lgm-bids li > span:first-child { display: grid; gap: 2px; }
 .lgm-bid-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* pre-season camp and the press */
+.lgm-camp-pitch { position: relative; inline-size: 100%; block-size: 180px; background: color-mix(in srgb, var(--lgm-night) 70%, var(--mag-green)); border: 2px solid var(--lgm-bronze-hi); overflow: hidden; }
+.lgm-camp-pitch i { position: absolute; inline-size: 14px; block-size: 14px; background: var(--mag-orange); clip-path: polygon(50% 0, 100% 100%, 0 100%); inset-block-start: 40%; }
+.lgm-camp-pitch .c1 { inset-inline-start: 20%; } .lgm-camp-pitch .c2 { inset-inline-start: 45%; } .lgm-camp-pitch .c3 { inset-inline-start: 70%; }
+.lgm-camp-pitch .ball { inline-size: 12px; block-size: 12px; border-radius: 50%; background: var(--mag-paper); clip-path: none; inset-block-start: 46%; inset-inline-start: 8%; animation: lgm-camp-ball 3.6s ease-in-out infinite alternate; }
+.lgm-camp-pitch b { position: absolute; inline-size: 18px; block-size: 34px; background: var(--club-primary, var(--mag-red)); border-radius: 9px 9px 3px 3px; inset-block-end: 24%; animation: lgm-camp-run 3.6s ease-in-out infinite alternate; }
+.lgm-camp-pitch .m1 { inset-inline-start: 12%; } .lgm-camp-pitch .m2 { inset-inline-start: 38%; animation-delay: -1.2s; } .lgm-camp-pitch .m3 { inset-inline-start: 64%; animation-delay: -2.4s; }
+@keyframes lgm-camp-ball { to { inset-inline-start: 86%; } }
+@keyframes lgm-camp-run { to { transform: translateX(60px); } }
+@media (prefers-reduced-motion: reduce) { .lgm-camp-pitch .ball, .lgm-camp-pitch b { animation: none; } }
+.lgm-camp-report ul, .lgm-camp-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.lgm-camp-report li, .lgm-camp-list li { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 10px; padding-block: 6px; border-block-end: 1px dashed currentColor; }
+.lgm-camp-report li small, .lgm-camp-list li small { display: block; opacity: .75; }
+.lgm-press blockquote { margin: 0 0 12px; font: 400 1.25rem/1.25 var(--mag-display); }
+.lgm-press ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.lgm-press ol button { inline-size: 100%; text-align: start; white-space: normal; }

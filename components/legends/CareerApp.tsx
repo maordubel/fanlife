@@ -12,6 +12,7 @@ import {Theatre,type TheatreSound} from '@/components/highlights/Theatre'
 import {useRumbleSound} from '@/components/clubs/rumble/shared'
 import {LiveMatch,type Watch} from './Live'
 import {TeamSheet} from './TeamSheet'
+import {CampSheet,PressSheet} from './PreSeason'
 import {BoardNews,ClubSheet,WindowSheet} from './Popups'
 import {Sheet} from './Sheet'
 import {MeetSquad} from './MeetSquad'
@@ -59,6 +60,8 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
    </dl>
   </header>
   <p className="lgm-live-msg" role="status" aria-live="polite" data-kind={msg?.kind}>{watching?'':msg?.text??''}</p>
+  {v.cutscene==='camp'&&!watching?<CampSheet v={v} busy={busy} send={send}/>:null}
+  {!v.cutscene&&!watching&&!room.open&&(v.press||v.pressLast)?<PressSheet v={v} busy={busy} send={send}/>:null}
   {v.cutscene==='board-grant'?<BoardNews v={v} busy={busy} send={send}/>:v.cutscene==='season-end'&&!watching&&!room.open?<SeasonEnd v={v} busy={busy} send={send}/>:null}
   {v.status==='archived'?<p className="lgm-error">This career is archived. Restore it from the Legends front page to play on.</p>:null}
   {v.phase==='draft'?<DraftRoom v={v} busy={busy} send={send} wardrobe={wardrobe}/>:meet?<MeetSquad v={v} busy={busy} send={send}/>:<>

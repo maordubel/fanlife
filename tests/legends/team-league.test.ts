@@ -24,21 +24,22 @@ const reload=(c:Career)=>JSON.parse(JSON.stringify(c)) as Career
 
 describe('meet your squad — the step after the board’s news',()=>{
  it('the board’s news leads to the squad, survives a reload, and closes only on a confirmed eleven',()=>{
-  let c=drafted(newCareer());expect(c.cutscene).toBe('board-grant')
+  let c=drafted(newCareer());expect(c.cutscene).toBe('meet-squad')
   c=act(c,{kind:'ack'});expect(c.cutscene).toBe('meet-squad')
   const back=reload(c);expect(careerView(back).cutscene).toBe('meet-squad')
   // an ordinary save and an auto pick keep him on the page
   c=act(back,sheet(back));expect(c.cutscene).toBe('meet-squad')
   c=act(c,{kind:'auto',formation:'4-4-2'});expect(c.cutscene).toBe('meet-squad')
   const xi=me(c).lineup.xi,vice=xi[3]!
-  c=act(c,sheet(c,{captain:xi[1],vice,meet:true}));expect(c.cutscene).toBeNull()
+  c=act(c,sheet(c,{captain:xi[1],vice,meet:true}));expect(c.cutscene).toBe('camp')
+  c=act(c,{kind:'ack'});expect(c.cutscene).toBe('board-grant');c=act(c,{kind:'ack'});expect(c.cutscene).toBeNull()
   expect(me(c).lineup.captain).toBe(xi[1]);expect(me(c).lineup.vice).toBe(vice)
   const again=tryAct(c,sheet(c,{meet:true}));expect(again.ok).toBe(false)
  })
  it('the step is only the first one: the season-end “stay a while” acknowledges nothing into it',()=>{
   const c=act(drafted(newCareer('c0ffee00000000a2')),{kind:'ack'})
-  const done=act(c,sheet(c,{meet:true}));expect(done.cutscene).toBeNull()
-  expect(act(done,{kind:'ack'}).cutscene).toBeNull()
+  const done=act(c,sheet(c,{meet:true}));expect(done.cutscene).toBe('camp')
+  expect(act(act(done,{kind:'ack'}),{kind:'ack'}).cutscene).toBeNull()
  })
 })
 
@@ -75,7 +76,7 @@ describe('the vice-captain',()=>{
 })
 
 describe('the season in numbers',()=>{
- function season(id:string):Career{let c=act(drafted(newCareer(id)),{kind:'ack'});c=act(c,sheet(c,{meet:true}))
+ function season(id:string):Career{let c=act(drafted(newCareer(id)),{kind:'ack'});c=act(c,sheet(c,{meet:true}));c=act(act(c,{kind:'ack'}),{kind:'ack'})
   for(let i=0;i<4;i++){if(c.phase==='window')c=act(c,{kind:'close-window'});c=isBye(c)?act(c,{kind:'play-round'}):act(c,{kind:'match-start',mode:'fast'})}
   return c}
  it('every count is read from the match logs',()=>{
