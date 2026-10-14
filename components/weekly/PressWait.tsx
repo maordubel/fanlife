@@ -8,7 +8,7 @@ import type {CSSProperties} from 'react'
 export function PressWait({label='Going to press',inline=false}:{label?:string;inline?:boolean}){
  const bars=[92,78,86,60]
  return (
-  <main id="main" className={inline?'wkw wkw-inline':'wkw'} role="status" aria-live="polite" aria-busy="true">
+  <div className={inline?'wkw wkw-inline':'wkw'} role="progressbar" aria-label={label} aria-busy="true" data-testid="press-wait">
    <div className="wkw-plate">
     <p className="wkw-tag"><span className="wkw-dot" aria-hidden="true"/>{label}…</p>
     <div className="wkw-head" aria-hidden="true"><span className="wkw-ball"/><span className="wkw-sweep"/></div>
@@ -17,6 +17,6 @@ export function PressWait({label='Going to press',inline=false}:{label?:string;i
     </div>
    </div>
    {inline?null:<div className="wkw-grid" aria-hidden="true">{[0,1,2,3].map(i=><span key={i} className="wkw-card" style={{'--i':i} as CSSProperties}/>)}</div>}
-  </main>
+  </div>
  )
 }
