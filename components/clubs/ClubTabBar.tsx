@@ -8,7 +8,7 @@ const ICON={fill:'none',stroke:'currentColor',strokeWidth:2.5,'aria-hidden':true
 const ICONS:Record<ClubTab,JSX.Element>={
  home:<svg {...ICON}><path d="M3 11l9-7 9 7v9H3z"/></svg>,
  play:<svg {...ICON}><circle cx="12" cy="12" r="9"/><path d="M12 8l4 3-1.5 5h-5L8 11z"/></svg>,
- life:<svg {...ICON}><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7 10v5M4.5 12.5h5M16 11.5h.01M18.5 13.5h.01"/></svg>,
+ life:<svg {...ICON}><circle cx="12" cy="4.6" r="2.7"/><path d="M12 7.3v6M3.5 20v-4.2c0-1.4 1.1-2.5 2.5-2.5h12c1.4 0 2.5 1.1 2.5 2.5V20z"/><path d="M7 16.5h3M16 16.9h.01M18.3 16.9h.01"/></svg>,
  history:<svg {...ICON}><path d="M5 4h11l3 3v13H5z"/><path d="M8 11h8M8 15h8"/></svg>,
  terrace:<svg {...ICON}><path d="M3 20h18M5 20v-5h4v5M10 20v-9h4v9M15 20v-7h4v7"/></svg>,
 }
