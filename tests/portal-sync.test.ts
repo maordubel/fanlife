@@ -490,6 +490,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261009150000_worker_circles_wave3.sql', // wave 3: place, circles, the pipe, identification help (supabase/tests/72-circles-wave3.sql)
       '20261009180000_worker_game_origin.sql', // one closet, two apps: game-built shirts (supabase/tests/73-game-origin.sql)
       '20261009210000_worker_market_text_search.sql', // search by words (supabase/tests/70-market-search.sql)
+      '20261014120000_worker_market_managed_listings.sql', // 14.10.2026: managed listings + admin copy of activity
       '20261009240000_worker_rest_of_world.sql', // any club, any shirt (supabase/tests/74-world.sql)
       '20261009250000_worker_privacy.sql', // stage A privacy: identity, anonymous, display, opaque photos (supabase/tests/75-privacy.sql)
       '20261009260000_worker_contributions.sql', // stage C: per-photo consent, review queue, club merge (supabase/tests/76-contributions.sql)
