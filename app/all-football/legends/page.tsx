@@ -27,7 +27,7 @@ export default async function Page({searchParams}:{searchParams?:{club?:string}}
  const d=await door('fanLeague');if(!d.open)notFound()
  const [owner,clubs,af]=await Promise.all([viewer(false),legendsClubs(),door('allFootball')])
  const idx=owner?await ownerIndex(owner):{v:1 as const,careers:[]}
- const rows=idx.careers.map(c=>({id:c.id,clubName:c.clubName,season:c.season,phase:c.phase,status:c.status}))
+ const rows=idx.careers.map(c=>({id:c.id,clubName:c.clubName,season:c.season,phase:c.phase,status:c.status,name:c.name??c.clubName,enteredAt:c.enteredAt??c.createdAt}))
  const options:ClubOption[]=clubs.map(c=>({club:c.club,name:c.name,ready:c.verdict==='READY',held:c.held,reason:c.reasons[0]??null,men:c.men,primary:livery(c.club)?.pattern??null,paint:wearLivery(livery(c.club)),initials:livery(c.club)?.initials}))
  const openClubs=options.filter(o=>o.ready&&!o.held).length
  const lamps=[`€${R.initialDraftBudgetM}M`,...(['GK','DF','MF','FW'] as const).map(p=>`${p} ${R.minimums[p]}`)]
