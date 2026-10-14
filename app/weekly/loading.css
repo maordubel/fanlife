@@ -18,9 +18,7 @@
 @keyframes wkw-fade { 50% { opacity: .45; } }
 @media (prefers-reduced-motion: reduce) { .wkw *, .wkw-plate { animation: none !important; } .wkw-ball { transform: scaleX(.6); } }
 
-/* the tap: the pressed link dims in the same frame, and after a short wait a stamp says the press is rolling (NavPulse) */
+/* the tap: the pressed link dims in the same frame, and after a short wait the press plate covers the page that is loading (NavPulse) */
 a[data-tapped] { opacity: .65; }
-.nav-wait { position: fixed; inset-inline: 0; inset-block-end: calc(76px + env(safe-area-inset-bottom)); z-index: 80; display: none; justify-content: center; pointer-events: none; }
-.nav-wait[data-busy='true'] { display: flex; animation: wkw-in .2s ease-out .35s both; }
-.nav-wait span { background: var(--mag-ink); color: var(--mag-paper); border: 3px solid var(--mag-paper); box-shadow: 4px 4px 0 var(--club-primary, var(--mag-vermilion)); padding: 8px 14px; font: 400 13px var(--mag-mono); letter-spacing: .1em; text-transform: uppercase; }
-@keyframes wkw-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.nav-plate { position: fixed; inset-inline: 0; inset-block-start: var(--app-top, 60px); inset-block-end: var(--app-bottom, 0px); z-index: 70; overflow: hidden; pointer-events: none; background: var(--mag-paper); background-image: var(--mag-grain); animation: wkw-in .2s ease-out .35s both; }
+@keyframes wkw-in { from { opacity: 0; } to { opacity: 1; } }

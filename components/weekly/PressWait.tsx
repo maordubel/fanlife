@@ -1,8 +1,8 @@
 import type {CSSProperties} from 'react'
 
 /**
- * The loading page: The Weekly's "going to press" plate. Server component, CSS only (app/weekly/loading.css),
- * so it paints with the first byte. Tokens only; the club's own colour inside a club, vermilion elsewhere.
+ * The loading plate: The Weekly's "going to press" (shown by NavPulse over a page that is loading). CSS only (app/weekly/loading.css),
+ * so it paints at once with the first byte. Tokens only; the club's own colour inside a club, vermilion elsewhere.
  * `inline` = a smaller plate for a section that loads inside a page that is already on screen.
  */
 export function PressWait({label='Going to press',inline=false}:{label?:string;inline?:boolean}){
