@@ -6,7 +6,7 @@ import {hasPrice,PRICE_VERSION} from '@/lib/clubs/rumble-xi/prices'
 import {overrideOf} from '@/lib/players/effective'
 import {serverFeatures} from '@/lib/features-server'
 import {buildCatalog,eligible,type Eligibility} from './catalog'
-import {me,catalogMap,createCareer} from './career'
+import {me,catalogMap,createCareer,slotsOf} from './career'
 import {LEGENDS_RULES as R} from './config'
 import {readiness,type ClubReadiness} from './readiness'
 import {insertCareer,readLegendsSettings,readRatingControl} from './store'
@@ -71,8 +71,8 @@ export async function ctxFor(c:Career):Promise<{now:string;catalogs:Map<string,C
 }
 /** the market (§1.3.13): men of THIS club only, not in the squad — by position, decade, price and name */
 export function marketPage(c:Career,f:{pos?:string|null;decade?:number|null;price?:number|null;q?:string|null},limit=60):{cards:CardView[];total:number}{
- const own=new Set(me(c).squad.map(s=>s.id)),needle=f.q?.trim().toLowerCase()||null
- const all=c.catalog.cards.filter(x=>!own.has(x.id)&&!c.soldThisWindow.includes(x.id)&&(!f.pos||x.pos===f.pos)&&(!f.decade||x.decades.includes(f.decade))&&(!f.price||x.price===f.price)&&(!needle||x.name.toLowerCase().includes(needle)))
+ const needle=f.q?.trim().toLowerCase()||null,slots=new Set(slotsOf(c).map(x=>x.id))
+ const all=c.catalog.cards.filter(x=>slots.has(x.id)&&(!f.pos||x.pos===f.pos)&&(!f.decade||x.decades.includes(f.decade))&&(!f.price||x.price===f.price)&&(!needle||x.name.toLowerCase().includes(needle)))
   .sort((a,b)=>b.stars-a.stars||a.price-b.price||a.name.localeCompare(b.name))
  return {cards:all.slice(0,limit).map(cardView),total:all.length}
 }

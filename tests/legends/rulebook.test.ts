@@ -2,7 +2,7 @@ import {describe,expect,it} from 'vitest'
 import {hash} from '@/lib/clubs/rumble-rng'
 import {DEFAULT_SETTINGS,LEGENDS_RULES as R,patchSettings,readSettings} from '@/lib/legends/config'
 import {eligible} from '@/lib/legends/catalog'
-import {applyAction,cashFromLedger,createCareer,isBye,me,pauseOf,type Action,type Intent} from '@/lib/legends/career'
+import {applyAction,cashFromLedger,createCareer,isBye,me,pauseOf,slotsOf,type Action,type Intent} from '@/lib/legends/career'
 import {afterMatch,fresh} from '@/lib/legends/discipline'
 import {botDraft,deal,draftMove,emptyDraft,groups,TIER_PRICES} from '@/lib/legends/draft'
 import {achievements,capBonuses,nextSeasonGrant,saleQuote} from '@/lib/legends/economy'
@@ -109,9 +109,12 @@ describe('money (§1.3, E01–E05)',()=>{
   expect(sum(once)).toBeLessThanOrEqual(5);expect(sum(once)+sum(twice)).toBeLessThanOrEqual(5);expect(capBonuses(a,5)).toHaveLength(0)
  })
  it('E05 · a sale that breaks 17 or a quota is refused; an atomic swap that restores it goes through',()=>{
-  const c=toWindow(drafted(newCareer('c0ffee0000000002'))),t=me(c),gk=t.squad.find(s=>s.quota==='GK')!
+  // the market is five slots: find a career whose window shows a goalkeeper
+  let c=toWindow(drafted(newCareer('c0ffee0000000002')));
+  for(let i=3;i<60&&!slotsOf(c).some(x=>x.pos==='GK'&&x.price<=me(c).cash);i++)c=toWindow(drafted(newCareer(`c0ffee00000000${(i+16).toString(16).padStart(2,'0')}`)))
+  const t=me(c),gk=t.squad.find(s=>s.quota==='GK')!
   const sold=applyAction(c,{kind:'sell',card:gk.id,key:'k-sell-gk-1',rev:c.revision},ctx);expect(sold.ok).toBe(false)
-  const other=c.catalog.cards.find(x=>x.pos==='GK'&&!t.squad.some(s=>s.id===x.id)&&x.price<=t.cash)!
+  const other=slotsOf(c).find(x=>x.pos==='GK'&&x.price<=t.cash)!
   const sw=applyAction(c,{kind:'swap',sell:gk.id,buy:other.id,key:'k-swap-gk-1',rev:c.revision},ctx);expect(sw.ok).toBe(true)
   if(sw.ok){expect(me(sw.career).squad).toHaveLength(17);expect(cashFromLedger(sw.career)).toBeCloseTo(me(sw.career).cash,5)}
  })
@@ -235,7 +238,7 @@ describe('friendlies and saving (§1.7, F01–F04, S02, S05)',()=>{
   expect(acceptFriendly(f,'tok',{...sa},new Date(NOW)).ok).toBe(false) // nobody plays himself
  })
  it('S02 · the same key twice changes money and squad once',()=>{
-  const c=toWindow(drafted(newCareer('c0ffee000000000b'))),man=c.catalog.cards.find(x=>!me(c).squad.some(s=>s.id===x.id)&&x.price<=me(c).cash)!
+  const c=toWindow(drafted(newCareer('c0ffee000000000b'))),man=slotsOf(c).find(x=>x.price<=me(c).cash)!
   const a={kind:'buy' as const,card:man.id,key:'k-buy-twice',rev:c.revision},r1=applyAction(c,a,ctx);if(!r1.ok)throw new Error(r1.error)
   const r2=applyAction(r1.career,{...a,rev:r1.career.revision},ctx);expect(r2.ok&&r2.replay).toBe(true);expect(r2.ok&&me(r2.career).cash).toBe(me(r1.career).cash)
  })

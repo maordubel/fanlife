@@ -3,7 +3,7 @@ import {readFileSync} from 'node:fs'
 import {describe,expect,it} from 'vitest'
 import {hash} from '@/lib/clubs/rumble-rng'
 import {DEFAULT_SETTINGS,ENGINE_VERSION,LEGENDS_RULES as R} from '@/lib/legends/config'
-import {applyAction,createCareer,isBye,lastMine,me,parseAction,pauseOf,talkContext,talkOffers,type Action,type Intent} from '@/lib/legends/career'
+import {applyAction,createCareer,isBye,lastMine,me,parseAction,pauseOf,pressOffer,talkContext,talkOffers,type Action,type Intent} from '@/lib/legends/career'
 import {botDraft} from '@/lib/legends/draft'
 import {run} from '@/lib/legends/engine'
 import {matchLab} from '@/lib/legends/lab'
@@ -177,5 +177,25 @@ describe('engine 4 — Tactics at any minute',()=>{
   c=act(c,{kind:'match-decide',decision:{}})
   c=act(c,{kind:'match-tactics',minute:62})
   expect(pauseOf(c)!.minute).toBe(62)
+ })
+})
+
+describe('the press (owner, 14.10.2026)',()=>{
+ it('a press answer is validated, once per match, bounded like a talk, and never shows its effect',()=>{
+  let found=false
+  for(let i=0;i<40&&!found;i++){
+   let c=toMatch(drafted(newCareer(`dd0000000000${(i+16).toString(16).padStart(4,'0')}`)))
+   if(isBye(c))c=act(c,{kind:'play-round'})
+   const pre=talkOffers(c).pre;if(pre)c=act(c,{kind:'talk-pre',fixture:pre.fixture,answer:1})
+   c=act(c,{kind:'match-start',mode:'fast'});const post=talkOffers(c).post;if(post)c=act(c,{kind:'talk-post',fixture:post.fixture,answer:1})
+   const o=pressOffer({...c,cutscene:null});if(!o)continue
+   found=true;const k={...c,cutscene:null as never}
+   const r=applyAction(k,{kind:'press',fixture:o.fixture,q:o.q.id,answer:0,key:'k-press-1abcd',rev:k.revision},ctx);expect(r.ok).toBe(true)
+   if(r.ok){expect(pressOffer(r.career)).toBeNull();expect((r.career.press??[]).length).toBe(1)
+    expect(applyAction(r.career,{kind:'press',fixture:o.fixture,q:o.q.id,answer:0,key:'k-press-2abcd',rev:r.career.revision},ctx).ok).toBe(false)
+    expect(JSON.stringify(careerView(r.career).press)).not.toMatch(/team|"d":/)}
+   expect(parseAction({kind:'press',fixture:o.fixture,q:o.q.id,answer:9,key:'k-press-3abcd',rev:k.revision})).toBeNull()
+  }
+  expect(found).toBe(true)
  })
 })
