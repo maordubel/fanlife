@@ -88,3 +88,15 @@
 .lgm-press blockquote { margin: 0 0 12px; font: 400 1.25rem/1.25 var(--mag-display); }
 .lgm-press ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .lgm-press ol button { inline-size: 100%; text-align: start; white-space: normal; }
+
+/* the match board under the picture: line-ups and statistics */
+.lgm-board { display: grid; gap: 8px; margin-block-start: 10px; }
+.lgm-board-xi { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lgm-board-xi h3 { margin: 0 0 4px; font: 400 1rem var(--mag-display); text-transform: uppercase; overflow-wrap: anywhere; }
+.lgm-board-xi ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.lgm-board-xi li { display: grid; grid-template-columns: 22px 1fr auto; gap: 6px; font-size: 13px; }
+.lgm-board-xi li i { font: 400 12px var(--mag-goal); opacity: .8; } .lgm-board-xi li em { font: 700 10px var(--mag-mono); opacity: .7; font-style: normal; }
+.lgm-board-stats { inline-size: 100%; border-collapse: collapse; }
+.lgm-board-stats td, .lgm-board-stats th { padding: 6px 4px; border-block-end: 1px dashed currentColor; text-align: center; font: 400 14px var(--mag-body); }
+.lgm-board-stats td { font-family: var(--mag-goal); inline-size: 3em; }
+.lgm-board-stats th { text-transform: uppercase; font: 700 11px var(--mag-mono); }
